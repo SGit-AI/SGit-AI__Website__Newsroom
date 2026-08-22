@@ -9,6 +9,11 @@ __pycache__/
 # Distribution / packaging
 .Python
 build/
+# ...except this site's own build tooling — a bare `build/` rule from this generic
+# Python template also matches admin/build/, which is where chrome.py, validate.js
+# and version.txt live, not a Python build output directory.
+!/admin/build/
+!/admin/build/**
 develop-eggs/
 dist/
 downloads/
