@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Release history · newsroom.sgit.ai</title>
+<meta name="description" content="Every push to dev is a release: CI validates, verifies the version bump, tags the commit and deploys to GitHub Pages. This is what shipped in each one.">
+<link rel="canonical" href="https://newsroom.sgit.ai/admin/versions.html">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer and the shipped CLI. This site reports on the network it is part of">↗ part of <b>sgit.ai</b></a>
+  <span class="stage-pill">reference draft</span>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.1.0</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl" href="../stories/index.html">Stories<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../stories/index.html">Stories: what the network shipped</a>
+      <a class="sl" href="../stories/network-launch.html">The network, live — 22 Aug 2026</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../roles/index.html">How this works<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../roles/index.html">Librarian, Journalist, Historian</a>
+      <a class="sl" href="../network/index.html">The network: sibling sites and boundaries</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl here" href="../admin/index.html">Site<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
+      <a class="sl here" href="../admin/versions.html">Release history</a>
+      <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../about/participant.html">Where we lose</a>
+      </div>
+    </div>
+  </div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom">★ GitHub</a>
+  <script src="../assets/nav.js" defer></script>
+</div></nav>
+
+<main class="doc">
+<div class="crumb"><a href="../index.html">newsroom.sgit.ai</a> / admin / versions</div>
+<h1>Release history</h1>
+<p class="lead">Every push to <code>dev</code> is a release: CI validates the site, verifies the version bump, tags the commit <code>v{release}.{major}.{minor}</code>, and deploys to GitHub Pages. The version is owned by <code>admin/build/version.txt</code> and must agree with the release commit's subject. <a href="index.html">How it works</a>.</p>
+
+<div class="tablewrap"><table class="vers">
+  <thead><tr><th>Version</th><th>Date</th><th>What shipped</th></tr></thead>
+  <tbody>
+    <tr>
+      <td class="vnum">v0.1.0</td>
+      <td>22 Aug 2026</td>
+      <td><b>The site, first release — pipeline first, same order issues-fs.sgit.ai shipped v0.1.0 in.</b>
+        <p><b>The pipeline before the content.</b> Validate → auto-tag → deploy, carried in unchanged from issues-fs.sgit.ai, which carried it from graphs.sgit.ai and pki.sgit.ai, whose own history traces the pipeline's root to the VoiceDebrief website pipeline — <a href="../stories/network-launch.html#lineage">reported in full on the first story</a>. No content-specific tripwires were invented for v0.1.0 that the site could not yet back with real checked facts; the gate runs the shared core — version agreement, links, canonical, the agent surface, key-leak, block balance — plus the agent-block rule inherited from issues-fs.sgit.ai.</p>
+        <p><b>No brief pack exists for this site yet</b> — unlike sgit.ai, pki.sgit.ai, graphs.sgit.ai and issues-fs.sgit.ai, each commissioned against a dated source pack before their first page was written. Rather than invent scope or fabricate a corpus, v0.1.0 ships the smallest real thing: three sections built from facts checked directly against six sibling repositories on 22 August 2026, published in <a href="../stories/network-launch.html">the first story</a>, with the roles that do the checking stated on <a href="../roles/index.html">their own page</a> and the boundary with every sibling stated on <a href="../network/index.html">the network page</a>. This is recorded as open request <a href="comms.html#needs">N1</a>, not silently worked around.</p>
+        <p><b>One real correction shipped with the first story</b>: issues-fs.sgit.ai's own network page names a sibling <code>sentinel.sgit.ai</code>; the actual repository, checked directly, ships <code>CNAME</code> <code>sg-sentinel.sgit.ai</code>. It is the first instance of the sourcing discipline this site is built to apply — check the primary source, not the sibling's claim about it — turning up something real on the very first pass.</p>
+      </td>
+    </tr>
+  </tbody>
+</table></div>
+
+<div class="pagenav">
+  <a href="comms.html">← Comms: tasks &amp; requests</a>
+  <a href="../about/participant.html">Where we lose →</a>
+</div>
+</main>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>Dated, sourced reporting on the sgit.ai network, written by the Librarian, Journalist and Historian roles defined at <a href="https://issues-fs.sgit.ai/roles/index.html" style="display:inline;padding:0">issues-fs.sgit.ai</a> and applied here to a different corpus: the estate's own engineering activity. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="netline"><a href="https://sgit.ai"><b>↗ sgit.ai</b></a> — the parent project · <a href="https://graphs.sgit.ai">↗ graphs.sgit.ai</a> — the philosophy, at length · <a href="https://issues-fs.sgit.ai">↗ issues-fs.sgit.ai</a> — where the roles began · <a href="https://pki.sgit.ai">↗ pki.sgit.ai</a> · <a href="https://nhi.sgit.ai">↗ nhi.sgit.ai</a> · <a href="https://sgit.ai/network/index.html">↗ the network</a></p>
+    <p class="partnote">⚠ Participant disclosure: published by the sgit project, reporting on the sgit project. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../admin/versions.html">v0.1.0</a> · <a href="../admin/index.html">engineering</a></p>
+  </div>
+  <div>
+    <h4>Stories</h4>
+    <a href="../stories/network-launch.html">&#8594; The network, live</a>
+    <a href="../stories/index.html">Stories hub</a>
+  </div>
+  <div>
+    <h4>The roles</h4>
+    <a href="../roles/index.html">Librarian, Journalist, Historian</a>
+    <a href="https://issues-fs.sgit.ai/roles/index.html">Where the vocabulary was defined</a>
+  </div>
+  <div>
+    <h4>The network</h4>
+    <a href="../network/index.html">Sibling sites and boundaries</a>
+    <a href="../admin/comms.html">Comms: tasks &amp; requests</a>
+    <a href="../admin/versions.html">Release history</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../admin/index.html">Admin &amp; engineering</a>
+    <a href="../about/participant.html">Where we lose</a>
+    <a href="../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+</body>
+</html>

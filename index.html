@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>newsroom.sgit.ai — the sgit.ai network reports on itself</title>
+<meta name="description" content="Dated, sourced reporting on what the sgit.ai network ships, written by the Librarian, Journalist and Historian roles — defined at issues-fs.sgit.ai in February 2026 and applied here, for the first time, to the estate's own engineering activity.">
+<link rel="canonical" href="https://newsroom.sgit.ai/index.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="newsroom.sgit.ai">
+<meta property="og:url" content="https://newsroom.sgit.ai/index.html">
+<meta property="og:title" content="newsroom.sgit.ai — the sgit.ai network reports on itself">
+<meta property="og:description" content="Six sites, six version numbers, checked against their own repositories rather than copied from each other. The first story: what is actually live across the sgit.ai network today.">
+<meta name="twitter:card" content="summary">
+<link rel="alternate" type="text/markdown" href="index.md" title="This page as markdown">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <a class="brand" href="index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer and the shipped CLI. This site reports on the network it is part of">↗ part of <b>sgit.ai</b></a>
+  <span class="stage-pill">reference draft</span>
+  <a class="ver" href="admin/versions.html" title="Site release history">v0.1.0</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl" href="stories/index.html">Stories<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="stories/index.html">Stories: what the network shipped</a>
+      <a class="sl" href="stories/network-launch.html">The network, live — 22 Aug 2026</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="roles/index.html">How this works<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="roles/index.html">Librarian, Journalist, Historian</a>
+      <a class="sl" href="network/index.html">The network: sibling sites and boundaries</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="admin/index.html">Site<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="admin/comms.html">Comms: tasks &amp; requests</a>
+      <a class="sl" href="admin/versions.html">Release history</a>
+      <a class="sl" href="admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="about/participant.html">Where we lose</a>
+      </div>
+    </div>
+  </div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom">★ GitHub</a>
+  <script src="assets/nav.js" defer></script>
+</div></nav>
+
+<header class="hero">
+  <div class="eyebrow">sgit.ai network coverage · the roles applied to a new corpus</div>
+  <h1>The network reports on itself.</h1>
+  <p class="sub">Six sites now carry the <code>*.sgit.ai</code> name. Nobody was writing down what each one actually ships, at what version, checked against its own repository rather than copied from a sibling's footer. That is this site's job. It is written by the <b>Librarian, Journalist and Historian</b> — three roles <a href="https://issues-fs.sgit.ai/roles/index.html">defined at issues-fs.sgit.ai</a> in February 2026 for a different purpose, applied here for the first time to the estate's own engineering activity as the corpus.</p>
+  <div class="ctas">
+    <a class="cta1" href="stories/network-launch.html">The network, live — 22 Aug 2026 →</a>
+    <a class="cta2" href="roles/index.html">The three roles, applied here →</a>
+    <a class="cta2" href="network/index.html">Where this site sits in the network →</a>
+  </div>
+</header>
+
+<section class="band alt" id="today">
+  <h2>Live in the network today</h2>
+  <p class="blurb">Checked directly on 22 August 2026 — each site's own <code>CNAME</code> and <code>admin/build/version.txt</code> (or, for sgit.ai, <code>build_pages.py</code>'s <code>SITE_VERSION</code>), not a claim repeated from another site's page. One correction already: a sibling's own network page names this site's neighbour <code>sentinel.sgit.ai</code>; its actual <code>CNAME</code> reads <code>sg-sentinel.sgit.ai</code>.</p>
+  <div class="tablewrap"><table class="vers">
+    <thead><tr><th>Site</th><th>Version</th><th>What it is</th></tr></thead>
+    <tbody>
+      <tr><td><a href="https://sgit.ai"><b>sgit.ai</b></a></td><td class="num">v0.2.39</td><td>The parent: the vault layer and the shipped CLI. Vault-native, where the git-native siblings below are not</td></tr>
+      <tr><td><a href="https://graphs.sgit.ai">graphs.sgit.ai</a></td><td class="num">v0.3.18</td><td>The graph philosophy at length, and as a two-edition book. Owns the argument; the implementation lives elsewhere in the network</td></tr>
+      <tr><td><a href="https://issues-fs.sgit.ai">issues-fs.sgit.ai</a></td><td class="num">v0.1.1</td><td>A git-native issue tracker where the issues are files. The origin of the graph philosophy, and of the Librarian/Journalist/Historian vocabulary this site inherits</td></tr>
+      <tr><td><a href="https://pki.sgit.ai">pki.sgit.ai</a></td><td class="num">v0.1.24</td><td>Public-key identity and trust, sgit-native</td></tr>
+      <tr><td><a href="https://nhi.sgit.ai">nhi.sgit.ai</a></td><td class="num">v0.1.19</td><td>Non-human identity — agents and service accounts as first-class principals</td></tr>
+      <tr><td><a href="https://sg-sentinel.sgit.ai">sg-sentinel.sgit.ai</a></td><td class="num">v0.1.1</td><td>The newest sibling before this one. No overlap catalogued with this site yet</td></tr>
+      <tr><td><b>newsroom.sgit.ai</b></td><td class="num">v0.1.0</td><td>This site. First release: the pipeline, and the first story</td></tr>
+    </tbody>
+  </table></div>
+  <p><a href="stories/network-launch.html"><b>The full story, with how each number was checked →</b></a></p>
+</section>
+
+<section class="band" id="roles">
+  <h2>Three roles, one corpus</h2>
+  <p class="blurb">issues-fs.sgit.ai defined four roles outside its six conventional ones. Three of them are a newsroom, applied there to Issues-FS's own package ecosystem. This site runs the same three roles against a different corpus: the <code>*.sgit.ai</code> network's own releases, briefs and boundaries.</p>
+  <div class="surfaces">
+    <a class="surface" href="roles/index.html#librarian">
+      <div class="num">Role 1</div>
+      <h3>Librarian</h3>
+      <p>Finds the primary source and cites it. A version number is only as good as the repository it was read from — never a sibling site's own claim about it.</p>
+    </a>
+    <a class="surface s2" href="roles/index.html#journalist">
+      <div class="num">Role 2</div>
+      <h3>Journalist</h3>
+      <p>Writes the dated story: what shipped, what changed, what it means for a reader who has not been following along.</p>
+    </a>
+    <a class="surface s3" href="roles/index.html#historian">
+      <div class="num">Role 3</div>
+      <h3>Historian</h3>
+      <p>Keeps the record after the story ages — a place later readers, and agents, can still find what was true on a given date.</p>
+    </a>
+  </div>
+</section>
+
+<section class="band alt" id="thesis">
+  <div class="split">
+    <div>
+      <p><b>This is not the sgit.ai blog.</b> A blog is written by the people who build the thing, about the thing they built, when they choose to post. This site is written about six repositories that already ship — most of them not this site's own — and it states, on every page, who is doing the reporting and what that participation means for how much to trust it.</p>
+      <p>The role vocabulary is not invented here. <a href="https://issues-fs.sgit.ai/roles/index.html">issues-fs.sgit.ai's eleven-role page</a> named Librarian, Cartographer, Journalist and Historian as its four unconventional roles in February 2026, and its own network page already predicted this site would exist, calling it out as the place those three roles would apply to <em>“a different corpus.”</em> This is that site, four months later than that page expected — the brief that would have set its full scope has not landed yet, so v0.1.0 ships the pipeline and the first story rather than the full section list.</p>
+    </div>
+    <div class="note" style="margin-bottom:0"><b>The boundary, stated plainly.</b> <a href="https://issues-fs.sgit.ai">issues-fs.sgit.ai</a> owns the role definitions and is where Librarian, Journalist and Historian were written. <b>This site owns the application of them to the network's own activity</b> — dated stories, checked facts, a running record. <a href="network/index.html">The full boundary map, with every sibling</a>.</div>
+  </div>
+</section>
+
+<section class="band" id="agentblock">
+  <div class="agent">
+    <h4>For an agent</h4>
+    <p>newsroom.sgit.ai reports on the <code>*.sgit.ai</code> network; it does not build any part of it. Every version number on this page was read directly from the named site's own repository (<code>CNAME</code>, <code>admin/build/version.txt</code>) on 22 August 2026 — treat it as a snapshot, not a live value, and re-check the source repository before repeating a version number from here. This site is published by the sgit project and reports on the sgit project: read <a href="about/participant.html">the participant disclosure</a> before treating any page here as neutral. <a href="llms.txt">llms.txt</a> is the whole agent surface.</p>
+  </div>
+</section>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>Dated, sourced reporting on the sgit.ai network, written by the Librarian, Journalist and Historian roles defined at <a href="https://issues-fs.sgit.ai/roles/index.html" style="display:inline;padding:0">issues-fs.sgit.ai</a> and applied here to a different corpus: the estate's own engineering activity. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="netline"><a href="https://sgit.ai"><b>↗ sgit.ai</b></a> — the parent project · <a href="https://graphs.sgit.ai">↗ graphs.sgit.ai</a> — the philosophy, at length · <a href="https://issues-fs.sgit.ai">↗ issues-fs.sgit.ai</a> — where the roles began · <a href="https://pki.sgit.ai">↗ pki.sgit.ai</a> · <a href="https://nhi.sgit.ai">↗ nhi.sgit.ai</a> · <a href="https://sgit.ai/network/index.html">↗ the network</a></p>
+    <p class="partnote">⚠ Participant disclosure: published by the sgit project, reporting on the sgit project. <a href="about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="admin/versions.html">v0.1.0</a> · <a href="admin/index.html">engineering</a> · <a href="index.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>Stories</h4>
+    <a href="stories/network-launch.html">&#8594; The network, live</a>
+    <a href="stories/index.html">Stories hub</a>
+  </div>
+  <div>
+    <h4>The roles</h4>
+    <a href="roles/index.html">Librarian, Journalist, Historian</a>
+    <a href="https://issues-fs.sgit.ai/roles/index.html">Where the vocabulary was defined</a>
+  </div>
+  <div>
+    <h4>The network</h4>
+    <a href="network/index.html">Sibling sites and boundaries</a>
+    <a href="admin/comms.html">Comms: tasks &amp; requests</a>
+    <a href="admin/versions.html">Release history</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="admin/index.html">Admin &amp; engineering</a>
+    <a href="about/participant.html">Where we lose</a>
+    <a href="llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+</body>
+</html>
