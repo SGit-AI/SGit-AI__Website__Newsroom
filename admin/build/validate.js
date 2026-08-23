@@ -6,20 +6,21 @@
 //   2. internal links — every relative href/src in every .html file resolves to a
 //      file in the tree (fragments stripped; external and mailto links skipped)
 //   3. canonical host — every <link rel="canonical"> and og:url points at the host
-//      in CNAME, and every page declares one
+//      in CNAME (or, for a verbatim republication, at the stated source host — see
+//      check 8), and every page declares one
 //   4. the agent surface — every section hub is named in llms.txt, and the sitemap
-//      and the tree agree in both directions. llms.txt is the whole surface for
-//      that reader, so a page missing from it is, for an agent, a page that does
-//      not exist. CI keeps that honest.
+//      and the tree agree in both directions
 //   5. key-leak tripwire — nothing in the tree may look like an sgit vault key
-//      (a >=20-char passphrase joined by a colon to a uuid-shaped id).
-//   6. div balance — every page opens and closes the same number of <div>s. A
-//      <div class="note"> closed with </p> is accepted silently by browsers and
-//      runs the note's left border down the rest of the page.
-//   7. every page ends with an agent block — the house rule, shared with
-//      issues-fs.sgit.ai, is that each page serves three readers and the third
-//      is an agent carrying the rule into another session. Checked, not
-//      remembered.
+//   6. div balance — every page opens and closes the same number of <div>s
+//   7. every page ends with an agent block — the house rule inherited from
+//      issues-fs.sgit.ai
+//   8. the provenance contract — every page carrying a republished-material block
+//      (class="provenance") states a first-published date and a source link. This
+//      is the site's own central argument (most articles do not provide evidence,
+//      the link is never followed) applied to itself. See briefs/02.
+//   9. the redaction watch-list — nothing Tier 3 in briefs/08__source-manifest.csv
+//      (named VC, live product pricing, an infra account number) may appear
+//      anywhere in the published tree.
 // Any failure exits 1: no tag, no publish.
 'use strict';
 const fs   = require('fs');
@@ -63,8 +64,6 @@ const versTable = fs.readFileSync(path.join(ROOT, 'admin/versions.html'), 'utf8'
 if (!versTable.includes(`class="vnum">${VERSION}<`)) {
   errors.push(`admin/versions.html has no row for ${VERSION}`);
 }
-// each release appears exactly once — a blanket version-bump sed that touches the
-// history table produces duplicates, which shipped once on the NHI site
 const rows = [...versTable.matchAll(/class="vnum">(v\d+\.\d+\.\d+)</g)].map(m => m[1]);
 for (const v of rows) if (rows.filter(x => x === v).length > 1) {
   errors.push(`admin/versions.html lists ${v} more than once`);
@@ -85,16 +84,22 @@ for (const f of htmlFiles) {
 }
 
 // --- 3. canonical host ----------------------------------------------------
+// A verbatim republication of docs.diniscruz.ai material points its canonical at
+// the ORIGINAL, per briefs/02 §3.4 — that page is exempt from the CNAME-host rule
+// and marked instead with data-canonical-is-source on the <html> tag.
 const HOST = fs.readFileSync(path.join(ROOT, 'CNAME'), 'utf8').trim();
 if (!/^[a-z0-9.-]+$/.test(HOST)) errors.push(`CNAME does not carry a hostname: "${HOST}"`);
 for (const f of htmlFiles) {
   const t = fs.readFileSync(f, 'utf8');
+  const exempt = /data-canonical-is-source/.test(t);
   const claimed = [
     ...[...t.matchAll(/<link[^>]+rel="canonical"[^>]+href="([^"]+)"/g)].map(m => m[1]),
     ...[...t.matchAll(/<meta[^>]+property="og:url"[^>]+content="([^"]+)"/g)].map(m => m[1]),
   ];
-  for (const url of claimed) if (!url.startsWith(`https://${HOST}/`)) {
-    errors.push(`${rel(f)}: canonical/og:url is not on ${HOST} -> ${url}`);
+  if (!exempt) {
+    for (const url of claimed) if (!url.startsWith(`https://${HOST}/`)) {
+      errors.push(`${rel(f)}: canonical/og:url is not on ${HOST} -> ${url}`);
+    }
   }
   if (!/rel="canonical"/.test(t)) errors.push(`${rel(f)}: no canonical link`);
 }
@@ -142,6 +147,42 @@ for (const f of htmlFiles) {
   }
 }
 
+// --- 8. the provenance contract --------------------------------------------
+// briefs/02 is the load-bearing file in this site's own brief pack: a page that
+// republishes or derives from previously published material must carry a visible
+// provenance block naming the original date and linking to the original.
+for (const f of htmlFiles) {
+  const t = fs.readFileSync(f, 'utf8');
+  for (const m of t.matchAll(/<div class="provenance"[^>]*>([\s\S]*?)<\/div>/g)) {
+    const block = m[1];
+    if (!/First published/.test(block)) {
+      errors.push(`${rel(f)}: a provenance block has no "First published" date`);
+    }
+    if (!/href="https?:\/\//.test(block)) {
+      errors.push(`${rel(f)}: a provenance block has no link to the original source`);
+    }
+  }
+}
+
+// --- 9. the redaction watch-list --------------------------------------------
+// briefs/06 §2 and briefs/08 Tier 3 rows. Literal strings that must never appear
+// anywhere in the published tree — a named VC, live B2B pricing, an infra account.
+const REDACTED = [
+  '33N Ventures', '33n-ventures',
+  '745506449035',
+  'investor.myfeeds.ai',
+  '£2k-50k', '£2k–50k', '£2,000-50,000',
+];
+for (const f of files) {
+  if (f.startsWith(path.join(ROOT, 'briefs'))) continue; // the pack itself documents the watch-list by naming these
+  if (f === path.join(ROOT, 'admin/build/validate.js')) continue; // this file necessarily names what it bans
+  if (/\.(png|jpg|jpeg|gif|webp|ico|woff2?|zip|svg|pdf)$/.test(f)) continue;
+  const t = fs.readFileSync(f, 'utf8');
+  for (const bad of REDACTED) if (t.includes(bad)) {
+    errors.push(`${rel(f)}: contains redacted material "${bad}" — see briefs/06__boundaries-and-house-style.md §2`);
+  }
+}
+
 // --- report ---------------------------------------------------------------
 if (errors.length) {
   console.error(`validate: ${errors.length} error(s)`);
@@ -149,5 +190,6 @@ if (errors.length) {
   process.exit(1);
 }
 console.log(`validate: OK — ${VERSION} on ${HOST}, ${htmlFiles.length} pages, ` +
-            `${hubs.length} hubs in llms.txt, sitemap agrees, links resolve, ` +
-            `blocks balanced, every page carries an agent block, no key-shaped strings`);
+            `${hubs.length} hubs in llms.txt, sitemap agrees, links resolve, blocks balanced, ` +
+            `every page carries an agent block, provenance blocks sourced, no redacted material, ` +
+            `no key-shaped strings`);

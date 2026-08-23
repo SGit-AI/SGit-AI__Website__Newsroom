@@ -22,75 +22,97 @@ VERSION = (ROOT / "admin/build/version.txt").read_text().strip()
 GH      = "https://github.com/SGit-AI/SGit-AI__Website__Newsroom"
 PARENT  = "https://sgit.ai"
 PARENT_TITLE = ("sgit.ai — the parent project: the vault layer and the shipped CLI. "
-                "This site reports on the network it is part of")
+                "This site is the future-of-news stack: provenance, corrections, "
+                "and paying the fact creator")
 
 # The nav, two levels. Each entry is (label, own page, [(sub-label, href), ...], (path prefixes)).
 #
-# Two rules the structure has to keep:
-#   · A group label is always a link to a real page, never a menu-only stub. Nothing on
-#     this site should be reachable only by opening a dropdown.
-#   · `prefixes` decides the "here" state, so a page that is not itself in the nav still
+#   · A group label is always a link to a real page, never a menu-only stub.
+#   · `prefixes` decides the "here" state, so a page not itself in the nav still
 #     lights up the group it belongs to.
 #
-# v0.1.0 ships the pipeline and the first three sections. The nav is short because the
-# site is: two stories, the roles this site inherits and applies, and the boundary
-# with the rest of the network. It grows a section at a time, in the open, on
-# admin/comms.html.
+# Five groups, following the site's own build order: the argument (thesis,
+# corrections, provenance) first, then the economics, then rights and operations,
+# then the record (library, shipped), then site mechanics.
 NAV = [
-    ("Stories", "stories/index.html", [
-        ("Stories: what the network shipped", "stories/index.html"),
-        ("The network, live — 22 Aug 2026", "stories/network-launch.html"),
-    ], ("stories/",)),
-    ("How this works", "roles/index.html", [
-        ("Librarian, Journalist, Historian", "roles/index.html"),
-        ("The network: sibling sites and boundaries", "network/index.html"),
-    ], ("roles/", "network/")),
-    ("Site", "admin/index.html", [
+    ("The argument", "thesis/index.html", [
+        ("The thesis: sell the graph", "thesis/index.html"),
+        ("Corrections must propagate", "corrections/index.html"),
+        ("The claim that would not die", "corrections/the-claim-that-would-not-die.html"),
+        ("Provenance is the product", "provenance/index.html"),
+        ("A worked story: &pound;8.40", "provenance/a-worked-story.html"),
+    ], ("thesis/", "corrections/", "provenance/")),
+    ("The economics", "economics/index.html", [
+        ("Paying the fact creator", "economics/index.html"),
+        ("The payment rails", "economics/rails.html"),
+        ("Trust as a service", "economics/trust-as-a-service.html"),
+        ("Micro and nano payments (2025)", "economics/micro-and-nano-payments.html"),
+    ], ("economics/",)),
+    ("Rights &amp; the newsroom", "rights/index.html", [
+        ("Content rights: CC-Signed", "rights/index.html"),
+        ("The newsroom: roles &amp; operations", "newsroom/index.html"),
+    ], ("rights/", "newsroom/")),
+    ("The record", "library/index.html", [
+        ("The library: 2025 &rarr; present", "library/index.html"),
+        ("What is shipped, what is argued", "shipped/index.html"),
+    ], ("library/", "shipped/")),
+    ("Site", "network/index.html", [
+        ("The network: sibling boundaries", "network/index.html"),
+        ("Documents &amp; sources", "documents/index.html"),
         ("Comms: tasks &amp; requests", "admin/comms.html"),
         ("Release history", "admin/versions.html"),
         ("Admin &amp; engineering", "admin/index.html"),
         ("Where we lose", "about/participant.html"),
-    ], ("admin/", "about/")),
+    ], ("network/", "documents/", "admin/", "about/")),
 ]
 
 FOOTER = [
-    ("Stories", [
-        ("&#8594; The network, live", "stories/network-launch.html"),
-        ("Stories hub", "stories/index.html"),
+    ("The argument", [
+        ("&#8594; The thesis: sell the graph", "thesis/index.html"),
+        ("Corrections must propagate", "corrections/index.html"),
+        ("The claim that would not die", "corrections/the-claim-that-would-not-die.html"),
+        ("Provenance is the product", "provenance/index.html"),
+        ("A worked story: &pound;8.40", "provenance/a-worked-story.html"),
     ]),
-    ("The roles", [
-        ("Librarian, Journalist, Historian", "roles/index.html"),
-        ("Where the vocabulary was defined", "https://issues-fs.sgit.ai/roles/index.html"),
+    ("The economics", [
+        ("Paying the fact creator", "economics/index.html"),
+        ("The payment rails", "economics/rails.html"),
+        ("Trust as a service", "economics/trust-as-a-service.html"),
+        ("Micro and nano payments (2025)", "economics/micro-and-nano-payments.html"),
     ]),
-    ("The network", [
-        ("Sibling sites and boundaries", "network/index.html"),
-        ("Comms: tasks &amp; requests", "admin/comms.html"),
-        ("Release history", "admin/versions.html"),
+    ("Rights, ops &amp; record", [
+        ("Content rights: CC-Signed", "rights/index.html"),
+        ("The newsroom: roles &amp; operations", "newsroom/index.html"),
+        ("The library: 2025 &rarr; present", "library/index.html"),
+        ("What is shipped, what is argued", "shipped/index.html"),
     ]),
     ("Site", [
-        ("Admin &amp; engineering", "admin/index.html"),
+        ("The network: sibling boundaries", "network/index.html"),
+        ("Documents &amp; sources", "documents/index.html"),
+        ("Comms: tasks &amp; requests", "admin/comms.html"),
+        ("Release history", "admin/versions.html"),
         ("Where we lose", "about/participant.html"),
         ("llms.txt", "llms.txt"),
     ]),
 ]
 
-BLURB = ("Dated, sourced reporting on the sgit.ai network, written by the Librarian, "
-         "Journalist and Historian roles defined at "
-         "<a href=\"https://issues-fs.sgit.ai/roles/index.html\" style=\"display:inline;padding:0\">"
-         "issues-fs.sgit.ai</a> and applied here to a different corpus: the estate's "
-         "own engineering activity. Part of the "
+BLURB = ("News is failing not because there is too little information but because "
+         "there is no walkable chain from a claim to its evidence, no way for a "
+         "correction to reach what it disproved, and no way to pay the person who "
+         "did the original work. Part of the "
          "<a href=\"https://sgit.ai\" style=\"display:inline;padding:0\"><b>sgit.ai</b></a> "
          "network. All content CC BY 4.0 unless a page states otherwise.")
-PARTNOTE = ('⚠ Participant disclosure: published by the sgit project, reporting on the sgit '
-            'project. <a href="{up}about/participant.html" style="display:inline;padding:0">'
+PARTNOTE = ('&#9888; Participant disclosure: published by the sgit project, which is '
+            'building the stack this site argues for. '
+            '<a href="{up}about/participant.html" style="display:inline;padding:0">'
             'Read the disclosure</a>.')
-PARTNOTE_SELF = '⚠ Participant disclosure: published by the sgit project. You are on the disclosure page.'
-NETLINE = ('<a href="https://sgit.ai"><b>↗ sgit.ai</b></a> — the parent project · '
-           '<a href="https://graphs.sgit.ai">↗ graphs.sgit.ai</a> — the philosophy, at length · '
-           '<a href="https://issues-fs.sgit.ai">↗ issues-fs.sgit.ai</a> — where the roles began · '
-           '<a href="https://pki.sgit.ai">↗ pki.sgit.ai</a> · '
-           '<a href="https://nhi.sgit.ai">↗ nhi.sgit.ai</a> · '
-           '<a href="https://sgit.ai/network/index.html">↗ the network</a>')
+PARTNOTE_SELF = '&#9888; Participant disclosure: published by the sgit project. You are on the disclosure page.'
+NETLINE = ('<a href="https://sgit.ai"><b>&#8593; sgit.ai</b></a> &middot; '
+           '<a href="https://graphs.sgit.ai">&#8593; graphs.sgit.ai</a> &middot; '
+           '<a href="https://pki.sgit.ai">&#8593; pki.sgit.ai</a> &middot; '
+           '<a href="https://nhi.sgit.ai">&#8593; nhi.sgit.ai</a> &middot; '
+           '<a href="https://sg-sentinel.sgit.ai">&#8593; sg-sentinel.sgit.ai</a> &middot; '
+           '<a href="https://docs.diniscruz.ai">&#8593; docs.diniscruz.ai</a> &mdash; the prior art')
 
 
 def nav_html(rel, up):
@@ -98,7 +120,7 @@ def nav_html(rel, up):
     for label, own, subs, prefixes in NAV:
         active = rel == own or any(rel.startswith(pre) for pre in prefixes)
         links = "\n".join(
-            f'      <a class="sl{" here" if href == rel else ""}" href="{href if href.startswith("http") else up + href}">{text}</a>'
+            f'      <a class="sl{" here" if href == rel else ""}" href="{up}{href}">{text}</a>'
             for text, href in subs)
         groups.append(
             f'    <div class="ni ni-has">\n'
@@ -109,19 +131,19 @@ def nav_html(rel, up):
     rows = "\n".join(groups)
     return (f'<nav class="site"><div class="row">\n'
             f'  <a class="brand" href="{up}index.html">newsroom<span>.sgit.ai</span></a>\n'
-            f'  <a class="parent" href="{PARENT}" title="{PARENT_TITLE}">↗ part of <b>sgit.ai</b></a>\n'
-            f'  <span class="stage-pill">reference draft</span>\n'
+            f'  <a class="parent" href="{PARENT}" title="{PARENT_TITLE}">&#8593; part of <b>sgit.ai</b></a>\n'
+            f'  <span class="stage-pill">design, not deployed</span>\n'
             f'  <a class="ver" href="{up}admin/versions.html" title="Site release history">{VERSION}</a>\n'
             f'  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>\n'
             f'  <div class="nav-items">\n{rows}\n  </div>\n'
-            f'  <a class="gh" href="{GH}">★ GitHub</a>\n'
+            f'  <a class="gh" href="{GH}">&#9733; GitHub</a>\n'
             f'  <script src="{up}assets/nav.js" defer></script>\n'
             f'</div></nav>')
 
 
 def footer_html(rel, up):
     partnote = PARTNOTE_SELF if rel == "about/participant.html" else PARTNOTE.format(up=up)
-    md_twin  = f' · <a href="{up}index.md">this page as markdown</a>' if rel == "index.html" else ""
+    md_twin  = f' &middot; <a href="{up}index.md">this page as markdown</a>' if rel == "index.html" else ""
     cols = "\n".join(
         "  <div>\n"
         f"    <h4>{head}</h4>\n"
@@ -134,7 +156,7 @@ def footer_html(rel, up):
             f'    <p>{BLURB}</p>\n'
             f'    <p class="netline">{NETLINE}</p>\n'
             f'    <p class="partnote">{partnote}</p>\n'
-            f'    <p class="verline">site <a href="{up}admin/versions.html">{VERSION}</a> · '
+            f'    <p class="verline">site <a href="{up}admin/versions.html">{VERSION}</a> &middot; '
             f'<a href="{up}admin/index.html">engineering</a>{md_twin}</p>\n'
             f'  </div>\n{cols}\n</div></footer>')
 
@@ -153,7 +175,7 @@ def stamp_text_twins():
     md = ROOT / "index.md"
     if md.exists():
         t = md.read_text()
-        t2, n = re.subn(r"· site v\d+\.\d+\.\d+ ·", f"· site {VERSION} ·", t, count=1)
+        t2, n = re.subn(r"&middot; site v\d+\.\d+\.\d+ &middot;", f"&middot; site {VERSION} &middot;", t, count=1)
         if n and t2 != t:
             md.write_text(t2)
             out.append("index.md")

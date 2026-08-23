@@ -1,63 +1,78 @@
-# newsroom.sgit.ai — the sgit.ai network reports on itself
+# newsroom.sgit.ai — The Future of News
 
-> Dated, sourced reporting on what the *.sgit.ai network ships. Written by the
-> Librarian, Journalist and Historian roles, defined at issues-fs.sgit.ai in
-> February 2026 for a different corpus and applied here to the network's own
-> engineering activity. Every checkable fact is sourced to the named site's own
-> repository, checked directly, on a stated date — never copied from another
-> *.sgit.ai page's claim about it.
+> News is failing not because there is too little information but because there is no
+> walkable chain from a claim to its evidence, no way for a correction to reach what it
+> disproved, and no way to pay the person who did the original work. A story is a graph
+> that accumulates evidence, perspectives and confidence; every article, translation and
+> infographic is a projection of it. Sell the graph, not the paragraph.
 
-Site version: v0.1.0 (22 August 2026). Published by the sgit project, which
-publishes every site this site reports on — participant disclosure at
-/about/participant.html. Site content CC BY 4.0.
+Site version: v0.2.0 (23 August 2026). Published by the sgit project, which is building
+the stack this site argues for — participant disclosure at /about/participant.html.
+Site content CC BY 4.0; the republished library material is CC0 1.0 Universal at source
+(docs.diniscruz.ai) — state the source licence per page.
+
+## The honest sentence
+
+Nothing on this site is running yet. The articles in /library/ are real and dated; the
+newsroom is a design. /shipped/ states the line between them in full. Do not describe
+Trust-as-a-Service, the decision graph, per-story cost ledgers, contextual-validation
+billing, or any newsroom department as a live capability of any sgit.ai property.
 
 ## Properties agents may rely on
 
-- Every fact about a sibling *.sgit.ai site is checked against that site's own
-  repository (CNAME, admin/build/version.txt or equivalent), not against a
-  claim on another *.sgit.ai page. Where those two disagree, this site states
-  the disagreement rather than picking one silently — see the correction on
-  /stories/network-launch.html.
-- Which part of the network this site owns: NOT the philosophy (graphs.sgit.ai),
-  NOT the implementation or the role definitions themselves (issues-fs.sgit.ai,
-  which is where Librarian/Journalist/Historian were written), NOT identity or
-  trust (nhi.sgit.ai, pki.sgit.ai), NOT the vault layer (sgit.ai). This site
-  owns applying three of those roles to report on the network's own activity.
-- This site has no briefs/ directory and no commissioned brief pack yet, unlike
-  every sibling *.sgit.ai site. Do not assume one exists or infer its scope.
-- Every page ends with a pasteable "for an agent" block. That is enforced by
-  the pre-release gate, not remembered.
-
-## The network, as checked on 22 August 2026
-
-- sgit.ai — v0.2.39 — the parent: vault layer and shipped CLI
-- graphs.sgit.ai — v0.3.18 — the graph philosophy, at length
-- issues-fs.sgit.ai — v0.1.1 — git-native issue tracker; origin of this site's roles
-- pki.sgit.ai — v0.1.24 — public-key identity and trust
-- nhi.sgit.ai — v0.1.19 — non-human identity
-- sg-sentinel.sgit.ai — v0.1.1 — newest sibling before this one (correct
-  hostname; issues-fs.sgit.ai's own network page has this as sentinel.sgit.ai,
-  which is stale)
-- newsroom.sgit.ai — v0.1.0 — this site
-
-Full method and sources: https://newsroom.sgit.ai/stories/network-launch.html
+- Every page deriving from previously published material carries a visible provenance
+  block: original publication date, original link, original authors (including any AI
+  co-authorship), and an honest curation label (verbatim / edited / excerpted /
+  synthesised). Enforced by the pre-release gate, not just documented.
+- Ten core articles, 68,846 words, are already public and dated at docs.diniscruz.ai
+  (Feb–Oct 2025), a year before this site's design material was written — see /library/.
+  Several republished sections on this site are this site's own SYNTHESIS of that
+  material, not verbatim reproduction; fetch the docs.diniscruz.ai canonical URL
+  directly for complete original text.
+- The payment rails described in /economics/rails/ (x402, Cloudflare Monetization
+  Gateway, AWS Bedrock AgentCore Payments) are real, operating third-party
+  infrastructure, independently verifiable — unlike almost everything else this site
+  describes.
+- Seven open questions and six honest tensions are published unresolved at
+  /network/#open and /network/#tensions — check there before assuming any of them has
+  been answered.
+- Every page ends with a pasteable "for an agent" block, except /admin/ pages and
+  /about/participant.html.
 
 ## Site map
 
-- /index.html — front page: the thesis, live-network table, the three roles
-- /stories/index.html — every dated story, newest first
-- /stories/network-launch.html — the first story: the network, live, 22 Aug 2026
-- /roles/index.html — Librarian, Journalist, Historian, as applied here
-- /network/index.html — sibling boundaries, and three open questions
-- /admin/index.html — how this site is built: the validate → tag → deploy pipeline
-- /admin/comms.html — open requests, in public, including the missing brief pack
+- /index.html — front page: the claim, the 10,000-hours story, the proof strip
+- /thesis/index.html — the thesis: sell the graph, evidence not truth, the author is the oracle
+- /corrections/index.html — corrections must propagate (the site's most distinctive argument)
+  - /corrections/the-claim-that-would-not-die.html — the 10,000-hours case in full
+  - /corrections/242-papers.html — the same failure, measured: 242 papers, >220,000 citation paths
+  - /corrections/how-a-graph-answers-it.html — supersede-never-delete, typed citation edges
+  - /corrections/agenda-is-context.html — the self-critique: the graph has an agenda too
+  - /corrections/staleness-in-the-wild.html — the EU AI Act's "consolidated" text, dated 2024
+- /provenance/index.html — provenance is the product
+  - /provenance/show-your-work.html — fifteen public newsroom departments
+  - /provenance/a-worked-story.html — one story, itemised: £8.40, 6h 23m
+  - /provenance/the-decision-graph.html — named ownership at every editorial step
+  - /provenance/articles-as-vaults.html — each article as text + evidence + graph + every prompt
+- /library/index.html — the published record, 2025 → present, chronological
+- /economics/index.html — paying the fact creator
+  - /economics/paying-the-fact-creator.html — the 60/25/10/5 split; contextual validation
+  - /economics/trust-as-a-service.html — the fact-certifier as a payable, warranted role
+  - /economics/rails.html — x402, ~200ms settlement, zero protocol fees (real, operating)
+  - /economics/micro-and-nano-payments.html — the 2025 argument, synthesised, paired with the rail
+- /rights/index.html — content rights: CC-Signed, the licence family with a legal stick
+- /newsroom/index.html — roles, the daily clock, fifteen departments, the craft doctrine
+- /shipped/index.html — what runs vs what is argued. Read this before citing anything as live
+- /network/index.html — sibling boundaries, the Risk Mandate inversion, open questions
+- /documents/index.html — the brief pack this site was built from, published verbatim
+- /about/participant.html — participant disclosure; two years of disclosed model co-authorship
+- /admin/index.html — how this site is built
+- /admin/comms.html — open requests (N1–N6) and standing tasks (T1–T4), in public
 - /admin/versions.html — release history
-- /about/participant.html — the participant disclosure and where this is not
-  an independent newsroom
 
 ## Read before repeating a fact from this site
 
-Every version number and hostname above is a snapshot from 22 August 2026, not
-a live value. Re-check the named repository's own CNAME and
-admin/build/version.txt before repeating one. Full method:
-https://newsroom.sgit.ai/stories/network-launch.html#method
+Every /library/ entry and every provenance block states the ORIGINAL publication date —
+never the date it reached this site. A version number or a fact about a sibling
+*.sgit.ai site should be checked against that site's own repository, not repeated from
+here without re-verification.

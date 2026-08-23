@@ -1,44 +1,62 @@
-# newsroom.sgit.ai — the sgit.ai network reports on itself
+# newsroom.sgit.ai — The Future of News
 
-Dated, sourced reporting on what the `*.sgit.ai` network ships. Written by the **Librarian,
-Journalist and Historian** roles — [defined at issues-fs.sgit.ai](https://issues-fs.sgit.ai/roles/index.html)
-in February 2026 for a different corpus, applied here for the first time to the estate's own
-engineering activity. Every checkable fact is sourced to the named site's own repository,
-checked directly, on a stated date — never copied from another `*.sgit.ai` page's claim about
-it.
+News is failing not because there is too little information but because there is no
+walkable chain from a claim to its evidence, no way for a correction to reach what it
+disproved, and no way to pay the person who did the original work. A story is a graph
+that accumulates evidence, perspectives and confidence; every article, translation and
+infographic is a **projection** of it. **Sell the graph, not the paragraph.**
 
 Live site: https://newsroom.sgit.ai (GitHub Pages, deployed from `dev`).
 
 ## Structure
 
-- `index.html` — front page: the thesis, the live-network table, the three roles
-- `index.md` — the markdown twin of the front page
-- `stories/` — every dated story, newest first; `network-launch.html` is the first: the network,
-  live, checked against six sibling repositories on 22 August 2026, with one stale hostname
-  found and corrected along the way
-- `roles/` — Librarian, Journalist, Historian, as applied to this site's own remit
-- `network/` — the sibling boundary table, and three open questions
+- `index.html` — front page: the claim, the 10,000-hours story, the proof strip
+- `thesis/` — the thesis: sell the graph, evidence not truth, the author is the oracle
+- `corrections/` — **corrections must propagate**, the site's most distinctive argument:
+  the 10,000-hours case, the 242-paper citation network, how a graph answers it, the
+  self-critique on agenda ("the graph has an agenda too"), and a live staleness example
+- `provenance/` — provenance is the product: fifteen departments, the £8.40 worked
+  story, the decision graph, articles as vaults
+- `library/` — the published record, chronological, 2025 → present: ten core articles
+  and three adjacent pieces, 68,846 words, every entry carrying a provenance block
+- `economics/` — paying the fact creator: the 60/25/10/5 split, Trust-as-a-Service, the
+  x402 payment rail, and the 2025 micropayments argument republished and paired with it
+- `rights/` — content rights: CC-Signed, a licence family with an enforceable stick
+- `newsroom/` — operations: roles, the daily clock, departments, the craft doctrine
+- `shipped/` — what runs vs what is argued. Non-negotiable
+- `network/` — sibling boundaries, the Risk Mandate inversion, open questions
+- `documents/` — the brief pack this site was built from, published verbatim in `briefs/`
+- `about/participant.html` — participant disclosure; two years of disclosed model
+  co-authorship, stated as an asset rather than an awkwardness
 - `admin/` — engineering: comms (open requests, in public), versions, build tooling
   - `admin/build/chrome.py` — the single definition of nav and footer, applied across every page
-  - `admin/build/validate.js` — the pre-release gate
-- `about/participant.html` — the participant disclosure: this site is published by the same
-  project as everything it reports on, and states plainly where that means it is not an
-  independent newsroom
-- `assets/site.css` + `assets/nav.js` — the shared `sgit.ai` design language, carried over
-  unchanged from `issues-fs.sgit.ai`
+  - `admin/build/validate.js` — the pre-release gate, including the provenance-contract
+    and redaction-watch-list checks specific to this site
+- `assets/site.css` + `assets/nav.js` — the shared `sgit.ai` design language
+
+## The provenance contract
+
+Every page that republishes or derives from previously published material carries a
+visible block: the **original** publication date (never the republication date), a link
+to the original, the original authors including any AI co-authorship, and an honest
+curation label (verbatim / edited / excerpted / synthesised). Full contract in
+[`briefs/02__source-provenance-and-attribution.md`](briefs/02__source-provenance-and-attribution.md) —
+the load-bearing file in this site's own brief pack. This site's central argument is
+that most articles do not provide evidence and the link is never followed; losing its
+own provenance chain would refute the site on page one.
 
 ## Release process
 
 1. Bump `admin/build/version.txt` (vX.Y.Z, exactly once per release) and add a row to
    `admin/versions.html`; update `admin/comms.html`.
-2. `python3 admin/build/chrome.py` — propagates the version badge and any nav/footer change to
-   every page, and stamps the version into `llms.txt` and `index.md`.
+2. `python3 admin/build/chrome.py` — propagates the version badge and any nav/footer
+   change to every page, and stamps the version into `llms.txt` and `index.md`.
 3. `node admin/build/validate.js`
 4. `git commit -am "site vX.Y.Z: ..." && git push origin dev`
 
-Every push to `dev` runs `.github/workflows/deploy-pages.yml`: validate → auto-tag (`vX.Y.Z`,
-verified against `version.txt` and the commit subject, next-minor enforced) → deploy to GitHub
-Pages. Pull requests run validation only. Same pipeline as
+Every push to `dev` runs `.github/workflows/deploy-pages.yml`: validate → auto-tag
+(`vX.Y.Z`, verified against `version.txt` and the commit subject, next-minor enforced) →
+deploy to GitHub Pages. Pull requests run validation only. Same pipeline as
 [SGit-AI__Website](https://github.com/SGit-AI/SGit-AI__Website),
 [SGit-AI__Website__PKI](https://github.com/SGit-AI/SGit-AI__Website__PKI),
 [SGit-AI__Website__Graphs](https://github.com/SGit-AI/SGit-AI__Website__Graphs) and
@@ -46,24 +64,24 @@ Pages. Pull requests run validation only. Same pipeline as
 
 ### What the gate checks
 
-Structure and version agreement, that every internal link resolves, that every page declares a
-canonical on the host in `CNAME`, that every section hub is named in `llms.txt` and that the
-sitemap and the tree agree both ways, that `<div>`s balance, that no vault-key-shaped string is
-in the tree, and — inherited from issues-fs.sgit.ai — that every page carries a "for an agent"
-block.
+The shared core (version agreement, links, canonical, agent surface, key-leak, block
+balance, agent block) plus two checks specific to this site: **the provenance
+contract** — every `class="provenance"` block must state a first-published date and a
+working source link — and **the redaction watch-list** — a fixed set of Tier 3 strings
+from the brief pack's own source manifest may never appear in the published tree.
 
-## v0.1.0 — what shipped, and what did not
+## v0.2.0 — what shipped, and what is honestly still open
 
-This is the first release. **Unlike every sibling `*.sgit.ai` site, it was not built from a
-commissioned brief pack** — no such document set exists for this site yet (open request N1 on
-`admin/comms.html`). Rather than invent scope, v0.1.0 ships the pipeline — carried in unchanged
-from issues-fs.sgit.ai, the same order that site's own v0.1.0 shipped in — plus the smallest
-real content that could be built on checked facts alone: one story reporting the state of the
-network on 22 August 2026, the three roles that do the checking, and the boundary with every
-sibling site. Full detail on `admin/versions.html`.
+v0.1.0 shipped before a brief pack existed for this site and built on a wrong premise
+(the site reporting on the `*.sgit.ai` network's own activity). v0.2.0 replaces that
+content in full against the real, commissioned brief — *newsroom.sgit.ai, The Future of
+News* — and follows its build order for the first five steps. Three sections
+(`rights/`, `newsroom/`, `thesis/`) ship as single comprehensive hub pages rather than
+the full multi-page trees the brief specifies, tracked as open task T1 on
+`admin/comms.html`. Full detail on `admin/versions.html`.
 
 ## Licence
 
-Two licences — see [`LICENSES.md`](LICENSES.md). Code Apache 2.0; site content CC BY 4.0.
-Facts this site reports about a sibling site are cited to that site's own repository, not
-reproduced wholesale.
+Two licences — see [`LICENSES.md`](LICENSES.md). Code Apache 2.0; this site's own
+content CC BY 4.0. Republished library material is CC0 1.0 Universal at source
+(`docs.diniscruz.ai`) — stated per page, never silently relicensed.

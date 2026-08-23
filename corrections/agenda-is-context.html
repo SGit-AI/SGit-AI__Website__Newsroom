@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Admin &amp; engineering — how this site is built &middot; newsroom.sgit.ai</title>
-<meta name="description" content="Hand-written static HTML, one generated chrome definition, and a pre-release gate that fails the build on a broken link, a missing provenance date, or redacted material.">
-<link rel="canonical" href="https://newsroom.sgit.ai/admin/index.html">
+<title>Agenda is context &middot; newsroom.sgit.ai</title>
+<meta name="description" content="Disclosing an agenda is not dismissing a claim. Every person has an agenda; the question is not whether one exists but whether it is disclosed. And the self-critique this site publishes rather than buries: the graph has an agenda too.">
+<link rel="canonical" href="https://newsroom.sgit.ai/corrections/agenda-is-context.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="newsroom.sgit.ai">
-<meta property="og:url" content="https://newsroom.sgit.ai/admin/index.html">
-<meta property="og:title" content="How this site is built — validate, tag, deploy">
-<meta property="og:description" content="Every push to dev is a release. The gate runs first; a failure means no tag and no publish.">
+<meta property="og:url" content="https://newsroom.sgit.ai/corrections/agenda-is-context.html">
+<meta property="og:title" content="Agenda is context">
+<meta property="og:description" content="The same tool that helps a reader discount a vendor's study helps them discount a regulator's finding. The graph has an agenda too.">
 <meta name="twitter:card" content="summary">
 <link rel="stylesheet" href="../assets/site.css">
 </head>
@@ -24,7 +24,7 @@
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
-      <a class="nl" href="../thesis/index.html">The argument<span class="caret">&#9662;</span></a>
+      <a class="nl here" href="../thesis/index.html">The argument<span class="caret">&#9662;</span></a>
       <div class="sub">
       <a class="sl" href="../thesis/index.html">The thesis: sell the graph</a>
       <a class="sl" href="../corrections/index.html">Corrections must propagate</a>
@@ -57,13 +57,13 @@
       </div>
     </div>
     <div class="ni ni-has">
-      <a class="nl here" href="../network/index.html">Site<span class="caret">&#9662;</span></a>
+      <a class="nl" href="../network/index.html">Site<span class="caret">&#9662;</span></a>
       <div class="sub">
       <a class="sl" href="../network/index.html">The network: sibling boundaries</a>
       <a class="sl" href="../documents/index.html">Documents &amp; sources</a>
       <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
       <a class="sl" href="../admin/versions.html">Release history</a>
-      <a class="sl here" href="../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
       <a class="sl" href="../about/participant.html">Where we lose</a>
       </div>
     </div>
@@ -73,72 +73,28 @@
 </div></nav>
 
 <main class="doc">
-<div class="crumb"><a href="../index.html">newsroom.sgit.ai</a> / admin</div>
-<h1>How this site is built</h1>
-<p class="lead">Hand-written static HTML, one generated chrome definition, and a pre-release gate that has to pass before anything is tagged or published. Same pipeline as every other <code>*.sgit.ai</code> site: <b>validate &rarr; tag &rarr; deploy.</b></p>
+<div class="crumb"><a href="../index.html">newsroom.sgit.ai</a> / corrections / agenda-is-context</div>
+<h1>Agenda is context</h1>
+<p class="lead"><em>"This is not necessarily conspiracy theories, it's just that every person has an agenda, every entity has core objectives &mdash; whether it's to sell more or provide certain things &mdash; the bias is always there."</em> Disclosing an agenda is not dismissing a claim. It is context a reader is entitled to before deciding how much weight to give it.</p>
 
-<h2 id="pipeline">The pipeline</h2>
-<div class="ladder">
-  <div class="cap"><span class="capnum">1</span>
-    <h3>validate</h3>
-    <p><code>node admin/build/validate.js</code>. Structure, links, version agreement, canonical/CNAME agreement, the agent surface, block balance, the agent-block rule, <b>the provenance contract</b>, and <b>the redaction watch-list</b>. A failure stops the release: no tag, no publish.</p>
-  </div>
-  <div class="cap"><span class="capnum">2</span>
-    <h3>tag-release</h3>
-    <p>Every push to <code>dev</code> is a release and ends tagged <code>v{release}.{major}.{minor}</code>. The version is owned by <code>admin/build/version.txt</code> and must agree with the release commit's subject.</p>
-  </div>
-  <div class="cap"><span class="capnum">3</span>
-    <h3>deploy</h3>
-    <p>Publishes the tagged commit to GitHub Pages. Never runs when validation failed, never from a pull request.</p>
-  </div>
+<h2 id="disclosure-not-dismissal">Disclosure, not dismissal</h2>
+<p>A study funded by the company whose product it evaluates is not automatically wrong. A regulator's finding about the industry it regulates is not automatically right. In both cases, the funding relationship, the reporting relationship, and the stated objective of the entity behind the claim are facts a reader can weigh &mdash; if they are visible. Today they usually are not: <em>"most articles do not provide evidence, they provide a link, the link is never followed."</em> Attaching agenda as a disclosed, structured field to every claim is not an accusation; it is the same discipline a graph applies to every other fact.</p>
+
+<h2 id="self-critique">The self-critique this site chooses to publish</h2>
+<div class="note"><p style="margin-top:0"><b>The hazard is what a reader, or a downstream system, does with it.</b> The same tool that helps a reader discount a vendor's study of its own product helps them discount a regulator's finding about their own industry. <b>The graph has an agenda too.</b></p></div>
+<p>This is not a footnote added for balance. It is the argument's own weak point, stated plainly rather than left for a critic to find. Agenda-tagging is a tool for weighing evidence, not a tool for winning an argument by pointing at a funding source and stopping there &mdash; and nothing about the mechanism prevents it from being used the second way. A site that names the way its own tool can be abused is making the argument the rest of the site depends on: if this page were missing, everything else here would be easier to distrust, correctly.</p>
+
+<h2 id="open-question">An open question, published unresolved</h2>
+<p><b>Does agenda-tagging survive contact with a motivated reader?</b> The corpus asks this of itself and does not resolve it. A reader determined to dismiss an inconvenient finding already has the disclosed agenda as ready-made ammunition; a reader determined to accept a convenient one can ignore the same disclosure just as easily. Whether structured agenda disclosure changes behaviour on average, or simply gives every reader a new tool to use exactly as motivated as before, is not answered anywhere in this material. See <a href="../network/index.html#open">the site's open questions</a>.</p>
+
+<div class="agent">
+  <h4>For an agent</h4>
+  <p>If you use agenda or funding-source metadata to weigh a claim, apply the same standard to every source in the comparison, including this site's own. Do not use disclosed agenda as grounds to dismiss a claim outright &mdash; it is one input to weighing evidence, and the corpus explicitly states that the same tool can be used to discount a true and inconvenient finding as easily as a false and convenient one.</p>
 </div>
 
-<h2 id="gate">What the gate checks</h2>
-<div class="tablewrap"><table>
-  <thead><tr><th>#</th><th>Check</th><th>Why it is here, specifically for this site</th></tr></thead>
-  <tbody>
-    <tr><td>1&ndash;7</td><td>Version agreement, links, canonical, agent surface, key-leak, block balance, agent block</td><td>The shared core, inherited from every sibling site</td></tr>
-    <tr><td>8</td><td><b>The provenance contract</b> &mdash; every block marked <code>class="provenance"</code> must state a first-published date and link to the original</td><td>This site's central argument is that most articles do not provide evidence and the link is never followed. A page here that failed its own contract would have refuted the site on page one</td></tr>
-    <tr><td>9</td><td><b>The redaction watch-list</b> &mdash; a fixed list of Tier 3 strings (a named VC, an infra account number, live product pricing) may never appear anywhere in the published tree</td><td>The source material contains real commercial and safety-sensitive detail. The gate makes the exclusion structural rather than a habit somebody could forget</td></tr>
-  </tbody>
-</table></div>
-
-<h2 id="chrome">The chrome</h2>
-<p>Every page is hand-written static HTML. The nav row and footer columns are defined once in <code>admin/build/chrome.py</code> and rewritten in place across the tree on every run.</p>
-<pre class="term"><code>python3 admin/build/chrome.py      # rewrites nav + footer everywhere, stamps the version
-node    admin/build/validate.js    # the gate</code></pre>
-
-<h2 id="release">Making a release</h2>
-<pre class="term"><code>1. bump admin/build/version.txt (vX.Y.Z, exactly once)
-   add a row to admin/versions.html
-   update admin/comms.html
-
-2. python3 admin/build/chrome.py
-
-3. node admin/build/validate.js
-
-4. git commit -am "site vX.Y.Z: ..." && git push origin dev</code></pre>
-
-<h2 id="tree">The repository</h2>
-<pre class="tree"><code>.github/workflows/deploy-pages.yml   <i>validate → tag → deploy</i>
-admin/build/validate.js              <i>the gate</i>
-admin/build/chrome.py                <i>the single definition of nav and footer</i>
-admin/build/version.txt              <i>the version, owned here</i>
-admin/comms.html                     <i>tasks and requests, in public</i>
-admin/versions.html                  <i>release history</i>
-assets/site.css  assets/nav.js       <i>the sgit.ai design language</i>
-thesis/  corrections/  provenance/  economics/  rights/  newsroom/  library/
-shipped/  network/  documents/  about/
-briefs/                              <i>the source pack, verbatim, CC BY 4.0</i>
-CNAME  robots.txt  sitemap.xml  llms.txt  index.md
-LICENSE  LICENSES.md                 <i>code Apache 2.0, content CC BY 4.0</i></code></pre>
-
-<h2 id="scope-note">v0.2.0's scope decision, stated rather than hidden</h2>
-<p>The site architecture in <code>briefs/05</code> specifies several sections &mdash; rights, the newsroom, the thesis &mdash; as multi-page trees. v0.2.0 ships each of those as one comprehensive hub page rather than the full subpage tree, to get the whole architecture live and gated in one release instead of shipping half of it. That is a real de-scoping, tracked as open work on <a href="comms.html">comms</a>, not a silent shortcut.</p>
-
 <div class="pagenav">
-  <a href="../documents/index.html">&larr; Documents &amp; sources</a>
-  <a href="comms.html">Comms: tasks &amp; requests &rarr;</a>
+  <a href="how-a-graph-answers-it.html">&larr; How a graph answers it</a>
+  <a href="staleness-in-the-wild.html">Staleness in the wild &rarr;</a>
 </div>
 </main>
 

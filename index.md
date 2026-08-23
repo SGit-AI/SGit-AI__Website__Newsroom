@@ -1,56 +1,61 @@
-# newsroom.sgit.ai — the sgit.ai network reports on itself
+# newsroom.sgit.ai — The Future of News
 
-> Six sites now carry the `*.sgit.ai` name. Nobody was writing down what each one actually
-> ships, at what version, checked against its own repository rather than copied from a
-> sibling's footer. That is this site's job — written by the **Librarian, Journalist and
-> Historian**, three roles [defined at issues-fs.sgit.ai](https://issues-fs.sgit.ai/roles/index.html)
-> in February 2026 for a different purpose, applied here for the first time to the estate's
-> own engineering activity as the corpus.
+> News is failing not because there is too little information but because there is no
+> **walkable chain from a claim to its evidence**, no way for a correction to reach what
+> it disproved, and no way to pay the person who did the original work. A story is a
+> graph that accumulates evidence, perspectives and confidence; every article is a
+> **projection** of it. **Sell the graph, not the paragraph.**
 
-*Source: <https://newsroom.sgit.ai/index.html> · site v0.1.0 · markdown twin of the front page.*
+*Source: <https://newsroom.sgit.ai/index.html> · site v0.2.0 · markdown twin of the front page.*
 
 ---
 
-## Live in the network today
+## What is broken today
 
-Checked directly on 22 August 2026 — each site's own `CNAME` and `admin/build/version.txt`
-(or, for sgit.ai, `build_pages.py`'s `SITE_VERSION`), not a claim repeated from another site's
-page.
+Most articles do not provide evidence, they provide a link. The link is never followed,
+and it could go to a site that no longer exists.
 
-| Site | Version | What it is |
-|---|---|---|
-| [sgit.ai](https://sgit.ai) | **v0.2.39** | The parent: the vault layer and the shipped CLI |
-| [graphs.sgit.ai](https://graphs.sgit.ai) | **v0.3.18** | The graph philosophy at length, and as a book |
-| [issues-fs.sgit.ai](https://issues-fs.sgit.ai) | **v0.1.1** | Git-native issue tracker; origin of this site's roles |
-| [pki.sgit.ai](https://pki.sgit.ai) | **v0.1.24** | Public-key identity and trust |
-| [nhi.sgit.ai](https://nhi.sgit.ai) | **v0.1.19** | Non-human identity |
-| [sg-sentinel.sgit.ai](https://sg-sentinel.sgit.ai) | **v0.1.1** | Newest sibling before this one |
-| **newsroom.sgit.ai** | **v0.1.0** | This site. First release |
+**The 10,000-hours case.** A 1993 study of violin students found the top group had
+practised an *average* of ~10,000 hours by age 20 — roughly half the group had not
+reached it. Popularised in 2008 as a threshold. The original researcher spent his career
+correcting it. **None of it ever attached to the claim.** [The full story
+→](https://newsroom.sgit.ai/corrections/the-claim-that-would-not-die.html)
 
-One correction shipped with this: a sibling's own network page names a site `sentinel.sgit.ai`;
-its repository's actual `CNAME` reads `sg-sentinel.sgit.ai`. [Full story, with the method
-used](https://newsroom.sgit.ai/stories/network-launch.html).
+## The turn
 
-## Three roles, one corpus
+**In a document, a correction is a new document. Nothing that cited the original knows.**
+In a graph, a correction is an edge. This is the inverse of how misinformation works
+today: a false claim propagates virally and the correction barely travels. In this model,
+**the correction propagates with the same force as the original claim.**
 
-- **Librarian** — finds the primary source for a claim and cites it, rather than repeating a
-  sibling site's claim about itself.
-- **Journalist** — writes the dated story: what shipped, what changed, what it means.
-- **Historian** — keeps the record after the story ages, for later readers and agents.
+## Numbers this argument stands on
 
-[The full page](https://newsroom.sgit.ai/roles/index.html).
+| | |
+|---|---|
+| **242 papers** | citing one biomedical belief, tracing back to nothing |
+| **>220,000** | supporting citation paths behind that same belief |
+| **£8.40** | fully-itemised production cost of one worked story, 6h 23m |
+| **~200ms** | settlement time on the x402 payment rail, zero protocol fees |
+| **10 articles** | 68,846 words, publicly dated since February 2025 |
+| **59p** | usable credit from a £1 card top-up — the wall micropayments removes |
 
-## The boundary, stated plainly
+## This does not launch as a manifesto
 
-[issues-fs.sgit.ai](https://issues-fs.sgit.ai) owns the role definitions and is where
-Librarian, Journalist and Historian were written. This site owns applying them to the
-network's own activity — dated stories, checked facts, a running record. [The full boundary
-map, with every sibling](https://newsroom.sgit.ai/network/index.html).
+Ten core articles — 68,846 words — were published on
+[docs.diniscruz.ai](https://docs.diniscruz.ai) between February and October 2025, a year
+before the design material behind the rest of this site was written. [The full
+chronology →](https://newsroom.sgit.ai/library/index.html)
+
+**The honest sentence:** Nothing on this site is running yet. The articles in the library
+are real and dated. The newsroom — the roles, the provenance pages, the payment rails,
+Trust-as-a-Service — is a design. [The line between them
+→](https://newsroom.sgit.ai/shipped/index.html)
 
 ## For an agent
 
-Every version number above was read directly from the named site's own repository on 22
-August 2026 — treat it as a snapshot, not a live value. This site is published by the sgit
-project and reports on the sgit project: read the [participant
-disclosure](https://newsroom.sgit.ai/about/participant.html) before treating any page here as
-neutral. [llms.txt](https://newsroom.sgit.ai/llms.txt) is the whole agent surface.
+This site argues that a story is a graph and an article is one projection of it. Nothing
+here runs today — read [/shipped/](https://newsroom.sgit.ai/shipped/index.html) before
+citing anything as a live capability. Published by the sgit project, which is building
+the stack it argues for: read the [participant
+disclosure](https://newsroom.sgit.ai/about/participant.html) before treating any page
+here as neutral. [llms.txt](https://newsroom.sgit.ai/llms.txt) is the whole agent surface.
