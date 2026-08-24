@@ -121,7 +121,12 @@ header.hero .sub{color:var(--dim);font-size:1.05rem;max-width:680px;margin:0 aut
 .cta2{color:var(--accent-dk);font-size:.9rem;font-weight:600}
 
 /* ---------- sections ---------- */
-section.band{padding:3rem 0;scroll-margin-top:64px}
+/* The band carries a horizontal gutter so that NOTHING inside one can touch the viewport
+   edge, whatever column rule it does or does not have. Without it .blurb — whose 660
+   column stops constraining anything once the viewport is narrower than 660 — put its
+   text 2px from the edge on a phone. Wide screens are unaffected: every centred child is
+   still centred, just inside a 2.2rem-narrower content box. */
+section.band{padding:3rem 1.1rem;scroll-margin-top:64px}
 section.band.alt{background:var(--panel2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 section.band h2{font-family:var(--serif);font-size:1.9rem;color:#101114;text-align:center;margin:0 0 .6rem}
 section.band .blurb{color:var(--dim);text-align:center;max-width:660px;margin:0 auto 1.8rem;font-size:.95rem}
@@ -480,6 +485,24 @@ pre.term em{font-style:normal;color:var(--dim2)}
 .band td{padding:.55rem .8rem;border-top:1px solid var(--line);vertical-align:top;
   line-height:1.5;color:#34363c}
 .band .note{max-width:1100px;margin-left:auto;margin-right:auto;text-align:left}
+
+/* A band is full-bleed and has NO horizontal padding, so every component inside one
+   carries its own centred column: .blurb 660, .note and .proof 1100, .cards 1160,
+   .split 1000. Anything without such a rule therefore renders edge-to-edge starting at
+   x=0 — which is not obviously "broken" (no overflow, no console warning) but reads as a
+   misalignment against the very components it sits between. A bare <p> after a .note
+   started its text at 1px where the note's text starts at 109px.
+   Give the remaining block children the same 1100 column. Scoped to DIRECT children so
+   the identical elements nested inside .note, .cards and main.doc are untouched, and
+   .blurb is excluded because its narrower 660 column is deliberate.
+   The shared stylesheet has this gap on the sibling sites too. */
+section.band > p:not(.blurb),
+section.band > ul,
+section.band > ol,
+section.band > .agent{max-width:1100px;margin-left:auto;margin-right:auto}
+section.band > p:not(.blurb),
+section.band > ul,
+section.band > ol{padding-left:1.1rem;padding-right:1.1rem}
 
 /* the two version columns are adjacent and both right-aligned, which runs "0.7.0" into
    "v0.7.1" at narrow widths */

@@ -14,7 +14,7 @@
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer and the shipped CLI. This site is the future-of-news stack: provenance, corrections, and paying the fact creator">&#8593; part of <b>sgit.ai</b></a>
   <span class="stage-pill">design, not built</span>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.2.2</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.2.3</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -75,6 +75,15 @@
   <thead><tr><th>Version</th><th>Date</th><th>What shipped</th></tr></thead>
   <tbody>
     <tr>
+      <td class="vnum">v0.2.3</td>
+      <td>24 Aug 2026</td>
+      <td><b>Front-page links were rendering flush against the viewport edge instead of aligned with the text they follow.</b>
+        <p>A <code>section.band</code> is full-bleed and had <b>no horizontal padding at all</b>. Every component inside one carries its own centred column &mdash; <code>.blurb</code> 660px, <code>.note</code> and <code>.proof</code> 1100px, <code>.cards</code> 1160px, <code>.split</code> 1000px &mdash; so anything <em>without</em> such a rule fell back to the full band width starting at x=0. Two bare <code>&lt;p&gt;</code> links on the front page started their text at <b>1px</b> where the note directly above them starts at <b>109px</b>, and the <a href="../index.html#agentblock">for-an-agent</a> block spanned the whole viewport. Nothing overflowed and nothing warned; it simply read as a misalignment against the very components it sat between.</p>
+        <p>Fixed at the root rather than per element: the band now carries a <b>gutter</b>, so nothing inside one can reach the viewport edge whatever column rule it has, and the remaining block children &mdash; a bare paragraph, a list, the agent block &mdash; take the same 1100px column <code>.note</code> already used. Scoped to direct children, so the identical elements nested inside <code>.note</code>, <code>.cards</code> and every <code>main.doc</code> page are untouched. Verified across eleven widths from 1600px to 360px: the four text columns now agree to within 2px at every one, and the gutter also fixed a separate phone-width defect the measurement exposed &mdash; <code>.blurb</code> putting its text <b>2px</b> from the edge at 390px, because a 660px max-width stops constraining anything once the viewport is narrower than 660.</p>
+        <p><b>This is the third defect in three releases that the gate could not see</b>, after the wrapping nav bar and the raw-markdown documents page. All three were visual or conventional rather than structural, and all three were found by looking at the shipped site. The gate checks that a page is correct; it has no opinion about whether it looks right. That is a real limit and it is worth stating rather than discovering again &mdash; the shared stylesheet carries all of these latent on the sibling sites too.</p>
+      </td>
+    </tr>
+    <tr>
       <td class="vnum">v0.2.2</td>
       <td>24 Aug 2026</td>
       <td><b>The published brief pack was leaking the identifiers it exists to withhold. Fixed, disclosed, and the gate that let it through has been corrected.</b>
@@ -126,7 +135,7 @@
     <p>News is failing not because there is too little information but because there is no walkable chain from a claim to its evidence, no way for a correction to reach what it disproved, and no way to pay the person who did the original work. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="netline"><a href="https://sgit.ai"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://graphs.sgit.ai">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai">&#8593; nhi.sgit.ai</a> &middot; <a href="https://sg-sentinel.sgit.ai">&#8593; sg-sentinel.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.2.2</a> &middot; <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.2.3</a> &middot; <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>The argument</h4>
