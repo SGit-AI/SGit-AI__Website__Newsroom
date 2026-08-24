@@ -6,7 +6,7 @@
 > that accumulates evidence, perspectives and confidence; every article, translation and
 > infographic is a projection of it. Sell the graph, not the paragraph.
 
-Site version: v0.2.1 (23 August 2026). Published by the sgit project, which is building
+Site version: v0.2.2 (23 August 2026). Published by the sgit project, which is building
 the stack this site argues for — participant disclosure at /about/participant.html.
 Site content CC BY 4.0; the republished library material is CC0 1.0 Universal at source
 (docs.diniscruz.ai) — state the source licence per page.
@@ -38,6 +38,10 @@ billing, or any newsroom department as a live capability of any sgit.ai property
   been answered.
 - Every page ends with a pasteable "for an agent" block, except /admin/ pages and
   /about/participant.html.
+- /llms-full.txt is this file plus the front page plus every markdown document in the
+  brief pack, concatenated — one fetch for the whole document set, for when
+  link-following is unreliable. The two structured-data files are deliberately left out
+  of it and should be fetched directly.
 
 ## Site map
 
@@ -71,6 +75,7 @@ billing, or any newsroom department as a live capability of any sgit.ai property
 - /admin/index.html — how this site is built
 - /admin/comms.html — open requests (N1–N6) and standing tasks (T1–T4), in public
 - /admin/versions.html — release history
+- /llms-full.txt — the whole document set in one fetch
 
 ## Read before repeating a fact from this site
 

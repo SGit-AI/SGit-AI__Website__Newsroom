@@ -28,8 +28,8 @@ Run these before any bulk publication.
 
 | Item | Reach | Action |
 |---|---|---|
-| **MyFeeds.ai** | **212 mentions across 52 files.** The `05/17` briefs carry the strategic repositioning, the **full B2B price list (£2k–£50k+)**, the legal-entity and contracting to-do list, the dual-track editorial-independence discussion, and the `investor.myfeeds.ai` review | **Highest priority.** Ideas yes; pricing, clients and entity detail no |
-| **33N Ventures** | Named Porto-based VC with a planned meeting and a private collaboration vault | **Do not publish** |
+| **MyFeeds.ai** | **212 mentions across 52 files.** The `05/17` briefs carry the strategic repositioning, the **full B2B price list ([redacted])**, the legal-entity and contracting to-do list, the dual-track editorial-independence discussion, and the `[redacted]` review | **Highest priority.** Ideas yes; pricing, clients and entity detail no |
+| **[a named VC — redacted, see PUBLIC.md]** | Named Porto-based VC with a planned meeting and a private collaboration vault | **Do not publish** |
 | **The Cyber Boardroom / CBR** | Named in the Portuguese newsroom brief and the town-planner reviews | De-name in `/newsroom/` pages |
 | **Dan Raywood** | Named journalist, subject of a personalised briefing (2025-06-06) | **Already published** on docs.diniscruz.ai — but confirm consent before featuring it on a new site |
 | **Named provider / clinical topic** | `06/11/doctor-patient-workflow` and `06/13` reference a provider's clinical-guidance site as first customer; `06/13` flags health-content safety risk | **Do not name** |
@@ -37,7 +37,7 @@ Run these before any bulk publication.
 | **Palantir Foundry OSMM assessment** | `briefs/07/24/sovereignty-and-osmm/…palantir-foundry-scrydon-level-1…` | Named public assessment of a third party — legal sign-off if republished |
 | **Family reference** | `briefs/02/23/part-3` email-and-messaging brief uses "my daughter" | Strip |
 | **Exposed-vault-key runbook** | `08/14` topic-sections brief links sgit.ai's runbook including the case study of when it happened to that site | Linking re-surfaces the incident. Deliberate choice, not an accident |
-| **AWS account `745506449035`** | 49 occurrences / 17 files (infra docs) | Scrub on any bulk docs-tree publication |
+| **AWS account `[redacted]`** | 49 occurrences / 17 files (infra docs) | Scrub on any bulk docs-tree publication |
 
 **Safe with citations:** Malcolm Gladwell and Anders Ericsson (public figures in published, cited work — note Ericsson is deceased and the brief characterises his career; keep the sources attached) · Replit's production-database deletion · Microsoft/EchoLeak (CVE-2025-32711) · Gartner, Forrester, Bloomberg, Cloudflare, AWS, Stripe, Coinbase as benchmarks.
 

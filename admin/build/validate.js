@@ -171,14 +171,25 @@ for (const f of htmlFiles) {
 // --- 9. the redaction watch-list --------------------------------------------
 // briefs/06 §2 and briefs/08 Tier 3 rows. Literal strings that must never appear
 // anywhere in the published tree — a named VC, live B2B pricing, an infra account.
+// Two things about this list were wrong until v0.2.2 and are worth stating so they are
+// not reintroduced:
+//
+//   1. briefs/ used to be exempt, on the reasoning that "the pack documents the
+//      watch-list by naming these". That reasoning is inverted. The watch-list names
+//      each item in the course of FORBIDDING its publication, so publishing the pack
+//      verbatim published exactly what the pack forbids — a real leak that reached the
+//      live site. The published pack is now checked like every other file, and the
+//      redactions are recorded in briefs/PUBLIC.md.
+//   2. The pricing patterns were written from memory of the brief's prose rather than
+//      against the strings actually in the files, so they matched nothing. Every entry
+//      below is now a literal that was verified to appear in the source before masking.
 const REDACTED = [
   '33N Ventures', '33n-ventures',
   '745506449035',
-  'investor.myfeeds.ai',
-  '£2k-50k', '£2k–50k', '£2,000-50,000',
+  'investor.myfeeds.ai', 'investor-myfeeds-ai',
+  '£2k–£50k', '£2k-£50k', 'GBP2k-50k', '£2,000-50,000',
 ];
 for (const f of files) {
-  if (f.startsWith(path.join(ROOT, 'briefs'))) continue; // the pack itself documents the watch-list by naming these
   if (f === path.join(ROOT, 'admin/build/validate.js')) continue; // this file necessarily names what it bans
   if (/\.(png|jpg|jpeg|gif|webp|ico|woff2?|zip|svg|pdf)$/.test(f)) continue;
   const t = fs.readFileSync(f, 'utf8');

@@ -122,6 +122,15 @@ DOCS = [
      "The pack's own index and tier summary — the quickest way to see the shape of the "
      "whole source set."),
 
+    ("public", "PUBLIC.md", "What was changed before publication",
+     "Transparency note",
+     "Nine redactions, in three files, each replaced with a visible marker — because the "
+     "pack's own watch-list names its subjects in the course of forbidding their "
+     "publication, so publishing it verbatim published exactly what it forbids.",
+     "The transparency convention this network uses when republishing a source pack. It "
+     "is also the record of a real defect on this site: the pack shipped unredacted in "
+     "v0.2.0 because the gate exempted <code>briefs/</code>. It no longer does."),
+
     ("licence", "LICENSE.md", "The pack licence and its scope",
      "Licence · CC BY 4.0",
      "The pack is CC BY 4.0, but that grant does not extend to third-party material quoted "

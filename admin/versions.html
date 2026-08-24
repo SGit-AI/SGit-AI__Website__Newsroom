@@ -14,7 +14,7 @@
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer and the shipped CLI. This site is the future-of-news stack: provenance, corrections, and paying the fact creator">&#8593; part of <b>sgit.ai</b></a>
   <span class="stage-pill">design, not built</span>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.2.1</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.2.2</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -75,6 +75,16 @@
   <thead><tr><th>Version</th><th>Date</th><th>What shipped</th></tr></thead>
   <tbody>
     <tr>
+      <td class="vnum">v0.2.2</td>
+      <td>24 Aug 2026</td>
+      <td><b>The published brief pack was leaking the identifiers it exists to withhold. Fixed, disclosed, and the gate that let it through has been corrected.</b>
+        <p><b>What happened.</b> The pack's redaction watch-list (<code>06</code> §2) is a list of things not to publish, and it names each one in the course of forbidding it &mdash; a venture-capital firm, an AWS account number, an investor-facing hostname, a B2B price range. v0.2.0 published the pack verbatim, so <b>the act of documenting the exclusion performed the disclosure</b>: four identifiers the pack marks Tier&nbsp;3 went live at <code>/briefs/</code>. The identifiers are now replaced with visible <code>[redacted]</code> markers in the published copies, and every one is recorded in <a href="../documents/public.html">the transparency note</a> &mdash; nine redactions, in three files, with the surrounding reasoning, tiering and manifest rows fully intact. A silent redaction would have been the worse of the two options.</p>
+        <p><b>Why the gate did not catch it.</b> The redaction check <em>exempted</em> <code>briefs/</code>, on the reasoning that the pack "documents the watch-list by naming these". That reasoning is inverted, and it is now recorded as a comment in <code>validate.js</code> so it is not reintroduced. Second defect in the same check: the pricing patterns had been written from memory of the brief's prose rather than against the strings actually in the files, so they <b>matched nothing at all</b>. Every entry in the list is now a literal verified to appear in the source before masking, and the published pack is checked like every other file &mdash; an unredacted identifier in <code>briefs/</code> now fails the build.</p>
+        <p><b>Also shipped:</b> <a href="../llms-full.txt">/llms-full.txt</a>, required by the pack's own house style (<code>06</code> §3) and missing since v0.2.0 &mdash; llms.txt, the front page and all eleven pack documents in one fetch, because agent fetch tools frequently refuse URLs a search has not already returned. It was generating this file that surfaced the leak: the concatenation tripped the redaction check that the <code>briefs/</code> exemption had been suppressing.</p>
+        <p>Two remaining gaps against the brief's build order are now tracked rather than silent: <a href="comms.html#tasks">T5</a> (<code>/provenance/the-citation-chain/</code>) and <a href="comms.html#tasks">T6</a> (<code>/infographics/</code>, the only build-order step not started).</p>
+      </td>
+    </tr>
+    <tr>
       <td class="vnum">v0.2.1</td>
       <td>23 Aug 2026</td>
       <td><b>Two defects found by looking at the shipped site rather than at the source.</b>
@@ -116,7 +126,7 @@
     <p>News is failing not because there is too little information but because there is no walkable chain from a claim to its evidence, no way for a correction to reach what it disproved, and no way to pay the person who did the original work. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="netline"><a href="https://sgit.ai"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://graphs.sgit.ai">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai">&#8593; nhi.sgit.ai</a> &middot; <a href="https://sg-sentinel.sgit.ai">&#8593; sg-sentinel.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.2.1</a> &middot; <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.2.2</a> &middot; <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>The argument</h4>

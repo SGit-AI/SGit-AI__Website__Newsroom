@@ -20,7 +20,7 @@
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer and the shipped CLI. This site is the future-of-news stack: provenance, corrections, and paying the fact creator">&#8593; part of <b>sgit.ai</b></a>
   <span class="stage-pill">design, not built</span>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.2.1</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.2.2</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -106,6 +106,7 @@
 <h2 id="chrome">The chrome</h2>
 <p>Every page is hand-written static HTML. The nav row and footer columns are defined once in <code>admin/build/chrome.py</code> and rewritten in place across the tree on every run.</p>
 <pre class="term"><code>python3 admin/build/gen_documents.py   # reader pages for every document under briefs/
+python3 admin/build/gen_llms_full.py   # the whole document set as one fetchable file
 python3 admin/build/chrome.py         # rewrites nav + footer everywhere, stamps the version
 node    admin/build/validate.js       # the gate</code></pre>
 
@@ -115,6 +116,7 @@ node    admin/build/validate.js       # the gate</code></pre>
    update admin/comms.html
 
 2. python3 admin/build/gen_documents.py   (only if briefs/ changed)
+   python3 admin/build/gen_llms_full.py
    python3 admin/build/chrome.py
 
 3. node admin/build/validate.js
@@ -126,15 +128,17 @@ node    admin/build/validate.js       # the gate</code></pre>
 admin/build/validate.js              <i>the gate</i>
 admin/build/chrome.py                <i>the single definition of nav and footer</i>
 admin/build/gen_documents.py         <i>reader pages from briefs/, raw md stays the source</i>
+admin/build/gen_llms_full.py         <i>llms-full.txt — the whole document set in one fetch</i>
 admin/build/version.txt              <i>the version, owned here</i>
 admin/comms.html                     <i>tasks and requests, in public</i>
 admin/versions.html                  <i>release history</i>
 assets/site.css  assets/nav.js       <i>the sgit.ai design language</i>
+assets/vendor/marked.min.js          <i>vendored, not CDN — MIT, see LICENSES.md</i>
 assets/mdreader.js                   <i>renders a brief in-page from its raw markdown</i>
 thesis/  corrections/  provenance/  economics/  rights/  newsroom/  library/
 shipped/  network/  documents/  about/
 briefs/                              <i>the source pack, verbatim, CC BY 4.0</i>
-CNAME  robots.txt  sitemap.xml  llms.txt  index.md
+CNAME  robots.txt  sitemap.xml  llms.txt  llms-full.txt  index.md
 LICENSE  LICENSES.md                 <i>code Apache 2.0, content CC BY 4.0</i></code></pre>
 
 <h2 id="scope-note">v0.2.0's scope decision, stated rather than hidden</h2>
@@ -152,7 +156,7 @@ LICENSE  LICENSES.md                 <i>code Apache 2.0, content CC BY 4.0</i></
     <p>News is failing not because there is too little information but because there is no walkable chain from a claim to its evidence, no way for a correction to reach what it disproved, and no way to pay the person who did the original work. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="netline"><a href="https://sgit.ai"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://graphs.sgit.ai">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai">&#8593; nhi.sgit.ai</a> &middot; <a href="https://sg-sentinel.sgit.ai">&#8593; sg-sentinel.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.2.1</a> &middot; <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.2.2</a> &middot; <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>The argument</h4>

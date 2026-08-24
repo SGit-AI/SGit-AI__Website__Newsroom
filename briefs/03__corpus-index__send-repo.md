@@ -62,9 +62,9 @@ The vault-publishing substrate is **sgit.ai's story**. A news site should link a
 
 | Path | Why |
 |---|---|
-| `briefs/05/17/v0.27.55__strategy-brief__myfeeds-b2b-research-briefings-as-evidence-packs (1).md` | **Highest-priority redaction.** Real company, full B2B price list (£2k–£50k+), legal-entity to-do list, editorial-independence risk discussion |
-| `briefs/05/17/v0.27.55__strategy-brief__33n-ventures-research-vault-programme (1).md` | Names a real VC and a real planned meeting |
-| `team/town-planner/roles/librarian/reviews/02/21/v0.5.8__addendum__investor-myfeeds-ai-website-review.md` | Live product internals; investor-facing |
+| `briefs/05/17/v0.27.55__strategy-brief__myfeeds-b2b-research-briefings-as-evidence-packs (1).md` | **Highest-priority redaction.** Real company, full B2B price list ([redacted]), legal-entity to-do list, editorial-independence risk discussion |
+| `briefs/05/17/v0.27.55__strategy-brief__[redacted]-research-vault-programme (1).md` | Names a real VC and a real planned meeting |
+| `team/town-planner/roles/librarian/reviews/02/21/v0.5.8__addendum__[redacted]-website-review.md` | Live product internals; investor-facing |
 | `library/alchemist/materials/v0.5.8__*` | Business plan, revenue model, pitch decks, investor one-pager. Internal-only as a class |
 | `library/docs/_to_process/secure-send-strategic-opportunities.md` §16.3 | ⚠️ Source-protection vertical. **Publishing an unbuilt protection as a claim endangers a real source.** Design-labelled or omitted |
 | `briefs/06/11/content-proxy/` (3) · `briefs/03/10/cli-team` robots.txt findings | Operational detail |
