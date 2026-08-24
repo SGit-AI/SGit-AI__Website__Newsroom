@@ -13,8 +13,8 @@
 <nav class="site"><div class="row">
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer and the shipped CLI. This site is the future-of-news stack: provenance, corrections, and paying the fact creator">&#8593; part of <b>sgit.ai</b></a>
-  <span class="stage-pill">design, not deployed</span>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.2.0</a>
+  <span class="stage-pill">design, not built</span>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.2.1</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -37,7 +37,7 @@
       </div>
     </div>
     <div class="ni ni-has">
-      <a class="nl" href="../rights/index.html">Rights &amp; the newsroom<span class="caret">&#9662;</span></a>
+      <a class="nl" href="../rights/index.html">Rights &amp; ops<span class="caret">&#9662;</span></a>
       <div class="sub">
       <a class="sl" href="../rights/index.html">Content rights: CC-Signed</a>
       <a class="sl" href="../newsroom/index.html">The newsroom: roles &amp; operations</a>
@@ -75,6 +75,15 @@
   <thead><tr><th>Version</th><th>Date</th><th>What shipped</th></tr></thead>
   <tbody>
     <tr>
+      <td class="vnum">v0.2.1</td>
+      <td>23 Aug 2026</td>
+      <td><b>Two defects found by looking at the shipped site rather than at the source.</b>
+        <p><b>The nav bar was silently breaking onto two lines below about 1400px.</b> The row is <code>flex-wrap:wrap</code>, so once its contents outgrew the viewport the &#9733;&nbsp;GitHub link dropped to a second row and the header doubled in height &mdash; no overflow, no console warning, just a ragged two-row bar at the most common laptop widths. The shared stylesheet has the same latent dead zone on every sibling site, between the full-width bar and the 820px phone menu; this site hit it first because its nav row is the widest in the network. Fixed at both ends: the two longest items were trimmed (<em>Rights &amp; the newsroom</em> &rarr; <em>Rights &amp; ops</em>, and the stage pill to <em>design, not built</em>), and the stylesheet now tightens the row at 1400px and again at 1180px before collapsing to the phone menu at 1000px. Verified across an eighteen-width sweep from 1600px to 360px: one clean row at every width, and no horizontal overflow. <b>The stylesheet half of this fix is worth carrying back to the siblings</b> &mdash; graphs.sgit.ai wraps the same way at 1100px.</p>
+        <p><b><a href="../documents/index.html">/documents/</a> was handing readers raw <code>.md</code> files.</b> On a site whose central claim is that <em>most articles do not provide evidence, they provide a link, and the link is never followed</em>, that was the lazy version of exactly the failure the site exists to argue against. Adopted the reader-page convention the siblings already use: <code>admin/build/gen_documents.py</code> generates one page per pack document, each stating the single most important thing in it and why it is on this site, then rendering the raw markdown in-page from that same file through <code>assets/mdreader.js</code> &mdash; so a reader page cannot drift from the document it claims to render. Ten documents now have reader pages; the two machine-readable files (the 48-row manifest and the provenance JSON) stay raw, because wrapping data in a reader page would only get in the way. The raw file is still one click away from every page and is still the stated source of truth.</p>
+        <p>Neither defect was caught by the gate, and that is worth recording: <b>the gate checks that a page is correct, not that it looks right, and not that a convention the rest of the network follows has actually been adopted here.</b> Reader pages under <code>documents/</code> are exempt from the agent-block rule as generated projections, matching the exemption issues-fs.sgit.ai makes; <code>documents/index.html</code> is hand-written and still owes one.</p>
+      </td>
+    </tr>
+    <tr>
       <td class="vnum">v0.2.0</td>
       <td>23 Aug 2026</td>
       <td><b>The real brief pack arrived, and this release replaces v0.1.0's content in full.</b>
@@ -107,7 +116,7 @@
     <p>News is failing not because there is too little information but because there is no walkable chain from a claim to its evidence, no way for a correction to reach what it disproved, and no way to pay the person who did the original work. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="netline"><a href="https://sgit.ai"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://graphs.sgit.ai">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai">&#8593; nhi.sgit.ai</a> &middot; <a href="https://sg-sentinel.sgit.ai">&#8593; sg-sentinel.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.2.0</a> &middot; <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.2.1</a> &middot; <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>The argument</h4>

@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Documents &amp; sources &middot; newsroom.sgit.ai</title>
-<meta name="description" content="Raw markdown is the source of truth. The brief pack this site was built from, published verbatim — and the provenance contract every derived page on this site follows.">
+<meta name="description" content="Raw markdown is the source of truth; these reader pages are presentation. The brief pack this site was built from, readable in-page and published verbatim at stable paths.">
 <link rel="canonical" href="https://newsroom.sgit.ai/documents/index.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="newsroom.sgit.ai">
 <meta property="og:url" content="https://newsroom.sgit.ai/documents/index.html">
-<meta property="og:title" content="Documents & sources">
+<meta property="og:title" content="Documents &amp; sources">
 <meta property="og:description" content="A future-of-news site that loses its own provenance chain has refuted itself on page one.">
 <meta name="twitter:card" content="summary">
 <link rel="stylesheet" href="../assets/site.css">
@@ -19,8 +19,8 @@
 <nav class="site"><div class="row">
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer and the shipped CLI. This site is the future-of-news stack: provenance, corrections, and paying the fact creator">&#8593; part of <b>sgit.ai</b></a>
-  <span class="stage-pill">design, not deployed</span>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.2.0</a>
+  <span class="stage-pill">design, not built</span>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.2.1</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -43,7 +43,7 @@
       </div>
     </div>
     <div class="ni ni-has">
-      <a class="nl" href="../rights/index.html">Rights &amp; the newsroom<span class="caret">&#9662;</span></a>
+      <a class="nl" href="../rights/index.html">Rights &amp; ops<span class="caret">&#9662;</span></a>
       <div class="sub">
       <a class="sl" href="../rights/index.html">Content rights: CC-Signed</a>
       <a class="sl" href="../newsroom/index.html">The newsroom: roles &amp; operations</a>
@@ -75,36 +75,58 @@
 <main class="doc">
 <div class="crumb"><a href="../index.html">newsroom.sgit.ai</a> / documents</div>
 <h1>Documents &amp; sources</h1>
-<p class="lead">Raw markdown is the source of truth for this site. The brief pack it was built from is published here verbatim, at stable constructed paths &mdash; a promise every page on this site depends on, since the pack argues that the link is normally never followed and this site's own job is to be the exception.</p>
+<p class="lead">Every page on this site was written from a source, and the sources are published here rather than summarised away. <b>Raw markdown is the source of truth; these reader pages are presentation.</b> Each one states the single most important thing in its document, says why it is on this site, and renders the raw file in-page &mdash; so a reader page cannot drift from the document it claims to render.</p>
 
-<h2 id="pack">The brief pack</h2>
-<p>Prepared 21 August 2026 against <code>the-cyber-boardroom/SGraph-AI__App__Send</code> @ v0.33.62, <code>DinisCruz/docs.diniscruz.ai</code> @ v0.3.123, and <code>DinisCruz/files.diniscruz.ai</code>. Ten documents, ~110,000 words of source material catalogued, and a machine-readable manifest of every republished article.</p>
+<div class="note"><p style="margin-top:0">This is the site whose central claim is that <b>most articles do not provide evidence, they provide a link, and the link is never followed.</b> Handing a reader a bare <code>.md</code> file and calling it "the source" is the lazy version of exactly that failure. So the document is readable where the reader already is, with its provenance stated &mdash; and still one click from the byte-for-byte original.</p></div>
+
+<h2 id="pack">The brief pack this site was built from</h2>
+<p>Prepared 21 August 2026 against <code>the-cyber-boardroom/SGraph-AI__App__Send</code> @ v0.33.62, <code>DinisCruz/docs.diniscruz.ai</code> @ v0.3.123, and <code>DinisCruz/files.diniscruz.ai</code>. Roughly 110,000 words of source material catalogued across three corpora.</p>
 <div class="tablewrap"><table>
-  <thead><tr><th>File</th><th>What it gives you</th></tr></thead>
+  <thead><tr><th>Document</th><th>What it holds</th><th>Raw</th></tr></thead>
   <tbody>
-    <tr><td><a href="../briefs/00__BRIEF.md">00__BRIEF.md</a></td><td>The one-paragraph thesis, the eight themes, the four numbers, build order, the honesty constraint</td></tr>
-    <tr><td><a href="../briefs/01__thesis-and-themes.md">01__thesis-and-themes.md</a></td><td>Eight themes with sources, 30+ verbatim quotes, every citable figure</td></tr>
-    <tr><td><a href="../briefs/02__source-provenance-and-attribution.md">02__source-provenance-and-attribution.md</a></td><td><b>The provenance contract</b> &mdash; the load-bearing file. Required fields, visible rendering, do-not-break-the-old-links rules</td></tr>
-    <tr><td><a href="../briefs/03__corpus-index__send-repo.md">03__corpus-index__send-repo.md</a></td><td>The unpublished source documents, tiered by publishability, with verified paths</td></tr>
-    <tr><td><a href="../briefs/04__prior-art__docs-diniscruz-ai.md">04__prior-art__docs-diniscruz-ai.md</a></td><td>The ten published articles: verified URLs, dates, authors, PDFs, LinkedIn posts</td></tr>
-    <tr><td><a href="../briefs/05__site-architecture.md">05__site-architecture.md</a></td><td>Page-by-page information architecture, each page mapped to its source</td></tr>
-    <tr><td><a href="../briefs/06__boundaries-and-house-style.md">06__boundaries-and-house-style.md</a></td><td>Sibling boundaries, the Risk Mandate inversion, the redaction watch-list, house conventions</td></tr>
-    <tr><td><a href="../briefs/07__gaps-and-open-questions.md">07__gaps-and-open-questions.md</a></td><td>What must be retrieved, what must be written fresh, seven open questions, six honest tensions</td></tr>
-    <tr><td><a href="../briefs/08__source-manifest.csv">08__source-manifest.csv</a></td><td>Machine-readable, 48 rows across both corpora, with provenance columns</td></tr>
-    <tr><td><a href="../briefs/sources__docs-diniscruz-ai.json">sources__docs-diniscruz-ai.json</a></td><td>Machine-readable provenance record for the published library</td></tr>
-    <tr><td><a href="../briefs/README.md">README.md</a> &middot; <a href="../briefs/LICENSE.md">LICENSE.md</a></td><td>The pack's own index and licence (CC BY 4.0)</td></tr>
+    <tr><td><a href="brief.html"><b>00 &middot; The brief</b></a></td><td>Why <code>newsroom</code> and not <code>news</code>, the one-paragraph thesis, the eight themes, the four numbers, the build order, and the honesty constraint that produced <a href="../shipped/index.html">/shipped/</a></td><td class="small"><a href="../briefs/00__BRIEF.md">.md</a></td></tr>
+    <tr><td><a href="thesis-and-themes.html"><b>01 &middot; Thesis and themes</b></a></td><td>Eight themes with their sources, 30+ verbatim quotations, and every citable figure on this site</td><td class="small"><a href="../briefs/01__thesis-and-themes.md">.md</a></td></tr>
+    <tr><td><a href="source-provenance.html"><b>02 &middot; The provenance contract</b></a></td><td><b>The load-bearing file.</b> Required fields, the visible rendering, the do-not-break-the-old-links rules, and the two attribution decisions</td><td class="small"><a href="../briefs/02__source-provenance-and-attribution.md">.md</a></td></tr>
+    <tr><td><a href="corpus-index.html"><b>03 &middot; The corpus, tiered</b></a></td><td>Every news-relevant source document, tiered by publishability, with verified paths</td><td class="small"><a href="../briefs/03__corpus-index__send-repo.md">.md</a></td></tr>
+    <tr><td><a href="prior-art.html"><b>04 &middot; The prior art</b></a></td><td>The ten published articles: verified URLs, first-published dates, authors, PDFs, LinkedIn posts. The source for <a href="../library/index.html">/library/</a></td><td class="small"><a href="../briefs/04__prior-art__docs-diniscruz-ai.md">.md</a></td></tr>
+    <tr><td><a href="site-architecture.html"><b>05 &middot; Site architecture</b></a></td><td>Page-by-page information architecture, each page mapped to its source and publish status</td><td class="small"><a href="../briefs/05__site-architecture.md">.md</a></td></tr>
+    <tr><td><a href="boundaries-and-house-style.html"><b>06 &middot; Boundaries and house style</b></a></td><td>Sibling boundaries, the Risk Mandate inversion, the redaction watch-list, house conventions</td><td class="small"><a href="../briefs/06__boundaries-and-house-style.md">.md</a></td></tr>
+    <tr><td><a href="gaps-and-open-questions.html"><b>07 &middot; Gaps and open questions</b></a></td><td>What must be retrieved, what must be written fresh, seven open questions, six honest tensions</td><td class="small"><a href="../briefs/07__gaps-and-open-questions.md">.md</a></td></tr>
+    <tr><td><a href="pack-readme.html"><b>Pack readme</b></a></td><td>The pack's own index and tier summary</td><td class="small"><a href="../briefs/README.md">.md</a></td></tr>
+    <tr><td><a href="licence.html"><b>Licence</b></a></td><td>CC BY 4.0, and the three things that grant does <em>not</em> extend to</td><td class="small"><a href="../briefs/LICENSE.md">.md</a></td></tr>
   </tbody>
 </table></div>
 
-<h2 id="what-is-not-here">What is not republished here</h2>
-<p>The pack itself tiers its source material by publishability. <b>Tier 3</b> material &mdash; a named venture-capital firm and a planned meeting, a live product's full B2B price list, an internal investor review, and a source-protection design that would endanger a real source if published as a working claim &mdash; is catalogued in <code>08__source-manifest.csv</code> for transparency about what exists, but its content is not reproduced anywhere on this site. <a href="../admin/comms.html">The redaction policy, in full</a>.</p>
+<h2 id="machine">Machine-readable, by design</h2>
+<p>Two files in the pack are data rather than prose, and are published as data rather than wrapped in a reader page that would only get in the way:</p>
+<div class="tablewrap"><table>
+  <thead><tr><th>File</th><th>What it holds</th></tr></thead>
+  <tbody>
+    <tr><td><a href="../briefs/08__source-manifest.csv"><code>08__source-manifest.csv</code></a></td><td><b>48 rows</b> across both corpora with provenance columns: tier, origin, path or URL, title, word count, theme, proposed page, first-published date, authors, PDF, LinkedIn, publishability and why it matters</td></tr>
+    <tr><td><a href="../briefs/sources__docs-diniscruz-ai.json"><code>sources__docs-diniscruz-ai.json</code></a></td><td>The machine-readable provenance record behind <a href="../library/index.html">/library/</a> &mdash; every field of the <a href="source-provenance.html">provenance contract</a>, per article, verified live on 21 August 2026</td></tr>
+  </tbody>
+</table></div>
+<p class="small dim">Every file above is fetchable at a stable constructed path: <code>/briefs/&lt;filename&gt;</code>. That is a promise rather than an accident &mdash; agents rely on constructed paths, so the convention is stated rather than left to be inferred.</p>
 
-<h2 id="provenance-contract">The provenance contract, applied</h2>
-<p>Every page on this site that derives from previously published material carries a visible block stating: the <b>original</b> publication date, a link to the <b>original</b>, the <b>original</b> authors including any AI co-authorship, and an honest label for how the material was curated &mdash; verbatim, edited, excerpted or synthesised. <a href="../library/index.html">The library</a> is the fullest expression of this; <a href="../rights/index.html">rights</a> and <a href="../economics/micro-and-nano-payments.html">economics</a> carry it on individual sections. Full contract in <a href="../briefs/02__source-provenance-and-attribution.md">02__source-provenance-and-attribution.md</a> above.</p>
+<h2 id="what-is-not-here">What is deliberately not published</h2>
+<p>The pack tiers its own source material by publishability, and <b>Tier 3 is excluded from this site entirely</b> &mdash; catalogued in the manifest above so a reader can see that something was withheld and why, but never reproduced:</p>
+<div class="tablewrap"><table>
+  <thead><tr><th>What</th><th>Why not</th></tr></thead>
+  <tbody>
+    <tr><td>A named venture-capital firm, and a real planned meeting</td><td class="was">Real third-party commercial detail, published nowhere else</td></tr>
+    <tr><td>A live product's full B2B price list and legal-entity to-do list</td><td class="was">Real commercial detail about an operating product; the ideas are usable, the pricing and client detail are not</td></tr>
+    <tr><td>An internal investor-facing product review</td><td class="was">Live product internals, internal-only as a class</td></tr>
+    <tr><td>A SecureDrop-style source-protection design</td><td class="was"><b>A safety decision, not a tidiness one.</b> Publishing an unbuilt source-protection mechanism as though it existed would put a real source at risk if anyone relied on it before it was built. <a href="../shipped/index.html#never-publish">Stated on /shipped/</a></td></tr>
+  </tbody>
+</table></div>
+<p>The exclusion is enforced by the pre-release gate rather than left to memory: a fixed watch-list of Tier 3 strings fails the build if any of them ever appears in the published tree. <a href="../admin/index.html#gate">What the gate checks</a>.</p>
+
+<h2 id="contract">The provenance contract, applied to this site itself</h2>
+<p>Every page here that derives from previously published material carries a visible block stating the <b>original</b> publication date, a link to the <b>original</b>, the <b>original</b> authors including any AI co-authorship, and an honest label for how the material was curated &mdash; verbatim, edited, excerpted or synthesised. <a href="../library/index.html">The library</a> is the fullest expression of it; <a href="../rights/index.html">rights</a> and <a href="../economics/micro-and-nano-payments.html">economics</a> carry it on individual sections. The full contract is <a href="source-provenance.html">document 02</a>.</p>
 
 <div class="agent">
   <h4>For an agent</h4>
-  <p>Every file linked above is fetchable at a stable constructed URL under <code>/briefs/</code>. This is a promise, not an accident. If you need the full context this site was built from &mdash; including the reasoning behind every de-scoping and redaction decision &mdash; read the pack directly rather than inferring it from the rendered pages.</p>
+  <p>Every document above is fetchable as raw markdown at <code>/briefs/&lt;filename&gt;.md</code>, and the two data files at <code>/briefs/08__source-manifest.csv</code> and <code>/briefs/sources__docs-diniscruz-ai.json</code>. The reader pages under <code>/documents/</code> are generated projections of those files and are never the source &mdash; if the two ever disagree, the file in <code>/briefs/</code> is correct. Read the pack directly for the reasoning behind every de-scoping and redaction decision rather than inferring it from the rendered pages.</p>
 </div>
 
 <div class="pagenav">
@@ -119,7 +141,7 @@
     <p>News is failing not because there is too little information but because there is no walkable chain from a claim to its evidence, no way for a correction to reach what it disproved, and no way to pay the person who did the original work. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="netline"><a href="https://sgit.ai"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://graphs.sgit.ai">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai">&#8593; nhi.sgit.ai</a> &middot; <a href="https://sg-sentinel.sgit.ai">&#8593; sg-sentinel.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.2.0</a> &middot; <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.2.1</a> &middot; <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>The argument</h4>

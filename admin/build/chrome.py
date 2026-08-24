@@ -48,7 +48,7 @@ NAV = [
         ("Trust as a service", "economics/trust-as-a-service.html"),
         ("Micro and nano payments (2025)", "economics/micro-and-nano-payments.html"),
     ], ("economics/",)),
-    ("Rights &amp; the newsroom", "rights/index.html", [
+    ("Rights &amp; ops", "rights/index.html", [
         ("Content rights: CC-Signed", "rights/index.html"),
         ("The newsroom: roles &amp; operations", "newsroom/index.html"),
     ], ("rights/", "newsroom/")),
@@ -132,7 +132,7 @@ def nav_html(rel, up):
     return (f'<nav class="site"><div class="row">\n'
             f'  <a class="brand" href="{up}index.html">newsroom<span>.sgit.ai</span></a>\n'
             f'  <a class="parent" href="{PARENT}" title="{PARENT_TITLE}">&#8593; part of <b>sgit.ai</b></a>\n'
-            f'  <span class="stage-pill">design, not deployed</span>\n'
+            f'  <span class="stage-pill">design, not built</span>\n'
             f'  <a class="ver" href="{up}admin/versions.html" title="Site release history">{VERSION}</a>\n'
             f'  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>\n'
             f'  <div class="nav-items">\n{rows}\n  </div>\n'
@@ -174,8 +174,11 @@ def stamp_text_twins():
             out.append("llms.txt")
     md = ROOT / "index.md"
     if md.exists():
+        # index.md is markdown, so the separator is a literal U+00B7, not an HTML entity.
+        # Getting that wrong makes this a silent no-op and the version stamp never lands;
+        # the mismatch below is reported rather than swallowed for exactly that reason.
         t = md.read_text()
-        t2, n = re.subn(r"&middot; site v\d+\.\d+\.\d+ &middot;", f"&middot; site {VERSION} &middot;", t, count=1)
+        t2, n = re.subn(r"\u00b7 site v\d+\.\d+\.\d+ \u00b7", f"\u00b7 site {VERSION} \u00b7", t, count=1)
         if n and t2 != t:
             md.write_text(t2)
             out.append("index.md")

@@ -17,6 +17,17 @@ content it republishes.
 | `admin/build/*.py`, `admin/build/*.js`, `assets/*.js`, `assets/*.css`, `.github/workflows/*` | Apache License 2.0 |
 | `briefs/*.md`, `briefs/*.csv`, `briefs/*.json`, `index.md`, `llms.txt`, every `*.html` page | CC BY 4.0 |
 
+## Third-party code vendored in this repository
+
+| Path | Component | Licence |
+|---|---|---|
+| `assets/vendor/marked.min.js` | [marked](https://github.com/markedjs/marked) v12.0.2 — the markdown parser behind the `/documents/` reader pages | MIT, © 2011-2024 Christopher Jeffrey and contributors |
+
+It is vendored rather than loaded from a CDN deliberately. This is the site arguing that
+an evidence chain should not terminate in a single third-party resource that could move,
+change or disappear — so depending on one in order to read its own source documents would
+have been the argument refuting itself.
+
 ## One limit specific to this site: the republished library
 
 `library/index.html`, `economics/micro-and-nano-payments.html`, and the two

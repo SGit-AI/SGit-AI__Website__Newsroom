@@ -64,11 +64,30 @@ nav.site .sub a.sl{display:block;padding:.36rem .6rem;border-radius:6px;
   font-size:.83rem;color:var(--dim);white-space:nowrap}
 nav.site .sub a.sl:hover{background:var(--panel2);color:var(--fg);text-decoration:none}
 nav.site .sub a.sl.here{color:var(--accent-dk);font-weight:600}
+/* Between the full-width bar and the phone menu there was a dead zone. The row is
+   `flex-wrap:wrap`, so once its contents outgrow the viewport ★ GitHub silently drops
+   onto a second line and the bar doubles in height — no overflow, no warning, just a
+   ragged two-row header. The sibling sites have the same latent gap and only escape it
+   because their nav rows are narrower; this site carries five groups, a stage pill and
+   a version badge, and hit it at ~1400px. So: tighten the row on the way down, and
+   collapse to the phone menu before the tightening runs out. Measured, not guessed —
+   the breakpoints below are where a full sweep of widths stops fitting on one line. */
+@media (max-width:1400px){
+  nav.site .row{gap:.75rem}
+  nav.site a.nl{font-size:.82rem}
+}
+@media (max-width:1180px){
+  nav.site .row{gap:.5rem}
+  nav.site a.nl{font-size:.79rem}
+  /* the footer's network line carries this link too, so it is the cheapest thing to drop */
+  nav.site .parent{display:none}
+}
+
 /* Phone: the whole thing collapses behind one button, so the bar stays a single row and
    opening it gives a vertical list with each group's children indented under it. */
 .nav-items{display:contents}
 .nav-toggle{display:none}
-@media (max-width:820px){
+@media (max-width:1000px){
   nav.site .row{position:relative;gap:.6rem}
   .nav-toggle{display:block;margin-left:auto;order:3;background:var(--panel);
     border:1px solid var(--line2);border-radius:6px;padding:.3rem .7rem;

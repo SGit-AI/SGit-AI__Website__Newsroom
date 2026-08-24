@@ -140,7 +140,11 @@ for (const f of htmlFiles) {
 // --- 7. every page ends with an agent block --------------------------------
 for (const f of htmlFiles) {
   const r = rel(f);
+  // documents/index.html is a hand-written hub and owes an agent block like any other
+  // page; documents/<slug>.html are generated projections of raw markdown (gen_documents.py)
+  // and are exempt, the same exemption issues-fs.sgit.ai makes for its reader pages.
   if (r.startsWith('admin/') || r === 'about/participant.html') continue;
+  if (r.startsWith('documents/') && r !== 'documents/index.html') continue;
   const t = fs.readFileSync(f, 'utf8');
   if (!/class="agent"/.test(t)) {
     errors.push(`${r}: no "for an agent" block — every page on this site owes one`);
