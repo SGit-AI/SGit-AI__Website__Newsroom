@@ -33,6 +33,17 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 GH   = "https://github.com/SGit-AI/SGit-AI__Website__Newsroom/blob/dev/briefs"
 
+# The pack line shown on each reader page. Almost every document here belongs to the
+# v1.0 construction pack — the material this site was BUILT from, frozen at 21 August
+# 2026. A document that does not belong to it must not claim to: an addendum is a
+# different kind of thing (forward-looking, commissioning) and dating it into the
+# original pack would misstate its provenance on a site whose gate exists to stop
+# exactly that.
+PACK_DEFAULT   = "newsroom.sgit.ai brief pack v1.0, 21 August 2026"
+PACK_OVERRIDES = {
+    "risk-governance-newsroom": "newsroom.sgit.ai brief pack v1.1 addendum, 25 August 2026",
+}
+
 # slug, source file, title, kind, the single most important fact in it, why it is on the site
 DOCS = [
     ("brief", "00__BRIEF.md", "The brief",
@@ -139,6 +150,27 @@ DOCS = [
      "The licence position this site inherits, and the reason every republished section "
      "here states its source licence separately — see "
      "<a href=\"../about/participant.html#licence\">the participant disclosure</a>."),
+
+    ("risk-governance-newsroom", "09__risk-and-governance-newsroom.md",
+     "The risk &amp; governance newsroom",
+     "Commissioning brief · v1.1 addendum · 25 August 2026 · forward-looking",
+     "A publication that would begin with <b>1,523 nodes of parsed regulation already "
+     "public</b> — where the last publication instance this site documents required 200 "
+     "entities before it could report competently and never built them. The commercial "
+     "claim is a division of the grounding ladder: the publication owns "
+     "<em>Evidence and Fact</em> for the public regulatory world, the customer owns "
+     "<em>Reality, Twin and Measure</em> in their own vault, and a Vulnerability exists "
+     "only where the two meet — so the product cannot compute anything without a supply "
+     "of grounded public facts.",
+     "<b>The only forward-looking document in this pack.</b> Everything else here is "
+     "material this site was built <em>from</em>; this is a publication to build, and it "
+     "is the reciprocal statement <a href=\"../network/index.html#risk-mandate\">the Risk "
+     "Mandate inversion</a> promises — the same machinery pointed at corporate risk, "
+     "written as a news operation whose first customer is a risk product rather than the "
+     "other way round. It also half-answers the question "
+     "<a href=\"../mvps/portugal.html#open\">the Portugal instance left open</a>: the "
+     "editor of record is whoever's signature is on the current interval. The legal half "
+     "stays open."),
 ]
 
 HEAD = '''<!doctype html>
@@ -168,7 +200,7 @@ HEAD = '''<!doctype html>
 
 <div class="docmeta">
   <span class="k">Kind</span><span class="v">{kind}</span>
-  <span class="k">Pack</span><span class="v">newsroom.sgit.ai brief pack v1.0, 21 August 2026</span>
+  <span class="k">Pack</span><span class="v">{pack}</span>
   <span class="k">Licence</span><span class="v">CC BY 4.0 &mdash; see <a href="licence.html">the scope note</a></span>
   <span class="k">Source</span><span class="v"><a href="../briefs/{src}">raw markdown</a> &middot; <a href="{gh}/{src}">view on GitHub</a></span>
 </div>
@@ -221,7 +253,7 @@ def main():
         desc = strip_tags(fact).replace('"', "&quot;").replace("\n", " ").strip()
         (out / f"{slug}.html").write_text(HEAD.format(
             slug=slug, src=src, title=title, kind=kind, fact=fact, why=why,
-            desc=desc, gh=GH))
+            desc=desc, gh=GH, pack=PACK_OVERRIDES.get(slug, PACK_DEFAULT)))
         written.append(f"documents/{slug}.html")
     print(f"gen_documents: {len(written)} reader page(s)")
     for w in written:

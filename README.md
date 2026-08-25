@@ -29,7 +29,10 @@ Live site: https://newsroom.sgit.ai (GitHub Pages, deployed from `dev`).
   seven Creative Commons seed companies. Designed April–May 2026; none of it was built
 - `shipped/` — what runs vs what is argued. Non-negotiable
 - `network/` — sibling boundaries, the Risk Mandate inversion, open questions
-- `documents/` — the brief pack this site was built from, published verbatim in `briefs/`
+- `documents/` — the brief pack this site was built from, published verbatim in `briefs/`,
+  plus one **v1.1 addendum** that looks forward instead of back:
+  `09__risk-and-governance-newsroom.md`, a commissioning brief for a risk-and-governance
+  publication assembled from this network, with `riskmandate.ai` as its named customer
 - `about/participant.html` — participant disclosure; two years of disclosed model
   co-authorship, stated as an asset rather than an awkwardness
 - `admin/` — engineering: comms (open requests, in public), versions, build tooling
