@@ -51,7 +51,9 @@ NAV = [
     ("Rights &amp; ops", "rights/index.html", [
         ("Content rights: CC-Signed", "rights/index.html"),
         ("The newsroom: roles &amp; operations", "newsroom/index.html"),
-    ], ("rights/", "newsroom/")),
+        ("The MVPs: publication instances", "mvps/index.html"),
+        ("The Portugal instance", "mvps/portugal.html"),
+    ], ("rights/", "newsroom/", "mvps/")),
     ("The record", "library/index.html", [
         ("The library: 2025 &rarr; present", "library/index.html"),
         ("What is shipped, what is argued", "shipped/index.html"),
@@ -83,6 +85,7 @@ FOOTER = [
     ("Rights, ops &amp; record", [
         ("Content rights: CC-Signed", "rights/index.html"),
         ("The newsroom: roles &amp; operations", "newsroom/index.html"),
+        ("The MVPs: publication instances", "mvps/index.html"),
         ("The library: 2025 &rarr; present", "library/index.html"),
         ("What is shipped, what is argued", "shipped/index.html"),
     ]),

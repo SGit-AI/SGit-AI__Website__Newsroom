@@ -23,6 +23,10 @@ Live site: https://newsroom.sgit.ai (GitHub Pages, deployed from `dev`).
   x402 payment rail, and the 2025 micropayments argument republished and paired with it
 - `rights/` — content rights: CC-Signed, a licence family with an enforceable stick
 - `newsroom/` — operations: roles, the daily clock, departments, the craft doctrine
+- `mvps/` — the publication instances: the newsroom specified as a series of small,
+  separately launchable publications rather than one platform. The programme index, the
+  flagship bilingual country publication and its eleven-role agentic newsroom, and the
+  seven Creative Commons seed companies. Designed April–May 2026; none of it was built
 - `shipped/` — what runs vs what is argued. Non-negotiable
 - `network/` — sibling boundaries, the Risk Mandate inversion, open questions
 - `documents/` — the brief pack this site was built from, published verbatim in `briefs/`
