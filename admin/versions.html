@@ -14,7 +14,7 @@
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer and the shipped CLI. This site is the future-of-news stack: provenance, corrections, and paying the fact creator">&#8593; part of <b>sgit.ai</b></a>
   <span class="stage-pill">design, not built</span>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.2.6</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.2.7</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -77,6 +77,18 @@
 <div class="tablewrap"><table class="vers">
   <thead><tr><th>Version</th><th>Date</th><th>What shipped</th></tr></thead>
   <tbody>
+    <tr>
+      <td class="vnum">v0.2.7</td>
+      <td>28 Aug 2026</td>
+      <td><b>The Governance Wire gains a newsroom: <a href="../governance/newsroom/index.html">a floor you can click around</a>, <a href="../governance/newsroom/workflow.html">a state map of how a story moves</a>, a page per agent role, and <a href="../governance/research/2026-08-28.html">the Researcher's first real run</a>.</b>
+        <p><b>The floor is a point-and-click scene.</b> Seven desks, a verb bar &mdash; <em>look at</em>, <em>talk to</em>, <em>hand over</em>, <em>ask what they refuse</em> &mdash; and a dialogue box. The genre is borrowed and everything in it is ours: our palette, our figures drawn as inline SVG, our verbs, our writing. What a desk says about its workload is read from <a href="../governance/data/desk.json">desk.json</a> at build time, so the room cannot report a queue the newsroom does not have. A token travels the pipeline route through the desks; the route and <code>team.json</code>'s seven steps are compared by <b>gate check 13</b>, because a room that keeps drawing a workflow nobody runs is a lie that looks like decoration.</p>
+        <p><b>Nine states, and one shut door.</b> <a href="../governance/newsroom/workflow.html">The state map</a> names, for each state, the one role that can advance it and the condition the next role will not take the work without. <code>frozen</code> &mdash; a hashed byte copy of the source &mdash; carries <code>blocked: true</code>, and <b>nothing has ever passed it</b>. That single closed door is why every fact in the graph reads <code>secondary</code>, why nothing is anchored, and why the two stories already on the wire went round it rather than through it.</p>
+        <p><b>A folder and a page per role</b>, following <code>graphs.sgit.ai</code>'s making-a-book team: the definition in full, the doors only that role can open, what is on its desk, and an honest inventory of the three directories the inherited shape has that ours does not yet fill.</p>
+        <p><b>The first research run is real, and its failures are published.</b> The Researcher searched the beat for 28 August 2026, tried six URLs, read two European Commission pages in full, and found that <a href="https://digital-strategy.ec.europa.eu/en/library/draft-commission-guidelines-classification-high-risk-ai-systems">the Article 6(5) classification guidelines due on 2 February are still marked draft</a> &mdash; 207 days past the statutory deadline, last touched 23 July, with no date given for a final version. Four candidates were proposed with their weaknesses attached; one was recommended, and the pick is recorded separately, because proposing is the Researcher's job and choosing is not.</p>
+        <p><b>Two Council of the EU pages returned 403 to our fetch.</b> They are excluded from the register and recorded as unreachable <em>from here</em> &mdash; our egress, not a claim about those pages. <b>Gate check 11</b> now makes that structural: a URL that did not resolve cannot appear in the source register, and its note must distinguish our reach from the state of the page.</p>
+        <p>Seven new gate checks (7&ndash;13), 11 new pages, 3 new machine surfaces &mdash; <a href="../governance/data/workflow.json">workflow</a>, <a href="../governance/data/desk.json">desk</a>, <a href="../governance/data/research.json">research</a>. Section v0.2.0.</p>
+      </td>
+    </tr>
     <tr>
       <td class="vnum">v0.2.6</td>
       <td>26 Aug 2026</td>
@@ -170,7 +182,7 @@
     <p>News is failing not because there is too little information but because there is no walkable chain from a claim to its evidence, no way for a correction to reach what it disproved, and no way to pay the person who did the original work. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="netline"><a href="https://sgit.ai"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://graphs.sgit.ai">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai">&#8593; nhi.sgit.ai</a> &middot; <a href="https://sg-sentinel.sgit.ai">&#8593; sg-sentinel.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.2.6</a> &middot; <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.2.7</a> &middot; <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>The argument</h4>

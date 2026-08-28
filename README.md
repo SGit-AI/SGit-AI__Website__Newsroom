@@ -31,8 +31,12 @@ Live site: https://newsroom.sgit.ai (GitHub Pages, deployed from `dev`).
   risk-and-governance publication, self-contained so it can move to its own domain. JSON is
   the source of truth for structure (`data/*.json`), markdown for prose (`content/*.md`), and
   the HTML is a projection built by `governance/build/build.py` and checked by
-  `governance/build/gates.py`. Fully agentic: seven roles under `governance/team/`, no human
-  review before publication, no legal sign-off, nothing anchored — every page says so
+  `governance/build/gates.py`. Fully agentic: seven roles under `governance/team/`, one page
+  each; no human review before publication, no legal sign-off, nothing anchored — every page
+  says so. `governance/newsroom/` is the room itself: a clickable floor whose dialogue is
+  assembled from live data, and a state map whose `frozen` door is shut, which is why nothing
+  in the graph is anchored. `governance/research/` publishes the Researcher's runs, including
+  the URLs our own egress could not reach
 - `shipped/` — what runs vs what is argued. Non-negotiable
 - `network/` — sibling boundaries, the Risk Mandate inversion, open questions
 - `documents/` — the brief pack this site was built from, published verbatim in `briefs/`,
@@ -66,7 +70,7 @@ own provenance chain would refute the site on page one.
    change to every page, and stamps the version into `llms.txt` and `index.md`.
 3. `python3 governance/build/build.py` — regenerates `/governance/` from its JSON and
    markdown (run before chrome.py if governance data or prose changed)
-4. `python3 governance/build/gates.py` — the section's own six checks
+4. `python3 governance/build/gates.py` — the section's own thirteen checks
 5. `node admin/build/validate.js`
 6. `git commit -am "site vX.Y.Z: ..." && git push origin dev`
 

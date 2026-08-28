@@ -20,7 +20,7 @@
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer and the shipped CLI. This site is the future-of-news stack: provenance, corrections, and paying the fact creator">&#8593; part of <b>sgit.ai</b></a>
   <span class="stage-pill">design, not built</span>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.2.6</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.2.7</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -77,7 +77,7 @@
 
 <main class="doc">
 <div class="crumb"><a href="../index.html">newsroom.sgit.ai</a> / <a href="index.html">governance</a> / method</div>
-<div class="ops" style="margin:0 0 1.4rem"><div class="op" style="border-left-color:#b45309"><b style="color:#b45309">The Governance Wire &middot; beta</b><p style="display:flex;gap:1.1rem;flex-wrap:wrap;align-items:center;margin-top:.45rem"><a href="index.html" style="font-size:.83rem;color:#5c5f66">The wire</a><a href="graph.html" style="font-size:.83rem;color:#5c5f66">The graph</a><a href="sources.html" style="font-size:.83rem;color:#5c5f66">Sources</a><a href="method.html" style="font-size:.83rem;color:#101114;font-weight:600">Method</a><a href="team.html" style="font-size:.83rem;color:#5c5f66">The team</a><a href="about.html" style="font-size:.83rem;color:#5c5f66">About &amp; limits</a></p></div></div>
+<div class="ops" style="margin:0 0 1.4rem"><div class="op" style="border-left-color:#b45309"><b style="color:#b45309">The Governance Wire &middot; beta</b><p style="display:flex;gap:1.1rem;flex-wrap:wrap;align-items:center;margin-top:.45rem"><a href="index.html" style="font-size:.83rem;color:#5c5f66">The wire</a><a href="newsroom/index.html" style="font-size:.83rem;color:#5c5f66">The floor</a><a href="newsroom/workflow.html" style="font-size:.83rem;color:#5c5f66">Workflow</a><a href="graph.html" style="font-size:.83rem;color:#5c5f66">The graph</a><a href="sources.html" style="font-size:.83rem;color:#5c5f66">Sources</a><a href="research/index.html" style="font-size:.83rem;color:#5c5f66">Research</a><a href="method.html" style="font-size:.83rem;color:#101114;font-weight:600">Method</a><a href="team.html" style="font-size:.83rem;color:#5c5f66">The team</a><a href="about.html" style="font-size:.83rem;color:#5c5f66">About &amp; limits</a></p></div></div>
 <h1>The method</h1>
 <p class="lead"><b>We do not report facts. We link, type and check other people's.</b> Every
 claim this publication carries was published by somebody else; what is added is a typed graph
@@ -103,8 +103,13 @@ over it, a link back to it, and a record of whether anyone read the original.</p
 
 <h2 id="pipeline">Seven steps, seven roles</h2>
 <p>One role per step, each with its own centre of gravity and its own refusals. Nobody in this
-list is a person.</p>
+list is a person. The same seven steps are the route drawn through
+<a href="newsroom/index.html">the newsroom floor</a>, and a gate compares the two so the room
+cannot draw a workflow the publication does not run.</p>
 <ul class="timeline"><li><span class="when">Step 1 &middot; librarian</span><span class="what">Registers a source and its ingestion state.</span></li><li><span class="when">Step 2 &middot; researcher</span><span class="what">Fetches and freezes the artefact; records the hash and retrieval time.</span></li><li><span class="when">Step 3 &middot; extractor</span><span class="what">Types nodes and edges against the ontology; runs the formulas.</span></li><li><span class="when">Step 4 &middot; writer</span><span class="what">Projects a subgraph into prose, listing the nodes it rests on.</span></li><li><span class="when">Step 5 &middot; editor</span><span class="what">Applies the refusal list; cuts rather than softens.</span></li><li><span class="when">Step 6 &middot; qa</span><span class="what">Runs the gates. A failure is answered, never silenced.</span></li><li><span class="when">Step 7 &middot; publisher</span><span class="what">Bumps the version, writes what changed and what is still missing.</span></li></ul>
+<p>What a step means in practice &mdash; what has to be true before the next role will take the
+work &mdash; is <a href="newsroom/workflow.html">the state map</a>. There are nine states and
+one of them is currently shut.</p>
 
 <h2 id="prose">Why the prose is baked into the page</h2>
 <p>The sibling site this pattern comes from renders markdown in the browser and fails its build
@@ -117,7 +122,9 @@ paying that cost.</p>
 
 <h2 id="gates">What the gate checks</h2>
 <p>Structural, cheap, and impossible to satisfy by writing more confidently. Full list in
-<code>governance/build/gates.py</code>; the section also passes the whole-site gate.</p>
+<code>governance/build/gates.py</code>; the section also passes the whole-site gate. Checks 9
+to 13 arrived with the newsroom itself &mdash; a room that draws a workflow is a new way of
+being wrong, and each of them is a mistake that was possible before it was written.</p>
 <div class="tablewrap"><table>
   <thead><tr><th>#</th><th>Check</th><th>Why it exists</th></tr></thead>
   <tbody>
@@ -133,6 +140,28 @@ paying that cost.</p>
         <td>The projection cannot drift from its source</td></tr>
     <tr><td>6</td><td>Beta notice and no-human-review statement on every page</td>
         <td>The limitation must not rot on one page while being correct on another</td></tr>
+    <tr><td>7</td><td>Every registered source returned 200 when it was checked</td>
+        <td>A URL nobody could reach is not a citation</td></tr>
+    <tr><td>8</td><td>The team is declared fully agentic, and every role states its refusals</td>
+        <td>The refusals stand where an editor would; a role without them is decorative</td></tr>
+    <tr><td>9</td><td>The state machine is closed: every exit names a real state, every
+        non-terminal state has one, every blocked state says why</td>
+        <td>A workflow whose exits go nowhere is a diagram, not a machine</td></tr>
+    <tr><td>10</td><td>Every desk item sits in a real state with a real owner, nothing
+        unpublished is silent about why it is not moving, and the pick is not held by a
+        pipeline role</td>
+        <td>Proposing and choosing are separate on purpose, and a stalled story with no stated
+        blocker is indistinguishable from a forgotten one</td></tr>
+    <tr><td>11</td><td>A URL that failed to resolve cannot appear in the source register, and
+        its note must distinguish our reach from the state of the page</td>
+        <td>Two Council pages return 403 to us. That is a fact about our network, and it must
+        never quietly become a fact about them</td></tr>
+    <tr><td>12</td><td>Every role has a page; the floor, the state map and the run pages exist</td>
+        <td>A roster that links to nothing is a list</td></tr>
+    <tr><td>13</td><td>The desk layout on the floor runs the same seven steps, in the same
+        order, as the pipeline</td>
+        <td>Reorder the pipeline and the room would keep drawing a route through a workflow
+        nobody runs</td></tr>
   </tbody>
 </table></div>
 
@@ -151,7 +180,7 @@ paying that cost.</p>
     <p>News is failing not because there is too little information but because there is no walkable chain from a claim to its evidence, no way for a correction to reach what it disproved, and no way to pay the person who did the original work. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="netline"><a href="https://sgit.ai"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://graphs.sgit.ai">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai">&#8593; nhi.sgit.ai</a> &middot; <a href="https://sg-sentinel.sgit.ai">&#8593; sg-sentinel.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.2.6</a> &middot; <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.2.7</a> &middot; <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>The argument</h4>
