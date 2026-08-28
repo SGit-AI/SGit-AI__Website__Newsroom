@@ -1,0 +1,102 @@
+{
+  "id": "governance-news-graph",
+  "version": "0.1.0",
+  "updated": "2026-08-26",
+  "ontology": "ontology.json",
+  "note": "The seed graph. Every node carries the source it came from and whether it is anchored to source bytes. In this release NOTHING is anchored — no primary artefact has been frozen or hashed yet — so every fact reads 'secondary'. That is the honest state of a first MVP and the pages render it as such rather than showing an anchor that does not exist.",
+  "unused_node_types": [
+    { "type": "Role", "why": "The ontology defines Role because obligations attach to duty-holders, but no ingested source names which roles these provisions oblige. Inventing them would be the exact failure this publication exists to report on, so the type stays empty until a primary text supplies it." }
+  ],
+  "nodes": [
+    { "id": "body-eu", "type": "Body", "label": "European Union",
+      "summary": "The instrument is styled “Regulation (EU)”. Which institutions adopted it is not recorded in any source ingested here, so no institution is named.",
+      "source": "src-newsroom-staleness", "state": "secondary", "anchored": false },
+
+    { "id": "inst-ai-act", "type": "Instrument", "label": "Regulation (EU) 2026/1744 — the EU AI Act",
+      "summary": "The instrument this beat opens on. Chosen because its own primary sources are demonstrably inconsistent about their own currency.",
+      "source": "src-newsroom-staleness", "state": "secondary", "anchored": false },
+
+    { "id": "ms-adopted", "type": "Milestone", "label": "Adopted", "date": "2026-07-08",
+      "summary": "Adoption date as reported by the ingested source.",
+      "source": "src-newsroom-staleness", "state": "secondary", "anchored": false },
+    { "id": "ms-in-force", "type": "Milestone", "label": "Entered into force", "date": "2026-07-27",
+      "summary": "Entry into force as reported by the ingested source.",
+      "source": "src-newsroom-staleness", "state": "secondary", "anchored": false },
+    { "id": "ms-consolidated", "type": "Milestone", "label": "Date carried by the consolidated text", "date": "2024-07-12",
+      "summary": "The date the consolidated text bears — over a year before the instrument took effect.",
+      "source": "src-newsroom-staleness", "state": "secondary", "anchored": false },
+
+    { "id": "pub-consolidated", "type": "Publication", "label": "The official consolidated text", "date": "2024-07-12",
+      "summary": "Presented as the consolidated version and incorporating nothing since its own date.",
+      "classification": "StaleSource",
+      "source": "src-newsroom-staleness", "state": "secondary", "anchored": false },
+    { "id": "pub-draft", "type": "Publication", "label": "A pre-adoption negotiating draft, still in circulation",
+      "summary": "The ingested source reports that at least one public source in circulation is a negotiating draft carrying no caveat that it never had legal force. No URL for a specific instance was carried across, so none is claimed here.",
+      "classification": "NeverWasTheLaw",
+      "source": "src-newsroom-staleness", "state": "secondary", "anchored": false },
+
+    { "id": "prov-art-10", "type": "Provision", "label": "Article 10",
+      "summary": "The checkable probe. Its language differs materially between the draft and adopted versions, so a source's treatment of Article 10 reveals which state that source is in.",
+      "source": "src-newsroom-staleness", "state": "secondary", "anchored": false },
+    { "id": "prov-art-26-5", "type": "Provision", "label": "Article 26(5)",
+      "summary": "The subject of a worked provision study that put nine questions to the text and got five back unanswered.",
+      "source": "src-graphs-art-26-5", "state": "secondary", "anchored": false },
+
+    { "id": "fact-adopted", "type": "Fact", "label": "The instrument was adopted on 8 July 2026.",
+      "source": "src-newsroom-staleness", "state": "secondary", "anchored": false },
+    { "id": "fact-in-force", "type": "Fact", "label": "The instrument entered into force on 27 July 2026.",
+      "source": "src-newsroom-staleness", "state": "secondary", "anchored": false },
+    { "id": "fact-consolidated-date", "type": "Fact", "label": "The official consolidated text is dated 12 July 2024 and incorporates nothing since.",
+      "source": "src-newsroom-staleness", "state": "secondary", "anchored": false },
+    { "id": "fact-art10-amended", "type": "Fact", "label": "Article 10's language differs materially between the draft and the adopted version.",
+      "source": "src-newsroom-staleness", "state": "secondary", "anchored": false },
+    { "id": "fact-retention-30d", "type": "Fact", "label": "A retention window of 30 days appears at Article 26(5).",
+      "source": "src-graphs-art-26-5", "state": "secondary", "anchored": false },
+    { "id": "fact-retention-6m", "type": "Fact", "label": "A six-month minimum appears elsewhere in the same instrument.",
+      "source": "src-graphs-art-26-5", "state": "secondary", "anchored": false },
+    { "id": "fact-graph-scale", "type": "Fact", "label": "The instrument parses to 1,523 nodes and 1,944 edges from official Formex XML.",
+      "source": "src-graphs-regulation-graph", "state": "secondary", "anchored": false },
+
+    { "id": "q-retention-conflict", "type": "Question", "asked_by": "source", "opened": "2026-08-26",
+      "label": "Which retention period governs where a 30-day window and a six-month minimum both apply?",
+      "summary": "Carried from the provision study, which records it as unanswered.",
+      "source": "src-graphs-art-26-5", "state": "secondary", "anchored": false },
+    { "id": "q-unnamed-four", "type": "Question", "asked_by": "source", "opened": "2026-08-26",
+      "label": "Four further questions are recorded as unanswered at the source, and their wording was not carried across.",
+      "summary": "A deliberate placeholder. The provision study reports nine questions of which five are unanswered; only one is restated here because only one was carried. Writing the other four from memory would fabricate the record, so this node holds the gap instead — and is itself the kind of absence the beat is meant to count.",
+      "source": "src-graphs-art-26-5", "state": "secondary", "anchored": false },
+    { "id": "q-consolidation-cadence", "type": "Question", "asked_by": "publication", "opened": "2026-08-26",
+      "label": "On what cadence is the consolidated text refreshed, and is any cadence stated anywhere?",
+      "summary": "Not carried from a source — raised by this publication on reading the dates. Recorded as ours so a reader can tell which questions came with the material and which we added.",
+      "source": null, "state": "secondary", "anchored": false }
+  ],
+  "edges": [
+    { "verb": "dated_by",     "source": "inst-ai-act",           "target": "ms-adopted" },
+    { "verb": "dated_by",     "source": "inst-ai-act",           "target": "ms-in-force" },
+    { "verb": "published_by", "source": "pub-consolidated",      "target": "body-eu" },
+    { "verb": "observed_on",  "source": "fact-consolidated-date","target": "ms-consolidated" },
+    { "verb": "observed_on",  "source": "fact-adopted",          "target": "ms-adopted" },
+    { "verb": "observed_on",  "source": "fact-in-force",         "target": "ms-in-force" },
+
+    { "verb": "part_of",      "source": "prov-art-10",           "target": "inst-ai-act" },
+    { "verb": "part_of",      "source": "prov-art-26-5",         "target": "inst-ai-act" },
+
+    { "verb": "backed_by",    "source": "fact-adopted",          "target": "pub-consolidated" },
+    { "verb": "backed_by",    "source": "fact-in-force",         "target": "pub-consolidated" },
+    { "verb": "backed_by",    "source": "fact-consolidated-date","target": "pub-consolidated" },
+    { "verb": "backed_by",    "source": "fact-art10-amended",    "target": "pub-draft" },
+
+    { "verb": "anchored_in",  "source": "fact-art10-amended",    "target": "prov-art-10" },
+    { "verb": "anchored_in",  "source": "fact-retention-30d",    "target": "prov-art-26-5" },
+    { "verb": "anchored_in",  "source": "fact-retention-6m",     "target": "prov-art-26-5" },
+    { "verb": "anchored_in",  "source": "fact-graph-scale",      "target": "prov-art-10" },
+
+    { "verb": "leaves_open",  "source": "prov-art-26-5",         "target": "q-retention-conflict" },
+    { "verb": "leaves_open",  "source": "prov-art-26-5",         "target": "q-unnamed-four" },
+    { "verb": "gives_rise_to","source": "fact-retention-30d",    "target": "q-retention-conflict" },
+    { "verb": "gives_rise_to","source": "fact-retention-6m",     "target": "q-retention-conflict" },
+    { "verb": "gives_rise_to","source": "fact-consolidated-date","target": "q-consolidation-cadence" },
+
+    { "verb": "conditional_on","source": "fact-consolidated-date","target": "fact-in-force" }
+  ]
+}

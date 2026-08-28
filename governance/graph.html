@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The graph &middot; The Governance Wire</title>
+<meta name="description" content="Every node and edge the publication holds, and the vocabulary they conform to.">
+<link rel="canonical" href="https://newsroom.sgit.ai/governance/graph.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="newsroom.sgit.ai">
+<meta property="og:url" content="https://newsroom.sgit.ai/governance/graph.html">
+<meta property="og:title" content="The graph">
+<meta property="og:description" content="Every node and edge the publication holds, and the vocabulary they conform to.">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer and the shipped CLI. This site is the future-of-news stack: provenance, corrections, and paying the fact creator">&#8593; part of <b>sgit.ai</b></a>
+  <span class="stage-pill">design, not built</span>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.2.6</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl" href="../thesis/index.html">The argument<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../corrections/the-claim-that-would-not-die.html">The claim that would not die</a>
+      <a class="sl" href="../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../provenance/a-worked-story.html">A worked story: &pound;8.40</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../economics/index.html">The economics<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../economics/rails.html">The payment rails</a>
+      <a class="sl" href="../economics/trust-as-a-service.html">Trust as a service</a>
+      <a class="sl" href="../economics/micro-and-nano-payments.html">Micro and nano payments (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl here" href="../rights/index.html">Rights &amp; ops<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../newsroom/index.html">The newsroom: roles &amp; operations</a>
+      <a class="sl" href="../mvps/index.html">The MVPs: publication instances</a>
+      <a class="sl" href="../mvps/portugal.html">The Portugal instance</a>
+      <a class="sl" href="../governance/index.html">The Governance Wire (beta)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../library/index.html">The record<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../library/index.html">The library: 2025 &rarr; present</a>
+      <a class="sl" href="../shipped/index.html">What is shipped, what is argued</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../network/index.html">Site<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../network/index.html">The network: sibling boundaries</a>
+      <a class="sl" href="../documents/index.html">Documents &amp; sources</a>
+      <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
+      <a class="sl" href="../admin/versions.html">Release history</a>
+      <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../about/participant.html">Where we lose</a>
+      </div>
+    </div>
+  </div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom">&#9733; GitHub</a>
+  <script src="../assets/nav.js" defer></script>
+</div></nav>
+
+<main class="doc">
+<div class="crumb"><a href="../index.html">newsroom.sgit.ai</a> / <a href="index.html">governance</a> / graph</div>
+<div class="ops" style="margin:0 0 1.4rem"><div class="op" style="border-left-color:#b45309"><b style="color:#b45309">The Governance Wire &middot; beta</b><p style="display:flex;gap:1.1rem;flex-wrap:wrap;align-items:center;margin-top:.45rem"><a href="index.html" style="font-size:.83rem;color:#5c5f66">The wire</a><a href="graph.html" style="font-size:.83rem;color:#101114;font-weight:600">The graph</a><a href="sources.html" style="font-size:.83rem;color:#5c5f66">Sources</a><a href="method.html" style="font-size:.83rem;color:#5c5f66">Method</a><a href="team.html" style="font-size:.83rem;color:#5c5f66">The team</a><a href="about.html" style="font-size:.83rem;color:#5c5f66">About &amp; limits</a></p></div></div>
+<h1>The graph</h1>
+<p class="lead">Every node and every edge this publication currently holds, with the
+vocabulary they conform to. <b>The machine surfaces are
+<a href="data/graph.json">graph.json</a> and <a href="data/ontology.json">ontology.json</a></b>
+&mdash; this page is a projection of them and cannot say anything they do not.</p>
+
+<div class="warnbox"><p style="margin-top:0"><b>Beta, and fully agentic.</b> This publication is produced end to end by software agents. <b>No human reviews a page before it is published</b> &mdash; a named human reads it afterwards, as a reader. Treat everything here as a draft that has passed structural checks and no editorial ones.</p><p><b>Nothing here is anchored yet.</b> Every fact reached this graph from another publication's reading of a primary text, never from the text itself, and is labelled <code>secondary</code> in the data and on the page. The verification layer this publication exists to provide is <em>designed and not running</em>.</p><p><b>We do not assess named organisations.</b> There is no legal sign-off for this publication. It reports what bodies have published, and links to it. <a href="about.html">The full limits &rarr;</a></p></div>
+
+<h2 id="vocabulary">The edge vocabulary</h2>
+<p>Every edge is a verb with a distinct, meaningfully-named inverse. Four are inherited
+unchanged from <a href="https://graphs.sgit.ai/v1/grammar/edge-set.html">the established set</a> at
+graphs.sgit.ai; the rest are proposed here for this beat
+and are marked as such, because a borrowed word carries its meaning with it and a new one
+does not.</p>
+<div class="tablewrap"><table>
+  <thead><tr><th>Verb</th><th>Inverse</th><th>Domain &rarr; range</th><th>Reads as</th><th>Origin</th></tr></thead>
+  <tbody><tr><td><code>backed_by</code></td><td><code>backs</code></td><td class="small">Fact &rarr; Publication</td><td class="small">This fact is backed by that publication.</td><td><span class="pill p-ships">primary</span></td></tr><tr><td><code>gives_rise_to</code></td><td><code>arises_from</code></td><td class="small">Fact &rarr; Question</td><td class="small">This fact gives rise to that question.</td><td><span class="pill p-ships">primary</span></td></tr><tr><td><code>conditional_on</code></td><td><code>conditions</code></td><td class="small">Fact &rarr; Fact</td><td class="small">This fact is conditional on that one holding.</td><td><span class="pill p-ships">primary</span></td></tr><tr><td><code>observed_on</code></td><td><code>observes</code></td><td class="small">Fact &rarr; Milestone</td><td class="small">This fact was observed on that date.</td><td><span class="pill p-ships">primary</span></td></tr><tr><td><code>published_by</code></td><td><code>publishes</code></td><td class="small">Publication &rarr; Body</td><td class="small">This publication was published by that body.</td><td><span class="pill p-argued">secondary</span></td></tr><tr><td><code>part_of</code></td><td><code>contains</code></td><td class="small">Provision &rarr; Instrument</td><td class="small">This provision is part of that instrument.</td><td><span class="pill p-argued">secondary</span></td></tr><tr><td><code>anchored_in</code></td><td><code>anchors</code></td><td class="small">Fact &rarr; Provision</td><td class="small">This fact is anchored in that provision.</td><td><span class="pill p-argued">secondary</span></td></tr><tr><td><code>obliges</code></td><td><code>obliged_by</code></td><td class="small">Provision &rarr; Role</td><td class="small">This provision obliges that role.</td><td><span class="pill p-argued">secondary</span></td></tr><tr><td><code>leaves_open</code></td><td><code>left_open_by</code></td><td class="small">Provision &rarr; Question</td><td class="small">This provision leaves that question open.</td><td><span class="pill p-argued">secondary</span></td></tr><tr><td><code>supersedes</code></td><td><code>superseded_by</code></td><td class="small">Fact &rarr; Fact</td><td class="small">This fact supersedes that earlier one, which is kept.</td><td><span class="pill p-argued">secondary</span></td></tr><tr><td><code>dated_by</code></td><td><code>dates</code></td><td class="small">Instrument &rarr; Milestone</td><td class="small">This instrument is dated by that milestone.</td><td><span class="pill p-argued">secondary</span></td></tr></tbody>
+</table></div>
+<p class="small dim">In use in the current graph: <code>anchored_in</code>, <code>backed_by</code>, <code>conditional_on</code>, <code>dated_by</code>, <code>gives_rise_to</code>, <code>leaves_open</code>, <code>observed_on</code>, <code>part_of</code>, <code>published_by</code>.</p>
+
+<h2 id="banned">Banned</h2>
+<div class="tablewrap"><table>
+  <thead><tr><th>Verb</th><th>Why</th></tr></thead><tbody><tr><td><code>related_to</code></td><td>Symmetric edges carry no direction and no meaning. Banned by the inherited grammar and checked by the gate.</td></tr><tr><td><code>mentions</code></td><td>Too weak to be worth an edge: it says a string appeared, not that anything follows from it.</td></tr></tbody>
+</table></div>
+
+<h2 id="formulas">Classification is a formula</h2>
+<p>A node type is not a label somebody applied; it is a query anybody can argue with. Change a
+formula and everything it touches reclassifies at once &mdash; which is a correction, and is
+published as one.</p>
+<div class="ops"><div class="op"><b>StaleSource</b><p><code>Publication where a dates edge to its own Milestone precedes the in-force Milestone of the Instrument it claims to consolidate</code><br>Classification is a queryable formula rather than a label somebody applied. Change the formula and every affected publication reclassifies at once — which is itself a correction and is published as one.</p></div><div class="op"><b>UnpriceableObligation</b><p><code>Provision that obliges a Role and also leaves_open at least one Question</code><br>A duty exists and what satisfies it is undetermined. This is the class of finding the absence report exists to surface.</p></div></div>
+
+<h2 id="nodes">The nodes</h2>
+<h3 id="t-body">Body <span class="dim small" style="font-weight:400">&mdash; 1</span></h3><p class="small dim">A regulator, supervisory authority, standards body or legislature that publishes binding or advisory text.</p><div class="tablewrap"><table><thead><tr><th>Node</th><th>Label</th><th>Source</th></tr></thead><tbody><tr><td><code>body-eu</code></td><td>European Union</td><td class="small"><a href="https://newsroom.sgit.ai/corrections/staleness-in-the-wild.html">newsroom.sgit.ai</a> <span class="pill p-argued">secondary</span></td></tr></tbody></table></div><h3 id="t-instrument">Instrument <span class="dim small" style="font-weight:400">&mdash; 1</span></h3><p class="small dim">A regulation, directive, standard or other named body of text that can be cited as a whole.</p><div class="tablewrap"><table><thead><tr><th>Node</th><th>Label</th><th>Source</th></tr></thead><tbody><tr><td><code>inst-ai-act</code></td><td>Regulation (EU) 2026/1744 — the EU AI Act</td><td class="small"><a href="https://newsroom.sgit.ai/corrections/staleness-in-the-wild.html">newsroom.sgit.ai</a> <span class="pill p-argued">secondary</span></td></tr></tbody></table></div><h3 id="t-provision">Provision <span class="dim small" style="font-weight:400">&mdash; 2</span></h3><p class="small dim">An article, clause or recital inside an instrument, addressable on its own.</p><div class="tablewrap"><table><thead><tr><th>Node</th><th>Label</th><th>Source</th></tr></thead><tbody><tr><td><code>prov-art-10</code></td><td>Article 10</td><td class="small"><a href="https://newsroom.sgit.ai/corrections/staleness-in-the-wild.html">newsroom.sgit.ai</a> <span class="pill p-argued">secondary</span></td></tr><tr><td><code>prov-art-26-5</code></td><td>Article 26(5)</td><td class="small"><a href="https://graphs.sgit.ai/v1/examples/article-26-5.html">graphs.sgit.ai</a> <span class="pill p-argued">secondary</span></td></tr></tbody></table></div><h3 id="t-publication">Publication <span class="dim small" style="font-weight:400">&mdash; 2</span></h3><p class="small dim">A dated artefact issued by a Body: guidance, a news item, a consultation, a decision, a consolidated text.</p><div class="tablewrap"><table><thead><tr><th>Node</th><th>Label</th><th>Source</th></tr></thead><tbody><tr><td><code>pub-consolidated</code></td><td>The official consolidated text</td><td class="small"><a href="https://newsroom.sgit.ai/corrections/staleness-in-the-wild.html">newsroom.sgit.ai</a> <span class="pill p-argued">secondary</span></td></tr><tr><td><code>pub-draft</code></td><td>A pre-adoption negotiating draft, still in circulation</td><td class="small"><a href="https://newsroom.sgit.ai/corrections/staleness-in-the-wild.html">newsroom.sgit.ai</a> <span class="pill p-argued">secondary</span></td></tr></tbody></table></div><h3 id="t-fact">Fact <span class="dim small" style="font-weight:400">&mdash; 7</span></h3><p class="small dim">An extracted claim about what a text says or when something happened. A Fact records the source it came from and its anchor state; anchoring pins it to a byte range in a frozen copy, and nothing in this release is anchored.</p><div class="tablewrap"><table><thead><tr><th>Node</th><th>Label</th><th>Source</th></tr></thead><tbody><tr><td><code>fact-adopted</code></td><td>The instrument was adopted on 8 July 2026.</td><td class="small"><a href="https://newsroom.sgit.ai/corrections/staleness-in-the-wild.html">newsroom.sgit.ai</a> <span class="pill p-argued">secondary</span></td></tr><tr><td><code>fact-in-force</code></td><td>The instrument entered into force on 27 July 2026.</td><td class="small"><a href="https://newsroom.sgit.ai/corrections/staleness-in-the-wild.html">newsroom.sgit.ai</a> <span class="pill p-argued">secondary</span></td></tr><tr><td><code>fact-consolidated-date</code></td><td>The official consolidated text is dated 12 July 2024 and incorporates nothing since.</td><td class="small"><a href="https://newsroom.sgit.ai/corrections/staleness-in-the-wild.html">newsroom.sgit.ai</a> <span class="pill p-argued">secondary</span></td></tr><tr><td><code>fact-art10-amended</code></td><td>Article 10&#x27;s language differs materially between the draft and the adopted version.</td><td class="small"><a href="https://newsroom.sgit.ai/corrections/staleness-in-the-wild.html">newsroom.sgit.ai</a> <span class="pill p-argued">secondary</span></td></tr><tr><td><code>fact-retention-30d</code></td><td>A retention window of 30 days appears at Article 26(5).</td><td class="small"><a href="https://graphs.sgit.ai/v1/examples/article-26-5.html">graphs.sgit.ai</a> <span class="pill p-argued">secondary</span></td></tr><tr><td><code>fact-retention-6m</code></td><td>A six-month minimum appears elsewhere in the same instrument.</td><td class="small"><a href="https://graphs.sgit.ai/v1/examples/article-26-5.html">graphs.sgit.ai</a> <span class="pill p-argued">secondary</span></td></tr><tr><td><code>fact-graph-scale</code></td><td>The instrument parses to 1,523 nodes and 1,944 edges from official Formex XML.</td><td class="small"><a href="https://graphs.sgit.ai/v1/examples/index.html">graphs.sgit.ai</a> <span class="pill p-argued">secondary</span></td></tr></tbody></table></div><h3 id="t-question">Question <span class="dim small" style="font-weight:400">&mdash; 3</span></h3><p class="small dim">Something a text does not determine. A first-class node, not an omission — countable, dateable and assignable.</p><div class="tablewrap"><table><thead><tr><th>Node</th><th>Label</th><th>Source</th></tr></thead><tbody><tr><td><code>q-retention-conflict</code></td><td>Which retention period governs where a 30-day window and a six-month minimum both apply?</td><td class="small"><a href="https://graphs.sgit.ai/v1/examples/article-26-5.html">graphs.sgit.ai</a> <span class="pill p-argued">secondary</span></td></tr><tr><td><code>q-unnamed-four</code></td><td>Four further questions are recorded as unanswered at the source, and their wording was not carried across.</td><td class="small"><a href="https://graphs.sgit.ai/v1/examples/article-26-5.html">graphs.sgit.ai</a> <span class="pill p-argued">secondary</span></td></tr><tr><td><code>q-consolidation-cadence</code></td><td>On what cadence is the consolidated text refreshed, and is any cadence stated anywhere?</td><td class="small"><span class="dim">this publication</span> <span class="pill p-argued">secondary</span></td></tr></tbody></table></div><h3 id="t-role">Role <span class="dim small" style="font-weight:400">&mdash; 0</span></h3><p class="small dim">A duty-holder named by an instrument: provider, deployer, importer, authority.</p><div class="tablewrap"><table><thead><tr><th>Node</th><th>Label</th><th>Source</th></tr></thead><tbody><tr><td colspan="3" class="small dim">No instances. The ontology defines Role because obligations attach to duty-holders, but no ingested source names which roles these provisions oblige. Inventing them would be the exact failure this publication exists to report on, so the type stays empty until a primary text supplies it.</td></tr></tbody></table></div><h3 id="t-milestone">Milestone <span class="dim small" style="font-weight:400">&mdash; 3</span></h3><p class="small dim">A dated event in an instrument&#x27;s life: adoption, entry into force, applicability, amendment.</p><div class="tablewrap"><table><thead><tr><th>Node</th><th>Label</th><th>Source</th></tr></thead><tbody><tr><td><code>ms-adopted</code></td><td>Adopted</td><td class="small"><a href="https://newsroom.sgit.ai/corrections/staleness-in-the-wild.html">newsroom.sgit.ai</a> <span class="pill p-argued">secondary</span></td></tr><tr><td><code>ms-in-force</code></td><td>Entered into force</td><td class="small"><a href="https://newsroom.sgit.ai/corrections/staleness-in-the-wild.html">newsroom.sgit.ai</a> <span class="pill p-argued">secondary</span></td></tr><tr><td><code>ms-consolidated</code></td><td>Date carried by the consolidated text</td><td class="small"><a href="https://newsroom.sgit.ai/corrections/staleness-in-the-wild.html">newsroom.sgit.ai</a> <span class="pill p-argued">secondary</span></td></tr></tbody></table></div>
+
+<div class="agent"><h4>For an agent</h4><p>Fetch <code>/governance/data/graph.json</code> and <code>/governance/data/ontology.json</code> rather than parsing this page. Every node carries <code>source</code>, <code>state</code> and <code>anchored</code>; in this release <b>every node is <code>secondary</code> and <code>anchored</code> is false throughout</b>. An edge verb outside the ontology is a build failure, not a variant — the gate rejects it.</p></div>
+
+<div class="pagenav">
+  <a href="index.html">&larr; The wire</a>
+  <a href="sources.html">The source register &rarr;</a>
+</div>
+
+</main>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>News is failing not because there is too little information but because there is no walkable chain from a claim to its evidence, no way for a correction to reach what it disproved, and no way to pay the person who did the original work. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="netline"><a href="https://sgit.ai"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://graphs.sgit.ai">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai">&#8593; nhi.sgit.ai</a> &middot; <a href="https://sg-sentinel.sgit.ai">&#8593; sg-sentinel.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../admin/versions.html">v0.2.6</a> &middot; <a href="../admin/index.html">engineering</a></p>
+  </div>
+  <div>
+    <h4>The argument</h4>
+    <a href="../thesis/index.html">&#8594; The thesis: sell the graph</a>
+    <a href="../corrections/index.html">Corrections must propagate</a>
+    <a href="../corrections/the-claim-that-would-not-die.html">The claim that would not die</a>
+    <a href="../provenance/index.html">Provenance is the product</a>
+    <a href="../provenance/a-worked-story.html">A worked story: &pound;8.40</a>
+  </div>
+  <div>
+    <h4>The economics</h4>
+    <a href="../economics/index.html">Paying the fact creator</a>
+    <a href="../economics/rails.html">The payment rails</a>
+    <a href="../economics/trust-as-a-service.html">Trust as a service</a>
+    <a href="../economics/micro-and-nano-payments.html">Micro and nano payments (2025)</a>
+  </div>
+  <div>
+    <h4>Rights, ops &amp; record</h4>
+    <a href="../rights/index.html">Content rights: CC-Signed</a>
+    <a href="../newsroom/index.html">The newsroom: roles &amp; operations</a>
+    <a href="../mvps/index.html">The MVPs: publication instances</a>
+    <a href="../governance/index.html">The Governance Wire (beta)</a>
+    <a href="../library/index.html">The library: 2025 &rarr; present</a>
+    <a href="../shipped/index.html">What is shipped, what is argued</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../network/index.html">The network: sibling boundaries</a>
+    <a href="../documents/index.html">Documents &amp; sources</a>
+    <a href="../admin/comms.html">Comms: tasks &amp; requests</a>
+    <a href="../admin/versions.html">Release history</a>
+    <a href="../about/participant.html">Where we lose</a>
+    <a href="../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+</body>
+</html>

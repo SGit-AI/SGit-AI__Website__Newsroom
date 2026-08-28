@@ -14,7 +14,7 @@
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer and the shipped CLI. This site is the future-of-news stack: provenance, corrections, and paying the fact creator">&#8593; part of <b>sgit.ai</b></a>
   <span class="stage-pill">design, not built</span>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.2.5</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.2.6</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -43,6 +43,7 @@
       <a class="sl" href="../newsroom/index.html">The newsroom: roles &amp; operations</a>
       <a class="sl" href="../mvps/index.html">The MVPs: publication instances</a>
       <a class="sl" href="../mvps/portugal.html">The Portugal instance</a>
+      <a class="sl" href="../governance/index.html">The Governance Wire (beta)</a>
       </div>
     </div>
     <div class="ni ni-has">
@@ -76,6 +77,17 @@
 <div class="tablewrap"><table class="vers">
   <thead><tr><th>Version</th><th>Date</th><th>What shipped</th></tr></thead>
   <tbody>
+    <tr>
+      <td class="vnum">v0.2.6</td>
+      <td>26 Aug 2026</td>
+      <td><b>The commissioning brief stops being a document: <a href="../governance/index.html">/governance/</a> is a first, running MVP of the risk-and-governance publication.</b>
+        <p>Built to the conventions <code>graphs.sgit.ai</code> arrived at over v0.4&ndash;v0.6: <b>JSON is the source of truth for structure, markdown for prose, and the HTML is a projection of both.</b> Five machine surfaces &mdash; <a href="../governance/data/graph.json">graph</a>, <a href="../governance/data/ontology.json">ontology</a>, <a href="../governance/data/sources.json">sources</a>, <a href="../governance/data/stories.json">stories</a>, <a href="../governance/data/team.json">team</a> &mdash; and a generator that cannot render a claim the data does not carry. The section is <b>self-contained</b>: its own data, prose, generator and gate, depending on nothing but the shared stylesheet and chrome, so it can be lifted to its own domain whole.</p>
+        <p><b>The one convention deliberately not copied.</b> The sibling renders markdown in the browser and fails CI if a page lags its source. This section renders at build time instead, because <a href="../network/index.html#risks">this site lists crawler-invisibility of client-assembled pages as an inherited existential risk</a> and a story whose text is not in the HTML is a story an agent cannot read. Gate check 5 re-derives every story page from its markdown, so the no-drift guarantee is kept without paying that cost.</p>
+        <p><b>Fully agentic, and the pages lead with what that costs.</b> Seven agent roles, each with a centre of gravity and a written list of what it refuses; <b>no human reviews a page before publication</b>. In that posture the Editor's refusals are the only thing standing where a duty editor would be, so they are rules rather than judgement calls &mdash; chief among them that <b>no named organisation is assessed</b>, there being no legal sign-off. A generated disclaimer block appears on every page and gate check 6 fails the build if it is missing from one.</p>
+        <p><b>The honesty the gate enforces.</b> Every fact in the seed graph is <code>secondary</code> &mdash; taken from a sibling site's reading of a text, never from the text &mdash; and <b>nothing is anchored</b>. Check 4 fails the build if any page claims a verified anchor while no node carries one, and it caught exactly that during the build: an ontology definition described a Fact as &ldquo;anchored to a byte range&rdquo;, which overclaimed for this release. The definition was rewritten rather than the check loosened.</p>
+        <p>19 nodes, 22 edges, 5 sources all re-fetched and confirmed 200 on the day, 2 stories, 8 pages, 6 section gates on top of the whole-site gate.</p>
+      </td>
+    </tr>
     <tr>
       <td class="vnum">v0.2.5</td>
       <td>25 Aug 2026</td>
@@ -158,7 +170,7 @@
     <p>News is failing not because there is too little information but because there is no walkable chain from a claim to its evidence, no way for a correction to reach what it disproved, and no way to pay the person who did the original work. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="netline"><a href="https://sgit.ai"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://graphs.sgit.ai">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai">&#8593; nhi.sgit.ai</a> &middot; <a href="https://sg-sentinel.sgit.ai">&#8593; sg-sentinel.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.2.5</a> &middot; <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.2.6</a> &middot; <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>The argument</h4>
@@ -180,6 +192,7 @@
     <a href="../rights/index.html">Content rights: CC-Signed</a>
     <a href="../newsroom/index.html">The newsroom: roles &amp; operations</a>
     <a href="../mvps/index.html">The MVPs: publication instances</a>
+    <a href="../governance/index.html">The Governance Wire (beta)</a>
     <a href="../library/index.html">The library: 2025 &rarr; present</a>
     <a href="../shipped/index.html">What is shipped, what is argued</a>
   </div>

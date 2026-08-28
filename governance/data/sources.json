@@ -1,0 +1,100 @@
+{
+  "id": "governance-source-register",
+  "version": "0.1.0",
+  "updated": "2026-08-26",
+  "note": "Every source this publication draws on, and its ingestion state. The register exists so a reader can tell — without asking — whether a fact reached the graph from the primary text or by way of somebody else's reading of it. In this first release NO source has been ingested directly from a regulator. Everything in the seed graph is second-hand from a sibling sgit.ai site, and every node says so.",
+  "ingestion_states": [
+    { "id": "primary",     "label": "Primary",      "definition": "Frozen from the issuing body's own artefact, hashed, with quotes anchored to byte offsets in that copy." },
+    { "id": "secondary",   "label": "Secondary",    "definition": "Taken from another publication's reading of a primary source. Usable, and always labelled — a secondary fact can never be presented as anchored." },
+    { "id": "planned",     "label": "Planned",      "definition": "Named as in scope for the beat, with nothing ingested yet." }
+  ],
+  "sources": [
+    {
+      "id": "src-newsroom-staleness",
+      "title": "Staleness in the wild — the EU AI Act's consolidated text",
+      "publisher": "newsroom.sgit.ai",
+      "url": "https://newsroom.sgit.ai/corrections/staleness-in-the-wild.html",
+      "state": "secondary",
+      "checked": "2026-08-26",
+      "http": 200,
+      "supplies": ["fact-adopted", "fact-in-force", "fact-consolidated-date", "fact-art10-amended", "q-consolidation-cadence"],
+      "note": "This site's own published account. Dated and public, but it is a reading of the regulation, not the regulation."
+    },
+    {
+      "id": "src-graphs-art-26-5",
+      "title": "Article 26(5) — nine questions, five unanswered",
+      "publisher": "graphs.sgit.ai",
+      "url": "https://graphs.sgit.ai/v1/examples/article-26-5.html",
+      "state": "secondary",
+      "checked": "2026-08-26",
+      "http": 200,
+      "supplies": ["fact-retention-30d", "fact-retention-6m", "q-retention-conflict", "q-unnamed-four"],
+      "note": "A worked provision study. Four of its five unanswered questions are not restated here because their wording was not carried across — see q-unnamed-four, which records that absence rather than inventing them."
+    },
+    {
+      "id": "src-graphs-regulation-graph",
+      "title": "The EU AI Act regulation graph — 1,523 nodes, 1,944 edges",
+      "publisher": "graphs.sgit.ai",
+      "url": "https://graphs.sgit.ai/v1/examples/index.html",
+      "state": "secondary",
+      "checked": "2026-08-26",
+      "http": 200,
+      "supplies": ["fact-graph-scale"],
+      "note": "Parsed from official Formex XML with SHA-256 verification at every provenance point. The nearest thing to a primary ingestion available to this publication today — but it is that site's parse, not this one's."
+    },
+    {
+      "id": "src-graphs-edge-set",
+      "title": "The established edge set",
+      "publisher": "graphs.sgit.ai",
+      "url": "https://graphs.sgit.ai/v1/grammar/edge-set.html",
+      "state": "secondary",
+      "checked": "2026-08-26",
+      "http": 200,
+      "supplies": [],
+      "note": "Not a news source. The grammar this beat's ontology inherits its four reused edges from."
+    },
+    {
+      "id": "src-risks-ontology",
+      "title": "The risk ontology — 42 concepts",
+      "publisher": "risks.sgit.ai",
+      "url": "https://risks.sgit.ai/data/concepts.json",
+      "state": "secondary",
+      "checked": "2026-08-26",
+      "http": 200,
+      "supplies": [],
+      "note": "Not a news source. The concept register this beat defers to for anything risk-shaped rather than restating."
+    }
+  ],
+  "planned": [
+    {
+      "id": "plan-official-journal",
+      "class": "Official journals and consolidated texts",
+      "why": "The primary artefact for any instrument this beat covers. Freezing and hashing these is what turns every secondary fact above into a primary one.",
+      "blocked_on": "An ingestion path that fetches, freezes, hashes and anchors — the piece this release does not have."
+    },
+    {
+      "id": "plan-regulator-news",
+      "class": "News and press releases issued by regulatory and supervisory bodies",
+      "why": "Named by the commissioning brief as the beat's most interesting source class: dated, attributable, issued by the body with authority over the text.",
+      "blocked_on": "Same ingestion path. Also needs a per-body register so a publication can be attributed to a body rather than to a URL."
+    },
+    {
+      "id": "plan-regulator-guidance",
+      "class": "Guidance, FAQs and interpretive notes",
+      "why": "Where an obligation is actually made operable, and where silent republication is most common — the condition the staleness wire exists to catch.",
+      "blocked_on": "Ingestion path, plus a change-detection loop that re-fetches on a cadence."
+    },
+    {
+      "id": "plan-consultations",
+      "class": "Open consultations and their response documents",
+      "why": "Consultations state the questions a body knows it has not answered. That is the absence board's richest input and it is published voluntarily.",
+      "blocked_on": "Ingestion path."
+    },
+    {
+      "id": "plan-enforcement",
+      "class": "Enforcement decisions and sanctions registers",
+      "why": "The record of what a body actually does, as against what its text says it may do.",
+      "blocked_on": "Ingestion path. This class also needs the legal position settled before anything naming a party is published — see /governance/about.html."
+    }
+  ]
+}

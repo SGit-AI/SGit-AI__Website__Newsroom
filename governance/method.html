@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The method &middot; The Governance Wire</title>
+<meta name="description" content="We do not report facts. We link, type and check other people&#x27;s — and the verification step is designed, not running.">
+<link rel="canonical" href="https://newsroom.sgit.ai/governance/method.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="newsroom.sgit.ai">
+<meta property="og:url" content="https://newsroom.sgit.ai/governance/method.html">
+<meta property="og:title" content="The method">
+<meta property="og:description" content="We do not report facts. We link, type and check other people&#x27;s — and the verification step is designed, not running.">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer and the shipped CLI. This site is the future-of-news stack: provenance, corrections, and paying the fact creator">&#8593; part of <b>sgit.ai</b></a>
+  <span class="stage-pill">design, not built</span>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.2.6</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl" href="../thesis/index.html">The argument<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../corrections/the-claim-that-would-not-die.html">The claim that would not die</a>
+      <a class="sl" href="../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../provenance/a-worked-story.html">A worked story: &pound;8.40</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../economics/index.html">The economics<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../economics/rails.html">The payment rails</a>
+      <a class="sl" href="../economics/trust-as-a-service.html">Trust as a service</a>
+      <a class="sl" href="../economics/micro-and-nano-payments.html">Micro and nano payments (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl here" href="../rights/index.html">Rights &amp; ops<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../newsroom/index.html">The newsroom: roles &amp; operations</a>
+      <a class="sl" href="../mvps/index.html">The MVPs: publication instances</a>
+      <a class="sl" href="../mvps/portugal.html">The Portugal instance</a>
+      <a class="sl" href="../governance/index.html">The Governance Wire (beta)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../library/index.html">The record<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../library/index.html">The library: 2025 &rarr; present</a>
+      <a class="sl" href="../shipped/index.html">What is shipped, what is argued</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../network/index.html">Site<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../network/index.html">The network: sibling boundaries</a>
+      <a class="sl" href="../documents/index.html">Documents &amp; sources</a>
+      <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
+      <a class="sl" href="../admin/versions.html">Release history</a>
+      <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../about/participant.html">Where we lose</a>
+      </div>
+    </div>
+  </div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom">&#9733; GitHub</a>
+  <script src="../assets/nav.js" defer></script>
+</div></nav>
+
+<main class="doc">
+<div class="crumb"><a href="../index.html">newsroom.sgit.ai</a> / <a href="index.html">governance</a> / method</div>
+<div class="ops" style="margin:0 0 1.4rem"><div class="op" style="border-left-color:#b45309"><b style="color:#b45309">The Governance Wire &middot; beta</b><p style="display:flex;gap:1.1rem;flex-wrap:wrap;align-items:center;margin-top:.45rem"><a href="index.html" style="font-size:.83rem;color:#5c5f66">The wire</a><a href="graph.html" style="font-size:.83rem;color:#5c5f66">The graph</a><a href="sources.html" style="font-size:.83rem;color:#5c5f66">Sources</a><a href="method.html" style="font-size:.83rem;color:#101114;font-weight:600">Method</a><a href="team.html" style="font-size:.83rem;color:#5c5f66">The team</a><a href="about.html" style="font-size:.83rem;color:#5c5f66">About &amp; limits</a></p></div></div>
+<h1>The method</h1>
+<p class="lead"><b>We do not report facts. We link, type and check other people's.</b> Every
+claim this publication carries was published by somebody else; what is added is a typed graph
+over it, a link back to it, and a record of whether anyone read the original.</p>
+
+<div class="warnbox"><p style="margin-top:0"><b>Beta, and fully agentic.</b> This publication is produced end to end by software agents. <b>No human reviews a page before it is published</b> &mdash; a named human reads it afterwards, as a reader. Treat everything here as a draft that has passed structural checks and no editorial ones.</p><p><b>Nothing here is anchored yet.</b> Every fact reached this graph from another publication's reading of a primary text, never from the text itself, and is labelled <code>secondary</code> in the data and on the page. The verification layer this publication exists to provide is <em>designed and not running</em>.</p><p><b>We do not assess named organisations.</b> There is no legal sign-off for this publication. It reports what bodies have published, and links to it. <a href="about.html">The full limits &rarr;</a></p></div>
+
+<h2 id="layer">What the layer actually adds</h2>
+<div class="cards">
+  <div class="card"><span class="tag">Linking</span><h3>A path back to the original</h3>
+    <p>Every node names a source, and every source in the register was fetched with its status
+    recorded. Nothing is asserted without somewhere to go and check it.</p></div>
+  <div class="card"><span class="tag">Typing</span><h3>Claims become structure</h3>
+    <p>A statement becomes a Fact with edges to the Provision it sits in and the Questions it
+    raises. Structure is what lets a correction find everything downstream of it.</p></div>
+  <div class="card"><span class="tag">Verification</span><h3>Designed, not running</h3>
+    <p>Freezing a source, hashing it and anchoring quotes to byte offsets is the step that turns
+    a link into a check. <b>This release does not do it</b>, and every page says so.</p></div>
+  <div class="card"><span class="tag">Absence</span><h3>What is missing is counted</h3>
+    <p>An unanswered question is a node with an identifier and an opening date &mdash; including
+    when the missing thing is ours, as with the four questions we could not carry across.</p></div>
+</div>
+
+<h2 id="pipeline">Seven steps, seven roles</h2>
+<p>One role per step, each with its own centre of gravity and its own refusals. Nobody in this
+list is a person.</p>
+<ul class="timeline"><li><span class="when">Step 1 &middot; librarian</span><span class="what">Registers a source and its ingestion state.</span></li><li><span class="when">Step 2 &middot; researcher</span><span class="what">Fetches and freezes the artefact; records the hash and retrieval time.</span></li><li><span class="when">Step 3 &middot; extractor</span><span class="what">Types nodes and edges against the ontology; runs the formulas.</span></li><li><span class="when">Step 4 &middot; writer</span><span class="what">Projects a subgraph into prose, listing the nodes it rests on.</span></li><li><span class="when">Step 5 &middot; editor</span><span class="what">Applies the refusal list; cuts rather than softens.</span></li><li><span class="when">Step 6 &middot; qa</span><span class="what">Runs the gates. A failure is answered, never silenced.</span></li><li><span class="when">Step 7 &middot; publisher</span><span class="what">Bumps the version, writes what changed and what is still missing.</span></li></ul>
+
+<h2 id="prose">Why the prose is baked into the page</h2>
+<p>The sibling site this pattern comes from renders markdown in the browser and fails its build
+if a page lags its source. This section renders at build time instead, for a reason specific to
+news: <a href="../network/index.html#risks">this site lists crawler-invisibility of
+client-assembled pages as an inherited existential risk</a>, and a story whose text is not in
+the HTML is a story an agent or a search engine cannot read. The gate re-derives every story
+page from its markdown and fails if the two have drifted, so the guarantee is kept without
+paying that cost.</p>
+
+<h2 id="gates">What the gate checks</h2>
+<p>Structural, cheap, and impossible to satisfy by writing more confidently. Full list in
+<code>governance/build/gates.py</code>; the section also passes the whole-site gate.</p>
+<div class="tablewrap"><table>
+  <thead><tr><th>#</th><th>Check</th><th>Why it exists</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>Every node's source resolves to a register entry, or its origin is declared</td>
+        <td>A fact with nowhere to go back to is the failure this whole publication is about</td></tr>
+    <tr><td>2</td><td>Every edge verb exists in the ontology; no banned verb appears</td>
+        <td>A plausible edge is indistinguishable from a true one once it is in the file</td></tr>
+    <tr><td>3</td><td>Every story's cited node ids exist</td>
+        <td>Prose that cites a node the graph does not have is prose nobody can check</td></tr>
+    <tr><td>4</td><td>No page claims an anchor the data does not carry</td>
+        <td>Showing a verification state that does not exist would be the worst thing here</td></tr>
+    <tr><td>5</td><td>Every story page matches its markdown</td>
+        <td>The projection cannot drift from its source</td></tr>
+    <tr><td>6</td><td>Beta notice and no-human-review statement on every page</td>
+        <td>The limitation must not rot on one page while being correct on another</td></tr>
+  </tbody>
+</table></div>
+
+<div class="agent"><h4>For an agent</h4><p>This publication adds structure and links over other organisations' published material; it originates no claims of its own. The verification step (freeze, hash, anchor) is specified and <b>not implemented</b>, so treat every claim as an unverified pointer to a source rather than a checked reading of it. The pipeline is fully agentic with no human review at any step.</p></div>
+
+<div class="pagenav">
+  <a href="sources.html">&larr; Sources</a>
+  <a href="team.html">The team &rarr;</a>
+</div>
+
+</main>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>News is failing not because there is too little information but because there is no walkable chain from a claim to its evidence, no way for a correction to reach what it disproved, and no way to pay the person who did the original work. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="netline"><a href="https://sgit.ai"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://graphs.sgit.ai">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai">&#8593; nhi.sgit.ai</a> &middot; <a href="https://sg-sentinel.sgit.ai">&#8593; sg-sentinel.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../admin/versions.html">v0.2.6</a> &middot; <a href="../admin/index.html">engineering</a></p>
+  </div>
+  <div>
+    <h4>The argument</h4>
+    <a href="../thesis/index.html">&#8594; The thesis: sell the graph</a>
+    <a href="../corrections/index.html">Corrections must propagate</a>
+    <a href="../corrections/the-claim-that-would-not-die.html">The claim that would not die</a>
+    <a href="../provenance/index.html">Provenance is the product</a>
+    <a href="../provenance/a-worked-story.html">A worked story: &pound;8.40</a>
+  </div>
+  <div>
+    <h4>The economics</h4>
+    <a href="../economics/index.html">Paying the fact creator</a>
+    <a href="../economics/rails.html">The payment rails</a>
+    <a href="../economics/trust-as-a-service.html">Trust as a service</a>
+    <a href="../economics/micro-and-nano-payments.html">Micro and nano payments (2025)</a>
+  </div>
+  <div>
+    <h4>Rights, ops &amp; record</h4>
+    <a href="../rights/index.html">Content rights: CC-Signed</a>
+    <a href="../newsroom/index.html">The newsroom: roles &amp; operations</a>
+    <a href="../mvps/index.html">The MVPs: publication instances</a>
+    <a href="../governance/index.html">The Governance Wire (beta)</a>
+    <a href="../library/index.html">The library: 2025 &rarr; present</a>
+    <a href="../shipped/index.html">What is shipped, what is argued</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../network/index.html">The network: sibling boundaries</a>
+    <a href="../documents/index.html">Documents &amp; sources</a>
+    <a href="../admin/comms.html">Comms: tasks &amp; requests</a>
+    <a href="../admin/versions.html">Release history</a>
+    <a href="../about/participant.html">Where we lose</a>
+    <a href="../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+</body>
+</html>

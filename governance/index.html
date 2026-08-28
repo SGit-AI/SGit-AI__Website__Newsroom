@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Governance Wire &middot; The Governance Wire</title>
+<meta name="description" content="A graph, verification and linking layer over what regulatory bodies publish. Beta, fully agentic, no human review before publication.">
+<link rel="canonical" href="https://newsroom.sgit.ai/governance/index.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="newsroom.sgit.ai">
+<meta property="og:url" content="https://newsroom.sgit.ai/governance/index.html">
+<meta property="og:title" content="The Governance Wire">
+<meta property="og:description" content="A graph, verification and linking layer over what regulatory bodies publish. Beta, fully agentic, no human review before publication.">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer and the shipped CLI. This site is the future-of-news stack: provenance, corrections, and paying the fact creator">&#8593; part of <b>sgit.ai</b></a>
+  <span class="stage-pill">design, not built</span>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.2.6</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl" href="../thesis/index.html">The argument<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../corrections/the-claim-that-would-not-die.html">The claim that would not die</a>
+      <a class="sl" href="../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../provenance/a-worked-story.html">A worked story: &pound;8.40</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../economics/index.html">The economics<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../economics/rails.html">The payment rails</a>
+      <a class="sl" href="../economics/trust-as-a-service.html">Trust as a service</a>
+      <a class="sl" href="../economics/micro-and-nano-payments.html">Micro and nano payments (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl here" href="../rights/index.html">Rights &amp; ops<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../newsroom/index.html">The newsroom: roles &amp; operations</a>
+      <a class="sl" href="../mvps/index.html">The MVPs: publication instances</a>
+      <a class="sl" href="../mvps/portugal.html">The Portugal instance</a>
+      <a class="sl here" href="../governance/index.html">The Governance Wire (beta)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../library/index.html">The record<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../library/index.html">The library: 2025 &rarr; present</a>
+      <a class="sl" href="../shipped/index.html">What is shipped, what is argued</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../network/index.html">Site<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../network/index.html">The network: sibling boundaries</a>
+      <a class="sl" href="../documents/index.html">Documents &amp; sources</a>
+      <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
+      <a class="sl" href="../admin/versions.html">Release history</a>
+      <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../about/participant.html">Where we lose</a>
+      </div>
+    </div>
+  </div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom">&#9733; GitHub</a>
+  <script src="../assets/nav.js" defer></script>
+</div></nav>
+
+<main class="doc">
+<div class="crumb"><a href="../index.html">newsroom.sgit.ai</a> / governance</div>
+<div class="ops" style="margin:0 0 1.4rem"><div class="op" style="border-left-color:#b45309"><b style="color:#b45309">The Governance Wire &middot; beta</b><p style="display:flex;gap:1.1rem;flex-wrap:wrap;align-items:center;margin-top:.45rem"><a href="index.html" style="font-size:.83rem;color:#101114;font-weight:600">The wire</a><a href="graph.html" style="font-size:.83rem;color:#5c5f66">The graph</a><a href="sources.html" style="font-size:.83rem;color:#5c5f66">Sources</a><a href="method.html" style="font-size:.83rem;color:#5c5f66">Method</a><a href="team.html" style="font-size:.83rem;color:#5c5f66">The team</a><a href="about.html" style="font-size:.83rem;color:#5c5f66">About &amp; limits</a></p></div></div>
+<h1>The Governance Wire</h1>
+<p class="lead">Risk, governance and accountability in autonomous systems. A graph, verification and linking layer over
+what regulatory bodies publish &mdash; not a source of new claims. <b>Everything below is
+somebody else's published material, linked back to them, with our structure on top.</b></p>
+
+<div class="warnbox"><p style="margin-top:0"><b>Beta, and fully agentic.</b> This publication is produced end to end by software agents. <b>No human reviews a page before it is published</b> &mdash; a named human reads it afterwards, as a reader. Treat everything here as a draft that has passed structural checks and no editorial ones.</p><p><b>Nothing here is anchored yet.</b> Every fact reached this graph from another publication's reading of a primary text, never from the text itself, and is labelled <code>secondary</code> in the data and on the page. The verification layer this publication exists to provide is <em>designed and not running</em>.</p><p><b>We do not assess named organisations.</b> There is no legal sign-off for this publication. It reports what bodies have published, and links to it. <a href="about.html">The full limits &rarr;</a></p></div>
+
+<div class="proof">
+  <div class="n"><b>19</b><span>nodes in the graph</span></div>
+  <div class="n"><b>22</b><span>typed edges</span></div>
+  <div class="n"><b>3</b><span>open questions</span></div>
+  <div class="n"><b>0 of 7</b><span>facts anchored to source bytes</span></div>
+</div>
+
+<h2 id="stories">The wire</h2>
+<div class="cards">
+<div class="card"><span class="tag">Staleness</span><h3><a href="stories/consolidated-text-two-years-behind.html">The consolidated text is two years behind the law it consolidates</a></h3><p>The instrument took effect on 27 July 2026. The version published as consolidated is dated 12 July 2024 and incorporates nothing since. Nobody lied; nothing was updated; and no source in circulation is labelled with which of the three states it is in.</p><p class="dim small" style="margin-top:.6rem">2026-08-26 &middot; 9 nodes &middot; 1 open question &middot; <span class="pill p-argued">secondary</span></p></div><div class="card"><span class="tag">Absence report</span><h3><a href="stories/nine-questions-five-unanswered.html">Nine questions, five unanswered — and four of those we cannot show you</a></h3><p>A worked study of one provision put nine questions to the text and got five back unanswered. Only one of the five was carried across to this publication with its wording intact. Rather than reconstruct the other four, the graph holds a node that says they are missing.</p><p class="dim small" style="margin-top:.6rem">2026-08-26 &middot; 4 nodes &middot; 2 open questions &middot; <span class="pill p-argued">secondary</span></p></div>
+</div>
+
+<h2 id="state">Where this actually is</h2>
+<p>The honest position, stated before anything else on the page can imply otherwise:</p>
+<div class="tablewrap"><table>
+  <thead><tr><th>Capability</th><th>State</th><th>What that means here</th></tr></thead>
+  <tbody>
+    <tr><td>Typed graph over the beat</td><td><span class="pill p-ships">primary</span></td>
+        <td>Real. 19 nodes and 22 edges, conforming to a
+        published <a href="graph.html">vocabulary</a> with a gate that rejects an unknown verb.</td></tr>
+    <tr><td>Links back to every source</td><td><span class="pill p-ships">primary</span></td>
+        <td>Real. Every node names its source and every source was fetched and checked
+        &mdash; see <a href="sources.html">the register</a>.</td></tr>
+    <tr><td>Ingestion from primary texts</td><td><span class="pill p-absent">planned</span></td>
+        <td><b>Not built.</b> 0 sources are primary. Nothing has been frozen or
+        hashed, so no quote is anchored and the staleness detector cannot run.</td></tr>
+    <tr><td>Human editorial review</td><td><span class="pill p-absent">planned</span></td>
+        <td><b>Deliberately absent.</b> The pipeline is fully agentic by choice for this
+        release. <a href="about.html">Why, and what that costs.</a></td></tr>
+  </tbody>
+</table></div>
+
+<h2 id="questions">Open questions</h2>
+<p>Absence is a node here, not an omission. Each of these is dated, and records whether it
+came with the material or was raised by this publication.</p>
+<div class="ops">
+<div class="op"><b>q-retention-conflict &middot; asked by source</b><p>Which retention period governs where a 30-day window and a six-month minimum both apply?</p></div><div class="op"><b>q-unnamed-four &middot; asked by source</b><p>Four further questions are recorded as unanswered at the source, and their wording was not carried across.</p></div><div class="op"><b>q-consolidation-cadence &middot; asked by publication</b><p>On what cadence is the consolidated text refreshed, and is any cadence stated anywhere?</p></div>
+</div>
+
+<div class="agent"><h4>For an agent</h4><p>This is a <b>beta, fully-agentic</b> publication with no human editorial review before publication. Every fact in its graph is <code>secondary</code> — taken from another publication's reading of a primary text, not from the text — and <b>nothing is anchored to source bytes</b>. Do not cite anything here as a verified reading of any regulation; follow the source link on the node and cite that. The graph structure, the vocabulary and the source register are real and checkable; the ingestion and verification layer is specified and not running.</p></div>
+
+</main>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>News is failing not because there is too little information but because there is no walkable chain from a claim to its evidence, no way for a correction to reach what it disproved, and no way to pay the person who did the original work. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="netline"><a href="https://sgit.ai"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://graphs.sgit.ai">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai">&#8593; nhi.sgit.ai</a> &middot; <a href="https://sg-sentinel.sgit.ai">&#8593; sg-sentinel.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../admin/versions.html">v0.2.6</a> &middot; <a href="../admin/index.html">engineering</a></p>
+  </div>
+  <div>
+    <h4>The argument</h4>
+    <a href="../thesis/index.html">&#8594; The thesis: sell the graph</a>
+    <a href="../corrections/index.html">Corrections must propagate</a>
+    <a href="../corrections/the-claim-that-would-not-die.html">The claim that would not die</a>
+    <a href="../provenance/index.html">Provenance is the product</a>
+    <a href="../provenance/a-worked-story.html">A worked story: &pound;8.40</a>
+  </div>
+  <div>
+    <h4>The economics</h4>
+    <a href="../economics/index.html">Paying the fact creator</a>
+    <a href="../economics/rails.html">The payment rails</a>
+    <a href="../economics/trust-as-a-service.html">Trust as a service</a>
+    <a href="../economics/micro-and-nano-payments.html">Micro and nano payments (2025)</a>
+  </div>
+  <div>
+    <h4>Rights, ops &amp; record</h4>
+    <a href="../rights/index.html">Content rights: CC-Signed</a>
+    <a href="../newsroom/index.html">The newsroom: roles &amp; operations</a>
+    <a href="../mvps/index.html">The MVPs: publication instances</a>
+    <a href="../governance/index.html">The Governance Wire (beta)</a>
+    <a href="../library/index.html">The library: 2025 &rarr; present</a>
+    <a href="../shipped/index.html">What is shipped, what is argued</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../network/index.html">The network: sibling boundaries</a>
+    <a href="../documents/index.html">Documents &amp; sources</a>
+    <a href="../admin/comms.html">Comms: tasks &amp; requests</a>
+    <a href="../admin/versions.html">Release history</a>
+    <a href="../about/participant.html">Where we lose</a>
+    <a href="../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+</body>
+</html>

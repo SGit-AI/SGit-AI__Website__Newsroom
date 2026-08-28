@@ -27,6 +27,12 @@ Live site: https://newsroom.sgit.ai (GitHub Pages, deployed from `dev`).
   separately launchable publications rather than one platform. The programme index, the
   flagship bilingual country publication and its eleven-role agentic newsroom, and the
   seven Creative Commons seed companies. Designed April–May 2026; none of it was built
+- `governance/` — **The Governance Wire (beta)** — the first running MVP of the
+  risk-and-governance publication, self-contained so it can move to its own domain. JSON is
+  the source of truth for structure (`data/*.json`), markdown for prose (`content/*.md`), and
+  the HTML is a projection built by `governance/build/build.py` and checked by
+  `governance/build/gates.py`. Fully agentic: seven roles under `governance/team/`, no human
+  review before publication, no legal sign-off, nothing anchored — every page says so
 - `shipped/` — what runs vs what is argued. Non-negotiable
 - `network/` — sibling boundaries, the Risk Mandate inversion, open questions
 - `documents/` — the brief pack this site was built from, published verbatim in `briefs/`,
@@ -58,8 +64,11 @@ own provenance chain would refute the site on page one.
    `admin/versions.html`; update `admin/comms.html`.
 2. `python3 admin/build/chrome.py` — propagates the version badge and any nav/footer
    change to every page, and stamps the version into `llms.txt` and `index.md`.
-3. `node admin/build/validate.js`
-4. `git commit -am "site vX.Y.Z: ..." && git push origin dev`
+3. `python3 governance/build/build.py` — regenerates `/governance/` from its JSON and
+   markdown (run before chrome.py if governance data or prose changed)
+4. `python3 governance/build/gates.py` — the section's own six checks
+5. `node admin/build/validate.js`
+6. `git commit -am "site vX.Y.Z: ..." && git push origin dev`
 
 Every push to `dev` runs `.github/workflows/deploy-pages.yml`: validate → auto-tag
 (`vX.Y.Z`, verified against `version.txt` and the commit subject, next-minor enforced) →
