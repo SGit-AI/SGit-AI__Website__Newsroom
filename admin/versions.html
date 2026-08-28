@@ -14,7 +14,7 @@
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer and the shipped CLI. This site is the future-of-news stack: provenance, corrections, and paying the fact creator">&#8593; part of <b>sgit.ai</b></a>
   <span class="stage-pill">design, not built</span>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.2.8</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.2.9</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -77,6 +77,17 @@
 <div class="tablewrap"><table class="vers">
   <thead><tr><th>Version</th><th>Date</th><th>What shipped</th></tr></thead>
   <tbody>
+    <tr>
+      <td class="vnum">v0.2.9</td>
+      <td>28 Aug 2026</td>
+      <td><b>The generator for <a href="../governance/index.html">/governance/</a> had never been committed. The site was green, deployed, and unrebuildable.</b>
+        <p>A bare <code>build/</code> rule in a generic Python <code>.gitignore</code> matches at every depth. It was excluding <code>governance/build/</code> &mdash; <code>build.py</code>, <code>floor.py</code>, <code>gates.py</code>, the whole section generator and its thirteen checks &mdash; from every commit since v0.2.6. <b>Nothing broke, and that is the point:</b> the generated HTML was committed and only the thing that generated it was missing, so the site deployed correctly three releases running while nobody could have rebuilt it from a clone.</p>
+        <p><b>It surfaced by accident.</b> <a href="../documents/newsroom-floor.html">The debrief shipped in v0.2.8</a> links to <code>floor.py</code> on GitHub so the sibling sites can copy it. Checking those links found three 404s.</p>
+        <p><b>This is the second time the same rule has done this.</b> It caught <code>admin/build/</code> at v0.1.0, where CI failed loudly with MODULE_NOT_FOUND, and the fix was to re-include that one path by name &mdash; which is exactly why it recurred. The rule is now root-anchored (<code>/build/</code>), which is what the Python template meant, and no <code>&lt;section&gt;/build/</code> can be swallowed again.</p>
+        <p><b>Fixing the instance twice would have guaranteed a third time, so it is now check 10</b> of the whole-site gate: nothing under a <code>build/</code> directory, and no <code>.py</code>, <code>.js</code> or <code>.mjs</code> file anywhere, may be excluded by <code>.gitignore</code>. Verified by restoring the old rule and confirming the gate fails with three errors, then restoring the fix. A generated page whose generator is not in the repository cannot be rebuilt by anyone who clones it.</p>
+        <p>The debrief gains a paragraph on it under &ldquo;where the code is&rdquo;, because a document telling other sites to copy a generator owes them the reason its own links were broken.</p>
+      </td>
+    </tr>
     <tr>
       <td class="vnum">v0.2.8</td>
       <td>28 Aug 2026</td>
@@ -193,7 +204,7 @@
     <p>News is failing not because there is too little information but because there is no walkable chain from a claim to its evidence, no way for a correction to reach what it disproved, and no way to pay the person who did the original work. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="netline"><a href="https://sgit.ai"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://graphs.sgit.ai">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai">&#8593; nhi.sgit.ai</a> &middot; <a href="https://sg-sentinel.sgit.ai">&#8593; sg-sentinel.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.2.8</a> &middot; <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.2.9</a> &middot; <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>The argument</h4>

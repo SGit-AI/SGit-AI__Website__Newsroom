@@ -21,10 +21,14 @@
 //   9. the redaction watch-list — nothing Tier 3 in briefs/08__source-manifest.csv
 //      (named VC, live product pricing, an infra account number) may appear
 //      anywhere in the published tree.
+//  10. no build tooling is gitignored — a generated page whose generator is not in
+//      the repository cannot be rebuilt by anyone who clones it. This has now
+//      happened twice from the same cause (see .gitignore), so it is a check.
 // Any failure exits 1: no tag, no publish.
 'use strict';
 const fs   = require('fs');
 const path = require('path');
+const { execFileSync } = require('child_process');
 
 const ROOT   = path.resolve(__dirname, '..', '..');
 const errors = [];
@@ -196,6 +200,32 @@ for (const f of files) {
   for (const bad of REDACTED) if (t.includes(bad)) {
     errors.push(`${rel(f)}: contains redacted material "${bad}" — see briefs/06__boundaries-and-house-style.md §2`);
   }
+}
+
+// --- 10. no build tooling is gitignored ------------------------------------
+// v0.1.0 shipped with admin/build/ silently excluded by a bare `build/` rule in a
+// generic Python .gitignore; CI failed with MODULE_NOT_FOUND and the path was
+// re-included by name. governance/build/ was created at v0.2.6 and hit the SAME rule,
+// and because its generated HTML was committed the site kept deploying correctly while
+// build.py, floor.py and gates.py were dropped from every commit for three releases.
+// It surfaced only when a published document linked to floor.py on GitHub and 404'd.
+// Fixing the instance twice would have guaranteed a third time, so the rule is now
+// root-anchored AND this check exists: a generated page whose generator is not in the
+// repository cannot be rebuilt by anyone who clones it.
+try {
+  const ignored = execFileSync('git', ['ls-files', '--others', '--ignored', '--exclude-standard'],
+                               { cwd: ROOT, encoding: 'utf8' })
+    .split('\n').map(s => s.trim()).filter(Boolean);
+  for (const p of ignored) {
+    if (/(^|\/)__pycache__\//.test(p) || /\.pyc$/.test(p)) continue;   // real build output
+    if (/(^|\/)build\//.test(p) || /\.(py|js|mjs)$/.test(p)) {
+      errors.push(`${p}: build tooling is excluded by .gitignore — it would not reach the ` +
+                  `repository, and the pages it generates could not be rebuilt from a clone`);
+    }
+  }
+} catch (e) {
+  // Not a git checkout, or git unavailable. Not a failure — just unverifiable here.
+  console.warn('validate: check 10 skipped (git not available)');
 }
 
 // --- report ---------------------------------------------------------------

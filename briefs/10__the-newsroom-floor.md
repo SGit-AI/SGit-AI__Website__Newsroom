@@ -8,7 +8,7 @@ honest, what broke, and how to port it.**
 Live, running, and buildable from this repository at
 [`/governance/newsroom/index.html`](https://newsroom.sgit.ai/governance/newsroom/index.html).
 The generator is one file — [`governance/build/floor.py`](https://github.com/SGit-AI/SGit-AI__Website__Newsroom/blob/dev/governance/build/floor.py),
-683 lines including the state map, the role pages and the run pages.
+692 lines including the state map, the role pages and the run pages.
 
 This is a **debrief, not a brief**. It does not belong to the v1.0 construction pack. It
 reports on something already shipped, and its recommendations are the ones we would follow
@@ -394,7 +394,21 @@ Stated plainly, because a debrief that only reports what worked is an advertisem
 
 ## 11. Where the code is
 
-Everything is in this repository on `dev`, under the site's CC BY 4.0 licence — take it, change it, keep the attribution:
+Everything is in this repository on `dev`, under the site's CC BY 4.0 licence — take it,
+change it, keep the attribution.
+
+> **These four links 404'd when this document was first published, and the reason is worth
+> one paragraph.** A bare `build/` rule in a generic Python `.gitignore` matches at every
+> depth, so it had been silently excluding `governance/build/` — the entire generator —
+> from every commit since the section was created. The site kept deploying correctly the
+> whole time, because the *generated HTML* was committed and only the thing that generated
+> it was missing. The identical bug hit `admin/build/` at v0.1.0 and was fixed by
+> re-including that one path by name, which is precisely why it recurred. **If you take
+> anything from this section, take this:** a generated site can be green, deployed and
+> completely unrebuildable at the same time, and nothing in a normal build will tell you.
+> Check that your generator is in your repository, then add a check that keeps it there.
+
+
 
 - [`governance/build/floor.py`](https://github.com/SGit-AI/SGit-AI__Website__Newsroom/blob/dev/governance/build/floor.py) — the floor, the state map, the role pages, the run pages
 - [`governance/build/build.py`](https://github.com/SGit-AI/SGit-AI__Website__Newsroom/blob/dev/governance/build/build.py) — the page shell, `masthead()`, `md_to_html()`, the disclaimer

@@ -8,12 +8,23 @@ __pycache__/
 
 # Distribution / packaging
 .Python
-build/
-# ...except this site's own build tooling — a bare `build/` rule from this generic
-# Python template also matches admin/build/, which is where chrome.py, validate.js
-# and version.txt live, not a Python build output directory.
-!/admin/build/
-!/admin/build/**
+# Root-level Python build output ONLY — note the leading slash, and do not remove it.
+#
+# This was a bare `build/` until v0.2.9. A bare rule matches at every depth, so it also
+# swallowed this site's own build tooling: admin/build/ (chrome.py, validate.js,
+# version.txt) and governance/build/ (build.py, floor.py, gates.py). Neither is Python
+# build output.
+#
+# admin/build/ was caught at v0.1.0, when CI failed with MODULE_NOT_FOUND, and was fixed
+# by re-including that one path by name. governance/build/ was NOT — it was created at
+# v0.2.6 and shipped unversioned through v0.2.7 and v0.2.8, because the generated HTML
+# was committed and the generator that produced it was silently dropped every time. It
+# surfaced only when a debrief linked to floor.py on GitHub and the link 404'd.
+#
+# Fixing the instance a second time would have guaranteed a third. Anchoring the rule to
+# the repository root fixes the class: no `<section>/build/` can be swallowed again, and
+# the by-name re-includes admin/build/ needed are no longer required.
+/build/
 develop-eggs/
 dist/
 downloads/
