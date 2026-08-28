@@ -36,6 +36,12 @@ ORDER = [
     "05__site-architecture.md",
     "06__boundaries-and-house-style.md",
     "07__gaps-and-open-questions.md",
+    # 08 is the source manifest and is a CSV, so it is not concatenated here — it is
+    # published as data. 09 and 10 are not part of the frozen v1.0 construction pack, but
+    # they ARE markdown documents in briefs/, and this file claims to carry every one of
+    # them. 09 was missing until v0.2.8, which made that claim false.
+    "09__risk-and-governance-newsroom.md",
+    "10__the-newsroom-floor.md",
     "README.md",
     "PUBLIC.md",
     "LICENSE.md",

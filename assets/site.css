@@ -24,6 +24,10 @@ a{color:var(--accent-dk);text-decoration:none}
 a:hover{text-decoration:underline}
 h1,h2,h3{line-height:1.2;letter-spacing:-.015em}
 code,pre,kbd{font-family:var(--mono)}
+/* No image appeared anywhere on this site until v0.2.8, so nothing had ever constrained
+   one. The first four (screenshots in the newsroom-floor debrief) rendered at their natural
+   1832px and pushed the page to a 2054px scrollWidth. Base rule, not a per-page patch. */
+img{max-width:100%;height:auto}
 p code,li code,td code,.note code{overflow-wrap:anywhere;background:var(--panel2);border:1px solid var(--line);border-radius:4px;padding:.08em .35em;font-size:.84em;color:#24343f}
 .inner{max-width:var(--measure);margin:0 auto;padding:0 1.1rem}
 .dim{color:var(--dim)} .small{font-size:.85rem}
@@ -262,6 +266,12 @@ footer.site .verline a{display:inline;color:var(--accent-dk);padding:0}
 .mdread h2{font-family:var(--serif);font-size:1.25rem;color:#101114;margin:1.8rem 0 .6rem}
 .mdread h3{font-size:1rem;color:#101114;margin:1.4rem 0 .4rem}
 .mdread p,.mdread li{color:#34363c;font-size:.94rem;line-height:1.65}
+/* A screenshot in a document is a figure: framed, spaced, and captioned by the paragraph
+   under it. The alt text carries the description for anyone not seeing it. */
+/* no width declaration here on purpose: author CSS outranks the HTML width attribute, so
+   setting one would stop a high-density capture declaring its true display size */
+.mdread img{display:block;max-width:100%;height:auto;margin:1.3rem 0 .4rem;border:1px solid var(--line);
+  border-radius:10px;box-shadow:var(--shadow);background:var(--panel2)}
 .mdread table{display:block;overflow-x:auto;border-collapse:collapse;font-size:.85rem;margin:1rem 0}
 .mdread th{background:var(--panel2);text-align:left;padding:.5rem .7rem;font-size:.7rem;
   letter-spacing:.08em;text-transform:uppercase;color:var(--dim);border:1px solid var(--line)}

@@ -16,6 +16,8 @@ Prepared 21 August 2026 against `the-cyber-boardroom/SGraph-AI__App__Send` @ **v
 | `05__site-architecture.md` | Page-by-page IA, each page mapped to its source and publish status |
 | `06__boundaries-and-house-style.md` | Sibling boundaries · the Risk Mandate inversion · redaction watch-list · conventions |
 | `07__gaps-and-open-questions.md` | What to retrieve, what to write fresh, 7 open questions, 6 honest tensions |
+| `09__risk-and-governance-newsroom.md` | **v1.1 addendum, forward-looking.** A publication to build: risk and governance news assembled from this network, with `riskmandate.ai` as its named customer |
+| `10__the-newsroom-floor.md` | **Debrief, not a brief.** How the agentic team was rendered as a point-and-click room, written so the sibling `*.sgit.ai` sites can build the same thing — with the rule that keeps it honest, the defects we shipped into, and a porting recipe |
 | `08__source-manifest.csv` | **48 rows** across both corpora, with provenance columns |
 | `sources__docs-diniscruz-ai.json` | Machine-readable provenance record — 13 articles, every field verified |
 

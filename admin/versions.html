@@ -14,7 +14,7 @@
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer and the shipped CLI. This site is the future-of-news stack: provenance, corrections, and paying the fact creator">&#8593; part of <b>sgit.ai</b></a>
   <span class="stage-pill">design, not built</span>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.2.7</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.2.8</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -77,6 +77,17 @@
 <div class="tablewrap"><table class="vers">
   <thead><tr><th>Version</th><th>Date</th><th>What shipped</th></tr></thead>
   <tbody>
+    <tr>
+      <td class="vnum">v0.2.8</td>
+      <td>28 Aug 2026</td>
+      <td><b>A debrief for the sibling sites: <a href="../documents/newsroom-floor.html">how the agentic team became a room you click around</a>, and how to build one.</b>
+        <p><b>The first document here that reports on shipped work rather than specifying work to do.</b> Every site on this network publishes its agentic team the same way &mdash; a roster and an ordered list &mdash; and neither shows what any role is holding, why it is stuck, or what it will refuse. <a href="../governance/newsroom/index.html">The floor</a> makes the team a place instead. The debrief carries the parts that transfer: the one rule that separates the room from a mock-up (<b>every word it speaks is derived at build time from the same files the pipeline runs on</b>), the genre-versus-work line on the adventure-game reference, the SVG and responsive mechanics, a porting recipe with candidate mappings for five siblings, and the gate that fails the build if the drawn route stops matching the declared pipeline.</p>
+        <p><b>It states what has not been proven</b>, which is the half a debrief usually omits: one implementation, one site, one day; no user testing; no screen-reader testing; Chromium only; untested past seven actors; and the dialogue is 28 fixed strings rather than a conversation.</p>
+        <p><b>Four screenshots &mdash; the first images ever published on this site.</b> They live in the markdown, so an agent fetching <a href="../briefs/10__the-newsroom-floor.md">the raw document</a> gets them too.</p>
+        <p><b>A defect found and fixed on the way in.</b> <code>llms-full.txt</code> says it carries &ldquo;every markdown document in the brief pack&rdquo;, and <a href="../briefs/09__risk-and-governance-newsroom.md">brief 09</a> had never been added to its ORDER list &mdash; so that claim had been false since v0.2.5. Both 09 and 10 are now in it; the file grew from 15,000 to 23,167 words.</p>
+        <p>Also fixed in the floor itself: with JavaScript off the verb bar rendered and did nothing. It now carries a <code>&lt;noscript&gt;</code> block saying so and pointing at the table that holds the same information &mdash; found by testing the degradation paths rather than assuming them, which is advice the debrief gives and therefore had to follow.</p>
+      </td>
+    </tr>
     <tr>
       <td class="vnum">v0.2.7</td>
       <td>28 Aug 2026</td>
@@ -182,7 +193,7 @@
     <p>News is failing not because there is too little information but because there is no walkable chain from a claim to its evidence, no way for a correction to reach what it disproved, and no way to pay the person who did the original work. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="netline"><a href="https://sgit.ai"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://graphs.sgit.ai">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai">&#8593; nhi.sgit.ai</a> &middot; <a href="https://sg-sentinel.sgit.ai">&#8593; sg-sentinel.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.2.7</a> &middot; <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.2.8</a> &middot; <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>The argument</h4>

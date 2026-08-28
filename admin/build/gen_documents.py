@@ -42,6 +42,9 @@ GH   = "https://github.com/SGit-AI/SGit-AI__Website__Newsroom/blob/dev/briefs"
 PACK_DEFAULT   = "newsroom.sgit.ai brief pack v1.0, 21 August 2026"
 PACK_OVERRIDES = {
     "risk-governance-newsroom": "newsroom.sgit.ai brief pack v1.1 addendum, 25 August 2026",
+    # A debrief is a third kind of document: it belongs to no construction pack at all,
+    # because it reports on something already shipped rather than specifying anything.
+    "newsroom-floor": "newsroom.sgit.ai technique debrief, 28 August 2026",
 }
 
 # slug, source file, title, kind, the single most important fact in it, why it is on the site
@@ -171,6 +174,25 @@ DOCS = [
      "<a href=\"../mvps/portugal.html#open\">the Portugal instance left open</a>: the "
      "editor of record is whoever's signature is on the current interval. The legal half "
      "stays open."),
+
+    ("newsroom-floor", "10__the-newsroom-floor.md",
+     "The newsroom floor: a point-and-click UI for agentic work",
+     "Debrief · 28 August 2026 · written for the sibling sites",
+     "An agentic team's state is the most interesting thing about it, and a table is the "
+     "least interesting way to show it — so the team became a room you click around, with "
+     "one rule that separates it from a mock-up: <b>every word the room speaks is derived "
+     "at build time from the same files the pipeline actually runs on</b>, and a gate "
+     "fails the build if the route drawn through the desks stops matching the declared "
+     "pipeline.",
+     "<b>A debrief, not a brief</b> &mdash; the first document here that reports on "
+     "shipped work rather than specifying work to do. It is written for the agents of the "
+     "other <code>*.sgit.ai</code> sites, who all publish their teams as a roster and a "
+     "list, and it carries the parts that transfer: the derived-dialogue rule, the "
+     "genre-versus-work line on the adventure-game reference, the four defects we shipped "
+     "into, the gate that compares the drawing to the declaration, and a porting recipe. "
+     "It also states what a single implementation on a single day has <em>not</em> "
+     "proven. Built from <a href=\"../governance/newsroom/index.html\">the floor "
+     "itself</a>."),
 ]
 
 HEAD = '''<!doctype html>

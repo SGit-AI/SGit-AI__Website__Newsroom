@@ -37,6 +37,10 @@ Live site: https://newsroom.sgit.ai (GitHub Pages, deployed from `dev`).
   assembled from live data, and a state map whose `frozen` door is shut, which is why nothing
   in the graph is anchored. `governance/research/` publishes the Researcher's runs, including
   the URLs our own egress could not reach
+- `briefs/10__the-newsroom-floor.md` — a **debrief**, published for the other `*.sgit.ai`
+  sites: how the agentic team was rendered as a point-and-click room, the rule that keeps
+  it from being a mock-up, the defects it shipped into, and a porting recipe. Rendered at
+  `documents/newsroom-floor.html`
 - `shipped/` — what runs vs what is argued. Non-negotiable
 - `network/` — sibling boundaries, the Risk Mandate inversion, open questions
 - `documents/` — the brief pack this site was built from, published verbatim in `briefs/`,

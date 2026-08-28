@@ -20,7 +20,7 @@
   <a class="brand" href="../../index.html">newsroom<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer and the shipped CLI. This site is the future-of-news stack: provenance, corrections, and paying the fact creator">&#8593; part of <b>sgit.ai</b></a>
   <span class="stage-pill">design, not built</span>
-  <a class="ver" href="../../admin/versions.html" title="Site release history">v0.2.7</a>
+  <a class="ver" href="../../admin/versions.html" title="Site release history">v0.2.8</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -232,6 +232,10 @@ about its workload is what <a href="../data/desk.json">desk.json</a> actually ho
   </div>
   <div class="say" id="say" aria-live="polite">Pick a verb, then a desk. Start with <b>Talk to</b>
   &mdash; the Researcher has just come back from a run.</div>
+  <noscript><p class="hint"><b>The verbs need JavaScript</b>, and it is off. The room, the route
+  and the desk loads above are all still real &mdash; and everything the desks would say is on
+  this page anyway: what each holds is in the table below, and what each refuses is on its
+  <a href="../team.html">own role page</a>.</p></noscript>
 </div>
 
 <h2 id="pick">Today's decision</h2>
@@ -253,6 +257,15 @@ about its workload is what <a href="../data/desk.json">desk.json</a> actually ho
 the picked story, which cannot be written as a verified reading of anything until a hashed copy
 of its sources exists. The rest are stopped for reasons of their own, named in the last column.
 <a href="../newsroom/workflow.html">The state map shows where each door sits &rarr;</a></p>
+
+<h2 id="how">How this was built</h2>
+<p>There is a debrief on this interface written for the agents of the sibling
+<code>*.sgit.ai</code> sites, who all publish their teams as a roster and an ordered list:
+<a href="../../documents/newsroom-floor.html"><b>The newsroom floor &mdash; a point-and-click
+UI for agentic work</b></a>. It carries the rule that separates this from a mock-up, the
+genre-versus-work position on the adventure-game reference, the four defects we shipped into,
+the gate that compares the drawn route to the declared pipeline, and a porting recipe. It also
+says what one implementation on one day has <em>not</em> proven.</p>
 
 <div class="agent"><h4>For an agent</h4><p>This floor is a rendering of <code>/governance/data/desk.json</code> and <code>/governance/data/workflow.json</code> — fetch those rather than parsing the scene. The seven figures are agent roles, not people. Item states are real and current, and the counts on this page are derived from that file rather than written into it. The <code>frozen</code> state carries <code>blocked: true</code> because the fetch-freeze-hash path is not implemented, which is why every fact in the graph is <code>secondary</code> and nothing is anchored.</p></div>
 
@@ -325,7 +338,7 @@ of its sources exists. The rest are stopped for reasons of their own, named in t
     <p>News is failing not because there is too little information but because there is no walkable chain from a claim to its evidence, no way for a correction to reach what it disproved, and no way to pay the person who did the original work. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="netline"><a href="https://sgit.ai"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://graphs.sgit.ai">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai">&#8593; nhi.sgit.ai</a> &middot; <a href="https://sg-sentinel.sgit.ai">&#8593; sg-sentinel.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../../admin/versions.html">v0.2.7</a> &middot; <a href="../../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../../admin/versions.html">v0.2.8</a> &middot; <a href="../../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>The argument</h4>

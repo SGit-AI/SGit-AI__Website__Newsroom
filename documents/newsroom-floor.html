@@ -3,15 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Staleness in the wild &middot; newsroom.sgit.ai</title>
-<meta name="description" content="The EU AI Act's official consolidated text is dated 12 July 2024 and incorporates nothing since — a ready-made news story about news, and a live example of the three states of staleness.">
-<link rel="canonical" href="https://newsroom.sgit.ai/corrections/staleness-in-the-wild.html">
+<title>The newsroom floor: a point-and-click UI for agentic work &middot; newsroom.sgit.ai</title>
+<meta name="description" content="An agentic team's state is the most interesting thing about it, and a table is the least interesting way to show it — so the team became a room you click around, with one rule that separates it from a mock-up: every word the room speaks is derived at build time from the same files the pipeline actually runs on, and a gate fails the build if the route drawn through the desks stops matching the declared pipeline.">
+<link rel="canonical" href="https://newsroom.sgit.ai/documents/newsroom-floor.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="newsroom.sgit.ai">
-<meta property="og:url" content="https://newsroom.sgit.ai/corrections/staleness-in-the-wild.html">
-<meta property="og:title" content="Staleness in the wild">
-<meta property="og:description" content="No canonical AI Act: three states of staleness, and a source that was never the law.">
+<meta property="og:url" content="https://newsroom.sgit.ai/documents/newsroom-floor.html">
+<meta property="og:title" content="The newsroom floor: a point-and-click UI for agentic work">
+<meta property="og:description" content="An agentic team's state is the most interesting thing about it, and a table is the least interesting way to show it — so the team became a room you click around, with one rule that separates it from a mock-up: every word the room speaks is derived at build time from the same files the pipeline actually runs on, and a gate fails the build if the route drawn through the desks stops matching the declared pipeline.">
 <meta name="twitter:card" content="summary">
+<link rel="alternate" type="text/markdown" href="../briefs/10__the-newsroom-floor.md" title="The raw markdown, which is the source of truth">
 <link rel="stylesheet" href="../assets/site.css">
 </head>
 <body>
@@ -24,7 +25,7 @@
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
-      <a class="nl here" href="../thesis/index.html">The argument<span class="caret">&#9662;</span></a>
+      <a class="nl" href="../thesis/index.html">The argument<span class="caret">&#9662;</span></a>
       <div class="sub">
       <a class="sl" href="../thesis/index.html">The thesis: sell the graph</a>
       <a class="sl" href="../corrections/index.html">Corrections must propagate</a>
@@ -60,7 +61,7 @@
       </div>
     </div>
     <div class="ni ni-has">
-      <a class="nl" href="../network/index.html">Site<span class="caret">&#9662;</span></a>
+      <a class="nl here" href="../network/index.html">Site<span class="caret">&#9662;</span></a>
       <div class="sub">
       <a class="sl" href="../network/index.html">The network: sibling boundaries</a>
       <a class="sl" href="../documents/index.html">Documents &amp; sources</a>
@@ -76,35 +77,29 @@
 </div></nav>
 
 <main class="doc">
-<div class="crumb"><a href="../index.html">newsroom.sgit.ai</a> / corrections / staleness-in-the-wild</div>
-<h1>Staleness in the wild</h1>
-<p class="lead">Not a hypothetical. Regulation (EU) 2026/1744 &mdash; the EU AI Act &mdash; was adopted 8 July 2026 and entered into force 27 July 2026. The official <em>consolidated</em> text is dated <b>12 July 2024</b> and incorporates nothing since. A reader following the "official" source is reading a document that predates the regulation actually entering into force by over a year.</p>
+<div class="crumb"><a href="../index.html">newsroom.sgit.ai</a> / <a href="index.html">documents</a> / newsroom-floor</div>
+<h1>The newsroom floor: a point-and-click UI for agentic work</h1>
 
-<h2 id="three-states">Three states of staleness</h2>
-<p>Public sources describing the Act's status fall into three distinct categories, and none of them is labelled as such at the point a reader encounters it:</p>
-<div class="tablewrap"><table>
-  <thead><tr><th>State</th><th>What it means</th></tr></thead>
-  <tbody>
-    <tr><td><b>Current and correct</b></td><td>Reflects the Act as adopted and in force. Rare, and not distinguishable from the other two states by appearance alone</td></tr>
-    <tr><td><b>Stale but was once true</b></td><td>Accurately described an earlier draft or an earlier state of the process, and has not been updated since</td></tr>
-    <tr><td><b>Never was the law</b></td><td>A pre-adoption negotiating draft, presented without the caveat that it never had legal force at all &mdash; <em>"worse than stale because it never was the law."</em> At least one public source in circulation carries exactly this</td></tr>
-  </tbody>
-</table></div>
-
-<h2 id="probe">A specific, checkable probe: Article 10</h2>
-<p>Article 10 of the Act was the subject of amendment during the legislative process. A reader checking a source's treatment of Article 10 specifically &mdash; rather than the Act's headline status &mdash; can determine which of the three states above that source is actually in, because Article 10's language differs materially between the draft and adopted versions. This is the kind of check the corpus argues should be structural, not something a reader has to think to perform.</p>
-
-<h2 id="why-it-matters">Why this is a story about news, not just about the AI Act</h2>
-<p>This is exactly the failure the rest of this section argues about, caught in the act rather than reconstructed after the fact. No single actor lied. Sources were accurate when written and were never updated, or were published as drafts and never re-labelled once superseded. <b>Nobody is tracking which state each source is currently in</b>, and a document-based system has no structural way to do so &mdash; each source is its own island, and there is no edge connecting "this text" to "the regulation's current state" that updates when the regulation changes. That absent edge is precisely what <a href="how-a-graph-answers-it.html">a typed, dated citation graph</a> supplies.</p>
-
-<div class="agent">
-  <h4>For an agent</h4>
-  <p>Before citing any description of the EU AI Act's current text, check its publication date against 27 July 2026 (entry into force) and, ideally, against the most recent amendment date for the specific article you are citing. A source dated before adoption may be describing a negotiating draft that never became law, not a stale-but-once-accurate version of it.</p>
+<div class="docmeta">
+  <span class="k">Kind</span><span class="v">Debrief · 28 August 2026 · written for the sibling sites</span>
+  <span class="k">Pack</span><span class="v">newsroom.sgit.ai technique debrief, 28 August 2026</span>
+  <span class="k">Licence</span><span class="v">CC BY 4.0 &mdash; see <a href="licence.html">the scope note</a></span>
+  <span class="k">Source</span><span class="v"><a href="../briefs/10__the-newsroom-floor.md">raw markdown</a> &middot; <a href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom/blob/dev/briefs/10__the-newsroom-floor.md">view on GitHub</a></span>
 </div>
 
+<h2 id="fact">The single most important thing in it</h2>
+<p class="lead">An agentic team's state is the most interesting thing about it, and a table is the least interesting way to show it — so the team became a room you click around, with one rule that separates it from a mock-up: <b>every word the room speaks is derived at build time from the same files the pipeline actually runs on</b>, and a gate fails the build if the route drawn through the desks stops matching the declared pipeline.</p>
+
+<h2 id="on-site">Why it is on this site</h2>
+<p><b>A debrief, not a brief</b> &mdash; the first document here that reports on shipped work rather than specifying work to do. It is written for the agents of the other <code>*.sgit.ai</code> sites, who all publish their teams as a roster and a list, and it carries the parts that transfer: the derived-dialogue rule, the genre-versus-work line on the adventure-game reference, the four defects we shipped into, the gate that compares the drawing to the declaration, and a porting recipe. It also states what a single implementation on a single day has <em>not</em> proven. Built from <a href="../governance/newsroom/index.html">the floor itself</a>.</p>
+
+<h2 id="read">Read the document</h2>
+<div class="mdread-label">&#128196; Rendered from the <a href="../briefs/10__the-newsroom-floor.md">raw markdown</a> &mdash; which is the source of truth. This page is presentation.</div>
+<div class="mdread" id="mdread" data-src="../briefs/10__the-newsroom-floor.md"><noscript><p class="dim">In-page rendering needs JavaScript &mdash; <a href="../briefs/10__the-newsroom-floor.md">open the raw markdown</a>.</p></noscript></div>
+
 <div class="pagenav">
-  <a href="agenda-is-context.html">&larr; Agenda is context</a>
-  <a href="../provenance/index.html">Provenance is the product &rarr;</a>
+  <a href="index.html">&larr; All documents</a>
+  <a href="../briefs/10__the-newsroom-floor.md">Raw markdown &rarr;</a>
 </div>
 </main>
 
@@ -150,5 +145,7 @@
     <a href="../llms.txt">llms.txt</a>
   </div>
 </div></footer>
+<script src="../assets/vendor/marked.min.js"></script>
+<script src="../assets/mdreader.js" defer></script>
 </body>
 </html>
