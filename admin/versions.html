@@ -14,7 +14,7 @@
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer and the shipped CLI. This site is the future-of-news stack: provenance, corrections, and paying the fact creator">&#8593; part of <b>sgit.ai</b></a>
   <span class="stage-pill">design, not built</span>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.2.9</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.3.0</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -44,6 +44,7 @@
       <a class="sl" href="../mvps/index.html">The MVPs: publication instances</a>
       <a class="sl" href="../mvps/portugal.html">The Portugal instance</a>
       <a class="sl" href="../governance/index.html">The Governance Wire (beta)</a>
+      <a class="sl" href="../portugal/index.html">Portugal Startups (beta)</a>
       </div>
     </div>
     <div class="ni ni-has">
@@ -77,6 +78,18 @@
 <div class="tablewrap"><table class="vers">
   <thead><tr><th>Version</th><th>Date</th><th>What shipped</th></tr></thead>
   <tbody>
+    <tr>
+      <td class="vnum">v0.3.0</td>
+      <td>13 Sep 2026</td>
+      <td><b>A second publication: <a href="../portugal/index.html">Portugal Startups</a> — and the first section on this site whose sources are <b>primary, frozen and hashed</b>.</b>
+        <p><b>The door The Governance Wire cannot open.</b> That section <a href="../governance/newsroom/workflow.html">specifies a <code>frozen</code> state</a> — a hashed byte copy of the source — and carries <code>blocked: true</code> against it, which is why every fact there is <code>secondary</code> and nothing is anchored. <a href="../portugal/method.html">Here the path runs</a>: fetch, freeze, hash, extract, diff. 17 frozen files across 2 dated snapshots, every SHA-256 published and <a href="../portugal/sources.html">re-verified by the gate on every build</a>. A claim on this section points at bytes in this repository, not at a URL that may have moved.</p>
+        <p><b>The first beat is <a href="../portugal/summit/index.html">Startup Summit Lisbon 2026</a></b>, which opens on 17 September. It was chosen on the criterion <a href="../mvps/portugal.html">the 12 May 2026 brief</a> argued for — small enough to map comprehensively, large enough to be interesting. An event that publishes its own speaker list has a closeable graph: <a href="../portugal/summit/people.html">64 speakers</a> and <a href="../portugal/summit/orgs.html">61 organisations</a>, derived from the cards rather than typed by hand, with the 2 placeholder values flagged rather than cleaned away.</p>
+        <p><b>Freezing twice produced the first story.</b> The same page, captured on 8 and 13 September, went from 60 speakers to 64: <a href="../portugal/summit/changes.html">5 names added and 1 no longer listed</a>. Both copies and both hashes are in the repository, which is the only reason anyone can now say that — the earlier version exists nowhere else a reader can reach. <b>The removal is published with no reason attached, and gate check 4 fails the build if any page implies one</b>: withdrawal, a clash, a duplicate and an editing error are indistinguishable from outside, and guessing would be the easiest way for a publication like this to harm a real person.</p>
+        <p><b>Open question 5 is answered.</b> The original brief left the editor of record undecided, and this site called it the question it should be most uncomfortable about. <a href="../portugal/team.html">Dinis Cruz is the named editor of record</a> and reviews every page before it publishes — a deliberate departure from the fully-agentic sibling, because this beat is about named people in a small ecosystem rather than about regulations.</p>
+        <p><b>Frozen copies are <code>.snapshot</code>, not <code>.html</code>.</b> They are unmodified bytes of another organisation&rsquo;s pages held as evidence, and serving a browsable mirror of somebody&rsquo;s whole site under this domain would contradict the one rule this publication has. The extension keeps them verifiable and un-servable at once. Speaker biographies are not extracted, stored or published for the same reason; gate check 10 fails the build if any node field grows long enough to be one.</p>
+        <p>Ten section checks on top of the whole-site gate, covering hash re-verification, derived-not-typed organisations, no-reason-for-removals, no-target-reported-as-result, and no claim of a Portuguese edition that does not exist.</p>
+      </td>
+    </tr>
     <tr>
       <td class="vnum">v0.2.9</td>
       <td>28 Aug 2026</td>
@@ -204,7 +217,7 @@
     <p>News is failing not because there is too little information but because there is no walkable chain from a claim to its evidence, no way for a correction to reach what it disproved, and no way to pay the person who did the original work. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="netline"><a href="https://sgit.ai"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://graphs.sgit.ai">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai">&#8593; nhi.sgit.ai</a> &middot; <a href="https://sg-sentinel.sgit.ai">&#8593; sg-sentinel.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.2.9</a> &middot; <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.3.0</a> &middot; <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>The argument</h4>

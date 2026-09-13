@@ -54,7 +54,8 @@ NAV = [
         ("The MVPs: publication instances", "mvps/index.html"),
         ("The Portugal instance", "mvps/portugal.html"),
         ("The Governance Wire (beta)", "governance/index.html"),
-    ], ("rights/", "newsroom/", "mvps/", "governance/")),
+        ("Portugal Startups (beta)", "portugal/index.html"),
+    ], ("rights/", "newsroom/", "mvps/", "governance/", "portugal/")),
     ("The record", "library/index.html", [
         ("The library: 2025 &rarr; present", "library/index.html"),
         ("What is shipped, what is argued", "shipped/index.html"),

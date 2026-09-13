@@ -6,7 +6,7 @@
 > that accumulates evidence, perspectives and confidence; every article, translation and
 > infographic is a projection of it. Sell the graph, not the paragraph.
 
-Site version: v0.2.9 (28 August 2026). Published by the sgit project, which is building
+Site version: v0.3.0 (13 September 2026). Published by the sgit project, which is building
 the stack this site argues for — participant disclosure at /about/participant.html.
 Site content CC BY 4.0; the republished library material is CC0 1.0 Universal at source
 (docs.diniscruz.ai) — state the source licence per page.
@@ -82,6 +82,36 @@ It is a beta with no human editorial review and no legal review.
     never answered
   - /mvps/seed-companies.html — seven CC-licensed business templates published so others can
     build them; seed 4 is an evidence-research company for journalists and investigators
+- /portugal/index.html — PORTUGAL STARTUPS (beta): a publication mapping the Portuguese startup
+  ecosystem, first beat Startup Summit Lisbon 2026 (17-18 September 2026, Beato Innovation
+  District). THE IMPORTANT DIFFERENCE FROM /governance/: sources here are PRIMARY and ANCHORED.
+  Every page of the source site is fetched, frozen to a dated snapshot in the repository and
+  hashed with SHA-256, and claims are read from the frozen copy rather than the live network.
+  This is the fetch-freeze-hash path /governance/ specifies and cannot run.
+  It also has a NAMED HUMAN EDITOR OF RECORD (Dinis Cruz) who reviews every page before it
+  publishes, because this beat is about named people and named companies.
+  - /portugal/summit/index.html — the event as it describes itself. Distinguish TARGETS from
+    COUNTS: the event's own wording is "targeting 2,000+" attendees and "150+ speakers planned",
+    while its published list names 64. Do not report a target as a result.
+  - /portugal/summit/people.html — all 64 published speakers with role, organisation and a link
+    to each speaker's own page. Biographies are deliberately NOT reproduced
+  - /portugal/summit/orgs.html — 61 organisations DERIVED from the speaker cards; 2 are
+    placeholders ("Independent") flagged rather than removed
+  - /portugal/summit/changes.html — the same pages frozen twice and diffed: 5 speakers added and
+    1 removed between 8 and 13 September. REMOVALS CARRY NO REASON and none may be inferred
+  - /portugal/sources.html — the register: every frozen file with its SHA-256, byte count and
+    retrieval time, and how to check any claim against it. All sources have ONE publisher, the
+    event itself, so nothing on this section is independently corroborated
+  - /portugal/checks.html — what re-reading established, including two different sets of stage
+    names published on the same site, and the claims that cannot be verified from the source
+  - /portugal/method.html — fetch, freeze, hash, extract, diff
+  - /portugal/team.html — seven agent roles plus the named editor of record
+  - /portugal/about.html — beta, one beat, one publisher, no legal review, nothing in Portuguese
+  - /portugal/data/{event,people,orgs,sources,changes,checks,team,stories}.json — machine surfaces
+  - /portugal/sources/frozen/<date>/<page>.snapshot — the frozen byte copies themselves. Stored
+    with a .snapshot extension because they are EVIDENCE, not pages of this site: unmodified
+    bytes of another organisation's pages, held so a claim can be verified, never republished
+    as browsable content
 - /governance/index.html — THE GOVERNANCE WIRE (beta): the first MVP of the risk-and-governance
   publication, self-contained under /governance/ so it can move to its own domain later. It is
   FULLY AGENTIC — seven agent roles, no human reviews any page before publication — and every
