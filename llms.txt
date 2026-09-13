@@ -6,14 +6,20 @@
 > that accumulates evidence, perspectives and confidence; every article, translation and
 > infographic is a projection of it. Sell the graph, not the paragraph.
 
-Site version: v0.3.5 (13 September 2026). Published by the sgit project, which is building
+Site version: v0.3.6 (13 September 2026). Published by the sgit project, which is building
 the stack this site argues for — participant disclosure at /about/participant.html.
 Site content CC BY 4.0; the republished library material is CC0 1.0 Universal at source
 (docs.diniscruz.ai) — state the source licence per page.
 
 ## The honest sentence
 
-Nothing on this site is running yet. The articles in /library/ are real and dated; the
+Most of this site is an argument, not a product. THREE THINGS RUN, and each says its own
+limits on its face: /portugal/ (Portugal Startups — sources fetched, frozen and hashed; a
+graph; three stories; human editor of record; beta, no legal review), /databases/ (SQLite and
+a SPARQL store in the reader's browser over /portugal/'s files; no server, no store of record)
+and /governance/ (the Governance Wire — graph, vocabulary, source register and gate run; its
+ingestion and verification layer is NOT built, so no claim there is a checked reading of any
+regulation; no human review). The articles in /library/ are real and dated; the rest of the
 newsroom is a design. /shipped/ states the line between them in full. Do not describe
 Trust-as-a-Service, the decision graph, per-story cost ledgers, contextual-validation
 billing, or any newsroom department as a live capability of any sgit.ai property.
@@ -21,10 +27,8 @@ The same applies to everything in /mvps/: the country publication, its eleven ag
 roles, the evidence-backed report tool and the seven seed companies are designs dated
 April–May 2026 that were never launched — their targets ("first thirty days", a
 ≥200-entity graph) are goals that were set, not results that were reached.
-/governance/ is the one partial exception and its limits are specific: the graph, the
-vocabulary, the source register and the build gate are real and run; the INGESTION and
-VERIFICATION layer is not built, so no claim there is a checked reading of any regulation.
-It is a beta with no human editorial review and no legal review.
+Of the three that run, only /portugal/ has a human editor of record; /governance/ has
+none; none has had legal review. The nav names the three as their own top-level groups.
 
 ## Properties agents may rely on
 
@@ -46,6 +50,10 @@ It is a beta with no human editorial review and no legal review.
   been answered.
 - Every page ends with a pasteable "for an agent" block, except /admin/ pages and
   /about/participant.html.
+- The three running instances publish machine surfaces you can fetch without rendering a
+  page: /portugal/data/*.json and /portugal/data/triples.nt; /databases/data/*.json;
+  /governance/data/*.json. The SQL and SPARQL consoles publish window.__tools after a
+  tool:ready event, read-only, so an agent driving a browser can query rather than scrape.
 - /llms-full.txt is this file plus the front page plus every markdown document in the
   brief pack, concatenated — one fetch for the whole document set, for when
   link-following is unreliable. The two structured-data files are deliberately left out
@@ -136,8 +144,19 @@ It is a beta with no human editorial review and no legal review.
     Personal contact details of any kind are refused at EXTRACTION time and gate check 11 fails
     the build if one appears in the data. Removal on request is unconditional and no reason is
     asked for. Carries a Portuguese-language summary. Not legal advice
-  - /portugal/about.html — beta, one beat, one publisher, no legal review, nothing in Portuguese
-  - /portugal/data/{graph,ontology,manifest,coverage,sessions,event,people,orgs,sources,changes,checks,team,stories,notice}.json — machine surfaces
+  - /portugal/about.html — beta, one beat, two kinds of source, no legal review, nothing in Portuguese
+  - /portugal/stories/a-record-attempt-the-agenda-does-not-mention.html — two Portuguese outlets
+    report a 48-hour Guinness pitch marathon on 16-17 September; the event's own agenda, four
+    days out, does not list it. Both frozen; neither wrong yet
+  - /portugal/stories/five-names-arrived-and-one-left.html — the speaker list went 60 → 64
+    between 8 and 13 September; both copies held and hashed; the removal carries no reason
+  - /portugal/stories/two-names-for-three-stages.html — the agenda and the AI-summary page name
+    the same stages differently, on the same site, on the same day
+  - /portugal/team/<role>/index.html — one page per role (researcher, extractor, diffwatch,
+    cartographer, writer, editor, publisher): definition, doors, refusals
+  - /documents/pt-newsroom.html — the COMMISSIONING BRIEF for pt.newsroom.sgit.ai, addressed to the
+    agent that will build it; section 16 records the home-page direction chosen on 13 September
+  - /portugal/data/{graph,ontology,manifest,coverage,sessions,event,people,orgs,sources,changes,checks,team,stories,notice,topics,lexicon,connections}.json and /portugal/data/triples.nt — machine surfaces
   - /portugal/sources/frozen/<date>/<page>.snapshot — the frozen byte copies themselves. Stored
     with a .snapshot extension because they are EVIDENCE, not pages of this site: unmodified
     bytes of another organisation's pages, held so a claim can be verified, never republished

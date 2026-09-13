@@ -31,9 +31,11 @@ PARENT_TITLE = ("sgit.ai — the parent project: the vault layer and the shipped
 #   · `prefixes` decides the "here" state, so a page not itself in the nav still
 #     lights up the group it belongs to.
 #
-# Five groups, following the site's own build order: the argument (thesis,
+# Eight groups, following the site's own build order: the argument (thesis,
 # corrections, provenance) first, then the economics, then rights and operations,
-# then the record (library, shipped), then site mechanics.
+# then the three things that RUN — the Governance Wire, Portugal Startups and the
+# no-server databases, each with its own submenu because each is a site inside the
+# site — then the record (library, shipped), then site mechanics.
 NAV = [
     ("The argument", "thesis/index.html", [
         ("The thesis: sell the graph", "thesis/index.html"),
@@ -52,11 +54,42 @@ NAV = [
         ("Content rights: CC-Signed", "rights/index.html"),
         ("The newsroom: roles &amp; operations", "newsroom/index.html"),
         ("The MVPs: publication instances", "mvps/index.html"),
-        ("The Portugal instance", "mvps/portugal.html"),
-        ("The Governance Wire (beta)", "governance/index.html"),
-        ("Portugal Startups (beta)", "portugal/index.html"),
-        ("Databases with no server (beta)", "databases/index.html"),
-    ], ("rights/", "newsroom/", "mvps/", "governance/", "portugal/", "databases/")),
+        ("The Portugal instance, as specified", "mvps/portugal.html"),
+        ("Seed companies", "mvps/seed-companies.html"),
+    ], ("rights/", "newsroom/", "mvps/")),
+    ("Governance", "governance/index.html", [
+        ("The wire (beta)", "governance/index.html"),
+        ("The floor: a point-and-click newsroom", "governance/newsroom/index.html"),
+        ("The state map: the workflow", "governance/newsroom/workflow.html"),
+        ("The team: seven roles", "governance/team.html"),
+        ("Research runs", "governance/research/index.html"),
+        ("The graph", "governance/graph.html"),
+        ("Sources", "governance/sources.html"),
+        ("Method &amp; gates", "governance/method.html"),
+        ("About &amp; limits", "governance/about.html"),
+    ], ("governance/",)),
+    ("Portugal", "portugal/index.html", [
+        ("The wire (beta)", "portugal/index.html"),
+        ("The graph", "portugal/graph.html"),
+        ("The files", "portugal/explorer.html"),
+        ("Connections", "portugal/connections.html"),
+        ("The Summit", "portugal/summit/index.html"),
+        ("Who is speaking", "portugal/summit/people.html"),
+        ("The organisations", "portugal/summit/orgs.html"),
+        ("What changed", "portugal/summit/changes.html"),
+        ("Sources", "portugal/sources.html"),
+        ("Method", "portugal/method.html"),
+        ("The team", "portugal/team.html"),
+        ("Your data", "portugal/notice.html"),
+        ("About &amp; limits", "portugal/about.html"),
+        ("Brief: pt.newsroom.sgit.ai", "documents/pt-newsroom.html"),
+    ], ("portugal/",)),
+    ("Databases", "databases/index.html", [
+        ("No server: the argument (beta)", "databases/index.html"),
+        ("The SQL console", "databases/sql.html"),
+        ("The graph console (SPARQL)", "databases/graph.html"),
+        ("The files it queries", "portugal/explorer.html"),
+    ], ("databases/",)),
     ("The record", "library/index.html", [
         ("The library: 2025 &rarr; present", "library/index.html"),
         ("What is shipped, what is argued", "shipped/index.html"),
@@ -89,9 +122,17 @@ FOOTER = [
         ("Content rights: CC-Signed", "rights/index.html"),
         ("The newsroom: roles &amp; operations", "newsroom/index.html"),
         ("The MVPs: publication instances", "mvps/index.html"),
-        ("The Governance Wire (beta)", "governance/index.html"),
         ("The library: 2025 &rarr; present", "library/index.html"),
         ("What is shipped, what is argued", "shipped/index.html"),
+    ]),
+    ("What runs", [
+        ("The Governance Wire (beta)", "governance/index.html"),
+        ("The floor: a point-and-click newsroom", "governance/newsroom/index.html"),
+        ("Portugal Startups (beta)", "portugal/index.html"),
+        ("Connections: who should talk to whom", "portugal/connections.html"),
+        ("Databases with no server (beta)", "databases/index.html"),
+        ("The SQL and SPARQL consoles", "databases/sql.html"),
+        ("Brief: pt.newsroom.sgit.ai", "documents/pt-newsroom.html"),
     ]),
     ("Site", [
         ("The network: sibling boundaries", "network/index.html"),

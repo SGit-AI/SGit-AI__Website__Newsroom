@@ -14,7 +14,7 @@
   --sans:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
   --serif:ui-serif,Georgia,"Times New Roman",serif;
   --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
-  --measure:960px; --wide:1360px;
+  --measure:960px; --wide:1560px; /* 1360 until v0.3.6; the eight-group nav needs the room, and the footer follows it */
   --shadow:0 1px 2px rgba(28,29,33,.05),0 4px 14px rgba(28,29,33,.04);
 }
 *{box-sizing:border-box}
@@ -78,22 +78,27 @@ nav.site .sub a.sl.here{color:var(--accent-dk);font-weight:600}
    a version badge, and hit it at ~1400px. So: tighten the row on the way down, and
    collapse to the phone menu before the tightening runs out. Measured, not guessed —
    the breakpoints below are where a full sweep of widths stops fitting on one line. */
-@media (max-width:1400px){
-  nav.site .row{gap:.75rem}
-  nav.site a.nl{font-size:.82rem}
-}
-@media (max-width:1180px){
-  nav.site .row{gap:.5rem}
-  nav.site a.nl{font-size:.79rem}
-  /* the footer's network line carries this link too, so it is the cheapest thing to drop */
+/* v0.3.6 added three groups (the things that run), and the sweep was done again: eight
+   groups plus the pill and the badge fit one row at 1440 with the parent link, and at 1280
+   only without it, so the parent link — which the footer's network line carries too — now
+   drops at 1500 rather than 1180, and the phone menu takes over at 1200 rather than 1000. */
+nav.site .row{gap:.6rem}
+nav.site a.nl{font-size:.8rem}
+@media (max-width:1500px){
+  nav.site .row{gap:.6rem}
+  nav.site a.nl{font-size:.8rem}
   nav.site .parent{display:none}
+}
+@media (max-width:1280px){
+  nav.site .row{gap:.5rem}
+  nav.site a.nl{font-size:.78rem}
 }
 
 /* Phone: the whole thing collapses behind one button, so the bar stays a single row and
    opening it gives a vertical list with each group's children indented under it. */
 .nav-items{display:contents}
 .nav-toggle{display:none}
-@media (max-width:1000px){
+@media (max-width:1200px){
   nav.site .row{position:relative;gap:.6rem}
   .nav-toggle{display:block;margin-left:auto;order:3;background:var(--panel);
     border:1px solid var(--line2);border-radius:6px;padding:.3rem .7rem;
@@ -226,8 +231,9 @@ table.vers td.vnum{font-family:var(--mono);font-weight:700;color:var(--accent-dk
 
 /* ---------- footer ---------- */
 footer.site{border-top:1px solid var(--line);margin-top:3.5rem;padding:2.2rem 0 3rem;background:var(--panel2)}
-footer.site .cols{max-width:var(--wide);margin:0 auto;padding:0 1.1rem;display:grid;gap:1.6rem;grid-template-columns:1.8fr 1fr 1fr 1fr 1fr}
-@media (max-width:1080px){footer.site .cols{grid-template-columns:2fr 1fr 1fr 1fr}}
+/* six columns since v0.3.6: the brand column plus five link columns, the fifth being "What runs" */
+footer.site .cols{max-width:var(--wide);margin:0 auto;padding:0 1.1rem;display:grid;gap:1.4rem;grid-template-columns:1.8fr 1fr 1fr 1fr 1fr 1fr}
+@media (max-width:1080px){footer.site .cols{grid-template-columns:1fr 1fr 1fr}}
 @media (max-width:940px){footer.site .cols{grid-template-columns:1fr 1fr}}
 footer.site h4{font-size:.7rem;letter-spacing:.13em;text-transform:uppercase;color:var(--dim);margin:0 0 .6rem}
 footer.site a{display:block;color:var(--dim);font-size:.82rem;padding:.15rem 0}

@@ -6,7 +6,7 @@
 > graph that accumulates evidence, perspectives and confidence; every article is a
 > **projection** of it. **Sell the graph, not the paragraph.**
 
-*Source: <https://newsroom.sgit.ai/index.html> · site v0.3.5 · markdown twin of the front page.*
+*Source: <https://newsroom.sgit.ai/index.html> · site v0.3.6 · markdown twin of the front page.*
 
 ---
 
@@ -39,6 +39,34 @@ today: a false claim propagates virally and the correction barely travels. In th
 | **10 articles** | 68,846 words, publicly dated since February 2025 |
 | **59p** | usable credit from a £1 card top-up — the wall micropayments removes |
 
+## What runs on this site
+
+Everything above is an argument. These are running instances of it, each a site inside the
+site, built by agents and reviewed before publication:
+
+- **Portugal Startups (beta, human-reviewed)** — a publication mapping the Portuguese startup
+  ecosystem, first beat Startup Summit Lisbon 2026. Every source fetched, frozen and hashed;
+  88 frozen pages; a graph of 329 nodes with Portuguese verbs; three stories; a
+  data-protection notice with a named editor of record.
+  [The wire →](https://newsroom.sgit.ai/portugal/index.html) ·
+  [The graph →](https://newsroom.sgit.ai/portugal/graph.html) ·
+  [Connections →](https://newsroom.sgit.ai/portugal/connections.html)
+- **Databases with no server (beta)** — SQLite and a SPARQL 1.1 store running in the browser
+  over the Portugal section's own JSON files, compiled to WebAssembly. The files are the
+  database; the engines are readers.
+  [The argument →](https://newsroom.sgit.ai/databases/index.html) ·
+  [SQL →](https://newsroom.sgit.ai/databases/sql.html) ·
+  [SPARQL →](https://newsroom.sgit.ai/databases/graph.html)
+- **The Governance Wire (beta, fully agentic)** — seven agent roles, a nine-state workflow,
+  research runs published whether or not anything resolved, and a point-and-click floor
+  where each role is a desk you can talk to.
+  [The wire →](https://newsroom.sgit.ai/governance/index.html) ·
+  [The floor →](https://newsroom.sgit.ai/governance/newsroom/index.html)
+- **pt.newsroom.sgit.ai (a brief for the next agent)** — a natively Portuguese newsroom
+  mapping Portugal's AI landscape: three departments, the law, the first three articles, and
+  the home-page direction chosen on 13 September.
+  [Read the brief →](https://newsroom.sgit.ai/documents/pt-newsroom.html)
+
 ## This does not launch as a manifesto
 
 Ten core articles — 68,846 words — were published on
@@ -46,7 +74,7 @@ Ten core articles — 68,846 words — were published on
 before the design material behind the rest of this site was written. [The full
 chronology →](https://newsroom.sgit.ai/library/index.html)
 
-**The honest sentence:** Nothing on this site is running yet. The articles in the library
+**The honest sentence:** Most of this site is an argument, not a product. Three things run — /portugal/, /databases/ and /governance/ — and each says its own limits on its face; only the first has a human editor of record, and none has had legal review. The articles in the library
 are real and dated. The newsroom — the roles, the provenance pages, the payment rails,
 Trust-as-a-Service — is a design. [The line between them
 →](https://newsroom.sgit.ai/shipped/index.html)
