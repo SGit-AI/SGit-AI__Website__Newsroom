@@ -298,10 +298,11 @@ the notice and balancing test, the named editor of record, the derive-don't-type
 organisations, and the two refusals that carry a gate each — **no reason for a removal** and
 **no target reported as a result**.
 
-**Do not take:** the English. Do not take the single-publisher source register — `/portugal/`
-has exactly one publisher behind every source and therefore corroborates nothing, which is its
-largest limitation. You have two machine-readable public sources on day one; use both, and you
-will be able to claim something it cannot.
+**Do not take:** the English. Do not take the shape of its source register — `/portugal/`
+holds the event's own pages and seven press pages *about* the event, and nothing that describes
+the ecosystem beyond that one event, which is its largest limitation. You have two
+machine-readable public datasets on day one; use both, and you will be able to claim something
+it cannot.
 
 **And do not take its scope as a model.** One event is a sample, not a census. `/portugal/`
 says so on its own pages. Your beat is a country.

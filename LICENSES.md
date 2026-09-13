@@ -21,6 +21,7 @@ content it republishes.
 
 | Path | Component | Licence |
 |---|---|---|
+| `assets/vendor/cytoscape.min.js` | [Cytoscape.js](https://js.cytoscape.org/) v3.30.2 — the graph engine behind `/portugal/graph.html`, the same build graphs.sgit.ai vendors for its own graph pages | MIT, © 2016-2024 The Cytoscape Consortium |
 | `assets/vendor/marked.min.js` | [marked](https://github.com/markedjs/marked) v12.0.2 — the markdown parser behind the `/documents/` reader pages | MIT, © 2011-2024 Christopher Jeffrey and contributors |
 
 It is vendored rather than loaded from a CDN deliberately. This is the site arguing that

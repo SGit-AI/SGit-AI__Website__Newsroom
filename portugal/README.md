@@ -46,11 +46,22 @@ portugal/
     checks.json      what re-reading established, and what cannot be verified
     team.json        seven agent roles + the named editor of record
     stories.json     the story index
+    sessions.json    the programme, transcribed from the frozen agenda and checked against it verbatim
+    coverage.json    third-party pages about the event: frozen, hashed, summarised in our words
+    coverage-notes.json   the hand-written half of coverage.json (publisher, kind, what it says)
+    notice.json      the data-protection notice
+    ontology.json    GENERATED — node types and verbs, each with a distinct inverse, in en and pt
+    graph.json       GENERATED — the whole section as one graph, in packs
+    manifest.json    GENERATED — every file with size and SHA-256
   content/*.md       story prose
   build/
-    extract.py       the ingestion path: fetch, freeze, hash, extract, diff
+    extract.py       the ingestion path: fetch, freeze, hash, extract, diff — event pages AND coverage
+    graph.py         the ontology, the graph and the manifest
+    pages.py         the front page, the graph page and the file explorer
     build.py         the projection: JSON + markdown -> HTML
-    gates.py         ten section checks
+    gates.py         fifteen section checks
+  ../assets/portugal-graph.js      the viewer — graphs.sgit.ai's instrument, packs instead of levels
+  ../assets/vendor/cytoscape.min.js  Cytoscape.js 3.30.2, MIT, the same build graphs.sgit.ai vendors
 ```
 
 ### Why frozen copies are `.snapshot` and not `.html`
@@ -64,6 +75,28 @@ that it links rather than reproduces. The bytes are untouched, so the hash still
 The same rule governs speaker biographies: not extracted, not stored, not published. Gate
 check 10 fails the build if any node field grows long enough to be one.
 
+## The graph
+
+`graph.py` writes `ontology.json` and `graph.json`. Three inherited rules and one of our own:
+
+1. **Every edge is a verb with a distinct, named inverse.** No symmetric edges; `related_to`,
+   `mentions`, `associated_with` and `works_at` are banned, the last because a speaker card
+   lists an organisation and does not assert employment — the edge is `listed_under`.
+2. **Every verb and every type carries Portuguese.** The commissioning brief rules that in a
+   natively Portuguese publication the edge verbs are Portuguese verbs. Carrying `pt` from day
+   one makes that a switch, not a rewrite, and a Portuguese reader can already read a path aloud.
+3. **Classification is a formula.** `role_class` on a person is matched against the LISTED
+   title, the pattern is published, and every value says "by listed title".
+4. **Every node names the frozen source it came from.** A node with no `source` fails the gate.
+
+Nodes arrive in **packs** — event, organisations and people on by default; programme, evidence,
+changes, coverage and stories switched on one block at a time. That is how a few hundred nodes
+stay legible.
+
+The viewer is [graphs.sgit.ai's](https://graphs.sgit.ai/v1/altitudes/graph.html) instrument
+with packs instead of levels, and it publishes `window.__graph` (read + view, no writes) after a
+`tool:ready` event, the same convention as that site's universe reader.
+
 ## Build
 
 ```bash
@@ -71,14 +104,14 @@ python3 portugal/build/extract.py --fetch   # take a new dated snapshot, then re
 python3 portugal/build/extract.py           # re-extract from the copies already held
 python3 portugal/build/build.py             # regenerate the pages
 python3 admin/build/chrome.py               # inject site nav + footer
-python3 portugal/build/gates.py             # the ten section checks
+python3 portugal/build/gates.py             # the fifteen section checks
 node admin/build/validate.js                # the whole-site gate
 ```
 
 Taking a snapshot on a cadence is the whole point. The most valuable copy of the speaker
 list will be the one taken the day after it stops being updated.
 
-## The ten gates
+## The fifteen gates
 
 1. Every frozen file exists and **still hashes to its registered SHA-256**. If a copy was
    modified, every claim resting on it is unsupported and the build stops.
@@ -91,6 +124,16 @@ list will be the one taken the day after it stops being updated.
 8. No page claims a Portuguese edition that does not exist.
 9. Stories trace to registered sources, and their pages match their markdown.
 10. No node field is long enough to be a reproduced biography.
+11. No contact detail for any natural person anywhere in the data — enforced where the data is
+    parsed, not where it is rendered.
+12. Every page that names individuals links to the data-protection notice.
+13. The graph conforms to its ontology: every verb declared with a distinct inverse and its
+    Portuguese; every node a declared type naming a registered source; every edge inside its
+    verb's domain and range; nobody in the graph who is neither on the list nor marked as no
+    longer listed; no reason on anyone who left it.
+14. Every session title appears **verbatim** in the frozen agenda — a transcription is a claim.
+15. Coverage is frozen before it is cited, summarised rather than quoted, and an excluded page
+    is never also in the register.
 
 ## What is real, and what is not
 
@@ -101,7 +144,9 @@ list will be the one taken the day after it stops being updated.
 | Named human editor of record | **Real** |
 | A closed speaker/organisation graph for one event | **Real** |
 | A map of the Portuguese startup ecosystem | **Not yet** — one event is a sample, not a census |
-| Corroboration | **None** — every source has the same publisher, the event itself |
+| Corroboration of the event's own claims | **Partial** — 7 press pages about the event, none a registry or dataset |
+| The graph, with inverses in two languages, and the viewer | **Real** |
+| Press coverage in the register, frozen and hashed | **Real** — 7 pages, one publisher each |
 | Session-to-speaker joins | **Not built** — the source does not join them either |
 | Anything in Portuguese | **Not published** — labels carry `pt`, the switch is not thrown |
 

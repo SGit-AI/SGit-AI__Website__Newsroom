@@ -14,7 +14,7 @@
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer and the shipped CLI. This site is the future-of-news stack: provenance, corrections, and paying the fact creator">&#8593; part of <b>sgit.ai</b></a>
   <span class="stage-pill">design, not built</span>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.3.1</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.3.2</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -78,6 +78,19 @@
 <div class="tablewrap"><table class="vers">
   <thead><tr><th>Version</th><th>Date</th><th>What shipped</th></tr></thead>
   <tbody>
+    <tr>
+      <td class="vnum">v0.3.2</td>
+      <td>13 Sep 2026</td>
+      <td><b>Portugal Startups becomes a graph, a front page and a file explorer &mdash; and the press enters the register.</b>
+        <p><b><a href="../portugal/graph.html">The graph</a>: 192 nodes, 298 edges, 10 types, 14 verbs.</b> The event, 64 speakers, 61 derived organisations, 16 sessions on 3 stages, 24 frozen sources across 2 snapshots, 7 pieces of coverage and our stories, as one graph. Every edge is a verb with a distinct named inverse <b>in English and in Portuguese</b>, so a path reads as a sentence walked either way in either language &mdash; the commissioning brief&rsquo;s rule that in a Portuguese publication the edge verbs are Portuguese verbs, applied a release early so it is a switch and not a rewrite. Nodes arrive in <b>packs</b> the reader switches on block by block; the one classification the graph makes rather than reads (<code>role_class</code> on a person) is published as a formula over the listed title and says so on every node.</p>
+        <p><b>The instrument is graphs.sgit.ai&rsquo;s, on purpose.</b> Cytoscape.js 3.30.2 is vendored (MIT, attributed in LICENSES.md) and the control panel is that site&rsquo;s altitude-graph vocabulary &mdash; radius exploration from any node, collapse and expand, path tracing read as sentences, a bounded path-query builder that says when it hits its cap, save and restore a view with every position. Packs replace levels; otherwise a reader who has used one should not have to learn the other. The page publishes <code>window.__graph</code> after a <code>tool:ready</code> event, read and view methods only, so the console, Playwright and an agent are equal consumers.</p>
+        <p><b><a href="../portugal/explorer.html">The files</a></b>: the platform&rsquo;s vault-browser idea rendered from a manifest for a section that is not in a vault yet &mdash; every file with its SHA-256 on the left, rendered / as a graph / raw on the right. Frozen third-party pages are listed and hashed and deliberately not rendered. The page says on its face that it goes when the vault browser takes over.</p>
+        <p><b><a href="../portugal/index.html">The front page</a> is now a newspaper&rsquo;s</b>: a lead, the wire, the programme by day, what the press says, the room as a graph, who made it, and the brief for whoever builds the next one.</p>
+        <p><b>Seven third-party pages are in the register</b>, each fetched, frozen and hashed before it could be cited, summarised in our words and never quoted; gate 15 fails the build on a long quotation. An eighth returned 404 and is recorded as excluded with the reason. Two of the seven &mdash; AICEP Portugal Global and Portugal Business News, both 29 July &mdash; report a 48-hour Guinness pitch marathon on 16&ndash;17 September that <b>the event&rsquo;s own agenda page, four days out, does not list</b>. That is <a href="../portugal/stories/a-record-attempt-the-agenda-does-not-mention.html">the third story</a>, and it is the first to stand on sources with more than one publisher.</p>
+        <p><b>Three more gates.</b> 13: the graph conforms to its ontology &mdash; every verb declared with a distinct inverse and Portuguese, every node a declared type naming a registered source, every edge within its verb&rsquo;s domain and range, and nobody in the graph who is neither on the published list nor marked as no longer listed. 14: every session title in <code>sessions.json</code> appears <em>verbatim</em> in the frozen agenda, because a transcription is a claim. 15: coverage is frozen before it is cited and never reproduced.</p>
+        <p>Also fixed: the whole-site link scanner reads <code>href=&quot;</code> inside inline JavaScript as a link; the explorer now emits single-quoted attributes from its templates rather than teaching the gate to be cleverer.</p>
+      </td>
+    </tr>
     <tr>
       <td class="vnum">v0.3.1</td>
       <td>13 Sep 2026</td>
@@ -228,7 +241,7 @@
     <p>News is failing not because there is too little information but because there is no walkable chain from a claim to its evidence, no way for a correction to reach what it disproved, and no way to pay the person who did the original work. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="netline"><a href="https://sgit.ai"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://graphs.sgit.ai">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai">&#8593; nhi.sgit.ai</a> &middot; <a href="https://sg-sentinel.sgit.ai">&#8593; sg-sentinel.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.3.1</a> &middot; <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.3.2</a> &middot; <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>The argument</h4>

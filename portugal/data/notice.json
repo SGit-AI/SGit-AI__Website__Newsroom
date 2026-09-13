@@ -26,15 +26,24 @@
     "Any assessment, ranking, score or characterisation of any named person"
   ],
   "refusal_enforced_by": "Gate check 11 of portugal/build/gates.py, which fails the build if an email address, telephone number or personal postal address appears anywhere in the section's data. It runs at extraction time rather than at rendering time, so a contact detail cannot reach the data and then be hidden by a template.",
-  "source": "One publisher: the event's own website, fetched and frozen to dated snapshots in this repository. Every source is listed with its SHA-256 in the register.",
+  "source": "Two kinds of source, both fetched and frozen to dated snapshots in this repository: the event's own website, and third-party pages about the event. The data held about any person comes only from the event's own speaker page. Every source is listed with its SHA-256 in the register.",
   "purpose": "Reporting on a public professional event and the ecosystem around it, and demonstrating a method in which every published claim can be walked back to a hashed copy of the source it came from.",
   "lawful_basis": {
     "basis": "Legitimate interests",
     "not_journalism": "The journalistic derogation is not claimed. Article 24(3) of Lei 58/2019 conditions processing for journalistic purposes on the national legislation governing access to and exercise of the profession. This publication is not accredited under it and does not meet that condition, so it does not rely on it.",
     "test": [
-      { "limb": "The interest", "we_say": "Reporting what a public event has published about itself, and demonstrating a verification method on it. Both are matters of public interest and neither is commercial — the section carries no price, no advertising and no tracking." },
-      { "limb": "Necessity", "we_say": "The reporting cannot be done without the names, because the subject IS who is speaking. The data held is the minimum: the four published professional fields and nothing else. No biography is stored, no contact detail is stored, and no inference about anybody is made or published." },
-      { "limb": "The balance", "we_say": "Every datum was published by the event itself for the express purpose of announcing these people as speakers, in their professional capacity, and carries no private-life content. Against that: being listed on a third-party site is not something anybody consented to, which is why the objection route below is unconditional rather than assessed. We also record that data having been made public does not by itself mean it may be processed on this basis — it is a factor in the balance, not an answer to it." }
+      {
+        "limb": "The interest",
+        "we_say": "Reporting what a public event has published about itself, and demonstrating a verification method on it. Both are matters of public interest and neither is commercial — the section carries no price, no advertising and no tracking."
+      },
+      {
+        "limb": "Necessity",
+        "we_say": "The reporting cannot be done without the names, because the subject IS who is speaking. The data held is the minimum: the four published professional fields and nothing else. No biography is stored, no contact detail is stored, and no inference about anybody is made or published."
+      },
+      {
+        "limb": "The balance",
+        "we_say": "Every datum was published by the event itself for the express purpose of announcing these people as speakers, in their professional capacity, and carries no private-life content. Against that: being listed on a third-party site is not something anybody consented to, which is why the objection route below is unconditional rather than assessed. We also record that data having been made public does not by itself mean it may be processed on this basis — it is a factor in the balance, not an answer to it."
+      }
     ],
     "guidance": "The three limbs follow the European Data Protection Board's guidelines on legitimate interests adopted 8 October 2024."
   },

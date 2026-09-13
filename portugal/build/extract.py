@@ -57,6 +57,19 @@ PAGES = {
 }
 TEXT_PAGES = {"llms.txt": "llms.txt"}
 
+# Third-party pages about the event. Fetched, frozen and hashed exactly like the event's own
+# pages, into <snapshot>/coverage/. A page that does not resolve is recorded in
+# coverage-notes.json under "excluded" and never enters the register.
+COVERAGE = {
+    "portugalglobal-pitch-marathon": "https://portugalglobal.pt/en/news/2026/julho/startup-summit-lisbon-opens-applications-for-48hr-pitch-marathon/",
+    "pbn-guinness-record": "https://www.portugalbusinessesnews.com/post/startup-summit-lisbon-will-officially-attempt-to-set-a-guinness-world-record",
+    "scaleup-porto": "https://scaleupporto.pt/event/startup-summit-lisbon-2026/",
+    "startupevents-org": "https://startupevents.org/startup-events-calendar/startup-summit-lisbon-2026",
+    "startupmaphub": "https://startupmaphub.com/events/startup-summit-lisbon-2026",
+    "eventbrite-sept": "https://www.eventbrite.co.uk/e/startup-summit-lisbon-2026-founder-startup-investor-event-tickets-1987781295364",
+    "summit-lisbon-tech-events": "https://startupsummit.io/lisbon-tech-events-2026",
+}
+
 
 def snapshots():
     return sorted(d for d in FROZEN.iterdir() if d.is_dir() and re.fullmatch(r"\d{4}-\d{2}-\d{2}", d.name))
@@ -71,6 +84,13 @@ def fetch_snapshot(date):
             ["curl", "-sL", "-o", str(out / f"{name}{ext}"), "-w", "%{http_code}",
              "--max-time", "30", f"{HOST}/{path}"], capture_output=True, text=True).stdout.strip()
         print(f"  {code}  {date}/{name}{ext}")
+    (out / "coverage").mkdir(exist_ok=True)
+    for cid, url in COVERAGE.items():
+        code = subprocess.run(
+            ["curl", "-sL", "-A", "Mozilla/5.0 (newsroom.sgit.ai research; +https://newsroom.sgit.ai/portugal/)",
+             "-o", str(out / "coverage" / f"{cid}.snapshot"), "-w", "%{http_code}",
+             "--max-time", "30", url], capture_output=True, text=True).stdout.strip()
+        print(f"  {code}  {date}/coverage/{cid}.snapshot")
 
 
 def sha(p):
@@ -195,6 +215,36 @@ def main():
                 "publisher": "Startup Summit Lisbon 2026", "state": "primary",
             })
 
+    for snap in snaps:
+        for cid, url in COVERAGE.items():
+            f = snap / "coverage" / f"{cid}.snapshot"
+            if not f.exists():
+                continue
+            if "Ocorreu algo de errado" in f.read_text(errors="replace")[:20000]:
+                continue          # a 404 body; excluded, and coverage-notes.json says why
+            sources.append({
+                "id": f"{snap.name}/coverage/{cid}", "page": f"coverage/{cid}", "snapshot": snap.name,
+                "url": url, "frozen": f"sources/frozen/{snap.name}/coverage/{cid}.snapshot",
+                "sha256": sha(f), "bytes": f.stat().st_size, "retrieved": mtime(f),
+                "publisher": "third party — see coverage.json", "state": "primary",
+            })
+
+    notes = json.loads((DATA / "coverage-notes.json").read_text(encoding="utf-8")) \
+        if (DATA / "coverage-notes.json").exists() else {"items": [], "excluded": []}
+    by_src = {s["id"]: s for s in sources}
+    cov_items = []
+    for it in notes["items"]:
+        sid = f"{latest.name}/coverage/{it['id']}"
+        if sid not in by_src:
+            continue          # no frozen copy in the latest snapshot: no entry
+        src = by_src[sid]
+        cov_items.append({**it, "url": src["url"], "source": sid, "sha256": src["sha256"],
+                          "bytes": src["bytes"], "retrieved": src["retrieved"],
+                          "title": (re.search(r"<title[^>]*>(.*?)</title>",
+                                    (SEC / src["frozen"]).read_text(errors="replace"), re.S | re.I) or [None, it["id"]])[1]})
+    for c in cov_items:
+        c["title"] = html.unescape(re.sub(r"\s+", " ", c["title"])).strip()[:140]
+
     people = people_in(latest)
     orgs = build_orgs(people)
 
@@ -266,6 +316,14 @@ def main():
                  "is the story: a speaker list before the doors open is a moving object, and the "
                  "only way to report movement honestly is to hold both copies and hash them."),
         "changes": changes,
+    })
+    write("coverage.json", {
+        "id": "summit-coverage", "version": "0.1.0", "updated": today,
+        "note": ("Third-party pages about the event, each fetched, frozen and hashed like any other "
+                 "source. Linked to, never reproduced: 'what_it_says' is this publication's own "
+                 "summary after reading the frozen copy. A page that did not resolve is listed under "
+                 "'excluded' with the reason, and cannot be cited."),
+        "count": len(cov_items), "items": cov_items, "excluded": notes.get("excluded", []),
     })
     write("checks.json", {
         "id": "summit-checks", "version": "0.1.0", "updated": today,

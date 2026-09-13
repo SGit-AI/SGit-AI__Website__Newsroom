@@ -1,0 +1,4282 @@
+{
+  "id": "portugal-graph",
+  "version": "0.1.0",
+  "updated": "2026-09-13",
+  "snapshot": "2026-09-13",
+  "note": "The whole section as one graph. Every node names the frozen source it came from; every edge is a verb from ontology.json with a named inverse. Packs are the blocks the viewer introduces nodes by. Nothing here was read from the live network.",
+  "packs": [
+    {
+      "id": "event",
+      "label": "The event",
+      "default": true,
+      "note": "The summit, its venue and its organiser.",
+      "nodes": 3,
+      "edges": 2
+    },
+    {
+      "id": "orgs",
+      "label": "Organisations",
+      "default": true,
+      "note": "Derived from the speaker cards. Placeholders flagged.",
+      "nodes": 61,
+      "edges": 0
+    },
+    {
+      "id": "people",
+      "label": "People",
+      "default": true,
+      "note": "The published speaker list, in professional capacity only.",
+      "nodes": 64,
+      "edges": 128
+    },
+    {
+      "id": "sessions",
+      "label": "Programme",
+      "default": false,
+      "note": "Sessions and stages as the agenda page lists them. No session is joined to a speaker, because the source joins none.",
+      "nodes": 19,
+      "edges": 23
+    },
+    {
+      "id": "sources",
+      "label": "Evidence",
+      "default": false,
+      "note": "Every frozen page and the snapshot it belongs to. What every claim walks back to.",
+      "nodes": 26,
+      "edges": 105
+    },
+    {
+      "id": "changes",
+      "label": "What changed",
+      "default": false,
+      "note": "Presence and absence across snapshots. A removal carries no reason.",
+      "nodes": 2,
+      "edges": 13
+    },
+    {
+      "id": "coverage",
+      "label": "Coverage",
+      "default": false,
+      "note": "Third-party pages about the event, frozen and hashed. Linked, not reproduced.",
+      "nodes": 14,
+      "edges": 14
+    },
+    {
+      "id": "stories",
+      "label": "Our stories",
+      "default": false,
+      "note": "What this publication wrote, and the sources each piece stands on.",
+      "nodes": 3,
+      "edges": 13
+    }
+  ],
+  "counts": {
+    "nodes": 192,
+    "edges": 298,
+    "by_type": {
+      "Event": 1,
+      "Session": 16,
+      "Stage": 3,
+      "Person": 65,
+      "Organisation": 70,
+      "Place": 1,
+      "Snapshot": 2,
+      "Source": 24,
+      "Coverage": 7,
+      "Story": 3
+    }
+  },
+  "nodes": [
+    {
+      "id": "event:startup-summit-lisbon-2026",
+      "type": "Event",
+      "label": "Startup Summit Lisbon 2026",
+      "pack": "event",
+      "dates": [
+        "2026-09-17",
+        "2026-09-18"
+      ],
+      "url": "https://startupsummit.io",
+      "source": "2026-09-13/index"
+    },
+    {
+      "id": "place:unicorn-factory-lisboa",
+      "type": "Place",
+      "label": "Unicorn Factory Lisboa",
+      "pack": "event",
+      "district": "Beato Innovation District",
+      "source": "2026-09-13/llms.txt"
+    },
+    {
+      "id": "org:startup-events",
+      "type": "Organisation",
+      "label": "StartUp Events",
+      "pack": "event",
+      "role_in_graph": "organiser",
+      "source": "2026-09-13/index"
+    },
+    {
+      "id": "org:brdge",
+      "type": "Organisation",
+      "label": "Brdge",
+      "pack": "orgs",
+      "placeholder": false,
+      "speakers": 2,
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "org:time-to-rise",
+      "type": "Organisation",
+      "label": "Time to Rise",
+      "pack": "orgs",
+      "placeholder": false,
+      "speakers": 2,
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "org:351-portuguese-startup-association",
+      "type": "Organisation",
+      "label": "351 Portuguese Startup Association",
+      "pack": "orgs",
+      "placeholder": false,
+      "speakers": 1,
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "org:abn-amro-bank",
+      "type": "Organisation",
+      "label": "ABN AMRO Bank",
+      "pack": "orgs",
+      "placeholder": false,
+      "speakers": 1,
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "org:accenture",
+      "type": "Organisation",
+      "label": "Accenture",
+      "pack": "orgs",
+      "placeholder": false,
+      "speakers": 1,
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "org:aiffin",
+      "type": "Organisation",
+      "label": "Aiffin",
+      "pack": "orgs",
+      "placeholder": false,
+      "speakers": 1,
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "org:angels-way",
+      "type": "Organisation",
+      "label": "Angels Way",
+      "pack": "orgs",
+      "placeholder": false,
+      "speakers": 1,
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "org:around-pr-studio",
+      "type": "Organisation",
+      "label": "Around PR Studio",
+      "pack": "orgs",
+      "placeholder": false,
+      "speakers": 1,
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "org:bankless-ventures",
+      "type": "Organisation",
+      "label": "Bankless Ventures",
+      "pack": "orgs",
+      "placeholder": false,
+      "speakers": 1,
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "org:brandulogy",
+      "type": "Organisation",
+      "label": "BRANDULOGY",
+      "pack": "orgs",
+      "placeholder": false,
+      "speakers": 1,
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "org:bsc-ai-factory",
+      "type": "Organisation",
+      "label": "BSC AI Factory",
+      "pack": "orgs",
+      "placeholder": false,
+      "speakers": 1,
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "org:business-network-albania",
+      "type": "Organisation",
+      "label": "Business Network Albania",
+      "pack": "orgs",
+      "placeholder": false,
+      "speakers": 1,
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "org:cosysense",
+      "type": "Organisation",
+      "label": "Cosysense",
+      "pack": "orgs",
+      "placeholder": false,
+      "speakers": 1,
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "org:creativity-matter",
+      "type": "Organisation",
+      "label": "Creativity Matter",
+      "pack": "orgs",
+      "placeholder": false,
+      "speakers": 1,
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "org:dyrectli-capital",
+      "type": "Organisation",
+      "label": "Dyrectli Capital",
+      "pack": "orgs",
+      "placeholder": false,
+      "speakers": 1,
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "org:ecox-bombastic-burgh",
+      "type": "Organisation",
+      "label": "Ecox / Bombastic Burgh",
+      "pack": "orgs",
+      "placeholder": false,
+      "speakers": 1,
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "org:fast-track-ventures",
+      "type": "Organisation",
+      "label": "Fast Track Ventures",
+      "pack": "orgs",
+      "placeholder": false,
+      "speakers": 1,
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "org:fiiys-ltd",
+      "type": "Organisation",
+      "label": "FIIYS Ltd",
+      "pack": "orgs",
+      "placeholder": false,
+      "speakers": 1,
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "org:fio-legal",
+      "type": "Organisation",
+      "label": "Fio Legal",
+      "pack": "orgs",
+      "placeholder": false,
+      "speakers": 1,
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "org:fio-legal-fractional-freelance-hr",
+      "type": "Organisation",
+      "label": "Fio Legal | Fractional Freelance HR",
+      "pack": "orgs",
+      "placeholder": false,
+      "speakers": 1,
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "org:first-ten-advisory",
+      "type": "Organisation",
+      "label": "First Ten Advisory",
+      "pack": "orgs",
+      "placeholder": false,
+      "speakers": 1,
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "org:freedom-vas",
+      "type": "Organisation",
+      "label": "Freedom VAs",
+      "pack": "orgs",
+      "placeholder": false,
+      "speakers": 1,
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "org:gacs-ltd-gacsym-ventures",
+      "type": "Organisation",
+      "label": "Gacs Ltd & Gacsym Ventures",
+      "pack": "orgs",
+      "placeholder": false,
+      "speakers": 1,
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "org:globalfy",
+      "type": "Organisation",
+      "label": "Globalfy",
+      "pack": "orgs",
+      "placeholder": false,
+      "speakers": 1,
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "org:growth-geek-unipessoal-lda",
+      "type": "Organisation",
+      "label": "Growth Geek Unipessoal LDA",
+      "pack": "orgs",
+      "placeholder": false,
+      "speakers": 1,
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "org:humannovate-consulting",
+      "type": "Organisation",
+      "label": "Humannovate Consulting",
+      "pack": "orgs",
+      "placeholder": false,
+      "speakers": 1,
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "org:ilof",
+      "type": "Organisation",
+      "label": "iLoF",
+      "pack": "orgs",
+      "placeholder": false,
+      "speakers": 1,
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "org:jab-holdings",
+      "type": "Organisation",
+      "label": "JAB Holdings",
+      "pack": "orgs",
+      "placeholder": false,
+      "speakers": 1,
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "org:jci",
+      "type": "Organisation",
+      "label": "JCI",
+      "pack": "orgs",
+      "placeholder": false,
+      "speakers": 1,
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "org:konnect-ai-human-strategy-execution-workspace",
+      "type": "Organisation",
+      "label": "KONNECT - AI + Human Strategy Execution Workspace",
+      "pack": "orgs",
+      "placeholder": false,
+      "speakers": 1,
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "org:ladies-who-talk",
+      "type": "Organisation",
+      "label": "Ladies Who Talk",
+      "pack": "orgs",
+      "placeholder": false,
+      "speakers": 1,
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "org:lexidy",
+      "type": "Organisation",
+      "label": "LEXIDY",
+      "pack": "orgs",
+      "placeholder": false,
+      "speakers": 1,
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "org:lexidy-law-boutique-slp",
+      "type": "Organisation",
+      "label": "Lexidy Law Boutique SLP",
+      "pack": "orgs",
+      "placeholder": false,
+      "speakers": 1,
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "org:linkilaw-solicitors-cbca-group",
+      "type": "Organisation",
+      "label": "Linkilaw Solicitors, CBCA Group",
+      "pack": "orgs",
+      "placeholder": false,
+      "speakers": 1,
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "org:lisa-press-consulting",
+      "type": "Organisation",
+      "label": "Lisa Press Consulting",
+      "pack": "orgs",
+      "placeholder": false,
+      "speakers": 1,
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "org:lisbon-business-leaders",
+      "type": "Organisation",
+      "label": "Lisbon Business Leaders",
+      "pack": "orgs",
+      "placeholder": false,
+      "speakers": 1,
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "org:many",
+      "type": "Organisation",
+      "label": "Many",
+      "pack": "orgs",
+      "placeholder": false,
+      "speakers": 1,
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "org:mvmt-studio",
+      "type": "Organisation",
+      "label": "MVMT Studio",
+      "pack": "orgs",
+      "placeholder": false,
+      "speakers": 1,
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "org:mykor",
+      "type": "Organisation",
+      "label": "Mykor",
+      "pack": "orgs",
+      "placeholder": false,
+      "speakers": 1,
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "org:on-this-planet",
+      "type": "Organisation",
+      "label": "On This Planet",
+      "pack": "orgs",
+      "placeholder": false,
+      "speakers": 1,
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "org:ow-ventures-scr",
+      "type": "Organisation",
+      "label": "OW Ventures SCR",
+      "pack": "orgs",
+      "placeholder": false,
+      "speakers": 1,
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "org:pactum-global",
+      "type": "Organisation",
+      "label": "Pactum Global",
+      "pack": "orgs",
+      "placeholder": false,
+      "speakers": 1,
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "org:pioneering-people",
+      "type": "Organisation",
+      "label": "Pioneering People",
+      "pack": "orgs",
+      "placeholder": false,
+      "speakers": 1,
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "org:pr-agency-techwaves",
+      "type": "Organisation",
+      "label": "PR Agency TechWaves",
+      "pack": "orgs",
+      "placeholder": false,
+      "speakers": 1,
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "org:prifly-advisors",
+      "type": "Organisation",
+      "label": "PriFly Advisors",
+      "pack": "orgs",
+      "placeholder": false,
+      "speakers": 1,
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "org:rom-n-kn-rr",
+      "type": "Organisation",
+      "label": "Román Knörr",
+      "pack": "orgs",
+      "placeholder": false,
+      "speakers": 1,
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "org:sibillastrupule-com",
+      "type": "Organisation",
+      "label": "SibillaStrupule.com",
+      "pack": "orgs",
+      "placeholder": false,
+      "speakers": 1,
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "org:solegency",
+      "type": "Organisation",
+      "label": "Solegency",
+      "pack": "orgs",
+      "placeholder": false,
+      "speakers": 1,
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "org:sotavento-angels-fund",
+      "type": "Organisation",
+      "label": "Sotavento Angels Fund",
+      "pack": "orgs",
+      "placeholder": false,
+      "speakers": 1,
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "org:sotavento-invest",
+      "type": "Organisation",
+      "label": "Sotavento Invest",
+      "pack": "orgs",
+      "placeholder": false,
+      "speakers": 1,
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "org:soulbranding",
+      "type": "Organisation",
+      "label": "SOULBRANDING",
+      "pack": "orgs",
+      "placeholder": false,
+      "speakers": 1,
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "org:startup-summit",
+      "type": "Organisation",
+      "label": "Startup Summit",
+      "pack": "orgs",
+      "placeholder": false,
+      "speakers": 1,
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "org:time-space",
+      "type": "Organisation",
+      "label": "TIME & SPACE",
+      "pack": "orgs",
+      "placeholder": false,
+      "speakers": 1,
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "org:trivevo",
+      "type": "Organisation",
+      "label": "Trivevo",
+      "pack": "orgs",
+      "placeholder": false,
+      "speakers": 1,
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "org:upstride-holdings",
+      "type": "Organisation",
+      "label": "UpStride Holdings",
+      "pack": "orgs",
+      "placeholder": false,
+      "speakers": 1,
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "org:vntr-capital",
+      "type": "Organisation",
+      "label": "VNTR Capital",
+      "pack": "orgs",
+      "placeholder": false,
+      "speakers": 1,
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "org:what-she-said-limited",
+      "type": "Organisation",
+      "label": "What She Said Limited",
+      "pack": "orgs",
+      "placeholder": false,
+      "speakers": 1,
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "org:zero-risk-startup",
+      "type": "Organisation",
+      "label": "Zero Risk Startup",
+      "pack": "orgs",
+      "placeholder": false,
+      "speakers": 1,
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "org:zoya-mesaric-private-international-practice",
+      "type": "Organisation",
+      "label": "Zoya Mesaric – Private International Practice",
+      "pack": "orgs",
+      "placeholder": false,
+      "speakers": 1,
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "org:independent",
+      "type": "Organisation",
+      "label": "Independent",
+      "pack": "orgs",
+      "placeholder": true,
+      "speakers": 2,
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "org:self-employed",
+      "type": "Organisation",
+      "label": "Self-Employed",
+      "pack": "orgs",
+      "placeholder": true,
+      "speakers": 1,
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "person:andreia-gaudencio",
+      "type": "Person",
+      "label": "Andreia Gaudêncio",
+      "pack": "people",
+      "role": "CNCA Project Internal Leader",
+      "org": "BSC AI Factory",
+      "role_class": "other",
+      "role_class_label": "not classified by listed title",
+      "page": "https://startupsummit.io/speakers/andreia-gaudencio",
+      "linkedin": null,
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "person:paulo-andrez",
+      "type": "Person",
+      "label": "Paulo Andrez",
+      "pack": "people",
+      "role": "Angel Investor & Author",
+      "org": "Zero Risk Startup",
+      "role_class": "investor",
+      "role_class_label": "investor-side, by listed title",
+      "page": "https://startupsummit.io/speakers/paulo-andrez",
+      "linkedin": "https://linkedin.com/in/pauloandrez",
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "person:luis-valente",
+      "type": "Person",
+      "label": "Luis Valente",
+      "pack": "people",
+      "role": "CEO & Co-Founder",
+      "org": "iLoF",
+      "role_class": "founder",
+      "role_class_label": "founder or operator, by listed title",
+      "page": "https://startupsummit.io/speakers/luis-valente",
+      "linkedin": "https://www.linkedin.com/in/luisvalente28/",
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "person:anmol-goel",
+      "type": "Person",
+      "label": "Anmol Goel",
+      "pack": "people",
+      "role": "CEO & Partner",
+      "org": "Gacs Ltd & Gacsym Ventures",
+      "role_class": "investor",
+      "role_class_label": "investor-side, by listed title",
+      "page": "https://startupsummit.io/speakers/anmol-goel",
+      "linkedin": "https://www.linkedin.com/in/anmol-g-215a96a9/",
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "person:karan-setiya",
+      "type": "Person",
+      "label": "Karan Setiya",
+      "pack": "people",
+      "role": "Fintech Venturing Manager",
+      "org": "ABN AMRO Bank",
+      "role_class": "other",
+      "role_class_label": "not classified by listed title",
+      "page": "https://startupsummit.io/speakers/karan-setiya",
+      "linkedin": "https://www.linkedin.com/in/karansetiya/",
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "person:rita-kastrati",
+      "type": "Person",
+      "label": "Rita Kastrati",
+      "pack": "people",
+      "role": "CEO and Founder",
+      "org": "Pioneering People",
+      "role_class": "founder",
+      "role_class_label": "founder or operator, by listed title",
+      "page": "https://startupsummit.io/speakers/rita-kastrati",
+      "linkedin": "https://www.linkedin.com/in/rita-kastrati99/",
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "person:luis-gutman",
+      "type": "Person",
+      "label": "Luis Gutman",
+      "pack": "people",
+      "role": "Managing Partner",
+      "org": "OW Ventures SCR",
+      "role_class": "investor",
+      "role_class_label": "investor-side, by listed title",
+      "page": "https://startupsummit.io/speakers/luis-gutman",
+      "linkedin": "https://www.linkedin.com/in/luisgutman/",
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "person:hector-lv",
+      "type": "Person",
+      "label": "Héctor LV",
+      "pack": "people",
+      "role": "Head of Corporate & Legal Counsel",
+      "org": "Lexidy Law Boutique SLP",
+      "role_class": "founder",
+      "role_class_label": "founder or operator, by listed title",
+      "page": "https://startupsummit.io/speakers/hector-lv",
+      "linkedin": "https://www.linkedin.com/in/hector-lopez-vzqz/",
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "person:tina-valand",
+      "type": "Person",
+      "label": "Tina Valand",
+      "pack": "people",
+      "role": "Generative AI Director",
+      "org": "Accenture",
+      "role_class": "founder",
+      "role_class_label": "founder or operator, by listed title",
+      "page": "https://startupsummit.io/speakers/tina-valand",
+      "linkedin": "https://uk.linkedin.com/in/tina-valand-b191a42",
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "person:vini-devnani",
+      "type": "Person",
+      "label": "Vini Devnani",
+      "pack": "people",
+      "role": "Fractional Head of People",
+      "org": "JAB Holdings",
+      "role_class": "founder",
+      "role_class_label": "founder or operator, by listed title",
+      "page": "https://startupsummit.io/speakers/vini-devnani",
+      "linkedin": "https://www.linkedin.com/in/vini-d-445a771b/",
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "person:luiza-castro-rey",
+      "type": "Person",
+      "label": "Luiza Castro Rey",
+      "pack": "people",
+      "role": "Partner & Co-Founder & Head of Corporate and Web3",
+      "org": "Fio Legal",
+      "role_class": "investor",
+      "role_class_label": "investor-side, by listed title",
+      "page": "https://startupsummit.io/speakers/luiza-castro-rey",
+      "linkedin": "https://www.linkedin.com/in/luiza-reycastro/",
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "person:nashwa-shah",
+      "type": "Person",
+      "label": "Nashwa Shah",
+      "pack": "people",
+      "role": "Founder, philanthropist and motivational speaker",
+      "org": "Many",
+      "role_class": "founder",
+      "role_class_label": "founder or operator, by listed title",
+      "page": "https://startupsummit.io/speakers/nashwa-shah",
+      "linkedin": "https://www.linkedin.com/in/nashwa-shah-1322251b0?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "person:rita-figueiredo",
+      "type": "Person",
+      "label": "Rita Figueiredo",
+      "pack": "people",
+      "role": "HEAD OF PORTUGAL",
+      "org": "LEXIDY",
+      "role_class": "founder",
+      "role_class_label": "founder or operator, by listed title",
+      "page": "https://startupsummit.io/speakers/rita-figueiredo",
+      "linkedin": "https://www.linkedin.com/in/rita-figueiredo/",
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "person:filipa-faria",
+      "type": "Person",
+      "label": "Filipa Faria",
+      "pack": "people",
+      "role": "People & Culture Transformation Leader",
+      "org": "Fio Legal | Fractional Freelance HR",
+      "role_class": "other",
+      "role_class_label": "not classified by listed title",
+      "page": "https://startupsummit.io/speakers/filipa-faria",
+      "linkedin": "https://www.linkedin.com/in/filipaffaria/",
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "person:ricardo",
+      "type": "Person",
+      "label": "Ricardo",
+      "pack": "people",
+      "role": "Speaker",
+      "org": "Startup Summit",
+      "role_class": "other",
+      "role_class_label": "not classified by listed title",
+      "page": "https://startupsummit.io/speakers/ricardo",
+      "linkedin": "https://www.linkedin.com/in/ricardopascual84/",
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "person:raffaella-loncao",
+      "type": "Person",
+      "label": "Raffaella Loncao",
+      "pack": "people",
+      "role": "Founder & Managing Director",
+      "org": "On This Planet",
+      "role_class": "founder",
+      "role_class_label": "founder or operator, by listed title",
+      "page": "https://startupsummit.io/speakers/raffaella-loncao",
+      "linkedin": "https://www.linkedin.com/in/raffaellaloncao/",
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "person:muhammad-farooq-rathod",
+      "type": "Person",
+      "label": "Muhammad Farooq Rathod",
+      "pack": "people",
+      "role": "CEO & Founder",
+      "org": "UpStride Holdings",
+      "role_class": "founder",
+      "role_class_label": "founder or operator, by listed title",
+      "page": "https://startupsummit.io/speakers/muhammad-farooq-rathod",
+      "linkedin": "https://www.linkedin.com/in/muhammad-farooq-rathod-3158001b/",
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "person:zoya-mesaric-mag-a-pth",
+      "type": "Person",
+      "label": "Zoya Mesaric",
+      "pack": "people",
+      "role": "Executive Coach, Psychoanalyst & Trauma Specialist",
+      "org": "Zoya Mesaric – Private International Practice",
+      "role_class": "other",
+      "role_class_label": "not classified by listed title",
+      "page": "https://startupsummit.io/speakers/zoya-mesaric-mag-a-pth",
+      "linkedin": "https://www.linkedin.com/in/zoya-mesaric-mag-a-pth-461259242?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "person:alexandra-isenegger",
+      "type": "Person",
+      "label": "Alexandra Isenegger",
+      "pack": "people",
+      "role": "Founder & Managing Director",
+      "org": "Linkilaw Solicitors, CBCA Group",
+      "role_class": "founder",
+      "role_class_label": "founder or operator, by listed title",
+      "page": "https://startupsummit.io/speakers/alexandra-isenegger",
+      "linkedin": "https://www.linkedin.com/in/alexandraisenegger/",
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "person:viachaslau-smirnou",
+      "type": "Person",
+      "label": "Viachaslau Smirnou",
+      "pack": "people",
+      "role": "CEO & Co-founder",
+      "org": "Around PR Studio",
+      "role_class": "founder",
+      "role_class_label": "founder or operator, by listed title",
+      "page": "https://startupsummit.io/speakers/viachaslau-smirnou",
+      "linkedin": "https://www.linkedin.com/in/viachaslau-smirnou-b173068a?originalSubdomain=pl",
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "person:roman-knorr-duran",
+      "type": "Person",
+      "label": "Román Knörr Durán",
+      "pack": "people",
+      "role": "Marketing & Brand Strategist",
+      "org": "Román Knörr",
+      "role_class": "other",
+      "role_class_label": "not classified by listed title",
+      "page": "https://startupsummit.io/speakers/roman-knorr-duran",
+      "linkedin": "https://www.linkedin.com/in/román-knörr-durán-42147b235",
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "person:akshay-ruparelia",
+      "type": "Person",
+      "label": "Akshay Ruparelia",
+      "pack": "people",
+      "role": "CEO & Co-Founder",
+      "org": "Brdge",
+      "role_class": "founder",
+      "role_class_label": "founder or operator, by listed title",
+      "page": "https://startupsummit.io/speakers/akshay-ruparelia",
+      "linkedin": "https://www.linkedin.com/in/akshay-ruparelia/",
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "person:saachin-bhatt",
+      "type": "Person",
+      "label": "Saachin Bhatt",
+      "pack": "people",
+      "role": "CIO & Co-founder",
+      "org": "Brdge",
+      "role_class": "founder",
+      "role_class_label": "founder or operator, by listed title",
+      "page": "https://startupsummit.io/speakers/saachin-bhatt",
+      "linkedin": "https://www.linkedin.com/in/saachinbhatt/",
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "person:dina-kondratiuk",
+      "type": "Person",
+      "label": "Dina Kondratiuk",
+      "pack": "people",
+      "role": "CEO & founder",
+      "org": "Solegency",
+      "role_class": "founder",
+      "role_class_label": "founder or operator, by listed title",
+      "page": "https://startupsummit.io/speakers/dina-kondratiuk",
+      "linkedin": "https://www.linkedin.com/in/dinadea/",
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "person:joao-ramos",
+      "type": "Person",
+      "label": "João Ramos",
+      "pack": "people",
+      "role": "Innovation Orchestrator",
+      "org": "Fast Track Ventures",
+      "role_class": "other",
+      "role_class_label": "not classified by listed title",
+      "page": "https://startupsummit.io/speakers/joao-ramos",
+      "linkedin": "https://www.linkedin.com/in/joaofmramos/",
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "person:thiago-vieira",
+      "type": "Person",
+      "label": "Thiago Vieira",
+      "pack": "people",
+      "role": "Chief Legal Officer",
+      "org": "Pactum Global",
+      "role_class": "founder",
+      "role_class_label": "founder or operator, by listed title",
+      "page": "https://startupsummit.io/speakers/thiago-vieira",
+      "linkedin": null,
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "person:diego-sampaio",
+      "type": "Person",
+      "label": "Diego Sampaio",
+      "pack": "people",
+      "role": "CEO",
+      "org": "Globalfy",
+      "role_class": "founder",
+      "role_class_label": "founder or operator, by listed title",
+      "page": "https://startupsummit.io/speakers/diego-sampaio",
+      "linkedin": "https://www.linkedin.com/in/diegosampaio/",
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "person:amit-grinvald",
+      "type": "Person",
+      "label": "Amit Grinvald",
+      "pack": "people",
+      "role": "Communication Strategist & Public Speaking Coach",
+      "org": "Independent",
+      "role_class": "other",
+      "role_class_label": "not classified by listed title",
+      "page": "https://startupsummit.io/speakers/amit-grinvald",
+      "linkedin": "https://www.linkedin.com/in/amit-grinvald-0655066a/",
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "person:janelle-harder",
+      "type": "Person",
+      "label": "Janelle Harder",
+      "pack": "people",
+      "role": "CEO & Founder",
+      "org": "Humannovate Consulting",
+      "role_class": "founder",
+      "role_class_label": "founder or operator, by listed title",
+      "page": "https://startupsummit.io/speakers/janelle-harder",
+      "linkedin": "https://www.linkedin.com/in/janelleharder",
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "person:kasia-szczesniak",
+      "type": "Person",
+      "label": "Kasia Szczesniak",
+      "pack": "people",
+      "role": "Founder",
+      "org": "Lisbon Business Leaders",
+      "role_class": "founder",
+      "role_class_label": "founder or operator, by listed title",
+      "page": "https://startupsummit.io/speakers/kasia-szczesniak",
+      "linkedin": "https://www.linkedin.com/in/kasiaszczesniak/",
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "person:lisa-rebecca-press",
+      "type": "Person",
+      "label": "Lisa Rebecca Press",
+      "pack": "people",
+      "role": "Founder",
+      "org": "Lisa Press Consulting",
+      "role_class": "founder",
+      "role_class_label": "founder or operator, by listed title",
+      "page": "https://startupsummit.io/speakers/lisa-rebecca-press",
+      "linkedin": "https://www.linkedin.com/in/lisa-press-cpa-fmva/",
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "person:david-graham",
+      "type": "Person",
+      "label": "David Graham",
+      "pack": "people",
+      "role": "Managing Partner",
+      "org": "Dyrectli Capital",
+      "role_class": "investor",
+      "role_class_label": "investor-side, by listed title",
+      "page": "https://startupsummit.io/speakers/david-graham",
+      "linkedin": "https://www.linkedin.com/in/dguk/",
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "person:igor-nikolaiev",
+      "type": "Person",
+      "label": "Igor Nikolaiev",
+      "pack": "people",
+      "role": "Co-founder and Chief Product & Technology Officer",
+      "org": "Aiffin",
+      "role_class": "founder",
+      "role_class_label": "founder or operator, by listed title",
+      "page": "https://startupsummit.io/speakers/igor-nikolaiev",
+      "linkedin": "https://www.linkedin.com/in/igornikolaiev/",
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "person:precy-servito",
+      "type": "Person",
+      "label": "Precy Servito",
+      "pack": "people",
+      "role": "Founder",
+      "org": "KONNECT - AI + Human Strategy Execution Workspace",
+      "role_class": "founder",
+      "role_class_label": "founder or operator, by listed title",
+      "page": "https://startupsummit.io/speakers/precy-servito",
+      "linkedin": "https://www.linkedin.com/in/precyservito",
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "person:irina-shurmina",
+      "type": "Person",
+      "label": "Irina Shurmina",
+      "pack": "people",
+      "role": "Founder",
+      "org": "Ladies Who Talk",
+      "role_class": "founder",
+      "role_class_label": "founder or operator, by listed title",
+      "page": "https://startupsummit.io/speakers/irina-shurmina",
+      "linkedin": "https://www.linkedin.com/in/irina-shurmina/",
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "person:jorge-sebastiao",
+      "type": "Person",
+      "label": "Jorge Sebastiao",
+      "pack": "people",
+      "role": "CEO and Co-founder",
+      "org": "Ecox / Bombastic Burgh",
+      "role_class": "founder",
+      "role_class_label": "founder or operator, by listed title",
+      "page": "https://startupsummit.io/speakers/jorge-sebastiao",
+      "linkedin": "https://www.linkedin.com/in/sebastiao",
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "person:anisha-yadav",
+      "type": "Person",
+      "label": "Anisha Yadav",
+      "pack": "people",
+      "role": "Founder",
+      "org": "First Ten Advisory",
+      "role_class": "founder",
+      "role_class_label": "founder or operator, by listed title",
+      "page": "https://startupsummit.io/speakers/anisha-yadav",
+      "linkedin": "https://www.linkedin.com/in/anishayadav/",
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "person:lauren-mucklow",
+      "type": "Person",
+      "label": "Lauren Mucklow",
+      "pack": "people",
+      "role": "Co-Founder",
+      "org": "What She Said Limited",
+      "role_class": "founder",
+      "role_class_label": "founder or operator, by listed title",
+      "page": "https://startupsummit.io/speakers/lauren-mucklow",
+      "linkedin": "https://www.linkedin.com/in/laurenmucklow/",
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "person:max-rodman",
+      "type": "Person",
+      "label": "Max Rodman",
+      "pack": "people",
+      "role": "Co-founder",
+      "org": "MVMT Studio",
+      "role_class": "founder",
+      "role_class_label": "founder or operator, by listed title",
+      "page": "https://startupsummit.io/speakers/max-rodman",
+      "linkedin": "https://www.linkedin.com/in/maxrodman/",
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "person:sibilla-strupule",
+      "type": "Person",
+      "label": "Sibilla Strupule",
+      "pack": "people",
+      "role": "CEO & Founder",
+      "org": "SibillaStrupule.com",
+      "role_class": "founder",
+      "role_class_label": "founder or operator, by listed title",
+      "page": "https://startupsummit.io/speakers/sibilla-strupule",
+      "linkedin": "https://www.linkedin.com/in/sibillastrupule/",
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "person:mark-paul-haaksman",
+      "type": "Person",
+      "label": "Mark Paul Haaksman",
+      "pack": "people",
+      "role": "Co-Founder/ Fundraiser",
+      "org": "Sotavento Angels Fund",
+      "role_class": "founder",
+      "role_class_label": "founder or operator, by listed title",
+      "page": "https://startupsummit.io/speakers/mark-paul-haaksman",
+      "linkedin": "https://www.linkedin.com/in/mark-p-haaksman-765121/",
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "person:micael-lopes",
+      "type": "Person",
+      "label": "Micael Lopes",
+      "pack": "people",
+      "role": "CEO & Founder",
+      "org": "TIME & SPACE",
+      "role_class": "founder",
+      "role_class_label": "founder or operator, by listed title",
+      "page": "https://startupsummit.io/speakers/micael-lopes",
+      "linkedin": "https://www.linkedin.com/in/micaelopes/",
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "person:satya-morarji",
+      "type": "Person",
+      "label": "Satya Morarji",
+      "pack": "people",
+      "role": "Founder",
+      "org": "Freedom VAs",
+      "role_class": "founder",
+      "role_class_label": "founder or operator, by listed title",
+      "page": "https://startupsummit.io/speakers/satya-morarji",
+      "linkedin": "https://www.linkedin.com/in/satya-morarji/",
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "person:tania-tome",
+      "type": "Person",
+      "label": "Tania Tome",
+      "pack": "people",
+      "role": "American Business Awards® Judge, Global KeynoteSpeaker, Advisor, Innovation Catalyst & Author",
+      "org": "BRANDULOGY",
+      "role_class": "advisor",
+      "role_class_label": "advisor, counsel or academic, by listed title",
+      "page": "https://startupsummit.io/speakers/tania-tome",
+      "linkedin": "https://www.linkedin.com/in/taniatome/",
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "person:angelee-sidar",
+      "type": "Person",
+      "label": "Angelee SIDAR",
+      "pack": "people",
+      "role": "Founder",
+      "org": "FIIYS Ltd",
+      "role_class": "founder",
+      "role_class_label": "founder or operator, by listed title",
+      "page": "https://startupsummit.io/speakers/angelee-sidar",
+      "linkedin": "https://www.linkedin.com/in/angelee-sidar-605a1a70/",
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "person:ben-lakoff",
+      "type": "Person",
+      "label": "Ben Lakoff",
+      "pack": "people",
+      "role": "Managing Partner",
+      "org": "Bankless Ventures",
+      "role_class": "investor",
+      "role_class_label": "investor-side, by listed title",
+      "page": "https://startupsummit.io/speakers/ben-lakoff",
+      "linkedin": "https://www.linkedin.com/in/benlakoff",
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "person:rita-martins-freire",
+      "type": "Person",
+      "label": "Rita Martins Freire",
+      "pack": "people",
+      "role": "Marketing, CX & Growth Transformation Leader",
+      "org": "Trivevo",
+      "role_class": "other",
+      "role_class_label": "not classified by listed title",
+      "page": "https://startupsummit.io/speakers/rita-martins-freire",
+      "linkedin": "https://www.linkedin.com/in/ritamartinsfreire",
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "person:sebastian-horstmann",
+      "type": "Person",
+      "label": "Sebastian Horstmann",
+      "pack": "people",
+      "role": "CTO & Co-Founder",
+      "org": "Cosysense",
+      "role_class": "founder",
+      "role_class_label": "founder or operator, by listed title",
+      "page": "https://startupsummit.io/speakers/sebastian-horstmann",
+      "linkedin": "https://www.linkedin.com/in/s-horstmann/",
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "person:sofia-bobrik",
+      "type": "Person",
+      "label": "Sofia Bobrik",
+      "pack": "people",
+      "role": "Founder & CEO",
+      "org": "PR Agency TechWaves",
+      "role_class": "founder",
+      "role_class_label": "founder or operator, by listed title",
+      "page": "https://startupsummit.io/speakers/sofia-bobrik",
+      "linkedin": "https://www.linkedin.com/in/sofia-bobrik/",
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "person:pedro-simoes",
+      "type": "Person",
+      "label": "Pedro Simões",
+      "pack": "people",
+      "role": "Entrepreneur",
+      "org": "JCI",
+      "role_class": "other",
+      "role_class_label": "not classified by listed title",
+      "page": "https://startupsummit.io/speakers/pedro-simoes",
+      "linkedin": "https://www.linkedin.com/in/opedrosimoes?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "person:sylvie-ritt",
+      "type": "Person",
+      "label": "Sylvie Ritt",
+      "pack": "people",
+      "role": "Co-Founder",
+      "org": "Time to Rise",
+      "role_class": "founder",
+      "role_class_label": "founder or operator, by listed title",
+      "page": "https://startupsummit.io/speakers/sylvie-ritt",
+      "linkedin": null,
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "person:daniel-grech",
+      "type": "Person",
+      "label": "Daniel Grech",
+      "pack": "people",
+      "role": "AI Enablement Consultant",
+      "org": "Self-Employed",
+      "role_class": "advisor",
+      "role_class_label": "advisor, counsel or academic, by listed title",
+      "page": "https://startupsummit.io/speakers/daniel-grech",
+      "linkedin": "https://www.linkedin.com/in/daniel-grech-8bb32a24/",
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "person:elias-flachowsky",
+      "type": "Person",
+      "label": "Elias Flachowsky",
+      "pack": "people",
+      "role": "Co-Founder",
+      "org": "Time to Rise",
+      "role_class": "founder",
+      "role_class_label": "founder or operator, by listed title",
+      "page": "https://startupsummit.io/speakers/elias-flachowsky",
+      "linkedin": "https://www.linkedin.com/in/elias-flachowsky-bb090542b",
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "person:kristina-kutan",
+      "type": "Person",
+      "label": "Kristina Kutan",
+      "pack": "people",
+      "role": "COO",
+      "org": "VNTR Capital",
+      "role_class": "founder",
+      "role_class_label": "founder or operator, by listed title",
+      "page": "https://startupsummit.io/speakers/kristina-kutan",
+      "linkedin": "https://www.linkedin.com/in/kristinakutan/",
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "person:hudi-shehu",
+      "type": "Person",
+      "label": "Hudi Shehu",
+      "pack": "people",
+      "role": "Founding Chairman",
+      "org": "Business Network Albania",
+      "role_class": "other",
+      "role_class_label": "not classified by listed title",
+      "page": "https://startupsummit.io/speakers/hudi-shehu",
+      "linkedin": "https://linkedin.com/in/hudishehu",
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "person:alexandre-daletchine",
+      "type": "Person",
+      "label": "Alexandre Daletchine",
+      "pack": "people",
+      "role": "CEO & Foudner",
+      "org": "Creativity Matter",
+      "role_class": "founder",
+      "role_class_label": "founder or operator, by listed title",
+      "page": "https://startupsummit.io/speakers/alexandre-daletchine",
+      "linkedin": "https://www.linkedin.com/in/alexandre-daletchine-91185213/",
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "person:slavi-slavev",
+      "type": "Person",
+      "label": "Slavi Slavev",
+      "pack": "people",
+      "role": "Founder, AI Lead",
+      "org": "Independent",
+      "role_class": "founder",
+      "role_class_label": "founder or operator, by listed title",
+      "page": "https://startupsummit.io/speakers/slavi-slavev",
+      "linkedin": "https://www.linkedin.com/in/sslavev/",
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "person:wouter-heijnen",
+      "type": "Person",
+      "label": "Wouter Heijnen",
+      "pack": "people",
+      "role": "co-Founder and Startup Scout",
+      "org": "Sotavento Invest",
+      "role_class": "founder",
+      "role_class_label": "founder or operator, by listed title",
+      "page": "https://startupsummit.io/speakers/wouter-heijnen",
+      "linkedin": "https://www.linkedin.com/in/wtrhnn",
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "person:diogo-mendonca",
+      "type": "Person",
+      "label": "Diogo Mendonça",
+      "pack": "people",
+      "role": "Investor - Tech Exec",
+      "org": "Angels Way",
+      "role_class": "investor",
+      "role_class_label": "investor-side, by listed title",
+      "page": "https://startupsummit.io/speakers/diogo-mendonca",
+      "linkedin": "https://www.linkedin.com/in/dimend/",
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "person:lidija-krickovic",
+      "type": "Person",
+      "label": "Lidija Krickovic",
+      "pack": "people",
+      "role": "CEO & Founder",
+      "org": "Growth Geek Unipessoal LDA",
+      "role_class": "founder",
+      "role_class_label": "founder or operator, by listed title",
+      "page": "https://startupsummit.io/speakers/lidija-krickovic",
+      "linkedin": "https://www.linkedin.com/in/lidijakrickovic/",
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "person:ed-chandler",
+      "type": "Person",
+      "label": "Ed Chandler",
+      "pack": "people",
+      "role": "Founder & Principal Advisor",
+      "org": "PriFly Advisors",
+      "role_class": "founder",
+      "role_class_label": "founder or operator, by listed title",
+      "page": "https://startupsummit.io/speakers/ed-chandler",
+      "linkedin": "https://www.linkedin.com/in/edchandler96/",
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "person:cintia-costa",
+      "type": "Person",
+      "label": "Cíntia Costa",
+      "pack": "people",
+      "role": "President",
+      "org": "351 Portuguese Startup Association",
+      "role_class": "other",
+      "role_class_label": "not classified by listed title",
+      "page": "https://startupsummit.io/speakers/cintia-costa",
+      "linkedin": "https://www.linkedin.com/in/cintiatcosta/",
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "person:olivia-page",
+      "type": "Person",
+      "label": "Olivia Page",
+      "pack": "people",
+      "role": "CEO & Co-founder",
+      "org": "Mykor",
+      "role_class": "founder",
+      "role_class_label": "founder or operator, by listed title",
+      "page": "https://startupsummit.io/speakers/olivia-page",
+      "linkedin": "https://www.linkedin.com/in/olivia-page-09961299/",
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "person:olesia-rykova",
+      "type": "Person",
+      "label": "Olesia Rykova",
+      "pack": "people",
+      "role": "CEO & Co-founder",
+      "org": "SOULBRANDING",
+      "role_class": "founder",
+      "role_class_label": "founder or operator, by listed title",
+      "page": "https://startupsummit.io/speakers/olesia-rykova",
+      "linkedin": "https://www.linkedin.com/in/olesia-rykova/",
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "stage:unicorn-stage",
+      "type": "Stage",
+      "label": "Unicorn Stage",
+      "pack": "sessions",
+      "pt": "Palco Unicorn",
+      "also_called": "Main Stage (on the AI-summary and sponsors pages)",
+      "source": "2026-09-13/agenda"
+    },
+    {
+      "id": "stage:impact-stage",
+      "type": "Stage",
+      "label": "Impact Stage",
+      "pack": "sessions",
+      "pt": "Palco Impact",
+      "also_called": "Startup Stage (on the AI-summary and sponsors pages)",
+      "source": "2026-09-13/agenda"
+    },
+    {
+      "id": "stage:workshop-rooms",
+      "type": "Stage",
+      "label": "Workshop Rooms",
+      "pack": "sessions",
+      "pt": "Salas de workshop",
+      "also_called": null,
+      "source": "2026-09-13/agenda"
+    },
+    {
+      "id": "session:welcome-drinks",
+      "type": "Session",
+      "label": "Welcome Drinks",
+      "pack": "sessions",
+      "day": "2026-09-16",
+      "time": "19:00",
+      "kind": "social",
+      "source": "2026-09-13/agenda"
+    },
+    {
+      "id": "session:morning-run",
+      "type": "Session",
+      "label": "Morning Run",
+      "pack": "sessions",
+      "day": "2026-09-17",
+      "time": "07:30",
+      "kind": "social",
+      "source": "2026-09-13/agenda"
+    },
+    {
+      "id": "session:doors-open-d1",
+      "type": "Session",
+      "label": "Doors Open",
+      "pack": "sessions",
+      "day": "2026-09-17",
+      "time": "09:00",
+      "kind": "logistics",
+      "source": "2026-09-13/agenda"
+    },
+    {
+      "id": "session:opening-keynote",
+      "type": "Session",
+      "label": "Opening Keynote: Welcome to Startup Summit 2026",
+      "pack": "sessions",
+      "day": "2026-09-17",
+      "time": "09:30",
+      "kind": "keynote",
+      "source": "2026-09-13/agenda"
+    },
+    {
+      "id": "session:lp-perspective",
+      "type": "Session",
+      "label": "The LP Perspective",
+      "pack": "sessions",
+      "day": "2026-09-17",
+      "time": "10:00–10:30",
+      "kind": "panel",
+      "source": "2026-09-13/agenda"
+    },
+    {
+      "id": "session:fundraising-meta-game",
+      "type": "Session",
+      "label": "The Fundraising Meta-Game",
+      "pack": "sessions",
+      "day": "2026-09-17",
+      "time": "11:05–11:30",
+      "kind": "keynote",
+      "source": "2026-09-13/agenda"
+    },
+    {
+      "id": "session:ai-or-die",
+      "type": "Session",
+      "label": "AI or Die",
+      "pack": "sessions",
+      "day": "2026-09-17",
+      "time": "11:45–12:15",
+      "kind": "panel",
+      "source": "2026-09-13/agenda"
+    },
+    {
+      "id": "session:lunch-d1",
+      "type": "Session",
+      "label": "Lunch",
+      "pack": "sessions",
+      "day": "2026-09-17",
+      "time": "13:00",
+      "kind": "logistics",
+      "source": "2026-09-13/agenda"
+    },
+    {
+      "id": "session:investor-office-hours",
+      "type": "Session",
+      "label": "Investor Office Hours",
+      "pack": "sessions",
+      "day": "2026-09-17",
+      "time": "14:00",
+      "kind": "networking",
+      "source": "2026-09-13/agenda"
+    },
+    {
+      "id": "session:founder-social",
+      "type": "Session",
+      "label": "Founder Social",
+      "pack": "sessions",
+      "day": "2026-09-17",
+      "time": "evening",
+      "kind": "social",
+      "source": "2026-09-13/agenda"
+    },
+    {
+      "id": "session:day-2-welcome",
+      "type": "Session",
+      "label": "Day 2 Welcome",
+      "pack": "sessions",
+      "day": "2026-09-18",
+      "time": "09:00",
+      "kind": "logistics",
+      "source": "2026-09-13/agenda"
+    },
+    {
+      "id": "session:portuguese-unicorn-conversation",
+      "type": "Session",
+      "label": "Day 2 Opening — Portuguese Unicorn Conversation",
+      "pack": "sessions",
+      "day": "2026-09-18",
+      "time": "09:30–10:00",
+      "kind": "fireside",
+      "source": "2026-09-13/agenda"
+    },
+    {
+      "id": "session:what-i-built-with-ai",
+      "type": "Session",
+      "label": "What I Built With AI",
+      "pack": "sessions",
+      "day": "2026-09-18",
+      "time": "10:10–10:35",
+      "kind": "fireside",
+      "source": "2026-09-13/agenda"
+    },
+    {
+      "id": "session:hardware-meets-software",
+      "type": "Session",
+      "label": "Hardware Meets Software",
+      "pack": "sessions",
+      "day": "2026-09-18",
+      "time": "11:20–11:45",
+      "kind": "keynote",
+      "source": "2026-09-13/agenda"
+    },
+    {
+      "id": "session:speed-networking",
+      "type": "Session",
+      "label": "Speed networking",
+      "pack": "sessions",
+      "day": "2026-09-18",
+      "time": "afternoon",
+      "kind": "networking",
+      "source": "2026-09-13/agenda"
+    },
+    {
+      "id": "session:closing-celebration",
+      "type": "Session",
+      "label": "Closing Celebration",
+      "pack": "sessions",
+      "day": "2026-09-18",
+      "time": "evening",
+      "kind": "social",
+      "source": "2026-09-13/agenda"
+    },
+    {
+      "id": "snapshot:2026-09-08",
+      "type": "Snapshot",
+      "label": "Snapshot 2026-09-08",
+      "pack": "sources",
+      "date": "2026-09-08",
+      "source": "2026-09-08/index"
+    },
+    {
+      "id": "snapshot:2026-09-13",
+      "type": "Snapshot",
+      "label": "Snapshot 2026-09-13",
+      "pack": "sources",
+      "date": "2026-09-13",
+      "source": "2026-09-13/index"
+    },
+    {
+      "id": "src:2026-09-08/index",
+      "type": "Source",
+      "label": "index (2026-09-08)",
+      "pack": "sources",
+      "url": "https://startupsummit.io/",
+      "frozen": "sources/frozen/2026-09-08/index.snapshot",
+      "sha256": "8afb9f22f161537707ba45a10608680f1b781770b11ef847651788d7957e54a8",
+      "bytes": 50411,
+      "retrieved": "2026-09-13T19:44:22Z",
+      "source": "2026-09-08/index"
+    },
+    {
+      "id": "src:2026-09-08/agenda",
+      "type": "Source",
+      "label": "agenda (2026-09-08)",
+      "pack": "sources",
+      "url": "https://startupsummit.io/agenda",
+      "frozen": "sources/frozen/2026-09-08/agenda.snapshot",
+      "sha256": "20948f2a8db787c7fb6321a270ac066de8464e9d00d2e3146e7596e0c7c7f86c",
+      "bytes": 15566,
+      "retrieved": "2026-09-13T19:44:22Z",
+      "source": "2026-09-08/agenda"
+    },
+    {
+      "id": "src:2026-09-08/speakers",
+      "type": "Source",
+      "label": "speakers (2026-09-08)",
+      "pack": "sources",
+      "url": "https://startupsummit.io/speakers",
+      "frozen": "sources/frozen/2026-09-08/speakers.snapshot",
+      "sha256": "649debec2b82f22d5539951c17927de575a6f15c55f97c94e1321416dd201002",
+      "bytes": 173536,
+      "retrieved": "2026-09-13T19:44:22Z",
+      "source": "2026-09-08/speakers"
+    },
+    {
+      "id": "src:2026-09-08/sponsors",
+      "type": "Source",
+      "label": "sponsors (2026-09-08)",
+      "pack": "sources",
+      "url": "https://startupsummit.io/sponsors",
+      "frozen": "sources/frozen/2026-09-08/sponsors.snapshot",
+      "sha256": "73657adabd84fa3eb5e02415c75aa1c4baef2e5b8c5156d5022540d32450b50f",
+      "bytes": 20455,
+      "retrieved": "2026-09-13T19:44:22Z",
+      "source": "2026-09-08/sponsors"
+    },
+    {
+      "id": "src:2026-09-08/ai-summary",
+      "type": "Source",
+      "label": "ai-summary (2026-09-08)",
+      "pack": "sources",
+      "url": "https://startupsummit.io/ai-summary",
+      "frozen": "sources/frozen/2026-09-08/ai-summary.snapshot",
+      "sha256": "1d3d7aa7836bd0b096eb9d5a12ff3de630d9b79b94219435e98c6466969a1927",
+      "bytes": 20259,
+      "retrieved": "2026-09-13T19:44:22Z",
+      "source": "2026-09-08/ai-summary"
+    },
+    {
+      "id": "src:2026-09-13/index",
+      "type": "Source",
+      "label": "index (2026-09-13)",
+      "pack": "sources",
+      "url": "https://startupsummit.io/",
+      "frozen": "sources/frozen/2026-09-13/index.snapshot",
+      "sha256": "d1514e2991810f6df791aea8ed657b3c1c256abf39a620830846b084114c02c6",
+      "bytes": 50411,
+      "retrieved": "2026-09-13T19:41:35Z",
+      "source": "2026-09-13/index"
+    },
+    {
+      "id": "src:2026-09-13/agenda",
+      "type": "Source",
+      "label": "agenda (2026-09-13)",
+      "pack": "sources",
+      "url": "https://startupsummit.io/agenda",
+      "frozen": "sources/frozen/2026-09-13/agenda.snapshot",
+      "sha256": "670fd4701c5d2bdadf9854eec0f4bb8a05e78b627a362c18a78a4ba2380abd41",
+      "bytes": 15566,
+      "retrieved": "2026-09-13T19:41:36Z",
+      "source": "2026-09-13/agenda"
+    },
+    {
+      "id": "src:2026-09-13/speakers",
+      "type": "Source",
+      "label": "speakers (2026-09-13)",
+      "pack": "sources",
+      "url": "https://startupsummit.io/speakers",
+      "frozen": "sources/frozen/2026-09-13/speakers.snapshot",
+      "sha256": "62d727e12a4b4cd27717057dbe871c855a0a14aa71ccece83fd26956a5c5cbeb",
+      "bytes": 183793,
+      "retrieved": "2026-09-13T19:41:36Z",
+      "source": "2026-09-13/speakers"
+    },
+    {
+      "id": "src:2026-09-13/sponsors",
+      "type": "Source",
+      "label": "sponsors (2026-09-13)",
+      "pack": "sources",
+      "url": "https://startupsummit.io/sponsors",
+      "frozen": "sources/frozen/2026-09-13/sponsors.snapshot",
+      "sha256": "26293b9f75c34d57a1819100da9fa6e91f8a255af6e36287434ac4420c3039b4",
+      "bytes": 20455,
+      "retrieved": "2026-09-13T19:41:37Z",
+      "source": "2026-09-13/sponsors"
+    },
+    {
+      "id": "src:2026-09-13/ai-summary",
+      "type": "Source",
+      "label": "ai-summary (2026-09-13)",
+      "pack": "sources",
+      "url": "https://startupsummit.io/ai-summary",
+      "frozen": "sources/frozen/2026-09-13/ai-summary.snapshot",
+      "sha256": "2ffc98beccb2090e3a80b72a20d21b11a25f2f6f7caa9dc55370edf99bde677e",
+      "bytes": 20259,
+      "retrieved": "2026-09-13T19:41:37Z",
+      "source": "2026-09-13/ai-summary"
+    },
+    {
+      "id": "src:2026-09-13/tickets",
+      "type": "Source",
+      "label": "tickets (2026-09-13)",
+      "pack": "sources",
+      "url": "https://startupsummit.io/tickets",
+      "frozen": "sources/frozen/2026-09-13/tickets.snapshot",
+      "sha256": "8375ed40b1db5b18cf27facc94ffd52fa38017edd3cca857ceb65742c870a4e7",
+      "bytes": 27211,
+      "retrieved": "2026-09-13T19:41:37Z",
+      "source": "2026-09-13/tickets"
+    },
+    {
+      "id": "src:2026-09-13/location",
+      "type": "Source",
+      "label": "location (2026-09-13)",
+      "pack": "sources",
+      "url": "https://startupsummit.io/location",
+      "frozen": "sources/frozen/2026-09-13/location.snapshot",
+      "sha256": "19b2700add931a77a811bc05ef41af2a37ae902902e21badcb77c2828126f1bb",
+      "bytes": 13789,
+      "retrieved": "2026-09-13T19:41:38Z",
+      "source": "2026-09-13/location"
+    },
+    {
+      "id": "src:2026-09-13/faq",
+      "type": "Source",
+      "label": "faq (2026-09-13)",
+      "pack": "sources",
+      "url": "https://startupsummit.io/faq",
+      "frozen": "sources/frozen/2026-09-13/faq.snapshot",
+      "sha256": "81f5fa759aeb98c9342a88e9ab4819b4eae85464c2da6253deae2848f7a8627e",
+      "bytes": 23922,
+      "retrieved": "2026-09-13T19:41:38Z",
+      "source": "2026-09-13/faq"
+    },
+    {
+      "id": "src:2026-09-13/what-to-expect",
+      "type": "Source",
+      "label": "what-to-expect (2026-09-13)",
+      "pack": "sources",
+      "url": "https://startupsummit.io/what-to-expect",
+      "frozen": "sources/frozen/2026-09-13/what-to-expect.snapshot",
+      "sha256": "f1e853496ce3bb901a04ad34689df74a4e25552d624fc0ae95015591b8e85b78",
+      "bytes": 13635,
+      "retrieved": "2026-09-13T19:41:40Z",
+      "source": "2026-09-13/what-to-expect"
+    },
+    {
+      "id": "src:2026-09-13/why-attend",
+      "type": "Source",
+      "label": "why-attend (2026-09-13)",
+      "pack": "sources",
+      "url": "https://startupsummit.io/why-attend",
+      "frozen": "sources/frozen/2026-09-13/why-attend.snapshot",
+      "sha256": "d63f562d5c825af3f99601014317dfea3e6588953cd78c597bad6c6d9b629063",
+      "bytes": 14083,
+      "retrieved": "2026-09-13T19:41:41Z",
+      "source": "2026-09-13/why-attend"
+    },
+    {
+      "id": "src:2026-09-13/startup-booths",
+      "type": "Source",
+      "label": "startup-booths (2026-09-13)",
+      "pack": "sources",
+      "url": "https://startupsummit.io/startup-booths",
+      "frozen": "sources/frozen/2026-09-13/startup-booths.snapshot",
+      "sha256": "9375454f93e1f81d0de9d6dc0e675281b77417e896a6c6abdf7e3bad2db3e37d",
+      "bytes": 15577,
+      "retrieved": "2026-09-13T19:41:41Z",
+      "source": "2026-09-13/startup-booths"
+    },
+    {
+      "id": "src:2026-09-13/llms.txt",
+      "type": "Source",
+      "label": "llms.txt (2026-09-13)",
+      "pack": "sources",
+      "url": "https://startupsummit.io/llms.txt",
+      "frozen": "sources/frozen/2026-09-13/llms.txt",
+      "sha256": "c3c269cbb4928cc5939ad7e78f0f4a0b40e8acc12e4bba04fc0317e868fe6728",
+      "bytes": 9704,
+      "retrieved": "2026-09-13T19:42:31Z",
+      "source": "2026-09-13/llms.txt"
+    },
+    {
+      "id": "src:2026-09-13/coverage/portugalglobal-pitch-marathon",
+      "type": "Source",
+      "label": "coverage/portugalglobal-pitch-marathon (2026-09-13)",
+      "pack": "sources",
+      "url": "https://portugalglobal.pt/en/news/2026/julho/startup-summit-lisbon-opens-applications-for-48hr-pitch-marathon/",
+      "frozen": "sources/frozen/2026-09-13/coverage/portugalglobal-pitch-marathon.snapshot",
+      "sha256": "1d816054b512d39f473cfe383dee7987a69649bfb47ec6090af8b1d859141cb8",
+      "bytes": 45971,
+      "retrieved": "2026-09-13T21:52:22Z",
+      "source": "2026-09-13/coverage/portugalglobal-pitch-marathon"
+    },
+    {
+      "id": "src:2026-09-13/coverage/pbn-guinness-record",
+      "type": "Source",
+      "label": "coverage/pbn-guinness-record (2026-09-13)",
+      "pack": "sources",
+      "url": "https://www.portugalbusinessesnews.com/post/startup-summit-lisbon-will-officially-attempt-to-set-a-guinness-world-record",
+      "frozen": "sources/frozen/2026-09-13/coverage/pbn-guinness-record.snapshot",
+      "sha256": "a7f76c5faa4af514e6d0f80d0d1ac4325130cdb9adf036c1a7a7f4cad5c6f86a",
+      "bytes": 1446702,
+      "retrieved": "2026-09-13T21:52:26Z",
+      "source": "2026-09-13/coverage/pbn-guinness-record"
+    },
+    {
+      "id": "src:2026-09-13/coverage/scaleup-porto",
+      "type": "Source",
+      "label": "coverage/scaleup-porto (2026-09-13)",
+      "pack": "sources",
+      "url": "https://scaleupporto.pt/event/startup-summit-lisbon-2026/",
+      "frozen": "sources/frozen/2026-09-13/coverage/scaleup-porto.snapshot",
+      "sha256": "c72500fcdfca35f51e5f30b0cd4eb3b95036d0701ed1fc8ed24a486978f462f3",
+      "bytes": 87413,
+      "retrieved": "2026-09-13T21:52:27Z",
+      "source": "2026-09-13/coverage/scaleup-porto"
+    },
+    {
+      "id": "src:2026-09-13/coverage/startupevents-org",
+      "type": "Source",
+      "label": "coverage/startupevents-org (2026-09-13)",
+      "pack": "sources",
+      "url": "https://startupevents.org/startup-events-calendar/startup-summit-lisbon-2026",
+      "frozen": "sources/frozen/2026-09-13/coverage/startupevents-org.snapshot",
+      "sha256": "31384d735b8e8e8b2f19a55b5ddcde8c563864ef086144f9a29fc1e2d8b498aa",
+      "bytes": 185679,
+      "retrieved": "2026-09-13T21:52:28Z",
+      "source": "2026-09-13/coverage/startupevents-org"
+    },
+    {
+      "id": "src:2026-09-13/coverage/startupmaphub",
+      "type": "Source",
+      "label": "coverage/startupmaphub (2026-09-13)",
+      "pack": "sources",
+      "url": "https://startupmaphub.com/events/startup-summit-lisbon-2026",
+      "frozen": "sources/frozen/2026-09-13/coverage/startupmaphub.snapshot",
+      "sha256": "fe73aa268041620eea392ce3bdf0245afe8d32b2e9642f36418ceed1fc8aa898",
+      "bytes": 47882,
+      "retrieved": "2026-09-13T21:52:28Z",
+      "source": "2026-09-13/coverage/startupmaphub"
+    },
+    {
+      "id": "src:2026-09-13/coverage/eventbrite-sept",
+      "type": "Source",
+      "label": "coverage/eventbrite-sept (2026-09-13)",
+      "pack": "sources",
+      "url": "https://www.eventbrite.co.uk/e/startup-summit-lisbon-2026-founder-startup-investor-event-tickets-1987781295364",
+      "frozen": "sources/frozen/2026-09-13/coverage/eventbrite-sept.snapshot",
+      "sha256": "708af0b081754b89046b4f1e54f1af8b245b30236ec4eca47e8bb7a230b65aba",
+      "bytes": 268784,
+      "retrieved": "2026-09-13T21:52:29Z",
+      "source": "2026-09-13/coverage/eventbrite-sept"
+    },
+    {
+      "id": "src:2026-09-13/coverage/summit-lisbon-tech-events",
+      "type": "Source",
+      "label": "coverage/summit-lisbon-tech-events (2026-09-13)",
+      "pack": "sources",
+      "url": "https://startupsummit.io/lisbon-tech-events-2026",
+      "frozen": "sources/frozen/2026-09-13/coverage/summit-lisbon-tech-events.snapshot",
+      "sha256": "d2b3f53baf7f48e18b590b7aaab984cc815681188519fee0119f94da84f00e42",
+      "bytes": 14965,
+      "retrieved": "2026-09-13T21:52:31Z",
+      "source": "2026-09-13/coverage/summit-lisbon-tech-events"
+    },
+    {
+      "id": "person:kambis-kohansal-vajargah",
+      "type": "Person",
+      "label": "Kambis Kohansal Vajargah",
+      "pack": "changes",
+      "role": null,
+      "org": "Austrian Federal Economic Chamber",
+      "role_class": "other",
+      "role_class_label": "not classified: no longer on the list",
+      "no_longer_listed": true,
+      "reason": null,
+      "source": "2026-09-08/speakers"
+    },
+    {
+      "id": "org:austrian-federal-economic-chamber",
+      "type": "Organisation",
+      "label": "Austrian Federal Economic Chamber",
+      "pack": "changes",
+      "placeholder": false,
+      "speakers": 0,
+      "source": "2026-09-08/speakers"
+    },
+    {
+      "id": "coverage:portugalglobal-pitch-marathon",
+      "type": "Coverage",
+      "label": "Startup Summit Lisbon Opens Applications for 48hr Pitch Marathon",
+      "pack": "coverage",
+      "publisher": "AICEP Portugal Global",
+      "published": "2026-07-29",
+      "url": "https://portugalglobal.pt/en/news/2026/julho/startup-summit-lisbon-opens-applications-for-48hr-pitch-marathon/",
+      "kind": "news",
+      "sha256": "1d816054b512d39f473cfe383dee7987a69649bfb47ec6090af8b1d859141cb8",
+      "source": "2026-09-13/coverage/portugalglobal-pitch-marathon"
+    },
+    {
+      "id": "org:aicep-portugal-global",
+      "type": "Organisation",
+      "label": "AICEP Portugal Global",
+      "pack": "coverage",
+      "placeholder": false,
+      "speakers": 0,
+      "role_in_graph": "publisher",
+      "source": "2026-09-13/coverage/portugalglobal-pitch-marathon"
+    },
+    {
+      "id": "coverage:pbn-guinness-record",
+      "type": "Coverage",
+      "label": "Startup Summit Lisbon will officially attempt to set a Guinness World Record",
+      "pack": "coverage",
+      "publisher": "Portugal Business News",
+      "published": "2026-07-29",
+      "url": "https://www.portugalbusinessesnews.com/post/startup-summit-lisbon-will-officially-attempt-to-set-a-guinness-world-record",
+      "kind": "news",
+      "sha256": "a7f76c5faa4af514e6d0f80d0d1ac4325130cdb9adf036c1a7a7f4cad5c6f86a",
+      "source": "2026-09-13/coverage/pbn-guinness-record"
+    },
+    {
+      "id": "org:portugal-business-news",
+      "type": "Organisation",
+      "label": "Portugal Business News",
+      "pack": "coverage",
+      "placeholder": false,
+      "speakers": 0,
+      "role_in_graph": "publisher",
+      "source": "2026-09-13/coverage/pbn-guinness-record"
+    },
+    {
+      "id": "coverage:scaleup-porto",
+      "type": "Coverage",
+      "label": "Startup Summit Lisbon 2026 | ScaleUp Porto",
+      "pack": "coverage",
+      "publisher": "ScaleUp Porto",
+      "published": "2026-07-07",
+      "url": "https://scaleupporto.pt/event/startup-summit-lisbon-2026/",
+      "kind": "listing",
+      "sha256": "c72500fcdfca35f51e5f30b0cd4eb3b95036d0701ed1fc8ed24a486978f462f3",
+      "source": "2026-09-13/coverage/scaleup-porto"
+    },
+    {
+      "id": "org:scaleup-porto",
+      "type": "Organisation",
+      "label": "ScaleUp Porto",
+      "pack": "coverage",
+      "placeholder": false,
+      "speakers": 0,
+      "role_in_graph": "publisher",
+      "source": "2026-09-13/coverage/scaleup-porto"
+    },
+    {
+      "id": "coverage:startupevents-org",
+      "type": "Coverage",
+      "label": "Startup Summit Lisbon 2026 — StartupEvents.org",
+      "pack": "coverage",
+      "publisher": "StartupEvents.org",
+      "published": null,
+      "url": "https://startupevents.org/startup-events-calendar/startup-summit-lisbon-2026",
+      "kind": "listing",
+      "sha256": "31384d735b8e8e8b2f19a55b5ddcde8c563864ef086144f9a29fc1e2d8b498aa",
+      "source": "2026-09-13/coverage/startupevents-org"
+    },
+    {
+      "id": "org:startupevents-org",
+      "type": "Organisation",
+      "label": "StartupEvents.org",
+      "pack": "coverage",
+      "placeholder": false,
+      "speakers": 0,
+      "role_in_graph": "publisher",
+      "source": "2026-09-13/coverage/startupevents-org"
+    },
+    {
+      "id": "coverage:startupmaphub",
+      "type": "Coverage",
+      "label": "Startup Summit Lisbon 2026 (September 2026, Lisbon, Portugal) – Dates, Venue & Guide | Startup Map Hub",
+      "pack": "coverage",
+      "publisher": "Startup Map Hub",
+      "published": null,
+      "url": "https://startupmaphub.com/events/startup-summit-lisbon-2026",
+      "kind": "guide",
+      "sha256": "fe73aa268041620eea392ce3bdf0245afe8d32b2e9642f36418ceed1fc8aa898",
+      "source": "2026-09-13/coverage/startupmaphub"
+    },
+    {
+      "id": "org:startup-map-hub",
+      "type": "Organisation",
+      "label": "Startup Map Hub",
+      "pack": "coverage",
+      "placeholder": false,
+      "speakers": 0,
+      "role_in_graph": "publisher",
+      "source": "2026-09-13/coverage/startupmaphub"
+    },
+    {
+      "id": "coverage:eventbrite-sept",
+      "type": "Coverage",
+      "label": "Startup Summit Lisbon 2026 | Founder, Startup & Investor Event Tickets, Thursday, September 17-Friday, September 18 • 9:30 AM-12 AM | Eventb",
+      "pack": "coverage",
+      "publisher": "Eventbrite",
+      "published": null,
+      "url": "https://www.eventbrite.co.uk/e/startup-summit-lisbon-2026-founder-startup-investor-event-tickets-1987781295364",
+      "kind": "ticketing",
+      "sha256": "708af0b081754b89046b4f1e54f1af8b245b30236ec4eca47e8bb7a230b65aba",
+      "source": "2026-09-13/coverage/eventbrite-sept"
+    },
+    {
+      "id": "org:eventbrite",
+      "type": "Organisation",
+      "label": "Eventbrite",
+      "pack": "coverage",
+      "placeholder": false,
+      "speakers": 0,
+      "role_in_graph": "publisher",
+      "source": "2026-09-13/coverage/eventbrite-sept"
+    },
+    {
+      "id": "coverage:summit-lisbon-tech-events",
+      "type": "Coverage",
+      "label": "Lisbon Tech Events 2026 — Founder & Investor Guide",
+      "pack": "coverage",
+      "publisher": "Startup Summit (the event itself)",
+      "published": null,
+      "url": "https://startupsummit.io/lisbon-tech-events-2026",
+      "kind": "event's own",
+      "sha256": "d2b3f53baf7f48e18b590b7aaab984cc815681188519fee0119f94da84f00e42",
+      "source": "2026-09-13/coverage/summit-lisbon-tech-events"
+    },
+    {
+      "id": "org:startup-summit-the-event-itself",
+      "type": "Organisation",
+      "label": "Startup Summit (the event itself)",
+      "pack": "coverage",
+      "placeholder": false,
+      "speakers": 0,
+      "role_in_graph": "publisher",
+      "source": "2026-09-13/coverage/summit-lisbon-tech-events"
+    },
+    {
+      "id": "story:a-record-attempt-the-agenda-does-not-mention",
+      "type": "Story",
+      "label": "A record attempt the agenda does not mention",
+      "pack": "stories",
+      "published": "2026-09-13",
+      "page": "stories/a-record-attempt-the-agenda-does-not-mention.html",
+      "source": "2026-09-13/coverage/portugalglobal-pitch-marathon"
+    },
+    {
+      "id": "story:five-names-arrived-and-one-left",
+      "type": "Story",
+      "label": "Five names arrived and one left",
+      "pack": "stories",
+      "published": "2026-09-13",
+      "page": "stories/five-names-arrived-and-one-left.html",
+      "source": "2026-09-08/speakers"
+    },
+    {
+      "id": "story:two-names-for-three-stages",
+      "type": "Story",
+      "label": "Two names for three stages",
+      "pack": "stories",
+      "published": "2026-09-13",
+      "page": "stories/two-names-for-three-stages.html",
+      "source": "2026-09-13/agenda"
+    }
+  ],
+  "edges": [
+    {
+      "id": "takes_place_at:event:startup-summit-lisbon-2026:place:unicorn-factory-lisboa",
+      "verb": "takes_place_at",
+      "source": "event:startup-summit-lisbon-2026",
+      "target": "place:unicorn-factory-lisboa",
+      "pack": "event"
+    },
+    {
+      "id": "organised_by:event:startup-summit-lisbon-2026:org:startup-events",
+      "verb": "organised_by",
+      "source": "event:startup-summit-lisbon-2026",
+      "target": "org:startup-events",
+      "pack": "event"
+    },
+    {
+      "id": "attested_by:event:startup-summit-lisbon-2026:src:2026-09-13/index",
+      "verb": "attested_by",
+      "source": "event:startup-summit-lisbon-2026",
+      "target": "src:2026-09-13/index",
+      "pack": "sources"
+    },
+    {
+      "id": "speaks_at:person:andreia-gaudencio:event:startup-summit-lisbon-2026",
+      "verb": "speaks_at",
+      "source": "person:andreia-gaudencio",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "people"
+    },
+    {
+      "id": "listed_under:person:andreia-gaudencio:org:bsc-ai-factory",
+      "verb": "listed_under",
+      "source": "person:andreia-gaudencio",
+      "target": "org:bsc-ai-factory",
+      "pack": "people"
+    },
+    {
+      "id": "attested_by:person:andreia-gaudencio:src:2026-09-13/speakers",
+      "verb": "attested_by",
+      "source": "person:andreia-gaudencio",
+      "target": "src:2026-09-13/speakers",
+      "pack": "sources"
+    },
+    {
+      "id": "speaks_at:person:paulo-andrez:event:startup-summit-lisbon-2026",
+      "verb": "speaks_at",
+      "source": "person:paulo-andrez",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "people"
+    },
+    {
+      "id": "listed_under:person:paulo-andrez:org:zero-risk-startup",
+      "verb": "listed_under",
+      "source": "person:paulo-andrez",
+      "target": "org:zero-risk-startup",
+      "pack": "people"
+    },
+    {
+      "id": "attested_by:person:paulo-andrez:src:2026-09-13/speakers",
+      "verb": "attested_by",
+      "source": "person:paulo-andrez",
+      "target": "src:2026-09-13/speakers",
+      "pack": "sources"
+    },
+    {
+      "id": "speaks_at:person:luis-valente:event:startup-summit-lisbon-2026",
+      "verb": "speaks_at",
+      "source": "person:luis-valente",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "people"
+    },
+    {
+      "id": "listed_under:person:luis-valente:org:ilof",
+      "verb": "listed_under",
+      "source": "person:luis-valente",
+      "target": "org:ilof",
+      "pack": "people"
+    },
+    {
+      "id": "attested_by:person:luis-valente:src:2026-09-13/speakers",
+      "verb": "attested_by",
+      "source": "person:luis-valente",
+      "target": "src:2026-09-13/speakers",
+      "pack": "sources"
+    },
+    {
+      "id": "speaks_at:person:anmol-goel:event:startup-summit-lisbon-2026",
+      "verb": "speaks_at",
+      "source": "person:anmol-goel",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "people"
+    },
+    {
+      "id": "listed_under:person:anmol-goel:org:gacs-ltd-gacsym-ventures",
+      "verb": "listed_under",
+      "source": "person:anmol-goel",
+      "target": "org:gacs-ltd-gacsym-ventures",
+      "pack": "people"
+    },
+    {
+      "id": "attested_by:person:anmol-goel:src:2026-09-13/speakers",
+      "verb": "attested_by",
+      "source": "person:anmol-goel",
+      "target": "src:2026-09-13/speakers",
+      "pack": "sources"
+    },
+    {
+      "id": "speaks_at:person:karan-setiya:event:startup-summit-lisbon-2026",
+      "verb": "speaks_at",
+      "source": "person:karan-setiya",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "people"
+    },
+    {
+      "id": "listed_under:person:karan-setiya:org:abn-amro-bank",
+      "verb": "listed_under",
+      "source": "person:karan-setiya",
+      "target": "org:abn-amro-bank",
+      "pack": "people"
+    },
+    {
+      "id": "attested_by:person:karan-setiya:src:2026-09-13/speakers",
+      "verb": "attested_by",
+      "source": "person:karan-setiya",
+      "target": "src:2026-09-13/speakers",
+      "pack": "sources"
+    },
+    {
+      "id": "speaks_at:person:rita-kastrati:event:startup-summit-lisbon-2026",
+      "verb": "speaks_at",
+      "source": "person:rita-kastrati",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "people"
+    },
+    {
+      "id": "listed_under:person:rita-kastrati:org:pioneering-people",
+      "verb": "listed_under",
+      "source": "person:rita-kastrati",
+      "target": "org:pioneering-people",
+      "pack": "people"
+    },
+    {
+      "id": "attested_by:person:rita-kastrati:src:2026-09-13/speakers",
+      "verb": "attested_by",
+      "source": "person:rita-kastrati",
+      "target": "src:2026-09-13/speakers",
+      "pack": "sources"
+    },
+    {
+      "id": "speaks_at:person:luis-gutman:event:startup-summit-lisbon-2026",
+      "verb": "speaks_at",
+      "source": "person:luis-gutman",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "people"
+    },
+    {
+      "id": "listed_under:person:luis-gutman:org:ow-ventures-scr",
+      "verb": "listed_under",
+      "source": "person:luis-gutman",
+      "target": "org:ow-ventures-scr",
+      "pack": "people"
+    },
+    {
+      "id": "attested_by:person:luis-gutman:src:2026-09-13/speakers",
+      "verb": "attested_by",
+      "source": "person:luis-gutman",
+      "target": "src:2026-09-13/speakers",
+      "pack": "sources"
+    },
+    {
+      "id": "speaks_at:person:hector-lv:event:startup-summit-lisbon-2026",
+      "verb": "speaks_at",
+      "source": "person:hector-lv",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "people"
+    },
+    {
+      "id": "listed_under:person:hector-lv:org:lexidy-law-boutique-slp",
+      "verb": "listed_under",
+      "source": "person:hector-lv",
+      "target": "org:lexidy-law-boutique-slp",
+      "pack": "people"
+    },
+    {
+      "id": "attested_by:person:hector-lv:src:2026-09-13/speakers",
+      "verb": "attested_by",
+      "source": "person:hector-lv",
+      "target": "src:2026-09-13/speakers",
+      "pack": "sources"
+    },
+    {
+      "id": "speaks_at:person:tina-valand:event:startup-summit-lisbon-2026",
+      "verb": "speaks_at",
+      "source": "person:tina-valand",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "people"
+    },
+    {
+      "id": "listed_under:person:tina-valand:org:accenture",
+      "verb": "listed_under",
+      "source": "person:tina-valand",
+      "target": "org:accenture",
+      "pack": "people"
+    },
+    {
+      "id": "attested_by:person:tina-valand:src:2026-09-13/speakers",
+      "verb": "attested_by",
+      "source": "person:tina-valand",
+      "target": "src:2026-09-13/speakers",
+      "pack": "sources"
+    },
+    {
+      "id": "speaks_at:person:vini-devnani:event:startup-summit-lisbon-2026",
+      "verb": "speaks_at",
+      "source": "person:vini-devnani",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "people"
+    },
+    {
+      "id": "listed_under:person:vini-devnani:org:jab-holdings",
+      "verb": "listed_under",
+      "source": "person:vini-devnani",
+      "target": "org:jab-holdings",
+      "pack": "people"
+    },
+    {
+      "id": "attested_by:person:vini-devnani:src:2026-09-13/speakers",
+      "verb": "attested_by",
+      "source": "person:vini-devnani",
+      "target": "src:2026-09-13/speakers",
+      "pack": "sources"
+    },
+    {
+      "id": "speaks_at:person:luiza-castro-rey:event:startup-summit-lisbon-2026",
+      "verb": "speaks_at",
+      "source": "person:luiza-castro-rey",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "people"
+    },
+    {
+      "id": "listed_under:person:luiza-castro-rey:org:fio-legal",
+      "verb": "listed_under",
+      "source": "person:luiza-castro-rey",
+      "target": "org:fio-legal",
+      "pack": "people"
+    },
+    {
+      "id": "attested_by:person:luiza-castro-rey:src:2026-09-13/speakers",
+      "verb": "attested_by",
+      "source": "person:luiza-castro-rey",
+      "target": "src:2026-09-13/speakers",
+      "pack": "sources"
+    },
+    {
+      "id": "speaks_at:person:nashwa-shah:event:startup-summit-lisbon-2026",
+      "verb": "speaks_at",
+      "source": "person:nashwa-shah",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "people"
+    },
+    {
+      "id": "listed_under:person:nashwa-shah:org:many",
+      "verb": "listed_under",
+      "source": "person:nashwa-shah",
+      "target": "org:many",
+      "pack": "people"
+    },
+    {
+      "id": "attested_by:person:nashwa-shah:src:2026-09-13/speakers",
+      "verb": "attested_by",
+      "source": "person:nashwa-shah",
+      "target": "src:2026-09-13/speakers",
+      "pack": "sources"
+    },
+    {
+      "id": "speaks_at:person:rita-figueiredo:event:startup-summit-lisbon-2026",
+      "verb": "speaks_at",
+      "source": "person:rita-figueiredo",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "people"
+    },
+    {
+      "id": "listed_under:person:rita-figueiredo:org:lexidy",
+      "verb": "listed_under",
+      "source": "person:rita-figueiredo",
+      "target": "org:lexidy",
+      "pack": "people"
+    },
+    {
+      "id": "attested_by:person:rita-figueiredo:src:2026-09-13/speakers",
+      "verb": "attested_by",
+      "source": "person:rita-figueiredo",
+      "target": "src:2026-09-13/speakers",
+      "pack": "sources"
+    },
+    {
+      "id": "speaks_at:person:filipa-faria:event:startup-summit-lisbon-2026",
+      "verb": "speaks_at",
+      "source": "person:filipa-faria",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "people"
+    },
+    {
+      "id": "listed_under:person:filipa-faria:org:fio-legal-fractional-freelance-hr",
+      "verb": "listed_under",
+      "source": "person:filipa-faria",
+      "target": "org:fio-legal-fractional-freelance-hr",
+      "pack": "people"
+    },
+    {
+      "id": "attested_by:person:filipa-faria:src:2026-09-13/speakers",
+      "verb": "attested_by",
+      "source": "person:filipa-faria",
+      "target": "src:2026-09-13/speakers",
+      "pack": "sources"
+    },
+    {
+      "id": "speaks_at:person:ricardo:event:startup-summit-lisbon-2026",
+      "verb": "speaks_at",
+      "source": "person:ricardo",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "people"
+    },
+    {
+      "id": "listed_under:person:ricardo:org:startup-summit",
+      "verb": "listed_under",
+      "source": "person:ricardo",
+      "target": "org:startup-summit",
+      "pack": "people"
+    },
+    {
+      "id": "attested_by:person:ricardo:src:2026-09-13/speakers",
+      "verb": "attested_by",
+      "source": "person:ricardo",
+      "target": "src:2026-09-13/speakers",
+      "pack": "sources"
+    },
+    {
+      "id": "speaks_at:person:raffaella-loncao:event:startup-summit-lisbon-2026",
+      "verb": "speaks_at",
+      "source": "person:raffaella-loncao",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "people"
+    },
+    {
+      "id": "listed_under:person:raffaella-loncao:org:on-this-planet",
+      "verb": "listed_under",
+      "source": "person:raffaella-loncao",
+      "target": "org:on-this-planet",
+      "pack": "people"
+    },
+    {
+      "id": "attested_by:person:raffaella-loncao:src:2026-09-13/speakers",
+      "verb": "attested_by",
+      "source": "person:raffaella-loncao",
+      "target": "src:2026-09-13/speakers",
+      "pack": "sources"
+    },
+    {
+      "id": "speaks_at:person:muhammad-farooq-rathod:event:startup-summit-lisbon-2026",
+      "verb": "speaks_at",
+      "source": "person:muhammad-farooq-rathod",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "people"
+    },
+    {
+      "id": "listed_under:person:muhammad-farooq-rathod:org:upstride-holdings",
+      "verb": "listed_under",
+      "source": "person:muhammad-farooq-rathod",
+      "target": "org:upstride-holdings",
+      "pack": "people"
+    },
+    {
+      "id": "attested_by:person:muhammad-farooq-rathod:src:2026-09-13/speakers",
+      "verb": "attested_by",
+      "source": "person:muhammad-farooq-rathod",
+      "target": "src:2026-09-13/speakers",
+      "pack": "sources"
+    },
+    {
+      "id": "speaks_at:person:zoya-mesaric-mag-a-pth:event:startup-summit-lisbon-2026",
+      "verb": "speaks_at",
+      "source": "person:zoya-mesaric-mag-a-pth",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "people"
+    },
+    {
+      "id": "listed_under:person:zoya-mesaric-mag-a-pth:org:zoya-mesaric-private-international-practice",
+      "verb": "listed_under",
+      "source": "person:zoya-mesaric-mag-a-pth",
+      "target": "org:zoya-mesaric-private-international-practice",
+      "pack": "people"
+    },
+    {
+      "id": "attested_by:person:zoya-mesaric-mag-a-pth:src:2026-09-13/speakers",
+      "verb": "attested_by",
+      "source": "person:zoya-mesaric-mag-a-pth",
+      "target": "src:2026-09-13/speakers",
+      "pack": "sources"
+    },
+    {
+      "id": "speaks_at:person:alexandra-isenegger:event:startup-summit-lisbon-2026",
+      "verb": "speaks_at",
+      "source": "person:alexandra-isenegger",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "people"
+    },
+    {
+      "id": "listed_under:person:alexandra-isenegger:org:linkilaw-solicitors-cbca-group",
+      "verb": "listed_under",
+      "source": "person:alexandra-isenegger",
+      "target": "org:linkilaw-solicitors-cbca-group",
+      "pack": "people"
+    },
+    {
+      "id": "attested_by:person:alexandra-isenegger:src:2026-09-13/speakers",
+      "verb": "attested_by",
+      "source": "person:alexandra-isenegger",
+      "target": "src:2026-09-13/speakers",
+      "pack": "sources"
+    },
+    {
+      "id": "speaks_at:person:viachaslau-smirnou:event:startup-summit-lisbon-2026",
+      "verb": "speaks_at",
+      "source": "person:viachaslau-smirnou",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "people"
+    },
+    {
+      "id": "listed_under:person:viachaslau-smirnou:org:around-pr-studio",
+      "verb": "listed_under",
+      "source": "person:viachaslau-smirnou",
+      "target": "org:around-pr-studio",
+      "pack": "people"
+    },
+    {
+      "id": "attested_by:person:viachaslau-smirnou:src:2026-09-13/speakers",
+      "verb": "attested_by",
+      "source": "person:viachaslau-smirnou",
+      "target": "src:2026-09-13/speakers",
+      "pack": "sources"
+    },
+    {
+      "id": "speaks_at:person:roman-knorr-duran:event:startup-summit-lisbon-2026",
+      "verb": "speaks_at",
+      "source": "person:roman-knorr-duran",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "people"
+    },
+    {
+      "id": "listed_under:person:roman-knorr-duran:org:rom-n-kn-rr",
+      "verb": "listed_under",
+      "source": "person:roman-knorr-duran",
+      "target": "org:rom-n-kn-rr",
+      "pack": "people"
+    },
+    {
+      "id": "attested_by:person:roman-knorr-duran:src:2026-09-13/speakers",
+      "verb": "attested_by",
+      "source": "person:roman-knorr-duran",
+      "target": "src:2026-09-13/speakers",
+      "pack": "sources"
+    },
+    {
+      "id": "speaks_at:person:akshay-ruparelia:event:startup-summit-lisbon-2026",
+      "verb": "speaks_at",
+      "source": "person:akshay-ruparelia",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "people"
+    },
+    {
+      "id": "listed_under:person:akshay-ruparelia:org:brdge",
+      "verb": "listed_under",
+      "source": "person:akshay-ruparelia",
+      "target": "org:brdge",
+      "pack": "people"
+    },
+    {
+      "id": "attested_by:person:akshay-ruparelia:src:2026-09-13/speakers",
+      "verb": "attested_by",
+      "source": "person:akshay-ruparelia",
+      "target": "src:2026-09-13/speakers",
+      "pack": "sources"
+    },
+    {
+      "id": "speaks_at:person:saachin-bhatt:event:startup-summit-lisbon-2026",
+      "verb": "speaks_at",
+      "source": "person:saachin-bhatt",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "people"
+    },
+    {
+      "id": "listed_under:person:saachin-bhatt:org:brdge",
+      "verb": "listed_under",
+      "source": "person:saachin-bhatt",
+      "target": "org:brdge",
+      "pack": "people"
+    },
+    {
+      "id": "attested_by:person:saachin-bhatt:src:2026-09-13/speakers",
+      "verb": "attested_by",
+      "source": "person:saachin-bhatt",
+      "target": "src:2026-09-13/speakers",
+      "pack": "sources"
+    },
+    {
+      "id": "speaks_at:person:dina-kondratiuk:event:startup-summit-lisbon-2026",
+      "verb": "speaks_at",
+      "source": "person:dina-kondratiuk",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "people"
+    },
+    {
+      "id": "listed_under:person:dina-kondratiuk:org:solegency",
+      "verb": "listed_under",
+      "source": "person:dina-kondratiuk",
+      "target": "org:solegency",
+      "pack": "people"
+    },
+    {
+      "id": "attested_by:person:dina-kondratiuk:src:2026-09-13/speakers",
+      "verb": "attested_by",
+      "source": "person:dina-kondratiuk",
+      "target": "src:2026-09-13/speakers",
+      "pack": "sources"
+    },
+    {
+      "id": "speaks_at:person:joao-ramos:event:startup-summit-lisbon-2026",
+      "verb": "speaks_at",
+      "source": "person:joao-ramos",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "people"
+    },
+    {
+      "id": "listed_under:person:joao-ramos:org:fast-track-ventures",
+      "verb": "listed_under",
+      "source": "person:joao-ramos",
+      "target": "org:fast-track-ventures",
+      "pack": "people"
+    },
+    {
+      "id": "attested_by:person:joao-ramos:src:2026-09-13/speakers",
+      "verb": "attested_by",
+      "source": "person:joao-ramos",
+      "target": "src:2026-09-13/speakers",
+      "pack": "sources"
+    },
+    {
+      "id": "speaks_at:person:thiago-vieira:event:startup-summit-lisbon-2026",
+      "verb": "speaks_at",
+      "source": "person:thiago-vieira",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "people"
+    },
+    {
+      "id": "listed_under:person:thiago-vieira:org:pactum-global",
+      "verb": "listed_under",
+      "source": "person:thiago-vieira",
+      "target": "org:pactum-global",
+      "pack": "people"
+    },
+    {
+      "id": "attested_by:person:thiago-vieira:src:2026-09-13/speakers",
+      "verb": "attested_by",
+      "source": "person:thiago-vieira",
+      "target": "src:2026-09-13/speakers",
+      "pack": "sources"
+    },
+    {
+      "id": "speaks_at:person:diego-sampaio:event:startup-summit-lisbon-2026",
+      "verb": "speaks_at",
+      "source": "person:diego-sampaio",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "people"
+    },
+    {
+      "id": "listed_under:person:diego-sampaio:org:globalfy",
+      "verb": "listed_under",
+      "source": "person:diego-sampaio",
+      "target": "org:globalfy",
+      "pack": "people"
+    },
+    {
+      "id": "attested_by:person:diego-sampaio:src:2026-09-13/speakers",
+      "verb": "attested_by",
+      "source": "person:diego-sampaio",
+      "target": "src:2026-09-13/speakers",
+      "pack": "sources"
+    },
+    {
+      "id": "speaks_at:person:amit-grinvald:event:startup-summit-lisbon-2026",
+      "verb": "speaks_at",
+      "source": "person:amit-grinvald",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "people"
+    },
+    {
+      "id": "listed_under:person:amit-grinvald:org:independent",
+      "verb": "listed_under",
+      "source": "person:amit-grinvald",
+      "target": "org:independent",
+      "pack": "people"
+    },
+    {
+      "id": "attested_by:person:amit-grinvald:src:2026-09-13/speakers",
+      "verb": "attested_by",
+      "source": "person:amit-grinvald",
+      "target": "src:2026-09-13/speakers",
+      "pack": "sources"
+    },
+    {
+      "id": "speaks_at:person:janelle-harder:event:startup-summit-lisbon-2026",
+      "verb": "speaks_at",
+      "source": "person:janelle-harder",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "people"
+    },
+    {
+      "id": "listed_under:person:janelle-harder:org:humannovate-consulting",
+      "verb": "listed_under",
+      "source": "person:janelle-harder",
+      "target": "org:humannovate-consulting",
+      "pack": "people"
+    },
+    {
+      "id": "attested_by:person:janelle-harder:src:2026-09-13/speakers",
+      "verb": "attested_by",
+      "source": "person:janelle-harder",
+      "target": "src:2026-09-13/speakers",
+      "pack": "sources"
+    },
+    {
+      "id": "speaks_at:person:kasia-szczesniak:event:startup-summit-lisbon-2026",
+      "verb": "speaks_at",
+      "source": "person:kasia-szczesniak",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "people"
+    },
+    {
+      "id": "listed_under:person:kasia-szczesniak:org:lisbon-business-leaders",
+      "verb": "listed_under",
+      "source": "person:kasia-szczesniak",
+      "target": "org:lisbon-business-leaders",
+      "pack": "people"
+    },
+    {
+      "id": "attested_by:person:kasia-szczesniak:src:2026-09-13/speakers",
+      "verb": "attested_by",
+      "source": "person:kasia-szczesniak",
+      "target": "src:2026-09-13/speakers",
+      "pack": "sources"
+    },
+    {
+      "id": "speaks_at:person:lisa-rebecca-press:event:startup-summit-lisbon-2026",
+      "verb": "speaks_at",
+      "source": "person:lisa-rebecca-press",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "people"
+    },
+    {
+      "id": "listed_under:person:lisa-rebecca-press:org:lisa-press-consulting",
+      "verb": "listed_under",
+      "source": "person:lisa-rebecca-press",
+      "target": "org:lisa-press-consulting",
+      "pack": "people"
+    },
+    {
+      "id": "attested_by:person:lisa-rebecca-press:src:2026-09-13/speakers",
+      "verb": "attested_by",
+      "source": "person:lisa-rebecca-press",
+      "target": "src:2026-09-13/speakers",
+      "pack": "sources"
+    },
+    {
+      "id": "speaks_at:person:david-graham:event:startup-summit-lisbon-2026",
+      "verb": "speaks_at",
+      "source": "person:david-graham",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "people"
+    },
+    {
+      "id": "listed_under:person:david-graham:org:dyrectli-capital",
+      "verb": "listed_under",
+      "source": "person:david-graham",
+      "target": "org:dyrectli-capital",
+      "pack": "people"
+    },
+    {
+      "id": "attested_by:person:david-graham:src:2026-09-13/speakers",
+      "verb": "attested_by",
+      "source": "person:david-graham",
+      "target": "src:2026-09-13/speakers",
+      "pack": "sources"
+    },
+    {
+      "id": "speaks_at:person:igor-nikolaiev:event:startup-summit-lisbon-2026",
+      "verb": "speaks_at",
+      "source": "person:igor-nikolaiev",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "people"
+    },
+    {
+      "id": "listed_under:person:igor-nikolaiev:org:aiffin",
+      "verb": "listed_under",
+      "source": "person:igor-nikolaiev",
+      "target": "org:aiffin",
+      "pack": "people"
+    },
+    {
+      "id": "attested_by:person:igor-nikolaiev:src:2026-09-13/speakers",
+      "verb": "attested_by",
+      "source": "person:igor-nikolaiev",
+      "target": "src:2026-09-13/speakers",
+      "pack": "sources"
+    },
+    {
+      "id": "speaks_at:person:precy-servito:event:startup-summit-lisbon-2026",
+      "verb": "speaks_at",
+      "source": "person:precy-servito",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "people"
+    },
+    {
+      "id": "listed_under:person:precy-servito:org:konnect-ai-human-strategy-execution-workspace",
+      "verb": "listed_under",
+      "source": "person:precy-servito",
+      "target": "org:konnect-ai-human-strategy-execution-workspace",
+      "pack": "people"
+    },
+    {
+      "id": "attested_by:person:precy-servito:src:2026-09-13/speakers",
+      "verb": "attested_by",
+      "source": "person:precy-servito",
+      "target": "src:2026-09-13/speakers",
+      "pack": "sources"
+    },
+    {
+      "id": "speaks_at:person:irina-shurmina:event:startup-summit-lisbon-2026",
+      "verb": "speaks_at",
+      "source": "person:irina-shurmina",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "people"
+    },
+    {
+      "id": "listed_under:person:irina-shurmina:org:ladies-who-talk",
+      "verb": "listed_under",
+      "source": "person:irina-shurmina",
+      "target": "org:ladies-who-talk",
+      "pack": "people"
+    },
+    {
+      "id": "attested_by:person:irina-shurmina:src:2026-09-13/speakers",
+      "verb": "attested_by",
+      "source": "person:irina-shurmina",
+      "target": "src:2026-09-13/speakers",
+      "pack": "sources"
+    },
+    {
+      "id": "speaks_at:person:jorge-sebastiao:event:startup-summit-lisbon-2026",
+      "verb": "speaks_at",
+      "source": "person:jorge-sebastiao",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "people"
+    },
+    {
+      "id": "listed_under:person:jorge-sebastiao:org:ecox-bombastic-burgh",
+      "verb": "listed_under",
+      "source": "person:jorge-sebastiao",
+      "target": "org:ecox-bombastic-burgh",
+      "pack": "people"
+    },
+    {
+      "id": "attested_by:person:jorge-sebastiao:src:2026-09-13/speakers",
+      "verb": "attested_by",
+      "source": "person:jorge-sebastiao",
+      "target": "src:2026-09-13/speakers",
+      "pack": "sources"
+    },
+    {
+      "id": "speaks_at:person:anisha-yadav:event:startup-summit-lisbon-2026",
+      "verb": "speaks_at",
+      "source": "person:anisha-yadav",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "people"
+    },
+    {
+      "id": "listed_under:person:anisha-yadav:org:first-ten-advisory",
+      "verb": "listed_under",
+      "source": "person:anisha-yadav",
+      "target": "org:first-ten-advisory",
+      "pack": "people"
+    },
+    {
+      "id": "attested_by:person:anisha-yadav:src:2026-09-13/speakers",
+      "verb": "attested_by",
+      "source": "person:anisha-yadav",
+      "target": "src:2026-09-13/speakers",
+      "pack": "sources"
+    },
+    {
+      "id": "speaks_at:person:lauren-mucklow:event:startup-summit-lisbon-2026",
+      "verb": "speaks_at",
+      "source": "person:lauren-mucklow",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "people"
+    },
+    {
+      "id": "listed_under:person:lauren-mucklow:org:what-she-said-limited",
+      "verb": "listed_under",
+      "source": "person:lauren-mucklow",
+      "target": "org:what-she-said-limited",
+      "pack": "people"
+    },
+    {
+      "id": "attested_by:person:lauren-mucklow:src:2026-09-13/speakers",
+      "verb": "attested_by",
+      "source": "person:lauren-mucklow",
+      "target": "src:2026-09-13/speakers",
+      "pack": "sources"
+    },
+    {
+      "id": "speaks_at:person:max-rodman:event:startup-summit-lisbon-2026",
+      "verb": "speaks_at",
+      "source": "person:max-rodman",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "people"
+    },
+    {
+      "id": "listed_under:person:max-rodman:org:mvmt-studio",
+      "verb": "listed_under",
+      "source": "person:max-rodman",
+      "target": "org:mvmt-studio",
+      "pack": "people"
+    },
+    {
+      "id": "attested_by:person:max-rodman:src:2026-09-13/speakers",
+      "verb": "attested_by",
+      "source": "person:max-rodman",
+      "target": "src:2026-09-13/speakers",
+      "pack": "sources"
+    },
+    {
+      "id": "speaks_at:person:sibilla-strupule:event:startup-summit-lisbon-2026",
+      "verb": "speaks_at",
+      "source": "person:sibilla-strupule",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "people"
+    },
+    {
+      "id": "listed_under:person:sibilla-strupule:org:sibillastrupule-com",
+      "verb": "listed_under",
+      "source": "person:sibilla-strupule",
+      "target": "org:sibillastrupule-com",
+      "pack": "people"
+    },
+    {
+      "id": "attested_by:person:sibilla-strupule:src:2026-09-13/speakers",
+      "verb": "attested_by",
+      "source": "person:sibilla-strupule",
+      "target": "src:2026-09-13/speakers",
+      "pack": "sources"
+    },
+    {
+      "id": "speaks_at:person:mark-paul-haaksman:event:startup-summit-lisbon-2026",
+      "verb": "speaks_at",
+      "source": "person:mark-paul-haaksman",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "people"
+    },
+    {
+      "id": "listed_under:person:mark-paul-haaksman:org:sotavento-angels-fund",
+      "verb": "listed_under",
+      "source": "person:mark-paul-haaksman",
+      "target": "org:sotavento-angels-fund",
+      "pack": "people"
+    },
+    {
+      "id": "attested_by:person:mark-paul-haaksman:src:2026-09-13/speakers",
+      "verb": "attested_by",
+      "source": "person:mark-paul-haaksman",
+      "target": "src:2026-09-13/speakers",
+      "pack": "sources"
+    },
+    {
+      "id": "speaks_at:person:micael-lopes:event:startup-summit-lisbon-2026",
+      "verb": "speaks_at",
+      "source": "person:micael-lopes",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "people"
+    },
+    {
+      "id": "listed_under:person:micael-lopes:org:time-space",
+      "verb": "listed_under",
+      "source": "person:micael-lopes",
+      "target": "org:time-space",
+      "pack": "people"
+    },
+    {
+      "id": "attested_by:person:micael-lopes:src:2026-09-13/speakers",
+      "verb": "attested_by",
+      "source": "person:micael-lopes",
+      "target": "src:2026-09-13/speakers",
+      "pack": "sources"
+    },
+    {
+      "id": "speaks_at:person:satya-morarji:event:startup-summit-lisbon-2026",
+      "verb": "speaks_at",
+      "source": "person:satya-morarji",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "people"
+    },
+    {
+      "id": "listed_under:person:satya-morarji:org:freedom-vas",
+      "verb": "listed_under",
+      "source": "person:satya-morarji",
+      "target": "org:freedom-vas",
+      "pack": "people"
+    },
+    {
+      "id": "attested_by:person:satya-morarji:src:2026-09-13/speakers",
+      "verb": "attested_by",
+      "source": "person:satya-morarji",
+      "target": "src:2026-09-13/speakers",
+      "pack": "sources"
+    },
+    {
+      "id": "speaks_at:person:tania-tome:event:startup-summit-lisbon-2026",
+      "verb": "speaks_at",
+      "source": "person:tania-tome",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "people"
+    },
+    {
+      "id": "listed_under:person:tania-tome:org:brandulogy",
+      "verb": "listed_under",
+      "source": "person:tania-tome",
+      "target": "org:brandulogy",
+      "pack": "people"
+    },
+    {
+      "id": "attested_by:person:tania-tome:src:2026-09-13/speakers",
+      "verb": "attested_by",
+      "source": "person:tania-tome",
+      "target": "src:2026-09-13/speakers",
+      "pack": "sources"
+    },
+    {
+      "id": "speaks_at:person:angelee-sidar:event:startup-summit-lisbon-2026",
+      "verb": "speaks_at",
+      "source": "person:angelee-sidar",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "people"
+    },
+    {
+      "id": "listed_under:person:angelee-sidar:org:fiiys-ltd",
+      "verb": "listed_under",
+      "source": "person:angelee-sidar",
+      "target": "org:fiiys-ltd",
+      "pack": "people"
+    },
+    {
+      "id": "attested_by:person:angelee-sidar:src:2026-09-13/speakers",
+      "verb": "attested_by",
+      "source": "person:angelee-sidar",
+      "target": "src:2026-09-13/speakers",
+      "pack": "sources"
+    },
+    {
+      "id": "speaks_at:person:ben-lakoff:event:startup-summit-lisbon-2026",
+      "verb": "speaks_at",
+      "source": "person:ben-lakoff",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "people"
+    },
+    {
+      "id": "listed_under:person:ben-lakoff:org:bankless-ventures",
+      "verb": "listed_under",
+      "source": "person:ben-lakoff",
+      "target": "org:bankless-ventures",
+      "pack": "people"
+    },
+    {
+      "id": "attested_by:person:ben-lakoff:src:2026-09-13/speakers",
+      "verb": "attested_by",
+      "source": "person:ben-lakoff",
+      "target": "src:2026-09-13/speakers",
+      "pack": "sources"
+    },
+    {
+      "id": "speaks_at:person:rita-martins-freire:event:startup-summit-lisbon-2026",
+      "verb": "speaks_at",
+      "source": "person:rita-martins-freire",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "people"
+    },
+    {
+      "id": "listed_under:person:rita-martins-freire:org:trivevo",
+      "verb": "listed_under",
+      "source": "person:rita-martins-freire",
+      "target": "org:trivevo",
+      "pack": "people"
+    },
+    {
+      "id": "attested_by:person:rita-martins-freire:src:2026-09-13/speakers",
+      "verb": "attested_by",
+      "source": "person:rita-martins-freire",
+      "target": "src:2026-09-13/speakers",
+      "pack": "sources"
+    },
+    {
+      "id": "speaks_at:person:sebastian-horstmann:event:startup-summit-lisbon-2026",
+      "verb": "speaks_at",
+      "source": "person:sebastian-horstmann",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "people"
+    },
+    {
+      "id": "listed_under:person:sebastian-horstmann:org:cosysense",
+      "verb": "listed_under",
+      "source": "person:sebastian-horstmann",
+      "target": "org:cosysense",
+      "pack": "people"
+    },
+    {
+      "id": "attested_by:person:sebastian-horstmann:src:2026-09-13/speakers",
+      "verb": "attested_by",
+      "source": "person:sebastian-horstmann",
+      "target": "src:2026-09-13/speakers",
+      "pack": "sources"
+    },
+    {
+      "id": "speaks_at:person:sofia-bobrik:event:startup-summit-lisbon-2026",
+      "verb": "speaks_at",
+      "source": "person:sofia-bobrik",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "people"
+    },
+    {
+      "id": "listed_under:person:sofia-bobrik:org:pr-agency-techwaves",
+      "verb": "listed_under",
+      "source": "person:sofia-bobrik",
+      "target": "org:pr-agency-techwaves",
+      "pack": "people"
+    },
+    {
+      "id": "attested_by:person:sofia-bobrik:src:2026-09-13/speakers",
+      "verb": "attested_by",
+      "source": "person:sofia-bobrik",
+      "target": "src:2026-09-13/speakers",
+      "pack": "sources"
+    },
+    {
+      "id": "speaks_at:person:pedro-simoes:event:startup-summit-lisbon-2026",
+      "verb": "speaks_at",
+      "source": "person:pedro-simoes",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "people"
+    },
+    {
+      "id": "listed_under:person:pedro-simoes:org:jci",
+      "verb": "listed_under",
+      "source": "person:pedro-simoes",
+      "target": "org:jci",
+      "pack": "people"
+    },
+    {
+      "id": "attested_by:person:pedro-simoes:src:2026-09-13/speakers",
+      "verb": "attested_by",
+      "source": "person:pedro-simoes",
+      "target": "src:2026-09-13/speakers",
+      "pack": "sources"
+    },
+    {
+      "id": "speaks_at:person:sylvie-ritt:event:startup-summit-lisbon-2026",
+      "verb": "speaks_at",
+      "source": "person:sylvie-ritt",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "people"
+    },
+    {
+      "id": "listed_under:person:sylvie-ritt:org:time-to-rise",
+      "verb": "listed_under",
+      "source": "person:sylvie-ritt",
+      "target": "org:time-to-rise",
+      "pack": "people"
+    },
+    {
+      "id": "attested_by:person:sylvie-ritt:src:2026-09-13/speakers",
+      "verb": "attested_by",
+      "source": "person:sylvie-ritt",
+      "target": "src:2026-09-13/speakers",
+      "pack": "sources"
+    },
+    {
+      "id": "speaks_at:person:daniel-grech:event:startup-summit-lisbon-2026",
+      "verb": "speaks_at",
+      "source": "person:daniel-grech",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "people"
+    },
+    {
+      "id": "listed_under:person:daniel-grech:org:self-employed",
+      "verb": "listed_under",
+      "source": "person:daniel-grech",
+      "target": "org:self-employed",
+      "pack": "people"
+    },
+    {
+      "id": "attested_by:person:daniel-grech:src:2026-09-13/speakers",
+      "verb": "attested_by",
+      "source": "person:daniel-grech",
+      "target": "src:2026-09-13/speakers",
+      "pack": "sources"
+    },
+    {
+      "id": "speaks_at:person:elias-flachowsky:event:startup-summit-lisbon-2026",
+      "verb": "speaks_at",
+      "source": "person:elias-flachowsky",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "people"
+    },
+    {
+      "id": "listed_under:person:elias-flachowsky:org:time-to-rise",
+      "verb": "listed_under",
+      "source": "person:elias-flachowsky",
+      "target": "org:time-to-rise",
+      "pack": "people"
+    },
+    {
+      "id": "attested_by:person:elias-flachowsky:src:2026-09-13/speakers",
+      "verb": "attested_by",
+      "source": "person:elias-flachowsky",
+      "target": "src:2026-09-13/speakers",
+      "pack": "sources"
+    },
+    {
+      "id": "speaks_at:person:kristina-kutan:event:startup-summit-lisbon-2026",
+      "verb": "speaks_at",
+      "source": "person:kristina-kutan",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "people"
+    },
+    {
+      "id": "listed_under:person:kristina-kutan:org:vntr-capital",
+      "verb": "listed_under",
+      "source": "person:kristina-kutan",
+      "target": "org:vntr-capital",
+      "pack": "people"
+    },
+    {
+      "id": "attested_by:person:kristina-kutan:src:2026-09-13/speakers",
+      "verb": "attested_by",
+      "source": "person:kristina-kutan",
+      "target": "src:2026-09-13/speakers",
+      "pack": "sources"
+    },
+    {
+      "id": "speaks_at:person:hudi-shehu:event:startup-summit-lisbon-2026",
+      "verb": "speaks_at",
+      "source": "person:hudi-shehu",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "people"
+    },
+    {
+      "id": "listed_under:person:hudi-shehu:org:business-network-albania",
+      "verb": "listed_under",
+      "source": "person:hudi-shehu",
+      "target": "org:business-network-albania",
+      "pack": "people"
+    },
+    {
+      "id": "attested_by:person:hudi-shehu:src:2026-09-13/speakers",
+      "verb": "attested_by",
+      "source": "person:hudi-shehu",
+      "target": "src:2026-09-13/speakers",
+      "pack": "sources"
+    },
+    {
+      "id": "speaks_at:person:alexandre-daletchine:event:startup-summit-lisbon-2026",
+      "verb": "speaks_at",
+      "source": "person:alexandre-daletchine",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "people"
+    },
+    {
+      "id": "listed_under:person:alexandre-daletchine:org:creativity-matter",
+      "verb": "listed_under",
+      "source": "person:alexandre-daletchine",
+      "target": "org:creativity-matter",
+      "pack": "people"
+    },
+    {
+      "id": "attested_by:person:alexandre-daletchine:src:2026-09-13/speakers",
+      "verb": "attested_by",
+      "source": "person:alexandre-daletchine",
+      "target": "src:2026-09-13/speakers",
+      "pack": "sources"
+    },
+    {
+      "id": "speaks_at:person:slavi-slavev:event:startup-summit-lisbon-2026",
+      "verb": "speaks_at",
+      "source": "person:slavi-slavev",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "people"
+    },
+    {
+      "id": "listed_under:person:slavi-slavev:org:independent",
+      "verb": "listed_under",
+      "source": "person:slavi-slavev",
+      "target": "org:independent",
+      "pack": "people"
+    },
+    {
+      "id": "attested_by:person:slavi-slavev:src:2026-09-13/speakers",
+      "verb": "attested_by",
+      "source": "person:slavi-slavev",
+      "target": "src:2026-09-13/speakers",
+      "pack": "sources"
+    },
+    {
+      "id": "speaks_at:person:wouter-heijnen:event:startup-summit-lisbon-2026",
+      "verb": "speaks_at",
+      "source": "person:wouter-heijnen",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "people"
+    },
+    {
+      "id": "listed_under:person:wouter-heijnen:org:sotavento-invest",
+      "verb": "listed_under",
+      "source": "person:wouter-heijnen",
+      "target": "org:sotavento-invest",
+      "pack": "people"
+    },
+    {
+      "id": "attested_by:person:wouter-heijnen:src:2026-09-13/speakers",
+      "verb": "attested_by",
+      "source": "person:wouter-heijnen",
+      "target": "src:2026-09-13/speakers",
+      "pack": "sources"
+    },
+    {
+      "id": "speaks_at:person:diogo-mendonca:event:startup-summit-lisbon-2026",
+      "verb": "speaks_at",
+      "source": "person:diogo-mendonca",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "people"
+    },
+    {
+      "id": "listed_under:person:diogo-mendonca:org:angels-way",
+      "verb": "listed_under",
+      "source": "person:diogo-mendonca",
+      "target": "org:angels-way",
+      "pack": "people"
+    },
+    {
+      "id": "attested_by:person:diogo-mendonca:src:2026-09-13/speakers",
+      "verb": "attested_by",
+      "source": "person:diogo-mendonca",
+      "target": "src:2026-09-13/speakers",
+      "pack": "sources"
+    },
+    {
+      "id": "speaks_at:person:lidija-krickovic:event:startup-summit-lisbon-2026",
+      "verb": "speaks_at",
+      "source": "person:lidija-krickovic",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "people"
+    },
+    {
+      "id": "listed_under:person:lidija-krickovic:org:growth-geek-unipessoal-lda",
+      "verb": "listed_under",
+      "source": "person:lidija-krickovic",
+      "target": "org:growth-geek-unipessoal-lda",
+      "pack": "people"
+    },
+    {
+      "id": "attested_by:person:lidija-krickovic:src:2026-09-13/speakers",
+      "verb": "attested_by",
+      "source": "person:lidija-krickovic",
+      "target": "src:2026-09-13/speakers",
+      "pack": "sources"
+    },
+    {
+      "id": "speaks_at:person:ed-chandler:event:startup-summit-lisbon-2026",
+      "verb": "speaks_at",
+      "source": "person:ed-chandler",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "people"
+    },
+    {
+      "id": "listed_under:person:ed-chandler:org:prifly-advisors",
+      "verb": "listed_under",
+      "source": "person:ed-chandler",
+      "target": "org:prifly-advisors",
+      "pack": "people"
+    },
+    {
+      "id": "attested_by:person:ed-chandler:src:2026-09-13/speakers",
+      "verb": "attested_by",
+      "source": "person:ed-chandler",
+      "target": "src:2026-09-13/speakers",
+      "pack": "sources"
+    },
+    {
+      "id": "speaks_at:person:cintia-costa:event:startup-summit-lisbon-2026",
+      "verb": "speaks_at",
+      "source": "person:cintia-costa",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "people"
+    },
+    {
+      "id": "listed_under:person:cintia-costa:org:351-portuguese-startup-association",
+      "verb": "listed_under",
+      "source": "person:cintia-costa",
+      "target": "org:351-portuguese-startup-association",
+      "pack": "people"
+    },
+    {
+      "id": "attested_by:person:cintia-costa:src:2026-09-13/speakers",
+      "verb": "attested_by",
+      "source": "person:cintia-costa",
+      "target": "src:2026-09-13/speakers",
+      "pack": "sources"
+    },
+    {
+      "id": "speaks_at:person:olivia-page:event:startup-summit-lisbon-2026",
+      "verb": "speaks_at",
+      "source": "person:olivia-page",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "people"
+    },
+    {
+      "id": "listed_under:person:olivia-page:org:mykor",
+      "verb": "listed_under",
+      "source": "person:olivia-page",
+      "target": "org:mykor",
+      "pack": "people"
+    },
+    {
+      "id": "attested_by:person:olivia-page:src:2026-09-13/speakers",
+      "verb": "attested_by",
+      "source": "person:olivia-page",
+      "target": "src:2026-09-13/speakers",
+      "pack": "sources"
+    },
+    {
+      "id": "speaks_at:person:olesia-rykova:event:startup-summit-lisbon-2026",
+      "verb": "speaks_at",
+      "source": "person:olesia-rykova",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "people"
+    },
+    {
+      "id": "listed_under:person:olesia-rykova:org:soulbranding",
+      "verb": "listed_under",
+      "source": "person:olesia-rykova",
+      "target": "org:soulbranding",
+      "pack": "people"
+    },
+    {
+      "id": "attested_by:person:olesia-rykova:src:2026-09-13/speakers",
+      "verb": "attested_by",
+      "source": "person:olesia-rykova",
+      "target": "src:2026-09-13/speakers",
+      "pack": "sources"
+    },
+    {
+      "id": "part_of:session:welcome-drinks:event:startup-summit-lisbon-2026",
+      "verb": "part_of",
+      "source": "session:welcome-drinks",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "sessions"
+    },
+    {
+      "id": "attested_by:session:welcome-drinks:src:2026-09-13/agenda",
+      "verb": "attested_by",
+      "source": "session:welcome-drinks",
+      "target": "src:2026-09-13/agenda",
+      "pack": "sources"
+    },
+    {
+      "id": "part_of:session:morning-run:event:startup-summit-lisbon-2026",
+      "verb": "part_of",
+      "source": "session:morning-run",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "sessions"
+    },
+    {
+      "id": "attested_by:session:morning-run:src:2026-09-13/agenda",
+      "verb": "attested_by",
+      "source": "session:morning-run",
+      "target": "src:2026-09-13/agenda",
+      "pack": "sources"
+    },
+    {
+      "id": "part_of:session:doors-open-d1:event:startup-summit-lisbon-2026",
+      "verb": "part_of",
+      "source": "session:doors-open-d1",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "sessions"
+    },
+    {
+      "id": "attested_by:session:doors-open-d1:src:2026-09-13/agenda",
+      "verb": "attested_by",
+      "source": "session:doors-open-d1",
+      "target": "src:2026-09-13/agenda",
+      "pack": "sources"
+    },
+    {
+      "id": "part_of:session:opening-keynote:event:startup-summit-lisbon-2026",
+      "verb": "part_of",
+      "source": "session:opening-keynote",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "sessions"
+    },
+    {
+      "id": "on_stage:session:opening-keynote:stage:unicorn-stage",
+      "verb": "on_stage",
+      "source": "session:opening-keynote",
+      "target": "stage:unicorn-stage",
+      "pack": "sessions"
+    },
+    {
+      "id": "attested_by:session:opening-keynote:src:2026-09-13/agenda",
+      "verb": "attested_by",
+      "source": "session:opening-keynote",
+      "target": "src:2026-09-13/agenda",
+      "pack": "sources"
+    },
+    {
+      "id": "part_of:session:lp-perspective:event:startup-summit-lisbon-2026",
+      "verb": "part_of",
+      "source": "session:lp-perspective",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "sessions"
+    },
+    {
+      "id": "on_stage:session:lp-perspective:stage:unicorn-stage",
+      "verb": "on_stage",
+      "source": "session:lp-perspective",
+      "target": "stage:unicorn-stage",
+      "pack": "sessions"
+    },
+    {
+      "id": "attested_by:session:lp-perspective:src:2026-09-13/agenda",
+      "verb": "attested_by",
+      "source": "session:lp-perspective",
+      "target": "src:2026-09-13/agenda",
+      "pack": "sources"
+    },
+    {
+      "id": "part_of:session:fundraising-meta-game:event:startup-summit-lisbon-2026",
+      "verb": "part_of",
+      "source": "session:fundraising-meta-game",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "sessions"
+    },
+    {
+      "id": "on_stage:session:fundraising-meta-game:stage:impact-stage",
+      "verb": "on_stage",
+      "source": "session:fundraising-meta-game",
+      "target": "stage:impact-stage",
+      "pack": "sessions"
+    },
+    {
+      "id": "attested_by:session:fundraising-meta-game:src:2026-09-13/agenda",
+      "verb": "attested_by",
+      "source": "session:fundraising-meta-game",
+      "target": "src:2026-09-13/agenda",
+      "pack": "sources"
+    },
+    {
+      "id": "part_of:session:ai-or-die:event:startup-summit-lisbon-2026",
+      "verb": "part_of",
+      "source": "session:ai-or-die",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "sessions"
+    },
+    {
+      "id": "on_stage:session:ai-or-die:stage:unicorn-stage",
+      "verb": "on_stage",
+      "source": "session:ai-or-die",
+      "target": "stage:unicorn-stage",
+      "pack": "sessions"
+    },
+    {
+      "id": "attested_by:session:ai-or-die:src:2026-09-13/agenda",
+      "verb": "attested_by",
+      "source": "session:ai-or-die",
+      "target": "src:2026-09-13/agenda",
+      "pack": "sources"
+    },
+    {
+      "id": "part_of:session:lunch-d1:event:startup-summit-lisbon-2026",
+      "verb": "part_of",
+      "source": "session:lunch-d1",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "sessions"
+    },
+    {
+      "id": "attested_by:session:lunch-d1:src:2026-09-13/agenda",
+      "verb": "attested_by",
+      "source": "session:lunch-d1",
+      "target": "src:2026-09-13/agenda",
+      "pack": "sources"
+    },
+    {
+      "id": "part_of:session:investor-office-hours:event:startup-summit-lisbon-2026",
+      "verb": "part_of",
+      "source": "session:investor-office-hours",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "sessions"
+    },
+    {
+      "id": "attested_by:session:investor-office-hours:src:2026-09-13/agenda",
+      "verb": "attested_by",
+      "source": "session:investor-office-hours",
+      "target": "src:2026-09-13/agenda",
+      "pack": "sources"
+    },
+    {
+      "id": "part_of:session:founder-social:event:startup-summit-lisbon-2026",
+      "verb": "part_of",
+      "source": "session:founder-social",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "sessions"
+    },
+    {
+      "id": "attested_by:session:founder-social:src:2026-09-13/agenda",
+      "verb": "attested_by",
+      "source": "session:founder-social",
+      "target": "src:2026-09-13/agenda",
+      "pack": "sources"
+    },
+    {
+      "id": "part_of:session:day-2-welcome:event:startup-summit-lisbon-2026",
+      "verb": "part_of",
+      "source": "session:day-2-welcome",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "sessions"
+    },
+    {
+      "id": "attested_by:session:day-2-welcome:src:2026-09-13/agenda",
+      "verb": "attested_by",
+      "source": "session:day-2-welcome",
+      "target": "src:2026-09-13/agenda",
+      "pack": "sources"
+    },
+    {
+      "id": "part_of:session:portuguese-unicorn-conversation:event:startup-summit-lisbon-2026",
+      "verb": "part_of",
+      "source": "session:portuguese-unicorn-conversation",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "sessions"
+    },
+    {
+      "id": "on_stage:session:portuguese-unicorn-conversation:stage:unicorn-stage",
+      "verb": "on_stage",
+      "source": "session:portuguese-unicorn-conversation",
+      "target": "stage:unicorn-stage",
+      "pack": "sessions"
+    },
+    {
+      "id": "attested_by:session:portuguese-unicorn-conversation:src:2026-09-13/agenda",
+      "verb": "attested_by",
+      "source": "session:portuguese-unicorn-conversation",
+      "target": "src:2026-09-13/agenda",
+      "pack": "sources"
+    },
+    {
+      "id": "part_of:session:what-i-built-with-ai:event:startup-summit-lisbon-2026",
+      "verb": "part_of",
+      "source": "session:what-i-built-with-ai",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "sessions"
+    },
+    {
+      "id": "on_stage:session:what-i-built-with-ai:stage:impact-stage",
+      "verb": "on_stage",
+      "source": "session:what-i-built-with-ai",
+      "target": "stage:impact-stage",
+      "pack": "sessions"
+    },
+    {
+      "id": "attested_by:session:what-i-built-with-ai:src:2026-09-13/agenda",
+      "verb": "attested_by",
+      "source": "session:what-i-built-with-ai",
+      "target": "src:2026-09-13/agenda",
+      "pack": "sources"
+    },
+    {
+      "id": "part_of:session:hardware-meets-software:event:startup-summit-lisbon-2026",
+      "verb": "part_of",
+      "source": "session:hardware-meets-software",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "sessions"
+    },
+    {
+      "id": "on_stage:session:hardware-meets-software:stage:impact-stage",
+      "verb": "on_stage",
+      "source": "session:hardware-meets-software",
+      "target": "stage:impact-stage",
+      "pack": "sessions"
+    },
+    {
+      "id": "attested_by:session:hardware-meets-software:src:2026-09-13/agenda",
+      "verb": "attested_by",
+      "source": "session:hardware-meets-software",
+      "target": "src:2026-09-13/agenda",
+      "pack": "sources"
+    },
+    {
+      "id": "part_of:session:speed-networking:event:startup-summit-lisbon-2026",
+      "verb": "part_of",
+      "source": "session:speed-networking",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "sessions"
+    },
+    {
+      "id": "attested_by:session:speed-networking:src:2026-09-13/agenda",
+      "verb": "attested_by",
+      "source": "session:speed-networking",
+      "target": "src:2026-09-13/agenda",
+      "pack": "sources"
+    },
+    {
+      "id": "part_of:session:closing-celebration:event:startup-summit-lisbon-2026",
+      "verb": "part_of",
+      "source": "session:closing-celebration",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "sessions"
+    },
+    {
+      "id": "attested_by:session:closing-celebration:src:2026-09-13/agenda",
+      "verb": "attested_by",
+      "source": "session:closing-celebration",
+      "target": "src:2026-09-13/agenda",
+      "pack": "sources"
+    },
+    {
+      "id": "captured_in:src:2026-09-08/index:snapshot:2026-09-08",
+      "verb": "captured_in",
+      "source": "src:2026-09-08/index",
+      "target": "snapshot:2026-09-08",
+      "pack": "sources"
+    },
+    {
+      "id": "captured_in:src:2026-09-08/agenda:snapshot:2026-09-08",
+      "verb": "captured_in",
+      "source": "src:2026-09-08/agenda",
+      "target": "snapshot:2026-09-08",
+      "pack": "sources"
+    },
+    {
+      "id": "captured_in:src:2026-09-08/speakers:snapshot:2026-09-08",
+      "verb": "captured_in",
+      "source": "src:2026-09-08/speakers",
+      "target": "snapshot:2026-09-08",
+      "pack": "sources"
+    },
+    {
+      "id": "captured_in:src:2026-09-08/sponsors:snapshot:2026-09-08",
+      "verb": "captured_in",
+      "source": "src:2026-09-08/sponsors",
+      "target": "snapshot:2026-09-08",
+      "pack": "sources"
+    },
+    {
+      "id": "captured_in:src:2026-09-08/ai-summary:snapshot:2026-09-08",
+      "verb": "captured_in",
+      "source": "src:2026-09-08/ai-summary",
+      "target": "snapshot:2026-09-08",
+      "pack": "sources"
+    },
+    {
+      "id": "captured_in:src:2026-09-13/index:snapshot:2026-09-13",
+      "verb": "captured_in",
+      "source": "src:2026-09-13/index",
+      "target": "snapshot:2026-09-13",
+      "pack": "sources"
+    },
+    {
+      "id": "captured_in:src:2026-09-13/agenda:snapshot:2026-09-13",
+      "verb": "captured_in",
+      "source": "src:2026-09-13/agenda",
+      "target": "snapshot:2026-09-13",
+      "pack": "sources"
+    },
+    {
+      "id": "captured_in:src:2026-09-13/speakers:snapshot:2026-09-13",
+      "verb": "captured_in",
+      "source": "src:2026-09-13/speakers",
+      "target": "snapshot:2026-09-13",
+      "pack": "sources"
+    },
+    {
+      "id": "captured_in:src:2026-09-13/sponsors:snapshot:2026-09-13",
+      "verb": "captured_in",
+      "source": "src:2026-09-13/sponsors",
+      "target": "snapshot:2026-09-13",
+      "pack": "sources"
+    },
+    {
+      "id": "captured_in:src:2026-09-13/ai-summary:snapshot:2026-09-13",
+      "verb": "captured_in",
+      "source": "src:2026-09-13/ai-summary",
+      "target": "snapshot:2026-09-13",
+      "pack": "sources"
+    },
+    {
+      "id": "captured_in:src:2026-09-13/tickets:snapshot:2026-09-13",
+      "verb": "captured_in",
+      "source": "src:2026-09-13/tickets",
+      "target": "snapshot:2026-09-13",
+      "pack": "sources"
+    },
+    {
+      "id": "captured_in:src:2026-09-13/location:snapshot:2026-09-13",
+      "verb": "captured_in",
+      "source": "src:2026-09-13/location",
+      "target": "snapshot:2026-09-13",
+      "pack": "sources"
+    },
+    {
+      "id": "captured_in:src:2026-09-13/faq:snapshot:2026-09-13",
+      "verb": "captured_in",
+      "source": "src:2026-09-13/faq",
+      "target": "snapshot:2026-09-13",
+      "pack": "sources"
+    },
+    {
+      "id": "captured_in:src:2026-09-13/what-to-expect:snapshot:2026-09-13",
+      "verb": "captured_in",
+      "source": "src:2026-09-13/what-to-expect",
+      "target": "snapshot:2026-09-13",
+      "pack": "sources"
+    },
+    {
+      "id": "captured_in:src:2026-09-13/why-attend:snapshot:2026-09-13",
+      "verb": "captured_in",
+      "source": "src:2026-09-13/why-attend",
+      "target": "snapshot:2026-09-13",
+      "pack": "sources"
+    },
+    {
+      "id": "captured_in:src:2026-09-13/startup-booths:snapshot:2026-09-13",
+      "verb": "captured_in",
+      "source": "src:2026-09-13/startup-booths",
+      "target": "snapshot:2026-09-13",
+      "pack": "sources"
+    },
+    {
+      "id": "captured_in:src:2026-09-13/llms.txt:snapshot:2026-09-13",
+      "verb": "captured_in",
+      "source": "src:2026-09-13/llms.txt",
+      "target": "snapshot:2026-09-13",
+      "pack": "sources"
+    },
+    {
+      "id": "captured_in:src:2026-09-13/coverage/portugalglobal-pitch-marathon:snapshot:2026-09-13",
+      "verb": "captured_in",
+      "source": "src:2026-09-13/coverage/portugalglobal-pitch-marathon",
+      "target": "snapshot:2026-09-13",
+      "pack": "sources"
+    },
+    {
+      "id": "captured_in:src:2026-09-13/coverage/pbn-guinness-record:snapshot:2026-09-13",
+      "verb": "captured_in",
+      "source": "src:2026-09-13/coverage/pbn-guinness-record",
+      "target": "snapshot:2026-09-13",
+      "pack": "sources"
+    },
+    {
+      "id": "captured_in:src:2026-09-13/coverage/scaleup-porto:snapshot:2026-09-13",
+      "verb": "captured_in",
+      "source": "src:2026-09-13/coverage/scaleup-porto",
+      "target": "snapshot:2026-09-13",
+      "pack": "sources"
+    },
+    {
+      "id": "captured_in:src:2026-09-13/coverage/startupevents-org:snapshot:2026-09-13",
+      "verb": "captured_in",
+      "source": "src:2026-09-13/coverage/startupevents-org",
+      "target": "snapshot:2026-09-13",
+      "pack": "sources"
+    },
+    {
+      "id": "captured_in:src:2026-09-13/coverage/startupmaphub:snapshot:2026-09-13",
+      "verb": "captured_in",
+      "source": "src:2026-09-13/coverage/startupmaphub",
+      "target": "snapshot:2026-09-13",
+      "pack": "sources"
+    },
+    {
+      "id": "captured_in:src:2026-09-13/coverage/eventbrite-sept:snapshot:2026-09-13",
+      "verb": "captured_in",
+      "source": "src:2026-09-13/coverage/eventbrite-sept",
+      "target": "snapshot:2026-09-13",
+      "pack": "sources"
+    },
+    {
+      "id": "captured_in:src:2026-09-13/coverage/summit-lisbon-tech-events:snapshot:2026-09-13",
+      "verb": "captured_in",
+      "source": "src:2026-09-13/coverage/summit-lisbon-tech-events",
+      "target": "snapshot:2026-09-13",
+      "pack": "sources"
+    },
+    {
+      "id": "present_in:person:cintia-costa:snapshot:2026-09-13",
+      "verb": "present_in",
+      "source": "person:cintia-costa",
+      "target": "snapshot:2026-09-13",
+      "pack": "changes"
+    },
+    {
+      "id": "absent_from:person:cintia-costa:snapshot:2026-09-08",
+      "verb": "absent_from",
+      "source": "person:cintia-costa",
+      "target": "snapshot:2026-09-08",
+      "pack": "changes"
+    },
+    {
+      "id": "present_in:person:ed-chandler:snapshot:2026-09-13",
+      "verb": "present_in",
+      "source": "person:ed-chandler",
+      "target": "snapshot:2026-09-13",
+      "pack": "changes"
+    },
+    {
+      "id": "absent_from:person:ed-chandler:snapshot:2026-09-08",
+      "verb": "absent_from",
+      "source": "person:ed-chandler",
+      "target": "snapshot:2026-09-08",
+      "pack": "changes"
+    },
+    {
+      "id": "present_in:person:olesia-rykova:snapshot:2026-09-13",
+      "verb": "present_in",
+      "source": "person:olesia-rykova",
+      "target": "snapshot:2026-09-13",
+      "pack": "changes"
+    },
+    {
+      "id": "absent_from:person:olesia-rykova:snapshot:2026-09-08",
+      "verb": "absent_from",
+      "source": "person:olesia-rykova",
+      "target": "snapshot:2026-09-08",
+      "pack": "changes"
+    },
+    {
+      "id": "present_in:person:olivia-page:snapshot:2026-09-13",
+      "verb": "present_in",
+      "source": "person:olivia-page",
+      "target": "snapshot:2026-09-13",
+      "pack": "changes"
+    },
+    {
+      "id": "absent_from:person:olivia-page:snapshot:2026-09-08",
+      "verb": "absent_from",
+      "source": "person:olivia-page",
+      "target": "snapshot:2026-09-08",
+      "pack": "changes"
+    },
+    {
+      "id": "present_in:person:ricardo:snapshot:2026-09-13",
+      "verb": "present_in",
+      "source": "person:ricardo",
+      "target": "snapshot:2026-09-13",
+      "pack": "changes"
+    },
+    {
+      "id": "absent_from:person:ricardo:snapshot:2026-09-08",
+      "verb": "absent_from",
+      "source": "person:ricardo",
+      "target": "snapshot:2026-09-08",
+      "pack": "changes"
+    },
+    {
+      "id": "present_in:person:kambis-kohansal-vajargah:snapshot:2026-09-08",
+      "verb": "present_in",
+      "source": "person:kambis-kohansal-vajargah",
+      "target": "snapshot:2026-09-08",
+      "pack": "changes"
+    },
+    {
+      "id": "absent_from:person:kambis-kohansal-vajargah:snapshot:2026-09-13",
+      "verb": "absent_from",
+      "source": "person:kambis-kohansal-vajargah",
+      "target": "snapshot:2026-09-13",
+      "pack": "changes"
+    },
+    {
+      "id": "listed_under:person:kambis-kohansal-vajargah:org:austrian-federal-economic-chamber",
+      "verb": "listed_under",
+      "source": "person:kambis-kohansal-vajargah",
+      "target": "org:austrian-federal-economic-chamber",
+      "pack": "changes"
+    },
+    {
+      "id": "covers:coverage:portugalglobal-pitch-marathon:event:startup-summit-lisbon-2026",
+      "verb": "covers",
+      "source": "coverage:portugalglobal-pitch-marathon",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "coverage"
+    },
+    {
+      "id": "published_by:coverage:portugalglobal-pitch-marathon:org:aicep-portugal-global",
+      "verb": "published_by",
+      "source": "coverage:portugalglobal-pitch-marathon",
+      "target": "org:aicep-portugal-global",
+      "pack": "coverage"
+    },
+    {
+      "id": "covers:coverage:pbn-guinness-record:event:startup-summit-lisbon-2026",
+      "verb": "covers",
+      "source": "coverage:pbn-guinness-record",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "coverage"
+    },
+    {
+      "id": "published_by:coverage:pbn-guinness-record:org:portugal-business-news",
+      "verb": "published_by",
+      "source": "coverage:pbn-guinness-record",
+      "target": "org:portugal-business-news",
+      "pack": "coverage"
+    },
+    {
+      "id": "covers:coverage:scaleup-porto:event:startup-summit-lisbon-2026",
+      "verb": "covers",
+      "source": "coverage:scaleup-porto",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "coverage"
+    },
+    {
+      "id": "published_by:coverage:scaleup-porto:org:scaleup-porto",
+      "verb": "published_by",
+      "source": "coverage:scaleup-porto",
+      "target": "org:scaleup-porto",
+      "pack": "coverage"
+    },
+    {
+      "id": "covers:coverage:startupevents-org:event:startup-summit-lisbon-2026",
+      "verb": "covers",
+      "source": "coverage:startupevents-org",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "coverage"
+    },
+    {
+      "id": "published_by:coverage:startupevents-org:org:startupevents-org",
+      "verb": "published_by",
+      "source": "coverage:startupevents-org",
+      "target": "org:startupevents-org",
+      "pack": "coverage"
+    },
+    {
+      "id": "covers:coverage:startupmaphub:event:startup-summit-lisbon-2026",
+      "verb": "covers",
+      "source": "coverage:startupmaphub",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "coverage"
+    },
+    {
+      "id": "published_by:coverage:startupmaphub:org:startup-map-hub",
+      "verb": "published_by",
+      "source": "coverage:startupmaphub",
+      "target": "org:startup-map-hub",
+      "pack": "coverage"
+    },
+    {
+      "id": "covers:coverage:eventbrite-sept:event:startup-summit-lisbon-2026",
+      "verb": "covers",
+      "source": "coverage:eventbrite-sept",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "coverage"
+    },
+    {
+      "id": "published_by:coverage:eventbrite-sept:org:eventbrite",
+      "verb": "published_by",
+      "source": "coverage:eventbrite-sept",
+      "target": "org:eventbrite",
+      "pack": "coverage"
+    },
+    {
+      "id": "covers:coverage:summit-lisbon-tech-events:event:startup-summit-lisbon-2026",
+      "verb": "covers",
+      "source": "coverage:summit-lisbon-tech-events",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "coverage"
+    },
+    {
+      "id": "published_by:coverage:summit-lisbon-tech-events:org:startup-summit-the-event-itself",
+      "verb": "published_by",
+      "source": "coverage:summit-lisbon-tech-events",
+      "target": "org:startup-summit-the-event-itself",
+      "pack": "coverage"
+    },
+    {
+      "id": "reports:story:a-record-attempt-the-agenda-does-not-mention:event:startup-summit-lisbon-2026",
+      "verb": "reports",
+      "source": "story:a-record-attempt-the-agenda-does-not-mention",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "stories"
+    },
+    {
+      "id": "stands_on:story:a-record-attempt-the-agenda-does-not-mention:src:2026-09-13/coverage/portugalglobal-pitch-marathon",
+      "verb": "stands_on",
+      "source": "story:a-record-attempt-the-agenda-does-not-mention",
+      "target": "src:2026-09-13/coverage/portugalglobal-pitch-marathon",
+      "pack": "stories"
+    },
+    {
+      "id": "stands_on:story:a-record-attempt-the-agenda-does-not-mention:src:2026-09-13/coverage/pbn-guinness-record",
+      "verb": "stands_on",
+      "source": "story:a-record-attempt-the-agenda-does-not-mention",
+      "target": "src:2026-09-13/coverage/pbn-guinness-record",
+      "pack": "stories"
+    },
+    {
+      "id": "stands_on:story:a-record-attempt-the-agenda-does-not-mention:src:2026-09-13/agenda",
+      "verb": "stands_on",
+      "source": "story:a-record-attempt-the-agenda-does-not-mention",
+      "target": "src:2026-09-13/agenda",
+      "pack": "stories"
+    },
+    {
+      "id": "reports:story:five-names-arrived-and-one-left:event:startup-summit-lisbon-2026",
+      "verb": "reports",
+      "source": "story:five-names-arrived-and-one-left",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "stories"
+    },
+    {
+      "id": "stands_on:story:five-names-arrived-and-one-left:src:2026-09-08/speakers",
+      "verb": "stands_on",
+      "source": "story:five-names-arrived-and-one-left",
+      "target": "src:2026-09-08/speakers",
+      "pack": "stories"
+    },
+    {
+      "id": "stands_on:story:five-names-arrived-and-one-left:src:2026-09-13/speakers",
+      "verb": "stands_on",
+      "source": "story:five-names-arrived-and-one-left",
+      "target": "src:2026-09-13/speakers",
+      "pack": "stories"
+    },
+    {
+      "id": "stands_on:story:five-names-arrived-and-one-left:src:2026-09-13/index",
+      "verb": "stands_on",
+      "source": "story:five-names-arrived-and-one-left",
+      "target": "src:2026-09-13/index",
+      "pack": "stories"
+    },
+    {
+      "id": "reports:story:two-names-for-three-stages:event:startup-summit-lisbon-2026",
+      "verb": "reports",
+      "source": "story:two-names-for-three-stages",
+      "target": "event:startup-summit-lisbon-2026",
+      "pack": "stories"
+    },
+    {
+      "id": "stands_on:story:two-names-for-three-stages:src:2026-09-13/agenda",
+      "verb": "stands_on",
+      "source": "story:two-names-for-three-stages",
+      "target": "src:2026-09-13/agenda",
+      "pack": "stories"
+    },
+    {
+      "id": "stands_on:story:two-names-for-three-stages:src:2026-09-13/ai-summary",
+      "verb": "stands_on",
+      "source": "story:two-names-for-three-stages",
+      "target": "src:2026-09-13/ai-summary",
+      "pack": "stories"
+    },
+    {
+      "id": "stands_on:story:two-names-for-three-stages:src:2026-09-13/sponsors",
+      "verb": "stands_on",
+      "source": "story:two-names-for-three-stages",
+      "target": "src:2026-09-13/sponsors",
+      "pack": "stories"
+    },
+    {
+      "id": "stands_on:story:two-names-for-three-stages:src:2026-09-13/llms.txt",
+      "verb": "stands_on",
+      "source": "story:two-names-for-three-stages",
+      "target": "src:2026-09-13/llms.txt",
+      "pack": "stories"
+    }
+  ]
+}

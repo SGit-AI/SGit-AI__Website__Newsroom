@@ -50,6 +50,14 @@ CHECKS = load("checks.json")
 TEAM = load("team.json")
 STORIES = load("stories.json")
 NOTICE = load("notice.json")
+import graph as graphmod  # noqa: E402 — same directory; ontology + graph + manifest
+import pages              # noqa: E402 — the front page, the graph page, the explorer
+graphmod.main()
+GRAPH = load("graph.json")
+ONTOLOGY = load("ontology.json")
+SESSIONS = load("sessions.json")
+COVERAGE = load("coverage.json")
+MANIFEST = load("manifest.json")
 
 VER = STORIES["section_version"]
 SRC = {s["id"]: s for s in SOURCES["sources"]}
@@ -60,6 +68,8 @@ LATEST = SOURCES["snapshots"][-1]
 # explicit that the switch has not been thrown.
 LABELS = {
     "wire":    {"en": "The wire",        "pt": "O fio"},
+    "graph":   {"en": "The graph",       "pt": "O grafo"},
+    "explorer": {"en": "The files",      "pt": "Os ficheiros"},
     "summit":  {"en": "The Summit",      "pt": "A cimeira"},
     "people":  {"en": "Who is speaking", "pt": "Quem fala"},
     "orgs":    {"en": "The organisations", "pt": "As organizações"},
@@ -171,6 +181,8 @@ def page(rel, title, desc, body, crumb):
 
 def masthead(up, here=""):
     nav = [("index.html", LABELS["wire"]["en"]),
+           ("graph.html", LABELS["graph"]["en"]),
+           ("explorer.html", LABELS["explorer"]["en"]),
            ("summit/index.html", LABELS["summit"]["en"]),
            ("summit/people.html", LABELS["people"]["en"]),
            ("summit/orgs.html", LABELS["orgs"]["en"]),
@@ -247,92 +259,6 @@ def days_to_doors():
 
 
 # ------------------------------------------------------------- the pages ---
-def build_index():
-    up = ""
-    ch = CHANGES["changes"][-1] if CHANGES["changes"] else None
-    cards = "".join(
-        '<div class="card">'
-        f'<span class="tag">{esc(st["kicker"])}</span>'
-        f'<h3><a href="stories/{st["slug"]}.html">{esc(st["title"])}</a></h3>'
-        f'<p>{esc(st["standfirst"])}</p>'
-        f'<p class="dim small" style="margin-top:.6rem">{esc(st["published"])} &middot; '
-        f'{len(st["stands_on"])} source{"s" if len(st["stands_on"]) != 1 else ""} &middot; '
-        f'{pill("primary")}</p></div>' for st in STORIES["stories"])
-
-    body = f"""{masthead(up, "index.html")}
-<h1>{esc(STORIES["masthead"])}</h1>
-<p class="lead">{esc(STORIES["beat"])} The first beat is
-<a href="summit/index.html">Startup Summit Lisbon 2026</a>, which opens in
-<b>{days_to_doors()} days</b>. <b>Every claim on this section walks back to a hashed copy of
-somebody else&rsquo;s page.</b></p>
-
-{disclaimer(up)}
-
-<div class="proof">
-  <div class="n"><b>{PEOPLE["count"]}</b><span>speakers on the list</span></div>
-  <div class="n"><b>{ORGS["count"]}</b><span>organisations behind them</span></div>
-  <div class="n"><b>{SOURCES["count"]}</b><span>frozen, hashed source files</span></div>
-  <div class="n"><b>{len(SOURCES["snapshots"])}</b><span>snapshots, {days_to_doors()} days to doors</span></div>
-</div>
-
-<h2 id="stories">The wire</h2>
-<div class="cards">{cards}</div>
-
-<h2 id="what">What this is</h2>
-<p>A publication mapping the Portuguese startup ecosystem &mdash; companies, founders,
-investors, institutions, events &mdash; on a graph built from primary sources that have been
-frozen and hashed. It is scoped the way
-<a href="../mvps/portugal.html">the 12 May 2026 brief</a> argued a first instance should be:</p>
-<div class="claim">The Portuguese GenAI scene is small enough to map comprehensively and large
-enough to be interesting.</div>
-<p>An event is that criterion in miniature. A conference that publishes its own speaker list
-has a <b>closeable</b> entity graph: you can name every speaker, every organisation behind
-them, every stage and every session, and then keep that map current as it moves. So the first
-beat is one event, and the map is finished rather than sampled.</p>
-
-<h2 id="different">What is different here</h2>
-<p>This site already runs <a href="../governance/index.html">The Governance Wire</a>, and the
-two publications are deliberately not the same shape:</p>
-<div class="tablewrap"><table>
-  <thead><tr><th></th><th>The Governance Wire</th><th>Portugal Startups</th></tr></thead>
-  <tbody>
-    <tr><td>Sources</td><td>{pill("secondary")} nothing frozen or hashed</td>
-        <td>{pill("primary")} every page frozen and hashed</td></tr>
-    <tr><td>Human review</td><td><b style="color:#b91c1c">None</b> &mdash; deliberately</td>
-        <td><b>{esc(TEAM["editor_of_record"]["name"])}</b>, named editor of record</td></tr>
-    <tr><td>Subjects</td><td>Regulatory texts and bodies</td>
-        <td><b>Named people and named companies</b> &mdash; which is why the review exists</td></tr>
-    <tr><td>The blocked door</td><td><code>frozen</code> &mdash; never passed by anything</td>
-        <td><b>Open.</b> This is the ingestion path that section specifies and cannot run</td></tr>
-  </tbody>
-</table></div>
-<p>The second row is the important one. A publication that names individuals in a small
-ecosystem, where everyone will read what is written about them and many will be in the same
-room, should not publish unread. <a href="team.html">Open question 5 of the original brief
-&mdash; who is the editor of record &mdash; is answered here &rarr;</a></p>
-
-{f'''<h2 id="moving">The list is moving</h2>
-<p>Between the two snapshots this section holds, the published speaker list went from
-<b>{ch["count_from"]} to {ch["count_to"]}</b>: {len(ch["added"])} names added and
-{len(ch["removed"])} removed, in {days_to_doors()} days before the doors open. Both copies are
-in this repository and both are hashed, so the diff is checkable rather than asserted.
-<a href="summit/changes.html">What changed, name by name &rarr;</a></p>''' if ch else ""}
-
-{agent_block(
-    "A publication about the Portuguese startup ecosystem, first beat Startup Summit Lisbon "
-    "2026. <b>Sources here are <code>primary</code>:</b> every page was fetched, frozen to "
-    "<code>/portugal/sources/frozen/&lt;date&gt;/</code> and hashed with SHA-256, and the "
-    "register at <code>/portugal/data/sources.json</code> carries every hash. Machine surfaces: "
-    "<code>people.json</code>, <code>orgs.json</code>, <code>event.json</code>, "
-    "<code>changes.json</code>, <code>checks.json</code>. This publication reports what the "
-    "event has published about itself and does not assess it. Speaker biographies are "
-    "deliberately NOT reproduced &mdash; follow the speaker page link on each node.")}
-"""
-    return write("index.html", page("index.html", STORIES["masthead"],
-                                    "Mapping the Portuguese startup ecosystem from primary sources that are frozen and hashed. First beat: Startup Summit Lisbon 2026.",
-                                    body, '<a href="../index.html">newsroom.sgit.ai</a> / portugal'))
-
-
 def build_summit():
     up = "../"
     e = EVENT
@@ -712,20 +638,21 @@ verify any claim on this section:</p>
 &mdash; it is the finding.</b> A source that moved under a claim is what
 <a href="summit/changes.html">the changes page</a> exists to catch.</p>
 
-<h2 id="scope">One publisher, and what that costs</h2>
-<p>Every source in this register belongs to <b>the event itself</b>. That is enough to report
-what the event says about itself, which is all this section currently claims to do. It is
-nowhere near enough to report on the Portuguese startup ecosystem: there is no company
-registry, no funding record, no institutional source and no second account of anything.
-<a href="about.html">The limits &rarr;</a></p>
+<h2 id="scope">Two kinds of publisher, and what that costs</h2>
+<p>Every source in this register is either <b>the event&rsquo;s own site</b> or <b>a third-party
+page about the event</b> &mdash; {COVERAGE["count"]} of those, from {len({c["publisher"] for c in COVERAGE["items"]})}
+publishers, each frozen and hashed before it was cited. That is enough to report what the
+event says about itself, what the press says about it, and where the two differ. It is nowhere
+near enough to report on the Portuguese startup ecosystem: there is no company registry, no
+funding record and no institutional source. <a href="about.html">The limits &rarr;</a></p>
 
 {agent_block(
     f"{SOURCES['count']} source files across {len(SOURCES['snapshots'])} dated snapshots, every "
     "one frozen in this repository and hashed. The register at "
     "<code>/portugal/data/sources.json</code> carries the SHA-256, byte count and retrieval "
-    "timestamp of each. <b>All sources have one publisher — the event.</b> There is no "
-    "independent corroboration of anything on this section, which is a limit on what it can "
-    "claim, and it claims only to report what the event published about itself.")}
+    "timestamp of each. Sources are of two kinds: the event's own pages, and third-party pages "
+    "ABOUT the event (see <code>coverage.json</code>). No source is a registry, funding record "
+    "or institutional dataset, so nothing here describes the ecosystem beyond this one event.")}
 
 <div class="pagenav">
   <a href="summit/changes.html">&larr; What changed</a>
@@ -1123,8 +1050,7 @@ def build_about():
     ed = TEAM["editor_of_record"]
     body = f"""{masthead(up, "about.html")}
 <h1>About, and the limits</h1>
-<p class="lead"><b>Portugal Startups is a beta with one beat and one publisher in its source
-register.</b> It does the thing this network argues for &mdash; primary sources, frozen and
+<p class="lead"><b>Portugal Startups is a beta with one beat and no registry behind it.</b> It does the thing this network argues for &mdash; primary sources, frozen and
 hashed &mdash; and it does it over a very small piece of the world. This page is the list of
 everything a reader should hold against it.</p>
 
@@ -1138,11 +1064,13 @@ This publication is a finding aid, not an authority.</div>
 
 <h2 id="limits">The limits, worst first</h2>
 <div class="ops">
-  <div class="op"><b>1 &middot; Every source has the same publisher</b>
-    <p>All {SOURCES["count"]} frozen files come from the event&rsquo;s own site. There is no
-    company registry, no funding record, no institutional source, and <b>no second account of
-    anything</b>. That is enough to report what the event says about itself, which is all this
-    section claims to do. It is nowhere near enough to report on an ecosystem.</p></div>
+  <div class="op"><b>1 &middot; Two kinds of publisher, and neither is a registry</b>
+    <p>{SOURCES["count"]} frozen files: the event&rsquo;s own pages, and {COVERAGE["count"]}
+    pages by other publishers about the event. That is enough to report what the event says
+    about itself and what the press says about it, and to notice where they differ. It is
+    nowhere near enough to report on an ecosystem: there is no company registry, no funding
+    record and no institutional source, and every third-party page here is <em>about the
+    event</em> rather than about anything the event does not itself describe.</p></div>
   <div class="op"><b>2 &middot; One event is not a beat</b>
     <p>The original brief scoped a country. This is a conference. The scoping argument holds
     &mdash; a closeable graph &mdash; but a publication that stops when the doors close on
@@ -1185,17 +1113,19 @@ This publication is a finding aid, not an authority.</div>
 lifted out whole &mdash; its own data, frozen sources, generator and gate. It is built from
 <a href="../mvps/portugal.html">the 12 May 2026 briefs</a>, which are the documents to read for
 why any of this is shaped the way it is, and which this section is the first attempt to
-actually run.</p>
+actually run. <b>The commissioning brief for what comes next</b> &mdash; a natively Portuguese
+newsroom at <code>pt.newsroom.sgit.ai</code>, written for the agent that will build it &mdash; is
+<a href="../documents/pt-newsroom.html">here</a>.</p>
 <p>The next three things, in order: a second publisher in the register so something can be
 corroborated; session-to-speaker joins so the graph answers &ldquo;who is on which
 stage&rdquo;; and a post-event snapshot, because <b>the most valuable copy of this list will be
 the one taken the day after it stops being updated</b>.</p>
 
 {agent_block(
-    "<b>Beta. One beat. One publisher in the source register. No legal review. Nothing in "
+    "<b>Beta. One beat. No registry or funding source. No legal review. Nothing in "
     "Portuguese.</b> Sources are primary, frozen and hashed, which is the one strong claim this "
-    "section makes — but every one of them is the event's own page, so nothing here is "
-    "corroborated by an independent source. It reports what the event published about itself, "
+    "section makes — the event's own pages plus third-party pages about the event, none of "
+    "which describes the ecosystem beyond this one event. It reports what the event published about itself, "
     "assesses nobody, and gives no reason for any absence from a published list. The speaker "
     "list is one organiser's selection, not a census of the Portuguese ecosystem.")}
 
@@ -1206,7 +1136,7 @@ the one taken the day after it stops being updated</b>.</p>
 """
     return write("about.html", page(
         "about.html", "About, and the limits",
-        "Beta, one beat, one publisher in the source register, no legal review, nothing in Portuguese. Everything a reader should hold against this publication.",
+        "Beta, one beat, no registry behind it, no legal review, nothing in Portuguese. Everything a reader should hold against this publication.",
         body, '<a href="../index.html">newsroom.sgit.ai</a> / <a href="index.html">portugal</a> / about'))
 
 
@@ -1267,9 +1197,10 @@ claim against the file rather than against the live site.</p>
 
 
 def main():
-    w = [build_index(), build_summit(), build_people(), build_orgs(), build_changes(),
-         build_sources(), build_checks(), build_method(), build_team(), build_notice(),
-         build_about()]
+    B = globals()
+    w = [pages.build_index(B), pages.build_graph_page(B), pages.build_explorer(B),
+         build_summit(), build_people(), build_orgs(), build_changes(), build_sources(),
+         build_checks(), build_method(), build_team(), build_notice(), build_about()]
     w += build_role_pages()
     w += [build_story(s) for s in STORIES["stories"]]
     print(f"portugal build: v{VER} — {len(w)} page(s)")

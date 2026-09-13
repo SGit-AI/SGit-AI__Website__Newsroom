@@ -6,7 +6,7 @@
 > that accumulates evidence, perspectives and confidence; every article, translation and
 > infographic is a projection of it. Sell the graph, not the paragraph.
 
-Site version: v0.3.1 (13 September 2026). Published by the sgit project, which is building
+Site version: v0.3.2 (13 September 2026). Published by the sgit project, which is building
 the stack this site argues for — participant disclosure at /about/participant.html.
 Site content CC BY 4.0; the republished library material is CC0 1.0 Universal at source
 (docs.diniscruz.ai) — state the source licence per page.
@@ -90,6 +90,16 @@ It is a beta with no human editorial review and no legal review.
   This is the fetch-freeze-hash path /governance/ specifies and cannot run.
   It also has a NAMED HUMAN EDITOR OF RECORD (Dinis Cruz) who reviews every page before it
   publishes, because this beat is about named people and named companies.
+  - /portugal/graph.html — THE GRAPH: 191 nodes / 294 edges — the event, 64 speakers, 61 derived
+    organisations, 16 sessions on 3 stages, 24 frozen sources across 2 snapshots, 7 pieces of
+    press coverage, our stories. Every edge is a verb with a named inverse IN ENGLISH AND
+    PORTUGUESE (ontology.json), so a path reads as a sentence either way. Nodes arrive in PACKS
+    the reader switches on block by block. The page publishes window.__graph (read + view
+    methods, no writes) after a tool:ready event, the same convention as graphs.sgit.ai's
+    universe reader. Fetch /portugal/data/graph.json and /portugal/data/ontology.json directly
+  - /portugal/explorer.html — THE FILES: every file the section is built from, from
+    /portugal/data/manifest.json with size and SHA-256, rendered / as a graph / raw. Frozen
+    third-party pages are listed and hashed but never rendered
   - /portugal/summit/index.html — the event as it describes itself. Distinguish TARGETS from
     COUNTS: the event's own wording is "targeting 2,000+" attendees and "150+ speakers planned",
     while its published list names 64. Do not report a target as a result.
@@ -100,8 +110,9 @@ It is a beta with no human editorial review and no legal review.
   - /portugal/summit/changes.html — the same pages frozen twice and diffed: 5 speakers added and
     1 removed between 8 and 13 September. REMOVALS CARRY NO REASON and none may be inferred
   - /portugal/sources.html — the register: every frozen file with its SHA-256, byte count and
-    retrieval time, and how to check any claim against it. All sources have ONE publisher, the
-    event itself, so nothing on this section is independently corroborated
+    retrieval time, and how to check any claim against it. Two kinds of source: the event's own
+    pages, and third-party pages ABOUT the event — none a registry or funding dataset, so nothing
+    here describes the ecosystem beyond this one event
   - /portugal/checks.html — what re-reading established, including two different sets of stage
     names published on the same site, and the claims that cannot be verified from the source
   - /portugal/method.html — fetch, freeze, hash, extract, diff
@@ -114,7 +125,7 @@ It is a beta with no human editorial review and no legal review.
     the build if one appears in the data. Removal on request is unconditional and no reason is
     asked for. Carries a Portuguese-language summary. Not legal advice
   - /portugal/about.html — beta, one beat, one publisher, no legal review, nothing in Portuguese
-  - /portugal/data/{event,people,orgs,sources,changes,checks,team,stories}.json — machine surfaces
+  - /portugal/data/{graph,ontology,manifest,coverage,sessions,event,people,orgs,sources,changes,checks,team,stories,notice}.json — machine surfaces
   - /portugal/sources/frozen/<date>/<page>.snapshot — the frozen byte copies themselves. Stored
     with a .snapshot extension because they are EVIDENCE, not pages of this site: unmodified
     bytes of another organisation's pages, held so a claim can be verified, never republished

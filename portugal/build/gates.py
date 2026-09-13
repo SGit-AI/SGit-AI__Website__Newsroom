@@ -41,6 +41,10 @@ checks = load("checks.json")
 team = load("team.json")
 stories = load("stories.json")
 notice = load("notice.json")
+sessions = load("sessions.json")
+coverage = load("coverage.json")
+ontology = load("ontology.json")
+graph = load("graph.json")
 
 # Our own generated pages only. The frozen copies under sources/ are somebody else's
 # bytes held as evidence — they carry no beta notice and never will, and checking them
@@ -247,6 +251,86 @@ for rel in NAMES_PEOPLE:
                       f'notice — Article 14(5)(b) is earned by making the information findable')
 if not (SEC / "notice.html").exists():
     errors.append("section: notice.html was not generated, but pages name individuals")
+
+# --- 13. the graph conforms to its ontology --------------------------------------
+# Inherited grammar: every edge is a verb with a distinct named inverse; no banned verb;
+# every node is a declared type and names a frozen source. A plausible edge is
+# indistinguishable from a true one once it is in the file, so the file is checked.
+verbs = {e["verb"] for e in ontology["edges"]}
+inverses = {e["inverse"] for e in ontology["edges"]}
+banned = {b["verb"] for b in ontology["banned"]}
+types = {t["id"] for t in ontology["node_types"]}
+for e in ontology["edges"]:
+    if e["verb"] == e["inverse"]:
+        errors.append(f'ontology: "{e["verb"]}" is its own inverse — symmetric edges are banned')
+    if not e.get("pt", {}).get("verb") or not e.get("pt", {}).get("inverse"):
+        errors.append(f'ontology: "{e["verb"]}" has no Portuguese — every verb carries pt from day one')
+    if e["verb"] in banned:
+        errors.append(f'ontology: "{e["verb"]}" is both declared and banned')
+for t in ontology["node_types"]:
+    if not t.get("pt"):
+        errors.append(f'ontology: type "{t["id"]}" has no Portuguese label')
+gnode = {n["id"]: n for n in graph["nodes"]}
+domain_range = {(e["verb"], e["domain"], e["range"]) for e in ontology["edges"]}
+for n in graph["nodes"]:
+    if n["type"] not in types:
+        errors.append(f'graph: node {n["id"]} has unknown type "{n["type"]}"')
+    if not n.get("source"):
+        errors.append(f'graph: node {n["id"]} names no source — a node with no way back to bytes is a drawing')
+    elif n["source"] not in src_by_id:
+        errors.append(f'graph: node {n["id"]} names source "{n["source"]}", which is not in the register')
+for e in graph["edges"]:
+    if e["verb"] in banned:
+        errors.append(f'graph: banned verb "{e["verb"]}" is in use')
+    elif e["verb"] not in verbs:
+        hint = " (that is an inverse; edges are stored forwards)" if e["verb"] in inverses else ""
+        errors.append(f'graph: edge verb "{e["verb"]}" is not in the ontology{hint}')
+    if e["source"] not in gnode or e["target"] not in gnode:
+        errors.append(f'graph: edge {e["id"]} has an endpoint that is not a node')
+    elif (e["verb"], gnode[e["source"]]["type"], gnode[e["target"]]["type"]) not in domain_range \
+            and e["verb"] in verbs:
+        errors.append(f'graph: {e["verb"]} from {gnode[e["source"]]["type"]} to {gnode[e["target"]]["type"]} '
+                      f'is outside the verb\'s declared domain/range')
+if graph["counts"]["nodes"] != len(graph["nodes"]) or graph["counts"]["edges"] != len(graph["edges"]):
+    errors.append("graph: counts disagree with the lists")
+for pk in graph["packs"]:
+    if pk["nodes"] != sum(1 for n in graph["nodes"] if n["pack"] == pk["id"]):
+        errors.append(f'graph: pack "{pk["id"]}" count is stale')
+# every person on the current list is in the graph, and every graph person is either on the
+# list or explicitly marked as no longer listed — nobody appears by accident
+listed = {"person:" + p["id"] for p in people["people"]}
+for n in graph["nodes"]:
+    if n["type"] == "Person" and n["id"] not in listed and not n.get("no_longer_listed"):
+        errors.append(f'graph: {n["id"]} is not on the published list and is not marked no_longer_listed')
+    if n["type"] == "Person" and n.get("no_longer_listed") and n.get("reason") is not None:
+        errors.append(f'graph: {n["id"]} carries a reason for leaving the list — the source states none')
+
+# --- 14. every session title is in the frozen agenda, verbatim ---------------------
+# sessions.json is transcribed by hand from the frozen agenda. A transcription is a claim,
+# so it is checked against the bytes it claims to come from.
+agenda_f = SEC / "sources" / "frozen" / sessions["source"].replace("/", "/", 1).split("/")[0] / "agenda.snapshot"
+if agenda_f.exists():
+    import html as _html
+    at = " ".join(_html.unescape(re.sub(r"<[^>]+>", " ", agenda_f.read_text(errors="replace"))).split())
+    for sn in sessions["sessions"]:
+        if sn["title"] not in at:
+            errors.append(f'sessions: "{sn["title"]}" is not in the frozen agenda verbatim — the transcription drifted')
+        if sn["stage"] and sn["stage"] not in {st["id"] for st in sessions["stages"]}:
+            errors.append(f'sessions: "{sn["id"]}" is on stage "{sn["stage"]}", which is not declared')
+else:
+    errors.append(f"sessions: the agenda snapshot {agenda_f} is missing")
+
+# --- 15. coverage is frozen before it is cited, and never reproduced ----------------
+for c in coverage["items"]:
+    if c["source"] not in src_by_id:
+        errors.append(f'coverage: "{c["id"]}" cites source "{c["source"]}", which is not in the register')
+    if len(c.get("what_it_says", "")) > 600:
+        errors.append(f'coverage: "{c["id"]}" summary is {len(c["what_it_says"])} chars — that is a reproduction, not a summary')
+    if re.search(r'["“][^"”]{60,}["”]', c.get("what_it_says", "")):
+        errors.append(f'coverage: "{c["id"]}" summary contains a long quotation — link, do not reproduce')
+for x in coverage.get("excluded", []):
+    if any(s["url"] == x["url"] for s in sources["sources"]):
+        errors.append(f'coverage: "{x["id"]}" is excluded and also in the register')
 
 # --- report -------------------------------------------------------------------
 if errors:
