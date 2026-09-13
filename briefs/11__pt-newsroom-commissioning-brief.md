@@ -347,7 +347,9 @@ Four home-page directions were drafted as mockups on 13 September 2026 — a cla
 broadsheet, a dense capture-ordered ledger, a dark graph-first cover, and a magazine with the
 claims underlined in the text — and the editor of record chose **the broadsheet**. It is
 recorded here so that you inherit a decision rather than a question. The other three exist
-and were not chosen; do not rebuild them.
+and were not chosen; do not rebuild them. All four are archived at full size, with the
+motivation and trade-off of each, at
+[newsroom.sgit.ai/pt-newsroom/directions.html](https://newsroom.sgit.ai/pt-newsroom/directions.html).
 
 ![The chosen home page at 1440px: a warm-paper broadsheet with a dateline, a typographic masthead, eight sections, a lead story whose sources are chips, two secondaries, the national record in preparation, the graph with a path read aloud, the week's programme, what the press says, how it is made, and a colophon](../assets/img/pt-newsroom-home-a-1440.png)
 

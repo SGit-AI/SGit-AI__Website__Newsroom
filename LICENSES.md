@@ -26,6 +26,11 @@ content it republishes.
 | `assets/vendor/oxigraph/web.js`, `assets/vendor/oxigraph/web_bg.wasm` | [Oxigraph](https://github.com/oxigraph/oxigraph) v0.5.11, web build — a SPARQL 1.1 store compiled to WebAssembly, the engine behind `/databases/graph.html` | MIT OR Apache-2.0, © Oxigraph contributors |
 | `assets/fonts/newsreader-*.woff2`, `assets/fonts.css` | [Newsreader](https://github.com/productiontype/Newsreader) by Production Type — the serif of the pt.newsroom home-page design at `/pt-newsroom/`; latin subset, the woff2 files Google Fonts serves | SIL Open Font License 1.1, © 2020 The Newsreader Project Authors |
 | `assets/fonts/plex-mono-*.woff2`, `assets/fonts.css` | [IBM Plex Mono](https://github.com/IBM/plex) by IBM — the monospace of the same design; latin subset | SIL Open Font License 1.1, © 2017 IBM Corp. |
+| `assets/fonts/archivo-variable.woff2` | [Archivo](https://github.com/Omnibus-Type/Archivo) by Omnibus-Type — direction B of the archived pt.newsroom designs at `/pt-newsroom/directions.html` | SIL Open Font License 1.1 |
+| `assets/fonts/jetbrains-mono-variable.woff2` | [JetBrains Mono](https://github.com/JetBrains/JetBrainsMono) by JetBrains — direction B | SIL Open Font License 1.1, © 2020 The JetBrains Mono Project Authors |
+| `assets/fonts/space-grotesk-variable.woff2` | [Space Grotesk](https://github.com/floriankarsten/space-grotesk) by Florian Karsten — direction C | SIL Open Font License 1.1 |
+| `assets/fonts/bodoni-moda-*.woff2` | [Bodoni Moda](https://github.com/indestructible-type/Bodoni) by indestructible type* — direction D | SIL Open Font License 1.1 |
+| `assets/fonts/karla-variable.woff2` | [Karla](https://github.com/googlefonts/karla) by Jonny Pinhorn — direction D | SIL Open Font License 1.1 |
 | `assets/vendor/marked.min.js` | [marked](https://github.com/markedjs/marked) v12.0.2 — the markdown parser behind the `/documents/` reader pages | MIT, © 2011-2024 Christopher Jeffrey and contributors |
 
 It is vendored rather than loaded from a CDN deliberately. This is the site arguing that

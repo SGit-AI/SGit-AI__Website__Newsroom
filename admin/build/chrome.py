@@ -84,6 +84,7 @@ NAV = [
         ("About &amp; limits", "portugal/about.html"),
         ("Brief: pt.newsroom.sgit.ai", "documents/pt-newsroom.html"),
         ("pt.newsroom: the home page, as designed", "pt-newsroom/index.html"),
+        ("pt.newsroom: the four directions (archive)", "pt-newsroom/directions.html"),
     ], ("portugal/", "pt-newsroom/")),
     ("Databases", "databases/index.html", [
         ("No server: the argument (beta)", "databases/index.html"),
