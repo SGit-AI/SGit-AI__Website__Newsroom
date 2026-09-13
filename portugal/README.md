@@ -135,6 +135,16 @@ list will be the one taken the day after it stops being updated.
 15. Coverage is frozen before it is cited, summarised rather than quoted, and an excluded page
     is never also in the register.
 
+## The graph as triples, and the consoles that query it
+
+`graph.py` also writes `data/triples.nt` — the same graph as N-Triples under one stated IRI
+scheme (`portugal/{id,verb,type,prop}/`), the ontology inside (types, verbs, `owl:inverseOf`,
+labels `@en` and `@pt`), each fact once in its forward direction. It is a re-serialisation, not a
+second source, and its count lands in `manifest.json`. [`/databases/`](../databases/README.md)
+loads it into a SPARQL store in the reader's browser and the JSON files into SQLite, both via
+WebAssembly, no server anywhere; the worked queries there are run at build and fail it if they
+break.
+
 ## What is real, and what is not
 
 | | |

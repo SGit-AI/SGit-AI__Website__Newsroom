@@ -6,7 +6,7 @@
 > that accumulates evidence, perspectives and confidence; every article, translation and
 > infographic is a projection of it. Sell the graph, not the paragraph.
 
-Site version: v0.3.2 (13 September 2026). Published by the sgit project, which is building
+Site version: v0.3.3 (13 September 2026). Published by the sgit project, which is building
 the stack this site argues for — participant disclosure at /about/participant.html.
 Site content CC BY 4.0; the republished library material is CC0 1.0 Universal at source
 (docs.diniscruz.ai) — state the source licence per page.
@@ -130,6 +130,26 @@ It is a beta with no human editorial review and no legal review.
     with a .snapshot extension because they are EVIDENCE, not pages of this site: unmodified
     bytes of another organisation's pages, held so a claim can be verified, never republished
     as browsable content
+- /databases/index.html — DATABASES WITH NO SERVER (beta): two real database engines running in the
+  READER'S BROWSER, compiled to WebAssembly, over the JSON files /portugal/ is built from. No
+  server, no upload, no store of record: the files are the database, the engines are readers,
+  the store is discarded when the tab closes. The pattern is the estate's (sgit.ai RiskMandate:
+  "the browser becomes the database"; graphs.sgit.ai Regulation Graph: SQLite over WASM,
+  client-side and ephemeral) and graphs.sgit.ai's "NOT A GRAPH DATABASE PITCH" is inherited:
+  JSON stays the source of truth. Both consoles publish window.__tools.{sql,sparql} after a
+  tool:ready event, read-only, and fetch only same-origin files.
+  - /databases/sql.html — SQLite (sql.js 1.14.2, MIT, vendored): 12 tables built on load from
+    /databases/data/tables.json (the loader spec, which names the file and field behind every
+    column); 13 worked queries from a count-by-class to a recursive two-hop traversal, each with
+    the row count it returned AT BUILD (/databases/data/queries-sql.json). The build executed
+    every one through Python's sqlite3 against the same spec; a failing or empty query fails the build
+  - /databases/graph.html — Oxigraph (0.5.11 web build, MIT OR Apache-2.0, vendored): SPARQL 1.1
+    over /portugal/data/triples.nt (N-Triples, IRIs under https://newsroom.sgit.ai/portugal/
+    {id,verb,type,prop}/; the ontology is IN THE STORE, inverses declared with owl:inverseOf and
+    walked with ^, labels @en and @pt). 11 worked queries incl. a Portuguese path read aloud, a
+    property-path two-hop walk, a CONSTRUCT of the inverse edges and an ASK that no edge is
+    symmetric — each shown beside the same question in Cypher, which is displayed and NOT run
+    (Kùzu's WASM build is 73 MB unpacked; declined and recorded). Validated at build with pyoxigraph
 - /governance/index.html — THE GOVERNANCE WIRE (beta): the first MVP of the risk-and-governance
   publication, self-contained under /governance/ so it can move to its own domain later. It is
   FULLY AGENTIC — seven agent roles, no human reviews any page before publication — and every

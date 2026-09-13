@@ -304,9 +304,80 @@ def main():
     }
     (DATA / "graph.json").write_text(json.dumps(graph, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
+    # --- the same graph as RDF triples, for the SPARQL console ------------------
+    # One IRI scheme, stated once: nodes live under portugal/id/, verbs under portugal/verb/,
+    # types under portugal/type/, scalar attributes under portugal/prop/. The inverse of
+    # every verb is declared with owl:inverseOf rather than materialised, so the store holds
+    # each fact once and a query can still walk it either way. Labels carry @en and @pt so a
+    # Portuguese reader can read a path aloud from the store alone. Nothing here is a second
+    # source: it is graph.json re-serialised, and the count lands in manifest.json.
+    NS = "https://newsroom.sgit.ai/portugal/"
+    RDF = "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    RDFS = "http://www.w3.org/2000/01/rdf-schema#"
+    OWL = "http://www.w3.org/2002/07/owl#"
+
+    def iri(kind, local):
+        return f"<{NS}{kind}/{local}>"
+
+    def lit(v, lang=None):
+        s = str(v).replace("\\", "\\\\").replace('"', '\\"').replace("\n", "\\n").replace("\r", "\\r")
+        return f'"{s}"@{lang}' if lang else f'"{s}"'
+
+    def typed(v):
+        if isinstance(v, bool):
+            return f'"{"true" if v else "false"}"^^<http://www.w3.org/2001/XMLSchema#boolean>'
+        if isinstance(v, int):
+            return f'"{v}"^^<http://www.w3.org/2001/XMLSchema#integer>'
+        return lit(v)
+
+    T = []
+    for t in NODE_TYPES:
+        T.append(f'{iri("type", t["id"])} <{RDF}type> <{OWL}Class> .')
+        T.append(f'{iri("type", t["id"])} <{RDFS}label> {lit(t["id"], "en")} .')
+        T.append(f'{iri("type", t["id"])} <{RDFS}label> {lit(t["pt"], "pt")} .')
+        T.append(f'{iri("type", t["id"])} <{RDFS}comment> {lit(t["definition"], "en")} .')
+    for v, i, d, r, pv, pi, reads, origin in EDGES:
+        T.append(f'{iri("verb", v)} <{RDF}type> <{OWL}ObjectProperty> .')
+        T.append(f'{iri("verb", i)} <{RDF}type> <{OWL}ObjectProperty> .')
+        T.append(f'{iri("verb", i)} <{OWL}inverseOf> {iri("verb", v)} .')
+        T.append(f'{iri("verb", v)} <{RDFS}label> {lit(v.replace("_", " "), "en")} .')
+        T.append(f'{iri("verb", v)} <{RDFS}label> {lit(pv.replace("_", " "), "pt")} .')
+        T.append(f'{iri("verb", i)} <{RDFS}label> {lit(i.replace("_", " "), "en")} .')
+        T.append(f'{iri("verb", i)} <{RDFS}label> {lit(pi.replace("_", " "), "pt")} .')
+        for dom in ([d] if isinstance(d, str) else sorted(d)):
+            T.append(f'{iri("verb", v)} <{RDFS}domain> {iri("type", dom)} .')
+        for rng in ([r] if isinstance(r, str) else sorted(r)):
+            T.append(f'{iri("verb", v)} <{RDFS}range> {iri("type", rng)} .')
+    SKIP = {"id", "type", "label", "pack"}
+    for n in nodes:
+        subj = iri("id", n["id"])
+        T.append(f'{subj} <{RDF}type> {iri("type", n["type"])} .')
+        T.append(f'{subj} <{RDFS}label> {lit(n["label"], "en")} .')
+        if n.get("pt"):
+            T.append(f'{subj} <{RDFS}label> {lit(n["pt"], "pt")} .')
+        T.append(f'{subj} {iri("prop", "pack")} {lit(n["pack"])} .')
+        for k, v in n.items():
+            if k in SKIP or k == "pt" or v is None:
+                continue
+            if isinstance(v, list):
+                for item in v:
+                    T.append(f'{subj} {iri("prop", k)} {typed(item)} .')
+            elif isinstance(v, dict):
+                continue
+            else:
+                T.append(f'{subj} {iri("prop", k)} {typed(v)} .')
+    for e in edges:
+        T.append(f'{iri("id", e["source"])} {iri("verb", e["verb"])} {iri("id", e["target"])} .')
+    # dict.fromkeys keeps first-seen order and drops the duplicates a shared attribute produces
+    # (a verb declared once per domain type, a label repeated for a node that carries both), so
+    # the line count of the file is the triple count of the store that loads it.
+    T = list(dict.fromkeys(T))
+    (DATA / "triples.nt").write_text("\n".join(T) + "\n", encoding="utf-8")
+    triple_count = len(T)
+
     # --- the manifest the explorer renders --------------------------------------
     files = []
-    for p in sorted(DATA.glob("*.json")):
+    for p in sorted(DATA.glob("*.json")) + sorted(DATA.glob("*.nt")):
         files.append({"path": f"data/{p.name}", "kind": "data", "bytes": p.stat().st_size, "sha256": sha(p)})
     for p in sorted((SEC / "content").glob("*.md")):
         files.append({"path": f"content/{p.name}", "kind": "prose", "bytes": p.stat().st_size, "sha256": sha(p)})
@@ -318,10 +389,12 @@ def main():
     (DATA / "manifest.json").write_text(json.dumps({
         "id": "portugal-manifest", "updated": latest,
         "note": "Every file the section is built from, with its size and SHA-256, so the explorer can list the folder and a reader can check any file against it.",
+        "triples": triple_count,
         "count": len(files), "files": files}, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
     print(f"graph: {len(nodes)} nodes, {len(edges)} edges, {len(packs)} packs; "
-          f"ontology {len(NODE_TYPES)} types / {len({e[0] for e in EDGES})} verbs; manifest {len(files)} files")
+          f"ontology {len(NODE_TYPES)} types / {len({e[0] for e in EDGES})} verbs; "
+          f"{triple_count} triples; manifest {len(files)} files")
 
 
 if __name__ == "__main__":

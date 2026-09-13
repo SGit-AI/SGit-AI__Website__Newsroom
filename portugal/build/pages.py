@@ -289,7 +289,11 @@ the same graph engine and the same control vocabulary as
 <a href="https://graphs.sgit.ai/v1/altitudes/graph.html">graphs.sgit.ai</a>&rsquo;s own graph
 pages &mdash; Cytoscape.js vendored into this site, packs instead of levels, otherwise the same
 panel. A reader who has used one should not have to learn the other. What is this section&rsquo;s
-own: every node carries the frozen, hashed source it came from, and the detail pane shows it.</p></div>
+own: every node carries the frozen, hashed source it came from, and the detail pane shows it.</p>
+<p style="margin-bottom:0"><b>Query it instead of drawing it.</b> The same graph is loaded into two real
+database engines in your browser, with no server: <a href="../databases/sql.html">SQL</a> (SQLite over the
+section&rsquo;s JSON) and <a href="../databases/graph.html">SPARQL</a> (Oxigraph over the same graph as
+triples, ontology inside the store). Worked queries on both, with the count each returned at build.</p></div>
 
 <div class="gwrap">
   <form id="gcfg" class="gcfg">
@@ -457,7 +461,8 @@ this site sits on has a vault browser that does exactly this for any vault, and 
 guidance is not to rebuild what the platform has. This section is not in a vault yet, so this
 page is the same idea rendered from a manifest: a folder on the left, and the file on the
 right in three views. When the section moves into a vault, the vault browser takes over and
-this page goes.</p></div>
+this page goes.</p>
+<p style="margin-bottom:0"><b>Query the files instead of opening them.</b> Every JSON file listed here is loaded into <a href="../databases/sql.html">a SQLite console</a> and the graph into <a href="../databases/graph.html">a SPARQL console</a>, both running in your browser with no server; the loader spec names the file and field behind every column, so a cell in a result is one click from the file it came from.</p></div>
 
 <div class="xwrap">
   <nav class="xtree" aria-label="Files">{tree}</nav>

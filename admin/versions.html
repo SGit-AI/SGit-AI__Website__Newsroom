@@ -14,7 +14,7 @@
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer and the shipped CLI. This site is the future-of-news stack: provenance, corrections, and paying the fact creator">&#8593; part of <b>sgit.ai</b></a>
   <span class="stage-pill">design, not built</span>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.3.2</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.3.3</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -45,6 +45,7 @@
       <a class="sl" href="../mvps/portugal.html">The Portugal instance</a>
       <a class="sl" href="../governance/index.html">The Governance Wire (beta)</a>
       <a class="sl" href="../portugal/index.html">Portugal Startups (beta)</a>
+      <a class="sl" href="../databases/index.html">Databases with no server (beta)</a>
       </div>
     </div>
     <div class="ni ni-has">
@@ -78,6 +79,17 @@
 <div class="tablewrap"><table class="vers">
   <thead><tr><th>Version</th><th>Date</th><th>What shipped</th></tr></thead>
   <tbody>
+    <tr>
+      <td class="vnum">v0.3.3</td>
+      <td>13 Sep 2026</td>
+      <td><b>Databases with no server: SQLite and a SPARQL store running in the reader&rsquo;s browser over the Portugal section&rsquo;s own files.</b>
+        <p><b><a href="../databases/index.html">A new section</a>, and the argument first.</b> This site has no server. The Portugal section is JSON files in a git repository with a hash for each. Two real database engines now run over exactly those files in the visitor&rsquo;s browser, compiled to WebAssembly &mdash; nothing uploaded, nothing queried remotely, the store discarded when the tab closes. The files are the database; the engines are readers. It is the pattern the estate already runs (sgit.ai&rsquo;s RiskMandate vault, where &ldquo;the browser becomes the database&rdquo;; graphs.sgit.ai&rsquo;s Regulation Graph, SQLite over WebAssembly, client-side and ephemeral) with the second language added, and graphs.sgit.ai&rsquo;s <em>not a graph database pitch</em> is inherited on the page rather than quietly contradicted.</p>
+        <p><b><a href="../databases/sql.html">The SQL console</a></b>: sql.js 1.14.2 (SQLite, MIT, vendored), twelve tables built on load from a loader spec that names the file and field behind every column, and thirteen worked queries &mdash; a count by role class, the programme as a table, who arrived between snapshots, every verb with its inverse in both languages, a path as a sentence the SQL way, and a recursive CTE that walks two hops from the event, which is the query that shows where SQL stops being the natural language for a graph.</p>
+        <p><b><a href="../databases/graph.html">The graph console</a></b>: Oxigraph 0.5.11 (SPARQL 1.1, MIT or Apache-2.0, vendored, 3.9&nbsp;MB and said so) over <code>triples.nt</code>, which the Portugal graph build now writes beside <code>graph.json</code>: 1,982 triples under one stated IRI scheme, the ontology inside the store, every inverse declared with <code>owl:inverseOf</code> and walked with <code>^</code>, labels in English and Portuguese so a path reads aloud from the store alone. Eleven worked queries, each shown beside the same question in Cypher, which is displayed and not run: K&ugrave;zu would run it and is 73&nbsp;MB unpacked, and the choice is recorded on the page.</p>
+        <p><b>The build is the test.</b> Every SQL example is executed at build with Python&rsquo;s sqlite3 against tables built from the same spec the browser uses; every SPARQL example with pyoxigraph over the same triples. A query that fails or comes back empty fails the build, and the count each returned at build is printed beside it on the page, so a reader&rsquo;s run can agree or differ in the open. Both consoles publish <code>window.__tools</code> after <code>tool:ready</code>, read-only, the convention the estate&rsquo;s graph readers set.</p>
+        <p>Also: the Portugal graph page and file explorer link to the consoles; the section README and llms.txt describe both; LICENSES.md carries the two new attributions.</p>
+      </td>
+    </tr>
     <tr>
       <td class="vnum">v0.3.2</td>
       <td>13 Sep 2026</td>
@@ -241,7 +253,7 @@
     <p>News is failing not because there is too little information but because there is no walkable chain from a claim to its evidence, no way for a correction to reach what it disproved, and no way to pay the person who did the original work. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="netline"><a href="https://sgit.ai"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://graphs.sgit.ai">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai">&#8593; nhi.sgit.ai</a> &middot; <a href="https://sg-sentinel.sgit.ai">&#8593; sg-sentinel.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.3.2</a> &middot; <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.3.3</a> &middot; <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>The argument</h4>
