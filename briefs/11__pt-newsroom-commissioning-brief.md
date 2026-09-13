@@ -341,6 +341,52 @@ time.** If something has to give, let it be the software. The people named on th
 consent to being in a demonstration, and a build that ships late is recoverable in a way that a
 publication that harmed somebody is not.
 
+## 16. The home page: a direction was chosen on 13 September
+
+Four home-page directions were drafted as mockups on 13 September 2026 — a classic
+broadsheet, a dense capture-ordered ledger, a dark graph-first cover, and a magazine with the
+claims underlined in the text — and the editor of record chose **the broadsheet**. It is
+recorded here so that you inherit a decision rather than a question. The other three exist
+and were not chosen; do not rebuild them.
+
+![The chosen home page at 1440px: a warm-paper broadsheet with a dateline, a typographic masthead, eight sections, a lead story whose sources are chips, two secondaries, the national record in preparation, the graph with a path read aloud, the week's programme, what the press says, how it is made, and a colophon](../assets/img/pt-newsroom-home-a-1440.png)
+
+**The system, so it can be built rather than imitated.**
+
+- **Paper and ink.** Background `#f7f4ec`, ink `#17181c`, secondary text `#4a4d55` and
+  `#6b6e76`, rules `#d9d3c3`, panels `#fffdf7`. One accent, the estate's green `#0f766e`,
+  used for kickers, source chips that confirmed, and links; `#b45309` for a source that did not
+  confirm; `#b91c1c` for *não encontrado*; `#a16207` for *disputado*.
+- **Type.** Newsreader for headlines and body (54px lead headline, 27px secondaries, 21px
+  third tier, 18px standfirst, 15px body), IBM Plex Mono at 11–12px with wide tracking for
+  datelines, kickers, section labels and chips. Two faces, nothing else.
+- **Rules, not boxes.** Sections are separated by a 1px ink rule; the masthead sits between a
+  1px rule and a 3px double rule, and the colophon opens with the same double rule. No
+  rounded cards, no shadows, no gradients.
+- **The order of the page.** Dateline (city, date, days to the event) · masthead
+  `pt.newsroom` with `.sgit.ai` in grey and the scoping sentence in italics · the eight
+  sections plus *Registo* and *Grafo* · lead story (kicker, headline, standfirst, the sources
+  as chips, and the three departments' one-line status) beside two secondaries and a
+  *Nesta edição* block of counts · *Em preparação*: the three national-record stories with
+  their claims as chips · *O grafo*: a path read aloud in Portuguese beside a small drawn
+  graph · *Esta semana em Lisboa* (programme, titles verbatim) beside *O que diz a imprensa*
+  (publisher, kind, date, hash) · *Como se faz*: the departments, beside the one dark block on
+  the page, *Para redações*, which is the only marketing on the site · *Ficha técnica*: editor
+  of record, sources, data protection, part of.
+- **What is not on it.** No advertising. No photograph that lacks a recorded source: until
+  there is one, the graph is the image. No person's name outside a story's own byline and
+  the colophon; the counts are counts.
+- **The phone.** The same hierarchy in one column at 390px; the section nav runs
+  horizontally; chips wrap.
+
+<img src="../assets/img/pt-newsroom-home-a-390.png" width="390" alt="The chosen home page at 390px, one column: dateline, masthead, a horizontal section nav, the lead with its source chips, two secondaries, the graph path, the programme, the press, the dark block for newsrooms, and the colophon">
+
+The mockups were drawn with the section's real data of 13 September — the three published
+stories, the 60→64 speaker diff, the seven press pages, the programme — so the copy on them is
+true as of that date and will be stale by the time you read this; take the structure, not the
+numbers. The renders above use fallback faces where the named fonts were not available to the
+renderer; the design specifies Newsreader and IBM Plex Mono.
+
 ---
 
 ## Sources and provenance
