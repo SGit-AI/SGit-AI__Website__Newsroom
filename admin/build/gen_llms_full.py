@@ -42,6 +42,7 @@ ORDER = [
     # them. 09 was missing until v0.2.8, which made that claim false.
     "09__risk-and-governance-newsroom.md",
     "10__the-newsroom-floor.md",
+    "11__pt-newsroom-commissioning-brief.md",
     "README.md",
     "PUBLIC.md",
     "LICENSE.md",

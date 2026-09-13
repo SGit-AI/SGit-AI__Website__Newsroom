@@ -14,7 +14,7 @@
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer and the shipped CLI. This site is the future-of-news stack: provenance, corrections, and paying the fact creator">&#8593; part of <b>sgit.ai</b></a>
   <span class="stage-pill">design, not built</span>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.3.0</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.3.1</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -78,6 +78,17 @@
 <div class="tablewrap"><table class="vers">
   <thead><tr><th>Version</th><th>Date</th><th>What shipped</th></tr></thead>
   <tbody>
+    <tr>
+      <td class="vnum">v0.3.1</td>
+      <td>13 Sep 2026</td>
+      <td><b>The notice that should have shipped with v0.3.0, and <a href="../documents/pt-newsroom.html">a commissioning brief for <code>pt.newsroom.sgit.ai</code></a>.</b>
+        <p><b>The correction first.</b> v0.3.0 published the names, roles and organisations of <b>64 people this site did not get the data from</b>, and it did so with no data-protection notice, no stated lawful basis and no route to object. That is the wrong order &mdash; the notice belongs <em>before</em> the first named person, not after &mdash; and <a href="../portugal/notice.html">the notice now live</a> says so on its own face rather than quietly fixing it.</p>
+        <p><b>The journalistic derogation is not claimed, and that is the substantive finding.</b> Article 24(3) of Portugal&rsquo;s Lei 58/2019 conditions processing for journalistic purposes on the national legislation governing access to and exercise of the profession, which an unaccredited publication produced by agents does not satisfy. So the basis is <b>legitimate interests</b>, with a written three-limb balancing test, and the notice exists because Article 14(5)(b) makes the disproportionate-effort exemption conditional on <em>making the information publicly available</em>. <b>Removal on request is unconditional</b> &mdash; no reason required, none asked for. The page carries a Portuguese summary, because several of the people named are Portuguese. None of it is legal advice and no lawyer has reviewed it.</p>
+        <p><b>Two new gates, because a refusal without an enforcer is a sentence.</b> Check 11 fails the build if an email address, telephone number or personal postal address appears anywhere in the section&rsquo;s data &mdash; enforced where the data is <em>parsed</em>, not where it is rendered, so a contact detail cannot reach the data and then be hidden by a template. Verified by injecting one and confirming the build fails. Check 12 fails the build if any page that names individuals does not link to the notice, because a notice nobody can find from the page that named them is a file rather than a measure.</p>
+        <p><b>And <a href="../mvps/portugal.html#update-2026-09-13">the 12 May design page is updated rather than rewritten</a>.</b> That design is still unlaunched and still says so; what changed is that a much smaller first instance now runs, and that <b>its open question 5 &mdash; who is the editor of record &mdash; is answered after four months</b>, with the constraint the design did not anticipate: not as journalism.</p>
+        <p><b>The commissioning brief</b> is the first document in the pack written to be executed rather than read. It cuts the fifteen-department design to three, replaces the seven-stories-in-seven-days test with one story whose whole process is visible, settles the subdomain by wildcard-certificate mechanics, sorts the agents into four tiers by what each can write, and rules that in a natively Portuguese publication <b>the graph edge verbs are Portuguese verbs</b> &mdash; because a path that does not read as a sentence in the reader&rsquo;s language has the wrong edges, and an English ontology behind a Portuguese interface fails that test while looking finished.</p>
+      </td>
+    </tr>
     <tr>
       <td class="vnum">v0.3.0</td>
       <td>13 Sep 2026</td>
@@ -217,7 +228,7 @@
     <p>News is failing not because there is too little information but because there is no walkable chain from a claim to its evidence, no way for a correction to reach what it disproved, and no way to pay the person who did the original work. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="netline"><a href="https://sgit.ai"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://graphs.sgit.ai">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai">&#8593; nhi.sgit.ai</a> &middot; <a href="https://sg-sentinel.sgit.ai">&#8593; sg-sentinel.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.3.0</a> &middot; <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.3.1</a> &middot; <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>The argument</h4>

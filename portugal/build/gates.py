@@ -40,6 +40,7 @@ changes = load("changes.json")
 checks = load("checks.json")
 team = load("team.json")
 stories = load("stories.json")
+notice = load("notice.json")
 
 # Our own generated pages only. The frozen copies under sources/ are somebody else's
 # bytes held as evidence — they carry no beta notice and never will, and checking them
@@ -201,6 +202,51 @@ for p in people["people"]:
         if isinstance(v, str) and len(v) > 160:
             errors.append(f'people: {p["id"]} field "{k}" is {len(v)} chars — biographies are '
                           f'linked, never reproduced, and nothing on a node should be this long')
+
+# --- 11. no contact detail for any natural person, anywhere in the data ---------
+# Article 24(4) of Lei 58/2019 bars disclosing addresses and contact details of individuals
+# unless already generally known. The dev brief of 13 September is explicit that this has to
+# be enforced where the data is PARSED, not where it is rendered: a contact detail that
+# reaches the data and is merely hidden by a template is one careless loop away from being
+# published. So the check runs against the JSON, not against the pages.
+#
+# event.json is exempt for one field only — the venue's street address, which is a building
+# operated by an organisation and is on every ticket. It is not a natural person's address.
+CONTACT = {
+    "email": re.compile(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}"),
+    "phone": re.compile(r"\+\d[\d ()\u2011-]{7,}\d"),
+    "postal": re.compile(r"\b(?:Rua|Avenida|Av\.|Travessa|Largo|Praceta)\s+[A-Z]"),
+}
+PERSONAL_FILES = ["people.json", "orgs.json", "changes.json", "checks.json", "stories.json"]
+for name in PERSONAL_FILES:
+    text = (DATA / name).read_text(encoding="utf-8")
+    for kind, pat in CONTACT.items():
+        m = pat.search(text)
+        if m:
+            errors.append(f'{name}: contains what looks like a personal {kind} '
+                          f'("{m.group(0)[:40]}") — contact details are refused at extraction '
+                          f'time, not hidden at render time. See the notice page')
+
+# The notice's own promise must match the controller it names, or it points nowhere.
+if not notice.get("controller", {}).get("contact"):
+    errors.append("notice: no contact for the controller — the objection route reaches nobody")
+if notice["lawful_basis"]["basis"].lower() != "legitimate interests":
+    errors.append("notice: the lawful basis changed; the pages and the balancing test say "
+                  "legitimate interests and the journalistic route is expressly not claimed")
+
+# --- 12. every page that names individuals links to the notice -----------------
+# A notice nobody can find from the page that named them is not a measure, it is a file.
+NAMES_PEOPLE = ["summit/people.html", "summit/changes.html", "summit/orgs.html"]
+for rel in NAMES_PEOPLE:
+    f = SEC / rel
+    if not f.exists():
+        continue
+    t = f.read_text(encoding="utf-8")
+    if "notice.html" not in t:
+        errors.append(f'{rel}: names individuals and does not link to the data-protection '
+                      f'notice — Article 14(5)(b) is earned by making the information findable')
+if not (SEC / "notice.html").exists():
+    errors.append("section: notice.html was not generated, but pages name individuals")
 
 # --- report -------------------------------------------------------------------
 if errors:

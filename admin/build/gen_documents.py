@@ -45,6 +45,7 @@ PACK_OVERRIDES = {
     # A debrief is a third kind of document: it belongs to no construction pack at all,
     # because it reports on something already shipped rather than specifying anything.
     "newsroom-floor": "newsroom.sgit.ai technique debrief, 28 August 2026",
+    "pt-newsroom": "newsroom.sgit.ai commissioning brief, 13 September 2026",
 }
 
 # slug, source file, title, kind, the single most important fact in it, why it is on the site
@@ -193,6 +194,27 @@ DOCS = [
      "It also states what a single implementation on a single day has <em>not</em> "
      "proven. Built from <a href=\"../governance/newsroom/index.html\">the floor "
      "itself</a>."),
+
+    ("pt-newsroom", "11__pt-newsroom-commissioning-brief.md",
+     "Commissioning brief: pt.newsroom.sgit.ai",
+     "Commissioning brief &middot; 13 September 2026 &middot; addressed to a builder",
+     "<b>The journalistic derogation is not available to this publication.</b> Article 24(3) "
+     "of Portugal's Lei 58/2019 conditions processing for journalistic purposes on the "
+     "national rules governing access to and exercise of the profession, which an "
+     "unaccredited publication produced by agents does not satisfy &mdash; so the lawful "
+     "basis is <b>legitimate interests</b>, which costs a written balancing test, a published "
+     "Portuguese notice and a named accountable human, and all three fit on three pages.",
+     "<b>Addressed to a builder rather than a reader</b> &mdash; the first document in this "
+     "pack written to be executed. It commissions a natively Portuguese newsroom at "
+     "<code>pt.newsroom.sgit.ai</code>, cutting fifteen departments to three and replacing "
+     "the seven-stories acceptance test with one story whose whole process is visible. It "
+     "opens by correcting two findings of the dev brief it derives from, both overtaken the "
+     "same day by <a href=\"../portugal/index.html\">the running instance on this site</a>: "
+     "the editor-of-record question is answered, and the lawful basis is decided and "
+     "published. Carries the certificate reasoning that settles the subdomain mechanically, "
+     "the four agent tiers, the seal-a-credential rule with the gate that enforces it, and "
+     "the rule that in a natively Portuguese publication the edge verbs are Portuguese "
+     "verbs."),
 ]
 
 HEAD = '''<!doctype html>

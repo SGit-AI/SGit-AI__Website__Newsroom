@@ -49,6 +49,7 @@ CHANGES = load("changes.json")
 CHECKS = load("checks.json")
 TEAM = load("team.json")
 STORIES = load("stories.json")
+NOTICE = load("notice.json")
 
 VER = STORIES["section_version"]
 SRC = {s["id"]: s for s in SOURCES["sources"]}
@@ -67,6 +68,7 @@ LABELS = {
     "sources": {"en": "Sources",         "pt": "Fontes"},
     "method":  {"en": "Method",          "pt": "Método"},
     "team":    {"en": "The team",        "pt": "A equipa"},
+    "notice":  {"en": "Your data",       "pt": "Os seus dados"},
     "about":   {"en": "About & limits",  "pt": "Sobre e limites"},
 }
 
@@ -176,6 +178,7 @@ def masthead(up, here=""):
            ("sources.html", LABELS["sources"]["en"]),
            ("method.html", LABELS["method"]["en"]),
            ("team.html", LABELS["team"]["en"]),
+           ("notice.html", LABELS["notice"]["en"]),
            ("about.html", LABELS["about"]["en"])]
     links = "".join(
         f'<a href="{up}{h}" style="font-size:.83rem;color:'
@@ -204,6 +207,8 @@ def disclaimer(up):
         'about any company or person, makes no assessment of anybody, and does not explain why '
         'a name appears or disappears from somebody else’s list. '
         f'<a href="{up}about.html">The full limits &rarr;</a></p>'
+        '<p><b>If you are named on this site</b> &mdash; what is held about you, why, and how to '
+        f'have it removed without giving a reason: <a href="{up}notice.html">your data &rarr;</a></p>'
         '</div>')
 
 
@@ -1010,6 +1015,109 @@ human editor of record, so the refusals are not the last line of defence. They a
     return out
 
 
+def build_notice():
+    up = ""
+    n = NOTICE
+    held = "".join(f"<li>{esc(x)}</li>" for x in n["categories_held"])
+    refused = "".join(f"<li>{esc(x)}</li>" for x in n["categories_refused"])
+    rights = "".join(f"<li>{esc(x)}</li>" for x in n["rights"])
+    test = "".join(
+        f'<div class="op"><b>{esc(t["limb"])}</b><p>{esc(t["we_say"])}</p></div>'
+        for t in n["lawful_basis"]["test"])
+
+    body = f"""{masthead(up, "notice.html")}
+<h1>Your data</h1>
+<p class="lead">This section names <b>{PEOPLE["count"]} people</b> it did not get the data from.
+This page says what is held, why it is lawful to hold it, and <b>how to have it removed without
+giving a reason</b>. Machine surface: <a href="data/notice.json">notice.json</a>.</p>
+
+<div class="warnbox"><p style="margin-top:0"><b>Not legal advice.</b> {esc(n["not_legal_advice"])}</p></div>
+
+<h2 id="who">Who is responsible</h2>
+<div class="note">
+  <p style="margin-top:0"><b>{esc(n["controller"]["who"])}</b> &mdash;
+  <a href="mailto:{esc(n["controller"]["contact"])}">{esc(n["controller"]["contact"])}</a></p>
+  <p>{esc(n["controller"]["why_personal"])}</p>
+</div>
+
+<h2 id="what">What is held</h2>
+<p>{esc(n["subjects"])}</p>
+<div class="split"><div>
+<h3>Held</h3>
+<ul>{held}</ul>
+</div><div>
+<h3>Refused, always</h3>
+<ul>{refused}</ul>
+</div></div>
+<div class="claim">{esc(n["refusal_enforced_by"])}</div>
+<p class="small dim"><b>Where it came from:</b> {esc(n["source"])}
+<a href="sources.html">The register &rarr;</a></p>
+
+<h2 id="why">Why we are allowed to</h2>
+<p><b>The basis is {esc(n["lawful_basis"]["basis"].lower())}, and the journalistic route is
+deliberately not claimed.</b> {esc(n["lawful_basis"]["not_journalism"])}</p>
+<div class="ops">{test}</div>
+<p class="small dim">{esc(n["lawful_basis"]["guidance"])}</p>
+
+<h2 id="notice">Why this is a public page rather than an email to each of you</h2>
+<p>{esc(n["why_public_notice"]["rule"])}</p>
+<p>{esc(n["why_public_notice"]["so"])}</p>
+<div class="warnbox"><p style="margin-top:0"><b>And the part that reflects badly on us.</b>
+{esc(n["why_public_notice"]["honest_note"])}</p></div>
+
+<h2 id="rights">What you can do</h2>
+<ul>{rights}</ul>
+
+<h2 id="object">Getting removed</h2>
+<div class="note">
+  <p style="margin-top:0"><b>How.</b> {esc(n["objection"]["how"])}</p>
+  <p><b>{esc(n["objection"]["promise"])}</b></p>
+  <p><b>What happens.</b> {esc(n["objection"]["and_then"])}</p>
+</div>
+<p><b>We also never say why you left somebody else&rsquo;s list.</b>
+{esc(n["no_reason_rule"])}</p>
+
+<h2 id="retention">How long</h2>
+<p>{esc(n["retention"])}</p>
+
+<h2 id="pt">Em português &mdash; resumo</h2>
+<div class="note">
+  <p style="margin-top:0"><b>Esta secção publica o nome, o cargo e a organização de
+  {PEOPLE["count"]} pessoas</b>, tal como o próprio evento os publicou. Não guardamos moradas,
+  endereços de correio eletrónico nem números de telefone de nenhuma pessoa, e não reproduzimos
+  as biografias.</p>
+  <p><b>O responsável pelo tratamento é {esc(n["controller"]["who"])}</b>
+  (<a href="mailto:{esc(n["controller"]["contact"])}">{esc(n["controller"]["contact"])}</a>). O
+  fundamento é o <b>interesse legítimo</b>. <b>Não invocamos a derrogação jornalística</b> do
+  artigo 24.&ordm; da Lei 58/2019, porque esta publicação não cumpre a condição de acesso e
+  exercício da profissão que esse artigo exige.</p>
+  <p><b>Para ser removido, basta pedir.</b> Escreva para o endereço acima. <b>Não é preciso dar
+  qualquer justificação e nenhuma lhe será pedida.</b> Pode também apresentar queixa à Comissão
+  Nacional de Proteção de Dados.</p>
+  <p class="small dim">Este resumo existe porque várias das pessoas nomeadas são portuguesas. O
+  resto do site está em inglês. Isto não é aconselhamento jurídico.</p>
+</div>
+
+{agent_block(
+    "The data-protection notice for this section, machine-readable at "
+    "<code>/portugal/data/notice.json</code>. <b>The lawful basis is legitimate interests and the "
+    "journalistic derogation is expressly NOT claimed</b> — Article 24(3) of Lei 58/2019 "
+    "conditions it on professional accreditation this publication does not have. Personal "
+    "contact details of any kind are refused at extraction time and gate check 11 fails the "
+    "build if one appears in the data. Removal on request is unconditional and no reason is "
+    "asked for. This is not legal advice and no lawyer has reviewed it.")}
+
+<div class="pagenav">
+  <a href="team.html">&larr; The team</a>
+  <a href="about.html">About &amp; limits &rarr;</a>
+</div>
+"""
+    return write("notice.html", page(
+        "notice.html", "Your data",
+        f'What this section holds about the {PEOPLE["count"]} people it names, the lawful basis for holding it, and how to be removed without giving a reason.',
+        body, '<a href="../index.html">newsroom.sgit.ai</a> / <a href="index.html">portugal</a> / your data'))
+
+
 def build_about():
     up = ""
     ed = TEAM["editor_of_record"]
@@ -1160,7 +1268,8 @@ claim against the file rather than against the live site.</p>
 
 def main():
     w = [build_index(), build_summit(), build_people(), build_orgs(), build_changes(),
-         build_sources(), build_checks(), build_method(), build_team(), build_about()]
+         build_sources(), build_checks(), build_method(), build_team(), build_notice(),
+         build_about()]
     w += build_role_pages()
     w += [build_story(s) for s in STORIES["stories"]]
     print(f"portugal build: v{VER} — {len(w)} page(s)")

@@ -28,7 +28,9 @@ code,pre,kbd{font-family:var(--mono)}
    one. The first four (screenshots in the newsroom-floor debrief) rendered at their natural
    1832px and pushed the page to a 2054px scrollWidth. Base rule, not a per-page patch. */
 img{max-width:100%;height:auto}
-p code,li code,td code,.note code{overflow-wrap:anywhere;background:var(--panel2);border:1px solid var(--line);border-radius:4px;padding:.08em .35em;font-size:.84em;color:#24343f}
+/* headings were missing from this list until v0.3.1, so a hostname in an h1 — e.g. the
+   pt.newsroom.sgit.ai commissioning brief — pushed the page 23px wider than a phone */
+p code,li code,td code,h1 code,h2 code,h3 code,h4 code,.note code{overflow-wrap:anywhere;background:var(--panel2);border:1px solid var(--line);border-radius:4px;padding:.08em .35em;font-size:.84em;color:#24343f}
 .inner{max-width:var(--measure);margin:0 auto;padding:0 1.1rem}
 .dim{color:var(--dim)} .small{font-size:.85rem}
 
