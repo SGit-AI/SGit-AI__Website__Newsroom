@@ -24,6 +24,8 @@ content it republishes.
 | `assets/vendor/cytoscape.min.js` | [Cytoscape.js](https://js.cytoscape.org/) v3.30.2 — the graph engine behind `/portugal/graph.html`, the same build graphs.sgit.ai vendors for its own graph pages | MIT, © 2016-2024 The Cytoscape Consortium |
 | `assets/vendor/sql-wasm.js`, `assets/vendor/sql-wasm.wasm` | [sql.js](https://sql.js.org/) v1.14.2 — SQLite compiled to WebAssembly, the engine behind `/databases/sql.html`; its licence text is kept beside it as `sql.js-LICENSE.txt` | MIT, © 2017 sql.js authors (SQLite itself is public domain) |
 | `assets/vendor/oxigraph/web.js`, `assets/vendor/oxigraph/web_bg.wasm` | [Oxigraph](https://github.com/oxigraph/oxigraph) v0.5.11, web build — a SPARQL 1.1 store compiled to WebAssembly, the engine behind `/databases/graph.html` | MIT OR Apache-2.0, © Oxigraph contributors |
+| `assets/fonts/newsreader-*.woff2`, `assets/fonts.css` | [Newsreader](https://github.com/productiontype/Newsreader) by Production Type — the serif of the pt.newsroom home-page design at `/pt-newsroom/`; latin subset, the woff2 files Google Fonts serves | SIL Open Font License 1.1, © 2020 The Newsreader Project Authors |
+| `assets/fonts/plex-mono-*.woff2`, `assets/fonts.css` | [IBM Plex Mono](https://github.com/IBM/plex) by IBM — the monospace of the same design; latin subset | SIL Open Font License 1.1, © 2017 IBM Corp. |
 | `assets/vendor/marked.min.js` | [marked](https://github.com/markedjs/marked) v12.0.2 — the markdown parser behind the `/documents/` reader pages | MIT, © 2011-2024 Christopher Jeffrey and contributors |
 
 It is vendored rather than loaded from a CDN deliberately. This is the site arguing that

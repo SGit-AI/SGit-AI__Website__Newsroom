@@ -83,7 +83,8 @@ NAV = [
         ("Your data", "portugal/notice.html"),
         ("About &amp; limits", "portugal/about.html"),
         ("Brief: pt.newsroom.sgit.ai", "documents/pt-newsroom.html"),
-    ], ("portugal/",)),
+        ("pt.newsroom: the home page, as designed", "pt-newsroom/index.html"),
+    ], ("portugal/", "pt-newsroom/")),
     ("Databases", "databases/index.html", [
         ("No server: the argument (beta)", "databases/index.html"),
         ("The SQL console", "databases/sql.html"),
@@ -133,6 +134,7 @@ FOOTER = [
         ("Databases with no server (beta)", "databases/index.html"),
         ("The SQL and SPARQL consoles", "databases/sql.html"),
         ("Brief: pt.newsroom.sgit.ai", "documents/pt-newsroom.html"),
+        ("pt.newsroom: the home page, as designed", "pt-newsroom/index.html"),
     ]),
     ("Site", [
         ("The network: sibling boundaries", "network/index.html"),

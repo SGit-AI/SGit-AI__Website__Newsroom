@@ -6,7 +6,7 @@
 > graph that accumulates evidence, perspectives and confidence; every article is a
 > **projection** of it. **Sell the graph, not the paragraph.**
 
-*Source: <https://newsroom.sgit.ai/index.html> · site v0.3.6 · markdown twin of the front page.*
+*Source: <https://newsroom.sgit.ai/index.html> · site v0.3.7 · markdown twin of the front page.*
 
 ---
 
@@ -65,7 +65,8 @@ site, built by agents and reviewed before publication:
 - **pt.newsroom.sgit.ai (a brief for the next agent)** — a natively Portuguese newsroom
   mapping Portugal's AI landscape: three departments, the law, the first three articles, and
   the home-page direction chosen on 13 September.
-  [Read the brief →](https://newsroom.sgit.ai/documents/pt-newsroom.html)
+  [Read the brief →](https://newsroom.sgit.ai/documents/pt-newsroom.html) ·
+  [The home page, as designed →](https://newsroom.sgit.ai/pt-newsroom/index.html)
 
 ## This does not launch as a manifesto
 

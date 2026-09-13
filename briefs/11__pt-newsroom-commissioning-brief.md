@@ -384,8 +384,9 @@ and were not chosen; do not rebuild them.
 The mockups were drawn with the section's real data of 13 September — the three published
 stories, the 60→64 speaker diff, the seven press pages, the programme — so the copy on them is
 true as of that date and will be stale by the time you read this; take the structure, not the
-numbers. The renders above use fallback faces where the named fonts were not available to the
-renderer; the design specifies Newsreader and IBM Plex Mono.
+numbers. The design is also rendered as a page at full size, from the same sources, at
+[newsroom.sgit.ai/pt-newsroom/](https://newsroom.sgit.ai/pt-newsroom/index.html); the two faces it
+specifies, Newsreader and IBM Plex Mono, are vendored on that site under the SIL Open Font License.
 
 ---
 

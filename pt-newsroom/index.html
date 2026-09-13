@@ -1,0 +1,558 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>pt.newsroom.sgit.ai: the home page, as designed &middot; newsroom.sgit.ai</title>
+<meta name="description" content="The chosen home-page design for the Portuguese-language newsroom, rendered as a page: a broadsheet drawn with the Portugal section&#x27;s real data of 13 September 2026, at 1440px and at 390px.">
+<link rel="canonical" href="https://newsroom.sgit.ai/pt-newsroom/index.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="newsroom.sgit.ai">
+<meta property="og:url" content="https://newsroom.sgit.ai/pt-newsroom/index.html">
+<meta property="og:title" content="pt.newsroom.sgit.ai: the home page, as designed">
+<meta property="og:description" content="The chosen home-page design for the Portuguese-language newsroom, rendered as a page: a broadsheet drawn with the Portugal section&#x27;s real data of 13 September 2026, at 1440px and at 390px.">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/fonts.css">
+<style>
+.mock-desk{ margin: 0; background: #f7f4ec; }
+.mock-desk a{ color: #17181c; text-decoration: none; }
+.mock-desk a:hover{ color: #0f766e; text-decoration: underline; }
+.mock-desk .A{ font-family: "Newsreader", Georgia, "Times New Roman", serif; color: #17181c; }
+.mock-desk .mono{ font-family: "IBM Plex Mono", Menlo, Consolas, monospace; }
+.mock-desk .kick{ font-family: "IBM Plex Mono", Menlo, monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: #0f766e; }
+.mock-desk .rule{ border-top: 1px solid #17181c; }
+.mock-desk .hair{ border-top: 1px solid #d9d3c3; }
+.mock-desk .h-lead{ font-size: 54px; line-height: 1.02; font-weight: 500; letter-spacing: -.02em; margin: 0; }
+.mock-desk .h-2{ font-size: 27px; line-height: 1.1; font-weight: 500; letter-spacing: -.015em; margin: 0; }
+.mock-desk .h-3{ font-size: 21px; line-height: 1.15; font-weight: 500; margin: 0; }
+.mock-desk .std{ font-size: 18px; line-height: 1.45; margin: 0; color: #2b2d33; }
+.mock-desk .sm{ font-size: 15px; line-height: 1.45; margin: 0; color: #4a4d55; }
+.mock-desk .chip{ font-family: "IBM Plex Mono", Menlo, monospace; font-size: 11px; letter-spacing: .04em; padding: 3px 8px; border: 1px solid #c9c2ae; border-radius: 3px; color: #4a4d55; background: #fffdf7; }
+.mock-desk .ok{ color: #0f766e; border-color: #0f766e; }
+.mock-desk .miss{ color: #b45309; border-color: #b45309; }
+.mock-desk .navl{ font-size: 15px; letter-spacing: .01em; font-weight: 500; }
+.mock-desk .sect{ font-family: "IBM Plex Mono", Menlo, monospace; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: #17181c; }
+.mock-desk .row{ display: flex; gap: 12px; align-items: baseline; }
+.mock-desk td, .mock-desk th{ font-family: "Newsreader", Georgia, serif; font-size: 15px; padding: 9px 0; border-top: 1px solid #d9d3c3; text-align: left; vertical-align: top; }
+.mock-desk th{ font-family: "IBM Plex Mono", Menlo, monospace; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: #6b6e76; border-top: 0; font-weight: 500; }
+.mock-phone{ margin: 0; background: #f7f4ec; }
+.mock-phone a{ color: #17181c; text-decoration: none; }
+.mock-phone a:hover{ color: #0f766e; text-decoration: underline; }
+.mock-phone .A{ font-family: "Newsreader", Georgia, "Times New Roman", serif; color: #17181c; }
+.mock-phone .mono{ font-family: "IBM Plex Mono", Menlo, Consolas, monospace; }
+.mock-phone .kick{ font-family: "IBM Plex Mono", Menlo, monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: #0f766e; }
+.mock-phone .sect{ font-family: "IBM Plex Mono", Menlo, monospace; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: #17181c; }
+.mock-phone .h-lead{ font-size: 34px; line-height: 1.05; font-weight: 500; letter-spacing: -.02em; margin: 0; }
+.mock-phone .h-2{ font-size: 22px; line-height: 1.12; font-weight: 500; letter-spacing: -.01em; margin: 0; }
+.mock-phone .std{ font-size: 16px; line-height: 1.45; margin: 0; color: #2b2d33; }
+.mock-phone .sm{ font-size: 14px; line-height: 1.45; margin: 0; color: #4a4d55; }
+.mock-phone .chip{ font-family: "IBM Plex Mono", Menlo, monospace; font-size: 10px; letter-spacing: .04em; padding: 3px 7px; border: 1px solid #c9c2ae; border-radius: 3px; color: #4a4d55; background: #fffdf7; }
+.mock-phone .ok{ color: #0f766e; border-color: #0f766e; }
+.mock-phone .miss{ color: #b45309; border-color: #b45309; }
+.mock-phone .hair{ border-top: 1px solid #d9d3c3; }
+.mock-phone .navl{ font-size: 14px; font-weight: 500; white-space: nowrap; }
+
+.mockwrap{max-width:min(1560px,97vw);margin:0 auto;padding:0 1.1rem}
+.mockframe{overflow-x:auto;border:1px solid var(--line2);border-radius:6px;background:#f7f4ec;box-shadow:var(--shadow)}
+.mockframe.phone{width:390px;max-width:100%;margin:0}
+.mocklabel{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);margin:1.6rem 0 .5rem}
+.mock-desk .A, .mock-phone .A{font-family:"Newsreader",Georgia,"Times New Roman",serif}
+
+</style>
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer and the shipped CLI. This site is the future-of-news stack: provenance, corrections, and paying the fact creator">&#8593; part of <b>sgit.ai</b></a>
+  <span class="stage-pill">design, not built</span>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.3.7</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl" href="../thesis/index.html">The argument<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../corrections/the-claim-that-would-not-die.html">The claim that would not die</a>
+      <a class="sl" href="../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../provenance/a-worked-story.html">A worked story: &pound;8.40</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../economics/index.html">The economics<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../economics/rails.html">The payment rails</a>
+      <a class="sl" href="../economics/trust-as-a-service.html">Trust as a service</a>
+      <a class="sl" href="../economics/micro-and-nano-payments.html">Micro and nano payments (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../rights/index.html">Rights &amp; ops<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../newsroom/index.html">The newsroom: roles &amp; operations</a>
+      <a class="sl" href="../mvps/index.html">The MVPs: publication instances</a>
+      <a class="sl" href="../mvps/portugal.html">The Portugal instance, as specified</a>
+      <a class="sl" href="../mvps/seed-companies.html">Seed companies</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../governance/index.html">Governance<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../governance/index.html">The wire (beta)</a>
+      <a class="sl" href="../governance/newsroom/index.html">The floor: a point-and-click newsroom</a>
+      <a class="sl" href="../governance/newsroom/workflow.html">The state map: the workflow</a>
+      <a class="sl" href="../governance/team.html">The team: seven roles</a>
+      <a class="sl" href="../governance/research/index.html">Research runs</a>
+      <a class="sl" href="../governance/graph.html">The graph</a>
+      <a class="sl" href="../governance/sources.html">Sources</a>
+      <a class="sl" href="../governance/method.html">Method &amp; gates</a>
+      <a class="sl" href="../governance/about.html">About &amp; limits</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl here" href="../portugal/index.html">Portugal<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../portugal/index.html">The wire (beta)</a>
+      <a class="sl" href="../portugal/graph.html">The graph</a>
+      <a class="sl" href="../portugal/explorer.html">The files</a>
+      <a class="sl" href="../portugal/connections.html">Connections</a>
+      <a class="sl" href="../portugal/summit/index.html">The Summit</a>
+      <a class="sl" href="../portugal/summit/people.html">Who is speaking</a>
+      <a class="sl" href="../portugal/summit/orgs.html">The organisations</a>
+      <a class="sl" href="../portugal/summit/changes.html">What changed</a>
+      <a class="sl" href="../portugal/sources.html">Sources</a>
+      <a class="sl" href="../portugal/method.html">Method</a>
+      <a class="sl" href="../portugal/team.html">The team</a>
+      <a class="sl" href="../portugal/notice.html">Your data</a>
+      <a class="sl" href="../portugal/about.html">About &amp; limits</a>
+      <a class="sl" href="../documents/pt-newsroom.html">Brief: pt.newsroom.sgit.ai</a>
+      <a class="sl here" href="../pt-newsroom/index.html">pt.newsroom: the home page, as designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../databases/index.html">Databases<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../databases/index.html">No server: the argument (beta)</a>
+      <a class="sl" href="../databases/sql.html">The SQL console</a>
+      <a class="sl" href="../databases/graph.html">The graph console (SPARQL)</a>
+      <a class="sl" href="../portugal/explorer.html">The files it queries</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../library/index.html">The record<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../library/index.html">The library: 2025 &rarr; present</a>
+      <a class="sl" href="../shipped/index.html">What is shipped, what is argued</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../network/index.html">Site<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../network/index.html">The network: sibling boundaries</a>
+      <a class="sl" href="../documents/index.html">Documents &amp; sources</a>
+      <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
+      <a class="sl" href="../admin/versions.html">Release history</a>
+      <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../about/participant.html">Where we lose</a>
+      </div>
+    </div>
+  </div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom">&#9733; GitHub</a>
+  <script src="../assets/nav.js" defer></script>
+</div></nav>
+
+<main class="doc" style="max-width:min(1560px,97vw)">
+<div class="crumb"><a href="../index.html">newsroom.sgit.ai</a> / pt-newsroom</div>
+<h1>pt.newsroom.sgit.ai: the home page, as designed</h1>
+<p class="lead">The site does not exist yet. This is its front page as chosen on 13 September 2026 &mdash;
+a classic broadsheet, natively Portuguese, drawn with <a href="../portugal/index.html">the Portugal
+section&rsquo;s</a> real data of that day &mdash; rendered here as a page so the agent that builds the site,
+and anyone else, can see it at full size rather than as a picture. The brief that commissions the site is
+<a href="../documents/pt-newsroom.html">here</a>; its section 16 records the design system.</p>
+
+<div class="note"><p style="margin-top:0"><b>What this page is, and is not.</b> It is a rendering of the design
+sources (<code>pt-newsroom/design/Main.dc</code> and <code>MainPhone.dc</code>) with nothing edited. The
+copy on it &mdash; the three stories, the 60&rarr;64 speaker diff, the seven press pages, the programme &mdash;
+was true on 13 September and is not updated; take the structure, not the numbers. The links inside the
+mock-up go nowhere on purpose. Three of the four directions drawn that day were not chosen and are not
+published. The two typefaces, Newsreader and IBM Plex Mono, are vendored under <code>assets/fonts/</code>
+(SIL Open Font Licence) rather than fetched from a third party, for the same reason the rest of the site
+vendors its code.</p></div>
+</main>
+
+<div class="mockwrap">
+  <p class="mocklabel">Desktop &middot; 1440px &middot; scrolls sideways on a narrower screen</p>
+  <div class="mockframe desk mock-desk">
+<div class="A" style="width: 1440px; min-height: 2440px; background: #f7f4ec; padding: 0 56px 56px 56px; box-sizing: border-box; display: flex; flex-direction: column; gap: 0px;">
+
+  <!-- masthead -->
+  <div style="display: flex; justify-content: space-between; align-items: center; padding: 18px 0 10px 0; border-bottom: 1px solid #d9d3c3;">
+    <div class="mono" style="font-size: 12px; color: #4a4d55; letter-spacing: .04em;">Lisboa · domingo, 13 de setembro de 2026</div>
+    <div class="mono" style="font-size: 12px; color: #4a4d55; letter-spacing: .04em;">Faltam <b style="color: #17181c;">4 dias</b> para o Startup Summit Lisbon 2026</div>
+    <div style="display: flex; gap: 18px; align-items: center;">
+      <a href="#" class="mono" style="font-size: 12px; letter-spacing: .04em;">Aviso de proteção de dados</a>
+      <a href="#" class="mono" style="font-size: 12px; letter-spacing: .04em;">Método</a>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#17181c" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg>
+    </div>
+  </div>
+
+  <div style="display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 26px 0 18px 0;">
+    <div style="font-size: 76px; line-height: 1; font-weight: 600; letter-spacing: -.035em;">pt.newsroom<span style="color: #8a8d94; font-weight: 400;">.sgit.ai</span></div>
+    <div style="font-size: 17px; font-style: italic; color: #4a4d55;">O ecossistema português de IA é pequeno o suficiente para ser mapeado por completo e grande o suficiente para ser interessante.</div>
+  </div>
+
+  <!-- section nav -->
+  <div style="display: flex; justify-content: center; gap: 30px; padding: 12px 0; border-top: 1px solid #17181c; border-bottom: 3px double #17181c;">
+    <a href="#" class="navl">Empresas</a>
+    <a href="#" class="navl">Protagonistas</a>
+    <a href="#" class="navl">Instituições</a>
+    <a href="#" class="navl">Políticas</a>
+    <a href="#" class="navl">Casos de uso</a>
+    <a href="#" class="navl">Código aberto</a>
+    <a href="#" class="navl">Diáspora</a>
+    <a href="#" class="navl" style="color: #0f766e;">Eventos</a>
+    <span style="color: #c9c2ae;">|</span>
+    <a href="#" class="navl">Registo</a>
+    <a href="#" class="navl">Grafo</a>
+  </div>
+
+  <!-- front: lead + secondaries -->
+  <div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 40px; padding: 34px 0 30px 0;">
+    <div style="grid-column: span 7; display: flex; flex-direction: column; gap: 18px;">
+      <div class="kick">Startup Summit Lisbon 2026 · Beato</div>
+      <h1 class="h-lead">Uma tentativa de recorde que a agenda não menciona</h1>
+      <p class="std">Dois órgãos portugueses dizem que uma maratona de pitches de 48 horas, candidata ao Guinness, decorre em paralelo à cimeira a 16 e 17 de setembro. A agenda do próprio evento, a quatro dias das portas, não a lista. Ambas as páginas estão congeladas; nenhuma está errada, ainda.</p>
+      <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+        <span class="mono" style="font-size: 12px; color: #6b6e76;">Assenta em</span>
+        <span class="chip ok">AICEP Portugal Global · 29 jul</span>
+        <span class="chip ok">Portugal Business News · 29 jul</span>
+        <span class="chip miss">agenda · 13 set · não lista</span>
+      </div>
+      <div class="hair" style="padding-top: 14px; display: flex; gap: 24px;">
+        <div style="display: flex; flex-direction: column; gap: 4px; flex: 1;">
+          <div class="sect">Pesquisa</div>
+          <p class="sm">Três páginas congeladas, três hashes no registo.</p>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 4px; flex: 1;">
+          <div class="sect">Redação</div>
+          <p class="sm">Escreve só a partir do que a pesquisa registou.</p>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 4px; flex: 1;">
+          <div class="sect">Verificação</div>
+          <p class="sm">Duas afirmações confirmadas, uma não encontrada.</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="grid-column: span 5; display: flex; flex-direction: column; gap: 22px; border-left: 1px solid #d9d3c3; padding-left: 40px;">
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <div class="kick">A lista mexe-se</div>
+        <h2 class="h-2">Chegaram cinco nomes e saiu um</h2>
+        <p class="sm">Entre 8 e 13 de setembro, a lista publicada de oradores passou de 60 para 64. Temos as duas cópias e os dois hashes, e é só por isso que alguém o pode agora dizer.</p>
+        <div style="display: flex; gap: 8px;"><span class="chip ok">speakers · 08 set</span><span class="chip ok">speakers · 13 set</span></div>
+      </div>
+      <div class="hair" style="padding-top: 22px; display: flex; flex-direction: column; gap: 10px;">
+        <div class="kick">Verificação</div>
+        <h2 class="h-2">Dois nomes para três palcos</h2>
+        <p class="sm">A agenda chama-lhes Unicorn Stage e Impact Stage. A página de resumo por IA chama-lhes Main Stage e Startup Stage. Ambas publicadas pelo mesmo evento, no mesmo site, hoje.</p>
+        <div style="display: flex; gap: 8px;"><span class="chip ok">agenda · 13 set</span><span class="chip ok">ai-summary · 13 set</span></div>
+      </div>
+      <div class="hair" style="padding-top: 22px; display: flex; flex-direction: column; gap: 8px;">
+        <div class="sect">Nesta edição</div>
+        <div class="row"><span class="mono" style="font-size: 12px; color: #6b6e76; min-width: 90px;">Oradores</span><span class="sm">64 listados · 61 organizações · 1 já não listado</span></div>
+        <div class="row"><span class="mono" style="font-size: 12px; color: #6b6e76; min-width: 90px;">Fontes</span><span class="sm">17 instantâneos de 12 páginas do evento · 7 páginas de imprensa · 24 no total, todos com hash</span></div>
+        <div class="row"><span class="mono" style="font-size: 12px; color: #6b6e76; min-width: 90px;">Grafo</span><span class="sm">192 nós · 298 arestas · cada aresta um verbo português</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- o registo -->
+  <div class="rule" style="padding: 18px 0 8px 0; display: flex; justify-content: space-between; align-items: baseline;">
+    <div class="sect">Em preparação · as três primeiras histórias do registo nacional</div>
+    <div class="mono" style="font-size: 12px; color: #6b6e76;">confirmado <span style="display: inline-block; width: 10px; height: 10px; background: #0f766e; vertical-align: middle; margin: 0 10px 0 4px;"></span> disputado <span style="display: inline-block; width: 10px; height: 10px; background: #a16207; vertical-align: middle; margin: 0 10px 0 4px;"></span> não encontrado <span style="display: inline-block; width: 10px; height: 10px; background: #b91c1c; vertical-align: middle; margin: 0 0 0 4px;"></span></div>
+  </div>
+  <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px; padding: 10px 0 34px 0;">
+    <div style="display: flex; flex-direction: column; gap: 10px;">
+      <div class="kick">Políticas</div>
+      <h3 class="h-3">A agenda nacional de IA existe e o seu instrumento legal não pôde ser confirmado no registo público</h3>
+      <p class="sm">O diário oficial renderiza por script e devolveu um corpo vazio a um leitor automático. Uma história sobre a legibilidade do registo nacional, contada por uma redação que bateu na parede.</p>
+      <div style="display: flex; gap: 6px;"><span class="chip ok">agenda · confirmada</span><span class="chip" style="color: #b91c1c; border-color: #b91c1c;">instrumento · não encontrado</span></div>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 10px;">
+      <div class="kick">Instituições</div>
+      <h3 class="h-3">O regulador foi designado há um ano e o instrumento de designação não está na página de IA do Governo</h3>
+      <p class="sm">Dois factos, duas citações, e uma pergunta em vez de uma resposta.</p>
+      <div style="display: flex; gap: 6px;"><span class="chip ok">designação · confirmada</span><span class="chip" style="color: #b91c1c; border-color: #b91c1c;">na página do Governo · não encontrado</span></div>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 10px;">
+      <div class="kick">Empresas</div>
+      <h3 class="h-3">Quantas das 5.091 startups ativas são empresas de IA, e porque nenhum conjunto de dados público o diz</h3>
+      <p class="sm">Publicamos o mínimo, nomeamos o método e dizemos o tamanho do que não se consegue ver.</p>
+      <div style="display: flex; gap: 6px;"><span class="chip ok">5.091 · confirmado</span><span class="chip">método publicado</span></div>
+    </div>
+  </div>
+
+  <!-- grafo -->
+  <div class="rule" style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 40px; padding: 22px 0 34px 0;">
+    <div style="grid-column: span 4; display: flex; flex-direction: column; gap: 12px;">
+      <div class="sect">O grafo</div>
+      <h2 class="h-2">Cada aresta é um verbo. Se o caminho não se lê em voz alta, a aresta está errada.</h2>
+      <p class="sm">Um caminho lido do grafo, tal como está hoje:</p>
+      <p style="font-size: 19px; line-height: 1.5; margin: 0;">«AI or Die» <span class="mono" style="font-size: 12px; color: #0f766e;">parte de</span> Startup Summit Lisbon 2026, que <span class="mono" style="font-size: 12px; color: #0f766e;">decorre em</span> Unicorn Factory Lisboa e <span class="mono" style="font-size: 12px; color: #0f766e;">é coberto por</span> AICEP Portugal Global.</p>
+      <a href="#" class="mono" style="font-size: 12px; letter-spacing: .04em; color: #0f766e;">Abrir o grafo → 192 nós · 298 arestas</a>
+    </div>
+    <div style="grid-column: span 8; background: #fffdf7; border: 1px solid #d9d3c3;">
+      <svg width="100%" height="330" viewBox="0 0 860 330" style="display: block;">
+        <g stroke="#c9c2ae" stroke-width="1.2" fill="none">
+          <path d="M430 165 L200 80"></path><path d="M430 165 L220 250"></path><path d="M430 165 L650 70"></path>
+          <path d="M430 165 L690 175"></path><path d="M430 165 L620 270"></path><path d="M200 80 L120 160"></path>
+          <path d="M650 70 L780 40"></path><path d="M690 175 L800 250"></path>
+        </g>
+        <g font-family="IBM Plex Mono, Menlo, monospace" font-size="10" fill="#0f766e">
+          <text x="300" y="112">parte de</text><text x="290" y="228">decorre em</text><text x="520" y="110">organizado por</text>
+          <text x="548" y="163">coberto por</text><text x="512" y="228">relatado por</text><text x="148" y="110">no palco</text>
+          <text x="700" y="50">presente em</text><text x="730" y="222">assenta em</text>
+        </g>
+        <g>
+          <circle cx="430" cy="165" r="22" fill="#17181c"></circle>
+          <circle cx="200" cy="80" r="13" fill="#0f766e"></circle>
+          <circle cx="120" cy="160" r="11" fill="#5c5f66"></circle>
+          <circle cx="220" cy="250" r="13" fill="#a16207"></circle>
+          <circle cx="650" cy="70" r="13" fill="#7c5cbf"></circle>
+          <circle cx="780" cy="40" r="10" fill="#8a8d94"></circle>
+          <circle cx="690" cy="175" r="13" fill="#b45309"></circle>
+          <circle cx="800" cy="250" r="10" fill="#8a8d94"></circle>
+          <circle cx="620" cy="270" r="13" fill="#b91c1c"></circle>
+        </g>
+        <g font-family="Newsreader, Georgia, serif" font-size="13" fill="#17181c">
+          <text x="430" y="205" text-anchor="middle" font-weight="600">Startup Summit Lisbon 2026</text>
+          <text x="200" y="60" text-anchor="middle">AI or Die</text>
+          <text x="120" y="188" text-anchor="middle">Unicorn Stage</text>
+          <text x="220" y="280" text-anchor="middle">Unicorn Factory Lisboa</text>
+          <text x="650" y="50" text-anchor="middle">StartUp Events</text>
+          <text x="780" y="24" text-anchor="middle" font-size="11">sponsors · 13 set</text>
+          <text x="690" y="205" text-anchor="middle">AICEP Portugal Global</text>
+          <text x="800" y="275" text-anchor="middle" font-size="11">coverage · 29 jul</text>
+          <text x="620" y="300" text-anchor="middle">Uma tentativa de recorde…</text>
+        </g>
+        <g font-family="IBM Plex Mono, Menlo, monospace" font-size="10" fill="#6b6e76">
+          <text x="16" y="318">Evento · Sessão · Palco · Local · Organização · Cobertura · Instantâneo · História</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <!-- programa + imprensa -->
+  <div class="rule" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px; padding: 22px 0 34px 0;">
+    <div style="display: flex; flex-direction: column; gap: 12px;">
+      <div class="sect">Esta semana em Lisboa · tal como a agenda a publica</div>
+      <table style="border-collapse: collapse; width: 100%;">
+        <thead><tr><th style="width: 70px;">Dia</th><th style="width: 90px;">Hora</th><th>Sessão</th><th style="width: 120px;">Palco</th></tr></thead>
+        <tbody>
+          <tr><td>16 set</td><td class="mono" style="font-size: 13px;">19:00</td><td>Welcome Drinks</td><td class="sm">—</td></tr>
+          <tr><td>17 set</td><td class="mono" style="font-size: 13px;">09:30</td><td>Opening Keynote: Welcome to Startup Summit 2026</td><td class="sm">Unicorn Stage</td></tr>
+          <tr><td>17 set</td><td class="mono" style="font-size: 13px;">10:00</td><td>The LP Perspective</td><td class="sm">Unicorn Stage</td></tr>
+          <tr><td>17 set</td><td class="mono" style="font-size: 13px;">11:45</td><td>AI or Die</td><td class="sm">Unicorn Stage</td></tr>
+          <tr><td>18 set</td><td class="mono" style="font-size: 13px;">09:30</td><td>Day 2 Opening — Portuguese Unicorn Conversation</td><td class="sm">Unicorn Stage</td></tr>
+          <tr><td>18 set</td><td class="mono" style="font-size: 13px;">10:10</td><td>What I Built With AI</td><td class="sm">Impact Stage</td></tr>
+          <tr><td>18 set</td><td class="mono" style="font-size: 13px;">11:20</td><td>Hardware Meets Software</td><td class="sm">Impact Stage</td></tr>
+        </tbody>
+      </table>
+      <p class="sm" style="font-style: italic;">Títulos transcritos tal como estão na cópia congelada de 13 de setembro. A agenda diz de si própria que é «uma vista resumida».</p>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 12px;">
+      <div class="sect">O que diz a imprensa · páginas congeladas sobre o evento</div>
+      <table style="border-collapse: collapse; width: 100%;">
+        <thead><tr><th>Publicação</th><th style="width: 90px;">Tipo</th><th style="width: 90px;">Data</th><th style="width: 70px;">Hash</th></tr></thead>
+        <tbody>
+          <tr><td>AICEP Portugal Global</td><td class="sm">notícia</td><td class="mono" style="font-size: 13px;">29 jul</td><td><span class="chip ok">ok</span></td></tr>
+          <tr><td>Portugal Business News</td><td class="sm">notícia</td><td class="mono" style="font-size: 13px;">29 jul</td><td><span class="chip ok">ok</span></td></tr>
+          <tr><td>ScaleUp Porto</td><td class="sm">listagem</td><td class="mono" style="font-size: 13px;">07 jul</td><td><span class="chip ok">ok</span></td></tr>
+          <tr><td>StartupEvents.org</td><td class="sm">listagem</td><td class="mono" style="font-size: 13px;">s/ data</td><td><span class="chip ok">ok</span></td></tr>
+          <tr><td>Startup Map Hub</td><td class="sm">guia</td><td class="mono" style="font-size: 13px;">s/ data</td><td><span class="chip ok">ok</span></td></tr>
+          <tr><td>Eventbrite</td><td class="sm">bilhetes</td><td class="mono" style="font-size: 13px;">s/ data</td><td><span class="chip ok">ok</span></td></tr>
+          <tr><td>Startup Summit (o próprio evento)</td><td class="sm">guia</td><td class="mono" style="font-size: 13px;">s/ data</td><td><span class="chip ok">ok</span></td></tr>
+        </tbody>
+      </table>
+      <p class="sm" style="font-style: italic;">Uma oitava página, a listagem de abril na Eventbrite, devolveu um erro (404, «Ocorreu algo de errado») e ficou fora do registo.</p>
+    </div>
+  </div>
+
+  <!-- como se faz + para redações -->
+  <div class="rule" style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 40px; padding: 22px 0 30px 0;">
+    <div style="grid-column: span 8; display: flex; flex-direction: column; gap: 12px;">
+      <div class="sect">Como se faz · três departamentos, uma história com o processo à vista</div>
+      <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px;">
+        <div style="display: flex; flex-direction: column; gap: 6px;"><div class="mono" style="font-size: 12px; color: #6b6e76;">01</div><h3 class="h-3">Pesquisa</h3><p class="sm">Encontra a fonte primária. Regista endereço, data e hash.</p></div>
+        <div style="display: flex; flex-direction: column; gap: 6px;"><div class="mono" style="font-size: 12px; color: #6b6e76;">02</div><h3 class="h-3">Redação</h3><p class="sm">Escreve a partir do que a pesquisa registou, e de mais nada.</p></div>
+        <div style="display: flex; flex-direction: column; gap: 6px;"><div class="mono" style="font-size: 12px; color: #6b6e76;">03</div><h3 class="h-3">Verificação</h3><p class="sm">Relê cada fonte citada. Marca cada afirmação: confirmada, disputada, não encontrada.</p></div>
+        <div style="display: flex; flex-direction: column; gap: 6px;"><div class="mono" style="font-size: 12px; color: #6b6e76;">04</div><h3 class="h-3">Publicação</h3><p class="sm">É um passo de build. O arquivo é o git. Sem palco, sem opinião.</p></div>
+      </div>
+    </div>
+    <div style="grid-column: span 4; display: flex; flex-direction: column; gap: 10px; background: #17181c; color: #f7f4ec; padding: 22px 24px;">
+      <div class="sect" style="color: #a7f3d0;">Para redações</div>
+      <h3 class="h-3" style="color: #f7f4ec;">Os agentes desta redação seguem políticas de comportamento publicadas.</h3>
+      <p class="sm" style="color: #c9c2ae;">O que cada agente pode escrever, o que tem de registar antes de escrever, e o que nunca pode afirmar sobre uma pessoa nomeada.</p>
+      <a href="#" class="mono" style="font-size: 12px; letter-spacing: .04em; color: #a7f3d0;">Ler as políticas →</a>
+    </div>
+  </div>
+
+  <!-- ficha técnica -->
+  <div style="border-top: 3px double #17181c; padding-top: 16px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 40px;">
+    <div style="display: flex; flex-direction: column; gap: 4px;"><div class="sect">Ficha técnica</div><p class="sm">Editor de registo: Dinis Cruz. Pesquisa, redação e verificação: agentes, cada um nomeado na página de cada história com o modelo que a executou.</p></div>
+    <div style="display: flex; flex-direction: column; gap: 4px;"><div class="sect">Fontes</div><p class="sm">Duas espécies: as páginas do próprio evento e páginas de imprensa sobre o evento. Nenhuma é um registo oficial. Todas congeladas e verificadas por hash em cada build.</p></div>
+    <div style="display: flex; flex-direction: column; gap: 4px;"><div class="sect">Proteção de dados</div><p class="sm">Responsável: Dinis Cruz. Base: interesses legítimos. Remoção incondicional a pedido; nunca se publica o motivo.</p></div>
+    <div style="display: flex; flex-direction: column; gap: 4px;"><div class="sect">Parte de</div><p class="sm">newsroom.sgit.ai · uma instância do argumento. Este site é nativamente português; não é uma tradução.</p></div>
+  </div>
+</div>
+  </div>
+  <p class="mocklabel">Phone &middot; 390px</p>
+  <div class="mockframe phone mock-phone">
+<div class="A" style="width: 390px; min-height: 1900px; background: #f7f4ec; padding: 0 18px 32px 18px; box-sizing: border-box; display: flex; flex-direction: column;">
+
+  <div style="display: flex; justify-content: space-between; align-items: center; padding: 14px 0 10px 0; border-bottom: 1px solid #d9d3c3;">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#17181c" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+    <div class="mono" style="font-size: 11px; color: #4a4d55; letter-spacing: .04em;">13 set 2026 · faltam 4 dias</div>
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#17181c" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg>
+  </div>
+
+  <div style="display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 18px 0 14px 0;">
+    <div style="font-size: 38px; line-height: 1; font-weight: 600; letter-spacing: -.03em;">pt.newsroom<span style="color: #8a8d94; font-weight: 400;">.sgit.ai</span></div>
+    <div style="font-size: 13px; font-style: italic; color: #4a4d55; text-align: center;">O ecossistema português de IA, mapeado por completo.</div>
+  </div>
+
+  <div style="display: flex; gap: 18px; padding: 10px 0; border-top: 1px solid #17181c; border-bottom: 3px double #17181c; overflow: hidden;">
+    <a href="#" class="navl" style="color: #0f766e;">Eventos</a><a href="#" class="navl">Empresas</a><a href="#" class="navl">Protagonistas</a><a href="#" class="navl">Instituições</a><a href="#" class="navl">Políticas</a>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 12px; padding: 22px 0 20px 0;">
+    <div class="kick">Startup Summit Lisbon 2026 · Beato</div>
+    <h1 class="h-lead">Uma tentativa de recorde que a agenda não menciona</h1>
+    <p class="std">Dois órgãos portugueses dizem que uma maratona de pitches de 48 horas, candidata ao Guinness, decorre em paralelo à cimeira a 16 e 17 de setembro. A agenda do próprio evento, a quatro dias das portas, não a lista.</p>
+    <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+      <span class="chip ok">AICEP · 29 jul</span><span class="chip ok">Portugal Business News · 29 jul</span><span class="chip miss">agenda · não lista</span>
+    </div>
+  </div>
+
+  <div class="hair" style="display: flex; flex-direction: column; gap: 8px; padding: 18px 0;">
+    <div class="kick">A lista mexe-se</div>
+    <h2 class="h-2">Chegaram cinco nomes e saiu um</h2>
+    <p class="sm">Entre 8 e 13 de setembro, a lista publicada de oradores passou de 60 para 64. Temos as duas cópias e os dois hashes.</p>
+  </div>
+  <div class="hair" style="display: flex; flex-direction: column; gap: 8px; padding: 18px 0;">
+    <div class="kick">Verificação</div>
+    <h2 class="h-2">Dois nomes para três palcos</h2>
+    <p class="sm">A agenda chama-lhes Unicorn Stage e Impact Stage. A página de resumo por IA chama-lhes Main Stage e Startup Stage.</p>
+  </div>
+
+  <div style="border-top: 1px solid #17181c; display: flex; flex-direction: column; gap: 10px; padding: 16px 0 18px 0;">
+    <div class="sect">O grafo</div>
+    <p style="font-size: 17px; line-height: 1.5; margin: 0;">«AI or Die» <span class="mono" style="font-size: 11px; color: #0f766e;">parte de</span> Startup Summit Lisbon 2026, que <span class="mono" style="font-size: 11px; color: #0f766e;">decorre em</span> Unicorn Factory Lisboa.</p>
+    <div style="background: #fffdf7; border: 1px solid #d9d3c3;">
+      <svg width="100%" height="190" viewBox="0 0 354 190" style="display: block;">
+        <g stroke="#c9c2ae" stroke-width="1.2" fill="none"><path d="M177 95 L70 40"></path><path d="M177 95 L80 150"></path><path d="M177 95 L290 45"></path><path d="M177 95 L300 140"></path></g>
+        <g font-family="IBM Plex Mono, Menlo, monospace" font-size="9" fill="#0f766e"><text x="110" y="60">parte de</text><text x="105" y="135">decorre em</text><text x="225" y="62">organizado por</text><text x="248" y="112">coberto por</text></g>
+        <g><circle cx="177" cy="95" r="16" fill="#17181c"></circle><circle cx="70" cy="40" r="10" fill="#0f766e"></circle><circle cx="80" cy="150" r="10" fill="#a16207"></circle><circle cx="290" cy="45" r="10" fill="#7c5cbf"></circle><circle cx="300" cy="140" r="10" fill="#b45309"></circle></g>
+        <g font-family="Newsreader, Georgia, serif" font-size="11" fill="#17181c"><text x="177" y="126" text-anchor="middle" font-weight="600">Startup Summit Lisbon 2026</text><text x="70" y="24" text-anchor="middle">AI or Die</text><text x="80" y="174" text-anchor="middle">Unicorn Factory Lisboa</text><text x="290" y="29" text-anchor="middle">StartUp Events</text><text x="346" y="164" text-anchor="end">AICEP Portugal Global</text></g>
+      </svg>
+    </div>
+    <a href="#" class="mono" style="font-size: 11px; letter-spacing: .04em; color: #0f766e;">Abrir o grafo → 192 nós · 298 arestas</a>
+  </div>
+
+  <div style="border-top: 1px solid #17181c; display: flex; flex-direction: column; gap: 8px; padding: 16px 0 18px 0;">
+    <div class="sect">Esta semana em Lisboa</div>
+    <div class="hair" style="display: flex; gap: 12px; padding: 8px 0;"><span class="mono" style="font-size: 12px; min-width: 88px;">16 set 19:00</span><span class="sm" style="color: #17181c;">Welcome Drinks</span></div>
+    <div class="hair" style="display: flex; gap: 12px; padding: 8px 0;"><span class="mono" style="font-size: 12px; min-width: 88px;">17 set 09:30</span><span class="sm" style="color: #17181c;">Opening Keynote · Unicorn Stage</span></div>
+    <div class="hair" style="display: flex; gap: 12px; padding: 8px 0;"><span class="mono" style="font-size: 12px; min-width: 88px;">17 set 11:45</span><span class="sm" style="color: #17181c;">AI or Die · Unicorn Stage</span></div>
+    <div class="hair" style="display: flex; gap: 12px; padding: 8px 0;"><span class="mono" style="font-size: 12px; min-width: 88px;">18 set 09:30</span><span class="sm" style="color: #17181c;">Portuguese Unicorn Conversation · Unicorn Stage</span></div>
+    <div class="hair" style="display: flex; gap: 12px; padding: 8px 0;"><span class="mono" style="font-size: 12px; min-width: 88px;">18 set 10:10</span><span class="sm" style="color: #17181c;">What I Built With AI · Impact Stage</span></div>
+  </div>
+
+  <div style="border-top: 1px solid #17181c; display: flex; flex-direction: column; gap: 8px; padding: 16px 0 18px 0;">
+    <div class="sect">O que diz a imprensa</div>
+    <p class="sm">AICEP Portugal Global · Portugal Business News · ScaleUp Porto · StartupEvents.org · Startup Map Hub · Eventbrite · o guia do próprio evento. Sete páginas congeladas, com hash; uma excluída (404).</p>
+  </div>
+
+  <div style="background: #17181c; color: #f7f4ec; padding: 18px; display: flex; flex-direction: column; gap: 8px;">
+    <div class="sect" style="color: #a7f3d0;">Para redações</div>
+    <p class="sm" style="color: #f7f4ec;">Os agentes desta redação seguem políticas de comportamento publicadas.</p>
+    <a href="#" class="mono" style="font-size: 11px; color: #a7f3d0;">Ler as políticas →</a>
+  </div>
+
+  <div style="border-top: 3px double #17181c; margin-top: 18px; padding-top: 12px; display: flex; flex-direction: column; gap: 6px;">
+    <div class="sect">Ficha técnica</div>
+    <p class="sm">Editor de registo: Dinis Cruz. Pesquisa, redação e verificação: agentes. Publicação: build. Arquivo: git.</p>
+    <p class="sm">Proteção de dados · responsável: Dinis Cruz · remoção incondicional.</p>
+  </div>
+</div>
+  </div>
+</div>
+
+<main class="doc" style="max-width:min(1560px,97vw)">
+<div class="agent"><h4>For an agent</h4><p>This page renders the chosen home-page design for pt.newsroom.sgit.ai,
+a site that does not exist yet. The design sources are <code>/pt-newsroom/design/Main.dc</code> and
+<code>/pt-newsroom/design/MainPhone.dc</code> (plain HTML artboards); the design system &mdash; colours,
+faces, the order of the page, what is deliberately not on it &mdash; is section 16 of
+<code>/documents/pt-newsroom.html</code>, the commissioning brief. The copy on the mock-up is the Portugal
+section&rsquo;s data of 13 September 2026 and is not maintained: read <code>/portugal/data/</code> for
+current facts. Nothing here is a claim about the world; it is a picture of a page.</p></div>
+</main>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>News is failing not because there is too little information but because there is no walkable chain from a claim to its evidence, no way for a correction to reach what it disproved, and no way to pay the person who did the original work. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="netline"><a href="https://sgit.ai"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://graphs.sgit.ai">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai">&#8593; nhi.sgit.ai</a> &middot; <a href="https://sg-sentinel.sgit.ai">&#8593; sg-sentinel.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../admin/versions.html">v0.3.7</a> &middot; <a href="../admin/index.html">engineering</a></p>
+  </div>
+  <div>
+    <h4>The argument</h4>
+    <a href="../thesis/index.html">&#8594; The thesis: sell the graph</a>
+    <a href="../corrections/index.html">Corrections must propagate</a>
+    <a href="../corrections/the-claim-that-would-not-die.html">The claim that would not die</a>
+    <a href="../provenance/index.html">Provenance is the product</a>
+    <a href="../provenance/a-worked-story.html">A worked story: &pound;8.40</a>
+  </div>
+  <div>
+    <h4>The economics</h4>
+    <a href="../economics/index.html">Paying the fact creator</a>
+    <a href="../economics/rails.html">The payment rails</a>
+    <a href="../economics/trust-as-a-service.html">Trust as a service</a>
+    <a href="../economics/micro-and-nano-payments.html">Micro and nano payments (2025)</a>
+  </div>
+  <div>
+    <h4>Rights, ops &amp; record</h4>
+    <a href="../rights/index.html">Content rights: CC-Signed</a>
+    <a href="../newsroom/index.html">The newsroom: roles &amp; operations</a>
+    <a href="../mvps/index.html">The MVPs: publication instances</a>
+    <a href="../library/index.html">The library: 2025 &rarr; present</a>
+    <a href="../shipped/index.html">What is shipped, what is argued</a>
+  </div>
+  <div>
+    <h4>What runs</h4>
+    <a href="../governance/index.html">The Governance Wire (beta)</a>
+    <a href="../governance/newsroom/index.html">The floor: a point-and-click newsroom</a>
+    <a href="../portugal/index.html">Portugal Startups (beta)</a>
+    <a href="../portugal/connections.html">Connections: who should talk to whom</a>
+    <a href="../databases/index.html">Databases with no server (beta)</a>
+    <a href="../databases/sql.html">The SQL and SPARQL consoles</a>
+    <a href="../documents/pt-newsroom.html">Brief: pt.newsroom.sgit.ai</a>
+    <a href="../pt-newsroom/index.html">pt.newsroom: the home page, as designed</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../network/index.html">The network: sibling boundaries</a>
+    <a href="../documents/index.html">Documents &amp; sources</a>
+    <a href="../admin/comms.html">Comms: tasks &amp; requests</a>
+    <a href="../admin/versions.html">Release history</a>
+    <a href="../about/participant.html">Where we lose</a>
+    <a href="../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+</body>
+</html>
