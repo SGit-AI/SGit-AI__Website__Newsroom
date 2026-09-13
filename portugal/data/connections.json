@@ -1,0 +1,643 @@
+{
+  "id": "summit-connections",
+  "version": "0.1.0",
+  "updated": "2026-09-13",
+  "note": "Who should be talking to whom, at organisation level, as three SQL queries over the event's topic tags and the lexicon's derived tags. The rows are what the queries returned at build; the SQL is stored beside them so the same query can be run in the browser console. Nothing here is a fact about a person: the unit is the organisation a speaker is listed under, and every reason is a tag with its matched words on record.",
+  "unit": "organisation",
+  "excludes": "placeholder organisations; organisations with no speaker page",
+  "tables": [
+    "people",
+    "orgs",
+    "person_topics",
+    "person_tags",
+    "nodes"
+  ],
+  "queries": [
+    {
+      "id": "talk",
+      "title": "Organisations that should be talking",
+      "reads": "Two organisations whose speakers' pages share at least three topics, industries, technologies or ideas.",
+      "sql": "WITH ground AS (\n  SELECT DISTINCT p.org AS org, t.type AS kind, t.tag AS what\n  FROM person_tags t JOIN people p ON p.id = t.person\n  WHERE t.type IN ('Industry', 'Technology', 'Idea')\n    AND p.org NOT IN (SELECT name FROM orgs WHERE placeholder = 1)\n  UNION\n  SELECT DISTINCT p.org, 'Topic', pt.topic\n  FROM person_topics pt JOIN people p ON p.id = pt.person\n  WHERE p.org NOT IN (SELECT name FROM orgs WHERE placeholder = 1)\n),\noffers AS (\n  SELECT DISTINCT p.org AS org, t.tag AS service\n  FROM person_tags t JOIN people p ON p.id = t.person\n  WHERE t.type = 'Service'\n    AND p.org NOT IN (SELECT name FROM orgs WHERE placeholder = 1)\n),\nfounder_led AS (\n  SELECT DISTINCT n.org AS org FROM nodes n\n  WHERE n.type = 'Person' AND n.role_class = 'founder' AND n.org IS NOT NULL\n    AND n.org NOT IN (SELECT name FROM orgs WHERE placeholder = 1)\n)\nSELECT a.org AS org_a, b.org AS org_b, COUNT(*) AS shared,\n       GROUP_CONCAT(a.kind || ':' || a.what, ' · ') AS on_what\nFROM ground a JOIN ground b ON a.kind = b.kind AND a.what = b.what AND a.org < b.org\nGROUP BY a.org, b.org\nHAVING COUNT(*) >= 3\nORDER BY shared DESC, org_a, org_b\nLIMIT 40;",
+      "columns": [
+        "org_a",
+        "org_b",
+        "shared",
+        "on_what"
+      ],
+      "rows": [
+        {
+          "org_a": "Brdge",
+          "org_b": "Fio Legal",
+          "shared": 11,
+          "on_what": "Idea:founder-journey · Idea:go-to-market · Idea:innovation · Idea:international · Idea:strategy · Industry:education · Industry:public-sector · Technology:blockchain-web3 · Topic:AI · Topic:Leadership · Topic:Regulation"
+        },
+        {
+          "org_a": "Aiffin",
+          "org_b": "Brdge",
+          "shared": 9,
+          "on_what": "Idea:international · Idea:scaling · Idea:strategy · Industry:public-sector · Technology:ai · Technology:blockchain-web3 · Topic:AI · Topic:Go-to-market · Topic:Product-market fit"
+        },
+        {
+          "org_a": "BRANDULOGY",
+          "org_b": "Brdge",
+          "shared": 9,
+          "on_what": "Idea:diversity-inclusion · Idea:international · Industry:education · Technology:ai · Topic:AI · Topic:Founder journey · Topic:Future of work · Topic:Leadership · Topic:Scaling"
+        },
+        {
+          "org_a": "Brdge",
+          "org_b": "Ecox / Bombastic Burgh",
+          "shared": 9,
+          "on_what": "Idea:innovation · Idea:international · Industry:security · Technology:ai · Technology:blockchain-web3 · Topic:AI · Topic:Deep tech · Topic:Founder journey · Topic:Future of work"
+        },
+        {
+          "org_a": "Brdge",
+          "org_b": "iLoF",
+          "shared": 8,
+          "on_what": "Idea:founder-journey · Idea:go-to-market · Idea:impact-purpose · Idea:international · Idea:strategy · Technology:ai · Topic:AI · Topic:Go-to-market"
+        },
+        {
+          "org_a": "Fio Legal",
+          "org_b": "LEXIDY",
+          "shared": 8,
+          "on_what": "Idea:go-to-market · Idea:innovation · Idea:international · Idea:leadership · Idea:strategy · Industry:legal · Topic:European startups · Topic:Leadership"
+        },
+        {
+          "org_a": "LEXIDY",
+          "org_b": "Linkilaw Solicitors, CBCA Group",
+          "shared": 8,
+          "on_what": "Idea:go-to-market · Idea:international · Idea:leadership · Idea:strategy · Industry:legal · Topic:European startups · Topic:Leadership · Topic:Scaling"
+        },
+        {
+          "org_a": "Accenture",
+          "org_b": "Brdge",
+          "shared": 7,
+          "on_what": "Idea:diversity-inclusion · Idea:innovation · Technology:ai · Topic:AI · Topic:Future of work · Topic:Go-to-market · Topic:Leadership"
+        },
+        {
+          "org_a": "Brdge",
+          "org_b": "Cosysense",
+          "shared": 7,
+          "on_what": "Idea:scaling · Idea:strategy · Technology:ai · Technology:data · Topic:AI · Topic:Deep tech · Topic:Product-market fit"
+        },
+        {
+          "org_a": "Brdge",
+          "org_b": "FIIYS Ltd",
+          "shared": 7,
+          "on_what": "Idea:impact-purpose · Idea:scaling · Idea:strategy · Industry:public-sector · Topic:Founder journey · Topic:Leadership · Topic:Scaling"
+        },
+        {
+          "org_a": "Brdge",
+          "org_b": "Fast Track Ventures",
+          "shared": 7,
+          "on_what": "Idea:go-to-market · Idea:impact-purpose · Idea:strategy · Topic:Future of work · Topic:Go-to-market · Topic:Leadership · Topic:Scaling"
+        },
+        {
+          "org_a": "Brdge",
+          "org_b": "KONNECT - AI + Human Strategy Execution Workspace",
+          "shared": 7,
+          "on_what": "Idea:international · Idea:scaling · Idea:strategy · Technology:ai · Topic:AI · Topic:Future of work · Topic:Leadership"
+        },
+        {
+          "org_a": "Brdge",
+          "org_b": "LEXIDY",
+          "shared": 7,
+          "on_what": "Idea:go-to-market · Idea:innovation · Idea:international · Idea:strategy · Topic:Go-to-market · Topic:Leadership · Topic:Scaling"
+        },
+        {
+          "org_a": "Brdge",
+          "org_b": "Linkilaw Solicitors, CBCA Group",
+          "shared": 7,
+          "on_what": "Idea:go-to-market · Idea:international · Idea:strategy · Topic:Founder journey · Topic:Future of work · Topic:Leadership · Topic:Scaling"
+        },
+        {
+          "org_a": "Brdge",
+          "org_b": "Many",
+          "shared": 7,
+          "on_what": "Idea:go-to-market · Idea:innovation · Idea:international · Idea:scaling · Idea:strategy · Topic:Future of work · Topic:Leadership"
+        },
+        {
+          "org_a": "Brdge",
+          "org_b": "On This Planet",
+          "shared": 7,
+          "on_what": "Idea:diversity-inclusion · Idea:international · Idea:scaling · Idea:strategy · Topic:Founder journey · Topic:Future of work · Topic:Leadership"
+        },
+        {
+          "org_a": "Brdge",
+          "org_b": "SOULBRANDING",
+          "shared": 7,
+          "on_what": "Idea:diversity-inclusion · Idea:go-to-market · Idea:strategy · Topic:AI · Topic:Founder journey · Topic:Leadership · Topic:Product-market fit"
+        },
+        {
+          "org_a": "Creativity Matter",
+          "org_b": "Many",
+          "shared": 7,
+          "on_what": "Idea:innovation · Idea:leadership · Idea:strategy · Industry:art-culture · Topic:Future of work · Topic:Leadership · Topic:Mental health"
+        },
+        {
+          "org_a": "Fio Legal",
+          "org_b": "Lexidy Law Boutique SLP",
+          "shared": 7,
+          "on_what": "Idea:international · Idea:strategy · Industry:education · Industry:legal · Topic:European startups · Topic:Fundraising · Topic:Leadership"
+        },
+        {
+          "org_a": "Fio Legal",
+          "org_b": "Linkilaw Solicitors, CBCA Group",
+          "shared": 7,
+          "on_what": "Idea:go-to-market · Idea:international · Idea:leadership · Idea:strategy · Industry:legal · Topic:European startups · Topic:Leadership"
+        },
+        {
+          "org_a": "Fio Legal",
+          "org_b": "Many",
+          "shared": 7,
+          "on_what": "Idea:go-to-market · Idea:innovation · Idea:international · Idea:leadership · Idea:strategy · Technology:digital · Topic:Leadership"
+        },
+        {
+          "org_a": "Growth Geek Unipessoal LDA",
+          "org_b": "Trivevo",
+          "shared": 7,
+          "on_what": "Idea:go-to-market · Idea:scaling · Idea:strategy · Industry:energy-climate · Topic:Hiring · Topic:Leadership · Topic:Operations"
+        },
+        {
+          "org_a": "JAB Holdings",
+          "org_b": "On This Planet",
+          "shared": 7,
+          "on_what": "Idea:international · Idea:leadership · Idea:scaling · Topic:Future of work · Topic:Hiring · Topic:Leadership · Topic:Mental health"
+        },
+        {
+          "org_a": "Many",
+          "org_b": "On This Planet",
+          "shared": 7,
+          "on_what": "Idea:international · Idea:leadership · Idea:scaling · Idea:strategy · Topic:Future of work · Topic:Leadership · Topic:Mental health"
+        },
+        {
+          "org_a": "SOULBRANDING",
+          "org_b": "What She Said Limited",
+          "shared": 7,
+          "on_what": "Idea:go-to-market · Idea:leadership · Idea:strategy · Industry:media-marketing · Topic:AI · Topic:Founder journey · Topic:Leadership"
+        },
+        {
+          "org_a": "Accenture",
+          "org_b": "Aiffin",
+          "shared": 6,
+          "on_what": "Industry:fintech · Industry:hr-talent · Technology:ai · Technology:digital · Topic:AI · Topic:Go-to-market"
+        },
+        {
+          "org_a": "Accenture",
+          "org_b": "SOULBRANDING",
+          "shared": 6,
+          "on_what": "Idea:diversity-inclusion · Idea:ecosystem · Industry:media-marketing · Industry:retail-commerce · Topic:AI · Topic:Leadership"
+        },
+        {
+          "org_a": "Aiffin",
+          "org_b": "Cosysense",
+          "shared": 6,
+          "on_what": "Idea:scaling · Idea:strategy · Technology:ai · Technology:cloud-infra · Topic:AI · Topic:Product-market fit"
+        },
+        {
+          "org_a": "Aiffin",
+          "org_b": "Fio Legal",
+          "shared": 6,
+          "on_what": "Idea:international · Idea:strategy · Industry:public-sector · Technology:blockchain-web3 · Technology:digital · Topic:AI"
+        },
+        {
+          "org_a": "Aiffin",
+          "org_b": "iLoF",
+          "shared": 6,
+          "on_what": "Idea:international · Idea:strategy · Technology:ai · Technology:cloud-infra · Topic:AI · Topic:Go-to-market"
+        },
+        {
+          "org_a": "Around PR Studio",
+          "org_b": "What She Said Limited",
+          "shared": 6,
+          "on_what": "Idea:leadership · Idea:strategy · Industry:media-marketing · Topic:AI · Topic:Founder journey · Topic:Other"
+        },
+        {
+          "org_a": "BRANDULOGY",
+          "org_b": "Ecox / Bombastic Burgh",
+          "shared": 6,
+          "on_what": "Idea:international · Industry:energy-climate · Technology:ai · Topic:AI · Topic:Founder journey · Topic:Future of work"
+        },
+        {
+          "org_a": "BRANDULOGY",
+          "org_b": "On This Planet",
+          "shared": 6,
+          "on_what": "Idea:diversity-inclusion · Idea:international · Industry:energy-climate · Topic:Founder journey · Topic:Future of work · Topic:Leadership"
+        },
+        {
+          "org_a": "Brdge",
+          "org_b": "Creativity Matter",
+          "shared": 6,
+          "on_what": "Idea:innovation · Idea:strategy · Technology:ai · Topic:Founder journey · Topic:Future of work · Topic:Leadership"
+        },
+        {
+          "org_a": "Brdge",
+          "org_b": "Lisbon Business Leaders",
+          "shared": 6,
+          "on_what": "Idea:international · Idea:strategy · Technology:ai · Topic:AI · Topic:Future of work · Topic:Leadership"
+        },
+        {
+          "org_a": "Brdge",
+          "org_b": "OW Ventures SCR",
+          "shared": 6,
+          "on_what": "Idea:impact-purpose · Idea:innovation · Idea:international · Topic:Leadership · Topic:Product-market fit · Topic:Scaling"
+        },
+        {
+          "org_a": "Brdge",
+          "org_b": "Román Knörr",
+          "shared": 6,
+          "on_what": "Idea:go-to-market · Idea:strategy · Industry:education · Topic:AI · Topic:Founder journey · Topic:Go-to-market"
+        },
+        {
+          "org_a": "Brdge",
+          "org_b": "UpStride Holdings",
+          "shared": 6,
+          "on_what": "Idea:founder-journey · Idea:international · Topic:Founder journey · Topic:Go-to-market · Topic:Leadership · Topic:Product-market fit"
+        },
+        {
+          "org_a": "Brdge",
+          "org_b": "What She Said Limited",
+          "shared": 6,
+          "on_what": "Idea:go-to-market · Idea:strategy · Topic:AI · Topic:Founder journey · Topic:Leadership · Topic:Scaling"
+        },
+        {
+          "org_a": "Business Network Albania",
+          "org_b": "LEXIDY",
+          "shared": 6,
+          "on_what": "Idea:international · Idea:leadership · Topic:European startups · Topic:Leadership · Topic:Operations · Topic:Scaling"
+        }
+      ],
+      "rows_at_build": 40
+    },
+    {
+      "id": "buy",
+      "title": "Who could be buying from whom",
+      "reads": "A service a speaker's page says their organisation offers, the organisations offering it, and founder-led organisations whose pages do not offer it.",
+      "sql": "WITH ground AS (\n  SELECT DISTINCT p.org AS org, t.type AS kind, t.tag AS what\n  FROM person_tags t JOIN people p ON p.id = t.person\n  WHERE t.type IN ('Industry', 'Technology', 'Idea')\n    AND p.org NOT IN (SELECT name FROM orgs WHERE placeholder = 1)\n  UNION\n  SELECT DISTINCT p.org, 'Topic', pt.topic\n  FROM person_topics pt JOIN people p ON p.id = pt.person\n  WHERE p.org NOT IN (SELECT name FROM orgs WHERE placeholder = 1)\n),\noffers AS (\n  SELECT DISTINCT p.org AS org, t.tag AS service\n  FROM person_tags t JOIN people p ON p.id = t.person\n  WHERE t.type = 'Service'\n    AND p.org NOT IN (SELECT name FROM orgs WHERE placeholder = 1)\n),\nfounder_led AS (\n  SELECT DISTINCT n.org AS org FROM nodes n\n  WHERE n.type = 'Person' AND n.role_class = 'founder' AND n.org IS NOT NULL\n    AND n.org NOT IN (SELECT name FROM orgs WHERE placeholder = 1)\n)\nSELECT o.service AS service,\n       (SELECT GROUP_CONCAT(org, ' · ') FROM (SELECT DISTINCT org FROM offers x WHERE x.service = o.service ORDER BY org)) AS providers,\n       (SELECT COUNT(*) FROM founder_led f WHERE f.org NOT IN (SELECT org FROM offers x WHERE x.service = o.service)) AS founder_led_without_it,\n       (SELECT GROUP_CONCAT(org, ' · ') FROM (SELECT f.org FROM founder_led f\n          WHERE f.org NOT IN (SELECT org FROM offers x WHERE x.service = o.service) ORDER BY f.org LIMIT 12)) AS for_example\nFROM offers o\nGROUP BY o.service\nORDER BY COUNT(DISTINCT o.org) DESC, service;",
+      "columns": [
+        "service",
+        "providers",
+        "founder_led_without_it",
+        "for_example"
+      ],
+      "rows": [
+        {
+          "service": "investment",
+          "providers": "ABN AMRO Bank · Angels Way · Around PR Studio · Bankless Ventures · Business Network Albania · Creativity Matter · Dyrectli Capital · Ecox / Bombastic Burgh · FIIYS Ltd · Fast Track Ventures · Gacs Ltd & Gacsym Ventures · Lexidy Law Boutique SLP · Linkilaw Solicitors, CBCA Group · MVMT Studio · Many · OW Ventures SCR · PR Agency TechWaves · Pactum Global · SibillaStrupule.com · Solegency · Sotavento Angels Fund · Sotavento Invest · UpStride Holdings · Zero Risk Startup",
+          "founder_led_without_it": 25,
+          "for_example": "Accenture · Aiffin · Brdge · Cosysense · First Ten Advisory · Freedom VAs · Globalfy · Growth Geek Unipessoal LDA · Humannovate Consulting · JAB Holdings · KONNECT - AI + Human Strategy Execution Workspace · LEXIDY"
+        },
+        {
+          "service": "advisory",
+          "providers": "Angels Way · BRANDULOGY · Brdge · Business Network Albania · Creativity Matter · Dyrectli Capital · First Ten Advisory · Humannovate Consulting · JAB Holdings · KONNECT - AI + Human Strategy Execution Workspace · Ladies Who Talk · Lexidy Law Boutique SLP · Linkilaw Solicitors, CBCA Group · Lisa Press Consulting · Many · On This Planet · PriFly Advisors · SOULBRANDING · SibillaStrupule.com · Trivevo · What She Said Limited",
+          "founder_led_without_it": 24,
+          "for_example": "Accenture · Aiffin · Around PR Studio · Cosysense · Ecox / Bombastic Burgh · FIIYS Ltd · Freedom VAs · Globalfy · Growth Geek Unipessoal LDA · LEXIDY · Lisbon Business Leaders · MVMT Studio"
+        },
+        {
+          "service": "coaching",
+          "providers": "BRANDULOGY · Brdge · Business Network Albania · FIIYS Ltd · First Ten Advisory · Freedom VAs · Humannovate Consulting · Lexidy Law Boutique SLP · Mykor · SOULBRANDING · SibillaStrupule.com · Sotavento Invest · UpStride Holdings",
+          "founder_led_without_it": 29,
+          "for_example": "Accenture · Aiffin · Around PR Studio · Cosysense · Creativity Matter · Ecox / Bombastic Burgh · Globalfy · Growth Geek Unipessoal LDA · JAB Holdings · KONNECT - AI + Human Strategy Execution Workspace · LEXIDY · Ladies Who Talk"
+        },
+        {
+          "service": "incubation",
+          "providers": "351 Portuguese Startup Association · BSC AI Factory · Brdge · First Ten Advisory · SOULBRANDING · Solegency · iLoF",
+          "founder_led_without_it": 35,
+          "for_example": "Accenture · Aiffin · Around PR Studio · Cosysense · Creativity Matter · Ecox / Bombastic Burgh · FIIYS Ltd · Freedom VAs · Globalfy · Growth Geek Unipessoal LDA · Humannovate Consulting · JAB Holdings"
+        },
+        {
+          "service": "events",
+          "providers": "Ladies Who Talk · Pioneering People · Román Knörr · SibillaStrupule.com · Startup Summit · TIME & SPACE",
+          "founder_led_without_it": 36,
+          "for_example": "Accenture · Aiffin · Around PR Studio · Brdge · Cosysense · Creativity Matter · Ecox / Bombastic Burgh · FIIYS Ltd · First Ten Advisory · Freedom VAs · Globalfy · Growth Geek Unipessoal LDA"
+        },
+        {
+          "service": "pr-marketing",
+          "providers": "Around PR Studio · Brdge · MVMT Studio · SOULBRANDING · Sotavento Invest · What She Said Limited",
+          "founder_led_without_it": 34,
+          "for_example": "Accenture · Aiffin · Cosysense · Creativity Matter · Ecox / Bombastic Burgh · FIIYS Ltd · First Ten Advisory · Freedom VAs · Globalfy · Growth Geek Unipessoal LDA · Humannovate Consulting · JAB Holdings"
+        },
+        {
+          "service": "finance-services",
+          "providers": "Bankless Ventures · Brdge · Fio Legal | Fractional Freelance HR · LEXIDY · SibillaStrupule.com",
+          "founder_led_without_it": 37,
+          "for_example": "Accenture · Aiffin · Around PR Studio · Cosysense · Creativity Matter · Ecox / Bombastic Burgh · FIIYS Ltd · First Ten Advisory · Freedom VAs · Globalfy · Growth Geek Unipessoal LDA · Humannovate Consulting"
+        },
+        {
+          "service": "legal-services",
+          "providers": "LEXIDY · Ladies Who Talk · Lexidy Law Boutique SLP · Linkilaw Solicitors, CBCA Group",
+          "founder_led_without_it": 36,
+          "for_example": "Accenture · Aiffin · Around PR Studio · Brdge · Cosysense · Creativity Matter · Ecox / Bombastic Burgh · FIIYS Ltd · First Ten Advisory · Freedom VAs · Globalfy · Growth Geek Unipessoal LDA"
+        },
+        {
+          "service": "compute-support",
+          "providers": "BSC AI Factory",
+          "founder_led_without_it": 40,
+          "for_example": "Accenture · Aiffin · Around PR Studio · Brdge · Cosysense · Creativity Matter · Ecox / Bombastic Burgh · FIIYS Ltd · First Ten Advisory · Freedom VAs · Globalfy · Growth Geek Unipessoal LDA"
+        },
+        {
+          "service": "recruitment",
+          "providers": "JAB Holdings",
+          "founder_led_without_it": 39,
+          "for_example": "Accenture · Aiffin · Around PR Studio · Brdge · Cosysense · Creativity Matter · Ecox / Bombastic Burgh · FIIYS Ltd · First Ten Advisory · Freedom VAs · Globalfy · Growth Geek Unipessoal LDA"
+        }
+      ],
+      "rows_at_build": 10
+    },
+    {
+      "id": "help",
+      "title": "Who could help whom",
+      "reads": "An organisation offering investment, incubation, compute, advisory or coaching that also shares ground with a founder-led organisation. The offer and the overlap together.",
+      "sql": "WITH ground AS (\n  SELECT DISTINCT p.org AS org, t.type AS kind, t.tag AS what\n  FROM person_tags t JOIN people p ON p.id = t.person\n  WHERE t.type IN ('Industry', 'Technology', 'Idea')\n    AND p.org NOT IN (SELECT name FROM orgs WHERE placeholder = 1)\n  UNION\n  SELECT DISTINCT p.org, 'Topic', pt.topic\n  FROM person_topics pt JOIN people p ON p.id = pt.person\n  WHERE p.org NOT IN (SELECT name FROM orgs WHERE placeholder = 1)\n),\noffers AS (\n  SELECT DISTINCT p.org AS org, t.tag AS service\n  FROM person_tags t JOIN people p ON p.id = t.person\n  WHERE t.type = 'Service'\n    AND p.org NOT IN (SELECT name FROM orgs WHERE placeholder = 1)\n),\nfounder_led AS (\n  SELECT DISTINCT n.org AS org FROM nodes n\n  WHERE n.type = 'Person' AND n.role_class = 'founder' AND n.org IS NOT NULL\n    AND n.org NOT IN (SELECT name FROM orgs WHERE placeholder = 1)\n)\nSELECT o.org AS provider, o.service AS offer, f.org AS founder_led, COUNT(g2.what) AS shared,\n       GROUP_CONCAT(g2.kind || ':' || g2.what, ' · ') AS on_what\nFROM offers o\nJOIN founder_led f ON f.org <> o.org\nJOIN ground g1 ON g1.org = o.org\nJOIN ground g2 ON g2.org = f.org AND g2.kind = g1.kind AND g2.what = g1.what\nWHERE o.service IN ('investment', 'incubation', 'compute-support', 'advisory', 'coaching')\nGROUP BY o.org, o.service, f.org\nHAVING COUNT(g2.what) >= 2\nORDER BY shared DESC, provider, founder_led\nLIMIT 40;",
+      "columns": [
+        "provider",
+        "offer",
+        "founder_led",
+        "shared",
+        "on_what"
+      ],
+      "rows": [
+        {
+          "provider": "BRANDULOGY",
+          "offer": "advisory",
+          "founder_led": "Brdge",
+          "shared": 9,
+          "on_what": "Idea:diversity-inclusion · Idea:international · Industry:education · Technology:ai · Topic:AI · Topic:Founder journey · Topic:Future of work · Topic:Leadership · Topic:Scaling"
+        },
+        {
+          "provider": "BRANDULOGY",
+          "offer": "coaching",
+          "founder_led": "Brdge",
+          "shared": 9,
+          "on_what": "Idea:diversity-inclusion · Idea:international · Industry:education · Technology:ai · Topic:AI · Topic:Founder journey · Topic:Future of work · Topic:Leadership · Topic:Scaling"
+        },
+        {
+          "provider": "Brdge",
+          "offer": "advisory",
+          "founder_led": "Aiffin",
+          "shared": 9,
+          "on_what": "Idea:international · Idea:scaling · Idea:strategy · Industry:public-sector · Technology:ai · Technology:blockchain-web3 · Topic:AI · Topic:Go-to-market · Topic:Product-market fit"
+        },
+        {
+          "provider": "Brdge",
+          "offer": "coaching",
+          "founder_led": "Aiffin",
+          "shared": 9,
+          "on_what": "Idea:international · Idea:scaling · Idea:strategy · Industry:public-sector · Technology:ai · Technology:blockchain-web3 · Topic:AI · Topic:Go-to-market · Topic:Product-market fit"
+        },
+        {
+          "provider": "Brdge",
+          "offer": "incubation",
+          "founder_led": "Aiffin",
+          "shared": 9,
+          "on_what": "Idea:international · Idea:scaling · Idea:strategy · Industry:public-sector · Technology:ai · Technology:blockchain-web3 · Topic:AI · Topic:Go-to-market · Topic:Product-market fit"
+        },
+        {
+          "provider": "Brdge",
+          "offer": "advisory",
+          "founder_led": "Ecox / Bombastic Burgh",
+          "shared": 9,
+          "on_what": "Idea:innovation · Idea:international · Industry:security · Technology:ai · Technology:blockchain-web3 · Topic:AI · Topic:Deep tech · Topic:Founder journey · Topic:Future of work"
+        },
+        {
+          "provider": "Brdge",
+          "offer": "coaching",
+          "founder_led": "Ecox / Bombastic Burgh",
+          "shared": 9,
+          "on_what": "Idea:innovation · Idea:international · Industry:security · Technology:ai · Technology:blockchain-web3 · Topic:AI · Topic:Deep tech · Topic:Founder journey · Topic:Future of work"
+        },
+        {
+          "provider": "Brdge",
+          "offer": "incubation",
+          "founder_led": "Ecox / Bombastic Burgh",
+          "shared": 9,
+          "on_what": "Idea:innovation · Idea:international · Industry:security · Technology:ai · Technology:blockchain-web3 · Topic:AI · Topic:Deep tech · Topic:Founder journey · Topic:Future of work"
+        },
+        {
+          "provider": "Ecox / Bombastic Burgh",
+          "offer": "investment",
+          "founder_led": "Brdge",
+          "shared": 9,
+          "on_what": "Idea:innovation · Idea:international · Industry:security · Technology:ai · Technology:blockchain-web3 · Topic:AI · Topic:Deep tech · Topic:Founder journey · Topic:Future of work"
+        },
+        {
+          "provider": "Brdge",
+          "offer": "advisory",
+          "founder_led": "iLoF",
+          "shared": 8,
+          "on_what": "Idea:founder-journey · Idea:go-to-market · Idea:impact-purpose · Idea:international · Idea:strategy · Technology:ai · Topic:AI · Topic:Go-to-market"
+        },
+        {
+          "provider": "Brdge",
+          "offer": "coaching",
+          "founder_led": "iLoF",
+          "shared": 8,
+          "on_what": "Idea:founder-journey · Idea:go-to-market · Idea:impact-purpose · Idea:international · Idea:strategy · Technology:ai · Topic:AI · Topic:Go-to-market"
+        },
+        {
+          "provider": "Brdge",
+          "offer": "incubation",
+          "founder_led": "iLoF",
+          "shared": 8,
+          "on_what": "Idea:founder-journey · Idea:go-to-market · Idea:impact-purpose · Idea:international · Idea:strategy · Technology:ai · Topic:AI · Topic:Go-to-market"
+        },
+        {
+          "provider": "Linkilaw Solicitors, CBCA Group",
+          "offer": "advisory",
+          "founder_led": "LEXIDY",
+          "shared": 8,
+          "on_what": "Idea:go-to-market · Idea:international · Idea:leadership · Idea:strategy · Industry:legal · Topic:European startups · Topic:Leadership · Topic:Scaling"
+        },
+        {
+          "provider": "Linkilaw Solicitors, CBCA Group",
+          "offer": "investment",
+          "founder_led": "LEXIDY",
+          "shared": 8,
+          "on_what": "Idea:go-to-market · Idea:international · Idea:leadership · Idea:strategy · Industry:legal · Topic:European startups · Topic:Leadership · Topic:Scaling"
+        },
+        {
+          "provider": "iLoF",
+          "offer": "incubation",
+          "founder_led": "Brdge",
+          "shared": 8,
+          "on_what": "Idea:founder-journey · Idea:go-to-market · Idea:impact-purpose · Idea:international · Idea:strategy · Technology:ai · Topic:AI · Topic:Go-to-market"
+        },
+        {
+          "provider": "Brdge",
+          "offer": "advisory",
+          "founder_led": "Accenture",
+          "shared": 7,
+          "on_what": "Idea:diversity-inclusion · Idea:innovation · Technology:ai · Topic:AI · Topic:Future of work · Topic:Go-to-market · Topic:Leadership"
+        },
+        {
+          "provider": "Brdge",
+          "offer": "coaching",
+          "founder_led": "Accenture",
+          "shared": 7,
+          "on_what": "Idea:diversity-inclusion · Idea:innovation · Technology:ai · Topic:AI · Topic:Future of work · Topic:Go-to-market · Topic:Leadership"
+        },
+        {
+          "provider": "Brdge",
+          "offer": "incubation",
+          "founder_led": "Accenture",
+          "shared": 7,
+          "on_what": "Idea:diversity-inclusion · Idea:innovation · Technology:ai · Topic:AI · Topic:Future of work · Topic:Go-to-market · Topic:Leadership"
+        },
+        {
+          "provider": "Brdge",
+          "offer": "advisory",
+          "founder_led": "Cosysense",
+          "shared": 7,
+          "on_what": "Idea:scaling · Idea:strategy · Technology:ai · Technology:data · Topic:AI · Topic:Deep tech · Topic:Product-market fit"
+        },
+        {
+          "provider": "Brdge",
+          "offer": "coaching",
+          "founder_led": "Cosysense",
+          "shared": 7,
+          "on_what": "Idea:scaling · Idea:strategy · Technology:ai · Technology:data · Topic:AI · Topic:Deep tech · Topic:Product-market fit"
+        },
+        {
+          "provider": "Brdge",
+          "offer": "incubation",
+          "founder_led": "Cosysense",
+          "shared": 7,
+          "on_what": "Idea:scaling · Idea:strategy · Technology:ai · Technology:data · Topic:AI · Topic:Deep tech · Topic:Product-market fit"
+        },
+        {
+          "provider": "Brdge",
+          "offer": "advisory",
+          "founder_led": "FIIYS Ltd",
+          "shared": 7,
+          "on_what": "Idea:impact-purpose · Idea:scaling · Idea:strategy · Industry:public-sector · Topic:Founder journey · Topic:Leadership · Topic:Scaling"
+        },
+        {
+          "provider": "Brdge",
+          "offer": "coaching",
+          "founder_led": "FIIYS Ltd",
+          "shared": 7,
+          "on_what": "Idea:impact-purpose · Idea:scaling · Idea:strategy · Industry:public-sector · Topic:Founder journey · Topic:Leadership · Topic:Scaling"
+        },
+        {
+          "provider": "Brdge",
+          "offer": "incubation",
+          "founder_led": "FIIYS Ltd",
+          "shared": 7,
+          "on_what": "Idea:impact-purpose · Idea:scaling · Idea:strategy · Industry:public-sector · Topic:Founder journey · Topic:Leadership · Topic:Scaling"
+        },
+        {
+          "provider": "Brdge",
+          "offer": "advisory",
+          "founder_led": "KONNECT - AI + Human Strategy Execution Workspace",
+          "shared": 7,
+          "on_what": "Idea:international · Idea:scaling · Idea:strategy · Technology:ai · Topic:AI · Topic:Future of work · Topic:Leadership"
+        },
+        {
+          "provider": "Brdge",
+          "offer": "coaching",
+          "founder_led": "KONNECT - AI + Human Strategy Execution Workspace",
+          "shared": 7,
+          "on_what": "Idea:international · Idea:scaling · Idea:strategy · Technology:ai · Topic:AI · Topic:Future of work · Topic:Leadership"
+        },
+        {
+          "provider": "Brdge",
+          "offer": "incubation",
+          "founder_led": "KONNECT - AI + Human Strategy Execution Workspace",
+          "shared": 7,
+          "on_what": "Idea:international · Idea:scaling · Idea:strategy · Technology:ai · Topic:AI · Topic:Future of work · Topic:Leadership"
+        },
+        {
+          "provider": "Brdge",
+          "offer": "advisory",
+          "founder_led": "LEXIDY",
+          "shared": 7,
+          "on_what": "Idea:go-to-market · Idea:innovation · Idea:international · Idea:strategy · Topic:Go-to-market · Topic:Leadership · Topic:Scaling"
+        },
+        {
+          "provider": "Brdge",
+          "offer": "coaching",
+          "founder_led": "LEXIDY",
+          "shared": 7,
+          "on_what": "Idea:go-to-market · Idea:innovation · Idea:international · Idea:strategy · Topic:Go-to-market · Topic:Leadership · Topic:Scaling"
+        },
+        {
+          "provider": "Brdge",
+          "offer": "incubation",
+          "founder_led": "LEXIDY",
+          "shared": 7,
+          "on_what": "Idea:go-to-market · Idea:innovation · Idea:international · Idea:strategy · Topic:Go-to-market · Topic:Leadership · Topic:Scaling"
+        },
+        {
+          "provider": "Brdge",
+          "offer": "advisory",
+          "founder_led": "Linkilaw Solicitors, CBCA Group",
+          "shared": 7,
+          "on_what": "Idea:go-to-market · Idea:international · Idea:strategy · Topic:Founder journey · Topic:Future of work · Topic:Leadership · Topic:Scaling"
+        },
+        {
+          "provider": "Brdge",
+          "offer": "coaching",
+          "founder_led": "Linkilaw Solicitors, CBCA Group",
+          "shared": 7,
+          "on_what": "Idea:go-to-market · Idea:international · Idea:strategy · Topic:Founder journey · Topic:Future of work · Topic:Leadership · Topic:Scaling"
+        },
+        {
+          "provider": "Brdge",
+          "offer": "incubation",
+          "founder_led": "Linkilaw Solicitors, CBCA Group",
+          "shared": 7,
+          "on_what": "Idea:go-to-market · Idea:international · Idea:strategy · Topic:Founder journey · Topic:Future of work · Topic:Leadership · Topic:Scaling"
+        },
+        {
+          "provider": "Brdge",
+          "offer": "advisory",
+          "founder_led": "Many",
+          "shared": 7,
+          "on_what": "Idea:go-to-market · Idea:innovation · Idea:international · Idea:scaling · Idea:strategy · Topic:Future of work · Topic:Leadership"
+        },
+        {
+          "provider": "Brdge",
+          "offer": "coaching",
+          "founder_led": "Many",
+          "shared": 7,
+          "on_what": "Idea:go-to-market · Idea:innovation · Idea:international · Idea:scaling · Idea:strategy · Topic:Future of work · Topic:Leadership"
+        },
+        {
+          "provider": "Brdge",
+          "offer": "incubation",
+          "founder_led": "Many",
+          "shared": 7,
+          "on_what": "Idea:go-to-market · Idea:innovation · Idea:international · Idea:scaling · Idea:strategy · Topic:Future of work · Topic:Leadership"
+        },
+        {
+          "provider": "Brdge",
+          "offer": "advisory",
+          "founder_led": "On This Planet",
+          "shared": 7,
+          "on_what": "Idea:diversity-inclusion · Idea:international · Idea:scaling · Idea:strategy · Topic:Founder journey · Topic:Future of work · Topic:Leadership"
+        },
+        {
+          "provider": "Brdge",
+          "offer": "coaching",
+          "founder_led": "On This Planet",
+          "shared": 7,
+          "on_what": "Idea:diversity-inclusion · Idea:international · Idea:scaling · Idea:strategy · Topic:Founder journey · Topic:Future of work · Topic:Leadership"
+        },
+        {
+          "provider": "Brdge",
+          "offer": "incubation",
+          "founder_led": "On This Planet",
+          "shared": 7,
+          "on_what": "Idea:diversity-inclusion · Idea:international · Idea:scaling · Idea:strategy · Topic:Founder journey · Topic:Future of work · Topic:Leadership"
+        },
+        {
+          "provider": "Brdge",
+          "offer": "advisory",
+          "founder_led": "SOULBRANDING",
+          "shared": 7,
+          "on_what": "Idea:diversity-inclusion · Idea:go-to-market · Idea:strategy · Topic:AI · Topic:Founder journey · Topic:Leadership · Topic:Product-market fit"
+        }
+      ],
+      "rows_at_build": 40
+    }
+  ]
+}

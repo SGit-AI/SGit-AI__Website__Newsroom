@@ -23,10 +23,14 @@ frozen copy would prove a claim; a series proves a trajectory, and shows what di
 
 What is extracted and what is deliberately not. Speaker cards carry name, role,
 organisation, a link to that speaker's own page and usually a LinkedIn URL. Those are
-extracted. **The biography paragraph is not**, on either of two grounds that each suffice:
-it is the speaker's or organiser's own writing rather than a fact about the world, and this
-publication links rather than reproduces. We hold the bytes for verification; we publish
-the pointer.
+extracted. **The biography paragraph is not reproduced**, on either of two grounds that each
+suffice: it is the speaker's or organiser's own writing rather than a fact about the world,
+and this publication links rather than reproduces. We hold the bytes for verification; we
+publish the pointer. Since v0.3.4 each speaker's own page is frozen too, and two things are
+READ from it without reproducing it: the event's own `Topics` list for that speaker, verbatim,
+and the words on the page that match `data/lexicon.json`, a published formula. Both land in
+`topics.json`; neither carries a sentence of the biography, and gate 10 fails the build if
+one ever does.
 
 On reporting a removal. A name present in one snapshot and absent from the next is
 recorded as exactly that and nothing more. Withdrawal, a scheduling clash, a duplicate
@@ -91,6 +95,14 @@ def fetch_snapshot(date):
              "-o", str(out / "coverage" / f"{cid}.snapshot"), "-w", "%{http_code}",
              "--max-time", "30", url], capture_output=True, text=True).stdout.strip()
         print(f"  {code}  {date}/coverage/{cid}.snapshot")
+    (out / "speakers").mkdir(exist_ok=True)
+    for p in people_in(out):
+        code = subprocess.run(
+            ["curl", "-sL", "-A", "Mozilla/5.0 (newsroom.sgit.ai research; +https://newsroom.sgit.ai/portugal/)",
+             "-o", str(out / "speakers" / f"{p['id']}.snapshot"), "-w", "%{http_code}",
+             "--max-time", "30", p["page"]], capture_output=True, text=True).stdout.strip()
+        print(f"  {code}  {date}/speakers/{p['id']}.snapshot")
+        time.sleep(0.3)
 
 
 def sha(p):
@@ -184,6 +196,50 @@ def stated_count(snap):
     return int(m.group(1)) if m else None
 
 
+# ------------------------------------------------------------------ topics ---
+def bio_block(f):
+    """The prose of the speaker's own page: the <h2>Bio</h2> paragraph(s) only, tags stripped.
+    The event's Topics list, the LinkedIn line and the boilerplate below are excluded so the
+    lexicon runs over what the speaker (or the organiser) wrote about them and nothing else.
+    Returned only to be matched against; never written anywhere."""
+    s = f.read_text(errors="replace")
+    m = re.search(r"<h2>Bio</h2>(.*?)(?:<h2>Topics</h2>|<p><a href=\"https://www\.linkedin|<h2>About Startup Summit</h2>)", s, re.S)
+    if not m:
+        return ""
+    return " ".join(html.unescape(re.sub(r"<[^>]+>", " ", m.group(1))).replace("\\n", " ").split())
+
+
+def topics_block(f):
+    """The event's own Topics list for this speaker, each item verbatim."""
+    s = f.read_text(errors="replace")
+    m = re.search(r"<h2>Topics</h2>\s*<ul>(.*?)</ul>", s, re.S)
+    if not m:
+        return []
+    return [html.unescape(t).strip() for t in re.findall(r"<li>(.*?)</li>", m.group(1), re.S)]
+
+
+def read_topics(snap, people, lexicon):
+    rows, person_topics, person_tags = [], [], []
+    for p in people:
+        f = snap / "speakers" / f"{p['id']}.snapshot"
+        if not f.exists():
+            rows.append({"id": p["id"], "source": None, "topics": [], "tags": [], "bio_chars": 0,
+                         "note": "no frozen copy of this speaker's page"})
+            continue
+        bio = bio_block(f)
+        topics = topics_block(f)
+        tags = []
+        for e in lexicon["entries"]:
+            m = re.search(e["pattern"], bio, re.I)
+            if m:
+                tags.append({"tag": e["id"], "type": e["type"], "matched": m.group(0)[:40]})
+        sid = f"{snap.name}/speakers/{p['id']}"
+        rows.append({"id": p["id"], "source": sid, "topics": topics, "tags": tags, "bio_chars": len(bio)})
+        person_topics += [{"person": p["id"], "topic": t, "source": sid} for t in topics]
+        person_tags += [{"person": p["id"], **t, "source": sid} for t in tags]
+    return rows, person_topics, person_tags
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--fetch", action="store_true", help="take a new dated snapshot first")
@@ -227,6 +283,16 @@ def main():
                 "url": url, "frozen": f"sources/frozen/{snap.name}/coverage/{cid}.snapshot",
                 "sha256": sha(f), "bytes": f.stat().st_size, "retrieved": mtime(f),
                 "publisher": "third party — see coverage.json", "state": "primary",
+            })
+
+    for snap in snaps:
+        for f in sorted((snap / "speakers").glob("*.snapshot")):
+            sources.append({
+                "id": f"{snap.name}/speakers/{f.stem}", "page": f"speakers/{f.stem}", "snapshot": snap.name,
+                "url": f"{HOST}/speakers/{f.stem}",
+                "frozen": f"sources/frozen/{snap.name}/speakers/{f.stem}.snapshot",
+                "sha256": sha(f), "bytes": f.stat().st_size, "retrieved": mtime(f),
+                "publisher": "Startup Summit Lisbon 2026", "state": "primary",
             })
 
     notes = json.loads((DATA / "coverage-notes.json").read_text(encoding="utf-8")) \
@@ -290,9 +356,34 @@ def main():
         "note": ("Speakers as listed on the event's own speakers page, extracted from a frozen, "
                  "hashed copy rather than from the live network. Name, role, organisation and "
                  "links only — biographies are the speakers' and organisers' own writing and are "
-                 "linked, not reproduced."),
+                 "linked, not reproduced. Each speaker's own page is frozen too; the event's Topics "
+                 "list for them and the words that match the published lexicon are read from it "
+                 "into topics.json, and no sentence of the biography is."),
         "count": len(people), "with_linkedin": sum(1 for p in people if p["linkedin"]),
         "people": people,
+    })
+    lexicon = json.loads((DATA / "lexicon.json").read_text(encoding="utf-8"))
+    trows, person_topics, person_tags = read_topics(latest, people, lexicon)
+    topic_index = {}
+    for pt in person_topics:
+        topic_index.setdefault(pt["topic"], []).append(pt["person"])
+    write("topics.json", {
+        "id": "summit-topics", "version": "0.1.0", "updated": today, "snapshot": today,
+        "note": ("Two things read from each speaker's own page on the event site, frozen and hashed "
+                 "like every other source. TOPICS are the event's own tag list for that speaker, "
+                 "verbatim. TAGS are derived: each is a lexicon entry (data/lexicon.json, a published "
+                 "regular expression) that matched the page's Bio prose, and carries the matched words "
+                 "and nothing else. A tag says the page contains these words; it is not a "
+                 "characterisation of the person. bio_chars is the length of the prose the lexicon "
+                 "ran over, kept so a reader can see how much text a tag stands on."),
+        "lexicon": {"id": lexicon["id"], "version": lexicon["version"], "entries": len(lexicon["entries"])},
+        "count": len(trows), "with_topics": sum(1 for r in trows if r["topics"]),
+        "with_tags": sum(1 for r in trows if r["tags"]),
+        "distinct_topics": len(topic_index), "distinct_tags": len({t["tag"] for t in person_tags}),
+        "people": trows,
+        "person_topics": person_topics,
+        "person_tags": person_tags,
+        "topic_index": dict(sorted(topic_index.items(), key=lambda kv: (-len(kv[1]), kv[0]))),
     })
     write("orgs.json", {
         "id": "summit-orgs", "version": "0.1.0", "updated": today,

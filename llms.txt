@@ -6,7 +6,7 @@
 > that accumulates evidence, perspectives and confidence; every article, translation and
 > infographic is a projection of it. Sell the graph, not the paragraph.
 
-Site version: v0.3.3 (13 September 2026). Published by the sgit project, which is building
+Site version: v0.3.4 (13 September 2026). Published by the sgit project, which is building
 the stack this site argues for — participant disclosure at /about/participant.html.
 Site content CC BY 4.0; the republished library material is CC0 1.0 Universal at source
 (docs.diniscruz.ai) — state the source licence per page.
@@ -90,9 +90,11 @@ It is a beta with no human editorial review and no legal review.
   This is the fetch-freeze-hash path /governance/ specifies and cannot run.
   It also has a NAMED HUMAN EDITOR OF RECORD (Dinis Cruz) who reviews every page before it
   publishes, because this beat is about named people and named companies.
-  - /portugal/graph.html — THE GRAPH: 191 nodes / 294 edges — the event, 64 speakers, 61 derived
-    organisations, 16 sessions on 3 stages, 24 frozen sources across 2 snapshots, 7 pieces of
-    press coverage, our stories. Every edge is a verb with a named inverse IN ENGLISH AND
+  - /portugal/graph.html — THE GRAPH: 329 nodes / 1,106 edges, 16 types, 19 verbs — the event, 64
+    speakers, 61 derived organisations, 16 sessions on 3 stages, 88 frozen sources across 2
+    snapshots (64 of them the speakers' own pages), 7 pieces of press coverage, our stories, 23
+    Topic nodes (the event's own tags) and 50 derived tag nodes (Industry, Technology, Idea,
+    Service, Product — by lexicon, every edge carrying its matched words). Every edge is a verb with a named inverse IN ENGLISH AND
     PORTUGUESE (ontology.json), so a path reads as a sentence either way. Nodes arrive in PACKS
     the reader switches on block by block. The page publishes window.__graph (read + view
     methods, no writes) after a tool:ready event, the same convention as graphs.sgit.ai's
@@ -100,11 +102,21 @@ It is a beta with no human editorial review and no legal review.
   - /portugal/explorer.html — THE FILES: every file the section is built from, from
     /portugal/data/manifest.json with size and SHA-256, rendered / as a graph / raw. Frozen
     third-party pages are listed and hashed but never rendered
+  - /portugal/connections.html — CONNECTIONS: who should be talking to whom, who could be buying
+    from whom and who could help whom, as THREE ORGANISATION-LEVEL SQL QUERIES over two things read
+    from each speaker's own frozen page — the event's own Topics list (verbatim, 23 distinct) and
+    the words matching a PUBLISHED LEXICON of 57 patterns (industries, technologies, ideas, services,
+    products; the matched words only, never the sentence). Rows at build in
+    /portugal/data/connections.json with the SQL beside them; the same SQL runs unchanged in
+    /databases/sql.html. NOTHING HERE IS A CLAIM ABOUT A PERSON: the unit is the organisation, and
+    the notice refuses characterisation of named individuals. Gate 17 re-runs every pattern on the
+    frozen bytes each build; gate 16 checks every topic is on the page verbatim
   - /portugal/summit/index.html — the event as it describes itself. Distinguish TARGETS from
     COUNTS: the event's own wording is "targeting 2,000+" attendees and "150+ speakers planned",
     while its published list names 64. Do not report a target as a result.
-  - /portugal/summit/people.html — all 64 published speakers with role, organisation and a link
-    to each speaker's own page. Biographies are deliberately NOT reproduced
+  - /portugal/summit/people.html — all 64 published speakers with role, organisation, the event's
+    own Topics for them (verbatim) and a link to each speaker's own page. Biographies are
+    deliberately NOT reproduced; the lexicon reads them and keeps only matched words
   - /portugal/summit/orgs.html — 61 organisations DERIVED from the speaker cards; 2 are
     placeholders ("Independent") flagged rather than removed
   - /portugal/summit/changes.html — the same pages frozen twice and diffed: 5 speakers added and
@@ -138,15 +150,16 @@ It is a beta with no human editorial review and no legal review.
   client-side and ephemeral) and graphs.sgit.ai's "NOT A GRAPH DATABASE PITCH" is inherited:
   JSON stays the source of truth. Both consoles publish window.__tools.{sql,sparql} after a
   tool:ready event, read-only, and fetch only same-origin files.
-  - /databases/sql.html — SQLite (sql.js 1.14.2, MIT, vendored): 12 tables built on load from
+  - /databases/sql.html — SQLite (sql.js 1.14.2, MIT, vendored): 15 tables built on load from
     /databases/data/tables.json (the loader spec, which names the file and field behind every
-    column); 13 worked queries from a count-by-class to a recursive two-hop traversal, each with
+    column); 16 worked queries from a count-by-class to a recursive two-hop traversal and the
+    connections formula, each with
     the row count it returned AT BUILD (/databases/data/queries-sql.json). The build executed
     every one through Python's sqlite3 against the same spec; a failing or empty query fails the build
   - /databases/graph.html — Oxigraph (0.5.11 web build, MIT OR Apache-2.0, vendored): SPARQL 1.1
     over /portugal/data/triples.nt (N-Triples, IRIs under https://newsroom.sgit.ai/portugal/
     {id,verb,type,prop}/; the ontology is IN THE STORE, inverses declared with owl:inverseOf and
-    walked with ^, labels @en and @pt). 11 worked queries incl. a Portuguese path read aloud, a
+    walked with ^, labels @en and @pt; 4,001 triples). 13 worked queries incl. a Portuguese path read aloud, a
     property-path two-hop walk, a CONSTRUCT of the inverse edges and an ASK that no edge is
     symmetric — each shown beside the same question in Cypher, which is displayed and NOT run
     (Kùzu's WASM build is 73 MB unpacked; declined and recorded). Validated at build with pyoxigraph

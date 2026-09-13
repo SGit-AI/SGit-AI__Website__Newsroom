@@ -20,7 +20,7 @@
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer and the shipped CLI. This site is the future-of-news stack: provenance, corrections, and paying the fact creator">&#8593; part of <b>sgit.ai</b></a>
   <span class="stage-pill">design, not built</span>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.3.3</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.3.4</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -81,8 +81,8 @@
 <div class="crumb"><a href="../index.html">newsroom.sgit.ai</a> / databases</div>
 <div class="ops" style="margin:0 0 1.4rem"><div class="op" style="border-left-color:#0f766e"><b style="color:#0f766e">Databases with no server &middot; beta</b><div style="display:flex;flex-wrap:wrap;gap:.35rem 1rem;margin-top:.4rem"><a href="index.html" style="font-size:.83rem;color:#101114;font-weight:600">The argument</a><a href="sql.html" style="font-size:.83rem;color:#5c5f66">SQL console</a><a href="graph.html" style="font-size:.83rem;color:#5c5f66">SPARQL console</a><a href="../portugal/explorer.html" style="font-size:.83rem;color:#5c5f66">The files it queries</a><a href="../portugal/graph.html" style="font-size:.83rem;color:#5c5f66">The graph, drawn</a></div></div></div>
 <h1>Databases with no server</h1>
-<p class="claim">This site has no server. The Portugal section is 16 JSON files in a git
-repository, 517 KB in all, each with its hash in a manifest. Two real database engines run over
+<p class="claim">This site has no server. The Portugal section is 19 JSON files in a git
+repository, 1.3 MB in all, each with its hash in a manifest. Two real database engines run over
 exactly those files <em>in your browser</em>, compiled to WebAssembly: SQLite, and Oxigraph speaking
 SPARQL 1.1. Nothing is uploaded, nothing is queried remotely, and when the tab closes the database
 is gone. The files are the database. The engines are readers.</p>
@@ -100,14 +100,14 @@ language: the same graph queried as triples, with a standard graph query languag
 <div class="cards" style="padding:0;max-width:none">
   <a class="card" href="sql.html"><span class="tag">SQL &middot; SQLite via sql.js</span>
     <h3>The SQL console</h3>
-    <p>12 tables built from the JSON on load, 13 worked queries from a count-by-class to a
+    <p>15 tables built from the JSON on load, 16 worked queries from a count-by-class to a
     recursive graph walk, and a box to write your own. Every example ran at build; its row count is
     printed beside it so your run can disagree.</p><span class="go">Open the SQL console &rarr;</span></a>
   <a class="card" href="graph.html"><span class="tag">SPARQL 1.1 &middot; Oxigraph</span>
     <h3>The graph console</h3>
-    <p>1,982 triples &mdash; the same graph, the ontology inside the store, inverses declared with
+    <p>4,001 triples &mdash; the same graph, the ontology inside the store, inverses declared with
     <code>owl:inverseOf</code> and walked with a property path, labels in English and Portuguese so a path
-    reads aloud. 11 worked queries, each shown beside the same question in Cypher.</p>
+    reads aloud. 13 worked queries, each shown beside the same question in Cypher.</p>
     <span class="go">Open the graph console &rarr;</span></a>
 </div>
 
@@ -144,7 +144,7 @@ stored in a graph.&rdquo;</em> The JSON stays the source of truth. The SPARQL st
 and thrown away on close; nothing is ever written back. Its shipped page lists &ldquo;browser SPARQL/Cypher, RDF
 in code&rdquo; under what that site does <em>not</em> have; this page is where the estate now has it, as a
 reader over files rather than a store of record.</p>
-<p>It is not a server in disguise. The whole dataset is downloaded, which is fine at 517 KB and would
+<p>It is not a server in disguise. The whole dataset is downloaded, which is fine at 1.3 MB and would
 not be at a gigabyte; that is the honest scaling limit of the pattern, and the sgit.ai guidance already
 names the answer &mdash; <em>manifests at build time, files on click</em>. And it is not a write path:
 corrections go through the files, the build and a version, which is the point.</p>
@@ -163,11 +163,11 @@ the choice is recorded rather than hidden.</p>
 <h2 id="files">The files each console loads</h2>
 <div class="tablewrap"><table class="pkgs">
 <thead><tr><th>File</th><th>Bytes</th><th>SHA-256</th></tr></thead>
-<tbody><tr><td><a href="../portugal/data/changes.json">changes.json</a></td><td class="num">2,149</td><td><code>ad1d1e37da05</code></td></tr><tr><td><a href="../portugal/data/checks.json">checks.json</a></td><td class="num">1,457</td><td><code>61c2254b2570</code></td></tr><tr><td><a href="../portugal/data/coverage-notes.json">coverage-notes.json</a></td><td class="num">3,481</td><td><code>0cef28eec4ad</code></td></tr><tr><td><a href="../portugal/data/coverage.json">coverage.json</a></td><td class="num">6,433</td><td><code>32a72cfba398</code></td></tr><tr><td><a href="../portugal/data/event.json">event.json</a></td><td class="num">3,745</td><td><code>1217c9814409</code></td></tr><tr><td><a href="../portugal/data/graph.json">graph.json</a></td><td class="num">138,874</td><td><code>97c8ae6777a5</code></td></tr><tr><td><a href="../portugal/data/manifest.json">manifest.json</a></td><td class="num">8,892</td><td><code>33c841a985b1</code></td></tr><tr><td><a href="../portugal/data/notice.json">notice.json</a></td><td class="num">7,447</td><td><code>dce9301ed149</code></td></tr><tr><td><a href="../portugal/data/ontology.json">ontology.json</a></td><td class="num">9,970</td><td><code>14e66717af4e</code></td></tr><tr><td><a href="../portugal/data/orgs.json">orgs.json</a></td><td class="num">10,071</td><td><code>ef3346010765</code></td></tr><tr><td><a href="../portugal/data/people.json">people.json</a></td><td class="num">18,171</td><td><code>7a6552c4168e</code></td></tr><tr><td><a href="../portugal/data/sessions.json">sessions.json</a></td><td class="num">3,608</td><td><code>dff95f982bf4</code></td></tr><tr><td><a href="../portugal/data/sources.json">sources.json</a></td><td class="num">11,860</td><td><code>c75dc5890bb2</code></td></tr><tr><td><a href="../portugal/data/stories.json">stories.json</a></td><td class="num">2,168</td><td><code>bf3f77a71f6e</code></td></tr><tr><td><a href="../portugal/data/team.json">team.json</a></td><td class="num">5,060</td><td><code>f3e23c3fe955</code></td></tr><tr><td><a href="../portugal/data/triples.nt">triples.nt</a></td><td class="num">296,313</td><td><code>be9890ee33fa</code></td></tr></tbody></table></div>
+<tbody><tr><td><a href="../portugal/data/changes.json">changes.json</a></td><td class="num">2,149</td><td><code>ad1d1e37da05</code></td></tr><tr><td><a href="../portugal/data/checks.json">checks.json</a></td><td class="num">1,457</td><td><code>61c2254b2570</code></td></tr><tr><td><a href="../portugal/data/connections.json">connections.json</a></td><td class="num">35,379</td><td><code>63af95dc9ded</code></td></tr><tr><td><a href="../portugal/data/coverage-notes.json">coverage-notes.json</a></td><td class="num">3,481</td><td><code>0cef28eec4ad</code></td></tr><tr><td><a href="../portugal/data/coverage.json">coverage.json</a></td><td class="num">6,433</td><td><code>32a72cfba398</code></td></tr><tr><td><a href="../portugal/data/event.json">event.json</a></td><td class="num">3,745</td><td><code>1217c9814409</code></td></tr><tr><td><a href="../portugal/data/graph.json">graph.json</a></td><td class="num">388,075</td><td><code>c2d9281f4bd7</code></td></tr><tr><td><a href="../portugal/data/lexicon.json">lexicon.json</a></td><td class="num">13,193</td><td><code>ba1cf8d3a588</code></td></tr><tr><td><a href="../portugal/data/manifest.json">manifest.json</a></td><td class="num">23,359</td><td><code>599f470198d9</code></td></tr><tr><td><a href="../portugal/data/notice.json">notice.json</a></td><td class="num">8,189</td><td><code>a9b919e0376a</code></td></tr><tr><td><a href="../portugal/data/ontology.json">ontology.json</a></td><td class="num">26,511</td><td><code>432d4fb588dc</code></td></tr><tr><td><a href="../portugal/data/orgs.json">orgs.json</a></td><td class="num">10,071</td><td><code>ef3346010765</code></td></tr><tr><td><a href="../portugal/data/people.json">people.json</a></td><td class="num">18,362</td><td><code>bbc579b85be3</code></td></tr><tr><td><a href="../portugal/data/sessions.json">sessions.json</a></td><td class="num">3,608</td><td><code>dff95f982bf4</code></td></tr><tr><td><a href="../portugal/data/sources.json">sources.json</a></td><td class="num">43,920</td><td><code>a5b0ab6d572a</code></td></tr><tr><td><a href="../portugal/data/stories.json">stories.json</a></td><td class="num">2,168</td><td><code>bf3f77a71f6e</code></td></tr><tr><td><a href="../portugal/data/team.json">team.json</a></td><td class="num">5,060</td><td><code>f3e23c3fe955</code></td></tr><tr><td><a href="../portugal/data/topics.json">topics.json</a></td><td class="num">181,065</td><td><code>9c38f3505e8d</code></td></tr><tr><td><a href="../portugal/data/triples.nt">triples.nt</a></td><td class="num">622,006</td><td><code>96673dafd45c</code></td></tr></tbody></table></div>
 <p class="small dim">From <a href="../portugal/data/manifest.json">manifest.json</a>, which the
 <a href="../portugal/explorer.html">file explorer</a> renders and the Portugal gate re-verifies on every build.</p>
 
-<div class="agent"><h4>For an agent</h4><p>Two in-browser engines over /portugal/data/. SQL: open /databases/sql.html, wait for the <code>tool:ready</code> event, then <code>window.__tools.sql.run(sql)</code> returns <code>{columns, rows, ms}</code>; the loader spec is /databases/data/tables.json and the worked queries with their build-time row counts are /databases/data/queries-sql.json. SPARQL: /databases/graph.html, <code>window.__tools.sparql.run(query)</code>; the triples are /portugal/data/triples.nt (1,982, N-Triples, IRIs under https://newsroom.sgit.ai/portugal/{id,verb,type,prop}/), the worked queries with Cypher equivalents are /databases/data/queries-sparql.json. Both pages fetch only same-origin files and send nothing anywhere.</p></div>
+<div class="agent"><h4>For an agent</h4><p>Two in-browser engines over /portugal/data/. SQL: open /databases/sql.html, wait for the <code>tool:ready</code> event, then <code>window.__tools.sql.run(sql)</code> returns <code>{columns, rows, ms}</code>; the loader spec is /databases/data/tables.json and the worked queries with their build-time row counts are /databases/data/queries-sql.json. SPARQL: /databases/graph.html, <code>window.__tools.sparql.run(query)</code>; the triples are /portugal/data/triples.nt (4,001, N-Triples, IRIs under https://newsroom.sgit.ai/portugal/{id,verb,type,prop}/), the worked queries with Cypher equivalents are /databases/data/queries-sparql.json. Both pages fetch only same-origin files and send nothing anywhere.</p></div>
 
 </main>
 
@@ -177,7 +177,7 @@ the choice is recorded rather than hidden.</p>
     <p>News is failing not because there is too little information but because there is no walkable chain from a claim to its evidence, no way for a correction to reach what it disproved, and no way to pay the person who did the original work. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="netline"><a href="https://sgit.ai"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://graphs.sgit.ai">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai">&#8593; nhi.sgit.ai</a> &middot; <a href="https://sg-sentinel.sgit.ai">&#8593; sg-sentinel.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.3.3</a> &middot; <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.3.4</a> &middot; <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>The argument</h4>

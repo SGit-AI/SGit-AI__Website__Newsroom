@@ -1,6 +1,6 @@
 {
   "id": "nsdb-queries-sql",
-  "version": "v0.3.3",
+  "version": "v0.3.4",
   "note": "Worked SQL queries. at_build is what each returned when the site was built, so a reader's run can disagree.",
   "queries": [
     {
@@ -14,7 +14,7 @@
           "role_class",
           "speakers"
         ],
-        "version": "v0.3.3"
+        "version": "v0.3.4"
       }
     },
     {
@@ -28,7 +28,7 @@
           "organisation",
           "speakers"
         ],
-        "version": "v0.3.3"
+        "version": "v0.3.4"
       }
     },
     {
@@ -45,7 +45,7 @@
           "kind",
           "stage"
         ],
-        "version": "v0.3.3"
+        "version": "v0.3.4"
       }
     },
     {
@@ -60,7 +60,7 @@
           "snapshot",
           "verb"
         ],
-        "version": "v0.3.3"
+        "version": "v0.3.4"
       }
     },
     {
@@ -75,7 +75,7 @@
           "no_longer_listed",
           "source"
         ],
-        "version": "v0.3.3"
+        "version": "v0.3.4"
       }
     },
     {
@@ -84,7 +84,7 @@
       "note": "The ontology as a table. No verb is its own inverse; that is a build gate on the Portugal section and a query here.",
       "sql": "SELECT verb, inverse, pt_verb, pt_inverse, origin\nFROM verbs\nORDER BY verb;",
       "at_build": {
-        "rows": 17,
+        "rows": 23,
         "columns": [
           "verb",
           "inverse",
@@ -92,7 +92,7 @@
           "pt_inverse",
           "origin"
         ],
-        "version": "v0.3.3"
+        "version": "v0.3.4"
       }
     },
     {
@@ -109,7 +109,7 @@
           "sha256_prefix",
           "bytes"
         ],
-        "version": "v0.3.3"
+        "version": "v0.3.4"
       }
     },
     {
@@ -123,7 +123,7 @@
           "story",
           "source"
         ],
-        "version": "v0.3.3"
+        "version": "v0.3.4"
       }
     },
     {
@@ -140,7 +140,7 @@
           "v2",
           "place"
         ],
-        "version": "v0.3.3"
+        "version": "v0.3.4"
       }
     },
     {
@@ -155,7 +155,7 @@
           "type",
           "degree"
         ],
-        "version": "v0.3.3"
+        "version": "v0.3.4"
       }
     },
     {
@@ -164,12 +164,12 @@
       "note": "A graph traversal in SQL: a recursive common table expression walking edges in either direction, then counted by type. This is the query that shows where SQL stops being the natural language for a graph.",
       "sql": "WITH RECURSIVE hop(id, depth) AS (\n  SELECT 'event:startup-summit-lisbon-2026', 0\n  UNION\n  SELECT CASE WHEN e.source = h.id THEN e.target ELSE e.source END, h.depth + 1\n  FROM hop h JOIN edges e ON e.source = h.id OR e.target = h.id\n  WHERE h.depth < 2\n)\nSELECT n.type, COUNT(DISTINCT n.id) AS nodes\nFROM hop JOIN nodes n ON n.id = hop.id\nGROUP BY n.type\nORDER BY nodes DESC;",
       "at_build": {
-        "rows": 10,
+        "rows": 16,
         "columns": [
           "type",
           "nodes"
         ],
-        "version": "v0.3.3"
+        "version": "v0.3.4"
       }
     },
     {
@@ -183,7 +183,53 @@
           "title",
           "source_id"
         ],
-        "version": "v0.3.3"
+        "version": "v0.3.4"
+      }
+    },
+    {
+      "id": "topics",
+      "title": "The event's own topics, by how many speakers carry each",
+      "note": "The `Topics` list the event prints on every speaker's page, read verbatim from the frozen copy. The event's vocabulary, counted.",
+      "sql": "SELECT topic, COUNT(*) AS speakers\nFROM person_topics\nGROUP BY topic\nORDER BY speakers DESC, topic;",
+      "at_build": {
+        "rows": 23,
+        "columns": [
+          "topic",
+          "speakers"
+        ],
+        "version": "v0.3.4"
+      }
+    },
+    {
+      "id": "tags-evidence",
+      "title": "A derived tag with its evidence: the matched words",
+      "note": "Every derived tag carries the words the lexicon pattern hit on the speaker's own page, and nothing else. This is the whole evidence for the tag, on purpose.",
+      "sql": "SELECT t.type, l.label AS tag, t.matched, COUNT(*) AS people\nFROM person_tags t JOIN lexicon l ON l.id = t.tag\nGROUP BY t.type, l.label, t.matched\nORDER BY people DESC, t.type, tag\nLIMIT 40;",
+      "at_build": {
+        "rows": 40,
+        "columns": [
+          "type",
+          "tag",
+          "matched",
+          "people"
+        ],
+        "version": "v0.3.4"
+      }
+    },
+    {
+      "id": "orgs-should-talk",
+      "title": "Organisations that should be talking (the connections formula)",
+      "note": "The first of the three organisation-level formulas on the Portugal connections page, verbatim: two organisations whose speakers' pages share at least three topics, industries, technologies or ideas. The page stores the rows it got at build; this is the same SQL.",
+      "sql": "WITH ground AS (\n  SELECT DISTINCT p.org AS org, t.type AS kind, t.tag AS what\n  FROM person_tags t JOIN people p ON p.id = t.person\n  WHERE t.type IN ('Industry', 'Technology', 'Idea')\n    AND p.org NOT IN (SELECT name FROM orgs WHERE placeholder = 1)\n  UNION\n  SELECT DISTINCT p.org, 'Topic', pt.topic\n  FROM person_topics pt JOIN people p ON p.id = pt.person\n  WHERE p.org NOT IN (SELECT name FROM orgs WHERE placeholder = 1)\n),\noffers AS (\n  SELECT DISTINCT p.org AS org, t.tag AS service\n  FROM person_tags t JOIN people p ON p.id = t.person\n  WHERE t.type = 'Service'\n    AND p.org NOT IN (SELECT name FROM orgs WHERE placeholder = 1)\n),\nfounder_led AS (\n  SELECT DISTINCT n.org AS org FROM nodes n\n  WHERE n.type = 'Person' AND n.role_class = 'founder' AND n.org IS NOT NULL\n    AND n.org NOT IN (SELECT name FROM orgs WHERE placeholder = 1)\n)\nSELECT a.org AS org_a, b.org AS org_b, COUNT(*) AS shared,\n       GROUP_CONCAT(a.kind || ':' || a.what, ' · ') AS on_what\nFROM ground a JOIN ground b ON a.kind = b.kind AND a.what = b.what AND a.org < b.org\nGROUP BY a.org, b.org\nHAVING COUNT(*) >= 3\nORDER BY shared DESC, org_a, org_b\nLIMIT 40;",
+      "at_build": {
+        "rows": 40,
+        "columns": [
+          "org_a",
+          "org_b",
+          "shared",
+          "on_what"
+        ],
+        "version": "v0.3.4"
       }
     },
     {
@@ -198,7 +244,7 @@
           "pages",
           "bytes"
         ],
-        "version": "v0.3.3"
+        "version": "v0.3.4"
       }
     }
   ]

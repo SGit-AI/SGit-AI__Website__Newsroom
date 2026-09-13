@@ -40,6 +40,9 @@ portugal/
   data/
     event.json       the event as its own site describes it, each field naming its source
     people.json      64 speakers: name, role, org, links. NO biographies
+    topics.json      per speaker: the event's own Topics list (verbatim) and lexicon matches (matched words only)
+    lexicon.json     the published formula: 57 patterns for industries, technologies, ideas, services, products
+    connections.json who should talk to whom, at ORGANISATION level, as three SQL queries with their rows
     orgs.json        61 organisations, DERIVED from speaker cards, placeholders flagged
     sources.json     the register: every frozen file with SHA-256, bytes, retrieval time
     changes.json     snapshot-to-snapshot diffs, with the hash of both sides
@@ -72,7 +75,10 @@ or indexed as pages of this site — publishing a browsable mirror of somebody e
 website under this domain would contradict the one rule this publication has, which is
 that it links rather than reproduces. The bytes are untouched, so the hash still verifies.
 
-The same rule governs speaker biographies: not extracted, not stored, not published. Gate
+The same rule governs speaker biographies: not stored, not published. Since v0.3.4 each
+speaker's own page is frozen too, and two things are READ from it without reproducing it — the
+event's Topics list, verbatim, and the words that match `lexicon.json`. The matched words travel
+on the edge; no sentence of the biography does. Gate
 check 10 fails the build if any node field grows long enough to be one.
 
 ## The graph
@@ -123,7 +129,7 @@ list will be the one taken the day after it stops being updated.
 7. The posture is stated on every page: beta, the editor of record by name, frozen-and-hashed.
 8. No page claims a Portuguese edition that does not exist.
 9. Stories trace to registered sources, and their pages match their markdown.
-10. No node field is long enough to be a reproduced biography.
+10. No node field is long enough to be a reproduced biography (people.json and topics.json).
 11. No contact detail for any natural person anywhere in the data — enforced where the data is
     parsed, not where it is rendered.
 12. Every page that names individuals links to the data-protection notice.
@@ -134,6 +140,9 @@ list will be the one taken the day after it stops being updated.
 14. Every session title appears **verbatim** in the frozen agenda — a transcription is a claim.
 15. Coverage is frozen before it is cited, summarised rather than quoted, and an excluded page
     is never also in the register.
+16. Every Topic node is on the speaker's frozen page verbatim, and every topic on a frozen page is in the graph.
+17. Every derived tag edge re-derives: the lexicon pattern is run again on the frozen bytes; no match, no edge; every match, an edge.
+18. The connections rows are what their stored SQL returns.
 
 ## The graph as triples, and the consoles that query it
 

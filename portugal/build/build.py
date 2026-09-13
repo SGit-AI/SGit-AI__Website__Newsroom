@@ -51,10 +51,15 @@ TEAM = load("team.json")
 STORIES = load("stories.json")
 NOTICE = load("notice.json")
 import graph as graphmod  # noqa: E402 — same directory; ontology + graph + manifest
+import connections as connmod  # noqa: E402 — the three organisation-level queries
 import pages              # noqa: E402 — the front page, the graph page, the explorer
 graphmod.main()
+connmod.main()
 GRAPH = load("graph.json")
 ONTOLOGY = load("ontology.json")
+TOPICS = load("topics.json")
+LEXICON = load("lexicon.json")
+CONNECTIONS = load("connections.json")
 SESSIONS = load("sessions.json")
 COVERAGE = load("coverage.json")
 MANIFEST = load("manifest.json")
@@ -70,6 +75,7 @@ LABELS = {
     "wire":    {"en": "The wire",        "pt": "O fio"},
     "graph":   {"en": "The graph",       "pt": "O grafo"},
     "explorer": {"en": "The files",      "pt": "Os ficheiros"},
+    "connections": {"en": "Connections", "pt": "Ligações"},
     "summit":  {"en": "The Summit",      "pt": "A cimeira"},
     "people":  {"en": "Who is speaking", "pt": "Quem fala"},
     "orgs":    {"en": "The organisations", "pt": "As organizações"},
@@ -183,6 +189,7 @@ def masthead(up, here=""):
     nav = [("index.html", LABELS["wire"]["en"]),
            ("graph.html", LABELS["graph"]["en"]),
            ("explorer.html", LABELS["explorer"]["en"]),
+           ("connections.html", LABELS["connections"]["en"]),
            ("summit/index.html", LABELS["summit"]["en"]),
            ("summit/people.html", LABELS["people"]["en"]),
            ("summit/orgs.html", LABELS["orgs"]["en"]),
@@ -360,11 +367,13 @@ frozen copy of {esc(SRC[LATEST + "/ai-summary"]["url"])} retrieved
 
 def build_people():
     up = "../"
+    topics_of = {r["id"]: r["topics"] for r in TOPICS["people"]}
     rows = "".join(
         f'<tr data-n="{esc((p["name"] or "").lower())} {esc((p["org"] or "").lower())} {esc((p["role"] or "").lower())}">'
         f'<td><b>{esc(p["name"])}</b></td>'
         f'<td class="small">{esc(p["role"])}</td>'
         f'<td class="small"><a href="{up}summit/orgs.html#{esc(org_id(p["org"] or ""))}">{esc(p["org"])}</a></td>'
+        f'<td class="small dim">{esc(" · ".join(topics_of.get(p["id"], [])))}</td>'
         f'<td class="small"><a href="{esc(p["page"])}">profile</a>'
         + (f' &middot; <a href="{esc(p["linkedin"])}">in</a>' if p["linkedin"] else "")
         + "</td></tr>" for p in PEOPLE["people"])
@@ -378,10 +387,13 @@ Machine surface: <a href="{up}data/people.json">people.json</a>.</p>
 
 {disclaimer(up)}
 
-<div class="note"><p style="margin-top:0"><b>Names, roles, organisations and links only.</b>
+<div class="note"><p style="margin-top:0"><b>Names, roles, organisations, links, and the event&rsquo;s own topics.</b>
 Each speaker&rsquo;s biography is their own or the organiser&rsquo;s writing, and it is linked
 rather than reproduced &mdash; this publication adds structure over other people&rsquo;s
-material, it does not republish it. Follow the profile link for the full entry.</p></div>
+material, it does not republish it. Follow the profile link for the full entry. The topics column is
+the <b>Topics</b> list the event prints on each speaker&rsquo;s own page, verbatim, from the frozen copy;
+{TOPICS["with_topics"]} of {TOPICS["count"]} pages carry one. What the lexicon derives from those pages is
+on <a href="{up}connections.html">the connections page</a>, at organisation level.</p></div>
 
 <p><input id="q" type="search" placeholder="Filter by name, role or organisation&hellip;"
    aria-label="Filter speakers"
@@ -390,7 +402,7 @@ material, it does not republish it. Follow the profile link for the full entry.<
    <span id="n" class="dim small" style="margin-left:.6rem"></span></p>
 
 <div class="tablewrap"><table id="t">
-  <thead><tr><th>Name</th><th>Listed role</th><th>Organisation</th><th>Source</th></tr></thead>
+  <thead><tr><th>Name</th><th>Listed role</th><th>Organisation</th><th>Topics, as the event lists them</th><th>Source</th></tr></thead>
   <tbody>{rows}</tbody>
 </table></div>
 
@@ -414,9 +426,11 @@ material, it does not republish it. Follow the profile link for the full entry.<
     "extracted from a frozen and hashed copy of the event's speakers page rather than from the "
     "live site. Each node carries the speaker's own page on the event site as its source. "
     "<b>Biographies are deliberately not included</b> — they are the speakers' and organisers' "
-    "writing. No node carries a country, and no node maps to a session, because the source "
-    "joins neither. This list changes: check <code>changes.json</code> before treating it as "
-    "current.")}
+    "writing. Two things are read from each speaker's own frozen page without reproducing it: "
+    "the event's Topics list (<code>topics.json</code>, verbatim) and the words that match the "
+    "published lexicon (<code>lexicon.json</code>; the matched words only). No node carries a "
+    "country, and no node maps to a session, because the source joins neither. This list "
+    "changes: check <code>changes.json</code> before treating it as current.")}
 
 <div class="pagenav">
   <a href="{up}summit/index.html">&larr; The Summit</a>
@@ -779,11 +793,14 @@ might have changed since anybody looked.</p>
 </div>
 
 <h2 id="notreproduce">What we link rather than reproduce</h2>
-<p>Speaker biographies are not extracted, not stored as data and not published. They are the
-speakers&rsquo; and the organisers&rsquo; own writing, and this publication adds structure over
-other people&rsquo;s material rather than republishing it. We hold the frozen page for
-verification; the reader gets the pointer. The same rule governs session descriptions and
-sponsor copy.</p>
+<p>Speaker biographies are not stored as data and not published. They are the speakers&rsquo; and
+the organisers&rsquo; own writing, and this publication adds structure over other people&rsquo;s
+material rather than republishing it. We hold the frozen page for verification; the reader gets
+the pointer. Since v0.3.4 each speaker&rsquo;s own page is frozen too, and two things are <em>read</em>
+from it: the event&rsquo;s own Topics list for that speaker, verbatim, and the words that match
+<a href="data/lexicon.json">a published lexicon</a>. The matched words travel on the edge; no
+sentence of the biography does, and gate 10 fails the build if one ever did. The same rule
+governs session descriptions and sponsor copy.</p>
 
 <h2 id="roles">Seven roles and a named human</h2>
 <p>{esc(TEAM["note"])}</p>
@@ -808,7 +825,9 @@ every page before it publishes.</div>
     "The ingestion path is fetch, freeze, hash, extract, diff — implemented in "
     "<code>portugal/build/extract.py</code> and reproducible from this repository. Claims point "
     "at frozen bytes, not at live URLs. <b>Biographies and other third-party prose are "
-    "deliberately not reproduced.</b> The publication has a named human editor of record who "
+    "deliberately not reproduced</b>; the event's Topics list and lexicon matches are read from "
+    "each speaker's frozen page (<code>topics.json</code>, <code>lexicon.json</code>) and carry the "
+    "matched words only. The publication has a named human editor of record who "
     "reviews before publication, which is the posture difference from /governance/. It assesses "
     "nobody, explains no removal, and does not report a target as a result.")}
 
@@ -1198,7 +1217,7 @@ claim against the file rather than against the live site.</p>
 
 def main():
     B = globals()
-    w = [pages.build_index(B), pages.build_graph_page(B), pages.build_explorer(B),
+    w = [pages.build_index(B), pages.build_graph_page(B), pages.build_explorer(B), pages.build_connections(B),
          build_summit(), build_people(), build_orgs(), build_changes(), build_sources(),
          build_checks(), build_method(), build_team(), build_notice(), build_about()]
     w += build_role_pages()

@@ -14,7 +14,7 @@
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer and the shipped CLI. This site is the future-of-news stack: provenance, corrections, and paying the fact creator">&#8593; part of <b>sgit.ai</b></a>
   <span class="stage-pill">design, not built</span>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.3.3</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.3.4</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -79,6 +79,16 @@
 <div class="tablewrap"><table class="vers">
   <thead><tr><th>Version</th><th>Date</th><th>What shipped</th></tr></thead>
   <tbody>
+    <tr>
+      <td class="vnum">v0.3.4</td>
+      <td>13 Sep 2026</td>
+      <td><b>The graph learns what the speakers&rsquo; pages say: topics, industries, technologies, ideas and offerings &mdash; and a connections page that answers who should talk to whom, at organisation level, as queries.</b>
+        <p><b>Sixty-four more frozen sources.</b> Each speaker&rsquo;s own page on the event site is now fetched, frozen and hashed like every other source (88 in the register, from 24). Two things are <em>read</em> from each page and nothing is reproduced: the event&rsquo;s own <b>Topics</b> list for that speaker, verbatim (60 of 64 pages carry one; 23 distinct topics), and the words on the page that match <a href="../portugal/data/lexicon.json">a published lexicon</a> of 57 patterns for industries, technologies, ideas, services and products. A derived tag carries the matched words on the edge and nothing else; it says the page contains those words, which is all it says.</p>
+        <p><b>The ontology grows by six types and five verbs</b>, each with its Portuguese: Topic (<code>speaks_on</code> / <code>fala_sobre</code>), Industry (<code>active_in</code> / <code>atua_em</code>), Technology (<code>uses</code> / <code>usa</code>), Idea (<code>advocates</code> / <code>defende</code>), Service and Product (<code>offers</code> / <code>oferece</code>). Two new taxonomy classes say which is which: <em>Themes</em> for the event&rsquo;s vocabulary, <em>Derived by formula</em> for ours. <a href="../portugal/graph.html">The graph</a> is 329 nodes and 1,106 edges in ten packs; the two new packs are off by default. The triples grow to 4,001 and the tag nodes carry their pattern as a property, so the SPARQL console can show the formula beside the result.</p>
+        <p><b><a href="../portugal/connections.html">Connections</a>: who should be talking, who could be buying from whom, who could help whom.</b> Three SQL queries at <em>organisation</em> level, run at build and stored with their SQL so the identical query runs in the browser console. The unit is the organisation a speaker is listed under, because the data-protection notice refuses any characterisation of a named person and &ldquo;X should talk to Y&rdquo; is one; the person-level join is a query away for a reader who wants it, and this page does not make it. The notice now lists the two new categories held, and the refusals are reworded rather than quietly relaxed.</p>
+        <p><b>Three more gates.</b> 16: every Topic node is on the frozen page verbatim, and every topic on a frozen page is in the graph. 17: every derived edge re-derives &mdash; the lexicon pattern is run again on the frozen bytes, no match no edge, and every match must have an edge, so a tag can be neither typed in nor left out by hand. 18: the connections rows are what their SQL gives. The databases section gains three tables (<code>person_topics</code>, <code>person_tags</code>, <code>lexicon</code>), three SQL and two SPARQL worked queries, and a build-time cross-check that the connections SQL returns the same row counts against its tables as it did on the Portugal page.</p>
+      </td>
+    </tr>
     <tr>
       <td class="vnum">v0.3.3</td>
       <td>13 Sep 2026</td>
@@ -253,7 +263,7 @@
     <p>News is failing not because there is too little information but because there is no walkable chain from a claim to its evidence, no way for a correction to reach what it disproved, and no way to pay the person who did the original work. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="netline"><a href="https://sgit.ai"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://graphs.sgit.ai">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai">&#8593; nhi.sgit.ai</a> &middot; <a href="https://sg-sentinel.sgit.ai">&#8593; sg-sentinel.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.3.3</a> &middot; <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.3.4</a> &middot; <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>The argument</h4>

@@ -40,8 +40,10 @@
 
   var ROLE_C = { investor: '#7c3aed', founder: '#b45309', advisor: '#0e7490', other: '#8a8d94' };
   var PACK_C = { event: '#0f766e', orgs: '#1d4ed8', people: '#b45309', sessions: '#115e59',
-                 sources: '#8a8d94', changes: '#b91c1c', coverage: '#a16207', stories: '#5b4d8f' };
-  var TAX_C = { entity: '#b45309', programme: '#0f766e', evidence: '#8a8d94', output: '#5b4d8f' };
+                 sources: '#8a8d94', changes: '#b91c1c', coverage: '#a16207', stories: '#5b4d8f',
+                 topics: '#7c3aed', tags: '#0e7490' };
+  var TAX_C = { entity: '#b45309', programme: '#0f766e', evidence: '#8a8d94', output: '#5b4d8f',
+                themes: '#7c3aed', derived: '#0e7490' };
 
   function esc(t) { return String(t == null ? '' : t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
   function clip(t) { t = String(t); return t.length > cfg.maxlen ? t.slice(0, cfg.maxlen - 1) + '…' : t; }

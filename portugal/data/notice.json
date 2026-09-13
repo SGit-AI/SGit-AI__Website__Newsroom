@@ -9,24 +9,26 @@
     "why_personal": "No entity exists for this publication. Naming a person rather than a project is the honest version and it is also the cheap one — it means the objection route below reaches somebody who can act on it rather than a form.",
     "contact": "dinis.cruz@owasp.org"
   },
-  "subjects": "People named on the event's own published speaker list, in their professional capacity: name, the role they are listed under, the organisation they are listed under, and the links the event published for them.",
+  "subjects": "People named on the event's own published speaker list, in their professional capacity: name, the role they are listed under, the organisation they are listed under, the links the event published for them, the topics the event lists on their own page, and the words on that page that match a published lexicon.",
   "categories_held": [
     "Name, as published by the event",
     "Professional role, as published by the event",
     "Organisation, as published by the event",
     "The URL of that person's own page on the event's site",
-    "A LinkedIn profile URL where the event published one"
+    "A LinkedIn profile URL where the event published one",
+    "The topics the event lists on that person's own page, verbatim (since v0.3.4)",
+    "The words on that person's own page that match a published lexicon of industries, technologies, ideas, services and products — the matched words only, never the sentence (since v0.3.4)"
   ],
   "categories_refused": [
     "Postal addresses of any natural person",
     "Email addresses of any natural person",
     "Telephone numbers of any natural person",
     "Any special category data",
-    "Biographies, which are the speaker's or organiser's own writing and are linked rather than reproduced",
-    "Any assessment, ranking, score or characterisation of any named person"
+    "Biographies as text: the speaker's or organiser's own writing, linked rather than reproduced. A published lexicon reads them for matching words and keeps only the words",
+    "Any assessment, ranking, score or characterisation of any named person. A derived tag says the page contains certain words; the connections page works at organisation level and names nobody"
   ],
-  "refusal_enforced_by": "Gate check 11 of portugal/build/gates.py, which fails the build if an email address, telephone number or personal postal address appears anywhere in the section's data. It runs at extraction time rather than at rendering time, so a contact detail cannot reach the data and then be hidden by a template.",
-  "source": "Two kinds of source, both fetched and frozen to dated snapshots in this repository: the event's own website, and third-party pages about the event. The data held about any person comes only from the event's own speaker page. Every source is listed with its SHA-256 in the register.",
+  "refusal_enforced_by": "Gate check 11 of portugal/build/gates.py, which fails the build if an email address, telephone number or personal postal address appears anywhere in the section's data; gate 10, which fails it if any field is long enough to be a reproduced biography; and gate 17, which re-runs every lexicon pattern against the frozen page so a derived tag can never be typed in by hand. They run at extraction time rather than at rendering time.",
+  "source": "Two kinds of source, both fetched and frozen to dated snapshots in this repository: the event's own website, and third-party pages about the event. The data held about any person comes only from the event's speaker list and from that person's own page on the event's site. Every source is listed with its SHA-256 in the register.",
   "purpose": "Reporting on a public professional event and the ecosystem around it, and demonstrating a method in which every published claim can be walked back to a hashed copy of the source it came from.",
   "lawful_basis": {
     "basis": "Legitimate interests",

@@ -1,6 +1,6 @@
 {
   "id": "nsdb-tables",
-  "version": "v0.3.3",
+  "version": "v0.3.4",
   "note": "The loader spec the SQL console and the build share. Each table names the JSON file and the array inside it; each column names the field (dotted). Arrays and objects are stored as JSON text, booleans as 1/0, missing fields as NULL.",
   "base": "../portugal/data/",
   "tables": [
@@ -441,6 +441,79 @@
         {
           "name": "reason_known",
           "from": "reason_known"
+        }
+      ]
+    },
+    {
+      "name": "person_topics",
+      "file": "topics.json",
+      "path": "person_topics",
+      "columns": [
+        {
+          "name": "person",
+          "from": "person"
+        },
+        {
+          "name": "topic",
+          "from": "topic"
+        },
+        {
+          "name": "source",
+          "from": "source"
+        }
+      ]
+    },
+    {
+      "name": "person_tags",
+      "file": "topics.json",
+      "path": "person_tags",
+      "columns": [
+        {
+          "name": "person",
+          "from": "person"
+        },
+        {
+          "name": "tag",
+          "from": "tag"
+        },
+        {
+          "name": "type",
+          "from": "type"
+        },
+        {
+          "name": "matched",
+          "from": "matched"
+        },
+        {
+          "name": "source",
+          "from": "source"
+        }
+      ]
+    },
+    {
+      "name": "lexicon",
+      "file": "lexicon.json",
+      "path": "entries",
+      "columns": [
+        {
+          "name": "id",
+          "from": "id"
+        },
+        {
+          "name": "type",
+          "from": "type"
+        },
+        {
+          "name": "label",
+          "from": "label"
+        },
+        {
+          "name": "pt",
+          "from": "pt"
+        },
+        {
+          "name": "pattern",
+          "from": "pattern"
         }
       ]
     }

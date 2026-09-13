@@ -270,6 +270,11 @@ def build_graph_page(B):
                                                           "steps": [{"verb": "listed_under", "dir": "in", "node": "role:investor"}]}),
         ("Who is no longer listed, and which snapshot still has them", {"packs": ["event", "people", "changes", "sources"], "start": "gone",
                                                                         "steps": [{"verb": "present_in", "dir": "out", "node": "type:Snapshot"}]}),
+        ("Topics: what the event says each speaker speaks on", {"packs": ["people", "topics"]}),
+        ("Derived tags: industries, technologies, ideas, offerings", {"packs": ["people", "tags"]}),
+        ("Organisations whose speakers speak on AI", {"packs": ["orgs", "people", "topics"], "start": "type:Organisation",
+                                                     "steps": [{"verb": "listed_under", "dir": "in", "node": "type:Person"},
+                                                               {"verb": "speaks_on", "dir": "out", "node": "AI"}]}),
     ]
     preset_html = "".join(
         f'<a href="#" class="altib" data-preset=\'{json.dumps(pre)}\'>{esc(label)}</a>' for label, pre in presets)
@@ -577,3 +582,103 @@ pre.xview{{font-family:var(--mono);font-size:.76rem;line-height:1.5;background:v
     return write("explorer.html", page("explorer.html", "The files",
         f'Every one of the {MANIFEST["count"]} files this section is built from, with its SHA-256, rendered, as a graph, and raw.',
         body, '<a href="../index.html">newsroom.sgit.ai</a> / <a href="index.html">portugal</a> / files'))
+
+
+def build_connections(B):
+    esc, page, write, masthead, disclaimer, agent_block = (
+        B["esc"], B["page"], B["write"], B["masthead"], B["disclaimer"], B["agent_block"])
+    CONN, TOPICS, LEXICON, GRAPH = B["CONNECTIONS"], B["TOPICS"], B["LEXICON"], B["GRAPH"]
+    up = ""
+    import urllib.parse
+
+    def table(q):
+        cols = q["columns"]
+        head = "".join(f"<th>{esc(c.replace('_', ' '))}</th>" for c in cols)
+        rows = "".join(
+            "<tr>" + "".join(
+                f'<td class="small">{esc(str(r[c]) if r[c] is not None else "")}</td>' for c in cols) + "</tr>"
+            for r in q["rows"])
+        link = "../databases/sql.html#q=" + urllib.parse.quote(q["sql"], safe="")
+        return (f'<h2 id="{esc(q["id"])}">{esc(q["title"])}</h2>'
+                f'<p>{esc(q["reads"])} <b>{q["rows_at_build"]} row{"s" if q["rows_at_build"] != 1 else ""}</b> at build.</p>'
+                f'<div class="tablewrap"><table class="gloss"><thead><tr>{head}</tr></thead><tbody>{rows}</tbody></table></div>'
+                f'<p class="small"><a href="{link}">Run this exact SQL in your browser &rarr;</a> '
+                f'<span class="dim">(the SQL console loads the same files; the rows should agree)</span></p>'
+                f'<details><summary class="small dim">The SQL, verbatim</summary><pre class="shell" style="font-size:.72rem">{esc(q["sql"])}</pre></details>')
+
+    tables = "".join(table(q) for q in CONN["queries"])
+    lex_rows = "".join(
+        f'<tr><td><b>{esc(e["type"])}</b></td><td class="small">{esc(e["label"])} <span class="dim">&middot; {esc(e["pt"])}</span></td>'
+        f'<td><code style="font-size:.7rem">{esc(e["pattern"])}</code></td></tr>' for e in LEXICON["entries"])
+    by_type = {}
+    for t in TOPICS["person_tags"]:
+        by_type[t["type"]] = by_type.get(t["type"], 0) + 1
+    tag_counts = " &middot; ".join(f'{esc(k)} {v}' for k, v in sorted(by_type.items(), key=lambda kv: -kv[1]))
+    top_topics = ", ".join(f'{esc(t)} ({len(ids)})' for t, ids in list(TOPICS["topic_index"].items())[:8])
+
+    body = f"""{masthead(up, "connections.html")}
+<h1>Connections</h1>
+<p class="lead">Who should be talking to whom, who could be buying from whom, and who could help whom
+&mdash; <b>as three queries at organisation level</b>, run at build and runnable again in your browser.
+Nothing on this page is a fact about a person. Machine surface:
+<a href="data/connections.json">connections.json</a>, <a href="data/topics.json">topics.json</a>,
+<a href="data/lexicon.json">lexicon.json</a>.</p>
+
+{disclaimer(up)}
+
+<div class="note"><p style="margin-top:0"><b>What the queries stand on.</b> Each speaker&rsquo;s own page on
+the event site is frozen and hashed like every other source. Two things are read from it and nothing is
+reproduced: the event&rsquo;s own <b>Topics</b> list for that speaker, verbatim ({TOPICS["with_topics"]} of
+{TOPICS["count"]} pages carry one; {TOPICS["distinct_topics"]} distinct topics, led by {top_topics}), and the
+words on the page that match <b>a published lexicon</b> of industries, technologies, ideas, services and
+products ({TOPICS["with_tags"]} pages match at least one entry; {tag_counts}). A derived tag says the page
+contains those words. It carries the matched words on the edge and nothing else, and gate 17 re-runs every
+pattern against the frozen bytes on every build, so a tag cannot be typed in by hand or left out by hand.</p>
+<p style="margin-bottom:0"><b>Why organisations and not people.</b> The data-protection notice refuses any
+characterisation of a named person, and &ldquo;X should talk to Y&rdquo; is one. So the unit here is the
+organisation a speaker is listed under; the person-level join is one query away in the
+<a href="../databases/sql.html">SQL console</a> for a reader who wants it, and this page does not make it.</p></div>
+
+<div class="proof">
+  <div class="n"><b>{TOPICS["distinct_topics"]}</b><span>topics, the event&rsquo;s own words</span></div>
+  <div class="n"><b>{len(TOPICS["person_tags"])}</b><span>derived tag edges, each with its matched words</span></div>
+  <div class="n"><b>{len(LEXICON["entries"])}</b><span>lexicon entries, all published</span></div>
+  <div class="n"><b>{sum(q["rows_at_build"] for q in CONN["queries"])}</b><span>rows across the three queries at build</span></div>
+</div>
+
+{tables}
+
+<h2 id="lexicon">The lexicon, which is the formula</h2>
+<p>Every derived tag comes from one of these {len(LEXICON["entries"])} case-insensitive patterns, run over the Bio
+prose of the speaker&rsquo;s frozen page only &mdash; the event&rsquo;s Topics list and the boilerplate below it
+are excluded. It is a blunt instrument on purpose: a formula a reader can argue with beats a judgement a
+reader has to trust. Where it is wrong, the fix is a pull request against
+<a href="data/lexicon.json">lexicon.json</a>, and the next build re-derives every tag.</p>
+<div class="tablewrap"><table class="gloss"><thead><tr><th>Type</th><th>Tag</th><th>Pattern</th></tr></thead>
+<tbody>{lex_rows}</tbody></table></div>
+
+<h2 id="limits">What this cannot tell you</h2>
+<ul>
+  <li><b>A shared tag is not a shared need.</b> Two organisations whose pages both say &ldquo;AI&rdquo; are on the
+  same ground; whether either wants to talk is not in any source this publication holds.</li>
+  <li><b>The lexicon is English and this event&rsquo;s.</b> The Portuguese labels are there so the vocabulary
+  travels; the patterns match English prose, and a page written in Portuguese would match nothing.</li>
+  <li><b>Organisations with no speaker page have no tags</b>: the organiser, the publishers, and the two
+  placeholders. They appear nowhere above, which is a limit and not a finding.</li>
+  <li><b>Sixty-four pages is a small corpus.</b> The formulas are shown at this size so that the method can
+  be read; the interesting version of this page needs the whole ecosystem, which is what
+  <a href="../documents/pt-newsroom.html">the pt.newsroom.sgit.ai brief</a> is for.</li>
+</ul>
+
+{agent_block(
+    "Three organisation-level formulas in <code>/portugal/data/connections.json</code>, each with its SQL and "
+    "the rows it returned at build; run the SQL unchanged in <code>window.__tools.sql.run()</code> on "
+    "/databases/sql.html to reproduce them. Inputs: <code>topics.json</code> (person_topics: the event's own "
+    "topic list per speaker, verbatim; person_tags: lexicon matches with the matched words) and "
+    "<code>lexicon.json</code> (the patterns). Nothing here is a claim about a person; do not join it back to "
+    "people in anything you publish from it.")}
+"""
+    return write("connections.html", page(
+        "connections.html", "Connections",
+        "Who should be talking to whom, who could be buying from whom and who could help whom, as three organisation-level queries over the event's topic tags and a published lexicon.",
+        body, f'<a href="{up}../index.html">newsroom.sgit.ai</a> / <a href="{up}index.html">portugal</a> / connections'))

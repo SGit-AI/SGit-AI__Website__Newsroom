@@ -20,7 +20,7 @@
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer and the shipped CLI. This site is the future-of-news stack: provenance, corrections, and paying the fact creator">&#8593; part of <b>sgit.ai</b></a>
   <span class="stage-pill">design, not built</span>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.3.3</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.3.4</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -79,7 +79,7 @@
 
 <main class="doc">
 <div class="crumb"><a href="../index.html">newsroom.sgit.ai</a> / <a href="index.html">portugal</a> / your data</div>
-<div class="ops" style="margin:0 0 1.4rem"><div class="op" style="border-left-color:#0f766e"><b style="color:#0f766e">Portugal Startups &middot; beta</b><p style="display:flex;gap:1.1rem;flex-wrap:wrap;align-items:center;margin-top:.45rem"><a href="index.html" style="font-size:.83rem;color:#5c5f66">The wire</a><a href="graph.html" style="font-size:.83rem;color:#5c5f66">The graph</a><a href="explorer.html" style="font-size:.83rem;color:#5c5f66">The files</a><a href="summit/index.html" style="font-size:.83rem;color:#5c5f66">The Summit</a><a href="summit/people.html" style="font-size:.83rem;color:#5c5f66">Who is speaking</a><a href="summit/orgs.html" style="font-size:.83rem;color:#5c5f66">The organisations</a><a href="summit/changes.html" style="font-size:.83rem;color:#5c5f66">What changed</a><a href="sources.html" style="font-size:.83rem;color:#5c5f66">Sources</a><a href="method.html" style="font-size:.83rem;color:#5c5f66">Method</a><a href="team.html" style="font-size:.83rem;color:#5c5f66">The team</a><a href="notice.html" style="font-size:.83rem;color:#101114;font-weight:600">Your data</a><a href="about.html" style="font-size:.83rem;color:#5c5f66">About & limits</a></p></div></div>
+<div class="ops" style="margin:0 0 1.4rem"><div class="op" style="border-left-color:#0f766e"><b style="color:#0f766e">Portugal Startups &middot; beta</b><p style="display:flex;gap:1.1rem;flex-wrap:wrap;align-items:center;margin-top:.45rem"><a href="index.html" style="font-size:.83rem;color:#5c5f66">The wire</a><a href="graph.html" style="font-size:.83rem;color:#5c5f66">The graph</a><a href="explorer.html" style="font-size:.83rem;color:#5c5f66">The files</a><a href="connections.html" style="font-size:.83rem;color:#5c5f66">Connections</a><a href="summit/index.html" style="font-size:.83rem;color:#5c5f66">The Summit</a><a href="summit/people.html" style="font-size:.83rem;color:#5c5f66">Who is speaking</a><a href="summit/orgs.html" style="font-size:.83rem;color:#5c5f66">The organisations</a><a href="summit/changes.html" style="font-size:.83rem;color:#5c5f66">What changed</a><a href="sources.html" style="font-size:.83rem;color:#5c5f66">Sources</a><a href="method.html" style="font-size:.83rem;color:#5c5f66">Method</a><a href="team.html" style="font-size:.83rem;color:#5c5f66">The team</a><a href="notice.html" style="font-size:.83rem;color:#101114;font-weight:600">Your data</a><a href="about.html" style="font-size:.83rem;color:#5c5f66">About & limits</a></p></div></div>
 <h1>Your data</h1>
 <p class="lead">This section names <b>64 people</b> it did not get the data from.
 This page says what is held, why it is lawful to hold it, and <b>how to have it removed without
@@ -95,16 +95,16 @@ giving a reason</b>. Machine surface: <a href="data/notice.json">notice.json</a>
 </div>
 
 <h2 id="what">What is held</h2>
-<p>People named on the event&#x27;s own published speaker list, in their professional capacity: name, the role they are listed under, the organisation they are listed under, and the links the event published for them.</p>
+<p>People named on the event&#x27;s own published speaker list, in their professional capacity: name, the role they are listed under, the organisation they are listed under, the links the event published for them, the topics the event lists on their own page, and the words on that page that match a published lexicon.</p>
 <div class="split"><div>
 <h3>Held</h3>
-<ul><li>Name, as published by the event</li><li>Professional role, as published by the event</li><li>Organisation, as published by the event</li><li>The URL of that person&#x27;s own page on the event&#x27;s site</li><li>A LinkedIn profile URL where the event published one</li></ul>
+<ul><li>Name, as published by the event</li><li>Professional role, as published by the event</li><li>Organisation, as published by the event</li><li>The URL of that person&#x27;s own page on the event&#x27;s site</li><li>A LinkedIn profile URL where the event published one</li><li>The topics the event lists on that person&#x27;s own page, verbatim (since v0.3.4)</li><li>The words on that person&#x27;s own page that match a published lexicon of industries, technologies, ideas, services and products — the matched words only, never the sentence (since v0.3.4)</li></ul>
 </div><div>
 <h3>Refused, always</h3>
-<ul><li>Postal addresses of any natural person</li><li>Email addresses of any natural person</li><li>Telephone numbers of any natural person</li><li>Any special category data</li><li>Biographies, which are the speaker&#x27;s or organiser&#x27;s own writing and are linked rather than reproduced</li><li>Any assessment, ranking, score or characterisation of any named person</li></ul>
+<ul><li>Postal addresses of any natural person</li><li>Email addresses of any natural person</li><li>Telephone numbers of any natural person</li><li>Any special category data</li><li>Biographies as text: the speaker&#x27;s or organiser&#x27;s own writing, linked rather than reproduced. A published lexicon reads them for matching words and keeps only the words</li><li>Any assessment, ranking, score or characterisation of any named person. A derived tag says the page contains certain words; the connections page works at organisation level and names nobody</li></ul>
 </div></div>
-<div class="claim">Gate check 11 of portugal/build/gates.py, which fails the build if an email address, telephone number or personal postal address appears anywhere in the section&#x27;s data. It runs at extraction time rather than at rendering time, so a contact detail cannot reach the data and then be hidden by a template.</div>
-<p class="small dim"><b>Where it came from:</b> Two kinds of source, both fetched and frozen to dated snapshots in this repository: the event&#x27;s own website, and third-party pages about the event. The data held about any person comes only from the event&#x27;s own speaker page. Every source is listed with its SHA-256 in the register.
+<div class="claim">Gate check 11 of portugal/build/gates.py, which fails the build if an email address, telephone number or personal postal address appears anywhere in the section&#x27;s data; gate 10, which fails it if any field is long enough to be a reproduced biography; and gate 17, which re-runs every lexicon pattern against the frozen page so a derived tag can never be typed in by hand. They run at extraction time rather than at rendering time.</div>
+<p class="small dim"><b>Where it came from:</b> Two kinds of source, both fetched and frozen to dated snapshots in this repository: the event&#x27;s own website, and third-party pages about the event. The data held about any person comes only from the event&#x27;s speaker list and from that person&#x27;s own page on the event&#x27;s site. Every source is listed with its SHA-256 in the register.
 <a href="sources.html">The register &rarr;</a></p>
 
 <h2 id="why">Why we are allowed to</h2>
@@ -167,7 +167,7 @@ Where a name has left the event&#x27;s own published list between two of our sna
     <p>News is failing not because there is too little information but because there is no walkable chain from a claim to its evidence, no way for a correction to reach what it disproved, and no way to pay the person who did the original work. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="netline"><a href="https://sgit.ai"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://graphs.sgit.ai">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai">&#8593; nhi.sgit.ai</a> &middot; <a href="https://sg-sentinel.sgit.ai">&#8593; sg-sentinel.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.3.3</a> &middot; <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.3.4</a> &middot; <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>The argument</h4>

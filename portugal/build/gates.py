@@ -206,6 +206,18 @@ for p in people["people"]:
         if isinstance(v, str) and len(v) > 160:
             errors.append(f'people: {p["id"]} field "{k}" is {len(v)} chars — biographies are '
                           f'linked, never reproduced, and nothing on a node should be this long')
+# topics.json reads two things from each speaker's own page and must not carry a third
+topics = json.loads((DATA / "topics.json").read_text(encoding="utf-8"))
+for row in topics["people"]:
+    for t in row["topics"]:
+        if len(t) > 80:
+            errors.append(f'topics: {row["id"]} has a topic of {len(t)} chars — a topic is a tag, not a sentence')
+    for tg in row["tags"]:
+        if len(tg.get("matched", "")) > 40:
+            errors.append(f'topics: {row["id"]} tag {tg["tag"]} carries {len(tg["matched"])} matched chars — the matched words, never the sentence')
+    for k, v in row.items():
+        if isinstance(v, str) and len(v) > 160:
+            errors.append(f'topics: {row["id"]} field "{k}" is {len(v)} chars — biographies are never reproduced')
 
 # --- 11. no contact detail for any natural person, anywhere in the data ---------
 # Article 24(4) of Lei 58/2019 bars disclosing addresses and contact details of individuals
@@ -331,6 +343,88 @@ for c in coverage["items"]:
 for x in coverage.get("excluded", []):
     if any(s["url"] == x["url"] for s in sources["sources"]):
         errors.append(f'coverage: "{x["id"]}" is excluded and also in the register')
+
+# --- 16. topics are the event's, verbatim -----------------------------------------
+# A Topic node is a string the event put in a speaker's <h2>Topics</h2> list. Re-read the
+# frozen page for every speaks_on edge; a topic the page does not list is invented.
+import html as _html
+def _topics_on(f):
+    m = re.search(r"<h2>Topics</h2>\s*<ul>(.*?)</ul>", f.read_text(errors="replace"), re.S)
+    return [_html.unescape(t).strip() for t in re.findall(r"<li>(.*?)</li>", m.group(1), re.S)] if m else []
+def _bio_on(f):
+    m = re.search(r"<h2>Bio</h2>(.*?)(?:<h2>Topics</h2>|<p><a href=\"https://www\.linkedin|<h2>About Startup Summit</h2>)",
+                  f.read_text(errors="replace"), re.S)
+    return " ".join(_html.unescape(re.sub(r"<[^>]+>", " ", m.group(1))).replace("\\n", " ").split()) if m else ""
+snap_latest = sources["snapshots"][-1]
+speaker_page = lambda pid: SEC / "sources" / "frozen" / snap_latest / "speakers" / f"{pid.split(':', 1)[1]}.snapshot"
+topic_nodes = {n["id"]: n for n in graph["nodes"] if n["type"] == "Topic"}
+topic_edges = [e for e in graph["edges"] if e["verb"] == "speaks_on"]
+_page_topics = {}
+for e in topic_edges:
+    f = speaker_page(e["source"])
+    if not f.exists():
+        errors.append(f'topics: {e["source"]} has a speaks_on edge but no frozen page'); continue
+    if e["source"] not in _page_topics:
+        _page_topics[e["source"]] = _topics_on(f)
+    if gnode[e["target"]]["label"] not in _page_topics[e["source"]]:
+        errors.append(f'topics: "{gnode[e["target"]]["label"]}" is not in the Topics list on {f.name}')
+for tid in topic_nodes:
+    if not any(e["target"] == tid for e in topic_edges):
+        errors.append(f'topics: node {tid} has nobody speaking on it')
+# and the other way: every topic on a frozen page of a listed speaker is in the graph
+for p in people["people"]:
+    f = speaker_page("person:" + p["id"])
+    if f.exists():
+        have = {gnode[e["target"]]["label"] for e in topic_edges if e["source"] == "person:" + p["id"]}
+        for t in _topics_on(f):
+            if t not in have:
+                errors.append(f'topics: {p["id"]} page lists "{t}" and the graph does not')
+
+# --- 17. derived tags re-derive -----------------------------------------------------
+# Every tag edge is a lexicon pattern that matched the Bio prose of the speaker's own frozen
+# page. Run the pattern again on the bytes: no match, no edge. And every pattern that DOES
+# match must have an edge, so a tag can never be left out by hand either.
+lexicon = json.loads((DATA / "lexicon.json").read_text(encoding="utf-8"))
+LEX = {e["id"]: e for e in lexicon["entries"]}
+derived = set(ontology.get("derived_verbs", []))
+tag_edges = [e for e in graph["edges"] if e["verb"] in derived]
+for e in tag_edges:
+    tn = gnode.get(e["target"], {})
+    if tn.get("lexicon") not in LEX:
+        errors.append(f'tags: edge {e["id"]} points at a node with no lexicon entry'); continue
+    if not e.get("matched"):
+        errors.append(f'tags: edge {e["id"]} carries no matched words — a derived edge must show its evidence'); continue
+    f = speaker_page(e["source"])
+    if not f.exists():
+        errors.append(f'tags: {e["source"]} has a derived edge but no frozen page'); continue
+    if not re.search(LEX[tn["lexicon"]]["pattern"], _bio_on(f), re.I):
+        errors.append(f'tags: lexicon "{tn["lexicon"]}" does not match {f.name} any more — the edge would be invented')
+for p in people["people"]:
+    f = speaker_page("person:" + p["id"])
+    if not f.exists():
+        continue
+    bio = _bio_on(f)
+    have = {gnode[e["target"]]["lexicon"] for e in tag_edges if e["source"] == "person:" + p["id"]}
+    for lid, le in LEX.items():
+        if re.search(le["pattern"], bio, re.I) and lid not in have:
+            errors.append(f'tags: lexicon "{lid}" matches {p["id"]} and the graph has no edge — a tag left out by hand')
+for n in graph["nodes"]:
+    if n["type"] in {"Industry", "Technology", "Idea", "Service", "Product"} and not n.get("derived"):
+        errors.append(f'tags: node {n["id"]} is a derived type but does not say so')
+
+# --- 18. connections re-derive ------------------------------------------------------
+# The connections page is a query, and its stored results must be what the query gives.
+conn_f = DATA / "connections.json"
+if conn_f.exists():
+    conn = json.loads(conn_f.read_text(encoding="utf-8"))
+    org_names = {n["label"] for n in graph["nodes"] if n["type"] == "Organisation"}
+    for q in conn["queries"]:
+        for r in q["rows"]:
+            for k in ("org_a", "org_b", "provider", "organisation"):
+                if k in r and r[k] not in org_names:
+                    errors.append(f'connections: {q["id"]} names "{r[k]}", which is not an organisation in the graph')
+        if q.get("rows_at_build") != len(q["rows"]):
+            errors.append(f'connections: {q["id"]} row count is stale')
 
 # --- report -------------------------------------------------------------------
 if errors:

@@ -1,6 +1,6 @@
 {
   "id": "nsdb-queries-sparql",
-  "version": "v0.3.3",
+  "version": "v0.3.4",
   "note": "Worked SPARQL queries with the same question in Cypher (shown, not run). at_build is what each returned when the site was built.",
   "prefixes": "PREFIX p: <https://newsroom.sgit.ai/portugal/id/>\nPREFIX v: <https://newsroom.sgit.ai/portugal/verb/>\nPREFIX t: <https://newsroom.sgit.ai/portugal/type/>\nPREFIX a: <https://newsroom.sgit.ai/portugal/prop/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX owl: <http://www.w3.org/2002/07/owl#>\n",
   "queries": [
@@ -12,12 +12,12 @@
       "cypher": "MATCH (n)\nRETURN labels(n)[0] AS type, count(n) AS nodes\nORDER BY nodes DESC",
       "at_build": {
         "kind": "select",
-        "rows": 12,
+        "rows": 18,
         "columns": [
           "type",
           "nodes"
         ],
-        "version": "v0.3.3"
+        "version": "v0.3.4"
       }
     },
     {
@@ -33,7 +33,7 @@
           "person",
           "organisation"
         ],
-        "version": "v0.3.3"
+        "version": "v0.3.4"
       }
     },
     {
@@ -52,7 +52,7 @@
           "v2",
           "local"
         ],
-        "version": "v0.3.3"
+        "version": "v0.3.4"
       }
     },
     {
@@ -68,7 +68,7 @@
           "event",
           "speakers"
         ],
-        "version": "v0.3.3"
+        "version": "v0.3.4"
       }
     },
     {
@@ -79,13 +79,13 @@
       "cypher": "-- Cypher has no ontology in the store; relationship types are strings.\n-- The nearest is CALL db.relationshipTypes(), which returns names without inverses.",
       "at_build": {
         "kind": "select",
-        "rows": 14,
+        "rows": 19,
         "columns": [
           "verb",
           "inverse",
           "verbo"
         ],
-        "version": "v0.3.3"
+        "version": "v0.3.4"
       }
     },
     {
@@ -96,12 +96,12 @@
       "cypher": "MATCH (e:Event {id: 'event:startup-summit-lisbon-2026'})-[*1..2]-(n)\nRETURN labels(n)[0] AS type, count(DISTINCT n) AS nodes\nORDER BY nodes DESC",
       "at_build": {
         "kind": "select",
-        "rows": 8,
+        "rows": 14,
         "columns": [
           "type",
           "nodes"
         ],
-        "version": "v0.3.3"
+        "version": "v0.3.4"
       }
     },
     {
@@ -117,7 +117,7 @@
           "stage",
           "sessions"
         ],
-        "version": "v0.3.3"
+        "version": "v0.3.4"
       }
     },
     {
@@ -134,7 +134,7 @@
           "title",
           "published"
         ],
-        "version": "v0.3.3"
+        "version": "v0.3.4"
       }
     },
     {
@@ -150,7 +150,7 @@
           "person",
           "source"
         ],
-        "version": "v0.3.3"
+        "version": "v0.3.4"
       }
     },
     {
@@ -161,8 +161,43 @@
       "cypher": "-- No Cypher equivalent: inverses are not declared, so nothing can construct them.",
       "at_build": {
         "kind": "construct",
-        "triples": 298,
-        "version": "v0.3.3"
+        "triples": 1106,
+        "version": "v0.3.4"
+      }
+    },
+    {
+      "id": "same-topic",
+      "title": "Two people at different organisations who speak on the same topic",
+      "note": "The event's own topic tags, joined across organisations. The first ingredient of the connections page, one hop each side.",
+      "sparql": "SELECT ?topic ?org_a ?org_b\nWHERE {\n  ?p1 v:speaks_on ?t ; v:listed_under ?o1 .\n  ?p2 v:speaks_on ?t ; v:listed_under ?o2 .\n  FILTER(STR(?o1) < STR(?o2))\n  ?t rdfs:label ?topic . ?o1 rdfs:label ?org_a . ?o2 rdfs:label ?org_b .\n}\nORDER BY ?topic ?org_a ?org_b\nLIMIT 40",
+      "cypher": "MATCH (p1:Person)-[:SPEAKS_ON]->(t:Topic)<-[:SPEAKS_ON]-(p2:Person),\n      (p1)-[:LISTED_UNDER]->(o1:Organisation), (p2)-[:LISTED_UNDER]->(o2:Organisation)\nWHERE o1.label < o2.label\nRETURN t.label AS topic, o1.label AS org_a, o2.label AS org_b\nORDER BY topic, org_a, org_b LIMIT 40",
+      "at_build": {
+        "kind": "select",
+        "rows": 40,
+        "columns": [
+          "topic",
+          "org_a",
+          "org_b"
+        ],
+        "version": "v0.3.4"
+      }
+    },
+    {
+      "id": "derived-with-pattern",
+      "title": "A derived tag, with the pattern that made it",
+      "note": "Tag nodes carry the lexicon pattern as a property, so the store can show the formula next to the result. The matched words live on the edge in graph.json and are not reified here; the SQL console has them.",
+      "sparql": "SELECT ?tag ?type ?pattern (COUNT(?p) AS ?people)\nWHERE {\n  ?p (v:active_in|v:uses|v:advocates|v:offers) ?n .\n  ?n a ?type ; rdfs:label ?tag ; a:pattern ?pattern .\n  FILTER(lang(?tag) = \"en\")\n}\nGROUP BY ?tag ?type ?pattern\nORDER BY DESC(?people)\nLIMIT 20",
+      "cypher": "MATCH (p:Person)-[:ACTIVE_IN|USES|ADVOCATES|OFFERS]->(n)\nRETURN n.label AS tag, labels(n)[0] AS type, n.pattern AS pattern, count(p) AS people\nORDER BY people DESC LIMIT 20",
+      "at_build": {
+        "kind": "select",
+        "rows": 20,
+        "columns": [
+          "tag",
+          "type",
+          "pattern",
+          "people"
+        ],
+        "version": "v0.3.4"
       }
     },
     {
@@ -174,7 +209,7 @@
       "at_build": {
         "kind": "ask",
         "answer": false,
-        "version": "v0.3.3"
+        "version": "v0.3.4"
       }
     }
   ]

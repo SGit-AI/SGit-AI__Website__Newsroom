@@ -20,7 +20,7 @@
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer and the shipped CLI. This site is the future-of-news stack: provenance, corrections, and paying the fact creator">&#8593; part of <b>sgit.ai</b></a>
   <span class="stage-pill">design, not built</span>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.3.3</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.3.4</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -79,7 +79,7 @@
 
 <main class="doc">
 <div class="crumb"><a href="../index.html">newsroom.sgit.ai</a> / <a href="index.html">portugal</a> / method</div>
-<div class="ops" style="margin:0 0 1.4rem"><div class="op" style="border-left-color:#0f766e"><b style="color:#0f766e">Portugal Startups &middot; beta</b><p style="display:flex;gap:1.1rem;flex-wrap:wrap;align-items:center;margin-top:.45rem"><a href="index.html" style="font-size:.83rem;color:#5c5f66">The wire</a><a href="graph.html" style="font-size:.83rem;color:#5c5f66">The graph</a><a href="explorer.html" style="font-size:.83rem;color:#5c5f66">The files</a><a href="summit/index.html" style="font-size:.83rem;color:#5c5f66">The Summit</a><a href="summit/people.html" style="font-size:.83rem;color:#5c5f66">Who is speaking</a><a href="summit/orgs.html" style="font-size:.83rem;color:#5c5f66">The organisations</a><a href="summit/changes.html" style="font-size:.83rem;color:#5c5f66">What changed</a><a href="sources.html" style="font-size:.83rem;color:#5c5f66">Sources</a><a href="method.html" style="font-size:.83rem;color:#101114;font-weight:600">Method</a><a href="team.html" style="font-size:.83rem;color:#5c5f66">The team</a><a href="notice.html" style="font-size:.83rem;color:#5c5f66">Your data</a><a href="about.html" style="font-size:.83rem;color:#5c5f66">About & limits</a></p></div></div>
+<div class="ops" style="margin:0 0 1.4rem"><div class="op" style="border-left-color:#0f766e"><b style="color:#0f766e">Portugal Startups &middot; beta</b><p style="display:flex;gap:1.1rem;flex-wrap:wrap;align-items:center;margin-top:.45rem"><a href="index.html" style="font-size:.83rem;color:#5c5f66">The wire</a><a href="graph.html" style="font-size:.83rem;color:#5c5f66">The graph</a><a href="explorer.html" style="font-size:.83rem;color:#5c5f66">The files</a><a href="connections.html" style="font-size:.83rem;color:#5c5f66">Connections</a><a href="summit/index.html" style="font-size:.83rem;color:#5c5f66">The Summit</a><a href="summit/people.html" style="font-size:.83rem;color:#5c5f66">Who is speaking</a><a href="summit/orgs.html" style="font-size:.83rem;color:#5c5f66">The organisations</a><a href="summit/changes.html" style="font-size:.83rem;color:#5c5f66">What changed</a><a href="sources.html" style="font-size:.83rem;color:#5c5f66">Sources</a><a href="method.html" style="font-size:.83rem;color:#101114;font-weight:600">Method</a><a href="team.html" style="font-size:.83rem;color:#5c5f66">The team</a><a href="notice.html" style="font-size:.83rem;color:#5c5f66">Your data</a><a href="about.html" style="font-size:.83rem;color:#5c5f66">About & limits</a></p></div></div>
 <h1>The method</h1>
 <p class="lead"><b>Fetch, freeze, hash, extract, diff.</b> Five verbs, and the third is the one
 that matters: a claim on this section points at bytes in this repository, not at a URL that
@@ -109,11 +109,14 @@ might have changed since anybody looked.</p>
 </div>
 
 <h2 id="notreproduce">What we link rather than reproduce</h2>
-<p>Speaker biographies are not extracted, not stored as data and not published. They are the
-speakers&rsquo; and the organisers&rsquo; own writing, and this publication adds structure over
-other people&rsquo;s material rather than republishing it. We hold the frozen page for
-verification; the reader gets the pointer. The same rule governs session descriptions and
-sponsor copy.</p>
+<p>Speaker biographies are not stored as data and not published. They are the speakers&rsquo; and
+the organisers&rsquo; own writing, and this publication adds structure over other people&rsquo;s
+material rather than republishing it. We hold the frozen page for verification; the reader gets
+the pointer. Since v0.3.4 each speaker&rsquo;s own page is frozen too, and two things are <em>read</em>
+from it: the event&rsquo;s own Topics list for that speaker, verbatim, and the words that match
+<a href="data/lexicon.json">a published lexicon</a>. The matched words travel on the edge; no
+sentence of the biography does, and gate 10 fails the build if one ever did. The same rule
+governs session descriptions and sponsor copy.</p>
 
 <h2 id="roles">Seven roles and a named human</h2>
 <p>Seven agent roles and one named human. The posture differs deliberately from The Governance Wire, which is fully agentic with nobody reviewing before publication: this beat is about named people and named companies in a small ecosystem, where being wrong in public costs somebody other than us.</p>
@@ -134,7 +137,7 @@ every page before it publishes.</div>
   It is not attendance, and it will not be reported as attendance even after the event.</p></div>
 </div>
 
-<div class="agent"><h4>For an agent</h4><p>The ingestion path is fetch, freeze, hash, extract, diff — implemented in <code>portugal/build/extract.py</code> and reproducible from this repository. Claims point at frozen bytes, not at live URLs. <b>Biographies and other third-party prose are deliberately not reproduced.</b> The publication has a named human editor of record who reviews before publication, which is the posture difference from /governance/. It assesses nobody, explains no removal, and does not report a target as a result.</p></div>
+<div class="agent"><h4>For an agent</h4><p>The ingestion path is fetch, freeze, hash, extract, diff — implemented in <code>portugal/build/extract.py</code> and reproducible from this repository. Claims point at frozen bytes, not at live URLs. <b>Biographies and other third-party prose are deliberately not reproduced</b>; the event's Topics list and lexicon matches are read from each speaker's frozen page (<code>topics.json</code>, <code>lexicon.json</code>) and carry the matched words only. The publication has a named human editor of record who reviews before publication, which is the posture difference from /governance/. It assesses nobody, explains no removal, and does not report a target as a result.</p></div>
 
 <div class="pagenav">
   <a href="checks.html">&larr; What we checked</a>
@@ -149,7 +152,7 @@ every page before it publishes.</div>
     <p>News is failing not because there is too little information but because there is no walkable chain from a claim to its evidence, no way for a correction to reach what it disproved, and no way to pay the person who did the original work. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="netline"><a href="https://sgit.ai"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://graphs.sgit.ai">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai">&#8593; nhi.sgit.ai</a> &middot; <a href="https://sg-sentinel.sgit.ai">&#8593; sg-sentinel.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.3.3</a> &middot; <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.3.4</a> &middot; <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>The argument</h4>

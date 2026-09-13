@@ -93,6 +93,12 @@ TABLES = [
     {"name": "changes", "file": "changes.json", "path": "changes",
      "columns": [col("from_snapshot", "from"), col("to_snapshot", "to"), col("count_from"), col("count_to"),
                  col("added"), col("removed"), col("changed"), col("reason_known")]},
+    {"name": "person_topics", "file": "topics.json", "path": "person_topics",
+     "columns": [col("person"), col("topic"), col("source")]},
+    {"name": "person_tags", "file": "topics.json", "path": "person_tags",
+     "columns": [col("person"), col("tag"), col("type"), col("matched"), col("source")]},
+    {"name": "lexicon", "file": "lexicon.json", "path": "entries",
+     "columns": [col("id"), col("type"), col("label"), col("pt"), col("pattern")]},
 ]
 
 
@@ -170,6 +176,15 @@ SQL_EXAMPLES = [
     ("json-arrays", "Unpacking a JSON column: who each story stands on, from stories.json itself",
      "Columns that were arrays in the JSON are stored as JSON text, and SQLite's `json_each` unpacks them. The same fact as the `stands_on` edges, read from the other file.",
      "SELECT s.title, j.value AS source_id\nFROM stories s, json_each(s.stands_on) j\nORDER BY s.published, s.title, source_id;"),
+    ("topics", "The event's own topics, by how many speakers carry each",
+     "The `Topics` list the event prints on every speaker's page, read verbatim from the frozen copy. The event's vocabulary, counted.",
+     "SELECT topic, COUNT(*) AS speakers\nFROM person_topics\nGROUP BY topic\nORDER BY speakers DESC, topic;"),
+    ("tags-evidence", "A derived tag with its evidence: the matched words",
+     "Every derived tag carries the words the lexicon pattern hit on the speaker's own page, and nothing else. This is the whole evidence for the tag, on purpose.",
+     "SELECT t.type, l.label AS tag, t.matched, COUNT(*) AS people\nFROM person_tags t JOIN lexicon l ON l.id = t.tag\nGROUP BY t.type, l.label, t.matched\nORDER BY people DESC, t.type, tag\nLIMIT 40;"),
+    ("orgs-should-talk", "Organisations that should be talking (the connections formula)",
+     "The first of the three organisation-level formulas on the Portugal connections page, verbatim: two organisations whose speakers' pages share at least three topics, industries, technologies or ideas. The page stores the rows it got at build; this is the same SQL.",
+     None),
     ("register-sizes", "The register: bytes frozen per snapshot",
      "Every frozen page with its size, summed by snapshot date. The bytes are the evidence; the hash in `sources.sha256` is what the build re-verifies.",
      "SELECT snapshot, COUNT(*) AS pages, SUM(bytes) AS bytes\nFROM sources\nGROUP BY snapshot\nORDER BY snapshot;"),
@@ -224,6 +239,14 @@ SPARQL_EXAMPLES = [
      "The store holds 298 forward edges. This query builds the 298 inverse ones as new triples without storing them; the console shows what came back.",
      "CONSTRUCT { ?o ?inv ?s }\nWHERE {\n  ?s ?v ?o .\n  ?inv owl:inverseOf ?v .\n}",
      "-- No Cypher equivalent: inverses are not declared, so nothing can construct them."),
+    ("same-topic", "Two people at different organisations who speak on the same topic",
+     "The event's own topic tags, joined across organisations. The first ingredient of the connections page, one hop each side.",
+     "SELECT ?topic ?org_a ?org_b\nWHERE {\n  ?p1 v:speaks_on ?t ; v:listed_under ?o1 .\n  ?p2 v:speaks_on ?t ; v:listed_under ?o2 .\n  FILTER(STR(?o1) < STR(?o2))\n  ?t rdfs:label ?topic . ?o1 rdfs:label ?org_a . ?o2 rdfs:label ?org_b .\n}\nORDER BY ?topic ?org_a ?org_b\nLIMIT 40",
+     "MATCH (p1:Person)-[:SPEAKS_ON]->(t:Topic)<-[:SPEAKS_ON]-(p2:Person),\n      (p1)-[:LISTED_UNDER]->(o1:Organisation), (p2)-[:LISTED_UNDER]->(o2:Organisation)\nWHERE o1.label < o2.label\nRETURN t.label AS topic, o1.label AS org_a, o2.label AS org_b\nORDER BY topic, org_a, org_b LIMIT 40"),
+    ("derived-with-pattern", "A derived tag, with the pattern that made it",
+     "Tag nodes carry the lexicon pattern as a property, so the store can show the formula next to the result. The matched words live on the edge in graph.json and are not reified here; the SQL console has them.",
+     "SELECT ?tag ?type ?pattern (COUNT(?p) AS ?people)\nWHERE {\n  ?p (v:active_in|v:uses|v:advocates|v:offers) ?n .\n  ?n a ?type ; rdfs:label ?tag ; a:pattern ?pattern .\n  FILTER(lang(?tag) = \"en\")\n}\nGROUP BY ?tag ?type ?pattern\nORDER BY DESC(?people)\nLIMIT 20",
+     "MATCH (p:Person)-[:ACTIVE_IN|USES|ADVOCATES|OFFERS]->(n)\nRETURN n.label AS tag, labels(n)[0] AS type, n.pattern AS pattern, count(p) AS people\nORDER BY people DESC LIMIT 20"),
     ("ask-symmetric", "ASK: is any edge symmetric?",
      "graphs.sgit.ai bans symmetric edges (`related_to`, `associated_with`). The answer should be false; the rule is a query, not a promise.",
      "ASK {\n  ?x ?v ?y .\n  ?y ?v ?x .\n  FILTER(?v != owl:inverseOf && ?x != ?y)\n}",
@@ -231,9 +254,14 @@ SPARQL_EXAMPLES = [
 ]
 
 
+CONNECTIONS = json.loads((PT / "connections.json").read_text(encoding="utf-8"))
+
+
 def run_sql_examples(db):
     out = []
     for qid, title, note, sql in SQL_EXAMPLES:
+        if sql is None:
+            sql = next(q["sql"] for q in CONNECTIONS["queries"] if q["id"] == "talk")
         try:
             cur = db.execute(sql)
             rows = cur.fetchall()
@@ -244,6 +272,12 @@ def run_sql_examples(db):
             raise SystemExit(f"databases: SQL example '{qid}' returned no rows at build")
         out.append({"id": qid, "title": title, "note": note, "sql": sql,
                     "at_build": {"rows": len(rows), "columns": cols, "version": VERSION}})
+    # the connections page's stored rows must be what its SQL gives against THESE tables too
+    for q in CONNECTIONS["queries"]:
+        got = db.execute(q["sql"]).fetchall()
+        if len(got) != q["rows_at_build"]:
+            raise SystemExit(f"databases: connections query '{q['id']}' gives {len(got)} rows here and "
+                             f"{q['rows_at_build']} on the Portugal page — the two loaders have drifted")
     return out
 
 

@@ -6,8 +6,8 @@ files the Portugal section is built from. No server, no upload, no store of reco
 | Page | What |
 |---|---|
 | `index.html` | The argument: the file system is the database; the engines are readers |
-| `sql.html` | SQLite via sql.js — 12 tables built on load from `data/tables.json`, 13 worked queries |
-| `graph.html` | Oxigraph (SPARQL 1.1) over `/portugal/data/triples.nt` (1,982 triples), 11 worked queries with Cypher shown beside each |
+| `sql.html` | SQLite via sql.js — 15 tables built on load from `data/tables.json`, 16 worked queries |
+| `graph.html` | Oxigraph (SPARQL 1.1) over `/portugal/data/triples.nt` (4,001 triples), 13 worked queries with Cypher shown beside each |
 
 ## Build
 

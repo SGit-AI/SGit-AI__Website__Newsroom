@@ -53,7 +53,7 @@ NODE_TYPES = [
     {"id": "Stage",        "label": "Stage",        "pt": "Palco",        "colour": "#0e7490",
      "definition": "A named room or stage that sessions are scheduled on. This event names its stages two ways on two pages."},
     {"id": "Person",       "label": "Person",       "pt": "Pessoa",       "colour": "#b45309",
-     "definition": "A named individual on the event's published speaker list, in their professional capacity. Name, listed role, listed organisation, links. Never a biography, never a contact detail."},
+     "definition": "A named individual on the event's published speaker list, in their professional capacity. Name, listed role, listed organisation, links, the event's own topic tags for them, and the words on their page that match a published lexicon. Never a biography, never a contact detail."},
     {"id": "Organisation", "label": "Organisation", "pt": "Organização",  "colour": "#1d4ed8",
      "definition": "An organisation a person is LISTED UNDER on their speaker card. Derived from the cards, never typed by hand; placeholders such as 'Independent' are flagged, not removed."},
     {"id": "Place",        "label": "Place",        "pt": "Local",        "colour": "#4a5b6a",
@@ -66,6 +66,18 @@ NODE_TYPES = [
      "definition": "A third party's published page about the event, fetched, frozen and hashed like any other source. Linked to, never reproduced."},
     {"id": "Story",        "label": "Story",        "pt": "Notícia",      "colour": "#b91c1c",
      "definition": "A piece this publication wrote, standing on named frozen sources and reviewed by the editor of record before publication."},
+    {"id": "Topic",        "label": "Topic",        "pt": "Tema",         "colour": "#7c3aed",
+     "definition": "A topic the event lists on a speaker's own page, verbatim. Read from the frozen page, never derived; the event's vocabulary, not ours."},
+    {"id": "Industry",     "label": "Industry",     "pt": "Setor",        "colour": "#0e7490",
+     "definition": "A sector named by the published lexicon (data/lexicon.json) and matched on a speaker's own page. The edge to it carries the matched words. It says the page contains those words; nothing more."},
+    {"id": "Technology",   "label": "Technology",   "pt": "Tecnologia",   "colour": "#0369a1",
+     "definition": "A technology named by the published lexicon and matched on a speaker's own page. Derived by formula; the edge carries the matched words."},
+    {"id": "Idea",         "label": "Idea",         "pt": "Ideia",        "colour": "#9333ea",
+     "definition": "A recurring idea of the founder conversation, named by the published lexicon and matched on a speaker's own page. Derived by formula; the edge carries the matched words."},
+    {"id": "Service",      "label": "Service",      "pt": "Serviço",      "colour": "#be185d",
+     "definition": "A kind of service a speaker's own page says they or their organisation provide, as matched by the published lexicon. Derived by formula; the edge carries the matched words."},
+    {"id": "Product",      "label": "Product",      "pt": "Produto",      "colour": "#c2410c",
+     "definition": "A kind of product a speaker's own page names, as matched by the published lexicon. Derived by formula; the edge carries the matched words. Categories, not product names."},
 ]
 
 # verb / inverse / domain -> range / pt (verb, inverse) / how the forward edge reads
@@ -87,7 +99,17 @@ EDGES = [
     ("stands_on",      "supports",       "Story",        "Source",       "assenta_em",    "sustenta",      "{s} stands on {t}",              "proposed"),
     ("reports",        "reported_by",    "Story",        "Event",        "relata",        "relatado_por",  "{s} reports {t}",                "proposed"),
     ("reports",        "reported_by",    "Story",        "Snapshot",     "relata",        "relatado_por",  "{s} reports {t}",                "proposed"),
+    ("speaks_on",      "spoken_on_by",   "Person",       "Topic",        "fala_sobre",    "falado_por",    "{s} speaks on {t}",              "proposed"),
+    ("active_in",      "practised_by",   "Person",       "Industry",     "atua_em",       "praticado_por", "{s} is active in {t}",           "proposed"),
+    ("uses",           "used_by",        "Person",       "Technology",   "usa",           "usado_por",     "{s} uses {t}",                   "proposed"),
+    ("advocates",      "advocated_by",   "Person",       "Idea",         "defende",       "defendido_por", "{s} advocates {t}",              "proposed"),
+    ("offers",         "offered_by",     "Person",       "Service",      "oferece",       "oferecido_por", "{s} offers {t}",                 "proposed"),
+    ("offers",         "offered_by",     "Person",       "Product",      "oferece",       "oferecido_por", "{s} offers {t}",                 "proposed"),
 ]
+
+# Verbs whose edges are DERIVED by the lexicon rather than read from a list. Every such edge
+# carries `matched` (the words the pattern hit) and the gate re-runs the pattern on the bytes.
+DERIVED_VERBS = {"active_in", "uses", "advocates", "offers"}
 
 BANNED = [
     {"verb": "related_to",      "why": "Symmetric, so it would be its own inverse, and it says nothing a reader could walk."},
@@ -103,6 +125,9 @@ TAXONOMY = [
     {"id": "programme",  "label": "Programme",  "pt": "Programa",   "broader": None,     "types": ["Event", "Session", "Stage"]},
     {"id": "evidence",   "label": "Evidence",   "pt": "Evidência",  "broader": None,     "types": ["Snapshot", "Source", "Coverage"]},
     {"id": "output",     "label": "Our output", "pt": "O nosso trabalho", "broader": None, "types": ["Story"]},
+    {"id": "themes",     "label": "Themes",     "pt": "Temas",      "broader": None,     "types": ["Topic"]},
+    {"id": "derived",    "label": "Derived by formula", "pt": "Derivado por fórmula", "broader": None,
+     "types": ["Industry", "Technology", "Idea", "Service", "Product"]},
 ]
 
 # The one classification this file makes up rather than reads. Published as a formula so it
@@ -139,6 +164,8 @@ def main():
     sources = load("sources.json")
     changes = load("changes.json")
     stories = load("stories.json")
+    topics = load("topics.json")
+    lexicon = load("lexicon.json")
     sessions = load("sessions.json")
     coverage = load("coverage.json") if (DATA / "coverage.json").exists() else {"items": []}
 
@@ -152,8 +179,8 @@ def main():
         seen.add(n["id"])
         nodes.append(n)
 
-    def edge(verb, s, t, pack):
-        edges.append({"id": f"{verb}:{s}:{t}", "verb": verb, "source": s, "target": t, "pack": pack})
+    def edge(verb, s, t, pack, **extra):
+        edges.append({"id": f"{verb}:{s}:{t}", "verb": verb, "source": s, "target": t, "pack": pack, **extra})
 
     # --- the event, its venue, its organiser ---------------------------------
     ev = "event:" + event["id"]
@@ -184,6 +211,27 @@ def main():
         if p["org"]:
             edge("listed_under", "person:" + p["id"], "org:" + org_id(p["org"]), "people")
         edge("attested_by", "person:" + p["id"], f"src:{latest}/speakers", "sources")
+
+    # --- the event's topics per speaker, and the lexicon's tags ------------------
+    LEX = {e["id"]: e for e in lexicon["entries"]}
+    VERB_FOR = {t: v["verb"] for t, v in lexicon["types"].items()}
+    for row in topics["people"]:
+        if not row["source"]:
+            continue
+        pid = "person:" + row["id"]
+        edge("attested_by", pid, "src:" + row["source"], "sources")
+        for t in row["topics"]:
+            tid = "topic:" + re.sub(r"[^a-z0-9]+", "-", t.lower()).strip("-")
+            node({"id": tid, "type": "Topic", "label": t, "pack": "topics",
+                  "read_from": "the event's Topics list on the speaker's page", "source": row["source"]})
+            edge("speaks_on", pid, tid, "topics")
+        for tg in row["tags"]:
+            e = LEX[tg["tag"]]
+            nid = "tag:" + e["id"]
+            node({"id": nid, "type": e["type"], "label": e["label"], "pack": "tags", "pt": e["pt"],
+                  "lexicon": e["id"], "pattern": e["pattern"],
+                  "derived": True, "by": "lexicon over the speaker's own page", "source": row["source"]})
+            edge(VERB_FOR[e["type"]], pid, nid, "tags", matched=tg["matched"], by="lexicon")
 
     # --- stages and sessions ---------------------------------------------------
     for st in sessions["stages"]:
@@ -261,6 +309,8 @@ def main():
         ("changes",  "What changed",   False, "Presence and absence across snapshots. A removal carries no reason."),
         ("coverage", "Coverage",       False, "Third-party pages about the event, frozen and hashed. Linked, not reproduced."),
         ("stories",  "Our stories",    False, "What this publication wrote, and the sources each piece stands on."),
+        ("topics",   "Topics",         False, "The event's own topic tags for each speaker, read verbatim from that speaker's frozen page. The event's vocabulary, not ours."),
+        ("tags",     "Derived tags",   False, "Industry, technology, idea, service and product tags derived from each speaker's own page by the published lexicon. Every edge carries the matched words; a tag says the page contains them and nothing more."),
     ]
     packs = []
     for pid, label, default, note in PACKS:
@@ -286,9 +336,18 @@ def main():
                   for v, i, d, r, pv, pi, reads, origin in EDGES],
         "banned": BANNED,
         "taxonomy": TAXONOMY,
+        "derived_verbs": sorted(DERIVED_VERBS),
         "formulas": [{"id": "role_class", "on": "Person",
-                      "note": "The only classification this graph makes rather than reads. Matched against the LISTED role title, first match wins, and every value carries 'by listed title'.",
-                      "rules": [{"class": c, "label": l, "pattern": p} for c, l, p in ROLE_CLASS]}],
+                      "note": "One of two classifications this graph makes rather than reads. Matched against the LISTED role title, first match wins, and every value carries 'by listed title'.",
+                      "rules": [{"class": c, "label": l, "pattern": p} for c, l, p in ROLE_CLASS]},
+                     {"id": "tags", "on": "Person",
+                      "note": ("The other. Each lexicon entry is a case-insensitive regular expression run over the "
+                               "Bio prose of the speaker's own frozen page; a match makes one edge (active_in, uses, "
+                               "advocates or offers) carrying the matched words. Re-run on every build by gate 17. "
+                               "The full lexicon, with Portuguese labels, is data/lexicon.json."),
+                      "lexicon": "data/lexicon.json", "entries": len(lexicon["entries"]),
+                      "rules": [{"class": e["id"], "type": e["type"], "label": e["label"], "pattern": e["pattern"]}
+                                for e in lexicon["entries"]]}],
     }
     (DATA / "ontology.json").write_text(json.dumps(ontology, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
