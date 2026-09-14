@@ -195,6 +195,23 @@ DOCS = [
      "proven. Built from <a href=\"../governance/newsroom/index.html\">the floor "
      "itself</a>."),
 
+    ("pt-transfer", "14__what-pt-newsroom-can-take-from-here.md",
+     "A sibling transfer: what pt.newsroom.sgit.ai can take from here",
+     "Memo &middot; 14 September 2026 &middot; addressed to another publication's agents",
+     "<b>Evidence transferred between sibling publications stays evidence, as long as the "
+     "provenance travels with it and is published.</b> The bytes in the bundle were frozen by "
+     "THIS site's fetcher at times in THIS site's register; entering them anywhere as the "
+     "receiving publication's own captures would make its method quietly untrue &mdash; the one "
+     "failure mode that does not look broken.",
+     "<b>Written after reading the sibling repository at v0.3.1.</b> It opens with the three "
+     "things that site built which this one lacks (a read-only JSON API with OpenAPI, the "
+     "delivery quarantine as a gate, the accent and Portuguese-path gates), then offers what "
+     "goes the other way: two Summit captures from 8 and 13 September that turn a story "
+     "explicitly waiting for a second capture into three captures in six days, 60 &rarr; 64 "
+     "&rarr; 70; three press pages and one excluded with its reason; a story standing on two "
+     "independent publishers that is live this week; and the bundle at "
+     "<a href=\"../briefs/pt-transfer.zip\">briefs/pt-transfer.zip</a>, whose fourteen files "
+     "were re-verified against the register before packaging."),
     ("research-brief-chatgpt", "12__research-brief-for-chatgpt.md",
      "Research brief for ChatGPT: what pt.newsroom.sgit.ai needs",
      "Research brief &middot; 14 September 2026 &middot; addressed to an outside assistant",

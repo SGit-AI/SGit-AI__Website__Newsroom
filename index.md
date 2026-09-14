@@ -6,7 +6,7 @@
 > graph that accumulates evidence, perspectives and confidence; every article is a
 > **projection** of it. **Sell the graph, not the paragraph.**
 
-*Source: <https://newsroom.sgit.ai/index.html> · site v0.3.11 · markdown twin of the front page.*
+*Source: <https://newsroom.sgit.ai/index.html> · site v0.3.12 · markdown twin of the front page.*
 
 ---
 
