@@ -1,7 +1,7 @@
 # 12 — Research brief for ChatGPT: what pt.newsroom.sgit.ai needs, how to find it, how to hand it back
 
 **Paste this whole document into ChatGPT as the first message. Use a mode that browses the web
-(web search or Deep Research). Written 14 September 2026 for newsroom.sgit.ai v0.3.10; the contract
+(web search or Deep Research). Written 14 September 2026 for newsroom.sgit.ai v0.3.10, revised for v0.3.11 (sgit vaults); the contract
 it references is `briefs/pt-newsroom-pack/08__research-briefs/research-schema.json`.** CC BY 4.0.
 
 ---
@@ -134,8 +134,9 @@ https://newsroom.sgit.ai/briefs/pt-newsroom-pack/08__research-briefs/research-sc
 
 ```
 {
-  "delivery": { "id", "tool": "chatgpt", "model", "date", "brief": "12__research-brief-for-chatgpt.md v1",
-                "language": "pt-PT", "sections_covered": [...], "queries": [...], "part": "1/N", "notes" },
+  "delivery": { "id", "tool": "chatgpt", "model", "date", "brief": "12__research-brief-for-chatgpt.md v2",
+                "language": "pt-PT", "sections_covered": [...], "queries": [...], "part": "1/N", "notes",
+                "vault": { "vault_id", "commit", "read_key" | null, "share_token" | null, "remote" } },
   "sources":  [ { "id": "src-…", "url", "publisher", "publisher_kind", "title", "language",
                   "published" | null, "retrieved", "access", "locator", "excerpt", "archived_copy" } ],
   "items":    [ { "id": "item-…", "section", "kind", "headline", "what_the_sources_say", "dates",
@@ -170,6 +171,77 @@ noted); reject any item whose personal-data check is false or whose person carri
 field; turn what survives into issues on the desk for the research department to re-derive from
 the frozen page. Your `queries`, `notes` and `why_it_matters` go to the editor unchanged.
 
+## F. Package and distribute the delivery as an sgit vault
+
+The newsroom keeps its record in git; its deliveries travel in **sgit vaults**. sgit is "git for
+encrypted folders": a vault is a versioned folder, encrypted end to end on your machine before
+anything leaves it (AES-256-GCM), pushed to a server that never sees plaintext, and shareable
+with a read key or a one-shot token. Every part you deliver becomes a commit with a stable id,
+which is what lets the newsroom cite *which* delivery a lead came from.
+
+Read, in this order: [sgit.ai](https://sgit.ai) (what it is) ·
+[Working with AI agents](https://sgit.ai/docs/agents.html) (the commands an agent uses) ·
+[Working on a vault: start here](https://sgit.ai/docs/guidance/index.html) (the practices) ·
+[Publishing a vault: the method](https://sgit.ai/demos/vaults/publishing.html) (the two rules:
+**read keys yes, vault keys never**; audit before the key, not after) ·
+[Reading one file out of a vault](https://sgit.ai/docs/vault/reading-a-vault-file.html) (how the
+newsroom will read what you push). The machine-readable index is https://sgit.ai/llms.txt.
+
+### The vault layout the newsroom expects
+
+```
+entrega/
+  README.md                      delivery id, tool, model, dates, brief version, parts delivered
+  manifest.json                  every file below with its SHA-256 and byte count
+  schema/research-schema.json    a copy of the schema, so the vault validates itself
+  partes/01-politicas.json       one file per part, each a complete valid delivery document
+  partes/02-instituicoes.json    …
+  consultas/<seccao>.md          every query run, verbatim, dated
+  notas.md                       what could not be found; what was paywalled or script-rendered
+```
+
+Put in the vault only what you wrote: the JSON, your notes, your queries. **Do not put copies of
+third-party pages in it** — the newsroom freezes its own, and a copy of someone's page in a
+vault you hand over is a copy you were not asked to make. Excerpts of ≤ 25 words inside the JSON
+are the whole of what travels. No personal data beyond the three listed fields, as in section C.
+
+### If you can run a shell with network access
+
+```
+pip3 install sgit-ai
+sgit init entrega-<tool>-<date>            # prints the VAULT KEY: keep it; it is write access
+cd entrega-<tool>-<date>
+# … write the files in the layout above …
+sgit commit "entrega 1/8: políticas"
+sgit push                                   # only changed objects go; the server sees ciphertext
+sgit history log --json                     # the commit id goes in delivery.vault.commit
+```
+
+For each later part, either commit again, or write one file straight to HEAD without a working
+copy: `sgit write partes/02-instituicoes.json --file 02.json --message "entrega 2/8" --push --json`.
+
+**Handing it over.** Give the newsroom one of two things, never the third:
+
+- a **read key** — derived one-way from the vault key; it grants read and only read. Derive it as
+  the publishing method shows (`Vault__Crypto().derive_keys(pw, vault_id)['read_key']`, a
+  64-character hex string) and put it in `delivery.vault.read_key`; or
+- a **share token** from `sgit share` — a one-shot encrypted snapshot the editor can open in the
+  SG/Send web UI with nothing installed; put it in `delivery.vault.share_token`;
+- **never the vault key.** It is write access to everything you pushed. If it reaches a message,
+  a page or a commit, the vault is anybody's.
+
+Fill `delivery.vault` in every part: `vault_id`, `commit`, and the read key or token.
+
+### If you cannot run commands
+
+Chat modes without a shell cannot push. Then produce the vault *contents* exactly in the layout
+above — every file, including `manifest.json` with the hashes you can compute and
+`schema/research-schema.json` copied from the URL in section D — and a `PACKAGE.sh` holding the
+commands above with the paths filled in. Say plainly in `notas.md` that the vault was not created
+by you. The operator runs the script, and the vault id and commit are added to `delivery.vault`
+then. Either way the delivery is the same set of files with the same provenance; only who typed
+`sgit push` differs.
+
 ## Start
 
-Begin with **Políticas**. Deliver part 1/8 as JSON only, then wait for "next".
+Begin with **Políticas**. Deliver part 1/8 as JSON only, then wait for "next". When all eight parts are done, package them as in section F and hand over the read key or the share token — never the vault key.

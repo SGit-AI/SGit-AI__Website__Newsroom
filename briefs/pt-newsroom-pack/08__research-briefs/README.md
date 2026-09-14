@@ -15,9 +15,31 @@ the page, hashes it, registers it; a gate searches the frozen bytes for every `e
 whose excerpt is not in the bytes is dropped, and the delivery's `notes` say so back to the
 editor. Only after that does a claim exist for Redação to write from.
 
+## Deliveries arrive as sgit vaults
+
+Section F of both briefs asks the assistant to package the delivery as an
+[sgit](https://sgit.ai) vault — a versioned, end-to-end encrypted folder — and to hand over a
+**read key** (64 hex characters, read-only, derived one-way) or a **share token** from
+`sgit share`, never the vault key. Receiving one:
+
+```
+pip3 install sgit-ai
+sgit clone <read-key>:<vault-id> redacao/entregas/<tool>-<date>     # read-only clone
+# or, for a share token: open it in the SG/Send web UI, or download the snapshot with the token
+sha256sum -c <(python3 -c "import json;[print(f['sha256'],' ',f['path']) for f in json.load(open('manifest.json'))['files']]")
+```
+
+Classify the credential before it touches anything (the publishing method's first step): a
+64-hex string before the colon is a read key; anything else is a passphrase and therefore write
+access, which must not be stored in the repository. Record `vault_id` and `commit` from
+`delivery.vault` in the issue each item becomes; they are the provenance of the lead. Docs:
+[Working with AI agents](https://sgit.ai/docs/agents.html) ·
+[Publishing a vault: the method](https://sgit.ai/demos/vaults/publishing.html).
+
 ## Ingesting a delivery (the Claude agent)
 
-1. Save it unchanged as `redacao/entregas/<tool>/<delivery.id>.json`. It is part of the record.
+1. Save each part unchanged as `redacao/entregas/<tool>/<delivery.id>.json` (copied out of the
+   vault clone, with the vault id and commit beside it). It is part of the record.
 2. Validate against `research-schema.json` (`pip install jsonschema`; or the check in
    `build/gates.py` once you add it). Invalid → keep the file, write the errors to the editor's
    inbox, ingest nothing.

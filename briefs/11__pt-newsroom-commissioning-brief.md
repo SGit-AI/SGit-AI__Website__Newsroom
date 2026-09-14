@@ -409,6 +409,8 @@ need and hand it back as leads with provenance in a published JSON schema:
 [12](https://newsroom.sgit.ai/documents/research-brief-chatgpt.html) and
 [13](https://newsroom.sgit.ai/documents/research-brief-perplexity.html); the pack's
 `08__research-briefs/` folder carries the schema, a worked example, and how a delivery is ingested.
+Deliveries travel as [sgit](https://sgit.ai) vaults, handed over with a read key or a share token
+and never with the vault key.
 
 ---
 
