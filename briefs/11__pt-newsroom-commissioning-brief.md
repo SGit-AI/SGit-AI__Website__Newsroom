@@ -390,6 +390,21 @@ numbers. The design is also rendered as a page at full size, from the same sourc
 [newsroom.sgit.ai/pt-newsroom/](https://newsroom.sgit.ai/pt-newsroom/index.html); the two faces it
 specifies, Newsreader and IBM Plex Mono, are vendored on that site under the SIL Open Font License.
 
+## 17. The briefing pack, for the session that builds the site
+
+Everything a Claude Code session with commit access to the target repository needs is packed as
+[`briefs/pt-newsroom-pack.zip`](https://newsroom.sgit.ai/briefs/pt-newsroom-pack.zip)
+(also browsable unpacked at
+[`/briefs/pt-newsroom-pack/`](https://github.com/SGit-AI/SGit-AI__Website__Newsroom/tree/dev/briefs/pt-newsroom-pack)):
+this brief; the chosen design with its sources, renders and vendored typefaces; the code to inherit
+from the Portugal section, the databases section and the site chrome, file by file with what to
+change; the operating model of the newsroom (three departments, files as the communication layer,
+the run loop, the human gate); a `CLAUDE.md` and `.claude/settings.json` for the new repository;
+the prompts and repository skills for the bootstrap, the scheduled run, the editor's review and a
+correction; the three documented ways to run the session on a schedule with a cron workflow ready
+to copy; the acceptance test for v0.1.0; and a handover of what exists on this site and the
+decisions already taken. The first prompt to paste is on the pack's first page.
+
 ---
 
 ## Sources and provenance
