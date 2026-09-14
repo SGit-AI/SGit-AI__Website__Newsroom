@@ -30,6 +30,7 @@ You are being asked to do two things, in this order:
 | 7 | `05__schedule/README.md` | How the scheduled run is wired, and the three mechanisms it can run on |
 | 8 | `06__acceptance.md` | What "done" means for MVP v0.1.0, and the one-story acceptance test |
 | 9 | `07__handover.md` | What exists on newsroom.sgit.ai, where, and the decisions already taken |
+| 10 | `08__research-briefs/README.md` | Two briefs for outside assistants (ChatGPT, Perplexity), the JSON schema their deliveries must validate against, and how a delivery enters the newsroom as leads, never facts |
 
 ## The first prompt
 

@@ -403,7 +403,12 @@ the run loop, the human gate); a `CLAUDE.md` and `.claude/settings.json` for the
 the prompts and repository skills for the bootstrap, the scheduled run, the editor's review and a
 correction; the three documented ways to run the session on a schedule with a cron workflow ready
 to copy; the acceptance test for v0.1.0; and a handover of what exists on this site and the
-decisions already taken. The first prompt to paste is on the pack's first page.
+decisions already taken. The first prompt to paste is on the pack's first page. Two further
+briefs, for ChatGPT and for Perplexity, ask outside assistants to find what the eight sections
+need and hand it back as leads with provenance in a published JSON schema:
+[12](https://newsroom.sgit.ai/documents/research-brief-chatgpt.html) and
+[13](https://newsroom.sgit.ai/documents/research-brief-perplexity.html); the pack's
+`08__research-briefs/` folder carries the schema, a worked example, and how a delivery is ingested.
 
 ---
 

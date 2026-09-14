@@ -195,6 +195,27 @@ DOCS = [
      "proven. Built from <a href=\"../governance/newsroom/index.html\">the floor "
      "itself</a>."),
 
+    ("research-brief-chatgpt", "12__research-brief-for-chatgpt.md",
+     "Research brief for ChatGPT: what pt.newsroom.sgit.ai needs",
+     "Research brief &middot; 14 September 2026 &middot; addressed to an outside assistant",
+     "<b>Leads with provenance, never facts.</b> Nothing an outside assistant returns is cited "
+     "until the newsroom has fetched the page itself, frozen the bytes, hashed them and re-found "
+     "the claim in them &mdash; so every claim carries the exact page and a verbatim excerpt the "
+     "newsroom will search the frozen bytes for, and a person is reduced to three listed fields.",
+     "<b>Paste-ready.</b> Tells ChatGPT what the eight sections need, in priority order, how to "
+     "search Portuguese sources first, the rules on people and characterisation, and the JSON "
+     "contract (a published schema with a worked example) to hand results back in, one section per "
+     "part. What the newsroom does with a delivery is stated so the assistant knows what breaks."),
+    ("research-brief-perplexity", "13__research-brief-for-perplexity.md",
+     "Research brief for Perplexity: what pt.newsroom.sgit.ai needs",
+     "Research brief &middot; 14 September 2026 &middot; addressed to an outside assistant",
+     "<b>A citation becomes a lead only when the URL is the exact page, the excerpt is verbatim, "
+     "and one claim rests on one source.</b> The newsroom re-finds every excerpt in bytes it froze "
+     "itself; a paraphrase kills the lead.",
+     "<b>Paste-ready, and shaped for a tool that cites by default:</b> one query series per section, "
+     "Portuguese first, official before primary before press, every citation opened and its access "
+     "marked honestly. Same eight sections, same rules on people, same JSON contract as the ChatGPT "
+     "brief, delivered one section at a time."),
     ("pt-newsroom", "11__pt-newsroom-commissioning-brief.md",
      "Commissioning brief: pt.newsroom.sgit.ai",
      "Commissioning brief &middot; 13 September 2026 &middot; addressed to a builder",

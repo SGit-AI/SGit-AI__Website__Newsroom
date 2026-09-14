@@ -46,6 +46,8 @@ ORDER = [
     "README.md",
     "PUBLIC.md",
     "LICENSE.md",
+    "12__research-brief-for-chatgpt.md",
+    "13__research-brief-for-perplexity.md",
 ]
 
 HEADER = f"""# newsroom.sgit.ai — everything, in one file
