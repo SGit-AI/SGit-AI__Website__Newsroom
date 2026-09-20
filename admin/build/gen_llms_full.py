@@ -49,6 +49,7 @@ ORDER = [
     "12__research-brief-for-chatgpt.md",
     "13__research-brief-for-perplexity.md",
     "14__what-pt-newsroom-can-take-from-here.md",
+    "15__the-summit-archive.md",
 ]
 
 HEADER = f"""# newsroom.sgit.ai — everything, in one file

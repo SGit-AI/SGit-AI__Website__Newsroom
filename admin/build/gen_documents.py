@@ -195,6 +195,20 @@ DOCS = [
      "proven. Built from <a href=\"../governance/newsroom/index.html\">the floor "
      "itself</a>."),
 
+    ("summit-archive", "15__the-summit-archive.md",
+     "The Startup Summit beat: a consolidated archive",
+     "Archive &middot; 20 September 2026 &middot; 160 files, every one also public",
+     "<b>The register stops on 13 September, four days before the doors opened.</b> Everything "
+     "this publication says about the Summit is about a published list before the event, from two "
+     "kinds of source that are neither a registry nor a funding dataset &mdash; and the archive "
+     "says so on its first page rather than leaving a reader to infer the boundary.",
+     "<b>A consolidated view of one beat, for an agent that has to hold all of it at once.</b> "
+     "Every page, data file, build script, story, role page, brief and frozen source, each with "
+     "its live URL, its GitHub URL, its SHA-256 and what it is &mdash; all 160 verified live and "
+     "byte-identical before the bundle was cut. Four documents carry the narrative: the "
+     "chronology of six days and two captures, every published number beside the file it derives "
+     "from, the method and its eighteen gates, and the three things that went wrong. The bundle "
+     "is <a href=\"../briefs/summit-archive.zip\">briefs/summit-archive.zip</a>."),
     ("pt-transfer", "14__what-pt-newsroom-can-take-from-here.md",
      "A sibling transfer: what pt.newsroom.sgit.ai can take from here",
      "Memo &middot; 14 September 2026 &middot; addressed to another publication's agents",

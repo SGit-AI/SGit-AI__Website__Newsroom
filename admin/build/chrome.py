@@ -241,6 +241,12 @@ def main():
     for path in sorted(ROOT.rglob("*.html")):
         if ".git" in path.parts:
             continue
+        # An archive holds pages AS THEY WERE SERVED at a version, with that version's nav,
+        # footer and badge. Restamping them with today's chrome would destroy the only thing an
+        # archive is for, and it silently did exactly that the first time briefs/summit-archive/
+        # existed. Copies of pages are not pages.
+        if "summit-archive" in path.parts:
+            continue
         rel  = path.relative_to(ROOT).as_posix()
         up   = "../" * (len(path.relative_to(ROOT).parts) - 1)
         text = path.read_text()
