@@ -192,7 +192,7 @@ from, every derived dataset, the code that produced them and the gate that check
     hash for hash, so the digest below is a fact about the contents rather than a record of
     when the build ran.</p>
     <p class="small dim" style="font-family:var(--mono);word-break:break-all">SHA-256
-    9f3f33602f3765c3f32162437dcbe9b8151bff8b61200e04efcb355189b0b393</p>
+    d0ec4fbed2197b9ee8b239283540df7ea071959fef4ee443e622168bd3d347b5</p>
   </div>
   <a class="dlbtn" href="vault.zip">Download the vault<span>2.76 MB &middot; 111 files</span></a>
 </div>
@@ -230,7 +230,7 @@ implicit, so that whoever opens it can disagree with it.</p>
 SHA-256 of every file in it, and <code>build/gates.py</code> is the executable specification of
 every claim this section makes:</p>
 <pre class="shell"><span class="d"># the bundle is what we say it is</span>
-<span class="g">shasum</span> -a 256 vault.zip   <span class="d"># 9f3f33602f3765c3f32162437dcbe9b8…</span>
+<span class="g">shasum</span> -a 256 vault.zip   <span class="d"># d0ec4fbed2197b9ee8b239283540df7e…</span>
 <span class="g">unzip</span> -q vault.zip -d wnd <span class="d">&amp;&amp;</span> <span class="g">cd</span> wnd
 
 <span class="d"># every file in it is what the manifest says it is</span>

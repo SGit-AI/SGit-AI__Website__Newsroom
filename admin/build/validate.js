@@ -156,6 +156,22 @@ for (const f of files) {
   }
 }
 
+// --- 5b. the chrome is actually applied ------------------------------------
+// A page is generated with EMPTY nav and footer blocks and chrome.py fills them. Skip
+// chrome.py in a build cycle and every regenerated page ships with no navigation, no
+// version badge and no footer — and every other check here still passed, because they all
+// test what a page SAYS rather than whether it has any furniture at all. That happened
+// once, at v0.5.0, and was caught by reading a diff rather than by this file.
+for (const f of htmlFiles) {
+  const t = fs.readFileSync(f, 'utf8');
+  if (!/<nav class="site">[\s\S]*class="brand"[\s\S]*<\/nav>/.test(t)) {
+    errors.push(`${rel(f)}: the nav block is empty — run admin/build/chrome.py`);
+  }
+  if (!/<footer class="site">[\s\S]*class="verline"[\s\S]*<\/footer>/.test(t)) {
+    errors.push(`${rel(f)}: the footer block is empty — run admin/build/chrome.py`);
+  }
+}
+
 // --- 6. div balance ----------------------------------------------------
 for (const f of htmlFiles) {
   const t     = fs.readFileSync(f, 'utf8');
