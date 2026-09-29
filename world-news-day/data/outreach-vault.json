@@ -6,17 +6,8 @@
   "pushed": true,
   "vault_id": "0epckcp0",
   "read_key": null,
-  "commit": null,
+  "commit": "obj-cas-imm-2095ba87d75f",
   "remote": "https://dev.send.sgraph.ai",
-  "contents": "README.md, protocol.md, brief.md, targets/ (one per organisation), actions/ (append-only, with its JSON schema), drafts/, state.json, evidence.md",
-  "targets": 27,
-  "by_state": {
-    "route only": 9,
-    "blocked": 9,
-    "ready": 9
-  },
-  "actions_recorded": 0,
-  "no_read_key_is_published": "Deliberately. This vault holds who is being contacted and what we plan to say, which is ours until it is sent.",
   "why_private": "The outreach vault holds who we are contacting and what we plan to say. That is ours until it is sent, and it was a mistake to publish a read key for it at v0.4.4. The vault was rekeyed on 2026-09-29 with `sgit vault move`: every object re-encrypted under a new key, pushed under a new identity, and the old vault hard-deleted from the server. The read key published between v0.4.4 and v0.5.3 now opens nothing — verified by cloning with it and recovering zero files.",
   "previous_vault_id": "clsc1dg4",
   "previous_read_key_status": "invalidated by rekey; recovers 0 files",
@@ -30,5 +21,14 @@
       "verified": "cloning with it recovers 0 files — 'no branch index and no named ref'",
       "why_it_is_recorded_here": "So the gate can hunt it. A revoked key that nobody tracks creeps back into a generated file; llms-full.txt still had it after llms.txt was fixed, and only a check found that."
     }
-  ]
+  ],
+  "contents": "README.md, protocol.md, brief.md, targets/ (one per organisation), actions/ (append-only, with its JSON schema), drafts/, state.json, evidence.md",
+  "targets": 27,
+  "by_state": {
+    "route only": 9,
+    "blocked": 9,
+    "ready": 9
+  },
+  "actions_recorded": 0,
+  "no_read_key_is_published": "Deliberately. This vault holds who is being contacted and what we plan to say, which is ours until it is sent."
 }

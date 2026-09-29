@@ -86,8 +86,20 @@ src_by_id = {s["id"]: s for s in register["sources"]}
 # the frozen copies are somebody else's bytes held as evidence, and vault-app/ is the
 # application that ships INSIDE the encrypted vault — it has no site chrome, no canonical and
 # no version badge by design, because it renders in the SG/Send host and not on this domain.
+# The vault app is excluded by IDENTITY, not by path: it lives at vault-app/index.html in the
+# repository and at the vault ROOT inside the bundle, so a path rule is right in one layout
+# and wrong in the other. What is true in both is that app.json names it as the entry point.
+_app_entries = set()
+for _aj in list(SEC.rglob("app.json")):
+    try:
+        _e = json.loads(_aj.read_text(encoding="utf-8")).get("entry")
+        if _e:
+            _app_entries.add((_aj.parent / _e).resolve())
+    except Exception:
+        pass
 pages = sorted(p for p in SEC.rglob("*.html")
-               if "sources/frozen/" not in p.as_posix() and "vault-app/" not in p.as_posix())
+               if "sources/frozen/" not in p.as_posix()
+               and p.resolve() not in _app_entries)
 if IN_BUNDLE and not pages:
     skipped.append("the checks about this website's pages — there are none in the bundle. "
                    "Every check about the DATA runs, which is what the bundle is for")
@@ -695,8 +707,16 @@ for f in ((SEC / "outreach").rglob("*") if (SEC / "outreach").exists() else []):
 # BUNDLE's name and a null — so the live page told readers to open "wnd-2026-09-29" with no
 # key. Nothing caught it, because every check tested the repository rather than what the page
 # claimed. These do.
-audit_doc = load("vault-audit.json")
-_by_name = {a["name"]: a for a in audit_doc["audited"]}
+# data/vault-audit.json is a record ABOUT the published vault, derived by cloning it after
+# the push, so vault.py leaves it out of the bundle. The checks below therefore have to be
+# skippable — the vault's own README tells a reader to run this file, and at v0.5.4 that
+# instruction died again on a missing audit record. Same class as the v0.5.1 correction, and
+# the same rule applies: a published instruction that fails is worse than no instruction.
+audit_doc = (load("vault-audit.json") if (DATA / "vault-audit.json").exists() else None)
+if audit_doc is None:
+    skipped.append("the vault-audit checks — that record is derived by cloning the published "
+                   "vault and is deliberately not inside it")
+_by_name = {a["name"]: a for a in (audit_doc or {}).get("audited", [])}
 # A vault is PUBLISHED or it is PRIVATE, and the two have opposite obligations: a published
 # one must carry a public read key that the audit actually used; a private one must carry no
 # key at all. Conflating them is how a read key gets published for a vault that should not
@@ -704,6 +724,8 @@ _by_name = {a["name"]: a for a in audit_doc["audited"]}
 for name, rec in (("corpus", vault), ("outreach", outreach_vault)):
     if not rec:
         continue
+    if audit_doc is None and rec.get("published", rec.get("pushed")):
+        continue          # cannot check a published vault against an audit we do not have
     if not rec.get("published", rec.get("pushed")):
         if rec.get("read_key"):
             errors.append(f'{name}-vault: is not published and still carries a read key — a '
@@ -750,7 +772,7 @@ for name, rec in (("corpus", vault), ("outreach", outreach_vault)):
 # llms.txt was fixed by hand — a page that hands a reader a dead credential is a page that
 # wastes their time and misrepresents what we publish. So the keys we have revoked are named
 # in data/outreach-vault.json and hunted across the whole repository.
-for rk in (outreach_vault or {}).get("revoked_read_keys", []):
+for rk in ((outreach_vault or {}).get("revoked_read_keys", []) if not IN_BUNDLE else []):
     needle = rk["key"]
     for f in ROOT.rglob("*"):
         if not f.is_file() or ".git" in f.parts or "summit-archive" in f.parts:
