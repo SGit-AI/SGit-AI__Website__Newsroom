@@ -1,14 +1,15 @@
 {
   "id": "wnd-vault-record",
-  "vault_id": "wnd-2026-09-29",
+  "bundle_id": "wnd-2026-09-29",
   "snapshot": "2026-09-29",
   "bundle": "vault.zip",
-  "bytes": 2898037,
-  "sha256": "41f2f2cda29251a37317732cf8d1e106efc149882735942df7c96916b27f9257",
-  "count": 111,
-  "pushed": false,
-  "why_not_pushed": "An sgit vault is created against an SG/Send server with an access token. This build environment has neither, and a section about licensing does not invent a credential or publish a key. PACKAGE.sh inside the bundle carries the exact commands; when a vault is pushed, the READ KEY goes here — never the vault key.",
-  "read_key": null,
+  "bytes": 2911241,
+  "sha256": "b45721d5f71d7a99279b0613dcd074adb0939f6806737e30aafa3929145aa66f",
+  "count": 113,
+  "pushed": true,
+  "vault_id": "77yuggi1",
+  "read_key": "sgit_public_read_fa4cfb64e7b5b222a958103ed3a5dac760300053b1fd77f60c1d4408721f95e4",
+  "why_not_pushed": "Not pushed. build/publish_vaults.py creates the vault and writes the vault id and the PUBLIC READ KEY here; the vault key is write access and is written nowhere, ever.",
   "licence": {
     "@context": "https://schema.org",
     "@type": "Dataset",
@@ -48,5 +49,8 @@
       }
     ],
     "note": "This file is the one line we asked the publisher for, written out in full. schema.org has carried `license` since 2015; none of the twenty-one uses it."
-  }
+  },
+  "commit": "obj-cas-imm-2273fea33ef3",
+  "remote": "https://dev.send.sgraph.ai",
+  "read_key_note": "A read key is derived one-way from the vault key and grants read and only read. The vault key is write access to everything and is published nowhere, in any file, ever."
 }

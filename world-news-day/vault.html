@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>The vault &middot; World News Day 2026</title>
-<meta name="description" content="Everything this section stands on in one deterministic 2.76 MB bundle: the 21 op-eds frozen and hashed, every derived dataset, the code and the gate — with our licence named and theirs quoted.">
+<title>Published vaults &middot; World News Day 2026</title>
+<meta name="description" content="Two encrypted vaults, both open with a published read-only key: the World News Day corpus, and the append-only outreach vault. With the audit run before each key was published, and the facts derived from the key itself.">
 <link rel="canonical" href="https://newsroom.sgit.ai/world-news-day/vault.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="newsroom.sgit.ai">
 <meta property="og:url" content="https://newsroom.sgit.ai/world-news-day/vault.html">
-<meta property="og:title" content="The vault">
-<meta property="og:description" content="Everything this section stands on in one deterministic 2.76 MB bundle: the 21 op-eds frozen and hashed, every derived dataset, the code and the gate — with our licence named and theirs quoted.">
+<meta property="og:title" content="Published vaults">
+<meta property="og:description" content="Two encrypted vaults, both open with a published read-only key: the World News Day corpus, and the append-only outreach vault. With the audit run before each key was published, and the facts derived from the key itself.">
 <meta name="twitter:card" content="summary">
 <link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
 <link rel="stylesheet" href="../assets/site.css">
@@ -18,8 +18,8 @@
 {
  "@context": "https://schema.org",
  "@type": "Article",
- "headline": "The vault",
- "description": "Everything this section stands on in one deterministic 2.76 MB bundle: the 21 op-eds frozen and hashed, every derived dataset, the code and the gate — with our licence named and theirs quoted.",
+ "headline": "Published vaults",
+ "description": "Two encrypted vaults, both open with a published read-only key: the World News Day corpus, and the append-only outreach vault. With the audit run before each key was published, and the facts derived from the key itself.",
  "url": "https://newsroom.sgit.ai/world-news-day/vault.html",
  "isPartOf": {
   "@type": "WebSite",
@@ -60,7 +60,7 @@
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer and the shipped CLI. This site is the future-of-news stack: provenance, corrections, and paying the fact creator">&#8593; part of <b>sgit.ai</b></a>
   <span class="stage-pill">design, not built</span>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.5.1</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.5.2</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -139,7 +139,9 @@
       <a class="sl" href="../world-news-day/graph.html">The graph</a>
       <a class="sl" href="../world-news-day/sources.html">Sources</a>
       <a class="sl" href="../world-news-day/contacts.html">How to reach them</a>
-      <a class="sl here" href="../world-news-day/vault.html">The vault</a>
+      <a class="sl here" href="../world-news-day/vault.html">Published vaults</a>
+      <a class="sl" href="../world-news-day/vaults/corpus.html">Vault: the corpus</a>
+      <a class="sl" href="../world-news-day/vaults/outreach.html">Vault: the outreach</a>
       <a class="sl" href="../world-news-day/method.html">Method</a>
       </div>
     </div>
@@ -176,133 +178,56 @@
 </div></nav>
 
 <main class="doc">
-<div class="crumb"><a href="../index.html">newsroom.sgit.ai</a> / <a href="index.html">world news day</a> / the vault</div>
+<div class="crumb"><a href="../index.html">newsroom.sgit.ai</a> / <a href="index.html">world news day</a> / vaults</div>
 <div class="ops" style="margin:0 0 1.4rem"><div class="op" style="border-left-color:#b91c1c"><b style="color:#b91c1c">World News Day 2026 &middot; beta</b><p style="display:flex;gap:1.1rem;flex-wrap:wrap;align-items:center;margin-top:.45rem"><a href="index.html" style="font-size:.83rem;color:#5c5f66">The corpus</a><a href="licences.html" style="font-size:.83rem;color:#5c5f66">The licence</a><a href="corpus.html" style="font-size:.83rem;color:#5c5f66">The 21</a><a href="findings.html" style="font-size:.83rem;color:#5c5f66">The aggregate</a><a href="graph.html" style="font-size:.83rem;color:#5c5f66">The graph</a><a href="sources.html" style="font-size:.83rem;color:#5c5f66">Sources</a><a href="contacts.html" style="font-size:.83rem;color:#5c5f66">How to reach them</a><a href="vault.html" style="font-size:.83rem;color:#101114;font-weight:600">The vault</a><a href="method.html" style="font-size:.83rem;color:#5c5f66">Method</a></p></div></div>
-<h1>The vault</h1>
-<p class="lead">Two encrypted vaults, both pushed and readable with the keys below, and the
-same corpus as one downloadable file:
-the 21 op-eds as frozen bytes, the 43 hashed files they came
-from, every derived dataset, the code that produced them and the gate that checks them.
-111 files, 2.76&nbsp;MB, and a SHA-256 you can check before you open it.</p>
-
-<div class="dl">
-  <div>
-    <b>world-news-day/vault.zip</b>
-    <p>Built deterministically from the frozen bytes: the same input produces the same bundle,
-    hash for hash, so the digest below is a fact about the contents rather than a record of
-    when the build ran.</p>
-    <p class="small dim" style="font-family:var(--mono);word-break:break-all">SHA-256
-    41f2f2cda29251a37317732cf8d1e106efc149882735942df7c96916b27f9257</p>
-  </div>
-  <a class="dlbtn" href="vault.zip">Download the vault<span>2.76 MB &middot; 111 files</span></a>
-</div>
+<h1>Published vaults</h1>
+<p class="lead">Two encrypted vaults you can open in your browser right now. <b>Every read key
+here was published on purpose</b>, and a read key is the whole credential: no account, nothing
+to install, no write capability in it. Each row opens a page with what the vault does, the
+audit that was run before the key was published, and the facts derived from the key itself.</p>
 
 <div class="warnbox"><p style="margin-top:0"><b>Beta, agent-produced.</b> The fetching, extraction, classification and drafting here are done by software agents against frozen bytes. Nothing on this page is a legal opinion, and there has been no legal review. If you are deciding whether you may republish one of these pieces, read the terms on the piece itself and ask the publisher &mdash; that is the point we are making.</p><p><b>We hold all twenty-one pieces and republish none of them.</b> Every article is linked to its original on <code>worldnewsday.org</code>. What is published here is the <em>description</em>: who wrote it, under what terms, what it links to, what words it contains. The prose belongs to the people who wrote it, and the gate on this section fails the build if twelve consecutive words of any piece appear on any page we generate.</p><p><b>Every number walks back to bytes we hold.</b> Each page was fetched once, frozen to a dated snapshot in this repository and hashed with SHA-256. The counts are re-derived from those bytes by a second program before anything ships. <a href="sources.html">The register &rarr;</a> &middot; <a href="method.html">The method &rarr;</a></p></div>
 
-<h2 id="terms">Two sets of terms, and they are not the same</h2>
-<p>This is the distinction the whole section exists to make, so the bundle makes it on its own
-face, in prose and in a machine-readable file.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>#</th><th>Vault</th><th>What it is</th><th>Category</th><th>Files</th>
+<th>Size</th><th>Published</th></tr></thead>
+<tbody><tr><td style="font-family:var(--mono);color:var(--dim2)">1</td><td><a href="vaults/corpus.html"><b>World News Day 2026 · the corpus</b></a> <code class="dim small">77yuggi1</code></td><td class="small">Twenty-one commissioned op-eds frozen and hashed, every derived dataset, the build code and the gate that checks it — and not a word of the prose republished</td><td class="small">Record</td><td class="small" style="font-family:var(--mono)">113</td><td class="small" style="font-family:var(--mono);white-space:nowrap">7.46 MB</td><td class="small dim" style="white-space:nowrap">2026-09-29</td></tr><tr><td style="font-family:var(--mono);color:var(--dim2)">2</td><td><a href="vaults/outreach.html"><b>World News Day 2026 · the outreach</b></a> <code class="dim small">clsc1dg4</code></td><td class="small">The append-only working vault the agent at riskmandate.ai collaborates in: targets, a protocol, and an action log with a closed verb list</td><td class="small">Record</td><td class="small" style="font-family:var(--mono)">35</td><td class="small" style="font-family:var(--mono);white-space:nowrap">0.04 MB</td><td class="small dim" style="white-space:nowrap">2026-09-29</td></tr></tbody></table></div>
+
+<h2 id="method">The method is not ours</h2>
+<p><a href="https://sgit.ai/demos/vaults/index.md">sgit.ai publishes thirty-seven vaults</a>
+and writes down how, in
+<a href="https://sgit.ai/demos/vaults/publishing.md">seven steps for another agent to
+follow</a>. These two are published the same way, so that a reader who knows one estate&rsquo;s
+vault pages can read the other&rsquo;s without learning anything new. The two rules everything
+else serves, in their words:</p>
 <div class="split"><table>
-<thead><tr><th class="run">Ours &mdash; <code>data/</code>, <code>build/</code>, the README</th>
-<th class="rent">Theirs &mdash; <code>sources/frozen/</code></th></tr></thead>
+<thead><tr><th class="run">Read keys yes, vault keys never</th>
+<th class="rent">Audit before the key, not after</th></tr></thead>
 <tbody><tr>
-<td><b class="yes">CC BY 4.0.</b> Named, versioned, with a URL, and declared in
-<code>licence.json</code> in the schema.org fields the corpus leaves empty. Reuse it, build on
-it, sell it; say where it came from.</td>
-<td><b class="no">Not ours and not relicensed.</b> The twenty-one op-eds as served, and the
-records the publisher&rsquo;s own API returns for them, carried as evidence under the terms
-their pages state &mdash; quoted verbatim in the bundle&rsquo;s README, which also says plainly
-that it grants you nothing over somebody else&rsquo;s work.</td>
-</tr></tbody></table>
-<p class="cap">If you are deciding whether you may republish one of the pieces: read the terms
-on the piece and ask the publisher. That is the point this section is making, not a caveat
-attached to it.</p></div>
-<p>The bundle includes the frozen third-party pages, which departs from this publication&rsquo;s
-standing rule that a delivered vault carries no copies of somebody else&rsquo;s pages. That rule
-is about a copy nobody asked for. Here the frozen copies <em>are</em> the evidence, they are
-already public in this repository, they carry their publisher&rsquo;s own permission to
-republish, and a bundle of claims without the bytes underneath them is the thing this
-publication exists to argue against. The reasoning is written into the bundle rather than left
-implicit, so that whoever opens it can disagree with it.</p>
+<td>A read key is a capability handed out on purpose and cannot become write access. A vault
+key is read <em>and</em> write; publishing one hands the vault to anybody.</td>
+<td>Revocation is not retroactive. Anyone who fetches the objects keeps them, so an audit
+that happens after publication has not happened.</td>
+</tr></tbody></table></div>
+<p>We reimplemented the checks rather than importing them, so that the code that classifies a
+credential and the code that scans a clone can be read beside the result:
+<a href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom/blob/main/world-news-day/build/vault_audit.py"><code>build/vault_audit.py</code></a>.
+Every audit on these pages is its output, so a page cannot claim an audit that did not run.</p>
 
-<h2 id="check">Check it before you trust it</h2>
-<p>Nothing in the bundle asks to be taken on trust. <code>MANIFEST.json</code> carries the
-SHA-256 of every file in it, and <code>build/gates.py</code> is the executable specification of
-every claim this section makes:</p>
-<pre class="shell"><span class="d"># the bundle is what we say it is</span>
-<span class="g">shasum</span> -a 256 vault.zip   <span class="d"># 41f2f2cda29251a37317732cf8d1e106…</span>
-<span class="g">unzip</span> -q vault.zip -d wnd <span class="d">&amp;&amp;</span> <span class="g">cd</span> wnd
-
-<span class="d"># every file in it is what the manifest says it is</span>
-<span class="g">python3</span> -c <span class="cy">"import hashlib,json; m=json.load(open('MANIFEST.json')); print([f['path'] for f in m['files'] if hashlib.sha256(open(f['path'],'rb').read()).hexdigest()!=f['sha256']] or 'all match')"</span>
-
-<span class="d"># and every published number re-derives from the frozen bytes</span>
-<span class="g">python3</span> build/gates.py</pre>
-
-<h2 id="sgit">The two vaults</h2>
-<p>An <a href="https://sgit.ai">sgit</a> vault is zero-knowledge encrypted storage: the server
-holds ciphertext and never sees a key. Both of these are pushed and readable with the keys
-below.</p>
-<div class="ops">
-<div class="op"><b style="color:#0f766e">1 &middot; the corpus vault &mdash; finished</b>
-<p>The twenty-one op-eds as frozen bytes, every derived dataset, the build code and the gate.
-It is complete on the day it was made and should not move again except on a new capture.</p>
-<p style="font-family:var(--mono);font-size:.78rem;word-break:break-all">vault
-<b>wnd-2026-09-29</b><br>read key </p>
-<p class="small">Or take <a href="vault.zip">the zip</a> and skip the tooling entirely &mdash;
-same contents, 111 files.</p></div>
-<div class="op" style="border-left-color:#b45309"><b style="color:#b45309">2 &middot; the outreach vault &mdash; append-only</b>
-<p>The working vault handed to the agent at riskmandate.ai: who is being contacted, through which published route, what was said and what came back. Separate from the corpus vault on purpose — that one is a finished record of what somebody else published, this one is an append-only record of what we do about it.</p>
-<p style="font-family:var(--mono);font-size:.78rem;word-break:break-all">vault
-<b>clsc1dg4</b><br>read key sgit_public_read_a8a49b00593d44b72e879a8d642c51ee2f52a9d4da17651ed1b70062c43a12c1</p>
-<p class="small">27 targets at handover
-(9 route only, 9 blocked, 9 ready),
-<b>0 actions recorded</b> &mdash; nothing has been sent. The
-contents are generated into <a href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom/tree/main/world-news-day/outreach">world-news-day/outreach/</a>
-so anyone can rebuild and diff them.</p></div>
+<h2 id="zip">Or skip the tooling entirely</h2>
+<div class="dl">
+  <div>
+    <b>world-news-day/vault.zip</b>
+    <p>The corpus vault&rsquo;s contents as one file, built deterministically from the frozen
+    bytes: the same input produces the same bundle, hash for hash, so the digest below is a
+    fact about the contents rather than a record of when the build ran.</p>
+    <p class="small dim" style="font-family:var(--mono);word-break:break-all">SHA-256
+    b45721d5f71d7a99279b0613dcd074adb0939f6806737e30aafa3929145aa66f</p>
+  </div>
+  <a class="dlbtn" href="vault.zip">Download<span>2.78 MB &middot; 113 files</span></a>
 </div>
-<pre class="shell"><span class="g">pip3</span> install sgit-ai
-<span class="g">sgit</span> clone :wnd-2026-09-29
-<span class="g">sgit</span> clone sgit_public_read_a8a49b00593d44b72e879a8d642c51ee2f52a9d4da17651ed1b70062c43a12c1:clsc1dg4</pre>
 
-<h3>Why two, and not one folder inside one</h3>
-<p>The corpus vault is a record of what somebody else published: finished, and safe to hand to
-anyone including the people it describes. The outreach vault is a record of what <em>we do
-about it</em> &mdash; who was written to, when, what was said, what came back. Two different
-kinds of claim, with two different failure modes. Sharing a history, a hash chain and an
-audience between them would be a mistake in both directions, so they do not.</p>
-<p>The second one is the working vault for the agent at <a href="https://riskmandate.ai">riskmandate.ai</a>,
-which is collaborating on the outreach. It carries a <code>protocol.md</code> that binds that
-agent as tightly as our own gates bind us: no personal contact detail for any natural person,
-ever; every action names what it stands on by hash or it is an assertion; append, never edit,
-and correct a wrong action with a new one rather than by deleting it. Its action log has a
-JSON schema and a closed list of verbs.</p>
-
-<h3>Read keys are published. Vault keys are not.</h3>
-<p>The keys above are <b>read keys</b>: derived one-way from the vault key, granting read and
-only read, and meant to be published. The <b>vault key</b> of each vault is write access to
-everything in it. It is in no file in this repository, it was not printed by the publishing
-script, and it never will be. <code>admin/build/validate.js</code> fails the whole-site build
-on anything shaped like one, anywhere in the tree &mdash; and that tripwire had to be widened
-at v0.4.4, because the pattern it was written with did not match the key format sgit actually
-issues. A tripwire satisfied by the absence of a shape nobody uses is not a tripwire.</p>
-
-<h2 id="layout">What is in it</h2>
-<pre class="shell">README.md              what this is, both sets of terms, and how to check it
-licence.json           <span class="d">our</span> terms, in the schema.org fields the corpus leaves empty
-MANIFEST.json          every file with its size and SHA-256
-PACKAGE.sh             the commands that turn this folder into an sgit vault
-data/                  register, corpus, licences, affiliations, analysis, lexicon,
-                       ontology, graph, triples.nt
-build/                 the code that produced all of it, and the gate that checks it
-sources/frozen/2026-09-29/
-  &lt;slug&gt;.snapshot      the page as served
-  api/&lt;slug&gt;.json      the record the publisher's REST API returns</pre>
-<p>What is <b>not</b> in it: the prose of the op-eds as text in any file we wrote (it is in the
-frozen pages, because those are the evidence, and in none of our JSON); any contact detail for
-any named person; any assessment of anybody.</p>
-
-<div class="agent"><h4>For an agent</h4><p>Prefer <code>data/*.json</code> over the zip for a single question &mdash; they are the same bytes, served individually. Take the bundle when you want the evidence with the claims: <code>vault.zip</code> carries the frozen pages the counts are derived from and the gate that re-derives them, so you can check this publication rather than cite it. <code>data/vault.json</code> carries the bundle&rsquo;s hash, its licence record, and whether a vault has been pushed. <b>Our description is CC BY 4.0; the frozen op-eds are not ours to license</b> &mdash; that distinction is in <code>licence.json</code> in machine-readable form.</p></div>
+<div class="agent"><h4>For an agent</h4><p>Fetch <code>data/vault.json</code> and <code>data/outreach-vault.json</code> for the two published vaults (id, public read key, remote), and <code>data/vault-audit.json</code> for what was derived and scanned with those keys — file counts, sizes, commit depth, HEAD, every pattern hit and the rule that cleared it, and the negative control. <b>Only <code>sgit_public_read_</code> keys appear anywhere in this section</b>; a vault key is write access and is in no file here.</p></div>
 
 </main>
 
@@ -312,7 +237,7 @@ any named person; any assessment of anybody.</p>
     <p>News is failing not because there is too little information but because there is no walkable chain from a claim to its evidence, no way for a correction to reach what it disproved, and no way to pay the person who did the original work. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="netline"><a href="https://sgit.ai"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://graphs.sgit.ai">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai">&#8593; nhi.sgit.ai</a> &middot; <a href="https://sg-sentinel.sgit.ai">&#8593; sg-sentinel.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.5.1</a> &middot; <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.5.2</a> &middot; <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>The argument</h4>
@@ -347,7 +272,7 @@ any named person; any assessment of anybody.</p>
     <a href="../world-news-day/stories/free-to-republish-is-not-a-licence.html">Free to republish is not a licence</a>
     <a href="../world-news-day/licences.html">The licence that is not there</a>
     <a href="../world-news-day/contacts.html">World News Day: how to reach them</a>
-    <a href="../world-news-day/vault.html">World News Day: the vault</a>
+    <a href="../world-news-day/vault.html">World News Day: published vaults</a>
     <a href="../databases/index.html">Databases with no server (beta)</a>
     <a href="../databases/sql.html">The SQL and SPARQL consoles</a>
     <a href="../documents/pt-newsroom.html">Brief: pt.newsroom.sgit.ai</a>

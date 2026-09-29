@@ -14,7 +14,7 @@
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer and the shipped CLI. This site is the future-of-news stack: provenance, corrections, and paying the fact creator">&#8593; part of <b>sgit.ai</b></a>
   <span class="stage-pill">design, not built</span>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.5.1</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.5.2</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -93,7 +93,9 @@
       <a class="sl" href="../world-news-day/graph.html">The graph</a>
       <a class="sl" href="../world-news-day/sources.html">Sources</a>
       <a class="sl" href="../world-news-day/contacts.html">How to reach them</a>
-      <a class="sl" href="../world-news-day/vault.html">The vault</a>
+      <a class="sl" href="../world-news-day/vault.html">Published vaults</a>
+      <a class="sl" href="../world-news-day/vaults/corpus.html">Vault: the corpus</a>
+      <a class="sl" href="../world-news-day/vaults/outreach.html">Vault: the outreach</a>
       <a class="sl" href="../world-news-day/method.html">Method</a>
       </div>
     </div>
@@ -137,6 +139,17 @@
 <div class="tablewrap"><table class="vers">
   <thead><tr><th>Version</th><th>Date</th><th>What shipped</th></tr></thead>
   <tbody>
+    <tr>
+      <td class="vnum">v0.5.2</td>
+      <td>29 Sep 2026</td>
+      <td><b>The two vaults listed and described the way <a href="https://sgit.ai/demos/vaults/index.md">sgit.ai lists its thirty-seven</a> &mdash; and the live page was pointing at a vault that did not exist.</b>
+        <p><b>The bug first.</b> <code>build/vault.py</code> rewrote <code>data/vault.json</code> on every build and replaced the real vault id and read key with the BUNDLE's name and a null. The deployed page told readers to open <code>wnd-2026-09-29</code> with an empty key. Nothing caught it because every check tested the repository rather than what the page claimed; a new gate now cross-checks the id and key on the page against the vault the audit actually opened, and fails if the page publishes the bundle id.</p>
+        <p><b>The method is not ours.</b> sgit.ai writes down how it publishes a vault in <a href="https://sgit.ai/demos/vaults/publishing.md">seven steps for another agent to follow</a>, serving two absolute rules: read keys yes and vault keys never, and audit BEFORE the key rather than after, because revocation is not retroactive. <code>build/vault_audit.py</code> reimplements those checks rather than importing them, so the code that classifies a credential and the code that scans a clone can be read beside the result.</p>
+        <p><b>What it does, all of it with the published read key and no token.</b> Classifies both credentials; clones each vault; derives files, size, commit depth, HEAD and top-level layout from the clone rather than from the repository; scans every text file against eight patterns; and runs the negative control &mdash; an all-zeros read key, which must fail, and does, because the index address is derived from the key. <b>14 hits in the corpus vault and 11 in the outreach vault, every one cleared and none unexplained</b>: they are the organisations' role addresses the contacts map publishes on purpose. Ruling a hit out is the work, so each carries the rule that cleared it, and an unexplained finding now fails the build.</p>
+        <p><b>And the vaults now open as pages.</b> Each carries a <code>_page.json</code> at its root, so opening one shows what it is and what the rules are instead of whichever file sorts first &mdash; which for the corpus vault was <code>MANIFEST.json</code>, a list of hashes, an accurate and useless first impression of a piece of journalism.</p>
+        <p><b>Two more of the same family of bug.</b> <code>data/vault-audit.json</code> was inside the bundle, so each audit found the previous audit's findings and the count grew from 14 to 39 in one cycle; it is now excluded, with the manifest that listed itself and the vault record that carried its own hash. The rule those three produced: <em>a record about an artefact does not live inside it</em>. And our own key tripwire fired on <code>sgit clone sgit_public_read_&hellip;</code> &mdash; the exact line a published vault page must carry. That is sgit.ai's own recorded mistake, and their rule applies: make it precise, not stricter.</p>
+      </td>
+    </tr>
     <tr>
       <td class="vnum">v0.5.1</td>
       <td>29 Sep 2026</td>
@@ -466,7 +479,7 @@
     <p>News is failing not because there is too little information but because there is no walkable chain from a claim to its evidence, no way for a correction to reach what it disproved, and no way to pay the person who did the original work. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="netline"><a href="https://sgit.ai"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://graphs.sgit.ai">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai">&#8593; nhi.sgit.ai</a> &middot; <a href="https://sg-sentinel.sgit.ai">&#8593; sg-sentinel.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.5.1</a> &middot; <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.5.2</a> &middot; <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>The argument</h4>
@@ -501,7 +514,7 @@
     <a href="../world-news-day/stories/free-to-republish-is-not-a-licence.html">Free to republish is not a licence</a>
     <a href="../world-news-day/licences.html">The licence that is not there</a>
     <a href="../world-news-day/contacts.html">World News Day: how to reach them</a>
-    <a href="../world-news-day/vault.html">World News Day: the vault</a>
+    <a href="../world-news-day/vault.html">World News Day: published vaults</a>
     <a href="../databases/index.html">Databases with no server (beta)</a>
     <a href="../databases/sql.html">The SQL and SPARQL consoles</a>
     <a href="../documents/pt-newsroom.html">Brief: pt.newsroom.sgit.ai</a>

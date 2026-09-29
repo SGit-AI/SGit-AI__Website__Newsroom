@@ -1,0 +1,452 @@
+{
+  "id": "wnd-vault-audit",
+  "version": "0.1.0",
+  "method": "https://sgit.ai/demos/vaults/publishing.md",
+  "method_note": "The method is sgit.ai's, reimplemented here rather than imported so that it can be read beside the result. Two rules it exists to serve: read keys yes and vault keys never; and audit BEFORE publishing the key, because revocation is not retroactive.",
+  "audited": [
+    {
+      "name": "corpus",
+      "vault_id": "77yuggi1",
+      "read_key": "sgit_public_read_fa4cfb64e7b5b222a958103ed3a5dac760300053b1fd77f60c1d4408721f95e4",
+      "what": "The twenty-one op-eds as frozen bytes, every derived dataset, the build code and the gate that checks them. Finished on the day it was made.",
+      "credential": {
+        "verdict": "read-only, published on purpose",
+        "publishable": true
+      },
+      "open_in_ui": "https://dev.vault.sgraph.ai/#sgit_public_read_fa4cfb64e7b5b222a958103ed3a5dac760300053b1fd77f60c1d4408721f95e4%3A77yuggi1",
+      "clone_command": "sgit clone sgit_public_read_fa4cfb64e7b5b222a958103ed3a5dac760300053b1fd77f60c1d4408721f95e4:77yuggi1",
+      "derived": {
+        "files": [
+          "MANIFEST.json",
+          "PACKAGE.sh",
+          "README.md",
+          "_page.json",
+          "build/analysis.py",
+          "build/build.py",
+          "build/claims.py",
+          "build/contacts.py",
+          "build/extract.py",
+          "build/gates.py",
+          "build/graph.py",
+          "build/outreach.py",
+          "build/publish_vaults.py",
+          "build/vault.py",
+          "build/vault_audit.py",
+          "data/affiliations.json",
+          "data/analysis.json",
+          "data/claim-rules.json",
+          "data/claims.json",
+          "data/contact-rules.json",
+          "data/contacts.json",
+          "data/corpus.json",
+          "data/corrections.json",
+          "data/graph.json",
+          "data/lexicon.json",
+          "data/licences.json",
+          "data/ontology.json",
+          "data/outreach-vault.json",
+          "data/register.json",
+          "data/terms.json",
+          "data/triples.nt",
+          "licence.json",
+          "sources/frozen/2026-09-29/2026-world-news-day-time-to-fight.snapshot",
+          "sources/frozen/2026-09-29/a-lesson-from-ukraine-newsroom-resilience-makes-press-freedom-real.snapshot",
+          "sources/frozen/2026-09-29/america-was-the-arsenal-of-democracy-now-its-disarming-the-press.snapshot",
+          "sources/frozen/2026-09-29/announcement-attempts.json",
+          "sources/frozen/2026-09-29/announcement.snapshot",
+          "sources/frozen/2026-09-29/api/2026-world-news-day-time-to-fight.json",
+          "sources/frozen/2026-09-29/api/a-lesson-from-ukraine-newsroom-resilience-makes-press-freedom-real.json",
+          "sources/frozen/2026-09-29/api/america-was-the-arsenal-of-democracy-now-its-disarming-the-press.json",
+          "sources/frozen/2026-09-29/api/democracy-needs-journalism-in-every-language.json",
+          "sources/frozen/2026-09-29/api/dystopia-inc-would-you-like-your-news-with-or-without-hallucinations.json",
+          "sources/frozen/2026-09-29/api/footballs-enduring-controversies-show-why-journalism-matters.json",
+          "sources/frozen/2026-09-29/api/free-press-needs-alliances-against-censorship-and-fragmentation.json",
+          "sources/frozen/2026-09-29/api/independent-news-media-need-more-than-short-term-funding.json",
+          "sources/frozen/2026-09-29/api/indias-students-found-their-voice-this-summer-while-journalists-are-losing-theirs.json",
+          "sources/frozen/2026-09-29/api/journalism-is-civic-infrastructure-we-need-to-support-it.json",
+          "sources/frozen/2026-09-29/api/journalism-our-chaotic-worlds-future.json",
+          "sources/frozen/2026-09-29/api/media-faces-violence-persecution-and-the-existential-threat-posed-by-ai-and-yet-we-are-still-here.json",
+          "sources/frozen/2026-09-29/api/nicaragua-reinventing-journalism-in-exile.json",
+          "sources/frozen/2026-09-29/api/remembering-9-11-as-a-local-news-story.json",
+          "sources/frozen/2026-09-29/api/thank-goodness-for-the-storytellers-the-ones-who-probe-question-irritate-the-powerful.json",
+          "sources/frozen/2026-09-29/api/the-integrity-dividend-the-value-of-knowing.json",
+          "sources/frozen/2026-09-29/api/the-role-of-the-news-media-in-fighting-the-climate-crisis.json",
+          "sources/frozen/2026-09-29/api/the-things-i-learned-from-my-daughters-a-central-bank-investigation-and-a-box-of-watermelon-gum.json",
+          "sources/frozen/2026-09-29/api/truth-in-an-ai-world.json",
+          "sources/frozen/2026-09-29/api/we-must-make-truth-matter-again.json",
+          "sources/frozen/2026-09-29/api/when-information-is-everywhere-and-the-reasons-to-give-up-are-so-many-journalism-matters-even-more.json",
+          "sources/frozen/2026-09-29/democracy-needs-journalism-in-every-language.snapshot",
+          "sources/frozen/2026-09-29/dystopia-inc-would-you-like-your-news-with-or-without-hallucinations.snapshot",
+          "sources/frozen/2026-09-29/feed.xml",
+          "sources/frozen/2026-09-29/footballs-enduring-controversies-show-why-journalism-matters.snapshot",
+          "sources/frozen/2026-09-29/free-press-needs-alliances-against-censorship-and-fragmentation.snapshot",
+          "sources/frozen/2026-09-29/independent-news-media-need-more-than-short-term-funding.snapshot",
+          "sources/frozen/2026-09-29/indias-students-found-their-voice-this-summer-while-journalists-are-losing-theirs.snapshot",
+          "sources/frozen/2026-09-29/journalism-is-civic-infrastructure-we-need-to-support-it.snapshot",
+          "sources/frozen/2026-09-29/journalism-our-chaotic-worlds-future.snapshot",
+          "sources/frozen/2026-09-29/media-faces-violence-persecution-and-the-existential-threat-posed-by-ai-and-yet-we-are-still-here.snapshot",
+          "sources/frozen/2026-09-29/nicaragua-reinventing-journalism-in-exile.snapshot",
+          "sources/frozen/2026-09-29/orgs/afp-contact.snapshot.gz",
+          "sources/frozen/2026-09-29/orgs/afp.snapshot.gz",
+          "sources/frozen/2026-09-29/orgs/brazilian-newspaper-association-anj.snapshot.gz",
+          "sources/frozen/2026-09-29/orgs/coda-story-contact.snapshot.gz",
+          "sources/frozen/2026-09-29/orgs/coda-story.snapshot.gz",
+          "sources/frozen/2026-09-29/orgs/confidencial-digital.snapshot.gz",
+          "sources/frozen/2026-09-29/orgs/covering-climate-now.snapshot.gz",
+          "sources/frozen/2026-09-29/orgs/daraj-com.snapshot.gz",
+          "sources/frozen/2026-09-29/orgs/fetch-log.json",
+          "sources/frozen/2026-09-29/orgs/fondation-hirondelle-contact.snapshot.gz",
+          "sources/frozen/2026-09-29/orgs/fondation-hirondelle.snapshot.gz",
+          "sources/frozen/2026-09-29/orgs/haitian-times-contact.snapshot.gz",
+          "sources/frozen/2026-09-29/orgs/haitian-times.snapshot.gz",
+          "sources/frozen/2026-09-29/orgs/news-corp-australasia-contact.snapshot.gz",
+          "sources/frozen/2026-09-29/orgs/news-corp-australasia.snapshot.gz",
+          "sources/frozen/2026-09-29/orgs/paraluman-news-contact.snapshot.gz",
+          "sources/frozen/2026-09-29/orgs/paraluman-news.snapshot.gz",
+          "sources/frozen/2026-09-29/orgs/quint-digital-limited-contact.snapshot.gz",
+          "sources/frozen/2026-09-29/orgs/quint-digital-limited.snapshot.gz",
+          "sources/frozen/2026-09-29/orgs/the-atlas.snapshot.gz",
+          "sources/frozen/2026-09-29/orgs/the-groundtruth-project.snapshot.gz",
+          "sources/frozen/2026-09-29/orgs/the-quint-contact.snapshot.gz",
+          "sources/frozen/2026-09-29/orgs/the-quint.snapshot.gz",
+          "sources/frozen/2026-09-29/orgs/unesco-contact.snapshot.gz",
+          "sources/frozen/2026-09-29/orgs/unesco.snapshot.gz",
+          "sources/frozen/2026-09-29/orgs/url-media.snapshot.gz",
+          "sources/frozen/2026-09-29/orgs/vocento-contact.snapshot.gz",
+          "sources/frozen/2026-09-29/orgs/vocento.snapshot.gz",
+          "sources/frozen/2026-09-29/orgs/world-association-of-news-publishers-wan-ifra-contact.snapshot.gz",
+          "sources/frozen/2026-09-29/orgs/world-association-of-news-publishers-wan-ifra.snapshot.gz",
+          "sources/frozen/2026-09-29/orgs/world-editors-forum-contact.snapshot.gz",
+          "sources/frozen/2026-09-29/orgs/world-editors-forum.snapshot.gz",
+          "sources/frozen/2026-09-29/orgs/world-news-day-contact.snapshot.gz",
+          "sources/frozen/2026-09-29/orgs/world-news-day.snapshot.gz",
+          "sources/frozen/2026-09-29/remembering-9-11-as-a-local-news-story.snapshot",
+          "sources/frozen/2026-09-29/robots.txt",
+          "sources/frozen/2026-09-29/thank-goodness-for-the-storytellers-the-ones-who-probe-question-irritate-the-powerful.snapshot",
+          "sources/frozen/2026-09-29/the-integrity-dividend-the-value-of-knowing.snapshot",
+          "sources/frozen/2026-09-29/the-role-of-the-news-media-in-fighting-the-climate-crisis.snapshot",
+          "sources/frozen/2026-09-29/the-things-i-learned-from-my-daughters-a-central-bank-investigation-and-a-box-of-watermelon-gum.snapshot",
+          "sources/frozen/2026-09-29/truth-in-an-ai-world.snapshot",
+          "sources/frozen/2026-09-29/we-must-make-truth-matter-again.snapshot",
+          "sources/frozen/2026-09-29/when-information-is-everywhere-and-the-reasons-to-give-up-are-so-many-journalism-matters-even-more.snapshot",
+          "sources/frozen/2026-09-29/wp-json-root.json"
+        ],
+        "file_count": 113,
+        "bytes": 7822547,
+        "head": "obj-cas-imm-2273fea33ef3",
+        "commits": 5,
+        "top_level": [
+          "MANIFEST.json",
+          "PACKAGE.sh",
+          "README.md",
+          "_page.json",
+          "build/",
+          "data/",
+          "licence.json",
+          "sources/"
+        ],
+        "has_page_json": true,
+        "has_readme": true
+      },
+      "audit": {
+        "ran": true,
+        "at": "2026-09-29T11:09:09Z",
+        "method": "cloned with the published read key alone, no token, and every text file read",
+        "text_files_scanned": 57,
+        "patterns": [
+          "vault key (uuid form)",
+          "sgit private vault key",
+          "sgit private read key",
+          "AWS access key id",
+          "OpenAI-shaped key",
+          "bearer token",
+          "private key block",
+          "email address"
+        ],
+        "findings": [
+          {
+            "file": "build/contacts.py",
+            "kind": "email address",
+            "match": "anj@anj.org.br",
+            "verdict": "published on purpose: an organisation's role address, cleared by the rule in data/contact-rules.json",
+            "cleared": true
+          },
+          {
+            "file": "build/gates.py",
+            "kind": "email address",
+            "match": "anj@anj.org.br",
+            "verdict": "published on purpose: an organisation's role address, cleared by the rule in data/contact-rules.json",
+            "cleared": true
+          },
+          {
+            "file": "data/contact-rules.json",
+            "kind": "email address",
+            "match": "anj@anj.org.br",
+            "verdict": "published on purpose: an organisation's role address, cleared by the rule in data/contact-rules.json",
+            "cleared": true
+          },
+          {
+            "file": "data/contacts.json",
+            "kind": "email address",
+            "match": "anj@anj.org.br",
+            "verdict": "published on purpose: an organisation's role address, cleared by the rule in data/contact-rules.json",
+            "cleared": true
+          },
+          {
+            "file": "data/contacts.json",
+            "kind": "email address",
+            "match": "desk@myparaluman.com",
+            "verdict": "published on purpose: an organisation's role address, cleared by the rule in data/contact-rules.json",
+            "cleared": true
+          },
+          {
+            "file": "data/contacts.json",
+            "kind": "email address",
+            "match": "desk@myparaluman.ph",
+            "verdict": "published on purpose: an organisation's role address, cleared by the rule in data/contact-rules.json",
+            "cleared": true
+          },
+          {
+            "file": "data/contacts.json",
+            "kind": "email address",
+            "match": "editor@thequint.com",
+            "verdict": "published on purpose: an organisation's role address, cleared by the rule in data/contact-rules.json",
+            "cleared": true
+          },
+          {
+            "file": "data/contacts.json",
+            "kind": "email address",
+            "match": "editor@thequint.com",
+            "verdict": "published on purpose: an organisation's role address, cleared by the rule in data/contact-rules.json",
+            "cleared": true
+          },
+          {
+            "file": "data/contacts.json",
+            "kind": "email address",
+            "match": "info@haitiantimes.com",
+            "verdict": "published on purpose: an organisation's role address, cleared by the rule in data/contact-rules.json",
+            "cleared": true
+          },
+          {
+            "file": "data/contacts.json",
+            "kind": "email address",
+            "match": "submissions@haitiantimes.com",
+            "verdict": "published on purpose: an organisation's role address, cleared by the rule in data/contact-rules.json",
+            "cleared": true
+          },
+          {
+            "file": "data/contacts.json",
+            "kind": "email address",
+            "match": "info@reportlocal.org",
+            "verdict": "published on purpose: an organisation's role address, cleared by the rule in data/contact-rules.json",
+            "cleared": true
+          },
+          {
+            "file": "data/contacts.json",
+            "kind": "email address",
+            "match": "info@confidencial.digital",
+            "verdict": "published on purpose: an organisation's role address, cleared by the rule in data/contact-rules.json",
+            "cleared": true
+          },
+          {
+            "file": "data/contacts.json",
+            "kind": "email address",
+            "match": "editors@coveringclimatenow.org",
+            "verdict": "published on purpose: an organisation's role address, cleared by the rule in data/contact-rules.json",
+            "cleared": true
+          },
+          {
+            "file": "data/contacts.json",
+            "kind": "email address",
+            "match": "prensa@vocento.com",
+            "verdict": "published on purpose: an organisation's role address, cleared by the rule in data/contact-rules.json",
+            "cleared": true
+          }
+        ],
+        "hits": 14,
+        "cleared": 14,
+        "unexplained": 0,
+        "negative_control": {
+          "attempted_with": "an all-zeros read key",
+          "exit_code": 1,
+          "failed_as_required": true,
+          "message": "       re-run sgit clone."
+        }
+      }
+    },
+    {
+      "name": "outreach",
+      "vault_id": "clsc1dg4",
+      "read_key": "sgit_public_read_a8a49b00593d44b72e879a8d642c51ee2f52a9d4da17651ed1b70062c43a12c1",
+      "what": "The working vault the agent at riskmandate.ai collaborates in: who is being contacted, through which published route, and what happened. Append-only.",
+      "credential": {
+        "verdict": "read-only, published on purpose",
+        "publishable": true
+      },
+      "open_in_ui": "https://dev.vault.sgraph.ai/#sgit_public_read_a8a49b00593d44b72e879a8d642c51ee2f52a9d4da17651ed1b70062c43a12c1%3Aclsc1dg4",
+      "clone_command": "sgit clone sgit_public_read_a8a49b00593d44b72e879a8d642c51ee2f52a9d4da17651ed1b70062c43a12c1:clsc1dg4",
+      "derived": {
+        "files": [
+          "README.md",
+          "_page.json",
+          "actions/README.md",
+          "actions/_schema.json",
+          "brief.md",
+          "evidence.md",
+          "protocol.md",
+          "state.json",
+          "targets/afp.json",
+          "targets/association-of-independent-regional-press-publishers-of-ukraine.json",
+          "targets/brazilian-newspaper-association-anj.json",
+          "targets/coda-story.json",
+          "targets/confidencial-digital.json",
+          "targets/covering-climate-now.json",
+          "targets/daraj-com.json",
+          "targets/european-broadcasting-union.json",
+          "targets/fondation-hirondelle.json",
+          "targets/globe-and-mail.json",
+          "targets/haitian-times.json",
+          "targets/informed.json",
+          "targets/news-corp-australasia.json",
+          "targets/paraluman-news.json",
+          "targets/project-kontinuum.json",
+          "targets/quint-digital-limited.json",
+          "targets/the-atlas.json",
+          "targets/the-groundtruth-project.json",
+          "targets/the-quint.json",
+          "targets/truth-tellers.json",
+          "targets/unesco.json",
+          "targets/url-media.json",
+          "targets/vocento.json",
+          "targets/world-association-of-news-publishers-wan-ifra.json",
+          "targets/world-editors-forum.json",
+          "targets/world-news-day.json",
+          "targets/zeg-network.json"
+        ],
+        "file_count": 35,
+        "bytes": 46565,
+        "head": "obj-cas-imm-db614649e7da",
+        "commits": 5,
+        "top_level": [
+          "README.md",
+          "_page.json",
+          "actions/",
+          "brief.md",
+          "evidence.md",
+          "protocol.md",
+          "state.json",
+          "targets/"
+        ],
+        "has_page_json": true,
+        "has_readme": true
+      },
+      "audit": {
+        "ran": true,
+        "at": "2026-09-29T11:09:18Z",
+        "method": "cloned with the published read key alone, no token, and every text file read",
+        "text_files_scanned": 35,
+        "patterns": [
+          "vault key (uuid form)",
+          "sgit private vault key",
+          "sgit private read key",
+          "AWS access key id",
+          "OpenAI-shaped key",
+          "bearer token",
+          "private key block",
+          "email address"
+        ],
+        "findings": [
+          {
+            "file": "targets/brazilian-newspaper-association-anj.json",
+            "kind": "email address",
+            "match": "anj@anj.org.br",
+            "verdict": "published on purpose: an organisation's role address, cleared by the rule in data/contact-rules.json",
+            "cleared": true
+          },
+          {
+            "file": "targets/confidencial-digital.json",
+            "kind": "email address",
+            "match": "info@confidencial.digital",
+            "verdict": "published on purpose: an organisation's role address, cleared by the rule in data/contact-rules.json",
+            "cleared": true
+          },
+          {
+            "file": "targets/covering-climate-now.json",
+            "kind": "email address",
+            "match": "editors@coveringclimatenow.org",
+            "verdict": "published on purpose: an organisation's role address, cleared by the rule in data/contact-rules.json",
+            "cleared": true
+          },
+          {
+            "file": "targets/haitian-times.json",
+            "kind": "email address",
+            "match": "info@haitiantimes.com",
+            "verdict": "published on purpose: an organisation's role address, cleared by the rule in data/contact-rules.json",
+            "cleared": true
+          },
+          {
+            "file": "targets/haitian-times.json",
+            "kind": "email address",
+            "match": "submissions@haitiantimes.com",
+            "verdict": "published on purpose: an organisation's role address, cleared by the rule in data/contact-rules.json",
+            "cleared": true
+          },
+          {
+            "file": "targets/paraluman-news.json",
+            "kind": "email address",
+            "match": "desk@myparaluman.com",
+            "verdict": "published on purpose: an organisation's role address, cleared by the rule in data/contact-rules.json",
+            "cleared": true
+          },
+          {
+            "file": "targets/paraluman-news.json",
+            "kind": "email address",
+            "match": "desk@myparaluman.ph",
+            "verdict": "published on purpose: an organisation's role address, cleared by the rule in data/contact-rules.json",
+            "cleared": true
+          },
+          {
+            "file": "targets/quint-digital-limited.json",
+            "kind": "email address",
+            "match": "editor@thequint.com",
+            "verdict": "published on purpose: an organisation's role address, cleared by the rule in data/contact-rules.json",
+            "cleared": true
+          },
+          {
+            "file": "targets/the-groundtruth-project.json",
+            "kind": "email address",
+            "match": "info@reportlocal.org",
+            "verdict": "published on purpose: an organisation's role address, cleared by the rule in data/contact-rules.json",
+            "cleared": true
+          },
+          {
+            "file": "targets/the-quint.json",
+            "kind": "email address",
+            "match": "editor@thequint.com",
+            "verdict": "published on purpose: an organisation's role address, cleared by the rule in data/contact-rules.json",
+            "cleared": true
+          },
+          {
+            "file": "targets/vocento.json",
+            "kind": "email address",
+            "match": "prensa@vocento.com",
+            "verdict": "published on purpose: an organisation's role address, cleared by the rule in data/contact-rules.json",
+            "cleared": true
+          }
+        ],
+        "hits": 11,
+        "cleared": 11,
+        "unexplained": 0,
+        "negative_control": {
+          "attempted_with": "an all-zeros read key",
+          "exit_code": 1,
+          "failed_as_required": true,
+          "message": "       re-run sgit clone."
+        }
+      }
+    }
+  ],
+  "unexplained_total": 0,
+  "ruling_hits_out_is_the_work": "A scanner that reports hits and no verdicts has moved the job to the reader. Every hit here carries the rule that cleared it, or is marked UNEXPLAINED — and an unexplained finding is a reason not to publish, which the section gate enforces.",
+  "what_a_clean_scan_means": "That nothing matching these patterns is in the current files of the published vault. It is not a statement about the vault's history, and it is not a promise that nothing sensitive is in a file that matches no pattern."
+}

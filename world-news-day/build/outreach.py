@@ -253,6 +253,83 @@ embarrassing to receive, it is wrong.
 """
 
 
+def page_json(contacts, corpus, states):
+    """The outreach vault as a page rather than a folder of JSON.
+
+    Same convention as the corpus vault and as sgit.ai's published vaults: a `_page.json` at
+    the root so that opening the vault shows what it is for and what the rules are, rather
+    than whichever file sorts first — which here would be README.md's neighbour in a tree of
+    twenty-seven target files."""
+    c = contacts["counts"]
+    return {
+        "title": "World News Day 2026 — the outreach vault",
+        "theme": {"mode": "light", "accent": "#b45309", "font": "sans",
+                  "density": "comfortable", "background": "#faf9f7"},
+        "navigation": [
+            {"label": "What this is", "anchor": "what-this-is"},
+            {"label": "The rules", "anchor": "the-rules"},
+            {"label": "The state", "anchor": "the-state"},
+            {"label": "Verify", "anchor": "verify"},
+        ],
+        "components": [
+            {"type": "hero", "props": {
+                "title": "The outreach vault",
+                "subtitle": f'{c["organisations"] - 1} organisations · {c["authors"]} authors · '
+                            f'{states.get("ready", 0)} ready to contact · nothing sent',
+                "color": "#2b1e14", "height": "medium", "align": "center"}},
+            {"type": "section", "props": {"title": "What this is", "layout": "narrow"},
+             "children": [
+                {"type": "text", "props": {"content":
+                    "The working vault for reaching the people who wrote the twenty-one World "
+                    "News Day op-eds. It is separate from the corpus vault on purpose: that "
+                    "one is a finished record of what somebody else published and is safe to "
+                    "hand to anyone, including the people it describes. This one is an "
+                    "append-only record of what we do about it, and it moves every time a "
+                    "message is sent or answered."}},
+                {"type": "text", "props": {"content":
+                    "Not one of the twenty-one pages offers a way to reach its author or its "
+                    "publisher — no contact address, no author URL in the structured record, "
+                    "no press line. That is why this exists as a separate piece of work "
+                    "rather than a mail merge."}},
+             ]},
+            {"type": "section", "props": {"title": "The rules", "layout": "narrow",
+                                           "background": "alt"},
+             "children": [
+                {"type": "bullet-points", "props": {"items": [
+                    "No personal contact detail for any natural person, ever. Route through "
+                    "the organisation's published role address or contact form.",
+                    "Every action names what it stands on — a SHA-256 from the corpus vault, "
+                    "a URL, or an earlier action here. An action that stands on nothing is an "
+                    "assertion.",
+                    "Append; never edit. A wrong action is corrected by a new action that "
+                    "names it. The history is the product.",
+                    "Say what is good about their work first, and mean it. One ask per "
+                    "message, and make it small.",
+                    "Escalate rather than commit the newsroom to anything: no embargoes, no "
+                    "exclusivity, no payment, no publishing to the site.",
+                ]}},
+                {"type": "markdown", "props": {"file": "protocol.md"}},
+             ]},
+            {"type": "section", "props": {"title": "The state", "layout": "narrow"},
+             "children": [
+                {"type": "bullet-points", "props": {"items": [
+                    f'{states.get("ready", 0)} organisations with a published role address',
+                    f'{states.get("route only", 0)} with a contact page or LinkedIn but no address',
+                    f'{states.get("blocked", 0)} with no route established at all',
+                    f'{c["authors_reachable_via_an_organisation"]} of {c["authors"]} authors '
+                    "reachable, every one of them via an organisation",
+                    "0 actions recorded. Nothing has been sent.",
+                ]}},
+                {"type": "markdown", "props": {"file": "brief.md"}},
+             ]},
+            {"type": "section", "props": {"title": "Verify", "layout": "narrow"},
+             "children": [
+                {"type": "markdown", "props": {"file": "evidence.md"}},
+             ]},
+        ],
+    }
+
+
 def main():
     contacts = load("contacts.json")
     licences = load("licences.json")
@@ -355,6 +432,10 @@ should carry one of those hashes, or a URL under {HOST}/.
 The data files win, and the disagreement is a `corrected` action. Do not reconcile it by
 editing this vault quietly.
 """, encoding="utf-8")
+
+    (OUT / "_page.json").write_text(
+        json.dumps(page_json(contacts, corpus, states), indent=2, ensure_ascii=False) + "\n",
+        encoding="utf-8")
 
     n = len(list((OUT / "targets").glob("*.json")))
     print(f"outreach: {n} targets, {states}, 0 actions — nothing sent")

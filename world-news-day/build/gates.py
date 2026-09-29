@@ -679,6 +679,49 @@ for f in ((SEC / "outreach").rglob("*") if (SEC / "outreach").exists() else []):
                           f'forbids it and this gate enforces it before the vault is pushed')
             break
 
+# --- 12f2. the published vault pages describe vaults that exist ---------------------------
+# Every page here carries a vault id and a read key that a reader is invited to use. Until
+# v0.5.2 build/vault.py rewrote data/vault.json on every build and replaced both with the
+# BUNDLE's name and a null — so the live page told readers to open "wnd-2026-09-29" with no
+# key. Nothing caught it, because every check tested the repository rather than what the page
+# claimed. These do.
+audit_doc = load("vault-audit.json")
+_by_name = {a["name"]: a for a in audit_doc["audited"]}
+for name, rec in (("corpus", vault), ("outreach", outreach_vault)):
+    if not rec or not rec.get("pushed"):
+        continue
+    a = _by_name.get(name)
+    if not a:
+        errors.append(f'vault-audit: "{name}" is published and was not audited')
+        continue
+    if rec.get("vault_id") != a.get("vault_id"):
+        errors.append(f'vault: the id published for "{name}" ({rec.get("vault_id")}) is not '
+                      f'the one the audit opened ({a.get("vault_id")})')
+    if rec.get("read_key") != a.get("read_key"):
+        errors.append(f'vault: the read key published for "{name}" is not the one the audit used')
+    if rec.get("vault_id") == rec.get("bundle_id"):
+        errors.append(f'vault: "{name}" publishes the BUNDLE id as its vault id — that is the '
+                      f'v0.5.2 bug, and it points readers at a vault that does not exist')
+    if not a.get("credential", {}).get("publishable"):
+        errors.append(f'vault: the credential published for "{name}" did not classify as a '
+                      f'public read key')
+    au = a.get("audit", {})
+    if not au.get("ran"):
+        errors.append(f'vault: "{name}" is published and its audit did not run '
+                      f'({au.get("why")}) — the rule is audit BEFORE the key, not after')
+        continue
+    if au.get("unexplained"):
+        errors.append(f'vault: "{name}" has {au["unexplained"]} unexplained scan finding(s). '
+                      f'An unexplained finding is a reason not to publish')
+    if not au.get("negative_control", {}).get("failed_as_required"):
+        errors.append(f'vault: the negative control for "{name}" did not fail — a wrong key '
+                      f'opened the vault, or the control did not run')
+    for f in au.get("findings", []):
+        if not f.get("verdict"):
+            errors.append(f'vault: a scan hit in "{name}" carries no verdict — ruling a hit '
+                          f'out is the work, and an unruled hit moves it to the reader')
+            break
+
 # --- 12g. every claim anchor is in the bytes, short, and correctly typed ------------------
 # The fractal layer is where this section would most easily start republishing prose, so the
 # anchors are checked twice over: each must be IN the frozen sentence it points at, and each

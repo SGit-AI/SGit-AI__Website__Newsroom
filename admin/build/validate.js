@@ -145,8 +145,13 @@ const KEY_SHAPES = [
    'a vault-key-shaped string (uuid vault id)'],
   [/sgit_private_vault_[A-Za-z0-9_-]{8,}\s*:\s*[A-Za-z0-9]{4,}/,
    'an sgit PRIVATE VAULT KEY — that is write access to everything in the vault'],
-  [/\bsgit\s+(?:clone|init)\s+[A-Za-z0-9_-]{16,}:[A-Za-z0-9]{4,}/,
-   'a command line carrying a vault key'],
+  // Precise, not stricter. This fired on `sgit clone sgit_public_read_<64hex>:<id>` — the
+  // exact line a published vault page MUST carry — which is sgit.ai's own recorded mistake:
+  // "our own tripwire banned the string we needed in order to teach people to recognise it;
+  // make the rule precise, not stricter". A public read key is publishable by definition, so
+  // it is excluded by name and everything else in that position still fires.
+  [/\bsgit\s+(?:clone|init)\s+(?!sgit_public_read_)[A-Za-z0-9_-]{16,}:[A-Za-z0-9]{4,}/,
+   'a command line carrying a credential that is not a published read key'],
 ];
 for (const f of files) {
   if (/\.(png|jpg|jpeg|gif|webp|ico|woff2?|zip|svg|pdf)$/.test(f)) continue;

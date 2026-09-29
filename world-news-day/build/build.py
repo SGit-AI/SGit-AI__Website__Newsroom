@@ -72,6 +72,7 @@ CLAIMS = load("claims.json")
 TERMS = load("terms.json")
 CLAIM_RULES = load("claim-rules.json")
 CONTACTS = load("contacts.json")
+VAULT_AUDIT = load("vault-audit.json")
 CONTACT_RULES = load("contact-rules.json")
 CORRECTIONS = load("corrections.json")
 VAULT = load("vault.json")
@@ -1381,151 +1382,343 @@ it a switch.</p>
 
 
 # ------------------------------------------------------------------ vault ---
-def build_vault():
-    mb = VAULT["bytes"] / 1_048_576
-    body = f"""{masthead("vault.html")}
-<h1>The vault</h1>
-<p class="lead">Two encrypted vaults, both pushed and readable with the keys below, and the
-same corpus as one downloadable file:
-the {CORPUS["count"]} op-eds as frozen bytes, the {REGISTER["count"]} hashed files they came
-from, every derived dataset, the code that produced them and the gate that checks them.
-{VAULT["count"]} files, {mb:.2f}&nbsp;MB, and a SHA-256 you can check before you open it.</p>
+def vault_records():
+    """The two vaults, in the order they are listed. Newest last here because the corpus one
+    is the reason the other exists."""
+    audit = {a["name"]: a for a in VAULT_AUDIT["audited"]}
+    return [
+        {"slug": "corpus", "n": 1, "name": "World News Day 2026 · the corpus",
+         "rec": VAULT, "audit": audit.get("corpus", {}),
+         "category": "Record",
+         "what": "Twenty-one commissioned op-eds frozen and hashed, every derived dataset, "
+                 "the build code and the gate that checks it — and not a word of the prose "
+                 "republished",
+         "one_thing": "A corpus somebody else published, described precisely enough that the "
+                      "description is useful on its own, and anchored well enough that you can "
+                      "check every number in it without us.",
+         "published": LATEST},
+        {"slug": "outreach", "n": 2, "name": "World News Day 2026 · the outreach",
+         "rec": OUTREACH, "audit": audit.get("outreach", {}),
+         "category": "Record",
+         "what": "The append-only working vault the agent at riskmandate.ai collaborates in: "
+                 "targets, a protocol, and an action log with a closed verb list",
+         "one_thing": "A second provenance chain for the things we DO, kept apart from the "
+                      "evidence of what somebody else published, because they fail in "
+                      "different ways.",
+         "published": LATEST},
+    ]
 
-<div class="dl">
-  <div>
-    <b>world-news-day/vault.zip</b>
-    <p>Built deterministically from the frozen bytes: the same input produces the same bundle,
-    hash for hash, so the digest below is a fact about the contents rather than a record of
-    when the build ran.</p>
-    <p class="small dim" style="font-family:var(--mono);word-break:break-all">SHA-256
-    {esc(VAULT["sha256"])}</p>
-  </div>
-  <a class="dlbtn" href="vault.zip">Download the vault<span>{mb:.2f} MB &middot; {VAULT["count"]} files</span></a>
-</div>
+
+def credential_block(v, up=""):
+    """sgit.ai's convention, and it is the right one: the key in the open, three ways to use
+    it, and a plain sentence saying what it cannot do."""
+    rec, a = v["rec"], v["audit"]
+    key, vid = rec.get("read_key"), rec.get("vault_id")
+    if not (rec.get("pushed") and key and vid):
+        return ('<div class="warnbox"><p style="margin:0"><b>Not published.</b> This vault has '
+                'no read key on it yet.</p></div>')
+    return (
+        '<div class="note" style="border-left-color:#0f766e">'
+        '<p style="margin-top:0"><b>Open it yourself. The key is the whole credential.</b> '
+        'No account, nothing to install, and no write capability in it.</p>'
+        f'<p style="font-family:var(--mono);font-size:.76rem;word-break:break-all">'
+        f'{esc(key)}:{esc(vid)}</p>'
+        f'<p class="small">In the official UI: '
+        f'<a href="{esc(a.get("open_in_ui", ""))}">open it read-only in a new tab &rarr;</a> '
+        f'&middot; From the CLI: <code>sgit clone {esc(key)}:{esc(vid)}</code></p>'
+        '<p class="small dim" style="margin-bottom:0">A read key is derived one-way from the '
+        'vault key and cannot become write access. The vault key is in no file in this '
+        'repository and never will be; the whole-site gate fails the build on anything shaped '
+        'like one.</p></div>')
+
+
+def audit_block(v):
+    a = v["audit"].get("audit", {})
+    if not a.get("ran"):
+        return ('<p class="dim">The audit did not run: '
+                f'{esc(a.get("why", "no reason recorded"))}.</p>')
+    n = a["negative_control"]
+    cleared = "".join(
+        f'<tr><td class="small"><code>{esc(f["file"])}</code></td>'
+        f'<td class="small"><code>{esc(f["match"])}</code></td>'
+        f'<td class="small dim">{esc(f["verdict"])}</td></tr>'
+        for f in a["findings"])
+    return (
+        f'<p><b>What was checked, and when.</b> On {esc(a["at"][:10])}, the published vault at '
+        f'<code>{esc(v["audit"]["derived"]["head"] or "HEAD")}</code>. The credential '
+        f'classified as <b>{esc(v["audit"]["credential"]["verdict"])}</b>. A clone made with '
+        f'that key <em>alone</em> — no token — was scanned file by file: '
+        f'{a["text_files_scanned"]} text files, against {len(a["patterns"])} patterns '
+        f'(vault-key shapes, every <code>sgit_</code> prefix, AWS and OpenAI key shapes, '
+        f'bearer tokens, private-key blocks, and email addresses).</p>'
+        f'<p><b>What was found: {a["hits"]} hits, {a["cleared"]} cleared, '
+        f'<b style="color:{"#b91c1c" if a["unexplained"] else "#0f766e"}">{a["unexplained"]} '
+        f'unexplained</b>.</b> Ruling a hit out is the work, so every one carries the rule that '
+        f'cleared it. A scanner that reports hits and no verdicts has moved the job to the '
+        f'reader.</p>'
+        + (f'<details><summary class="small">Every hit, with its verdict</summary>'
+           f'<div class="tablewrap"><table><thead><tr><th>File</th><th>Match</th>'
+           f'<th>Verdict</th></tr></thead><tbody>{cleared}</tbody></table></div></details>'
+           if cleared else '<p class="small dim">No pattern fired.</p>')
+        + f'<p><b>The negative control.</b> The same clone attempted with '
+          f'{esc(n["attempted_with"])} <b>{"fails, as it must" if n["failed_as_required"] else "SUCCEEDED, which it must not"}</b>'
+          f' — exit code {n["exit_code"]}. A wrong key cannot even find the vault index, '
+          f'because the index address is derived from the key.</p>'
+        + '<p class="small dim">What a clean scan means: nothing matching those patterns is in '
+          'the <em>current</em> files of the published vault. It is not a statement about its '
+          'history, and not a promise that nothing sensitive sits in a file matching no '
+          'pattern.</p>')
+
+
+def derived_block(v):
+    d = v["audit"].get("derived")
+    if not d:
+        return ""
+    return (
+        '<p>From a read-key clone, read-only, no token, no repository — because the repository '
+        'is not what was published:</p><ul>'
+        f'<li><b>Files:</b> {d["file_count"]} &middot; <b>plaintext size:</b> '
+        f'{d["bytes"] / 1048576:.2f} MB</li>'
+        f'<li><b>Commits:</b> {d["commits"]} &middot; <b>HEAD:</b> '
+        f'<code>{esc(d["head"] or "—")}</code></li>'
+        f'<li><b>Top level:</b> ' + ", ".join(f"<code>{esc(x)}</code>" for x in d["top_level"]) + '</li>'
+        f'<li><b>Opens as a page:</b> {"yes, <code>_page.json</code> at the root" if d["has_page_json"] else "no"}'
+        f' &middot; <b>README:</b> {"yes" if d["has_readme"] else "no"}</li>'
+        '</ul>')
+
+
+# ------------------------------------------------------------ vault index ---
+def build_vault_index():
+    rows = "".join(
+        f'<tr><td style="font-family:var(--mono);color:var(--dim2)">{v["n"]}</td>'
+        f'<td><a href="vaults/{esc(v["slug"])}.html"><b>{esc(v["name"])}</b></a> '
+        f'<code class="dim small">{esc(v["rec"].get("vault_id") or "—")}</code></td>'
+        f'<td class="small">{esc(v["what"])}</td>'
+        f'<td class="small">{esc(v["category"])}</td>'
+        f'<td class="small" style="font-family:var(--mono)">'
+        f'{v["audit"].get("derived", {}).get("file_count", "—")}</td>'
+        f'<td class="small" style="font-family:var(--mono);white-space:nowrap">'
+        f'{v["audit"].get("derived", {}).get("bytes", 0) / 1048576:.2f} MB</td>'
+        f'<td class="small dim" style="white-space:nowrap">{esc(v["published"])}</td></tr>'
+        for v in vault_records())
+    mb = VAULT["bytes"] / 1_048_576
+
+    body = f"""{masthead("vault.html")}
+<h1>Published vaults</h1>
+<p class="lead">Two encrypted vaults you can open in your browser right now. <b>Every read key
+here was published on purpose</b>, and a read key is the whole credential: no account, nothing
+to install, no write capability in it. Each row opens a page with what the vault does, the
+audit that was run before the key was published, and the facts derived from the key itself.</p>
 
 {disclaimer()}
 
-<h2 id="terms">Two sets of terms, and they are not the same</h2>
-<p>This is the distinction the whole section exists to make, so the bundle makes it on its own
-face, in prose and in a machine-readable file.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>#</th><th>Vault</th><th>What it is</th><th>Category</th><th>Files</th>
+<th>Size</th><th>Published</th></tr></thead>
+<tbody>{rows}</tbody></table></div>
+
+<h2 id="method">The method is not ours</h2>
+<p><a href="https://sgit.ai/demos/vaults/index.md">sgit.ai publishes thirty-seven vaults</a>
+and writes down how, in
+<a href="https://sgit.ai/demos/vaults/publishing.md">seven steps for another agent to
+follow</a>. These two are published the same way, so that a reader who knows one estate&rsquo;s
+vault pages can read the other&rsquo;s without learning anything new. The two rules everything
+else serves, in their words:</p>
 <div class="split"><table>
-<thead><tr><th class="run">Ours &mdash; <code>data/</code>, <code>build/</code>, the README</th>
-<th class="rent">Theirs &mdash; <code>sources/frozen/</code></th></tr></thead>
+<thead><tr><th class="run">Read keys yes, vault keys never</th>
+<th class="rent">Audit before the key, not after</th></tr></thead>
 <tbody><tr>
-<td><b class="yes">CC BY 4.0.</b> Named, versioned, with a URL, and declared in
-<code>licence.json</code> in the schema.org fields the corpus leaves empty. Reuse it, build on
-it, sell it; say where it came from.</td>
-<td><b class="no">Not ours and not relicensed.</b> The twenty-one op-eds as served, and the
-records the publisher&rsquo;s own API returns for them, carried as evidence under the terms
-their pages state &mdash; quoted verbatim in the bundle&rsquo;s README, which also says plainly
-that it grants you nothing over somebody else&rsquo;s work.</td>
-</tr></tbody></table>
-<p class="cap">If you are deciding whether you may republish one of the pieces: read the terms
-on the piece and ask the publisher. That is the point this section is making, not a caveat
-attached to it.</p></div>
-<p>The bundle includes the frozen third-party pages, which departs from this publication&rsquo;s
-standing rule that a delivered vault carries no copies of somebody else&rsquo;s pages. That rule
-is about a copy nobody asked for. Here the frozen copies <em>are</em> the evidence, they are
-already public in this repository, they carry their publisher&rsquo;s own permission to
-republish, and a bundle of claims without the bytes underneath them is the thing this
-publication exists to argue against. The reasoning is written into the bundle rather than left
-implicit, so that whoever opens it can disagree with it.</p>
+<td>A read key is a capability handed out on purpose and cannot become write access. A vault
+key is read <em>and</em> write; publishing one hands the vault to anybody.</td>
+<td>Revocation is not retroactive. Anyone who fetches the objects keeps them, so an audit
+that happens after publication has not happened.</td>
+</tr></tbody></table></div>
+<p>We reimplemented the checks rather than importing them, so that the code that classifies a
+credential and the code that scans a clone can be read beside the result:
+<a href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom/blob/main/world-news-day/build/vault_audit.py"><code>build/vault_audit.py</code></a>.
+Every audit on these pages is its output, so a page cannot claim an audit that did not run.</p>
 
-<h2 id="check">Check it before you trust it</h2>
-<p>Nothing in the bundle asks to be taken on trust. <code>MANIFEST.json</code> carries the
-SHA-256 of every file in it, and <code>build/gates.py</code> is the executable specification of
-every claim this section makes:</p>
-<pre class="shell"><span class="d"># the bundle is what we say it is</span>
-<span class="g">shasum</span> -a 256 vault.zip   <span class="d"># {esc(VAULT["sha256"][:32])}…</span>
-<span class="g">unzip</span> -q vault.zip -d wnd <span class="d">&amp;&amp;</span> <span class="g">cd</span> wnd
-
-<span class="d"># every file in it is what the manifest says it is</span>
-<span class="g">python3</span> -c <span class="cy">"import hashlib,json; m=json.load(open('MANIFEST.json')); \
-print([f['path'] for f in m['files'] if hashlib.sha256(open(f['path'],'rb').read()).hexdigest()!=f['sha256']] or 'all match')"</span>
-
-<span class="d"># and every published number re-derives from the frozen bytes</span>
-<span class="g">python3</span> build/gates.py</pre>
-
-<h2 id="sgit">The two vaults</h2>
-<p>An <a href="https://sgit.ai">sgit</a> vault is zero-knowledge encrypted storage: the server
-holds ciphertext and never sees a key. Both of these are pushed and readable with the keys
-below.</p>
-<div class="ops">
-<div class="op"><b style="color:#0f766e">1 &middot; the corpus vault &mdash; finished</b>
-<p>The twenty-one op-eds as frozen bytes, every derived dataset, the build code and the gate.
-It is complete on the day it was made and should not move again except on a new capture.</p>
-<p style="font-family:var(--mono);font-size:.78rem;word-break:break-all">vault
-<b>{esc(VAULT["vault_id"])}</b><br>read key {esc(VAULT["read_key"])}</p>
-<p class="small">Or take <a href="vault.zip">the zip</a> and skip the tooling entirely &mdash;
-same contents, {VAULT["count"]} files.</p></div>
-<div class="op" style="border-left-color:#b45309"><b style="color:#b45309">2 &middot; the outreach vault &mdash; append-only</b>
-<p>{esc(OUTREACH["what"])}</p>
-<p style="font-family:var(--mono);font-size:.78rem;word-break:break-all">vault
-<b>{esc(OUTREACH["vault_id"])}</b><br>read key {esc(OUTREACH["read_key"])}</p>
-<p class="small">{OUTREACH["targets"]} targets at handover
-({", ".join(f"{v} {esc(k)}" for k, v in OUTREACH["by_state"].items())}),
-<b>{OUTREACH["actions_recorded"]} actions recorded</b> &mdash; nothing has been sent. The
-contents are generated into <a href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom/tree/main/world-news-day/outreach">world-news-day/outreach/</a>
-so anyone can rebuild and diff them.</p></div>
+<h2 id="zip">Or skip the tooling entirely</h2>
+<div class="dl">
+  <div>
+    <b>world-news-day/vault.zip</b>
+    <p>The corpus vault&rsquo;s contents as one file, built deterministically from the frozen
+    bytes: the same input produces the same bundle, hash for hash, so the digest below is a
+    fact about the contents rather than a record of when the build ran.</p>
+    <p class="small dim" style="font-family:var(--mono);word-break:break-all">SHA-256
+    {esc(VAULT["sha256"])}</p>
+  </div>
+  <a class="dlbtn" href="vault.zip">Download<span>{mb:.2f} MB &middot; {VAULT["count"]} files</span></a>
 </div>
-<pre class="shell"><span class="g">pip3</span> install sgit-ai
-<span class="g">sgit</span> clone {esc(VAULT["read_key"])}:{esc(VAULT["vault_id"])}
-<span class="g">sgit</span> clone {esc(OUTREACH["read_key"])}:{esc(OUTREACH["vault_id"])}</pre>
-
-<h3>Why two, and not one folder inside one</h3>
-<p>The corpus vault is a record of what somebody else published: finished, and safe to hand to
-anyone including the people it describes. The outreach vault is a record of what <em>we do
-about it</em> &mdash; who was written to, when, what was said, what came back. Two different
-kinds of claim, with two different failure modes. Sharing a history, a hash chain and an
-audience between them would be a mistake in both directions, so they do not.</p>
-<p>The second one is the working vault for the agent at <a href="https://riskmandate.ai">riskmandate.ai</a>,
-which is collaborating on the outreach. It carries a <code>protocol.md</code> that binds that
-agent as tightly as our own gates bind us: no personal contact detail for any natural person,
-ever; every action names what it stands on by hash or it is an assertion; append, never edit,
-and correct a wrong action with a new one rather than by deleting it. Its action log has a
-JSON schema and a closed list of verbs.</p>
-
-<h3>Read keys are published. Vault keys are not.</h3>
-<p>The keys above are <b>read keys</b>: derived one-way from the vault key, granting read and
-only read, and meant to be published. The <b>vault key</b> of each vault is write access to
-everything in it. It is in no file in this repository, it was not printed by the publishing
-script, and it never will be. <code>admin/build/validate.js</code> fails the whole-site build
-on anything shaped like one, anywhere in the tree &mdash; and that tripwire had to be widened
-at v0.4.4, because the pattern it was written with did not match the key format sgit actually
-issues. A tripwire satisfied by the absence of a shape nobody uses is not a tripwire.</p>
-
-<h2 id="layout">What is in it</h2>
-<pre class="shell">README.md              what this is, both sets of terms, and how to check it
-licence.json           <span class="d">our</span> terms, in the schema.org fields the corpus leaves empty
-MANIFEST.json          every file with its size and SHA-256
-PACKAGE.sh             the commands that turn this folder into an sgit vault
-data/                  register, corpus, licences, affiliations, analysis, lexicon,
-                       ontology, graph, triples.nt
-build/                 the code that produced all of it, and the gate that checks it
-sources/frozen/{esc(LATEST)}/
-  &lt;slug&gt;.snapshot      the page as served
-  api/&lt;slug&gt;.json      the record the publisher's REST API returns</pre>
-<p>What is <b>not</b> in it: the prose of the op-eds as text in any file we wrote (it is in the
-frozen pages, because those are the evidence, and in none of our JSON); any contact detail for
-any named person; any assessment of anybody.</p>
 
 {agent_block(
-    'Prefer <code>data/*.json</code> over the zip for a single question &mdash; they are the '
-    'same bytes, served individually. Take the bundle when you want the evidence with the '
-    'claims: <code>vault.zip</code> carries the frozen pages the counts are derived from and '
-    'the gate that re-derives them, so you can check this publication rather than cite it. '
-    '<code>data/vault.json</code> carries the bundle&rsquo;s hash, its licence record, and '
-    'whether a vault has been pushed. <b>Our description is CC BY 4.0; the frozen op-eds are '
-    'not ours to license</b> &mdash; that distinction is in <code>licence.json</code> in '
-    'machine-readable form.')}
+    'Fetch <code>data/vault.json</code> and <code>data/outreach-vault.json</code> for the two '
+    'published vaults (id, public read key, remote), and <code>data/vault-audit.json</code> '
+    'for what was derived and scanned with those keys — file counts, sizes, commit depth, '
+    'HEAD, every pattern hit and the rule that cleared it, and the negative control. '
+    '<b>Only <code>sgit_public_read_</code> keys appear anywhere in this section</b>; a vault '
+    'key is write access and is in no file here.')}
 """
     return write("vault.html", page(
-        "vault.html", "The vault",
-        f'Everything this section stands on in one deterministic {mb:.2f} MB bundle: the '
-        f'{CORPUS["count"]} op-eds frozen and hashed, every derived dataset, the code and the '
-        "gate — with our licence named and theirs quoted.",
+        "vault.html", "Published vaults",
+        "Two encrypted vaults, both open with a published read-only key: the World News Day "
+        "corpus, and the append-only outreach vault. With the audit run before each key was "
+        "published, and the facts derived from the key itself.",
         body, '<a href="../index.html">newsroom.sgit.ai</a> / '
-              '<a href="index.html">world news day</a> / the vault'))
+              '<a href="index.html">world news day</a> / vaults'))
+
+
+# ------------------------------------------------------------- vault pages ---
+def build_vault_pages():
+    up = "../"
+    built = []
+    DETAIL = {
+        "corpus": {
+            "in_it": [
+                ("data/", "The corpus described, the licence finding, the affiliations "
+                          "transcription, the aggregate, the published lexicons, the ontology, "
+                          "the graph and the same graph as N-Triples. The article prose is in "
+                          "none of them."),
+                ("sources/frozen/", "The twenty-one pages as served and the records the "
+                                    "publisher's own REST API returns for them, plus the "
+                                    "announcement — every one hashed and registered."),
+                ("build/", "Everything that produced the above, including the gate. The gate "
+                           "runs inside this vault: it detects the layout and names the four "
+                           "checks it skips, which are about the website's pages rather than "
+                           "the data."),
+                ("_page.json", "What you see when the vault is opened, rather than whichever "
+                               "file sorts first — which was MANIFEST.json, a list of hashes."),
+            ],
+            "demonstrates": [
+                ("A corpus described without being republished",
+                 "20,060 words held, none reproduced. The gate fails the build if twelve "
+                 "consecutive words of any piece appear on a generated page, with two "
+                 "enumerated exemptions under 400 words in total."),
+                ("Counts that two programs produce from the same bytes",
+                 "Every licence count is derived by build/graph.py and re-derived by "
+                 "build/gates.py with different patterns. A number one program can produce is "
+                 "an assertion."),
+                ("Classification as a published formula",
+                 "Themes, claim types and role addresses all come from pattern files in "
+                 "data/, and the gate re-runs every pattern on the frozen bytes in both "
+                 "directions."),
+                ("A vault that verifies itself",
+                 "MANIFEST.json carries the SHA-256 of every file; build/gates.py re-derives "
+                 "every published count. Both work from a read-key clone with no repository."),
+            ],
+            "says_about_itself": [
+                "Agent-produced, with no human editor of record and no legal review.",
+                "The evidence is a dated snapshot. A later capture would be a new dated folder "
+                "beside it, and the difference between them would be a story.",
+                "Our description is CC BY 4.0. The twenty-one op-eds are not ours and are not "
+                "relicensed; their terms are on their own pages.",
+                "No sentiment, stance or agreement is modelled. `agrees_with` is a banned verb "
+                "in the ontology.",
+                "One claim in this section has already been corrected in public, about the "
+                "publisher of this very corpus.",
+            ],
+        },
+        "outreach": {
+            "in_it": [
+                ("targets/", "One file per organisation: who writes from it, the established "
+                             "route, the frozen pages the route came from with their hashes, "
+                             "and why there is no route where there is none."),
+                ("actions/", "Append-only, with a JSON schema and a closed list of verbs. "
+                             "Deliberately empty at handover."),
+                ("protocol.md", "The rules of engagement, in full. It binds the collaborating "
+                                "agent as tightly as the gates bind us."),
+                ("brief.md", "What we are asking for, what we are not asking for, and the "
+                             "tone. Three small asks, all on the publisher's side."),
+                ("evidence.md", "How to verify any claim in here against the corpus vault."),
+            ],
+            "demonstrates": [
+                ("A second provenance chain, kept apart on purpose",
+                 "The corpus vault is finished and safe to hand to anyone including the people "
+                 "it describes. This one holds who we are contacting and what we plan to say. "
+                 "Different claims, different failure modes, different audiences."),
+                ("An agent bound by a protocol it did not write",
+                 "No personal contact detail for any natural person; every action names what "
+                 "it stands on by hash or URL; append, never edit; escalate rather than commit "
+                 "the newsroom to anything."),
+                ("Rules enforced before the vault is pushed",
+                 "The section gate scans this vault's contents for any address that is not an "
+                 "organisation's role address, by the same published two-part rule the "
+                 "contacts map uses."),
+                ("Generated, not kept by hand",
+                 "build/outreach.py writes the whole thing from the same frozen bytes as "
+                 "everything else, so anyone can rebuild it and diff rather than trust it."),
+            ],
+            "says_about_itself": [
+                "Nothing has been sent. The action log is empty at handover and says so.",
+                "Silence is data: a no-response is recorded explicitly rather than left as an "
+                "absent file.",
+                "A wrong action is corrected by a new action naming it. The original stays.",
+                "The collaborating agent may draft, send through published routes and record. "
+                "It may not commit the newsroom to anything or publish to the site.",
+            ],
+        },
+    }
+    for v in vault_records():
+        d = DETAIL[v["slug"]]
+        rec = v["rec"]
+        in_it = "".join(f'<tr><td><code>{esc(a)}</code></td><td class="small">{esc(b)}</td></tr>'
+                        for a, b in d["in_it"])
+        dem = "".join(f'<tr><td><b>{esc(a)}</b></td><td class="small">{esc(b)}</td></tr>'
+                      for a, b in d["demonstrates"])
+        says = "".join(f"<li>{esc(x)}</li>" for x in d["says_about_itself"])
+        other = "outreach" if v["slug"] == "corpus" else "corpus"
+
+        body = f"""{masthead("", up)}
+<p class="eyebrow">Published vault {v["n"]} of 2</p>
+<h1>{esc(v["name"])}</h1>
+<p class="lead">{esc(v["what"])}.</p>
+<p><b>Why this one.</b> {esc(v["one_thing"])}</p>
+
+{credential_block(v, up)}
+
+{disclaimer(up)}
+
+<h2 id="in-it">What is in it</h2>
+<div class="tablewrap"><table>
+<thead><tr><th>Path</th><th>What it holds</th></tr></thead><tbody>{in_it}</tbody></table></div>
+
+<h2 id="demonstrates">What it demonstrates</h2>
+<div class="tablewrap"><table>
+<thead><tr><th>Mechanism</th><th>How</th></tr></thead><tbody>{dem}</tbody></table></div>
+
+<h2 id="itself">What the vault says about itself</h2>
+<ul>{says}</ul>
+
+<h2 id="audit">The audit, honestly</h2>
+{audit_block(v)}
+
+<h2 id="derived">Derived facts</h2>
+{derived_block(v)}
+
+<h2 id="notes">Notes</h2>
+<p><b>Where this sits.</b> Beside <a href="{esc(other)}.html">the {esc(other)} vault</a>, and
+in the same convention as <a href="https://sgit.ai/demos/vaults/index.md">sgit.ai&rsquo;s
+published vaults</a>, whose <a href="https://sgit.ai/demos/vaults/publishing.md">method</a>
+this follows. <b>Write-key status:</b> held outside this repository, not escrowed anywhere it
+can be published. A vault whose write key is lost is frozen &mdash; readable forever, never
+correctable &mdash; so that status is worth stating where a reader will see it.</p>
+<p><a href="{up}vault.html">&larr; All published vaults</a></p>
+
+{agent_block(
+    'The machine surface for this page is <code>' + up + 'data/'
+    + ("vault.json" if v["slug"] == "corpus" else "outreach-vault.json")
+    + '</code> for the credential and '
+    '<code>' + up + 'data/vault-audit.json</code> for the audit and the derived facts — '
+    'both produced by <code>build/vault_audit.py</code> from the published read key alone. '
+    '<b>The key on this page grants read and only read.</b>')}
+"""
+        built.append(write(f"vaults/{v['slug']}.html", page(
+            f"vaults/{v['slug']}.html", v["name"],
+            v["what"] + ".",
+            body, f'<a href="{up}../index.html">newsroom.sgit.ai</a> / '
+                  f'<a href="{up}index.html">world news day</a> / '
+                  f'<a href="{up}vault.html">vaults</a> / {esc(v["slug"])}')))
+    return built
 
 
 # --------------------------------------------------------------- contacts ---
@@ -2139,8 +2332,9 @@ The patterns are in <a href="data/claim-rules.json"><code>data/claim-rules.json<
 def main():
     stamped = stamp_llms()
     built = [build_index(), build_licences(), build_corpus(), build_findings(),
-             build_graph_page(), build_sources(), build_contacts(), build_vault(),
-             build_method(), build_story(), build_terms()] + build_pieces()
+             build_graph_page(), build_sources(), build_contacts(), build_vault_index(),
+             build_method(), build_story(), build_terms()] \
+        + build_vault_pages() + build_pieces()
     print(f"world-news-day: {len(built)} pages"
           + (f" (+ {stamped} restamped)" if stamped else ""))
     for b in built:

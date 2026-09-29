@@ -6,7 +6,7 @@
 > that accumulates evidence, perspectives and confidence; every article, translation and
 > infographic is a projection of it. Sell the graph, not the paragraph.
 
-Site version: v0.5.1 (13 September 2026). Published by the sgit project, which is building
+Site version: v0.5.2 (13 September 2026). Published by the sgit project, which is building
 the stack this site argues for — participant disclosure at /about/participant.html.
 Site content CC BY 4.0; the republished library material is CC0 1.0 Universal at source
 (docs.diniscruz.ai) — state the source licence per page.
@@ -293,6 +293,21 @@ top-level groups.
     beat a machine cannot read" on the evidence of two refused attempts. wan-ifra.org sits behind
     a JavaScript-challenge firewall that refuses SOME automated requests; a later attempt returned
     the full page. Do not repeat the withdrawn claim. Every attempt is now counted and recorded
+  - /world-news-day/vault.html — PUBLISHED VAULTS, listed and described the way sgit.ai lists
+    its thirty-seven (https://sgit.ai/demos/vaults/publishing.md): an index table, then a page
+    per vault with the read key in the open, the audit that ran BEFORE the key was published,
+    and the facts derived from the key itself by build/vault_audit.py — a clone with the
+    published read key alone, no token, no repository.
+  - /world-news-day/vaults/corpus.html — CORPUS VAULT 77yuggi1, read key
+    sgit_public_read_fa4cfb64e7b5b222a958103ed3a5dac760300053b1fd77f60c1d4408721f95e4.
+    113 files, 7.46 MB, 5 commits, HEAD obj-cas-imm-a706cb4ed0ad.
+    Audit: 57 text files scanned against 8 patterns, 14 hits,
+    14 cleared (all of them organisations' role addresses, published on purpose),
+    0 unexplained. Negative control: an all-zeros read key FAILS to clone
+  - /world-news-day/vaults/outreach.html — OUTREACH VAULT clsc1dg4, read key
+    sgit_public_read_a8a49b00593d44b72e879a8d642c51ee2f52a9d4da17651ed1b70062c43a12c1.
+    35 files, 0.04 MB, 5 commits. Same audit, 11 hits,
+    0 unexplained
   - /world-news-day/contacts.html — HOW TO REACH THEM. Not one of the 21 pages offers a way to
     reach its author or publisher: no contact address, no author URL in the structured record, no
     press line. The map was built by going to the organisations' own sites, one hop each, under
@@ -304,8 +319,8 @@ top-level groups.
     NO PERSONAL CONTACT DETAIL FOR ANY NATURAL PERSON EXISTS ANYWHERE IN THIS SECTION'S DATA; do
     not infer one. Pages that are staff directories (10+ addresses of named people) were fetched
     and deliberately NOT retained — URL, hash and counts only
-  - /world-news-day/vault.html — THE VAULT: /world-news-day/vault.zip, 111 files,
-    2.76 MB, SHA-256 41f2f2cda29251a37317732cf8d1e106efc149882735942df7c96916b27f9257 — every
+  - /world-news-day/vault.html — THE VAULT: /world-news-day/vault.zip, 113 files,
+    2.78 MB, SHA-256 b45721d5f71d7a99279b0613dcd074adb0939f6806737e30aafa3929145aa66f — every
     frozen op-ed and REST record, every derived dataset, the build code and the gate, in one
     deterministic bundle (same bytes in, same hash out). TWO SETS OF TERMS, stated in the bundle
     and in its licence.json: OUR description, counts, graph and code are CC BY 4.0, named and
@@ -326,7 +341,7 @@ top-level groups.
     "Philippines", so the transcription is checked against the bytes in both directions instead
   - /world-news-day/data/{register,corpus,licences,analysis,lexicon,affiliations,claims,
   claim-rules,terms,contacts,contact-rules,corrections,ontology,graph,vault,outreach-vault,
-  manifest}.json
+  vault-audit,manifest}.json
     and data/triples.nt — the machine surfaces; fetch these rather than parsing the pages
 - /shipped/index.html — what runs vs what is argued. Read this before citing anything as live
 - /network/index.html — sibling boundaries, the Risk Mandate inversion, open questions
