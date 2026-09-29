@@ -2,8 +2,28 @@
   "id": "wnd-corrections",
   "version": "0.1.0",
   "note": "What this section published, got wrong, and changed — with the version it was wrong in, the version that fixed it, and what the claim says now. This publication argues that a correction which does not reach what it disproved is not a correction; a section that will not correct itself in public has no standing to make that argument.",
-  "count": 2,
+  "count": 3,
   "corrections": [
+    {
+      "id": "outreach-vault-published",
+      "wrong_in": "v0.4.4",
+      "fixed_in": "v0.5.4",
+      "where": [
+        "world-news-day/vault.html",
+        "world-news-day/vaults/outreach.html",
+        "data/outreach-vault.json",
+        "llms.txt",
+        "llms-full.txt",
+        "admin/versions.html"
+      ],
+      "we_said": "Outreach vault clsc1dg4, read key sgit_public_read_a8a49b00… — published beside the corpus vault as one of two public vaults.",
+      "what_was_wrong": "The outreach vault should never have been published. It holds who we are contacting, through which route, and what we plan to say — which is ours until it is sent, and is about other people before it is about us. Publishing a read key for it made all of that readable by anyone with the link, for five releases.",
+      "it_now_says": "One vault is published: the corpus. The outreach vault is private, and the page says so rather than letting its absence look like tidiness.",
+      "what_changed_downstream": "The vault was REKEYED with `sgit vault move`: every object re-encrypted under a new key, pushed under a new identity, and the old vault hard-deleted from the server. Deleting the line from the page would not have been a remedy — revocation is not retroactive and anyone who fetched the objects keeps them. The published key now recovers zero files, verified by cloning with it.",
+      "how_it_was_caught": "It was not caught; it was decided. The distinction between evidence somebody else published and our own plans about other people was always in the outreach vault's own README, and publishing it anyway contradicted it.",
+      "what_it_cost": "Five releases during which a list of twenty-seven organisations, the routes to them and our unsent messages were readable by anyone who read the page.",
+      "the_rule_it_produced": "A vault is PUBLISHED or PRIVATE, and the two have opposite obligations: a published one must carry a public read key the audit actually used, a private one must carry no key at all. The gate now enforces both, and hunts every revoked key across the whole repository — because llms-full.txt still carried this one after llms.txt had been fixed by hand."
+    },
     {
       "id": "announcement-unreadable",
       "wrong_in": "v0.4.0",
@@ -27,7 +47,10 @@
       "id": "byline-middle-initial",
       "wrong_in": "v0.4.0",
       "fixed_in": "v0.4.0",
-      "where": ["data/corpus.json", "data/graph.json"],
+      "where": [
+        "data/corpus.json",
+        "data/graph.json"
+      ],
       "we_said": "Charles M",
       "what_was_wrong": "The byline parser ended the name at the first full stop, so 'By Charles M. Sennott.' produced a person called 'Charles M'. A name published wrongly is a small error with no excuse: it was in the data before the section was first built.",
       "it_now_says": "Charles M. Sennott",

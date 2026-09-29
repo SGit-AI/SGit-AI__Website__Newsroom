@@ -41,6 +41,11 @@ function walk(dir, out = []) {
     // whose version badge is deliberately frozen. Checking them as live pages produced 413
     // errors the first time it existed, every one of them a correct observation about a copy.
     if (name === 'summit-archive') continue;
+    // world-news-day/vault-app/ is the application that ships INSIDE the encrypted vault. It
+    // has no site nav, no canonical and no version badge on purpose: it renders in the
+    // SG/Send host from the vault's own bytes, not on this domain. Checking it as a page of
+    // this site is checking the wrong thing, in the same way summit-archive/ was.
+    if (name === 'vault-app') continue;
     const p  = path.join(dir, name);
     const st = fs.statSync(p);
     if (st.isDirectory()) walk(p, out);

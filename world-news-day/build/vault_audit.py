@@ -174,13 +174,14 @@ def negative_control(vault_id, work):
 
 
 def main():
+    # PUBLISHED vaults only. The outreach vault is private: auditing it here would mean
+    # cloning it with a read key, and a private vault has no published read key to clone with
+    # — which is the point. Its record says so, and the section gate checks that it carries no
+    # key rather than that it passed a scan.
     vaults = [
         ("corpus", json.loads((DATA / "vault.json").read_text(encoding="utf-8")),
-         "The twenty-one op-eds as frozen bytes, every derived dataset, the build code and "
-         "the gate that checks them. Finished on the day it was made."),
-        ("outreach", json.loads((DATA / "outreach-vault.json").read_text(encoding="utf-8")),
-         "The working vault the agent at riskmandate.ai collaborates in: who is being "
-         "contacted, through which published route, and what happened. Append-only."),
+         "The twenty-one op-eds as frozen bytes, every derived dataset, the build code, the "
+         "gate that checks them, and the app that opens when the vault opens."),
     ]
     out, work = [], Path(tempfile.mkdtemp(prefix="wnd-audit-"))
     try:

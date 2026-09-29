@@ -47,7 +47,8 @@ OUT = SEC / "vault.zip"
 BUNDLE_ID = "wnd-2026-09-29"
 
 # Written by publish_vaults.py, never by this file. Anything listed here survives a rebuild.
-PUBLICATION_FIELDS = ("pushed", "vault_id", "read_key", "commit", "remote", "read_key_note")
+PUBLICATION_FIELDS = ("published", "pushed", "vault_id", "read_key", "commit", "remote",
+                      "read_key_note")
 
 
 def load(n):
@@ -309,6 +310,13 @@ def main():
         files.append(("data/" + p.name, p))
     for p in sorted((SEC / "build").glob("*.py")):
         files.append(("build/" + p.name, p))
+    # The app, at the vault ROOT. app.json with present:true boots App Mode when the vault is
+    # opened, so a reader gets the corpus rather than a file tree. _page.json was removed when
+    # this landed: two entry points is an ambiguity, and the app is the better one.
+    for name in ("index.html", "app.json", "app-data.json"):
+        f = SEC / "vault-app" / name
+        if f.exists():
+            files.append((name, f))
     for p in sorted((SEC / "sources" / "frozen").rglob("*")):
         if p.is_file():
             files.append((p.relative_to(SEC).as_posix(), p))
@@ -316,14 +324,10 @@ def main():
     entries = [{"path": rel, "bytes": src.stat().st_size,
                 "sha256": hashlib.sha256(src.read_bytes()).hexdigest()} for rel, src in files]
     lic = json.dumps(LICENCE_JSON, indent=2, ensure_ascii=False) + "\n"
-    pagej = json.dumps(page_json(register, corpus, licences, load("analysis.json"),
-                                 load("claims.json"), load("terms.json")),
-                       indent=2, ensure_ascii=False) + "\n"
     pkg = PACKAGE_SH.format(vault_id=BUNDLE_ID, count=len(entries) + 4,
                             snapshot=register["snapshots"][-1])
     rdm = readme(register, corpus, licences, len(entries) + 4)
-    for name, text in (("README.md", rdm), ("licence.json", lic), ("PACKAGE.sh", pkg),
-                       ("_page.json", pagej)):
+    for name, text in (("README.md", rdm), ("licence.json", lic), ("PACKAGE.sh", pkg)):
         entries.append({"path": name, "bytes": len(text.encode()),
                         "sha256": hashlib.sha256(text.encode()).hexdigest()})
     man = json.dumps({
@@ -354,7 +358,6 @@ def main():
         add(z, "README.md", rdm)
         add(z, "licence.json", lic)
         add(z, "PACKAGE.sh", pkg)
-        add(z, "_page.json", pagej)
         add(z, "MANIFEST.json", man)
 
     digest = hashlib.sha256(OUT.read_bytes()).hexdigest()
@@ -366,6 +369,7 @@ def main():
         "id": "wnd-vault-record", "bundle_id": BUNDLE_ID, "snapshot": register["snapshots"][-1],
         "bundle": "vault.zip", "bytes": OUT.stat().st_size, "sha256": digest,
         "count": len(entries) + 1,
+        "published": False,
         "pushed": False,
         "vault_id": None,
         "read_key": None,

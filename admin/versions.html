@@ -13,8 +13,7 @@
 <nav class="site"><div class="row">
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer and the shipped CLI. This site is the future-of-news stack: provenance, corrections, and paying the fact creator">&#8593; part of <b>sgit.ai</b></a>
-  <span class="stage-pill">design, not built</span>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.5.3</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.5.4</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -94,8 +93,7 @@
       <a class="sl" href="../world-news-day/sources.html">Sources</a>
       <a class="sl" href="../world-news-day/contacts.html">How to reach them</a>
       <a class="sl" href="../world-news-day/vault.html">Published vaults</a>
-      <a class="sl" href="../world-news-day/vaults/corpus.html">Vault: the corpus</a>
-      <a class="sl" href="../world-news-day/vaults/outreach.html">Vault: the outreach</a>
+      <a class="sl" href="../world-news-day/vaults/corpus.html">The vault, opened</a>
       <a class="sl" href="../world-news-day/method.html">Method</a>
       </div>
     </div>
@@ -139,6 +137,16 @@
 <div class="tablewrap"><table class="vers">
   <thead><tr><th>Version</th><th>Date</th><th>What shipped</th></tr></thead>
   <tbody>
+    <tr>
+      <td class="vnum">v0.5.4</td>
+      <td>29 Sep 2026</td>
+      <td><b>One vault, not two &mdash; and it opens as an app. Plus the release news on the front page, and the &ldquo;design, not built&rdquo; badge retired.</b>
+        <p><b>The outreach vault should never have been published.</b> It holds who we are contacting, through which route, and what we plan to say &mdash; ours until it is sent, and about other people before it is about us. Deleting the line from a page would not have been a remedy: revocation is not retroactive, and anyone who fetched the objects keeps them. So the vault was <b>rekeyed</b> with <code>sgit vault move</code>: every object re-encrypted under a new key, pushed under a new identity, and the old vault <b>hard-deleted from the server</b>. The published key now recovers <b>zero files</b>, which we checked by cloning with it. <a href="../world-news-day/method.html#corrections">The correction in full</a>.</p>
+        <p><b>And the very next run of the publishing script re-published a key for it.</b> Pushing a vault and publishing one are different acts and the script did not know the difference; it does now, from a table that says which vaults may carry a published key. Two new gates: a vault is PUBLISHED or PRIVATE with opposite obligations &mdash; a published one must carry a public read key the audit actually used, a private one must carry <em>no</em> key &mdash; and every revoked key is hunted across the whole repository, because <code>llms-full.txt</code> still carried this one after <code>llms.txt</code> had been fixed by hand.</p>
+        <p><b>The corpus vault is now a vault app.</b> <code>app.json</code> with <code>present: true</code>, so the SG/Send host launches <code>index.html</code> from inside the vault instead of showing a file tree: the finding, the twenty-one pieces, every sentence typed and anchored, and the vocabulary &mdash; read from the vault&rsquo;s own encrypted files in the reader&rsquo;s browser over the <code>sg.vfs</code> bridge, with no server, no account and no database. It follows the authoring contract to the letter (all CSS and JS inlined, nothing declarative against a vault path, an inlined fallback so it renders saved to disk, and <code>sg-app-ready</code> posted when it has drawn), and the build checks all of that before it ships. <a href="../world-news-day/vaults/corpus.html">The vault page</a> now carries screenshots of it, in the shape <a href="https://sgit.ai/demos/vaults/index.md">sgit.ai uses</a>.</p>
+        <p><b>Two site-wide changes.</b> The <code>design, not built</code> badge is gone from the nav: it was written when everything here was a design, and it now undersells four sections that run, a published vault and a corrected record. The honest sentence on the front page and <a href="../shipped/index.html">/shipped/</a> still draw that line properly, where there is room to draw it accurately. And the front page now opens with <b>what changed lately</b> &mdash; the newest six releases, generated from the release record so the page cannot claim an update that did not ship.</p>
+      </td>
+    </tr>
     <tr>
       <td class="vnum">v0.5.3</td>
       <td>29 Sep 2026</td>
@@ -488,7 +496,7 @@
     <p>News is failing not because there is too little information but because there is no walkable chain from a claim to its evidence, no way for a correction to reach what it disproved, and no way to pay the person who did the original work. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="netline"><a href="https://sgit.ai"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://graphs.sgit.ai">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai">&#8593; nhi.sgit.ai</a> &middot; <a href="https://sg-sentinel.sgit.ai">&#8593; sg-sentinel.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.5.3</a> &middot; <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.5.4</a> &middot; <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>The argument</h4>

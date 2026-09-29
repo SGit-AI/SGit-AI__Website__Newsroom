@@ -12,7 +12,8 @@ What it does:
   1. materialises the corpus vault from vault.zip (the same bytes the site serves),
   2. materialises the outreach vault from world-news-day/outreach/,
   3. `sgit init --existing` / `commit` / `push` for each,
-  4. derives each vault's PUBLIC READ KEY and writes it into the section's data files,
+  4. derives a PUBLIC READ KEY **only for the vault that is declared publishable**, and writes
+     it into the section's data files,
   5. leaves the VAULT KEYS where sgit put them, in the working copy's .sg_vault/ outside
      this repository, and never reads, prints, copies or transmits them.
 
@@ -116,6 +117,17 @@ def fill_outreach(dest):
         shutil.copytree(item, tgt) if item.is_dir() else shutil.copy2(item, tgt)
 
 
+# Which vaults exist, and which of them may carry a published key. This table is the whole
+# point: v0.5.4 made the outreach vault private, and the very next run of this script derived
+# a read key for it and wrote it back into data/outreach-vault.json — re-publishing, in one
+# command, the thing the release existed to undo. Pushing and publishing are different acts,
+# and this script now knows the difference.
+VAULTS = {
+    "corpus":   {"record": "vault.json",          "publish": True},
+    "outreach": {"record": "outreach-vault.json", "publish": False},
+}
+
+
 def publish(name, dest, token, message):
     fresh = not (dest / ".sg_vault").exists()
     if fresh:
@@ -130,6 +142,9 @@ def publish(name, dest, token, message):
     run(["commit", message], dest, token)
     out = run(["push"], dest, token)
     read_key, vault_id = read_key_only(dest)
+    if not VAULTS[name]["publish"]:
+        # push the vault, publish nothing about it beyond its existence
+        read_key = None
     commit = None
     for line in out.splitlines():
         if "obj-cas-imm-" in line:
@@ -154,7 +169,8 @@ def main():
     o = publish("outreach", outreach_dir, a.token,
                 "world news day 2026: the outreach vault at handover — nothing sent")
 
-    v.update({"pushed": True, "vault_id": c["vault_id"], "read_key": c["read_key"],
+    v.update({"published": True, "pushed": True, "vault_id": c["vault_id"],
+              "read_key": c["read_key"],
               "commit": c["commit"], "remote": c["remote"],
               "why_not_pushed": None,
               "read_key_note": "A read key is derived one-way from the vault key and grants "
@@ -163,7 +179,14 @@ def main():
     (DATA / "vault.json").write_text(json.dumps(v, indent=2, ensure_ascii=False) + "\n",
                                      encoding="utf-8")
 
+    # read BEFORE the write below: the first version of this read the file it was about to
+    # overwrite, in the same statement, and silently dropped the revocation record.
     st = json.loads((SEC / "outreach" / "state.json").read_text(encoding="utf-8"))
+    prior_o = json.loads((DATA / "outreach-vault.json").read_text(encoding="utf-8")) \
+        if (DATA / "outreach-vault.json").exists() else {}
+    keep = {k: prior_o[k] for k in
+            ("why_private", "previous_vault_id", "previous_read_key_status",
+             "revoked_read_keys") if k in prior_o}
     (DATA / "outreach-vault.json").write_text(json.dumps({
         "id": "wnd-outreach-vault",
         "what": "The working vault handed to the agent at riskmandate.ai: who is being "
@@ -171,24 +194,27 @@ def main():
                 "Separate from the corpus vault on purpose — that one is a finished record of "
                 "what somebody else published, this one is an append-only record of what we "
                 "do about it.",
+        "published": False,
+        "private": True,
         "pushed": True,
-        "vault_id": o["vault_id"], "read_key": o["read_key"], "commit": o["commit"],
+        "vault_id": o["vault_id"], "read_key": None, "commit": o["commit"],
         "remote": o["remote"],
+        **keep,
         "contents": "README.md, protocol.md, brief.md, targets/ (one per organisation), "
                     "actions/ (append-only, with its JSON schema), drafts/, state.json, "
                     "evidence.md",
         "targets": st["targets"], "by_state": st["by_state"],
         "actions_recorded": st["actions_recorded"],
-        "the_read_key_is_read_only": "Published deliberately. Write access is a separate key "
-                                     "that is not in this repository and never will be.",
+        "no_read_key_is_published": "Deliberately. This vault holds who is being contacted "
+                                    "and what we plan to say, which is ours until it is sent.",
     }, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
     print("\n" + "=" * 72)
-    print("PUSHED. The two PUBLIC READ keys are now in data/vault.json and")
-    print("data/outreach-vault.json, and will be published on the pages.")
+    print("PUSHED. One PUBLIC READ key is in data/vault.json and goes on the pages.")
+    print("The outreach vault is pushed and PRIVATE: no key is written for it.")
     print()
     print("  corpus    " + c["vault_id"] + "   read: " + c["read_key"])
-    print("  outreach  " + o["vault_id"] + "   read: " + o["read_key"])
+    print("  outreach  " + o["vault_id"] + "   PRIVATE — pushed, no read key published")
     print()
     print("The two VAULT KEYS — write access — were NOT read, printed or copied by this")
     print("script. sgit wrote each one into its own working copy, outside this repository:")

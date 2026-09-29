@@ -82,7 +82,12 @@ src_by_id = {s["id"]: s for s in register["sources"]}
 # Our own pages only. The frozen copies are somebody else's bytes held as evidence; they
 # carry no house chrome and never will, and they are stored with a .snapshot extension so
 # they are neither served nor indexed as pages of this site.
-pages = sorted(p for p in SEC.rglob("*.html") if "sources/frozen/" not in p.as_posix())
+# Our own pages only. Two exclusions, both because the file is not a page of this website:
+# the frozen copies are somebody else's bytes held as evidence, and vault-app/ is the
+# application that ships INSIDE the encrypted vault — it has no site chrome, no canonical and
+# no version badge by design, because it renders in the SG/Send host and not on this domain.
+pages = sorted(p for p in SEC.rglob("*.html")
+               if "sources/frozen/" not in p.as_posix() and "vault-app/" not in p.as_posix())
 if IN_BUNDLE and not pages:
     skipped.append("the checks about this website's pages — there are none in the bundle. "
                    "Every check about the DATA runs, which is what the bundle is for")
@@ -607,7 +612,12 @@ GONE = re.compile(r"the one page in the beat a machine cannot read|"
                   r"HTTP 307 and no body", re.I)
 # Quoting the withdrawn claim in order to withdraw it is the correction, not the error. The
 # check is that the claim never appears WITHOUT the correction around it.
-MENDED = re.compile(r"correct|we got wrong|too strong|until v0\.4|withdrawn|no longer", re.I)
+# The markers a correction block carries on its own face — "wrong in", "fixed in", "We said"
+# — not just any nearby word. The proximity window alone was fragile: inserting a THIRD
+# correction above this one pushed the word "corrected" more than 700 characters away and the
+# gate reported a page that was, in fact, correcting itself properly.
+MENDED = re.compile(r"correct|we got wrong|too strong|until v0\.\d|withdrawn|no longer|"
+                    r"wrong in|fixed in|we said", re.I)
 for p in pages:
     body = p.read_text(encoding="utf-8")
     for m in GONE.finditer(body):
@@ -654,13 +664,13 @@ for name, rec in ([("vault.json", vault)] if vault else []) + \
         errors.append(f'{name}: contains a PRIVATE key — only sgit_public_read_ keys are ever '
                       f'published, and a vault key is write access to everything')
     k = rec.get("read_key")
-    if rec.get("pushed"):
+    if rec.get("published", False):
         if not k or not str(k).startswith("sgit_public_read_"):
             errors.append(f'{name}: says the vault is pushed but publishes no public read key')
         if not rec.get("vault_id"):
             errors.append(f'{name}: says the vault is pushed and names no vault id')
     elif k:
-        errors.append(f'{name}: publishes a read key for a vault it says is not pushed')
+        errors.append(f'{name}: publishes a read key for a vault it says is not published')
 if outreach_vault and (SEC / "outreach").exists() and \
         outreach_vault.get("actions_recorded", 0) != len(list((SEC / "outreach" / "actions").glob("*.json"))) - 1:
     # _schema.json is not an action; every other file in actions/ is
@@ -687,8 +697,20 @@ for f in ((SEC / "outreach").rglob("*") if (SEC / "outreach").exists() else []):
 # claimed. These do.
 audit_doc = load("vault-audit.json")
 _by_name = {a["name"]: a for a in audit_doc["audited"]}
+# A vault is PUBLISHED or it is PRIVATE, and the two have opposite obligations: a published
+# one must carry a public read key that the audit actually used; a private one must carry no
+# key at all. Conflating them is how a read key gets published for a vault that should not
+# have one, which is exactly what happened at v0.4.4.
 for name, rec in (("corpus", vault), ("outreach", outreach_vault)):
-    if not rec or not rec.get("pushed"):
+    if not rec:
+        continue
+    if not rec.get("published", rec.get("pushed")):
+        if rec.get("read_key"):
+            errors.append(f'{name}-vault: is not published and still carries a read key — a '
+                          f'private vault publishes no key, and a key that was published once '
+                          f'is only undone by rekeying, never by deleting a line')
+        if not rec.get("why_private"):
+            errors.append(f'{name}-vault: is not published and does not say why')
         continue
     a = _by_name.get(name)
     if not a:
@@ -721,6 +743,30 @@ for name, rec in (("corpus", vault), ("outreach", outreach_vault)):
             errors.append(f'vault: a scan hit in "{name}" carries no verdict — ruling a hit '
                           f'out is the work, and an unruled hit moves it to the reader')
             break
+
+# --- 12f3. a revoked read key appears nowhere in the tree ---------------------------------
+# Rekeying makes a published key useless; it does not remove it from the files that carried
+# it. llms-full.txt is generated from llms.txt and still had the revoked outreach key after
+# llms.txt was fixed by hand — a page that hands a reader a dead credential is a page that
+# wastes their time and misrepresents what we publish. So the keys we have revoked are named
+# in data/outreach-vault.json and hunted across the whole repository.
+for rk in (outreach_vault or {}).get("revoked_read_keys", []):
+    needle = rk["key"]
+    for f in ROOT.rglob("*"):
+        if not f.is_file() or ".git" in f.parts or "summit-archive" in f.parts:
+            continue
+        if f.suffix.lower() not in {".html", ".txt", ".json", ".md", ".py", ".js", ".xml", ".nt"}:
+            continue
+        # the record OF the revocation is the one place it is allowed to appear
+        if f.name == "outreach-vault.json":
+            continue
+        try:
+            if needle in f.read_text(encoding="utf-8", errors="replace"):
+                errors.append(f'{f.relative_to(ROOT)}: carries a REVOKED read key '
+                              f'({rk["vault_id"]}, revoked {rk["revoked"]}). Rekeying made it '
+                              f'useless; it still has to come out of the files')
+        except Exception:
+            pass
 
 # --- 12g. every claim anchor is in the bytes, short, and correctly typed ------------------
 # The fractal layer is where this section would most easily start republishing prose, so the

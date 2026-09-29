@@ -97,8 +97,7 @@ NAV = [
         ("Sources", "world-news-day/sources.html"),
         ("How to reach them", "world-news-day/contacts.html"),
         ("Published vaults", "world-news-day/vault.html"),
-        ("Vault: the corpus", "world-news-day/vaults/corpus.html"),
-        ("Vault: the outreach", "world-news-day/vaults/outreach.html"),
+        ("The vault, opened", "world-news-day/vaults/corpus.html"),
         ("Method", "world-news-day/method.html"),
     ], ("world-news-day/",)),
     ("Databases", "databases/index.html", [
@@ -203,7 +202,7 @@ def nav_html(rel, up):
     return (f'<nav class="site"><div class="row">\n'
             f'  <a class="brand" href="{up}index.html">newsroom<span>.sgit.ai</span></a>\n'
             f'  <a class="parent" href="{PARENT}" title="{PARENT_TITLE}">&#8593; part of <b>sgit.ai</b></a>\n'
-            f'  <span class="stage-pill">design, not built</span>\n'
+            f''
             f'  <a class="ver" href="{up}admin/versions.html" title="Site release history">{VERSION}</a>\n'
             f'  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>\n'
             f'  <div class="nav-items">\n{rows}\n  </div>\n'
@@ -266,6 +265,11 @@ def main():
         # archive is for, and it silently did exactly that the first time briefs/summit-archive/
         # existed. Copies of pages are not pages.
         if "summit-archive" in path.parts:
+            continue
+        # world-news-day/vault-app/ is the app that ships inside the encrypted vault. It has no
+        # nav or footer by design — it renders in the SG/Send host from the vault's bytes, not
+        # on this domain — so stamping site chrome into it would corrupt it.
+        if "vault-app" in path.parts:
             continue
         rel  = path.relative_to(ROOT).as_posix()
         up   = "../" * (len(path.relative_to(ROOT).parts) - 1)

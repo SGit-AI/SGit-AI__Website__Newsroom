@@ -6,7 +6,7 @@
 > graph that accumulates evidence, perspectives and confidence; every article is a
 > **projection** of it. **Sell the graph, not the paragraph.**
 
-*Source: <https://newsroom.sgit.ai/index.html> · site v0.5.3 · markdown twin of the front page.*
+*Source: <https://newsroom.sgit.ai/index.html> · site v0.5.4 · markdown twin of the front page.*
 
 ---
 
@@ -38,6 +38,18 @@ today: a false claim propagates virally and the correction barely travels. In th
 | **~200ms** | settlement time on the x402 payment rail, zero protocol fees |
 | **10 articles** | 68,846 words, publicly dated since February 2025 |
 | **59p** | usable credit from a £1 card top-up — the wall micropayments removes |
+
+## What changed lately
+
+- **v0.5.4** (29 Sep 2026) — One vault, not two &mdash; and it opens as an app. Plus the release news on the front page, and the &ldquo;design, not built&rdquo; badge retired.
+- **v0.5.3** (29 Sep 2026) — The outreach brief: what the collaborating agent is asked to do, to whom, in what order, and with what words.
+- **v0.5.2** (29 Sep 2026) — The two vaults listed and described the way sgit.ai lists its thirty-seven &mdash; and the live page was pointing at a vault that did not exist.
+- **v0.5.1** (29 Sep 2026) — Cloning our own published vault with our own published key found two defects that every internal check had missed.
+- **v0.5.0** (29 Sep 2026) — The fractal layer: all 1,070 sentences of the twenty-one op-eds, typed, anchored and connected &mdash; plus a page for each piece, and LinkedIn routes.
+- **v0.4.4** (29 Sep 2026) — Two encrypted vaults, pushed and readable &mdash; the corpus, and a second one that the agent at riskmandate.ai works in.
+
+[The full release history →](https://newsroom.sgit.ai/admin/versions.html)
+
 
 ## What runs on this site
 
