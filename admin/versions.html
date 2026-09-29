@@ -14,7 +14,7 @@
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer and the shipped CLI. This site is the future-of-news stack: provenance, corrections, and paying the fact creator">&#8593; part of <b>sgit.ai</b></a>
   <span class="stage-pill">design, not built</span>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.4.0</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.4.1</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -90,6 +90,7 @@
       <a class="sl" href="../world-news-day/findings.html">The aggregate</a>
       <a class="sl" href="../world-news-day/graph.html">The graph</a>
       <a class="sl" href="../world-news-day/sources.html">Sources</a>
+      <a class="sl" href="../world-news-day/vault.html">The vault</a>
       <a class="sl" href="../world-news-day/method.html">Method</a>
       </div>
     </div>
@@ -133,6 +134,16 @@
 <div class="tablewrap"><table class="vers">
   <thead><tr><th>Version</th><th>Date</th><th>What shipped</th></tr></thead>
   <tbody>
+    <tr>
+      <td class="vnum">v0.4.1</td>
+      <td>29 Sep 2026</td>
+      <td><b>The World News Day corpus as one downloadable bundle &mdash; and the section declaring its own licence in the field it says the corpus leaves empty.</b>
+        <p><a href="../world-news-day/vault.html">The vault</a>: <code>vault.zip</code>, 64 files, 0.83&nbsp;MB, SHA-256 <code>72920f612e069f096f6a8e70…</code>. Every frozen op-ed and REST record, every derived dataset, the build code and the gate that checks it, in one file. <b>Built deterministically</b> &mdash; the same frozen bytes produce the same zip, hash for hash &mdash; so the digest is a fact about the contents rather than a record of when the build ran. Two circular dependencies were caught getting there: the bundle contained the record of its own hash, and the section manifest listed itself.</p>
+        <p><b>Two sets of terms, on the bundle&rsquo;s own face.</b> Our description, counts, graph, transcription and code are CC BY 4.0 &mdash; named, versioned, with a URL, and declared in <code>licence.json</code>. The twenty-one op-eds under <code>sources/frozen/</code> are not ours and are not relicensed; the README quotes the publisher&rsquo;s own sentence and says plainly that it grants the reader nothing over somebody else&rsquo;s work. The bundle carries the frozen third-party pages, which departs from this publication&rsquo;s standing rule that a delivered vault holds no copies of somebody else&rsquo;s pages, and the reason is written into the bundle rather than left implicit.</p>
+        <p><b>No sgit vault has been pushed, and the page says so.</b> Creating one needs an SG/Send access token; this build environment has none, and a section about licensing does not invent a credential or publish a key. <code>PACKAGE.sh</code> inside the bundle carries the exact commands, and <code>data/vault.json</code> records <code>"pushed": false</code> and <code>"read_key": null</code>. When a vault is pushed the <b>read key</b> goes there &mdash; never the vault key.</p>
+        <p><b>And the part of the argument that can only be made by doing it.</b> Every page in the section now carries schema.org JSON-LD with <code>license</code>, <code>copyrightHolder</code>, <code>copyrightNotice</code>, <code>usageInfo</code> and <code>isAccessibleForFree</code>, plus a <code>rel="license"</code> link &mdash; the five fields the section counts as unused on all twenty-one &mdash; and a new gate fails the build if a page loses any of them, or if the notice stops saying that the licence covers our description and not the op-eds.</p>
+      </td>
+    </tr>
     <tr>
       <td class="vnum">v0.4.0</td>
       <td>29 Sep 2026</td>
@@ -398,7 +409,7 @@
     <p>News is failing not because there is too little information but because there is no walkable chain from a claim to its evidence, no way for a correction to reach what it disproved, and no way to pay the person who did the original work. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="netline"><a href="https://sgit.ai"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://graphs.sgit.ai">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai">&#8593; nhi.sgit.ai</a> &middot; <a href="https://sg-sentinel.sgit.ai">&#8593; sg-sentinel.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.4.0</a> &middot; <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.4.1</a> &middot; <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>The argument</h4>
@@ -431,6 +442,7 @@
     <a href="../portugal/connections.html">Connections: who should talk to whom</a>
     <a href="../world-news-day/index.html">World News Day 2026: the corpus (beta)</a>
     <a href="../world-news-day/licences.html">The licence that is not there</a>
+    <a href="../world-news-day/vault.html">World News Day: the vault</a>
     <a href="../databases/index.html">Databases with no server (beta)</a>
     <a href="../databases/sql.html">The SQL and SPARQL consoles</a>
     <a href="../documents/pt-newsroom.html">Brief: pt.newsroom.sgit.ai</a>

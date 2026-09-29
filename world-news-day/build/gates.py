@@ -427,6 +427,37 @@ for f in manifest["files"]:
 if manifest["count"] != len(manifest["files"]):
     errors.append("manifest: count disagrees with the list")
 
+# --- 12b. this section declares its own licence in the field it says the corpus is missing --
+# The argument on the licence page is that schema.org's `license` property costs one line and
+# is worth adding. Publishing that on a page that does not have one would be the cheapest kind
+# of hypocrisy, so every page here carries the declaration, and losing it fails the build.
+for p in pages:
+    t = p.read_text(encoding="utf-8")
+    blocks = re.findall(r'<script[^>]+application/ld\+json[^>]*>(.*?)</script>', t, re.S | re.I)
+    if not blocks:
+        errors.append(f'{p.relative_to(ROOT)}: no JSON-LD — this section asks the corpus to '
+                      f'publish machine-readable terms and must do it itself')
+        continue
+    try:
+        rec = json.loads(blocks[0])
+    except json.JSONDecodeError as ex:
+        errors.append(f'{p.relative_to(ROOT)}: its JSON-LD does not parse ({ex})')
+        continue
+    for field in ("license", "copyrightHolder", "copyrightNotice", "usageInfo", "isAccessibleForFree"):
+        if not rec.get(field) and rec.get(field) is not False:
+            errors.append(f'{p.relative_to(ROOT)}: its JSON-LD has no "{field}"')
+    if not str(rec.get("license", "")).startswith("https://creativecommons.org/licenses/"):
+        errors.append(f'{p.relative_to(ROOT)}: its declared licence is not a named public '
+                      f'licence with a URL — which is the whole finding of this section')
+    # and the notice must keep saying what the licence does NOT cover, or it reads as a claim
+    # over twenty-one pieces that are not ours
+    if "op-eds" not in str(rec.get("copyrightNotice", "")):
+        errors.append(f'{p.relative_to(ROOT)}: its copyright notice does not say that the '
+                      f'licence covers our description and not the op-eds')
+    if 'rel="license"' not in t:
+        errors.append(f'{p.relative_to(ROOT)}: no rel="license" link — the HTML mechanism this '
+                      f'section counts as unused on all 21')
+
 # --- 13. every page states what this section is and is not -------------------------------
 REQUIRED = [
     ("beta notice", re.compile(r"\bbeta\b", re.I)),

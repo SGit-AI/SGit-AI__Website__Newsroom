@@ -47,11 +47,13 @@ def load(n):
     return json.loads((DATA / n).read_text(encoding="utf-8"))
 
 
-import graph as graphmod      # noqa: E402 — ontology, graph, triples, licence findings, manifest
+import graph as graphmod      # noqa: E402 — ontology, graph, triples, licence findings
 import analysis as analysismod  # noqa: E402 — the aggregate counts
+import vault as vaultmod        # noqa: E402 — the bundle, and the record of what is in it
 graphmod.main()
 analysismod.main()
-graphmod.manifest()   # last: it hashes everything the two steps above wrote
+vaultmod.main()
+graphmod.manifest()   # last: it hashes everything the three steps above wrote, bundle included
 
 REGISTER = load("register.json")
 CORPUS = load("corpus.json")
@@ -60,6 +62,7 @@ ONTOLOGY = load("ontology.json")
 GRAPH = load("graph.json")
 LEXICON = load("lexicon.json")
 AFFILIATIONS = load("affiliations.json")
+VAULT = load("vault.json")
 ANALYSIS = load("analysis.json")
 MANIFEST = load("manifest.json")
 LATEST = REGISTER["snapshots"][-1]
@@ -83,15 +86,50 @@ LABELS = {
     "findings": {"en": "The aggregate", "pt": "O agregado"},
     "graph":    {"en": "The graph",    "pt": "O grafo"},
     "sources":  {"en": "Sources",      "pt": "Fontes"},
+    "vault":    {"en": "The vault",    "pt": "O cofre"},
     "method":   {"en": "Method",       "pt": "Método"},
 }
 NAV = [("index.html", "index"), ("licences.html", "licences"), ("corpus.html", "corpus"),
        ("findings.html", "findings"), ("graph.html", "graph"), ("sources.html", "sources"),
-       ("method.html", "method")]
+       ("vault.html", "vault"), ("method.html", "method")]
 
 
 def esc(x):
     return html.escape(str(x) if x is not None else "")
+
+
+def ld_json(rel, title, desc):
+    """The section's own licence, in the field the corpus leaves empty.
+
+    It would be hard to publish a page arguing that schema.org's `license` property costs one
+    line and is worth adding, on a page that does not have one. So every page here carries the
+    declaration we say the twenty-one are missing — a named licence with a version and a URL,
+    a copyright holder, and `isAccessibleForFree`. The gate fails the build if any page in this
+    section loses it. This is the only part of the argument we can make by doing rather than
+    by saying."""
+    return json.dumps({
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": title,
+        "description": desc,
+        "url": f"{HOST}/world-news-day/{rel}",
+        "isPartOf": {"@type": "WebSite", "name": "newsroom.sgit.ai", "url": HOST},
+        "publisher": {"@type": "Organization", "name": "newsroom.sgit.ai",
+                      "url": HOST, "parentOrganization": {"@type": "Organization",
+                                                          "name": "sgit", "url": "https://sgit.ai"}},
+        "license": "https://creativecommons.org/licenses/by/4.0/",
+        "copyrightHolder": {"@type": "Organization", "name": "newsroom.sgit.ai", "url": HOST},
+        "copyrightNotice": "CC BY 4.0. This licence covers this page's own description, counts "
+                           "and graph. It does NOT cover the twenty-one op-eds, which are the "
+                           "work of their authors and are published at worldnewsday.org under "
+                           "terms stated there; none of their prose is reproduced here.",
+        "usageInfo": f"{HOST}/world-news-day/licences.html",
+        "isAccessibleForFree": True,
+        "creator": {"@type": "Organization", "name": "sgit agents",
+                    "description": "Researched, extracted and drafted by software agents "
+                                   "against frozen, hashed bytes. No human editor of record."},
+        "dateModified": LATEST,
+    }, ensure_ascii=False, indent=1)
 
 
 def page(rel, title, desc, body, crumb):
@@ -110,7 +148,11 @@ def page(rel, title, desc, body, crumb):
 <meta property="og:title" content="{html.escape(title, quote=True)}">
 <meta property="og:description" content="{html.escape(desc, quote=True)}">
 <meta name="twitter:card" content="summary">
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
 <link rel="stylesheet" href="../assets/site.css">
+<script type="application/ld+json">
+{ld_json(rel, title, desc)}
+</script>
 </head>
 <body>
 
@@ -1226,9 +1268,125 @@ it a switch.</p>
               '<a href="index.html">world news day</a> / method'))
 
 
+# ------------------------------------------------------------------ vault ---
+def build_vault():
+    mb = VAULT["bytes"] / 1_048_576
+    body = f"""{masthead("vault.html")}
+<h1>The vault</h1>
+<p class="lead">Everything this section stands on and everything it produces, in one file:
+the {CORPUS["count"]} op-eds as frozen bytes, the {REGISTER["count"]} hashed files they came
+from, every derived dataset, the code that produced them and the gate that checks them.
+{VAULT["count"]} files, {mb:.2f}&nbsp;MB, and a SHA-256 you can check before you open it.</p>
+
+<div class="dl">
+  <div>
+    <b>world-news-day/vault.zip</b>
+    <p>Built deterministically from the frozen bytes: the same input produces the same bundle,
+    hash for hash, so the digest below is a fact about the contents rather than a record of
+    when the build ran.</p>
+    <p class="small dim" style="font-family:var(--mono);word-break:break-all">SHA-256
+    {esc(VAULT["sha256"])}</p>
+  </div>
+  <a class="dlbtn" href="vault.zip">Download the vault<span>{mb:.2f} MB &middot; {VAULT["count"]} files</span></a>
+</div>
+
+{disclaimer()}
+
+<h2 id="terms">Two sets of terms, and they are not the same</h2>
+<p>This is the distinction the whole section exists to make, so the bundle makes it on its own
+face, in prose and in a machine-readable file.</p>
+<div class="split"><table>
+<thead><tr><th class="run">Ours &mdash; <code>data/</code>, <code>build/</code>, the README</th>
+<th class="rent">Theirs &mdash; <code>sources/frozen/</code></th></tr></thead>
+<tbody><tr>
+<td><b class="yes">CC BY 4.0.</b> Named, versioned, with a URL, and declared in
+<code>licence.json</code> in the schema.org fields the corpus leaves empty. Reuse it, build on
+it, sell it; say where it came from.</td>
+<td><b class="no">Not ours and not relicensed.</b> The twenty-one op-eds as served, and the
+records the publisher&rsquo;s own API returns for them, carried as evidence under the terms
+their pages state &mdash; quoted verbatim in the bundle&rsquo;s README, which also says plainly
+that it grants you nothing over somebody else&rsquo;s work.</td>
+</tr></tbody></table>
+<p class="cap">If you are deciding whether you may republish one of the pieces: read the terms
+on the piece and ask the publisher. That is the point this section is making, not a caveat
+attached to it.</p></div>
+<p>The bundle includes the frozen third-party pages, which departs from this publication&rsquo;s
+standing rule that a delivered vault carries no copies of somebody else&rsquo;s pages. That rule
+is about a copy nobody asked for. Here the frozen copies <em>are</em> the evidence, they are
+already public in this repository, they carry their publisher&rsquo;s own permission to
+republish, and a bundle of claims without the bytes underneath them is the thing this
+publication exists to argue against. The reasoning is written into the bundle rather than left
+implicit, so that whoever opens it can disagree with it.</p>
+
+<h2 id="check">Check it before you trust it</h2>
+<p>Nothing in the bundle asks to be taken on trust. <code>MANIFEST.json</code> carries the
+SHA-256 of every file in it, and <code>build/gates.py</code> is the executable specification of
+every claim this section makes:</p>
+<pre class="shell"><span class="d"># the bundle is what we say it is</span>
+<span class="g">shasum</span> -a 256 vault.zip   <span class="d"># {esc(VAULT["sha256"][:32])}…</span>
+<span class="g">unzip</span> -q vault.zip -d wnd <span class="d">&amp;&amp;</span> <span class="g">cd</span> wnd
+
+<span class="d"># every file in it is what the manifest says it is</span>
+<span class="g">python3</span> -c <span class="cy">"import hashlib,json; m=json.load(open('MANIFEST.json')); \
+print([f['path'] for f in m['files'] if hashlib.sha256(open(f['path'],'rb').read()).hexdigest()!=f['sha256']] or 'all match')"</span>
+
+<span class="d"># and every published number re-derives from the frozen bytes</span>
+<span class="g">python3</span> build/gates.py</pre>
+
+<h2 id="sgit">Why this is a bundle and not a pushed sgit vault</h2>
+<p>An <a href="https://sgit.ai">sgit</a> vault is zero-knowledge encrypted storage: the server
+holds ciphertext and never sees a key. Creating one needs an SG/Send access token, and this
+build environment has none.</p>
+<p><b>A section about licensing does not invent a credential or publish a key.</b> So the bundle
+is built and hashed here, and <code>PACKAGE.sh</code> inside it carries the exact commands that
+turn the folder into a vault &mdash; unchanged, so that whoever runs them gets the same layout
+this page describes. When a vault is pushed, what gets published beside it here is the
+<b>read key</b>, which is derived one-way from the vault key and grants read and only read. The
+vault key itself is write access to everything and is never published, never committed and
+never put in a page; the whole-site gate carries a tripwire that fails the build on anything
+key-shaped, in any file.</p>
+<div class="note"><p style="margin-top:0"><b>Status, stated plainly:</b> no vault has been
+pushed. <code>data/vault.json</code> records <code>"pushed": false</code> and
+<code>"read_key": null</code>, and will carry the read key when there is one. Until then the
+zip above is the whole of it, and it is complete.</p></div>
+
+<h2 id="layout">What is in it</h2>
+<pre class="shell">README.md              what this is, both sets of terms, and how to check it
+licence.json           <span class="d">our</span> terms, in the schema.org fields the corpus leaves empty
+MANIFEST.json          every file with its size and SHA-256
+PACKAGE.sh             the commands that turn this folder into an sgit vault
+data/                  register, corpus, licences, affiliations, analysis, lexicon,
+                       ontology, graph, triples.nt
+build/                 the code that produced all of it, and the gate that checks it
+sources/frozen/{esc(LATEST)}/
+  &lt;slug&gt;.snapshot      the page as served
+  api/&lt;slug&gt;.json      the record the publisher's REST API returns</pre>
+<p>What is <b>not</b> in it: the prose of the op-eds as text in any file we wrote (it is in the
+frozen pages, because those are the evidence, and in none of our JSON); any contact detail for
+any named person; any assessment of anybody.</p>
+
+{agent_block(
+    'Prefer <code>data/*.json</code> over the zip for a single question &mdash; they are the '
+    'same bytes, served individually. Take the bundle when you want the evidence with the '
+    'claims: <code>vault.zip</code> carries the frozen pages the counts are derived from and '
+    'the gate that re-derives them, so you can check this publication rather than cite it. '
+    '<code>data/vault.json</code> carries the bundle&rsquo;s hash, its licence record, and '
+    'whether a vault has been pushed. <b>Our description is CC BY 4.0; the frozen op-eds are '
+    'not ours to license</b> &mdash; that distinction is in <code>licence.json</code> in '
+    'machine-readable form.')}
+"""
+    return write("vault.html", page(
+        "vault.html", "The vault",
+        f'Everything this section stands on in one deterministic {mb:.2f} MB bundle: the '
+        f'{CORPUS["count"]} op-eds frozen and hashed, every derived dataset, the code and the '
+        "gate — with our licence named and theirs quoted.",
+        body, '<a href="../index.html">newsroom.sgit.ai</a> / '
+              '<a href="index.html">world news day</a> / the vault'))
+
+
 def main():
     built = [build_index(), build_licences(), build_corpus(), build_findings(),
-             build_graph_page(), build_sources(), build_method()]
+             build_graph_page(), build_sources(), build_vault(), build_method()]
     print(f"world-news-day: {len(built)} pages")
     for b in built:
         print("  ·", b)

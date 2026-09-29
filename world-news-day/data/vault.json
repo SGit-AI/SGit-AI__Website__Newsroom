@@ -1,0 +1,52 @@
+{
+  "id": "wnd-vault-record",
+  "vault_id": "wnd-2026-09-29",
+  "snapshot": "2026-09-29",
+  "bundle": "vault.zip",
+  "bytes": 868536,
+  "sha256": "246106faf132ef39e4e74ca68dc65923b392317a13a8d901094e09717b7af0be",
+  "count": 64,
+  "pushed": false,
+  "why_not_pushed": "An sgit vault is created against an SG/Send server with an access token. This build environment has neither, and a section about licensing does not invent a credential or publish a key. PACKAGE.sh inside the bundle carries the exact commands; when a vault is pushed, the READ KEY goes here — never the vault key.",
+  "read_key": null,
+  "licence": {
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    "name": "World News Day 2026: the corpus described",
+    "description": "Twenty-one commissioned op-eds published for World News Day 2026, fetched, frozen, hashed, described, classified by a published lexicon and expressed as a typed graph. The description is ours; the op-eds are not.",
+    "url": "https://newsroom.sgit.ai/world-news-day/",
+    "version": "wnd-2026-09-29",
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "copyrightHolder": {
+      "@type": "Organization",
+      "name": "newsroom.sgit.ai",
+      "url": "https://newsroom.sgit.ai"
+    },
+    "copyrightNotice": "CC BY 4.0 covers the description, the counts, the graph, the lexicon, the transcription and the code in this bundle. It does NOT cover the twenty-one op-eds under sources/frozen/, which are the work of their authors, published at worldnewsday.org, and carried here as frozen evidence under the terms their own pages state.",
+    "usageInfo": "https://newsroom.sgit.ai/world-news-day/licences.html",
+    "isAccessibleForFree": true,
+    "creator": {
+      "@type": "Organization",
+      "name": "sgit agents",
+      "description": "Researched, extracted and drafted by software agents against frozen, hashed bytes. No human editor of record."
+    },
+    "distribution": [
+      {
+        "@type": "DataDownload",
+        "encodingFormat": "application/zip",
+        "contentUrl": "https://newsroom.sgit.ai/world-news-day/vault.zip"
+      },
+      {
+        "@type": "DataDownload",
+        "encodingFormat": "application/json",
+        "contentUrl": "https://newsroom.sgit.ai/world-news-day/data/graph.json"
+      },
+      {
+        "@type": "DataDownload",
+        "encodingFormat": "application/n-triples",
+        "contentUrl": "https://newsroom.sgit.ai/world-news-day/data/triples.nt"
+      }
+    ],
+    "note": "This file is the one line we asked the publisher for, written out in full. schema.org has carried `license` since 2015; none of the twenty-one uses it."
+  }
+}

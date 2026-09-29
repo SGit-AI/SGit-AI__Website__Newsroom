@@ -93,6 +93,7 @@ NAV = [
         ("The aggregate", "world-news-day/findings.html"),
         ("The graph", "world-news-day/graph.html"),
         ("Sources", "world-news-day/sources.html"),
+        ("The vault", "world-news-day/vault.html"),
         ("Method", "world-news-day/method.html"),
     ], ("world-news-day/",)),
     ("Databases", "databases/index.html", [
@@ -143,6 +144,7 @@ FOOTER = [
         ("Connections: who should talk to whom", "portugal/connections.html"),
         ("World News Day 2026: the corpus (beta)", "world-news-day/index.html"),
         ("The licence that is not there", "world-news-day/licences.html"),
+        ("World News Day: the vault", "world-news-day/vault.html"),
         ("Databases with no server (beta)", "databases/index.html"),
         ("The SQL and SPARQL consoles", "databases/sql.html"),
         ("Brief: pt.newsroom.sgit.ai", "documents/pt-newsroom.html"),

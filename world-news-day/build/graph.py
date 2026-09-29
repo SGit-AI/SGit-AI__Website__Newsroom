@@ -371,6 +371,10 @@ def manifest():
         if p.is_file():
             files.append({"path": p.relative_to(SEC).as_posix(), "kind": "frozen", "bytes": p.stat().st_size,
                           "sha256": hashlib.sha256(p.read_bytes()).hexdigest()})
+    zipf = SEC / "vault.zip"
+    if zipf.exists():
+        files.append({"path": "vault.zip", "kind": "bundle", "bytes": zipf.stat().st_size,
+                      "sha256": hashlib.sha256(zipf.read_bytes()).hexdigest()})
     triples = len((DATA / "triples.nt").read_text(encoding="utf-8").strip().splitlines())
     write("manifest.json", {"id": "wnd-manifest", "updated": latest,
                             "note": "Every file this section is built from and every file it "
