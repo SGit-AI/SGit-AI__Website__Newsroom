@@ -132,8 +132,8 @@
           "sources/frozen/2026-09-29/wp-json-root.json"
         ],
         "file_count": 113,
-        "bytes": 7822547,
-        "head": "obj-cas-imm-2273fea33ef3",
+        "bytes": 7835074,
+        "head": "obj-cas-imm-01b05c07d489",
         "commits": 5,
         "top_level": [
           "MANIFEST.json",
@@ -150,7 +150,7 @@
       },
       "audit": {
         "ran": true,
-        "at": "2026-09-29T11:09:09Z",
+        "at": "2026-09-29T11:29:15Z",
         "method": "cloned with the published read key alone, no token, and every text file read",
         "text_files_scanned": 57,
         "patterns": [
@@ -291,6 +291,7 @@
           "_page.json",
           "actions/README.md",
           "actions/_schema.json",
+          "agent-brief.md",
           "brief.md",
           "evidence.md",
           "protocol.md",
@@ -323,14 +324,15 @@
           "targets/world-news-day.json",
           "targets/zeg-network.json"
         ],
-        "file_count": 35,
-        "bytes": 46565,
-        "head": "obj-cas-imm-db614649e7da",
+        "file_count": 36,
+        "bytes": 58380,
+        "head": "obj-cas-imm-27be78556362",
         "commits": 5,
         "top_level": [
           "README.md",
           "_page.json",
           "actions/",
+          "agent-brief.md",
           "brief.md",
           "evidence.md",
           "protocol.md",
@@ -342,9 +344,9 @@
       },
       "audit": {
         "ran": true,
-        "at": "2026-09-29T11:09:18Z",
+        "at": "2026-09-29T11:29:24Z",
         "method": "cloned with the published read key alone, no token, and every text file read",
-        "text_files_scanned": 35,
+        "text_files_scanned": 36,
         "patterns": [
           "vault key (uuid form)",
           "sgit private vault key",
@@ -356,6 +358,83 @@
           "email address"
         ],
         "findings": [
+          {
+            "file": "agent-brief.md",
+            "kind": "email address",
+            "match": "anj@anj.org.br",
+            "verdict": "published on purpose: an organisation's role address, cleared by the rule in data/contact-rules.json",
+            "cleared": true
+          },
+          {
+            "file": "agent-brief.md",
+            "kind": "email address",
+            "match": "editors@coveringclimatenow.org",
+            "verdict": "published on purpose: an organisation's role address, cleared by the rule in data/contact-rules.json",
+            "cleared": true
+          },
+          {
+            "file": "agent-brief.md",
+            "kind": "email address",
+            "match": "info@haitiantimes.com",
+            "verdict": "published on purpose: an organisation's role address, cleared by the rule in data/contact-rules.json",
+            "cleared": true
+          },
+          {
+            "file": "agent-brief.md",
+            "kind": "email address",
+            "match": "submissions@haitiantimes.com",
+            "verdict": "published on purpose: an organisation's role address, cleared by the rule in data/contact-rules.json",
+            "cleared": true
+          },
+          {
+            "file": "agent-brief.md",
+            "kind": "email address",
+            "match": "desk@myparaluman.com",
+            "verdict": "published on purpose: an organisation's role address, cleared by the rule in data/contact-rules.json",
+            "cleared": true
+          },
+          {
+            "file": "agent-brief.md",
+            "kind": "email address",
+            "match": "desk@myparaluman.ph",
+            "verdict": "published on purpose: an organisation's role address, cleared by the rule in data/contact-rules.json",
+            "cleared": true
+          },
+          {
+            "file": "agent-brief.md",
+            "kind": "email address",
+            "match": "editor@thequint.com",
+            "verdict": "published on purpose: an organisation's role address, cleared by the rule in data/contact-rules.json",
+            "cleared": true
+          },
+          {
+            "file": "agent-brief.md",
+            "kind": "email address",
+            "match": "info@reportlocal.org",
+            "verdict": "published on purpose: an organisation's role address, cleared by the rule in data/contact-rules.json",
+            "cleared": true
+          },
+          {
+            "file": "agent-brief.md",
+            "kind": "email address",
+            "match": "editor@thequint.com",
+            "verdict": "published on purpose: an organisation's role address, cleared by the rule in data/contact-rules.json",
+            "cleared": true
+          },
+          {
+            "file": "agent-brief.md",
+            "kind": "email address",
+            "match": "prensa@vocento.com",
+            "verdict": "published on purpose: an organisation's role address, cleared by the rule in data/contact-rules.json",
+            "cleared": true
+          },
+          {
+            "file": "agent-brief.md",
+            "kind": "email address",
+            "match": "info@confidencial.digital",
+            "verdict": "published on purpose: an organisation's role address, cleared by the rule in data/contact-rules.json",
+            "cleared": true
+          },
           {
             "file": "targets/brazilian-newspaper-association-anj.json",
             "kind": "email address",
@@ -434,8 +513,8 @@
             "cleared": true
           }
         ],
-        "hits": 11,
-        "cleared": 11,
+        "hits": 22,
+        "cleared": 22,
         "unexplained": 0,
         "negative_control": {
           "attempted_with": "an all-zeros read key",
