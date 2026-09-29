@@ -1,0 +1,214 @@
+{
+  "id": "wnd-claim-rules",
+  "version": "0.1.0",
+  "note": "Ordered; the first pattern that matches a sentence wins, and the order is itself a claim: a sentence that both asks and proposes is recorded as a question, because that is the stronger signal about what it is doing. build/gates.py re-runs every pattern on the frozen prose and fails the build if a single sentence would classify differently.",
+  "anchor_limit_words": 8,
+  "anchor_note": "An anchor is the first words of the sentence, verbatim, so a reader can find it in the original. The limit is well under the twelve-word run the section gate refuses.",
+  "rules": [
+    {
+      "id": "question",
+      "label": "Question",
+      "pattern": "\\?\\s*$",
+      "means": "The sentence asks something. Rhetorical or real — this does not distinguish them."
+    },
+    {
+      "id": "attribution",
+      "label": "Attributed statement",
+      "pattern": "\\b(according to|said|says|told|wrote|argues?|argued|reported|reports|found that|estimates?|research shows|a study)\\b",
+      "means": "The sentence hands the claim to somebody else. Placed SECOND, ahead of proposal and hypothesis, deliberately: it is the only class that points outside the piece, and this section's central finding is about evidence. Ordering it late would have undercounted attributions and flattered our own argument."
+    },
+    {
+      "id": "proposal",
+      "label": "Proposal",
+      "pattern": "\\b(we (?:must|should|need to|have to|cannot afford)|must be|should be|needs? to be|it is time to|let us|let's|the answer is to|what is needed)\\b",
+      "means": "The sentence says something ought to be done. The heart of an op-ed, and the thing this corpus has least of relative to diagnosis."
+    },
+    {
+      "id": "hypothesis",
+      "label": "Hypothesis",
+      "pattern": "\\b(if |unless |were we to|suppose |imagine |could |might |may |would |risks? becoming|threatens to|is likely to)\\b",
+      "means": "The sentence supposes rather than asserts: a condition, a possibility, a consequence that has not happened yet."
+    },
+    {
+      "id": "quantified",
+      "label": "Quantified observation",
+      "pattern": "(\\b\\d[\\d,.]*\\s*(?:%|per cent|percent|million|billion|thousand)|\\b(?:19|20)\\d\\d\\b|\\b\\d+\\s+(?:years?|months?|days?|people|journalists|countries))",
+      "means": "The sentence carries a number, a date or a count. The kind of statement a reader could in principle check — if the piece said where it came from."
+    },
+    {
+      "id": "evaluation",
+      "label": "Evaluation",
+      "pattern": "\\b(dangerous|vital|essential|crucial|urgent|extraordinary|remarkable|shameful|corrosive|devastating|vital|indispensable|worse|better|best|worst|too (?:many|much|little|few)|failure|failing|broken|thriving)\\b",
+      "means": "The sentence judges. An op-ed is supposed to; this is not a criticism, it is a measurement of form."
+    },
+    {
+      "id": "assertion",
+      "label": "Assertion",
+      "pattern": ".",
+      "means": "Everything else: a declarative sentence stated flat, in the author's own voice, with no hedge, no number, no source and no explicit judgement. The default, and in this corpus the largest class by a wide margin."
+    }
+  ],
+  "terms": [
+    {
+      "id": "journalism",
+      "pattern": "\\bjournalis(?:m|ts?)\\b"
+    },
+    {
+      "id": "truth",
+      "pattern": "\\btruths?\\b"
+    },
+    {
+      "id": "facts",
+      "pattern": "\\bfacts?\\b"
+    },
+    {
+      "id": "trust",
+      "pattern": "\\btrust(?:ed|worthy)?\\b"
+    },
+    {
+      "id": "democracy",
+      "pattern": "\\bdemocra(?:cy|tic)\\b"
+    },
+    {
+      "id": "freedom",
+      "pattern": "\\bfreedoms?\\b"
+    },
+    {
+      "id": "press freedom",
+      "pattern": "\\bpress freedom\\b"
+    },
+    {
+      "id": "misinformation",
+      "pattern": "\\bmis-?information\\b"
+    },
+    {
+      "id": "disinformation",
+      "pattern": "\\bdis-?information\\b"
+    },
+    {
+      "id": "propaganda",
+      "pattern": "\\bpropaganda\\b"
+    },
+    {
+      "id": "artificial intelligence",
+      "pattern": "\\b(?:artificial intelligence|\\bAI\\b)"
+    },
+    {
+      "id": "algorithm",
+      "pattern": "\\balgorithm(?:s|ic)?\\b"
+    },
+    {
+      "id": "platform",
+      "pattern": "\\bplatforms?\\b"
+    },
+    {
+      "id": "social media",
+      "pattern": "\\bsocial media\\b"
+    },
+    {
+      "id": "audience",
+      "pattern": "\\baudiences?\\b"
+    },
+    {
+      "id": "reader",
+      "pattern": "\\breaders?\\b"
+    },
+    {
+      "id": "public interest",
+      "pattern": "\\bpublic interest\\b"
+    },
+    {
+      "id": "public service",
+      "pattern": "\\bpublic service\\b"
+    },
+    {
+      "id": "accountability",
+      "pattern": "\\baccountabilit(?:y|ies)\\b"
+    },
+    {
+      "id": "transparency",
+      "pattern": "\\btransparen(?:cy|t)\\b"
+    },
+    {
+      "id": "evidence",
+      "pattern": "\\bevidence\\b"
+    },
+    {
+      "id": "verification",
+      "pattern": "\\bverif(?:y|ied|ication)\\b"
+    },
+    {
+      "id": "source",
+      "pattern": "\\bsources?\\b"
+    },
+    {
+      "id": "funding",
+      "pattern": "\\bfund(?:ing|ed|s)\\b"
+    },
+    {
+      "id": "subscription",
+      "pattern": "\\bsubscri(?:be|ption|bers?)\\b"
+    },
+    {
+      "id": "advertising",
+      "pattern": "\\badvertis(?:ing|ers?|ement)\\b"
+    },
+    {
+      "id": "business model",
+      "pattern": "\\bbusiness model\\b"
+    },
+    {
+      "id": "copyright",
+      "pattern": "\\bcopyright\\b"
+    },
+    {
+      "id": "licence",
+      "pattern": "\\blicen[cs]e[sd]?\\b"
+    },
+    {
+      "id": "local news",
+      "pattern": "\\blocal (?:news|journalism|media)\\b"
+    },
+    {
+      "id": "censorship",
+      "pattern": "\\bcensor(?:ship|ed|ing)\\b"
+    },
+    {
+      "id": "exile",
+      "pattern": "\\bexiles?\\b|\\bin exile\\b"
+    },
+    {
+      "id": "safety",
+      "pattern": "\\bsafety\\b"
+    },
+    {
+      "id": "impunity",
+      "pattern": "\\bimpunity\\b"
+    },
+    {
+      "id": "climate",
+      "pattern": "\\bclimate\\b"
+    },
+    {
+      "id": "war",
+      "pattern": "\\bwars?\\b|\\bconflicts?\\b"
+    },
+    {
+      "id": "community",
+      "pattern": "\\bcommunit(?:y|ies)\\b"
+    },
+    {
+      "id": "independence",
+      "pattern": "\\bindependen(?:ce|t)\\b"
+    },
+    {
+      "id": "ownership",
+      "pattern": "\\bowner(?:s|ship)?\\b"
+    },
+    {
+      "id": "infrastructure",
+      "pattern": "\\binfrastructure\\b"
+    }
+  ],
+  "definition_pattern": "^(?:the|a|an|our|its|real|good|true)?\\s*\\b<term>\\b\\s+(?:is|are|means?|is not|are not|has always been|must be|remains?)\\b"
+}

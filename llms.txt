@@ -6,7 +6,7 @@
 > that accumulates evidence, perspectives and confidence; every article, translation and
 > infographic is a projection of it. Sell the graph, not the paragraph.
 
-Site version: v0.4.4 (13 September 2026). Published by the sgit project, which is building
+Site version: v0.5.0 (13 September 2026). Published by the sgit project, which is building
 the stack this site argues for — participant disclosure at /about/participant.html.
 Site content CC BY 4.0; the republished library material is CC0 1.0 Universal at source
 (docs.diniscruz.ai) — state the source licence per page.
@@ -254,6 +254,22 @@ top-level groups.
     FROM THE DATA FILES AT BUILD TIME, not typed, so the prose and data/*.json cannot disagree.
     The markdown source is at /world-news-day/content/free-to-republish-is-not-a-licence.md,
     CC BY 4.0
+  - /world-news-day/terms.html — THE VOCABULARY and the FRACTAL LAYER: all 1,070 sentences of
+    the 21 op-eds, each typed by a published formula (data/claim-rules.json, ordered, first
+    match wins) and anchored to the frozen bytes by offset plus at most 8 verbatim words —
+    enough to find a sentence, far short of reproducing it. SHAPES: 828 flat assertions,
+    79 hypotheses, 51 quantified, 41 evaluations, 31 questions,
+    24 attributed statements, 16 PROPOSALS. 38 vocabulary terms used,
+    33 shared by more than one piece — and 4 places in all 1,070 sentences where
+    anybody says what one of those words MEANS. A looser definition rule found 29 and
+    misread "the decline of local news is a global phenomenon" as a definition of LOCAL NEWS;
+    both counts are published. The one term stated twice is stated by the SAME author both
+    times, and the gate checks that label against the bylines
+  - /world-news-day/pieces/<slug>.html — ONE PAGE PER OP-ED, 21 of them: every sentence typed
+    and anchored, the claim profile beside the corpus average, who wrote it and the published
+    route to them, what it cites, the vocabulary it shares with pieces that never cite it, and
+    a mapping to this site's own argument by a published rule over the terms used. THE ARTICLE
+    TEXT IS IN NONE OF IT — follow `url` to worldnewsday.org
   - /world-news-day/licences.html — the licence finding in full, both wordings quoted verbatim,
     the count table, the two-statement discrepancy, and the three lines of JSON-LD that would
     close the gap. data/licences.json is the machine surface
@@ -288,8 +304,8 @@ top-level groups.
     NO PERSONAL CONTACT DETAIL FOR ANY NATURAL PERSON EXISTS ANYWHERE IN THIS SECTION'S DATA; do
     not infer one. Pages that are staff directories (10+ addresses of named people) were fetched
     and deliberately NOT retained — URL, hash and counts only
-  - /world-news-day/vault.html — THE VAULT: /world-news-day/vault.zip, 107 files,
-    2.70 MB, SHA-256 0ee0760e06b3a09f9cdb13f8f7680db56644d21588fa339e6ad01b27836e19ff — every
+  - /world-news-day/vault.html — THE VAULT: /world-news-day/vault.zip, 111 files,
+    2.76 MB, SHA-256 9f3f33602f3765c3f32162437dcbe9b8151bff8b61200e04efcb355189b0b393 — every
     frozen op-ed and REST record, every derived dataset, the build code and the gate, in one
     deterministic bundle (same bytes in, same hash out). TWO SETS OF TERMS, stated in the bundle
     and in its licence.json: OUR description, counts, graph and code are CC BY 4.0, named and
@@ -308,8 +324,9 @@ top-level groups.
     WRITTEN BY HAND: data/affiliations.json, where each author works, transcribed from the role
     line their own piece prints — a regular expression over that prose had an author working at
     "Philippines", so the transcription is checked against the bytes in both directions instead
-  - /world-news-day/data/{register,corpus,licences,analysis,lexicon,affiliations,contacts,
-  contact-rules,corrections,ontology,graph,vault,outreach-vault,manifest}.json
+  - /world-news-day/data/{register,corpus,licences,analysis,lexicon,affiliations,claims,
+  claim-rules,terms,contacts,contact-rules,corrections,ontology,graph,vault,outreach-vault,
+  manifest}.json
     and data/triples.nt — the machine surfaces; fetch these rather than parsing the pages
 - /shipped/index.html — what runs vs what is argued. Read this before citing anything as live
 - /network/index.html — sibling boundaries, the Risk Mandate inversion, open questions

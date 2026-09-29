@@ -92,6 +92,7 @@ NAV = [
         ("The licence that is not there", "world-news-day/licences.html"),
         ("The twenty-one", "world-news-day/corpus.html"),
         ("The aggregate", "world-news-day/findings.html"),
+        ("The vocabulary", "world-news-day/terms.html"),
         ("The graph", "world-news-day/graph.html"),
         ("Sources", "world-news-day/sources.html"),
         ("How to reach them", "world-news-day/contacts.html"),

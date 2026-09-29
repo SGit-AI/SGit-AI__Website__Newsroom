@@ -14,7 +14,7 @@
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer and the shipped CLI. This site is the future-of-news stack: provenance, corrections, and paying the fact creator">&#8593; part of <b>sgit.ai</b></a>
   <span class="stage-pill">design, not built</span>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.4.4</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.5.0</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -89,6 +89,7 @@
       <a class="sl" href="../world-news-day/licences.html">The licence that is not there</a>
       <a class="sl" href="../world-news-day/corpus.html">The twenty-one</a>
       <a class="sl" href="../world-news-day/findings.html">The aggregate</a>
+      <a class="sl" href="../world-news-day/terms.html">The vocabulary</a>
       <a class="sl" href="../world-news-day/graph.html">The graph</a>
       <a class="sl" href="../world-news-day/sources.html">Sources</a>
       <a class="sl" href="../world-news-day/contacts.html">How to reach them</a>
@@ -136,6 +137,19 @@
 <div class="tablewrap"><table class="vers">
   <thead><tr><th>Version</th><th>Date</th><th>What shipped</th></tr></thead>
   <tbody>
+    <tr>
+      <td class="vnum">v0.5.0</td>
+      <td>29 Sep 2026</td>
+      <td><b>The fractal layer: all 1,070 sentences of the twenty-one op-eds, typed, anchored and connected &mdash; plus a page for each piece, and LinkedIn routes.</b>
+        <p>Until now the section treated each op-ed as one node. This builds the level below and the level above at once. Each piece becomes its own graph of claims; the pieces connect to each other through a shared vocabulary; a term is a graph of everywhere it is used. Same shape at every zoom, which is what makes it fractal rather than merely big.</p>
+        <p><b>1,070 sentences, each typed by a published formula</b> in <code>data/claim-rules.json</code>: 828 flat assertions, 79 hypotheses, 51 quantified observations, 41 evaluations, 31 questions, 24 attributed statements &mdash; and <b>16 proposals</b>. Twenty-one of the most senior voices in news, asked what journalism is for, and sixteen sentences in twenty thousand words that propose doing anything. The rule order was deliberately set so that <em>attributed statement</em> is tested early, ahead of proposal and hypothesis: it is the only class that points outside the piece, and ordering it late would have undercounted attributions and flattered our own argument about evidence.</p>
+        <p><b>How this avoids republishing anything.</b> A claim node carries a type, an offset into the frozen prose, a length, and an anchor of at most 8 verbatim words &mdash; enough to find the sentence, far short of reproducing it. The sentence itself is stored nowhere. The gate checks every anchor is in the bytes and under the limit, and re-derives all 1,070 classifications from the frozen prose with the published rules.</p>
+        <p><b>And the finding about meaning.</b> 38 vocabulary terms are used, 33 by more than one piece &mdash; and there are <b>4 places in 1,070 sentences where anybody says what one of those words means</b>. The vocabulary is shared; the definitions are assumed. A looser rule found 29, but read &ldquo;the decline of local news is a global phenomenon&rdquo; as that piece <em>defining</em> local news &mdash; so it was tightened to require the term to be the subject of its own sentence, both counts are published, and the 25 given up are stated as a cost. The only term stated twice is stated by the same author both times, and the gate checks that label against the bylines rather than trusting it, because calling a repetition a disagreement would manufacture a finding.</p>
+        <p><b>Twenty-one piece pages</b> under <code>/world-news-day/pieces/</code>: every sentence typed and anchored, the claim profile beside the corpus average, who wrote it with the published route to them, what it cites, the vocabulary it shares with pieces that never cite it, and a mapping to this site&rsquo;s own argument by a published rule over the terms used &mdash; which claims only that the piece uses those words and that we have written about them.</p>
+        <p><b>LinkedIn, only as an organisation offers it.</b> 8 company pages taken from frozen bytes we already held. Personal profiles are published only where the slug is an author of this corpus, letter for letter: 12 were found and dropped and <b>0 passed</b> &mdash; including a near miss, because three of the four profiles on one page belong to people with nothing to do with that newsroom, and &ldquo;probably the same person&rdquo; is not a standard for publishing somebody&rsquo;s profile as theirs.</p>
+        <p>One rule was loosened and bounded rather than quietly relaxed: each author&rsquo;s role line, exactly as <code>affiliations.json</code> records it, joins the permission statement as an exempt quotation &mdash; because the affiliation claim <em>is</em> a reading of that line. The exemption is enumerated, not pattern-matched, and the gate fails if it ever grows past 400 words of the corpus&rsquo;s 20,060.</p>
+      </td>
+    </tr>
     <tr>
       <td class="vnum">v0.4.4</td>
       <td>29 Sep 2026</td>
@@ -442,7 +456,7 @@
     <p>News is failing not because there is too little information but because there is no walkable chain from a claim to its evidence, no way for a correction to reach what it disproved, and no way to pay the person who did the original work. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="netline"><a href="https://sgit.ai"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://graphs.sgit.ai">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai">&#8593; nhi.sgit.ai</a> &middot; <a href="https://sg-sentinel.sgit.ai">&#8593; sg-sentinel.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.4.4</a> &middot; <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.5.0</a> &middot; <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>The argument</h4>

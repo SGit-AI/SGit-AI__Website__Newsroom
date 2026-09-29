@@ -108,6 +108,10 @@ NO_CANDIDATE = {
 
 CONTACT_HINT = re.compile(r"contact|contacto|contacte|contato|contactez|kontakt|impressum|"
                           r"about[-_ ]?us|get[-_ ]in[-_ ]touch|reach[-_ ]us|write[-_ ]to", re.I)
+# LinkedIn, but only what an organisation links from its OWN page. Two kinds come back and
+# they are treated completely differently — see linkedin_rule on the data file.
+LINKEDIN = re.compile(r"https?://(?:[a-z]{2,3}\.)?linkedin\.com/(company|school|in)/"
+                      r"([A-Za-z0-9._%\-]+)", re.I)
 MAILTO = re.compile(r"mailto:([A-Za-z0-9._%+\-]+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,})", re.I)
 INTEXT = re.compile(r"\b([A-Za-z0-9._%+\-]+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,})\b")
 
@@ -152,6 +156,21 @@ RULES = {
         "cost": "A real cost, stated rather than hidden: for a page held this way the count is "
                 "an assertion about bytes we no longer have, not a number a reader can "
                 "re-derive from this repository.",
+    },
+    "linkedin_rule": {
+        "company_and_school_pages": "Published when the organisation links to it from its own "
+                                    "frozen page. A LinkedIn company page is a public corporate "
+                                    "profile and a route, like a contact page.",
+        "personal_profiles": "Published ONLY when the profile slug matches the name of an "
+                             "author in this corpus, letter for letter once punctuation is "
+                             "removed. Everything else is dropped unread. The rule exists "
+                             "because a site template ships stock profiles: three of the four "
+                             "/in/ links on one organisation's page belong to people with "
+                             "nothing to do with it, and publishing them as that newsroom's "
+                             "staff would have been a fabrication.",
+        "what_a_profile_link_is": "A public professional page, which is a route, not a contact "
+                                  "detail. It is not permission to message anybody about "
+                                  "anything.",
     },
     "never_published": "Any address whose local part is not on this list — including anything "
                        "that could be a person's name. No personal contact detail for any "
@@ -309,6 +328,8 @@ def build():
     corpus_domains = {re.sub(r"^www\.", "", urlparse(l).netloc).lower()
                       for a in corpus["articles"] for l in a["outbound_links"]}
 
+    author_flat = {r["author"]: re.sub(r"[^a-z0-9]", "", r["author"].lower())
+                   for r in aff["people"]}
     authors_of = {}
     for r in aff["people"]:
         for o in r["organisations"]:
@@ -398,6 +419,26 @@ def build():
             orgs.append(row)
             continue
 
+        # LinkedIn, by the published rule: company pages as the organisation offers them,
+        # personal profiles only where the slug IS an author of this corpus.
+        org_li, person_li, li_dropped = [], [], 0
+        for kind, handle in LINKEDIN.findall(text):
+            url = f"https://www.linkedin.com/{kind.lower()}/{handle}"
+            if kind.lower() in ("company", "school"):
+                if url not in org_li:
+                    org_li.append(url)
+                continue
+            flat_handle = re.sub(r"[^a-z0-9]", "", handle.lower())
+            who = next((a for a, fl in author_flat.items() if fl == flat_handle), None)
+            if who:
+                rec = {"author": who, "url": url}
+                if rec not in person_li:
+                    person_li.append(rec)
+            else:
+                li_dropped += 1
+        row["linkedin"], row["linkedin_people"] = org_li, person_li
+        row["linkedin_dropped"] = li_dropped
+
         found = {m.lower() for m in MAILTO.findall(text)} | {m.lower() for m in INTEXT.findall(text)}
         keep, drop = [], 0
         for a in sorted(found):
@@ -414,7 +455,8 @@ def build():
         addr_total += len(keep)
         orgs.append(row)
 
-    reachable = {o["org"] for o in orgs if o["addresses"] or o.get("contact_page")}
+    reachable = {o["org"] for o in orgs
+                 if o["addresses"] or o.get("contact_page") or o.get("linkedin")}
     out = {
         "id": "wnd-contacts", "version": "0.1.0", "updated": latest,
         "question": "Twenty-three people wrote these pieces. How do you reach them — and what "
@@ -441,6 +483,9 @@ def build():
             "role_addresses_published": addr_total,
             "addresses_found_and_dropped": dropped_total,
             "with_no_route_at_all": len(orgs) - len(reachable),
+            "with_a_linkedin_page": sum(1 for o in orgs if o.get("linkedin")),
+            "author_profiles_established": sum(len(o.get("linkedin_people", [])) for o in orgs),
+            "linkedin_profiles_found_and_dropped": sum(o.get("linkedin_dropped", 0) for o in orgs),
             "authors": aff["count"],
             "authors_reachable_via_an_organisation":
                 sum(1 for r in aff["people"] if any(o in reachable for o in r["organisations"])),
@@ -466,6 +511,7 @@ def build():
     print(f"contacts: {c['organisations']} organisations, {c['with_an_established_site']} established, "
           f"{c['with_a_contact_page']} with a contact page, {c['role_addresses_published']} role "
           f"addresses published, {c['addresses_found_and_dropped']} dropped, "
+          f"{c['with_a_linkedin_page']} with LinkedIn, "
           f"{c['authors_reachable_via_an_organisation']}/{c['authors']} authors reachable")
     return out
 

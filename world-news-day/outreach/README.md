@@ -58,4 +58,4 @@ The corpus vault is a separate, read-only vault. Its **public read key** and the
 the downloadable bundle are in `evidence.md`. Verify before you cite: every number in every
 draft in here should trace to a file in that vault or to a URL on https://newsroom.sgit.ai/world-news-day/.
 
-Bundle: `https://newsroom.sgit.ai/world-news-day/vault.zip` — 107 files, SHA-256 `325adf9d1d769fdc8852d49551617a7e3cb580f83c6978d3b9bbefa06be9ca23`.
+Bundle: `https://newsroom.sgit.ai/world-news-day/vault.zip` — 111 files, SHA-256 `9f3f33602f3765c3f32162437dcbe9b8151bff8b61200e04efcb355189b0b393`.

@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>The vault &middot; World News Day 2026</title>
-<meta name="description" content="Everything this section stands on in one deterministic 2.70 MB bundle: the 21 op-eds frozen and hashed, every derived dataset, the code and the gate — with our licence named and theirs quoted.">
+<meta name="description" content="Everything this section stands on in one deterministic 2.76 MB bundle: the 21 op-eds frozen and hashed, every derived dataset, the code and the gate — with our licence named and theirs quoted.">
 <link rel="canonical" href="https://newsroom.sgit.ai/world-news-day/vault.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="newsroom.sgit.ai">
 <meta property="og:url" content="https://newsroom.sgit.ai/world-news-day/vault.html">
 <meta property="og:title" content="The vault">
-<meta property="og:description" content="Everything this section stands on in one deterministic 2.70 MB bundle: the 21 op-eds frozen and hashed, every derived dataset, the code and the gate — with our licence named and theirs quoted.">
+<meta property="og:description" content="Everything this section stands on in one deterministic 2.76 MB bundle: the 21 op-eds frozen and hashed, every derived dataset, the code and the gate — with our licence named and theirs quoted.">
 <meta name="twitter:card" content="summary">
 <link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
 <link rel="stylesheet" href="../assets/site.css">
@@ -19,7 +19,7 @@
  "@context": "https://schema.org",
  "@type": "Article",
  "headline": "The vault",
- "description": "Everything this section stands on in one deterministic 2.70 MB bundle: the 21 op-eds frozen and hashed, every derived dataset, the code and the gate — with our licence named and theirs quoted.",
+ "description": "Everything this section stands on in one deterministic 2.76 MB bundle: the 21 op-eds frozen and hashed, every derived dataset, the code and the gate — with our licence named and theirs quoted.",
  "url": "https://newsroom.sgit.ai/world-news-day/vault.html",
  "isPartOf": {
   "@type": "WebSite",
@@ -60,7 +60,7 @@
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer and the shipped CLI. This site is the future-of-news stack: provenance, corrections, and paying the fact creator">&#8593; part of <b>sgit.ai</b></a>
   <span class="stage-pill">design, not built</span>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.4.4</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.5.0</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -135,6 +135,7 @@
       <a class="sl" href="../world-news-day/licences.html">The licence that is not there</a>
       <a class="sl" href="../world-news-day/corpus.html">The twenty-one</a>
       <a class="sl" href="../world-news-day/findings.html">The aggregate</a>
+      <a class="sl" href="../world-news-day/terms.html">The vocabulary</a>
       <a class="sl" href="../world-news-day/graph.html">The graph</a>
       <a class="sl" href="../world-news-day/sources.html">Sources</a>
       <a class="sl" href="../world-news-day/contacts.html">How to reach them</a>
@@ -182,7 +183,7 @@
 same corpus as one downloadable file:
 the 21 op-eds as frozen bytes, the 43 hashed files they came
 from, every derived dataset, the code that produced them and the gate that checks them.
-107 files, 2.70&nbsp;MB, and a SHA-256 you can check before you open it.</p>
+111 files, 2.76&nbsp;MB, and a SHA-256 you can check before you open it.</p>
 
 <div class="dl">
   <div>
@@ -191,9 +192,9 @@ from, every derived dataset, the code that produced them and the gate that check
     hash for hash, so the digest below is a fact about the contents rather than a record of
     when the build ran.</p>
     <p class="small dim" style="font-family:var(--mono);word-break:break-all">SHA-256
-    0ee0760e06b3a09f9cdb13f8f7680db56644d21588fa339e6ad01b27836e19ff</p>
+    9f3f33602f3765c3f32162437dcbe9b8151bff8b61200e04efcb355189b0b393</p>
   </div>
-  <a class="dlbtn" href="vault.zip">Download the vault<span>2.70 MB &middot; 107 files</span></a>
+  <a class="dlbtn" href="vault.zip">Download the vault<span>2.76 MB &middot; 111 files</span></a>
 </div>
 
 <div class="warnbox"><p style="margin-top:0"><b>Beta, agent-produced.</b> The fetching, extraction, classification and drafting here are done by software agents against frozen bytes. Nothing on this page is a legal opinion, and there has been no legal review. If you are deciding whether you may republish one of these pieces, read the terms on the piece itself and ask the publisher &mdash; that is the point we are making.</p><p><b>We hold all twenty-one pieces and republish none of them.</b> Every article is linked to its original on <code>worldnewsday.org</code>. What is published here is the <em>description</em>: who wrote it, under what terms, what it links to, what words it contains. The prose belongs to the people who wrote it, and the gate on this section fails the build if twelve consecutive words of any piece appear on any page we generate.</p><p><b>Every number walks back to bytes we hold.</b> Each page was fetched once, frozen to a dated snapshot in this repository and hashed with SHA-256. The counts are re-derived from those bytes by a second program before anything ships. <a href="sources.html">The register &rarr;</a> &middot; <a href="method.html">The method &rarr;</a></p></div>
@@ -229,7 +230,7 @@ implicit, so that whoever opens it can disagree with it.</p>
 SHA-256 of every file in it, and <code>build/gates.py</code> is the executable specification of
 every claim this section makes:</p>
 <pre class="shell"><span class="d"># the bundle is what we say it is</span>
-<span class="g">shasum</span> -a 256 vault.zip   <span class="d"># 0ee0760e06b3a09f9cdb13f8f7680db5…</span>
+<span class="g">shasum</span> -a 256 vault.zip   <span class="d"># 9f3f33602f3765c3f32162437dcbe9b8…</span>
 <span class="g">unzip</span> -q vault.zip -d wnd <span class="d">&amp;&amp;</span> <span class="g">cd</span> wnd
 
 <span class="d"># every file in it is what the manifest says it is</span>
@@ -249,7 +250,7 @@ It is complete on the day it was made and should not move again except on a new 
 <p style="font-family:var(--mono);font-size:.78rem;word-break:break-all">vault
 <b>wnd-2026-09-29</b><br>read key </p>
 <p class="small">Or take <a href="vault.zip">the zip</a> and skip the tooling entirely &mdash;
-same contents, 107 files.</p></div>
+same contents, 111 files.</p></div>
 <div class="op" style="border-left-color:#b45309"><b style="color:#b45309">2 &middot; the outreach vault &mdash; append-only</b>
 <p>The working vault handed to the agent at riskmandate.ai: who is being contacted, through which published route, what was said and what came back. Separate from the corpus vault on purpose — that one is a finished record of what somebody else published, this one is an append-only record of what we do about it.</p>
 <p style="font-family:var(--mono);font-size:.78rem;word-break:break-all">vault
@@ -311,7 +312,7 @@ any named person; any assessment of anybody.</p>
     <p>News is failing not because there is too little information but because there is no walkable chain from a claim to its evidence, no way for a correction to reach what it disproved, and no way to pay the person who did the original work. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="netline"><a href="https://sgit.ai"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://graphs.sgit.ai">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai">&#8593; nhi.sgit.ai</a> &middot; <a href="https://sg-sentinel.sgit.ai">&#8593; sg-sentinel.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.4.4</a> &middot; <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.5.0</a> &middot; <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>The argument</h4>

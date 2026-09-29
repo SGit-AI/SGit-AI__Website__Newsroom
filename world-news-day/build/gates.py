@@ -137,10 +137,28 @@ if sorted(a["order_in_announcement"] for a in corpus["articles"]) != list(range(
 # illustration". The permission statement itself is exempt: quoting the terms verbatim is
 # the finding, and a reader cannot check our reading of them against anything else.
 RUN = 12
+# Two bounded exemptions, both for the same reason: the quotation IS the claim, and a reader
+# cannot check our reading of it against anything else.
+#
+#   1. the permission statement — the licence finding is a reading of that sentence;
+#   2. each author's role line, exactly as data/affiliations.json records it — the affiliation
+#      claim is a reading of that line, and the gate already checks every one of them against
+#      the frozen bytes verbatim in check 10b.
+#
+# Nothing else is exempt, the exempt strings are enumerated rather than pattern-matched, and
+# together they are under 400 words of the corpus's 20,060. An exemption that could grow by
+# accident would be the end of this rule.
 permission_words = set()
 for v in licences["the_statement"]:
     permission_words.add(" ".join(v["text"].lower().split()))
 permission_words.add(" ".join(licences["the_two_statements"]["on_the_announcement"].lower().split()))
+for r in affiliations["people"]:
+    permission_words.add(" ".join(r["role_as_printed"].lower().split()))
+_exempt_words = sum(len(x.split()) for x in permission_words)
+if _exempt_words > 400:
+    errors.append(f"gate: the quotation exemption now covers {_exempt_words} words of the "
+                  f"corpus. It is bounded at 400 on purpose — an exemption that grows by "
+                  f"accident is how a no-republication rule stops being one")
 page_text = {p: " ".join(re.sub(r"<[^>]+>", " ", p.read_text(encoding="utf-8")).lower().split())
              for p in pages}
 for a in corpus["articles"]:
@@ -612,6 +630,76 @@ for f in (SEC / "outreach").rglob("*"):
                           f'a personal address ("{m.group(0)}") — the protocol in that vault '
                           f'forbids it and this gate enforces it before the vault is pushed')
             break
+
+# --- 12g. every claim anchor is in the bytes, short, and correctly typed ------------------
+# The fractal layer is where this section would most easily start republishing prose, so the
+# anchors are checked twice over: each must be IN the frozen sentence it points at, and each
+# must be well under the twelve-word run the section refuses. And because the type is a
+# published formula, every one of the 1,070 classifications is re-derived here.
+claims = load("claims.json")
+claim_rules = load("claim-rules.json")
+terms_doc = load("terms.json")
+LIMIT = claim_rules["anchor_limit_words"]
+if LIMIT >= RUN:
+    errors.append(f"claim-rules: the anchor limit ({LIMIT} words) is not below the "
+                  f"{RUN}-word run this section refuses — the two rules must not touch")
+prose_cache = {}
+for a in corpus["articles"]:
+    prose_cache[a["slug"]] = prose(api_rec(a["slug"]))
+SENT = re.compile(r'(?<=[.!?])\s+(?=[A-Z"\u201c\u2018])')
+by_article_claims = {}
+for c in claims["claims"]:
+    by_article_claims.setdefault(c["article"], []).append(c)
+    if len(c["anchor"].split()) > LIMIT:
+        errors.append(f'claims: {c["id"]} has a {len(c["anchor"].split())}-word anchor, over '
+                      f'the published limit of {LIMIT}')
+    text = prose_cache.get(c["article"])
+    if text is None:
+        errors.append(f'claims: {c["id"]} names an article not in the corpus')
+        continue
+    if c["anchor"] not in text:
+        errors.append(f'claims: the anchor for {c["id"]} is not in the frozen prose verbatim')
+    if c["offset"] is not None and not text[c["offset"]:].startswith(c["anchor"]):
+        errors.append(f'claims: {c["id"]} does not start at the offset it records')
+# re-derive every classification from the bytes, with the published rules, in published order
+RULES = claim_rules["rules"]
+for slug, text in prose_cache.items():
+    pos, n = 0, 0
+    for s in SENT.split(text):
+        s = s.strip()
+        if not s:
+            continue
+        pos = text.find(s, pos) + len(s)
+        if len(s.split()) < 4:
+            continue
+        n += 1
+        want = next((r["id"] for r in RULES if re.search(r["pattern"], s, re.I)), "assertion")
+        got = next((c for c in by_article_claims.get(slug, []) if c["n"] == n), None)
+        if got is None:
+            errors.append(f'claims: {slug} sentence {n} has no claim node')
+        elif got["type"] != want:
+            errors.append(f'claims: {slug} claim {n} is typed "{got["type"]}"; re-running the '
+                          f'published rules on the frozen bytes gives "{want}"')
+    if len(by_article_claims.get(slug, [])) != n:
+        errors.append(f'claims: {slug} has {len(by_article_claims.get(slug, []))} claims and '
+                      f'the frozen prose gives {n} sentences')
+if claims["counts"]["claims"] != len(claims["claims"]):
+    errors.append("claims: the count is stale")
+for kind, n in claims["counts"]["by_type"].items():
+    if n != sum(1 for c in claims["claims"] if c["type"] == kind):
+        errors.append(f'claims: the count for "{kind}" is stale')
+# a "definition" must be the subject of its own sentence, and a divergence between two pieces
+# by the same author is a repetition — saying otherwise would manufacture a finding
+for d in terms_doc["defined_by_more_than_one_piece"]:
+    authors = [set(a["byline"]) for a in corpus["articles"] if a["slug"] in d["articles"]]
+    same = all(x & authors[0] for x in authors[1:])
+    if d["same_author"] != same:
+        errors.append(f'terms: "{d["term"]}" is marked same_author={d["same_author"]} and the '
+                      f'bylines say {same}')
+for t_ in terms_doc["terms"]:
+    for slug in t_["defined_in"]:
+        if slug not in prose_cache:
+            errors.append(f'terms: "{t_["term"]}" is defined in an article not in the corpus')
 
 # --- 13. every page states what this section is and is not -------------------------------
 REQUIRED = [

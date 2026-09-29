@@ -12,7 +12,7 @@ https://newsroom.sgit.ai/world-news-day/vault.html — a read key grants read an
 The same contents are downloadable without any tooling:
 
     curl -O https://newsroom.sgit.ai/world-news-day/vault.zip
-    shasum -a 256 vault.zip        # 325adf9d1d769fdc8852d49551617a7e3cb580f83c6978d3b9bbefa06be9ca23
+    shasum -a 256 vault.zip        # 9f3f33602f3765c3f32162437dcbe9b8151bff8b61200e04efcb355189b0b393
     unzip vault.zip -d wnd && cd wnd
     python3 build/gates.py         # re-derives every published count from the frozen bytes
 

@@ -49,11 +49,13 @@ def load(n):
 
 import graph as graphmod      # noqa: E402 — ontology, graph, triples, licence findings
 import analysis as analysismod  # noqa: E402 — the aggregate counts
+import claims as claimsmod      # noqa: E402 — the fractal layer: every sentence, typed and anchored
 import vault as vaultmod        # noqa: E402 — the bundle, and the record of what is in it
 import contacts as contactsmod  # noqa: E402 — how to reach them, under published rules
 import outreach as outreachmod  # noqa: E402 — the second vault, the one the other agent works in
 graphmod.main()
 analysismod.main()
+claimsmod.main()
 contactsmod.build()
 outreachmod.main()
 vaultmod.main()
@@ -66,6 +68,9 @@ ONTOLOGY = load("ontology.json")
 GRAPH = load("graph.json")
 LEXICON = load("lexicon.json")
 AFFILIATIONS = load("affiliations.json")
+CLAIMS = load("claims.json")
+TERMS = load("terms.json")
+CLAIM_RULES = load("claim-rules.json")
 CONTACTS = load("contacts.json")
 CONTACT_RULES = load("contact-rules.json")
 CORRECTIONS = load("corrections.json")
@@ -254,6 +259,11 @@ def build_index():
          "offer the reader no link at all", f'{E["total_links"]} links across the whole corpus'),
         (f'{E["distinct_domains"]}', "distinct domains cited between them",
          "exactly none reached by two pieces"),
+        (f'{CLAIMS["counts"]["by_type"].get("proposal", 0)} of {CLAIMS["counts"]["claims"]:,}',
+         "sentences propose doing anything",
+         f'{CLAIMS["counts"]["by_type"].get("assertion", 0)} are flat assertions'),
+        (f'{TERMS["counts"]["definitions_found"]}', "places anybody says what a word means",
+         f'over {CLAIMS["counts"]["claims"]:,} sentences about trust, truth and journalism'),
         (f'{CONTACTS["counts"]["authors_reachable_via_an_organisation"]} of {CONTACTS["counts"]["authors"]}',
          "authors with any published route to reach them",
          "none of it from the corpus, all of it via an organisation"),
@@ -276,6 +286,10 @@ def build_index():
          "The same corpus as a graph you can walk: articles, authors, organisations, themes, "
          "cited sources, licences and the frozen files underneath. Every verb has a named "
          "inverse and a Portuguese form."),
+        ("The fractal layer", "terms.html", f'{CLAIMS["counts"]["claims"]:,} sentences, typed',
+         "Each piece is its own graph of claims — assertions, questions, hypotheses, "
+         "proposals — connected to the others by a shared vocabulary. Same shape at every "
+         "zoom level. And four places in 1,070 sentences where anybody says what a word means."),
         ("The outreach", "contacts.html", "How to reach them",
          "Twenty-three authors at twenty-six organisations, and a corpus that gives you no "
          "route to any of them. What going to their own sites produced, under rules published "
@@ -564,7 +578,8 @@ def build_corpus():
         rows.append(
             f'<tr id="{esc(a["slug"])}">'
             f'<td style="font-family:var(--mono);color:var(--dim2)">{a["order_in_announcement"]}</td>'
-            f'<td><a href="{esc(a["url"])}"><b>{esc(a["title"])}</b></a>'
+            f'<td><a href="pieces/{esc(a["slug"])}.html"><b>{esc(a["title"])}</b></a> '
+            f'<a href="{esc(a["url"])}" class="small dim">original &rarr;</a>'
             f'<div class="small" style="margin-top:.25rem">{authors}</div></td>'
             f'<td class="small" style="white-space:nowrap">{esc(a["published"][:10])}<br>'
             f'<span class="dim">{a["words"]:,} words</span></td>'
@@ -1535,6 +1550,10 @@ def build_contacts():
             bits.append(f'<a href="{esc(o["contact_page"])}">contact page</a>')
         elif o.get("site"):
             bits.append(f'<a href="{esc(o["site"])}">site</a>')
+        for li in o.get("linkedin", []):
+            bits.append(f'<a href="{esc(li)}">LinkedIn</a>')
+        for pr in o.get("linkedin_people", []):
+            bits.append(f'<a href="{esc(pr["url"])}">{esc(pr["author"])} on LinkedIn</a>')
         if o.get("why_none"):
             bits.append(f'<span class="dim small">{esc(o["why_none"])}</span>')
         return "<br>".join(bits) or '<span class="dim">&mdash;</span>'
@@ -1592,6 +1611,16 @@ frozen and hashed. No directory, no third-party database, no guessed address.</l
 kept as a candidate and nothing is published from it. <em>News Corp Australasia</em> fails all
 four because the site says News Corp Austral<b>ia</b> &mdash; close is not the same, and a
 contacts list is where close is dangerous.</li>
+<li><b>LinkedIn, only as the organisation offers it.</b> A company page linked from an
+organisation&rsquo;s own frozen page is a route and is published. A personal profile is
+published <em>only</em> where the profile slug is an author of this corpus, letter for letter.
+{C["linkedin_profiles_found_and_dropped"]} personal profiles were found and dropped, and
+<b>{C["author_profiles_established"]} passed</b> &mdash; including a near miss: one page links
+<code>/in/annalamentillo</code>, and an author of this corpus is Anna Mae Lamentillo. Probably
+the same person. <em>Probably</em> is not a standard for publishing somebody&rsquo;s profile as
+theirs, and three of the four profiles on that same page belong to people with nothing to do
+with the organisation &mdash; a site template&rsquo;s stock photos. Publishing those as that
+newsroom&rsquo;s staff would have been a fabrication.</li>
 <li><b>A page that is a staff directory is not retained.</b> Ten or more addresses of named
 people on one page and we keep the URL, the hash and the counts but not the bytes.
 <a href="method.html#withheld">Why, and what it costs &rarr;</a></li>
@@ -1604,6 +1633,7 @@ people on one page and we keep the URL, the hash and the counts but not the byte
 <div class="n"><b>{C["with_an_established_site"]} of {C["organisations"]}</b><span>organisations with an established site</span><em>the rest are candidates or nothing</em></div>
 <div class="n"><b>{C["with_a_contact_page"]}</b><span>publish a contact page</span><em>the route that actually works</em></div>
 <div class="n"><b>{C["role_addresses_published"]}</b><span>role addresses publishable</span><em>from {C["addresses_found_and_dropped"] + C["role_addresses_published"]} addresses seen</em></div>
+<div class="n"><b>{C["with_a_linkedin_page"]}</b><span>link their own LinkedIn page</span><em>{C["linkedin_profiles_found_and_dropped"]} personal profiles dropped</em></div>
 <div class="n"><b>{C["authors_reachable_via_an_organisation"]} of {C["authors"]}</b><span>authors with a published route</span><em>all of them via an organisation</em></div>
 </div>
 <div class="tablewrap"><table>
@@ -1803,11 +1833,314 @@ against, and <a href="{up}method.html">the method</a> and its gates.</li>
               '<a href="../index.html">world news day</a> / the argument'))
 
 
+# ----------------------------------------------------------------- pieces ---
+# One page per op-ed: the fractal leaf. The whole corpus is a graph; so is each piece; so is
+# each term. Same shape at every zoom level, which is the point — and each leaf carries the
+# route to the people who wrote it, because a map you cannot act on is a diagram.
+# The mapping the user of this section actually needs: from THEIR vocabulary to OUR argument,
+# by a published rule rather than an editor's intuition. A row fires when a piece uses any of
+# the terms; it claims only that the piece uses those words and that we have written about
+# them. It does not claim the author would agree with us.
+OUR_ARGUMENT = [
+    ("provenance", ["evidence", "verification", "source", "trust", "facts"],
+     "../provenance/index.html", "Provenance is the product",
+     "A claim is only as good as the chain a reader can walk back from it. The corpus asks "
+     "the public to trust journalism; this is the mechanism by which they could check it "
+     "instead."),
+    ("corrections", ["misinformation", "disinformation", "propaganda", "truth"],
+     "../corrections/index.html", "Corrections must propagate",
+     "A correction that never reaches what it disproved is not a correction. Nobody in the "
+     "corpus proposes a mechanism for this, and it is the one that would matter most."),
+    ("economics", ["funding", "subscription", "advertising", "business model", "copyright",
+                    "licence", "ownership"],
+     "../economics/index.html", "Paying the fact creator",
+     "You cannot be paid for a fact whose provenance nobody can check, and you cannot license "
+     "what you have not made machine-readable."),
+    ("graph", ["platform", "algorithm", "artificial intelligence", "audience", "reader"],
+     "../thesis/index.html", "The thesis: sell the graph",
+     "A story is a graph and an article is one projection of it. If a model is going to read "
+     "your work anyway, the question is what it reads and on what terms."),
+    ("rights", ["public interest", "public service", "infrastructure", "independence",
+                 "accountability", "transparency"],
+     "../rights/index.html", "Content rights: CC-Signed",
+     "A licence with a name, a signature and a machine-readable statement — which is exactly "
+     "what these twenty-one pieces do not have."),
+    ("safety", ["censorship", "exile", "safety", "impunity", "press freedom"],
+     "../network/index.html", "The network: sibling boundaries",
+     "Work done under threat needs infrastructure that survives its authors losing access to "
+     "it. An encrypted, hashed, portable vault is one answer."),
+]
+
+
+def our_argument_for(terms_used):
+    out = []
+    for key, terms, href, label, why in OUR_ARGUMENT:
+        hit = sorted(set(terms) & set(terms_used))
+        if hit:
+            out.append((key, hit, href, label, why))
+    return out
+
+
+TYPE_COLOUR = {"assertion": "#5c5f66", "hypothesis": "#7c3aed", "quantified": "#0f766e",
+               "evaluation": "#b45309", "question": "#1d4ed8", "attribution": "#0369a1",
+               "proposal": "#b91c1c"}
+
+
+def claim_profile(rows, total_rows):
+    """A piece's shape, beside the corpus's. The comparison is the useful part: 'mostly
+    assertions' means nothing until you know that the corpus is 77% assertions."""
+    n = len(rows) or 1
+    cn = len(total_rows) or 1
+    out = []
+    for r in CLAIM_RULES["rules"]:
+        k = r["id"]
+        mine = sum(1 for c in rows if c["type"] == k)
+        corp = sum(1 for c in total_rows if c["type"] == k)
+        out.append((k, r["label"], mine, round(100 * mine / n), round(100 * corp / cn),
+                    r["means"]))
+    return out
+
+
+def build_pieces():
+    up = "../"
+    by_slug = art_by_slug()
+    claims_by = {}
+    for c in CLAIMS["claims"]:
+        claims_by.setdefault(c["article"], []).append(c)
+    aff = {r["author"]: r for r in AFFILIATIONS["people"]}
+    org_rows = {o["org"]: o for o in CONTACTS["organisations"]}
+    term_articles = {x["term"]: set(x["in"]) for x in TERMS["terms"]}
+    built = []
+
+    for a in sorted(CORPUS["articles"], key=lambda x: x["order_in_announcement"]):
+        slug = a["slug"]
+        rows = claims_by.get(slug, [])
+        prof = claim_profile(rows, CLAIMS["claims"])
+        profile_rows = "".join(
+            f'<tr><td><span style="display:inline-block;width:.6em;height:.6em;border-radius:50%;'
+            f'background:{TYPE_COLOUR.get(k, "#8a8d94")};margin-right:.45em"></span>{esc(label)}</td>'
+            f'<td style="font-family:var(--mono)">{mine}</td>'
+            f'<td style="font-family:var(--mono)">{pct}%</td>'
+            f'<td class="small dim" style="font-family:var(--mono)">{cpct}%</td>'
+            f'<td class="small dim">{esc(means)}</td></tr>'
+            for k, label, mine, pct, cpct, means in prof)
+
+        def term_links(xs):
+            return ", ".join(
+                f'<a href="{up}terms.html#{esc(x.replace(" ", "-"))}">{esc(x)}</a>' for x in xs)
+
+        def claim_row(c):
+            col = TYPE_COLOUR.get(c["type"], "#8a8d94")
+            return (f'<tr><td style="font-family:var(--mono);color:var(--dim2)">{c["n"]}</td>'
+                    f'<td><span class="pill" style="color:{col};border:1px solid {col}55">'
+                    f'{esc(c["type"])}</span></td>'
+                    f'<td class="small">&ldquo;{esc(c["anchor"])}&hellip;&rdquo;</td>'
+                    f'<td class="small dim">{term_links(c["terms"])}</td></tr>')
+
+        crows = "".join(claim_row(c) for c in rows)
+
+        who = []
+        for b in a["byline"]:
+            r = aff.get(b, {})
+            orgs = r.get("organisations", [])
+            routes = []
+            for o in orgs:
+                row = org_rows.get(o, {})
+                if row.get("addresses"):
+                    routes.append(f'<a href="mailto:{esc(row["addresses"][0])}">{esc(row["addresses"][0])}</a>')
+                elif row.get("contact_page"):
+                    routes.append(f'<a href="{esc(row["contact_page"])}">{esc(o)} contact page</a>')
+                for li in row.get("linkedin", []):
+                    routes.append(f'<a href="{esc(li)}">{esc(o)} on LinkedIn</a>')
+            who.append(
+                f'<div class="op"><b>{esc(b)}</b>'
+                f'<p class="small">{esc(r.get("role_as_printed", ""))}</p>'
+                + (f'<p class="small">Route: {" &middot; ".join(routes)}</p>' if routes else
+                   '<p class="small dim">No published route to this organisation. '
+                   f'<a href="{up}contacts.html">Why &rarr;</a></p>')
+                + "</div>")
+
+        th = themes_of(slug)
+        shared = sorted(
+            ((x, sorted(term_articles[x] - {slug})) for x in {t for c in rows for t in c["terms"]}
+             if len(term_articles.get(x, set())) > 1),
+            key=lambda r: -len(r[1]))[:12]
+        shared_html = "".join(
+            f'<li><a href="{up}terms.html#{esc(x.replace(" ", "-"))}"><b>{esc(x)}</b></a> '
+            f'<span class="dim small">&mdash; also in {len(others)} other piece'
+            f'{"s" if len(others) != 1 else ""}: '
+            + ", ".join(f'<a href="{esc(o)}.html">{esc(by_slug[o]["title"][:38])}</a>' for o in others[:4])
+            + ("&hellip;" if len(others) > 4 else "") + "</span></li>"
+            for x, others in shared)
+
+        used = {x for c in rows for x in c["terms"]}
+        mapping_html = "".join(
+            f'<div class="op" style="border-left-color:#0f766e"><b>{esc(label)}</b>'
+            f'<p>{esc(why)}</p>'
+            f'<p class="small dim">Because this piece uses: {", ".join(esc(h) for h in hit)}. '
+            f'<a href="{up}{href}">Read it &rarr;</a></p></div>'
+            for key, hit, href, label, why in our_argument_for(used))
+        if mapping_html:
+            mapping_html = f'<div class="ops">{mapping_html}</div>'
+
+        links = ("".join(f'<li><a href="{esc(l)}">{esc(l)}</a></li>' for l in a["outbound_links"])
+                 or '<li class="dim">Nothing. This piece offers its reader no link to follow.</li>')
+
+        body = f"""{masthead("", up)}
+<p class="eyebrow">Piece {a["order_in_announcement"]} of {CORPUS["count"]} &middot; World News Day 2026</p>
+<h1>{esc(a["title"])}</h1>
+<p class="lead">{len(rows)} sentences, typed by <a href="{up}method.html#claims">a published
+formula</a> and anchored to bytes we hold. <b>The piece itself is not here</b> &mdash;
+<a href="{esc(a["url"])}">read it at worldnewsday.org</a>, where its authors put it.</p>
+<p class="small dim">Published {esc(a["published"][:10])} &middot; {a["words"]:,} words &middot;
+frozen copy <a href="{up}sources/frozen/{esc(LATEST)}/{esc(slug)}.snapshot">as served</a> and
+<a href="{up}sources/frozen/{esc(LATEST)}/api/{esc(slug)}.json">as the publisher's API returns
+it</a> &middot; SHA-256 <code>{esc(SRC[a["source_page"]]["sha256"][:24])}&hellip;</code></p>
+
+{disclaimer(up)}
+
+<h2 id="who">Who wrote it</h2>
+<div class="ops">{"".join(who)}</div>
+
+<h2 id="shape">What the piece does</h2>
+<p>Each sentence is classified by the first pattern that matches it, in published order. A
+type says <em>this sentence has this shape</em> &mdash; not that it is true, not that the
+author believes it, and an evaluation is not an accusation: an op-ed is supposed to evaluate.
+The corpus column is what makes the piece column mean anything.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Shape</th><th>Here</th><th>Share</th><th>Corpus</th><th>What the type means</th></tr></thead>
+<tbody>{profile_rows}</tbody></table></div>
+
+<h2 id="terms">Where it touches the rest</h2>
+<p>The vocabulary this piece shares with pieces that never cite it. This is the connective
+tissue of the corpus: twenty-one arguments that arrive at the same words independently.</p>
+<ul>{shared_html or '<li class="dim">No vocabulary shared with another piece.</li>'}</ul>
+<p class="small dim">Themes, from the separate theme lexicon:
+{", ".join(esc(x) for x, _ in th) or "none"}.</p>
+
+<h2 id="ours">What this connects to in our own argument</h2>
+<p class="small dim">By a published rule over the words the piece uses &mdash; a row appears
+because the piece uses those terms and we have written about them. It does not claim the
+author would agree with us, and several of them would not.</p>
+{mapping_html or '<p class="dim">Nothing in our published argument touches this piece&rsquo;s vocabulary.</p>'}
+
+<h2 id="evidence">What it offers the reader</h2>
+<ul>{links}</ul>
+
+<h2 id="claims">Every sentence</h2>
+<p class="small dim">An anchor is at most {CLAIMS["anchor_limit_words"]} words, verbatim, so
+you can find the sentence in the original. The sentence itself is not stored here, and the
+build fails if twelve consecutive words of this piece appear on any page we generate.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>#</th><th>Shape</th><th>Anchor</th><th>Terms</th></tr></thead>
+<tbody>{crows}</tbody></table></div>
+
+{agent_block(
+    'This page is a projection of <code>' + up + 'data/claims.json</code> (filter by '
+    '<code>article == "' + slug + '"</code>), <code>' + up + 'data/corpus.json</code> and '
+    '<code>' + up + 'data/terms.json</code>. Each claim carries a type from a published '
+    'formula, an offset into the frozen prose and an anchor of at most '
+    + str(CLAIMS["anchor_limit_words"]) + ' words. <b>The article text is in none of them</b> '
+    '— follow <code>url</code> to the publisher. A claim type is a statement about the SHAPE '
+    'of a sentence and about nothing else.')}
+"""
+        built.append(write(f"pieces/{slug}.html", page(
+            f"pieces/{slug}.html", a["title"],
+            f'{a["title"]} — {len(rows)} sentences typed and anchored, who wrote it, what it '
+            "cites, and the vocabulary it shares with the other twenty.",
+            body, f'<a href="{up}../index.html">newsroom.sgit.ai</a> / '
+                  f'<a href="{up}index.html">world news day</a> / piece {a["order_in_announcement"]}')))
+    return built
+
+
+# ------------------------------------------------------------------ terms ---
+def build_terms():
+    by_slug = art_by_slug()
+
+    def defined_cell(x):
+        if not x["defined_in"]:
+            return '<span class="dim">&mdash;</span>'
+        return "yes &mdash; " + ", ".join(esc(s[:22]) for s in x["defined_in"])
+
+    rows = "".join(
+        f'<tr id="{esc(x["term"].replace(" ", "-"))}"><td><b>{esc(x["term"])}</b></td>'
+        f'<td style="font-family:var(--mono)">{x["articles"]}</td>'
+        f'<td style="font-family:var(--mono)" class="dim">{x["occurrences"]}</td>'
+        f'<td class="small">'
+        + ", ".join(f'<a href="pieces/{esc(s)}.html">{esc(by_slug[s]["title"][:34])}</a>' for s in x["in"][:6])
+        + ("&hellip;" if len(x["in"]) > 6 else "")
+        + "</td>"
+        f'<td class="small">{defined_cell(x)}</td></tr>'
+        for x in sorted(TERMS["terms"], key=lambda r: (-r["articles"], -r["occurrences"])))
+
+    D = TERMS["the_definition_rule_and_what_it_cost"]
+    div = "".join(
+        f'<div class="note" style="border-left-color:{"#b45309" if d["same_author"] else "#b91c1c"}">'
+        f'<p style="margin-top:0"><b>{esc(d["term"])}</b> &mdash; said by {len(d["articles"])} pieces. '
+        f'{esc(d["note"])}</p>'
+        + "".join(f'<p class="small">&ldquo;{esc(x["says_it"])} {esc(x["anchor"])}&hellip;&rdquo; '
+                  f'&mdash; <a href="pieces/{esc(x["article"])}.html">{esc(by_slug[x["article"]]["title"][:52])}</a></p>'
+                  for x in d["definitions"])
+        + "</div>"
+        for d in TERMS["defined_by_more_than_one_piece"]) or         '<p class="dim">None.</p>'
+
+    body = f"""{masthead("terms.html")}
+<h1>The vocabulary</h1>
+<p class="lead">{TERMS["counts"]["terms_used_at_all"]} words the corpus argues about,
+{TERMS["counts"]["terms_shared_by_more_than_one_piece"]} of them used by more than one piece
+&mdash; and <b>{TERMS["counts"]["definitions_found"]} places in
+{CLAIMS["counts"]["claims"]:,} sentences where anybody says what one of them means</b>.</p>
+
+{disclaimer()}
+
+<div class="claim">{esc(TERMS["the_finding"])}</div>
+
+<h2 id="rule">The rule, and what it cost</h2>
+<p>A first version of the definition rule matched the pattern anywhere in a sentence and found
+{D["loose"]}. It also read <em>&ldquo;the decline of local news is a global phenomenon&rdquo;</em>
+as that piece defining <b>local news</b> as a phenomenon eroding democracies &mdash; which is
+not what the author wrote, and printing it beside another author&rsquo;s definition would have
+misrepresented them both.</p>
+<p>So the rule now requires the term to be the <b>subject of its own sentence</b>, and finds
+{D["strict"]}. <b>{D["loose"] - D["strict"]} apparent definitions were given up</b> to avoid
+putting words in people&rsquo;s mouths. A looser rule would have produced a richer page and a
+worse one, and both numbers are published so you can judge the trade rather than take it.</p>
+
+<h2 id="divergence">Where two pieces say what the same word means</h2>
+{div}
+<p class="small dim">{esc(TERMS["what_a_divergence_is_not"])} Whose byline matters: the same
+author writing twice is a repetition, not a disagreement, and the gate checks that label
+against the bylines rather than trusting it.</p>
+
+<h2 id="all">Every term</h2>
+<p class="small dim">A term is counted where it appears as a word and nothing more is claimed.
+The patterns are in <a href="data/claim-rules.json"><code>data/claim-rules.json</code></a>.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Term</th><th>Pieces</th><th>Uses</th><th>Where</th><th>Anyone say what it means?</th></tr></thead>
+<tbody>{rows}</tbody></table></div>
+{f'<p class="small dim">In the vocabulary and used by nobody: {", ".join(esc(u) for u in TERMS["unused"])}.</p>' if TERMS["unused"] else ""}
+
+{agent_block(
+    'Fetch <code>data/terms.json</code> and <code>data/claims.json</code>. The first carries '
+    'every term with the pieces that use it, the pieces that define it, and the divergences '
+    'with the byline test applied; the second carries all '
+    + f'{CLAIMS["counts"]["claims"]:,}' + ' sentences typed and anchored. '
+    '<b>A term count says a word appears</b> — it is not a topic model and it is not a claim '
+    'about what anybody meant.')}
+"""
+    return write("terms.html", page(
+        "terms.html", "The vocabulary",
+        "The words twenty-one op-eds argue about, where each is used, and the four places in "
+        "1,070 sentences where anybody says what one of them means.",
+        body, '<a href="../index.html">newsroom.sgit.ai</a> / '
+              '<a href="index.html">world news day</a> / the vocabulary'))
+
+
 def main():
     stamped = stamp_llms()
     built = [build_index(), build_licences(), build_corpus(), build_findings(),
              build_graph_page(), build_sources(), build_contacts(), build_vault(),
-             build_method(), build_story()]
+             build_method(), build_story(), build_terms()] + build_pieces()
     print(f"world-news-day: {len(built)} pages"
           + (f" (+ {stamped} restamped)" if stamped else ""))
     for b in built:
