@@ -1,0 +1,458 @@
+#!/usr/bin/env python3
+"""world-news-day/ — the section gate.
+
+    python3 world-news-day/build/gates.py
+
+Runs before the whole-site gate (`node admin/build/validate.js`), which this section must
+also pass.
+
+This section is different from every other one on the site in a way the gate has to answer
+for. /portugal/ publishes claims about people from pages those people's event published.
+Here we hold 21 complete opinion pieces, written by named editors at named organisations,
+under a permission that is prose rather than a licence. The whole value of the section is
+that it says, with evidence, what that permission is and is not — so the two things that
+would destroy it are:
+
+  1. **republishing the prose** while arguing that the terms for republishing are unclear, and
+  2. **overstating the finding** — saying "no licence" where the bytes say "a prose permission
+     naming no licence", or reporting a count we did not re-derive.
+
+Every check below exists for one of those two. The counts on the licence page are re-derived
+here from the frozen bytes rather than read from the JSON that the page was built from, so a
+number can never be published that the evidence does not produce twice.
+"""
+import hashlib
+import html as _html
+import json
+import re
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[2]
+SEC = ROOT / "world-news-day"
+DATA = SEC / "data"
+
+errors = []
+
+
+def load(n):
+    return json.loads((DATA / n).read_text(encoding="utf-8"))
+
+
+register = load("register.json")
+corpus = load("corpus.json")
+licences = load("licences.json")
+ontology = load("ontology.json")
+graph = load("graph.json")
+lexicon = load("lexicon.json")
+affiliations = load("affiliations.json")
+manifest = load("manifest.json")
+
+LATEST = register["snapshots"][-1]
+src_by_id = {s["id"]: s for s in register["sources"]}
+
+# Our own pages only. The frozen copies are somebody else's bytes held as evidence; they
+# carry no house chrome and never will, and they are stored with a .snapshot extension so
+# they are neither served nor indexed as pages of this site.
+pages = sorted(p for p in SEC.rglob("*.html") if "sources/frozen/" not in p.as_posix())
+
+
+def api_rec(slug):
+    f = SEC / "sources" / "frozen" / LATEST / "api" / f"{slug}.json"
+    return json.loads(f.read_text(encoding="utf-8"))[0]
+
+
+def prose(rec):
+    """The article's own words, minus the permission statement. Must match graph.py exactly,
+    or a theme edge re-derives against different text than it was derived from."""
+    body = " ".join(_html.unescape(re.sub(r"<[^>]+>", " ", rec["content"]["rendered"])).split())
+    cut = body.find("This opinion piece was commissioned")
+    return body[:cut] if cut > 0 else body
+
+
+# --- 1. every frozen file still hashes to what the register says ------------------
+# The section rests on this. If a frozen copy has been edited, moved or lost, every count
+# on the licence page is unsupported and the build must not ship.
+for s in register["sources"]:
+    f = SEC / s["frozen"]
+    if not f.exists():
+        errors.append(f'register: {s["id"]} names a frozen copy that is missing: {s["frozen"]}')
+        continue
+    actual = hashlib.sha256(f.read_bytes()).hexdigest()
+    if actual != s["sha256"]:
+        errors.append(f'register: {s["frozen"]} no longer hashes to its registered SHA-256 '
+                      f'(registered {s["sha256"][:16]}…, actual {actual[:16]}…) — the frozen copy '
+                      f'was modified, which breaks every claim resting on it')
+    if s["bytes"] != f.stat().st_size:
+        errors.append(f'register: {s["id"]} records {s["bytes"]} bytes, the file is {f.stat().st_size}')
+if register["count"] != len(register["sources"]):
+    errors.append("register: count disagrees with the list")
+
+# --- 2. the page that could not be fetched is recorded as excluded, not as a source ----
+# The announcement is the page that grants the permission and the one page in the beat an
+# automated reader could not read. That is a finding, and a finding is published, not tidied
+# away — but it must never appear as though we hold bytes for it.
+excluded_urls = {x["url"] for x in register.get("excluded", [])}
+if not excluded_urls:
+    errors.append("register: nothing is recorded as excluded, but the announcement could not "
+                  "be fetched — the refusal is a finding and must stay on the record")
+for x in register.get("excluded", []):
+    if not x.get("why"):
+        errors.append(f'register: excluded "{x["id"]}" gives no reason')
+    if any(s["url"] == x["url"] for s in register["sources"]):
+        errors.append(f'register: "{x["id"]}" is both excluded and registered as held')
+
+# --- 3. every article traces to two frozen files that are in the register -------------
+for a in corpus["articles"]:
+    for key in ("source_page", "source_api"):
+        if a[key] not in src_by_id:
+            errors.append(f'corpus: "{a["slug"]}" names {key} "{a[key]}", which is not registered')
+if corpus["count"] != len(corpus["articles"]):
+    errors.append("corpus: count disagrees with the list")
+if corpus["total_words"] != sum(a["words"] for a in corpus["articles"]):
+    errors.append("corpus: total_words disagrees with the articles")
+if len({a["slug"] for a in corpus["articles"]}) != len(corpus["articles"]):
+    errors.append("corpus: two articles share a slug")
+if sorted(a["order_in_announcement"] for a in corpus["articles"]) != list(range(1, len(corpus["articles"]) + 1)):
+    errors.append("corpus: the announcement order is not a clean 1..n — that order is data and "
+                  "must survive the extractor intact")
+
+# --- 4. the prose is NOT republished ------------------------------------------------
+# The section's whole posture. We hold 21 complete opinion pieces and publish none of them.
+# Checked where it can actually be enforced: against our own generated pages, by taking
+# runs of words from each frozen article and looking for them. A 12-word run is long enough
+# that a coincidence is implausible and short enough to catch a paragraph lifted "as an
+# illustration". The permission statement itself is exempt: quoting the terms verbatim is
+# the finding, and a reader cannot check our reading of them against anything else.
+RUN = 12
+permission_words = set()
+for v in licences["the_statement"]:
+    permission_words.add(" ".join(v["text"].lower().split()))
+permission_words.add(" ".join(licences["the_two_statements"]["on_the_announcement"].lower().split()))
+page_text = {p: " ".join(re.sub(r"<[^>]+>", " ", p.read_text(encoding="utf-8")).lower().split())
+             for p in pages}
+for a in corpus["articles"]:
+    words = prose(api_rec(a["slug"])).lower().split()
+    runs = [" ".join(words[i:i + RUN]) for i in range(0, max(1, len(words) - RUN), 7)]
+    for p, t in page_text.items():
+        for r in runs:
+            if r and r in t and not any(r in perm for perm in permission_words):
+                errors.append(f'{p.relative_to(ROOT)}: reproduces {RUN} consecutive words of '
+                              f'"{a["title"]}" ("{r[:60]}…") — this section links to the pieces '
+                              f'and republishes none of them')
+                break
+# and nothing long leaks into the data either: a node carrying a paragraph is a reproduction
+# with extra steps. The licence statement and the author's own role line are the two fields
+# that are quoted on purpose, and both are bounded.
+for a in corpus["articles"]:
+    for k, v in a.items():
+        if not isinstance(v, str):
+            continue
+        cap = {"licence_statement": 400, "bio_line": 500}.get(k, 200)
+        if len(v) > cap:
+            errors.append(f'corpus: "{a["slug"]}" field "{k}" is {len(v)} chars (cap {cap}) — '
+                          f'the corpus records what a piece IS, never what it says')
+
+# --- 5. the permission statement is in the bytes, verbatim ----------------------------
+# Every claim on the licence page is a claim about this sentence. It is quoted, so it is
+# checked against the article it is quoted from, one article at a time.
+for a in corpus["articles"]:
+    rec = api_rec(a["slug"])
+    body = " ".join(_html.unescape(re.sub(r"<[^>]+>", " ", rec["content"]["rendered"])).split())
+    if a["licence_statement"] and a["licence_statement"] not in body:
+        errors.append(f'corpus: the permission statement recorded for "{a["slug"]}" is not in '
+                      f'its frozen bytes verbatim — the quotation drifted')
+    if not a["licence_statement"]:
+        errors.append(f'corpus: "{a["slug"]}" carries no permission statement, but the section '
+                      f'claims all {corpus["count"]} do')
+variants = {" ".join(a["licence_statement"].split()) for a in corpus["articles"]}
+if len(variants) != licences["counts"]["distinct_prose_statements"]:
+    errors.append(f'licences: counts.distinct_prose_statements says '
+                  f'{licences["counts"]["distinct_prose_statements"]}, the bytes give {len(variants)}')
+for v in licences["the_statement"]:
+    got = sum(1 for a in corpus["articles"] if " ".join(a["licence_statement"].split()) == " ".join(v["text"].split()))
+    if got != v["articles"]:
+        errors.append(f'licences: variant {v["variant"]} is claimed on {v["articles"]} articles, '
+                      f'the bytes give {got}')
+
+# --- 6. every licence count re-derives from the frozen HTML ---------------------------
+# Not read back from the JSON the page was built from — re-derived here, from the bytes, by
+# a second implementation. A published number that only one program can produce is an
+# assertion; a number two programs produce from the same bytes is a finding.
+CC = re.compile(r"creativecommons\.org|creative commons|\bCC[ -]?BY\b", re.I)
+RELLIC = re.compile(r'rel=["\'][^"\']*\blicense\b', re.I)
+COPYR = re.compile(r"All Rights Reserved|©\s*20\d\d|&copy;\s*20\d\d|\(c\)\s*20\d\d", re.I)
+LDJSON = re.compile(r'<script[^>]+type=["\']application/ld\+json["\']', re.I)
+recount = {"creativecommons": 0, "rel_license": 0, "copyright_notice": 0, "ld_json": 0,
+           "ld_json_licence": 0}
+for a in corpus["articles"]:
+    t = (SEC / "sources" / "frozen" / a["source_page"]).read_text(encoding="utf-8", errors="replace")
+    if CC.search(t):
+        recount["creativecommons"] += 1
+    if RELLIC.search(t):
+        recount["rel_license"] += 1
+    if COPYR.search(t):
+        recount["copyright_notice"] += 1
+    if LDJSON.search(t):
+        recount["ld_json"] += 1
+    for blk in re.findall(r'<script[^>]+application/ld\+json[^>]*>(.*?)</script>', t, re.S | re.I):
+        if re.search(r'"(license|usageInfo|copyrightNotice)"\s*:', blk):
+            recount["ld_json_licence"] += 1
+            break
+C = licences["counts"]
+for key, claimed, label in [
+    ("creativecommons", C["carrying_a_creative_commons_reference"], "a Creative Commons reference"),
+    ("rel_license", C["carrying_rel_license"], 'rel="license"'),
+    ("copyright_notice", C["carrying_a_copyright_notice"], "a copyright notice"),
+    ("ld_json", C["with_ld_json"], "JSON-LD"),
+    ("ld_json_licence", C["whose_ld_json_declares_a_licence"], "a licence field in its JSON-LD"),
+]:
+    if recount[key] != claimed:
+        errors.append(f'licences: the page says {claimed} of {corpus["count"]} carry {label}; '
+                      f're-deriving from the frozen HTML gives {recount[key]}')
+if C["articles"] != corpus["count"] or C["carrying_a_prose_permission"] != corpus["count"]:
+    errors.append("licences: the article counts disagree with the corpus")
+if C["carrying_a_named_public_licence"] != 0 and not licences.get("named_licence_evidence"):
+    errors.append("licences: a named public licence is claimed with nothing pointing at it")
+# The finding is "no formal licence", never "no permission". Saying the second would be
+# false and would misrepresent an organisation that did in fact grant one.
+for p in pages:
+    t = " ".join(re.sub(r"<[^>]+>", " ", p.read_text(encoding="utf-8")).split())
+    m = re.search(r"\b(no permission to republish|cannot be republished|not free to republish|"
+                  r"refuse[sd]? permission)\b", t, re.I)
+    if m:
+        errors.append(f'{p.relative_to(ROOT)}: says "{m.group(0)}" — the permission is real and '
+                      f'generous; the finding is about its FORM, not its existence')
+
+# --- 7. every theme edge re-derives from the frozen bytes, in both directions ----------
+# The one classification this section makes rather than reads. The published pattern is run
+# again on the frozen prose: no match, no edge; every match, an edge. A theme that survives
+# only because it is in the JSON is an opinion with a node id.
+LEX = {e["id"]: e for e in lexicon["entries"]}
+gnode = {n["id"]: n for n in graph["nodes"]}
+theme_edges = [e for e in graph["edges"] if e["verb"] == "touches"]
+for e in theme_edges:
+    tn = gnode.get(e["target"])
+    if not tn or tn.get("lexicon") not in LEX:
+        errors.append(f'themes: edge {e["id"]} points at a node with no lexicon entry')
+        continue
+    if not e.get("matched"):
+        errors.append(f'themes: edge {e["id"]} carries no matched words — a derived edge must '
+                      f'show the words it is derived from')
+for a in corpus["articles"]:
+    aid = "article:" + a["slug"]
+    body = prose(api_rec(a["slug"]))
+    have = {gnode[e["target"]]["lexicon"] for e in theme_edges if e["source"] == aid}
+    for lid, le in LEX.items():
+        hit = re.search(le["pattern"], body, re.I)
+        if hit and lid not in have:
+            errors.append(f'themes: lexicon "{lid}" matches "{a["slug"]}" and the graph has no '
+                          f'edge — a theme left out by hand')
+        if not hit and lid in have:
+            errors.append(f'themes: the graph gives "{a["slug"]}" theme "{lid}" and the pattern '
+                          f'does not match its frozen prose — the edge would be invented')
+for e in lexicon["entries"]:
+    try:
+        re.compile(e["pattern"])
+    except re.error as ex:
+        errors.append(f'lexicon: "{e["id"]}" is not a valid pattern: {ex}')
+    if not e.get("note") and not lexicon.get("note"):
+        errors.append(f'lexicon: "{e["id"]}" has no note saying what a match does and does not mean')
+
+# --- 8. the graph conforms to its ontology --------------------------------------------
+# Inherited grammar: every edge is a verb with a distinct named inverse, every verb carries
+# a pt form, no banned verb is in use, every node is a declared type and names a frozen
+# source. A plausible edge is indistinguishable from a true one once it is in the file.
+verbs = {e["verb"] for e in ontology["edges"]}
+inverses = {e["inverse"] for e in ontology["edges"]}
+banned = {b["verb"] for b in ontology["banned"]}
+types = {t["id"] for t in ontology["node_types"]}
+for e in ontology["edges"]:
+    if e["verb"] == e["inverse"]:
+        errors.append(f'ontology: "{e["verb"]}" is its own inverse — symmetric edges are banned')
+    if not e.get("pt", {}).get("verb") or not e.get("pt", {}).get("inverse"):
+        errors.append(f'ontology: "{e["verb"]}" has no Portuguese — every verb carries pt from '
+                      f'day one, or the vocabulary does not travel to pt.newsroom')
+    if e["verb"] in banned:
+        errors.append(f'ontology: "{e["verb"]}" is both declared and banned')
+    if e["domain"] not in types or e["range"] not in types:
+        errors.append(f'ontology: "{e["verb"]}" has a domain or range that is not a declared type')
+for t in ontology["node_types"]:
+    if not t.get("pt"):
+        errors.append(f'ontology: type "{t["id"]}" has no Portuguese label')
+    if not t.get("definition"):
+        errors.append(f'ontology: type "{t["id"]}" has no definition — an undefined type is a colour')
+if len(inverses) != len(ontology["edges"]):
+    errors.append("ontology: two verbs share an inverse")
+domain_range = {(e["verb"], e["domain"], e["range"]) for e in ontology["edges"]}
+for n in graph["nodes"]:
+    if n["type"] not in types:
+        errors.append(f'graph: node {n["id"]} has unknown type "{n["type"]}"')
+    if not n.get("source"):
+        errors.append(f'graph: node {n["id"]} names no source — a node with no way back to bytes '
+                      f'is a drawing')
+    elif n["source"] not in src_by_id:
+        errors.append(f'graph: node {n["id"]} names source "{n["source"]}", which is not registered')
+for e in graph["edges"]:
+    if e["verb"] in banned:
+        errors.append(f'graph: banned verb "{e["verb"]}" is in use')
+    elif e["verb"] not in verbs:
+        hint = " (that is an inverse; edges are stored forwards)" if e["verb"] in inverses else ""
+        errors.append(f'graph: edge verb "{e["verb"]}" is not in the ontology{hint}')
+    if e["source"] not in gnode or e["target"] not in gnode:
+        errors.append(f'graph: edge {e["id"]} has an endpoint that is not a node')
+    elif e["verb"] in verbs and \
+            (e["verb"], gnode[e["source"]]["type"], gnode[e["target"]]["type"]) not in domain_range:
+        errors.append(f'graph: {e["verb"]} from {gnode[e["source"]]["type"]} to '
+                      f'{gnode[e["target"]]["type"]} is outside the verb\'s declared domain/range')
+if graph["counts"]["nodes"] != len(graph["nodes"]) or graph["counts"]["edges"] != len(graph["edges"]):
+    errors.append("graph: counts disagree with the lists")
+for pk in graph["packs"]:
+    if pk["nodes"] != sum(1 for n in graph["nodes"] if n["pack"] == pk["id"]):
+        errors.append(f'graph: pack "{pk["id"]}" node count is stale')
+    if pk["edges"] != sum(1 for e in graph["edges"] if e["pack"] == pk["id"]):
+        errors.append(f'graph: pack "{pk["id"]}" edge count is stale')
+# every article in the corpus is in the graph, and every Article node is in the corpus
+slugs = {a["slug"] for a in corpus["articles"]}
+gart = {n["id"].split(":", 1)[1] for n in graph["nodes"] if n["type"] == "Article"}
+if gart != slugs:
+    errors.append("graph: the Article nodes are not exactly the corpus — "
+                  f'{sorted(gart - slugs) or sorted(slugs - gart)}')
+
+# --- 9. nobody is given an opinion they did not write ----------------------------------
+# The banned verb that is specific to this corpus. Two pieces touching the same theme is not
+# agreement, and this section will not put words in a named editor's mouth. Checked on the
+# pages as well as in the graph, because the sentence is the more likely place for it.
+AGREE = re.compile(r"\b(agree[s]? with|endorses|backs|sides with|shares the view of|"
+                   r"aligned with|in agreement with)\b", re.I)
+for p in pages:
+    t = " ".join(re.sub(r"<[^>]+>", " ", p.read_text(encoding="utf-8")).split())
+    for m in AGREE.finditer(t):
+        window = t[max(0, m.start() - 120):m.start()].lower()
+        if "banned" in window or "does not" in window or "we do not" in window or "never" in window:
+            continue
+        errors.append(f'{p.relative_to(ROOT)}: "{m.group(0)}" — an alignment claim about a named '
+                      f'author. This section reports shared vocabulary and nothing further')
+        break
+
+# --- 10. authors and organisations come from the pieces, not from anywhere else ---------
+# Every Author node is a byline the piece printed; every Organisation an author's own role
+# line named. The gate re-reads the bylines rather than trusting the node list.
+bylines = set()
+for a in corpus["articles"]:
+    for b in a["byline"]:
+        bylines.add(b)
+for n in graph["nodes"]:
+    if n["type"] == "Author" and n["label"] not in bylines:
+        errors.append(f'graph: author "{n["label"]}" is not a byline on any article in the corpus')
+    if n["type"] == "Organisation" and not n.get("derived_from") and n["id"] != "org:world-news-day":
+        errors.append(f'graph: organisation {n["id"]} does not say where it came from')
+
+# --- 10b. every affiliation is a transcription that survives being checked ---------------
+# This is the one place in the section where a human wrote something down rather than a
+# program deriving it, and the reason is on the file: derivation produced an Author who works
+# at "Philippines". A transcription is a claim, so it is checked against the bytes it claims
+# to come from, in both directions, one line at a time.
+bio_of = {a["slug"]: a["bio_line"] or "" for a in corpus["articles"]}
+aff_by_id = {}
+for r in affiliations["people"]:
+    aff_by_id[r["id"]] = r
+    if r["author"] not in bylines:
+        errors.append(f'affiliations: "{r["author"]}" is not a byline anywhere in the corpus')
+    if r["stated_in"] not in bio_of:
+        errors.append(f'affiliations: "{r["author"]}" cites article "{r["stated_in"]}", which is not in the corpus')
+        continue
+    if r["role_as_printed"] not in bio_of[r["stated_in"]]:
+        errors.append(f'affiliations: the role line transcribed for "{r["author"]}" is not in '
+                      f'{r["stated_in"]} verbatim — the transcription drifted from the bytes')
+    for org in r["organisations"]:
+        if org not in r["role_as_printed"]:
+            errors.append(f'affiliations: "{org}" is not inside the role line printed for '
+                          f'"{r["author"]}" — an organisation may only come from that line')
+    if not r["organisations"] and not r.get("no_current_organisation_named"):
+        errors.append(f'affiliations: "{r["author"]}" has no organisation and no reason given')
+if affiliations["count"] != len(affiliations["people"]):
+    errors.append("affiliations: count disagrees with the list")
+if {p["id"] for p in affiliations["people"]} != {n["id"] for n in graph["nodes"] if n["type"] == "Author"}:
+    errors.append("affiliations: the file and the graph do not name the same authors")
+# and the graph holds exactly the edges the file states — no more, no fewer
+stated = {(r["id"], "org:" + re.sub(r"[^a-z0-9]+", "-", o.lower()).strip("-"))
+          for r in affiliations["people"] for o in r["organisations"]}
+built = {(e["source"], e["target"]) for e in graph["edges"] if e["verb"] == "affiliated_to"}
+if stated != built:
+    errors.append(f'affiliations: the graph\'s affiliated_to edges are not the transcription — '
+                  f'{sorted(built - stated) or sorted(stated - built)}')
+
+# --- 10c. the structured author field is counted, not assumed --------------------------
+def _surnames(s):
+    if not s:
+        return set()
+    return {x.strip(" ,.").split()[-1].lower()
+            for x in re.split(r",| and |&", s.replace("\u00a0", " ")) if x.strip(" ,.")}
+
+
+disagree = sum(1 for a in corpus["articles"]
+               if _surnames(a.get("wp_author_field")) != _surnames(", ".join(a["byline"])))
+claimed = licences["machine_readability"].get("structured_author_field_disagrees_with_the_printed_byline")
+if claimed != disagree:
+    errors.append(f'licences: the page says the structured author field disagrees with the '
+                  f'printed byline on {claimed} pieces; re-deriving gives {disagree}')
+
+# --- 11. no contact detail for any natural person reaches the data ----------------------
+# The same rule as /portugal/: enforced where the data is parsed, not where it is rendered.
+# These are 40-odd named journalists; a mail address that reaches a JSON file is one careless
+# loop away from being published, and the contacts work this section will do next belongs on
+# organisations, not on individuals.
+CONTACT = {
+    "email": re.compile(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}"),
+    "phone": re.compile(r"\+\d[\d ()‑-]{9,}\d"),
+}
+for name in ["corpus.json", "graph.json", "licences.json"]:
+    text = (DATA / name).read_text(encoding="utf-8")
+    for kind, pat in CONTACT.items():
+        m = pat.search(text)
+        if m:
+            errors.append(f'{name}: contains what looks like a personal {kind} '
+                          f'("{m.group(0)[:40]}") — refused at extraction time, not hidden at '
+                          f'render time')
+
+# --- 12. the manifest is complete and current -------------------------------------------
+for f in manifest["files"]:
+    p = SEC / f["path"]
+    if not p.exists():
+        errors.append(f'manifest: lists {f["path"]}, which does not exist')
+        continue
+    if f.get("sha256") and hashlib.sha256(p.read_bytes()).hexdigest() != f["sha256"]:
+        errors.append(f'manifest: {f["path"]} no longer hashes to its recorded SHA-256')
+if manifest["count"] != len(manifest["files"]):
+    errors.append("manifest: count disagrees with the list")
+
+# --- 13. every page states what this section is and is not -------------------------------
+REQUIRED = [
+    ("beta notice", re.compile(r"\bbeta\b", re.I)),
+    ("frozen-and-hashed statement", re.compile(r"frozen|hashed|SHA-256", re.I)),
+    ("link-not-republish statement",
+     re.compile(r"republish(?:es)? none of them|we (?:do not|don.t) republish|"
+                r"not republished here|the prose is linked, never reproduced", re.I)),
+]
+for p in pages:
+    t = p.read_text(encoding="utf-8")
+    for label, pat in REQUIRED:
+        if not pat.search(t):
+            errors.append(f'{p.relative_to(ROOT)}: missing the {label}')
+    if "worldnewsday.org" not in t and p.name != "index.html":
+        errors.append(f'{p.relative_to(ROOT)}: never names the publisher it is built from')
+
+# --- report -------------------------------------------------------------------------------
+if errors:
+    print(f"world-news-day gate: {len(errors)} error(s)")
+    for e in errors:
+        print("  ✗", e)
+    sys.exit(1)
+
+print(f"world-news-day gate: OK — {len(pages)} pages, {corpus['count']} articles "
+      f"({corpus['total_words']:,} words held, none republished), "
+      f"{register['count']} frozen files re-hashed, {len(register.get('excluded', []))} excluded, "
+      f"{len(theme_edges)} theme edges re-derived in both directions, "
+      f"{graph['counts']['nodes']} nodes / {graph['counts']['edges']} edges conform, "
+      f"licence counts re-derived from the bytes by a second implementation")

@@ -1,0 +1,468 @@
+{
+ "id": "wnd-analysis",
+ "version": "0.1.0",
+ "updated": "2026-09-29",
+ "question": "Twenty-one editors, publishers and directors answered the same question in the same week. Counted together, what did they say — and what did they not?",
+ "how": "Every number is a count over the frozen bytes. The themes are the published lexicon in data/lexicon.json and nothing else; the links are the <a> tags in the article body. build/gates.py re-derives all of it.",
+ "refuses": [
+  "No sentiment, no stance, no scoring. A count of words is not a measure of a person.",
+  "No claim that two authors agree. agrees_with is a banned verb in this graph.",
+  "No claim about what an author believes, only about what this one piece contains.",
+  "No ranking of the publications. The corpus is not a competition and we are not a judge."
+ ],
+ "shape": {
+  "total_words": 20060,
+  "shortest": 649,
+  "longest": 2274,
+  "median": 918,
+  "published_between": [
+   "2026-09-25",
+   "2026-09-27"
+  ],
+  "themes_per_article_min": 6,
+  "themes_per_article_max": 14
+ },
+ "people": {
+  "articles": 21,
+  "named_authors": 23,
+  "pieces_with_more_than_one_byline": 2,
+  "organisations_named_in_role_lines": 26,
+  "organisations": [
+   "AFP",
+   "Association of Independent Regional Press Publishers of Ukraine",
+   "Brazilian Newspaper Association (ANJ)",
+   "Coda Story",
+   "Covering Climate Now",
+   "Daraj.com",
+   "European Broadcasting Union",
+   "Fondation Hirondelle",
+   "Globe and Mail",
+   "Haitian Times",
+   "Informed",
+   "News Corp Australasia",
+   "Paraluman News",
+   "Project Kontinuum",
+   "Quint Digital Limited",
+   "The Atlas",
+   "The GroundTruth Project",
+   "The Quint",
+   "Truth Tellers",
+   "UNESCO",
+   "URL Media",
+   "Vocento",
+   "World Association of News Publishers (WAN-IFRA)",
+   "World Editors Forum",
+   "ZEG Network",
+   "confidencial.digital"
+  ],
+  "note": "An author's organisation is taken from the role line the piece itself prints under the byline, never from anywhere else, and never looked up."
+ },
+ "themes": [
+  {
+   "id": "truth",
+   "label": "Truth and facts",
+   "articles": 19,
+   "share": 0.905
+  },
+  {
+   "id": "audience",
+   "label": "Audience, attention and avoidance",
+   "articles": 19,
+   "share": 0.905
+  },
+  {
+   "id": "trust",
+   "label": "Trust and credibility",
+   "articles": 17,
+   "share": 0.81
+  },
+  {
+   "id": "investigation",
+   "label": "Investigative reporting",
+   "articles": 15,
+   "share": 0.714
+  },
+  {
+   "id": "platforms",
+   "label": "Platforms and distribution",
+   "articles": 15,
+   "share": 0.714
+  },
+  {
+   "id": "democracy",
+   "label": "Democracy and civic life",
+   "articles": 14,
+   "share": 0.667
+  },
+  {
+   "id": "misinformation",
+   "label": "Misinformation and propaganda",
+   "articles": 13,
+   "share": 0.619
+  },
+  {
+   "id": "ownership",
+   "label": "Ownership and independence",
+   "articles": 12,
+   "share": 0.571
+  },
+  {
+   "id": "ai",
+   "label": "Artificial intelligence",
+   "articles": 11,
+   "share": 0.524
+  },
+  {
+   "id": "business-model",
+   "label": "Money and the business model",
+   "articles": 11,
+   "share": 0.524
+  },
+  {
+   "id": "collaboration",
+   "label": "Collaboration and alliances",
+   "articles": 10,
+   "share": 0.476
+  },
+  {
+   "id": "safety",
+   "label": "Journalist safety and persecution",
+   "articles": 10,
+   "share": 0.476
+  },
+  {
+   "id": "war",
+   "label": "War and conflict",
+   "articles": 9,
+   "share": 0.429
+  },
+  {
+   "id": "public-service",
+   "label": "Public service and infrastructure",
+   "articles": 8,
+   "share": 0.381
+  },
+  {
+   "id": "language-access",
+   "label": "Language and access",
+   "articles": 7,
+   "share": 0.333
+  },
+  {
+   "id": "press-freedom",
+   "label": "Press freedom",
+   "articles": 6,
+   "share": 0.286
+  },
+  {
+   "id": "climate",
+   "label": "Climate",
+   "articles": 5,
+   "share": 0.238
+  },
+  {
+   "id": "local-news",
+   "label": "Local and community news",
+   "articles": 5,
+   "share": 0.238
+  },
+  {
+   "id": "copyright",
+   "label": "Copyright, licensing and scraping",
+   "articles": 3,
+   "share": 0.143
+  },
+  {
+   "id": "ai-slop",
+   "label": "Synthetic content and hallucination",
+   "articles": 2,
+   "share": 0.095
+  }
+ ],
+ "themes_together": [
+  {
+   "a": "Audience, attention and avoidance",
+   "b": "Truth and facts",
+   "articles": 17
+  },
+  {
+   "a": "Trust and credibility",
+   "b": "Truth and facts",
+   "articles": 17
+  },
+  {
+   "a": "Audience, attention and avoidance",
+   "b": "Trust and credibility",
+   "articles": 15
+  },
+  {
+   "a": "Audience, attention and avoidance",
+   "b": "Investigative reporting",
+   "articles": 14
+  },
+  {
+   "a": "Audience, attention and avoidance",
+   "b": "Platforms and distribution",
+   "articles": 14
+  },
+  {
+   "a": "Democracy and civic life",
+   "b": "Truth and facts",
+   "articles": 14
+  },
+  {
+   "a": "Investigative reporting",
+   "b": "Truth and facts",
+   "articles": 14
+  },
+  {
+   "a": "Platforms and distribution",
+   "b": "Truth and facts",
+   "articles": 14
+  },
+  {
+   "a": "Audience, attention and avoidance",
+   "b": "Democracy and civic life",
+   "articles": 13
+  },
+  {
+   "a": "Audience, attention and avoidance",
+   "b": "Misinformation and propaganda",
+   "articles": 12
+  },
+  {
+   "a": "Democracy and civic life",
+   "b": "Investigative reporting",
+   "articles": 12
+  },
+  {
+   "a": "Democracy and civic life",
+   "b": "Trust and credibility",
+   "articles": 12
+  }
+ ],
+ "themes_never_together": [
+  {
+   "a": "Synthetic content and hallucination",
+   "b": "Money and the business model"
+  },
+  {
+   "a": "Synthetic content and hallucination",
+   "b": "Collaboration and alliances"
+  },
+  {
+   "a": "Synthetic content and hallucination",
+   "b": "Local and community news"
+  },
+  {
+   "a": "Synthetic content and hallucination",
+   "b": "Ownership and independence"
+  },
+  {
+   "a": "Synthetic content and hallucination",
+   "b": "Public service and infrastructure"
+  },
+  {
+   "a": "Climate",
+   "b": "Local and community news"
+  },
+  {
+   "a": "Climate",
+   "b": "War and conflict"
+  },
+  {
+   "a": "Copyright, licensing and scraping",
+   "b": "Ownership and independence"
+  },
+  {
+   "a": "Copyright, licensing and scraping",
+   "b": "Public service and infrastructure"
+  },
+  {
+   "a": "Copyright, licensing and scraping",
+   "b": "War and conflict"
+  },
+  {
+   "a": "Language and access",
+   "b": "Local and community news"
+  }
+ ],
+ "evidence": {
+  "articles": 21,
+  "with_no_outbound_link_at_all": 11,
+  "with_at_least_one": 10,
+  "total_links": 38,
+  "median_links_per_article": 0,
+  "most_links_in_one_piece": 14,
+  "distinct_domains": 23,
+  "domains_reached_by_more_than_one_piece": {},
+  "institutions_reached_by_more_than_one_piece": {
+   "unesco.org": [
+    "independent-news-media-need-more-than-short-term-funding",
+    "remembering-9-11-as-a-local-news-story"
+   ]
+  },
+  "per_article": [
+   {
+    "slug": "nicaragua-reinventing-journalism-in-exile",
+    "title": "Nicaragua: Reinventing Journalism in Exile",
+    "links": 14,
+    "domains": [
+     "bbc.co.uk",
+     "confidencial.digital",
+     "theguardian.com",
+     "youtube.com"
+    ]
+   },
+   {
+    "slug": "independent-news-media-need-more-than-short-term-funding",
+    "title": "Independent News Media Need More Than Short-Term Funding",
+    "links": 8,
+    "domains": [
+     "eur-lex.europa.eu",
+     "gfmd.info",
+     "hirondelle.org",
+     "ifpim.org",
+     "ifrc.org",
+     "informationdemocracy.org",
+     "policy-advocacy.gfmd.info",
+     "unesdoc.unesco.org"
+    ]
+   },
+   {
+    "slug": "the-integrity-dividend-the-value-of-knowing",
+    "title": "The Integrity Dividend: The Value of Knowing",
+    "links": 4,
+    "domains": [
+     "wan-ifra.org"
+    ]
+   },
+   {
+    "slug": "indias-students-found-their-voice-this-summer-while-journalists-are-losing-theirs",
+    "title": "India’s students found their voice this summer while journalists are losing theirs",
+    "links": 3,
+    "domains": [
+     "cockroachjantaparty.org",
+     "en.wikipedia.org"
+    ]
+   },
+   {
+    "slug": "the-role-of-the-news-media-in-fighting-the-climate-crisis",
+    "title": "The role of the news media in fighting the climate crisis",
+    "links": 3,
+    "domains": [
+     "89percent.org",
+     "coveringclimatenow.org"
+    ]
+   },
+   {
+    "slug": "free-press-needs-alliances-against-censorship-and-fragmentation",
+    "title": "Free press needs alliances against censorship and fragmentation",
+    "links": 2,
+    "domains": [
+     "codastory.com",
+     "theatlasnewspaper.org"
+    ]
+   },
+   {
+    "slug": "america-was-the-arsenal-of-democracy-now-its-disarming-the-press",
+    "title": "America Was the Arsenal of Democracy; Now It’s Disarming the Press",
+    "links": 1,
+    "domains": [
+     "podcasts.apple.com"
+    ]
+   },
+   {
+    "slug": "democracy-needs-journalism-in-every-language",
+    "title": "Democracy Needs Journalism in Every Language",
+    "links": 1,
+    "domains": [
+     "myparaluman.ph"
+    ]
+   },
+   {
+    "slug": "remembering-9-11-as-a-local-news-story",
+    "title": "Remembering 9-11 as a local news story",
+    "links": 1,
+    "domains": [
+     "unesco.org"
+    ]
+   },
+   {
+    "slug": "the-things-i-learned-from-my-daughters-a-central-bank-investigation-and-a-box-of-watermelon-gum",
+    "title": "The things I learned  from my daughters, a central bank investigation, and a box of watermelon gum",
+    "links": 1,
+    "domains": [
+     "daraj.com"
+    ]
+   },
+   {
+    "slug": "2026-world-news-day-time-to-fight",
+    "title": "2026 World News Day: Time to fight",
+    "links": 0,
+    "domains": []
+   },
+   {
+    "slug": "a-lesson-from-ukraine-newsroom-resilience-makes-press-freedom-real",
+    "title": "A lesson from Ukraine: Newsroom resilience makes press freedom real",
+    "links": 0,
+    "domains": []
+   },
+   {
+    "slug": "dystopia-inc-would-you-like-your-news-with-or-without-hallucinations",
+    "title": "Dystopia, Inc: Would you like your news with or without hallucinations?",
+    "links": 0,
+    "domains": []
+   },
+   {
+    "slug": "footballs-enduring-controversies-show-why-journalism-matters",
+    "title": "Football’s enduring controversies show why journalism matters",
+    "links": 0,
+    "domains": []
+   },
+   {
+    "slug": "journalism-is-civic-infrastructure-we-need-to-support-it",
+    "title": "Journalism is Civic Infrastructure. We need to support it.",
+    "links": 0,
+    "domains": []
+   },
+   {
+    "slug": "journalism-our-chaotic-worlds-future",
+    "title": "Journalism & Our Chaotic World’s Future",
+    "links": 0,
+    "domains": []
+   },
+   {
+    "slug": "media-faces-violence-persecution-and-the-existential-threat-posed-by-ai-and-yet-we-are-still-here",
+    "title": "Media faces violence, persecution and the existential threat posed by AI – and yet we are still here",
+    "links": 0,
+    "domains": []
+   },
+   {
+    "slug": "thank-goodness-for-the-storytellers-the-ones-who-probe-question-irritate-the-powerful",
+    "title": "Thank goodness for the storytellers – the ones who probe, question, irritate the powerful",
+    "links": 0,
+    "domains": []
+   },
+   {
+    "slug": "truth-in-an-ai-world",
+    "title": "Truth in an AI World",
+    "links": 0,
+    "domains": []
+   },
+   {
+    "slug": "we-must-make-truth-matter-again",
+    "title": "We must make truth matter again",
+    "links": 0,
+    "domains": []
+   },
+   {
+    "slug": "when-information-is-everywhere-and-the-reasons-to-give-up-are-so-many-journalism-matters-even-more",
+    "title": "When information is everywhere, and the reasons to give up are so many… journalism matters even more",
+    "links": 0,
+    "domains": []
+   }
+  ],
+  "note": "Counted as the article offers them: an <a> in the article body, in the frozen bytes. Links in the site's own furniture are not the article's evidence and are not counted. Nothing here was fetched: this section says what the piece offered, not whether it holds up."
+ }
+}

@@ -31,11 +31,11 @@ PARENT_TITLE = ("sgit.ai — the parent project: the vault layer and the shipped
 #   · `prefixes` decides the "here" state, so a page not itself in the nav still
 #     lights up the group it belongs to.
 #
-# Eight groups, following the site's own build order: the argument (thesis,
+# Nine groups, following the site's own build order: the argument (thesis,
 # corrections, provenance) first, then the economics, then rights and operations,
-# then the three things that RUN — the Governance Wire, Portugal Startups and the
-# no-server databases, each with its own submenu because each is a site inside the
-# site — then the record (library, shipped), then site mechanics.
+# then the four things that RUN — the Governance Wire, Portugal Startups, the World
+# News Day corpus and the no-server databases, each with its own submenu because each
+# is a site inside the site — then the record (library, shipped), then site mechanics.
 NAV = [
     ("The argument", "thesis/index.html", [
         ("The thesis: sell the graph", "thesis/index.html"),
@@ -86,6 +86,15 @@ NAV = [
         ("pt.newsroom: the home page, as designed", "pt-newsroom/index.html"),
         ("pt.newsroom: the four directions (archive)", "pt-newsroom/directions.html"),
     ], ("portugal/", "pt-newsroom/")),
+    ("World News Day", "world-news-day/index.html", [
+        ("The corpus (beta)", "world-news-day/index.html"),
+        ("The licence that is not there", "world-news-day/licences.html"),
+        ("The twenty-one", "world-news-day/corpus.html"),
+        ("The aggregate", "world-news-day/findings.html"),
+        ("The graph", "world-news-day/graph.html"),
+        ("Sources", "world-news-day/sources.html"),
+        ("Method", "world-news-day/method.html"),
+    ], ("world-news-day/",)),
     ("Databases", "databases/index.html", [
         ("No server: the argument (beta)", "databases/index.html"),
         ("The SQL console", "databases/sql.html"),
@@ -132,6 +141,8 @@ FOOTER = [
         ("The floor: a point-and-click newsroom", "governance/newsroom/index.html"),
         ("Portugal Startups (beta)", "portugal/index.html"),
         ("Connections: who should talk to whom", "portugal/connections.html"),
+        ("World News Day 2026: the corpus (beta)", "world-news-day/index.html"),
+        ("The licence that is not there", "world-news-day/licences.html"),
         ("Databases with no server (beta)", "databases/index.html"),
         ("The SQL and SPARQL consoles", "databases/sql.html"),
         ("Brief: pt.newsroom.sgit.ai", "documents/pt-newsroom.html"),

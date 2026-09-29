@@ -6,7 +6,7 @@
 > graph that accumulates evidence, perspectives and confidence; every article is a
 > **projection** of it. **Sell the graph, not the paragraph.**
 
-*Source: <https://newsroom.sgit.ai/index.html> · site v0.3.13 · markdown twin of the front page.*
+*Source: <https://newsroom.sgit.ai/index.html> · site v0.4.0 · markdown twin of the front page.*
 
 ---
 
@@ -42,7 +42,8 @@ today: a false claim propagates virally and the correction barely travels. In th
 ## What runs on this site
 
 Everything above is an argument. These are running instances of it, each a site inside the
-site, built by agents and reviewed before publication:
+site, built by agents. Each says on its face what is real and what is not, and which of
+them a human reviewed before publication:
 
 - **Portugal Startups (beta, human-reviewed)** — a publication mapping the Portuguese startup
   ecosystem, first beat Startup Summit Lisbon 2026. Every source fetched, frozen and hashed;
@@ -51,6 +52,14 @@ site, built by agents and reviewed before publication:
   [The wire →](https://newsroom.sgit.ai/portugal/index.html) ·
   [The graph →](https://newsroom.sgit.ai/portugal/graph.html) ·
   [Connections →](https://newsroom.sgit.ai/portugal/connections.html)
+- **World News Day 2026 (beta, agent-produced)** — the twenty-one op-eds WAN-IFRA and the
+  Canadian Journalism Foundation commissioned for World News Day and made free to republish:
+  fetched, frozen, hashed, described and graphed here, and republished nowhere. All twenty-one
+  grant permission; none grants it under a licence with a name, and none uses the schema.org
+  `license` field its pages already ship.
+  [The corpus →](https://newsroom.sgit.ai/world-news-day/index.html) ·
+  [The finding →](https://newsroom.sgit.ai/world-news-day/licences.html) ·
+  [The aggregate →](https://newsroom.sgit.ai/world-news-day/findings.html)
 - **Databases with no server (beta)** — SQLite and a SPARQL 1.1 store running in the browser
   over the Portugal section's own JSON files, compiled to WebAssembly. The files are the
   database; the engines are readers.
@@ -75,7 +84,7 @@ Ten core articles — 68,846 words — were published on
 before the design material behind the rest of this site was written. [The full
 chronology →](https://newsroom.sgit.ai/library/index.html)
 
-**The honest sentence:** Most of this site is an argument, not a product. Three things run — /portugal/, /databases/ and /governance/ — and each says its own limits on its face; only the first has a human editor of record, and none has had legal review. The articles in the library
+**The honest sentence:** Most of this site is an argument, not a product. Four things run — /portugal/, /world-news-day/, /databases/ and /governance/ — and each says its own limits on its face; only the first has a human editor of record, and none has had legal review. The articles in the library
 are real and dated. The newsroom — the roles, the provenance pages, the payment rails,
 Trust-as-a-Service — is a design. [The line between them
 →](https://newsroom.sgit.ai/shipped/index.html)

@@ -1,0 +1,76 @@
+{
+  "id": "wnd-licences",
+  "version": "0.1.0",
+  "updated": "2026-09-29",
+  "question": "The announcement says the op-eds are free to republish. Under what licence, exactly, and in what form? Every number below is derived from the frozen bytes by build/graph.py and re-checked by build/gates.py.",
+  "counts": {
+    "articles": 21,
+    "carrying_a_prose_permission": 21,
+    "carrying_a_named_public_licence": 0,
+    "carrying_a_creative_commons_reference": 0,
+    "carrying_rel_license": 0,
+    "carrying_a_copyright_notice": 0,
+    "with_ld_json": 21,
+    "whose_ld_json_declares_a_licence": 0,
+    "distinct_prose_statements": 2
+  },
+  "the_statement": [
+    {
+      "variant": 1,
+      "articles": 20,
+      "text": "This opinion piece was commissioned to mark World News Day, on 28 September. Free to republish or translate in full, provided translations remain faithful to the original meaning. Minor edits for length or house style are permitted on the same basis."
+    },
+    {
+      "variant": 2,
+      "articles": 1,
+      "text": "This opinion piece was commissioned to mark the International Day for Universal Access to Information and World News Day, on 28 September. Free to republish or translate in full, provided translations remain faithful to the original meaning. Minor edits for length or house style are permitted on the same basis"
+    }
+  ],
+  "what_the_statement_does_and_does_not_do": [
+    "It permits republication and translation IN FULL. It does not permit an extract.",
+    "It requires translations to remain faithful to the original meaning, which is a condition no standard public licence states in those words.",
+    "It permits minor edits for length or house style, which sits oddly beside 'in full'.",
+    "It names no licence, no version, no URL and no identifier, so there is nothing to cite, point at, or check against.",
+    "It says nothing about attribution. The announcement page says 'with appropriate credit'; the articles do not mention credit at all.",
+    "It says nothing about commercial use, derivative works, moral rights, term, or revocation.",
+    "It is not addressed: it does not say who grants it, and the pieces carry no copyright notice naming a holder."
+  ],
+  "machine_readability": {
+    "every_page_has_json_ld": true,
+    "json_ld_types_present": [
+      "",
+      "Article",
+      "BreadcrumbList",
+      "ImageObject",
+      "Person",
+      "WebPage",
+      "WebSite"
+    ],
+    "schema_org_fields_available_and_unused": [
+      "license",
+      "copyrightHolder",
+      "copyrightNotice",
+      "usageInfo",
+      "isAccessibleForFree"
+    ],
+    "note": "Every one of the 21 pages already ships schema.org JSON-LD with an Article node, produced by the site's SEO plugin. schema.org has carried a `license` property since 2015. Adding one line to a record that is already being generated would make the permission machine-readable. None of the 21 does.",
+    "structured_author_field_disagrees_with_the_printed_byline": 2,
+    "structured_author_note": "The REST record carries an author field. On two of the 21 it does not name the people the page prints: one gives the CMS account name '329976pwpadmin' instead of a person, and one names an author the byline does not. A machine-readable field that is wrong twice in 21 is worse than no field, because nothing on the page says which to believe. The bylines here are read from the prose for that reason.",
+    "rest_api_open": true,
+    "rest_api_note": "worldnewsday.org serves the whole corpus as structured JSON at /wp-json/wp/v2/posts. It is open, undocumented and unadvertised: a machine-consumable form exists by accident of the platform rather than by a decision to publish one. It carries no licence field either."
+  },
+  "taxonomy": {
+    "every_article_category": [
+      "Story"
+    ],
+    "every_article_tag": [
+      "2026"
+    ],
+    "note": "All 21 carry the same single category and the same single tag. The corpus has no topical classification of its own, which is why the themes in this graph had to be derived."
+  },
+  "the_two_statements": {
+    "on_the_articles": "This opinion piece was commissioned to mark World News Day, on 28 September. Free to republish or translate in full, provided translations remain faithful to the original meaning. Minor edits for length or house style are permitted on the same basis.",
+    "on_the_announcement": "All of the op-eds are free to republish with appropriate credit.",
+    "note": "The same organisation states the terms twice, differently. The articles require republication IN FULL and say nothing about credit; the announcement requires CREDIT and says nothing about in full. A republisher following one is not following the other. The announcement itself could not be fetched by an automated reader (see register.excluded), so its wording is recorded here as read by a person and is not the basis of any other claim in this section."
+  }
+}

@@ -14,7 +14,7 @@
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer and the shipped CLI. This site is the future-of-news stack: provenance, corrections, and paying the fact creator">&#8593; part of <b>sgit.ai</b></a>
   <span class="stage-pill">design, not built</span>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.3.13</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.4.0</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -82,6 +82,18 @@
       </div>
     </div>
     <div class="ni ni-has">
+      <a class="nl" href="../world-news-day/index.html">World News Day<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../world-news-day/index.html">The corpus (beta)</a>
+      <a class="sl" href="../world-news-day/licences.html">The licence that is not there</a>
+      <a class="sl" href="../world-news-day/corpus.html">The twenty-one</a>
+      <a class="sl" href="../world-news-day/findings.html">The aggregate</a>
+      <a class="sl" href="../world-news-day/graph.html">The graph</a>
+      <a class="sl" href="../world-news-day/sources.html">Sources</a>
+      <a class="sl" href="../world-news-day/method.html">Method</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
       <a class="nl" href="../databases/index.html">Databases<span class="caret">&#9662;</span></a>
       <div class="sub">
       <a class="sl" href="../databases/index.html">No server: the argument (beta)</a>
@@ -121,6 +133,17 @@
 <div class="tablewrap"><table class="vers">
   <thead><tr><th>Version</th><th>Date</th><th>What shipped</th></tr></thead>
   <tbody>
+    <tr>
+      <td class="vnum">v0.4.0</td>
+      <td>29 Sep 2026</td>
+      <td><b>A new section, and the first time this publication has turned its method on somebody else&rsquo;s open corpus: <a href="../world-news-day/index.html">World News Day 2026</a> &mdash; twenty-one op-eds, free to republish, under no named licence.</b>
+        <p>For World News Day on 28 September, WAN-IFRA and the Canadian Journalism Foundation commissioned twenty-one opinion pieces from editors, publishers and directors from Manila to Managua and made them free to republish. All twenty-one were fetched, frozen to a dated snapshot, hashed and described here &mdash; <b>and none of the prose is republished</b>. Forty-two frozen files: the page as served and the record from the publisher&rsquo;s own undocumented WordPress REST API, for each piece.</p>
+        <p><b>The finding, derived from the bytes by two separate implementations.</b> All 21 carry a permission to republish. <b>0 carry a licence with a name</b> &mdash; no Creative Commons, no <code>rel="license"</code>, no copyright notice, nothing with a version and a URL. The permission exists only as a sentence at the foot of the prose, in two wordings, and <a href="../world-news-day/licences.html">the announcement states the terms a third way</a>: the articles require republication &ldquo;in full&rdquo; and never mention credit; the announcement requires &ldquo;appropriate credit&rdquo; and never says in full. And while <b>21 of 21 already ship schema.org JSON-LD</b>, generated automatically by the site&rsquo;s own SEO plugin, <b>0 of 21 use its <code>license</code> field</b>. The gap between &ldquo;we want this to spread&rdquo; and a statement a machine can act on is one line of JSON long.</p>
+        <p><b>The aggregate, over twenty-one of the most senior voices in news.</b> 19 of 21 pieces are about truth and facts; 11 raise artificial intelligence; <b>3 mention copyright or licensing at all</b>. <b>11 of the 21 offer the reader no outbound link whatsoever</b> &mdash; 38 links across the whole corpus, and of the 23 domains cited between them, <b>no two pieces point at the same one</b>. That is the measurement this publication has argued for since its first page, taken on the people making the case for trusting journalism, in the week they made it. <a href="../world-news-day/findings.html">The aggregate</a> maps the shared diagnosis onto what we have published, and says plainly what nobody in the corpus proposes: a mechanism.</p>
+        <p><b>And one refusal, recorded rather than tidied away.</b> <code>wan-ifra.org</code> answered an automated reader with HTTP 307 and no body, from two user-agents, while rendering normally in a browser. The announcement that grants the permission is the one page in the beat a machine cannot read, and <a href="../world-news-day/sources.html#excluded">the register says so</a> rather than quietly dropping it.</p>
+        <p>The section ships with the estate&rsquo;s grammar: 153 nodes and 420 edges over 8 types and 8 verbs, every verb with a distinct named inverse and a Portuguese form, 1,449 N-Triples, a published twenty-pattern lexicon as the only classification, and thirteen gates &mdash; among them one that fails the build if twelve consecutive words of any op-ed appear on any page we generate, and one that re-derives every licence count from the frozen HTML with a second implementation. <code>agrees_with</code> is a banned verb: shared vocabulary is not agreement, and this section does not put words in a named editor&rsquo;s mouth.</p>
+      </td>
+    </tr>
     <tr>
       <td class="vnum">v0.3.13</td>
       <td>20 Sep 2026</td>
@@ -375,7 +398,7 @@
     <p>News is failing not because there is too little information but because there is no walkable chain from a claim to its evidence, no way for a correction to reach what it disproved, and no way to pay the person who did the original work. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="netline"><a href="https://sgit.ai"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://graphs.sgit.ai">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai">&#8593; nhi.sgit.ai</a> &middot; <a href="https://sg-sentinel.sgit.ai">&#8593; sg-sentinel.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.3.13</a> &middot; <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.4.0</a> &middot; <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>The argument</h4>
@@ -406,6 +429,8 @@
     <a href="../governance/newsroom/index.html">The floor: a point-and-click newsroom</a>
     <a href="../portugal/index.html">Portugal Startups (beta)</a>
     <a href="../portugal/connections.html">Connections: who should talk to whom</a>
+    <a href="../world-news-day/index.html">World News Day 2026: the corpus (beta)</a>
+    <a href="../world-news-day/licences.html">The licence that is not there</a>
     <a href="../databases/index.html">Databases with no server (beta)</a>
     <a href="../databases/sql.html">The SQL and SPARQL consoles</a>
     <a href="../documents/pt-newsroom.html">Brief: pt.newsroom.sgit.ai</a>

@@ -437,6 +437,11 @@ def main():
     # --- the manifest the explorer renders --------------------------------------
     files = []
     for p in sorted(DATA.glob("*.json")) + sorted(DATA.glob("*.nt")):
+        # manifest.json cannot carry its own hash: the value would be computed before the file
+        # is written and be wrong the moment it is. It listed itself until v0.4.0, which meant
+        # one row of the explorer was permanently false and the file churned on every build.
+        if p.name == "manifest.json":
+            continue
         files.append({"path": f"data/{p.name}", "kind": "data", "bytes": p.stat().st_size, "sha256": sha(p)})
     for p in sorted((SEC / "content").glob("*.md")):
         files.append({"path": f"content/{p.name}", "kind": "prose", "bytes": p.stat().st_size, "sha256": sha(p)})

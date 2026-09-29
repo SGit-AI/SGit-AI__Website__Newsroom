@@ -21,7 +21,7 @@
   <a class="brand" href="index.html">newsroom<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer and the shipped CLI. This site is the future-of-news stack: provenance, corrections, and paying the fact creator">&#8593; part of <b>sgit.ai</b></a>
   <span class="stage-pill">design, not built</span>
-  <a class="ver" href="admin/versions.html" title="Site release history">v0.3.13</a>
+  <a class="ver" href="admin/versions.html" title="Site release history">v0.4.0</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -86,6 +86,18 @@
       <a class="sl" href="documents/pt-newsroom.html">Brief: pt.newsroom.sgit.ai</a>
       <a class="sl" href="pt-newsroom/index.html">pt.newsroom: the home page, as designed</a>
       <a class="sl" href="pt-newsroom/directions.html">pt.newsroom: the four directions (archive)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="world-news-day/index.html">World News Day<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="world-news-day/index.html">The corpus (beta)</a>
+      <a class="sl" href="world-news-day/licences.html">The licence that is not there</a>
+      <a class="sl" href="world-news-day/corpus.html">The twenty-one</a>
+      <a class="sl" href="world-news-day/findings.html">The aggregate</a>
+      <a class="sl" href="world-news-day/graph.html">The graph</a>
+      <a class="sl" href="world-news-day/sources.html">Sources</a>
+      <a class="sl" href="world-news-day/method.html">Method</a>
       </div>
     </div>
     <div class="ni ni-has">
@@ -173,9 +185,10 @@
 
 <section class="band alt" id="runs">
   <h2>What runs on this site</h2>
-  <p class="inner">Everything above is an argument. These three are running instances of it, each a site inside the site, built by agents and reviewed before publication. Each says on its face what is real and what is not.</p>
+  <p class="inner">Everything above is an argument. These four are running instances of it, each a site inside the site, built by agents. Each says on its face what is real and what is not, and which of them a human reviewed before publication.</p>
   <div class="cards">
     <div class="card"><span class="tag">Beta &middot; human-reviewed</span><h3>Portugal Startups</h3><p>A publication mapping the Portuguese startup ecosystem, first beat Startup Summit Lisbon 2026. Every source fetched, frozen and hashed; 88 frozen pages, a graph of 329 nodes with Portuguese verbs, three stories, a data-protection notice with a named editor of record. <a href="portugal/index.html">The wire &rarr;</a> <a href="portugal/graph.html">The graph &rarr;</a> <a href="portugal/connections.html">Connections &rarr;</a></p></div>
+    <div class="card"><span class="tag">Beta &middot; agent-produced</span><h3>World News Day 2026</h3><p>The twenty-one op-eds WAN-IFRA commissioned for World News Day and made free to republish &mdash; fetched, frozen, hashed, described and graphed here, and republished nowhere. All twenty-one grant permission; <b>none grants it under a licence with a name</b>, and none of the twenty-one uses the schema.org <code>license</code> field its pages already ship. <a href="world-news-day/index.html">The corpus &rarr;</a> <a href="world-news-day/licences.html">The finding &rarr;</a> <a href="world-news-day/findings.html">The aggregate &rarr;</a></p></div>
     <div class="card"><span class="tag">Beta &middot; no server</span><h3>Databases with no server</h3><p>SQLite and a SPARQL 1.1 store running in your browser over the Portugal section&rsquo;s own JSON files, compiled to WebAssembly. The files are the database; the engines are readers. Every worked query ran at build and prints the count it returned. <a href="databases/index.html">The argument &rarr;</a> <a href="databases/sql.html">SQL &rarr;</a> <a href="databases/graph.html">SPARQL &rarr;</a></p></div>
     <div class="card"><span class="tag">Beta &middot; fully agentic</span><h3>The Governance Wire</h3><p>The risk-and-governance newsroom as a running MVP: seven agent roles, a nine-state workflow, research runs published whether or not anything resolved, and a point-and-click floor where each role is a desk you can talk to. <a href="governance/index.html">The wire &rarr;</a> <a href="governance/newsroom/index.html">The floor &rarr;</a> <a href="governance/newsroom/workflow.html">The state map &rarr;</a></p></div>
     <div class="card"><span class="tag">Brief &middot; for the next agent</span><h3>pt.newsroom.sgit.ai</h3><p>The commissioning brief for a natively Portuguese newsroom mapping Portugal&rsquo;s AI landscape: three departments, the law it has to satisfy, the first three articles, and the home-page direction chosen on 13 September. <a href="documents/pt-newsroom.html">Read the brief &rarr;</a> <a href="pt-newsroom/index.html">The home page, as designed &rarr;</a></p></div>
@@ -187,14 +200,14 @@
     <div>
       <p><b>This does not launch as a manifesto.</b> Ten core articles &mdash; 68,846 words &mdash; were published on <a href="https://docs.diniscruz.ai">docs.diniscruz.ai</a> between February and October 2025, a year before the design material behind the rest of this site was written. The micropayments argument is from <b>April 2025</b>, fifteen months before the payment rail that makes it real. <a href="library/index.html">The full chronology, with the original date on every entry &rarr;</a></p>
     </div>
-    <div class="note" style="margin-bottom:0"><b>The honest sentence.</b> Most of this site is an argument, not a product. Three things run &mdash; <a href="portugal/index.html">Portugal Startups</a>, <a href="databases/index.html">the no-server databases</a> and <a href="governance/index.html">the Governance Wire</a> &mdash; and each says its own limits on its face; only the first has a human editor of record, and none has had legal review. The articles in the library are real and dated. The rest of the newsroom &mdash; the roles, the provenance pages, the payment rails, Trust-as-a-Service &mdash; is a design, marked <code>PROPOSED</code> in the project's own reality tracker. <a href="shipped/index.html">The line between the two, stated plainly &rarr;</a></div>
+    <div class="note" style="margin-bottom:0"><b>The honest sentence.</b> Most of this site is an argument, not a product. Four things run &mdash; <a href="portugal/index.html">Portugal Startups</a>, <a href="world-news-day/index.html">the World News Day corpus</a>, <a href="databases/index.html">the no-server databases</a> and <a href="governance/index.html">the Governance Wire</a> &mdash; and each says its own limits on its face; only the first has a human editor of record, and none has had legal review. The articles in the library are real and dated. The rest of the newsroom &mdash; the roles, the provenance pages, the payment rails, Trust-as-a-Service &mdash; is a design, marked <code>PROPOSED</code> in the project's own reality tracker. <a href="shipped/index.html">The line between the two, stated plainly &rarr;</a></div>
   </div>
 </section>
 
 <section class="band" id="agentblock">
   <div class="agent">
     <h4>For an agent</h4>
-    <p>newsroom.sgit.ai argues that a story is a graph and an article is one projection of it &mdash; and that an agent buying facts by API is the first worked example of its own product, not a hypothetical. Three things run &mdash; <a href="portugal/index.html">/portugal/</a>, <a href="databases/index.html">/databases/</a> and <a href="governance/index.html">/governance/</a>, each stating its own limits &mdash; and the rest is a design: read <a href="shipped/index.html">/shipped/</a> before citing anything here as a live capability. Every page that republishes or derives from previously published material carries a visible provenance block naming the original date and linking to the original &mdash; the site's own demonstration of the argument it makes. This site is published by the sgit project, which is building the stack it argues for: read <a href="about/participant.html">the participant disclosure</a> before treating any page here as neutral. <a href="llms.txt">llms.txt</a> is the whole agent surface.</p>
+    <p>newsroom.sgit.ai argues that a story is a graph and an article is one projection of it &mdash; and that an agent buying facts by API is the first worked example of its own product, not a hypothetical. Four things run &mdash; <a href="portugal/index.html">/portugal/</a>, <a href="world-news-day/index.html">/world-news-day/</a>, <a href="databases/index.html">/databases/</a> and <a href="governance/index.html">/governance/</a>, each stating its own limits &mdash; and the rest is a design: read <a href="shipped/index.html">/shipped/</a> before citing anything here as a live capability. Every page that republishes or derives from previously published material carries a visible provenance block naming the original date and linking to the original &mdash; the site's own demonstration of the argument it makes. This site is published by the sgit project, which is building the stack it argues for: read <a href="about/participant.html">the participant disclosure</a> before treating any page here as neutral. <a href="llms.txt">llms.txt</a> is the whole agent surface.</p>
   </div>
 </section>
 
@@ -204,7 +217,7 @@
     <p>News is failing not because there is too little information but because there is no walkable chain from a claim to its evidence, no way for a correction to reach what it disproved, and no way to pay the person who did the original work. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="netline"><a href="https://sgit.ai"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://graphs.sgit.ai">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai">&#8593; nhi.sgit.ai</a> &middot; <a href="https://sg-sentinel.sgit.ai">&#8593; sg-sentinel.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="admin/versions.html">v0.3.13</a> &middot; <a href="admin/index.html">engineering</a> &middot; <a href="index.md">this page as markdown</a></p>
+    <p class="verline">site <a href="admin/versions.html">v0.4.0</a> &middot; <a href="admin/index.html">engineering</a> &middot; <a href="index.md">this page as markdown</a></p>
   </div>
   <div>
     <h4>The argument</h4>
@@ -235,6 +248,8 @@
     <a href="governance/newsroom/index.html">The floor: a point-and-click newsroom</a>
     <a href="portugal/index.html">Portugal Startups (beta)</a>
     <a href="portugal/connections.html">Connections: who should talk to whom</a>
+    <a href="world-news-day/index.html">World News Day 2026: the corpus (beta)</a>
+    <a href="world-news-day/licences.html">The licence that is not there</a>
     <a href="databases/index.html">Databases with no server (beta)</a>
     <a href="databases/sql.html">The SQL and SPARQL consoles</a>
     <a href="documents/pt-newsroom.html">Brief: pt.newsroom.sgit.ai</a>
