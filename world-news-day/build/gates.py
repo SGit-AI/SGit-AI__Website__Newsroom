@@ -578,6 +578,41 @@ zipf = SEC / "vault.zip"
 if zipf.exists() and hashlib.sha256(zipf.read_bytes()).hexdigest() != vault["sha256"]:
     errors.append("vault.zip does not hash to what data/vault.json records")
 
+# --- 12f. what is published about the vaults is a READ key, never a vault key ------------
+# The safety model of this section in one check. A read key is a one-way derivative that
+# grants read and only read; a vault key is write access to everything. They are both strings
+# in a JSON file, which is precisely why this is a gate and not a habit.
+outreach_vault = load("outreach-vault.json")
+for name, rec in (("vault.json", vault), ("outreach-vault.json", outreach_vault)):
+    blob = json.dumps(rec)
+    if "sgit_private_vault_" in blob or re.search(r"sgit_private_read_", blob):
+        errors.append(f'{name}: contains a PRIVATE key — only sgit_public_read_ keys are ever '
+                      f'published, and a vault key is write access to everything')
+    k = rec.get("read_key")
+    if rec.get("pushed"):
+        if not k or not str(k).startswith("sgit_public_read_"):
+            errors.append(f'{name}: says the vault is pushed but publishes no public read key')
+        if not rec.get("vault_id"):
+            errors.append(f'{name}: says the vault is pushed and names no vault id')
+    elif k:
+        errors.append(f'{name}: publishes a read key for a vault it says is not pushed')
+if outreach_vault.get("actions_recorded", 0) != len(list((SEC / "outreach" / "actions").glob("*.json"))) - 1:
+    # _schema.json is not an action; every other file in actions/ is
+    errors.append("outreach-vault: the action count disagrees with the files in outreach/actions/")
+for f in (SEC / "outreach").rglob("*"):
+    if f.is_file():
+        body = f.read_text(encoding="utf-8", errors="replace")
+        for m in CONTACT["email"].finditer(body):
+            local, _, dom = m.group(0).partition("@")
+            # the same two-part rule the contacts map publishes: a role local part, OR the
+            # site's own name (anj@anj.org.br is the association, not a person)
+            if local in ROLE or local == _second_level(dom):
+                continue
+            errors.append(f'outreach/{f.relative_to(SEC / "outreach")}: carries what looks like '
+                          f'a personal address ("{m.group(0)}") — the protocol in that vault '
+                          f'forbids it and this gate enforces it before the vault is pushed')
+            break
+
 # --- 13. every page states what this section is and is not -------------------------------
 REQUIRED = [
     ("beta notice", re.compile(r"\bbeta\b", re.I)),

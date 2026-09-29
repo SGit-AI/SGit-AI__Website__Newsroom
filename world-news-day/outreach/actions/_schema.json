@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "An action taken in this outreach",
+  "description": "One append-only record per action. Write a new file; never edit an old one. The file name is <utc-timestamp>__<target>__<verb>.json.",
+  "type": "object",
+  "required": [
+    "id",
+    "at",
+    "actor",
+    "verb",
+    "target",
+    "stands_on",
+    "summary"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Stable id, unique in this vault."
+    },
+    "at": {
+      "type": "string",
+      "description": "UTC, RFC3339. When it happened, not when it was written up."
+    },
+    "actor": {
+      "type": "string",
+      "description": "Who acted: an agent name, or a person's role. Be specific: 'riskmandate.ai outreach agent' or 'editor'."
+    },
+    "verb": {
+      "enum": [
+        "drafted",
+        "sent",
+        "delivered",
+        "bounced",
+        "opened",
+        "replied",
+        "declined",
+        "agreed",
+        "published",
+        "corrected",
+        "withdrew",
+        "no_response",
+        "escalated",
+        "noted"
+      ],
+      "description": "A closed list on purpose. If none of these fits, the action is 'noted' with the summary saying what happened. Do not invent a verb; propose one in a noted action instead."
+    },
+    "target": {
+      "type": "string",
+      "description": "An organisation slug from targets/, or 'all'."
+    },
+    "channel": {
+      "enum": [
+        "email",
+        "linkedin",
+        "contact-form",
+        "web",
+        "phone",
+        "in-person",
+        "other"
+      ]
+    },
+    "to": {
+      "type": "string",
+      "description": "The ROLE address or public profile written to. Never a personal email address of a natural person."
+    },
+    "stands_on": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "What this action rests on: a SHA-256 from the corpus vault's MANIFEST.json, a URL on newsroom.sgit.ai, or the id of an earlier action here. An action that stands on nothing is an assertion."
+    },
+    "summary": {
+      "type": "string",
+      "maxLength": 1200,
+      "description": "What was done, in a sentence or two. Not a transcript."
+    },
+    "body_ref": {
+      "type": "string",
+      "description": "Path in this vault to the full text sent or received, if any."
+    },
+    "outcome": {
+      "type": "string"
+    },
+    "next": {
+      "type": "string",
+      "description": "What this action makes due, and by when."
+    },
+    "uncertain": {
+      "type": "string",
+      "description": "Anything you are not sure of. Fill this rather than rounding it off."
+    }
+  }
+}

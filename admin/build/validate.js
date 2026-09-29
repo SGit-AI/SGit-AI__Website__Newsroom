@@ -129,11 +129,31 @@ for (const f of htmlFiles) if (!listed.includes(rel(f))) {
 }
 
 // --- 5. key-leak tripwire --------------------------------------------------
-const KEY_SHAPE = /[A-Za-z0-9_-]{20,}:[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/;
+// Three shapes, because the first one alone would not have caught a real key.
+//
+// The original pattern assumed a UUID vault id. When this site's first vaults were
+// actually created at v0.4.4, sgit issued keys of the form
+// `sgit_private_vault_<base32ish>:<8 hex>` — which the UUID pattern does not match at
+// all. A tripwire that is satisfied by the absence of a shape nobody uses is not a
+// tripwire, so the real prefixes are now matched by name, and the archive is NOT
+// exempt: a key committed into an archived copy is exactly as leaked.
+//
+// READ keys are publishable and are deliberately not matched: they are bare hex and
+// carry no passphrase, so there is nothing here to strip. Vault keys never are.
+const KEY_SHAPES = [
+  [/[A-Za-z0-9_-]{20,}:[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/,
+   'a vault-key-shaped string (uuid vault id)'],
+  [/sgit_private_vault_[A-Za-z0-9_-]{8,}\s*:\s*[A-Za-z0-9]{4,}/,
+   'an sgit PRIVATE VAULT KEY — that is write access to everything in the vault'],
+  [/\bsgit\s+(?:clone|init)\s+[A-Za-z0-9_-]{16,}:[A-Za-z0-9]{4,}/,
+   'a command line carrying a vault key'],
+];
 for (const f of files) {
   if (/\.(png|jpg|jpeg|gif|webp|ico|woff2?|zip|svg|pdf)$/.test(f)) continue;
   const t = fs.readFileSync(f, 'utf8');
-  if (KEY_SHAPE.test(t)) errors.push(`${rel(f)}: contains a vault-key-shaped string`);
+  for (const [shape, what] of KEY_SHAPES) {
+    if (shape.test(t)) { errors.push(`${rel(f)}: contains ${what}`); break; }
+  }
 }
 
 // --- 6. div balance ----------------------------------------------------

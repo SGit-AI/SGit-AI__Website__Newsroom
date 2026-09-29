@@ -51,9 +51,11 @@ import graph as graphmod      # noqa: E402 — ontology, graph, triples, licence
 import analysis as analysismod  # noqa: E402 — the aggregate counts
 import vault as vaultmod        # noqa: E402 — the bundle, and the record of what is in it
 import contacts as contactsmod  # noqa: E402 — how to reach them, under published rules
+import outreach as outreachmod  # noqa: E402 — the second vault, the one the other agent works in
 graphmod.main()
 analysismod.main()
 contactsmod.build()
+outreachmod.main()
 vaultmod.main()
 graphmod.manifest()   # last: it hashes everything the three steps above wrote, bundle included
 
@@ -68,6 +70,7 @@ CONTACTS = load("contacts.json")
 CONTACT_RULES = load("contact-rules.json")
 CORRECTIONS = load("corrections.json")
 VAULT = load("vault.json")
+OUTREACH = load("outreach-vault.json")
 ANALYSIS = load("analysis.json")
 MANIFEST = load("manifest.json")
 LATEST = REGISTER["snapshots"][-1]
@@ -1367,7 +1370,8 @@ def build_vault():
     mb = VAULT["bytes"] / 1_048_576
     body = f"""{masthead("vault.html")}
 <h1>The vault</h1>
-<p class="lead">Everything this section stands on and everything it produces, in one file:
+<p class="lead">Two encrypted vaults, both pushed and readable with the keys below, and the
+same corpus as one downloadable file:
 the {CORPUS["count"]} op-eds as frozen bytes, the {REGISTER["count"]} hashed files they came
 from, every derived dataset, the code that produced them and the gate that checks them.
 {VAULT["count"]} files, {mb:.2f}&nbsp;MB, and a SHA-256 you can check before you open it.</p>
@@ -1427,22 +1431,53 @@ print([f['path'] for f in m['files'] if hashlib.sha256(open(f['path'],'rb').read
 <span class="d"># and every published number re-derives from the frozen bytes</span>
 <span class="g">python3</span> build/gates.py</pre>
 
-<h2 id="sgit">Why this is a bundle and not a pushed sgit vault</h2>
+<h2 id="sgit">The two vaults</h2>
 <p>An <a href="https://sgit.ai">sgit</a> vault is zero-knowledge encrypted storage: the server
-holds ciphertext and never sees a key. Creating one needs an SG/Send access token, and this
-build environment has none.</p>
-<p><b>A section about licensing does not invent a credential or publish a key.</b> So the bundle
-is built and hashed here, and <code>PACKAGE.sh</code> inside it carries the exact commands that
-turn the folder into a vault &mdash; unchanged, so that whoever runs them gets the same layout
-this page describes. When a vault is pushed, what gets published beside it here is the
-<b>read key</b>, which is derived one-way from the vault key and grants read and only read. The
-vault key itself is write access to everything and is never published, never committed and
-never put in a page; the whole-site gate carries a tripwire that fails the build on anything
-key-shaped, in any file.</p>
-<div class="note"><p style="margin-top:0"><b>Status, stated plainly:</b> no vault has been
-pushed. <code>data/vault.json</code> records <code>"pushed": false</code> and
-<code>"read_key": null</code>, and will carry the read key when there is one. Until then the
-zip above is the whole of it, and it is complete.</p></div>
+holds ciphertext and never sees a key. Both of these are pushed and readable with the keys
+below.</p>
+<div class="ops">
+<div class="op"><b style="color:#0f766e">1 &middot; the corpus vault &mdash; finished</b>
+<p>The twenty-one op-eds as frozen bytes, every derived dataset, the build code and the gate.
+It is complete on the day it was made and should not move again except on a new capture.</p>
+<p style="font-family:var(--mono);font-size:.78rem;word-break:break-all">vault
+<b>{esc(VAULT["vault_id"])}</b><br>read key {esc(VAULT["read_key"])}</p>
+<p class="small">Or take <a href="vault.zip">the zip</a> and skip the tooling entirely &mdash;
+same contents, {VAULT["count"]} files.</p></div>
+<div class="op" style="border-left-color:#b45309"><b style="color:#b45309">2 &middot; the outreach vault &mdash; append-only</b>
+<p>{esc(OUTREACH["what"])}</p>
+<p style="font-family:var(--mono);font-size:.78rem;word-break:break-all">vault
+<b>{esc(OUTREACH["vault_id"])}</b><br>read key {esc(OUTREACH["read_key"])}</p>
+<p class="small">{OUTREACH["targets"]} targets at handover
+({", ".join(f"{v} {esc(k)}" for k, v in OUTREACH["by_state"].items())}),
+<b>{OUTREACH["actions_recorded"]} actions recorded</b> &mdash; nothing has been sent. The
+contents are generated into <a href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom/tree/main/world-news-day/outreach">world-news-day/outreach/</a>
+so anyone can rebuild and diff them.</p></div>
+</div>
+<pre class="shell"><span class="g">pip3</span> install sgit-ai
+<span class="g">sgit</span> clone {esc(VAULT["read_key"])}:{esc(VAULT["vault_id"])}
+<span class="g">sgit</span> clone {esc(OUTREACH["read_key"])}:{esc(OUTREACH["vault_id"])}</pre>
+
+<h3>Why two, and not one folder inside one</h3>
+<p>The corpus vault is a record of what somebody else published: finished, and safe to hand to
+anyone including the people it describes. The outreach vault is a record of what <em>we do
+about it</em> &mdash; who was written to, when, what was said, what came back. Two different
+kinds of claim, with two different failure modes. Sharing a history, a hash chain and an
+audience between them would be a mistake in both directions, so they do not.</p>
+<p>The second one is the working vault for the agent at <a href="https://riskmandate.ai">riskmandate.ai</a>,
+which is collaborating on the outreach. It carries a <code>protocol.md</code> that binds that
+agent as tightly as our own gates bind us: no personal contact detail for any natural person,
+ever; every action names what it stands on by hash or it is an assertion; append, never edit,
+and correct a wrong action with a new one rather than by deleting it. Its action log has a
+JSON schema and a closed list of verbs.</p>
+
+<h3>Read keys are published. Vault keys are not.</h3>
+<p>The keys above are <b>read keys</b>: derived one-way from the vault key, granting read and
+only read, and meant to be published. The <b>vault key</b> of each vault is write access to
+everything in it. It is in no file in this repository, it was not printed by the publishing
+script, and it never will be. <code>admin/build/validate.js</code> fails the whole-site build
+on anything shaped like one, anywhere in the tree &mdash; and that tripwire had to be widened
+at v0.4.4, because the pattern it was written with did not match the key format sgit actually
+issues. A tripwire satisfied by the absence of a shape nobody uses is not a tripwire.</p>
 
 <h2 id="layout">What is in it</h2>
 <pre class="shell">README.md              what this is, both sets of terms, and how to check it

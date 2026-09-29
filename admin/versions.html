@@ -14,7 +14,7 @@
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer and the shipped CLI. This site is the future-of-news stack: provenance, corrections, and paying the fact creator">&#8593; part of <b>sgit.ai</b></a>
   <span class="stage-pill">design, not built</span>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.4.3</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.4.4</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -136,6 +136,17 @@
 <div class="tablewrap"><table class="vers">
   <thead><tr><th>Version</th><th>Date</th><th>What shipped</th></tr></thead>
   <tbody>
+    <tr>
+      <td class="vnum">v0.4.4</td>
+      <td>29 Sep 2026</td>
+      <td><b>Two encrypted vaults, pushed and readable &mdash; the corpus, and a second one that the agent at <a href="https://riskmandate.ai">riskmandate.ai</a> works in.</b>
+        <p><b>The corpus vault</b> (<code>wnd-2026-09-29</code>) holds the twenty-one op-eds as frozen bytes, every derived dataset, the build code and the gate: 107 files. It is finished on the day it was made. <b>The outreach vault</b> (<code>clsc1dg4</code>) is the opposite kind of thing &mdash; append-only, and it will move every time a message is sent or answered. It carries 27 target files, a <code>protocol.md</code>, a brief, an action log with a JSON schema and a closed list of verbs, and <b>0 actions</b>: nothing has been sent. Its contents are <em>generated</em> into <code>world-news-day/outreach/</code> so anyone can rebuild them and diff.</p>
+        <p><b>Why two and not one.</b> The first is a record of what somebody else published, safe to hand to anyone including the people it describes. The second is a record of what we do about it, and holds who we are contacting and what we plan to say. Different claims, different failure modes, different audiences &mdash; sharing a history and a hash chain between them would be a mistake in both directions.</p>
+        <p><b>Read keys are published; vault keys are not.</b> Both pages now carry a <code>sgit_public_read_…</code> key, derived one-way and granting read and only read. The vault keys were never printed, copied or written to any file by the publishing script: it derives the read key in memory and leaves the credential where sgit put it. A new gate fails the build if any private key shape reaches <code>data/*.json</code>.</p>
+        <p><b>And the tripwire that would not have fired.</b> The whole-site key-leak check had been written against a UUID-shaped vault id. When real vaults were created, sgit issued keys of the form <code>sgit_private_vault_&lt;…&gt;:&lt;id&gt;</code> &mdash; which that pattern does not match at all. It now matches the real prefixes by name, and the archive is no longer exempt, because a key committed into an archived copy is exactly as leaked. <b>A tripwire satisfied by the absence of a shape nobody uses is not a tripwire.</b></p>
+        <p>A third gate now runs over the outreach vault before it is pushed: no address in it may be anything but an organisation's role address, by the same published two-part rule the contacts map uses.</p>
+      </td>
+    </tr>
     <tr>
       <td class="vnum">v0.4.3</td>
       <td>29 Sep 2026</td>
@@ -431,7 +442,7 @@
     <p>News is failing not because there is too little information but because there is no walkable chain from a claim to its evidence, no way for a correction to reach what it disproved, and no way to pay the person who did the original work. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="netline"><a href="https://sgit.ai"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://graphs.sgit.ai">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai">&#8593; nhi.sgit.ai</a> &middot; <a href="https://sg-sentinel.sgit.ai">&#8593; sg-sentinel.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.4.3</a> &middot; <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.4.4</a> &middot; <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>The argument</h4>

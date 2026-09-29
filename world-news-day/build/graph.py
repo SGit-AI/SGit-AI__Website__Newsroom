@@ -386,6 +386,11 @@ def manifest():
         if p.is_file():
             files.append({"path": p.relative_to(SEC).as_posix(), "kind": "frozen", "bytes": p.stat().st_size,
                           "sha256": hashlib.sha256(p.read_bytes()).hexdigest()})
+    for p in sorted((SEC / "outreach").rglob("*")):
+        if p.is_file():
+            files.append({"path": p.relative_to(SEC).as_posix(), "kind": "outreach",
+                          "bytes": p.stat().st_size,
+                          "sha256": hashlib.sha256(p.read_bytes()).hexdigest()})
     zipf = SEC / "vault.zip"
     if zipf.exists():
         files.append({"path": "vault.zip", "kind": "bundle", "bytes": zipf.stat().st_size,
