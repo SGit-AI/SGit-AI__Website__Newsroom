@@ -14,7 +14,7 @@
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer and the shipped CLI. This site is the future-of-news stack: provenance, corrections, and paying the fact creator">&#8593; part of <b>sgit.ai</b></a>
   <span class="stage-pill">design, not built</span>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.4.1</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.4.2</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -90,6 +90,7 @@
       <a class="sl" href="../world-news-day/findings.html">The aggregate</a>
       <a class="sl" href="../world-news-day/graph.html">The graph</a>
       <a class="sl" href="../world-news-day/sources.html">Sources</a>
+      <a class="sl" href="../world-news-day/contacts.html">How to reach them</a>
       <a class="sl" href="../world-news-day/vault.html">The vault</a>
       <a class="sl" href="../world-news-day/method.html">Method</a>
       </div>
@@ -134,6 +135,16 @@
 <div class="tablewrap"><table class="vers">
   <thead><tr><th>Version</th><th>Date</th><th>What shipped</th></tr></thead>
   <tbody>
+    <tr>
+      <td class="vnum">v0.4.2</td>
+      <td>29 Sep 2026</td>
+      <td><b>A correction about the publisher of the corpus, made in public &mdash; and a contacts map built under rules published before the looking started.</b>
+        <p><b>What we got wrong.</b> v0.4.0 said the World News Day announcement was &ldquo;the one page in the beat a machine cannot read&rdquo;, on the evidence of two refused attempts. <code>wan-ifra.org</code> is served through a JavaScript-challenge firewall that refuses <em>some</em> automated requests: going back to the same host for an unrelated reason, it answered 200, and a third attempt returned the full 59&nbsp;KB page. <b>A refusal observed twice is a fact about two attempts, not a property of a page.</b> The announcement is now a registered, hashed source; every attempt is counted and recorded with the size and hash of what came back; and the terms it states &mdash; &ldquo;All of the op-eds are free to republish with appropriate credit&rdquo; &mdash; are read from the frozen bytes instead of quoted by hand. The hand-quoted sentence turned out to be verbatim, and the two-statement finding stands, now anchored on both sides. <a href="../world-news-day/method.html#corrections">The correction in full</a>, with the rule it produced, and a gate that fails the build if the withdrawn claim appears anywhere without the correction beside it.</p>
+        <p><b><a href="../world-news-day/contacts.html">How to reach them</a>.</b> Not one of the twenty-one pages offers a way to reach its author or its publisher: no contact address, no author URL in the structured record, no press line. So the map was built by going to the organisations&rsquo; own sites, one hop each, under rules fixed in <code>data/contact-rules.json</code> before the fetching started: organisations and never people; a published list of role local parts; four published tests before a site counts as established; and every address re-derived from frozen bytes by the gate. Result: 20 of 27 organisations established, 14 with a contact page, <b>11 role addresses publishable out of 43 seen</b>, and 15 of 23 authors with any published route &mdash; all of it via an organisation.</p>
+        <p><b>Three pages were fetched and deliberately not kept.</b> A page carrying ten or more addresses of named people is a staff directory; the Globe and Mail&rsquo;s publishes the direct address of seventy-nine journalists. Those pages are public, so this is not secrecy &mdash; it is that freezing a staff directory into a repository and shipping it in a downloadable bundle makes it materially easier to scrape than the publisher made it. The URL, the hash and the counts are recorded so the count can be re-checked; <a href="../world-news-day/method.html#withheld">the cost of that choice is stated rather than hidden</a>. Organisation pages that are kept are stored gzipped with the SHA-256 of the <em>original</em> bytes, which the gate decompresses and re-verifies: eleven megabytes of script bundle became two, with the anchoring unchanged.</p>
+        <p>The vault bundle now carries all of it: 104 files, 2.68&nbsp;MB, SHA-256 <code>02816a3dabac7085a01010d7…</code>.</p>
+      </td>
+    </tr>
     <tr>
       <td class="vnum">v0.4.1</td>
       <td>29 Sep 2026</td>
@@ -409,7 +420,7 @@
     <p>News is failing not because there is too little information but because there is no walkable chain from a claim to its evidence, no way for a correction to reach what it disproved, and no way to pay the person who did the original work. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="netline"><a href="https://sgit.ai"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://graphs.sgit.ai">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai">&#8593; nhi.sgit.ai</a> &middot; <a href="https://sg-sentinel.sgit.ai">&#8593; sg-sentinel.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.4.1</a> &middot; <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.4.2</a> &middot; <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>The argument</h4>
@@ -442,6 +453,7 @@
     <a href="../portugal/connections.html">Connections: who should talk to whom</a>
     <a href="../world-news-day/index.html">World News Day 2026: the corpus (beta)</a>
     <a href="../world-news-day/licences.html">The licence that is not there</a>
+    <a href="../world-news-day/contacts.html">World News Day: how to reach them</a>
     <a href="../world-news-day/vault.html">World News Day: the vault</a>
     <a href="../databases/index.html">Databases with no server (beta)</a>
     <a href="../databases/sql.html">The SQL and SPARQL consoles</a>

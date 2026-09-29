@@ -90,6 +90,21 @@ def surnames(s):
     return {p.strip(" ,.").split()[-1].lower() for p in parts if p.strip(" ,.")}
 
 
+def announcement_terms(register, latest):
+    """The announcement's own sentence, read from the frozen page rather than quoted by hand.
+
+    Returns None when the page is not held — which was the case until v0.4.2, and would be the
+    case again if the WAF refused every attempt on some later build. A claim that cannot be
+    read from bytes is not silently replaced with one that was typed."""
+    src = next((s for s in register["sources"] if s["kind"] == "announcement"), None)
+    if not src:
+        return None
+    text = (SEC / src["frozen"]).read_text(encoding="utf-8", errors="replace")
+    plain = " ".join(html.unescape(re.sub(r"<[^>]+>", " ", text)).split())
+    m = re.search(r"[^.]*\bfree to republish\b[^.]*\.", plain)
+    return m.group(0).strip() if m else None
+
+
 def prose(rec):
     body = " ".join(html.unescape(re.sub(r"<[^>]+>", " ", rec["content"]["rendered"])).split())
     cut = body.find("This opinion piece was commissioned")
@@ -262,12 +277,12 @@ def main():
         },
         "the_two_statements": {
             "on_the_articles": lic_groups.most_common(1)[0][0],
-            "on_the_announcement": "All of the op-eds are free to republish with appropriate credit.",
+            "on_the_announcement": announcement_terms(register, latest),
             "note": ("The same organisation states the terms twice, differently. The articles require republication "
                      "IN FULL and say nothing about credit; the announcement requires CREDIT and says nothing about "
-                     "in full. A republisher following one is not following the other. The announcement itself could "
-                     "not be fetched by an automated reader (see register.excluded), so its wording is recorded here "
-                     "as read by a person and is not the basis of any other claim in this section."),
+                     "in full. A republisher following one is not following the other. Both sentences are now read "
+                     "from frozen, hashed bytes; until v0.4.2 the announcement's was quoted from a reading by a "
+                     "person, because the page had refused two automated attempts. See data/corrections.json."),
         },
     }
     write("licences.json", findings)

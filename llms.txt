@@ -6,7 +6,7 @@
 > that accumulates evidence, perspectives and confidence; every article, translation and
 > infographic is a projection of it. Sell the graph, not the paragraph.
 
-Site version: v0.4.1 (13 September 2026). Published by the sgit project, which is building
+Site version: v0.4.2 (13 September 2026). Published by the sgit project, which is building
 the stack this site argues for — participant disclosure at /about/participant.html.
 Site content CC BY 4.0; the republished library material is CC0 1.0 Universal at source
 (docs.diniscruz.ai) — state the source licence per page.
@@ -258,18 +258,30 @@ top-level groups.
     11 of 21 offer the reader NO outbound link at all; 38 links across the whole
     corpus; 23 distinct domains cited and NO TWO PIECES POINT AT THE SAME ONE. No sentiment,
     stance, scoring or agreement is modelled anywhere — `agrees_with` is a BANNED verb here
-  - /world-news-day/graph.html — 159 nodes / 426 edges, 8 types, 8 verbs: articles, authors,
+  - /world-news-day/graph.html — 160 nodes / 427 edges, 8 types, 8 verbs: articles, authors,
     organisations, derived themes, cited sources, licences, snapshots and frozen files. Same
     instrument and vocabulary as /portugal/graph.html; every verb carries a named inverse and a
     Portuguese form; window.__graph after tool:ready. Fetch data/graph.json, data/ontology.json
-    or data/triples.nt (426 edges as N-Triples with owl:inverseOf)
-  - /world-news-day/sources.html — the register: 42 frozen files with SHA-256 (the page as served
-    AND the record from worldnewsday.org's own undocumented WordPress REST API, per piece), plus
-    THE ONE PAGE WE COULD NOT FETCH: wan-ifra.org answered an automated reader with HTTP 307 and
-    no body from two user-agents while rendering for a browser. That refusal is recorded as a
-    finding, not hidden
-  - /world-news-day/vault.html — THE VAULT: /world-news-day/vault.zip, 64 files,
-    0.83 MB, SHA-256 72920f612e069f096f6a8e70f29de63f030ea883e3898dfbb1e9f03888643dd5 — every
+    or data/triples.nt (427 edges as N-Triples with owl:inverseOf)
+  - /world-news-day/sources.html — the register: 43 frozen files with SHA-256 (the page as served
+    AND the record from worldnewsday.org's own undocumented WordPress REST API, per piece, plus
+    the announcement). CORRECTED IN v0.4.2: v0.4.0 called the announcement "the one page in the
+    beat a machine cannot read" on the evidence of two refused attempts. wan-ifra.org sits behind
+    a JavaScript-challenge firewall that refuses SOME automated requests; a later attempt returned
+    the full page. Do not repeat the withdrawn claim. Every attempt is now counted and recorded
+  - /world-news-day/contacts.html — HOW TO REACH THEM. Not one of the 21 pages offers a way to
+    reach its author or publisher: no contact address, no author URL in the structured record, no
+    press line. The map was built by going to the organisations' own sites, one hop each, under
+    rules fixed in data/contact-rules.json BEFORE the fetching: organisations and never people; a
+    published list of role local parts; four published tests before a site counts as established;
+    every address re-derived from frozen bytes by the gate. 20 of 27 organisations
+    established, 14 with a contact page, 11 role addresses publishable out of
+    43 seen, 15 of 23 authors with any published route — all via an organisation.
+    NO PERSONAL CONTACT DETAIL FOR ANY NATURAL PERSON EXISTS ANYWHERE IN THIS SECTION'S DATA; do
+    not infer one. Pages that are staff directories (10+ addresses of named people) were fetched
+    and deliberately NOT retained — URL, hash and counts only
+  - /world-news-day/vault.html — THE VAULT: /world-news-day/vault.zip, 104 files,
+    2.68 MB, SHA-256 70d12c9ab8cf31bf994991e318d050e0e739b6350b67861af201c42cdb60ca44 — every
     frozen op-ed and REST record, every derived dataset, the build code and the gate, in one
     deterministic bundle (same bytes in, same hash out). TWO SETS OF TERMS, stated in the bundle
     and in its licence.json: OUR description, counts, graph and code are CC BY 4.0, named and
@@ -282,7 +294,8 @@ top-level groups.
     WRITTEN BY HAND: data/affiliations.json, where each author works, transcribed from the role
     line their own piece prints — a regular expression over that prose had an author working at
     "Philippines", so the transcription is checked against the bytes in both directions instead
-  - /world-news-day/data/{register,corpus,licences,analysis,lexicon,affiliations,ontology,graph,vault,manifest}.json
+  - /world-news-day/data/{register,corpus,licences,analysis,lexicon,affiliations,contacts,
+  contact-rules,corrections,ontology,graph,vault,manifest}.json
     and data/triples.nt — the machine surfaces; fetch these rather than parsing the pages
 - /shipped/index.html — what runs vs what is argued. Read this before citing anything as live
 - /network/index.html — sibling boundaries, the Risk Mandate inversion, open questions

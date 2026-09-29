@@ -1,0 +1,38 @@
+{
+  "id": "wnd-corrections",
+  "version": "0.1.0",
+  "note": "What this section published, got wrong, and changed — with the version it was wrong in, the version that fixed it, and what the claim says now. This publication argues that a correction which does not reach what it disproved is not a correction; a section that will not correct itself in public has no standing to make that argument.",
+  "count": 2,
+  "corrections": [
+    {
+      "id": "announcement-unreadable",
+      "wrong_in": "v0.4.0",
+      "fixed_in": "v0.4.2",
+      "where": [
+        "world-news-day/index.html",
+        "world-news-day/licences.html",
+        "world-news-day/sources.html",
+        "data/register.json (excluded)",
+        "llms.txt"
+      ],
+      "we_said": "wan-ifra.org answered an automated reader with HTTP 307 and no body, repeatedly and from two user-agents. The announcement that grants the permission is the one page in the beat a machine cannot read.",
+      "what_was_wrong": "Two things. The response was not empty: it carried 1.3 KB of JavaScript challenge from a Sucuri WAF, reading 'Javascript is required. Please enable javascript before you are allowed to see this page.' And the refusal is INTERMITTENT, not a property of the page: on a later build the same URL, fetched with the same client and the same user-agent, returned the full 59 KB article on the third attempt. Two refusals are evidence about two attempts.",
+      "it_now_says": "wan-ifra.org is served through a JavaScript-challenge WAF that answers some automated requests with a 307 and a challenge page instead of the article. The announcement is now fetched with up to six attempts, every attempt recorded with the size and hash of what came back, and the page is frozen and hashed when one succeeds.",
+      "what_changed_downstream": "The announcement is a registered source rather than an excluded one, and the wording of its terms — 'All of the op-eds are free to republish with appropriate credit' — is now read from the frozen bytes by build/graph.py rather than quoted by hand. The two-statement comparison on the licence page stands unchanged, and is now anchored on both sides. The hand-quoted sentence turned out to be verbatim.",
+      "how_it_was_caught": "By going back to the same host for a different reason. Building the contacts map meant fetching wan-ifra.org for the World Editors Forum, and it answered 200.",
+      "what_it_cost": "A claim about another organisation's infrastructure was published more strongly than the evidence supported, and it was the kind of claim that flatters the publisher making it.",
+      "the_rule_it_produced": "A refusal observed N times is a fact about N attempts. Where this section reports that it could not read something, it now counts the attempts, records each one, and says so on the page."
+    },
+    {
+      "id": "byline-middle-initial",
+      "wrong_in": "v0.4.0",
+      "fixed_in": "v0.4.0",
+      "where": ["data/corpus.json", "data/graph.json"],
+      "we_said": "Charles M",
+      "what_was_wrong": "The byline parser ended the name at the first full stop, so 'By Charles M. Sennott.' produced a person called 'Charles M'. A name published wrongly is a small error with no excuse: it was in the data before the section was first built.",
+      "it_now_says": "Charles M. Sennott",
+      "what_changed_downstream": "The author node, the affiliation transcription and the corpus table. Caught before the section was published, but recorded here because the fix belongs in the same list as the one that was not.",
+      "the_rule_it_produced": "A name is checked against the page it was read from before it is published, not after."
+    }
+  ]
+}

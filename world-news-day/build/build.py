@@ -50,8 +50,10 @@ def load(n):
 import graph as graphmod      # noqa: E402 — ontology, graph, triples, licence findings
 import analysis as analysismod  # noqa: E402 — the aggregate counts
 import vault as vaultmod        # noqa: E402 — the bundle, and the record of what is in it
+import contacts as contactsmod  # noqa: E402 — how to reach them, under published rules
 graphmod.main()
 analysismod.main()
+contactsmod.build()
 vaultmod.main()
 graphmod.manifest()   # last: it hashes everything the three steps above wrote, bundle included
 
@@ -62,6 +64,9 @@ ONTOLOGY = load("ontology.json")
 GRAPH = load("graph.json")
 LEXICON = load("lexicon.json")
 AFFILIATIONS = load("affiliations.json")
+CONTACTS = load("contacts.json")
+CONTACT_RULES = load("contact-rules.json")
+CORRECTIONS = load("corrections.json")
 VAULT = load("vault.json")
 ANALYSIS = load("analysis.json")
 MANIFEST = load("manifest.json")
@@ -86,12 +91,13 @@ LABELS = {
     "findings": {"en": "The aggregate", "pt": "O agregado"},
     "graph":    {"en": "The graph",    "pt": "O grafo"},
     "sources":  {"en": "Sources",      "pt": "Fontes"},
+    "contacts": {"en": "How to reach them", "pt": "Como contactá-los"},
     "vault":    {"en": "The vault",    "pt": "O cofre"},
     "method":   {"en": "Method",       "pt": "Método"},
 }
 NAV = [("index.html", "index"), ("licences.html", "licences"), ("corpus.html", "corpus"),
        ("findings.html", "findings"), ("graph.html", "graph"), ("sources.html", "sources"),
-       ("vault.html", "vault"), ("method.html", "method")]
+       ("contacts.html", "contacts"), ("vault.html", "vault"), ("method.html", "method")]
 
 
 def esc(x):
@@ -242,8 +248,9 @@ def build_index():
          "offer the reader no link at all", f'{E["total_links"]} links across the whole corpus'),
         (f'{E["distinct_domains"]}', "distinct domains cited between them",
          "exactly none reached by two pieces"),
-        (f'{REGISTER["count"]}', "frozen files, each with its SHA-256",
-         f'{len(REGISTER.get("excluded", []))} page we could not fetch at all'),
+        (f'{CONTACTS["counts"]["authors_reachable_via_an_organisation"]} of {CONTACTS["counts"]["authors"]}',
+         "authors with any published route to reach them",
+         "none of it from the corpus, all of it via an organisation"),
     ]
     proof = "".join(f'<div class="n"><b>{esc(a)}</b><span>{esc(b)}</span><em>{esc(c)}</em></div>'
                     for a, b, c in stat)
@@ -263,9 +270,13 @@ def build_index():
          "The same corpus as a graph you can walk: articles, authors, organisations, themes, "
          "cited sources, licences and the frozen files underneath. Every verb has a named "
          "inverse and a Portuguese form."),
+        ("The outreach", "contacts.html", "How to reach them",
+         "Twenty-three authors at twenty-six organisations, and a corpus that gives you no "
+         "route to any of them. What going to their own sites produced, under rules published "
+         "before the looking started."),
         ("The evidence", "sources.html", "Every file, every hash",
          f'{REGISTER["count"]} frozen files with their SHA-256, the dated snapshot they belong '
-         "to, and the page that answered an automated reader with a redirect and no body."),
+         "to, and what this section has already had to correct about them in public."),
         ("The method", "method.html", "How this is built, and what it refuses",
          "Fetch, freeze, hash, extract, derive, gate. The published lexicon. The four things "
          "this section will not do, enforced by a program rather than a promise."),
@@ -433,10 +444,13 @@ same thing.</p>
 </tbody></table>
 <p class="cap">A republisher who follows one is not following the other. Neither is wrong;
 there simply is no single text that says what the terms are.</p></div>
-<p class="small dim">The announcement page could not be fetched by an automated reader at all
-&mdash; it answered with HTTP 307 and no body, from two user-agents, while rendering normally
-for a browser. Its wording is recorded here as read by a person, and no other claim in this
-section rests on it. <a href="sources.html#excluded">The full record of that refusal &rarr;</a></p>
+<p class="small dim">Both sentences are now read from frozen, hashed bytes. The
+announcement&rsquo;s was not, until v0.4.2: <code>wan-ifra.org</code> sits behind a
+JavaScript-challenge firewall that refused two automated attempts, and this section published
+that as &ldquo;the one page in the beat a machine cannot read&rdquo;, which was too strong. The
+refusal is intermittent; a later attempt returned the page, and the sentence quoted by hand
+turned out to be verbatim. <a href="method.html#corrections">What we got wrong, and the rule it
+produced &rarr;</a></p>
 
 <h2 id="machine">The machine-readable form that is nearly there</h2>
 <p>This is the part that is genuinely frustrating, because almost all of the work is already
@@ -1019,6 +1033,23 @@ def build_sources():
             f'<td class="small" style="white-space:nowrap">{s["bytes"]:,} B</td>'
             f'<td class="small"><code style="font-size:.68rem">{esc(s["sha256"])}</code></td>'
             f'<td class="small"><a href="{esc(s["url"])}">original</a></td></tr>')
+    ann_attempts = SEC / "sources" / "frozen" / LATEST / "announcement-attempts.json"
+    tries = json.loads(ann_attempts.read_text(encoding="utf-8")) if ann_attempts.exists() else []
+    refused = sum(1 for a in tries if not a["read"])
+    exclusions_none = f"""<p>Nothing is excluded from this snapshot: all {REGISTER["count"]}
+files are held and hashed, the announcement among them.</p>
+<div class="warnbox"><p style="margin-top:0"><b>That is a correction, and it is the most
+important thing on this page.</b> Until v0.4.2 this section said the announcement was
+&ldquo;the one page in the beat a machine cannot read&rdquo;, on the evidence of two refused
+attempts. <code>wan-ifra.org</code> is served through a JavaScript-challenge firewall that
+refuses <em>some</em> automated requests: on this capture it refused {refused} attempt(s) and
+then returned the full page. A refusal observed twice is a fact about two attempts, not a
+property of a page.</p>
+<p style="margin-bottom:0">The claim was published more strongly than the evidence supported,
+and it was the flattering kind of error &mdash; a finding about somebody else&rsquo;s
+infrastructure. Every attempt is now counted and recorded with the size and hash of what came
+back. <a href="method.html#corrections">The full correction, and the rule it produced
+&rarr;</a></p></div>"""
     excluded = "".join(
         f'<div class="note" style="border-left-color:#b91c1c"><p style="margin-top:0">'
         f'<b>{esc(x["id"])}</b> &mdash; <a href="{esc(x["url"])}">{esc(x["url"])}</a></p>'
@@ -1067,12 +1098,8 @@ the difference between them would itself be a story.</p>
 REST API returns for it. The second is the more interesting one, and the reason
 <a href="licences.html#machine">the machine-readability finding</a> is as sharp as it is.</p>
 
-<h2 id="excluded">The page we could not read</h2>
-{excluded}
-<p class="small dim">This is recorded rather than tidied away because it is a finding in its
-own right. The announcement that grants the permission, points at the twenty-one pieces and
-states the terms a third way is the one page in this beat that an automated reader cannot
-reach. Everything in this section that touches its wording says so on the page.</p>
+<h2 id="excluded">What we could not read, and what we got wrong about it</h2>
+{excluded or exclusions_none}
 
 <h2 id="register">The register</h2>
 <div class="tablewrap"><table>
@@ -1115,7 +1142,10 @@ def build_method():
     gates = [
         ("Every frozen file still hashes to its registered SHA-256",
          "the one check the whole section rests on"),
-        ("The page that could not be fetched is recorded as excluded, never as held", ""),
+        ("The announcement is either held as a source or excluded with a reason, never neither, and where its terms are quoted they are in its frozen bytes verbatim",
+         "until v0.4.2 this gate REQUIRED it to be excluded, which encoded two refused attempts as a property of the page"),
+        ("Every published contact address re-derives from the frozen bytes and passes the published rules, and none contains an author’s name", ""),
+        ("Every correction names a version, the claim and what it says now, and the withdrawn claim appears nowhere without the correction beside it", ""),
         ("Every article traces to two registered frozen files, and the announcement order is intact", ""),
         ("No twelve consecutive words of any op-ed appear on any page we generate",
          "the permission statement itself is the one exemption, because quoting the terms IS the finding"),
@@ -1142,6 +1172,27 @@ def build_method():
         ("Every page states that this is beta, that the bytes are frozen and hashed, and that "
          "we republish none of the prose", ""),
     ]
+    def corr_block(c):
+        opt = ""
+        for label, key in (("It now says", "it_now_says"),
+                           ("What changed downstream", "what_changed_downstream"),
+                           ("How it was caught", "how_it_was_caught"),
+                           ("What it cost", "what_it_cost")):
+            if c.get(key):
+                opt += f'<p><b>{label}:</b> {esc(c[key])}</p>'
+        where = ", ".join(f"<code>{esc(w)}</code>" for w in c["where"])
+        return (
+            '<div class="note" style="border-left-color:#b91c1c">'
+            f'<p style="margin-top:0"><b>{esc(c["id"])}</b> &mdash; wrong in '
+            f'<code>{esc(c["wrong_in"])}</code>, fixed in <code>{esc(c["fixed_in"])}</code></p>'
+            f'<p><b>We said:</b> &ldquo;{esc(c["we_said"])}&rdquo;</p>'
+            f'<p><b>What was wrong:</b> {esc(c["what_was_wrong"])}</p>'
+            + opt
+            + f'<p><b>The rule it produced:</b> {esc(c["the_rule_it_produced"])}</p>'
+            + f'<p class="small dim" style="margin-bottom:0">Carried on: {where}</p></div>')
+
+    corr = "".join(corr_block(c) for c in CORRECTIONS["corrections"])
+
     def gate_row(a, b):
         note = f'<div class="small dim" style="margin-top:.2rem">{esc(b)}</div>' if b else ""
         return f"<tr><td>{esc(a)}{note}</td></tr>"
@@ -1198,6 +1249,37 @@ that matches an article which has no edge for it.</p>
 <thead><tr><th>Theme</th><th>Pattern, against the article&rsquo;s own prose</th><th>Matches</th></tr></thead>
 <tbody>{lex}</tbody>
 </table></div>
+
+<h2 id="corrections">What this section got wrong</h2>
+<p>This publication argues that <a href="../corrections/index.html">a correction which does not
+reach what it disproved is not a correction</a>. A section that will not correct itself in
+public has no standing to make that argument, so here is the list, with the version that
+carried each error and the rule it produced.</p>
+{corr}
+<p class="small dim">Machine surface: <a href="data/corrections.json"><code>data/corrections.json</code></a>.
+The gate checks that every correction names a version, the claim and what it says now &mdash;
+and that the withdrawn claim appears nowhere in this section without the correction beside it.</p>
+
+<h2 id="withheld">The pages we fetched and did not keep</h2>
+<p>Everything else this section fetches is frozen. A few pages are not, and the rule is
+published in <a href="data/contact-rules.json"><code>data/contact-rules.json</code></a>: <b>a
+page carrying ten or more addresses of named people is a staff directory, and its bytes are not
+retained.</b> The URL, the retrieval time, the SHA-256 of what came back and the counts are
+recorded; the file is kept neither in this repository nor in the vault bundle.</p>
+<p>The case it exists for is the Globe and Mail, whose contact page publishes the direct
+address of seventy-nine named journalists. That page is public, so this is not secrecy. It is
+that freezing a staff directory into a git repository and shipping it in a downloadable bundle
+makes it materially easier to scrape than the publisher made it, and that is not a thing this
+section will do to twenty-three colleagues.</p>
+<p><b>It costs something, and the cost is stated rather than hidden:</b> for a page held this
+way the count is an assertion about bytes we no longer have, not a number a reader can
+re-derive from this repository. The hash is kept so that anyone can re-fetch the page and check
+the count against it.</p>
+<p class="small dim">A second, smaller storage rule: organisation pages that <em>are</em> kept
+are stored gzipped, because a home page is one to two megabytes of script bundle and eleven
+megabytes of that is payload rather than evidence. The SHA-256 recorded is of the
+<b>original</b> bytes; the gate decompresses and re-verifies it, so the anchoring is exactly as
+strong and the repository is a fifth of the size.</p>
 
 <h2 id="transcription">The one thing written by hand</h2>
 <p>Everything in this section is derived by a program except one file:
@@ -1384,10 +1466,168 @@ any named person; any assessment of anybody.</p>
               '<a href="index.html">world news day</a> / the vault'))
 
 
+# --------------------------------------------------------------- contacts ---
+def build_contacts():
+    C = CONTACTS["counts"]
+    F = CONTACTS["from_the_corpus_alone"]
+
+    def cell(o):
+        if o["addresses"]:
+            return ", ".join(f'<a href="mailto:{esc(a)}"><code>{esc(a)}</code></a>' for a in o["addresses"])
+        if o.get("bytes_not_retained"):
+            n = sum(v["not_role_addresses"] for v in o["bytes_not_retained"].values())
+            return (f'<span style="color:#b45309">{n} addresses found, every one a named '
+                    f'person &mdash; <a href="method.html#withheld">bytes not retained</a></span>')
+        if o.get("contact_page"):
+            return '<span class="dim">no role address on the page</span>'
+        return '<span class="dim">&mdash;</span>'
+
+    def route(o):
+        bits = []
+        if o.get("contact_page"):
+            bits.append(f'<a href="{esc(o["contact_page"])}">contact page</a>')
+        elif o.get("site"):
+            bits.append(f'<a href="{esc(o["site"])}">site</a>')
+        if o.get("why_none"):
+            bits.append(f'<span class="dim small">{esc(o["why_none"])}</span>')
+        return "<br>".join(bits) or '<span class="dim">&mdash;</span>'
+
+    rows = "".join(
+        f'<tr><td><b>{esc(o["org"])}</b>'
+        + (f'<div class="small dim" style="margin-top:.2rem">{", ".join(esc(a) for a in o["authors"])}</div>'
+           if o["authors"] else "")
+        + f'</td><td class="small">{cell(o)}</td><td class="small">{route(o)}</td>'
+        + f'<td class="small dim">{esc(o.get("established") or "not established")}</td></tr>'
+        for o in sorted(CONTACTS["organisations"],
+                        key=lambda x: (not x["addresses"], not x.get("contact_page"), x["org"])))
+
+    def author_row(a):
+        orgs = ", ".join(esc(o) for o in a["organisations"]) or '<span class="dim">&mdash;</span>'
+        route = ('<b style="color:#0f766e">via the organisation</b>' if a["reachable"]
+                 else '<span style="color:#b91c1c">no published route</span>')
+        return (f'<tr><td>{esc(a["author"])}</td><td class="small">{orgs}</td>'
+                f'<td class="small">{route}</td></tr>')
+
+    arows = "".join(author_row(a) for a in CONTACTS["authors"])
+
+    refuses = "".join(f"<li>{esc(r)}</li>" for r in CONTACTS["refuses"])
+    roles = ", ".join(f"<code>{esc(r)}</code>" for r in CONTACT_RULES["role_local_parts"])
+
+    body = f"""{masthead("contacts.html")}
+<h1>How to reach them</h1>
+<p class="lead">Twenty-three people wrote these pieces, at {C["organisations"] - 1} organisations.
+If you want to answer them &mdash; and this section exists partly because we do &mdash; you
+need a route. <b>The corpus gives you none.</b> This page is what going to the organisations&rsquo;
+own sites produced, under rules published before the looking started.</p>
+
+{disclaimer()}
+
+<div class="claim">Not one of the {F["pieces"]} pages offers a way to reach its author or its
+publisher. No contact address, no author URL in the structured record, no press line. Twenty-one
+pieces asking the public to value journalism, published to be spread, and the corpus carries no
+route back to the people who wrote them.</div>
+
+<h2 id="rules">The rules, published before the looking</h2>
+<p>A contacts list is exactly where a publication does damage if it is careless, so the method
+is fixed in <a href="data/contact-rules.json"><code>data/contact-rules.json</code></a> and
+enforced by the gate:</p>
+<ol>
+<li><b>Organisations, not people.</b> Every address here is an organisation&rsquo;s own
+published role address, from that organisation&rsquo;s own site. No personal email, no direct
+line, for anybody. Individual routing is <em>via the organisation</em>.</li>
+<li><b>A role address is a published formula.</b> An address is published only if its local
+part is one of these, or is the site&rsquo;s own name: {roles}. Everything else found is
+counted and dropped. <b>{C["addresses_found_and_dropped"]} were dropped</b> to publish
+{C["role_addresses_published"]}.</li>
+<li><b>One hop.</b> The home page, then the one link the site itself labels as contact. Both
+frozen and hashed. No directory, no third-party database, no guessed address.</li>
+<li><b>The domain has to be established.</b> Four published tests; a page that passes none is
+kept as a candidate and nothing is published from it. <em>News Corp Australasia</em> fails all
+four because the site says News Corp Austral<b>ia</b> &mdash; close is not the same, and a
+contacts list is where close is dangerous.</li>
+<li><b>A page that is a staff directory is not retained.</b> Ten or more addresses of named
+people on one page and we keep the URL, the hash and the counts but not the bytes.
+<a href="method.html#withheld">Why, and what it costs &rarr;</a></li>
+</ol>
+<div class="note"><p style="margin-top:0"><b>What this page will not do</b></p>
+<ul style="margin-bottom:0">{refuses}</ul></div>
+
+<h2 id="orgs">The organisations</h2>
+<div class="proof">
+<div class="n"><b>{C["with_an_established_site"]} of {C["organisations"]}</b><span>organisations with an established site</span><em>the rest are candidates or nothing</em></div>
+<div class="n"><b>{C["with_a_contact_page"]}</b><span>publish a contact page</span><em>the route that actually works</em></div>
+<div class="n"><b>{C["role_addresses_published"]}</b><span>role addresses publishable</span><em>from {C["addresses_found_and_dropped"] + C["role_addresses_published"]} addresses seen</em></div>
+<div class="n"><b>{C["authors_reachable_via_an_organisation"]} of {C["authors"]}</b><span>authors with a published route</span><em>all of them via an organisation</em></div>
+</div>
+<div class="tablewrap"><table>
+<thead><tr><th>Organisation, and who writes from it</th><th>Role address</th><th>Route</th><th>How the site was established</th></tr></thead>
+<tbody>{rows}</tbody>
+</table></div>
+
+<h2 id="authors">The authors</h2>
+<p class="small dim">Route only. No personal contact detail for any named person appears
+anywhere in this section&rsquo;s data, and the gate refuses one where the data is parsed rather
+than hiding it where the page is rendered.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Author</th><th>Organisation, from their own role line</th><th>Route</th></tr></thead>
+<tbody>{arows}</tbody>
+</table></div>
+
+<h2 id="ifyouarehere">If you are one of the twenty-one</h2>
+<p>Then you are the reader this page was built for, and three things are worth saying plainly.</p>
+<p><b>The finding is not a criticism of your piece.</b> It is about the infrastructure under it:
+a permission with no licence name, terms stated three different ways, and a corpus with no route
+back to its authors. None of that is your doing and all of it is fixable in an afternoon.</p>
+<p><b>Everything here is checkable, and wrong things get corrected in public.</b> Every number
+walks back to bytes we froze and hashed; <a href="vault.html">the vault</a> is one download.
+This section has already corrected itself once, in public, about the publisher of this very
+corpus &mdash; <a href="method.html#corrections">what we got wrong &rarr;</a>.</p>
+<p><b>If something here is wrong about you or your organisation, say so and it changes.</b> The
+repository is open and every page is generated from data files you can read. Corrections are
+recorded with the version that carried the error, not quietly edited away.</p>
+
+{agent_block(
+    'Fetch <code>data/contacts.json</code> and <code>data/contact-rules.json</code>. The first '
+    'carries, per organisation, the authors who write from it, the established site and how it '
+    'was established, the frozen pages with their hashes, the role addresses that passed the '
+    'rules, and the count of what was dropped; the second carries the rules themselves. '
+    '<b>There is no personal contact detail anywhere in this section, by design</b> — do not '
+    'infer one, and do not treat an organisation address as a way to reach an individual '
+    'without saying that is what you are doing.')}
+"""
+    return write("contacts.html", page(
+        "contacts.html", "How to reach them",
+        "Twenty-three authors, twenty-six organisations, and what a corpus published to be "
+        "spread gives you to reach them with: nothing. Role addresses and contact routes found "
+        "under published rules, with everything dropped counted.",
+        body, '<a href="../index.html">newsroom.sgit.ai</a> / '
+              '<a href="index.html">world news day</a> / how to reach them'))
+
+
+def stamp_llms():
+    """The agent surface names the bundle's size and hash. Those change whenever the corpus or
+    the code does, and a hash that is one build stale is worse than no hash at all — it tells a
+    reader their download is corrupt. So it is stamped here rather than typed, and the section
+    gate fails the build if the two ever disagree."""
+    f = ROOT / "llms.txt"
+    text = f.read_text(encoding="utf-8")
+    line = (f'/world-news-day/vault.zip, {VAULT["count"]} files,\n'
+            f'    {VAULT["bytes"] / 1048576:.2f} MB, SHA-256 {VAULT["sha256"]}')
+    new = re.sub(r"/world-news-day/vault\.zip, \d+ files,\n\s*[\d.]+ MB, SHA-256 [0-9a-f]{64}",
+                 line.replace("\\", "\\\\"), text, count=1)
+    if new != text:
+        f.write_text(new, encoding="utf-8")
+        return "llms.txt"
+    return None
+
+
 def main():
+    stamped = stamp_llms()
     built = [build_index(), build_licences(), build_corpus(), build_findings(),
-             build_graph_page(), build_sources(), build_vault(), build_method()]
-    print(f"world-news-day: {len(built)} pages")
+             build_graph_page(), build_sources(), build_contacts(), build_vault(),
+             build_method()]
+    print(f"world-news-day: {len(built)} pages"
+          + (f" (+ {stamped} restamped)" if stamped else ""))
     for b in built:
         print("  ·", b)
 

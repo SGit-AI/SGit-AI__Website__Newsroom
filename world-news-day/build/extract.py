@@ -88,10 +88,36 @@ def fetch(date):
                                    "-w", "%{http_code}", url], capture_output=True, text=True).stdout.strip()
             print(f"  {code}  {dest.relative_to(SEC)}")
             time.sleep(0.3)
-    # the announcement, which may refuse an automated reader — the refusal is recorded, not hidden
-    code = subprocess.run(["curl", "-sSL", "-A", UA, "--max-time", "45", "-o", str(out / "announcement.snapshot"),
-                           "-w", "%{http_code}", ANNOUNCEMENT], capture_output=True, text=True).stdout.strip()
-    print(f"  {code}  announcement.snapshot")
+    fetch_announcement(out)
+
+
+def fetch_announcement(out, attempts=6):
+    """The announcement, which sits behind a JavaScript-challenge WAF that answers SOME requests
+    with a 307 and a 1.3 KB challenge instead of the page.
+
+    Until v0.4.2 this was tried twice, refused twice, and published as "the one page in the beat
+    a machine cannot read". That was too strong, and the correction is in data/corrections.json:
+    the challenge is INTERMITTENT, and a seventh attempt returned the page. A refusal observed
+    twice is evidence about two attempts, not a property of a page — so the attempts are counted
+    now, each one recorded with the size and hash of whatever came back, and the loop stops at
+    the first real page rather than at the first refusal."""
+    log = []
+    for i in range(attempts):
+        r = subprocess.run(["curl", "-sSL", "-A", UA, "--max-time", "45",
+                            "-o", str(out / "announcement.snapshot"),
+                            "-w", "%{http_code}", ANNOUNCEMENT], capture_output=True, text=True)
+        code = r.stdout.strip()
+        f = out / "announcement.snapshot"
+        size = f.stat().st_size if f.exists() else 0
+        log.append({"attempt": i + 1, "http": code, "bytes": size,
+                    "sha256": sha(f) if size else None,
+                    "read": bool(code == "200" and size > 3000)})
+        print(f"  {code}  announcement.snapshot ({size} bytes, attempt {i + 1})")
+        if code == "200" and size > 3000:
+            break
+        time.sleep(2)
+    (out / "announcement-attempts.json").write_text(
+        json.dumps(log, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
 
 def snapshots():
@@ -136,12 +162,13 @@ def main():
                          "publisher": "WAN-IFRA"})
     else:
         excluded.append({"id": f"{today}/announcement", "url": ANNOUNCEMENT,
-                         "why": ("wan-ifra.org answered an automated reader with HTTP 307 and no body, "
-                                 "repeatedly and from two user-agents. The page renders for a browser. It is "
-                                 "therefore cited here only through its own terms as quoted by a reader, and "
-                                 "no claim in this section stands on it alone. The refusal is itself one of "
-                                 "the findings: the announcement that grants the permission is the one page "
-                                 "in the beat a machine cannot read.")})
+                         "why": ("wan-ifra.org is served through a JavaScript-challenge WAF that answers "
+                                 "some automated requests with HTTP 307 and a 1.3 KB challenge page reading "
+                                 "'Javascript is required' instead of the article. It is intermittent, and "
+                                 "on this build every attempt was refused. No claim in this section stands "
+                                 "on the announcement alone. See data/corrections.json: an earlier version "
+                                 "of this section said the page could not be read by a machine at all, "
+                                 "which was too strong.")})
 
     # ---- the corpus ----------------------------------------------------------------
     LIC_RE = re.compile(r"(This opinion piece was commissioned[^.]*\.)\s*(Free to republish.*?)(?:$|\s*$)", re.S)

@@ -50,13 +50,13 @@
       "label": "Evidence",
       "default": false,
       "note": "Every frozen file and the capture it belongs to.",
-      "nodes": 43,
-      "edges": 84
+      "nodes": 44,
+      "edges": 85
     }
   ],
   "counts": {
-    "nodes": 159,
-    "edges": 426,
+    "nodes": 160,
+    "edges": 427,
     "by_type": {
       "Article": 21,
       "Author": 23,
@@ -65,7 +65,7 @@
       "CitedSource": 23,
       "Licence": 2,
       "Snapshot": 1,
-      "Source": 42
+      "Source": 43
     }
   },
   "nodes": [
@@ -537,6 +537,17 @@
       "sha256": "3837e814b2322eb7032f5ed319aba41dd920f9a9482aba7e7a65b480ae0c4acd",
       "bytes": 41260,
       "source": "2026-09-29/api/2026-world-news-day-time-to-fight.json",
+      "pack": "evidence"
+    },
+    {
+      "id": "src:2026-09-29/announcement",
+      "type": "Source",
+      "label": "announcement (announcement)",
+      "url": "https://wan-ifra.org/2026/09/world-news-day-21-great-op-eds-on-why-journalism-matters/",
+      "frozen": "sources/frozen/2026-09-29/announcement.snapshot",
+      "sha256": "91cfe637a883424e1839fbb0d8c0b8577659159a6c8e6fd2af1b1275cb159909",
+      "bytes": 59203,
+      "source": "2026-09-29/announcement",
       "pack": "evidence"
     },
     {
@@ -1984,6 +1995,13 @@
       "id": "captured_in:src:2026-09-29/api/2026-world-news-day-time-to-fight.json:snapshot:2026-09-29",
       "verb": "captured_in",
       "source": "src:2026-09-29/api/2026-world-news-day-time-to-fight.json",
+      "target": "snapshot:2026-09-29",
+      "pack": "evidence"
+    },
+    {
+      "id": "captured_in:src:2026-09-29/announcement:snapshot:2026-09-29",
+      "verb": "captured_in",
+      "source": "src:2026-09-29/announcement",
       "target": "snapshot:2026-09-29",
       "pack": "evidence"
     },

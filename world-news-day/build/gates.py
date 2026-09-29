@@ -21,6 +21,7 @@ Every check below exists for one of those two. The counts on the licence page ar
 here from the frozen bytes rather than read from the JSON that the page was built from, so a
 number can never be published that the evidence does not produce twice.
 """
+import gzip
 import hashlib
 import html as _html
 import json
@@ -46,6 +47,9 @@ ontology = load("ontology.json")
 graph = load("graph.json")
 lexicon = load("lexicon.json")
 affiliations = load("affiliations.json")
+contacts = load("contacts.json")
+contact_rules = load("contact-rules.json")
+corrections = load("corrections.json")
 manifest = load("manifest.json")
 
 LATEST = register["snapshots"][-1]
@@ -88,14 +92,22 @@ for s in register["sources"]:
 if register["count"] != len(register["sources"]):
     errors.append("register: count disagrees with the list")
 
-# --- 2. the page that could not be fetched is recorded as excluded, not as a source ----
-# The announcement is the page that grants the permission and the one page in the beat an
-# automated reader could not read. That is a finding, and a finding is published, not tidied
-# away — but it must never appear as though we hold bytes for it.
+# --- 2. the announcement is either held or excluded with a reason — never neither --------
+# It is the page that grants the permission and states the terms a third way, and it sits
+# behind an intermittent JavaScript-challenge WAF. Until v0.4.2 this gate REQUIRED it to be
+# excluded, which encoded a refusal observed twice as a permanent property of the page. It
+# now requires only that the section account for it, either way. See data/corrections.json.
+held = [s for s in register["sources"] if s["kind"] == "announcement"]
 excluded_urls = {x["url"] for x in register.get("excluded", [])}
-if not excluded_urls:
-    errors.append("register: nothing is recorded as excluded, but the announcement could not "
-                  "be fetched — the refusal is a finding and must stay on the record")
+if not held and not excluded_urls:
+    errors.append("register: the announcement is neither held as a source nor recorded as "
+                  "excluded — a page this section quotes must be accounted for either way")
+if held and licences["the_two_statements"]["on_the_announcement"]:
+    ann = " ".join(_html.unescape(re.sub(
+        r"<[^>]+>", " ", (SEC / held[0]["frozen"]).read_text(encoding="utf-8", errors="replace"))).split())
+    if licences["the_two_statements"]["on_the_announcement"] not in ann:
+        errors.append("licences: the announcement's terms are quoted but are not in its frozen "
+                      "bytes verbatim — the quotation drifted")
 for x in register.get("excluded", []):
     if not x.get("why"):
         errors.append(f'register: excluded "{x["id"]}" gives no reason')
@@ -457,6 +469,114 @@ for p in pages:
     if 'rel="license"' not in t:
         errors.append(f'{p.relative_to(ROOT)}: no rel="license" link — the HTML mechanism this '
                       f'section counts as unused on all 21')
+
+
+# --- 12c. the contacts map obeys its own published rules -------------------------------
+# A contacts list is where a publication does damage if it is careless, so every address is
+# re-derived from the frozen bytes and re-tested against the published rules here. An address
+# that only exists in contacts.json is an address somebody typed.
+ROLE = set(contact_rules["role_local_parts"])
+
+
+def _second_level(host):
+    parts = host.lower().replace("www.", "").split(".")
+    if len(parts) >= 3 and len(parts[-1]) == 2 and parts[-2] in {"co", "com", "org", "net", "gov", "ac"}:
+        return parts[-3]
+    return parts[-2] if len(parts) >= 2 else parts[0]
+
+
+MAILRE = re.compile(r"\b([A-Za-z0-9._%+\-]+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,})\b")
+author_words = {w.lower() for r in affiliations["people"] for w in r["author"].split() if len(w) > 2}
+for o in contacts["organisations"]:
+    blob = ""
+    for f in o.get("frozen", []):
+        path = SEC / f["path"]
+        if not path.exists():
+            errors.append(f'contacts: {o["org"]} names {f["path"]}, which is missing')
+            continue
+        raw = gzip.decompress(path.read_bytes()) if path.suffix == ".gz" else path.read_bytes()
+        if hashlib.sha256(raw).hexdigest() != f["sha256"]:
+            errors.append(f'contacts: {f["path"]} no longer hashes to its recorded SHA-256 '
+                          f'(the hash is of the original bytes, decompressed)')
+        blob += raw.decode("utf-8", "replace")
+    for a in o["addresses"]:
+        local, _, dom = a.partition("@")
+        if a not in blob.lower():
+            errors.append(f'contacts: "{a}" is published for {o["org"]} and is not in the '
+                          f'frozen bytes — an address nobody can check is an address somebody typed')
+        if local not in ROLE and local != _second_level(o.get("domain", "")):
+            errors.append(f'contacts: "{a}" is published and its local part is not a role name '
+                          f'from data/contact-rules.json')
+        if _second_level(dom) != _second_level(o.get("domain", "")):
+            errors.append(f'contacts: "{a}" is published for {o["org"]} but is not on its domain')
+        if local.lower() in author_words or any(w in local.lower() for w in author_words):
+            errors.append(f'contacts: "{a}" contains an author\'s name — this section publishes '
+                          f'no personal contact detail for any natural person')
+    if o["addresses"] and not o.get("established"):
+        errors.append(f'contacts: {o["org"]} has published addresses and no established site')
+    if not o.get("established") and not o.get("why_none"):
+        errors.append(f'contacts: {o["org"]} is unestablished and gives no reason')
+    for which, rec in (o.get("bytes_not_retained") or {}).items():
+        if rec["not_role_addresses"] < contact_rules["bytes_not_retained_rule"]["threshold"]:
+            errors.append(f'contacts: {o["org"]} withheld {which} bytes with only '
+                          f'{rec["not_role_addresses"]} personal addresses — below the published '
+                          f'threshold, so the rule was not what decided it')
+        if not rec.get("sha256"):
+            errors.append(f'contacts: {o["org"]} withheld {which} bytes without recording a hash '
+                          f'— then nobody can re-fetch and check the count')
+C = contacts["counts"]
+if C["role_addresses_published"] != sum(len(o["addresses"]) for o in contacts["organisations"]):
+    errors.append("contacts: the published-address count is stale")
+if C["organisations"] != len(contacts["organisations"]):
+    errors.append("contacts: the organisation count is stale")
+if contacts["from_the_corpus_alone"]["carrying_an_author_contact"] != 0:
+    errors.append("contacts: the corpus is claimed to carry an author contact; nothing in this "
+                  "section supports that")
+# no frozen file that the rule says must not be retained is in the tree after all
+for o in contacts["organisations"]:
+    for which in (o.get("bytes_not_retained") or {}):
+        base = o["slug"] + ("" if which == "home" else "-contact") + ".snapshot"
+        for cand in (base, base + ".gz"):
+            if (SEC / "sources" / "frozen" / LATEST / "orgs" / cand).exists():
+                errors.append(f'contacts: {cand} was withheld by the rule and is in the tree anyway')
+
+# --- 12d. corrections name a version, a claim and what it says now ----------------------
+# This publication argues that a correction which does not reach what it disproved is not a
+# correction. A section that records one without saying where it was wrong has not made one.
+for c in corrections["corrections"]:
+    for field in ("id", "wrong_in", "fixed_in", "we_said", "what_was_wrong", "the_rule_it_produced"):
+        if not c.get(field):
+            errors.append(f'corrections: "{c.get("id", "?")}" has no "{field}"')
+    if not c.get("where"):
+        errors.append(f'corrections: "{c.get("id", "?")}" does not say which pages carried the error')
+if corrections["count"] != len(corrections["corrections"]):
+    errors.append("corrections: count disagrees with the list")
+# and the corrected claim must be gone from the pages it was on
+GONE = re.compile(r"the one page in the beat a machine cannot read|"
+                  r"HTTP 307 and no body", re.I)
+# Quoting the withdrawn claim in order to withdraw it is the correction, not the error. The
+# check is that the claim never appears WITHOUT the correction around it.
+MENDED = re.compile(r"correct|we got wrong|too strong|until v0\.4|withdrawn|no longer", re.I)
+for p in pages:
+    body = p.read_text(encoding="utf-8")
+    for m in GONE.finditer(body):
+        if not MENDED.search(body[max(0, m.start() - 700):m.end() + 700]):
+            errors.append(f'{p.relative_to(ROOT)}: repeats a claim corrected in '
+                          f'data/corrections.json with no correction beside it — a correction '
+                          f'that does not reach the page that made the claim is not a correction')
+            break
+
+# --- 12e. the agent surface's copy of the bundle hash is not stale -----------------------
+# llms.txt names the vault's size and hash. A hash one build out of date tells a reader their
+# download is corrupt, which is worse than publishing none.
+vault = load("vault.json")
+llms = (ROOT / "llms.txt").read_text(encoding="utf-8")
+if vault["sha256"] not in llms:
+    errors.append("llms.txt does not carry the current vault.zip SHA-256 — run build.py, which "
+                  "stamps it, rather than editing it by hand")
+zipf = SEC / "vault.zip"
+if zipf.exists() and hashlib.sha256(zipf.read_bytes()).hexdigest() != vault["sha256"]:
+    errors.append("vault.zip does not hash to what data/vault.json records")
 
 # --- 13. every page states what this section is and is not -------------------------------
 REQUIRED = [
