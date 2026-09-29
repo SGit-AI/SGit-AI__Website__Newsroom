@@ -88,6 +88,7 @@ NAV = [
     ], ("portugal/", "pt-newsroom/")),
     ("World News Day", "world-news-day/index.html", [
         ("The corpus (beta)", "world-news-day/index.html"),
+        ("Free to republish is not a licence", "world-news-day/stories/free-to-republish-is-not-a-licence.html"),
         ("The licence that is not there", "world-news-day/licences.html"),
         ("The twenty-one", "world-news-day/corpus.html"),
         ("The aggregate", "world-news-day/findings.html"),
@@ -144,6 +145,7 @@ FOOTER = [
         ("Portugal Startups (beta)", "portugal/index.html"),
         ("Connections: who should talk to whom", "portugal/connections.html"),
         ("World News Day 2026: the corpus (beta)", "world-news-day/index.html"),
+        ("Free to republish is not a licence", "world-news-day/stories/free-to-republish-is-not-a-licence.html"),
         ("The licence that is not there", "world-news-day/licences.html"),
         ("World News Day: how to reach them", "world-news-day/contacts.html"),
         ("World News Day: the vault", "world-news-day/vault.html"),

@@ -6,7 +6,7 @@
 > graph that accumulates evidence, perspectives and confidence; every article is a
 > **projection** of it. **Sell the graph, not the paragraph.**
 
-*Source: <https://newsroom.sgit.ai/index.html> · site v0.4.2 · markdown twin of the front page.*
+*Source: <https://newsroom.sgit.ai/index.html> · site v0.4.3 · markdown twin of the front page.*
 
 ---
 
@@ -57,6 +57,7 @@ them a human reviewed before publication:
   fetched, frozen, hashed, described and graphed here, and republished nowhere. All twenty-one
   grant permission; none grants it under a licence with a name, and none uses the schema.org
   `license` field its pages already ship.
+  [The argument →](https://newsroom.sgit.ai/world-news-day/stories/free-to-republish-is-not-a-licence.html) ·
   [The corpus →](https://newsroom.sgit.ai/world-news-day/index.html) ·
   [The finding →](https://newsroom.sgit.ai/world-news-day/licences.html) ·
   [The aggregate →](https://newsroom.sgit.ai/world-news-day/findings.html)

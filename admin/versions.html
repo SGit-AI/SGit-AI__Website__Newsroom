@@ -14,7 +14,7 @@
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer and the shipped CLI. This site is the future-of-news stack: provenance, corrections, and paying the fact creator">&#8593; part of <b>sgit.ai</b></a>
   <span class="stage-pill">design, not built</span>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.4.2</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.4.3</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -85,6 +85,7 @@
       <a class="nl" href="../world-news-day/index.html">World News Day<span class="caret">&#9662;</span></a>
       <div class="sub">
       <a class="sl" href="../world-news-day/index.html">The corpus (beta)</a>
+      <a class="sl" href="../world-news-day/stories/free-to-republish-is-not-a-licence.html">Free to republish is not a licence</a>
       <a class="sl" href="../world-news-day/licences.html">The licence that is not there</a>
       <a class="sl" href="../world-news-day/corpus.html">The twenty-one</a>
       <a class="sl" href="../world-news-day/findings.html">The aggregate</a>
@@ -135,6 +136,16 @@
 <div class="tablewrap"><table class="vers">
   <thead><tr><th>Version</th><th>Date</th><th>What shipped</th></tr></thead>
   <tbody>
+    <tr>
+      <td class="vnum">v0.4.3</td>
+      <td>29 Sep 2026</td>
+      <td><b>The argument, as one piece written to be sent: <a href="../world-news-day/stories/free-to-republish-is-not-a-licence.html">Free to republish is not a licence</a>.</b>
+        <p>Seventeen hundred words for the twenty-one people who wrote the corpus, and for anyone else who publishes open material without saying so in a form a machine can read. It opens by saying what is good about the act &mdash; twenty thousand words given away by people whose day job is deciding what stays behind a paywall &mdash; and then asks the question a machine asks. All twenty-one grant permission; none names a licence; the terms are stated three different ways; twenty-one of twenty-one already ship schema.org JSON-LD and none populates its <code>license</code> field.</p>
+        <p>It carries the aggregate too: nineteen of twenty-one pieces are about truth and facts, eleven raise AI, <b>three mention copyright or licensing at all</b>; eleven of twenty-one offer the reader no outbound link whatsoever; and of the twenty-three domains cited between them, no two pieces point at the same one. It says plainly that the diagnosis in the corpus is shared and correct, that what is missing is a mechanism, and that we are not a neutral party &mdash; naming which parts of our own stack are designs rather than things that run.</p>
+        <p><b>Every figure in the prose is a token filled from the data files at build time</b>, not typed, so the article and <code>data/*.json</code> cannot disagree, and the build fails on an unfilled token. The markdown source ships beside it under CC BY 4.0 at <code>world-news-day/content/</code> &mdash; the piece asks publishers to license their work in a form a machine can read, so it does.</p>
+        <p>The last section is the one that took the longest to write: an account of this section publishing a claim about WAN-IFRA's infrastructure more strongly than the evidence supported, withdrawing it, and the gate that now fails the build if the withdrawn claim reappears without the correction beside it.</p>
+      </td>
+    </tr>
     <tr>
       <td class="vnum">v0.4.2</td>
       <td>29 Sep 2026</td>
@@ -420,7 +431,7 @@
     <p>News is failing not because there is too little information but because there is no walkable chain from a claim to its evidence, no way for a correction to reach what it disproved, and no way to pay the person who did the original work. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="netline"><a href="https://sgit.ai"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://graphs.sgit.ai">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai">&#8593; nhi.sgit.ai</a> &middot; <a href="https://sg-sentinel.sgit.ai">&#8593; sg-sentinel.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.4.2</a> &middot; <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.4.3</a> &middot; <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>The argument</h4>
@@ -452,6 +463,7 @@
     <a href="../portugal/index.html">Portugal Startups (beta)</a>
     <a href="../portugal/connections.html">Connections: who should talk to whom</a>
     <a href="../world-news-day/index.html">World News Day 2026: the corpus (beta)</a>
+    <a href="../world-news-day/stories/free-to-republish-is-not-a-licence.html">Free to republish is not a licence</a>
     <a href="../world-news-day/licences.html">The licence that is not there</a>
     <a href="../world-news-day/contacts.html">World News Day: how to reach them</a>
     <a href="../world-news-day/vault.html">World News Day: the vault</a>

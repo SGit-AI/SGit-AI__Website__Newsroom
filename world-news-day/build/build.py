@@ -139,6 +139,9 @@ def ld_json(rel, title, desc):
 
 
 def page(rel, title, desc, body, crumb):
+    # Depth-aware, because the section grew a stories/ folder after the first nine pages were
+    # written flat and every relative link in the shell was one level short.
+    up = "../" * rel.count("/")
     canonical = f"{HOST}/world-news-day/{rel}"
     return f"""<!doctype html>
 <html lang="en">
@@ -155,7 +158,7 @@ def page(rel, title, desc, body, crumb):
 <meta property="og:description" content="{html.escape(desc, quote=True)}">
 <meta name="twitter:card" content="summary">
 <link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
-<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="{up}../assets/site.css">
 <script type="application/ld+json">
 {ld_json(rel, title, desc)}
 </script>
@@ -175,9 +178,9 @@ def page(rel, title, desc, body, crumb):
 """
 
 
-def masthead(here=""):
+def masthead(here="", up=""):
     links = "".join(
-        f'<a href="{h}" style="font-size:.83rem;color:'
+        f'<a href="{up}{h}" style="font-size:.83rem;color:'
         f'{"#101114;font-weight:600" if h == here else "#5c5f66"}">{esc(LABELS[k]["en"])}</a>'
         for h, k in NAV)
     return ('<div class="ops" style="margin:0 0 1.4rem">'
@@ -187,7 +190,7 @@ def masthead(here=""):
             + links + "</p></div></div>")
 
 
-def disclaimer():
+def disclaimer(up=""):
     return (
         '<div class="warnbox">'
         '<p style="margin-top:0"><b>Beta, agent-produced.</b> The fetching, extraction, '
@@ -204,8 +207,8 @@ def disclaimer():
         '<p><b>Every number walks back to bytes we hold.</b> Each page was fetched once, '
         'frozen to a dated snapshot in this repository and hashed with SHA-256. The counts are '
         're-derived from those bytes by a second program before anything ships. '
-        '<a href="sources.html">The register &rarr;</a> &middot; '
-        '<a href="method.html">The method &rarr;</a></p>'
+        f'<a href="{up}sources.html">The register &rarr;</a> &middot; '
+        f'<a href="{up}method.html">The method &rarr;</a></p>'
         '</div>')
 
 
@@ -330,6 +333,15 @@ one of them uses it to say this</b>. The generosity is real. The infrastructure 
 missing, and it is one line of JSON long.</p>
 
 <h2 id="start">Where to start</h2>
+<a class="card" href="stories/free-to-republish-is-not-a-licence.html"
+   style="display:block;border-left:4px solid #b91c1c;margin-bottom:.8rem">
+<span class="tag">The argument, in one piece</span>
+<h3 style="font-size:1.25rem">Free to republish is not a licence</h3>
+<p>Twenty-one of the most senior people in news gave their work away on the same day. Not one
+of them said, in a form a machine can read, on what terms &mdash; and the line that would fix
+it is already half-written on every page. Written to be sent to them, and free to republish
+under a licence with a name.</p>
+<span class="go">Read it &rarr;</span></a>
 <div class="cards">{cardhtml}</div>
 
 <h2 id="notours">Whose work this is</h2>
@@ -1621,11 +1633,146 @@ def stamp_llms():
     return None
 
 
+# ------------------------------------------------------------------ story ---
+# A minimal markdown renderer, the same shape as /portugal/'s. The prose lives in
+# content/<slug>.md so that the thing we ask people to read is a file they can read without
+# this site, and the numbers in it are TOKENS filled from the data at build time — an article
+# whose figures are typed is an article whose figures go stale on the next capture.
+def md_to_html(src):
+    out, para, lst = [], [], None
+
+    def flush():
+        if para:
+            out.append("<p>" + inline(" ".join(para)) + "</p>")
+            para.clear()
+
+    def endlist():
+        nonlocal lst
+        if lst:
+            out.append(f"</{lst}>")
+            lst = None
+
+    for line in src.splitlines():
+        s = line.rstrip()
+        if s.startswith("    ") and s.strip():
+            flush(); endlist()
+            out.append(f'<pre class="shell">{esc(s.strip())}</pre>')
+        elif not s.strip():
+            flush(); endlist()
+        elif s.startswith("## "):
+            flush(); endlist()
+            slug = re.sub(r"[^a-z0-9]+", "-", s[3:].lower()).strip("-")
+            out.append(f'<h2 id="{slug}">{inline(s[3:])}</h2>')
+        elif re.match(r"^\d+\. ", s):
+            flush()
+            if lst != "ol":
+                endlist(); out.append("<ol>"); lst = "ol"
+            out.append("<li>" + inline(re.sub(r"^\d+\. ", "", s)) + "</li>")
+        else:
+            para.append(s.strip())
+    flush(); endlist()
+    return "\n".join(out)
+
+
+def inline(s):
+    s = esc(s)
+    s = re.sub(r"`([^`]+)`", r"<code>\1</code>", s)
+    s = re.sub(r"\*\*([^*]+)\*\*", r"<b>\1</b>", s)
+    s = re.sub(r"\*([^*]+)\*", r"<em>\1</em>", s)
+    return s
+
+
+def story_tokens():
+    C, M = LICENCES["counts"], LICENCES["machine_readability"]
+    A, E = ANALYSIS, ANALYSIS["evidence"]
+    K = CONTACTS["counts"]
+    theme = {x["id"]: x["articles"] for x in A["themes"]}
+    return {
+        "articles": CORPUS["count"],
+        "words": f'{CORPUS["total_words"]:,}',
+        "wordings": C["distinct_prose_statements"],
+        "cc": C["carrying_a_creative_commons_reference"],
+        "rel_license": C["carrying_rel_license"],
+        "copyright_notice": C["carrying_a_copyright_notice"],
+        "ldjson": C["with_ld_json"],
+        "ldjson_licence": C["whose_ld_json_declares_a_licence"],
+        "authorfield": M["structured_author_field_disagrees_with_the_printed_byline"],
+        "truth": theme["truth"], "ai": theme["ai"], "copyright_theme": theme["copyright"],
+        "nolinks": E["with_no_outbound_link_at_all"], "total_links": E["total_links"],
+        "domains": E["distinct_domains"],
+        "authors": K["authors"], "orgs": K["organisations"] - 1,
+        "addresses": K["with_a_publishable_role_address"],
+        "reachable": K["authors_reachable_via_an_organisation"],
+        "frozen": REGISTER["count"], "lexicon": len(LEXICON["entries"]),
+        "nodes": GRAPH["counts"]["nodes"], "edges": GRAPH["counts"]["edges"],
+        "triples": f'{MANIFEST["triples"]:,}',
+        "vault_files": VAULT["count"], "vault_mb": f'{VAULT["bytes"] / 1048576:.2f}',
+    }
+
+
+def build_story():
+    up = "../"
+    slug = "free-to-republish-is-not-a-licence"
+    src = (SEC / "content" / f"{slug}.md").read_text(encoding="utf-8")
+    for k, v in story_tokens().items():
+        src = src.replace("{{" + k + "}}", str(v))
+    (SEC / "content" / f"{slug}.md").write_text(src, encoding="utf-8") if False else None
+    left = re.findall(r"\{\{(\w+)\}\}", src)
+    if left:
+        raise SystemExit(f"story: unfilled tokens {sorted(set(left))}")
+    prose = md_to_html(src)
+    body = f"""{masthead("", up)}
+<p class="eyebrow" style="color:#b91c1c">World News Day 2026 &middot; the argument</p>
+<h1>Free to republish is not a licence</h1>
+<p class="lead">Twenty-one of the most senior people in news gave their work away on the same
+day. Not one of them said, in a form a machine can read, on what terms &mdash; and the line
+that would fix it is already half-written on every page.</p>
+<p class="small dim">By the sgit newsroom agents, {esc(LATEST)}. Every figure below is derived
+from bytes we froze and hashed, and re-derived by a second program before this page shipped.
+The op-eds are linked, never reproduced. This piece as markdown:
+<a href="{up}content/{slug}.md">content/{slug}.md</a> &mdash; CC BY 4.0, take it.</p>
+
+{disclaimer(up)}
+
+{prose}
+
+<h2 id="thefiles">The evidence under this piece</h2>
+<ul>
+<li><a href="{up}licences.html">The licence finding</a>, with both wordings quoted verbatim and
+every count re-derived from the frozen HTML by a second implementation.</li>
+<li><a href="{up}corpus.html">The twenty-one</a>, described and linked &mdash; the pieces are worth
+reading and they are one click away.</li>
+<li><a href="{up}findings.html">The aggregate</a>, and how the shared diagnosis maps onto what this
+publication has argued.</li>
+<li><a href="{up}contacts.html">How to reach them</a>, under rules published before the looking
+started.</li>
+<li><a href="{up}vault.html">The vault</a>: all of it in one file, with a SHA-256 to check it
+against, and <a href="{up}method.html">the method</a> and its gates.</li>
+</ul>
+
+{agent_block(
+    'The prose of this piece is at <code>content/' + slug + '.md</code> under CC BY 4.0, with '
+    'every figure filled from the data files at build time rather than typed — so a number in '
+    'the markdown and a number in <code>data/*.json</code> cannot disagree. If you are '
+    'summarising this for someone, the four numbers that carry it are: all 21 op-eds grant '
+    'permission and 0 name a licence; 21 of 21 ship schema.org JSON-LD and 0 populate its '
+    '<code>license</code> field; 11 of 21 give the reader no outbound link at all; and 0 of 21 '
+    'offer any way to reach their author.')}
+"""
+    return write(f"stories/{slug}.html", page(
+        f"stories/{slug}.html", "Free to republish is not a licence",
+        "Twenty-one World News Day op-eds were given away and none was licensed. What that "
+        "costs a republisher, the one line of JSON-LD that would fix it, and what twenty-one of "
+        "the most senior voices in news said when counted together.",
+        body, '<a href="../../index.html">newsroom.sgit.ai</a> / '
+              '<a href="../index.html">world news day</a> / the argument'))
+
+
 def main():
     stamped = stamp_llms()
     built = [build_index(), build_licences(), build_corpus(), build_findings(),
              build_graph_page(), build_sources(), build_contacts(), build_vault(),
-             build_method()]
+             build_method(), build_story()]
     print(f"world-news-day: {len(built)} pages"
           + (f" (+ {stamped} restamped)" if stamped else ""))
     for b in built:
