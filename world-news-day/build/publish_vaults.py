@@ -88,18 +88,32 @@ def read_key_only(d):
     return read_key_for(secret)
 
 
-def materialise_corpus(dest):
-    if dest.exists():
-        shutil.rmtree(dest)
-    dest.mkdir(parents=True)
+def materialise(dest, fill):
+    """Put the current contents in place WITHOUT destroying .sg_vault.
+
+    The first version only filled a directory that had no vault in it yet, so a re-run pushed
+    the same bytes for ever: the corpus vault was created before the fractal layer existed and
+    silently stayed that way through two releases, while its page advertised files it did not
+    contain. Caught by cloning the published vault with the published read key and running the
+    gate inside it — which is the check the vault's own README tells a reader to run."""
+    keep = dest / ".sg_vault"
+    dest.mkdir(parents=True, exist_ok=True)
+    for item in dest.iterdir():
+        if item == keep:
+            continue
+        shutil.rmtree(item) if item.is_dir() else item.unlink()
+    fill(dest)
+
+
+def fill_corpus(dest):
     with zipfile.ZipFile(SEC / "vault.zip") as z:
         z.extractall(dest)
 
 
-def materialise_outreach(dest):
-    if dest.exists():
-        shutil.rmtree(dest)
-    shutil.copytree(SEC / "outreach", dest)
+def fill_outreach(dest):
+    for item in (SEC / "outreach").iterdir():
+        tgt = dest / item.name
+        shutil.copytree(item, tgt) if item.is_dir() else shutil.copy2(item, tgt)
 
 
 def publish(name, dest, token, message):
@@ -131,19 +145,8 @@ def main():
     WORK.mkdir(parents=True, exist_ok=True)
 
     corpus_dir, outreach_dir = WORK / "wnd-corpus", WORK / "wnd-outreach"
-    if not (corpus_dir / ".sg_vault").exists():
-        materialise_corpus(corpus_dir)
-    if not (outreach_dir / ".sg_vault").exists():
-        materialise_outreach(outreach_dir)
-    else:
-        # refresh the content, keep the vault
-        for item in SEC.joinpath("outreach").iterdir():
-            tgt = outreach_dir / item.name
-            if item.is_dir():
-                shutil.rmtree(tgt, ignore_errors=True)
-                shutil.copytree(item, tgt)
-            else:
-                shutil.copy2(item, tgt)
+    materialise(corpus_dir, fill_corpus)
+    materialise(outreach_dir, fill_outreach)
 
     v = json.loads((DATA / "vault.json").read_text(encoding="utf-8"))
     c = publish("corpus", corpus_dir, a.token,

@@ -14,7 +14,7 @@
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer and the shipped CLI. This site is the future-of-news stack: provenance, corrections, and paying the fact creator">&#8593; part of <b>sgit.ai</b></a>
   <span class="stage-pill">design, not built</span>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.5.0</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.5.1</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -137,6 +137,16 @@
 <div class="tablewrap"><table class="vers">
   <thead><tr><th>Version</th><th>Date</th><th>What shipped</th></tr></thead>
   <tbody>
+    <tr>
+      <td class="vnum">v0.5.1</td>
+      <td>29 Sep 2026</td>
+      <td><b>Cloning our own published vault with our own published key found two defects that every internal check had missed.</b>
+        <p>The vault&rsquo;s README tells a reader to run <code>python3 build/gates.py</code> to re-derive every published count. <b>That instruction did not work.</b> The gate resolved its paths from the repository layout, so inside the bundle it looked for <code>world-news-day/data/</code> beside the bundle and died. A published instruction that fails is worse than no instruction: it invites somebody to check us and then tells them the fault is theirs. The gate now detects which layout it is in &mdash; by the presence of the whole-site build tooling, not by <code>data/</code>, which exists in both &mdash; and inside the bundle it names the four checks it skips and why, because they are about this website&rsquo;s pages rather than about the data.</p>
+        <p><b>And the pushed corpus vault was two releases stale.</b> <code>publish_vaults.py</code> only filled a working copy that had no vault in it yet, so every re-run pushed the same bytes: the vault was created before the fractal layer existed and silently stayed that way while its own page advertised files it did not contain. It now refreshes the contents on every run without touching <code>.sg_vault</code>.</p>
+        <p>Both were found the same way &mdash; by cloning the published vault with the published read key and running the check the vault tells you to run. <b>Verified end to end:</b> a clone with the public key now re-derives all 1,070 claim classifications, re-hashes all 43 frozen files, and re-runs every licence count, from a read-only vault a stranger can open.</p>
+        <p>Also: <code>validate.js</code> now fails on a page whose nav or footer block is empty. Pages are generated with empty chrome that <code>chrome.py</code> fills; skip that step and every page ships with no navigation and no version badge &mdash; and every other check still passed, because they all test what a page says rather than whether it has any furniture at all. That happened in v0.5.0 and was caught by reading a diff, which is not a control.</p>
+      </td>
+    </tr>
     <tr>
       <td class="vnum">v0.5.0</td>
       <td>29 Sep 2026</td>
@@ -456,7 +466,7 @@
     <p>News is failing not because there is too little information but because there is no walkable chain from a claim to its evidence, no way for a correction to reach what it disproved, and no way to pay the person who did the original work. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="netline"><a href="https://sgit.ai"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://graphs.sgit.ai">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai">&#8593; nhi.sgit.ai</a> &middot; <a href="https://sg-sentinel.sgit.ai">&#8593; sg-sentinel.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.5.0</a> &middot; <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.5.1</a> &middot; <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>The argument</h4>

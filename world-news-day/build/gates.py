@@ -29,11 +29,29 @@ import re
 import sys
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[2]
-SEC = ROOT / "world-news-day"
+# This file runs in two places, and it has to work in both.
+#
+#   · in the repository, where it sits at world-news-day/build/gates.py;
+#   · inside the vault bundle, where it sits at build/gates.py with data/ and sources/
+#     beside it — because vault.zip's README tells a reader to run exactly this to check our
+#     arithmetic, and until v0.5.1 that instruction did not work. A published instruction
+#     that fails is worse than no instruction: it invites somebody to check us and then
+#     tells them the fault is theirs.
+# The discriminator is the SITE, not the section: data/ sits beside build/ in both layouts,
+# so testing for that told us "bundle" even inside the repository. What only the repository
+# has is the whole-site build tooling two levels up.
+_HERE = Path(__file__).resolve().parent            # .../build
+if (_HERE.parents[1] / "admin" / "build" / "version.txt").exists():
+    ROOT = _HERE.parents[1]                        # the repository
+    SEC = ROOT / "world-news-day"
+    IN_BUNDLE = False
+else:
+    SEC = ROOT = _HERE.parent                      # the bundle: data/ and sources/ beside build/
+    IN_BUNDLE = True
 DATA = SEC / "data"
 
 errors = []
+skipped = []
 
 
 def load(n):
@@ -50,7 +68,13 @@ affiliations = load("affiliations.json")
 contacts = load("contacts.json")
 contact_rules = load("contact-rules.json")
 corrections = load("corrections.json")
-manifest = load("manifest.json")
+# The bundle deliberately leaves out data/manifest.json (its own MANIFEST.json covers the
+# bundle's contents) and data/vault.json (it records the bundle's own hash, which would make
+# the hash depend on itself). So inside the bundle the equivalent files are read instead.
+if IN_BUNDLE:
+    manifest = json.loads((SEC / "MANIFEST.json").read_text(encoding="utf-8"))
+else:
+    manifest = load("manifest.json")
 
 LATEST = register["snapshots"][-1]
 src_by_id = {s["id"]: s for s in register["sources"]}
@@ -59,6 +83,9 @@ src_by_id = {s["id"]: s for s in register["sources"]}
 # carry no house chrome and never will, and they are stored with a .snapshot extension so
 # they are neither served nor indexed as pages of this site.
 pages = sorted(p for p in SEC.rglob("*.html") if "sources/frozen/" not in p.as_posix())
+if IN_BUNDLE and not pages:
+    skipped.append("the checks about this website's pages — there are none in the bundle. "
+                   "Every check about the DATA runs, which is what the bundle is for")
 
 
 def api_rec(slug):
@@ -450,12 +477,18 @@ for name in ["corpus.json", "graph.json", "licences.json"]:
 for f in manifest["files"]:
     p = SEC / f["path"]
     if not p.exists():
+        if IN_BUNDLE and (f["path"].startswith("outreach/") or f["path"] == "vault.zip"
+                          or f["path"] == "data/vault.json"):
+            continue        # the outreach vault and the bundle itself are not inside the bundle
         errors.append(f'manifest: lists {f["path"]}, which does not exist')
         continue
     if f.get("sha256") and hashlib.sha256(p.read_bytes()).hexdigest() != f["sha256"]:
         errors.append(f'manifest: {f["path"]} no longer hashes to its recorded SHA-256')
 if manifest["count"] != len(manifest["files"]):
     errors.append("manifest: count disagrees with the list")
+if IN_BUNDLE:
+    skipped.append("nothing else — every check about the DATA ran, against the bundle's own "
+                   "MANIFEST.json and the frozen bytes beside it")
 
 # --- 12b. this section declares its own licence in the field it says the corpus is missing --
 # The argument on the licence page is that schema.org's `license` property costs one line and
@@ -587,21 +620,35 @@ for p in pages:
 # --- 12e. the agent surface's copy of the bundle hash is not stale -----------------------
 # llms.txt names the vault's size and hash. A hash one build out of date tells a reader their
 # download is corrupt, which is worse than publishing none.
-vault = load("vault.json")
-llms = (ROOT / "llms.txt").read_text(encoding="utf-8")
-if vault["sha256"] not in llms:
-    errors.append("llms.txt does not carry the current vault.zip SHA-256 — run build.py, which "
-                  "stamps it, rather than editing it by hand")
+vault = (json.loads((DATA / "vault.json").read_text(encoding="utf-8"))
+         if (DATA / "vault.json").exists() else None)
+if vault is None:
+    skipped.append("the vault.json checks — that file records this bundle's own hash and is "
+                   "left out of it on purpose, or the hash would depend on itself")
+_llms = ROOT / "llms.txt"
+if vault and _llms.exists():
+    if vault["sha256"] not in _llms.read_text(encoding="utf-8"):
+        errors.append("llms.txt does not carry the current vault.zip SHA-256 — run build.py, "
+                      "which stamps it, rather than editing it by hand")
+elif IN_BUNDLE:
+    skipped.append("the llms.txt hash check — that file is the website's agent surface and is "
+                   "not in the bundle")
 zipf = SEC / "vault.zip"
-if zipf.exists() and hashlib.sha256(zipf.read_bytes()).hexdigest() != vault["sha256"]:
+if vault and zipf.exists() and hashlib.sha256(zipf.read_bytes()).hexdigest() != vault["sha256"]:
     errors.append("vault.zip does not hash to what data/vault.json records")
 
 # --- 12f. what is published about the vaults is a READ key, never a vault key ------------
 # The safety model of this section in one check. A read key is a one-way derivative that
 # grants read and only read; a vault key is write access to everything. They are both strings
 # in a JSON file, which is precisely why this is a gate and not a habit.
-outreach_vault = load("outreach-vault.json")
-for name, rec in (("vault.json", vault), ("outreach-vault.json", outreach_vault)):
+if IN_BUNDLE and not (DATA / "outreach-vault.json").exists():
+    skipped.append("the outreach-vault checks — that is the other vault, and it is deliberately "
+                   "not inside this one")
+    outreach_vault = None
+else:
+    outreach_vault = load("outreach-vault.json")
+for name, rec in ([("vault.json", vault)] if vault else []) + \
+                 ([("outreach-vault.json", outreach_vault)] if outreach_vault else []):
     blob = json.dumps(rec)
     if "sgit_private_vault_" in blob or re.search(r"sgit_private_read_", blob):
         errors.append(f'{name}: contains a PRIVATE key — only sgit_public_read_ keys are ever '
@@ -614,10 +661,11 @@ for name, rec in (("vault.json", vault), ("outreach-vault.json", outreach_vault)
             errors.append(f'{name}: says the vault is pushed and names no vault id')
     elif k:
         errors.append(f'{name}: publishes a read key for a vault it says is not pushed')
-if outreach_vault.get("actions_recorded", 0) != len(list((SEC / "outreach" / "actions").glob("*.json"))) - 1:
+if outreach_vault and (SEC / "outreach").exists() and \
+        outreach_vault.get("actions_recorded", 0) != len(list((SEC / "outreach" / "actions").glob("*.json"))) - 1:
     # _schema.json is not an action; every other file in actions/ is
     errors.append("outreach-vault: the action count disagrees with the files in outreach/actions/")
-for f in (SEC / "outreach").rglob("*"):
+for f in ((SEC / "outreach").rglob("*") if (SEC / "outreach").exists() else []):
     if f.is_file():
         body = f.read_text(encoding="utf-8", errors="replace")
         for m in CONTACT["email"].finditer(body):
@@ -724,6 +772,8 @@ if errors:
         print("  ✗", e)
     sys.exit(1)
 
+for s in skipped:
+    print(f"  · skipped in the bundle: {s}")
 print(f"world-news-day gate: OK — {len(pages)} pages, {corpus['count']} articles "
       f"({corpus['total_words']:,} words held, none republished), "
       f"{register['count']} frozen files re-hashed, {len(register.get('excluded', []))} excluded, "

@@ -60,7 +60,7 @@
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer and the shipped CLI. This site is the future-of-news stack: provenance, corrections, and paying the fact creator">&#8593; part of <b>sgit.ai</b></a>
   <span class="stage-pill">design, not built</span>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.5.0</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.5.1</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -192,7 +192,7 @@ from, every derived dataset, the code that produced them and the gate that check
     hash for hash, so the digest below is a fact about the contents rather than a record of
     when the build ran.</p>
     <p class="small dim" style="font-family:var(--mono);word-break:break-all">SHA-256
-    d0ec4fbed2197b9ee8b239283540df7ea071959fef4ee443e622168bd3d347b5</p>
+    41f2f2cda29251a37317732cf8d1e106efc149882735942df7c96916b27f9257</p>
   </div>
   <a class="dlbtn" href="vault.zip">Download the vault<span>2.76 MB &middot; 111 files</span></a>
 </div>
@@ -230,7 +230,7 @@ implicit, so that whoever opens it can disagree with it.</p>
 SHA-256 of every file in it, and <code>build/gates.py</code> is the executable specification of
 every claim this section makes:</p>
 <pre class="shell"><span class="d"># the bundle is what we say it is</span>
-<span class="g">shasum</span> -a 256 vault.zip   <span class="d"># d0ec4fbed2197b9ee8b239283540df7e…</span>
+<span class="g">shasum</span> -a 256 vault.zip   <span class="d"># 41f2f2cda29251a37317732cf8d1e106…</span>
 <span class="g">unzip</span> -q vault.zip -d wnd <span class="d">&amp;&amp;</span> <span class="g">cd</span> wnd
 
 <span class="d"># every file in it is what the manifest says it is</span>
@@ -312,7 +312,7 @@ any named person; any assessment of anybody.</p>
     <p>News is failing not because there is too little information but because there is no walkable chain from a claim to its evidence, no way for a correction to reach what it disproved, and no way to pay the person who did the original work. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="netline"><a href="https://sgit.ai"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://graphs.sgit.ai">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai">&#8593; nhi.sgit.ai</a> &middot; <a href="https://sg-sentinel.sgit.ai">&#8593; sg-sentinel.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.5.0</a> &middot; <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.5.1</a> &middot; <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>The argument</h4>
