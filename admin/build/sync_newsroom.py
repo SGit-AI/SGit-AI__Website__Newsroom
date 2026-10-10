@@ -31,6 +31,9 @@ What changes on the way in, and nothing else:
   5. The front page is also written to / (brief: "/articles/index.html becomes both / and
      /articles/index.html"), with its links re-based one level up, and both copies name /
      as their canonical URL.
+  6. The site's name in the metadata (tab title, og:title, og:site_name, JSON-LD) becomes
+     the SGit Newsroom, and the front page takes the newsroom's own title and description.
+     The words of an article are never touched.
 
 Scripts, styles, components and /.well-known/sgit-subscribe.json are copied byte for byte.
 The brief requires it twice: a published component path never changes, and the subscribe
@@ -81,6 +84,7 @@ VERBATIM = re.compile(r"\.(js|css|tpl|mjs)$|^\.well-known/")
 TEXT     = re.compile(r"\.(html|md|xml|json|txt)$")
 FRONT    = ("articles/index.html", "articles/index.md")    # also written to the root
 
+REAL_TAG = re.compile(r"<[a-zA-Z][^<>]*>")
 URL_ATTR = re.compile(r'\b(href|src|data-src|action|poster)="([^"]*)"')
 MD_LINK  = re.compile(r'(\]\()([^)\s]+)((?:\s+"[^"]*")?\))')
 ABS_SRC  = re.compile(r'https?://(?:www\.)?sgit\.ai/([^\s"\'<>)\]]*)')
@@ -175,10 +179,60 @@ def rewrite_abs(m):
     return f"https://{HOST}/{target}{'/' if path.endswith('/') and target else ''}{rest}"
 
 
+# The site's NAME, as distinct from its address. An imported page names sgit.ai as its site in
+# the tab title, og:title, og:site_name and JSON-LD, which is what a search result or a link
+# preview shows. Here the site is the SGit Newsroom. Only these metadata slots change; the
+# words of an article never do.
+TITLE_SUFFIXES = [(", sgit.ai articles", ", SGit Newsroom"), (", sgit.ai desk", ", SGit Newsroom desk"),
+                  (", sgit.ai", ", SGit Newsroom")]
+FRONT_TITLE = "SGit Newsroom"
+FRONT_DESCRIPTION = "One page, one argument, with the figures, the data and the links to check it."
+
+
+def rename(title):
+    for old, new in TITLE_SUFFIXES:
+        if title.endswith(old):
+            return title[:-len(old)] + new
+    return title
+
+
+def retitle(text, front):
+    # Only the page's own title is replaced on the front page, and JSON-LD is only touched
+    # inside its ld+json block. A first version replaced every "name" on the front page, which
+    # renamed the reader personas in the meter's config and the author to "SGit Newsroom".
+    m = re.search(r'<title>(.*?)</title>', text, re.S)
+    own = m.group(1) if m else None
+
+    def slot(m):
+        value = m.group(2)
+        return m.group(1) + (FRONT_TITLE if front and value == own else rename(value)) + m.group(3)
+
+    def ld(block):
+        b = re.sub(r'("(?:name|headline)": ")([^"]*)(")', slot, block.group(0))
+        if front:
+            b = re.sub(r'("description": ")[^"]*(")', rf'\1{FRONT_DESCRIPTION}\2', b, count=1)
+        return b
+
+    text = re.sub(r'(<title>)(.*?)(</title>)', slot, text, count=1, flags=re.S)
+    text = re.sub(r'(<meta (?:property="og:title"|name="twitter:title"|property="og:image:alt") content=")([^"]*)(")',
+                  slot, text)
+    text = re.sub(r'(<meta property="og:site_name" content=")sgit\.ai(")', r'\1SGit Newsroom\2', text)
+    text = re.sub(r'<script type="application/ld\+json">.*?</script>', ld, text, flags=re.S)
+    if front:
+        text = re.sub(r'(<meta (?:name="description"|property="og:description") content=")[^"]*(")',
+                      rf'\1{FRONT_DESCRIPTION}\2', text)
+    return text
+
+
 def transform(text, src_file, dest_file, kind):
     text = ABS_SRC.sub(rewrite_abs, text)
     if kind == "html":
-        text = URL_ATTR.sub(lambda m: f'{m.group(1)}="{rewrite_url(m.group(2), src_file, dest_file)}"', text)
+        # Attributes of real tags only. A code sample on a page is escaped (&lt;script src="/x"&gt;)
+        # and is something a reader copies; rewriting the attribute-shaped text inside it changed
+        # SG Meter's install instructions on the first run of this script.
+        text = REAL_TAG.sub(
+            lambda t: URL_ATTR.sub(lambda m: f'{m.group(1)}="{rewrite_url(m.group(2), src_file, dest_file)}"',
+                                   t.group(0)), text)
         depth = dest_file.count("/")
         text = re.sub(r'(<html[^>]*\bdata-root=")[^"]*(")', lambda m: m.group(1) + "../" * depth + m.group(2), text, count=1)
         # The page loader: sgit.ai's stylesheet has a different name here and its site chat
@@ -201,6 +255,7 @@ def transform(text, src_file, dest_file, kind):
                 return m.group(1) + p + m.group(1)
             text = re.sub(r"""(['"])((?:\.\./)+)((?:assets|articles|newsroom|account|subscribe|meter|og)/[^'"]*)\1""",
                           script_path, text)
+        text = retitle(text, front=(src_file == "articles/index.html"))
         if src_file == "articles/index.html":
             # One front page at two addresses names one canonical address: the root.
             text = re.sub(r'(<link rel="canonical" href=")[^"]*(")', rf'\1https://{HOST}/\2', text, count=1)

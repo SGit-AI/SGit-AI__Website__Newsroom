@@ -12,7 +12,7 @@
 
 <nav class="site"><div class="row">
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.6.0</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.6.1</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -121,6 +121,17 @@
 <div class="tablewrap"><table class="vers">
   <thead><tr><th>Version</th><th>Date</th><th>What shipped</th></tr></thead>
   <tbody>
+    <tr>
+      <td class="vnum">v0.6.1</td>
+      <td>10 Oct 2026</td>
+      <td><b>The site now calls itself the SGit Newsroom, and SG Meter&rsquo;s install instructions are back the way sgit.ai wrote them.</b>
+        <p><b>The name.</b> v0.6.0 imported the newsroom with sgit.ai&rsquo;s name in every page&rsquo;s metadata: the home page&rsquo;s tab read &ldquo;Articles, sgit.ai&rdquo;, and all 312 pages declared sgit.ai as their site, which is what a search result or a link preview shows. The import now renames the site in the tab title, og:title, og:site_name and the JSON-LD, and gives the front page the newsroom&rsquo;s own title and description. It is a rule in <code>sync_newsroom.py</code>, applied on every sync, not an edit, so the gate that refuses hand edits to imported pages still holds.</p>
+        <p><b>A correction to v0.6.0.</b> The import re-points links, and it reached into a code sample: on <a href="../meter/index.html">the SG Meter page</a> the install snippet&rsquo;s <code>src="/assets/components/&hellip;"</code> was shown as <code>src="../assets/components/&hellip;"</code>, so a reader copying it would have copied something sgit.ai never wrote. Links are now rewritten in real tags only, never in text that merely looks like a tag. It was live for about half an hour.</p>
+        <p><b>Why the gate let it through, and does not now.</b> The link check had the same flaw: it read <code>src="&hellip;"</code> anywhere, code samples included. The snippet&rsquo;s original root path does not exist as a file here, so the honest snippet would have failed the gate, and the import&rsquo;s rewrite turned it into a path that did exist. The bug passed <i>because</i> it was a bug. The link check now reads real tags only, and was shown still failing on a real broken link beside an identical path in a code sample.</p>
+        <p><b>Caught before release:</b> the first version of the renaming replaced every <code>"name"</code> on the front page, which renamed the reader personas in the meter&rsquo;s config, and the author, to &ldquo;SGit Newsroom&rdquo;. It now touches only the page&rsquo;s own title and only inside the JSON-LD block.</p>
+        <p><b>How it was checked, and now is:</b> for all 312 imported pages, the visible text is compared with sgit.ai&rsquo;s own copy; it is identical apart from the edition line, which deliberately names this site. The meter config is byte-identical on every page, and the markdown twins differ only in where their links point.</p>
+      </td>
+    </tr>
     <tr>
       <td class="vnum">v0.6.0</td>
       <td>10 Oct 2026</td>
@@ -503,7 +514,7 @@
     <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="netline"><a href="https://sgit.ai" style="display:inline;padding:0"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://pt.newsroom.sgit.ai" style="display:inline;padding:0">&#8593; pt.newsroom.sgit.ai</a> &middot; <a href="https://graphs.sgit.ai" style="display:inline;padding:0">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai" style="display:inline;padding:0">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai" style="display:inline;padding:0">&#8593; nhi.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai" style="display:inline;padding:0">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.6.0</a> &middot; <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.6.1</a> &middot; <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>The newsroom</h4>

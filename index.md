@@ -2,7 +2,7 @@
 
 > Longer pieces that make an argument across several pages: what a thing means, why it is shaped that way, and what it cost to find out. Each links to the pages that own its facts rather than restating them.
 
-*Source: <https://newsroom.sgit.ai/articles/index.html> · site v0.6.0 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/index.html> · site v0.6.1 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 
@@ -131,4 +131,4 @@ Read from the links the articles make to each other. [The same thing drawn as a 
 
 ---
 
-*newsroom.sgit.ai · site v0.6.0 · the front page, imported from sgit.ai. This site's own index is [llms.txt](llms.txt).*
+*newsroom.sgit.ai · site v0.6.1 · the front page, imported from sgit.ai. This site's own index is [llms.txt](llms.txt).*

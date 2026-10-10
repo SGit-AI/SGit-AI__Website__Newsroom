@@ -89,10 +89,16 @@ for (const v of rows) if (rows.filter(x => x === v).length > 1) {
 }
 
 // --- 2. internal links ----------------------------------------------------
+// Attributes of real tags only. A code sample is escaped text (&lt;script src="/x"&gt;): it is
+// something a reader copies, not a link this site serves. Reading it as a link made this check
+// fail on SG Meter's install snippet, and in v0.6.0 it made the import's bug look like a fix:
+// the import had rewritten the snippet's path into one that resolved, so the check passed.
+const realTagAttrs = t => [...t.matchAll(/<[a-zA-Z][^<>]*>/g)]
+  .flatMap(tag => [...tag[0].matchAll(/(?:href|src|data-src)="([^"#]+)(?:#[^"]*)?"/g)]);
 for (const f of htmlFiles) {
   const t   = fs.readFileSync(f, 'utf8');
   const dir = path.dirname(f);
-  for (const m of t.matchAll(/(?:href|src|data-src)="([^"#]+)(?:#[^"]*)?"/g)) {
+  for (const m of realTagAttrs(t)) {
     const target = m[1];
     if (/^(https?:|mailto:|data:|\/\/)/.test(target) || target === '') continue;
     if (!fs.existsSync(path.resolve(dir, target))) {

@@ -47,6 +47,12 @@ the same paths and changes only this:
 4. The page loader no longer loads sgit.ai's site chat (see collisions).
 5. The front page is written to `/` as well as `/articles/index.html`, re-based one level up, and
    both name `/` as canonical.
+6. The site's name in the metadata (tab title, og:title, og:site_name, JSON-LD) becomes the SGit
+   Newsroom, and the front page takes the newsroom's own title and description (v0.6.1).
+
+Links are rewritten in real tags only, never in a code sample (v0.6.1 corrects v0.6.0, which
+changed SG Meter's install snippet). Checked across all 312 pages: the visible text is identical to
+sgit.ai's apart from the edition line, and the meter config is byte-identical on every page.
 
 Scripts, styles, the meter component and `/.well-known/sgit-subscribe.json` are copied **byte for
 byte**; the sync refuses to run if any would change. 647 of 1,274 files are identical to source.
