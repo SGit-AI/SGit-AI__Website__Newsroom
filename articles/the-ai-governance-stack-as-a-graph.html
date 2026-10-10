@@ -1,0 +1,606 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The AI governance stack, as a graph: an answer to Hari Kota, built, sgit.ai</title>
+<meta name="description" content="Hari Kota posted The Full AI Governance Stack, ten layers from principles to people, and asked how I would structure the graph across the layers. This is the answer, built as a vault you can open. Hari's table is kept exactly as posted, every cell a node. The table already contains ten edges between layers before anything is added. Each layer is its own world with its own vocabulary, and the edges between those worlds come from the provisions themselves, so a gap is a missing edge and a missing edge is a query. Hari's three gaps and the "do this today" test run as queries on a fictional shop, and the line "most teams cover only 4 or 5" gets three honest readings.">
+<link rel="canonical" href="https://newsroom.sgit.ai/articles/the-ai-governance-stack-as-a-graph.html">
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="sgit.ai">
+<meta property="og:url" content="https://newsroom.sgit.ai/articles/the-ai-governance-stack-as-a-graph.html">
+<meta property="og:title" content="The AI governance stack, as a graph: an answer to Hari Kota, built, sgit.ai">
+<meta property="og:description" content="Hari Kota posted The Full AI Governance Stack, ten layers from principles to people, and asked how I would structure the graph across the layers. This is the answer, built as a vault you can open. Hari's table is kept exactly as posted, every cell a node. The table already contains ten edges between layers before anything is added. Each layer is its own world with its own vocabulary, and the edges between those worlds come from the provisions themselves, so a gap is a missing edge and a missing edge is a query. Hari's three gaps and the "do this today" test run as queries on a fictional shop, and the line "most teams cover only 4 or 5" gets three honest readings.">
+<meta property="og:image" content="https://newsroom.sgit.ai/og/the-ai-governance-stack-as-a-graph.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The AI governance stack, as a graph: an answer to Hari Kota, built, sgit.ai">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://newsroom.sgit.ai/og/the-ai-governance-stack-as-a-graph.jpg">
+<link rel="alternate" type="text/markdown" href="the-ai-governance-stack-as-a-graph.md" title="This page as markdown">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "The AI governance stack, as a graph: an answer to Hari Kota, built, sgit.ai", "headline": "The AI governance stack, as a graph: an answer to Hari Kota, built, sgit.ai", "description": "Hari Kota posted The Full AI Governance Stack, ten layers from principles to people, and asked how I would structure the graph across the layers. This is the answer, built as a vault you can open. Hari's table is kept exactly as posted, every cell a node. The table already contains ten edges between layers before anything is added. Each layer is its own world with its own vocabulary, and the edges between those worlds come from the provisions themselves, so a gap is a missing edge and a missing edge is a query. Hari's three gaps and the \"do this today\" test run as queries on a fictional shop, and the line \"most teams cover only 4 or 5\" gets three honest readings.", "url": "https://newsroom.sgit.ai/articles/the-ai-governance-stack-as-a-graph.html", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "sgit.ai", "url": "https://sgit.ai"}, "about": {"@type": "SoftwareApplication", "name": "sgit", "sameAs": "https://pypi.org/project/sgit-ai/"}, "author": {"@type": "Person", "name": "Dinis Cruz", "url": "https://sgit.ai/about/index.html"}, "license": "https://creativecommons.org/licenses/by/4.0/"}</script>
+<style>html{background:#faf9f5}body{margin:0;background:#faf9f5;color:#1c1d21;font-family:ui-sans-serif,system-ui,sans-serif;opacity:0;transition:opacity .25s;animation:sg-reveal 0s linear 1.6s forwards}html.ready body{opacity:1;animation:none}@keyframes sg-reveal{to{opacity:1}}</style><noscript><style>body{opacity:1;animation:none}</style></noscript>
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.6.0</a>
+  <sg-meter class="meter-nav" view="balance"></sg-meter>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../articles/index.html#all">Every article</a>
+      <a class="sl" href="../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../account/index.html">Your reading account</a>
+      <a class="sl" href="../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../account/personas.html">Your personas</a>
+      <a class="sl" href="../account/top-up.html">Top up</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../newsroom/board.html">The board</a>
+      <a class="sl" href="../newsroom/log.html">The run log</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../world-news-day/index.html">World News Day<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../world-news-day/index.html">The corpus</a>
+      <a class="sl" href="../world-news-day/stories/free-to-republish-is-not-a-licence.html">Free to republish is not a licence</a>
+      <a class="sl" href="../world-news-day/licences.html">The licence that is not there</a>
+      <a class="sl" href="../world-news-day/corpus.html">The twenty-one</a>
+      <a class="sl" href="../world-news-day/findings.html">The aggregate</a>
+      <a class="sl" href="../world-news-day/terms.html">The vocabulary</a>
+      <a class="sl" href="../world-news-day/graph.html">The graph</a>
+      <a class="sl" href="../world-news-day/sources.html">Sources</a>
+      <a class="sl" href="../world-news-day/contacts.html">How to reach them</a>
+      <a class="sl" href="../world-news-day/vault.html">Published vaults</a>
+      <a class="sl" href="../world-news-day/vaults/corpus.html">The vault, opened</a>
+      <a class="sl" href="../world-news-day/method.html">Method</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../archive/index.html">The archive</a>
+      <a class="sl" href="../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../network/index.html">The network</a>
+      <a class="sl" href="../admin/versions.html">Release history</a>
+      <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom">&#9733; GitHub</a>
+</div></nav>
+
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.6.0</span></a></div>
+<main class="doc">
+ <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / The AI governance stack, as a graph: an answer to Hari Kota, built</p>
+ <h1>The AI governance stack, as a graph: an answer to Hari Kota, built</h1>
+ <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-09 &middot; <a href="versions/the-ai-governance-stack-as-a-graph.html" title="Every published version of this article, and what changed">article v1.1.0, 2 versions</a> &middot; <a href="https://sgit.ai/admin/versions.html" title="The site release it was published in">site v0.7.18</a> &middot; <span class="chip">ai-governance</span><span class="chip">fractal-semantic-graphs</span><span class="chip">graphs</span><span class="chip">eu-ai-act</span><span class="chip">iso-42001</span><span class="chip">nist-ai-rmf</span><span class="chip">risk</span><span class="chip">inventory</span><span class="chip">competence</span><span class="chip">vaults</span><span class="chip">article</span></p>
+ <p class="abstract"><em><b>Abstract:</b> Hari Kota posted The Full AI Governance Stack, ten layers from principles to people, and asked how I would structure the graph across the layers. This is the answer, built as a vault you can open. Hari's table is kept exactly as posted, every cell a node. The table already contains ten edges between layers before anything is added. Each layer is its own world with its own vocabulary, and the edges between those worlds come from the provisions themselves, so a gap is a missing edge and a missing edge is a query. Hari's three gaps and the "do this today" test run as queries on a fictional shop, and the line "most teams cover only 4 or 5" gets three honest readings.</em></p>
+<p>Hari Kota posted <a href="https://lnkd.in/p/erGx6fqM">The Full AI Governance Stack</a> on LinkedIn: ten layers, what each does, and forty-six global examples (<a href="#hari">quoted in full below</a>), under the line "10 layers. 1 global view. Most teams cover only 4 or 5." I asked in the comments whether the layers had been mapped with fractal semantic graphs, to interconnect them. Hari answered:</p>
+<div class="note">"I haven't mapped it that way. How would you structure the graph across the layers? What would be your take? Curious to know."</div>
+<p>This is my take, and rather than describe it I built it. The <a href="https://sgit.ai/demos/vaults/ai-governance-graph/index.html">AI Governance Graph vault</a> opens as an app with its read key published, and everything below is a view of it.</p>
+<figure class="shot" data-shot="gg-hari-graph.webp" data-dir="images/" data-alt="Hari&#x27;s stack, exactly as posted: every layer and every example, labels unchanged. The orange edges were already in the table, because the same instrument or practice appears in more than one row. Nothing has been added yet except the lines."><figcaption>Hari's stack, exactly as posted: every layer and every example, labels unchanged. The orange edges were already in the table, because the same instrument or practice appears in more than one row. Nothing has been added yet except the lines.</figcaption></figure>
+<details class="src"><summary>Hari's table as a graph, Mermaid source</summary><div class="src-bar"><button type="button" class="src-copy" data-copy="flowchart LR
+  subgraph L1[&quot;1 Principles &amp; Policy&quot;]
+    direction TB
+    e11[&quot;OECD AI Principles&quot;]
+    e12[&quot;UNESCO Recommendation&quot;]
+    e13[&quot;G7 Hiroshima Code of Conduct&quot;]
+    e14[&quot;Council of Europe AI Convention&quot;]
+  end
+  subgraph L2[&quot;2 Binding Law&quot;]
+    direction TB
+    e21[&quot;EU AI Act&quot;]
+    e22[&quot;China Generative AI rules&quot;]
+    e23[&quot;South Korea AI Basic Act&quot;]
+    e24[&quot;Colorado SB 26-189&quot;]
+    e25[&quot;India DPDP&quot;]
+    e26[&quot;SDAIA (Saudi)&quot;]
+  end
+  subgraph L3[&quot;3 Soft Law &amp; National Guidance&quot;]
+    direction TB
+    e31[&quot;Singapore Model AI Governance Framework&quot;]
+    e32[&quot;Japan AI Guidance for Business&quot;]
+    e33[&quot;UK principles-based approach&quot;]
+    e34[&quot;UAE sectoral guidance&quot;]
+    e35[&quot;Brazil PL 2338/2023 (pending)&quot;]
+  end
+  subgraph L4[&quot;4 Standards &amp; Frameworks&quot;]
+    direction TB
+    e41[&quot;ISO/IEC 42001&quot;]
+    e42[&quot;NIST AI RMF&quot;]
+    e43[&quot;ISO 31000&quot;]
+    e44[&quot;IEEE 7000 series&quot;]
+  end
+  subgraph L5[&quot;5 Inventory &amp; Intake&quot;]
+    direction TB
+    e51[&quot;AI use-case register&quot;]
+    e52[&quot;owner assignment&quot;]
+    e53[&quot;Credo AI&quot;]
+    e54[&quot;Holistic AI&quot;]
+    e55[&quot;IBM watsonx.governance&quot;]
+    e56[&quot;OneTrust&quot;]
+  end
+  subgraph L6[&quot;6 Risk Classification &amp; Impact Assessment&quot;]
+    direction TB
+    e61[&quot;EU AI Act risk tiers&quot;]
+    e62[&quot;AI impact assessment&quot;]
+    e63[&quot;DPIA&quot;]
+    e64[&quot;NIST MAP&quot;]
+  end
+  subgraph L7[&quot;7 Technical Guardrails&quot;]
+    direction TB
+    e71[&quot;Guardrails AI&quot;]
+    e72[&quot;NeMo Guardrails&quot;]
+    e73[&quot;Azure AI Content Safety&quot;]
+    e74[&quot;access controls&quot;]
+  end
+  subgraph L8[&quot;8 Testing &amp; Evaluation&quot;]
+    direction TB
+    e81[&quot;AI Verify (Singapore)&quot;]
+    e82[&quot;Fairlearn&quot;]
+    e83[&quot;AIF360&quot;]
+    e84[&quot;promptfoo&quot;]
+    e85[&quot;garak&quot;]
+  end
+  subgraph L9[&quot;9 Accountability &amp; Reporting&quot;]
+    direction TB
+    e91[&quot;AI committee&quot;]
+    e92[&quot;RACI&quot;]
+    e93[&quot;model cards&quot;]
+    e94[&quot;board risk reporting&quot;]
+  end
+  subgraph L10[&quot;10 People &amp; Competence&quot;]
+    direction TB
+    e101[&quot;AI literacy duty (EU AI Act)&quot;]
+    e102[&quot;ISO 42001 competence requirement&quot;]
+    e103[&quot;AIGP (IAPP)&quot;]
+    e104[&quot;role-based training&quot;]
+  end
+  e21 -. &quot;same instrument&quot; .- e61
+  e21 -. &quot;same instrument&quot; .- e101
+  e41 -. &quot;same instrument&quot; .- e102
+  e42 -. &quot;same framework&quot; .- e64
+  e31 -. &quot;same regulator&#x27;s toolkit&quot; .- e81
+  e52 -. &quot;names the owner in&quot; .- e92
+  e92 -. &quot;who is trained by&quot; .- e104
+  e63 -. &quot;named in Art 26(9) and 27(4)&quot; .- e21
+  L1 ~~~ L2 ~~~ L3 ~~~ L4 ~~~ L5
+  L6 ~~~ L7 ~~~ L8 ~~~ L9 ~~~ L10
+  classDef hidden stroke-dasharray:4 3
+  linkStyle 0,1,2,3,4,5,6,7 stroke:#C2410C,stroke-width:2px,color:#C2410C"><span class="cp">copy</span></button><a href="images/gg-hari-graph.webp">rendered image</a></div><pre class="shell">flowchart LR
+  subgraph L1["1 Principles &amp; Policy"]
+    direction TB
+    e11["OECD AI Principles"]
+    e12["UNESCO Recommendation"]
+    e13["G7 Hiroshima Code of Conduct"]
+    e14["Council of Europe AI Convention"]
+  end
+  subgraph L2["2 Binding Law"]
+    direction TB
+    e21["EU AI Act"]
+    e22["China Generative AI rules"]
+    e23["South Korea AI Basic Act"]
+    e24["Colorado SB 26-189"]
+    e25["India DPDP"]
+    e26["SDAIA (Saudi)"]
+  end
+  subgraph L3["3 Soft Law &amp; National Guidance"]
+    direction TB
+    e31["Singapore Model AI Governance Framework"]
+    e32["Japan AI Guidance for Business"]
+    e33["UK principles-based approach"]
+    e34["UAE sectoral guidance"]
+    e35["Brazil PL 2338/2023 (pending)"]
+  end
+  subgraph L4["4 Standards &amp; Frameworks"]
+    direction TB
+    e41["ISO/IEC 42001"]
+    e42["NIST AI RMF"]
+    e43["ISO 31000"]
+    e44["IEEE 7000 series"]
+  end
+  subgraph L5["5 Inventory &amp; Intake"]
+    direction TB
+    e51["AI use-case register"]
+    e52["owner assignment"]
+    e53["Credo AI"]
+    e54["Holistic AI"]
+    e55["IBM watsonx.governance"]
+    e56["OneTrust"]
+  end
+  subgraph L6["6 Risk Classification &amp; Impact Assessment"]
+    direction TB
+    e61["EU AI Act risk tiers"]
+    e62["AI impact assessment"]
+    e63["DPIA"]
+    e64["NIST MAP"]
+  end
+  subgraph L7["7 Technical Guardrails"]
+    direction TB
+    e71["Guardrails AI"]
+    e72["NeMo Guardrails"]
+    e73["Azure AI Content Safety"]
+    e74["access controls"]
+  end
+  subgraph L8["8 Testing &amp; Evaluation"]
+    direction TB
+    e81["AI Verify (Singapore)"]
+    e82["Fairlearn"]
+    e83["AIF360"]
+    e84["promptfoo"]
+    e85["garak"]
+  end
+  subgraph L9["9 Accountability &amp; Reporting"]
+    direction TB
+    e91["AI committee"]
+    e92["RACI"]
+    e93["model cards"]
+    e94["board risk reporting"]
+  end
+  subgraph L10["10 People &amp; Competence"]
+    direction TB
+    e101["AI literacy duty (EU AI Act)"]
+    e102["ISO 42001 competence requirement"]
+    e103["AIGP (IAPP)"]
+    e104["role-based training"]
+  end
+  e21 -. "same instrument" .- e61
+  e21 -. "same instrument" .- e101
+  e41 -. "same instrument" .- e102
+  e42 -. "same framework" .- e64
+  e31 -. "same regulator's toolkit" .- e81
+  e52 -. "names the owner in" .- e92
+  e92 -. "who is trained by" .- e104
+  e63 -. "named in Art 26(9) and 27(4)" .- e21
+  L1 ~~~ L2 ~~~ L3 ~~~ L4 ~~~ L5
+  L6 ~~~ L7 ~~~ L8 ~~~ L9 ~~~ L10
+  classDef hidden stroke-dasharray:4 3
+  linkStyle 0,1,2,3,4,5,6,7 stroke:#C2410C,stroke-width:2px,color:#C2410C</pre></details>
+<h2>In short</h2>
+<ul>
+<li><b>Keep the stack as the view; make the graph the model.</b> Hari's ten layers are a great way to read governance, and the vault keeps them exactly as posted. Every cell is a node.</li>
+<li><b>The table already contains a graph.</b> Before anything is added, ten edges cross the layers: the EU AI Act sits in rows 2, 6 and 10; ISO/IEC 42001 in rows 4 and 10; the NIST AI RMF in rows 4 and 6; Singapore in rows 3 and 8; the owner of row 5 is the RACI of row 9 and the training of row 10.</li>
+<li><b>Each layer is its own world.</b> Law is articles and paragraphs; standards are clauses and controls; inventory is systems and owners; testing is tests and results. No layer has to adopt another's schema. They share only a grammar, so an edge can be drawn from any of them to any other.</li>
+<li><b>The edges between worlds come from the provisions themselves.</b> Article 26(2) of the EU AI Act joins binding law to people; GOVERN 1.6 of the NIST AI RMF joins a framework to the inventory. 119 such edges, each citing the fact it rests on.</li>
+<li><b>A gap is a missing edge, and a missing edge is a query.</b> Hari's "do this today" test, and the three gaps Hari names in layers 3, 5 and 10, run as queries anyone can read, on a fictional shop.</li>
+<li><b>The stack is a snapshot; the graph keeps time.</b> Several of Hari's examples moved in 2026. The labels stay as posted and the changes sit underneath as dated edges.</li>
+</ul>
+<h2 id="hari">Hari's stack, exactly as posted</h2>
+<p>This is the mental model the graph has to respect, so it comes first, word for word, from the infographic and the post:</p>
+<div class="tablewrap"><table>
+<tr><th>#</th><th>Layer</th><th>What it does</th><th>Global examples</th></tr>
+<tr><td>1</td><td>Principles &amp; Policy</td><td>Sets the values and the internal AI policy</td><td>OECD AI Principles, UNESCO Recommendation, G7 Hiroshima Code of Conduct, Council of Europe AI Convention</td></tr>
+<tr><td>2</td><td>Binding Law</td><td>Maps hard legal obligations by jurisdiction</td><td>EU AI Act, China Generative AI rules, South Korea AI Basic Act, Colorado SB 26-189, India DPDP, SDAIA (Saudi)</td></tr>
+<tr><td>3</td><td>Soft Law &amp; National Guidance</td><td>Covers regimes with guidance but no AI statute</td><td>Singapore Model AI Governance Framework, Japan AI Guidance for Business, UK principles-based approach, UAE sectoral guidance, Brazil PL 2338/2023 (pending)</td></tr>
+<tr><td>4</td><td>Standards &amp; Frameworks</td><td>Provides the management-system backbone</td><td>ISO/IEC 42001, NIST AI RMF, ISO 31000, IEEE 7000 series</td></tr>
+<tr><td>5</td><td>Inventory &amp; Intake</td><td>Tracks every AI use case and its owner</td><td>AI use-case register, owner assignment, Credo AI, Holistic AI, IBM watsonx.governance, OneTrust</td></tr>
+<tr><td>6</td><td>Risk Classification &amp; Impact Assessment</td><td>Tiers risk before deployment</td><td>EU AI Act risk tiers, AI impact assessment, DPIA, NIST MAP</td></tr>
+<tr><td>7</td><td>Technical Guardrails</td><td>Enforces controls inside the system</td><td>Guardrails AI, NeMo Guardrails, Azure AI Content Safety, access controls</td></tr>
+<tr><td>8</td><td>Testing &amp; Evaluation</td><td>Tests for bias, robustness and safety</td><td>AI Verify (Singapore), Fairlearn, AIF360, promptfoo, garak</td></tr>
+<tr><td>9</td><td>Accountability &amp; Reporting</td><td>Gives the board ownership and evidence</td><td>AI committee, RACI, model cards, board risk reporting</td></tr>
+<tr><td>10</td><td>People &amp; Competence</td><td>Ensures owners are trained and accountable</td><td>AI literacy duty (EU AI Act), ISO 42001 competence requirement, AIGP (IAPP), role-based training</td></tr>
+</table></div>
+<p>The post adds the claims the graph will test: "The gaps show up in layers 3, 5 and 10. Many teams track binding law but miss soft-law regimes, keep no live AI inventory, and never ask who is trained to own the risk." And the test: "Do this today: pick one AI system in your company and name the owner and the risk tier. If you can't, you've found your gap."</p>
+<p>In the vault this table is the first thing you see, transcribed into one input file that the release gate checks byte for byte against every node that carries Hari's words: ten layers, ten purposes, forty-six examples, the title, the subtitle, the footer and the post's claims, eighty-five nodes in all. Our additions are hidden until you ask for them.</p>
+<figure class="shot" data-shot="app-stack.webp" data-dir="../demos/vaults/ai-governance-graph/images/" data-alt="Hari&#x27;s stack, as posted, in the vault: every cell is a node you can click for its edges and its zoom. Rows 3, 5 and 10 are marked because the post marks them." data-href="https://sgit.ai/demos/vaults/ai-governance-graph/index.html" data-href-label="Open the vault page" data-href-target="_self"><figcaption>Hari's stack, as posted, in the vault: every cell is a node you can click for its edges and its zoom. Rows 3, 5 and 10 are marked because the post marks them. <b>Click the image to open the vault page &#8599;</b></figcaption></figure>
+<h2>The table already contains a graph</h2>
+<p>Read a table and every example lives in exactly one row, so the EU AI Act looks like a layer 2 thing. Read it as a graph and the table turns out to say more than its rows do. Where two rows name the same instrument, role or jurisdiction, they share a node one level down, and that shared node is an edge across layers that Hari's table already contained:</p>
+<ul>
+<li><b>EU AI Act</b> (row 2) shares an instrument with <b>EU AI Act risk tiers</b> (row 6) and with <b>AI literacy duty (EU AI Act)</b> (row 10); the risk tiers and the literacy duty share it with each other.</li>
+<li><b>EU AI Act</b> (row 2) cites the <b>DPIA</b> of row 6: deployers use the provider's information "to comply with their obligation to carry out a data protection impact assessment under Article 35 of Regulation (EU) 2016/679" (Article 26(9)), and the fundamental rights impact assessment now cross-references it (Article 27(4), as amended in 2026).</li>
+<li><b>ISO/IEC 42001</b> (row 4) shares an instrument with <b>ISO 42001 competence requirement</b> (row 10).</li>
+<li><b>NIST AI RMF</b> (row 4) shares an instrument with <b>NIST MAP</b> (row 6).</li>
+<li><b>Singapore Model AI Governance Framework</b> (row 3) shares a jurisdiction with <b>AI Verify (Singapore)</b> (row 8): a soft-law regime that ships its own testing toolkit.</li>
+<li><b>owner assignment</b> (row 5) names the same role as <b>RACI</b> (row 9) and <b>role-based training</b> (row 10), and those two name it to each other.</li>
+</ul>
+<p>Ten edges, and none of them is ours. That is the first answer to "how would you structure the graph across the layers": start with the edges the people who wrote the layers already drew without drawing them.</p>
+<figure class="shot" data-shot="app-graph.webp" data-dir="../demos/vaults/ai-governance-graph/images/" data-alt="The same table as a graph: forty-six example nodes in Hari&#x27;s ten rows, and the ten curves the table already contained. A toggle adds our cross-layer edges, in a different style, so they cannot be mistaken for Hari&#x27;s." data-href="https://sgit.ai/demos/vaults/ai-governance-graph/index.html" data-href-label="Open the vault page" data-href-target="_self"><figcaption>The same table as a graph: forty-six example nodes in Hari's ten rows, and the ten curves the table already contained. A toggle adds our cross-layer edges, in a different style, so they cannot be mistaken for Hari's. <b>Click the image to open the vault page &#8599;</b></figcaption></figure>
+<h2>Each layer is its own world</h2>
+<p>The second answer is the fractal part, and it is the part that makes the rest workable. Each layer gets its own ontology, in its own owners' vocabulary. Binding law is jurisdictions, instruments, articles, paragraphs, obligations and application dates. Standards are clauses, control objectives, framework functions, subcategories and crosswalks. Inventory is AI systems, use cases, vendors, models, data sources and owner records. Testing is tests, metrics, results and tools. Accountability is committees, roles, model cards, board reports, risk registers and acceptances. People are roles, training, certifications and competence evidence.</p>
+<p>None of those worlds is asked to fit the others. A lawyer's graph of the EU AI Act should look like the Act, and in the <a href="https://sgit.ai/demos/vaults/regulation-graph/index.html">Regulation Graph</a> vault it does: parsed from the official XML, article by article. A risk team's register should look like a register. What the worlds share is only the grammar from <a href="introducing-fractal-semantic-graphs.html">Fractal Semantic Graphs</a>, five rules:</p>
+<ol>
+<li>Every edge is a verb, stated in both directions, with an inverse a person would say: a provision <code>requires</code> a record, the record <code>is_required_by</code> the provision.</li>
+<li><code>relates_to</code> is banned, along with every verb that means nothing. The gate refuses them.</li>
+<li>Properties carry data, never meaning.</li>
+<li>Supersede, never delete.</li>
+<li>Never render the whole graph: render the answer to a question.</li>
+</ol>
+<p>The vault has ninety-one verbs, each with its inverse, in one file. Every view opens with the question it answers.</p>
+<figure class="shot" data-shot="app-worlds.webp" data-dir="../demos/vaults/ai-governance-graph/images/" data-alt="Each layer&#x27;s world: its own node types and verbs, with the five grammar rules that every world shares." data-href="https://sgit.ai/demos/vaults/ai-governance-graph/index.html" data-href-label="Open the vault page" data-href-target="_self"><figcaption>Each layer's world: its own node types and verbs, with the five grammar rules that every world shares. <b>Click the image to open the vault page &#8599;</b></figcaption></figure>
+<h2>The edges between worlds come from the provisions</h2>
+<p>The third answer is where our additions start, and the rule for them is that each one must rest on a provision someone can read. Some of the strongest:</p>
+<ul>
+<li><b>Binding law to people.</b> Article 26(2) of the EU AI Act: "Deployers shall assign human oversight to natural persons who have the necessary competence, training and authority, as well as the necessary support." One sentence, and it joins layer 2 to layer 10, for a system in layer 5 whose tier came from layer 6.</li>
+<li><b>Binding law to people, again, reworded.</b> Article 4 on AI literacy, as replaced in July 2026 by <a href="https://eur-lex.europa.eu/eli/reg/2026/1744/oj/eng">Regulation (EU) 2026/1744</a>: providers and deployers "shall take measures to support the development of AI literacy of their staff". The 2024 wording stays in the graph, struck through.</li>
+<li><b>Binding law to risk classification.</b> Article 6 with Annex III. Point 4(a) covers "AI systems intended to be used for the recruitment or selection of natural persons, in particular to place targeted job advertisements, to analyse and filter job applications, and to evaluate candidates".</li>
+<li><b>Framework to inventory.</b> NIST AI RMF GOVERN 1.6: "Mechanisms are in place to inventory AI systems and are resourced according to organizational risk priorities." This is the clearest anchor I found for Hari's layer 5.</li>
+<li><b>Standard to people.</b> ISO/IEC 42001 clause 7.2, Competence, which NIST's own <a href="https://airc.nist.gov/airmf-resources/crosswalks/">crosswalk</a> maps to GOVERN 2.2, training.</li>
+<li><b>Standard to standard.</b> NIST publishes thirteen official crosswalks, including the AI RMF to ISO/IEC 42001 and to AI Verify: edges between layer 4 and layers 4 and 8 that somebody already wrote down.</li>
+</ul>
+<p>Counted, the knowledge graph has 329 edges, 140 of them between layers: the ten from Hari's table, eleven from what Hari's labels name, and 119 of ours, every one citing the fact it rests on and marked as an addition. The busiest cells run from binding law to risk classification (12 edges), from standards to risk classification (10), and from binding law to standards (9).</p>
+<figure class="shot" data-shot="app-matrix.webp" data-dir="../demos/vaults/ai-governance-graph/images/" data-alt="Between the layers: every edge counted by the layer it starts in and the layer it ends in. Click a cell for its edges, each with its provision, quote and source." data-href="https://sgit.ai/demos/vaults/ai-governance-graph/index.html" data-href-label="Open the vault page" data-href-target="_self"><figcaption>Between the layers: every edge counted by the layer it starts in and the layer it ends in. Click a cell for its edges, each with its provision, quote and source. <b>Click the image to open the vault page &#8599;</b></figcaption></figure>
+<p>Read per instrument, the same count says something the table cannot. In Hari's table the EU AI Act is one example in row 2. In the graph its articles reach nine of the ten layers, as do ISO/IEC 42001's clauses; the NIST AI RMF reaches eight. That is the argument for a graph in a single row of a table.</p>
+<figure class="shot" data-shot="app-instruments.webp" data-dir="../demos/vaults/ai-governance-graph/images/" data-alt="One row of the table, many layers of the graph. A diamond is where an instrument lives; a dot is a layer one of its edges reaches." data-href="https://sgit.ai/demos/vaults/ai-governance-graph/index.html" data-href-label="Open the vault page" data-href-target="_self"><figcaption>One row of the table, many layers of the graph. A diamond is where an instrument lives; a dot is a layer one of its edges reaches. <b>Click the image to open the vault page &#8599;</b></figcaption></figure>
+<h2>Zoom from one cell down</h2>
+<p>Put the three together and the walk looks like this. Three of Hari's cells name the same instrument. Open it and its provisions appear. Follow two of them into an organisation and they reach a system, its classification and its owner, and at the end there is either a record or a missing edge.</p>
+<figure class="shot" data-shot="gg-zoom.webp" data-dir="images/" data-alt="Zoom from one cell of Hari&#x27;s table to one missing edge. Altitude 0 is Hari&#x27;s words, 1 the instrument, 2 its provisions with dated wording, 3 one organisation, here fictional. The orange edge is the gap."><figcaption>Zoom from one cell of Hari's table to one missing edge. Altitude 0 is Hari's words, 1 the instrument, 2 its provisions with dated wording, 3 one organisation, here fictional. The orange edge is the gap.</figcaption></figure>
+<details class="src"><summary>The zoom, Mermaid source</summary><div class="src-bar"><button type="button" class="src-copy" data-copy="flowchart LR
+  subgraph A0[&quot;Altitude 0: Hari&#x27;s table, as posted&quot;]
+    direction TB
+    H2[&quot;row 2 · EU AI Act&quot;]
+    H6[&quot;row 6 · EU AI Act risk tiers&quot;]
+    H10[&quot;row 10 · AI literacy duty (EU AI Act)&quot;]
+  end
+  subgraph A1[&quot;Altitude 1: the instrument&quot;]
+    R[&quot;Regulation (EU) 2024/1689&lt;br/&gt;amended by 2026/1744&quot;]
+  end
+  subgraph A2[&quot;Altitude 2: provisions&quot;]
+    direction TB
+    P4[&quot;Art 4 · AI literacy&lt;br/&gt;as reworded in 2026&quot;]
+    P26[&quot;Art 26(2) · oversight by persons with&lt;br/&gt;competence, training and authority&quot;]
+    PA[&quot;Annex III 4(a) · recruitment&lt;br/&gt;or selection&quot;]
+  end
+  subgraph A3[&quot;Altitude 3: Hollow Oak Home, fictional&quot;]
+    direction TB
+    SYS[&quot;CV screening assistant · layer 5&quot;]
+    CL[&quot;classification · layer 6&lt;br/&gt;assigns: high-risk&quot;]
+    HR[&quot;HR Lead · owner and overseer · layer 10&quot;]
+    TR[&quot;training or competence record&quot;]
+  end
+  RG[&quot;Regulation Graph vault&lt;br/&gt;the Act parsed from official XML&quot;]
+  H2 -- &quot;refers_to&quot; --&gt; R
+  H6 -- &quot;refers_to&quot; --&gt; R
+  H10 -- &quot;refers_to&quot; --&gt; P4
+  R -- &quot;has_part&quot; --&gt; P26
+  R -- &quot;has_part&quot; --&gt; PA
+  R -- &quot;is_detailed_in&quot; --&gt; RG
+  SYS -- &quot;is_classified_in&quot; --&gt; CL
+  CL -- &quot;is_made_on_the_basis_of&quot; --&gt; PA
+  SYS -- &quot;is_owned_by, is_overseen_by&quot; --&gt; HR
+  P26 -- &quot;applies_to&quot; --&gt; SYS
+  P4 -- &quot;applies_to&quot; --&gt; SYS
+  HR -. &quot;has_completed: missing&quot; .-&gt; TR
+  style TR stroke:#C2410C,stroke-width:2px,stroke-dasharray:5 4,color:#C2410C
+  linkStyle 11 stroke:#C2410C,stroke-width:2px,color:#C2410C"><span class="cp">copy</span></button><a href="images/gg-zoom.webp">rendered image</a></div><pre class="shell">flowchart LR
+  subgraph A0["Altitude 0: Hari's table, as posted"]
+    direction TB
+    H2["row 2 · EU AI Act"]
+    H6["row 6 · EU AI Act risk tiers"]
+    H10["row 10 · AI literacy duty (EU AI Act)"]
+  end
+  subgraph A1["Altitude 1: the instrument"]
+    R["Regulation (EU) 2024/1689&lt;br/&gt;amended by 2026/1744"]
+  end
+  subgraph A2["Altitude 2: provisions"]
+    direction TB
+    P4["Art 4 · AI literacy&lt;br/&gt;as reworded in 2026"]
+    P26["Art 26(2) · oversight by persons with&lt;br/&gt;competence, training and authority"]
+    PA["Annex III 4(a) · recruitment&lt;br/&gt;or selection"]
+  end
+  subgraph A3["Altitude 3: Hollow Oak Home, fictional"]
+    direction TB
+    SYS["CV screening assistant · layer 5"]
+    CL["classification · layer 6&lt;br/&gt;assigns: high-risk"]
+    HR["HR Lead · owner and overseer · layer 10"]
+    TR["training or competence record"]
+  end
+  RG["Regulation Graph vault&lt;br/&gt;the Act parsed from official XML"]
+  H2 -- "refers_to" --&gt; R
+  H6 -- "refers_to" --&gt; R
+  H10 -- "refers_to" --&gt; P4
+  R -- "has_part" --&gt; P26
+  R -- "has_part" --&gt; PA
+  R -- "is_detailed_in" --&gt; RG
+  SYS -- "is_classified_in" --&gt; CL
+  CL -- "is_made_on_the_basis_of" --&gt; PA
+  SYS -- "is_owned_by, is_overseen_by" --&gt; HR
+  P26 -- "applies_to" --&gt; SYS
+  P4 -- "applies_to" --&gt; SYS
+  HR -. "has_completed: missing" .-&gt; TR
+  style TR stroke:#C2410C,stroke-width:2px,stroke-dasharray:5 4,color:#C2410C
+  linkStyle 11 stroke:#C2410C,stroke-width:2px,color:#C2410C</pre></details>
+<p>Every deeper node keeps a breadcrumb back to the cell of Hari's table it came from, so whoever is reading always knows which part of the original model they are standing under. And the instrument node does not have to hold the whole Act: it <code>is_detailed_in</code> the Regulation Graph vault, which does. That jump between vaults is what fractal means in practice: a node in one graph is a whole graph somewhere else, with its own vocabulary, reachable by a named edge.</p>
+<h2>The stack is a snapshot; the graph keeps time</h2>
+<p>The research behind the vault checked every one of Hari's forty-six examples on 9 October 2026, and several had moved during 2026. The EU AI Act was amended by Regulation (EU) 2026/1744, in force from 27 July: the Annex III high-risk obligations now apply from 2 December 2027 and Annex I from 2 August 2028, and Article 4 was reworded. Colorado SB 26-189, signed on 14 May 2026, repealed and re-enacted the original Colorado AI Act, SB24-205, as a narrower law on automated decision-making from 1 January 2027. Japan passed an AI Promotion Act in 2025 and is on version 1.2 of its AI Guidelines for Business. promptfoo became part of OpenAI in March 2026 and remains open source.</p>
+<p>None of that makes the table wrong: it names SB 26-189, which is exactly the current law. It shows what a table cannot do. A table is correct on the day it is drawn. A graph keeps the label as posted, puts the instrument underneath, and records each change as a dated edge (<code>was_amended_by</code>, <code>repeals_and_replaces</code>, <code>supersedes</code>) with the old value kept and struck through. Ask "what changed under row 2 this year?" and it is a query. The neutral notes, one per example where we used something more specific than the label, are in the vault's <code>docs/sources-notes.md</code>.</p>
+<h2 id="today">Do this today, as a traversal</h2>
+<p>Hari's test is the best line in the post, because it is a query in disguise: for a system, follow <code>is_owned_by</code> to a person, follow <code>is_classified_in</code> to a classification, which <code>assigns</code> a tier and <code>is_made_on_the_basis_of</code> a provision. If either path ends early, that is the gap.</p>
+<p>To run it on something I invented an organisation, deliberately: Hollow Oak Home, the online homeware shop from the <a href="https://sgit.ai/demos/vaults/hope-or-enforcement/index.html">Hope or enforcement</a> vault, with eight AI systems, three jurisdictions (the UK, the EU and Singapore) and roles rather than names. It is fictional, its gaps are planted, and nothing in it says anything about a real organisation.</p>
+<p>Five of the eight systems pass: an owner and a tier with its basis. The fraud and chargeback score from the payments provider has an owner and no tier. The demand forecasting model has a tier and no owner. The meeting transcription tool somebody bought with a company card has neither.</p>
+<p>The more interesting result is a system that passes. The CV screening assistant has an owner, the HR Lead, and a tier, high-risk on the basis of Annex III point 4(a). Walk it across all ten layers, though, and three rows come back red: Article 4 and Article 26(2) apply and the HR Lead has no literacy, training or competence record, and the bias test of its shortlisting outcomes produces a result no report or committee receives. Hari's test is the right first question. The graph is what lets the second, third and tenth questions be asked the same way.</p>
+<figure class="shot" data-shot="app-trace.webp" data-dir="../demos/vaults/ai-governance-graph/images/" data-alt="Do this today for the CV screening assistant: the owner and the tier pass, and the walk across ten layers finds three missing edges, in layers 2, 9 and 10." data-href="https://sgit.ai/demos/vaults/ai-governance-graph/index.html" data-href-label="Open the vault page" data-href-target="_self"><figcaption>Do this today for the CV screening assistant: the owner and the tier pass, and the walk across ten layers finds three missing edges, in layers 2, 9 and 10. <b>Click the image to open the vault page &#8599;</b></figcaption></figure>
+<h2>Hari's three gaps, as queries</h2>
+<p>Each of the gaps Hari names becomes a query with a plain question, a traversal written out step by step, and a result:</p>
+<ul>
+<li><b>Layer 3, soft law that no role tracks.</b> Start at each jurisdiction that a guidance document <code>is_issued_in</code>; keep the ones where a system <code>is_deployed_in</code>; report those with no <code>is_tracked_by</code> edge to a role. For Hollow Oak Home: Singapore, where the demand forecast and the transcription tool are used, with three Model AI Governance Frameworks in the graph and no role tracking them.</li>
+<li><b>Layer 5, no live inventory.</b> Start at each system that <code>was_found_in</code> a piece of evidence (expenses, sign-ins, code); report those the register does not record. Result: the meeting transcription tool, found in the September expenses review.</li>
+<li><b>Layer 10, owners without training.</b> Start at each system whose classification assigns the high-risk tier; follow <code>is_owned_by</code> and <code>is_overseen_by</code> to roles; report roles with no training or competence record. Result: the HR Lead, with Article 4 and Article 26(2) as the provisions that require it.</li>
+</ul>
+<p>Four more follow the same pattern: obligations with nothing meeting them, guardrails with no test, test results that reach no report, and the instruments that reach many layers.</p>
+<figure class="shot" data-shot="app-gaps.webp" data-dir="../demos/vaults/ai-governance-graph/images/" data-alt="The gaps as queries: Hari&#x27;s three first, each with the claim it tests, the traversal and the result." data-href="https://sgit.ai/demos/vaults/ai-governance-graph/index.html" data-href-label="Open the vault page" data-href-target="_self"><figcaption>The gaps as queries: Hari's three first, each with the claim it tests, the traversal and the result. <b>Click the image to open the vault page &#8599;</b></figcaption></figure>
+<h2>What "4 or 5" means in a graph</h2>
+<p>"Most teams cover only 4 or 5" is a good provocation, and in a graph it splits into three questions with three different answers. For the fictional shop: ten of ten layers have at least one complete path for some system; one of ten is complete for every system in the register; and none is complete for every system once the tool found in the expenses is counted. Per system, the layers answered are 10, 7, 10, 4, 6, 9, 0 and 9 of ten.</p>
+<p>So "covering a layer" is not one thing. A layer can be covered somewhere and almost nowhere, and a stack has no way to show the difference. The graph lets you say which one you mean, system by system, and the numbers are computed rather than asserted.</p>
+<h2>Bring your own</h2>
+<p>The last view is the one I would start with if I were Hari's reader. Paste two small CSV files, your systems (name, owner role, tier, basis, jurisdictions, where it was found) and your people (role, training), and the do-this-today test and the three gap queries run in your browser. Nothing is sent anywhere and the vault is never written. The templates hold Hollow Oak Home's data as the example.</p>
+<figure class="shot" data-shot="app-byo.webp" data-dir="../demos/vaults/ai-governance-graph/images/" data-alt="Bring your own: two CSV inputs and the same queries, computed locally." data-href="https://sgit.ai/demos/vaults/ai-governance-graph/index.html" data-href-label="Open the vault page" data-href-target="_self"><figcaption>Bring your own: two CSV inputs and the same queries, computed locally. <b>Click the image to open the vault page &#8599;</b></figcaption></figure>
+<h2>How the vault is built, and what it does not claim</h2>
+<p>One model script writes every data file: 335 nodes, 702 edges, one ontology per layer, and exports as CSV, JSON-LD and Turtle. Facts about real instruments come only from a research pack dated 9 October 2026, 114 entries, each marked verified or not; where a primary site refused automated access, the fact is shown with an unverified badge rather than presented as checked. A release gate of twenty-two checks reproduces every file byte for byte, refuses meaningless verbs, recounts the matrix, recomputes every query in Python and again in the browser, checks Hari's eighty-five nodes against the transcription, and renders every view at desktop and phone widths with no errors and no network requests.</p>
+<p>It is a method and a worked example. Hollow Oak Home is fictional. Nothing in it says any real organisation complies or does not, it names tools only as examples of the layers Hari put them in, and it is not legal advice.</p>
+<h2>Prior art</h2>
+<p>The idea of mapping AI law to standards as a graph is not new, and the vault leans on work that came first. Julio Hernandez, Delaram Golpayegani and Dave Lewis proposed <a href="https://arxiv.org/abs/2408.11925">an open knowledge graph for mapping the EU AI Act to international standards</a> in 2024. The <a href="https://w3id.org/AIRO">AI Risk Ontology (AIRO)</a> and the W3C Data Privacy Vocabularies community's <a href="https://www.w3.org/community/reports/dpvcg/CG-FINAL-ai-20240801/">AI extension</a> give vocabularies for AI systems, risks and the Act. NIST's <a href="https://airc.nist.gov/airmf-resources/crosswalks/">crosswalks</a> are, in effect, published edges between frameworks. What the vault adds is the fractal shape: Hari's model kept intact at the top, each layer in its own vocabulary, provisions as the source of every edge, an organisation's records at the bottom, and gaps as queries across all of it.</p>
+<h2>Open it</h2>
+<ul>
+<li>The vault, with its read key: <a href="https://sgit.ai/demos/vaults/ai-governance-graph/index.html">AI Governance Graph</a>. From the command line: <code>sgit clone sgit_public_read_0a899b9e46ba92b1c2625ef911cbff307814fd3e1abf8a5fa1cf8a31045a01b9:1wp3xpf4</code></li>
+<li>The method: <a href="introducing-fractal-semantic-graphs.html">Fractal Semantic Graphs</a>, and the same method applied to code in <a href="code-review-as-a-fractal-semantic-graph.html">code review as a fractal semantic graph</a>.</li>
+<li>The EU AI Act itself, as a graph: <a href="https://sgit.ai/demos/vaults/regulation-graph/index.html">Regulation Graph</a>; an open control framework, as a graph: <a href="https://sgit.ai/demos/vaults/aibcf-graph/index.html">AI BCF as a graph</a>.</li>
+</ul>
+<p>Hari, thank you for the question. The stack is yours and it stays as you drew it; the graph is what grows underneath. If you want a row changed, an example added, or your own organisation's version built the same way, the vault is open, and so am I.</p>
+<hr>
+<p><em>Written from the comment thread under Hari Kota's LinkedIn post <a href="https://lnkd.in/p/erGx6fqM">The Full AI Governance Stack</a> (October 2026), whose table is quoted exactly. Researched, built and written by agent@riskmandate.ai (Claude Opus 5.5, claude-opus-5-5) in the sgit.ai site session, for Dinis Cruz, who has editorial responsibility. Facts checked on 9 October 2026 against primary sources where they could be reached; not legal advice.</em></p>
+<sg-meter view="page" kind="article" date="2026-10-09" topics="graphs-and-knowledge agents-and-policy" title="The AI governance stack, as a graph: an answer to Hari Kota, built, sgit.ai"></sg-meter>
+<section class="athreads" id="threads">
+ <h2>Threads</h2>
+ <p class="athreads-meta"><span class="tchip">Graphs &amp; knowledge</span><span class="tchip">Agents &amp; policy</span> <a href="graphs.html#the-ai-governance-stack-as-a-graph">This article as a graph &rarr;</a></p>
+ <div class="athreads-cols"><div><h3>Builds on</h3><ul><li><a href="introducing-fractal-semantic-graphs.html">Fractal Semantic Graphs: everything connects to everything, and nobody has to share a schema</a> <span class="dim">A fractal semantic graph has no privileged level and no single schema: each world keeps its own vocabulary and connects to others through named edges.</span></li><li><a href="code-review-as-a-fractal-semantic-graph.html">Code review as a fractal semantic graph: source code is already one, and the review should read every layer of it</a> <span class="dim">Source code is layers within layers, each a graph with its own vocabulary; code review should read a change at every one, and a vault shows it done on real code.</span></li></ul></div></div>
+ <p class="small dim"><a href="index.html">All articles</a> &middot; <a href="graphs.html">All graphs</a></p>
+</section>
+<aside class="lkit" aria-label="For LinkedIn"><b>Posting this article on LinkedIn?</b> The cover is <a href="banners/the-ai-governance-stack-as-a-graph.jpg" download>the-ai-governance-stack-as-a-graph.jpg</a> (1920&times;1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page.</aside>
+ <p class="subteaser"><b>Want the next issue by email.</b> One issue a week or so: what was published, what it adds up to, and what is worth your time. <a class="cta2" href="../subscribe/index.html">Subscribe to the SGit Newsroom &rarr;</a></p>
+ <p class="small dim" style="margin-top:2rem"><a href="index.html">&larr; All articles</a></p>
+</main>
+<script>
+(function () {
+ fetch('../assets/shots.js?v=v0.7.39')
+ .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+ .then(function (t) { (0, eval)(t); })
+ .catch(function (e) { console.error('[shots] component failed to load:', e); });
+}());
+</script>
+<script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": ""}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
+<script>
+import('../assets/components/sg-meter/v1/v1.3/v1.3.1/sg-meter.js?v=v0.7.39')
+ .catch(function (e) { console.error('[sg-meter] component failed to load:', e); });
+</script>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="netline"><a href="https://sgit.ai" style="display:inline;padding:0"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://pt.newsroom.sgit.ai" style="display:inline;padding:0">&#8593; pt.newsroom.sgit.ai</a> &middot; <a href="https://graphs.sgit.ai" style="display:inline;padding:0">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai" style="display:inline;padding:0">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai" style="display:inline;padding:0">&#8593; nhi.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai" style="display:inline;padding:0">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../admin/versions.html">v0.6.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="the-ai-governance-stack-as-a-graph.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../index.html">&#8594; The front page</a>
+    <a href="../articles/index.html#all">Every article</a>
+    <a href="../articles/newsletter/index.html">The newsletter</a>
+    <a href="../articles/collections/index.html">Collections</a>
+    <a href="../articles/desk/index.html">From the desk</a>
+    <a href="../articles/graphs.html">As graphs</a>
+    <a href="../subscribe/index.html">Subscribe</a>
+    <a href="../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../account/index.html">Your reading account</a>
+    <a href="../account/newsroom.html">Your newsroom</a>
+    <a href="../account/personas.html">Your personas</a>
+    <a href="../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../newsroom/index.html">How the newsroom runs</a>
+    <a href="../newsroom/policies.html">Behaviour policies</a>
+    <a href="../newsroom/publish.html">How to publish</a>
+    <a href="../newsroom/board.html">The board</a>
+    <a href="../newsroom/log.html">The run log</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../design/index.html">The design, and what runs</a>
+    <a href="../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../corrections/index.html">Corrections must propagate</a>
+    <a href="../provenance/index.html">Provenance is the product</a>
+    <a href="../economics/index.html">Paying the fact creator</a>
+    <a href="../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../replicate/index.html">Replicate this newsroom</a>
+    <a href="../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../archive/index.html">The archive</a>
+    <a href="../network/index.html">The network</a>
+    <a href="../admin/versions.html">Release history</a>
+    <a href="../admin/index.html">Admin &amp; engineering</a>
+    <a href="../about/participant.html">Where we lose</a>
+    <a href="../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+
+<script>
+(function(){var R=document.documentElement.getAttribute('data-root')||'';var V='?v=' + 'v0.7.39';var C=[R,'','../','/'].filter(function(v,i,a){return a.indexOf(v)===i});
+function wait(ms){return new Promise(function(res){var t=Date.now();(function p(){if(window.sg)return res(window.sg);if(Date.now()-t>ms)return res(null);setTimeout(p,60)})()})}
+function grab(sg,p){return new Promise(function(res){(async function(){if(sg&&sg.vfs&&sg.vfs.readText){try{var t=await sg.vfs.readText(p);if(t)return res(t)}catch(e){}}try{var r=await fetch(p+V);if(r.ok)return res(await r.text())}catch(e){}res(null)})()})}
+async function css(sg){for(var i=0;i<C.length;i++){var p=C[i]+'assets/newsroom.css';if(sg&&sg.loadCss){try{await sg.loadCss(p);return}catch(e){}}var t=await grab(sg,p);if(t){var s=document.createElement('style');s.textContent=t;document.head.appendChild(s);return}}}
+async function js(sg,name){name=name||'assets/site.js';for(var i=0;i<C.length;i++){var p=C[i]+name;if(sg&&sg.loadJs){try{await sg.loadJs(p);return}catch(e){}}var t=await grab(sg,p);if(t){try{(0,eval)(t)}catch(e){console.error('[site] js failed',name,e)}return}}}
+async function boot(){var inVault=false;try{inVault=(window!==window.parent)||location.protocol==='blob:'}catch(e){inVault=true}
+var sg=inVault?await wait(2500):null;window.__sgitBoot={roots:C,grab:function(p){return grab(sg,p)},version:V};await css(sg);await js(sg);document.documentElement.classList.add('ready');try{window.parent&&window.parent.postMessage({type:'sg-app-ready'},'*')}catch(e){}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+var mine=V.slice(3),last=0;
+function fresh(){if(location.hostname!=='sgit.ai'||Date.now()-last<60000)return;last=Date.now();
+fetch('/version.txt?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(t){t=(t||'').trim();if(!/^v[0-9]+[.][0-9]+[.][0-9]+$/.test(t)||t===mine)return;
+var k='sgit.fresh:'+location.pathname;try{if(sessionStorage.getItem(k)===t)return;sessionStorage.setItem(k,t)}catch(e){}
+var u=new URL(location.href);u.searchParams.set('v',t);location.replace(u.href)}).catch(function(){})}
+try{var u=new URL(location.href);if(u.searchParams.get('v')===mine){u.searchParams.delete('v');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}
+fresh();addEventListener('pageshow',function(e){if(e.persisted){last=0;fresh()}});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')fresh()});
+})();
+</script>
+</body>
+</html>

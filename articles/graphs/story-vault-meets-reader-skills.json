@@ -1,0 +1,176 @@
+{
+  "slug": "story-vault-meets-reader-skills",
+  "teaser": "Markus Franz's Reader Skills on top, the story vault underneath: each skill is a graph query, and local stories can pay back down their chain of sources.",
+  "topics": [
+    "news-and-evidence",
+    "graphs-and-knowledge"
+  ],
+  "core_idea": "Markus Franz's Liquid Utility proposes Reader Skills that help people understand, update, relate, compare, follow and act on journalism; the story vault keeps reporting as a versioned graph of claims tied to hashed evidence; put together, each skill is an operation on the graph and each safeguard he asks for is a property the graph already has, his bridge closure becomes a graph in which one supersede edge is the update, the alert and the correction, and his emphasis on locality supplies what the vault's economics had not mapped: local contributors and local journalists sit where trust is strongest, stories travel up to national and international outlets, and if every use pays back down the chain of claims it rests on, small payments from many people fund the reporting nearest to them.",
+  "nodes": [
+    {
+      "id": "liquid-utility",
+      "label": "Liquid Utility",
+      "kind": "concept",
+      "summary": "Markus Franz: trusted journalistic knowledge plus reusable methods and tools, to help someone understand, follow or act."
+    },
+    {
+      "id": "reader-skills",
+      "label": "Six Reader Skills",
+      "kind": "concept",
+      "summary": "Understand, Update, Relate, Compare, Follow, Act: bounded capabilities a reader uses directly."
+    },
+    {
+      "id": "story-vault",
+      "label": "The story vault",
+      "kind": "concept",
+      "summary": "Claims tied to hashed evidence, versioned, superseded rather than deleted; the article is one projection."
+    },
+    {
+      "id": "his-reply",
+      "label": "What we know, and what we can help someone do",
+      "kind": "claim",
+      "summary": "Markus Franz's reply: the vault answers why it can be trusted, the skills answer what it can reliably help someone do."
+    },
+    {
+      "id": "skill-as-query",
+      "label": "Each skill is an operation on the graph",
+      "kind": "method",
+      "summary": "Update is a diff between versions, Follow a subscription on claims, Relate a join held on the reader's side."
+    },
+    {
+      "id": "safeguards",
+      "label": "His safeguards are graph properties",
+      "kind": "claim",
+      "summary": "Corrections as supersede edges, protected sources flagged at the node, freshness for could-not-check."
+    },
+    {
+      "id": "bridge-graph",
+      "label": "The bridge closure as a graph",
+      "kind": "example",
+      "summary": "One supersede edge is the update, the alert and the correction at once; the reader's route stays on the reader's side."
+    },
+    {
+      "id": "locality",
+      "label": "Local is where the trust is",
+      "kind": "claim",
+      "summary": "Everything that touches the day is local; readers can check local reporting themselves, so trust and brand form there."
+    },
+    {
+      "id": "local-contributor",
+      "label": "The local contributor is a node",
+      "kind": "concept",
+      "summary": "Residents and local sources are named or flagged, linked to the claims their evidence supports, and verified."
+    },
+    {
+      "id": "chain-pays",
+      "label": "Every use pays back down the chain",
+      "kind": "method",
+      "summary": "National and international stories that rest on local claims pay for them per use; shares reach the contributor."
+    },
+    {
+      "id": "verification-api",
+      "label": "Is this still current?",
+      "kind": "artefact",
+      "summary": "The verification API: a paid, maintained answer about a claim, and how a local newsroom gets paid for being right."
+    },
+    {
+      "id": "loop",
+      "label": "Trust, use, payment, reporting, evidence, trust",
+      "kind": "claim",
+      "summary": "Small payments from many people about the things nearest to them fund the next local story."
+    },
+    {
+      "id": "pilot",
+      "label": "One topic, one vault, one service, one ledger",
+      "kind": "question",
+      "summary": "Markus's tightly scoped service, kept as a story vault, with contributors recorded and the ledger published."
+    }
+  ],
+  "edges": [
+    {
+      "from": "liquid-utility",
+      "to": "reader-skills",
+      "rel": "produces"
+    },
+    {
+      "from": "his-reply",
+      "to": "story-vault",
+      "rel": "depends-on"
+    },
+    {
+      "from": "his-reply",
+      "to": "reader-skills",
+      "rel": "depends-on"
+    },
+    {
+      "from": "reader-skills",
+      "to": "skill-as-query",
+      "rel": "leads-to"
+    },
+    {
+      "from": "story-vault",
+      "to": "skill-as-query",
+      "rel": "answers"
+    },
+    {
+      "from": "skill-as-query",
+      "to": "safeguards",
+      "rel": "extends"
+    },
+    {
+      "from": "bridge-graph",
+      "to": "skill-as-query",
+      "rel": "example-of"
+    },
+    {
+      "from": "liquid-utility",
+      "to": "locality",
+      "rel": "leads-to"
+    },
+    {
+      "from": "locality",
+      "to": "local-contributor",
+      "rel": "leads-to"
+    },
+    {
+      "from": "local-contributor",
+      "to": "chain-pays",
+      "rel": "depends-on"
+    },
+    {
+      "from": "verification-api",
+      "to": "chain-pays",
+      "rel": "extends"
+    },
+    {
+      "from": "chain-pays",
+      "to": "loop",
+      "rel": "produces"
+    },
+    {
+      "from": "loop",
+      "to": "pilot",
+      "rel": "leads-to"
+    }
+  ],
+  "links": {
+    "articles": [
+      "future-of-news-story-vault-not-paywall",
+      "how-news-got-here"
+    ],
+    "pages": [],
+    "sites": [
+      "https://www.linkedin.com/pulse/article-only-beginning-markus-franz-qzyqe/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "Over a pile of articles, Update is a summarisation problem. Over a story graph, it is a diff.",
+      "why": "Why the story vault makes Reader Skills dependable."
+    },
+    {
+      "text": "Use it, and pay the people who found it out.",
+      "why": "The clause the monetisation adds to Markus Franz's closing line."
+    }
+  ]
+}

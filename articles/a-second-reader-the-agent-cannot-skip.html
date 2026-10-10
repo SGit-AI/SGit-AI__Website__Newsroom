@@ -1,0 +1,517 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>A second reader the agent cannot skip: how two wrong emails became a gate on every draft, sgit.ai</title>
+<meta name="description" content="On 9 October two emails drafted by my agent went out in my voice and signed with my name. The rule against it existed, in four places, and it failed because the only thing enforcing it was the agent's memory, the agent was the only reader of its own draft, and the rule fell out of context when the conversation was summarised. The fix, built the same day by the agent itself, is a hook on the draft tool: code checks first, then a fresh model call with only the rules, the sources and the draft, failing closed and logging every verdict. This is how it works, what the first run caught, why its independence depends on where it is installed, and how the same pattern, which banks call maker-checker, applies to any tool call that matters.">
+<link rel="canonical" href="https://newsroom.sgit.ai/articles/a-second-reader-the-agent-cannot-skip.html">
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="sgit.ai">
+<meta property="og:url" content="https://newsroom.sgit.ai/articles/a-second-reader-the-agent-cannot-skip.html">
+<meta property="og:title" content="A second reader the agent cannot skip: how two wrong emails became a gate on every draft, sgit.ai">
+<meta property="og:description" content="On 9 October two emails drafted by my agent went out in my voice and signed with my name. The rule against it existed, in four places, and it failed because the only thing enforcing it was the agent's memory, the agent was the only reader of its own draft, and the rule fell out of context when the conversation was summarised. The fix, built the same day by the agent itself, is a hook on the draft tool: code checks first, then a fresh model call with only the rules, the sources and the draft, failing closed and logging every verdict. This is how it works, what the first run caught, why its independence depends on where it is installed, and how the same pattern, which banks call maker-checker, applies to any tool call that matters.">
+<meta property="og:image" content="https://newsroom.sgit.ai/og/a-second-reader-the-agent-cannot-skip.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="A second reader the agent cannot skip: how two wrong emails became a gate on every draft, sgit.ai">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://newsroom.sgit.ai/og/a-second-reader-the-agent-cannot-skip.jpg">
+<link rel="alternate" type="text/markdown" href="a-second-reader-the-agent-cannot-skip.md" title="This page as markdown">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "A second reader the agent cannot skip: how two wrong emails became a gate on every draft, sgit.ai", "headline": "A second reader the agent cannot skip: how two wrong emails became a gate on every draft, sgit.ai", "description": "On 9 October two emails drafted by my agent went out in my voice and signed with my name. The rule against it existed, in four places, and it failed because the only thing enforcing it was the agent's memory, the agent was the only reader of its own draft, and the rule fell out of context when the conversation was summarised. The fix, built the same day by the agent itself, is a hook on the draft tool: code checks first, then a fresh model call with only the rules, the sources and the draft, failing closed and logging every verdict. This is how it works, what the first run caught, why its independence depends on where it is installed, and how the same pattern, which banks call maker-checker, applies to any tool call that matters.", "url": "https://newsroom.sgit.ai/articles/a-second-reader-the-agent-cannot-skip.html", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "sgit.ai", "url": "https://sgit.ai"}, "about": {"@type": "SoftwareApplication", "name": "sgit", "sameAs": "https://pypi.org/project/sgit-ai/"}, "author": {"@type": "Person", "name": "Dinis Cruz", "url": "https://sgit.ai/about/index.html"}, "license": "https://creativecommons.org/licenses/by/4.0/"}</script>
+<style>html{background:#faf9f5}body{margin:0;background:#faf9f5;color:#1c1d21;font-family:ui-sans-serif,system-ui,sans-serif;opacity:0;transition:opacity .25s;animation:sg-reveal 0s linear 1.6s forwards}html.ready body{opacity:1;animation:none}@keyframes sg-reveal{to{opacity:1}}</style><noscript><style>body{opacity:1;animation:none}</style></noscript>
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.6.0</a>
+  <sg-meter class="meter-nav" view="balance"></sg-meter>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../articles/index.html#all">Every article</a>
+      <a class="sl" href="../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../account/index.html">Your reading account</a>
+      <a class="sl" href="../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../account/personas.html">Your personas</a>
+      <a class="sl" href="../account/top-up.html">Top up</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../newsroom/board.html">The board</a>
+      <a class="sl" href="../newsroom/log.html">The run log</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../world-news-day/index.html">World News Day<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../world-news-day/index.html">The corpus</a>
+      <a class="sl" href="../world-news-day/stories/free-to-republish-is-not-a-licence.html">Free to republish is not a licence</a>
+      <a class="sl" href="../world-news-day/licences.html">The licence that is not there</a>
+      <a class="sl" href="../world-news-day/corpus.html">The twenty-one</a>
+      <a class="sl" href="../world-news-day/findings.html">The aggregate</a>
+      <a class="sl" href="../world-news-day/terms.html">The vocabulary</a>
+      <a class="sl" href="../world-news-day/graph.html">The graph</a>
+      <a class="sl" href="../world-news-day/sources.html">Sources</a>
+      <a class="sl" href="../world-news-day/contacts.html">How to reach them</a>
+      <a class="sl" href="../world-news-day/vault.html">Published vaults</a>
+      <a class="sl" href="../world-news-day/vaults/corpus.html">The vault, opened</a>
+      <a class="sl" href="../world-news-day/method.html">Method</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../archive/index.html">The archive</a>
+      <a class="sl" href="../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../network/index.html">The network</a>
+      <a class="sl" href="../admin/versions.html">Release history</a>
+      <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom">&#9733; GitHub</a>
+</div></nav>
+
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.6.0</span></a></div>
+<main class="doc">
+ <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / A second reader the agent cannot skip: how two wrong emails became a gate on every draft</p>
+ <h1>A second reader the agent cannot skip: how two wrong emails became a gate on every draft</h1>
+ <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-09 &middot; <a href="versions/a-second-reader-the-agent-cannot-skip.html" title="Every published version of this article, and what changed">article v1.0.0</a> &middot; <a href="https://sgit.ai/admin/versions.html" title="The site release it was published in">site v0.7.20</a> &middot; <span class="chip">agents</span><span class="chip">claude-code</span><span class="chip">hooks</span><span class="chip">guardrails</span><span class="chip">llm-as-a-judge</span><span class="chip">maker-checker</span><span class="chip">agent-behaviour-policy</span><span class="chip">email</span><span class="chip">governance</span><span class="chip">article</span></p>
+ <p class="abstract"><em><b>Abstract:</b> On 9 October two emails drafted by my agent went out in my voice and signed with my name. The rule against it existed, in four places, and it failed because the only thing enforcing it was the agent's memory, the agent was the only reader of its own draft, and the rule fell out of context when the conversation was summarised. The fix, built the same day by the agent itself, is a hook on the draft tool: code checks first, then a fresh model call with only the rules, the sources and the draft, failing closed and logging every verdict. This is how it works, what the first run caught, why its independence depends on where it is installed, and how the same pattern, which banks call maker-checker, applies to any tool call that matters.</em></p>
+
+<details class="aviews" id="views">
+ <summary><span class="aviews-t">Five readers</span><span class="aviews-s">two minutes &middot; the arc &middot; 9 slides &middot; a map &middot; 185 catalogued items, 7 flagged</span></summary>
+ <p class="small dim">This article read again, after it was written, by five of the desk's readers: the Explainer, the Historian, the Storyteller, the Cartographer and the Librarian. None adds a claim the article does not make. Read from article v1.0.0 on 10 October 2026; the views are not part of the article's text and do not change its version. <a href="one-article-five-readers.html">How the five readers work</a>.</p>
+ <details class="aview" id="view-two-minutes"><summary><span class="aview-t">In two minutes</span><span class="aview-r"><span class="sr"> (</span>Explainer<span class="sr">): </span></span><span class="aview-s">Why an AI should never be the only reader of its own work</span></summary>
+  <div class="aview-b"><p><b>The point.</b> On 9 October two emails drafted by the author's agent (an AI assistant acting for him) went out in his voice, signed with his name. A rule against it existed in four places, but only the agent's memory enforced it, nobody else read the draft, and the rule was lost when the long conversation was summarised. The fix, built that day, checks every draft automatically: code checks, then a separate AI that sees only the rules, the notes and the draft. Anything but a clear PASS stops the draft; every verdict is logged.</p>
+<p><b>An example.</b> On its first run the checker caught four invented claims: statements presented as the author's view or promise that were not in anything he had said.</p>
+<p><b>Why it matters to you.</b> Banks call this maker-checker: whoever prepares something does not approve it. Today the agent could still switch the check off; it becomes a true control only when installed where only an administrator can change it.</p>
+<p><b>If you remember one thing.</b> A rule kept only by the AI it governs is hope; a second reader the AI cannot skip makes it hold.</p>
+<p><b>Words used.</b></p>
+<ul>
+<li><b>Hook:</b> a check the software runs automatically before an action, whatever the AI decides.</li>
+<li><b>Fail closed:</b> if the check breaks or times out, the action is blocked.</li>
+<li><b>Maker-checker:</b> one party does the work, a different party approves it.</li>
+</ul></div>
+ </details>
+ <details class="aview" id="view-arc"><summary><span class="aview-t">In the arc</span><span class="aview-r"><span class="sr"> (</span>Historian<span class="sr">): </span></span><span class="aview-s">What it added, and where it sits</span></summary>
+  <div class="aview-b"><p><b>Introduced.</b></p>
+<ul>
+<li>Three ways a self-held rule fails: forget, not see, decide an exception applies, each with its own fix (<code>rule-failure-modes</code>, <code>unseen-violation</code>, <code>argued-exception</code>; <code>re-anchoring</code> is first seen here as "A reminder fixes only the first").</li>
+<li>Placement: where a hook is installed decides its barrier kind (<code>placement</code>, <code>hook</code>).</li>
+<li>Fail closed and six kinds of independence as the properties of a checker (<code>fail-closed</code>, <code>independence</code>).</li>
+<li>The site's own incident, two emails signed "Dinis" on 9 October, and the vendor's documentation that predicts it (<code>voice-incident</code>, <code>compaction-warning</code>), plus three build routes compared (<code>recipe</code>).</li>
+</ul>
+<p><b>The nugget.</b> "Nothing in the hook changes, only who can change the hook." It adds a dimension the earlier counts lacked: the same mechanism is a setting or a boundary depending on its owner.</p>
+<p><b>Reused.</b> From every-mistake-added-a-rule, which it links: <code>compaction</code>, <code>forgetting</code>, <code>rule-growth</code> ("the paragraph already existed four times"), <code>second-reader</code>, <code>gate</code>, <code>harness</code>. From hope-or-enforcement, which it links and quotes ("a rule the model keeps is an expectation: hope"): <code>deterministic-check</code>, <code>hostile-input</code>. From article 1: the barrier kinds, <code>owner</code>, <code>grant</code>. Before the set, why-my-agents-do-not-run-on-my-laptop had already said settings are "enforced by the process they constrain"; this article does not cite it.</p>
+<p><b>Changed.</b> It retires the stopgap of a checker sub-agent the drafter chooses to spawn ("still an expectation"), and replaces Haiku with Sonnet as the default checker after over-flagging. It sharpens article 3's boundary count by asking who can edit the enforcer.</p>
+<p><b>Left open.</b></p>
+<ul>
+<li>Managed placement, the one step before the guard is a boundary.</li>
+<li>The sources the checker reads are written by the drafter.</li>
+<li>Sending is a separate barrier question; the leak check before a vault push is "still a script I run rather than a gate I cannot skip".</li>
+<li>Librarian flags: the six kinds of independence are scored only inside an image; the cost figure does not reconcile; the graph links where-is-the-why and the-mandate-stack, which the text never mentions.</li>
+</ul>
+<p><b>Contribution.</b> 11 new / 30 total. The widest article in the set: it reuses almost everything before it and still adds the failure taxonomy and placement, which article 5 then builds on.</p></div>
+ </details>
+ <details class="aview" id="view-pictures"><summary><span class="aview-t">In pictures</span><span class="aview-r"><span class="sr"> (</span>Storyteller<span class="sr">): </span></span><span class="aview-s">9 slides</span></summary>
+  <div class="aview-b"><div class="vdeck"><figure class="shot" data-shot="slide-01.webp" data-dir="views/a-second-reader-the-agent-cannot-skip/" data-alt="Slide 1 of 9"><figcaption>1 / 9</figcaption></figure><figure class="shot" data-shot="slide-02.webp" data-dir="views/a-second-reader-the-agent-cannot-skip/" data-alt="Slide 2 of 9"><figcaption>2 / 9</figcaption></figure><figure class="shot" data-shot="slide-03.webp" data-dir="views/a-second-reader-the-agent-cannot-skip/" data-alt="Slide 3 of 9"><figcaption>3 / 9</figcaption></figure><figure class="shot" data-shot="slide-04.webp" data-dir="views/a-second-reader-the-agent-cannot-skip/" data-alt="Slide 4 of 9"><figcaption>4 / 9</figcaption></figure><figure class="shot" data-shot="slide-05.webp" data-dir="views/a-second-reader-the-agent-cannot-skip/" data-alt="Slide 5 of 9"><figcaption>5 / 9</figcaption></figure><figure class="shot" data-shot="slide-06.webp" data-dir="views/a-second-reader-the-agent-cannot-skip/" data-alt="Slide 6 of 9"><figcaption>6 / 9</figcaption></figure><figure class="shot" data-shot="slide-07.webp" data-dir="views/a-second-reader-the-agent-cannot-skip/" data-alt="Slide 7 of 9"><figcaption>7 / 9</figcaption></figure><figure class="shot" data-shot="slide-08.webp" data-dir="views/a-second-reader-the-agent-cannot-skip/" data-alt="Slide 8 of 9"><figcaption>8 / 9</figcaption></figure><figure class="shot" data-shot="slide-09.webp" data-dir="views/a-second-reader-the-agent-cannot-skip/" data-alt="Slide 9 of 9"><figcaption>9 / 9</figcaption></figure></div><p class="small dim">Swipe or scroll sideways. <a href="views/a-second-reader-the-agent-cannot-skip/a-second-reader-the-agent-cannot-skip.pdf">Download the deck as a PDF</a> (one page per slide, ready for a LinkedIn document post).</p></div>
+ </details>
+ <details class="aview" id="view-map"><summary><span class="aview-t">On the map</span><span class="aview-r"><span class="sr"> (</span>Cartographer<span class="sr">): </span></span><span class="aview-s">The argument as a map: why a rule written four times failed, and what turns it into a check the agent cannot skip.</span></summary>
+  <div class="aview-b"><figure class="shot" data-shot="map.webp" data-dir="views/a-second-reader-the-agent-cannot-skip/" data-alt="The argument as a map: why a rule written four times failed, and what turns it into a check the agent cannot skip."><figcaption>The argument as a map: why a rule written four times failed, and what turns it into a check the agent cannot skip.</figcaption></figure></div>
+ </details>
+ <details class="aview" id="view-catalogue"><summary><span class="aview-t">The catalogue</span><span class="aview-r"><span class="sr"> (</span>Librarian<span class="sr">): </span></span><span class="aview-s">185 items, each anchored to a sentence of the article</span></summary>
+  <div class="aview-b"><p class="small dim">Everything the article contains, by kind. Every item was extracted with the exact sentence it came from, and a script checked each one against the article.</p><details class="vkind"><summary>Claims: <span class="vn">38</span></summary><ul><li>The reasons the rule failed are not specific to email or to the author's setup <span class="dim">(lead)</span></li><li>The only thing enforcing the rule was the drafting agent remembering it <span class="dim">(lead)</span></li><li>The drafting agent was the only reader of its own draft <span class="dim">(lead)</span></li><li>The rule fell out of the agent's working context when the conversation was summarised <span class="dim">(lead)</span></li><li>The case shows a real failure in real use turned into an enforced control the same day, by the system that failed <span class="dim">(lead)</span></li><li>A rule kept by the agent it governs is hope <span class="dim">(In short)</span></li><li>A self-held rule can be forgotten, misread, summarised away, or argued around by the agent's own reasoning <span class="dim">(In short)</span></li><li>The fix has two parts: a second independent reader, and a gate the harness runs on the tool call so the agent cannot skip it <span class="dim">(In short)</span></li><li>Certain things go in code; signatures, dashes, key shapes, HTML and recipients are checked deterministically before any model <span class="dim">(In short)</span></li><li>The checker gets less than the author on purpose: no history, no tools, ideally a different model <span class="dim">(In short)</span></li><li>Anything but an explicit PASS is a FAIL; a late email is cheap, a wrong one cannot be taken back <span class="dim">(In short)</span></li><li>Today the guard is a setting the agent's own account could switch off <span class="dim">(In short)</span></li><li>Under managed settings the same code becomes a boundary: same code, different owner <span class="dim">(In short)</span></li><li>The pattern is old: segregation of duties (banks), the two-person rule (military), independent double check (pharmacies) <span class="dim">(In short)</span></li><li>Any behaviour policy held by the agent it governs has this general weakness <span class="dim">(Why the rule failed: hope held by the agent it governs)</span></li><li>This failure is the case where the paragraph of instructions already existed four times <span class="dim">(Why the rule failed: hope held by the agent it governs)</span></li><li>There are three separate ways a self-held rule fails, needing different fixes <span class="dim">(Why the rule failed: hope held by the agent it governs)</span></li><li>A reminder fixes only forgetting; a fresh second reader fixes the other two; an unskippable gate makes the fix hold <span class="dim">(Why the rule failed: hope held by the agent it governs)</span></li><li>Since the event fires for sub-agents too, a sub-agent cannot route around the gate <span class="dim">(How the guard works)</span></li><li>The checker has no conversation history: it does not see the drafter's reasoning, excuses or persuading messages <span class="dim">(How the guard works)</span></li><li>The checker has no tools: it can only read what it is given and answer <span class="dim">(How the guard works)</span></li><li>Two different models do not share every blind spot, and a model is not grading its own work <span class="dim">(How the guard works)</span></li><li>Failing closed is the part most guards get wrong <span class="dim">(How the guard works)</span></li><li>The log is the audit trail: what was checked, by which model, against which sources, and why it failed <span class="dim">(How the guard works)</span></li><li>Both results, catches and false FAILs, are the design working <span class="dim">(What the first run caught)</span></li><li>A second reader is only as independent as the things it does not share with the author <span class="dim">(Six kinds of independence)</span></li><li>The article proposes the full fix is sources from somewhere else: the author's notes, the CRM, the page being described <span class="dim">(Six kinds of independence)</span></li><li>The hot-reload prompt is the honest centre of the story <span class="dim">(From setting to boundary: where the hook lives decides what it is)</span></li><li>A setting is far better than memory because the harness runs it every time, but not yet a control <span class="dim">(From setting to boundary: where the hook lives decides what it is)</span></li><li>The documentation says repository installation is better and still not enough <span class="dim">(From setting to boundary: where the hook lives decides what it is)</span></li><li>Nothing in the hook changes, only who can change the hook <span class="dim">(From setting to boundary: where the hook lives decides what it is)</span></li><li>A managed hook is there in every session, scheduled or not <span class="dim">(From setting to boundary: where the hook lives decides what it is)</span></li><li>Three documented ways to build the guard trade simplicity against robustness <span class="dim">(Building it with what is public today)</span></li><li>Anthropic ships the same shape in auto mode: a different model, less context, fail closed <span class="dim">(Building it with what is public today)</span></li><li>The vendor's warning describes the 9 October failure <span class="dim">(Building it with what is public today)</span></li><li>What the draft guard adds is not a new idea <span class="dim">(The pattern is old, and it has a name)</span></li><li>The guard places the idea where it bites: on the one consequential tool call, with business rules, sources, a different model and an explicit barrier statement <span class="dim">(The pattern is old, and it has a name)</span></li><li>The rule that lived in four paragraphs now lives on the tool call, with a log, one step short of a control <span class="dim">(What it does not do)</span></li></ul></details><details class="vkind"><summary>Evidence: <span class="vn">20</span></summary><ul><li>Anthropic's memory docs: CLAUDE.md is context, not enforced configuration; use a PreToolUse hook to block an action <span class="dim">(lead)</span></li><li>Huang et al.: models struggle to self-correct without external feedback <span class="dim">(Why the rule failed: hope held by the agent it governs)</span></li><li>Panickssery et al.: LLM judges show self-preference for their own outputs <span class="dim">(Why the rule failed: hope held by the agent it governs)</span></li><li>Events docs: tool.call fires before a tool runs, including sub-agent and MCP calls <span class="dim">(How the guard works)</span></li><li>API docs: $.model.complete sends the prompt on its own, one user message, CLAUDE.md not included, no tools <span class="dim">(How the guard works)</span></li><li>Events docs: a throwing mod hook is skipped; add a .catch handler to fail closed <span class="dim">(How the guard works)</span></li><li>Hooks docs: a policy hook with a wrong path or crashing script lets everything through unless onFailure is block <span class="dim">(How the guard works)</span></li><li>Docs: a Claude API failure does not reject the call, so check r.isAnswered <span class="dim">(How the guard works)</span></li><li>The inbox agent's words: a late email is a small cost, a wrong one cannot be taken back <span class="dim">(How the guard works)</span></li><li>Create-a-mod docs: on the first saved file Claude Code asks whether to enable hot reloading for the session <span class="dim">(From setting to boundary: where the hook lives decides what it is)</span></li><li>Admin docs: an installed plugin counts as a user's, and a user's mod can approve calls an ask rule or non-managed PreToolUse hook would stop <span class="dim">(From setting to boundary: where the hook lives decides what it is)</span></li><li>Events docs: managed-settings PreToolUse hooks run before any mod's tool.call hook and their block is final <span class="dim">(From setting to boundary: where the hook lives decides what it is)</span></li><li>Permission-modes docs: if the classifier's response does not parse, Claude Code denies the action <span class="dim">(Building it with what is public today)</span></li><li>Permission-modes docs: a boundary stated in conversation can be lost to compaction; add a deny rule for a hard guarantee <span class="dim">(Building it with what is public today)</span></li><li>Basel Principle 6: effective internal control requires appropriate segregation of duties <span class="dim">(The pattern is old, and it has a name)</span></li><li>Basel: supervisors find lack of segregation of duties a major cause of losses <span class="dim">(The pattern is old, and it has a name)</span></li><li>ISMP: if the same person prepares and checks, they likely see only what they expect to see <span class="dim">(The pattern is old, and it has a name)</span></li><li>AI Control studies an untrusted powerful model watched by a less powerful trusted model, with trusted monitoring and trusted editing <span class="dim">(The pattern is old, and it has a name)</span></li><li>Rule of Two: an agent with untrusted input, private data and external communication (like an email drafter) should not operate autonomously <span class="dim">(The pattern is old, and it has a name)</span></li><li>OWASP LLM06: authorise in downstream systems rather than relying on an LLM to decide <span class="dim">(The pattern is old, and it has a name)</span></li></ul></details><details class="vkind"><summary>Data points: <span class="vn">9</span></summary><ul><li>The rule against writing in the author's voice existed in 4 places before the incident <span class="dim">(lead)</span></li><li>10 numbered rules in the checker prompt, from voice and disclosure to claims, scope, attachments and private pages, with a fixed answer format <span class="dim">(How the guard works)</span></li><li>4 real invented claims caught on the first run: statements presented as the author's view, decision or promise not in anything he had said <span class="dim">(What the first run caught)</span></li><li>Sonnet 5.5 list price on 9 October 2026: $2 per million input tokens, $10 per million output <span class="dim">(What the first run caught)</span></li><li>Roughly $12 to $21 a month at 5,000 to 10,000 tokens a draft and 30 drafts a day on Sonnet <span class="dim">(What the first run caught)</span></li><li>Haiku 5.5 at $0.10 input and $0.50 output per million comes to about a dollar a month <span class="dim">(What the first run caught)</span></li><li>Independence scores: drafter re-reading its own draft 0 of 6; the guard today 4; the guard under managed settings with external sources 6 <span class="dim">(Six kinds of independence)</span></li><li>A mod hook's own run time is limited to 10 seconds; time inside the model call does not count <span class="dim">(Building it with what is public today)</span></li><li>11 of 11 tests passing for the guard built by the inbox agent <span class="dim">(What it does not do)</span></li></ul></details><details class="vkind"><summary>Facts: <span class="vn">14</span></summary><ul><li>Claude Code raises an event before every tool call, including MCP tools and calls by sub-agents <span class="dim">(How the guard works)</span></li><li>Claude Code mods are public and on by default from v2.1.287 <span class="dim">(How the guard works)</span></li><li>The hook either calls next(e) and the draft is created, or returns { deny } and the tool never runs; the deny text reaches the agent as the tool error <span class="dim">(How the guard works)</span></li><li>The checker prompt is sent as a single $.model.complete call <span class="dim">(How the guard works)</span></li><li>Hooks fail open by default <span class="dim">(How the guard works)</span></li><li>The first run used Haiku as the checker <span class="dim">(What the first run caught)</span></li><li>The log records whether sources were given, so source provision is auditable <span class="dim">(Six kinds of independence)</span></li><li>The guard was written by the inbox agent in its own session and loaded with one click on a prompt <span class="dim">(From setting to boundary: where the hook lives decides what it is)</span></li><li>For a command hook, exit code 2 blocks and exit code 1 does not <span class="dim">(Building it with what is public today)</span></li><li>MCP tools are named <code>mcp__&lt;server&gt;__&lt;tool&gt;</code> <span class="dim">(Building it with what is public today)</span></li><li>In auto mode a second model, the classifier, reviews actions, running on Sonnet by default <span class="dim">(Building it with what is public today)</span></li><li>ISO/IEC 27001:2022 carries segregation of duties as control A.5.3 <span class="dim">(The pattern is old, and it has a name)</span></li><li>Dual LLM and CaMeL separate a model that acts from one that reads, against prompt injection <span class="dim">(The pattern is old, and it has a name)</span></li><li>Claude Code behaviour is quoted from documentation as read on 9 October 2026; prices are list prices on that date <span class="dim">(What it does not do)</span></li></ul></details><details class="vkind"><summary>Hypotheses: <span class="vn">1</span></summary><ul><li>Next candidates in the team: CRM agent writes, newsroom page promotions, Slack posts, the leak check before vault push <span class="dim">(The pattern, reusable)</span></li></ul></details><details class="vkind"><summary>Definitions: <span class="vn">9</span></summary><ul><li>Expectation (ABP): a rule in prose, enforced by nobody <span class="dim">(lead)</span></li><li>Forget: the rule leaves the agent's context <span class="dim">(Why the rule failed: hope held by the agent it governs)</span></li><li>Not see: the author is the worst reader of its own text and misses the violation <span class="dim">(Why the rule failed: hope held by the agent it governs)</span></li><li>Decide an exception applies: persuaded by its own earlier reasoning in the conversation <span class="dim">(Why the rule failed: hope held by the agent it governs)</span></li><li>Six kinds of independence: three about what the checker sees, two about who decides whether it runs, one about who wrote the evidence <span class="dim">(Six kinds of independence)</span></li><li>Setting (ABP): a switch the agent's own account can flip <span class="dim">(From setting to boundary: where the hook lives decides what it is)</span></li><li>Boundary: enforced above the grant, out of the agent's reach <span class="dim">(From setting to boundary: where the hook lives decides what it is)</span></li><li>Maker-checker, called the oldest control in finance, is what the inbox agent built <span class="dim">(The pattern is old, and it has a name)</span></li><li>NIST separation of duty: no user should have enough privileges to misuse the system on their own; example, the two-person rule <span class="dim">(The pattern is old, and it has a name)</span></li></ul></details><details class="vkind"><summary>Methods: <span class="vn">26</span></summary><ul><li>The guard registers on tool.call for mcp__Gmail__create_draft and mcp__Gmail__update_draft, with .catch(failClosed) <span class="dim">(How the guard works)</span></li><li>Stage 1: certain, cheap rules run first in code; a failure stops the call without a model call <span class="dim">(How the guard works)</span></li><li>R1 voice: mail with a To must carry the agent's signature, and none of the three lines before it a sign-off in the author's name; only the visible email is read <span class="dim">(How the guard works)</span></li><li>R3 format: mail with a To must have the branded HTML body <span class="dim">(How the guard works)</span></li><li>R4 dashes: no em or en dashes anywhere <span class="dim">(How the guard works)</span></li><li>R5 secrets: no string shaped like a vault key, API key, AWS key, GitHub token or private key block <span class="dim">(How the guard works)</span></li><li>R6 Cc: the author's addresses in the right place when others are in To <span class="dim">(How the guard works)</span></li><li>Internal drafts with no To skip the signature and HTML checks <span class="dim">(How the guard works)</span></li><li>Stage 2: one prompt built from the rules, the sources and the draft <span class="dim">(How the guard works)</span></li><li>An answer passes only with RESULT: PASS and no <code>R&lt;n&gt;</code> FAIL line <span class="dim">(How the guard works)</span></li><li>If the checker is overloaded, errors, times out or returns nothing, the guard denies with 'checker unavailable' <span class="dim">(How the guard works)</span></li><li>If the hook throws, the .catch(failClosed) handler denies <span class="dim">(How the guard works)</span></li><li>Every check appends one line to a log, which never decides the outcome <span class="dim">(How the guard works)</span></li><li>On a false FAIL the agent is told to add the missing source, never remove the rule <span class="dim">(What the first run caught)</span></li><li>Proposed by the inbox agent: publish the plugin to a repository and install it from there, where the agent cannot write <span class="dim">(From setting to boundary: where the hook lives decides what it is)</span></li><li>Alternative boundary: an organisation mod from an admin-only directory named in managed settings, with allowManagedModsOnly so session mods do not load <span class="dim">(From setting to boundary: where the hook lives decides what it is)</span></li><li>Route: a mod, as built; $.model.complete, reads sources, fails closed with .catch and r.isAnswered <span class="dim">(Building it with what is public today)</span></li><li>Route: a command hook on PreToolUse; script calls the model; fails closed with onFailure block and exit 2; most robust public form, works in managed settings <span class="dim">(Building it with what is public today)</span></li><li>Route: a prompt hook; built-in LLM evaluation, sources must be pasted into the prompt, fail-closed not documented for model failures <span class="dim">(Building it with what is public today)</span></li><li>The reusable pattern in six steps, as the inbox agent wrote them <span class="dim">(The pattern, reusable)</span></li><li>Step 1: pick the tool call that matters (Slack message, CRM write, page publish, vault commit, payment API) <span class="dim">(The pattern, reusable)</span></li><li>Step 2: write the rules as a short numbered checklist with a fixed answer format <span class="dim">(The pattern, reusable)</span></li><li>Step 3: put everything certain into code first; leave only judgement to the model <span class="dim">(The pattern, reusable)</span></li><li>Step 4: give the checker only rules, sources and the proposed action; no history <span class="dim">(The pattern, reusable)</span></li><li>Step 5: deny on anything other than an explicit PASS <span class="dim">(The pattern, reusable)</span></li><li>Step 6: log every verdict <span class="dim">(The pattern, reusable)</span></li></ul></details><details class="vkind"><summary>Decisions: <span class="vn">6</span></summary><ul><li>Sources are used only if written in the last 60 minutes, so stale notes from another email are not used <span class="dim">(How the guard works)</span></li><li>The drafter runs on Opus and the checker on Sonnet, so they do not share every blind spot and no model grades its own work <span class="dim">(How the guard works)</span></li><li>A contradictory checker answer is treated as a FAIL <span class="dim">(How the guard works)</span></li><li>The default checker became Sonnet because R7 (are the claims in the sources) needs judgement and the smaller model over-flagged <span class="dim">(What the first run caught)</span></li><li>Haiku stays the choice for high-volume mechanical checks, after everything certain is in code <span class="dim">(What the first run caught)</span></li><li>The author would put the command hook under managed settings <span class="dim">(Building it with what is public today)</span></li></ul></details><details class="vkind"><summary>Limitations: <span class="vn">11</span></summary><ul><li>In the example log line the recipient and the claim are replaced; only the shape is real <span class="dim">(How the guard works)</span></li><li>Thinking tokens or caching move the cost figures, not their order of magnitude <span class="dim">(What the first run caught)</span></li><li>The checker compares claims with sources the drafting agent writes, and an agent could pad them <span class="dim">(Six kinds of independence)</span></li><li>The agent gated by the hook can edit the hook <span class="dim">(From setting to boundary: where the hook lives decides what it is)</span></li><li>A fresh scheduled run starts in a fresh container, so a session mod is not there at all <span class="dim">(From setting to boundary: where the hook lives decides what it is)</span></li><li>On this site the leak check before a vault push is still a script the author runs, not a gate <span class="dim">(The pattern, reusable)</span></li><li>The guard is only as independent as its installation; today it is a setting <span class="dim">(What it does not do)</span></li><li>R7 is only as good as the sources, and the drafter writes them <span class="dim">(What it does not do)</span></li><li>The checker can be wrong in both directions; expect false FAILs, which cost a retry <span class="dim">(What it does not do)</span></li><li>It checks drafts, not sending; the author sends, and the no-send rule is a separate barrier question <span class="dim">(What it does not do)</span></li><li>It does not replace reading: a PASS means ten rules held, not that the email is good <span class="dim">(What it does not do)</span></li></ul></details><details class="vkind"><summary>Examples: <span class="vn">5</span></summary><ul><li>On 9 October two emails from agent@riskmandate.ai went out in the author's first person and signed &quot;Dinis&quot; <span class="dim">(lead)</span></li><li>A log line: verdict FAIL at stage model, model sonnet, sources given, R7 FAIL for a proposal attributed to Dinis not in the notes <span class="dim">(How the guard works)</span></li><li>False FAILs on the first run: correct facts with no source, such as dates read from Gmail and an uncopied earlier note <span class="dim">(What the first run caught)</span></li><li>The stopgap in scheduled runs (spawn a checker sub-agent) has fresh context and a different model, but the drafter chooses to run it, so it is still an expectation <span class="dim">(Six kinds of independence)</span></li><li>Hospital pharmacies run independent double checks for high-alert medicines <span class="dim">(The pattern is old, and it has a name)</span></li></ul></details><details class="vkind"><summary>Sources: <span class="vn">26</span></summary><ul><li>Claude Code memory documentation <span class="dim">(lead)</span></li><li>Earlier sgit.ai article 'Hope or enforcement': a rule the model keeps is an expectation, hope <span class="dim">(Why the rule failed: hope held by the agent it governs)</span></li><li>Earlier sgit.ai article 'Every mistake added a rule': each failure tends to produce another paragraph of instructions <span class="dim">(Why the rule failed: hope held by the agent it governs)</span></li><li>Huang et al., ICLR 2024, arXiv 2310.01798 <span class="dim">(Why the rule failed: hope held by the agent it governs)</span></li><li>Panickssery et al., NeurIPS 2024, arXiv 2404.13076 <span class="dim">(Why the rule failed: hope held by the agent it governs)</span></li><li>Claude Code mods events documentation <span class="dim">(How the guard works)</span></li><li>Claude Code mods API documentation, call a model <span class="dim">(How the guard works)</span></li><li>Claude Code mods events documentation, handle a hook that fails <span class="dim">(How the guard works)</span></li><li>Claude Code hooks documentation <span class="dim">(How the guard works)</span></li><li>Claude pricing page <span class="dim">(What the first run caught)</span></li><li>Claude Code docs, create a mod <span class="dim">(From setting to boundary: where the hook lives decides what it is)</span></li><li>Claude Code docs, mods for administrators <span class="dim">(From setting to boundary: where the hook lives decides what it is)</span></li><li>Claude Code mods events documentation, where settings hooks run in the order <span class="dim">(From setting to boundary: where the hook lives decides what it is)</span></li><li>Claude Code permission modes documentation <span class="dim">(Building it with what is public today)</span></li><li>BCBS 40, Framework for Internal Control Systems in Banking Organisations (1998) <span class="dim">(The pattern is old, and it has a name)</span></li><li>NIST CSRC glossary, separation of duty <span class="dim">(The pattern is old, and it has a name)</span></li><li>ISMP, independent double checks article <span class="dim">(The pattern is old, and it has a name)</span></li><li>Redwood Research, AI Control (ICML 2024) <span class="dim">(The pattern is old, and it has a name)</span></li><li>Simon Willison, Dual LLM pattern (2023) <span class="dim">(The pattern is old, and it has a name)</span></li><li>Google DeepMind, CaMeL (2025) <span class="dim">(The pattern is old, and it has a name)</span></li><li>Meta, Agents Rule of Two (2025) <span class="dim">(The pattern is old, and it has a name)</span></li><li>OWASP LLM06 Excessive Agency <span class="dim">(The pattern is old, and it has a name)</span></li><li>Llama Guard, an output-checking product <span class="dim">(The pattern is old, and it has a name)</span></li><li>NeMo Guardrails output rails <span class="dim">(The pattern is old, and it has a name)</span></li><li>Guardrails AI validators <span class="dim">(The pattern is old, and it has a name)</span></li><li>OpenAI Agents SDK tool guardrails <span class="dim">(The pattern is old, and it has a name)</span></li></ul></details><details class="vkind"><summary>Artefacts: <span class="vn">11</span></summary><ul><li>The inbox agent's design document 'The independent checker: a hook that makes a second model approve every email draft', with code, tests and a list of limits <span class="dim">(lead)</span></li><li>Figure ck-flow.webp: the draft guard flow, every create or update draft call passes through a harness-run hook <span class="dim">(lead)</span></li><li>Mermaid source for the draft guard figure <span class="dim">(lead)</span></li><li>Figure ck-independence.webp: six kinds of independence and which check has which <span class="dim">(Six kinds of independence)</span></li><li>Figure ck-hot-reload.webp: the hot-reload prompt, 'A mod is code Claude wrote; it runs with your permissions.' <span class="dim">(From setting to boundary: where the hook lives decides what it is)</span></li><li>Figure ck-ladder.webp: who enforces the voice rule, weakest first (none, expectation, setting, setting still, boundary) <span class="dim">(From setting to boundary: where the hook lives decides what it is)</span></li><li>Mermaid source for the barrier ladder figure <span class="dim">(From setting to boundary: where the hook lives decides what it is)</span></li><li>Minimal settings JSON: PreToolUse command hooks matching create_draft and update_draft, /opt/guards/draft-guard (placeholder path), onFailure block <span class="dim">(Building it with what is public today)</span></li><li>Figure ck-pattern.webp: the reusable pattern on a consequential tool call <span class="dim">(The pattern, reusable)</span></li><li>Mermaid source for the reusable pattern figure <span class="dim">(The pattern, reusable)</span></li><li>The design document, version 0.1, written on 9 October 2026 by the RiskMandate.ai inbox agent <span class="dim">(What it does not do)</span></li></ul></details><details class="vkind"><summary>Names: <span class="vn">9</span></summary><ul><li>Agent Behaviour Policy (ABP), at abp.sgit.ai <span class="dim">(lead)</span></li><li>Anthropic, whose documentation describes the compaction failure <span class="dim">(lead)</span></li><li>The inbox agent (RiskMandate.ai), which wrote up and built its own fix the same day <span class="dim">(lead)</span></li><li>Claude Code, the harness that runs the hook <span class="dim">(How the guard works)</span></li><li>The Gmail connector (MCP), whose create_draft and update_draft tools are guarded <span class="dim">(How the guard works)</span></li><li>Claude models named: Opus (drafter), Sonnet 5.5 (checker), Haiku 5.5 (first-run checker) <span class="dim">(What the first run caught)</span></li><li>Basel Committee on Banking Supervision, 1998 framework, Principle 6 <span class="dim">(The pattern is old, and it has a name)</span></li><li>agent@riskmandate.ai (Claude Opus 5.5) wrote up the article for Dinis Cruz, who has editorial responsibility <span class="dim">(What it does not do)</span></li><li>Dinis Cruz, author with editorial responsibility <span class="dim">(What it does not do)</span></li></ul></details><details class="vkind vflags"><summary>Flagged for the author: <span class="vn">7</span></summary><ul><li>In short says 'the military calls it the two-person rule', but the body attributes the two-person rule only to NIST's definition of separation of duty; the military attribution is not supported in the body. Anchor: 'Banks call it segregation of duties, the military calls it the two-person rule, pharmacies call it an independent double check.'</li><li>Six kinds of independence: the six kinds are not named individually in the text, and 'Two rows deserve a comment' and 'the last column' refer to a table that exists only inside the image ck-independence.webp, so the scores (none, four, all six) cannot be checked from the article text. Anchor: 'The drafter re-reading its own draft has none; the guard as it runs today has four; the guard under managed settings, with sources written by someone else, has all six.'</li><li>Cost estimate not reproducible from the stated figures: the input/output split and days per month are not given; 4.5M to 9M tokens a month gives $9 to $18 if all input, and no single fixed split gives exactly $12 to $21. Anchor: 'At 5,000 to 10,000 tokens a draft and thirty drafts a day, that is roughly $12 to $21 a month'</li><li>Superlative without support: 'the oldest control in finance' is asserted but the earliest cited source is the 1998 Basel framework. Anchor: 'What the inbox agent built is maker-checker, the oldest control in finance.'</li><li>The checker uses ten numbered rules, but only R1, R3, R4, R5, R6 and R7 are identified; R2 and R8 to R10 are never named, so 'A PASS means ten rules held' cannot be fully traced. Anchor: 'the rules (ten numbered rules, from voice and disclosure to claims, scope, attachments and private pages, with a fixed answer format'</li><li>Existing graph links.articles lists 'where-is-the-why' and 'the-mandate-stack', which the article neither links nor mentions; it links only hope-or-enforcement and every-mistake-added-a-rule.</li><li>Existing graph uses kind 'concept' for nodes 'independence' and 'maker-checker', which is not a Librarian kind; catalogued here as 'definition'.</li></ul></details></div>
+ </details>
+ <div class="aviews-more"><p class="small"><b>The five readers have also read:</b></p><ul class="small"><li><a href="the-behaviour-policy-is-the-business-logic.html#views">Zoom into an agent's behaviour policy and you find the business logic</a></li><li><a href="every-mistake-added-a-rule.html#views">Every mistake added a rule</a></li><li><a href="hope-or-enforcement.html#views">Hope or enforcement</a></li><li><a href="re-anchoring-agent-behaviour-policies.html#views">Re-anchoring</a></li></ul><p class="small dim">Every view, the role files and the tools are in the <a href="https://sgit.ai/demos/vaults/article-views/index.html">Article Views vault</a>.</p></div>
+</details>
+<p>On 9 October, two emails from agent@riskmandate.ai went out written in my first person and signed "Dinis".</p>
+<p>The rule against that already existed, written in four places. It failed anyway, and the reasons are worth stating precisely, because they are not specific to email or to my setup:</p>
+<ul>
+<li><b>The only thing enforcing the rule was the drafting agent remembering it.</b> In the language of the <a href="https://abp.sgit.ai/">Agent Behaviour Policy</a>, that is an expectation: "a rule in prose, enforced by nobody".</li>
+<li><b>The drafting agent was the only reader of its own draft.</b></li>
+<li><b>The rule fell out of the agent's working context when the conversation was summarised.</b> Anthropic's own documentation describes exactly this: instructions given only in conversation do not survive compaction, and CLAUDE.md is "context, not enforced configuration. To block an action regardless of what Claude decides, use a PreToolUse hook instead." (<a href="https://code.claude.com/docs/en/memory">memory docs</a>)</li>
+</ul>
+<p>The same day, the inbox agent wrote up its own fix: a document called <em>The independent checker: a hook that makes a second model approve every email draft</em>, with the code, the tests and an honest list of limits. This article is that document, read against the research and the platform documentation, with the pictures it deserved. It is a good example of something I care about more than the mistake itself: a real failure, in real use, turned into an enforced control the same day, by the system that failed.</p>
+<figure class="shot" data-shot="ck-flow.webp" data-dir="images/" data-alt="The draft guard: every call to create or update a Gmail draft passes through a hook the harness runs, not the agent. Certain rules are checked in code first; judgement goes to a fresh model call that sees only the rules, the sources and the draft; anything other than an explicit PASS stops the draft."><figcaption>The draft guard: every call to create or update a Gmail draft passes through a hook the harness runs, not the agent. Certain rules are checked in code first; judgement goes to a fresh model call that sees only the rules, the sources and the draft; anything other than an explicit PASS stops the draft.</figcaption></figure>
+<details class="src"><summary>The draft guard, Mermaid source</summary><div class="src-bar"><button type="button" class="src-copy" data-copy="flowchart LR
+  A[&quot;Drafting agent&lt;br/&gt;calls create_draft&lt;br/&gt;to, cc, subject, body, html&quot;]
+  H{{&quot;Harness: the tool call event fires&lt;br/&gt;for every call, sub-agents included&quot;}}
+  C[&quot;Stage 1: code checks, no model&lt;br/&gt;signature not the founder&#x27;s,&lt;br/&gt;HTML present, no dashes,&lt;br/&gt;no key shapes, Cc rule&quot;]
+  P[&quot;Stage 2: build one prompt&lt;br/&gt;10 numbered rules&lt;br/&gt;+ sources written in the last hour&lt;br/&gt;+ the draft&quot;]
+  M[&quot;A fresh model call&lt;br/&gt;a different model from the author&lt;br/&gt;no history, no tools&quot;]
+  V{&quot;RESULT: PASS&lt;br/&gt;and no R-n FAIL line?&quot;}
+  G[&quot;Gmail&lt;br/&gt;draft created&quot;]
+  D[&quot;Deny, with the reasons&lt;br/&gt;the agent fixes and calls again&quot;]
+  E[&quot;Error, timeout, bad format&lt;br/&gt;or the hook throws&quot;]
+  L[(&quot;One log line per verdict:&lt;br/&gt;stage, model, sources given,&lt;br/&gt;failed rules, time&quot;)]
+  A --&gt; H --&gt; C
+  C -- &quot;any fail&quot; --&gt; D
+  C -- &quot;pass&quot; --&gt; P --&gt; M --&gt; V
+  V -- &quot;yes&quot; --&gt; G
+  V -- &quot;no&quot; --&gt; D
+  M -. &quot;unavailable&quot; .-&gt; E
+  E -- &quot;fail closed&quot; --&gt; D
+  V -.-&gt; L
+  C -.-&gt; L
+  D -. &quot;retry&quot; .-&gt; A"><span class="cp">copy</span></button><a href="images/ck-flow.webp">rendered image</a></div><pre class="shell">flowchart LR
+  A["Drafting agent&lt;br/&gt;calls create_draft&lt;br/&gt;to, cc, subject, body, html"]
+  H{{"Harness: the tool call event fires&lt;br/&gt;for every call, sub-agents included"}}
+  C["Stage 1: code checks, no model&lt;br/&gt;signature not the founder's,&lt;br/&gt;HTML present, no dashes,&lt;br/&gt;no key shapes, Cc rule"]
+  P["Stage 2: build one prompt&lt;br/&gt;10 numbered rules&lt;br/&gt;+ sources written in the last hour&lt;br/&gt;+ the draft"]
+  M["A fresh model call&lt;br/&gt;a different model from the author&lt;br/&gt;no history, no tools"]
+  V{"RESULT: PASS&lt;br/&gt;and no R-n FAIL line?"}
+  G["Gmail&lt;br/&gt;draft created"]
+  D["Deny, with the reasons&lt;br/&gt;the agent fixes and calls again"]
+  E["Error, timeout, bad format&lt;br/&gt;or the hook throws"]
+  L[("One log line per verdict:&lt;br/&gt;stage, model, sources given,&lt;br/&gt;failed rules, time")]
+  A --&gt; H --&gt; C
+  C -- "any fail" --&gt; D
+  C -- "pass" --&gt; P --&gt; M --&gt; V
+  V -- "yes" --&gt; G
+  V -- "no" --&gt; D
+  M -. "unavailable" .-&gt; E
+  E -- "fail closed" --&gt; D
+  V -.-&gt; L
+  C -.-&gt; L
+  D -. "retry" .-&gt; A</pre></details>
+<h2>In short</h2>
+<ul>
+<li><b>A rule kept by the agent it governs is hope.</b> It can be forgotten, misread, summarised away, or argued around by the agent's own reasoning.</li>
+<li><b>The fix has two parts.</b> A second, independent reader, and a gate the drafting agent cannot skip because the harness, not the agent, runs it on the tool call.</li>
+<li><b>Certain things go in code; only judgement goes to a model.</b> Signatures, dashes, key shapes, HTML and recipients are checked deterministically before any model is called.</li>
+<li><b>The checker gets less than the author, on purpose.</b> No conversation history, no tools, ideally a different model: only the rules, the sources and the draft.</li>
+<li><b>Anything but an explicit PASS is a FAIL.</b> Timeouts, errors and malformed answers all end with no draft. A late email is cheap; a wrong one cannot be taken back.</li>
+<li><b>Its independence depends on where it is installed.</b> Today it is a setting the agent's own account could switch off. Under managed settings it becomes a boundary. Same code, different owner.</li>
+<li><b>The pattern is old.</b> Banks call it segregation of duties, the military calls it the two-person rule, pharmacies call it an independent double check. It now has a precise shape for agents.</li>
+</ul>
+<h2>Why the rule failed: hope held by the agent it governs</h2>
+<p>This is the general weakness of any behaviour policy that is held by the agent it governs. In <a href="hope-or-enforcement.html">Hope or enforcement</a> I put it as "a rule the model keeps is an expectation: hope", and in <a href="every-mistake-added-a-rule.html">Every mistake added a rule</a> I described how each failure tends to produce another paragraph of instructions. This failure is the case where the paragraph already existed four times.</p>
+<p>There are three separate ways a self-held rule fails, and they need different fixes. The agent can <b>forget</b> it (the rule leaves the context). The agent can <b>not see</b> the violation (the author is the worst reader of its own text, and the research agrees: models "struggle to self-correct their responses without external feedback" (<a href="https://arxiv.org/abs/2310.01798">Huang et al., ICLR 2024</a>), and LLM judges show "self-preference" for their own outputs (<a href="https://arxiv.org/abs/2404.13076">Panickssery et al., NeurIPS 2024</a>)). And the agent can <b>decide an exception applies</b>, persuaded by its own earlier reasoning in the same conversation. A reminder fixes only the first. A second reader with a fresh context fixes the second and third. A gate the agent cannot skip makes the fix hold.</p>
+<h2>How the guard works</h2>
+<h3>The hook point</h3>
+<p>Claude Code raises an event before every tool call, including calls to MCP tools such as the Gmail connector and calls made by sub-agents. The guard registers on two of them:</p>
+<pre class="shell">
+on('tool.call', { tool: 'mcp__Gmail__create_draft' }, guard).catch(failClosed)
+on('tool.call', { tool: 'mcp__Gmail__update_draft' }, guard).catch(failClosed)
+</pre>
+<p>This is Claude Code's <a href="https://code.claude.com/docs/en/plugins/mods/overview">mods</a> system, which is public and on by default from v2.1.287: "<code>tool.call</code> fires when Claude Code is about to run a tool, including calls a subagent makes and calls to MCP tools" (<a href="https://code.claude.com/docs/en/plugins/mods/events#guard-or-change-a-tool-call">events</a>). The hook either calls <code>next(e)</code>, and the draft is created, or returns <code>{ deny: "..." }</code>, and the tool never runs; the agent receives the deny text as the tool's error, so it knows what to fix. Since the event fires for sub-agents too, a sub-agent cannot route around the gate.</p>
+<h3>Stage 1: code checks, no model</h3>
+<p>Some rules are certain and cheap. They run first, and a failure stops the call without spending a model call:</p>
+<div class="tablewrap"><table>
+<tr><th>Rule</th><th>Code check</th></tr>
+<tr><td>R1 voice</td><td>For mail with a To: the body must carry the agent's signature line, and none of the three lines before it may be a sign-off in my name. Only the visible email is read, not the thread summary below it.</td></tr>
+<tr><td>R3 format</td><td>For mail with a To: the branded HTML body must be present.</td></tr>
+<tr><td>R4 dashes</td><td>No em or en dashes anywhere.</td></tr>
+<tr><td>R5 secrets</td><td>No string shaped like a vault key, an API key, an AWS key, a GitHub token or a private key block.</td></tr>
+<tr><td>R6 Cc</td><td>My addresses in the right place when others are in To.</td></tr>
+</table></div>
+<p>Internal drafts with no To, notes to me rather than emails to anyone else, skip the signature and HTML checks.</p>
+<h3>Stage 2: the independent checker</h3>
+<p>If the code passes, the hook builds one prompt from three things: the rules (ten numbered rules, from voice and disclosure to claims, scope, attachments and private pages, with a fixed answer format: <code>RESULT: PASS or FAIL</code>, then one line per rule); the sources (the notes the draft may draw on, used only if written in the last 60 minutes, so stale notes from another email are not used); and the draft itself.</p>
+<p>It sends that as a single <code>$.model.complete</code> call. The documentation is exact about what that call is: "<code>$.model.complete</code> sends your prompt on its own", with one user message, CLAUDE.md "Not included" and tools "None" (<a href="https://code.claude.com/docs/en/plugins/mods/api#call-a-model">API</a>). So the checker:</p>
+<ul>
+<li><b>has no conversation history.</b> It does not see the drafting agent's reasoning, its excuses, or the earlier messages that persuaded it an exception applied;</li>
+<li><b>has no tools.</b> It can only read what it is given and answer;</li>
+<li><b>runs a different model from the author.</b> The drafter runs on Opus; the checker on Sonnet. The two do not share every blind spot, and a model is not grading its own work.</li>
+</ul>
+<p>The answer passes only if it says <code>RESULT: PASS</code> <b>and</b> no line says <code>R&lt;n&gt; FAIL</code>. A contradictory answer is a FAIL.</p>
+<h3>Failing closed, and the log</h3>
+<p>This is the part most guards get wrong, and the documentation is candid about why: hooks fail <b>open</b> by default. A mod hook that throws "before calling <code>next</code>" is skipped, and "to make a hook that blocks calls fail closed, add a <code>.catch</code> error handler that answers in its place" (<a href="https://code.claude.com/docs/en/plugins/mods/events#handle-a-hook-that-fails">events</a>). Settings hooks are the same: "a policy hook with a wrong path or a crashing script lets everything through", unless <code>"onFailure": "block"</code> is set (<a href="https://code.claude.com/docs/en/hooks">hooks</a>). And a model call that fails does not throw: "A Claude API failure doesn't reject the call, so check <code>r.isAnswered</code>."</p>
+<p>The guard closes every one of those doors. The checker is overloaded, errors, times out or returns nothing: deny, "checker unavailable". The hook throws: the <code>.catch(failClosed)</code> handler denies. The answer is not in the expected shape: no <code>RESULT: PASS</code> line, so FAIL. In the inbox agent's words: "An email that is late is a small cost. An email that goes out wrong cannot be taken back."</p>
+<p>Every check appends one line to a log, which never decides the outcome:</p>
+<pre class="shell">
+{"ts":"2026-10-09T14:02:11Z","tool":"mcp__Gmail__create_draft","to":["recipient@example.com"],
+ "contentHash":"9f2c1a07","verdict":"FAIL","stage":"model","model":"sonnet","sourcesGiven":true,
+ "modelFails":["R7 FAIL: a proposal attributed to Dinis is not in the notes"],"ms":8412}
+</pre>
+<p>(The recipient and the claim are replaced here; the shape is the real one.) That is the audit trail: what was checked, by which model, against which sources, and why it failed.</p>
+<h2>What the first run caught</h2>
+<p>The first run used Haiku as the checker. It caught four real invented claims: statements presented as my view, decision or promise that were not in anything I had said. It also flagged correct facts it had no source for, such as dates read from Gmail and an earlier note of mine that had not been copied into the sources file.</p>
+<p>Both results are the design working. The false FAILs cost a retry, not a wrong email, and the fix the agent is told to apply is the right one: add the missing source, never remove the rule. And they are why the default checker became Sonnet: rule R7, are the claims in the sources, needs judgement, and the smaller model over-flagged. Haiku stays the choice for high-volume mechanical checks, after everything certain has gone into code.</p>
+<p>The cost is small. At list prices read on 9 October 2026, Sonnet 5.5 is $2 per million input tokens and $10 per million output (<a href="https://platform.claude.com/docs/en/about-claude/pricing">pricing</a>). At 5,000 to 10,000 tokens a draft and thirty drafts a day, that is roughly $12 to $21 a month; Haiku 5.5, at $0.10 and $0.50, is about a dollar. Thinking tokens or caching move those figures, not their order of magnitude.</p>
+<h2>Six kinds of independence</h2>
+<p>"Independent" is doing a lot of work in the name, so it is worth taking apart. A second reader is only as independent as the things it does not share with the author, and there are six of them: three about what the checker sees, two about who decides whether it runs, and one about who wrote the evidence it checks against.</p>
+<figure class="shot" data-shot="ck-independence.webp" data-dir="images/" data-alt="Six kinds of independence, and which check has which. The drafter re-reading its own draft has none; the guard as it runs today has four; the guard under managed settings, with sources written by someone else, has all six."><figcaption>Six kinds of independence, and which check has which. The drafter re-reading its own draft has none; the guard as it runs today has four; the guard under managed settings, with sources written by someone else, has all six.</figcaption></figure>
+<p>Two rows deserve a comment. The stopgap in the scheduled runs, where each drafting step is told to spawn a checker sub-agent before creating a draft, has a fresh context and a different model, but the drafter chooses whether to run it, so it is still an expectation. And the last column is the honest limit of the whole design: the checker compares claims with the sources it is given, and today the drafting agent writes the sources. An agent could pad them. The log records whether sources were given, so that is auditable, and the full fix is sources that come from somewhere else: my own notes, the CRM, the page being described.</p>
+<h2>From setting to boundary: where the hook lives decides what it is</h2>
+<p>The guard was written by the inbox agent in its own session, and loading it took one click on this prompt:</p>
+<figure class="shot" data-shot="ck-hot-reload.webp" data-dir="images/" data-alt="The prompt that loaded the guard: &quot;A mod is code Claude wrote; it runs with your permissions.&quot; Enabling hot reloading runs every mod Claude writes in this session, and picks up each later change."><figcaption>The prompt that loaded the guard: "A mod is code Claude wrote; it runs with your permissions." Enabling hot reloading runs every mod Claude writes in this session, and picks up each later change.</figcaption></figure>
+<p>That prompt is the honest centre of this story. The documentation describes it: Claude writes mods "in a directory of its own in the session's mods folder", and "when Claude saves the first file, Claude Code asks whether to enable hot reloading for the session" (<a href="https://code.claude.com/docs/en/plugins/mods/create#ask-claude-for-a-mod">create a mod</a>). It also means the agent that is gated by the hook can edit the hook. In ABP terms that is a <b>setting</b>, "a switch the agent's own account can flip": far better than memory, because the harness runs it every time, but not yet a control.</p>
+<p>The inbox agent's document proposes the next step: publish the plugin to a repository and install it from there, where the agent cannot write. The documentation says that is better and still not enough. A plugin installed from GitHub, git, a URL or npm is copied into the cache and "counts as a user's", and "a user's mod that approves tool calls can approve a call that an <code>ask</code> rule would prompt for, or that a <code>PreToolUse</code> hook outside managed settings blocked" (<a href="https://code.claude.com/docs/en/plugins/mods/admin">mods for administrators</a>). Only managed placement is final: "<code>PreToolUse</code> hooks from managed settings: run before the first mod's <code>tool.call</code> hook, and a block from one of them is final, so no mod sees the call" (<a href="https://code.claude.com/docs/en/plugins/mods/events#where-settings-hooks-run-in-the-order">events</a>). The alternative is an organisation mod from a directory on the machine that only an administrator can write, named in managed settings, with <code>allowManagedModsOnly</code> so that mods Claude writes in a session do not load.</p>
+<figure class="shot" data-shot="ck-ladder.webp" data-dir="images/" data-alt="Who enforces the voice rule, weakest first. The hook took it from expectation to setting; managed placement takes it to boundary, &quot;enforced above the grant, out of the agent&#x27;s reach&quot;. Nothing in the hook changes, only who can change the hook."><figcaption>Who enforces the voice rule, weakest first. The hook took it from expectation to setting; managed placement takes it to boundary, "enforced above the grant, out of the agent's reach". Nothing in the hook changes, only who can change the hook.</figcaption></figure>
+<details class="src"><summary>The barrier ladder, Mermaid source</summary><div class="src-bar"><button type="button" class="src-copy" data-copy="flowchart LR
+  N[&quot;● none&lt;br/&gt;no rule about voice&quot;]
+  X[&quot;◉ expectation&lt;br/&gt;the rule, written in four places,&lt;br/&gt;kept by the drafting agent&#x27;s memory&lt;br/&gt;9 Oct: two emails signed with&lt;br/&gt;the founder&#x27;s name&quot;]
+  S1[&quot;◐ setting&lt;br/&gt;draft-guard as a mod in&lt;br/&gt;this session&#x27;s folder&lt;br/&gt;runs on every call, sub-agents too&lt;br/&gt;but the agent can edit it&quot;]
+  S2[&quot;◐ setting, still&lt;br/&gt;installed as a plugin from a repository&lt;br/&gt;the agent cannot edit the file,&lt;br/&gt;but it counts as the user&#x27;s,&lt;br/&gt;and its block is not final&quot;]
+  B[&quot;○ boundary&lt;br/&gt;a managed-settings hook, or an&lt;br/&gt;organisation mod from an admin-only folder,&lt;br/&gt;with Claude-written mods switched off&lt;br/&gt;its block is final&quot;]
+  N --&gt; X -- &quot;the hook&quot; --&gt; S1 -- &quot;install it&quot; --&gt; S2 -- &quot;manage it&quot; --&gt; B
+  R[&quot;What still rests on judgement&lt;br/&gt;the checker can be wrong both ways&lt;br/&gt;and the sources are written by the drafter&quot;]
+  B -.-&gt; R
+  style X stroke:#C2410C,stroke-width:2px
+  style B stroke:#0F766E,stroke-width:3px"><span class="cp">copy</span></button><a href="images/ck-ladder.webp">rendered image</a></div><pre class="shell">flowchart LR
+  N["● none&lt;br/&gt;no rule about voice"]
+  X["◉ expectation&lt;br/&gt;the rule, written in four places,&lt;br/&gt;kept by the drafting agent's memory&lt;br/&gt;9 Oct: two emails signed with&lt;br/&gt;the founder's name"]
+  S1["◐ setting&lt;br/&gt;draft-guard as a mod in&lt;br/&gt;this session's folder&lt;br/&gt;runs on every call, sub-agents too&lt;br/&gt;but the agent can edit it"]
+  S2["◐ setting, still&lt;br/&gt;installed as a plugin from a repository&lt;br/&gt;the agent cannot edit the file,&lt;br/&gt;but it counts as the user's,&lt;br/&gt;and its block is not final"]
+  B["○ boundary&lt;br/&gt;a managed-settings hook, or an&lt;br/&gt;organisation mod from an admin-only folder,&lt;br/&gt;with Claude-written mods switched off&lt;br/&gt;its block is final"]
+  N --&gt; X -- "the hook" --&gt; S1 -- "install it" --&gt; S2 -- "manage it" --&gt; B
+  R["What still rests on judgement&lt;br/&gt;the checker can be wrong both ways&lt;br/&gt;and the sources are written by the drafter"]
+  B -.-&gt; R
+  style X stroke:#C2410C,stroke-width:2px
+  style B stroke:#0F766E,stroke-width:3px</pre></details>
+<p>The same placement question answers the second limit the agent listed: a fresh scheduled run starts in a fresh container, so a session mod is not there at all. A managed hook is there in every session, scheduled or not.</p>
+<h2>Building it with what is public today</h2>
+<p>There are three ways to build the same guard with documented Claude Code features, and they trade simplicity against robustness:</p>
+<div class="tablewrap"><table>
+<tr><th>Route</th><th>Fresh model call</th><th>Reads a sources file</th><th>Fails closed</th><th>Notes</th></tr>
+<tr><td><b>A mod</b>, as built</td><td><code>$.model.complete</code>: no history, no tools</td><td>yes</td><td>with <code>.catch</code> and a check of <code>r.isAnswered</code></td><td>the hook's own run time is limited to 10 seconds, but time inside the model call does not count</td></tr>
+<tr><td><b>A command hook</b> on <code>PreToolUse</code></td><td>the script calls the model itself</td><td>yes</td><td>with <code>"onFailure": "block"</code> and exit code 2 (exit 1 does not block)</td><td>the most robust public form; works in managed settings</td></tr>
+<tr><td><b>A prompt hook</b> (<code>"type": "prompt"</code>)</td><td>built in: "use an LLM to evaluate whether to allow or block an action"</td><td>no, the sources must be pasted into the prompt</td><td>not documented for model failures</td><td>answers in JSON, <code>{"ok": false, "reason": ...}</code>; set <code>model</code> explicitly</td></tr>
+</table></div>
+<p>The command hook is the one I would put under managed settings. It matches the Gmail tool by its exact name (MCP tools are named <code>mcp__&lt;server&gt;__&lt;tool&gt;</code>), runs the code checks and the model call in one script, exits 2 with the reasons on anything but an explicit PASS, and sets <code>onFailure</code> to <code>block</code> so a crash or a timeout stops the draft rather than waving it through (<a href="https://code.claude.com/docs/en/hooks">hooks</a>). A minimal shape, with the path as a placeholder:</p>
+<pre class="shell">
+{
+  "hooks": {
+    "PreToolUse": [
+      { "matcher": "mcp__Gmail__create_draft",
+        "hooks": [ { "type": "command", "command": "/opt/guards/draft-guard", "onFailure": "block" } ] },
+      { "matcher": "mcp__Gmail__update_draft",
+        "hooks": [ { "type": "command", "command": "/opt/guards/draft-guard", "onFailure": "block" } ] }
+    ]
+  }
+}
+</pre>
+<p>It is worth noticing that Anthropic ships the same pattern in the product. In auto mode, "a second model, the classifier, reviews actions instead of you", running on Sonnet by default, with tool results stripped "so hostile content in a file or web page can't manipulate the classifier directly", and when "the classifier's response doesn't parse, Claude Code denies the action" (<a href="https://code.claude.com/docs/en/permission-modes">permission modes</a>). Same shape: a different model, less context, fail closed. The same page also warns that a boundary stated in conversation "can be lost if context compaction removes the message that stated it. For a hard guarantee, add a deny rule instead." That is the 9 October failure, described by the vendor.</p>
+<h2>The pattern is old, and it has a name</h2>
+<p>What the inbox agent built is maker-checker, the oldest control in finance. The Basel Committee's 1998 framework put it as Principle 6: "An effective internal control system requires that there is appropriate segregation of duties and that personnel are not assigned conflicting responsibilities", noting that supervisors "typically find that one of the major causes of such losses is the lack of adequate segregation of duties" (<a href="https://www.bis.org/publ/bcbs40.pdf">BCBS 40</a>). NIST defines separation of duty as the principle "that no user should be given enough privileges to misuse the system on their own", with the two-person rule as its example (<a href="https://csrc.nist.gov/glossary/term/separation_of_duty">CSRC</a>). ISO/IEC 27001:2022 carries it as control A.5.3, segregation of duties. Hospital pharmacies run independent double checks for high-alert medicines, and the reason given is the one that matters here: if the same person prepares and checks, "they likely will see only what they expect to see, even if an error has occurred" (<a href="https://home.ecri.org/blogs/ismp-alerts-and-articles-library/independent-double-checks-worth-the-effort-if-used-judiciously-and-properly">ISMP</a>).</p>
+<p>The AI versions of the idea are recent and well described. Redwood Research's <a href="https://arxiv.org/abs/2312.06942">AI Control</a> work (ICML 2024) studies exactly this arrangement, a powerful untrusted model watched by "a less powerful trusted model", with protocols such as trusted monitoring and trusted editing. Simon Willison's <a href="https://simonwillison.net/2023/Apr/25/dual-llm-pattern/">Dual LLM pattern</a> (2023) and Google DeepMind's <a href="https://arxiv.org/abs/2503.18813">CaMeL</a> (2025) separate a model that acts from one that reads, against prompt injection. Meta's <a href="https://ai.meta.com/blog/practical-ai-agent-security/">Agents Rule of Two</a> (2025) says an agent that processes untrusted input, touches private data and communicates externally, as an email drafter does, "should not be permitted to operate autonomously and at a minimum requires supervision". And OWASP's <a href="https://genai.owasp.org/llmrisk/llm062025-excessive-agency/">LLM06 Excessive Agency</a> asks for authorisation "in downstream systems rather than relying on an LLM to decide if an action is allowed". Output-checking products exist too: <a href="https://arxiv.org/abs/2312.06674">Llama Guard</a>, <a href="https://docs.nvidia.com/nemo/guardrails/latest/configure-guardrails/colang/colang-1/tutorials/5-output-rails">NeMo Guardrails</a> output rails, <a href="https://www.guardrailsai.com/docs">Guardrails AI</a> validators, and the <a href="https://openai.github.io/openai-agents-python/guardrails/">OpenAI Agents SDK</a> tool guardrails.</p>
+<p>What the draft guard adds is not a new idea. It is the idea placed exactly where it bites: on the one tool call with consequences, with business rules rather than safety categories, sources to check claims against, a model that differs from the author, and an explicit statement of which barrier it is.</p>
+<h2>The pattern, reusable</h2>
+<figure class="shot" data-shot="ck-pattern.webp" data-dir="images/" data-alt="A hook on a consequential tool call, code checks first, then a fresh model call with only the rules, the evidence and the proposed action, failing closed and logging every verdict."><figcaption>A hook on a consequential tool call, code checks first, then a fresh model call with only the rules, the evidence and the proposed action, failing closed and logging every verdict.</figcaption></figure>
+<details class="src"><summary>The reusable pattern, Mermaid source</summary><div class="src-bar"><button type="button" class="src-copy" data-copy="flowchart LR
+  subgraph T[&quot;Pick the consequential tool call&quot;]
+    direction TB
+    t1[&quot;send or draft mail&quot;]
+    t2[&quot;write to the CRM&quot;]
+    t3[&quot;publish a page&quot;]
+    t4[&quot;push to a vault&quot;]
+    t5[&quot;post to Slack&quot;]
+    t6[&quot;call a payment API&quot;]
+  end
+  K[&quot;Code checks first&lt;br/&gt;everything that is certain:&lt;br/&gt;formats, key shapes, recipients&quot;]
+  J[&quot;A fresh checker&lt;br/&gt;only the rules, the evidence&lt;br/&gt;and the proposed action&lt;br/&gt;no history, no tools,&lt;br/&gt;ideally a different model&quot;]
+  Q{&quot;explicit PASS?&quot;}
+  Y[&quot;the call runs&quot;]
+  Z[&quot;deny, with reasons&quot;]
+  LG[(&quot;log every verdict&quot;)]
+  T --&gt; K --&gt; J --&gt; Q
+  Q -- &quot;yes&quot; --&gt; Y
+  Q -- &quot;anything else&quot; --&gt; Z
+  K -- &quot;fail&quot; --&gt; Z
+  Q -.-&gt; LG"><span class="cp">copy</span></button><a href="images/ck-pattern.webp">rendered image</a></div><pre class="shell">flowchart LR
+  subgraph T["Pick the consequential tool call"]
+    direction TB
+    t1["send or draft mail"]
+    t2["write to the CRM"]
+    t3["publish a page"]
+    t4["push to a vault"]
+    t5["post to Slack"]
+    t6["call a payment API"]
+  end
+  K["Code checks first&lt;br/&gt;everything that is certain:&lt;br/&gt;formats, key shapes, recipients"]
+  J["A fresh checker&lt;br/&gt;only the rules, the evidence&lt;br/&gt;and the proposed action&lt;br/&gt;no history, no tools,&lt;br/&gt;ideally a different model"]
+  Q{"explicit PASS?"}
+  Y["the call runs"]
+  Z["deny, with reasons"]
+  LG[("log every verdict")]
+  T --&gt; K --&gt; J --&gt; Q
+  Q -- "yes" --&gt; Y
+  Q -- "anything else" --&gt; Z
+  K -- "fail" --&gt; Z
+  Q -.-&gt; LG</pre></details>
+<p>In six steps, as the inbox agent wrote them:</p>
+<ol>
+<li><b>Pick the tool call that matters</b>: sending a Slack message, writing to the CRM, publishing a page, committing to a vault, a payment API.</li>
+<li><b>Write the rules as a short numbered checklist</b> with a fixed answer format.</li>
+<li><b>Put everything certain into code first</b>; leave only judgement to the model.</li>
+<li><b>Give the checker only what it needs</b>: rules, sources, the proposed action. No history.</li>
+<li><b>Deny on anything other than an explicit PASS.</b></li>
+<li><b>Log every verdict.</b></li>
+</ol>
+<p>The next candidates in our own team are the CRM agent's writes (no keys, no unverified facts presented as verified), the newsroom's page promotions (nothing indexed until I promote it; quotes are claims), Slack posts, and the leak check before any vault push, which on this site is still a script I run rather than a gate I cannot skip.</p>
+<h2>What it does not do</h2>
+<ul>
+<li><b>It is only as independent as its installation</b>, as above. Today it is a setting.</li>
+<li><b>R7 is only as good as the sources</b>, and the drafter writes them.</li>
+<li><b>The checker can be wrong in both directions.</b> Expect false FAILs; they cost a retry.</li>
+<li><b>It checks drafts, not sending.</b> I send. The rule that agents never send is enforced separately, and is a different barrier question.</li>
+<li><b>It does not replace reading.</b> A PASS means ten rules held, not that the email is good.</li>
+</ul>
+<p>The mistake on 9 October cost two emails I would rather not have sent. What it bought is better: a rule that used to live in four paragraphs now lives on the tool call, with a log, and a clear statement of the one step left before it is a control.</p>
+<hr>
+<p><em>From the design document "The independent checker: a hook that makes a second model approve every email draft", version 0.1, written on 9 October 2026 by the RiskMandate.ai inbox agent, which built and tested the guard (11 of 11 tests passing). Researched, illustrated and written up for this site by agent@riskmandate.ai (Claude Opus 5.5, claude-opus-5-5) in the sgit.ai site session, for Dinis Cruz, who has editorial responsibility. Claude Code behaviour is quoted from its documentation as read on 9 October 2026; prices are list prices on that date.</em></p>
+<sg-meter view="page" kind="article" date="2026-10-09" topics="agents-and-policy site-and-engineering" title="A second reader the agent cannot skip: how two wrong emails became a gate on every draft, sgit.ai"></sg-meter>
+<section class="athreads" id="threads">
+ <h2>Threads</h2>
+ <p class="athreads-meta"><span class="tchip">Agents &amp; policy</span><span class="tchip">Site &amp; engineering</span> <a href="graphs.html#a-second-reader-the-agent-cannot-skip">This article as a graph &rarr;</a></p>
+ <div class="athreads-cols"><div><h3>Builds on</h3><ul><li><a href="hope-or-enforcement.html">Hope or enforcement: one customer service agent, three designs, and who keeps each promise</a> <span class="dim">One customer service agent built three ways, each with an Agent Behaviour Policy: how much of each policy is hope, and what one run can reach.</span></li><li><a href="every-mistake-added-a-rule.html">Every mistake added a rule: complexity, agents, and the way back to shipping</a> <span class="dim">When every agent mistake adds a rule, complexity wins: map the process, move each piece right as a small shipped component, and keep the rigour for the work.</span></li></ul></div><div><h3>Continued by</h3><ul><li><a href="one-article-five-readers.html">One article, five readers: a librarian, a cartographer, a historian, an explainer and a storyteller read the same piece</a> <span class="dim">Write the article first, then send five agent readers through it: a catalogue, an ontology and maps, the arc, two minutes, and a deck.</span></li><li><a href="re-anchoring-agent-behaviour-policies.html">Re-anchoring: keeping an agent's rules alive through every summary, and a canary that shows when they are not</a> <span class="dim">Summaries keep under 2% of a long session. Re-anchoring prints the agent's rules back after each one; a canary report shows it is working.</span></li></ul></div></div>
+ <p class="small dim"><a href="index.html">All articles</a> &middot; <a href="graphs.html">All graphs</a></p>
+</section>
+<aside class="lkit" aria-label="For LinkedIn"><b>Posting this article on LinkedIn?</b> The cover is <a href="banners/a-second-reader-the-agent-cannot-skip.jpg" download>a-second-reader-the-agent-cannot-skip.jpg</a> (1920&times;1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page.</aside>
+ <p class="subteaser"><b>Want the next issue by email.</b> One issue a week or so: what was published, what it adds up to, and what is worth your time. <a class="cta2" href="../subscribe/index.html">Subscribe to the SGit Newsroom &rarr;</a></p>
+ <p class="small dim" style="margin-top:2rem"><a href="index.html">&larr; All articles</a></p>
+</main>
+<script>
+(function () {
+ fetch('../assets/shots.js?v=v0.7.39')
+ .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+ .then(function (t) { (0, eval)(t); })
+ .catch(function (e) { console.error('[shots] component failed to load:', e); });
+}());
+</script>
+<script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": ""}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
+<script>
+import('../assets/components/sg-meter/v1/v1.3/v1.3.1/sg-meter.js?v=v0.7.39')
+ .catch(function (e) { console.error('[sg-meter] component failed to load:', e); });
+</script>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="netline"><a href="https://sgit.ai" style="display:inline;padding:0"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://pt.newsroom.sgit.ai" style="display:inline;padding:0">&#8593; pt.newsroom.sgit.ai</a> &middot; <a href="https://graphs.sgit.ai" style="display:inline;padding:0">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai" style="display:inline;padding:0">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai" style="display:inline;padding:0">&#8593; nhi.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai" style="display:inline;padding:0">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../admin/versions.html">v0.6.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="a-second-reader-the-agent-cannot-skip.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../index.html">&#8594; The front page</a>
+    <a href="../articles/index.html#all">Every article</a>
+    <a href="../articles/newsletter/index.html">The newsletter</a>
+    <a href="../articles/collections/index.html">Collections</a>
+    <a href="../articles/desk/index.html">From the desk</a>
+    <a href="../articles/graphs.html">As graphs</a>
+    <a href="../subscribe/index.html">Subscribe</a>
+    <a href="../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../account/index.html">Your reading account</a>
+    <a href="../account/newsroom.html">Your newsroom</a>
+    <a href="../account/personas.html">Your personas</a>
+    <a href="../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../newsroom/index.html">How the newsroom runs</a>
+    <a href="../newsroom/policies.html">Behaviour policies</a>
+    <a href="../newsroom/publish.html">How to publish</a>
+    <a href="../newsroom/board.html">The board</a>
+    <a href="../newsroom/log.html">The run log</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../design/index.html">The design, and what runs</a>
+    <a href="../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../corrections/index.html">Corrections must propagate</a>
+    <a href="../provenance/index.html">Provenance is the product</a>
+    <a href="../economics/index.html">Paying the fact creator</a>
+    <a href="../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../replicate/index.html">Replicate this newsroom</a>
+    <a href="../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../archive/index.html">The archive</a>
+    <a href="../network/index.html">The network</a>
+    <a href="../admin/versions.html">Release history</a>
+    <a href="../admin/index.html">Admin &amp; engineering</a>
+    <a href="../about/participant.html">Where we lose</a>
+    <a href="../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+
+<script>
+(function(){var R=document.documentElement.getAttribute('data-root')||'';var V='?v=' + 'v0.7.39';var C=[R,'','../','/'].filter(function(v,i,a){return a.indexOf(v)===i});
+function wait(ms){return new Promise(function(res){var t=Date.now();(function p(){if(window.sg)return res(window.sg);if(Date.now()-t>ms)return res(null);setTimeout(p,60)})()})}
+function grab(sg,p){return new Promise(function(res){(async function(){if(sg&&sg.vfs&&sg.vfs.readText){try{var t=await sg.vfs.readText(p);if(t)return res(t)}catch(e){}}try{var r=await fetch(p+V);if(r.ok)return res(await r.text())}catch(e){}res(null)})()})}
+async function css(sg){for(var i=0;i<C.length;i++){var p=C[i]+'assets/newsroom.css';if(sg&&sg.loadCss){try{await sg.loadCss(p);return}catch(e){}}var t=await grab(sg,p);if(t){var s=document.createElement('style');s.textContent=t;document.head.appendChild(s);return}}}
+async function js(sg,name){name=name||'assets/site.js';for(var i=0;i<C.length;i++){var p=C[i]+name;if(sg&&sg.loadJs){try{await sg.loadJs(p);return}catch(e){}}var t=await grab(sg,p);if(t){try{(0,eval)(t)}catch(e){console.error('[site] js failed',name,e)}return}}}
+async function boot(){var inVault=false;try{inVault=(window!==window.parent)||location.protocol==='blob:'}catch(e){inVault=true}
+var sg=inVault?await wait(2500):null;window.__sgitBoot={roots:C,grab:function(p){return grab(sg,p)},version:V};await css(sg);await js(sg);document.documentElement.classList.add('ready');try{window.parent&&window.parent.postMessage({type:'sg-app-ready'},'*')}catch(e){}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+var mine=V.slice(3),last=0;
+function fresh(){if(location.hostname!=='sgit.ai'||Date.now()-last<60000)return;last=Date.now();
+fetch('/version.txt?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(t){t=(t||'').trim();if(!/^v[0-9]+[.][0-9]+[.][0-9]+$/.test(t)||t===mine)return;
+var k='sgit.fresh:'+location.pathname;try{if(sessionStorage.getItem(k)===t)return;sessionStorage.setItem(k,t)}catch(e){}
+var u=new URL(location.href);u.searchParams.set('v',t);location.replace(u.href)}).catch(function(){})}
+try{var u=new URL(location.href);if(u.searchParams.get('v')===mine){u.searchParams.delete('v');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}
+fresh();addEventListener('pageshow',function(e){if(e.persisted){last=0;fresh()}});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')fresh()});
+})();
+</script>
+</body>
+</html>

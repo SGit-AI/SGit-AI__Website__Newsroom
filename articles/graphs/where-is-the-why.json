@@ -1,0 +1,203 @@
+{
+  "slug": "where-is-the-why",
+  "teaser": "A prompt asked for a decision and kept the reason. Read through the policy, the law on uninformed consent, and the fixes that worked: put the why in the prompt.",
+  "topics": [
+    "agents-and-policy"
+  ],
+  "core_idea": "A permission prompt that asks a person to approve an agent's grant change without saying which session asks, why, what changes, what it could cost and what a no would do, leaves the person a choice between breaking the work and owning a decision they could not judge; read through the Agent Behaviour Policy it is a mid-session grant change whose barrier is a human judgement as strong as the information given, and whose risk lies in the combination with what the session already holds; courts and regulators across medicine, contract, data protection and automated decisions mostly put the duty to disclose on whoever asks and deny weight to token sign-offs, while in practice blame lands on the nearest person; the fixes that worked, purpose strings, number matching and context, refusal as easy as acceptance, all put the reason or the context into the prompt; so the proposal is a why card that carries the reason, the change in reach, the cost, the decline path and a record, and becomes a risk acceptance when the risk rises.",
+  "nodes": [
+    {
+      "id": "the-prompt",
+      "label": "Three fields, two buttons, no reason",
+      "kind": "example",
+      "summary": "Owner, repository, access; Decline or Allow once; not which session, which step, which instruction, what changes or what a no costs."
+    },
+    {
+      "id": "the-dilemma",
+      "label": "Decline breaks the work, Allow buys accountability",
+      "kind": "claim",
+      "summary": "Both offered answers carry an unstated cost; the answer that removes both, a reason, was not on the screen."
+    },
+    {
+      "id": "grant-change",
+      "label": "A prompt is a grant change mid-session",
+      "kind": "concept",
+      "summary": "The question is what the session becomes once it holds this and what it already holds, not whether the resource is safe."
+    },
+    {
+      "id": "read-vs-write",
+      "label": "Read is small, write is a publishing channel",
+      "kind": "claim",
+      "summary": "Read of a public repository adds little; write to it from a session holding confidential data adds an exfiltration path."
+    },
+    {
+      "id": "barrier-person",
+      "label": "A barrier that is a person",
+      "kind": "claim",
+      "summary": "Enforced by the host, so the agent cannot click it; as strong as the information the person is given."
+    },
+    {
+      "id": "approval-numbers",
+      "label": "93% approved, 13.6% caught",
+      "kind": "example",
+      "summary": "Vendor figures: most agent prompts are approved, and planted dangerous commands are rarely caught, less so as prompts pile up."
+    },
+    {
+      "id": "fewer-prompts",
+      "label": "Fewer prompts leaves the hard ones",
+      "kind": "claim",
+      "summary": "Sandboxing and classifiers remove the easy prompts; the remaining ones need the reason most, and the classifier's own misses are about consent covering the action."
+    },
+    {
+      "id": "asker-discloses",
+      "label": "The asker must disclose",
+      "kind": "concept",
+      "summary": "Montgomery, the red hand rule, Berman and Nguyen, the Consumer Rights Act and GDPR Article 7 put the duty to make information usable on whoever asks."
+    },
+    {
+      "id": "token-signoff",
+      "label": "A token sign-off is not a human decision",
+      "kind": "concept",
+      "summary": "WP251 and SCHUFA: oversight must be meaningful, and a determining machine output stays automated even when a person signs."
+    },
+    {
+      "id": "crumple-zone",
+      "label": "Blame lands on the nearest person",
+      "kind": "claim",
+      "summary": "Elish's moral crumple zone and the Post Office Horizon cases: in practice the click is the record, and it carries the person's name."
+    },
+    {
+      "id": "fixes-that-worked",
+      "label": "The fixes put the why into the prompt",
+      "kind": "example",
+      "summary": "Apple's required purpose strings, Microsoft's number matching with app and location, the CNIL's refusal as easy as acceptance."
+    },
+    {
+      "id": "why-card",
+      "label": "The why card",
+      "kind": "method",
+      "summary": "Who asks, why with the instruction quoted, what changes, what it could cost, if you decline, scope and record; allow for task, decline and continue, ask, park."
+    },
+    {
+      "id": "risk-acceptance",
+      "label": "When the risk rises, a risk acceptance",
+      "kind": "method",
+      "summary": "A grant change that raises the session's blast radius names who accepts it, for how long and what ends it, and is recorded as such."
+    },
+    {
+      "id": "not-known",
+      "label": "Which session asked, and why",
+      "kind": "question",
+      "summary": "Not known: the prompt did not say; nor whether its fields are configurable; vendor figures not replicated; not legal advice."
+    }
+  ],
+  "edges": [
+    {
+      "from": "the-prompt",
+      "to": "the-dilemma",
+      "rel": "leads-to"
+    },
+    {
+      "from": "the-prompt",
+      "to": "grant-change",
+      "rel": "example-of"
+    },
+    {
+      "from": "grant-change",
+      "to": "read-vs-write",
+      "rel": "produces"
+    },
+    {
+      "from": "grant-change",
+      "to": "barrier-person",
+      "rel": "depends-on"
+    },
+    {
+      "from": "barrier-person",
+      "to": "approval-numbers",
+      "rel": "leads-to"
+    },
+    {
+      "from": "approval-numbers",
+      "to": "fewer-prompts",
+      "rel": "leads-to"
+    },
+    {
+      "from": "the-dilemma",
+      "to": "asker-discloses",
+      "rel": "leads-to"
+    },
+    {
+      "from": "asker-discloses",
+      "to": "token-signoff",
+      "rel": "extends"
+    },
+    {
+      "from": "asker-discloses",
+      "to": "crumple-zone",
+      "rel": "contrasts"
+    },
+    {
+      "from": "fixes-that-worked",
+      "to": "why-card",
+      "rel": "leads-to"
+    },
+    {
+      "from": "asker-discloses",
+      "to": "why-card",
+      "rel": "leads-to"
+    },
+    {
+      "from": "fewer-prompts",
+      "to": "why-card",
+      "rel": "leads-to"
+    },
+    {
+      "from": "read-vs-write",
+      "to": "risk-acceptance",
+      "rel": "leads-to"
+    },
+    {
+      "from": "why-card",
+      "to": "risk-acceptance",
+      "rel": "extends"
+    },
+    {
+      "from": "the-prompt",
+      "to": "not-known",
+      "rel": "leads-to"
+    }
+  ],
+  "links": {
+    "articles": [
+      "footprint-and-blast-radius",
+      "every-risk-is-already-accepted",
+      "ultimate-insider-three-collisions",
+      "why-my-agents-do-not-run-on-my-laptop",
+      "the-mandate-stack",
+      "the-agent-team-as-it-runs",
+      "six-agents-one-inbox",
+      "connector-twin-before-you-deploy-an-agent",
+      "a-personal-agent-that-keeps-your-secrets"
+    ],
+    "pages": [
+      "docs/briefs/riskmandate-footprint-and-blast-radius.html",
+      "demos/vaults/risk-acceptance/index.html",
+      "docs/briefs/riskmandate-sandbox-twins-and-tokens.html"
+    ],
+    "sites": [
+      "https://riskmandate.ai/abp.html",
+      "https://riskmandate.ai/acceptable.html"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "A boundary whose enforcement is a human judgement is exactly as strong as the information that human is given.",
+      "why": "Why the prompt is a real barrier and a weak one at the same time."
+    },
+    {
+      "text": "In practice, the click is the record, and the click has the person's name on it.",
+      "why": "The gap between where the law puts the duty and where the blame lands."
+    }
+  ]
+}

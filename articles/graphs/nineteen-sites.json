@@ -1,0 +1,177 @@
+{
+  "slug": "nineteen-sites",
+  "teaser": "One site became twenty repositories in fifteen days because each argument needed its own version history, and the index now starts from a question.",
+  "topics": [
+    "site-and-engineering",
+    "vaults-and-method"
+  ],
+  "core_idea": "A body of work outgrew the site it was published in and split into nineteen siblings so each argument could keep its own version history, and the index into them starts from the reader's question rather than a list of names.",
+  "nodes": [
+    {
+      "id": "twenty-repositories",
+      "label": "Twenty repositories in fifteen days",
+      "kind": "example",
+      "summary": "On 11 August this was one website; by 26 August there were twenty repositories, nineteen of them siblings on *.sgit.ai, fifteen created in the last five days."
+    },
+    {
+      "id": "section-as-promise",
+      "label": "A section is a promise",
+      "kind": "concept",
+      "summary": "A section promises that something is part of the thing it sits inside, and that promise stopped holding when the writing answered questions that were not about sgit."
+    },
+    {
+      "id": "own-version-history",
+      "label": "Its own version history",
+      "kind": "claim",
+      "summary": "Nineteen arguments moving at different speeds through one release log produces a record nobody can read; split, each gets its own record of when it changed its mind."
+    },
+    {
+      "id": "discovery-cost",
+      "label": "Discovery got worse",
+      "kind": "claim",
+      "summary": "Nineteen domains is not a menu; names like nfrs.sgit.ai and issues-fs.sgit.ai mean nothing until you already know what they argue."
+    },
+    {
+      "id": "consistency-by-discipline",
+      "label": "Consistency by discipline",
+      "kind": "claim",
+      "summary": "One site has one stylesheet by construction; nineteen have one stylesheet by discipline, and discipline is the thing that quietly stops happening."
+    },
+    {
+      "id": "cross-link-drift",
+      "label": "Cross-link drift",
+      "kind": "example",
+      "summary": "The audit found graphs.sgit.ai pointing at sentinel.sgit.ai, which does not exist; the site is sg-sentinel.sgit.ai, one character of drift and the link is dead."
+    },
+    {
+      "id": "question-first-directory",
+      "label": "Start from the question",
+      "kind": "method",
+      "summary": "The directory starts from the question the reader arrived with, seventeen lines of it, then five groups by area, then a table of all nineteen."
+    },
+    {
+      "id": "quoted-thesis-rule",
+      "label": "Every thesis in the site's own words",
+      "kind": "method",
+      "summary": "Each thesis on the directory page is quoted from the site's H1 or lede rather than summarised, because a summary drifts and a quotation either matches or is visibly wrong."
+    },
+    {
+      "id": "shared-toolchain",
+      "label": "Same generator, same release script",
+      "kind": "method",
+      "summary": "Same generator, same stylesheet, same release script, same validator, same rule that publishing is adding one file."
+    },
+    {
+      "id": "one-file-per-publish",
+      "label": "Publishing is adding one file",
+      "kind": "claim",
+      "summary": "Adding the twentieth site is writing one markdown file, the same property that lets two agents publish on the same day without conflict."
+    },
+    {
+      "id": "unpublished-sibling",
+      "label": "skills.sgit.ai, not published yet",
+      "kind": "example",
+      "summary": "One of the nineteen has a repository and a DNS record and nothing behind it, listed as not published yet rather than quietly omitted."
+    },
+    {
+      "id": "arguments-not-products",
+      "label": "Arguments, not products",
+      "kind": "claim",
+      "summary": "sg-sentinel says NOT BUILT, risks states zero lines of code implement its model, wardley-maps is PROPOSED: publish the argument before the thing exists and say what it is worth."
+    }
+  ],
+  "edges": [
+    {
+      "from": "section-as-promise",
+      "to": "twenty-repositories",
+      "rel": "leads-to"
+    },
+    {
+      "from": "own-version-history",
+      "to": "section-as-promise",
+      "rel": "extends"
+    },
+    {
+      "from": "own-version-history",
+      "to": "twenty-repositories",
+      "rel": "leads-to"
+    },
+    {
+      "from": "twenty-repositories",
+      "to": "discovery-cost",
+      "rel": "leads-to"
+    },
+    {
+      "from": "twenty-repositories",
+      "to": "consistency-by-discipline",
+      "rel": "leads-to"
+    },
+    {
+      "from": "twenty-repositories",
+      "to": "cross-link-drift",
+      "rel": "leads-to"
+    },
+    {
+      "from": "question-first-directory",
+      "to": "discovery-cost",
+      "rel": "answers"
+    },
+    {
+      "from": "quoted-thesis-rule",
+      "to": "question-first-directory",
+      "rel": "extends"
+    },
+    {
+      "from": "quoted-thesis-rule",
+      "to": "cross-link-drift",
+      "rel": "compared-with"
+    },
+    {
+      "from": "shared-toolchain",
+      "to": "consistency-by-discipline",
+      "rel": "answers"
+    },
+    {
+      "from": "one-file-per-publish",
+      "to": "shared-toolchain",
+      "rel": "depends-on"
+    },
+    {
+      "from": "one-file-per-publish",
+      "to": "question-first-directory",
+      "rel": "extends"
+    },
+    {
+      "from": "unpublished-sibling",
+      "to": "arguments-not-products",
+      "rel": "compared-with"
+    },
+    {
+      "from": "arguments-not-products",
+      "to": "own-version-history",
+      "rel": "depends-on"
+    }
+  ],
+  "links": {
+    "articles": [
+      "what-sgit-is"
+    ],
+    "pages": [
+      "/network/graphs.html",
+      "/updates/",
+      "/network/sg-sentinel.html",
+      "/network/index.html"
+    ],
+    "sites": []
+  },
+  "quotes": [
+    {
+      "text": "A summary drifts. A quotation either matches or is visibly wrong.",
+      "why": "The rule that keeps the directory honest, and the reason the index quotes each site rather than describing it."
+    },
+    {
+      "text": "One character of drift, and the link is dead.",
+      "why": "The concrete cost of splitting: a link between sites is a claim about another site that has to be checked."
+    }
+  ]
+}

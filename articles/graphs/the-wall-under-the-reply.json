@@ -1,0 +1,209 @@
+{
+  "slug": "the-wall-under-the-reply",
+  "teaser": "End an email reply with the state of the thread for this reader, not the quoted wall: decided, open, next, who is on copy, with links to the record.",
+  "topics": [
+    "agents-and-policy",
+    "vaults-and-method"
+  ],
+  "core_idea": "The quoted wall under a reply is redundant and occupies the space where a reader asks what they need to know; replace it with a short, reader-specific state of the thread, derived from the record and linking back to it, drafted by the agent team's drafts role from typed blocks and reviewed by a person, and run as an experiment rather than a format.",
+  "nodes": [
+    {
+      "id": "the-wall",
+      "label": "The quoted wall is redundant",
+      "kind": "claim",
+      "summary": "Every reply ships the whole thread to a reader who already has it, and the clients hide it on arrival behind a trimmed-content link."
+    },
+    {
+      "id": "readers-questions",
+      "label": "The reader's questions",
+      "kind": "concept",
+      "summary": "Where are we, what was decided, what is open and whose, what happens next and do I act, who is on this thread now; the wall holds the material and answers none of them."
+    },
+    {
+      "id": "the-tail",
+      "label": "End with the state of the thread",
+      "kind": "method",
+      "summary": "Decided, open, next, on copy, sources: a hundred words written for this reader, with links to the messages condensed, which stay in the thread as the record."
+    },
+    {
+      "id": "for-the-reader",
+      "label": "Written for one reader",
+      "kind": "claim",
+      "summary": "The same thread condenses differently for the counterparty, the newcomer and the colleague who read everything; the question is what this person needs now."
+    },
+    {
+      "id": "cc-is-state",
+      "label": "Who is on copy is part of the state",
+      "kind": "claim",
+      "summary": "Who joined, who left, which participants are agents: facts every newcomer needs that no quoted wall carries."
+    },
+    {
+      "id": "derived-view",
+      "label": "Derived, not the record",
+      "kind": "concept",
+      "summary": "The tail points back at the thread instead of repeating it; if the tail is wrong the record underneath is not, and the reader can check in one tap."
+    },
+    {
+      "id": "precedents",
+      "label": "Netiquette, BLUF, Minto, TL;DR, ADRs",
+      "kind": "example",
+      "summary": "RFC 1855 asked for a summary instead of the full quote in 1995; the Army's bottom line up front; the Pyramid Principle; decision records with a Status line."
+    },
+    {
+      "id": "client-summaries",
+      "label": "Reader-side AI summaries",
+      "kind": "example",
+      "summary": "Superhuman, Shortwave, Copilot in Outlook, Apple Mail and Gmail now compute a summary at the top of a thread for the reader, privately and regenerated each time."
+    },
+    {
+      "id": "sender-vs-reader",
+      "label": "Sender's statement versus reader's view",
+      "kind": "concept",
+      "summary": "The client summary belongs to one reader and nobody stands behind it; the tail is reviewed, shared with everyone on copy, in the record, and can be argued with."
+    },
+    {
+      "id": "drafts-role",
+      "label": "The drafts role writes it",
+      "kind": "method",
+      "summary": "From the typed blocks the inbox role already captures, for a chosen reader, with message ids cited and a hash logged; the person edits and sends; the inbox role records what went out."
+    },
+    {
+      "id": "configurable",
+      "label": "Personal, so configurable",
+      "kind": "method",
+      "summary": "Five rows, one line, or the wall back: the reader's preference is a row in their folder in the CRM; text first, richer forms are variants."
+    },
+    {
+      "id": "experiment",
+      "label": "An experiment, not a format",
+      "kind": "method",
+      "summary": "Four variants rotated by thread for a month on one person's correspondence, with measurements the record can take and the results published either way."
+    },
+    {
+      "id": "falsifiers",
+      "label": "What would make this wrong",
+      "kind": "question",
+      "summary": "Readers scrolling to the quotes anyway, condensations corrected in more than a few replies in ten, clients mangling the rows."
+    },
+    {
+      "id": "missing",
+      "label": "What does not exist yet",
+      "kind": "question",
+      "summary": "The drafts role writing tails automatically, the preference row, the templates, the measurement report, the month of data and the follow-up."
+    }
+  ],
+  "edges": [
+    {
+      "from": "the-wall",
+      "to": "readers-questions",
+      "rel": "leads-to"
+    },
+    {
+      "from": "readers-questions",
+      "to": "the-tail",
+      "rel": "leads-to"
+    },
+    {
+      "from": "for-the-reader",
+      "to": "the-tail",
+      "rel": "extends"
+    },
+    {
+      "from": "cc-is-state",
+      "to": "the-tail",
+      "rel": "extends"
+    },
+    {
+      "from": "derived-view",
+      "to": "the-tail",
+      "rel": "depends-on"
+    },
+    {
+      "from": "precedents",
+      "to": "the-tail",
+      "rel": "compared-with"
+    },
+    {
+      "from": "client-summaries",
+      "to": "sender-vs-reader",
+      "rel": "leads-to"
+    },
+    {
+      "from": "sender-vs-reader",
+      "to": "the-tail",
+      "rel": "extends"
+    },
+    {
+      "from": "client-summaries",
+      "to": "the-tail",
+      "rel": "contrasts"
+    },
+    {
+      "from": "drafts-role",
+      "to": "the-tail",
+      "rel": "produces"
+    },
+    {
+      "from": "drafts-role",
+      "to": "derived-view",
+      "rel": "depends-on"
+    },
+    {
+      "from": "configurable",
+      "to": "drafts-role",
+      "rel": "extends"
+    },
+    {
+      "from": "configurable",
+      "to": "for-the-reader",
+      "rel": "depends-on"
+    },
+    {
+      "from": "experiment",
+      "to": "the-tail",
+      "rel": "answers"
+    },
+    {
+      "from": "experiment",
+      "to": "falsifiers",
+      "rel": "produces"
+    },
+    {
+      "from": "falsifiers",
+      "to": "missing",
+      "rel": "leads-to"
+    },
+    {
+      "from": "drafts-role",
+      "to": "missing",
+      "rel": "leads-to"
+    }
+  ],
+  "links": {
+    "articles": [
+      "custom-uis-are-not-the-exception",
+      "replicating-the-agentic-inbox",
+      "memory-is-not-a-spectator-sport",
+      "six-agents-one-inbox"
+    ],
+    "pages": [
+      "/docs/agent-contact.html"
+    ],
+    "sites": [
+      "https://www.rfc-editor.org/rfc/rfc1855.txt",
+      "https://workspaceupdates.googleblog.com/2025/05/gemini-summary-cards-gmail-app.html",
+      "https://support.microsoft.com/en-us/outlook/copilot-pages/summarize-an-email-thread-with-copilot-in-outlook",
+      "https://www.microsoft.com/en-us/worklab/work-trend-index/breaking-down-infinite-workday"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "The wall is shipped with every message and hidden on arrival, which is the clearest possible sign that it is the wrong thing to ship.",
+      "why": "The observation the proposal starts from."
+    },
+    {
+      "text": "The client's summary says what the thread looks like from here; the tail says what the sender believes it is.",
+      "why": "How the proposal differs from the AI summaries mail clients already compute."
+    }
+  ]
+}

@@ -1,0 +1,232 @@
+{
+  "slug": "six-agents-one-inbox",
+  "teaser": "An access policy for an agent is only as real as its worst row: every rule in a real six-agent setup, graded by how it is enforced today.",
+  "topics": [
+    "agents-and-policy"
+  ],
+  "core_idea": "Write an agent's access policy as a table with a column for how each rule is enforced, and the policy is exactly as strong as the row that says the agent has been told.",
+  "nodes": [
+    {
+      "id": "worst-row",
+      "label": "The worst row",
+      "kind": "claim",
+      "summary": "If the enforcement column says the agent has been told, that row is a hope, and the policy is exactly as strong as that hope on the day something goes wrong."
+    },
+    {
+      "id": "account-is-blast-radius",
+      "label": "The account is the blast radius",
+      "kind": "claim",
+      "summary": "Every session an agent opens through a connector runs as the account that authorised it, with everything that account can reach."
+    },
+    {
+      "id": "dedicated-accounts",
+      "label": "Dedicated accounts per agent",
+      "kind": "method",
+      "summary": "A dedicated Workspace seat, a dedicated Claude seat and a dedicated GitHub account per agent, so the worst a session can do is bounded by what its account can see."
+    },
+    {
+      "id": "organisational-unit",
+      "label": "Organisational unit",
+      "kind": "concept",
+      "summary": "An account of its own puts each agent in its own organisational unit, and Google Workspace applies its Gmail compliance rules per unit."
+    },
+    {
+      "id": "restrict-delivery",
+      "label": "Restrict delivery",
+      "kind": "method",
+      "summary": "A delivery restriction to my own domain means that even if the reader sends, it can only reach me."
+    },
+    {
+      "id": "attachment-compliance",
+      "label": "Attachment compliance",
+      "kind": "method",
+      "summary": "An outbound rule that strips attachments turns a policy into a property of the mail system."
+    },
+    {
+      "id": "scope-limits",
+      "label": "Scope limits on third-party apps",
+      "kind": "method",
+      "summary": "The sharpest tool in the box cannot express drafts only, because the Gmail API puts drafting and sending in the same grant."
+    },
+    {
+      "id": "six-roles",
+      "label": "Six roles",
+      "kind": "concept",
+      "summary": "The reader, the mailbox, the inbox, the CRM, the dev team and the site editor, each with a policy short enough to check and differing on who may send."
+    },
+    {
+      "id": "exception-before-policy",
+      "label": "The exception arrived before the policy",
+      "kind": "example",
+      "summary": "The reader that must never reply must reply when the message came from me, and never became never, unless on day one."
+    },
+    {
+      "id": "signature-registry",
+      "label": "Signature registry",
+      "kind": "artefact",
+      "summary": "The append-lane machinery of per-session keys and a pinned registry is what would let the reader verify a message came from me, once my key is in it."
+    },
+    {
+      "id": "attachment-finding",
+      "label": "The attachment finding",
+      "kind": "example",
+      "summary": "An agent found that create_draft and update_draft accept an attachments array and proved it with a 17 KB signed PDF that arrived intact."
+    },
+    {
+      "id": "documentation-disagrees",
+      "label": "The documentation disagrees with itself",
+      "kind": "claim",
+      "summary": "One vendor page says the Gmail connector is read-only and another says it can send, reply and forward, so a policy that cites the documentation has cited a moving target."
+    },
+    {
+      "id": "connector-twin",
+      "label": "Connector twin",
+      "kind": "method",
+      "summary": "Before you write down what an agent may do, replay what it can do."
+    },
+    {
+      "id": "enforcement-ladder",
+      "label": "Enforcement ladder",
+      "kind": "concept",
+      "summary": "Identity boundaries and keys enforce themselves, compliance rules enforce at the platform, approval prompts enforce at the human, and everything else is the agent doing as it was told."
+    },
+    {
+      "id": "policy-table",
+      "label": "The policy table",
+      "kind": "artefact",
+      "summary": "One rule per row across six roles, with the column that says whether it is enforced, an admin rule, an approval, or told."
+    },
+    {
+      "id": "cowork-vs-claude-code",
+      "label": "Cowork and Claude Code reach",
+      "kind": "example",
+      "summary": "The Cowork agent has no GitHub connector and cannot open the repository, while the Claude Code agent on the same seat edits the site."
+    }
+  ],
+  "edges": [
+    {
+      "from": "dedicated-accounts",
+      "to": "account-is-blast-radius",
+      "rel": "depends-on"
+    },
+    {
+      "from": "organisational-unit",
+      "to": "dedicated-accounts",
+      "rel": "depends-on"
+    },
+    {
+      "from": "restrict-delivery",
+      "to": "organisational-unit",
+      "rel": "depends-on"
+    },
+    {
+      "from": "attachment-compliance",
+      "to": "organisational-unit",
+      "rel": "depends-on"
+    },
+    {
+      "from": "scope-limits",
+      "to": "organisational-unit",
+      "rel": "depends-on"
+    },
+    {
+      "from": "six-roles",
+      "to": "dedicated-accounts",
+      "rel": "depends-on"
+    },
+    {
+      "from": "six-roles",
+      "to": "exception-before-policy",
+      "rel": "leads-to"
+    },
+    {
+      "from": "exception-before-policy",
+      "to": "signature-registry",
+      "rel": "depends-on"
+    },
+    {
+      "from": "restrict-delivery",
+      "to": "exception-before-policy",
+      "rel": "answers"
+    },
+    {
+      "from": "attachment-finding",
+      "to": "connector-twin",
+      "rel": "example-of"
+    },
+    {
+      "from": "attachment-finding",
+      "to": "documentation-disagrees",
+      "rel": "leads-to"
+    },
+    {
+      "from": "attachment-finding",
+      "to": "attachment-compliance",
+      "rel": "leads-to"
+    },
+    {
+      "from": "scope-limits",
+      "to": "enforcement-ladder",
+      "rel": "leads-to"
+    },
+    {
+      "from": "policy-table",
+      "to": "enforcement-ladder",
+      "rel": "depends-on"
+    },
+    {
+      "from": "policy-table",
+      "to": "six-roles",
+      "rel": "depends-on"
+    },
+    {
+      "from": "worst-row",
+      "to": "policy-table",
+      "rel": "depends-on"
+    },
+    {
+      "from": "connector-twin",
+      "to": "worst-row",
+      "rel": "extends"
+    },
+    {
+      "from": "cowork-vs-claude-code",
+      "to": "account-is-blast-radius",
+      "rel": "example-of"
+    },
+    {
+      "from": "documentation-disagrees",
+      "to": "connector-twin",
+      "rel": "leads-to"
+    }
+  ],
+  "links": {
+    "articles": [
+      "connector-twin-before-you-deploy-an-agent"
+    ],
+    "pages": [
+      "/docs/append-lane-messaging.html",
+      "/demos/vaults/licence-to-operate/index.html"
+    ],
+    "sites": [
+      "https://nhi.sgit.ai/research/shared-drives.html",
+      "https://knowledge.workspace.google.com/admin/gmail/advanced/restrict-email-messages-to-authorized-addresses-or-domains-only",
+      "https://knowledge.workspace.google.com/admin/gmail/advanced/filter-messages-with-attachments",
+      "https://workspaceupdates.googleblog.com/2024/12/configure-third-party-apps-by-select-api-scopes-general-availability.html",
+      "https://developers.google.com/workspace/gmail/api/auth/scopes",
+      "https://claude.com/docs/connectors/google/gmail",
+      "https://support.claude.com/en/articles/10166901-use-google-workspace-connectors",
+      "https://support.claude.com/en/articles/13930458-set-up-role-based-permissions-on-enterprise-plans"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "An access policy for an agent is only as real as its worst row.",
+      "why": "The claim the whole article is built to test, stated so it can be wrong."
+    },
+    {
+      "text": "The only way to know what a connector can do is to try.",
+      "why": "The attachment finding showed a policy written from documentation was wrong."
+    }
+  ]
+}

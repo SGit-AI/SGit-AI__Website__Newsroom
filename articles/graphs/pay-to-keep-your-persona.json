@@ -1,0 +1,139 @@
+{
+  "slug": "pay-to-keep-your-persona",
+  "teaser": "Readers should pay because it helps them: a persona with a name and a graph, several for focus, and one that follows you between devices.",
+  "topics": [
+    "startups-and-strategy",
+    "news-and-evidence"
+  ],
+  "core_idea": "Paying for content because you have to, feel you should, or think it right works to a degree but does not scale and makes readers feel the wrong thing; what readers would pay for is what helps them, time, context, focus and good decisions, carried by a persona built from their reading, named, drawn as a graph, curated, and multiplied for focus, and the paid product is that persona following them between devices and agents with the privacy intact.",
+  "nodes": [
+    {
+      "id": "guilt",
+      "label": "Paying because you have to, or feel you should",
+      "kind": "concept",
+      "summary": "Paywall, the ask, the donation: they work to a degree and do not scale."
+    },
+    {
+      "id": "guardian",
+      "label": "£12 to avoid the supporter messages",
+      "kind": "example",
+      "summary": "The Guardian's middle tier sells, among other things, the end of the ask."
+    },
+    {
+      "id": "wikipedia",
+      "label": "8 million donors, $10.58 on average",
+      "kind": "example",
+      "summary": "Wikimedia's 2023-24 fundraising: what asking everybody reaches."
+    },
+    {
+      "id": "value",
+      "label": "Pay for time, context, focus and good decisions",
+      "kind": "claim",
+      "summary": "What a reader is actually buying."
+    },
+    {
+      "id": "persona",
+      "label": "The persona",
+      "kind": "artefact",
+      "summary": "Built from reading, named from its topics, drawn as a graph, curated with Keep and Not for this persona."
+    },
+    {
+      "id": "focus",
+      "label": "Personas are focus",
+      "kind": "claim",
+      "summary": "Users of personalisation want several personas, one per kind of reading."
+    },
+    {
+      "id": "presets",
+      "label": "Five starting personas",
+      "kind": "artefact",
+      "summary": "Founder, journalist, security lead, AI builder, board member, built from what the site publishes."
+    },
+    {
+      "id": "ipad",
+      "label": "Two devices, two strangers",
+      "kind": "question",
+      "summary": "Not a cheat to worry about but a bad experience that worsens as the persona improves."
+    },
+    {
+      "id": "follow",
+      "label": "A persona that follows you",
+      "kind": "claim",
+      "summary": "To phone, laptop and agent, in a vault only the reader can open: the thing worth paying for."
+    }
+  ],
+  "edges": [
+    {
+      "from": "guardian",
+      "to": "guilt",
+      "rel": "example-of"
+    },
+    {
+      "from": "wikipedia",
+      "to": "guilt",
+      "rel": "example-of"
+    },
+    {
+      "from": "guilt",
+      "to": "value",
+      "rel": "contrasts"
+    },
+    {
+      "from": "value",
+      "to": "persona",
+      "rel": "depends-on"
+    },
+    {
+      "from": "persona",
+      "to": "focus",
+      "rel": "leads-to"
+    },
+    {
+      "from": "presets",
+      "to": "focus",
+      "rel": "example-of"
+    },
+    {
+      "from": "persona",
+      "to": "ipad",
+      "rel": "leads-to"
+    },
+    {
+      "from": "ipad",
+      "to": "follow",
+      "rel": "leads-to"
+    }
+  ],
+  "links": {
+    "articles": [
+      "going-live-with-the-reading-meter",
+      "who-will-game-the-reading-meter",
+      "a-meter-in-the-browser",
+      "what-sgit-is",
+      "one-article-five-readers"
+    ],
+    "pages": [
+      "/account/newsroom.html",
+      "/account/personas.html",
+      "/meter/index.html"
+    ],
+    "sites": [
+      "https://meta.wikimedia.org/wiki/Fundraising/2023-24_Report",
+      "https://thecyberboardroom.com"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "The reader should pay because paying helps them.",
+      "why": "The value proposition in one line."
+    },
+    {
+      "text": "A persona is a way to manage focus.",
+      "why": "Why one reader wants several personas."
+    },
+    {
+      "text": "Two devices, two strangers, is not a security gap; it is a bad user experience, and it gets worse exactly as the product gets better.",
+      "why": "Why cross-device sync is the thing worth paying for."
+    }
+  ]
+}

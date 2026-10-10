@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en" data-root="../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The investigation GitHub owes its customers: what changed in v1.1.0, sgit.ai</title>
+<meta name="description" content="The changes to the article "The investigation GitHub owes its customers" in v1.1.0, paragraph by paragraph.">
+<link rel="canonical" href="https://newsroom.sgit.ai/articles/versions/the-investigation-github-owes-its-customers/v1.1.0.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="sgit.ai">
+<meta property="og:url" content="https://newsroom.sgit.ai/articles/versions/the-investigation-github-owes-its-customers/v1.1.0.html">
+<meta property="og:title" content="The investigation GitHub owes its customers: what changed in v1.1.0, sgit.ai">
+<meta property="og:description" content="The changes to the article "The investigation GitHub owes its customers" in v1.1.0, paragraph by paragraph.">
+<meta property="og:image" content="https://newsroom.sgit.ai/og/default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The investigation GitHub owes its customers: what changed in v1.1.0, sgit.ai">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://newsroom.sgit.ai/og/default.jpg">
+<link rel="alternate" type="text/markdown" href="v1.1.0.md" title="This page as markdown">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "The investigation GitHub owes its customers: what changed in v1.1.0, sgit.ai", "headline": "The investigation GitHub owes its customers: what changed in v1.1.0, sgit.ai", "description": "The changes to the article \"The investigation GitHub owes its customers\" in v1.1.0, paragraph by paragraph.", "url": "https://newsroom.sgit.ai/articles/versions/the-investigation-github-owes-its-customers/v1.1.0.html", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "sgit.ai", "url": "https://sgit.ai"}, "about": {"@type": "SoftwareApplication", "name": "sgit", "sameAs": "https://pypi.org/project/sgit-ai/"}}</script>
+<style>html{background:#faf9f5}body{margin:0;background:#faf9f5;color:#1c1d21;font-family:ui-sans-serif,system-ui,sans-serif;opacity:0;transition:opacity .25s;animation:sg-reveal 0s linear 1.6s forwards}html.ready body{opacity:1;animation:none}@keyframes sg-reveal{to{opacity:1}}</style><noscript><style>body{opacity:1;animation:none}</style></noscript>
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <a class="brand" href="../../../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../../../admin/versions.html" title="Site release history">v0.6.0</a>
+  <sg-meter class="meter-nav" view="balance"></sg-meter>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl here" href="../../../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../index.html">Front page</a>
+      <a class="sl" href="../../../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../../../articles/index.html#all">Every article</a>
+      <a class="sl" href="../../../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../../../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../../../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../../../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../account/index.html">Your reading account</a>
+      <a class="sl" href="../../../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../../../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../../../account/personas.html">Your personas</a>
+      <a class="sl" href="../../../account/top-up.html">Top up</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../../../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../../../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../../../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../../../newsroom/board.html">The board</a>
+      <a class="sl" href="../../../newsroom/log.html">The run log</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../../../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../../../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../../../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../../../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../../../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../../../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../../../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../../../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../../../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../../../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../../../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../world-news-day/index.html">World News Day<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../world-news-day/index.html">The corpus</a>
+      <a class="sl" href="../../../world-news-day/stories/free-to-republish-is-not-a-licence.html">Free to republish is not a licence</a>
+      <a class="sl" href="../../../world-news-day/licences.html">The licence that is not there</a>
+      <a class="sl" href="../../../world-news-day/corpus.html">The twenty-one</a>
+      <a class="sl" href="../../../world-news-day/findings.html">The aggregate</a>
+      <a class="sl" href="../../../world-news-day/terms.html">The vocabulary</a>
+      <a class="sl" href="../../../world-news-day/graph.html">The graph</a>
+      <a class="sl" href="../../../world-news-day/sources.html">Sources</a>
+      <a class="sl" href="../../../world-news-day/contacts.html">How to reach them</a>
+      <a class="sl" href="../../../world-news-day/vault.html">Published vaults</a>
+      <a class="sl" href="../../../world-news-day/vaults/corpus.html">The vault, opened</a>
+      <a class="sl" href="../../../world-news-day/method.html">Method</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../archive/index.html">The archive</a>
+      <a class="sl" href="../../../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../../../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../../../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../../../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../../../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../../../network/index.html">The network</a>
+      <a class="sl" href="../../../admin/versions.html">Release history</a>
+      <a class="sl" href="../../../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../../../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom">&#9733; GitHub</a>
+</div></nav>
+
+<div class="llmschip"><a href="../../../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.6.0</span></a></div>
+<main class="doc diff">
+ <p class="crumb"><a href="../../../index.html">Home</a> / <a href="../../index.html">Articles</a> / <a href="../../the-investigation-github-owes-its-customers.html">The investigation GitHub owes its customers</a> / <a href="../the-investigation-github-owes-its-customers.html">Versions</a> / v1.1.0</p>
+ <h1>The investigation GitHub owes its customers: what changed in v1.1.0</h1>
+ <p class="lead">From v1.0.0 (2026-10-05, <code>ae21f7588</code>) to v1.1.0 (2026-10-05, <code>dc11503b4</code>), paragraph by paragraph.</p>
+ <p class="small dim">0 paragraphs added, 0 removed, 15 changed in place, 66 unchanged. About 78 words added and 1 removed. Insertions are marked like <ins>this</ins>, deletions like <del>this</del>; unchanged runs are folded to one line; figures appear as their file names.</p>
+ <style>.diff ins{background:#e6f4ea;color:#1a5c36;text-decoration:none;padding:0 2px}.diff del{background:#fde8e6;color:#8a1c12;text-decoration:line-through;padding:0 2px}.diff .diff-same{color:#8a8780;font-size:.85em;border-left:3px solid #e3e0d8;padding-left:.7em;margin:1.2em 0}.diff .added{border-left:3px solid #1a7f5a;padding-left:.7em}.diff .removed{border-left:3px solid #b42318;padding-left:.7em;color:#6b6863;text-decoration:line-through}.diff .changed{border-left:3px solid #b45309;padding-left:.7em}.diff .diff-fig{font-style:italic;color:#6b6863}.diff .diff-li{margin:.3em 0 .3em 1em}</style>
+ <p class="small"><a href="../the-investigation-github-owes-its-customers.html">all versions</a> &middot; <a href="v1.1.1.html">v1.1.1 &rarr;</a></p>
+ <p class="diff-same">1 unchanged paragraph</p>
+ <p class="changed">Summary: At 19:11 UTC on 5 October 2026 GitHub's status page said it was investigating degraded performance for Actions. For the next two hours, <del>every customer</del><ins>customers</ins> in every region <ins>who ran on GitHub's hosted runners </ins>could not <del>reliably</del><ins>rely</ins> <del>start</del><ins>on</ins> a <del>workflow,</del><ins>workflow starting,</ins> which for most of the <del>world's</del><ins>software</ins> <del>software</del><ins>that deploys through Actions</ins> is the same as not being able to deploy. This site's own release sat in the queue, was cancelled by the incident, and went live two hours late on a retry. The status page said "delays", then "degraded availability", and will say "resolved". <del>Nobody</del><ins>Unless GitHub chooses to publish it, the</ins> outside <del>GitHub</del><ins>world</ins> will<ins> not</ins> learn which component failed, what it could reach, why the scope of one fault was <del>everyone,</del><ins>everyone on hosted runners,</ins> or whether the same roll of the dice had come up before. This article argues that incidents at platforms this critical should be treated the way aviation treats them: investigated by somebody independent whose only job is prevention, reported whether or not the consequence was severe, published with the evidence, and followed through to the second story, why the system allowed it, and the third, why <del>nobody</del><ins>the fix was not</ins> paid <del>to change it.</del><ins>for.</ins> The<ins> usual</ins> objection has<del> always</del> been that the evidence is confidential, enormous and expensive to gather. It is not any more. Encrypted vaults with one-way read keys, signed records, per-party access and agents that read a graph make the aviation docket affordable for a ninety-minute fault. The companies that depend on GitHub cannot see how close to the wind it flies, and that, not the outage, is the risk nobody has signed for.</p>
+ <p class="diff-same">3 unchanged paragraphs, under In short</p>
+ <p class="changed diff-li">&bull; <b>What happened.</b> From 19:11 UTC, GitHub-hosted runners stopped being reliably assigned to Actions jobs <del>for</del><ins>across</ins> <del>every customer in every</del><ins>the</ins> runner <del>configuration;</del><ins>configurations GitHub named;</ins> by 20:47 the status page called it degraded availability; by 21:09 repository lists and billing pages were failing for some customers too. For <del>most</del><ins>the</ins> <del>organisations,</del><ins>many</ins> <del>Actions</del><ins>organisations</ins> <del>is the</del><ins>whose</ins> only path to <del>production,</del><ins>production</ins> <del>so</del><ins>runs through Actions, and a 2025 survey found most organisations run a single CI/CD tool,</ins> this was a global outage of the ability to deploy.</p>
+ <p class="diff-same">3 unchanged paragraphs</p>
+ <p class="changed diff-li">&bull; <b>The three stories.</b> The first is what happened. The second is why the system allowed it. The third is why <del>nobody</del><ins>the fix was not</ins> paid <del>to change it.</del><ins>for.</ins> Software incident write-ups, when they exist, stop at the first and gesture at the second. The third is where the money is, and it is never told.</p>
+ <p class="diff-same">1 unchanged paragraph</p>
+ <p class="changed diff-li">&bull; <b>The objection, and why it has expired.</b> Independent investigation of software incidents was <del>always</del><ins>long</ins> said to be <del>impossible</del><ins>impractical</ins> because the evidence is confidential, enormous and expensive to gather. Encrypted vaults with one-way read keys, signed and versioned records, per-party access and agents that read the graph make it affordable for a ninety-minute fault.</p>
+ <p class="diff-same">3 unchanged paragraphs, under What happened, as far as anyone outside can tell</p>
+ <p class="changed">That is the whole of what the world is told, and the words are chosen with care. Delays. Some workflows. Degraded. Each is true and each undersells it, because "some workflows may take longer to start across runner configurations" describes, from the inside, a condition in which no customer <del>anywhere</del><ins>on hosted runners</ins> could rely on a workflow starting, and a workflow that does not start is a release that does not ship.</p>
+ <p class="changed">I know because I watched one. This site's previous release, the one that published the evidence vault behind the article before this, was pushed at 19:23. Its validation job ran in eight seconds on the first runner it found. Its tag job then waited for a runner from 19:55, was cancelled at 20:10, and the deploy was skipped; the run was marked failed. It would have stayed failed, because nothing <ins>in our workflow </ins>retries a cancelled deploy, until a fresh commit at 21:26 started a new run, which, in a window the incident happened to leave open, ran in sixty-five seconds. The release went live two hours late and I found out by waiting, which is how every one of GitHub's customers found out tonight.</p>
+ <p class="diff-same">1 unchanged paragraph, under Why "everybody" is the point</p>
+ <p class="changed">Actions and push-and-merge are the two surfaces GitHub has with the widest blast radius, because they are the ones through which every customer changes its own software. GitHub's own figures put that at more than 180 million developers, 630 million repositories and 71 million Actions jobs a day; a 2025 survey of 805 organisations found 59 percent running a single CI/CD tool, and GitHub Actions the most used. When they fail, every customer <ins>that depends on them </ins>loses the same ability at the same time. For a company that needed to ship a security fix, a time-sensitive update or an incident response of its own in those two hours, this was not a delay. It was an outage of its ability to respond, and for some of them, somewhere, tonight, that was catastrophic. We will not hear about those either.</p>
+ <p class="changed">A fault that reaches one customer, or one region, is an incident. A fault that reaches every<ins> hosted-runner</ins> customer in every region at once is a statement about how the system is built: that on the one component which gates every deploy there is <del>no</del><ins>little</ins> isolation between customers or regions, so that the scope of one fault is<ins> close to</ins> everyone. That is not bad luck. It is a design outcome, and it may well be a rational one, chosen against costs <del>nobody</del><ins>that</ins> <del>outside</del><ins>are</ins> <del>can</del><ins>not</ins> <del>see.</del><ins>visible from outside.</ins> The shape a service at this scale should have is regional faults, for some customers, some of the time. When the shape is global, it is a signal about isolation, change control and resilience that senior management should be able to see before an incident shows it to them, and that customers should be able to see before they build their only path to production through it.</p>
+ <p class="changed">It cuts the other way too. If your only path to production runs through Actions, GitHub is inside your blast radius. Can you ship a fix when your pipeline vendor cannot? <del>Most</del><ins>Few</ins> companies have<del> never</del> been asked, which is the due diligence point of <a href="../../send-an-agent-not-a-spreadsheet.html">the previous article</a> turned on the buyer.</p>
+ <p class="diff-same">11 unchanged paragraphs, under What aviation does instead, Near misses, and counting the rolls of the dice, The first, second and third story</p>
+ <p class="changed">The frame I use for incidents comes from Three Mile Island, and I set it out in <a href="https://diniscruz.ai/2025/02/10/second-stories__from-three-mile-island-to-cybersecurity.md">an essay in February 2025</a>. The first story is what happened: the operator did this, the valve stuck, the file was malformed. It is<ins> nearly</ins> always available, because it is the story the organisation tells. The second story is why the system allowed it: the design, the constraints, the normalised deviations that made the first story possible. "Second stories shift the narrative from individual blame to the systemic conditions that make failures more likely." And there is a third, which the five whys reach if you keep going: why <del>nobody</del><ins>the change was not</ins> paid <del>to change the system</del><ins>for</ins> when the second story was already known.</p>
+ <p class="diff-same">3 unchanged paragraphs</p>
+ <p class="changed">Tonight's first story is not yet published. The second story is visible from the outside: on the one component that gates every deploy, the scope of a fault was everyone. The third story is the one <del>nobody</del><ins>that cannot be told from</ins> outside<del> can tell</del> and the one that matters, because it is about trade-offs. Somewhere inside GitHub there is a reason the runner assignment path is not isolated by region or by customer, and it is probably a reasonable reason: cost, complexity, a migration not yet finished, a system too fragile to touch. Those are exactly the reasons that in aviation are called the finding, not the excuse. A system too complicated to understand and too fragile to change is not a reason to leave it alone. It is the single point of failure, named.</p>
+ <p class="diff-same">3 unchanged paragraphs, under The what-if ladder</p>
+ <p class="changed">What if GitHub were down for a day? Every organisation whose only path to production is a workflow is frozen; the ones with a second path are <del>not;</del><ins>not,</ins> <del>nobody</del><ins>and</ins> <del>has</del><ins>some</ins> <del>counted</del><ins>have a second and a third; I know of no public count of</ins> which is which. A week? Releases, dependency updates and incident response across the whole industry stall together, which means vendors cannot patch while their customers are being attacked, and I do not know of a regulator that has modelled what a week without GitHub costs a country. Corrupted, or not restorable? Git is distributed, so the code survives; the issues, the reviews, the pipelines and the record of who decided what are not, and few organisations hold a copy they could prove is the same. Withdrawn or weaponised, access denied to an organisation, a sector or a country by decision rather than by fault? GitHub is mission-critical to governments that do not control it, which is a sovereignty question that somebody, somewhere, has implicitly accepted on their behalf. I wrote about <a href="https://diniscruz.ai/2025/04/29/fail-safe-not-fail-big__cyber-security-inspired-strategies-to-prevent-the-next-iberian-grid-crisis.md">the grid version of this</a> after the Iberian blackout in April 2025: "Europe cannot afford single points of failure; a more federated architecture would enable graceful islanding, where unaffected areas detach and survive." The software version is less visible and no less true.</p>
+ <p class="diff-same">2 unchanged paragraphs, under Why the market does not fix this</p>
+ <p class="changed">The reason nothing pushes back is that the market economics do not work, and they do not work because customers cannot see. Maybe it is fine for GitHub to have this level of resilience and this kind of failure every so often; that is a legitimate decision for a business to make. But its customers have to be able to see how close to the wind it flies and what the true level of resilience is, and today they cannot. We only know about the incidents that reach the status page; the ones that stayed inside are not reported because <del>nothing</del><ins>no rule</ins> requires them to be. Uptime, for a platform with a barrier to exit this high, is mostly a marketing and damage-limitation function, and inside the company the strategic calculation is implicit: customers will not move unless it gets much worse, so the investment goes elsewhere, and the growth that would be the moment to harden the infrastructure is spent on the next feature.</p>
+ <p class="diff-same">8 unchanged paragraphs, under The objection, and why it has expired, What the regulation does and does not do</p>
+ <p class="changed">What none of this does is produce the second story. The reporting duties produce notifications: that an incident happened, its rough scope, and in a month a final report to a regulator, which is not published. The critical third party regimes produce oversight of a handful of hyperscalers for the benefit of financial firms, not of the platform the rest of the economy deploys through. GitHub's own practice is a monthly availability report on its blog with one paragraph per incident, a cause and a remediation, which is more than most platforms give and much less than a docket; its chief technology officer wrote in April 2026, after a merge-queue bug reverted changes in more than two thousand pull requests, that the company's priority was "availability first, then capacity, then new features", and independent trackers counted 257 incidents in the twelve months to that month, a fifth of them in Actions. The scale that depends on it is public in its own numbers: more than 180 million developers, 630 million repositories, 71 million Actions jobs a day, 143 US federal civilian agencies, the UK government's own code. <del>There</del><ins>I</ins> <del>is</del><ins>know of</ins> no <del>body, anywhere,</del><ins>body</ins> whose job is to read the record of what happened tonight and say so in public.</p>
+ <p class="diff-same">5 unchanged paragraphs, under What I would ask for, What is open</p>
+ <p class="changed">The cause of tonight's incident, which GitHub may publish in its monthly availability report and may not. The count of how many organisations have a second path to production, which <del>nobody</del><ins>I</ins> <del>has.</del><ins>have not found; some certainly do, and they are the ones this evening did not touch.</ins> A model of what a week without GitHub costs, which no regulator I know of has published. The incident vault described above, which exists in pieces on this site and has not been assembled for a real incident. And the question of whether the industry will build the aviation habit before or after the step on the ladder that makes it unavoidable. This site's own release got through on a retry tonight. Many will not have.</p>
+ <p class="diff-same">22 unchanged paragraphs, under Threads woven here, Sources</p>
+ <p class="small" style="margin-top:2rem"><a href="../the-investigation-github-owes-its-customers.html">all versions</a> &middot; <a href="v1.1.1.html">v1.1.1 &rarr;</a></p>
+</main>
+<sg-meter view="page" kind="page" date="" topics="" title="The investigation GitHub owes its customers: what changed in v1.1.0, sgit.ai" quiet></sg-meter>
+<script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": ""}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
+<script>
+import('../../../assets/components/sg-meter/v1/v1.3/v1.3.1/sg-meter.js?v=v0.7.39')
+ .catch(function (e) { console.error('[sg-meter] component failed to load:', e); });
+</script>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="netline"><a href="https://sgit.ai" style="display:inline;padding:0"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://pt.newsroom.sgit.ai" style="display:inline;padding:0">&#8593; pt.newsroom.sgit.ai</a> &middot; <a href="https://graphs.sgit.ai" style="display:inline;padding:0">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai" style="display:inline;padding:0">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai" style="display:inline;padding:0">&#8593; nhi.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai" style="display:inline;padding:0">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../../../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../../../admin/versions.html">v0.6.0</a> &middot; <a href="../../../admin/index.html">engineering</a> &middot; <a href="v1.1.0.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../../../index.html">&#8594; The front page</a>
+    <a href="../../../articles/index.html#all">Every article</a>
+    <a href="../../../articles/newsletter/index.html">The newsletter</a>
+    <a href="../../../articles/collections/index.html">Collections</a>
+    <a href="../../../articles/desk/index.html">From the desk</a>
+    <a href="../../../articles/graphs.html">As graphs</a>
+    <a href="../../../subscribe/index.html">Subscribe</a>
+    <a href="../../../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../../../account/index.html">Your reading account</a>
+    <a href="../../../account/newsroom.html">Your newsroom</a>
+    <a href="../../../account/personas.html">Your personas</a>
+    <a href="../../../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../../../newsroom/index.html">How the newsroom runs</a>
+    <a href="../../../newsroom/policies.html">Behaviour policies</a>
+    <a href="../../../newsroom/publish.html">How to publish</a>
+    <a href="../../../newsroom/board.html">The board</a>
+    <a href="../../../newsroom/log.html">The run log</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../../../design/index.html">The design, and what runs</a>
+    <a href="../../../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../../../corrections/index.html">Corrections must propagate</a>
+    <a href="../../../provenance/index.html">Provenance is the product</a>
+    <a href="../../../economics/index.html">Paying the fact creator</a>
+    <a href="../../../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../../../replicate/index.html">Replicate this newsroom</a>
+    <a href="../../../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../../../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../../../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../../../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../../../archive/index.html">The archive</a>
+    <a href="../../../network/index.html">The network</a>
+    <a href="../../../admin/versions.html">Release history</a>
+    <a href="../../../admin/index.html">Admin &amp; engineering</a>
+    <a href="../../../about/participant.html">Where we lose</a>
+    <a href="../../../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+
+<script>
+(function(){var R=document.documentElement.getAttribute('data-root')||'';var V='?v=' + 'v0.7.39';var C=[R,'','../','/'].filter(function(v,i,a){return a.indexOf(v)===i});
+function wait(ms){return new Promise(function(res){var t=Date.now();(function p(){if(window.sg)return res(window.sg);if(Date.now()-t>ms)return res(null);setTimeout(p,60)})()})}
+function grab(sg,p){return new Promise(function(res){(async function(){if(sg&&sg.vfs&&sg.vfs.readText){try{var t=await sg.vfs.readText(p);if(t)return res(t)}catch(e){}}try{var r=await fetch(p+V);if(r.ok)return res(await r.text())}catch(e){}res(null)})()})}
+async function css(sg){for(var i=0;i<C.length;i++){var p=C[i]+'assets/newsroom.css';if(sg&&sg.loadCss){try{await sg.loadCss(p);return}catch(e){}}var t=await grab(sg,p);if(t){var s=document.createElement('style');s.textContent=t;document.head.appendChild(s);return}}}
+async function js(sg,name){name=name||'assets/site.js';for(var i=0;i<C.length;i++){var p=C[i]+name;if(sg&&sg.loadJs){try{await sg.loadJs(p);return}catch(e){}}var t=await grab(sg,p);if(t){try{(0,eval)(t)}catch(e){console.error('[site] js failed',name,e)}return}}}
+async function boot(){var inVault=false;try{inVault=(window!==window.parent)||location.protocol==='blob:'}catch(e){inVault=true}
+var sg=inVault?await wait(2500):null;window.__sgitBoot={roots:C,grab:function(p){return grab(sg,p)},version:V};await css(sg);await js(sg);document.documentElement.classList.add('ready');try{window.parent&&window.parent.postMessage({type:'sg-app-ready'},'*')}catch(e){}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+var mine=V.slice(3),last=0;
+function fresh(){if(location.hostname!=='sgit.ai'||Date.now()-last<60000)return;last=Date.now();
+fetch('/version.txt?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(t){t=(t||'').trim();if(!/^v[0-9]+[.][0-9]+[.][0-9]+$/.test(t)||t===mine)return;
+var k='sgit.fresh:'+location.pathname;try{if(sessionStorage.getItem(k)===t)return;sessionStorage.setItem(k,t)}catch(e){}
+var u=new URL(location.href);u.searchParams.set('v',t);location.replace(u.href)}).catch(function(){})}
+try{var u=new URL(location.href);if(u.searchParams.get('v')===mine){u.searchParams.delete('v');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}
+fresh();addEventListener('pageshow',function(e){if(e.persisted){last=0;fresh()}});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')fresh()});
+})();
+</script>
+</body>
+</html>

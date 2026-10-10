@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en" data-root="../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>If somebody built a company on code review: what changed in v1.2.0, sgit.ai</title>
+<meta name="description" content="The changes to the article "If somebody built a company on code review" in v1.2.0, paragraph by paragraph.">
+<link rel="canonical" href="https://newsroom.sgit.ai/articles/versions/if-somebody-built-a-company-on-code-review/v1.2.0.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="sgit.ai">
+<meta property="og:url" content="https://newsroom.sgit.ai/articles/versions/if-somebody-built-a-company-on-code-review/v1.2.0.html">
+<meta property="og:title" content="If somebody built a company on code review: what changed in v1.2.0, sgit.ai">
+<meta property="og:description" content="The changes to the article "If somebody built a company on code review" in v1.2.0, paragraph by paragraph.">
+<meta property="og:image" content="https://newsroom.sgit.ai/og/default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="If somebody built a company on code review: what changed in v1.2.0, sgit.ai">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://newsroom.sgit.ai/og/default.jpg">
+<link rel="alternate" type="text/markdown" href="v1.2.0.md" title="This page as markdown">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "If somebody built a company on code review: what changed in v1.2.0, sgit.ai", "headline": "If somebody built a company on code review: what changed in v1.2.0, sgit.ai", "description": "The changes to the article \"If somebody built a company on code review\" in v1.2.0, paragraph by paragraph.", "url": "https://newsroom.sgit.ai/articles/versions/if-somebody-built-a-company-on-code-review/v1.2.0.html", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "sgit.ai", "url": "https://sgit.ai"}, "about": {"@type": "SoftwareApplication", "name": "sgit", "sameAs": "https://pypi.org/project/sgit-ai/"}}</script>
+<style>html{background:#faf9f5}body{margin:0;background:#faf9f5;color:#1c1d21;font-family:ui-sans-serif,system-ui,sans-serif;opacity:0;transition:opacity .25s;animation:sg-reveal 0s linear 1.6s forwards}html.ready body{opacity:1;animation:none}@keyframes sg-reveal{to{opacity:1}}</style><noscript><style>body{opacity:1;animation:none}</style></noscript>
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <a class="brand" href="../../../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../../../admin/versions.html" title="Site release history">v0.6.0</a>
+  <sg-meter class="meter-nav" view="balance"></sg-meter>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl here" href="../../../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../index.html">Front page</a>
+      <a class="sl" href="../../../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../../../articles/index.html#all">Every article</a>
+      <a class="sl" href="../../../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../../../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../../../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../../../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../account/index.html">Your reading account</a>
+      <a class="sl" href="../../../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../../../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../../../account/personas.html">Your personas</a>
+      <a class="sl" href="../../../account/top-up.html">Top up</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../../../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../../../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../../../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../../../newsroom/board.html">The board</a>
+      <a class="sl" href="../../../newsroom/log.html">The run log</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../../../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../../../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../../../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../../../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../../../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../../../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../../../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../../../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../../../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../../../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../../../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../world-news-day/index.html">World News Day<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../world-news-day/index.html">The corpus</a>
+      <a class="sl" href="../../../world-news-day/stories/free-to-republish-is-not-a-licence.html">Free to republish is not a licence</a>
+      <a class="sl" href="../../../world-news-day/licences.html">The licence that is not there</a>
+      <a class="sl" href="../../../world-news-day/corpus.html">The twenty-one</a>
+      <a class="sl" href="../../../world-news-day/findings.html">The aggregate</a>
+      <a class="sl" href="../../../world-news-day/terms.html">The vocabulary</a>
+      <a class="sl" href="../../../world-news-day/graph.html">The graph</a>
+      <a class="sl" href="../../../world-news-day/sources.html">Sources</a>
+      <a class="sl" href="../../../world-news-day/contacts.html">How to reach them</a>
+      <a class="sl" href="../../../world-news-day/vault.html">Published vaults</a>
+      <a class="sl" href="../../../world-news-day/vaults/corpus.html">The vault, opened</a>
+      <a class="sl" href="../../../world-news-day/method.html">Method</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../archive/index.html">The archive</a>
+      <a class="sl" href="../../../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../../../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../../../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../../../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../../../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../../../network/index.html">The network</a>
+      <a class="sl" href="../../../admin/versions.html">Release history</a>
+      <a class="sl" href="../../../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../../../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom">&#9733; GitHub</a>
+</div></nav>
+
+<div class="llmschip"><a href="../../../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.6.0</span></a></div>
+<main class="doc diff">
+ <p class="crumb"><a href="../../../index.html">Home</a> / <a href="../../index.html">Articles</a> / <a href="../../if-somebody-built-a-company-on-code-review.html">If somebody built a company on code review</a> / <a href="../if-somebody-built-a-company-on-code-review.html">Versions</a> / v1.2.0</p>
+ <h1>If somebody built a company on code review: what changed in v1.2.0</h1>
+ <p class="lead">From v1.1.0 (2026-10-05, <code>4d6a7b929</code>) to v1.2.0 (2026-10-05, <code>9e4d1cb45</code>), paragraph by paragraph.</p>
+ <p class="small dim">13 paragraphs added, 0 removed, 4 changed in place, 112 unchanged. About 1,508 words added and 96 removed. Insertions are marked like <ins>this</ins>, deletions like <del>this</del>; unchanged runs are folded to one line; figures appear as their file names.</p>
+ <style>.diff ins{background:#e6f4ea;color:#1a5c36;text-decoration:none;padding:0 2px}.diff del{background:#fde8e6;color:#8a1c12;text-decoration:line-through;padding:0 2px}.diff .diff-same{color:#8a8780;font-size:.85em;border-left:3px solid #e3e0d8;padding-left:.7em;margin:1.2em 0}.diff .added{border-left:3px solid #1a7f5a;padding-left:.7em}.diff .removed{border-left:3px solid #b42318;padding-left:.7em;color:#6b6863;text-decoration:line-through}.diff .changed{border-left:3px solid #b45309;padding-left:.7em}.diff .diff-fig{font-style:italic;color:#6b6863}.diff .diff-li{margin:.3em 0 .3em 1em}</style>
+ <p class="small"><a href="v1.1.0.html">&larr; v1.1.0</a> &middot; <a href="../if-somebody-built-a-company-on-code-review.html">all versions</a> &middot; <a href="v1.3.0.html">v1.3.0 &rarr;</a></p>
+ <p class="changed"># If somebody built a company on code review: <del>the</del><ins>how</ins> <del>grammar</del><ins>I would do it, and why it</ins> is <del>fractal,</del><ins>only</ins> <del>the</del><ins>now</ins> <del>layers are yours, and the review is the join between what was meant and what was built</del><ins>possible</ins></p>
+ <p class="changed">Summary: <del>The</del><ins>A reader of the</ins> code review article <del>drew</del><ins>replied</ins> <del>a careful reply from a reader,</del><ins>with</ins> seven <del>questions</del><ins>good</ins> <del>long,</del><ins>questions,</ins> and a voice memo <del>from</del><ins>of</ins> <del>me</del><ins>mine</ins> <del>answering</del><ins>answered</ins> <del>them.</del><ins>them</ins> <del>This</del><ins>with</ins> <del>is</del><ins>a</ins> <del>the</del><ins>change</ins> <del>written</del><ins>of</ins> <del>answer, framed the way the memo framed it:</del><ins>frame:</ins> if somebody were building a company on code review, this is how I would do it. The <del>questions were good ones. Could the graph be built from the user stories before the code exists, and the two ends married? Where were the commands and modules layers in the example? Are hand-written stories too high level, and should they be rules and examples instead? Is "a refactor leaves the class shapes still" wrong when an architecture migration keeps only the client interface? Where do deploys and infrastructure go? How do you stop the cost spiking when a repository is onboarded? What is the blast radius compared to, and how long should the report be? The </del>answers turn on <del>one</del><ins>a</ins> distinction the first article did not make clearly enough. What is fractal in a fractal semantic graph is the <del>grammar:</del><ins>grammar;</ins> <del>nodes, edges, an ontology, a taxonomy and a way to the next altitude. Which</del><ins>which</ins> layers <del>exist, what they are called and where they stop</del><ins>exist</ins> is decided by each company,<del> its culture, its languages and its stack,</del> and a product that standardises them away loses the thing it was meant to review. <ins>Two things make the rest possible only now. One technology can read every layer, from strategy to bytecode, so the graphs can be built at every altitude and built close to reality. And that moves code review from an art of opinion and power to a science of facts, provided the models are used to build, prune and maintain the graphs and then taken out of the line. </ins>From there: a projected graph <del>built top down </del>from <del>stories,</del><ins>stories</ins> <del>rules</del><ins>before the code exists</ins> and<del> examples,</del> a derived graph <del>built bottom up </del>from the <del>syntax</del><ins>code,</ins> <del>tree, and</del><ins>with</ins> the review as the join; a refactor as relative to the layer <del>you</del><ins>held</ins> <del>hold</del><ins>still,</ins> <del>still;</del><ins>correcting the first article;</ins> the deploy as a layer; who reads the code at each stage of evolution, after Wardley; reshaping a change <del>rather</del><ins>by</ins> <del>than</del><ins>reach;</ins> <del>reviewing it</del><ins>budgets</ins> as <del>it</del><ins>the</ins> <del>arrived;</del><ins>objective</ins> <del>a</del><ins>good</ins> <del>budget per altitude</del><ins>enough</ins> and the five whys as the <del>loop</del><ins>loop;</ins> <del>that</del><ins>behaviour</ins> <del>makes</del><ins>policies for</ins> the <del>next</del><ins>agents</ins> <del>review</del><ins>doing</ins> <del>cheaper;</del><ins>the work;</ins> and open source as the only <del>business </del>model that <del>fits, because the layers are the customer's and the loop has to run where the code is.</del><ins>fits.</ins></p>
+ <p class="diff-same">3 unchanged paragraphs, under In short</p>
+ <p class="diff-li added">&bull; <b>One technology can read every layer.</b> People moved between strategy and source code by instinct, and it never scaled, because nothing could process every altitude in one pass. A language model can, from a board objective to a syntax tree, in one path or delegated to sub-agents. That is what makes a graph at every layer buildable, and buildable close to reality, and it is why the companies that spent fortunes trying this before could not.</p>
+ <p class="diff-li added">&bull; <b>From art to science.</b> Code review has mostly been an art: opinion, taste, power, and agendas, because there was no fact base to go back to. The graph and the map give one: we are not doing this because the project is at explorer stage; we must do this because it is now a product. The models get review there only if they are used to build, prune and maintain the graphs against reality and then taken out of the line, so that what runs on every change is graphs, deterministic checks and formulas. That is not a lowest common denominator. The better the structure, the faster you can go.</p>
+ <p class="diff-same">8 unchanged paragraphs</p>
+ <p class="changed diff-li">&bull; <b>Constraints keep it in control; the five whys make it cheaper every time.</b> A budget per altitude and per change, decided in <del>advance.</del><ins>advance, which is also the objective way to say good enough. The agents doing the work run under a behaviour policy written before the first run.</ins> Onboard a repository by starting at one point and continuing, never by analysing everything. And every finding at one layer is a question about the layer below, which is where the fix goes, as a rule or a graph query, so that the next change like it is caught for the price of a query.</p>
+ <p class="diff-same">2 unchanged paragraphs</p>
+ <h2 class="added">One technology, every layer</h2>
+ <p class="added">Most of what follows is something good engineers have always done by instinct. A senior reviewer reads a diff and sees the story it breaks; an architect looks at a pull request and sees a boundary crossed; a product owner reads a commit message and knows the feature it does not finish. The move between altitudes, from what the business wants to what the code does, has been made in people's heads for as long as there has been code review, sometimes deliberately, mostly by instinct. What has never scaled is doing it explicitly, because nothing could process every layer. The tools that read syntax trees could not read a strategy document, and the people who read strategy documents did not read syntax trees, and the layers in between were held together by meetings.</p>
+ <p class="added">That is the thing that changed, and it is worth stopping on how strange it is. One technology can now read a board objective, a user story, an architecture diagram, a class, a method body, a syntax tree and, if you want, the bytecode, in the same path or delegated to sub-agents that are the same technology. It is not a different tool at each altitude with a format conversion between them. It is the same reader all the way down, and it can name a node and the verb to the next one at any altitude for a fraction of a cent. That is what makes a graph at every layer buildable. And because the same reader can also be shown the code, the tests and the users, it is what makes the graph buildable in a good way, correct or close to reality, rather than a drawing somebody made in a workshop.</p>
+ <p class="added">I say this near the top because a great many people will agree with everything below in principle and then say it is ridiculous, that companies have spent millions trying to connect requirements to code and failed, and they will be right about the history. The attempts failed because they needed a different tool and a different team at each layer, and the joins between them were hand-maintained and died. The approach here has one grammar and one reader, it grows along the paths people actually walk rather than by mapping everything, and it is driven by what the change can reach and what the business values, which is a different proposition from the ones that failed.</p>
+ <h2 class="added">From art to science</h2>
+ <p class="added">Code review, like security review, has mostly been an art. It was opinionated, and the opinions were not always about the code. A good deal of it was power: who got to say no, whose taste set the style, whose agenda the sprint served, and sometimes a reviewer's quiet wish that the team were working on something else. Some of those judgements were right. There are changes that should not be made because they make no sense in context, and a reviewer who says so is doing their job. But the reason so much of it was politics is that there was no fact base to go back to. You could not say we are doing this because of that, or more usefully, we are not doing this because of that, and point at something.</p>
+ <p class="added">The map gives the first fact. We are not adding tests to this because it is an explorer project, and that is fine. We have to add them now because it has customers, and it is a villager project. We are stopping at the boundary of this component because it is a commodity and the behaviour at the boundary is what matters. Each of those is a sentence about where the code is, not about who is in the room, and each can be checked against what the code is doing and who depends on it.</p>
+ <p class="added">The graph gives the rest. A change reaches these commands and these stories, or it does not. The class shapes held, or they did not. A rule holds everywhere, or here are the nodes where it does not. Those are facts, and the point of this whole article is that the models can get review to them, but only if they are used in a particular way: to build the graphs, to review the graphs, to prune and maintain them against reality, to run the feedback loops that correct them, and then to get out of the line. The destination is graphs, deterministic checks, formulas and flows that run on every change without a model in them, which is what a science of code review would look like. A model in the line on every change is the art again with a different reviewer.</p>
+ <p class="added">People sometimes hear that as a race to the lowest common denominator, as if science meant fewer judgements and worse code. I have found the opposite, every time. The better the structure, the better the principles, the better the components and the more commoditised the parts, the faster a team can go, because it can react, because it can see, and because it can stop. Budgets are the clearest case. Being able to say to a team that the budget for this is spent was one of the most useful controls I ever had, because teams are very good at keeping going. Engineering has a bad name for over-engineering, and some of it is deserved, but a lot of what gets called over-engineering is just work that should have stopped at the point of diminishing returns and had no objective way to know it had reached it. Code review is the same: technically you can keep reviewing forever. A budget per altitude is an objective good enough, and the five whys are how the good enough moves, one rule at a time, in the right direction.</p>
+ <p class="added">And it makes code review accountable, which is what it should always have been. Code review when it works is one of the most enjoyable things in software. People like doing it, it adds value you can see, and it gives you the confidence to ship, which is the confidence not to slow down. The test of it is also plain: a review that works is not contradicted when the change hits production. That contradiction, or its absence, is the feedback loop, and it is the thing that separates what can be automated from what cannot. What a check caught, or should have caught, becomes a rule. What only a person saw is the judgement that stays with people, and the review product's job is to deliver that judgement the fifty lines it needs and not the ten thousand it does not.</p>
+ <p class="diff-same">57 unchanged paragraphs, under The grammar is fractal, the layers are yours, Build the graph from the top, before the code exists, The layers the example had and the text did not walk…</p>
+ <p class="added">The budgets live in the same place as the rest of the agents' rules. Every agent doing this work, the one deriving a layer, the one proposing stories, the one summarising a change, runs under an <a href="https://riskmandate.ai/abp.html">Agent Behaviour Policy</a> written before its first run, which is how the <a href="../../six-agents-one-inbox.html">agents behind this site</a> are run already. The policy says which repositories the agent may read, which actions it may take, where it may write, what it may spend and where it is to focus, and it is the control on the agents' own blast radius: a reviewing agent that can read one repository and write only to a vault of findings can leak nothing from the next customer and can merge nothing on its own. Review of the code and control of the reviewers are the same shape, which is as it should be, and the footprint an agent leaves is read against its policy the way a change is read against its intent.</p>
+ <p class="diff-same">21 unchanged paragraphs, under What to compare the blast radius to, and how long the report should be, The company, What the first article got wrong, and what this one leaves open…</p>
+ <p class="changed diff-li">&bull; <a href="../../footprint-and-blast-radius.html">Footprint and blast radius</a>, the same measure applied to agents rather than <del>code.</del><ins>code, and <a href="../../six-agents-one-inbox.html">Six agents, one inbox</a>, the behaviour policies the reviewing agents would run under.</ins></p>
+ <p class="diff-same">21 unchanged paragraphs, under Sources</p>
+ <p class="small" style="margin-top:2rem"><a href="v1.1.0.html">&larr; v1.1.0</a> &middot; <a href="../if-somebody-built-a-company-on-code-review.html">all versions</a> &middot; <a href="v1.3.0.html">v1.3.0 &rarr;</a></p>
+</main>
+<sg-meter view="page" kind="page" date="" topics="" title="If somebody built a company on code review: what changed in v1.2.0, sgit.ai" quiet></sg-meter>
+<script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": ""}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
+<script>
+import('../../../assets/components/sg-meter/v1/v1.3/v1.3.1/sg-meter.js?v=v0.7.39')
+ .catch(function (e) { console.error('[sg-meter] component failed to load:', e); });
+</script>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="netline"><a href="https://sgit.ai" style="display:inline;padding:0"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://pt.newsroom.sgit.ai" style="display:inline;padding:0">&#8593; pt.newsroom.sgit.ai</a> &middot; <a href="https://graphs.sgit.ai" style="display:inline;padding:0">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai" style="display:inline;padding:0">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai" style="display:inline;padding:0">&#8593; nhi.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai" style="display:inline;padding:0">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../../../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../../../admin/versions.html">v0.6.0</a> &middot; <a href="../../../admin/index.html">engineering</a> &middot; <a href="v1.2.0.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../../../index.html">&#8594; The front page</a>
+    <a href="../../../articles/index.html#all">Every article</a>
+    <a href="../../../articles/newsletter/index.html">The newsletter</a>
+    <a href="../../../articles/collections/index.html">Collections</a>
+    <a href="../../../articles/desk/index.html">From the desk</a>
+    <a href="../../../articles/graphs.html">As graphs</a>
+    <a href="../../../subscribe/index.html">Subscribe</a>
+    <a href="../../../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../../../account/index.html">Your reading account</a>
+    <a href="../../../account/newsroom.html">Your newsroom</a>
+    <a href="../../../account/personas.html">Your personas</a>
+    <a href="../../../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../../../newsroom/index.html">How the newsroom runs</a>
+    <a href="../../../newsroom/policies.html">Behaviour policies</a>
+    <a href="../../../newsroom/publish.html">How to publish</a>
+    <a href="../../../newsroom/board.html">The board</a>
+    <a href="../../../newsroom/log.html">The run log</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../../../design/index.html">The design, and what runs</a>
+    <a href="../../../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../../../corrections/index.html">Corrections must propagate</a>
+    <a href="../../../provenance/index.html">Provenance is the product</a>
+    <a href="../../../economics/index.html">Paying the fact creator</a>
+    <a href="../../../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../../../replicate/index.html">Replicate this newsroom</a>
+    <a href="../../../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../../../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../../../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../../../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../../../archive/index.html">The archive</a>
+    <a href="../../../network/index.html">The network</a>
+    <a href="../../../admin/versions.html">Release history</a>
+    <a href="../../../admin/index.html">Admin &amp; engineering</a>
+    <a href="../../../about/participant.html">Where we lose</a>
+    <a href="../../../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+
+<script>
+(function(){var R=document.documentElement.getAttribute('data-root')||'';var V='?v=' + 'v0.7.39';var C=[R,'','../','/'].filter(function(v,i,a){return a.indexOf(v)===i});
+function wait(ms){return new Promise(function(res){var t=Date.now();(function p(){if(window.sg)return res(window.sg);if(Date.now()-t>ms)return res(null);setTimeout(p,60)})()})}
+function grab(sg,p){return new Promise(function(res){(async function(){if(sg&&sg.vfs&&sg.vfs.readText){try{var t=await sg.vfs.readText(p);if(t)return res(t)}catch(e){}}try{var r=await fetch(p+V);if(r.ok)return res(await r.text())}catch(e){}res(null)})()})}
+async function css(sg){for(var i=0;i<C.length;i++){var p=C[i]+'assets/newsroom.css';if(sg&&sg.loadCss){try{await sg.loadCss(p);return}catch(e){}}var t=await grab(sg,p);if(t){var s=document.createElement('style');s.textContent=t;document.head.appendChild(s);return}}}
+async function js(sg,name){name=name||'assets/site.js';for(var i=0;i<C.length;i++){var p=C[i]+name;if(sg&&sg.loadJs){try{await sg.loadJs(p);return}catch(e){}}var t=await grab(sg,p);if(t){try{(0,eval)(t)}catch(e){console.error('[site] js failed',name,e)}return}}}
+async function boot(){var inVault=false;try{inVault=(window!==window.parent)||location.protocol==='blob:'}catch(e){inVault=true}
+var sg=inVault?await wait(2500):null;window.__sgitBoot={roots:C,grab:function(p){return grab(sg,p)},version:V};await css(sg);await js(sg);document.documentElement.classList.add('ready');try{window.parent&&window.parent.postMessage({type:'sg-app-ready'},'*')}catch(e){}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+var mine=V.slice(3),last=0;
+function fresh(){if(location.hostname!=='sgit.ai'||Date.now()-last<60000)return;last=Date.now();
+fetch('/version.txt?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(t){t=(t||'').trim();if(!/^v[0-9]+[.][0-9]+[.][0-9]+$/.test(t)||t===mine)return;
+var k='sgit.fresh:'+location.pathname;try{if(sessionStorage.getItem(k)===t)return;sessionStorage.setItem(k,t)}catch(e){}
+var u=new URL(location.href);u.searchParams.set('v',t);location.replace(u.href)}).catch(function(){})}
+try{var u=new URL(location.href);if(u.searchParams.get('v')===mine){u.searchParams.delete('v');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}
+fresh();addEventListener('pageshow',function(e){if(e.persisted){last=0;fresh()}});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')fresh()});
+})();
+</script>
+</body>
+</html>

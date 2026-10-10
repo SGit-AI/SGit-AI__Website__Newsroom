@@ -1,0 +1,169 @@
+{
+  "slug": "the-waiting-room-knew-first",
+  "teaser": "Staff at two London hospitals said the IT was down; nothing a local could check showed it. A live local story about where local information comes from now.",
+  "topics": [
+    "news-and-evidence",
+    "vaults-and-method"
+  ],
+  "core_idea": "On 8 October 2026 staff at two sites of one London trust told patients the IT systems were down, a five-hour wait was announced and a doctor called it national, yet nothing a local person could check before leaving home showed any of it; the story is not the outage or the hospital but the gap in local information: some UK nations publish live emergency waits, England has no national equivalent, local news has thinned and social feeds have fragmented, so the evidence is kept in a vault by level, with sources re-checked, an enquiry to the trust and the answer logged, as the first live counterpart to the fictional bridge story.",
+  "nodes": [
+    {
+      "id": "afternoon",
+      "label": "Two sites, one message: the IT is down",
+      "kind": "example",
+      "summary": "Staff at Charing Cross and Western Eye; about five hours announced; a doctor said national."
+    },
+    {
+      "id": "levels",
+      "label": "Evidence separated by level",
+      "kind": "method",
+      "summary": "Heard second-hand, told by staff, observed, documented, confirmed by the organisation, corroborated."
+    },
+    {
+      "id": "onetrust",
+      "label": "Two sites, one trust",
+      "kind": "claim",
+      "summary": "Both run by Imperial College Healthcare: not two independent signs of a national outage."
+    },
+    {
+      "id": "access",
+      "label": "Not found is not none",
+      "kind": "claim",
+      "summary": "Status channels need a login or an NHS network; blocked pages are limits of access."
+    },
+    {
+      "id": "gap",
+      "label": "The waiting room knew first",
+      "kind": "claim",
+      "summary": "The information existed and reached people only once they were already there."
+    },
+    {
+      "id": "decision",
+      "label": "Newsworthy to the person deciding",
+      "kind": "concept",
+      "summary": "Go now, later, tomorrow or elsewhere: the decision a status line would have changed."
+    },
+    {
+      "id": "live",
+      "label": "Live waits exist in parts of the UK",
+      "kind": "example",
+      "summary": "Northern Ireland and Wales publish live emergency waits; England has no national page."
+    },
+    {
+      "id": "duty",
+      "label": "A duty to warn, for emergencies",
+      "kind": "concept",
+      "summary": "The Civil Contingencies Act duty applies to serious emergencies, not an afternoon slowdown."
+    },
+    {
+      "id": "thinned",
+      "label": "Where local information went",
+      "kind": "claim",
+      "summary": "News deserts, fewer people on X for news, local groups with rumour and hoaxes."
+    },
+    {
+      "id": "notshame",
+      "label": "Not naming and shaming",
+      "kind": "claim",
+      "summary": "The question is the channel, for any trust, council or operator, not the staff."
+    },
+    {
+      "id": "vault",
+      "label": "The Local evidence log",
+      "kind": "artefact",
+      "summary": "Observations, claims, sources, leads, an enquiry, scheduled checks, by incident."
+    },
+    {
+      "id": "close",
+      "label": "What would close the gap?",
+      "kind": "question",
+      "summary": "A plain status line, a route from inside to outside, evidence not rumour, an agent that asks."
+    }
+  ],
+  "edges": [
+    {
+      "from": "afternoon",
+      "to": "levels",
+      "rel": "depends-on"
+    },
+    {
+      "from": "onetrust",
+      "to": "afternoon",
+      "rel": "extends"
+    },
+    {
+      "from": "access",
+      "to": "gap",
+      "rel": "extends"
+    },
+    {
+      "from": "afternoon",
+      "to": "gap",
+      "rel": "leads-to"
+    },
+    {
+      "from": "gap",
+      "to": "decision",
+      "rel": "produces"
+    },
+    {
+      "from": "live",
+      "to": "gap",
+      "rel": "contrasts"
+    },
+    {
+      "from": "duty",
+      "to": "gap",
+      "rel": "compared-with"
+    },
+    {
+      "from": "thinned",
+      "to": "gap",
+      "rel": "leads-to"
+    },
+    {
+      "from": "notshame",
+      "to": "gap",
+      "rel": "answers"
+    },
+    {
+      "from": "vault",
+      "to": "levels",
+      "rel": "produces"
+    },
+    {
+      "from": "close",
+      "to": "gap",
+      "rel": "answers"
+    },
+    {
+      "from": "vault",
+      "to": "close",
+      "rel": "example-of"
+    }
+  ],
+  "links": {
+    "articles": [
+      "the-bridge-followed-to-the-end",
+      "story-vault-meets-reader-skills"
+    ],
+    "pages": [
+      "demos/vaults/local-evidence-log/index.html"
+    ],
+    "sites": []
+  },
+  "quotes": [
+    {
+      "text": "What strikes me is that the only way to find out was to be there.",
+      "why": "The gap in one line."
+    },
+    {
+      "text": "It is not small if you are deciding whether to set off now.",
+      "why": "Why a small story is newsworthy to the person affected."
+    },
+    {
+      "text": "Blocked is a limit of our access, never evidence about the hospital.",
+      "why": "The method's discipline about not found."
+    }
+  ]
+}

@@ -1,0 +1,194 @@
+{
+  "slug": "the-investigation-github-owes-its-customers",
+  "teaser": "A global GitHub Actions outage read the way aviation reads an incident: independent inquiry, near-miss reporting, second and third stories, vaults for the evidence.",
+  "topics": [
+    "agents-and-policy",
+    "vaults-and-method"
+  ],
+  "core_idea": "A fault that reaches every customer of a platform the world deploys through is a near miss for all of them and a statement about how the platform is built, and it deserves what aviation gives its incidents: an independent investigator whose only job is prevention, mandatory and confidential reporting, published evidence, and the second and third story, why the system allowed it and why the fix was not paid for; the old objection that software incident evidence is too confidential and expensive to share has expired, because signed, versioned vaults with one-way read keys and agents that read the graph make the aviation docket affordable for a ninety-minute fault.",
+  "nodes": [
+    {
+      "id": "the-incident",
+      "label": "What happened on 5 October",
+      "kind": "example",
+      "summary": "From 19:11 UTC hosted runners stopped being reliably assigned for every customer; by 20:47 degraded availability; this site's release was cancelled by it and went live two hours late on a retry."
+    },
+    {
+      "id": "two-records",
+      "label": "The status page is the whole record",
+      "kind": "claim",
+      "summary": "Delays, degraded, resolved: true words chosen with care that do not name the component, its reach, the scope or whether the same thing nearly happened before."
+    },
+    {
+      "id": "everybody",
+      "label": "Everybody is the point",
+      "kind": "claim",
+      "summary": "A fault reaching one customer is an incident; a fault reaching all of them at once is a statement about isolation on the one component that gates every deploy, and a near miss for everyone who needed to ship a fix."
+    },
+    {
+      "id": "aviation",
+      "label": "What aviation does",
+      "kind": "method",
+      "summary": "Independent investigators whose sole objective is prevention, mandatory reporting of serious incidents, confidential near-miss reporting in the tens of thousands a year, preliminary reports within weeks, full dockets, tracked recommendations."
+    },
+    {
+      "id": "near-miss",
+      "label": "A near miss gets the same investigation",
+      "kind": "claim",
+      "summary": "Because the systemic causes are the same and the only difference is luck; actual damage is usually a tenth of what was possible; you don't build safety on luck."
+    },
+    {
+      "id": "dice",
+      "label": "Count the rolls of the dice",
+      "kind": "method",
+      "summary": "How many times the same event happened where they got away with it; from a one-off to a predictable statistic; do the people who depend on you consent to that risk."
+    },
+    {
+      "id": "three-stories",
+      "label": "First, second and third story",
+      "kind": "concept",
+      "summary": "What happened; why the system allowed it; why the fix was not paid for. Software write-ups stop at the first; the third is where the money is."
+    },
+    {
+      "id": "whatif",
+      "label": "The what-if ladder",
+      "kind": "question",
+      "summary": "A day, a week, a corruption that cannot be restored, a withdrawal of service by decision: each a dependency question with a blast radius that has not been published, for the platform or for countries."
+    },
+    {
+      "id": "market",
+      "label": "Why the market does not fix it",
+      "kind": "claim",
+      "summary": "Customers cannot see how close to the wind the platform flies; only incidents that reach the status page are known; with the barrier to exit this high, uptime becomes marketing and the business case for hardening cannot be made from inside."
+    },
+    {
+      "id": "objection-expired",
+      "label": "The objection has expired",
+      "kind": "claim",
+      "summary": "Evidence was confidential, enormous and expensive to share; signed, versioned vaults, one-way read keys per party, agents under a behaviour policy and findings as a graph make the aviation docket affordable for a ninety-minute fault."
+    },
+    {
+      "id": "evidence-pipeline",
+      "label": "How the evidence would move",
+      "kind": "method",
+      "summary": "Provider captures and signs; reviews and redacts, never rewrites; investigator reads by need; each customer gets its own derived vault; findings published as a graph linked to evidence hashes with recommendations held open."
+    },
+    {
+      "id": "regulation",
+      "label": "What the regulation does and does not do",
+      "kind": "example",
+      "summary": "Incident reporting duties and critical third-party regimes are arriving; none yet requires an independent published second story for a platform outage."
+    },
+    {
+      "id": "four-asks",
+      "label": "Four things to ask for",
+      "kind": "method",
+      "summary": "A published second story within thirty days for every status-page incident; near misses counted and reported in aggregate; evidence captured into a signed record as a matter of course; an independent reader when an incident reaches everyone."
+    },
+    {
+      "id": "help-inside",
+      "label": "Help the people inside",
+      "kind": "claim",
+      "summary": "Engineers who know where the single points of failure are cannot make the business case against revenue without evidence; a readable record makes it for them."
+    }
+  ],
+  "edges": [
+    {
+      "from": "the-incident",
+      "to": "two-records",
+      "rel": "produces"
+    },
+    {
+      "from": "the-incident",
+      "to": "everybody",
+      "rel": "leads-to"
+    },
+    {
+      "from": "two-records",
+      "to": "aviation",
+      "rel": "contrasts"
+    },
+    {
+      "from": "everybody",
+      "to": "near-miss",
+      "rel": "example-of"
+    },
+    {
+      "from": "near-miss",
+      "to": "dice",
+      "rel": "extends"
+    },
+    {
+      "from": "aviation",
+      "to": "three-stories",
+      "rel": "depends-on"
+    },
+    {
+      "from": "everybody",
+      "to": "whatif",
+      "rel": "leads-to"
+    },
+    {
+      "from": "whatif",
+      "to": "market",
+      "rel": "leads-to"
+    },
+    {
+      "from": "market",
+      "to": "objection-expired",
+      "rel": "contrasts"
+    },
+    {
+      "from": "objection-expired",
+      "to": "evidence-pipeline",
+      "rel": "produces"
+    },
+    {
+      "from": "regulation",
+      "to": "four-asks",
+      "rel": "compared-with"
+    },
+    {
+      "from": "evidence-pipeline",
+      "to": "four-asks",
+      "rel": "leads-to"
+    },
+    {
+      "from": "three-stories",
+      "to": "help-inside",
+      "rel": "leads-to"
+    },
+    {
+      "from": "market",
+      "to": "help-inside",
+      "rel": "leads-to"
+    }
+  ],
+  "links": {
+    "articles": [
+      "green-does-not-mean-live",
+      "footprint-and-blast-radius",
+      "ultimate-insider-three-collisions",
+      "every-risk-is-already-accepted",
+      "send-an-agent-not-a-spreadsheet"
+    ],
+    "pages": [
+      "/docs/pki.html",
+      "/docs/append-lane-messaging.html"
+    ],
+    "sites": [
+      "https://www.githubstatus.com/",
+      "https://diniscruz.ai/2025/02/10/second-stories__from-three-mile-island-to-cybersecurity.md"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "A fault that reaches one customer is an incident. A fault that reaches every customer at once is a statement about how the system is built.",
+      "why": "Why the scope of tonight's fault, not its duration, is what deserves the inquiry."
+    },
+    {
+      "text": "A system too complicated to understand and too fragile to change is not a reason to leave it alone. It is the single point of failure, named.",
+      "why": "The third story, and why it needs an investigator who does not report to the budget it is about."
+    }
+  ]
+}

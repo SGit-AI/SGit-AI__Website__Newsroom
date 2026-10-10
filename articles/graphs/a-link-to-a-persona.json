@@ -1,0 +1,154 @@
+{
+  "slug": "a-link-to-a-persona",
+  "teaser": "Send a CISO to the newsroom as a CISO: personas kept in a vault by the newsroom's agents, opened from a link, followed or forked.",
+  "topics": [
+    "startups-and-strategy",
+    "vaults-and-method"
+  ],
+  "core_idea": "A link should land a reader as someone rather than as nobody: personas move from the site's code into an encrypted vault kept by the newsroom's agents and opened in the browser with a published read key, reached through a page of their own, a URL fragment that never reaches a server, or a private vault for one person, and the reader can follow the persona as it is updated or fork it as their own, all client side.",
+  "nodes": [
+    {
+      "id": "nobody",
+      "label": "Landing as nobody",
+      "kind": "question",
+      "summary": "A link to the front page lands a reader on a page made for nobody in particular."
+    },
+    {
+      "id": "vault",
+      "label": "Personas in a vault",
+      "kind": "artefact",
+      "summary": "Encrypted, versioned, opened in the browser with a published read key; updated without touching the site."
+    },
+    {
+      "id": "links",
+      "label": "Three kinds of link",
+      "kind": "method",
+      "summary": "A page of its own, a fragment for any number more, a private vault for one person."
+    },
+    {
+      "id": "fragment",
+      "label": "The fragment never reaches a server",
+      "kind": "concept",
+      "summary": "RFC 3986: the fragment is dereferenced solely by the user agent."
+    },
+    {
+      "id": "follow-fork",
+      "label": "Follow or fork",
+      "kind": "method",
+      "summary": "Track the persona as it is kept up to date, or copy it and make it your own."
+    },
+    {
+      "id": "keeper",
+      "label": "The persona keeper",
+      "kind": "method",
+      "summary": "A newsroom role that updates personas on every article and issue, each change a vault commit."
+    },
+    {
+      "id": "starter-packs",
+      "label": "Bluesky starter packs",
+      "kind": "example",
+      "summary": "A link that sets up a newcomer: up to 150 people and three feeds, June 2024."
+    },
+    {
+      "id": "profiles",
+      "label": "Netflix profiles",
+      "kind": "example",
+      "summary": "Up to five profiles per account from August 2013."
+    },
+    {
+      "id": "consent",
+      "label": "Personas about people stay private",
+      "kind": "claim",
+      "summary": "A public persona describes a role; a persona about a person goes in a vault sent only to them."
+    },
+    {
+      "id": "client-side",
+      "label": "All client side",
+      "kind": "claim",
+      "summary": "Static pages, ciphertext on the vault host, everything else in the browser."
+    }
+  ],
+  "edges": [
+    {
+      "from": "nobody",
+      "to": "links",
+      "rel": "leads-to"
+    },
+    {
+      "from": "vault",
+      "to": "links",
+      "rel": "depends-on"
+    },
+    {
+      "from": "fragment",
+      "to": "links",
+      "rel": "example-of"
+    },
+    {
+      "from": "links",
+      "to": "follow-fork",
+      "rel": "leads-to"
+    },
+    {
+      "from": "keeper",
+      "to": "vault",
+      "rel": "produces"
+    },
+    {
+      "from": "starter-packs",
+      "to": "follow-fork",
+      "rel": "compared-with"
+    },
+    {
+      "from": "profiles",
+      "to": "follow-fork",
+      "rel": "compared-with"
+    },
+    {
+      "from": "consent",
+      "to": "links",
+      "rel": "extends"
+    },
+    {
+      "from": "vault",
+      "to": "client-side",
+      "rel": "leads-to"
+    }
+  ],
+  "links": {
+    "articles": [
+      "pay-to-keep-your-persona",
+      "going-live-with-the-reading-meter",
+      "who-will-game-the-reading-meter",
+      "where-the-vault-keys-live"
+    ],
+    "pages": [
+      "/account/personas.html",
+      "/account/newsroom.html",
+      "/account/share.html",
+      "/meter/index.html",
+      "/docs/send-a-vault-key.html",
+      "/docs/briefs/newsroom-move-to-newsroom-sgit-ai.html"
+    ],
+    "sites": [
+      "https://bsky.social/about/blog/06-26-2024-starter-packs",
+      "https://www.rfc-editor.org/rfc/rfc3986#section-3.5",
+      "https://www.apple.com/legal/privacy/data/en/apple-news/",
+      "https://brave.com/brave-news/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "The better move is for the person who sends the link to choose it",
+      "why": "Why a link should name a persona."
+    },
+    {
+      "text": "a persona is a reading list with a history, and you either track the upstream or branch from it.",
+      "why": "Follow and fork, from git."
+    },
+    {
+      "text": "a public persona describes a role, never a named individual, unless they have agreed.",
+      "why": "The consent rule."
+    }
+  ]
+}

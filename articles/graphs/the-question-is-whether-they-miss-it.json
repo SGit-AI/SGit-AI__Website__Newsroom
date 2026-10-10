@@ -1,0 +1,199 @@
+{
+  "slug": "the-question-is-whether-they-miss-it",
+  "teaser": "Ship something usable, give it away briefly, take it away and see whether anybody misses it; charge at a profit before you talk to investors.",
+  "topics": [
+    "startups-and-strategy"
+  ],
+  "core_idea": "A startup operating model in three pillars: be profitable, make investors come to you, and open source everything, each buying the position needed for the next.",
+  "nodes": [
+    {
+      "id": "three-pillars",
+      "label": "Three pillars",
+      "kind": "concept",
+      "summary": "Be profitable, have investors talking to you, and open source everything, in that order because each one buys you the position you need to do the next."
+    },
+    {
+      "id": "ship",
+      "label": "Ship",
+      "kind": "method",
+      "summary": "Shipping means a thing somebody else can go and use, on their own, and get value from, not a proof of concept or a demo."
+    },
+    {
+      "id": "near-zero-running-cost",
+      "label": "Near-zero running cost",
+      "kind": "method",
+      "summary": "To ship that often the running cost must be near nothing: serverless, as little live state as you can stand, and in our case the file system is the database."
+    },
+    {
+      "id": "give-it-away",
+      "label": "Give it away",
+      "kind": "method",
+      "summary": "Hand it to people for free for a short window, because the feedback starts the moment somebody who is not you has the thing."
+    },
+    {
+      "id": "take-it-away",
+      "label": "Take it away",
+      "kind": "method",
+      "summary": "The trial expired, it is not available right now, nothing else about the product changes, and no apology is needed."
+    },
+    {
+      "id": "do-they-miss-it",
+      "label": "Do they miss it?",
+      "kind": "question",
+      "summary": "If they shrug you have something people will accept when it is free; if they come back and ask for it, you have something."
+    },
+    {
+      "id": "charge-at-profit",
+      "label": "Charge, and charge at a profit",
+      "kind": "claim",
+      "summary": "Two questions, is the price one they are happy to pay and is that price profitable for you, and people routinely answer only the first."
+    },
+    {
+      "id": "no-subscription-by-default",
+      "label": "No subscription by default",
+      "kind": "claim",
+      "summary": "Charging rent for something people are not using is a worse business than being paid when you deliver."
+    },
+    {
+      "id": "raise-from-strength",
+      "label": "Raise from strength",
+      "kind": "claim",
+      "summary": "The worst possible time to raise money is before you are profitable, because you are bargaining from weakness and the worst terms are about control."
+    },
+    {
+      "id": "album-before-the-deal",
+      "label": "Do not get signed before you have the album",
+      "kind": "example",
+      "summary": "Write the songs, record them, get people buying, then take the record deal as somebody who already has an audience."
+    },
+    {
+      "id": "open-source-everything",
+      "label": "Open source everything",
+      "kind": "method",
+      "summary": "It sounds like giving away the asset and is the opposite, for five reasons that each stand alone."
+    },
+    {
+      "id": "technology-is-not-the-moat",
+      "label": "The technology is not the moat",
+      "kind": "claim",
+      "summary": "Treating it as open from the start forces you to find the thing that actually is defensible, usually the data, the relationships, the distribution, or the speed at which you ship."
+    },
+    {
+      "id": "leave-with-your-tools",
+      "label": "You leave with your tools",
+      "kind": "claim",
+      "summary": "Build in the open and the work is still yours when you move on."
+    },
+    {
+      "id": "vault-substrate",
+      "label": "The vault as substrate",
+      "kind": "artefact",
+      "summary": "A vault carries data, app, history and sources as one string, with no database to run and no hosting for the reader, so shipping a small product is cheap, fast and reversible."
+    }
+  ],
+  "edges": [
+    {
+      "from": "three-pillars",
+      "to": "ship",
+      "rel": "depends-on"
+    },
+    {
+      "from": "three-pillars",
+      "to": "raise-from-strength",
+      "rel": "depends-on"
+    },
+    {
+      "from": "three-pillars",
+      "to": "open-source-everything",
+      "rel": "depends-on"
+    },
+    {
+      "from": "ship",
+      "to": "near-zero-running-cost",
+      "rel": "depends-on"
+    },
+    {
+      "from": "ship",
+      "to": "give-it-away",
+      "rel": "leads-to"
+    },
+    {
+      "from": "give-it-away",
+      "to": "take-it-away",
+      "rel": "leads-to"
+    },
+    {
+      "from": "take-it-away",
+      "to": "do-they-miss-it",
+      "rel": "leads-to"
+    },
+    {
+      "from": "do-they-miss-it",
+      "to": "charge-at-profit",
+      "rel": "leads-to"
+    },
+    {
+      "from": "no-subscription-by-default",
+      "to": "charge-at-profit",
+      "rel": "extends"
+    },
+    {
+      "from": "charge-at-profit",
+      "to": "raise-from-strength",
+      "rel": "leads-to"
+    },
+    {
+      "from": "album-before-the-deal",
+      "to": "raise-from-strength",
+      "rel": "example-of"
+    },
+    {
+      "from": "open-source-everything",
+      "to": "technology-is-not-the-moat",
+      "rel": "depends-on"
+    },
+    {
+      "from": "leave-with-your-tools",
+      "to": "open-source-everything",
+      "rel": "extends"
+    },
+    {
+      "from": "vault-substrate",
+      "to": "near-zero-running-cost",
+      "rel": "example-of"
+    },
+    {
+      "from": "vault-substrate",
+      "to": "ship",
+      "rel": "answers"
+    },
+    {
+      "from": "vault-substrate",
+      "to": "open-source-everything",
+      "rel": "example-of"
+    }
+  ],
+  "links": {
+    "articles": [
+      "price-it-then-give-it-away"
+    ],
+    "pages": [
+      "/demos/fractal-graphs/performance.html",
+      "/demos/vaults/index.html"
+    ],
+    "sites": [
+      "https://subscriptions.sgit.ai/",
+      "https://open-source.sgit.ai/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "It means a thing somebody else can go and use, on their own, and get value from.",
+      "why": "The definition of shipping that the whole loop depends on."
+    },
+    {
+      "text": "The worst possible time to raise money is before you are profitable, before you have the product, before you understand the fit.",
+      "why": "Pillar two stated plainly, and the reason profitability comes first."
+    }
+  ]
+}

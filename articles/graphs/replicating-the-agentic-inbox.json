@@ -1,0 +1,246 @@
+{
+  "slug": "replicating-the-agentic-inbox",
+  "teaser": "How to copy a working agentic email setup in phases: a mailbox and Claude seat of the agent's own, one session with a policy, then roles talking in files.",
+  "topics": [
+    "agents-and-policy",
+    "vaults-and-method"
+  ],
+  "core_idea": "Claude is used as an agent state machine, one session per role, every message between agents a file in a vault and every outgoing email a draft a person sends; the phases take you from one session to a scheduled team without ever breaking that rule.",
+  "nodes": [
+    {
+      "id": "state-machine",
+      "label": "Claude as a state machine",
+      "kind": "concept",
+      "summary": "Each role is one session that reads its state from a vault, does one kind of work, writes files back and stops; the conductor makes this literal."
+    },
+    {
+      "id": "own-accounts",
+      "label": "Accounts of the agent's own",
+      "kind": "method",
+      "summary": "A Workspace mailbox on a domain you own, a Claude Team seat, a GitHub account on the same identity; never your own inbox."
+    },
+    {
+      "id": "connectors",
+      "label": "Connectors enabled, then connected",
+      "kind": "artefact",
+      "summary": "On a Team plan the owner enables connectors for the organisation; the agent's own account then connects, so the OAuth grants live only there."
+    },
+    {
+      "id": "inbox-agent",
+      "label": "The inbox role",
+      "kind": "artefact",
+      "summary": "The one session that reads the mailbox, labels, moves, summarises and captures what people wrote into the CRM."
+    },
+    {
+      "id": "policy-table",
+      "label": "The policy as a table",
+      "kind": "method",
+      "summary": "Reach, mandate, gap and barriers written before the first run; most barriers in front of a single session are the policy and nothing technical, and the table says so."
+    },
+    {
+      "id": "roles",
+      "label": "Roles: @inbox, @drafts, @crm, @briefs, @dev",
+      "kind": "concept",
+      "summary": "Each role a session with a policy short enough to check; every account has the same reach to the mailbox, two have it in their mandate, one may write."
+    },
+    {
+      "id": "email-fs",
+      "label": "Email-FS lite",
+      "kind": "artefact",
+      "summary": "A message is a file with email headers and typed blocks; mailroom, inbox, done and outbox folders; each role writes only its own folders; one commit per cycle after a leak check."
+    },
+    {
+      "id": "drafts-rule",
+      "label": "The agent drafts, a person sends",
+      "kind": "claim",
+      "summary": "Nothing is sent by an agent; the draft is Cc'd to the person, its hash is logged, and the inbox role records the send from the Sent folder afterwards."
+    },
+    {
+      "id": "security-hold",
+      "label": "The security hold",
+      "kind": "example",
+      "summary": "The one exception: the security role may send one email to one address on a critical finding, and writes a hold file that stops every agent and every run until a person releases it."
+    },
+    {
+      "id": "conductor",
+      "label": "The conductor",
+      "kind": "artefact",
+      "summary": "A scheduled session that runs every role exactly once in a fixed order with a time box, leak-checks and pushes after each step, and writes a report; a security role runs first and last."
+    },
+    {
+      "id": "clone-cost",
+      "label": "The clone cost",
+      "kind": "claim",
+      "summary": "Clone time grows with the number of commits, not file size; fifty commits a day made a seven-minute clone after three days. Commit once per run and compact when a clone passes five minutes."
+    },
+    {
+      "id": "key-rotation",
+      "label": "A leaked write key means a new vault",
+      "kind": "method",
+      "summary": "History keeps what was committed, so a key quoted in a committed file is fixed by a fresh vault seeded from the current files, not by a redaction; scan for other people's secret shapes too."
+    },
+    {
+      "id": "interfaces",
+      "label": "Interfaces for the moment",
+      "kind": "artefact",
+      "summary": "The Now card and the waiting-on board, computed from the vault files when the page opens, nothing stored; each one gets a policy."
+    },
+    {
+      "id": "record",
+      "label": "The record",
+      "kind": "concept",
+      "summary": "Every message a file, every draft in the mailbox, every decision a row: a footprint that can be read afterwards without touching anything."
+    },
+    {
+      "id": "trust",
+      "label": "Trust built from the record",
+      "kind": "claim",
+      "summary": "You do not have to believe what the agent says it did; you can read what it did, and give it more as the drafts you did not change pile up."
+    },
+    {
+      "id": "agents-own-account",
+      "label": "The agents' own account",
+      "kind": "question",
+      "summary": "Each role describes what it reads, writes and refuses, in its own words; the dev role's paragraph and the briefs role's picture of the twelve-agent team are the first two."
+    }
+  ],
+  "edges": [
+    {
+      "from": "own-accounts",
+      "to": "connectors",
+      "rel": "leads-to"
+    },
+    {
+      "from": "own-accounts",
+      "to": "inbox-agent",
+      "rel": "leads-to"
+    },
+    {
+      "from": "policy-table",
+      "to": "inbox-agent",
+      "rel": "depends-on"
+    },
+    {
+      "from": "inbox-agent",
+      "to": "drafts-rule",
+      "rel": "depends-on"
+    },
+    {
+      "from": "security-hold",
+      "to": "drafts-rule",
+      "rel": "example-of"
+    },
+    {
+      "from": "inbox-agent",
+      "to": "roles",
+      "rel": "leads-to"
+    },
+    {
+      "from": "roles",
+      "to": "email-fs",
+      "rel": "depends-on"
+    },
+    {
+      "from": "roles",
+      "to": "policy-table",
+      "rel": "extends"
+    },
+    {
+      "from": "state-machine",
+      "to": "roles",
+      "rel": "produces"
+    },
+    {
+      "from": "state-machine",
+      "to": "conductor",
+      "rel": "leads-to"
+    },
+    {
+      "from": "conductor",
+      "to": "security-hold",
+      "rel": "depends-on"
+    },
+    {
+      "from": "conductor",
+      "to": "clone-cost",
+      "rel": "produces"
+    },
+    {
+      "from": "clone-cost",
+      "to": "key-rotation",
+      "rel": "compared-with"
+    },
+    {
+      "from": "email-fs",
+      "to": "record",
+      "rel": "produces"
+    },
+    {
+      "from": "record",
+      "to": "key-rotation",
+      "rel": "leads-to"
+    },
+    {
+      "from": "roles",
+      "to": "interfaces",
+      "rel": "leads-to"
+    },
+    {
+      "from": "interfaces",
+      "to": "policy-table",
+      "rel": "extends"
+    },
+    {
+      "from": "record",
+      "to": "trust",
+      "rel": "produces"
+    },
+    {
+      "from": "drafts-rule",
+      "to": "trust",
+      "rel": "produces"
+    },
+    {
+      "from": "own-accounts",
+      "to": "trust",
+      "rel": "depends-on"
+    },
+    {
+      "from": "roles",
+      "to": "agents-own-account",
+      "rel": "leads-to"
+    }
+  ],
+  "links": {
+    "articles": [
+      "six-agents-one-inbox",
+      "custom-uis-are-not-the-exception",
+      "footprint-and-blast-radius",
+      "connector-twin-before-you-deploy-an-agent",
+      "ultimate-insider-three-collisions"
+    ],
+    "pages": [
+      "/docs/append-lane-messaging.html",
+      "/docs/agent-contact.html",
+      "/docs/briefs/vault-telemetry-append-lanes.html"
+    ],
+    "sites": [
+      "https://riskmandate.ai/abp.html",
+      "https://riskmandate.ai/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "Nothing is sent by an agent.",
+      "why": "The rule that never changes, and the reason the setup gives the person more control rather than less."
+    },
+    {
+      "text": "You do not have to believe what the agent says it did. You can read what it did.",
+      "why": "Why the record is the point for someone learning to trust a set of agents."
+    },
+    {
+      "text": "A leaked write key means a new vault, not an edit.",
+      "why": "The lesson the record taught on day five: history keeps what was committed."
+    }
+  ]
+}

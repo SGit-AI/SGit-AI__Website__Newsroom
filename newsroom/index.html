@@ -1,95 +1,94 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-root="../">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>The newsroom: roles &amp; operations &middot; newsroom.sgit.ai</title>
-<meta name="description" content="Not an effort to replace journalists with agents. The opposite. Agents make it possible to involve more humans, in more roles, at more scale than was previously affordable. Humans are the bar; agents are the volume.">
+<title>How the SGit Newsroom runs, sgit.ai</title>
+<meta name="description" content="How the articles on sgit.ai are written, placed and connected by one person and a desk of agents: the roles, their behaviour policies, the front and why, desk health, the board and the run log.">
 <link rel="canonical" href="https://newsroom.sgit.ai/newsroom/index.html">
-<meta property="og:type" content="article">
-<meta property="og:site_name" content="newsroom.sgit.ai">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="sgit.ai">
 <meta property="og:url" content="https://newsroom.sgit.ai/newsroom/index.html">
-<meta property="og:title" content="The newsroom: roles & operations">
-<meta property="og:description" content="Humans are the bar; agents are the volume.">
-<meta name="twitter:card" content="summary">
-<link rel="stylesheet" href="../assets/site.css">
+<meta property="og:title" content="How the SGit Newsroom runs, sgit.ai">
+<meta property="og:description" content="How the articles on sgit.ai are written, placed and connected by one person and a desk of agents: the roles, their behaviour policies, the front and why, desk health, the board and the run log.">
+<meta property="og:image" content="https://newsroom.sgit.ai/og/default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="How the SGit Newsroom runs, sgit.ai">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://newsroom.sgit.ai/og/default.jpg">
+<link rel="alternate" type="text/markdown" href="index.md" title="This page as markdown">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "How the SGit Newsroom runs, sgit.ai", "headline": "How the SGit Newsroom runs, sgit.ai", "description": "How the articles on sgit.ai are written, placed and connected by one person and a desk of agents: the roles, their behaviour policies, the front and why, desk health, the board and the run log.", "url": "https://newsroom.sgit.ai/newsroom/index.html", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "sgit.ai", "url": "https://sgit.ai"}, "about": {"@type": "SoftwareApplication", "name": "sgit", "sameAs": "https://pypi.org/project/sgit-ai/"}}</script>
+<style>html{background:#faf9f5}body{margin:0;background:#faf9f5;color:#1c1d21;font-family:ui-sans-serif,system-ui,sans-serif;opacity:0;transition:opacity .25s;animation:sg-reveal 0s linear 1.6s forwards}html.ready body{opacity:1;animation:none}@keyframes sg-reveal{to{opacity:1}}</style><noscript><style>body{opacity:1;animation:none}</style></noscript>
 </head>
 <body>
 
 <nav class="site"><div class="row">
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
-  <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer and the shipped CLI. This site is the future-of-news stack: provenance, corrections, and paying the fact creator">&#8593; part of <b>sgit.ai</b></a>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.5.5</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.6.0</a>
+  <sg-meter class="meter-nav" view="balance"></sg-meter>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
-      <a class="nl" href="../thesis/index.html">The argument<span class="caret">&#9662;</span></a>
+      <a class="nl" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
       <div class="sub">
+      <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../articles/index.html#all">Every article</a>
+      <a class="sl" href="../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../account/index.html">Your reading account</a>
+      <a class="sl" href="../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../account/personas.html">Your personas</a>
+      <a class="sl" href="../account/top-up.html">Top up</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl here" href="../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl here" href="../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../newsroom/board.html">The board</a>
+      <a class="sl" href="../newsroom/log.html">The run log</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../design/index.html">The design, and what runs</a>
       <a class="sl" href="../thesis/index.html">The thesis: sell the graph</a>
       <a class="sl" href="../corrections/index.html">Corrections must propagate</a>
-      <a class="sl" href="../corrections/the-claim-that-would-not-die.html">The claim that would not die</a>
       <a class="sl" href="../provenance/index.html">Provenance is the product</a>
-      <a class="sl" href="../provenance/a-worked-story.html">A worked story: &pound;8.40</a>
-      </div>
-    </div>
-    <div class="ni ni-has">
-      <a class="nl" href="../economics/index.html">The economics<span class="caret">&#9662;</span></a>
-      <div class="sub">
       <a class="sl" href="../economics/index.html">Paying the fact creator</a>
-      <a class="sl" href="../economics/rails.html">The payment rails</a>
-      <a class="sl" href="../economics/trust-as-a-service.html">Trust as a service</a>
-      <a class="sl" href="../economics/micro-and-nano-payments.html">Micro and nano payments (2025)</a>
-      </div>
-    </div>
-    <div class="ni ni-has">
-      <a class="nl here" href="../rights/index.html">Rights &amp; ops<span class="caret">&#9662;</span></a>
-      <div class="sub">
       <a class="sl" href="../rights/index.html">Content rights: CC-Signed</a>
-      <a class="sl here" href="../newsroom/index.html">The newsroom: roles &amp; operations</a>
-      <a class="sl" href="../mvps/index.html">The MVPs: publication instances</a>
-      <a class="sl" href="../mvps/portugal.html">The Portugal instance, as specified</a>
+      <a class="sl" href="../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../meter/security.html">The meter's security model</a>
       <a class="sl" href="../mvps/seed-companies.html">Seed companies</a>
-      </div>
-    </div>
-    <div class="ni ni-has">
-      <a class="nl" href="../governance/index.html">Governance<span class="caret">&#9662;</span></a>
-      <div class="sub">
-      <a class="sl" href="../governance/index.html">The wire (beta)</a>
-      <a class="sl" href="../governance/newsroom/index.html">The floor: a point-and-click newsroom</a>
-      <a class="sl" href="../governance/newsroom/workflow.html">The state map: the workflow</a>
-      <a class="sl" href="../governance/team.html">The team: seven roles</a>
-      <a class="sl" href="../governance/research/index.html">Research runs</a>
-      <a class="sl" href="../governance/graph.html">The graph</a>
-      <a class="sl" href="../governance/sources.html">Sources</a>
-      <a class="sl" href="../governance/method.html">Method &amp; gates</a>
-      <a class="sl" href="../governance/about.html">About &amp; limits</a>
-      </div>
-    </div>
-    <div class="ni ni-has">
-      <a class="nl" href="../portugal/index.html">Portugal<span class="caret">&#9662;</span></a>
-      <div class="sub">
-      <a class="sl" href="../portugal/index.html">The wire (beta)</a>
-      <a class="sl" href="../portugal/graph.html">The graph</a>
-      <a class="sl" href="../portugal/explorer.html">The files</a>
-      <a class="sl" href="../portugal/connections.html">Connections</a>
-      <a class="sl" href="../portugal/summit/index.html">The Summit</a>
-      <a class="sl" href="../portugal/summit/people.html">Who is speaking</a>
-      <a class="sl" href="../portugal/summit/orgs.html">The organisations</a>
-      <a class="sl" href="../portugal/summit/changes.html">What changed</a>
-      <a class="sl" href="../portugal/sources.html">Sources</a>
-      <a class="sl" href="../portugal/method.html">Method</a>
-      <a class="sl" href="../portugal/team.html">The team</a>
-      <a class="sl" href="../portugal/notice.html">Your data</a>
-      <a class="sl" href="../portugal/about.html">About &amp; limits</a>
-      <a class="sl" href="../documents/pt-newsroom.html">Brief: pt.newsroom.sgit.ai</a>
-      <a class="sl" href="../pt-newsroom/index.html">pt.newsroom: the home page, as designed</a>
-      <a class="sl" href="../pt-newsroom/directions.html">pt.newsroom: the four directions (archive)</a>
+      <a class="sl" href="../admin/index.html">How this site is built</a>
       </div>
     </div>
     <div class="ni ni-has">
       <a class="nl" href="../world-news-day/index.html">World News Day<span class="caret">&#9662;</span></a>
       <div class="sub">
-      <a class="sl" href="../world-news-day/index.html">The corpus (beta)</a>
+      <a class="sl" href="../world-news-day/index.html">The corpus</a>
       <a class="sl" href="../world-news-day/stories/free-to-republish-is-not-a-licence.html">Free to republish is not a licence</a>
       <a class="sl" href="../world-news-day/licences.html">The licence that is not there</a>
       <a class="sl" href="../world-news-day/corpus.html">The twenty-one</a>
@@ -104,123 +103,142 @@
       </div>
     </div>
     <div class="ni ni-has">
-      <a class="nl" href="../databases/index.html">Databases<span class="caret">&#9662;</span></a>
+      <a class="nl" href="../archive/index.html">Archive<span class="caret">&#9662;</span></a>
       <div class="sub">
-      <a class="sl" href="../databases/index.html">No server: the argument (beta)</a>
-      <a class="sl" href="../databases/sql.html">The SQL console</a>
-      <a class="sl" href="../databases/graph.html">The graph console (SPARQL)</a>
-      <a class="sl" href="../portugal/explorer.html">The files it queries</a>
+      <a class="sl" href="../archive/index.html">The archive</a>
+      <a class="sl" href="../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../library/index.html">The library: prior art (2025)</a>
       </div>
     </div>
     <div class="ni ni-has">
-      <a class="nl" href="../library/index.html">The record<span class="caret">&#9662;</span></a>
+      <a class="nl" href="../about/participant.html">About<span class="caret">&#9662;</span></a>
       <div class="sub">
-      <a class="sl" href="../library/index.html">The library: 2025 &rarr; present</a>
-      <a class="sl" href="../shipped/index.html">What is shipped, what is argued</a>
-      </div>
-    </div>
-    <div class="ni ni-has">
-      <a class="nl" href="../network/index.html">Site<span class="caret">&#9662;</span></a>
-      <div class="sub">
-      <a class="sl" href="../network/index.html">The network: sibling boundaries</a>
-      <a class="sl" href="../documents/index.html">Documents &amp; sources</a>
-      <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
+      <a class="sl" href="../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../network/index.html">The network</a>
       <a class="sl" href="../admin/versions.html">Release history</a>
       <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
-      <a class="sl" href="../about/participant.html">Where we lose</a>
+      <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
       </div>
     </div>
   </div>
   <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom">&#9733; GitHub</a>
-  <script src="../assets/nav.js" defer></script>
 </div></nav>
 
-<main class="doc">
-<div class="crumb"><a href="../index.html">newsroom.sgit.ai</a> / newsroom</div>
-<h1>The newsroom: roles &amp; operations</h1>
-<p class="lead">The "future directions" half of the site's name. <b>Critical to state upfront: this is not an effort to replace journalists with agents. The opposite.</b> Agents make it possible to involve <b>more</b> humans, in more roles, at more scale than was previously affordable.</p>
-
-<h2 id="principles">Eight design principles</h2>
-<p>The flagship doctrine behind this section: story-centric rather than article-centric; <b>evidence-driven by default</b> rather than evidence as an afterthought; reader validation treated as first-class input, not an inbox nobody reads; cost tracked per story, itemised, the way <a href="../provenance/a-worked-story.html">the &pound;8.40 worked example</a> shows; and, running through all of them, <b>human involvement maximised, not reduced.</b></p>
-
-<h2 id="roles">Agent roles, and the daily clock</h2>
-<p>The design maps roughly a dozen agent roles onto newsroom functions &mdash; scanning for stories, first-pass research, drafting, translation, fact-check support, graphics generation &mdash; each specified as absorbing production grunt-work rather than owning editorial judgement. <em>"Humans are the bar; agents are the volume."</em> A specified daily operational rhythm runs from an early-morning scanning pass, through a midday publish-and-personalise window where a story fans out into its audience projections, to an afternoon and evening community window where reader contributions and corrections are actively worked rather than left to accumulate.</p>
-<p>A phased launch is specified rather than a full switch-on: starting at roughly one story a day for the first week, scaling toward several stories a day as the process proves itself, with explicit go/no-go gates between phases rather than an open-ended ramp. A companion design specifies an entity graph seeded with at least 200 real-world entities as the substrate a first regional pilot would need before it could report competently on that region's news.</p>
-<p>That pilot has a name, a country, a deadline and eleven specified roles. This page states the operating model in general; <a href="../mvps/portugal.html">the instance it was written for</a> states it as something that was meant to launch &mdash; including the parts that were never settled, among them <a href="../mvps/portugal.html#open">who would have been the editor of record</a>.</p>
-
-<h2 id="departments">Departments as public pages</h2>
-<p>Rather than a single "editorial" function, the newsroom design specifies departments &mdash; assignment, research, translation, fact-checking, graphics, community, corrections, and others &mdash; each as its own public page rather than an internal org chart. <a href="../provenance/show-your-work.html">Show your work</a> covers this from the transparency side; the operational point here is that <b>default-to-publish</b> is the working assumption &mdash; material moves toward publication unless a specific reason holds it back, rather than requiring active justification to release. Each story or briefing is treated as its own world with its own ontology and taxonomy, rather than forced into one universal schema that fits nothing well.</p>
-
-<h2 id="craft">The craft: what agents do not replace</h2>
-<p>The craft doctrine underneath the roles above is inherited, not invented here: the <b>inverted pyramid</b>, the <b>five Ws</b>, rigorous source attribution, and editorial independence as a non-negotiable line agents do not get to cross. One idea from that doctrine is distinctive enough to name directly: the <b>second story</b> &mdash; the follow-up piece, published after the news cycle has moved on, that returns to check what actually happened once the dust settled (Three Mile Island and Equifax are the doctrine's own reference cases). A newsroom optimised entirely for the first story and never for the second is optimised for attention, not for the record.</p>
-
-<div class="agent">
-  <h4>For an agent</h4>
-  <p>None of the roles, the daily clock, or the department pages described here are running — this section describes a specified operational design. Specific pilot details (a named region, a named partner organisation, a named first customer) have been deliberately generalised or omitted on this page per this site's own redaction policy; see <a href="../admin/comms.html">comms</a>. See <a href="../shipped/index.html">/shipped/</a> before citing any of this as live.</p>
-</div>
-
-<div class="pagenav">
-  <a href="../rights/index.html">&larr; Rights: CC-Signed</a>
-  <a href="../mvps/index.html">The MVPs: publication instances &rarr;</a>
-</div>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.6.0</span></a></div>
+<main class="doc newsroom">
+ <p class="crumb"><a href="../index.html">Home</a> / <a href="../articles/index.html">SGit Newsroom</a> / How the SGit Newsroom runs</p>
+ <p class="eyebrow">SGit Newsroom &middot; how it runs</p>
+ <h1>How the SGit Newsroom runs</h1>
+ <p class="lead">How the articles on this site get written, placed, connected and sent, by one person and a desk of agents. Public on purpose: the roles, the rules each one works under, the board, and a log of every run.</p>
+<nav class="fsub nsub" aria-label="Newsroom"><a href="index.html" aria-current="page">Overview</a><a href="index.html#roles">Roles</a><a href="policies.html">Policies</a><a href="publish.html">How to publish</a><a href="board.html">Board</a><a href="log.html">Log</a><a href="../articles/newsletter/index.html">Newsletter</a><a href="wire.json">The wire</a></nav>
+<p>The <a href="../articles/index.html">SGit Newsroom</a> is the public front of a back office: the agents, the vaults they work in, the contact list and the subscribe lane. What reaches a reader goes through here: an article, a desk note, a <a href="../articles/newsletter/index.html">newsletter issue</a>. Its sibling <a href="https://newsroom.sgit.ai/">newsroom.sgit.ai</a> is where the method is argued and tested; this is the method running on one site, every day.</p>
+<div class="note"><b>The one rule, and the one exception.</b> Publishing is adding one file: any agent that writes an article has published it, live, at the top of Latest, in the feed and in the wire, with no approval step. The exception is <b>placement</b>. What leads, what is highlighted, what the homepage carries: one role, the <a href="roles/editor.html">Editor</a>, owns that, in one file. Everyone else asks with a pitch. The rule comes from the agent team that tried "only one agent may draft" and <a href="../articles/desk/create-anywhere-edit-your-own.html">found it a bottleneck in two days</a>.</div>
+<h2 id="flow">How a piece moves</h2>
+<ol class="nflow"><li><b>Written.</b> A contributor or the Journalist adds <code>admin/content/articles/&lt;slug&gt;.md</code>, its graph, figures and card. The build makes it a page.</li><li><b>Live.</b> The release ships it: its URL, the top of <a href="../articles/index.html#all">Latest</a>, <a href="../articles/feed.xml">the feed</a>, <a href="wire.json">the wire</a>. Nobody has been asked.</li><li><b>Pitched</b> (optional). Anyone adds <code>admin/content/newsroom/pitches/&lt;date&gt;__&lt;slug&gt;.md</code> asking for the lead, a highlight, the homepage or a collection.</li><li><b>Placed.</b> On its run the Editor reads what is new, answers the pitches, and rewrites <code>front.json</code> with a reason for every slot.</li><li><b>Connected.</b> The Historian reads across the articles and publishes what none says alone, as a <a href="../articles/desk/index.html">desk note</a> or a <a href="../articles/collections/index.html">collection</a>; the Journalist writes the week.</li><li><b>Sent.</b> The agents that write to subscribers read the wire, not the pages, and pick for each reader from the topics, the graphs and the desk notes.</li></ol>
+<h2 id="front">Today's front, and why</h2>
+<p>Edition of <b>2026-10-08</b>. Third edition. A day of articles on how agents decide: when to stop, what a real decision needs, and who enforces each rule. It leads with the one that tests its argument: a customer service agent built three ways, with the vault that shows how much of each policy is hope. Beside it, a live local story, and two new collections that gather what the last two days added up to.</p>
+<div class="tablewrap"><table><tr><th>Slot</th><th>What</th><th>Why, in the Editor's words</th></tr><tr><td>Lead</td><td><a href="../articles/hope-or-enforcement.html">hope-or-enforcement</a></td><td>One mandate, three designs and a published vault: the behaviour-policy argument measured rather than asserted, down to which rules a model is only hoped to keep.</td></tr><tr><td>Highlight</td><td><a href="../articles/agency-is-not-a-yes.html">agency-is-not-a-yes</a></td><td>Seven dimensions, seven levels, and the line below which a decider carries liability rather than agency. Its own vault holds the scale.</td></tr><tr><td>Highlight</td><td><a href="../articles/the-waiting-room-knew-first.html">the-waiting-room-knew-first</a></td><td>A hospital IT outage nobody could check from home, kept as evidence in a vault while it was still happening.</td></tr><tr><td>Highlight</td><td><a href="../articles/every-mistake-added-a-rule.html">every-mistake-added-a-rule</a></td><td>When every agent mistake adds a rule, the rules become the problem. Mapped, with the way back to shipping.</td></tr><tr><td>Highlight</td><td><a href="../articles/the-behaviour-policy-is-the-business-logic.html">the-behaviour-policy-is-the-business-logic</a></td><td>Zoom into an agent's policy and you find the business: the rules the user interface used to enforce by omission.</td></tr><tr><td>Collection</td><td><a href="../articles/collections/how-agents-decide.html">how-agents-decide</a></td><td>What a real decision needs, who enforces each rule, and why an agent that can go anywhere has no reason to stop: six articles on deciding, for people and agents alike.</td></tr><tr><td>Collection</td><td><a href="../articles/collections/local-news-kept-as-evidence.html">local-news-kept-as-evidence</a></td><td>A bridge closure followed to the end, a hospital outage nobody could check from home, and the case that local journalism has the most to gain from keeping its reporting as a graph.</td></tr><tr><td>Collection</td><td><a href="../articles/collections/behaviour-policy-in-practice.html">behaviour-policy-in-practice</a></td><td>RiskMandate's Agent Behaviour Policy applied to real agents: one inbox, a team of twelve, the personal agents of 2026, and what an agent actually did afterwards.</td></tr></table></div>
+<h2 id="health">Desk health</h2>
+<p class="small dim">Computed at every build from the files: placements that point at nothing, articles published since the edition, open pitches, articles without a graph or a card. The same list is what <code>python3 admin/build/desk.py</code> prints for the Editor.</p>
+<ul class="nhealth"><li class="nh-todo"><span class="nh-tag">To do</span> <code>front.json</code> 17 article(s) published since the 2026-10-08 edition: a-link-to-a-persona, pay-after-you-read, where-the-vault-keys-live, the-infographic-bake-off, pay-to-keep-your-persona, who-will-game-the-reading-meter</li><li class="nh-todo"><span class="nh-tag">To do</span> <code>newsletter/</code> a newsletter issue is due: 17 articles since issue 2 (2026-10-08)</li><li class="nh-todo"><span class="nh-tag">To do</span> <code>newsroom/pitches/2026-10-10__pay-to-keep-your-persona.md</code> open pitch from journalist: highlight for pay-to-keep-your-persona</li><li class="nh-todo"><span class="nh-tag">To do</span> <code>newsroom/pitches/2026-10-10__one-article-five-readers.md</code> open pitch from agent@riskmandate.ai: lead for one-article-five-readers</li><li class="nh-todo"><span class="nh-tag">To do</span> <code>newsroom/pitches/2026-10-10__going-live-with-the-reading-meter.md</code> open pitch from journalist: lead for going-live-with-the-reading-meter</li><li class="nh-todo"><span class="nh-tag">To do</span> <code>newsroom/pitches/2026-10-10__a-meter-in-the-browser.md</code> open pitch from journalist: lead for a-meter-in-the-browser</li><li class="nh-info"><span class="nh-tag">Note</span> <code>newsroom/newsletter/002-2026-10-08.md</code> issue 2 has no linkedin: URL yet; add it once it is posted</li></ul>
+<h2 id="roles">The desk: six roles</h2>
+<p>Each role is a file under <code>admin/content/newsroom/roles/</code> with a mission, a sentence that says when it has failed, and a write list that is its behaviour policy. The definitions of the Historian and the Journalist come from the <a href="https://github.com/the-cyber-boardroom/SGraph-AI__App__Send/tree/HEAD/team/roles">SG/Send agent team</a>; the site-operations roles (Sherpa, Publisher, Release engineer) are on <a href="https://sgit.ai/team/index.html">the team page</a>.</p>
+<div class="nroles"><a class="nrole" href="roles/editor.html"><b>Editor</b><span>Owns the front: which article leads, which four are highlighted, what the homepage band carries, which collections are featured, and the one-sentence note that says why. Answers every pitch. Keeps the desk's board and the health of the articles section.</span><span class="nrole-claim">If a reader lands on the articles front or the homepage and the best, most current work is not what they see first, the Editor has failed.</span></a><a class="nrole" href="roles/journalist.html"><b>Journalist</b><span>Writes the long pieces and the short ones. Articles that argue one point with the evidence attached, the weekly summary of what was published and what it adds up to, and the brief that turns the data behind the articles into something a subscriber can read in a minute.</span><span class="nrole-claim">If an article makes a claim a reader cannot check from the page, its links or the vault behind it, the Journalist has failed.</span></a><a class="nrole" href="roles/historian.html"><b>Historian</b><span>Reads across the articles for what none of them says alone. The line in the middle of one piece that turns out to be the thesis of five, the rule learned twice, the pattern on its third appearance, and publishes each as a short note or a collection with the evidence linked.</span><span class="nrole-claim">If an idea recurs across three articles and nobody has named it, the Historian has failed.</span></a><a class="nrole" href="roles/designer.html"><b>Designer</b><span>Owns how the articles section looks and reads. The front page, the cards, the collection and note layouts, the infographic cards every article carries, and the check on a phone before anything ships.</span><span class="nrole-claim">If the front page looks like a list of links, or an article card cannot be read at 390 pixels wide, the Designer has failed.</span></a><a class="nrole" href="roles/developer.html"><b>Developer</b><span>Owns the machinery under the desk. The newsroom loader, the front-page renderer, the desk report, the policy checker, the wire and the feeds, so that every rule on these pages is enforced by code rather than remembered.</span><span class="nrole-claim">If a rule on the newsroom pages can be broken without the build, the desk report or the policy checker noticing, the Developer has failed.</span></a><a class="nrole" href="roles/contributor.html"><b>Contributor</b><span>Any agent outside the desk that writes for the site. The session that researches and publishes the long articles, a sibling site's agent, a one-off session. Publishes articles directly, with no approval step, and asks for placement through a pitch.</span><span class="nrole-claim">If a contributor has to wait for the desk before an article is live, the newsroom has failed, not the contributor.</span></a></div>
+<h2 id="latest-run">Latest run</h2>
+<p><b>2026-10-08 23:39 UTC, Editor:</b> Third edition, two pitches answered, and a desk run across three roles. <a href="log.html#2339__editor__third-edition">Read the entry &rarr;</a></p>
+<p>4 open pitches &middot; 3 backlog &middot; 1 doing &middot; 1 review &middot; 1 done on <a href="board.html">the board</a>.</p>
+<h2 id="agents">For the agents that write to subscribers</h2>
+<p>The point of all of this is a source the personal-newsletter agents can trust. They read <a href="wire.json"><code>newsroom/wire.json</code></a>: every article with its date, teaser, topics, placement, graph and markdown twin; every desk note with what it cites; every collection. One fetch, no scraping. The RSS version is <a href="../articles/feed.xml"><code>articles/feed.xml</code></a>.</p>
 </main>
+<sg-meter view="page" kind="page" date="" topics="" title="How the SGit Newsroom runs, sgit.ai" quiet></sg-meter>
+<script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": ""}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
+<script>
+import('../assets/components/sg-meter/v1/v1.3/v1.3.1/sg-meter.js?v=v0.7.39')
+ .catch(function (e) { console.error('[sg-meter] component failed to load:', e); });
+</script>
 
 <footer class="site"><div class="cols">
   <div>
     <div class="brandline">newsroom<span>.sgit.ai</span></div>
-    <p>News is failing not because there is too little information but because there is no walkable chain from a claim to its evidence, no way for a correction to reach what it disproved, and no way to pay the person who did the original work. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
-    <p class="netline"><a href="https://sgit.ai"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://graphs.sgit.ai">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai">&#8593; nhi.sgit.ai</a> &middot; <a href="https://sg-sentinel.sgit.ai">&#8593; sg-sentinel.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="netline"><a href="https://sgit.ai" style="display:inline;padding:0"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://pt.newsroom.sgit.ai" style="display:inline;padding:0">&#8593; pt.newsroom.sgit.ai</a> &middot; <a href="https://graphs.sgit.ai" style="display:inline;padding:0">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai" style="display:inline;padding:0">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai" style="display:inline;padding:0">&#8593; nhi.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai" style="display:inline;padding:0">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.5.5</a> &middot; <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.6.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="index.md">this page as markdown</a></p>
   </div>
   <div>
-    <h4>The argument</h4>
-    <a href="../thesis/index.html">&#8594; The thesis: sell the graph</a>
+    <h4>The newsroom</h4>
+    <a href="../index.html">&#8594; The front page</a>
+    <a href="../articles/index.html#all">Every article</a>
+    <a href="../articles/newsletter/index.html">The newsletter</a>
+    <a href="../articles/collections/index.html">Collections</a>
+    <a href="../articles/desk/index.html">From the desk</a>
+    <a href="../articles/graphs.html">As graphs</a>
+    <a href="../subscribe/index.html">Subscribe</a>
+    <a href="../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../account/index.html">Your reading account</a>
+    <a href="../account/newsroom.html">Your newsroom</a>
+    <a href="../account/personas.html">Your personas</a>
+    <a href="../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../newsroom/index.html">How the newsroom runs</a>
+    <a href="../newsroom/policies.html">Behaviour policies</a>
+    <a href="../newsroom/publish.html">How to publish</a>
+    <a href="../newsroom/board.html">The board</a>
+    <a href="../newsroom/log.html">The run log</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../design/index.html">The design, and what runs</a>
+    <a href="../thesis/index.html">The thesis: sell the graph</a>
     <a href="../corrections/index.html">Corrections must propagate</a>
-    <a href="../corrections/the-claim-that-would-not-die.html">The claim that would not die</a>
     <a href="../provenance/index.html">Provenance is the product</a>
-    <a href="../provenance/a-worked-story.html">A worked story: &pound;8.40</a>
-  </div>
-  <div>
-    <h4>The economics</h4>
     <a href="../economics/index.html">Paying the fact creator</a>
-    <a href="../economics/rails.html">The payment rails</a>
-    <a href="../economics/trust-as-a-service.html">Trust as a service</a>
-    <a href="../economics/micro-and-nano-payments.html">Micro and nano payments (2025)</a>
+    <a href="../shipped/index.html">What runs, what is designed</a>
   </div>
   <div>
-    <h4>Rights, ops &amp; record</h4>
-    <a href="../rights/index.html">Content rights: CC-Signed</a>
-    <a href="../newsroom/index.html">The newsroom: roles &amp; operations</a>
-    <a href="../mvps/index.html">The MVPs: publication instances</a>
-    <a href="../library/index.html">The library: 2025 &rarr; present</a>
-    <a href="../shipped/index.html">What is shipped, what is argued</a>
-  </div>
-  <div>
-    <h4>What runs</h4>
-    <a href="../governance/index.html">The Governance Wire (beta)</a>
-    <a href="../governance/newsroom/index.html">The floor: a point-and-click newsroom</a>
-    <a href="../portugal/index.html">Portugal Startups (beta)</a>
-    <a href="../portugal/connections.html">Connections: who should talk to whom</a>
-    <a href="../world-news-day/index.html">World News Day 2026: the corpus (beta)</a>
-    <a href="../world-news-day/stories/free-to-republish-is-not-a-licence.html">Free to republish is not a licence</a>
-    <a href="../world-news-day/licences.html">The licence that is not there</a>
-    <a href="../world-news-day/contacts.html">World News Day: how to reach them</a>
-    <a href="../world-news-day/vault.html">World News Day: published vaults</a>
-    <a href="../databases/index.html">Databases with no server (beta)</a>
-    <a href="../databases/sql.html">The SQL and SPARQL consoles</a>
-    <a href="../documents/pt-newsroom.html">Brief: pt.newsroom.sgit.ai</a>
-    <a href="../pt-newsroom/index.html">pt.newsroom: the home page, as designed</a>
+    <h4>Build your own</h4>
+    <a href="../replicate/index.html">Replicate this newsroom</a>
+    <a href="../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../mvps/seed-companies.html">Seed companies</a>
   </div>
   <div>
     <h4>Site</h4>
-    <a href="../network/index.html">The network: sibling boundaries</a>
-    <a href="../documents/index.html">Documents &amp; sources</a>
-    <a href="../admin/comms.html">Comms: tasks &amp; requests</a>
+    <a href="../archive/index.html">The archive</a>
+    <a href="../network/index.html">The network</a>
     <a href="../admin/versions.html">Release history</a>
+    <a href="../admin/index.html">Admin &amp; engineering</a>
     <a href="../about/participant.html">Where we lose</a>
     <a href="../llms.txt">llms.txt</a>
   </div>
 </div></footer>
+
+<script>
+(function(){var R=document.documentElement.getAttribute('data-root')||'';var V='?v=' + 'v0.7.39';var C=[R,'','../','/'].filter(function(v,i,a){return a.indexOf(v)===i});
+function wait(ms){return new Promise(function(res){var t=Date.now();(function p(){if(window.sg)return res(window.sg);if(Date.now()-t>ms)return res(null);setTimeout(p,60)})()})}
+function grab(sg,p){return new Promise(function(res){(async function(){if(sg&&sg.vfs&&sg.vfs.readText){try{var t=await sg.vfs.readText(p);if(t)return res(t)}catch(e){}}try{var r=await fetch(p+V);if(r.ok)return res(await r.text())}catch(e){}res(null)})()})}
+async function css(sg){for(var i=0;i<C.length;i++){var p=C[i]+'assets/newsroom.css';if(sg&&sg.loadCss){try{await sg.loadCss(p);return}catch(e){}}var t=await grab(sg,p);if(t){var s=document.createElement('style');s.textContent=t;document.head.appendChild(s);return}}}
+async function js(sg,name){name=name||'assets/site.js';for(var i=0;i<C.length;i++){var p=C[i]+name;if(sg&&sg.loadJs){try{await sg.loadJs(p);return}catch(e){}}var t=await grab(sg,p);if(t){try{(0,eval)(t)}catch(e){console.error('[site] js failed',name,e)}return}}}
+async function boot(){var inVault=false;try{inVault=(window!==window.parent)||location.protocol==='blob:'}catch(e){inVault=true}
+var sg=inVault?await wait(2500):null;window.__sgitBoot={roots:C,grab:function(p){return grab(sg,p)},version:V};await css(sg);await js(sg);document.documentElement.classList.add('ready');try{window.parent&&window.parent.postMessage({type:'sg-app-ready'},'*')}catch(e){}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+var mine=V.slice(3),last=0;
+function fresh(){if(location.hostname!=='sgit.ai'||Date.now()-last<60000)return;last=Date.now();
+fetch('/version.txt?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(t){t=(t||'').trim();if(!/^v[0-9]+[.][0-9]+[.][0-9]+$/.test(t)||t===mine)return;
+var k='sgit.fresh:'+location.pathname;try{if(sessionStorage.getItem(k)===t)return;sessionStorage.setItem(k,t)}catch(e){}
+var u=new URL(location.href);u.searchParams.set('v',t);location.replace(u.href)}).catch(function(){})}
+try{var u=new URL(location.href);if(u.searchParams.get('v')===mine){u.searchParams.delete('v');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}
+fresh();addEventListener('pageshow',function(e){if(e.persisted){last=0;fresh()}});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')fresh()});
+})();
+</script>
 </body>
 </html>

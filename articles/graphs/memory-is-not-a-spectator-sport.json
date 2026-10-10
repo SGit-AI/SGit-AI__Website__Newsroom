@@ -1,0 +1,241 @@
+{
+  "slug": "memory-is-not-a-spectator-sport",
+  "teaser": "Agentic memory as context management: many published, fractal, provenance-carrying memories rather than one store, shown in the session that wrote the article.",
+  "topics": [
+    "graphs-and-knowledge",
+    "agents-and-policy"
+  ],
+  "core_idea": "Memory for agents is context management: many context-specific memories, fractal so an agent loads only the altitude its question needs, published and open so they can be fetched and cited, shared through vaults so sessions and agents hand off through files, with provenance on every item.",
+  "nodes": [
+    {
+      "id": "not-spectator",
+      "label": "Memory is not a spectator sport",
+      "kind": "claim",
+      "summary": "Not one store that accumulates and retrieves by similarity; memory is made, placed, sourced and linked by people and agents."
+    },
+    {
+      "id": "context-management",
+      "label": "Memory is context management",
+      "kind": "concept",
+      "summary": "The question is what this agent needs in its window now, not what we remember; the same question the industry calls context engineering."
+    },
+    {
+      "id": "industry",
+      "label": "What the industry built",
+      "kind": "example",
+      "summary": "Vendor memory features as a single store of conversations; frameworks from MemGPT to Mem0 and Zep; a filesystem beating a graph store on a memory benchmark; builders treating files as the ultimate context."
+    },
+    {
+      "id": "two-modes",
+      "label": "Two modes, one memory",
+      "kind": "concept",
+      "summary": "The agentic session walks the altitudes and is summarised across resets; the one-shot call is handed one bundle; both are served by memory shaped in altitudes."
+    },
+    {
+      "id": "many-memories",
+      "label": "Many memories, each its own context",
+      "kind": "claim",
+      "summary": "Sites, release log, briefs, vaults, Email-FS, the CRM's per-contact worlds: different vocabularies, inconsistent in places on purpose, joined by links and an index rather than a schema."
+    },
+    {
+      "id": "fractal-budget",
+      "label": "The fractal is the budget",
+      "kind": "method",
+      "summary": "Index, graphs, one article's graph, the article, a vault's bundle, the vault: an agent loads the altitude its question lives at, because context has a token cost and degrades as it fills."
+    },
+    {
+      "id": "open-publishing",
+      "label": "Findable because it is open",
+      "kind": "claim",
+      "summary": "Open source and Creative Commons let an agent fetch, quote, link and cite; the more is published, the better the next context."
+    },
+    {
+      "id": "provenance",
+      "label": "Provenance built in",
+      "kind": "method",
+      "summary": "A URL for every quote, a commit for every release, a read key for every vault, a hash for every source file, a byline on every page; claims from memory are not allowed."
+    },
+    {
+      "id": "vault-as-bundle",
+      "label": "A vault is a memory bundle",
+      "kind": "artefact",
+      "summary": "The right information for a moment, encrypted, versioned, hashed, opened with a read key that cannot write; the medium through which agents share memory without a shared session."
+    },
+    {
+      "id": "conventions",
+      "label": "Email-FS, Issues-FS, per-contact worlds",
+      "kind": "artefact",
+      "summary": "Agents talk in files with mailroom, inbox, done and outbox; issues are folders; each contact has its own graph and interface; each agent writes only its own folders."
+    },
+    {
+      "id": "the-session",
+      "label": "The session that wrote this",
+      "kind": "example",
+      "summary": "One Claude Code session across context resets: read the summary of itself, the conventions, the published sites and a review vault; loaded by altitude; checked; wrote back articles with graphs, a vault and six releases."
+    },
+    {
+      "id": "the-loop",
+      "label": "Publish, index, load, act, write back",
+      "kind": "method",
+      "summary": "The loop that makes published material a memory rather than an archive; the next session starts from the files, because the model remembers nothing between sessions."
+    },
+    {
+      "id": "stale-false",
+      "label": "Stale pages become false memories",
+      "kind": "question",
+      "summary": "Four stale facts found while writing: a node count, an index size, generated dates, a feed that stopped; two fixed by measuring at build time, two left standing and named."
+    },
+    {
+      "id": "limits",
+      "label": "Opinionated, hard to discover, and one estate",
+      "kind": "question",
+      "summary": "One person's vocabulary at the top of every ladder; discovery strains the index; the thesis is tested only when a second estate is read alongside."
+    },
+    {
+      "id": "missing",
+      "label": "What does not exist yet",
+      "kind": "question",
+      "summary": "A freshness check in the build, a published shape for the hand-off summary, the one-shot bundle as a vault, a librarian role on this site, a second estate."
+    }
+  ],
+  "edges": [
+    {
+      "from": "not-spectator",
+      "to": "context-management",
+      "rel": "leads-to"
+    },
+    {
+      "from": "industry",
+      "to": "context-management",
+      "rel": "compared-with"
+    },
+    {
+      "from": "industry",
+      "to": "not-spectator",
+      "rel": "contrasts"
+    },
+    {
+      "from": "context-management",
+      "to": "two-modes",
+      "rel": "produces"
+    },
+    {
+      "from": "two-modes",
+      "to": "fractal-budget",
+      "rel": "depends-on"
+    },
+    {
+      "from": "many-memories",
+      "to": "not-spectator",
+      "rel": "extends"
+    },
+    {
+      "from": "many-memories",
+      "to": "conventions",
+      "rel": "example-of"
+    },
+    {
+      "from": "fractal-budget",
+      "to": "many-memories",
+      "rel": "extends"
+    },
+    {
+      "from": "open-publishing",
+      "to": "many-memories",
+      "rel": "depends-on"
+    },
+    {
+      "from": "provenance",
+      "to": "open-publishing",
+      "rel": "extends"
+    },
+    {
+      "from": "vault-as-bundle",
+      "to": "provenance",
+      "rel": "depends-on"
+    },
+    {
+      "from": "vault-as-bundle",
+      "to": "conventions",
+      "rel": "produces"
+    },
+    {
+      "from": "the-session",
+      "to": "context-management",
+      "rel": "example-of"
+    },
+    {
+      "from": "the-session",
+      "to": "fractal-budget",
+      "rel": "example-of"
+    },
+    {
+      "from": "the-session",
+      "to": "the-loop",
+      "rel": "example-of"
+    },
+    {
+      "from": "the-loop",
+      "to": "conventions",
+      "rel": "depends-on"
+    },
+    {
+      "from": "stale-false",
+      "to": "provenance",
+      "rel": "answers"
+    },
+    {
+      "from": "the-session",
+      "to": "stale-false",
+      "rel": "produces"
+    },
+    {
+      "from": "limits",
+      "to": "many-memories",
+      "rel": "contrasts"
+    },
+    {
+      "from": "limits",
+      "to": "missing",
+      "rel": "leads-to"
+    },
+    {
+      "from": "stale-false",
+      "to": "missing",
+      "rel": "leads-to"
+    }
+  ],
+  "links": {
+    "articles": [
+      "introducing-fractal-semantic-graphs",
+      "token-bill-nobody-is-sending",
+      "replicating-the-agentic-inbox",
+      "custom-uis-are-not-the-exception",
+      "six-agents-one-inbox",
+      "code-review-as-a-fractal-semantic-graph",
+      "price-it-then-give-it-away"
+    ],
+    "pages": [
+      "/team/index.html",
+      "/use-cases/ai-agents.html",
+      "/docs/briefs/riskmandate-sandbox-twins-and-tokens.html"
+    ],
+    "sites": [
+      "https://nfrs.sgit.ai/memory/index.html",
+      "https://nfrs.sgit.ai/documentation/index.html",
+      "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents",
+      "https://www.letta.com/blog/benchmarking-ai-agent-memory/",
+      "https://manus.im/blog/Context-Engineering-for-AI-Agents-Lessons-from-Building-Manus"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "Nothing is remembered by the model between sessions. Everything is remembered by the files.",
+      "why": "The design in one line: memory lives in published, shared files, not in the model or a vendor's store."
+    },
+    {
+      "text": "Provenance is what lets memory be shared without being trusted, and it is the part that a vector store cannot give you, because a similarity score is not a source.",
+      "why": "Why every item in the memory carries its source."
+    }
+  ]
+}

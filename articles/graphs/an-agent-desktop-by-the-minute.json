@@ -1,0 +1,193 @@
+{
+  "slug": "an-agent-desktop-by-the-minute",
+  "teaser": "Nine properties a safe agent desktop needs, nine products against them, the macOS day-long lease, and the startup credits that would pay for testing it.",
+  "topics": [
+    "agents-and-policy",
+    "startups-and-strategy"
+  ],
+  "core_idea": "A desktop safe to hand to an agent needs isolation, an egress allowlist, secrets kept outside, its own identity, a live view, a record, a clean reset, billing that follows the work and the right operating system; in October 2026 each exists somewhere and no product we read has all nine; Linux sandboxes come closest, with key controls in beta, Windows agent desktops arrived in June, and macOS cannot be leased for less than 24 hours under Apple's licence, which also limits leased Macs to developer services; because prompt injection is not solved the desktop has to be the barrier, so the proposal is one mandate per task, a fresh desktop per task by operating system, and a vault outside every desktop, paid for at first by startup programmes listed with how to apply.",
+  "nodes": [
+    {
+      "id": "want",
+      "label": "A desktop per agent, billed by the minute",
+      "kind": "question",
+      "summary": "Can a locked-down desktop be rented for the two to eight hours a day an agent uses it?"
+    },
+    {
+      "id": "nine-properties",
+      "label": "Nine properties of a locked-down desktop",
+      "kind": "concept",
+      "summary": "Isolation, egress allowlist, secrets outside, own identity, live view, record, reset, billing that follows work, the right OS."
+    },
+    {
+      "id": "abp-grant",
+      "label": "The desktop is the agent's grant",
+      "kind": "concept",
+      "summary": "Read through the Agent Behaviour Policy, the box keeps what the agent can reach close to what the task needs."
+    },
+    {
+      "id": "matrix",
+      "label": "No product has all nine",
+      "kind": "claim",
+      "summary": "Nine products read from their own documentation on 7 October 2026; each property exists somewhere."
+    },
+    {
+      "id": "linux-sandboxes",
+      "label": "Linux sandboxes come closest",
+      "kind": "example",
+      "summary": "E2B and Daytona: microVMs or VMs, deny-by-default egress, proxy-held secrets, per-second billing; some controls in beta."
+    },
+    {
+      "id": "windows-agents",
+      "label": "Windows agent desktops arrived in June",
+      "kind": "example",
+      "summary": "Windows 365 for Agents and Amazon WorkSpaces for AI agents, both generally available in June 2026."
+    },
+    {
+      "id": "macos-lease",
+      "label": "macOS leases last at least a day",
+      "kind": "claim",
+      "summary": "Apple's licence requires 24-hour leases, so two hours of work buys a day, at up to $1,040 a month on AWS."
+    },
+    {
+      "id": "purpose-clause",
+      "label": "Leased Macs are for developer services",
+      "kind": "question",
+      "summary": "Whether a general agent desktop on a leased Mac fits Apple's Permitted Developer Services is a legal question."
+    },
+    {
+      "id": "claude-split",
+      "label": "Native computer use and governed computer use do not meet",
+      "kind": "claim",
+      "summary": "The desktop app runs on a person's Pro or Max machine; the API tool needs a Linux environment you supply."
+    },
+    {
+      "id": "injection",
+      "label": "Prompt injection is not solved",
+      "kind": "claim",
+      "summary": "About 1% success in Anthropic's own browser tests still represents meaningful risk, so the box must be the barrier."
+    },
+    {
+      "id": "design",
+      "label": "One mandate per task, a fresh desktop per task",
+      "kind": "method",
+      "summary": "Linux by default, Windows for Windows tools, macOS only for development by the day, configured from the task's mandate."
+    },
+    {
+      "id": "vault-outside",
+      "label": "A vault outside every desktop",
+      "kind": "method",
+      "summary": "Outputs, setup, mandate and footprint go to an encrypted sgit vault the desktop can append to and cannot rewrite."
+    },
+    {
+      "id": "programmes",
+      "label": "Startup programmes, verified with how to apply",
+      "kind": "artefact",
+      "summary": "E2B, Daytona, Scaleway, AWS, Microsoft, Google, Cloudflare, Modal and Anthropic, with amounts, criteria and links."
+    },
+    {
+      "id": "measure",
+      "label": "What only running it will tell",
+      "kind": "question",
+      "summary": "Takeover reliability, paused state over days, allowlist breakage, recording cost, Windows against Linux on one task."
+    }
+  ],
+  "edges": [
+    {
+      "from": "want",
+      "to": "nine-properties",
+      "rel": "leads-to"
+    },
+    {
+      "from": "nine-properties",
+      "to": "abp-grant",
+      "rel": "depends-on"
+    },
+    {
+      "from": "nine-properties",
+      "to": "matrix",
+      "rel": "produces"
+    },
+    {
+      "from": "linux-sandboxes",
+      "to": "matrix",
+      "rel": "example-of"
+    },
+    {
+      "from": "windows-agents",
+      "to": "matrix",
+      "rel": "example-of"
+    },
+    {
+      "from": "macos-lease",
+      "to": "matrix",
+      "rel": "example-of"
+    },
+    {
+      "from": "macos-lease",
+      "to": "purpose-clause",
+      "rel": "leads-to"
+    },
+    {
+      "from": "claude-split",
+      "to": "macos-lease",
+      "rel": "depends-on"
+    },
+    {
+      "from": "injection",
+      "to": "design",
+      "rel": "leads-to"
+    },
+    {
+      "from": "matrix",
+      "to": "design",
+      "rel": "leads-to"
+    },
+    {
+      "from": "design",
+      "to": "vault-outside",
+      "rel": "depends-on"
+    },
+    {
+      "from": "design",
+      "to": "measure",
+      "rel": "leads-to"
+    },
+    {
+      "from": "programmes",
+      "to": "measure",
+      "rel": "answers"
+    },
+    {
+      "from": "linux-sandboxes",
+      "to": "windows-agents",
+      "rel": "compared-with"
+    }
+  ],
+  "links": {
+    "articles": [
+      "why-my-agents-do-not-run-on-my-laptop",
+      "the-mandate-stack",
+      "where-is-the-why"
+    ],
+    "pages": [
+      "docs/what-is-sgit.html",
+      "docs/append-lane-messaging.html"
+    ],
+    "sites": [
+      "https://riskmandate.ai/abp.html",
+      "https://e2b.dev/",
+      "https://www.daytona.io/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "The Mac is not expensive per hour; it is expensive because the hour you can buy is a day.",
+      "why": "Why the macOS bars in the cost figure are long."
+    },
+    {
+      "text": "The model's own defences reduce how often that matters, and do not replace it.",
+      "why": "Why the desktop, not the model, is the barrier."
+    }
+  ]
+}

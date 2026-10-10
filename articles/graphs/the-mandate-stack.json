@@ -1,0 +1,294 @@
+{
+  "slug": "the-mandate-stack",
+  "teaser": "A multi-agent system that runs a business every few hours: eight layers, one written mandate per agent, everything a graph, one human who sends.",
+  "topics": [
+    "agents-and-policy",
+    "graphs-and-knowledge"
+  ],
+  "core_idea": "RiskMandate runs its business with about fifteen agents and one person, and the agent that runs its CRM described the setup as eight layers: rented compute and channels, encrypted vaults as shared memory with mail as files and append lanes, a vault per domain, semantic graphs over people, contexts, teams and policies, a scheduled conductor with security first and last, written behaviour policies with grant, mandate, gap and barrier, and a human who holds the one irreversible step; the world writes in from the left and nothing leaves without the person on the right; the loop that makes it hold treats the draft as a release candidate for the whole pipeline with the recipient's reply closing it; two Wardley maps show what the team is commoditising (shared memory, the CLI, on encrypted storage) and what it is productising (the policies, the graphs); and the published record of agent projects that stall for unclear value, cost, trust, security and governance is read last, each reason mapped to the mechanism that answers it; the name is a working one and nothing planned is included.",
+  "nodes": [
+    {
+      "id": "one-that-runs",
+      "label": "One that runs",
+      "kind": "example",
+      "summary": "About fifteen agents and one person run RiskMandate's relationships, research, writing and events every few hours; the briefing was written by the agent that runs the CRM."
+    },
+    {
+      "id": "outside-in",
+      "label": "The world writes in, the person sends",
+      "kind": "concept",
+      "summary": "Email, the subscribe form, other teams' agents and an event extension enter from the left as data; the person enters from the right through Claude and Gmail; nothing leaves unsent by them."
+    },
+    {
+      "id": "rented-layers",
+      "label": "Compute and channels are rented",
+      "kind": "concept",
+      "summary": "Cowork and Claude Code cloud sessions; one Workspace identity cut into roles; the send row has no agent in it."
+    },
+    {
+      "id": "shared-memory",
+      "label": "Shared memory is files the host cannot read",
+      "kind": "method",
+      "summary": "Encrypted, versioned vaults cloned per session; agent mail as files in each other's mailroom; append lanes for outsiders who hold no key."
+    },
+    {
+      "id": "domain-vaults",
+      "label": "A vault per domain and per mission",
+      "kind": "method",
+      "summary": "One vault for relationships, one per project with its own owner, policy and key holders; least privilege applied to context."
+    },
+    {
+      "id": "graph-layer",
+      "label": "Every record is a node with typed edges",
+      "kind": "concept",
+      "summary": "People, their work, interests and the team's materials; contexts as graphs over the same people; the team's requests, each ABP and the custody register as graphs."
+    },
+    {
+      "id": "no-edge-gap",
+      "label": "A missing edge is a reason not to send",
+      "kind": "claim",
+      "summary": "An interest met by a material is a reason to send it; an interest with no edge is something to make or a reason not to email; nudges come from edges, not lists."
+    },
+    {
+      "id": "conductor",
+      "label": "A conductor with security at both ends",
+      "kind": "method",
+      "summary": "Open and lock, security, drafts, inbox, briefs, CRM, mission, research, dev, security, a card to the human, stop; the order is a design decision."
+    },
+    {
+      "id": "governance",
+      "label": "One written mandate per agent",
+      "kind": "method",
+      "summary": "Grant, mandate, gap and barrier in one grammar; roles split the risk; drafts only; a security hold; secrets never in files; a card per session; a custody register."
+    },
+    {
+      "id": "human-sends",
+      "label": "One human holds the irreversible step",
+      "kind": "claim",
+      "summary": "No agent sends, replies or forwards; everything below can be wrong and still be caught at the draft."
+    },
+    {
+      "id": "tool-loop",
+      "label": "The vault is an app platform, not storage",
+      "kind": "concept",
+      "summary": "A friction becomes a tool as HTML in the same session, deployed into the vault, used and corrected; tools compound down to an interface for one person; the loop stops when a piece of work no longer calls for a tool."
+    },
+    {
+      "id": "draft-release-candidate",
+      "label": "The draft is the release candidate",
+      "kind": "concept",
+      "summary": "The whole pipeline has run before the person sees the draft; reviewing it is QA on the system and where the thinking happens; the recipient's reply closes the loop."
+    },
+    {
+      "id": "traced-to-source",
+      "label": "Mistakes traced to captured data, an edge or the model",
+      "kind": "method",
+      "summary": "Every fact carries source, capture method and hash; the cause is fixed where it came from; model error reported as the rarest of the three."
+    },
+    {
+      "id": "two-maps",
+      "label": "Commoditise the memory, productise the mandate",
+      "kind": "claim",
+      "summary": "Two Wardley maps, from outside and inside: shared memory and the sgit CLI pushed toward commodity on encrypted storage; the policies and the graphs pulled from genesis toward product. Placements are claims."
+    },
+    {
+      "id": "why-it-holds",
+      "label": "Five reasons it holds",
+      "kind": "claim",
+      "summary": "Small versioned control surface; the human at the irreversible step; state as files; meaning on the read path; everything leaves a trail."
+    },
+    {
+      "id": "not-in-it",
+      "label": "A working name, and what is not in it",
+      "kind": "question",
+      "summary": "The Mandate Stack carries the mandate and the layers but not the human who sends; nothing planned is included; unsigned authorship, no key revocation, policy-only barriers, and who gives the mandate over information stay open."
+    },
+    {
+      "id": "the-record",
+      "label": "The record is of pilots that stall",
+      "kind": "claim",
+      "summary": "Gartner, S&P Global, McKinsey, Deloitte, KPMG and Forrester, June 2025 to July 2026: cancelled, paused or trapped in pilot, for unclear value, cost, trust, security and governance; the same surveys show agents shipping where the workflow stops at the draft."
+    }
+  ],
+  "edges": [
+    {
+      "from": "one-that-runs",
+      "to": "outside-in",
+      "rel": "depends-on"
+    },
+    {
+      "from": "one-that-runs",
+      "to": "rented-layers",
+      "rel": "depends-on"
+    },
+    {
+      "from": "rented-layers",
+      "to": "shared-memory",
+      "rel": "leads-to"
+    },
+    {
+      "from": "shared-memory",
+      "to": "domain-vaults",
+      "rel": "leads-to"
+    },
+    {
+      "from": "domain-vaults",
+      "to": "graph-layer",
+      "rel": "leads-to"
+    },
+    {
+      "from": "graph-layer",
+      "to": "no-edge-gap",
+      "rel": "produces"
+    },
+    {
+      "from": "graph-layer",
+      "to": "conductor",
+      "rel": "leads-to"
+    },
+    {
+      "from": "conductor",
+      "to": "governance",
+      "rel": "depends-on"
+    },
+    {
+      "from": "governance",
+      "to": "human-sends",
+      "rel": "leads-to"
+    },
+    {
+      "from": "outside-in",
+      "to": "human-sends",
+      "rel": "extends"
+    },
+    {
+      "from": "shared-memory",
+      "to": "tool-loop",
+      "rel": "leads-to"
+    },
+    {
+      "from": "graph-layer",
+      "to": "tool-loop",
+      "rel": "depends-on"
+    },
+    {
+      "from": "tool-loop",
+      "to": "two-maps",
+      "rel": "extends"
+    },
+    {
+      "from": "human-sends",
+      "to": "draft-release-candidate",
+      "rel": "extends"
+    },
+    {
+      "from": "draft-release-candidate",
+      "to": "traced-to-source",
+      "rel": "depends-on"
+    },
+    {
+      "from": "no-edge-gap",
+      "to": "traced-to-source",
+      "rel": "extends"
+    },
+    {
+      "from": "shared-memory",
+      "to": "two-maps",
+      "rel": "example-of"
+    },
+    {
+      "from": "governance",
+      "to": "two-maps",
+      "rel": "example-of"
+    },
+    {
+      "from": "traced-to-source",
+      "to": "why-it-holds",
+      "rel": "leads-to"
+    },
+    {
+      "from": "two-maps",
+      "to": "why-it-holds",
+      "rel": "extends"
+    },
+    {
+      "from": "why-it-holds",
+      "to": "not-in-it",
+      "rel": "leads-to"
+    },
+    {
+      "from": "why-it-holds",
+      "to": "the-record",
+      "rel": "answers"
+    },
+    {
+      "from": "the-record",
+      "to": "one-that-runs",
+      "rel": "contrasts"
+    }
+  ],
+  "links": {
+    "articles": [
+      "the-agent-team-as-it-runs",
+      "replicating-the-agentic-inbox",
+      "six-agents-one-inbox",
+      "why-my-agents-do-not-run-on-my-laptop",
+      "footprint-and-blast-radius",
+      "every-risk-is-already-accepted",
+      "ultimate-insider-three-collisions",
+      "connector-twin-before-you-deploy-an-agent",
+      "the-identity-we-wanted-to-give-the-agents",
+      "introducing-fractal-semantic-graphs",
+      "code-review-as-a-fractal-semantic-graph",
+      "if-somebody-built-a-company-on-code-review",
+      "memory-is-not-a-spectator-sport",
+      "custom-uis-are-not-the-exception",
+      "seven-vaults-one-method",
+      "supply-chain-of-vaults",
+      "the-wall-under-the-reply",
+      "how-much-of-this-did-i-write",
+      "what-sgit-is",
+      "nineteen-sites"
+    ],
+    "pages": [
+      "docs/credentials.html",
+      "docs/agents.html",
+      "docs/two-branch-model.html",
+      "docs/append-lane-messaging.html",
+      "docs/vault-messaging.html",
+      "api/append-lanes.html",
+      "docs/agent-contact.html",
+      "security/index.html",
+      "docs/how-to/claude-team-egress.html",
+      "docs/briefs/riskmandate-footprint-and-blast-radius.html",
+      "docs/briefs/riskmandate-sandbox-twins-and-tokens.html",
+      "docs/briefs/secrets-sgit-ai-design-pack.html",
+      "docs/briefs/subscribe-lane-agent-brief.html",
+      "docs/briefs/code-review-graphs-in-the-repository.html",
+      "docs/vault/vault-apps.html",
+      "docs/surfaces.html",
+      "demos/vaults/deck-vault/index.html",
+      "demos/vaults/how-much-evidence/index.html",
+      "demos/vaults/connector-twin/index.html",
+      "demos/vaults/risk-graph-explorer/index.html",
+      "demos/vaults/kit-bag/index.html",
+      "articles/graphs.html"
+    ],
+    "sites": [
+      "https://riskmandate.ai/abp.html",
+      "https://graphs.sgit.ai/",
+      "https://risks.sgit.ai/",
+      "https://wardley-maps.sgit.ai/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "Many small agents, one written mandate each, everything connected as a graph, one human who sends.",
+      "why": "The one-line version of the pattern, and the part the working name leaves out."
+    },
+    {
+      "text": "The record is of pilots that stall, not of a technology that cannot ship.",
+      "why": "The fair reading of the surveys, kept for the end."
+    }
+  ]
+}

@@ -1,0 +1,172 @@
+{
+  "slug": "proof-moved-up",
+  "teaser": "The rebuilt homepage puts four real vaults under one sentence, picks six by the job they do, and computes its numbers at build time from the site's own data.",
+  "topics": [
+    "site-and-engineering",
+    "vaults-and-method"
+  ],
+  "core_idea": "The homepage stopped being a page somebody edits and became a view over the site's own data, with real vaults placed before the mechanism and the one unproven claim left unpretended.",
+  "nodes": [
+    {
+      "id": "reframed-sentence",
+      "label": "The reframed sentence",
+      "kind": "claim",
+      "summary": "The hero changed from \"the encrypted git for humans and AI agents\" to \"a vault is a unit of work: data, app, history and sources, shipped as one string\", with encryption as the subordinate clause."
+    },
+    {
+      "id": "four-hero-vaults",
+      "label": "Four real vaults in the hero",
+      "kind": "artefact",
+      "summary": "Four published vaults with their screenshots sit under the sentence, chosen by a hero field in the vault data, so changing the front door is a data edit, not a page edit."
+    },
+    {
+      "id": "six-jobs",
+      "label": "What people actually ship",
+      "kind": "artefact",
+      "summary": "Six vaults chosen by the job they do, hand over a report, publish a standard, give a talk, pitch an investor, ship a game, give an agent a workspace, and none of the six lines is about encryption."
+    },
+    {
+      "id": "vault-as-a-unit",
+      "label": "A vault as a unit",
+      "kind": "concept",
+      "summary": "Retest scripts that travel with the findings and cited papers that never separate from the deck are properties of a vault as a unit, which a newcomer can actually feel."
+    },
+    {
+      "id": "team-band",
+      "label": "One human, a team of agents",
+      "kind": "artefact",
+      "summary": "A band with four numbers computed at build time, releases, vaults, sibling sites, briefs, and the loop told in three beats with the artefacts linked."
+    },
+    {
+      "id": "numbers-not-typed",
+      "label": "The numbers are not typed",
+      "kind": "method",
+      "summary": "Releases come from the version log, vaults from the vault data, sites from the network directory and briefs from the briefs page, so a wrong number means the site is wrong somewhere else too."
+    },
+    {
+      "id": "what-was-cut",
+      "label": "What was cut",
+      "kind": "example",
+      "summary": "The abstract use-case band and the three-doors band were cut, and the terminal walkthrough moved down under the heading Under the hood, it is git."
+    },
+    {
+      "id": "nine-bands-counted",
+      "label": "Nine bands before, nine after",
+      "kind": "example",
+      "summary": "Three bands were cut and three added, corrected in v0.2.61 after counting rather than remembering, and 1,370 words became 1,332 with ten screenshots."
+    },
+    {
+      "id": "unproven-merge-claim",
+      "label": "What it cannot show yet",
+      "kind": "question",
+      "summary": "No published vault demonstrates two agents on one vault, their branches and a human merging them, and the team band is written so that it does not pretend otherwise."
+    },
+    {
+      "id": "vaults-json",
+      "label": "admin/content/vaults.json",
+      "kind": "artefact",
+      "summary": "One file now drives the hero cards, the six jobs, the sortable table and the vault count; adding a vault is adding a row and promoting one is setting a field."
+    },
+    {
+      "id": "homepage-as-view",
+      "label": "The homepage as a view over data",
+      "kind": "claim",
+      "summary": "The homepage stopped being a page somebody edits and became a view over the site's own data, the rule the articles band, network directory and update feed already followed."
+    },
+    {
+      "id": "before-after-comparison",
+      "label": "Beside the before pictures",
+      "kind": "method",
+      "summary": "The rebuild is put next to the previous article's screenshots so the comparison can be made honestly, including what it still cannot show."
+    }
+  ],
+  "edges": [
+    {
+      "from": "reframed-sentence",
+      "to": "vault-as-a-unit",
+      "rel": "depends-on"
+    },
+    {
+      "from": "four-hero-vaults",
+      "to": "reframed-sentence",
+      "rel": "extends"
+    },
+    {
+      "from": "four-hero-vaults",
+      "to": "vaults-json",
+      "rel": "depends-on"
+    },
+    {
+      "from": "six-jobs",
+      "to": "vaults-json",
+      "rel": "depends-on"
+    },
+    {
+      "from": "six-jobs",
+      "to": "vault-as-a-unit",
+      "rel": "example-of"
+    },
+    {
+      "from": "what-was-cut",
+      "to": "six-jobs",
+      "rel": "contrasts"
+    },
+    {
+      "from": "what-was-cut",
+      "to": "nine-bands-counted",
+      "rel": "leads-to"
+    },
+    {
+      "from": "team-band",
+      "to": "numbers-not-typed",
+      "rel": "depends-on"
+    },
+    {
+      "from": "team-band",
+      "to": "vaults-json",
+      "rel": "depends-on"
+    },
+    {
+      "from": "unproven-merge-claim",
+      "to": "team-band",
+      "rel": "contrasts"
+    },
+    {
+      "from": "vaults-json",
+      "to": "homepage-as-view",
+      "rel": "produces"
+    },
+    {
+      "from": "numbers-not-typed",
+      "to": "homepage-as-view",
+      "rel": "extends"
+    },
+    {
+      "from": "nine-bands-counted",
+      "to": "before-after-comparison",
+      "rel": "example-of"
+    },
+    {
+      "from": "before-after-comparison",
+      "to": "unproven-merge-claim",
+      "rel": "leads-to"
+    }
+  ],
+  "links": {
+    "articles": [
+      "proof-behind-the-claim"
+    ],
+    "pages": [],
+    "sites": []
+  },
+  "quotes": [
+    {
+      "text": "If a number on that band is wrong, the site is wrong somewhere else too, and that is the right dependency.",
+      "why": "The rule behind the rebuild: nothing on the homepage is typed, everything is computed from the site's own records."
+    },
+    {
+      "text": "That is the trade: pictures of real things instead of paragraphs about them.",
+      "why": "What actually changed, stated against the byte and word counts rather than as a slogan."
+    }
+  ]
+}

@@ -1,0 +1,173 @@
+{
+  "slug": "the-ai-governance-stack-as-a-graph",
+  "teaser": "Hari Kota's ten-layer AI governance stack, kept as posted and turned into a fractal semantic graph: the gaps become missing edges, and queries.",
+  "topics": [
+    "graphs-and-knowledge",
+    "agents-and-policy"
+  ],
+  "core_idea": "Keep Hari Kota's ten-layer stack exactly as posted as the view and make a fractal semantic graph the model: the table already contains ten edges across layers where rows share an instrument, role or jurisdiction; each layer is its own world with its own ontology, sharing only a grammar of verbs with inverses; the edges between worlds come from the provisions themselves, such as EU AI Act Article 26(2) and NIST AI RMF GOVERN 1.6; changes over time are dated edges rather than rewrites; and a gap is a missing edge, so the do-this-today test and the gaps in layers 3, 5 and 10 become queries anyone can run.",
+  "nodes": [
+    {
+      "id": "hari-stack",
+      "label": "Hari's stack, as posted",
+      "kind": "artefact",
+      "summary": "Ten layers, ten purposes and forty-six examples, kept word for word as nodes."
+    },
+    {
+      "id": "hidden-edges",
+      "label": "The table already contains a graph",
+      "kind": "claim",
+      "summary": "Ten edges cross the layers where rows name the same instrument, role or jurisdiction."
+    },
+    {
+      "id": "worlds",
+      "label": "Each layer is its own world",
+      "kind": "concept",
+      "summary": "Law, standards, inventory, testing and people each keep their own ontology."
+    },
+    {
+      "id": "grammar",
+      "label": "Five grammar rules",
+      "kind": "method",
+      "summary": "Verbs with inverses, no relates_to, data in properties, supersede never delete, render answers."
+    },
+    {
+      "id": "provision-edges",
+      "label": "Edges from provisions",
+      "kind": "method",
+      "summary": "Every added edge rests on a readable provision: Art 26(2), Art 4, Annex III, GOVERN 1.6, 42001 7.2."
+    },
+    {
+      "id": "zoom",
+      "label": "Zoom from one cell down",
+      "kind": "concept",
+      "summary": "Cell to instrument to provision to an organisation's systems, owners and records."
+    },
+    {
+      "id": "time",
+      "label": "The graph keeps time",
+      "kind": "claim",
+      "summary": "2026 amendments sit under Hari's labels as dated edges, older values struck through."
+    },
+    {
+      "id": "today",
+      "label": "Do this today, as a traversal",
+      "kind": "method",
+      "summary": "System to owner, and system to classification to tier and basis; a missing step is the gap."
+    },
+    {
+      "id": "gap-queries",
+      "label": "Gaps as queries",
+      "kind": "method",
+      "summary": "Layers 3, 5 and 10 become queries with traversals and results."
+    },
+    {
+      "id": "hollow-oak",
+      "label": "Hollow Oak Home",
+      "kind": "example",
+      "summary": "A fictional shop with eight AI systems in three jurisdictions and planted gaps."
+    },
+    {
+      "id": "coverage",
+      "label": "What 4 or 5 means",
+      "kind": "question",
+      "summary": "10 of 10 layers somewhere, 1 of 10 for every system, 0 with the shadow tool."
+    },
+    {
+      "id": "vault",
+      "label": "AI Governance Graph vault",
+      "kind": "artefact",
+      "summary": "335 nodes, 702 edges, a 22-check gate and an app, published with its read key."
+    }
+  ],
+  "edges": [
+    {
+      "from": "hidden-edges",
+      "to": "hari-stack",
+      "rel": "extends"
+    },
+    {
+      "from": "worlds",
+      "to": "grammar",
+      "rel": "depends-on"
+    },
+    {
+      "from": "provision-edges",
+      "to": "worlds",
+      "rel": "extends"
+    },
+    {
+      "from": "zoom",
+      "to": "provision-edges",
+      "rel": "depends-on"
+    },
+    {
+      "from": "time",
+      "to": "grammar",
+      "rel": "example-of"
+    },
+    {
+      "from": "today",
+      "to": "hari-stack",
+      "rel": "answers"
+    },
+    {
+      "from": "gap-queries",
+      "to": "hari-stack",
+      "rel": "answers"
+    },
+    {
+      "from": "hollow-oak",
+      "to": "today",
+      "rel": "example-of"
+    },
+    {
+      "from": "coverage",
+      "to": "gap-queries",
+      "rel": "leads-to"
+    },
+    {
+      "from": "vault",
+      "to": "zoom",
+      "rel": "produces"
+    },
+    {
+      "from": "vault",
+      "to": "gap-queries",
+      "rel": "produces"
+    }
+  ],
+  "links": {
+    "articles": [
+      "introducing-fractal-semantic-graphs",
+      "code-review-as-a-fractal-semantic-graph",
+      "every-risk-is-already-accepted"
+    ],
+    "pages": [
+      "demos/vaults/ai-governance-graph/index.html",
+      "demos/vaults/regulation-graph/index.html",
+      "demos/vaults/aibcf-graph/index.html",
+      "demos/vaults/hope-or-enforcement/index.html"
+    ],
+    "sites": [
+      "https://eur-lex.europa.eu/eli/reg/2026/1744/oj/eng",
+      "https://airc.nist.gov/airmf-resources/crosswalks/",
+      "https://arxiv.org/abs/2408.11925",
+      "https://w3id.org/AIRO"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "start with the edges the people who wrote the layers already drew without drawing them",
+      "why": "The first answer to Hari's question."
+    },
+    {
+      "text": "A table is correct on the day it is drawn.",
+      "why": "Why the graph keeps time."
+    },
+    {
+      "text": "Hari's test is the best line in the post, because it is a query in disguise",
+      "why": "How do-this-today becomes a traversal."
+    }
+  ]
+}

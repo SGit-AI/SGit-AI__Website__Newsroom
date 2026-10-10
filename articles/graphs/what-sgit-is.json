@@ -1,0 +1,204 @@
+{
+  "slug": "what-sgit-is",
+  "teaser": "sgit is git for files you cannot put on GitHub: encrypted before they leave your machine, versioned like git, stored where the server cannot read a byte.",
+  "topics": [
+    "vaults-and-method"
+  ],
+  "core_idea": "sgit gives the files people say they cannot put on GitHub the history, branches and shareable links of git, on a server that holds ciphertext and nothing else.",
+  "nodes": [
+    {
+      "id": "files-with-nowhere-to-live",
+      "label": "Files with nowhere good to live",
+      "kind": "concept",
+      "summary": "A risk register with real system names, a regulatory analysis still being argued about, the working memory of an AI agent, client material under NDA."
+    },
+    {
+      "id": "sgit",
+      "label": "sgit",
+      "kind": "artefact",
+      "summary": "sgit is git for those files: encrypted before they leave your machine, versioned exactly like git, stored on a server that cannot read a single byte."
+    },
+    {
+      "id": "zero-knowledge",
+      "label": "Zero knowledge, precisely",
+      "kind": "claim",
+      "summary": "The server holds ciphertext and nothing else, not your filenames, not your directory structure, not your commit messages."
+    },
+    {
+      "id": "no-recovery",
+      "label": "No key escrow",
+      "kind": "claim",
+      "summary": "There is no key escrow, no admin override, no support engineer who can recover it for you, and that last part is a feature with a real cost."
+    },
+    {
+      "id": "vault-key",
+      "label": "Vault key",
+      "kind": "concept",
+      "summary": "A single string that is three things at once, the address of the vault, the authorisation to write to it, and the key that decrypts it."
+    },
+    {
+      "id": "read-key",
+      "label": "Read key",
+      "kind": "concept",
+      "summary": "Derived one way from the vault key, same vault, read-only, safe to publish, and that asymmetry is the whole sharing model."
+    },
+    {
+      "id": "tripwire",
+      "label": "Release tripwire",
+      "kind": "artefact",
+      "summary": "No vault key has ever been published, a rule enforced by a tripwire in the release pipeline that scans every file before either remote is touched."
+    },
+    {
+      "id": "content-addressed-ciphertext",
+      "label": "Content-addressed over ciphertext",
+      "kind": "concept",
+      "summary": "The object's name is a SHA-256 of the encrypted bytes, so the host can deduplicate it, cache it and serve it from a CDN while unable to tell you what it is."
+    },
+    {
+      "id": "real-version-control",
+      "label": "A real version control system",
+      "kind": "claim",
+      "summary": "Multi-parent commits, a tree per directory, deterministic refs derived by HMAC, a genuine merge-base computation and three-way merge, on content the server cannot interpret."
+    },
+    {
+      "id": "nineteen-vaults",
+      "label": "Nineteen vaults you can open",
+      "kind": "example",
+      "summary": "Every vault on sgit.ai is live, and cloning all nineteen from their published keys gave 1,389 files and no failures."
+    },
+    {
+      "id": "capability-without-credential",
+      "label": "Capability without credential",
+      "kind": "concept",
+      "summary": "A vault can contain an application that requests no permissions and still renders the whole risk graph, because the host reads the vault and passes results in."
+    },
+    {
+      "id": "network-of-sites",
+      "label": "The network of sites",
+      "kind": "artefact",
+      "summary": "sgit.ai is one of nineteen sites on *.sgit.ai, each taking one question further than a section could."
+    },
+    {
+      "id": "checkable-not-impressive",
+      "label": "Checkable rather than impressive",
+      "kind": "claim",
+      "summary": "Each site publishes its argument before the thing exists and states plainly what has shipped and what has not."
+    }
+  ],
+  "edges": [
+    {
+      "from": "sgit",
+      "to": "files-with-nowhere-to-live",
+      "rel": "answers"
+    },
+    {
+      "from": "sgit",
+      "to": "zero-knowledge",
+      "rel": "depends-on"
+    },
+    {
+      "from": "zero-knowledge",
+      "to": "vault-key",
+      "rel": "depends-on"
+    },
+    {
+      "from": "no-recovery",
+      "to": "zero-knowledge",
+      "rel": "extends"
+    },
+    {
+      "from": "read-key",
+      "to": "vault-key",
+      "rel": "depends-on"
+    },
+    {
+      "from": "read-key",
+      "to": "vault-key",
+      "rel": "contrasts"
+    },
+    {
+      "from": "tripwire",
+      "to": "vault-key",
+      "rel": "depends-on"
+    },
+    {
+      "from": "tripwire",
+      "to": "read-key",
+      "rel": "extends"
+    },
+    {
+      "from": "content-addressed-ciphertext",
+      "to": "zero-knowledge",
+      "rel": "extends"
+    },
+    {
+      "from": "real-version-control",
+      "to": "sgit",
+      "rel": "extends"
+    },
+    {
+      "from": "real-version-control",
+      "to": "content-addressed-ciphertext",
+      "rel": "depends-on"
+    },
+    {
+      "from": "nineteen-vaults",
+      "to": "read-key",
+      "rel": "example-of"
+    },
+    {
+      "from": "nineteen-vaults",
+      "to": "sgit",
+      "rel": "depends-on"
+    },
+    {
+      "from": "capability-without-credential",
+      "to": "read-key",
+      "rel": "compared-with"
+    },
+    {
+      "from": "capability-without-credential",
+      "to": "nineteen-vaults",
+      "rel": "extends"
+    },
+    {
+      "from": "network-of-sites",
+      "to": "sgit",
+      "rel": "extends"
+    },
+    {
+      "from": "network-of-sites",
+      "to": "checkable-not-impressive",
+      "rel": "example-of"
+    },
+    {
+      "from": "nineteen-vaults",
+      "to": "checkable-not-impressive",
+      "rel": "example-of"
+    }
+  ],
+  "links": {
+    "articles": [],
+    "pages": [
+      "/network/graphs.html",
+      "/network/index.html",
+      "/network/sg-sentinel.html",
+      "/demos/vaults/index.html",
+      "/admin/versions.html"
+    ],
+    "sites": [
+      "https://graphs.sgit.ai/about/participant.html",
+      "https://www.linkedin.com/pulse/git-things-you-cannot-put-github-dinis-cruz-qwrte/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "Lose it and the data is gone. Leak it and someone can rewrite your history.",
+      "why": "The two costs of a vault key being address, authorisation and encryption key at once."
+    },
+    {
+      "text": "We would rather be checkable than impressive.",
+      "why": "The house style that the live vaults, the version log and the NOT BUILT pages all follow."
+    }
+  ]
+}

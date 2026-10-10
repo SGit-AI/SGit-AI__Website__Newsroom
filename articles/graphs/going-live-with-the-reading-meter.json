@@ -1,0 +1,146 @@
+{
+  "slug": "going-live-with-the-reading-meter",
+  "teaser": "Pay for the share of a page you read, go below zero with no nagging, top up £5 on Stripe: the plan, and the numbers we check in eight weeks.",
+  "topics": [
+    "startups-and-strategy",
+    "news-and-evidence"
+  ],
+  "core_idea": "The reading meter goes live as an honesty box rather than a paywall: pages are charged by scroll depth, the balance may go below zero forever, there is no ask and no banner, readers can decline to pay with a reason, and topping up is one £5 Stripe payment credited by an unverified return page; the business case is evidence, not revenue, and five hypotheses with thresholds and a review date are written down before the first payment.",
+  "nodes": [
+    {
+      "id": "depth",
+      "label": "Pay for the share you read",
+      "kind": "method",
+      "summary": "A page costs its price times the deepest point scrolled to, never less than a tenth."
+    },
+    {
+      "id": "negative",
+      "label": "Below zero, forever, without shame",
+      "kind": "method",
+      "summary": "Nothing blocked, nothing shown but a small balance in the top bar."
+    },
+    {
+      "id": "decline",
+      "label": "Not worth it? Don't charge me",
+      "kind": "method",
+      "summary": "Refund with a reason, kept locally as a signal for the picks."
+    },
+    {
+      "id": "guardian",
+      "label": "The Guardian's counter and ask",
+      "kind": "example",
+      "summary": "Weekly article counts in localStorage used to ask for support; £4, £12 and £27 a month, £107m digital reader revenue."
+    },
+    {
+      "id": "subscription",
+      "label": "The subscription commitment",
+      "kind": "concept",
+      "summary": "£4 a month is £48 a year, decided before the reading happens."
+    },
+    {
+      "id": "honesty-box",
+      "label": "An honesty box, not a paywall",
+      "kind": "claim",
+      "summary": "Bagels about 87 to 95% paid; Radiohead 38%; pay-what-you-want raises take-up and lowers the average."
+    },
+    {
+      "id": "stripe",
+      "label": "One £5 Stripe payment",
+      "kind": "artefact",
+      "summary": "1.5% + 20p on a standard UK card, about 5.5%; the return page credits without verifying."
+    },
+    {
+      "id": "evidence",
+      "label": "The business case is evidence",
+      "kind": "claim",
+      "summary": "A payment is the only signal on the site curiosity cannot produce."
+    },
+    {
+      "id": "anchors",
+      "label": "Five hypotheses and a review date",
+      "kind": "question",
+      "summary": "First payment in 14 days, 10 payers, 3 repeat payers, no disputes, below zero is normal; review eight weeks after the link goes live."
+    },
+    {
+      "id": "library",
+      "label": "SG Meter, a library",
+      "kind": "artefact",
+      "summary": "One web component any site can add, with config, events, storage and a security model."
+    }
+  ],
+  "edges": [
+    {
+      "from": "guardian",
+      "to": "negative",
+      "rel": "contrasts"
+    },
+    {
+      "from": "subscription",
+      "to": "depth",
+      "rel": "contrasts"
+    },
+    {
+      "from": "honesty-box",
+      "to": "negative",
+      "rel": "depends-on"
+    },
+    {
+      "from": "depth",
+      "to": "decline",
+      "rel": "leads-to"
+    },
+    {
+      "from": "decline",
+      "to": "evidence",
+      "rel": "produces"
+    },
+    {
+      "from": "stripe",
+      "to": "evidence",
+      "rel": "produces"
+    },
+    {
+      "from": "evidence",
+      "to": "anchors",
+      "rel": "leads-to"
+    },
+    {
+      "from": "depth",
+      "to": "library",
+      "rel": "produces"
+    }
+  ],
+  "links": {
+    "articles": [
+      "a-meter-in-the-browser",
+      "who-will-game-the-reading-meter",
+      "the-question-is-whether-they-miss-it",
+      "price-it-then-give-it-away",
+      "how-news-got-here"
+    ],
+    "pages": [
+      "/meter/index.html",
+      "/meter/security.html",
+      "/account/index.html",
+      "/account/top-up.html"
+    ],
+    "sites": [
+      "https://github.com/guardian/support-dotcom-components",
+      "https://stripe.com/gb/pricing"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "And going below zero is not a failure state.",
+      "why": "The design choice that separates this meter from a paywall or an ask."
+    },
+    {
+      "text": "A payment is the only signal on this site that cannot be produced by curiosity.",
+      "why": "The business case in one line."
+    },
+    {
+      "text": "The one outcome that would be a failure of the method is not looking.",
+      "why": "Why the hypotheses are written down before the results."
+    }
+  ]
+}

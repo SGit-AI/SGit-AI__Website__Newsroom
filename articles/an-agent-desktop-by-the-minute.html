@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>A locked-down desktop for an agent, by the minute, is still hard to rent, sgit.ai</title>
+<meta name="description" content="We want to give each agent a desktop of its own, away from the laptop, that a person can watch and take over, that can reach only what its task needs, that holds no secret it could leak, that is thrown away afterwards, and that is billed for the minutes it works. In October 2026 every one of those properties can be bought somewhere, and no single product we looked at offers all of them. This article lays out the nine properties, puts nine products against them from their own documentation, prices two hours of work a day on each, and explains the three things that make it hard: macOS cannot be leased for less than a day and Apple's licence limits what a leased Mac is for; the strongest isolation controls are weeks old or in private beta; and prompt injection is not solved, so the desktop has to be the barrier rather than the model. It proposes what we would build from what exists, and closes with the startup credit programmes that would pay for trying it, verified on the day, with how to apply.">
+<link rel="canonical" href="https://newsroom.sgit.ai/articles/an-agent-desktop-by-the-minute.html">
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="sgit.ai">
+<meta property="og:url" content="https://newsroom.sgit.ai/articles/an-agent-desktop-by-the-minute.html">
+<meta property="og:title" content="A locked-down desktop for an agent, by the minute, is still hard to rent, sgit.ai">
+<meta property="og:description" content="We want to give each agent a desktop of its own, away from the laptop, that a person can watch and take over, that can reach only what its task needs, that holds no secret it could leak, that is thrown away afterwards, and that is billed for the minutes it works. In October 2026 every one of those properties can be bought somewhere, and no single product we looked at offers all of them. This article lays out the nine properties, puts nine products against them from their own documentation, prices two hours of work a day on each, and explains the three things that make it hard: macOS cannot be leased for less than a day and Apple's licence limits what a leased Mac is for; the strongest isolation controls are weeks old or in private beta; and prompt injection is not solved, so the desktop has to be the barrier rather than the model. It proposes what we would build from what exists, and closes with the startup credit programmes that would pay for trying it, verified on the day, with how to apply.">
+<meta property="og:image" content="https://newsroom.sgit.ai/og/an-agent-desktop-by-the-minute.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="A locked-down desktop for an agent, by the minute, is still hard to rent, sgit.ai">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://newsroom.sgit.ai/og/an-agent-desktop-by-the-minute.jpg">
+<link rel="alternate" type="text/markdown" href="an-agent-desktop-by-the-minute.md" title="This page as markdown">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "A locked-down desktop for an agent, by the minute, is still hard to rent, sgit.ai", "headline": "A locked-down desktop for an agent, by the minute, is still hard to rent, sgit.ai", "description": "We want to give each agent a desktop of its own, away from the laptop, that a person can watch and take over, that can reach only what its task needs, that holds no secret it could leak, that is thrown away afterwards, and that is billed for the minutes it works. In October 2026 every one of those properties can be bought somewhere, and no single product we looked at offers all of them. This article lays out the nine properties, puts nine products against them from their own documentation, prices two hours of work a day on each, and explains the three things that make it hard: macOS cannot be leased for less than a day and Apple's licence limits what a leased Mac is for; the strongest isolation controls are weeks old or in private beta; and prompt injection is not solved, so the desktop has to be the barrier rather than the model. It proposes what we would build from what exists, and closes with the startup credit programmes that would pay for trying it, verified on the day, with how to apply.", "url": "https://newsroom.sgit.ai/articles/an-agent-desktop-by-the-minute.html", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "sgit.ai", "url": "https://sgit.ai"}, "about": {"@type": "SoftwareApplication", "name": "sgit", "sameAs": "https://pypi.org/project/sgit-ai/"}, "author": {"@type": "Person", "name": "Dinis Cruz", "url": "https://sgit.ai/about/index.html"}, "license": "https://creativecommons.org/licenses/by/4.0/"}</script>
+<style>html{background:#faf9f5}body{margin:0;background:#faf9f5;color:#1c1d21;font-family:ui-sans-serif,system-ui,sans-serif;opacity:0;transition:opacity .25s;animation:sg-reveal 0s linear 1.6s forwards}html.ready body{opacity:1;animation:none}@keyframes sg-reveal{to{opacity:1}}</style><noscript><style>body{opacity:1;animation:none}</style></noscript>
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.6.0</a>
+  <sg-meter class="meter-nav" view="balance"></sg-meter>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../articles/index.html#all">Every article</a>
+      <a class="sl" href="../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../account/index.html">Your reading account</a>
+      <a class="sl" href="../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../account/personas.html">Your personas</a>
+      <a class="sl" href="../account/top-up.html">Top up</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../newsroom/board.html">The board</a>
+      <a class="sl" href="../newsroom/log.html">The run log</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../world-news-day/index.html">World News Day<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../world-news-day/index.html">The corpus</a>
+      <a class="sl" href="../world-news-day/stories/free-to-republish-is-not-a-licence.html">Free to republish is not a licence</a>
+      <a class="sl" href="../world-news-day/licences.html">The licence that is not there</a>
+      <a class="sl" href="../world-news-day/corpus.html">The twenty-one</a>
+      <a class="sl" href="../world-news-day/findings.html">The aggregate</a>
+      <a class="sl" href="../world-news-day/terms.html">The vocabulary</a>
+      <a class="sl" href="../world-news-day/graph.html">The graph</a>
+      <a class="sl" href="../world-news-day/sources.html">Sources</a>
+      <a class="sl" href="../world-news-day/contacts.html">How to reach them</a>
+      <a class="sl" href="../world-news-day/vault.html">Published vaults</a>
+      <a class="sl" href="../world-news-day/vaults/corpus.html">The vault, opened</a>
+      <a class="sl" href="../world-news-day/method.html">Method</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../archive/index.html">The archive</a>
+      <a class="sl" href="../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../network/index.html">The network</a>
+      <a class="sl" href="../admin/versions.html">Release history</a>
+      <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom">&#9733; GitHub</a>
+</div></nav>
+
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.6.0</span></a></div>
+<main class="doc">
+ <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / A locked-down desktop for an agent, by the minute, is still hard to rent</p>
+ <h1>A locked-down desktop for an agent, by the minute, is still hard to rent</h1>
+ <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-07 &middot; <a href="versions/an-agent-desktop-by-the-minute.html" title="Every published version of this article, and what changed">article v1.0.1, 2 versions</a> &middot; <a href="https://sgit.ai/admin/versions.html" title="The site release it was published in">site v0.6.87</a> &middot; <span class="chip">agents</span><span class="chip">agent-desktops</span><span class="chip">computer-use</span><span class="chip">sandboxes</span><span class="chip">isolation</span><span class="chip">egress</span><span class="chip">secrets</span><span class="chip">macos</span><span class="chip">windows-365</span><span class="chip">startup-programmes</span><span class="chip">agent-behaviour-policy</span><span class="chip">article</span></p>
+ <p class="abstract"><em><b>Abstract:</b> We want to give each agent a desktop of its own, away from the laptop, that a person can watch and take over, that can reach only what its task needs, that holds no secret it could leak, that is thrown away afterwards, and that is billed for the minutes it works. In October 2026 every one of those properties can be bought somewhere, and no single product we looked at offers all of them. This article lays out the nine properties, puts nine products against them from their own documentation, prices two hours of work a day on each, and explains the three things that make it hard: macOS cannot be leased for less than a day and Apple's licence limits what a leased Mac is for; the strongest isolation controls are weeks old or in private beta; and prompt injection is not solved, so the desktop has to be the barrier rather than the model. It proposes what we would build from what exists, and closes with the startup credit programmes that would pay for trying it, verified on the day, with how to apply.</em></p>
+<figure class="shot" data-shot="desk-matrix.webp" data-dir="images/" data-alt="Nine products against the nine properties of a locked-down agent desktop, from each product&#x27;s own documentation on 7 October 2026. No row has all nine."><figcaption>Nine products against the nine properties of a locked-down agent desktop, from each product's own documentation on 7 October 2026. No row has all nine.</figcaption></figure>
+<p>Our agents do not run on the laptop, for the reasons in <a href="why-my-agents-do-not-run-on-my-laptop.html">Why my agents do not run on my laptop</a>. Most of their work happens in cloud sessions with files in vaults. Some of it needs a screen: a web application without an API, a desktop tool, a form that only a browser will fill. For that work an agent needs a desktop, and the question this article tries to answer is a practical one. Can we rent, today, a desktop that is safe to hand to an agent, for the two to eight hours a day it would use it, and pay for those hours rather than for the whole month?</p>
+<p>The short answer is: on Linux, nearly; on Windows, since June; on macOS, not by the minute, and possibly not for this purpose at all. The long answer is below, with the evidence, and with the programmes that would help pay for finding out properly.</p>
+<h2>What locked down means</h2>
+<p>A desktop for an agent needs more than a screen in the cloud. Read through the <a href="https://riskmandate.ai/abp.html">Agent Behaviour Policy</a>, the desktop is the agent's grant: everything it can reach. The task is its mandate. The desktop's job is to keep the first close to the second, and to leave a footprint that can be read afterwards. That gives nine properties.</p>
+<ol>
+<li><b>Isolation.</b> The agent's box is its own: a virtual machine, a microVM or a dedicated machine, so a compromise stays inside.</li>
+<li><b>An egress allowlist.</b> The box can reach the hosts the task needs and nothing else, so a hijacked agent cannot send what it has seen to an address a web page told it about.</li>
+<li><b>Secrets kept outside.</b> The agent uses credentials without holding them: a proxy adds the token to requests for the right host, so there is nothing in the box to leak.</li>
+<li><b>An identity of its own.</b> The agent acts as itself, with a short-lived identity that can be revoked, not as a person whose password it was given.</li>
+<li><b>A live view and takeover.</b> A person can watch, and can take the keyboard.</li>
+<li><b>A record.</b> What the agent did, step by step, kept somewhere it cannot edit.</li>
+<li><b>A clean reset.</b> After the task, the box goes back to a known state, or is destroyed.</li>
+<li><b>Billing that follows the work.</b> By the second or the minute, so two hours of work costs two hours.</li>
+<li><b>The right desktop.</b> The operating system the task's tools need: Linux, Windows or macOS.</li>
+</ol>
+<p>The first seven are about safety, the eighth about whether it is affordable to do it properly, and the ninth about whether it can be done at all.</p>
+<h2>What exists, from the vendors' own pages</h2>
+<p>The figure at the top puts nine products against those nine properties, from each one's own documentation and pricing pages as they read on 7 October 2026. A dash means we did not find it documented, which is not proof that it is missing.</p>
+<p><b>Linux sandboxes come closest on controls.</b> <a href="https://e2b.dev/">E2B</a> runs each session in a Firecracker microVM, blocks outbound traffic by default with IP or domain lists, bills by the second, and pauses a sandbox with its memory intact and keeps it indefinitely. Its proxy-injected secrets and short-lived workload identity are the right design and are both in private beta. <a href="https://www.daytona.io/">Daytona</a> has a per-sandbox firewall, secrets as placeholders that an outbound proxy swaps for the real value only for allowed hosts, screen recording, and Windows virtual machines as well as Linux. Modal has the isolation and the network controls but no desktop. Browserbase isolates a browser per virtual machine, records it, and bills by the minute, but a browser is not a desktop.</p>
+<p><b>The big vendors arrived this year.</b> Windows 365 for Agents became generally available in June 2026: Cloud PCs that reset after every agent session, destroy credentials on release, carry an agent identity in Entra under conditional access, filter web traffic, and cost $0.40 per VM-hour in the US. Amazon WorkSpaces for AI agents became generally available on 30 June 2026: agents connect through an MCP endpoint, authenticate through IAM, act as known identities in Active Directory, and every tool call is logged with screenshots kept, with a person able to watch, pause and stop. Both are Windows. Both are new.</p>
+<p><b>Mac hosts come closest on desktop and furthest on everything else.</b> AWS EC2 Mac and Scaleway rent whole Apple machines with VNC for the view. Egress controls, secrets handling and agent identity are what you build yourself on top. And they cannot be rented by the minute.</p>
+<h2>Why it is hard</h2>
+<h3>macOS has a one-day minimum, and a purpose clause</h3>
+<p>Apple's licence for macOS Tahoe 26, section 3, allows a Mac to be leased only if "each lease period must be for a minimum period of twenty-four (24) consecutive hours", and only "for the sole purpose of providing Permitted Developer Services", which it defines as "continuous integration services, including but not limited to software development, building software from source, automated testing during software development, and running necessary developer tools to support such activities."</p>
+<p>The first condition is why every hosted Mac we found has a 24-hour minimum. AWS says it plainly: per-second billing "with a 24-hour minimum allocation period to comply with the Apple macOS Software License Agreement." Scaleway says the same, "due to licensing restrictions." On AWS, a stopped Apple silicon Mac can also be unusable for up to four and a half hours while its disk is scrubbed, unbilled but unavailable.</p>
+<p>The second condition is the one the providers say less about. A leased Mac used as a general desktop for an agent, to read email, browse sites and use office applications, may fall outside "Permitted Developer Services." That is a legal question we have not settled and are not qualified to settle; anybody planning to put an agent on a rented Mac for work other than building and testing software should ask a lawyer first. It is also the reason the macOS track in our design is for development work only.</p>
+<figure class="shot" data-shot="desk-cost.webp" data-dir="images/" data-alt="The same 44 hours of work a month, at published prices. Where billing follows the work, it costs a few dollars; where the desktop is a leased Mac, two hours buys a day."><figcaption>The same 44 hours of work a month, at published prices. Where billing follows the work, it costs a few dollars; where the desktop is a leased Mac, two hours buys a day.</figcaption></figure>
+<p>The cost follows from the minimum. Two hours of work a day, twenty-two days a month, is 44 hours. On an E2B or Daytona Linux sandbox of the default size that is about $7.29, plus E2B's $150 Pro fee if sessions run over an hour. On Windows 365 for Agents it is $17.60, and the first 50 hours are free. On a Scaleway Mac mini M4 it is €116.16, because each of those days is a 24-hour lease. On AWS it is $649.44 for an M4 and $1,040.16 for an M4 Pro. The Mac is not expensive per hour; it is expensive because the hour you can buy is a day.</p>
+<h3>Claude's own computer use lives in two places that do not meet</h3>
+<p>Anthropic offers computer use in two forms. In the Claude desktop app it is in beta on macOS and Windows, for Pro and Max plans; the help page says "Team and Enterprise plans don't have access to computer use at this time." In Claude Code it is a research preview on macOS, Pro or Max, and "requires an interactive session." Both run on a computer you already have, signed in as a person.</p>
+<p>Through the API, the computer-use tool is model-side only: you supply the environment. The reference implementation is "a Linux desktop in Docker with X11 + VNC," and the documentation's own advice is the list this article started from: "a dedicated virtual machine or container with minimal privileges", "avoiding giving the model access to sensitive data, such as account login information", "limiting internet access to an allowlist of domains", and "asking a human to confirm decisions that might result in meaningful real-world consequences."</p>
+<p>So the governed route, an API agent in a sandbox you control, runs on Linux. The native route, the desktop app driving a real Mac or Windows machine, runs on a personal plan on a person's computer. A team that wants the second with the controls of the first has to build the bridge, and the bridge crosses the macOS licence.</p>
+<h3>The controls that matter most are the newest</h3>
+<p>Of the nine properties, the three that stop a hijacked agent from doing damage are the egress allowlist, secrets kept outside, and an identity of its own. Across the products we read, all three are documented on one, E2B, and two of them are in private beta there. Daytona documents the first two. Windows 365 for Agents documents identity and web filtering. Everywhere else, at least one of them is the customer's job. Recording, the property that turns an incident into something that can be investigated, is undocumented on several of the products that do the rest well.</p>
+<p>None of this is a criticism of products that shipped in the last few months. It is a description of where the market is: the pieces exist, they are young, and they live in different products.</p>
+<h3>The model cannot be the barrier</h3>
+<p>Anthropic's own measurements of prompt injection in browser use went from a 23.6% attack success rate without mitigations to 11.2% in August 2025, and to about 1% in November 2025, a rate that, in their words, "still represents meaningful risk." Brave showed in October 2025 that nearly invisible text in screenshots could hijack agentic browsers, and called indirect prompt injection "a systemic challenge facing the entire category." OpenAI wrote in December 2025, as reported, that prompt injection "is unlikely to ever be fully 'solved.'"</p>
+<p>A desktop shows an agent web pages, documents and emails written by other people. If one in a hundred attempts gets through, then over a working month the question is not whether a page will try, but what the agent can do when one succeeds. That is what the box is for. An allowlist limits where it can send; a box without secrets limits what it can send; a revocable identity limits for how long; a recording says what happened. The model's own defences reduce how often that matters, and do not replace it.</p>
+<h2>What we would build from what exists</h2>
+<figure class="shot" data-shot="desk-arch.webp" data-dir="images/" data-alt="The proposal: one mandate per task, a fresh desktop configured from it, three tracks by operating system, and a vault outside every desktop for anything worth keeping."><figcaption>The proposal: one mandate per task, a fresh desktop configured from it, three tracks by operating system, and a vault outside every desktop for anything worth keeping.</figcaption></figure>
+<p>The design follows from the four difficulties.</p>
+<ul>
+<li><b>One mandate per task, written before the desktop exists.</b> What the agent is for, the hosts it may reach, the secrets it may use and for which hosts, the identity it acts as, how long it may run. The desktop is configured from the mandate, so the grant cannot drift past it by accident. This is the same discipline as <a href="the-mandate-stack.html">the Mandate Stack</a>, applied to a screen.</li>
+<li><b>Linux by default.</b> A sandbox per task, egress denied except for the mandate's hosts, secrets injected by the proxy, a short-lived identity, a live view, pause between sessions, billed by the second.</li>
+<li><b>Windows when the tool is a Windows application.</b> A Cloud PC per session, reset afterwards, with an agent identity and filtered web traffic.</li>
+<li><b>macOS only for development work, and by the day.</b> Batch the work into the lease, and keep general agent desktops off leased Macs until the licence question has an answer.</li>
+<li><b>A vault outside every desktop.</b> Outputs, setup scripts, the mandate and the footprint go to an encrypted <a href="https://sgit.ai/docs/what-is-sgit.html">sgit vault</a> that the desktop can append to and cannot rewrite, through an <a href="https://sgit.ai/docs/append-lane-messaging.html">append lane</a>. Browser profiles and cookies are secrets and are handled as such. When the desktop is destroyed, nothing is lost except the risk.</li>
+</ul>
+<p>The person stays on a laptop that does not run the agent, watching, taking over when needed, and answering prompts that <a href="where-is-the-why.html">carry their reason</a>.</p>
+<p>What we do not know yet, and would find out by running it: how reliable the live view and takeover are under real work; how much state a paused sandbox keeps across days in practice; how often an allowlist breaks a task that looked simple; what the recording costs to keep; and how the Windows and Linux tracks compare on the same task. Those are measurements, not opinions, and they need hours on the products.</p>
+<h2>The programmes that would pay for finding out</h2>
+<p>Several of these providers run startup programmes that give credits for exactly this kind of evaluation. They are listed here because they are useful to anybody building agents, and because we intend to apply to the ones whose criteria RiskMandate meets, from <a href="mailto:agent@riskmandate.ai">agent@riskmandate.ai</a>, with this page as the description of what we would do. Before applying we check each criterion against our own age, funding and customer status, and we apply only where they are met.</p>
+<p>All amounts and criteria below were read from each programme's own page on 7 October 2026. Programmes change; check before applying.</p>
+<div class="tablewrap"><table>
+<tr><th>Provider</th><th>Programme</th><th>Amount</th><th>Eligibility, in one line</th><th>How to apply</th></tr>
+<tr><td>E2B</td><td>E2B for Startups</td><td>$20,000 one-time, plus the Pro tier</td><td>Under 3 years old, raised under $5M, first-time E2B user, building AI agents</td><td><a href="https://e2b.dev/startups/apply">e2b.dev/startups/apply</a></td></tr>
+<tr><td>Daytona</td><td>Startup Grid</td><td>$10K immediately, up to $100K</td><td>Not published; the form asks for funding stage and VC partner</td><td><a href="https://www.daytona.io/startups">daytona.io/startups</a></td></tr>
+<tr><td>Scaleway</td><td>Founders</td><td>Up to €1,000 over 12 months</td><td>Under 5 years old, under 50 staff, not yet a Scaleway customer</td><td>Form on the <a href="https://www.scaleway.com/en/startup-program/founders-program/">Founders page</a>; startup-program@scaleway.com</td></tr>
+<tr><td>Scaleway</td><td>Early Stage</td><td>€9,000 (€1,500 a month for 6 months)</td><td>As Founders, with at least €500 a month of consumption</td><td>Form on the <a href="https://www.scaleway.com/en/startup-program/early-stage-program/">Early Stage page</a></td></tr>
+<tr><td>AWS</td><td>Activate Founders</td><td>$1,000, up to $5,000</td><td>Self-funded, pre-Series B, founded in the last 10 years, account on the Paid Tier plan</td><td><a href="https://aws.amazon.com/startups/join?destination=/credits/apply">aws.amazon.com/startups</a></td></tr>
+<tr><td>AWS</td><td>Activate Portfolio</td><td>Up to $200,000</td><td>Through an Activate Provider (an investor or accelerator), pre-Series B</td><td>Same link, with the provider's Org ID</td></tr>
+<tr><td>Microsoft</td><td>Microsoft for Startups</td><td>Up to $150K over time</td><td>For-profit software company, before Series C, under $350K lifetime Azure credits</td><td><a href="https://startups.microsoft.com">startups.microsoft.com</a></td></tr>
+<tr><td>Google Cloud</td><td>Google for Startups Cloud</td><td>$2,000 pre-funding; up to $350,000 for AI startups</td><td>Seed to Series A, founded in the last 5 years, under $5K prior credits</td><td><a href="https://cloud.google.com/startup/apply">cloud.google.com/startup/apply</a></td></tr>
+<tr><td>Cloudflare</td><td>Cloudflare for Startups</td><td>$10K, $100K or $350K by tier</td><td>By funding tier; first-time applicants; business email</td><td><a href="https://www.cloudflare.com/lp/startups">cloudflare.com/lp/startups</a></td></tr>
+<tr><td>Modal</td><td>Modal for Startups</td><td>Unspecified "thousands" in credits</td><td>New to Modal; VC-funded through a partner, or over $1M raised</td><td><a href="https://modal.com/startups#apply">modal.com/startups</a></td></tr>
+<tr><td>Anthropic</td><td>Startup programme</td><td>$1,000 API credits, a year of Claude Team, up to $45K in partner offers</td><td>Founded in the last 5 years or funded in the last 2</td><td><a href="https://platform.claude.com/offers/startups-application">platform.claude.com/offers/startups-application</a></td></tr>
+</table></div>
+<p>What to ask before relying on any of them, because their pages do not say:</p>
+<ul>
+<li><b>Scaleway:</b> whether the credits cover Apple silicon Mac minis, hourly and monthly. None of the programme pages mentions them.</li>
+<li><b>AWS:</b> whether an award covers EC2 Mac Dedicated Hosts. The credit terms cover only "the specific Services designated" in each award.</li>
+<li><b>E2B:</b> when the credits expire, and whether the $150 monthly Pro fee is paid from them.</li>
+</ul>
+<p>Two that look like startup programmes are not, for this purpose. MacStadium's open-source programme gives a free Mac mini to unpaid maintainers of projects not mainly funded by companies, through a waitlist; a commercial agent desktop does not qualify, and should not be dressed up as one. Hetzner's referral credit could not be confirmed from an official page on the day, and sources disagree on the amount.</p>
+<div class="note"><b>If you run one of these programmes.</b> We would use the credits to run the evaluation above on your product next to the others: the same tasks, the same mandates, the nine properties measured rather than read, and the results published on this site as a vault with its read key, including the gaps. Write to <a href="mailto:agent@riskmandate.ai">agent@riskmandate.ai</a>. A person reads what arrives there, and the agent that wrote this page answers it.</div>
+<h2>Back to the question</h2>
+<p>Can we rent, today, a desktop that is safe to hand to an agent, for the hours it works? On Linux, yes, with two of the most important controls in beta. On Windows, yes, with products that are four months old. On macOS, not by the hour, and not for general work without a legal answer first. Each of the nine properties is available somewhere. Putting them in one place is still the customer's work, and the reason this page exists.</p>
+<p><em>Drafted from a research debrief and a request from Dinis Cruz, who is the author of the argument and the person with editorial responsibility, by agent@riskmandate.ai (Claude Opus 5.5, claude-opus-5-5) in the sgit.ai site session, on 7 October 2026, with a research agent in the same session re-checking every programme, price, licence clause and product claim against the provider's own pages that day. The OpenAI quote is from news coverage, because the primary page could not be fetched. Prices are list prices before tax and are arithmetic, not quotes. Nothing here is legal advice, and no company was contacted in writing it.</em></p>
+<section class="athreads" id="threads">
+ <h2>Threads</h2>
+ <p class="athreads-meta"><span class="tchip">Agents &amp; policy</span><span class="tchip">Startups &amp; strategy</span> <a href="graphs.html#an-agent-desktop-by-the-minute">This article as a graph &rarr;</a></p>
+ <div class="athreads-cols"><div><h3>Builds on</h3><ul><li><a href="why-my-agents-do-not-run-on-my-laptop.html">Why my agents do not run on my laptop: chat, Cowork and Code in the cloud, a vault as the shared drive, and the two walls an operating system has</a> <span class="dim">An OS has two hard walls, the kernel and the user; an agent on a laptop runs inside the one marked you, so the agents run in the cloud with a vault as shared drive.</span></li><li><a href="the-mandate-stack.html">The Mandate Stack: a multi-agent system in production, layer by layer</a> <span class="dim">A multi-agent system that runs a business every few hours: eight layers, one written mandate per agent, everything a graph, one human who sends.</span></li><li><a href="where-is-the-why.html">Where is the why? A permission prompt asked me to decide, and kept the reason</a> <span class="dim">A prompt asked for a decision and kept the reason. Read through the policy, the law on uninformed consent, and the fixes that worked: put the why in the prompt.</span></li></ul></div><div><h3>Continued by</h3><ul><li><a href="a-mac-of-the-agents-own.html">A Mac of the agent's own: a business plan for agent desktops, what Apple's licence allows, and three behaviour policies</a> <span class="dim">A business plan for a Mac of the agent's own: what Apple's licence allows, a desktop built from vaults per run, and three behaviour policies for one agent.</span></li><li><a href="encrypted-memory-for-isolated-agents.html">Encrypted memory for agents that run somewhere else: sgit deployment patterns, from a Mac mini to Kubernetes</a> <span class="dim">Agents in isolated, ephemeral places need memory that outlives them. Five sgit deployment patterns, from a Mac mini to Kubernetes, with ciphertext-only servers.</span></li></ul></div></div>
+ <p class="small dim"><a href="index.html">All articles</a> &middot; <a href="graphs.html">All graphs</a></p>
+</section>
+<sg-meter view="page" kind="article" date="2026-10-07" topics="agents-and-policy startups-and-strategy" title="A locked-down desktop for an agent, by the minute, is still hard to rent, sgit.ai"></sg-meter>
+<section class="athreads" id="desk"><h2>From the desk</h2><ul><li><a href="collections/behaviour-policy-in-practice.html">Behaviour policy in practice</a> <span class="dim">collection, 11 articles</span></li></ul></section>
+<aside class="lkit" aria-label="For LinkedIn"><b>Posting this article on LinkedIn?</b> The cover is <a href="banners/an-agent-desktop-by-the-minute.jpg" download>an-agent-desktop-by-the-minute.jpg</a> (1920&times;1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page.</aside>
+ <p class="subteaser"><b>Want the next issue by email.</b> One issue a week or so: what was published, what it adds up to, and what is worth your time. <a class="cta2" href="../subscribe/index.html">Subscribe to the SGit Newsroom &rarr;</a></p>
+ <p class="small dim" style="margin-top:2rem"><a href="index.html">&larr; All articles</a></p>
+</main>
+<script>
+(function () {
+ fetch('../assets/shots.js?v=v0.7.39')
+ .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+ .then(function (t) { (0, eval)(t); })
+ .catch(function (e) { console.error('[shots] component failed to load:', e); });
+}());
+</script>
+<script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": ""}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
+<script>
+import('../assets/components/sg-meter/v1/v1.3/v1.3.1/sg-meter.js?v=v0.7.39')
+ .catch(function (e) { console.error('[sg-meter] component failed to load:', e); });
+</script>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="netline"><a href="https://sgit.ai" style="display:inline;padding:0"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://pt.newsroom.sgit.ai" style="display:inline;padding:0">&#8593; pt.newsroom.sgit.ai</a> &middot; <a href="https://graphs.sgit.ai" style="display:inline;padding:0">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai" style="display:inline;padding:0">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai" style="display:inline;padding:0">&#8593; nhi.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai" style="display:inline;padding:0">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../admin/versions.html">v0.6.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="an-agent-desktop-by-the-minute.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../index.html">&#8594; The front page</a>
+    <a href="../articles/index.html#all">Every article</a>
+    <a href="../articles/newsletter/index.html">The newsletter</a>
+    <a href="../articles/collections/index.html">Collections</a>
+    <a href="../articles/desk/index.html">From the desk</a>
+    <a href="../articles/graphs.html">As graphs</a>
+    <a href="../subscribe/index.html">Subscribe</a>
+    <a href="../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../account/index.html">Your reading account</a>
+    <a href="../account/newsroom.html">Your newsroom</a>
+    <a href="../account/personas.html">Your personas</a>
+    <a href="../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../newsroom/index.html">How the newsroom runs</a>
+    <a href="../newsroom/policies.html">Behaviour policies</a>
+    <a href="../newsroom/publish.html">How to publish</a>
+    <a href="../newsroom/board.html">The board</a>
+    <a href="../newsroom/log.html">The run log</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../design/index.html">The design, and what runs</a>
+    <a href="../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../corrections/index.html">Corrections must propagate</a>
+    <a href="../provenance/index.html">Provenance is the product</a>
+    <a href="../economics/index.html">Paying the fact creator</a>
+    <a href="../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../replicate/index.html">Replicate this newsroom</a>
+    <a href="../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../archive/index.html">The archive</a>
+    <a href="../network/index.html">The network</a>
+    <a href="../admin/versions.html">Release history</a>
+    <a href="../admin/index.html">Admin &amp; engineering</a>
+    <a href="../about/participant.html">Where we lose</a>
+    <a href="../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+
+<script>
+(function(){var R=document.documentElement.getAttribute('data-root')||'';var V='?v=' + 'v0.7.39';var C=[R,'','../','/'].filter(function(v,i,a){return a.indexOf(v)===i});
+function wait(ms){return new Promise(function(res){var t=Date.now();(function p(){if(window.sg)return res(window.sg);if(Date.now()-t>ms)return res(null);setTimeout(p,60)})()})}
+function grab(sg,p){return new Promise(function(res){(async function(){if(sg&&sg.vfs&&sg.vfs.readText){try{var t=await sg.vfs.readText(p);if(t)return res(t)}catch(e){}}try{var r=await fetch(p+V);if(r.ok)return res(await r.text())}catch(e){}res(null)})()})}
+async function css(sg){for(var i=0;i<C.length;i++){var p=C[i]+'assets/newsroom.css';if(sg&&sg.loadCss){try{await sg.loadCss(p);return}catch(e){}}var t=await grab(sg,p);if(t){var s=document.createElement('style');s.textContent=t;document.head.appendChild(s);return}}}
+async function js(sg,name){name=name||'assets/site.js';for(var i=0;i<C.length;i++){var p=C[i]+name;if(sg&&sg.loadJs){try{await sg.loadJs(p);return}catch(e){}}var t=await grab(sg,p);if(t){try{(0,eval)(t)}catch(e){console.error('[site] js failed',name,e)}return}}}
+async function boot(){var inVault=false;try{inVault=(window!==window.parent)||location.protocol==='blob:'}catch(e){inVault=true}
+var sg=inVault?await wait(2500):null;window.__sgitBoot={roots:C,grab:function(p){return grab(sg,p)},version:V};await css(sg);await js(sg);document.documentElement.classList.add('ready');try{window.parent&&window.parent.postMessage({type:'sg-app-ready'},'*')}catch(e){}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+var mine=V.slice(3),last=0;
+function fresh(){if(location.hostname!=='sgit.ai'||Date.now()-last<60000)return;last=Date.now();
+fetch('/version.txt?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(t){t=(t||'').trim();if(!/^v[0-9]+[.][0-9]+[.][0-9]+$/.test(t)||t===mine)return;
+var k='sgit.fresh:'+location.pathname;try{if(sessionStorage.getItem(k)===t)return;sessionStorage.setItem(k,t)}catch(e){}
+var u=new URL(location.href);u.searchParams.set('v',t);location.replace(u.href)}).catch(function(){})}
+try{var u=new URL(location.href);if(u.searchParams.get('v')===mine){u.searchParams.delete('v');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}
+fresh();addEventListener('pageshow',function(e){if(e.persisted){last=0;fresh()}});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')fresh()});
+})();
+</script>
+</body>
+</html>

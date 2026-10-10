@@ -1,0 +1,245 @@
+{
+  "slug": "ultimate-insider-three-collisions",
+  "teaser": "Agents, the infrastructure meant to contain them, and risk management run on spreadsheets are arriving at once, and together they are one scenario.",
+  "topics": [
+    "agents-and-policy"
+  ],
+  "core_idea": "Agents are the insider threat that never scaled before, the infrastructure was designed for none of it, and risk management runs at the speed of spreadsheets, so the way out is to constrain the agent in order to trust it.",
+  "nodes": [
+    {
+      "id": "threat-definition",
+      "label": "A threat is anything that causes business impact",
+      "kind": "concept",
+      "summary": "A threat does not need to be malicious, and most of the worst damage was a bug, a misconfiguration or a person doing something that was allowed and should not have been."
+    },
+    {
+      "id": "insider-never-scaled",
+      "label": "The insider threat never scaled",
+      "kind": "claim",
+      "summary": "There were two kinds of insider, a human bounded by hours and conscience and static code that did what it was written to do, and both were constrained by something soft but real."
+    },
+    {
+      "id": "agent-as-loop",
+      "label": "An agent is a reasoning engine in a loop",
+      "kind": "concept",
+      "summary": "An agent is a language model in a loop with tools and an objective, and unlike any insider before it has skills: every language, every schema, the ability to write its own connectors and try again."
+    },
+    {
+      "id": "lethal-trifecta",
+      "label": "The lethal trifecta",
+      "kind": "concept",
+      "summary": "Give a model private data, untrusted content and a way to communicate outward, and it can be turned against you by a document it reads."
+    },
+    {
+      "id": "five-incidents",
+      "label": "Five incidents",
+      "kind": "example",
+      "summary": "Replit, Gemini CLI, Amazon Q, EchoLeak and the AI-orchestrated espionage campaign, of which three were not attacks but agents being agents."
+    },
+    {
+      "id": "machine-identities",
+      "label": "82 machine identities per human",
+      "kind": "example",
+      "summary": "Agents are arriving into a population of identities that is already unmanaged, with 42 per cent of machine identities holding privileged access."
+    },
+    {
+      "id": "infrastructure-gaps",
+      "label": "The infrastructure that cannot hold them",
+      "kind": "claim",
+      "summary": "Recovery, identity, permissions and containment were all built for code that stays where you put it, and the stack falls over on its own."
+    },
+    {
+      "id": "grant-vs-mandate",
+      "label": "The grant and the mandate",
+      "kind": "concept",
+      "summary": "Cloud permissions are the union of everything anyone ever needed, so an agent's grant is not what you meant but everything the role accumulated."
+    },
+    {
+      "id": "outages",
+      "label": "The two outages",
+      "kind": "example",
+      "summary": "A DNS race condition took down a large part of AWS US-East-1 for over fourteen hours, and a configuration file that doubled in size broke Cloudflare and much of the web."
+    },
+    {
+      "id": "spreadsheet-risk",
+      "label": "Risk management at the speed of spreadsheets",
+      "kind": "claim",
+      "summary": "48 per cent of organisations track risk in spreadsheets, reviewed quarterly, when the decisions now have to be made in seconds and in advance."
+    },
+    {
+      "id": "chain-to-plug",
+      "label": "The chain to pulling the plug",
+      "kind": "claim",
+      "summary": "Because the register cannot see what the agent can reach it cannot say what the risk is, cannot decide whether it fits the appetite, cannot fund the controls, and the plug comes out."
+    },
+    {
+      "id": "unreported",
+      "label": "Nobody has to report",
+      "kind": "claim",
+      "summary": "Companies are not required to disclose most of what agents do to them, and aviation solved this fifty years ago with confidential reporting that cyber has nothing like."
+    },
+    {
+      "id": "the-collision",
+      "label": "The collision",
+      "kind": "claim",
+      "summary": "An entity inside the company with reach we have not measured, controls we cannot rely on, and a decision process too slow to matter before, during or after the incident."
+    },
+    {
+      "id": "agent-behaviour-policy",
+      "label": "Agent Behaviour Policy",
+      "kind": "method",
+      "summary": "Grant measured, mandate elicited, delta derived, barrier recorded, with each barrier typed honestly as a boundary, a setting, an expectation or nothing."
+    },
+    {
+      "id": "contain-in-layers",
+      "label": "Contain in layers",
+      "kind": "method",
+      "summary": "Identity per agent, twins that journal every call, network segmentation, and append-only records in vaults the host cannot read."
+    },
+    {
+      "id": "the-irony",
+      "label": "Brakes are what let a car go fast",
+      "kind": "claim",
+      "summary": "The more you can constrain an agent, the more you can trust it, and the more autonomy you can afford to give it."
+    }
+  ],
+  "edges": [
+    {
+      "from": "insider-never-scaled",
+      "to": "threat-definition",
+      "rel": "depends-on"
+    },
+    {
+      "from": "agent-as-loop",
+      "to": "insider-never-scaled",
+      "rel": "contrasts"
+    },
+    {
+      "from": "lethal-trifecta",
+      "to": "agent-as-loop",
+      "rel": "extends"
+    },
+    {
+      "from": "five-incidents",
+      "to": "agent-as-loop",
+      "rel": "example-of"
+    },
+    {
+      "from": "five-incidents",
+      "to": "lethal-trifecta",
+      "rel": "example-of"
+    },
+    {
+      "from": "machine-identities",
+      "to": "infrastructure-gaps",
+      "rel": "example-of"
+    },
+    {
+      "from": "grant-vs-mandate",
+      "to": "infrastructure-gaps",
+      "rel": "example-of"
+    },
+    {
+      "from": "outages",
+      "to": "infrastructure-gaps",
+      "rel": "example-of"
+    },
+    {
+      "from": "chain-to-plug",
+      "to": "spreadsheet-risk",
+      "rel": "depends-on"
+    },
+    {
+      "from": "chain-to-plug",
+      "to": "grant-vs-mandate",
+      "rel": "depends-on"
+    },
+    {
+      "from": "the-collision",
+      "to": "agent-as-loop",
+      "rel": "depends-on"
+    },
+    {
+      "from": "the-collision",
+      "to": "infrastructure-gaps",
+      "rel": "depends-on"
+    },
+    {
+      "from": "the-collision",
+      "to": "chain-to-plug",
+      "rel": "depends-on"
+    },
+    {
+      "from": "unreported",
+      "to": "the-collision",
+      "rel": "extends"
+    },
+    {
+      "from": "unreported",
+      "to": "five-incidents",
+      "rel": "extends"
+    },
+    {
+      "from": "agent-behaviour-policy",
+      "to": "grant-vs-mandate",
+      "rel": "answers"
+    },
+    {
+      "from": "contain-in-layers",
+      "to": "infrastructure-gaps",
+      "rel": "answers"
+    },
+    {
+      "from": "the-irony",
+      "to": "agent-behaviour-policy",
+      "rel": "depends-on"
+    },
+    {
+      "from": "the-irony",
+      "to": "contain-in-layers",
+      "rel": "depends-on"
+    },
+    {
+      "from": "the-irony",
+      "to": "chain-to-plug",
+      "rel": "contrasts"
+    }
+  ],
+  "links": {
+    "articles": [
+      "every-risk-is-already-accepted",
+      "footprint-and-blast-radius",
+      "six-agents-one-inbox",
+      "connector-twin-before-you-deploy-an-agent",
+      "introducing-fractal-semantic-graphs"
+    ],
+    "pages": [
+      "/docs/agent-contact.html",
+      "/demos/vaults/kit-bag/index.html",
+      "/demos/vaults/standards-atlas-gdpr/index.html",
+      "/demos/vaults/regulation-graph/index.html",
+      "/demos/vaults/pci-dss-graph/index.html",
+      "/partnerships/authentitas.html"
+    ],
+    "sites": [
+      "https://riskmandate.ai/abp.html",
+      "https://www.anthropic.com/research/building-effective-agents",
+      "https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/",
+      "https://dev.to/joylo/why-replits-ai-agent-deleted-a-production-database-389p",
+      "https://www-cdn.anthropic.com/d7dd50dd1185f59be051b307150d877f2b82bd2c.pdf",
+      "https://www.cyberark.com/press/machine-identities-outnumber-humans-by-more-than-80-to-1-new-report-exposes-the-exponential-threats-of-fragmented-identity-security/",
+      "https://techcommunity.microsoft.com/blog/microsoft-entra-blog/2023-state-of-cloud-permissions-risks-report-now-published/1061397",
+      "https://en.wikipedia.org/wiki/Aviation_Safety_Reporting_System"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "Three of those five were not attacks. They were agents being agents.",
+      "why": "The distance between benign and malicious agent damage is a prompt, which is why the insider framing fits."
+    },
+    {
+      "text": "The more you can constrain an agent, the more you can trust it, and the more autonomy you can afford to give it.",
+      "why": "The irony the talk would end on, and the turn from the problem to the way out."
+    }
+  ]
+}

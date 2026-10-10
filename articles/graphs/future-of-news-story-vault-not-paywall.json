@@ -1,0 +1,250 @@
+{
+  "slug": "future-of-news-story-vault-not-paywall",
+  "teaser": "A story is a graph of claims and evidence and the article is one projection of it; keep the graph in a vault and sell what the article was made from.",
+  "topics": [
+    "news-and-evidence",
+    "graphs-and-knowledge"
+  ],
+  "core_idea": "The story is a graph and the article is a projection, so a newsroom that keeps the graph in a vault can sell five things from it, in pence and on demand, that reward investigative reporting rather than the click or the renewal.",
+  "nodes": [
+    {
+      "id": "both-models-bad-for-the-reader",
+      "label": "Both models are bad for the reader",
+      "kind": "claim",
+      "summary": "Advertising sells the reader to somebody else, so the content is bait; a subscription charges rent on something most subscribers have stopped using, so the content is the excuse."
+    },
+    {
+      "id": "two-clocks",
+      "label": "The two clocks",
+      "kind": "example",
+      "summary": "Organic Google search traffic to publishers fell 33% in the year to November 2025, and the UK's subscription rules were brought forward to 1 January 2027."
+    },
+    {
+      "id": "objective-loop",
+      "label": "The objective is a loop, not a price",
+      "kind": "concept",
+      "summary": "A commercial model that rewards investigative journalism, so evidenced reporting drives usage, usage drives revenue that depends on neither search nor renewals, and revenue funds more reporting."
+    },
+    {
+      "id": "case-against-micropayments",
+      "label": "Why paying per item failed before",
+      "kind": "concept",
+      "summary": "A $100 subscription lost is 500 micropayments to replace, unbundling breaks the cross-subsidy, and the reader will not stop to decide whether an article is worth twenty pence."
+    },
+    {
+      "id": "three-buyers",
+      "label": "Who is standing at the till",
+      "kind": "concept",
+      "summary": "The reader who wants one thing, the firm that has to forward it with its provenance, and the agent paying per query with a wallet and no anxiety; none of them wants the article."
+    },
+    {
+      "id": "story-is-a-graph",
+      "label": "The story is a graph, the article is a projection",
+      "kind": "claim",
+      "summary": "A story being reported is claims, evidence, sources, raw materials, analysis and drafts, and the article is one walk through that graph for one audience at one moment."
+    },
+    {
+      "id": "fractal-semantic-graph",
+      "label": "The graph is fractal, and meaning comes from connectivity",
+      "kind": "concept",
+      "summary": "A node means nothing on its own, every edge is a verb with a named inverse, and zooming into any node enters a world with its own vocabulary joined by a single named edge."
+    },
+    {
+      "id": "provenance-ladder",
+      "label": "Trust through provenance, provenance via evidence",
+      "kind": "concept",
+      "summary": "Evidence is frozen bytes with a SHA-256 hash, provenance is the path from a claim down named edges to that evidence, and trust is what a market extends to a source whose provenance has held before."
+    },
+    {
+      "id": "story-vault",
+      "label": "What a story vault holds",
+      "kind": "artefact",
+      "summary": "The published text, the evidence it cites, the story graph it belongs to, the source list, the translations and every prompt and decision that produced it, as one addressable unit."
+    },
+    {
+      "id": "anonymous-source-at-the-node",
+      "label": "Anonymous sources are marked at the node",
+      "kind": "method",
+      "summary": "A source the journalist cannot name is a node flagged as anonymous, so every projection built from the graph redacts it automatically."
+    },
+    {
+      "id": "five-projections",
+      "label": "Five things to sell from one graph",
+      "kind": "concept",
+      "summary": "The public article free as the door, the licensed article in pence, the evidence vault, the customised projection and the verification API."
+    },
+    {
+      "id": "evidence-vault",
+      "label": "The evidence vault",
+      "kind": "concept",
+      "summary": "The graph itself, licensed by read key to analysts, lawyers, regulators and other newsrooms, which is the payment that rewards the reporting rather than the click."
+    },
+    {
+      "id": "verification-api",
+      "label": "The verification API",
+      "kind": "concept",
+      "summary": "A company or agent asks whether a claim was reported, is still current and is soundly used, and gets an on-record answer with the chain attached and a warranty."
+    },
+    {
+      "id": "fact-creator-split",
+      "label": "Who gets paid",
+      "kind": "concept",
+      "summary": "60% to the original researcher, 25% to the data organisation, 10% to the journalist and 5% to the outlet, and you cannot pay the fact creator unless the graph names them."
+    },
+    {
+      "id": "payment-rails",
+      "label": "The rails",
+      "kind": "concept",
+      "summary": "The x402 protocol puts a payment inside the HTTP 402 response, settles in about 200 milliseconds and charges no protocol fee, so paying in pence now works."
+    },
+    {
+      "id": "parts-that-run",
+      "label": "The parts that already run",
+      "kind": "example",
+      "summary": "Hash-verified regulation graphs, a Portuguese newsroom with frozen sources and an editor-gated pipeline, a pentest sold as eight projections, and thirty-one vaults on 295 MB, with the billing not built."
+    }
+  ],
+  "edges": [
+    {
+      "from": "both-models-bad-for-the-reader",
+      "to": "objective-loop",
+      "rel": "leads-to"
+    },
+    {
+      "from": "two-clocks",
+      "to": "both-models-bad-for-the-reader",
+      "rel": "extends"
+    },
+    {
+      "from": "three-buyers",
+      "to": "case-against-micropayments",
+      "rel": "answers"
+    },
+    {
+      "from": "payment-rails",
+      "to": "case-against-micropayments",
+      "rel": "answers"
+    },
+    {
+      "from": "story-is-a-graph",
+      "to": "fractal-semantic-graph",
+      "rel": "depends-on"
+    },
+    {
+      "from": "fractal-semantic-graph",
+      "to": "provenance-ladder",
+      "rel": "produces"
+    },
+    {
+      "from": "story-vault",
+      "to": "story-is-a-graph",
+      "rel": "depends-on"
+    },
+    {
+      "from": "story-vault",
+      "to": "provenance-ladder",
+      "rel": "depends-on"
+    },
+    {
+      "from": "anonymous-source-at-the-node",
+      "to": "story-vault",
+      "rel": "extends"
+    },
+    {
+      "from": "story-vault",
+      "to": "five-projections",
+      "rel": "produces"
+    },
+    {
+      "from": "three-buyers",
+      "to": "five-projections",
+      "rel": "leads-to"
+    },
+    {
+      "from": "evidence-vault",
+      "to": "five-projections",
+      "rel": "example-of"
+    },
+    {
+      "from": "verification-api",
+      "to": "five-projections",
+      "rel": "example-of"
+    },
+    {
+      "from": "evidence-vault",
+      "to": "anonymous-source-at-the-node",
+      "rel": "depends-on"
+    },
+    {
+      "from": "verification-api",
+      "to": "provenance-ladder",
+      "rel": "depends-on"
+    },
+    {
+      "from": "evidence-vault",
+      "to": "objective-loop",
+      "rel": "answers"
+    },
+    {
+      "from": "fact-creator-split",
+      "to": "story-is-a-graph",
+      "rel": "depends-on"
+    },
+    {
+      "from": "fact-creator-split",
+      "to": "payment-rails",
+      "rel": "depends-on"
+    },
+    {
+      "from": "fact-creator-split",
+      "to": "objective-loop",
+      "rel": "answers"
+    },
+    {
+      "from": "parts-that-run",
+      "to": "story-vault",
+      "rel": "example-of"
+    },
+    {
+      "from": "story-is-a-graph",
+      "to": "both-models-bad-for-the-reader",
+      "rel": "contrasts"
+    }
+  ],
+  "links": {
+    "articles": [
+      "the-question-is-whether-they-miss-it"
+    ],
+    "pages": [
+      "/demos/fractal-graphs/index.html",
+      "/demos/fractal-graphs/performance.html",
+      "/docs/what-is-sgit.html",
+      "/demos/vaults/regulation-graph/index.html",
+      "/demos/vaults/dsit-ai-risk-toolkit/index.html",
+      "/demos/vaults/voice-debrief/index.html",
+      "/demos/vaults/pentest-report/index.html",
+      "/demos/vaults/board/index.html",
+      "/demos/vaults/catalogue/index.html"
+    ],
+    "sites": [
+      "https://newsroom.sgit.ai/thesis",
+      "https://graphs.sgit.ai/",
+      "https://newsroom.sgit.ai/economics/paying-the-fact-creator",
+      "https://newsroom.sgit.ai/economics/rails",
+      "https://pressgazette.co.uk/media-audience-and-business-data/google-traffic-down-2025-trends-report-2026/",
+      "https://reutersinstitute.politics.ox.ac.uk/digital-news-report/2026/dnr-executive-summary",
+      "https://ppa.co.uk/burnham-government-brings-forward-implementation-of-subscription-rules-to-january-2027",
+      "https://www.cjr.org/opinion/micropayments-subscription-pay-by-article.php"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "The news industry sells the one thing whose price is going to zero, the article, and throws away the one thing nobody else has, the evidence the article was made from.",
+      "why": "The claim stated so it can be wrong; everything else is its long form."
+    },
+    {
+      "text": "The story is a graph. The article is a projection. Sell the graph.",
+      "why": "The shift the five products follow from, in three sentences."
+    }
+  ]
+}

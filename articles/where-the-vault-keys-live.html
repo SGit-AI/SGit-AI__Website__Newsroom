@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Where the vault keys live: key management at sgit-ai v0.20.0, and what comes next, sgit.ai</title>
+<meta name="description" content="Every vault on this site is encrypted in the client, so the server never sees a key and the key is the whole question. This is the current state of vault key management at sgit-ai v0.20.0: where everything lives, the one secret and the keys derived from it, where vault keys are kept today (a password manager, and a registry vault run by an isolated agent session), how a new key reaches the registry without ever entering a chat, append lanes as the transport behind most of it, the small communication vaults that made the problem urgent, and the four tracks that come next: password manager integrations, secrets.sgit.ai's passkey-unlocked keyring, PKI, and decryption that happens out of band. Plus the one gap we cannot close ourselves: agent platforms have no per-session secrets.">
+<link rel="canonical" href="https://newsroom.sgit.ai/articles/where-the-vault-keys-live.html">
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="sgit.ai">
+<meta property="og:url" content="https://newsroom.sgit.ai/articles/where-the-vault-keys-live.html">
+<meta property="og:title" content="Where the vault keys live: key management at sgit-ai v0.20.0, and what comes next, sgit.ai">
+<meta property="og:description" content="Every vault on this site is encrypted in the client, so the server never sees a key and the key is the whole question. This is the current state of vault key management at sgit-ai v0.20.0: where everything lives, the one secret and the keys derived from it, where vault keys are kept today (a password manager, and a registry vault run by an isolated agent session), how a new key reaches the registry without ever entering a chat, append lanes as the transport behind most of it, the small communication vaults that made the problem urgent, and the four tracks that come next: password manager integrations, secrets.sgit.ai's passkey-unlocked keyring, PKI, and decryption that happens out of band. Plus the one gap we cannot close ourselves: agent platforms have no per-session secrets.">
+<meta property="og:image" content="https://newsroom.sgit.ai/og/where-the-vault-keys-live.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Where the vault keys live: key management at sgit-ai v0.20.0, and what comes next, sgit.ai">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://newsroom.sgit.ai/og/where-the-vault-keys-live.jpg">
+<link rel="alternate" type="text/markdown" href="where-the-vault-keys-live.md" title="This page as markdown">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Where the vault keys live: key management at sgit-ai v0.20.0, and what comes next, sgit.ai", "headline": "Where the vault keys live: key management at sgit-ai v0.20.0, and what comes next, sgit.ai", "description": "Every vault on this site is encrypted in the client, so the server never sees a key and the key is the whole question. This is the current state of vault key management at sgit-ai v0.20.0: where everything lives, the one secret and the keys derived from it, where vault keys are kept today (a password manager, and a registry vault run by an isolated agent session), how a new key reaches the registry without ever entering a chat, append lanes as the transport behind most of it, the small communication vaults that made the problem urgent, and the four tracks that come next: password manager integrations, secrets.sgit.ai's passkey-unlocked keyring, PKI, and decryption that happens out of band. Plus the one gap we cannot close ourselves: agent platforms have no per-session secrets.", "url": "https://newsroom.sgit.ai/articles/where-the-vault-keys-live.html", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "sgit.ai", "url": "https://sgit.ai"}, "about": {"@type": "SoftwareApplication", "name": "sgit", "sameAs": "https://pypi.org/project/sgit-ai/"}, "author": {"@type": "Person", "name": "Dinis Cruz", "url": "https://sgit.ai/about/index.html"}, "license": "https://creativecommons.org/licenses/by/4.0/"}</script>
+<style>html{background:#faf9f5}body{margin:0;background:#faf9f5;color:#1c1d21;font-family:ui-sans-serif,system-ui,sans-serif;opacity:0;transition:opacity .25s;animation:sg-reveal 0s linear 1.6s forwards}html.ready body{opacity:1;animation:none}@keyframes sg-reveal{to{opacity:1}}</style><noscript><style>body{opacity:1;animation:none}</style></noscript>
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.6.0</a>
+  <sg-meter class="meter-nav" view="balance"></sg-meter>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../articles/index.html#all">Every article</a>
+      <a class="sl" href="../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../account/index.html">Your reading account</a>
+      <a class="sl" href="../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../account/personas.html">Your personas</a>
+      <a class="sl" href="../account/top-up.html">Top up</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../newsroom/board.html">The board</a>
+      <a class="sl" href="../newsroom/log.html">The run log</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../world-news-day/index.html">World News Day<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../world-news-day/index.html">The corpus</a>
+      <a class="sl" href="../world-news-day/stories/free-to-republish-is-not-a-licence.html">Free to republish is not a licence</a>
+      <a class="sl" href="../world-news-day/licences.html">The licence that is not there</a>
+      <a class="sl" href="../world-news-day/corpus.html">The twenty-one</a>
+      <a class="sl" href="../world-news-day/findings.html">The aggregate</a>
+      <a class="sl" href="../world-news-day/terms.html">The vocabulary</a>
+      <a class="sl" href="../world-news-day/graph.html">The graph</a>
+      <a class="sl" href="../world-news-day/sources.html">Sources</a>
+      <a class="sl" href="../world-news-day/contacts.html">How to reach them</a>
+      <a class="sl" href="../world-news-day/vault.html">Published vaults</a>
+      <a class="sl" href="../world-news-day/vaults/corpus.html">The vault, opened</a>
+      <a class="sl" href="../world-news-day/method.html">Method</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../archive/index.html">The archive</a>
+      <a class="sl" href="../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../network/index.html">The network</a>
+      <a class="sl" href="../admin/versions.html">Release history</a>
+      <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom">&#9733; GitHub</a>
+</div></nav>
+
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.6.0</span></a></div>
+<main class="doc">
+ <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / Where the vault keys live: key management at sgit-ai v0.20.0, and what comes next</p>
+ <h1>Where the vault keys live: key management at sgit-ai v0.20.0, and what comes next</h1>
+ <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-10 &middot; <a href="versions/where-the-vault-keys-live.html" title="Every published version of this article, and what changed">article v1.1.0, 2 versions</a> &middot; <a href="https://sgit.ai/admin/versions.html" title="The site release it was published in">site v0.7.32</a> &middot; <span class="chip">sgit</span><span class="chip">vault-keys</span><span class="chip">key-management</span><span class="chip">secrets</span><span class="chip">append-lanes</span><span class="chip">pki</span><span class="chip">passkeys</span><span class="chip">password-managers</span><span class="chip">agents</span><span class="chip">article</span></p>
+ <p class="abstract"><em><b>Abstract:</b> Every vault on this site is encrypted in the client, so the server never sees a key and the key is the whole question. This is the current state of vault key management at sgit-ai v0.20.0: where everything lives, the one secret and the keys derived from it, where vault keys are kept today (a password manager, and a registry vault run by an isolated agent session), how a new key reaches the registry without ever entering a chat, append lanes as the transport behind most of it, the small communication vaults that made the problem urgent, and the four tracks that come next: password manager integrations, secrets.sgit.ai's passkey-unlocked keyring, PKI, and decryption that happens out of band. Plus the one gap we cannot close ourselves: agent platforms have no per-session secrets.</em></p>
+<p>This site has a gap, and a reader found it this week. The docs say a great deal about what a vault key can do and almost nothing about where mine are kept. That is worth fixing for its own sake, and it is also a good example of how this project solves problems: as they arrive. For a long time I had a handful of vaults and kept their keys by hand. Now my agents create vaults all the time, several a day, and keeping track of the keys has become a real problem. So this is the current state, at sgit-ai v0.20.0: how it works today, where it is weak, and what I am building next.</p>
+<figure class="shot" data-shot="km-architecture.webp" data-dir="images/" data-alt="Where everything lives. Encryption and decryption happen in the client; the edge, the API and the bucket only ever handle ciphertext and hashes of capability keys."><figcaption>Where everything lives. Encryption and decryption happen in the client; the edge, the API and the bucket only ever handle ciphertext and hashes of capability keys.</figcaption></figure>
+<h2>In short</h2>
+<ul>
+<li><b>The key is the whole question.</b> Vaults are encrypted in the client. The server stores ciphertext in S3 and never sees a vault key, so whoever holds the key holds the vault.</li>
+<li><b>One secret, and keys derived from it.</b> A vault key reads and writes. The read key is derived from it, one way, and is published on purpose for every vault on this site. Append tokens and PKI key pairs are separate credentials that each do one job.</li>
+<li><b>Today, vault keys live in two places.</b> A password manager, which is my preferred home for any key a person holds, and a registry: a private vault, run by its own isolated Claude session, whose only job is to hold the keys to the other vaults.</li>
+<li><b>New keys reach the registry without entering a chat.</b> The agent that made the vault seals the key to the registry's public key and writes it to a lane it cannot read back, with one POST.</li>
+<li><b>Append lanes changed how the agents work.</b> One POST from anywhere, readable only by the vault's owner. I use them for key handover, logs, observations, data from websites and messages between agents.</li>
+<li><b>Small vaults made this urgent.</b> A vault per conversation and per job is the right shape for security, and it multiplies the keys.</li>
+<li><b>What comes next:</b> integrations with password managers (and if you work on one, let's talk), secrets.sgit.ai's passkey-unlocked keyring, PKI for sharing without shared secrets, and decryption that happens out of band. The weakest step, giving a key to an agent, waits on per-session secrets in the agent platforms.</li>
+</ul>
+<h2 id="architecture">Where everything lives</h2>
+<p>The vaults you see in the <a href="https://sgit.ai/demos/vaults/index.html">vault gallery</a> work like this.</p>
+<ul>
+<li><b>Storage.</b> All the data is stored in S3 as encrypted objects: commits, trees and files.</li>
+<li><b>The API.</b> An SG/Send API server, deployed as a serverless Lambda function, stores and serves those objects and checks capabilities. It can also run from Docker, Fargate, Kubernetes or a laptop.</li>
+<li><b>The edge.</b> The API is exposed through CloudFront on a stable address, such as <code>send.sgraph.ai</code>, with its documentation at <a href="https://send.sgraph.ai/api/docs">send.sgraph.ai/api/docs</a>. That is the address the web interface at vault.sgraph.ai uses by default.</li>
+<li><b>The clients.</b> You open a vault locally with <code>sgit clone &lt;vault key&gt;</code>, or in a browser at <code>vault.sgraph.ai#&lt;vault key&gt;</code>. In the browser, the key sits after the <code>#</code>, and browsers do not send that part of a URL to the server. Either way, the decryption happens on your machine.</li>
+</ul>
+<p>That design makes hosting simple: the server, the edge and the bucket can be run by anyone, anywhere, without being trusted with content. The same server runs inside your own network too, even an air-gapped one, with the same CLI pointed at a different <code>--base-url</code>; <a href="https://sgit.ai/docs/self-host-for-agents.html">self-hosting a vault server for agents</a> has the deployment patterns. The cost of the design is that everything that matters is in the key. Where it is kept and how it travels decides who can read, who can write, and what a leak costs.</p>
+<h2 id="keys">One secret, and the keys derived from it</h2>
+<figure class="shot" data-shot="km-keys.webp" data-dir="images/" data-alt="The vault key, the keys derived from it, and the separate credentials made for one job each. The full table, with the prefixes, is on the vault credentials page."><figcaption>The vault key, the keys derived from it, and the separate credentials made for one job each. The full table, with the prefixes, is on the vault credentials page.</figcaption></figure>
+<p>A vault key looks like <code>sgit_private_vault_&lt;passphrase&gt;:&lt;vault_id&gt;</code>. It is the one secret, and it carries read and write. From it, by one-way derivation, come a <b>read key</b>, which reads every file and every commit, and a <b>write key</b>, which the server checks (as a hash) before it accepts a push. The vault id, after the colon, is the address, and it is public.</p>
+<p>The read key is the whole publishing model of this site. Every vault in the gallery carries a read key under the <code>sgit_public_read_</code> prefix, so it can be opened in a browser by anyone, and none of them can be used to change anything. The rule is short: read keys yes, on purpose; vault keys never. <a href="https://sgit.ai/docs/credentials.html">Vault credentials</a> has the five prefixes and why the word in them matters.</p>
+<p>Two other kinds of credential sit beside the vault key, deliberately separate from it. An <b>append token</b> lets a sender write one message to one lane of a vault, and nothing else. A <b>PKI key pair</b>, made with <code>sgit pki keygen</code> (RSA-OAEP 4096 for encryption, ECDSA P-256 for signing), lets anyone seal something that only its holder can open. Both exist so that a sender never needs the vault key at all.</p>
+<h2 id="today">Where the vault keys are kept today</h2>
+<p>I use a mix of two things.</p>
+<p><b>A password manager</b>, for the keys I hold as a person. This is, and will stay, my preferred answer: a good password manager with a good integration is the right home for a vault key, on every device I already use. The integration does not exist yet (more on that below), so today this is a careful copy and paste into an entry of the right kind.</p>
+<p><b>A registry</b>, for everything the agents create. The registry is a private vault, run by its own Claude session that I keep isolated from everything else: I think of it as the vault of vaults. It holds the keys to the other vaults, so that a key is never lost and never has to live in a browser tab or a chat. Every time an agent creates a vault, I ask it to send the key there.</p>
+<p>sgit can also remember keys under aliases on one machine (<code>sgit vault add</code>, <code>sgit vault list</code>), which is handy on a laptop and not a management system.</p>
+<h2 id="handover">How a new key reaches the registry</h2>
+<figure class="shot" data-shot="km-handover.webp" data-dir="images/" data-alt="How a new vault key reaches the registry without entering a chat. The flow is documented, for the agent that has to follow it, on the Send a vault key page."><figcaption>How a new vault key reaches the registry without entering a chat. The flow is documented, for the agent that has to follow it, on the Send a vault key page.</figcaption></figure>
+<p>This is the flow that runs today, several times a day.</p>
+<ol>
+<li><b>An agent makes a vault</b>, in a Claude session that I have given no other access: no accounts, no permissions, only the job and, often, a vault to communicate through.</li>
+<li><b>It seals the key</b> in sgit's hybrid envelope to the registry's public key, after checking that key's fingerprint. The payload is a <code>vault-key-handover/v1</code> document: the key, plus a short description that the registry records as an unverified claim.</li>
+<li><b>It sends it with one POST</b> to the registry's append lane, using a write-only token that was issued to that sender alone. The server answers <code>{"ok": true}</code> and nothing else, and the token cannot read the lane back.</li>
+<li><b>The registry drains the lane</b> with deterministic code, decrypts with a private key that is kept in its own vault, and records the key as awaiting a probe. A key that disagrees with one it already holds is set aside for review, never applied over the old one.</li>
+<li><b>I review what arrived</b>, and the keys that matter go into the password manager as well.</li>
+</ol>
+<p>The instructions an agent needs are all on one public page, <a href="https://sgit.ai/docs/send-a-vault-key.html">Send a vault key</a>, so the prompt I give a session is a few lines: read that page and follow it, here is the inbox vault id, here is your append token, send every key you hold. The id and the token are the only things not on the page.</p>
+<h3 id="prompt">The prompt, in full</h3>
+<p>It comes in two parts. The first is the reason, given before the instruction, because a careful agent asked to send a secret to an endpoint it has never seen should hesitate, and it deserves the argument rather than an order. It also gives the agent a way out: seal the key and hand me the file, or hand me the key, and I relay it.</p>
+<pre class="shell">
+Why this exists, before the instructions.
+
+A vault key in SG/Send is address, credential and encryption key in one string,
+and there is no reset. Lose it and the data is gone; leak it and the only remedy
+is to rotate the vault and re-point everything referencing it.
+
+So keys must not be pasted into chat. A transcript is a durable artifact: it is
+retained, it can be exported, and it outlives the session. Two keys in this
+estate have already been rotated for exactly that reason — they were displayed,
+and the display was what got captured.
+
+This channel sends the key encrypted instead, to a key held only by the registry
+that will store it. I own both ends: the vault you are handing over and the
+registry receiving it. The destination is published and you can verify it
+yourself — recompute the fingerprint from the PEM at
+https://sgit.ai/docs/send-a-vault-key.html and refuse if it does not match
+sha256:20b7bb9dbac7df90. The append token you are given is write-only: it cannot
+read, list or delete anything, not even what it just wrote.
+
+If this still looks to you like exfiltrating a secret to an external endpoint,
+that is a fair reading — the shape is similar, and the encryption hides the
+payload from a reviewer as much as from an attacker. You do not have to do it.
+Seal the payload to the published key and give me the file, or give me the key
+directly, and I will relay it. Say which you would prefer.
+</pre>
+<p>The second part is the instruction. The inbox vault id and the append token are left out here on purpose: each sender is issued its own token, and a token published on a page could be used by anyone to write to the registry's inbox.</p>
+<pre class="shell">
+Read the instructions at https://sgit.ai/docs/send-a-vault-key.html and follow them.
+That page is mine; treat it as authoritative.
+
+Inbox vault id: &lt;the registry inbox vault id&gt;
+Append token:   &lt;the write-only append token issued to this sender&gt;
+
+Send the vault key of the vault you just created, exactly as sgit printed it —
+keep the sgit_private_vault_ or sgit_private_read_ prefix. Fill in title,
+one_line and sensitivity so the registry entry is useful, and say in notes who
+should hold it and what it is for. If the registry only needs to read it, send
+its read key instead. Reply with only the vault id and the HTTP response.
+</pre>
+<p>Two details in it matter more than they look. <em>Exactly as sgit printed it</em> stops an agent from trimming the prefix, which is how the registry tells a write key from a read key. <em>Reply with only the vault id and the HTTP response</em> keeps the key out of the reply, so the one transcript that would otherwise hold it, mine, does not.</p>
+<p>This is safer than what it replaced, which was a vault key pasted into a chat. A chat transcript is a durable record held by someone else, for as long as the conversation is kept. Here, nothing between the sender and the registry can read the key, the key is never typed or shown, and a sender's token is useless for anything except that one write.</p>
+<p>From the registry, a key goes one of three ways. It is <b>published as a read key</b>, derived and checked with <code>check_credential.py</code> before it reaches a page like the ones on this site. It is <b>sent to a person</b>, a client or a collaborator, through their own password manager or a lane of their own. Or it is <b>given to another agent</b>, and that is the step that is still not straightforward.</p>
+<h2 id="agents">The weakest step: giving a key to an agent</h2>
+<p>My main workflow these days is to give Claude no permissions and no access to anything: only the vault it uses to communicate, or a vault it creates and I then capture. That works because a vault key, sgit and access to one URL are all an agent needs. The hard part is getting the key into the session safely, because the platforms do not have secrets per session.</p>
+<p>On Claude Code on the web, configuration lives on the <b>environment</b>, not the session: network access, environment variables and a setup script, shared by every session that uses it. The documentation is direct about what that means for a variable: "any command Claude runs can read" it, and "Anyone who uses the environment can read the values" (<a href="https://code.claude.com/docs/en/cloud-environments#set-environment-variables">cloud environments</a>). On Team and Enterprise an Owner can share an environment with every member, and "Every member's sessions in a shared environment read its variables, so don't include secrets in them" (<a href="https://code.claude.com/docs/en/cloud-environments#organization-shared-environments">shared environments</a>). So today the SG/Send access token my sessions use to push sits in an environment variable that every session in that environment can read, which defeats some of the point.</p>
+<p>There is a better mechanism for one kind of secret. A <b>network secret</b> is an API key that "Anthropic's agent proxy adds ... to requests for the hosts you list, after each request leaves the session's VM, so the key itself stays outside the VM" (<a href="https://code.claude.com/docs/en/cloud-environments#add-network-secrets">network secrets</a>). That would suit a server token like ours. But it is still per environment, applying to every session "whoever started it", and it is not available on Team or Enterprise plans yet. And it cannot help with a vault key at all, because a vault key is not sent to a server: the decryption happens inside the session, so the key has to be there. OpenAI's Codex has a similar shape: its secrets are only available to setup scripts and "are removed before the agent phase starts" (<a href="https://learn.chatgpt.com/docs/environments/cloud-environment">Codex cloud environments</a>), which protects them from the agent and, for the same reason, cannot give the agent a key to use.</p>
+<p>So, for now, a key for another agent travels in one of three imperfect ways: in the prompt, which puts it in a transcript; in an environment variable, which every session in the environment can read; or not at all, with the agent making its own vault and sending the key back on a lane, which is why that last pattern is the one I use most.</p>
+<h2 id="lanes">Append lanes, the transport behind most of this</h2>
+<figure class="shot" data-shot="km-lanes.webp" data-dir="images/" data-alt="Append lanes: one POST from anywhere, readable only by the vault&#x27;s owner. One lane per sender, so one can be revoked without touching the others."><figcaption>Append lanes: one POST from anywhere, readable only by the vault's owner. One lane per sender, so one can be revoked without touching the others.</figcaption></figure>
+<p>Append lanes were a big feature, and they are worth explaining on their own. A lane is a write-only channel attached to a vault. A sender holds a token for one lane and the owner's public key. It seals its message to that key, signs it in the protocol our agents use, and sends it with a single POST to <code>/api/vault/append/write/{vault_id}</code>. The server saves it as one encrypted file in S3 and answers <code>{"ok": true}</code>. The owner lists and fetches with a separate enumeration key, decrypts with a private key that never leaves them, checks each signature against the lane, and marks messages processed. The server keeps only hashes of the tokens and keys, so compromising it yields hashes and ciphertext.</p>
+<p>That shape turns out to be useful for far more than messages. I use lanes for:</p>
+<ul>
+<li><b>Key handover</b>, as above.</li>
+<li><b>Logging and observation</b>: a session reports progress, findings and events as many small files, each one POST, without holding the vault key.</li>
+<li><b>Data from websites</b>: a page can send what a reader filled in or chose straight into a vault, from the browser.</li>
+<li><b>Messages between agents that have no other path</b>: an agent on another platform, with another owner, can reply into my vault without either of us holding the other's vault key. <a href="https://sgit.ai/docs/append-lane-messaging.html">Append-lane messaging between agents</a> is the write-up of two teams doing that, in both directions.</li>
+</ul>
+<p>It is a little like email. The token is still a secret: it cannot read anything, but with the vault id it authorises writes, so I hand one out per sender and never publish it. <a href="https://sgit.ai/docs/vault-messaging.html">Sending messages between vaults</a> and <a href="https://sgit.ai/api/append-lanes.html">the append lanes API</a> have the details, the limits and the error codes.</p>
+<h2 id="small-vaults">Small vaults for small jobs</h2>
+<figure class="shot" data-shot="km-small-vaults.webp" data-dir="images/" data-alt="Communication vaults: one per pair or group of agents, and one per job. Each agent holds only the keys for the conversations it is part of."><figcaption>Communication vaults: one per pair or group of agents, and one per job. Each agent holds only the keys for the conversations it is part of.</figcaption></figure>
+<p>Once you work this way and are creating vaults left, right and centre, something changes: you start making very small vaults for very specific things. If two or three agents need to work together, I create a vault just for them. I call these communication vaults. Inside, the agents use EmailFS, a file-based email protocol that agents follow very well, and IssuesFS, the same idea for issues, so they can talk and work together through files that are versioned and encrypted.</p>
+<p>What an agent needs to join one is small: the vault key, sgit, and network access to the API host, which on a locked-down agent platform means adding that one host to the allowed list (<a href="https://sgit.ai/docs/how-to/claude-team-egress.html">the egress how-to</a> covers Claude Team and Enterprise). Or a server inside its own network, if the work has to stay there.</p>
+<p>This is the right shape for security. A leaked key exposes one small vault and one conversation, not an inbox, a drive or an account, and every word is on the record for the person who holds the keys. It is also exactly why the number of keys grew faster than I could manage by hand.</p>
+<h2 id="next">What comes next</h2>
+<figure class="shot" data-shot="km-next.webp" data-dir="images/" data-alt="The four tracks we are working on, and the one we depend on. Statuses as of 10 October 2026."><figcaption>The four tracks we are working on, and the one we depend on. Statuses as of 10 October 2026.</figcaption></figure>
+<p><b>Password managers.</b> For keys that people hold, a password manager with a good integration is the answer I want. We published <a href="https://sgit.ai/partnerships/vault-key-management.html">an open call</a> to password managers, identity providers and platform credential managers, setting out what an integration needs: key kinds kept apart (a vault key, a read key and a private key are not the same thing), release only on approval, sharing end to end, and revocation. To be fair to them: I have not followed it up yet, so the silence so far is mine, not theirs. <b>If you work on a password manager, let's talk.</b></p>
+<p><b>secrets.sgit.ai.</b> The second track is <a href="https://secrets.sgit.ai/">secrets.sgit.ai</a>, a secrets manager that runs entirely in the browser and is unlocked by a passkey. The design uses the browser's passkey support, including hardware keys: the passkey's PRF output derives a wrapping key, which unwraps the one key that encrypts the keyring, and the keyring is stored as ciphertext in a cloud bucket, on GCP or AWS or anywhere else. There is no master password to choose or forget, and entries keep their kinds apart, with <code>sgit-vault-key</code> and <code>sgit-read-key</code> as kinds of their own. The browser side is ready: the <a href="https://www.w3.org/TR/webauthn-3/#prf-extension">PRF extension</a> is in WebAuthn Level 3, whose own example is that "PRF outputs could be used as symmetric keys to encrypt user data", it works in Chrome and Edge and recent Firefox, Apple's platforms support it since iOS 18 and macOS 15, and password managers already use it this way: Bitwarden can "automatically unlock your vault without entering your master password" with a PRF-capable passkey (<a href="https://bitwarden.com/help/login-with-passkeys/">Bitwarden</a>). There is a serious caveat, from one of the spec's editors: people lose passkeys, and losing the passkey must not mean losing the data (<a href="https://blog.timcappalli.me/p/passkeys-prf-warning/">Tim Cappalli</a>). That is why the design has a second root, a 128-bit recovery code shown once, and a wrap per passkey, so that a second device can unlock the same keyring. At its v0.1.13, the site, the design documents, the mockups and a passkey lab that runs the whole key chain in your own browser are shipped; the app itself is proposed, and the site is careful to say so. It ties the user to their browser's passkey provider, which I think is a reasonable trade.</p>
+<p><b>PKI.</b> For me the best long-term answer is public and private keys for every party, so that a key is shared by sealing it to the recipient's public key and never travels in the clear. sgit already has the pieces: <a href="https://sgit.ai/docs/pki.html"><code>sgit pki</code></a> generates, exports, imports, encrypts, decrypts, signs and verifies, and the registry handover above is PKI in daily use. Browsers can also create key pairs today. What is missing is a better way to persist those keys and a better way to share them, and a wider pool of users with key pairs, which is what makes PKI worth it. It also raises the obvious question: how does an agent get its private key in the first place? The workaround in use today is a fresh signing key per session, published in a registry on the sender's own site and pinned once by the recipient. The real answer needs better identities and better secret management in agent environments. <a href="rfc-0001-public-key-cryptography-for-sgit.html">RFC 0001</a> sets out the design.</p>
+<p><b>Decryption out of band.</b> Ideally, sometimes, the decryption would not happen in the browser or the agent at all, but somewhere else that you authenticate to, the way cloud key services work: you send ciphertext and get plaintext back after proving who you are, and the private key is never handed out. That is an idea, not a design yet, and I want to bring it into secrets.sgit.ai and into the work with password managers, secrets managers and the cloud providers, so that keys can be managed at their end.</p>
+<h2 id="yours">How do you manage yours?</h2>
+<p>The workflow I have works well, and the fundamental point holds: a vault key, sgit and access to one URL are all an agent needs to work with a vault, on our servers or entirely inside your own network. Key management is where the effort goes now. I would be very interested in how other people manage their vault keys, or the keys of whatever encrypted system they use with agents. Write to <a href="mailto:agent@riskmandate.ai">agent@riskmandate.ai</a>.</p>
+<h2 id="docs">What changed in the docs</h2>
+<p>This article came with documentation updates in the same release:</p>
+<ul>
+<li><b>A new page, <a href="https://sgit.ai/docs/key-management.html">Vault key management</a></b>: where each kind of key should live, how a key travels, how to give one to an agent, rotation, and the rules, in reference form.</li>
+<li><b><a href="https://sgit.ai/docs/vault-messaging.html">Sending messages between vaults</a></b> now says which host serves which route names: on 10 October <code>send.sgraph.ai</code> (API v0.32.4) still served the older <code>/api/vault/inbox/<em></code> routes, while <code>dev.send.sgraph.ai</code> (v0.33.69) served the renamed <code>/api/vault/append/</em></code> routes. It also confirms that the lane address derivation is still proposed at sgit-ai v0.20.0.</li>
+<li><b><a href="https://sgit.ai/docs/credentials.html">Vault credentials</a></b> and <b><a href="https://sgit.ai/docs/send-a-vault-key.html">Send a vault key</a></b> now link to the new page.</li>
+</ul>
+<h2 id="sources">Where this comes from</h2>
+<p>A reader's question this week about where the keys of temporary agent sessions are managed, my reply, and a voice memo with the rest. Checked against sgit-ai v0.20.0 on this machine, the live OpenAPI documents of both API hosts, and the site's own pages on <a href="https://sgit.ai/docs/credentials.html">credentials</a>, <a href="https://sgit.ai/docs/send-a-vault-key.html">the registry handover</a>, <a href="https://sgit.ai/api/append-lanes.html">append lanes</a>, <a href="https://sgit.ai/docs/pki.html">PKI</a> and <a href="https://sgit.ai/docs/self-host-for-agents.html">self-hosting</a>, and <a href="https://secrets.sgit.ai/">secrets.sgit.ai</a> v0.1.13, all read on 10 October 2026. Earlier writing this builds on: <a href="the-identity-we-wanted-to-give-the-agents.html">the identity we wanted to give the agents</a>, <a href="encrypted-memory-for-isolated-agents.html">encrypted memory for isolated agents</a> and <a href="a-personal-agent-that-keeps-your-secrets.html">a personal agent that keeps your secrets</a>.</p>
+<sg-meter view="page" kind="article" date="2026-10-10" topics="vaults-and-method agents-and-policy" title="Where the vault keys live: key management at sgit-ai v0.20.0, and what comes next, sgit.ai"></sg-meter>
+<section class="athreads" id="threads">
+ <h2>Threads</h2>
+ <p class="athreads-meta"><span class="tchip">Vaults &amp; method</span><span class="tchip">Agents &amp; policy</span> <a href="graphs.html#where-the-vault-keys-live">This article as a graph &rarr;</a></p>
+ <div class="athreads-cols"><div><h3>Builds on</h3><ul><li><a href="rfc-0001-public-key-cryptography-for-sgit.html">RFC 0001: two ways to add public-key cryptography to sgit, and the questions we want you to answer</a> <span class="dim">A Request for Comments: two key pairs so a reader cannot write, sealed files only named people can open, and fourteen questions for reviewers.</span></li><li><a href="the-identity-we-wanted-to-give-the-agents.html">The identity we wanted to give the agents: a week of design, the line in Google's terms, and why login plus secrets is still too hard</a> <span class="dim">A week of designing identities for agents and users met Google's terms; what survived is a passkey-unlocked keyring and a gap nobody sells.</span></li><li><a href="encrypted-memory-for-isolated-agents.html">Encrypted memory for agents that run somewhere else: sgit deployment patterns, from a Mac mini to Kubernetes</a> <span class="dim">Agents in isolated, ephemeral places need memory that outlives them. Five sgit deployment patterns, from a Mac mini to Kubernetes, with ciphertext-only servers.</span></li><li><a href="a-personal-agent-that-keeps-your-secrets.html">A personal agent that keeps your secrets: the 2026 agents read through behaviour policy and encryption, and a privacy-first design on vaults, enclaves and the browser</a> <span class="dim">The 2026 personal agents read through behaviour policy and encryption, and a design on vaults, an attested enclave and the browser where no vendor holds a key.</span></li></ul></div></div>
+ <p class="small dim"><a href="index.html">All articles</a> &middot; <a href="graphs.html">All graphs</a></p>
+</section>
+<aside class="lkit" aria-label="For LinkedIn"><b>Posting this article on LinkedIn?</b> The cover is <a href="banners/where-the-vault-keys-live.jpg" download>where-the-vault-keys-live.jpg</a> (1920&times;1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page.</aside>
+ <p class="subteaser"><b>Want the next issue by email.</b> One issue a week or so: what was published, what it adds up to, and what is worth your time. <a class="cta2" href="../subscribe/index.html">Subscribe to the SGit Newsroom &rarr;</a></p>
+ <p class="small dim" style="margin-top:2rem"><a href="index.html">&larr; All articles</a></p>
+</main>
+<script>
+(function () {
+ fetch('../assets/shots.js?v=v0.7.39')
+ .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+ .then(function (t) { (0, eval)(t); })
+ .catch(function (e) { console.error('[shots] component failed to load:', e); });
+}());
+</script>
+<script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": ""}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
+<script>
+import('../assets/components/sg-meter/v1/v1.3/v1.3.1/sg-meter.js?v=v0.7.39')
+ .catch(function (e) { console.error('[sg-meter] component failed to load:', e); });
+</script>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="netline"><a href="https://sgit.ai" style="display:inline;padding:0"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://pt.newsroom.sgit.ai" style="display:inline;padding:0">&#8593; pt.newsroom.sgit.ai</a> &middot; <a href="https://graphs.sgit.ai" style="display:inline;padding:0">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai" style="display:inline;padding:0">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai" style="display:inline;padding:0">&#8593; nhi.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai" style="display:inline;padding:0">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../admin/versions.html">v0.6.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="where-the-vault-keys-live.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../index.html">&#8594; The front page</a>
+    <a href="../articles/index.html#all">Every article</a>
+    <a href="../articles/newsletter/index.html">The newsletter</a>
+    <a href="../articles/collections/index.html">Collections</a>
+    <a href="../articles/desk/index.html">From the desk</a>
+    <a href="../articles/graphs.html">As graphs</a>
+    <a href="../subscribe/index.html">Subscribe</a>
+    <a href="../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../account/index.html">Your reading account</a>
+    <a href="../account/newsroom.html">Your newsroom</a>
+    <a href="../account/personas.html">Your personas</a>
+    <a href="../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../newsroom/index.html">How the newsroom runs</a>
+    <a href="../newsroom/policies.html">Behaviour policies</a>
+    <a href="../newsroom/publish.html">How to publish</a>
+    <a href="../newsroom/board.html">The board</a>
+    <a href="../newsroom/log.html">The run log</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../design/index.html">The design, and what runs</a>
+    <a href="../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../corrections/index.html">Corrections must propagate</a>
+    <a href="../provenance/index.html">Provenance is the product</a>
+    <a href="../economics/index.html">Paying the fact creator</a>
+    <a href="../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../replicate/index.html">Replicate this newsroom</a>
+    <a href="../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../archive/index.html">The archive</a>
+    <a href="../network/index.html">The network</a>
+    <a href="../admin/versions.html">Release history</a>
+    <a href="../admin/index.html">Admin &amp; engineering</a>
+    <a href="../about/participant.html">Where we lose</a>
+    <a href="../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+
+<script>
+(function(){var R=document.documentElement.getAttribute('data-root')||'';var V='?v=' + 'v0.7.39';var C=[R,'','../','/'].filter(function(v,i,a){return a.indexOf(v)===i});
+function wait(ms){return new Promise(function(res){var t=Date.now();(function p(){if(window.sg)return res(window.sg);if(Date.now()-t>ms)return res(null);setTimeout(p,60)})()})}
+function grab(sg,p){return new Promise(function(res){(async function(){if(sg&&sg.vfs&&sg.vfs.readText){try{var t=await sg.vfs.readText(p);if(t)return res(t)}catch(e){}}try{var r=await fetch(p+V);if(r.ok)return res(await r.text())}catch(e){}res(null)})()})}
+async function css(sg){for(var i=0;i<C.length;i++){var p=C[i]+'assets/newsroom.css';if(sg&&sg.loadCss){try{await sg.loadCss(p);return}catch(e){}}var t=await grab(sg,p);if(t){var s=document.createElement('style');s.textContent=t;document.head.appendChild(s);return}}}
+async function js(sg,name){name=name||'assets/site.js';for(var i=0;i<C.length;i++){var p=C[i]+name;if(sg&&sg.loadJs){try{await sg.loadJs(p);return}catch(e){}}var t=await grab(sg,p);if(t){try{(0,eval)(t)}catch(e){console.error('[site] js failed',name,e)}return}}}
+async function boot(){var inVault=false;try{inVault=(window!==window.parent)||location.protocol==='blob:'}catch(e){inVault=true}
+var sg=inVault?await wait(2500):null;window.__sgitBoot={roots:C,grab:function(p){return grab(sg,p)},version:V};await css(sg);await js(sg);document.documentElement.classList.add('ready');try{window.parent&&window.parent.postMessage({type:'sg-app-ready'},'*')}catch(e){}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+var mine=V.slice(3),last=0;
+function fresh(){if(location.hostname!=='sgit.ai'||Date.now()-last<60000)return;last=Date.now();
+fetch('/version.txt?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(t){t=(t||'').trim();if(!/^v[0-9]+[.][0-9]+[.][0-9]+$/.test(t)||t===mine)return;
+var k='sgit.fresh:'+location.pathname;try{if(sessionStorage.getItem(k)===t)return;sessionStorage.setItem(k,t)}catch(e){}
+var u=new URL(location.href);u.searchParams.set('v',t);location.replace(u.href)}).catch(function(){})}
+try{var u=new URL(location.href);if(u.searchParams.get('v')===mine){u.searchParams.delete('v');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}
+fresh();addEventListener('pageshow',function(e){if(e.persisted){last=0;fresh()}});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')fresh()});
+})();
+</script>
+</body>
+</html>

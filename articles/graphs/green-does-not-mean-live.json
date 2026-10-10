@@ -1,0 +1,178 @@
+{
+  "slug": "green-does-not-mean-live",
+  "teaser": "Two releases passed every check and never reached the site because the checks stopped at the git remote; a release now ends by asking the live site its version.",
+  "topics": [
+    "site-and-engineering"
+  ],
+  "core_idea": "Shipped is a fact about the reader, not about your repository, so a release has to verify the boundary the reader is on and not only the ones the repository can see.",
+  "nodes": [
+    {
+      "id": "two-releases-missed",
+      "label": "Two releases that never reached anybody",
+      "kind": "example",
+      "summary": "Two consecutive releases pushed cleanly, printed both remotes in sync, and the site served a two-release-old page for forty minutes until a human on a phone asked if it was the latest version."
+    },
+    {
+      "id": "version-badge",
+      "label": "The version badge",
+      "kind": "artefact",
+      "summary": "The badge on the home page that a human looked at to notice the miss, and that the release now polls for the new version."
+    },
+    {
+      "id": "wrong-boundary",
+      "label": "Checking the wrong boundary",
+      "kind": "claim",
+      "summary": "The checks were not weak; they were checking the wrong boundary."
+    },
+    {
+      "id": "release-script-steps",
+      "label": "What the release actually verified",
+      "kind": "method",
+      "summary": "Build the site, run the validator, commit and push the encrypted vault and confirm sync, commit and push the git mirror and confirm HEAD equals origin/dev."
+    },
+    {
+      "id": "bytes-arrived-not-readable",
+      "label": "The bytes arrived at GitHub",
+      "kind": "concept",
+      "summary": "HEAD == origin/dev compares hashes, not hopes, but it means the bytes arrived at GitHub, not that anybody can read them."
+    },
+    {
+      "id": "three-boundaries",
+      "label": "Three boundaries, two verified",
+      "kind": "concept",
+      "summary": "Source to git remote, git remote to Pages deploy, Pages deploy to the reader; a GitHub Actions job sits in the unverified gap and reports into a system neither remote knows about."
+    },
+    {
+      "id": "deploy-job-failure",
+      "label": "What actually failed",
+      "kind": "example",
+      "summary": "The deploy job died in Set up job because codeload.github.com rate-limited the download of actions/configure-pages with a 429, while the validate and tag-release jobs passed."
+    },
+    {
+      "id": "shared-infrastructure-breaks",
+      "label": "The most likely thing to break is not your code",
+      "kind": "claim",
+      "summary": "It is a piece of shared infrastructure you do not run, on a day you were not thinking about it."
+    },
+    {
+      "id": "live-version-check",
+      "label": "Ask the live site what version it is serving",
+      "kind": "method",
+      "summary": "A release now polls sgit.ai with a cache-buster for the new version, up to eight minutes, and aborts loudly if it never appears, naming the Actions page."
+    },
+    {
+      "id": "shipped-is-about-the-reader",
+      "label": "Shipped is a fact about the reader",
+      "kind": "claim",
+      "summary": "Shipped is a fact about the reader, not about your repository."
+    },
+    {
+      "id": "three-unpublished-rules",
+      "label": "Three rules of the same shape",
+      "kind": "method",
+      "summary": "A page nothing links to, a page the machine index omits, and a page the deploy never served are all unpublished, and the build or the release fails on each."
+    },
+    {
+      "id": "what-it-does-not-fix",
+      "label": "What this does not fix",
+      "kind": "question",
+      "summary": "It detects a failed deploy but does not repair one, it checks only the home page's badge so a partial deploy would pass, and it adds up to eight minutes to every release."
+    }
+  ],
+  "edges": [
+    {
+      "from": "two-releases-missed",
+      "to": "wrong-boundary",
+      "rel": "leads-to"
+    },
+    {
+      "from": "two-releases-missed",
+      "to": "version-badge",
+      "rel": "depends-on"
+    },
+    {
+      "from": "release-script-steps",
+      "to": "bytes-arrived-not-readable",
+      "rel": "produces"
+    },
+    {
+      "from": "wrong-boundary",
+      "to": "bytes-arrived-not-readable",
+      "rel": "depends-on"
+    },
+    {
+      "from": "three-boundaries",
+      "to": "wrong-boundary",
+      "rel": "extends"
+    },
+    {
+      "from": "deploy-job-failure",
+      "to": "three-boundaries",
+      "rel": "example-of"
+    },
+    {
+      "from": "deploy-job-failure",
+      "to": "shared-infrastructure-breaks",
+      "rel": "example-of"
+    },
+    {
+      "from": "wrong-boundary",
+      "to": "live-version-check",
+      "rel": "leads-to"
+    },
+    {
+      "from": "shared-infrastructure-breaks",
+      "to": "live-version-check",
+      "rel": "leads-to"
+    },
+    {
+      "from": "live-version-check",
+      "to": "release-script-steps",
+      "rel": "extends"
+    },
+    {
+      "from": "live-version-check",
+      "to": "version-badge",
+      "rel": "depends-on"
+    },
+    {
+      "from": "live-version-check",
+      "to": "three-unpublished-rules",
+      "rel": "example-of"
+    },
+    {
+      "from": "three-unpublished-rules",
+      "to": "shipped-is-about-the-reader",
+      "rel": "depends-on"
+    },
+    {
+      "from": "shipped-is-about-the-reader",
+      "to": "wrong-boundary",
+      "rel": "extends"
+    },
+    {
+      "from": "what-it-does-not-fix",
+      "to": "live-version-check",
+      "rel": "extends"
+    }
+  ],
+  "links": {
+    "articles": [],
+    "pages": [
+      "/admin/versions.html"
+    ],
+    "sites": [
+      "https://github.com/SGit-AI/SGit-AI__CLI"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "The checks were not weak. They were checking the wrong boundary.",
+      "why": "The diagnosis: strong checks on the wrong side of the deploy."
+    },
+    {
+      "text": "All three are the same claim: shipped is a fact about the reader, not about your repository.",
+      "why": "The general rule the fix joins, learned from three failures of the same shape."
+    }
+  ]
+}

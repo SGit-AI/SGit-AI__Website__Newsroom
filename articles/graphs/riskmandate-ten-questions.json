@@ -1,0 +1,192 @@
+{
+  "slug": "riskmandate-ten-questions",
+  "teaser": "Ten hard questions from a conference, answered in a two-hour interview: what RiskMandate does, what it deliberately is not, and how mature each part is.",
+  "topics": [
+    "agents-and-policy",
+    "startups-and-strategy"
+  ],
+  "core_idea": "Every answer rests on four objects for one agent in one deployment, mandate, grant, delta and barriers, and a strict division of roles: RiskMandate authors the policy and pre-commits the verdict, the customer's controls enforce it, a named executive owns the residual risk, and logs calibrate the grant; so RiskMandate is not inline, not an insurer and not one button, the value lands before the action, new capability can only land as excess, and the headline metric is the reduction in risk the business has to accept.",
+  "nodes": [
+    {
+      "id": "model",
+      "label": "Mandate, grant, delta, barriers",
+      "kind": "concept",
+      "summary": "Four objects for one agent in one deployment; only a boundary is a control."
+    },
+    {
+      "id": "roles",
+      "label": "Author, decide, enforce",
+      "kind": "concept",
+      "summary": "RiskMandate authors and pre-commits; the customer's stack enforces; an executive owns the rest."
+    },
+    {
+      "id": "bypass",
+      "label": "The 5k order was possible on day one",
+      "kind": "example",
+      "summary": "Bypass is unbounded excess the policy surfaces before any action."
+    },
+    {
+      "id": "locked",
+      "label": "The mandate is locked business logic",
+      "kind": "claim",
+      "summary": "New capability can only land in the reach, as excess, never as new authority."
+    },
+    {
+      "id": "calibrator",
+      "label": "Reality is the calibrator",
+      "kind": "method",
+      "summary": "The grant is reverse-engineered from logs; documentation said no attachments, Claude found a way."
+    },
+    {
+      "id": "opensource",
+      "label": "Open source, maintained per customer",
+      "kind": "claim",
+      "summary": "The product is a customised, maintained vault; the moat is delivery and trust."
+    },
+    {
+      "id": "liability",
+      "label": "Authorisation is the grant",
+      "kind": "claim",
+      "summary": "Liability sits with the customer from the moment the reach exists; risks route to an executive."
+    },
+    {
+      "id": "insurable",
+      "label": "We make agents insurable",
+      "kind": "claim",
+      "summary": "The record is what an underwriter can price; no risk transfer exists today."
+    },
+    {
+      "id": "supply",
+      "label": "The supply chain is a bigger agent",
+      "kind": "claim",
+      "summary": "A compromise is a grant that exploded or a boundary that vanished; trust travels by connectivity."
+    },
+    {
+      "id": "reversal",
+      "label": "Containment now, reversal next",
+      "kind": "method",
+      "summary": "Circuit breakers pre-committed; twins, replay and version control, bounded by one-way doors."
+    },
+    {
+      "id": "pki",
+      "label": "Authorisation by encryption",
+      "kind": "method",
+      "summary": "Delegated authority attenuated by keys, not inherited by privilege."
+    },
+    {
+      "id": "metric",
+      "label": "What is the headline metric?",
+      "kind": "question",
+      "summary": "Reduction in accepted risk; runtime metrics belong to the enforcement layer."
+    },
+    {
+      "id": "fixes",
+      "label": "Three fixes on our own site",
+      "kind": "artefact",
+      "summary": "Homepage enforcement wording, insurance page tense, the Level 1 price."
+    }
+  ],
+  "edges": [
+    {
+      "from": "model",
+      "to": "roles",
+      "rel": "depends-on"
+    },
+    {
+      "from": "bypass",
+      "to": "model",
+      "rel": "example-of"
+    },
+    {
+      "from": "locked",
+      "to": "model",
+      "rel": "extends"
+    },
+    {
+      "from": "calibrator",
+      "to": "model",
+      "rel": "produces"
+    },
+    {
+      "from": "opensource",
+      "to": "roles",
+      "rel": "extends"
+    },
+    {
+      "from": "liability",
+      "to": "roles",
+      "rel": "depends-on"
+    },
+    {
+      "from": "insurable",
+      "to": "liability",
+      "rel": "leads-to"
+    },
+    {
+      "from": "supply",
+      "to": "model",
+      "rel": "extends"
+    },
+    {
+      "from": "reversal",
+      "to": "roles",
+      "rel": "extends"
+    },
+    {
+      "from": "pki",
+      "to": "supply",
+      "rel": "extends"
+    },
+    {
+      "from": "metric",
+      "to": "model",
+      "rel": "answers"
+    },
+    {
+      "from": "fixes",
+      "to": "roles",
+      "rel": "contrasts"
+    }
+  ],
+  "links": {
+    "articles": [
+      "hope-or-enforcement",
+      "the-behaviour-policy-is-the-business-logic",
+      "footprint-and-blast-radius",
+      "six-agents-one-inbox",
+      "the-mandate-stack",
+      "every-risk-is-already-accepted",
+      "agency-is-not-a-yes",
+      "connector-twin-before-you-deploy-an-agent",
+      "introducing-fractal-semantic-graphs",
+      "the-identity-we-wanted-to-give-the-agents",
+      "what-sgit-is"
+    ],
+    "pages": [
+      "docs/pki.html"
+    ],
+    "sites": [
+      "https://riskmandate.ai/",
+      "https://abp.sgit.ai/",
+      "https://twins.sgit.ai/",
+      "https://pki.sgit.ai/",
+      "https://nhi.sgit.ai/",
+      "https://graphs.sgit.ai/",
+      "https://wardley-maps.sgit.ai/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "The value is delivered **before** the action, not at it.",
+      "why": "Where the value of a behaviour policy lands."
+    },
+    {
+      "text": "**the moment of authorisation is the moment you granted the reach, not the moment you wrote the mandate.**",
+      "why": "The liability reframe."
+    },
+    {
+      "text": "The supply chain is **just a bigger agent**.",
+      "why": "Why behaviour generalises rather than narrows."
+    }
+  ]
+}

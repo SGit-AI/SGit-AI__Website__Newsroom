@@ -1,0 +1,175 @@
+{
+  "slug": "hope-or-enforcement",
+  "teaser": "One customer service agent built three ways, each with an Agent Behaviour Policy: how much of each policy is hope, and what one run can reach.",
+  "topics": [
+    "agents-and-policy",
+    "vaults-and-method"
+  ],
+  "core_idea": "Every design of an agent can have a rule for every behaviour; what differs is who enforces each rule and how much the agent can reach, so refactoring a customer service agent from one model with broad connectors, to a harness of business tools, to a team of narrow agents behind a deterministic identity gateway turns most of its policy from expectations the model keeps into boundaries it cannot reach, shrinks the policy because it no longer has to forbid what is impossible, cuts tokens, and leaves a short map of what still rests on hope and which boundary to build next, read after every run and shown to the client as a record rather than a score.",
+  "nodes": [
+    {
+      "id": "scenario",
+      "label": "A customer service agent on a shop's inbox",
+      "kind": "example",
+      "summary": "Fictional shop, 38,000 customers, 1,400 emails a week; one mandate of twelve actions."
+    },
+    {
+      "id": "barriers",
+      "label": "Hope and enforcement",
+      "kind": "concept",
+      "summary": "Expectation is a rule the model keeps; boundary is a limit the agent cannot reach; only the second is a control."
+    },
+    {
+      "id": "d1",
+      "label": "Design 1: one agent, two connectors",
+      "kind": "example",
+      "summary": "38-rule policy, 97% hope; one run reaches 38,000 records, any refund, any address; 35,000 tokens per email."
+    },
+    {
+      "id": "d2",
+      "label": "Design 2: a harness of business tools",
+      "kind": "example",
+      "summary": "Reach falls to 1,000 records, 5,000 GBP, 20 emails; six rules move into code; 73% still hope."
+    },
+    {
+      "id": "signatures",
+      "label": "Tool signatures are where policy hopes",
+      "kind": "claim",
+      "summary": "Every argument naming a customer, an order or an address is a rule the model must keep."
+    },
+    {
+      "id": "d3",
+      "label": "Design 3: a team behind a gateway",
+      "kind": "example",
+      "summary": "Runs bound to one verified customer; 23% hope; unbounded excess zero; 4,400 tokens per email."
+    },
+    {
+      "id": "granularity",
+      "label": "More tools, each narrower",
+      "kind": "claim",
+      "summary": "Granular tools carry business knowledge in code: once per order, before dispatch, the bound customer."
+    },
+    {
+      "id": "within-mandate",
+      "label": "Narrow agents still have too much power",
+      "kind": "claim",
+      "summary": "A compromised mailbox and voucher farming work inside the mandate; the policy finds them."
+    },
+    {
+      "id": "next-boundary",
+      "label": "The policy says which boundary to build next",
+      "kind": "method",
+      "summary": "Address confirmation, per-customer refund and voucher caps, sampled review of tone."
+    },
+    {
+      "id": "after-run",
+      "label": "Read the policy after every run",
+      "kind": "method",
+      "summary": "What was exercised, what hostile mail tested, what held; tokens against the budget."
+    },
+    {
+      "id": "client",
+      "label": "The client sees the record, not a score",
+      "kind": "artefact",
+      "summary": "Eight promises, and for each design what keeps each one; the business case from the same record."
+    },
+    {
+      "id": "vault",
+      "label": "Hope or enforcement, the vault",
+      "kind": "artefact",
+      "summary": "The mandate, three designs, 62 emails, the analyst's report and a recomputable year."
+    }
+  ],
+  "edges": [
+    {
+      "from": "barriers",
+      "to": "scenario",
+      "rel": "answers"
+    },
+    {
+      "from": "d1",
+      "to": "barriers",
+      "rel": "example-of"
+    },
+    {
+      "from": "d2",
+      "to": "d1",
+      "rel": "extends"
+    },
+    {
+      "from": "signatures",
+      "to": "d2",
+      "rel": "answers"
+    },
+    {
+      "from": "d3",
+      "to": "d2",
+      "rel": "extends"
+    },
+    {
+      "from": "granularity",
+      "to": "d3",
+      "rel": "depends-on"
+    },
+    {
+      "from": "within-mandate",
+      "to": "d3",
+      "rel": "contrasts"
+    },
+    {
+      "from": "next-boundary",
+      "to": "within-mandate",
+      "rel": "answers"
+    },
+    {
+      "from": "after-run",
+      "to": "next-boundary",
+      "rel": "leads-to"
+    },
+    {
+      "from": "client",
+      "to": "after-run",
+      "rel": "extends"
+    },
+    {
+      "from": "vault",
+      "to": "d3",
+      "rel": "produces"
+    }
+  ],
+  "links": {
+    "articles": [
+      "the-behaviour-policy-is-the-business-logic",
+      "the-agent-team-as-it-runs",
+      "footprint-and-blast-radius",
+      "six-agents-one-inbox",
+      "every-risk-is-already-accepted",
+      "where-is-the-why",
+      "connector-twin-before-you-deploy-an-agent",
+      "who-are-you-protecting-against"
+    ],
+    "pages": [
+      "demos/vaults/hope-or-enforcement/index.html",
+      "demos/vaults/licence-to-operate/index.html"
+    ],
+    "sites": [
+      "https://abp.sgit.ai/",
+      "https://abp.sgit.ai/model/barriers/index.html",
+      "https://riskmandate.ai/abp.html"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "Every design has a policy for every behaviour. The difference is who enforces it.",
+      "why": "The thesis."
+    },
+    {
+      "text": "The design breaks its own budget rule on every email, which is what happens to a budget that is an expectation.",
+      "why": "Tokens as a policy like any other."
+    },
+    {
+      "text": "Every argument that names a customer, an order or an address is a place where the policy has to hope.",
+      "why": "Where to refactor."
+    }
+  ]
+}

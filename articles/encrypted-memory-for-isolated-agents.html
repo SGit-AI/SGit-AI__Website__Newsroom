@@ -1,0 +1,616 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Encrypted memory for agents that run somewhere else: sgit deployment patterns, from a Mac mini to Kubernetes, sgit.ai</title>
+<meta name="description" content="Agents are safer when they run in isolated places: a cloud VM, a local VM, a container on a Mac mini, a GPU machine, a job that exists for one task. Isolation takes away the shared drive, and ephemeral compute takes away the disk, so the memory has to live somewhere else, somewhere the owner controls and a breach does not expose. This article maps how to give those agents encrypted memory with sgit and a vault server you run yourself: one container, an access token, storage in a folder or a bucket, and only ciphertext on the server. Five patterns, each drawn as a diagram with its Mermaid source: a Mac mini with Docker Compose, the life of one ephemeral agent run with a scoped clone, Kubernetes, a private cloud VPC with CloudFront in front, and two servers holding one vault. Every command was run against a local server for this article, including a scoped clone, a push from a second agent, replication to a second server and a restore after a restart, and a search of the server's storage that found none of the plaintext.">
+<link rel="canonical" href="https://newsroom.sgit.ai/articles/encrypted-memory-for-isolated-agents.html">
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="sgit.ai">
+<meta property="og:url" content="https://newsroom.sgit.ai/articles/encrypted-memory-for-isolated-agents.html">
+<meta property="og:title" content="Encrypted memory for agents that run somewhere else: sgit deployment patterns, from a Mac mini to Kubernetes, sgit.ai">
+<meta property="og:description" content="Agents are safer when they run in isolated places: a cloud VM, a local VM, a container on a Mac mini, a GPU machine, a job that exists for one task. Isolation takes away the shared drive, and ephemeral compute takes away the disk, so the memory has to live somewhere else, somewhere the owner controls and a breach does not expose. This article maps how to give those agents encrypted memory with sgit and a vault server you run yourself: one container, an access token, storage in a folder or a bucket, and only ciphertext on the server. Five patterns, each drawn as a diagram with its Mermaid source: a Mac mini with Docker Compose, the life of one ephemeral agent run with a scoped clone, Kubernetes, a private cloud VPC with CloudFront in front, and two servers holding one vault. Every command was run against a local server for this article, including a scoped clone, a push from a second agent, replication to a second server and a restore after a restart, and a search of the server's storage that found none of the plaintext.">
+<meta property="og:image" content="https://newsroom.sgit.ai/og/encrypted-memory-for-isolated-agents.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Encrypted memory for agents that run somewhere else: sgit deployment patterns, from a Mac mini to Kubernetes, sgit.ai">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://newsroom.sgit.ai/og/encrypted-memory-for-isolated-agents.jpg">
+<link rel="alternate" type="text/markdown" href="encrypted-memory-for-isolated-agents.md" title="This page as markdown">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Encrypted memory for agents that run somewhere else: sgit deployment patterns, from a Mac mini to Kubernetes, sgit.ai", "headline": "Encrypted memory for agents that run somewhere else: sgit deployment patterns, from a Mac mini to Kubernetes, sgit.ai", "description": "Agents are safer when they run in isolated places: a cloud VM, a local VM, a container on a Mac mini, a GPU machine, a job that exists for one task. Isolation takes away the shared drive, and ephemeral compute takes away the disk, so the memory has to live somewhere else, somewhere the owner controls and a breach does not expose. This article maps how to give those agents encrypted memory with sgit and a vault server you run yourself: one container, an access token, storage in a folder or a bucket, and only ciphertext on the server. Five patterns, each drawn as a diagram with its Mermaid source: a Mac mini with Docker Compose, the life of one ephemeral agent run with a scoped clone, Kubernetes, a private cloud VPC with CloudFront in front, and two servers holding one vault. Every command was run against a local server for this article, including a scoped clone, a push from a second agent, replication to a second server and a restore after a restart, and a search of the server's storage that found none of the plaintext.", "url": "https://newsroom.sgit.ai/articles/encrypted-memory-for-isolated-agents.html", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "sgit.ai", "url": "https://sgit.ai"}, "about": {"@type": "SoftwareApplication", "name": "sgit", "sameAs": "https://pypi.org/project/sgit-ai/"}, "author": {"@type": "Person", "name": "Dinis Cruz", "url": "https://sgit.ai/about/index.html"}, "license": "https://creativecommons.org/licenses/by/4.0/"}</script>
+<style>html{background:#faf9f5}body{margin:0;background:#faf9f5;color:#1c1d21;font-family:ui-sans-serif,system-ui,sans-serif;opacity:0;transition:opacity .25s;animation:sg-reveal 0s linear 1.6s forwards}html.ready body{opacity:1;animation:none}@keyframes sg-reveal{to{opacity:1}}</style><noscript><style>body{opacity:1;animation:none}</style></noscript>
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.6.0</a>
+  <sg-meter class="meter-nav" view="balance"></sg-meter>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../articles/index.html#all">Every article</a>
+      <a class="sl" href="../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../account/index.html">Your reading account</a>
+      <a class="sl" href="../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../account/personas.html">Your personas</a>
+      <a class="sl" href="../account/top-up.html">Top up</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../newsroom/board.html">The board</a>
+      <a class="sl" href="../newsroom/log.html">The run log</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../world-news-day/index.html">World News Day<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../world-news-day/index.html">The corpus</a>
+      <a class="sl" href="../world-news-day/stories/free-to-republish-is-not-a-licence.html">Free to republish is not a licence</a>
+      <a class="sl" href="../world-news-day/licences.html">The licence that is not there</a>
+      <a class="sl" href="../world-news-day/corpus.html">The twenty-one</a>
+      <a class="sl" href="../world-news-day/findings.html">The aggregate</a>
+      <a class="sl" href="../world-news-day/terms.html">The vocabulary</a>
+      <a class="sl" href="../world-news-day/graph.html">The graph</a>
+      <a class="sl" href="../world-news-day/sources.html">Sources</a>
+      <a class="sl" href="../world-news-day/contacts.html">How to reach them</a>
+      <a class="sl" href="../world-news-day/vault.html">Published vaults</a>
+      <a class="sl" href="../world-news-day/vaults/corpus.html">The vault, opened</a>
+      <a class="sl" href="../world-news-day/method.html">Method</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../archive/index.html">The archive</a>
+      <a class="sl" href="../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../network/index.html">The network</a>
+      <a class="sl" href="../admin/versions.html">Release history</a>
+      <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom">&#9733; GitHub</a>
+</div></nav>
+
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.6.0</span></a></div>
+<main class="doc">
+ <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / Encrypted memory for agents that run somewhere else: sgit deployment patterns, from a Mac mini to Kubernetes</p>
+ <h1>Encrypted memory for agents that run somewhere else: sgit deployment patterns, from a Mac mini to Kubernetes</h1>
+ <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-08 &middot; <a href="versions/encrypted-memory-for-isolated-agents.html" title="Every published version of this article, and what changed">article v1.1.0, 2 versions</a> &middot; <a href="https://sgit.ai/admin/versions.html" title="The site release it was published in">site v0.7.7</a> &middot; <span class="chip">agents</span><span class="chip">agentic-memory</span><span class="chip">self-hosting</span><span class="chip">deployment</span><span class="chip">docker</span><span class="chip">docker-compose</span><span class="chip">kubernetes</span><span class="chip">mac-mini</span><span class="chip">aws</span><span class="chip">cloudfront</span><span class="chip">fargate</span><span class="chip">lambda</span><span class="chip">zero-knowledge</span><span class="chip">encryption</span><span class="chip">partial-clones</span><span class="chip">sgit</span><span class="chip">isolation</span><span class="chip">article</span></p>
+ <p class="abstract"><em><b>Abstract:</b> Agents are safer when they run in isolated places: a cloud VM, a local VM, a container on a Mac mini, a GPU machine, a job that exists for one task. Isolation takes away the shared drive, and ephemeral compute takes away the disk, so the memory has to live somewhere else, somewhere the owner controls and a breach does not expose. This article maps how to give those agents encrypted memory with sgit and a vault server you run yourself: one container, an access token, storage in a folder or a bucket, and only ciphertext on the server. Five patterns, each drawn as a diagram with its Mermaid source: a Mac mini with Docker Compose, the life of one ephemeral agent run with a scoped clone, Kubernetes, a private cloud VPC with CloudFront in front, and two servers holding one vault. Every command was run against a local server for this article, including a scoped clone, a push from a second agent, replication to a second server and a restore after a restart, and a search of the server's storage that found none of the plaintext.</em></p>
+<figure class="shot" data-shot="dp-overview.webp" data-dir="images/" data-alt="The agents run in isolated places and often only for one task. Each clones the part of the vault it needs, works, commits and pushes, encrypting before anything leaves. The server is yours, it is one container, and what it stores is ciphertext."><figcaption>The agents run in isolated places and often only for one task. Each clones the part of the vault it needs, works, commits and pushes, encrypting before anything leaves. The server is yours, it is one container, and what it stores is ciphertext.</figcaption></figure>
+<div class="note"><b>Where this comes from.</b> A voice memo on how people are actually deploying agents: in VMs, in containers, on a Mac mini under a desk, on a GPU machine, on compute that is gone after the task. It follows <a href="why-my-agents-do-not-run-on-my-laptop.html">Why my agents do not run on my laptop</a>, which argues for that isolation, and <a href="an-agent-desktop-by-the-minute.html">A locked-down desktop for an agent, by the minute, is still hard to rent</a>, which shows how hard it still is to get. This article is about the part those two leave open: where the memory goes.</div>
+<h2>In short</h2>
+<ul>
+<li><b>Isolated agents lose their memory.</b> Isolation takes away the shared drive, and ephemeral compute takes away the disk. Whatever the agent learned has to be written somewhere that outlives it.</li>
+<li><b>sgit and a vault server you run give them encrypted memory you own.</b> The server is one container with an access token, storage is a folder or an S3 bucket, and the agent encrypts before it pushes. I think it is a great solution for this, and the reasons are below, with the evidence.</li>
+<li><b>Start with a Mac mini.</b> The vault container next to the agent containers, its storage in a local folder, and the backup is copying that folder. Everything else here is the same container somewhere else.</li>
+<li><b>Scoped clones make it fast.</b> An agent clones only its own folder with one commit of history, works, commits and pushes. On a vault of 600 commits that is 14 s instead of 80 s.</li>
+<li><b>A breach of the server gives away ciphertext.</b> In the test for this article the server's storage held none of the plaintext and none of the file names. What it can see is vault ids, sizes and timing, and a hash of the write key.</li>
+<li><b>The trust sits with the agents, not the server.</b> An agent that can write holds the vault key on its disk. A scoped clone is a speed setting, not a boundary: if one agent must not read another's memory, give each its own vault.</li>
+</ul>
+<h2>Why isolated agents need memory somewhere else</h2>
+<p>The case for running agents in isolated places is in <a href="why-my-agents-do-not-run-on-my-laptop.html">Why my agents do not run on my laptop</a>: an operating system has two hard walls, the kernel and the user account, and an agent on my laptop runs inside the one marked "me". Put the agent in a VM or a container and the damage it can do shrinks to that box. <a href="who-are-you-protecting-against.html">Who are you protecting against?</a> makes the same point from the other side: for most startups a dedicated, isolated machine with backups and updates is worth more than an air gap.</p>
+<p>Isolation has a cost that is easy to miss. The box has no shared drive, and if it is ephemeral, as the best ones are, it has no disk that survives the task. An agent that starts every run from nothing repeats work, loses what it found, and cannot hand anything to the next agent. So the memory has to live outside the box, and it has to meet three conditions:</p>
+<ol>
+<li><b>The owner controls it</b>, not the platform the agent happens to run on.</li>
+<li><b>The agent can reach it</b> from wherever it runs, with a credential that can be scoped and revoked.</li>
+<li><b>A breach of the place it is stored exposes nothing</b>, because that place is the one most likely to be shared, backed up to somewhere else, or attacked.</li>
+</ol>
+<p>That is the job sgit does for my own agents today. The vault is the shared drive, as <a href="the-agent-team-as-it-runs.html">the agent team</a> runs it, and the folder an agent owns is its memory. What changes in this article is where the server is.</p>
+<details class="src"><summary>The overview, Mermaid source</summary><div class="src-bar"><button type="button" class="src-copy" data-copy="flowchart LR
+  subgraph places[&quot;Where the agents run: isolated, often ephemeral&quot;]
+    direction TB
+    A1[&quot;Agent in a cloud VM&quot;]
+    A2[&quot;Agent in a local VM&quot;]
+    A3[&quot;Agent container on a Mac mini&quot;]
+    A4[&quot;Agent on a GPU machine&quot;]
+    A5[&quot;Ephemeral job that lives for one task&quot;]
+  end
+  subgraph server[&quot;Your vault server: one container&quot;]
+    API[&quot;SG/Send API and vault UI&lt;br/&gt;port 8080, access token on every route&quot;]
+  end
+  subgraph store[&quot;Storage: ciphertext only&quot;]
+    direction TB
+    D1[(&quot;a folder on disk&quot;)]
+    D2[(&quot;an S3 bucket&quot;)]
+  end
+  O[&quot;The owner&lt;br/&gt;holds the vault keys&lt;br/&gt;reads in a browser or with sgit&quot;]
+  H[&quot;sgit clone --path, commit, push&lt;br/&gt;encrypted before it leaves the agent,&lt;br/&gt;decrypted only after it arrives&quot;]
+  A1 &amp; A2 &amp; A3 &amp; A4 &amp; A5 --&gt; H
+  H -- &quot;https, access token&quot; --&gt; API
+  API --&gt; D1
+  API --&gt; D2
+  O -- &quot;decrypts locally:&lt;br/&gt;the keys never go to the server&quot; --&gt; API"><span class="cp">copy</span></button><a href="images/dp-overview.webp">rendered image</a></div><pre class="shell">flowchart LR
+  subgraph places["Where the agents run: isolated, often ephemeral"]
+    direction TB
+    A1["Agent in a cloud VM"]
+    A2["Agent in a local VM"]
+    A3["Agent container on a Mac mini"]
+    A4["Agent on a GPU machine"]
+    A5["Ephemeral job that lives for one task"]
+  end
+  subgraph server["Your vault server: one container"]
+    API["SG/Send API and vault UI&lt;br/&gt;port 8080, access token on every route"]
+  end
+  subgraph store["Storage: ciphertext only"]
+    direction TB
+    D1[("a folder on disk")]
+    D2[("an S3 bucket")]
+  end
+  O["The owner&lt;br/&gt;holds the vault keys&lt;br/&gt;reads in a browser or with sgit"]
+  H["sgit clone --path, commit, push&lt;br/&gt;encrypted before it leaves the agent,&lt;br/&gt;decrypted only after it arrives"]
+  A1 &amp; A2 &amp; A3 &amp; A4 &amp; A5 --&gt; H
+  H -- "https, access token" --&gt; API
+  API --&gt; D1
+  API --&gt; D2
+  O -- "decrypts locally:&lt;br/&gt;the keys never go to the server" --&gt; API</pre></details>
+<h2>What is in the box</h2>
+<p>The server is SG/Send, published as the Docker image <code>diniscruz/sg-send-vault</code> for amd64 and arm64 (about 90 MB to download, version v0.33.0 at the time of writing). It serves the API that <code>sgit</code> talks to and the vault web UI, on port 8080, from one process. The <a href="https://sgit.ai/deploy/index.html">deployment docs</a>, which this site renders live from an encrypted vault, cover every setting; the ones that matter here are four:</p>
+<div class="tablewrap"><table>
+<tr><th>Setting</th><th>What it does</th></tr>
+<tr><td><code>SGRAPH_SEND__ACCESS_TOKEN</code></td><td>Gates every route, reads included, through the <code>x-sgraph-access-token</code> header. Without it the server answers 401.</td></tr>
+<tr><td><code>SEND__STORAGE_MODE</code></td><td><code>disk</code>, <code>s3</code> or <code>memory</code>. The image defaults to <code>disk</code>.</td></tr>
+<tr><td><code>SEND__DISK_PATH</code></td><td>Where <code>disk</code> mode writes. The image uses <code>/data</code>; mount a folder there.</td></tr>
+<tr><td><code>SEND__S3_BUCKET</code></td><td>Where <code>s3</code> mode writes, with the usual AWS credentials.</td></tr>
+</table></div>
+<p>On the client side, the flags are <code>--base-url</code> and <code>--token</code>, on <code>sgit init</code>, <code>sgit clone</code>, <code>sgit push</code> and the rest. The deployment docs currently say <code>--endpoint</code> in three places; sgit 0.20.0 rejects that flag, so use <code>--base-url</code>.</p>
+<p>I ran everything below on a local server for this article. This session had no Docker daemon, so the server ran from the same Python package the image runs, with the same command:</p>
+<pre class="shell">
+pip install sgraph-ai-app-send "mcp&lt;2"          # the pin is needed for now, see below
+SEND__STORAGE_MODE=disk SEND__DISK_PATH=./sg-data \
+SGRAPH_SEND__ACCESS_TOKEN="$TOKEN" \
+python -m sgraph_ai_app_send__docker.serve      # what the image runs, on :8080
+
+curl -H "x-sgraph-access-token: $TOKEN" http://localhost:8080/api/info/health
+{"status":"ok"}
+
+sgit init --base-url http://localhost:8080 --token "$TOKEN" .
+sgit commit "first memory"
+sgit push --token "$TOKEN"
+Pushed 1 commit(s), 3 object(s) uploaded.
+</pre>
+<p>Two things I hit on the way, worth knowing if you install from pip rather than the image. The newest <code>mcp</code> package, 2.3.0, breaks the server at start-up with <code>Server.__init__() takes 2 positional arguments but 3 were given</code>; installing <code>mcp&lt;2</code> fixes it. And the serve module binds to port 8080; to run a second server on the same host, map a different host port in Docker, or start it with <code>uvicorn sgraph_ai_app_send__docker.app:create_app --factory --port 8081</code>.</p>
+<h2>Pattern one: a Mac mini, a vault container and a folder</h2>
+<figure class="shot" data-shot="dp-macmini.webp" data-dir="images/" data-alt="The vault server runs as a container next to the agent containers, and its storage is a folder on the Mac mini. Backing up the memory of every agent is copying one folder, and the copy holds only ciphertext."><figcaption>The vault server runs as a container next to the agent containers, and its storage is a folder on the Mac mini. Backing up the memory of every agent is copying one folder, and the copy holds only ciphertext.</figcaption></figure>
+<p>This is where I would start, and where I suggest you start. One machine you own, no cloud account and no public address. The image is published for arm64, so it runs natively on Apple silicon. The agents run in their own containers on the same Docker network and reach the server by name. Your own laptop, phone or tablet reach it over a network you already control, a home or office network or a VPN, with TLS in front of it once it leaves the machine; the deployment docs suggest Caddy for that, and the vault UI needs a secure context to run in a browser.</p>
+<p>A Docker Compose file for it:</p>
+<pre class="shell">
+services:
+  vault:
+    image: diniscruz/sg-send-vault:v0.33.0
+    environment:
+      SEND__STORAGE_MODE: disk
+      SEND__DISK_PATH: /data
+      SGRAPH_SEND__ACCESS_TOKEN: ${SG_ACCESS_TOKEN}
+    volumes:
+      - ./sg-data:/data              # the memory of every agent: back up this folder
+    ports:
+      - "127.0.0.1:8080:8080"        # the host only; put TLS in front to go further
+    restart: unless-stopped
+
+  agent-a1:
+    image: your-agent-image          # anything with sgit-ai installed
+    environment:
+      SG_BASE_URL: http://vault:8080
+      SG_ACCESS_TOKEN: ${SG_ACCESS_TOKEN}
+      AGENT_ID: a1
+      VAULT_KEY_FILE: /run/secrets/a1_vault_key
+    secrets: [a1_vault_key]
+    depends_on: [vault]
+
+secrets:
+  a1_vault_key:
+    file: ./keys/a1.vault-key        # never in the image, never in the repository
+</pre>
+<p>And the agent's entry point, which is the whole memory protocol:</p>
+<pre class="shell">
+#!/bin/sh
+set -e
+sgit clone --base-url "$SG_BASE_URL" --token "$SG_ACCESS_TOKEN" \
+     --path "agents/$AGENT_ID" --depth 1 "$(cat "$VAULT_KEY_FILE")" /work/memory
+cd /work/memory
+# ... the agent reads its memory, does one task, writes what it learned ...
+sgit commit "$AGENT_ID run $(date -u +%FT%TZ)"
+sgit push
+</pre>
+<p>I ran that script, outside a container, against the local server, with a different agent folder: it cloned, appended to the agent's notes, committed and pushed (<code>Pushed 1 commit(s), 1 object(s) uploaded.</code>), and a full clone elsewhere pulled the change. The Compose file itself I could not run here, because there was no Docker daemon; it uses only the settings above, and the image's own defaults.</p>
+<p>The backup is the part I like most. The whole memory of every agent is <code>./sg-data</code>. Copy it to an external disk, to another machine, or to a cloud folder: what you are copying is ciphertext, so the backup does not have to be trusted with the contents.</p>
+<details class="src"><summary>The Mac mini host, Mermaid source</summary><div class="src-bar"><button type="button" class="src-copy" data-copy="flowchart LR
+  subgraph mini[&quot;Mac mini: the host&quot;]
+    direction LR
+    subgraph docker[&quot;Docker&quot;]
+      direction TB
+      W1[&quot;agent container 1&lt;br/&gt;scoped clone of its folder&quot;]
+      W2[&quot;agent container 2&quot;]
+      W3[&quot;agent container n&quot;]
+      S[&quot;sg-send-vault container&lt;br/&gt;SEND__STORAGE_MODE=disk&lt;br/&gt;SEND__DISK_PATH=/data&quot;]
+    end
+    F[(&quot;./sg-data&lt;br/&gt;ciphertext, hashes, vault ids&quot;)]
+  end
+  B[(&quot;Backup of the folder&lt;br/&gt;an external disk or another machine&quot;)]
+  L[&quot;Your laptop, phone or tablet&lt;br/&gt;vault UI in a browser, sgit on the command line&quot;]
+  W1 &amp; W2 &amp; W3 -- &quot;http://vault:8080&lt;br/&gt;with the access token&quot; --&gt; S
+  S -- &quot;bind mount&quot; --&gt; F
+  F -- &quot;copy the folder: nothing in it to decrypt&quot; --&gt; B
+  L -- &quot;private network or VPN&lt;br/&gt;TLS in front, for example Caddy&quot; --&gt; S"><span class="cp">copy</span></button><a href="images/dp-macmini.webp">rendered image</a></div><pre class="shell">flowchart LR
+  subgraph mini["Mac mini: the host"]
+    direction LR
+    subgraph docker["Docker"]
+      direction TB
+      W1["agent container 1&lt;br/&gt;scoped clone of its folder"]
+      W2["agent container 2"]
+      W3["agent container n"]
+      S["sg-send-vault container&lt;br/&gt;SEND__STORAGE_MODE=disk&lt;br/&gt;SEND__DISK_PATH=/data"]
+    end
+    F[("./sg-data&lt;br/&gt;ciphertext, hashes, vault ids")]
+  end
+  B[("Backup of the folder&lt;br/&gt;an external disk or another machine")]
+  L["Your laptop, phone or tablet&lt;br/&gt;vault UI in a browser, sgit on the command line"]
+  W1 &amp; W2 &amp; W3 -- "http://vault:8080&lt;br/&gt;with the access token" --&gt; S
+  S -- "bind mount" --&gt; F
+  F -- "copy the folder: nothing in it to decrypt" --&gt; B
+  L -- "private network or VPN&lt;br/&gt;TLS in front, for example Caddy" --&gt; S</pre></details>
+<h2>Pattern two: one agent run, from nothing to memory and back</h2>
+<figure class="shot" data-shot="dp-run.webp" data-dir="images/" data-alt="The compute is disposable and the memory is not. Each run starts from a scoped, shallow clone of the folder the agent owns and ends with a push, so the next run starts where this one stopped."><figcaption>The compute is disposable and the memory is not. Each run starts from a scoped, shallow clone of the folder the agent owns and ends with a push, so the next run starts where this one stopped.</figcaption></figure>
+<p>The patterns differ in where the server runs. They share the same life cycle for an agent, and it is worth drawing on its own, because it is what makes ephemeral compute usable.</p>
+<p>The orchestrator starts the agent with two secrets: the access token, which lets it talk to the server, and the key to its vault, which lets it read and write the contents. The agent clones only its own folder, with one commit of history; this is the fast scoped access that arrived in sgit 0.18.0, which my own agents already use in production. On the shared CRM vault the team works on, about 600 commits and 9,400 files, a full clone takes 80 s and 173 MB, and one folder takes 14 s and 3.2 MB. On the small test vault for this article the scoped clone took under half a second. The agent works, commits, and pushes; the push pulls first, so it merges what other agents pushed in the meantime. Then the container is deleted. The memory is on the server, encrypted, and the next run clones it again. The details of the loop, and what a pull does with work not yet committed, are in <a href="https://sgit.ai/docs/agents-sharing-one-vault.html">Agents sharing one vault</a> and <a href="https://sgit.ai/docs/partial-clones.html">Partial clones</a>.</p>
+<p>One thing a scoped clone is not: an access boundary. I checked. The clone of <code>agents/a1</code> ran <code>sgit fetch agents/a2</code> and had the other agent's folder a moment later, because it holds the vault key and the key opens the whole vault. <code>--path</code> decides what is downloaded, not what can be read. If an agent must not read another agent's memory, give each agent its own vault, and give it read keys, which cannot write, for anything it only needs to read.</p>
+<details class="src"><summary>One agent run, Mermaid source</summary><div class="src-bar"><button type="button" class="src-copy" data-copy="sequenceDiagram
+  autonumber
+  participant O as Orchestrator
+  participant A as Agent: ephemeral container
+  participant V as Vault server
+  O-&gt;&gt;A: start with the access token and this agent&#x27;s key
+  A-&gt;&gt;V: sgit clone --path agents/a1 --depth 1
+  V--&gt;&gt;A: encrypted objects for one folder
+  Note over A: decrypt locally, read memory, do one task
+  A-&gt;&gt;A: write notes, results and a run log
+  A-&gt;&gt;V: sgit commit, then sgit push, which pulls first
+  V--&gt;&gt;A: stored as ciphertext
+  O-&gt;&gt;A: stop, delete the container
+  Note over V: the memory outlives the compute"><span class="cp">copy</span></button><a href="images/dp-run.webp">rendered image</a></div><pre class="shell">sequenceDiagram
+  autonumber
+  participant O as Orchestrator
+  participant A as Agent: ephemeral container
+  participant V as Vault server
+  O-&gt;&gt;A: start with the access token and this agent's key
+  A-&gt;&gt;V: sgit clone --path agents/a1 --depth 1
+  V--&gt;&gt;A: encrypted objects for one folder
+  Note over A: decrypt locally, read memory, do one task
+  A-&gt;&gt;A: write notes, results and a run log
+  A-&gt;&gt;V: sgit commit, then sgit push, which pulls first
+  V--&gt;&gt;A: stored as ciphertext
+  O-&gt;&gt;A: stop, delete the container
+  Note over V: the memory outlives the compute</pre></details>
+<h2>Pattern three: Kubernetes</h2>
+<figure class="shot" data-shot="dp-k8s.webp" data-dir="images/" data-alt="The vault server is an ordinary Deployment with a volume and a ClusterIP Service. Agents run as Jobs that clone, work, commit and push, and a NetworkPolicy keeps everything else away from the server."><figcaption>The vault server is an ordinary Deployment with a volume and a ClusterIP Service. Agents run as Jobs that clone, work, commit and push, and a NetworkPolicy keeps everything else away from the server.</figcaption></figure>
+<p>On Kubernetes the same two pieces map onto the usual objects. The vault server is a Deployment with one replica, a PersistentVolumeClaim mounted at <code>/data</code>, a ClusterIP Service so that nothing outside the cluster reaches it, and the access token from a Secret. The agents are Jobs: the scoped clone runs first, in an init container or as the first line of the same entry point as on the Mac mini, the agent works in an <code>emptyDir</code>, and the last step commits and pushes before the pod goes away. A NetworkPolicy allows ingress to the server only from pods labelled as agents. Each agent's vault key is its own Secret, mounted only into that agent's pods.</p>
+<p>Two notes. With <code>disk</code> storage, keep one replica: two pods writing to the same folder is not a setup the server describes. To run more than one, switch to <code>SEND__STORAGE_MODE=s3</code>, which is what the deployment docs require for Fargate with more than one task, for the same reason. And this is the pattern I have tested least: the manifests on the <a href="https://sgit.ai/docs/self-host-for-agents.html">self-hosting guide</a> are a starting point written from the image's settings, not something I ran on a cluster for this article.</p>
+<details class="src"><summary>Kubernetes, Mermaid source</summary><div class="src-bar"><button type="button" class="src-copy" data-copy="flowchart LR
+  subgraph ns[&quot;namespace: agent-memory&quot;]
+    direction LR
+    subgraph dep[&quot;Deployment sg-send-vault, replicas: 1&quot;]
+      P[&quot;pod: diniscruz/sg-send-vault:v0.33.0&lt;br/&gt;port 8080&quot;]
+    end
+    PVC[(&quot;PersistentVolumeClaim&lt;br/&gt;mounted at /data&quot;)]
+    SVC[&quot;Service vault: ClusterIP only&quot;]
+    SEC[&quot;Secret: the access token&quot;]
+    NP[&quot;NetworkPolicy: ingress only from&lt;br/&gt;pods labelled role=agent&quot;]
+    subgraph jobs[&quot;Agent Jobs, one pod per task&quot;]
+      direction TB
+      J1[&quot;init container: sgit clone --path&lt;br/&gt;main container: the agent&lt;br/&gt;last step: commit and push&quot;]
+      J2[&quot;another agent Job&quot;]
+    end
+    KS[&quot;Secret per agent: the key&lt;br/&gt;to that agent&#x27;s vault&quot;]
+  end
+  P --- PVC
+  SEC -.-&gt; P
+  SEC -.-&gt; J1
+  J1 &amp; J2 --&gt; SVC --&gt; P
+  NP -.- SVC
+  KS -.-&gt; J1"><span class="cp">copy</span></button><a href="images/dp-k8s.webp">rendered image</a></div><pre class="shell">flowchart LR
+  subgraph ns["namespace: agent-memory"]
+    direction LR
+    subgraph dep["Deployment sg-send-vault, replicas: 1"]
+      P["pod: diniscruz/sg-send-vault:v0.33.0&lt;br/&gt;port 8080"]
+    end
+    PVC[("PersistentVolumeClaim&lt;br/&gt;mounted at /data")]
+    SVC["Service vault: ClusterIP only"]
+    SEC["Secret: the access token"]
+    NP["NetworkPolicy: ingress only from&lt;br/&gt;pods labelled role=agent"]
+    subgraph jobs["Agent Jobs, one pod per task"]
+      direction TB
+      J1["init container: sgit clone --path&lt;br/&gt;main container: the agent&lt;br/&gt;last step: commit and push"]
+      J2["another agent Job"]
+    end
+    KS["Secret per agent: the key&lt;br/&gt;to that agent's vault"]
+  end
+  P --- PVC
+  SEC -.-&gt; P
+  SEC -.-&gt; J1
+  J1 &amp; J2 --&gt; SVC --&gt; P
+  NP -.- SVC
+  KS -.-&gt; J1</pre></details>
+<h2>Pattern four: the cloud, with no public route to the server</h2>
+<figure class="shot" data-shot="dp-cloud.webp" data-dir="images/" data-alt="Everything the agents talk to is inside the VPC: an internal load balancer on a private address, and behind it the vault server, either the container on EC2, Fargate or Kubernetes, or the same app on Lambda attached to the VPC, with S3 behind both. The Mac mini joins over a VPN, and CloudFront can give the owner a stable name and TLS without a public address on the server."><figcaption>Everything the agents talk to is inside the VPC: an internal load balancer on a private address, and behind it the vault server, either the container on EC2, Fargate or Kubernetes, or the same app on Lambda attached to the VPC, with S3 behind both. The Mac mini joins over a VPN, and CloudFront can give the owner a stable name and TLS without a public address on the server.</figcaption></figure>
+<p>When the agents run in the cloud, on EC2, as Fargate tasks, as Kubernetes pods or on GPU instances, the server runs next to them, inside the same VPC, because that is where the agents have to reach it. The shape I would use: an internal load balancer with a private address only, the vault server behind it, storage in S3 through a VPC endpoint so the server itself holds nothing it would miss, the agents calling the load balancer with the access token, and the Mac mini joining over a site-to-site VPN, so the agents at home and in the cloud share one memory. If you want the vault UI from a phone, CloudFront in front gives the server a stable DNS name and TLS, and can reach the internal load balancer through a VPC origin, so the server still has no public address of its own.</p>
+<p>Behind the load balancer you pick one of two servers, and both sit inside the VPC. The first is the container, on EC2, as a Fargate task or as a Kubernetes Deployment. The second is the same FastAPI app on Lambda with the web adapter, attached to the VPC and registered as the load balancer's target, with <code>s3</code> storage because Lambda has no disk that lasts. Lambda scales to zero, which suits memory that is written in bursts; the container suits agents that clone and push all day. To the agents they look the same: one private address, one access token, the same vault.</p>
+<p>Be honest with yourself about the status. The deployment docs mark the CloudFormation templates for Lambda, Fargate and EC2 as written and lint-clean, with live validation in progress, and as written they put a public endpoint in front: a Function URL, a load balancer, an instance with a certificate. The private shape above, with either server inside the VPC, is how I would adapt them, not a template you can deploy today. The Docker image is the part that is ready.</p>
+<details class="src"><summary>The cloud variant, Mermaid source</summary><div class="src-bar"><button type="button" class="src-copy" data-copy="flowchart LR
+  subgraph aws[&quot;Cloud account&quot;]
+    CF[&quot;CloudFront&lt;br/&gt;stable DNS name and TLS&quot;]
+    subgraph vpc[&quot;VPC: no public route to the vault server&quot;]
+      direction TB
+      AG[&quot;agents: EC2, Fargate tasks,&lt;br/&gt;GPU instances, Kubernetes pods&quot;]
+      LB[&quot;internal load balancer&lt;br/&gt;private address only&quot;]
+      subgraph opts[&quot;the vault server: pick one, both inside the VPC&quot;]
+        direction TB
+        SV[&quot;sg-send-vault container&lt;br/&gt;EC2, Fargate or Kubernetes&quot;]
+        LM[&quot;sg-send-vault on Lambda&lt;br/&gt;web adapter, attached to the VPC&lt;br/&gt;template in progress&quot;]
+      end
+    end
+    S3[(&quot;S3 bucket&lt;br/&gt;ciphertext only&quot;)]
+  end
+  HOME[&quot;Mac mini at home or in the office&quot;]
+  PH[&quot;The owner&#x27;s devices&quot;]
+  AG -- &quot;access token&quot; --&gt; LB
+  LB --&gt; SV
+  LB -.-&gt; LM
+  SV -- &quot;SEND__STORAGE_MODE=s3&lt;br/&gt;through a VPC endpoint&quot; --&gt; S3
+  LM -.-&gt; S3
+  HOME -- &quot;site-to-site VPN into the VPC&quot; --&gt; LB
+  PH -- &quot;https, access token&quot; --&gt; CF
+  CF -- &quot;VPC origin&quot; --&gt; LB"><span class="cp">copy</span></button><a href="images/dp-cloud.webp">rendered image</a></div><pre class="shell">flowchart LR
+  subgraph aws["Cloud account"]
+    CF["CloudFront&lt;br/&gt;stable DNS name and TLS"]
+    subgraph vpc["VPC: no public route to the vault server"]
+      direction TB
+      AG["agents: EC2, Fargate tasks,&lt;br/&gt;GPU instances, Kubernetes pods"]
+      LB["internal load balancer&lt;br/&gt;private address only"]
+      subgraph opts["the vault server: pick one, both inside the VPC"]
+        direction TB
+        SV["sg-send-vault container&lt;br/&gt;EC2, Fargate or Kubernetes"]
+        LM["sg-send-vault on Lambda&lt;br/&gt;web adapter, attached to the VPC&lt;br/&gt;template in progress"]
+      end
+    end
+    S3[("S3 bucket&lt;br/&gt;ciphertext only")]
+  end
+  HOME["Mac mini at home or in the office"]
+  PH["The owner's devices"]
+  AG -- "access token" --&gt; LB
+  LB --&gt; SV
+  LB -.-&gt; LM
+  SV -- "SEND__STORAGE_MODE=s3&lt;br/&gt;through a VPC endpoint" --&gt; S3
+  LM -.-&gt; S3
+  HOME -- "site-to-site VPN into the VPC" --&gt; LB
+  PH -- "https, access token" --&gt; CF
+  CF -- "VPC origin" --&gt; LB</pre></details>
+<h2>Pattern five: two servers, one vault</h2>
+<figure class="shot" data-shot="dp-replica.webp" data-dir="images/" data-alt="A vault is not tied to the server it was created on. Add a second remote and push to it, and any clone with the vault key can restore either server."><figcaption>A vault is not tied to the server it was created on. Add a second remote and push to it, and any clone with the vault key can restore either server.</figcaption></figure>
+<p>Resilience comes from a property of the design rather than from a feature of the server: a vault is a set of encrypted objects addressed by hash, and any clone holds them. So the same vault can live on two servers, a Mac mini and a cloud account, an office and a home, and every clone is a way to rebuild either.</p>
+<p>I tested it. With the vault created on a disk-mode server, I added a second server as a remote and pushed:</p>
+<pre class="shell">
+sgit remote add origin http://localhost:8080 --default
+sgit remote add backup http://localhost:8081
+sgit push --remote backup
+Vault structure re-synced to server.
+</pre>
+<p>A clone from the second server had every file. Then I restarted the second server, which ran in <code>memory</code> mode, so the restart emptied it; a clone failed, as it should. One more <code>sgit push --remote backup</code> from any clone re-synced the vault, and a fresh clone came back at the same commit, <code>obj-cas-imm-158bb2bad5dc</code>. That is also the honest description of <code>memory</code> mode: useful for short-lived work and tests, and for a cache in front of a durable copy, as long as something pushes the vault back after a restart.</p>
+<p>The servers do not replicate to each other. The copies are as fresh as the last push to each, so schedule a push to the backup remote from the host, or have the agents push to both.</p>
+<details class="src"><summary>Two servers, one vault, Mermaid source</summary><div class="src-bar"><button type="button" class="src-copy" data-copy="flowchart LR
+  subgraph one[&quot;Mac mini&quot;]
+    V1[&quot;vault server A&lt;br/&gt;disk storage&quot;]
+  end
+  subgraph two[&quot;Cloud&quot;]
+    V2[&quot;vault server B&lt;br/&gt;S3 storage&quot;]
+  end
+  subgraph three[&quot;Laptop&quot;]
+    C[&quot;a clone with the vault key&lt;br/&gt;remotes: origin and backup&quot;]
+  end
+  E[&quot;any other clone&lt;br/&gt;an agent, a phone, a CI job&quot;]
+  C -- &quot;sgit push&quot; --&gt; V1
+  C -- &quot;sgit push --remote backup&quot; --&gt; V2
+  E -- &quot;clone from whichever is up&quot; --&gt; V1
+  E -.-&gt; V2"><span class="cp">copy</span></button><a href="images/dp-replica.webp">rendered image</a></div><pre class="shell">flowchart LR
+  subgraph one["Mac mini"]
+    V1["vault server A&lt;br/&gt;disk storage"]
+  end
+  subgraph two["Cloud"]
+    V2["vault server B&lt;br/&gt;S3 storage"]
+  end
+  subgraph three["Laptop"]
+    C["a clone with the vault key&lt;br/&gt;remotes: origin and backup"]
+  end
+  E["any other clone&lt;br/&gt;an agent, a phone, a CI job"]
+  C -- "sgit push" --&gt; V1
+  C -- "sgit push --remote backup" --&gt; V2
+  E -- "clone from whichever is up" --&gt; V1
+  E -.-&gt; V2</pre></details>
+<h2>What a breach of the server gives an attacker</h2>
+<p>This is the property that lets the server live anywhere: in a cloud account, on a machine in an office, in a bucket someone else administers. After the tests above, the server's storage held 26 files for the test vault, 228 KB. I searched them for the text the agents had written, including a marker string in the first agent's notes, and for the file and folder names: zero matches for any of them. The files are encrypted objects named by hash, encrypted keys for the clone branches, refs, and a manifest with three fields: the vault id, a hash of the write key, and the creation time. The hash lets the server check that a writer holds the write key without being able to write itself.</p>
+<p>So an attacker who takes the storage, the instance, the bucket or the backup gets what the operator has: vault ids, how many objects and how large, and when they were written. Not the contents, not the names, not the keys. They can still delete things, which is what the second server and the folder backup are for, and they can learn something from timing and size, which is worth remembering for a vault whose activity is itself sensitive.</p>
+<p>Where the trust does sit is with the agents. An agent that can write holds the vault key, and its clone keeps the key and the access token in <code>.sg_vault/local/</code> on the agent's disk, which is where they need to be for the next push. So the environment the agent runs in is the boundary that matters: an ephemeral container that is deleted after the task, a secret mounted only into that agent, a vault per agent where agents must not read each other, read keys for anything read-only. sgit also warns when a private key is used against a plain <code>http://</code> URL: on one host that is the Docker network, beyond it, put TLS in front.</p>
+<h2>Which pattern, when</h2>
+<div class="tablewrap"><table>
+<tr><th>You have</th><th>Start with</th></tr>
+<tr><td>One machine you own, agents in containers or VMs on it</td><td>The Mac mini pattern, with the folder backed up</td></tr>
+<tr><td>Agents on ephemeral compute anywhere</td><td>Any server, and the one-run life cycle with scoped clones</td></tr>
+<tr><td>A Kubernetes cluster already</td><td>The Deployment and Jobs, one replica on disk or more on S3</td></tr>
+<tr><td>Agents in a cloud account, or GPU instances</td><td>The private VPC, with S3 storage and a VPN to the Mac mini</td></tr>
+<tr><td>Memory you cannot afford to lose</td><td>Two servers and a backup remote, whichever pattern you start from</td></tr>
+</table></div>
+<h2>Where to start</h2>
+<ul>
+<li><b>Run the container on one machine you own</b>, with storage in a folder, and back the folder up. The <a href="https://sgit.ai/docs/self-host-for-agents.html">self-hosting guide</a> has the commands.</li>
+<li><b>Give every agent a folder, and clone scoped and shallow</b>: <code>--path</code> and <code>--depth 1</code>, then commit and push before the compute goes away.</li>
+<li><b>Use <code>--base-url</code> and <code>--token</code></b>, not the <code>--endpoint</code> the deployment docs still show.</li>
+<li><b>Decide the trust boundaries before the folders</b>: one vault per agent that must not read another's memory, and read keys for anything read-only.</li>
+<li><b>Add a second remote</b> once the memory matters, and push to it on a schedule.</li>
+<li><b>Treat the cloud templates as in progress</b>, and the Docker image as the part that is ready.</li>
+</ul>
+<hr>
+<p><em>Drafted from a voice memo by Dinis Cruz, who is the author of the argument and the person with editorial responsibility, by agent@riskmandate.ai (Claude Opus 5.5, claude-opus-5-5) in the sgit.ai site session, on 8 October 2026. The commands were run on 8 October 2026 with sgit-ai 0.20.0 and sgraph-ai-app-send 0.33.0 from PyPI against a local server; the Compose file, the Kubernetes design and the cloud variant were not run here, and say so where they appear. The image details are from Docker Hub; the server settings and the status of the cloud templates are from the SG/Send deployment docs; the clone timings on the 600-commit vault are from the <a href="https://sgit.ai/docs/partial-clones.html">Partial clones</a> guide.</em></p>
+<sg-meter view="page" kind="article" date="2026-10-08" topics="vaults-and-method agents-and-policy site-and-engineering" title="Encrypted memory for agents that run somewhere else: sgit deployment patterns, from a Mac mini to Kubernetes, sgit.ai"></sg-meter>
+<section class="athreads" id="threads">
+ <h2>Threads</h2>
+ <p class="athreads-meta"><span class="tchip">Vaults &amp; method</span><span class="tchip">Agents &amp; policy</span><span class="tchip">Site &amp; engineering</span> <a href="graphs.html#encrypted-memory-for-isolated-agents">This article as a graph &rarr;</a></p>
+ <div class="athreads-cols"><div><h3>Builds on</h3><ul><li><a href="why-my-agents-do-not-run-on-my-laptop.html">Why my agents do not run on my laptop: chat, Cowork and Code in the cloud, a vault as the shared drive, and the two walls an operating system has</a> <span class="dim">An OS has two hard walls, the kernel and the user; an agent on a laptop runs inside the one marked you, so the agents run in the cloud with a vault as shared drive.</span></li><li><a href="an-agent-desktop-by-the-minute.html">A locked-down desktop for an agent, by the minute, is still hard to rent</a> <span class="dim">Nine properties a safe agent desktop needs, nine products against them, the macOS day-long lease, and the startup credits that would pay for testing it.</span></li><li><a href="who-are-you-protecting-against.html">Who are you protecting against? Draw the security line where the attacker is, not above it</a> <span class="dim">Before deciding how secure to be, name the attacker: a six-tier ladder, an air-gapped Mac mini read against it, and eight startups drawing their line.</span></li><li><a href="the-agent-team-as-it-runs.html">The agent team as it runs: one person, twelve agents, encrypted vaults, and a mailbox nobody sends from</a> <span class="dim">Twelve agents on dedicated accounts, encrypted vaults as the only memory, messages as files, a folder per person, and a mailbox nobody sends from.</span></li></ul></div><div><h3>Continued by</h3><ul><li><a href="where-the-vault-keys-live.html">Where the vault keys live: key management at sgit-ai v0.20.0, and what comes next</a> <span class="dim">Vault key management at sgit-ai v0.20.0: the one secret, where keys are kept, how they travel sealed on append lanes, and what comes next.</span></li><li><a href="rfc-0001-public-key-cryptography-for-sgit.html">RFC 0001: two ways to add public-key cryptography to sgit, and the questions we want you to answer</a> <span class="dim">A Request for Comments: two key pairs so a reader cannot write, sealed files only named people can open, and fourteen questions for reviewers.</span></li><li><a href="a-mac-of-the-agents-own.html">A Mac of the agent's own: a business plan for agent desktops, what Apple's licence allows, and three behaviour policies</a> <span class="dim">A business plan for a Mac of the agent's own: what Apple's licence allows, a desktop built from vaults per run, and three behaviour policies for one agent.</span></li><li><a href="riskmandate-ten-questions.html">Ten hard questions for RiskMandate, answered: the mandate, the reach, the gap, and what we are deliberately not</a> <span class="dim">Ten hard questions from a conference, answered in a two-hour interview: what RiskMandate does, what it deliberately is not, and how mature each part is.</span></li><li><a href="how-i-work-with-claude.html">How I work with Claude: one session per topic, agents with names, and memory you curate</a> <span class="dim">A practical guide from a year of daily use: one Claude session per topic, named agents with a role.md, curated memory, vaults, and policy before connectors.</span></li></ul></div></div>
+ <p class="small dim"><a href="index.html">All articles</a> &middot; <a href="graphs.html">All graphs</a></p>
+</section>
+<aside class="lkit" aria-label="For LinkedIn"><b>Posting this article on LinkedIn?</b> The cover is <a href="banners/encrypted-memory-for-isolated-agents.jpg" download>encrypted-memory-for-isolated-agents.jpg</a> (1920&times;1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page.</aside>
+ <p class="subteaser"><b>Want the next issue by email.</b> One issue a week or so: what was published, what it adds up to, and what is worth your time. <a class="cta2" href="../subscribe/index.html">Subscribe to the SGit Newsroom &rarr;</a></p>
+ <p class="small dim" style="margin-top:2rem"><a href="index.html">&larr; All articles</a></p>
+</main>
+<script>
+(function () {
+ fetch('../assets/shots.js?v=v0.7.39')
+ .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+ .then(function (t) { (0, eval)(t); })
+ .catch(function (e) { console.error('[shots] component failed to load:', e); });
+}());
+</script>
+<script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": ""}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
+<script>
+import('../assets/components/sg-meter/v1/v1.3/v1.3.1/sg-meter.js?v=v0.7.39')
+ .catch(function (e) { console.error('[sg-meter] component failed to load:', e); });
+</script>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="netline"><a href="https://sgit.ai" style="display:inline;padding:0"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://pt.newsroom.sgit.ai" style="display:inline;padding:0">&#8593; pt.newsroom.sgit.ai</a> &middot; <a href="https://graphs.sgit.ai" style="display:inline;padding:0">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai" style="display:inline;padding:0">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai" style="display:inline;padding:0">&#8593; nhi.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai" style="display:inline;padding:0">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../admin/versions.html">v0.6.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="encrypted-memory-for-isolated-agents.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../index.html">&#8594; The front page</a>
+    <a href="../articles/index.html#all">Every article</a>
+    <a href="../articles/newsletter/index.html">The newsletter</a>
+    <a href="../articles/collections/index.html">Collections</a>
+    <a href="../articles/desk/index.html">From the desk</a>
+    <a href="../articles/graphs.html">As graphs</a>
+    <a href="../subscribe/index.html">Subscribe</a>
+    <a href="../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../account/index.html">Your reading account</a>
+    <a href="../account/newsroom.html">Your newsroom</a>
+    <a href="../account/personas.html">Your personas</a>
+    <a href="../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../newsroom/index.html">How the newsroom runs</a>
+    <a href="../newsroom/policies.html">Behaviour policies</a>
+    <a href="../newsroom/publish.html">How to publish</a>
+    <a href="../newsroom/board.html">The board</a>
+    <a href="../newsroom/log.html">The run log</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../design/index.html">The design, and what runs</a>
+    <a href="../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../corrections/index.html">Corrections must propagate</a>
+    <a href="../provenance/index.html">Provenance is the product</a>
+    <a href="../economics/index.html">Paying the fact creator</a>
+    <a href="../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../replicate/index.html">Replicate this newsroom</a>
+    <a href="../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../archive/index.html">The archive</a>
+    <a href="../network/index.html">The network</a>
+    <a href="../admin/versions.html">Release history</a>
+    <a href="../admin/index.html">Admin &amp; engineering</a>
+    <a href="../about/participant.html">Where we lose</a>
+    <a href="../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+
+<script>
+(function(){var R=document.documentElement.getAttribute('data-root')||'';var V='?v=' + 'v0.7.39';var C=[R,'','../','/'].filter(function(v,i,a){return a.indexOf(v)===i});
+function wait(ms){return new Promise(function(res){var t=Date.now();(function p(){if(window.sg)return res(window.sg);if(Date.now()-t>ms)return res(null);setTimeout(p,60)})()})}
+function grab(sg,p){return new Promise(function(res){(async function(){if(sg&&sg.vfs&&sg.vfs.readText){try{var t=await sg.vfs.readText(p);if(t)return res(t)}catch(e){}}try{var r=await fetch(p+V);if(r.ok)return res(await r.text())}catch(e){}res(null)})()})}
+async function css(sg){for(var i=0;i<C.length;i++){var p=C[i]+'assets/newsroom.css';if(sg&&sg.loadCss){try{await sg.loadCss(p);return}catch(e){}}var t=await grab(sg,p);if(t){var s=document.createElement('style');s.textContent=t;document.head.appendChild(s);return}}}
+async function js(sg,name){name=name||'assets/site.js';for(var i=0;i<C.length;i++){var p=C[i]+name;if(sg&&sg.loadJs){try{await sg.loadJs(p);return}catch(e){}}var t=await grab(sg,p);if(t){try{(0,eval)(t)}catch(e){console.error('[site] js failed',name,e)}return}}}
+async function boot(){var inVault=false;try{inVault=(window!==window.parent)||location.protocol==='blob:'}catch(e){inVault=true}
+var sg=inVault?await wait(2500):null;window.__sgitBoot={roots:C,grab:function(p){return grab(sg,p)},version:V};await css(sg);await js(sg);document.documentElement.classList.add('ready');try{window.parent&&window.parent.postMessage({type:'sg-app-ready'},'*')}catch(e){}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+var mine=V.slice(3),last=0;
+function fresh(){if(location.hostname!=='sgit.ai'||Date.now()-last<60000)return;last=Date.now();
+fetch('/version.txt?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(t){t=(t||'').trim();if(!/^v[0-9]+[.][0-9]+[.][0-9]+$/.test(t)||t===mine)return;
+var k='sgit.fresh:'+location.pathname;try{if(sessionStorage.getItem(k)===t)return;sessionStorage.setItem(k,t)}catch(e){}
+var u=new URL(location.href);u.searchParams.set('v',t);location.replace(u.href)}).catch(function(){})}
+try{var u=new URL(location.href);if(u.searchParams.get('v')===mine){u.searchParams.delete('v');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}
+fresh();addEventListener('pageshow',function(e){if(e.persisted){last=0;fresh()}});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')fresh()});
+})();
+</script>
+</body>
+</html>

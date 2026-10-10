@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Agency is not a yes: a scale for human and agent decisions, from rubber stamp to the reviewer who fixes the source, sgit.ai</title>
+<meta name="description" content="We talk about the human in the loop as if the loop were the point. Most of the time the human, or the agent put in the same place, is asked for a yes or a no, and that is the least interesting part of a decision. This article sets out what agency actually needs, for a person and for an agent: options beyond yes, context in the decider's own terms, the ability to look behind what they are shown, time or tokens, incentives that treat a wrong yes and a wrong no alike, somewhere to escalate, and authority over the system that produced the request. It turns those into a scale of seven levels, from the rubber stamp to the delegator, where the weakest dimension caps the whole decision, and scores fourteen cases from the record and from my own agent team, from a prompt that asks to add label 756-459-3214 to the one email an agent of mine is allowed to send. Below level 3, the decider holds the liability for a decision the system made, and accountability belongs to whoever designed the decision point and up their chain. Above it, the review stops being a sign-off and becomes a QA step: each draft is a chance to validate everything that led to it, to fix the source rather than the output, and to think better. And when a kind of draft keeps going out unchanged, it becomes a rule that runs without review. A vault published with the article holds the scale, the cases and an assessment anyone can run on their own decision points.">
+<link rel="canonical" href="https://newsroom.sgit.ai/articles/agency-is-not-a-yes.html">
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="sgit.ai">
+<meta property="og:url" content="https://newsroom.sgit.ai/articles/agency-is-not-a-yes.html">
+<meta property="og:title" content="Agency is not a yes: a scale for human and agent decisions, from rubber stamp to the reviewer who fixes the source, sgit.ai">
+<meta property="og:description" content="We talk about the human in the loop as if the loop were the point. Most of the time the human, or the agent put in the same place, is asked for a yes or a no, and that is the least interesting part of a decision. This article sets out what agency actually needs, for a person and for an agent: options beyond yes, context in the decider's own terms, the ability to look behind what they are shown, time or tokens, incentives that treat a wrong yes and a wrong no alike, somewhere to escalate, and authority over the system that produced the request. It turns those into a scale of seven levels, from the rubber stamp to the delegator, where the weakest dimension caps the whole decision, and scores fourteen cases from the record and from my own agent team, from a prompt that asks to add label 756-459-3214 to the one email an agent of mine is allowed to send. Below level 3, the decider holds the liability for a decision the system made, and accountability belongs to whoever designed the decision point and up their chain. Above it, the review stops being a sign-off and becomes a QA step: each draft is a chance to validate everything that led to it, to fix the source rather than the output, and to think better. And when a kind of draft keeps going out unchanged, it becomes a rule that runs without review. A vault published with the article holds the scale, the cases and an assessment anyone can run on their own decision points.">
+<meta property="og:image" content="https://newsroom.sgit.ai/og/agency-is-not-a-yes.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Agency is not a yes: a scale for human and agent decisions, from rubber stamp to the reviewer who fixes the source, sgit.ai">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://newsroom.sgit.ai/og/agency-is-not-a-yes.jpg">
+<link rel="alternate" type="text/markdown" href="agency-is-not-a-yes.md" title="This page as markdown">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Agency is not a yes: a scale for human and agent decisions, from rubber stamp to the reviewer who fixes the source, sgit.ai", "headline": "Agency is not a yes: a scale for human and agent decisions, from rubber stamp to the reviewer who fixes the source, sgit.ai", "description": "We talk about the human in the loop as if the loop were the point. Most of the time the human, or the agent put in the same place, is asked for a yes or a no, and that is the least interesting part of a decision. This article sets out what agency actually needs, for a person and for an agent: options beyond yes, context in the decider's own terms, the ability to look behind what they are shown, time or tokens, incentives that treat a wrong yes and a wrong no alike, somewhere to escalate, and authority over the system that produced the request. It turns those into a scale of seven levels, from the rubber stamp to the delegator, where the weakest dimension caps the whole decision, and scores fourteen cases from the record and from my own agent team, from a prompt that asks to add label 756-459-3214 to the one email an agent of mine is allowed to send. Below level 3, the decider holds the liability for a decision the system made, and accountability belongs to whoever designed the decision point and up their chain. Above it, the review stops being a sign-off and becomes a QA step: each draft is a chance to validate everything that led to it, to fix the source rather than the output, and to think better. And when a kind of draft keeps going out unchanged, it becomes a rule that runs without review. A vault published with the article holds the scale, the cases and an assessment anyone can run on their own decision points.", "url": "https://newsroom.sgit.ai/articles/agency-is-not-a-yes.html", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "sgit.ai", "url": "https://sgit.ai"}, "about": {"@type": "SoftwareApplication", "name": "sgit", "sameAs": "https://pypi.org/project/sgit-ai/"}, "author": {"@type": "Person", "name": "Dinis Cruz", "url": "https://sgit.ai/about/index.html"}, "license": "https://creativecommons.org/licenses/by/4.0/"}</script>
+<style>html{background:#faf9f5}body{margin:0;background:#faf9f5;color:#1c1d21;font-family:ui-sans-serif,system-ui,sans-serif;opacity:0;transition:opacity .25s;animation:sg-reveal 0s linear 1.6s forwards}html.ready body{opacity:1;animation:none}@keyframes sg-reveal{to{opacity:1}}</style><noscript><style>body{opacity:1;animation:none}</style></noscript>
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.6.0</a>
+  <sg-meter class="meter-nav" view="balance"></sg-meter>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../articles/index.html#all">Every article</a>
+      <a class="sl" href="../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../account/index.html">Your reading account</a>
+      <a class="sl" href="../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../account/personas.html">Your personas</a>
+      <a class="sl" href="../account/top-up.html">Top up</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../newsroom/board.html">The board</a>
+      <a class="sl" href="../newsroom/log.html">The run log</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../world-news-day/index.html">World News Day<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../world-news-day/index.html">The corpus</a>
+      <a class="sl" href="../world-news-day/stories/free-to-republish-is-not-a-licence.html">Free to republish is not a licence</a>
+      <a class="sl" href="../world-news-day/licences.html">The licence that is not there</a>
+      <a class="sl" href="../world-news-day/corpus.html">The twenty-one</a>
+      <a class="sl" href="../world-news-day/findings.html">The aggregate</a>
+      <a class="sl" href="../world-news-day/terms.html">The vocabulary</a>
+      <a class="sl" href="../world-news-day/graph.html">The graph</a>
+      <a class="sl" href="../world-news-day/sources.html">Sources</a>
+      <a class="sl" href="../world-news-day/contacts.html">How to reach them</a>
+      <a class="sl" href="../world-news-day/vault.html">Published vaults</a>
+      <a class="sl" href="../world-news-day/vaults/corpus.html">The vault, opened</a>
+      <a class="sl" href="../world-news-day/method.html">Method</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../archive/index.html">The archive</a>
+      <a class="sl" href="../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../network/index.html">The network</a>
+      <a class="sl" href="../admin/versions.html">Release history</a>
+      <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom">&#9733; GitHub</a>
+</div></nav>
+
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.6.0</span></a></div>
+<main class="doc">
+ <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / Agency is not a yes: a scale for human and agent decisions, from rubber stamp to the reviewer who fixes the source</p>
+ <h1>Agency is not a yes: a scale for human and agent decisions, from rubber stamp to the reviewer who fixes the source</h1>
+ <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-08 &middot; <a href="versions/agency-is-not-a-yes.html" title="Every published version of this article, and what changed">article v1.0.0</a> &middot; <a href="https://sgit.ai/admin/versions.html" title="The site release it was published in">site v0.7.5</a> &middot; <span class="chip">agency</span><span class="chip">accountability</span><span class="chip">human-in-the-loop</span><span class="chip">decision-making</span><span class="chip">agents</span><span class="chip">agent-behaviour-policy</span><span class="chip">provenance</span><span class="chip">fractal-semantic-graphs</span><span class="chip">eu-ai-act</span><span class="chip">maturity-model</span><span class="chip">vaults</span><span class="chip">article</span></p>
+ <p class="abstract"><em><b>Abstract:</b> We talk about the human in the loop as if the loop were the point. Most of the time the human, or the agent put in the same place, is asked for a yes or a no, and that is the least interesting part of a decision. This article sets out what agency actually needs, for a person and for an agent: options beyond yes, context in the decider's own terms, the ability to look behind what they are shown, time or tokens, incentives that treat a wrong yes and a wrong no alike, somewhere to escalate, and authority over the system that produced the request. It turns those into a scale of seven levels, from the rubber stamp to the delegator, where the weakest dimension caps the whole decision, and scores fourteen cases from the record and from my own agent team, from a prompt that asks to add label 756-459-3214 to the one email an agent of mine is allowed to send. Below level 3, the decider holds the liability for a decision the system made, and accountability belongs to whoever designed the decision point and up their chain. Above it, the review stops being a sign-off and becomes a QA step: each draft is a chance to validate everything that led to it, to fix the source rather than the output, and to think better. And when a kind of draft keeps going out unchanged, it becomes a rule that runs without review. A vault published with the article holds the scale, the cases and an assessment anyone can run on their own decision points.</em></p>
+<figure class="shot" data-shot="ag-scale.webp" data-dir="images/" data-alt="Seven levels of agency for anyone, a person or an agent, asked to make a decision. The weakest of seven dimensions caps the level. Below level 3, accountability belongs to whoever designed the decision point; from level 4, the review improves the system that produced the request."><figcaption>Seven levels of agency for anyone, a person or an agent, asked to make a decision. The weakest of seven dimensions caps the level. Below level 3, accountability belongs to whoever designed the decision point; from level 4, the review improves the system that produced the request.</figcaption></figure>
+<div class="note"><b>Where this comes from.</b> Two voice memos, recorded one after the other, about agency: what it is, how to tell when someone has it, and how it changes when the someone is an agent. They draw on the agent team that helps me run my work and write this site, and on cases this site has already written up. The scale, the cases and an assessment you can run on your own decisions are in a vault published with the article, <a href="https://sgit.ai/demos/vaults/agency-scale/index.html">The agency scale</a>.</div>
+<h2>In short</h2>
+<ul>
+<li><b>A yes or no is not agency.</b> It is the least interesting part of a decision, and when a no stalls the work with no way back, it is not even a choice.</li>
+<li><b>Agency has seven dimensions</b>: options, context, depth, time, incentives, escalation and authority. Each can be observed. The weakest one caps the decision.</li>
+<li><b>Below level 3 it is liability, not agency.</b> A decider without the information, time or authority to decide well should not carry the decision. Accountability belongs to whoever designed the decision point, and their boss, and their boss's boss.</li>
+<li><b>Above level 3, a review is a QA step, not a sign-off.</b> Every draft is a chance to validate everything that produced it, to fix the source instead of the output, and to think better.</li>
+<li><b>The top of the scale is delegation.</b> The cases you keep approving unchanged become rules that run without you, as code under a behaviour policy, so the final yes is a decision tree that can be explained.</li>
+<li><b>It applies to agents in the same way.</b> An agent asked "is this OK?" with no context is a rubber stamp too.</li>
+</ul>
+<h2>The least interesting part of a decision</h2>
+<p>I am a human in the loop now. Every day, the agents I work with prepare emails for me to review, and every day I send some of them. No agent sends email on its own, with one exception: a security agent may send one email, to one address, to put the team on hold. So I am the process. And what I have noticed, here as when I was coding and every time I work with an agent, is that the go or no-go is the most boring part. When you get there, you mostly see what you expected to see.</p>
+<p>The problem is what a yes-or-no does to the person holding it. If you say no to an agent asking for permission, somebody now has a problem. Either you have to work out what to do differently, or the agent has to find another way, or the work stops. That is why it is always tempting to say yes: get on with it. A decider whose only realistic answer is yes has, in practice, no agency at all. This site has covered how that looks: a prompt that asked to add a repository and said nothing about why, a vendor reporting that its users approve 93% of permission prompts, and a sign-in push accepted after enough repetitions. Those are all in <a href="where-is-the-why.html">Where is the why?</a>.</p>
+<p>My favourite example is a prompt that asked to add a label, and named it: label 756-459-3214. Which message? Which label? Why? I could not tell what I was authorising. There was no way for that decision to be a good one, and no way for it to be a bad one either; it was a click.</p>
+<h2>The incentive to say no, or to say yes</h2>
+<p>Turn it around. If the person in the loop is punished for getting a yes wrong, and nothing happens when a no is wrong, they will say no, and find every reason to. If they are punished for delay, or for a no, they will say yes. Whatever you punish, you teach the other answer. The behaviour is well studied: people tend to judge harm caused by acting more harshly than equal harm caused by not acting, which Ritov and Baron called omission bias in 1990, though how strong the effect is has been debated since. A reviewer who is only ever blamed for approvals is not deciding; they are protecting themselves, and the organisation has designed them to.</p>
+<p>So agency needs incentives that treat a wrong yes and a wrong no alike, and a margin for honest error. It needs time: a decision made in seconds, mid-task, in a queue, is a decision to trust. And it needs somewhere to escalate. Without those, we can predict that a certain number of mistakes will be made, and whoever makes them cannot fairly be held accountable, because they were never in a position to decide well.</p>
+<h2>Everything you are shown is a compression</h2>
+<p>The next question is whether the decider has what they need to decide. Every time we look at something, we are looking at a compression of reality: a summary of a situation, a description of an action, a draft of a reply. That is fine until there is a question. Then you need to expand it, to see the data it came from, the steps that were taken, the decisions made along the way.</p>
+<p>That is why provenance and <a href="introducing-fractal-semantic-graphs.html">fractal semantic graphs</a> matter here. Provenance is the ability to answer: why did this happen, how was this decided, how did we get here? A graph that can be zoomed is what lets a decider go from the summary to the claim to the source in a few steps. If the answer to "why?" is not available, there is no explainability, and the decision is a guess dressed as a decision.</p>
+<h2>Accountability without agency is liability</h2>
+<p>When the decider has no options, no context, no time or no authority, what they are carrying is not agency but liability. We have done this with cars: a person supervises an automated vehicle for hours, not engaged, and is then expected to take over the moment the system reaches its limits. In a simulator study by Eriksson and Stanton, drivers took between 1.9 and 25.7 seconds to take back control in non-critical conditions. Lisanne Bainbridge called this out in 1983, in a paper titled <em>Ironies of Automation</em>: "the more advanced a control system is, so the more crucial may be the contribution of the human operator." The irony is that the more we automate, the harder the human part becomes, and the less ready the human is for it.</p>
+<p>The record of who gets blamed is in <a href="where-is-the-why.html">Where is the why?</a>: the moral crumple zone, where the nearest person absorbs the blame for a system's failure, and the Post Office's sub-postmasters, held to shortfalls they had no way of disputing. European guidance on automated decisions already says that sign-off must be "meaningful, rather than just a token gesture".</p>
+<p>So here is how I would slice it. When a person in the loop has no agency, the responsibility should not sit with that person. It should sit with whoever designed the decision point, and their boss, and their boss's boss: they are authorising a decision system that will statistically make mistakes, because it has put an entity that cannot decide well at the point of decision.</p>
+<h2>The scale</h2>
+<figure class="shot" data-shot="app-scale.webp" data-dir="../demos/vaults/agency-scale/images/" data-alt="The seven levels in the vault: what the decider can do at each, what agency it gives, and who is accountable." data-href="https://sgit.ai/demos/vaults/agency-scale/index.html" data-href-label="Open the vault page" data-href-target="_self"><figcaption>The seven levels in the vault: what the decider can do at each, what agency it gives, and who is accountable. <b>Click the image to open the vault page &#8599;</b></figcaption></figure>
+<p>Put those together and agency becomes measurable. The vault defines seven dimensions, each a question you can answer by looking at the decision point:</p>
+<div class="tablewrap"><table>
+<tr><th>Dimension</th><th>The question</th></tr>
+<tr><td>Options</td><td>What can the decider actually do: only yes, yes or no, change the outcome, fix the source, delegate?</td></tr>
+<tr><td>Context</td><td>Do they see what is being decided, and why, in their own terms, or an identifier?</td></tr>
+<tr><td>Depth</td><td>Can they look behind what they are shown: ask, or zoom into the sources and steps?</td></tr>
+<tr><td>Time</td><td>Is there time, or for an agent tokens, to look properly?</td></tr>
+<tr><td>Incentives</td><td>Is a wrong yes treated like a wrong no, with room for honest error?</td></tr>
+<tr><td>Escalation</td><td>Is there somewhere to take a decision they cannot make?</td></tr>
+<tr><td>Authority</td><td>Can they change the system that produced the request?</td></tr>
+</table></div>
+<p>Each answer caps the level, and the level is the lowest cap: one weak dimension caps the whole decision, the way one weak link caps a chain. Context without time is still a guess; time without authority is still a sign-off. The seven levels that come out are:</p>
+<ul>
+<li><b>0 · Rubber stamp.</b> Only yes is realistic, or the decider cannot tell what they are deciding.</li>
+<li><b>1 · Informed yes or no.</b> They see what and why, and can accept or refuse.</li>
+<li><b>2 · Can look behind it.</b> They can ask why and follow the provenance, but lack the time, the incentives or the escalation to use it.</li>
+<li><b>3 · Resourced.</b> Time or tokens, symmetric incentives, room for honest error, somewhere to escalate. A good yes-or-no decision is now possible.</li>
+<li><b>4 · Editor.</b> They can change the outcome: edit, ask back, redirect.</li>
+<li><b>5 · Owner of the source.</b> They fix what produced the result: the record, the graph, the brief, the tool.</li>
+<li><b>6 · Delegator.</b> They turn proven cases into rules that run without them, and the final yes is code.</li>
+</ul>
+<figure class="shot" data-shot="app-cases.webp" data-dir="../demos/vaults/agency-scale/images/" data-alt="Fourteen decision points scored by the same rule, from the label prompt at level 0 to the one email an agent may send at level 6." data-href="https://sgit.ai/demos/vaults/agency-scale/index.html" data-href-label="Open the vault page" data-href-target="_self"><figcaption>Fourteen decision points scored by the same rule, from the label prompt at level 0 to the one email an agent may send at level 6. <b>Click the image to open the vault page &#8599;</b></figcaption></figure>
+<p>The vault scores fourteen cases with the same rule. Eight of them sit at level 0, including the label prompt, the repository prompt, the sign-in push before it was fixed, the token sign-off and the driver asked to take over. The same push after the fix, with the application, the location and a number to match, reaches level 1, which is exactly what a sign-in decision needs. A senior clinician at the end of an escalation chain, with the record, colleagues and time, is at level 4: the model the others should copy, because the person who decides is the most senior and has everything they need. My own draft review is at level 5, and the one email my security agent may send is at level 6.</p>
+<h2>Agents are deciders too</h2>
+<p>The scale does not care whether the decider is a person. An agent asked "is this fine to send?", with the draft and nothing else, no tools to check the record, no budget and nowhere to escalate, is a rubber stamp. The controller in <a href="hope-or-enforcement.html">Hope or enforcement</a>, which checks every reply against the ledger and the customer record before a second model reviews the tone, with a token budget and a path to a person, is at level 3. We should hold agents to the same standard we hold people: if an agent cannot follow up each of the data points behind its decision and say why it is there, it does not have agency either.</p>
+<p>And the final decision should not be an agent's at all. It should be code: a decision tree in which the yes is reached through a sequence of checks, five or twenty-five of them, each of which can be followed and questioned on its own. Then it is easy to see who did what, and why. Models prepare and propose; rules decide; people own the rules.</p>
+<h2>The review is a QA step, not a sign-off</h2>
+<figure class="shot" data-shot="app-loop.webp" data-dir="../demos/vaults/agency-scale/images/" data-alt="The review as a loop: read it as the person who will sign it, question each statement, trace where it came from, classify the gap, fix the source, think better, record the outcome, and promote what is proven." data-href="https://sgit.ai/demos/vaults/agency-scale/index.html" data-href-label="Open the vault page" data-href-target="_self"><figcaption>The review as a loop: read it as the person who will sign it, question each statement, trace where it came from, classify the gap, fix the source, think better, record the outcome, and promote what is proven. <b>Click the image to open the vault page &#8599;</b></figcaption></figure>
+<p>Everything so far has been about saying no well. The more interesting part is positive. When I review a draft I am not signing off. I would like to stop calling it a draft: it is QA, the stage before production, the question of whether this is ready to ship. And as in software, when the output is not what I wanted, the useful question is not how to fix this output but how we got here.</p>
+<p>Every piece of text an agent writes is a statement, a move: based on what I know, here is the conclusion. The person who will live with that statement, who will sign it, or is the expert in that area, or is affected by it, is the one who can see the bigger picture and say: this is not right. A doctor, a project manager, a board member, an operator, a nurse, or the person at the end who signs the bottom line. When I read an email the agents have prepared, I am asking: is this a tweak to the brief, a mistake in the data, or a bigger problem? Often the answer is that the CRM record for that person is missing something, so the email cannot take it into account. The right fix is not to the email. It is to the record, the graph, the connection, so that every future email has it. Sometimes the answer is that the objectives have changed: we are trying something else now. Then the fix is to the objectives, written down where the agents will read them.</p>
+<p>This is where the self-correction comes from that lets the whole thing scale. Every time someone with the context reviews a result and fixes the source, they validate a great many decisions and actions that came before it, and the graph gets more granular and more correct. This brief is an example. It is far more complex than what I would have given an agent six months ago, because I have learned that the better I explain the thinking behind an idea, the better the result, and because I read everything that comes back. People sometimes look at the volume and assume it is unread slop. It is not: I read it all, and it is how I learn which workflows work. <a href="how-much-of-this-did-i-write.html">How much of this did I write?</a> has the numbers.</p>
+<p>Ownership is what makes this happen. When I had a security policy I wanted adopted, I learned not to ask stakeholders to review it; I told them it would be published under their name, and the level of engagement changed completely. The same with risk: until someone has to <a href="every-risk-is-already-accepted.html">accept a risk</a> in writing, they do not really engage. An email that goes out under my name gets that attention from me. And because I have the mandate, the capability and the authority to change the system, I can act on what I find.</p>
+<p>The workflow itself keeps improving. <a href="the-agent-team-as-it-runs.html">The agent team</a> labels each draft, for review or ready to send. If I want major changes, I type them into the draft, save it and change the label, and the agent picks it up on its next run. Sometimes the agent writes a draft with no recipient, so it cannot be sent by mistake, puts its questions about next steps in it, and I answer in the draft: a small interface, made of an email, that the agent then replaces with the real one. That is agency over my own environment.</p>
+<h2>From review to rule</h2>
+<p>The top of the scale is where this goes. As the drafts of one kind keep coming back correct, exactly what I wanted, I become comfortable letting that kind go automatically, and the behaviour policy changes to allow that agent, in that setup, to send that kind of email, and nothing else. The more use cases are defined and proven, the more can be trimmed to the ones that are safe to automate, the less expertise is needed to review the rest, and the cheaper the agents doing it can be. In my experience the smaller models, Anthropic's Sonnet and even Haiku in their 5.5 versions, now reason well enough for tasks that are well defined.</p>
+<p>It also tells you who should review what remains. The person who underwrites an agent's decision should be the most senior, the most time-pressed and the most optimised: the doctor at the end of the escalation chain, given everything needed to decide, and interrupted only for what is genuinely new.</p>
+<h2>The law already asks for most of this</h2>
+<figure class="shot" data-shot="app-law.webp" data-dir="../demos/vaults/agency-scale/images/" data-alt="The EU AI Act&#x27;s human oversight requirements and the guidance on automated decisions, mapped to the seven dimensions. Read together, they put the floor at level 3." data-href="https://sgit.ai/demos/vaults/agency-scale/index.html" data-href-label="Open the vault page" data-href-target="_self"><figcaption>The EU AI Act's human oversight requirements and the guidance on automated decisions, mapped to the seven dimensions. Read together, they put the floor at level 3. <b>Click the image to open the vault page &#8599;</b></figcaption></figure>
+<p>The EU AI Act asks for this in its own words. Article 14(4) says people overseeing a high-risk system must be enabled "to properly understand the relevant capacities and limitations" of the system, "to remain aware of the possible tendency of automatically relying or over-relying on the output", "to decide, in any particular situation, not to use" it "or to otherwise disregard, override or reverse the output", and to stop it. Article 26(2) says deployers "shall assign human oversight to natural persons who have the necessary competence, training and authority, as well as the necessary support." Read against the scale, that is a floor at level 3. Below it, the oversight is on paper only, and I would argue that for some decisions, taking them that way should not be allowed.</p>
+<p>In the end this has very little to do with AI. People have always made decisions they could not explain; we called it judgement, and sometimes it was the same thing we now call a hallucination. What is new is that we are automating the flow, and automating a flow without explainability makes the old problem bigger. The scale is about how decisions are made, whoever makes them.</p>
+<h2>Where to start</h2>
+<ul>
+<li><b>List the decision points</b> in a workflow, human and agent, and run each through the <a href="https://sgit.ai/demos/vaults/agency-scale/index.html">assessment</a>.</li>
+<li><b>Find the weakest dimension</b> of each. That is the only one worth fixing first.</li>
+<li><b>Replace identifiers with things</b>: every prompt shows what, which and why, in the decider's terms.</li>
+<li><b>Make "why?" answerable</b>: link every draft to the sources, steps and decisions behind it.</li>
+<li><b>Check the incentives</b> for a wrong yes and a wrong no, and make them match.</li>
+<li><b>Move accountability</b> to whoever owns a decision point below level 3, until it is fixed.</li>
+<li><b>Treat every review as QA</b>: fix the source, then record what you fixed.</li>
+<li><b>Count the clean passes</b>, and turn the proven ones into rules under a behaviour policy.</li>
+</ul>
+<hr>
+<p><em>Drafted from two voice memos by Dinis Cruz, who is the author of the argument and the person with editorial responsibility, by agent@riskmandate.ai (Claude Opus 5.5, claude-opus-5-5) in the sgit.ai site session, on 8 October 2026. The quoted law is from Regulation (EU) 2024/1689; the cases from the public record are summarised and sourced in the vault and in Where is the why?; Bainbridge is quoted from Ironies of Automation (1983); the takeover times are from Eriksson and Stanton (2017); omission bias from Ritov and Baron (1990). Two cases are from the author's own agent team.</em></p>
+<section class="athreads" id="threads">
+ <h2>Threads</h2>
+ <p class="athreads-meta"><span class="tchip">Agents &amp; policy</span><span class="tchip">Graphs &amp; knowledge</span> <a href="graphs.html#agency-is-not-a-yes">This article as a graph &rarr;</a></p>
+ <div class="athreads-cols"><div><h3>Builds on</h3><ul><li><a href="where-is-the-why.html">Where is the why? A permission prompt asked me to decide, and kept the reason</a> <span class="dim">A prompt asked for a decision and kept the reason. Read through the policy, the law on uninformed consent, and the fixes that worked: put the why in the prompt.</span></li><li><a href="introducing-fractal-semantic-graphs.html">Fractal Semantic Graphs: everything connects to everything, and nobody has to share a schema</a> <span class="dim">A fractal semantic graph has no privileged level and no single schema: each world keeps its own vocabulary and connects to others through named edges.</span></li><li><a href="hope-or-enforcement.html">Hope or enforcement: one customer service agent, three designs, and who keeps each promise</a> <span class="dim">One customer service agent built three ways, each with an Agent Behaviour Policy: how much of each policy is hope, and what one run can reach.</span></li><li><a href="how-much-of-this-did-i-write.html">How much of this did I write? The numbers behind twenty articles in four weeks, and what the input actually was</a> <span class="dim">Twenty articles in four weeks, measured from the session record: 63,000 words in, 85,000 out, no one-line prompts, and the real input is twenty years of writing.</span></li><li><a href="every-risk-is-already-accepted.html">Every risk is already accepted. The only question is by whom, and for how long.</a> <span class="dim">A risk exists the moment the exposure does, so somebody is already carrying it; the only questions worth asking are who has accepted it and until when.</span></li><li><a href="the-agent-team-as-it-runs.html">The agent team as it runs: one person, twelve agents, encrypted vaults, and a mailbox nobody sends from</a> <span class="dim">Twelve agents on dedicated accounts, encrypted vaults as the only memory, messages as files, a folder per person, and a mailbox nobody sends from.</span></li></ul></div><div><h3>Continued by</h3><ul><li><a href="riskmandate-ten-questions.html">Ten hard questions for RiskMandate, answered: the mandate, the reach, the gap, and what we are deliberately not</a> <span class="dim">Ten hard questions from a conference, answered in a two-hour interview: what RiskMandate does, what it deliberately is not, and how mature each part is.</span></li><li><a href="how-i-work-with-claude.html">How I work with Claude: one session per topic, agents with names, and memory you curate</a> <span class="dim">A practical guide from a year of daily use: one Claude session per topic, named agents with a role.md, curated memory, vaults, and policy before connectors.</span></li><li><a href="knowing-when-to-stop.html">Knowing when to stop: what experience gives people, and what we have to design into agents</a> <span class="dim">Knowing when to stop is the hard part for people and agents: what experience gives people, and the constraints that give agents the same perspective.</span></li></ul></div></div>
+ <p class="small dim"><a href="index.html">All articles</a> &middot; <a href="graphs.html">All graphs</a></p>
+</section>
+<sg-meter view="page" kind="article" date="2026-10-08" topics="agents-and-policy graphs-and-knowledge" title="Agency is not a yes: a scale for human and agent decisions, from rubber stamp to the reviewer who fixes the source, sgit.ai"></sg-meter>
+<section class="athreads" id="desk"><h2>From the desk</h2><ul><li><a href="desk/range-is-the-feature-so-the-stop-is-designed.html">Range is the feature, so the stop has to be designed</a> <span class="dim">thread, 2026-10-08</span></li><li><a href="collections/how-agents-decide.html">How agents decide, and when they stop</a> <span class="dim">collection, 6 articles</span></li></ul></section>
+<aside class="lkit" aria-label="For LinkedIn"><b>Posting this article on LinkedIn?</b> The cover is <a href="banners/agency-is-not-a-yes.jpg" download>agency-is-not-a-yes.jpg</a> (1920&times;1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page.</aside>
+ <p class="subteaser"><b>Want the next issue by email.</b> One issue a week or so: what was published, what it adds up to, and what is worth your time. <a class="cta2" href="../subscribe/index.html">Subscribe to the SGit Newsroom &rarr;</a></p>
+ <p class="small dim" style="margin-top:2rem"><a href="index.html">&larr; All articles</a></p>
+</main>
+<script>
+(function () {
+ fetch('../assets/shots.js?v=v0.7.39')
+ .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+ .then(function (t) { (0, eval)(t); })
+ .catch(function (e) { console.error('[shots] component failed to load:', e); });
+}());
+</script>
+<script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": ""}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
+<script>
+import('../assets/components/sg-meter/v1/v1.3/v1.3.1/sg-meter.js?v=v0.7.39')
+ .catch(function (e) { console.error('[sg-meter] component failed to load:', e); });
+</script>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="netline"><a href="https://sgit.ai" style="display:inline;padding:0"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://pt.newsroom.sgit.ai" style="display:inline;padding:0">&#8593; pt.newsroom.sgit.ai</a> &middot; <a href="https://graphs.sgit.ai" style="display:inline;padding:0">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai" style="display:inline;padding:0">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai" style="display:inline;padding:0">&#8593; nhi.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai" style="display:inline;padding:0">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../admin/versions.html">v0.6.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="agency-is-not-a-yes.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../index.html">&#8594; The front page</a>
+    <a href="../articles/index.html#all">Every article</a>
+    <a href="../articles/newsletter/index.html">The newsletter</a>
+    <a href="../articles/collections/index.html">Collections</a>
+    <a href="../articles/desk/index.html">From the desk</a>
+    <a href="../articles/graphs.html">As graphs</a>
+    <a href="../subscribe/index.html">Subscribe</a>
+    <a href="../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../account/index.html">Your reading account</a>
+    <a href="../account/newsroom.html">Your newsroom</a>
+    <a href="../account/personas.html">Your personas</a>
+    <a href="../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../newsroom/index.html">How the newsroom runs</a>
+    <a href="../newsroom/policies.html">Behaviour policies</a>
+    <a href="../newsroom/publish.html">How to publish</a>
+    <a href="../newsroom/board.html">The board</a>
+    <a href="../newsroom/log.html">The run log</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../design/index.html">The design, and what runs</a>
+    <a href="../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../corrections/index.html">Corrections must propagate</a>
+    <a href="../provenance/index.html">Provenance is the product</a>
+    <a href="../economics/index.html">Paying the fact creator</a>
+    <a href="../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../replicate/index.html">Replicate this newsroom</a>
+    <a href="../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../archive/index.html">The archive</a>
+    <a href="../network/index.html">The network</a>
+    <a href="../admin/versions.html">Release history</a>
+    <a href="../admin/index.html">Admin &amp; engineering</a>
+    <a href="../about/participant.html">Where we lose</a>
+    <a href="../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+
+<script>
+(function(){var R=document.documentElement.getAttribute('data-root')||'';var V='?v=' + 'v0.7.39';var C=[R,'','../','/'].filter(function(v,i,a){return a.indexOf(v)===i});
+function wait(ms){return new Promise(function(res){var t=Date.now();(function p(){if(window.sg)return res(window.sg);if(Date.now()-t>ms)return res(null);setTimeout(p,60)})()})}
+function grab(sg,p){return new Promise(function(res){(async function(){if(sg&&sg.vfs&&sg.vfs.readText){try{var t=await sg.vfs.readText(p);if(t)return res(t)}catch(e){}}try{var r=await fetch(p+V);if(r.ok)return res(await r.text())}catch(e){}res(null)})()})}
+async function css(sg){for(var i=0;i<C.length;i++){var p=C[i]+'assets/newsroom.css';if(sg&&sg.loadCss){try{await sg.loadCss(p);return}catch(e){}}var t=await grab(sg,p);if(t){var s=document.createElement('style');s.textContent=t;document.head.appendChild(s);return}}}
+async function js(sg,name){name=name||'assets/site.js';for(var i=0;i<C.length;i++){var p=C[i]+name;if(sg&&sg.loadJs){try{await sg.loadJs(p);return}catch(e){}}var t=await grab(sg,p);if(t){try{(0,eval)(t)}catch(e){console.error('[site] js failed',name,e)}return}}}
+async function boot(){var inVault=false;try{inVault=(window!==window.parent)||location.protocol==='blob:'}catch(e){inVault=true}
+var sg=inVault?await wait(2500):null;window.__sgitBoot={roots:C,grab:function(p){return grab(sg,p)},version:V};await css(sg);await js(sg);document.documentElement.classList.add('ready');try{window.parent&&window.parent.postMessage({type:'sg-app-ready'},'*')}catch(e){}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+var mine=V.slice(3),last=0;
+function fresh(){if(location.hostname!=='sgit.ai'||Date.now()-last<60000)return;last=Date.now();
+fetch('/version.txt?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(t){t=(t||'').trim();if(!/^v[0-9]+[.][0-9]+[.][0-9]+$/.test(t)||t===mine)return;
+var k='sgit.fresh:'+location.pathname;try{if(sessionStorage.getItem(k)===t)return;sessionStorage.setItem(k,t)}catch(e){}
+var u=new URL(location.href);u.searchParams.set('v',t);location.replace(u.href)}).catch(function(){})}
+try{var u=new URL(location.href);if(u.searchParams.get('v')===mine){u.searchParams.delete('v');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}
+fresh();addEventListener('pageshow',function(e){if(e.persisted){last=0;fresh()}});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')fresh()});
+})();
+</script>
+</body>
+</html>

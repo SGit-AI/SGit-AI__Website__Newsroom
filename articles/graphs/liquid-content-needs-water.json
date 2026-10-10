@@ -1,0 +1,199 @@
+{
+  "slug": "liquid-content-needs-water",
+  "teaser": "A reply to FT Strategies on liquid content: the water is the reporting, so liquefy the journalist's notebook, keep the writing theirs, and pay per use.",
+  "topics": [
+    "news-and-evidence",
+    "graphs-and-knowledge"
+  ],
+  "core_idea": "Liquid content, journalism built from datafied components, is right in its instincts, but what makes content liquid is the reporting inside it, so the way in is not a reinvention of newsroom norms but putting the experienced journalist and their existing workflow at the centre, liquefying their notebook into a story graph as they work, keeping the writing theirs because writing is how the story is found, bringing in experts paid for time and credibility, personalising by intersecting the reader's graph with the story's, keeping editorial direction rather than readers' tastes as the brief, and getting paid per use down the graph rather than only through advertising, subscriptions and licensing.",
+  "nodes": [
+    {
+      "id": "liquid-content",
+      "label": "Liquid content, as FT Strategies defines it",
+      "kind": "concept",
+      "summary": "Content made of datafied atomic objects, quotes, events, dates, rather than finished products; clay kept wet."
+    },
+    {
+      "id": "agree",
+      "label": "What the guide gets right",
+      "kind": "claim",
+      "summary": "Data journalism as the model, honest open questions, structure behind every front end, pay-per-query with agents."
+    },
+    {
+      "id": "water",
+      "label": "Liquid needs water: the reporting",
+      "kind": "claim",
+      "summary": "What makes content liquid is the notebook, interviews, documents and hypotheses, kept with their sources as a graph."
+    },
+    {
+      "id": "clay",
+      "label": "The limit of clay",
+      "kind": "concept",
+      "summary": "By the time it is clay the sources and doubts are mixed in and gone; a graph keeps them."
+    },
+    {
+      "id": "method-exists",
+      "label": "The method already exists",
+      "kind": "claim",
+      "summary": "Centuries of journalistic practice need tools, not reinvention; bring back the experienced journalists."
+    },
+    {
+      "id": "desk",
+      "label": "A desk built around the journalist",
+      "kind": "method",
+      "summary": "Capture the notebook as it is kept, a custom interface per journalist, a graph they can see and correct."
+    },
+    {
+      "id": "writing",
+      "label": "Writing is how the story is found",
+      "kind": "claim",
+      "summary": "The journalist writes the article and discovers the narrative; other projections come from the graph and are checked against it."
+    },
+    {
+      "id": "experts",
+      "label": "Experts a newsroom could rarely afford",
+      "kind": "concept",
+      "summary": "Historians, analysts, professors, practitioners, paid for time and for the credibility they lend, credited in the graph."
+    },
+    {
+      "id": "is-not",
+      "label": "The three 'is not's, with a graph underneath",
+      "kind": "method",
+      "summary": "Archives can be liquefied, interfaces are built from the graph, and personalisation means graph intersection."
+    },
+    {
+      "id": "intersection",
+      "label": "Personalisation as the meeting of two graphs",
+      "kind": "concept",
+      "summary": "The reader's role, company, time, depth and language meet the story's claims; only there is something to say."
+    },
+    {
+      "id": "tastes",
+      "label": "Readers' tastes are not the brief",
+      "kind": "claim",
+      "summary": "Prioritising what readers click is the path to clickbait; readers pay for a publication's judgment and direction."
+    },
+    {
+      "id": "money",
+      "label": "Paid per use, down the edges",
+      "kind": "claim",
+      "summary": "Beyond retention, ads and licensing: per use, per agent question, per claim to who found it, per citation."
+    },
+    {
+      "id": "seo-geo",
+      "label": "The structure has a value to whoever reads it",
+      "kind": "question",
+      "summary": "Publishers did the indexing work for search engines for free; structuring for AI engines should be priced."
+    },
+    {
+      "id": "start",
+      "label": "Start with one journalist",
+      "kind": "method",
+      "summary": "One topic, one reporter's notebook, one desk, one expert, one extra projection, then liquefy what the next story touches."
+    }
+  ],
+  "edges": [
+    {
+      "from": "water",
+      "to": "liquid-content",
+      "rel": "extends"
+    },
+    {
+      "from": "agree",
+      "to": "liquid-content",
+      "rel": "answers"
+    },
+    {
+      "from": "clay",
+      "to": "water",
+      "rel": "contrasts"
+    },
+    {
+      "from": "water",
+      "to": "method-exists",
+      "rel": "leads-to"
+    },
+    {
+      "from": "method-exists",
+      "to": "desk",
+      "rel": "produces"
+    },
+    {
+      "from": "desk",
+      "to": "writing",
+      "rel": "depends-on"
+    },
+    {
+      "from": "desk",
+      "to": "experts",
+      "rel": "leads-to"
+    },
+    {
+      "from": "is-not",
+      "to": "liquid-content",
+      "rel": "extends"
+    },
+    {
+      "from": "intersection",
+      "to": "is-not",
+      "rel": "example-of"
+    },
+    {
+      "from": "tastes",
+      "to": "writing",
+      "rel": "compared-with"
+    },
+    {
+      "from": "money",
+      "to": "experts",
+      "rel": "depends-on"
+    },
+    {
+      "from": "seo-geo",
+      "to": "money",
+      "rel": "extends"
+    },
+    {
+      "from": "start",
+      "to": "desk",
+      "rel": "depends-on"
+    },
+    {
+      "from": "start",
+      "to": "water",
+      "rel": "produces"
+    }
+  ],
+  "links": {
+    "articles": [
+      "the-bridge-followed-to-the-end",
+      "story-vault-meets-reader-skills",
+      "future-of-news-story-vault-not-paywall",
+      "how-news-got-here",
+      "token-bill-nobody-is-sending",
+      "custom-uis-are-not-the-exception",
+      "introducing-fractal-semantic-graphs",
+      "how-much-of-this-did-i-write"
+    ],
+    "pages": [
+      "demos/vaults/bridge-simulation/index.html"
+    ],
+    "sites": [
+      "https://www.ftstrategies.com/en-gb/insights/liquid-content-demystifying-ai-for-news-publishers"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "If content is to be liquid, it needs water in it, and the water is not the format.",
+      "why": "Where the article departs from the guide: liquidity comes from the reporting, not the product."
+    },
+    {
+      "text": "Part of the skill of a journalist is writing the article, because writing it is how they discover the narrative.",
+      "why": "Why AI should not write everything."
+    },
+    {
+      "text": "Readers' needs should shape the projections. They should not replace the direction.",
+      "why": "The line between personalisation and clickbait."
+    }
+  ]
+}

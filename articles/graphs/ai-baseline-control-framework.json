@@ -1,0 +1,209 @@
+{
+  "slug": "ai-baseline-control-framework",
+  "teaser": "Twenty open AI governance controls under CC BY-SA, why the licence matters, and the same day's conversion into a graph, a database and a walk down to EU law.",
+  "topics": [
+    "graphs-and-knowledge",
+    "agents-and-policy"
+  ],
+  "core_idea": "The AI Baseline Control Framework is a practical, deployer-focused set of twenty AI governance controls in five categories and three types, each with a why and a how and a mapping to the NIST AI RMF, ISO/IEC 42001 and the EU AI Act; its Access category covers what an AI system can reach, which the three it maps to do not; its CC BY-SA licence and CSV export let it be converted on the day into a semantic graph with an ontology, a taxonomy, linked data, documents and a browser database, joined by id to a graph of the AI Act, and walked as a fractal graph from the framework down to a paragraph of law, which surfaced findings the list does not state and kept every addition labelled apart from the source.",
+  "nodes": [
+    {
+      "id": "aibcf",
+      "label": "AI BCF: twenty controls for deployers",
+      "kind": "artefact",
+      "summary": "Five categories, three types, a why and a how per control, mapped to NIST AI RMF, ISO/IEC 42001 and the AI Act; v1.0, 2 October 2026."
+    },
+    {
+      "id": "three-types",
+      "label": "Baseline, Tier II, Trigger",
+      "kind": "concept",
+      "summary": "Trigger controls apply only when a stated condition holds, which keeps the framework proportionate across organisation sizes."
+    },
+    {
+      "id": "access-category",
+      "label": "The Access controls have no equivalent in the three",
+      "kind": "claim",
+      "summary": "AC.1 to AC.4: access reviews, named identities, accountable owners and the access model for AI systems themselves."
+    },
+    {
+      "id": "abp",
+      "label": "Grant, mandate and owner",
+      "kind": "concept",
+      "summary": "The Agent Behaviour Policy's words for what an agent can reach, what it may do, and who answers for it."
+    },
+    {
+      "id": "open-licence",
+      "label": "CC BY-SA 4.0 says yes in advance",
+      "kind": "concept",
+      "summary": "Share and adapt for any purpose with credit, changes indicated and the same licence on what is shared."
+    },
+    {
+      "id": "sharealike",
+      "label": "ShareAlike keeps the tools open",
+      "kind": "claim",
+      "summary": "A framework is worth the tools built on it; ShareAlike keeps shared tools as open as the framework."
+    },
+    {
+      "id": "csv-export",
+      "label": "A CSV export turned a reading into a dataset",
+      "kind": "example",
+      "summary": "One row per control, sources in one column, a URL per control: the input for the whole conversion."
+    },
+    {
+      "id": "conversion",
+      "label": "One CSV in, five shapes out",
+      "kind": "method",
+      "summary": "A deterministic build writes a graph, an ontology, a SKOS taxonomy, JSON-LD and Turtle, eighty documents and a SQLite database."
+    },
+    {
+      "id": "partitions",
+      "label": "Every edge says where it came from",
+      "kind": "method",
+      "summary": "Source, structure, parser-derived, derived-join and overlay, shown in every view so additions are never mistaken for the framework."
+    },
+    {
+      "id": "fractal-walk",
+      "label": "Five altitudes, one grammar",
+      "kind": "example",
+      "summary": "The graph view walks from the framework to a category, a control, a cited clause and the paragraph of the AI Act it resolves to."
+    },
+    {
+      "id": "join-by-id",
+      "label": "Two vaults joined by matching ids",
+      "kind": "method",
+      "summary": "AI Act citations resolve to the Regulation Graph's nodes because both graphs keep the same grammar."
+    },
+    {
+      "id": "law-links",
+      "label": "The law links controls listed separately",
+      "kind": "claim",
+      "summary": "The AI Act's own cross-references connect four pairs of Comply controls by seven paths."
+    },
+    {
+      "id": "amended",
+      "label": "Four cited articles were amended in 2026",
+      "kind": "claim",
+      "summary": "Articles 4, 5, 27 and 50, amended by Regulation (EU) 2026/1744; GV.3, CM.1, CM.2 and CM.4 are the controls to re-read first."
+    },
+    {
+      "id": "browser-db",
+      "label": "SQL and triples in the browser",
+      "kind": "artefact",
+      "summary": "sql.js builds the tables in the page; a triple console asks the same graph from either end through declared inverses."
+    },
+    {
+      "id": "supersede",
+      "label": "If the framework publishes its own graph",
+      "kind": "question",
+      "summary": "It should be authoritative, and this vault should be superseded by it rather than merged into it."
+    }
+  ],
+  "edges": [
+    {
+      "from": "aibcf",
+      "to": "three-types",
+      "rel": "produces"
+    },
+    {
+      "from": "aibcf",
+      "to": "access-category",
+      "rel": "produces"
+    },
+    {
+      "from": "access-category",
+      "to": "abp",
+      "rel": "compared-with"
+    },
+    {
+      "from": "aibcf",
+      "to": "open-licence",
+      "rel": "depends-on"
+    },
+    {
+      "from": "open-licence",
+      "to": "sharealike",
+      "rel": "extends"
+    },
+    {
+      "from": "open-licence",
+      "to": "conversion",
+      "rel": "leads-to"
+    },
+    {
+      "from": "csv-export",
+      "to": "conversion",
+      "rel": "leads-to"
+    },
+    {
+      "from": "conversion",
+      "to": "partitions",
+      "rel": "depends-on"
+    },
+    {
+      "from": "conversion",
+      "to": "browser-db",
+      "rel": "produces"
+    },
+    {
+      "from": "conversion",
+      "to": "fractal-walk",
+      "rel": "produces"
+    },
+    {
+      "from": "fractal-walk",
+      "to": "join-by-id",
+      "rel": "depends-on"
+    },
+    {
+      "from": "join-by-id",
+      "to": "law-links",
+      "rel": "produces"
+    },
+    {
+      "from": "join-by-id",
+      "to": "amended",
+      "rel": "produces"
+    },
+    {
+      "from": "conversion",
+      "to": "access-category",
+      "rel": "answers"
+    },
+    {
+      "from": "partitions",
+      "to": "supersede",
+      "rel": "leads-to"
+    }
+  ],
+  "links": {
+    "articles": [
+      "introducing-fractal-semantic-graphs",
+      "code-review-as-a-fractal-semantic-graph",
+      "six-agents-one-inbox",
+      "the-identity-we-wanted-to-give-the-agents",
+      "where-is-the-why",
+      "every-risk-is-already-accepted"
+    ],
+    "pages": [
+      "demos/vaults/aibcf-graph/index.html",
+      "demos/vaults/regulation-graph/index.html",
+      "demos/vaults/pci-dss-graph/index.html",
+      "demos/vaults/aiuc-1-graph/index.html"
+    ],
+    "sites": [
+      "https://aibcf.org/",
+      "https://creativecommons.org/licenses/by-sa/4.0/",
+      "https://riskmandate.ai/abp.html"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "for now there is only Export as CSV on https://aibcf.org/controls/ on the top right. Good suggestions!",
+      "why": "The framework author's reply, and the input the whole conversion was built from."
+    },
+    {
+      "text": "A licence that permits adaptation in advance means each of those can be built, and shared, without asking.",
+      "why": "Why an open licence matters more for a control framework than for most documents."
+    }
+  ]
+}

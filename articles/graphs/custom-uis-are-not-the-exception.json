@@ -1,0 +1,254 @@
+{
+  "slug": "custom-uis-are-not-the-exception",
+  "teaser": "Every message has a graph, so it can be shaped for the reader's moment; a custom interface per moment is now how interfaces get made, and each gets a policy.",
+  "topics": [
+    "graphs-and-knowledge",
+    "agents-and-policy"
+  ],
+  "core_idea": "Every message has a graph with altitudes, so a message is designed for the recipient's moment rather than the sender's thread; a custom interface per moment is how interfaces now get made, each one commoditising the next, and each is an agent surface that gets a policy.",
+  "nodes": [
+    {
+      "id": "follow-up-problem",
+      "label": "The follow-up problem",
+      "kind": "concept",
+      "summary": "Following up is harder than doing the work, because every person has a different context and the thread you share hides its own structure."
+    },
+    {
+      "id": "message-graph",
+      "label": "Every message has a graph",
+      "kind": "concept",
+      "summary": "Extract the actions, questions, statements, decisions and concepts from every message and a thread stops being a thread and becomes a graph."
+    },
+    {
+      "id": "altitudes",
+      "label": "Altitudes",
+      "kind": "concept",
+      "summary": "There is a graph for the block inside a message, the message, the conversation, the company and the contact, each navigable on its own and pointing up and down."
+    },
+    {
+      "id": "email-is-a-medium",
+      "label": "Email is a medium",
+      "kind": "claim",
+      "summary": "The design brief for a message is the recipient's moment when they open it, not the sender's thread, so send what they need in the shape they need it."
+    },
+    {
+      "id": "projection",
+      "label": "A message is a projection",
+      "kind": "concept",
+      "summary": "A message to a person is a projection of the conversation graph, for one reader, at the moment they open it, and a thread is only the raw stream."
+    },
+    {
+      "id": "wardley-strip",
+      "label": "Genesis, custom, product, commodity",
+      "kind": "concept",
+      "summary": "Everything moves from genesis through custom-built to product to commodity, and every new interface built is a thing commoditised for next time."
+    },
+    {
+      "id": "custom-interfaces-not-the-exception",
+      "label": "Custom interfaces are not the exception",
+      "kind": "claim",
+      "summary": "A custom interface per message, per thread, per topic, per question is not an exception; it is how interfaces get made."
+    },
+    {
+      "id": "drop-page",
+      "label": "The page that is both the to-do and the place to act",
+      "kind": "example",
+      "summary": "A page lists the PDFs still owed and gives a place to drop them, through the vault's append lane, with no context switch, no second tool and no email."
+    },
+    {
+      "id": "append-lane",
+      "label": "Append lane",
+      "kind": "artefact",
+      "summary": "A write-only channel anyone with the token can drop a file into, which the vault's owner drains and processes in order."
+    },
+    {
+      "id": "email-fs-blocks",
+      "label": "Email-FS blocks",
+      "kind": "artefact",
+      "summary": "The fenced decision, answer and status blocks that Email-FS-lite uses so agents can read each other's asks without parsing prose, rendered as an interface for a human."
+    },
+    {
+      "id": "eight-days",
+      "label": "Eight days, not one afternoon",
+      "kind": "example",
+      "summary": "From 25 September to 2 October 2026 a small team of agents and one human went from an empty vault to a working way of doing outreach, with sixteen CRM interface releases and around 230 commits."
+    },
+    {
+      "id": "the-loop",
+      "label": "Every tap teaches the next interface",
+      "kind": "method",
+      "summary": "A moment gets a shape, the shape gets a decision, the decision is written to the vault as a record, and the record shapes the next version of the interface."
+    },
+    {
+      "id": "why-it-compounds",
+      "label": "Why it compounds",
+      "kind": "claim",
+      "summary": "Every interface makes the next one better, each one teaches the agent how its user wants to work, and when automation outgrows the inbox the interface becomes the prioritisation."
+    },
+    {
+      "id": "sender-served-structure",
+      "label": "The future of email",
+      "kind": "claim",
+      "summary": "The future of email is sender-served structure, read by the recipient's agent, with the inbox as one view of the graph, and a plain email still works on day one."
+    },
+    {
+      "id": "agent-team",
+      "label": "Ten agents and one human",
+      "kind": "example",
+      "summary": "Ten agents with narrow jobs and one human who decides, talking to each other in files, each writing only its own folders, six with a written Agent Behaviour Policy."
+    },
+    {
+      "id": "interface-is-an-agent-surface",
+      "label": "An interface is an agent surface, so it gets a policy",
+      "kind": "claim",
+      "summary": "A page that drops files into a vault, answers questions or lets a model read a CRM has a grant, a mandate, a delta and barriers, so it gets a policy like any agent."
+    }
+  ],
+  "edges": [
+    {
+      "from": "follow-up-problem",
+      "to": "message-graph",
+      "rel": "leads-to"
+    },
+    {
+      "from": "altitudes",
+      "to": "message-graph",
+      "rel": "extends"
+    },
+    {
+      "from": "message-graph",
+      "to": "email-is-a-medium",
+      "rel": "leads-to"
+    },
+    {
+      "from": "email-is-a-medium",
+      "to": "projection",
+      "rel": "produces"
+    },
+    {
+      "from": "projection",
+      "to": "altitudes",
+      "rel": "depends-on"
+    },
+    {
+      "from": "custom-interfaces-not-the-exception",
+      "to": "wardley-strip",
+      "rel": "depends-on"
+    },
+    {
+      "from": "projection",
+      "to": "custom-interfaces-not-the-exception",
+      "rel": "leads-to"
+    },
+    {
+      "from": "drop-page",
+      "to": "custom-interfaces-not-the-exception",
+      "rel": "example-of"
+    },
+    {
+      "from": "drop-page",
+      "to": "append-lane",
+      "rel": "depends-on"
+    },
+    {
+      "from": "drop-page",
+      "to": "email-fs-blocks",
+      "rel": "depends-on"
+    },
+    {
+      "from": "eight-days",
+      "to": "drop-page",
+      "rel": "extends"
+    },
+    {
+      "from": "agent-team",
+      "to": "eight-days",
+      "rel": "produces"
+    },
+    {
+      "from": "custom-interfaces-not-the-exception",
+      "to": "why-it-compounds",
+      "rel": "leads-to"
+    },
+    {
+      "from": "the-loop",
+      "to": "why-it-compounds",
+      "rel": "leads-to"
+    },
+    {
+      "from": "why-it-compounds",
+      "to": "follow-up-problem",
+      "rel": "answers"
+    },
+    {
+      "from": "projection",
+      "to": "sender-served-structure",
+      "rel": "leads-to"
+    },
+    {
+      "from": "sender-served-structure",
+      "to": "email-fs-blocks",
+      "rel": "depends-on"
+    },
+    {
+      "from": "sender-served-structure",
+      "to": "altitudes",
+      "rel": "depends-on"
+    },
+    {
+      "from": "agent-team",
+      "to": "interface-is-an-agent-surface",
+      "rel": "leads-to"
+    },
+    {
+      "from": "interface-is-an-agent-surface",
+      "to": "custom-interfaces-not-the-exception",
+      "rel": "extends"
+    }
+  ],
+  "links": {
+    "articles": [
+      "introducing-fractal-semantic-graphs",
+      "six-agents-one-inbox",
+      "future-of-news-story-vault-not-paywall",
+      "connector-twin-before-you-deploy-an-agent",
+      "chat-on-a-static-site",
+      "seven-vaults-one-method",
+      "token-bill-nobody-is-sending",
+      "ultimate-insider-three-collisions"
+    ],
+    "pages": [
+      "/demos/vaults/strategy-maps/index.html",
+      "/api/append-lanes.html",
+      "/docs/append-lane-messaging.html",
+      "/demos/vaults/company-xray/index.html",
+      "/demos/vaults/evidence-dispatch/index.html",
+      "/demos/vaults/board/index.html",
+      "/demos/vaults/voice-debrief/index.html",
+      "/demos/vaults/vault-app-pocs/index.html",
+      "/demos/vaults/deploy-docs/index.html",
+      "/demos/vaults/kit-bag/index.html",
+      "/demos/vaults/agent-webmaster/index.html",
+      "/demos/vaults/risk-mandate/index.html",
+      "/docs/agent-contact.html"
+    ],
+    "sites": [
+      "https://riskmandate.ai/abp.html",
+      "https://riskmandate.ai/",
+      "https://llms.sgit.ai/",
+      "https://graphs.sgit.ai/",
+      "https://twins.sgit.ai/",
+      "https://wardley-maps.sgit.ai/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "Every time I ask an agent in chat for something a page could have shown me, that is the next interface.",
+      "why": "The measurable version of the title: the trigger that produces each custom interface."
+    },
+    {
+      "text": "The graph is the medium. Email, cards, voice and boards are views of it.",
+      "why": "The turn where email stops being the medium and becomes one projection of the graph."
+    }
+  ]
+}

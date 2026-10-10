@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>A link to a persona: send people to the newsroom as someone, not as nobody, sgit.ai</title>
+<meta name="description" content="When I send someone to the newsroom today, they land on a front page made for nobody. I would rather send a CISO to the newsroom as a CISO, a data protection officer as a DPO, a developer as a developer, and one particular person as a persona made for them. This is the brief for doing that with nothing but a link. Personas move out of the site's code into an encrypted vault, opened in the reader's browser with a published read key, so a persona can be added or updated by the newsroom's agents without a single change to the site. A few personas get a page of their own, /persona/ciso/; any number more are reached through the part of the link after the #, which browsers never send to a server; and a persona for one person can live in a vault of its own, readable only by whoever has the link. The reader can follow the persona as it is kept up to date, or fork it and make it theirs. It draws on what Netflix, Bluesky, Mastodon, Apple News and Brave News learned about profiles, starter packs and personalisation on the device, and it stays entirely client side.">
+<link rel="canonical" href="https://newsroom.sgit.ai/articles/a-link-to-a-persona.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="sgit.ai">
+<meta property="og:url" content="https://newsroom.sgit.ai/articles/a-link-to-a-persona.html">
+<meta property="og:title" content="A link to a persona: send people to the newsroom as someone, not as nobody, sgit.ai">
+<meta property="og:description" content="When I send someone to the newsroom today, they land on a front page made for nobody. I would rather send a CISO to the newsroom as a CISO, a data protection officer as a DPO, a developer as a developer, and one particular person as a persona made for them. This is the brief for doing that with nothing but a link. Personas move out of the site's code into an encrypted vault, opened in the reader's browser with a published read key, so a persona can be added or updated by the newsroom's agents without a single change to the site. A few personas get a page of their own, /persona/ciso/; any number more are reached through the part of the link after the #, which browsers never send to a server; and a persona for one person can live in a vault of its own, readable only by whoever has the link. The reader can follow the persona as it is kept up to date, or fork it and make it theirs. It draws on what Netflix, Bluesky, Mastodon, Apple News and Brave News learned about profiles, starter packs and personalisation on the device, and it stays entirely client side.">
+<meta property="og:image" content="https://newsroom.sgit.ai/og/a-link-to-a-persona.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="A link to a persona: send people to the newsroom as someone, not as nobody, sgit.ai">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://newsroom.sgit.ai/og/a-link-to-a-persona.jpg">
+<link rel="alternate" type="text/markdown" href="a-link-to-a-persona.md" title="This page as markdown">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "A link to a persona: send people to the newsroom as someone, not as nobody, sgit.ai", "headline": "A link to a persona: send people to the newsroom as someone, not as nobody, sgit.ai", "description": "When I send someone to the newsroom today, they land on a front page made for nobody. I would rather send a CISO to the newsroom as a CISO, a data protection officer as a DPO, a developer as a developer, and one particular person as a persona made for them. This is the brief for doing that with nothing but a link. Personas move out of the site's code into an encrypted vault, opened in the reader's browser with a published read key, so a persona can be added or updated by the newsroom's agents without a single change to the site. A few personas get a page of their own, /persona/ciso/; any number more are reached through the part of the link after the #, which browsers never send to a server; and a persona for one person can live in a vault of its own, readable only by whoever has the link. The reader can follow the persona as it is kept up to date, or fork it and make it theirs. It draws on what Netflix, Bluesky, Mastodon, Apple News and Brave News learned about profiles, starter packs and personalisation on the device, and it stays entirely client side.", "url": "https://newsroom.sgit.ai/articles/a-link-to-a-persona.html", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "sgit.ai", "url": "https://sgit.ai"}, "about": {"@type": "SoftwareApplication", "name": "sgit", "sameAs": "https://pypi.org/project/sgit-ai/"}, "author": {"@type": "Person", "name": "Dinis Cruz", "url": "https://sgit.ai/about/index.html"}}</script>
+<style>html{background:#faf9f5}body{margin:0;background:#faf9f5;color:#1c1d21;font-family:ui-sans-serif,system-ui,sans-serif;opacity:0;transition:opacity .25s;animation:sg-reveal 0s linear 1.6s forwards}html.ready body{opacity:1;animation:none}@keyframes sg-reveal{to{opacity:1}}</style><noscript><style>body{opacity:1;animation:none}</style></noscript>
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.6.0</a>
+  <sg-meter class="meter-nav" view="balance"></sg-meter>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../articles/index.html#all">Every article</a>
+      <a class="sl" href="../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../account/index.html">Your reading account</a>
+      <a class="sl" href="../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../account/personas.html">Your personas</a>
+      <a class="sl" href="../account/top-up.html">Top up</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../newsroom/board.html">The board</a>
+      <a class="sl" href="../newsroom/log.html">The run log</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../world-news-day/index.html">World News Day<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../world-news-day/index.html">The corpus</a>
+      <a class="sl" href="../world-news-day/stories/free-to-republish-is-not-a-licence.html">Free to republish is not a licence</a>
+      <a class="sl" href="../world-news-day/licences.html">The licence that is not there</a>
+      <a class="sl" href="../world-news-day/corpus.html">The twenty-one</a>
+      <a class="sl" href="../world-news-day/findings.html">The aggregate</a>
+      <a class="sl" href="../world-news-day/terms.html">The vocabulary</a>
+      <a class="sl" href="../world-news-day/graph.html">The graph</a>
+      <a class="sl" href="../world-news-day/sources.html">Sources</a>
+      <a class="sl" href="../world-news-day/contacts.html">How to reach them</a>
+      <a class="sl" href="../world-news-day/vault.html">Published vaults</a>
+      <a class="sl" href="../world-news-day/vaults/corpus.html">The vault, opened</a>
+      <a class="sl" href="../world-news-day/method.html">Method</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../archive/index.html">The archive</a>
+      <a class="sl" href="../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../network/index.html">The network</a>
+      <a class="sl" href="../admin/versions.html">Release history</a>
+      <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom">&#9733; GitHub</a>
+</div></nav>
+
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.6.0</span></a></div>
+<main class="doc">
+ <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / A link to a persona: send people to the newsroom as someone, not as nobody</p>
+ <h1>A link to a persona: send people to the newsroom as someone, not as nobody</h1>
+ <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-10 &middot; <a href="versions/a-link-to-a-persona.html" title="Every published version of this article, and what changed">article v1.0.0</a> &middot; <span class="chip">newsroom</span><span class="chip">personas</span><span class="chip">personalisation</span><span class="chip">vaults</span><span class="chip">local-first</span><span class="chip">privacy</span><span class="chip">onboarding</span><span class="chip">agents</span><span class="chip">brief</span><span class="chip">article</span></p>
+ <p class="abstract"><em><b>Abstract:</b> When I send someone to the newsroom today, they land on a front page made for nobody. I would rather send a CISO to the newsroom as a CISO, a data protection officer as a DPO, a developer as a developer, and one particular person as a persona made for them. This is the brief for doing that with nothing but a link. Personas move out of the site's code into an encrypted vault, opened in the reader's browser with a published read key, so a persona can be added or updated by the newsroom's agents without a single change to the site. A few personas get a page of their own, /persona/ciso/; any number more are reached through the part of the link after the #, which browsers never send to a server; and a persona for one person can live in a vault of its own, readable only by whoever has the link. The reader can follow the persona as it is kept up to date, or fork it and make it theirs. It draws on what Netflix, Bluesky, Mastodon, Apple News and Brave News learned about profiles, starter packs and personalisation on the device, and it stays entirely client side.</em></p>
+<figure class="shot" data-shot="pl-flow.webp" data-dir="images/" data-alt="A link to a persona: the newsroom&#x27;s agents keep personas in a vault; a link names one; the reader&#x27;s browser opens the vault with a read key, shows the newsroom as that persona, and lets the reader follow it or make it their own."><figcaption>A link to a persona: the newsroom's agents keep personas in a vault; a link names one; the reader's browser opens the vault with a read key, shows the newsroom as that persona, and lets the reader follow it or make it their own.</figcaption></figure>
+<h2>In short</h2>
+<ul>
+<li><b>A link should land someone as someone.</b> Instead of the front page, send a CISO to the newsroom as a CISO, a DPO as a DPO, or one person as a persona made for them.</li>
+<li><b>Personas move into a vault.</b> Not the site's code. The newsroom's agents add and update them in an encrypted vault; the reader's browser opens it with a published read key. No change to the site, no git push, for any persona.</li>
+<li><b>Three kinds of link.</b> A page of its own for the few personas everyone uses (<code>/persona/ciso/</code>); a fragment for any number more (<code>/persona/#dpo</code>); and a private persona in its own vault, readable only by whoever holds the link.</li>
+<li><b>Follow or fork.</b> A visitor can keep the persona as it is kept up to date, or copy it and make it their own, with their reading on top.</li>
+<li><b>Kept by the newsroom.</b> Every article published and every newsletter issued updates the personas it belongs to. A persona is a curated, living reading list.</li>
+<li><b>All client side.</b> GitHub Pages serves the files, the vault host stores ciphertext it cannot read, and everything else happens in the reader's browser.</li>
+</ul>
+<h2>Landing as nobody</h2>
+<p>When I email someone about an article, I link to the article. When I want them to look around, I link to the front page, and they land on a page made for nobody in particular: the latest articles, whatever the editor put at the top, sixty-odd pieces across six topics. Some of it is exactly what they would want and most of it is not, and they have no way to know which is which.</p>
+<p>The personas that went live today fix that for a reader who stays: <a href="pay-to-keep-your-persona.html">pay to keep your persona</a> described how a reader's own reading builds a persona, and how five starting personas, from the founder to the board member, give a new reader somewhere to begin. But a starting persona still has to be found and chosen. The better move is for the person who sends the link to choose it: I know I am writing to a CISO, so the link should open the newsroom as a CISO.</p>
+<h2>Three kinds of link</h2>
+<p><b>A page of its own, for the personas everyone uses.</b> <code>/persona/ciso/</code>, <code>/persona/cto/</code>, <code>/persona/dpo/</code>, <code>/persona/sgit-developer/</code>. Each is a tiny static page that knows one name. What the persona contains, its topics, its articles, its description, is not in the page; it is fetched from the vault when the page opens. So the page is created once, and the persona behind it can change every day without touching the site.</p>
+<p><b>A fragment, for any number more.</b> The site is static pages on GitHub Pages, so there is no server to answer <code>/persona/owasp-chapter-leader/</code> unless a page exists at that path. The fragment solves it: <code>/persona/#owasp-chapter-leader</code>. The page at <code>/persona/</code> reads the name after the <code>#</code>, looks it up in the vault, and opens the newsroom as that persona. With no fragment, it asks which persona you would like. A new persona is a new file in the vault, and its link works the moment the vault is pushed.</p>
+<p><b>A private persona, for one person.</b> A persona made for one person, from what I know about them or from the reading they sent us, should not sit in a public vault where anyone can see that it exists. It can live in a vault of its own, and the link carries what is needed to open it: <code>/persona/#v=&lt;vault id&gt;&amp;k=&lt;read key&gt;&amp;p=&lt;name&gt;</code>. That works because of how fragments are defined. RFC 3986 says "the fragment identifier is separated from the rest of the URI prior to a dereference" and is "dereferenced solely by the user agent, regardless of the URI scheme": the browser keeps it, and GitHub Pages never sees it. The vault host sees a request for some ciphertext from that vault, and nothing it can read. Whoever has the link can open the persona; whoever does not, cannot, and cannot find out it exists.</p>
+<h2>What happens when the link opens</h2>
+<ol>
+<li><b>The page shows who you are reading as</b>: the persona's name, its description, who keeps it and when it was last updated. "You are reading as Sam, the security lead, kept by the SGit Newsroom, updated 10 October."</li>
+<li><b>The newsroom opens as that persona</b>: its picks, its reading list, its graph, the same views <a href="../account/newsroom.html">your newsroom</a> has today.</li>
+<li><b>The persona is added to the reader's personas straight away, as a visitor</b>, marked as one, because removing it is one tap and asking first is one more step between the link and the reading. It becomes the active persona while they are on the page.</li>
+<li><b>Then the reader chooses what it is.</b> <em>Follow</em> keeps it linked to the vault, so the next visit brings the latest version. <em>Make it mine</em> forks it: a copy that starts from the curated version and from then on moves with their own reading, their own Keep and Not for this persona, and their own ratings. <em>Remove</em> takes it away and leaves their history untouched.</li>
+</ol>
+<p>Follow and fork are the two halves of the design, and they come straight from git: a persona is a reading list with a history, and you either track the upstream or branch from it.</p>
+<h2>The vault, and who keeps it</h2>
+<p>The personas live in an sgit vault: encrypted before upload, versioned like git, opened in the browser with a read key that cannot write. This site already opens thirty-odd vaults that way, with nothing but an endpoint, a vault id and a read key, using the reader the site has had for months in <code>assets/vault-docs.js</code>. A persona vault is one more.</p>
+<pre class="shell">
+personas/
+  index.json          the listed personas: id, label, name, theme, one line, updated
+  ciso.json           one persona
+  dpo.json
+  sgit-developer.json
+  ...
+  changes.jsonl       one line per update: which persona, what changed, why, by which role
+</pre>
+<p>A persona file is what the <a href="../account/personas.html">five starting personas</a> already are, plus what a living persona needs: who keeps it, when it changed, and a version.</p>
+<pre class="shell">
+{ "id": "ciso", "label": "The CISO", "name": "Sam", "theme": "#b91c1c",
+  "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents.",
+  "topics": { "agents-and-policy": 3, "vaults-and-method": 1 },
+  "articles": ["who-are-you-protecting-against", "footprint-and-blast-radius", "..."],
+  "tags": ["threat-modelling", "insider-threat", "blast-radius"],
+  "keeper": "SGit Newsroom", "updated": "2026-10-10", "version": 7, "listed": true }
+</pre>
+<p><b>The newsroom's agents keep it.</b> The newsroom already runs as a desk of roles with behaviour policies: an editor who places, a journalist who writes, a historian who connects, a designer and a developer. Keeping personas is one more job on the desk. Every time an article is published, the persona keeper reads its graph and adds it to the personas it belongs to; every newsletter issue is a reason to review the lead articles of each; and every reading history a reader sends us through <a href="../account/share.html">the share page</a> is a chance to see whether a persona matches the people it is meant for. Each change is a vault commit, with a line in <code>changes.jsonl</code> saying what changed and why.</p>
+<p><b>No git push to the site.</b> This is the point of putting personas in a vault rather than in the site's code. Adding or changing a persona is an <code>sgit commit</code> and an <code>sgit push</code> to the vault, done by the agent that owns it, without a release of the website, a build, or a deploy. The site's code knows only the vault's id and read key, which are public on purpose.</p>
+<p><b>More than articles, later.</b> A persona can carry more than links to the site's own articles: a short list of outside reading, industry developments, security news that matters to a CISO this week, each with its source. The same vault, the same keeper, and the same persona page show them. That is how a newsroom with sixty articles can serve a dozen audiences well without writing a dozen times as much.</p>
+<h2>What others learned, and what it means here</h2>
+<p><b>Netflix, 2013: profiles.</b> Netflix launched Profiles on 1 August 2013, up to five per account, so that each person in a household got their own suggestions instead of the account holder's. The Christian Science Monitor put it simply: "Now Netflix subscribers can create as many as five different profiles within a single account." The lesson for us is the one in <a href="pay-to-keep-your-persona.html">pay to keep your persona</a>: people do want several, one per way they watch or read, and they have to be simple to make and to switch.</p>
+<p><b>Bluesky, 2024: starter packs.</b> Bluesky's starter packs, launched on 26 June 2024, are, in its words, "personalized invites that allow you to bring friends directly into your slice of Bluesky!" Each holds up to 150 people and three custom feeds, has its own link, and someone without an account can "join via a friend's starter pack and get started with their recommended customizations", then add or remove them. That is the closest thing to a link to a persona that anyone has shipped at scale, and two things carry over: the link is the onboarding, and what the link sets up belongs to the newcomer afterwards. The difference is in time. A starter pack is a one-off list; a custom feed is ongoing. Our follow and fork are those two, for the same object.</p>
+<p><b>Mastodon: follow packs, and consent.</b> On Mastodon, community "follow packs" were CSV files of up to 35 accounts that a user downloaded and imported, and the project has announced a native version whose people can opt out of being included and are told when they are. For us the consent question is sharper, because a persona can be made for, or named after, a real person. A persona about a person goes in a private vault and is sent only to them; a public persona describes a role, never a named individual, unless they have agreed.</p>
+<p><b>Apple News and Brave News: personalisation on the device.</b> Apple's privacy page for News says "Recommendations in Apple News are made based on the information stored on your device", and that it uses iCloud to sync a reader's history across their devices. Brave says of Brave News: "All the learning and personalization happens exclusively in your browser." Both still run servers to deliver the content, and Apple runs one to sync. The direction is the same as ours; the difference is who holds the copy that travels between devices. Here the content is static files and the personas are ciphertext; the only thing a server holds that a reader chose is nothing at all, until we offer to keep their personas in a vault of their own, which is the thing <a href="pay-to-keep-your-persona.html">worth paying for</a>.</p>
+<p><b>Personas as a design tool.</b> In product design, a persona has for a long time meant a fictional user that a team designs for. This turns it inside out: the persona is not a description the team keeps in a slide; it is a reading list the reader wears, and can change.</p>
+<h2>Risks, and how the design answers them</h2>
+<ul>
+<li><b>A persona that reveals someone.</b> "Jane at Acme, interested in leaving her vendor" in a public vault is a leak. Personas about people go in private vaults, sent to them; public personas are roles.</li>
+<li><b>A link that is forwarded.</b> Anyone with a private persona link can open it. That is the nature of a link, and the same as forwarding the email; the persona holds reading suggestions, not secrets. Do not put anything in a persona that the recipient would mind being forwarded.</li>
+<li><b>A persona from somewhere else.</b> A private link can point at any vault. The page says plainly where the persona came from, and marks any vault that is not the newsroom's own, so a forged persona cannot pass itself off as ours.</li>
+<li><b>A stale persona.</b> Every persona shows when it was last updated and by whom, and the keeper's policy says how often each is reviewed.</li>
+<li><b>Not knowing whether it works.</b> There is no analytics, by design. What we will know is what readers choose to send through the share page, and whether people we send persona links to write back. That is enough for this stage.</li>
+</ul>
+<h2>How to build it</h2>
+<ol>
+<li><b>The vault.</b> Create the persona vault, publish its read key, put the five existing starting personas in it with the schema above, and keep a copy in the site as a fallback for when the vault host cannot be reached. The vault key goes to the key registry through the <a href="https://sgit.ai/docs/send-a-vault-key.html">send a vault key</a> flow, never into a chat.</li>
+<li><b>The pages.</b> <code>/persona/</code> with the fragment, and a page of its own for each listed persona; both read the vault in the browser.</li>
+<li><b>Follow, fork and remove</b>, in the next version of <a href="../meter/index.html">SG Meter</a>: a visiting persona, a followed persona that refreshes from the vault, and a forked one that is the reader's own.</li>
+<li><b>The keeper.</b> A newsroom role with a behaviour policy: what it may change, how it records each change, and what it must never put in a public persona.</li>
+<li><b>Private personas.</b> The <code>v</code>, <code>k</code> and <code>p</code> fragment, a vault per recipient, and the plain statement of where the persona came from.</li>
+<li><b>Beyond articles.</b> Outside reading, with sources, carried by the persona.</li>
+</ol>
+<p>It should be built where the newsroom is going: <a href="https://sgit.ai/docs/briefs/newsroom-move-to-newsroom-sgit-ai.html">newsroom.sgit.ai</a>, as the step after the reader account has moved. The vault and the schema can be made first, because they do not depend on which site reads them.</p>
+<h2>Why this matters beyond a link</h2>
+<p>It turns every introduction into a better first visit, and it gives the newsroom a reason to write for more audiences than it has articles: the persona keeper decides what a CISO should read this week from everything published, and the CISO gets that, from a link, with nothing installed and no account. It is also a demonstration of the thing the site is about. Content that changes without a deploy, shared with exactly the people who hold the key, opened and decrypted in their browser, and kept by agents whose every change is a commit anyone with the key can read.</p>
+<hr>
+<p><em>Written from a voice note by Dinis Cruz, who is the author of the idea and has editorial responsibility, by a Claude Code session working as the sgit.ai newsroom, on 10 October 2026. Sources: RFC 3986, section 3.5; Bluesky's announcement of starter packs, 26 June 2024, and its FAQ; the Christian Science Monitor on Netflix Profiles, 1 August 2013; the Mastodon Migration blog's follow packs and coverage of Mastodon's announced Packs; Apple's privacy page for Apple News; Brave's page for Brave News. Apple's and Brave's descriptions of their own products are their claims, not independent audits.</em></p>
+<sg-meter view="page" kind="article" date="2026-10-10" topics="startups-and-strategy vaults-and-method" title="A link to a persona: send people to the newsroom as someone, not as nobody, sgit.ai"></sg-meter>
+<section class="athreads" id="threads">
+ <h2>Threads</h2>
+ <p class="athreads-meta"><span class="tchip">Startups &amp; strategy</span><span class="tchip">Vaults &amp; method</span> <a href="graphs.html#a-link-to-a-persona">This article as a graph &rarr;</a></p>
+ <div class="athreads-cols"><div><h3>Builds on</h3><ul><li><a href="pay-to-keep-your-persona.html">Pay to keep your persona: readers should pay because it helps them, not because they feel they should</a> <span class="dim">Readers should pay because it helps them: a persona with a name and a graph, several for focus, and one that follows you between devices.</span></li></ul></div></div>
+ <p class="small dim"><a href="index.html">All articles</a> &middot; <a href="graphs.html">All graphs</a></p>
+</section>
+<aside class="lkit" aria-label="For LinkedIn"><b>Posting this article on LinkedIn?</b> The cover is <a href="banners/a-link-to-a-persona.jpg" download>a-link-to-a-persona.jpg</a> (1920&times;1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page.</aside>
+ <p class="subteaser"><b>Want the next issue by email.</b> One issue a week or so: what was published, what it adds up to, and what is worth your time. <a class="cta2" href="../subscribe/index.html">Subscribe to the SGit Newsroom &rarr;</a></p>
+ <p class="small dim" style="margin-top:2rem"><a href="index.html">&larr; All articles</a></p>
+</main>
+<script>
+(function () {
+ fetch('../assets/shots.js?v=v0.7.39')
+ .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+ .then(function (t) { (0, eval)(t); })
+ .catch(function (e) { console.error('[shots] component failed to load:', e); });
+}());
+</script>
+<script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": ""}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
+<script>
+import('../assets/components/sg-meter/v1/v1.3/v1.3.1/sg-meter.js?v=v0.7.39')
+ .catch(function (e) { console.error('[sg-meter] component failed to load:', e); });
+</script>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="netline"><a href="https://sgit.ai" style="display:inline;padding:0"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://pt.newsroom.sgit.ai" style="display:inline;padding:0">&#8593; pt.newsroom.sgit.ai</a> &middot; <a href="https://graphs.sgit.ai" style="display:inline;padding:0">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai" style="display:inline;padding:0">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai" style="display:inline;padding:0">&#8593; nhi.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai" style="display:inline;padding:0">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../admin/versions.html">v0.6.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="a-link-to-a-persona.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../index.html">&#8594; The front page</a>
+    <a href="../articles/index.html#all">Every article</a>
+    <a href="../articles/newsletter/index.html">The newsletter</a>
+    <a href="../articles/collections/index.html">Collections</a>
+    <a href="../articles/desk/index.html">From the desk</a>
+    <a href="../articles/graphs.html">As graphs</a>
+    <a href="../subscribe/index.html">Subscribe</a>
+    <a href="../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../account/index.html">Your reading account</a>
+    <a href="../account/newsroom.html">Your newsroom</a>
+    <a href="../account/personas.html">Your personas</a>
+    <a href="../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../newsroom/index.html">How the newsroom runs</a>
+    <a href="../newsroom/policies.html">Behaviour policies</a>
+    <a href="../newsroom/publish.html">How to publish</a>
+    <a href="../newsroom/board.html">The board</a>
+    <a href="../newsroom/log.html">The run log</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../design/index.html">The design, and what runs</a>
+    <a href="../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../corrections/index.html">Corrections must propagate</a>
+    <a href="../provenance/index.html">Provenance is the product</a>
+    <a href="../economics/index.html">Paying the fact creator</a>
+    <a href="../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../replicate/index.html">Replicate this newsroom</a>
+    <a href="../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../archive/index.html">The archive</a>
+    <a href="../network/index.html">The network</a>
+    <a href="../admin/versions.html">Release history</a>
+    <a href="../admin/index.html">Admin &amp; engineering</a>
+    <a href="../about/participant.html">Where we lose</a>
+    <a href="../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+
+<script>
+(function(){var R=document.documentElement.getAttribute('data-root')||'';var V='?v=' + 'v0.7.39';var C=[R,'','../','/'].filter(function(v,i,a){return a.indexOf(v)===i});
+function wait(ms){return new Promise(function(res){var t=Date.now();(function p(){if(window.sg)return res(window.sg);if(Date.now()-t>ms)return res(null);setTimeout(p,60)})()})}
+function grab(sg,p){return new Promise(function(res){(async function(){if(sg&&sg.vfs&&sg.vfs.readText){try{var t=await sg.vfs.readText(p);if(t)return res(t)}catch(e){}}try{var r=await fetch(p+V);if(r.ok)return res(await r.text())}catch(e){}res(null)})()})}
+async function css(sg){for(var i=0;i<C.length;i++){var p=C[i]+'assets/newsroom.css';if(sg&&sg.loadCss){try{await sg.loadCss(p);return}catch(e){}}var t=await grab(sg,p);if(t){var s=document.createElement('style');s.textContent=t;document.head.appendChild(s);return}}}
+async function js(sg,name){name=name||'assets/site.js';for(var i=0;i<C.length;i++){var p=C[i]+name;if(sg&&sg.loadJs){try{await sg.loadJs(p);return}catch(e){}}var t=await grab(sg,p);if(t){try{(0,eval)(t)}catch(e){console.error('[site] js failed',name,e)}return}}}
+async function boot(){var inVault=false;try{inVault=(window!==window.parent)||location.protocol==='blob:'}catch(e){inVault=true}
+var sg=inVault?await wait(2500):null;window.__sgitBoot={roots:C,grab:function(p){return grab(sg,p)},version:V};await css(sg);await js(sg);document.documentElement.classList.add('ready');try{window.parent&&window.parent.postMessage({type:'sg-app-ready'},'*')}catch(e){}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+var mine=V.slice(3),last=0;
+function fresh(){if(location.hostname!=='sgit.ai'||Date.now()-last<60000)return;last=Date.now();
+fetch('/version.txt?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(t){t=(t||'').trim();if(!/^v[0-9]+[.][0-9]+[.][0-9]+$/.test(t)||t===mine)return;
+var k='sgit.fresh:'+location.pathname;try{if(sessionStorage.getItem(k)===t)return;sessionStorage.setItem(k,t)}catch(e){}
+var u=new URL(location.href);u.searchParams.set('v',t);location.replace(u.href)}).catch(function(){})}
+try{var u=new URL(location.href);if(u.searchParams.get('v')===mine){u.searchParams.delete('v');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}
+fresh();addEventListener('pageshow',function(e){if(e.persisted){last=0;fresh()}});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')fresh()});
+})();
+</script>
+</body>
+</html>

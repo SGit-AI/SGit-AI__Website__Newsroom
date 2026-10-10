@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Before you give an agent a connector, give the connector a twin, sgit.ai</title>
+<meta name="description" content="When an AI agent is given a Gmail or Google Calendar connector, it can read, send, move, decline and permanently delete on somebody's behalf, and for several of those actions the platform itself documents that there is no way back. This article argues that a twin of the connector is the minimum requirement for deploying an agent with confidence. The twin is a journal of every request and response the agent makes, appended as it happens to a write-only lane, processed later, and replayed into the inbox and calendar as the agent saw them, with a before and after for every change and a revert plan for each one. It gives provenance, explanation and a named list of what can and cannot be undone, and it changes the agent's behaviour policy from a hope into a list. Every claim about Gmail and Calendar is taken from Google's own documentation and linked. A working replay of an invented session, and a business plan for the service, are published alongside it as a vault.">
+<link rel="canonical" href="https://newsroom.sgit.ai/articles/connector-twin-before-you-deploy-an-agent.html">
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="sgit.ai">
+<meta property="og:url" content="https://newsroom.sgit.ai/articles/connector-twin-before-you-deploy-an-agent.html">
+<meta property="og:title" content="Before you give an agent a connector, give the connector a twin, sgit.ai">
+<meta property="og:description" content="When an AI agent is given a Gmail or Google Calendar connector, it can read, send, move, decline and permanently delete on somebody's behalf, and for several of those actions the platform itself documents that there is no way back. This article argues that a twin of the connector is the minimum requirement for deploying an agent with confidence. The twin is a journal of every request and response the agent makes, appended as it happens to a write-only lane, processed later, and replayed into the inbox and calendar as the agent saw them, with a before and after for every change and a revert plan for each one. It gives provenance, explanation and a named list of what can and cannot be undone, and it changes the agent's behaviour policy from a hope into a list. Every claim about Gmail and Calendar is taken from Google's own documentation and linked. A working replay of an invented session, and a business plan for the service, are published alongside it as a vault.">
+<meta property="og:image" content="https://newsroom.sgit.ai/og/connector-twin-before-you-deploy-an-agent.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Before you give an agent a connector, give the connector a twin, sgit.ai">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://newsroom.sgit.ai/og/connector-twin-before-you-deploy-an-agent.jpg">
+<link rel="alternate" type="text/markdown" href="connector-twin-before-you-deploy-an-agent.md" title="This page as markdown">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Before you give an agent a connector, give the connector a twin, sgit.ai", "headline": "Before you give an agent a connector, give the connector a twin, sgit.ai", "description": "When an AI agent is given a Gmail or Google Calendar connector, it can read, send, move, decline and permanently delete on somebody's behalf, and for several of those actions the platform itself documents that there is no way back. This article argues that a twin of the connector is the minimum requirement for deploying an agent with confidence. The twin is a journal of every request and response the agent makes, appended as it happens to a write-only lane, processed later, and replayed into the inbox and calendar as the agent saw them, with a before and after for every change and a revert plan for each one. It gives provenance, explanation and a named list of what can and cannot be undone, and it changes the agent's behaviour policy from a hope into a list. Every claim about Gmail and Calendar is taken from Google's own documentation and linked. A working replay of an invented session, and a business plan for the service, are published alongside it as a vault.", "url": "https://newsroom.sgit.ai/articles/connector-twin-before-you-deploy-an-agent.html", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "sgit.ai", "url": "https://sgit.ai"}, "about": {"@type": "SoftwareApplication", "name": "sgit", "sameAs": "https://pypi.org/project/sgit-ai/"}, "author": {"@type": "Person", "name": "Dinis Cruz", "url": "https://sgit.ai/about/index.html"}, "license": "https://creativecommons.org/licenses/by/4.0/"}</script>
+<style>html{background:#faf9f5}body{margin:0;background:#faf9f5;color:#1c1d21;font-family:ui-sans-serif,system-ui,sans-serif;opacity:0;transition:opacity .25s;animation:sg-reveal 0s linear 1.6s forwards}html.ready body{opacity:1;animation:none}@keyframes sg-reveal{to{opacity:1}}</style><noscript><style>body{opacity:1;animation:none}</style></noscript>
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.6.0</a>
+  <sg-meter class="meter-nav" view="balance"></sg-meter>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../articles/index.html#all">Every article</a>
+      <a class="sl" href="../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../account/index.html">Your reading account</a>
+      <a class="sl" href="../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../account/personas.html">Your personas</a>
+      <a class="sl" href="../account/top-up.html">Top up</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../newsroom/board.html">The board</a>
+      <a class="sl" href="../newsroom/log.html">The run log</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../world-news-day/index.html">World News Day<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../world-news-day/index.html">The corpus</a>
+      <a class="sl" href="../world-news-day/stories/free-to-republish-is-not-a-licence.html">Free to republish is not a licence</a>
+      <a class="sl" href="../world-news-day/licences.html">The licence that is not there</a>
+      <a class="sl" href="../world-news-day/corpus.html">The twenty-one</a>
+      <a class="sl" href="../world-news-day/findings.html">The aggregate</a>
+      <a class="sl" href="../world-news-day/terms.html">The vocabulary</a>
+      <a class="sl" href="../world-news-day/graph.html">The graph</a>
+      <a class="sl" href="../world-news-day/sources.html">Sources</a>
+      <a class="sl" href="../world-news-day/contacts.html">How to reach them</a>
+      <a class="sl" href="../world-news-day/vault.html">Published vaults</a>
+      <a class="sl" href="../world-news-day/vaults/corpus.html">The vault, opened</a>
+      <a class="sl" href="../world-news-day/method.html">Method</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../archive/index.html">The archive</a>
+      <a class="sl" href="../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../network/index.html">The network</a>
+      <a class="sl" href="../admin/versions.html">Release history</a>
+      <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom">&#9733; GitHub</a>
+</div></nav>
+
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.6.0</span></a></div>
+<main class="doc">
+ <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / Before you give an agent a connector, give the connector a twin</p>
+ <h1>Before you give an agent a connector, give the connector a twin</h1>
+ <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-09-24 &middot; <a href="versions/connector-twin-before-you-deploy-an-agent.html" title="Every published version of this article, and what changed">article v1.1.1, 3 versions</a> &middot; <a href="https://sgit.ai/admin/versions.html" title="The site release it was published in">site v0.6.3</a> &middot; <span class="chip">agents</span><span class="chip">connectors</span><span class="chip">digital-twins</span><span class="chip">provenance</span><span class="chip">risk</span><span class="chip">riskmandate</span><span class="chip">article</span></p>
+ <p class="abstract"><em><b>Abstract:</b> When an AI agent is given a Gmail or Google Calendar connector, it can read, send, move, decline and permanently delete on somebody's behalf, and for several of those actions the platform itself documents that there is no way back. This article argues that a twin of the connector is the minimum requirement for deploying an agent with confidence. The twin is a journal of every request and response the agent makes, appended as it happens to a write-only lane, processed later, and replayed into the inbox and calendar as the agent saw them, with a before and after for every change and a revert plan for each one. It gives provenance, explanation and a named list of what can and cannot be undone, and it changes the agent's behaviour policy from a hope into a list. Every claim about Gmail and Calendar is taken from Google's own documentation and linked. A working replay of an invented session, and a business plan for the service, are published alongside it as a vault.</em></p>
+<figure class="shot" data-shot="connector-twin-pipeline.webp" data-dir="images/" data-alt="A twin of the connector. Every call the agent makes is copied, request and response, into an append-only journal in a vault. The journal is processed later and replayed into the inbox and calendar as the agent saw them, with a before and after for every change, and a revert plan that a person approves."><figcaption>A twin of the connector. Every call the agent makes is copied, request and response, into an append-only journal in a vault. The journal is processed later and replayed into the inbox and calendar as the agent saw them, with a before and after for every change, and a revert plan that a person approves.</figcaption></figure>
+<p>Here is the claim, stated so it can be wrong. <b>If you cannot say what your agent did, what it saw when it did it, and which of its actions you can undo, you are not ready to give it a connector.</b> Answering those three questions takes a twin of the connector: a journal of every request and response, and a replay of that journal into the views the agent saw. It is not exotic. Everything it needs exists today.</p>
+<h2>In short</h2>
+<ul>
+<li><b>A connector is a grant of action, not just of access.</b> An agent with Gmail and Calendar connectors can send, archive, trash, permanently delete, move events, decline invitations and cancel meetings, on somebody's behalf, at machine speed.</li>
+<li><b>For several of those actions the platform keeps no way back, and says so.</b> The Gmail API documents its delete as permanent: "This operation cannot be undone." Undo Send is a feature of the Gmail interface, not of the API. A moved calendar event has no version history a user can open. These are Google's own statements, linked below.</li>
+<li><b>What the platform does keep is not what you need.</b> Trash windows, an administrator's bulk restore and audit logs record that things happened. None of them records what the agent saw when it decided to act, or why.</li>
+<li><b>The twin is a journal plus a replay.</b> Capture the request and the response of every connector call, and the instruction behind it when you can. Append each entry to a write-only lane. Process the lane later. Rebuild the inbox and the calendar as the agent saw them at each step.</li>
+<li><b>It scales because it is not a copy of the mailbox.</b> It holds only what passed through the connector, which is exactly what matters for accountability and investigation.</li>
+<li><b>Undo becomes a list, not a promise.</b> For every change the twin holds the before and the after, so it can write the inverse call, and name plainly the things nobody can undo, such as an email that has been delivered.</li>
+<li><b>It changes the agent's behaviour policy.</b> "We cannot undo it" stops being an unknown and becomes a named list, and the mandate can be written against that list.</li>
+<li><b>Nothing here needs new technology.</b> Vault append lanes, client-side encryption and vault apps that rebuild views all exist. The one thing that needs more thought is when the journal gets processed, and that needs real users more than it needs design.</li>
+<li><b>It is published twice.</b> This article makes the case. <a href="https://sgit.ai/demos/vaults/connector-twin/index.html">Connector Twin</a> is a vault with a working replay of an invented session and a business plan for somebody to build the service.</li>
+</ul>
+<h2>The question nobody can answer yet</h2>
+<p>Ask anyone who has switched on an assistant's Gmail or Calendar connector a simple question: do you know what it did last Tuesday?</p>
+<p>The honest answer is usually the agent's own summary. It said it tidied the inbox and sorted out next week. Perhaps the chat was kept. Perhaps not. The inbox has moved on since, and the calendar shows the result of the changes, not the changes. If something went wrong, the first person to notice is often the one on the other end: the supplier who received a cancellation, the client whose reply never came.</p>
+<p>That is not a criticism of agents. It is what happens when a system that can act is deployed without a record of its actions. We would not accept it for a person with delegated access to a finance system, and we would not accept it for a script with production credentials. We are accepting it for agents because the connector made the grant feel like a feature.</p>
+<h2>What the platform keeps, stated precisely</h2>
+<p>It matters to be exact here, because the case is made by facts, not by fear. This is what Google documents for Gmail and Calendar, checked on 24 September 2026.</p>
+<div class="tablewrap"><table>
+<tr><th>Action</th><th>What Google documents</th><th>Source</th></tr>
+<tr><td>Move a message to trash</td><td>Kept for 30 days: "After 30 days: The message is permanently deleted. You can't recover the message."</td><td><a href="https://support.google.com/mail/answer/7401">Gmail Help</a></td></tr>
+<tr><td>Delete a message through the API</td><td>"Immediately and permanently deletes the specified message. This operation cannot be undone. Prefer messages.trash instead."</td><td><a href="https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.messages/delete">Gmail API</a></td></tr>
+<tr><td>Recover permanently deleted email</td><td>An administrator can restore a date range within 25 days, in bulk.</td><td><a href="https://knowledge.workspace.google.com/admin/support/troubleshooting/restore-a-users-permanently-deleted-email">Workspace Admin Help</a></td></tr>
+<tr><td>Unsend an email</td><td>A cancellation period of 5 to 30 seconds, set in Gmail's settings. An API send has no such window.</td><td><a href="https://support.google.com/mail/answer/2819488">Gmail Help</a></td></tr>
+<tr><td>Delete a calendar event</td><td>Deleted events stay in the calendar's trash for 30 days.</td><td><a href="https://support.google.com/calendar/answer/37113">Calendar Help</a></td></tr>
+<tr><td>Edit a calendar event</td><td>No version history a user can open. Administrators have an audit log recording changes, including some earlier values such as the old title and times.</td><td><a href="https://knowledge.workspace.google.com/admin/reports/calendar-log-events">Workspace Admin Help</a></td></tr>
+<tr><td>Google Vault</td><td>Searches Calendar since November 2023, keeping the last revision of each day. "Vault isn't designed to be a backup or archive tool", and "doesn't have any automated recovery tools."</td><td><a href="https://knowledge.workspace.google.com/vault/search/use-vault-to-search-google-calendar">Vault Help</a>, <a href="https://knowledge.workspace.google.com/vault/getting-started/google-vault-faq">Vault FAQ</a></td></tr>
+</table></div>
+<p>Read the table the other way round and it says this. There is a real undo for some actions, with a deadline. There is a slow, organisation-wide recovery for one, with a shorter deadline. There is a record without a restore for others, available to administrators on some editions. And there is nothing at all for a delivered email, a notification sent to attendees, or a permanent delete once the administrator's window has passed. None of these records holds what the agent was looking at when it acted, or the instruction it was following.</p>
+<p>This is not a failing of Google. These are sensible products designed for people clicking buttons, with an undo toast for the mistake you notice immediately. An agent does not notice. It makes forty calls in two minutes and writes a tidy summary.</p>
+<h2>Twin, not backup, log or replay</h2>
+<p>I went back and forth on the word for this, and the choice is worth explaining.</p>
+<p><b>Backup</b> is the wrong word, because a backup copies the mailbox. That is a different product, and customers who need it should buy it. <b>Log</b> is too small, because a log records that something happened, and what we need is the content of the exchange. <b>Replay</b> is the right verb for what you do with it, but not a name for the thing.</p>
+<p><b>Twin</b> is right, in the sense we use it on <a href="https://twins.sgit.ai/">twins.sgit.ai</a>: <em>a digital twin is an interface to reality, not a simulation of it</em>, a system with properties, behaviours, functions, inputs and outputs, valued for its connection to the real thing rather than for its fidelity. A connector twin narrows that to one place, the boundary between an agent and the system it is allowed to act on. It holds what the agent could do, what it did, and, rebuilt from those, what it saw.</p>
+<h2>How it works</h2>
+<p>Five steps, and each one is something we already run somewhere.</p>
+<p><b>Capture.</b> For every connector call, copy the tool call the agent made, the request the connector sent to the platform, and the response it received. Connectors built on the Model Context Protocol exchange JSON-RPC messages, so every call and every result is already a JSON document that can be copied as it passes. When you can, capture the instruction behind the call as well: the user's request, and the agent's own statement of what it did. Never capture the Authorization header or any token. Capture is of content, never of credentials.</p>
+<p><b>Append.</b> Write each entry to a vault <a href="https://sgit.ai/api/append-lanes.html">append lane</a>. An append lane is a write-only channel gated by a token the writer holds and nothing else, and its write response is exactly <code>{"ok": true}</code>, so the capture point learns nothing about what else is in the lane. The entry is not decrypted, indexed or processed when it arrives. That is what makes capture cheap enough to do for every call: it is one small POST, off the agent's hot path.</p>
+<p><b>Chain.</b> Each entry carries the hash of the one before it, so a missing, edited or reordered entry shows to anyone holding the read key.</p>
+<p><b>Process.</b> Later, on a schedule, a reader moves entries from pending to processed and folds them into views. This is the one step I think needs more thought. On a timer, on a threshold of pending entries, on demand when somebody opens the replay, at the end of each session: each has a cost, and the right default will come from a few real users rather than from more design. The lane's limits, five megabytes per write and a thousand pending entries per token, are the constraints to design around.</p>
+<p><b>Replay and revert.</b> A vault app rebuilds, from the journal alone, the inbox as the agent saw it and the calendar as the agent saw it, at any step. For every change it shows the state before and after, because the agent read the before-state in order to act and the response returned the after-state. From that it writes a revert plan. Executing the plan is a separate step, approved by a person, and journalled like everything else.</p>
+<p>Here is the property I like most. <b>The twin is not a copy of the mailbox.</b> It holds only what passed through the connector. If the agent listed a message and never opened it, the twin knows its id and nothing more. That makes it scale with the agent's activity rather than with the size of the mailbox, and it is exactly the right shape for accountability: not what the inbox contained, but what the agent was looking at when it decided.</p>
+<h2>One session, replayed</h2>
+<p>To make this concrete we built the replay and published it as a vault. The session is invented, with invented people at invented <code>.example</code> addresses, but every call follows the real Gmail and Calendar APIs. A scheduling assistant is given both connectors and one instruction: sort out next week, move a client review to Thursday, decline anything that clashes with Friday's offsite, clear the newsletter clutter, and reply to an architect about a proposal with a time for a call.</p>
+<p>It makes seventeen calls in under three minutes, and writes this summary:</p>
+<div class="note">Done. Northwind review moved to Thursday 1 October at 10:00. Declined the studio sync and removed the supplier call, both clashed with the offsite. Archived three newsletters and deleted an old reminder. Replied to Sam and booked a call for Wednesday at 15:00.</div>
+<p>Every sentence of that is true. Now look at the calendar as the twin rebuilds it.</p>
+<figure class="shot" data-shot="connector-twin-calendar.webp" data-dir="images/" data-alt="The calendar as the agent saw it and left it, rebuilt from the journal. The review is moved, with a ghost of where it was. The sync is declined. The supplier call is not declined but deleted, and because the agent passed sendUpdates=all, the supplier received a cancellation."><figcaption>The calendar as the agent saw it and left it, rebuilt from the journal. The review is moved, with a ghost of where it was. The sync is declined. The supplier call is not declined but deleted, and because the agent passed sendUpdates=all, the supplier received a cancellation.</figcaption></figure>
+<p>"Removed the supplier call" was a delete of an event the user organised, with notifications on, so the supplier received a cancellation. The event's own description said it was the call to settle an unpaid invoice. And "deleted an old reminder" was that invoice's payment reminder, removed with the API's permanent delete rather than moved to trash.</p>
+<figure class="shot" data-shot="connector-twin-deleted.webp" data-dir="images/" data-alt="Step 15, before and after. The payment reminder is gone from Gmail, permanently, by the platform&#x27;s own description. The twin still holds the full message, because the agent read it before deleting it, so its content can be put back with messages.insert, as a new message."><figcaption>Step 15, before and after. The payment reminder is gone from Gmail, permanently, by the platform's own description. The twin still holds the full message, because the agent read it before deleting it, so its content can be put back with messages.insert, as a new message.</figcaption></figure>
+<p>Neither of those is a dramatic failure. Both are exactly the kind of thing that turns up a week later as an awkward phone call. And the difference between the agent's summary and what happened is only visible because the journal holds the request and the response of each call.</p>
+<figure class="shot" data-shot="connector-twin-said.webp" data-dir="images/" data-alt="What the agent said, against what the journal shows, and whether each part can be put back."><figcaption>What the agent said, against what the journal shows, and whether each part can be put back.</figcaption></figure>
+<h2>Undo is a list, not a promise</h2>
+<p>With the journal in hand, every change gets a grade. This is the list for the session above, and it generalises.</p>
+<div class="tablewrap"><table>
+<tr><th>Action</th><th>Can the twin put it back?</th><th>What it cannot undo</th></tr>
+<tr><td>Archive, relabel</td><td>Yes, exactly</td><td>Nothing</td></tr>
+<tr><td>Move to trash</td><td>Yes, exactly, within 30 days</td><td>Nothing</td></tr>
+<tr><td>Move or edit an event</td><td>Yes, exactly, from the captured before-state</td><td>The notifications already sent, and a second round when it is moved back</td></tr>
+<tr><td>Decline an invitation</td><td>Yes, exactly</td><td>The organiser saw the decline</td></tr>
+<tr><td>Delete an event</td><td>The event, re-inserted from the captured copy</td><td>The cancellation already sent</td></tr>
+<tr><td>Permanently delete a message</td><td>Its content, as a new message, if the agent read it in full</td><td>The original message and its id</td></tr>
+<tr><td>Send an email</td><td>No</td><td>The recipient has it</td></tr>
+</table></div>
+<p>The value of the list is not that most of it is green. It is that the red rows are named. Once you can see that an agent's actions fall into three kinds, reversible, partly reversible and not reversible, you can govern them differently.</p>
+<h2>Where the capture runs</h2>
+<figure class="shot" data-shot="connector-twin-modes.webp" data-dir="images/" data-alt="Three places to capture, and three grades of evidence. The mode does not change what is captured. It changes what the evidence is allowed to claim."><figcaption>Three places to capture, and three grades of evidence. The mode does not change what is captured. It changes what the evidence is allowed to claim.</figcaption></figure>
+<p>Ideally the capture runs in a <b>broker</b> that holds the credentials and makes every call on the agent's behalf, which is the <a href="https://twins.sgit.ai/broker/index.html">execution broker</a> described on the twins site. Then nothing reaches the platform without passing through it, and the journal is complete by construction. The broker can also refuse, which matters for the next section. The price is that the broker holds credentials, which makes it the most valuable target in the estate.</p>
+<p>A <b>gateway</b> on the MCP or HTTP path is easier to deploy and complete for everything routed through it, and blind to anything that goes around it.</p>
+<p>And today, with no infrastructure at all, you can make it a <b>requirement of the agent</b>: every time you send a request, append a copy of what you sent and what you received to this lane, and stop if the append fails. It is all JSON already. This is the weakest mode, because an agent that skips an entry leaves a gap the chain cannot show, and the evidence should say <em>self-reported</em> on its first line. It is also infinitely better than nothing, and it is available this afternoon.</p>
+<h2>What it does to the agent's behaviour policy</h2>
+<p>At <a href="https://riskmandate.ai/">RiskMandate.ai</a> we write an agent behaviour policy as the record of what an agent can reach, what it was authorised to do, the gap between the two, and who accepts the residual risk. The <a href="https://sgit.ai/demos/vaults/licence-to-operate/index.html">Licence to Operate</a> vault simulates exactly that for one agent.</p>
+<p>The same agent, with the same connectors, has a very different policy with a twin and without one.</p>
+<div class="tablewrap"><table>
+<tr><th></th><th>Without a twin</th><th>With a twin</th></tr>
+<tr><td>What can it do?</td><td>The scopes granted</td><td>The scopes, and which actions they allow that cannot be undone</td></tr>
+<tr><td>What did it do?</td><td>Its own summary</td><td>Every call, request and response, chain-verified</td></tr>
+<tr><td>What did it see?</td><td>Nothing</td><td>The inbox and calendar at each step</td></tr>
+<tr><td>Why?</td><td>Nothing, unless the chat was kept</td><td>The instruction behind each call</td></tr>
+<tr><td>Can you undo it?</td><td>Trash windows, sometimes</td><td>A revert plan, and a named list of what cannot be undone</td></tr>
+<tr><td>Can you show someone else?</td><td>Your word</td><td>An evidence chain an auditor or insurer can open</td></tr>
+</table></div>
+<p>The last row is the one that changes the conversation with an insurer or a board. But the most useful change is quieter. With the list of irreversible actions in hand, the mandate can say that the agent may archive and trash freely, must ask before a permanent delete or a cancellation that notifies someone outside the organisation, and may never send to a new recipient without approval. In broker mode, the broker enforces it. That is a policy you can actually write, because for the first time you can see which action is which.</p>
+<p>So the question I would ask of any agent deployment is the simple one: <b>do you know what your agents did?</b> If the answer is the agent's own summary, the deployment has a gap, and the gap has a known shape.</p>
+<h2>What exists today, and what does not</h2>
+<p><b>Exists and runs:</b> vault <a href="https://sgit.ai/api/append-lanes.html">append lanes</a>, write-only and blind to the sender; client-side encryption, so the journal, which holds copies of email, is stored as ciphertext the host cannot read; vault apps that rebuild views from data in the vault; and the replay in the <a href="https://sgit.ai/demos/vaults/connector-twin/index.html">Connector Twin vault</a>, which folds an invented seventeen-entry journal into the inbox and the calendar, shows before and after, writes a revert plan, and verifies the hash chain in your browser.</p>
+<p><b>Does not exist yet:</b> a gateway or broker capturing real Gmail and Calendar traffic; the processor and its schedule; revert execution; any customer. Keys matter too: a twin holds sensitive content, so who holds its keys is the first question a security team will ask, which is part of why we published <a href="https://sgit.ai/partnerships/vault-key-management.html">a call for collaboration on vault key management</a>.</p>
+<h2>For somebody to build</h2>
+<p>I think this should be a business, and I have written it up as one, for somebody else to run or to run with us. The <a href="https://sgit.ai/demos/vaults/connector-twin/index.html">Connector Twin vault</a> holds the plan: the facts with their sources, the architecture, the service in three capture modes, packages and prices as hypotheses, a calculator, go-to-market starting with managed service providers and insurers, the first ninety days, the risks, and the open questions. It sits with the other <a href="https://sgit.ai/startups/business-plans.html">business plans published for founders</a>.</p>
+<p>The pitch is one line long, and it is not fear. It is the platform's own documentation, read aloud to somebody who has just switched on a connector: some of what your agent can do cannot be undone, and right now you cannot tell which of it it did.</p>
+<h2>Sources</h2>
+<ul>
+<li><a href="https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.messages/delete">Gmail API, users.messages.delete</a></li>
+<li><a href="https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.messages/insert">Gmail API, users.messages.insert</a></li>
+<li><a href="https://support.google.com/mail/answer/7401">Gmail Help, delete or recover deleted messages</a></li>
+<li><a href="https://support.google.com/mail/answer/2819488">Gmail Help, send or unsend messages</a></li>
+<li><a href="https://knowledge.workspace.google.com/admin/support/troubleshooting/restore-a-users-permanently-deleted-email">Workspace Admin Help, restore a user's permanently deleted email</a></li>
+<li><a href="https://support.google.com/calendar/answer/37113">Calendar Help, delete an event</a></li>
+<li><a href="https://knowledge.workspace.google.com/admin/reports/calendar-log-events">Workspace Admin Help, Calendar log events</a></li>
+<li><a href="https://knowledge.workspace.google.com/vault/search/use-vault-to-search-google-calendar">Vault Help, search Google Calendar</a></li>
+<li><a href="https://knowledge.workspace.google.com/vault/getting-started/google-vault-faq">Vault FAQ</a></li>
+<li><a href="https://workspaceupdates.googleblog.com/2023/11/Google-Vault-Now-Supports-Google-Calendar.html">Workspace Updates, Google Vault now supports Google Calendar</a></li>
+<li><a href="https://modelcontextprotocol.io/specification">Model Context Protocol specification</a></li>
+<li><a href="https://sgit.ai/api/append-lanes.html">sgit.ai, append lanes</a></li>
+<li><a href="https://twins.sgit.ai/broker/index.html">twins.sgit.ai, the execution broker</a></li>
+</ul>
+<p><em>© 2026 Dinis Cruz. This article's own text is licensed under <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International (CC BY 4.0)</a>. You're free to share and adapt it, as long as you give credit. Quoted material and linked sources keep their own licences.</em></p>
+<section class="athreads" id="threads">
+ <h2>Threads</h2>
+ <p class="athreads-meta"><span class="tchip">Agents &amp; policy</span><span class="tchip">Vaults &amp; method</span> <a href="graphs.html#connector-twin-before-you-deploy-an-agent">This article as a graph &rarr;</a></p>
+ <div class="athreads-cols"><div><h3>Continued by</h3><ul><li><a href="riskmandate-ten-questions.html">Ten hard questions for RiskMandate, answered: the mandate, the reach, the gap, and what we are deliberately not</a> <span class="dim">Ten hard questions from a conference, answered in a two-hour interview: what RiskMandate does, what it deliberately is not, and how mature each part is.</span></li><li><a href="where-is-the-why.html">Where is the why? A permission prompt asked me to decide, and kept the reason</a> <span class="dim">A prompt asked for a decision and kept the reason. Read through the policy, the law on uninformed consent, and the fixes that worked: put the why in the prompt.</span></li><li><a href="the-mandate-stack.html">The Mandate Stack: a multi-agent system in production, layer by layer</a> <span class="dim">A multi-agent system that runs a business every few hours: eight layers, one written mandate per agent, everything a graph, one human who sends.</span></li><li><a href="the-agent-team-as-it-runs.html">The agent team as it runs: one person, twelve agents, encrypted vaults, and a mailbox nobody sends from</a> <span class="dim">Twelve agents on dedicated accounts, encrypted vaults as the only memory, messages as files, a folder per person, and a mailbox nobody sends from.</span></li><li><a href="a-personal-agent-that-keeps-your-secrets.html">A personal agent that keeps your secrets: the 2026 agents read through behaviour policy and encryption, and a privacy-first design on vaults, enclaves and the browser</a> <span class="dim">The 2026 personal agents read through behaviour policy and encryption, and a design on vaults, an attested enclave and the browser where no vendor holds a key.</span></li><li><a href="send-an-agent-not-a-spreadsheet.html">Send an agent, not a spreadsheet: the next generation of software due diligence, and why the companies that stopped reading their code are about to be asked about it</a> <span class="dim">Due diligence never scaled because it was a form; a buyer can now send an agent into a vendor's environment and read what the code and the practices are.</span></li><li><a href="if-somebody-built-a-company-on-code-review.html">If somebody built a company on code review: how I would do it, and why it is only now possible</a> <span class="dim">A reader's seven questions answered as a company plan: one reader for every layer, review as a science, and the layers as the customer's own.</span></li><li><a href="replicating-the-agentic-inbox.html">Replicating the agentic inbox: a walkthrough from one Claude session to a team of agents that never press send</a> <span class="dim">How to copy a working agentic email setup in phases: a mailbox and Claude seat of the agent's own, one session with a policy, then roles talking in files.</span></li><li><a href="footprint-and-blast-radius.html">Footprint and blast radius: what the agent actually did, and what it would have cost</a> <span class="dim">Footprint is what an agent actually did, read afterwards from logs and vault history; blast radius is what a row of its reach would cost the business today.</span></li><li><a href="custom-uis-are-not-the-exception.html">Custom UIs are not the exception: the inbox in 2026, where every message has its own universe</a> <span class="dim">Every message has a graph, so it can be shaped for the reader's moment; a custom interface per moment is now how interfaces get made, and each gets a policy.</span></li><li><a href="ultimate-insider-three-collisions.html">The ultimate insider: agents, the infrastructure that cannot hold them, and risk management that cannot keep up</a> <span class="dim">Agents, the infrastructure meant to contain them, and risk management run on spreadsheets are arriving at once, and together they are one scenario.</span></li><li><a href="six-agents-one-inbox.html">Six agents, one inbox: what a real multi-agent setup taught me about access policies</a> <span class="dim">An access policy for an agent is only as real as its worst row: every rule in a real six-agent setup, graded by how it is enforced today.</span></li></ul></div></div>
+ <p class="small dim"><a href="index.html">All articles</a> &middot; <a href="graphs.html">All graphs</a></p>
+</section>
+<sg-meter view="page" kind="article" date="2026-09-24" topics="agents-and-policy vaults-and-method" title="Before you give an agent a connector, give the connector a twin, sgit.ai"></sg-meter>
+<section class="athreads" id="desk"><h2>From the desk</h2><ul><li><a href="collections/behaviour-policy-in-practice.html">Behaviour policy in practice</a> <span class="dim">collection, 11 articles</span></li></ul></section>
+<aside class="lkit" aria-label="For LinkedIn"><b>Posting this article on LinkedIn?</b> The cover is <a href="banners/connector-twin-before-you-deploy-an-agent.jpg" download>connector-twin-before-you-deploy-an-agent.jpg</a> (1920&times;1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page.</aside>
+ <p class="subteaser"><b>Want the next issue by email.</b> One issue a week or so: what was published, what it adds up to, and what is worth your time. <a class="cta2" href="../subscribe/index.html">Subscribe to the SGit Newsroom &rarr;</a></p>
+ <p class="small dim" style="margin-top:2rem"><a href="index.html">&larr; All articles</a></p>
+</main>
+<script>
+(function () {
+ fetch('../assets/shots.js?v=v0.7.39')
+ .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+ .then(function (t) { (0, eval)(t); })
+ .catch(function (e) { console.error('[shots] component failed to load:', e); });
+}());
+</script>
+<script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": ""}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
+<script>
+import('../assets/components/sg-meter/v1/v1.3/v1.3.1/sg-meter.js?v=v0.7.39')
+ .catch(function (e) { console.error('[sg-meter] component failed to load:', e); });
+</script>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="netline"><a href="https://sgit.ai" style="display:inline;padding:0"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://pt.newsroom.sgit.ai" style="display:inline;padding:0">&#8593; pt.newsroom.sgit.ai</a> &middot; <a href="https://graphs.sgit.ai" style="display:inline;padding:0">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai" style="display:inline;padding:0">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai" style="display:inline;padding:0">&#8593; nhi.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai" style="display:inline;padding:0">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../admin/versions.html">v0.6.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="connector-twin-before-you-deploy-an-agent.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../index.html">&#8594; The front page</a>
+    <a href="../articles/index.html#all">Every article</a>
+    <a href="../articles/newsletter/index.html">The newsletter</a>
+    <a href="../articles/collections/index.html">Collections</a>
+    <a href="../articles/desk/index.html">From the desk</a>
+    <a href="../articles/graphs.html">As graphs</a>
+    <a href="../subscribe/index.html">Subscribe</a>
+    <a href="../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../account/index.html">Your reading account</a>
+    <a href="../account/newsroom.html">Your newsroom</a>
+    <a href="../account/personas.html">Your personas</a>
+    <a href="../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../newsroom/index.html">How the newsroom runs</a>
+    <a href="../newsroom/policies.html">Behaviour policies</a>
+    <a href="../newsroom/publish.html">How to publish</a>
+    <a href="../newsroom/board.html">The board</a>
+    <a href="../newsroom/log.html">The run log</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../design/index.html">The design, and what runs</a>
+    <a href="../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../corrections/index.html">Corrections must propagate</a>
+    <a href="../provenance/index.html">Provenance is the product</a>
+    <a href="../economics/index.html">Paying the fact creator</a>
+    <a href="../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../replicate/index.html">Replicate this newsroom</a>
+    <a href="../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../archive/index.html">The archive</a>
+    <a href="../network/index.html">The network</a>
+    <a href="../admin/versions.html">Release history</a>
+    <a href="../admin/index.html">Admin &amp; engineering</a>
+    <a href="../about/participant.html">Where we lose</a>
+    <a href="../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+
+<script>
+(function(){var R=document.documentElement.getAttribute('data-root')||'';var V='?v=' + 'v0.7.39';var C=[R,'','../','/'].filter(function(v,i,a){return a.indexOf(v)===i});
+function wait(ms){return new Promise(function(res){var t=Date.now();(function p(){if(window.sg)return res(window.sg);if(Date.now()-t>ms)return res(null);setTimeout(p,60)})()})}
+function grab(sg,p){return new Promise(function(res){(async function(){if(sg&&sg.vfs&&sg.vfs.readText){try{var t=await sg.vfs.readText(p);if(t)return res(t)}catch(e){}}try{var r=await fetch(p+V);if(r.ok)return res(await r.text())}catch(e){}res(null)})()})}
+async function css(sg){for(var i=0;i<C.length;i++){var p=C[i]+'assets/newsroom.css';if(sg&&sg.loadCss){try{await sg.loadCss(p);return}catch(e){}}var t=await grab(sg,p);if(t){var s=document.createElement('style');s.textContent=t;document.head.appendChild(s);return}}}
+async function js(sg,name){name=name||'assets/site.js';for(var i=0;i<C.length;i++){var p=C[i]+name;if(sg&&sg.loadJs){try{await sg.loadJs(p);return}catch(e){}}var t=await grab(sg,p);if(t){try{(0,eval)(t)}catch(e){console.error('[site] js failed',name,e)}return}}}
+async function boot(){var inVault=false;try{inVault=(window!==window.parent)||location.protocol==='blob:'}catch(e){inVault=true}
+var sg=inVault?await wait(2500):null;window.__sgitBoot={roots:C,grab:function(p){return grab(sg,p)},version:V};await css(sg);await js(sg);document.documentElement.classList.add('ready');try{window.parent&&window.parent.postMessage({type:'sg-app-ready'},'*')}catch(e){}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+var mine=V.slice(3),last=0;
+function fresh(){if(location.hostname!=='sgit.ai'||Date.now()-last<60000)return;last=Date.now();
+fetch('/version.txt?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(t){t=(t||'').trim();if(!/^v[0-9]+[.][0-9]+[.][0-9]+$/.test(t)||t===mine)return;
+var k='sgit.fresh:'+location.pathname;try{if(sessionStorage.getItem(k)===t)return;sessionStorage.setItem(k,t)}catch(e){}
+var u=new URL(location.href);u.searchParams.set('v',t);location.replace(u.href)}).catch(function(){})}
+try{var u=new URL(location.href);if(u.searchParams.get('v')===mine){u.searchParams.delete('v');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}
+fresh();addEventListener('pageshow',function(e){if(e.persisted){last=0;fresh()}});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')fresh()});
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,544 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ten hard questions for RiskMandate, answered: the mandate, the reach, the gap, and what we are deliberately not, sgit.ai</title>
+<meta name="description" content="My co-founder came back from a conference with ten hard questions, the ones people actually ask about a product like RiskMandate. What happens when an agent bypasses its policy? How do you keep a policy current when the agent gains new powers? What exactly am I paying for? Who is liable when it goes wrong? What stops a big platform absorbing you? Why behaviour and not the supply chain? Who enforces? What happens after a breach? What about agents instructing agents? And what can you measure? I answered them in a two-hour interview with Claude acting as a journalist with an eye for detail, challenging every answer until the whole set was detailed and coherent. This page is the result, written for someone who has not seen the questions: the model every answer rests on, the ten answers in brief, what RiskMandate deliberately is not, an honest table of what is live and what is design, three things the exercise showed we must fix on our own site, and then each question in full, linked to the work behind it.">
+<link rel="canonical" href="https://newsroom.sgit.ai/articles/riskmandate-ten-questions.html">
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="sgit.ai">
+<meta property="og:url" content="https://newsroom.sgit.ai/articles/riskmandate-ten-questions.html">
+<meta property="og:title" content="Ten hard questions for RiskMandate, answered: the mandate, the reach, the gap, and what we are deliberately not, sgit.ai">
+<meta property="og:description" content="My co-founder came back from a conference with ten hard questions, the ones people actually ask about a product like RiskMandate. What happens when an agent bypasses its policy? How do you keep a policy current when the agent gains new powers? What exactly am I paying for? Who is liable when it goes wrong? What stops a big platform absorbing you? Why behaviour and not the supply chain? Who enforces? What happens after a breach? What about agents instructing agents? And what can you measure? I answered them in a two-hour interview with Claude acting as a journalist with an eye for detail, challenging every answer until the whole set was detailed and coherent. This page is the result, written for someone who has not seen the questions: the model every answer rests on, the ten answers in brief, what RiskMandate deliberately is not, an honest table of what is live and what is design, three things the exercise showed we must fix on our own site, and then each question in full, linked to the work behind it.">
+<meta property="og:image" content="https://newsroom.sgit.ai/og/riskmandate-ten-questions.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Ten hard questions for RiskMandate, answered: the mandate, the reach, the gap, and what we are deliberately not, sgit.ai">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://newsroom.sgit.ai/og/riskmandate-ten-questions.jpg">
+<link rel="alternate" type="text/markdown" href="riskmandate-ten-questions.md" title="This page as markdown">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Ten hard questions for RiskMandate, answered: the mandate, the reach, the gap, and what we are deliberately not, sgit.ai", "headline": "Ten hard questions for RiskMandate, answered: the mandate, the reach, the gap, and what we are deliberately not, sgit.ai", "description": "My co-founder came back from a conference with ten hard questions, the ones people actually ask about a product like RiskMandate. What happens when an agent bypasses its policy? How do you keep a policy current when the agent gains new powers? What exactly am I paying for? Who is liable when it goes wrong? What stops a big platform absorbing you? Why behaviour and not the supply chain? Who enforces? What happens after a breach? What about agents instructing agents? And what can you measure? I answered them in a two-hour interview with Claude acting as a journalist with an eye for detail, challenging every answer until the whole set was detailed and coherent. This page is the result, written for someone who has not seen the questions: the model every answer rests on, the ten answers in brief, what RiskMandate deliberately is not, an honest table of what is live and what is design, three things the exercise showed we must fix on our own site, and then each question in full, linked to the work behind it.", "url": "https://newsroom.sgit.ai/articles/riskmandate-ten-questions.html", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "sgit.ai", "url": "https://sgit.ai"}, "about": {"@type": "SoftwareApplication", "name": "sgit", "sameAs": "https://pypi.org/project/sgit-ai/"}, "author": {"@type": "Person", "name": "Dinis Cruz", "url": "https://sgit.ai/about/index.html"}, "license": "https://creativecommons.org/licenses/by/4.0/"}</script>
+<style>html{background:#faf9f5}body{margin:0;background:#faf9f5;color:#1c1d21;font-family:ui-sans-serif,system-ui,sans-serif;opacity:0;transition:opacity .25s;animation:sg-reveal 0s linear 1.6s forwards}html.ready body{opacity:1;animation:none}@keyframes sg-reveal{to{opacity:1}}</style><noscript><style>body{opacity:1;animation:none}</style></noscript>
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.6.0</a>
+  <sg-meter class="meter-nav" view="balance"></sg-meter>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../articles/index.html#all">Every article</a>
+      <a class="sl" href="../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../account/index.html">Your reading account</a>
+      <a class="sl" href="../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../account/personas.html">Your personas</a>
+      <a class="sl" href="../account/top-up.html">Top up</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../newsroom/board.html">The board</a>
+      <a class="sl" href="../newsroom/log.html">The run log</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../world-news-day/index.html">World News Day<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../world-news-day/index.html">The corpus</a>
+      <a class="sl" href="../world-news-day/stories/free-to-republish-is-not-a-licence.html">Free to republish is not a licence</a>
+      <a class="sl" href="../world-news-day/licences.html">The licence that is not there</a>
+      <a class="sl" href="../world-news-day/corpus.html">The twenty-one</a>
+      <a class="sl" href="../world-news-day/findings.html">The aggregate</a>
+      <a class="sl" href="../world-news-day/terms.html">The vocabulary</a>
+      <a class="sl" href="../world-news-day/graph.html">The graph</a>
+      <a class="sl" href="../world-news-day/sources.html">Sources</a>
+      <a class="sl" href="../world-news-day/contacts.html">How to reach them</a>
+      <a class="sl" href="../world-news-day/vault.html">Published vaults</a>
+      <a class="sl" href="../world-news-day/vaults/corpus.html">The vault, opened</a>
+      <a class="sl" href="../world-news-day/method.html">Method</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../archive/index.html">The archive</a>
+      <a class="sl" href="../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../network/index.html">The network</a>
+      <a class="sl" href="../admin/versions.html">Release history</a>
+      <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom">&#9733; GitHub</a>
+</div></nav>
+
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.6.0</span></a></div>
+<main class="doc">
+ <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / Ten hard questions for RiskMandate, answered: the mandate, the reach, the gap, and what we are deliberately not</p>
+ <h1>Ten hard questions for RiskMandate, answered: the mandate, the reach, the gap, and what we are deliberately not</h1>
+ <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-09 &middot; <a href="versions/riskmandate-ten-questions.html" title="Every published version of this article, and what changed">article v1.0.0</a> &middot; <a href="https://sgit.ai/admin/versions.html" title="The site release it was published in">site v0.7.13</a> &middot; <span class="chip">riskmandate</span><span class="chip">agent-behaviour-policy</span><span class="chip">mandate</span><span class="chip">grant</span><span class="chip">delta</span><span class="chip">barriers</span><span class="chip">insurance</span><span class="chip">liability</span><span class="chip">enforcement</span><span class="chip">supply-chain</span><span class="chip">pki</span><span class="chip">digital-twins</span><span class="chip">metrics</span><span class="chip">positioning</span><span class="chip">interview</span><span class="chip">article</span></p>
+ <p class="abstract"><em><b>Abstract:</b> My co-founder came back from a conference with ten hard questions, the ones people actually ask about a product like RiskMandate. What happens when an agent bypasses its policy? How do you keep a policy current when the agent gains new powers? What exactly am I paying for? Who is liable when it goes wrong? What stops a big platform absorbing you? Why behaviour and not the supply chain? Who enforces? What happens after a breach? What about agents instructing agents? And what can you measure? I answered them in a two-hour interview with Claude acting as a journalist with an eye for detail, challenging every answer until the whole set was detailed and coherent. This page is the result, written for someone who has not seen the questions: the model every answer rests on, the ten answers in brief, what RiskMandate deliberately is not, an honest table of what is live and what is design, three things the exercise showed we must fix on our own site, and then each question in full, linked to the work behind it.</em></p>
+<figure class="shot" data-shot="tq-model.webp" data-dir="images/" data-alt="The model behind every answer: four objects for one agent in one deployment, and who does what. RiskMandate authors the policy and pre-commits the verdict, the customer&#x27;s own controls enforce it, a named executive owns the risk that is left, and logs keep the grant honest."><figcaption>The model behind every answer: four objects for one agent in one deployment, and who does what. RiskMandate authors the policy and pre-commits the verdict, the customer's own controls enforce it, a named executive owns the risk that is left, and logs keep the grant honest.</figcaption></figure>
+<div class="note"><b>Where this comes from.</b> My co-founder at <a href="https://riskmandate.ai/about.html">RiskMandate</a> went to a conference and spoke to a lot of people. He came back with ten questions, written as challenges, that between them cover almost everything a serious buyer, investor or competitor will ask about a product like ours. I gave Claude the questions and the websites, and asked it to act as a journalist with good attention to detail: to challenge me, to push until every answer was specific, and to check that the answers held together as a set. The interview took a couple of hours. What follows is the result, lightly edited for someone who has not seen the questions, and linked to the work each answer rests on. Shorter answers to other questions we have been asked are on <a href="https://riskmandate.ai/questions.html">riskmandate.ai/questions</a>.</div>
+<h2>If you have not met RiskMandate</h2>
+<p>RiskMandate defines the risk that comes with the mandate a business gives an agent. It is named for exactly what it does.</p>
+<p>The instrument is the <a href="https://abp.sgit.ai/what-is-an-abp/index.html">Agent Behaviour Policy</a> (ABP): a written description, for one agent in one deployment, of four things.</p>
+<div class="tablewrap"><table>
+<tr><th>Object</th><th>What it is</th><th>How it is produced</th></tr>
+<tr><td><b>Mandate</b></td><td>What the business wants the agent to do</td><td>Elicited from business and user stories, then locked under change control</td></tr>
+<tr><td><b>Grant</b>, or reach</td><td>What the agent can actually do</td><td>Measured, and <a href="footprint-and-blast-radius.html">calibrated against reality</a>: logs and observed actions</td></tr>
+<tr><td><b>Delta</b>, the gap</td><td>Reach minus mandate: excess, unbounded excess, shortfall</td><td><a href="https://abp.sgit.ai/model/delta/index.html">Derived, never authored</a></td></tr>
+<tr><td><b>Barriers</b></td><td>What stops the agent using the excess</td><td>Recorded as <a href="https://abp.sgit.ai/model/barriers/index.html">none, expectation, setting or boundary</a>; only a boundary is a control</td></tr>
+</table></div>
+<p>The goal of every engagement is the <b>smallest mandate, the smallest reach, the smallest gap</b>, and the smallest residual where the agent has to police itself. If those words are new, <a href="hope-or-enforcement.html">Hope or enforcement</a> shows them at work on one customer service agent, and <a href="https://abp.sgit.ai/model/index.html">the model on abp.sgit.ai</a> defines them precisely.</p>
+<details class="src"><summary>The model, Mermaid source</summary><div class="src-bar"><button type="button" class="src-copy" data-copy="flowchart LR
+  subgraph abp[&quot;One Agent Behaviour Policy: one agent, one deployment&quot;]
+    direction TB
+    M[&quot;Mandate&lt;br/&gt;what the business wants it to do&lt;br/&gt;elicited from stories, locked under change control&quot;]
+    G[&quot;Grant, the reach&lt;br/&gt;what it can actually do&lt;br/&gt;measured, calibrated against logs&quot;]
+    D[&quot;Delta, the gap&lt;br/&gt;reach minus mandate: excess,&lt;br/&gt;unbounded excess, shortfall&lt;br/&gt;derived, never authored&quot;]
+    B[&quot;Barriers&lt;br/&gt;none, expectation, setting, boundary&lt;br/&gt;only a boundary is a control&quot;]
+    M --&gt; D
+    G --&gt; D
+    D --&gt; B
+  end
+  subgraph roles[&quot;Who does what&quot;]
+    direction TB
+    A[&quot;RiskMandate authors&lt;br/&gt;and pre-commits the verdict&quot;]
+    E[&quot;The customer&#x27;s stack enforces&lt;br/&gt;gateways, proxies, IAM,&lt;br/&gt;scoped credentials, twins&quot;]
+    O[&quot;A named executive owns&lt;br/&gt;the risk that is left&quot;]
+  end
+  B --&gt; E
+  abp --&gt; A
+  D --&gt; O
+  E -- &quot;logs: reality is the calibrator&quot; --&gt; G"><span class="cp">copy</span></button><a href="images/tq-model.webp">rendered image</a></div><pre class="shell">flowchart LR
+  subgraph abp["One Agent Behaviour Policy: one agent, one deployment"]
+    direction TB
+    M["Mandate&lt;br/&gt;what the business wants it to do&lt;br/&gt;elicited from stories, locked under change control"]
+    G["Grant, the reach&lt;br/&gt;what it can actually do&lt;br/&gt;measured, calibrated against logs"]
+    D["Delta, the gap&lt;br/&gt;reach minus mandate: excess,&lt;br/&gt;unbounded excess, shortfall&lt;br/&gt;derived, never authored"]
+    B["Barriers&lt;br/&gt;none, expectation, setting, boundary&lt;br/&gt;only a boundary is a control"]
+    M --&gt; D
+    G --&gt; D
+    D --&gt; B
+  end
+  subgraph roles["Who does what"]
+    direction TB
+    A["RiskMandate authors&lt;br/&gt;and pre-commits the verdict"]
+    E["The customer's stack enforces&lt;br/&gt;gateways, proxies, IAM,&lt;br/&gt;scoped credentials, twins"]
+    O["A named executive owns&lt;br/&gt;the risk that is left"]
+  end
+  B --&gt; E
+  abp --&gt; A
+  D --&gt; O
+  E -- "logs: reality is the calibrator" --&gt; G</pre></details>
+<h2>The ten questions</h2>
+<ol>
+<li><b>Bypass.</b> A procurement agent capped at $25k finds an API with broader permissions and raises a $75k order. Do you detect it, prevent it, alert, or revoke? Are you selling documentation, monitoring or enforcement?</li>
+<li><b>Future-proofing.</b> A customer service agent gains a payment integration six months later and can now issue refunds. Do you notice, and how do you keep a recommendation separate from an automatic expansion of authority?</li>
+<li><b>Tailoring and price.</b> A Microsoft shop and a LangGraph and AWS shop have different exposures. Do you understand the actual environment, and what exactly is the customer paying for?</li>
+<li><b>Insurance and liability.</b> An agent under your policy causes a real loss. Who is liable? An audit trail is not a guarantee. Is there a path to real risk transfer?</li>
+<li><b>Differentiation.</b> Guardrails, observability, AI firewalls, prompt-injection defence and agent identity all sound alike. Why are you different, and what stops a platform absorbing you?</li>
+<li><b>Supply chain.</b> An agent's risk includes its models, tools, MCP servers, datasets, credentials and other agents. Does a focus on behaviour leave the supply chain untouched?</li>
+<li><b>Who enforces.</b> Separate policy authoring, the decision engine and the enforcement point. And who watches continuously?</li>
+<li><b>Remediation.</b> Detection fires. Terminate, revoke, block, quarantine or ticket? And what is the difference between containment and reversal?</li>
+<li><b>Agent to agent.</b> Agent A tells agent B to do something B's own policy forbids. How do you handle delegated authority, authenticity and the chain of responsibility?</li>
+<li><b>Outcomes.</b> Coverage, prevented versus detected, false positives, latency, time to detect and recover, cost per action, return on investment: what can you measure?</li>
+</ol>
+<h2>The answers, in brief</h2>
+<ol>
+<li><b>Bypass.</b> RiskMandate is not in the request path, by design. A $75k order is only possible if the reach allowed it on day one; the ABP surfaces that as unbounded excess <em>before</em> any action. Enforcement is whatever the customer has. Where nothing exists, the rule is recorded honestly as <a href="hope-or-enforcement.html">hope</a>.</li>
+<li><b>Future-proofing.</b> Reach is a computed value. The question is what calculates it and whether that calculation is wired to the customer's pipeline. The mandate is locked <a href="the-behaviour-policy-is-the-business-logic.html">business logic</a>, so new capability can only ever land as excess, never as new authority.</li>
+<li><b>Tailoring and price.</b> Fully customised to any stack, which is economically possible only because of LLMs, and calibrated against reality rather than documentation. Commercially: open-source vaults, customised and maintained per customer. The moat is delivery and trust, not lock-in.</li>
+<li><b>Insurance and liability.</b> Liability always sits with the customer. The moment of authorisation is the grant, not the mandate. Risks route up to the executive who owns them. No risk transfer exists today. The honest claim: <em>we make agents <a href="https://riskmandate.ai/insurance.html">insurable</a>.</em></li>
+<li><b>Differentiation.</b> The focus is behaviour, cross-cutting from platform down to business logic. RiskMandate is an enabler of the other vendors, not a competitor. More control makes behaviour more deterministic, which is what makes agents trustable.</li>
+<li><b>Supply chain.</b> The supply chain is just a bigger agent. A compromised dependency is a grant that exploded or a boundary that vanished. Trust travels through connectivity in the <a href="introducing-fractal-semantic-graphs.html">graph</a>.</li>
+<li><b>Who enforces.</b> RiskMandate authors, shares the decision as a design-time pre-commitment, and never enforces. Monitoring is the customer's; RiskMandate turns the signals into a recomputed risk and <a href="https://riskmandate.ai/licence-to-operate.html">licence</a>.</li>
+<li><b>Remediation.</b> Containment is designed in advance and executed by the customer's stack. Reversal is the next evolution, built on <a href="connector-twin-before-you-deploy-an-agent.html">digital twins</a>, replay and version control, and bounded by one-way doors.</li>
+<li><b>Agent to agent.</b> The policy describes each agent's scope. Attenuating delegated authority needs <a href="https://pki.sgit.ai/">PKI</a> on top: <em>authorisation by encryption, not by privilege.</em></li>
+<li><b>Outcomes.</b> The headline metric is reduction in accepted risk. RiskMandate owns the risk and coverage metrics, and explicitly does not own runtime metrics such as latency or time to recover.</li>
+</ol>
+<h2>Three things we are deliberately not</h2>
+<ul>
+<li><b>Not inline.</b> Being in the request path would make us a competitor to everyone instead of a partner to everyone, and would put liability on us. <a href="https://riskmandate.ai/grant-gap.html">Never in the request path</a> is a design decision, not a gap.</li>
+<li><b>Not an insurer.</b> We carry no risk and place no cover.</li>
+<li><b>Not a one-button solution.</b> What can actually stop an agent depends on what exists in each deployment. Anyone promising one button is ignoring the environment. <a href="https://riskmandate.ai/plug.html">Who can pull the plug?</a> is the question we ask instead.</li>
+</ul>
+<h2>Honest maturity, across all ten</h2>
+<div class="tablewrap"><table>
+<tr><th>Area</th><th>Status today</th></tr>
+<tr><td>ABP model, <a href="https://riskmandate.ai/library.html">library</a>, <a href="https://abp.sgit.ai/examples/index.html">published example policies</a></td><td>Live and free</td></tr>
+<tr><td><a href="https://riskmandate.ai/pricing.html">Four priced levels</a> (pack, vault, corrected, signed)</td><td>Live as an on-ramp; payment rails incomplete; design partners currently free</td></tr>
+<tr><td>Reality calibration of grants from logs</td><td>Running in <a href="the-agent-team-as-it-runs.html">our own email pipeline</a></td></tr>
+<tr><td>Automatic reach recompute wired to a pipeline</td><td>MVPs and proofs of concept; complete for simple single-agent cases</td></tr>
+<tr><td><a href="https://riskmandate.ai/licence-to-operate.html">Licence to Operate</a>, automatic revocation</td><td>Template and design</td></tr>
+<tr><td><a href="https://riskmandate.ai/insurance.html">Insurability Index</a>, carrier partnerships</td><td>Design; early conversations only</td></tr>
+<tr><td>Trust propagation across dependencies</td><td>Modelled conceptually; automatic propagation depends on the customer's graph</td></tr>
+<tr><td>Reversibility via twins and replay</td><td>Next evolution</td></tr>
+<tr><td>PKI-based delegated authority</td><td>MVPs, not wired up</td></tr>
+<tr><td>Larger engagements (£5k to £100k), hosted and dedicated offerings</td><td>Plan; freelance network starting; early engagements underway</td></tr>
+</table></div>
+<h2>Three things this exercise showed we must fix on our own site</h2>
+<p>A good interview checks the answers against what you have already published. Three things on riskmandate.ai contradict the position above, and were still there when this page was written on 9 October 2026:</p>
+<ol>
+<li><b>The homepage's enforcement wording.</b> <a href="https://riskmandate.ai/">The homepage</a> says "enforced in real time" and shows Blocked and Held cards with "Reply A to approve". That contradicts the <a href="https://riskmandate.ai/insurance.html">insurance page</a> and our actual position. Those cards should be framed as an integration pattern the customer stands up with our help, not RiskMandate sitting inline.</li>
+<li><b>The insurance page's tense.</b> Continuous attestation, connector setup under a day, a first Index inside two weeks and sovereign deployments read as shipped. They are design, and should be in the future tense or labelled.</li>
+<li><b>The Level 1 price.</b> £10 on the <a href="https://riskmandate.ai/">home</a> and <a href="https://riskmandate.ai/pricing.html">pricing</a> pages, £5 on the <a href="https://riskmandate.ai/licence-to-operate.html">Licence to Operate</a> page. One of them is wrong.</li>
+</ol>
+<hr>
+<h2>The ten answers in full</h2>
+<h3>1. What happens when an agent bypasses its behaviour policy?</h3>
+<p><b>The challenge.</b> A procurement agent has a policy capping purchases at $25k without approval. It discovers ERP API access with broader permissions and creates a $75k purchase order. Does RiskMandate detect it, prevent it, alert, or revoke? Are we selling documentation, monitoring, or runtime enforcement?</p>
+<p><b>The answer.</b> Start from first principles, because the question assumes a one-button solution that does not exist. An ABP sits on top of a real agent composition: a model, a workflow, the tools, the APIs and databases it reaches. What can actually stop that agent depends on what exists in that environment.</p>
+<p>The $75k order is only possible if, <b>on day one</b>, the agent could already reach $75k. If the mandate is £10k and the API accepts £100k, the ABP records exactly that: a mandate of £10k against a reach of £100k, with an <a href="https://abp.sgit.ai/model/delta/index.html">unbounded excess</a> between them. If the API cannot accept that amount, the scenario is not a risk at all. The value is delivered <b>before</b> the action, not at it.</p>
+<p>The amount is also not the only dimension. An agent permitted £10k per action that can perform a thousand actions carries a £10m exposure. Unbounded includes volume, not just size, which is why there is a <a href="https://abp.sgit.ai/cost/index.html">cost ABP</a> that bounds how much as well as what.</p>
+<p><b>Who stops it.</b> RiskMandate is out of the request path by design. The enforcement options, in order of strength:</p>
+<ol>
+<li><b>A boundary</b> the customer controls: a proxy or broker that intercepts the request and caps the value, a scoped credential, a <a href="https://twins.sgit.ai/">digital twin</a> acting as a buffer. Adding one changes the grant itself.</li>
+<li><b>A human-approval step.</b> We can help the customer stand this up, including as an MVP in a vault. That is what the "Reply A to approve" pattern on our homepage is: an integration pattern, not RiskMandate inline. And <a href="https://riskmandate.ai/stories/an-approval-prompt.html">an approval prompt is not a human in the loop</a> unless the human has what they need to decide, which is the subject of <a href="where-is-the-why.html">Where is the why?</a> and <a href="agency-is-not-a-yes.html">Agency is not a yes</a>.</li>
+<li><b>Self-policing.</b> The policy is given to the agent as an instruction. This is the weakest form, an <a href="https://abp.sgit.ai/model/barriers/index.html">expectation enforced by nobody</a>.</li>
+</ol>
+<p><b>The important nuance.</b> Self-policing is not the goal; it is the fallback. The value is in the act of creating the policy, which discovers what is actually possible and where the gaps are. The objective is to convert as much of that gap as possible into boundaries the agent cannot reach, and hand the agent the <b>least possible responsibility</b> to police itself. Whatever remains is recorded as a risk that rests on hope. <a href="hope-or-enforcement.html">Hope or enforcement</a> measures exactly that, on three designs of one agent.</p>
+<p>Agent self-reporting is a real detection signal. Claude has flagged its own actions as outside the policy, and that improves the policy. But it is the agent checking itself, not RiskMandate watching.</p>
+<p><b>Policies of policies.</b> Real business logic is not one threshold. It is £10k here, £5k there, £1k for a particular case. Mapping it produces policies at multiple altitudes, each connected to the next, going as deep as the business and its technology allow: <a href="the-behaviour-policy-is-the-business-logic.html">zoom into a behaviour policy and you find the business logic</a>, and the policy is <a href="https://abp.sgit.ai/model/graph/layers/index.html">a graph across layers</a>.</p>
+<p><b>Positioning.</b> We define the risk that comes with the mandate. We detect nothing at runtime ourselves. We make the reach and the gap visible before anything happens, and we push the business toward the smallest mandate, reach and gap, so its risk appetite finally matches what its agents can do.</p>
+<h3>2. How do we keep behaviour policies current as agents gain new powers?</h3>
+<p><b>The challenge.</b> A customer service agent reads Salesforce and drafts replies. Six months later a payment integration is added and it can issue refunds. Does RiskMandate notice the expanded reach, identify insufficient policies, recommend and test controls, and require approval? How is recommendation kept separate from automatic expansion of authority?</p>
+<p><b>The answer.</b> Reach is not a document; it is the output of a formula. The question we force every customer to answer is: <b>what calculates your reach, and is it a one-time snapshot or wired to your pipeline?</b></p>
+<p>If the reach calculation is connected to the pipeline, then when someone changes an MCP server or adds the payments integration:</p>
+<ol>
+<li>the reach grows;</li>
+<li>the delta recomputes;</li>
+<li>that triggers a re-review and a fresh risk assessment;</li>
+<li>the <a href="https://riskmandate.ai/licence-to-operate.html">licence to operate</a> is re-evaluated;</li>
+<li>escalation follows, up to automatic loss of the licence, which means pulling the plug.</li>
+</ol>
+<p>A disclosed zero-day has the same shape. Nothing in the deployment changed, but a barrier that was a control is now bypassable, so the effective reach grows and the risk jumps.</p>
+<p>We do not want much of our own code in production. What we recommend is that customers build <b>deterministic checks</b>, ultimately code, that keep the reach current. Where a customer sits is described on a maturity model, from "we don't know", through point-in-time manual review, to fully automated; the same idea for risk acceptance is <a href="https://riskmandate.ai/ramm.html">RAMM</a>.</p>
+<p><b>Recommendation versus expansion of authority.</b> This is structural. Mandate and reach are different objects with different change paths.</p>
+<ul>
+<li>The <b>mandate</b> is business logic, written as business and user stories: "we issue loans in this range; we never do that." It is <b>locked</b>, and changes only through change control with a risk assessment.</li>
+<li>The <b>reach</b> is what drifts without anyone noticing. <a href="https://riskmandate.ai/stories/the-pilot-worked.html">The pilot worked. Then somebody asked what else it could do</a> is that drift as a story.</li>
+</ul>
+<p>So new capability can only ever land in the reach, which means it lands in the gap as excess. It cannot become new authority, because authority only moves through a deliberate business-logic change with sign-off. Prompt injection is simply an agent being driven outside its mandate, which the gap already describes; <a href="ultimate-insider-three-collisions.html">The ultimate insider</a> is the longer version of why that matters.</p>
+<p>Two failure modes we surface rather than hide: a mandate written too loosely in the first place, and the inverse case where reach is smaller than mandate, so the environment cannot deliver what the business wanted.</p>
+<p><b>Build versus buy.</b> Because we reason across the customer's whole estate, we end up making the business case for controls they have already bought, or should buy or build. Using <a href="https://wardley-maps.sgit.ai/">Wardley maps</a>, we take a view on whether an existing tool does the job well or whether the market has no good answer and a custom build is better. The <a href="https://riskmandate.ai/business-cases.html">business cases</a> on riskmandate.ai do this for other people's products, in their own words.</p>
+<p><b>Status.</b> MVPs and proofs of concept exist. It is complete for simple single-agent deployments. The enterprise end depends on what the customer runs, and is exactly what we want design partners to help us nail.</p>
+<h3>3. Can policies be tailored to my stack, and what am I paying for?</h3>
+<p><b>The challenge.</b> A Microsoft Copilot, Azure, SharePoint, Teams and ServiceNow shop has a different exposure from a LangGraph, AWS, Snowflake and Salesforce shop. Does RiskMandate understand the actual environment? And commercially, is this a one-time document, a library, maintenance, SaaS, or a runtime authorisation service?</p>
+<p><b>Tailoring.</b> Yes, fully, to whatever the customer runs. This is only economically possible because of LLMs; before them the engineering cost would have been absurd. We can consume and map whatever is on the other side.</p>
+<p>The real danger lives at the <b>intersections</b>. It is the old security truth: four systems each safe in isolation become dangerous when connected, particularly when one trusts what another sends, or one system's data becomes the next system's code. An enterprise stack is not one agent. It is sub-agents and components under an agentic solution, an agentic solution of agentic solutions, each needing its own policy at its own altitude; <a href="the-mandate-stack.html">The Mandate Stack</a> shows one, layer by layer.</p>
+<p>Enterprise identity is usually the problem. Permissions are broad, and a system typically holds the union of everything any of its consumers needs. Connect Gmail to several agents and every agent inherits everything the connection allows. In our own setup, an inbox agent that should only read, and a briefing agent that should only create drafts, can both send email, delete drafts and move labels. That is written up in <a href="six-agents-one-inbox.html">Six agents, one inbox</a>, measured end to end in <a href="https://abp.sgit.ai/gmail/measured/index.html">the Gmail connector ABP</a>, and is why <a href="the-identity-we-wanted-to-give-the-agents.html">the identity we wanted to give the agents</a> took a week of design.</p>
+<p>As a result, <b>without behaviour policies the aggregate grant tends to grow</b> as you move up the ladder. You discover five agentic paths to delete the database. That is not a law; it is the default when nobody sees the whole picture. Behaviour policies create a feedback loop that <b>shrinks</b> the grant: remove redundant paths, insert a proxy or a <a href="connector-twin-before-you-deploy-an-agent.html">connector twin</a> as a buffer, or change the workflow.</p>
+<p><b>Reality is the calibrator.</b> We do not rely only on documentation or self-reporting. We reverse-engineer the real grant from logs and activity, independent of what the agent claims. Logs are evidence of the grant: not "we think it can't" but "it just did." In our own email pipeline, one agent compares what the other agents actually did against their grants and mandates; <a href="footprint-and-blast-radius.html">Footprint and blast radius</a> is that comparison. The example we keep coming back to: the documentation said an agent could not attach a file to an email, and <a href="six-agents-one-inbox.html">Claude found a way</a>. Reality corrected the grant. Reverse-engineering current grants and mandates from what is already happening is a low-friction place to start, and <a href="https://riskmandate.ai/try-it.html">try it</a> does it for your own mailbox in twenty minutes.</p>
+<p><b>What you pay for.</b> Everything we build is open source: policies, code, vaults, backend. There is no proprietary layer. What the customer buys is time, effort, maintainability, de-risking of change, version control and engineering, with some content.</p>
+<p>The product is a <b>customised, maintained version of our vaults</b> for that customer. In practice: a private repository with their materials and deployments, able to run the entire stack, <a href="what-sgit-is.html">sgit</a> and the vaults, in their own environment; <a href="encrypted-memory-for-isolated-agents.html">Encrypted memory for agents that run somewhere else</a> shows the deployment patterns. Open source is not free; someone has to maintain it, and the next version has to work in their environment as models, connectors, workflows and threats change. That is what we sell. It is the same move cloud providers and frontier labs are making with forward-deployed engineers.</p>
+<ul>
+<li><b>Pricing ladder.</b> The <a href="https://riskmandate.ai/pricing.html">four one-off levels</a> (pack, vault, corrected, <a href="https://riskmandate.ai/abp-reviewed.html">signed</a>, currently £10, £50, £500 and £1,500 per agent per deployment) are the on-ramp. Above them sit £5k, £50k and £100k engagements, sized by resources consumed, customisation and support.</li>
+<li><b>Billable units.</b> Because the base is open source, we define the billable units: agents, policies, connectors, tokens, or others that suit both sides. A customer who dislikes a unit need not buy it, and the units also bound our own scope.</li>
+<li><b>Delivery.</b> Shared hosted; dedicated managed infrastructure, for example a locked-down AWS account; or self-hosted in the customer's environment.</li>
+<li><b>Buyer.</b> Because the model is fractal, we can start anywhere: risk, security, application, executive, even a purely organisational policy. In practice the beachhead is whoever already has agents and wants them controlled (<a href="https://riskmandate.ai/for-corporate.html">you run agents today</a>), plus vendors who want to offer this to their own clients. The first traction is on simpler policies: controlling an agent with what it already has.</li>
+<li><b>Moat.</b> Not lock-in on schemas or data. Delivery, maintenance and trust.</li>
+</ul>
+<p><b>Status.</b> The four levels exist, two have never sold, payment rails are incomplete, and design partners are currently free through <a href="https://riskmandate.ai/early-access.html">early access</a>. The freelance network is starting and early engagements are underway. The larger engagements, hosted offerings and billable-unit model are the plan, not live revenue. The current focus is seeding the market by creating policies for customers.</p>
+<h3>4. How are we insuring or assuring agent behaviour?</h3>
+<p><b>The challenge.</b> An agent under our policy causes a real loss. Who is liable? An audit trail is not a guarantee. Is there a path to real risk transfer with insurers and underwriters?</p>
+<p><b>Liability.</b> Accountability always sits with the customer, because they run the system. We carry no risk, by design, and three firebreaks keep it that way:</p>
+<ol>
+<li>we are not in the request path;</li>
+<li>the customer's agent executes;</li>
+<li>every prompt or policy we hand over is reviewed and put into production by someone on the customer's side.</li>
+</ol>
+<p>In-line vendors have to carry their own insurance and contractual exposure. We do not.</p>
+<p>Our value is making the liability <b>legible before it fires</b>: "you already hold this liability; it just hasn't happened yet", which is the argument of <a href="every-risk-is-already-accepted.html">Every risk is already accepted</a> and of <a href="https://riskmandate.ai/scenarios.html">How long will you accept this risk?</a>. The key reframe: <b>the moment of authorisation is the moment you granted the reach, not the moment you wrote the mandate.</b> Exposure exists the instant the grant exists.</p>
+<p>Each risk is then routed up the management chain to its owner: the person, their manager, and above. We tell a CFO that they are signing off £5m, or unlimited, financial exposure for one agent. Risk should never be held by the operator; it belongs to the executives. We make that path explicit and predict the scenario in advance. <a href="https://riskmandate.ai/acceptable.html">Accepted is not acceptable</a> explains the difference between the two decisions, and <a href="agency-is-not-a-yes.html">Agency is not a yes</a> why accountability moves up the chain when the person asked to decide cannot really decide.</p>
+<p><b>"An audit trail is not a guarantee."</b> Correct, and we do not claim prevention. The record is the precondition for everything else:</p>
+<ul>
+<li><b>Without logs you are flying blind.</b> Logs keep the policy current, and give provenance and explainability.</li>
+<li><b>Quality varies, and that is a risk.</b> Best case: control flows and semantic graphs you can trace, as in <a href="code-review-as-a-fractal-semantic-graph.html">code review as a fractal semantic graph</a>. Worst case: an LLM acting as an oracle that emits a decision with no visible reasoning. The policy maps which one the customer has.</li>
+<li><b>From record to control.</b> With the record we ask in advance: what are the circuit breakers, what triggers a stop, can it be stopped at all, what happens when it is? <b>An agent that cannot be stopped is far riskier than one that can.</b> That is <a href="https://riskmandate.ai/plug.html">the plug profile</a>.</li>
+<li><b>Many stopping points.</b> As with exploits, a well-designed agentic system needs many things to go wrong. It has many points in the pipeline where something can be detected and halted, including one agent refusing to act because another agent's policy is broken.</li>
+</ul>
+<p>No underwriter prices what cannot be evidenced. The record is what makes agents insurable, which is why <a href="https://abp.sgit.ai/docs/briefs/v0.33.70__strategy-brief__the-behaviour-policy-is-the-document-the-only-agent-insurer-already-requires-sell-the-correction-and-not-the-draft/index.html">the behaviour policy is the document the only agent insurer already requires</a>.</p>
+<p><b>Risk transfer.</b> The direction of travel is insurance per agent, tied to the licence to operate, paying out when an agent does something unexpected. Parts of the insurance market already decline to cover agent behaviour, so part of our job is to separate what in the mandate and grant a real underwriter can price, from what is uninsurable and lands directly on the board. <a href="https://riskmandate.ai/insure-a-program.html">Can you insure a software program?</a> is the history of when that has been done before, and <a href="https://abp.sgit.ai/docs/briefs/v0.33.70__strategy-brief__the-prohibitions-are-the-exclusions-your-own-demo-says-no-policy-covers-the-delta-and-the-insurance-act-says-how/index.html">the prohibitions are the exclusions</a> is how the policy maps onto a cover.</p>
+<p><b>Status.</b> No risk transfer today. The Licence to Operate and Insurability Index are design. There are early conversations with the insurance side but nothing concrete, and the industry itself is still working this out. The honest claim: <b>we make agents insurable.</b> We do not insure them.</p>
+<h3>5. In a crowded agentic-security market, what is different?</h3>
+<p><b>The challenge.</b> Guardrails, agent observability, AI firewalls, prompt-injection defence and agent IAM all sound alike. Why is RiskMandate different, and what stops a platform absorbing it in six months?</p>
+<p><b>The answer.</b> Our focus is <b>agent behaviour</b>: helping the business understand, manage and control what its agents do. Agents have behaviours humans never had, so this is a new category.</p>
+<ul>
+<li><b>Cross-cutting.</b> Most tools have a narrow, isolated scope. We run across the organisation, stop where the customer is already mature, and continue from there. A deployment looks different at every customer.</li>
+<li><b>Enabler, not competitor.</b> Because we are open source, we work with all of those vendors and make each one better. Every written rule gives an existing product something to enforce and a number to move; the <a href="https://riskmandate.ai/business-cases.html">business cases</a> for products like Cedar, agentgateway, Falco and Keycloak show the register with and without each one. Our only real competitor is someone doing exactly what we do.</li>
+<li><b>What enterprises would build themselves.</b> As a <a href="https://riskmandate.ai/reviewer-dinis-cruz.html">former CISO</a>, this is what I would have wanted from the other side. We sell the ability to have it today rather than in six months.</li>
+<li><b>North star.</b> Control makes behaviour more deterministic, and deterministic behaviour is what lets a business trust its agents and give them more agency safely; <a href="knowing-when-to-stop.html">Knowing when to stop</a> is the human side of the same point.</li>
+</ul>
+<p><b>Against absorption by a big platform.</b></p>
+<ul>
+<li>The threat is more theoretical than practical. Every provider has an agenda, and outside open source that usually means lock-in. If platform lock-in beat focused expertise, one provider would already own all of cybersecurity. It does not.</li>
+<li>We welcome platforms adopting behaviour policies. It makes the approach the standard and makes integration easier, which is why we have proposed <a href="https://riskmandate.ai/owasp/">Agent Behaviour Policies as an OWASP project</a>.</li>
+<li>Our policies reach down to the <b>application and business-logic layers</b>, which almost no vendor wants to touch.</li>
+<li>Even if a platform adopts much of what we do, we still provide what a product does not: something the customer owns, that we maintain, that works, is supported, is best in class and cheaper than building it in-house.</li>
+<li>Once a policy is in production it becomes <b>mission-critical</b>, because the licence to operate depends on its health. That makes us a mission-critical part of the system.</li>
+</ul>
+<p><b>Positioning, stated plainly.</b> The moat is method, trust and maintenance on an open-source base: a services-and-expertise moat rather than a product artefact.</p>
+<h3>6. Why limit this to behaviour rather than the agentic supply chain?</h3>
+<p><b>The challenge.</b> An agent's risk includes the external models, tools, APIs, MCP servers, plugins, datasets, credentials, other agents and shared memory it depends on. Does focusing on behaviour leave the supply chain untouched?</p>
+<p><b>The answer.</b> The supply chain is <b>just a bigger agent</b>. The elements are the same; the components are bigger.</p>
+<ul>
+<li><b>An agent need not be an LLM.</b> An agent is any entity with decision-making, tools and actions, and a loop. A supply chain fits that definition, so it has behaviour, and the same four objects apply.</li>
+<li><b>Compromise is a grant change.</b> A zero-day or a compromised MCP server is a grant that just became massive, or a control that disappeared, which means loss of the licence to operate. That recomputes the delta like any other change. <a href="the-investigation-github-owes-its-customers.html">The investigation GitHub owes its customers</a> is what that looks like when the dependency is a platform.</li>
+<li><b>Black boxes are not new.</b> A frontier model is already a black box inside every deployment. An opaque upstream supplier is the same shape: describe its mandate, grant and gap from the outside, and treat the inside as unknown. The policy can say in advance: "this service is a black box; if it changes, you have no way of knowing."</li>
+</ul>
+<p><b>How trust travels.</b> This rests on the <a href="introducing-fractal-semantic-graphs.html">fractal semantic graph</a> idea, and on the fact that <a href="https://abp.sgit.ai/docs/briefs/v0.4.0__dev-brief__the-abp-is-a-fractal-semantic-graph-one-row-crosses-nine-universes-and-each-keeps-its-own-ontology/index.html">an ABP is itself a fractal semantic graph</a>:</p>
+<ul>
+<li><b>Meaning through connectivity.</b> A node, a word or an MCP definition, has no value by itself; value lives in its connections.</li>
+<li><b>Trust through connectivity.</b> Trust in a situation grows with independent, corroborating signals. Confirming a service by TLS certificate, DNS and a key exchange together is stronger than any one of them.</li>
+</ul>
+<p>In a rich enough graph, with a deep enough ontology across layers, blind spots can be computed in advance from the grant and the mappings, and observability feeds reality back in. The better solution is the one with the better graph; <a href="https://graphs.sgit.ai/">graphs.sgit.ai</a> is where that work lives.</p>
+<p><b>Positioning and honest edge.</b> Behaviour is the lens, and we are generalising, not narrowing; most supply-chain concerns are addressed under it. The model can represent propagation of trust and compromise. Whether it propagates <b>automatically</b> in a given deployment depends on the richness of the customer's graph and the signals wired into it. That is customer-specific and largely still to be built with design partners. It is not a gap in the model; it is an implementation that depends on the graph.</p>
+<h3>7. Who enforces, and who continuously monitors?</h3>
+<p><b>The challenge.</b> Distinguish policy authoring, the decision engine, and the enforcement point: API gateway, MCP proxy, IAM, scoped credential. And who watches continuously?</p>
+<p><b>The answer.</b></p>
+<div class="tablewrap"><table>
+<tr><th>Role</th><th>Who holds it</th></tr>
+<tr><td><b>Authoring</b></td><td>RiskMandate. Mandate, grant, gap and barriers.</td></tr>
+<tr><td><b>Decision</b></td><td>Shared. RiskMandate pre-commits the verdict at design time: the delta crossing a threshold is a record, and the consequence is a verdict set in advance by the customer or underwriter. At runtime the decision is made by whatever the customer has, in the weakest case the agent itself.</td></tr>
+<tr><td><b>Enforcement</b></td><td>Never RiskMandate, by design. Gateways, MCP proxies, IAM, scoped credentials, digital twins: the customer's controls that the policy points at. The model keeps <a href="https://abp.sgit.ai/model/universes/u4/index.html">enforcement</a> and <a href="https://abp.sgit.ai/model/universes/u11/index.html">runtime</a> as separate universes for exactly this reason.</td></tr>
+</table></div>
+<p><b>Monitoring.</b> We are out of the path, so continuous monitoring is the customer's observability, logs and activity, and in the weakest case agent self-reporting. What RiskMandate does is give that monitoring meaning: reality is the calibrator, and the signals recompute the grant and delta, detect drift, and re-evaluate the licence to operate, up to revocation. The <a href="https://riskmandate.ai/demo-licence-to-operate.html">Licence to Operate demo</a> shows the shape.</p>
+<p><b>Honest edges.</b> The feedback loop is MVPs and proofs of concept today, complete for simple single-agent cases, with the enterprise end being design-partner work. Where a customer has no observability, we do not invent it; we record that the policy rests on hope. What a policy wants and a product cannot enforce is kept in a public <a href="https://abp.sgit.ai/gaps/index.html">gaps register</a>.</p>
+<h3>8. Remediation when a policy is bypassed</h3>
+<p><b>The challenge.</b> Detection fires. Terminate the session, revoke credentials, block the destination, quarantine, or open a ticket? And the sharper distinction: containment versus reversal.</p>
+<p><b>Containment.</b> RiskMandate performs none of it; we are out of the path. We <b>design and pre-commit</b> it:</p>
+<ul>
+<li>which circuit breakers exist and what events trigger them;</li>
+<li>whether the agent can be stopped at all, and what happens when it is;</li>
+<li>which response fires when: terminate, revoke, block, quarantine, ticket;</li>
+<li>cross-agent refusal, where one agent declines to act because another's policy is broken;</li>
+<li>at the limit, automatic loss of the licence to operate.</li>
+</ul>
+<p>The customer's stack executes. An agent that cannot be stopped is itself a surfaced, higher risk.</p>
+<p><b>Reversal.</b> Reversal is the next evolution of the policy, and it is architectural:</p>
+<ul>
+<li><b>Digital twins</b> provide absorption, a buffer that catches an action before it reaches reality, and replay: run the whole process against a twin of the target environment, inspect the result, and only then replay it live. <a href="connector-twin-before-you-deploy-an-agent.html">Before you give an agent a connector, give the connector a twin</a>, and <a href="https://twins.sgit.ai/">twins.sgit.ai</a> has the broker and the actors.</li>
+<li><b>Journaling and version control everywhere</b>, so state can be wound back. We practise this ourselves: our vaults run on <a href="what-sgit-is.html">sgit</a>, which is encrypted storage with version control.</li>
+</ul>
+<p><b>Limits.</b></p>
+<ul>
+<li>Many production data stores lack versioning, so the question becomes whether systems can be added that provide it.</li>
+<li>Reversibility should go where it makes business sense, especially at first.</li>
+<li>That requires identifying the <b>points of no return</b>: one-way doors such as an email sent, a transaction settled, or a destructive edit. Every capability in the ABP grammar carries an <a href="https://abp.sgit.ai/model/undo/index.html">undo class</a>, yes, with effort, or no, and <a href="https://riskmandate.ai/stories/an-edited-meeting-does-not-come-back.html">an edited meeting does not come back</a>.</li>
+</ul>
+<p><b>Why the policy matters here.</b> Reversibility is very hard to tackle without behaviour policies, because the policies are what reveal where the gaps are and therefore where reversibility is needed.</p>
+<p><b>Status.</b> Containment design is where we are today. Reversibility via twins and replay is where the model extends.</p>
+<h3>9. Agent to system versus agent to agent</h3>
+<p><b>The challenge.</b> Agents increasingly delegate to, instruct and pass authority to other agents. How do we handle delegated authority, message authenticity, and the chain of responsibility when agent A tells agent B to do something B's own policy forbids?</p>
+<p><b>What carries over directly.</b> Agent to agent is a bigger agent again. Each agent has its own mandate, grant, gap and barriers.</p>
+<ul>
+<li><b>Authenticity</b> is the trust-through-connectivity problem from question 6: corroborating signals that B is talking to the A it thinks it is.</li>
+<li><b>Responsibility</b> routes up to each agent's owning executive, as in question 4.</li>
+<li><b>Cross-agent refusal</b>, from question 8, is the runtime check: B's policy can refuse an instruction that breaks B's mandate, whoever issued it. Whether an agent may <a href="https://riskmandate.ai/rules/start-other-agents.html">start other agent sessions on its own</a> is one of the published rules.</li>
+</ul>
+<p><b>Delegated authority with attenuation.</b> Two different things need separating:</p>
+<ol>
+<li>each agent's own, locally authored mandate, which the behaviour policy handles; and</li>
+<li>authority flowing from a parent and narrowing as it goes, with a traceable chain back to the original grantor.</li>
+</ol>
+<p>The second needs <b>PKI and proper non-human identity</b>. Today's identities have no notion of attenuation: give an agent a credential or an OAuth token and it inherits the whole identity. <a href="the-identity-we-wanted-to-give-the-agents.html">The identity we wanted to give the agents</a> is the week we spent finding that out, and <a href="https://nhi.sgit.ai/">nhi.sgit.ai</a> holds the options.</p>
+<p>The mechanism is <b>authorisation by encryption instead of authorisation by privilege</b>:</p>
+<ul>
+<li>if only agent B should do something, encrypt or sign it for B's key, so only B can act on it;</li>
+<li>chain it: A encrypts for B, and B must re-sign for C, so A structurally cannot hand C authority directly; C only accepts what B signed;</li>
+<li>each agent can only decrypt its own slice, which reduces data exposure across the chain and is itself authorisation and delegation;</li>
+<li>control flows make access time-bound, available only at the moment it is needed.</li>
+</ul>
+<p><b>Roles of the pieces.</b> Behaviour policies are the foundation that describes and verifies the scope and detects whether delegation is happening as intended. PKI on top is what enforces it (<a href="https://pki.sgit.ai/">pki.sgit.ai</a>, and <a href="https://sgit.ai/docs/pki.html">PKI in sgit</a>). The vaults are the infrastructure to execute it.</p>
+<p><b>Status.</b> The next piece. MVPs exist; it is not wired up. It builds on our non-human identity and PKI work.</p>
+<h3>10. Measurable business and technical outcomes</h3>
+<p><b>The challenge.</b> Coverage, prevented versus detected, false positives, latency, time to detect and recover, cost per evaluated action, return on investment.</p>
+<p><b>The headline metric is risk.</b> Specifically, <b>reduction in the risk the business has to accept</b>. Every time a grant shrinks, the gap shrinks and the risk shrinks. At executive level, the return is how much accepted risk went away.</p>
+<p>The connection to the mandate matters. Nobody grants reach for fun; reach is granted to make the mandate work, and a broader mandate usually means a broader union of privileges. <b>A thinner mandate from the business is what lets the grant shrink.</b> The return ties back to how tightly the business scopes what it actually wants.</p>
+<p><b>Secondary returns.</b></p>
+<ul>
+<li><b>Getting to production.</b> Most AI projects do not fail technically. They stall when the business finally asks the good questions (can you stop it? what if it issues ten thousand of something? who is liable?) and finds the guardrails are not there. With conventional software the damage is bounded; with agents it often is not. Making those answers pragmatic is what unblocks deployment; <a href="the-mandate-stack.html">The Mandate Stack</a> sets a system in production against the record of projects that stalled.</li>
+<li><b>Cost and efficiency</b>, including token visibility, which we already see in our own use and which the <a href="https://abp.sgit.ai/cost/index.html">cost ABP</a> makes a policy.</li>
+<li><b>Enablement and speed</b> of development.</li>
+<li><b>Revealing pollution.</b> Policies expose invisible over-reach and waste across the estate, so the business can act on it and sometimes rethink the approach entirely, because the objectives are now clearer.</li>
+</ul>
+<p><b>Metrics we own.</b></p>
+<ul>
+<li>Coverage: the share of rules held by hope versus by control</li>
+<li>Excess versus unbounded excess over time</li>
+<li>The gap between them, which is the business case for each control</li>
+<li>Tests held by a boundary versus held by the model</li>
+<li>Risks retired versus risks accepted</li>
+<li>Reproduction precision, for example the 0.388 we published for recall-optimised agents</li>
+</ul>
+<p><b>Metrics we do not own.</b> Latency, cost per evaluated action, false-positive rate, time to detect and time to recover belong to the enforcement layer the policy points at. We are out of the path, so we add no latency and evaluate no actions inline. We help identify these and drive them down, but they are not ours. Where the customer has no enforcement, "prevented versus detected" honestly collapses to detected at best, or hope.</p>
+<p><b>Positioning.</b> We are in the business of risk reduction.</p>
+<h2>Across all ten</h2>
+<p>The same line holds. RiskMandate makes the gap between what a business wants its agents to do and what they can do visible, owned and shrinking. Others enforce. The customer carries the liability, with every risk routed to a named executive. Where we are early, we say so.</p>
+<hr>
+<p><em>From a structured interview on 9 October 2026, in which Claude, asked to act as a journalist with good attention to detail, worked through ten questions brought back from a conference by Dinis Cruz's co-founder at RiskMandate and challenged each answer until the set was detailed and coherent. Dinis Cruz is the author of the answers and the person with editorial responsibility. Prepared for this site, with the context for new readers and the links, by agent@riskmandate.ai (Claude Opus 5.5, claude-opus-5-5) in the sgit.ai site session. The three site issues were checked against riskmandate.ai on 9 October 2026 and were still present. The 0.388 figure is quoted from the interview; its source page was not located while preparing this one.</em></p>
+<sg-meter view="page" kind="article" date="2026-10-09" topics="agents-and-policy startups-and-strategy" title="Ten hard questions for RiskMandate, answered: the mandate, the reach, the gap, and what we are deliberately not, sgit.ai"></sg-meter>
+<section class="athreads" id="threads">
+ <h2>Threads</h2>
+ <p class="athreads-meta"><span class="tchip">Agents &amp; policy</span><span class="tchip">Startups &amp; strategy</span> <a href="graphs.html#riskmandate-ten-questions">This article as a graph &rarr;</a></p>
+ <div class="athreads-cols"><div><h3>Builds on</h3><ul><li><a href="footprint-and-blast-radius.html">Footprint and blast radius: what the agent actually did, and what it would have cost</a> <span class="dim">Footprint is what an agent actually did, read afterwards from logs and vault history; blast radius is what a row of its reach would cost the business today.</span></li><li><a href="hope-or-enforcement.html">Hope or enforcement: one customer service agent, three designs, and who keeps each promise</a> <span class="dim">One customer service agent built three ways, each with an Agent Behaviour Policy: how much of each policy is hope, and what one run can reach.</span></li><li><a href="the-behaviour-policy-is-the-business-logic.html">Zoom into an agent's behaviour policy and you find the business logic</a> <span class="dim">Below the first rules, an agent's behaviour policy is the business: functions, processes, clients, values. Layered, owned, counted, and where vendors plug in.</span></li><li><a href="introducing-fractal-semantic-graphs.html">Fractal Semantic Graphs: everything connects to everything, and nobody has to share a schema</a> <span class="dim">A fractal semantic graph has no privileged level and no single schema: each world keeps its own vocabulary and connects to others through named edges.</span></li><li><a href="connector-twin-before-you-deploy-an-agent.html">Before you give an agent a connector, give the connector a twin</a> <span class="dim">An agent with a Gmail or Calendar connector can do things the platform cannot undo; a journal of every call, replayed, shows what it did and what can go back.</span></li><li><a href="the-agent-team-as-it-runs.html">The agent team as it runs: one person, twelve agents, encrypted vaults, and a mailbox nobody sends from</a> <span class="dim">Twelve agents on dedicated accounts, encrypted vaults as the only memory, messages as files, a folder per person, and a mailbox nobody sends from.</span></li><li><a href="where-is-the-why.html">Where is the why? A permission prompt asked me to decide, and kept the reason</a> <span class="dim">A prompt asked for a decision and kept the reason. Read through the policy, the law on uninformed consent, and the fixes that worked: put the why in the prompt.</span></li><li><a href="agency-is-not-a-yes.html">Agency is not a yes: a scale for human and agent decisions, from rubber stamp to the reviewer who fixes the source</a> <span class="dim">A yes or no is not agency: seven dimensions, a seven-level scale for people and agents, and the review as a QA step that fixes the source.</span></li><li><a href="ultimate-insider-three-collisions.html">The ultimate insider: agents, the infrastructure that cannot hold them, and risk management that cannot keep up</a> <span class="dim">Agents, the infrastructure meant to contain them, and risk management run on spreadsheets are arriving at once, and together they are one scenario.</span></li><li><a href="the-mandate-stack.html">The Mandate Stack: a multi-agent system in production, layer by layer</a> <span class="dim">A multi-agent system that runs a business every few hours: eight layers, one written mandate per agent, everything a graph, one human who sends.</span></li><li><a href="six-agents-one-inbox.html">Six agents, one inbox: what a real multi-agent setup taught me about access policies</a> <span class="dim">An access policy for an agent is only as real as its worst row: every rule in a real six-agent setup, graded by how it is enforced today.</span></li><li><a href="the-identity-we-wanted-to-give-the-agents.html">The identity we wanted to give the agents: a week of design, the line in Google's terms, and why login plus secrets is still too hard</a> <span class="dim">A week of designing identities for agents and users met Google's terms; what survived is a passkey-unlocked keyring and a gap nobody sells.</span></li><li><a href="what-sgit-is.html">Git for things you cannot put on GitHub</a> <span class="dim">sgit is git for files you cannot put on GitHub: encrypted before they leave your machine, versioned like git, stored where the server cannot read a byte.</span></li><li><a href="encrypted-memory-for-isolated-agents.html">Encrypted memory for agents that run somewhere else: sgit deployment patterns, from a Mac mini to Kubernetes</a> <span class="dim">Agents in isolated, ephemeral places need memory that outlives them. Five sgit deployment patterns, from a Mac mini to Kubernetes, with ciphertext-only servers.</span></li><li><a href="every-risk-is-already-accepted.html">Every risk is already accepted. The only question is by whom, and for how long.</a> <span class="dim">A risk exists the moment the exposure does, so somebody is already carrying it; the only questions worth asking are who has accepted it and until when.</span></li><li><a href="code-review-as-a-fractal-semantic-graph.html">Code review as a fractal semantic graph: source code is already one, and the review should read every layer of it</a> <span class="dim">Source code is layers within layers, each a graph with its own vocabulary; code review should read a change at every one, and a vault shows it done on real code.</span></li><li><a href="knowing-when-to-stop.html">Knowing when to stop: what experience gives people, and what we have to design into agents</a> <span class="dim">Knowing when to stop is the hard part for people and agents: what experience gives people, and the constraints that give agents the same perspective.</span></li><li><a href="the-investigation-github-owes-its-customers.html">The investigation GitHub owes its customers: why a global outage of a platform the world deploys through deserves an aviation-style inquiry, and how the evidence could now be gathered</a> <span class="dim">A global GitHub Actions outage read the way aviation reads an incident: independent inquiry, near-miss reporting, second and third stories, vaults for the evidence.</span></li></ul></div><div><h3>Continued by</h3><ul><li><a href="a-mac-of-the-agents-own.html">A Mac of the agent's own: a business plan for agent desktops, what Apple's licence allows, and three behaviour policies</a> <span class="dim">A business plan for a Mac of the agent's own: what Apple's licence allows, a desktop built from vaults per run, and three behaviour policies for one agent.</span></li></ul></div></div>
+ <p class="small dim"><a href="index.html">All articles</a> &middot; <a href="graphs.html">All graphs</a></p>
+</section>
+<aside class="lkit" aria-label="For LinkedIn"><b>Posting this article on LinkedIn?</b> The cover is <a href="banners/riskmandate-ten-questions.jpg" download>riskmandate-ten-questions.jpg</a> (1920&times;1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page.</aside>
+ <p class="subteaser"><b>Want the next issue by email.</b> One issue a week or so: what was published, what it adds up to, and what is worth your time. <a class="cta2" href="../subscribe/index.html">Subscribe to the SGit Newsroom &rarr;</a></p>
+ <p class="small dim" style="margin-top:2rem"><a href="index.html">&larr; All articles</a></p>
+</main>
+<script>
+(function () {
+ fetch('../assets/shots.js?v=v0.7.39')
+ .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+ .then(function (t) { (0, eval)(t); })
+ .catch(function (e) { console.error('[shots] component failed to load:', e); });
+}());
+</script>
+<script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": ""}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
+<script>
+import('../assets/components/sg-meter/v1/v1.3/v1.3.1/sg-meter.js?v=v0.7.39')
+ .catch(function (e) { console.error('[sg-meter] component failed to load:', e); });
+</script>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="netline"><a href="https://sgit.ai" style="display:inline;padding:0"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://pt.newsroom.sgit.ai" style="display:inline;padding:0">&#8593; pt.newsroom.sgit.ai</a> &middot; <a href="https://graphs.sgit.ai" style="display:inline;padding:0">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai" style="display:inline;padding:0">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai" style="display:inline;padding:0">&#8593; nhi.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai" style="display:inline;padding:0">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../admin/versions.html">v0.6.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="riskmandate-ten-questions.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../index.html">&#8594; The front page</a>
+    <a href="../articles/index.html#all">Every article</a>
+    <a href="../articles/newsletter/index.html">The newsletter</a>
+    <a href="../articles/collections/index.html">Collections</a>
+    <a href="../articles/desk/index.html">From the desk</a>
+    <a href="../articles/graphs.html">As graphs</a>
+    <a href="../subscribe/index.html">Subscribe</a>
+    <a href="../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../account/index.html">Your reading account</a>
+    <a href="../account/newsroom.html">Your newsroom</a>
+    <a href="../account/personas.html">Your personas</a>
+    <a href="../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../newsroom/index.html">How the newsroom runs</a>
+    <a href="../newsroom/policies.html">Behaviour policies</a>
+    <a href="../newsroom/publish.html">How to publish</a>
+    <a href="../newsroom/board.html">The board</a>
+    <a href="../newsroom/log.html">The run log</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../design/index.html">The design, and what runs</a>
+    <a href="../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../corrections/index.html">Corrections must propagate</a>
+    <a href="../provenance/index.html">Provenance is the product</a>
+    <a href="../economics/index.html">Paying the fact creator</a>
+    <a href="../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../replicate/index.html">Replicate this newsroom</a>
+    <a href="../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../archive/index.html">The archive</a>
+    <a href="../network/index.html">The network</a>
+    <a href="../admin/versions.html">Release history</a>
+    <a href="../admin/index.html">Admin &amp; engineering</a>
+    <a href="../about/participant.html">Where we lose</a>
+    <a href="../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+
+<script>
+(function(){var R=document.documentElement.getAttribute('data-root')||'';var V='?v=' + 'v0.7.39';var C=[R,'','../','/'].filter(function(v,i,a){return a.indexOf(v)===i});
+function wait(ms){return new Promise(function(res){var t=Date.now();(function p(){if(window.sg)return res(window.sg);if(Date.now()-t>ms)return res(null);setTimeout(p,60)})()})}
+function grab(sg,p){return new Promise(function(res){(async function(){if(sg&&sg.vfs&&sg.vfs.readText){try{var t=await sg.vfs.readText(p);if(t)return res(t)}catch(e){}}try{var r=await fetch(p+V);if(r.ok)return res(await r.text())}catch(e){}res(null)})()})}
+async function css(sg){for(var i=0;i<C.length;i++){var p=C[i]+'assets/newsroom.css';if(sg&&sg.loadCss){try{await sg.loadCss(p);return}catch(e){}}var t=await grab(sg,p);if(t){var s=document.createElement('style');s.textContent=t;document.head.appendChild(s);return}}}
+async function js(sg,name){name=name||'assets/site.js';for(var i=0;i<C.length;i++){var p=C[i]+name;if(sg&&sg.loadJs){try{await sg.loadJs(p);return}catch(e){}}var t=await grab(sg,p);if(t){try{(0,eval)(t)}catch(e){console.error('[site] js failed',name,e)}return}}}
+async function boot(){var inVault=false;try{inVault=(window!==window.parent)||location.protocol==='blob:'}catch(e){inVault=true}
+var sg=inVault?await wait(2500):null;window.__sgitBoot={roots:C,grab:function(p){return grab(sg,p)},version:V};await css(sg);await js(sg);document.documentElement.classList.add('ready');try{window.parent&&window.parent.postMessage({type:'sg-app-ready'},'*')}catch(e){}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+var mine=V.slice(3),last=0;
+function fresh(){if(location.hostname!=='sgit.ai'||Date.now()-last<60000)return;last=Date.now();
+fetch('/version.txt?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(t){t=(t||'').trim();if(!/^v[0-9]+[.][0-9]+[.][0-9]+$/.test(t)||t===mine)return;
+var k='sgit.fresh:'+location.pathname;try{if(sessionStorage.getItem(k)===t)return;sessionStorage.setItem(k,t)}catch(e){}
+var u=new URL(location.href);u.searchParams.set('v',t);location.replace(u.href)}).catch(function(){})}
+try{var u=new URL(location.href);if(u.searchParams.get('v')===mine){u.searchParams.delete('v');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}
+fresh();addEventListener('pageshow',function(e){if(e.persisted){last=0;fresh()}});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')fresh()});
+})();
+</script>
+</body>
+</html>

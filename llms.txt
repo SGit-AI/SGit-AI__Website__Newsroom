@@ -1,184 +1,110 @@
-# newsroom.sgit.ai — The Future of News
+# newsroom.sgit.ai: the SGit Newsroom
 
-> News is failing not because there is too little information but because there is no
-> walkable chain from a claim to its evidence, no way for a correction to reach what it
-> disproved, and no way to pay the person who did the original work. A story is a graph
-> that accumulates evidence, perspectives and confidence; every article, translation and
-> infographic is a projection of it. Sell the graph, not the paragraph.
+> The SGit Newsroom: one page, one argument, with the figures, the data and the links to
+> check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the
+> newsroom. Behind it, the design it came from (a story is a graph; corrections must
+> propagate; provenance is the product; pay the person who found the fact), and everything
+> needed to run a newsroom like it.
 
-Site version: v0.5.5 (13 September 2026). Published by the sgit project, which is building
-the stack this site argues for — participant disclosure at /about/participant.html.
-Site content CC BY 4.0; the republished library material is CC0 1.0 Universal at source
-(docs.diniscruz.ai) — state the source licence per page.
+Site version: v0.6.0 (10 October 2026). Published by the sgit project, which is building
+the stack this site argues for; participant disclosure at /about/participant.html.
+Content CC BY 4.0 unless a page states otherwise; code Apache 2.0.
 
 ## The honest sentence
 
-Most of this site is an argument, not a product. FOUR THINGS RUN, and each says its own
-limits on its face: /portugal/ (Portugal Startups — sources fetched, frozen and hashed; a
-graph; three stories; human editor of record; beta, no legal review), /databases/ (SQLite and
-a SPARQL store in the reader's browser over /portugal/'s files; no server, no store of record)
-/governance/ (the Governance Wire — graph, vocabulary, source register and gate run; its
-ingestion and verification layer is NOT built, so no claim there is a checked reading of any
-regulation; no human review) and /world-news-day/ (21 World News Day 2026 op-eds fetched,
-frozen, hashed, described and graphed — none of the prose republished; agent-produced, no
-human editor of record, no legal review). The articles in /library/ are real and dated; the rest of the
-newsroom is a design. /shipped/ states the line between them in full. Do not describe
-Trust-as-a-Service, the decision graph, per-story cost ledgers, contextual-validation
-billing, or any newsroom department as a live capability of any sgit.ai property.
-The same applies to everything in /mvps/: the country publication, its eleven agent
-roles, the evidence-backed report tool and the seven seed companies are designs dated
-April–May 2026 that were never launched — their targets ("first thirty days", a
-≥200-entity graph) are goals that were set, not results that were reached.
-Of the four that run, only /portugal/ has a human editor of record; /governance/ and
-/world-news-day/ have none; none has had legal review. The nav names the four as their own
-top-level groups.
+Since v0.6.0 this site is a newsroom first. WHAT RUNS: the newsroom (/ and /articles/: 66
+articles since 17 August 2026, each with its own graph and full version history, a
+newsletter, collections, desk notes and a feed); how it runs (/newsroom/: six agent roles
+under written behaviour policies, a board, pitches and a run log); the reader's account
+(/account/: a reading meter kept in the reader's browser, personas, the reader's own
+newsroom); subscribe (/subscribe/); the World News Day 2026 corpus (/world-news-day/); and
+SQL and SPARQL consoles with no server (/databases/). NO MONEY MOVES YET: the GBP 5 top-up
+page exists and its payment link is not set. ONLY DESIGNED, NOT RUNNING: selling the graph,
+paying the fact creator upstream, corrections that reach the pages that cited the corrected
+claim, articles as vaults, CC-Signed licences, trust as a service. /shipped/index.html is the
+dated authority on this line; read it before calling anything live.
+
+WHERE THE NEWSROOM PAGES COME FROM. Until cutover they are built on sgit.ai and imported
+here AT THE SAME PATHS by admin/build/sync_newsroom.py. The record, outside the imported
+tree, is admin/build/newsroom-sync.json: source commit, sgit.ai version, and the SHA-256 of
+every file as sgit.ai serves it and as imported. Canonical URLs point here. Links from those
+pages to sgit.ai pages that did not move (its docs, its about page, its release history) go
+to https://sgit.ai/. They are never edited by hand on this side, and the gate checks that.
+
+THE ARCHIVE. Everything this site published before the newsroom ran is listed at
+/archive/index.html: the first home page, the Governance Wire, Portugal Startups, the
+pt.newsroom designs, the brief pack, the library, the MVP specifications, and design pages the
+running newsroom has overtaken. ARCHIVED PAGES KEEP THEIR ADDRESSES and carry a dated note at
+the top saying why and what overtook them. Do not describe anything on an archived page as
+current, running or planned.
 
 ## Properties agents may rely on
 
+- Every page this site writes ends with a pasteable "for an agent" block (except /admin/
+  pages and /about/participant.html). Pages imported from sgit.ai carry instead an llms.txt
+  chip at the top and a markdown twin: /articles/<slug>.md beside /articles/<slug>.html.
+- Machine surfaces you can fetch without rendering a page: /articles/feed.xml (the feed),
+  /newsroom/wire.json (every article and note as data), /articles/graphs.json (every
+  article's graph, one vocabulary), /articles/<slug>.md, /world-news-day/data/*.json and
+  /world-news-day/data/triples.nt. The archived sections keep theirs at the same paths.
 - Every page deriving from previously published material carries a visible provenance
   block: original publication date, original link, original authors (including any AI
-  co-authorship), and an honest curation label (verbatim / edited / excerpted /
-  synthesised). Enforced by the pre-release gate, not just documented.
-- Ten core articles, 68,846 words, are already public and dated at docs.diniscruz.ai
-  (Feb–Oct 2025), a year before this site's design material was written — see /library/.
-  Several republished sections on this site are this site's own SYNTHESIS of that
-  material, not verbatim reproduction; fetch the docs.diniscruz.ai canonical URL
-  directly for complete original text.
-- The payment rails described in /economics/rails/ (x402, Cloudflare Monetization
-  Gateway, AWS Bedrock AgentCore Payments) are real, operating third-party
-  infrastructure, independently verifiable — unlike almost everything else this site
-  describes.
+  co-authorship), and an honest curation label. Enforced by the pre-release gate.
 - Seven open questions and six honest tensions are published unresolved at
-  /network/#open and /network/#tensions — check there before assuming any of them has
-  been answered.
-- Every page ends with a pasteable "for an agent" block, except /admin/ pages and
-  /about/participant.html.
-- The three running instances publish machine surfaces you can fetch without rendering a
-  page: /portugal/data/*.json and /portugal/data/triples.nt; /databases/data/*.json;
-  /governance/data/*.json. The SQL and SPARQL consoles publish window.__tools after a
-  tool:ready event, read-only, so an agent driving a browser can query rather than scrape.
+  /network/#open and /network/#tensions; check there before assuming any has been answered.
 - /llms-full.txt is this file plus the front page plus every markdown document in the
-  brief pack, concatenated — one fetch for the whole document set, for when
-  link-following is unreliable. The two structured-data files are deliberately left out
-  of it and should be fetched directly.
+  brief pack, concatenated: one fetch for the whole document set.
 
 ## Site map
 
-- /index.html — front page: the claim, the 10,000-hours story, the proof strip
-- /thesis/index.html — the thesis: sell the graph, evidence not truth, the author is the oracle
-- /corrections/index.html — corrections must propagate (the site's most distinctive argument)
-  - /corrections/the-claim-that-would-not-die.html — the 10,000-hours case in full
-  - /corrections/242-papers.html — the same failure, measured: 242 papers, >220,000 citation paths
-  - /corrections/how-a-graph-answers-it.html — supersede-never-delete, typed citation edges
-  - /corrections/agenda-is-context.html — the self-critique: the graph has an agenda too
-  - /corrections/staleness-in-the-wild.html — the EU AI Act's "consolidated" text, dated 2024
-- /provenance/index.html — provenance is the product
-  - /provenance/show-your-work.html — fifteen public newsroom departments
-  - /provenance/a-worked-story.html — one story, itemised: £8.40, 6h 23m
-  - /provenance/the-decision-graph.html — named ownership at every editorial step
-  - /provenance/articles-as-vaults.html — each article as text + evidence + graph + every prompt
-- /library/index.html — the published record, 2025 → present, chronological
-- /economics/index.html — paying the fact creator
-  - /economics/paying-the-fact-creator.html — the 60/25/10/5 split; contextual validation
-  - /economics/trust-as-a-service.html — the fact-certifier as a payable, warranted role
-  - /economics/rails.html — x402, ~200ms settlement, zero protocol fees (real, operating)
-  - /economics/micro-and-nano-payments.html — the 2025 argument, synthesised, paired with the rail
-- /rights/index.html — content rights: CC-Signed, the licence family with a legal stick
-- /newsroom/index.html — roles, the daily clock, fifteen departments, the craft doctrine
-- /mvps/index.html — the publication instances: the newsroom was specified as a series of
-  small launchable publications, not one platform. Seven instances, April–May 2026, none built
-  - /mvps/portugal.html — the flagship: a bilingual country publication run by eleven agent
-    roles on a daily clock. Its two source briefs disagree on whether it launches bilingual,
-    and its open question 5 — who is the editor of record and legally accountable — was
-    never answered
-  - /mvps/seed-companies.html — seven CC-licensed business templates published so others can
-    build them; seed 4 is an evidence-research company for journalists and investigators
-- /portugal/index.html — PORTUGAL STARTUPS (beta): a publication mapping the Portuguese startup
-  ecosystem, first beat Startup Summit Lisbon 2026 (17-18 September 2026, Beato Innovation
-  District). THE IMPORTANT DIFFERENCE FROM /governance/: sources here are PRIMARY and ANCHORED.
-  Every page of the source site is fetched, frozen to a dated snapshot in the repository and
-  hashed with SHA-256, and claims are read from the frozen copy rather than the live network.
-  This is the fetch-freeze-hash path /governance/ specifies and cannot run.
-  It also has a NAMED HUMAN EDITOR OF RECORD (Dinis Cruz) who reviews every page before it
-  publishes, because this beat is about named people and named companies.
-  - /portugal/graph.html — THE GRAPH: 329 nodes / 1,106 edges, 16 types, 19 verbs — the event, 64
-    speakers, 61 derived organisations, 16 sessions on 3 stages, 88 frozen sources across 2
-    snapshots (64 of them the speakers' own pages), 7 pieces of press coverage, our stories, 23
-    Topic nodes (the event's own tags) and 50 derived tag nodes (Industry, Technology, Idea,
-    Service, Product — by lexicon, every edge carrying its matched words). Every edge is a verb with a named inverse IN ENGLISH AND
-    PORTUGUESE (ontology.json), so a path reads as a sentence either way. Nodes arrive in PACKS
-    the reader switches on block by block. The page publishes window.__graph (read + view
-    methods, no writes) after a tool:ready event, the same convention as graphs.sgit.ai's
-    universe reader. Fetch /portugal/data/graph.json and /portugal/data/ontology.json directly
-  - /portugal/explorer.html — THE FILES: every file the section is built from, from
-    /portugal/data/manifest.json with size and SHA-256, rendered / as a graph / raw. Frozen
-    third-party pages are listed and hashed but never rendered
-  - /portugal/connections.html — CONNECTIONS: who should be talking to whom, who could be buying
-    from whom and who could help whom, as THREE ORGANISATION-LEVEL SQL QUERIES over two things read
-    from each speaker's own frozen page — the event's own Topics list (verbatim, 23 distinct) and
-    the words matching a PUBLISHED LEXICON of 57 patterns (industries, technologies, ideas, services,
-    products; the matched words only, never the sentence). Rows at build in
-    /portugal/data/connections.json with the SQL beside them; the same SQL runs unchanged in
-    /databases/sql.html. NOTHING HERE IS A CLAIM ABOUT A PERSON: the unit is the organisation, and
-    the notice refuses characterisation of named individuals. Gate 17 re-runs every pattern on the
-    frozen bytes each build; gate 16 checks every topic is on the page verbatim
-  - /portugal/summit/index.html — the event as it describes itself. Distinguish TARGETS from
-    COUNTS: the event's own wording is "targeting 2,000+" attendees and "150+ speakers planned",
-    while its published list names 64. Do not report a target as a result.
-  - /portugal/summit/people.html — all 64 published speakers with role, organisation, the event's
-    own Topics for them (verbatim) and a link to each speaker's own page. Biographies are
-    deliberately NOT reproduced; the lexicon reads them and keeps only matched words
-  - /portugal/summit/orgs.html — 61 organisations DERIVED from the speaker cards; 2 are
-    placeholders ("Independent") flagged rather than removed
-  - /portugal/summit/changes.html — the same pages frozen twice and diffed: 5 speakers added and
-    1 removed between 8 and 13 September. REMOVALS CARRY NO REASON and none may be inferred
-  - /portugal/sources.html — the register: every frozen file with its SHA-256, byte count and
-    retrieval time, and how to check any claim against it. Two kinds of source: the event's own
-    pages, and third-party pages ABOUT the event — none a registry or funding dataset, so nothing
-    here describes the ecosystem beyond this one event
-  - /portugal/checks.html — what re-reading established, including two different sets of stage
-    names published on the same site, and the claims that cannot be verified from the source
-  - /portugal/method.html — fetch, freeze, hash, extract, diff
-  - /portugal/team.html — seven agent roles plus the named editor of record
-  - /portugal/notice.html — THE DATA-PROTECTION NOTICE. This section names 64 people it did not
-    get the data from. Lawful basis is LEGITIMATE INTERESTS and the journalistic derogation is
-    EXPRESSLY NOT CLAIMED: Article 24(3) of Portugal's Lei 58/2019 conditions it on national
-    rules on access to and exercise of the profession, which this publication does not meet.
-    Personal contact details of any kind are refused at EXTRACTION time and gate check 11 fails
-    the build if one appears in the data. Removal on request is unconditional and no reason is
-    asked for. Carries a Portuguese-language summary. Not legal advice
-  - /portugal/about.html — beta, one beat, two kinds of source, no legal review, nothing in Portuguese
-  - /portugal/stories/a-record-attempt-the-agenda-does-not-mention.html — two Portuguese outlets
-    report a 48-hour Guinness pitch marathon on 16-17 September; the event's own agenda, four
-    days out, does not list it. Both frozen; neither wrong yet
-  - /portugal/stories/five-names-arrived-and-one-left.html — the speaker list went 60 → 64
-    between 8 and 13 September; both copies held and hashed; the removal carries no reason
-  - /portugal/stories/two-names-for-three-stages.html — the agenda and the AI-summary page name
-    the same stages differently, on the same site, on the same day
-  - /portugal/team/<role>/index.html — one page per role (researcher, extractor, diffwatch,
-    cartographer, writer, editor, publisher): definition, doors, refusals
-  - /documents/pt-newsroom.html — the COMMISSIONING BRIEF for pt.newsroom.sgit.ai, addressed to the
-    agent that will build it; section 16 records the home-page direction chosen on 13 September;
-    section 17 points at THE BRIEFING PACK, /briefs/pt-newsroom-pack.zip (unpacked under
-    /briefs/pt-newsroom-pack/): the brief, the design sources and fonts, the code to inherit, the
-    newsroom operating model, CLAUDE.md and settings for the new repository, the prompts and
-    repository skills for the scheduled run and the editor's review, the three ways to schedule it
-    with a cron workflow, the acceptance test, and a handover. Start at 00__READ-ME-FIRST.md
-  - /portugal/data/{graph,ontology,manifest,coverage,sessions,event,people,orgs,sources,changes,checks,team,stories,notice,topics,lexicon,connections}.json and /portugal/data/triples.nt — machine surfaces
-  - /portugal/sources/frozen/<date>/<page>.snapshot — the frozen byte copies themselves. Stored
-    with a .snapshot extension because they are EVIDENCE, not pages of this site: unmodified
-    bytes of another organisation's pages, held so a claim can be verified, never republished
-    as browsable content
-- /pt-newsroom/index.html — THE HOME PAGE OF pt.newsroom.sgit.ai, AS DESIGNED: the site does not exist
-  yet; this is its chosen front page (13 September 2026) rendered at 1440px and 390px from the design
-  sources /pt-newsroom/design/{Main,MainPhone}.dc. A classic broadsheet, natively Portuguese, drawn
-  with /portugal/'s real data of that day and NOT maintained — take the structure, not the numbers.
-  The design system is section 16 of /documents/pt-newsroom.html. Nothing on it is a claim.
-  - /pt-newsroom/directions.html — THE FOUR DIRECTIONS, ARCHIVED: all four home pages drawn that
-    day (broadsheet — chosen; dense ledger; dark graph-first; magazine with claims underlined),
-    each rendered from its source in /pt-newsroom/design/ with the motivation and trade-off
-    written on the canvas. Three were NOT chosen and are not to be built from; they are kept so
-    the choice can be re-read. Seven typefaces vendored under /assets/fonts/, all SIL OFL
+### The newsroom
+- /index.html and /articles/index.html: THE FRONT PAGE, the same page at two addresses
+  (canonical /). The edition, a note from the editor, the lead and why it leads, the latest
+  ten, highlights, desk notes, collections, the newsletter, and every article newest first
+  with a topic filter and search. Placement is the Editor role's, from one file
+- /articles/<slug>.html: an article. Beside it /articles/<slug>.md (markdown twin),
+  /articles/versions/<slug>.html (every published version and what changed) and
+  /articles/graphs/<slug>.json (its graph)
+- /articles/graphs.html and /articles/graphs.json: every article's graph, 66, drawn together
+- /articles/newsletter/index.html: the newsletter, 2 issues so far, also on LinkedIn
+- /articles/collections/index.html: 5 collections; /articles/desk/index.html: 4 desk notes
+- /articles/views/<slug>/: five alternative readers (librarian, cartographer, historian,
+  explainer, storyteller) of the same article, for 5 articles
+- /articles/feed.xml: the feed. /newsroom/wire.json: the wire, as data
+- /subscribe/index.html: subscribe. The address is encrypted in the reader's browser and
+  sent to a write-only lane, described publicly in /.well-known/sgit-subscribe.json
+
+### Your account (kept in the reader's browser; nothing is sent unless the reader sends it)
+- /account/index.html: the reading account: balance, history, receipts
+- /account/newsroom.html: the reader's own newsroom, from what they read
+- /account/personas.html: the reader's personas, named and drawn as graphs
+- /account/share.html: a reading share the reader can send, encrypted, for a front page
+  designed for them. The page shows every word before it is sent
+- /account/top-up.html and /account/topped-up.html: the GBP 5 top-up and its return page.
+  THE PAYMENT LINK IS NOT SET: no money moves yet
+
+### How it runs
+- /newsroom/index.html: how the newsroom runs: how a piece moves from written to placed,
+  the one rule (publishing is adding one file) and the one exception (placement)
+- /newsroom/roles/<role>.html: six roles: contributor, designer, developer, editor,
+  historian, journalist, each with its behaviour policy
+- /newsroom/policies.html, /newsroom/publish.html, /newsroom/board.html, /newsroom/log.html:
+  the policies, how to publish, the board, the log of every run
+- /archive/2026-08-23-newsroom-roles-and-operations.html: the newsroom AS DESIGNED in August,
+  before it ran (archived; this address held it until v0.6.0)
+
+### The design (the argument, set against what runs)
+- /design/index.html: START HERE. Six ideas, each beside what runs and what does not yet
+- /thesis/index.html: sell the graph, evidence not truth, the author is the oracle
+- /corrections/index.html: corrections must propagate
+  - /corrections/the-claim-that-would-not-die.html: the 10,000-hours case in full
+  - /corrections/how-a-graph-answers-it.html: supersede-never-delete, typed citation edges
+- /provenance/index.html: provenance is the product
+  - /provenance/the-decision-graph.html: named ownership at every editorial step
+  - /provenance/articles-as-vaults.html: each article as text, evidence, graph and every prompt
+- /economics/index.html: paying the fact creator
+  - /economics/trust-as-a-service.html: the fact-certifier as a payable, warranted role
+- /rights/index.html: content rights: CC-Signed, the licence family with a legal stick
 - /databases/index.html — DATABASES WITH NO SERVER (beta): two real database engines running in the
   READER'S BROWSER, compiled to WebAssembly, over the JSON files /portugal/ is built from. No
   server, no upload, no store of record: the files are the database, the engines are readers,
@@ -200,33 +126,20 @@ top-level groups.
     property-path two-hop walk, a CONSTRUCT of the inverse edges and an ASK that no edge is
     symmetric — each shown beside the same question in Cypher, which is displayed and NOT run
     (Kùzu's WASM build is 73 MB unpacked; declined and recorded). Validated at build with pyoxigraph
-- /governance/index.html — THE GOVERNANCE WIRE (beta): the first MVP of the risk-and-governance
-  publication, self-contained under /governance/ so it can move to its own domain later. It is
-  FULLY AGENTIC — seven agent roles, no human reviews any page before publication — and every
-  fact in it is SECONDARY: taken from another publication's reading of a primary text, with
-  nothing frozen, hashed or anchored. Do not cite it for any regulatory fact; follow the source
-  link on the node and cite the original
-  - /governance/graph.html — every node and edge, and the vocabulary they conform to
-  - /governance/sources.html — where every fact came from and whether anyone read the original
-  - /governance/method.html — what the graph/verification/linking layer adds, and the 13 gates
-  - /governance/team.html — seven agent roles, each with a centre of gravity and refusals
-  - /governance/team/<role>/index.html — one page per role: the definition in full, the doors
-    only that role can open, and what is on its desk right now. Source: team/<role>/role.md
-  - /governance/newsroom/index.html — THE FLOOR: the room itself, as a point-and-click scene.
-    Seven agent desks joined by the pipeline route; each answers from desk.json. Not decoration
-    — the workload it reports is the live one
-  - /governance/newsroom/workflow.html — THE STATE MAP: nine states from search result to
-    published page, each with the door it must pass. The `frozen` state is BLOCKED and nothing
-    has ever passed it, which is why every fact here is secondary and nothing is anchored
-  - /governance/research/index.html — the Researcher's runs, published whether or not anything
-    came of them
-  - /governance/research/<date>.html — one run: what was searched, what resolved, what was
-    actually READ, and what our own egress blocked. Two Council of the EU pages return 403 to
-    us; that is recorded as a fact about our reach, NOT about those pages
-  - /governance/about.html — beta, no legal review, no human review, nothing anchored
-  - /governance/stories/<slug>.html — the stories; prose in /governance/content/<slug>.md
-  - /governance/data/{graph,ontology,sources,stories,team,workflow,desk,research}.json — the machine surfaces; fetch
-    these rather than parsing the pages
+- /shipped/index.html: WHAT RUNS, WHAT IS DESIGNED, as of 10 October 2026. The authority.
+  The August version, written when nothing ran, is /archive/2026-08-23-what-is-shipped.html
+
+### Build your own
+- /replicate/index.html: what you can copy today to run a newsroom like this one, where it
+  is, and how far each piece is packaged. Only SG Meter and the World News Day vault are
+  self-contained; there is NO forkable newsroom template yet
+- /meter/index.html and /meter/security.html: SG Meter v1.3.1, the reading meter as a
+  versioned web component, and its security model (an honesty box, not a paywall)
+- /mvps/seed-companies.html: seven CC-licensed business templates published so others can
+  build them; seed 4 is an evidence-research company for journalists and investigators
+- /admin/index.html: how this site is built
+
+### World News Day 2026 (a running instance)
 - /world-news-day/index.html — WORLD NEWS DAY 2026 (beta): the 21 op-eds WAN-IFRA and the
   Canadian Journalism Foundation commissioned for World News Day (28 September 2026) and made
   "free to republish", fetched, frozen, hashed, described and graphed HERE — and NOT republished
@@ -342,8 +255,148 @@ top-level groups.
   claim-rules,terms,contacts,contact-rules,corrections,ontology,graph,vault,outreach-vault,
   vault-audit,manifest}.json
     and data/triples.nt — the machine surfaces; fetch these rather than parsing the pages
-- /shipped/index.html — what runs vs what is argued. Read this before citing anything as live
+
+### Site
+- /about/participant.html: participant disclosure; two years of disclosed model co-authorship
 - /network/index.html — sibling boundaries, the Risk Mandate inversion, open questions
+- /admin/comms.html: open requests and standing tasks, in public
+- /admin/versions.html: release history
+- /llms-full.txt: the whole document set in one fetch
+
+## The archive (since 10 October 2026: historical, not current)
+
+Every page below keeps its address and carries a dated note at the top. Index:
+/archive/index.html.
+
+- /archive/2026-08-22-home.html: the home page of this site from 22 August to 10 October
+  2026, when it was an argument; /archive/2026-08-22-home.md its markdown twin
+- /archive/2026-08-23-what-is-shipped.html: the line between running and argued, drawn when
+  nothing ran
+- Design pages the running newsroom has overtaken: /provenance/show-your-work.html (fifteen
+  departments), /provenance/a-worked-story.html (one story itemised: GBP 8.40, 6h 23m),
+  /economics/paying-the-fact-creator.html (the 60/25/10/5 split, never tested),
+  /economics/rails.html (x402 and others, real third-party infrastructure as of August
+  2026), /corrections/242-papers.html, /corrections/staleness-in-the-wild.html,
+  /corrections/agenda-is-context.html
+- /library/index.html: the prior art, ten articles published at docs.diniscruz.ai in 2025;
+  /economics/micro-and-nano-payments.html, the 2025 argument for paying in pence
+- /mvps/index.html: the publication instances as specified in April and May 2026, none built
+  as specified
+  - /mvps/portugal.html: the flagship as specified; built differently, as Portugal Startups
+    and then pt.newsroom.sgit.ai
+- /portugal/index.html — PORTUGAL STARTUPS (beta): a publication mapping the Portuguese startup
+  ecosystem, first beat Startup Summit Lisbon 2026 (17-18 September 2026, Beato Innovation
+  District). THE IMPORTANT DIFFERENCE FROM /governance/: sources here are PRIMARY and ANCHORED.
+  Every page of the source site is fetched, frozen to a dated snapshot in the repository and
+  hashed with SHA-256, and claims are read from the frozen copy rather than the live network.
+  This is the fetch-freeze-hash path /governance/ specifies and cannot run.
+  It also has a NAMED HUMAN EDITOR OF RECORD (Dinis Cruz) who reviews every page before it
+  publishes, because this beat is about named people and named companies.
+  - /portugal/graph.html — THE GRAPH: 329 nodes / 1,106 edges, 16 types, 19 verbs — the event, 64
+    speakers, 61 derived organisations, 16 sessions on 3 stages, 88 frozen sources across 2
+    snapshots (64 of them the speakers' own pages), 7 pieces of press coverage, our stories, 23
+    Topic nodes (the event's own tags) and 50 derived tag nodes (Industry, Technology, Idea,
+    Service, Product — by lexicon, every edge carrying its matched words). Every edge is a verb with a named inverse IN ENGLISH AND
+    PORTUGUESE (ontology.json), so a path reads as a sentence either way. Nodes arrive in PACKS
+    the reader switches on block by block. The page publishes window.__graph (read + view
+    methods, no writes) after a tool:ready event, the same convention as graphs.sgit.ai's
+    universe reader. Fetch /portugal/data/graph.json and /portugal/data/ontology.json directly
+  - /portugal/explorer.html — THE FILES: every file the section is built from, from
+    /portugal/data/manifest.json with size and SHA-256, rendered / as a graph / raw. Frozen
+    third-party pages are listed and hashed but never rendered
+  - /portugal/connections.html — CONNECTIONS: who should be talking to whom, who could be buying
+    from whom and who could help whom, as THREE ORGANISATION-LEVEL SQL QUERIES over two things read
+    from each speaker's own frozen page — the event's own Topics list (verbatim, 23 distinct) and
+    the words matching a PUBLISHED LEXICON of 57 patterns (industries, technologies, ideas, services,
+    products; the matched words only, never the sentence). Rows at build in
+    /portugal/data/connections.json with the SQL beside them; the same SQL runs unchanged in
+    /databases/sql.html. NOTHING HERE IS A CLAIM ABOUT A PERSON: the unit is the organisation, and
+    the notice refuses characterisation of named individuals. Gate 17 re-runs every pattern on the
+    frozen bytes each build; gate 16 checks every topic is on the page verbatim
+  - /portugal/summit/index.html — the event as it describes itself. Distinguish TARGETS from
+    COUNTS: the event's own wording is "targeting 2,000+" attendees and "150+ speakers planned",
+    while its published list names 64. Do not report a target as a result.
+  - /portugal/summit/people.html — all 64 published speakers with role, organisation, the event's
+    own Topics for them (verbatim) and a link to each speaker's own page. Biographies are
+    deliberately NOT reproduced; the lexicon reads them and keeps only matched words
+  - /portugal/summit/orgs.html — 61 organisations DERIVED from the speaker cards; 2 are
+    placeholders ("Independent") flagged rather than removed
+  - /portugal/summit/changes.html — the same pages frozen twice and diffed: 5 speakers added and
+    1 removed between 8 and 13 September. REMOVALS CARRY NO REASON and none may be inferred
+  - /portugal/sources.html — the register: every frozen file with its SHA-256, byte count and
+    retrieval time, and how to check any claim against it. Two kinds of source: the event's own
+    pages, and third-party pages ABOUT the event — none a registry or funding dataset, so nothing
+    here describes the ecosystem beyond this one event
+  - /portugal/checks.html — what re-reading established, including two different sets of stage
+    names published on the same site, and the claims that cannot be verified from the source
+  - /portugal/method.html — fetch, freeze, hash, extract, diff
+  - /portugal/team.html — seven agent roles plus the named editor of record
+  - /portugal/notice.html — THE DATA-PROTECTION NOTICE. This section names 64 people it did not
+    get the data from. Lawful basis is LEGITIMATE INTERESTS and the journalistic derogation is
+    EXPRESSLY NOT CLAIMED: Article 24(3) of Portugal's Lei 58/2019 conditions it on national
+    rules on access to and exercise of the profession, which this publication does not meet.
+    Personal contact details of any kind are refused at EXTRACTION time and gate check 11 fails
+    the build if one appears in the data. Removal on request is unconditional and no reason is
+    asked for. Carries a Portuguese-language summary. Not legal advice
+  - /portugal/about.html — beta, one beat, two kinds of source, no legal review, nothing in Portuguese
+  - /portugal/stories/a-record-attempt-the-agenda-does-not-mention.html — two Portuguese outlets
+    report a 48-hour Guinness pitch marathon on 16-17 September; the event's own agenda, four
+    days out, does not list it. Both frozen; neither wrong yet
+  - /portugal/stories/five-names-arrived-and-one-left.html — the speaker list went 60 → 64
+    between 8 and 13 September; both copies held and hashed; the removal carries no reason
+  - /portugal/stories/two-names-for-three-stages.html — the agenda and the AI-summary page name
+    the same stages differently, on the same site, on the same day
+  - /portugal/team/<role>/index.html — one page per role (researcher, extractor, diffwatch,
+    cartographer, writer, editor, publisher): definition, doors, refusals
+  - /documents/pt-newsroom.html — the COMMISSIONING BRIEF for pt.newsroom.sgit.ai, addressed to the
+    agent that will build it; section 16 records the home-page direction chosen on 13 September;
+    section 17 points at THE BRIEFING PACK, /briefs/pt-newsroom-pack.zip (unpacked under
+    /briefs/pt-newsroom-pack/): the brief, the design sources and fonts, the code to inherit, the
+    newsroom operating model, CLAUDE.md and settings for the new repository, the prompts and
+    repository skills for the scheduled run and the editor's review, the three ways to schedule it
+    with a cron workflow, the acceptance test, and a handover. Start at 00__READ-ME-FIRST.md
+  - /portugal/data/{graph,ontology,manifest,coverage,sessions,event,people,orgs,sources,changes,checks,team,stories,notice,topics,lexicon,connections}.json and /portugal/data/triples.nt — machine surfaces
+  - /portugal/sources/frozen/<date>/<page>.snapshot — the frozen byte copies themselves. Stored
+    with a .snapshot extension because they are EVIDENCE, not pages of this site: unmodified
+    bytes of another organisation's pages, held so a claim can be verified, never republished
+    as browsable content
+- /pt-newsroom/index.html — THE HOME PAGE OF pt.newsroom.sgit.ai, AS DESIGNED: the site does not exist
+  yet; this is its chosen front page (13 September 2026) rendered at 1440px and 390px from the design
+  sources /pt-newsroom/design/{Main,MainPhone}.dc. A classic broadsheet, natively Portuguese, drawn
+  with /portugal/'s real data of that day and NOT maintained — take the structure, not the numbers.
+  The design system is section 16 of /documents/pt-newsroom.html. Nothing on it is a claim.
+  - /pt-newsroom/directions.html — THE FOUR DIRECTIONS, ARCHIVED: all four home pages drawn that
+    day (broadsheet — chosen; dense ledger; dark graph-first; magazine with claims underlined),
+    each rendered from its source in /pt-newsroom/design/ with the motivation and trade-off
+    written on the canvas. Three were NOT chosen and are not to be built from; they are kept so
+    the choice can be re-read. Seven typefaces vendored under /assets/fonts/, all SIL OFL
+- /governance/index.html — THE GOVERNANCE WIRE (beta): the first MVP of the risk-and-governance
+  publication, self-contained under /governance/ so it can move to its own domain later. It is
+  FULLY AGENTIC — seven agent roles, no human reviews any page before publication — and every
+  fact in it is SECONDARY: taken from another publication's reading of a primary text, with
+  nothing frozen, hashed or anchored. Do not cite it for any regulatory fact; follow the source
+  link on the node and cite the original
+  - /governance/graph.html — every node and edge, and the vocabulary they conform to
+  - /governance/sources.html — where every fact came from and whether anyone read the original
+  - /governance/method.html — what the graph/verification/linking layer adds, and the 13 gates
+  - /governance/team.html — seven agent roles, each with a centre of gravity and refusals
+  - /governance/team/<role>/index.html — one page per role: the definition in full, the doors
+    only that role can open, and what is on its desk right now. Source: team/<role>/role.md
+  - /governance/newsroom/index.html — THE FLOOR: the room itself, as a point-and-click scene.
+    Seven agent desks joined by the pipeline route; each answers from desk.json. Not decoration
+    — the workload it reports is the live one
+  - /governance/newsroom/workflow.html — THE STATE MAP: nine states from search result to
+    published page, each with the door it must pass. The `frozen` state is BLOCKED and nothing
+    has ever passed it, which is why every fact here is secondary and nothing is anchored
+  - /governance/research/index.html — the Researcher's runs, published whether or not anything
+    came of them
+  - /governance/research/<date>.html — one run: what was searched, what resolved, what was
+    actually READ, and what our own egress blocked. Two Council of the EU pages return 403 to
+    us; that is recorded as a fact about our reach, NOT about those pages
+  - /governance/about.html — beta, no legal review, no human review, nothing anchored
+  - /governance/stories/<slug>.html — the stories; prose in /governance/content/<slug>.md
+  - /governance/data/{graph,ontology,sources,stories,team,workflow,desk,research}.json — the machine surfaces; fetch
+    these rather than parsing the pages
 - /documents/index.html — the brief pack, readable in-page; raw markdown at /briefs/
   - /documents/<slug>.html — one reader page per pack document (generated projections;
     the file under /briefs/ is the source of truth if the two ever disagree)
@@ -393,11 +446,6 @@ top-level groups.
     that exists. Its architectural claim is a split of the risks.sgit.ai grounding ladder:
     the publication owns Evidence and Fact, the customer owns Reality/Twin/Measure, and a
     Vulnerability exists only where the two meet
-- /about/participant.html — participant disclosure; two years of disclosed model co-authorship
-- /admin/index.html — how this site is built
-- /admin/comms.html — open requests (N1–N6) and standing tasks (T1–T8), in public
-- /admin/versions.html — release history
-- /llms-full.txt — the whole document set in one fetch
 
 ## Read before repeating a fact from this site
 

@@ -1,0 +1,141 @@
+{
+  "slug": "where-the-vault-keys-live",
+  "teaser": "Vault key management at sgit-ai v0.20.0: the one secret, where keys are kept, how they travel sealed on append lanes, and what comes next.",
+  "topics": [
+    "vaults-and-method",
+    "agents-and-policy"
+  ],
+  "core_idea": "Vaults are encrypted in the client, so the server never holds a key and the key is the whole question. Today vault keys live in a password manager and in a registry vault run by an isolated session; agents that create vaults seal the key to the registry's public key and send it on a write-only append lane, so it never enters a chat. The weakest step is giving a key to another agent, because agent platforms have no per-session secrets. Append lanes carry keys, logs, observations and messages; small communication vaults keep each key's blast radius small and multiply the keys. Next: password manager integrations, secrets.sgit.ai's passkey-unlocked keyring, PKI, and out-of-band decryption.",
+  "nodes": [
+    {
+      "id": "client-side",
+      "label": "Decryption in the client",
+      "kind": "concept",
+      "summary": "S3 stores ciphertext; the API and the edge never see a vault key."
+    },
+    {
+      "id": "keys",
+      "label": "One secret, derived keys",
+      "kind": "concept",
+      "summary": "The vault key reads and writes; the read key is derived one way and published on purpose."
+    },
+    {
+      "id": "today",
+      "label": "Where keys live today",
+      "kind": "example",
+      "summary": "A password manager for a person's keys; a registry vault for keys agents create."
+    },
+    {
+      "id": "handover",
+      "label": "Sealed handover",
+      "kind": "method",
+      "summary": "Seal to the registry's public key, one POST on a write-only lane, deterministic drain, human review."
+    },
+    {
+      "id": "agents",
+      "label": "Giving a key to an agent",
+      "kind": "claim",
+      "summary": "No per-session secrets: environment variables are shared per environment; network secrets carry API keys only."
+    },
+    {
+      "id": "lanes",
+      "label": "Append lanes",
+      "kind": "method",
+      "summary": "Write-only, blind, one POST from anywhere; used for keys, logs, observations and messages."
+    },
+    {
+      "id": "small-vaults",
+      "label": "Communication vaults",
+      "kind": "method",
+      "summary": "A vault per conversation or job, with EmailFS and IssuesFS inside."
+    },
+    {
+      "id": "next",
+      "label": "What comes next",
+      "kind": "claim",
+      "summary": "Password managers, secrets.sgit.ai, PKI, out-of-band decryption."
+    },
+    {
+      "id": "secrets-site",
+      "label": "secrets.sgit.ai",
+      "kind": "artefact",
+      "summary": "A passkey PRF unwraps the keyring key; ciphertext in a cloud bucket; app proposed at v0.1.13."
+    }
+  ],
+  "edges": [
+    {
+      "from": "client-side",
+      "to": "keys",
+      "rel": "leads-to"
+    },
+    {
+      "from": "keys",
+      "to": "today",
+      "rel": "leads-to"
+    },
+    {
+      "from": "handover",
+      "to": "today",
+      "rel": "produces"
+    },
+    {
+      "from": "lanes",
+      "to": "handover",
+      "rel": "produces"
+    },
+    {
+      "from": "small-vaults",
+      "to": "keys",
+      "rel": "depends-on"
+    },
+    {
+      "from": "agents",
+      "to": "handover",
+      "rel": "contrasts"
+    },
+    {
+      "from": "next",
+      "to": "agents",
+      "rel": "answers"
+    },
+    {
+      "from": "secrets-site",
+      "to": "next",
+      "rel": "example-of"
+    }
+  ],
+  "links": {
+    "articles": [
+      "the-identity-we-wanted-to-give-the-agents",
+      "encrypted-memory-for-isolated-agents",
+      "rfc-0001-public-key-cryptography-for-sgit"
+    ],
+    "pages": [
+      "docs/key-management.html",
+      "docs/send-a-vault-key.html",
+      "docs/credentials.html",
+      "docs/vault-messaging.html",
+      "partnerships/vault-key-management.html"
+    ],
+    "sites": [
+      "https://secrets.sgit.ai/",
+      "https://code.claude.com/docs/en/cloud-environments",
+      "https://www.w3.org/TR/webauthn-3/#prf-extension",
+      "https://blog.timcappalli.me/p/passkeys-prf-warning/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "The key is the whole question.",
+      "why": "Why key management matters for client-side encryption."
+    },
+    {
+      "text": "Nothing between the sender and the registry can read the key, the key is never typed or shown.",
+      "why": "What the sealed handover changes."
+    },
+    {
+      "text": "If you work on a password manager, let's talk.",
+      "why": "The open call."
+    }
+  ]
+}

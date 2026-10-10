@@ -1,0 +1,146 @@
+{
+  "slug": "re-anchoring-agent-behaviour-policies",
+  "teaser": "Summaries keep under 2% of a long session. Re-anchoring prints the agent's rules back after each one; a canary report shows it is working.",
+  "topics": [
+    "agents-and-policy",
+    "site-and-engineering"
+  ],
+  "core_idea": "Instructions given only in conversation can be lost when a long session is summarised, and this site's own session was summarised eighteen times in a month, keeping about 1.7% each time; re-anchoring keeps the agent's rules in an Agent Behaviour Policy file and has a SessionStart hook on the compact matcher print it back after every summary, so rules are restored rather than remembered, while a canary status report computed from the transcript, checked by a Stop hook and expected by the person, shows the policy is still being read; the same file serves as memory, checker rulebook and enforcement list, and the best recipe for each rule changes with every platform release, which is the work worth curating.",
+  "nodes": [
+    {
+      "id": "loss",
+      "label": "Instructions lost at compaction",
+      "kind": "claim",
+      "summary": "The platform's own documentation says conversation-only instructions can disappear after a summary."
+    },
+    {
+      "id": "data",
+      "label": "Eighteen summaries, 1.7% kept",
+      "kind": "example",
+      "summary": "This session's transcript: about 785,000 tokens replaced by 9,000 to 19,000, each time automatic."
+    },
+    {
+      "id": "failures",
+      "label": "Three ways a rule fails",
+      "kind": "concept",
+      "summary": "It forgets, it does not see, it argues; each needs a different fix."
+    },
+    {
+      "id": "reanchor",
+      "label": "Re-anchoring",
+      "kind": "method",
+      "summary": "A SessionStart hook on the compact matcher prints the ABP back after every summary."
+    },
+    {
+      "id": "one-file",
+      "label": "One file, three jobs",
+      "kind": "concept",
+      "summary": "The ABP is memory, the checker's rulebook and the list of rules still needing a gate."
+    },
+    {
+      "id": "canary",
+      "label": "The canary report",
+      "kind": "method",
+      "summary": "A short report every few answers, computed from the transcript and checked by a Stop hook."
+    },
+    {
+      "id": "brown-mms",
+      "label": "The brown M&M",
+      "kind": "example",
+      "summary": "A small clause that shows whether the whole contract was read."
+    },
+    {
+      "id": "measured-rule",
+      "label": "A rule measured",
+      "kind": "artefact",
+      "summary": "Commits not preceded by a leak scan, counted from the transcript."
+    },
+    {
+      "id": "recipes",
+      "label": "Recipes that age",
+      "kind": "claim",
+      "summary": "The best way to keep each rule changes with every platform release; keeping it current is the work."
+    },
+    {
+      "id": "second-reader",
+      "label": "A second reader and a gate",
+      "kind": "method",
+      "summary": "What fixes the failures re-anchoring cannot."
+    }
+  ],
+  "edges": [
+    {
+      "from": "data",
+      "to": "loss",
+      "rel": "example-of"
+    },
+    {
+      "from": "reanchor",
+      "to": "loss",
+      "rel": "answers"
+    },
+    {
+      "from": "failures",
+      "to": "reanchor",
+      "rel": "leads-to"
+    },
+    {
+      "from": "failures",
+      "to": "second-reader",
+      "rel": "leads-to"
+    },
+    {
+      "from": "one-file",
+      "to": "reanchor",
+      "rel": "extends"
+    },
+    {
+      "from": "canary",
+      "to": "reanchor",
+      "rel": "depends-on"
+    },
+    {
+      "from": "brown-mms",
+      "to": "canary",
+      "rel": "example-of"
+    },
+    {
+      "from": "measured-rule",
+      "to": "canary",
+      "rel": "extends"
+    },
+    {
+      "from": "recipes",
+      "to": "reanchor",
+      "rel": "extends"
+    }
+  ],
+  "links": {
+    "articles": [
+      "a-second-reader-the-agent-cannot-skip",
+      "hope-or-enforcement",
+      "every-mistake-added-a-rule"
+    ],
+    "pages": [],
+    "sites": [
+      "https://code.claude.com/docs/en/memory",
+      "https://code.claude.com/docs/en/hooks",
+      "https://code.claude.com/docs/en/context-window#what-survives-compaction",
+      "https://www.snopes.com/fact-check/brown-out/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "The rules are restored, not remembered.",
+      "why": "What re-anchoring changes."
+    },
+    {
+      "text": "A policy row with a number next to it is a different thing from a policy row on its own.",
+      "why": "Why the canary measures a rule."
+    },
+    {
+      "text": "Brown M&M's in the bowl meant: check everything else.",
+      "why": "The canary, in one line."
+    }
+  ]
+}

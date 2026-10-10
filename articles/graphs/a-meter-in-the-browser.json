@@ -1,0 +1,122 @@
+{
+  "slug": "a-meter-in-the-browser",
+  "teaser": "Every page now costs a few pence from £5 of credit kept in your browser, and the reading history it keeps is what personalises the site.",
+  "topics": [
+    "startups-and-strategy",
+    "news-and-evidence"
+  ],
+  "core_idea": "A reading meter that lives only in the browser, a few pence a page from five pounds of starting credit with a simulated top-up and no blocking, tests whether people would pay a little for reading when what they get back is a site that personalises itself from a history nobody else holds; escaping the meter is easy, but escaping it also discards the history, which is the point of the experiment.",
+  "nodes": [
+    {
+      "id": "meter",
+      "label": "A meter in the browser",
+      "kind": "artefact",
+      "summary": "Every page priced in pence, debited from £5.00 of credit kept in localStorage; one debit per page per visit."
+    },
+    {
+      "id": "never-block",
+      "label": "Never block a page",
+      "kind": "method",
+      "summary": "Out of credit, the page is shown and the read recorded as unpaid, with an offer to top up."
+    },
+    {
+      "id": "topup",
+      "label": "Every step but the payment",
+      "kind": "method",
+      "summary": "Packs, a cart, a review, a confirm and a receipt; credit added at once, nothing charged."
+    },
+    {
+      "id": "history",
+      "label": "The history is the product",
+      "kind": "claim",
+      "summary": "The ledger of what was read, with topics, is enough to pick unread articles for the reader."
+    },
+    {
+      "id": "escape",
+      "label": "The meter can be escaped; the personalisation cannot be copied",
+      "kind": "claim",
+      "summary": "A private window starts again at £5.00 and with no history."
+    },
+    {
+      "id": "question",
+      "label": "Would people pay for a site that knows them?",
+      "kind": "question",
+      "summary": "The experiment the meter puts in front of a reader."
+    },
+    {
+      "id": "pt-wallet",
+      "label": "The pt.newsroom wallet",
+      "kind": "example",
+      "summary": "One cent a page, a self-refilling five-euro wallet, a ledger page: the first version."
+    },
+    {
+      "id": "402",
+      "label": "402 Payment Required",
+      "kind": "example",
+      "summary": "Reserved in the web's protocol in 1997 for micropayments, still unused."
+    }
+  ],
+  "edges": [
+    {
+      "from": "pt-wallet",
+      "to": "meter",
+      "rel": "leads-to"
+    },
+    {
+      "from": "meter",
+      "to": "never-block",
+      "rel": "depends-on"
+    },
+    {
+      "from": "meter",
+      "to": "topup",
+      "rel": "produces"
+    },
+    {
+      "from": "meter",
+      "to": "history",
+      "rel": "produces"
+    },
+    {
+      "from": "history",
+      "to": "escape",
+      "rel": "leads-to"
+    },
+    {
+      "from": "escape",
+      "to": "question",
+      "rel": "leads-to"
+    },
+    {
+      "from": "402",
+      "to": "meter",
+      "rel": "compared-with"
+    }
+  ],
+  "links": {
+    "articles": [
+      "the-question-is-whether-they-miss-it",
+      "price-it-then-give-it-away",
+      "how-news-got-here",
+      "token-bill-nobody-is-sending",
+      "the-bridge-followed-to-the-end"
+    ],
+    "pages": [
+      "/account/index.html",
+      "/account/top-up.html"
+    ],
+    "sites": [
+      "https://pt.newsroom.sgit.ai/carteira/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "The meter can be escaped; the personalisation cannot be copied.",
+      "why": "The trade the experiment puts in front of a reader."
+    },
+    {
+      "text": "The history never leaves the machine it was made on.",
+      "why": "Personalisation without an account, a cookie banner or a server."
+    }
+  ]
+}

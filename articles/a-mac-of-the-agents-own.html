@@ -1,0 +1,499 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>A Mac of the agent's own: a business plan for agent desktops, what Apple's licence allows, and three behaviour policies, sgit.ai</title>
+<meta name="description" content="Our agents already have dedicated resources with a small blast radius: their own mailbox, their own code-host account, their own Claude account. The next one is a desktop of their own, and it should be a Mac, because that is where most agent desktop apps arrive first. This is a business plan for somebody else to build, following our earlier research on renting an agent a desktop. It started as a pool of Macs rented by the minute, and Apple's licence rules that out: a leased Mac must be held for at least 24 hours, for developer services, by one customer, and virtual copies may not be time-shared. So the plan is the shapes that are allowed: a dedicated Mac per customer, run for them, with a per-minute meter on top and a clean desktop per run built from encrypted vaults; developer agents on leased Macs; software for the Mac mini you keep; and a request to Apple for terms. The reason to want any of it is in the three behaviour policies: the same customer service agent on your own Mac, on a dedicated Mac and on a hardened one, where the excess nothing bounds falls from 23 rows to 11 to 3.">
+<link rel="canonical" href="https://newsroom.sgit.ai/articles/a-mac-of-the-agents-own.html">
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="sgit.ai">
+<meta property="og:url" content="https://newsroom.sgit.ai/articles/a-mac-of-the-agents-own.html">
+<meta property="og:title" content="A Mac of the agent's own: a business plan for agent desktops, what Apple's licence allows, and three behaviour policies, sgit.ai">
+<meta property="og:description" content="Our agents already have dedicated resources with a small blast radius: their own mailbox, their own code-host account, their own Claude account. The next one is a desktop of their own, and it should be a Mac, because that is where most agent desktop apps arrive first. This is a business plan for somebody else to build, following our earlier research on renting an agent a desktop. It started as a pool of Macs rented by the minute, and Apple's licence rules that out: a leased Mac must be held for at least 24 hours, for developer services, by one customer, and virtual copies may not be time-shared. So the plan is the shapes that are allowed: a dedicated Mac per customer, run for them, with a per-minute meter on top and a clean desktop per run built from encrypted vaults; developer agents on leased Macs; software for the Mac mini you keep; and a request to Apple for terms. The reason to want any of it is in the three behaviour policies: the same customer service agent on your own Mac, on a dedicated Mac and on a hardened one, where the excess nothing bounds falls from 23 rows to 11 to 3.">
+<meta property="og:image" content="https://newsroom.sgit.ai/og/a-mac-of-the-agents-own.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="A Mac of the agent's own: a business plan for agent desktops, what Apple's licence allows, and three behaviour policies, sgit.ai">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://newsroom.sgit.ai/og/a-mac-of-the-agents-own.jpg">
+<link rel="alternate" type="text/markdown" href="a-mac-of-the-agents-own.md" title="This page as markdown">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "A Mac of the agent's own: a business plan for agent desktops, what Apple's licence allows, and three behaviour policies, sgit.ai", "headline": "A Mac of the agent's own: a business plan for agent desktops, what Apple's licence allows, and three behaviour policies, sgit.ai", "description": "Our agents already have dedicated resources with a small blast radius: their own mailbox, their own code-host account, their own Claude account. The next one is a desktop of their own, and it should be a Mac, because that is where most agent desktop apps arrive first. This is a business plan for somebody else to build, following our earlier research on renting an agent a desktop. It started as a pool of Macs rented by the minute, and Apple's licence rules that out: a leased Mac must be held for at least 24 hours, for developer services, by one customer, and virtual copies may not be time-shared. So the plan is the shapes that are allowed: a dedicated Mac per customer, run for them, with a per-minute meter on top and a clean desktop per run built from encrypted vaults; developer agents on leased Macs; software for the Mac mini you keep; and a request to Apple for terms. The reason to want any of it is in the three behaviour policies: the same customer service agent on your own Mac, on a dedicated Mac and on a hardened one, where the excess nothing bounds falls from 23 rows to 11 to 3.", "url": "https://newsroom.sgit.ai/articles/a-mac-of-the-agents-own.html", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "sgit.ai", "url": "https://sgit.ai"}, "about": {"@type": "SoftwareApplication", "name": "sgit", "sameAs": "https://pypi.org/project/sgit-ai/"}, "author": {"@type": "Person", "name": "Dinis Cruz", "url": "https://sgit.ai/about/index.html"}, "license": "https://creativecommons.org/licenses/by/4.0/"}</script>
+<style>html{background:#faf9f5}body{margin:0;background:#faf9f5;color:#1c1d21;font-family:ui-sans-serif,system-ui,sans-serif;opacity:0;transition:opacity .25s;animation:sg-reveal 0s linear 1.6s forwards}html.ready body{opacity:1;animation:none}@keyframes sg-reveal{to{opacity:1}}</style><noscript><style>body{opacity:1;animation:none}</style></noscript>
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.6.0</a>
+  <sg-meter class="meter-nav" view="balance"></sg-meter>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../articles/index.html#all">Every article</a>
+      <a class="sl" href="../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../account/index.html">Your reading account</a>
+      <a class="sl" href="../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../account/personas.html">Your personas</a>
+      <a class="sl" href="../account/top-up.html">Top up</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../newsroom/board.html">The board</a>
+      <a class="sl" href="../newsroom/log.html">The run log</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../world-news-day/index.html">World News Day<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../world-news-day/index.html">The corpus</a>
+      <a class="sl" href="../world-news-day/stories/free-to-republish-is-not-a-licence.html">Free to republish is not a licence</a>
+      <a class="sl" href="../world-news-day/licences.html">The licence that is not there</a>
+      <a class="sl" href="../world-news-day/corpus.html">The twenty-one</a>
+      <a class="sl" href="../world-news-day/findings.html">The aggregate</a>
+      <a class="sl" href="../world-news-day/terms.html">The vocabulary</a>
+      <a class="sl" href="../world-news-day/graph.html">The graph</a>
+      <a class="sl" href="../world-news-day/sources.html">Sources</a>
+      <a class="sl" href="../world-news-day/contacts.html">How to reach them</a>
+      <a class="sl" href="../world-news-day/vault.html">Published vaults</a>
+      <a class="sl" href="../world-news-day/vaults/corpus.html">The vault, opened</a>
+      <a class="sl" href="../world-news-day/method.html">Method</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../archive/index.html">The archive</a>
+      <a class="sl" href="../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../network/index.html">The network</a>
+      <a class="sl" href="../admin/versions.html">Release history</a>
+      <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom">&#9733; GitHub</a>
+</div></nav>
+
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.6.0</span></a></div>
+<main class="doc">
+ <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / A Mac of the agent's own: a business plan for agent desktops, what Apple's licence allows, and three behaviour policies</p>
+ <h1>A Mac of the agent's own: a business plan for agent desktops, what Apple's licence allows, and three behaviour policies</h1>
+ <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-09 &middot; <a href="versions/a-mac-of-the-agents-own.html" title="Every published version of this article, and what changed">article v1.2.0, 3 versions</a> &middot; <a href="https://sgit.ai/admin/versions.html" title="The site release it was published in">site v0.7.16</a> &middot; <span class="chip">agents</span><span class="chip">agent-desktops</span><span class="chip">macos</span><span class="chip">business-plan</span><span class="chip">agent-behaviour-policy</span><span class="chip">licensing</span><span class="chip">vaults</span><span class="chip">pki</span><span class="chip">sgit</span><span class="chip">wardley-maps</span><span class="chip">isolation</span><span class="chip">cowork</span><span class="chip">computer-use</span><span class="chip">article</span></p>
+ <p class="abstract"><em><b>Abstract:</b> Our agents already have dedicated resources with a small blast radius: their own mailbox, their own code-host account, their own Claude account. The next one is a desktop of their own, and it should be a Mac, because that is where most agent desktop apps arrive first. This is a business plan for somebody else to build, following our earlier research on renting an agent a desktop. It started as a pool of Macs rented by the minute, and Apple's licence rules that out: a leased Mac must be held for at least 24 hours, for developer services, by one customer, and virtual copies may not be time-shared. So the plan is the shapes that are allowed: a dedicated Mac per customer, run for them, with a per-minute meter on top and a clean desktop per run built from encrypted vaults; developer agents on leased Macs; software for the Mac mini you keep; and a request to Apple for terms. The reason to want any of it is in the three behaviour policies: the same customer service agent on your own Mac, on a dedicated Mac and on a hardened one, where the excess nothing bounds falls from 23 rows to 11 to 3.</em></p>
+<figure class="shot" data-shot="app-desktops.webp" data-dir="../demos/vaults/agent-desk/images/" data-alt="The same customer service agent on three desktops, in the published behaviour-policy grammar: on your own Mac, on a dedicated remote Mac, and on a hardened one. What changes is not the agent; it is what the desktop holds and what stands in the way." data-href="https://sgit.ai/demos/vaults/agent-desk/index.html" data-href-label="Open the vault page" data-href-target="_self"><figcaption>The same customer service agent on three desktops, in the published behaviour-policy grammar: on your own Mac, on a dedicated remote Mac, and on a hardened one. What changes is not the agent; it is what the desktop holds and what stands in the way. <b>Click the image to open the vault page &#8599;</b></figcaption></figure>
+<div class="note"><b>Where this comes from.</b> It follows <a href="an-agent-desktop-by-the-minute.html">A locked-down desktop for an agent, by the minute, is still hard to rent</a>, and it is written, like the other <a href="https://sgit.ai/startups/business-plans.html">business plans on this site</a>, so that anybody could build it. It names no provider. The whole plan, with the numbers, the policies and a calculator, is in <a href="https://sgit.ai/demos/vaults/agent-desk/index.html">the Agent Desk vault</a>.</div>
+<h2>In short</h2>
+<ul>
+<li><b>The next dedicated resource is a desktop.</b> Our agents already have their own mailbox, their own code-host account and their own Claude account, which in practice is dedicated compute. A desktop of their own is the next step, because I will not run them on <a href="why-my-agents-do-not-run-on-my-laptop.html">my own machine</a>.</li>
+<li><b>It should be a Mac.</b> Most agent desktop apps arrive on the Mac first, it is the desktop most people already know, and it is the one you cannot rent by the minute today.</li>
+<li><b>Apple's licence decides the shape.</b> A leased Mac must be held for at least 24 hours, only for developer services, by one customer at a time; virtual copies may not be time-shared. The pool of Macs rented by the minute that I first imagined is not allowed.</li>
+<li><b>The shapes that are allowed</b> are a dedicated Mac per customer, run for them, with a per-minute meter on top; developer agents on leased Macs; software for a Mac you keep; and a request to Apple for written terms.</li>
+<li><b>The vaults are the state.</b> Boot a clean Mac, install sgit, hand it one key, clone one set-up vault, and everything else comes from there: profiles, allowlists, the policy, the agent's slice of code and data, and the record of what it did.</li>
+<li><b>The reason to want it is the behaviour policy.</b> For one customer service agent, the excess over the mandate that nothing bounds is 23 rows on your own Mac, 11 on a dedicated Mac and 3 on a hardened one.</li>
+</ul>
+<h2>The next dedicated resource</h2>
+<p>The way we run agents has been moving in one direction: each agent gets resources of its own, with a small blast radius. A <a href="six-agents-one-inbox.html">dedicated mailbox</a> instead of mine. A dedicated code-host account. A dedicated Claude account, which in practice is dedicated compute. <a href="the-agent-team-as-it-runs.html">The agent team as it runs</a> shows what that looks like day to day.</p>
+<p>The natural next step is a desktop. Claude's desktop app and Cowork are very capable on a desktop, and these days Claude can drive desktop applications well: mail, messages, a browser, creative and video tools. But <a href="why-my-agents-do-not-run-on-my-laptop.html">I do not run agents on my laptop</a>, because everything I have is on it. The agent needs a desktop of its own: one machine, one application, one set-up, holding only what the agent is meant to have.</p>
+<h2>Why a Mac</h2>
+<p>Three reasons. The providers of agent desktop apps tend to ship to the Mac first and prefer it, so it is the best environment to be in. It is the desktop most people already know. And it is the one that is hard to get on demand: ironically, Windows and Linux run happily as virtual machines, by the hour, from many places, and a Mac never has been. That gap is the business.</p>
+<p>It is also a better place to put controls than a person's own machine. A Mac whose only user is an agent does not need to be usable by a person, apart from a browser for watching it. It can be supervised, profiled, allowlisted and logged far beyond what anybody would tolerate on their own laptop.</p>
+<h2>What Apple's licence allows</h2>
+<p>This is where the first version of the idea died, and it is better to say so on the first page than to discover it after building. The research is in the vault, with every clause quoted from Apple's licences for macOS 15, 26 and 27. The short version, and it is a reading, not legal advice:</p>
+<ul>
+<li><b>Leasing a Mac is allowed only for developer services.</b> Section 3 allows a lease "for the sole purpose of providing Permitted Developer Services", defined as "continuous integration services, including but not limited to software development, building software from source, automated testing during software development".</li>
+<li><b>For at least a day, to one customer.</b> "Each lease period must be for a minimum period of twenty-four (24) consecutive hours", and the customer must have "sole and exclusive use and control" of the software and the hardware.</li>
+<li><b>Virtual copies are limited, and may not be time-shared.</b> Up to two additional copies in virtual machines on a Mac you own or control, for software development, testing, macOS Server or personal, non-commercial use, and not "in connection with service bureau, time-sharing, terminal sharing, relay service or other similar types of services".</li>
+<li><b>One user at a time.</b> "Only one user may use the Apple Software at a time."</li>
+<li><b>And one practical limit:</b> a virtual machine's saved state is tied to the Mac it was saved on, so a pool could not move a running desktop between Macs anyway.</li>
+</ul>
+<p>So a shared pool of Macs whose desktops are rented by the minute to many customers, for general agent work, is out. Two things soften that. The macOS 27 licence now opens its virtualisation and leasing clauses with "except as otherwise provided in writing, signed, or issued by an authorized representative of Apple", which is a route to written terms for a use Apple wants to support. And an agent desktop used for email or office work, rather than development, is a question for a lawyer before it is a product.</p>
+<h2>The shapes that are allowed</h2>
+<div class="tablewrap"><table>
+<tr><th>Shape</th><th>What it is</th><th>How it sits against the licence</th></tr>
+<tr><td><b>A. Your Mac, run for you</b></td><td>The customer owns or finances the Macs; the operator hosts and runs them</td><td>The cleanest: the customer's own Mac, one agent desktop at a time on it</td></tr>
+<tr><td><b>B. A dedicated Mac, metered</b></td><td>One customer leases a Mac for a day or a month; desktop time inside it is metered by the minute</td><td>Allowed for developer services; general office work needs legal advice</td></tr>
+<tr><td><b>C. Developer agents</b></td><td>Coding agents on leased Macs, including in virtual machines</td><td>The licence's own purpose</td></tr>
+<tr><td><b>D. Ask Apple</b></td><td>Written terms for agent desktops</td><td>The route macOS 27's new wording opens</td></tr>
+<tr><td><b>E. Software, not hosting</b></td><td>The same set-up as software for a Mac mini you keep</td><td>Your own Mac; virtual machines for personal use or development</td></tr>
+</table></div>
+<p>The plan's recommendation: build <b>A</b> and <b>C</b>, give away <b>E</b>, ask for <b>D</b>, and do not build the pool. Per-minute pricing survives, as a meter on a Mac one customer holds, never as a share of a Mac that others use.</p>
+<h2>A clean Mac, a key, and everything else from the vaults</h2>
+<figure class="shot" data-shot="ad-arch.webp" data-dir="images/" data-alt="One Apple silicon Mac per customer, one agent desktop at a time, and up to two virtual machines where the work is development. Keys come from the owner, encrypted to each desktop&#x27;s own key; set-up, code, data and policy come from vaults; every request goes through a proxy and gateway, and every event goes to an audit vault."><figcaption>One Apple silicon Mac per customer, one agent desktop at a time, and up to two virtual machines where the work is development. Keys come from the owner, encrypted to each desktop's own key; set-up, code, data and policy come from vaults; every request goes through a proxy and gateway, and every event goes to an audit vault.</figcaption></figure>
+<p>The part I like most is how little is new. We already have a great solution for saving state: <a href="encrypted-memory-for-isolated-agents.html">encrypted vaults</a>. So the desktop needs very little of its own. Boot a clean macOS, install sgit, give it one key, and clone one set-up vault. A small program in that vault does the rest.</p>
+<figure class="shot" data-shot="ad-boot.webp" data-dir="images/" data-alt="Each run starts from a clean macOS on a Mac that belongs to one customer. The desktop&#x27;s own key unlocks one set-up vault; a signed program in it applies the profiles, starts the proxy and the logging, and clones the agent&#x27;s slice of the other vaults. At the end, results and the record are pushed and the session is erased."><figcaption>Each run starts from a clean macOS on a Mac that belongs to one customer. The desktop's own key unlocks one set-up vault; a signed program in it applies the profiles, starts the proxy and the logging, and clones the agent's slice of the other vaults. At the end, results and the record are pushed and the session is erased.</figcaption></figure>
+<p>The vaults divide the work, the way a supply chain should, with each party holding only its slice:</p>
+<ul>
+<li><b>A set-up vault</b>: the signed entry program, configuration profiles, the egress and binary allowlists, and the behaviour policy.</li>
+<li><b>Code and data vaults</b>, each cloned with <a href="https://sgit.ai/docs/partial-clones.html">only the folder the task needs</a>.</li>
+<li><b>A mandate vault</b>, owned by the customer, which says what the agent is for.</li>
+<li><b>Keys by PKI.</b> Each desktop has its own key pair; the vault keys it needs are encrypted to its public key and decrypted inside the running desktop, and the private key lives in the desktop's keychain. That is <a href="riskmandate-ten-questions.html">authorisation by encryption, not by privilege</a>, using the <a href="https://sgit.ai/docs/pki.html">PKI already in sgit</a>.</li>
+<li><b>An audit vault</b>, where every process, network and file event goes as it happens, off the machine.</li>
+</ul>
+<p>The vault includes the bootstrap itself, a short readable script. Its key-handling steps were run for this article with sgit 0.20.0 on Linux: a key pair generated, a read key encrypted to it and decrypted, an entry program signed and verified, a tampered one refused. Nothing has run on a Mac yet; the plan says so.</p>
+<details class="src"><summary>The architecture, Mermaid source</summary><div class="src-bar"><button type="button" class="src-copy" data-copy="flowchart LR
+  subgraph cust[&quot;The customer&quot;]
+    direction TB
+    OWN[&quot;Owner&lt;br/&gt;holds the vault keys&quot;]
+    POL[&quot;Mandate vault&lt;br/&gt;the ABP, the allowlists&quot;]
+  end
+  subgraph op[&quot;The operator: Agent Desk&quot;]
+    direction TB
+    subgraph host[&quot;Apple silicon Mac, dedicated to one customer&quot;]
+      direction TB
+      VM1[&quot;Agent a1 desktop&lt;br/&gt;Claude desktop or Cowork&lt;br/&gt;one user at a time&quot;]
+      VM2[&quot;Up to two VMs&lt;br/&gt;for development work&quot;]
+    end
+    PX[&quot;Egress proxy and MCP gateway&lt;br/&gt;allowlist, logs&quot;]
+    OBS[&quot;Observability&lt;br/&gt;process, network, file events&quot;]
+  end
+  subgraph vaults[&quot;Encrypted vaults: ciphertext only on the server&quot;]
+    direction TB
+    SV[(&quot;Set-up&quot;)]
+    CV[(&quot;Code&quot;)]
+    DV[(&quot;Data, scoped per agent&quot;)]
+    AV[(&quot;Audit log&quot;)]
+  end
+  NET[&quot;Only the services&lt;br/&gt;the mandate needs&quot;]
+  OWN -- &quot;keys, encrypted to&lt;br/&gt;each desktop&#x27;s PKI key&quot; --&gt; VM1
+  POL --&gt; VM1
+  VM1 --&gt; SV &amp; CV &amp; DV
+  VM1 -- &quot;every request&quot; --&gt; PX --&gt; NET
+  VM1 --&gt; OBS --&gt; AV
+  VM2 --&gt; PX"><span class="cp">copy</span></button><a href="images/ad-arch.webp">rendered image</a></div><pre class="shell">flowchart LR
+  subgraph cust["The customer"]
+    direction TB
+    OWN["Owner&lt;br/&gt;holds the vault keys"]
+    POL["Mandate vault&lt;br/&gt;the ABP, the allowlists"]
+  end
+  subgraph op["The operator: Agent Desk"]
+    direction TB
+    subgraph host["Apple silicon Mac, dedicated to one customer"]
+      direction TB
+      VM1["Agent a1 desktop&lt;br/&gt;Claude desktop or Cowork&lt;br/&gt;one user at a time"]
+      VM2["Up to two VMs&lt;br/&gt;for development work"]
+    end
+    PX["Egress proxy and MCP gateway&lt;br/&gt;allowlist, logs"]
+    OBS["Observability&lt;br/&gt;process, network, file events"]
+  end
+  subgraph vaults["Encrypted vaults: ciphertext only on the server"]
+    direction TB
+    SV[("Set-up")]
+    CV[("Code")]
+    DV[("Data, scoped per agent")]
+    AV[("Audit log")]
+  end
+  NET["Only the services&lt;br/&gt;the mandate needs"]
+  OWN -- "keys, encrypted to&lt;br/&gt;each desktop's PKI key" --&gt; VM1
+  POL --&gt; VM1
+  VM1 --&gt; SV &amp; CV &amp; DV
+  VM1 -- "every request" --&gt; PX --&gt; NET
+  VM1 --&gt; OBS --&gt; AV
+  VM2 --&gt; PX</pre></details>
+<details class="src"><summary>The boot sequence, Mermaid source</summary><div class="src-bar"><button type="button" class="src-copy" data-copy="sequenceDiagram
+  autonumber
+  participant U as Customer or scheduler
+  participant H as Dedicated Mac: one customer
+  participant V as Clean macOS session
+  participant K as Key delivery
+  participant S as Set-up vault
+  participant O as Other vaults
+  U-&gt;&gt;H: start a desktop for agent a1
+  H-&gt;&gt;V: erase and boot clean, or clone a golden image for a development VM
+  K-&gt;&gt;V: this desktop&#x27;s private key, into the keychain
+  V-&gt;&gt;V: install sgit, then read the vault key decrypted with the desktop&#x27;s key
+  V-&gt;&gt;S: sgit clone the set-up vault, scoped
+  S--&gt;&gt;V: bootstrap program, profiles, allowlists, the ABP
+  V-&gt;&gt;V: apply profiles, start the egress proxy and logging
+  V-&gt;&gt;O: clone code, data and mandate vaults, each scoped to a1
+  Note over V: the agent app starts and works its task
+  V-&gt;&gt;O: commit and push results and the audit log
+  U-&gt;&gt;H: stop, then erase or discard
+  Note over H: nothing secret stays on the host"><span class="cp">copy</span></button><a href="images/ad-boot.webp">rendered image</a></div><pre class="shell">sequenceDiagram
+  autonumber
+  participant U as Customer or scheduler
+  participant H as Dedicated Mac: one customer
+  participant V as Clean macOS session
+  participant K as Key delivery
+  participant S as Set-up vault
+  participant O as Other vaults
+  U-&gt;&gt;H: start a desktop for agent a1
+  H-&gt;&gt;V: erase and boot clean, or clone a golden image for a development VM
+  K-&gt;&gt;V: this desktop's private key, into the keychain
+  V-&gt;&gt;V: install sgit, then read the vault key decrypted with the desktop's key
+  V-&gt;&gt;S: sgit clone the set-up vault, scoped
+  S--&gt;&gt;V: bootstrap program, profiles, allowlists, the ABP
+  V-&gt;&gt;V: apply profiles, start the egress proxy and logging
+  V-&gt;&gt;O: clone code, data and mandate vaults, each scoped to a1
+  Note over V: the agent app starts and works its task
+  V-&gt;&gt;O: commit and push results and the audit log
+  U-&gt;&gt;H: stop, then erase or discard
+  Note over H: nothing secret stays on the host</pre></details>
+<h2>Three desktops, one agent</h2>
+<p>The reason to want any of this is the behaviour policy. The vault takes the customer service agent from <a href="hope-or-enforcement.html">Hope or enforcement</a>, the same fictional shop and the same mandate, and puts it on three desktops, writing each as an <a href="https://abp.sgit.ai/">Agent Behaviour Policy</a> in the published grammar: the grant, the mandate, the delta, and what stands in the way of each row, from none, through an expectation and a setting, to a boundary, which is the only kind that is a control.</p>
+<div class="tablewrap"><table>
+<tr><th></th><th>Your own Mac</th><th>A dedicated remote Mac</th><th>A hardened dedicated Mac</th></tr>
+<tr><td>Grant, of 33 rows</td><td>33</td><td>22</td><td>22</td></tr>
+<tr><td>Unbounded excess</td><td>23</td><td>11</td><td>3</td></tr>
+<tr><td>Of which cannot be undone</td><td>15</td><td>6</td><td>1</td></tr>
+<tr><td>Rows held by a boundary</td><td>0</td><td>1</td><td>9</td></tr>
+<tr><td>Hostile inputs stopped by a boundary or an empty grant, of 22</td><td>0</td><td>2</td><td>12</td></tr>
+</table></div>
+<ul>
+<li><b>On your own Mac</b>, the behaviour policy is enormous, because the grant is everything you have: your mail, your files, your browser sessions, your keychain, your messages. Nothing is held by a boundary.</li>
+<li><b>On a dedicated Mac</b>, it is still Claude doing the work, and the policy is already much smaller, because there are no other secrets on the machine. The only secrets are the ones the agent is supposed to have.</li>
+<li><b>On a hardened Mac</b>, third-party controls do the rest: a standard account on a supervised Mac with profiles it cannot remove, an egress proxy that allows only the mandate's hosts, a binary allowlist, mail through a gateway that allows only the assigned thread and a reply to its sender, and every event streamed to the audit vault. The tools are the kind RiskMandate has written <a href="https://riskmandate.ai/business-cases.html">business cases</a> for, and open-source macOS controls.</li>
+</ul>
+<p>What is left on the hardened Mac is mostly one thing: the shop's admin screen, which shows every customer. That is a finding about the shop's software, not about the desktop, and it is the kind of finding a behaviour policy exists to produce. One more is a limit of macOS itself: screen recording, which computer use needs, cannot be granted by a profile, so a person has to approve it once, in the image.</p>
+<figure class="shot" data-shot="app-case.webp" data-dir="../demos/vaults/agent-desk/images/" data-alt="The customer service agent&#x27;s 22 hostile inputs, 16 from the Hope or enforcement mailbox and 6 written for a desktop, on the three desktops: what stopped each one, and what still depends on the agent." data-href="https://sgit.ai/demos/vaults/agent-desk/index.html" data-href-label="Open the vault page" data-href-target="_self"><figcaption>The customer service agent's 22 hostile inputs, 16 from the Hope or enforcement mailbox and 6 written for a desktop, on the three desktops: what stopped each one, and what still depends on the agent. <b>Click the image to open the vault page &#8599;</b></figcaption></figure>
+<h2>The numbers</h2>
+<figure class="shot" data-shot="app-economics.webp" data-dir="../demos/vaults/agent-desk/images/" data-alt="The calculator: usage, the meter, and five options a month. Every number except Apple&#x27;s prices is a labelled assumption, with its arithmetic in the vault." data-href="https://sgit.ai/demos/vaults/agent-desk/index.html" data-href-label="Open the vault page" data-href-target="_self"><figcaption>The calculator: usage, the meter, and five options a month. Every number except Apple's prices is a labelled assumption, with its arithmetic in the vault. <b>Click the image to open the vault page &#8599;</b></figcaption></figure>
+<p>My own use is the test case: four scheduled runs a day of about half an hour, plus two interactive hours on working days, about 104 desktop hours a month. On the plan's assumptions, a dedicated Mac with the meter costs about £211 a month; a Mac mini bought and run yourself about £119, counting your own time; daily 24-hour leases about £390, using 17% of each day you pay for. The dedicated Mac wins once looking after your own takes more than about four hours a month, and beats daily leases once you need a Mac on more than about twelve days a month. The interesting customer is not the person with one Mac mini; it is the team that would otherwise buy, set up, secure and maintain several, and the team doing browser automation that should not be doing it on anybody's laptop.</p>
+<h2>The map</h2>
+<figure class="shot" data-shot="ad-map.webp" data-dir="images/" data-alt="The agent&#x27;s desktop moves from custom-built to product, on parts that are already products or commodities: Apple silicon Macs, the macOS virtual machine, the models, the desktop agent apps. State, keys and lock-down move with it, because the vaults, the PKI and the policies already exist as parts."><figcaption>The agent's desktop moves from custom-built to product, on parts that are already products or commodities: Apple silicon Macs, the macOS virtual machine, the models, the desktop agent apps. State, keys and lock-down move with it, because the vaults, the PKI and the policies already exist as parts.</figcaption></figure>
+<details class="src"><summary>The map, Mermaid wardley-beta source</summary><div class="src-bar"><button type="button" class="src-copy" data-copy="wardley-beta
+  title Agent Desk: productising the agent&#x27;s desktop, on parts that are already commodities
+  anchor &quot;A business running agents&quot; [0.97, 0.62]
+  component &quot;Work done by agents&quot; [0.88, 0.52]
+  component &quot;Agent Behaviour Policy&quot; [0.78, 0.34]
+  component &quot;Agent desktop, on demand&quot; [0.70, 0.24]
+  component &quot;Desktop agent apps&quot; [0.62, 0.62]
+  component &quot;Observability and lock-down&quot; [0.52, 0.40]
+  component &quot;Credentials by key, PKI&quot; [0.44, 0.36]
+  component &quot;State in vaults&quot; [0.36, 0.48]
+  component &quot;macOS virtual machine&quot; [0.28, 0.56]
+  component &quot;Models&quot; [0.22, 0.76]
+  component &quot;Apple silicon Mac&quot; [0.12, 0.86]
+  &quot;A business running agents&quot; --&gt; &quot;Work done by agents&quot;
+  &quot;Work done by agents&quot; --&gt; &quot;Agent Behaviour Policy&quot;
+  &quot;Work done by agents&quot; --&gt; &quot;Desktop agent apps&quot;
+  &quot;Work done by agents&quot; --&gt; &quot;Agent desktop, on demand&quot;
+  &quot;Desktop agent apps&quot; --&gt; &quot;Models&quot;
+  &quot;Agent desktop, on demand&quot; --&gt; &quot;Desktop agent apps&quot;
+  &quot;Agent desktop, on demand&quot; --&gt; &quot;Observability and lock-down&quot;
+  &quot;Agent desktop, on demand&quot; --&gt; &quot;Credentials by key, PKI&quot;
+  &quot;Agent desktop, on demand&quot; --&gt; &quot;State in vaults&quot;
+  &quot;Agent desktop, on demand&quot; --&gt; &quot;macOS virtual machine&quot;
+  &quot;Agent Behaviour Policy&quot; --&gt; &quot;Observability and lock-down&quot;
+  &quot;macOS virtual machine&quot; --&gt; &quot;Apple silicon Mac&quot;
+  evolve &quot;Agent desktop, on demand&quot; 0.60
+  evolve &quot;State in vaults&quot; 0.72
+  evolve &quot;Credentials by key, PKI&quot; 0.66
+  evolve &quot;Observability and lock-down&quot; 0.64"><span class="cp">copy</span></button><a href="images/ad-map.webp">rendered image</a></div><pre class="shell">wardley-beta
+  title Agent Desk: productising the agent's desktop, on parts that are already commodities
+  anchor "A business running agents" [0.97, 0.62]
+  component "Work done by agents" [0.88, 0.52]
+  component "Agent Behaviour Policy" [0.78, 0.34]
+  component "Agent desktop, on demand" [0.70, 0.24]
+  component "Desktop agent apps" [0.62, 0.62]
+  component "Observability and lock-down" [0.52, 0.40]
+  component "Credentials by key, PKI" [0.44, 0.36]
+  component "State in vaults" [0.36, 0.48]
+  component "macOS virtual machine" [0.28, 0.56]
+  component "Models" [0.22, 0.76]
+  component "Apple silicon Mac" [0.12, 0.86]
+  "A business running agents" --&gt; "Work done by agents"
+  "Work done by agents" --&gt; "Agent Behaviour Policy"
+  "Work done by agents" --&gt; "Desktop agent apps"
+  "Work done by agents" --&gt; "Agent desktop, on demand"
+  "Desktop agent apps" --&gt; "Models"
+  "Agent desktop, on demand" --&gt; "Desktop agent apps"
+  "Agent desktop, on demand" --&gt; "Observability and lock-down"
+  "Agent desktop, on demand" --&gt; "Credentials by key, PKI"
+  "Agent desktop, on demand" --&gt; "State in vaults"
+  "Agent desktop, on demand" --&gt; "macOS virtual machine"
+  "Agent Behaviour Policy" --&gt; "Observability and lock-down"
+  "macOS virtual machine" --&gt; "Apple silicon Mac"
+  evolve "Agent desktop, on demand" 0.60
+  evolve "State in vaults" 0.72
+  evolve "Credentials by key, PKI" 0.66
+  evolve "Observability and lock-down" 0.64</pre></details>
+<h2>What we are looking for</h2>
+<p>From a company that rents or hosts Macs, or wants to:</p>
+<ul>
+<li><b>Dedicated Macs per customer, by the day or the month</b>, with an API to erase and re-provision between runs, so a clean desktop per run takes minutes.</li>
+<li><b>A meter inside</b>, so a customer pays a fixed fee for the Mac and a per-minute price for the desktop time, with a higher price for the first hour or two and a taper after.</li>
+<li><b>A developer-agent offer</b>, squarely inside the licence: coding agents on leased Macs and in virtual machines.</li>
+<li><b>A joint approach to Apple</b> for written terms covering agent desktops, which the macOS 27 wording now makes possible.</li>
+<li><b>The stack, open</b>: the bootstrap, the vault layout, the behaviour policies and the profiles are all in the vault, to take and run. What we would bring is the policies, the vaults, the keys, and <a href="https://riskmandate.ai/">RiskMandate</a> to write the policy for each customer.</li>
+</ul>
+<h2>Where to start</h2>
+<ul>
+<li><b>Read the licence section of the plan first</b>, then talk to a lawyer about your shape.</li>
+<li><b>Start with shape A or C</b>, where the licence is clearest.</li>
+<li><b>Write the behaviour policy before the product</b>: it is the argument, and it tells you which controls matter.</li>
+<li><b>Measure the boot</b>: the plan assumes about five minutes from request to a working desktop; it has not been timed yet.</li>
+<li><b>Keep state out of the machine</b>: one key in, vaults for everything else, and an erase at the end.</li>
+</ul>
+<h2>One Mac, many agents: what changes when you queue them</h2>
+<p><em>Added on 10 October 2026, after a question from the plan's author.</em></p>
+<p>The obvious next question: if a leased Mac must be held for at least 24 hours, can one customer fill that day with many agents, one at a time, cleaning up after each? The cleaning-up part is easy. With the bootstrap above, everything an agent touched comes from vaults and goes back to vaults, so wiping between runs is a deletion, not a project. And the agents in our own team already run on a schedule, several times a day.</p>
+<p>The licence, read again with that question, cares about two things that queueing does not change: <b>what the Mac is used for</b>, and <b>who is using macOS</b>.</p>
+<figure class="shot" data-shot="ad-queue.webp" data-dir="images/" data-alt="Six scenarios against the clauses that decide them. Queueing satisfies &quot;one user at a time&quot;; the purpose of a lease, and who the user is, decide the rest. A reading of Apple&#x27;s text, not legal advice."><figcaption>Six scenarios against the clauses that decide them. Queueing satisfies "one user at a time"; the purpose of a lease, and who the user is, decide the rest. A reading of Apple's text, not legal advice.</figcaption></figure>
+<p><b>Purpose.</b> A lease is valid only "for the sole purpose of providing Permitted Developer Services", which Apple defines as "continuous integration services, including but not limited to software development, building software from source, automated testing during software development, and running necessary developer tools to support such activities." So a queue of coding agents on a leased Mac fits: it is what a continuous integration runner already does, many jobs for one customer in a row. A queue of office agents, working in mail, a browser and desktop apps, is outside the lease however carefully it is scheduled.</p>
+<p><b>Who.</b> If my agents, with my credentials, do the work and my customers buy the result, I am the user of macOS. That holds for developer work on a lease even when the work is for clients: a consultancy's build machine. If my customers' own agents, with their own credentials, get slots on my Mac, my customers are using macOS in turn, which is the "service bureau, time-sharing" the licence excludes "whether such services are being provided within your own organization or to third parties", and each of them would need a lease of their own of at least 24 hours.</p>
+<p><b>The case worth a lawyer's hour.</b> On a Mac you own, Section 2B(ii) lets a business run macOS "by multiple individuals on a single shared Mac Computer that you own or control", alongside "only one user may use the Apple Software at a time". A queue of your own agents on your own Mac, wiped between runs, is the closest fit for office agents. Two words decide it: whether automated agents are "individuals", and whether rotating them is time-sharing "within your own organization".</p>
+<p><b>What would need Apple's written terms.</b> Two cases: office agents on a leased Mac, and customers' agents sharing one Mac. The macOS 27 licence adds "except as otherwise provided in writing, signed, or issued by an authorized representative of Apple" to the virtualisation and leasing clauses, which is the route. The narrow ask is easier than the broad one: one organisation, a lease of 24 hours or more, sole use, one agent at a time, wiped between runs, for non-developer work. It keeps every condition Apple already sets except the purpose.</p>
+<p>So the plan's shapes hold, with one refinement. The dedicated Mac per customer (shape B) is needed whenever the agents are the customer's. When the agents are the operator's, doing work the customer buys, one Mac can serve many of them in turn, and for developer work that is already within the licence.</p>
+<hr>
+<p><em>Drafted from a voice memo by Dinis Cruz, who is the author of the idea and the person with editorial responsibility, by agent@riskmandate.ai (Claude Opus 5.5, claude-opus-5-5) in the sgit.ai site session, on 9 October 2026. The licence quotes are from Apple's macOS 15, 26 and 27 licences as published on apple.com; the reading of them is ours and is not legal advice. Mac prices are from Apple's UK store on 9 October 2026; every other number is an assumption, labelled in the vault. No provider is named, at the request of the author.</em></p>
+<sg-meter view="page" kind="article" date="2026-10-09" topics="startups-and-strategy agents-and-policy vaults-and-method" title="A Mac of the agent's own: a business plan for agent desktops, what Apple's licence allows, and three behaviour policies, sgit.ai"></sg-meter>
+<section class="athreads" id="threads">
+ <h2>Threads</h2>
+ <p class="athreads-meta"><span class="tchip">Startups &amp; strategy</span><span class="tchip">Agents &amp; policy</span><span class="tchip">Vaults &amp; method</span> <a href="graphs.html#a-mac-of-the-agents-own">This article as a graph &rarr;</a></p>
+ <div class="athreads-cols"><div><h3>Builds on</h3><ul><li><a href="an-agent-desktop-by-the-minute.html">A locked-down desktop for an agent, by the minute, is still hard to rent</a> <span class="dim">Nine properties a safe agent desktop needs, nine products against them, the macOS day-long lease, and the startup credits that would pay for testing it.</span></li><li><a href="why-my-agents-do-not-run-on-my-laptop.html">Why my agents do not run on my laptop: chat, Cowork and Code in the cloud, a vault as the shared drive, and the two walls an operating system has</a> <span class="dim">An OS has two hard walls, the kernel and the user; an agent on a laptop runs inside the one marked you, so the agents run in the cloud with a vault as shared drive.</span></li><li><a href="six-agents-one-inbox.html">Six agents, one inbox: what a real multi-agent setup taught me about access policies</a> <span class="dim">An access policy for an agent is only as real as its worst row: every rule in a real six-agent setup, graded by how it is enforced today.</span></li><li><a href="the-agent-team-as-it-runs.html">The agent team as it runs: one person, twelve agents, encrypted vaults, and a mailbox nobody sends from</a> <span class="dim">Twelve agents on dedicated accounts, encrypted vaults as the only memory, messages as files, a folder per person, and a mailbox nobody sends from.</span></li><li><a href="encrypted-memory-for-isolated-agents.html">Encrypted memory for agents that run somewhere else: sgit deployment patterns, from a Mac mini to Kubernetes</a> <span class="dim">Agents in isolated, ephemeral places need memory that outlives them. Five sgit deployment patterns, from a Mac mini to Kubernetes, with ciphertext-only servers.</span></li><li><a href="riskmandate-ten-questions.html">Ten hard questions for RiskMandate, answered: the mandate, the reach, the gap, and what we are deliberately not</a> <span class="dim">Ten hard questions from a conference, answered in a two-hour interview: what RiskMandate does, what it deliberately is not, and how mature each part is.</span></li><li><a href="hope-or-enforcement.html">Hope or enforcement: one customer service agent, three designs, and who keeps each promise</a> <span class="dim">One customer service agent built three ways, each with an Agent Behaviour Policy: how much of each policy is hope, and what one run can reach.</span></li></ul></div></div>
+ <p class="small dim"><a href="index.html">All articles</a> &middot; <a href="graphs.html">All graphs</a></p>
+</section>
+<aside class="lkit" aria-label="For LinkedIn"><b>Posting this article on LinkedIn?</b> The cover is <a href="banners/a-mac-of-the-agents-own.jpg" download>a-mac-of-the-agents-own.jpg</a> (1920&times;1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page.</aside>
+ <p class="subteaser"><b>Want the next issue by email.</b> One issue a week or so: what was published, what it adds up to, and what is worth your time. <a class="cta2" href="../subscribe/index.html">Subscribe to the SGit Newsroom &rarr;</a></p>
+ <p class="small dim" style="margin-top:2rem"><a href="index.html">&larr; All articles</a></p>
+</main>
+<script>
+(function () {
+ fetch('../assets/shots.js?v=v0.7.39')
+ .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+ .then(function (t) { (0, eval)(t); })
+ .catch(function (e) { console.error('[shots] component failed to load:', e); });
+}());
+</script>
+<script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": ""}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
+<script>
+import('../assets/components/sg-meter/v1/v1.3/v1.3.1/sg-meter.js?v=v0.7.39')
+ .catch(function (e) { console.error('[sg-meter] component failed to load:', e); });
+</script>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="netline"><a href="https://sgit.ai" style="display:inline;padding:0"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://pt.newsroom.sgit.ai" style="display:inline;padding:0">&#8593; pt.newsroom.sgit.ai</a> &middot; <a href="https://graphs.sgit.ai" style="display:inline;padding:0">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai" style="display:inline;padding:0">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai" style="display:inline;padding:0">&#8593; nhi.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai" style="display:inline;padding:0">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../admin/versions.html">v0.6.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="a-mac-of-the-agents-own.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../index.html">&#8594; The front page</a>
+    <a href="../articles/index.html#all">Every article</a>
+    <a href="../articles/newsletter/index.html">The newsletter</a>
+    <a href="../articles/collections/index.html">Collections</a>
+    <a href="../articles/desk/index.html">From the desk</a>
+    <a href="../articles/graphs.html">As graphs</a>
+    <a href="../subscribe/index.html">Subscribe</a>
+    <a href="../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../account/index.html">Your reading account</a>
+    <a href="../account/newsroom.html">Your newsroom</a>
+    <a href="../account/personas.html">Your personas</a>
+    <a href="../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../newsroom/index.html">How the newsroom runs</a>
+    <a href="../newsroom/policies.html">Behaviour policies</a>
+    <a href="../newsroom/publish.html">How to publish</a>
+    <a href="../newsroom/board.html">The board</a>
+    <a href="../newsroom/log.html">The run log</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../design/index.html">The design, and what runs</a>
+    <a href="../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../corrections/index.html">Corrections must propagate</a>
+    <a href="../provenance/index.html">Provenance is the product</a>
+    <a href="../economics/index.html">Paying the fact creator</a>
+    <a href="../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../replicate/index.html">Replicate this newsroom</a>
+    <a href="../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../archive/index.html">The archive</a>
+    <a href="../network/index.html">The network</a>
+    <a href="../admin/versions.html">Release history</a>
+    <a href="../admin/index.html">Admin &amp; engineering</a>
+    <a href="../about/participant.html">Where we lose</a>
+    <a href="../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+
+<script>
+(function(){var R=document.documentElement.getAttribute('data-root')||'';var V='?v=' + 'v0.7.39';var C=[R,'','../','/'].filter(function(v,i,a){return a.indexOf(v)===i});
+function wait(ms){return new Promise(function(res){var t=Date.now();(function p(){if(window.sg)return res(window.sg);if(Date.now()-t>ms)return res(null);setTimeout(p,60)})()})}
+function grab(sg,p){return new Promise(function(res){(async function(){if(sg&&sg.vfs&&sg.vfs.readText){try{var t=await sg.vfs.readText(p);if(t)return res(t)}catch(e){}}try{var r=await fetch(p+V);if(r.ok)return res(await r.text())}catch(e){}res(null)})()})}
+async function css(sg){for(var i=0;i<C.length;i++){var p=C[i]+'assets/newsroom.css';if(sg&&sg.loadCss){try{await sg.loadCss(p);return}catch(e){}}var t=await grab(sg,p);if(t){var s=document.createElement('style');s.textContent=t;document.head.appendChild(s);return}}}
+async function js(sg,name){name=name||'assets/site.js';for(var i=0;i<C.length;i++){var p=C[i]+name;if(sg&&sg.loadJs){try{await sg.loadJs(p);return}catch(e){}}var t=await grab(sg,p);if(t){try{(0,eval)(t)}catch(e){console.error('[site] js failed',name,e)}return}}}
+async function boot(){var inVault=false;try{inVault=(window!==window.parent)||location.protocol==='blob:'}catch(e){inVault=true}
+var sg=inVault?await wait(2500):null;window.__sgitBoot={roots:C,grab:function(p){return grab(sg,p)},version:V};await css(sg);await js(sg);document.documentElement.classList.add('ready');try{window.parent&&window.parent.postMessage({type:'sg-app-ready'},'*')}catch(e){}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+var mine=V.slice(3),last=0;
+function fresh(){if(location.hostname!=='sgit.ai'||Date.now()-last<60000)return;last=Date.now();
+fetch('/version.txt?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(t){t=(t||'').trim();if(!/^v[0-9]+[.][0-9]+[.][0-9]+$/.test(t)||t===mine)return;
+var k='sgit.fresh:'+location.pathname;try{if(sessionStorage.getItem(k)===t)return;sessionStorage.setItem(k,t)}catch(e){}
+var u=new URL(location.href);u.searchParams.set('v',t);location.replace(u.href)}).catch(function(){})}
+try{var u=new URL(location.href);if(u.searchParams.get('v')===mine){u.searchParams.delete('v');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}
+fresh();addEventListener('pageshow',function(e){if(e.persisted){last=0;fresh()}});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')fresh()});
+})();
+</script>
+</body>
+</html>

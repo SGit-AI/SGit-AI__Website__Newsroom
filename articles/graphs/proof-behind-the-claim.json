@@ -1,0 +1,183 @@
+{
+  "slug": "proof-behind-the-claim",
+  "teaser": "The homepage leads with encryption, which cannot be seen, while twenty-five vaults a stranger can open in one click sit two clicks away in a table.",
+  "topics": [
+    "site-and-engineering",
+    "vaults-and-method"
+  ],
+  "core_idea": "Encryption is a property you cannot look at, so the homepage should put the real vaults a visitor can open before the mechanism, and should not carry a claim that no published vault demonstrates.",
+  "nodes": [
+    {
+      "id": "twenty-five-vaults",
+      "label": "Twenty-five published vaults",
+      "kind": "artefact",
+      "summary": "Three weeks ago the site had four published vaults; today it has twenty-five, built by several agents working with one human, including a pentest report with a retest script per finding and a standard rebuilt as a citable graph."
+    },
+    {
+      "id": "encryption-cannot-be-seen",
+      "label": "Encryption is a property you cannot look at",
+      "kind": "claim",
+      "summary": "Zero knowledge cannot be seen either, so the visitor is asked to take the value on faith before being shown anything."
+    },
+    {
+      "id": "terminal-walkthrough",
+      "label": "The terminal walkthrough",
+      "kind": "example",
+      "summary": "The hero's create, commit, history and clone walkthrough demonstrates familiarity, which is a virtue, but not power."
+    },
+    {
+      "id": "abstract-use-cases",
+      "label": "Use cases as categories",
+      "kind": "example",
+      "summary": "Five use-case cards, each a category rather than a thing, while the vault that embodies the category sits one level down."
+    },
+    {
+      "id": "table-two-clicks-away",
+      "label": "The proof is a table, two clicks away",
+      "kind": "claim",
+      "summary": "A table is the right shape for finding a vault and the wrong shape for being convinced by one, and it is under a dropdown two clicks from the hero."
+    },
+    {
+      "id": "open-by-one-string",
+      "label": "Opened by one string",
+      "kind": "claim",
+      "summary": "Both proof vaults are opened by one string, run entirely in the browser, ship with their data, sources and tests, and require the visitor to click rather than to understand encryption."
+    },
+    {
+      "id": "agents-build-for-each-other",
+      "label": "Agents build for each other",
+      "kind": "example",
+      "summary": "A brief published on 6 September was read by another agent who built a vault from it the same day, and the API team's correction is now published above the mistake."
+    },
+    {
+      "id": "briefs-as-log",
+      "label": "The briefs page as a log",
+      "kind": "example",
+      "summary": "The collaboration record is filed under Docs, three levels from the homepage, written as a log, which is the right format for the record and the wrong one for a first-time reader."
+    },
+    {
+      "id": "unproven-merge-claim",
+      "label": "The claim with no artefact",
+      "kind": "question",
+      "summary": "The homepage says a human reviews the merge of agents' branches, and no published vault shows two agents' branches and a human merge in its history."
+    },
+    {
+      "id": "proof-before-mechanism",
+      "label": "Reorder so proof comes before mechanism",
+      "kind": "method",
+      "summary": "The hero shows four real vaults as cards, then six vaults chosen by job, then the team story, then the terminal walkthrough and the zero-knowledge explanation."
+    },
+    {
+      "id": "generated-from-data",
+      "label": "Generated from the same data",
+      "kind": "method",
+      "summary": "The six vaults chosen by job are generated from the same data as the table, so they never go stale."
+    },
+    {
+      "id": "about-page",
+      "label": "A page that says who is behind it",
+      "kind": "artefact",
+      "summary": "A beta tool that asks people to publish their read keys is asking for trust, so there will be a page about who builds sgit, borrowing Interests declared and Reach me, or correct me from a sibling site."
+    },
+    {
+      "id": "site-card",
+      "label": "The site card",
+      "kind": "artefact",
+      "summary": "A card describes a sibling site the way it describes itself, from its entry in the network directory, because a bare link does not say this continues elsewhere, on purpose."
+    }
+  ],
+  "edges": [
+    {
+      "from": "terminal-walkthrough",
+      "to": "encryption-cannot-be-seen",
+      "rel": "example-of"
+    },
+    {
+      "from": "abstract-use-cases",
+      "to": "twenty-five-vaults",
+      "rel": "contrasts"
+    },
+    {
+      "from": "table-two-clicks-away",
+      "to": "open-by-one-string",
+      "rel": "contrasts"
+    },
+    {
+      "from": "open-by-one-string",
+      "to": "twenty-five-vaults",
+      "rel": "example-of"
+    },
+    {
+      "from": "open-by-one-string",
+      "to": "encryption-cannot-be-seen",
+      "rel": "contrasts"
+    },
+    {
+      "from": "agents-build-for-each-other",
+      "to": "twenty-five-vaults",
+      "rel": "example-of"
+    },
+    {
+      "from": "briefs-as-log",
+      "to": "agents-build-for-each-other",
+      "rel": "compared-with"
+    },
+    {
+      "from": "unproven-merge-claim",
+      "to": "abstract-use-cases",
+      "rel": "extends"
+    },
+    {
+      "from": "unproven-merge-claim",
+      "to": "open-by-one-string",
+      "rel": "contrasts"
+    },
+    {
+      "from": "proof-before-mechanism",
+      "to": "encryption-cannot-be-seen",
+      "rel": "answers"
+    },
+    {
+      "from": "proof-before-mechanism",
+      "to": "table-two-clicks-away",
+      "rel": "answers"
+    },
+    {
+      "from": "proof-before-mechanism",
+      "to": "briefs-as-log",
+      "rel": "answers"
+    },
+    {
+      "from": "generated-from-data",
+      "to": "proof-before-mechanism",
+      "rel": "extends"
+    },
+    {
+      "from": "about-page",
+      "to": "site-card",
+      "rel": "depends-on"
+    },
+    {
+      "from": "site-card",
+      "to": "generated-from-data",
+      "rel": "example-of"
+    }
+  ],
+  "links": {
+    "articles": [],
+    "pages": [],
+    "sites": [
+      "https://open-source.sgit.ai/about/index.html"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "The word \"vault\" appears in the hero three times and the visitor is never shown one.",
+      "why": "The diagnosis in one line: the homepage names the thing and never shows it."
+    },
+    {
+      "text": "A claim on a homepage with no artefact behind it is exactly what this site says it does not do.",
+      "why": "The gap the article names against itself: the multi-agent merge claim has no published vault behind it."
+    }
+  ]
+}

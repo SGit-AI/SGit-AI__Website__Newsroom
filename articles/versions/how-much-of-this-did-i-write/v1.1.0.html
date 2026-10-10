@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en" data-root="../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>How much of this did I write? The numbers behind twenty articles in four weeks, and what the input actually was: what changed in v1.1.0, sgit.ai</title>
+<meta name="description" content="The changes to the article "How much of this did I write? The numbers behind twenty articles in four weeks, and what the input actually was" in v1.1.0, paragraph by paragraph.">
+<link rel="canonical" href="https://newsroom.sgit.ai/articles/versions/how-much-of-this-did-i-write/v1.1.0.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="sgit.ai">
+<meta property="og:url" content="https://newsroom.sgit.ai/articles/versions/how-much-of-this-did-i-write/v1.1.0.html">
+<meta property="og:title" content="How much of this did I write? The numbers behind twenty articles in four weeks, and what the input actually was: what changed in v1.1.0, sgit.ai">
+<meta property="og:description" content="The changes to the article "How much of this did I write? The numbers behind twenty articles in four weeks, and what the input actually was" in v1.1.0, paragraph by paragraph.">
+<meta property="og:image" content="https://newsroom.sgit.ai/og/default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="How much of this did I write? The numbers behind twenty articles in four weeks, and what the input actually was: what changed in v1.1.0, sgit.ai">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://newsroom.sgit.ai/og/default.jpg">
+<link rel="alternate" type="text/markdown" href="v1.1.0.md" title="This page as markdown">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "How much of this did I write? The numbers behind twenty articles in four weeks, and what the input actually was: what changed in v1.1.0, sgit.ai", "headline": "How much of this did I write? The numbers behind twenty articles in four weeks, and what the input actually was: what changed in v1.1.0, sgit.ai", "description": "The changes to the article \"How much of this did I write? The numbers behind twenty articles in four weeks, and what the input actually was\" in v1.1.0, paragraph by paragraph.", "url": "https://newsroom.sgit.ai/articles/versions/how-much-of-this-did-i-write/v1.1.0.html", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "sgit.ai", "url": "https://sgit.ai"}, "about": {"@type": "SoftwareApplication", "name": "sgit", "sameAs": "https://pypi.org/project/sgit-ai/"}}</script>
+<style>html{background:#faf9f5}body{margin:0;background:#faf9f5;color:#1c1d21;font-family:ui-sans-serif,system-ui,sans-serif;opacity:0;transition:opacity .25s;animation:sg-reveal 0s linear 1.6s forwards}html.ready body{opacity:1;animation:none}@keyframes sg-reveal{to{opacity:1}}</style><noscript><style>body{opacity:1;animation:none}</style></noscript>
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <a class="brand" href="../../../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../../../admin/versions.html" title="Site release history">v0.6.0</a>
+  <sg-meter class="meter-nav" view="balance"></sg-meter>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl here" href="../../../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../index.html">Front page</a>
+      <a class="sl" href="../../../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../../../articles/index.html#all">Every article</a>
+      <a class="sl" href="../../../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../../../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../../../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../../../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../account/index.html">Your reading account</a>
+      <a class="sl" href="../../../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../../../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../../../account/personas.html">Your personas</a>
+      <a class="sl" href="../../../account/top-up.html">Top up</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../../../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../../../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../../../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../../../newsroom/board.html">The board</a>
+      <a class="sl" href="../../../newsroom/log.html">The run log</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../../../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../../../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../../../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../../../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../../../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../../../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../../../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../../../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../../../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../../../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../../../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../world-news-day/index.html">World News Day<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../world-news-day/index.html">The corpus</a>
+      <a class="sl" href="../../../world-news-day/stories/free-to-republish-is-not-a-licence.html">Free to republish is not a licence</a>
+      <a class="sl" href="../../../world-news-day/licences.html">The licence that is not there</a>
+      <a class="sl" href="../../../world-news-day/corpus.html">The twenty-one</a>
+      <a class="sl" href="../../../world-news-day/findings.html">The aggregate</a>
+      <a class="sl" href="../../../world-news-day/terms.html">The vocabulary</a>
+      <a class="sl" href="../../../world-news-day/graph.html">The graph</a>
+      <a class="sl" href="../../../world-news-day/sources.html">Sources</a>
+      <a class="sl" href="../../../world-news-day/contacts.html">How to reach them</a>
+      <a class="sl" href="../../../world-news-day/vault.html">Published vaults</a>
+      <a class="sl" href="../../../world-news-day/vaults/corpus.html">The vault, opened</a>
+      <a class="sl" href="../../../world-news-day/method.html">Method</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../archive/index.html">The archive</a>
+      <a class="sl" href="../../../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../../../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../../../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../../../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../../../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../../../network/index.html">The network</a>
+      <a class="sl" href="../../../admin/versions.html">Release history</a>
+      <a class="sl" href="../../../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../../../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom">&#9733; GitHub</a>
+</div></nav>
+
+<div class="llmschip"><a href="../../../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.6.0</span></a></div>
+<main class="doc diff">
+ <p class="crumb"><a href="../../../index.html">Home</a> / <a href="../../index.html">Articles</a> / <a href="../../how-much-of-this-did-i-write.html">How much of this did I write? The numbers behind twenty articles in four weeks, and what the input actually was</a> / <a href="../how-much-of-this-did-i-write.html">Versions</a> / v1.1.0</p>
+ <h1>How much of this did I write? The numbers behind twenty articles in four weeks, and what the input actually was: what changed in v1.1.0</h1>
+ <p class="lead">From v1.0.0 (2026-10-05, <code>6ba12b0a2</code>) to v1.1.0 (2026-10-05, <code>d234ea8cf</code>), paragraph by paragraph.</p>
+ <p class="small dim">15 paragraphs added, 1 removed, 3 changed in place, 54 unchanged. About 1,479 words added and 107 removed. Insertions are marked like <ins>this</ins>, deletions like <del>this</del>; unchanged runs are folded to one line; figures appear as their file names.</p>
+ <style>.diff ins{background:#e6f4ea;color:#1a5c36;text-decoration:none;padding:0 2px}.diff del{background:#fde8e6;color:#8a1c12;text-decoration:line-through;padding:0 2px}.diff .diff-same{color:#8a8780;font-size:.85em;border-left:3px solid #e3e0d8;padding-left:.7em;margin:1.2em 0}.diff .added{border-left:3px solid #1a7f5a;padding-left:.7em}.diff .removed{border-left:3px solid #b42318;padding-left:.7em;color:#6b6863;text-decoration:line-through}.diff .changed{border-left:3px solid #b45309;padding-left:.7em}.diff .diff-fig{font-style:italic;color:#6b6863}.diff .diff-li{margin:.3em 0 .3em 1em}</style>
+ <p class="small"><a href="../how-much-of-this-did-i-write.html">all versions</a> &middot; <a href="v1.2.0.html">v1.2.0 &rarr;</a></p>
+ <p class="diff-same">3 unchanged paragraphs</p>
+ <p class="changed">&gt; <b>Where this comes from, and what is behind it.</b> A WhatsApp exchange on 5 October 2026, in which a friend who had just received an answer from one of my agents said the amount of text I produce is baffling, and my reply that I create the briefs and review the drafts, and that the article in question leaned, in a Wardley-evolution sort of way, on content I have been publishing for years. Then a voice memo asking for the thing I always try to explain to be measured rather than asserted. The data is the transcript of the Claude Code session that has run this site since 11 August, parsed for who said what and when, joined to the site's git history. The method, its limits and the full dataset are <a href="../../data/how-much-of-this-did-i-write.json">published beside the article</a>. Seven of the twenty articles were checked by hand, turn by turn; the rest are reported only where the numbers are exact.<ins> This article has itself been revised since it was first published, and <a href="../../diffs/how-much-of-this-did-i-write.html">what changed</a> is shown paragraph by paragraph, by a tool built for the purpose on the same day.</ins></p>
+ <p class="diff-same">5 unchanged paragraphs, under In short</p>
+ <p class="changed diff-li">&bull; <b>The input is not the memo.</b> The last article quotes or links thirty-three pieces of my earlier writing. The record it drew on is a 2010 open source tool, a book, 107 posts on diniscruz.ai in twenty months, 3,025 markdown files in one team's record this year, and the twenty-six articles before it on this site, <del>nineteen</del><ins>seventeen</ins> of which cite an earlier <del>one.</del><ins>one, with sixty-five links between them.</ins> The agent is fast because the record exists and is published where a machine can read it.</p>
+ <p class="diff-same">24 unchanged paragraphs, under The question, and why it needs numbers, What went in, and what came out, What the corrections were…</p>
+ <p class="changed">The code review company article quotes or links thirty-three pieces of my earlier writing. None of them was written for the article. They are, in order of age: the O2 Platform, an open source static analysis tool I built between 2010 and 2013 whose method streams technique the article revisits; a blog from 2011 and a book from 2016 on the security side of code review and feedback loops; 107 posts on diniscruz.ai between February 2024 and October 2025, among them the ones on semantic graphs for source code, on explorers, villagers and town planners, on using models to find the solution and code to execute it; the record of one team this year, 3,025 markdown files of briefs, debriefs and articles written with agents while building SG/Send and sgit, 1,682 of them in my own folders, among them who should be reading the code, the five whys as a translator, open source as strategy and budgets on the step; and the twenty-six articles before it on this site, <del>nineteen</del><ins>seventeen</ins> of which cite an earlier one, with sixty-five links between them.</p>
+ <p class="diff-same">4 unchanged paragraphs</p>
+ <h2 class="added">The form, the workflow and the tools</h2>
+ <p class="added">One more thing the numbers cannot show on their own, and the memo insisted on: none of this would have happened at this pace without the form it runs in. The articles come out the way they do because there is a production pipeline behind them, built over two years and improved most weeks, and the pipeline is as much the input as the memos are.</p>
+ <p class="added">The pipeline, as it stands today. A memo arrives, usually as a transcript with the ums in. The agent reads the record first, the articles and their graphs, the team briefs, the posts, and only then searches outside. It writes the article as markdown with a few conventions: a note box saying where the piece comes from, an In short list, figures declared on one line each, a sources list. It draws the figures as small web pages in a shared style and renders them to images with a headless browser, so a figure is text that can be corrected rather than a picture that has to be redrawn. It writes the graph JSON. A build turns all of it into pages, markdown twins for agents, a machine-readable index, link-preview cards and a feed, and a validator refuses the release if a link is dead, a page is orphaned, a credential pattern appears, an em-dash is in the prose or the banned ladder word is in an article. A leak scan runs on every commit. The release gets a version, a log entry and a commit with both names on it, and a live check confirms it is up. The whole of that is open source, in the site's own repository.</p>
+ <p class="added">The tools inside it were almost all built on the day they were needed, because something was slow. The figure renderer was built when a set of figures from another agent clipped at fixed heights. The vault bundler was built for the code review vault. The code analysers, the delta reader and the method stream extractor were built for the code review article, in an afternoon, and are published with the vault. The transcript parser that produced the numbers in this article was built this afternoon, in about forty lines. And when I asked, while reading the revision of this article, for a way to see what had changed rather than re-read nine thousand words, the agent built a diff tool that compares two versions of an article paragraph by paragraph and publishes the result as a page, which is how <a href="../../diffs/how-much-of-this-did-i-write.html">the changes to this article</a> can be read. The map of the articles was improved in the same hour because reading it for this article showed it needed to be.</p>
+ <p class="added">This is the part I most want other people to take from the exercise. The productivity is not the model. It is the model inside a form I control, where any step that is not working can be replaced with a tool the same day, and where two years of those tools have accumulated into a toolkit, all of it open source, that a new session inherits. I have the power to shape the technology I use, and I use it constantly: this is not effective, build a tool for it. A team that adopts the model without that habit gets the model's speed on the first draft and none of it afterwards.</p>
+ <p class="added">Two smaller things belong here because the memos raised them. The first is that the work is queued. I send memos and corrections in the order I have them, often several at once while the agent is mid-task, and the agent processes them in an order that makes sense, so a thought that arrives while something else is being built is not lost, which suits the way my mind works far better than any to-do list ever did. The second is that the images other models make from these articles go through the same rounds. The infographic at the end of this article is the second version; the first put the emphasis on the numbers and I asked for it to be rebuilt around the one idea in the middle of the piece that I think is the strongest, and the second version has two numbers wrong, which the caption names. Images are drafts too.</p>
+ <p class="diff-same">1 unchanged paragraph, under The compounding</p>
+ <p class="removed">The last thing the numbers show is that the articles are not twenty separate pieces of work. Nineteen of the twenty-seven articles on this site cite at least one earlier one, and the latest cites seven. The code review company article could not have been written without the code review article; the code review article could not have been written without the fractal semantic graphs article, which is the one argued down over five releases in September; and the fractal semantic graphs article was written from a post on diniscruz.ai and a brief in the team record. Each one is a distillation that the next one assumes.</p>
+ <p class="added">The last thing the numbers show is that the articles are not twenty separate pieces of work. Seventeen of the twenty-seven articles before this one cite at least one earlier one, sixty-five links run between them, and six of those links run the other way, from an older article that was updated after a newer one existed. The latest cites seven. The code review company article could not have been written without the code review article; the code review article could not have been written without the fractal semantic graphs article, which is the one argued down over five releases in September; and the fractal semantic graphs article was written from a post on diniscruz.ai and a brief in the team record. Each one is a distillation that the next one assumes.</p>
+ <p class="added">The links are not only in the prose. Every article on this site has a semantic graph beside it, a JSON file per article with the ideas it rests on, the claims it makes, the methods, the examples, how they connect, and which earlier articles and pages it builds on. The build reads those files and draws <a href="../../graphs.html">a map of the articles</a>, every one in date order round a circle, sized by how many others link to it, with the links as edges. The map was redrawn while this article was being revised, because reading it for this article showed that its labels collided and one floated off the ring, which is the loop in miniature: a tool used in earnest gets improved.</p>
+ <p class="diff-fig added">[figure hmi-the-articles-map.webp] The twenty-eight articles as the build draws them on 5 October 2026, oldest at the top and clockwise from there, sized by how many other articles link to them. Teal edges run from an article to an earlier one it cites; the six amber edges run the other way, from an older article updated to point at a newer one. The fractal semantic graphs article, with ten articles linking to it, is the one everything else stands on.</p>
+ <p class="diff-fig added">[figure hmi-this-articles-graph.webp] This article's own graph, as the build draws it from the JSON beside the article: thirteen nodes, thirteen edges, coloured by kind. The same file tells the map which articles this one builds on, and tells an agent what the article claims before it reads a word of it.</p>
+ <p class="added">That per-article graph is also what makes the linking cheap. When the agent writes a new article it does not read the twenty-seven before it. It reads their graphs, a few hundred words each, and opens the two or three whose claims the new piece depends on. The index is the graph, the graph is small, and the agent reads selectively, which is the memory article's argument about tokens made concrete: a curated, structured record costs a fraction of a knowledge base that has to be sifted every time.</p>
+ <p class="diff-same">4 unchanged paragraphs, under What is open</p>
+ <h2 class="added">The article as one page, by another model</h2>
+ <p class="added">As with the three articles before it, Dinis fed the published text to ChatGPT and asked for an infographic, twice. The first version led with the numbers. The second, below, was asked to lead with the idea in the middle of the article that he thinks is the strongest, that a model which can go in every direction needs someone with a direction, and it does. It was checked against the article before it went up. The headline figures are right. Two numbers are not: the input for the code review company article is given as 5,785 words where the ledger has 4,522 plus a reader's 1,401, and the count of articles that cite an earlier one is given as nineteen where the build says seventeen, a number this article itself had wrong when it was first published and corrected in the revision whose diff is linked above.</p>
+ <p class="diff-fig added">[figure hmi-one-page-by-another-model.webp] The article as a one-page state, second version, generated with ChatGPT from the published text on 5 October 2026 and credited by it to the source. Two numbers in it are wrong, as the paragraph above says; the style and the slogans in the margins are the other model's, kept as they came.</p>
+ <p class="diff-same">2 unchanged paragraphs, under Threads woven here</p>
+ <p class="diff-li added">&bull; <a href="../../graphs.html">The articles as graphs</a>, the map and the per-article graphs this article's compounding section is about, drawn from one JSON file per article.</p>
+ <p class="diff-same">11 unchanged paragraphs, under Sources</p>
+ <p class="small" style="margin-top:2rem"><a href="../how-much-of-this-did-i-write.html">all versions</a> &middot; <a href="v1.2.0.html">v1.2.0 &rarr;</a></p>
+</main>
+<sg-meter view="page" kind="page" date="" topics="" title="How much of this did I write? The numbers behind twenty articles in four weeks, and what the input actually was: what changed in v1.1.0, sgit.ai" quiet></sg-meter>
+<script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": ""}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
+<script>
+import('../../../assets/components/sg-meter/v1/v1.3/v1.3.1/sg-meter.js?v=v0.7.39')
+ .catch(function (e) { console.error('[sg-meter] component failed to load:', e); });
+</script>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="netline"><a href="https://sgit.ai" style="display:inline;padding:0"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://pt.newsroom.sgit.ai" style="display:inline;padding:0">&#8593; pt.newsroom.sgit.ai</a> &middot; <a href="https://graphs.sgit.ai" style="display:inline;padding:0">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai" style="display:inline;padding:0">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai" style="display:inline;padding:0">&#8593; nhi.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai" style="display:inline;padding:0">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../../../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../../../admin/versions.html">v0.6.0</a> &middot; <a href="../../../admin/index.html">engineering</a> &middot; <a href="v1.1.0.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../../../index.html">&#8594; The front page</a>
+    <a href="../../../articles/index.html#all">Every article</a>
+    <a href="../../../articles/newsletter/index.html">The newsletter</a>
+    <a href="../../../articles/collections/index.html">Collections</a>
+    <a href="../../../articles/desk/index.html">From the desk</a>
+    <a href="../../../articles/graphs.html">As graphs</a>
+    <a href="../../../subscribe/index.html">Subscribe</a>
+    <a href="../../../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../../../account/index.html">Your reading account</a>
+    <a href="../../../account/newsroom.html">Your newsroom</a>
+    <a href="../../../account/personas.html">Your personas</a>
+    <a href="../../../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../../../newsroom/index.html">How the newsroom runs</a>
+    <a href="../../../newsroom/policies.html">Behaviour policies</a>
+    <a href="../../../newsroom/publish.html">How to publish</a>
+    <a href="../../../newsroom/board.html">The board</a>
+    <a href="../../../newsroom/log.html">The run log</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../../../design/index.html">The design, and what runs</a>
+    <a href="../../../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../../../corrections/index.html">Corrections must propagate</a>
+    <a href="../../../provenance/index.html">Provenance is the product</a>
+    <a href="../../../economics/index.html">Paying the fact creator</a>
+    <a href="../../../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../../../replicate/index.html">Replicate this newsroom</a>
+    <a href="../../../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../../../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../../../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../../../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../../../archive/index.html">The archive</a>
+    <a href="../../../network/index.html">The network</a>
+    <a href="../../../admin/versions.html">Release history</a>
+    <a href="../../../admin/index.html">Admin &amp; engineering</a>
+    <a href="../../../about/participant.html">Where we lose</a>
+    <a href="../../../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+
+<script>
+(function(){var R=document.documentElement.getAttribute('data-root')||'';var V='?v=' + 'v0.7.39';var C=[R,'','../','/'].filter(function(v,i,a){return a.indexOf(v)===i});
+function wait(ms){return new Promise(function(res){var t=Date.now();(function p(){if(window.sg)return res(window.sg);if(Date.now()-t>ms)return res(null);setTimeout(p,60)})()})}
+function grab(sg,p){return new Promise(function(res){(async function(){if(sg&&sg.vfs&&sg.vfs.readText){try{var t=await sg.vfs.readText(p);if(t)return res(t)}catch(e){}}try{var r=await fetch(p+V);if(r.ok)return res(await r.text())}catch(e){}res(null)})()})}
+async function css(sg){for(var i=0;i<C.length;i++){var p=C[i]+'assets/newsroom.css';if(sg&&sg.loadCss){try{await sg.loadCss(p);return}catch(e){}}var t=await grab(sg,p);if(t){var s=document.createElement('style');s.textContent=t;document.head.appendChild(s);return}}}
+async function js(sg,name){name=name||'assets/site.js';for(var i=0;i<C.length;i++){var p=C[i]+name;if(sg&&sg.loadJs){try{await sg.loadJs(p);return}catch(e){}}var t=await grab(sg,p);if(t){try{(0,eval)(t)}catch(e){console.error('[site] js failed',name,e)}return}}}
+async function boot(){var inVault=false;try{inVault=(window!==window.parent)||location.protocol==='blob:'}catch(e){inVault=true}
+var sg=inVault?await wait(2500):null;window.__sgitBoot={roots:C,grab:function(p){return grab(sg,p)},version:V};await css(sg);await js(sg);document.documentElement.classList.add('ready');try{window.parent&&window.parent.postMessage({type:'sg-app-ready'},'*')}catch(e){}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+var mine=V.slice(3),last=0;
+function fresh(){if(location.hostname!=='sgit.ai'||Date.now()-last<60000)return;last=Date.now();
+fetch('/version.txt?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(t){t=(t||'').trim();if(!/^v[0-9]+[.][0-9]+[.][0-9]+$/.test(t)||t===mine)return;
+var k='sgit.fresh:'+location.pathname;try{if(sessionStorage.getItem(k)===t)return;sessionStorage.setItem(k,t)}catch(e){}
+var u=new URL(location.href);u.searchParams.set('v',t);location.replace(u.href)}).catch(function(){})}
+try{var u=new URL(location.href);if(u.searchParams.get('v')===mine){u.searchParams.delete('v');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}
+fresh();addEventListener('pageshow',function(e){if(e.persisted){last=0;fresh()}});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')fresh()});
+})();
+</script>
+</body>
+</html>

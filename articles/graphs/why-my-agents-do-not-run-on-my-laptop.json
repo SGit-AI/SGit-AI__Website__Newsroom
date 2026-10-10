@@ -1,0 +1,183 @@
+{
+  "slug": "why-my-agents-do-not-run-on-my-laptop",
+  "teaser": "An OS has two hard walls, the kernel and the user; an agent on a laptop runs inside the one marked you, so the agents run in the cloud with a vault as shared drive.",
+  "topics": [
+    "agents-and-policy",
+    "vaults-and-method"
+  ],
+  "core_idea": "No model runs on the author's laptop because a process there runs as the author and the operating system has no boundary inside a user account between an agent and the SSH keys, cloud credentials, password manager session, browser cookies and files; the desktop agents' prompts and sandboxes are settings enforced by the process they constrain, and fifteen months of incidents show what a mistake or an injected instruction reaches; so the agents run on four cloud surfaces chosen by reach, Claude chat with nothing connected, Cowork with no repositories, Claude Code with one repository and an allowlist, ChatGPT with no assets, and a vault the host cannot read is the shared drive between them, with keys handed per session; the trade-offs are accepted, three wishes remain, identity, secrets and a key pair per agent, and the caveat is that a dedicated machine with separate accounts is a different model to be reported on later.",
+  "nodes": [
+    {
+      "id": "the-question",
+      "label": "Why not run it on the laptop",
+      "kind": "question",
+      "summary": "No business need for an offline model; the one thing a local agent would need to offer, isolation better than the cloud's, is the thing none offers."
+    },
+    {
+      "id": "two-walls",
+      "label": "An operating system has two hard walls",
+      "kind": "claim",
+      "summary": "The kernel and the user account; inside one account there is no boundary between an agent and the keys, credentials, sessions and files the account can read."
+    },
+    {
+      "id": "settings-not-boundaries",
+      "label": "The desktop agents add settings, not boundaries",
+      "kind": "claim",
+      "summary": "Approval prompts, allow lists and process sandboxes are enforced by the process they constrain; the vendor's own docs list credential files as the default read scope and call the boundary a permission prompt."
+    },
+    {
+      "id": "evidence",
+      "label": "Fifteen months of incidents",
+      "kind": "example",
+      "summary": "Deleted home directories and drives, repositories executing before the trust prompt, hidden instructions exfiltrating secrets, tens of thousands of exposed self-hosted gateways, a local sandbox escape reaching SSH keys; every one fixed, the pattern remaining."
+    },
+    {
+      "id": "trifecta",
+      "label": "The lethal trifecta is the laptop's default",
+      "kind": "concept",
+      "summary": "Private data, untrusted content and a way out are all present on a laptop by default: the account, every file read, and the user's network."
+    },
+    {
+      "id": "four-surfaces",
+      "label": "Four places the agents run",
+      "kind": "method",
+      "summary": "Claude chat with nothing connected for thinking; Cowork in the cloud with no repositories for the team; Claude Code on the web with one repository and an allowlist for code; ChatGPT with no assets as a second model."
+    },
+    {
+      "id": "vault-shared-drive",
+      "label": "The vault is the shared drive",
+      "kind": "method",
+      "summary": "Encrypted on the agent's side, keys handed per session out of band, clone or pull, work, leak check, commit, push; the next session pulls; the laptop passes keys and nothing else."
+    },
+    {
+      "id": "same-mandate",
+      "label": "Same mandate, two deployments",
+      "kind": "claim",
+      "summary": "On the laptop the grant is the account and barriers are expectations; in a cloud session the grant is small and barriers are boundaries; injection is stopped in neither, and what it reaches differs."
+    },
+    {
+      "id": "costs",
+      "label": "What it costs",
+      "kind": "claim",
+      "summary": "No agents without a connection, a key per session by hand, no per-session secrets in Cowork so one vault per scope, chat without cross-chat memory, two products with two flows; accepted."
+    },
+    {
+      "id": "three-wishes",
+      "label": "Identity, secrets and a key pair per agent",
+      "kind": "question",
+      "summary": "An agent identity the platform knows with signed commits; secrets injected and revocable per agent; a key pair per agent; each exists in pieces on this site and none as a product feature."
+    },
+    {
+      "id": "caveat",
+      "label": "The dedicated machine is a different model",
+      "kind": "question",
+      "summary": "A second machine with separate accounts and nothing of the author's on it has an empty wall marked that user; closer to the cloud model; to be run and reported on later, not before."
+    },
+    {
+      "id": "exists-not",
+      "label": "What exists and what does not",
+      "kind": "question",
+      "summary": "The setup runs and the team's twelve-agent version runs; the three wishes, a desktop agent running as a separate user by default, and the dedicated-machine report do not exist yet."
+    }
+  ],
+  "edges": [
+    {
+      "from": "the-question",
+      "to": "two-walls",
+      "rel": "answers"
+    },
+    {
+      "from": "two-walls",
+      "to": "settings-not-boundaries",
+      "rel": "leads-to"
+    },
+    {
+      "from": "settings-not-boundaries",
+      "to": "evidence",
+      "rel": "leads-to"
+    },
+    {
+      "from": "evidence",
+      "to": "trifecta",
+      "rel": "depends-on"
+    },
+    {
+      "from": "two-walls",
+      "to": "four-surfaces",
+      "rel": "leads-to"
+    },
+    {
+      "from": "four-surfaces",
+      "to": "vault-shared-drive",
+      "rel": "depends-on"
+    },
+    {
+      "from": "four-surfaces",
+      "to": "same-mandate",
+      "rel": "example-of"
+    },
+    {
+      "from": "trifecta",
+      "to": "same-mandate",
+      "rel": "extends"
+    },
+    {
+      "from": "vault-shared-drive",
+      "to": "costs",
+      "rel": "leads-to"
+    },
+    {
+      "from": "costs",
+      "to": "three-wishes",
+      "rel": "leads-to"
+    },
+    {
+      "from": "two-walls",
+      "to": "caveat",
+      "rel": "contrasts"
+    },
+    {
+      "from": "three-wishes",
+      "to": "exists-not",
+      "rel": "leads-to"
+    },
+    {
+      "from": "caveat",
+      "to": "exists-not",
+      "rel": "leads-to"
+    }
+  ],
+  "links": {
+    "articles": [
+      "the-agent-team-as-it-runs",
+      "six-agents-one-inbox",
+      "footprint-and-blast-radius",
+      "ultimate-insider-three-collisions",
+      "a-personal-agent-that-keeps-your-secrets"
+    ],
+    "pages": [
+      "docs/agents.html",
+      "docs/how-to/claude-team-egress.html",
+      "docs/credentials.html",
+      "security/index.html",
+      "docs/limitations.html",
+      "docs/append-lane-messaging.html",
+      "docs/agent-contact.html"
+    ],
+    "sites": [
+      "https://riskmandate.ai/abp.html",
+      "https://code.claude.com/docs/en/sandboxing",
+      "https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "A mistake inside a boundary is a bad afternoon. The same mistake inside \"me\" is an incident.",
+      "why": "Why hallucination is the wrong word for what goes wrong with a local agent."
+    },
+    {
+      "text": "The barrier that holds is the small grant, not a cleverer filter.",
+      "why": "Prompt injection is not prevented by the cloud; what the injected instruction can reach is."
+    }
+  ]
+}

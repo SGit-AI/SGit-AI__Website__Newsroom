@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The newsroom: roles &amp; operations &middot; newsroom.sgit.ai</title>
+<meta name="description" content="Not an effort to replace journalists with agents. The opposite. Agents make it possible to involve more humans, in more roles, at more scale than was previously affordable. Humans are the bar; agents are the volume.">
+<link rel="canonical" href="https://newsroom.sgit.ai/archive/2026-08-23-newsroom-roles-and-operations.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="newsroom.sgit.ai">
+<meta property="og:url" content="https://newsroom.sgit.ai/archive/2026-08-23-newsroom-roles-and-operations.html">
+<meta property="og:title" content="The newsroom: roles & operations">
+<meta property="og:description" content="Humans are the bar; agents are the volume.">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer and the shipped CLI. This site is the future-of-news stack: provenance, corrections, and paying the fact creator">&#8593; part of <b>sgit.ai</b></a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.6.0</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../articles/index.html#all">Every article</a>
+      <a class="sl" href="../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../account/index.html">Your reading account</a>
+      <a class="sl" href="../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../account/personas.html">Your personas</a>
+      <a class="sl" href="../account/top-up.html">Top up</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../newsroom/board.html">The board</a>
+      <a class="sl" href="../newsroom/log.html">The run log</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../world-news-day/index.html">World News Day<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../world-news-day/index.html">The corpus</a>
+      <a class="sl" href="../world-news-day/stories/free-to-republish-is-not-a-licence.html">Free to republish is not a licence</a>
+      <a class="sl" href="../world-news-day/licences.html">The licence that is not there</a>
+      <a class="sl" href="../world-news-day/corpus.html">The twenty-one</a>
+      <a class="sl" href="../world-news-day/findings.html">The aggregate</a>
+      <a class="sl" href="../world-news-day/terms.html">The vocabulary</a>
+      <a class="sl" href="../world-news-day/graph.html">The graph</a>
+      <a class="sl" href="../world-news-day/sources.html">Sources</a>
+      <a class="sl" href="../world-news-day/contacts.html">How to reach them</a>
+      <a class="sl" href="../world-news-day/vault.html">Published vaults</a>
+      <a class="sl" href="../world-news-day/vaults/corpus.html">The vault, opened</a>
+      <a class="sl" href="../world-news-day/method.html">Method</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl here" href="../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../archive/index.html">The archive</a>
+      <a class="sl" href="../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../network/index.html">The network</a>
+      <a class="sl" href="../admin/versions.html">Release history</a>
+      <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom">&#9733; GitHub</a>
+  <script src="../assets/nav.js" defer></script>
+</div></nav>
+<!--archived--><div class="archived-note" role="note" style="max-width:1100px;margin:1rem auto 0;padding:.75rem 1rem;border:1px solid #d6c79c;border-left:4px solid #b08d2c;background:#fbf7ea;border-radius:6px;font-size:.9rem;line-height:1.55;color:#33301f"><b>In the archive since 10 October 2026.</b> Written 23 August 2026. The newsroom now runs, with six roles working under written behaviour policies, a board and a public log. The page is kept at the address it was published at, unchanged below this note. <b>Now:</b> <a href="../newsroom/index.html">How it runs</a> &middot; <a href="../archive/index.html">the archive</a></div><!--/archived-->
+<main class="doc">
+<div class="crumb"><a href="2026-08-22-home.html">newsroom.sgit.ai</a> / newsroom</div>
+<h1>The newsroom: roles &amp; operations</h1>
+<p class="lead">The "future directions" half of the site's name. <b>Critical to state upfront: this is not an effort to replace journalists with agents. The opposite.</b> Agents make it possible to involve <b>more</b> humans, in more roles, at more scale than was previously affordable.</p>
+
+<h2 id="principles">Eight design principles</h2>
+<p>The flagship doctrine behind this section: story-centric rather than article-centric; <b>evidence-driven by default</b> rather than evidence as an afterthought; reader validation treated as first-class input, not an inbox nobody reads; cost tracked per story, itemised, the way <a href="../provenance/a-worked-story.html">the &pound;8.40 worked example</a> shows; and, running through all of them, <b>human involvement maximised, not reduced.</b></p>
+
+<h2 id="roles">Agent roles, and the daily clock</h2>
+<p>The design maps roughly a dozen agent roles onto newsroom functions &mdash; scanning for stories, first-pass research, drafting, translation, fact-check support, graphics generation &mdash; each specified as absorbing production grunt-work rather than owning editorial judgement. <em>"Humans are the bar; agents are the volume."</em> A specified daily operational rhythm runs from an early-morning scanning pass, through a midday publish-and-personalise window where a story fans out into its audience projections, to an afternoon and evening community window where reader contributions and corrections are actively worked rather than left to accumulate.</p>
+<p>A phased launch is specified rather than a full switch-on: starting at roughly one story a day for the first week, scaling toward several stories a day as the process proves itself, with explicit go/no-go gates between phases rather than an open-ended ramp. A companion design specifies an entity graph seeded with at least 200 real-world entities as the substrate a first regional pilot would need before it could report competently on that region's news.</p>
+<p>That pilot has a name, a country, a deadline and eleven specified roles. This page states the operating model in general; <a href="../mvps/portugal.html">the instance it was written for</a> states it as something that was meant to launch &mdash; including the parts that were never settled, among them <a href="../mvps/portugal.html#open">who would have been the editor of record</a>.</p>
+
+<h2 id="departments">Departments as public pages</h2>
+<p>Rather than a single "editorial" function, the newsroom design specifies departments &mdash; assignment, research, translation, fact-checking, graphics, community, corrections, and others &mdash; each as its own public page rather than an internal org chart. <a href="../provenance/show-your-work.html">Show your work</a> covers this from the transparency side; the operational point here is that <b>default-to-publish</b> is the working assumption &mdash; material moves toward publication unless a specific reason holds it back, rather than requiring active justification to release. Each story or briefing is treated as its own world with its own ontology and taxonomy, rather than forced into one universal schema that fits nothing well.</p>
+
+<h2 id="craft">The craft: what agents do not replace</h2>
+<p>The craft doctrine underneath the roles above is inherited, not invented here: the <b>inverted pyramid</b>, the <b>five Ws</b>, rigorous source attribution, and editorial independence as a non-negotiable line agents do not get to cross. One idea from that doctrine is distinctive enough to name directly: the <b>second story</b> &mdash; the follow-up piece, published after the news cycle has moved on, that returns to check what actually happened once the dust settled (Three Mile Island and Equifax are the doctrine's own reference cases). A newsroom optimised entirely for the first story and never for the second is optimised for attention, not for the record.</p>
+
+<div class="agent">
+  <h4>For an agent</h4>
+  <p>None of the roles, the daily clock, or the department pages described here are running — this section describes a specified operational design. Specific pilot details (a named region, a named partner organisation, a named first customer) have been deliberately generalised or omitted on this page per this site's own redaction policy; see <a href="../admin/comms.html">comms</a>. See <a href="2026-08-23-what-is-shipped.html">/shipped/</a> before citing any of this as live.</p>
+</div>
+
+<div class="pagenav">
+  <a href="../rights/index.html">&larr; Rights: CC-Signed</a>
+  <a href="../mvps/index.html">The MVPs: publication instances &rarr;</a>
+</div>
+</main>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="netline"><a href="https://sgit.ai" style="display:inline;padding:0"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://pt.newsroom.sgit.ai" style="display:inline;padding:0">&#8593; pt.newsroom.sgit.ai</a> &middot; <a href="https://graphs.sgit.ai" style="display:inline;padding:0">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai" style="display:inline;padding:0">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai" style="display:inline;padding:0">&#8593; nhi.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai" style="display:inline;padding:0">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../admin/versions.html">v0.6.0</a> &middot; <a href="../admin/index.html">engineering</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../index.html">&#8594; The front page</a>
+    <a href="../articles/index.html#all">Every article</a>
+    <a href="../articles/newsletter/index.html">The newsletter</a>
+    <a href="../articles/collections/index.html">Collections</a>
+    <a href="../articles/desk/index.html">From the desk</a>
+    <a href="../articles/graphs.html">As graphs</a>
+    <a href="../subscribe/index.html">Subscribe</a>
+    <a href="../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../account/index.html">Your reading account</a>
+    <a href="../account/newsroom.html">Your newsroom</a>
+    <a href="../account/personas.html">Your personas</a>
+    <a href="../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../newsroom/index.html">How the newsroom runs</a>
+    <a href="../newsroom/policies.html">Behaviour policies</a>
+    <a href="../newsroom/publish.html">How to publish</a>
+    <a href="../newsroom/board.html">The board</a>
+    <a href="../newsroom/log.html">The run log</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../design/index.html">The design, and what runs</a>
+    <a href="../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../corrections/index.html">Corrections must propagate</a>
+    <a href="../provenance/index.html">Provenance is the product</a>
+    <a href="../economics/index.html">Paying the fact creator</a>
+    <a href="../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../replicate/index.html">Replicate this newsroom</a>
+    <a href="../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../archive/index.html">The archive</a>
+    <a href="../network/index.html">The network</a>
+    <a href="../admin/versions.html">Release history</a>
+    <a href="../admin/index.html">Admin &amp; engineering</a>
+    <a href="../about/participant.html">Where we lose</a>
+    <a href="../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+</body>
+</html>

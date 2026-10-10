@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Going live with the reading meter: pay for what you read, go below zero if you like, and the numbers we will check in eight weeks, sgit.ai</title>
+<meta name="description" content="The reading meter on sgit.ai stops being a demonstration. A page now costs what you read of it: scroll a tenth of the way down a new article and you pay a tenth of 10p. Your balance can go below zero and stay there; nothing is blocked and nothing nags, there is only a small balance in the top bar. If a page was not worth it you can say so, with a reason, and it is not charged. Topping up is one £5 payment on Stripe, with no account and nothing that renews, and the page you come back to adds the credit without being able to check it, on purpose. The meter is also packaged as a library any website can add. This article is the plan and the reasoning, written down before the results: the business case, what we expect, the numbers that would prove us wrong, and the date we look.">
+<link rel="canonical" href="https://newsroom.sgit.ai/articles/going-live-with-the-reading-meter.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="sgit.ai">
+<meta property="og:url" content="https://newsroom.sgit.ai/articles/going-live-with-the-reading-meter.html">
+<meta property="og:title" content="Going live with the reading meter: pay for what you read, go below zero if you like, and the numbers we will check in eight weeks, sgit.ai">
+<meta property="og:description" content="The reading meter on sgit.ai stops being a demonstration. A page now costs what you read of it: scroll a tenth of the way down a new article and you pay a tenth of 10p. Your balance can go below zero and stay there; nothing is blocked and nothing nags, there is only a small balance in the top bar. If a page was not worth it you can say so, with a reason, and it is not charged. Topping up is one £5 payment on Stripe, with no account and nothing that renews, and the page you come back to adds the credit without being able to check it, on purpose. The meter is also packaged as a library any website can add. This article is the plan and the reasoning, written down before the results: the business case, what we expect, the numbers that would prove us wrong, and the date we look.">
+<meta property="og:image" content="https://newsroom.sgit.ai/og/going-live-with-the-reading-meter.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Going live with the reading meter: pay for what you read, go below zero if you like, and the numbers we will check in eight weeks, sgit.ai">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://newsroom.sgit.ai/og/going-live-with-the-reading-meter.jpg">
+<link rel="alternate" type="text/markdown" href="going-live-with-the-reading-meter.md" title="This page as markdown">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Going live with the reading meter: pay for what you read, go below zero if you like, and the numbers we will check in eight weeks, sgit.ai", "headline": "Going live with the reading meter: pay for what you read, go below zero if you like, and the numbers we will check in eight weeks, sgit.ai", "description": "The reading meter on sgit.ai stops being a demonstration. A page now costs what you read of it: scroll a tenth of the way down a new article and you pay a tenth of 10p. Your balance can go below zero and stay there; nothing is blocked and nothing nags, there is only a small balance in the top bar. If a page was not worth it you can say so, with a reason, and it is not charged. Topping up is one £5 payment on Stripe, with no account and nothing that renews, and the page you come back to adds the credit without being able to check it, on purpose. The meter is also packaged as a library any website can add. This article is the plan and the reasoning, written down before the results: the business case, what we expect, the numbers that would prove us wrong, and the date we look.", "url": "https://newsroom.sgit.ai/articles/going-live-with-the-reading-meter.html", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "sgit.ai", "url": "https://sgit.ai"}, "about": {"@type": "SoftwareApplication", "name": "sgit", "sameAs": "https://pypi.org/project/sgit-ai/"}, "author": {"@type": "Person", "name": "Dinis Cruz", "url": "https://sgit.ai/about/index.html"}}</script>
+<style>html{background:#faf9f5}body{margin:0;background:#faf9f5;color:#1c1d21;font-family:ui-sans-serif,system-ui,sans-serif;opacity:0;transition:opacity .25s;animation:sg-reveal 0s linear 1.6s forwards}html.ready body{opacity:1;animation:none}@keyframes sg-reveal{to{opacity:1}}</style><noscript><style>body{opacity:1;animation:none}</style></noscript>
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.6.0</a>
+  <sg-meter class="meter-nav" view="balance"></sg-meter>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../articles/index.html#all">Every article</a>
+      <a class="sl" href="../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../account/index.html">Your reading account</a>
+      <a class="sl" href="../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../account/personas.html">Your personas</a>
+      <a class="sl" href="../account/top-up.html">Top up</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../newsroom/board.html">The board</a>
+      <a class="sl" href="../newsroom/log.html">The run log</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../world-news-day/index.html">World News Day<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../world-news-day/index.html">The corpus</a>
+      <a class="sl" href="../world-news-day/stories/free-to-republish-is-not-a-licence.html">Free to republish is not a licence</a>
+      <a class="sl" href="../world-news-day/licences.html">The licence that is not there</a>
+      <a class="sl" href="../world-news-day/corpus.html">The twenty-one</a>
+      <a class="sl" href="../world-news-day/findings.html">The aggregate</a>
+      <a class="sl" href="../world-news-day/terms.html">The vocabulary</a>
+      <a class="sl" href="../world-news-day/graph.html">The graph</a>
+      <a class="sl" href="../world-news-day/sources.html">Sources</a>
+      <a class="sl" href="../world-news-day/contacts.html">How to reach them</a>
+      <a class="sl" href="../world-news-day/vault.html">Published vaults</a>
+      <a class="sl" href="../world-news-day/vaults/corpus.html">The vault, opened</a>
+      <a class="sl" href="../world-news-day/method.html">Method</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../archive/index.html">The archive</a>
+      <a class="sl" href="../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../network/index.html">The network</a>
+      <a class="sl" href="../admin/versions.html">Release history</a>
+      <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom">&#9733; GitHub</a>
+</div></nav>
+
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.6.0</span></a></div>
+<main class="doc">
+ <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / Going live with the reading meter: pay for what you read, go below zero if you like, and the numbers we will check in eight weeks</p>
+ <h1>Going live with the reading meter: pay for what you read, go below zero if you like, and the numbers we will check in eight weeks</h1>
+ <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-10 &middot; <a href="versions/going-live-with-the-reading-meter.html" title="Every published version of this article, and what changed">article v1.2.0, 3 versions</a> &middot; <span class="chip">newsroom</span><span class="chip">micropayments</span><span class="chip">pricing</span><span class="chip">personalisation</span><span class="chip">local-first</span><span class="chip">business-case</span><span class="chip">hypotheses</span><span class="chip">stripe</span><span class="chip">article</span></p>
+ <p class="abstract"><em><b>Abstract:</b> The reading meter on sgit.ai stops being a demonstration. A page now costs what you read of it: scroll a tenth of the way down a new article and you pay a tenth of 10p. Your balance can go below zero and stay there; nothing is blocked and nothing nags, there is only a small balance in the top bar. If a page was not worth it you can say so, with a reason, and it is not charged. Topping up is one £5 payment on Stripe, with no account and nothing that renews, and the page you come back to adds the credit without being able to check it, on purpose. The meter is also packaged as a library any website can add. This article is the plan and the reasoning, written down before the results: the business case, what we expect, the numbers that would prove us wrong, and the date we look.</em></p>
+<figure class="shot" data-shot="gl-anchors.webp" data-dir="images/" data-alt="The plan on one page: six changes, and the five hypotheses written down before the first payment, each with what we expect and what would prove us wrong."><figcaption>The plan on one page: six changes, and the five hypotheses written down before the first payment, each with what we expect and what would prove us wrong.</figcaption></figure>
+<div class="note"><b>You are paying for this page, by how much of it you read.</b> It was published this week, so reading it to the end costs 10p. Your balance is in the top bar; if it is below zero, nothing happens. At the foot of the page you can see what you have paid, and decline to pay at all.</div>
+<h2>In short</h2>
+<ul>
+<li><b>The meter goes live.</b> It charges by how far down a page you scroll, it lets your balance go below zero forever, it shows only a small balance in the top bar, and it lets you refuse to pay for a page, with a reason.</li>
+<li><b>Paying is one £5 payment on Stripe.</b> No account, no subscription, nothing renews. The page you come back to adds the credit without checking it, because a site with no server cannot, and we say so.</li>
+<li><b>The price is a hypothesis.</b> 10p for a new article read to the end, 5p for an older one, less for other pages. It could be wrong either way.</li>
+<li><b>The bet</b> is that people pay for reading when nothing forces them to, if what they get back is a site that knows what they read, with the history kept on their own machine.</li>
+<li><b>The anchors.</b> Five numbers we expect, the ones that would prove us wrong, and a review date: eight weeks after the payment link goes live.</li>
+<li><b>It is a library now.</b> <a href="../meter/index.html">SG Meter</a> is one web component another site can add, with its config, events, storage and <a href="../meter/security.html">security model</a> written down.</li>
+</ul>
+<h2>What changes today</h2>
+<p><a href="a-meter-in-the-browser.html">A meter in the browser</a> described the first version: every page debited from £5.00 of credit kept in the browser, a badge in the corner, a bar when credit ran out, a cart with every step but the payment. It was a demonstration and said so. Six things change.</p>
+<ol>
+<li><b>You pay for what you read.</b> A page's price is what it costs read to the end. You pay that times the share you scrolled through, never less than a tenth. Open a new article, read the first screen and leave: 1p. Read half: 5p. Reading further later in the same visit tops the same charge up.</li>
+<li><b>Your balance can go below zero, and stay there.</b> Nothing is blocked. Nothing pops up. There is no bar, no count of articles read, no request.</li>
+<li><b>One small number in the top bar.</b> The balance, as a link to your account. Below zero it changes colour, and its tooltip says nothing is blocked.</li>
+<li><b>"Not worth it? Don't charge me."</b> At the foot of an article, four reasons: the headline promised more than the page gave, not relevant to me, I did not really read it, another reason. The charge is refunded, and the reason is kept in your history as a signal. "Not relevant" counts against that page's topics when the site picks articles for you.</li>
+<li><b>A real payment.</b> The top-up becomes one £5 Stripe payment. The simulated cart stays only for a site with no payment link configured.</li>
+<li><b>A library.</b> The meter is rebuilt as <a href="../meter/index.html">SG Meter</a>, a web component that follows the estate's <a href="https://coding.sgit.ai/javascript/index.html">JavaScript guidance</a>, so another site can add it with a script tag and a config.</li>
+</ol>
+<figure class="shot" data-shot="gl-line.webp" data-dir="images/" data-alt="The foot of an article: what it has cost so far, for how much of it was read, the price to the end, and the choice not to pay, with four reasons. Kept in the reader&#x27;s browser, nowhere else."><figcaption>The foot of an article: what it has cost so far, for how much of it was read, the price to the end, and the choice not to pay, with four reasons. Kept in the reader's browser, nowhere else.</figcaption></figure>
+<figure class="shot" data-shot="gl-account.webp" data-dir="images/" data-alt="The reading account below zero. This test account read sixteen articles to different depths and declined two; we then set its balance below zero in the browser&#x27;s storage, the way any reader can. The balance in the top bar turns a warmer colour, and the account says nothing is blocked."><figcaption>The reading account below zero. This test account read sixteen articles to different depths and declined two; we then set its balance below zero in the browser's storage, the way any reader can. The balance in the top bar turns a warmer colour, and the account says nothing is blocked.</figcaption></figure>
+<h2>Why below zero, and why no nagging</h2>
+<p>Most reader-funded sites do the opposite, and do it well. The Guardian counts what you read in your browser's own storage, the same place this meter keeps its history. Its open-source code keeps a weekly count under <code>gu.history.weeklyArticleCount</code>, with a count per tag, starting each week on a Monday, ignoring repeat visits to the same article and dropping weeks older than a year. The count is used to ask you for support.</p>
+<p>It works. Press Gazette reported in September 2025 that the Guardian's digital reader revenue rose 22%, "from £88m in 2023/2024 to £107m in the year to the end of March 2025". Its tiers are £4 a month to support, £12 a month to "avoid intrusive pop-up supporter messages" and read without ads, and £27 a month with the print weekly. Its app, Press Gazette added, "sits within a paywall (free users can only read 20 articles per month)".</p>
+<p>Two things in that are worth noticing. The middle tier sells, in part, the absence of the ask. And every tier is a subscription: £4 a month is £48 a year, £12 a month is £144 a year, a commitment decided once, in advance, for reading that has not happened yet. A one-off payment is the other door, and it is awkward in its own way: how much is fair, for what, and when?</p>
+<p>This meter tries a third door. The ask is never made, because the balance is always visible and the price of each page is stated where you read it. The commitment is never asked for, because you pay for pages after you have read them, as much of them as you read, and you can refuse. And going below zero is not a failure state. It is information you have, about what you have read, kept where only you can see it.</p>
+<p>The hypothesis is that a reader who can see an honest running total, and who is never shamed for it, is more willing to settle it than one who is counted and asked. More so as the site gives something back for the history: curation, picks, and in time a front page that is entirely personal to the reader, computed in their browser from what they read and what they declined. The first version of that front page is live the same day: <a href="../account/newsroom.html">your newsroom</a>, one per persona, and why personas are what a reader would pay to keep is in <a href="pay-to-keep-your-persona.html">pay to keep your persona</a>.</p>
+<div class="note"><b>Added later the same day, v0.7.34: the reader sets part of the price.</b> At the foot of every article there is now a reader card with three scales, each starting in the middle. <em>How useful was this?</em> changes what you pay: 1 is free, 3 is the price, 5 is double. <em>More like this?</em> changes how often you see pages like it. <em>Level of detail</em> tells your persona whether you want it lighter or deeper. "Don't charge me" is still there, at the end, as the exception. A page is now charged only as much as you read it <em>and</em> only as much as you say it was worth. Paying more for an excellent page is a signal we did not have before; it is in what you can <a href="../account/share.html">send us</a>.</div>
+<h2>Why by depth</h2>
+<p>Because a page is not one thing. A reader who opens an article, sees in the first paragraph that it is not for them and leaves has not had the same page as one who read it to the end. Charging them the same is a small unfairness repeated many times, and it rewards exactly the wrong writing: a headline that gets the click, followed by a page nobody finishes.</p>
+<p>Depth is measured on the page's main column, rounded to 5%, at most once every 400 milliseconds while you scroll and once more as you leave. It is not reading time and it is not attention; a reader can scroll to the bottom without reading. That is fine. The point is not to measure reading precisely. It is to make the price follow the reader's own choice to keep going, and to give them the refusal for the cases where it did not.</p>
+<h2>Why "don't charge me" is the most useful button</h2>
+<p>A charge tells us nothing; everyone who scrolled was charged. A refusal, with a reason, is the first thing this site has ever been told by a reader about a page without asking them to write anything. "The headline promised more than the page gave" is a verdict on the writing. "Not relevant to me" is a verdict on the placement, and on the picks. "I did not really read it" is a correction to the depth.</p>
+<p>They are kept in the reader's history, in their browser, like everything else, and used there: a page declined as not relevant pushes its topics down the reader's picks. We do not see them. If that changes, it will be because a reader chose to send their history, not because the meter sent it. Rating a page, classifying it and keeping a note on it are the obvious next steps, in the same local history. Not yet.</p>
+<h2>The price is the hypothesis</h2>
+<div class="tablewrap"><table>
+<tr><th>A page read to the end</th><th>Price</th><th>What £5 buys, read to the end</th></tr>
+<tr><td>An article published in the last seven days</td><td>10p</td><td>50</td></tr>
+<tr><td>An older article</td><td>5p</td><td>100</td></tr>
+<tr><td>A newsletter issue</td><td>3p</td><td>166</td></tr>
+<tr><td>A desk note or a collection</td><td>2p</td><td>250</td></tr>
+<tr><td>Any other page: docs, vaults, the network</td><td>1p</td><td>500</td></tr>
+<tr><td>The homepage, subscribe, your account</td><td>free</td><td></td></tr>
+</table></div>
+<p>Read by depth, a fiver goes further than the table says, because most pages are not read to the end. These prices were raised from the first version's 5p and 3p for articles on purpose: a price that is too low teaches nothing, because nobody would ever notice paying it, and we would rather find out that 10p is too much than never find out whether anyone would pay 10p. It could be more. It could be less. The account page prints the current table, and the build prints it from the same <code>METER</code> rules the meter charges by, so the published price and the charged price cannot differ.</p>
+<h2>The business case, honestly</h2>
+<p>The money first, because it is small and it should be said plainly. Stripe's listed UK fee for a standard UK card is 1.5% + 20p. On £5 that is 27.5p, so £4.72 reaches the site, about 94.5%. Premium UK cards are 2.8% + 20p (34p), European cards 2.5% + 20p (32.5p), international cards 3.15% + 20p (about 36p), plus 2% where the currency is converted. The fixed 20p is why the top-up is £5 and not £1: on £1, a standard card would cost 21.5p, more than a fifth.</p>
+<div class="tablewrap"><table>
+<tr><th>Payers in eight weeks</th><th>Gross</th><th>After a standard UK card fee</th></tr>
+<tr><td>10</td><td>£50</td><td>£47.25</td></tr>
+<tr><td>50</td><td>£250</td><td>£236.25</td></tr>
+<tr><td>200</td><td>£1,000</td><td>£945</td></tr>
+</table></div>
+<p>None of those rows pays for anything that matters. That is not the case for doing this. The case is three things the money cannot buy.</p>
+<ul>
+<li><b>Evidence.</b> Whether anyone pays for reading on a site that does not make them is the question in <a href="the-question-is-whether-they-miss-it.html">the question is whether they miss it</a>. A meter that charges nothing could only answer half of it. A payment is the only signal on this site that cannot be produced by curiosity.</li>
+<li><b>A shape to test the personalisation against.</b> The history is the product, as the first article put it. If readers who pay are readers who read more, and who come back, that is the case for building the personal front page, and it costs nothing to collect because the reader collects it.</li>
+<li><b>A library.</b> If it works here it works on any site that can add a script tag, which is a different and larger question about <a href="how-news-got-here.html">how news got here</a> and whether a penny a page was ever the problem, or only the machinery around it. The same idea, from the other side, is <a href="price-it-then-give-it-away.html">price it, then give it away</a>: put a real price on the thing, then let people decide.</li>
+</ul>
+<h2>Why an honesty box can work</h2>
+<p>There is evidence that people pay when nothing forces them to, and evidence of how much less they pay. Both belong here.</p>
+<ul>
+<li><b>Paul Feldman's bagels.</b> For years he left bagels and an unwatched cash box in offices. <em>Freakonomics</em>, writing about him in the <em>New York Times Magazine</em> in June 2004, reported that about 87% of bagels were paid for by 2001, rising by about two points after September 11. He had set 90% as the rate he would call honest, and in his earlier, basket years, about 95%.</li>
+<li>**Radiohead's <em>In Rainbows</em>** was released in 2007 for whatever buyers chose to pay. comScore estimated that 38% of downloaders paid something (48% in the UK), that those who paid averaged about $6, and that the average across everyone who downloaded was $2.26.</li>
+<li><b>Pay what you want, measured.</b> In a field experiment published in <em>Science</em> in 2010, Gneezy and colleagues sold photos at a theme park. At a fixed $12.95, 0.5% of riders bought. When riders could pay what they wanted, 8.39% bought, paying 92 cents on average. When half of what they paid went to charity, 4.49% bought, paying $5.33.</li>
+</ul>
+<p>The pattern is the one this meter is built around. Remove the force and many more people take part, while the average payment falls. A small, stated price per page sits between the two: the reader is told what is fair, and left to decide.</p>
+<h2>The anchors: what we expect, and what would prove us wrong</h2>
+<p>Written now, before there is a single payment, so that we cannot move the goalposts later. The clock starts when the Stripe link goes live; the review is eight weeks after that. If the link goes live today, that is <b>5 December 2026</b>.</p>
+<div class="tablewrap"><table>
+<tr><th>#</th><th>Hypothesis</th><th>We expect</th><th>Proved wrong if</th></tr>
+<tr><td>H1</td><td>Someone pays when nothing forces them to</td><td>A first real payment within 14 days</td><td>No payment in 14 days</td></tr>
+<tr><td>H2</td><td>Enough pay for it to be a signal, not an accident</td><td>At least 10 different payers by the review</td><td>Fewer than 5</td></tr>
+<tr><td>H3</td><td>Paying is a habit, not a gesture</td><td>At least 3 payers pay a second time</td><td>No repeat payment</td></tr>
+<tr><td>H4</td><td>Making cheating easy costs nothing that reaches us</td><td>No disputes or chargebacks</td><td>Any dispute that is not plain card fraud</td></tr>
+<tr><td>H5</td><td>Below zero is normal, not a reason to leave</td><td>Readers who send us their history mostly have a negative balance, and still read</td><td>We cannot test this without readers sending their history; it is written here so that we notice if we start to believe it without evidence</td></tr>
+</table></div>
+<p>What we can see, so that nobody has to take these on trust: the Stripe dashboard (payments, amounts, payers, repeat payers, disputes), and the views LinkedIn reports on the articles cross-posted there, which is the nearest thing to a denominator we have. What we cannot see: anything the meter records. There is no analytics on this site, and the meter sends nothing. The depth you read, the pages you declined and why, your balance: all of it is in your browser. If you want to help, the account page exports it as JSON, and you can send it to us. Nobody has to.</p>
+<p><em>Added the same day, before any payment:</em> two more hypotheses, H6 and H7, about what readers would pay for beyond reading, are in <a href="pay-to-keep-your-persona.html">pay to keep your persona</a>. The five above are unchanged.</p>
+<p>We will publish the review on the review date, whatever it says, with the numbers from the Stripe dashboard. A hypothesis that fails is a result. The one outcome that would be a failure of the method is not looking.</p>
+<h2>What would make us change course</h2>
+<ul>
+<li><b>If nobody pays (H1, H2),</b> the price is not the first suspect. The first suspect is that the trade is invisible: the balance is small, the payment is one click away from nowhere, and the personalisation is too thin to want. We would make the picks better before we made the meter louder.</li>
+<li><b>If people pay once and not again (H3),</b> the history is not worth enough to them yet. That points at the personal front page, not at the price.</li>
+<li><b>If cheating shows up somewhere we can see (H4),</b> the balance has started to unlock something, or someone is testing stolen cards. The first would need a server and a signed receipt; the second is Stripe's to stop, and the payment link can be switched off in a minute.</li>
+<li><b>If the reasons readers send are mostly "the headline promised more than the page gave",</b> that is about the writing, and the newsroom's <a href="../newsroom/policies.html">behaviour policies</a> are where it gets fixed.</li>
+</ul>
+<h2>Who could cheat, and why we let them</h2>
+<p>Anyone, in several easy ways: edit the balance in developer tools, open a private window, or open the page a payment returns to with a made-up reference and get £5 of credit. Each of those changes a number only the cheater can see, and costs the site a payment it was never going to receive. Who would actually do it, how many of them there are, and which risks are real is the subject of the companion piece, <a href="who-will-game-the-reading-meter.html">who will game the reading meter</a>.</p>
+<h2>Try it</h2>
+<p>Your meter has been running since you arrived. Scroll to the foot of this page to see what it has cost, and the choice not to pay. <a href="../account/index.html">Your account</a> shows your balance, your history and the depth you read each page; <a href="../account/top-up.html">top up</a> to settle it, or don't. If you run a site and want the same thing, <a href="../meter/index.html">SG Meter</a> is the library.</p>
+<hr>
+<p><em>Written from a voice note by Dinis Cruz, who is the author of the idea and the plan and has editorial responsibility, by a Claude Code session working as the sgit.ai newsroom, on 10 October 2026. The Guardian figures are from Press Gazette's report of 12 September 2025 and the Guardian's open-source <a href="https://github.com/guardian/support-dotcom-components/blob/main/src/shared/lib/history.ts">support-dotcom-components</a>; the Stripe fees are Stripe's published UK prices on the day of writing; the bagel, Radiohead and theme-park figures are from the sources named beside them. The meter is <a href="../meter/index.html">SG Meter v1.0.0</a>; its prices are <code>METER</code> in <code>admin/build/build_pages.py</code>; the screenshots were taken from this site with the meter running.</em></p>
+<sg-meter view="page" kind="article" date="2026-10-10" topics="startups-and-strategy news-and-evidence" title="Going live with the reading meter: pay for what you read, go below zero if you like, and the numbers we will check in eight weeks, sgit.ai"></sg-meter>
+<section class="athreads" id="threads">
+ <h2>Threads</h2>
+ <p class="athreads-meta"><span class="tchip">Startups &amp; strategy</span><span class="tchip">News &amp; evidence</span> <a href="graphs.html#going-live-with-the-reading-meter">This article as a graph &rarr;</a></p>
+ <div class="athreads-cols"><div><h3>Builds on</h3><ul><li><a href="a-meter-in-the-browser.html">A meter in the browser: a penny a page, a history you keep, and a site that picks for you</a> <span class="dim">Every page now costs a few pence from £5 of credit kept in your browser, and the reading history it keeps is what personalises the site.</span></li><li><a href="pay-to-keep-your-persona.html">Pay to keep your persona: readers should pay because it helps them, not because they feel they should</a> <span class="dim">Readers should pay because it helps them: a persona with a name and a graph, several for focus, and one that follows you between devices.</span></li><li><a href="the-question-is-whether-they-miss-it.html">For a startup, the most important question is whether they miss it</a> <span class="dim">Ship something usable, give it away briefly, take it away and see whether anybody misses it; charge at a profit before you talk to investors.</span></li><li><a href="how-news-got-here.html">The reader was always the product: a corrected history of how news got into this mess</a> <span class="dim">News has sold the reader to advertisers since 1833; the web took the monopoly, the platforms made the reader measurable, and AI took the traffic.</span></li><li><a href="price-it-then-give-it-away.html">Price it, then give it away: the early access programme as the next step after "do they miss it"</a> <span class="dim">Define the product, price it, deliver it at a cost that grows a step at a time, then offer it free to people who know you and measure what it costs them.</span></li><li><a href="who-will-game-the-reading-meter.html">Who will game the reading meter? Eight kinds of reader, nine ways to cheat, and the risks that will actually happen</a> <span class="dim">Eight kinds of reader, none of them attackers, nine ways to cheat a browser meter, and the quieter risks that will actually happen.</span></li></ul></div><div><h3>Continued by</h3><ul><li><a href="pay-after-you-read.html">Pay after you read: how a reading meter became a working business model in one afternoon, one release at a time</a> <span class="dim">Seven releases in one afternoon turned the reading meter into a working model: pay after you read, and the rating sets the price.</span></li><li><a href="pay-to-keep-your-persona.html">Pay to keep your persona: readers should pay because it helps them, not because they feel they should</a> <span class="dim">Readers should pay because it helps them: a persona with a name and a graph, several for focus, and one that follows you between devices.</span></li><li><a href="who-will-game-the-reading-meter.html">Who will game the reading meter? Eight kinds of reader, nine ways to cheat, and the risks that will actually happen</a> <span class="dim">Eight kinds of reader, none of them attackers, nine ways to cheat a browser meter, and the quieter risks that will actually happen.</span></li><li><a href="a-meter-in-the-browser.html">A meter in the browser: a penny a page, a history you keep, and a site that picks for you</a> <span class="dim">Every page now costs a few pence from £5 of credit kept in your browser, and the reading history it keeps is what personalises the site.</span></li></ul></div></div>
+ <p class="small dim"><a href="index.html">All articles</a> &middot; <a href="graphs.html">All graphs</a></p>
+</section>
+<aside class="lkit" aria-label="For LinkedIn"><b>Posting this article on LinkedIn?</b> The cover is <a href="banners/going-live-with-the-reading-meter.jpg" download>going-live-with-the-reading-meter.jpg</a> (1920&times;1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page.</aside>
+ <p class="subteaser"><b>Want the next issue by email.</b> One issue a week or so: what was published, what it adds up to, and what is worth your time. <a class="cta2" href="../subscribe/index.html">Subscribe to the SGit Newsroom &rarr;</a></p>
+ <p class="small dim" style="margin-top:2rem"><a href="index.html">&larr; All articles</a></p>
+</main>
+<script>
+(function () {
+ fetch('../assets/shots.js?v=v0.7.39')
+ .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+ .then(function (t) { (0, eval)(t); })
+ .catch(function (e) { console.error('[shots] component failed to load:', e); });
+}());
+</script>
+<script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": ""}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
+<script>
+import('../assets/components/sg-meter/v1/v1.3/v1.3.1/sg-meter.js?v=v0.7.39')
+ .catch(function (e) { console.error('[sg-meter] component failed to load:', e); });
+</script>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="netline"><a href="https://sgit.ai" style="display:inline;padding:0"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://pt.newsroom.sgit.ai" style="display:inline;padding:0">&#8593; pt.newsroom.sgit.ai</a> &middot; <a href="https://graphs.sgit.ai" style="display:inline;padding:0">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai" style="display:inline;padding:0">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai" style="display:inline;padding:0">&#8593; nhi.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai" style="display:inline;padding:0">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../admin/versions.html">v0.6.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="going-live-with-the-reading-meter.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../index.html">&#8594; The front page</a>
+    <a href="../articles/index.html#all">Every article</a>
+    <a href="../articles/newsletter/index.html">The newsletter</a>
+    <a href="../articles/collections/index.html">Collections</a>
+    <a href="../articles/desk/index.html">From the desk</a>
+    <a href="../articles/graphs.html">As graphs</a>
+    <a href="../subscribe/index.html">Subscribe</a>
+    <a href="../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../account/index.html">Your reading account</a>
+    <a href="../account/newsroom.html">Your newsroom</a>
+    <a href="../account/personas.html">Your personas</a>
+    <a href="../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../newsroom/index.html">How the newsroom runs</a>
+    <a href="../newsroom/policies.html">Behaviour policies</a>
+    <a href="../newsroom/publish.html">How to publish</a>
+    <a href="../newsroom/board.html">The board</a>
+    <a href="../newsroom/log.html">The run log</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../design/index.html">The design, and what runs</a>
+    <a href="../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../corrections/index.html">Corrections must propagate</a>
+    <a href="../provenance/index.html">Provenance is the product</a>
+    <a href="../economics/index.html">Paying the fact creator</a>
+    <a href="../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../replicate/index.html">Replicate this newsroom</a>
+    <a href="../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../archive/index.html">The archive</a>
+    <a href="../network/index.html">The network</a>
+    <a href="../admin/versions.html">Release history</a>
+    <a href="../admin/index.html">Admin &amp; engineering</a>
+    <a href="../about/participant.html">Where we lose</a>
+    <a href="../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+
+<script>
+(function(){var R=document.documentElement.getAttribute('data-root')||'';var V='?v=' + 'v0.7.39';var C=[R,'','../','/'].filter(function(v,i,a){return a.indexOf(v)===i});
+function wait(ms){return new Promise(function(res){var t=Date.now();(function p(){if(window.sg)return res(window.sg);if(Date.now()-t>ms)return res(null);setTimeout(p,60)})()})}
+function grab(sg,p){return new Promise(function(res){(async function(){if(sg&&sg.vfs&&sg.vfs.readText){try{var t=await sg.vfs.readText(p);if(t)return res(t)}catch(e){}}try{var r=await fetch(p+V);if(r.ok)return res(await r.text())}catch(e){}res(null)})()})}
+async function css(sg){for(var i=0;i<C.length;i++){var p=C[i]+'assets/newsroom.css';if(sg&&sg.loadCss){try{await sg.loadCss(p);return}catch(e){}}var t=await grab(sg,p);if(t){var s=document.createElement('style');s.textContent=t;document.head.appendChild(s);return}}}
+async function js(sg,name){name=name||'assets/site.js';for(var i=0;i<C.length;i++){var p=C[i]+name;if(sg&&sg.loadJs){try{await sg.loadJs(p);return}catch(e){}}var t=await grab(sg,p);if(t){try{(0,eval)(t)}catch(e){console.error('[site] js failed',name,e)}return}}}
+async function boot(){var inVault=false;try{inVault=(window!==window.parent)||location.protocol==='blob:'}catch(e){inVault=true}
+var sg=inVault?await wait(2500):null;window.__sgitBoot={roots:C,grab:function(p){return grab(sg,p)},version:V};await css(sg);await js(sg);document.documentElement.classList.add('ready');try{window.parent&&window.parent.postMessage({type:'sg-app-ready'},'*')}catch(e){}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+var mine=V.slice(3),last=0;
+function fresh(){if(location.hostname!=='sgit.ai'||Date.now()-last<60000)return;last=Date.now();
+fetch('/version.txt?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(t){t=(t||'').trim();if(!/^v[0-9]+[.][0-9]+[.][0-9]+$/.test(t)||t===mine)return;
+var k='sgit.fresh:'+location.pathname;try{if(sessionStorage.getItem(k)===t)return;sessionStorage.setItem(k,t)}catch(e){}
+var u=new URL(location.href);u.searchParams.set('v',t);location.replace(u.href)}).catch(function(){})}
+try{var u=new URL(location.href);if(u.searchParams.get('v')===mine){u.searchParams.delete('v');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}
+fresh();addEventListener('pageshow',function(e){if(e.persisted){last=0;fresh()}});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')fresh()});
+})();
+</script>
+</body>
+</html>

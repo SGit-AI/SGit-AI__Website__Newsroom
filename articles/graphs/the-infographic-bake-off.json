@@ -1,0 +1,199 @@
+{
+  "slug": "the-infographic-bake-off",
+  "teaser": "Every image model on OpenRouter, eleven briefs, 101 images judged blind, $10.44: which model for which infographic, and what it costs.",
+  "topics": [
+    "site-and-engineering",
+    "news-and-evidence"
+  ],
+  "core_idea": "To make infographics part of the newsroom's workflow, every image-output model on OpenRouter on 10 October 2026 was given the same briefs from one article, from 18 words to 2,800, plus an edit, a component, a brand slide and a deck, over five rounds with blind judging and recorded costs; the answer is to choose the model by the job, not the budget: Nano Banana 2.1 for concept slides, charts and decks, Gemini 3 Pro Image when speed matters, GPT-5.4 Image 2 for documents, edits, components and brand slides, with prompt rules learned from the faults and a style reference for every deck.",
+  "nodes": [
+    {
+      "id": "question",
+      "label": "Which model for which job",
+      "kind": "question",
+      "summary": "Infographics are moving into the newsroom's daily workflow; the choice of model needs evidence."
+    },
+    {
+      "id": "field",
+      "label": "Every image model on OpenRouter",
+      "kind": "concept",
+      "summary": "Eight models, the auto-router and a code-drawn control; none free."
+    },
+    {
+      "id": "briefs",
+      "label": "Eleven briefs from one article",
+      "kind": "method",
+      "summary": "From an 18-word stat card to the whole article, plus edit, component, brand and deck."
+    },
+    {
+      "id": "blind",
+      "label": "Blind judging",
+      "kind": "method",
+      "summary": "A Designer agent fact-checked and scored every image under a random id; OCR as an independent check."
+    },
+    {
+      "id": "ledger",
+      "label": "Every cent recorded",
+      "kind": "artefact",
+      "summary": "OpenRouter's usage cost per generation: $10.44 for 101 images."
+    },
+    {
+      "id": "usable",
+      "label": "Cost per usable image",
+      "kind": "concept",
+      "summary": "Half the spend bought images the judge would not use; price per image flatters failure."
+    },
+    {
+      "id": "document",
+      "label": "Give it the document",
+      "kind": "claim",
+      "summary": "GPT-5.4 Image 2 scored 9 on the document and the whole article; the older GPT-5 Image got worse."
+    },
+    {
+      "id": "edit",
+      "label": "An edit is a redraw",
+      "kind": "example",
+      "summary": "Only GPT-5.4 Image 2 made three changes without breaking anything."
+    },
+    {
+      "id": "cheap-limit",
+      "label": "The cheap model's limit",
+      "kind": "claim",
+      "summary": "Nano Banana 2.1 had no usable image where every character was specified."
+    },
+    {
+      "id": "reference",
+      "label": "Slide 1 as a style reference",
+      "kind": "method",
+      "summary": "Attaching slide 1 raised every model's deck consistency from 1 or 2 to 4 or 5 of 5."
+    },
+    {
+      "id": "three",
+      "label": "Three models, three tiers",
+      "kind": "claim",
+      "summary": "Nano Banana 2.1, Gemini 3 Pro Image, GPT-5.4 Image 2."
+    },
+    {
+      "id": "guidance",
+      "label": "Guidance and prompt rules",
+      "kind": "artefact",
+      "summary": "Which model for which job, and rules such as never name the platform and say No other text."
+    },
+    {
+      "id": "vault",
+      "label": "The bake-off vault",
+      "kind": "artefact",
+      "summary": "Every brief, image, score, reason and cost, as an app."
+    },
+    {
+      "id": "dated",
+      "label": "The answer has a date",
+      "kind": "question",
+      "summary": "Models and prices change; the bake-off is built to be run again."
+    }
+  ],
+  "edges": [
+    {
+      "from": "question",
+      "to": "field",
+      "rel": "leads-to"
+    },
+    {
+      "from": "field",
+      "to": "briefs",
+      "rel": "depends-on"
+    },
+    {
+      "from": "briefs",
+      "to": "blind",
+      "rel": "leads-to"
+    },
+    {
+      "from": "blind",
+      "to": "usable",
+      "rel": "produces"
+    },
+    {
+      "from": "ledger",
+      "to": "usable",
+      "rel": "produces"
+    },
+    {
+      "from": "blind",
+      "to": "document",
+      "rel": "produces"
+    },
+    {
+      "from": "blind",
+      "to": "edit",
+      "rel": "produces"
+    },
+    {
+      "from": "blind",
+      "to": "cheap-limit",
+      "rel": "produces"
+    },
+    {
+      "from": "cheap-limit",
+      "to": "three",
+      "rel": "leads-to"
+    },
+    {
+      "from": "document",
+      "to": "three",
+      "rel": "leads-to"
+    },
+    {
+      "from": "reference",
+      "to": "guidance",
+      "rel": "extends"
+    },
+    {
+      "from": "usable",
+      "to": "three",
+      "rel": "leads-to"
+    },
+    {
+      "from": "three",
+      "to": "guidance",
+      "rel": "produces"
+    },
+    {
+      "from": "guidance",
+      "to": "question",
+      "rel": "answers"
+    },
+    {
+      "from": "vault",
+      "to": "ledger",
+      "rel": "depends-on"
+    },
+    {
+      "from": "three",
+      "to": "dated",
+      "rel": "leads-to"
+    }
+  ],
+  "links": {
+    "articles": [
+      "re-anchoring-agent-behaviour-policies",
+      "one-article-five-readers"
+    ],
+    "pages": [
+      "/demos/vaults/infographic-bakeoff/index.html"
+    ],
+    "sites": [
+      "https://github.com/the-cyber-boardroom/SGraph-AI__App__Send/tree/HEAD/team/roles"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "Give it the document, not a description of the picture.",
+      "why": "The finding that matches how ChatGPT is best used, and where it applies."
+    },
+    {
+      "text": "Choose the model by the job, not by the budget.",
+      "why": "The conclusion, in the article's own words."
+    }
+  ]
+}

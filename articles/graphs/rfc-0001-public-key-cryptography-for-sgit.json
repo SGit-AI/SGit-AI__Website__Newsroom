@@ -1,0 +1,164 @@
+{
+  "slug": "rfc-0001-public-key-cryptography-for-sgit",
+  "teaser": "A Request for Comments: two key pairs so a reader cannot write, sealed files only named people can open, and fourteen questions for reviewers.",
+  "topics": [
+    "vaults-and-method",
+    "site-and-engineering"
+  ],
+  "core_idea": "An sgit vault's read key is symmetric, so anyone who holds it and can write to the store can author history clients accept; turning the read key into a public key does not fix that, but two key pairs do, giving a native PKI vault mode where readers cannot write, hosts cannot forge and write-only depositors become possible, while an optional sealed-files layer encrypts chosen files to named people's public keys with the private key held in a file, an ssh key, hardware or a remote service that logs and approves each decryption; both share a first step, a writer signature on today's vaults, and nothing is built until reviewers have answered fourteen questions.",
+  "nodes": [
+    {
+      "id": "today",
+      "label": "One symmetric read key",
+      "kind": "concept",
+      "summary": "PBKDF2 derives a read key that encrypts everything and a write key only the server checks."
+    },
+    {
+      "id": "gap",
+      "label": "Whoever can read can forge",
+      "kind": "claim",
+      "summary": "A read-key holder who can write to the store, such as the host or a mirror, can author history."
+    },
+    {
+      "id": "correction",
+      "label": "One key pair is not enough",
+      "kind": "claim",
+      "summary": "The private half yields the public half, and decrypting with a public key is signing; two pairs work."
+    },
+    {
+      "id": "signature",
+      "label": "A writer signature first",
+      "kind": "method",
+      "summary": "An Ed25519 key from a third derivation path signs refs and index on today's vaults."
+    },
+    {
+      "id": "design1",
+      "label": "Native PKI vault mode",
+      "kind": "method",
+      "summary": "A read pair and a write pair; a data key sealed to the read public key; signed heads."
+    },
+    {
+      "id": "depositor",
+      "label": "The write-only depositor",
+      "kind": "concept",
+      "summary": "Can add content readers open, cannot read: append to an inbox branch."
+    },
+    {
+      "id": "design2",
+      "label": "Sealed files",
+      "kind": "method",
+      "summary": "An age v1 inner envelope seals chosen files to named people's public keys, on any vault."
+    },
+    {
+      "id": "providers",
+      "label": "Where the private key lives",
+      "kind": "artefact",
+      "summary": "A key file, an ssh key, hardware, or a remote service that logs and approves each unwrap."
+    },
+    {
+      "id": "blind-replace",
+      "label": "Writers can replace blindly",
+      "kind": "claim",
+      "summary": "Sealing needs only public keys, so integrity needs signed envelopes and author rules."
+    },
+    {
+      "id": "prior-art",
+      "label": "Known shapes",
+      "kind": "example",
+      "summary": "Tahoe-LAFS, Hypercore, git-crypt, SOPS, age and HPKE (RFC 9180)."
+    },
+    {
+      "id": "questions",
+      "label": "Fourteen questions",
+      "kind": "question",
+      "summary": "Where an outside view would most change the design, before anything is built."
+    }
+  ],
+  "edges": [
+    {
+      "from": "today",
+      "to": "gap",
+      "rel": "leads-to"
+    },
+    {
+      "from": "correction",
+      "to": "gap",
+      "rel": "answers"
+    },
+    {
+      "from": "signature",
+      "to": "gap",
+      "rel": "answers"
+    },
+    {
+      "from": "design1",
+      "to": "signature",
+      "rel": "extends"
+    },
+    {
+      "from": "design1",
+      "to": "depositor",
+      "rel": "produces"
+    },
+    {
+      "from": "design2",
+      "to": "providers",
+      "rel": "depends-on"
+    },
+    {
+      "from": "design2",
+      "to": "blind-replace",
+      "rel": "leads-to"
+    },
+    {
+      "from": "design2",
+      "to": "design1",
+      "rel": "compared-with"
+    },
+    {
+      "from": "prior-art",
+      "to": "design2",
+      "rel": "example-of"
+    },
+    {
+      "from": "questions",
+      "to": "design1",
+      "rel": "leads-to"
+    },
+    {
+      "from": "questions",
+      "to": "design2",
+      "rel": "leads-to"
+    }
+  ],
+  "links": {
+    "articles": [
+      "encrypted-memory-for-isolated-agents",
+      "a-mac-of-the-agents-own"
+    ],
+    "pages": [
+      "docs/credentials.html",
+      "docs/partial-clones.html"
+    ],
+    "sites": [
+      "https://github.com/SGit-AI/SGit-AI__CLI/blob/48a608f/team/humans/dinis_cruz/claude-code-web/10/09/design__native-pki-vault-mode.md",
+      "https://github.com/SGit-AI/SGit-AI__CLI/blob/48a608f/team/humans/dinis_cruz/claude-code-web/10/09/design__sealed-files-layer.md",
+      "https://www.rfc-editor.org/rfc/rfc9180",
+      "https://age-encryption.org/v1"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "Add a second key pair for reading, and every property falls out.",
+      "why": "The correction to the obvious idea."
+    },
+    {
+      "text": "its hard part is not the cryptography but downgrade resistance",
+      "why": "Where the writer signature's real work is."
+    },
+    {
+      "text": "Disagreement is the point.",
+      "why": "Why this is a Request for Comments."
+    }
+  ]
+}

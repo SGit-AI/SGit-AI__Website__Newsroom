@@ -1,0 +1,241 @@
+{
+  "slug": "token-bill-nobody-is-sending",
+  "teaser": "AI answer engines pay to read the web as HTML; a publisher who serves markdown, dates, hashes and a typed graph saves them tokens and should get a share.",
+  "topics": [
+    "news-and-evidence",
+    "graphs-and-knowledge"
+  ],
+  "core_idea": "The fetches that answer engines make are a token cost to the fetcher as well as a loss to the publisher, and a publisher who serves structure is saving the provider money it already spends, so a share of that saving is owed.",
+  "nodes": [
+    {
+      "id": "baekdal-week",
+      "label": "Sixteen thousand fetches, ten clicks",
+      "kind": "example",
+      "summary": "A week of Cloudflare AI answer retrievals for baekdal.com came to 16,000 requests and the referrals they sent back came to 10."
+    },
+    {
+      "id": "commons-reading",
+      "label": "The commons reading",
+      "kind": "concept",
+      "summary": "The answer engines graze on a shared field and give nothing back, so the field will be fenced and the grazing priced."
+    },
+    {
+      "id": "second-reading",
+      "label": "The second reading",
+      "kind": "claim",
+      "summary": "Those 16,000 fetches are also a cost to the fetcher, because every one is a page of HTML parsed, extracted and turned into tokens."
+    },
+    {
+      "id": "html-vs-markdown",
+      "label": "HTML against markdown",
+      "kind": "claim",
+      "summary": "On this site's 183 pages the markdown twin is 62% fewer tokens than the HTML, and Cloudflare's own example is 81%."
+    },
+    {
+      "id": "re-fetch-waste",
+      "label": "The re-fetch waste",
+      "kind": "claim",
+      "summary": "More than half of legitimate bot crawl traffic re-fetches pages that have not changed, and more than 90% of pages crawlers process are unique, which defeats the cache layer."
+    },
+    {
+      "id": "the-arithmetic",
+      "label": "The arithmetic",
+      "kind": "example",
+      "summary": "Sixteen thousand fetches a week of HTML is about 113 million tokens against 43 million as markdown, tens of dollars a week for one site and a line on a very large invoice across the web."
+    },
+    {
+      "id": "markdown-twin",
+      "label": "A markdown twin and a map",
+      "kind": "method",
+      "summary": "Every page served as clean markdown at a predictable address, with an llms.txt at the root, generated from the same source so the two cannot drift."
+    },
+    {
+      "id": "date-and-hash",
+      "label": "A date and a hash",
+      "kind": "method",
+      "summary": "Tell the fetcher when the page last changed and give it a hash, so a fetch of an unchanged page can be skipped altogether."
+    },
+    {
+      "id": "frozen-sources",
+      "label": "Frozen, hashed sources",
+      "kind": "method",
+      "summary": "Claims that carry the byte range and SHA-256 of the page they came from do the verification round trip once for everyone."
+    },
+    {
+      "id": "typed-graph",
+      "label": "A typed graph",
+      "kind": "method",
+      "summary": "A fractal semantic graph lets an agent load exactly as much as the question needs, so the tokens saved are the page minus the answer."
+    },
+    {
+      "id": "payment-rails-price-content",
+      "label": "Every rail prices the content",
+      "kind": "claim",
+      "summary": "Pay per crawl, RSL, the IAB's protocols, Microsoft's marketplace, Perplexity's pool and Cloudflare's pay per use all price the fetch or the citation, and none pays a site for being cheap to read."
+    },
+    {
+      "id": "the-exchange",
+      "label": "The exchange",
+      "kind": "claim",
+      "summary": "A provider that spends fewer tokens reading a site that serves structure has saved money it was already spending, and should hand part of the saving back as a rebate for the format."
+    },
+    {
+      "id": "tokens-as-currency",
+      "label": "Tokens as currency",
+      "kind": "concept",
+      "summary": "A publisher could be paid in the provider's own credits, which are the budget that builds the site, and News Corp already took part of its deal in credits."
+    },
+    {
+      "id": "broker",
+      "label": "The broker",
+      "kind": "concept",
+      "summary": "A single site cannot send the invoice, so the broker will be whoever sits between the bots and the sites, which today means Cloudflare, TollBit and the marketplaces."
+    },
+    {
+      "id": "audience-not-cheque",
+      "label": "Baekdal wants an audience",
+      "kind": "question",
+      "summary": "Tokens are not an audience, though structure is what makes a citation land on the right paragraph and tokens are the budget that builds the site the reader arrives at."
+    },
+    {
+      "id": "what-would-settle-it",
+      "label": "What would settle it",
+      "kind": "question",
+      "summary": "Three numbers per domain for a week of real retrieval, the tokens spent on HTML, the tokens the twin would have cost and the fetches a change signal would have skipped, live in the providers' logs."
+    }
+  ],
+  "edges": [
+    {
+      "from": "baekdal-week",
+      "to": "commons-reading",
+      "rel": "example-of"
+    },
+    {
+      "from": "second-reading",
+      "to": "commons-reading",
+      "rel": "contrasts"
+    },
+    {
+      "from": "second-reading",
+      "to": "html-vs-markdown",
+      "rel": "depends-on"
+    },
+    {
+      "from": "second-reading",
+      "to": "re-fetch-waste",
+      "rel": "depends-on"
+    },
+    {
+      "from": "the-arithmetic",
+      "to": "html-vs-markdown",
+      "rel": "depends-on"
+    },
+    {
+      "from": "the-arithmetic",
+      "to": "baekdal-week",
+      "rel": "depends-on"
+    },
+    {
+      "from": "html-vs-markdown",
+      "to": "markdown-twin",
+      "rel": "depends-on"
+    },
+    {
+      "from": "date-and-hash",
+      "to": "re-fetch-waste",
+      "rel": "answers"
+    },
+    {
+      "from": "date-and-hash",
+      "to": "markdown-twin",
+      "rel": "extends"
+    },
+    {
+      "from": "frozen-sources",
+      "to": "date-and-hash",
+      "rel": "extends"
+    },
+    {
+      "from": "typed-graph",
+      "to": "frozen-sources",
+      "rel": "extends"
+    },
+    {
+      "from": "payment-rails-price-content",
+      "to": "the-exchange",
+      "rel": "contrasts"
+    },
+    {
+      "from": "payment-rails-price-content",
+      "to": "commons-reading",
+      "rel": "example-of"
+    },
+    {
+      "from": "the-exchange",
+      "to": "second-reading",
+      "rel": "depends-on"
+    },
+    {
+      "from": "the-exchange",
+      "to": "the-arithmetic",
+      "rel": "depends-on"
+    },
+    {
+      "from": "tokens-as-currency",
+      "to": "the-exchange",
+      "rel": "extends"
+    },
+    {
+      "from": "the-exchange",
+      "to": "broker",
+      "rel": "depends-on"
+    },
+    {
+      "from": "audience-not-cheque",
+      "to": "the-exchange",
+      "rel": "contrasts"
+    },
+    {
+      "from": "the-exchange",
+      "to": "what-would-settle-it",
+      "rel": "leads-to"
+    },
+    {
+      "from": "what-would-settle-it",
+      "to": "second-reading",
+      "rel": "answers"
+    }
+  ],
+  "links": {
+    "articles": [
+      "future-of-news-story-vault-not-paywall",
+      "introducing-fractal-semantic-graphs"
+    ],
+    "pages": [
+      "/admin/versions.html",
+      "/demos/vaults/evidence-dispatch/index.html",
+      "/llms.txt",
+      "/demos/vaults/index.html"
+    ],
+    "sites": [
+      "https://blog.cloudflare.com/crawlers-click-ai-bots-training/",
+      "https://blog.cloudflare.com/making-ai-search-smarter/",
+      "https://developers.cloudflare.com/changelog/post/2026-02-12-markdown-for-agents/",
+      "https://www.searchenginejournal.com/cloudflares-new-markdown-for-ai-bots-what-you-need-to-know/567339/",
+      "https://ppc.land/cloudflare-and-eth-zurich-say-ai-bots-are-breaking-the-webs-cache-layer/",
+      "https://llmstxt.org/",
+      "https://platform.claude.com/docs/en/about-claude/pricing",
+      "https://variety.com/2024/digital/news/news-corp-openai-licensing-deal-1236013734/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "Every step exists today. What does not exist is anyone paying for them.",
+      "why": "The gap the proposal is written to fill: the publisher's half of the exchange is already built."
+    },
+    {
+      "text": "It is not new money. It is money being spent today, by the answer engines, on reading the web the hard way.",
+      "why": "Why a rebate on waste is the easiest money in the negotiation to agree to."
+    }
+  ]
+}

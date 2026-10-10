@@ -1,0 +1,137 @@
+{
+  "slug": "who-will-game-the-reading-meter",
+  "teaser": "Eight kinds of reader, none of them attackers, nine ways to cheat a browser meter, and the quieter risks that will actually happen.",
+  "topics": [
+    "startups-and-strategy",
+    "agents-and-policy"
+  ],
+  "core_idea": "A reading meter kept entirely in the browser can be cheated by anyone, but the people who could cheat are readers, not attackers; sized on a ladder from invisible engineers (about 0.6% of internet users are developers) to people who cannot use a computer (26% of OECD adults), with agents moving between steps, the cheating costs the site nothing it would have had, while the risks that will actually happen are confusion, a shared computer exposing history and card fraud, so the design is aimed at the readers who will pay and at not frightening the rest.",
+  "nodes": [
+    {
+      "id": "protecting",
+      "label": "Who are you protecting against, one level down",
+      "kind": "concept",
+      "summary": "Kinds of reader instead of tiers of attacker; none malicious."
+    },
+    {
+      "id": "ladder",
+      "label": "Eight kinds of reader",
+      "kind": "concept",
+      "summary": "Invisible, agents, power users, instruction followers, pragmatic payers, little understanding, mixed, struggling."
+    },
+    {
+      "id": "agents",
+      "label": "Agents change level in a single request",
+      "kind": "claim",
+      "summary": "Outside the meter by design; reading the markdown twin is not metered."
+    },
+    {
+      "id": "nine",
+      "label": "Nine ways to cheat or leak",
+      "kind": "artefact",
+      "summary": "Devtools, private window, forged return page, replay, clearing data, agents, shared computer, injected script, card fraud."
+    },
+    {
+      "id": "free-cheat",
+      "label": "Cheating costs nothing that reaches the site",
+      "kind": "claim",
+      "summary": "It changes a number only the cheater sees and removes a payment that was never coming."
+    },
+    {
+      "id": "real-risks",
+      "label": "The risks that will actually happen",
+      "kind": "claim",
+      "summary": "Confusion at the bottom of the ladder, shared-computer history, card fraud on the payment link."
+    },
+    {
+      "id": "aim",
+      "label": "Aim at the readers who will pay",
+      "kind": "method",
+      "summary": "Do not build for step 1 at the expense of steps 5 to 8."
+    },
+    {
+      "id": "oecd",
+      "label": "26% of adults cannot use a computer",
+      "kind": "example",
+      "summary": "OECD Survey of Adult Skills via Nielsen Norman Group: only 5% at the most skilled level."
+    },
+    {
+      "id": "devs",
+      "label": "Developers are about 0.6% of internet users",
+      "kind": "example",
+      "summary": "36.5 million professional developers against about 6.0 billion internet users."
+    }
+  ],
+  "edges": [
+    {
+      "from": "protecting",
+      "to": "ladder",
+      "rel": "extends"
+    },
+    {
+      "from": "devs",
+      "to": "ladder",
+      "rel": "example-of"
+    },
+    {
+      "from": "oecd",
+      "to": "ladder",
+      "rel": "example-of"
+    },
+    {
+      "from": "agents",
+      "to": "ladder",
+      "rel": "extends"
+    },
+    {
+      "from": "ladder",
+      "to": "nine",
+      "rel": "leads-to"
+    },
+    {
+      "from": "nine",
+      "to": "free-cheat",
+      "rel": "leads-to"
+    },
+    {
+      "from": "free-cheat",
+      "to": "real-risks",
+      "rel": "contrasts"
+    },
+    {
+      "from": "real-risks",
+      "to": "aim",
+      "rel": "leads-to"
+    }
+  ],
+  "links": {
+    "articles": [
+      "who-are-you-protecting-against",
+      "going-live-with-the-reading-meter",
+      "a-meter-in-the-browser",
+      "token-bill-nobody-is-sending"
+    ],
+    "pages": [
+      "/meter/security.html",
+      "/account/index.html"
+    ],
+    "sites": [
+      "https://www.nngroup.com/articles/computer-skill-levels/",
+      "https://metrics.torproject.org/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "An agent is not a step; it is a lift.",
+      "why": "Agents move between levels of sophistication in a single request."
+    },
+    {
+      "text": "The struggling reader is protected by the meter asking nothing of them.",
+      "why": "Why the usability work is aimed at the bottom of the ladder."
+    },
+    {
+      "text": "No button leads to the free one.",
+      "why": "The unprotected return page is documented, but the payment is the default route."
+    }
+  ]
+}

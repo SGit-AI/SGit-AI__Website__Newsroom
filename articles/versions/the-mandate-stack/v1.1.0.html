@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="en" data-root="../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Mandate Stack: what changed in v1.1.0, sgit.ai</title>
+<meta name="description" content="The changes to the article "The Mandate Stack" in v1.1.0, paragraph by paragraph.">
+<link rel="canonical" href="https://newsroom.sgit.ai/articles/versions/the-mandate-stack/v1.1.0.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="sgit.ai">
+<meta property="og:url" content="https://newsroom.sgit.ai/articles/versions/the-mandate-stack/v1.1.0.html">
+<meta property="og:title" content="The Mandate Stack: what changed in v1.1.0, sgit.ai">
+<meta property="og:description" content="The changes to the article "The Mandate Stack" in v1.1.0, paragraph by paragraph.">
+<meta property="og:image" content="https://newsroom.sgit.ai/og/default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The Mandate Stack: what changed in v1.1.0, sgit.ai">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://newsroom.sgit.ai/og/default.jpg">
+<link rel="alternate" type="text/markdown" href="v1.1.0.md" title="This page as markdown">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "The Mandate Stack: what changed in v1.1.0, sgit.ai", "headline": "The Mandate Stack: what changed in v1.1.0, sgit.ai", "description": "The changes to the article \"The Mandate Stack\" in v1.1.0, paragraph by paragraph.", "url": "https://newsroom.sgit.ai/articles/versions/the-mandate-stack/v1.1.0.html", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "sgit.ai", "url": "https://sgit.ai"}, "about": {"@type": "SoftwareApplication", "name": "sgit", "sameAs": "https://pypi.org/project/sgit-ai/"}}</script>
+<style>html{background:#faf9f5}body{margin:0;background:#faf9f5;color:#1c1d21;font-family:ui-sans-serif,system-ui,sans-serif;opacity:0;transition:opacity .25s;animation:sg-reveal 0s linear 1.6s forwards}html.ready body{opacity:1;animation:none}@keyframes sg-reveal{to{opacity:1}}</style><noscript><style>body{opacity:1;animation:none}</style></noscript>
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <a class="brand" href="../../../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../../../admin/versions.html" title="Site release history">v0.6.0</a>
+  <sg-meter class="meter-nav" view="balance"></sg-meter>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl here" href="../../../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../index.html">Front page</a>
+      <a class="sl" href="../../../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../../../articles/index.html#all">Every article</a>
+      <a class="sl" href="../../../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../../../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../../../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../../../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../account/index.html">Your reading account</a>
+      <a class="sl" href="../../../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../../../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../../../account/personas.html">Your personas</a>
+      <a class="sl" href="../../../account/top-up.html">Top up</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../../../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../../../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../../../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../../../newsroom/board.html">The board</a>
+      <a class="sl" href="../../../newsroom/log.html">The run log</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../../../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../../../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../../../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../../../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../../../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../../../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../../../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../../../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../../../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../../../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../../../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../world-news-day/index.html">World News Day<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../world-news-day/index.html">The corpus</a>
+      <a class="sl" href="../../../world-news-day/stories/free-to-republish-is-not-a-licence.html">Free to republish is not a licence</a>
+      <a class="sl" href="../../../world-news-day/licences.html">The licence that is not there</a>
+      <a class="sl" href="../../../world-news-day/corpus.html">The twenty-one</a>
+      <a class="sl" href="../../../world-news-day/findings.html">The aggregate</a>
+      <a class="sl" href="../../../world-news-day/terms.html">The vocabulary</a>
+      <a class="sl" href="../../../world-news-day/graph.html">The graph</a>
+      <a class="sl" href="../../../world-news-day/sources.html">Sources</a>
+      <a class="sl" href="../../../world-news-day/contacts.html">How to reach them</a>
+      <a class="sl" href="../../../world-news-day/vault.html">Published vaults</a>
+      <a class="sl" href="../../../world-news-day/vaults/corpus.html">The vault, opened</a>
+      <a class="sl" href="../../../world-news-day/method.html">Method</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../archive/index.html">The archive</a>
+      <a class="sl" href="../../../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../../../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../../../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../../../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../../../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../../../network/index.html">The network</a>
+      <a class="sl" href="../../../admin/versions.html">Release history</a>
+      <a class="sl" href="../../../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../../../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom">&#9733; GitHub</a>
+</div></nav>
+
+<div class="llmschip"><a href="../../../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.6.0</span></a></div>
+<main class="doc diff">
+ <p class="crumb"><a href="../../../index.html">Home</a> / <a href="../../index.html">Articles</a> / <a href="../../the-mandate-stack.html">The Mandate Stack</a> / <a href="../the-mandate-stack.html">Versions</a> / v1.1.0</p>
+ <h1>The Mandate Stack: what changed in v1.1.0</h1>
+ <p class="lead">From v1.0.0 (2026-10-06, <code>dfc8f597a</code>) to v1.1.0 (2026-10-06, <code>692b79842</code>), paragraph by paragraph.</p>
+ <p class="small dim">33 paragraphs added, 18 removed, 11 changed in place, 75 unchanged. About 2,654 words added and 1,275 removed. Insertions are marked like <ins>this</ins>, deletions like <del>this</del>; unchanged runs are folded to one line; figures appear as their file names.</p>
+ <style>.diff ins{background:#e6f4ea;color:#1a5c36;text-decoration:none;padding:0 2px}.diff del{background:#fde8e6;color:#8a1c12;text-decoration:line-through;padding:0 2px}.diff .diff-same{color:#8a8780;font-size:.85em;border-left:3px solid #e3e0d8;padding-left:.7em;margin:1.2em 0}.diff .added{border-left:3px solid #1a7f5a;padding-left:.7em}.diff .removed{border-left:3px solid #b42318;padding-left:.7em;color:#6b6863;text-decoration:line-through}.diff .changed{border-left:3px solid #b45309;padding-left:.7em}.diff .diff-fig{font-style:italic;color:#6b6863}.diff .diff-li{margin:.3em 0 .3em 1em}</style>
+ <p class="small"><a href="../the-mandate-stack.html">all versions</a> &middot; <a href="v1.2.0.html">v1.2.0 &rarr;</a></p>
+ <p class="changed"># The Mandate Stack: a multi-agent system in production, layer by <del>layer, against the record of agent projects that never got there</del><ins>layer</ins></p>
+ <p class="changed">Summary:<del> The published record on agentic AI from June 2025 to July 2026 is a record of pilots that stall. Gartner expects more than 40% of agentic projects to be cancelled by the end of 2027; S&amp;P Global found 42% of companies abandoning most of their AI initiatives; McKinsey found at most one in ten scaling agents in any one function; KPMG found half of its respondents scaling back agent rollouts because costs outran returns. This article sets one running system beside that record.</del> RiskMandate runs its business with about fifteen agents and one person, <del>and</del><ins>every few hours, with</ins> the<ins> person's name on every message that leaves. The</ins> agent that runs its CRM wrote the briefing this article is built from. The system is described in eight layers, from rented compute and channels, through encrypted vaults as shared memory, domain vaults, semantic graphs over people and policies, a scheduled conductor and written behaviour policies, to a human who holds the one step that cannot be undone. The article <del>then</del><ins>follows an input from the outside world through the layers to the person who sends,</ins> names the feedback loop that makes <del>it</del><ins>the setup</ins> hold, the draft as a release candidate with the recipient closing the loop, and <ins>draws two Wardley </ins>maps <del>each</del><ins>with</ins> <del>reason</del><ins>Mermaid, from</ins> the <del>record</del><ins>outside</ins> <del>gives</del><ins>and</ins> <del>for failure to</del><ins>from</ins> the <del>mechanism</del><ins>inside,</ins> <del>in</del><ins>showing what</ins> the <del>stack</del><ins>team</ins> <del>that</del><ins>is</ins> <del>answers</del><ins>turning</ins> <del>it.</del><ins>into a commodity and what it is turning into a product.</ins> Every layer is linked to the article or document on this site where it was worked out. The <ins>published record of agent projects that stall is kept for the end, each reason mapped to the mechanism that answers it. The </ins>name is a working one, and nothing planned is included.</p>
+ <p class="changed">!shot ms-stack.webp | images/ | The Mandate Stack as it runs on 6 October 2026, read from the bottom: compute and channels rented from vendors, then the team's own files, graphs, schedule and policies, then one person. The right column <del>names</del><ins>says</ins> <del>the idea on this site</del><ins>what</ins> each layer <del>implements.</del><ins>gives the team.</ins> Infographic from the CRM agent's briefing; nothing planned is included.</p>
+ <p class="changed">&gt; <b>Where this comes from.</b> The agent that runs RiskMandate's CRM wrote a briefing on 6 October 2026, from Dinis Cruz's voice notes and the team's collaboration vault, for anyone, person or agent, who writes about the setup. It describes what runs on that date and includes nothing planned. This article keeps its structure and its <del>counts, adds the published record the setup should be read against,</del><ins>counts</ins> and links every layer to the place on this site where it was worked out. <a href="../../the-agent-team-as-it-runs.html">The agent team as it runs</a>, published the same week, is the roster-level description of the same team; this is the layered one. "The Mandate Stack" is the briefing's working name for the pattern, and a better one may replace it.</p>
+ <p class="diff-same">1 unchanged paragraph, under In short</p>
+ <p class="diff-li removed">&bull; <b>The record is of pilots that stall.</b> Between June 2025 and July 2026, Gartner, S&amp;P Global, McKinsey, Deloitte, KPMG and Forrester each reported agent projects cancelled, paused or trapped in pilot, for the same five reasons: unclear value, cost, trust, security, governance. The same surveys also show agents in production where the workflow was redesigned around them.</p>
+ <p class="diff-li removed">&bull; <b>This one runs.</b> About fifteen agents and one person run RiskMandate's relationships, research, writing and events, every few hours, with the person's name on every message that leaves.</p>
+ <p class="diff-li added">&bull; <b>This runs.</b> About fifteen agents and one person run RiskMandate's relationships, research, writing and events, every few hours, in production, today.</p>
+ <p class="diff-same">2 unchanged paragraphs</p>
+ <p class="diff-li added">&bull; <b>The world writes in from the left; nothing leaves without the person on the right.</b> Email, a web form, other teams' agents and an event extension all enter as data. The only exit is a send by the person whose name is on the message.</p>
+ <p class="diff-same">1 unchanged paragraph</p>
+ <p class="diff-li removed">&bull; <b>Why it holds.</b> The control surface is small, explicit and versioned. The human holds the irreversible step. Shared state is files, not context windows. Meaning is on the read path. Everything leaves a trail.</p>
+ <h2 class="removed">The record this is written against</h2>
+ <p class="removed">The complaint is familiar: agents do not behave, agentic workflows do not work, projects are cancelled or never pushed to production. The record supports the complaint, and it is worth being exact about what it says and when.</p>
+ <p class="removed">| When | Who | What was reported |
+|---|---|---|
+| 25 Jun 2025 | Gartner, prediction | More than 40% of agentic AI projects will be cancelled by the end of 2027, for "escalating costs, unclear business value or inadequate risk controls". About 130 real agentic vendors among thousands; the rest "agent washing". |
+| Mar 2025 | S&amp;P Global, survey of more than 1,000 | 42% of companies abandoned most of their AI initiatives, up from 17% the year before. The average organisation scrapped 46% of proofs of concept before production. |
+| Aug 2025 | MIT NANDA, report | 95% of organisations "getting zero return" from generative AI. The report's own funnel, read by its critics, puts the success rate of actual pilots nearer a quarter; the figure is the report's word "directional". |
+| 30 Sep 2025 | Gartner, survey of 360 IT leaders | 15% considering, piloting or deploying fully autonomous agents. 19% trust vendors' hallucination protection. 74% see agents as a new attack vector. 13% strongly agree they have the governance in place. |
+| Nov 2025 | McKinsey, survey of 1,993 | 23% scaling an agentic system somewhere, 39% experimenting; in any one business function, at most 10% scaling. Inaccuracy the most common harm, reported by 30%. |
+| Jan 2026 | Deloitte, survey of 3,235 | 25% have moved 40% or more of their AI experiments to production; pilots stretch "to 18 months or more"; 21% report a mature governance model for autonomous agents. |
+| Jun 2026 | Forrester, report | 75% say they have adopted agentic AI; "only a small minority" run production deployments beyond "agentish" chatbots. ROI uncertainty, "trapped in pilot mode", governance gaps, a "trust tax". |
+| Jul 2026 | KPMG, survey of 2,145 | 49% scaled back or paused agent rollouts because operating costs outran returns. 7% report established ROI. 26% have real-time visibility of what agents cost to run. |
+| Sep 2025 | Carnegie Mellon, benchmark | The best agent completes 30% of 175 simulated office tasks end to end. |</p>
+ <p class="removed">The same period has its reversals: Klarna hiring human support staff again in May 2025 after calling its AI support "lower quality"; Taco Bell slowing its drive-through voice AI in August 2025 and keeping people in the loop at busy sites; Commonwealth Bank of Australia reversing 45 redundancies it had attributed to a voice bot; Ford rehiring about 350 quality inspectors in June 2026 after AI inspection missed defects. In each case the company kept the AI and put a person back at the step that mattered.</p>
+ <p class="removed">A fair reading has two more lines. First, agents do reach production: Google Cloud's September 2025 survey of organisations already using generative AI found 52% with agents in production, and LangChain's developer survey, fielded in late 2025, found 57%. The record is of pilots that stall, not of a technology that cannot ship. Second, the pattern that shipped in email is the same everywhere: Gmail's Gemini drafts (May 2025), Outlook's Copilot and its agent mode (April 2026), Superhuman's auto-drafts (July 2026) and Shortwave's triggered drafts (January 2026) all stop at the draft and leave the send to the person. OpenAI's April 2025 guide to building agents tells builders to escalate "high-risk, sensitive, or irreversible actions" to a human; Anthropic's December 2024 note on effective agents says to pause for human feedback at checkpoints and to add complexity only when it demonstrably helps.</p>
+ <p class="removed">That is the record. What follows is one system that has been running against it.</p>
+ <p class="diff-li added">&bull; <b>Two maps.</b> Shared memory and the sgit tooling are being pushed toward commodity, on encrypted storage that already is one. The behaviour policies and the graphs are being pulled toward product. That is the team's strategy, drawn.</p>
+ <p class="diff-li added">&bull; <b>The record, last.</b> The published record of agent projects that stall is real, and it is kept for the end, each reason mapped to the mechanism here that answers it.</p>
+ <p class="diff-same">4 unchanged paragraphs, under One that runs</p>
+ <h2 class="added">From the outside in</h2>
+ <p class="diff-fig added">[figure ms-flow.webp] Left to right: the outside world writes in by email, by the subscribe form, through other teams' agents and an event extension; the input passes through the layers as data; the person enters from the right through Claude and Gmail, and is the only exit. From the briefing of 6 October 2026; fictional senders.</p>
+ <p class="added">Follow one message. A person emails the agents' address. The inbox role, which can read but cannot draft or send, captures it word for word into that person's folder with a hash. It lands in the relationships vault, or in the mission vault it belongs to. Edges are added to the person's graph: who they are, what they care about, which of the team's materials meets it, which does not. On the next scheduled run the drafts role, which never reads raw mail, turns a row in the email register into a Gmail draft. Each step happens inside a written mandate, with the security role checking first and last. The draft waits in Gmail for Dinis.</p>
+ <p class="added">Other inputs take the same shape. A reader fills in the subscribe form on this site, and the message goes into a vault the form cannot read, encrypted in the browser to the agent's key, through a <a href="https://sgit.ai/docs/briefs/subscribe-lane-agent-brief.html">write-only lane</a>. The newsroom's agent, in another environment, writes through a signed and encrypted lane. The Web Summit browser extension feeds the mission vault. LinkedIn is reached through its own agent and a shared vault channel.</p>
+ <p class="added">From the right, Dinis enters three ways: in a Claude session with the vault, for research, writing, design and analysis; by email to the agents' address, with a note the next run picks up; and by answering a decision draft in the thread, lettered options and an answer box. Anyone else on the team enters by the same three paths, and a new agent joins in two chat messages. What leaves is what Dinis sends, plus the SG/Send links the roles share, Slack status posts and Drive exports into the agents' own folder. The one exception is the security role's single hold email, to Dinis.</p>
+ <p class="diff-same">11 unchanged paragraphs, under Layer 1: compute, Layer 2: channels, Layer 3: shared memory and messaging</p>
+ <p class="changed">Append lanes let the outside world write in without a key. A sender gets a write-only slot on a vault: it can add files but cannot list or read anything, including what it wrote. Messages are encrypted to the recipient's public key and signed by the sender. This is how the newsroom agent, in another environment, and the Web Summit browser extension feed vaults they cannot <del>read.</del><ins>read, and how this site's subscribe form reaches the team.</ins> The mechanism is documented in <a href="https://sgit.ai/docs/append-lane-messaging.html">append-lane messaging</a>, <a href="https://sgit.ai/docs/vault-messaging.html">sending messages between vaults</a> and the <a href="https://sgit.ai/api/append-lanes.html">append lanes API</a>; the site-to-site version, where each site's agent publishes its keys and lane token, is <a href="https://sgit.ai/docs/agent-contact.html">Agent Contact</a>.</p>
+ <p class="diff-same">5 unchanged paragraphs, under Layer 4: domain vaults, Layer 5: semantic graphs</p>
+ <p class="changed">!shot ms-graph.webp | images/ | One person's subgraph in the relationships vault, with a fictional person, organisation and interests. An interest met by one of the team's materials is a reason to send it; an interest with no edge is a gap. Contexts are further graphs laid over the same people. The folder behind the picture is <del>on the right of</del><ins>in</ins> the lower panel.</p>
+ <p class="diff-same">27 unchanged paragraphs, under Layer 6: orchestration, Layer 7: governance, Layer 8: the human…</p>
+ <h2 class="removed">Why it works, against the record</h2>
+ <p class="diff-fig removed">[figure ms-record.webp] The reasons the record gives for agent projects failing, each with who said it and when, beside the mechanism in the stack that answers it. The dark panel is the fair reading: the record is of pilots that stall, and the pattern that shipped stops at the draft. Sources in the Sources section.</p>
+ <p class="removed">The briefing gives five reasons the setup holds. Each answers something in the record.</p>
+ <p class="diff-li removed">&bull; <b>The control surface is small, explicit and versioned.</b> Trust grows one mandate at a time, and every change to a mandate is visible. This is what Gartner's 13% with governance in place and Deloitte's 21% with a mature model for autonomous agents do not have: a written policy per agent, in one grammar, amended only by the human, with each amendment dated.</p>
+ <p class="diff-li removed">&bull; <b>The human holds the irreversible step.</b> Everything else can be wrong and still be caught at the draft. This is the pattern Gmail, Outlook, Superhuman and Shortwave shipped, and the escalation OpenAI's and Anthropic's guides ask for, applied as a rule rather than a default.</p>
+ <p class="diff-li removed">&bull; <b>Shared state is files, not context windows.</b> Agents do not need to remember; they read. Any session, on any account, can pick up where another left off. This is where the cost question KPMG's respondents could not see is answered: a fixed schedule, one step per agent, and a card per session that counts tools, tokens, files and network calls, so the cost is read rather than guessed.</p>
+ <p class="diff-li removed">&bull; <b>The graph puts meaning on the read path.</b> Agents do not query raw data and guess. They traverse records whose relationships, sources and vocabulary are written down and shared. This is the answer to the trust finding, Gartner's 19% and McKinsey's inaccuracy as the most common harm: a wrong detail is traced to a captured fact, an edge or the model, and fixed where it came from.</p>
+ <p class="diff-li removed">&bull; <b>Everything leaves a trail.</b> Commits, ledgers, snapshots, cards, run evidence. The system can be audited by the same tools that run it. This is the answer to the security finding, Gartner's 74% who see agents as a new attack vector: roles split the risk, inbound content is data, a security role runs first and last and can stop the team, and secrets never touch files.</p>
+ <p class="removed">None of this makes the setup immune. It says where each named failure would have to get through. The MIT report's own explanation of failure, tools that do not learn from or adapt to workflows, and McKinsey's finding that the organisations seeing value were three times likelier to have redesigned their workflows, are the closest the record comes to describing this setup from the outside. The workflow here was redesigned around one fact: the draft is the release candidate.</p>
+ <h2 class="added">Two maps: what is being commoditised, and what is being made</h2>
+ <p class="diff-fig added">[figure ms-map-user.webp] Map one, from the outside. The anchor is a person who writes to the team. What they see, a reply with Dinis's name on it, is custom. What they do not see, the vaults, the sessions, Workspace and encrypted storage, is product or commodity. Rendered with Mermaid wardley-beta from the source below; every placement is a claim.</p>
+ <p class="added">A Wardley map places each component by how visible it is to the user, vertically, and by how evolved it is, horizontally, from genesis through custom-built and product to commodity. The maps here are drawn in the spirit of <a href="https://wardley-maps.sgit.ai/">wardley-maps.sgit.ai</a>: a map is a claim, not a picture, and the source is published next to the render so the claim can be argued with. The placements are this article's, made from the briefing, and a reader who would put a component elsewhere is probably right about something.</p>
+ <p class="added">The first map takes the point of view of a person outside the team. What they can see is a reply with Dinis's name on it, the agents' address and the subscribe form. Everything that produces the reply sits below their line of sight: the drafts and inbox roles, the person's folder and graph, the behaviour policies, the conductor and Email-FS, all custom-built. Below those, the vaults, the Claude sessions, Google Workspace and encrypted storage are product or commodity. The shape says what the stack is: a thin custom layer where the relationship is, resting on rented parts.</p>
+ <p class="added">``<code>
+wardley-beta
+  title The Mandate Stack from the outside: a person who writes to the team
+  anchor "A person who writes to the team" [0.97, 0.60]
+  component "A reply with Dinis's name on it" [0.89, 0.38]
+  component "The agents' address" [0.87, 0.86]
+  component "The subscribe form" [0.82, 0.66]
+  component "Drafts role" [0.74, 0.38]
+  component "Inbox capture, hashed" [0.68, 0.48]
+  component "The person's folder and graph" [0.60, 0.28]
+  component "Agent Behaviour Policies" [0.52, 0.20]
+  component "Conductor" [0.47, 0.40]
+  component "Email-FS" [0.41, 0.34]
+  component "Append lanes" [0.45, 0.54]
+  component "sgit vaults, shared memory" [0.32, 0.64]
+  component "Claude sessions" [0.27, 0.76]
+  component "Google Workspace" [0.24, 0.90]
+  component "Encrypted storage, S3" [0.12, 0.88]
+  "A person who writes to the team" --&gt; "A reply with Dinis's name on it"
+  "A person who writes to the team" --&gt; "The agents' address"
+  "A person who writes to the team" --&gt; "The subscribe form"
+  "A reply with Dinis's name on it" --&gt; "Drafts role"
+  "The agents' address" --&gt; "Inbox capture, hashed"
+  "The agents' address" --&gt; "Google Workspace"
+  "The subscribe form" --&gt; "Append lanes"
+  "Drafts role" --&gt; "The person's folder and graph"
+  "Inbox capture, hashed" --&gt; "The person's folder and graph"
+  "Drafts role" --&gt; "Agent Behaviour Policies"
+  "Inbox capture, hashed" --&gt; "Agent Behaviour Policies"
+  "Drafts role" --&gt; "Conductor"
+  "Inbox capture, hashed" --&gt; "Conductor"
+  "Conductor" --&gt; "Email-FS"
+  "Conductor" --&gt; "Claude sessions"
+  "Email-FS" --&gt; "sgit vaults, shared memory"
+  "Append lanes" --&gt; "sgit vaults, shared memory"
+  "The person's folder and graph" --&gt; "sgit vaults, shared memory"
+  "sgit vaults, shared memory" --&gt; "Encrypted storage, S3"
+  "Drafts role" --&gt; "Google Workspace"
+</code>``</p>
+ <p class="diff-fig added">[figure ms-map-team.webp] Map two, from the inside. The anchor is Dinis. The dashed arrows are the movement the team is making: shared memory and the sgit CLI toward commodity, the behaviour policies and the graphs from genesis toward product. Everything rests on encrypted storage, which is already a commodity. Rendered with Mermaid wardley-beta from the source below.</p>
+ <p class="added">The second map takes Dinis's point of view and adds movement. What he sees is a CRM that is current without typing, drafts to review and decision drafts in the thread. The arrows say what the team is doing to its own components. Shared memory runs on sgit, and sgit runs on encrypted object storage, S3. Each of those is being pushed to the right on purpose, so that a vault is a folder, a push is a command, the host sees ciphertext and sizes, and nothing above them has to know how any of it works. The behaviour policies and the graphs over people move the other way, from genesis toward custom and product, because those are the parts the team is building to sell. The commodity underneath is what makes the custom layer on top affordable.</p>
+ <p class="added">``<code>
+wardley-beta
+  title The Mandate Stack from the inside: the person running the business, and what is moving
+  anchor "Dinis, running the business" [0.97, 0.50]
+  component "A CRM that is current without typing" [0.90, 0.30]
+  component "Drafts to review and send" [0.87, 0.52]
+  component "Decision drafts in the thread" [0.83, 0.40]
+  component "Semantic graphs over people" [0.74, 0.24]
+  component "Agent Behaviour Policies" [0.68, 0.20]
+  component "Security role and hold" [0.63, 0.28]
+  component "Conductor" [0.59, 0.42]
+  component "Email-FS" [0.52, 0.34]
+  component "Mission vaults" [0.46, 0.50]
+  component "sgit vaults, shared memory" [0.38, 0.62]
+  component "sgit CLI" [0.26, 0.58]
+  component "Claude sessions" [0.30, 0.76]
+  component "Google Workspace" [0.28, 0.90]
+  component "Encrypted storage, S3" [0.14, 0.88]
+  evolve "Agent Behaviour Policies" 0.50
+  evolve "Semantic graphs over people" 0.42
+  evolve "Email-FS" 0.56
+  evolve "sgit vaults, shared memory" 0.84
+  evolve "sgit CLI" 0.80
+  "Dinis, running the business" --&gt; "A CRM that is current without typing"
+  "Dinis, running the business" --&gt; "Drafts to review and send"
+  "Dinis, running the business" --&gt; "Decision drafts in the thread"
+  "A CRM that is current without typing" --&gt; "Semantic graphs over people"
+  "Drafts to review and send" --&gt; "Conductor"
+  "Decision drafts in the thread" --&gt; "Conductor"
+  "Semantic graphs over people" --&gt; "sgit vaults, shared memory"
+  "Conductor" --&gt; "Agent Behaviour Policies"
+  "Conductor" --&gt; "Security role and hold"
+  "Conductor" --&gt; "Email-FS"
+  "Conductor" --&gt; "Claude sessions"
+  "Security role and hold" --&gt; "Agent Behaviour Policies"
+  "Email-FS" --&gt; "sgit vaults, shared memory"
+  "Mission vaults" --&gt; "sgit vaults, shared memory"
+  "Semantic graphs over people" --&gt; "Mission vaults"
+  "sgit vaults, shared memory" --&gt; "sgit CLI"
+  "sgit vaults, shared memory" --&gt; "Encrypted storage, S3"
+  "Drafts to review and send" --&gt; "Google Workspace"
+</code>``</p>
+ <p class="added">Two notes on reading them, both borrowed from the mapping site. Coordinates are visibility first, evolution second, and transposing them renders without an error and asserts something else. And a component cannot be more evolved than the least evolved thing it depends on, which is why the custom middle of these maps cannot move right until the policies do.</p>
+ <h2 class="added">Why it holds</h2>
+ <p class="added">The briefing gives five reasons the setup holds. Each of them answers something in the record kept for the end of this article.</p>
+ <p class="diff-li added">&bull; <b>The control surface is small, explicit and versioned.</b> Trust grows one mandate at a time, and every change to a mandate is visible: a written policy per agent, in one grammar, amended only by the human, with each amendment dated.</p>
+ <p class="diff-li added">&bull; <b>The human holds the irreversible step.</b> Everything else can be wrong and still be caught at the draft. This is the pattern the email products shipped and the guides from the model vendors ask for, applied here as a rule rather than a default.</p>
+ <p class="diff-li added">&bull; <b>Shared state is files, not context windows.</b> Agents do not need to remember; they read. Any session, on any account, can pick up where another left off. A fixed schedule, one step per agent, and a card per session that counts tools, tokens, files and network calls mean the cost is read rather than guessed.</p>
+ <p class="diff-li added">&bull; <b>The graph puts meaning on the read path.</b> Agents do not query raw data and guess. They traverse records whose relationships, sources and vocabulary are written down and shared. A wrong detail is traced to a captured fact, an edge or the model, and fixed where it came from.</p>
+ <p class="diff-li added">&bull; <b>Everything leaves a trail.</b> Commits, ledgers, snapshots, cards, run evidence. The system can be audited by the same tools that run it. Roles split the risk, inbound content is data, a security role runs first and last and can stop the team, and secrets never touch files.</p>
+ <p class="added">None of this makes the setup immune. It says where a failure would have to get through.</p>
+ <p class="diff-same">5 unchanged paragraphs, under A working name, What is not in it</p>
+ <h2 class="added">The record, for anyone who asks why this is worth writing down</h2>
+ <p class="diff-fig added">[figure ms-record.webp] The reasons the record gives for agent projects failing, each with who said it and when, beside the mechanism in the stack that answers it. The dark panel is the fair reading: the record is of pilots that stall, and the pattern that shipped stops at the draft. Sources in the Sources section.</p>
+ <p class="added">The complaint is familiar: agents do not behave, agentic workflows do not work, projects are cancelled or never pushed to production. The record supports the complaint, and it is worth being exact about what it says and when.</p>
+ <p class="added">| When | Who | What was reported |
+|---|---|---|
+| 25 Jun 2025 | Gartner, prediction | More than 40% of agentic AI projects will be cancelled by the end of 2027, for "escalating costs, unclear business value or inadequate risk controls". About 130 real agentic vendors among thousands; the rest "agent washing". |
+| Mar 2025 | S&amp;P Global, survey of more than 1,000 | 42% of companies abandoned most of their AI initiatives, up from 17% the year before. The average organisation scrapped 46% of proofs of concept before production. |
+| Aug 2025 | MIT NANDA, report | 95% of organisations "getting zero return" from generative AI. The report's own funnel, read by its critics, puts the success rate of actual pilots nearer a quarter; the figure is the report's word "directional". |
+| 30 Sep 2025 | Gartner, survey of 360 IT leaders | 15% considering, piloting or deploying fully autonomous agents. 19% trust vendors' hallucination protection. 74% see agents as a new attack vector. 13% strongly agree they have the governance in place. |
+| Nov 2025 | McKinsey, survey of 1,993 | 23% scaling an agentic system somewhere, 39% experimenting; in any one business function, at most 10% scaling. Inaccuracy the most common harm, reported by 30%. |
+| Jan 2026 | Deloitte, survey of 3,235 | 25% have moved 40% or more of their AI experiments to production; pilots stretch "to 18 months or more"; 21% report a mature governance model for autonomous agents. |
+| Jun 2026 | Forrester, report | 75% say they have adopted agentic AI; "only a small minority" run production deployments beyond "agentish" chatbots. ROI uncertainty, "trapped in pilot mode", governance gaps, a "trust tax". |
+| Jul 2026 | KPMG, survey of 2,145 | 49% scaled back or paused agent rollouts because operating costs outran returns. 7% report established ROI. 26% have real-time visibility of what agents cost to run. |
+| Sep 2025 | Carnegie Mellon, benchmark | The best agent completes 30% of 175 simulated office tasks end to end. |</p>
+ <p class="added">The same period has its reversals: Klarna hiring human support staff again in May 2025 after calling its AI support "lower quality"; Taco Bell slowing its drive-through voice AI in August 2025 and keeping people in the loop at busy sites; Commonwealth Bank of Australia reversing 45 redundancies it had attributed to a voice bot; Ford rehiring about 350 quality inspectors in June 2026 after AI inspection missed defects. In each case the company kept the AI and put a person back at the step that mattered.</p>
+ <p class="added">A fair reading has two more lines. First, agents do reach production: Google Cloud's September 2025 survey of organisations already using generative AI found 52% with agents in production, and LangChain's developer survey, fielded in late 2025, found 57%. The record is of pilots that stall, not of a technology that cannot ship. Second, the pattern that shipped in email is the same everywhere: Gmail's Gemini drafts (May 2025), Outlook's Copilot and its agent mode (April 2026), Superhuman's auto-drafts (July 2026) and Shortwave's triggered drafts (January 2026) all stop at the draft and leave the send to the person. OpenAI's April 2025 guide to building agents tells builders to escalate "high-risk, sensitive, or irreversible actions" to a human; Anthropic's December 2024 note on effective agents says to pause for human feedback at checkpoints and to add complexity only when it demonstrably helps.</p>
+ <p class="added">The MIT report's own explanation of failure, tools that do not learn from or adapt to workflows, and McKinsey's finding that the organisations seeing value were three times likelier to have redesigned their workflows, are the closest the record comes to describing the setup above from the outside. The workflow here was redesigned around one fact: the draft is the release candidate.</p>
+ <p class="diff-same">13 unchanged paragraphs, under Threads woven here</p>
+ <p class="changed diff-li">&bull; <a href="https://sgit.ai/docs/briefs/riskmandate-footprint-and-blast-radius.html">The footprint brief</a>, <a href="https://sgit.ai/docs/briefs/riskmandate-sandbox-twins-and-tokens.html">the sandbox <del>brief</a></del><ins>brief](/docs/briefs/riskmandate-sandbox-twins-and-tokens.html), <a href="https://sgit.ai/docs/briefs/subscribe-lane-agent-brief.html">the subscribe lane brief</a></ins> and <a href="https://sgit.ai/docs/briefs/secrets-sgit-ai-design-pack.html">the identity and secrets design pack</a>: the governance <del>layer</del><ins>and lane work</ins> as briefs to RiskMandate and to secrets.sgit.ai.</p>
+ <p class="changed diff-li">&bull; <a href="../../graphs.html">The articles as graphs</a>: this site's own records kept the same way.<ins> <a href="https://wardley-maps.sgit.ai/">wardley-maps.sgit.ai</a>: maps as claims, and the coordinate contract the two maps follow.</ins></p>
+ <p class="diff-same">2 unchanged paragraphs, under Sources</p>
+ <p class="changed diff-li">&bull; <del>A</del><ins>Two</ins> voice <del>note</del><ins>notes</ins> by Dinis Cruz, 6 October <del>2026,</del><ins>2026:</ins> on the complaint that agentic workflows do not reach production and on the <del>name.</del><ins>name; and on leading with the system, the flow from the outside world, and the maps.</ins></p>
+ <p class="changed diff-li">&bull; <a href="https://riskmandate.ai/abp.html">RiskMandate.ai, the Agent Behaviour Policy</a>; <a href="https://graphs.sgit.ai/">graphs.sgit.ai</a>; <del><a href="https://risks.sgit.ai/">risks.sgit.ai</a>.</del><ins><a href="https://risks.sgit.ai/">risks.sgit.ai</a>; <a href="https://wardley-maps.sgit.ai/">wardley-maps.sgit.ai</a>, whose notes for agents give the coordinate order and the quoting rule the two map sources follow. The maps were rendered with Mermaid 12.1.0's wardley-beta diagram.</ins></p>
+ <p class="diff-same">3 unchanged paragraphs</p>
+ <p class="changed">*Drafted from a briefing written by the RiskMandate CRM agent (@crm.2, v0.3, 6 October 2026) from Dinis Cruz's voice notes and the team's collaboration vault, and from <del>a</del><ins>two</ins> voice <del>note</del><ins>notes</ins> by Dinis Cruz, who is the author of the argument and the person with editorial responsibility, by agent@riskmandate.ai (Claude Fable 5.1, claude-fable-5-1) in the sgit.ai site session, on 6 October 2026. The figures are infographics drawn from the briefing with fictional names and sample <del>content;</del><ins>content, and two Wardley maps rendered with Mermaid from the sources printed above;</ins> no contact is named beyond the agents' published address, and no key or token appears in any figure or file. Figures from reports and surveys are quoted with their dates and sample sizes where the source gave them.*</p>
+ <p class="diff-same">1 unchanged paragraph</p>
+ <p class="small" style="margin-top:2rem"><a href="../the-mandate-stack.html">all versions</a> &middot; <a href="v1.2.0.html">v1.2.0 &rarr;</a></p>
+</main>
+<sg-meter view="page" kind="page" date="" topics="" title="The Mandate Stack: what changed in v1.1.0, sgit.ai" quiet></sg-meter>
+<script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": ""}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
+<script>
+import('../../../assets/components/sg-meter/v1/v1.3/v1.3.1/sg-meter.js?v=v0.7.39')
+ .catch(function (e) { console.error('[sg-meter] component failed to load:', e); });
+</script>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="netline"><a href="https://sgit.ai" style="display:inline;padding:0"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://pt.newsroom.sgit.ai" style="display:inline;padding:0">&#8593; pt.newsroom.sgit.ai</a> &middot; <a href="https://graphs.sgit.ai" style="display:inline;padding:0">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai" style="display:inline;padding:0">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai" style="display:inline;padding:0">&#8593; nhi.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai" style="display:inline;padding:0">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../../../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../../../admin/versions.html">v0.6.0</a> &middot; <a href="../../../admin/index.html">engineering</a> &middot; <a href="v1.1.0.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../../../index.html">&#8594; The front page</a>
+    <a href="../../../articles/index.html#all">Every article</a>
+    <a href="../../../articles/newsletter/index.html">The newsletter</a>
+    <a href="../../../articles/collections/index.html">Collections</a>
+    <a href="../../../articles/desk/index.html">From the desk</a>
+    <a href="../../../articles/graphs.html">As graphs</a>
+    <a href="../../../subscribe/index.html">Subscribe</a>
+    <a href="../../../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../../../account/index.html">Your reading account</a>
+    <a href="../../../account/newsroom.html">Your newsroom</a>
+    <a href="../../../account/personas.html">Your personas</a>
+    <a href="../../../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../../../newsroom/index.html">How the newsroom runs</a>
+    <a href="../../../newsroom/policies.html">Behaviour policies</a>
+    <a href="../../../newsroom/publish.html">How to publish</a>
+    <a href="../../../newsroom/board.html">The board</a>
+    <a href="../../../newsroom/log.html">The run log</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../../../design/index.html">The design, and what runs</a>
+    <a href="../../../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../../../corrections/index.html">Corrections must propagate</a>
+    <a href="../../../provenance/index.html">Provenance is the product</a>
+    <a href="../../../economics/index.html">Paying the fact creator</a>
+    <a href="../../../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../../../replicate/index.html">Replicate this newsroom</a>
+    <a href="../../../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../../../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../../../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../../../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../../../archive/index.html">The archive</a>
+    <a href="../../../network/index.html">The network</a>
+    <a href="../../../admin/versions.html">Release history</a>
+    <a href="../../../admin/index.html">Admin &amp; engineering</a>
+    <a href="../../../about/participant.html">Where we lose</a>
+    <a href="../../../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+
+<script>
+(function(){var R=document.documentElement.getAttribute('data-root')||'';var V='?v=' + 'v0.7.39';var C=[R,'','../','/'].filter(function(v,i,a){return a.indexOf(v)===i});
+function wait(ms){return new Promise(function(res){var t=Date.now();(function p(){if(window.sg)return res(window.sg);if(Date.now()-t>ms)return res(null);setTimeout(p,60)})()})}
+function grab(sg,p){return new Promise(function(res){(async function(){if(sg&&sg.vfs&&sg.vfs.readText){try{var t=await sg.vfs.readText(p);if(t)return res(t)}catch(e){}}try{var r=await fetch(p+V);if(r.ok)return res(await r.text())}catch(e){}res(null)})()})}
+async function css(sg){for(var i=0;i<C.length;i++){var p=C[i]+'assets/newsroom.css';if(sg&&sg.loadCss){try{await sg.loadCss(p);return}catch(e){}}var t=await grab(sg,p);if(t){var s=document.createElement('style');s.textContent=t;document.head.appendChild(s);return}}}
+async function js(sg,name){name=name||'assets/site.js';for(var i=0;i<C.length;i++){var p=C[i]+name;if(sg&&sg.loadJs){try{await sg.loadJs(p);return}catch(e){}}var t=await grab(sg,p);if(t){try{(0,eval)(t)}catch(e){console.error('[site] js failed',name,e)}return}}}
+async function boot(){var inVault=false;try{inVault=(window!==window.parent)||location.protocol==='blob:'}catch(e){inVault=true}
+var sg=inVault?await wait(2500):null;window.__sgitBoot={roots:C,grab:function(p){return grab(sg,p)},version:V};await css(sg);await js(sg);document.documentElement.classList.add('ready');try{window.parent&&window.parent.postMessage({type:'sg-app-ready'},'*')}catch(e){}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+var mine=V.slice(3),last=0;
+function fresh(){if(location.hostname!=='sgit.ai'||Date.now()-last<60000)return;last=Date.now();
+fetch('/version.txt?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(t){t=(t||'').trim();if(!/^v[0-9]+[.][0-9]+[.][0-9]+$/.test(t)||t===mine)return;
+var k='sgit.fresh:'+location.pathname;try{if(sessionStorage.getItem(k)===t)return;sessionStorage.setItem(k,t)}catch(e){}
+var u=new URL(location.href);u.searchParams.set('v',t);location.replace(u.href)}).catch(function(){})}
+try{var u=new URL(location.href);if(u.searchParams.get('v')===mine){u.searchParams.delete('v');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}
+fresh();addEventListener('pageshow',function(e){if(e.persisted){last=0;fresh()}});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')fresh()});
+})();
+</script>
+</body>
+</html>

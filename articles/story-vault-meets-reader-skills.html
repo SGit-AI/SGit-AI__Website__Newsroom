@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Story vault underneath, Reader Skills on top: why local journalism has the most to gain, sgit.ai</title>
+<meta name="description" content="Markus Franz published "The Article Is Only the Beginning" on 7 October 2026, proposing Liquid Utility, journalism that helps people understand, follow and act rather than only read, and six Reader Skills to deliver it, with a bridge closure as the example. He then wrote, under my comment, that his idea and the story vault connect at an architectural level: the story vault answers what we know and why it can be trusted, Reader Skills answer what we can reliably help someone do with it. This article draws that connection. Each of his six skills turns out to be an operation the story graph already supports, and each safeguard he asks for is a property the graph already has: versions for Update, supersede edges for corrections, freshness for "could not check", a flag at the node for protected sources. His bridge is drawn as a graph. And his article adds the piece our monetisation had not mapped: locality, where the trust relationship and the brand are strongest. Local contributors feed local journalists, local stories feed national and international ones, and if every use pays back down the chain of claims it rests on, small payments from many people fund the reporting nearest to them.">
+<link rel="canonical" href="https://newsroom.sgit.ai/articles/story-vault-meets-reader-skills.html">
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="sgit.ai">
+<meta property="og:url" content="https://newsroom.sgit.ai/articles/story-vault-meets-reader-skills.html">
+<meta property="og:title" content="Story vault underneath, Reader Skills on top: why local journalism has the most to gain, sgit.ai">
+<meta property="og:description" content="Markus Franz published "The Article Is Only the Beginning" on 7 October 2026, proposing Liquid Utility, journalism that helps people understand, follow and act rather than only read, and six Reader Skills to deliver it, with a bridge closure as the example. He then wrote, under my comment, that his idea and the story vault connect at an architectural level: the story vault answers what we know and why it can be trusted, Reader Skills answer what we can reliably help someone do with it. This article draws that connection. Each of his six skills turns out to be an operation the story graph already supports, and each safeguard he asks for is a property the graph already has: versions for Update, supersede edges for corrections, freshness for "could not check", a flag at the node for protected sources. His bridge is drawn as a graph. And his article adds the piece our monetisation had not mapped: locality, where the trust relationship and the brand are strongest. Local contributors feed local journalists, local stories feed national and international ones, and if every use pays back down the chain of claims it rests on, small payments from many people fund the reporting nearest to them.">
+<meta property="og:image" content="https://newsroom.sgit.ai/og/story-vault-meets-reader-skills.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Story vault underneath, Reader Skills on top: why local journalism has the most to gain, sgit.ai">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://newsroom.sgit.ai/og/story-vault-meets-reader-skills.jpg">
+<link rel="alternate" type="text/markdown" href="story-vault-meets-reader-skills.md" title="This page as markdown">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Story vault underneath, Reader Skills on top: why local journalism has the most to gain, sgit.ai", "headline": "Story vault underneath, Reader Skills on top: why local journalism has the most to gain, sgit.ai", "description": "Markus Franz published \"The Article Is Only the Beginning\" on 7 October 2026, proposing Liquid Utility, journalism that helps people understand, follow and act rather than only read, and six Reader Skills to deliver it, with a bridge closure as the example. He then wrote, under my comment, that his idea and the story vault connect at an architectural level: the story vault answers what we know and why it can be trusted, Reader Skills answer what we can reliably help someone do with it. This article draws that connection. Each of his six skills turns out to be an operation the story graph already supports, and each safeguard he asks for is a property the graph already has: versions for Update, supersede edges for corrections, freshness for \"could not check\", a flag at the node for protected sources. His bridge is drawn as a graph. And his article adds the piece our monetisation had not mapped: locality, where the trust relationship and the brand are strongest. Local contributors feed local journalists, local stories feed national and international ones, and if every use pays back down the chain of claims it rests on, small payments from many people fund the reporting nearest to them.", "url": "https://newsroom.sgit.ai/articles/story-vault-meets-reader-skills.html", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "sgit.ai", "url": "https://sgit.ai"}, "about": {"@type": "SoftwareApplication", "name": "sgit", "sameAs": "https://pypi.org/project/sgit-ai/"}, "author": {"@type": "Person", "name": "Dinis Cruz", "url": "https://sgit.ai/about/index.html"}, "license": "https://creativecommons.org/licenses/by/4.0/"}</script>
+<style>html{background:#faf9f5}body{margin:0;background:#faf9f5;color:#1c1d21;font-family:ui-sans-serif,system-ui,sans-serif;opacity:0;transition:opacity .25s;animation:sg-reveal 0s linear 1.6s forwards}html.ready body{opacity:1;animation:none}@keyframes sg-reveal{to{opacity:1}}</style><noscript><style>body{opacity:1;animation:none}</style></noscript>
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.6.0</a>
+  <sg-meter class="meter-nav" view="balance"></sg-meter>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../articles/index.html#all">Every article</a>
+      <a class="sl" href="../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../account/index.html">Your reading account</a>
+      <a class="sl" href="../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../account/personas.html">Your personas</a>
+      <a class="sl" href="../account/top-up.html">Top up</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../newsroom/board.html">The board</a>
+      <a class="sl" href="../newsroom/log.html">The run log</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../world-news-day/index.html">World News Day<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../world-news-day/index.html">The corpus</a>
+      <a class="sl" href="../world-news-day/stories/free-to-republish-is-not-a-licence.html">Free to republish is not a licence</a>
+      <a class="sl" href="../world-news-day/licences.html">The licence that is not there</a>
+      <a class="sl" href="../world-news-day/corpus.html">The twenty-one</a>
+      <a class="sl" href="../world-news-day/findings.html">The aggregate</a>
+      <a class="sl" href="../world-news-day/terms.html">The vocabulary</a>
+      <a class="sl" href="../world-news-day/graph.html">The graph</a>
+      <a class="sl" href="../world-news-day/sources.html">Sources</a>
+      <a class="sl" href="../world-news-day/contacts.html">How to reach them</a>
+      <a class="sl" href="../world-news-day/vault.html">Published vaults</a>
+      <a class="sl" href="../world-news-day/vaults/corpus.html">The vault, opened</a>
+      <a class="sl" href="../world-news-day/method.html">Method</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../archive/index.html">The archive</a>
+      <a class="sl" href="../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../network/index.html">The network</a>
+      <a class="sl" href="../admin/versions.html">Release history</a>
+      <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom">&#9733; GitHub</a>
+</div></nav>
+
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.6.0</span></a></div>
+<main class="doc">
+ <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / Story vault underneath, Reader Skills on top: why local journalism has the most to gain</p>
+ <h1>Story vault underneath, Reader Skills on top: why local journalism has the most to gain</h1>
+ <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-07 &middot; <a href="versions/story-vault-meets-reader-skills.html" title="Every published version of this article, and what changed">article v1.5.0, 6 versions</a> &middot; <a href="https://sgit.ai/admin/versions.html" title="The site release it was published in">site v0.6.94</a> &middot; <span class="chip">journalism</span><span class="chip">local-news</span><span class="chip">liquid-utility</span><span class="chip">reader-skills</span><span class="chip">story-vault</span><span class="chip">fractal-semantic-graphs</span><span class="chip">provenance</span><span class="chip">micropayments</span><span class="chip">verification</span><span class="chip">article</span></p>
+ <p class="abstract"><em><b>Abstract:</b> Markus Franz published "The Article Is Only the Beginning" on 7 October 2026, proposing Liquid Utility, journalism that helps people understand, follow and act rather than only read, and six Reader Skills to deliver it, with a bridge closure as the example. He then wrote, under my comment, that his idea and the story vault connect at an architectural level: the story vault answers what we know and why it can be trusted, Reader Skills answer what we can reliably help someone do with it. This article draws that connection. Each of his six skills turns out to be an operation the story graph already supports, and each safeguard he asks for is a property the graph already has: versions for Update, supersede edges for corrections, freshness for "could not check", a flag at the node for protected sources. His bridge is drawn as a graph. And his article adds the piece our monetisation had not mapped: locality, where the trust relationship and the brand are strongest. Local contributors feed local journalists, local stories feed national and international ones, and if every use pays back down the chain of claims it rests on, small payments from many people fund the reporting nearest to them.</em></p>
+<figure class="shot" data-shot="lu-meet.webp" data-dir="images/" data-alt="Where the two ideas meet: each of Markus Franz&#x27;s six Reader Skills as an operation on the story graph, and the property of the graph that makes it dependable. The skills are his; the mapping is ours."><figcaption>Where the two ideas meet: each of Markus Franz's six Reader Skills as an operation on the story graph, and the property of the graph that makes it dependable. The skills are his; the mapping is ours.</figcaption></figure>
+<p>A bridge closes for six weeks. The reporting is clear: what happened, why the repairs are needed, who is responsible. And the parent reading it on Sunday evening still has three questions. Can the children take their usual bus tomorrow? What changes on Monday morning? Will someone tell me if that changes again?</p>
+<p>That is the opening of <a href="https://www.linkedin.com/pulse/article-only-beginning-markus-franz-qzyqe/">The Article Is Only the Beginning</a>, published by Markus Franz on 7 October 2026, and it holds two lines worth keeping: <em>"The article has done its job. You still have a job to do."</em></p>
+<p>His proposal is called <b>Liquid Utility</b>: trusted journalistic knowledge, combined with reusable methods and appropriate tools, to help someone understand, follow or act on what matters to them. He delivers it through six <b>Reader Skills</b>, bounded journalistic capabilities a reader can use directly: Understand, Update, Relate, Compare, Follow and Act. It is careful about what it does not claim. A skill is not a safety guarantee. The case for a publisher over a generic assistant has to rest on original access, maintained data, local reporting and editorial accountability, and even then the service has to be demonstrably better at a particular task. And the business test is kept visible: reach, utility, relationship, reciprocity, measured rather than assumed.</p>
+<p>I replied under his post that this is close to what I argue in <a href="future-of-news-story-vault-not-paywall.html">The future of news is the story vault, not the paywall</a>. His answer is the reason this article exists:</p>
+<div class="note"><b>Markus Franz, in reply.</b> "Your Story Vault starts underneath the article: claims, evidence, sources, versions and provenance become the durable asset, while the article is one projection of that graph. Liquid Utility starts from the other end: the reader has a job to do, and journalism should turn trusted knowledge into a capability. [...] Story Vault answers: what do we know, and why can it be trusted? Reader Skills answer: what can we reliably help someone do with it?"</div>
+<p>He is right, and the connection is tighter than either article said on its own. This is the drawing of it.</p>
+<div class="trail"><div class="trail-h">One story, four ways in</div><p class="trail-n">Read them in order, or start with the one you need: the idea, the connection, the simulation explained, and the working vault.</p><div class="trail-row"><a class="trail-c" href="https://www.linkedin.com/pulse/article-only-beginning-markus-franz-qzyqe/" target="_blank" rel="noopener"><span class="trail-img" data-trail-img="../articles/images/lu-chatgpt-infographic.webp" role="img" aria-label=""></span><span class="trail-b"><span class="trail-k">1 · The original</span><span class="trail-t">The Article Is Only the Beginning &#8599;</span><span class="trail-d">Markus Franz&#x27;s proposal: Liquid Utility, six Reader Skills, and a bridge closure as the example.</span></span></a><a class="trail-c here" href="story-vault-meets-reader-skills.html"><span class="trail-here">you are here</span><span class="trail-img" data-trail-img="../og/story-vault-meets-reader-skills.jpg" role="img" aria-label=""></span><span class="trail-b"><span class="trail-k">2 · The connection</span><span class="trail-t">Story vault underneath, Reader Skills on top</span><span class="trail-d">Why his skills and the story vault are two halves of one system, and why local journalism has the most to gain.</span></span></a><a class="trail-c" href="the-bridge-followed-to-the-end.html"><span class="trail-img" data-trail-img="../og/the-bridge-followed-to-the-end.jpg" role="img" aria-label=""></span><span class="trail-b"><span class="trail-k">3 · The simulation, explained</span><span class="trail-t">The bridge, followed to the end</span><span class="trail-d">One closure from first notice to reopening: the journalism, three readers, the buyers, the money, and two years on.</span></span></a><div class="trail-c"><a href="https://sgit.ai/demos/vaults/bridge-simulation/index.html"><span class="trail-img" data-trail-img="../demos/vaults/bridge-simulation/images/app-overview-v3.webp" role="img" aria-label=""></span></a><div class="trail-b"><span class="trail-k">4 · The vault</span><span class="trail-t">The Mill Street Bridge</span><span class="trail-d">The working simulation: 23 views in four themes, the economics, an API, and every assumption written down. Fictional throughout.</span><span class="trail-l"><a href="https://sgit.ai/demos/vaults/bridge-simulation/index.html">The vault&#x27;s page</a><a href="https://dev.vault.sgraph.ai/#sgit_public_read_cb3838a0e965dc9d5af9009fef6e867dbdf18a8fc615cb3f5f2bee5424639705%3Avk3jlgzb" target="_blank" rel="noopener">Open the vault &#8599;</a></span></div></div></div></div>
+<h2>Each Reader Skill is a question the graph can already answer</h2>
+<p>The story vault keeps what was reported as a graph: claims, each tied to evidence that has been fetched, saved and hashed; sources, with how recently each was checked; versions, where a correction supersedes a claim rather than deleting it. The article is one projection of that graph. The figure at the top puts Markus's six skills on top of it, and each one becomes an operation.</p>
+<p>Take his own description of <b>Update</b>. He writes that "summarise the latest article" is not enough: the method <em>"would need to establish the previous information state, retrieve current reporting, separate new facts from repetition, flag corrections and show the sources behind each meaningful change."</em> Every clause of that is something a versioned graph gives you directly. The previous information state is the version the reader last saw. New facts are new claim nodes. Corrections are supersede edges, dated. The sources behind each change are the edges from each new claim to its evidence. Over a pile of articles, Update is a summarisation problem. Over a story graph, it is a diff.</p>
+<p><b>Follow</b> is the same diff, run on a schedule for claims the reader chose. Markus adds a line that matters more than it looks: <em>"If it cannot check, it should distinguish that from confirming that nothing changed."</em> That distinction needs freshness, a record of when each source was last checked against what the claim says, and the vault keeps exactly that. <b>Understand</b> is a walk from a claim to its sources and the open questions. <b>Compare</b> sets two claims or two versions side by side, with the typed edges between them, so that "the council says one date and the operator another" is recorded where a reader meets it. <b>Act</b> turns the current claims into a checklist or a reminder, from rules somebody maintains.</p>
+<p><b>Relate</b> is the one that changes the privacy story. Markus writes that <em>"a neighbourhood update should not require an entire personal profile."</em> In the vault model it does not need one at all. The reader's route is held on the reader's side, and joined to the published graph there; the newsroom serves claims and does not learn which bus a family takes.</p>
+<p>The same is true of his safeguards. <em>"A correction cannot stop at the article while personalised answers continue repeating the old claim"</em>: in a graph, a correction is a supersede edge, so every skill that read the old claim meets the new one. Source protection must survive the move into reader products: an anonymous source is flagged at the node, and every projection, the article, a licensed extract, a skill's answer, redacts it without anybody having to remember. The thing he calls <em>Journalism as a Capability System</em> needs a substrate where the knowledge keeps its qualifications. The story graph is that substrate.</p>
+<h2>The bridge, drawn</h2>
+<figure class="shot" data-shot="lu-bridge.webp" data-dir="images/" data-alt="Markus Franz&#x27;s bridge, as a story graph: evidence at the bottom, including a resident&#x27;s photo; the claims a local journalist wrote from it; the article and three Reader Skills as projections; and the reader&#x27;s own route, joined on the reader&#x27;s side. Places, dates and hashes are illustrative."><figcaption>Markus Franz's bridge, as a story graph: evidence at the bottom, including a resident's photo; the claims a local journalist wrote from it; the article and three Reader Skills as projections; and the reader's own route, joined on the reader's side. Places, dates and hashes are illustrative.</figcaption></figure>
+<p>Here is his example as a graph. The council notice, the operator's diversion plan and a resident's photo of the site notice are evidence, each saved and hashed. The local journalist checked the photo against the notice and wrote three claims from them. The article of 9 October is one projection. When the council moves the reopening date on 21 October, nothing is rewritten: a new claim supersedes the old end date. That single edge is, at once, the <b>Update</b> a returning reader sees, the <b>Follow</b> alert sent to everybody tracking the closure, and the correction. On the reader's side, their route, bus 42 at 08:05 from Elm Street, is joined to the claim about the diversion, and <b>Relate</b> answers: from 13 October, that bus stops at Station Road, with the source and when it was checked.</p>
+<p>The reader does not need to see any of this, and Markus is right that they should not have to: <em>"The reader does not need to admire the architecture. The reader needs it to work."</em> The graph is what makes it work, and what makes the working checkable.</p>
+<h2>What his article adds: the job, and the place</h2>
+<p>My story vault article started from the evidence and asked what a newsroom could sell from it. Markus starts from the person and asks what they need done. The second view brings something into focus that I had thought about and not mapped: <b>locality</b>.</p>
+<p>Almost everything that touches our day is local. The road we drive, the school run, the high street, the planning application at the end of the street, the bridge. The local paper, or the local reporter, is where a trust relationship and a brand form over years, because they are right about the things we can check ourselves. Journalists save us time, and what they sell is trust. Locally, both are easiest to see: I can tell within a week whether the reporting about my own street was right.</p>
+<p>People already pay a little for that, and would pay for more of it if paying were easy and the thing paid for were useful. A pound a month for knowing what changes on my bus route, pence for a check on a planning decision, a small amount each time the reporting saves me an afternoon. Small, from many people, about the things nearest to them, is a large amount in aggregate. Markus is careful here, and so should I be: <em>"Locality alone is not the advantage. Doing that work reliably could be."</em> The vault is how the reliability becomes something a reader, or an agent, can verify rather than assume.</p>
+<h2>Local is where the facts are found, so let the money flow back to it</h2>
+<figure class="shot" data-shot="lu-chain.webp" data-dir="images/" data-alt="The proposal: facts and their evidence travel up from a local contributor to an international wire; every use of them pays back down the same edges. The split is illustrative; the mechanism is the point."><figcaption>The proposal: facts and their evidence travel up from a local contributor to an international wire; every use of them pays back down the same edges. The split is illustrative; the mechanism is the point.</figcaption></figure>
+<p>There is a second local element his article opens up, and it is the one I find most interesting commercially. Local journalism has local sources. A resident who photographs the notice. A bus driver who mentions the diversion before it is announced. A parish clerk whose minutes say the repair was deferred twice. In many newsrooms those people are thanked, if they are mentioned at all. In a story graph they are nodes: named, or flagged as anonymous, linked to the claims their evidence supports, and verified by the journalist who checked them.</p>
+<p>And stories travel up. The local closure becomes a regional story about every closure on the river this winter, then a national story about ageing bridges, then an international one about infrastructure spending. Each of those cites the level below, or should. Today the money flows the other way and stops at whoever publishes last. In a graph where every claim names who found it, a national story that rests on a local claim can pay for it, per use, in pence, automatically; and a local claim that rests on a resident's photo can pass a share to the resident. The figure shows one illustrative split of one 10p use. The numbers are a proposal. The mechanism is not: <em>a page that cannot name its source cannot pay it.</em></p>
+<p>The same edges carry trust upwards. A national story is more credible when the local source under it is named, verified and current, and the <b>verification API</b> in the story vault design, a paid answer to "did you report this, and is it still current?", is exactly what Markus picked out in his reply as the maintained capability that moves journalism beyond the static article. Asked by a national desk about a local claim, it is how the local newsroom gets paid for being right.</p>
+<p>That gives the loop its shape. Trust in a local brand brings use. Use, through skills that solve a local job, brings payment, in small amounts from many people and in larger ones from the outlets that cite the local work. Payment funds the next local story and the contributors behind it. More, better-sourced claims reinforce the trust, at the local level and at every level above it that cites them. It is the opposite of the hollowing out described in <a href="how-news-got-here.html">how news got here</a>, where the local monopoly went first and the reporting followed.</p>
+<p>Two honest notes, as before. Nothing on sgit.ai is wired to a payment rail today; the rails exist, and the design names them, but no contributor has been paid through a graph yet. And none of this works unless the service is better than the alternative for a real task, which is Markus's test and the right one.</p>
+<h2>What a publisher could test, with both halves</h2>
+<p>Markus's advice is to start with <em>"one maintained topic and one tightly scoped service"</em>, a local disruption tracker or a "what changed?" service, and to measure it on reach, utility, relationship and reciprocity. I would keep all of that and add three things, one from each layer underneath.</p>
+<ul>
+<li><b>Keep the topic as a story vault from day one.</b> Every claim tied to saved evidence, every correction a supersede edge. The Update and Follow skills are then diffs, not summaries, and their answers can be checked.</li>
+<li><b>Record the contributors in the graph from day one.</b> Name them, or flag them, and link them to what they supported, so that when payment arrives there is somebody to pay.</li>
+<li><b>Publish the ledger.</b> What was used, by whom, and where the money went, so that the reciprocity Markus wants to measure is visible to the readers being asked for it.</li>
+</ul>
+<p>One local topic, one vault, one service, one ledger. If it works, the second topic is cheaper, because the methods are reusable, which is his point, and the graph grammar is shared, which is mine.</p>
+<h2>Played out in full</h2>
+<p>The bridge, the readers, the journalism and the money are now a working simulation: <a href="the-bridge-followed-to-the-end.html">The bridge, followed to the end</a>, with its <a href="https://sgit.ai/demos/vaults/bridge-simulation/index.html">vault</a>, which since version 0.2 also counts the costs, the two years of long tail, the stories after it and the trust they build. Three readers, three institutions and an agent use one local story kept as a graph, from the first notice to the reopening, and every payment walks back to the people who found the facts.</p>
+<p>Markus ends his article with this line: <em>"Don't just read our journalism. Use it."</em> I would add one clause. Use it, and pay the people who found it out.</p>
+<h2>Two infographics</h2>
+<p>ChatGPT made an infographic of this article from its published text, and another of Markus's article, which I posted under his LinkedIn post. Both are worth having, and both are worth reading against their source, so each has a note.</p>
+<figure class="shot shot--medium" data-shot="sv-chatgpt-infographic.webp" data-dir="images/" data-alt="The infographic of this article, made with ChatGPT from its published text. Faithful on the two questions, the graph underneath, the six skills, the safeguards, locality and the place to start; the note below says where it departs."><figcaption>The infographic of this article, made with ChatGPT from its published text. Faithful on the two questions, the graph underneath, the six skills, the safeguards, locality and the place to start; the note below says where it departs.</figcaption></figure>
+<div class="note"><b>Reading it against this article.</b> It follows the argument closely: what the story vault answers and what Reader Skills answer, the graph underneath with evidence, claims and versions, each skill as an operation on it, the safeguards, locality, facts travelling up and attribution flowing back down, and one topic, one vault, one service, one ledger. It is careful in the right place, marking the micropayments as proposed and not yet implemented, which is what this article says. Three things to know. Its bridge has its own illustrative dates: closed from 7 October and reopening on 20 October, moved earlier from the 27th, where the figure above has the bridge closing on 13 October, the council notice dated 9 October and the reopening moved later, from 24 November to 1 December. Its closing line says "credit the people who found it", where this article says pay them, and paying them is the point. And "Trust turns local information into lasting value", like the words in the margins, is the infographic's own; one of those words is misspelt, "informalton".</div>
+<figure class="shot shot--medium" data-shot="lu-chatgpt-infographic.webp" data-dir="images/" data-alt="The infographic of Markus Franz&#x27;s article, made with ChatGPT from the article&#x27;s text and posted under his LinkedIn post, where he replied that he liked &quot;how clearly you visualised the shift from Liquid Content to Liquid Utility&quot;. Faithful on the six skills, the layers and the safeguards; the note below says what it adds and what it drops."><figcaption>The infographic of Markus Franz's article, made with ChatGPT from the article's text and posted under his LinkedIn post, where he replied that he liked "how clearly you visualised the shift from Liquid Content to Liquid Utility". Faithful on the six skills, the layers and the safeguards; the note below says what it adds and what it drops.</figcaption></figure>
+<div class="note"><b>Reading it against Markus's article.</b> It gets the substance right: the gap, Liquid Utility, the six Reader Skills, the layered system, the safeguards and the advice to start small. Four things to know. The taglines ("Same facts. A more useful tomorrow", "People informed, people empowered, stronger societies", "Real journalism. Greater possibilities") and the line "Trust turns useful services into lasting relationships" are the infographic's, not Markus's. "An AI feature alone is not the advantage. Reliability is" is a fair compression, but his own wording is more careful: the publisher's case <em>would have to rest</em> on original access, maintained data, local reporting and accountability, and even then the service must be demonstrably better for a particular task. It drops his qualifiers, that the six skills are a proposed framework rather than a universal taxonomy and that reach, utility, relationship and reciprocity are a hypothesis to measure rather than a funnel. And it leaves out his evidence on search and clicks, and his boundary that "relevant to me" must not become "nothing beyond my immediate interests".</div>
+<p><em>Drafted from Markus Franz's article and LinkedIn post of 7 October 2026, his reply to my comment, and a voice note by Dinis Cruz, who is the author of the argument and the person with editorial responsibility, by agent@riskmandate.ai (Claude Opus 5.5, claude-opus-5-5) in the sgit.ai site session, on 7 October 2026. Quotations from Markus Franz are from his published article and his public reply, credited and linked; Liquid Utility, Reader Skills and Journalism as a Capability System are his terms. The mapping, the bridge graph, the payment chain and its illustrative split are ours. Places, dates and hashes in the bridge figure are illustrative.</em></p>
+<section class="athreads" id="threads">
+ <h2>Threads</h2>
+ <p class="athreads-meta"><span class="tchip">News &amp; evidence</span><span class="tchip">Graphs &amp; knowledge</span> <a href="graphs.html#story-vault-meets-reader-skills">This article as a graph &rarr;</a></p>
+ <div class="athreads-cols"><div><h3>Builds on</h3><ul><li><a href="future-of-news-story-vault-not-paywall.html">The future of news is the story vault, not the paywall</a> <span class="dim">A story is a graph of claims and evidence and the article is one projection of it; keep the graph in a vault and sell what the article was made from.</span></li><li><a href="how-news-got-here.html">The reader was always the product: a corrected history of how news got into this mess</a> <span class="dim">News has sold the reader to advertisers since 1833; the web took the monopoly, the platforms made the reader measurable, and AI took the traffic.</span></li><li><a href="the-bridge-followed-to-the-end.html">The bridge, followed to the end: what one local story is worth when it is kept as a graph</a> <span class="dim">A bridge closure simulated on a story vault: newsworthy on 5 days, needed on 57, used by three readers, four buyers and an agent, and paid back to its sources.</span></li></ul></div><div><h3>Continued by</h3><ul><li><a href="the-waiting-room-knew-first.html">The waiting room knew first: a live local story, and the gap where local information used to be</a> <span class="dim">Staff at two London hospitals said the IT was down; nothing a local could check showed it. A live local story about where local information comes from now.</span></li><li><a href="the-bridge-followed-to-the-end.html">The bridge, followed to the end: what one local story is worth when it is kept as a graph</a> <span class="dim">A bridge closure simulated on a story vault: newsworthy on 5 days, needed on 57, used by three readers, four buyers and an agent, and paid back to its sources.</span></li></ul></div></div>
+ <p class="small dim"><a href="index.html">All articles</a> &middot; <a href="graphs.html">All graphs</a></p>
+</section>
+<sg-meter view="page" kind="article" date="2026-10-07" topics="news-and-evidence graphs-and-knowledge" title="Story vault underneath, Reader Skills on top: why local journalism has the most to gain, sgit.ai"></sg-meter>
+<section class="athreads" id="desk"><h2>From the desk</h2><ul><li><a href="collections/local-news-kept-as-evidence.html">Local news, kept as evidence</a> <span class="dim">collection, 6 articles</span></li></ul></section>
+<aside class="lkit" aria-label="For LinkedIn"><b>Posting this article on LinkedIn?</b> The cover is <a href="banners/story-vault-meets-reader-skills.jpg" download>story-vault-meets-reader-skills.jpg</a> (1920&times;1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page.</aside>
+ <p class="subteaser"><b>Want the next issue by email.</b> One issue a week or so: what was published, what it adds up to, and what is worth your time. <a class="cta2" href="../subscribe/index.html">Subscribe to the SGit Newsroom &rarr;</a></p>
+ <p class="small dim" style="margin-top:2rem"><a href="index.html">&larr; All articles</a></p>
+</main>
+<script>
+(function () {
+ fetch('../assets/shots.js?v=v0.7.39')
+ .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+ .then(function (t) { (0, eval)(t); })
+ .catch(function (e) { console.error('[shots] component failed to load:', e); });
+}());
+</script>
+<script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": ""}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
+<script>
+import('../assets/components/sg-meter/v1/v1.3/v1.3.1/sg-meter.js?v=v0.7.39')
+ .catch(function (e) { console.error('[sg-meter] component failed to load:', e); });
+</script>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="netline"><a href="https://sgit.ai" style="display:inline;padding:0"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://pt.newsroom.sgit.ai" style="display:inline;padding:0">&#8593; pt.newsroom.sgit.ai</a> &middot; <a href="https://graphs.sgit.ai" style="display:inline;padding:0">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai" style="display:inline;padding:0">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai" style="display:inline;padding:0">&#8593; nhi.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai" style="display:inline;padding:0">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../admin/versions.html">v0.6.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="story-vault-meets-reader-skills.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../index.html">&#8594; The front page</a>
+    <a href="../articles/index.html#all">Every article</a>
+    <a href="../articles/newsletter/index.html">The newsletter</a>
+    <a href="../articles/collections/index.html">Collections</a>
+    <a href="../articles/desk/index.html">From the desk</a>
+    <a href="../articles/graphs.html">As graphs</a>
+    <a href="../subscribe/index.html">Subscribe</a>
+    <a href="../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../account/index.html">Your reading account</a>
+    <a href="../account/newsroom.html">Your newsroom</a>
+    <a href="../account/personas.html">Your personas</a>
+    <a href="../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../newsroom/index.html">How the newsroom runs</a>
+    <a href="../newsroom/policies.html">Behaviour policies</a>
+    <a href="../newsroom/publish.html">How to publish</a>
+    <a href="../newsroom/board.html">The board</a>
+    <a href="../newsroom/log.html">The run log</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../design/index.html">The design, and what runs</a>
+    <a href="../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../corrections/index.html">Corrections must propagate</a>
+    <a href="../provenance/index.html">Provenance is the product</a>
+    <a href="../economics/index.html">Paying the fact creator</a>
+    <a href="../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../replicate/index.html">Replicate this newsroom</a>
+    <a href="../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../archive/index.html">The archive</a>
+    <a href="../network/index.html">The network</a>
+    <a href="../admin/versions.html">Release history</a>
+    <a href="../admin/index.html">Admin &amp; engineering</a>
+    <a href="../about/participant.html">Where we lose</a>
+    <a href="../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+
+<script>
+(function(){var R=document.documentElement.getAttribute('data-root')||'';var V='?v=' + 'v0.7.39';var C=[R,'','../','/'].filter(function(v,i,a){return a.indexOf(v)===i});
+function wait(ms){return new Promise(function(res){var t=Date.now();(function p(){if(window.sg)return res(window.sg);if(Date.now()-t>ms)return res(null);setTimeout(p,60)})()})}
+function grab(sg,p){return new Promise(function(res){(async function(){if(sg&&sg.vfs&&sg.vfs.readText){try{var t=await sg.vfs.readText(p);if(t)return res(t)}catch(e){}}try{var r=await fetch(p+V);if(r.ok)return res(await r.text())}catch(e){}res(null)})()})}
+async function css(sg){for(var i=0;i<C.length;i++){var p=C[i]+'assets/newsroom.css';if(sg&&sg.loadCss){try{await sg.loadCss(p);return}catch(e){}}var t=await grab(sg,p);if(t){var s=document.createElement('style');s.textContent=t;document.head.appendChild(s);return}}}
+async function js(sg,name){name=name||'assets/site.js';for(var i=0;i<C.length;i++){var p=C[i]+name;if(sg&&sg.loadJs){try{await sg.loadJs(p);return}catch(e){}}var t=await grab(sg,p);if(t){try{(0,eval)(t)}catch(e){console.error('[site] js failed',name,e)}return}}}
+async function boot(){var inVault=false;try{inVault=(window!==window.parent)||location.protocol==='blob:'}catch(e){inVault=true}
+var sg=inVault?await wait(2500):null;window.__sgitBoot={roots:C,grab:function(p){return grab(sg,p)},version:V};await css(sg);await js(sg);document.documentElement.classList.add('ready');try{window.parent&&window.parent.postMessage({type:'sg-app-ready'},'*')}catch(e){}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+var mine=V.slice(3),last=0;
+function fresh(){if(location.hostname!=='sgit.ai'||Date.now()-last<60000)return;last=Date.now();
+fetch('/version.txt?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(t){t=(t||'').trim();if(!/^v[0-9]+[.][0-9]+[.][0-9]+$/.test(t)||t===mine)return;
+var k='sgit.fresh:'+location.pathname;try{if(sessionStorage.getItem(k)===t)return;sessionStorage.setItem(k,t)}catch(e){}
+var u=new URL(location.href);u.searchParams.set('v',t);location.replace(u.href)}).catch(function(){})}
+try{var u=new URL(location.href);if(u.searchParams.get('v')===mine){u.searchParams.delete('v');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}
+fresh();addEventListener('pageshow',function(e){if(e.persisted){last=0;fresh()}});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')fresh()});
+})();
+</script>
+</body>
+</html>

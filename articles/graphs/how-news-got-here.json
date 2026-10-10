@@ -1,0 +1,220 @@
+{
+  "slug": "how-news-got-here",
+  "teaser": "News has sold the reader to advertisers since 1833; the web took the monopoly, the platforms made the reader measurable, and AI took the traffic.",
+  "topics": [
+    "news-and-evidence"
+  ],
+  "core_idea": "The reader has been the product since 1833 and the money has always flowed to whoever owned the road, so the fix is to stop charging for the road and charge for the cargo: the story as a graph with every claim tied to hashed evidence.",
+  "nodes": [
+    {
+      "id": "reader-as-product",
+      "label": "The reader was always the product",
+      "kind": "claim",
+      "summary": "The reader stopped being the customer in 1833 and became the audience sold to the advertiser, and by 2005 advertising was 82% of American newspaper revenue."
+    },
+    {
+      "id": "penny-press",
+      "label": "Penny press",
+      "kind": "example",
+      "summary": "The New York Sun of September 1833 sold on the street for a cent and was paid for by advertising while other papers relied on high-priced subscriptions."
+    },
+    {
+      "id": "toll-bridge",
+      "label": "Unregulated toll bridge",
+      "kind": "concept",
+      "summary": "A monopoly city newspaper was the only way for a local advertiser to reach local households, and its margins of 20 to 30 per cent paid for the reporting."
+    },
+    {
+      "id": "classifieds-collapse",
+      "label": "Classifieds collapse",
+      "kind": "example",
+      "summary": "Classifieds were about 40% of revenue and fell from $19.6 billion in 2000 to about $6 billion in 2009 once Craigslist let people list a sofa for free."
+    },
+    {
+      "id": "measurable-reader",
+      "label": "The measurable reader",
+      "kind": "concept",
+      "summary": "Cookies in 1996 and AdSense in 2003 let the reader be followed from page to page, and by 2017 Google and Meta took 54.7% of American digital advertising."
+    },
+    {
+      "id": "publisher-as-tenant",
+      "label": "Publisher as tenant",
+      "kind": "claim",
+      "summary": "Publishers depended on traffic from companies that could switch it off, and Facebook referrals to news sites fell 58% in six years."
+    },
+    {
+      "id": "novelty-beats-truth",
+      "label": "Novelty beats truth",
+      "kind": "claim",
+      "summary": "False news on Twitter was 70% more likely to be retweeted than true news, spread by humans not bots, and Facebook weighted an anger reaction at five times a like."
+    },
+    {
+      "id": "provenance-is-labour",
+      "label": "Provenance is labour",
+      "kind": "claim",
+      "summary": "Following a claim to its source is hours of a person's time, and newsrooms that lost 57% of their jobs cut those hours first because they did not move the click."
+    },
+    {
+      "id": "ai-removes-traffic",
+      "label": "AI removes the traffic",
+      "kind": "claim",
+      "summary": "Search traffic to publishers fell a third in the year to November 2025 while the crawlers that replaced it fetch tens of thousands of pages per reader they send back."
+    },
+    {
+      "id": "return-to-rent",
+      "label": "Back to selling to readers, by rent",
+      "kind": "claim",
+      "summary": "Circulation revenue overtook advertising in 2021, but what is sold is the subscription, unlimited access priced for the reader who forgets to cancel."
+    },
+    {
+      "id": "http-402",
+      "label": "402 Payment Required",
+      "kind": "artefact",
+      "summary": "HTTP/1.1 reserved a status code in 1997 for digital cash or micropayment systems, and it is still reserved for future use with no browser having implemented it."
+    },
+    {
+      "id": "mental-transaction-cost",
+      "label": "Mental transaction costs",
+      "kind": "concept",
+      "summary": "Szabo and Shirky argued that deciding whether an article is worth two cents costs more than two cents, an argument that does not apply to an agent with a wallet."
+    },
+    {
+      "id": "advertising-by-default",
+      "label": "Advertising as the default",
+      "kind": "claim",
+      "summary": "The banner ad, the cookie, the pop-up and AdSense were small decisions that together made advertising the default model to support online content."
+    },
+    {
+      "id": "people-pay-when-easy",
+      "label": "People pay when paying is easy",
+      "kind": "claim",
+      "summary": "A million iTunes songs sold in the first week in 2003 and Substack passed five million paid subscriptions in 2025, in an industry that insisted people never would."
+    },
+    {
+      "id": "charge-for-cargo",
+      "label": "Charge for the cargo, not the road",
+      "kind": "method",
+      "summary": "Sell the story as a graph, every claim walked to frozen and hashed evidence, in pence and on demand, with the money walking back to whoever made the fact."
+    }
+  ],
+  "edges": [
+    {
+      "from": "penny-press",
+      "to": "reader-as-product",
+      "rel": "example-of"
+    },
+    {
+      "from": "toll-bridge",
+      "to": "reader-as-product",
+      "rel": "extends"
+    },
+    {
+      "from": "classifieds-collapse",
+      "to": "toll-bridge",
+      "rel": "example-of"
+    },
+    {
+      "from": "measurable-reader",
+      "to": "reader-as-product",
+      "rel": "extends"
+    },
+    {
+      "from": "measurable-reader",
+      "to": "publisher-as-tenant",
+      "rel": "leads-to"
+    },
+    {
+      "from": "measurable-reader",
+      "to": "novelty-beats-truth",
+      "rel": "leads-to"
+    },
+    {
+      "from": "publisher-as-tenant",
+      "to": "provenance-is-labour",
+      "rel": "leads-to"
+    },
+    {
+      "from": "ai-removes-traffic",
+      "to": "publisher-as-tenant",
+      "rel": "extends"
+    },
+    {
+      "from": "ai-removes-traffic",
+      "to": "return-to-rent",
+      "rel": "leads-to"
+    },
+    {
+      "from": "return-to-rent",
+      "to": "charge-for-cargo",
+      "rel": "contrasts"
+    },
+    {
+      "from": "mental-transaction-cost",
+      "to": "advertising-by-default",
+      "rel": "leads-to"
+    },
+    {
+      "from": "http-402",
+      "to": "advertising-by-default",
+      "rel": "contrasts"
+    },
+    {
+      "from": "people-pay-when-easy",
+      "to": "mental-transaction-cost",
+      "rel": "contrasts"
+    },
+    {
+      "from": "people-pay-when-easy",
+      "to": "charge-for-cargo",
+      "rel": "leads-to"
+    },
+    {
+      "from": "http-402",
+      "to": "charge-for-cargo",
+      "rel": "leads-to"
+    },
+    {
+      "from": "novelty-beats-truth",
+      "to": "charge-for-cargo",
+      "rel": "leads-to"
+    },
+    {
+      "from": "provenance-is-labour",
+      "to": "charge-for-cargo",
+      "rel": "leads-to"
+    },
+    {
+      "from": "reader-as-product",
+      "to": "charge-for-cargo",
+      "rel": "contrasts"
+    }
+  ],
+  "links": {
+    "articles": [
+      "future-of-news-story-vault-not-paywall",
+      "token-bill-nobody-is-sending",
+      "introducing-fractal-semantic-graphs"
+    ],
+    "pages": [],
+    "sites": [
+      "https://en.wikipedia.org/wiki/Penny_press",
+      "https://www.pewresearch.org/journalism/fact-sheet/newspapers/",
+      "https://www.poynter.org/reporting-editing/2010/classified-ad-revenue-down-70-percent-in-10-years-with-one-bright-spot/",
+      "https://www.axios.com/2022/12/20/google-meta-duopoly-online-advertising",
+      "https://news.mit.edu/2018/study-twitter-false-news-travels-faster-true-stories-0308",
+      "https://www.pewresearch.org/short-reads/2021/07/13/u-s-newsroom-employment-has-fallen-26-since-2008/",
+      "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/402",
+      "https://blog.cloudflare.com/crawlers-click-ai-bots-training/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "The reader stopped being the customer in 1833. The reader became the audience that was sold to the customer, and the cover price became a way of proving the audience existed.",
+      "why": "The most important of the four corrections: the web did not make the reader the product, the penny press did."
+    },
+    {
+      "text": "The fix is to stop charging for the road and start charging for the cargo.",
+      "why": "The four eras end here: the money followed whoever owned distribution, so the proposal is to sell the evidence itself."
+    }
+  ]
+}

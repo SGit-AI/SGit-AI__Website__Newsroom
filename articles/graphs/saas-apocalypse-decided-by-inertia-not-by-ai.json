@@ -1,0 +1,228 @@
+{
+  "slug": "saas-apocalypse-decided-by-inertia-not-by-ai",
+  "teaser": "Incumbents and newcomers have the same AI; what separates them is how much past success each has to protect, so inertia decides which SaaS companies survive.",
+  "topics": [
+    "startups-and-strategy"
+  ],
+  "core_idea": "AI is available to both sides, so the SaaS apocalypse will be decided by inertia: where each company sits on the evolution axis and how much past success it has to protect.",
+  "nodes": [
+    {
+      "id": "the-claim",
+      "label": "The claim, stated so it can be wrong",
+      "kind": "claim",
+      "summary": "Most medium and large SaaS companies will struggle, spectacularly, in the medium term, as companies and individuals build more of what they actually want instead of renting an approximation of it."
+    },
+    {
+      "id": "ai-on-both-sides",
+      "label": "AI is available to both sides",
+      "kind": "claim",
+      "summary": "The incumbents have the same models the newcomers have, plus more data, more engineers and more money, and if the technology decided this they would already have won."
+    },
+    {
+      "id": "success-breeds-inertia",
+      "label": "Success breeds inertia",
+      "kind": "concept",
+      "summary": "Wardley's climatic pattern: the pre-existing installed base causes inertia to change, and it is almost always new entrants, unencumbered by past success, who initiate it."
+    },
+    {
+      "id": "nokia-twice",
+      "label": "Nokia, twice",
+      "kind": "example",
+      "summary": "Nokia met the mobile phone with nothing to protect and dominated for fifteen years; it met the iPhone with fifteen years of success to protect and was gone from the category within seven."
+    },
+    {
+      "id": "saaspocalypse-feb-2026",
+      "label": "The SaaSpocalypse of February 2026",
+      "kind": "example",
+      "summary": "Roughly $285 billion left the sector in about 48 hours after Anthropic shipped Claude Cowork plug-ins, and by September software stocks had rallied about 40% from the April low."
+    },
+    {
+      "id": "database-is-the-moat",
+      "label": "The database is the moat",
+      "kind": "claim",
+      "summary": "Investors decided the thing underneath was safe and quietly stopped defending the thing on top; that is not a rebuttal of the apocalypse, it is the apocalypse, priced."
+    },
+    {
+      "id": "users-never-happy",
+      "label": "Users were never happy",
+      "kind": "claim",
+      "summary": "91% of employees are frustrated with workplace technology, 80% of features are rarely or never used, and the average organisation wastes $21 million a year on unused licences."
+    },
+    {
+      "id": "excel-persistence",
+      "label": "The persistence of Excel",
+      "kind": "example",
+      "summary": "73% of companies prepare VAT returns in Excel; its persistence is the clearest evidence that SaaS failed users, because it is the one tool where they control the shape of the thing."
+    },
+    {
+      "id": "product-slid-right",
+      "label": "The SaaS product slid right",
+      "kind": "concept",
+      "summary": "On the map, what was a product is commoditising into a substrate, a database, a message bus, a state machine, on which higher-order things get built."
+    },
+    {
+      "id": "vibe-coding-as-briefs",
+      "label": "Vibe coding is writing good briefs",
+      "kind": "concept",
+      "summary": "Product owners were always describing the software they wanted; the loop from I want this to here it is was weeks or months, and is now minutes."
+    },
+    {
+      "id": "incumbents-cannot-build",
+      "label": "Why incumbents cannot simply do this",
+      "kind": "claim",
+      "summary": "SaaS companies never invested in non-functional requirements, engineers spend 42% of their time on maintenance and bad code, and only 19% of teams are elite performers."
+    },
+    {
+      "id": "the-irony",
+      "label": "The irony",
+      "kind": "claim",
+      "summary": "The things SaaS companies refused to build to protect their moats, portability, open schemas, a real API, data you can take out, are precisely the things an agent needs."
+    },
+    {
+      "id": "brief-is-not-a-product",
+      "label": "The brief is not a product",
+      "kind": "claim",
+      "summary": "The reason you bought SaaS was never the features but that the thing is maintained, and the person who vibe coded a replacement does not want to maintain it."
+    },
+    {
+      "id": "villager-companies",
+      "label": "Village and town-planner companies",
+      "kind": "concept",
+      "summary": "Businesses that take the finished brief and run it, maintain, secure, version and deploy it, paid by consumption rather than by the seat, where the handover is a file move plus a version bump."
+    },
+    {
+      "id": "more-engineers",
+      "label": "More engineers, not fewer",
+      "kind": "claim",
+      "summary": "We will need as many developers as now and probably more, because somebody has to read, harden and run the code, and larger human-agent teams become possible once communication can be scaled."
+    }
+  ],
+  "edges": [
+    {
+      "from": "the-claim",
+      "to": "success-breeds-inertia",
+      "rel": "depends-on"
+    },
+    {
+      "from": "ai-on-both-sides",
+      "to": "success-breeds-inertia",
+      "rel": "contrasts"
+    },
+    {
+      "from": "nokia-twice",
+      "to": "success-breeds-inertia",
+      "rel": "example-of"
+    },
+    {
+      "from": "saaspocalypse-feb-2026",
+      "to": "the-claim",
+      "rel": "example-of"
+    },
+    {
+      "from": "saaspocalypse-feb-2026",
+      "to": "database-is-the-moat",
+      "rel": "leads-to"
+    },
+    {
+      "from": "database-is-the-moat",
+      "to": "product-slid-right",
+      "rel": "extends"
+    },
+    {
+      "from": "users-never-happy",
+      "to": "the-claim",
+      "rel": "extends"
+    },
+    {
+      "from": "success-breeds-inertia",
+      "to": "users-never-happy",
+      "rel": "leads-to"
+    },
+    {
+      "from": "excel-persistence",
+      "to": "users-never-happy",
+      "rel": "example-of"
+    },
+    {
+      "from": "excel-persistence",
+      "to": "vibe-coding-as-briefs",
+      "rel": "compared-with"
+    },
+    {
+      "from": "vibe-coding-as-briefs",
+      "to": "the-claim",
+      "rel": "leads-to"
+    },
+    {
+      "from": "incumbents-cannot-build",
+      "to": "success-breeds-inertia",
+      "rel": "depends-on"
+    },
+    {
+      "from": "incumbents-cannot-build",
+      "to": "ai-on-both-sides",
+      "rel": "extends"
+    },
+    {
+      "from": "the-irony",
+      "to": "success-breeds-inertia",
+      "rel": "depends-on"
+    },
+    {
+      "from": "the-irony",
+      "to": "the-claim",
+      "rel": "leads-to"
+    },
+    {
+      "from": "brief-is-not-a-product",
+      "to": "vibe-coding-as-briefs",
+      "rel": "contrasts"
+    },
+    {
+      "from": "excel-persistence",
+      "to": "brief-is-not-a-product",
+      "rel": "leads-to"
+    },
+    {
+      "from": "brief-is-not-a-product",
+      "to": "villager-companies",
+      "rel": "leads-to"
+    },
+    {
+      "from": "villager-companies",
+      "to": "product-slid-right",
+      "rel": "depends-on"
+    },
+    {
+      "from": "villager-companies",
+      "to": "more-engineers",
+      "rel": "leads-to"
+    }
+  ],
+  "links": {
+    "articles": [],
+    "pages": [
+      "/demos/fractal-graphs/index.html"
+    ],
+    "sites": [
+      "https://saassentinel.com/2026/07/03/saaspocalypse-2026-what-happened-to-saas-and-where-the-market-stands-now/",
+      "https://www.freshworks.com/press-releases/survey-nine-in-10-employees-are-frustrated-by-their-workplace-technology/",
+      "https://www.pendo.io/resources/the-2019-feature-adoption-report/",
+      "https://zylo.com/news/2025-saas-management-index",
+      "https://blog.gardeviance.org/2016/08/doctrine.html",
+      "https://wardley-maps.sgit.ai/",
+      "https://stripe.com/files/reports/the-developer-coefficient.pdf",
+      "https://dora.dev/research/2024/dora-report/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "AI is not the deciding factor, because AI is available to both sides.",
+      "why": "The title's argument in one line: the variable both the panic and the recovery stared at was the wrong one."
+    },
+    {
+      "text": "The things SaaS companies refused to build, to protect their moats, are precisely the things an agent needs.",
+      "why": "The irony the article calls the whole piece in one paragraph: the moat is now what the customer's agent cannot get past."
+    }
+  ]
+}

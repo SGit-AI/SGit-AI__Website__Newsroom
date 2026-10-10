@@ -1,12 +1,32 @@
-# newsroom.sgit.ai — The Future of News
+# newsroom.sgit.ai: the SGit Newsroom
 
-News is failing not because there is too little information but because there is no
-walkable chain from a claim to its evidence, no way for a correction to reach what it
-disproved, and no way to pay the person who did the original work. A story is a graph
-that accumulates evidence, perspectives and confidence; every article, translation and
-infographic is a **projection** of it. **Sell the graph, not the paragraph.**
+The SGit Newsroom: one page, one argument, with the figures, the data and the links to check
+it. Since v0.6.0 (10 October 2026) this site is the newsroom first: the articles and the
+reader's own account, then the design the newsroom came from, then everything needed to run
+one like it. What it published before the newsroom ran is in `/archive/`, dated and kept at
+its original addresses.
 
 Live site: https://newsroom.sgit.ai (GitHub Pages, deployed from `dev`).
+
+## Since v0.6.0
+
+- `/` and `articles/`: **the newsroom**, imported from sgit.ai's built pages at the same
+  paths by `admin/build/sync_newsroom.py` until cutover. Never edit these by hand: fix them on
+  sgit.ai and re-sync. `validate.js` check 11 fails the build if an imported file changes.
+- `account/`, `subscribe/`, `meter/`: the reader's account, subscribe, and the SG Meter
+  library (imported with the newsroom).
+- `newsroom/`: how the newsroom runs: roles, behaviour policies, board, log (imported).
+- `design/`: the ideas, each beside what runs and what does not yet (`admin/build/hubs.py`).
+- `replicate/`: what someone can copy today to run a newsroom like this (`hubs.py`).
+- `shipped/`: what runs, what is designed, dated (`hubs.py`).
+- `archive/`: the index of everything archived (`admin/build/archive.py`, whose `GROUPS`
+  table decides what is archived and why).
+- `world-news-day/`: a running instance, built by its own `world-news-day/build/`.
+
+The plan, the collisions with sgit.ai, and the content audit behind all of this are in
+[`admin/notes/2026-10-10__newsroom-move-and-content-audit.md`](admin/notes/2026-10-10__newsroom-move-and-content-audit.md).
+The structure list below is the site as it was built in August and September; most of
+those sections are now archived.
 
 ## Structure
 
@@ -69,14 +89,20 @@ own provenance chain would refute the site on page one.
 ## Release process
 
 1. Bump `admin/build/version.txt` (vX.Y.Z, exactly once per release) and add a row to
-   `admin/versions.html`; update `admin/comms.html`.
-2. `python3 admin/build/chrome.py` — propagates the version badge and any nav/footer
-   change to every page, and stamps the version into `llms.txt` and `index.md`.
-3. `python3 governance/build/build.py` — regenerates `/governance/` from its JSON and
-   markdown (run before chrome.py if governance data or prose changed)
-4. `python3 governance/build/gates.py` — the section's own thirteen checks
-5. `node admin/build/validate.js`
-6. `git commit -am "site vX.Y.Z: ..." && git push origin dev`
+   `admin/versions.html`.
+2. `python3 admin/build/sync_newsroom.py --from <checkout of SGit-AI/SGit-AI__Website>`:
+   re-import the newsroom (only when sgit.ai has published since the last sync).
+3. Section builders, if their data or prose changed: `governance/build/build.py`,
+   `world-news-day/build/build.py`, and so on, each followed by its own `gates.py`.
+4. `python3 admin/build/hubs.py`: the design, replicate and shipped pages.
+5. `python3 admin/build/archive.py`: the archive notes and the archive index.
+6. `python3 admin/build/chrome.py`: nav, footer and version on every page, plus `llms.txt`
+   and `index.md`.
+7. `python3 admin/build/gen_sitemap.py` and `python3 admin/build/gen_llms_full.py`.
+8. `node admin/build/validate.js`
+9. `git commit -am "site vX.Y.Z: ..." && git push origin dev`
+
+Running steps 4 to 7 twice changes nothing; if a second run writes files, something is wrong.
 
 Every push to `dev` runs `.github/workflows/deploy-pages.yml`: validate → auto-tag
 (`vX.Y.Z`, verified against `version.txt` and the commit subject, next-minor enforced) →

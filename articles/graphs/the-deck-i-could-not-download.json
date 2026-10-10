@@ -1,0 +1,203 @@
+{
+  "slug": "the-deck-i-could-not-download",
+  "teaser": "One download offered as a subscription, an author paid nothing, and a design for the service the author would have chosen: vaults, keys, seven roles, 85% to the author.",
+  "topics": [
+    "startups-and-strategy",
+    "vaults-and-method"
+  ],
+  "core_idea": "A reader is sold a 30-day trial and a monthly subscription for a single presentation while the deck's author receives nothing, under an uploader agreement that grants a royalty-free, sublicensable licence to monetise and train models on the work; the platform persists through fifteen years of embeds and links, which is inertia; an author can ask today for counts and recipients under the right of access and, in some EU states, for revenues under the copyright transparency duty; and the service the author would have chosen can be built on this site's primitives: every author's decks in a vault the host cannot read, access decided by keys, decryption in the browser, an attested enclave for the one step that needs plaintext, seven separable roles, pay once with 85% to the author on a ledger they can recompute, provenance as the product; the plan is published as a vault with a working mock, with its economics worked and the card-fee floor stated as the hard row.",
+  "nodes": [
+    {
+      "id": "the-screen",
+      "label": "One download, one subscription decision",
+      "kind": "example",
+      "summary": "A 30-day trial then £10.99 a month ($11.99 in the US) for a single file, no one-off option unless the author switched a setting on, which was reported as off by default when the paywall arrived in September 2021."
+    },
+    {
+      "id": "what-the-author-agreed",
+      "label": "What the author agreed to",
+      "kind": "claim",
+      "summary": "The uploader agreement grants a royalty-free, sublicensable licence to monetise, charge for, advertise against and train models on the work, and does not entitle the author to any payment; the same company forbids users from training on the content."
+    },
+    {
+      "id": "three-complaints",
+      "label": "Three complaints, and the one that is not",
+      "kind": "claim",
+      "summary": "The reader is sold a subscription for one file; the author has no say and no share; the author does not know where the work went. The licence allows all of it, so the complaint is that the service the author would have chosen does not exist."
+    },
+    {
+      "id": "inertia",
+      "label": "Why it has not been replaced",
+      "kind": "claim",
+      "summary": "Fifteen years of embeds, backlinks and search ranking; about forty million visits a month, mostly from search; past success breeds inertia, and the authors' links are what the incumbent holds."
+    },
+    {
+      "id": "ask-today",
+      "label": "What an author can ask for today",
+      "kind": "method",
+      "summary": "Switch the download setting on; send a right-of-access request for the counts and the recipients, with the EDPB's derived-data guidance and the Court's ruling on naming recipients; in some EU states, the copyright transparency duty on all revenues generated; the UK did not implement it."
+    },
+    {
+      "id": "author-holds-keys",
+      "label": "The author holds the keys",
+      "kind": "method",
+      "summary": "Every author's decks in a vault the host cannot read; a publishing key bound to a passkey; a content key per deck; a read key for what is free; a receipt turned into a ten-minute key; a revocable grant; decryption in the browser; an enclave for the one step that needs plaintext."
+    },
+    {
+      "id": "seven-roles",
+      "label": "Seven roles, no single owner",
+      "kind": "method",
+      "summary": "Storage host, key service, unlock service, payments, identity and provenance, the front, add-ons; no party holds more than one of the content, the keys and the money; each can be provided per country, profession or company."
+    },
+    {
+      "id": "flows",
+      "label": "Read free, pay once, grant and revoke",
+      "kind": "method",
+      "summary": "A read is a count on the author's ledger; a one-off payment becomes a receipt the enclave turns into a short key; a grant is wrapped to a recipient and revoked by re-keying; a downloaded file is the reader's and the plan says so."
+    },
+    {
+      "id": "economics",
+      "label": "Near-zero marginal cost, and the card-fee floor",
+      "kind": "claim",
+      "summary": "Serving one author's shelf for a month costs less than the incumbent charges one reader for one download; the hard row is 1.5% plus 20p with a 30p minimum, which the plan states and gets under with wallets, batching and an open payments protocol."
+    },
+    {
+      "id": "the-split",
+      "label": "85% to the author, on a ledger they can recompute",
+      "kind": "claim",
+      "summary": "The platform's 15% pays the card fee and lives on top-ups, batching and add-ons at a 70% author share; the statement is reconciled to the author's ledger, never the reverse."
+    },
+    {
+      "id": "provenance-product",
+      "label": "What the service sells is provenance",
+      "kind": "claim",
+      "summary": "This file, with this hash, published by this person, bound to a key in tiers; a conference, an employer, a journalist and a reader each have a cheap question answered."
+    },
+    {
+      "id": "the-vault",
+      "label": "The plan as a vault with a working mock",
+      "kind": "artefact",
+      "summary": "Ten plan documents, the data, the right-of-access letter, a register of ten accepted risks, and an app of web components bundled for the vault host: the shelf, a deck page, the author's view, the roles, the flows, the economics, the rights."
+    },
+    {
+      "id": "exists-not",
+      "label": "What exists, and what does not",
+      "kind": "question",
+      "summary": "Vaults, read keys, lanes and browser decryption exist; the deck enclave, grants as a service, the receipt that becomes a key, the migration tool and a sub-five-pence rail for a person do not; step zero is the author's own 69 decks."
+    }
+  ],
+  "edges": [
+    {
+      "from": "the-screen",
+      "to": "what-the-author-agreed",
+      "rel": "leads-to"
+    },
+    {
+      "from": "what-the-author-agreed",
+      "to": "three-complaints",
+      "rel": "leads-to"
+    },
+    {
+      "from": "the-screen",
+      "to": "inertia",
+      "rel": "leads-to"
+    },
+    {
+      "from": "three-complaints",
+      "to": "ask-today",
+      "rel": "leads-to"
+    },
+    {
+      "from": "three-complaints",
+      "to": "author-holds-keys",
+      "rel": "leads-to"
+    },
+    {
+      "from": "inertia",
+      "to": "author-holds-keys",
+      "rel": "contrasts"
+    },
+    {
+      "from": "author-holds-keys",
+      "to": "seven-roles",
+      "rel": "depends-on"
+    },
+    {
+      "from": "author-holds-keys",
+      "to": "flows",
+      "rel": "produces"
+    },
+    {
+      "from": "seven-roles",
+      "to": "flows",
+      "rel": "depends-on"
+    },
+    {
+      "from": "flows",
+      "to": "economics",
+      "rel": "leads-to"
+    },
+    {
+      "from": "economics",
+      "to": "the-split",
+      "rel": "leads-to"
+    },
+    {
+      "from": "seven-roles",
+      "to": "provenance-product",
+      "rel": "produces"
+    },
+    {
+      "from": "author-holds-keys",
+      "to": "the-vault",
+      "rel": "example-of"
+    },
+    {
+      "from": "the-split",
+      "to": "the-vault",
+      "rel": "example-of"
+    },
+    {
+      "from": "the-vault",
+      "to": "exists-not",
+      "rel": "leads-to"
+    },
+    {
+      "from": "ask-today",
+      "to": "exists-not",
+      "rel": "leads-to"
+    }
+  ],
+  "links": {
+    "articles": [
+      "the-agent-team-as-it-runs",
+      "a-personal-agent-that-keeps-your-secrets",
+      "supply-chain-of-vaults",
+      "future-of-news-story-vault-not-paywall",
+      "how-news-got-here",
+      "saas-apocalypse-decided-by-inertia-not-by-ai"
+    ],
+    "pages": [
+      "demos/vaults/deck-vault/index.html",
+      "startups/business-plans.html",
+      "docs/credentials.html",
+      "security/index.html",
+      "docs/append-lane-messaging.html",
+      "docs/briefs/code-review-graphs-in-the-repository.html"
+    ],
+    "sites": [
+      "https://blog.gardeviance.org/2016/08/exploring-map.html",
+      "https://support.scribd.com/hc/en-us/articles/210129466-Uploader-Agreement-for-Scribd-and-Slideshare"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "A setting lives on a server and changes when the server's owner changes. A key lives with the author and is verified by anyone.",
+      "why": "The whole design in two sentences: access by keys, not by settings."
+    },
+    {
+      "text": "The right the platform reserves for itself it withholds from its users.",
+      "why": "The asymmetry in the terms on model training, stated without overstating the licence."
+    }
+  ]
+}

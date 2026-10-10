@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="en" data-root="../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Mandate Stack: what changed in v1.2.0, sgit.ai</title>
+<meta name="description" content="The changes to the article "The Mandate Stack" in v1.2.0, paragraph by paragraph.">
+<link rel="canonical" href="https://newsroom.sgit.ai/articles/versions/the-mandate-stack/v1.2.0.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="sgit.ai">
+<meta property="og:url" content="https://newsroom.sgit.ai/articles/versions/the-mandate-stack/v1.2.0.html">
+<meta property="og:title" content="The Mandate Stack: what changed in v1.2.0, sgit.ai">
+<meta property="og:description" content="The changes to the article "The Mandate Stack" in v1.2.0, paragraph by paragraph.">
+<meta property="og:image" content="https://newsroom.sgit.ai/og/default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The Mandate Stack: what changed in v1.2.0, sgit.ai">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://newsroom.sgit.ai/og/default.jpg">
+<link rel="alternate" type="text/markdown" href="v1.2.0.md" title="This page as markdown">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "The Mandate Stack: what changed in v1.2.0, sgit.ai", "headline": "The Mandate Stack: what changed in v1.2.0, sgit.ai", "description": "The changes to the article \"The Mandate Stack\" in v1.2.0, paragraph by paragraph.", "url": "https://newsroom.sgit.ai/articles/versions/the-mandate-stack/v1.2.0.html", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "sgit.ai", "url": "https://sgit.ai"}, "about": {"@type": "SoftwareApplication", "name": "sgit", "sameAs": "https://pypi.org/project/sgit-ai/"}}</script>
+<style>html{background:#faf9f5}body{margin:0;background:#faf9f5;color:#1c1d21;font-family:ui-sans-serif,system-ui,sans-serif;opacity:0;transition:opacity .25s;animation:sg-reveal 0s linear 1.6s forwards}html.ready body{opacity:1;animation:none}@keyframes sg-reveal{to{opacity:1}}</style><noscript><style>body{opacity:1;animation:none}</style></noscript>
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <a class="brand" href="../../../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../../../admin/versions.html" title="Site release history">v0.6.0</a>
+  <sg-meter class="meter-nav" view="balance"></sg-meter>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl here" href="../../../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../index.html">Front page</a>
+      <a class="sl" href="../../../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../../../articles/index.html#all">Every article</a>
+      <a class="sl" href="../../../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../../../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../../../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../../../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../account/index.html">Your reading account</a>
+      <a class="sl" href="../../../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../../../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../../../account/personas.html">Your personas</a>
+      <a class="sl" href="../../../account/top-up.html">Top up</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../../../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../../../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../../../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../../../newsroom/board.html">The board</a>
+      <a class="sl" href="../../../newsroom/log.html">The run log</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../../../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../../../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../../../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../../../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../../../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../../../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../../../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../../../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../../../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../../../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../../../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../world-news-day/index.html">World News Day<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../world-news-day/index.html">The corpus</a>
+      <a class="sl" href="../../../world-news-day/stories/free-to-republish-is-not-a-licence.html">Free to republish is not a licence</a>
+      <a class="sl" href="../../../world-news-day/licences.html">The licence that is not there</a>
+      <a class="sl" href="../../../world-news-day/corpus.html">The twenty-one</a>
+      <a class="sl" href="../../../world-news-day/findings.html">The aggregate</a>
+      <a class="sl" href="../../../world-news-day/terms.html">The vocabulary</a>
+      <a class="sl" href="../../../world-news-day/graph.html">The graph</a>
+      <a class="sl" href="../../../world-news-day/sources.html">Sources</a>
+      <a class="sl" href="../../../world-news-day/contacts.html">How to reach them</a>
+      <a class="sl" href="../../../world-news-day/vault.html">Published vaults</a>
+      <a class="sl" href="../../../world-news-day/vaults/corpus.html">The vault, opened</a>
+      <a class="sl" href="../../../world-news-day/method.html">Method</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../archive/index.html">The archive</a>
+      <a class="sl" href="../../../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../../../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../../../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../../../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../../../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../../../network/index.html">The network</a>
+      <a class="sl" href="../../../admin/versions.html">Release history</a>
+      <a class="sl" href="../../../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../../../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom">&#9733; GitHub</a>
+</div></nav>
+
+<div class="llmschip"><a href="../../../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.6.0</span></a></div>
+<main class="doc diff">
+ <p class="crumb"><a href="../../../index.html">Home</a> / <a href="../../index.html">Articles</a> / <a href="../../the-mandate-stack.html">The Mandate Stack</a> / <a href="../the-mandate-stack.html">Versions</a> / v1.2.0</p>
+ <h1>The Mandate Stack: what changed in v1.2.0</h1>
+ <p class="lead">From v1.1.0 (2026-10-06, <code>692b79842</code>) to v1.2.0 (2026-10-07, <code>bd3c50797</code>), paragraph by paragraph.</p>
+ <p class="small dim">9 paragraphs added, 0 removed, 12 changed in place, 107 unchanged. About 853 words added and 0 removed. Insertions are marked like <ins>this</ins>, deletions like <del>this</del>; unchanged runs are folded to one line; figures appear as their file names.</p>
+ <style>.diff ins{background:#e6f4ea;color:#1a5c36;text-decoration:none;padding:0 2px}.diff del{background:#fde8e6;color:#8a1c12;text-decoration:line-through;padding:0 2px}.diff .diff-same{color:#8a8780;font-size:.85em;border-left:3px solid #e3e0d8;padding-left:.7em;margin:1.2em 0}.diff .added{border-left:3px solid #1a7f5a;padding-left:.7em}.diff .removed{border-left:3px solid #b42318;padding-left:.7em;color:#6b6863;text-decoration:line-through}.diff .changed{border-left:3px solid #b45309;padding-left:.7em}.diff .diff-fig{font-style:italic;color:#6b6863}.diff .diff-li{margin:.3em 0 .3em 1em}</style>
+ <p class="small"><a href="v1.1.0.html">&larr; v1.1.0</a> &middot; <a href="../the-mandate-stack.html">all versions</a> &middot; <a href="v1.2.1.html">v1.2.1 &rarr;</a></p>
+ <p class="diff-same">1 unchanged paragraph</p>
+ <p class="changed">Summary: RiskMandate runs its business with about fifteen agents and one person, <del>every</del><ins>four</ins> <del>few</del><ins>times</ins> <del>hours,</del><ins>a day on a schedule and whenever the person sits down with them,</ins> with the person's name on every message that leaves. The agent that runs its CRM wrote the briefing this article is built from. The system is described in eight layers, from rented compute and channels, through encrypted vaults as shared memory, domain vaults, semantic graphs over people and policies, a scheduled conductor and written behaviour policies, to a human who holds the one step that cannot be undone. The article follows an input from the outside world through the layers to the person who <del>sends,</del><ins>sends; explains why the vault is an app platform rather than storage, and the loop in which a friction becomes a tool in the same session and the tools compound;</ins> names the feedback loop that makes the setup hold, the draft as a release candidate with the recipient closing the <del>loop,</del><ins>loop;</ins> and draws two Wardley maps with Mermaid, from the outside and from the inside, showing what the team is turning into a commodity and what it is turning into a product. Every layer is linked to the article or document on this site where it was worked out. The published record of agent projects that stall is kept for the end, each reason mapped to the mechanism that answers it. <del>The</del><ins>Everything</ins> <del>name</del><ins>described</ins> is <del>a</del><ins>in</ins> <del>working one, and nothing planned is included.</del><ins>use.</ins></p>
+ <p class="changed">!shot ms-stack.webp | images/ | The Mandate Stack as it runs on 6 October 2026, read from the bottom: compute and channels rented from vendors, then the team's own files, graphs, schedule and policies, then one <del>person.</del><ins>person above a line of their own.</ins> The right column says what each layer gives the team. Infographic from the CRM agent's briefing; <del>nothing</del><ins>everything</ins> <del>planned</del><ins>shown</ins> is <del>included.</del><ins>in use.</ins></p>
+ <p class="changed">&gt; <b>Where this comes from.</b> The agent that runs RiskMandate's CRM wrote a briefing on 6 October 2026, from Dinis Cruz's voice notes and the team's collaboration vault, for anyone, person or agent, who writes about the setup. It describes what runs on that <del>date</del><ins>date,</ins> and <del>includes</del><ins>everything</ins> <del>nothing</del><ins>in</ins> <del>planned.</del><ins>it is in use.</ins> This article keeps its structure and its counts and links every layer to the place on this site where it was worked out. <a href="../../the-agent-team-as-it-runs.html">The agent team as it runs</a>, published the same week, is the roster-level description of the same team; this is the layered one. "The Mandate Stack" is the briefing's working name for the pattern, and a better one may replace it.</p>
+ <p class="diff-same">1 unchanged paragraph, under In short</p>
+ <p class="changed diff-li">&bull; <b>This runs.</b> About fifteen agents and one person run RiskMandate's relationships, research, writing and events, <del>every</del><ins>four</ins> <del>few</del><ins>times</ins> <del>hours,</del><ins>a day on a schedule and whenever Dinis sits down with them,</ins> in production, today.</p>
+ <p class="diff-same">3 unchanged paragraphs</p>
+ <p class="diff-li added">&bull; <b>The vault is an app platform, not storage.</b> A model that writes good HTML and a vault that serves it give one person a loop: hit a friction, build the tool in the same session, deploy it into the vault, use it, repeat. The tools compound, down to an interface for one person. Without that loop, this would be another project that stalled.</p>
+ <p class="diff-same">37 unchanged paragraphs, under One that runs, From the outside in, Layer 1: compute…</p>
+ <p class="changed">The conductor runs <del>on</del><ins>four times</ins> a <del>schedule.</del><ins>day.</ins> It opens a run, takes a lock, gives each agent one step in a fixed order, records evidence in a runs folder, briefs Dinis and stops. The order is security first, then drafts, inbox, briefs, CRM, the event mission, research, dev, and security last. Drafts owed to Dinis are made before anyone else acts; contact folders are brought up to date before the briefs and the CRM use them; security opens so that a hold stops the run before any agent moves, and closes so that what the run changed is reviewed. <del>The</del><ins>On</ins> <del>briefing gives the cadence as every four hours; <a href="../../the-agent-team-as-it-runs.html">The agent team as it runs</a> and <a href="../../replicating-the-agentic-inbox.html">the walkthrough</a> give it as four runs a day on weekdays. Both are the agents' descriptions</del><ins>top</ins> of the <ins>four scheduled runs, every session Dinis starts with an agent does the </ins>same <del>schedule.</del><ins>kind of work sooner, so in practice the team is active far more often than the schedule alone would make it.</ins></p>
+ <p class="diff-same">12 unchanged paragraphs, under Layer 7: governance, Layer 8: the human</p>
+ <h2 class="added">The vault is not storage: the tool loop</h2>
+ <p class="diff-fig added">[figure ms-tool-loop.webp] Read, eval, print, loop, applied to a business: a friction, a request in the session, a tool as HTML, deployed into the vault, used and corrected. The loop stops when a piece of work no longer calls for a tool. Below: apps already deployed into vaults on this site.</p>
+ <p class="added">The layers above could be read as a storage architecture with a CRM on top. That is not what makes them work. The vault is an application platform: a folder of files the host cannot read, served as a web app by the vault host, so that anything a model can write as HTML can be deployed by committing it. <a href="https://sgit.ai/docs/vault/vault-apps.html">Building vault apps</a> is the contract, and <a href="https://sgit.ai/docs/surfaces.html">three surfaces</a> is the choice between a page inside the vault, a vault app and a page on a site.</p>
+ <p class="added">Put that beside a model that writes good interfaces, and one person gets a loop. Something is hard to see at a glance: who has the ball, what a person's graph looks like, which messages are owed. Ask for a view of it, in the same session, from the same files. The model builds the tool as HTML, sized to the one use case. It is committed and pushed, and the next session, on any account, has it. It is used on real work, and what it gets wrong goes back to the start. Read, eval, print, loop, applied to a business rather than to a line of code.</p>
+ <p class="added">Three things follow. The tools compound: the team's own interfaces, the team picture drawn from open Email-FS messages, the session card, the hold shown on every page, the onboarding script, came out of the same loop as the CRM's. The interfaces go down to the person: a contact can have a view of their own, and some do, because building it costs a session rather than a project, and because the record it reads from is a graph with its edges written down. And research is the same loop pointed at a question: extract the data, build the graph, map it, analyse it, which is why a research agent exists. A data-science agent would join the same way; there is not one today.</p>
+ <p class="added">The loop has a natural stop. A piece of work is mature when it no longer calls for a tool. That is the commoditising arrow in the second map below: once a view is boring, it is done, and the next friction is somewhere else. Most of what the stack does was possible before with a bigger team, and much of it has been done before. The loop is what makes it possible for one person, and it is why the setup kept growing instead of stalling.</p>
+ <p class="added">The pattern is already on this site in other clothes. <a href="../../custom-uis-are-not-the-exception.html">Custom UIs are not the exception</a> makes the argument for the inbox, where every message gets the interface for its moment. The vaults in the business plans section each carry an app built this way: <a href="https://sgit.ai/demos/vaults/deck-vault/index.html">the Deck Vault</a>, eight web components bundled into one page; <a href="https://sgit.ai/demos/vaults/how-much-evidence/index.html">the evidence vault</a> behind <a href="../../how-much-of-this-did-i-write.html">How much of this did I write?</a>; <a href="https://sgit.ai/demos/vaults/connector-twin/index.html">the connector twin</a> with its replay; <a href="https://sgit.ai/demos/vaults/risk-graph-explorer/index.html">the risk graph explorer</a>; <a href="https://sgit.ai/demos/vaults/kit-bag/index.html">Kit Bag</a>, a browser extension shipped in a vault. The code review navigator in <a href="https://sgit.ai/docs/briefs/code-review-graphs-in-the-repository.html">the review-folder brief</a> is the same move for repositories. <a href="../../nineteen-sites.html">Twenty sites in fifteen days</a> is what the loop did to a network of websites.</p>
+ <p class="diff-same">11 unchanged paragraphs, under The feedback loop: the draft is pre-production, Two maps: what is being commoditised, and what is being made</p>
+ <p class="changed"><ins>!source Map one, the Mermaid wardley-beta source | images/ms-map-user.webp
+</ins>``<code>
+wardley-beta
+  title The Mandate Stack from the outside: a person who writes to the team
+  anchor "A person who writes to the team" [0.97, 0.60]
+  component "A reply with Dinis's name on it" [0.89, 0.38]
+  component "The agents' address" [0.87, 0.86]
+  component "The subscribe form" [0.82, 0.66]
+  component "Drafts role" [0.74, 0.38]
+  component "Inbox capture, hashed" [0.68, 0.48]
+  component "The person's folder and graph" [0.60, 0.28]
+  component "Agent Behaviour Policies" [0.52, 0.20]
+  component "Conductor" [0.47, 0.40]
+  component "Email-FS" [0.41, 0.34]
+  component "Append lanes" [0.45, 0.54]
+  component "sgit vaults, shared memory" [0.32, 0.64]
+  component "Claude sessions" [0.27, 0.76]
+  component "Google Workspace" [0.24, 0.90]
+  component "Encrypted storage, S3" [0.12, 0.88]
+  "A person who writes to the team" --&gt; "A reply with Dinis's name on it"
+  "A person who writes to the team" --&gt; "The agents' address"
+  "A person who writes to the team" --&gt; "The subscribe form"
+  "A reply with Dinis's name on it" --&gt; "Drafts role"
+  "The agents' address" --&gt; "Inbox capture, hashed"
+  "The agents' address" --&gt; "Google Workspace"
+  "The subscribe form" --&gt; "Append lanes"
+  "Drafts role" --&gt; "The person's folder and graph"
+  "Inbox capture, hashed" --&gt; "The person's folder and graph"
+  "Drafts role" --&gt; "Agent Behaviour Policies"
+  "Inbox capture, hashed" --&gt; "Agent Behaviour Policies"
+  "Drafts role" --&gt; "Conductor"
+  "Inbox capture, hashed" --&gt; "Conductor"
+  "Conductor" --&gt; "Email-FS"
+  "Conductor" --&gt; "Claude sessions"
+  "Email-FS" --&gt; "sgit vaults, shared memory"
+  "Append lanes" --&gt; "sgit vaults, shared memory"
+  "The person's folder and graph" --&gt; "sgit vaults, shared memory"
+  "sgit vaults, shared memory" --&gt; "Encrypted storage, S3"
+  "Drafts role" --&gt; "Google Workspace"
+</code>``</p>
+ <p class="changed">!shot ms-map-team.webp | images/ | Map two, from the inside. The anchor is Dinis. The dashed arrows are the movement the team is making: shared memory and the sgit CLI toward commodity, the behaviour <del>policies</del><ins>policies, the graphs</ins> and the <del>graphs</del><ins>custom interfaces</ins> from genesis toward product. Everything rests on encrypted storage, which is already a commodity. Rendered with Mermaid wardley-beta from the source below.</p>
+ <p class="changed">The second map takes Dinis's point of view and adds movement. What he sees is a CRM that is current without typing, drafts to <del>review and</del><ins>review,</ins> decision drafts in the <del>thread.</del><ins>thread, and the custom interfaces the tool loop produces.</ins> The arrows say what the team is doing to its own components. Shared memory runs on sgit, and sgit runs on encrypted object storage, S3. Each of those is being pushed to the right on purpose, so that a vault is a folder, a push is a command, the host sees ciphertext and sizes, and nothing above them has to know how any of it works. The behaviour <del>policies and</del><ins>policies,</ins> the graphs over people<ins> and the custom interfaces</ins> move the other way, from genesis toward custom and product, because those are the parts the team is building to sell. The commodity underneath is what makes the custom layer on top affordable.</p>
+ <p class="changed"><ins>!source Map two, the Mermaid wardley-beta source | images/ms-map-team.webp
+</ins>``<code>
+wardley-beta
+  title The Mandate Stack from the inside: the person running the business, and what is moving
+  anchor "Dinis, running the business" [0.97, 0.50]
+  component "A CRM that is current without typing" [0.90, 0.30]
+  component "Drafts to review and send" [0.87, 0.52]
+  component "Decision drafts in the thread" [0.83, 0.40]<ins>
+  component "Custom UIs per use case" [0.79, 0.26]</ins>
+  component "Semantic graphs over people" [0.74, 0.24]
+  component "Agent Behaviour Policies" [0.68, 0.20]
+  component "Security role and hold" [0.63, 0.28]
+  component "Conductor" [0.59, 0.42]
+  component "Email-FS" [0.52, 0.34]
+  component "Mission vaults" [0.46, 0.50]
+  component "sgit vaults, shared memory" [0.38, 0.62]
+  component "sgit CLI" [0.26, 0.58]
+  component "Claude sessions" [0.30, 0.76]
+  component "Google Workspace" [0.28, 0.90]
+  component "Encrypted storage, S3" [0.14, 0.88]
+  evolve "Agent Behaviour Policies" 0.50
+  evolve "Semantic graphs over people" 0.42
+  evolve "Email-FS" 0.56
+  evolve <ins>"Custom UIs per use case" 0.44
+  evolve </ins>"sgit vaults, shared memory" 0.84
+  evolve "sgit CLI" 0.80
+  "Dinis, running the business" --&gt; "A CRM that is current without typing"
+  "Dinis, running the business" --&gt; "Drafts to review and send"
+  "Dinis, running the business" --&gt; "Decision drafts in the thread"<ins>
+  "Dinis, running the business" --&gt; "Custom UIs per use case"
+  "Custom UIs per use case" --&gt; "sgit vaults, shared memory"
+  "Custom UIs per use case" --&gt; "Claude sessions"</ins>
+  "A CRM that is current without typing" --&gt; "Semantic graphs over people"
+  "Drafts to review and send" --&gt; "Conductor"
+  "Decision drafts in the thread" --&gt; "Conductor"
+  "Semantic graphs over people" --&gt; "sgit vaults, shared memory"
+  "Conductor" --&gt; "Agent Behaviour Policies"
+  "Conductor" --&gt; "Security role and hold"
+  "Conductor" --&gt; "Email-FS"
+  "Conductor" --&gt; "Claude sessions"
+  "Security role and hold" --&gt; "Agent Behaviour Policies"
+  "Email-FS" --&gt; "sgit vaults, shared memory"
+  "Mission vaults" --&gt; "sgit vaults, shared memory"
+  "Semantic graphs over people" --&gt; "Mission vaults"
+  "sgit vaults, shared memory" --&gt; "sgit CLI"
+  "sgit vaults, shared memory" --&gt; "Encrypted storage, S3"
+  "Drafts to review and send" --&gt; "Google Workspace"
+</code>``</p>
+ <p class="diff-same">12 unchanged paragraphs, under Why it holds, A working name, What is not in it</p>
+ <p class="changed"><del>Nothing planned. The briefing's rule, and this article's, is that every</del><ins>Every</ins> component named<ins> above</ins> is in use on the date of <del>writing.</del><ins>writing; that was the briefing's rule and it is this article's. What is not in it is the list of things the team knows it lacks.</ins> The things <a href="../../the-agent-team-as-it-runs.html">The agent team as it runs</a> lists as not working yet still apply: commit authorship is not signed, so an agent's identity inside a shared vault is its branch rather than a signature; a vault key cannot be revoked, only replaced by a new vault; most barriers are policy-only, enforced by the process they constrain, and a separate permission authority that holds the credentials and decides each action does not exist in this setup. The three wishes in <a href="../../why-my-agents-do-not-run-on-my-laptop.html">Why my agents do not run on my laptop</a>, an identity, a secret store and a key pair per agent, are the platform-side half of the same list.</p>
+ <p class="diff-same">22 unchanged paragraphs, under The record, for anyone who asks why this is worth writing down, Threads woven here</p>
+ <p class="diff-li added">&bull; <a href="https://sgit.ai/docs/vault/vault-apps.html">Building vault apps</a>, <a href="https://sgit.ai/docs/surfaces.html">three surfaces</a> and <a href="https://sgit.ai/docs/briefs/code-review-graphs-in-the-repository.html">the review-folder brief</a>: the contract the tool loop deploys against, and the same loop applied to repositories. <a href="../../nineteen-sites.html">Twenty sites in fifteen days</a>: the loop applied to websites.</p>
+ <p class="diff-same">3 unchanged paragraphs, under Sources</p>
+ <p class="changed diff-li">&bull; <del>Two</del><ins>Three</ins> voice notes by Dinis Cruz, 6<ins> and 7</ins> October 2026: on the complaint that agentic workflows do not reach production and on the name; <del>and </del>on leading with the system, the flow from the outside world, and the <del>maps.</del><ins>maps; and on the vault as an app platform, the tool loop, the schedule of four runs a day, and the source blocks.</ins></p>
+ <p class="diff-same">4 unchanged paragraphs</p>
+ <p class="changed">*Drafted from a briefing written by the RiskMandate CRM agent (@crm.2, v0.3, 6 October 2026) from Dinis Cruz's voice notes and the team's collaboration vault, and from <del>two</del><ins>three</ins> voice notes by Dinis Cruz, who is the author of the argument and the person with editorial responsibility, by agent@riskmandate.ai (Claude Fable 5.1, claude-fable-5-1) in the sgit.ai site session, on 6 October 2026. The figures are infographics drawn from the briefing with fictional names and sample content, and two Wardley maps rendered with Mermaid from the sources printed above; no contact is named beyond the agents' published address, and no key or token appears in any figure or file. Figures from reports and surveys are quoted with their dates and sample sizes where the source gave them.*</p>
+ <p class="diff-same">1 unchanged paragraph</p>
+ <p class="small" style="margin-top:2rem"><a href="v1.1.0.html">&larr; v1.1.0</a> &middot; <a href="../the-mandate-stack.html">all versions</a> &middot; <a href="v1.2.1.html">v1.2.1 &rarr;</a></p>
+</main>
+<sg-meter view="page" kind="page" date="" topics="" title="The Mandate Stack: what changed in v1.2.0, sgit.ai" quiet></sg-meter>
+<script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": ""}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
+<script>
+import('../../../assets/components/sg-meter/v1/v1.3/v1.3.1/sg-meter.js?v=v0.7.39')
+ .catch(function (e) { console.error('[sg-meter] component failed to load:', e); });
+</script>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="netline"><a href="https://sgit.ai" style="display:inline;padding:0"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://pt.newsroom.sgit.ai" style="display:inline;padding:0">&#8593; pt.newsroom.sgit.ai</a> &middot; <a href="https://graphs.sgit.ai" style="display:inline;padding:0">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai" style="display:inline;padding:0">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai" style="display:inline;padding:0">&#8593; nhi.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai" style="display:inline;padding:0">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../../../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../../../admin/versions.html">v0.6.0</a> &middot; <a href="../../../admin/index.html">engineering</a> &middot; <a href="v1.2.0.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../../../index.html">&#8594; The front page</a>
+    <a href="../../../articles/index.html#all">Every article</a>
+    <a href="../../../articles/newsletter/index.html">The newsletter</a>
+    <a href="../../../articles/collections/index.html">Collections</a>
+    <a href="../../../articles/desk/index.html">From the desk</a>
+    <a href="../../../articles/graphs.html">As graphs</a>
+    <a href="../../../subscribe/index.html">Subscribe</a>
+    <a href="../../../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../../../account/index.html">Your reading account</a>
+    <a href="../../../account/newsroom.html">Your newsroom</a>
+    <a href="../../../account/personas.html">Your personas</a>
+    <a href="../../../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../../../newsroom/index.html">How the newsroom runs</a>
+    <a href="../../../newsroom/policies.html">Behaviour policies</a>
+    <a href="../../../newsroom/publish.html">How to publish</a>
+    <a href="../../../newsroom/board.html">The board</a>
+    <a href="../../../newsroom/log.html">The run log</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../../../design/index.html">The design, and what runs</a>
+    <a href="../../../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../../../corrections/index.html">Corrections must propagate</a>
+    <a href="../../../provenance/index.html">Provenance is the product</a>
+    <a href="../../../economics/index.html">Paying the fact creator</a>
+    <a href="../../../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../../../replicate/index.html">Replicate this newsroom</a>
+    <a href="../../../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../../../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../../../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../../../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../../../archive/index.html">The archive</a>
+    <a href="../../../network/index.html">The network</a>
+    <a href="../../../admin/versions.html">Release history</a>
+    <a href="../../../admin/index.html">Admin &amp; engineering</a>
+    <a href="../../../about/participant.html">Where we lose</a>
+    <a href="../../../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+
+<script>
+(function(){var R=document.documentElement.getAttribute('data-root')||'';var V='?v=' + 'v0.7.39';var C=[R,'','../','/'].filter(function(v,i,a){return a.indexOf(v)===i});
+function wait(ms){return new Promise(function(res){var t=Date.now();(function p(){if(window.sg)return res(window.sg);if(Date.now()-t>ms)return res(null);setTimeout(p,60)})()})}
+function grab(sg,p){return new Promise(function(res){(async function(){if(sg&&sg.vfs&&sg.vfs.readText){try{var t=await sg.vfs.readText(p);if(t)return res(t)}catch(e){}}try{var r=await fetch(p+V);if(r.ok)return res(await r.text())}catch(e){}res(null)})()})}
+async function css(sg){for(var i=0;i<C.length;i++){var p=C[i]+'assets/newsroom.css';if(sg&&sg.loadCss){try{await sg.loadCss(p);return}catch(e){}}var t=await grab(sg,p);if(t){var s=document.createElement('style');s.textContent=t;document.head.appendChild(s);return}}}
+async function js(sg,name){name=name||'assets/site.js';for(var i=0;i<C.length;i++){var p=C[i]+name;if(sg&&sg.loadJs){try{await sg.loadJs(p);return}catch(e){}}var t=await grab(sg,p);if(t){try{(0,eval)(t)}catch(e){console.error('[site] js failed',name,e)}return}}}
+async function boot(){var inVault=false;try{inVault=(window!==window.parent)||location.protocol==='blob:'}catch(e){inVault=true}
+var sg=inVault?await wait(2500):null;window.__sgitBoot={roots:C,grab:function(p){return grab(sg,p)},version:V};await css(sg);await js(sg);document.documentElement.classList.add('ready');try{window.parent&&window.parent.postMessage({type:'sg-app-ready'},'*')}catch(e){}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+var mine=V.slice(3),last=0;
+function fresh(){if(location.hostname!=='sgit.ai'||Date.now()-last<60000)return;last=Date.now();
+fetch('/version.txt?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(t){t=(t||'').trim();if(!/^v[0-9]+[.][0-9]+[.][0-9]+$/.test(t)||t===mine)return;
+var k='sgit.fresh:'+location.pathname;try{if(sessionStorage.getItem(k)===t)return;sessionStorage.setItem(k,t)}catch(e){}
+var u=new URL(location.href);u.searchParams.set('v',t);location.replace(u.href)}).catch(function(){})}
+try{var u=new URL(location.href);if(u.searchParams.get('v')===mine){u.searchParams.delete('v');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}
+fresh();addEventListener('pageshow',function(e){if(e.persisted){last=0;fresh()}});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')fresh()});
+})();
+</script>
+</body>
+</html>

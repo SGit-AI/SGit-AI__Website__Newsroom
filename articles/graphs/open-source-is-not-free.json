@@ -1,0 +1,162 @@
+{
+  "slug": "open-source-is-not-free",
+  "teaser": "An old iMac, the long tail of old versions that projects are not paid to support, measured from public data, and five ways to pay for it, simulated.",
+  "topics": [
+    "startups-and-strategy",
+    "vaults-and-method"
+  ],
+  "core_idea": "Open source is not free: somebody pays, at least in time. The long tail of old versions and old machines is measurable (6.99% of Homebrew macOS install events in 30 days, 16.66% in a year, are on versions older than the newest three) and projects drop it because it has no revenue stream, while vendors such as Oracle and Red Hat turn the same need into large, high-margin support businesses. Pence payments only work aggregated, because a 20p card fee dominates below about five pounds. Simulated over 10,000 draws for one project at Homebrew's scale, micro-paid supported builds cover the long-tail cost in half the draws at about 1.80 pounds a machine a year with typical conversion but never in nine in ten, donations in about a quarter, and customised builds for companies in 94%: the reliable money is companies paying for a build below their own cost of keeping the tool working, sold as value, not as a donation or a weaker free tier.",
+  "nodes": [
+    {
+      "id": "imac",
+      "label": "One old iMac",
+      "kind": "example",
+      "summary": "Intel iMac on Ventura: Chrome and Claude work; Homebrew and Docker Desktop do not; Python by hand."
+    },
+    {
+      "id": "not-free",
+      "label": "Open source is not free",
+      "kind": "claim",
+      "summary": "Somebody pays, at least in time; the long tail has no revenue stream back to the maintainers."
+    },
+    {
+      "id": "tail",
+      "label": "The long tail, measured",
+      "kind": "artefact",
+      "summary": "Homebrew: 6.99% (30 days) to 16.66% (365 days) of macOS install events on versions older than the newest three; PyPI: 18.55% of pip on end-of-life Python."
+    },
+    {
+      "id": "money",
+      "label": "Where money flows",
+      "kind": "concept",
+      "summary": "Oracle support $19.8bn, Red Hat subscriptions at about 93% margin, Windows 10 ESU, Ubuntu Pro, against about 0.09% of open source's value invested."
+    },
+    {
+      "id": "charge",
+      "label": "Charging has costs",
+      "kind": "concept",
+      "summary": "Docker's seat licence and the switch to alternatives, relicensing forks, dual licensing, gamed per-install rewards."
+    },
+    {
+      "id": "pence",
+      "label": "The pence problem",
+      "kind": "claim",
+      "summary": "A 20p card fee is 41.5% of 50p; pence payments need aggregation."
+    },
+    {
+      "id": "models",
+      "label": "Five models, simulated",
+      "kind": "method",
+      "summary": "Donations, seat licence, support rising with age, micro-paid builds, customised builds for companies; 10,000 seeded draws."
+    },
+    {
+      "id": "break-even",
+      "label": "Break-even near two pounds",
+      "kind": "artefact",
+      "summary": "About 1.80 pounds a machine a year covers the cost in half the draws with typical conversion; no price reaches nine in ten."
+    },
+    {
+      "id": "companies",
+      "label": "Customised builds for companies",
+      "kind": "method",
+      "summary": "Priced below the internal cost of keeping the tool working; covers the cost in 94% of draws."
+    },
+    {
+      "id": "satellites",
+      "label": "The satellites",
+      "kind": "concept",
+      "summary": "About 18 small support firms worldwide per project's pool; Rimini Street as the existence proof."
+    },
+    {
+      "id": "vault",
+      "label": "Long Tail Ledger vault",
+      "kind": "artefact",
+      "summary": "175 sourced facts, 36 labelled assumptions, the model in Python and in the browser, gated to agree exactly."
+    }
+  ],
+  "edges": [
+    {
+      "from": "imac",
+      "to": "not-free",
+      "rel": "example-of"
+    },
+    {
+      "from": "tail",
+      "to": "not-free",
+      "rel": "example-of"
+    },
+    {
+      "from": "money",
+      "to": "not-free",
+      "rel": "example-of"
+    },
+    {
+      "from": "charge",
+      "to": "money",
+      "rel": "contrasts"
+    },
+    {
+      "from": "pence",
+      "to": "models",
+      "rel": "leads-to"
+    },
+    {
+      "from": "models",
+      "to": "break-even",
+      "rel": "produces"
+    },
+    {
+      "from": "models",
+      "to": "companies",
+      "rel": "produces"
+    },
+    {
+      "from": "companies",
+      "to": "satellites",
+      "rel": "leads-to"
+    },
+    {
+      "from": "vault",
+      "to": "models",
+      "rel": "produces"
+    },
+    {
+      "from": "break-even",
+      "to": "not-free",
+      "rel": "answers"
+    }
+  ],
+  "links": {
+    "articles": [
+      "a-mac-of-the-agents-own",
+      "why-my-agents-do-not-run-on-my-laptop",
+      "a-meter-in-the-browser"
+    ],
+    "pages": [
+      "demos/vaults/long-tail-ledger/index.html"
+    ],
+    "sites": [
+      "https://open-source.sgit.ai/funding/index.html",
+      "https://open-source.sgit.ai/views/villagers.html",
+      "https://open-source.sgit.ai/views/open-core.html",
+      "https://diniscruz.ai/2025/04/02/the-future-of-news-monetization__embracing-micro-and-nano-payments.html",
+      "https://diniscruz.ai/2025/07/04/usage-based-billable-entities-aligning-saas-pricing-with-customer-usage.html",
+      "https://diniscruz.ai/2025/06/07/genai-legacy-code-refactoring-business-plan.html",
+      "https://docs.brew.sh/Support-Tiers"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "Open source is not free. Somebody is paying for it, even if what they pay with is only their time.",
+      "why": "The thesis."
+    },
+    {
+      "text": "Pence from individuals can make the long tail roughly self-funding. They cannot make it safe to depend on.",
+      "why": "What the break-even view shows."
+    },
+    {
+      "text": "The question was never whether somebody pays. It is whether the people who get the value have an easy way to pay for it.",
+      "why": "The conclusion."
+    }
+  ]
+}

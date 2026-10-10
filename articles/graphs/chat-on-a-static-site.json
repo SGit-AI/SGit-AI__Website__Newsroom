@@ -1,0 +1,204 @@
+{
+  "slug": "chat-on-a-static-site",
+  "teaser": "sgit.ai has no server, so its directory chat runs a local matcher by default, takes your own key as an opt-in, and leaves the vault bridge unbuilt.",
+  "topics": [
+    "site-and-engineering"
+  ],
+  "core_idea": "With no server to hold a key, a chat box on a static site has three honest tiers: a local matcher, a key in the reader's browser, or a vault app with a bridge, and only one of those is free.",
+  "nodes": [
+    {
+      "id": "static-site-constraint",
+      "label": "The constraint nobody can design around",
+      "kind": "concept",
+      "summary": "sgit.ai is a static site on GitHub Pages with no server, no session and no place to keep a secret, and every sibling on *.sgit.ai is the same."
+    },
+    {
+      "id": "catalogue",
+      "label": "The catalogue",
+      "kind": "artefact",
+      "summary": "Nineteen theses, summaries and categories, emitted at build time from the same data the cards and the table are built from."
+    },
+    {
+      "id": "tier-0-match",
+      "label": "Tier 0, match",
+      "kind": "method",
+      "summary": "A deterministic scorer runs in the browser against the catalogue of all nineteen sites and shows you which words it matched on."
+    },
+    {
+      "id": "no-credential-for-an-index",
+      "label": "A reader should never have to hold a credential to use an index",
+      "kind": "claim",
+      "summary": "The property that made the local matcher the default: it is instant, free, private, works offline and tells you why it chose."
+    },
+    {
+      "id": "tier-1-byok",
+      "label": "Tier 1, bring your own key",
+      "kind": "method",
+      "summary": "Paste an OpenRouter key and the browser calls the model directly, streaming, with the catalogue as the system prompt."
+    },
+    {
+      "id": "key-in-page-origin",
+      "label": "The key lives in this page's origin",
+      "kind": "concept",
+      "summary": "With no host there is no permission floor, so the key goes into localStorage and a fetch to openrouter.ai, and the page cannot protect it the way a vault app can."
+    },
+    {
+      "id": "fallback",
+      "label": "Degrade to what works",
+      "kind": "method",
+      "summary": "When the model call fails the panel falls back to Tier 0 and says so, because degrading to something that works beats an error message."
+    },
+    {
+      "id": "workbench-vault",
+      "label": "The SG/Vault workbench vault",
+      "kind": "example",
+      "summary": "The workbench vault already calls the same OpenRouter endpoint with the versioned sg-llm-request module, so the BYOK client reuses a proven pattern."
+    },
+    {
+      "id": "tier-2-bridge",
+      "label": "Tier 2, the bridge",
+      "kind": "method",
+      "summary": "Serve the directory as a vault app so the key lives in .vault/llm/config.json below the permission floor, the host makes the call and the app never sees the credential."
+    },
+    {
+      "id": "permission-floor",
+      "label": "Permission floor",
+      "kind": "concept",
+      "summary": "The line below which a vault host keeps the key, with an sg.llm API whose grants default to deny and a chat panel every existing vault app gets without being changed."
+    },
+    {
+      "id": "bridge-not-boundary",
+      "label": "The bridge protects your key, not all egress",
+      "kind": "claim",
+      "summary": "The bridge protects the credential you trusted it with; it does not yet stop a malicious app calling a provider with a credential of its own."
+    },
+    {
+      "id": "tool-calling-pane",
+      "label": "Ask this site",
+      "kind": "artefact",
+      "summary": "Ten days later every page carries a pane whose model is given seven tools that run in the page over an index the build emits, and the pane shows every call it made."
+    },
+    {
+      "id": "shared-component",
+      "label": "One site's copy, not a versioned module",
+      "kind": "question",
+      "summary": "The site-wide pane is still one site's copy rather than a versioned module the other eighteen sites can load, and that row decides whether this was worth doing."
+    },
+    {
+      "id": "routing-not-answering",
+      "label": "Routing, not teaching",
+      "kind": "claim",
+      "summary": "The panel points you at a site rather than answering questions about the subjects, because a summary that drifts from the arguments is worse than a link that does not."
+    }
+  ],
+  "edges": [
+    {
+      "from": "static-site-constraint",
+      "to": "tier-0-match",
+      "rel": "leads-to"
+    },
+    {
+      "from": "static-site-constraint",
+      "to": "key-in-page-origin",
+      "rel": "leads-to"
+    },
+    {
+      "from": "tier-0-match",
+      "to": "catalogue",
+      "rel": "depends-on"
+    },
+    {
+      "from": "tier-1-byok",
+      "to": "catalogue",
+      "rel": "depends-on"
+    },
+    {
+      "from": "tier-0-match",
+      "to": "no-credential-for-an-index",
+      "rel": "answers"
+    },
+    {
+      "from": "tier-1-byok",
+      "to": "key-in-page-origin",
+      "rel": "produces"
+    },
+    {
+      "from": "tier-1-byok",
+      "to": "fallback",
+      "rel": "leads-to"
+    },
+    {
+      "from": "fallback",
+      "to": "tier-0-match",
+      "rel": "depends-on"
+    },
+    {
+      "from": "workbench-vault",
+      "to": "tier-1-byok",
+      "rel": "example-of"
+    },
+    {
+      "from": "tier-1-byok",
+      "to": "tier-2-bridge",
+      "rel": "compared-with"
+    },
+    {
+      "from": "tier-2-bridge",
+      "to": "permission-floor",
+      "rel": "depends-on"
+    },
+    {
+      "from": "permission-floor",
+      "to": "key-in-page-origin",
+      "rel": "contrasts"
+    },
+    {
+      "from": "bridge-not-boundary",
+      "to": "permission-floor",
+      "rel": "extends"
+    },
+    {
+      "from": "tool-calling-pane",
+      "to": "tier-0-match",
+      "rel": "extends"
+    },
+    {
+      "from": "tool-calling-pane",
+      "to": "catalogue",
+      "rel": "depends-on"
+    },
+    {
+      "from": "tool-calling-pane",
+      "to": "shared-component",
+      "rel": "leads-to"
+    },
+    {
+      "from": "routing-not-answering",
+      "to": "catalogue",
+      "rel": "depends-on"
+    },
+    {
+      "from": "tool-calling-pane",
+      "to": "routing-not-answering",
+      "rel": "depends-on"
+    }
+  ],
+  "links": {
+    "articles": [],
+    "pages": [
+      "/network/index.html",
+      "/demos/vaults/index.html"
+    ],
+    "sites": []
+  },
+  "quotes": [
+    {
+      "text": "The important property: a reader should never have to hold a credential to use an index.",
+      "why": "The rule that makes the free local matcher the default rather than the model."
+    },
+    {
+      "text": "A chat box on one site is a feature. The same panel on all nineteen, reading each site's own catalogue, is the thing that makes a network of nineteen sites navigable, and it is why the catalogue is generated rather than written.",
+      "why": "Why the piece is about a network's navigation rather than one widget."
+    }
+  ]
+}

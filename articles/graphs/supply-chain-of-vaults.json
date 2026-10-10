@@ -1,0 +1,237 @@
+{
+  "slug": "supply-chain-of-vaults",
+  "teaser": "The food chain is a data problem: one encrypted vault per party, joined by append lanes and a typed graph, could cut the waste that keeps prices high.",
+  "topics": [
+    "vaults-and-method",
+    "startups-and-strategy"
+  ],
+  "core_idea": "The food chain is logistics, logistics is a data problem, and a supply chain of encrypted vaults with small custom tools built once by GenAI could bring the price of food down, if somebody runs the experiment.",
+  "nodes": [
+    {
+      "id": "food-pound",
+      "label": "The food pound",
+      "kind": "example",
+      "summary": "For a kilo of supermarket apples selling at £2.20, the grower's costs were 76p and their profit 3p."
+    },
+    {
+      "id": "spreadsheet-chain",
+      "label": "A chain of spreadsheets",
+      "kind": "claim",
+      "summary": "Each hop keeps its own record of the same consignment, mostly in spreadsheets, and an order, a delivery note, a grade, a price and a payment date are typed in five times."
+    },
+    {
+      "id": "food-loss",
+      "label": "Food lost before retail",
+      "kind": "example",
+      "summary": "The FAO puts the share of food lost between harvest and retail at 13.3% in 2023, and a good deal of it is information."
+    },
+    {
+      "id": "chokepoint",
+      "label": "The chokepoint",
+      "kind": "concept",
+      "summary": "Once a buyer holds a large share of a farm's output it names the price, which is the mechanism Giblin and Doctorow call a chokepoint."
+    },
+    {
+      "id": "regulation-limit",
+      "label": "The limit of regulation",
+      "kind": "claim",
+      "summary": "Codes of practice regulate the conduct of the party with the systems and leave the party without them exactly where it was."
+    },
+    {
+      "id": "logistics-is-data",
+      "label": "All of it is logistics",
+      "kind": "claim",
+      "summary": "Everything between the field and the shelf is a workflow, and logistics is a data problem before it is a transport problem."
+    },
+    {
+      "id": "supply-chain-of-vaults",
+      "label": "A supply chain of vaults",
+      "kind": "method",
+      "summary": "Every party in the chain holds its own encrypted, versioned vault, readable by nobody who does not hold a key, including the host."
+    },
+    {
+      "id": "append-lanes",
+      "label": "Append lanes",
+      "kind": "artefact",
+      "summary": "Write-only channels through which one party can put a file into another's vault without being able to read anything there."
+    },
+    {
+      "id": "typed-graph",
+      "label": "One graph across the vaults",
+      "kind": "concept",
+      "summary": "Each vault keeps its own vocabulary and typed edges join them, which is what makes waste visible."
+    },
+    {
+      "id": "genai-not-to-use-genai",
+      "label": "Use GenAI not to use GenAI",
+      "kind": "method",
+      "summary": "The model is used once, to turn a grower's brief into a working tool, and production runs on plain files with no model in the line."
+    },
+    {
+      "id": "villagers",
+      "label": "Villagers and town planners",
+      "kind": "concept",
+      "summary": "A small company takes the finished tool and runs it for a hundred other growers, paid because it keeps working rather than by the seat."
+    },
+    {
+      "id": "price-hypothesis",
+      "label": "The price hypothesis",
+      "kind": "question",
+      "summary": "The hypothesis is that a supply chain run this way brings the price of food and goods down, and the evidence is partial."
+    },
+    {
+      "id": "deflation-dogma",
+      "label": "The deflation dogma",
+      "kind": "claim",
+      "summary": "The BIS found the link between falling goods prices and lower growth to be weak, and a cheaper loaf because the chain wasted less is not a Japanese lost decade."
+    },
+    {
+      "id": "cost-of-not-sharing",
+      "label": "The cost of not sharing",
+      "kind": "claim",
+      "summary": "About 80% of industrial data is never used, and every grower who learns what a buyer will reject learns it alone."
+    },
+    {
+      "id": "open-weight-models",
+      "label": "Open-weight models",
+      "kind": "concept",
+      "summary": "Companies that build on open weights can run a near-frontier model inside their own environment and innovate on top of it."
+    },
+    {
+      "id": "the-experiment",
+      "label": "The experiment",
+      "kind": "question",
+      "summary": "Nobody has put a grower, a packer and a buyer on vaults and run a season through them, and this article is the brief for that experiment."
+    }
+  ],
+  "edges": [
+    {
+      "from": "food-pound",
+      "to": "chokepoint",
+      "rel": "example-of"
+    },
+    {
+      "from": "spreadsheet-chain",
+      "to": "food-loss",
+      "rel": "leads-to"
+    },
+    {
+      "from": "chokepoint",
+      "to": "spreadsheet-chain",
+      "rel": "depends-on"
+    },
+    {
+      "from": "regulation-limit",
+      "to": "chokepoint",
+      "rel": "depends-on"
+    },
+    {
+      "from": "regulation-limit",
+      "to": "supply-chain-of-vaults",
+      "rel": "compared-with"
+    },
+    {
+      "from": "logistics-is-data",
+      "to": "chokepoint",
+      "rel": "depends-on"
+    },
+    {
+      "from": "supply-chain-of-vaults",
+      "to": "logistics-is-data",
+      "rel": "depends-on"
+    },
+    {
+      "from": "supply-chain-of-vaults",
+      "to": "append-lanes",
+      "rel": "depends-on"
+    },
+    {
+      "from": "supply-chain-of-vaults",
+      "to": "typed-graph",
+      "rel": "depends-on"
+    },
+    {
+      "from": "typed-graph",
+      "to": "food-loss",
+      "rel": "answers"
+    },
+    {
+      "from": "genai-not-to-use-genai",
+      "to": "supply-chain-of-vaults",
+      "rel": "extends"
+    },
+    {
+      "from": "villagers",
+      "to": "genai-not-to-use-genai",
+      "rel": "depends-on"
+    },
+    {
+      "from": "price-hypothesis",
+      "to": "supply-chain-of-vaults",
+      "rel": "depends-on"
+    },
+    {
+      "from": "price-hypothesis",
+      "to": "deflation-dogma",
+      "rel": "contrasts"
+    },
+    {
+      "from": "open-weight-models",
+      "to": "cost-of-not-sharing",
+      "rel": "extends"
+    },
+    {
+      "from": "open-weight-models",
+      "to": "genai-not-to-use-genai",
+      "rel": "extends"
+    },
+    {
+      "from": "cost-of-not-sharing",
+      "to": "supply-chain-of-vaults",
+      "rel": "extends"
+    },
+    {
+      "from": "the-experiment",
+      "to": "price-hypothesis",
+      "rel": "answers"
+    },
+    {
+      "from": "supply-chain-of-vaults",
+      "to": "the-experiment",
+      "rel": "leads-to"
+    }
+  ],
+  "links": {
+    "articles": [
+      "introducing-fractal-semantic-graphs",
+      "saas-apocalypse-decided-by-inertia-not-by-ai"
+    ],
+    "pages": [
+      "/api/append-lanes.html",
+      "/docs/append-lane-messaging.html",
+      "/demos/vaults/company-xray/index.html",
+      "/demos/vaults/evidence-dispatch/index.html",
+      "/admin/versions.html"
+    ],
+    "sites": [
+      "https://www.bbc.co.uk/programmes/m0031vn4",
+      "https://www.sustainweb.org/reports/dec22-unpicking-food-prices/",
+      "https://www.fao.org/sustainable-development-goals-data-portal/data/indicators/1231-global-food-losses/en/",
+      "https://en.wikipedia.org/wiki/Chokepoint_Capitalism",
+      "https://www.supplychaindive.com/news/supply-chain-innovation-survey-BluJay-AdelanteSCM/530263/",
+      "https://www.mckinsey.com/industries/metals-and-mining/our-insights/succeeding-in-the-ai-supply-chain-revolution",
+      "https://www.bis.org/publ/qtrpdf/r_qt1503e.pdf",
+      "https://www.uscc.gov/sites/default/files/2026-03/Two_Loops--How_Chinas_Open_AI_Strategy_Reinforces_Its_Industrial_Dominance.pdf"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "Everything between the field and the shelf is a workflow, and every workflow is a set of records moving between parties.",
+      "why": "The step that turns a food price problem into a data problem the vaults can address."
+    },
+    {
+      "text": "What we never calculate is the economic cost of not sharing.",
+      "why": "The second memo's argument, that openness is the other half of the case."
+    }
+  ]
+}

@@ -1,0 +1,190 @@
+{
+  "slug": "the-behaviour-policy-is-the-business-logic",
+  "teaser": "Below the first rules, an agent's behaviour policy is the business: functions, processes, clients, values. Layered, owned, counted, and where vendors plug in.",
+  "topics": [
+    "agents-and-policy"
+  ],
+  "core_idea": "The first rules written for an agent are mechanical and vendors enforce them well, but every layer above them is the company's own business logic: how a function is done, the steps a process goes through, who a client is right now, and what the company is for; much of that logic was never written down because software enforced it by omission, and agents working through APIs bypass that; a behaviour policy built in layers, each refining the one below with its own owner, can hold it, can count how much of it is backed by a control, by an accepted risk or by hope, and gives vendors a written rule to enforce and a number to move, which is what lets the business hand work to agents and scale.",
+  "nodes": [
+    {
+      "id": "mechanics",
+      "label": "The bottom layers are mechanics",
+      "kind": "concept",
+      "summary": "Own account, secrets held by the platform, tools switched off, sending needs a person: boundaries vendors enforce well."
+    },
+    {
+      "id": "measured-gmail",
+      "label": "send_message ran with no prompt",
+      "kind": "example",
+      "summary": "The measured Gmail deployment: thirty tools, sending unprompted, trashing behind an approval. Mechanics need measuring."
+    },
+    {
+      "id": "business-layers",
+      "label": "Above the mechanics is the business",
+      "kind": "claim",
+      "summary": "Function, process, relationship and organisation layers, each a set of rules a manager would say out loud, each with its own owner."
+    },
+    {
+      "id": "vendor-catch",
+      "label": "Vendors cannot model each customer's business",
+      "kind": "claim",
+      "summary": "To scale they build what is the same for everybody; the business layers differ per company and are often unwritten."
+    },
+    {
+      "id": "software-was-law",
+      "label": "Software was the law",
+      "kind": "concept",
+      "summary": "Approval chains, RBAC and workflows encoded the rules; a missing button was a control."
+    },
+    {
+      "id": "api-bypass",
+      "label": "Agents work through the API, not the screen",
+      "kind": "claim",
+      "summary": "The rule the interface enforced by omission is no longer enforced unless it is written down."
+    },
+    {
+      "id": "fractal-policy",
+      "label": "Policies inside policies",
+      "kind": "method",
+      "summary": "Each layer refines the one below inside the room it allows, from tool permissions up to what the company is for."
+    },
+    {
+      "id": "abp-layers",
+      "label": "Shared facts, own formulas, declared bridges",
+      "kind": "concept",
+      "summary": "The ABP vocabulary's three layers: customers extend it in their own vault without changing the shared one."
+    },
+    {
+      "id": "three-states",
+      "label": "Control, accepted risk, or hope",
+      "kind": "method",
+      "summary": "Each rule is backed by a boundary, governed by a named acceptance with an expiry, or resting on hope; the counts are the finding."
+    },
+    {
+      "id": "worked-example",
+      "label": "Five, six and six of seventeen",
+      "kind": "example",
+      "summary": "In the fictional firm the platform layer is all control and the organisation layer all hope."
+    },
+    {
+      "id": "vendor-plug",
+      "label": "A vendor control moves one written rule",
+      "kind": "method",
+      "summary": "Send gateways, content checks, ledger approvals and blocked-recipient lists each move a rule from hope or acceptance to control."
+    },
+    {
+      "id": "aibcf-rg2",
+      "label": "Frameworks already ask for the description",
+      "kind": "artefact",
+      "summary": "AI BCF RG.2 asks that what an autonomous system does is described; AC.3 asks for a named owner."
+    },
+    {
+      "id": "skills",
+      "label": "The upper layers read like skills",
+      "kind": "claim",
+      "summary": "A skill says how; a policy layer says what is allowed, who owns it and what stands in the way. Together they codify the business."
+    },
+    {
+      "id": "next-real",
+      "label": "A real inbox, layered and counted",
+      "kind": "question",
+      "summary": "Write the upper layers above the measured Gmail deployment, publish the counts, then again with a vendor's control in the path."
+    }
+  ],
+  "edges": [
+    {
+      "from": "mechanics",
+      "to": "measured-gmail",
+      "rel": "depends-on"
+    },
+    {
+      "from": "mechanics",
+      "to": "business-layers",
+      "rel": "contrasts"
+    },
+    {
+      "from": "business-layers",
+      "to": "vendor-catch",
+      "rel": "leads-to"
+    },
+    {
+      "from": "software-was-law",
+      "to": "api-bypass",
+      "rel": "leads-to"
+    },
+    {
+      "from": "api-bypass",
+      "to": "business-layers",
+      "rel": "leads-to"
+    },
+    {
+      "from": "business-layers",
+      "to": "fractal-policy",
+      "rel": "leads-to"
+    },
+    {
+      "from": "fractal-policy",
+      "to": "abp-layers",
+      "rel": "depends-on"
+    },
+    {
+      "from": "fractal-policy",
+      "to": "three-states",
+      "rel": "produces"
+    },
+    {
+      "from": "worked-example",
+      "to": "three-states",
+      "rel": "example-of"
+    },
+    {
+      "from": "vendor-catch",
+      "to": "vendor-plug",
+      "rel": "answers"
+    },
+    {
+      "from": "three-states",
+      "to": "vendor-plug",
+      "rel": "leads-to"
+    },
+    {
+      "from": "aibcf-rg2",
+      "to": "business-layers",
+      "rel": "extends"
+    },
+    {
+      "from": "business-layers",
+      "to": "skills",
+      "rel": "compared-with"
+    },
+    {
+      "from": "three-states",
+      "to": "next-real",
+      "rel": "leads-to"
+    }
+  ],
+  "links": {
+    "articles": [
+      "six-agents-one-inbox",
+      "every-risk-is-already-accepted",
+      "introducing-fractal-semantic-graphs",
+      "ai-baseline-control-framework"
+    ],
+    "pages": [],
+    "sites": [
+      "https://riskmandate.ai/abp.html",
+      "https://abp.sgit.ai/gmail/measured/index.html",
+      "https://abp.sgit.ai/model/graph/layers/index.html"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "The rule that the user interface enforced by omission is no longer enforced, unless somebody writes it down and something enforces it.",
+      "why": "Why agents force business logic out of software and into policy."
+    },
+    {
+      "text": "A control attached to a written rule is worth more than one switched on in general, because the customer can see what it bought.",
+      "why": "Why the behaviour policy is a good integration point for vendors."
+    }
+  ]
+}

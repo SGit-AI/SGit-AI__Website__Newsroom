@@ -1,0 +1,217 @@
+{
+  "slug": "seven-vaults-one-method",
+  "teaser": "Publishing seven encrypted vaults in a fortnight produced a method, and every rule in it exists because something went wrong first.",
+  "topics": [
+    "vaults-and-method"
+  ],
+  "core_idea": "A repeatable method for publishing encrypted vaults, each rule learned by getting something wrong first, starting with classifying the credential before it touches anything.",
+  "nodes": [
+    {
+      "id": "classify-credential",
+      "label": "Classify the credential",
+      "kind": "method",
+      "summary": "Classify the credential before it touches anything, because three of the seven vaults arrived as a vault key described as a read key."
+    },
+    {
+      "id": "vault-key",
+      "label": "Vault key",
+      "kind": "concept",
+      "summary": "A vault key is write access, and because it is also the address and the encryption root there is no revocation, no rotation, and no undo."
+    },
+    {
+      "id": "read-key",
+      "label": "Read key",
+      "kind": "concept",
+      "summary": "A read key is 64 hex characters, derived one-way from a vault key, and safe to publish."
+    },
+    {
+      "id": "check-credential-script",
+      "label": "check_credential.py",
+      "kind": "artefact",
+      "summary": "A script that classifies a credential by shape, exits 0 for publishable and 1 for stop, and never echoes what it was given."
+    },
+    {
+      "id": "release-validator",
+      "label": "Release validator tripwire",
+      "kind": "artefact",
+      "summary": "The release validator scans every tracked file for any key-shaped string and for the actual passphrases, and has caught its own author three times."
+    },
+    {
+      "id": "derive-rather-than-refuse",
+      "label": "Derive rather than refuse",
+      "kind": "method",
+      "summary": "A submission that cannot be published can still become one that can, by deriving the read key and putting the vault key in a gitignored tier."
+    },
+    {
+      "id": "strictly-less-capability",
+      "label": "Strictly less capability",
+      "kind": "claim",
+      "summary": "The whole shape of the project is a capability you can hand over that is strictly less than the one you hold, with the reduction enforced by mathematics rather than by policy."
+    },
+    {
+      "id": "audit-with-published-key",
+      "label": "Audit with the key you publish",
+      "kind": "method",
+      "summary": "Audit every file with exactly the credential a reader will have, not with the vault key."
+    },
+    {
+      "id": "sealed-llm-credential",
+      "label": "Sealed LLM credential check",
+      "kind": "example",
+      "summary": "One vault carried a sealed LLM credential, and attempting to open it with the published read key got InvalidTag from AES-GCM, so no budget was exposed."
+    },
+    {
+      "id": "risk-graph-explorer",
+      "label": "Risk Graph Explorer",
+      "kind": "artefact",
+      "summary": "The sixth vault was public by design, with its own PUBLIC.md whose third rule, no metered capability behind a published read key, was adopted into the guidance."
+    },
+    {
+      "id": "drive-real-product",
+      "label": "Capture evidence by driving the real product",
+      "kind": "method",
+      "summary": "Every screenshot is taken by opening the actual vault in a real browser with the published read key, and the rig grew an appProbe step to ask the app what its elements are called."
+    },
+    {
+      "id": "describe-show-admit",
+      "label": "Describe, show, then admit",
+      "kind": "method",
+      "summary": "Every vault page ends with what the vault does not do, as a section with the same weight as the features."
+    },
+    {
+      "id": "publishing-playbook",
+      "label": "Publishing playbook",
+      "kind": "artefact",
+      "summary": "The method is written down as a playbook aimed at another site's agent rather than at us, which was the real test of whether it was a method or just a habit."
+    },
+    {
+      "id": "honest-ledger",
+      "label": "The honest ledger",
+      "kind": "claim",
+      "summary": "Three vault keys caught, one budget exposure checked and cleared, one upstream rule adopted, and three bugs found by testing rather than assumption."
+    }
+  ],
+  "edges": [
+    {
+      "from": "classify-credential",
+      "to": "check-credential-script",
+      "rel": "produces"
+    },
+    {
+      "from": "check-credential-script",
+      "to": "vault-key",
+      "rel": "depends-on"
+    },
+    {
+      "from": "check-credential-script",
+      "to": "read-key",
+      "rel": "depends-on"
+    },
+    {
+      "from": "vault-key",
+      "to": "read-key",
+      "rel": "contrasts"
+    },
+    {
+      "from": "release-validator",
+      "to": "check-credential-script",
+      "rel": "extends"
+    },
+    {
+      "from": "derive-rather-than-refuse",
+      "to": "classify-credential",
+      "rel": "extends"
+    },
+    {
+      "from": "derive-rather-than-refuse",
+      "to": "read-key",
+      "rel": "depends-on"
+    },
+    {
+      "from": "derive-rather-than-refuse",
+      "to": "strictly-less-capability",
+      "rel": "example-of"
+    },
+    {
+      "from": "audit-with-published-key",
+      "to": "read-key",
+      "rel": "depends-on"
+    },
+    {
+      "from": "sealed-llm-credential",
+      "to": "audit-with-published-key",
+      "rel": "example-of"
+    },
+    {
+      "from": "risk-graph-explorer",
+      "to": "audit-with-published-key",
+      "rel": "leads-to"
+    },
+    {
+      "from": "drive-real-product",
+      "to": "honest-ledger",
+      "rel": "leads-to"
+    },
+    {
+      "from": "sealed-llm-credential",
+      "to": "honest-ledger",
+      "rel": "leads-to"
+    },
+    {
+      "from": "classify-credential",
+      "to": "honest-ledger",
+      "rel": "leads-to"
+    },
+    {
+      "from": "publishing-playbook",
+      "to": "classify-credential",
+      "rel": "depends-on"
+    },
+    {
+      "from": "publishing-playbook",
+      "to": "audit-with-published-key",
+      "rel": "depends-on"
+    },
+    {
+      "from": "publishing-playbook",
+      "to": "drive-real-product",
+      "rel": "depends-on"
+    },
+    {
+      "from": "publishing-playbook",
+      "to": "describe-show-admit",
+      "rel": "depends-on"
+    },
+    {
+      "from": "describe-show-admit",
+      "to": "strictly-less-capability",
+      "rel": "extends"
+    }
+  ],
+  "links": {
+    "articles": [],
+    "pages": [
+      "/demos/vaults/algarve-may-2026/index.html",
+      "/demos/vaults/field-notes/index.html",
+      "/demos/vaults/supplement-stack/index.html",
+      "/demos/vaults/risk-mandate/index.html",
+      "/demos/vaults/agentic-browser-isolation/index.html",
+      "/demos/vaults/risk-graph-explorer/index.html",
+      "/catalogue/index.html",
+      "/demos/vaults/publishing.html",
+      "/docs/limitations.html",
+      "/compare/index.html"
+    ],
+    "sites": []
+  },
+  "quotes": [
+    {
+      "text": "Which is the point: a rule that only catches other people is not a rule.",
+      "why": "The tripwire catching its own author is what turns a habit into a control."
+    },
+    {
+      "text": "A published vault is an argument that this way of working is sound; an argument that omits its own edges is a brochure.",
+      "why": "The reason every vault page ends with what the vault does not do."
+    }
+  ]
+}

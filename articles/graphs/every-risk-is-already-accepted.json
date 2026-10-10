@@ -1,0 +1,229 @@
+{
+  "slug": "every-risk-is-already-accepted",
+  "teaser": "A risk exists the moment the exposure does, so somebody is already carrying it; the only questions worth asking are who has accepted it and until when.",
+  "topics": [
+    "agents-and-policy",
+    "graphs-and-knowledge"
+  ],
+  "core_idea": "Every risk an organisation has is already accepted by somebody, so the only questions are who has accepted it and until when; a register that cannot answer them, on facts, is disconnected from reality.",
+  "nodes": [
+    {
+      "id": "already-accepted",
+      "label": "Every risk is already accepted",
+      "kind": "claim",
+      "summary": "A risk exists the moment the exposure does, so the organisation is carrying it from the start, signed for or not."
+    },
+    {
+      "id": "no-deny-button",
+      "label": "There is no deny button",
+      "kind": "claim",
+      "summary": "You cannot vote a fact out of existence, and a register that lets you reject a risk lets you pretend."
+    },
+    {
+      "id": "three-doors",
+      "label": "Three doors",
+      "kind": "method",
+      "summary": "Accept it personally for a stated interval, fund the work that reduces it, or fix it so the facts that make it true stop holding; silence is not a fourth door."
+    },
+    {
+      "id": "unaccepted-is-critical",
+      "label": "Unaccepted is critical",
+      "kind": "claim",
+      "summary": "A risk nobody has accepted rests on whoever is nearest and rolls upward to their boss, and then to theirs, until somebody signs."
+    },
+    {
+      "id": "interval-ladder",
+      "label": "The interval is the decision",
+      "kind": "method",
+      "summary": "One hour means more data, four hours is a priority-one incident, one month is assemble and fund, and six months is do nothing and review it then, with a name on it."
+    },
+    {
+      "id": "accepted-not-acceptable",
+      "label": "Accepted is not acceptable",
+      "kind": "concept",
+      "summary": "Accepted is an act by a named person on a date for an interval; acceptable is a threshold, and the dangerous state is a risk over the line that nobody has signed for."
+    },
+    {
+      "id": "eu-ai-act-article-9",
+      "label": "EU AI Act, Article 9(5)",
+      "kind": "example",
+      "summary": "Providers of high-risk AI systems must have residual risk judged to be acceptable, and the Act never defines the word."
+    },
+    {
+      "id": "every-risk-has-a-boss",
+      "label": "Every risk has a boss",
+      "kind": "claim",
+      "summary": "Every risk has a holder, every holder has a boss, and every path ends at the board, computed rather than reported, and nobody can accept on anybody else's behalf."
+    },
+    {
+      "id": "risk-graph-explorer",
+      "label": "Risk Graph Explorer",
+      "kind": "artefact",
+      "summary": "A vault that computes what each role is assigned and what arrives through it, so no risk is orphaned and nobody at the top is surprised."
+    },
+    {
+      "id": "fractal-risk-register",
+      "label": "From the board to the bytes",
+      "kind": "concept",
+      "summary": "A board line such as loss of customer funds opens into business, operational and technical risks, each with its own holder and vocabulary, down to the configuration file."
+    },
+    {
+      "id": "established-ended-by-facts",
+      "label": "Established by facts, ended by facts",
+      "kind": "method",
+      "summary": "Every risk names the facts that make it true and the facts that would end it, so it ships with its own falsification condition."
+    },
+    {
+      "id": "one-risk-six-weeks",
+      "label": "One risk, six weeks",
+      "kind": "example",
+      "summary": "An agent's irreversible production writes are accepted for two weeks, expire with the action undone, escalate, are funded, materialise as an incident and cease on day 42 on evidence."
+    },
+    {
+      "id": "vault-per-risk",
+      "label": "A vault per risk",
+      "kind": "artefact",
+      "summary": "Each material risk deserves a vault as its evidence pack, keeping every fact, acceptance, escalation and incident, readable by each audience with its own key."
+    },
+    {
+      "id": "executive-resistance",
+      "label": "Why people resist",
+      "kind": "concept",
+      "summary": "Executives resist giving risk owners an acceptance workflow because they understand it would change their job, which makes this a change programme rather than a feature."
+    },
+    {
+      "id": "fits-alongside-grc",
+      "label": "It fits alongside every GRC platform",
+      "kind": "claim",
+      "summary": "The model reads the register from the platform and writes back what the platform lacks: who accepted, until when, what happens at expiry, and a link to the evidence."
+    }
+  ],
+  "edges": [
+    {
+      "from": "already-accepted",
+      "to": "no-deny-button",
+      "rel": "depends-on"
+    },
+    {
+      "from": "no-deny-button",
+      "to": "three-doors",
+      "rel": "leads-to"
+    },
+    {
+      "from": "three-doors",
+      "to": "unaccepted-is-critical",
+      "rel": "leads-to"
+    },
+    {
+      "from": "three-doors",
+      "to": "interval-ladder",
+      "rel": "depends-on"
+    },
+    {
+      "from": "accepted-not-acceptable",
+      "to": "already-accepted",
+      "rel": "extends"
+    },
+    {
+      "from": "eu-ai-act-article-9",
+      "to": "accepted-not-acceptable",
+      "rel": "example-of"
+    },
+    {
+      "from": "unaccepted-is-critical",
+      "to": "every-risk-has-a-boss",
+      "rel": "depends-on"
+    },
+    {
+      "from": "risk-graph-explorer",
+      "to": "every-risk-has-a-boss",
+      "rel": "example-of"
+    },
+    {
+      "from": "fractal-risk-register",
+      "to": "every-risk-has-a-boss",
+      "rel": "extends"
+    },
+    {
+      "from": "fractal-risk-register",
+      "to": "established-ended-by-facts",
+      "rel": "depends-on"
+    },
+    {
+      "from": "risk-graph-explorer",
+      "to": "established-ended-by-facts",
+      "rel": "example-of"
+    },
+    {
+      "from": "one-risk-six-weeks",
+      "to": "three-doors",
+      "rel": "example-of"
+    },
+    {
+      "from": "one-risk-six-weeks",
+      "to": "interval-ladder",
+      "rel": "example-of"
+    },
+    {
+      "from": "one-risk-six-weeks",
+      "to": "established-ended-by-facts",
+      "rel": "example-of"
+    },
+    {
+      "from": "vault-per-risk",
+      "to": "established-ended-by-facts",
+      "rel": "depends-on"
+    },
+    {
+      "from": "vault-per-risk",
+      "to": "fractal-risk-register",
+      "rel": "extends"
+    },
+    {
+      "from": "executive-resistance",
+      "to": "no-deny-button",
+      "rel": "contrasts"
+    },
+    {
+      "from": "one-risk-six-weeks",
+      "to": "fits-alongside-grc",
+      "rel": "leads-to"
+    },
+    {
+      "from": "fits-alongside-grc",
+      "to": "executive-resistance",
+      "rel": "answers"
+    }
+  ],
+  "links": {
+    "articles": [
+      "introducing-fractal-semantic-graphs"
+    ],
+    "pages": [
+      "/demos/vaults/risk-acceptance/index.html",
+      "/demos/vaults/risk-graph-explorer/views/index.html",
+      "/demos/vaults/risk-graph-explorer/index.html",
+      "/startups/business-plans.html"
+    ],
+    "sites": [
+      "https://risks.sgit.ai/",
+      "https://risks.sgit.ai/acceptable/",
+      "https://riskmandate.ai/",
+      "https://riskmandate.ai/acceptable.html",
+      "https://graphs.sgit.ai/v1/docs/fractal-risk-registers.html",
+      "https://twins.sgit.ai/actors/index.html",
+      "https://eur-lex.europa.eu/eli/reg/2024/1689/oj",
+      "https://artificialintelligenceact.eu/article/9/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "Every acceptance is for an interval, and the interval is not a detail of the decision.",
+      "why": "The interval ladder is the model's working part: each length names a different response."
+    },
+    {
+      "text": "Nothing in the row is wrong. It just never learned that the risk was accepted twice, expired once, escalated, funded, materialised as an incident, and ended.",
+      "why": "The air gap between a register and reality, shown on one row at one moment."
+    }
+  ]
+}

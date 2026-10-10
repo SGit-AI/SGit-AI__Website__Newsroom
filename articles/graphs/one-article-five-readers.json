@@ -1,0 +1,220 @@
+{
+  "slug": "one-article-five-readers",
+  "teaser": "Write the article first, then send five agent readers through it: a catalogue, an ontology and maps, the arc, two minutes, and a deck.",
+  "topics": [
+    "news-and-evidence",
+    "graphs-and-knowledge"
+  ],
+  "core_idea": "Long, evidence-rich articles are hard to consume, and the answer is not shorter articles but extraction after the writing: the prose stays the source because writing is how the argument is found, and five agent readers with defined roles then produce other views of it, two building the platform (a Librarian that catalogues every item with its verbatim anchor, a Cartographer that builds an ontology at article, topic and site altitude and draws the maps) and three writing for a person (a Historian on what the article added and where it sits, an Explainer in two minutes, a Storyteller as a deck); run on five articles it catalogued 662 items, flagged 32 problems in published text, merged ideas named differently across articles, and measured each article's contribution as new concepts falling 17, 11, 5, 11, 1.",
+  "nodes": [
+    {
+      "id": "hard-to-consume",
+      "label": "Deep articles are hard to consume",
+      "kind": "claim",
+      "summary": "Five articles of 2,200 to 5,100 words: good sources, hard reading."
+    },
+    {
+      "id": "prose-first",
+      "label": "The prose comes first",
+      "kind": "claim",
+      "summary": "Writing is how the argument is found; every other view is extracted afterwards."
+    },
+    {
+      "id": "five-readers",
+      "label": "Five readers",
+      "kind": "concept",
+      "summary": "Agents with roles: Librarian, Cartographer, Historian, Explainer, Storyteller."
+    },
+    {
+      "id": "platform",
+      "label": "Platform readers build the graph",
+      "kind": "concept",
+      "summary": "Librarian and Cartographer: catalogue, ontology and maps."
+    },
+    {
+      "id": "context",
+      "label": "Context readers write for a person",
+      "kind": "concept",
+      "summary": "Historian, Explainer, Storyteller: deliberately short."
+    },
+    {
+      "id": "anchor",
+      "label": "Every item anchored verbatim",
+      "kind": "method",
+      "summary": "Each catalogued item carries the sentence it came from, checked by script."
+    },
+    {
+      "id": "altitudes",
+      "label": "Ontology at three altitudes",
+      "kind": "method",
+      "summary": "Article, topic and site, one grammar, every edge citing catalogue items."
+    },
+    {
+      "id": "flags",
+      "label": "32 problems flagged",
+      "kind": "example",
+      "summary": "Totals that do not add up, counts longer than lists, claims unsupported in the text."
+    },
+    {
+      "id": "merges",
+      "label": "Same idea, different names",
+      "kind": "example",
+      "summary": "Expectation and hope; second reader and maker-checker; one method under five names."
+    },
+    {
+      "id": "contribution",
+      "label": "New concepts: 17, 11, 5, 11, 1",
+      "kind": "example",
+      "summary": "What each article brought, measured from the graph."
+    },
+    {
+      "id": "new-is-relative",
+      "label": "New to the set is not new to the site",
+      "kind": "claim",
+      "summary": "The Historian found earlier articles introduced several 'new' concepts: the case for a site altitude."
+    },
+    {
+      "id": "views-on-page",
+      "label": "Read it another way",
+      "kind": "artefact",
+      "summary": "The five views on each article page and in its markdown twin."
+    },
+    {
+      "id": "vault",
+      "label": "The Article Views vault",
+      "kind": "artefact",
+      "summary": "Roles, catalogues, ontology, maps, notes, decks, tools and an app."
+    },
+    {
+      "id": "image-pass",
+      "label": "Image prompts not yet run",
+      "kind": "question",
+      "summary": "Decks are code-drawn; image-model prompts are written and need a key."
+    },
+    {
+      "id": "round-trip",
+      "label": "Feedback written, not applied",
+      "kind": "question",
+      "summary": "The Cartographer's merges and splits await the second Librarian pass."
+    }
+  ],
+  "edges": [
+    {
+      "from": "hard-to-consume",
+      "to": "prose-first",
+      "rel": "leads-to"
+    },
+    {
+      "from": "prose-first",
+      "to": "five-readers",
+      "rel": "leads-to"
+    },
+    {
+      "from": "five-readers",
+      "to": "platform",
+      "rel": "produces"
+    },
+    {
+      "from": "five-readers",
+      "to": "context",
+      "rel": "produces"
+    },
+    {
+      "from": "platform",
+      "to": "anchor",
+      "rel": "depends-on"
+    },
+    {
+      "from": "platform",
+      "to": "altitudes",
+      "rel": "produces"
+    },
+    {
+      "from": "context",
+      "to": "platform",
+      "rel": "depends-on"
+    },
+    {
+      "from": "anchor",
+      "to": "flags",
+      "rel": "produces"
+    },
+    {
+      "from": "altitudes",
+      "to": "merges",
+      "rel": "produces"
+    },
+    {
+      "from": "altitudes",
+      "to": "contribution",
+      "rel": "produces"
+    },
+    {
+      "from": "contribution",
+      "to": "new-is-relative",
+      "rel": "leads-to"
+    },
+    {
+      "from": "new-is-relative",
+      "to": "altitudes",
+      "rel": "extends"
+    },
+    {
+      "from": "context",
+      "to": "views-on-page",
+      "rel": "produces"
+    },
+    {
+      "from": "five-readers",
+      "to": "vault",
+      "rel": "produces"
+    },
+    {
+      "from": "context",
+      "to": "image-pass",
+      "rel": "leads-to"
+    },
+    {
+      "from": "altitudes",
+      "to": "round-trip",
+      "rel": "leads-to"
+    },
+    {
+      "from": "views-on-page",
+      "to": "hard-to-consume",
+      "rel": "answers"
+    }
+  ],
+  "links": {
+    "articles": [
+      "liquid-content-needs-water",
+      "introducing-fractal-semantic-graphs",
+      "the-behaviour-policy-is-the-business-logic",
+      "every-mistake-added-a-rule",
+      "hope-or-enforcement",
+      "a-second-reader-the-agent-cannot-skip",
+      "re-anchoring-agent-behaviour-policies",
+      "footprint-and-blast-radius",
+      "the-mandate-stack",
+      "every-risk-is-already-accepted"
+    ],
+    "pages": [
+      "/demos/vaults/article-views/index.html",
+      "/newsroom/index.html",
+      "/articles/newsletter/index.html"
+    ],
+    "sites": [
+      "https://github.com/the-cyber-boardroom/SGraph-AI__App__Send/tree/HEAD/team/roles"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "It does not change how the writing is done. It maximises what the writing produces.",
+      "why": "The design rule: extraction after the prose, not a new way of writing."
+    },
+    {
+      "text": "a topic ontology tells you what is new to the topic; only a site ontology tells you what is new.",
+      "why": "The finding that sets the next step."
+    }
+  ]
+}

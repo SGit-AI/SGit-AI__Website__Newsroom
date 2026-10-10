@@ -1,0 +1,198 @@
+{
+  "slug": "price-it-then-give-it-away",
+  "teaser": "Define the product, price it, deliver it at a cost that grows a step at a time, then offer it free to people who know you and measure what it costs them.",
+  "topics": [
+    "startups-and-strategy",
+    "agents-and-policy"
+  ],
+  "core_idea": "A price is a statement of what you think the thing is worth, and giving it away at that price to people who already know you is the cleanest test of whether the statement is true, provided you measure and cut what the free offer costs them.",
+  "nodes": [
+    {
+      "id": "do-they-miss-it",
+      "label": "Do they miss it",
+      "kind": "concept",
+      "summary": "The earlier article's test: hand the thing to people for free, briefly, then take it away, and ask whether they miss it."
+    },
+    {
+      "id": "define-the-product",
+      "label": "Define the product",
+      "kind": "method",
+      "summary": "For RiskMandate the thing somebody receives is an Agent Behaviour Policy for one agent, as an encrypted vault the customer holds the keys to, with the mandate corrected for their deployment."
+    },
+    {
+      "id": "price-as-statement",
+      "label": "Price it before you give it away",
+      "kind": "claim",
+      "summary": "A price is a statement of what you think the thing is worth, and giving it away at that stated price to people who know you is the cleanest test of whether the statement is true."
+    },
+    {
+      "id": "the-ladder",
+      "label": "The four-tier ladder",
+      "kind": "artefact",
+      "summary": "Ten pounds for the pack downloaded, fifty for a working vault, five hundred for the vault corrected for your situation, fifteen hundred for two sessions and a professional's signature."
+    },
+    {
+      "id": "step-cost-delivery",
+      "label": "Cost that grows a step at a time",
+      "kind": "method",
+      "summary": "The agentic workflow means the marginal customer costs a little more, not a lot more, so serving the twentieth customer costs close to serving the second."
+    },
+    {
+      "id": "offer-to-friendlies",
+      "label": "Offer it to the people who already know you",
+      "kind": "method",
+      "summary": "Early adopters, power users and past customers get the first twenty, as a thank-you and as the best possible test group, because their silence means the most."
+    },
+    {
+      "id": "free-is-not-zero",
+      "label": "Free is never free for the other side",
+      "kind": "claim",
+      "summary": "Engaging costs them reading, thinking, deciding and finding a slot, so the first measurement the programme makes is of that attrition and the exercise is to reduce it."
+    },
+    {
+      "id": "do-not-make-them-apply",
+      "label": "Do not make them apply",
+      "kind": "method",
+      "summary": "\"We have twenty of these in the first round. Would you like one? If not, I will give it to someone else\" is honest about scarcity and leaves them nothing to do but say yes or no."
+    },
+    {
+      "id": "early-access-programme",
+      "label": "RiskMandate early access programme",
+      "kind": "artefact",
+      "summary": "Live on 30 September 2026, invite only, it gives the five-hundred-pound tier to people who already run an agent with real access and asks them to say where it is wrong."
+    },
+    {
+      "id": "brutal-outcome",
+      "label": "The answer is brutal either way",
+      "kind": "claim",
+      "summary": "If friendlies take it and ask for more, the question becomes price; if they say it is interesting but have no time, the problem is not the price and you go back to the drawing board."
+    },
+    {
+      "id": "four-kpis",
+      "label": "What we count",
+      "kind": "method",
+      "summary": "Policies created, customised, used, and scenarios run, plus corrections received and the minutes each step cost the person on the other side."
+    },
+    {
+      "id": "agent-brief",
+      "label": "For the agents running this",
+      "kind": "method",
+      "summary": "The list, the short message with no application, the clock on every step, daily counts, every stop recorded as a product change, a stop rule set before the first message, and this article as the record."
+    },
+    {
+      "id": "site-as-memory",
+      "label": "The site is becoming the memory",
+      "kind": "claim",
+      "summary": "An agent picking this up in a year should read, in order, the earlier article, the published offer, this article and the vault holding the counts, so it gets context rather than instructions."
+    }
+  ],
+  "edges": [
+    {
+      "from": "define-the-product",
+      "to": "do-they-miss-it",
+      "rel": "extends"
+    },
+    {
+      "from": "price-as-statement",
+      "to": "define-the-product",
+      "rel": "depends-on"
+    },
+    {
+      "from": "the-ladder",
+      "to": "price-as-statement",
+      "rel": "example-of"
+    },
+    {
+      "from": "step-cost-delivery",
+      "to": "offer-to-friendlies",
+      "rel": "leads-to"
+    },
+    {
+      "from": "offer-to-friendlies",
+      "to": "price-as-statement",
+      "rel": "extends"
+    },
+    {
+      "from": "free-is-not-zero",
+      "to": "offer-to-friendlies",
+      "rel": "extends"
+    },
+    {
+      "from": "do-not-make-them-apply",
+      "to": "free-is-not-zero",
+      "rel": "answers"
+    },
+    {
+      "from": "early-access-programme",
+      "to": "offer-to-friendlies",
+      "rel": "example-of"
+    },
+    {
+      "from": "early-access-programme",
+      "to": "the-ladder",
+      "rel": "depends-on"
+    },
+    {
+      "from": "early-access-programme",
+      "to": "brutal-outcome",
+      "rel": "produces"
+    },
+    {
+      "from": "brutal-outcome",
+      "to": "free-is-not-zero",
+      "rel": "depends-on"
+    },
+    {
+      "from": "brutal-outcome",
+      "to": "do-they-miss-it",
+      "rel": "compared-with"
+    },
+    {
+      "from": "four-kpis",
+      "to": "free-is-not-zero",
+      "rel": "depends-on"
+    },
+    {
+      "from": "agent-brief",
+      "to": "four-kpis",
+      "rel": "depends-on"
+    },
+    {
+      "from": "agent-brief",
+      "to": "do-not-make-them-apply",
+      "rel": "depends-on"
+    },
+    {
+      "from": "agent-brief",
+      "to": "site-as-memory",
+      "rel": "leads-to"
+    },
+    {
+      "from": "site-as-memory",
+      "to": "do-they-miss-it",
+      "rel": "extends"
+    }
+  ],
+  "links": {
+    "articles": [
+      "the-question-is-whether-they-miss-it"
+    ],
+    "pages": [
+      "/startups/business-plans.html"
+    ],
+    "sites": [
+      "https://riskmandate.ai/early-access.html",
+      "https://store.sgit.ai/policies/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "A price is a statement of what you think the thing is worth. Giving it away at that stated price, to people who know you, is the cleanest test of whether the statement is true.",
+      "why": "The whole method in two sentences: the price is set first and the free offer is the test of it."
+    },
+    {
+      "text": "None of that is zero, and all of it is paid by them.",
+      "why": "The part that is easy to leave out: the offer costs the other side attention and schedule, and that cost is what the programme measures."
+    }
+  ]
+}

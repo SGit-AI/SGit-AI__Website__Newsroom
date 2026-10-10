@@ -1,0 +1,208 @@
+{
+  "slug": "send-an-agent-not-a-spreadsheet",
+  "teaser": "Due diligence never scaled because it was a form; a buyer can now send an agent into a vendor's environment and read what the code and the practices are.",
+  "topics": [
+    "agents-and-policy",
+    "startups-and-strategy"
+  ],
+  "core_idea": "Software due diligence was a questionnaire answered by the vendor and disconnected from the code; a buyer can now send a prompt or a small agent under a behaviour policy to run inside the vendor's environment and derive a graph of what reaches production unreviewed, what is documented and threat modelled, what the bugs touched and which agents act under what policy, with the vendor redacting but not rewriting; the test is risk-based, the behaviour policy is the due diligence document for the agents, the companies that stopped reading their code are about to meet the consequence they have not had, a startup should double down on understandability, and the code review company is better sold to buyers than to developers.",
+  "nodes": [
+    {
+      "id": "the-form",
+      "label": "Due diligence was a form",
+      "kind": "claim",
+      "summary": "A spreadsheet of questions answered by the people being asked, measuring whether a document with the right title exists, disconnected from the code and out of date on arrival; built because nothing better was possible."
+    },
+    {
+      "id": "careful-answers",
+      "label": "Companies will not lie on a record",
+      "kind": "concept",
+      "summary": "Questionnaires invite careful, composed, defensible answers with room in them; a false statement on a record comes back with a lawyer, so the room is where the risk lives."
+    },
+    {
+      "id": "the-agent",
+      "label": "Send an agent, not a spreadsheet",
+      "kind": "method",
+      "summary": "A prompt and a small agent under a behaviour policy run inside the vendor's environment, derive graphs of practices and code, write files the vendor reviews before anything leaves, and deliver what is shown in a vault only the buyer opens."
+    },
+    {
+      "id": "derived-not-composed",
+      "label": "Derived, not composed",
+      "kind": "claim",
+      "summary": "The vendor keeps the redaction marker and loses the pen: a map read from the repository can be withheld but not described into shape, and a false map is a false statement on a record."
+    },
+    {
+      "id": "non-answer",
+      "label": "Questions where silence is an answer",
+      "kind": "method",
+      "summary": "Does code reach production unreviewed; is there a threat model and who wrote it; does the documentation match the code; what did the last fifty bugs touch; which agents touch the pipeline; who still understands it."
+    },
+    {
+      "id": "threat-model-read",
+      "label": "A threat model is the fastest read of a team",
+      "kind": "claim",
+      "summary": "Thin means the team does not know what it protects; gaps seen and decided about mean a team that knows where the lines are; the critical unknown vulnerability is almost never in it."
+    },
+    {
+      "id": "bug-signature",
+      "label": "Two kinds of bug",
+      "kind": "concept",
+      "summary": "Bugs in reviewed deterministic parts have reasons; bugs from unreviewed generated code are in places no story asked for, repeat, and reveal something structural each time."
+    },
+    {
+      "id": "risk-based",
+      "label": "Risk-based, not pure",
+      "kind": "claim",
+      "summary": "What counts as enough rises with what the software can do to the buyer; a startup on a prototype passes by saying so; the same sentence from a vendor of mission-critical software is the finding."
+    },
+    {
+      "id": "policy-as-dd",
+      "label": "The behaviour policy is the due diligence document",
+      "kind": "claim",
+      "summary": "A buyer reads off the blast radius, which controls are enforced by the identity and which are wishes, and which risks the vendor has accepted on the buyer's behalf; its absence is a finding before any code is read."
+    },
+    {
+      "id": "the-consequence",
+      "label": "The consequence that was missing",
+      "kind": "claim",
+      "summary": "Companies that stopped reviewing, let engineers go and let anyone prompt features into production accumulated liability that few outside could see; a buyer who can send an agent is the consequence, and investors and acquirers get it too."
+    },
+    {
+      "id": "incumbents-too",
+      "label": "Most companies already do not understand their software",
+      "kind": "claim",
+      "summary": "People moved on, merges were made by people who left, documentation describes an earlier system; the agent asks them the same questions for the first time."
+    },
+    {
+      "id": "startup-advantage",
+      "label": "The startup's two advantages",
+      "kind": "claim",
+      "summary": "It can play the same game as the biggest buyer with the same open source tools, and it has less code to understand; double down on understandability and make it the reason to buy."
+    },
+    {
+      "id": "regulation",
+      "label": "Duties arriving before visibility",
+      "kind": "example",
+      "summary": "Software bills of materials, the Cyber Resilience Act and the revised Product Liability Directive create duties and evidence rights; none tells a buyer whether a vendor understands its software; the agent connects the duties to the facts."
+    },
+    {
+      "id": "the-twist",
+      "label": "Sell it to the buyers",
+      "kind": "claim",
+      "summary": "The code review company is better sold as due diligence to those who buy, invest in and acquire software than as review to developers who have been told they do not need it; the vendor runs it on itself first."
+    },
+    {
+      "id": "what-is-open",
+      "label": "What is open",
+      "kind": "question",
+      "summary": "The agent does not exist; the pieces do; the first vendor it should run against is this site's own repository, with the results published."
+    }
+  ],
+  "edges": [
+    {
+      "from": "the-form",
+      "to": "careful-answers",
+      "rel": "produces"
+    },
+    {
+      "from": "the-form",
+      "to": "the-agent",
+      "rel": "contrasts"
+    },
+    {
+      "from": "the-agent",
+      "to": "derived-not-composed",
+      "rel": "produces"
+    },
+    {
+      "from": "careful-answers",
+      "to": "derived-not-composed",
+      "rel": "leads-to"
+    },
+    {
+      "from": "the-agent",
+      "to": "non-answer",
+      "rel": "depends-on"
+    },
+    {
+      "from": "non-answer",
+      "to": "threat-model-read",
+      "rel": "example-of"
+    },
+    {
+      "from": "non-answer",
+      "to": "bug-signature",
+      "rel": "example-of"
+    },
+    {
+      "from": "non-answer",
+      "to": "risk-based",
+      "rel": "depends-on"
+    },
+    {
+      "from": "non-answer",
+      "to": "policy-as-dd",
+      "rel": "leads-to"
+    },
+    {
+      "from": "the-agent",
+      "to": "the-consequence",
+      "rel": "leads-to"
+    },
+    {
+      "from": "the-consequence",
+      "to": "incumbents-too",
+      "rel": "extends"
+    },
+    {
+      "from": "incumbents-too",
+      "to": "startup-advantage",
+      "rel": "leads-to"
+    },
+    {
+      "from": "regulation",
+      "to": "the-consequence",
+      "rel": "compared-with"
+    },
+    {
+      "from": "the-consequence",
+      "to": "the-twist",
+      "rel": "leads-to"
+    },
+    {
+      "from": "startup-advantage",
+      "to": "the-twist",
+      "rel": "extends"
+    },
+    {
+      "from": "the-twist",
+      "to": "what-is-open",
+      "rel": "leads-to"
+    }
+  ],
+  "links": {
+    "articles": [
+      "if-somebody-built-a-company-on-code-review",
+      "code-review-as-a-fractal-semantic-graph",
+      "footprint-and-blast-radius",
+      "six-agents-one-inbox",
+      "every-risk-is-already-accepted",
+      "connector-twin-before-you-deploy-an-agent",
+      "supply-chain-of-vaults"
+    ],
+    "pages": [],
+    "sites": [
+      "https://riskmandate.ai/abp.html"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "The questionnaire gave the vendor the pen. The agent takes the pen away and leaves the vendor the redaction marker, and that is the whole change.",
+      "why": "Why a derived answer differs from a composed one even though the vendor still controls what leaves."
+    },
+    {
+      "text": "A vendor that does not know what reaches production unreviewed does not know what reaches production.",
+      "why": "The first question, and why the non-answer is the finding."
+    }
+  ]
+}

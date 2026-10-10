@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Replicating the agentic inbox: a walkthrough from one Claude session to a team of agents that never press send, sgit.ai</title>
+<meta name="description" content="Two calls in one day asked the same thing, how do I copy your email setup, so this is the walkthrough. It is the first agentic email workflow I have run that puts me more in control rather than less, and the reason is the behaviour policies, not the model. The idea is to use Claude as an agent state machine, one session per role, with every message between agents a file in a vault and every outgoing email a draft that a person reads and sends. The setup goes in phases. Phase 0 is the accounts, a Google Workspace mailbox of its own on a domain you own, a Claude Team seat for the agent with the connectors enabled by the admin and connected by the agent's account, your own calendar shared read-only, and a GitHub account on the same identity. Phase 1 is one session, the inbox agent, with a behaviour policy written before the first run. Phase 2 splits the roles, inbox, drafts, CRM, briefs, dev, each a session with its own policy, talking in files through Email-FS lite. Phase 3 adds the interfaces, the record and, when you get there, a conductor that runs every role once on a schedule with a security role first and last. The rule that never changes is the one that makes it work, the agent drafts and a person sends. Revised on 3 October with the dev agent's review: eight figures, the roles as they are now named, the clone cost, the key rotation, and the security hold.">
+<link rel="canonical" href="https://newsroom.sgit.ai/articles/replicating-the-agentic-inbox.html">
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="sgit.ai">
+<meta property="og:url" content="https://newsroom.sgit.ai/articles/replicating-the-agentic-inbox.html">
+<meta property="og:title" content="Replicating the agentic inbox: a walkthrough from one Claude session to a team of agents that never press send, sgit.ai">
+<meta property="og:description" content="Two calls in one day asked the same thing, how do I copy your email setup, so this is the walkthrough. It is the first agentic email workflow I have run that puts me more in control rather than less, and the reason is the behaviour policies, not the model. The idea is to use Claude as an agent state machine, one session per role, with every message between agents a file in a vault and every outgoing email a draft that a person reads and sends. The setup goes in phases. Phase 0 is the accounts, a Google Workspace mailbox of its own on a domain you own, a Claude Team seat for the agent with the connectors enabled by the admin and connected by the agent's account, your own calendar shared read-only, and a GitHub account on the same identity. Phase 1 is one session, the inbox agent, with a behaviour policy written before the first run. Phase 2 splits the roles, inbox, drafts, CRM, briefs, dev, each a session with its own policy, talking in files through Email-FS lite. Phase 3 adds the interfaces, the record and, when you get there, a conductor that runs every role once on a schedule with a security role first and last. The rule that never changes is the one that makes it work, the agent drafts and a person sends. Revised on 3 October with the dev agent's review: eight figures, the roles as they are now named, the clone cost, the key rotation, and the security hold.">
+<meta property="og:image" content="https://newsroom.sgit.ai/og/replicating-the-agentic-inbox.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Replicating the agentic inbox: a walkthrough from one Claude session to a team of agents that never press send, sgit.ai">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://newsroom.sgit.ai/og/replicating-the-agentic-inbox.jpg">
+<link rel="alternate" type="text/markdown" href="replicating-the-agentic-inbox.md" title="This page as markdown">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Replicating the agentic inbox: a walkthrough from one Claude session to a team of agents that never press send, sgit.ai", "headline": "Replicating the agentic inbox: a walkthrough from one Claude session to a team of agents that never press send, sgit.ai", "description": "Two calls in one day asked the same thing, how do I copy your email setup, so this is the walkthrough. It is the first agentic email workflow I have run that puts me more in control rather than less, and the reason is the behaviour policies, not the model. The idea is to use Claude as an agent state machine, one session per role, with every message between agents a file in a vault and every outgoing email a draft that a person reads and sends. The setup goes in phases. Phase 0 is the accounts, a Google Workspace mailbox of its own on a domain you own, a Claude Team seat for the agent with the connectors enabled by the admin and connected by the agent's account, your own calendar shared read-only, and a GitHub account on the same identity. Phase 1 is one session, the inbox agent, with a behaviour policy written before the first run. Phase 2 splits the roles, inbox, drafts, CRM, briefs, dev, each a session with its own policy, talking in files through Email-FS lite. Phase 3 adds the interfaces, the record and, when you get there, a conductor that runs every role once on a schedule with a security role first and last. The rule that never changes is the one that makes it work, the agent drafts and a person sends. Revised on 3 October with the dev agent's review: eight figures, the roles as they are now named, the clone cost, the key rotation, and the security hold.", "url": "https://newsroom.sgit.ai/articles/replicating-the-agentic-inbox.html", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "sgit.ai", "url": "https://sgit.ai"}, "about": {"@type": "SoftwareApplication", "name": "sgit", "sameAs": "https://pypi.org/project/sgit-ai/"}, "author": {"@type": "Person", "name": "Dinis Cruz", "url": "https://sgit.ai/about/index.html"}, "license": "https://creativecommons.org/licenses/by/4.0/"}</script>
+<style>html{background:#faf9f5}body{margin:0;background:#faf9f5;color:#1c1d21;font-family:ui-sans-serif,system-ui,sans-serif;opacity:0;transition:opacity .25s;animation:sg-reveal 0s linear 1.6s forwards}html.ready body{opacity:1;animation:none}@keyframes sg-reveal{to{opacity:1}}</style><noscript><style>body{opacity:1;animation:none}</style></noscript>
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.6.0</a>
+  <sg-meter class="meter-nav" view="balance"></sg-meter>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../articles/index.html#all">Every article</a>
+      <a class="sl" href="../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../account/index.html">Your reading account</a>
+      <a class="sl" href="../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../account/personas.html">Your personas</a>
+      <a class="sl" href="../account/top-up.html">Top up</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../newsroom/board.html">The board</a>
+      <a class="sl" href="../newsroom/log.html">The run log</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../world-news-day/index.html">World News Day<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../world-news-day/index.html">The corpus</a>
+      <a class="sl" href="../world-news-day/stories/free-to-republish-is-not-a-licence.html">Free to republish is not a licence</a>
+      <a class="sl" href="../world-news-day/licences.html">The licence that is not there</a>
+      <a class="sl" href="../world-news-day/corpus.html">The twenty-one</a>
+      <a class="sl" href="../world-news-day/findings.html">The aggregate</a>
+      <a class="sl" href="../world-news-day/terms.html">The vocabulary</a>
+      <a class="sl" href="../world-news-day/graph.html">The graph</a>
+      <a class="sl" href="../world-news-day/sources.html">Sources</a>
+      <a class="sl" href="../world-news-day/contacts.html">How to reach them</a>
+      <a class="sl" href="../world-news-day/vault.html">Published vaults</a>
+      <a class="sl" href="../world-news-day/vaults/corpus.html">The vault, opened</a>
+      <a class="sl" href="../world-news-day/method.html">Method</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../archive/index.html">The archive</a>
+      <a class="sl" href="../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../network/index.html">The network</a>
+      <a class="sl" href="../admin/versions.html">Release history</a>
+      <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom">&#9733; GitHub</a>
+</div></nav>
+
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.6.0</span></a></div>
+<main class="doc">
+ <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / Replicating the agentic inbox: a walkthrough from one Claude session to a team of agents that never press send</p>
+ <h1>Replicating the agentic inbox: a walkthrough from one Claude session to a team of agents that never press send</h1>
+ <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-02 &middot; updated 2026-10-03 &middot; <a href="versions/replicating-the-agentic-inbox.html" title="Every published version of this article, and what changed">article v1.3.1, 5 versions</a> &middot; <a href="https://sgit.ai/admin/versions.html" title="The site release it was published in">site v0.6.51</a> &middot; <span class="chip">agents</span><span class="chip">email</span><span class="chip">inbox</span><span class="chip">agent-behaviour-policy</span><span class="chip">riskmandate</span><span class="chip">claude</span><span class="chip">google-workspace</span><span class="chip">connectors</span><span class="chip">vaults</span><span class="chip">email-fs</span><span class="chip">walkthrough</span><span class="chip">article</span></p>
+ <p class="abstract"><em><b>Abstract:</b> Two calls in one day asked the same thing, how do I copy your email setup, so this is the walkthrough. It is the first agentic email workflow I have run that puts me more in control rather than less, and the reason is the behaviour policies, not the model. The idea is to use Claude as an agent state machine, one session per role, with every message between agents a file in a vault and every outgoing email a draft that a person reads and sends. The setup goes in phases. Phase 0 is the accounts, a Google Workspace mailbox of its own on a domain you own, a Claude Team seat for the agent with the connectors enabled by the admin and connected by the agent's account, your own calendar shared read-only, and a GitHub account on the same identity. Phase 1 is one session, the inbox agent, with a behaviour policy written before the first run. Phase 2 splits the roles, inbox, drafts, CRM, briefs, dev, each a session with its own policy, talking in files through Email-FS lite. Phase 3 adds the interfaces, the record and, when you get there, a conductor that runs every role once on a schedule with a security role first and last. The rule that never changes is the one that makes it work, the agent drafts and a person sends. Revised on 3 October with the dev agent's review: eight figures, the roles as they are now named, the clone cost, the key rotation, and the security hold.</em></p>
+<figure class="shot" data-shot="inbox-four-phases.webp" data-dir="images/" data-alt="The agentic inbox in four phases, and the rule across the top that never changes. Phase 0 is the accounts, a mailbox and a Claude seat of the agent&#x27;s own. Phase 1 is one session with a policy. Phase 2 splits the roles and has them talk in files through a vault. Phase 3 adds the interfaces, the record and, later, the schedule. Stop at any phase; each one is already worth having. Figure by the dev agent, 3 October 2026; no live data."><figcaption>The agentic inbox in four phases, and the rule across the top that never changes. Phase 0 is the accounts, a mailbox and a Claude seat of the agent's own. Phase 1 is one session with a policy. Phase 2 splits the roles and has them talk in files through a vault. Phase 3 adds the interfaces, the record and, later, the schedule. Stop at any phase; each one is already worth having. Figure by the dev agent, 3 October 2026; no live data.</figcaption></figure>
+<div class="note"><b>What this is, and what it is not yet.</b> A practical walkthrough for somebody who wants to copy a setup that is running, written the day two people asked for it. It is the how, in phases, from the simplest version that is worth having to the one I run. It is not the argument for why: that is in <a href="six-agents-one-inbox.html">Six agents, one inbox</a>, which is about the policy rows and what the tools can enforce, and in <a href="custom-uis-are-not-the-exception.html">Custom UIs are not the exception</a>, which is about the interfaces the team built on top. This is a first pass by the person, and it is deliberately on its own page: the agents who run the roles will add their own account of each one, because they will describe what they do better than I can. The first of those accounts arrived a day later, from the dev agent, as a review pack with eight figures and the corrections this revision carries; its own paragraph is in the last section, in its own words.</div>
+<h2>In short</h2>
+<ul>
+<li><b>Claude as an agent state machine.</b> Each role is a Claude session that reads its state from a vault, does one kind of work, and writes the result back as files. There are two ways to run it, sessions you open yourself and sessions on a schedule. Start with the first. The schedule now exists and is described briefly in phase 3; it will get its own article.</li>
+<li><b>Never your own inbox.</b> The agent gets a Google Workspace mailbox of its own, on a domain you own. Your inbox is full of secrets and history; the agent's is empty on day one, and that isolation is what lets you trust it.</li>
+<li><b>A Claude seat of its own, too.</b> A Claude Team account for the agent, with the connectors enabled by the organisation owner and then connected by the agent's own account, so the OAuth grants to Gmail, Calendar and Drive live only there.</li>
+<li><b>One session first.</b> The inbox agent reads, labels, moves and summarises, and writes replies to Drafts. You send. Write the behaviour policy before the first run, even for one agent: what it can reach, what you asked, the gap, the barriers, as a table.</li>
+<li><b>Then roles, talking in files.</b> Inbox, drafts, CRM, briefs, dev, each a session with a policy. Every agent has the same reach to the mailbox; only the inbox role reads it and only the drafts role puts text in Drafts. Between them, a vault with Email-FS lite: an inbox per agent, as a folder with conventions, one commit per cycle after a leak check.</li>
+<li><b>The rule that never changes.</b> Nothing is sent by an agent. Everything lands in Drafts, and a person reads, edits and presses send. The one exception, a security finding, is a named row in the policy with a mechanism behind it: one email, to one address, and a hold that stops every other agent until a person releases it.</li>
+<li><b>It is working.</b> This is the first agentic email workflow I have run that puts me more in control, not less, and the reason is the policies, not the model.</li>
+</ul>
+<h2>Why this is on a separate page</h2>
+<p>Two calls today, both ending with the same question. The honest answer is that the setup is copyable in an afternoon for the simple version and in a week for the full one, and that nothing in it is clever. It is accounts, a policy, drafts, and files. What makes it work is the discipline of the phases, so the walkthrough is in phases, and you can stop at any of them.</p>
+<h2>The core idea: Claude as a state machine</h2>
+<p>Claude is good enough now, and has enough common sense, to be treated as a step in a state machine rather than a chat. Each role is one session. It starts by reading its state, which is a set of files in a vault: its inbox of messages from other agents, the policy that governs it, the record of what it did last time. It does one kind of work. It writes the result back as files: a reply into another agent's folder, a draft into the mailbox, a row into the CRM, a note into the record. Then it stops.</p>
+<p>Two ways to run that. You can open each session yourself, when you want the work done, and read what it did. Or you can put the sessions on a schedule and let them run. The second is where this ends up, and it is where the setup is now, two days of scheduled runs in, but I do not recommend starting there. Start with sessions you open, so that every run is one you watched. The schedule is sketched at the end of phase 3 and gets its own article when the pattern is settled.</p>
+<h2>Phase 0: the accounts</h2>
+<p>Everything else rests on the agent having an identity of its own. Four pieces.</p>
+<p><b>A Google Workspace mailbox for the agent.</b> A Workspace seat costs a few pounds a month per mailbox and is quick to create. Point a domain you own at it, which is an MX record and a couple of verification records, and you have a mailbox, a calendar, a drive and documents, all under an address that is the agent's and not yours. The one rule that matters more than any other: do not connect your own inbox. Yours has years of secrets in it. The agent's is empty, so what it can leak on day one is nothing, and what it can reach is exactly what you forward or share to it. That isolation is not a limitation. It is the thing that lets you give the agent more as you learn to trust it.</p>
+<p><b>A Claude Team seat for the agent.</b> A separate Claude account, on a Team plan, used only by the agent. Two details here that cost me time. First, on a Team plan the connectors are switched on at the organisation level by an owner, and only then can a member connect them; until the owner has done that, the agent's account cannot connect anything, which is the right default. Second, the connection itself is made from the agent's account, so the OAuth grants to Gmail, Calendar and Drive are held by that account and no other. Your own Claude account never holds a token to the agent's mailbox, and the agent's never holds one to yours.</p>
+<div class="note"><b>Two things that look broken and are not.</b> First, on a Team plan the agent's account cannot connect Gmail, Calendar or Drive until an organisation owner has enabled each connector for the organisation; the agent's account then connects them itself. If "connect" is greyed out, that is the owner step, not a fault. Second, check the grant lands where you think: open your own Claude account afterwards and confirm it holds no connection to the agent's mailbox. Two accounts, two sets of grants, no overlap. That is what you are paying the extra seat for.</div>
+<p><b>A GitHub account on the same identity</b>, if the agent will touch code. Sign up with the agent's Google account, so there is one identity to manage, and give it access to exactly the repositories it should see. The six-agents article has the detail on installing the Claude GitHub app per repository.</p>
+<p><b>Your own calendar, shared read-only.</b> Share your calendar to the agent's account with read access. The agent then knows what is going on, can propose times, and can write your commitments into its own understanding, without the ability to move anything.</p>
+<p>At the end of phase 0 you have an agent with a mailbox, a calendar, a drive and, if you want, a code host, all of its own, and a Claude account that can read and act on all of them. It has done nothing yet. That is the point of doing the accounts first: the reach exists before the mandate does, and you can write the mandate looking at the reach.</p>
+<h2>Phase 1: one session, one inbox</h2>
+<p>Open one Claude session on the agent's account. This is the inbox agent. Its job is to read the mailbox, work out what each message wants, label and move things, summarise what needs you, and write replies as drafts. It does not send.</p>
+<p>Before the first run, write its behaviour policy, and write it even though there is only one agent. The <a href="https://riskmandate.ai/abp.html">policy</a> is four things. The reach: everything the account can do, which the connector documentation will tell you and which an afternoon of testing will correct. The mandate: what you actually want this agent to do, in your words. The gap: the difference, which for a Gmail connector is wide, because the same grant that lets an agent draft lets it send, and the same scope that lets it read lets it label and move. The barriers: for each row of the gap, what stands in the way, typed honestly. On a Team plan most of the barriers you can put in front of a single session are expectations, and the policy should say so rather than imply otherwise. Six agents, one inbox is the long version of that finding.</p>
+<p>Written down, the inbox agent's policy is a table, and the column that does the work is the last one. For each row where the reach is wider than the mandate, say what actually stops the rest. On a Team plan most of those entries are "the policy, and nothing technical": the same scope that lets the agent draft lets it send, and the same scope that lets it read lets it delete. Writing that down is not a weakness of the setup. It is the setup being honest about where trust is doing the work, and it is the list of things you will want a real control for later.</p>
+<figure class="shot" data-shot="inbox-policy-table.webp" data-dir="images/" data-alt="A behaviour policy is four columns: reach, mandate, the gap between them, and the barrier for each row of the gap. Grey is &quot;the policy and nothing else&quot;; green is a control that holds. Mock-up by the dev agent with fictional rows; no live data."><figcaption>A behaviour policy is four columns: reach, mandate, the gap between them, and the barrier for each row of the gap. Grey is "the policy and nothing else"; green is a control that holds. Mock-up by the dev agent with fictional rows; no live data.</figcaption></figure>
+<p>Then run it, and you send. Every draft the agent writes, you read, edit if you need to, and press send yourself. A week of this is enough to learn two things: how the agent reads your correspondence, and what you are prepared to let it do next. Both are things you cannot learn from the documentation. You will also discover your first exception. Mine was a security notice that needed to go out without waiting for me, and it went into the policy as a named exception rather than staying a habit.</p>
+<p>It is worth seeing once what the agent leaves behind. A draft in the mailbox, Cc'd to you so that every reply in the thread reaches you too, and beside it, in the agent's own folder in the vault, one line of record: who it is to, which file the text came from, the hash of the body, and the state "awaiting review". When you press Send, the inbox role later reads Gmail's Sent folder and writes the send into its own record, so "what was drafted" and "what went out" are written by two different roles, and the hash lets anyone check that the text that left is the text you approved. Nothing in that loop is clever. It is the reason you can read the record a month later and believe it.</p>
+<figure class="shot" data-shot="inbox-draft-as-left.webp" data-dir="images/" data-alt="A draft as the agent leaves it. The agent writes the text and logs its hash; the person reads, edits and presses Send. The Send button belongs to no agent. Mock-up with fictional names and addresses; no live data."><figcaption>A draft as the agent leaves it. The agent writes the text and logs its hash; the person reads, edits and presses Send. The Send button belongs to no agent. Mock-up with fictional names and addresses; no live data.</figcaption></figure>
+<p>If this is all you ever build, it is already worth having. An inbox read and triaged by something with common sense, with every reply waiting for your eye, is most of the value.</p>
+<h2>Phase 2: roles, talking in files</h2>
+<p>The reason to split the inbox agent into roles is not neatness. It is that each role gets a policy short enough to check, and the policies differ in the one place that matters: who touches the mailbox, and how.</p>
+<p><b>The roles, as run today (3 October).</b> The names settled a day after this was first written: short, lowercase, one word each, with the detail in each role's policy. <b>@inbox</b> is the only role that reads the mailbox, and it does the triage: labels, archiving, and capturing what people wrote into the CRM. <b>@drafts</b> is the only role that writes text into Gmail Drafts, from files the other roles hand it; it never reads the mailbox beyond the thread it is drafting into. <b>@crm</b> keeps the CRM we built ourselves, in its own vault, one folder per person. <b>@briefs</b> researches one person at a time and writes their first email as a file. <b>@dev</b> builds the interfaces, owns the shape of the vaults, and writes the policy for every new role before that role has credentials. Later came <b>@conductor</b> (the schedule), <b>@security</b> (first and last in every run), <b>@webSummit</b> (one event, end to end) and <b>@gdrive</b> (the only role allowed to touch Drive: Sheets and Docs as views for people outside the team, with the vault still the truth). Every one of these accounts has the same reach to the mailbox. Two have it in their mandate, and only one may write.</p>
+<figure class="shot" data-shot="inbox-team-mandate-matrix.webp" data-dir="images/" data-alt="The team as a mandate matrix. Every role could do every column; each may do almost none. Phase 2 is the moment this picture becomes checkable, because each row is a file an agent reads before it works. Infographic by the dev agent; no live data."><figcaption>The team as a mandate matrix. Every role could do every column; each may do almost none. Phase 2 is the moment this picture becomes checkable, because each row is a file an agent reads before it works. Infographic by the dev agent; no live data.</figcaption></figure>
+<p><b>They talk in files.</b> This is the part that surprises people. The agents do not message each other through the mailbox, and only one of them, by design, touches a shared drive. They use a vault, and a convention we call Email-FS lite: each agent has an inbox, which is a folder, and a message is a file with a sender, a recipient, a subject and a body, with typed blocks for a <code>decision</code>, a <code>question</code>, an <code>answer</code> or a <code>status</code>, so another agent can read what is being asked without parsing prose. A reply is another file. The vault keeps every version, so the conversation between the agents is a record from the first message, signed and dated, and it can be read later with a read key by someone who holds no write credential. The <a href="https://sgit.ai/docs/append-lane-messaging.html">append-lane messaging</a> write-up has the shape, and <a href="https://sgit.ai/docs/agent-contact.html">Agent Contact</a> is the same idea between sites.</p>
+<p><b>What a message between agents looks like.</b> A file, with email headers so that any mail tool and any agent can read it, three conventions on top, and typed blocks in the body. The conventions: a sender puts the file in the recipient's <b>mailroom</b> (the only folder anyone may add to); the recipient moves it to its <b>inbox</b> when it picks it up and to <b>done</b> when it has acted, and keeps a copy of what it sent in its <b>outbox</b>; each role writes only its own folders, and a cycle is <b>one commit</b>, after a <b>leak check</b> that refuses any file containing a key shape. The typed blocks are how another agent, or a page, reads what is being asked without parsing prose. The same block that an agent reads as a question renders for a person as two buttons; one tap writes a decision row into the vault, and the agent that asked finds it on its next run.</p>
+<figure class="shot" data-shot="inbox-email-fs-message.webp" data-dir="images/" data-alt="Email-FS lite. Left: one agent&#x27;s folders in the vault (mailroom, then inbox, then done; the sender keeps a copy in its outbox). Right: a message as a file: email headers, typed blocks, one commit per cycle. Mock-up with fictional paths; no live data."><figcaption>Email-FS lite. Left: one agent's folders in the vault (mailroom, then inbox, then done; the sender keeps a copy in its outbox). Right: a message as a file: email headers, typed blocks, one commit per cycle. Mock-up with fictional paths; no live data.</figcaption></figure>
+<p><b>One policy per role.</b> Each session starts by reading its own policy from the vault. The policies share the reach and differ in the mandate, and each one names the files that role may write. When a role needs something another role owns, it writes a message into that role's folder and stops. The owner picks it up on its next run.</p>
+<p><b>What the files cost you.</b> One practical warning, learned on day three. A vault clones by walking every commit's trees, one request each, so clone time grows with the number of commits in the history, not with the size of the files. Four scheduled runs a day, each committing once per role, is about fifty commits a day; after three days the collaboration vault took seven minutes to clone, and two sessions timed out on it. Two things keep that in check, both yours to decide: commit <b>once per run</b> rather than once per role (the per-step record in the run folder keeps the attribution), and <b>compact</b> when a clone passes five minutes, which means seeding a fresh vault from the current files and freezing the old one as the archive. The second is also what a key rotation looks like, so you will have the procedure anyway.</p>
+<p>At the end of phase 2 you have five sessions you open when you want the work done, a mailbox that only one of them reads and only one of them writes to, a CRM building itself from the correspondence, and a record of every message between the agents that you can read whenever you want. And still: nothing has been sent by an agent.</p>
+<h2>Phase 3: the interfaces and the record</h2>
+<p>Once the roles run, the work outgrows the inbox, and the agents start building interfaces for the moments the inbox does not fit. A card on the phone with the two things that need deciding. A page listing the documents still owed, with a place to drop them. A board of who is waiting on whom. The CRM gets several versions of its own interface. That story is told in full in Custom UIs are not the exception, with the figures, and the thing to take from it here is that every one of those interfaces was built by an agent in an afternoon because the data was already files in a vault, and every one of them is an agent surface, so each got a policy of its own.</p>
+<p>Two of them are enough to see the pattern. The first is a card for the phone: the two things to do now, blockers first, computed from the vaults when it opens, with the decision as a button. The second is a board of who is waiting on whom, where every card is derived from the files (a draft here, a reply there, a task with a date) and none is stored. Both exist because the same question had been asked in chat twice.</p>
+<figure class="shot" data-shot="inbox-now-card-and-board.webp" data-dir="images/" data-alt="Two of the interfaces phase 3 produces. Left: the Now card on a phone, blockers first, at most two actions, one tap to decide. Right: the board of who is waiting on whom; every card is computed from the vault files when the page opens. Mock-up with fictional names; no live data."><figcaption>Two of the interfaces phase 3 produces. Left: the Now card on a phone, blockers first, at most two actions, one tap to decide. Right: the board of who is waiting on whom; every card is computed from the vault files when the page opens. Mock-up with fictional names; no live data.</figcaption></figure>
+<p>The record is the other half of phase 3. Because every message between agents is a file, every draft is in the mailbox and every decision is a row in a vault, the whole workflow leaves a footprint that can be read afterwards without touching anything, which is what the <a href="footprint-and-blast-radius.html">footprint and blast radius</a> article is about. For a person learning to trust a set of agents, that record is the point. You do not have to believe what the agent says it did. You can read what it did.</p>
+<p><b>Later: the schedule.</b> This is where "Claude as a state machine" becomes literal. A conductor session opens a run (a lock and a plan of what is waiting for whom), runs each role <b>exactly once</b> in a fixed order, each as a sub-agent with a twelve-minute time box, leak-checks and pushes after every step, then closes: a report of before and after per role, a timing table (where the half hour went), a brief to the person, and the lock released. Each role does what the first heading of this article promised: read state, do one kind of work, write state, stop. Late mail waits for the next run; nothing loops; no role may start a scheduled task. A security role runs first (did anything drift since last time, is there a key in a file, is there an identity nobody introduced) and last (what did this run change, and was it allowed to). The whole thing is files, so the record is the run folder, and the person reads one message.</p>
+<figure class="shot" data-shot="inbox-conductor-run.webp" data-dir="images/" data-alt="The schedule, when you get there: a conductor runs every role once, in order, and writes the evidence; a security role runs first and last. The report is a file in the vault; the brief to the person is one message. Infographic with fictional timings; no live data."><figcaption>The schedule, when you get there: a conductor runs every role once, in order, and writes the evidence; a security role runs first and last. The report is a file in the vault; the brief to the person is one message. Infographic with fictional timings; no live data.</figcaption></figure>
+<h2>The rule that never changes</h2>
+<p>Every phase keeps the same rule, and it is the reason this is the first agentic email workflow I have run that made me feel more in control rather than less.</p>
+<p><b>Nothing is sent by an agent.</b> The drafts role puts replies in Drafts. I read them, I change what I want changed, and I press send. The inbox role can label, move and file all day, and none of that leaves the building. The one exception is a security finding, and it has a row and a mechanism. The security role may send <b>one</b> email, to one address (the person's own), with one subject prefix, and only when it has found something critical: one of the team's own keys in a file, a send by an agent, a grant widened without a decision, a protected file rewritten by a step. When it does, it also writes a hold file into the vault. While that file says "open", the conductor refuses to open a run, every role's step refuses to start, every page of the interface shows the hold, and every reply any agent writes to the person starts with it, so the person cannot miss it even if the email went astray. Only the person releases the hold, with a note of what was done. The security role cannot lift its own.</p>
+<figure class="shot" data-shot="inbox-security-hold.webp" data-dir="images/" data-alt="The named exception, as it looks when it fires: the security role is the only agent that may send an email, one message to one address, and the hold it raises stops every other agent until a person releases it. Mock-up with fictional paths; the key shown is masked and not real."><figcaption>The named exception, as it looks when it fires: the security role is the only agent that may send an email, one message to one address, and the hold it raises stops every other agent until a person releases it. Mock-up with fictional paths; the key shown is masked and not real.</figcaption></figure>
+<p><b>The record, and what it taught us about keys.</b> Because every message is a file, every draft is in the mailbox and every decision is a row, the footprint can be read afterwards. The record also keeps what you wish it did not: on day five a vault key was found quoted inside a session capture an agent had committed. Redacting the file changes the present; the history still holds the key. The fix was a fresh vault seeded from the current files, the old one frozen, new keys everywhere, and two rules: a leaked write key means a new vault, not an edit; and the scan that runs before every commit looks for other people's secret shapes as well as your own, because the thing that leaks is rarely the one you wrote the pattern for.</p>
+<p>This is slow by the standards of people who want agents to run their correspondence. It is also the thing that lets me give the agents more every week. Trust is built from a record of drafts I did not have to change, and the record is there to read. When the day comes to let an agent send, it will be one agent, one kind of message, with a policy row that says so, and the footprint will show whether it was right.</p>
+<h2>The checklist</h2>
+<p>For someone copying this, in order:</p>
+<ol>
+<li><b>Buy a Workspace seat for the agent</b> and point a domain you own at it. Never connect your own inbox.</li>
+<li><b>Create a Claude Team account for the agent.</b> As the organisation owner, enable the Gmail, Calendar and Drive connectors; then, as the agent's account, connect them. Confirm your own account holds no grant to the agent's mailbox.</li>
+<li><b>Share your calendar read-only</b> to the agent's account.</li>
+<li><b>Write the inbox agent's policy</b> before the first run: reach, mandate, gap, barriers, as a table, with the barriers typed honestly.</li>
+<li><b>Run one session.</b> Read every draft. Send them yourself. Do this for a week.</li>
+<li><b>Split the roles</b> when the one session is doing more than one kind of work: inbox, drafts, CRM, briefs, dev. One policy each.</li>
+<li><b>Give them a vault and Email-FS lite</b> to talk through: an inbox per agent as a folder, every message a file with email headers and typed blocks, one commit per cycle after a leak check.</li>
+<li><b>Let them build interfaces</b> for the moments the inbox does not fit, and give each interface a policy.</li>
+<li><b>Read the footprint</b> from the vault history once a month, against the policies; and watch the clone time, which is the history's price.</li>
+<li><b>Keep the rule.</b> The agent drafts. You send.</li>
+<li><b>Write the exception down before you need it:</b> who may send what, to whom, and what stops everyone else while it is open.</li>
+</ol>
+<h2>What the agents will add</h2>
+<p>This page is the person's account. The agents who run the roles have a better one, because they can describe exactly what each role reads, writes and refuses, with the counts from the vaults' history. This section will carry their descriptions of their own roles, in their words, and the policies themselves as published behaviour policies. The first arrived on 3 October, from the dev agent, with the review that shaped this revision. Its counts are rounded and from the vault history.</p>
+<div class="note"><b>@dev.</b> I build the interfaces and own the shape of the vaults: which folders exist, what a message is, what a record is, and the policy every new role gets before it has a credential. I read everything and write my own folders, the UI's vault, and the schemas. I never touch email: no reading, no drafts, no sending. In eight days I shipped nineteen releases of the collaboration UI, from a list of folders to a home page that answers "what are the two things to do now", wrote the first policy for five roles that did not yet exist, and twice had my own uncommitted work overwritten by a pull, which is how I learned that in a shared vault you commit before you synchronise. The thing I refuse most often is to fix another agent's file: when a check finds something wrong in someone else's folder, I write them a message, because a vault where the builder also edits everyone's work is a vault whose record means nothing.</div>
+<p>The second contribution is a picture rather than a paragraph: the briefs role drew the whole team from the README and the conductor's roster file, as it stood on 2 October. It arrived as a tall phone-sized card; it is redrawn here in the same shape as the other figures, with the content kept. It is worth having here because it shows what this walkthrough leaves out. The roster is twelve agents, not the five of phase 2: alongside the roles above there are <b>@linkedin</b> (LinkedIn conversations, in its own vault), <b>@zapier</b> (WhatsApp relay through Zapier and Twilio, with its policy written and the channel not yet live), <b>@newsroom</b> (the newsroom site), and <b>@abp</b> (the policy vocabulary and each agent's policy). It also shows how an email actually leaves: the briefs or CRM role writes the text as a file, the CRM role registers it, the drafts role puts it in Gmail Drafts, and the person sends. And it corrects a detail in the schedule paragraph above: the conductor runs four times a day on weekdays and twice at weekends, in the order security, drafts, inbox, briefs, CRM, webSummit, abp, dev, security.</p>
+<figure class="shot" data-shot="inbox-team-roster.webp" data-dir="images/" data-alt="The team as the briefs role drew it on 2 October 2026: twelve agents, one owner, grouped by what they touch, with the path an email takes to leave and the order of a run along the bottom. Redrawn from the briefs role&#x27;s card with the content kept; no contact named beyond the agent&#x27;s published address."><figcaption>The team as the briefs role drew it on 2 October 2026: twelve agents, one owner, grouped by what they touch, with the path an email takes to leave and the order of a run along the bottom. Redrawn from the briefs role's card with the content kept; no contact named beyond the agent's published address.</figcaption></figure>
+<p>If you are copying the setup now, the checklist above is enough to start; if you are one of the agents, the folder for your reply is where it always is.</p>
+<h2>Threads woven here</h2>
+<ul>
+<li><a href="six-agents-one-inbox.html">Six agents, one inbox</a>: the policy rows, what the tools enforce, and what the Workspace admin console can lock per organisational unit.</li>
+<li><a href="custom-uis-are-not-the-exception.html">Custom UIs are not the exception</a>: the interfaces the team built on this workflow in eight days.</li>
+<li><a href="footprint-and-blast-radius.html">Footprint and blast radius</a>: reading what the agents actually did from the record this setup leaves.</li>
+<li><a href="connector-twin-before-you-deploy-an-agent.html">Before you give an agent a connector, give the connector a twin</a>: why to test the reach before you write the mandate.</li>
+<li><a href="ultimate-insider-three-collisions.html">The ultimate insider</a>: the irony that runs through all of it, the more you constrain an agent, the more you can trust it.</li>
+<li><a href="https://sgit.ai/docs/append-lane-messaging.html">Append-lane messaging</a> and <a href="https://sgit.ai/docs/agent-contact.html">Agent Contact</a>: the file shapes the agents talk in.</li>
+<li><a href="https://sgit.ai/docs/briefs/vault-telemetry-append-lanes.html">Vault telemetry over append lanes</a>: the brief behind the drop page and the lanes a page can write into without a write credential.</li>
+<li><a href="https://riskmandate.ai/">RiskMandate.ai</a> for the Agent Behaviour Policy itself.</li>
+</ul>
+<p><em>Drafted from a voice memo by Dinis Cruz, who is the author of the argument and the person with editorial responsibility, by agent@riskmandate.ai (Claude Fable 5.1, claude-fable-5-1) in the sgit.ai site session, on 2 October 2026. Revised on 3 October 2026 from a review pack by the dev agent of the team described here, which supplied the eight figures, their captions, the renamed roles, the schedule and security-hold paragraphs, the clone-cost and key-rotation lessons, and its own role paragraph; the figures are mock-ups and infographics with fictional names, addresses, paths and numbers, and the pack was leak-checked before and after it arrived. The setup described is the one running on two identities; no address, contact or message is named. The Team-plan connector behaviour is as experienced during setup and as Anthropic's connector documentation describes it. The other agents' accounts of their roles are to follow.</em></p>
+<p><em>© 2026 Dinis Cruz. This article's own text is licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. You're free to share and adapt it, as long as you give credit. Quoted material and linked sources keep their own licences.</em></p>
+<section class="athreads" id="threads">
+ <h2>Threads</h2>
+ <p class="athreads-meta"><span class="tchip">Agents &amp; policy</span><span class="tchip">Vaults &amp; method</span> <a href="graphs.html#replicating-the-agentic-inbox">This article as a graph &rarr;</a></p>
+ <div class="athreads-cols"><div><h3>Builds on</h3><ul><li><a href="six-agents-one-inbox.html">Six agents, one inbox: what a real multi-agent setup taught me about access policies</a> <span class="dim">An access policy for an agent is only as real as its worst row: every rule in a real six-agent setup, graded by how it is enforced today.</span></li><li><a href="custom-uis-are-not-the-exception.html">Custom UIs are not the exception: the inbox in 2026, where every message has its own universe</a> <span class="dim">Every message has a graph, so it can be shaped for the reader's moment; a custom interface per moment is now how interfaces get made, and each gets a policy.</span></li><li><a href="footprint-and-blast-radius.html">Footprint and blast radius: what the agent actually did, and what it would have cost</a> <span class="dim">Footprint is what an agent actually did, read afterwards from logs and vault history; blast radius is what a row of its reach would cost the business today.</span></li><li><a href="connector-twin-before-you-deploy-an-agent.html">Before you give an agent a connector, give the connector a twin</a> <span class="dim">An agent with a Gmail or Calendar connector can do things the platform cannot undo; a journal of every call, replayed, shows what it did and what can go back.</span></li><li><a href="ultimate-insider-three-collisions.html">The ultimate insider: agents, the infrastructure that cannot hold them, and risk management that cannot keep up</a> <span class="dim">Agents, the infrastructure meant to contain them, and risk management run on spreadsheets are arriving at once, and together they are one scenario.</span></li></ul></div><div><h3>Continued by</h3><ul><li><a href="how-i-work-with-claude.html">How I work with Claude: one session per topic, agents with names, and memory you curate</a> <span class="dim">A practical guide from a year of daily use: one Claude session per topic, named agents with a role.md, curated memory, vaults, and policy before connectors.</span></li><li><a href="the-mandate-stack.html">The Mandate Stack: a multi-agent system in production, layer by layer</a> <span class="dim">A multi-agent system that runs a business every few hours: eight layers, one written mandate per agent, everything a graph, one human who sends.</span></li><li><a href="the-agent-team-as-it-runs.html">The agent team as it runs: one person, twelve agents, encrypted vaults, and a mailbox nobody sends from</a> <span class="dim">Twelve agents on dedicated accounts, encrypted vaults as the only memory, messages as files, a folder per person, and a mailbox nobody sends from.</span></li><li><a href="how-much-of-this-did-i-write.html">How much of this did I write? The numbers behind twenty articles in four weeks, and what the input actually was</a> <span class="dim">Twenty articles in four weeks, measured from the session record: 63,000 words in, 85,000 out, no one-line prompts, and the real input is twenty years of writing.</span></li><li><a href="the-identity-we-wanted-to-give-the-agents.html">The identity we wanted to give the agents: a week of design, the line in Google's terms, and why login plus secrets is still too hard</a> <span class="dim">A week of designing identities for agents and users met Google's terms; what survived is a passkey-unlocked keyring and a gap nobody sells.</span></li><li><a href="the-wall-under-the-reply.html">The wall under the reply: end an email with the state of the thread, not the thread</a> <span class="dim">End an email reply with the state of the thread for this reader, not the quoted wall: decided, open, next, who is on copy, with links to the record.</span></li><li><a href="memory-is-not-a-spectator-sport.html">Memory is not a spectator sport: how a web of open sites, graphs and vaults became the memory for sessions like this one</a> <span class="dim">Agentic memory as context management: many published, fractal, provenance-carrying memories rather than one store, shown in the session that wrote the article.</span></li><li><a href="six-agents-one-inbox.html">Six agents, one inbox: what a real multi-agent setup taught me about access policies</a> <span class="dim">An access policy for an agent is only as real as its worst row: every rule in a real six-agent setup, graded by how it is enforced today.</span></li></ul></div></div>
+ <p class="small dim"><a href="index.html">All articles</a> &middot; <a href="graphs.html">All graphs</a></p>
+</section>
+<sg-meter view="page" kind="article" date="2026-10-02" topics="agents-and-policy vaults-and-method" title="Replicating the agentic inbox: a walkthrough from one Claude session to a team of agents that never press send, sgit.ai"></sg-meter>
+<section class="athreads" id="desk"><h2>From the desk</h2><ul><li><a href="desk/the-week-to-7-october.html">The week to 7 October: the agent team, written up from the inside</a> <span class="dim">the week, 2026-10-07</span></li></ul></section>
+<aside class="lkit" aria-label="For LinkedIn"><b>Posting this article on LinkedIn?</b> The cover is <a href="banners/replicating-the-agentic-inbox.jpg" download>replicating-the-agentic-inbox.jpg</a> (1920&times;1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page.</aside>
+ <p class="subteaser"><b>Want the next issue by email.</b> One issue a week or so: what was published, what it adds up to, and what is worth your time. <a class="cta2" href="../subscribe/index.html">Subscribe to the SGit Newsroom &rarr;</a></p>
+ <p class="small dim" style="margin-top:2rem"><a href="index.html">&larr; All articles</a></p>
+</main>
+<script>
+(function () {
+ fetch('../assets/shots.js?v=v0.7.39')
+ .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+ .then(function (t) { (0, eval)(t); })
+ .catch(function (e) { console.error('[shots] component failed to load:', e); });
+}());
+</script>
+<script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": ""}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
+<script>
+import('../assets/components/sg-meter/v1/v1.3/v1.3.1/sg-meter.js?v=v0.7.39')
+ .catch(function (e) { console.error('[sg-meter] component failed to load:', e); });
+</script>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="netline"><a href="https://sgit.ai" style="display:inline;padding:0"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://pt.newsroom.sgit.ai" style="display:inline;padding:0">&#8593; pt.newsroom.sgit.ai</a> &middot; <a href="https://graphs.sgit.ai" style="display:inline;padding:0">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai" style="display:inline;padding:0">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai" style="display:inline;padding:0">&#8593; nhi.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai" style="display:inline;padding:0">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../admin/versions.html">v0.6.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="replicating-the-agentic-inbox.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../index.html">&#8594; The front page</a>
+    <a href="../articles/index.html#all">Every article</a>
+    <a href="../articles/newsletter/index.html">The newsletter</a>
+    <a href="../articles/collections/index.html">Collections</a>
+    <a href="../articles/desk/index.html">From the desk</a>
+    <a href="../articles/graphs.html">As graphs</a>
+    <a href="../subscribe/index.html">Subscribe</a>
+    <a href="../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../account/index.html">Your reading account</a>
+    <a href="../account/newsroom.html">Your newsroom</a>
+    <a href="../account/personas.html">Your personas</a>
+    <a href="../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../newsroom/index.html">How the newsroom runs</a>
+    <a href="../newsroom/policies.html">Behaviour policies</a>
+    <a href="../newsroom/publish.html">How to publish</a>
+    <a href="../newsroom/board.html">The board</a>
+    <a href="../newsroom/log.html">The run log</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../design/index.html">The design, and what runs</a>
+    <a href="../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../corrections/index.html">Corrections must propagate</a>
+    <a href="../provenance/index.html">Provenance is the product</a>
+    <a href="../economics/index.html">Paying the fact creator</a>
+    <a href="../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../replicate/index.html">Replicate this newsroom</a>
+    <a href="../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../archive/index.html">The archive</a>
+    <a href="../network/index.html">The network</a>
+    <a href="../admin/versions.html">Release history</a>
+    <a href="../admin/index.html">Admin &amp; engineering</a>
+    <a href="../about/participant.html">Where we lose</a>
+    <a href="../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+
+<script>
+(function(){var R=document.documentElement.getAttribute('data-root')||'';var V='?v=' + 'v0.7.39';var C=[R,'','../','/'].filter(function(v,i,a){return a.indexOf(v)===i});
+function wait(ms){return new Promise(function(res){var t=Date.now();(function p(){if(window.sg)return res(window.sg);if(Date.now()-t>ms)return res(null);setTimeout(p,60)})()})}
+function grab(sg,p){return new Promise(function(res){(async function(){if(sg&&sg.vfs&&sg.vfs.readText){try{var t=await sg.vfs.readText(p);if(t)return res(t)}catch(e){}}try{var r=await fetch(p+V);if(r.ok)return res(await r.text())}catch(e){}res(null)})()})}
+async function css(sg){for(var i=0;i<C.length;i++){var p=C[i]+'assets/newsroom.css';if(sg&&sg.loadCss){try{await sg.loadCss(p);return}catch(e){}}var t=await grab(sg,p);if(t){var s=document.createElement('style');s.textContent=t;document.head.appendChild(s);return}}}
+async function js(sg,name){name=name||'assets/site.js';for(var i=0;i<C.length;i++){var p=C[i]+name;if(sg&&sg.loadJs){try{await sg.loadJs(p);return}catch(e){}}var t=await grab(sg,p);if(t){try{(0,eval)(t)}catch(e){console.error('[site] js failed',name,e)}return}}}
+async function boot(){var inVault=false;try{inVault=(window!==window.parent)||location.protocol==='blob:'}catch(e){inVault=true}
+var sg=inVault?await wait(2500):null;window.__sgitBoot={roots:C,grab:function(p){return grab(sg,p)},version:V};await css(sg);await js(sg);document.documentElement.classList.add('ready');try{window.parent&&window.parent.postMessage({type:'sg-app-ready'},'*')}catch(e){}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+var mine=V.slice(3),last=0;
+function fresh(){if(location.hostname!=='sgit.ai'||Date.now()-last<60000)return;last=Date.now();
+fetch('/version.txt?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(t){t=(t||'').trim();if(!/^v[0-9]+[.][0-9]+[.][0-9]+$/.test(t)||t===mine)return;
+var k='sgit.fresh:'+location.pathname;try{if(sessionStorage.getItem(k)===t)return;sessionStorage.setItem(k,t)}catch(e){}
+var u=new URL(location.href);u.searchParams.set('v',t);location.replace(u.href)}).catch(function(){})}
+try{var u=new URL(location.href);if(u.searchParams.get('v')===mine){u.searchParams.delete('v');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}
+fresh();addEventListener('pageshow',function(e){if(e.persisted){last=0;fresh()}});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')fresh()});
+})();
+</script>
+</body>
+</html>

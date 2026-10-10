@@ -24,6 +24,10 @@
 //  10. no build tooling is gitignored — a generated page whose generator is not in
 //      the repository cannot be rebuilt by anyone who clones it. This has now
 //      happened twice from the same cause (see .gitignore), so it is a check.
+//  11. the imported newsroom is unedited — every file admin/build/sync_newsroom.py
+//      brought in from sgit.ai still hashes to what it recorded, once this site's own
+//      nav, footer and version stamp are set aside. The brief's rule, "do not edit moved
+//      content on the new side, or the two will drift", as a check.
 // Any failure exits 1: no tag, no publish.
 'use strict';
 const fs   = require('fs');
@@ -155,7 +159,12 @@ const KEY_SHAPES = [
   // "our own tripwire banned the string we needed in order to teach people to recognise it;
   // make the rule precise, not stricter". A public read key is publishable by definition, so
   // it is excluded by name and everything else in that position still fires.
-  [/\bsgit\s+(?:clone|init)\s+(?!sgit_public_read_)[A-Za-z0-9_-]{16,}:[A-Za-z0-9]{4,}/,
+  //
+  // sgit_rk1_ is the same thing in sgit's first key format, still in circulation: sgit.ai's
+  // own credential checker (admin/build/check_credential.py there) classifies it as a read
+  // key. It reached this tree in v0.6.0, quoted in a published diff of the EU AI Act vault's
+  // read key inside an imported article's version history.
+  [/\bsgit\s+(?:clone|init)\s+(?!sgit_public_read_|sgit_rk1_)[A-Za-z0-9_-]{16,}:[A-Za-z0-9]{4,}/,
    'a command line carrying a credential that is not a published read key'],
 ];
 for (const f of files) {
@@ -201,7 +210,12 @@ for (const f of htmlFiles) {
   if (r.startsWith('admin/') || r === 'about/participant.html') continue;
   if (r.startsWith('documents/') && r !== 'documents/index.html') continue;
   const t = fs.readFileSync(f, 'utf8');
-  if (!/class="agent"/.test(t)) {
+  // A page imported from sgit.ai serves agents the way sgit.ai does: an llms.txt chip at the
+  // top and a declared markdown twin. That is the same obligation met in another form, so it
+  // counts, but only when BOTH are present and the twin exists. A page with neither still fails.
+  const twin = (t.match(/<link rel="alternate" type="text\/markdown" href="([^"]+)"/) || [])[1];
+  const sgitSurface = /class="llmschip"/.test(t) && twin && fs.existsSync(path.resolve(path.dirname(f), twin));
+  if (!/class="agent"/.test(t) && !sgitSurface) {
     errors.push(`${r}: no "for an agent" block — every page on this site owes one`);
   }
 }
@@ -279,6 +293,41 @@ try {
   console.warn('validate: check 10 skipped (git not available)');
 }
 
+// --- 11. the imported newsroom is unedited -----------------------------------
+// The newsroom is built on sgit.ai and imported here until cutover. Editing an imported page
+// on this side makes the two copies disagree silently, and the next sync then either loses
+// the edit or, worse, a reader trusts a page that says something sgit.ai's does not. The
+// normalisation below must match NORMALISE in admin/build/sync_newsroom.py exactly.
+{
+  const crypto = require('crypto');
+  const recordPath = path.join(ROOT, 'admin/build/newsroom-sync.json');
+  if (fs.existsSync(recordPath)) {
+    const record = JSON.parse(fs.readFileSync(recordPath, 'utf8'));
+    const NORMALISE = [
+      [/<nav class="site">[\s\S]*?<\/nav>/, '<nav class="site"></nav>'],
+      [/<footer class="site">[\s\S]*?<\/footer>/, '<footer class="site"></footer>'],
+      [/<span class="llmschip-m">[^<]*<\/span>/, '<span class="llmschip-m"></span>'],
+      [/\u00b7 site v\d+\.\d+\.\d+ \u00b7/, '\u00b7 site \u00b7'],
+    ];
+    let edited = 0;
+    for (const [rel, entry] of Object.entries(record.files)) {
+      const p = path.join(ROOT, rel);
+      if (!fs.existsSync(p)) { errors.push(`${rel}: imported from sgit.ai and now missing — re-run the sync`); continue; }
+      let buf = fs.readFileSync(p);
+      if (/\.(html|md)$/.test(rel)) {
+        let text = buf.toString('utf8');
+        for (const [re, repl] of NORMALISE) text = text.replace(re, repl);
+        buf = Buffer.from(text, 'utf8');
+      }
+      const got = crypto.createHash('sha256').update(buf).digest('hex');
+      if (got !== entry.sha256) {
+        if (edited++ < 20) errors.push(`${rel}: imported from sgit.ai and edited here — fix it on sgit.ai and re-sync`);
+      }
+    }
+    if (edited > 20) errors.push(`… and ${edited - 20} more imported files edited here`);
+  }
+}
+
 // --- report ---------------------------------------------------------------
 if (errors.length) {
   console.error(`validate: ${errors.length} error(s)`);
@@ -288,4 +337,4 @@ if (errors.length) {
 console.log(`validate: OK — ${VERSION} on ${HOST}, ${htmlFiles.length} pages, ` +
             `${hubs.length} hubs in llms.txt, sitemap agrees, links resolve, blocks balanced, ` +
             `every page carries an agent block, provenance blocks sourced, no redacted material, ` +
-            `no key-shaped strings`);
+            `no key-shaped strings, the imported newsroom unedited`);

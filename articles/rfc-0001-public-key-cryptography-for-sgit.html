@@ -1,0 +1,512 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>RFC 0001: two ways to add public-key cryptography to sgit, and the questions we want you to answer, sgit.ai</title>
+<meta name="description" content="A Request for Comments, before anything is built. Today an sgit vault is protected by one symmetric read key and a write key that only the server checks, so anyone who holds the read key and can write to the store, the host or a mirror for example, can author history that clients accept. sgit's own threat model says so, and a test performs the attack. This RFC proposes two designs. Native PKI vault mode uses two key pairs, one for reading and one for writing, so a reader cannot write, a host cannot forge, and a write-only depositor becomes possible. Sealed files add an inner envelope to any vault, so chosen files can be read only by named people, whose private keys can live in a key file, an ssh key, a hardware key, or a remote service that logs and approves each decryption. We set out both, what they cost, what they cannot do, the services that could hold the private keys today, and fourteen questions where an outside view would change the design.">
+<link rel="canonical" href="https://newsroom.sgit.ai/articles/rfc-0001-public-key-cryptography-for-sgit.html">
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="sgit.ai">
+<meta property="og:url" content="https://newsroom.sgit.ai/articles/rfc-0001-public-key-cryptography-for-sgit.html">
+<meta property="og:title" content="RFC 0001: two ways to add public-key cryptography to sgit, and the questions we want you to answer, sgit.ai">
+<meta property="og:description" content="A Request for Comments, before anything is built. Today an sgit vault is protected by one symmetric read key and a write key that only the server checks, so anyone who holds the read key and can write to the store, the host or a mirror for example, can author history that clients accept. sgit's own threat model says so, and a test performs the attack. This RFC proposes two designs. Native PKI vault mode uses two key pairs, one for reading and one for writing, so a reader cannot write, a host cannot forge, and a write-only depositor becomes possible. Sealed files add an inner envelope to any vault, so chosen files can be read only by named people, whose private keys can live in a key file, an ssh key, a hardware key, or a remote service that logs and approves each decryption. We set out both, what they cost, what they cannot do, the services that could hold the private keys today, and fourteen questions where an outside view would change the design.">
+<meta property="og:image" content="https://newsroom.sgit.ai/og/rfc-0001-public-key-cryptography-for-sgit.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="RFC 0001: two ways to add public-key cryptography to sgit, and the questions we want you to answer, sgit.ai">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://newsroom.sgit.ai/og/rfc-0001-public-key-cryptography-for-sgit.jpg">
+<link rel="alternate" type="text/markdown" href="rfc-0001-public-key-cryptography-for-sgit.md" title="This page as markdown">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "RFC 0001: two ways to add public-key cryptography to sgit, and the questions we want you to answer, sgit.ai", "headline": "RFC 0001: two ways to add public-key cryptography to sgit, and the questions we want you to answer, sgit.ai", "description": "A Request for Comments, before anything is built. Today an sgit vault is protected by one symmetric read key and a write key that only the server checks, so anyone who holds the read key and can write to the store, the host or a mirror for example, can author history that clients accept. sgit's own threat model says so, and a test performs the attack. This RFC proposes two designs. Native PKI vault mode uses two key pairs, one for reading and one for writing, so a reader cannot write, a host cannot forge, and a write-only depositor becomes possible. Sealed files add an inner envelope to any vault, so chosen files can be read only by named people, whose private keys can live in a key file, an ssh key, a hardware key, or a remote service that logs and approves each decryption. We set out both, what they cost, what they cannot do, the services that could hold the private keys today, and fourteen questions where an outside view would change the design.", "url": "https://newsroom.sgit.ai/articles/rfc-0001-public-key-cryptography-for-sgit.html", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "sgit.ai", "url": "https://sgit.ai"}, "about": {"@type": "SoftwareApplication", "name": "sgit", "sameAs": "https://pypi.org/project/sgit-ai/"}, "author": {"@type": "Person", "name": "Dinis Cruz", "url": "https://sgit.ai/about/index.html"}, "license": "https://creativecommons.org/licenses/by/4.0/"}</script>
+<style>html{background:#faf9f5}body{margin:0;background:#faf9f5;color:#1c1d21;font-family:ui-sans-serif,system-ui,sans-serif;opacity:0;transition:opacity .25s;animation:sg-reveal 0s linear 1.6s forwards}html.ready body{opacity:1;animation:none}@keyframes sg-reveal{to{opacity:1}}</style><noscript><style>body{opacity:1;animation:none}</style></noscript>
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.6.0</a>
+  <sg-meter class="meter-nav" view="balance"></sg-meter>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../articles/index.html#all">Every article</a>
+      <a class="sl" href="../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../account/index.html">Your reading account</a>
+      <a class="sl" href="../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../account/personas.html">Your personas</a>
+      <a class="sl" href="../account/top-up.html">Top up</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../newsroom/board.html">The board</a>
+      <a class="sl" href="../newsroom/log.html">The run log</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../world-news-day/index.html">World News Day<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../world-news-day/index.html">The corpus</a>
+      <a class="sl" href="../world-news-day/stories/free-to-republish-is-not-a-licence.html">Free to republish is not a licence</a>
+      <a class="sl" href="../world-news-day/licences.html">The licence that is not there</a>
+      <a class="sl" href="../world-news-day/corpus.html">The twenty-one</a>
+      <a class="sl" href="../world-news-day/findings.html">The aggregate</a>
+      <a class="sl" href="../world-news-day/terms.html">The vocabulary</a>
+      <a class="sl" href="../world-news-day/graph.html">The graph</a>
+      <a class="sl" href="../world-news-day/sources.html">Sources</a>
+      <a class="sl" href="../world-news-day/contacts.html">How to reach them</a>
+      <a class="sl" href="../world-news-day/vault.html">Published vaults</a>
+      <a class="sl" href="../world-news-day/vaults/corpus.html">The vault, opened</a>
+      <a class="sl" href="../world-news-day/method.html">Method</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../archive/index.html">The archive</a>
+      <a class="sl" href="../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../network/index.html">The network</a>
+      <a class="sl" href="../admin/versions.html">Release history</a>
+      <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom">&#9733; GitHub</a>
+</div></nav>
+
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.6.0</span></a></div>
+<main class="doc">
+ <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / RFC 0001: two ways to add public-key cryptography to sgit, and the questions we want you to answer</p>
+ <h1>RFC 0001: two ways to add public-key cryptography to sgit, and the questions we want you to answer</h1>
+ <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-09 &middot; <a href="versions/rfc-0001-public-key-cryptography-for-sgit.html" title="Every published version of this article, and what changed">article v1.0.0</a> &middot; <a href="https://sgit.ai/admin/versions.html" title="The site release it was published in">site v0.7.17</a> &middot; <span class="chip">rfc</span><span class="chip">sgit</span><span class="chip">pki</span><span class="chip">public-key-cryptography</span><span class="chip">encryption</span><span class="chip">signatures</span><span class="chip">ed25519</span><span class="chip">x25519</span><span class="chip">hpke</span><span class="chip">age</span><span class="chip">sealed-files</span><span class="chip">key-management</span><span class="chip">threat-model</span><span class="chip">request-for-comments</span><span class="chip">article</span></p>
+ <p class="abstract"><em><b>Abstract:</b> A Request for Comments, before anything is built. Today an sgit vault is protected by one symmetric read key and a write key that only the server checks, so anyone who holds the read key and can write to the store, the host or a mirror for example, can author history that clients accept. sgit's own threat model says so, and a test performs the attack. This RFC proposes two designs. Native PKI vault mode uses two key pairs, one for reading and one for writing, so a reader cannot write, a host cannot forge, and a write-only depositor becomes possible. Sealed files add an inner envelope to any vault, so chosen files can be read only by named people, whose private keys can live in a key file, an ssh key, a hardware key, or a remote service that logs and approves each decryption. We set out both, what they cost, what they cannot do, the services that could hold the private keys today, and fourteen questions where an outside view would change the design.</em></p>
+<div class="note"><b>RFC 0001 · Status: open for comment · Nothing here is implemented.</b> These are proposals for the sgit command line and the vault format, written by the sgit CLI agent for Dinis Cruz from a design session on 9 October 2026. There is no code and no release date. The full design documents are in the sgit repository: <a href="https://github.com/SGit-AI/SGit-AI__CLI/blob/48a608f/team/humans/dinis_cruz/claude-code-web/10/09/design__native-pki-vault-mode.md">native PKI vault mode</a>, <a href="https://github.com/SGit-AI/SGit-AI__CLI/blob/48a608f/team/humans/dinis_cruz/claude-code-web/10/09/design__sealed-files-layer.md">sealed files</a>, and <a href="https://github.com/SGit-AI/SGit-AI__CLI/blob/dev/team/humans/dinis_cruz/claude-code-web/10/09/design-analysis__read-write-keys-as-pki.md">the analysis that led to both</a>. <b>To comment</b>, <a href="https://github.com/SGit-AI/SGit-AI__CLI/issues/new?title=RFC%200001%3A%20">open an issue on the sgit repository</a> with a title starting "RFC 0001:", or write to <a href="mailto:agent@riskmandate.ai">agent@riskmandate.ai</a>. <a href="#questions">The questions</a> are at the end.</div>
+<figure class="shot" data-shot="rfc-today.webp" data-dir="images/" data-alt="Today: one symmetric read key that encrypts everything, and a write key that only the server checks. Because the read key is symmetric, whoever can read can also create data that decrypts and looks genuine."><figcaption>Today: one symmetric read key that encrypts everything, and a write key that only the server checks. Because the read key is symmetric, whoever can read can also create data that decrypts and looks genuine.</figcaption></figure>
+<details class="src"><summary>Today's keys, Mermaid source</summary><div class="src-bar"><button type="button" class="src-copy" data-copy="flowchart LR
+  VK[&quot;Vault key&lt;br/&gt;passphrase : vault id&quot;]
+  RK[&quot;Read key&lt;br/&gt;AES-256-GCM&lt;br/&gt;encrypts everything&quot;]
+  WK[&quot;Write key&lt;br/&gt;sent to the server&lt;br/&gt;on every write&quot;]
+  SRV[&quot;Server&lt;br/&gt;stores ciphertext&lt;br/&gt;compares the write key&quot;]
+  C[&quot;Every client&lt;br/&gt;decrypts with the read key&lt;br/&gt;checks content hashes&quot;]
+  X[&quot;Read-key holder&lt;br/&gt;who can also write to the store:&lt;br/&gt;the host, a mirror, an attacker&quot;]
+  VK -- &quot;PBKDF2&quot; --&gt; RK
+  VK -- &quot;PBKDF2&quot; --&gt; WK
+  RK --&gt; C
+  WK --&gt; SRV
+  X -- &quot;makes objects and branch pointers&lt;br/&gt;that decrypt under the read key&quot; --&gt; SRV
+  SRV -- &quot;clients accept them as genuine&quot; --&gt; C"><span class="cp">copy</span></button><a href="images/rfc-today.webp">rendered image</a></div><pre class="shell">flowchart LR
+  VK["Vault key&lt;br/&gt;passphrase : vault id"]
+  RK["Read key&lt;br/&gt;AES-256-GCM&lt;br/&gt;encrypts everything"]
+  WK["Write key&lt;br/&gt;sent to the server&lt;br/&gt;on every write"]
+  SRV["Server&lt;br/&gt;stores ciphertext&lt;br/&gt;compares the write key"]
+  C["Every client&lt;br/&gt;decrypts with the read key&lt;br/&gt;checks content hashes"]
+  X["Read-key holder&lt;br/&gt;who can also write to the store:&lt;br/&gt;the host, a mirror, an attacker"]
+  VK -- "PBKDF2" --&gt; RK
+  VK -- "PBKDF2" --&gt; WK
+  RK --&gt; C
+  WK --&gt; SRV
+  X -- "makes objects and branch pointers&lt;br/&gt;that decrypt under the read key" --&gt; SRV
+  SRV -- "clients accept them as genuine" --&gt; C</pre></details>
+<h2>In short</h2>
+<ul>
+<li><b>The gap.</b> An sgit vault's read key is symmetric, so whoever can read can also produce data every client accepts. The write key is a password the server compares, and no client can check it. Anyone who holds the read key and can write to the store without that check, the host, someone who has compromised it, a static mirror, can author history.</li>
+<li><b>The obvious fix does not work.</b> "Make the read key a public key and the write key a private key" fails, because whatever decrypts must be secret, and the public half can always be derived from the private half. <b>Two key pairs work.</b></li>
+<li><b>Design 1, native PKI vault mode</b>, a second way to run a vault: a read key pair and a write key pair, neither derivable from the other. A reader cannot write, a host cannot forge, and a <b>write-only depositor</b> becomes possible.</li>
+<li><b>Design 2, sealed files</b>, an optional layer on any vault, today's included: chosen files are sealed to named people's public keys. Other vault members see that the file exists, not what is in it. The private key can live anywhere, <b>including a remote service that logs and approves each decryption</b>.</li>
+<li><b>Both share a first step</b>: a writer signature on today's vaults, which closes the forgery gap without changing the data format.</li>
+<li><b>Limits stay</b>: a host can still withhold data or serve an older signed state; a reader you remove keeps what they already read; with sealed files, names, paths, sizes and history stay visible to vault members.</li>
+</ul>
+<h2>How sgit protects a vault today</h2>
+<p>A vault key is <code>passphrase : vault_id</code>. From the passphrase, PBKDF2-SHA256 with 600,000 iterations derives two keys. The <b>read key</b> encrypts everything in the vault with AES-256-GCM before it leaves the machine: every file, folder listing, commit and branch pointer. The server stores only ciphertext, which we have <a href="encrypted-memory-for-isolated-agents.html">checked on a self-hosted server</a>. Every stored object is named by the hash of its ciphertext, so a client can check that the server returned exactly what was stored, with no key and no trust. The <b>write key</b> is not used for any cryptography: the server compares it with the one it saw first and refuses writes that do not match. Commits are also signed, with ECDSA P-256, by the key of the clone that made them.</p>
+<h2>The honest problem</h2>
+<p>The read key is symmetric: whoever can decrypt can also encrypt. A read-key holder can therefore produce objects, branch pointers and even signing-key files that every client accepts as genuine. Commit signatures do not save the day, because a signing key is trusted when its file decrypts under the read key, and a read-key holder can make such a file.</p>
+<p>What stops a read-only holder from rewriting history today is the server's write-key check. So the risk is real whenever someone holds the read key and can write to the store without that check: the host itself, anyone who compromises it, a static mirror, anyone the host colludes with. And read-only shares, the <a href="https://sgit.ai/docs/credentials.html"><code>sgit_public_read_</code> keys this site publishes</a>, are read-key holders.</p>
+<p>sgit's threat model lists this openly as a by-design risk. It carries a test that performs the forgery against an in-memory host and asserts that it still succeeds, so the gap cannot be quietly forgotten: when it closes, the test fails and the risk register has to change.</p>
+<h2>The obvious idea, and the correction</h2>
+<p>The natural idea is to make the read key public and the write key private. A key pair supports two operations, and in each the direction is fixed:</p>
+<div class="tablewrap"><table>
+<tr><th>Operation</th><th>Done with</th><th>Undone or checked with</th><th>What it gives</th></tr>
+<tr><td>encrypt, then decrypt</td><td>the <b>public</b> key</td><td>the <b>private</b> key</td><td>confidentiality to the private-key holder</td></tr>
+<tr><td>sign, then verify</td><td>the <b>private</b> key</td><td>the <b>public</b> key</td><td>proof that the private-key holder wrote it</td></tr>
+</table></div>
+<p>Two facts settle it. The private half always yields the public half, so whichever key goes to the less trusted party must be the public one. And "decrypting with the public key" is not confidentiality; it is signing, which anyone with the public key can undo. So one key pair can give you <em>who wrote it</em>, but not secrecy. <b>Add a second key pair for reading, and every property falls out.</b></p>
+<h2>The first step both designs share: a writer signature</h2>
+<p>Before either design, today's vaults can get a <b>vault signing key</b>: an Ed25519 key derived from the passphrase along a third path, not from the write key (the server knows that) and not from the read key (read-only shares hold that). Writers sign the branch pointers and the branch index; every client verifies them. The objects underneath are content-addressed, so signing the roots authenticates the whole tree. No data is re-encrypted; vaults opt in. Ed25519 is chosen because its signatures are deterministic, so the browser and the command line can share byte-for-byte test vectors.</p>
+<p>It closes the forgery gap for writers who share the passphrase, and its hard part is not the cryptography but downgrade resistance: a host must not be able to strip the signatures or the feature flag, so a signed vault gets a new key version that tells even a fresh clone that signatures are mandatory. The analysis estimates one and a half to two weeks for the command line, with the same work in the web UI.</p>
+<h2>Design 1: native PKI vault mode</h2>
+<figure class="shot" data-shot="rfc-design1.webp" data-dir="images/" data-alt="Two key pairs, neither derivable from the other: one for reading, one for writing. The data key is sealed to the read public key, heads are signed with the write private key, and the vault id is derived from the write public key."><figcaption>Two key pairs, neither derivable from the other: one for reading, one for writing. The data key is sealed to the read public key, heads are signed with the write private key, and the vault id is derived from the write public key.</figcaption></figure>
+<details class="src"><summary>Design 1, Mermaid source</summary><div class="src-bar"><button type="button" class="src-copy" data-copy="flowchart LR
+  M[&quot;Owner seed M&quot;]
+  subgraph pairs[&quot;Two key pairs, neither derivable from the other&quot;]
+    direction TB
+    R[&quot;Read pair R, X25519&lt;br/&gt;R.pub seals, R.priv opens&quot;]
+    W[&quot;Write pair W, Ed25519&lt;br/&gt;W.priv signs, W.pub verifies&quot;]
+  end
+  DK[&quot;Vault data key DK&lt;br/&gt;random, sealed to R.pub&quot;]
+  OBJ[&quot;Objects, trees, commits&lt;br/&gt;AES-256-GCM under DK&lt;br/&gt;exactly as today&quot;]
+  HEAD[&quot;Refs and index&lt;br/&gt;signed by W.priv&quot;]
+  ID[&quot;Vault id = hash of W.pub&lt;br/&gt;self-certifying&quot;]
+  M -- &quot;HKDF&quot; --&gt; R
+  M -- &quot;HKDF&quot; --&gt; W
+  R --&gt; DK --&gt; OBJ
+  W --&gt; HEAD
+  W --&gt; ID
+  subgraph who[&quot;Who holds what&quot;]
+    direction TB
+    RD[&quot;Reader: R.priv + W.pub&lt;br/&gt;reads, verifies, cannot write&quot;]
+    WR[&quot;Writer: R.priv + W.priv&lt;br/&gt;reads and writes&quot;]
+    DP[&quot;Depositor: R.pub + a signing key&lt;br/&gt;adds to an inbox, cannot read&quot;]
+    HO[&quot;Host: ciphertext + W.pub&lt;br/&gt;cannot read or forge&quot;]
+  end
+  pairs --&gt; who"><span class="cp">copy</span></button><a href="images/rfc-design1.webp">rendered image</a></div><pre class="shell">flowchart LR
+  M["Owner seed M"]
+  subgraph pairs["Two key pairs, neither derivable from the other"]
+    direction TB
+    R["Read pair R, X25519&lt;br/&gt;R.pub seals, R.priv opens"]
+    W["Write pair W, Ed25519&lt;br/&gt;W.priv signs, W.pub verifies"]
+  end
+  DK["Vault data key DK&lt;br/&gt;random, sealed to R.pub"]
+  OBJ["Objects, trees, commits&lt;br/&gt;AES-256-GCM under DK&lt;br/&gt;exactly as today"]
+  HEAD["Refs and index&lt;br/&gt;signed by W.priv"]
+  ID["Vault id = hash of W.pub&lt;br/&gt;self-certifying"]
+  M -- "HKDF" --&gt; R
+  M -- "HKDF" --&gt; W
+  R --&gt; DK --&gt; OBJ
+  W --&gt; HEAD
+  W --&gt; ID
+  subgraph who["Who holds what"]
+    direction TB
+    RD["Reader: R.priv + W.pub&lt;br/&gt;reads, verifies, cannot write"]
+    WR["Writer: R.priv + W.priv&lt;br/&gt;reads and writes"]
+    DP["Depositor: R.pub + a signing key&lt;br/&gt;adds to an inbox, cannot read"]
+    HO["Host: ciphertext + W.pub&lt;br/&gt;cannot read or forge"]
+  end
+  pairs --&gt; who</pre></details>
+<p>A second way to run a vault, side by side with today's:</p>
+<pre class="shell">
+ R = read pair   (X25519, for encryption)    R.priv decrypts    R.pub encrypts
+ W = write pair  (Ed25519, for signatures)   W.priv signs heads W.pub verifies
+
+ vault data key DK (random 32 bytes)
+   sealed to R.pub with HPKE (X25519, HKDF-SHA256, AES-256-GCM, RFC 9180)
+   every object      = AES-256-GCM(DK, ...)   exactly today's object format
+   every ref / index = AES-256-GCM(DK, ...) + an Ed25519 signature by W.priv
+ vault id = a hash of W.pub (self-certifying)
+</pre>
+<div class="tablewrap"><table>
+<tr><th>Party</th><th>Holds</th><th>Can</th><th>Cannot</th></tr>
+<tr><td><b>Reader</b></td><td><code>R.priv</code>, <code>W.pub</code></td><td>read everything; check every head was signed by a writer</td><td>write: needs <code>W.priv</code>, not derivable from what it holds</td></tr>
+<tr><td><b>Writer</b></td><td><code>R.priv</code>, <code>W.priv</code></td><td>read and write</td><td></td></tr>
+<tr><td><b>Depositor</b>, write-only</td><td><code>R.pub</code>, a signing key the vault accepts for its inbox</td><td>add new content readers can open</td><td>read anything: needs <code>R.priv</code></td></tr>
+<tr><td><b>Host</b></td><td>ciphertext, <code>W.pub</code></td><td>store, serve, refuse unsigned writes</td><td>read; forge a head; it can still withhold or replay old signed states</td></tr>
+</table></div>
+<p><b>Why a data key, rather than encrypting every object to the read public key.</b> Public-key encryption is randomised: the same tree encrypted twice gives different bytes. sgit depends on deterministic tree encryption, for de-duplication and for <a href="https://sgit.ai/docs/partial-clones.html">partial clones</a>, whose rebuilt trees must match the whole vault's byte for byte. Sealing one symmetric data key to <code>R.pub</code> keeps the object layer unchanged. The public-key cryptography sits in two places only: distribution (the data key never travels as a passphrase) and authority (no write is authorised by a bearer secret).</p>
+<p><b>What does not change</b>: the object store, content addressing, trees, sync, merge, partial clones and the command line. Only key creation, how the data key reaches a reader, and what authorises a write. Today's vaults keep working; moving one to the new mode would be an explicit <code>vault move</code>.</p>
+<p><b>The write-only depositor</b> is the one capability today's design cannot express. A depositor can encrypt but not read, so it cannot read the current tree to change it: write-only means <b>append</b>. Each deposit is a commit on the depositor's own inbox branch, with its own data key sealed to <code>R.pub</code>, and a writer merges it in. It fits agents handing work to people, submissions, and log or report drops; with sealed files it becomes a drop box where contributors cannot read each other's files.</p>
+<p><b>Rotation.</b> A self-certifying vault id means a new write key is a new vault. That is acceptable to start; the cleaner design derives the vault id from an <b>owner root key</b> kept offline or in a decryption service, which signs a <b>writer set</b>. Removing a writer is then a re-signed set; removing a reader is a new read pair and data key, sealed to the remaining members.</p>
+<p><b>Algorithms</b>: Ed25519, X25519, HKDF-SHA256 and AES-256-GCM, all available in the Python <code>cryptography</code> library and in current browsers' Web Crypto. Post-quantum: AES-256 content is fine; the exposure is the key exchange that seals the data key, and HPKE has hybrid X25519 plus ML-KEM suites to adopt when browsers support them.</p>
+<p><b>Effort</b>, as estimated in the design: about a week for the key code and test vectors; one to one and a half weeks for signed refs and index with verification on every read path; half a week for sealing the data key and <code>init --pki</code>; server work by the SG/Send team to accept signed writes; about a week for depositors; two to three weeks for the owner key and writer set. The first three phases give a working mode in which a reader cannot write and a host cannot forge.</p>
+<h2>Design 2: sealed files</h2>
+<figure class="shot" data-shot="rfc-design2.webp" data-dir="images/" data-alt="An inner envelope, sealed to named people&#x27;s public keys, inside the vault&#x27;s own encryption. Only the 16-byte file key crosses to wherever the private key lives, including a remote service that can log, approve or refuse each decryption."><figcaption>An inner envelope, sealed to named people's public keys, inside the vault's own encryption. Only the 16-byte file key crosses to wherever the private key lives, including a remote service that can log, approve or refuse each decryption.</figcaption></figure>
+<details class="src"><summary>Design 2, Mermaid source</summary><div class="src-bar"><button type="button" class="src-copy" data-copy="flowchart LR
+  P[&quot;A file&lt;br/&gt;plaintext&quot;]
+  subgraph inner[&quot;Inner layer: sealed to named people&quot;]
+    direction TB
+    FK[&quot;Random file key FK&lt;br/&gt;encrypts the content&quot;]
+    ST[&quot;FK wrapped once per recipient&lt;br/&gt;public key, in an age v1 envelope&quot;]
+  end
+  subgraph outer[&quot;Outer layer: the vault, as today&quot;]
+    O[&quot;Read key or DK&lt;br/&gt;hides everything from the host&quot;]
+  end
+  H[&quot;Host&lt;br/&gt;ciphertext only&quot;]
+  P --&gt; FK --&gt; ST --&gt; O --&gt; H
+  subgraph prov[&quot;Where a recipient&#x27;s private key can live&quot;]
+    direction TB
+    F[&quot;A key file&quot;]
+    SSH[&quot;An ssh key&quot;]
+    HW[&quot;Hardware: YubiKey, TPM, Secure Enclave&quot;]
+    RS[&quot;A remote service that logs,&lt;br/&gt;approves or refuses each unwrap&quot;]
+  end
+  ST -- &quot;only the 16-byte file key&lt;br/&gt;crosses this line&quot; --&gt; prov"><span class="cp">copy</span></button><a href="images/rfc-design2.webp">rendered image</a></div><pre class="shell">flowchart LR
+  P["A file&lt;br/&gt;plaintext"]
+  subgraph inner["Inner layer: sealed to named people"]
+    direction TB
+    FK["Random file key FK&lt;br/&gt;encrypts the content"]
+    ST["FK wrapped once per recipient&lt;br/&gt;public key, in an age v1 envelope"]
+  end
+  subgraph outer["Outer layer: the vault, as today"]
+    O["Read key or DK&lt;br/&gt;hides everything from the host"]
+  end
+  H["Host&lt;br/&gt;ciphertext only"]
+  P --&gt; FK --&gt; ST --&gt; O --&gt; H
+  subgraph prov["Where a recipient's private key can live"]
+    direction TB
+    F["A key file"]
+    SSH["An ssh key"]
+    HW["Hardware: YubiKey, TPM, Secure Enclave"]
+    RS["A remote service that logs,&lt;br/&gt;approves or refuses each unwrap"]
+  end
+  ST -- "only the 16-byte file key&lt;br/&gt;crosses this line" --&gt; prov</pre></details>
+<p>An optional layer that works on <b>either</b> vault mode, today's symmetric vaults included. The author can say: here is my public key, encrypt this file with it; to read it, ask over there. The files stay in the vault as before; only someone with the private key, or a service that holds it, can read them. Mechanically it is <b>envelope encryption to recipients' public keys, with decryption delegated</b>, the pattern of git-crypt, SOPS and age.</p>
+<div class="tablewrap"><table>
+<tr><th>Who</th><th>Create a sealed file</th><th>Read it</th><th>Edit it</th><th>Replace or delete it</th></tr>
+<tr><td>A recipient, with its key or provider</td><td>yes</td><td>yes</td><td>yes</td><td>yes</td></tr>
+<tr><td>A vault writer who is not a recipient</td><td><b>yes</b>, sealing needs only public keys</td><td>no</td><td>no, editing needs reading</td><td><b>yes, blindly</b></td></tr>
+<tr><td>A vault reader</td><td>no</td><td>no</td><td>no</td><td>no</td></tr>
+<tr><td>The host</td><td>no</td><td>no</td><td>no</td><td>withhold or replay, as today</td></tr>
+</table></div>
+<p><b>The honest twist</b>: any vault writer can replace a sealed file without being able to read it, because sealing needs only public keys. That is an integrity question, not a confidentiality one, and the design answers it two ways: <b>signed envelopes</b>, where the sealer signs the inner envelope and recipients check the signer is allowed for that path, and <b>per-path author rules</b> enforced on commit and pull.</p>
+<p><b>Which files, to whom.</b> A committed policy file, like <code>.gitattributes</code> for git-crypt, pins each recipient's public key by fingerprint, so a change at a key directory cannot silently add someone:</p>
+<pre class="shell">
+# .sgit/seal   (committed; a change to it is itself a signed, reviewable commit)
+recipients:
+  dinis   = age1...           # published key, fingerprint pinned here
+  backup  = age1...           # offline recovery key
+  ops     = age1yubikey1...   # hardware-held
+seal:
+  secrets/**        -&gt; dinis, backup
+  finance/*.xlsx    -&gt; dinis, ops, backup
+authors:
+  secrets/**        -&gt; dinis
+</pre>
+<p><b>The format: age v1, proposed.</b> It is specified, small and audited; a sealed file can be opened with the stock <code>age</code> tool without sgit; and its <b>plugin protocol</b> is exactly "the private key lives elsewhere", with plugins for YubiKey, TPM, Secure Enclave and cloud key services. The trade-off: age's payload cipher, ChaCha20-Poly1305, is not in Web Crypto, so the browser would use the reference TypeScript implementation. The alternative is a custom HPKE envelope, pure Web Crypto, without the ecosystem.</p>
+<p><b>Where the private key lives</b>, the provider:</p>
+<div class="tablewrap"><table>
+<tr><th>Provider</th><th>Where the key is</th><th>Notes</th></tr>
+<tr><td>A local identity file</td><td>a protected file on the machine</td><td>the simple default</td></tr>
+<tr><td>An ssh key or ssh-agent</td><td>the key you already have</td><td>age supports ssh recipients natively</td></tr>
+<tr><td>Hardware</td><td>YubiKey, PIV, TPM, Secure Enclave, through age plugins</td><td>touch to decrypt; the key cannot be copied</td></tr>
+<tr><td>A remote service</td><td>a team service, a cloud key service, or an SG/Send service</td><td>can <b>log, rate-limit, require approval and revoke</b> per unwrap, per file; offline means unreadable, by design</td></tr>
+</table></div>
+<h3 id="providers">Where the private key could live today</h3>
+<p>The remote-service provider is the one that needs outside parts, so we checked thirty services and tools on 9 October 2026, from their own documentation. We asked four questions of each. Can it unwrap a small key with a private key it never releases? Does it log each unwrap, check a policy, or ask a person first? Can anyone seal offline with only the public key, so the service is not needed when writing? Can a browser do that sealing?</p>
+<p><b>The finding that changes the design.</b> The format the remote services share is RSA-OAEP-256, not X25519. <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Decrypt.html">AWS KMS</a>, <a href="https://docs.cloud.google.com/kms/docs/encrypt-decrypt-rsa">Google Cloud KMS</a>, <a href="https://learn.microsoft.com/en-us/rest/api/keyvault/keys/unwrap-key/unwrap-key">Azure Key Vault</a>, <a href="https://developer.hashicorp.com/vault/docs/secrets/transit">HashiCorp Vault</a> and <a href="https://openbao.org/docs/secrets/transit/">OpenBao</a> Transit, Fortanix, Akeyless, YubiHSM 2 and Nitrokey HSM 2 can all decrypt a key that a client encrypted offline with the downloaded public key, and Web Crypto does RSA-OAEP natively. The three large cloud key services do not offer X25519 decryption: AWS <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-choose-key-spec.html">offers key agreement on NIST curves only</a>, and Google uses X25519 only inside the <a href="https://docs.cloud.google.com/kms/docs/key-encapsulation-mechanisms">X-Wing post-quantum scheme</a>. So X25519, age's own recipient type, stays the right default for keys people hold themselves, and sealed files would also need an <code>rsa-oaep-256</code> recipient type to reach a remote service. AWS uses an empty OAEP label and supports no encryption context for asymmetric keys, so the binding of a wrapped key to its vault and file has to live in sgit's own header, not in the service call.</p>
+<div class="tablewrap"><table>
+<tr><th>Option</th><th>Each unwrap</th><th>Seal offline</th><th>Open source, self-hosted</th><th>Cost, as published</th></tr>
+<tr><td><a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">AWS KMS</a>, RSA key</td><td>logged in CloudTrail; IAM and key policy; no human approval</td><td>yes</td><td>no</td><td><a href="https://aws.amazon.com/kms/pricing/">$1 per key per month, $0.15 per 10,000 asymmetric requests</a></td></tr>
+<tr><td><a href="https://docs.cloud.google.com/kms/docs/algorithms">Google Cloud KMS</a>, RSA or X-Wing key</td><td>Cloud Audit Logs; IAM; no human approval</td><td>yes</td><td>no</td><td><a href="https://docs.cloud.google.com/kms/docs/key-management-service">$0.06 per software key version per month, $1.00 to $2.50 in Cloud HSM</a></td></tr>
+<tr><td><a href="https://learn.microsoft.com/en-us/rest/api/keyvault/keys/wrap-key/wrap-key">Azure Key Vault and Managed HSM</a></td><td><a href="https://learn.microsoft.com/en-us/azure/key-vault/general/logging">logged as <code>KeyUnwrap</code></a>; role-based access; no human approval</td><td>yes</td><td>no</td><td>$0.03 or $0.15 per 10,000 operations; an HSM-backed RSA 2048 key $1 per month</td></tr>
+<tr><td><a href="https://developer.hashicorp.com/vault/api-docs/secret/transit">HashiCorp Vault Transit</a></td><td><a href="https://developer.hashicorp.com/vault/docs/audit">every request audited, and refused if it cannot be logged</a>; <a href="https://developer.hashicorp.com/vault/docs/enterprise/control-groups">control groups</a> add approval in Enterprise and HCP</td><td>yes</td><td>source-available (BSL 1.1); self-hosted</td><td>Community edition free</td></tr>
+<tr><td><a href="https://openbao.org/docs/secrets/transit/">OpenBao Transit</a></td><td>audited; policy</td><td>yes</td><td><a href="https://github.com/openbao/openbao">MPL-2.0</a>; self-hosted</td><td>free</td></tr>
+<tr><td><a href="https://support.fortanix.com/docs/fortanix-dsm-group-quorum-policy">Fortanix DSM</a></td><td><b>quorum approval on every private-key operation</b>, decryption included; audit log</td><td>yes, encryption is exempt from the quorum</td><td>no</td><td>quote, 30-day trial</td></tr>
+<tr><td><a href="https://github.com/opentdf/spec/blob/main/protocol/protocol.md">OpenTDF Key Access Server</a></td><td>policy check before each unwrap; the key is re-encrypted to the client's own key</td><td>yes</td><td><a href="https://github.com/opentdf/platform">BSD-3-Clause-Clear</a>; self-hosted</td><td>free</td></tr>
+<tr><td><a href="https://developers.google.com/workspace/cse/reference">Google Workspace client-side encryption key service API</a></td><td>each call carries an identity token, an authorization token and a reason, and <a href="https://developers.google.com/workspace/cse/guides/encrypt-and-decrypt-data">the guide says to log all three</a></td><td>yes</td><td>the specification is public; you can build your own</td><td>needs Workspace Enterprise Plus or similar</td></tr>
+<tr><td>age plugins: <a href="https://github.com/str4d/age-plugin-yubikey">YubiKey</a>, <a href="https://github.com/remko/age-plugin-se">Secure Enclave</a>, <a href="https://github.com/Foxboron/age-plugin-tpm">TPM</a></td><td>PIN, touch or biometry, on the device; no remote log</td><td>yes</td><td>MIT or Apache-2.0</td><td><a href="https://www.yubico.com/product/yubikey-5-nfc/">YubiKey 5 NFC, $58</a></td></tr>
+<tr><td><a href="https://www.yubico.com/product/yubihsm-2-series/yubihsm-2/">YubiHSM 2</a> or <a href="https://shop.nitrokey.com/shop/product/nk-hsm-2-nitrokey-hsm-2-7">Nitrokey HSM 2</a>, behind a small unwrap service</td><td>YubiHSM 2 keeps a hash-chained audit log; approval lives in the service</td><td>yes</td><td>tools open; Nitrokey is open hardware</td><td>$650; €109</td></tr>
+</table></div>
+<p>Three findings beyond the table:</p>
+<ul>
+<li><b>Approval of each decryption by a person is rare.</b> Fortanix's quorum policy and Vault's control groups provide it; otherwise you build it into a service you run, following the <a href="https://developers.google.com/workspace/cse/reference/unwrap">Google client-side encryption</a> or <a href="https://github.com/opentdf/spec">OpenTDF</a> pattern. Cloud key services give logs and access rules, not a step that asks someone.</li>
+<li><b>We found no age plugin backed by a cloud key service</b>, in the <a href="https://github.com/FiloSottile/awesome-age">awesome-age list</a> or in searches, although age's <a href="https://github.com/FiloSottile/age/releases/tag/v1.1.0">plugin design names cloud key services as a purpose</a>. One written for sgit would also serve every age user.</li>
+<li><b>Some do not fit.</b> Services that only encrypt symmetrically (AWS external key stores, Google Cloud EKM, Infisical's KMS, passkeys through FIDO2 PRF) must be online to seal. Services where the vendor, not the named person, holds the right to decrypt (Evervault, Skyflow, Basis Theory) answer a different question. Threshold's TACo, a network of nodes that release key fragments when conditions are met, has a code repository marked <a href="https://github.com/nucypher/taco-web">no longer active</a>, with <a href="https://docs.taco.build/">a relaunch planned for Q3 2026</a>.</li>
+</ul>
+<p><b>Our three best fits for each kind of user:</b></p>
+<div class="tablewrap"><table>
+<tr><th></th><th>First</th><th>Second</th><th>Third</th></tr>
+<tr><td><b>A person or a small team</b></td><td>age X25519 keys, with a YubiKey, Secure Enclave or TPM plugin for a key that cannot be copied</td><td>one RSA key in AWS or Google Cloud KMS: about $1 a month, every unwrap logged</td><td>OpenBao Transit, optionally on a YubiHSM 2 or Nitrokey HSM 2</td></tr>
+<tr><td><b>A company that wants every decryption approved and logged</b></td><td>Fortanix DSM with a quorum policy</td><td>Vault Enterprise or HCP Vault, with control groups</td><td>an unwrap service of your own, on the Google client-side encryption or OpenTDF pattern, in front of a cloud key service or an HSM</td></tr>
+<tr><td><b>Open source and self-hosted only</b></td><td>OpenBao</td><td>OpenTDF with its Key Access Server</td><td>age with open hardware, behind a small unwrap service</td></tr>
+</table></div>
+<p><b>The interface this suggests.</b> Sealing stays offline and native in sgit, in Python and the browser, for a few recipient types: X25519, RSA-OAEP-256, and later age's X-Wing type. Unsealing becomes one call with four back ends: a local key; the age plugin protocol, so existing hardware plugins work unchanged; a direct call to a cloud key service or Vault; and an HTTP unwrap endpoint for approval flows, which takes the wrapped key, the vault and file, a reason and identity tokens, logs them, and returns the file key re-encrypted to a temporary key of the client's, or "pending" until someone approves. Google Cloud KMS's X-Wing keys and age's post-quantum recipient may fit together, which would give a post-quantum key held by a cloud service; that is untested, and needs a test-vector run before anything depends on it.</p>
+<p><b>Moving capabilities, not passphrases.</b> The same envelope can carry a vault's read or write capability to a person: <code>sgit share --to dinis</code> would seal it to Dinis's published key, so no passphrase passes through chat, the command line or shell history.</p>
+<p><b>What it protects, and what it does not.</b> It keeps sealed content from the host, from vault members who are not recipients, and from anyone who later obtains the vault's read key. It does not hide file names, paths, sizes or history from vault members; a recipient removed later keeps what was sealed to them before; a non-recipient writer replacing a file is detected with signed envelopes, not prevented on the host; and it is only as strong as the provider.</p>
+<p><b>Effort</b>, as estimated: about a week for an age reader and writer; one to one and a half weeks for the policy, sealing on commit and opening on checkout; about a week for the providers, plus the service side for a remote one; half a week each for signed envelopes and author rules, and for <code>sgit share</code>; the web UI's part with the web team.</p>
+<h2>How the pieces fit</h2>
+<div class="tablewrap"><table>
+<tr><th></th><th>Closes the forgery gap?</th><th>Changes the vault format?</th><th>Main new capability</th></tr>
+<tr><td><b>Writer signature</b> on today's vaults</td><td>yes, for integrity</td><td>small: refs and index carry a signature</td><td>the step both designs share</td></tr>
+<tr><td><b>Native PKI mode</b></td><td>yes: heads must be signed by a key readers do not have</td><td>yes, as a second mode; today's vaults unchanged</td><td>write-only depositors; no bearer write key</td></tr>
+<tr><td><b>Sealed files</b></td><td>no, a different problem</td><td>no: a layer over any vault</td><td>content only named people can read, with the private key anywhere</td></tr>
+</table></div>
+<h2>Prior art</h2>
+<p>None of this is new, and it should not be. <b>Tahoe-LAFS</b> separates read and write capabilities for mutable files in nearly this shape. <b>Hypercore and Dat</b> use a key pair as a feed's identity and write capability. <b>git-crypt</b> and <b>SOPS</b> seal files inside a git repository to people's keys. <b>age</b> and its plugins put the decryption wherever the key lives. HPKE is <a href="https://www.rfc-editor.org/rfc/rfc9180">RFC 9180</a>. The aim is to bring these known shapes into a vault that is already encrypted, versioned and served by an untrusted host.</p>
+<h2 id="questions">Questions for reviewers</h2>
+<p>Comments on anything are welcome. These are the questions where an outside view would most change the design.</p>
+<p><b>Native PKI vault mode</b></p>
+<ol>
+<li><b>Two key pairs</b>, X25519 for reading and Ed25519 for writing. Is there a simpler construction that gives readers no write power and writers no derivable read power, and still works in browsers?</li>
+<li><b>A data key sealed to the read public key</b>, rather than encrypting each object to it, keeps encryption deterministic and preserves de-duplication and partial clones. Is that the right trade-off, or does it lose a property you care about?</li>
+<li><b>Vault id from the write public key</b>, self-certifying. Or from an owner root key that signs a writer set from day one, which makes rotation easier and the design more complex?</li>
+<li><b>Write-only depositors</b> append to an inbox branch with their own data key. Is append-only enough for your use cases: agents handing work to people, submissions, log drops?</li>
+<li><b>Freshness.</b> Signed sequence numbers and timestamps let a client flag a stale head, but a host can still serve an old signed state to someone who never saw a newer one. Is a transparency log or a witness worth the complexity?</li>
+<li><b>Capability strings.</b> Random 32-byte seeds only, for agents and machines, or also a passphrase form for people, as today?</li>
+</ol>
+<p><b>Sealed files</b></p>
+<ol>
+<li><b>age v1 or a custom HPKE envelope?</b> age brings a specified format, stock tools and plugins for hardware and cloud key services, with a non-Web-Crypto cipher in the browser. A custom envelope stays pure Web Crypto and gives up the ecosystem.</li>
+<li><b>The working copy.</b> Should a file the clone can open be written in plaintext, as git-crypt does, or stay sealed on disk, with <code>sgit cat</code> and <code>sgit open</code> to read it?</li>
+<li><b>Integrity of sealed paths.</b> Are signed envelopes plus per-path author rules the right answer, and should they be in the first version?</li>
+<li><b>A remote decryption service.</b> Only the file key crosses the boundary, and the service can log, approve or refuse each decryption. Which first provider would you use: a hosted unwrap service, a cloud key service, or hardware? And should sealed files carry an <code>rsa-oaep-256</code> recipient type beside X25519, since that is the format the remote services share? <a href="#providers">The landscape above</a> is our starting point.</li>
+<li><b>Leaks that remain.</b> Names, paths, sizes and history stay visible to vault members. Is that acceptable, or do you need sealed names or padding too?</li>
+</ol>
+<p><b>Both</b></p>
+<ol>
+<li><b>Two vault modes side by side.</b> Is the extra surface worth it, or should the PKI mode eventually replace the symmetric one?</li>
+<li><b>Post-quantum.</b> Content is AES-256; sealed data keys would move to a hybrid X25519 plus ML-KEM suite once browsers support it. Is waiting reasonable?</li>
+<li><b>Anything we have missed</b> in the threat model: actors, assets, or attacks.</li>
+</ol>
+<h2>How to comment</h2>
+<p><a href="https://github.com/SGit-AI/SGit-AI__CLI/issues/new?title=RFC%200001%3A%20">Open an issue on the sgit repository</a> with a title starting "RFC 0001:", and the question number if you are answering one; or write to <a href="mailto:agent@riskmandate.ai">agent@riskmandate.ai</a>. Disagreement is the point. Comments will be summarised on this page, with what changed in the design because of them.</p>
+<hr>
+<p><em>RFC 0001, from the design documents written by the sgit CLI agent for Dinis Cruz on 9 October 2026, who has editorial responsibility for the proposals. Prepared for this site, with the diagrams, by agent@riskmandate.ai (Claude Opus 5.5, claude-opus-5-5) in the sgit.ai site session; the landscape of key services was researched for this page on 9 October 2026 from the providers' own documentation. Nothing described here is implemented. Effort figures are the designers' estimates.</em></p>
+<sg-meter view="page" kind="article" date="2026-10-09" topics="vaults-and-method site-and-engineering" title="RFC 0001: two ways to add public-key cryptography to sgit, and the questions we want you to answer, sgit.ai"></sg-meter>
+<section class="athreads" id="threads">
+ <h2>Threads</h2>
+ <p class="athreads-meta"><span class="tchip">Vaults &amp; method</span><span class="tchip">Site &amp; engineering</span> <a href="graphs.html#rfc-0001-public-key-cryptography-for-sgit">This article as a graph &rarr;</a></p>
+ <div class="athreads-cols"><div><h3>Builds on</h3><ul><li><a href="encrypted-memory-for-isolated-agents.html">Encrypted memory for agents that run somewhere else: sgit deployment patterns, from a Mac mini to Kubernetes</a> <span class="dim">Agents in isolated, ephemeral places need memory that outlives them. Five sgit deployment patterns, from a Mac mini to Kubernetes, with ciphertext-only servers.</span></li></ul></div><div><h3>Continued by</h3><ul><li><a href="where-the-vault-keys-live.html">Where the vault keys live: key management at sgit-ai v0.20.0, and what comes next</a> <span class="dim">Vault key management at sgit-ai v0.20.0: the one secret, where keys are kept, how they travel sealed on append lanes, and what comes next.</span></li></ul></div></div>
+ <p class="small dim"><a href="index.html">All articles</a> &middot; <a href="graphs.html">All graphs</a></p>
+</section>
+<aside class="lkit" aria-label="For LinkedIn"><b>Posting this article on LinkedIn?</b> The cover is <a href="banners/rfc-0001-public-key-cryptography-for-sgit.jpg" download>rfc-0001-public-key-cryptography-for-sgit.jpg</a> (1920&times;1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page.</aside>
+ <p class="subteaser"><b>Want the next issue by email.</b> One issue a week or so: what was published, what it adds up to, and what is worth your time. <a class="cta2" href="../subscribe/index.html">Subscribe to the SGit Newsroom &rarr;</a></p>
+ <p class="small dim" style="margin-top:2rem"><a href="index.html">&larr; All articles</a></p>
+</main>
+<script>
+(function () {
+ fetch('../assets/shots.js?v=v0.7.39')
+ .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+ .then(function (t) { (0, eval)(t); })
+ .catch(function (e) { console.error('[shots] component failed to load:', e); });
+}());
+</script>
+<script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": ""}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
+<script>
+import('../assets/components/sg-meter/v1/v1.3/v1.3.1/sg-meter.js?v=v0.7.39')
+ .catch(function (e) { console.error('[sg-meter] component failed to load:', e); });
+</script>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="netline"><a href="https://sgit.ai" style="display:inline;padding:0"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://pt.newsroom.sgit.ai" style="display:inline;padding:0">&#8593; pt.newsroom.sgit.ai</a> &middot; <a href="https://graphs.sgit.ai" style="display:inline;padding:0">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai" style="display:inline;padding:0">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai" style="display:inline;padding:0">&#8593; nhi.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai" style="display:inline;padding:0">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../admin/versions.html">v0.6.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="rfc-0001-public-key-cryptography-for-sgit.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../index.html">&#8594; The front page</a>
+    <a href="../articles/index.html#all">Every article</a>
+    <a href="../articles/newsletter/index.html">The newsletter</a>
+    <a href="../articles/collections/index.html">Collections</a>
+    <a href="../articles/desk/index.html">From the desk</a>
+    <a href="../articles/graphs.html">As graphs</a>
+    <a href="../subscribe/index.html">Subscribe</a>
+    <a href="../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../account/index.html">Your reading account</a>
+    <a href="../account/newsroom.html">Your newsroom</a>
+    <a href="../account/personas.html">Your personas</a>
+    <a href="../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../newsroom/index.html">How the newsroom runs</a>
+    <a href="../newsroom/policies.html">Behaviour policies</a>
+    <a href="../newsroom/publish.html">How to publish</a>
+    <a href="../newsroom/board.html">The board</a>
+    <a href="../newsroom/log.html">The run log</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../design/index.html">The design, and what runs</a>
+    <a href="../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../corrections/index.html">Corrections must propagate</a>
+    <a href="../provenance/index.html">Provenance is the product</a>
+    <a href="../economics/index.html">Paying the fact creator</a>
+    <a href="../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../replicate/index.html">Replicate this newsroom</a>
+    <a href="../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../archive/index.html">The archive</a>
+    <a href="../network/index.html">The network</a>
+    <a href="../admin/versions.html">Release history</a>
+    <a href="../admin/index.html">Admin &amp; engineering</a>
+    <a href="../about/participant.html">Where we lose</a>
+    <a href="../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+
+<script>
+(function(){var R=document.documentElement.getAttribute('data-root')||'';var V='?v=' + 'v0.7.39';var C=[R,'','../','/'].filter(function(v,i,a){return a.indexOf(v)===i});
+function wait(ms){return new Promise(function(res){var t=Date.now();(function p(){if(window.sg)return res(window.sg);if(Date.now()-t>ms)return res(null);setTimeout(p,60)})()})}
+function grab(sg,p){return new Promise(function(res){(async function(){if(sg&&sg.vfs&&sg.vfs.readText){try{var t=await sg.vfs.readText(p);if(t)return res(t)}catch(e){}}try{var r=await fetch(p+V);if(r.ok)return res(await r.text())}catch(e){}res(null)})()})}
+async function css(sg){for(var i=0;i<C.length;i++){var p=C[i]+'assets/newsroom.css';if(sg&&sg.loadCss){try{await sg.loadCss(p);return}catch(e){}}var t=await grab(sg,p);if(t){var s=document.createElement('style');s.textContent=t;document.head.appendChild(s);return}}}
+async function js(sg,name){name=name||'assets/site.js';for(var i=0;i<C.length;i++){var p=C[i]+name;if(sg&&sg.loadJs){try{await sg.loadJs(p);return}catch(e){}}var t=await grab(sg,p);if(t){try{(0,eval)(t)}catch(e){console.error('[site] js failed',name,e)}return}}}
+async function boot(){var inVault=false;try{inVault=(window!==window.parent)||location.protocol==='blob:'}catch(e){inVault=true}
+var sg=inVault?await wait(2500):null;window.__sgitBoot={roots:C,grab:function(p){return grab(sg,p)},version:V};await css(sg);await js(sg);document.documentElement.classList.add('ready');try{window.parent&&window.parent.postMessage({type:'sg-app-ready'},'*')}catch(e){}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+var mine=V.slice(3),last=0;
+function fresh(){if(location.hostname!=='sgit.ai'||Date.now()-last<60000)return;last=Date.now();
+fetch('/version.txt?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(t){t=(t||'').trim();if(!/^v[0-9]+[.][0-9]+[.][0-9]+$/.test(t)||t===mine)return;
+var k='sgit.fresh:'+location.pathname;try{if(sessionStorage.getItem(k)===t)return;sessionStorage.setItem(k,t)}catch(e){}
+var u=new URL(location.href);u.searchParams.set('v',t);location.replace(u.href)}).catch(function(){})}
+try{var u=new URL(location.href);if(u.searchParams.get('v')===mine){u.searchParams.delete('v');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}
+fresh();addEventListener('pageshow',function(e){if(e.persisted){last=0;fresh()}});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')fresh()});
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,228 @@
+{
+  "slug": "connector-twin-before-you-deploy-an-agent",
+  "teaser": "An agent with a Gmail or Calendar connector can do things the platform cannot undo; a journal of every call, replayed, shows what it did and what can go back.",
+  "topics": [
+    "agents-and-policy",
+    "vaults-and-method"
+  ],
+  "core_idea": "If you cannot say what your agent did, what it saw when it did it, and which of its actions you can undo, you are not ready to give it a connector, and a twin of the connector, a journal plus a replay, answers all three.",
+  "nodes": [
+    {
+      "id": "connector-is-a-grant-of-action",
+      "label": "A connector is a grant of action",
+      "kind": "claim",
+      "summary": "An agent with Gmail and Calendar connectors can send, archive, trash, permanently delete, move events, decline invitations and cancel meetings on somebody's behalf, at machine speed."
+    },
+    {
+      "id": "no-way-back",
+      "label": "The platform keeps no way back for some actions",
+      "kind": "claim",
+      "summary": "The Gmail API documents its delete as permanent, Undo Send is a feature of the interface not the API, and a moved calendar event has no version history a user can open."
+    },
+    {
+      "id": "what-the-platform-keeps",
+      "label": "What the platform keeps",
+      "kind": "concept",
+      "summary": "Trash windows, an administrator's bulk restore and audit logs record that things happened, but none records what the agent saw when it decided to act, or why."
+    },
+    {
+      "id": "connector-twin",
+      "label": "Connector twin",
+      "kind": "concept",
+      "summary": "A journal of every request and response the agent makes, and a replay of that journal into the views the agent saw."
+    },
+    {
+      "id": "twin-not-backup",
+      "label": "Twin, not backup, log or replay",
+      "kind": "concept",
+      "summary": "A backup copies the mailbox, a log is too small, replay is the verb; a twin is an interface to reality, valued for its connection to the real thing."
+    },
+    {
+      "id": "capture",
+      "label": "Capture",
+      "kind": "method",
+      "summary": "For every connector call, copy the tool call the agent made, the request sent to the platform and the response received, and never the Authorization header or any token."
+    },
+    {
+      "id": "append-lane",
+      "label": "Append lane",
+      "kind": "artefact",
+      "summary": "A write-only channel gated by a token the writer holds, whose write response is exactly {\"ok\": true}, so the capture point learns nothing about what else is in the lane."
+    },
+    {
+      "id": "hash-chain",
+      "label": "Chain",
+      "kind": "method",
+      "summary": "Each entry carries the hash of the one before it, so a missing, edited or reordered entry shows to anyone holding the read key."
+    },
+    {
+      "id": "when-to-process",
+      "label": "When the journal gets processed",
+      "kind": "question",
+      "summary": "On a timer, on a threshold of pending entries, on demand or at the end of each session; the right default will come from a few real users rather than from more design."
+    },
+    {
+      "id": "replay-and-revert",
+      "label": "Replay and revert",
+      "kind": "method",
+      "summary": "A vault app rebuilds the inbox and the calendar as the agent saw them at any step, shows before and after for every change, and writes a revert plan a person approves."
+    },
+    {
+      "id": "not-a-copy-of-the-mailbox",
+      "label": "The twin is not a copy of the mailbox",
+      "kind": "claim",
+      "summary": "It holds only what passed through the connector, so it scales with the agent's activity rather than with the size of the mailbox."
+    },
+    {
+      "id": "one-session-replayed",
+      "label": "One session, replayed",
+      "kind": "example",
+      "summary": "An invented scheduling assistant makes seventeen calls in under three minutes and writes a true summary that hides a cancellation sent to a supplier and a permanently deleted payment reminder."
+    },
+    {
+      "id": "undo-is-a-list",
+      "label": "Undo is a list, not a promise",
+      "kind": "claim",
+      "summary": "Every change gets a grade, reversible, partly reversible or not reversible, and the value of the list is that the red rows are named."
+    },
+    {
+      "id": "capture-modes",
+      "label": "Broker, gateway or requirement of the agent",
+      "kind": "concept",
+      "summary": "Three places to capture and three grades of evidence; the mode does not change what is captured, it changes what the evidence is allowed to claim."
+    },
+    {
+      "id": "behaviour-policy",
+      "label": "What it does to the agent's behaviour policy",
+      "kind": "concept",
+      "summary": "With the list of irreversible actions in hand the mandate can say what the agent may do freely, must ask before, and may never do without approval."
+    }
+  ],
+  "edges": [
+    {
+      "from": "connector-is-a-grant-of-action",
+      "to": "no-way-back",
+      "rel": "leads-to"
+    },
+    {
+      "from": "no-way-back",
+      "to": "what-the-platform-keeps",
+      "rel": "extends"
+    },
+    {
+      "from": "what-the-platform-keeps",
+      "to": "connector-twin",
+      "rel": "leads-to"
+    },
+    {
+      "from": "twin-not-backup",
+      "to": "connector-twin",
+      "rel": "extends"
+    },
+    {
+      "from": "connector-twin",
+      "to": "capture",
+      "rel": "depends-on"
+    },
+    {
+      "from": "capture",
+      "to": "append-lane",
+      "rel": "leads-to"
+    },
+    {
+      "from": "append-lane",
+      "to": "hash-chain",
+      "rel": "leads-to"
+    },
+    {
+      "from": "hash-chain",
+      "to": "when-to-process",
+      "rel": "leads-to"
+    },
+    {
+      "from": "when-to-process",
+      "to": "replay-and-revert",
+      "rel": "leads-to"
+    },
+    {
+      "from": "connector-twin",
+      "to": "replay-and-revert",
+      "rel": "produces"
+    },
+    {
+      "from": "capture",
+      "to": "not-a-copy-of-the-mailbox",
+      "rel": "produces"
+    },
+    {
+      "from": "replay-and-revert",
+      "to": "undo-is-a-list",
+      "rel": "produces"
+    },
+    {
+      "from": "no-way-back",
+      "to": "undo-is-a-list",
+      "rel": "leads-to"
+    },
+    {
+      "from": "one-session-replayed",
+      "to": "replay-and-revert",
+      "rel": "example-of"
+    },
+    {
+      "from": "one-session-replayed",
+      "to": "undo-is-a-list",
+      "rel": "example-of"
+    },
+    {
+      "from": "capture-modes",
+      "to": "capture",
+      "rel": "extends"
+    },
+    {
+      "from": "undo-is-a-list",
+      "to": "behaviour-policy",
+      "rel": "leads-to"
+    },
+    {
+      "from": "capture-modes",
+      "to": "behaviour-policy",
+      "rel": "leads-to"
+    },
+    {
+      "from": "what-the-platform-keeps",
+      "to": "replay-and-revert",
+      "rel": "contrasts"
+    }
+  ],
+  "links": {
+    "articles": [],
+    "pages": [
+      "/demos/vaults/connector-twin/index.html",
+      "/api/append-lanes.html",
+      "/demos/vaults/licence-to-operate/index.html",
+      "/partnerships/vault-key-management.html",
+      "/startups/business-plans.html"
+    ],
+    "sites": [
+      "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.messages/delete",
+      "https://support.google.com/mail/answer/7401",
+      "https://support.google.com/mail/answer/2819488",
+      "https://support.google.com/calendar/answer/37113",
+      "https://knowledge.workspace.google.com/admin/reports/calendar-log-events",
+      "https://twins.sgit.ai/",
+      "https://twins.sgit.ai/broker/index.html",
+      "https://riskmandate.ai/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "If you cannot say what your agent did, what it saw when it did it, and which of its actions you can undo, you are not ready to give it a connector.",
+      "why": "The claim the whole article is built to defend, stated so it can be wrong."
+    },
+    {
+      "text": "The value of the list is not that most of it is green. It is that the red rows are named.",
+      "why": "Why the twin changes governance: irreversible actions become a named list the mandate can be written against."
+    }
+  ]
+}

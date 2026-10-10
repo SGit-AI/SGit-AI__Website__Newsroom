@@ -1,0 +1,167 @@
+{
+  "slug": "the-bridge-followed-to-the-end",
+  "teaser": "A bridge closure simulated on a story vault: newsworthy on 5 days, needed on 57, used by three readers, four buyers and an agent, and paid back to its sources.",
+  "topics": [
+    "news-and-evidence",
+    "graphs-and-knowledge"
+  ],
+  "core_idea": "Played out as a simulation on a story vault, one local bridge closure shows the value of journalism as getting a disputed fact right and keeping it right: newsworthy on five days but needed on fifty-seven, used through Reader Skills by readers whose own graphs meet the story graph at shared anchors and who decide better with it, bought by institutions and agents who need the same claims, cheaper for agents than searching, and paid for in small amounts that walk back down the claims to the reporter, the paper and the residents whose evidence the graph names.",
+  "nodes": [
+    {
+      "id": "the-closure",
+      "label": "A bridge closes; the council says one week",
+      "kind": "example",
+      "summary": "A fictional town's main crossing shuts for urgent repairs; the official estimate is a week."
+    },
+    {
+      "id": "the-work",
+      "label": "The journalism is getting the date right",
+      "kind": "claim",
+      "summary": "The contract says three weeks, the engineer five to seven; the reporter finds both and the paper runs the contradiction."
+    },
+    {
+      "id": "supersede",
+      "label": "Each correction supersedes the last",
+      "kind": "method",
+      "summary": "The graph keeps every estimate with its date, so it can say what was believed on any day and why."
+    },
+    {
+      "id": "news-vs-need",
+      "label": "Newsworthy on five days, needed on fifty-seven",
+      "kind": "claim",
+      "summary": "The paper leads with the story five times; readers need its current state every day it is closed."
+    },
+    {
+      "id": "reader-graphs",
+      "label": "Each reader's graph meets the story",
+      "kind": "concept",
+      "summary": "Home, school, routes and customers held on the reader's device, joined to the claims at shared anchors."
+    },
+    {
+      "id": "three-readers",
+      "label": "A parent, a café owner, a plumber",
+      "kind": "example",
+      "summary": "The same claims become a walking route, a stock plan and a job schedule."
+    },
+    {
+      "id": "decisions",
+      "label": "Better decisions, counted",
+      "kind": "claim",
+      "summary": "A club booked in time, £640 of stock not wasted, £1,200 of relief claimed, nine hours of driving saved."
+    },
+    {
+      "id": "without",
+      "label": "Without it: stale pages, rumours, nobody accountable",
+      "kind": "claim",
+      "summary": "The council page says a week for nine days, a group says Friday, TV covers day one and day forty-six."
+    },
+    {
+      "id": "buyers",
+      "label": "Buyers who do not read the paper",
+      "kind": "concept",
+      "summary": "Highways teams, investors and national desks need the same graph for regional and national decisions."
+    },
+    {
+      "id": "agents",
+      "label": "Agents spend less and are right",
+      "kind": "claim",
+      "summary": "Searching costs about $377 over the closure and finds the stale page; asking the newsroom costs about $54."
+    },
+    {
+      "id": "money",
+      "label": "£2,707, walked back to the sources",
+      "kind": "artefact",
+      "summary": "Small amounts from 1,596 readers and businesses plus institutions; 35% to the reporter, £203 to a resident."
+    },
+    {
+      "id": "vault",
+      "label": "The simulation as a vault",
+      "kind": "artefact",
+      "summary": "Every figure computed from written assumptions by a build script, published with its read key."
+    }
+  ],
+  "edges": [
+    {
+      "from": "the-closure",
+      "to": "the-work",
+      "rel": "leads-to"
+    },
+    {
+      "from": "the-work",
+      "to": "supersede",
+      "rel": "depends-on"
+    },
+    {
+      "from": "supersede",
+      "to": "news-vs-need",
+      "rel": "answers"
+    },
+    {
+      "from": "reader-graphs",
+      "to": "three-readers",
+      "rel": "produces"
+    },
+    {
+      "from": "three-readers",
+      "to": "decisions",
+      "rel": "produces"
+    },
+    {
+      "from": "decisions",
+      "to": "without",
+      "rel": "contrasts"
+    },
+    {
+      "from": "the-work",
+      "to": "buyers",
+      "rel": "leads-to"
+    },
+    {
+      "from": "buyers",
+      "to": "agents",
+      "rel": "extends"
+    },
+    {
+      "from": "decisions",
+      "to": "money",
+      "rel": "leads-to"
+    },
+    {
+      "from": "agents",
+      "to": "money",
+      "rel": "leads-to"
+    },
+    {
+      "from": "vault",
+      "to": "money",
+      "rel": "produces"
+    },
+    {
+      "from": "news-vs-need",
+      "to": "reader-graphs",
+      "rel": "leads-to"
+    }
+  ],
+  "links": {
+    "articles": [
+      "story-vault-meets-reader-skills",
+      "future-of-news-story-vault-not-paywall"
+    ],
+    "pages": [
+      "demos/vaults/bridge-simulation/index.html"
+    ],
+    "sites": [
+      "https://www.linkedin.com/pulse/article-only-beginning-markus-franz-qzyqe/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "An article is written once. A maintained claim, kept current until the bridge opens, is a service.",
+      "why": "Why the value of a local story outlives its news cycle."
+    },
+    {
+      "text": "As agents start planning school runs, deliveries and site visits for people, the cheapest thing they can buy is an accurate, maintained, accountable source.",
+      "why": "Why agents should pay for local journalism."
+    }
+  ]
+}

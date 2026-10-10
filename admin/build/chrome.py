@@ -31,63 +31,58 @@ PARENT_TITLE = ("sgit.ai — the parent project: the vault layer and the shipped
 #   · `prefixes` decides the "here" state, so a page not itself in the nav still
 #     lights up the group it belongs to.
 #
-# Nine groups, following the site's own build order: the argument (thesis,
-# corrections, provenance) first, then the economics, then rights and operations,
-# then the four things that RUN — the Governance Wire, Portugal Startups, the World
-# News Day corpus and the no-server databases, each with its own submenu because each
-# is a site inside the site — then the record (library, shipped), then site mechanics.
+# Since v0.6.0 the order is the reader's, not the argument's: the newsroom first, then the
+# reader's own account (what they read, what it costs, the newsroom it builds for them), then
+# how the newsroom runs, then the design it comes from, then how to build one yourself. The
+# one instance still running as its own section, World News Day, keeps its group because
+# the people its outreach writes to land on it. Everything this site published before the
+# newsroom ran is in the archive, which is dated and kept at its original addresses
+# (admin/build/archive.py).
 NAV = [
-    ("The argument", "thesis/index.html", [
+    ("Newsroom", "index.html", [
+        ("Front page", "index.html"),
+        ("Newsletter", "articles/newsletter/index.html"),
+        ("Every article", "articles/index.html#all"),
+        ("Collections", "articles/collections/index.html"),
+        ("From the desk", "articles/desk/index.html"),
+        ("As graphs", "articles/graphs.html"),
+        ("Subscribe", "subscribe/index.html"),
+    ], ("articles/", "subscribe/")),
+    ("Account", "account/index.html", [
+        ("Your reading account", "account/index.html"),
+        ("Your newsroom", "account/newsroom.html"),
+        ("A newsroom designed for you", "account/share.html"),
+        ("Your personas", "account/personas.html"),
+        ("Top up", "account/top-up.html"),
+    ], ("account/",)),
+    ("How it runs", "newsroom/index.html", [
+        ("How the newsroom runs", "newsroom/index.html"),
+        ("The roles", "newsroom/index.html#roles"),
+        ("Behaviour policies", "newsroom/policies.html"),
+        ("How to publish", "newsroom/publish.html"),
+        ("The board", "newsroom/board.html"),
+        ("The run log", "newsroom/log.html"),
+    ], ("newsroom/",)),
+    ("Design", "design/index.html", [
+        ("The design, and what runs", "design/index.html"),
         ("The thesis: sell the graph", "thesis/index.html"),
         ("Corrections must propagate", "corrections/index.html"),
-        ("The claim that would not die", "corrections/the-claim-that-would-not-die.html"),
         ("Provenance is the product", "provenance/index.html"),
-        ("A worked story: &pound;8.40", "provenance/a-worked-story.html"),
-    ], ("thesis/", "corrections/", "provenance/")),
-    ("The economics", "economics/index.html", [
         ("Paying the fact creator", "economics/index.html"),
-        ("The payment rails", "economics/rails.html"),
-        ("Trust as a service", "economics/trust-as-a-service.html"),
-        ("Micro and nano payments (2025)", "economics/micro-and-nano-payments.html"),
-    ], ("economics/",)),
-    ("Rights &amp; ops", "rights/index.html", [
         ("Content rights: CC-Signed", "rights/index.html"),
-        ("The newsroom: roles &amp; operations", "newsroom/index.html"),
-        ("The MVPs: publication instances", "mvps/index.html"),
-        ("The Portugal instance, as specified", "mvps/portugal.html"),
+        ("Databases with no server", "databases/index.html"),
+        ("What runs, what is designed", "shipped/index.html"),
+    ], ("design/", "thesis/", "corrections/", "provenance/", "economics/", "rights/",
+        "databases/", "shipped/")),
+    ("Replicate", "replicate/index.html", [
+        ("Replicate this newsroom", "replicate/index.html"),
+        ("SG Meter: the reading meter", "meter/index.html"),
+        ("The meter's security model", "meter/security.html"),
         ("Seed companies", "mvps/seed-companies.html"),
-    ], ("rights/", "newsroom/", "mvps/")),
-    ("Governance", "governance/index.html", [
-        ("The wire (beta)", "governance/index.html"),
-        ("The floor: a point-and-click newsroom", "governance/newsroom/index.html"),
-        ("The state map: the workflow", "governance/newsroom/workflow.html"),
-        ("The team: seven roles", "governance/team.html"),
-        ("Research runs", "governance/research/index.html"),
-        ("The graph", "governance/graph.html"),
-        ("Sources", "governance/sources.html"),
-        ("Method &amp; gates", "governance/method.html"),
-        ("About &amp; limits", "governance/about.html"),
-    ], ("governance/",)),
-    ("Portugal", "portugal/index.html", [
-        ("The wire (beta)", "portugal/index.html"),
-        ("The graph", "portugal/graph.html"),
-        ("The files", "portugal/explorer.html"),
-        ("Connections", "portugal/connections.html"),
-        ("The Summit", "portugal/summit/index.html"),
-        ("Who is speaking", "portugal/summit/people.html"),
-        ("The organisations", "portugal/summit/orgs.html"),
-        ("What changed", "portugal/summit/changes.html"),
-        ("Sources", "portugal/sources.html"),
-        ("Method", "portugal/method.html"),
-        ("The team", "portugal/team.html"),
-        ("Your data", "portugal/notice.html"),
-        ("About &amp; limits", "portugal/about.html"),
-        ("Brief: pt.newsroom.sgit.ai", "documents/pt-newsroom.html"),
-        ("pt.newsroom: the home page, as designed", "pt-newsroom/index.html"),
-        ("pt.newsroom: the four directions (archive)", "pt-newsroom/directions.html"),
-    ], ("portugal/", "pt-newsroom/")),
+        ("How this site is built", "admin/index.html"),
+    ], ("replicate/", "meter/", "mvps/seed-companies.html")),
     ("World News Day", "world-news-day/index.html", [
-        ("The corpus (beta)", "world-news-day/index.html"),
+        ("The corpus", "world-news-day/index.html"),
         ("Free to republish is not a licence", "world-news-day/stories/free-to-republish-is-not-a-licence.html"),
         ("The licence that is not there", "world-news-day/licences.html"),
         ("The twenty-one", "world-news-day/corpus.html"),
@@ -100,76 +95,77 @@ NAV = [
         ("The vault, opened", "world-news-day/vaults/corpus.html"),
         ("Method", "world-news-day/method.html"),
     ], ("world-news-day/",)),
-    ("Databases", "databases/index.html", [
-        ("No server: the argument (beta)", "databases/index.html"),
-        ("The SQL console", "databases/sql.html"),
-        ("The graph console (SPARQL)", "databases/graph.html"),
-        ("The files it queries", "portugal/explorer.html"),
-    ], ("databases/",)),
-    ("The record", "library/index.html", [
-        ("The library: 2025 &rarr; present", "library/index.html"),
-        ("What is shipped, what is argued", "shipped/index.html"),
-    ], ("library/", "shipped/")),
-    ("Site", "network/index.html", [
-        ("The network: sibling boundaries", "network/index.html"),
-        ("Documents &amp; sources", "documents/index.html"),
-        ("Comms: tasks &amp; requests", "admin/comms.html"),
+    ("Archive", "archive/index.html", [
+        ("The archive", "archive/index.html"),
+        ("The first home page (Aug 2026)", "archive/2026-08-22-home.html"),
+        ("The Governance Wire (Aug 2026)", "governance/index.html"),
+        ("Portugal Startups (Sep 2026)", "portugal/index.html"),
+        ("The brief pack (Aug 2026)", "documents/index.html"),
+        ("The library: prior art (2025)", "library/index.html"),
+    ], ("archive/", "governance/", "portugal/", "pt-newsroom/", "documents/", "library/",
+        "mvps/index.html", "mvps/portugal.html")),
+    ("About", "about/participant.html", [
+        ("Where we lose: the disclosure", "about/participant.html"),
+        ("The network", "network/index.html"),
         ("Release history", "admin/versions.html"),
         ("Admin &amp; engineering", "admin/index.html"),
-        ("Where we lose", "about/participant.html"),
-    ], ("network/", "documents/", "admin/", "about/")),
+        ("Comms: tasks &amp; requests", "admin/comms.html"),
+    ], ("about/", "network/", "admin/")),
 ]
 
 FOOTER = [
-    ("The argument", [
-        ("&#8594; The thesis: sell the graph", "thesis/index.html"),
+    ("The newsroom", [
+        ("&#8594; The front page", "index.html"),
+        ("Every article", "articles/index.html#all"),
+        ("The newsletter", "articles/newsletter/index.html"),
+        ("Collections", "articles/collections/index.html"),
+        ("From the desk", "articles/desk/index.html"),
+        ("As graphs", "articles/graphs.html"),
+        ("Subscribe", "subscribe/index.html"),
+        ("The feed", "articles/feed.xml"),
+    ]),
+    ("Your account", [
+        ("Your reading account", "account/index.html"),
+        ("Your newsroom", "account/newsroom.html"),
+        ("Your personas", "account/personas.html"),
+        ("Top up", "account/top-up.html"),
+    ]),
+    ("How it runs", [
+        ("How the newsroom runs", "newsroom/index.html"),
+        ("Behaviour policies", "newsroom/policies.html"),
+        ("How to publish", "newsroom/publish.html"),
+        ("The board", "newsroom/board.html"),
+        ("The run log", "newsroom/log.html"),
+    ]),
+    ("The design", [
+        ("The design, and what runs", "design/index.html"),
+        ("The thesis: sell the graph", "thesis/index.html"),
         ("Corrections must propagate", "corrections/index.html"),
-        ("The claim that would not die", "corrections/the-claim-that-would-not-die.html"),
         ("Provenance is the product", "provenance/index.html"),
-        ("A worked story: &pound;8.40", "provenance/a-worked-story.html"),
-    ]),
-    ("The economics", [
         ("Paying the fact creator", "economics/index.html"),
-        ("The payment rails", "economics/rails.html"),
-        ("Trust as a service", "economics/trust-as-a-service.html"),
-        ("Micro and nano payments (2025)", "economics/micro-and-nano-payments.html"),
+        ("What runs, what is designed", "shipped/index.html"),
     ]),
-    ("Rights, ops &amp; record", [
-        ("Content rights: CC-Signed", "rights/index.html"),
-        ("The newsroom: roles &amp; operations", "newsroom/index.html"),
-        ("The MVPs: publication instances", "mvps/index.html"),
-        ("The library: 2025 &rarr; present", "library/index.html"),
-        ("What is shipped, what is argued", "shipped/index.html"),
-    ]),
-    ("What runs", [
-        ("The Governance Wire (beta)", "governance/index.html"),
-        ("The floor: a point-and-click newsroom", "governance/newsroom/index.html"),
-        ("Portugal Startups (beta)", "portugal/index.html"),
-        ("Connections: who should talk to whom", "portugal/connections.html"),
-        ("World News Day 2026: the corpus (beta)", "world-news-day/index.html"),
-        ("Free to republish is not a licence", "world-news-day/stories/free-to-republish-is-not-a-licence.html"),
-        ("The licence that is not there", "world-news-day/licences.html"),
-        ("World News Day: how to reach them", "world-news-day/contacts.html"),
-        ("World News Day: published vaults", "world-news-day/vault.html"),
-        ("Databases with no server (beta)", "databases/index.html"),
-        ("The SQL and SPARQL consoles", "databases/sql.html"),
-        ("Brief: pt.newsroom.sgit.ai", "documents/pt-newsroom.html"),
-        ("pt.newsroom: the home page, as designed", "pt-newsroom/index.html"),
+    ("Build your own", [
+        ("Replicate this newsroom", "replicate/index.html"),
+        ("SG Meter: the reading meter", "meter/index.html"),
+        ("World News Day 2026: the corpus", "world-news-day/index.html"),
+        ("The method: fetch, freeze, hash", "world-news-day/method.html"),
+        ("Seed companies", "mvps/seed-companies.html"),
     ]),
     ("Site", [
-        ("The network: sibling boundaries", "network/index.html"),
-        ("Documents &amp; sources", "documents/index.html"),
-        ("Comms: tasks &amp; requests", "admin/comms.html"),
+        ("The archive", "archive/index.html"),
+        ("The network", "network/index.html"),
         ("Release history", "admin/versions.html"),
+        ("Admin &amp; engineering", "admin/index.html"),
         ("Where we lose", "about/participant.html"),
         ("llms.txt", "llms.txt"),
     ]),
 ]
 
-BLURB = ("News is failing not because there is too little information but because "
-         "there is no walkable chain from a claim to its evidence, no way for a "
-         "correction to reach what it disproved, and no way to pay the person who "
-         "did the original work. Part of the "
+BLURB = ("The SGit Newsroom: one page, one argument, with the figures, the data and the links "
+         "to check it. Articles by Dinis Cruz, written from his voice notes by an agent working "
+         "as the newsroom; the roles and the rules they work under are public. The method is "
+         "published so that anyone can run a newsroom like it. Part of the "
          "<a href=\"https://sgit.ai\" style=\"display:inline;padding:0\"><b>sgit.ai</b></a> "
          "network. All content CC BY 4.0 unless a page states otherwise.")
 PARTNOTE = ('&#9888; Participant disclosure: published by the sgit project, which is '
@@ -177,15 +173,31 @@ PARTNOTE = ('&#9888; Participant disclosure: published by the sgit project, whic
             '<a href="{up}about/participant.html" style="display:inline;padding:0">'
             'Read the disclosure</a>.')
 PARTNOTE_SELF = '&#9888; Participant disclosure: published by the sgit project. You are on the disclosure page.'
-NETLINE = ('<a href="https://sgit.ai"><b>&#8593; sgit.ai</b></a> &middot; '
-           '<a href="https://graphs.sgit.ai">&#8593; graphs.sgit.ai</a> &middot; '
-           '<a href="https://pki.sgit.ai">&#8593; pki.sgit.ai</a> &middot; '
-           '<a href="https://nhi.sgit.ai">&#8593; nhi.sgit.ai</a> &middot; '
-           '<a href="https://sg-sentinel.sgit.ai">&#8593; sg-sentinel.sgit.ai</a> &middot; '
-           '<a href="https://docs.diniscruz.ai">&#8593; docs.diniscruz.ai</a> &mdash; the prior art')
+# Inline on purpose: the newsroom stylesheet sets footer links to display:block, which put
+# each site of the network on its own line with a stray separator between them.
+_NET = 'style="display:inline;padding:0"'
+NETLINE = (f'<a href="https://sgit.ai" {_NET}><b>&#8593; sgit.ai</b></a> &middot; '
+           f'<a href="https://pt.newsroom.sgit.ai" {_NET}>&#8593; pt.newsroom.sgit.ai</a> &middot; '
+           f'<a href="https://graphs.sgit.ai" {_NET}>&#8593; graphs.sgit.ai</a> &middot; '
+           f'<a href="https://pki.sgit.ai" {_NET}>&#8593; pki.sgit.ai</a> &middot; '
+           f'<a href="https://nhi.sgit.ai" {_NET}>&#8593; nhi.sgit.ai</a> &middot; '
+           f'<a href="https://docs.diniscruz.ai" {_NET}>&#8593; docs.diniscruz.ai</a> &mdash; the prior art')
 
 
-def nav_html(rel, up):
+def newsroom_style(text):
+    """A page in the newsroom's look: imported from sgit.ai (its <html> carries data-root),
+    or written here on assets/newsroom.css. Its nav must not load nav.js, because site.js
+    already wires the same menu button, and two handlers on one toggle open and close it in
+    the same click."""
+    return 'data-root="' in text[:600] or "assets/newsroom.css" in text
+
+
+def md_twin_of(text):
+    m = re.search(r'<link rel="alternate" type="text/markdown" href="([^"]+)"', text)
+    return m.group(1) if m else None
+
+
+def nav_html(rel, up, newsroom=False, meter=False):
     groups = []
     for label, own, subs, prefixes in NAV:
         active = rel == own or any(rel.startswith(pre) for pre in prefixes)
@@ -199,21 +211,27 @@ def nav_html(rel, up):
             f'      <div class="sub">\n{links}\n      </div>\n'
             f'    </div>')
     rows = "\n".join(groups)
+    # The "part of sgit.ai" link is the legacy look's. In the newsroom look it is the item that
+    # pushes the row onto two lines at 1440px, and the footer's network line already says it.
+    parent = ('' if newsroom else
+              f'  <a class="parent" href="{PARENT}" title="{PARENT_TITLE}">&#8593; part of <b>sgit.ai</b></a>\n')
     return (f'<nav class="site"><div class="row">\n'
             f'  <a class="brand" href="{up}index.html">newsroom<span>.sgit.ai</span></a>\n'
-            f'  <a class="parent" href="{PARENT}" title="{PARENT_TITLE}">&#8593; part of <b>sgit.ai</b></a>\n'
-            f''
+            + parent +
             f'  <a class="ver" href="{up}admin/versions.html" title="Site release history">{VERSION}</a>\n'
-            f'  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>\n'
+            + (f'  <sg-meter class="meter-nav" view="balance"></sg-meter>\n' if meter else '')
+            + f'  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>\n'
             f'  <div class="nav-items">\n{rows}\n  </div>\n'
             f'  <a class="gh" href="{GH}">&#9733; GitHub</a>\n'
-            f'  <script src="{up}assets/nav.js" defer></script>\n'
-            f'</div></nav>')
+            + ('' if newsroom else f'  <script src="{up}assets/nav.js" defer></script>\n')
+            + '</div></nav>')
 
 
-def footer_html(rel, up):
+def footer_html(rel, up, twin=None):
     partnote = PARTNOTE_SELF if rel == "about/participant.html" else PARTNOTE.format(up=up)
-    md_twin  = f' &middot; <a href="{up}index.md">this page as markdown</a>' if rel == "index.html" else ""
+    if twin is None and rel == "index.html":
+        twin = "index.md"
+    md_twin  = f' &middot; <a href="{twin}">this page as markdown</a>' if twin else ""
     cols = "\n".join(
         "  <div>\n"
         f"    <h4>{head}</h4>\n"
@@ -275,10 +293,17 @@ def main():
         up   = "../" * (len(path.relative_to(ROOT).parts) - 1)
         text = path.read_text()
         before = text
-        text, n_nav  = re.subn(r'<nav class="site">.*?</nav>', lambda _: nav_html(rel, up),
+        styled = newsroom_style(text)
+        meter  = "sg-meter.js" in text
+        text, n_nav  = re.subn(r'<nav class="site">.*?</nav>', lambda _: nav_html(rel, up, styled, meter),
                                text, count=1, flags=re.S)
-        text, n_foot = re.subn(r'<footer class="site">.*?</footer>', lambda _: footer_html(rel, up),
+        text, n_foot = re.subn(r'<footer class="site">.*?</footer>',
+                               lambda _: footer_html(rel, up, md_twin_of(text)),
                                text, count=1, flags=re.S)
+        # The agent chip on an imported page carries the release that built it. Here that is
+        # this site's release, and llms.txt is this site's, so the stamp is this site's too.
+        text = re.sub(r'<span class="llmschip-m">[^<]*</span>',
+                      f'<span class="llmschip-m">{VERSION}</span>', text, count=1)
         if not n_nav or not n_foot:
             missing = " and ".join(x for x in (("nav" if not n_nav else ""),
                                                ("footer" if not n_foot else "")) if x)

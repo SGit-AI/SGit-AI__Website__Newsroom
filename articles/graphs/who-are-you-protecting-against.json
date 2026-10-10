@@ -1,0 +1,200 @@
+{
+  "slug": "who-are-you-protecting-against",
+  "teaser": "Before deciding how secure to be, name the attacker: a six-tier ladder, an air-gapped Mac mini read against it, and eight startups drawing their line.",
+  "topics": [
+    "agents-and-policy",
+    "startups-and-strategy"
+  ],
+  "core_idea": "Security decisions start with who the threat agent is, what the attack vector is and how sophisticated they are; read against a ladder from your own mistakes to elevated threats, grounded in NIST SP 800-30, the NCSC and MITRE ATT&CK, most startups should plan up to organised crime for money, do the basics consistently because they beat most attackers, sell something better than the customer's baseline rather than beyond their needs, prefer isolation and visibility over disconnection, and write down what they accept above their ceiling, because drawing the line too high slows everything, can create new holes and can stop the technology being used.",
+  "nodes": [
+    {
+      "id": "macmini",
+      "label": "An air-gapped Mac mini written in Perl",
+      "kind": "example",
+      "summary": "No network, nothing installed, the OS's Perl, USB transfers: a design that buys technical debt."
+    },
+    {
+      "id": "three-questions",
+      "label": "Who, how, how sophisticated",
+      "kind": "method",
+      "summary": "Threat agent, attack vector and sophistication come before any control."
+    },
+    {
+      "id": "ladder",
+      "label": "Six tiers of attacker",
+      "kind": "concept",
+      "summary": "Mistakes, bots, activists, organised crime, targeted commercial and insiders, elevated threats."
+    },
+    {
+      "id": "dsit-gap",
+      "label": "The toolkit asks, but does not define",
+      "kind": "claim",
+      "summary": "DSIT's AI Risk Management Toolkit asks who the new threat actors are and points elsewhere for the answer."
+    },
+    {
+      "id": "basics",
+      "label": "The basics beat most of the ladder",
+      "kind": "claim",
+      "summary": "Defending well against commodity threats makes a very hard target for all attackers (NCSC)."
+    },
+    {
+      "id": "top-tier",
+      "label": "Few survive the top tier",
+      "kind": "claim",
+      "summary": "Very few commercial organisations can withstand a determined state; deploy inside the customer's controls."
+    },
+    {
+      "id": "airgap-read",
+      "label": "The Mac mini read against the ladder",
+      "kind": "example",
+      "summary": "Worse for mistakes, equal for bots, mostly irrelevant to ransomware, no help at the top; adds a USB path."
+    },
+    {
+      "id": "isolate",
+      "label": "Isolate, do not disconnect",
+      "kind": "method",
+      "summary": "No inbound ports, outbound allowlist, containers, scanning, logs: visibility from mainstream tools."
+    },
+    {
+      "id": "local-cloud",
+      "label": "Local versus cloud, the same mistake",
+      "kind": "claim",
+      "summary": "On-premises for security often means more holes and fewer experts watching them."
+    },
+    {
+      "id": "baseline",
+      "label": "Better than what they have, not beyond what they need",
+      "kind": "claim",
+      "summary": "The customer's baseline is the bar; a line drawn too high is a disservice to both sides."
+    },
+    {
+      "id": "vault",
+      "label": "Threat-sized security, the vault",
+      "kind": "artefact",
+      "summary": "Eight fictional startups, attack trees mapped to ATT&CK, a line for each, and a questionnaire."
+    },
+    {
+      "id": "attack-trees",
+      "label": "Attack trees with ATT&CK on every branch",
+      "kind": "method",
+      "summary": "Schneier's goal-rooted trees, each leaf a technique, a tier and a cost; the line draws itself."
+    },
+    {
+      "id": "accept",
+      "label": "Write down what you accept",
+      "kind": "method",
+      "summary": "Above the ceiling is an accepted risk with a reason and a review date, not a failure."
+    },
+    {
+      "id": "publish-model",
+      "label": "Publish the threat model and ask",
+      "kind": "method",
+      "summary": "One page, public, reviewed by people who have seen the attack before."
+    }
+  ],
+  "edges": [
+    {
+      "from": "three-questions",
+      "to": "macmini",
+      "rel": "answers"
+    },
+    {
+      "from": "ladder",
+      "to": "three-questions",
+      "rel": "extends"
+    },
+    {
+      "from": "dsit-gap",
+      "to": "ladder",
+      "rel": "leads-to"
+    },
+    {
+      "from": "basics",
+      "to": "ladder",
+      "rel": "depends-on"
+    },
+    {
+      "from": "top-tier",
+      "to": "ladder",
+      "rel": "depends-on"
+    },
+    {
+      "from": "airgap-read",
+      "to": "macmini",
+      "rel": "answers"
+    },
+    {
+      "from": "airgap-read",
+      "to": "ladder",
+      "rel": "depends-on"
+    },
+    {
+      "from": "isolate",
+      "to": "airgap-read",
+      "rel": "leads-to"
+    },
+    {
+      "from": "local-cloud",
+      "to": "airgap-read",
+      "rel": "compared-with"
+    },
+    {
+      "from": "baseline",
+      "to": "top-tier",
+      "rel": "extends"
+    },
+    {
+      "from": "vault",
+      "to": "ladder",
+      "rel": "produces"
+    },
+    {
+      "from": "attack-trees",
+      "to": "vault",
+      "rel": "example-of"
+    },
+    {
+      "from": "accept",
+      "to": "baseline",
+      "rel": "extends"
+    },
+    {
+      "from": "publish-model",
+      "to": "accept",
+      "rel": "extends"
+    }
+  ],
+  "links": {
+    "articles": [
+      "every-risk-is-already-accepted",
+      "every-mistake-added-a-rule",
+      "footprint-and-blast-radius",
+      "why-my-agents-do-not-run-on-my-laptop",
+      "an-agent-desktop-by-the-minute"
+    ],
+    "pages": [
+      "demos/vaults/threat-sized-security/index.html",
+      "demos/vaults/dsit-ai-risk-toolkit/index.html"
+    ],
+    "sites": [
+      "https://www.ncsc.gov.uk/guidance/design-guidelines-for-high-assurance-products",
+      "https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-30r1.pdf",
+      "https://attack.mitre.org/",
+      "https://www.schneier.com/academic/archives/1999/12/attack_trees.html"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "The question is who, not how much.",
+      "why": "The article's thesis in one line."
+    },
+    {
+      "text": "So the air gap protects against an attacker who, for a firm like this, does not really exist, and pays for it with the tools that defend against the attackers who do.",
+      "why": "The Mac mini, read against the ladder."
+    },
+    {
+      "text": "Draw it too high and you do a disservice to both sides.",
+      "why": "Why over-engineering security is not neutral."
+    }
+  ]
+}

@@ -1,0 +1,227 @@
+{
+  "slug": "the-identity-we-wanted-to-give-the-agents",
+  "teaser": "A week of designing identities for agents and users met Google's terms; what survived is a passkey-unlocked keyring and a gap nobody sells.",
+  "topics": [
+    "agents-and-policy",
+    "vaults-and-method"
+  ],
+  "core_idea": "A plan to give every agent and user a Workspace identity from one tenant was stopped by Google's resale and function-account clauses; the design moved to a login product plus a bucket of ciphertext plus a browser keyring that only the user's passkey can open, on the rule that no secret can live inside an identity provider, and the week exposed that login, zero-knowledge storage and agent identity are still three separate jobs.",
+  "nodes": [
+    {
+      "id": "the-want",
+      "label": "A real identity for every agent and user",
+      "kind": "concept",
+      "summary": "A Workspace seat per person and per agent from our tenant: mailbox, calendar, drive, login, with sgit encrypting before Google and a passkey as the only decryptor."
+    },
+    {
+      "id": "no-admin-proof-zone",
+      "label": "Workspace has no admin-proof zone",
+      "kind": "claim",
+      "summary": "A super administrator can reach any Drive; client-side encryption is Enterprise Plus and Education only; so encryption happens in sgit, before Google."
+    },
+    {
+      "id": "the-terms",
+      "label": "The resale and function-account clauses",
+      "kind": "claim",
+      "summary": "Current Cloud terms forbid selling, reselling, sublicensing or distributing the Services; the acceptable use policy names reselling End User Accounts in a product and accounts assigned to functions rather than humans."
+    },
+    {
+      "id": "the-correction",
+      "label": "A correction to our own pack",
+      "kind": "example",
+      "summary": "The 'substitute or similar service' clause cited as section 2.6 is in the legacy free-edition agreement the standard-terms URL still serves, not in the current terms."
+    },
+    {
+      "id": "five-options",
+      "label": "Five options, one table",
+      "kind": "method",
+      "summary": "Shared Workspace (needs Google's agreement), Identity Platform plus bucket (chosen), customer's own Workspace, private customer cloud, Cognito plus S3 as the AWS variant."
+    },
+    {
+      "id": "no-secret-in-idp",
+      "label": "No secret can live in the login",
+      "kind": "claim",
+      "summary": "Whoever administers identity can reset a password, mint a token or sign in as anyone; the authority to decrypt must come from the user's authenticator."
+    },
+    {
+      "id": "login-vs-passkey",
+      "label": "Login decides paths; the passkey decides meaning",
+      "kind": "concept",
+      "summary": "The identity provider and the bucket rules decide which paths a user may touch; the passkey decides whether the bytes mean anything; an administrator fakes the first, never the second."
+    },
+    {
+      "id": "code-boundary",
+      "label": "The code is the boundary",
+      "kind": "claim",
+      "summary": "Whoever controls the repository or DNS controls the app; so host away from the cloud project, vendor and hash every dependency, scope the passkey to one subdomain, never the apex."
+    },
+    {
+      "id": "keyring",
+      "label": "The keyring",
+      "kind": "artefact",
+      "summary": "One encrypted file per user holding a key pair and every small secret, unlocked by passkey PRF with a recovery code as second method, shared through per-user public keys, using sgit pki's algorithms."
+    },
+    {
+      "id": "password-manager-first",
+      "label": "A password manager first",
+      "kind": "method",
+      "summary": "Every risky piece in one small product; the acceptance test is to hand a project owner a user id and ask for one plaintext field, then publish the attempt."
+    },
+    {
+      "id": "prf-support",
+      "label": "Passkey PRF: most places, not everywhere",
+      "kind": "example",
+      "summary": "WebAuthn Level 3 became a Recommendation in August 2026; Chrome, Edge, Safari 18 and desktop Firefox ship PRF; Bitwarden and Dashlane unlock vaults with it; the MVP ships a compatibility matrix."
+    },
+    {
+      "id": "agents-not-seats",
+      "label": "Agents are not seats",
+      "kind": "claim",
+      "summary": "An agent gets a service identity, a lane for signed mail and a keyring entry a person releases, scoped and time-limited; our own agents keep their mailboxes because they are our organisation's."
+    },
+    {
+      "id": "industry-agent-identity",
+      "label": "Agent identity from the vendors",
+      "kind": "example",
+      "summary": "Entra Agent ID, Okta for AI Agents, Google Cloud Agent Identity on SPIFFE, Anthropic's managed-agent vaults: workload identity that says which agent, not which person's key."
+    },
+    {
+      "id": "three-jobs",
+      "label": "Three jobs, still separate",
+      "kind": "claim",
+      "summary": "Login is solved; zero-knowledge per-user storage exists in pieces; agent identity exists for machines; nothing on the shelf is all three, and the joins are a startup's first month."
+    },
+    {
+      "id": "gdpr",
+      "label": "The regulator describes the property",
+      "kind": "example",
+      "summary": "Articles 32 and 34(3)(a) and the EDPB's 'if the confidentiality of the key is intact' favour keys the operator cannot break; the market does not sell it."
+    },
+    {
+      "id": "missing-something",
+      "label": "Unless we are missing something obvious",
+      "kind": "question",
+      "summary": "The design pack is published to be corrected; the nearest off-the-shelf answers found were two small password-derived open-source backends."
+    }
+  ],
+  "edges": [
+    {
+      "from": "the-want",
+      "to": "no-admin-proof-zone",
+      "rel": "leads-to"
+    },
+    {
+      "from": "the-want",
+      "to": "the-terms",
+      "rel": "leads-to"
+    },
+    {
+      "from": "the-terms",
+      "to": "the-correction",
+      "rel": "produces"
+    },
+    {
+      "from": "the-terms",
+      "to": "five-options",
+      "rel": "leads-to"
+    },
+    {
+      "from": "no-secret-in-idp",
+      "to": "login-vs-passkey",
+      "rel": "produces"
+    },
+    {
+      "from": "five-options",
+      "to": "no-secret-in-idp",
+      "rel": "depends-on"
+    },
+    {
+      "from": "login-vs-passkey",
+      "to": "keyring",
+      "rel": "produces"
+    },
+    {
+      "from": "code-boundary",
+      "to": "keyring",
+      "rel": "contrasts"
+    },
+    {
+      "from": "keyring",
+      "to": "password-manager-first",
+      "rel": "leads-to"
+    },
+    {
+      "from": "prf-support",
+      "to": "keyring",
+      "rel": "depends-on"
+    },
+    {
+      "from": "the-terms",
+      "to": "agents-not-seats",
+      "rel": "leads-to"
+    },
+    {
+      "from": "industry-agent-identity",
+      "to": "agents-not-seats",
+      "rel": "compared-with"
+    },
+    {
+      "from": "agents-not-seats",
+      "to": "keyring",
+      "rel": "depends-on"
+    },
+    {
+      "from": "three-jobs",
+      "to": "the-want",
+      "rel": "answers"
+    },
+    {
+      "from": "gdpr",
+      "to": "three-jobs",
+      "rel": "extends"
+    },
+    {
+      "from": "three-jobs",
+      "to": "missing-something",
+      "rel": "leads-to"
+    },
+    {
+      "from": "the-correction",
+      "to": "missing-something",
+      "rel": "example-of"
+    }
+  ],
+  "links": {
+    "articles": [
+      "six-agents-one-inbox",
+      "replicating-the-agentic-inbox",
+      "footprint-and-blast-radius",
+      "ultimate-insider-three-collisions"
+    ],
+    "pages": [
+      "/partnerships/vault-key-management.html",
+      "/docs/briefs/secrets-sgit-ai-design-pack.html",
+      "/docs/credentials.html",
+      "/docs/pki.html",
+      "/docs/agent-contact.html",
+      "/docs/briefs/riskmandate-partnership-risk-and-sgit-mapping.html"
+    ],
+    "sites": [
+      "https://workspace.google.com/terms/premier_terms/",
+      "https://workspace.google.com/terms/use_policy/",
+      "https://www.w3.org/TR/webauthn-3/",
+      "https://cloud.google.com/identity-platform/pricing",
+      "https://userbase.com/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "Login decides which paths you may touch. The passkey decides whether the bytes mean anything. An administrator can fake the first and never the second.",
+      "why": "The rule the whole design rests on, and why no secret can live inside an identity provider."
+    },
+    {
+      "text": "The law describes the property; the market does not sell it.",
+      "why": "The gap the article ends on: login, zero-knowledge storage and agent identity are still three separate jobs."
+    }
+  ]
+}

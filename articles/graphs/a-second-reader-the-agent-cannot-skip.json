@@ -1,0 +1,158 @@
+{
+  "slug": "a-second-reader-the-agent-cannot-skip",
+  "teaser": "Two emails went out in my voice despite a written rule. The fix: a hook that makes a second model approve every draft, failing closed.",
+  "topics": [
+    "agents-and-policy",
+    "site-and-engineering"
+  ],
+  "core_idea": "A rule held by the agent it governs is an expectation that can be forgotten, missed or argued around, so the inbox agent's fix after two emails went out in the founder's voice puts a gate on the draft tool itself: deterministic code checks first, then a fresh model call with only the rules, the sources and the draft, a different model from the author, failing closed on anything but an explicit PASS and logging every verdict; its independence depends on where it is installed, a setting while the agent can change it and a boundary only under managed placement, and the pattern is the old maker-checker control applied to any consequential tool call.",
+  "nodes": [
+    {
+      "id": "incident",
+      "label": "Two emails in the founder's voice",
+      "kind": "example",
+      "summary": "9 October: a rule written in four places failed, because only the drafter enforced it."
+    },
+    {
+      "id": "self-held",
+      "label": "A rule held by the agent it governs",
+      "kind": "claim",
+      "summary": "It can be forgotten at compaction, missed by its author, or argued around."
+    },
+    {
+      "id": "guard",
+      "label": "The draft guard",
+      "kind": "artefact",
+      "summary": "A hook on create_draft and update_draft: code checks, then a fresh checker model."
+    },
+    {
+      "id": "code-first",
+      "label": "Code checks first",
+      "kind": "method",
+      "summary": "Signature, HTML, dashes, key shapes and recipients, with no model call."
+    },
+    {
+      "id": "fresh-checker",
+      "label": "A fresh checker",
+      "kind": "method",
+      "summary": "No history, no tools, a different model; only rules, sources and the draft."
+    },
+    {
+      "id": "fail-closed",
+      "label": "Fail closed",
+      "kind": "method",
+      "summary": "Hooks fail open by default; errors, timeouts and bad answers must deny."
+    },
+    {
+      "id": "independence",
+      "label": "Six kinds of independence",
+      "kind": "concept",
+      "summary": "What the checker sees, who decides it runs, and who wrote the evidence."
+    },
+    {
+      "id": "placement",
+      "label": "Placement decides the barrier",
+      "kind": "claim",
+      "summary": "A session mod or plugin is a setting; managed placement makes it a boundary."
+    },
+    {
+      "id": "maker-checker",
+      "label": "Maker-checker",
+      "kind": "concept",
+      "summary": "Segregation of duties, the two-person rule, the independent double check."
+    },
+    {
+      "id": "pattern",
+      "label": "The reusable pattern",
+      "kind": "method",
+      "summary": "Pick the consequential call, code first, fresh checker, explicit PASS, log."
+    },
+    {
+      "id": "first-run",
+      "label": "What the first run caught",
+      "kind": "example",
+      "summary": "Four invented claims, and false FAILs for facts without sources."
+    }
+  ],
+  "edges": [
+    {
+      "from": "incident",
+      "to": "self-held",
+      "rel": "example-of"
+    },
+    {
+      "from": "guard",
+      "to": "self-held",
+      "rel": "answers"
+    },
+    {
+      "from": "guard",
+      "to": "code-first",
+      "rel": "depends-on"
+    },
+    {
+      "from": "guard",
+      "to": "fresh-checker",
+      "rel": "depends-on"
+    },
+    {
+      "from": "guard",
+      "to": "fail-closed",
+      "rel": "depends-on"
+    },
+    {
+      "from": "first-run",
+      "to": "fresh-checker",
+      "rel": "example-of"
+    },
+    {
+      "from": "independence",
+      "to": "fresh-checker",
+      "rel": "extends"
+    },
+    {
+      "from": "placement",
+      "to": "independence",
+      "rel": "extends"
+    },
+    {
+      "from": "maker-checker",
+      "to": "guard",
+      "rel": "compared-with"
+    },
+    {
+      "from": "pattern",
+      "to": "guard",
+      "rel": "extends"
+    }
+  ],
+  "links": {
+    "articles": [
+      "hope-or-enforcement",
+      "every-mistake-added-a-rule",
+      "where-is-the-why",
+      "the-mandate-stack"
+    ],
+    "pages": [],
+    "sites": [
+      "https://code.claude.com/docs/en/plugins/mods/events",
+      "https://code.claude.com/docs/en/hooks",
+      "https://arxiv.org/abs/2312.06942",
+      "https://ai.meta.com/blog/practical-ai-agent-security/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "An email that is late is a small cost. An email that goes out wrong cannot be taken back.",
+      "why": "Why the guard fails closed."
+    },
+    {
+      "text": "A rule kept by the agent it governs is hope.",
+      "why": "The general weakness the guard answers."
+    },
+    {
+      "text": "Nothing in the hook changes, only who can change the hook.",
+      "why": "Placement decides the barrier."
+    }
+  ]
+}

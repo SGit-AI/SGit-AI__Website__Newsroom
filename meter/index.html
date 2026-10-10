@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SG Meter: a reading meter you can add to any website, sgit.ai</title>
+<meta name="description" content="One web component that charges readers a few pence a page from a balance kept in their own browser, by how far down the page they read; never blocks, allows a negative balance, lets a reader decline with a reason. Install, views, config, events, storage, theming, Stripe.">
+<link rel="canonical" href="https://newsroom.sgit.ai/meter/index.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="sgit.ai">
+<meta property="og:url" content="https://newsroom.sgit.ai/meter/index.html">
+<meta property="og:title" content="SG Meter: a reading meter you can add to any website, sgit.ai">
+<meta property="og:description" content="One web component that charges readers a few pence a page from a balance kept in their own browser, by how far down the page they read; never blocks, allows a negative balance, lets a reader decline with a reason. Install, views, config, events, storage, theming, Stripe.">
+<meta property="og:image" content="https://newsroom.sgit.ai/og/default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="SG Meter: a reading meter you can add to any website, sgit.ai">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://newsroom.sgit.ai/og/default.jpg">
+<link rel="alternate" type="text/markdown" href="index.md" title="This page as markdown">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "SG Meter: a reading meter you can add to any website, sgit.ai", "headline": "SG Meter: a reading meter you can add to any website, sgit.ai", "description": "One web component that charges readers a few pence a page from a balance kept in their own browser, by how far down the page they read; never blocks, allows a negative balance, lets a reader decline with a reason. Install, views, config, events, storage, theming, Stripe.", "url": "https://newsroom.sgit.ai/meter/index.html", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "sgit.ai", "url": "https://sgit.ai"}, "about": {"@type": "SoftwareApplication", "name": "sgit", "sameAs": "https://pypi.org/project/sgit-ai/"}}</script>
+<style>html{background:#faf9f5}body{margin:0;background:#faf9f5;color:#1c1d21;font-family:ui-sans-serif,system-ui,sans-serif;opacity:0;transition:opacity .25s;animation:sg-reveal 0s linear 1.6s forwards}html.ready body{opacity:1;animation:none}@keyframes sg-reveal{to{opacity:1}}</style><noscript><style>body{opacity:1;animation:none}</style></noscript>
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.6.0</a>
+  <sg-meter class="meter-nav" view="balance"></sg-meter>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../articles/index.html#all">Every article</a>
+      <a class="sl" href="../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../account/index.html">Your reading account</a>
+      <a class="sl" href="../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../account/personas.html">Your personas</a>
+      <a class="sl" href="../account/top-up.html">Top up</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../newsroom/board.html">The board</a>
+      <a class="sl" href="../newsroom/log.html">The run log</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl here" href="../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl here" href="../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../world-news-day/index.html">World News Day<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../world-news-day/index.html">The corpus</a>
+      <a class="sl" href="../world-news-day/stories/free-to-republish-is-not-a-licence.html">Free to republish is not a licence</a>
+      <a class="sl" href="../world-news-day/licences.html">The licence that is not there</a>
+      <a class="sl" href="../world-news-day/corpus.html">The twenty-one</a>
+      <a class="sl" href="../world-news-day/findings.html">The aggregate</a>
+      <a class="sl" href="../world-news-day/terms.html">The vocabulary</a>
+      <a class="sl" href="../world-news-day/graph.html">The graph</a>
+      <a class="sl" href="../world-news-day/sources.html">Sources</a>
+      <a class="sl" href="../world-news-day/contacts.html">How to reach them</a>
+      <a class="sl" href="../world-news-day/vault.html">Published vaults</a>
+      <a class="sl" href="../world-news-day/vaults/corpus.html">The vault, opened</a>
+      <a class="sl" href="../world-news-day/method.html">Method</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../archive/index.html">The archive</a>
+      <a class="sl" href="../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../network/index.html">The network</a>
+      <a class="sl" href="../admin/versions.html">Release history</a>
+      <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom">&#9733; GitHub</a>
+</div></nav>
+
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.6.0</span></a></div>
+<main class="doc">
+  <p class="crumb"><a href="../index.html">Home</a> / <a href="https://sgit.ai/docs/index.html">Docs</a> / SG Meter</p>
+  <p class="eyebrow">A library &middot; v1.3.1</p>
+  <h1>SG Meter: a reading meter you can add to any website</h1>
+  <p class="lead">One web component that charges readers a few pence a page from a balance kept in their own browser, by how far down the page they read. It never blocks a page, it lets the balance go below zero, it lets a reader decline to pay for a page and say why, and it turns what they read into personas: named, drawn as a graph, curated by the reader, and as many as they want. No server, no account, no cookies, no third-party script. It is what runs on this site: the balance in the top bar is it.</p>
+
+  <div class="note"><b>What it is, and what it is not.</b> An honesty box, not a paywall. Everything it knows is in the reader's browser, so a reader can change their own balance, and the page a payment returns to cannot check the payment. That is a choice, made because of who reads a site like this one and what cheating would cost; it is argued in <a href="security.html">the security model</a> and, with the numbers, in <a href="../articles/who-will-game-the-reading-meter.html">who will game the reading meter</a>. If you need a meter that holds money, this is the wrong library.</div>
+
+  <h2 id="install">Install</h2>
+  <p>Copy two folders into your site, keeping their paths: the component and the base class it extends (it imports the base by a relative path).</p>
+  <pre class="shell">assets/components/base/v1/v1.0/v1.0.0/sg-component.js
+assets/components/sg-meter/v1/v1.3/v1.3.1/sg-meter.js
+assets/components/sg-meter/v1/v1.3/v1.3.1/sg-meter-core.js
+assets/components/sg-meter/v1/v1.3/v1.3.1/sg-meter.tpl
+assets/components/sg-meter/v1/v1.3/v1.3.1/sg-meter.css</pre>
+  <p>The paths are versioned and immutable, as in <a href="https://coding.sgit.ai/javascript/index.html">the estate's JavaScript guidance</a>: a fix is a new path, so a page that works today keeps loading the same files. Read them first; they are short: <a href="../assets/components/sg-meter/v1/v1.3/v1.3.1/sg-meter-core.js">the rules</a> (no rendering), <a href="../assets/components/sg-meter/v1/v1.3/v1.3.1/sg-meter.js">the element</a>, <a href="../assets/components/sg-meter/v1/v1.3/v1.3.1/sg-meter.css">its styles</a>, <a href="../assets/components/base/v1/v1.0/v1.0.0/sg-component.js">the base class</a>.</p>
+  <p>Then, on every page, load the module once, give it a config, and say what the page is:</p>
+  <pre class="shell">&lt;!-- in the top bar --&gt;
+&lt;sg-meter view="balance"&gt;&lt;/sg-meter&gt;
+
+&lt;!-- at the end of the text: charges this page, shows what it cost and the "don't charge me" choice --&gt;
+&lt;sg-meter view="page" kind="article" date="2026-10-10" topics="news pricing" title="The page's title"&gt;&lt;/sg-meter&gt;
+
+&lt;script type="application/json" id="sg-meter-config"&gt;
+{ "storageKey": "mysite.meter.v1", "start": 500,
+  "prices": { "article_new": 10, "article": 5, "page": 1, "free": 0 },
+  "topup": { "amount": 500, "link": "https://buy.stripe.com/your-link" },
+  "picks": { "feed": "articles/feed.json", "base": "articles/" } }
+&lt;/script&gt;
+&lt;script type="module" src="../assets/components/sg-meter/v1/v1.3/v1.3.1/sg-meter.js"&gt;&lt;/script&gt;</pre>
+  <p>Every key has a default, so an empty config works. Put <code>data-root</code> on <code>&lt;html&gt;</code> (for example <code>data-root="../"</code>) if your pages are not all at the top level; links the component writes are prefixed with it. This site loads the module with a dynamic <code>import()</code> from an inline script instead of a <code>src</code>, because its own build forbids script tags that point at files; either works.</p>
+
+  <h2 id="views">The eleven views</h2>
+  <p>One element, one shared meter: an ES module is evaluated once per page, so however many <code>&lt;sg-meter&gt;</code> elements a page has, it is charged once.</p>
+  <div class="tablewrap"><table>
+    <tr><th>view</th><th>What it shows</th><th>Attributes</th></tr>
+    <tr><td style="white-space:nowrap"><code>balance</code></td><td>The balance as a small link to the account. Shown in a warmer colour below zero, with a tooltip that says nothing is blocked. Nothing else: no banner, no count of articles read.</td><td></td></tr>
+    <tr><td style="white-space:nowrap"><code>page</code></td><td>Opens this page on the meter and charges it by scroll depth. At the foot of the text, a reader card (v1.3): what the page has cost, the share read, the reading list, three five-step ratings (how useful, more like this, level of detail), and last, as the exception, "Don't charge me" with a reason.</td><td><code>kind</code>, <code>date</code> (YYYY-MM-DD), <code>topics</code> (space separated), <code>title</code>, <code>quiet</code> (charge, show nothing)</td></tr>
+    <tr><td style="white-space:nowrap"><code>account</code></td><td>Balance, pages opened, spend, what was declined, picks, spend by topic, the history with the depth read, top-ups; pause, export as JSON, start again.</td><td></td></tr>
+    <tr><td style="white-space:nowrap"><code>topup</code></td><td>With <code>topup.link</code> set, one button to the payment page. Without, a simulated cart (packs, cart, review, receipt) that says it is simulated.</td><td></td></tr>
+    <tr><td style="white-space:nowrap"><code>topped-up</code></td><td>The page a payment link returns to. Adds <code>topup.amount</code> once per <code>session_id</code> in the URL. It does not verify the payment; see <a href="security.html#return">the security model</a>.</td><td></td></tr>
+    <tr><td style="white-space:nowrap"><code>picks</code></td><td>Unread pages for the active persona. Hidden until there is something to pick from.</td><td><code>count</code> (default 4)</td></tr>
+    <tr><td style="white-space:nowrap"><code>newsroom</code></td><td>The reader's own front page (v1.1): their personas as chips, the active one's name and description, its picks with Keep and Not for this persona on each, what was kept in it or put out, and its graph.</td><td><code>count</code> (default 9)</td></tr>
+    <tr><td style="white-space:nowrap"><code>personas</code></td><td>Rename, switch and remove personas, and add one from a preset or a blank one (v1.1).</td><td></td></tr>
+    <tr><td style="white-space:nowrap"><code>graph</code></td><td>A persona drawn as an SVG graph (v1.1): the persona in the middle, its topics sized by weight, the pages behind each topic, and the citations between those pages, from the feed's <code>links_out</code>. Each page is a link, with its title and depth read as a tooltip.</td><td><code>persona</code> (default the active one)</td></tr>
+    <tr><td style="white-space:nowrap"><code>link</code></td><td>One line linking to the newsroom, named for the active persona (v1.1).</td><td></td></tr>
+    <tr><td style="white-space:nowrap"><code>share</code></td><td>Shows the reader exactly what their reading looks like as text (a summary, then the same data as JSON), copies it to the clipboard, or sends it with their name and email, encrypted in the browser to the public key in <code>share.contact</code> and written to that file's append lane (v1.2). Sends nothing until the reader asks and ticks consent; never includes payment references.</td><td></td></tr>
+  </table></div>
+  <p class="small dim">This site's own: <a href="../account/newsroom.html">newsroom</a>, <a href="../account/share.html">share</a>, <a href="../account/personas.html">personas</a>, <a href="../account/index.html">account</a>, <a href="../account/top-up.html">top-up</a>, <a href="../account/topped-up.html">topped-up</a> (opened without a payment reference, it adds nothing and says so), and the link on <a href="../articles/index.html">the front page</a>.</p>
+
+  <h2 id="rules">The rules it charges by</h2>
+  <ul>
+    <li><b>By depth.</b> A page costs its price times the deepest point the reader has scrolled to, measured on the page's <code>main</code> element and rounded to 5%, never less than <code>minDepth</code> (default a tenth), so opening a page is not free. Read half, pay half.</li>
+    <li><b>Once per page per session.</b> Scrolling further later in the same browser session tops the same charge up; coming back does not start a second one.</li>
+    <li><b>Below zero is allowed.</b> Nothing is blocked and nothing nags. The balance is shown, that is all.</li>
+    <li><b>Usefulness sets the price (v1.3).</b> The reader rates how useful the page was from 1 to 5, starting in the middle: 1 is free, 2 half, 3 the price, 4 one and a half times, 5 double (<code>rating.price</code>). "More like this" (1 to 5) moves the page's topics and tags in the active persona (<code>rating.more</code>); "level of detail" is kept as the persona's preference and shown in the newsroom. The scales start in the middle, drawn as an outline until the reader touches them.</li>
+    <li><b>The reading list (v1.3).</b> An article opened for the first time joins the active persona's reading list (<code>autoKeep</code>), unless the reader put it out of that persona; one tap removes it.</li>
+    <li><b>Declining is allowed.</b> A reader can refuse to pay for a page, with a reason: the headline promised more than the page gave, not relevant to me, I did not really read it, another reason. The charge is refunded and the reason kept in their history; "not relevant" counts against that page's topics in the picks.</li>
+    <li><b>New costs more.</b> An <code>article</code> whose <code>date</code> is within <code>newDays</code> is priced at <code>article_new</code>, judged in the reader's browser, so prices age without a rebuild. Any other <code>kind</code> is looked up in <code>prices</code>, falling back to <code>page</code>.</li>
+    <li><b>Storage may fail.</b> In a browser that blocks storage the page still works, and the account says it cannot keep a balance.</li>
+  </ul>
+
+  <h2 id="personas">Personas (v1.1)</h2>
+  <p>A reader has one or more personas and one is active. They are a way to manage focus: the same reader reads differently as a founder and as a security lead, and wants different picks for each.</p>
+  <ul>
+    <li><b>"me" always exists.</b> It is built from everything the reader reads, weighted by what each page cost them (so by depth), and named from the topics it reads most until the reader names it: with <code>names</code> set to <code>{"agents-and-policy": "The Policy Architect", …}</code>, a reader of agents and graphs becomes <i>The Policy Architect, with a streak of the Cartographer</i>.</li>
+    <li><b>Presets.</b> A site can offer starting personas in <code>personas.presets</code>: a name, a label, a colour, a description, a few topic weights and a handful of articles. Adding one makes it active.</li>
+    <li><b>Reading counts towards the active persona.</b> Each page opened records the persona that was active; a persona's profile is its preset, plus what was read while it was active, plus its curation.</li>
+    <li><b>Curation.</b> Any article can be kept in a persona (its topics and tags +5) or put out of it (&minus;3, and never picked). The page view has "Keep in your persona"; the newsroom has Keep and Not for this persona on every pick.</li>
+    <li><b>Picks</b> score unread articles by the persona's topic weights plus twice its tag weights, so two personas on the same topics still differ.</li>
+    <li><b>Moving them.</b> The account view exports everything as JSON and restores it in another browser. Nothing syncs on its own yet.</li>
+  </ul>
+  <p class="small dim">This site's five presets (founder, journalist, security lead, AI builder, board member) are <code>PERSONAS</code> in its build, which refuses a preset that names an article that does not exist. Why personas, and why they are what a reader would pay to keep: <a href="../articles/pay-to-keep-your-persona.html">pay to keep your persona</a>.</p>
+
+  <h2 id="config">Config reference</h2>
+  <div class="tablewrap"><table>
+    <tr><th>Key</th><th>Default</th><th>Meaning</th></tr>
+    <tr><td><code>storageKey</code></td><td><code>"sg.meter.v1"</code></td><td>The localStorage key. Use your own per site. (This site keeps <code>sgit.meter.v1</code>, the key its first meter used, so balances carried over.)</td></tr>
+    <tr><td><code>start</code></td><td><code>500</code></td><td>Starting credit, in pence or cents.</td></tr>
+    <tr><td><code>symbol</code></td><td><code>"£"</code></td><td>Shown before amounts.</td></tr>
+    <tr><td><code>prices</code></td><td>10 / 5 / 3 / 2 / 2 / 1 / 0</td><td>Price of a page read to the end, by kind: <code>article_new</code>, <code>article</code>, <code>issue</code>, <code>note</code>, <code>collection</code>, <code>page</code>, <code>free</code>. Add your own kinds.</td></tr>
+    <tr><td><code>newDays</code></td><td><code>7</code></td><td>How long an article is new.</td></tr>
+    <tr><td><code>depth</code></td><td><code>true</code></td><td>Charge by scroll depth. <code>false</code> charges the whole price on opening.</td></tr>
+    <tr><td><code>minDepth</code></td><td><code>0.1</code></td><td>The least share of a page that is charged.</td></tr>
+    <tr><td style="white-space:nowrap"><code>topup</code></td><td><code>{"amount": 500, "link": ""}</code></td><td>The payment link and what it adds. Empty link: the simulated cart.</td></tr>
+    <tr><td><code>packs</code></td><td><code>[{"id":"p5","price":500,"bonus":0}]</code></td><td>The simulated cart's packs.</td></tr>
+    <tr><td><code>links</code></td><td><code>{"account": "account/index.html", "topup": "account/top-up.html"}</code></td><td>Where your account and top-up pages are, relative to <code>data-root</code>.</td></tr>
+    <tr><td style="white-space:nowrap"><code>picks</code></td><td><code>{"feed": "", "base": ""}</code></td><td>A JSON feed of <code>{"articles": [{slug, title, date, teaser, topics}], "topics": [{id, label}]}</code>, and the folder an article's <code>slug + ".html"</code> is in. Empty feed: no picks. This site uses <a href="../articles/graphs.json">articles/graphs.json</a>.</td></tr>
+  </table></div>
+  <p class="small dim">Config can also be given as <code>window.SG_METER_CONFIG</code> before the module loads.</p>
+
+  <h2 id="events">Events</h2>
+  <p>Dispatched on <code>document</code>, bubbling and composed, named <code>&lt;namespace&gt;:&lt;noun&gt;.&lt;verb&gt;</code>. Event names are API: renaming one is a major version.</p>
+  <div class="tablewrap"><table>
+    <tr><th>Event</th><th>detail</th></tr>
+    <tr><td><code>sg:meter.charged</code></td><td><code>{path, depth, cost, balance}</code>, each time a charge grows</td></tr>
+    <tr><td><code>sg:meter.declined</code></td><td><code>{path, reason, balance}</code></td></tr>
+    <tr><td><code>sg:meter.toppedup</code></td><td><code>{credit, source, balance}</code>; source is <code>simulated</code> or <code>link</code></td></tr>
+    <tr><td><code>sg:meter.reset</code></td><td><code>{}</code></td></tr>
+    <tr><td><code>sg:meter.persona</code></td><td><code>{active, what}</code>; what is <code>active</code>, <code>added</code>, <code>renamed</code>, <code>removed</code> or <code>curated</code> (v1.1)</td></tr>
+    <tr><td><code>sg:meter.rated</code></td><td><code>{path, field, value, cost, balance}</code>; field is <code>useful</code>, <code>more</code> or <code>detail</code> (v1.3)</td></tr>
+    <tr><td><code>sg:meter.shared</code></td><td><code>{how, pages}</code>; how is <code>copied</code> or <code>sent</code> (v1.2)</td></tr>
+    <tr><td><code>sg:meter.restored</code></td><td><code>{reads}</code>, after a restore from an export (v1.1)</td></tr>
+    <tr><td><code>sg:meter.changed</code></td><td><code>{balance}</code>, on any saved change; the elements repaint on it</td></tr>
+    <tr><td><code>sg-meter:error</code></td><td><code>{why}</code>, if the component's markup or styles failed to load; the element also gets <code>data-state="error"</code></td></tr>
+  </table></div>
+  <p class="small dim">Nothing listens to these on this site: there is no analytics. They are there so a site that wants to count, for example, how many readers decline and why, can do it in its own code and say so.</p>
+
+  <h2 id="storage">What is stored</h2>
+  <p>One JSON value under <code>storageKey</code> in localStorage, and a map of this session's pages under <code>storageKey + ".seen"</code> in sessionStorage. The reader can export it from the account page.</p>
+  <pre class="shell">{ "v": 3, "created": "2026-10-10T09:00:00.000Z",
+  "balance": -12.5, "spent": 512.5, "reads": 91, "declined": 14, "paused": false,
+  "log": [ { "id": "…", "at": "…", "path": "/articles/x.html", "title": "…", "kind": "article",
+             "topics": ["news"], "price": 10, "depth": 0.55, "cost": 5.5, "persona": "me",
+             "rating": { "useful": 4, "more": 5, "detail": 4 },
+             "declined": { "reason": "clickbait", "at": "…", "refunded": 4 } } ],
+  "topups":   [ { "ref": "cs_…", "at": "…", "credit": 500, "source": "link" } ],
+  "sessions": [ "cs_…" ], "cart": [],
+  "active": "security-mv2h4bb2",
+  "personas": [ { "id": "me", "name": "", "on": [], "off": [] },
+                { "id": "security-mv2h4bb2", "preset": "security", "name": "",
+                  "on": ["footprint-and-blast-radius"], "off": ["a-mac-of-the-agents-own"] } ] }</pre>
+  <p class="small dim">The log keeps the last 500 pages. Earlier states (versions 1 and 2) are read and upgraded in place; an upgraded state gets the "me" persona and keeps everything else.</p>
+
+  <h2 id="theme">Theming</h2>
+  <p>The component draws in a shadow root, so your stylesheet cannot reach in, but CSS custom properties cross the boundary and every colour reads one first: <code>--fg</code>, <code>--dim</code>, <code>--line</code>, <code>--line2</code>, <code>--panel</code>, <code>--accent</code>, <code>--accent-dk</code>, <code>--warm</code> (the colour of a negative balance), <code>--mono</code>, <code>--serif</code>, <code>--sans</code>. Each has a neutral fallback, so a site with none of them still gets a readable meter. The host element is yours to place and size: <code>sg-meter { display: block }</code>, and the root is exposed as <code>::part(root)</code>.</p>
+
+  <h2 id="stripe">Taking real payments with a Stripe Payment Link</h2>
+  <ol>
+    <li>In Stripe, create a product (for example "&pound;5 of reading") and a <b>Payment Link</b> for it.</li>
+    <li>In the link's <b>After payment</b> settings, choose not to show Stripe's confirmation page and to redirect to your site, with this URL (Stripe fills in the placeholder):<br><code>https://your.site/account/topped-up.html?session_id={CHECKOUT_SESSION_ID}</code></li>
+    <li>Put the link in the config as <code>topup.link</code>, and the credit it buys as <code>topup.amount</code>.</li>
+    <li>Make a page at that path with <code>&lt;sg-meter view="topped-up"&gt;&lt;/sg-meter&gt;</code> on it.</li>
+  </ol>
+  <p>Stripe's own guidance is that fulfilment should come from the <code>checkout.session.completed</code> webhook, not from the redirect, because a redirect can be skipped or faked. A static site has nowhere to receive a webhook, so this library credits on the redirect and says so. On a &pound;5 payment with a standard UK card Stripe's listed fee is 1.5% + 20p, about 27.5p, or 5.5%; premium and international cards cost more. The arithmetic for this site is in <a href="../articles/going-live-with-the-reading-meter.html">going live with the reading meter</a>.</p>
+
+  <h2 id="principles">Where its rules come from</h2>
+  <p>The first version ran on <a href="https://pt.newsroom.sgit.ai/carteira/">pt.newsroom.sgit.ai</a> as its wallet: says up front what it is, never blocks, one charge per page per session, storage allowed to fail. Its code follows <a href="https://coding.sgit.ai/javascript/index.html">coding.sgit.ai's JavaScript guidance</a>: ES modules, native web components on a shared base class, markup and styles in sibling files, page data set only as text, events as API. And two carried over from <a href="https://nfrs.sgit.ai/">the NFRs</a>, whose rule is "generate or date every number": the balance and the spend are running totals, but the log of every charge that made them sits beside them in the same export (the last 500), so a reader can check one against the other; and "a restore that has never been performed is not a backup", so the export is plain JSON a reader can open and read, the only copy of their history there is.</p>
+
+  <h2 id="changelog">Changelog</h2>
+  <ul>
+    <li><b>v1.3.1</b> (10 October 2026, site v0.7.36). The share view's Send button stays disabled until the reader ticks the box that lets the site keep the data; copying needs no box.</li>
+    <li><b>v1.3.0</b> (10 October 2026, site v0.7.34). The reader card at the foot of a page: three five-step ratings starting in the middle, usefulness setting the price (free to double), more-like-this moving the persona, level of detail kept as a preference; articles join the reading list when first opened; "don't charge me" moved to the end as the exception. Ratings are in what a reader shares. Events: <code>sg:meter.rated</code>. Config: <code>rating</code>, <code>autoKeep</code>, <code>links.how</code>.</li>
+    <li><b>v1.2.0</b> (10 October 2026, site v0.7.31). Sharing: the <code>share</code> view, <code>shareData()</code> in the core, the <code>share</code> config and the <code>sg:meter.shared</code> event. A reader sees the exact text, copies it, or sends it encrypted (sgit's hybrid envelope v2, RSA-OAEP-SHA256 and AES-256-GCM, with Web Crypto) into an append lane, with the fingerprint recomputed from the published key before anything is sent. The newsroom and account link to it.</li>
+    <li><b>v1.1.0</b> (10 October 2026, site v0.7.28). Personas: a default one built from all reading and named from its topics, presets offered by the site, as many as the reader wants, reading credited to the active one, Keep and Not for this persona. Four new views: <code>newsroom</code>, <code>personas</code>, <code>graph</code>, <code>link</code>. Picks score tags as well as topics. The account view draws the reader's graph and can restore an export. State version 3. v1.0.0 stays at its own path.</li>
+    <li><b>v1.0.0</b> (10 October 2026, site v0.7.26). First packaged release: scroll-depth charging, negative balances, decline with a reason, the balance view, the Stripe return page, picks that count "not relevant" against a topic. Replaces this site's <code>assets/meter.js</code> (v0.7.24), which charged on opening and showed a bar when credit ran out.</li>
+  </ul>
+  <p class="small dim">Next, not yet: rating a page, classifying it and keeping a note on it, all in the same local history; personas and a balance that follow a reader between devices, and to their agent, through an encrypted vault only they hold the key to. <a href="security.html">Security model</a> &middot; <a href="../account/index.html">this site's account page</a>.</p>
+</main>
+<sg-meter view="page" kind="page" date="" topics="" title="SG Meter: a reading meter you can add to any website, sgit.ai" quiet></sg-meter>
+<script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": ""}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
+<script>
+import('../assets/components/sg-meter/v1/v1.3/v1.3.1/sg-meter.js?v=v0.7.39')
+ .catch(function (e) { console.error('[sg-meter] component failed to load:', e); });
+</script>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="netline"><a href="https://sgit.ai" style="display:inline;padding:0"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://pt.newsroom.sgit.ai" style="display:inline;padding:0">&#8593; pt.newsroom.sgit.ai</a> &middot; <a href="https://graphs.sgit.ai" style="display:inline;padding:0">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai" style="display:inline;padding:0">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai" style="display:inline;padding:0">&#8593; nhi.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai" style="display:inline;padding:0">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../admin/versions.html">v0.6.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="index.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../index.html">&#8594; The front page</a>
+    <a href="../articles/index.html#all">Every article</a>
+    <a href="../articles/newsletter/index.html">The newsletter</a>
+    <a href="../articles/collections/index.html">Collections</a>
+    <a href="../articles/desk/index.html">From the desk</a>
+    <a href="../articles/graphs.html">As graphs</a>
+    <a href="../subscribe/index.html">Subscribe</a>
+    <a href="../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../account/index.html">Your reading account</a>
+    <a href="../account/newsroom.html">Your newsroom</a>
+    <a href="../account/personas.html">Your personas</a>
+    <a href="../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../newsroom/index.html">How the newsroom runs</a>
+    <a href="../newsroom/policies.html">Behaviour policies</a>
+    <a href="../newsroom/publish.html">How to publish</a>
+    <a href="../newsroom/board.html">The board</a>
+    <a href="../newsroom/log.html">The run log</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../design/index.html">The design, and what runs</a>
+    <a href="../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../corrections/index.html">Corrections must propagate</a>
+    <a href="../provenance/index.html">Provenance is the product</a>
+    <a href="../economics/index.html">Paying the fact creator</a>
+    <a href="../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../replicate/index.html">Replicate this newsroom</a>
+    <a href="../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../archive/index.html">The archive</a>
+    <a href="../network/index.html">The network</a>
+    <a href="../admin/versions.html">Release history</a>
+    <a href="../admin/index.html">Admin &amp; engineering</a>
+    <a href="../about/participant.html">Where we lose</a>
+    <a href="../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+
+<script>
+(function(){var R=document.documentElement.getAttribute('data-root')||'';var V='?v=' + 'v0.7.39';var C=[R,'','../','/'].filter(function(v,i,a){return a.indexOf(v)===i});
+function wait(ms){return new Promise(function(res){var t=Date.now();(function p(){if(window.sg)return res(window.sg);if(Date.now()-t>ms)return res(null);setTimeout(p,60)})()})}
+function grab(sg,p){return new Promise(function(res){(async function(){if(sg&&sg.vfs&&sg.vfs.readText){try{var t=await sg.vfs.readText(p);if(t)return res(t)}catch(e){}}try{var r=await fetch(p+V);if(r.ok)return res(await r.text())}catch(e){}res(null)})()})}
+async function css(sg){for(var i=0;i<C.length;i++){var p=C[i]+'assets/newsroom.css';if(sg&&sg.loadCss){try{await sg.loadCss(p);return}catch(e){}}var t=await grab(sg,p);if(t){var s=document.createElement('style');s.textContent=t;document.head.appendChild(s);return}}}
+async function js(sg,name){name=name||'assets/site.js';for(var i=0;i<C.length;i++){var p=C[i]+name;if(sg&&sg.loadJs){try{await sg.loadJs(p);return}catch(e){}}var t=await grab(sg,p);if(t){try{(0,eval)(t)}catch(e){console.error('[site] js failed',name,e)}return}}}
+async function boot(){var inVault=false;try{inVault=(window!==window.parent)||location.protocol==='blob:'}catch(e){inVault=true}
+var sg=inVault?await wait(2500):null;window.__sgitBoot={roots:C,grab:function(p){return grab(sg,p)},version:V};await css(sg);await js(sg);document.documentElement.classList.add('ready');try{window.parent&&window.parent.postMessage({type:'sg-app-ready'},'*')}catch(e){}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+var mine=V.slice(3),last=0;
+function fresh(){if(location.hostname!=='sgit.ai'||Date.now()-last<60000)return;last=Date.now();
+fetch('/version.txt?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(t){t=(t||'').trim();if(!/^v[0-9]+[.][0-9]+[.][0-9]+$/.test(t)||t===mine)return;
+var k='sgit.fresh:'+location.pathname;try{if(sessionStorage.getItem(k)===t)return;sessionStorage.setItem(k,t)}catch(e){}
+var u=new URL(location.href);u.searchParams.set('v',t);location.replace(u.href)}).catch(function(){})}
+try{var u=new URL(location.href);if(u.searchParams.get('v')===mine){u.searchParams.delete('v');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}
+fresh();addEventListener('pageshow',function(e){if(e.persisted){last=0;fresh()}});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')fresh()});
+})();
+</script>
+</body>
+</html>

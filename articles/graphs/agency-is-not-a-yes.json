@@ -1,0 +1,184 @@
+{
+  "slug": "agency-is-not-a-yes",
+  "teaser": "A yes or no is not agency: seven dimensions, a seven-level scale for people and agents, and the review as a QA step that fixes the source.",
+  "topics": [
+    "agents-and-policy",
+    "graphs-and-knowledge"
+  ],
+  "core_idea": "Agency for anyone asked to decide, a person or an agent, needs options beyond yes, context in their own terms, the ability to look behind what they are shown, time or tokens, symmetric incentives, escalation and authority over the source; the weakest of these caps the decision on a seven-level scale; below level 3 the decider carries liability rather than agency and accountability belongs to whoever designed the decision point and up their chain; above it the review is a QA step that validates everything upstream and fixes the source, and at the top proven cases become rules that run as code under a behaviour policy, which is also what the EU AI Act's oversight requirements already ask for.",
+  "nodes": [
+    {
+      "id": "yes",
+      "label": "A yes or no is not agency",
+      "kind": "claim",
+      "summary": "The least interesting part of a decision; a no that stalls the work is not a real option."
+    },
+    {
+      "id": "label",
+      "label": "Add label 756-459-3214?",
+      "kind": "example",
+      "summary": "An identifier instead of a thing: which message, which label, why?"
+    },
+    {
+      "id": "incentives",
+      "label": "Whatever you punish, you teach the other answer",
+      "kind": "claim",
+      "summary": "Asymmetric blame makes reviewers say no, or say yes; omission bias is the studied form."
+    },
+    {
+      "id": "compression",
+      "label": "Everything shown is a compression",
+      "kind": "concept",
+      "summary": "Provenance and zoomable graphs let a decider decompress the summary when there is a question."
+    },
+    {
+      "id": "liability",
+      "label": "Accountability without agency is liability",
+      "kind": "claim",
+      "summary": "Takeover times, Bainbridge's irony, the moral crumple zone; accountability belongs up the chain."
+    },
+    {
+      "id": "scale",
+      "label": "Seven levels, seven dimensions",
+      "kind": "method",
+      "summary": "Options, context, depth, time, incentives, escalation, authority; the weakest caps the level."
+    },
+    {
+      "id": "cases",
+      "label": "Fourteen decision points scored",
+      "kind": "artefact",
+      "summary": "Eight at level 0; the fixed sign-in push at 1; a clinician at 4; draft review at 5; the hold email at 6."
+    },
+    {
+      "id": "agents",
+      "label": "Agents are deciders too",
+      "kind": "claim",
+      "summary": "An agent asked 'is this OK?' with no context is a rubber stamp; the final yes should be code."
+    },
+    {
+      "id": "qa",
+      "label": "The review is a QA step",
+      "kind": "method",
+      "summary": "Read as the signer, question each statement, trace it, fix the source, think better, record it."
+    },
+    {
+      "id": "ownership",
+      "label": "Ownership changes attention",
+      "kind": "concept",
+      "summary": "Publishing under someone's name, or making them accept a risk, is what makes them engage."
+    },
+    {
+      "id": "rule",
+      "label": "From review to rule",
+      "kind": "method",
+      "summary": "Clean passes become rules under a behaviour policy; cheaper models for defined tasks; senior reviewers for the rest."
+    },
+    {
+      "id": "law",
+      "label": "The law puts the floor at level 3",
+      "kind": "claim",
+      "summary": "EU AI Act Articles 14(4) and 26(2) and the guidance on meaningful oversight."
+    },
+    {
+      "id": "vault",
+      "label": "The agency scale, the vault",
+      "kind": "artefact",
+      "summary": "The levels, dimensions, cases, the loop, the law and an assessment to run on your own decisions."
+    }
+  ],
+  "edges": [
+    {
+      "from": "label",
+      "to": "yes",
+      "rel": "example-of"
+    },
+    {
+      "from": "incentives",
+      "to": "yes",
+      "rel": "extends"
+    },
+    {
+      "from": "compression",
+      "to": "scale",
+      "rel": "leads-to"
+    },
+    {
+      "from": "liability",
+      "to": "yes",
+      "rel": "extends"
+    },
+    {
+      "from": "scale",
+      "to": "liability",
+      "rel": "answers"
+    },
+    {
+      "from": "cases",
+      "to": "scale",
+      "rel": "example-of"
+    },
+    {
+      "from": "agents",
+      "to": "scale",
+      "rel": "extends"
+    },
+    {
+      "from": "qa",
+      "to": "scale",
+      "rel": "extends"
+    },
+    {
+      "from": "ownership",
+      "to": "qa",
+      "rel": "depends-on"
+    },
+    {
+      "from": "rule",
+      "to": "qa",
+      "rel": "leads-to"
+    },
+    {
+      "from": "law",
+      "to": "scale",
+      "rel": "compared-with"
+    },
+    {
+      "from": "vault",
+      "to": "scale",
+      "rel": "produces"
+    }
+  ],
+  "links": {
+    "articles": [
+      "where-is-the-why",
+      "hope-or-enforcement",
+      "the-agent-team-as-it-runs",
+      "introducing-fractal-semantic-graphs",
+      "how-much-of-this-did-i-write",
+      "every-risk-is-already-accepted",
+      "memory-is-not-a-spectator-sport"
+    ],
+    "pages": [
+      "demos/vaults/agency-scale/index.html"
+    ],
+    "sites": [
+      "https://artificialintelligenceact.eu/article/14/",
+      "https://artificialintelligenceact.eu/article/26/",
+      "https://abp.sgit.ai/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "Whatever you punish, you teach the other answer.",
+      "why": "Incentives decide the answer before the decider does."
+    },
+    {
+      "text": "The right fix is not to the email. It is to the record, the graph, the connection, so that every future email has it.",
+      "why": "The review as QA."
+    },
+    {
+      "text": "Models prepare and propose; rules decide; people own the rules.",
+      "why": "Where agents sit in a decision."
+    }
+  ]
+}

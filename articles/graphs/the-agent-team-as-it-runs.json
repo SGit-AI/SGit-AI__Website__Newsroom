@@ -1,0 +1,226 @@
+{
+  "slug": "the-agent-team-as-it-runs",
+  "teaser": "Twelve agents on dedicated accounts, encrypted vaults as the only memory, messages as files, a folder per person, and a mailbox nobody sends from.",
+  "topics": [
+    "agents-and-policy",
+    "vaults-and-method"
+  ],
+  "core_idea": "A running team of twelve Claude agents is described as a system and as a set of properties: each agent a role on a dedicated account with a behaviour policy; encrypted vaults the host cannot read as the only memory; messages between agents as email files in a mailroom; a CRM of one folder per person with provenance and hashes; a conductor with a security role first and last; drafts only, a person sends; identity and encryption as the strong barriers and policy as the weak one, said plainly; three classes of information, public, private-ish and personal, with the vaults built to refuse the third and rules scoped per customer or written for the recipient; each piece mapped to the idea on the site that argued for it; and the open question of who gives the mandate over information.",
+  "nodes": [
+    {
+      "id": "the-picture",
+      "label": "One line: phone, sessions, vaults, drafts, people",
+      "kind": "concept",
+      "summary": "The person talks from a phone; agents work in cloud sessions, keep everything as encrypted files, leave email as drafts; the person sends; a conductor runs the team four times a day."
+    },
+    {
+      "id": "account-blast-radius",
+      "label": "The account is the blast radius",
+      "kind": "claim",
+      "summary": "A dedicated Workspace, a dedicated Claude Team account, vault keys per session and a separate personal agent; a mistake stays inside one account, and this is the first control because it depends on nobody behaving."
+    },
+    {
+      "id": "twelve-roles",
+      "label": "Twelve agents, one focus each",
+      "kind": "concept",
+      "summary": "Each agent is a role with a brief and a behaviour policy; eleven of twelve policies forbid sending; one role reads the mailbox, one writes drafts into it, none sends."
+    },
+    {
+      "id": "email-fs",
+      "label": "Email, but as files",
+      "kind": "method",
+      "summary": "Agents drop .eml files into each other's mailroom folder in the shared vault; the recipient moves them to inbox and done; every message has a sender, recipient, kind and references; the vault keeps every version."
+    },
+    {
+      "id": "conductor",
+      "label": "The conductor and the session steps",
+      "kind": "method",
+      "summary": "Four runs a day, security first and last, one step per agent of up to twelve minutes; a session checks for a hold, snapshots, pulls, works, leak-checks, commits and ends with a card measured from the transcript."
+    },
+    {
+      "id": "crm-folder",
+      "label": "Memory is one folder per person",
+      "kind": "method",
+      "summary": "Plain JSON and Markdown: a record, an append-only ledger, every message with provenance and a hash, meeting notes, a graph of interests against what meets them, a generated summary; no database."
+    },
+    {
+      "id": "four-rules",
+      "label": "The rules never negotiated",
+      "kind": "claim",
+      "summary": "Keys never in a file; no agent sends, with one named exception and a hold behind it; no agent changes a schedule; create anywhere, edit your own."
+    },
+    {
+      "id": "barriers-graded",
+      "label": "Barriers typed honestly",
+      "kind": "claim",
+      "summary": "Identity and encryption are strong by construction; grant and record are medium; policy is weak and many rows rely on it; the honest column is where the next tooling goes."
+    },
+    {
+      "id": "security-properties",
+      "label": "The security properties, as properties",
+      "kind": "concept",
+      "summary": "The host cannot read the memory; a reader cannot write; a writer can be given only a slot; keys never touch a file; a leaked write key means a new vault; the team can be stopped; inbound is data; everything is read afterwards."
+    },
+    {
+      "id": "three-classes",
+      "label": "Public, private-ish, personal",
+      "kind": "claim",
+      "summary": "The vaults hold public and private-ish information and refuse personal; most of what a company agent handles is public or nearly so, which bounds the worst case before encryption is counted."
+    },
+    {
+      "id": "rules-per-customer",
+      "label": "Rules per customer, rules for the recipient",
+      "kind": "method",
+      "summary": "A policy per agent and a folder per person let a rule be scoped to one relationship or written to protect the person on the other end: capture only what the work needs, show them what is held."
+    },
+    {
+      "id": "files-graphs-state-machine",
+      "label": "Files, graphs and a state machine",
+      "kind": "concept",
+      "summary": "Every piece of state is a file; the CRM graph and the team are the same fractal grammar at two altitudes; each role reads state, does one kind of work, writes state and stops."
+    },
+    {
+      "id": "pieces-mapped",
+      "label": "Every piece has an argument on this site",
+      "kind": "example",
+      "summary": "Dedicated accounts, behaviour policies, drafts only, the session card, the twin, graded barriers, vaults, lanes, rotation, fractal graphs, memory with provenance, interfaces from files, the agents' identity."
+    },
+    {
+      "id": "not-working",
+      "label": "What is not working yet",
+      "kind": "question",
+      "summary": "Two registers disagree; vault-to-vault messaging needs a person; one agent holds most open work; no daily brief channel; most barriers are policy-only because the platform cannot remove send tools per agent."
+    },
+    {
+      "id": "mandate-over-information",
+      "label": "Who gives the mandate over information?",
+      "kind": "question",
+      "summary": "Something sent to a person was not sent to a team of agents or to what they pass it to next; the setup holds less and says what it holds; the question gets a document of its own."
+    }
+  ],
+  "edges": [
+    {
+      "from": "the-picture",
+      "to": "account-blast-radius",
+      "rel": "depends-on"
+    },
+    {
+      "from": "the-picture",
+      "to": "twelve-roles",
+      "rel": "depends-on"
+    },
+    {
+      "from": "twelve-roles",
+      "to": "email-fs",
+      "rel": "depends-on"
+    },
+    {
+      "from": "email-fs",
+      "to": "conductor",
+      "rel": "leads-to"
+    },
+    {
+      "from": "twelve-roles",
+      "to": "crm-folder",
+      "rel": "produces"
+    },
+    {
+      "from": "twelve-roles",
+      "to": "four-rules",
+      "rel": "depends-on"
+    },
+    {
+      "from": "four-rules",
+      "to": "barriers-graded",
+      "rel": "leads-to"
+    },
+    {
+      "from": "barriers-graded",
+      "to": "security-properties",
+      "rel": "extends"
+    },
+    {
+      "from": "account-blast-radius",
+      "to": "security-properties",
+      "rel": "example-of"
+    },
+    {
+      "from": "security-properties",
+      "to": "three-classes",
+      "rel": "leads-to"
+    },
+    {
+      "from": "three-classes",
+      "to": "rules-per-customer",
+      "rel": "leads-to"
+    },
+    {
+      "from": "crm-folder",
+      "to": "files-graphs-state-machine",
+      "rel": "example-of"
+    },
+    {
+      "from": "conductor",
+      "to": "files-graphs-state-machine",
+      "rel": "example-of"
+    },
+    {
+      "from": "files-graphs-state-machine",
+      "to": "pieces-mapped",
+      "rel": "leads-to"
+    },
+    {
+      "from": "barriers-graded",
+      "to": "not-working",
+      "rel": "leads-to"
+    },
+    {
+      "from": "rules-per-customer",
+      "to": "mandate-over-information",
+      "rel": "leads-to"
+    },
+    {
+      "from": "three-classes",
+      "to": "mandate-over-information",
+      "rel": "leads-to"
+    }
+  ],
+  "links": {
+    "articles": [
+      "replicating-the-agentic-inbox",
+      "six-agents-one-inbox",
+      "footprint-and-blast-radius",
+      "connector-twin-before-you-deploy-an-agent",
+      "every-risk-is-already-accepted",
+      "introducing-fractal-semantic-graphs",
+      "memory-is-not-a-spectator-sport",
+      "the-wall-under-the-reply",
+      "the-identity-we-wanted-to-give-the-agents",
+      "custom-uis-are-not-the-exception",
+      "a-personal-agent-that-keeps-your-secrets"
+    ],
+    "pages": [
+      "docs/credentials.html",
+      "docs/append-lane-messaging.html",
+      "docs/agent-contact.html",
+      "docs/briefs/code-review-graphs-in-the-repository.html"
+    ],
+    "sites": [
+      "https://riskmandate.ai/abp.html"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "A policy can ask an agent not to look; an account boundary means there is nothing there to see.",
+      "why": "Why the dedicated account is the first control and not the policy."
+    },
+    {
+      "text": "A memory that can be shown to its subject is a memory that has been kept to what can be shown.",
+      "why": "The privacy design showing through the product design: the what-we-know-about-you pack."
+    },
+    {
+      "text": "Something a person sent to one of us was sent to a person. It was not sent to a team of agents.",
+      "why": "The question the setup leaves open, stated so it can be worked on."
+    }
+  ]
+}

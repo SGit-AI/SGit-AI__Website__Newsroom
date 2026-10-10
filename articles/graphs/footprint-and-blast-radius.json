@@ -1,0 +1,250 @@
+{
+  "slug": "footprint-and-blast-radius",
+  "teaser": "Footprint is what an agent actually did, read afterwards from logs and vault history; blast radius is what a row of its reach would cost the business today.",
+  "topics": [
+    "agents-and-policy",
+    "vaults-and-method"
+  ],
+  "core_idea": "Add two words to the Agent Behaviour Policy: footprint, what the agent actually did, read afterwards from the record and compared with the mandate, and blast radius, what a row of its reach would cost the business if used in full today, with whether there is a way back.",
+  "nodes": [
+    {
+      "id": "four-words",
+      "label": "Reach, mandate, gap and barriers",
+      "kind": "concept",
+      "summary": "RiskMandate's policy is written before the agent runs: reach is what it can do, mandate what you asked, gap the difference in both directions, barriers what stands in the way."
+    },
+    {
+      "id": "barriers-typed",
+      "label": "Only a boundary is a control",
+      "kind": "concept",
+      "summary": "A barrier is a boundary, a setting, an expectation or nothing, and most of what organisations call controls turn out to be expectations once they are typed."
+    },
+    {
+      "id": "footprint",
+      "label": "Footprint",
+      "kind": "concept",
+      "summary": "The set of things the agent actually did, in a period, read from the record afterwards; the same kind of list as the reach and the mandate, but evidence rather than a decision."
+    },
+    {
+      "id": "footprint-sources",
+      "label": "Where the footprint comes from",
+      "kind": "artefact",
+      "summary": "The connector's audit log, the model provider's tool-call record, a connector twin's replay, a vault's commit history, the append lanes and the agents' own messages."
+    },
+    {
+      "id": "passive-reading",
+      "label": "Reading, not intercepting",
+      "kind": "claim",
+      "summary": "Nothing sits inline, a copy of the logs or a read key is enough so an outside reviewer can do it, and the footprint accumulates so some findings only exist at the twelfth week."
+    },
+    {
+      "id": "footprint-in-the-gap",
+      "label": "Footprint in the gap",
+      "kind": "concept",
+      "summary": "The agent did something within its reach and outside its mandate and nothing stopped it, which is a near miss, and it resolves by adding the row to the mandate or putting a boundary in front of it."
+    },
+    {
+      "id": "dormant-mandate",
+      "label": "Dormant mandate",
+      "kind": "concept",
+      "summary": "A row the owner asked for that the footprint never shows: an over-stated mandate, a check that was relied on and never ran, or a shortfall the reach inventory missed."
+    },
+    {
+      "id": "expected-use-hint",
+      "label": "Expected-use hint",
+      "kind": "method",
+      "summary": "Each mandate row wants a hint of how often the owner expects to see it, always, sometimes, rarely, hopefully never, so a dormant row can be told from a contingency that was never needed."
+    },
+    {
+      "id": "mandate-as-practised",
+      "label": "The mandate as practised",
+      "kind": "method",
+      "summary": "Read the footprint for a month and you have the rows the agent actually uses, with the near misses marked, as the first draft of a policy for an agent that has none."
+    },
+    {
+      "id": "blast-radius",
+      "label": "Blast radius",
+      "kind": "concept",
+      "summary": "What it would cost the business if a row were used in full, today, defined over the reach because whoever takes the agent over inherits its reach and ignores its mandate."
+    },
+    {
+      "id": "reversibility-axis",
+      "label": "Whether there is a way back",
+      "kind": "concept",
+      "summary": "Two rows with the same scope and different reversibility are not the same risk, and the policy should say so."
+    },
+    {
+      "id": "same-footprint-different-blast-radius",
+      "label": "Same footprint, different blast radius",
+      "kind": "example",
+      "summary": "An agent drops a staging table three times over two months; the row is identical each time, and only on day forty-one, when it held six weeks of real records, is it the incident."
+    },
+    {
+      "id": "cloud-comparisons",
+      "label": "What the cloud already does",
+      "kind": "example",
+      "summary": "AWS, Google Cloud and Microsoft Entra already compare permissions granted with permissions used, but a permission set carries no statement of intent, so there is no dormant mandate."
+    },
+    {
+      "id": "vault-as-footprint-recorder",
+      "label": "A vault is a footprint recorder by construction",
+      "kind": "claim",
+      "summary": "Every commit is signed, versioned and append-only, so an agent working in a vault leaves a footprint whether or not anyone intended to collect one, and most of what sgit does shrinks the irreversible part of the blast radius."
+    },
+    {
+      "id": "gap-plus-blast-radius-is-risk",
+      "label": "The gap plus blast radius is the risk",
+      "kind": "claim",
+      "summary": "The gap is exposure, blast radius is impact, and the person who accepts a gap is accepting its blast radius, which until now the policy did not state."
+    },
+    {
+      "id": "reading-our-own-footprint",
+      "label": "Reading our own footprint",
+      "kind": "question",
+      "summary": "Ten agents, six with a written policy, eight days of commit history; the footprint against the six policies is still to be read and published as the second article."
+    }
+  ],
+  "edges": [
+    {
+      "from": "barriers-typed",
+      "to": "four-words",
+      "rel": "extends"
+    },
+    {
+      "from": "footprint",
+      "to": "four-words",
+      "rel": "extends"
+    },
+    {
+      "from": "footprint",
+      "to": "footprint-sources",
+      "rel": "depends-on"
+    },
+    {
+      "from": "footprint-sources",
+      "to": "passive-reading",
+      "rel": "leads-to"
+    },
+    {
+      "from": "footprint",
+      "to": "footprint-in-the-gap",
+      "rel": "produces"
+    },
+    {
+      "from": "footprint",
+      "to": "dormant-mandate",
+      "rel": "produces"
+    },
+    {
+      "from": "footprint-in-the-gap",
+      "to": "dormant-mandate",
+      "rel": "contrasts"
+    },
+    {
+      "from": "footprint-in-the-gap",
+      "to": "barriers-typed",
+      "rel": "depends-on"
+    },
+    {
+      "from": "dormant-mandate",
+      "to": "expected-use-hint",
+      "rel": "depends-on"
+    },
+    {
+      "from": "footprint",
+      "to": "mandate-as-practised",
+      "rel": "produces"
+    },
+    {
+      "from": "blast-radius",
+      "to": "four-words",
+      "rel": "extends"
+    },
+    {
+      "from": "reversibility-axis",
+      "to": "blast-radius",
+      "rel": "extends"
+    },
+    {
+      "from": "same-footprint-different-blast-radius",
+      "to": "blast-radius",
+      "rel": "example-of"
+    },
+    {
+      "from": "same-footprint-different-blast-radius",
+      "to": "footprint-in-the-gap",
+      "rel": "example-of"
+    },
+    {
+      "from": "cloud-comparisons",
+      "to": "footprint",
+      "rel": "compared-with"
+    },
+    {
+      "from": "cloud-comparisons",
+      "to": "dormant-mandate",
+      "rel": "contrasts"
+    },
+    {
+      "from": "vault-as-footprint-recorder",
+      "to": "footprint-sources",
+      "rel": "example-of"
+    },
+    {
+      "from": "vault-as-footprint-recorder",
+      "to": "reversibility-axis",
+      "rel": "extends"
+    },
+    {
+      "from": "gap-plus-blast-radius-is-risk",
+      "to": "blast-radius",
+      "rel": "depends-on"
+    },
+    {
+      "from": "gap-plus-blast-radius-is-risk",
+      "to": "four-words",
+      "rel": "depends-on"
+    },
+    {
+      "from": "reading-our-own-footprint",
+      "to": "mandate-as-practised",
+      "rel": "depends-on"
+    }
+  ],
+  "links": {
+    "articles": [
+      "ultimate-insider-three-collisions",
+      "connector-twin-before-you-deploy-an-agent",
+      "custom-uis-are-not-the-exception",
+      "every-risk-is-already-accepted",
+      "six-agents-one-inbox"
+    ],
+    "pages": [
+      "/docs/briefs/riskmandate-footprint-and-blast-radius.html",
+      "/demos/vaults/kit-bag/index.html",
+      "/api/append-lanes.html",
+      "/demos/vaults/connector-twin/index.html",
+      "/demos/vaults/risk-mandate/index.html",
+      "/demos/vaults/risk-acceptance/index.html"
+    ],
+    "sites": [
+      "https://riskmandate.ai/abp.html",
+      "https://riskmandate.ai/",
+      "https://aws.amazon.com/about-aws/whats-new/2023/11/iam-access-analyzer-inspecting-unused-access",
+      "https://aws.amazon.com/about-aws/whats-new/2024/06/aws-iam-access-analyzer-refine-unused-access/",
+      "https://cloud.google.com/iam/docs/recommender-overview",
+      "https://learn.microsoft.com/en-us/entra/permissions-management/overview",
+      "https://techcommunity.microsoft.com/blog/microsoft-entra-blog/2023-state-of-cloud-permissions-risks-report-now-published/1061397"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "The mandate tells you what you hoped for. The reach tells you what you are exposed to.",
+      "why": "Why blast radius is defined over the reach, not the mandate: an attacker inherits the reach."
+    },
+    {
+      "text": "The footprint is how you get near misses for agents without waiting for the luck to run out.",
+      "why": "The payoff of reading the footprint against the gap: incidents and near misses are the same events with different luck."
+    }
+  ]
+}

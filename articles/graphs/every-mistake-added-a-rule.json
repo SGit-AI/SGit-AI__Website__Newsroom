@@ -1,0 +1,240 @@
+{
+  "slug": "every-mistake-added-a-rule",
+  "teaser": "When every agent mistake adds a rule, complexity wins: map the process, move each piece right as a small shipped component, and keep the rigour for the work.",
+  "topics": [
+    "agents-and-policy",
+    "site-and-engineering"
+  ],
+  "core_idea": "Founders who now work as engineers with agents often meet complexity not in their code but in the process around it, and answer each mistake with a rule, which grows the prompt, brings compaction sooner and breeds new mistakes; on a Wardley map that complexity is a position, custom-built process sitting where commodities already exist, and the way out is to make each piece a small, tested, shipped component that moves right and no longer needs a rule, with short sessions, memory as versioned files, security matched to assets and attack vectors, rules only for incidents and machines for enforcement, and shipping as the discipline that keeps blast radius and over-engineering under control.",
+  "nodes": [
+    {
+      "id": "case",
+      "label": "A verification where the code holds and the process breaks",
+      "kind": "example",
+      "summary": "Agents write, verify and review in Cowork with ChatGPT; tests reproduce and 812 race attacks pass; six process failures recur."
+    },
+    {
+      "id": "rule-loop",
+      "label": "Every mistake added a rule",
+      "kind": "claim",
+      "summary": "Rules grow the prompt, compaction decides which survive, and rules contradict each other and the harness."
+    },
+    {
+      "id": "position",
+      "label": "Complexity is a position on a map",
+      "kind": "concept",
+      "summary": "Custom-built components sitting where the world already has products and commodities."
+    },
+    {
+      "id": "map-now",
+      "label": "Map one: the custom-built blob",
+      "kind": "artefact",
+      "summary": "The verification's process mapped: six hand-built components between the agents and unused files, hashes and git."
+    },
+    {
+      "id": "map-next",
+      "label": "Map two: each piece moved right",
+      "kind": "artefact",
+      "summary": "Short policy on disk, steps that finish before compaction, a run wrapper, committed scripts, an audit card, harm-only stops."
+    },
+    {
+      "id": "machines",
+      "label": "Rules for incidents, machines for enforcement",
+      "kind": "claim",
+      "summary": "What a machine enforces holds; what attention enforces drifts; each failed rule is replaced by a stronger barrier."
+    },
+    {
+      "id": "compound",
+      "label": "Commoditise small chunks and let them compound",
+      "kind": "method",
+      "summary": "Self-contained, shipped, testable components, each the base for the next, with blast radius kept small."
+    },
+    {
+      "id": "ship",
+      "label": "Ship, and stop",
+      "kind": "method",
+      "summary": "Shipping means usable by somebody else, an agent included; half-baked by design; stopping is part of the method."
+    },
+    {
+      "id": "sessions",
+      "label": "Small sessions, your own context",
+      "kind": "method",
+      "summary": "Compaction chooses what to keep; debrief documents are compression you control; productive from the first prompt."
+    },
+    {
+      "id": "memory",
+      "label": "Memory is files, versioned",
+      "kind": "concept",
+      "summary": "Briefs, reviews and indexes as a graph in git or vaults; Email-FS and Issues-FS between agents."
+    },
+    {
+      "id": "slow-down",
+      "label": "When complexity hits, slow down",
+      "kind": "claim",
+      "summary": "If you are not getting faster, complexity is winning; you have time; pushing through slows you down."
+    },
+    {
+      "id": "threat",
+      "label": "Secure against the threat, not against everything",
+      "kind": "method",
+      "summary": "Assets, attack vectors and what customers buy set the rigour; publish the threat model and ask."
+    },
+    {
+      "id": "environments",
+      "label": "Run it in five environments",
+      "kind": "method",
+      "summary": "Local, air-gapped and three clouds each break a different assumption and show the bottlenecks."
+    },
+    {
+      "id": "path",
+      "label": "Reverse-engineer the path to the destination",
+      "kind": "method",
+      "summary": "Large designs need the five to ten paths that evolve into them; like a forest, early stages disappear."
+    },
+    {
+      "id": "engineering",
+      "label": "Learn the engineering that exists",
+      "kind": "method",
+      "summary": "CI, Kanban, patterns, nfrs.sgit.ai and coding.sgit.ai: cheaper to read than to rediscover."
+    },
+    {
+      "id": "answers",
+      "label": "Compaction, audit cards and what deserves a STOP",
+      "kind": "question",
+      "summary": "Finish steps before compaction; audit the transcript afterwards; log form, stop for harm or a broken boundary."
+    },
+    {
+      "id": "simple-first",
+      "label": "The same lesson, one level up",
+      "kind": "claim",
+      "summary": "Customers need simpler components first; if it fails in simple cases it struggles in complex ones; funding can mislead."
+    }
+  ],
+  "edges": [
+    {
+      "from": "rule-loop",
+      "to": "case",
+      "rel": "example-of"
+    },
+    {
+      "from": "position",
+      "to": "rule-loop",
+      "rel": "answers"
+    },
+    {
+      "from": "map-now",
+      "to": "position",
+      "rel": "example-of"
+    },
+    {
+      "from": "map-next",
+      "to": "map-now",
+      "rel": "contrasts"
+    },
+    {
+      "from": "machines",
+      "to": "rule-loop",
+      "rel": "answers"
+    },
+    {
+      "from": "map-next",
+      "to": "machines",
+      "rel": "depends-on"
+    },
+    {
+      "from": "compound",
+      "to": "ship",
+      "rel": "depends-on"
+    },
+    {
+      "from": "compound",
+      "to": "position",
+      "rel": "answers"
+    },
+    {
+      "from": "sessions",
+      "to": "memory",
+      "rel": "depends-on"
+    },
+    {
+      "from": "sessions",
+      "to": "case",
+      "rel": "answers"
+    },
+    {
+      "from": "slow-down",
+      "to": "position",
+      "rel": "leads-to"
+    },
+    {
+      "from": "threat",
+      "to": "case",
+      "rel": "answers"
+    },
+    {
+      "from": "environments",
+      "to": "slow-down",
+      "rel": "extends"
+    },
+    {
+      "from": "path",
+      "to": "compound",
+      "rel": "extends"
+    },
+    {
+      "from": "engineering",
+      "to": "machines",
+      "rel": "extends"
+    },
+    {
+      "from": "answers",
+      "to": "case",
+      "rel": "answers"
+    },
+    {
+      "from": "simple-first",
+      "to": "ship",
+      "rel": "extends"
+    }
+  ],
+  "links": {
+    "articles": [
+      "the-agent-team-as-it-runs",
+      "memory-is-not-a-spectator-sport",
+      "footprint-and-blast-radius",
+      "every-risk-is-already-accepted",
+      "green-does-not-mean-live",
+      "the-bridge-followed-to-the-end",
+      "what-sgit-is",
+      "seven-vaults-one-method",
+      "introducing-fractal-semantic-graphs",
+      "six-agents-one-inbox",
+      "the-mandate-stack"
+    ],
+    "pages": [],
+    "sites": [
+      "https://nfrs.sgit.ai/",
+      "https://coding.sgit.ai/",
+      "https://wardley-maps.sgit.ai/",
+      "https://issues-fs.sgit.ai/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "Every rule added to fix one of them is one more custom component in the same place, which is exactly the loop my friend described.",
+      "why": "Why adding rules makes complexity worse, read on the map."
+    },
+    {
+      "text": "If you are not releasing something, you are probably not solving problems at the right altitude.",
+      "why": "Shipping as the check on over-engineering."
+    },
+    {
+      "text": "If a session needs 100 KB of rules to be productive, the rules are doing the job that structure should do.",
+      "why": "The test for a context that has grown too large."
+    },
+    {
+      "text": "If everything is a STOP, a STOP stops meaning anything, and the process spends its attention on itself.",
+      "why": "Form is logged, harm stops."
+    }
+  ]
+}

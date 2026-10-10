@@ -1,0 +1,173 @@
+{
+  "slug": "how-i-work-with-claude",
+  "teaser": "A practical guide from a year of daily use: one Claude session per topic, named agents with a role.md, curated memory, vaults, and policy before connectors.",
+  "topics": [
+    "agents-and-policy",
+    "vaults-and-method"
+  ],
+  "core_idea": "Working well with Claude comes from a few habits: one session per major or recurring topic and no mixed threads, a naming pattern with @ names for agents, an agent defined as a focused session with a role.md, memory treated as what the session reads and curated as websites, graphs and vaults wired together and accessible by default, vaults for sharing by key instead of broad permissions, review as the quality step that fixes the brief, and an Agent Behaviour Policy before every new connector.",
+  "nodes": [
+    {
+      "id": "separate",
+      "label": "One session per topic",
+      "kind": "method",
+      "summary": "Every major or recurring topic gets its own session, tab or window; no mixed threads."
+    },
+    {
+      "id": "mixing",
+      "label": "Mixed threads mix context",
+      "kind": "claim",
+      "summary": "Everything in a thread is context for the next answer, so topics bleed into each other."
+    },
+    {
+      "id": "naming",
+      "label": "Name every session",
+      "kind": "method",
+      "summary": "project | what we are working on; agent sessions get an @ name."
+    },
+    {
+      "id": "agent",
+      "label": "An agent is a focused session",
+      "kind": "concept",
+      "summary": "Project documents, a role.md, and a session named for the role."
+    },
+    {
+      "id": "memory",
+      "label": "Memory is what the session reads",
+      "kind": "concept",
+      "summary": "Curated websites, graphs and vaults wired together are the agent's universe."
+    },
+    {
+      "id": "access",
+      "label": "Access by default",
+      "kind": "claim",
+      "summary": "Publish what you can; inside a company, make most content available to most people."
+    },
+    {
+      "id": "vaults",
+      "label": "Vaults to receive and send",
+      "kind": "method",
+      "summary": "A vault key instead of broad permissions; read keys for read-only."
+    },
+    {
+      "id": "review",
+      "label": "Review fixes the brief",
+      "kind": "method",
+      "summary": "Mistakes traced to a brief or file that needed to be better, and fixed there."
+    },
+    {
+      "id": "prompts",
+      "label": "Starter prompts",
+      "kind": "artefact",
+      "summary": "Start a project session, an agent session, hand over a vault, end a session."
+    },
+    {
+      "id": "policy",
+      "label": "Policy before connectors",
+      "kind": "claim",
+      "summary": "Each connector adds power and danger; an ABP makes connecting more comfortable."
+    },
+    {
+      "id": "cowork",
+      "label": "A Cowork session per agent",
+      "kind": "example",
+      "summary": "For agentic work, a separate session for each agent, with its own name and role."
+    },
+    {
+      "id": "start",
+      "label": "Where do I start?",
+      "kind": "question",
+      "summary": "Close the mixed thread, write one role.md, make memory findable, share by key."
+    }
+  ],
+  "edges": [
+    {
+      "from": "mixing",
+      "to": "separate",
+      "rel": "leads-to"
+    },
+    {
+      "from": "separate",
+      "to": "naming",
+      "rel": "depends-on"
+    },
+    {
+      "from": "naming",
+      "to": "agent",
+      "rel": "extends"
+    },
+    {
+      "from": "agent",
+      "to": "memory",
+      "rel": "depends-on"
+    },
+    {
+      "from": "access",
+      "to": "memory",
+      "rel": "extends"
+    },
+    {
+      "from": "vaults",
+      "to": "memory",
+      "rel": "extends"
+    },
+    {
+      "from": "memory",
+      "to": "review",
+      "rel": "produces"
+    },
+    {
+      "from": "prompts",
+      "to": "agent",
+      "rel": "example-of"
+    },
+    {
+      "from": "policy",
+      "to": "cowork",
+      "rel": "depends-on"
+    },
+    {
+      "from": "cowork",
+      "to": "agent",
+      "rel": "example-of"
+    },
+    {
+      "from": "start",
+      "to": "separate",
+      "rel": "answers"
+    }
+  ],
+  "links": {
+    "articles": [
+      "memory-is-not-a-spectator-sport",
+      "the-agent-team-as-it-runs",
+      "replicating-the-agentic-inbox",
+      "why-my-agents-do-not-run-on-my-laptop",
+      "encrypted-memory-for-isolated-agents",
+      "agency-is-not-a-yes",
+      "hope-or-enforcement"
+    ],
+    "pages": [],
+    "sites": [
+      "https://abp.sgit.ai/",
+      "https://coding.sgit.ai/",
+      "https://nfrs.sgit.ai/",
+      "https://wardley-maps.sgit.ai/",
+      "https://graphs.sgit.ai/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "One topic per session keeps the frame of reference small and right.",
+      "why": "Why sessions stay separate."
+    },
+    {
+      "text": "The more time I spend curating and maintaining those files, the more relevant and accurate the agents are.",
+      "why": "Where the quality comes from."
+    },
+    {
+      "text": "The idea underneath is **access by default**, not public by default.",
+      "why": "The governance stance, for people who cannot publish."
+    }
+  ]
+}
