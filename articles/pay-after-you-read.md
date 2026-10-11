@@ -2,7 +2,7 @@
 
 > On 10 October the reading meter on sgit.ai went, in seven releases between 12:09 and 15:49, from an experiment to a working pay-on-demand publication. A reader pays pence for the share of a page they actually read, from a balance that can go below zero without ever blocking them; after reading, they say how useful it was, and that sets the price, from free to double; their reading builds personas and a newsroom of their own, kept in their browser; and they can send it to us, encrypted, for a front page designed for them. Once a Stripe link is set, the only question left is whether people pay. This article introduces each feature, shows how each one grew out of the last, with a Wardley map that adds them one at a time, explains why paying after you see the value is the right way round, and why every decision started from one rule: do not rip off the reader. It ends with an offer to sites with traffic that would like to test it.
 
-*Source: <https://newsroom.sgit.ai/articles/pay-after-you-read.html> · sgit.ai v0.7.40 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/pay-after-you-read.html> · sgit.ai v0.7.45 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 
@@ -10,7 +10,7 @@
 
 # Pay after you read: how a reading meter became a working business model in one afternoon, one release at a time
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-10 · [article v1.1.0, 2 versions](versions/pay-after-you-read.md) · [sgit.ai v0.7.36](https://sgit.ai/admin/versions.md) · newsroomreading-metermicropaymentspricingpersonalisationpersonaswardley-mapsinnovationagentsarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-10 · updated 2026-10-11 · [article v1.2.0, 3 versions](versions/pay-after-you-read.md) · [sgit.ai v0.7.36](https://sgit.ai/admin/versions.md) · newsroomreading-metermicropaymentspricingpersonalisationpersonaswardley-mapsinnovationagentsarticle
 
 ***Abstract:** On 10 October the reading meter on sgit.ai went, in seven releases between 12:09 and 15:49, from an experiment to a working pay-on-demand publication. A reader pays pence for the share of a page they actually read, from a balance that can go below zero without ever blocking them; after reading, they say how useful it was, and that sets the price, from free to double; their reading builds personas and a newsroom of their own, kept in their browser; and they can send it to us, encrypted, for a front page designed for them. Once a Stripe link is set, the only question left is whether people pay. This article introduces each feature, shows how each one grew out of the last, with a Wardley map that adds them one at a time, explains why paying after you see the value is the right way round, and why every decision started from one rule: do not rip off the reader. It ends with an offer to sites with traffic that would like to test it.*
 
@@ -150,7 +150,7 @@ What exists and runs: a price for every page; metering by depth; a balance that 
 
 What does not exist yet:
 
-- **The Stripe link itself.** Until it is set, readers see the simulated top-up, and the eight-week clock has not started.
+- **The Stripe link itself.** Until it is set, readers see the simulated top-up, and the eight-week clock has not started. *Update, 11 October 2026: the link is set and payments are live on [newsroom.sgit.ai](https://newsroom.sgit.ai/account/top-up.html), so the clock has started.*
 - **Payment verification.** A static site cannot receive Stripe's confirmation, so the return page credits without checking it, and says so. That is accepted, because the cost of someone faking a top-up is that they read more of our articles.
 - **Your reading on more than one device.** Everything lives in one browser; a new device starts again unless you export. The answer is a persona in your own encrypted vault, which follows you and your agent, and which we cannot read. That is the next step, and it is why the vault matters.
 - **The accounting side of real money**: receipts, and the obligations that come once revenue is material.
@@ -180,6 +180,11 @@ News & evidenceStartups & strategy[This article as a graph →](graphs.md#pay-af
 - [A meter in the browser: a penny a page, a history you keep, and a site that picks for you](a-meter-in-the-browser.md) Every page now costs a few pence from £5 of credit kept in your browser, and the reading history it keeps is what personalises the site.
 - [Who will game the reading meter? Eight kinds of reader, nine ways to cheat, and the risks that will actually happen](who-will-game-the-reading-meter.md) Eight kinds of reader, none of them attackers, nine ways to cheat a browser meter, and the quieter risks that will actually happen.
 - [Pay to keep your persona: readers should pay because it helps them, not because they feel they should](pay-to-keep-your-persona.md) Readers should pay because it helps them: a persona with a name and a graph, several for focus, and one that follows you between devices.
+
+### Continued by
+
+- [No server, by design: first I retired the database, now I am retiring the back end](no-server-by-design.md) First the database went, now the back end: the SGit Newsroom runs all its logic in the browser, on commodity servers that cannot read your data.
+- [The agent is the reader: why agents will pay for graphs, personas and signed claims, because it is cheaper than not paying](the-agent-is-the-reader.md) Agents pay to read the raw web and guess its meaning. A curated graph answers for 90% fewer tokens, so paying the publisher is cheaper than not paying.
 
 [All articles](index.md) · [All graphs](graphs.md)
 

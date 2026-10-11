@@ -2,7 +2,7 @@
 
 > Every published version of the article "Price it, then give it away", with the date, the words and what changed.
 
-*Source: <https://newsroom.sgit.ai/articles/versions/price-it-then-give-it-away.html> · sgit.ai v0.7.40 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/versions/price-it-then-give-it-away.html> · sgit.ai v0.7.45 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 

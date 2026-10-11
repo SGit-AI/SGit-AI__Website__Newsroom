@@ -2,7 +2,7 @@
 
 > How the articles on sgit.ai are written, placed and connected by one person and a desk of agents: the roles, their behaviour policies, the front and why, desk health, the board and the run log.
 
-*Source: <https://newsroom.sgit.ai/newsroom/index.html> · sgit.ai v0.7.40 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/newsroom/index.html> · sgit.ai v0.7.45 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 
@@ -46,8 +46,12 @@ Edition of **2026-10-08**. Third edition. A day of articles on how agents decide
 
 Computed at every build from the files: placements that point at nothing, articles published since the edition, open pitches, articles without a graph or a card. The same list is what `python3 admin/build/desk.py` prints for the Editor.
 
-- To do`front.json` 18 article(s) published since the 2026-10-08 edition: how-to-run-synthetic-users, a-link-to-a-persona, pay-after-you-read, where-the-vault-keys-live, the-infographic-bake-off, pay-to-keep-your-persona
-- To do`newsletter/` a newsletter issue is due: 18 articles since issue 2 (2026-10-08)
+- To do`front.json` 23 article(s) published since the 2026-10-08 edition: no-server-by-design, the-agent-is-the-reader, where-the-platform-draws-the-line, the-same-argument-in-our-words, authority-outside-the-model, how-to-run-synthetic-users
+- To do`newsletter/` a newsletter issue is due: 23 articles since issue 2 (2026-10-08)
+- To do`newsroom/pitches/2026-10-11__where-the-platform-draws-the-line.md` open pitch from contributor: highlight for where-the-platform-draws-the-line
+- To do`newsroom/pitches/2026-10-11__the-same-argument-in-our-words.md` open pitch from contributor: lead for the-same-argument-in-our-words
+- To do`newsroom/pitches/2026-10-11__the-agent-is-the-reader.md` open pitch from contributor: lead for the-agent-is-the-reader
+- To do`newsroom/pitches/2026-10-11__no-server-by-design.md` open pitch from contributor: highlight for no-server-by-design
 - To do`newsroom/pitches/2026-10-10__pay-to-keep-your-persona.md` open pitch from journalist: highlight for pay-to-keep-your-persona
 - To do`newsroom/pitches/2026-10-10__one-article-five-readers.md` open pitch from agent@riskmandate.ai: lead for one-article-five-readers
 - To do`newsroom/pitches/2026-10-10__going-live-with-the-reading-meter.md` open pitch from journalist: lead for going-live-with-the-reading-meter
@@ -64,7 +68,7 @@ Each role is a file under `admin/content/newsroom/roles/` with a mission, a sent
 
 **2026-10-08 23:39 UTC, Editor:** Third edition, two pitches answered, and a desk run across three roles. [Read the entry →](log.md#2339__editor__third-edition)
 
-4 open pitches · 3 backlog · 1 doing · 1 review · 1 done on [the board](board.md).
+8 open pitches · 3 backlog · 1 doing · 1 review · 1 done on [the board](board.md).
 
 ## For the agents that write to subscribers
 

@@ -2,7 +2,7 @@
 
 > A simulation of Markus Franz's bridge example, played out on a story vault from the council's first notice to the first car across. A fictional town's main bridge closes; the council says one week, the contract on site says three, an independent engineer says five to seven, and it opens after forty-six days. The paper leads with it five times; readers need it on fifty-seven days. Three readers, a parent, a café owner on the far bank and a plumber who works both banks, use the same claims in three different ways, each from their own graph, and make better decisions with them: an after-school club booked in time, £640 of stock not wasted and £1,200 of relief claimed, nine hours of driving saved. A county highways team, an investor, a national desk and a routing agent buy from the same graph, and the agent spends a seventh of what it would have spent searching, and is right from the first week. Everything they pay, £2,707 in the simulation, walks back down the claims to the reporter, the paper and the resident whose photos were the evidence. The vault is published with its read key.
 
-*Source: <https://newsroom.sgit.ai/articles/the-bridge-followed-to-the-end.html> · sgit.ai v0.7.40 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/the-bridge-followed-to-the-end.html> · sgit.ai v0.7.45 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 
@@ -152,6 +152,7 @@ News & evidenceGraphs & knowledge[This article as a graph →](graphs.md#the-bri
 
 ### Continued by
 
+- [The agent is the reader: why agents will pay for graphs, personas and signed claims, because it is cheaper than not paying](the-agent-is-the-reader.md) Agents pay to read the raw web and guess its meaning. A curated graph answers for 90% fewer tokens, so paying the publisher is cheaper than not paying.
 - [A meter in the browser: a penny a page, a history you keep, and a site that picks for you](a-meter-in-the-browser.md) Every page now costs a few pence from £5 of credit kept in your browser, and the reading history it keeps is what personalises the site.
 - [The waiting room knew first: a live local story, and the gap where local information used to be](the-waiting-room-knew-first.md) Staff at two London hospitals said the IT was down; nothing a local could check showed it. A live local story about where local information comes from now.
 - [Every mistake added a rule: complexity, agents, and the way back to shipping](every-mistake-added-a-rule.md) When every agent mistake adds a rule, complexity wins: map the process, move each piece right as a small shipped component, and keep the rigour for the work.

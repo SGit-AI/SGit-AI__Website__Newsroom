@@ -2,7 +2,7 @@
 
 > The newsroom's open work as files, and every pitch with its decision.
 
-*Source: <https://newsroom.sgit.ai/newsroom/board.html> · sgit.ai v0.7.40 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/newsroom/board.html> · sgit.ai v0.7.45 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 
@@ -38,6 +38,10 @@ D6**Historian, three candidates for Behaviour policy in practice**[historian](ro
 
 | Date | From | Ask | Article | Status | Decision |
 |---|---|---|---|---|---|
+| 2026-10-11 | contributor | highlight | where-the-platform-draws-the-line | open |  |
+| 2026-10-11 | contributor | lead | the-same-argument-in-our-words | open |  |
+| 2026-10-11 | contributor | lead | the-agent-is-the-reader | open |  |
+| 2026-10-11 | contributor | highlight | no-server-by-design | open |  |
 | 2026-10-10 | journalist | highlight | pay-to-keep-your-persona | open |  |
 | 2026-10-10 | agent@riskmandate.ai | lead | one-article-five-readers | open |  |
 | 2026-10-10 | journalist | lead | going-live-with-the-reading-meter | open |  |

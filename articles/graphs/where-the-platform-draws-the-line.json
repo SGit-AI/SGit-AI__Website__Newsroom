@@ -1,0 +1,136 @@
+{
+  "slug": "where-the-platform-draws-the-line",
+  "teaser": "Microsoft's MXC and ACS, briefed field by field and mapped to Agent Behaviour Policies: the platform bounds what it can see; the business logic is above.",
+  "topics": [
+    "agents-and-policy"
+  ],
+  "core_idea": "Microsoft Execution Containers and the Agent Control Specification confirm the direction of travel, policy outside the agent, deny by default, observe before enforcing, but like the cloud's shared responsibility model they draw the line where the platform can see, at paths, numeric addresses and tool calls, so the business logic above it, what a label means, whose voice, how many, which customer, and who accepts what is left, has to come from the deployer's behaviour policy, which is what turns the platform's hooks into boundaries.",
+  "nodes": [
+    {
+      "id": "mxc",
+      "label": "Microsoft Execution Containers",
+      "kind": "artefact",
+      "summary": "A versioned JSON policy enforced by the OS: sandbox, process, paths, network, desktop; deny by default."
+    },
+    {
+      "id": "acs",
+      "label": "Agent Control Specification",
+      "kind": "artefact",
+      "summary": "Eight interception points, a snapshot of the session, a policy engine and a normalised verdict; hooks, not rules."
+    },
+    {
+      "id": "modes",
+      "label": "Permissive, learning, enforcement",
+      "kind": "method",
+      "summary": "Measure the reach, calibrate it, enforce it: the ABP's three verbs as platform modes."
+    },
+    {
+      "id": "shared",
+      "label": "Shared responsibility, for agents",
+      "kind": "concept",
+      "summary": "Every platform draws its line at the granularity it can touch."
+    },
+    {
+      "id": "above",
+      "label": "Business logic above the line",
+      "kind": "claim",
+      "summary": "Labels, voice, quantity and customer are business content no platform can supply."
+    },
+    {
+      "id": "scenarios",
+      "label": "Eight scenarios, three designs",
+      "kind": "example",
+      "summary": "Plain: 8 open. ABP: 8 named, 0 bounded. ABP on MXC and ACS: 3 OS boundaries, 4 if the rule is written, 1 accepted."
+    },
+    {
+      "id": "owner",
+      "label": "Same code, different owner",
+      "kind": "claim",
+      "summary": "An MXC file or ACS manifest the agent can edit is a setting, not a boundary."
+    },
+    {
+      "id": "compile",
+      "label": "The policy writes the rules",
+      "kind": "question",
+      "summary": "Generating MXC JSON and ACS policies from ABP rows: a design, not a product."
+    }
+  ],
+  "edges": [
+    {
+      "from": "acs",
+      "to": "mxc",
+      "rel": "extends"
+    },
+    {
+      "from": "modes",
+      "to": "mxc",
+      "rel": "example-of"
+    },
+    {
+      "from": "shared",
+      "to": "mxc",
+      "rel": "answers"
+    },
+    {
+      "from": "above",
+      "to": "shared",
+      "rel": "depends-on"
+    },
+    {
+      "from": "scenarios",
+      "to": "above",
+      "rel": "example-of"
+    },
+    {
+      "from": "owner",
+      "to": "acs",
+      "rel": "compared-with"
+    },
+    {
+      "from": "compile",
+      "to": "above",
+      "rel": "leads-to"
+    }
+  ],
+  "links": {
+    "articles": [
+      "the-same-argument-in-our-words",
+      "authority-outside-the-model",
+      "the-behaviour-policy-is-the-business-logic",
+      "hope-or-enforcement",
+      "a-second-reader-the-agent-cannot-skip",
+      "connector-twin-before-you-deploy-an-agent",
+      "footprint-and-blast-radius",
+      "every-risk-is-already-accepted",
+      "riskmandate-ten-questions",
+      "how-to-run-synthetic-users"
+    ],
+    "pages": [
+      "/demos/vaults/hope-or-enforcement/index.html",
+      "/demos/vaults/connector-twin/index.html",
+      "/articles/data/where-the-platform-draws-the-line__mxc-website-policy.json",
+      "/articles/data/where-the-platform-draws-the-line__scenarios.json"
+    ],
+    "sites": [
+      "https://blogs.windows.com/windowsdeveloper/2026/10/07/microsoft-execution-containers-policy-driven-containment-for-ai-agents/",
+      "https://github.com/microsoft/mxc",
+      "https://commandline.microsoft.com/agent-control-specification-runtime-governance/",
+      "https://riskmandate.ai/lab-connector-grants.html",
+      "https://aws.amazon.com/compliance/shared-responsibility-model/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "The unit of restriction is the application and the tool. It is not the data, and it is not the business.",
+      "why": "The line every platform draws."
+    },
+    {
+      "text": "The policy names it, proposes the boundaries that shrink it",
+      "why": "What a behaviour policy does with a risk inside the mandate."
+    },
+    {
+      "text": "Where the platform draws its line, the business's work starts.",
+      "why": "The close."
+    }
+  ]
+}

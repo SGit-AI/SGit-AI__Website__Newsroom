@@ -2,7 +2,7 @@
 
 > Four articles from one day, written for different reasons, end on the same line: an agent's range is what makes it useful, and it is also why the decision to stop cannot be left to the agent.
 
-*Source: <https://newsroom.sgit.ai/articles/desk/range-is-the-feature-so-the-stop-is-designed.html> · sgit.ai v0.7.40 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/desk/range-is-the-feature-so-the-stop-is-designed.html> · sgit.ai v0.7.45 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 

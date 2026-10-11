@@ -2,7 +2,7 @@
 
 > What a reader can do to a meter kept in their own browser (edit the balance, start again, credit themselves through the unprotected return page), what each costs the site and the reader, and why every gap is accepted.
 
-*Source: <https://newsroom.sgit.ai/meter/security.html> · sgit.ai v0.7.40 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/meter/security.html> · sgit.ai v0.7.45 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 
@@ -28,7 +28,7 @@ Not money. The meter never blocks a page, so there is nothing behind it to steal
 | 4 | Replay the same topped-up URL | none | Blocked: each id is credited once per browser (but a new id is trivial, see 3) | none |
 | 5 | Clear site data to wipe a negative balance | Two clicks | Nothing; there was never a debt | Their history |
 | 6 | Read as an agent: fetch the markdown twin or the newsroom wire | None; it is the intended route for agents | Unmetered by design, for now | none |
-| 7 | Someone else on a shared computer opens the account or newsroom and sees what was read and declined, and the reader's personas | Sit down at it | none | Privacy. Mitigations: "Start again" clears it; a private window keeps nothing |
+| 7 | Someone else on a shared computer opens the account or newsroom and sees what was read and declined, and the reader's personas | Sit down at it | none | Privacy. Mitigations: clearing this site's data in the browser removes it; a private window keeps nothing |
 | 8 | A script injected into the site (XSS) reads the history | Needs a hole in the site first | Reputation | Privacy. Mitigations: the meter sets page data only as text; the only third-party code on this origin is the in-browser Python on [the try page](https://sgit.ai/try/index.md), loaded from a pinned version, so that page shares the same storage and the same trust |
 | 9 | Card testing, fraud or chargebacks against the Stripe link | Ordinary payment fraud | Fees and disputes, held by Stripe's own controls (Radar) | none |
 

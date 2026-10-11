@@ -84,7 +84,8 @@ def design(f):
          'republish, none under a named licence.',
          'CC-Signed, where breaking the signature chain breaks the licence, is a design.'),
         ('<b>No server.</b> Reader data stays in the reader&rsquo;s browser unless the reader sends it.',
-         '<a href="../databases/index.html">Databases with no server</a>',
+         '<a href="../articles/no-server-by-design.html">No server, by design</a>, '
+         '<a href="../databases/index.html">databases with no server</a>',
          'The pages are static files, and what you read is kept in the browser rather than on a server. The meter, '
          'the personas and the reading history live there; SQLite and a SPARQL store run there too.',
          'Three things can leave the browser, when the reader chooses: a payment, to Stripe; a subscription and '
@@ -93,7 +94,7 @@ def design(f):
     ]
     body = f"""<p>This site spent August and September 2026 arguing for a newsroom before one existed. On
 {AS_OF} the newsroom it argued for runs, so the argument can now be checked against it. The table
-puts each idea next to what runs and what does not, with nothing in between.</p>
+puts each idea next to what runs and what does not.</p>
 {table(["The idea", "Where it is argued", "What runs", "What does not, yet"], rows)}
 <h2 id="pages">What the design pages are</h2>
 <p>The pages linked under <b>Where it is argued</b> are the argument as written in August 2026, kept as
@@ -101,8 +102,10 @@ concept pages. They say what should exist and why. Pages that the running newsro
 like the fifteen-department newsroom design or the itemised &pound;8.40 story, are in
 <a href="../archive/index.html">the archive</a>, dated and labelled with what replaced them.</p>
 <h2 id="rules">The rules the newsroom keeps</h2>
-<div class="note"><b>Client side only.</b> No server and no database. Reader data stays in the browser
-unless the reader sends it, and the page that sends it shows every word first.</div>
+<div class="note"><b>Client side, for now.</b> The pages are static files and the logic runs in the reader&rsquo;s
+browser, with no server of ours behind it. Reader data stays in the browser unless the reader sends it, and the
+page that sends it shows every word first. <a href="../articles/no-server-by-design.html">Why it is built this
+way, and what would change it</a>.</div>
 <div class="note"><b>Checked, not claimed.</b> Every figure has a named source, quotes are checked word for
 word, and corrections are recorded as corrections, not silent edits.</div>
 <div class="note"><b>Running is not designed.</b> This site says on its face what runs and what is only
@@ -217,6 +220,12 @@ def shipped(f):
         ('<b>The reading meter</b>', 'Pence per page by how far you read, from a balance in your browser that '
          'can go below zero. Personas, your own newsroom, and a reading share you can send us.',
          'An honesty box, not a paywall: a reader can change their own balance.'),
+        ('<b>Links to a persona</b>', 'A link opens the newsroom as one of five starting personas (founder, journalist, '
+         'security lead, AI builder, board member), with its picks, reading list and graph. The persona is added to '
+         'the reader&rsquo;s browser as a visitor, which they can keep or remove. <a href="../persona/index.html">The '
+         'personas and their links</a>.',
+         'The personas are in the site, not in a vault. Following one, forking one and a persona made for one '
+         'person are designed (<a href="../articles/a-link-to-a-persona.html">a link to a persona</a>), not built.'),
     ] + ([
         ('<b>Top-up</b>', 'A &pound;5 card payment on Stripe&rsquo;s page: one payment, nothing renews, quantity fixed at '
          'one. The page it returns to adds the credit in your browser, once for each payment reference.',
@@ -234,6 +243,8 @@ def shipped(f):
     designed = ([
         ('<b>Payment</b>', 'The &pound;5 top-up page works and its payment link is not set. Until it is, no money moves.'),
     ] if not f["paying"] else []) + [
+        ('<b>Personas in a vault</b>', 'Personas kept by the newsroom&rsquo;s agents in an encrypted vault, a reader '
+         'following one or forking it, and private personas for one person. Designed, not built.'),
         ('<b>Selling the graph</b>', 'Graphs are published free. Nothing sells one.'),
         ('<b>Paying the fact creator</b>', 'No revenue reaches anyone upstream of an article.'),
         ('<b>Corrections that propagate</b>', 'Versions and corrections are kept; they do not reach the pages that cited the corrected claim.'),
@@ -267,7 +278,8 @@ page moves with it. The version written in August, when nothing on this site ran
 {table(["", "Where it stands"], designed)}
 <h2 id="data">What leaves your browser, and when</h2>
 <p>This is a client-side application: the pages are static files, and what you read is kept in your browser rather
-than on a server. That is how it is for now. If encrypted vaults for readers are added, this section will say so.</p>
+than on a server. That is how it is for now. If encrypted vaults for readers are added, this section will say so.
+The reasoning is in <a href="../articles/no-server-by-design.html">No server, by design</a>.</p>
 {table(["What", "Where it goes", "When"], data_rows)}
 <h2 id="stopped">What ran and stopped</h2>
 <p>The <a href="../governance/index.html">Governance Wire</a> made one research run, on 28 August 2026.
@@ -293,8 +305,34 @@ The disclosure is on <a href="../about/participant.html">the participant page</a
               "wins. It is dated; check the date before relying on it.")
 
 
+def stamp_llms(f):
+    """llms.txt is hand-written, and its counts of the newsroom (articles, issues, collections, desk
+    notes, alternative readers) were typed by hand and went stale the first time the newsroom grew,
+    which was the next sync. They are stamped from the data now, and the build stops if the sentence
+    around a count has changed, so a number cannot go quietly stale again."""
+    p = ROOT / "llms.txt"
+    t = p.read_text(encoding="utf-8")
+    rules = [
+        (r"(/ and /articles/: )\d+(\s+articles since 17 August 2026)", rf"\g<1>{f['articles']}\g<2>"),
+        (r"(every article's graph, )\d+(, drawn together)", rf"\g<1>{f['articles']}\g<2>"),
+        (r"(the newsletter, )\d+( issues so far)", rf"\g<1>{f['issues']}\g<2>"),
+        (r"(: )\d+( collections; /articles/desk/index\.html: )\d+( desk notes)", rf"\g<1>{f['collections']}\g<2>{f['notes']}\g<3>"),
+        (r"(of the same article, for )\d+( articles)", rf"\g<1>{f['readers']}\g<2>"),
+    ]
+    for pattern, repl in rules:
+        t, n = re.subn(pattern, repl, t)
+        if n != 1:
+            raise SystemExit(f"hubs: llms.txt count pattern matched {n} times, not once: {pattern}")
+    if p.read_text(encoding="utf-8") != t:
+        p.write_text(t, encoding="utf-8")
+        return True
+    return False
+
+
 def main():
     f = facts()
+    if stamp_llms(f):
+        print("hubs: llms.txt counts stamped")
     changed = [rel for rel, text in (("design/index.html", design(f)),
                                      ("replicate/index.html", replicate(f)),
                                      ("shipped/index.html", shipped(f))) if write(rel, text)]

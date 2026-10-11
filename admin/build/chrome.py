@@ -46,8 +46,9 @@ NAV = [
         ("Collections", "articles/collections/index.html"),
         ("From the desk", "articles/desk/index.html"),
         ("As graphs", "articles/graphs.html"),
+        ("Read as a persona", "persona/index.html"),
         ("Subscribe", "subscribe/index.html"),
-    ], ("articles/", "subscribe/")),
+    ], ("articles/", "subscribe/", "persona/")),
     ("Account", "account/index.html", [
         ("Your reading account", "account/index.html"),
         ("Your newsroom", "account/newsroom.html"),

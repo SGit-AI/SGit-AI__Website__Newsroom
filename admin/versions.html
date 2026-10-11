@@ -12,7 +12,7 @@
 
 <nav class="site"><div class="row">
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.6.4</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.7.0</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -24,6 +24,7 @@
       <a class="sl" href="../articles/collections/index.html">Collections</a>
       <a class="sl" href="../articles/desk/index.html">From the desk</a>
       <a class="sl" href="../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../persona/index.html">Read as a persona</a>
       <a class="sl" href="../subscribe/index.html">Subscribe</a>
       </div>
     </div>
@@ -123,6 +124,19 @@
 <div class="tablewrap"><table class="vers">
   <thead><tr><th>Version</th><th>Date</th><th>What shipped</th></tr></thead>
   <tbody>
+    <tr>
+      <td class="vnum">v0.7.0</td>
+      <td>11 Oct 2026</td>
+      <td><b>Links that open the newsroom as a persona, a reading meter without Pause and Start again, and five new articles.</b>
+        <p><b>Links to a persona.</b> <a href="../persona/index.html">/persona/</a> is a picker with a card for each of the five starting personas (Morgan the founder, Rowan the journalist, Sam the security lead, Kai the AI builder, Jordan the board member), each with <b>Read as this persona</b> and <b>Copy link</b>. Each persona also has a page of its own, such as <a href="../persona/founder/">/persona/founder/</a>, which is the link to send, and the same persona can be named after a <code>#</code>, as in <code>/persona/#founder</code>. Opening one adds the persona to the reader&rsquo;s browser as a visitor and makes it the active one, and the page says &ldquo;You are reading as&rdquo; with Keep this persona and Remove it. Nothing is charged for opening it and the reader&rsquo;s own reading is not changed. Below the banner is the reader&rsquo;s newsroom for that persona: its picks, its reading list and its graph. <a href="../persona/links.json">/persona/links.json</a> lists every link with the persona&rsquo;s name, description and the articles it starts from, for whoever is writing the email, a person or an agent. This is the first step of <a href="../articles/a-link-to-a-persona.html">a link to a persona</a>, without the vault: the personas are the five in the reading meter, kept in the site. Following a persona, forking one and a persona made for one person are not built, and the <a href="../shipped/index.html">what runs</a> page says so.</p>
+        <p><b>Pause the meter and Start again are gone.</b> Start again cleared the balance, the history, the receipts and the personas in one tap, which is too much to sit next to Export on a live product, and pausing is not a feature of a meter that is taking payment. The account page keeps <b>Top up</b> and <b>Export as JSON</b>. A reader who paused the meter under the old version is not stuck: a stored pause is cleared when the page loads. Clearing what is kept is now the browser&rsquo;s own site-data setting, and the pages that named the button say so.</p>
+        <p><b>How.</b> The meter is a published component and its paths never change, so the change is a new version, v1.4.0, a copy of sgit.ai&rsquo;s v1.3.1 at <code>assets/components/sg-meter/v1/v1.4/v1.4.0/</code> with those two removals and the landing view, and nothing else. The import points every page at it through a recorded rule, which stops the import if sgit.ai moves the component to a version this one is not based on. sgit.ai still runs v1.3.1. Where an imported page named the removed buttons (the personas page, the security model&rsquo;s shared-computer row and the component documentation&rsquo;s account row) a text rule changes the sentence, as before.</p>
+        <p><b>Imported from sgit.ai v0.7.45</b> (v0.7.40 before): five articles, <i>No server, by design</i>, <i>The agent is the reader</i>, <i>Where the platform draws the line</i>, <i>The same argument, in our words</i> and <i>Authority outside the model</i>, which makes 72 articles and 328 pages. One old version page of <i>One article, five readers</i> that sgit.ai no longer serves went with it.</p>
+        <p><b>Tightened.</b> The account page said &ldquo;Every page on sgit.ai has a price&rdquo; and its price table named sgit.ai&rsquo;s docs, vaults and network; it now names this site and the pages that carry the 1p price. The note above the top-up button is three short paragraphs and links <i>No server, by design</i>. The design page links the same article on its &ldquo;no server&rdquo; row and says &ldquo;client side, for now&rdquo; where it said &ldquo;client side only&rdquo;. The what-runs page has a row for links to a persona and, under what is designed, one for personas in a vault. The Newsroom menu has <b>Read as a persona</b>, and <code>llms.txt</code>, the sitemap and the markdown index list the new pages.</p>
+        <p><b>Checked.</b> <code>admin/build/test_meter.mjs</code>, sgit.ai&rsquo;s browser test of the meter extended for this release, passes 46 checks in Chromium, among them: no Pause and no Start again, a stored pause cleared, a persona link adding one visitor and not a second on reload, Keep and Remove, a <code>#</code> name, an unknown name added to nothing, the picker, Copy link, <code>links.json</code> matching the pages, and no sideways scroll at 390px on the new pages. The release gate passes, including the figure and script checks.</p>
+        <p><b>Not changed.</b> The article <i>Who will game the reading meter</i> still says &ldquo;Start again&rdquo; clears a shared browser. It is an article as sgit.ai published it, and an article&rsquo;s text is not edited here; it is listed in the move note for the editor to decide.</p>
+      </td>
+    </tr>
     <tr>
       <td class="vnum">v0.6.4</td>
       <td>11 Oct 2026</td>
@@ -551,7 +565,7 @@
     <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="netline"><a href="https://sgit.ai" style="display:inline;padding:0"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://pt.newsroom.sgit.ai" style="display:inline;padding:0">&#8593; pt.newsroom.sgit.ai</a> &middot; <a href="https://graphs.sgit.ai" style="display:inline;padding:0">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai" style="display:inline;padding:0">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai" style="display:inline;padding:0">&#8593; nhi.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai" style="display:inline;padding:0">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.6.4</a> &middot; <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.7.0</a> &middot; <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>The newsroom</h4>

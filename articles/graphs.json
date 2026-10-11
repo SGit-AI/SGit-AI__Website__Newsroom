@@ -1,7 +1,7 @@
 {
   "site": "https://sgit.ai",
-  "generated": "2026-10-10",
-  "site_version": "v0.7.40",
+  "generated": "2026-10-11",
+  "site_version": "v0.7.45",
   "schema": "https://newsroom.sgit.ai/articles/graphs.html",
   "topics": [
     {
@@ -55,6 +55,1008 @@
   ],
   "articles": [
     {
+      "slug": "no-server-by-design",
+      "title": "No server, by design: first I retired the database, now I am retiring the back end",
+      "date": "2026-10-11",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/no-server-by-design.html",
+      "markdown": "https://newsroom.sgit.ai/articles/no-server-by-design.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/no-server-by-design.webp",
+      "teaser": "First the database went, now the back end: the SGit Newsroom runs all its logic in the browser, on commodity servers that cannot read your data.",
+      "topics": [
+        "site-and-engineering",
+        "vaults-and-method"
+      ],
+      "tags": [
+        "architecture",
+        "client-side",
+        "serverless",
+        "no-database",
+        "lets",
+        "file-system",
+        "vaults",
+        "append-lanes",
+        "privacy",
+        "sovereignty",
+        "security",
+        "newsroom",
+        "sg-meter",
+        "wardley",
+        "article"
+      ],
+      "links_out": [
+        "where-the-vault-keys-live",
+        "a-link-to-a-persona",
+        "pay-to-keep-your-persona",
+        "going-live-with-the-reading-meter",
+        "pay-after-you-read",
+        "every-mistake-added-a-rule",
+        "who-are-you-protecting-against",
+        "how-to-run-synthetic-users",
+        "encrypted-memory-for-isolated-agents",
+        "chat-on-a-static-site"
+      ],
+      "links_in": [],
+      "graph": {
+        "slug": "no-server-by-design",
+        "teaser": "First the database went, now the back end: the SGit Newsroom runs all its logic in the browser, on commodity servers that cannot read your data.",
+        "topics": [
+          "site-and-engineering",
+          "vaults-and-method"
+        ],
+        "core_idea": "After replacing the database with the file system (LETS), the next step is removing the back end: encrypted vaults make the server blind, so the application moves to the browser, leaving only commodity products on the server side; the security gaps this leaves are written down and accepted because they do not match the threat, and the result scales without its complexity scaling and ships as files.",
+        "nodes": [
+          {
+            "id": "lets",
+            "label": "The file system is the database",
+            "kind": "method",
+            "summary": "LETS: load, extract, transform, save; every state a file you can version and read."
+          },
+          {
+            "id": "noback",
+            "label": "No back end",
+            "kind": "claim",
+            "summary": "All application logic runs in the reader's browser."
+          },
+          {
+            "id": "constraint",
+            "label": "A blind server",
+            "kind": "concept",
+            "summary": "Vaults are encrypted in the client, so anything that reads data must run where the key is."
+          },
+          {
+            "id": "commodity",
+            "label": "Commodity servers, not no servers",
+            "kind": "claim",
+            "summary": "Static hosting, a ciphertext store, a payment link, DNS and CI, with a sign-in provider next, all products."
+          },
+          {
+            "id": "newsroom",
+            "label": "The SGit Newsroom",
+            "kind": "example",
+            "summary": "Personas, a reading meter, a payment on-ramp, a newsroom of your own, encrypted sharing, in-browser databases."
+          },
+          {
+            "id": "gaps",
+            "label": "Gaps written down and accepted",
+            "kind": "method",
+            "summary": "SG Meter's security model: every cheat changes a number only the cheater sees."
+          },
+          {
+            "id": "scale",
+            "label": "Scales without complexity scaling",
+            "kind": "claim",
+            "summary": "More readers add bandwidth against cached files, not moving parts."
+          },
+          {
+            "id": "speed",
+            "label": "A release is a set of files",
+            "kind": "example",
+            "summary": "114 releases in eleven days; the meter in seven releases in an afternoon."
+          },
+          {
+            "id": "values",
+            "label": "Sovereignty, privacy, explainability, determinism",
+            "kind": "concept",
+            "summary": "The pattern's properties, not its policies."
+          },
+          {
+            "id": "limit",
+            "label": "How far can it be pushed?",
+            "kind": "question",
+            "summary": "Secrets the reader must not hold are the honest boundary."
+          }
+        ],
+        "edges": [
+          {
+            "from": "noback",
+            "to": "lets",
+            "rel": "extends"
+          },
+          {
+            "from": "constraint",
+            "to": "noback",
+            "rel": "leads-to"
+          },
+          {
+            "from": "commodity",
+            "to": "noback",
+            "rel": "depends-on"
+          },
+          {
+            "from": "newsroom",
+            "to": "noback",
+            "rel": "example-of"
+          },
+          {
+            "from": "gaps",
+            "to": "noback",
+            "rel": "answers"
+          },
+          {
+            "from": "scale",
+            "to": "commodity",
+            "rel": "depends-on"
+          },
+          {
+            "from": "speed",
+            "to": "noback",
+            "rel": "produces"
+          },
+          {
+            "from": "values",
+            "to": "constraint",
+            "rel": "produces"
+          },
+          {
+            "from": "limit",
+            "to": "gaps",
+            "rel": "extends"
+          },
+          {
+            "from": "newsroom",
+            "to": "gaps",
+            "rel": "example-of"
+          },
+          {
+            "from": "speed",
+            "to": "scale",
+            "rel": "compared-with"
+          }
+        ],
+        "links": {
+          "articles": [
+            "where-the-vault-keys-live",
+            "encrypted-memory-for-isolated-agents",
+            "a-link-to-a-persona",
+            "pay-to-keep-your-persona",
+            "going-live-with-the-reading-meter",
+            "pay-after-you-read",
+            "who-are-you-protecting-against",
+            "every-mistake-added-a-rule",
+            "chat-on-a-static-site",
+            "how-to-run-synthetic-users"
+          ],
+          "pages": [
+            "/articles/data/no-server-by-design__releases.json"
+          ],
+          "sites": [
+            "https://docs.diniscruz.ai/2025/05/27/lets__load-extract-transform-save__a-deterministic-and-debuggable-data-pipeline_architecture.html",
+            "https://pypi.org/project/issues-fs/",
+            "https://newsroom.sgit.ai/databases/index.html",
+            "https://newsroom.sgit.ai/meter/security.html",
+            "https://www.inkandswitch.com/local-first/"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "Encryption came first, and the client-side architecture followed, because there was nowhere else for the logic to go.",
+            "why": "The constraint that designed it."
+          },
+          {
+            "text": "First the database went, and the work got simpler. Now the back end is going, and the work is getting faster.",
+            "why": "The pattern in two sentences."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "the-agent-is-the-reader",
+      "title": "The agent is the reader: why agents will pay for graphs, personas and signed claims, because it is cheaper than not paying",
+      "date": "2026-10-11",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/the-agent-is-the-reader.html",
+      "markdown": "https://newsroom.sgit.ai/articles/the-agent-is-the-reader.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/the-agent-is-the-reader.webp",
+      "teaser": "Agents pay to read the raw web and guess its meaning. A curated graph answers for 90% fewer tokens, so paying the publisher is cheaper than not paying.",
+      "topics": [
+        "news-and-evidence",
+        "startups-and-strategy"
+      ],
+      "tags": [
+        "newsroom",
+        "economics",
+        "agents",
+        "micropayments",
+        "fractal-semantic-graphs",
+        "compression",
+        "personas",
+        "tokens",
+        "provenance",
+        "signed-claims",
+        "librarian",
+        "cartographer",
+        "article"
+      ],
+      "links_out": [
+        "one-article-five-readers",
+        "the-bridge-followed-to-the-end",
+        "pay-to-keep-your-persona",
+        "a-link-to-a-persona",
+        "re-anchoring-agent-behaviour-policies",
+        "token-bill-nobody-is-sending",
+        "pay-after-you-read",
+        "rfc-0001-public-key-cryptography-for-sgit",
+        "introducing-fractal-semantic-graphs",
+        "memory-is-not-a-spectator-sport",
+        "future-of-news-story-vault-not-paywall"
+      ],
+      "links_in": [],
+      "graph": {
+        "slug": "the-agent-is-the-reader",
+        "teaser": "Agents pay to read the raw web and guess its meaning. A curated graph answers for 90% fewer tokens, so paying the publisher is cheaper than not paying.",
+        "topics": [
+          "news-and-evidence",
+          "startups-and-strategy"
+        ],
+        "core_idea": "When agents are the readers, a publisher that serves curated meaning, an anchored graph fitted to the agent's persona and objective, and claims signed with an expiry saves the agent more tokens than it charges, so the agent pays not to pay; measured on five articles the graph answers in 90% fewer tokens, and on 70 articles compression with scale appears only where a Cartographer curates, which is the work worth paying for.",
+        "nodes": [
+          {
+            "id": "layers",
+            "label": "The graph is bigger than the text",
+            "kind": "example",
+            "summary": "The full catalogue is 2.8 times the articles; the concept index is 7%."
+          },
+          {
+            "id": "query",
+            "label": "A question costs 90% less in the graph",
+            "kind": "claim",
+            "summary": "Median 2,579 tokens against 25,698, across all 45 concepts, with anchors."
+          },
+          {
+            "id": "loop",
+            "label": "Making the map is the verification",
+            "kind": "example",
+            "summary": "32 flags, 37 corrections, one systematic catch; the cost per finding rises on the third pass."
+          },
+          {
+            "id": "curation",
+            "label": "Compression with scale needs curation",
+            "kind": "claim",
+            "summary": "908 of 928 uncurated labels unique; 114 curated mentions over 45 concepts."
+          },
+          {
+            "id": "projection",
+            "label": "Projected to 100,000 articles",
+            "kind": "claim",
+            "summary": "Curated index 150 to 2,660 times smaller; a question about 13,000 tokens; search sees 2%."
+          },
+          {
+            "id": "meaning",
+            "label": "PageRank with meaning",
+            "kind": "concept",
+            "summary": "Typed edges citing their sentences say what a link means; a two-article loop tops our own PageRank."
+          },
+          {
+            "id": "persona",
+            "label": "Agents are personas too",
+            "kind": "concept",
+            "summary": "An agent arrives with an objective; the slice fitted to it is the product."
+          },
+          {
+            "id": "pay",
+            "label": "The agent pays not to pay",
+            "kind": "claim",
+            "summary": "A fee below the token saving is rational; about ten questions pay for an article's graph."
+          },
+          {
+            "id": "signed",
+            "label": "Signed claims with an expiry",
+            "kind": "method",
+            "summary": "A claim re-checked and signed as of a date, until a date, renewed for a fee."
+          },
+          {
+            "id": "open",
+            "label": "Will agents pay?",
+            "kind": "question",
+            "summary": "The rails exist and the arithmetic works on paper; demand is untested."
+          }
+        ],
+        "edges": [
+          {
+            "from": "query",
+            "to": "layers",
+            "rel": "contrasts"
+          },
+          {
+            "from": "loop",
+            "to": "layers",
+            "rel": "produces"
+          },
+          {
+            "from": "projection",
+            "to": "curation",
+            "rel": "depends-on"
+          },
+          {
+            "from": "meaning",
+            "to": "query",
+            "rel": "extends"
+          },
+          {
+            "from": "persona",
+            "to": "query",
+            "rel": "extends"
+          },
+          {
+            "from": "pay",
+            "to": "query",
+            "rel": "depends-on"
+          },
+          {
+            "from": "pay",
+            "to": "curation",
+            "rel": "depends-on"
+          },
+          {
+            "from": "signed",
+            "to": "pay",
+            "rel": "extends"
+          },
+          {
+            "from": "signed",
+            "to": "loop",
+            "rel": "depends-on"
+          },
+          {
+            "from": "open",
+            "to": "pay",
+            "rel": "answers"
+          },
+          {
+            "from": "persona",
+            "to": "pay",
+            "rel": "leads-to"
+          }
+        ],
+        "links": {
+          "articles": [
+            "one-article-five-readers",
+            "token-bill-nobody-is-sending",
+            "the-bridge-followed-to-the-end",
+            "pay-to-keep-your-persona",
+            "a-link-to-a-persona",
+            "pay-after-you-read",
+            "re-anchoring-agent-behaviour-policies",
+            "rfc-0001-public-key-cryptography-for-sgit",
+            "introducing-fractal-semantic-graphs",
+            "memory-is-not-a-spectator-sport",
+            "future-of-news-story-vault-not-paywall"
+          ],
+          "pages": [
+            "/demos/vaults/article-views/index.html",
+            "/articles/data/the-agent-is-the-reader__model.json"
+          ],
+          "sites": [
+            "https://eco.com/support/en/articles/14839402-x402-protocol-explained",
+            "https://forklog.com/en/stripe-unveils-payments-for-ai-agents-using-usdc-and-x402-protocol/",
+            "https://enterprise.wikimedia.com/"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "Compression with scale is not a property of graphs. It is a property of curation.",
+            "why": "The hypothesis, tested."
+          },
+          {
+            "text": "A reader that saves money by using it will pay for it, not out of goodwill but because paying is cheaper than not paying.",
+            "why": "The economic model in one sentence."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "where-the-platform-draws-the-line",
+      "title": "Where the platform draws the line: Microsoft Execution Containers, the shared responsibility model for agents, and the business logic above it",
+      "date": "2026-10-11",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/where-the-platform-draws-the-line.html",
+      "markdown": "https://newsroom.sgit.ai/articles/where-the-platform-draws-the-line.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/where-the-platform-draws-the-line.webp",
+      "teaser": "Microsoft's MXC and ACS, briefed field by field and mapped to Agent Behaviour Policies: the platform bounds what it can see; the business logic is above.",
+      "topics": [
+        "agents-and-policy"
+      ],
+      "tags": [
+        "riskmandate",
+        "agent-behaviour-policy",
+        "microsoft",
+        "mxc",
+        "execution-containers",
+        "agent-control-specification",
+        "containment",
+        "shared-responsibility",
+        "business-logic",
+        "barriers",
+        "briefing",
+        "article"
+      ],
+      "links_out": [
+        "the-same-argument-in-our-words",
+        "authority-outside-the-model",
+        "how-to-run-synthetic-users",
+        "a-second-reader-the-agent-cannot-skip",
+        "the-behaviour-policy-is-the-business-logic",
+        "connector-twin-before-you-deploy-an-agent",
+        "hope-or-enforcement",
+        "every-risk-is-already-accepted",
+        "footprint-and-blast-radius",
+        "riskmandate-ten-questions"
+      ],
+      "links_in": [],
+      "graph": {
+        "slug": "where-the-platform-draws-the-line",
+        "teaser": "Microsoft's MXC and ACS, briefed field by field and mapped to Agent Behaviour Policies: the platform bounds what it can see; the business logic is above.",
+        "topics": [
+          "agents-and-policy"
+        ],
+        "core_idea": "Microsoft Execution Containers and the Agent Control Specification confirm the direction of travel, policy outside the agent, deny by default, observe before enforcing, but like the cloud's shared responsibility model they draw the line where the platform can see, at paths, numeric addresses and tool calls, so the business logic above it, what a label means, whose voice, how many, which customer, and who accepts what is left, has to come from the deployer's behaviour policy, which is what turns the platform's hooks into boundaries.",
+        "nodes": [
+          {
+            "id": "mxc",
+            "label": "Microsoft Execution Containers",
+            "kind": "artefact",
+            "summary": "A versioned JSON policy enforced by the OS: sandbox, process, paths, network, desktop; deny by default."
+          },
+          {
+            "id": "acs",
+            "label": "Agent Control Specification",
+            "kind": "artefact",
+            "summary": "Eight interception points, a snapshot of the session, a policy engine and a normalised verdict; hooks, not rules."
+          },
+          {
+            "id": "modes",
+            "label": "Permissive, learning, enforcement",
+            "kind": "method",
+            "summary": "Measure the reach, calibrate it, enforce it: the ABP's three verbs as platform modes."
+          },
+          {
+            "id": "shared",
+            "label": "Shared responsibility, for agents",
+            "kind": "concept",
+            "summary": "Every platform draws its line at the granularity it can touch."
+          },
+          {
+            "id": "above",
+            "label": "Business logic above the line",
+            "kind": "claim",
+            "summary": "Labels, voice, quantity and customer are business content no platform can supply."
+          },
+          {
+            "id": "scenarios",
+            "label": "Eight scenarios, three designs",
+            "kind": "example",
+            "summary": "Plain: 8 open. ABP: 8 named, 0 bounded. ABP on MXC and ACS: 3 OS boundaries, 4 if the rule is written, 1 accepted."
+          },
+          {
+            "id": "owner",
+            "label": "Same code, different owner",
+            "kind": "claim",
+            "summary": "An MXC file or ACS manifest the agent can edit is a setting, not a boundary."
+          },
+          {
+            "id": "compile",
+            "label": "The policy writes the rules",
+            "kind": "question",
+            "summary": "Generating MXC JSON and ACS policies from ABP rows: a design, not a product."
+          }
+        ],
+        "edges": [
+          {
+            "from": "acs",
+            "to": "mxc",
+            "rel": "extends"
+          },
+          {
+            "from": "modes",
+            "to": "mxc",
+            "rel": "example-of"
+          },
+          {
+            "from": "shared",
+            "to": "mxc",
+            "rel": "answers"
+          },
+          {
+            "from": "above",
+            "to": "shared",
+            "rel": "depends-on"
+          },
+          {
+            "from": "scenarios",
+            "to": "above",
+            "rel": "example-of"
+          },
+          {
+            "from": "owner",
+            "to": "acs",
+            "rel": "compared-with"
+          },
+          {
+            "from": "compile",
+            "to": "above",
+            "rel": "leads-to"
+          }
+        ],
+        "links": {
+          "articles": [
+            "the-same-argument-in-our-words",
+            "authority-outside-the-model",
+            "the-behaviour-policy-is-the-business-logic",
+            "hope-or-enforcement",
+            "a-second-reader-the-agent-cannot-skip",
+            "connector-twin-before-you-deploy-an-agent",
+            "footprint-and-blast-radius",
+            "every-risk-is-already-accepted",
+            "riskmandate-ten-questions",
+            "how-to-run-synthetic-users"
+          ],
+          "pages": [
+            "/demos/vaults/hope-or-enforcement/index.html",
+            "/demos/vaults/connector-twin/index.html",
+            "/articles/data/where-the-platform-draws-the-line__mxc-website-policy.json",
+            "/articles/data/where-the-platform-draws-the-line__scenarios.json"
+          ],
+          "sites": [
+            "https://blogs.windows.com/windowsdeveloper/2026/10/07/microsoft-execution-containers-policy-driven-containment-for-ai-agents/",
+            "https://github.com/microsoft/mxc",
+            "https://commandline.microsoft.com/agent-control-specification-runtime-governance/",
+            "https://riskmandate.ai/lab-connector-grants.html",
+            "https://aws.amazon.com/compliance/shared-responsibility-model/"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "The unit of restriction is the application and the tool. It is not the data, and it is not the business.",
+            "why": "The line every platform draws."
+          },
+          {
+            "text": "The policy names it, proposes the boundaries that shrink it",
+            "why": "What a behaviour policy does with a risk inside the mandate."
+          },
+          {
+            "text": "Where the platform draws its line, the business's work starts.",
+            "why": "The close."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "the-same-argument-in-our-words",
+      "title": "The same argument, in our words: Satya Nadella on models as insider risks, translated into the language of RiskMandate",
+      "date": "2026-10-11",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/the-same-argument-in-our-words.html",
+      "markdown": "https://newsroom.sgit.ai/articles/the-same-argument-in-our-words.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/the-same-argument-in-our-words.webp",
+      "teaser": "Satya Nadella's case for treating models as insider risks, translated idea by idea into our vocabulary: reach, mandate, gap, barriers and accepted risk.",
+      "topics": [
+        "agents-and-policy"
+      ],
+      "tags": [
+        "riskmandate",
+        "agent-behaviour-policy",
+        "insider-threat",
+        "mandate",
+        "grant",
+        "barriers",
+        "enforcer-test",
+        "risk-acceptance",
+        "software-was-the-law",
+        "philosophy",
+        "response",
+        "article"
+      ],
+      "links_out": [
+        "authority-outside-the-model",
+        "the-behaviour-policy-is-the-business-logic",
+        "ultimate-insider-three-collisions",
+        "every-risk-is-already-accepted",
+        "knowing-when-to-stop",
+        "a-second-reader-the-agent-cannot-skip",
+        "hope-or-enforcement",
+        "six-agents-one-inbox",
+        "footprint-and-blast-radius",
+        "connector-twin-before-you-deploy-an-agent"
+      ],
+      "links_in": [
+        "where-the-platform-draws-the-line",
+        "authority-outside-the-model"
+      ],
+      "graph": {
+        "slug": "the-same-argument-in-our-words",
+        "teaser": "Satya Nadella's case for treating models as insider risks, translated idea by idea into our vocabulary: reach, mandate, gap, barriers and accepted risk.",
+        "topics": [
+          "agents-and-policy"
+        ],
+        "core_idea": "Nadella's argument and ours are the same argument in two vocabularies: his lost code path is software was the law, his insider is the ultimate insider, his separation of supply from authority is the grant is not the mandate, his controls outside the model are the enforcer test, and his last line is our brakes; the languages differ in unit, a model against one agent in one deployment, and in frame, observation against authority accepted by a named person for a stated interval.",
+        "nodes": [
+          {
+            "id": "post",
+            "label": "Models as insider risks",
+            "kind": "artefact",
+            "summary": "Nadella's post, paraphrased throughout and quoted once."
+          },
+          {
+            "id": "law",
+            "label": "Software was the law",
+            "kind": "concept",
+            "summary": "Rules the interface enforced by omission are gone when an agent calls the API."
+          },
+          {
+            "id": "insider",
+            "label": "The ultimate insider",
+            "kind": "concept",
+            "summary": "A threat need not be malicious; the distance between benign and hostile is a prompt."
+          },
+          {
+            "id": "accepted",
+            "label": "Every risk is already accepted",
+            "kind": "concept",
+            "summary": "No deny button; the only questions are who holds it and until when."
+          },
+          {
+            "id": "grant-mandate",
+            "label": "The grant is not the mandate",
+            "kind": "concept",
+            "summary": "Supply arrives with a grant; authority is a mandate with an issuer, scope and clock."
+          },
+          {
+            "id": "enforcer",
+            "label": "The enforcer test",
+            "kind": "concept",
+            "summary": "Only a boundary the agent cannot reach is a control."
+          },
+          {
+            "id": "calibrator",
+            "label": "Reality is the calibrator",
+            "kind": "method",
+            "summary": "Measure the grant on the thing itself and compare the footprint with the mandate."
+          },
+          {
+            "id": "brakes",
+            "label": "Brakes let a car go fast",
+            "kind": "claim",
+            "summary": "Constraint is what makes autonomy affordable."
+          },
+          {
+            "id": "unit",
+            "label": "One agent, one deployment",
+            "kind": "claim",
+            "summary": "Risk is a property of a deployment, not of a model."
+          },
+          {
+            "id": "frame",
+            "label": "Authority before observation",
+            "kind": "claim",
+            "summary": "A written mandate and a named acceptor tell you whether what you observed was allowed."
+          }
+        ],
+        "edges": [
+          {
+            "from": "law",
+            "to": "post",
+            "rel": "answers"
+          },
+          {
+            "from": "insider",
+            "to": "post",
+            "rel": "answers"
+          },
+          {
+            "from": "accepted",
+            "to": "post",
+            "rel": "answers"
+          },
+          {
+            "from": "grant-mandate",
+            "to": "post",
+            "rel": "answers"
+          },
+          {
+            "from": "enforcer",
+            "to": "grant-mandate",
+            "rel": "depends-on"
+          },
+          {
+            "from": "calibrator",
+            "to": "grant-mandate",
+            "rel": "produces"
+          },
+          {
+            "from": "brakes",
+            "to": "post",
+            "rel": "answers"
+          },
+          {
+            "from": "unit",
+            "to": "post",
+            "rel": "contrasts"
+          },
+          {
+            "from": "frame",
+            "to": "post",
+            "rel": "extends"
+          }
+        ],
+        "links": {
+          "articles": [
+            "authority-outside-the-model",
+            "the-behaviour-policy-is-the-business-logic",
+            "ultimate-insider-three-collisions",
+            "every-risk-is-already-accepted",
+            "knowing-when-to-stop",
+            "a-second-reader-the-agent-cannot-skip",
+            "hope-or-enforcement",
+            "six-agents-one-inbox",
+            "footprint-and-blast-radius",
+            "connector-twin-before-you-deploy-an-agent"
+          ],
+          "pages": [],
+          "sites": [
+            "https://snscratchpad.com/posts/models-as-insider-risks/",
+            "https://riskmandate.ai/grant-gap.html",
+            "https://abp.sgit.ai/",
+            "https://abp.sgit.ai/model/barriers/index.html",
+            "https://risks.sgit.ai/",
+            "https://nhi.sgit.ai/",
+            "https://riskmandate.ai/plug.html"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "And a mandate with no clock is just a grant.",
+            "why": "What authority needs before it is separate from supply."
+          },
+          {
+            "text": "Independence is not a property of the checker. It is a property of who controls it.",
+            "why": "The answer to nested black boxes."
+          },
+          {
+            "text": "Observation tells you what happened. Authority tells you whether it was allowed, and acceptance tells you who carries it if it was not.",
+            "why": "Where the two languages differ, in one line."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "authority-outside-the-model",
+      "title": "Authority outside the model: an answer to Satya Nadella on models as insider risks, principle by principle, with what we run, what we ship and what we plan",
+      "date": "2026-10-11",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/authority-outside-the-model.html",
+      "markdown": "https://newsroom.sgit.ai/articles/authority-outside-the-model.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/authority-outside-the-model.webp",
+      "teaser": "Satya Nadella's seven principles for models as insider risks, answered one by one: what we run, what is design, and the five things the list leaves out.",
+      "topics": [
+        "agents-and-policy"
+      ],
+      "tags": [
+        "riskmandate",
+        "agent-behaviour-policy",
+        "insider-threat",
+        "containment",
+        "observability",
+        "mandate",
+        "barriers",
+        "second-reader",
+        "connector-twin",
+        "footprint",
+        "incident-disclosure",
+        "licence-to-operate",
+        "synthetic-users",
+        "response",
+        "article"
+      ],
+      "links_out": [
+        "ultimate-insider-three-collisions",
+        "the-same-argument-in-our-words",
+        "a-second-reader-the-agent-cannot-skip",
+        "why-my-agents-do-not-run-on-my-laptop",
+        "the-infographic-bake-off",
+        "one-article-five-readers",
+        "the-agent-team-as-it-runs",
+        "where-the-vault-keys-live",
+        "re-anchoring-agent-behaviour-policies",
+        "connector-twin-before-you-deploy-an-agent",
+        "footprint-and-blast-radius",
+        "hope-or-enforcement",
+        "green-does-not-mean-live",
+        "how-to-run-synthetic-users",
+        "the-investigation-github-owes-its-customers",
+        "every-risk-is-already-accepted",
+        "riskmandate-ten-questions"
+      ],
+      "links_in": [
+        "where-the-platform-draws-the-line",
+        "the-same-argument-in-our-words"
+      ],
+      "graph": {
+        "slug": "authority-outside-the-model",
+        "teaser": "Satya Nadella's seven principles for models as insider risks, answered one by one: what we run, what is design, and the five things the list leaves out.",
+        "topics": [
+          "agents-and-policy"
+        ],
+        "core_idea": "Treating models as insider risks is right, and each of the seven principles maps to something this network runs, publishes or plans, but the principles work only with the column they leave thin: authority written down before the agent runs, a mandate compared with the footprint, risk belonging to one deployment rather than a model, a named owner and expiry for what is left, recoverability beyond the brake, and decisions made in advance as envelopes.",
+        "nodes": [
+          {
+            "id": "post",
+            "label": "Models as insider risks",
+            "kind": "artefact",
+            "summary": "Nadella's post: separate the supply of intelligence from the authority over it; seven principles."
+          },
+          {
+            "id": "enforcer",
+            "label": "The enforcer test",
+            "kind": "concept",
+            "summary": "A control bounds a grant only if enforced by something the grant does not include."
+          },
+          {
+            "id": "second-reader",
+            "label": "A second reader the agent cannot skip",
+            "kind": "method",
+            "summary": "Code checks first, a different model with less context, fail closed, log every verdict."
+          },
+          {
+            "id": "owner",
+            "label": "Same code, different owner",
+            "kind": "claim",
+            "summary": "Whether a check is a setting or a boundary depends on who owns its installation."
+          },
+          {
+            "id": "evidence",
+            "label": "Evidence the writer cannot edit",
+            "kind": "method",
+            "summary": "Vault history, append lanes, hashed ledgers, the connector twin."
+          },
+          {
+            "id": "mandate",
+            "label": "The mandate is the missing column",
+            "kind": "claim",
+            "summary": "Observation says what happened; only a written mandate says whether it was allowed."
+          },
+          {
+            "id": "near-miss",
+            "label": "Footprint in the gap is a near miss",
+            "kind": "concept",
+            "summary": "Countable long before anything breaks; the number worth disclosing."
+          },
+          {
+            "id": "deployment",
+            "label": "Risk belongs to a deployment",
+            "kind": "claim",
+            "summary": "The same model is harmless in one setup and serious in another."
+          },
+          {
+            "id": "recoverability",
+            "label": "A brake does not undo",
+            "kind": "claim",
+            "summary": "Containment needs a list of what can and cannot be reversed."
+          },
+          {
+            "id": "maturity",
+            "label": "Honest maturity",
+            "kind": "artefact",
+            "summary": "What runs, what is published as design, what is only argued, principle by principle."
+          }
+        ],
+        "edges": [
+          {
+            "from": "enforcer",
+            "to": "post",
+            "rel": "answers"
+          },
+          {
+            "from": "second-reader",
+            "to": "post",
+            "rel": "answers"
+          },
+          {
+            "from": "owner",
+            "to": "second-reader",
+            "rel": "extends"
+          },
+          {
+            "from": "evidence",
+            "to": "post",
+            "rel": "answers"
+          },
+          {
+            "from": "mandate",
+            "to": "post",
+            "rel": "extends"
+          },
+          {
+            "from": "near-miss",
+            "to": "mandate",
+            "rel": "depends-on"
+          },
+          {
+            "from": "deployment",
+            "to": "post",
+            "rel": "contrasts"
+          },
+          {
+            "from": "recoverability",
+            "to": "post",
+            "rel": "extends"
+          },
+          {
+            "from": "maturity",
+            "to": "post",
+            "rel": "answers"
+          }
+        ],
+        "links": {
+          "articles": [
+            "ultimate-insider-three-collisions",
+            "a-second-reader-the-agent-cannot-skip",
+            "why-my-agents-do-not-run-on-my-laptop",
+            "the-infographic-bake-off",
+            "one-article-five-readers",
+            "the-agent-team-as-it-runs",
+            "where-the-vault-keys-live",
+            "re-anchoring-agent-behaviour-policies",
+            "connector-twin-before-you-deploy-an-agent",
+            "footprint-and-blast-radius",
+            "hope-or-enforcement",
+            "green-does-not-mean-live",
+            "the-investigation-github-owes-its-customers",
+            "every-risk-is-already-accepted",
+            "riskmandate-ten-questions",
+            "how-to-run-synthetic-users"
+          ],
+          "pages": [
+            "/demos/vaults/connector-twin/index.html",
+            "/demos/vaults/hope-or-enforcement/index.html"
+          ],
+          "sites": [
+            "https://snscratchpad.com/posts/models-as-insider-risks/",
+            "https://abp.sgit.ai/",
+            "https://abp.sgit.ai/model/barriers/index.html",
+            "https://riskmandate.ai/",
+            "https://riskmandate.ai/plug.html",
+            "https://riskmandate.ai/licence-to-operate.html",
+            "https://riskmandate.ai/grant-gap.html"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "Observation tells you what an agent did. It cannot tell you whether the agent was allowed to, unless somebody wrote down what it was for before it ran.",
+            "why": "The missing column, in two sentences."
+          },
+          {
+            "text": "Containment without recoverability is a brake on a car with no reverse gear.",
+            "why": "Why the brake is not enough."
+          },
+          {
+            "text": "once you know exactly how little you have to trust it, you can let it do a great deal more.",
+            "why": "The irony, as the answer to his last line."
+          }
+        ]
+      }
+    },
+    {
       "slug": "how-to-run-synthetic-users",
       "title": "How to run synthetic users on your own site: five people who do not exist, a browser, and an afternoon",
       "date": "2026-10-10",
@@ -83,7 +1085,11 @@
       "links_out": [
         "a-link-to-a-persona"
       ],
-      "links_in": [],
+      "links_in": [
+        "no-server-by-design",
+        "where-the-platform-draws-the-line",
+        "authority-outside-the-model"
+      ],
       "graph": {
         "slug": "how-to-run-synthetic-users",
         "teaser": "Five invented users, a model reading screenshots, and a real browser: how to run synthetic users, from three studies.",
@@ -272,6 +1278,8 @@
         "pay-to-keep-your-persona"
       ],
       "links_in": [
+        "no-server-by-design",
+        "the-agent-is-the-reader",
         "how-to-run-synthetic-users"
       ],
       "graph": {
@@ -433,7 +1441,7 @@
       "slug": "pay-after-you-read",
       "title": "Pay after you read: how a reading meter became a working business model in one afternoon, one release at a time",
       "date": "2026-10-10",
-      "updated": "",
+      "updated": "2026-10-11",
       "url": "https://newsroom.sgit.ai/articles/pay-after-you-read.html",
       "markdown": "https://newsroom.sgit.ai/articles/pay-after-you-read.md",
       "card": "https://newsroom.sgit.ai/articles/cards/pay-after-you-read.webp",
@@ -462,7 +1470,10 @@
         "who-will-game-the-reading-meter",
         "pay-to-keep-your-persona"
       ],
-      "links_in": [],
+      "links_in": [
+        "no-server-by-design",
+        "the-agent-is-the-reader"
+      ],
       "graph": {
         "slug": "pay-after-you-read",
         "teaser": "Seven releases in one afternoon turned the reading meter into a working model: pay after you read, and the rating sets the price.",
@@ -650,7 +1661,10 @@
         "encrypted-memory-for-isolated-agents",
         "a-personal-agent-that-keeps-your-secrets"
       ],
-      "links_in": [],
+      "links_in": [
+        "no-server-by-design",
+        "authority-outside-the-model"
+      ],
       "graph": {
         "slug": "where-the-vault-keys-live",
         "teaser": "Vault key management at sgit-ai v0.20.0: the one secret, where keys are kept, how they travel sealed on append lanes, and what comes next.",
@@ -824,7 +1838,9 @@
         "re-anchoring-agent-behaviour-policies",
         "one-article-five-readers"
       ],
-      "links_in": [],
+      "links_in": [
+        "authority-outside-the-model"
+      ],
       "graph": {
         "slug": "the-infographic-bake-off",
         "teaser": "Every image model on OpenRouter, eleven briefs, 101 images judged blind, $10.44: which model for which infographic, and what it costs.",
@@ -1056,6 +2072,8 @@
         "one-article-five-readers"
       ],
       "links_in": [
+        "no-server-by-design",
+        "the-agent-is-the-reader",
         "a-link-to-a-persona",
         "pay-after-you-read",
         "going-live-with-the-reading-meter"
@@ -1376,7 +2394,7 @@
       "slug": "going-live-with-the-reading-meter",
       "title": "Going live with the reading meter: pay for what you read, go below zero if you like, and the numbers we will check in eight weeks",
       "date": "2026-10-10",
-      "updated": "",
+      "updated": "2026-10-11",
       "url": "https://newsroom.sgit.ai/articles/going-live-with-the-reading-meter.html",
       "markdown": "https://newsroom.sgit.ai/articles/going-live-with-the-reading-meter.md",
       "card": "https://newsroom.sgit.ai/articles/cards/going-live-with-the-reading-meter.webp",
@@ -1405,6 +2423,7 @@
         "who-will-game-the-reading-meter"
       ],
       "links_in": [
+        "no-server-by-design",
         "pay-after-you-read",
         "pay-to-keep-your-persona",
         "who-will-game-the-reading-meter",
@@ -1757,7 +2776,7 @@
       "slug": "one-article-five-readers",
       "title": "One article, five readers: a librarian, a cartographer, a historian, an explainer and a storyteller read the same piece",
       "date": "2026-10-10",
-      "updated": "",
+      "updated": "2026-10-11",
       "url": "https://newsroom.sgit.ai/articles/one-article-five-readers.html",
       "markdown": "https://newsroom.sgit.ai/articles/one-article-five-readers.md",
       "card": "https://newsroom.sgit.ai/articles/cards/one-article-five-readers.webp",
@@ -1792,6 +2811,8 @@
         "every-risk-is-already-accepted"
       ],
       "links_in": [
+        "the-agent-is-the-reader",
+        "authority-outside-the-model",
         "the-infographic-bake-off",
         "pay-to-keep-your-persona"
       ],
@@ -2204,6 +3225,8 @@
         "a-second-reader-the-agent-cannot-skip"
       ],
       "links_in": [
+        "the-agent-is-the-reader",
+        "authority-outside-the-model",
         "the-infographic-bake-off",
         "one-article-five-readers"
       ],
@@ -2384,6 +3407,9 @@
         "every-mistake-added-a-rule"
       ],
       "links_in": [
+        "where-the-platform-draws-the-line",
+        "the-same-argument-in-our-words",
+        "authority-outside-the-model",
         "one-article-five-readers",
         "re-anchoring-agent-behaviour-policies"
       ],
@@ -2785,6 +3811,7 @@
         "encrypted-memory-for-isolated-agents"
       ],
       "links_in": [
+        "the-agent-is-the-reader",
         "where-the-vault-keys-live"
       ],
       "graph": {
@@ -3210,6 +4237,8 @@
         "the-investigation-github-owes-its-customers"
       ],
       "links_in": [
+        "where-the-platform-draws-the-line",
+        "authority-outside-the-model",
         "a-mac-of-the-agents-own"
       ],
       "graph": {
@@ -3860,6 +4889,7 @@
         "the-agent-team-as-it-runs"
       ],
       "links_in": [
+        "no-server-by-design",
         "where-the-vault-keys-live",
         "rfc-0001-public-key-cryptography-for-sgit",
         "a-mac-of-the-agents-own",
@@ -4097,6 +5127,7 @@
         "the-agent-team-as-it-runs"
       ],
       "links_in": [
+        "the-same-argument-in-our-words",
         "riskmandate-ten-questions"
       ],
       "graph": {
@@ -4507,6 +5538,9 @@
         "the-agent-team-as-it-runs"
       ],
       "links_in": [
+        "where-the-platform-draws-the-line",
+        "the-same-argument-in-our-words",
+        "authority-outside-the-model",
         "one-article-five-readers",
         "a-second-reader-the-agent-cannot-skip",
         "a-mac-of-the-agents-own",
@@ -4723,6 +5757,7 @@
         "every-risk-is-already-accepted"
       ],
       "links_in": [
+        "no-server-by-design",
         "who-will-game-the-reading-meter",
         "encrypted-memory-for-isolated-agents",
         "knowing-when-to-stop"
@@ -4967,6 +6002,7 @@
         "green-does-not-mean-live"
       ],
       "links_in": [
+        "no-server-by-design",
         "pay-after-you-read",
         "one-article-five-readers",
         "a-second-reader-the-agent-cannot-skip",
@@ -5479,6 +6515,7 @@
         "story-vault-meets-reader-skills"
       ],
       "links_in": [
+        "the-agent-is-the-reader",
         "a-meter-in-the-browser",
         "the-waiting-room-knew-first",
         "every-mistake-added-a-rule",
@@ -5895,6 +6932,8 @@
         "ai-baseline-control-framework"
       ],
       "links_in": [
+        "where-the-platform-draws-the-line",
+        "the-same-argument-in-our-words",
         "one-article-five-readers",
         "riskmandate-ten-questions",
         "hope-or-enforcement"
@@ -7209,6 +8248,7 @@
         "a-personal-agent-that-keeps-your-secrets"
       ],
       "links_in": [
+        "authority-outside-the-model",
         "a-mac-of-the-agents-own",
         "how-i-work-with-claude",
         "encrypted-memory-for-isolated-agents",
@@ -7687,6 +8727,7 @@
         "the-identity-we-wanted-to-give-the-agents"
       ],
       "links_in": [
+        "authority-outside-the-model",
         "a-mac-of-the-agents-own",
         "riskmandate-ten-questions",
         "how-i-work-with-claude",
@@ -8272,6 +9313,7 @@
         "every-risk-is-already-accepted"
       ],
       "links_in": [
+        "authority-outside-the-model",
         "riskmandate-ten-questions"
       ],
       "graph": {
@@ -9853,6 +10895,7 @@
         "price-it-then-give-it-away"
       ],
       "links_in": [
+        "the-agent-is-the-reader",
         "how-i-work-with-claude",
         "knowing-when-to-stop",
         "every-mistake-added-a-rule",
@@ -10941,6 +11984,9 @@
         "six-agents-one-inbox"
       ],
       "links_in": [
+        "where-the-platform-draws-the-line",
+        "the-same-argument-in-our-words",
+        "authority-outside-the-model",
         "one-article-five-readers",
         "riskmandate-ten-questions",
         "every-mistake-added-a-rule",
@@ -11541,6 +12587,8 @@
         "introducing-fractal-semantic-graphs"
       ],
       "links_in": [
+        "the-same-argument-in-our-words",
+        "authority-outside-the-model",
         "riskmandate-ten-questions",
         "where-is-the-why",
         "the-mandate-stack",
@@ -12081,6 +13129,7 @@
         "replicating-the-agentic-inbox"
       ],
       "links_in": [
+        "the-same-argument-in-our-words",
         "a-mac-of-the-agents-own",
         "riskmandate-ten-questions",
         "the-behaviour-policy-is-the-business-logic",
@@ -12363,6 +13412,7 @@
         "introducing-fractal-semantic-graphs"
       ],
       "links_in": [
+        "the-agent-is-the-reader",
         "who-will-game-the-reading-meter",
         "a-meter-in-the-browser",
         "liquid-content-needs-water",
@@ -12909,6 +13959,9 @@
         "introducing-fractal-semantic-graphs"
       ],
       "links_in": [
+        "where-the-platform-draws-the-line",
+        "the-same-argument-in-our-words",
+        "authority-outside-the-model",
         "one-article-five-readers",
         "riskmandate-ten-questions",
         "agency-is-not-a-yes",
@@ -13179,6 +14232,9 @@
       ],
       "links_out": [],
       "links_in": [
+        "where-the-platform-draws-the-line",
+        "the-same-argument-in-our-words",
+        "authority-outside-the-model",
         "riskmandate-ten-questions",
         "where-is-the-why",
         "the-mandate-stack",
@@ -13446,6 +14502,7 @@
         "the-question-is-whether-they-miss-it"
       ],
       "links_in": [
+        "the-agent-is-the-reader",
         "liquid-content-needs-water",
         "story-vault-meets-reader-skills",
         "the-deck-i-could-not-download",
@@ -14207,6 +15264,7 @@
       ],
       "links_out": [],
       "links_in": [
+        "the-agent-is-the-reader",
         "one-article-five-readers",
         "the-ai-governance-stack-as-a-graph",
         "riskmandate-ten-questions",
@@ -14867,6 +15925,7 @@
       ],
       "links_out": [],
       "links_in": [
+        "no-server-by-design",
         "custom-uis-are-not-the-exception"
       ],
       "graph": {
@@ -15767,6 +16826,7 @@
       ],
       "links_out": [],
       "links_in": [
+        "authority-outside-the-model",
         "every-mistake-added-a-rule",
         "the-investigation-github-owes-its-customers"
       ],

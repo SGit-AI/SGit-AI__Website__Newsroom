@@ -2,11 +2,11 @@
 
 > Articles read together, each set with an introduction saying what it shows that no single article does.
 
-*Source: <https://newsroom.sgit.ai/articles/collections/index.html> · sgit.ai v0.7.40 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/collections/index.html> · sgit.ai v0.7.45 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 
-Edition of 2026-10-0867 articles · 4 desk notes · 5 collections · 2 issuessgit.ai · v0.7.40
+Edition of 2026-10-0872 articles · 4 desk notes · 5 collections · 2 issuessgit.ai · v0.7.45
 
 # Collections
 

@@ -225,7 +225,28 @@ figure and thumbnail exists) and 2c (every script loaded at run time exists) rea
 Measured in a browser with every figure forced to load: v0.6.1 had 117 figures and 2 thumbnails not rendered
 on 13 pages; v0.6.2 has 0 of 625.
 
-## Two things for Dinis
+## 11 October, v0.7.0: the live newsroom, tightened, and links to a persona
+
+The newsroom is taking readers now, so the pieces of the meter that did not suit a live product came out and the
+site was read as a stranger would read it.
+
+- **Imported again** from sgit.ai v0.7.45 (v0.7.40 before): five articles (72 in all, 328 pages), among them
+  *No server, by design*, which now carries the design page's "no server" row and the top-up page's data note.
+- **The meter is this site's own build, v1.4.0**, a copy of v1.3.1 at its own immutable path
+  (`assets/components/sg-meter/v1/v1.4/v1.4.0/`) with three changes: no Pause the meter, no Start again, and the
+  landing view. Imported pages load it through a recorded import rule (item 11 in `sync_newsroom.py`), which stops
+  the import if sgit.ai moves the component, so the fork cannot drift quietly. sgit.ai still runs v1.3.1.
+- **Persona links** (`admin/build/personas.py`): `/persona/`, `/persona/<id>/` for the five starting personas,
+  `/persona/#<id>`, and `/persona/links.json` for whoever writes the email. The first step of
+  [a link to a persona](../../articles/a-link-to-a-persona.html), with no vault. The persona is added as a visitor
+  the reader can keep or remove; nothing is charged for opening it.
+- **Wording that named the removed buttons**, as recorded text rules: the personas page, the security model's shared
+  computer row, the component documentation's account row. Also the account page's "Every page on sgit.ai" and its
+  price table, which named sgit.ai's docs and vaults.
+- **Test**: `admin/build/test_meter.mjs`, sgit.ai's meter test extended for all of the above (Playwright;
+  skips when it is not installed).
+
+## Things for Dinis
 
 1. **A contact for pilots** (finding 1). It needs an address and a commitment, and I would rather not choose
    either.
@@ -236,3 +257,9 @@ on 13 pages; v0.6.2 has 0 of 625.
    cannot hold. Either sgit.ai changes its disclosure line and the pages are re-synced, or the brief's rule is
    about the byline only. I have not carried sgit.ai's house-style gates into this site's gate for the same reason:
    this one would fail on 76 pages as published.
+3. **An article that names the removed button.** *Who will game the reading meter* says "Start again" on the account
+   page clears a shared browser. The article is as published on sgit.ai and an article's text is not edited here, so
+   it is left. The fix is a line in sgit.ai's article (and sgit.ai's own v1.3.1 meter still has the button), or a
+   decision that this newsroom may carry a correction note.
+4. **sgit.ai and this site now run different meters.** v1.4.0 here, v1.3.1 there. If sgit.ai should follow, v1.4.0 is
+   a small diff against v1.3.1 and can be published there at the same path.

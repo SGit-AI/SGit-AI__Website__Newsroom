@@ -1,0 +1,162 @@
+{
+  "slug": "no-server-by-design",
+  "teaser": "First the database went, now the back end: the SGit Newsroom runs all its logic in the browser, on commodity servers that cannot read your data.",
+  "topics": [
+    "site-and-engineering",
+    "vaults-and-method"
+  ],
+  "core_idea": "After replacing the database with the file system (LETS), the next step is removing the back end: encrypted vaults make the server blind, so the application moves to the browser, leaving only commodity products on the server side; the security gaps this leaves are written down and accepted because they do not match the threat, and the result scales without its complexity scaling and ships as files.",
+  "nodes": [
+    {
+      "id": "lets",
+      "label": "The file system is the database",
+      "kind": "method",
+      "summary": "LETS: load, extract, transform, save; every state a file you can version and read."
+    },
+    {
+      "id": "noback",
+      "label": "No back end",
+      "kind": "claim",
+      "summary": "All application logic runs in the reader's browser."
+    },
+    {
+      "id": "constraint",
+      "label": "A blind server",
+      "kind": "concept",
+      "summary": "Vaults are encrypted in the client, so anything that reads data must run where the key is."
+    },
+    {
+      "id": "commodity",
+      "label": "Commodity servers, not no servers",
+      "kind": "claim",
+      "summary": "Static hosting, a ciphertext store, a payment link, DNS and CI, with a sign-in provider next, all products."
+    },
+    {
+      "id": "newsroom",
+      "label": "The SGit Newsroom",
+      "kind": "example",
+      "summary": "Personas, a reading meter, a payment on-ramp, a newsroom of your own, encrypted sharing, in-browser databases."
+    },
+    {
+      "id": "gaps",
+      "label": "Gaps written down and accepted",
+      "kind": "method",
+      "summary": "SG Meter's security model: every cheat changes a number only the cheater sees."
+    },
+    {
+      "id": "scale",
+      "label": "Scales without complexity scaling",
+      "kind": "claim",
+      "summary": "More readers add bandwidth against cached files, not moving parts."
+    },
+    {
+      "id": "speed",
+      "label": "A release is a set of files",
+      "kind": "example",
+      "summary": "114 releases in eleven days; the meter in seven releases in an afternoon."
+    },
+    {
+      "id": "values",
+      "label": "Sovereignty, privacy, explainability, determinism",
+      "kind": "concept",
+      "summary": "The pattern's properties, not its policies."
+    },
+    {
+      "id": "limit",
+      "label": "How far can it be pushed?",
+      "kind": "question",
+      "summary": "Secrets the reader must not hold are the honest boundary."
+    }
+  ],
+  "edges": [
+    {
+      "from": "noback",
+      "to": "lets",
+      "rel": "extends"
+    },
+    {
+      "from": "constraint",
+      "to": "noback",
+      "rel": "leads-to"
+    },
+    {
+      "from": "commodity",
+      "to": "noback",
+      "rel": "depends-on"
+    },
+    {
+      "from": "newsroom",
+      "to": "noback",
+      "rel": "example-of"
+    },
+    {
+      "from": "gaps",
+      "to": "noback",
+      "rel": "answers"
+    },
+    {
+      "from": "scale",
+      "to": "commodity",
+      "rel": "depends-on"
+    },
+    {
+      "from": "speed",
+      "to": "noback",
+      "rel": "produces"
+    },
+    {
+      "from": "values",
+      "to": "constraint",
+      "rel": "produces"
+    },
+    {
+      "from": "limit",
+      "to": "gaps",
+      "rel": "extends"
+    },
+    {
+      "from": "newsroom",
+      "to": "gaps",
+      "rel": "example-of"
+    },
+    {
+      "from": "speed",
+      "to": "scale",
+      "rel": "compared-with"
+    }
+  ],
+  "links": {
+    "articles": [
+      "where-the-vault-keys-live",
+      "encrypted-memory-for-isolated-agents",
+      "a-link-to-a-persona",
+      "pay-to-keep-your-persona",
+      "going-live-with-the-reading-meter",
+      "pay-after-you-read",
+      "who-are-you-protecting-against",
+      "every-mistake-added-a-rule",
+      "chat-on-a-static-site",
+      "how-to-run-synthetic-users"
+    ],
+    "pages": [
+      "/articles/data/no-server-by-design__releases.json"
+    ],
+    "sites": [
+      "https://docs.diniscruz.ai/2025/05/27/lets__load-extract-transform-save__a-deterministic-and-debuggable-data-pipeline_architecture.html",
+      "https://pypi.org/project/issues-fs/",
+      "https://newsroom.sgit.ai/databases/index.html",
+      "https://newsroom.sgit.ai/meter/security.html",
+      "https://www.inkandswitch.com/local-first/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "Encryption came first, and the client-side architecture followed, because there was nowhere else for the logic to go.",
+      "why": "The constraint that designed it."
+    },
+    {
+      "text": "First the database went, and the work got simpler. Now the back end is going, and the work is getting faster.",
+      "why": "The pattern in two sentences."
+    }
+  ]
+}

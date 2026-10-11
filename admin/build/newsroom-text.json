@@ -14,8 +14,8 @@
         "md": "**Kept in this browser, and only here.** The balance, the history and the receipts are in this browser's storage; nothing is sent anywhere and there is no account. A new browser, a private window or clearing site data starts again with £5.00 and no history, so with no personalisation. It never blocks a page and it never nags: credit can go below zero, the balance says so in the top bar, and that is all. [How the meter works](../meter/index.md), and [why we run it this way](../articles/going-live-with-the-reading-meter.md)."
       },
       "with": {
-        "html": "<div class=\"note\"><b>Where your data is kept.</b> Your balance, history and receipts are kept in this browser&rsquo;s storage. Your reading is not sent anywhere unless you choose to send it, and there is no account. This is a client-side application: the pages are static files, and what you read stays in your browser rather than on a server. That is how it is for now; if encrypted vaults are added, it will be said here. A new browser, a private window or clearing site data starts again with &pound;5.00 and no history. Credit can go below zero, and no page is blocked. What can leave your browser, when you choose to, is a payment (made on Stripe&rsquo;s own page), a subscription or a reading share: <a href=\"../shipped/index.html#data\">what leaves your browser, and when</a>. <a href=\"../meter/index.html\">How the meter works</a>, and <a href=\"../articles/going-live-with-the-reading-meter.html\">why it works this way</a>.</div>",
-        "md": "**Where your data is kept.** Your balance, history and receipts are kept in this browser’s storage. Your reading is not sent anywhere unless you choose to send it, and there is no account. This is a client-side application: the pages are static files, and what you read stays in your browser rather than on a server. That is how it is for now; if encrypted vaults are added, it will be said here. A new browser, a private window or clearing site data starts again with £5.00 and no history. Credit can go below zero, and no page is blocked. What can leave your browser, when you choose to, is a payment (made on Stripe’s own page), a subscription or a reading share: [what leaves your browser, and when](https://newsroom.sgit.ai/shipped/index.html#data). [How the meter works](../meter/index.md), and [why it works this way](../articles/going-live-with-the-reading-meter.md)."
+        "html": "<div class=\"note\"><b>Where your data is kept.</b> Your balance, history and receipts are kept in this browser&rsquo;s storage, and your reading is not sent anywhere unless you choose to send it. There is no account. This is a client-side application: the pages are static files, with no server of ours behind them for now, and if encrypted vaults are added this page will say so. <a href=\"../articles/no-server-by-design.html\">Why it is built this way</a>.<span style=\"display:block;margin-top:.55rem\">A new browser, a private window or clearing site data starts again with &pound;5.00 and no history. Credit can go below zero, and no page is blocked.</span><span style=\"display:block;margin-top:.55rem\">What can leave your browser, when you choose to, is a payment (made on Stripe&rsquo;s own page), a subscription or a reading share: <a href=\"../shipped/index.html#data\">what leaves your browser, and when</a>. <a href=\"../meter/index.html\">How the meter works</a>, and <a href=\"../articles/going-live-with-the-reading-meter.html\">why it works this way</a>.</span></div>",
+        "md": "**Where your data is kept.** Your balance, history and receipts are kept in this browser’s storage, and your reading is not sent anywhere unless you choose to send it. There is no account. This is a client-side application: the pages are static files, with no server of ours behind them for now, and if encrypted vaults are added this page will say so. [Why it is built this way](../articles/no-server-by-design.md).\n\nA new browser, a private window or clearing site data starts again with £5.00 and no history. Credit can go below zero, and no page is blocked.\n\nWhat can leave your browser, when you choose to, is a payment (made on Stripe’s own page), a subscription or a reading share: [what leaves your browser, and when](https://newsroom.sgit.ai/shipped/index.html#data). [How the meter works](../meter/index.md), and [why it works this way](../articles/going-live-with-the-reading-meter.md)."
       },
       "why": "The note said \"nothing is sent anywhere\", which is about the reading data and reads as wider than that once a top-up link exists, and it was written in a chatty register (\"it never nags\", \"and that is all\") on a page that now takes payment. It now says what is kept where, what can leave the browser and when, in plain terms and without absolutes."
     },
@@ -50,6 +50,86 @@
         "md": ""
       },
       "why": "Removed at Dinis's request: a technical disclaimer under the payment button. The limit it states, that the return page cannot check the payment, is still published on /shipped/ and in the meter's security model."
+    },
+    {
+      "id": "personas-clear-data",
+      "files": [
+        "account/personas.html",
+        "account/personas.md"
+      ],
+      "find": {
+        "html": "Anyone who uses this browser can see them; \"Start again\" on the account page clears them.",
+        "md": "Anyone who uses this browser can see them; \"Start again\" on the account page clears them."
+      },
+      "with": {
+        "html": "Anyone who uses this browser can see them; clearing this site's data in the browser removes them.",
+        "md": "Anyone who uses this browser can see them; clearing this site's data in the browser removes them."
+      },
+      "why": "The account page of the reading meter v1.4.0 no longer has a Start again button: it wiped the balance, the history and the personas in one tap, which is too much to leave next to Export. The way to clear what is kept is the browser's own."
+    },
+    {
+      "id": "security-shared-computer",
+      "files": [
+        "meter/security.html",
+        "meter/security.md"
+      ],
+      "find": {
+        "html": "Privacy. Mitigations: \"Start again\" clears it; a private window keeps nothing",
+        "md": "Privacy. Mitigations: \"Start again\" clears it; a private window keeps nothing"
+      },
+      "with": {
+        "html": "Privacy. Mitigations: clearing this site's data in the browser removes it; a private window keeps nothing",
+        "md": "Privacy. Mitigations: clearing this site's data in the browser removes it; a private window keeps nothing"
+      },
+      "why": "Same change as personas-clear-data: the mitigation named a button that v1.4.0 does not have."
+    },
+    {
+      "id": "meter-account-view",
+      "files": [
+        "meter/index.html",
+        "meter/index.md"
+      ],
+      "find": {
+        "html": "top-ups; pause, export as JSON, start again.</td>",
+        "md": "top-ups; pause, export as JSON, start again. |"
+      },
+      "with": {
+        "html": "top-ups; the top-up button and export as JSON. Version 1.3 also had pause and start again; version 1.4.0, which this site runs, does not.</td>",
+        "md": "top-ups; the top-up button and export as JSON. Version 1.3 also had pause and start again; version 1.4.0, which this site runs, does not. |"
+      },
+      "why": "The component documentation lists the account view of v1.3.1. This site runs v1.4.0, and the page should say what a reader here sees."
+    },
+    {
+      "id": "account-lead-site",
+      "files": [
+        "account/index.html",
+        "account/index.md"
+      ],
+      "find": {
+        "html": "Every page on sgit.ai has a price of a few pence",
+        "md": "Every page on sgit.ai has a price of a few pence"
+      },
+      "with": {
+        "html": "Every page here has a price of a few pence",
+        "md": "Every page here has a price of a few pence"
+      },
+      "why": "The account page is written for sgit.ai, where the meter also runs on the docs, the vaults and the network. Here it is the newsroom's meter, and the sentence should name the place the reader is in."
+    },
+    {
+      "id": "account-price-rows",
+      "files": [
+        "account/index.html",
+        "account/index.md"
+      ],
+      "find": {
+        "html": "<tr><td>Any other page: docs, vaults, the network, the newsroom</td><td>1p</td></tr><tr><td>The homepage, the subscribe page and your account</td><td>free</td></tr>",
+        "md": "| Any other page: docs, vaults, the network, the newsroom | 1p |\n| The homepage, the subscribe page and your account | free |"
+      },
+      "with": {
+        "html": "<tr><td>Any other page that charges: an article's version history, the newsroom's roles and policies</td><td>1p</td></tr><tr><td>The front page, the subscribe page, your account, the design, replicate and persona pages</td><td>free</td></tr>",
+        "md": "| Any other page that charges: an article's version history, the newsroom's roles and policies | 1p |\n| The front page, the subscribe page, your account, the design, replicate and persona pages | free |"
+      },
+      "why": "The price table named sgit.ai's docs, vaults and network, which this site does not charge for. It now names the pages here that carry the 1p price, and the pages this site writes, which are free."
     }
   ]
 }

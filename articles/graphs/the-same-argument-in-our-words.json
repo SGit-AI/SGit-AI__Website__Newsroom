@@ -1,0 +1,155 @@
+{
+  "slug": "the-same-argument-in-our-words",
+  "teaser": "Satya Nadella's case for treating models as insider risks, translated idea by idea into our vocabulary: reach, mandate, gap, barriers and accepted risk.",
+  "topics": [
+    "agents-and-policy"
+  ],
+  "core_idea": "Nadella's argument and ours are the same argument in two vocabularies: his lost code path is software was the law, his insider is the ultimate insider, his separation of supply from authority is the grant is not the mandate, his controls outside the model are the enforcer test, and his last line is our brakes; the languages differ in unit, a model against one agent in one deployment, and in frame, observation against authority accepted by a named person for a stated interval.",
+  "nodes": [
+    {
+      "id": "post",
+      "label": "Models as insider risks",
+      "kind": "artefact",
+      "summary": "Nadella's post, paraphrased throughout and quoted once."
+    },
+    {
+      "id": "law",
+      "label": "Software was the law",
+      "kind": "concept",
+      "summary": "Rules the interface enforced by omission are gone when an agent calls the API."
+    },
+    {
+      "id": "insider",
+      "label": "The ultimate insider",
+      "kind": "concept",
+      "summary": "A threat need not be malicious; the distance between benign and hostile is a prompt."
+    },
+    {
+      "id": "accepted",
+      "label": "Every risk is already accepted",
+      "kind": "concept",
+      "summary": "No deny button; the only questions are who holds it and until when."
+    },
+    {
+      "id": "grant-mandate",
+      "label": "The grant is not the mandate",
+      "kind": "concept",
+      "summary": "Supply arrives with a grant; authority is a mandate with an issuer, scope and clock."
+    },
+    {
+      "id": "enforcer",
+      "label": "The enforcer test",
+      "kind": "concept",
+      "summary": "Only a boundary the agent cannot reach is a control."
+    },
+    {
+      "id": "calibrator",
+      "label": "Reality is the calibrator",
+      "kind": "method",
+      "summary": "Measure the grant on the thing itself and compare the footprint with the mandate."
+    },
+    {
+      "id": "brakes",
+      "label": "Brakes let a car go fast",
+      "kind": "claim",
+      "summary": "Constraint is what makes autonomy affordable."
+    },
+    {
+      "id": "unit",
+      "label": "One agent, one deployment",
+      "kind": "claim",
+      "summary": "Risk is a property of a deployment, not of a model."
+    },
+    {
+      "id": "frame",
+      "label": "Authority before observation",
+      "kind": "claim",
+      "summary": "A written mandate and a named acceptor tell you whether what you observed was allowed."
+    }
+  ],
+  "edges": [
+    {
+      "from": "law",
+      "to": "post",
+      "rel": "answers"
+    },
+    {
+      "from": "insider",
+      "to": "post",
+      "rel": "answers"
+    },
+    {
+      "from": "accepted",
+      "to": "post",
+      "rel": "answers"
+    },
+    {
+      "from": "grant-mandate",
+      "to": "post",
+      "rel": "answers"
+    },
+    {
+      "from": "enforcer",
+      "to": "grant-mandate",
+      "rel": "depends-on"
+    },
+    {
+      "from": "calibrator",
+      "to": "grant-mandate",
+      "rel": "produces"
+    },
+    {
+      "from": "brakes",
+      "to": "post",
+      "rel": "answers"
+    },
+    {
+      "from": "unit",
+      "to": "post",
+      "rel": "contrasts"
+    },
+    {
+      "from": "frame",
+      "to": "post",
+      "rel": "extends"
+    }
+  ],
+  "links": {
+    "articles": [
+      "authority-outside-the-model",
+      "the-behaviour-policy-is-the-business-logic",
+      "ultimate-insider-three-collisions",
+      "every-risk-is-already-accepted",
+      "knowing-when-to-stop",
+      "a-second-reader-the-agent-cannot-skip",
+      "hope-or-enforcement",
+      "six-agents-one-inbox",
+      "footprint-and-blast-radius",
+      "connector-twin-before-you-deploy-an-agent"
+    ],
+    "pages": [],
+    "sites": [
+      "https://snscratchpad.com/posts/models-as-insider-risks/",
+      "https://riskmandate.ai/grant-gap.html",
+      "https://abp.sgit.ai/",
+      "https://abp.sgit.ai/model/barriers/index.html",
+      "https://risks.sgit.ai/",
+      "https://nhi.sgit.ai/",
+      "https://riskmandate.ai/plug.html"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "And a mandate with no clock is just a grant.",
+      "why": "What authority needs before it is separate from supply."
+    },
+    {
+      "text": "Independence is not a property of the checker. It is a property of who controls it.",
+      "why": "The answer to nested black boxes."
+    },
+    {
+      "text": "Observation tells you what happened. Authority tells you whether it was allowed, and acceptance tells you who carries it if it was not.",
+      "why": "Where the two languages differ, in one line."
+    }
+  ]
+}

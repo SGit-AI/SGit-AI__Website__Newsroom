@@ -2,7 +2,7 @@
 
 > The reading meter on sgit.ai stops being a demonstration. A page now costs what you read of it: scroll a tenth of the way down a new article and you pay a tenth of 10p. Your balance can go below zero and stay there; nothing is blocked and nothing nags, there is only a small balance in the top bar. If a page was not worth it you can say so, with a reason, and it is not charged. Topping up is one £5 payment on Stripe, with no account and nothing that renews, and the page you come back to adds the credit without being able to check it, on purpose. The meter is also packaged as a library any website can add. This article is the plan and the reasoning, written down before the results: the business case, what we expect, the numbers that would prove us wrong, and the date we look.
 
-*Source: <https://newsroom.sgit.ai/articles/going-live-with-the-reading-meter.html> · sgit.ai v0.7.40 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/going-live-with-the-reading-meter.html> · sgit.ai v0.7.45 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 
@@ -10,7 +10,7 @@
 
 # Going live with the reading meter: pay for what you read, go below zero if you like, and the numbers we will check in eight weeks
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-10 · [article v1.2.0, 3 versions](versions/going-live-with-the-reading-meter.md) · newsroommicropaymentspricingpersonalisationlocal-firstbusiness-casehypothesesstripearticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-10 · updated 2026-10-11 · [article v1.3.0, 4 versions](versions/going-live-with-the-reading-meter.md) · newsroommicropaymentspricingpersonalisationlocal-firstbusiness-casehypothesesstripearticle
 
 ***Abstract:** The reading meter on sgit.ai stops being a demonstration. A page now costs what you read of it: scroll a tenth of the way down a new article and you pay a tenth of 10p. Your balance can go below zero and stay there; nothing is blocked and nothing nags, there is only a small balance in the top bar. If a page was not worth it you can say so, with a reason, and it is not charged. Topping up is one £5 payment on Stripe, with no account and nothing that renews, and the page you come back to adds the credit without being able to check it, on purpose. The meter is also packaged as a library any website can add. This article is the plan and the reasoning, written down before the results: the business case, what we expect, the numbers that would prove us wrong, and the date we look.*
 
@@ -106,7 +106,7 @@ The pattern is the one this meter is built around. Remove the force and many mor
 
 ## The anchors: what we expect, and what would prove us wrong
 
-Written now, before there is a single payment, so that we cannot move the goalposts later. The clock starts when the Stripe link goes live; the review is eight weeks after that. If the link goes live today, that is **5 December 2026**.
+Written now, before there is a single payment, so that we cannot move the goalposts later. The clock starts when the Stripe link goes live; the review is eight weeks after that. If the link goes live today, that is **5 December 2026**. *Update, 11 October 2026: the link went live on newsroom.sgit.ai today, so the review is on **6 December 2026**.*
 
 | # | Hypothesis | We expect | Proved wrong if |
 |---|---|---|---|
@@ -154,6 +154,7 @@ Startups & strategyNews & evidence[This article as a graph →](graphs.md#going-
 
 ### Continued by
 
+- [No server, by design: first I retired the database, now I am retiring the back end](no-server-by-design.md) First the database went, now the back end: the SGit Newsroom runs all its logic in the browser, on commodity servers that cannot read your data.
 - [Pay after you read: how a reading meter became a working business model in one afternoon, one release at a time](pay-after-you-read.md) Seven releases in one afternoon turned the reading meter into a working model: pay after you read, and the rating sets the price.
 - [Pay to keep your persona: readers should pay because it helps them, not because they feel they should](pay-to-keep-your-persona.md) Readers should pay because it helps them: a persona with a name and a graph, several for focus, and one that follows you between devices.
 - [Who will game the reading meter? Eight kinds of reader, nine ways to cheat, and the risks that will actually happen](who-will-game-the-reading-meter.md) Eight kinds of reader, none of them attackers, nine ways to cheat a browser meter, and the quieter risks that will actually happen.

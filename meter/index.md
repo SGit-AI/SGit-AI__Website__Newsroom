@@ -2,7 +2,7 @@
 
 > One web component that charges readers a few pence a page from a balance kept in their own browser, by how far down the page they read; never blocks, allows a negative balance, lets a reader decline with a reason. Install, views, config, events, storage, theming, Stripe.
 
-*Source: <https://newsroom.sgit.ai/meter/index.html> · sgit.ai v0.7.40 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/meter/index.html> · sgit.ai v0.7.45 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 
@@ -58,7 +58,7 @@ One element, one shared meter: an ES module is evaluated once per page, so howev
 |---|---|---|
 | `balance` | The balance as a small link to the account. Shown in a warmer colour below zero, with a tooltip that says nothing is blocked. Nothing else: no banner, no count of articles read. |  |
 | `page` | Opens this page on the meter and charges it by scroll depth. At the foot of the text, a reader card (v1.3): what the page has cost, the share read, the reading list, three five-step ratings (how useful, more like this, level of detail), and last, as the exception, "Don't charge me" with a reason. | `kind`, `date` (YYYY-MM-DD), `topics` (space separated), `title`, `quiet` (charge, show nothing) |
-| `account` | Balance, pages opened, spend, what was declined, picks, spend by topic, the history with the depth read, top-ups; pause, export as JSON, start again. |  |
+| `account` | Balance, pages opened, spend, what was declined, picks, spend by topic, the history with the depth read, top-ups; the top-up button and export as JSON. Version 1.3 also had pause and start again; version 1.4.0, which this site runs, does not. |  |
 | `topup` | With `topup.link` set, one button to the payment page. Without, a simulated cart (packs, cart, review, receipt) that says it is simulated. |  |
 | `topped-up` | The page a payment link returns to. Adds `topup.amount` once per `session_id` in the URL. It does not verify the payment; see [the security model](security.md#return). |  |
 | `picks` | Unread pages for the active persona. Hidden until there is something to pick from. | `count` (default 4) |

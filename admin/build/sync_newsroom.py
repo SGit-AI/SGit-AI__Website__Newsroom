@@ -47,6 +47,12 @@ What changes on the way in, and nothing else:
      and how to switch it off.
   10. Wording this site changes on named pages (admin/build/newsroom-text.json), each a recorded
      rule that stops the import if sgit.ai's text under it moves. The record lists them.
+  11. Every page loads this site's own build of the reading meter, v1.4.0
+     (assets/components/sg-meter/v1/v1.4/v1.4.0/), instead of sgit.ai's v1.3.1 that the page names.
+     v1.4.0 is v1.3.1 without "Pause the meter" and "Start again", and with the view that lets a
+     link open the newsroom as a named persona. Only the dynamic import() of the component is
+     re-pointed; code samples on the docs page are text and stay as they are. If sgit.ai moves to
+     another version, the import stops: v1.4.0 has to be re-based on it deliberately.
 
 Scripts, styles, components and /.well-known/sgit-subscribe.json are copied byte for byte.
 The brief requires it twice: a published component path never changes, and the subscribe
@@ -83,6 +89,13 @@ METER_FILE = ROOT / "admin/build/newsroom-meter.json"
 LIVE_LINK  = re.compile(r"^https://buy\.stripe\.com/[A-Za-z0-9]+$")
 
 
+# The reading meter this site runs (item 11 in the docstring). sgit.ai's pages name METER_BASED_ON; the pages
+# written here name METER_OURS. A component path is published and immutable, so a change is a new path.
+METER_PATH     = "assets/components/sg-meter/v1/"
+METER_BASED_ON = "v1.3/v1.3.1"
+METER_OURS     = "v1.4/v1.4.0"
+METER_IMPORT   = re.compile(r"(import\(\s*['\"][^'\"]*?" + re.escape(METER_PATH) + r")(v\d+\.\d+/v\d+\.\d+\.\d+)(/sg-meter\.js)")
+
 TEXT_FILE = ROOT / "admin/build/newsroom-text.json"
 APPLIED = set()
 
@@ -104,6 +117,19 @@ def apply_text_overrides(text, dest_file, kind):
         text = text.replace(find, o["with"][kind])
         APPLIED.add((o["id"], dest_file))
     return text
+
+
+def own_meter(text, dest_file):
+    def swap(m):
+        if m.group(2) != METER_BASED_ON:
+            sys.exit(f"sync: {dest_file} loads the reading meter at {m.group(2)}, and this site's build "
+                     f"({METER_OURS}) is based on {METER_BASED_ON}. sgit.ai moved the component, so re-base "
+                     f"{METER_PATH}{METER_OURS}/ on it before importing")
+        return m.group(1) + METER_OURS + m.group(3)
+    out = METER_IMPORT.sub(swap, text)
+    if out != text:
+        assert (ROOT / (METER_PATH + METER_OURS + "/sg-meter.js")).exists(), f"{METER_OURS} is not on disk"
+    return out
 
 
 def topup_link():
@@ -388,6 +414,7 @@ def transform(text, src_file, dest_file, kind):
         # The top-up link is this site's own: sgit.ai keeps the simulated cart, and a link that
         # returns to newsroom.sgit.ai must only be on pages served from newsroom.sgit.ai, because a
         # reader's credit lives in the browser storage of the origin they return to.
+        text = own_meter(text, dest_file)
         link = topup_link()
         if link:
             text = re.sub(r'("topup": \{"amount": \d+, "link": )""', lambda m: m.group(1) + json.dumps(link), text)

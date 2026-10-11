@@ -2,7 +2,7 @@
 
 > The articles on this site are deep and carry their evidence, and that makes them long and hard to consume. The answer tried here is not shorter articles. It is to keep writing the article first, as prose, because writing is how the argument is found, and then to send five readers through it afterwards, each an agent with a defined role. Two build the platform: a Librarian that catalogues every fact, claim, number, question and source with the sentence it came from, and a Cartographer that turns the catalogues into an ontology at three altitudes and draws the maps. Three write for a person: a Historian that says what the article added and where it sits in the arc, an Explainer that says it in two minutes, and a Storyteller that tells it as a deck. We ran it on the five articles about agent behaviour policies published between 7 and 10 October: 662 items catalogued, 32 problems flagged in published articles, 45 concepts, nine maps, five decks, and one new concept in the most recent article. The views are now on those five articles, and the whole run is in a vault you can open.
 
-*Source: <https://newsroom.sgit.ai/articles/one-article-five-readers.html> · sgit.ai v0.7.40 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/one-article-five-readers.html> · sgit.ai v0.7.45 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 
@@ -10,7 +10,7 @@
 
 # One article, five readers: a librarian, a cartographer, a historian, an explainer and a storyteller read the same piece
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-10 · [article v1.0.1, 2 versions](versions/one-article-five-readers.md) · [sgit.ai v0.7.27](https://sgit.ai/admin/versions.md) · newsroomjournalismliquid-contentfractal-semantic-graphsontologyagentslibrariancartographerhistorianmulti-viewarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-10 · updated 2026-10-11 · [article v1.1.0, 2 versions](versions/one-article-five-readers.md) · [sgit.ai v0.7.27](https://sgit.ai/admin/versions.md) · newsroomjournalismliquid-contentfractal-semantic-graphsontologyagentslibrariancartographerhistorianmulti-viewarticle
 
 ***Abstract:** The articles on this site are deep and carry their evidence, and that makes them long and hard to consume. The answer tried here is not shorter articles. It is to keep writing the article first, as prose, because writing is how the argument is found, and then to send five readers through it afterwards, each an agent with a defined role. Two build the platform: a Librarian that catalogues every fact, claim, number, question and source with the sentence it came from, and a Cartographer that turns the catalogues into an ontology at three altitudes and draws the maps. Three write for a person: a Historian that says what the article added and where it sits in the arc, an Explainer that says it in two minutes, and a Storyteller that tells it as a deck. We ran it on the five articles about agent behaviour policies published between 7 and 10 October: 662 items catalogued, 32 problems flagged in published articles, 45 concepts, nine maps, five decks, and one new concept in the most recent article. The views are now on those five articles, and the whole run is in a vault you can open.*
 
@@ -181,7 +181,7 @@ The vault's topic view: each of the 45 concepts against the five articles, amber
 - **The views can be wrong.** They are produced by agents and checked by script where a script can check them: anchors verbatim, edges citing real items, word limits, quotes verbatim. A plain-language summary that is subtly unfair to its article passes every check. Each view should be read by the author before it goes on the page, as these were.
 - **New is relative.** Without the site altitude, "new" means new to the set. The Historian caught it this time because it had the site's graphs; a run without them would not.
 - **The round trip ran once in one direction.** The Cartographer's feedback to the Librarian is written, not applied.
-- **It costs something.** About 1.1 million tokens for five articles, most of it the Cartographer reading 662 items. Per article, the Librarian, the Explainer and the Historian are cheap; the ontology is the expensive part, and it is also the part that gets cheaper as the site ontology settles and each new article only has to map onto it.
+- **It costs something.** About 1.1 million tokens for five articles, most of it the five Librarians (403,000 between them) and the Cartographer reading their 662 items (264,000). Per article, the Explainer and the Historian are cheap; the catalogue and the ontology are the expensive parts, and the ontology is also the part that gets cheaper as the site ontology settles and each new article only has to map onto it.
 
 ## What comes next
 
@@ -213,6 +213,8 @@ News & evidenceGraphs & knowledge[This article as a graph →](graphs.md#one-art
 
 ### Continued by
 
+- [The agent is the reader: why agents will pay for graphs, personas and signed claims, because it is cheaper than not paying](the-agent-is-the-reader.md) Agents pay to read the raw web and guess its meaning. A curated graph answers for 90% fewer tokens, so paying the publisher is cheaper than not paying.
+- [Authority outside the model: an answer to Satya Nadella on models as insider risks, principle by principle, with what we run, what we ship and what we plan](authority-outside-the-model.md) Satya Nadella's seven principles for models as insider risks, answered one by one: what we run, what is design, and the five things the list leaves out.
 - [The infographic bake-off: which image model for which job, judged blind on 10 October 2026](the-infographic-bake-off.md) Every image model on OpenRouter, eleven briefs, 101 images judged blind, $10.44: which model for which infographic, and what it costs.
 - [Pay to keep your persona: readers should pay because it helps them, not because they feel they should](pay-to-keep-your-persona.md) Readers should pay because it helps them: a persona with a name and a graph, several for focus, and one that follows you between devices.
 

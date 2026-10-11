@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The agent is the reader: why agents will pay for graphs, personas and signed claims, because it is cheaper than not paying, SGit Newsroom</title>
+<meta name="description" content="A follow-up to One article, five readers, with the numbers. The five readers turned 17,949 words into layers of graph, and the biggest layer, the Librarian's catalogue, is 2.8 times the size of the articles it catalogues. That looks like the opposite of compression, until you measure what an agent actually loads to answer a question. Across all 45 concepts in the topic, the graph answers in a median of 2,579 tokens, with every item anchored to its sentence, against 25,698 to read the five articles: 90% less. Then the hypothesis: the more content there is, the more it compresses, because the graphs reuse each other. Tested on this site's 70 articles, it fails for the graphs no one curated (928 node labels, 908 of them unique) and holds for the one a Cartographer merged (114 concept mentions, 45 concepts, the last article reusing 25 and adding one). Projected to 100,000 articles, a curated index is 150 to 2,700 times smaller than the corpus, and a question costs about 13,000 tokens whatever the size, while search reads 59,000 and finds 2% of what is there. Compression is earned by curation, and curation is the work worth paying for. So the economic model: today the agent pays to process the raw web and guesses at its meaning; a publisher that serves meaning, a projection fitted to the agent's persona and objective, and claims signed with an expiry date, saves the agent more than it charges. The agent pays not to pay. This article lays out the arithmetic, the payment rails that exist, and what it does not yet prove.">
+<link rel="canonical" href="https://newsroom.sgit.ai/articles/the-agent-is-the-reader.html">
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SGit Newsroom">
+<meta property="og:url" content="https://newsroom.sgit.ai/articles/the-agent-is-the-reader.html">
+<meta property="og:title" content="The agent is the reader: why agents will pay for graphs, personas and signed claims, because it is cheaper than not paying, SGit Newsroom">
+<meta property="og:description" content="A follow-up to One article, five readers, with the numbers. The five readers turned 17,949 words into layers of graph, and the biggest layer, the Librarian's catalogue, is 2.8 times the size of the articles it catalogues. That looks like the opposite of compression, until you measure what an agent actually loads to answer a question. Across all 45 concepts in the topic, the graph answers in a median of 2,579 tokens, with every item anchored to its sentence, against 25,698 to read the five articles: 90% less. Then the hypothesis: the more content there is, the more it compresses, because the graphs reuse each other. Tested on this site's 70 articles, it fails for the graphs no one curated (928 node labels, 908 of them unique) and holds for the one a Cartographer merged (114 concept mentions, 45 concepts, the last article reusing 25 and adding one). Projected to 100,000 articles, a curated index is 150 to 2,700 times smaller than the corpus, and a question costs about 13,000 tokens whatever the size, while search reads 59,000 and finds 2% of what is there. Compression is earned by curation, and curation is the work worth paying for. So the economic model: today the agent pays to process the raw web and guesses at its meaning; a publisher that serves meaning, a projection fitted to the agent's persona and objective, and claims signed with an expiry date, saves the agent more than it charges. The agent pays not to pay. This article lays out the arithmetic, the payment rails that exist, and what it does not yet prove.">
+<meta property="og:image" content="https://newsroom.sgit.ai/og/the-agent-is-the-reader.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The agent is the reader: why agents will pay for graphs, personas and signed claims, because it is cheaper than not paying, SGit Newsroom">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://newsroom.sgit.ai/og/the-agent-is-the-reader.jpg">
+<link rel="alternate" type="text/markdown" href="the-agent-is-the-reader.md" title="This page as markdown">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "The agent is the reader: why agents will pay for graphs, personas and signed claims, because it is cheaper than not paying, SGit Newsroom", "headline": "The agent is the reader: why agents will pay for graphs, personas and signed claims, because it is cheaper than not paying, SGit Newsroom", "description": "A follow-up to One article, five readers, with the numbers. The five readers turned 17,949 words into layers of graph, and the biggest layer, the Librarian's catalogue, is 2.8 times the size of the articles it catalogues. That looks like the opposite of compression, until you measure what an agent actually loads to answer a question. Across all 45 concepts in the topic, the graph answers in a median of 2,579 tokens, with every item anchored to its sentence, against 25,698 to read the five articles: 90% less. Then the hypothesis: the more content there is, the more it compresses, because the graphs reuse each other. Tested on this site's 70 articles, it fails for the graphs no one curated (928 node labels, 908 of them unique) and holds for the one a Cartographer merged (114 concept mentions, 45 concepts, the last article reusing 25 and adding one). Projected to 100,000 articles, a curated index is 150 to 2,700 times smaller than the corpus, and a question costs about 13,000 tokens whatever the size, while search reads 59,000 and finds 2% of what is there. Compression is earned by curation, and curation is the work worth paying for. So the economic model: today the agent pays to process the raw web and guesses at its meaning; a publisher that serves meaning, a projection fitted to the agent's persona and objective, and claims signed with an expiry date, saves the agent more than it charges. The agent pays not to pay. This article lays out the arithmetic, the payment rails that exist, and what it does not yet prove.", "url": "https://newsroom.sgit.ai/articles/the-agent-is-the-reader.html", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "SGit Newsroom", "url": "https://newsroom.sgit.ai"}, "about": {"@type": "SoftwareApplication", "name": "sgit", "sameAs": "https://pypi.org/project/sgit-ai/"}, "author": {"@type": "Person", "name": "Dinis Cruz", "url": "https://sgit.ai/about/index.html"}, "license": "https://creativecommons.org/licenses/by/4.0/"}</script>
+<style>html{background:#faf9f5}body{margin:0;background:#faf9f5;color:#1c1d21;font-family:ui-sans-serif,system-ui,sans-serif;opacity:0;transition:opacity .25s;animation:sg-reveal 0s linear 1.6s forwards}html.ready body{opacity:1;animation:none}@keyframes sg-reveal{to{opacity:1}}</style><noscript><style>body{opacity:1;animation:none}</style></noscript>
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.7.0</a>
+  <sg-meter class="meter-nav" view="balance"></sg-meter>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../articles/index.html#all">Every article</a>
+      <a class="sl" href="../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../persona/index.html">Read as a persona</a>
+      <a class="sl" href="../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../account/index.html">Your reading account</a>
+      <a class="sl" href="../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../account/personas.html">Your personas</a>
+      <a class="sl" href="../account/top-up.html">Top up</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../newsroom/board.html">The board</a>
+      <a class="sl" href="../newsroom/log.html">The run log</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+      <a class="sl" href="../demos/vaults/newsroom-synthetic-users/index.html">The study: five readers tested this site</a>
+      <a class="sl" href="../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../world-news-day/index.html">World News Day<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../world-news-day/index.html">The corpus</a>
+      <a class="sl" href="../world-news-day/stories/free-to-republish-is-not-a-licence.html">Free to republish is not a licence</a>
+      <a class="sl" href="../world-news-day/licences.html">The licence that is not there</a>
+      <a class="sl" href="../world-news-day/corpus.html">The twenty-one</a>
+      <a class="sl" href="../world-news-day/findings.html">The aggregate</a>
+      <a class="sl" href="../world-news-day/terms.html">The vocabulary</a>
+      <a class="sl" href="../world-news-day/graph.html">The graph</a>
+      <a class="sl" href="../world-news-day/sources.html">Sources</a>
+      <a class="sl" href="../world-news-day/contacts.html">How to reach them</a>
+      <a class="sl" href="../world-news-day/vault.html">Published vaults</a>
+      <a class="sl" href="../world-news-day/vaults/corpus.html">The vault, opened</a>
+      <a class="sl" href="../world-news-day/method.html">Method</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../archive/index.html">The archive</a>
+      <a class="sl" href="../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../network/index.html">The network</a>
+      <a class="sl" href="../admin/versions.html">Release history</a>
+      <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom">&#9733; GitHub</a>
+</div></nav>
+
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.7.0</span></a></div>
+<main class="doc">
+ <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / The agent is the reader: why agents will pay for graphs, personas and signed claims, because it is cheaper than not paying</p>
+ <h1>The agent is the reader: why agents will pay for graphs, personas and signed claims, because it is cheaper than not paying</h1>
+ <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-11 &middot; <a href="versions/the-agent-is-the-reader.html" title="Every published version of this article, and what changed">article v1.0.0</a> &middot; <a href="https://sgit.ai/admin/versions.html" title="The sgit.ai release it was published in">sgit.ai v0.7.43</a> &middot; <span class="chip">newsroom</span><span class="chip">economics</span><span class="chip">agents</span><span class="chip">micropayments</span><span class="chip">fractal-semantic-graphs</span><span class="chip">compression</span><span class="chip">personas</span><span class="chip">tokens</span><span class="chip">provenance</span><span class="chip">signed-claims</span><span class="chip">librarian</span><span class="chip">cartographer</span><span class="chip">article</span></p>
+ <p class="abstract"><em><b>Abstract:</b> A follow-up to One article, five readers, with the numbers. The five readers turned 17,949 words into layers of graph, and the biggest layer, the Librarian's catalogue, is 2.8 times the size of the articles it catalogues. That looks like the opposite of compression, until you measure what an agent actually loads to answer a question. Across all 45 concepts in the topic, the graph answers in a median of 2,579 tokens, with every item anchored to its sentence, against 25,698 to read the five articles: 90% less. Then the hypothesis: the more content there is, the more it compresses, because the graphs reuse each other. Tested on this site's 70 articles, it fails for the graphs no one curated (928 node labels, 908 of them unique) and holds for the one a Cartographer merged (114 concept mentions, 45 concepts, the last article reusing 25 and adding one). Projected to 100,000 articles, a curated index is 150 to 2,700 times smaller than the corpus, and a question costs about 13,000 tokens whatever the size, while search reads 59,000 and finds 2% of what is there. Compression is earned by curation, and curation is the work worth paying for. So the economic model: today the agent pays to process the raw web and guesses at its meaning; a publisher that serves meaning, a projection fitted to the agent's persona and objective, and claims signed with an expiry date, saves the agent more than it charges. The agent pays not to pay. This article lays out the arithmetic, the payment rails that exist, and what it does not yet prove.</em></p>
+<figure class="shot" data-shot="ar-layers.webp" data-dir="images/" data-alt="What five articles became, in tokens. The full catalogue is nearly three times the size of the articles, because every item carries its sentence. An agent does not load it whole: asking about one concept, it loads a median of 2,579 tokens of anchored graph instead of 25,698 of prose."><figcaption>What five articles became, in tokens. The full catalogue is nearly three times the size of the articles, because every item carries its sentence. An agent does not load it whole: asking about one concept, it loads a median of 2,579 tokens of anchored graph instead of 25,698 of prose.</figcaption></figure>
+<p><a href="one-article-five-readers.html">One article, five readers</a> ended with a list of what to do next, and with one question it did not ask. It counted what the five readers produced and what they cost: about 1.1 million tokens for five articles. It did not ask who would pay for that, or why.</p>
+<p>This article is the answer I have been circling in my voice memos for a few weeks, and I think it is a big one. The readers of this site are increasingly not people. They are agents, sent by people. Today, an agent that reads the web pays to process all of it, and then guesses at what it means. What the five readers build is the thing that makes that reading cheap: an index of meaning, with provenance, that gets more efficient as it gets larger. A reader that saves money by using it will pay for it, not out of goodwill but because paying is cheaper than not paying. That is an economic model, and in this article I try to put numbers on it.</p>
+<p>The data comes from the <a href="https://sgit.ai/demos/vaults/article-views/index.html">Article Views vault</a>, cloned with its published read key, and from the source of this site's 70 articles. Tokens are estimated at four characters each, the same way for every layer, so the ratios are fair even where the absolute numbers are approximate. The model and its outputs are published as <a href="data/the-agent-is-the-reader__model.json">data</a>.</p>
+<h2>In short</h2>
+<ul>
+<li><b>The graph looks big, and it is.</b> The Librarian's catalogue of five articles is 72,000 tokens against 25,700 for the articles: 2.8 times larger, because every one of its 662 items carries the sentence it came from. That is an index with provenance. It is not meant to be loaded whole.</li>
+<li><b>What an agent loads is small.</b> For each of the topic's 45 concepts, the graph's answer (the concept, its edges and every anchored item behind them) is a median of 2,579 tokens. Reading the five articles is 25,698. That is 90% less, and the graph's answer comes with citations the prose does not have.</li>
+<li><b>The readers check each other, and knowing when to stop matters.</b> The Librarian found 32 problems in published articles, at about 12,600 tokens each; the Cartographer sent back 37 corrections, at 7,100 each; the Historian found one systematic error, for 154,000. Each pass verifies the one before, and the third cost twenty times more per finding than the first two, which is why the roles have limits.</li>
+<li><b>Compression with scale is real, but only where someone curates.</b> This site's 70 per-article graphs have 928 node labels, 908 of them unique: no reuse, no compression. The topic the Cartographer merged has 114 concept mentions over 45 concepts, and new concepts per article fell 17, 11, 5, 11, 1.</li>
+<li><b>Projected to 100,000 articles,</b> a curated concept index is 150 to 2,700 times smaller than the corpus, depending on how fast new concepts slow down. A question about a mid-frequency concept costs about 13,000 tokens at any size. Search reads 59,000, and at that size sees 2% of the articles that mention it.</li>
+<li><b>This is PageRank with meaning.</b> Google won by extracting crude meaning from links. A textbook PageRank over this site's own links puts two articles that only cite each other at the top. Typed edges, each citing the sentence it rests on, say what the link means.</li>
+<li><b>The agent pays not to pay.</b> If a publisher saves an agent more tokens than it charges, paying is rational. Building the graph cost about 220,000 tokens an article and saves about 23,000 per question, so an article's graph pays for itself after about ten questions about it.</li>
+<li><b>Two more things can be sold.</b> A projection fitted to the agent's persona and objective, so the agent gets the slice it needs. And a signed claim: a cryptographic statement that this site still stands behind a sentence as of a date, with an expiry, renewed for a fee.</li>
+<li><b>The rails exist.</b> HTTP 402 payments in stablecoins moved to a Linux Foundation project in April 2026; Stripe charges agents per request; this site's reading meter charges people by the share of a page they read. What is missing is the demand, and the demand comes from the saving.</li>
+</ul>
+<h2 id="layers">What five articles became</h2>
+<p>The five readers turned five articles into layers. Measured in tokens:</p>
+<div class="tablewrap"><table>
+<tr><th>Layer</th><th>Who made it</th><th>Tokens</th><th>Against the articles</th></tr>
+<tr><td>The five articles</td><td>the Journalist</td><td>25,698</td><td>1.0×</td></tr>
+<tr><td>Catalogue, full JSON, 662 items</td><td>Librarian</td><td>72,152</td><td>2.8×</td></tr>
+<tr><td>Catalogue, statements only</td><td>Librarian</td><td>18,891</td><td>0.74×</td></tr>
+<tr><td>Anchors, the sentences items came from</td><td>Librarian</td><td>16,979</td><td>0.66×</td></tr>
+<tr><td>Decks, 45 slides</td><td>Storyteller</td><td>13,011</td><td>0.51×</td></tr>
+<tr><td>Article ontologies, five</td><td>Cartographer</td><td>10,088</td><td>0.39×</td></tr>
+<tr><td>Topic ontology, 45 concepts and 78 edges</td><td>Cartographer</td><td>8,262</td><td>0.32×</td></tr>
+<tr><td>Historian notes, five</td><td>Historian</td><td>2,990</td><td>0.12×</td></tr>
+<tr><td>Concept index, one line per concept</td><td>Cartographer</td><td>1,818</td><td>0.07×</td></tr>
+<tr><td>Two-minute versions, five</td><td>Explainer</td><td>1,753</td><td>0.07×</td></tr>
+<tr><td>Edge list, subject verb object</td><td>Cartographer</td><td>678</td><td>0.03×</td></tr>
+</table></div>
+<p>Two things are true at once. The full graph is larger than the text, and it should be: the catalogue is a promise that every claim, number and question in the articles can be found, with the exact sentence it came from. And almost every useful way of reading it is much smaller than the text. The concept index that tells an agent what the five articles are about is 7% of them. The edge list that says how the ideas connect is 3%.</p>
+<p>For the economics, the question that matters is not how big the graph is. It is how much an agent has to load to answer a question. So I measured it, for every concept. For each of the 45, the graph's answer is the concept index (to find it), the concept's own entry, every edge that touches it, and every catalogue item those cite, each as its one-line statement and its anchor. The alternative is the prose: either the articles the concept appears in, if the agent somehow knows which, or all five.</p>
+<div class="tablewrap"><table>
+<tr><th>Route to an answer about one concept</th><th>Median tokens</th><th>Range</th></tr>
+<tr><td>The graph: concept, edges, anchored items</td><td><b>2,579</b></td><td>2,147 to 4,027</td></tr>
+<tr><td>Read the articles it appears in (if you know which)</td><td>10,617</td><td>up to 25,698</td></tr>
+<tr><td>Read all five articles</td><td>25,698</td><td></td></tr>
+</table></div>
+<p>Against reading everything, the graph saves between 84% and 92% on every one of the 45 concepts, with a median of 90%. Against reading only the right articles, which an agent cannot know without an index, the median saving is 78%. And the graph's answer is better as well as cheaper: every statement arrives with its anchor, so the agent can quote and cite without a second pass. The same shape appeared in <a href="the-bridge-followed-to-the-end.html">the bridge, followed to the end</a>, where a routing agent's question was answered from the story's graph in 583 tokens, against about 45,000 for searching and reading.</p>
+<h2 id="loop">The readers check each other</h2>
+<p>The part of the five readers' run I like best is the part we did not design. To anchor every item, the Librarian had to read every sentence, and it found a total that did not add up, a list shorter than its count, and a claim the article never supported: 32 flags in published articles. The Cartographer, building the ontology from those catalogues, sent the Librarian 37 corrections: claims that were really three claims, a method the article calls a proposal. And the Historian caught the Cartographer out: its "new" concepts were new to the five articles, not to the site.</p>
+<figure class="shot" data-shot="ar-loop.webp" data-dir="images/" data-alt="The readers check each other. Each pass is a verification of the one before: 12,600 tokens per flag for the Librarian, 7,100 per correction for the Cartographer, 154,000 for the Historian&#x27;s one systematic catch. The loop is worth running; it is also worth stopping."><figcaption>The readers check each other. Each pass is a verification of the one before: 12,600 tokens per flag for the Librarian, 7,100 per correction for the Cartographer, 154,000 for the Historian's one systematic catch. The loop is worth running; it is also worth stopping.</figcaption></figure>
+<p>Making the map turned out to be the verification. That matters for the economics in two ways. First, it is part of what a buyer gets: a graph whose items have been read against their source by one agent, and against each other by another, is worth more than a summary. Second, it has a cost curve. The first two passes found 69 problems between them, at under 13,000 tokens each; the third found one, valuable, at 154,000. Run the loop again on the same articles, and the yield will fall further. That is why every role has a failure sentence, a word limit and a stopping rule, and why the next step is to make the stopping rule a number: stop a pass when it costs more per finding than the finding is worth.</p>
+<p>(The loop also caught something in this site's own writing, while this article was being prepared. One article, five readers said the 1.1 million tokens were "most of it the Cartographer", and its own table says the five Librarians used 403,000 and the Cartographer 264,000. That sentence is now corrected, and the correction is in the article's version history.)</p>
+<h2 id="compress">Does it compress as it grows?</h2>
+<p>The hypothesis from my voice memo was that the more content there is, the more it compresses, because the graphs reuse each other: each new article adds fewer new concepts and more connections, so the index grows more slowly than the corpus. If that is true, the economics improve with scale, which is the opposite of what happens to an agent reading raw text, where more content means more context, more cost, more latency and more missed.</p>
+<p>I tested it on this site's 70 articles, from 17 August to today, using two kinds of graph. And the honest answer is that I was half right.</p>
+<p><b>The graphs no one curated do not compress.</b> Every article on this site has its own small graph, written with the article. Across the 70, they have 928 node labels, and after lower-casing and stripping punctuation, 908 are unique. Each article names its ideas in its own words, and nothing merges them. The tags are no better: 672 tag uses, 320 distinct tags, and new tags per article have not fallen: 4.4 per article in the first half of the site's life, 4.7 in the second. Left alone, the index grows at least as fast as the corpus.</p>
+<p><b>The graph a Cartographer curated does.</b> The topic ontology for the five articles on behaviour policies has 114 concept mentions over 45 concepts, each concept used in 2.5 articles on average. New concepts per article, in date order, fell 17, 11, 5, 11, 1; the last article reused 25 and introduced one. That is the reuse the hypothesis needs, and it exists only because the Cartographer merged five names for the same method into one.</p>
+<p>So the hypothesis holds for the curated layer and fails for the rest. Compression with scale is not a property of graphs. It is a property of curation. And that makes the economic argument stronger, not weaker, because curation is exactly the work that someone has to do, and can be paid for.</p>
+<figure class="shot" data-shot="ar-scale.webp" data-dir="images/" data-alt="Projected from 5 to 100,000 articles. The corpus grows in a straight line. An uncurated index grows with it. A curated index grows more slowly, at a rate fitted on five articles and shown as a band. The cost of a question flattens in the graph and rises, or loses recall, in the prose."><figcaption>Projected from 5 to 100,000 articles. The corpus grows in a straight line. An uncurated index grows with it. A curated index grows more slowly, at a rate fitted on five articles and shown as a band. The cost of a question flattens in the graph and rises, or loses recall, in the prose.</figcaption></figure>
+<p>To see what that means at scale, I fitted the growth of the curated concepts to the usual curve for vocabularies, where the number of distinct terms grows as the corpus size raised to a power below one. On five articles, the power comes out at 0.62. That is too few points to trust, so the projection uses a band from 0.5 to 0.75. With the site's average article of 5,914 tokens, and the measured 40 tokens per concept in the index:</p>
+<div class="tablewrap"><table>
+<tr><th>Articles</th><th>Corpus tokens</th><th>Curated index, against the corpus</th><th>Uncurated, against the corpus</th><th>A question in the graph</th><th>Search, top ten</th><th>What search sees</th></tr>
+<tr><td>5</td><td>29,600</td><td>13× to 19× smaller</td><td>11×</td><td>2,900</td><td>11,800</td><td>all of it</td></tr>
+<tr><td>70</td><td>414,000</td><td>24× to 70×</td><td>11×</td><td>11,700</td><td>23,700</td><td>all of it</td></tr>
+<tr><td>1,000</td><td>5.9 million</td><td>47× to 266×</td><td>11×</td><td>12,400</td><td>29,600</td><td>all of it</td></tr>
+<tr><td>10,000</td><td>59 million</td><td>84× to 841×</td><td>11×</td><td>12,900</td><td>59,100</td><td>20%</td></tr>
+<tr><td>100,000</td><td>591 million</td><td>150× to 2,660×</td><td>11×</td><td>12,900</td><td>59,100</td><td>2%</td></tr>
+</table></div>
+<p>The question is about a mid-frequency concept, one that appears in 0.5% of the articles. The graph's answer is the agent's slice of the index (its persona's 250 nearest concepts), the concept and its edges, and up to 40 anchored items, with counts of the rest. Search reads the ten best-ranked articles in full. Both are assumptions, and they are in the data file. The shape is not an assumption. As the corpus grows, the curated index falls further behind it, the cost of a question in the graph stops growing, and an agent that reads prose either pays in proportion to the corpus or reads a shrinking share of what is there.</p>
+<h2 id="meaning">Meaning, not just compression</h2>
+<p>Compression is not the whole of it. Google's insight with PageRank was that links carry meaning: a page that many pages point to is probably important. It was crude, it missed a great deal, and it worked, because a crude signal of meaning across the whole web beat raw text.</p>
+<p>A textbook PageRank over this site's own article links shows both halves. The most-linked articles are the ones you would expect: Fractal Semantic Graphs and Six agents, one inbox, with 21 inbound links each, and Every risk is already accepted and Footprint and blast radius, with 20. But the top two places go to two articles that cite only each other: a loop that traps the rank. The link says "related". It does not say how.</p>
+<p>The Cartographer's edges do. <code>enforces</code>, <code>undermines</code>, <code>replaces</code>, <code>depends-on</code>, <code>evidences</code>: 24 verbs, each with its inverse, each edge citing the catalogue items it rests on. An agent that follows one knows what the connection is, and which sentence proves it; the topic ontology adds which article introduced each concept. That is the difference between a web of links and a web of meaning. It is also why what the readers produce is not a compressed copy of the article. It is the article's argument, made addressable.</p>
+<h2 id="personas">Agents are personas too</h2>
+<p>This site already serves people as someone rather than as nobody. Readers build <a href="pay-to-keep-your-persona.html">personas</a> from what they read, and <a href="a-link-to-a-persona.html">a link can land someone as a persona</a>: a CISO, as a CISO. The step I am arguing for here is small. An agent is a reader with a persona too, and usually with a sharper one, because it arrives with an objective.</p>
+<p>A CISO's agent asking whether its company's coding agents need behaviour policies does not need 70 articles. It needs the slice of the graph around reach, mandate, barrier and boundary, at the altitude of a decision, with the anchored claims and their dates. A service that builds that slice once, for that persona and that objective, and keeps it current, is doing the work the agent would otherwise do badly and expensively on every visit. That is what the persona is worth to an agent: not personalisation as a courtesy, but a smaller, better context.</p>
+<p>There is a connection here to the most expensive thing agents do to themselves. When a long session runs out of room, the model summarises its own context to keep going, and <a href="re-anchoring-agent-behaviour-policies.html">re-anchoring</a> is about what that loses: the rules. That summary is compression done without knowing what matters: best effort, with no feedback, and no one maintaining it. The session that runs this site has been through it twice this week, and both times it was the re-anchored policy, not the summary, that brought the rules back. What the readers do is the same operation done the other way round: compression with context, curated, checked by a second reader, kept up to date, with provenance on every item. The first is free and lossy. The second is worth paying for.</p>
+<h2 id="economics">The agent pays not to pay</h2>
+<p>Today the economics of agent reading run one way. The agent, or the company behind it, pays to fetch, parse and tokenise the raw page, and then pays again to work out what it means, every time, on every site. <a href="token-bill-nobody-is-sending.html">The token bill nobody is sending</a> put numbers on the first half: 16,000 fetches a week of one small publisher's pages, a markdown twin 62% cheaper than the HTML on this site, and a proposal that providers share the saving. This article is about the second half, the meaning, which is larger.</p>
+<p>The rule is simple. An agent pays a fee F for a graph answer if F is less than what it would have spent without it: the token price times the tokens saved, plus whatever the better answer is worth. For the five articles, the saving is about 23,000 tokens per question against reading them. At the list prices used in the token bill article, $1 and $2 per million input tokens, that is $0.02 to $0.05 a question. Small, and the whole point of micropayments is that small adds up.</p>
+<figure class="shot" data-shot="ar-money.webp" data-dir="images/" data-alt="The agent pays not to pay. The fee is a share of the tokens it saves; the publisher&#x27;s cost is building and maintaining the graph; the price passes through to whoever the agent works for; and a signed claim is a second product, with an expiry date that makes it a subscription."><figcaption>The agent pays not to pay. The fee is a share of the tokens it saves; the publisher's cost is building and maintaining the graph; the price passes through to whoever the agent works for; and a signed claim is a second product, with an expiry date that makes it a subscription.</figcaption></figure>
+<p>Three numbers make it a business rather than a gesture:</p>
+<ul>
+<li><b>Break-even.</b> Building the graph cost about 220,000 tokens an article in the five readers' run, most of it the five Librarians and the Cartographer. At 23,000 tokens saved per question, an article's graph pays for itself after about ten questions about it, whatever the token price, because both sides are in tokens. And the cost per article falls as the site ontology settles, and each new article only has to map onto it.</li>
+<li><b>At scale.</b> At 100,000 articles, a question saves about 46,000 tokens against searching and reading the top ten. Per thousand agent questions, that is $46 to $93 of the agent's money not spent, and a 30% share of it is $14 to $28 to the publisher.</li>
+<li><b>Volume.</b> One small publisher's site saw 16,000 agent fetches in a week. If even a fraction of those became paid graph answers, the publisher would have a revenue line that grows with being read, instead of a bandwidth bill.</li>
+</ul>
+<p>The payment rails are no longer the obstacle. <a href="https://eco.com/support/en/articles/14839402-x402-protocol-explained">x402</a>, which turns HTTP's 402 Payment Required status into a stablecoin payment, mostly in USDC, was moved by Coinbase into a Linux Foundation project in April 2026. Stripe <a href="https://forklog.com/en/stripe-unveils-payments-for-ai-agents-using-usdc-and-x402-protocol/">previewed charging agents</a> per request on it in February. Cloudflare's pay per crawl and pay per use, covered in the token bill article, price the fetch. And for people, this site's <a href="pay-after-you-read.html">reading meter</a> already charges by the share of a page read, after the reader says what it was worth. What is missing is demand, and the demand has to come from the saving. Few will pay a site out of fairness, at the scale of millions of agent requests. They will pay when it is cheaper than the alternative, the way anyone buys a service they could, in principle, do themselves.</p>
+<h3 id="passthrough">The price passes through</h3>
+<p>The fee does not have to be uniform, and it does not stay with the agent. An agent works for someone, and the cost of what it reads is part of what it charges them, the way a research service passes on the cost of its data. That means the graph's price can reflect its source. A graph built from a financial daily's reporting, the Financial Times for example, will cost more than one from a local paper or a blog, and it should. The other direction holds too: one person who is the expert on a narrow field can charge a great deal for a graph of their work, because an agent that needs it has nowhere cheaper to get it. Price follows value, and value is measured in what the agent would otherwise spend, and what a wrong answer would cost the person it works for.</p>
+<h2 id="claims">Signed claims, with an expiry date</h2>
+<p>There is a second product, and it may be the larger one. When somebody takes a claim from this site and uses it, in a report, a filing, or an agent's answer to a client, they are relying on it. Today they have no way to ask whether the site still stands behind it.</p>
+<p>A signed claim is that question, answered and made portable. The publisher's agent re-reads the claim against its anchor and its sources, and if it still holds, returns a statement signed with the publisher's key: this claim, this sentence, this hash of the source, true as we understand it on 11 October 2026, and we vouch for it until 11 April 2027. After the expiry the signature still verifies, but it no longer says what the publisher thinks now; to keep it fresh, you ask again. <a href="rfc-0001-public-key-cryptography-for-sgit.html">RFC 0001</a> sets out the two ways this site could add the public-key cryptography that makes the signature checkable.</p>
+<p>The expiry is what makes it an economic product rather than a badge. Claims age: a number gets revised, a vendor changes its terms, a study is retracted. A publisher that re-checks a claim every quarter and signs it is doing work, and the people who rely on the claim are the ones who benefit, so they pay. The price can follow the claim: one about the date a bridge reopens is cheap and short-lived; one a regulator will read is worth more, and for longer. And the expiry is, quietly, the same idea as RiskMandate's acceptance with an interval: a statement is trusted for a stated period by a named party, and then it has to be renewed.</p>
+<h2 id="wikipedia">What would Wikipedia do?</h2>
+<p>For me, the organisation best placed to test this is Wikipedia. It is the source agents read most. Its editors already do the Librarian's and the Cartographer's work by hand: citations on every claim, categories, links that mean something. And it already sells reliability at scale to the largest re-users, through Wikimedia Enterprise, an API with guarantees. What this model adds is two things: selling the meaning, a typed and anchored graph of what the encyclopedia says, to every agent per question rather than to a few platforms per contract; and making the price a share of what the agent saves. If Wikipedia did this, the equation for the commons would change, from a cost carried by donors to a revenue line that grows with the reading. It is the same equation for every site with content worth reading, and a small site can start on its own pages, as this one has.</p>
+<h2 id="limits">What this does not show</h2>
+<ul>
+<li><b>Tokens are estimated.</b> Four characters per token, the same rule for every layer. The ratios are fair; the absolute numbers would move a little with a real tokenizer.</li>
+<li><b>The projection rests on five articles.</b> The curated growth rate is fitted on five points, which is why it is shown as a band. The topic was also unusually tight. A site-wide ontology across 70 articles is the real test, and it is the next step from One article, five readers anyway.</li>
+<li><b>The query model is a model.</b> The persona slice of 250 concepts, the cap of 40 items, and search reading the top ten in full are assumptions, and different ones move the numbers. They are in the data file, to be changed.</li>
+<li><b>The saving is measured on our side.</b> What an answer engine actually spends on our pages is in its logs, not ours, as the token bill article said. The publisher's half of the experiment is running; the provider's half is not.</li>
+<li><b>No agent has paid yet.</b> The rails exist, and the arithmetic works on paper. Demand is the open question, and the only way to answer it is to offer the graph and see whether agents take it.</li>
+<li><b>Signed claims are a design.</b> The key infrastructure is an RFC, not a release.</li>
+</ul>
+<h2 id="next">What comes next</h2>
+<ol>
+<li><b>Build the site altitude.</b> One ontology across all 70 articles, so the reuse test can be run on a real corpus rather than five articles, and so "new" means new.</li>
+<li><b>Publish an agent's door.</b> Today the door is <a href="../llms.txt">/llms.txt</a> and a markdown twin of every page. The next one is a page per persona that tells an agent how to navigate the graph, with the concept index, the edge list and the anchors as plain files, and the cost of each in tokens in the header.</li>
+<li><b>Price one question.</b> Put a graph answer behind a 402 response at a fraction of a cent, and count how many agents pay rather than read.</li>
+<li><b>Sign one claim.</b> Pick ten claims from the five articles, re-check them, sign them with an expiry, and publish the signatures so that anyone can verify them.</li>
+<li><b>Measure the stopping rule.</b> Run a second Librarian pass applying the Cartographer's feedback, and record the tokens per finding, to see where the loop stops paying.</li>
+</ol>
+<p>The articles stay long; the readers make them findable; and the hypothesis that started this, that the work should pay for itself because it saves the reader money, is now a set of numbers that anyone can check. If you publish something agents read, and you want to try selling them the meaning rather than the page, let's talk: <a href="mailto:agent@riskmandate.ai">agent@riskmandate.ai</a>.</p>
+<h2 id="sources">Where this comes from</h2>
+<p>A voice memo of mine. I asked an agent in a separate Claude session to run the numbers and draft this article with its figures and data; this site's agent then rewrote it in the voice of this site, softened two figures' wording, and corrected the sentence in One article, five readers that the work turned up. The argument is mine, and so is the editorial responsibility. The layer, query and reuse measurements are computed from the <a href="https://sgit.ai/demos/vaults/article-views/index.html">Article Views vault</a>, cloned with its published read key, and from this site's article sources and graphs as of 11 October 2026. The projection and the economics are a model, and every assumption is in the <a href="data/the-agent-is-the-reader__model.json">data file</a>. The payment rails come from secondary sources, using only the facts several of them agree on: <a href="https://eco.com/support/en/articles/14839402-x402-protocol-explained">x402 protocol explained</a> (Linux Foundation, April 2026) and <a href="https://forklog.com/en/stripe-unveils-payments-for-ai-agents-using-usdc-and-x402-protocol/">Stripe's machine payments preview</a> (February 2026); and <a href="https://enterprise.wikimedia.com/">Wikimedia Enterprise</a>. On this site: <a href="one-article-five-readers.html">One article, five readers</a>, <a href="token-bill-nobody-is-sending.html">The token bill nobody is sending</a>, <a href="the-bridge-followed-to-the-end.html">The bridge, followed to the end</a>, <a href="pay-to-keep-your-persona.html">Pay to keep your persona</a>, <a href="a-link-to-a-persona.html">A link to a persona</a>, <a href="pay-after-you-read.html">Pay after you read</a>, <a href="re-anchoring-agent-behaviour-policies.html">Re-anchoring</a>, <a href="rfc-0001-public-key-cryptography-for-sgit.html">RFC 0001</a>, <a href="introducing-fractal-semantic-graphs.html">Fractal Semantic Graphs</a>, <a href="memory-is-not-a-spectator-sport.html">Memory is not a spectator sport</a> and <a href="future-of-news-story-vault-not-paywall.html">The future of news is the story vault</a>.</p>
+<sg-meter view="page" kind="article" date="2026-10-11" topics="news-and-evidence startups-and-strategy" title="The agent is the reader: why agents will pay for graphs, personas and signed claims, because it is cheaper than not paying, SGit Newsroom"></sg-meter>
+<section class="athreads" id="threads">
+ <h2>Threads</h2>
+ <p class="athreads-meta"><span class="tchip">News &amp; evidence</span><span class="tchip">Startups &amp; strategy</span> <a href="graphs.html#the-agent-is-the-reader">This article as a graph &rarr;</a></p>
+ <div class="athreads-cols"><div><h3>Builds on</h3><ul><li><a href="one-article-five-readers.html">One article, five readers: a librarian, a cartographer, a historian, an explainer and a storyteller read the same piece</a> <span class="dim">Write the article first, then send five agent readers through it: a catalogue, an ontology and maps, the arc, two minutes, and a deck.</span></li><li><a href="the-bridge-followed-to-the-end.html">The bridge, followed to the end: what one local story is worth when it is kept as a graph</a> <span class="dim">A bridge closure simulated on a story vault: newsworthy on 5 days, needed on 57, used by three readers, four buyers and an agent, and paid back to its sources.</span></li><li><a href="pay-to-keep-your-persona.html">Pay to keep your persona: readers should pay because it helps them, not because they feel they should</a> <span class="dim">Readers should pay because it helps them: a persona with a name and a graph, several for focus, and one that follows you between devices.</span></li><li><a href="a-link-to-a-persona.html">A link to a persona: send people to the newsroom as someone, not as nobody</a> <span class="dim">Send a CISO to the newsroom as a CISO: personas kept in a vault by the newsroom's agents, opened from a link, followed or forked.</span></li><li><a href="re-anchoring-agent-behaviour-policies.html">Re-anchoring: keeping an agent's rules alive through every summary, and a canary that shows when they are not</a> <span class="dim">Summaries keep under 2% of a long session. Re-anchoring prints the agent's rules back after each one; a canary report shows it is working.</span></li><li><a href="token-bill-nobody-is-sending.html">Sixteen thousand fetches, ten clicks, and a token bill nobody is sending: the case for paying publishers to be easy to read</a> <span class="dim">AI answer engines pay to read the web as HTML; a publisher who serves markdown, dates, hashes and a typed graph saves them tokens and should get a share.</span></li><li><a href="pay-after-you-read.html">Pay after you read: how a reading meter became a working business model in one afternoon, one release at a time</a> <span class="dim">Seven releases in one afternoon turned the reading meter into a working model: pay after you read, and the rating sets the price.</span></li><li><a href="rfc-0001-public-key-cryptography-for-sgit.html">RFC 0001: two ways to add public-key cryptography to sgit, and the questions we want you to answer</a> <span class="dim">A Request for Comments: two key pairs so a reader cannot write, sealed files only named people can open, and fourteen questions for reviewers.</span></li><li><a href="introducing-fractal-semantic-graphs.html">Fractal Semantic Graphs: everything connects to everything, and nobody has to share a schema</a> <span class="dim">A fractal semantic graph has no privileged level and no single schema: each world keeps its own vocabulary and connects to others through named edges.</span></li><li><a href="memory-is-not-a-spectator-sport.html">Memory is not a spectator sport: how a web of open sites, graphs and vaults became the memory for sessions like this one</a> <span class="dim">Agentic memory as context management: many published, fractal, provenance-carrying memories rather than one store, shown in the session that wrote the article.</span></li><li><a href="future-of-news-story-vault-not-paywall.html">The future of news is the story vault, not the paywall</a> <span class="dim">A story is a graph of claims and evidence and the article is one projection of it; keep the graph in a vault and sell what the article was made from.</span></li></ul></div></div>
+ <p class="small dim"><a href="index.html">All articles</a> &middot; <a href="graphs.html">All graphs</a></p>
+</section>
+<aside class="lkit" aria-label="For LinkedIn"><b>Posting this article on LinkedIn?</b> The cover is <a href="banners/the-agent-is-the-reader.jpg" download>the-agent-is-the-reader.jpg</a> (1920&times;1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page.</aside>
+ <p class="subteaser"><b>Want the next issue by email.</b> One issue a week or so: what was published, what it adds up to, and what is worth your time. <a class="cta2" href="../subscribe/index.html">Subscribe to the SGit Newsroom &rarr;</a></p>
+ <p class="small dim" style="margin-top:2rem"><a href="index.html">&larr; All articles</a></p>
+</main>
+<script>
+(function () {
+ fetch('../assets/shots.js?v=v0.7.45')
+ .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+ .then(function (t) { (0, eval)(t); })
+ .catch(function (e) { console.error('[shots] component failed to load:', e); });
+}());
+</script>
+<script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": "https://buy.stripe.com/6oUfZ9ez65vVgU2fY15os04"}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
+<script>
+import('../assets/components/sg-meter/v1/v1.4/v1.4.0/sg-meter.js?v=v0.7.45')
+ .catch(function (e) { console.error('[sg-meter] component failed to load:', e); });
+</script>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="netline"><a href="https://sgit.ai" style="display:inline;padding:0"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://pt.newsroom.sgit.ai" style="display:inline;padding:0">&#8593; pt.newsroom.sgit.ai</a> &middot; <a href="https://graphs.sgit.ai" style="display:inline;padding:0">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai" style="display:inline;padding:0">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai" style="display:inline;padding:0">&#8593; nhi.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai" style="display:inline;padding:0">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../admin/versions.html">v0.7.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="the-agent-is-the-reader.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../index.html">&#8594; The front page</a>
+    <a href="../articles/index.html#all">Every article</a>
+    <a href="../articles/newsletter/index.html">The newsletter</a>
+    <a href="../articles/collections/index.html">Collections</a>
+    <a href="../articles/desk/index.html">From the desk</a>
+    <a href="../articles/graphs.html">As graphs</a>
+    <a href="../subscribe/index.html">Subscribe</a>
+    <a href="../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../account/index.html">Your reading account</a>
+    <a href="../account/newsroom.html">Your newsroom</a>
+    <a href="../account/personas.html">Your personas</a>
+    <a href="../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../newsroom/index.html">How the newsroom runs</a>
+    <a href="../newsroom/policies.html">Behaviour policies</a>
+    <a href="../newsroom/publish.html">How to publish</a>
+    <a href="../newsroom/board.html">The board</a>
+    <a href="../newsroom/log.html">The run log</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../design/index.html">The design, and what runs</a>
+    <a href="../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../corrections/index.html">Corrections must propagate</a>
+    <a href="../provenance/index.html">Provenance is the product</a>
+    <a href="../economics/index.html">Paying the fact creator</a>
+    <a href="../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../replicate/index.html">Replicate this newsroom</a>
+    <a href="../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+    <a href="../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../archive/index.html">The archive</a>
+    <a href="../network/index.html">The network</a>
+    <a href="../admin/versions.html">Release history</a>
+    <a href="../admin/index.html">Admin &amp; engineering</a>
+    <a href="../about/participant.html">Where we lose</a>
+    <a href="../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+
+<script>
+(function(){var R=document.documentElement.getAttribute('data-root')||'';var V='?v=' + 'v0.7.45';var C=[R,'','../','/'].filter(function(v,i,a){return a.indexOf(v)===i});
+function wait(ms){return new Promise(function(res){var t=Date.now();(function p(){if(window.sg)return res(window.sg);if(Date.now()-t>ms)return res(null);setTimeout(p,60)})()})}
+function grab(sg,p){return new Promise(function(res){(async function(){if(sg&&sg.vfs&&sg.vfs.readText){try{var t=await sg.vfs.readText(p);if(t)return res(t)}catch(e){}}try{var r=await fetch(p+V);if(r.ok)return res(await r.text())}catch(e){}res(null)})()})}
+async function css(sg){for(var i=0;i<C.length;i++){var p=C[i]+'assets/newsroom.css';if(sg&&sg.loadCss){try{await sg.loadCss(p);return}catch(e){}}var t=await grab(sg,p);if(t){var s=document.createElement('style');s.textContent=t;document.head.appendChild(s);return}}}
+async function js(sg,name){name=name||'assets/site.js';for(var i=0;i<C.length;i++){var p=C[i]+name;if(sg&&sg.loadJs){try{await sg.loadJs(p);return}catch(e){}}var t=await grab(sg,p);if(t){try{(0,eval)(t)}catch(e){console.error('[site] js failed',name,e)}return}}}
+async function boot(){var inVault=false;try{inVault=(window!==window.parent)||location.protocol==='blob:'}catch(e){inVault=true}
+var sg=inVault?await wait(2500):null;window.__sgitBoot={roots:C,grab:function(p){return grab(sg,p)},version:V};await css(sg);await js(sg);document.documentElement.classList.add('ready');try{window.parent&&window.parent.postMessage({type:'sg-app-ready'},'*')}catch(e){}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+var mine=V.slice(3),last=0;
+function fresh(){if(location.hostname!=='sgit.ai'||Date.now()-last<60000)return;last=Date.now();
+fetch('/version.txt?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(t){t=(t||'').trim();if(!/^v[0-9]+[.][0-9]+[.][0-9]+$/.test(t)||t===mine)return;
+var k='sgit.fresh:'+location.pathname;try{if(sessionStorage.getItem(k)===t)return;sessionStorage.setItem(k,t)}catch(e){}
+var u=new URL(location.href);u.searchParams.set('v',t);location.replace(u.href)}).catch(function(){})}
+try{var u=new URL(location.href);if(u.searchParams.get('v')===mine){u.searchParams.delete('v');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}
+fresh();addEventListener('pageshow',function(e){if(e.persisted){last=0;fresh()}});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')fresh()});
+})();
+</script>
+</body>
+</html>

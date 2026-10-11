@@ -1,0 +1,164 @@
+{
+  "slug": "authority-outside-the-model",
+  "teaser": "Satya Nadella's seven principles for models as insider risks, answered one by one: what we run, what is design, and the five things the list leaves out.",
+  "topics": [
+    "agents-and-policy"
+  ],
+  "core_idea": "Treating models as insider risks is right, and each of the seven principles maps to something this network runs, publishes or plans, but the principles work only with the column they leave thin: authority written down before the agent runs, a mandate compared with the footprint, risk belonging to one deployment rather than a model, a named owner and expiry for what is left, recoverability beyond the brake, and decisions made in advance as envelopes.",
+  "nodes": [
+    {
+      "id": "post",
+      "label": "Models as insider risks",
+      "kind": "artefact",
+      "summary": "Nadella's post: separate the supply of intelligence from the authority over it; seven principles."
+    },
+    {
+      "id": "enforcer",
+      "label": "The enforcer test",
+      "kind": "concept",
+      "summary": "A control bounds a grant only if enforced by something the grant does not include."
+    },
+    {
+      "id": "second-reader",
+      "label": "A second reader the agent cannot skip",
+      "kind": "method",
+      "summary": "Code checks first, a different model with less context, fail closed, log every verdict."
+    },
+    {
+      "id": "owner",
+      "label": "Same code, different owner",
+      "kind": "claim",
+      "summary": "Whether a check is a setting or a boundary depends on who owns its installation."
+    },
+    {
+      "id": "evidence",
+      "label": "Evidence the writer cannot edit",
+      "kind": "method",
+      "summary": "Vault history, append lanes, hashed ledgers, the connector twin."
+    },
+    {
+      "id": "mandate",
+      "label": "The mandate is the missing column",
+      "kind": "claim",
+      "summary": "Observation says what happened; only a written mandate says whether it was allowed."
+    },
+    {
+      "id": "near-miss",
+      "label": "Footprint in the gap is a near miss",
+      "kind": "concept",
+      "summary": "Countable long before anything breaks; the number worth disclosing."
+    },
+    {
+      "id": "deployment",
+      "label": "Risk belongs to a deployment",
+      "kind": "claim",
+      "summary": "The same model is harmless in one setup and serious in another."
+    },
+    {
+      "id": "recoverability",
+      "label": "A brake does not undo",
+      "kind": "claim",
+      "summary": "Containment needs a list of what can and cannot be reversed."
+    },
+    {
+      "id": "maturity",
+      "label": "Honest maturity",
+      "kind": "artefact",
+      "summary": "What runs, what is published as design, what is only argued, principle by principle."
+    }
+  ],
+  "edges": [
+    {
+      "from": "enforcer",
+      "to": "post",
+      "rel": "answers"
+    },
+    {
+      "from": "second-reader",
+      "to": "post",
+      "rel": "answers"
+    },
+    {
+      "from": "owner",
+      "to": "second-reader",
+      "rel": "extends"
+    },
+    {
+      "from": "evidence",
+      "to": "post",
+      "rel": "answers"
+    },
+    {
+      "from": "mandate",
+      "to": "post",
+      "rel": "extends"
+    },
+    {
+      "from": "near-miss",
+      "to": "mandate",
+      "rel": "depends-on"
+    },
+    {
+      "from": "deployment",
+      "to": "post",
+      "rel": "contrasts"
+    },
+    {
+      "from": "recoverability",
+      "to": "post",
+      "rel": "extends"
+    },
+    {
+      "from": "maturity",
+      "to": "post",
+      "rel": "answers"
+    }
+  ],
+  "links": {
+    "articles": [
+      "ultimate-insider-three-collisions",
+      "a-second-reader-the-agent-cannot-skip",
+      "why-my-agents-do-not-run-on-my-laptop",
+      "the-infographic-bake-off",
+      "one-article-five-readers",
+      "the-agent-team-as-it-runs",
+      "where-the-vault-keys-live",
+      "re-anchoring-agent-behaviour-policies",
+      "connector-twin-before-you-deploy-an-agent",
+      "footprint-and-blast-radius",
+      "hope-or-enforcement",
+      "green-does-not-mean-live",
+      "the-investigation-github-owes-its-customers",
+      "every-risk-is-already-accepted",
+      "riskmandate-ten-questions",
+      "how-to-run-synthetic-users"
+    ],
+    "pages": [
+      "/demos/vaults/connector-twin/index.html",
+      "/demos/vaults/hope-or-enforcement/index.html"
+    ],
+    "sites": [
+      "https://snscratchpad.com/posts/models-as-insider-risks/",
+      "https://abp.sgit.ai/",
+      "https://abp.sgit.ai/model/barriers/index.html",
+      "https://riskmandate.ai/",
+      "https://riskmandate.ai/plug.html",
+      "https://riskmandate.ai/licence-to-operate.html",
+      "https://riskmandate.ai/grant-gap.html"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "Observation tells you what an agent did. It cannot tell you whether the agent was allowed to, unless somebody wrote down what it was for before it ran.",
+      "why": "The missing column, in two sentences."
+    },
+    {
+      "text": "Containment without recoverability is a brake on a car with no reverse gear.",
+      "why": "Why the brake is not enough."
+    },
+    {
+      "text": "once you know exactly how little you have to trust it, you can let it do a great deal more.",
+      "why": "The irony, as the answer to his last line."
+    }
+  ]
+}
