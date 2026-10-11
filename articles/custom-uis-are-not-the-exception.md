@@ -209,6 +209,8 @@ Graphs & knowledgeAgents & policy[This article as a graph →](graphs.md#custom-
 
 [All articles](index.md) · [All graphs](graphs.md)
 
+Article No. 19 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=19)
+
 ## From the desk
 
 - [Thinking with a Wardley map](collections/wardley-maps.md) collection, 6 articles

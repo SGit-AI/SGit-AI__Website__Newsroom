@@ -102,6 +102,7 @@ def picker_page(ps):
 
 <h2>Send someone a link</h2>
 <p>Each persona has an address of its own, such as <code>https://{HOST}/persona/founder/</code>, and <b>Copy link</b> on a card copies it. The same persona can be named after a <code>#</code>, as in <code>https://{HOST}/persona/#founder</code>. The part after the <code>#</code> stays in the reader&rsquo;s browser; the page it opens is the same static page. The full list, with each persona&rsquo;s name, description and starting articles, is <a href="links.json">links.json</a>.</p>
+<p>To send someone particular articles instead, with a note, <a href="{up}for/make.html">make a reading list</a>.</p>
 <p>This is the first step of <a href="{up}articles/a-link-to-a-persona.html">a link to a persona</a>. The personas are the five starting ones in the reading meter, which are also on <a href="{up}account/personas.html">your personas</a>.</p>
 """
     agent = (f"Persona links, with each persona's name, description and starting articles, are in https://{HOST}/persona/links.json. "
@@ -123,6 +124,7 @@ def links(ps, by_slug, version):
         "release": version,
         "picker": f"https://{HOST}/persona/",
         "how": f"https://{HOST}/articles/a-link-to-a-persona.html",
+        "reading_lists": f"https://{HOST}/for/make.html",
         "note": "Opening a link adds the persona to the reader's browser as a visitor, which they can keep or remove. "
                 "The persona is stored in their browser, and the link does not identify them.",
         "personas": [{

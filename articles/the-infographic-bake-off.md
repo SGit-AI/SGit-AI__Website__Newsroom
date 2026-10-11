@@ -139,6 +139,8 @@ Site & engineeringNews & evidence[This article as a graph →](graphs.md#the-inf
 
 [All articles](index.md) · [All graphs](graphs.md)
 
+Article No. 63 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=63)
+
 **Posting this article on LinkedIn?** The cover is [the-infographic-bake-off.jpg](banners/the-infographic-bake-off.jpg) (1920×1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page.
 
 **Want the next issue by email.** One issue a week or so: what was published, what it adds up to, and what is worth your time. [Subscribe to the SGit Newsroom →](../subscribe/index.md)

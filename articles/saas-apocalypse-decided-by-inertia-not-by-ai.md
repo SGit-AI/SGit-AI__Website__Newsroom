@@ -131,6 +131,8 @@ Startups & strategy[This article as a graph →](graphs.md#saas-apocalypse-decid
 
 [All articles](index.md) · [All graphs](graphs.md)
 
+Article No. 9 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=9)
+
 ## From the desk
 
 - [Thinking with a Wardley map](collections/wardley-maps.md) collection, 6 articles

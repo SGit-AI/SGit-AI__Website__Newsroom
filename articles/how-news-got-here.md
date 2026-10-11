@@ -158,6 +158,8 @@ News & evidence[This article as a graph →](graphs.md#how-news-got-here)
 
 [All articles](index.md) · [All graphs](graphs.md)
 
+Article No. 16 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=16)
+
 ## From the desk
 
 - [Local news, kept as evidence](collections/local-news-kept-as-evidence.md) collection, 6 articles

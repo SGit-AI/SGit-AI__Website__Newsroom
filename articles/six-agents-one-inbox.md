@@ -184,6 +184,8 @@ Agents & policy[This article as a graph →](graphs.md#six-agents-one-inbox)
 
 [All articles](index.md) · [All graphs](graphs.md)
 
+Article No. 17 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=17)
+
 ## From the desk
 
 - [Create anywhere, edit your own: a rule learned in the inbox, applied to the newsroom](desk/create-anywhere-edit-your-own.md) thread, 2026-10-07

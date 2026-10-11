@@ -143,6 +143,8 @@ Agents & policyVaults & method[This article as a graph →](graphs.md#the-wall-u
 
 [All articles](index.md) · [All graphs](graphs.md)
 
+Article No. 25 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=25)
+
 ## From the desk
 
 - [What the human brings](collections/what-the-human-brings.md) collection, 4 articles

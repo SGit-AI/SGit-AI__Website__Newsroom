@@ -163,6 +163,8 @@ Graphs & knowledgeAgents & policy[This article as a graph →](graphs.md#ai-base
 
 [All articles](index.md) · [All graphs](graphs.md)
 
+Article No. 36 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=36)
+
 ## From the desk
 
 - [Behaviour policy in practice](collections/behaviour-policy-in-practice.md) collection, 11 articles

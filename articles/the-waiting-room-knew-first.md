@@ -158,6 +158,8 @@ News & evidenceVaults & method[This article as a graph →](graphs.md#the-waitin
 
 [All articles](index.md) · [All graphs](graphs.md)
 
+Article No. 49 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=49)
+
 ## From the desk
 
 - [Local news, kept as evidence](collections/local-news-kept-as-evidence.md) collection, 6 articles

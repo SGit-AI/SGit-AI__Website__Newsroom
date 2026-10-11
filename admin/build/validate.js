@@ -28,6 +28,10 @@
 //      brought in from sgit.ai still hashes to what it recorded, once this site's own
 //      nav, footer and version stamp are set aside. The brief's rule, "do not edit moved
 //      content on the new side, or the two will drift", as a check.
+//  12. the article numbers hold — every published article has a number in articles/ids.json,
+//      numbers and addresses are unique, a number is never reused, and no number that was in
+//      the last commit has moved. A link written today names articles by these numbers and
+//      has to open the same list in a year.
 // Any failure exits 1: no tag, no publish.
 'use strict';
 const fs   = require('fs');
@@ -402,6 +406,53 @@ try {
   }
 }
 
+// --- 12. the article numbers hold ---------------------------------------------
+// A reading list in a link (/for/#r=61,44,70) names articles by number, so the number is the
+// contract: assigned once, in the order articles were first published, never changed, never
+// reused. admin/build/ids.py keeps the file; this reads it as a stranger would.
+{
+  const idsPath = path.join(ROOT, 'articles/ids.json');
+  const graphsPath = path.join(ROOT, 'articles/graphs.json');
+  if (fs.existsSync(graphsPath)) {
+    if (!fs.existsSync(idsPath)) errors.push('articles/ids.json is missing; run admin/build/ids.py');
+    else {
+      const doc = JSON.parse(fs.readFileSync(idsPath, 'utf8'));
+      const entries = doc.articles || [];
+      const live = JSON.parse(fs.readFileSync(graphsPath, 'utf8')).articles.map(a => a.slug);
+      const byN = new Map(), bySlug = new Map();
+      for (const e of entries) {
+        if (!Number.isInteger(e.n) || e.n < 1) errors.push(`articles/ids.json: ${e.slug}: "${e.n}" is not a number from 1`);
+        if (byN.has(e.n)) errors.push(`articles/ids.json: number ${e.n} is given to both ${byN.get(e.n)} and ${e.slug}`);
+        if (bySlug.has(e.slug)) errors.push(`articles/ids.json: ${e.slug} has two numbers`);
+        byN.set(e.n, e.slug); bySlug.set(e.slug, e.n);
+      }
+      for (const slug of live) if (!bySlug.has(slug)) errors.push(`articles/ids.json: ${slug} has no number; run admin/build/ids.py`);
+      for (const e of entries) {
+        if (!live.includes(e.slug) && !e.withdrawn) errors.push(`articles/ids.json: ${e.slug} is no longer published and is not marked withdrawn`);
+        if (live.includes(e.slug) && e.withdrawn) errors.push(`articles/ids.json: ${e.slug} is published and marked withdrawn`);
+      }
+      const top = Math.max(0, ...entries.map(e => e.n));
+      if (!(doc.next > top)) errors.push(`articles/ids.json: "next" (${doc.next}) is not above the highest number (${top}); a number would be reused`);
+      // Against the last commit: no number moved, none dropped. In CI the working tree is the commit,
+      // so this compares with its parent; before a commit it compares with HEAD.
+      const prior = ref => { try {
+        return JSON.parse(execFileSync('git', ['-C', ROOT, 'show', `${ref}:articles/ids.json`], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }));
+      } catch (e) { return null; } };
+      const same = JSON.stringify(entries.map(e => [e.n, e.slug]));
+      let base = prior('HEAD');
+      if (base && JSON.stringify((base.articles || []).map(e => [e.n, e.slug])) === same) base = prior('HEAD^') || base;
+      if (base) {
+        for (const e of base.articles || []) {
+          const now = bySlug.get(e.slug);
+          if (now === undefined) errors.push(`articles/ids.json: number ${e.n} (${e.slug}) was in the last release and is gone`);
+          else if (now !== e.n) errors.push(`articles/ids.json: ${e.slug} was number ${e.n} in the last release and is now ${now}`);
+        }
+        if (doc.next < (base.next || 0)) errors.push(`articles/ids.json: "next" went down from ${base.next} to ${doc.next}`);
+      }
+    }
+  }
+}
+
 // --- report ---------------------------------------------------------------
 if (errors.length) {
   console.error(`validate: ${errors.length} error(s)`);
@@ -411,4 +462,4 @@ if (errors.length) {
 console.log(`validate: OK — ${VERSION} on ${HOST}, ${htmlFiles.length} pages, ` +
             `${hubs.length} hubs in llms.txt, sitemap agrees, links resolve, blocks balanced, ` +
             `every page carries an agent block, provenance blocks sourced, no redacted material, ` +
-            `no key-shaped strings, the imported newsroom unedited`);
+            `no key-shaped strings, the imported newsroom unedited, the article numbers hold`);

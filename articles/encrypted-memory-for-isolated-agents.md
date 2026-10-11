@@ -392,6 +392,8 @@ Vaults & methodAgents & policySite & engineering[This article as a graph →](gr
 
 [All articles](index.md) · [All graphs](graphs.md)
 
+Article No. 48 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=48)
+
 **Posting this article on LinkedIn?** The cover is [encrypted-memory-for-isolated-agents.jpg](banners/encrypted-memory-for-isolated-agents.jpg) (1920×1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page.
 
 **Want the next issue by email.** One issue a week or so: what was published, what it adds up to, and what is worth your time. [Subscribe to the SGit Newsroom →](../subscribe/index.md)

@@ -246,6 +246,21 @@ site was read as a stranger would read it.
 - **Test**: `admin/build/test_meter.mjs`, sgit.ai's meter test extended for all of the above (Playwright;
   skips when it is not installed).
 
+## 11 October, v0.8.0: reading lists in a link
+
+Part one of [From me to you, in a link](../../articles/a-reading-list-in-a-link.html), built as the brief says.
+
+- **A number for every article** (`articles/ids.json`, `admin/build/ids.py`): assigned once, in publication order, never
+  changed or reused, with a gate (check 12). The import prints the number at the foot of each article through a
+  recorded rule (item 12 in `sync_newsroom.py`).
+- **`/for/`** opens a list from the part of the link after the `#`; **`/for/make.html`** makes and previews one, reading
+  its own link back through the recipient's parser. The code is `for/reading-list.js` and `for/make.js`, tested by
+  `admin/build/test_lists.mjs`. A list opens as a visitor persona (named "Steve's list, from Dinis") using the meter's
+  existing public calls, so there is no new meter version.
+- **Not done**: the synthetic recipient the brief asks for, which needs a model and a browser run together; signed
+  lists; paying for someone else's reading. The agent brief (part two) belongs to the RiskMandate agent: it needs
+  `articles/ids.json` and the link format on `/for/`.
+
 ## Things for Dinis
 
 1. **A contact for pilots** (finding 1). It needs an address and a commitment, and I would rather not choose

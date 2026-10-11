@@ -149,6 +149,8 @@ Agents & policyStartups & strategy[This article as a graph →](graphs.md#an-age
 
 [All articles](index.md) · [All graphs](graphs.md)
 
+Article No. 37 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=37)
+
 ## From the desk
 
 - [Behaviour policy in practice](collections/behaviour-policy-in-practice.md) collection, 11 articles

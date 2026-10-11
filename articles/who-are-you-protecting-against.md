@@ -143,6 +143,8 @@ Agents & policyStartups & strategy[This article as a graph →](graphs.md#who-ar
 
 [All articles](index.md) · [All graphs](graphs.md)
 
+Article No. 44 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=44)
+
 ## From the desk
 
 - [How agents decide, and when they stop](collections/how-agents-decide.md) collection, 6 articles

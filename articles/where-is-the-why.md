@@ -183,6 +183,8 @@ Agents & policy[This article as a graph →](graphs.md#where-is-the-why)
 
 [All articles](index.md) · [All graphs](graphs.md)
 
+Article No. 39 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=39)
+
 ## From the desk
 
 - [How agents decide, and when they stop](collections/how-agents-decide.md) collection, 6 articles

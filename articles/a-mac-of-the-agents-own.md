@@ -267,6 +267,8 @@ Startups & strategyAgents & policyVaults & method[This article as a graph →](g
 
 [All articles](index.md) · [All graphs](graphs.md)
 
+Article No. 52 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=52)
+
 **Posting this article on LinkedIn?** The cover is [a-mac-of-the-agents-own.jpg](banners/a-mac-of-the-agents-own.jpg) (1920×1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page.
 
 **Want the next issue by email.** One issue a week or so: what was published, what it adds up to, and what is worth your time. [Subscribe to the SGit Newsroom →](../subscribe/index.md)

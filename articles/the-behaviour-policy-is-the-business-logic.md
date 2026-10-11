@@ -335,6 +335,8 @@ Agents & policy[This article as a graph →](graphs.md#the-behaviour-policy-is-t
 
 [All articles](index.md) · [All graphs](graphs.md)
 
+Article No. 38 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=38)
+
 ## From the desk
 
 - [Behaviour policy in practice](collections/behaviour-policy-in-practice.md) collection, 11 articles

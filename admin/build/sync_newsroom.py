@@ -53,6 +53,10 @@ What changes on the way in, and nothing else:
      link open the newsroom as a named persona. Only the dynamic import() of the component is
      re-pointed; code samples on the docs page are text and stay as they are. If sgit.ai moves to
      another version, the import stops: v1.4.0 has to be re-based on it deliberately.
+  12. Each article carries its number ("No. 65"), small, under "All articles / All graphs", with a link to make a
+     reading list starting from it. The numbers are assigned once and never change (admin/build/ids.py,
+     articles/ids.json); the import calls it before it writes a page. The line is added to the article's page
+     and to its markdown twin, and the import stops if the place it goes is not there exactly once.
 
 Scripts, styles, components and /.well-known/sgit-subscribe.json are copied byte for byte.
 The brief requires it twice: a published component path never changes, and the subscribe
@@ -77,6 +81,9 @@ import subprocess
 import sys
 from pathlib import Path
 from urllib.parse import urlsplit, urlunsplit
+
+sys.path.insert(0, str(Path(__file__).parent))
+import ids  # noqa: E402
 
 ROOT     = Path(__file__).resolve().parents[2]
 HOST     = (ROOT / "CNAME").read_text().strip()               # newsroom.sgit.ai
@@ -117,6 +124,28 @@ def apply_text_overrides(text, dest_file, kind):
         text = text.replace(find, o["with"][kind])
         APPLIED.add((o["id"], dest_file))
     return text
+
+
+NUMBERS = {}          # slug -> article number, filled by main() from admin/build/ids.py
+NUMBER_HTML = '<p class="small dim"><a href="index.html">All articles</a> &middot; <a href="graphs.html">All graphs</a></p>'
+NUMBER_MD   = "[All articles](index.md) \u00b7 [All graphs](graphs.md)"
+
+
+def numbered(text, dest_file, kind):
+    m = re.fullmatch(r"articles/([^/]+)\.(html|md)", dest_file)
+    if not m or m.group(1) not in NUMBERS:
+        return text
+    n = NUMBERS[m.group(1)]
+    anchor = NUMBER_HTML if kind == "html" else NUMBER_MD
+    if text.count(anchor) != 1:
+        sys.exit(f"sync: {dest_file}: the place an article's number goes is in the page {text.count(anchor)} times, not "
+                 f"once. sgit.ai changed the foot of its articles, so this rule is stale (item 12 in the docstring)")
+    if kind == "html":
+        line = (f'\n <p class="small dim">Article No. {n} &middot; '
+                f'<a href="../for/make.html#r={n}">start a reading list with it</a></p>')
+    else:
+        line = f"\n\nArticle No. {n} \u00b7 [start a reading list with it](https://{HOST}/for/make.html#r={n})"
+    return text.replace(anchor, anchor + line)
 
 
 def own_meter(text, dest_file):
@@ -423,6 +452,7 @@ def transform(text, src_file, dest_file, kind):
             # One front page at two addresses names one canonical address: the root.
             text = re.sub(r'(<link rel="canonical" href=")[^"]*(")', rf'\1https://{HOST}/\2', text, count=1)
             text = re.sub(r'(<meta property="og:url" content=")[^"]*(")', rf'\1https://{HOST}/\2', text, count=1)
+        text = numbered(text, dest_file, "html")
         text = apply_text_overrides(text, dest_file, "html")
     elif kind == "md":
         text = MD_LINK.sub(lambda m: m.group(1) + rewrite_url(m.group(2), src_file, dest_file) + m.group(3), text)
@@ -432,6 +462,7 @@ def transform(text, src_file, dest_file, kind):
         # that generated the file, not this site's. (index.md gets this site's own stamp appended.)
         text = re.sub(r'\u00b7 site (v\d+\.\d+\.\d+) \u00b7 this file is generated',
                       lambda m: f'\u00b7 sgit.ai {m.group(1)} \u00b7 this file is generated', text)
+        text = numbered(text, dest_file, "md")
         text = apply_text_overrides(text, dest_file, "md")
     return text
 
@@ -474,6 +505,7 @@ def main():
     if not (src / "articles/index.html").exists() or not (src / "admin/build/build_pages.py").exists():
         sys.exit(f"sync: {src} is not a checkout of the sgit.ai website")
 
+    NUMBERS.update(ids.assign(src))
     previous = json.loads(RECORD.read_text())["files"] if RECORD.exists() else {}
     files, problems = {}, []
     moved = plan(src)

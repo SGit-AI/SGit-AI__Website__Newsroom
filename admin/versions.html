@@ -12,7 +12,7 @@
 
 <nav class="site"><div class="row">
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.7.2</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.8.0</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -25,6 +25,7 @@
       <a class="sl" href="../articles/desk/index.html">From the desk</a>
       <a class="sl" href="../articles/graphs.html">As graphs</a>
       <a class="sl" href="../persona/index.html">Read as a persona</a>
+      <a class="sl" href="../for/make.html">Make a reading list</a>
       <a class="sl" href="../subscribe/index.html">Subscribe</a>
       </div>
     </div>
@@ -124,6 +125,18 @@
 <div class="tablewrap"><table class="vers">
   <thead><tr><th>Version</th><th>Date</th><th>What shipped</th></tr></thead>
   <tbody>
+    <tr>
+      <td class="vnum">v0.8.0</td>
+      <td>11 Oct 2026</td>
+      <td><b>Reading lists in a link, a number for every article, and a page to make and preview them.</b>
+        <p><b>The brief.</b> <a href="../articles/a-reading-list-in-a-link.html">From me to you, in a link</a> asks the newsroom for part one: a page that opens a reading list from one person to another, a stable number for every article, and a page to make a list. This is that, as written, with the pieces below.</p>
+        <p><b>A list opens.</b> <a href="../for/index.html">/for/</a> reads the part of the address after the <code>#</code>, which a browser does not send to the server: <code>from</code> and <code>to</code> (two first names), <code>r</code> (articles to read, in order), <code>s</code> (worth a look), <code>f</code> (a persona to follow, or a collection as <code>c:how-agents-decide</code>), <code>n</code> (a note) and <code>e</code> (the sender&rsquo;s address, which turns on a Reply button; without it there is none). It checks every part: names are letters, spaces, hyphens and apostrophes up to 40 characters, numbers must exist, a list holds 1 to 50 articles, and anything malformed is dropped and listed under &ldquo;Left out&rdquo;. Names and notes are drawn as text, never as markup. For the recipient the list is the page: &ldquo;For Steve, from Dinis&rdquo;, the note, <b>Start reading</b>, then each article with its number, title, teaser, date, reading time and price, and what to follow. It is also added to their personas as a visitor named &ldquo;Steve&rsquo;s list, from Dinis&rdquo;, with the articles as its reading list, which they can keep or remove in one tap; opening it charges nothing, and opening the same link again does not add a second one. With no list in the link the page explains what a reading list is and shows an example.</p>
+        <p><b>A page makes and previews one.</b> <a href="../for/make.html">/for/make.html</a>: search the articles by title, topic or number, filter by topic or persona, put each in <b>Read</b> or <b>Look</b>, order them with the arrows or by dragging, type the two names, an optional note and reply address, tick what to follow, and copy the link. The preview is the real page: the list is turned into a link, the link is read back by the parser the recipient&rsquo;s page uses, and that is drawn, so anything the page would leave out is left out and said. <b>Open as the recipient</b> opens it in a new tab; <b>Edit an existing link</b> loads a link, including one an agent built, back into the form. The list in progress is kept in the page&rsquo;s own address, so it can be bookmarked, and the number at the foot of every article starts a list with that article in it. The page runs in the browser and sends nothing.</p>
+        <p><b>A number for every article.</b> <a href="../articles/ids.json">articles/ids.json</a> gives each of the 74 articles a number, assigned once in the order they were first published (the article&rsquo;s date, then the order sgit.ai first added it) and never changed or reused; a new article takes the next. An article withdrawn would keep its number and say so. Only <code>n</code> and <code>slug</code> are the contract: title, teaser, topics, the personas whose starting list holds it and the reading time are refreshed on each build. The number is printed small at the foot of every article and its markdown twin, under &ldquo;All articles &middot; All graphs&rdquo;, by a recorded rule of the import, which stops if sgit.ai changes that line. The release gate has a twelfth check: every article has a number, numbers and addresses are unique, <code>next</code> is above the highest, and no number that was in the last commit has moved or gone. I tried each of those by breaking the file. <code>llms.txt</code> describes the link format and the file for an agent.</p>
+        <p><b>Not built, and said so.</b> A signed list, so the sender can be proved, and paying for someone else&rsquo;s reading are listed on <a href="../shipped/index.html">what runs</a> as designed. The names in a link are whatever the link says, and nothing counts who opened one. The brief also asks for a synthetic recipient, a founder called Steve on a phone and a laptop; I could not run that here, so it is not done, and the page says the tests so far are scripted.</p>
+        <p><b>Checked.</b> <code>admin/build/test_lists.mjs</code> passes 65 checks: the parser against the real numbers (valid links, each kind of malformed field, an oversized list, names with markup, unknown numbers, broken percent-encoding), then in Chromium a recipient (the example link opens, becomes a visitor persona, Keep, Remove, a second list, the reply button only with an address, a note with markup shown as text and running nothing) and a sender (the page makes the link, ordering changes it, the preview matches what the link opens, an existing link loads, the limit of 50, search and filters, Copy link), and no sideways scroll at 390px on every new page. The meter test and the release gate pass.</p>
+      </td>
+    </tr>
     <tr>
       <td class="vnum">v0.7.2</td>
       <td>11 Oct 2026</td>
@@ -583,7 +596,7 @@
     <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="netline"><a href="https://sgit.ai" style="display:inline;padding:0"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://pt.newsroom.sgit.ai" style="display:inline;padding:0">&#8593; pt.newsroom.sgit.ai</a> &middot; <a href="https://graphs.sgit.ai" style="display:inline;padding:0">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai" style="display:inline;padding:0">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai" style="display:inline;padding:0">&#8593; nhi.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai" style="display:inline;padding:0">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.7.2</a> &middot; <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.8.0</a> &middot; <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>The newsroom</h4>

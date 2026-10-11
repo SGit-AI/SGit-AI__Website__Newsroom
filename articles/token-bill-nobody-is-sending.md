@@ -185,6 +185,8 @@ News & evidenceGraphs & knowledge[This article as a graph →](graphs.md#token-b
 
 [All articles](index.md) · [All graphs](graphs.md)
 
+Article No. 15 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=15)
+
 **Posting this article on LinkedIn?** The cover is [token-bill-nobody-is-sending.jpg](banners/token-bill-nobody-is-sending.jpg) (1920×1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page.
 
 **Want the next issue by email.** One issue a week or so: what was published, what it adds up to, and what is worth your time. [Subscribe to the SGit Newsroom →](../subscribe/index.md)

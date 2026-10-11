@@ -220,6 +220,14 @@ def shipped(f):
         ('<b>The reading meter</b>', 'Pence per page by how far you read, from a balance in your browser that '
          'can go below zero. Personas, your own newsroom, and a reading share you can send us.',
          'An honesty box, not a paywall: a reader can change their own balance.'),
+        ('<b>Reading lists in a link</b>', 'A link from one person to another that opens the newsroom as a list: the articles to read '
+         'in order, a few worth a look, and what to follow, with a note and a Reply button if the sender gives an address. The '
+         'names and article numbers are in the part after the #, so they stay in the browser. The list becomes a persona the '
+         'reader can keep or remove. <a href="../for/make.html">A page makes and previews one</a>, and every article has a '
+         'number that is never changed or reused (<a href="../articles/ids.json">ids.json</a>). '
+         '<a href="../for/index.html">How a link is made</a>.',
+         'The names are whatever the link says: there is no way yet to prove who sent a list, and nothing counts who opened one. '
+         'The page that makes a list is tested with a script, not yet with a synthetic recipient on a phone.'),
         ('<b>Links to a persona</b>', 'A link opens the newsroom as one of five starting personas (founder, journalist, '
          'security lead, AI builder, board member), with its picks, reading list and graph. The persona is added to '
          'the reader&rsquo;s browser as a visitor, which they can keep or remove. <a href="../persona/index.html">The '
@@ -243,6 +251,8 @@ def shipped(f):
     designed = ([
         ('<b>Payment</b>', 'The &pound;5 top-up page works and its payment link is not set. Until it is, no money moves.'),
     ] if not f["paying"] else []) + [
+        ('<b>Signed reading lists</b>', 'A list whose sender can be proved, on the keys of RFC 0001. Designed, not built.'),
+        ('<b>Paying for someone else&rsquo;s reading</b>', 'A sender covering what a recipient reads from a list. Designed, not built.'),
         ('<b>Personas in a vault</b>', 'Personas kept by the newsroom&rsquo;s agents in an encrypted vault, a reader '
          'following one or forking it, and private personas for one person. Designed, not built.'),
         ('<b>Selling the graph</b>', 'Graphs are published free. Nothing sells one.'),
@@ -259,6 +269,9 @@ def shipped(f):
          'Only if you choose to share it, below.'),
         ('<b>A reading share</b>', 'To the list agent, encrypted in your browser to that agent&rsquo;s key.',
          'When you press send. The page shows every word first, and you can copy it instead.'),
+        ('<b>A reading list link</b>', 'The names, the note and the article numbers are in the part of the address after the #, '
+         'which a browser keeps to itself. If the recipient presses Reply, their email program opens addressed to the sender, if the '
+         'sender gave an address.', 'When someone opens or makes a list.'),
         ('<b>Subscribing</b>', 'Your address goes, encrypted in your browser to the list agent&rsquo;s key, to a '
          'write-only lane.', 'When you subscribe.'),
         ('<b>A top-up</b>', 'To Stripe, on Stripe&rsquo;s own page. Stripe collects your email, the name on the card, '

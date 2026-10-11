@@ -161,6 +161,8 @@ Startups & strategyVaults & method[This article as a graph →](graphs.md#the-de
 
 [All articles](index.md) · [All graphs](graphs.md)
 
+Article No. 33 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=33)
+
 ## From the desk
 
 - [Thinking with a Wardley map](collections/wardley-maps.md) collection, 6 articles

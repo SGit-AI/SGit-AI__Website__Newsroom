@@ -20,6 +20,7 @@ Live site: https://newsroom.sgit.ai (GitHub Pages, deployed from `dev`).
 - `replicate/`: what someone can copy today to run a newsroom like this (`hubs.py`).
 - `shipped/`: what runs, what is designed, dated (`hubs.py`).
 - `persona/`: a link that opens the newsroom as a persona, one page each, and `links.json` (`admin/build/personas.py`).
+- `for/`: a reading list in a link, and the page that makes and previews one (`admin/build/lists.py`; the code is `for/reading-list.js` and `for/make.js`). `articles/ids.json`: a stable number for every article (`admin/build/ids.py`).
 - `archive/`: the index of everything archived (`admin/build/archive.py`, whose `GROUPS`
   table decides what is archived and why).
 - `world-news-day/`: a running instance, built by its own `world-news-day/build/`.
@@ -92,17 +93,19 @@ own provenance chain would refute the site on page one.
 1. Bump `admin/build/version.txt` (vX.Y.Z, exactly once per release) and add a row to
    `admin/versions.html`.
 2. `python3 admin/build/sync_newsroom.py --from <checkout of SGit-AI/SGit-AI__Website>`:
-   re-import the newsroom (only when sgit.ai has published since the last sync).
+   re-import the newsroom (only when sgit.ai has published since the last sync). It numbers any new article first
+   (`admin/build/ids.py`, `articles/ids.json`) and prints each article's number at its foot.
 3. Section builders, if their data or prose changed: `governance/build/build.py`,
    `world-news-day/build/build.py`, and so on, each followed by its own `gates.py`.
-4. `python3 admin/build/hubs.py`: the design, replicate and shipped pages. `python3 admin/build/personas.py`: the
-   persona pages and `persona/links.json`.
+4. `python3 admin/build/ids.py`: refresh `articles/ids.json` (the numbers never change). `python3 admin/build/hubs.py`:
+   the design, replicate and shipped pages. `python3 admin/build/personas.py`: the persona pages and
+   `persona/links.json`. `python3 admin/build/lists.py`: the reading list pages (`for/`).
 5. `python3 admin/build/archive.py`: the archive notes and the archive index.
 6. `python3 admin/build/chrome.py`: nav, footer and version on every page, plus `llms.txt`
    and `index.md`.
 7. `python3 admin/build/gen_sitemap.py` and `python3 admin/build/gen_llms_full.py`.
-8. `node admin/build/validate.js`, and, when the meter or the persona pages changed, `node admin/build/test_meter.mjs` (a
-   browser test; it needs Playwright and skips without it).
+8. `node admin/build/validate.js`, and, when the meter, the persona pages or the reading lists changed, `node admin/build/test_meter.mjs` and
+   `node admin/build/test_lists.mjs` (browser tests; they need Playwright and skip without it).
 9. `git commit -am "site vX.Y.Z: ..." && git push origin dev`
 
 Running steps 4 to 7 twice changes nothing; if a second run writes files, something is wrong.

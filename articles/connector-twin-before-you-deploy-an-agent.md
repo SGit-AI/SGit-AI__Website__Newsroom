@@ -199,6 +199,8 @@ Agents & policyVaults & method[This article as a graph →](graphs.md#connector-
 
 [All articles](index.md) · [All graphs](graphs.md)
 
+Article No. 12 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=12)
+
 ## From the desk
 
 - [Behaviour policy in practice](collections/behaviour-policy-in-practice.md) collection, 11 articles

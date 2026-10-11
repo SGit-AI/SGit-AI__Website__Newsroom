@@ -52,8 +52,9 @@ def meter_block(up, title):
             f" .catch(function (e) {{ console.error('[sg-meter] component failed to load:', e); }});\n</script>\n")
 
 
-def newsroom_page(rel, title, description, body, *, eyebrow="", crumbs=(), lead="", agent=""):
-    """rel is the page's path from the site root; crumbs is ((label, path-from-root), ...)."""
+def newsroom_page(rel, title, description, body, *, eyebrow="", crumbs=(), lead="", agent="", wide=False, head=""):
+    """rel is the page's path from the site root; crumbs is ((label, path-from-root), ...). `wide` uses the
+    newsroom's wide column (main.doc.wide); `head` is extra markup for the <head>, such as a stylesheet."""
     up = "../" * rel.count("/")
     canonical = f"https://{HOST}/" + ("" if rel == "index.html" else rel)
     trail = " / ".join([f'<a href="{up}index.html">Home</a>']
@@ -75,10 +76,10 @@ def newsroom_page(rel, title, description, body, *, eyebrow="", crumbs=(), lead=
 <meta property="og:image" content="https://{HOST}/og/default.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="{up}assets/newsroom.css">
-</head>
+{head}</head>
 <body>
 <nav class="site"></nav>
-<main class="doc">
+<main class="doc{" wide" if wide else ""}">
  <p class="crumb">{trail}</p>
  {f'<p class="eyebrow">{eyebrow}</p>' if eyebrow else ''}
  <h1>{esc(title)}</h1>

@@ -196,6 +196,8 @@ Site & engineeringVaults & method[This article as a graph →](graphs.md#no-serv
 
 [All articles](index.md) · [All graphs](graphs.md)
 
+Article No. 72 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=72)
+
 **Posting this article on LinkedIn?** The cover is [no-server-by-design.jpg](banners/no-server-by-design.jpg) (1920×1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page.
 
 **Want the next issue by email.** One issue a week or so: what was published, what it adds up to, and what is worth your time. [Subscribe to the SGit Newsroom →](../subscribe/index.md)

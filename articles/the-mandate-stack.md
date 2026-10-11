@@ -374,6 +374,8 @@ Agents & policyGraphs & knowledge[This article as a graph →](graphs.md#the-man
 
 [All articles](index.md) · [All graphs](graphs.md)
 
+Article No. 34 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=34)
+
 ## From the desk
 
 - [The week to 7 October: the agent team, written up from the inside](desk/the-week-to-7-october.md) the week, 2026-10-07

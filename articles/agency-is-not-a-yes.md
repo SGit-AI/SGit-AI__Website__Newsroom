@@ -152,6 +152,8 @@ Agents & policyGraphs & knowledge[This article as a graph →](graphs.md#agency-
 
 [All articles](index.md) · [All graphs](graphs.md)
 
+Article No. 46 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=46)
+
 ## From the desk
 
 - [Range is the feature, so the stop has to be designed](desk/range-is-the-feature-so-the-stop-is-designed.md) thread, 2026-10-08

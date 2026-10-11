@@ -6,7 +6,7 @@
 > propagate; provenance is the product; pay the person who found the fact), and everything
 > needed to run a newsroom like it.
 
-Site version: v0.7.2 (10 October 2026). Published by the sgit project, which is building
+Site version: v0.8.0 (10 October 2026). Published by the sgit project, which is building
 the stack this site argues for; participant disclosure at /about/participant.html.
 Content CC BY 4.0 unless a page states otherwise; code Apache 2.0.
 
@@ -88,6 +88,13 @@ current, running or planned.
   security, builder, board). The persona is added to the reader's browser as a visitor they can keep or remove.
   /persona/links.json lists every link with the persona's name, description and starting articles, for whoever
   is writing to someone; /persona/#<id> names a persona after the #, which stays in the browser
+- /for/index.html: A READING LIST IN A LINK, from one person to another: /for/#from=Dinis&to=Steve&r=65,60,62&s=66&f=founder.
+  r = articles to read in order, s = worth a look, f = a persona id or c:<collection>, n = a note, e = the sender's
+  address for a Reply button; the names and numbers are in the part after the #, which stays in the browser. The page
+  checks every field, drops what is malformed and says so, and opens the list as a visitor persona the reader can keep
+  or remove. /for/make.html makes and previews a link in the browser. THE NUMBERS are /articles/ids.json: one stable
+  number per article, assigned once in the order they were published and never changed or reused; each article shows
+  its number at its foot. An agent drafts a list and the email; the person sends it
 
 ### Your account (kept in the reader's browser; nothing is sent unless the reader sends it)
 - /account/index.html: the reading account: balance, history, receipts
