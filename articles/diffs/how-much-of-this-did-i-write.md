@@ -2,7 +2,7 @@
 
 > The changes to the article "How much of this did I write? The numbers behind twenty articles in four weeks, and what the input actually was" between two published versions, paragraph by paragraph, with insertions and deletions marked.
 
-*Source: <https://newsroom.sgit.ai/articles/diffs/how-much-of-this-did-i-write.html> · site v0.7.39 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/diffs/how-much-of-this-did-i-write.html> · sgit.ai v0.7.40 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 

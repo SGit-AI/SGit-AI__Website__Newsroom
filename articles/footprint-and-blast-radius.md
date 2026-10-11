@@ -2,7 +2,7 @@
 
 > RiskMandate's Agent Behaviour Policy is written before an agent runs, in four words: reach, mandate, gap and barriers. This article proposes two more. The footprint is what the agent actually did, read afterwards from logs, traffic and vault history, with nobody inline and no production access needed. Compared with the mandate it gives two kinds of finding: footprint in the gap, which is a near miss, and dormant mandate, which is a check that never ran or a mandate that asked for too much. Read on its own it gives the mandate as practised, a policy reverse-engineered from evidence. Blast radius is the measure that goes with any of them: what it would cost the business if a row of the reach were used in full, today. The same footprint can carry a different blast radius on different days, which is why a near miss on an empty table and an incident on a full one are the same row in the record. One figure carries the whole argument: the gap as a map, each row shaded by what it would cost and marked if there is no way back.
 
-*Source: <https://newsroom.sgit.ai/articles/footprint-and-blast-radius.html> · site v0.7.39 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/footprint-and-blast-radius.html> · sgit.ai v0.7.40 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 
@@ -10,7 +10,7 @@
 
 # Footprint and blast radius: what the agent actually did, and what it would have cost
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-02 · updated 2026-10-02 · [article v1.1.1, 3 versions](versions/footprint-and-blast-radius.md) · [site v0.6.36](https://sgit.ai/admin/versions.md) · agentsagent-behaviour-policyriskmandatefootprintblast-radiusrisk-managementlogsconnector-twinvaultsarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-02 · updated 2026-10-02 · [article v1.1.1, 3 versions](versions/footprint-and-blast-radius.md) · [sgit.ai v0.6.36](https://sgit.ai/admin/versions.md) · agentsagent-behaviour-policyriskmandatefootprintblast-radiusrisk-managementlogsconnector-twinvaultsarticle
 
 ***Abstract:** RiskMandate's Agent Behaviour Policy is written before an agent runs, in four words: reach, mandate, gap and barriers. This article proposes two more. The footprint is what the agent actually did, read afterwards from logs, traffic and vault history, with nobody inline and no production access needed. Compared with the mandate it gives two kinds of finding: footprint in the gap, which is a near miss, and dormant mandate, which is a check that never ran or a mandate that asked for too much. Read on its own it gives the mandate as practised, a policy reverse-engineered from evidence. Blast radius is the measure that goes with any of them: what it would cost the business if a row of the reach were used in full, today. The same footprint can carry a different blast radius on different days, which is why a near miss on an empty table and an incident on a full one are the same row in the record. One figure carries the whole argument: the gap as a map, each row shaded by what it would cost and marked if there is no way back.*
 

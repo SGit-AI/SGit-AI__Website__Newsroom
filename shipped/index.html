@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-root="../">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -18,7 +18,8 @@
 <body>
 <nav class="site"><div class="row">
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.6.1</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.6.2</a>
+  <sg-meter class="meter-nav" view="balance"></sg-meter>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -73,6 +74,8 @@
       <a class="sl" href="../replicate/index.html">Replicate this newsroom</a>
       <a class="sl" href="../meter/index.html">SG Meter: the reading meter</a>
       <a class="sl" href="../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+      <a class="sl" href="../demos/vaults/newsroom-synthetic-users/index.html">The study: five readers tested this site</a>
       <a class="sl" href="../mvps/seed-companies.html">Seed companies</a>
       <a class="sl" href="../admin/index.html">How this site is built</a>
       </div>
@@ -127,9 +130,9 @@
 page moves with it. The version written in August, when nothing on this site ran, is
 <a href="../archive/2026-08-23-what-is-shipped.html">in the archive</a>.</p>
 <h2 id="runs">What runs</h2>
-<div class="tablewrap"><table><thead><tr><th></th><th>What it does</th><th>Its limits</th></tr></thead><tbody><tr><td><b>The newsroom</b></td><td>66 articles since 17 August 2026, each with its own graph and its full version history. A front page placed by one role, a newsletter (2 issues), 5 collections, 4 desk notes, a feed, and five alternative readers for 5 articles.</td><td>Built on sgit.ai and imported here at the same addresses (sgit.ai v0.7.39).</td></tr><tr><td><b>How it runs</b></td><td>6 roles with written behaviour policies, a board, pitches and a log of every run, all public.</td><td>Front-page placement is owned by one role, the Editor; everyone else pitches.</td></tr><tr><td><b>The reading meter</b></td><td>Pence per page by how far you read, from a balance in your browser that can go below zero. Personas, your own newsroom, and a reading share you can send us.</td><td>An honesty box, not a paywall: a reader can change their own balance.</td></tr><tr><td><b>Subscribe</b></td><td>Your address is encrypted in your browser and sent to a write-only lane.</td><td>The host sees ciphertext only; an agent drains the lane.</td></tr><tr><td><b>World News Day 2026</b></td><td>21 op-eds fetched, frozen, hashed, described and graphed; an encrypted vault, published with a read key, that opens as an app and checks itself.</td><td>No human editor of record; no legal review; none of the op-eds&rsquo; prose is republished.</td></tr><tr><td><b>Databases with no server</b></td><td>SQLite and a SPARQL store running in your browser.</td><td>Over the Portugal section&rsquo;s files, which are archived.</td></tr></tbody></table></div>
+<div class="tablewrap"><table><thead><tr><th></th><th>What it does</th><th>Its limits</th></tr></thead><tbody><tr><td><b>The newsroom</b></td><td>67 articles since 17 August 2026, each with its own graph and its full version history. A front page placed by one role, a newsletter (2 issues), 5 collections, 4 desk notes, a feed, and five alternative readers for 5 articles.</td><td>Built on sgit.ai and imported here at the same addresses (sgit.ai v0.7.40).</td></tr><tr><td><b>How it runs</b></td><td>6 roles with written behaviour policies, a board, pitches and a log of every run, all public.</td><td>Front-page placement is owned by one role, the Editor; everyone else pitches.</td></tr><tr><td><b>The reading meter</b></td><td>Pence per page by how far you read, from a balance in your browser that can go below zero. Personas, your own newsroom, and a reading share you can send us.</td><td>An honesty box, not a paywall: a reader can change their own balance.</td></tr><tr><td><b>Subscribe</b></td><td>Your address is encrypted in your browser and sent to a write-only lane.</td><td>The host sees ciphertext only; an agent drains the lane.</td></tr><tr><td><b>World News Day 2026</b></td><td>21 op-eds fetched, frozen, hashed, described and graphed; an encrypted vault, published with a read key, that opens as an app and checks itself.</td><td>No human editor of record; no legal review; none of the op-eds&rsquo; prose is republished.</td></tr><tr><td><b>Databases with no server</b></td><td>SQLite and a SPARQL store running in your browser.</td><td>Over the Portugal section&rsquo;s files, which are archived.</td></tr></tbody></table></div>
 <h2 id="designed">What is designed and not running</h2>
-<div class="tablewrap"><table><thead><tr><th></th><th>Where it stands</th></tr></thead><tbody><tr><td><b>Payment</b></td><td>The &pound;5 top-up page works and its payment link is not set. Until it is, no money moves.</td></tr><tr><td><b>Selling the graph</b></td><td>Graphs are published free. Nothing sells one.</td></tr><tr><td><b>Paying the fact creator</b></td><td>No revenue reaches anyone upstream of an article.</td></tr><tr><td><b>Corrections that propagate</b></td><td>Versions and corrections are kept; they do not reach the pages that cited the corrected claim.</td></tr><tr><td><b>Articles as vaults</b></td><td>One corpus is a vault. Articles are not.</td></tr><tr><td><b>CC-Signed licences and trust as a service</b></td><td>Designs, argued and not built.</td></tr></tbody></table></div>
+<div class="tablewrap"><table><thead><tr><th></th><th>Where it stands</th></tr></thead><tbody><tr><td><b>Payment</b></td><td>The &pound;5 top-up page works and its payment link is not set. Until it is, no money moves.</td></tr><tr><td><b>Selling the graph</b></td><td>Graphs are published free. Nothing sells one.</td></tr><tr><td><b>Paying the fact creator</b></td><td>No revenue reaches anyone upstream of an article.</td></tr><tr><td><b>Corrections that propagate</b></td><td>Versions and corrections are kept; they do not reach the pages that cited the corrected claim.</td></tr><tr><td><b>Reporting an error</b></td><td>There is no published way yet to tell the newsroom that an article is wrong, and no list of the corrections made. What changed in each article is on its version page.</td></tr><tr><td><b>Articles as vaults</b></td><td>One corpus is a vault. Articles are not.</td></tr><tr><td><b>CC-Signed licences and trust as a service</b></td><td>Designs, argued and not built.</td></tr></tbody></table></div>
 <h2 id="stopped">What ran and stopped</h2>
 <p>The <a href="../governance/index.html">Governance Wire</a> made one research run, on 28 August 2026.
 <a href="../portugal/index.html">Portugal Startups</a> covered Startup Summit Lisbon 2026 and handed its beat
@@ -138,18 +141,28 @@ archive</a>, at their original addresses.</p>
 <div class="note"><b>What applies to all of it.</b> The articles are by Dinis Cruz, written from his voice
 notes by an agent working as the newsroom, and say so. Nothing here has had legal review. Every figure names
 its source, and corrections are recorded as corrections.</div>
+<div class="note"><b>Who is who.</b> Dinis Cruz is the person with editorial responsibility for what the newsroom
+publishes. The roles on the desk, the Editor included, are worked by agents. The Editor decides what leads, not
+what is true, and there is no approval step before an article is live (<a href="../newsroom/index.html">how it runs</a>).
+The disclosure is on <a href="../about/participant.html">the participant page</a>.</div>
 <div class="agent">
   <h4>For an agent</h4>
   <p>This page is the authority on whether anything on newsroom.sgit.ai is live. If another page, including an archived one, implies something listed here as designed is running, this page wins. It is dated; check the date before relying on it.</p>
 </div>
 </main>
+<sg-meter view="page" kind="free" date="" topics="" title="What runs, what is designed, SGit Newsroom" quiet></sg-meter>
+<script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": ""}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
+<script>
+import('../assets/components/sg-meter/v1/v1.3/v1.3.1/sg-meter.js')
+ .catch(function (e) { console.error('[sg-meter] component failed to load:', e); });
+</script>
 <footer class="site"><div class="cols">
   <div>
     <div class="brandline">newsroom<span>.sgit.ai</span></div>
     <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="netline"><a href="https://sgit.ai" style="display:inline;padding:0"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://pt.newsroom.sgit.ai" style="display:inline;padding:0">&#8593; pt.newsroom.sgit.ai</a> &middot; <a href="https://graphs.sgit.ai" style="display:inline;padding:0">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai" style="display:inline;padding:0">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai" style="display:inline;padding:0">&#8593; nhi.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai" style="display:inline;padding:0">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.6.1</a> &middot; <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.6.2</a> &middot; <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>The newsroom</h4>
@@ -192,6 +205,7 @@ its source, and corrections are recorded as corrections.</div>
     <a href="../meter/index.html">SG Meter: the reading meter</a>
     <a href="../world-news-day/index.html">World News Day 2026: the corpus</a>
     <a href="../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
     <a href="../mvps/seed-companies.html">Seed companies</a>
   </div>
   <div>

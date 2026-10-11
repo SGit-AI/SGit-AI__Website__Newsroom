@@ -1,0 +1,158 @@
+{
+  "slug": "how-to-run-synthetic-users",
+  "teaser": "Five invented users, a model reading screenshots, and a real browser: how to run synthetic users, from three studies.",
+  "topics": [
+    "vaults-and-method",
+    "site-and-engineering"
+  ],
+  "core_idea": "Synthetic users are invented people, each a record with a situation, a question, what they know and do not, what they decide on and what makes them leave, played by a model that drives a real browser one screenshot at a time instead of reading the page's code, so it can get lost as a person would. Claude Sonnet is good enough to play each user; the study lives in a GitHub repository or a vault shared by a link. Choose five to ten users of about five types, write profiles and expected journeys first, run the observe-think-act loop, interview and rate, order findings by cost, check every surprising finding against the browser's record, publish and run again. On newsroom.sgit.ai five readers produced 31 findings, six blocking; two were caused by the helper, and one became a measured bug: 51 of 527 figures missing.",
+  "nodes": [
+    {
+      "id": "screenshot",
+      "label": "Screenshot, not the code",
+      "kind": "method",
+      "summary": "An agent reading the code finds every link and therefore no confusion."
+    },
+    {
+      "id": "profile",
+      "label": "A profile is a record",
+      "kind": "concept",
+      "summary": "Situation, question, knows, does not know, decides on, walks away if, patience, screen."
+    },
+    {
+      "id": "journey",
+      "label": "Expected journey first",
+      "kind": "method",
+      "summary": "Written before the run, so a surprise shows as a difference."
+    },
+    {
+      "id": "model",
+      "label": "Sonnet plays each user",
+      "kind": "claim",
+      "summary": "Good enough to read a screenshot and stay in character; Opus for checking evidence."
+    },
+    {
+      "id": "store",
+      "label": "Repository or vault",
+      "kind": "concept",
+      "summary": "Public GitHub is easiest to share; a vault is encrypted, opens as an app, shared by a link."
+    },
+    {
+      "id": "interview",
+      "label": "Interview and rating",
+      "kind": "method",
+      "summary": "The same ten questions for everyone; a rating from 1 to 5."
+    },
+    {
+      "id": "cost",
+      "label": "Findings ordered by cost",
+      "kind": "method",
+      "summary": "Blocks a pilot, costs a payment, costs trust, loses a reader, minor."
+    },
+    {
+      "id": "check",
+      "label": "Check before publishing",
+      "kind": "method",
+      "summary": "Two newsroom findings were the helper's doing and are labelled, not deleted."
+    },
+    {
+      "id": "bug",
+      "label": "51 of 527 figures missing",
+      "kind": "example",
+      "summary": "The researcher's broken image, measured across the newsroom after the move."
+    },
+    {
+      "id": "copy",
+      "label": "Run against a verified copy",
+      "kind": "method",
+      "summary": "Byte-identical local files: nothing reaches the live site, and the run repeats."
+    },
+    {
+      "id": "studies",
+      "label": "Three studies",
+      "kind": "artefact",
+      "summary": "store.sgit.ai, riskmandate.ai and newsroom.sgit.ai, each in a vault."
+    }
+  ],
+  "edges": [
+    {
+      "from": "profile",
+      "to": "screenshot",
+      "rel": "depends-on"
+    },
+    {
+      "from": "journey",
+      "to": "check",
+      "rel": "leads-to"
+    },
+    {
+      "from": "model",
+      "to": "screenshot",
+      "rel": "answers"
+    },
+    {
+      "from": "screenshot",
+      "to": "interview",
+      "rel": "leads-to"
+    },
+    {
+      "from": "interview",
+      "to": "cost",
+      "rel": "produces"
+    },
+    {
+      "from": "cost",
+      "to": "check",
+      "rel": "leads-to"
+    },
+    {
+      "from": "check",
+      "to": "bug",
+      "rel": "produces"
+    },
+    {
+      "from": "copy",
+      "to": "screenshot",
+      "rel": "extends"
+    },
+    {
+      "from": "studies",
+      "to": "store",
+      "rel": "example-of"
+    },
+    {
+      "from": "bug",
+      "to": "studies",
+      "rel": "example-of"
+    }
+  ],
+  "links": {
+    "articles": [
+      "a-link-to-a-persona",
+      "pay-after-you-read"
+    ],
+    "pages": [
+      "demos/vaults/synthetic-users/index.html",
+      "demos/vaults/synthetic-users-riskmandate/index.html",
+      "demos/vaults/newsroom-synthetic-users/index.html"
+    ],
+    "sites": [
+      "https://newsroom.sgit.ai/",
+      "https://playwright.dev/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "An agent that reads the code finds every link every time, and so finds no confusion, which is the only thing worth running this for.",
+      "why": "The method in one sentence."
+    },
+    {
+      "text": "A findings list that silently loses items cannot be compared with the next one.",
+      "why": "Why artefacts are labelled, not deleted."
+    },
+    {
+      "text": "Every site gets five users before it is called done, and the same five again after the fixes.",
+      "why": "What happens next."
+    }
+  ]
+}

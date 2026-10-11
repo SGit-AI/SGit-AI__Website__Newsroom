@@ -2,7 +2,7 @@
 
 > Our agents already have dedicated resources with a small blast radius: their own mailbox, their own code-host account, their own Claude account. The next one is a desktop of their own, and it should be a Mac, because that is where most agent desktop apps arrive first. This is a business plan for somebody else to build, following our earlier research on renting an agent a desktop. It started as a pool of Macs rented by the minute, and Apple's licence rules that out: a leased Mac must be held for at least 24 hours, for developer services, by one customer, and virtual copies may not be time-shared. So the plan is the shapes that are allowed: a dedicated Mac per customer, run for them, with a per-minute meter on top and a clean desktop per run built from encrypted vaults; developer agents on leased Macs; software for the Mac mini you keep; and a request to Apple for terms. The reason to want any of it is in the three behaviour policies: the same customer service agent on your own Mac, on a dedicated Mac and on a hardened one, where the excess nothing bounds falls from 23 rows to 11 to 3.
 
-*Source: <https://newsroom.sgit.ai/articles/a-mac-of-the-agents-own.html> · site v0.7.39 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/a-mac-of-the-agents-own.html> · sgit.ai v0.7.40 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 
@@ -10,7 +10,7 @@
 
 # A Mac of the agent's own: a business plan for agent desktops, what Apple's licence allows, and three behaviour policies
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-09 · [article v1.2.0, 3 versions](versions/a-mac-of-the-agents-own.md) · [site v0.7.16](https://sgit.ai/admin/versions.md) · agentsagent-desktopsmacosbusiness-planagent-behaviour-policylicensingvaultspkisgitwardley-mapsisolationcoworkcomputer-usearticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-09 · [article v1.2.0, 3 versions](versions/a-mac-of-the-agents-own.md) · [sgit.ai v0.7.16](https://sgit.ai/admin/versions.md) · agentsagent-desktopsmacosbusiness-planagent-behaviour-policylicensingvaultspkisgitwardley-mapsisolationcoworkcomputer-usearticle
 
 ***Abstract:** Our agents already have dedicated resources with a small blast radius: their own mailbox, their own code-host account, their own Claude account. The next one is a desktop of their own, and it should be a Mac, because that is where most agent desktop apps arrive first. This is a business plan for somebody else to build, following our earlier research on renting an agent a desktop. It started as a pool of Macs rented by the minute, and Apple's licence rules that out: a leased Mac must be held for at least 24 hours, for developer services, by one customer, and virtual copies may not be time-shared. So the plan is the shapes that are allowed: a dedicated Mac per customer, run for them, with a per-minute meter on top and a clean desktop per run built from encrypted vaults; developer agents on leased Macs; software for the Mac mini you keep; and a request to Apple for terms. The reason to want any of it is in the three behaviour policies: the same customer service agent on your own Mac, on a dedicated Mac and on a hardened one, where the excess nothing bounds falls from 23 rows to 11 to 3.*
 

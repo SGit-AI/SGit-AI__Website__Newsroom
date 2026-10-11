@@ -6,7 +6,7 @@
 > propagate; provenance is the product; pay the person who found the fact), and everything
 > needed to run a newsroom like it.
 
-Site version: v0.6.1 (10 October 2026). Published by the sgit project, which is building
+Site version: v0.6.2 (10 October 2026). Published by the sgit project, which is building
 the stack this site argues for; participant disclosure at /about/participant.html.
 Content CC BY 4.0 unless a page states otherwise; code Apache 2.0.
 
@@ -65,6 +65,10 @@ current, running or planned.
 - /articles/<slug>.html: an article. Beside it /articles/<slug>.md (markdown twin),
   /articles/versions/<slug>.html (every published version and what changed) and
   /articles/graphs/<slug>.json (its graph)
+- /articles/how-to-run-synthetic-users.html: A HOW-TO from three studies (store.sgit.ai, riskmandate.ai,
+  and this site on 10 October 2026): five to ten invented users, each with a profile, a question they
+  arrive with and an expected journey, drive a real browser one screenshot at a time, are interviewed and
+  rate it; findings ordered by what they cost. NOT user research: the users are invented by a model
 - /articles/graphs.html and /articles/graphs.json: every article's graph, 66, drawn together
 - /articles/newsletter/index.html: the newsletter, 2 issues so far, also on LinkedIn
 - /articles/collections/index.html: 5 collections; /articles/desk/index.html: 4 desk notes
@@ -135,6 +139,12 @@ current, running or planned.
   self-contained; there is NO forkable newsroom template yet
 - /meter/index.html and /meter/security.html: SG Meter v1.3.1, the reading meter as a
   versioned web component, and its security model (an honesty box, not a paywall)
+- /demos/vaults/newsroom-synthetic-users/index.html: THE STUDY OF THIS SITE by five invented readers
+  (62 steps, 51 questions the site did not answer, 56 places somebody got lost, 31 findings, 6 blocking),
+  run against newsroom.sgit.ai v0.6.1 on 10 October 2026, published as a vault app with a read key. Every
+  persona and every word attributed to one is model-written. The missing-figures bug it measured was
+  fixed here in v0.6.2 and the page, which is sgit.ai's text, still describes it as open; its other
+  findings are listed in /admin/versions.html under v0.6.2 with what was and was not done
 - /mvps/seed-companies.html: seven CC-licensed business templates published so others can
   build them; seed 4 is an evidence-research company for journalists and investigators
 - /admin/index.html: how this site is built

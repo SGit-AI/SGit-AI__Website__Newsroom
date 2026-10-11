@@ -2,7 +2,7 @@
 
 > An old Intel iMac, clean-installed for my agents, could not run Homebrew or Docker Desktop, and needed Python by hand. Each project that dropped it did so because supporting old machines costs money and the people on the long tail have no easy way to pay for it. This article measures that long tail from Homebrew and PyPI analytics, sets out where money does flow for old versions (Oracle, Red Hat, Windows ESU, Rimini Street) and where it does not (open source receives about 0.09% of its estimated value), shows why pence payments only work aggregated, and simulates five ways to pay for it. About £1.80 a machine a year from individuals covers one project's long-tail cost in half the draws; customised builds for companies cover it in 94%. Open source is not free; the question is whether the people who get the value have an easy way to pay for it.
 
-*Source: <https://newsroom.sgit.ai/articles/open-source-is-not-free.html> · site v0.7.39 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/open-source-is-not-free.html> · sgit.ai v0.7.40 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 
@@ -10,7 +10,7 @@
 
 # Open source is not free: who pays to keep the long tail working?
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-10 · [article v1.0.0](versions/open-source-is-not-free.md) · [site v0.7.25](https://sgit.ai/admin/versions.md) · open-sourceeconomicsfundinglong-tailsupportmicropaymentssimulationdata-sciencehomebrewdockermacosarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-10 · [article v1.0.0](versions/open-source-is-not-free.md) · [sgit.ai v0.7.25](https://sgit.ai/admin/versions.md) · open-sourceeconomicsfundinglong-tailsupportmicropaymentssimulationdata-sciencehomebrewdockermacosarticle
 
 ***Abstract:** An old Intel iMac, clean-installed for my agents, could not run Homebrew or Docker Desktop, and needed Python by hand. Each project that dropped it did so because supporting old machines costs money and the people on the long tail have no easy way to pay for it. This article measures that long tail from Homebrew and PyPI analytics, sets out where money does flow for old versions (Oracle, Red Hat, Windows ESU, Rimini Street) and where it does not (open source receives about 0.09% of its estimated value), shows why pence payments only work aggregated, and simulates five ways to pay for it. About £1.80 a machine a year from individuals covers one project's long-tail cost in half the draws; customised builds for companies cover it in 94%. Open source is not free; the question is whether the people who get the value have an easy way to pay for it.*
 

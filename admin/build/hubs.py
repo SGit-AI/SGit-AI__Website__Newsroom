@@ -142,6 +142,13 @@ def replicate(f):
          'published vault</a>',
          'Yes. The World News Day vault carries its data, its build code and its gate. Clone it with the '
          'published read key and run <code>python3 build/gates.py</code>.'),
+        ('<b>Testing it on readers who do not exist</b>', 'Five invented readers drive a real browser through a site one '
+         'screenshot at a time, are interviewed and rate it, and every finding names its page and step. Not user '
+         'research: a structured reading of the site from five points of view.',
+         '<a href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>, and '
+         '<a href="../demos/vaults/newsroom-synthetic-users/index.html">the study of this site</a>',
+         'Yes. The study is a vault, open with a published read key, and carries the protocol, the personas, '
+         'the driver (a 58-line Playwright helper) and the data, so the next run can be compared with it.'),
         ('<b>The site itself</b>', 'Static HTML, one definition of the navigation, and a gate that refuses a '
          'broken link, a wrong canonical address or anything shaped like a secret key.',
          '<a href="../admin/index.html">How this site is built</a>, <a href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom">'
@@ -215,6 +222,8 @@ def shipped(f):
         ('<b>Selling the graph</b>', 'Graphs are published free. Nothing sells one.'),
         ('<b>Paying the fact creator</b>', 'No revenue reaches anyone upstream of an article.'),
         ('<b>Corrections that propagate</b>', 'Versions and corrections are kept; they do not reach the pages that cited the corrected claim.'),
+        ('<b>Reporting an error</b>', 'There is no published way yet to tell the newsroom that an article is wrong, and no '
+         'list of the corrections made. What changed in each article is on its version page.'),
         ('<b>Articles as vaults</b>', 'One corpus is a vault. Articles are not.'),
         ('<b>CC-Signed licences and trust as a service</b>', 'Designs, argued and not built.'),
     ]
@@ -232,7 +241,11 @@ to <a href="https://pt.newsroom.sgit.ai/">pt.newsroom.sgit.ai</a>. Both are in <
 archive</a>, at their original addresses.</p>
 <div class="note"><b>What applies to all of it.</b> The articles are by Dinis Cruz, written from his voice
 notes by an agent working as the newsroom, and say so. Nothing here has had legal review. Every figure names
-its source, and corrections are recorded as corrections.</div>"""
+its source, and corrections are recorded as corrections.</div>
+<div class="note"><b>Who is who.</b> Dinis Cruz is the person with editorial responsibility for what the newsroom
+publishes. The roles on the desk, the Editor included, are worked by agents. The Editor decides what leads, not
+what is true, and there is no approval step before an article is live (<a href="../newsroom/index.html">how it runs</a>).
+The disclosure is on <a href="../about/participant.html">the participant page</a>.</div>"""
     return newsroom_page(
         "shipped/index.html", "What runs, what is designed",
         f"The line between what runs on newsroom.sgit.ai and what is only designed, as of {AS_OF}: the "

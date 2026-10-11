@@ -107,6 +107,60 @@ for (const f of htmlFiles) {
   }
 }
 
+// --- 2b. figures and trail images resolve ------------------------------------
+// sgit.ai's authoring contract forbids a declarative <img src>, so a figure is a placeholder,
+//   <figure class="shot" data-shot="x.webp" data-dir="../demos/vaults/agent-desk/images/">
+// and assets/shots.js sets img.src = data-dir + data-shot at runtime (data-dir defaults to
+// images/). A card thumbnail is a background set the same way from data-trail-img. Check 2 reads
+// href, src and data-src, and none of these is any of them, so a figure whose image was never
+// copied passed every check on this site and showed "screenshot unavailable" to the reader.
+// That is exactly what v0.6.0 and v0.6.1 shipped: 51 figures in 10 articles, and the 66
+// thumbnails on the front page at /, found by five synthetic readers and not by this gate.
+const FIGURE = /<figure\b[^>]*\bclass="[^"]*\bshot\b[^"]*"[^>]*>/g;
+const attr   = (tag, name) => { const m = tag.match(new RegExp(`\\s${name}="([^"]*)"`)); return m ? m[1] : null; };
+for (const f of htmlFiles) {
+  const t   = fs.readFileSync(f, 'utf8');
+  const dir = path.dirname(f);
+  for (const m of t.matchAll(FIGURE)) {
+    const shot = attr(m[0], 'data-shot');
+    if (!shot) continue;
+    const base = attr(m[0], 'data-dir') ?? 'images/';
+    if (/^(https?:|\/\/|data:)/.test(base) || /^(https?:|\/\/|data:)/.test(shot)) continue;
+    if (!fs.existsSync(path.resolve(dir, base + shot))) {
+      errors.push(`${rel(f)}: figure image missing -> ${base}${shot}`);
+    }
+  }
+  for (const m of t.matchAll(/<[a-zA-Z][^<>]*\sdata-trail-img="([^"]+)"[^<>]*>/g)) {
+    if (/^(https?:|\/\/|data:)/.test(m[1])) continue;
+    if (!fs.existsSync(path.resolve(dir, m[1]))) errors.push(`${rel(f)}: trail image missing -> ${m[1]}`);
+  }
+}
+
+// --- 2c. scripts a page loads at runtime exist ---------------------------------
+// The same blind spot as 2b, for code instead of images. sgit.ai's pages load their behaviour from
+// inline loaders, import('x/y.js') and fetch('x/y.js'), and a vault page builds the name at runtime:
+//   ['vault-ui-embed.js'].forEach(function (f) { fetch('../../../assets/' + f)... })
+// None of that is an href or a src. The study page imported at v0.6.2 asked for assets/vault-ui-embed.js,
+// which was not here, so its "See it live" section, the reason the page exists, silently did nothing.
+// Only patterns that name a .js file are checked, and only as the page's own relative path.
+const RUNTIME_SCRIPT = [
+  /\b(?:fetch|import)\(\s*'([^'+]*\.m?js)(?:\?[^']*)?'\s*\)/g,
+];
+const NAME_LIST = /\[((?:\s*'[A-Za-z0-9_.-]+\.js'\s*,?)+)\s*\]\.forEach\(function \(f\) \{[\s\S]{0,240}?fetch\('([^']*)'\s*\+\s*f\)/g;
+for (const f of htmlFiles) {
+  const t   = fs.readFileSync(f, 'utf8');
+  const dir = path.dirname(f);
+  const wanted = [];
+  for (const re of RUNTIME_SCRIPT) for (const m of t.matchAll(re)) wanted.push(m[1]);
+  for (const m of t.matchAll(NAME_LIST)) {
+    for (const n of m[1].matchAll(/'([^']+)'/g)) wanted.push(m[2] + n[1]);
+  }
+  for (const w of new Set(wanted)) {
+    if (/^(https?:|\/\/|\/)/.test(w)) continue;
+    if (!fs.existsSync(path.resolve(dir, w))) errors.push(`${rel(f)}: loads a script at runtime that does not exist -> ${w}`);
+  }
+}
+
 // --- 3. canonical host ----------------------------------------------------
 // A verbatim republication of docs.diniscruz.ai material points its canonical at
 // the ORIGINAL, per briefs/02 §3.4 — that page is exempt from the CNAME-host rule
@@ -314,6 +368,7 @@ try {
       [/<footer class="site">[\s\S]*?<\/footer>/, '<footer class="site"></footer>'],
       [/<span class="llmschip-m">[^<]*<\/span>/, '<span class="llmschip-m"></span>'],
       [/\u00b7 site v\d+\.\d+\.\d+ \u00b7/, '\u00b7 site \u00b7'],
+      [/<span>newsroom\.sgit\.ai &middot; v\d+\.\d+\.\d+<\/span>/, '<span>newsroom.sgit.ai &middot; </span>'],
     ];
     let edited = 0;
     for (const [rel, entry] of Object.entries(record.files)) {

@@ -78,9 +78,11 @@ NAV = [
         ("Replicate this newsroom", "replicate/index.html"),
         ("SG Meter: the reading meter", "meter/index.html"),
         ("The meter's security model", "meter/security.html"),
+        ("How to run synthetic users", "articles/how-to-run-synthetic-users.html"),
+        ("The study: five readers tested this site", "demos/vaults/newsroom-synthetic-users/index.html"),
         ("Seed companies", "mvps/seed-companies.html"),
         ("How this site is built", "admin/index.html"),
-    ], ("replicate/", "meter/", "mvps/seed-companies.html")),
+    ], ("replicate/", "meter/", "mvps/seed-companies.html", "demos/vaults/newsroom-synthetic-users/")),
     ("World News Day", "world-news-day/index.html", [
         ("The corpus", "world-news-day/index.html"),
         ("Free to republish is not a licence", "world-news-day/stories/free-to-republish-is-not-a-licence.html"),
@@ -150,6 +152,7 @@ FOOTER = [
         ("SG Meter: the reading meter", "meter/index.html"),
         ("World News Day 2026: the corpus", "world-news-day/index.html"),
         ("The method: fetch, freeze, hash", "world-news-day/method.html"),
+        ("How to run synthetic users", "articles/how-to-run-synthetic-users.html"),
         ("Seed companies", "mvps/seed-companies.html"),
     ]),
     ("Site", [
@@ -304,6 +307,10 @@ def main():
         # this site's release, and llms.txt is this site's, so the stamp is this site's too.
         text = re.sub(r'<span class="llmschip-m">[^<]*</span>',
                       f'<span class="llmschip-m">{VERSION}</span>', text, count=1)
+        # The front page's edition line ends with this site's release, the same number as the nav
+        # chip and the footer. It was sgit.ai's, which made three version numbers on one screen.
+        text = re.sub(r'<span>newsroom\.sgit\.ai &middot; v\d+\.\d+\.\d+</span>',
+                      f'<span>newsroom.sgit.ai &middot; {VERSION}</span>', text, count=1)
         if not n_nav or not n_foot:
             missing = " and ".join(x for x in (("nav" if not n_nav else ""),
                                                ("footer" if not n_foot else "")) if x)

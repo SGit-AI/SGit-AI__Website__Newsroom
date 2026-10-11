@@ -2,7 +2,7 @@
 
 > My co-founder came back from a conference with ten hard questions, the ones people actually ask about a product like RiskMandate. What happens when an agent bypasses its policy? How do you keep a policy current when the agent gains new powers? What exactly am I paying for? Who is liable when it goes wrong? What stops a big platform absorbing you? Why behaviour and not the supply chain? Who enforces? What happens after a breach? What about agents instructing agents? And what can you measure? I answered them in a two-hour interview with Claude acting as a journalist with an eye for detail, challenging every answer until the whole set was detailed and coherent. This page is the result, written for someone who has not seen the questions: the model every answer rests on, the ten answers in brief, what RiskMandate deliberately is not, an honest table of what is live and what is design, three things the exercise showed we must fix on our own site, and then each question in full, linked to the work behind it.
 
-*Source: <https://newsroom.sgit.ai/articles/riskmandate-ten-questions.html> · site v0.7.39 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/riskmandate-ten-questions.html> · sgit.ai v0.7.40 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 
@@ -10,7 +10,7 @@
 
 # Ten hard questions for RiskMandate, answered: the mandate, the reach, the gap, and what we are deliberately not
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-09 · [article v1.0.0](versions/riskmandate-ten-questions.md) · [site v0.7.13](https://sgit.ai/admin/versions.md) · riskmandateagent-behaviour-policymandategrantdeltabarriersinsuranceliabilityenforcementsupply-chainpkidigital-twinsmetricspositioninginterviewarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-09 · [article v1.0.0](versions/riskmandate-ten-questions.md) · [sgit.ai v0.7.13](https://sgit.ai/admin/versions.md) · riskmandateagent-behaviour-policymandategrantdeltabarriersinsuranceliabilityenforcementsupply-chainpkidigital-twinsmetricspositioninginterviewarticle
 
 ***Abstract:** My co-founder came back from a conference with ten hard questions, the ones people actually ask about a product like RiskMandate. What happens when an agent bypasses its policy? How do you keep a policy current when the agent gains new powers? What exactly am I paying for? Who is liable when it goes wrong? What stops a big platform absorbing you? Why behaviour and not the supply chain? Who enforces? What happens after a breach? What about agents instructing agents? And what can you measure? I answered them in a two-hour interview with Claude acting as a journalist with an eye for detail, challenging every answer until the whole set was detailed and coherent. This page is the result, written for someone who has not seen the questions: the model every answer rests on, the ten answers in brief, what RiskMandate deliberately is not, an honest table of what is live and what is design, three things the exercise showed we must fix on our own site, and then each question in full, linked to the work behind it.*
 

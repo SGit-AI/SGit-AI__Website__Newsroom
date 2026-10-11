@@ -2,7 +2,7 @@
 
 > Nineteen sibling sites is too many to browse, so the directory now answers questions. The design problem is that sgit.ai has no server and no vault host, which means the honest options are a local matcher, a key in your browser, or moving the page into a vault, and only one of those is free.
 
-*Source: <https://newsroom.sgit.ai/articles/chat-on-a-static-site.html> · site v0.7.39 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/chat-on-a-static-site.html> · sgit.ai v0.7.40 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 
@@ -10,7 +10,7 @@
 
 # A chat box on a site with no server, the plan, and the trade it makes
 
-2026-08-27 · [article v1.2.2, 5 versions](versions/chat-on-a-static-site.md) · [site v0.2.47](https://sgit.ai/admin/versions.md) · chatllmbyokplan
+2026-08-27 · [article v1.2.2, 5 versions](versions/chat-on-a-static-site.md) · [sgit.ai v0.2.47](https://sgit.ai/admin/versions.md) · chatllmbyokplan
 
 ***Abstract:** Nineteen sibling sites is too many to browse, so the directory now answers questions. The design problem is that sgit.ai has no server and no vault host, which means the honest options are a local matcher, a key in your browser, or moving the page into a vault, and only one of those is free.*
 

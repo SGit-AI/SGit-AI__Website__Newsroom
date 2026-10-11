@@ -162,3 +162,77 @@ the Archive plus World News Day, because three of the four instances it names ar
    `test_meter.mjs`.
 3. **A sync routine**: re-run the import whenever sgit.ai publishes, until cutover.
 4. **Decisions 2 to 5** above, which are Dinis's.
+
+
+---
+
+# v0.6.2: the synthetic-readers study, finding by finding
+
+Five invented readers drove a browser through v0.6.1 on 10 October 2026 and found 31 things. The study
+is a vault, <https://newsroom.sgit.ai/demos/vaults/newsroom-synthetic-users/index.html>, opened with its
+published read key; its headline numbers (62 steps, 51 questions, 56 confusions, 31 findings, 6 blocking,
+and every row of the per-reader table) were re-counted from its own run records and hold. The readers are
+model-written and it is not user research.
+
+**Verdicts.** FIXED: this repo's, done in v0.6.2. PARTLY: the part that was this repo's is fixed, the rest
+is not. SGIT.AI: the page is imported and is fixed there, then re-synced. DECISION: needs a person, not
+a fix. NOT A DEFECT: checked. Page paths are as the reader saw them.
+
+| # | Severity | Finding | Verdict | Detail |
+|---|---|---|---|---|
+| 1 | blocking | No way to contact anyone about a pilot (`/replicate/`) | DECISION | The article invites sites to test the meter. The only address published anywhere (`agent@riskmandate.ai`) is described on the subscribe page as the agent that runs the mailing list. Who takes pilot enquiries is Dinis's. |
+| 2 | blocking | Nothing shows real money moving (article) | SGIT.AI | True: no payment link is set, and `/shipped/` says so. The article could say the same. |
+| 3 | blocking | Install assumes a developer (`/meter/`) | SGIT.AI | Five file paths, ES modules, no download or hosted-platform note. A product and writing decision. |
+| 4 | blocking | No paragraph a writer could give readers (`/meter/`) | SGIT.AI | |
+| 5 | blocking | How the writer gets paid is not clear (`/meter/`) | SGIT.AI | Balances live in the reader's browser; the page does not say what the writer sees. |
+| 6 | blocking | Top-up says simulated while asking for money (`/account/top-up.html`) | SGIT.AI | Follows from brief decision 3: the Stripe link is not created. |
+| 7 | worth fixing | Balance £4.97 in the top bar, £4.49 on the card | NOT A DEFECT | The card is a picture, `pv-card.webp`, with the author's balance baked in. Chip and card agree at every depth in a fresh browser and under the study's reopen-and-jump pattern, here and on sgit.ai. A picture of the card is still indistinguishable from the card: label it or crop the balance. The drift £4.99 to £4.92 is the meter charging by scroll depth, by design. |
+| 8 | worth fixing | Three version numbers for one site | PARTLY | Fixed: the edition line is this site's release; a byline says "sgit.ai v0.7.36"; the markdown twins say the same. The article's own sentence "v0.7.39 today" is sgit.ai's. |
+| 9 | worth fixing | The practical answer sits behind the story (article) | SGIT.AI | |
+| 10 | worth fixing | First phone screen does not say what the site is or that the £5 is free (`/`) | SGIT.AI | The front page and the meter chip. The chip is a published component version that does not change; a label would be a new version. |
+| 11 | worth fixing | Balance drops silently as the reader scrolls | SGIT.AI | By design; explained on the account page, two taps away. |
+| 12 | worth fixing | Article opens as a tag cloud and a wall of italics; hero unreadable on a phone | SGIT.AI | |
+| 13 | worth fixing | Insider terms: personas, streaks, roles, "edition from sgit v0.7.39" | PARTLY | The edition wording was added here in v0.6.0 and is gone. Personas and streaks are the meter's. |
+| 14 | worth fixing | No route from the front page to the meter's install steps | PARTLY | Every page's nav has Replicate, then SG Meter, since v0.6.0. The front page is sgit.ai's. |
+| 15 | worth fixing | Balance chip disappears on `/replicate/` | FIXED | Every page this site writes carries the chip, as a free page. |
+| 16 | worth fixing | Byline names one human; the AI authorship is in the footer | SGIT.AI | `/shipped/` now says who is who; the byline is sgit.ai's template. |
+| 17 | worth fixing | No approval step, and an unclear Editor (`/newsroom/`) | PARTLY | `/shipped/` now says the Editor is an agent role and Dinis Cruz holds editorial responsibility. The how-it-runs page is sgit.ai's. |
+| 18 | worth fixing | The corrections page is an argument, not a policy; no way to report an error | PARTLY | `/shipped/` says plainly there is no published route. The route itself is a DECISION. |
+| 19 | worth fixing | Pages contradict each other on what runs (`/about/participant.html`) | FIXED | The card said "Nothing here runs". The "v0.7.4" is the byline of the lead article, the sgit.ai release it was published in; it read "site v0.7.4" and now reads "sgit.ai v0.7.4" (see 8). |
+| 20 | worth fixing | Evidence image fails; "real" against "fictional" (lead article) | PARTLY | The image is fixed. The caption's wording is the article's. |
+| 21 | worth fixing | 51 of 527 figures missing | FIXED | Larger than measured: 117 figures and 2 thumbnails on 13 pages, 0 now. |
+| 22 | worth fixing | Top-bar balance is not labelled as credit | SGIT.AI | Same as 10. |
+| 23 | worth fixing | "Credit can go below zero" reads as a debt (`/account/`) | SGIT.AI | |
+| 24 | worth fixing | "How it works" leads to a developer manual | SGIT.AI | |
+| 25 | worth fixing | A penny is taken on opening a page with no notice | SGIT.AI | By design; no notice at the point it happens. |
+| 26 | minor | The account page explains the meter clearly | n/a | A positive finding: the reassurance is two taps from where the worry starts. |
+| 27 | minor | Eleven views, no "start here" subset (`/meter/`) | SGIT.AI | |
+| 28 | minor | Balance falls while reading; the rating card looks pre-answered | SGIT.AI | |
+| 29 | minor | Blank white page after Back | NOT A DEFECT | Reproduced as the loader's fade-in: blank for about 0.3 seconds, not a lasting blank. |
+| 30 | helper artefact | The page jumps backwards while scrolling | NOT A DEFECT | As the study labelled it. |
+| 31 | helper artefact | Taps on Latest open the wrong article | NOT A DEFECT | As the study labelled it. |
+
+## Why the images were missing, and what reads them now
+
+sgit.ai's authoring contract forbids a declarative `<img src>`. A figure is
+`<figure class="shot" data-shot="x.webp" data-dir="../demos/vaults/v/images/">`, and `assets/shots.js` sets
+`img.src = data-dir + data-shot` when the page opens; a card thumbnail is `data-trail-img`. The import treated
+`href`, `src` and `data-src` as addresses and not these, and so did the gate. Two things followed. The 51 vault
+images were never copied. And the front page copied to `/` kept `data-dir="cards/"`, which resolved to `/cards/`.
+The import now treats `data-dir` and `data-trail-img` as addresses, copies every file the moved pages point at
+that is outside the moved tree (52 files, each recorded with the pages that need it), and gate checks 2b (every
+figure and thumbnail exists) and 2c (every script loaded at run time exists) read what check 2 could not.
+Measured in a browser with every figure forced to load: v0.6.1 had 117 figures and 2 thumbnails not rendered
+on 13 pages; v0.6.2 has 0 of 625.
+
+## Two things for Dinis
+
+1. **A contact for pilots** (finding 1). It needs an address and a commitment, and I would rather not choose
+   either.
+2. **Model identifiers.** The brief says "model identifiers must not appear on the site" and also that each
+   imported article's text must match sgit.ai's. 76 imported pages name a model version, almost always in the
+   AI-disclosure line (one model's full identifier and display name on 48 of them, another's on 28), including the
+   study page. To list them: search the imported pages for a model identifier. Both rules
+   cannot hold. Either sgit.ai changes its disclosure line and the pages are re-synced, or the brief's rule is
+   about the byline only. I have not carried sgit.ai's house-style gates into this site's gate for the same reason:
+   this one would fail on 76 pages as published.

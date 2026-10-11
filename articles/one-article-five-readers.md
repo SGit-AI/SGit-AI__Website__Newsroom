@@ -2,7 +2,7 @@
 
 > The articles on this site are deep and carry their evidence, and that makes them long and hard to consume. The answer tried here is not shorter articles. It is to keep writing the article first, as prose, because writing is how the argument is found, and then to send five readers through it afterwards, each an agent with a defined role. Two build the platform: a Librarian that catalogues every fact, claim, number, question and source with the sentence it came from, and a Cartographer that turns the catalogues into an ontology at three altitudes and draws the maps. Three write for a person: a Historian that says what the article added and where it sits in the arc, an Explainer that says it in two minutes, and a Storyteller that tells it as a deck. We ran it on the five articles about agent behaviour policies published between 7 and 10 October: 662 items catalogued, 32 problems flagged in published articles, 45 concepts, nine maps, five decks, and one new concept in the most recent article. The views are now on those five articles, and the whole run is in a vault you can open.
 
-*Source: <https://newsroom.sgit.ai/articles/one-article-five-readers.html> · site v0.7.39 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/one-article-five-readers.html> · sgit.ai v0.7.40 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 
@@ -10,7 +10,7 @@
 
 # One article, five readers: a librarian, a cartographer, a historian, an explainer and a storyteller read the same piece
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-10 · [article v1.0.1, 2 versions](versions/one-article-five-readers.md) · [site v0.7.27](https://sgit.ai/admin/versions.md) · newsroomjournalismliquid-contentfractal-semantic-graphsontologyagentslibrariancartographerhistorianmulti-viewarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-10 · [article v1.0.1, 2 versions](versions/one-article-five-readers.md) · [sgit.ai v0.7.27](https://sgit.ai/admin/versions.md) · newsroomjournalismliquid-contentfractal-semantic-graphsontologyagentslibrariancartographerhistorianmulti-viewarticle
 
 ***Abstract:** The articles on this site are deep and carry their evidence, and that makes them long and hard to consume. The answer tried here is not shorter articles. It is to keep writing the article first, as prose, because writing is how the argument is found, and then to send five readers through it afterwards, each an agent with a defined role. Two build the platform: a Librarian that catalogues every fact, claim, number, question and source with the sentence it came from, and a Cartographer that turns the catalogues into an ontology at three altitudes and draws the maps. Three write for a person: a Historian that says what the article added and where it sits in the arc, an Explainer that says it in two minutes, and a Storyteller that tells it as a deck. We ran it on the five articles about agent behaviour policies published between 7 and 10 October: 662 items catalogued, 32 problems flagged in published articles, 45 concepts, nine maps, five decks, and one new concept in the most recent article. The views are now on those five articles, and the whole run is in a vault you can open.*
 

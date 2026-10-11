@@ -2,7 +2,7 @@
 
 > Following up is harder than doing the work, because every person has a different context and the thread you share hides its own structure. This article weaves the site's threads into one argument. Every message has a graph, with altitudes from the block to the contact. Email is a medium, so a message is designed for the recipient's moment, not the sender's thread. A custom interface per message or moment is not an exception; it is how interfaces now get made, each one commoditising the next. Ten agents and one human built more than a dozen of them in eight days. The future of email is sender-served structure, read by the recipient's agent, with the inbox as one view of the graph. And an interface is an agent surface, so it gets a policy.
 
-*Source: <https://newsroom.sgit.ai/articles/custom-uis-are-not-the-exception.html> · site v0.7.39 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/custom-uis-are-not-the-exception.html> · sgit.ai v0.7.40 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 
@@ -10,7 +10,7 @@
 
 # Custom UIs are not the exception: the inbox in 2026, where every message has its own universe
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-01 · updated 2026-10-02 · [article v1.6.1, 8 versions](versions/custom-uis-are-not-the-exception.md) · [site v0.6.29](https://sgit.ai/admin/versions.md) · inboxemailcustom-uifractal-semantic-graphsvault-appsappend-lanesemail-fswardley-mapsagentsriskmandatearticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-01 · updated 2026-10-02 · [article v1.6.1, 8 versions](versions/custom-uis-are-not-the-exception.md) · [sgit.ai v0.6.29](https://sgit.ai/admin/versions.md) · inboxemailcustom-uifractal-semantic-graphsvault-appsappend-lanesemail-fswardley-mapsagentsriskmandatearticle
 
 ***Abstract:** Following up is harder than doing the work, because every person has a different context and the thread you share hides its own structure. This article weaves the site's threads into one argument. Every message has a graph, with altitudes from the block to the contact. Email is a medium, so a message is designed for the recipient's moment, not the sender's thread. A custom interface per message or moment is not an exception; it is how interfaces now get made, each one commoditising the next. Ten agents and one human built more than a dozen of them in eight days. The future of email is sender-served structure, read by the recipient's agent, with the inbox as one view of the graph. And an interface is an agent surface, so it gets a policy.*
 

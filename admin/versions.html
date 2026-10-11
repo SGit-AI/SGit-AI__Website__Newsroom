@@ -12,7 +12,7 @@
 
 <nav class="site"><div class="row">
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.6.1</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.6.2</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -67,6 +67,8 @@
       <a class="sl" href="../replicate/index.html">Replicate this newsroom</a>
       <a class="sl" href="../meter/index.html">SG Meter: the reading meter</a>
       <a class="sl" href="../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+      <a class="sl" href="../demos/vaults/newsroom-synthetic-users/index.html">The study: five readers tested this site</a>
       <a class="sl" href="../mvps/seed-companies.html">Seed companies</a>
       <a class="sl" href="../admin/index.html">How this site is built</a>
       </div>
@@ -121,6 +123,20 @@
 <div class="tablewrap"><table class="vers">
   <thead><tr><th>Version</th><th>Date</th><th>What shipped</th></tr></thead>
   <tbody>
+    <tr>
+      <td class="vnum">v0.6.2</td>
+      <td>10 Oct 2026</td>
+      <td><b>Five invented readers tested this site, and found that 117 images were missing. They are fixed, the study and the article that came with it are here, and the gate now reads the places it was blind.</b>
+        <p><b>What was found.</b> Five synthetic readers drove a browser through v0.6.1, one screenshot at a time, and were interviewed: 62 steps, 51 questions the site did not answer, 56 places somebody got lost, 31 findings, six blocking. It is published on sgit.ai as a vault with a read key, and the page is now <a href="../demos/vaults/newsroom-synthetic-users/index.html">here</a>, at the same path, with its eight images and its live embed. I opened the vault with that key and checked its headline numbers against its own run records: all of them hold, including the per-reader table. The readers are invented by a model and say so first; it is not user research.</p>
+        <p><b>The bug was bigger than the study measured.</b> It counted 51 missing figures in 10 articles. Forcing every figure to load in a browser, v0.6.1 had <b>117 figures not rendered and 2 broken card thumbnails across 13 pages</b>; this release has <b>0 of 625</b>. Two causes, one blind spot. sgit.ai&rsquo;s authoring contract forbids a declarative <code>&lt;img src&gt;</code>, so a figure is a placeholder and a script builds the address from <code>data-dir</code> and <code>data-shot</code> when the page opens. The import did not treat <code>data-dir</code> as an address, so (1) <b>51 figures pointed into other vaults&rsquo; image folders</b> that were never copied, and (2) <b>the 66 article thumbnails on the front page at <code>/</code></b>, which I copy one level up from <code>/articles/</code>, still pointed at <code>cards/</code>. The study did not count these. The import now copies every image the moved pages point at, 52 files, to the same paths, and records which pages need each.</p>
+        <p><b>Why the gate passed it, and what it reads now.</b> Check 2 reads <code>href</code>, <code>src</code> and <code>data-src</code>, and none of this is any of them, so the gate was green on a site showing &ldquo;screenshot unavailable&rdquo; to every reader of ten articles. Two new checks: <b>2b</b>, every figure and card thumbnail must exist, and <b>2c</b>, every script a page loads at run time must exist. 2b was shown failing first on v0.6.1&rsquo;s tree (119 errors, 117 figures and 2 thumbnails) and 2c on the missing embed script, and 2c was shown to see the loaders that work. Reading the study&rsquo;s page turned up a third case the same way: its &ldquo;See it live&rdquo; section loads <code>vault-ui-embed.js</code> through a name built at run time, which was not here. It is copied byte for byte. It mounts the official vault viewer from <code>dev.vault.sgraph.ai</code> in an iframe on that one page, the first cross-origin embed on this site, so say if you would rather link out.</p>
+        <p><b>New from sgit.ai (v0.7.40).</b> One article, <a href="../articles/how-to-run-synthetic-users.html">How to run synthetic users on your own site</a>, with three figures, a card, a banner, a graph and its version page, and the study page above. Nothing else of the newsroom changed in that release but its version number; I diffed the moved tree against the last import: 11 new files, 0 removed, the rest the badge. Both are in the Replicate menu, and the Replicate page has a row for the method.</p>
+        <p><b>Fixed because they were mine.</b> <b>The balance chip is on every page this site writes</b>, as a free page: it charges nothing, and the balance no longer vanishes on the Replicate page, which the study took for lost credit. What such a page should cost is one attribute, and yours to choose. <b>Three version numbers on one screen:</b> the front page&rsquo;s edition line now ends with this site&rsquo;s own release, the number in the nav and footer, instead of &ldquo;edition from sgit.ai v0.7.39&rdquo;, which I had added; an article byline&rsquo;s &ldquo;site v0.7.36&rdquo; now says &ldquo;sgit.ai v0.7.36&rdquo;, because that is the sgit.ai release it names and links to; the markdown twins say the same. <b>The participant page said &ldquo;Nothing here runs&rdquo;</b>, contradicting the page that says what does; the card now says most of what it argues for does not run, and names what does. <b>/shipped/ now says who is who</b> (Dinis Cruz holds editorial responsibility; the desk&rsquo;s roles, the Editor included, are worked by agents; there is no approval step) <b>and that there is no published way to report an error</b>, which I checked for across the reader-facing pages before writing it. Smaller: the JSON-LD said each article was part of the website sgit.ai, and the meter recorded page titles in a reader&rsquo;s history with &ldquo;, sgit.ai&rdquo; on the end; both now say the SGit Newsroom.</p>
+        <p><b>Checked, and not defects.</b> <b>&ldquo;Balance &pound;4.49 on the card, &pound;4.97 in the top bar&rdquo;</b> is real on the screenshot, and is the live chip against a <i>picture</i> of the card: <code>pv-card.webp</code>, a figure in the article, has the author&rsquo;s own balance baked into it. In a fresh browser, and replaying the study&rsquo;s reopen-and-jump pattern, chip and card agree at every depth on this site and on sgit.ai. It is still a fair point that a picture of the card is indistinguishable from the card. <b>&ldquo;Blank page after Back&rdquo;</b> is the loader&rsquo;s fade-in: blank for about 0.3 seconds, not a lasting blank. The two findings the study labelled as caused by its own helper stand as labelled.</p>
+        <p><b>Not fixed here, and why.</b> About twenty of the 31 findings are about pages imported from sgit.ai (the meter&rsquo;s install page, the top-up page, the account wording, the article layout, the unlabelled &pound;5.00 chip, the byline); the rule is that imported pages are fixed there and re-synced, and the meter component is a published version that never changes. They are listed, with who owns each, in <a href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom/blob/dev/admin/notes/2026-10-10__newsroom-move-and-content-audit.md">the move note</a>. Two need a decision and not a fix: <b>a contact for pilots</b> (the one address published anywhere is the one that runs the mailing list), and <b>whether model identifiers belong on the site</b>: 76 imported pages name a model version, mostly in the AI-disclosure line, including this study page, while the brief says they must not appear.</p>
+        <p><b>Caught before release:</b> an import step crashed on a bad regex replacement and the build chain carried on, because I piped it through <code>tail</code>, which hides the failure; the chain now runs with <code>pipefail</code>. And a screenshot script wrote its output into a directory literally named <code>$S</code> inside the repository, found and deleted before it was committed.</p>
+      </td>
+    </tr>
     <tr>
       <td class="vnum">v0.6.1</td>
       <td>10 Oct 2026</td>
@@ -514,7 +530,7 @@
     <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="netline"><a href="https://sgit.ai" style="display:inline;padding:0"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://pt.newsroom.sgit.ai" style="display:inline;padding:0">&#8593; pt.newsroom.sgit.ai</a> &middot; <a href="https://graphs.sgit.ai" style="display:inline;padding:0">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai" style="display:inline;padding:0">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai" style="display:inline;padding:0">&#8593; nhi.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai" style="display:inline;padding:0">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.6.1</a> &middot; <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.6.2</a> &middot; <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>The newsroom</h4>
@@ -557,6 +573,7 @@
     <a href="../meter/index.html">SG Meter: the reading meter</a>
     <a href="../world-news-day/index.html">World News Day 2026: the corpus</a>
     <a href="../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
     <a href="../mvps/seed-companies.html">Seed companies</a>
   </div>
   <div>

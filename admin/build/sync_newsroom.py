@@ -34,6 +34,14 @@ What changes on the way in, and nothing else:
   6. The site's name in the metadata (tab title, og:title, og:site_name, JSON-LD) becomes
      the SGit Newsroom, and the front page takes the newsroom's own title and description.
      The words of an article are never touched.
+  7. Figures and card thumbnails are found by their data-dir, data-shot and data-trail-img, the
+     way assets/shots.js finds them, and every image file they point at that is outside the
+     moved tree is copied to the same path (the "dependencies" in the record, each with the
+     pages that need it). Without this, 51 figures in 10 articles and the 66 thumbnails on the
+     front page at / showed "screenshot unavailable" in v0.6.0 and v0.6.1.
+  8. Two version labels are made unambiguous. The edition line's release number is this site's
+     own, and an article byline's "site v0.7.36", which names the sgit.ai release the article was
+     published in, says "sgit.ai v0.7.36".
 
 Scripts, styles, components and /.well-known/sgit-subscribe.json are copied byte for byte.
 The brief requires it twice: a published component path never changes, and the subscribe
@@ -61,17 +69,25 @@ from urllib.parse import urlsplit, urlunsplit
 
 ROOT     = Path(__file__).resolve().parents[2]
 HOST     = (ROOT / "CNAME").read_text().strip()               # newsroom.sgit.ai
+THIS_VERSION = (ROOT / "admin/build/version.txt").read_text().strip()
 SRC_HOST = "sgit.ai"
 RECORD   = ROOT / "admin/build/newsroom-sync.json"
 
 # The moved tree, from the brief's "What moves" table.
-MOVED_DIRS = ["articles", "newsroom", "account", "subscribe", "meter", "og", "assets/components"]
+MOVED_DIRS = ["articles", "newsroom", "account", "subscribe", "meter", "og", "assets/components",
+              # Not in the brief's list: a vault page, which stays on sgit.ai as a rule. This one is
+              # the study of this site by five synthetic readers, and Dinis asked for it here.
+              "demos/vaults/newsroom-synthetic-users"]
 # Single files: source path -> path here.
 MOVED_FILES = {
     "assets/site.css": "assets/newsroom.css",
     "assets/site.js": "assets/site.js",
     "assets/shots.js": "assets/shots.js",
     "assets/subscribe.js": "assets/subscribe.js",
+    # The live-vault embed on the synthetic-users study page: mounts the official vault viewer in an
+    # iframe from dev.vault.sgraph.ai. Loaded by a script that builds the file name at run time,
+    # so no static reader of the page finds it. Copied byte for byte like every script here.
+    "assets/vault-ui-embed.js": "assets/vault-ui-embed.js",
     ".well-known/sgit-subscribe.json": ".well-known/sgit-subscribe.json",
 }
 # Paths that exist on both sites, where a link from an imported page means THIS site's copy.
@@ -85,7 +101,12 @@ TEXT     = re.compile(r"\.(html|md|xml|json|txt)$")
 FRONT    = ("articles/index.html", "articles/index.md")    # also written to the root
 
 REAL_TAG = re.compile(r"<[a-zA-Z][^<>]*>")
-URL_ATTR = re.compile(r'\b(href|src|data-src|action|poster)="([^"]*)"')
+# data-dir and data-trail-img are read by assets/shots.js, which sets img.src from them at runtime
+# (sgit.ai's authoring contract forbids a declarative <img src>). They are URLs as much as href is,
+# and v0.6.0 and v0.6.1 did not treat them as such: 117 images were missing and nothing said so.
+URL_ATTR = re.compile(r'\b(href|src|data-src|action|poster|data-dir|data-trail-img)="([^"]*)"')
+FIGURE_TAG = re.compile(r'<figure\b[^>]*\bclass="[^"]*\bshot\b[^"]*"[^>]*>')
+TRAIL_TAG  = re.compile(r'<[a-zA-Z][^<>]*\sdata-trail-img="([^"]+)"[^<>]*>')
 MD_LINK  = re.compile(r'(\]\()([^)\s]+)((?:\s+"[^"]*")?\))')
 ABS_SRC  = re.compile(r'https?://(?:www\.)?sgit\.ai/([^\s"\'<>)\]]*)')
 
@@ -104,6 +125,8 @@ NORMALISE = [
     (re.compile(r'<footer class="site">[\s\S]*?</footer>'), '<footer class="site"></footer>'),
     (re.compile(r'<span class="llmschip-m">[^<]*</span>'), '<span class="llmschip-m"></span>'),
     (re.compile(r'\u00b7 site v\d+\.\d+\.\d+ \u00b7'), '\u00b7 site \u00b7'),
+    (re.compile(r'<span>newsroom\.sgit\.ai &middot; v\d+\.\d+\.\d+</span>'),
+     '<span>newsroom.sgit.ai &middot; </span>'),
 ]
 
 
@@ -116,9 +139,22 @@ def content_sha(data, path):
     return sha(text.encode("utf-8"))
 
 
+# Image files that pages in the moved tree point at but that live outside it, found by
+# find_dependencies() before anything is transformed. They are copied to the same path, and a
+# link to one stays relative, exactly as if its folder had been in the brief's list.
+DEPENDENCY_FILES, DEPENDENCY_DIRS = set(), set()
+
+
+def register_dependencies(deps):
+    DEPENDENCY_FILES.clear(); DEPENDENCY_FILES.update(deps)
+    DEPENDENCY_DIRS.clear(); DEPENDENCY_DIRS.update(posixpath.dirname(p) for p in deps)
+
+
 def moved_target(path):
     """Where a source-site path lives here, or None when it did not move."""
     path = path.lstrip("/")
+    if path in DEPENDENCY_FILES or path in DEPENDENCY_DIRS:
+        return path
     if path in MOVED_FILES:
         return MOVED_FILES[path]
     for d in MOVED_DIRS:
@@ -209,6 +245,10 @@ def retitle(text, front):
 
     def ld(block):
         b = re.sub(r'("(?:name|headline)": ")([^"]*)(")', slot, block.group(0))
+        # The article says which site it is part of. It was sgit.ai, with the canonical address
+        # already moved here, so a crawler read an article of newsroom.sgit.ai as part of sgit.ai.
+        b = b.replace('"isPartOf": {"@type": "WebSite", "name": "sgit.ai", "url": "https://sgit.ai"}',
+                      f'"isPartOf": {{"@type": "WebSite", "name": "SGit Newsroom", "url": "https://{HOST}"}}')
         if front:
             b = re.sub(r'("description": ")[^"]*(")', rf'\1{FRONT_DESCRIPTION}\2', b, count=1)
         return b
@@ -217,11 +257,50 @@ def retitle(text, front):
     text = re.sub(r'(<meta (?:property="og:title"|name="twitter:title"|property="og:image:alt") content=")([^"]*)(")',
                   slot, text)
     text = re.sub(r'(<meta property="og:site_name" content=")sgit\.ai(")', r'\1SGit Newsroom\2', text)
+    # The meter records the page's title in the reader's reading history, kept in their browser.
+    text = re.sub(r'(<sg-meter\b[^>]*\btitle=")([^"]*)(")', slot, text)
     text = re.sub(r'<script type="application/ld\+json">.*?</script>', ld, text, flags=re.S)
     if front:
         text = re.sub(r'(<meta (?:name="description"|property="og:description") content=")[^"]*(")',
                       rf'\1{FRONT_DESCRIPTION}\2', text)
     return text
+
+
+def attr(tag, name):
+    m = re.search(rf'\s{name}="([^"]*)"', tag)
+    return m.group(1) if m else None
+
+
+def image_refs(src_file, text):
+    """Source-site paths of every figure and card thumbnail on a page, resolved the way
+    assets/shots.js resolves them: relative to the page, with data-dir defaulting to images/."""
+    out = []
+    for m in FIGURE_TAG.finditer(text):
+        shot, base = attr(m.group(0), "data-shot"), attr(m.group(0), "data-dir")
+        base = "images/" if base is None else base
+        if not shot or re.match(r"^([a-z]+:)?//|^[a-z]+:", base + shot):
+            continue
+        out.append(posixpath.normpath(posixpath.join(posixpath.dirname(src_file), base, shot)))
+    for m in TRAIL_TAG.finditer(text):
+        if re.match(r"^([a-z]+:)?//|^data:|^https?:", m.group(1)):
+            continue
+        out.append(posixpath.normpath(posixpath.join(posixpath.dirname(src_file), m.group(1))))
+    return [p for p in out if not p.startswith("..")]
+
+
+def find_dependencies(src, pages):
+    """Image files the moved pages point at that are not in the moved tree, and the references
+    that resolve to nothing even on sgit.ai (a bug there, reported here and not hidden)."""
+    deps, unresolved = {}, {}
+    for s, d in pages:
+        if not s.endswith(".html"):
+            continue
+        for target in image_refs(s, (src / s).read_text(encoding="utf-8")):
+            if not (src / target).is_file():
+                unresolved.setdefault(target, set()).add(d)
+            elif moved_target(target) is None:
+                deps.setdefault(target, set()).add(d)
+    return deps, unresolved
 
 
 def transform(text, src_file, dest_file, kind):
@@ -241,9 +320,18 @@ def transform(text, src_file, dest_file, kind):
         # with this site's would reload every page against the wrong version.
         text = text.replace("'assets/site.css'", "'assets/newsroom.css'")
         text = text.replace("js(sg,'assets/site-chat.js');", "")
-        # The edition line names the site and release that produced the edition.
-        text = re.sub(r'<span>sgit\.ai &middot; (v\d+\.\d+\.\d+)</span>',
-                      rf'<span>{HOST} &middot; edition from sgit.ai \1</span>', text)
+        # The edition line's last item named the sgit.ai release that built the page. Here it names
+        # this site's own release, the one in the nav and the footer, restamped by chrome.py: five
+        # readers counted three version numbers for one site, and "edition from sgit.ai v0.7.39"
+        # was one of them, added by this script in v0.6.0.
+        text = re.sub(r'<span>sgit\.ai &middot; v\d+\.\d+\.\d+</span>',
+                      f'<span>{HOST} &middot; {THIS_VERSION}</span>', text)
+        # A byline's "site v0.7.36" is the sgit.ai release the article was published in, and links
+        # to sgit.ai's release history. On sgit.ai "site" meant the site you were reading; here it
+        # means somebody else's, so the label says whose.
+        text = re.sub(r'(<a href="https://sgit\.ai/admin/versions\.html" title=")The site release'
+                      r'( it was published in">)site (v\d+\.\d+\.\d+</a>)',
+                      r'\1The sgit.ai release\2sgit.ai \3', text)
         if dest_file != src_file:
             # Script-string paths (the dynamic imports and fetches), re-based to the new depth.
             # A re-based path that loses its ../ must gain ./ : import('assets/x.js') is a bare
@@ -262,6 +350,12 @@ def transform(text, src_file, dest_file, kind):
             text = re.sub(r'(<meta property="og:url" content=")[^"]*(")', rf'\1https://{HOST}/\2', text, count=1)
     elif kind == "md":
         text = MD_LINK.sub(lambda m: m.group(1) + rewrite_url(m.group(2), src_file, dest_file) + m.group(3), text)
+        text = re.sub(r'\[site (v\d+\.\d+\.\d+)\]\((https://sgit\.ai/admin/versions\.md)\)',
+                      r'[sgit.ai \1](\2)', text)
+        # The same ambiguity in the line every twin opens with: "site v0.7.40" is the sgit.ai release
+        # that generated the file, not this site's. (index.md gets this site's own stamp appended.)
+        text = re.sub(r'\u00b7 site (v\d+\.\d+\.\d+) \u00b7 this file is generated',
+                      lambda m: f'\u00b7 sgit.ai {m.group(1)} \u00b7 this file is generated', text)
     return text
 
 
@@ -305,7 +399,12 @@ def main():
 
     previous = json.loads(RECORD.read_text())["files"] if RECORD.exists() else {}
     files, problems = {}, []
-    for s, d in plan(src):
+    moved = plan(src)
+    # Before anything is transformed: which image files do the moved pages point at that are not
+    # in the moved tree? They are copied, so a link to one can stay relative.
+    deps, unresolved = find_dependencies(src, moved)
+    register_dependencies(deps)
+    for s, d in moved + [(t, t) for t in sorted(deps)]:
         raw = (src / s).read_bytes()
         kind = Path(s).suffix.lstrip(".")
         if VERBATIM.search(s) or not TEXT.search(s):
@@ -320,6 +419,8 @@ def main():
             problems.append(f"{d}: a verbatim file would change")
         files[d] = {"from": s, "sha256_source": sha(raw), "sha256": content_sha(out, d),
                     "_out": out}
+        if s in deps:
+            files[d]["needed_by"] = sorted(deps[s])
 
     # Never overwrite or delete a file this site wrote itself.
     for d in files:
@@ -337,6 +438,9 @@ def main():
             print("  ✗ " + p, file=sys.stderr)
         sys.exit(f"sync: {len(problems)} problem(s), nothing written")
 
+    for target, pages in sorted(unresolved.items()):
+        print(f"  ! sgit.ai itself points at {target} and the file is not there ({len(pages)} page(s)); "
+              f"it fails there too, and is not fixed here", file=sys.stderr)
     changed = [d for d, f in files.items()
                if not (ROOT / d).exists() or content_sha((ROOT / d).read_bytes(), d) != f["sha256"]]
     if args.check:
@@ -366,6 +470,8 @@ def main():
             "articles": sum(1 for d in files if re.fullmatch(r"articles/[^/]+\.html", d)
                             and d not in ("articles/index.html", "articles/graphs.html")),
             "verbatim": sum(1 for f in files.values() if f["sha256"] == f["sha256_source"]),
+            "dependencies": len(deps),
+            "unresolved_on_sgit_ai": len(unresolved),
         },
         "files": {d: {k: v for k, v in f.items() if k != "_out"} for d, f in sorted(files.items())},
     }
@@ -373,6 +479,7 @@ def main():
     c = record["counts"]
     print(f"sync: sgit.ai {meta['version']} ({meta['commit'][:7]}) -> {HOST}: "
           f"{c['files']} files, {c['pages']} pages, {c['articles']} articles; "
+          f"{c['dependencies']} dependency images; "
           f"{len(changed)} written, {len(stale)} removed, {c['verbatim']} byte-identical to source")
 
 

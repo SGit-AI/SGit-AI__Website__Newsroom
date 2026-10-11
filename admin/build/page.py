@@ -21,6 +21,37 @@ def esc(s):
     return _html.escape(s, quote=True)
 
 
+# SG Meter, the reading meter, imported with the newsroom at a versioned path that never changes.
+METER_JS = "assets/components/sg-meter/v1/v1.3/v1.3.1/sg-meter.js"
+
+
+def meter_config():
+    """The meter's config, taken from the imported front page so it is written once and is the
+    same on every page. None until the newsroom has been imported."""
+    front = ROOT / "index.html"
+    if not front.exists():
+        return None
+    m = re.search(r'<script type="application/json" id="sg-meter-config">(.*?)</script>',
+                  front.read_text(encoding="utf-8"), re.S)
+    return m.group(1) if m else None
+
+
+def meter_block(up, title):
+    """The balance chip in the nav is the meter, and a page only gets one if it loads the meter.
+    A page this site writes is declared kind="free": nothing is charged for it, and the reader's
+    balance is still on screen, so it does not vanish when they follow a link from an article
+    (a synthetic reader took it for lost credit on the Replicate page). What a page of this
+    kind costs is one attribute, and is a decision for the editor, not for a template."""
+    cfg = meter_config()
+    if cfg is None:
+        return ""
+    assert (ROOT / METER_JS).exists(), f"{METER_JS} is not on disk; run admin/build/sync_newsroom.py"
+    return (f'<sg-meter view="page" kind="free" date="" topics="" title="{esc(title)}, SGit Newsroom" quiet></sg-meter>\n'
+            f'<script type="application/json" id="sg-meter-config">{cfg}</script>\n'
+            f'<script>\nimport(\'{up}{METER_JS}\')\n'
+            f" .catch(function (e) {{ console.error('[sg-meter] component failed to load:', e); }});\n</script>\n")
+
+
 def newsroom_page(rel, title, description, body, *, eyebrow="", crumbs=(), lead="", agent=""):
     """rel is the page's path from the site root; crumbs is ((label, path-from-root), ...)."""
     up = "../" * rel.count("/")
@@ -29,7 +60,7 @@ def newsroom_page(rel, title, description, body, *, eyebrow="", crumbs=(), lead=
                        + [f'<a href="{up}{href}">{label}</a>' for label, href in crumbs]
                        + [esc(title)])
     return f"""<!doctype html>
-<html lang="en">
+<html lang="en" data-root="{up}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -58,7 +89,7 @@ def newsroom_page(rel, title, description, body, *, eyebrow="", crumbs=(), lead=
   <p>{agent}</p>
 </div>
 </main>
-<footer class="site"></footer>
+{meter_block(up, title)}<footer class="site"></footer>
 <script src="{up}assets/site.js" defer></script>
 </body>
 </html>

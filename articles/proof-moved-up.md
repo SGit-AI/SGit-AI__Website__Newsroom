@@ -2,7 +2,7 @@
 
 > The previous article diagnosed a homepage that led with encryption and buried twenty-five real vaults under a table. This is the rebuild, put beside those screenshots, what moved, what was cut, what it is generated from, and the one thing it still cannot show.
 
-*Source: <https://newsroom.sgit.ai/articles/proof-moved-up.html> · site v0.7.39 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/proof-moved-up.html> · sgit.ai v0.7.40 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 
@@ -10,7 +10,7 @@
 
 # The proof moved up, the homepage after the rebuild, next to the before pictures
 
-2026-09-07 · [article v1.2.2, 5 versions](versions/proof-moved-up.md) · [site v0.2.60](https://sgit.ai/admin/versions.md) · homepagepositioningvaultsagents
+2026-09-07 · [article v1.2.2, 5 versions](versions/proof-moved-up.md) · [sgit.ai v0.2.60](https://sgit.ai/admin/versions.md) · homepagepositioningvaultsagents
 
 ***Abstract:** The previous article diagnosed a homepage that led with encryption and buried twenty-five real vaults under a table. This is the rebuild, put beside those screenshots, what moved, what was cut, what it is generated from, and the one thing it still cannot show.*
 

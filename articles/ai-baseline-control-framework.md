@@ -2,7 +2,7 @@
 
 > Jan van Dijke published the AI Baseline Control Framework on 2 October 2026, twenty controls for organisations that deploy AI, in five categories and three types, each with why it matters and how to put it in place, mapped to the NIST AI RMF, ISO/IEC 42001 and the EU AI Act, and licensed CC BY-SA 4.0. Part one is about the framework, what it does well, what it adds that the three it maps to do not, and why an open licence matters more for a control framework than for most documents. Part two is what the licence made possible on the day: the CSV export converted into a semantic graph with an ontology, a SKOS taxonomy, JSON-LD and Turtle, eighty hyperlinked documents and a database that runs in the browser, joined to the EU AI Act's own text, published as a vault under the same licence, with a fractal graph view that walks from the framework down to a paragraph of law, and the six things the graph found that the CSV does not say.
 
-*Source: <https://newsroom.sgit.ai/articles/ai-baseline-control-framework.html> · site v0.7.39 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/ai-baseline-control-framework.html> · sgit.ai v0.7.40 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 
@@ -10,7 +10,7 @@
 
 # An open AI governance framework, and what its licence let us build
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-07 · [article v1.0.1, 2 versions](versions/ai-baseline-control-framework.md) · [site v0.6.86](https://sgit.ai/admin/versions.md) · ai-governanceai-bcfeu-ai-actnist-ai-rmfiso-42001open-licencecreative-commonssemantic-graphsfractal-semantic-graphssqlitevaultsarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-07 · [article v1.0.1, 2 versions](versions/ai-baseline-control-framework.md) · [sgit.ai v0.6.86](https://sgit.ai/admin/versions.md) · ai-governanceai-bcfeu-ai-actnist-ai-rmfiso-42001open-licencecreative-commonssemantic-graphsfractal-semantic-graphssqlitevaultsarticle
 
 ***Abstract:** Jan van Dijke published the AI Baseline Control Framework on 2 October 2026, twenty controls for organisations that deploy AI, in five categories and three types, each with why it matters and how to put it in place, mapped to the NIST AI RMF, ISO/IEC 42001 and the EU AI Act, and licensed CC BY-SA 4.0. Part one is about the framework, what it does well, what it adds that the three it maps to do not, and why an open licence matters more for a control framework than for most documents. Part two is what the licence made possible on the day: the CSV export converted into a semantic graph with an ontology, a SKOS taxonomy, JSON-LD and Turtle, eighty hyperlinked documents and a database that runs in the browser, joined to the EU AI Act's own text, published as a vault under the same licence, with a fractal graph view that walks from the framework down to a paragraph of law, and the six things the graph found that the CSV does not say.*
 

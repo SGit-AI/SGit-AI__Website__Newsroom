@@ -2,7 +2,7 @@
 
 > Every published version of the article "Pay after you read", with the date, the words and what changed.
 
-*Source: <https://newsroom.sgit.ai/articles/versions/pay-after-you-read.html> · site v0.7.39 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/versions/pay-after-you-read.html> · sgit.ai v0.7.40 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 
@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-10-10 | minor | 4,213 | +518 / −0 words; 0 changed, 8 added, 0 removed paragraphs | this release | [what changed](pay-after-you-read/v1.1.0.md) · [current](../pay-after-you-read.md) |
+| **v1.1.0** | 2026-10-10 | minor | 4,213 | +518 / −0 words; 0 changed, 8 added, 0 removed paragraphs | [`dfd5d236c`](https://github.com/SGit-AI/SGit-AI__Website/commit/dfd5d236cdcd933bf998f28a88aa26054995effd) | [what changed](pay-after-you-read/v1.1.0.md) · [current](../pay-after-you-read.md) |
 | **v1.0.0** | 2026-10-10 | published | 3,695 | first published | [`75b94297e`](https://github.com/SGit-AI/SGit-AI__Website/commit/75b94297e00dbf96643208184fab2ab61871b607) |  |
 
 [← Back to the article](../pay-after-you-read.md) · [All articles](../index.md)

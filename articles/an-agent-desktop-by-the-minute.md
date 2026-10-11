@@ -2,7 +2,7 @@
 
 > We want to give each agent a desktop of its own, away from the laptop, that a person can watch and take over, that can reach only what its task needs, that holds no secret it could leak, that is thrown away afterwards, and that is billed for the minutes it works. In October 2026 every one of those properties can be bought somewhere, and no single product we looked at offers all of them. This article lays out the nine properties, puts nine products against them from their own documentation, prices two hours of work a day on each, and explains the three things that make it hard: macOS cannot be leased for less than a day and Apple's licence limits what a leased Mac is for; the strongest isolation controls are weeks old or in private beta; and prompt injection is not solved, so the desktop has to be the barrier rather than the model. It proposes what we would build from what exists, and closes with the startup credit programmes that would pay for trying it, verified on the day, with how to apply.
 
-*Source: <https://newsroom.sgit.ai/articles/an-agent-desktop-by-the-minute.html> · site v0.7.39 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/an-agent-desktop-by-the-minute.html> · sgit.ai v0.7.40 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 
@@ -10,7 +10,7 @@
 
 # A locked-down desktop for an agent, by the minute, is still hard to rent
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-07 · [article v1.0.1, 2 versions](versions/an-agent-desktop-by-the-minute.md) · [site v0.6.87](https://sgit.ai/admin/versions.md) · agentsagent-desktopscomputer-usesandboxesisolationegresssecretsmacoswindows-365startup-programmesagent-behaviour-policyarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-07 · [article v1.0.1, 2 versions](versions/an-agent-desktop-by-the-minute.md) · [sgit.ai v0.6.87](https://sgit.ai/admin/versions.md) · agentsagent-desktopscomputer-usesandboxesisolationegresssecretsmacoswindows-365startup-programmesagent-behaviour-policyarticle
 
 ***Abstract:** We want to give each agent a desktop of its own, away from the laptop, that a person can watch and take over, that can reach only what its task needs, that holds no secret it could leak, that is thrown away afterwards, and that is billed for the minutes it works. In October 2026 every one of those properties can be bought somewhere, and no single product we looked at offers all of them. This article lays out the nine properties, puts nine products against them from their own documentation, prices two hours of work a day on each, and explains the three things that make it hard: macOS cannot be leased for less than a day and Apple's licence limits what a leased Mac is for; the strongest isolation controls are weeks old or in private beta; and prompt injection is not solved, so the desktop has to be the barrier rather than the model. It proposes what we would build from what exists, and closes with the startup credit programmes that would pay for trying it, verified on the day, with how to apply.*
 

@@ -2,7 +2,7 @@
 
 > Every article on sgit.ai as a semantic graph: the ideas it rests on, the claims it makes, and how they connect, plus a map of how the articles link to each other.
 
-*Source: <https://newsroom.sgit.ai/articles/graphs.html> · site v0.7.39 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/graphs.html> · sgit.ai v0.7.40 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 
@@ -14,13 +14,42 @@ Every article here has a semantic graph beside it: the ideas it rests on, the cl
 
 The graphs are data first and pictures second. Take them as JSON: [all articles in one file](graphs.json), with the topics, the teasers and the links between articles resolved, or one file per article at `articles/graphs/<slug>.json` (for example [this one](graphs/footprint-and-blast-radius.json)). The pages on this site are rendered from the same files at build time; nothing here is hand-written HTML.
 
-66 of 66 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
+67 of 67 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
 
 ## How the articles connect
 
 *[diagram]*
 
-66 articles, 278 links between them (429 mentions in all). 57 articles cite an earlier one; 9 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (20 articles link to it). Most linking: [The Mandate Stack](#the-mandate-stack) (20 links out). 0 articles not yet linked either way.
+67 articles, 279 links between them (430 mentions in all). 58 articles cite an earlier one; 9 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (20 articles link to it). Most linking: [The Mandate Stack](#the-mandate-stack) (20 links out). 0 articles not yet linked either way.
+
+## [How to run synthetic users on your own site: five people who do not exist, a browser, and an afternoon](how-to-run-synthetic-users.md)
+
+2026-10-10 · Vaults & methodSite & engineering
+
+Synthetic users are invented people, each a record with a situation, a question, what they know and do not, what they decide on and what makes them leave, played by a model that drives a real browser one screenshot at a time instead of reading the page's code, so it can get lost as a person would. Claude Sonnet is good enough to play each user; the study lives in a GitHub repository or a vault shared by a link. Choose five to ten users of about five types, write profiles and expected journeys first, run the observe-think-act loop, interview and rate, order findings by cost, check every surprising finding against the browser's record, publish and run again. On newsroom.sgit.ai five readers produced 31 findings, six blocking; two were caused by the helper, and one became a measured bug: 51 of 527 figures missing.
+
+*[diagram]*
+**concept**claim**method**artefact**example
+
+**11 nodes, 10 edges**
+
+- **Screenshot, not the code** (method) An agent reading the code finds every link and therefore no confusion.
+- **A profile is a record** (concept) Situation, question, knows, does not know, decides on, walks away if, patience, screen.
+- **Expected journey first** (method) Written before the run, so a surprise shows as a difference.
+- **Sonnet plays each user** (claim) Good enough to read a screenshot and stay in character; Opus for checking evidence.
+- **Repository or vault** (concept) Public GitHub is easiest to share; a vault is encrypted, opens as an app, shared by a link.
+- **Interview and rating** (method) The same ten questions for everyone; a rating from 1 to 5.
+- **Findings ordered by cost** (method) Blocks a pilot, costs a payment, costs trust, loses a reader, minor.
+- **Check before publishing** (method) Two newsroom findings were the helper's doing and are labelled, not deleted.
+- **51 of 527 figures missing** (example) The researcher's broken image, measured across the newsroom after the move.
+- **Run against a verified copy** (method) Byte-identical local files: nothing reaches the live site, and the run repeats.
+- **Three studies** (artefact) store.sgit.ai, riskmandate.ai and newsroom.sgit.ai, each in a vault.
+
+> An agent that reads the code finds every link every time, and so finds no confusion, which is the only thing worth running this for. The method in one sentence.
+
+> A findings list that silently loses items cannot be compared with the next one. Why artefacts are labelled, not deleted.
+
+builds on [A link to a persona: send people to the newsroom as someone, not as nobody](#a-link-to-a-persona).
 
 ## [A link to a persona: send people to the newsroom as someone, not as nobody](a-link-to-a-persona.md)
 
@@ -48,7 +77,7 @@ A link should land a reader as someone rather than as nobody: personas move from
 
 > a persona is a reading list with a history, and you either track the upstream or branch from it. Follow and fork, from git.
 
-builds on [Pay to keep your persona: readers should pay because it helps them, not because they feel they should](#pay-to-keep-your-persona).
+builds on [Pay to keep your persona: readers should pay because it helps them, not because they feel they should](#pay-to-keep-your-persona); continued by [How to run synthetic users on your own site: five people who do not exist, a browser, and an afternoon](#how-to-run-synthetic-users).
 
 ## [Pay after you read: how a reading meter became a working business model in one afternoon, one release at a time](pay-after-you-read.md)
 
