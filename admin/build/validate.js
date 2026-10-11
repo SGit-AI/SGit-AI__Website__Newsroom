@@ -161,6 +161,19 @@ for (const f of htmlFiles) {
   }
 }
 
+// --- 2d. a payment link on a page is a live one --------------------------------
+// The meter config carries the top-up link. A Stripe test-mode link (buy.stripe.com/test_...) takes
+// no money and a mistyped one takes the reader somewhere else, and either would sit on a page that
+// says "pay". sync_newsroom.py refuses to write anything but the live shape; this refuses to ship it.
+for (const f of htmlFiles) {
+  const t = fs.readFileSync(f, 'utf8');
+  for (const m of t.matchAll(/"topup": \{"amount": \d+, "link": "([^"]*)"\}/g)) {
+    if (m[1] !== '' && !/^https:\/\/buy\.stripe\.com\/[A-Za-z0-9]+$/.test(m[1])) {
+      errors.push(`${rel(f)}: the top-up link is not a live Stripe Payment Link -> ${m[1]}`);
+    }
+  }
+}
+
 // --- 3. canonical host ----------------------------------------------------
 // A verbatim republication of docs.diniscruz.ai material points its canonical at
 // the ORIGINAL, per briefs/02 §3.4 — that page is exempt from the CNAME-host rule

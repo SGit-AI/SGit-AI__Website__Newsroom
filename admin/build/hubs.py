@@ -74,7 +74,7 @@ def design(f):
          'trust as a service</a>',
          'A <a href="../meter/index.html">reading meter</a>: a few pence a page from a balance kept in the '
          'reader&rsquo;s browser, priced by how far they read and how useful they said it was.',
-         ('Card top-ups are live. ' if f["paying"] else
+         ('A &pound;5 card top-up runs, on Stripe&rsquo;s page. ' if f["paying"] else
           'No money moves yet: the &pound;5 top-up page exists and its payment link does not. ')
          + 'Nothing is paid upstream to the people whose facts an article uses.'),
         ('<b>Rights travel with the content.</b> A licence nobody can read is not a licence.',
@@ -165,6 +165,14 @@ def replicate(f):
          'graphed, published as an encrypted vault that opens as an app.',
          '<a href="../world-news-day/index.html">The corpus</a>'),
     ]
+    payments_note = (
+        '<div class="note"><b>Payments.</b> A top-up here is a &pound;5 payment on Stripe&rsquo;s page. The page it '
+        'returns to adds the credit in the reader&rsquo;s browser and cannot check the payment, which the meter says '
+        'plainly. The money goes to the Stripe account behind the link, and nothing reaches the people whose facts an '
+        'article uses. If you copy the meter, the link, the account and the returning page are yours to set up.</div>'
+        if f["paying"] else
+        '<div class="note"><b>Payments.</b> The meter and the top-up page work. The payment link that turns a top-up '
+        'into money is not set yet, so no newsroom built this way takes money today, this one included.</div>')
     body = f"""<p>The point of publishing how this newsroom runs is that someone else can run one. This page
 says what you can copy today, where it is, and how far each piece is packaged. It also says what is not
 packaged yet, because a replication guide that hides its gaps sends people into them.</p>
@@ -178,8 +186,7 @@ generator that also builds the rest of sgit.ai, and imported here at the same ad
 {f["source_version"]}, commit <code>{f["source_commit"]}</code>). When this site becomes the publisher the
 generator moves here, and it is extracted as it moves. Until then there is no template you can fork and
 fill with your own articles.</div>
-<div class="note"><b>Payments.</b> The meter and the top-up page work. The payment link that turns a top-up
-into money is not set yet, so no newsroom built this way takes money today, this one included.</div>
+{payments_note}
 <h2 id="plans">Other things built to be copied</h2>
 <p><a href="../mvps/seed-companies.html">Seed companies</a>: seven business templates, under a Creative
 Commons licence, published so that someone else can build them.</p>"""
@@ -208,6 +215,12 @@ def shipped(f):
         ('<b>The reading meter</b>', 'Pence per page by how far you read, from a balance in your browser that '
          'can go below zero. Personas, your own newsroom, and a reading share you can send us.',
          'An honesty box, not a paywall: a reader can change their own balance.'),
+    ] + ([
+        ('<b>Top-up</b>', 'A &pound;5 card payment on Stripe&rsquo;s page: one payment, nothing renews, quantity fixed at '
+         'one. The page it returns to adds the credit in your browser, once for each payment reference.',
+         'Unverified by design: that page cannot check the payment. The money goes to the Stripe account behind the '
+         'link, and nothing is paid to the people whose facts an article uses.'),
+    ] if f["paying"] else []) + [
         ('<b>Subscribe</b>', 'Your address is encrypted in your browser and sent to a write-only lane.',
          'The host sees ciphertext only; an agent drains the lane.'),
         ('<b>World News Day 2026</b>', '21 op-eds fetched, frozen, hashed, described and graphed; an encrypted '
@@ -216,9 +229,9 @@ def shipped(f):
         ('<b>Databases with no server</b>', 'SQLite and a SPARQL store running in your browser.',
          'Over the Portugal section&rsquo;s files, which are archived.'),
     ]
-    designed = [
-        ('<b>Payment</b>', 'The &pound;5 top-up page works and its payment link is not set. Until it is, no money moves.'
-         if not f["paying"] else 'Card top-ups are live.'),
+    designed = ([
+        ('<b>Payment</b>', 'The &pound;5 top-up page works and its payment link is not set. Until it is, no money moves.'),
+    ] if not f["paying"] else []) + [
         ('<b>Selling the graph</b>', 'Graphs are published free. Nothing sells one.'),
         ('<b>Paying the fact creator</b>', 'No revenue reaches anyone upstream of an article.'),
         ('<b>Corrections that propagate</b>', 'Versions and corrections are kept; they do not reach the pages that cited the corrected claim.'),

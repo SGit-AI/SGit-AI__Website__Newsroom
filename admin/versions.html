@@ -12,7 +12,7 @@
 
 <nav class="site"><div class="row">
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.6.2</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.6.3</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -123,6 +123,17 @@
 <div class="tablewrap"><table class="vers">
   <thead><tr><th>Version</th><th>Date</th><th>What shipped</th></tr></thead>
   <tbody>
+    <tr>
+      <td class="vnum">v0.6.3</td>
+      <td>11 Oct 2026</td>
+      <td><b>A reader can now top up &pound;5 by card, on this site&rsquo;s side only, and every page that said no money moves says what runs.</b>
+        <p><b>The link.</b> A live-mode Stripe Payment Link for &pound;5, one payment, quantity fixed at one, that redirects to <code>/account/topped-up.html</code> with the payment reference in the address. The top-up page now shows one &ldquo;Pay &pound;5.00&rdquo; button instead of the simulated cart and its four packs, and the account page&rsquo;s top-up action goes straight to Stripe. That also removes a finding from the synthetic readers&rsquo; study: the top-up page no longer says it is simulated while asking for money. The return page was already here; I ran it in a browser on a fresh profile: it adds &pound;5 the first time a payment reference arrives, says &ldquo;Already added&rdquo; when the same one comes back, adds again for a different one, and explains itself when there is none.</p>
+        <p><b>This site only, and why that matters.</b> The link is in <code>admin/build/newsroom-meter.json</code> and the import writes it into the meter config as a recorded rule, not a hand edit, so sgit.ai&rsquo;s pages keep the simulated cart. A reader&rsquo;s credit lives in the browser storage of the site they return to, and this link returns to newsroom.sgit.ai, so a reader who paid from an sgit.ai page would have been credited on a site they were not reading. I had said the link had to be set on sgit.ai and only at cutover; that was wrong, and this is the better way. The import and the gate both refuse anything but the live shape, <code>buy.stripe.com/&lt;id&gt;</code>, so a test-mode link, which has <code>test_</code> in it, cannot reach a page.</p>
+        <p><b>What the pages say.</b> Four places said no money moves, and one more said the payment link was not set: the Replicate note, the Payment row on <a href="../shipped/index.html">what runs</a>, the design page, the participant card and <code>llms.txt</code> (twice). The top-up now sits under what runs, with its limit beside it: the page it returns to cannot check the payment, by design, and nothing is paid to the people whose facts an article uses. The participant card no longer depends on the state at all.</p>
+        <p><b>To switch it off:</b> set <code>topup_link</code> to an empty string in that file, run the import, release. The top-up page goes back to the simulated cart, and the pages that describe payment change with it.</p>
+        <p><b>What was tested, and by whom.</b> The return page I ran in a browser here, on a fresh profile. The payment itself I could not complete: Stripe declined the test card, correctly, because the link is live. Dinis tested the flow before this release and reports that it works; that is his report, and I did not see it.</p>
+      </td>
+    </tr>
     <tr>
       <td class="vnum">v0.6.2</td>
       <td>10 Oct 2026</td>
@@ -530,7 +541,7 @@
     <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="netline"><a href="https://sgit.ai" style="display:inline;padding:0"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://pt.newsroom.sgit.ai" style="display:inline;padding:0">&#8593; pt.newsroom.sgit.ai</a> &middot; <a href="https://graphs.sgit.ai" style="display:inline;padding:0">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai" style="display:inline;padding:0">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai" style="display:inline;padding:0">&#8593; nhi.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai" style="display:inline;padding:0">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.6.2</a> &middot; <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.6.3</a> &middot; <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>The newsroom</h4>

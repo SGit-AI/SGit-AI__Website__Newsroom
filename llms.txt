@@ -6,7 +6,7 @@
 > propagate; provenance is the product; pay the person who found the fact), and everything
 > needed to run a newsroom like it.
 
-Site version: v0.6.2 (10 October 2026). Published by the sgit project, which is building
+Site version: v0.6.3 (10 October 2026). Published by the sgit project, which is building
 the stack this site argues for; participant disclosure at /about/participant.html.
 Content CC BY 4.0 unless a page states otherwise; code Apache 2.0.
 
@@ -18,8 +18,10 @@ newsletter, collections, desk notes and a feed); how it runs (/newsroom/: six ag
 under written behaviour policies, a board, pitches and a run log); the reader's account
 (/account/: a reading meter kept in the reader's browser, personas, the reader's own
 newsroom); subscribe (/subscribe/); the World News Day 2026 corpus (/world-news-day/); and
-SQL and SPARQL consoles with no server (/databases/). NO MONEY MOVES YET: the GBP 5 top-up
-page exists and its payment link is not set. ONLY DESIGNED, NOT RUNNING: selling the graph,
+SQL and SPARQL consoles with no server (/databases/). A READER CAN TOP UP GBP 5 BY CARD on
+Stripe's page (one payment, nothing renews). The page it returns to adds the credit in the reader's browser
+and CANNOT CHECK THE PAYMENT, by design; nothing is paid to the people whose facts an article uses.
+ONLY DESIGNED, NOT RUNNING: selling the graph,
 paying the fact creator upstream, corrections that reach the pages that cited the corrected
 claim, articles as vaults, CC-Signed licences, trust as a service. /shipped/index.html is the
 dated authority on this line; read it before calling anything live.
@@ -85,7 +87,8 @@ current, running or planned.
 - /account/share.html: a reading share the reader can send, encrypted, for a front page
   designed for them. The page shows every word before it is sent
 - /account/top-up.html and /account/topped-up.html: the GBP 5 top-up and its return page.
-  THE PAYMENT LINK IS NOT SET: no money moves yet
+  THE TOP-UP LINK IS SET (a live Stripe Payment Link, GBP 5): the reader pays on Stripe's page and returns here,
+  where the credit is added once per payment reference, unverified
 
 ### How it runs
 - /newsroom/index.html: how the newsroom runs: how a piece moves from written to placed,

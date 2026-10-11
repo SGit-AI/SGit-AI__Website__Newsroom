@@ -42,6 +42,9 @@ What changes on the way in, and nothing else:
   8. Two version labels are made unambiguous. The edition line's release number is this site's
      own, and an article byline's "site v0.7.36", which names the sgit.ai release the article was
      published in, says "sgit.ai v0.7.36".
+  9. The reading meter's top-up link, if admin/build/newsroom-meter.json sets one, is written into
+     the meter config of every imported page, on this side only. See that file for what the link is
+     and how to switch it off.
 
 Scripts, styles, components and /.well-known/sgit-subscribe.json are copied byte for byte.
 The brief requires it twice: a published component path never changes, and the subscribe
@@ -70,6 +73,20 @@ from urllib.parse import urlsplit, urlunsplit
 ROOT     = Path(__file__).resolve().parents[2]
 HOST     = (ROOT / "CNAME").read_text().strip()               # newsroom.sgit.ai
 THIS_VERSION = (ROOT / "admin/build/version.txt").read_text().strip()
+
+# Settings this site applies to the meter's config on import (admin/build/newsroom-meter.json).
+# A live Stripe Payment Link has no underscore in it; a test-mode link is buy.stripe.com/test_...
+# and must never reach a public page, so anything else than that shape stops the import.
+METER_FILE = ROOT / "admin/build/newsroom-meter.json"
+LIVE_LINK  = re.compile(r"^https://buy\.stripe\.com/[A-Za-z0-9]+$")
+
+
+def topup_link():
+    link = json.loads(METER_FILE.read_text()).get("topup_link", "") if METER_FILE.exists() else ""
+    if link and not LIVE_LINK.match(link):
+        sys.exit(f"sync: topup_link {link!r} is not a live Stripe Payment Link (https://buy.stripe.com/<id>); "
+                 f"a test-mode link has test_ in it and is refused")
+    return link
 SRC_HOST = "sgit.ai"
 RECORD   = ROOT / "admin/build/newsroom-sync.json"
 
@@ -343,6 +360,12 @@ def transform(text, src_file, dest_file, kind):
                 return m.group(1) + p + m.group(1)
             text = re.sub(r"""(['"])((?:\.\./)+)((?:assets|articles|newsroom|account|subscribe|meter|og)/[^'"]*)\1""",
                           script_path, text)
+        # The top-up link is this site's own: sgit.ai keeps the simulated cart, and a link that
+        # returns to newsroom.sgit.ai must only be on pages served from newsroom.sgit.ai, because a
+        # reader's credit lives in the browser storage of the origin they return to.
+        link = topup_link()
+        if link:
+            text = re.sub(r'("topup": \{"amount": \d+, "link": )""', lambda m: m.group(1) + json.dumps(link), text)
         text = retitle(text, front=(src_file == "articles/index.html"))
         if src_file == "articles/index.html":
             # One front page at two addresses names one canonical address: the root.
