@@ -2,7 +2,7 @@
 
 > Every article on sgit.ai as a semantic graph: the ideas it rests on, the claims it makes, and how they connect, plus a map of how the articles link to each other.
 
-*Source: <https://newsroom.sgit.ai/articles/graphs.html> · sgit.ai v0.7.45 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/graphs.html> · sgit.ai v0.7.46 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 
@@ -14,13 +14,41 @@ Every article here has a semantic graph beside it: the ideas it rests on, the cl
 
 The graphs are data first and pictures second. Take them as JSON: [all articles in one file](graphs.json), with the topics, the teasers and the links between articles resolved, or one file per article at `articles/graphs/<slug>.json` (for example [this one](graphs/footprint-and-blast-radius.json)). The pages on this site are rendered from the same files at build time; nothing here is hand-written HTML.
 
-72 of 72 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
+73 of 73 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
 
 ## How the articles connect
 
 *[diagram]*
 
-72 articles, 337 links between them (551 mentions in all). 63 articles cite an earlier one; 10 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (21 articles link to it). Most linking: [The Mandate Stack](#the-mandate-stack) (20 links out). 0 articles not yet linked either way.
+73 articles, 341 links between them (557 mentions in all). 64 articles cite an earlier one; 10 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (21 articles link to it). Most linking: [The Mandate Stack](#the-mandate-stack) (20 links out). 0 articles not yet linked either way.
+
+## [A model in the tab: Chrome now ships an LLM to capable desktops, and it is the hardest piece of the client-side puzzle](a-model-in-the-tab.md)
+
+2026-10-11 · Site & engineeringGraphs & knowledge
+
+Since Chrome 148 any page can prompt Gemini Nano on the reader's device, which supplies the hardest missing piece of the client-side pattern; the rough first run is mostly fixable by the page, the scarcity of examples has real causes, the standards objections are serious, and the way to build on it without being captured is to keep the meaning in anchored graphs and use the model as a checkable function.
+
+*[diagram]*
+**concept**claim**method**artefact**example**question
+
+**10 nodes, 10 edges**
+
+- **The Prompt API, stable in Chrome 148** (artefact) Gemini Nano on the device: text, image and audio in, text or JSON out.
+- **The last piece of the client-side puzzle** (claim) Intelligence was what kept a back end in the picture.
+- **The download never stopped** (example) The page lost the progress bar on refresh; the download carried on.
+- **Why there are so few examples** (claim) New, gated hardware, a 4 GB first run, five languages, no native tools, contested.
+- **The case against** (concept) Prompts do not travel; a vendor policy in front of a web API; the browser decides the model.
+- **Keep the meaning in the data** (method) Anchored graph slices and narrow schema-constrained questions make the model replaceable.
+- **Graph answers fit a small window** (claim) A 2,600-token anchored slice fits; the prose does not.
+- **A download panel that tells the truth** (method) Bytes, rate, time left, survives a refresh, explains unavailable.
+- **Ask this article, personas, voice memos** (example) The first uses: grounded answers, local personas, on-device transcription.
+- **What is fast enough, on which machines?** (question) Speed, context window and accuracy are unmeasured; the vault will measure them.
+
+> Keep the meaning in the data, not in the prompt. How to build on one vendor's model without being captured by it.
+
+> The page should be complete without the model, and better with it. The design rule for a gated, contested capability.
+
+builds on [No server, by design: first I retired the database, now I am retiring the back end](#no-server-by-design), [The agent is the reader: why agents will pay for graphs, personas and signed claims, because it is cheaper than not paying](#the-agent-is-the-reader), [Pay to keep your persona: readers should pay because it helps them, not because they feel they should](#pay-to-keep-your-persona), [How to run synthetic users on your own site: five people who do not exist, a browser, and an afternoon](#how-to-run-synthetic-users).
 
 ## [No server, by design: first I retired the database, now I am retiring the back end](no-server-by-design.md)
 
@@ -48,7 +76,7 @@ After replacing the database with the file system (LETS), the next step is remov
 
 > First the database went, and the work got simpler. Now the back end is going, and the work is getting faster. The pattern in two sentences.
 
-builds on [Where the vault keys live: key management at sgit-ai v0.20.0, and what comes next](#where-the-vault-keys-live), [A link to a persona: send people to the newsroom as someone, not as nobody](#a-link-to-a-persona), [Pay to keep your persona: readers should pay because it helps them, not because they feel they should](#pay-to-keep-your-persona), [Going live with the reading meter: pay for what you read, go below zero if you like, and the numbers we will check in eight weeks](#going-live-with-the-reading-meter), [Pay after you read: how a reading meter became a working business model in one afternoon, one release at a time](#pay-after-you-read), [Every mistake added a rule: complexity, agents, and the way back to shipping](#every-mistake-added-a-rule), [Who are you protecting against? Draw the security line where the attacker is, not above it](#who-are-you-protecting-against), [How to run synthetic users on your own site: five people who do not exist, a browser, and an afternoon](#how-to-run-synthetic-users), [Encrypted memory for agents that run somewhere else: sgit deployment patterns, from a Mac mini to Kubernetes](#encrypted-memory-for-isolated-agents), [A chat box on a site with no server, the plan, and the trade it makes](#chat-on-a-static-site).
+builds on [Where the vault keys live: key management at sgit-ai v0.20.0, and what comes next](#where-the-vault-keys-live), [A link to a persona: send people to the newsroom as someone, not as nobody](#a-link-to-a-persona), [Pay to keep your persona: readers should pay because it helps them, not because they feel they should](#pay-to-keep-your-persona), [Going live with the reading meter: pay for what you read, go below zero if you like, and the numbers we will check in eight weeks](#going-live-with-the-reading-meter), [Pay after you read: how a reading meter became a working business model in one afternoon, one release at a time](#pay-after-you-read), [Every mistake added a rule: complexity, agents, and the way back to shipping](#every-mistake-added-a-rule), [Who are you protecting against? Draw the security line where the attacker is, not above it](#who-are-you-protecting-against), [How to run synthetic users on your own site: five people who do not exist, a browser, and an afternoon](#how-to-run-synthetic-users), [Encrypted memory for agents that run somewhere else: sgit deployment patterns, from a Mac mini to Kubernetes](#encrypted-memory-for-isolated-agents), [A chat box on a site with no server, the plan, and the trade it makes](#chat-on-a-static-site); continued by [A model in the tab: Chrome now ships an LLM to capable desktops, and it is the hardest piece of the client-side puzzle](#a-model-in-the-tab).
 
 ## [The agent is the reader: why agents will pay for graphs, personas and signed claims, because it is cheaper than not paying](the-agent-is-the-reader.md)
 
@@ -76,7 +104,7 @@ When agents are the readers, a publisher that serves curated meaning, an anchore
 
 > A reader that saves money by using it will pay for it, not out of goodwill but because paying is cheaper than not paying. The economic model in one sentence.
 
-builds on [One article, five readers: a librarian, a cartographer, a historian, an explainer and a storyteller read the same piece](#one-article-five-readers), [The bridge, followed to the end: what one local story is worth when it is kept as a graph](#the-bridge-followed-to-the-end), [Pay to keep your persona: readers should pay because it helps them, not because they feel they should](#pay-to-keep-your-persona), [A link to a persona: send people to the newsroom as someone, not as nobody](#a-link-to-a-persona), [Re-anchoring: keeping an agent's rules alive through every summary, and a canary that shows when they are not](#re-anchoring-agent-behaviour-policies), [Sixteen thousand fetches, ten clicks, and a token bill nobody is sending: the case for paying publishers to be easy to read](#token-bill-nobody-is-sending), [Pay after you read: how a reading meter became a working business model in one afternoon, one release at a time](#pay-after-you-read), [RFC 0001: two ways to add public-key cryptography to sgit, and the questions we want you to answer](#rfc-0001-public-key-cryptography-for-sgit), [Fractal Semantic Graphs: everything connects to everything, and nobody has to share a schema](#introducing-fractal-semantic-graphs), [Memory is not a spectator sport: how a web of open sites, graphs and vaults became the memory for sessions like this one](#memory-is-not-a-spectator-sport), [The future of news is the story vault, not the paywall](#future-of-news-story-vault-not-paywall).
+builds on [One article, five readers: a librarian, a cartographer, a historian, an explainer and a storyteller read the same piece](#one-article-five-readers), [The bridge, followed to the end: what one local story is worth when it is kept as a graph](#the-bridge-followed-to-the-end), [Pay to keep your persona: readers should pay because it helps them, not because they feel they should](#pay-to-keep-your-persona), [A link to a persona: send people to the newsroom as someone, not as nobody](#a-link-to-a-persona), [Re-anchoring: keeping an agent's rules alive through every summary, and a canary that shows when they are not](#re-anchoring-agent-behaviour-policies), [Sixteen thousand fetches, ten clicks, and a token bill nobody is sending: the case for paying publishers to be easy to read](#token-bill-nobody-is-sending), [Pay after you read: how a reading meter became a working business model in one afternoon, one release at a time](#pay-after-you-read), [RFC 0001: two ways to add public-key cryptography to sgit, and the questions we want you to answer](#rfc-0001-public-key-cryptography-for-sgit), [Fractal Semantic Graphs: everything connects to everything, and nobody has to share a schema](#introducing-fractal-semantic-graphs), [Memory is not a spectator sport: how a web of open sites, graphs and vaults became the memory for sessions like this one](#memory-is-not-a-spectator-sport), [The future of news is the story vault, not the paywall](#future-of-news-story-vault-not-paywall); continued by [A model in the tab: Chrome now ships an LLM to capable desktops, and it is the hardest piece of the client-side puzzle](#a-model-in-the-tab).
 
 ## [Where the platform draws the line: Microsoft Execution Containers, the shared responsibility model for agents, and the business logic above it](where-the-platform-draws-the-line.md)
 
@@ -187,7 +215,7 @@ Synthetic users are invented people, each a record with a situation, a question,
 
 > A findings list that silently loses items cannot be compared with the next one. Why artefacts are labelled, not deleted.
 
-builds on [A link to a persona: send people to the newsroom as someone, not as nobody](#a-link-to-a-persona); continued by [No server, by design: first I retired the database, now I am retiring the back end](#no-server-by-design), [Where the platform draws the line: Microsoft Execution Containers, the shared responsibility model for agents, and the business logic above it](#where-the-platform-draws-the-line), [Authority outside the model: an answer to Satya Nadella on models as insider risks, principle by principle, with what we run, what we ship and what we plan](#authority-outside-the-model).
+builds on [A link to a persona: send people to the newsroom as someone, not as nobody](#a-link-to-a-persona); continued by [A model in the tab: Chrome now ships an LLM to capable desktops, and it is the hardest piece of the client-side puzzle](#a-model-in-the-tab), [No server, by design: first I retired the database, now I am retiring the back end](#no-server-by-design), [Where the platform draws the line: Microsoft Execution Containers, the shared responsibility model for agents, and the business logic above it](#where-the-platform-draws-the-line), [Authority outside the model: an answer to Satya Nadella on models as insider risks, principle by principle, with what we run, what we ship and what we plan](#authority-outside-the-model).
 
 ## [A link to a persona: send people to the newsroom as someone, not as nobody](a-link-to-a-persona.md)
 
@@ -329,7 +357,7 @@ Paying for content because you have to, feel you should, or think it right works
 
 > A persona is a way to manage focus. Why one reader wants several personas.
 
-builds on [Going live with the reading meter: pay for what you read, go below zero if you like, and the numbers we will check in eight weeks](#going-live-with-the-reading-meter), [Who will game the reading meter? Eight kinds of reader, nine ways to cheat, and the risks that will actually happen](#who-will-game-the-reading-meter), [Git for things you cannot put on GitHub](#what-sgit-is), [One article, five readers: a librarian, a cartographer, a historian, an explainer and a storyteller read the same piece](#one-article-five-readers); continued by [No server, by design: first I retired the database, now I am retiring the back end](#no-server-by-design), [The agent is the reader: why agents will pay for graphs, personas and signed claims, because it is cheaper than not paying](#the-agent-is-the-reader), [A link to a persona: send people to the newsroom as someone, not as nobody](#a-link-to-a-persona), [Pay after you read: how a reading meter became a working business model in one afternoon, one release at a time](#pay-after-you-read), [Going live with the reading meter: pay for what you read, go below zero if you like, and the numbers we will check in eight weeks](#going-live-with-the-reading-meter).
+builds on [Going live with the reading meter: pay for what you read, go below zero if you like, and the numbers we will check in eight weeks](#going-live-with-the-reading-meter), [Who will game the reading meter? Eight kinds of reader, nine ways to cheat, and the risks that will actually happen](#who-will-game-the-reading-meter), [Git for things you cannot put on GitHub](#what-sgit-is), [One article, five readers: a librarian, a cartographer, a historian, an explainer and a storyteller read the same piece](#one-article-five-readers); continued by [A model in the tab: Chrome now ships an LLM to capable desktops, and it is the hardest piece of the client-side puzzle](#a-model-in-the-tab), [No server, by design: first I retired the database, now I am retiring the back end](#no-server-by-design), [The agent is the reader: why agents will pay for graphs, personas and signed claims, because it is cheaper than not paying](#the-agent-is-the-reader), [A link to a persona: send people to the newsroom as someone, not as nobody](#a-link-to-a-persona), [Pay after you read: how a reading meter became a working business model in one afternoon, one release at a time](#pay-after-you-read), [Going live with the reading meter: pay for what you read, go below zero if you like, and the numbers we will check in eight weeks](#going-live-with-the-reading-meter).
 
 ## [Who will game the reading meter? Eight kinds of reader, nine ways to cheat, and the risks that will actually happen](who-will-game-the-reading-meter.md)
 

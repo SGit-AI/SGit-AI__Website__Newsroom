@@ -1,7 +1,7 @@
 {
   "site": "https://sgit.ai",
   "generated": "2026-10-11",
-  "site_version": "v0.7.45",
+  "site_version": "v0.7.46",
   "about": "https://newsroom.sgit.ai/newsroom/index.html",
   "front": {
     "edition": "2026-10-08",
@@ -72,6 +72,41 @@
     }
   ],
   "articles": [
+    {
+      "slug": "a-model-in-the-tab",
+      "title": "A model in the tab: Chrome now ships an LLM to capable desktops, and it is the hardest piece of the client-side puzzle",
+      "date": "2026-10-11",
+      "updated": "",
+      "author": "Dinis Cruz",
+      "url": "https://newsroom.sgit.ai/articles/a-model-in-the-tab.html",
+      "markdown": "https://newsroom.sgit.ai/articles/a-model-in-the-tab.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/a-model-in-the-tab.webp",
+      "graph": "https://newsroom.sgit.ai/articles/graphs/a-model-in-the-tab.json",
+      "teaser": "Chrome now ships a language model any page can prompt, offline, on capable desktops. The last piece of the client-side puzzle, with rough edges.",
+      "summary": "Since Chrome 148, on 5 May 2026, any web page can talk to a language model that runs on the reader's own machine: Gemini Nano, through the Prompt API, with text, image and audio input, JSON-schema output, and no network once the model is downloaded. For the pattern I described in No server, by design, that is the missing piece, because the hardest thing to move to the client was always the intelligence itself. I tried it this week, and the experience was rough: a download with no sense of time, a progress bar that vanished on refresh, and a model that turned up by the morning. That is partly the platform and partly the pages, and the documentation explains most of it. I also looked for good examples in the wild and found very few, which is less strange than it looks: the API shipped five months ago, over formal objections from Mozilla, Apple's WebKit team and the W3C TAG, to desktops with a 22 GB free-disk floor, in five languages, with tool calling still experimental. This article is a briefing on what actually works today, an honest account of the rough edges, the case for and against building on it, and a map of where we can put it to real use: answers grounded in the graph instead of the prose, personas inferred without leaving the browser, voice memos transcribed on the device, alt text for every figure, and a download experience that tells people what is happening.",
+      "topics": [
+        "site-and-engineering",
+        "graphs-and-knowledge"
+      ],
+      "tags": [
+        "client-side",
+        "gemini-nano",
+        "prompt-api",
+        "chrome",
+        "built-in-ai",
+        "on-device",
+        "privacy",
+        "sovereignty",
+        "interoperability",
+        "webmcp",
+        "newsroom",
+        "personas",
+        "article"
+      ],
+      "placement": [],
+      "linkedin": null,
+      "notes": []
+    },
     {
       "slug": "no-server-by-design",
       "title": "No server, by design: first I retired the database, now I am retiring the back end",

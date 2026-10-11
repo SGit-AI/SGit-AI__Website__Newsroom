@@ -2,7 +2,7 @@
 
 > A follow-up to One article, five readers, with the numbers. The five readers turned 17,949 words into layers of graph, and the biggest layer, the Librarian's catalogue, is 2.8 times the size of the articles it catalogues. That looks like the opposite of compression, until you measure what an agent actually loads to answer a question. Across all 45 concepts in the topic, the graph answers in a median of 2,579 tokens, with every item anchored to its sentence, against 25,698 to read the five articles: 90% less. Then the hypothesis: the more content there is, the more it compresses, because the graphs reuse each other. Tested on this site's 70 articles, it fails for the graphs no one curated (928 node labels, 908 of them unique) and holds for the one a Cartographer merged (114 concept mentions, 45 concepts, the last article reusing 25 and adding one). Projected to 100,000 articles, a curated index is 150 to 2,700 times smaller than the corpus, and a question costs about 13,000 tokens whatever the size, while search reads 59,000 and finds 2% of what is there. Compression is earned by curation, and curation is the work worth paying for. So the economic model: today the agent pays to process the raw web and guesses at its meaning; a publisher that serves meaning, a projection fitted to the agent's persona and objective, and claims signed with an expiry date, saves the agent more than it charges. The agent pays not to pay. This article lays out the arithmetic, the payment rails that exist, and what it does not yet prove.
 
-*Source: <https://newsroom.sgit.ai/articles/the-agent-is-the-reader.html> · sgit.ai v0.7.45 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/the-agent-is-the-reader.html> · sgit.ai v0.7.46 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 
@@ -188,6 +188,10 @@ News & evidenceStartups & strategy[This article as a graph →](graphs.md#the-ag
 - [Fractal Semantic Graphs: everything connects to everything, and nobody has to share a schema](introducing-fractal-semantic-graphs.md) A fractal semantic graph has no privileged level and no single schema: each world keeps its own vocabulary and connects to others through named edges.
 - [Memory is not a spectator sport: how a web of open sites, graphs and vaults became the memory for sessions like this one](memory-is-not-a-spectator-sport.md) Agentic memory as context management: many published, fractal, provenance-carrying memories rather than one store, shown in the session that wrote the article.
 - [The future of news is the story vault, not the paywall](future-of-news-story-vault-not-paywall.md) A story is a graph of claims and evidence and the article is one projection of it; keep the graph in a vault and sell what the article was made from.
+
+### Continued by
+
+- [A model in the tab: Chrome now ships an LLM to capable desktops, and it is the hardest piece of the client-side puzzle](a-model-in-the-tab.md) Chrome now ships a language model any page can prompt, offline, on capable desktops. The last piece of the client-side puzzle, with rough edges.
 
 [All articles](index.md) · [All graphs](graphs.md)
 

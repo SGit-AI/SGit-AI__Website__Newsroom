@@ -2,7 +2,7 @@
 
 > On 10 October Satya Nadella published "Models as Insider Risks in the Super Intelligence Era". His argument is that we cannot trace a frontier model's behaviour the way we traced code, so we should treat models the way we treat any powerful insider: identity, least privilege, logs, containment, and controls that sit outside the thing they control. He proposes seven principles: model diversity, observe everything, verifiability, independent controls, independent auditability, containment and incident disclosure. This site and RiskMandate have been making the same case since The ultimate insider on 30 September, and building pieces of it. This is my answer, principle by principle: what we run today, what we have published as design, what we have only argued, and where I would push. It includes an honest maturity table, three things from this week's work (synthetic users that found real bugs, a safety check that stopped our own agents, and the ratio of hope in the policy of the agent that runs this site), and the five things his list leaves out that I think decide whether the principles work, starting with the mandate: observation tells you what an agent did, and only a written mandate tells you whether it was allowed.
 
-*Source: <https://newsroom.sgit.ai/articles/authority-outside-the-model.html> · sgit.ai v0.7.45 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/authority-outside-the-model.html> · sgit.ai v0.7.46 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 

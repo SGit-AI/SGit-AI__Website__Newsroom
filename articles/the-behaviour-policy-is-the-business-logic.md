@@ -2,7 +2,7 @@
 
 > The first rules anybody writes for an agent are mechanical. Do not send, only draft. Do not delete. Use your own account. Vendors are good at those, and should be. Zoom in on any real agent's behaviour policy, though, and within a few layers you are writing how this company does email, which steps an invoice goes through, who a client is to it this week, and what the company is for. That is business logic, and many organisations have never written it down, because their software was the law. This article walks one fictional firm's email agent through six layers, from the platform to the board, records what stands in the way of each rule, counts how much of the policy is backed by a control, how much by an accepted risk and how much by hope, and shows where a vendor's existing control plugs in. The argument is that a behaviour policy built in layers, each refining the one below and each with its own owner, is the only way to describe agent behaviour at the granularity a business actually runs at, that vendors cannot and should not try to model it for each customer, and that writing it down is what lets the business scale.
 
-*Source: <https://newsroom.sgit.ai/articles/the-behaviour-policy-is-the-business-logic.html> · sgit.ai v0.7.45 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/the-behaviour-policy-is-the-business-logic.html> · sgit.ai v0.7.46 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 

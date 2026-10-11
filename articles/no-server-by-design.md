@@ -2,7 +2,7 @@
 
 > For years my rule has been not to use a database: the file system is the database, and the Load, Extract, Transform, Save pipeline (LETS) loads state, caches it and writes it back as files you can version, diff and read. The second step has been creeping up on me, and the newsroom made it explicit: retire the back end too. The SGit Newsroom is now a content site for several audiences, with personas, a reading meter, a payment on-ramp, a newsroom of your own, encrypted sharing and databases that run in the reader's browser, and none of its application logic runs on a server. What is left on the server side is commodity: static hosting, a vault server that stores only ciphertext, a payment link, DNS and a build pipeline, with a sign-in provider next. The design came from a constraint: the vault server cannot see anything, by design, so everything that needs to see has to happen in the browser. It also came from a security call: the gaps a server would close do not match this site's readers, and the article lists them, with what a server would cost to close each one. The result scales without its complexity scaling, ships fast (114 releases between 1 and 11 October), and lines up with the things I care about: sovereignty, privacy, explainability and determinism. The article maps the architecture, the evolution, the accepted gaps, and how far I think the pattern can be pushed.
 
-*Source: <https://newsroom.sgit.ai/articles/no-server-by-design.html> · sgit.ai v0.7.45 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/no-server-by-design.html> · sgit.ai v0.7.46 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 
@@ -188,6 +188,10 @@ Site & engineeringVaults & method[This article as a graph →](graphs.md#no-serv
 - [How to run synthetic users on your own site: five people who do not exist, a browser, and an afternoon](how-to-run-synthetic-users.md) Five invented users, a model reading screenshots, and a real browser: how to run synthetic users, from three studies.
 - [Encrypted memory for agents that run somewhere else: sgit deployment patterns, from a Mac mini to Kubernetes](encrypted-memory-for-isolated-agents.md) Agents in isolated, ephemeral places need memory that outlives them. Five sgit deployment patterns, from a Mac mini to Kubernetes, with ciphertext-only servers.
 - [A chat box on a site with no server, the plan, and the trade it makes](chat-on-a-static-site.md) sgit.ai has no server, so its directory chat runs a local matcher by default, takes your own key as an opt-in, and leaves the vault bridge unbuilt.
+
+### Continued by
+
+- [A model in the tab: Chrome now ships an LLM to capable desktops, and it is the hardest piece of the client-side puzzle](a-model-in-the-tab.md) Chrome now ships a language model any page can prompt, offline, on capable desktops. The last piece of the client-side puzzle, with rough edges.
 
 [All articles](index.md) · [All graphs](graphs.md)
 

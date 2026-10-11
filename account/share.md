@@ -2,7 +2,7 @@
 
 > Read as you normally would, then send us what you read, encrypted in your browser or copied into an email, and get back what your own front page could look like.
 
-*Source: <https://newsroom.sgit.ai/account/share.html> · sgit.ai v0.7.45 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/account/share.html> · sgit.ai v0.7.46 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 

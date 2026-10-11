@@ -2,7 +2,7 @@
 
 > Five invented readers drove a browser through newsroom.sgit.ai one screenshot at a time, were interviewed and rated it: 62 steps, 51 questions, 31 findings, six blocking, two labelled as helper artefacts, and a measured bug of 51 missing figures. Published with its read key.
 
-*Source: <https://newsroom.sgit.ai/demos/vaults/newsroom-synthetic-users/index.html> · sgit.ai v0.7.45 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/demos/vaults/newsroom-synthetic-users/index.html> · sgit.ai v0.7.46 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 

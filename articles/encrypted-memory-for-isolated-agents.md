@@ -2,7 +2,7 @@
 
 > Agents are safer when they run in isolated places: a cloud VM, a local VM, a container on a Mac mini, a GPU machine, a job that exists for one task. Isolation takes away the shared drive, and ephemeral compute takes away the disk, so the memory has to live somewhere else, somewhere the owner controls and a breach does not expose. This article maps how to give those agents encrypted memory with sgit and a vault server you run yourself: one container, an access token, storage in a folder or a bucket, and only ciphertext on the server. Five patterns, each drawn as a diagram with its Mermaid source: a Mac mini with Docker Compose, the life of one ephemeral agent run with a scoped clone, Kubernetes, a private cloud VPC with CloudFront in front, and two servers holding one vault. Every command was run against a local server for this article, including a scoped clone, a push from a second agent, replication to a second server and a restore after a restart, and a search of the server's storage that found none of the plaintext.
 
-*Source: <https://newsroom.sgit.ai/articles/encrypted-memory-for-isolated-agents.html> · sgit.ai v0.7.45 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/encrypted-memory-for-isolated-agents.html> · sgit.ai v0.7.46 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 

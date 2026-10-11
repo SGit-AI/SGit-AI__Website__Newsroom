@@ -2,7 +2,7 @@
 
 > Two releases pushed cleanly, reported success, and never reached the site. Every check we had was green, because the failure happened in a place none of them could see. What we changed, and the general rule underneath it.
 
-*Source: <https://newsroom.sgit.ai/articles/green-does-not-mean-live.html> · sgit.ai v0.7.45 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/green-does-not-mean-live.html> · sgit.ai v0.7.46 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 

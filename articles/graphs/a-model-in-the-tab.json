@@ -1,0 +1,150 @@
+{
+  "slug": "a-model-in-the-tab",
+  "teaser": "Chrome now ships a language model any page can prompt, offline, on capable desktops. The last piece of the client-side puzzle, with rough edges.",
+  "topics": [
+    "site-and-engineering",
+    "graphs-and-knowledge"
+  ],
+  "core_idea": "Since Chrome 148 any page can prompt Gemini Nano on the reader's device, which supplies the hardest missing piece of the client-side pattern; the rough first run is mostly fixable by the page, the scarcity of examples has real causes, the standards objections are serious, and the way to build on it without being captured is to keep the meaning in anchored graphs and use the model as a checkable function.",
+  "nodes": [
+    {
+      "id": "prompt",
+      "label": "The Prompt API, stable in Chrome 148",
+      "kind": "artefact",
+      "summary": "Gemini Nano on the device: text, image and audio in, text or JSON out."
+    },
+    {
+      "id": "puzzle",
+      "label": "The last piece of the client-side puzzle",
+      "kind": "claim",
+      "summary": "Intelligence was what kept a back end in the picture."
+    },
+    {
+      "id": "download",
+      "label": "The download never stopped",
+      "kind": "example",
+      "summary": "The page lost the progress bar on refresh; the download carried on."
+    },
+    {
+      "id": "few",
+      "label": "Why there are so few examples",
+      "kind": "claim",
+      "summary": "New, gated hardware, a 4 GB first run, five languages, no native tools, contested."
+    },
+    {
+      "id": "against",
+      "label": "The case against",
+      "kind": "concept",
+      "summary": "Prompts do not travel; a vendor policy in front of a web API; the browser decides the model."
+    },
+    {
+      "id": "data",
+      "label": "Keep the meaning in the data",
+      "kind": "method",
+      "summary": "Anchored graph slices and narrow schema-constrained questions make the model replaceable."
+    },
+    {
+      "id": "fit",
+      "label": "Graph answers fit a small window",
+      "kind": "claim",
+      "summary": "A 2,600-token anchored slice fits; the prose does not."
+    },
+    {
+      "id": "panel",
+      "label": "A download panel that tells the truth",
+      "kind": "method",
+      "summary": "Bytes, rate, time left, survives a refresh, explains unavailable."
+    },
+    {
+      "id": "opps",
+      "label": "Ask this article, personas, voice memos",
+      "kind": "example",
+      "summary": "The first uses: grounded answers, local personas, on-device transcription."
+    },
+    {
+      "id": "measure",
+      "label": "What is fast enough, on which machines?",
+      "kind": "question",
+      "summary": "Speed, context window and accuracy are unmeasured; the vault will measure them."
+    }
+  ],
+  "edges": [
+    {
+      "from": "prompt",
+      "to": "puzzle",
+      "rel": "answers"
+    },
+    {
+      "from": "download",
+      "to": "prompt",
+      "rel": "example-of"
+    },
+    {
+      "from": "panel",
+      "to": "download",
+      "rel": "answers"
+    },
+    {
+      "from": "few",
+      "to": "prompt",
+      "rel": "depends-on"
+    },
+    {
+      "from": "against",
+      "to": "prompt",
+      "rel": "contrasts"
+    },
+    {
+      "from": "data",
+      "to": "against",
+      "rel": "answers"
+    },
+    {
+      "from": "fit",
+      "to": "data",
+      "rel": "depends-on"
+    },
+    {
+      "from": "opps",
+      "to": "fit",
+      "rel": "depends-on"
+    },
+    {
+      "from": "measure",
+      "to": "opps",
+      "rel": "leads-to"
+    },
+    {
+      "from": "opps",
+      "to": "puzzle",
+      "rel": "extends"
+    }
+  ],
+  "links": {
+    "articles": [
+      "no-server-by-design",
+      "the-agent-is-the-reader",
+      "pay-to-keep-your-persona",
+      "how-to-run-synthetic-users"
+    ],
+    "pages": [],
+    "sites": [
+      "https://developer.chrome.com/docs/ai/built-in-apis",
+      "https://developer.chrome.com/docs/ai/prompt-api",
+      "https://developer.chrome.com/docs/ai/understand-built-in-model-management",
+      "https://developer.chrome.com/docs/ai/inform-users-of-model-download",
+      "https://developer.chrome.com/docs/ai/agents",
+      "https://chrome.dev/web-ai-demos/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "Keep the meaning in the data, not in the prompt.",
+      "why": "How to build on one vendor's model without being captured by it."
+    },
+    {
+      "text": "The page should be complete without the model, and better with it.",
+      "why": "The design rule for a gated, contested capability."
+    }
+  ]
+}

@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>A model in the tab: Chrome now ships an LLM to capable desktops, and it is the hardest piece of the client-side puzzle, SGit Newsroom</title>
+<meta name="description" content="Since Chrome 148, on 5 May 2026, any web page can talk to a language model that runs on the reader's own machine: Gemini Nano, through the Prompt API, with text, image and audio input, JSON-schema output, and no network once the model is downloaded. For the pattern I described in No server, by design, that is the missing piece, because the hardest thing to move to the client was always the intelligence itself. I tried it this week, and the experience was rough: a download with no sense of time, a progress bar that vanished on refresh, and a model that turned up by the morning. That is partly the platform and partly the pages, and the documentation explains most of it. I also looked for good examples in the wild and found very few, which is less strange than it looks: the API shipped five months ago, over formal objections from Mozilla, Apple's WebKit team and the W3C TAG, to desktops with a 22 GB free-disk floor, in five languages, with tool calling still experimental. This article is a briefing on what actually works today, an honest account of the rough edges, the case for and against building on it, and a map of where we can put it to real use: answers grounded in the graph instead of the prose, personas inferred without leaving the browser, voice memos transcribed on the device, alt text for every figure, and a download experience that tells people what is happening.">
+<link rel="canonical" href="https://newsroom.sgit.ai/articles/a-model-in-the-tab.html">
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SGit Newsroom">
+<meta property="og:url" content="https://newsroom.sgit.ai/articles/a-model-in-the-tab.html">
+<meta property="og:title" content="A model in the tab: Chrome now ships an LLM to capable desktops, and it is the hardest piece of the client-side puzzle, SGit Newsroom">
+<meta property="og:description" content="Since Chrome 148, on 5 May 2026, any web page can talk to a language model that runs on the reader's own machine: Gemini Nano, through the Prompt API, with text, image and audio input, JSON-schema output, and no network once the model is downloaded. For the pattern I described in No server, by design, that is the missing piece, because the hardest thing to move to the client was always the intelligence itself. I tried it this week, and the experience was rough: a download with no sense of time, a progress bar that vanished on refresh, and a model that turned up by the morning. That is partly the platform and partly the pages, and the documentation explains most of it. I also looked for good examples in the wild and found very few, which is less strange than it looks: the API shipped five months ago, over formal objections from Mozilla, Apple's WebKit team and the W3C TAG, to desktops with a 22 GB free-disk floor, in five languages, with tool calling still experimental. This article is a briefing on what actually works today, an honest account of the rough edges, the case for and against building on it, and a map of where we can put it to real use: answers grounded in the graph instead of the prose, personas inferred without leaving the browser, voice memos transcribed on the device, alt text for every figure, and a download experience that tells people what is happening.">
+<meta property="og:image" content="https://newsroom.sgit.ai/og/a-model-in-the-tab.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="A model in the tab: Chrome now ships an LLM to capable desktops, and it is the hardest piece of the client-side puzzle, SGit Newsroom">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://newsroom.sgit.ai/og/a-model-in-the-tab.jpg">
+<link rel="alternate" type="text/markdown" href="a-model-in-the-tab.md" title="This page as markdown">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "A model in the tab: Chrome now ships an LLM to capable desktops, and it is the hardest piece of the client-side puzzle, SGit Newsroom", "headline": "A model in the tab: Chrome now ships an LLM to capable desktops, and it is the hardest piece of the client-side puzzle, SGit Newsroom", "description": "Since Chrome 148, on 5 May 2026, any web page can talk to a language model that runs on the reader's own machine: Gemini Nano, through the Prompt API, with text, image and audio input, JSON-schema output, and no network once the model is downloaded. For the pattern I described in No server, by design, that is the missing piece, because the hardest thing to move to the client was always the intelligence itself. I tried it this week, and the experience was rough: a download with no sense of time, a progress bar that vanished on refresh, and a model that turned up by the morning. That is partly the platform and partly the pages, and the documentation explains most of it. I also looked for good examples in the wild and found very few, which is less strange than it looks: the API shipped five months ago, over formal objections from Mozilla, Apple's WebKit team and the W3C TAG, to desktops with a 22 GB free-disk floor, in five languages, with tool calling still experimental. This article is a briefing on what actually works today, an honest account of the rough edges, the case for and against building on it, and a map of where we can put it to real use: answers grounded in the graph instead of the prose, personas inferred without leaving the browser, voice memos transcribed on the device, alt text for every figure, and a download experience that tells people what is happening.", "url": "https://newsroom.sgit.ai/articles/a-model-in-the-tab.html", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "SGit Newsroom", "url": "https://newsroom.sgit.ai"}, "about": {"@type": "SoftwareApplication", "name": "sgit", "sameAs": "https://pypi.org/project/sgit-ai/"}, "author": {"@type": "Person", "name": "Dinis Cruz", "url": "https://sgit.ai/about/index.html"}, "license": "https://creativecommons.org/licenses/by/4.0/"}</script>
+<style>html{background:#faf9f5}body{margin:0;background:#faf9f5;color:#1c1d21;font-family:ui-sans-serif,system-ui,sans-serif;opacity:0;transition:opacity .25s;animation:sg-reveal 0s linear 1.6s forwards}html.ready body{opacity:1;animation:none}@keyframes sg-reveal{to{opacity:1}}</style><noscript><style>body{opacity:1;animation:none}</style></noscript>
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.7.1</a>
+  <sg-meter class="meter-nav" view="balance"></sg-meter>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../articles/index.html#all">Every article</a>
+      <a class="sl" href="../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../persona/index.html">Read as a persona</a>
+      <a class="sl" href="../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../account/index.html">Your reading account</a>
+      <a class="sl" href="../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../account/personas.html">Your personas</a>
+      <a class="sl" href="../account/top-up.html">Top up</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../newsroom/board.html">The board</a>
+      <a class="sl" href="../newsroom/log.html">The run log</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+      <a class="sl" href="../demos/vaults/newsroom-synthetic-users/index.html">The study: five readers tested this site</a>
+      <a class="sl" href="../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../world-news-day/index.html">World News Day<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../world-news-day/index.html">The corpus</a>
+      <a class="sl" href="../world-news-day/stories/free-to-republish-is-not-a-licence.html">Free to republish is not a licence</a>
+      <a class="sl" href="../world-news-day/licences.html">The licence that is not there</a>
+      <a class="sl" href="../world-news-day/corpus.html">The twenty-one</a>
+      <a class="sl" href="../world-news-day/findings.html">The aggregate</a>
+      <a class="sl" href="../world-news-day/terms.html">The vocabulary</a>
+      <a class="sl" href="../world-news-day/graph.html">The graph</a>
+      <a class="sl" href="../world-news-day/sources.html">Sources</a>
+      <a class="sl" href="../world-news-day/contacts.html">How to reach them</a>
+      <a class="sl" href="../world-news-day/vault.html">Published vaults</a>
+      <a class="sl" href="../world-news-day/vaults/corpus.html">The vault, opened</a>
+      <a class="sl" href="../world-news-day/method.html">Method</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../archive/index.html">The archive</a>
+      <a class="sl" href="../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../network/index.html">The network</a>
+      <a class="sl" href="../admin/versions.html">Release history</a>
+      <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom">&#9733; GitHub</a>
+</div></nav>
+
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.7.1</span></a></div>
+<main class="doc">
+ <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / A model in the tab: Chrome now ships an LLM to capable desktops, and it is the hardest piece of the client-side puzzle</p>
+ <h1>A model in the tab: Chrome now ships an LLM to capable desktops, and it is the hardest piece of the client-side puzzle</h1>
+ <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-11 &middot; <a href="versions/a-model-in-the-tab.html" title="Every published version of this article, and what changed">article v1.0.0</a> &middot; <a href="https://sgit.ai/admin/versions.html" title="The sgit.ai release it was published in">sgit.ai v0.7.46</a> &middot; <span class="chip">client-side</span><span class="chip">gemini-nano</span><span class="chip">prompt-api</span><span class="chip">chrome</span><span class="chip">built-in-ai</span><span class="chip">on-device</span><span class="chip">privacy</span><span class="chip">sovereignty</span><span class="chip">interoperability</span><span class="chip">webmcp</span><span class="chip">newsroom</span><span class="chip">personas</span><span class="chip">article</span></p>
+ <p class="abstract"><em><b>Abstract:</b> Since Chrome 148, on 5 May 2026, any web page can talk to a language model that runs on the reader's own machine: Gemini Nano, through the Prompt API, with text, image and audio input, JSON-schema output, and no network once the model is downloaded. For the pattern I described in No server, by design, that is the missing piece, because the hardest thing to move to the client was always the intelligence itself. I tried it this week, and the experience was rough: a download with no sense of time, a progress bar that vanished on refresh, and a model that turned up by the morning. That is partly the platform and partly the pages, and the documentation explains most of it. I also looked for good examples in the wild and found very few, which is less strange than it looks: the API shipped five months ago, over formal objections from Mozilla, Apple's WebKit team and the W3C TAG, to desktops with a 22 GB free-disk floor, in five languages, with tool calling still experimental. This article is a briefing on what actually works today, an honest account of the rough edges, the case for and against building on it, and a map of where we can put it to real use: answers grounded in the graph instead of the prose, personas inferred without leaving the browser, voice memos transcribed on the device, alt text for every figure, and a download experience that tells people what is happening.</em></p>
+<figure class="shot" data-shot="mt-puzzle.webp" data-dir="images/" data-alt="The client-side puzzle. Files, state, storage, payments and, next, identity were already off the server. Intelligence was the piece that kept a back end in the picture. Since May 2026, on capable desktops, Chrome supplies it."><figcaption>The client-side puzzle. Files, state, storage, payments and, next, identity were already off the server. Intelligence was the piece that kept a back end in the picture. Since May 2026, on capable desktops, Chrome supplies it.</figcaption></figure>
+<p>In <a href="no-server-by-design.html">No server, by design</a>, I listed what still seems to need a server, and one row was models. The answer I gave was "in the client, with the reader's own key, or a small local model". That row just got a lot more interesting.</p>
+<p>Since Chrome 148, released on 5 May 2026, any web page can talk to a language model that runs on the reader's own machine. Not a model the page downloads itself, but one the browser ships and manages: Gemini Nano, through a JavaScript interface called the Prompt API. Once the model is on the device, the network is not needed at all. No key, no bill per token, and nothing sent to anyone.</p>
+<p>For the client-side pattern, this is the most important piece so far, and the hardest one. Files, state, storage and payments were always going to move to the browser; they are things browsers were built for, and as of today the newsroom's payments are live, on a Stripe link and nothing of ours. Intelligence was the piece that kept a back end in the picture. A page could download a model of its own and run it in the browser, and libraries have done that for a while, but every site paid the download separately and few readers would wait for it, so in practice a model behind a page meant renting one somewhere and calling it. Now, on capable desktops, the browser supplies one, once, for every site. It is in the tab.</p>
+<p>So I tried it. And this article is what I found: what actually works, why the experience was as rough as it was, why there are so few good examples, the honest case against building on it, and a map of where I think we can put it to real use.</p>
+<h2 id="short">In short</h2>
+<ul>
+<li><b>It is real, and it is stable.</b> The Prompt API shipped to all web pages in Chrome 148 on 5 May 2026, after being available to Chrome extensions since Chrome 138. The Summarizer, Translator and Language Detector APIs have been stable since 138. Writer, Rewriter and Proofreader are still developer trials.</li>
+<li><b>It does more than chat.</b> It accepts text, images and audio (a video counts as its current frame); it returns text, optionally constrained by a JSON schema; it keeps sessions, clones them, and reports how much of its context window is used. Five languages so far: English, Japanese, Spanish, German and French.</li>
+<li><b>Tool calling is not there yet.</b> Native tool use in the Prompt API is experimental and behind a flag. What works today is structured output: ask for JSON that names a tool and its arguments, and your code runs it. WebMCP, which lets a site describe its own tools to the reader's agent, is a separate API, in origin trial.</li>
+<li><b>The rough download was mostly the pages, not the model.</b> The download carries on in the background when the tab is refreshed or closed, and resumes after a restart. What the refresh lost was the progress bar, because a page only sees progress for downloads it asks about. Chrome's own guidance says what a good page should show; the demo pages I used did not.</li>
+<li><b>There are few good examples for real reasons.</b> Five months on the open web; desktop only; 22 GB of free disk, a GPU with more than 4 GB of video memory or 16 GB of RAM; a download of roughly 4 GB; five languages; and formal opposition from Mozilla, WebKit, the W3C TAG and Microsoft, which makes careful teams wait.</li>
+<li><b>The objections are serious, and they line up with things I care about.</b> One vendor's model, and one vendor's usage policy, behind a web API. Prompts tuned to Gemini Nano may not travel. The way to build on it without being captured by it is to keep the meaning in the data, not in the prompt.</li>
+<li><b>The fit with what we have built is unusually good.</b> A graph answer from the five readers is about 2,600 tokens; a small model's context window is small. Answers grounded in anchored graph slices, personas inferred locally, voice memos transcribed on the device before they go into a vault lane, alt text for the 527 figures, and a download panel that tells people the truth.</li>
+</ul>
+<h2 id="ships">What Chrome actually ships</h2>
+<p>Chrome now has a family of built-in AI APIs. Some run on small task-specific models; the rest run on Gemini Nano, a model in the 2 to 4 billion parameter range that Chrome downloads once per device, not once per site.</p>
+<figure class="shot" data-shot="mt-briefing.webp" data-dir="images/" data-alt="What Chrome ships today: the built-in AI APIs and their status, what the Prompt API accepts and returns, the hardware it needs, and how the browser manages the model&#x27;s life. Status from Chrome&#x27;s own documentation, as of October 2026."><figcaption>What Chrome ships today: the built-in AI APIs and their status, what the Prompt API accepts and returns, the hardware it needs, and how the browser manages the model's life. Status from Chrome's own documentation, as of October 2026.</figcaption></figure>
+<div class="tablewrap"><table>
+<tr><th>API</th><th>What it does</th><th>Status on the web</th></tr>
+<tr><td><b>Prompt API</b></td><td>Free-form prompts to Gemini Nano, with text, image and audio input</td><td>Stable since Chrome 148 (extensions since 138)</td></tr>
+<tr><td><b>Summarizer</b></td><td>Condenses long text into key points, a headline, a teaser</td><td>Stable since 138</td></tr>
+<tr><td><b>Translator</b></td><td>Translates on the device</td><td>Stable since 138</td></tr>
+<tr><td><b>Language Detector</b></td><td>Detects the language of a text</td><td>Stable since 138</td></tr>
+<tr><td><b>Writer and Rewriter</b></td><td>Drafts and revises text to a brief</td><td>Developer trial</td></tr>
+<tr><td><b>Proofreader</b></td><td>Interactive corrections</td><td>Developer trial</td></tr>
+</table></div>
+<p>The Prompt API is the one that matters for what follows. In practice:</p>
+<ul>
+<li><b>Input:</b> text, plus images (an image file, a canvas, a video's current frame, and so on) and audio (a recording, a buffer). Audio input needs a GPU.</li>
+<li><b>Output:</b> text only, streamed or whole, and it can be constrained by a JSON schema, so the model returns, for example, a boolean, a label from a list, or an object with fields you defined.</li>
+<li><b>Sessions:</b> a system prompt that is never dropped, initial prompts to restore a conversation, appending context before asking, cloning a session to fork it, and a running count of context used against the window. When the window fills, the oldest turns are dropped, and the page is told.</li>
+<li><b>Languages:</b> English, Japanese, Spanish, German and French, declared when the session is created.</li>
+<li><b>Sampling:</b> on the web, temperature and similar knobs are not exposed by default; an origin trial offers named modes from most predictable to most creative.</li>
+</ul>
+<p>What it needs is the part that decides who can use it. Windows 10 or 11, macOS 13 or later, Linux, or ChromeOS on Chromebook Plus devices; no Android or iOS yet. At least 22 GB free on the disk with the Chrome profile. Either a GPU with strictly more than 4 GB of video memory, or 16 GB of RAM and four CPU cores. An unmetered connection for the first download. Chrome measures the GPU with a test shader and picks the model variant to match: a larger one, a smaller one, or CPU inference.</p>
+<h2 id="download">Why the download felt so bad</h2>
+<p>My experience, in order. I opened one of Chrome's demo pages, typed a message, and the download started. There was a small banner that told me something was happening, but not how much, how fast, or how long. I tried another playground, with the same result. I refreshed the page and the banner was gone, so I assumed the download was gone too. I left the laptop open overnight, and by the morning the model was there. The only sign of life in between was network traffic in the system monitor, on a fast connection that should have done better.</p>
+<figure class="shot" data-shot="mt-download.webp" data-dir="images/" data-alt="What I saw, against what was actually happening, and what a page should show. The download never stopped; the page that asked about it did. Chrome&#x27;s guidance covers most of this, and the demos did not follow it."><figcaption>What I saw, against what was actually happening, and what a page should show. The download never stopped; the page that asked about it did. Chrome's guidance covers most of this, and the demos did not follow it.</figcaption></figure>
+<p>Most of that is explained in Chrome's own documentation, and it is worth knowing before building anything:</p>
+<ul>
+<li><b>The download did not stop.</b> It continues in the background if the tab that started it is refreshed or closed, resumes where it left off if the connection drops, and resumes on the next start if the browser is closed (within 30 days).</li>
+<li><b>The progress bar is the page's job.</b> A page sees download progress only through the monitor it passes when it creates a session. After a refresh, the new page has to ask again, and if it does, it is told how much is still missing. The demo pages did not ask again; that is why the banner vanished.</li>
+<li><b>It is roughly 4 GB, downloaded once per device.</b> Every site shares the same model. Updates are full downloads, done in the background and swapped in without downtime.</li>
+<li><b>There is a pause after the download.</b> Once the bytes are in, the model is unpacked and loaded into memory, which the documentation recommends showing as an indeterminate state.</li>
+<li><b>It can disappear.</b> If free disk space falls below about 10 GB, Chrome deletes the model, even mid-session, and does not fetch it again until a page asks.</li>
+<li><b>There is a page for this.</b> <code>chrome://on-device-internals</code> shows the model, its version and an event log.</li>
+</ul>
+<p>So the rough experience was real, and it is fixable at the page level. Chrome's guidance even describes a hybrid pattern, used by the shopping site Miravia: answer with a server-side model while the local one downloads, then switch. What I have not found, anywhere I looked, is a small, honest component that shows bytes, rate and time remaining, survives a refresh, says it is safe to close the tab, and, because the API reports only that a device is unavailable and not why, lists the likely reasons in plain words. That is the first thing worth shipping.</p>
+<h2 id="examples">Why there are so few examples</h2>
+<p>I looked for good examples of the Prompt API in action, and found surprisingly few. Chrome's own case studies are real but narrow: CyberAgent's blogging tools, review summaries on redBus and Miravia, article summaries at Terra and BrightSites, and translation at Policybazaar and JioHotstar. Most of those use the task APIs, summarising and translating, rather than the Prompt API itself. Chrome uses Gemini Nano for its own scam detection. Beyond that, there are demos, extensions, and wrappers that expose the browser's model to other programs. That surprised me, until I listed the reasons:</p>
+<ul>
+<li><b>It is new.</b> Five months on the open web is not long for a platform feature.</li>
+<li><b>The audience is gated.</b> Desktop only, with a 22 GB free-disk floor and real hardware requirements. A team cannot assume its readers have it, so every feature needs a fallback, and the fallback often becomes the feature.</li>
+<li><b>The first run is a 4 GB download.</b> No product manager wants that to be a user's first impression.</li>
+<li><b>It is small.</b> A model in the 2 to 4 billion parameter range is good at classifying, extracting, summarising and rephrasing, and not at long reasoning. Teams that try it as a chatbot are disappointed; teams that try it as a function are not.</li>
+<li><b>Five languages.</b> A lot of the web is in the others.</li>
+<li><b>Tool calling is not ready.</b> Native tool use is behind a flag and unreliable; the documented path is structured output.</li>
+<li><b>The standards fight.</b> That is the next section, and it is the reason I would take most seriously if I were deciding whether to build on it.</li>
+</ul>
+<h2 id="against">The case against, taken seriously</h2>
+<p>Chrome shipped the Prompt API over formal opposition. Mozilla's position is that the API has "severe negative consequences to the interoperability, updatability, and neutrality of the web platform." Apple's WebKit team filed an opposing position on interoperability, portability and privacy. The W3C Technical Architecture Group recorded several concerns, and Microsoft, which builds its own version of the API on its own models in Edge, objected too. The objections come down to three things.</p>
+<ul>
+<li><b>Prompts do not travel.</b> A prompt tuned for Gemini Nano may behave differently on another browser's model, and the proposal itself says it does not guarantee quality, stability or interoperability between browsers. That pushes the web towards writing for one model, the way it once wrote for one browser.</li>
+<li><b>A vendor policy sits in front of a web API.</b> Using it means accepting Google's Generative AI Prohibited Uses Policy, which is new for a web platform feature.</li>
+<li><b>The browser decides.</b> Which model, which version, when it updates, when it is deleted. A page cannot pin a version, and cannot even read it from JavaScript.</li>
+</ul>
+<p>I agree with most of this, and it lines up with what I keep writing about: sovereignty, determinism and explainability. A model I cannot pin, version or inspect, behind a policy I did not write, is not sovereign infrastructure. But I do not think the answer is to wait. Edge already offers the same API shape on its own models (Phi-4-mini, and a smaller one called Aion in developer preview), so the interface is not Chrome's alone, even if the standards process is unfinished. And there is a design discipline that limits the damage:</p>
+<ul>
+<li><b>Keep the meaning in the data, not in the prompt.</b> If the page hands the model a slice of an anchored graph and asks a narrow question with a JSON schema, the work the model does is small and checkable, and the answer can be verified against the anchors. Swap the model and the graph still works.</li>
+<li><b>Use the model as a function, not as an oracle.</b> Classify, extract, label, rephrase. Never let it be the only source of a fact.</li>
+<li><b>Always have a path without it.</b> The graph itself, or the reader's own key to a larger model, or nothing at all. The page should be complete without the model, and better with it.</li>
+</ul>
+<h2 id="fit">Why this fits what we have built</h2>
+<p>This is the part I find most exciting. A small model with a small context window is a bad match for raw prose and a very good match for the graphs this site is building.</p>
+<p>In <a href="the-agent-is-the-reader.html">The agent is the reader</a>, the five readers' graph answered a question about any of 45 concepts in a median of 2,579 tokens, with every statement anchored to its sentence, against 25,698 tokens to read the five articles. A context window measured in thousands of tokens, not hundreds of thousands, cannot hold the five articles. It can hold the graph's answer, with room left for the question. The same work that makes the graph worth paying for, for an agent with a big model, makes it usable for a small model in the reader's tab. And the anchors mean every answer can show its sources, which is the honest way to use a model this size.</p>
+<p>The model also fills the gaps the client-side pattern still had. The newsroom builds <a href="pay-to-keep-your-persona.html">personas</a> from what the reader reads, using rules; a local model can infer them from the text itself, without anything leaving the browser. My whole publishing workflow starts with voice memos; the Prompt API accepts audio, so a memo could be transcribed and structured on the device before it is encrypted into a vault lane. And the <a href="how-to-run-synthetic-users.html">synthetic readers</a> found 51 missing figures out of 527; a local model can describe what each figure shows, and say when a figure says something different from its caption.</p>
+<h2 id="opportunities">Where we can use it</h2>
+<figure class="shot" data-shot="mt-opportunities.webp" data-dir="images/" data-alt="Where a model in the tab fits, by how much it would be worth to readers and how ready the platform is for it today. The top right is where to start; the left column waits on tool calling, more languages or mobile."><figcaption>Where a model in the tab fits, by how much it would be worth to readers and how ready the platform is for it today. The top right is where to start; the left column waits on tool calling, more languages or mobile.</figcaption></figure>
+<div class="tablewrap"><table>
+<tr><th>Opportunity</th><th>What the model does</th><th>Built on</th><th>Ready today?</th></tr>
+<tr><td><b>Ask this article</b></td><td>Answers a reader's question from the graph slice, citing anchors</td><td>Prompt API, JSON schema, the five readers' graph</td><td>Yes</td></tr>
+<tr><td><b>Personas inferred locally</b></td><td>Labels what a reader reads into persona traits, in the browser</td><td>Prompt API, JSON schema, SG Meter's history</td><td>Yes</td></tr>
+<tr><td><b>A download panel that tells the truth</b></td><td>Not the model: a component that shows bytes, rate and time, survives a refresh, and explains "unavailable"</td><td><code>availability()</code>, the download monitor</td><td>Yes</td></tr>
+<tr><td><b>Voice memo to vault</b></td><td>Transcribes and structures a memo on the device, then encrypts it to a lane</td><td>Prompt API audio input (GPU), append lanes</td><td>Yes, on GPU machines</td></tr>
+<tr><td><b>Alt text and figure checks</b></td><td>Describes each figure; flags a figure that contradicts its caption</td><td>Prompt API image input</td><td>Yes</td></tr>
+<tr><td><b>Read it in Portuguese</b></td><td>Translates an article for pt.newsroom readers on the device</td><td>Translator API</td><td>Yes</td></tr>
+<tr><td><b>A behaviour-policy helper for RiskMandate</b></td><td>Classifies each rule a user writes as boundary, setting, expectation or none, privately</td><td>Prompt API, JSON schema</td><td>Yes, as a draft for a person to check</td></tr>
+<tr><td><b>A local second reader</b></td><td>Checks a draft against rules and sources before it is sent</td><td>Prompt API, JSON schema</td><td>Partly: too small to be the only check</td></tr>
+<tr><td><b>Tools for the reader's agent</b></td><td>The newsroom describes its own actions to the reader's agent</td><td>WebMCP</td><td>Origin trial</td></tr>
+<tr><td><b>Native tool calling</b></td><td>The model decides which of our functions to call</td><td>Prompt API tools</td><td>Not yet: behind a flag</td></tr>
+</table></div>
+<p>The first four are the ones I want to build, in roughly that order. They share one property: the model never decides anything important on its own. It answers from anchors, labels into a fixed set, or transcribes, and the page or the person checks the result.</p>
+<h2 id="next">What we are building next</h2>
+<p>A vault is being built alongside this article to explore all of this properly: a test page per capability, measured on real machines, with the numbers published. The first round:</p>
+<ol>
+<li><b>The model status panel.</b> An open component, in the spirit of SG Meter: it checks support and eligibility, shows download progress with bytes, rate and time remaining, survives a refresh, and, when a device cannot run the model, explains the likely reasons in plain words.</li>
+<li><b>Ask this article, grounded in the graph.</b> A question box on articles that have the five readers' graph, answering only from anchored items, with a JSON schema that forces it to cite them, and a fallback that shows the graph slice when the model is missing.</li>
+<li><b>Personas, inferred on the device.</b> The same traits SG Meter uses, inferred from the text a reader keeps, never sent anywhere.</li>
+<li><b>Voice memo to vault.</b> Record, transcribe and structure on the device, then encrypt and drop it into an append lane.</li>
+<li><b>Measurements.</b> Download time, time to first token, tokens per second, context window, and accuracy against the anchors, on the machines we have. These are the numbers missing from almost every piece about Gemini Nano, including this one.</li>
+</ol>
+<p>The client-side pattern had one piece left that seemed to need someone else's server. On capable desktops, it no longer does. The model is small, the platform is contested, and the first-run experience is poor. All three are true, and none of them is a reason to wait. If you are building with the Prompt API, or have found good examples I missed, let's talk: <a href="mailto:agent@riskmandate.ai">agent@riskmandate.ai</a>.</p>
+<h2 id="sources">Where this comes from</h2>
+<p>A voice memo of mine, recorded after trying Gemini Nano in Chrome for the first time, with my first impressions of the download and the demos. I asked an agent in a separate Claude session to research the current state of the Prompt API and the built-in AI APIs, check my impressions against Chrome's own documentation, and draft this article with its figures; where my impressions and the documentation disagreed (the download stopping on refresh, native tool support), the article follows the documentation and says so. This site's agent then gave it a last pass: plainer wording, and a correction to the claim that renting was the only way to put a model behind a page. The argument is mine, and so is the editorial responsibility.</p>
+<p>The status of each API, the hardware requirements, the Prompt API's inputs, outputs and sessions, and the model's download, update and deletion behaviour are from Chrome for Developers: <a href="https://developer.chrome.com/docs/ai/built-in-apis">Built-in AI APIs</a>, <a href="https://developer.chrome.com/docs/ai/prompt-api">The Prompt API</a>, <a href="https://developer.chrome.com/docs/ai/understand-built-in-model-management">Understand built-in model management</a> and <a href="https://developer.chrome.com/docs/ai/inform-users-of-model-download">Inform users of model download</a>, with <a href="https://developer.chrome.com/docs/ai/agents">WebMCP and agents</a> and the <a href="https://chrome.dev/web-ai-demos/">demos</a>. The ship date and the objections are from coverage in <a href="https://www.techtimes.com/articles/316729/20260516/google-ships-chrome-prompt-api-over-objections-mozilla-apple-w3c-microsoft.htm">Tech Times</a> and <a href="https://www.gigazine.net/gsc_news/en/20260501-google-chrome-prompt-api/">Gigazine</a>, which cite Mozilla's standards position (issue 1213) and WebKit's (issue 495); the model size of about 4.27 GB is from the same coverage. The state of native tool calling, tested on Chrome 151 in August 2026, is from the <a href="https://pub.dev/packages/flutter_gemma_builtin_ai/versions/0.2.0">flutter_gemma_builtin_ai</a> documentation. Edge's Prompt API and its models are from <a href="https://blogs.windows.com/msedgedev/2025/05/19/introducing-the-prompt-and-writing-assistance-apis/">Microsoft's announcement</a> and <a href="https://www.thurrott.com/?p=336953">coverage of Build 2026</a>. The graph numbers are from <a href="the-agent-is-the-reader.html">The agent is the reader</a>; the figure count is from <a href="how-to-run-synthetic-users.html">How to run synthetic users</a>. No measurements of speed or quality are claimed here; those are what the vault is for.</p>
+<sg-meter view="page" kind="article" date="2026-10-11" topics="site-and-engineering graphs-and-knowledge" title="A model in the tab: Chrome now ships an LLM to capable desktops, and it is the hardest piece of the client-side puzzle, SGit Newsroom"></sg-meter>
+<section class="athreads" id="threads">
+ <h2>Threads</h2>
+ <p class="athreads-meta"><span class="tchip">Site &amp; engineering</span><span class="tchip">Graphs &amp; knowledge</span> <a href="graphs.html#a-model-in-the-tab">This article as a graph &rarr;</a></p>
+ <div class="athreads-cols"><div><h3>Builds on</h3><ul><li><a href="no-server-by-design.html">No server, by design: first I retired the database, now I am retiring the back end</a> <span class="dim">First the database went, now the back end: the SGit Newsroom runs all its logic in the browser, on commodity servers that cannot read your data.</span></li><li><a href="the-agent-is-the-reader.html">The agent is the reader: why agents will pay for graphs, personas and signed claims, because it is cheaper than not paying</a> <span class="dim">Agents pay to read the raw web and guess its meaning. A curated graph answers for 90% fewer tokens, so paying the publisher is cheaper than not paying.</span></li><li><a href="pay-to-keep-your-persona.html">Pay to keep your persona: readers should pay because it helps them, not because they feel they should</a> <span class="dim">Readers should pay because it helps them: a persona with a name and a graph, several for focus, and one that follows you between devices.</span></li><li><a href="how-to-run-synthetic-users.html">How to run synthetic users on your own site: five people who do not exist, a browser, and an afternoon</a> <span class="dim">Five invented users, a model reading screenshots, and a real browser: how to run synthetic users, from three studies.</span></li></ul></div></div>
+ <p class="small dim"><a href="index.html">All articles</a> &middot; <a href="graphs.html">All graphs</a></p>
+</section>
+<aside class="lkit" aria-label="For LinkedIn"><b>Posting this article on LinkedIn?</b> The cover is <a href="banners/a-model-in-the-tab.jpg" download>a-model-in-the-tab.jpg</a> (1920&times;1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page.</aside>
+ <p class="subteaser"><b>Want the next issue by email.</b> One issue a week or so: what was published, what it adds up to, and what is worth your time. <a class="cta2" href="../subscribe/index.html">Subscribe to the SGit Newsroom &rarr;</a></p>
+ <p class="small dim" style="margin-top:2rem"><a href="index.html">&larr; All articles</a></p>
+</main>
+<script>
+(function () {
+ fetch('../assets/shots.js?v=v0.7.46')
+ .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+ .then(function (t) { (0, eval)(t); })
+ .catch(function (e) { console.error('[shots] component failed to load:', e); });
+}());
+</script>
+<script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": "https://buy.stripe.com/6oUfZ9ez65vVgU2fY15os04"}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
+<script>
+import('../assets/components/sg-meter/v1/v1.4/v1.4.0/sg-meter.js?v=v0.7.46')
+ .catch(function (e) { console.error('[sg-meter] component failed to load:', e); });
+</script>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="netline"><a href="https://sgit.ai" style="display:inline;padding:0"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://pt.newsroom.sgit.ai" style="display:inline;padding:0">&#8593; pt.newsroom.sgit.ai</a> &middot; <a href="https://graphs.sgit.ai" style="display:inline;padding:0">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai" style="display:inline;padding:0">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai" style="display:inline;padding:0">&#8593; nhi.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai" style="display:inline;padding:0">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../admin/versions.html">v0.7.1</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="a-model-in-the-tab.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../index.html">&#8594; The front page</a>
+    <a href="../articles/index.html#all">Every article</a>
+    <a href="../articles/newsletter/index.html">The newsletter</a>
+    <a href="../articles/collections/index.html">Collections</a>
+    <a href="../articles/desk/index.html">From the desk</a>
+    <a href="../articles/graphs.html">As graphs</a>
+    <a href="../subscribe/index.html">Subscribe</a>
+    <a href="../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../account/index.html">Your reading account</a>
+    <a href="../account/newsroom.html">Your newsroom</a>
+    <a href="../account/personas.html">Your personas</a>
+    <a href="../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../newsroom/index.html">How the newsroom runs</a>
+    <a href="../newsroom/policies.html">Behaviour policies</a>
+    <a href="../newsroom/publish.html">How to publish</a>
+    <a href="../newsroom/board.html">The board</a>
+    <a href="../newsroom/log.html">The run log</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../design/index.html">The design, and what runs</a>
+    <a href="../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../corrections/index.html">Corrections must propagate</a>
+    <a href="../provenance/index.html">Provenance is the product</a>
+    <a href="../economics/index.html">Paying the fact creator</a>
+    <a href="../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../replicate/index.html">Replicate this newsroom</a>
+    <a href="../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+    <a href="../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../archive/index.html">The archive</a>
+    <a href="../network/index.html">The network</a>
+    <a href="../admin/versions.html">Release history</a>
+    <a href="../admin/index.html">Admin &amp; engineering</a>
+    <a href="../about/participant.html">Where we lose</a>
+    <a href="../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+
+<script>
+(function(){var R=document.documentElement.getAttribute('data-root')||'';var V='?v=' + 'v0.7.46';var C=[R,'','../','/'].filter(function(v,i,a){return a.indexOf(v)===i});
+function wait(ms){return new Promise(function(res){var t=Date.now();(function p(){if(window.sg)return res(window.sg);if(Date.now()-t>ms)return res(null);setTimeout(p,60)})()})}
+function grab(sg,p){return new Promise(function(res){(async function(){if(sg&&sg.vfs&&sg.vfs.readText){try{var t=await sg.vfs.readText(p);if(t)return res(t)}catch(e){}}try{var r=await fetch(p+V);if(r.ok)return res(await r.text())}catch(e){}res(null)})()})}
+async function css(sg){for(var i=0;i<C.length;i++){var p=C[i]+'assets/newsroom.css';if(sg&&sg.loadCss){try{await sg.loadCss(p);return}catch(e){}}var t=await grab(sg,p);if(t){var s=document.createElement('style');s.textContent=t;document.head.appendChild(s);return}}}
+async function js(sg,name){name=name||'assets/site.js';for(var i=0;i<C.length;i++){var p=C[i]+name;if(sg&&sg.loadJs){try{await sg.loadJs(p);return}catch(e){}}var t=await grab(sg,p);if(t){try{(0,eval)(t)}catch(e){console.error('[site] js failed',name,e)}return}}}
+async function boot(){var inVault=false;try{inVault=(window!==window.parent)||location.protocol==='blob:'}catch(e){inVault=true}
+var sg=inVault?await wait(2500):null;window.__sgitBoot={roots:C,grab:function(p){return grab(sg,p)},version:V};await css(sg);await js(sg);document.documentElement.classList.add('ready');try{window.parent&&window.parent.postMessage({type:'sg-app-ready'},'*')}catch(e){}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+var mine=V.slice(3),last=0;
+function fresh(){if(location.hostname!=='sgit.ai'||Date.now()-last<60000)return;last=Date.now();
+fetch('/version.txt?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(t){t=(t||'').trim();if(!/^v[0-9]+[.][0-9]+[.][0-9]+$/.test(t)||t===mine)return;
+var k='sgit.fresh:'+location.pathname;try{if(sessionStorage.getItem(k)===t)return;sessionStorage.setItem(k,t)}catch(e){}
+var u=new URL(location.href);u.searchParams.set('v',t);location.replace(u.href)}).catch(function(){})}
+try{var u=new URL(location.href);if(u.searchParams.get('v')===mine){u.searchParams.delete('v');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}
+fresh();addEventListener('pageshow',function(e){if(e.persisted){last=0;fresh()}});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')fresh()});
+})();
+</script>
+</body>
+</html>

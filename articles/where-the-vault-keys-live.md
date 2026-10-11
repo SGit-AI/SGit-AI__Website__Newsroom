@@ -2,7 +2,7 @@
 
 > Every vault on this site is encrypted in the client, so the server never sees a key and the key is the whole question. This is the current state of vault key management at sgit-ai v0.20.0: where everything lives, the one secret and the keys derived from it, where vault keys are kept today (a password manager, and a registry vault run by an isolated agent session), how a new key reaches the registry without ever entering a chat, append lanes as the transport behind most of it, the small communication vaults that made the problem urgent, and the four tracks that come next: password manager integrations, secrets.sgit.ai's passkey-unlocked keyring, PKI, and decryption that happens out of band. Plus the one gap we cannot close ourselves: agent platforms have no per-session secrets.
 
-*Source: <https://newsroom.sgit.ai/articles/where-the-vault-keys-live.html> · sgit.ai v0.7.45 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/where-the-vault-keys-live.html> · sgit.ai v0.7.46 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 

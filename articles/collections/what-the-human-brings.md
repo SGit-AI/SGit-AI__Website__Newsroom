@@ -2,7 +2,7 @@
 
 > Where the person sits in a loop of agents: the direction, the review, the one step that cannot be undone, measured rather than assumed.
 
-*Source: <https://newsroom.sgit.ai/articles/collections/what-the-human-brings.html> · sgit.ai v0.7.45 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/collections/what-the-human-brings.html> · sgit.ai v0.7.46 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 
