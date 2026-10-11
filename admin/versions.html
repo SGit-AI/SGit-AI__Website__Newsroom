@@ -12,7 +12,7 @@
 
 <nav class="site"><div class="row">
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.8.1</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.8.2</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -73,6 +73,7 @@
       <a class="sl" href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
       <a class="sl" href="../demos/vaults/newsroom-synthetic-users/index.html">The study: five readers tested this site</a>
       <a class="sl" href="../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../newsroom-api/index.html">The reader API: a map, and a review</a>
       <a class="sl" href="../admin/index.html">How this site is built</a>
       </div>
     </div>
@@ -126,6 +127,16 @@
 <div class="tablewrap"><table class="vers">
   <thead><tr><th>Version</th><th>Date</th><th>What shipped</th></tr></thead>
   <tbody>
+    <tr>
+      <td class="vnum">v0.8.2</td>
+      <td>11 Oct 2026</td>
+      <td><b>The reader API mapped and reviewed, with its findings pinned by tests, and the tests in CI.</b>
+        <p><b>Phase 0 of the move.</b> <a href="../articles/explorer-to-villager-newsroom.html">Go slow to go fast</a> asks, before anything moves, for a map of everything a reader does on this site: every file, capability, web control, input, place data leaves the browser, external call and configuration value, as a table and as data. <a href="../newsroom-api/index.html">The reader API: a map, and a review</a> is that, regenerated on every build by <code>admin/build/api_map.py</code>, with the same map as <a href="../newsroom-api/map.json">map.json</a>. It counts 2,872 lines of reader code in 13 files that run in a browser (and 5,697 more in 20 frozen files of earlier meter versions), 18 pages written for it, the 12 views of the one element and 56 kinds of control, 10 ways data comes in and 8 ways it goes out, and 13 contracts. Every reader file carries its SHA-256, pages with the site chrome and version stamps normalised, which is the &ldquo;before&rdquo; the move&rsquo;s rule needs: the live site must serve the same bytes after it.</p>
+        <p><b>The review.</b> The meter element and core, the component base, the subscribe script, the reading-list code, the page loader, the build scripts and the gate, read line by line. Eighteen findings, with evidence and a proposed change each, among them: declining a page as &ldquo;not relevant&rdquo; leaves it in the persona&rsquo;s reading list and pulls its topics up (R1); a restored file is trusted beyond its two checked fields (R2); a malformed payment reference fails the whole return page (R3); shares and subscriptions sent from this site are labelled sgit.ai, because the config, the subscribe script and the contact file are sgit.ai&rsquo;s (R4); the live lanes and vault frames are on hosts named dev (R5); half-penny balances show as a penny more than was spent (R6); a page read as one persona is never picked for another (R7); one failed fetch of the feed is cached for the life of the page (R8); a renamed article would withdraw its number (R9); 350 pages run fetched text through eval, which stands in the way of any Content-Security-Policy (R10). Four accepted gaps are listed as accepted, with where they are said. By the brief&rsquo;s rule, no behaviour was changed.</p>
+        <p><b>Pinned, not fixed.</b> <code>admin/build/test_review.mjs</code> records each bug as it is, 14 checks, so that fixing one later is a visible change to a test; a check there that fails means the behaviour moved. The review note is also at <code>admin/notes/2026-10-11__newsroom-api-map-and-review.md</code>, generated from the same tables.</p>
+        <p><b>The one change: CI runs the tests.</b> The workflow validated the site and never ran the browser tests (R11). A <code>reader-tests</code> job now installs Playwright&rsquo;s Chromium and runs the meter test (46 checks), the reading-list test (65) and the review&rsquo;s pins (14) before a release is tagged, and fails if a test skipped for want of a browser. That is the pipeline, not the product, which is why it is the one change.</p>
+      </td>
+    </tr>
     <tr>
       <td class="vnum">v0.8.1</td>
       <td>11 Oct 2026</td>
@@ -606,7 +617,7 @@
     <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="netline"><a href="https://sgit.ai" style="display:inline;padding:0"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://pt.newsroom.sgit.ai" style="display:inline;padding:0">&#8593; pt.newsroom.sgit.ai</a> &middot; <a href="https://graphs.sgit.ai" style="display:inline;padding:0">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai" style="display:inline;padding:0">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai" style="display:inline;padding:0">&#8593; nhi.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai" style="display:inline;padding:0">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.8.1</a> &middot; <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.8.2</a> &middot; <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>The newsroom</h4>

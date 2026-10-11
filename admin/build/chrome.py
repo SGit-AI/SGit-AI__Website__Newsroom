@@ -84,8 +84,9 @@ NAV = [
         ("How to run synthetic users", "articles/how-to-run-synthetic-users.html"),
         ("The study: five readers tested this site", "demos/vaults/newsroom-synthetic-users/index.html"),
         ("Seed companies", "mvps/seed-companies.html"),
+        ("The reader API: a map, and a review", "newsroom-api/index.html"),
         ("How this site is built", "admin/index.html"),
-    ], ("replicate/", "meter/", "mvps/seed-companies.html", "demos/vaults/newsroom-synthetic-users/", "publishers/")),
+    ], ("replicate/", "meter/", "mvps/seed-companies.html", "demos/vaults/newsroom-synthetic-users/", "publishers/", "newsroom-api/")),
     ("World News Day", "world-news-day/index.html", [
         ("The corpus", "world-news-day/index.html"),
         ("Free to republish is not a licence", "world-news-day/stories/free-to-republish-is-not-a-licence.html"),
