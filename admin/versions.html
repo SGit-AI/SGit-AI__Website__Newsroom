@@ -12,7 +12,7 @@
 
 <nav class="site"><div class="row">
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.6.3</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.6.4</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -123,6 +123,16 @@
 <div class="tablewrap"><table class="vers">
   <thead><tr><th>Version</th><th>Date</th><th>What shipped</th></tr></thead>
   <tbody>
+    <tr>
+      <td class="vnum">v0.6.4</td>
+      <td>11 Oct 2026</td>
+      <td><b>The top-up page is tidied, and what it says about your data is exact.</b>
+        <p><b>The note above the button.</b> It said &ldquo;nothing is sent anywhere&rdquo;, which is true of a reader&rsquo;s reading data and reads as wider than that once a payment link exists, and it was written in a chatty register (&ldquo;it never nags&rdquo;, &ldquo;and that is all&rdquo;) on a page that now takes money. It now says where the data is kept, that the site is a client-side application of static files with what you read kept in your browser rather than on a server, that this is how it is for now and that adding encrypted vaults would be said there, and what can leave the browser when the reader chooses to: a payment, made on Stripe&rsquo;s own page, a subscription, or a reading share. It links to a new section, <a href="../shipped/index.html#data">what leaves your browser, and when</a>, which sets out six cases in a table, including two I had not written down: that fetching any page tells its host, GitHub Pages, that you asked for it, and that the synthetic-readers study page embeds a viewer from another service, so opening it contacts that service.</p>
+        <p><b>No absolutes.</b> The absolutes in this wording came out, including one of my own on the design page, which said that nothing leaves the browser and that this &ldquo;holds&rdquo;. It did not hold for the study page, and it does not hold for a payment. That row now says what can leave and when.</p>
+        <p><b>Removed at Dinis&rsquo;s request.</b> The paragraph under the payment button saying that the return page cannot check the payment. The limit is unchanged and is still published, on <a href="../shipped/index.html">what runs</a> and in the meter&rsquo;s security model; it is only no longer on the page that takes the payment. The intro&rsquo;s second sentence, which repeated what the top-up card directly beneath it says, went too.</p>
+        <p><b>How, and what it costs.</b> Three text rules in <code>admin/build/newsroom-text.json</code>, applied by the import to the account page and the top-up page and their markdown twins, so they are recorded and not hand edits. I compared the visible text of all 315 imported pages with sgit.ai&rsquo;s: exactly those two differ. A rule whose text has moved on sgit.ai stops the import with a message, which I tried by changing one. When sgit.ai adopts the wording, the rules are deleted.</p>
+      </td>
+    </tr>
     <tr>
       <td class="vnum">v0.6.3</td>
       <td>11 Oct 2026</td>
@@ -541,7 +551,7 @@
     <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="netline"><a href="https://sgit.ai" style="display:inline;padding:0"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://pt.newsroom.sgit.ai" style="display:inline;padding:0">&#8593; pt.newsroom.sgit.ai</a> &middot; <a href="https://graphs.sgit.ai" style="display:inline;padding:0">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai" style="display:inline;padding:0">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai" style="display:inline;padding:0">&#8593; nhi.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai" style="display:inline;padding:0">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.6.3</a> &middot; <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.6.4</a> &middot; <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>The newsroom</h4>

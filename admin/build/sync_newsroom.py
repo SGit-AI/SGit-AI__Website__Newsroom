@@ -45,6 +45,8 @@ What changes on the way in, and nothing else:
   9. The reading meter's top-up link, if admin/build/newsroom-meter.json sets one, is written into
      the meter config of every imported page, on this side only. See that file for what the link is
      and how to switch it off.
+  10. Wording this site changes on named pages (admin/build/newsroom-text.json), each a recorded
+     rule that stops the import if sgit.ai's text under it moves. The record lists them.
 
 Scripts, styles, components and /.well-known/sgit-subscribe.json are copied byte for byte.
 The brief requires it twice: a published component path never changes, and the subscribe
@@ -79,6 +81,29 @@ THIS_VERSION = (ROOT / "admin/build/version.txt").read_text().strip()
 # and must never reach a public page, so anything else than that shape stops the import.
 METER_FILE = ROOT / "admin/build/newsroom-meter.json"
 LIVE_LINK  = re.compile(r"^https://buy\.stripe\.com/[A-Za-z0-9]+$")
+
+
+TEXT_FILE = ROOT / "admin/build/newsroom-text.json"
+APPLIED = set()
+
+
+def text_overrides():
+    return json.loads(TEXT_FILE.read_text())["overrides"] if TEXT_FILE.exists() else []
+
+
+def apply_text_overrides(text, dest_file, kind):
+    for o in text_overrides():
+        if dest_file not in o["files"]:
+            continue
+        find = o["find"][kind] if isinstance(o["find"], dict) else o["find"]
+        n = text.count(find)
+        if n != 1:
+            sys.exit(f"sync: {dest_file}: the text this site overrides ({o['id']}) is in the page {n} times, "
+                     f"not once. sgit.ai changed it, so this rule is stale: update or delete it in "
+                     f"admin/build/newsroom-text.json")
+        text = text.replace(find, o["with"][kind])
+        APPLIED.add((o["id"], dest_file))
+    return text
 
 
 def topup_link():
@@ -371,6 +396,7 @@ def transform(text, src_file, dest_file, kind):
             # One front page at two addresses names one canonical address: the root.
             text = re.sub(r'(<link rel="canonical" href=")[^"]*(")', rf'\1https://{HOST}/\2', text, count=1)
             text = re.sub(r'(<meta property="og:url" content=")[^"]*(")', rf'\1https://{HOST}/\2', text, count=1)
+        text = apply_text_overrides(text, dest_file, "html")
     elif kind == "md":
         text = MD_LINK.sub(lambda m: m.group(1) + rewrite_url(m.group(2), src_file, dest_file) + m.group(3), text)
         text = re.sub(r'\[site (v\d+\.\d+\.\d+)\]\((https://sgit\.ai/admin/versions\.md)\)',
@@ -379,6 +405,7 @@ def transform(text, src_file, dest_file, kind):
         # that generated the file, not this site's. (index.md gets this site's own stamp appended.)
         text = re.sub(r'\u00b7 site (v\d+\.\d+\.\d+) \u00b7 this file is generated',
                       lambda m: f'\u00b7 sgit.ai {m.group(1)} \u00b7 this file is generated', text)
+        text = apply_text_overrides(text, dest_file, "md")
     return text
 
 
@@ -461,6 +488,10 @@ def main():
             print("  ✗ " + p, file=sys.stderr)
         sys.exit(f"sync: {len(problems)} problem(s), nothing written")
 
+    for o in text_overrides():
+        missed = [f for f in o["files"] if (o["id"], f) not in APPLIED]
+        if missed:
+            sys.exit(f"sync: the text rule {o['id']} names files it did not reach: {missed}")
     for target, pages in sorted(unresolved.items()):
         print(f"  ! sgit.ai itself points at {target} and the file is not there ({len(pages)} page(s)); "
               f"it fails there too, and is not fixed here", file=sys.stderr)
@@ -487,6 +518,7 @@ def main():
                   "check 11 recomputes it for every file listed here.",
         "source": meta,
         "host": HOST,
+        "text_overrides": [{"id": o["id"], "files": o["files"], "why": o["why"]} for o in text_overrides()],
         "counts": {
             "files": len(files),
             "pages": sum(1 for d in files if d.endswith(".html")),
@@ -494,6 +526,7 @@ def main():
                             and d not in ("articles/index.html", "articles/graphs.html")),
             "verbatim": sum(1 for f in files.values() if f["sha256"] == f["sha256_source"]),
             "dependencies": len(deps),
+            "text_overrides": len(text_overrides()),
             "unresolved_on_sgit_ai": len(unresolved),
         },
         "files": {d: {k: v for k, v in f.items() if k != "_out"} for d, f in sorted(files.items())},

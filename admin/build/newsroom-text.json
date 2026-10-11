@@ -1,0 +1,55 @@
+{
+  "what": "Wording this site changes on specific imported pages when sync_newsroom.py imports the newsroom, so it holds on newsroom.sgit.ai and not on sgit.ai. Each is a recorded rule and not a hand edit: validate.js check 11 still passes because the import writes the page. The import stops, loudly, if the text a rule replaces is not in its page exactly once, which means sgit.ai changed it and the rule is stale. When sgit.ai adopts the wording, delete the rule here. A rule has a separate match for the HTML page and its markdown twin.",
+  "overrides": [
+    {
+      "id": "reading-data-note",
+      "files": [
+        "account/index.html",
+        "account/index.md",
+        "account/top-up.html",
+        "account/top-up.md"
+      ],
+      "find": {
+        "html": "<div class=\"note\"><b>Kept in this browser, and only here.</b> The balance, the history and the receipts are in this browser's storage; nothing is sent anywhere and there is no account. A new browser, a private window or clearing site data starts again with &pound;5.00 and no history, so with no personalisation. It never blocks a page and it never nags: credit can go below zero, the balance says so in the top bar, and that is all. <a href=\"../meter/index.html\">How the meter works</a>, and <a href=\"../articles/going-live-with-the-reading-meter.html\">why we run it this way</a>.</div>",
+        "md": "**Kept in this browser, and only here.** The balance, the history and the receipts are in this browser's storage; nothing is sent anywhere and there is no account. A new browser, a private window or clearing site data starts again with £5.00 and no history, so with no personalisation. It never blocks a page and it never nags: credit can go below zero, the balance says so in the top bar, and that is all. [How the meter works](../meter/index.md), and [why we run it this way](../articles/going-live-with-the-reading-meter.md)."
+      },
+      "with": {
+        "html": "<div class=\"note\"><b>Where your data is kept.</b> Your balance, history and receipts are kept in this browser&rsquo;s storage. Your reading is not sent anywhere unless you choose to send it, and there is no account. This is a client-side application: the pages are static files, and what you read stays in your browser rather than on a server. That is how it is for now; if encrypted vaults are added, it will be said here. A new browser, a private window or clearing site data starts again with &pound;5.00 and no history. Credit can go below zero, and no page is blocked. What can leave your browser, when you choose to, is a payment (made on Stripe&rsquo;s own page), a subscription or a reading share: <a href=\"../shipped/index.html#data\">what leaves your browser, and when</a>. <a href=\"../meter/index.html\">How the meter works</a>, and <a href=\"../articles/going-live-with-the-reading-meter.html\">why it works this way</a>.</div>",
+        "md": "**Where your data is kept.** Your balance, history and receipts are kept in this browser’s storage. Your reading is not sent anywhere unless you choose to send it, and there is no account. This is a client-side application: the pages are static files, and what you read stays in your browser rather than on a server. That is how it is for now; if encrypted vaults are added, it will be said here. A new browser, a private window or clearing site data starts again with £5.00 and no history. Credit can go below zero, and no page is blocked. What can leave your browser, when you choose to, is a payment (made on Stripe’s own page), a subscription or a reading share: [what leaves your browser, and when](https://newsroom.sgit.ai/shipped/index.html#data). [How the meter works](../meter/index.md), and [why it works this way](../articles/going-live-with-the-reading-meter.md)."
+      },
+      "why": "The note said \"nothing is sent anywhere\", which is about the reading data and reads as wider than that once a top-up link exists, and it was written in a chatty register (\"it never nags\", \"and that is all\") on a page that now takes payment. It now says what is kept where, what can leave the browser and when, in plain terms and without absolutes."
+    },
+    {
+      "id": "top-up-intro",
+      "files": [
+        "account/top-up.html",
+        "account/top-up.md"
+      ],
+      "find": {
+        "html": "&pound;5 of reading, paid on Stripe's page. You come back to a page that adds the credit to the balance in this browser. No account, and no subscription: it is one payment, and nothing renews.",
+        "md": "£5 of reading, paid on Stripe's page. You come back to a page that adds the credit to the balance in this browser. No account, and no subscription: it is one payment, and nothing renews."
+      },
+      "with": {
+        "html": "&pound;5 of reading credit, paid on Stripe&rsquo;s page. It is one payment: there is no account and no subscription, and nothing renews.",
+        "md": "£5 of reading credit, paid on Stripe’s page. It is one payment: there is no account and no subscription, and nothing renews."
+      },
+      "why": "The second sentence of the intro repeated what the top-up card directly below it says."
+    },
+    {
+      "id": "top-up-gap-note",
+      "files": [
+        "account/top-up.html",
+        "account/top-up.md"
+      ],
+      "find": {
+        "html": " <p class=\"small dim\">The page you come back to cannot check the payment (this site has no server to check it with), so it adds the credit once for each payment reference it is given. That is a known gap and it is written down, with why it is accepted, in <a href=\"../articles/who-will-game-the-reading-meter.html\">who will game the reading meter</a>.</p>\n",
+        "md": "The page you come back to cannot check the payment (this site has no server to check it with), so it adds the credit once for each payment reference it is given. That is a known gap and it is written down, with why it is accepted, in [who will game the reading meter](../articles/who-will-game-the-reading-meter.md).\n\n"
+      },
+      "with": {
+        "html": "",
+        "md": ""
+      },
+      "why": "Removed at Dinis's request: a technical disclaimer under the payment button. The limit it states, that the return page cannot check the payment, is still published on /shipped/ and in the meter's security model."
+    }
+  ]
+}

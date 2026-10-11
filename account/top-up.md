@@ -12,13 +12,11 @@ SGit Newsroom · reading account
 
 # Top up
 
-£5 of reading, paid on Stripe's page. You come back to a page that adds the credit to the balance in this browser. No account, and no subscription: it is one payment, and nothing renews.
+£5 of reading credit, paid on Stripe’s page. It is one payment: there is no account and no subscription, and nothing renews.
 
-**Kept in this browser, and only here.** The balance, the history and the receipts are in this browser's storage; nothing is sent anywhere and there is no account. A new browser, a private window or clearing site data starts again with £5.00 and no history, so with no personalisation. It never blocks a page and it never nags: credit can go below zero, the balance says so in the top bar, and that is all. [How the meter works](../meter/index.md), and [why we run it this way](../articles/going-live-with-the-reading-meter.md).
+**Where your data is kept.** Your balance, history and receipts are kept in this browser’s storage. Your reading is not sent anywhere unless you choose to send it, and there is no account. This is a client-side application: the pages are static files, and what you read stays in your browser rather than on a server. That is how it is for now; if encrypted vaults are added, it will be said here. A new browser, a private window or clearing site data starts again with £5.00 and no history. Credit can go below zero, and no page is blocked. What can leave your browser, when you choose to, is a payment (made on Stripe’s own page), a subscription or a reading share: [what leaves your browser, and when](https://newsroom.sgit.ai/shipped/index.html#data). [How the meter works](../meter/index.md), and [why it works this way](../articles/going-live-with-the-reading-meter.md).
 
 Top-ups need JavaScript: the balance lives in your browser.
-
-The page you come back to cannot check the payment (this site has no server to check it with), so it adds the credit once for each payment reference it is given. That is a known gap and it is written down, with why it is accepted, in [who will game the reading meter](../articles/who-will-game-the-reading-meter.md).
 
 
 ---

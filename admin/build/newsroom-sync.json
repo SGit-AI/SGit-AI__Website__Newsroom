@@ -9,12 +9,41 @@
   "version": "v0.7.40"
  },
  "host": "newsroom.sgit.ai",
+ "text_overrides": [
+  {
+   "id": "reading-data-note",
+   "files": [
+    "account/index.html",
+    "account/index.md",
+    "account/top-up.html",
+    "account/top-up.md"
+   ],
+   "why": "The note said \"nothing is sent anywhere\", which is about the reading data and reads as wider than that once a top-up link exists, and it was written in a chatty register (\"it never nags\", \"and that is all\") on a page that now takes payment. It now says what is kept where, what can leave the browser and when, in plain terms and without absolutes."
+  },
+  {
+   "id": "top-up-intro",
+   "files": [
+    "account/top-up.html",
+    "account/top-up.md"
+   ],
+   "why": "The second sentence of the intro repeated what the top-up card directly below it says."
+  },
+  {
+   "id": "top-up-gap-note",
+   "files": [
+    "account/top-up.html",
+    "account/top-up.md"
+   ],
+   "why": "Removed at Dinis's request: a technical disclaimer under the payment button. The limit it states, that the return page cannot check the payment, is still published on /shipped/ and in the meter's security model."
+  }
+ ],
  "counts": {
   "files": 1348,
   "pages": 315,
   "articles": 67,
   "verbatim": 715,
   "dependencies": 52,
+  "text_overrides": 3,
   "unresolved_on_sgit_ai": 0
  },
  "files": {
@@ -26,12 +55,12 @@
   "account/index.html": {
    "from": "account/index.html",
    "sha256_source": "1d8eedd8a161583a23d9106a318458fb920a1f452745ea155f6c082ec616e7f3",
-   "sha256": "d60eb06e43f851e90a4e7a7fbc89e31d03e8f55d9d72c50bf0ce1cd485bfc807"
+   "sha256": "60b1a905d72bd5c261f2a6f6bde301322b6a10dadaaca0ef0dccae8239ff9622"
   },
   "account/index.md": {
    "from": "account/index.md",
    "sha256_source": "00db433a903200c92d849765ac54761237ce495e22206a9574fa64cb7bbb883e",
-   "sha256": "ac845e693fe1ced92a6333745d1df295c720655a3bc6137ea2db1bb739120ef9"
+   "sha256": "af11a04898a746ae5eaf0384f4f47ff9f5d2a8181ea8c82b189e1acc294eb752"
   },
   "account/newsroom.html": {
    "from": "account/newsroom.html",
@@ -66,12 +95,12 @@
   "account/top-up.html": {
    "from": "account/top-up.html",
    "sha256_source": "0e7b2b41d412b98a127e9425c067a35aea54ee028de1b138e373abd66cf06591",
-   "sha256": "d61a6ce5d0ade945d2bd6855094921cb248a121e6de9bda5c635b82e526c04dd"
+   "sha256": "cffc43badd5dedb6860a7209d43f3cf6beee6b81cde4a9b46527587389a5ed28"
   },
   "account/top-up.md": {
    "from": "account/top-up.md",
    "sha256_source": "d822f6def876eed6f7deaaa25d1192fd61ff13b402a32313246b0e0eace6b0dd",
-   "sha256": "7fe2268e0ceca3e32814281e784d84ca18948ea93064836428571637b024dfca"
+   "sha256": "24688a7e361cb2d1b8d292678654a8fe2aeea167713ce6d6a9d0020d47d54a1b"
   },
   "account/topped-up.html": {
    "from": "account/topped-up.html",

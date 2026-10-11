@@ -85,9 +85,11 @@ def design(f):
          'CC-Signed, where breaking the signature chain breaks the licence, is a design.'),
         ('<b>No server.</b> Reader data stays in the reader&rsquo;s browser unless the reader sends it.',
          '<a href="../databases/index.html">Databases with no server</a>',
-         'All of it. Every page here is a static file; the meter, the personas and the reading history live in '
-         'the browser; SQLite and a SPARQL store run there too.',
-         'Nothing. This one is a constraint, and it holds.'),
+         'The pages are static files, and what you read is kept in the browser rather than on a server. The meter, '
+         'the personas and the reading history live there; SQLite and a SPARQL store run there too.',
+         'Three things can leave the browser, when the reader chooses: a payment, to Stripe; a subscription and '
+         'a reading share, encrypted, to a write-only lane. <a href="../shipped/index.html#data">What leaves, and '
+         'when</a>. Encrypted vaults for readers would change this, and are not built.'),
     ]
     body = f"""<p>This site spent August and September 2026 arguing for a newsroom before one existed. On
 {AS_OF} the newsroom it argued for runs, so the argument can now be checked against it. The table
@@ -240,6 +242,22 @@ def shipped(f):
         ('<b>Articles as vaults</b>', 'One corpus is a vault. Articles are not.'),
         ('<b>CC-Signed licences and trust as a service</b>', 'Designs, argued and not built.'),
     ]
+    data_rows = [
+        ('<b>Your reading</b>: the balance, history, personas, picks and receipts',
+         'Kept in this browser&rsquo;s storage, and gone if you clear it. It is not sent on its own.',
+         'Only if you choose to share it, below.'),
+        ('<b>A reading share</b>', 'To the list agent, encrypted in your browser to that agent&rsquo;s key.',
+         'When you press send. The page shows every word first, and you can copy it instead.'),
+        ('<b>Subscribing</b>', 'Your address goes, encrypted in your browser to the list agent&rsquo;s key, to a '
+         'write-only lane.', 'When you subscribe.'),
+        ('<b>A top-up</b>', 'To Stripe, on Stripe&rsquo;s own page. Stripe collects your email, the name on the card, '
+         'your postcode and your card details. We see the payment and the email, name and postcode you give there; '
+         'Stripe keeps the card number. The credit is then added in your browser.', 'When you pay.'),
+        ('<b>The synthetic-readers study</b>', 'That one page embeds the vault viewer from dev.vault.sgraph.ai, so '
+         'opening it contacts that service.', 'On that page.'),
+        ('<b>Any page</b>', 'Fetching a page tells its host, GitHub Pages, that you asked for it, as for any website.',
+         'Whenever you open a page.'),
+    ]
     body = f"""<p>The line between what runs and what is only designed, as of {AS_OF}. It moves, and this
 page moves with it. The version written in August, when nothing on this site ran, is
 <a href="../archive/2026-08-23-what-is-shipped.html">in the archive</a>.</p>
@@ -247,6 +265,10 @@ page moves with it. The version written in August, when nothing on this site ran
 {table(["", "What it does", "Its limits"], runs)}
 <h2 id="designed">What is designed and not running</h2>
 {table(["", "Where it stands"], designed)}
+<h2 id="data">What leaves your browser, and when</h2>
+<p>This is a client-side application: the pages are static files, and what you read is kept in your browser rather
+than on a server. That is how it is for now. If encrypted vaults for readers are added, this section will say so.</p>
+{table(["What", "Where it goes", "When"], data_rows)}
 <h2 id="stopped">What ran and stopped</h2>
 <p>The <a href="../governance/index.html">Governance Wire</a> made one research run, on 28 August 2026.
 <a href="../portugal/index.html">Portugal Startups</a> covered Startup Summit Lisbon 2026 and handed its beat
