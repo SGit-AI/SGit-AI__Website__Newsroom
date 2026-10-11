@@ -2,7 +2,7 @@
 
 > A practical guide to the way I work with Claude, written for the people joining the team and for anyone I am helping with their own agentic workflows. It comes from about a year of doing this every day. Keep sessions separate, one per major or recurring topic, and do not let a thread wander across topics. Name them, "project | what we are working on", and give agent sessions an @ name. An agent is a session with a focus and a role.md. What a session knows is what it reads, so curate that memory: my memory is a set of websites, graphs and vaults, wired together, and almost everything in it is open, which makes sharing with agents and people very cheap. Vaults are how agents receive and send information without broad permissions. With all of that in place, the review becomes the quality step: when I find a mistake now, I can usually trace it back to a brief that needed to be better. Then the tips: documents with a preview, small proof-of-concept sites, skills used with care, an Agent Behaviour Policy before every new connector, and a separate Cowork session for each agent at work. With starter prompts you can copy.
 
-*Source: <https://newsroom.sgit.ai/articles/how-i-work-with-claude.html> · sgit.ai v0.7.46 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/how-i-work-with-claude.html> · sgit.ai v0.7.51 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 

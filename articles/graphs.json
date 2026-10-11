@@ -1,7 +1,7 @@
 {
   "site": "https://sgit.ai",
   "generated": "2026-10-11",
-  "site_version": "v0.7.46",
+  "site_version": "v0.7.51",
   "schema": "https://newsroom.sgit.ai/articles/graphs.html",
   "topics": [
     {
@@ -54,6 +54,191 @@
     "produces"
   ],
   "articles": [
+    {
+      "slug": "a-reading-list-in-a-link",
+      "title": "From me to you, in a link: a personal reading list, two briefs to build and use it, and the loop that makes it a day's work",
+      "date": "2026-10-11",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/a-reading-list-in-a-link.html",
+      "markdown": "https://newsroom.sgit.ai/articles/a-reading-list-in-a-link.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/a-reading-list-in-a-link.webp",
+      "teaser": "A reading list from one person to another, in a link the server never sees; a brief to build it, a brief to use it, and the loop that ships it in a day.",
+      "topics": [
+        "site-and-engineering",
+        "startups-and-strategy"
+      ],
+      "tags": [
+        "newsroom",
+        "personas",
+        "curation",
+        "reading-list",
+        "briefs",
+        "crm",
+        "outreach",
+        "workflow",
+        "feedback-loop",
+        "agents",
+        "product",
+        "article"
+      ],
+      "links_out": [
+        "pay-to-keep-your-persona",
+        "a-link-to-a-persona",
+        "no-server-by-design",
+        "rfc-0001-public-key-cryptography-for-sgit",
+        "how-to-run-synthetic-users",
+        "a-second-reader-the-agent-cannot-skip",
+        "saas-apocalypse-decided-by-inertia-not-by-ai",
+        "the-same-argument-in-our-words"
+      ],
+      "links_in": [],
+      "graph": {
+        "slug": "a-reading-list-in-a-link",
+        "teaser": "A reading list from one person to another, in a link the server never sees; a brief to build it, a brief to use it, and the loop that ships it in a day.",
+        "topics": [
+          "site-and-engineering",
+          "startups-and-strategy"
+        ],
+        "core_idea": "A personal reading list in a URL fragment (from, to, article numbers to read, to look at, and to follow) that opens on the newsroom as a persona the reader can keep or remove, with a stable public number for every article and a page to make a list for anyone. Two briefs: the newsroom builds it with validation, tests and no tracking; the RiskMandate agent, which keeps the contacts, chooses the person with Dinis, researches public sources, picks articles with reasons, tests the link, drafts the email, and Dinis sends it. The core is the loop: editorial, product, engineering, sales and the founder connected by written briefs, small contracts, owned repositories and tests, closing in about a day, as it did this week, with costs that are written down: drift, budgets and one person as the router.",
+        "nodes": [
+          {
+            "id": "link",
+            "label": "A reading list in a link",
+            "kind": "method",
+            "summary": "Names and article numbers in the fragment; the server never sees them."
+          },
+          {
+            "id": "numbers",
+            "label": "A number for every article",
+            "kind": "concept",
+            "summary": "Assigned once, never changed or reused: the contract for links."
+          },
+          {
+            "id": "persona",
+            "label": "The list becomes a persona",
+            "kind": "method",
+            "summary": "Added as a visitor, kept or removed in one tap."
+          },
+          {
+            "id": "maker",
+            "label": "Anyone can make a list",
+            "kind": "claim",
+            "summary": "Curating for someone else becomes a link, and a business model."
+          },
+          {
+            "id": "crm",
+            "label": "The RiskMandate agent uses it",
+            "kind": "method",
+            "summary": "Choose, research, pick with reasons, test, draft; Dinis sends."
+          },
+          {
+            "id": "notrack",
+            "label": "Nothing tracks the reader",
+            "kind": "claim",
+            "summary": "No opens counted; the conversation starts with a reply."
+          },
+          {
+            "id": "loop",
+            "label": "The loop",
+            "kind": "concept",
+            "summary": "Five parts of a company connected by written briefs, closing in about a day."
+          },
+          {
+            "id": "week",
+            "label": "This week's loops",
+            "kind": "example",
+            "summary": "Personas by link 17 hours after the brief; three articles corrected 32 minutes after payments went live."
+          },
+          {
+            "id": "costs",
+            "label": "What the loop costs",
+            "kind": "claim",
+            "summary": "Drift between parts, session budgets, and one person as the router."
+          },
+          {
+            "id": "slow",
+            "label": "Vibe coding with a slow loop",
+            "kind": "concept",
+            "summary": "Product owners always described software; the loop was the bottleneck."
+          }
+        ],
+        "edges": [
+          {
+            "from": "numbers",
+            "to": "link",
+            "rel": "depends-on"
+          },
+          {
+            "from": "link",
+            "to": "persona",
+            "rel": "leads-to"
+          },
+          {
+            "from": "maker",
+            "to": "link",
+            "rel": "extends"
+          },
+          {
+            "from": "crm",
+            "to": "link",
+            "rel": "depends-on"
+          },
+          {
+            "from": "notrack",
+            "to": "crm",
+            "rel": "contrasts"
+          },
+          {
+            "from": "loop",
+            "to": "crm",
+            "rel": "produces"
+          },
+          {
+            "from": "week",
+            "to": "loop",
+            "rel": "example-of"
+          },
+          {
+            "from": "costs",
+            "to": "loop",
+            "rel": "contrasts"
+          },
+          {
+            "from": "slow",
+            "to": "loop",
+            "rel": "contrasts"
+          }
+        ],
+        "links": {
+          "articles": [
+            "a-link-to-a-persona",
+            "pay-to-keep-your-persona",
+            "no-server-by-design",
+            "how-to-run-synthetic-users",
+            "a-second-reader-the-agent-cannot-skip",
+            "rfc-0001-public-key-cryptography-for-sgit",
+            "saas-apocalypse-decided-by-inertia-not-by-ai",
+            "the-same-argument-in-our-words"
+          ],
+          "pages": [
+            "/publishers/index.html"
+          ],
+          "sites": [
+            "https://newsroom.sgit.ai/shipped/index.html"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "The loop is fast because those costs are written down, not because they are gone.",
+            "why": "The honest version of the claim."
+          },
+          {
+            "text": "An article number that never changes is a contract.",
+            "why": "Why two parts can move independently."
+          }
+        ]
+      }
+    },
     {
       "slug": "a-model-in-the-tab",
       "title": "A model in the tab: Chrome now ships an LLM to capable desktops, and it is the hardest piece of the client-side puzzle",
@@ -283,6 +468,7 @@
         "chat-on-a-static-site"
       ],
       "links_in": [
+        "a-reading-list-in-a-link",
         "a-model-in-the-tab"
       ],
       "graph": {
@@ -870,6 +1056,7 @@
         "connector-twin-before-you-deploy-an-agent"
       ],
       "links_in": [
+        "a-reading-list-in-a-link",
         "where-the-platform-draws-the-line",
         "authority-outside-the-model"
       ],
@@ -1276,6 +1463,7 @@
         "a-link-to-a-persona"
       ],
       "links_in": [
+        "a-reading-list-in-a-link",
         "a-model-in-the-tab",
         "no-server-by-design",
         "where-the-platform-draws-the-line",
@@ -1469,6 +1657,7 @@
         "pay-to-keep-your-persona"
       ],
       "links_in": [
+        "a-reading-list-in-a-link",
         "no-server-by-design",
         "the-agent-is-the-reader",
         "how-to-run-synthetic-users"
@@ -2263,6 +2452,7 @@
         "one-article-five-readers"
       ],
       "links_in": [
+        "a-reading-list-in-a-link",
         "a-model-in-the-tab",
         "no-server-by-design",
         "the-agent-is-the-reader",
@@ -3599,6 +3789,7 @@
         "every-mistake-added-a-rule"
       ],
       "links_in": [
+        "a-reading-list-in-a-link",
         "where-the-platform-draws-the-line",
         "the-same-argument-in-our-words",
         "authority-outside-the-model",
@@ -4003,6 +4194,7 @@
         "encrypted-memory-for-isolated-agents"
       ],
       "links_in": [
+        "a-reading-list-in-a-link",
         "the-agent-is-the-reader",
         "where-the-vault-keys-live"
       ],
@@ -15203,6 +15395,7 @@
       ],
       "links_out": [],
       "links_in": [
+        "a-reading-list-in-a-link",
         "the-deck-i-could-not-download",
         "if-somebody-built-a-company-on-code-review",
         "supply-chain-of-vaults"

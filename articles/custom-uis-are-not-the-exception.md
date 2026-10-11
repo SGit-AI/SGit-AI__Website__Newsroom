@@ -2,7 +2,7 @@
 
 > Following up is harder than doing the work, because every person has a different context and the thread you share hides its own structure. This article weaves the site's threads into one argument. Every message has a graph, with altitudes from the block to the contact. Email is a medium, so a message is designed for the recipient's moment, not the sender's thread. A custom interface per message or moment is not an exception; it is how interfaces now get made, each one commoditising the next. Ten agents and one human built more than a dozen of them in eight days. The future of email is sender-served structure, read by the recipient's agent, with the inbox as one view of the graph. And an interface is an agent surface, so it gets a policy.
 
-*Source: <https://newsroom.sgit.ai/articles/custom-uis-are-not-the-exception.html> · sgit.ai v0.7.46 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/custom-uis-are-not-the-exception.html> · sgit.ai v0.7.51 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 

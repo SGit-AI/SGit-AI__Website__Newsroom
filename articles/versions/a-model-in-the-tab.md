@@ -2,7 +2,7 @@
 
 > Every published version of the article "A model in the tab", with the date, the words and what changed.
 
-*Source: <https://newsroom.sgit.ai/articles/versions/a-model-in-the-tab.html> · sgit.ai v0.7.46 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/versions/a-model-in-the-tab.html> · sgit.ai v0.7.51 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 
@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-11 | published | 3,858 | first published | this release | [current](../a-model-in-the-tab.md) |
+| **v1.0.0** | 2026-10-11 | published | 3,858 | first published | [`89cf1469f`](https://github.com/SGit-AI/SGit-AI__Website/commit/89cf1469f656815aec7a0eff19eff8eaf1d19cef) | [current](../a-model-in-the-tab.md) |
 
 [← Back to the article](../a-model-in-the-tab.md) · [All articles](../index.md)
 

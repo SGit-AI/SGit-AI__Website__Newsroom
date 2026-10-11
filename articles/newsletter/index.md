@@ -2,11 +2,11 @@
 
 > The regular issue of the SGit Newsroom: what was published, what it adds up to, and the pieces worth reading, also published on LinkedIn.
 
-*Source: <https://newsroom.sgit.ai/articles/newsletter/index.html> · sgit.ai v0.7.46 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/newsletter/index.html> · sgit.ai v0.7.51 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 
-Edition of 2026-10-0873 articles · 4 desk notes · 5 collections · 2 issuessgit.ai · v0.7.46
+Edition of 2026-10-0874 articles · 4 desk notes · 5 collections · 5 issuessgit.ai · v0.7.51
 
 # The newsletter
 
@@ -14,13 +14,37 @@ The regular issue of the SGit Newsroom: what was published, what it adds up to, 
 
 ## Issues
 
+Issue 52026-10-11
+
+## [No server, by design: a newsroom that runs in your browser, a model in the tab, and the agents that read, test and draw for it](2026/10/11/005-no-server-by-design.md)
+
+Everything in the last two issues runs in the reader's browser. First the database was retired and the file system took its place; now the back end is retired too, and what is left on the server side is commodity that holds no logic and cannot read the data. Eight articles on how that works and what it makes possible. Why there is no server, and why that made a business decision possible; Chrome's model in the tab, the hardest remaining piece; where the vault keys live and an RFC for keys a reader cannot write with; and the agents that do the newsroom's work: five readers sent through every article, synthetic users driving a real browser, image models judged blind, and a governance framework kept as a graph.
+
+8 articles
+
+Issue 42026-10-11
+
+## [Authority outside the model: Satya Nadella on models as insider risks, the platforms that now enforce, and the controls we run on our own agents](2026/10/11/004-authority-outside-the-model.md)
+
+The CEO of one of the largest AI vendors published seven principles for treating models as insider risks, and Microsoft shipped containers and a control specification for agents. Both say what this network has been arguing: an agent's limits must sit outside the agent. Eight articles on what that means in practice. An answer to the seven principles, one by one, with what runs and what is only designed; the same argument translated into the language of behaviour policies; where the platform draws its line and why the business logic sits above it; ten hard questions for RiskMandate; and the controls we run on our own agents every day, from a second reader that fails closed to a desktop of their own.
+
+8 articles
+
+Issue 32026-10-11
+
+## [Pay after you read: a newsroom that charges for the share you read, lets you go below zero, and keeps your persona](2026/10/11/003-pay-after-you-read.md)
+
+What would you pay for an article if you only paid after reading it, and only as much as it was worth to you? On 10 October the reading meter on this site went from a demonstration to a working answer, one release at a time. You pay for the share of a page you scroll through. You say how useful it was, and that sets the price, from free to double. Your balance can go below zero without a word of nagging. And your reading builds personas that are yours, kept in your browser, that a link can share. Eight articles: the plan, the numbers we will be judged on, who could cheat it, why readers should pay because it helps them, and why agents will pay too.
+
+8 articles
+
 Issue 22026-10-08
 
 ## [How agents decide, when they stop, and a local story kept as evidence](2026/10/08/002-how-agents-decide.md)
 
 A day of articles on deciding: what a real decision needs, why an agent that can go anywhere has no reason to stop, what happens when every mistake adds a rule, and one customer service agent built three ways to count which rules are only hoped for. Alongside, a live local story, a hospital outage nobody could check from home, kept as evidence while it was happening.
 
-8 articles
+8 articles · [on LinkedIn ↗](https://www.linkedin.com/pulse/how-agents-decide-when-stop-local-story-kept-evidence-dinis-cruz-reune/)
 
 Issue 12026-10-07
 
@@ -32,7 +56,7 @@ What it takes to let agents do real work for a business, from four sides: a team
 
 **Get the next issue by email.** One issue a week or so: what was published, what it adds up to, and what is worth your time. [Subscribe to the SGit Newsroom →](../../subscribe/index.md)
 
-Next issue: due now (24 articles since issue 2 (2026-10-08)). Issues are written by the [Journalist](../../newsroom/roles/journalist.md) from the articles' own data; every quote is checked against its article when the site is built.
+Next issue: not yet due (0 article(s) since issue 5; due at 5 or after 7 days). Issues are written by the [Journalist](../../newsroom/roles/journalist.md) from the articles' own data; every quote is checked against its article when the site is built.
 
 
 ---

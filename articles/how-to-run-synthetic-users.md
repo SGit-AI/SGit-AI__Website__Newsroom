@@ -2,7 +2,7 @@
 
 > A how-to, from three studies we have published: store.sgit.ai in September, riskmandate.ai the day after, and newsroom.sgit.ai on 10 October, run for this article. Five to ten invented users of about five types, each with a profile, a question they arrive with and an expected journey, drive a real browser one screenshot at a time, saying what they see, think, ask and do; then they are interviewed and rate the experience, and their findings are ordered by what they cost. Claude Sonnet is good enough to play each user; the study can live in a GitHub repository or in an encrypted vault shared by a link. On the newsroom, five readers took 62 steps, asked 51 questions the site did not answer and produced 31 findings, six blocking; four of them left. Two findings turned out to be caused by our own tooling, and one turned out to be a real bug: 51 of 527 figures missing after the move. This article sets out each step with examples and screenshots, what went wrong, and a template to start from.
 
-*Source: <https://newsroom.sgit.ai/articles/how-to-run-synthetic-users.html> · sgit.ai v0.7.46 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/how-to-run-synthetic-users.html> · sgit.ai v0.7.51 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 
@@ -234,6 +234,7 @@ Vaults & methodSite & engineering[This article as a graph →](graphs.md#how-to-
 
 ### Continued by
 
+- [From me to you, in a link: a personal reading list, two briefs to build and use it, and the loop that makes it a day's work](a-reading-list-in-a-link.md) A reading list from one person to another, in a link the server never sees; a brief to build it, a brief to use it, and the loop that ships it in a day.
 - [A model in the tab: Chrome now ships an LLM to capable desktops, and it is the hardest piece of the client-side puzzle](a-model-in-the-tab.md) Chrome now ships a language model any page can prompt, offline, on capable desktops. The last piece of the client-side puzzle, with rough edges.
 - [No server, by design: first I retired the database, now I am retiring the back end](no-server-by-design.md) First the database went, now the back end: the SGit Newsroom runs all its logic in the browser, on commodity servers that cannot read your data.
 - [Where the platform draws the line: Microsoft Execution Containers, the shared responsibility model for agents, and the business logic above it](where-the-platform-draws-the-line.md) Microsoft's MXC and ACS, briefed field by field and mapped to Agent Behaviour Policies: the platform bounds what it can see; the business logic is above.

@@ -1,7 +1,7 @@
 {
   "site": "https://sgit.ai",
   "generated": "2026-10-11",
-  "site_version": "v0.7.46",
+  "site_version": "v0.7.51",
   "about": "https://newsroom.sgit.ai/newsroom/index.html",
   "front": {
     "edition": "2026-10-08",
@@ -72,6 +72,40 @@
     }
   ],
   "articles": [
+    {
+      "slug": "a-reading-list-in-a-link",
+      "title": "From me to you, in a link: a personal reading list, two briefs to build and use it, and the loop that makes it a day's work",
+      "date": "2026-10-11",
+      "updated": "",
+      "author": "Dinis Cruz",
+      "url": "https://newsroom.sgit.ai/articles/a-reading-list-in-a-link.html",
+      "markdown": "https://newsroom.sgit.ai/articles/a-reading-list-in-a-link.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/a-reading-list-in-a-link.webp",
+      "graph": "https://newsroom.sgit.ai/articles/graphs/a-reading-list-in-a-link.json",
+      "teaser": "A reading list from one person to another, in a link the server never sees; a brief to build it, a brief to use it, and the loop that ships it in a day.",
+      "summary": "I want to send people I know, founders I mentor, potential clients, other publishers, a link that says: from Dinis, for Steve, here are the articles I think you should read, the ones worth a look, and the ones to follow. The newsroom's curation is close, but it is not personal, and the last 10 to 20% is the part that starts a conversation. This article is three things. A brief for the newsroom: a reading list in a link, with the names and the article numbers in the part of the URL the server never sees, a stable number for every article, a page that opens the list as a persona the reader can keep or remove, and a page to make a list for someone else, which is a business model of its own. A brief for the RiskMandate agent, which already keeps my contacts: choose the person, choose the articles and the reasons, build and test the link, draft the email, and let me send it. And the part I find most interesting: the loop. A feature like this crosses editorial, product, engineering, sales and the founder, which in most companies takes weeks of meetings. Here each hand-off is a written brief, each part is a session with its own repository or vault and its own gates, and the loop closes in a day. This week it closed several times, and it is worth showing how, and what it costs.",
+      "topics": [
+        "site-and-engineering",
+        "startups-and-strategy"
+      ],
+      "tags": [
+        "newsroom",
+        "personas",
+        "curation",
+        "reading-list",
+        "briefs",
+        "crm",
+        "outreach",
+        "workflow",
+        "feedback-loop",
+        "agents",
+        "product",
+        "article"
+      ],
+      "placement": [],
+      "linkedin": null,
+      "notes": []
+    },
     {
       "slug": "a-model-in-the-tab",
       "title": "A model in the tab: Chrome now ships an LLM to capable desktops, and it is the hardest piece of the client-side puzzle",
@@ -2611,6 +2645,66 @@
   ],
   "newsletter": [
     {
+      "number": 5,
+      "slug": "005-no-server-by-design",
+      "title": "No server, by design: a newsroom that runs in your browser, a model in the tab, and the agents that read, test and draw for it",
+      "date": "2026-10-11",
+      "summary": "Everything in the last two issues runs in the reader's browser. First the database was retired and the file system took its place; now the back end is retired too, and what is left on the server side is commodity that holds no logic and cannot read the data. Eight articles on how that works and what it makes possible. Why there is no server, and why that made a business decision possible; Chrome's model in the tab, the hardest remaining piece; where the vault keys live and an RFC for keys a reader cannot write with; and the agents that do the newsroom's work: five readers sent through every article, synthetic users driving a real browser, image models judged blind, and a governance framework kept as a graph.",
+      "cites": [
+        "no-server-by-design",
+        "a-model-in-the-tab",
+        "where-the-vault-keys-live",
+        "rfc-0001-public-key-cryptography-for-sgit",
+        "one-article-five-readers",
+        "how-to-run-synthetic-users",
+        "the-infographic-bake-off",
+        "the-ai-governance-stack-as-a-graph"
+      ],
+      "linkedin": null,
+      "url": "https://newsroom.sgit.ai/articles/newsletter/2026/10/11/005-no-server-by-design.html",
+      "banner": "https://newsroom.sgit.ai/articles/banners/005-no-server-by-design.jpg"
+    },
+    {
+      "number": 4,
+      "slug": "004-authority-outside-the-model",
+      "title": "Authority outside the model: Satya Nadella on models as insider risks, the platforms that now enforce, and the controls we run on our own agents",
+      "date": "2026-10-11",
+      "summary": "The CEO of one of the largest AI vendors published seven principles for treating models as insider risks, and Microsoft shipped containers and a control specification for agents. Both say what this network has been arguing: an agent's limits must sit outside the agent. Eight articles on what that means in practice. An answer to the seven principles, one by one, with what runs and what is only designed; the same argument translated into the language of behaviour policies; where the platform draws its line and why the business logic sits above it; ten hard questions for RiskMandate; and the controls we run on our own agents every day, from a second reader that fails closed to a desktop of their own.",
+      "cites": [
+        "authority-outside-the-model",
+        "the-same-argument-in-our-words",
+        "where-the-platform-draws-the-line",
+        "riskmandate-ten-questions",
+        "a-second-reader-the-agent-cannot-skip",
+        "re-anchoring-agent-behaviour-policies",
+        "how-i-work-with-claude",
+        "a-mac-of-the-agents-own"
+      ],
+      "linkedin": null,
+      "url": "https://newsroom.sgit.ai/articles/newsletter/2026/10/11/004-authority-outside-the-model.html",
+      "banner": "https://newsroom.sgit.ai/articles/banners/004-authority-outside-the-model.jpg"
+    },
+    {
+      "number": 3,
+      "slug": "003-pay-after-you-read",
+      "title": "Pay after you read: a newsroom that charges for the share you read, lets you go below zero, and keeps your persona",
+      "date": "2026-10-11",
+      "summary": "What would you pay for an article if you only paid after reading it, and only as much as it was worth to you? On 10 October the reading meter on this site went from a demonstration to a working answer, one release at a time. You pay for the share of a page you scroll through. You say how useful it was, and that sets the price, from free to double. Your balance can go below zero without a word of nagging. And your reading builds personas that are yours, kept in your browser, that a link can share. Eight articles: the plan, the numbers we will be judged on, who could cheat it, why readers should pay because it helps them, and why agents will pay too.",
+      "cites": [
+        "pay-after-you-read",
+        "going-live-with-the-reading-meter",
+        "a-meter-in-the-browser",
+        "who-will-game-the-reading-meter",
+        "pay-to-keep-your-persona",
+        "a-link-to-a-persona",
+        "the-agent-is-the-reader",
+        "open-source-is-not-free"
+      ],
+      "linkedin": null,
+      "url": "https://newsroom.sgit.ai/articles/newsletter/2026/10/11/003-pay-after-you-read.html",
+      "banner": "https://newsroom.sgit.ai/articles/banners/003-pay-after-you-read.jpg"
+    },
+    {
       "number": 2,
       "slug": "002-how-agents-decide",
       "title": "How agents decide, when they stop, and a local story kept as evidence",
@@ -2626,7 +2720,7 @@
         "encrypted-memory-for-isolated-agents",
         "the-bridge-followed-to-the-end"
       ],
-      "linkedin": null,
+      "linkedin": "https://www.linkedin.com/pulse/how-agents-decide-when-stop-local-story-kept-evidence-dinis-cruz-reune/",
       "url": "https://newsroom.sgit.ai/articles/newsletter/2026/10/08/002-how-agents-decide.html",
       "banner": "https://newsroom.sgit.ai/articles/banners/002-how-agents-decide.jpg"
     },

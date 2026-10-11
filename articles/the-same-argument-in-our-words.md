@@ -2,7 +2,7 @@
 
 > On 10 October Satya Nadella published "Models as Insider Risks in the Super Intelligence Era", a short post arguing that because we can no longer trace what a model does back to a code path, we should treat models the way we treat any powerful insider, and keep the authority over them outside them. Reading it, I kept translating. His lost code path is what I have been calling software was the law. His insider that need not be malicious is the ultimate insider. His split between the supply of intelligence and the authority over it is RiskMandate's founding line, the grant is not the mandate. His controls outside the model are the enforcer test. And his last line, that the most trustworthy system is the one that needs to trust the model least, is the irony The ultimate insider ended on: the more you can constrain an agent, the more autonomy you can afford to give it. This article puts the two vocabularies side by side, idea by idea, shows where ours came from, and names the two places where they differ: his unit is the model and ours is one agent in one deployment, and his frame is observation where ours is authority, accepted by a named person for a stated interval. A companion article takes his seven principles one at a time.
 
-*Source: <https://newsroom.sgit.ai/articles/the-same-argument-in-our-words.html> · sgit.ai v0.7.46 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/the-same-argument-in-our-words.html> · sgit.ai v0.7.51 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 
@@ -172,6 +172,7 @@ Agents & policy[This article as a graph →](graphs.md#the-same-argument-in-our-
 
 ### Continued by
 
+- [From me to you, in a link: a personal reading list, two briefs to build and use it, and the loop that makes it a day's work](a-reading-list-in-a-link.md) A reading list from one person to another, in a link the server never sees; a brief to build it, a brief to use it, and the loop that ships it in a day.
 - [Where the platform draws the line: Microsoft Execution Containers, the shared responsibility model for agents, and the business logic above it](where-the-platform-draws-the-line.md) Microsoft's MXC and ACS, briefed field by field and mapped to Agent Behaviour Policies: the platform bounds what it can see; the business logic is above.
 - [Authority outside the model: an answer to Satya Nadella on models as insider risks, principle by principle, with what we run, what we ship and what we plan](authority-outside-the-model.md) Satya Nadella's seven principles for models as insider risks, answered one by one: what we run, what is design, and the five things the list leaves out.
 

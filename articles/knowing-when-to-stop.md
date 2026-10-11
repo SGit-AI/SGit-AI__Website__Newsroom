@@ -2,7 +2,7 @@
 
 > The hardest call in most work is not what to do next but when to stop. This article starts with people, because the problem is not new: security champions who had automated away whole classes of bugs and ended up debating whether GUIDs were random enough; development teams that hit every KPI and did not move the business; teams that found more work for themselves as they grew. What stopped them, when something did, was perspective: knowing who the attackers are, which phase the business is in, where the bottleneck is, and what good enough looks like, which is much of what seniority is. Agents have the same problem, worse. Their range is the feature: they can go in any direction, and variability is what makes them useful. But that range means they will keep going, fixing the twenty things they noticed rather than the one that mattered. The answer, for both, is not draconian rules but constraints that carry perspective: direction, a mandate, memory with the bigger picture, graphs that narrow the scope, a stop named before the work begins, one kind of work per step, and shipping often enough that the users tell you whether it mattered.
 
-*Source: <https://newsroom.sgit.ai/articles/knowing-when-to-stop.html> · sgit.ai v0.7.46 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/knowing-when-to-stop.html> · sgit.ai v0.7.51 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 

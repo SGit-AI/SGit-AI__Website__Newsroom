@@ -2,7 +2,7 @@
 
 > A day of articles on deciding: what a real decision needs, why an agent that can go anywhere has no reason to stop, what happens when every mistake adds a rule, and one customer service agent built three ways to count which rules are only hoped for. Alongside, a live local story, a hospital outage nobody could check from home, kept as evidence while it was happening.
 
-*Source: <https://newsroom.sgit.ai/articles/newsletter/2026/10/08/002-how-agents-decide.html> · sgit.ai v0.7.46 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/newsletter/2026/10/08/002-how-agents-decide.html> · sgit.ai v0.7.51 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 
@@ -12,7 +12,7 @@ SGit Newsroom · Issue 2 · 2026-10-08
 
 # How agents decide, when they stop, and a local story kept as evidence
 
-By [Dinis Cruz](https://sgit.ai/about/index.md), written with the [Journalist](../../../../../newsroom/roles/journalist.md)
+By [Dinis Cruz](https://sgit.ai/about/index.md), written with the [Journalist](../../../../../newsroom/roles/journalist.md) · [read it on LinkedIn ↗](https://www.linkedin.com/pulse/how-agents-decide-when-stop-local-story-kept-evidence-dinis-cruz-reune/)
 
 ***Abstract:** A day of articles on deciding: what a real decision needs, why an agent that can go anywhere has no reason to stop, what happens when every mistake adds a rule, and one customer service agent built three ways to count which rules are only hoped for. Alongside, a live local story, a hospital outage nobody could check from home, kept as evidence while it was happening.*
 

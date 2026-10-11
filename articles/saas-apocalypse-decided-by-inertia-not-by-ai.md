@@ -2,7 +2,7 @@
 
 > The SaaS apocalypse has not happened yet, and the market has already declared it cancelled once. It remains a very strong possibility, argued here with data rather than vibes. Most users were never happy, most features were never used, and most licences sit idle, because success bred inertia and inertia bred lock-in. Now anybody can brief the software they actually want, and the portability, APIs and schemas that SaaS companies refused to build are precisely what an agent needs. It will be decided by inertia, not by AI, because AI is available to both sides: the incumbents have the same models as the newcomers, plus more data, more engineers and more money, and if the technology were the deciding factor they would already have won. Nokia when the mobile phone arrived had nothing to protect, and moved. Nokia when the iPhone arrived had fifteen years of success to protect, and did not. Which side of that path each SaaS provider ends up on will be settled by where it sits on the evolution axis and how much it has to protect, which is why the newcomers, not the incumbents, are the ones to watch.
 
-*Source: <https://newsroom.sgit.ai/articles/saas-apocalypse-decided-by-inertia-not-by-ai.html> · sgit.ai v0.7.46 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/saas-apocalypse-decided-by-inertia-not-by-ai.html> · sgit.ai v0.7.51 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 
@@ -124,6 +124,7 @@ Startups & strategy[This article as a graph →](graphs.md#saas-apocalypse-decid
 
 ### Continued by
 
+- [From me to you, in a link: a personal reading list, two briefs to build and use it, and the loop that makes it a day's work](a-reading-list-in-a-link.md) A reading list from one person to another, in a link the server never sees; a brief to build it, a brief to use it, and the loop that ships it in a day.
 - [The deck I could not download: an author-first home for presentations, as a business plan somebody else can build](the-deck-i-could-not-download.md) One download offered as a subscription, an author paid nothing, and a design for the service the author would have chosen: vaults, keys, seven roles, 85% to the author.
 - [If somebody built a company on code review: how I would do it, and why it is only now possible](if-somebody-built-a-company-on-code-review.md) A reader's seven questions answered as a company plan: one reader for every layer, review as a science, and the layers as the customer's own.
 - [A supply chain of vaults: how GenAI, open data and small custom tools could bring the price of food down](supply-chain-of-vaults.md) The food chain is a data problem: one encrypted vault per party, joined by append lanes and a typed graph, could cut the waste that keeps prices high.
