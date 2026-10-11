@@ -228,6 +228,13 @@ def shipped(f):
          '<a href="../for/index.html">How a link is made</a>.',
          'The names are whatever the link says: there is no way yet to prove who sent a list, and nothing counts who opened one. '
          'The page that makes a list is tested with a script, not yet with a synthetic recipient on a phone.'),
+        ('<b>The Industry Wire</b>', 'A daily wire of industry news across five beats, each story with its primary source, who else covered '
+         'it, one exact quote and why it matters, and a lens per persona. The data is in an encrypted vault the wire&rsquo;s agents '
+         'write to; the pages open it in the browser with a published read key, so a commit to the vault is on the page within '
+         'two minutes and without a release. <a href="../wire/index.html">The edition</a>, <a href="../wire/how.html">how it is read</a>.',
+         'The first edition is a week&rsquo;s catch-up, written by agents and reviewed by none; every story says so, and 22 of its '
+         'primary sources were not fetched. The daily run that the vault&rsquo;s runbook describes is not yet scheduled; placement on '
+         'the front page and the weekly newsletter are designed, not built.'),
         ('<b>The passkey lab</b>', 'Proofs of concept for a reader account with no server: a passkey with PRF, the same bytes on '
          'every device, a door vault derived from them with sgit&rsquo;s own key derivation, a recovery code, and the door '
          'created on a vault server with an access key. <a href="../passkey/index.html">Try it</a>.',
@@ -277,6 +284,9 @@ def shipped(f):
         ('<b>A reading list link</b>', 'The names, the note and the article numbers are in the part of the address after the #, '
          'which a browser keeps to itself. If the recipient presses Reply, their email program opens addressed to the sender, if the '
          'sender gave an address.', 'When someone opens or makes a list.'),
+        ('<b>The Industry Wire pages</b>', 'They fetch the ciphertext of the wire&rsquo;s vault from the vault server (dev.send.sgraph.ai) and '
+         'decrypt it in your browser with a published read key; the server sees the request, as any host does, and nothing of you.',
+         'When you open a wire page.'),
         ('<b>Subscribing</b>', 'Your address goes, encrypted in your browser to the list agent&rsquo;s key, to a '
          'write-only lane.', 'When you subscribe.'),
         ('<b>A top-up</b>', 'To Stripe, on Stripe&rsquo;s own page. Stripe collects your email, the name on the card, '

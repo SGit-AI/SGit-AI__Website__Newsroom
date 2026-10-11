@@ -50,6 +50,11 @@ FILES = [
     ("for/make.js",                "The page that makes a reading list and previews it", "this site"),
     ("for/for.css",                "Styles for the two reading-list pages", "this site"),
     ("assets/subscribe.js",        "The subscribe form: encrypts the address and posts it to the lane", "sgit.ai, verbatim"),
+    ("wire/vault-reader.js",       "Reads an sgit vault in the browser with a published read key: ref, commit, tree, blobs, decrypted with Web Crypto; the markdown renderer", "this site, vendored from sgit.ai's vault-docs.js"),
+    ("wire/wire.js",               "The Industry Wire: the edition with its lens, the sources, the documents, drawn from the vault as text", "this site"),
+    ("wire/wire.css",              "Styles for the wire pages", "this site"),
+    ("admin/build/wire-vault.json", "The wire's vault: endpoint, vault id, the public read key (the only key on this site)", "this site"),
+    ("wire/snapshot.json",         "The wire as it was in the vault at the last release: headlines and primary links, the fallback and the agents' index", "this site, generated"),
     ("assets/vault-ui-embed.js",   "The study page: embeds the vault browser from dev.vault.sgraph.ai and hands it a read key", "sgit.ai, verbatim"),
     ("assets/shots.js",            "Figures: sets each image's address at runtime", "sgit.ai, verbatim"),
     ("assets/site.js",             "Page behaviour: nav, copy buttons, reveal-on-scroll", "sgit.ai, verbatim"),
@@ -67,6 +72,7 @@ PAGES = [
     ("persona/founder/index.html", "a persona link"), ("persona/journalist/index.html", "a persona link"),
     ("persona/security/index.html", "a persona link"), ("persona/builder/index.html", "a persona link"),
     ("persona/board/index.html", "a persona link"), ("for/index.html", "a reading list"), ("for/make.html", "make a reading list"),
+    ("wire/index.html", "the Industry Wire's edition"), ("wire/sources.html", "the wire's sources"), ("wire/how.html", "how the wire is read, and its documents"),
     ("meter/index.html", "SG Meter, documented"), ("meter/security.html", "the meter's security model"),
     ("demos/vaults/newsroom-synthetic-users/index.html", "the synthetic-readers study, with the embedded vault"),
 ]
@@ -78,13 +84,15 @@ BUILD = [
     ("admin/build/sync_newsroom.py", "the import: re-points the meter to v1.4.0, applies the text rules, prints the article number"),
     ("admin/build/newsroom-meter.json", "the top-up link, applied on import"),
     ("admin/build/newsroom-text.json", "the eight text rules, applied on import"),
+    ("admin/build/wire.py", "writes the three wire pages and, from a clone, wire/snapshot.json"),
     ("admin/build/validate.js", "the gate: checks 2d (live link), 5 (key tripwire), 11 (imports unedited), 12 (numbers hold)"),
 ]
 LABS = [("passkey/lab.js", "The passkey lab: WebAuthn with PRF, the door derivation, sgit's key derivation, a stand-alone vault client"),
         ("passkey/lab.css", "its styles"), ("passkey/vectors.json", "its test vectors, from sgit's Python"), ("passkey/index.html", "the page")]
 TESTS = [("admin/build/test_meter.mjs", "the meter in Chromium"), ("admin/build/test_lists.mjs", "the parser in Node and the list pages in Chromium"),
          ("admin/build/test_review.mjs", "the review's findings, pinned as the behaviour is today"),
-         ("admin/build/test_passkey.mjs", "the passkey lab in Chromium, with a virtual authenticator that has PRF")]
+         ("admin/build/test_passkey.mjs", "the passkey lab in Chromium, with a virtual authenticator that has PRF"),
+         ("admin/build/test_wire.mjs", "the wire pages in Chromium, reading the real vault")]
 
 # ----------------------------------------------------------------------------------------------- the views and controls
 # What a reader can click, type or pay, per view, and the call it makes. Read from sg-meter.js; a change there is a change here.
@@ -168,6 +176,7 @@ INPUTS = [
     ("Local storage", "sgit.meter.v1 (the state), sgit.meter.v1.seen (session: the charge per path)", "this browser, written by the meter; also by the reader, who may edit it (accepted)", "_read(), _seen()"),
     ("A file", "Restore from an export…", "whoever made the file; checked for balance:number and log:array only", "restore()"),
     ("Forms", "the share form, the subscribe form, the make page", "the reader; email checked by a loose pattern, names by a strict one", "_send(), subscribe.js, make.js"),
+    ("The wire's vault", "data/bundle.json, data/deliveries.json, docs/*.md, decrypted in the browser", "whoever holds the vault's write key (the wire's agents); drawn as text, links only from http(s) values, markdown rendered by an escaping renderer; the vault's own HTML is not used", "wire/wire.js"),
     ("Own-origin data", "articles/graphs.json · articles/ids.json · .well-known/sgit-subscribe.json · sg-meter.tpl · sg-meter.css", "this site's build; the contact file's key is checked against its fingerprint", "feed(), openList(), _send()"),
     ("postMessage", "replies from the dev.vault.sgraph.ai frames", "origin-checked; drives a status line only", "vault-ui-embed.js"),
 ]
@@ -182,6 +191,7 @@ OUTPUTS = [
     ("GET, own origin", "every page, script, style, image and JSON", "whenever a page opens", "GitHub Pages, which sees the request as any host does"),
     ("POST https://dev.send.sgraph.ai/api/vault/append/write/y9j3nc60", "{append_token, payload}: an .eml encrypted in the browser to the lane's public key", "when the reader presses Send on the share page or Subscribe", "the vault host; it sees ciphertext, a size and a time"),
     ("Navigation to https://buy.stripe.com/…", "the reader leaves for Stripe's page and returns to /account/topped-up.html?session_id=…", "when the reader presses Top up / Pay", "Stripe (card, email, name, postcode)"),
+    ("GET https://dev.send.sgraph.ai/api/vault/read/u9i9jp0l/…", "the ciphertext of the wire's vault: its head pointer, commit, tree and the files the page needs, decrypted in the browser with the published read key", "when a wire page opens, and when the reader asks for a new commit; the pointer at most every two minutes", "the vault server; it sees the request and nothing of the reader"),
     ("iframe https://dev.vault.sgraph.ai/?embed=1", "two frames; the published read key is posted to them", "on the study page only", "the vault UI host"),
     ("mailto:", "Reply to <sender> on a reading list; the subscribe fallback", "when pressed; the page sends nothing", "the reader's mail client"),
     ("A download", "reading-account.json: the whole state, payment references included", "Export as JSON", "the reader's disk"),
@@ -201,6 +211,7 @@ CONTRACTS = [
     ("The share", "a text summary then the same data as JSON {v:1, site, at, balance, spent, declined, reads, topups, active, personas, topics, cols, log}, as an .eml with X-SGit-Form, X-SGit-Reply-To, X-SGit-Name, X-SGit-Subscribe, X-SGit-Page", "shareData(), _send()"),
     ("The envelope", "sgit hybrid envelope v2: {v:2, w, i, c} (RSA-OAEP-SHA256 wrapped AES-256-GCM key, iv, ciphertext), base64, then base64 again as the lane payload", "envelope(), subscribe.js encrypt()"),
     ("The contact file", "sgit-subscribe/v1: recipient{address, fingerprint, encrypt}, inbox{vault, endpoint, encrypt_to, status, lane{name, append_token}}; the fingerprint is recomputed from the PEM before use", ".well-known/sgit-subscribe.json"),
+    ("The wire's vault", "vault u9i9jp0l on dev.send.sgraph.ai, read key published; data/bundle.json {beats, stories, sources, personas, brief}, data/deliveries.json, docs/*.md; story fields and status shown as written; everything in the vault is public, for ever", "admin/build/wire-vault.json; wire/how.html; the wire's agents own the content"),
     ("Events", "sg:meter.changed · charged · rated · declined · toppedup · reset · restored · persona · shared; sg-meter:error", "sg-meter-core.js _emit(), sg-component.js failed()"),
     ("A component", "static jsUrl, get resourceName(), onReady(); a .tpl and a .css beside the .js; published at an immutable versioned path", "sg-component.js"),
     ("The import's rules", "the meter path rewrite (v1.3.1 → v1.4.0), the top-up link, eight text rules, the article number line; each stops the import when its anchor moves", "sync_newsroom.py items 9–12"),

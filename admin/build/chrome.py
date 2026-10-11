@@ -50,6 +50,11 @@ NAV = [
         ("Make a reading list", "for/make.html"),
         ("Subscribe", "subscribe/index.html"),
     ], ("articles/", "subscribe/", "persona/", "for/")),
+    ("Industry Wire", "wire/index.html", [
+        ("Today's edition", "wire/index.html"),
+        ("The sources", "wire/sources.html"),
+        ("How the wire works", "wire/how.html"),
+    ], ("wire/",)),
     ("Account", "account/index.html", [
         ("Your reading account", "account/index.html"),
         ("Your newsroom", "account/newsroom.html"),
@@ -123,6 +128,7 @@ NAV = [
 FOOTER = [
     ("The newsroom", [
         ("&#8594; The front page", "index.html"),
+        ("The Industry Wire", "wire/index.html"),
         ("Every article", "articles/index.html#all"),
         ("The newsletter", "articles/newsletter/index.html"),
         ("Collections", "articles/collections/index.html"),

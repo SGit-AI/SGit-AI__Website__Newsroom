@@ -12,7 +12,7 @@
 
 <nav class="site"><div class="row">
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.8.3</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.9.0</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -27,6 +27,14 @@
       <a class="sl" href="../persona/index.html">Read as a persona</a>
       <a class="sl" href="../for/make.html">Make a reading list</a>
       <a class="sl" href="../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../wire/index.html">Industry Wire<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../wire/index.html">Today's edition</a>
+      <a class="sl" href="../wire/sources.html">The sources</a>
+      <a class="sl" href="../wire/how.html">How the wire works</a>
       </div>
     </div>
     <div class="ni ni-has">
@@ -128,6 +136,16 @@
 <div class="tablewrap"><table class="vers">
   <thead><tr><th>Version</th><th>Date</th><th>What shipped</th></tr></thead>
   <tbody>
+    <tr>
+      <td class="vnum">v0.9.0</td>
+      <td>11 Oct 2026</td>
+      <td><b>The Industry Wire: a section of industry news read live from an encrypted vault that agents keep.</b>
+        <p><b>What it is.</b> <a href="../wire/index.html">The Industry Wire</a> is a new section, apart from the newsroom&rsquo;s own articles: a daily wire across five beats (building with AI, the AI business, open source, cybersecurity, risk and governance), every story with its primary source, who else covered it, one exact quote and why it matters. None of it is on this site. The data lives in an sgit vault (<code>u9i9jp0l</code> on the SG/Send server) whose <em>read</em> key is published on purpose, in <code>admin/build/wire-vault.json</code>, in <a href="../llms.txt">llms.txt</a> and on every wire page, the same arrangement sgit.ai uses for its own documents: the page fetches ciphertext, decrypts it in the browser with that key, and draws it. A write key is a different key and is not here. The vault is kept by a research agent, which can run on its own schedule and commit a new edition; the site notices a new head within two minutes and shows it, with no release of this site. <a href="../wire/sources.html">The sources</a> lists the 55 publications the agent reads, by tier and licence, and <a href="../wire/how.html">how the wire works</a> renders the vault&rsquo;s own design and runbook documents, read from the vault as markdown and rendered here, never its pre-rendered HTML. A lens per persona (the newsroom&rsquo;s own six) shows what reached that reader, through which concern, and what was withheld with the reason, as the vault&rsquo;s own join recorded it. The pages reach this site and the vault server, nothing else.</p>
+        <p><b>Read before it was published.</b> The vault was cloned and read in full first: no key, token or credential in it, no private address, nothing that is not public news and the agent&rsquo;s own working notes. Two things are flagged rather than fixed, since they are the vault&rsquo;s to decide: the vault carries a persona and a personal note aimed at one reader, which is that reader&rsquo;s interest profile and is now public; and its runbook plans to keep frozen copies of paywalled sources and reader feedback &ldquo;privately&rdquo;, which a vault with a published read key cannot do, so those need a vault of their own. That contract is written on the how page. Publishing a read key cannot be undone for anyone who has already fetched the objects.</p>
+        <p><b>What it is not.</b> Reviewed. Every story is marked <em>ai-generated, unreviewed</em> and stays so until the vault says otherwise; in this first edition, 22 of the 40 stories have a primary source the research agent did not fetch, and those stories say so with a dashed border. The daily run is not scheduled by this site. <a href="../wire/snapshot.json">snapshot.json</a> holds the headlines and primary links as of this release, for agents and as the fallback the page shows when the vault cannot be reached.</p>
+        <p><b>Checked.</b> <code>admin/build/test_wire.mjs</code> opens the three pages in Chromium against the real vault, which is the brief&rsquo;s rule for anything that needs a vault: the edition, the commit, 40 stories across five beats and a lead, every link http(s), nothing from the vault becoming a script, frame, image or handler, the lens with its reached and withheld counts and the reason on each withheld story, 55 sources, the documents rendered and switched, requests to this site and the vault server only, no sideways scroll at phone width. 23 checks, now the fifth test file CI runs. <code>wire/vault-reader.js</code> is sgit.ai&rsquo;s own reader, vendored and reduced to what the wire needs. Also in this release: the passkey lab says so when a browser reports neither true nor false for PRF support.</p>
+      </td>
+    </tr>
     <tr>
       <td class="vnum">v0.8.3</td>
       <td>11 Oct 2026</td>
@@ -627,11 +645,12 @@
     <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="netline"><a href="https://sgit.ai" style="display:inline;padding:0"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://pt.newsroom.sgit.ai" style="display:inline;padding:0">&#8593; pt.newsroom.sgit.ai</a> &middot; <a href="https://graphs.sgit.ai" style="display:inline;padding:0">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai" style="display:inline;padding:0">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai" style="display:inline;padding:0">&#8593; nhi.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai" style="display:inline;padding:0">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.8.3</a> &middot; <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.9.0</a> &middot; <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>The newsroom</h4>
     <a href="../index.html">&#8594; The front page</a>
+    <a href="../wire/index.html">The Industry Wire</a>
     <a href="../articles/index.html#all">Every article</a>
     <a href="../articles/newsletter/index.html">The newsletter</a>
     <a href="../articles/collections/index.html">Collections</a>

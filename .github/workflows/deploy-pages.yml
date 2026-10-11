@@ -68,7 +68,7 @@ jobs:
       - name: The meter, the reading lists and the review's findings, in Chromium
         run: |
           set -euo pipefail
-          for t in test_meter.mjs test_lists.mjs test_review.mjs test_passkey.mjs; do
+          for t in test_meter.mjs test_lists.mjs test_review.mjs test_passkey.mjs test_wire.mjs; do
             echo "== $t"
             node admin/build/$t | tee /tmp/$t.log
             if grep -q '^SKIP' /tmp/$t.log; then echo "::error::$t skipped: Playwright or Chromium missing on the runner"; exit 1; fi

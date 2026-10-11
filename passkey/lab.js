@@ -176,7 +176,7 @@ export async function lab(opts) {
         row('Relying party id this page uses', location.hostname),
         row('A platform authenticator that verifies the user (Touch ID, Face ID, Windows Hello, a screen lock)', uvpaa == null ? 'unknown' : uvpaa ? 'available' : 'not available', uvpaa ? 'ok' : ''),
         row('getClientCapabilities()', caps ? Object.entries(caps).map(([k, v]) => `${k}: ${v}`).join(' · ') : 'not implemented in this browser (Chrome 133+, Safari 17.4+)'),
-        row('PRF, as the browser reports it', caps && ('extension:prf' in caps) ? String(caps['extension:prf']) : 'the browser does not say; the passkey will, when it is made (prf.enabled)'),
+        row('PRF, as the browser reports it', caps && typeof caps['extension:prf'] === 'boolean' ? String(caps['extension:prf']) : 'the browser does not say (some report null here); the passkey will, when it is made (prf.enabled)'),
         stored ? row('A passkey from this lab, in this browser', `made ${stored.made.slice(0, 16).replace('T', ' ')}, credential ${stored.id.slice(0, 12)}…, PRF ${stored.prf ? 'on' : 'off'}`) : null,
     )
 
