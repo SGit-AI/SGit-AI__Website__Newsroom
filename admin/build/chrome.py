@@ -78,13 +78,14 @@ NAV = [
         "databases/", "shipped/")),
     ("Replicate", "replicate/index.html", [
         ("Replicate this newsroom", "replicate/index.html"),
+        ("For publishers: what is live, how to try it", "publishers/index.html"),
         ("SG Meter: the reading meter", "meter/index.html"),
         ("The meter's security model", "meter/security.html"),
         ("How to run synthetic users", "articles/how-to-run-synthetic-users.html"),
         ("The study: five readers tested this site", "demos/vaults/newsroom-synthetic-users/index.html"),
         ("Seed companies", "mvps/seed-companies.html"),
         ("How this site is built", "admin/index.html"),
-    ], ("replicate/", "meter/", "mvps/seed-companies.html", "demos/vaults/newsroom-synthetic-users/")),
+    ], ("replicate/", "meter/", "mvps/seed-companies.html", "demos/vaults/newsroom-synthetic-users/", "publishers/")),
     ("World News Day", "world-news-day/index.html", [
         ("The corpus", "world-news-day/index.html"),
         ("Free to republish is not a licence", "world-news-day/stories/free-to-republish-is-not-a-licence.html"),
@@ -151,6 +152,7 @@ FOOTER = [
     ]),
     ("Build your own", [
         ("Replicate this newsroom", "replicate/index.html"),
+        ("For publishers", "publishers/index.html"),
         ("SG Meter: the reading meter", "meter/index.html"),
         ("World News Day 2026: the corpus", "world-news-day/index.html"),
         ("The method: fetch, freeze, hash", "world-news-day/method.html"),

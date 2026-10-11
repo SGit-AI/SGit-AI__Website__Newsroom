@@ -1,0 +1,137 @@
+{
+  "slug": "brief-the-agent-too",
+  "teaser": "The people I advise read through agents. Content needs a second package, a brief for their agent, and memory, so it reads what changed, not everything.",
+  "topics": [
+    "vaults-and-method",
+    "news-and-evidence"
+  ],
+  "core_idea": "Readers increasingly read through an agent. A founder gave an article on threat tiers to their agent, which saw the team defending against states while backups were undone and reset the target to T3. So content should travel by several routes: to the person, to their agent as a plain-text brief with the articles by number, reasons, graph slices and rules for critical reading, back from the agent to the person as a translation, and later agent to agent through an encrypted lane. Articles are compression we control, which keeps workflows affordable; an agent with an account and memory should read only the delta, which is what it would pay for. Packs must be written safely: data not instructions, nothing hidden, nothing that acts for us, disagreement invited.",
+  "nodes": [
+    {
+      "id": "story",
+      "label": "The founder's agent and the threat tiers",
+      "kind": "example",
+      "summary": "Defending against states with no backups; reset to T3 after one article."
+    },
+    {
+      "id": "routes",
+      "label": "Routes a message takes",
+      "kind": "concept",
+      "summary": "Me to person, me to their agent, agent to person, me to my agent, agent to agent."
+    },
+    {
+      "id": "agentreader",
+      "label": "The agent as a better reader",
+      "kind": "claim",
+      "summary": "More detail, read against the project, challenged rather than accepted."
+    },
+    {
+      "id": "pack",
+      "label": "A pack for someone's agent",
+      "kind": "method",
+      "summary": "Plain text: who, the list by number, reasons, graph slices, rules, where to continue."
+    },
+    {
+      "id": "memory",
+      "label": "Memory and the delta",
+      "kind": "concept",
+      "summary": "Read what changed, not everything again; what an agent would pay for."
+    },
+    {
+      "id": "compression",
+      "label": "Articles as controlled compression",
+      "kind": "claim",
+      "summary": "Why our workflows stay within budget."
+    },
+    {
+      "id": "safely",
+      "label": "Writing to someone else's agent safely",
+      "kind": "method",
+      "summary": "Data not instructions; nothing hidden; nothing that acts for us; disagreement invited."
+    },
+    {
+      "id": "onboarding",
+      "label": "Onboarding by reading",
+      "kind": "example",
+      "summary": "Every new session reads the same sites first; package it for others."
+    },
+    {
+      "id": "next",
+      "label": "What to build next",
+      "kind": "artefact",
+      "summary": "Agent pack on every list, onboarding packs, a changes file, accounts and a direct line."
+    }
+  ],
+  "edges": [
+    {
+      "from": "story",
+      "to": "routes",
+      "rel": "example-of"
+    },
+    {
+      "from": "routes",
+      "to": "pack",
+      "rel": "leads-to"
+    },
+    {
+      "from": "agentreader",
+      "to": "pack",
+      "rel": "leads-to"
+    },
+    {
+      "from": "compression",
+      "to": "memory",
+      "rel": "leads-to"
+    },
+    {
+      "from": "memory",
+      "to": "next",
+      "rel": "produces"
+    },
+    {
+      "from": "pack",
+      "to": "next",
+      "rel": "produces"
+    },
+    {
+      "from": "safely",
+      "to": "pack",
+      "rel": "depends-on"
+    },
+    {
+      "from": "onboarding",
+      "to": "pack",
+      "rel": "example-of"
+    }
+  ],
+  "links": {
+    "articles": [
+      "a-reading-list-in-a-link",
+      "who-are-you-protecting-against",
+      "the-agent-is-the-reader",
+      "encrypted-memory-for-isolated-agents",
+      "re-anchoring-agent-behaviour-policies",
+      "a-link-to-a-persona"
+    ],
+    "pages": [
+      "/docs/guidance/index.html",
+      "/demos/vaults/index.html"
+    ],
+    "sites": [
+      "https://newsroom.sgit.ai/for/index.html",
+      "https://coding.sgit.ai/",
+      "https://nfrs.sgit.ai/",
+      "https://graphs.sgit.ai/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "Some of what I write is better read by their agent.",
+      "why": "The shift for a writer."
+    },
+    {
+      "text": "A pack that asks for agreement is not worth sending.",
+      "why": "The rule for writing to someone else's agent."
+    }
+  ]
+}

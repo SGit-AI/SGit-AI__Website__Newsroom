@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The article remains a product: Jonathan Palmer's four outputs for a newsroom with no human readers, checked against one that runs, SGit Newsroom</title>
+<meta name="description" content="On 10 October Jonathan Palmer asked on LinkedIn what a news business would look like if it had no human readers tomorrow, and said every publisher should model that exact scenario. His answer is that the newsroom should produce four things besides the article, structured intelligence, continuous intelligence, provenance and verification, and embedded distribution, and that "The article remains a product. It just stops being the only primary output." We have been building a newsroom on that premise since August, so this article takes his post line by line and checks each line against newsroom.sgit.ai as it runs today, with screenshots: a graph beside all 74 articles as JSON, a version history read from git, 21 World News Day op-eds frozen and hashed with a vault anyone can open, and a markdown twin, an llms.txt and a feed for the agents that already read it. It is also honest about the right-hand column: selling the graph, corrections that propagate and paying the fact creator are designed and not running. Then it answers his three questions, what assets would still have value, who would pay and what needs to be produced differently, with the one number we have, and says where we differ: the data assets he wants kept proprietary are the ones we publish with a read key, because provenance is only worth something if someone else can check it.">
+<link rel="canonical" href="https://newsroom.sgit.ai/articles/the-article-remains-a-product.html">
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SGit Newsroom">
+<meta property="og:url" content="https://newsroom.sgit.ai/articles/the-article-remains-a-product.html">
+<meta property="og:title" content="The article remains a product: Jonathan Palmer's four outputs for a newsroom with no human readers, checked against one that runs, SGit Newsroom">
+<meta property="og:description" content="On 10 October Jonathan Palmer asked on LinkedIn what a news business would look like if it had no human readers tomorrow, and said every publisher should model that exact scenario. His answer is that the newsroom should produce four things besides the article, structured intelligence, continuous intelligence, provenance and verification, and embedded distribution, and that "The article remains a product. It just stops being the only primary output." We have been building a newsroom on that premise since August, so this article takes his post line by line and checks each line against newsroom.sgit.ai as it runs today, with screenshots: a graph beside all 74 articles as JSON, a version history read from git, 21 World News Day op-eds frozen and hashed with a vault anyone can open, and a markdown twin, an llms.txt and a feed for the agents that already read it. It is also honest about the right-hand column: selling the graph, corrections that propagate and paying the fact creator are designed and not running. Then it answers his three questions, what assets would still have value, who would pay and what needs to be produced differently, with the one number we have, and says where we differ: the data assets he wants kept proprietary are the ones we publish with a read key, because provenance is only worth something if someone else can check it.">
+<meta property="og:image" content="https://newsroom.sgit.ai/og/the-article-remains-a-product.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The article remains a product: Jonathan Palmer's four outputs for a newsroom with no human readers, checked against one that runs, SGit Newsroom">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://newsroom.sgit.ai/og/the-article-remains-a-product.jpg">
+<link rel="alternate" type="text/markdown" href="the-article-remains-a-product.md" title="This page as markdown">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "The article remains a product: Jonathan Palmer's four outputs for a newsroom with no human readers, checked against one that runs, SGit Newsroom", "headline": "The article remains a product: Jonathan Palmer's four outputs for a newsroom with no human readers, checked against one that runs, SGit Newsroom", "description": "On 10 October Jonathan Palmer asked on LinkedIn what a news business would look like if it had no human readers tomorrow, and said every publisher should model that exact scenario. His answer is that the newsroom should produce four things besides the article, structured intelligence, continuous intelligence, provenance and verification, and embedded distribution, and that \"The article remains a product. It just stops being the only primary output.\" We have been building a newsroom on that premise since August, so this article takes his post line by line and checks each line against newsroom.sgit.ai as it runs today, with screenshots: a graph beside all 74 articles as JSON, a version history read from git, 21 World News Day op-eds frozen and hashed with a vault anyone can open, and a markdown twin, an llms.txt and a feed for the agents that already read it. It is also honest about the right-hand column: selling the graph, corrections that propagate and paying the fact creator are designed and not running. Then it answers his three questions, what assets would still have value, who would pay and what needs to be produced differently, with the one number we have, and says where we differ: the data assets he wants kept proprietary are the ones we publish with a read key, because provenance is only worth something if someone else can check it.", "url": "https://newsroom.sgit.ai/articles/the-article-remains-a-product.html", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "SGit Newsroom", "url": "https://newsroom.sgit.ai"}, "about": {"@type": "SoftwareApplication", "name": "sgit", "sameAs": "https://pypi.org/project/sgit-ai/"}, "author": {"@type": "Person", "name": "Dinis Cruz", "url": "https://sgit.ai/about/index.html"}, "license": "https://creativecommons.org/licenses/by/4.0/"}</script>
+<style>html{background:#faf9f5}body{margin:0;background:#faf9f5;color:#1c1d21;font-family:ui-sans-serif,system-ui,sans-serif;opacity:0;transition:opacity .25s;animation:sg-reveal 0s linear 1.6s forwards}html.ready body{opacity:1;animation:none}@keyframes sg-reveal{to{opacity:1}}</style><noscript><style>body{opacity:1;animation:none}</style></noscript>
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.8.1</a>
+  <sg-meter class="meter-nav" view="balance"></sg-meter>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../articles/index.html#all">Every article</a>
+      <a class="sl" href="../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../persona/index.html">Read as a persona</a>
+      <a class="sl" href="../for/make.html">Make a reading list</a>
+      <a class="sl" href="../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../account/index.html">Your reading account</a>
+      <a class="sl" href="../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../account/personas.html">Your personas</a>
+      <a class="sl" href="../account/top-up.html">Top up</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../newsroom/board.html">The board</a>
+      <a class="sl" href="../newsroom/log.html">The run log</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../publishers/index.html">For publishers: what is live, how to try it</a>
+      <a class="sl" href="../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+      <a class="sl" href="../demos/vaults/newsroom-synthetic-users/index.html">The study: five readers tested this site</a>
+      <a class="sl" href="../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../world-news-day/index.html">World News Day<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../world-news-day/index.html">The corpus</a>
+      <a class="sl" href="../world-news-day/stories/free-to-republish-is-not-a-licence.html">Free to republish is not a licence</a>
+      <a class="sl" href="../world-news-day/licences.html">The licence that is not there</a>
+      <a class="sl" href="../world-news-day/corpus.html">The twenty-one</a>
+      <a class="sl" href="../world-news-day/findings.html">The aggregate</a>
+      <a class="sl" href="../world-news-day/terms.html">The vocabulary</a>
+      <a class="sl" href="../world-news-day/graph.html">The graph</a>
+      <a class="sl" href="../world-news-day/sources.html">Sources</a>
+      <a class="sl" href="../world-news-day/contacts.html">How to reach them</a>
+      <a class="sl" href="../world-news-day/vault.html">Published vaults</a>
+      <a class="sl" href="../world-news-day/vaults/corpus.html">The vault, opened</a>
+      <a class="sl" href="../world-news-day/method.html">Method</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../archive/index.html">The archive</a>
+      <a class="sl" href="../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../network/index.html">The network</a>
+      <a class="sl" href="../admin/versions.html">Release history</a>
+      <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom">&#9733; GitHub</a>
+</div></nav>
+
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.8.1</span></a></div>
+<main class="doc">
+ <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / The article remains a product: Jonathan Palmer's four outputs for a newsroom with no human readers, checked against one that runs</p>
+ <h1>The article remains a product: Jonathan Palmer's four outputs for a newsroom with no human readers, checked against one that runs</h1>
+ <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-11 &middot; <a href="versions/the-article-remains-a-product.html" title="Every published version of this article, and what changed">article v1.0.0</a> &middot; <a href="https://sgit.ai/admin/versions.html" title="The sgit.ai release it was published in">sgit.ai v0.7.61</a> &middot; <span class="chip">newsroom</span><span class="chip">future-of-news</span><span class="chip">structured-intelligence</span><span class="chip">provenance</span><span class="chip">graphs</span><span class="chip">versions</span><span class="chip">agents</span><span class="chip">llms-txt</span><span class="chip">vaults</span><span class="chip">world-news-day</span><span class="chip">economics</span><span class="chip">response</span><span class="chip">article</span></p>
+ <p class="abstract"><em><b>Abstract:</b> On 10 October Jonathan Palmer asked on LinkedIn what a news business would look like if it had no human readers tomorrow, and said every publisher should model that exact scenario. His answer is that the newsroom should produce four things besides the article, structured intelligence, continuous intelligence, provenance and verification, and embedded distribution, and that "The article remains a product. It just stops being the only primary output." We have been building a newsroom on that premise since August, so this article takes his post line by line and checks each line against newsroom.sgit.ai as it runs today, with screenshots: a graph beside all 74 articles as JSON, a version history read from git, 21 World News Day op-eds frozen and hashed with a vault anyone can open, and a markdown twin, an llms.txt and a feed for the agents that already read it. It is also honest about the right-hand column: selling the graph, corrections that propagate and paying the fact creator are designed and not running. Then it answers his three questions, what assets would still have value, who would pay and what needs to be produced differently, with the one number we have, and says where we differ: the data assets he wants kept proprietary are the ones we publish with a read key, because provenance is only worth something if someone else can check it.</em></p>
+<figure class="shot" data-shot="jp-map.webp" data-dir="images/" data-alt="His four outputs, against what runs. Each row quotes one output from Jonathan Palmer&#x27;s post; the middle column is the page on newsroom.sgit.ai that does it today, the right-hand column is what is only designed. The line between them is the newsroom&#x27;s own dated page of what runs."><figcaption>His four outputs, against what runs. Each row quotes one output from Jonathan Palmer's post; the middle column is the page on newsroom.sgit.ai that does it today, the right-hand column is what is only designed. The line between them is the newsroom's own dated page of what runs.</figcaption></figure>
+<p>On 10 October, Jonathan Palmer, who works on strategic data assets and how to commercialise them, <a href="https://www.linkedin.com/posts/jonathanjpalmer1_futureofnews-ai-publishing-share-7514686042193637377-Zs1Z/">posted a question on LinkedIn</a>: "What would a news business look like if it had no human readers tomorrow?" He followed it with an instruction: "Every news publisher should model that exact scenario." And three questions: "What assets would still have value? Who would pay? And what needs to be produced differently?"</p>
+<p>I have an unusual answer to that, which is that we have been modelling exactly that scenario, in public, since August. <a href="future-of-news-story-vault-not-paywall.html">The future of news is the story vault, not the paywall</a> set out the design on 22 September; <a href="https://newsroom.sgit.ai/">newsroom.sgit.ai</a> is the design running, on 74 articles, with a page that says what runs and what does not. So rather than agree with his post, which would be easy, I want to do what he asks and model the scenario: take his four outputs one at a time, quote him, and put each quote next to the live page that does it, or next to the honest sentence that says we have not built it yet.</p>
+<p>As with <a href="the-same-argument-in-our-words.html">Satya Nadella's post on models as insiders</a>, this is convergence, not priority. He reached his list from the data side of the industry; we reached ours from building. That two different starting points land on the same four outputs is the interesting part.</p>
+<h2 id="short">In short</h2>
+<ul>
+<li><b>The scenario is worth running, and we ran it.</b> Five readers who do not exist <a href="how-to-run-synthetic-users.html">tested the newsroom</a>, and <a href="the-agent-is-the-reader.html">The agent is the reader</a> measured what an agent pays to read it. The newsroom was built for a reader that is increasingly an agent sent by a person.</li>
+<li><b>Structured intelligence runs.</b> Every one of the 74 articles has a graph as JSON, one file per article and all of them in one; the World News Day corpus is 160 nodes and 427 edges with triples you can download.</li>
+<li><b>Continuous intelligence half runs.</b> Every article has a version history read from git, and a page that shows what changed paragraph by paragraph. Corrections that reach the pages that cited the corrected claim are designed, not built.</li>
+<li><b>Provenance runs; commercial access does not.</b> Twenty-one op-eds were fetched once, frozen, hashed with SHA-256 and re-derived by a second program, and the whole thing is in a vault whose read key is printed on the page. Nothing is yet paid for a verified claim, and nothing flows upstream.</li>
+<li><b>Embedded distribution runs, in the plainest form.</b> An llms.txt, a markdown twin of every page, a feed, the graphs as data, and a block for agents at the foot of every page. The measured saving for an agent is the reason it would pay.</li>
+<li><b>Where we differ.</b> He wants "reusable, proprietary data assets". We publish the graph and the read key, and sell what is fitted to the reader, the delta since they last came, and the signed claim. Provenance that only the publisher can check is not provenance.</li>
+</ul>
+<h2 id="scenario">Model that exact scenario</h2>
+<p>The post's second line is the one I would underline: "Every news publisher should model that exact scenario." Most of the industry's answer to AI is in his next paragraph, "new ways to subscriptions, monetize audiences and drive traffic", and he is right that "These strategies assume the traditional relationship between publishers and readers will endure". <a href="how-news-got-here.html">How news got here</a> traces that assumption back to 1833, and the search layer stopped sending the traffic that funded it a while ago.</p>
+<p>We modelled the scenario in two ways. The first was to invent the readers. <a href="how-to-run-synthetic-users.html">How to run synthetic users</a> sent five people who do not exist through the newsroom with a real browser: 62 steps, 51 questions the site did not answer, 31 findings, four of the five left. That is what a newsroom looks like to a reader who is not loyal, not subscribed and not patient, which is close to what a reader looks like now. The second was to make the agent the reader and count. <a href="the-agent-is-the-reader.html">The agent is the reader</a> measured what it costs an agent to answer a question from five articles: a median of 2,579 tokens from their graph, against 25,698 from the prose. That number is the whole economic case for his four outputs, so I will come back to it.</p>
+<p>What follows is his list, in his order, in his words.</p>
+<h2 id="structured">Structured intelligence</h2>
+<div class="note">"Structured intelligence: facts, events, entities, relationships and changes as data."</div>
+<p>This is the first thing the newsroom does, and it does it for every article. "74 of 74 articles have a graph", the page says: the ideas each rests on, the claims it makes, the methods and the examples, and how they connect, as JSON, one file per article and all of them in one file with the links between articles resolved. The pages are rendered from the same files, so the graph cannot drift from the prose.</p>
+<figure class="shot" data-shot="jp-graphs.webp" data-dir="images/" data-alt="The articles as graphs, on newsroom.sgit.ai. Every article drawn in date order round the circle, sized by how many others link to it: 74 articles, 349 links between them, and 10 amber links where an older article was updated to point at a newer one. One graph per article follows below the map."><figcaption>The articles as graphs, on newsroom.sgit.ai. Every article drawn in date order round the circle, sized by how many others link to it: 74 articles, 349 links between them, and 10 amber links where an older article was updated to point at a newer one. One graph per article follows below the map.</figcaption></figure>
+<p>The thesis underneath is older than the post and the same as it. In <a href="future-of-news-story-vault-not-paywall.html">The future of news is the story vault</a> I wrote that the story is a graph, a fractal semantic graph in which meaning comes from connectivity and every claim walks down to hashed evidence, and that the article is one projection of it. His "facts, events, entities, relationships and changes as data" is that graph, named from the outside.</p>
+<p>The best test of it on the site is not our own articles but someone else's. For World News Day, WAN-IFRA and the Canadian Journalism Foundation published 21 commissioned op-eds and made them free to republish. The newsroom <a href="https://newsroom.sgit.ai/world-news-day/graph.html">fetched all 21, froze the bytes, and built the graph</a>: 160 nodes and 427 edges, the authors, the organisations they name, the themes, the sources they point at and the terms they are published under, with <code>graph.json</code>, <code>ontology.json</code> and <code>triples.nt</code> to download. The page says why: "Twenty-one articles in a list are twenty-one articles." The same 21 with their relationships is something you can ask questions of, and "None of that is in the publisher's own data, because the publisher's own data is a single category called Story."</p>
+<figure class="shot" data-shot="jp-wnd-graph.webp" data-dir="images/" data-alt="The World News Day graph: 21 op-eds as 160 nodes and 427 edges, with the three machine surfaces linked at the top. The box under it is the rule the section is built under: hold the pieces, republish none, and fail the build if twelve consecutive words of any piece appear."><figcaption>The World News Day graph: 21 op-eds as 160 nodes and 427 edges, with the three machine surfaces linked at the top. The box under it is the rule the section is built under: hold the pieces, republish none, and fail the build if twelve consecutive words of any piece appear.</figcaption></figure>
+<p>And the densest layer is the one five agents made. In <a href="one-article-five-readers.html">One article, five readers</a>, a Librarian catalogued every fact, claim, number, question and source in five articles with the sentence it came from, 662 items, and a Cartographer turned the catalogues into one ontology. Those views are now on the articles, and the whole run is in the <a href="https://sgit.ai/demos/vaults/article-views/index.html">Article Views vault</a>, which anyone can open with its published read key.</p>
+<figure class="shot" data-shot="jp-five-readers.webp" data-dir="images/" data-alt="A live article with its five readers folded under the abstract: two minutes, the arc, nine slides, a map, and 137 catalogued items, six of them flagged. The views are extracted from the article and do not change its version."><figcaption>A live article with its five readers folded under the abstract: two minutes, the arc, nine slides, a map, and 137 catalogued items, six of them flagged. The views are extracted from the article and do not change its version.</figcaption></figure>
+<p>What does not run: selling any of it. The graphs are free, and the newsroom's own ledger says "Nothing sells one."</p>
+<h2 id="continuous">Continuous intelligence</h2>
+<div class="note">"Continuous intelligence: Producing verified evolving information streams vs periodic article production."</div>
+<p>Here the newsroom is half way. The half that runs is that nothing on it is fixed once published. Every article has a version history, and the page that shows it explains the rule: a change to the text is the next minor version, a change to its other details the next patch, and "The list is read from the site's git history at every build, so it cannot be edited by hand and cannot leave a version out."</p>
+<figure class="shot" data-shot="jp-versions.webp" data-dir="images/" data-alt="The version page of One article, five readers: v1.0.0 on 10 October, v1.1.0 on 11 October, +11 words, one paragraph changed, each with its commit. The sentence changed was a correction, found by the article that followed it."><figcaption>The version page of One article, five readers: v1.0.0 on 10 October, v1.1.0 on 11 October, +11 words, one paragraph changed, each with its commit. The sentence changed was a correction, found by the article that followed it.</figcaption></figure>
+<p>What changed is shown, not described. For <a href="https://newsroom.sgit.ai/articles/diffs/how-much-of-this-did-i-write.html">How much of this did I write?</a>, which was revised the day it was published, a diff page shows every paragraph with the old number struck through and the new one beside it. And the map above has ten amber edges: older articles that were updated after a newer one existed, to point at it. That is an evolving stream in the plainest sense, and it is the opposite of "periodic article production", which is what a PDF of the paper is.</p>
+<figure class="shot" data-shot="jp-diff.webp" data-dir="images/" data-alt="What changed, paragraph by paragraph: 63,000 words became 65,000, 122 releases became 123, and a phrase was rewritten. The tool that draws this was built on the same day as the revision."><figcaption>What changed, paragraph by paragraph: 63,000 words became 65,000, 122 releases became 123, and a phrase was rewritten. The tool that draws this was built on the same day as the revision.</figcaption></figure>
+<p>The half that does not run is the half that matters most to his word "verified". The newsroom keeps versions and corrections; it does not yet carry a correction to the pages that cited the corrected claim. That is the argument of the <a href="https://newsroom.sgit.ai/corrections/index.html">corrections section</a>, "In a document, a correction is a new document. Nothing that cited the original knows. In a graph, a correction is an edge", and it is the most distinctive thing in the design. It is also, by the ledger's own words, "Designed, not built." There is no published way yet to tell the newsroom an article is wrong. I would rather say that plainly than describe a stream we do not have.</p>
+<h2 id="provenance">Provenance and verification</h2>
+<div class="note">"Provenance + verification: Making sourcing, attribution and editorial validation explicit, traceable and commercially accessible."</div>
+<p>Three adjectives, and the newsroom does two of them. Explicit and traceable are the World News Day method: "Fetch once, freeze the bytes, hash them, extract structure, derive what can be derived by a published formula, and refuse to ship if any of it stops re-deriving." Each of the 21 pages was fetched once and frozen to a dated snapshot, hashed with SHA-256, and "The counts are re-derived from those bytes by a second program before anything ships." The build fails if twelve consecutive words of any piece appear on a page the newsroom generates, because the prose belongs to the people who wrote it.</p>
+<p>Then the whole corpus, the frozen pages, every derived dataset, the build code and the gate, was put in an encrypted vault, and the read key was printed on the page.</p>
+<figure class="shot" data-shot="jp-wnd-vault.webp" data-dir="images/" data-alt="The published vault: one read key, printed in full, is the whole credential. It opens the World News Day corpus as an app in the reader&#x27;s browser, read only, no account, nothing to install, and no write capability in it."><figcaption>The published vault: one read key, printed in full, is the whole credential. It opens the World News Day corpus as an app in the reader's browser, read only, no account, nothing to install, and no write capability in it.</figcaption></figure>
+<p>That is what I mean by provenance that someone else can check. The newsroom's claim is "Every number walks back to bytes we hold", and the way to test it is not to trust the newsroom but to open the vault and re-derive the numbers. <a href="where-the-vault-keys-live.html">Where the vault keys live</a> explains why a read key can be printed and a vault key cannot. The same idea covers the newsroom itself: the record of its sync from sgit.ai carries the SHA-256 of every file as served and as imported, and a gate checks that the imported pages were never edited by hand.</p>
+<p>Editorial validation is explicit too, in a way I have not seen a legacy newsroom do: <a href="https://newsroom.sgit.ai/newsroom/index.html">six roles with written behaviour policies</a>, a board, and a log of every run, with the one rule that publishing is adding a file and the one exception that placement belongs to the Editor.</p>
+<p>His third adjective, "commercially accessible", is where we are a design. The economics section argues that what is billable is not "is this true" but "is this use of it sound", per claim and context, and that the value behind a reader's payment splits 60 per cent to the original researcher, 25 to the data organisation, 10 to the journalist's synthesis and 5 to the outlet, while today "essentially all of that revenue is captured at the 5% layer".</p>
+<figure class="shot" data-shot="jp-economics.webp" data-dir="images/" data-alt="Contextual validation, not truth: the value split the design argues for, and the sentence that says what is billable. The page is marked as a design, and the newsroom&#x27;s ledger says nothing is paid upstream."><figcaption>Contextual validation, not truth: the value split the design argues for, and the sentence that says what is billable. The page is marked as a design, and the newsroom's ledger says nothing is paid upstream.</figcaption></figure>
+<p>Nothing is paid to the people whose facts an article uses. Trust as a service is argued, not built. I think his phrase is the right target, and I think the way to it is the one his post implies: make provenance explicit and traceable first, so that there is something to charge for.</p>
+<h2 id="embedded">Embedded distribution</h2>
+<div class="note">"Embedded distribution: Delivering differentiated intelligence directly into AI systems, enterprise platforms and workflows."</div>
+<p>The newsroom does this in the plainest possible way, which I have come to think is the right way. An agent that arrives gets an <a href="https://newsroom.sgit.ai/llms.txt">llms.txt</a> that says, in its first screen, what runs, what is only designed, and where the reader's data goes. Every page has a markdown twin generated from the same content as the HTML, "so the two cannot drift". The feed, the wire and every article's graph are files an agent can fetch without rendering a page. And every page the newsroom writes ends with a block addressed to an agent.</p>
+<figure class="shot" data-shot="jp-llms.webp" data-dir="images/" data-alt="The first screen of the newsroom&#x27;s llms.txt: the honest sentence, where the pages come from, and the surfaces an agent may rely on. The chip at the top of every imported page points here."><figcaption>The first screen of the newsroom's llms.txt: the honest sentence, where the pages come from, and the surfaces an agent may rely on. The chip at the top of every imported page points here.</figcaption></figure>
+<p>Two live features go further. A <a href="a-reading-list-in-a-link.html">reading list in a link</a> carries its articles as numbers in the part of the address after the #, which a browser keeps to itself, and the page that explains it says an agent "can build the same link by hand from the numbers in articles/ids.json". A persona in a link does the same for a way of reading. Both went from a brief to live in hours, which is its own kind of answer to "what needs to be produced differently".</p>
+<p>The measured part is the argument. An agent answering a question about five articles paid 25,698 tokens to read them and a median of 2,579 to read their graph, with every item anchored to its sentence. That is what "differentiated intelligence" is worth, in the only unit an agent counts in. <a href="brief-the-agent-too.html">Brief the agent too</a> takes the next step, a pack written for someone's agent and the file of what changed since a date, and the ledger is clear that the pack, an account for an agent and the delta it would pay for are proposals.</p>
+<h2 id="pay">Who would pay?</h2>
+<div class="note">"The biggest question isn't how to monetize readership more effectively. It's how to create economic value when readership is no longer the foundation of the business."</div>
+<p>Our answer has a name, from <a href="the-agent-is-the-reader.html">The agent is the reader</a>: the agent pays not to pay. Today an agent that reads the web pays to process all of it, then guesses at what it means. A publisher that serves meaning, a projection fitted to the agent's persona and objective, and claims signed with an expiry date, saves the agent more than it charges. The payment is not goodwill and not a licence. It is cheaper than the alternative.</p>
+<p>That is also where I would push back a little on one word. He writes that value "remains uncaptured or trapped inside articles rather than captured as reusable, proprietary data assets." Reusable, yes. Proprietary is the part we do differently, and on purpose. The newsroom publishes its graphs free and prints the read key to its vault, because provenance that only the publisher can check is a promise, not provenance. What it would sell is the projection fitted to one reader, the delta since that reader last came, and the signed claim with a date on it. None of those is the data; all of them are made from it. The financial information providers he cites built their business on data nobody else could get. A newsroom's advantage, as he says himself, is "trusted sourcing networks, expert judgment and verification capabilities", and those are worth more when the checking is open.</p>
+<p>And the human reader has not gone anywhere. The newsroom charges pence per page by how far you read, from a balance in your browser, and a reader can now top up five pounds by card. It is an honesty box, not a paywall, and it is live because the people who build it <a href="i-miss-it.html">use it on four devices</a>. The scenario with no human readers is a model worth running; the business I want is the one where both kinds of reader pay because it helps them, which is the argument of <a href="pay-to-keep-your-persona.html">Pay to keep your persona</a>.</p>
+<h2 id="article">The article remains a product</h2>
+<div class="note">"The article remains a product. It just stops being the only primary output."</div>
+<p>I would put it the other way round, and mean the same thing. The story is a graph; the article is a projection of it, and so is the two-minute version, the deck, the map and the briefing for one sector. The projection people pay to read is still the article, written first, as prose, because writing is how the argument is found. That is how every article on the newsroom is made: the prose first, then the graph beside it, then the five readers after. His sentence and ours agree on the thing that matters, which is that the article is no longer the unit the newsroom is organised around.</p>
+<p>His last line is the one I would send to a board: "That's not another AI licensing agreement for archives or articles. It's a fundamental redesign of the data capture operating model." Licensing the archive sells the past once. Capturing structure, versions, provenance and distribution as the newsroom works sells the present, continuously, and the only way to know what that costs is to run it.</p>
+<h2 id="cultural">Cultural, not technical</h2>
+<div class="note">"The first transformation may be cultural, not technical."</div>
+<p>This is where I can offer one data point and no proof. The technical transformation, on this evidence, is cheap: one person, a desk of agents, and eight weeks produced 74 articles with graphs, versions, a hashed corpus, a vault, and the surfaces for agents, on static files with <a href="no-server-by-design.html">no server</a>. The cultural one is the one we cannot demonstrate, because this newsroom never had the culture he describes to change. It started with the graph. A newsroom with a hundred years of "the primacy of the article as the organizing principle" has a different problem, and his post is addressed to it.</p>
+<p>What I can say is that the pieces he lists do not have to be built by the legacy newsroom. <a href="story-vault-meets-reader-skills.html">Story vault underneath, Reader Skills on top</a> argues that local journalism has the most to gain, because that is where the trust and the brand are strongest and the budgets smallest, and everything above runs on files and a browser. If the transformation is cultural, the cheapest way to start it may be to run the scenario on one desk, in public, and let the pages say what runs.</p>
+<h2 id="limits">What this does not claim</h2>
+<ul>
+<li><b>Nothing is sold.</b> The graphs are free, the vault is open, and the only money that moves is a five pound top-up a reader can choose to make. The economics are a design with a page.</li>
+<li><b>This is one small newsroom, not the industry.</b> Seventy-four articles by one author, written from voice memos by agents, is a model of the scenario, not evidence that a legacy newsroom can follow it.</li>
+<li><b>The right-hand column is real.</b> Selling the graph, paying the fact creator, corrections that propagate, articles as vaults, packs for agents: designed, not running. The newsroom's own <a href="https://newsroom.sgit.ai/shipped/index.html">page of what runs</a> is the authority, dated, and it moves.</li>
+<li><b>The post is quoted, not summarised.</b> Every line of his in this article is verbatim from the post as published; the reading of it is mine.</li>
+</ul>
+<figure class="shot" data-shot="jp-shipped.webp" data-dir="images/" data-alt="The newsroom&#x27;s own ledger, as of 10 October 2026: what runs, its limits, and below it what is designed and not running. Every claim in this article about what is live was checked against this page."><figcaption>The newsroom's own ledger, as of 10 October 2026: what runs, its limits, and below it what is designed and not running. Every claim in this article about what is live was checked against this page.</figcaption></figure>
+<p>If you run a newsroom, or the data side of one, and want to model the scenario on your own content, the <a href="../publishers/index.html">page for publishers</a> sets out what is live and how to try it, and <a href="mailto:agent@riskmandate.ai">agent@riskmandate.ai</a> answers, from a person or from your agent.</p>
+<h2 id="sources">Where this comes from</h2>
+<p>A voice memo of mine, recorded on 11 October 2026 after reading Jonathan Palmer's post, written by this site's agent in the voice of this site. The argument and the editorial responsibility are mine. The quotations are verbatim from <a href="https://www.linkedin.com/posts/jonathanjpalmer1_futureofnews-ai-publishing-share-7514686042193637377-Zs1Z/">the post on LinkedIn</a>, dated 10 October 2026 and marked as edited since, and are reproduced with attribution for the purpose of answering it. The screenshots are of <a href="https://newsroom.sgit.ai/">newsroom.sgit.ai</a> at v0.8.0, taken on 11 October 2026; the counts in them, 74 articles, 349 links, 160 nodes and 427 edges, 21 op-eds, are the site's own. The token figures are from <a href="the-agent-is-the-reader.html">The agent is the reader</a>; the synthetic readers' numbers from <a href="how-to-run-synthetic-users.html">How to run synthetic users</a>; the 662 catalogued items from <a href="one-article-five-readers.html">One article, five readers</a>. The map figure was drawn for this article from the newsroom's page of what runs. Related: <a href="future-of-news-story-vault-not-paywall.html">The future of news is the story vault, not the paywall</a>, <a href="the-same-argument-in-our-words.html">The same argument, in our words</a>, <a href="story-vault-meets-reader-skills.html">Story vault underneath, Reader Skills on top</a>, <a href="brief-the-agent-too.html">Brief the agent too</a>, <a href="a-reading-list-in-a-link.html">From me to you, in a link</a> and <a href="i-miss-it.html">I miss it, so it is working</a>.</p>
+<sg-meter view="page" kind="article" date="2026-10-11" topics="news-and-evidence graphs-and-knowledge agents-and-policy" title="The article remains a product: Jonathan Palmer's four outputs for a newsroom with no human readers, checked against one that runs, SGit Newsroom"></sg-meter>
+<section class="athreads" id="threads">
+ <h2>Threads</h2>
+ <p class="athreads-meta"><span class="tchip">News &amp; evidence</span><span class="tchip">Graphs &amp; knowledge</span><span class="tchip">Agents &amp; policy</span> <a href="graphs.html#the-article-remains-a-product">This article as a graph &rarr;</a></p>
+ <div class="athreads-cols"><div><h3>Builds on</h3><ul><li><a href="future-of-news-story-vault-not-paywall.html">The future of news is the story vault, not the paywall</a> <span class="dim">A story is a graph of claims and evidence and the article is one projection of it; keep the graph in a vault and sell what the article was made from.</span></li><li><a href="the-same-argument-in-our-words.html">The same argument, in our words: Satya Nadella on models as insider risks, translated into the language of RiskMandate</a> <span class="dim">Satya Nadella's case for treating models as insider risks, translated idea by idea into our vocabulary: reach, mandate, gap, barriers and accepted risk.</span></li><li><a href="how-to-run-synthetic-users.html">How to run synthetic users on your own site: five people who do not exist, a browser, and an afternoon</a> <span class="dim">Five invented users, a model reading screenshots, and a real browser: how to run synthetic users, from three studies.</span></li><li><a href="the-agent-is-the-reader.html">The agent is the reader: why agents will pay for graphs, personas and signed claims, because it is cheaper than not paying</a> <span class="dim">Agents pay to read the raw web and guess its meaning. A curated graph answers for 90% fewer tokens, so paying the publisher is cheaper than not paying.</span></li><li><a href="how-news-got-here.html">The reader was always the product: a corrected history of how news got into this mess</a> <span class="dim">News has sold the reader to advertisers since 1833; the web took the monopoly, the platforms made the reader measurable, and AI took the traffic.</span></li><li><a href="one-article-five-readers.html">One article, five readers: a librarian, a cartographer, a historian, an explainer and a storyteller read the same piece</a> <span class="dim">Write the article first, then send five agent readers through it: a catalogue, an ontology and maps, the arc, two minutes, and a deck.</span></li><li><a href="where-the-vault-keys-live.html">Where the vault keys live: key management at sgit-ai v0.20.0, and what comes next</a> <span class="dim">Vault key management at sgit-ai v0.20.0: the one secret, where keys are kept, how they travel sealed on append lanes, and what comes next.</span></li><li><a href="a-reading-list-in-a-link.html">From me to you, in a link: a personal reading list, two briefs to build and use it, and the loop that makes it a day's work</a> <span class="dim">A reading list from one person to another, in a link the server never sees; a brief to build it, a brief to use it, and the loop that ships it in a day.</span></li><li><a href="brief-the-agent-too.html">Brief the agent too: the people I talk to work with agents, so what I send has to reach both</a> <span class="dim">The people I advise read through agents. Content needs a second package, a brief for their agent, and memory, so it reads what changed, not everything.</span></li><li><a href="i-miss-it.html">I miss it, so it is working: the people who decide the roadmap have to use the product, and the vault the newsroom now needs</a> <span class="dim">I read the newsroom on four devices and they do not agree. Missing a feature is the best sign; the makers must use it. And the brief for the reader's vault.</span></li><li><a href="pay-to-keep-your-persona.html">Pay to keep your persona: readers should pay because it helps them, not because they feel they should</a> <span class="dim">Readers should pay because it helps them: a persona with a name and a graph, several for focus, and one that follows you between devices.</span></li><li><a href="no-server-by-design.html">No server, by design: first I retired the database, now I am retiring the back end</a> <span class="dim">First the database went, now the back end: the SGit Newsroom runs all its logic in the browser, on commodity servers that cannot read your data.</span></li><li><a href="story-vault-meets-reader-skills.html">Story vault underneath, Reader Skills on top: why local journalism has the most to gain</a> <span class="dim">Markus Franz's Reader Skills on top, the story vault underneath: each skill is a graph query, and local stories can pay back down their chain of sources.</span></li></ul></div></div>
+ <p class="small dim"><a href="index.html">All articles</a> &middot; <a href="graphs.html">All graphs</a></p>
+ <p class="small dim">Article No. 79 &middot; <a href="../for/make.html#r=79">start a reading list with it</a></p>
+</section>
+ <p class="subteaser"><b>Want the next issue by email.</b> One issue a week or so: what was published, what it adds up to, and what is worth your time. <a class="cta2" href="../subscribe/index.html">Subscribe to the SGit Newsroom &rarr;</a></p>
+ <p class="small dim" style="margin-top:2rem"><a href="index.html">&larr; All articles</a></p>
+</main>
+<script>
+(function () {
+ fetch('../assets/shots.js?v=v0.7.61')
+ .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+ .then(function (t) { (0, eval)(t); })
+ .catch(function (e) { console.error('[shots] component failed to load:', e); });
+}());
+</script>
+<script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": "https://buy.stripe.com/6oUfZ9ez65vVgU2fY15os04"}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
+<script>
+import('../assets/components/sg-meter/v1/v1.4/v1.4.0/sg-meter.js?v=v0.7.61')
+ .catch(function (e) { console.error('[sg-meter] component failed to load:', e); });
+</script>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="netline"><a href="https://sgit.ai" style="display:inline;padding:0"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://pt.newsroom.sgit.ai" style="display:inline;padding:0">&#8593; pt.newsroom.sgit.ai</a> &middot; <a href="https://graphs.sgit.ai" style="display:inline;padding:0">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai" style="display:inline;padding:0">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai" style="display:inline;padding:0">&#8593; nhi.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai" style="display:inline;padding:0">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../admin/versions.html">v0.8.1</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="the-article-remains-a-product.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../index.html">&#8594; The front page</a>
+    <a href="../articles/index.html#all">Every article</a>
+    <a href="../articles/newsletter/index.html">The newsletter</a>
+    <a href="../articles/collections/index.html">Collections</a>
+    <a href="../articles/desk/index.html">From the desk</a>
+    <a href="../articles/graphs.html">As graphs</a>
+    <a href="../subscribe/index.html">Subscribe</a>
+    <a href="../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../account/index.html">Your reading account</a>
+    <a href="../account/newsroom.html">Your newsroom</a>
+    <a href="../account/personas.html">Your personas</a>
+    <a href="../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../newsroom/index.html">How the newsroom runs</a>
+    <a href="../newsroom/policies.html">Behaviour policies</a>
+    <a href="../newsroom/publish.html">How to publish</a>
+    <a href="../newsroom/board.html">The board</a>
+    <a href="../newsroom/log.html">The run log</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../design/index.html">The design, and what runs</a>
+    <a href="../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../corrections/index.html">Corrections must propagate</a>
+    <a href="../provenance/index.html">Provenance is the product</a>
+    <a href="../economics/index.html">Paying the fact creator</a>
+    <a href="../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../replicate/index.html">Replicate this newsroom</a>
+    <a href="../publishers/index.html">For publishers</a>
+    <a href="../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+    <a href="../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../archive/index.html">The archive</a>
+    <a href="../network/index.html">The network</a>
+    <a href="../admin/versions.html">Release history</a>
+    <a href="../admin/index.html">Admin &amp; engineering</a>
+    <a href="../about/participant.html">Where we lose</a>
+    <a href="../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+
+<script>
+(function(){var R=document.documentElement.getAttribute('data-root')||'';var V='?v=' + 'v0.7.61';var C=[R,'','../','/'].filter(function(v,i,a){return a.indexOf(v)===i});
+function wait(ms){return new Promise(function(res){var t=Date.now();(function p(){if(window.sg)return res(window.sg);if(Date.now()-t>ms)return res(null);setTimeout(p,60)})()})}
+function grab(sg,p){return new Promise(function(res){(async function(){if(sg&&sg.vfs&&sg.vfs.readText){try{var t=await sg.vfs.readText(p);if(t)return res(t)}catch(e){}}try{var r=await fetch(p+V);if(r.ok)return res(await r.text())}catch(e){}res(null)})()})}
+async function css(sg){for(var i=0;i<C.length;i++){var p=C[i]+'assets/newsroom.css';if(sg&&sg.loadCss){try{await sg.loadCss(p);return}catch(e){}}var t=await grab(sg,p);if(t){var s=document.createElement('style');s.textContent=t;document.head.appendChild(s);return}}}
+async function js(sg,name){name=name||'assets/site.js';for(var i=0;i<C.length;i++){var p=C[i]+name;if(sg&&sg.loadJs){try{await sg.loadJs(p);return}catch(e){}}var t=await grab(sg,p);if(t){try{(0,eval)(t)}catch(e){console.error('[site] js failed',name,e)}return}}}
+async function boot(){var inVault=false;try{inVault=(window!==window.parent)||location.protocol==='blob:'}catch(e){inVault=true}
+var sg=inVault?await wait(2500):null;window.__sgitBoot={roots:C,grab:function(p){return grab(sg,p)},version:V};await css(sg);await js(sg);document.documentElement.classList.add('ready');try{window.parent&&window.parent.postMessage({type:'sg-app-ready'},'*')}catch(e){}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+var mine=V.slice(3),last=0;
+function fresh(){if(location.hostname!=='sgit.ai'||Date.now()-last<60000)return;last=Date.now();
+fetch('/version.txt?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(t){t=(t||'').trim();if(!/^v[0-9]+[.][0-9]+[.][0-9]+$/.test(t)||t===mine)return;
+var k='sgit.fresh:'+location.pathname;try{if(sessionStorage.getItem(k)===t)return;sessionStorage.setItem(k,t)}catch(e){}
+var u=new URL(location.href);u.searchParams.set('v',t);location.replace(u.href)}).catch(function(){})}
+try{var u=new URL(location.href);if(u.searchParams.get('v')===mine){u.searchParams.delete('v');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}
+fresh();addEventListener('pageshow',function(e){if(e.persisted){last=0;fresh()}});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')fresh()});
+})();
+</script>
+</body>
+</html>

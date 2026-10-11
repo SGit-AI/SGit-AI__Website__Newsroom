@@ -1,0 +1,121 @@
+{
+  "slug": "explorer-to-villager-newsroom",
+  "teaser": "The newsroom is live and charging. Move the reader code to its own repo, same bytes and same bugs, then map, test, review and refactor before new features.",
+  "topics": [
+    "site-and-engineering",
+    "startups-and-strategy"
+  ],
+  "core_idea": "The newsroom's reader features are live and taking money, but bundled with the content in one repository; measured at v0.8.0, about 2,700 lines of live reader code have 433 lines of tests the one workflow never runs, two upstreams for the same code (sgit.ai and the newsroom, with diverging meters) and no Content-Security-Policy. To keep shipping fast without breaking anything, the reader application moves to its own repository, which both sites consume, as a pure refactoring, proved by the live site serving the same bytes, then goes through the explorer-to-villager phases: map, test with bugs as passing tests and no mocks, review with every finding a GitHub issue, refactor until no adversarial change slips through, and only then new features. A pipeline under two minutes per commit runs Node and three browser engines, with pre-production on a Stripe test link, synthetic readers and a live check at release.",
+  "nodes": [
+    {
+      "id": "villager",
+      "label": "Explorer to villager",
+      "kind": "concept",
+      "summary": "Live, charging code is read line by line; explorer code for intent."
+    },
+    {
+      "id": "measure",
+      "label": "What I measured",
+      "kind": "example",
+      "summary": "About 2,700 lines of live reader code, 433 lines of tests CI never runs, two upstreams, no CSP."
+    },
+    {
+      "id": "split",
+      "label": "Content stays, the reader app moves",
+      "kind": "method",
+      "summary": "A separate repository both sites consume, released as versioned files they pin; the sync stops carrying it."
+    },
+    {
+      "id": "samebytes",
+      "label": "Same bytes served",
+      "kind": "method",
+      "summary": "The move is proved by hashing the live reader files before and after."
+    },
+    {
+      "id": "bugs",
+      "label": "Bugs as passing tests",
+      "kind": "method",
+      "summary": "Record current behaviour; fixing later is a visible change."
+    },
+    {
+      "id": "pipeline",
+      "label": "A two-minute pipeline",
+      "kind": "method",
+      "summary": "Node, three browser engines, a reproducible build, pre-prod, synthetic readers."
+    },
+    {
+      "id": "review",
+      "label": "Reviews and issues",
+      "kind": "method",
+      "summary": "One person and one agent per change; every finding an issue."
+    },
+    {
+      "id": "slowfast",
+      "label": "Go slow to go fast",
+      "kind": "claim",
+      "summary": "The safety net is what lets features keep landing quickly."
+    }
+  ],
+  "edges": [
+    {
+      "from": "measure",
+      "to": "villager",
+      "rel": "example-of"
+    },
+    {
+      "from": "villager",
+      "to": "split",
+      "rel": "leads-to"
+    },
+    {
+      "from": "samebytes",
+      "to": "split",
+      "rel": "answers"
+    },
+    {
+      "from": "split",
+      "to": "bugs",
+      "rel": "leads-to"
+    },
+    {
+      "from": "bugs",
+      "to": "review",
+      "rel": "leads-to"
+    },
+    {
+      "from": "pipeline",
+      "to": "slowfast",
+      "rel": "produces"
+    },
+    {
+      "from": "review",
+      "to": "slowfast",
+      "rel": "produces"
+    }
+  ],
+  "links": {
+    "articles": [
+      "if-somebody-built-a-company-on-code-review",
+      "code-review-as-a-fractal-semantic-graph",
+      "green-does-not-mean-live",
+      "how-to-run-synthetic-users",
+      "i-miss-it",
+      "the-passkey-opens-the-vault",
+      "brief-the-agent-too"
+    ],
+    "pages": [],
+    "sites": [
+      "https://newsroom.sgit.ai/meter/security.html"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "The point is speed. Going slow now is what lets me keep going fast without the fear that each new feature breaks something a reader has paid for.",
+      "why": "Why the move happens now."
+    },
+    {
+      "text": "Same bytes served.",
+      "why": "How the move is proved."
+    }
+  ]
+}

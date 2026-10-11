@@ -174,7 +174,11 @@ RECORD   = ROOT / "admin/build/newsroom-sync.json"
 MOVED_DIRS = ["articles", "newsroom", "account", "subscribe", "meter", "og", "assets/components",
               # Not in the brief's list: a vault page, which stays on sgit.ai as a rule. This one is
               # the study of this site by five synthetic readers, and Dinis asked for it here.
-              "demos/vaults/newsroom-synthetic-users"]
+              "demos/vaults/newsroom-synthetic-users",
+              # Also not in the brief's list: sgit.ai's page for publishers (11 October), which is about this
+              # site, is written to be forwarded, and so belongs at the same address here. Its links to the
+              # rest of sgit.ai become absolute, as for every imported page.
+              "publishers"]
 # Single files: source path -> path here.
 MOVED_FILES = {
     "assets/site.css": "assets/newsroom.css",

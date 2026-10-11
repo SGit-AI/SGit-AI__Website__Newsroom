@@ -2,7 +2,7 @@
 
 > One entry per run of a newsroom role: what changed on the front, what was decided, what is next.
 
-*Source: <https://newsroom.sgit.ai/newsroom/log.html> · sgit.ai v0.7.51 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/newsroom/log.html> · sgit.ai v0.7.61 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 

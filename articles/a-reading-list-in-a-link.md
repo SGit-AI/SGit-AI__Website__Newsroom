@@ -2,7 +2,7 @@
 
 > I want to send people I know, founders I mentor, potential clients, other publishers, a link that says: from Dinis, for Steve, here are the articles I think you should read, the ones worth a look, and the ones to follow. The newsroom's curation is close, but it is not personal, and the last 10 to 20% is the part that starts a conversation. This article is three things. A brief for the newsroom: a reading list in a link, with the names and the article numbers in the part of the URL the server never sees, a stable number for every article, a page that opens the list as a persona the reader can keep or remove, and a page to make a list for someone else, which is a business model of its own. A brief for the RiskMandate agent, which already keeps my contacts: choose the person, choose the articles and the reasons, build and test the link, draft the email, and let me send it. And the part I find most interesting: the loop. A feature like this crosses editorial, product, engineering, sales and the founder, which in most companies takes weeks of meetings. Here each hand-off is a written brief, each part is a session with its own repository or vault and its own gates, and the loop closes in a day. This week it closed several times, and it is worth showing how, and what it costs.
 
-*Source: <https://newsroom.sgit.ai/articles/a-reading-list-in-a-link.html> · sgit.ai v0.7.51 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/a-reading-list-in-a-link.html> · sgit.ai v0.7.61 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 
@@ -132,7 +132,7 @@ And this is not a plan. It is what happened this week:
 
 It would be dishonest to make this sound effortless.
 
-- **The parts drift.** While I was writing the [page for publishers](https://sgit.ai/publishers/index.md), another session released two versions of this site, and the newsroom moved on as well; the page and the newsroom were briefly out of step. Working from one source of truth per thing, and checking the live site at the end of every release, keeps the drift small. It does not remove it.
+- **The parts drift.** While I was writing the [page for publishers](../publishers/index.md), another session released two versions of this site, and the newsroom moved on as well; the page and the newsroom were briefly out of step. Working from one source of truth per thing, and checking the live site at the end of every release, keeps the drift small. It does not remove it.
 - **Sessions run out.** Each session works within a budget, and when it runs out, the work waits. Today some of it is waiting for a reset, and then for a handover: the writing of articles is moving from this site's session to the newsroom's own agents, written down like everything else.
 - **One person is still the router.** I decide who gets a list, what goes out in my name, and which brief goes first. That is the right place for a person, and it is also the bottleneck. The way to widen it is not to remove the person; it is to make every decision they take smaller, better prepared and quicker to check.
 - **Trust in names has to be earned.** Two emails once went out [in my voice](a-second-reader-the-agent-cannot-skip.md) when they should not have. That is why this brief says, twice, that agents draft and I send.
@@ -161,6 +161,12 @@ Site & engineeringStartups & strategy[This article as a graph →](graphs.md#a-r
 - [A second reader the agent cannot skip: how two wrong emails became a gate on every draft](a-second-reader-the-agent-cannot-skip.md) Two emails went out in my voice despite a written rule. The fix: a hook that makes a second model approve every draft, failing closed.
 - [The SaaS apocalypse will be decided by inertia, not by AI](saas-apocalypse-decided-by-inertia-not-by-ai.md) Incumbents and newcomers have the same AI; what separates them is how much past success each has to protect, so inertia decides which SaaS companies survive.
 - [The same argument, in our words: Satya Nadella on models as insider risks, translated into the language of RiskMandate](the-same-argument-in-our-words.md) Satya Nadella's case for treating models as insider risks, translated idea by idea into our vocabulary: reach, mandate, gap, barriers and accepted risk.
+
+### Continued by
+
+- [The article remains a product: Jonathan Palmer's four outputs for a newsroom with no human readers, checked against one that runs](the-article-remains-a-product.md) Jonathan Palmer's four outputs for a newsroom with no human readers, quoted line by line and checked against newsroom.sgit.ai as it runs, screenshots included.
+- [I miss it, so it is working: the people who decide the roadmap have to use the product, and the vault the newsroom now needs](i-miss-it.md) I read the newsroom on four devices and they do not agree. Missing a feature is the best sign; the makers must use it. And the brief for the reader's vault.
+- [Brief the agent too: the people I talk to work with agents, so what I send has to reach both](brief-the-agent-too.md) The people I advise read through agents. Content needs a second package, a brief for their agent, and memory, so it reads what changed, not everything.
 
 [All articles](index.md) · [All graphs](graphs.md)
 

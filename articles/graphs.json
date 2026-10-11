@@ -1,7 +1,7 @@
 {
   "site": "https://sgit.ai",
   "generated": "2026-10-11",
-  "site_version": "v0.7.51",
+  "site_version": "v0.7.61",
   "schema": "https://newsroom.sgit.ai/articles/graphs.html",
   "topics": [
     {
@@ -55,6 +55,951 @@
   ],
   "articles": [
     {
+      "slug": "the-article-remains-a-product",
+      "title": "The article remains a product: Jonathan Palmer's four outputs for a newsroom with no human readers, checked against one that runs",
+      "date": "2026-10-11",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/the-article-remains-a-product.html",
+      "markdown": "https://newsroom.sgit.ai/articles/the-article-remains-a-product.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/the-article-remains-a-product.webp",
+      "teaser": "Jonathan Palmer's four outputs for a newsroom with no human readers, quoted line by line and checked against newsroom.sgit.ai as it runs, screenshots included.",
+      "topics": [
+        "news-and-evidence",
+        "graphs-and-knowledge",
+        "agents-and-policy"
+      ],
+      "tags": [
+        "newsroom",
+        "future-of-news",
+        "structured-intelligence",
+        "provenance",
+        "graphs",
+        "versions",
+        "agents",
+        "llms-txt",
+        "vaults",
+        "world-news-day",
+        "economics",
+        "response",
+        "article"
+      ],
+      "links_out": [
+        "future-of-news-story-vault-not-paywall",
+        "the-same-argument-in-our-words",
+        "how-to-run-synthetic-users",
+        "the-agent-is-the-reader",
+        "how-news-got-here",
+        "one-article-five-readers",
+        "where-the-vault-keys-live",
+        "a-reading-list-in-a-link",
+        "brief-the-agent-too",
+        "i-miss-it",
+        "pay-to-keep-your-persona",
+        "no-server-by-design",
+        "story-vault-meets-reader-skills"
+      ],
+      "links_in": [],
+      "graph": {
+        "slug": "the-article-remains-a-product",
+        "teaser": "Jonathan Palmer's four outputs for a newsroom with no human readers, quoted line by line and checked against newsroom.sgit.ai as it runs, screenshots included.",
+        "topics": [
+          "news-and-evidence",
+          "graphs-and-knowledge",
+          "agents-and-policy"
+        ],
+        "core_idea": "Palmer's four outputs, structured intelligence, continuous intelligence, provenance and verification, and embedded distribution, are what a newsroom built on the story-as-graph thesis already produces: graphs as JSON beside all 74 articles, version histories read from git, a hashed corpus in a vault with a published read key, and an llms.txt and markdown twin for agents; what is designed and not running, selling the graph, propagating corrections and paying the fact creator, is said plainly; and where the two differ is the word proprietary, because provenance only someone else can check is worth charging for.",
+        "nodes": [
+          {
+            "id": "post",
+            "label": "No human readers tomorrow",
+            "kind": "artefact",
+            "summary": "Jonathan Palmer's LinkedIn post of 10 October 2026: model the scenario, and rethink what the newsroom produces."
+          },
+          {
+            "id": "scenario",
+            "label": "Model that exact scenario",
+            "kind": "method",
+            "summary": "Run the newsroom with invented readers and with an agent as the reader, and count what each costs."
+          },
+          {
+            "id": "structured",
+            "label": "Structured intelligence",
+            "kind": "claim",
+            "summary": "A graph as JSON beside every one of the 74 articles, and 21 op-eds as 160 nodes and 427 edges."
+          },
+          {
+            "id": "continuous",
+            "label": "Continuous intelligence",
+            "kind": "claim",
+            "summary": "A version history read from git and a diff page for every change; corrections that propagate are designed, not built."
+          },
+          {
+            "id": "provenance",
+            "label": "Provenance and verification",
+            "kind": "claim",
+            "summary": "Fetched once, frozen, hashed with SHA-256, re-derived by a second program, and published in a vault anyone can open."
+          },
+          {
+            "id": "embedded",
+            "label": "Embedded distribution",
+            "kind": "claim",
+            "summary": "An llms.txt, a markdown twin of every page, the feed and the graphs as data, for the agents that already read the site."
+          },
+          {
+            "id": "pays",
+            "label": "The agent pays not to pay",
+            "kind": "concept",
+            "summary": "A question answered from the graph costs a median of 2,579 tokens against 25,698 from the prose; the saving is the price."
+          },
+          {
+            "id": "proprietary",
+            "label": "Published, not proprietary",
+            "kind": "claim",
+            "summary": "The graph and the read key are published; what is sold is the fitted projection, the delta and the signed claim."
+          },
+          {
+            "id": "projection",
+            "label": "The article is a projection",
+            "kind": "concept",
+            "summary": "The story is a graph; the article, the deck and the two-minute version are projections of it, and the article is still written first."
+          },
+          {
+            "id": "shipped",
+            "label": "What runs, what is designed",
+            "kind": "artefact",
+            "summary": "The newsroom's dated ledger, the authority for every claim here about what is live."
+          },
+          {
+            "id": "cultural",
+            "label": "Cultural, not technical",
+            "kind": "question",
+            "summary": "The technical cost was eight weeks for one desk; whether a legacy newsroom can change its organising principle is not shown here."
+          },
+          {
+            "id": "wnd",
+            "label": "World News Day corpus",
+            "kind": "example",
+            "summary": "21 commissioned op-eds, frozen and hashed, graphed, and published as a vault with its read key on the page."
+          },
+          {
+            "id": "five",
+            "label": "Five readers",
+            "kind": "example",
+            "summary": "662 catalogued items anchored to their sentences, in the Article Views vault."
+          }
+        ],
+        "edges": [
+          {
+            "from": "post",
+            "to": "scenario",
+            "rel": "leads-to"
+          },
+          {
+            "from": "scenario",
+            "to": "pays",
+            "rel": "produces"
+          },
+          {
+            "from": "structured",
+            "to": "post",
+            "rel": "answers"
+          },
+          {
+            "from": "continuous",
+            "to": "post",
+            "rel": "answers"
+          },
+          {
+            "from": "provenance",
+            "to": "post",
+            "rel": "answers"
+          },
+          {
+            "from": "embedded",
+            "to": "post",
+            "rel": "answers"
+          },
+          {
+            "from": "wnd",
+            "to": "structured",
+            "rel": "example-of"
+          },
+          {
+            "from": "wnd",
+            "to": "provenance",
+            "rel": "example-of"
+          },
+          {
+            "from": "five",
+            "to": "structured",
+            "rel": "example-of"
+          },
+          {
+            "from": "pays",
+            "to": "embedded",
+            "rel": "depends-on"
+          },
+          {
+            "from": "proprietary",
+            "to": "post",
+            "rel": "contrasts"
+          },
+          {
+            "from": "projection",
+            "to": "post",
+            "rel": "compared-with"
+          },
+          {
+            "from": "shipped",
+            "to": "continuous",
+            "rel": "extends"
+          },
+          {
+            "from": "post",
+            "to": "cultural",
+            "rel": "leads-to"
+          }
+        ],
+        "links": {
+          "articles": [
+            "future-of-news-story-vault-not-paywall",
+            "the-same-argument-in-our-words",
+            "how-to-run-synthetic-users",
+            "the-agent-is-the-reader",
+            "how-news-got-here",
+            "one-article-five-readers",
+            "where-the-vault-keys-live",
+            "a-reading-list-in-a-link",
+            "brief-the-agent-too",
+            "i-miss-it",
+            "pay-to-keep-your-persona",
+            "no-server-by-design",
+            "story-vault-meets-reader-skills"
+          ],
+          "pages": [
+            "/demos/vaults/article-views/index.html",
+            "/publishers/index.html"
+          ],
+          "sites": [
+            "https://www.linkedin.com/posts/jonathanjpalmer1_futureofnews-ai-publishing-share-7514686042193637377-Zs1Z/",
+            "https://newsroom.sgit.ai/",
+            "https://newsroom.sgit.ai/world-news-day/graph.html",
+            "https://newsroom.sgit.ai/corrections/index.html",
+            "https://newsroom.sgit.ai/newsroom/index.html",
+            "https://newsroom.sgit.ai/llms.txt",
+            "https://newsroom.sgit.ai/shipped/index.html"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "Provenance that only the publisher can check is not provenance.",
+            "why": "Where this newsroom parts from the word proprietary."
+          },
+          {
+            "text": "The projection people pay to read is still the article, written first, as prose, because writing is how the argument is found.",
+            "why": "How the two sentences about the article agree."
+          },
+          {
+            "text": "I would rather say that plainly than describe a stream we do not have.",
+            "why": "The rule for the right-hand column."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "explorer-to-villager-newsroom",
+      "title": "Go slow to go fast: moving the newsroom from an explorer project to a villager one, with the brief to do it",
+      "date": "2026-10-11",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/explorer-to-villager-newsroom.html",
+      "markdown": "https://newsroom.sgit.ai/articles/explorer-to-villager-newsroom.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/explorer-to-villager-newsroom.webp",
+      "teaser": "The newsroom is live and charging. Move the reader code to its own repo, same bytes and same bugs, then map, test, review and refactor before new features.",
+      "topics": [
+        "site-and-engineering",
+        "startups-and-strategy"
+      ],
+      "tags": [
+        "engineering",
+        "explorer",
+        "villager",
+        "refactoring",
+        "testing",
+        "ci",
+        "security-review",
+        "code-review",
+        "newsroom",
+        "sg-meter",
+        "github-issues",
+        "brief",
+        "article"
+      ],
+      "links_out": [
+        "if-somebody-built-a-company-on-code-review",
+        "code-review-as-a-fractal-semantic-graph",
+        "i-miss-it",
+        "the-passkey-opens-the-vault",
+        "brief-the-agent-too",
+        "green-does-not-mean-live",
+        "how-to-run-synthetic-users"
+      ],
+      "links_in": [],
+      "graph": {
+        "slug": "explorer-to-villager-newsroom",
+        "teaser": "The newsroom is live and charging. Move the reader code to its own repo, same bytes and same bugs, then map, test, review and refactor before new features.",
+        "topics": [
+          "site-and-engineering",
+          "startups-and-strategy"
+        ],
+        "core_idea": "The newsroom's reader features are live and taking money, but bundled with the content in one repository; measured at v0.8.0, about 2,700 lines of live reader code have 433 lines of tests the one workflow never runs, two upstreams for the same code (sgit.ai and the newsroom, with diverging meters) and no Content-Security-Policy. To keep shipping fast without breaking anything, the reader application moves to its own repository, which both sites consume, as a pure refactoring, proved by the live site serving the same bytes, then goes through the explorer-to-villager phases: map, test with bugs as passing tests and no mocks, review with every finding a GitHub issue, refactor until no adversarial change slips through, and only then new features. A pipeline under two minutes per commit runs Node and three browser engines, with pre-production on a Stripe test link, synthetic readers and a live check at release.",
+        "nodes": [
+          {
+            "id": "villager",
+            "label": "Explorer to villager",
+            "kind": "concept",
+            "summary": "Live, charging code is read line by line; explorer code for intent."
+          },
+          {
+            "id": "measure",
+            "label": "What I measured",
+            "kind": "example",
+            "summary": "About 2,700 lines of live reader code, 433 lines of tests CI never runs, two upstreams, no CSP."
+          },
+          {
+            "id": "split",
+            "label": "Content stays, the reader app moves",
+            "kind": "method",
+            "summary": "A separate repository both sites consume, released as versioned files they pin; the sync stops carrying it."
+          },
+          {
+            "id": "samebytes",
+            "label": "Same bytes served",
+            "kind": "method",
+            "summary": "The move is proved by hashing the live reader files before and after."
+          },
+          {
+            "id": "bugs",
+            "label": "Bugs as passing tests",
+            "kind": "method",
+            "summary": "Record current behaviour; fixing later is a visible change."
+          },
+          {
+            "id": "pipeline",
+            "label": "A two-minute pipeline",
+            "kind": "method",
+            "summary": "Node, three browser engines, a reproducible build, pre-prod, synthetic readers."
+          },
+          {
+            "id": "review",
+            "label": "Reviews and issues",
+            "kind": "method",
+            "summary": "One person and one agent per change; every finding an issue."
+          },
+          {
+            "id": "slowfast",
+            "label": "Go slow to go fast",
+            "kind": "claim",
+            "summary": "The safety net is what lets features keep landing quickly."
+          }
+        ],
+        "edges": [
+          {
+            "from": "measure",
+            "to": "villager",
+            "rel": "example-of"
+          },
+          {
+            "from": "villager",
+            "to": "split",
+            "rel": "leads-to"
+          },
+          {
+            "from": "samebytes",
+            "to": "split",
+            "rel": "answers"
+          },
+          {
+            "from": "split",
+            "to": "bugs",
+            "rel": "leads-to"
+          },
+          {
+            "from": "bugs",
+            "to": "review",
+            "rel": "leads-to"
+          },
+          {
+            "from": "pipeline",
+            "to": "slowfast",
+            "rel": "produces"
+          },
+          {
+            "from": "review",
+            "to": "slowfast",
+            "rel": "produces"
+          }
+        ],
+        "links": {
+          "articles": [
+            "if-somebody-built-a-company-on-code-review",
+            "code-review-as-a-fractal-semantic-graph",
+            "green-does-not-mean-live",
+            "how-to-run-synthetic-users",
+            "i-miss-it",
+            "the-passkey-opens-the-vault",
+            "brief-the-agent-too"
+          ],
+          "pages": [],
+          "sites": [
+            "https://newsroom.sgit.ai/meter/security.html"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "The point is speed. Going slow now is what lets me keep going fast without the fear that each new feature breaks something a reader has paid for.",
+            "why": "Why the move happens now."
+          },
+          {
+            "text": "Same bytes served.",
+            "why": "How the move is proved."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "the-passkey-opens-the-vault",
+      "title": "The passkey opens the vault: touch a passkey, and a master vault for every user, with no server of ours, no account and no email",
+      "date": "2026-10-11",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/the-passkey-opens-the-vault.html",
+      "markdown": "https://newsroom.sgit.ai/articles/the-passkey-opens-the-vault.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/the-passkey-opens-the-vault.webp",
+      "teaser": "Sign in with Google says who you are; a passkey's PRF bytes derive a door vault, which opens your master vault. No key is stored anywhere.",
+      "topics": [
+        "vaults-and-method",
+        "site-and-engineering"
+      ],
+      "tags": [
+        "passkeys",
+        "webauthn",
+        "prf",
+        "vaults",
+        "key-management",
+        "google-sign-in",
+        "client-side",
+        "newsroom",
+        "architecture",
+        "brief",
+        "secrets",
+        "article"
+      ],
+      "links_out": [
+        "i-miss-it",
+        "no-server-by-design",
+        "how-to-run-synthetic-users",
+        "rfc-0001-public-key-cryptography-for-sgit",
+        "pay-after-you-read",
+        "where-the-vault-keys-live"
+      ],
+      "links_in": [
+        "explorer-to-villager-newsroom"
+      ],
+      "graph": {
+        "slug": "the-passkey-opens-the-vault",
+        "teaser": "Sign in with Google says who you are; a passkey's PRF bytes derive a door vault, which opens your master vault. No key is stored anywhere.",
+        "topics": [
+          "vaults-and-method",
+          "site-and-engineering"
+        ],
+        "core_idea": "An end-to-end, client-side account with no sign-in, no account and no email: a passkey with the WebAuthn PRF extension for 32 bytes only the user's authenticator can produce for the site, and sgit vaults. Because sgit vault keys are made in the client, the browser derives a door vault's key and id from the PRF bytes with HKDF, so nothing has to be stored or found first; the door holds the master vault key, and the master holds the keys of the user's other vaults, the access key, a key pair and the list of doors. A 128-bit recovery code derives a recovery door. Google holds no key; Drive's app-data folder can keep a backup. PRF works in Google Password Manager, iCloud Keychain, Windows Hello and Firefox. The page that holds keys loads no third-party scripts. The pattern gives any static site accounts with no server and data the operator cannot read.",
+        "nodes": [
+          {
+            "id": "google",
+            "label": "Sign in, later and optional",
+            "kind": "concept",
+            "summary": "Not in the MVP; on its own origin; continuity and backup; never a key."
+          },
+          {
+            "id": "prf",
+            "label": "Passkey with PRF",
+            "kind": "concept",
+            "summary": "32 bytes only your authenticator produces for this site, the same on synced devices."
+          },
+          {
+            "id": "door",
+            "label": "A derived door vault",
+            "kind": "method",
+            "summary": "Key and id computed from the PRF bytes with HKDF; holds the master key."
+          },
+          {
+            "id": "master",
+            "label": "The master vault",
+            "kind": "artefact",
+            "summary": "Keys of other vaults, the access key, a key pair, the list of doors."
+          },
+          {
+            "id": "nowhere",
+            "label": "Where the key lives: nowhere",
+            "kind": "claim",
+            "summary": "sgit keys are made in the client, so the door is computed, not stored."
+          },
+          {
+            "id": "recovery",
+            "label": "The recovery code",
+            "kind": "method",
+            "summary": "128 bits, shown once; derives a recovery door to the same master."
+          },
+          {
+            "id": "noscripts",
+            "label": "No third-party scripts where keys live",
+            "kind": "claim",
+            "summary": "Sign-in runs on its own page; the unlock page loads nothing it did not build."
+          },
+          {
+            "id": "support",
+            "label": "PRF support in 2026",
+            "kind": "example",
+            "summary": "Google Password Manager, iCloud Keychain, Windows Hello, Firefox."
+          },
+          {
+            "id": "enables",
+            "label": "Accounts with no server",
+            "kind": "claim",
+            "summary": "Any static site: sign in, open your own data on any device, unreadable by the operator."
+          },
+          {
+            "id": "clean",
+            "label": "Where the passkey lives",
+            "kind": "claim",
+            "summary": "A synced provider or a hardware key gives every device; a clean browser gives one device plus recovery; Chrome's own store has no PRF."
+          }
+        ],
+        "edges": [
+          {
+            "from": "prf",
+            "to": "door",
+            "rel": "produces"
+          },
+          {
+            "from": "nowhere",
+            "to": "door",
+            "rel": "answers"
+          },
+          {
+            "from": "door",
+            "to": "master",
+            "rel": "leads-to"
+          },
+          {
+            "from": "recovery",
+            "to": "master",
+            "rel": "leads-to"
+          },
+          {
+            "from": "google",
+            "to": "prf",
+            "rel": "contrasts"
+          },
+          {
+            "from": "noscripts",
+            "to": "door",
+            "rel": "depends-on"
+          },
+          {
+            "from": "support",
+            "to": "prf",
+            "rel": "example-of"
+          },
+          {
+            "from": "master",
+            "to": "enables",
+            "rel": "produces"
+          },
+          {
+            "from": "clean",
+            "to": "prf",
+            "rel": "depends-on"
+          }
+        ],
+        "links": {
+          "articles": [
+            "i-miss-it",
+            "no-server-by-design",
+            "where-the-vault-keys-live",
+            "rfc-0001-public-key-cryptography-for-sgit",
+            "how-to-run-synthetic-users",
+            "pay-after-you-read"
+          ],
+          "pages": [],
+          "sites": [
+            "https://secrets.sgit.ai/",
+            "https://www.corbado.com/blog/passkeys-prf-webauthn",
+            "https://web.dev/articles/webauthn-related-origin-requests",
+            "https://developers.google.com/workspace/drive/api/guides/api-specific-auth"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "The short answer, after the research, is that it is not kept anywhere. It is computed.",
+            "why": "The answer to where the vault key lives."
+          },
+          {
+            "text": "There is no sign-in in this flow at all: the page registers a discoverable credential with a random user handle, and the only login involved is the one you already have with your passkey provider, which syncs it.",
+            "why": "What the passkey needs, and what it does not."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "i-miss-it",
+      "title": "I miss it, so it is working: the people who decide the roadmap have to use the product, and the vault the newsroom now needs",
+      "date": "2026-10-11",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/i-miss-it.html",
+      "markdown": "https://newsroom.sgit.ai/articles/i-miss-it.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/i-miss-it.webp",
+      "teaser": "I read the newsroom on four devices and they do not agree. Missing a feature is the best sign; the makers must use it. And the brief for the reader's vault.",
+      "topics": [
+        "startups-and-strategy",
+        "site-and-engineering"
+      ],
+      "tags": [
+        "product",
+        "dogfooding",
+        "startups",
+        "feedback-loop",
+        "execution-speed",
+        "vaults",
+        "sync",
+        "pki",
+        "passkeys",
+        "newsroom",
+        "personas",
+        "brief",
+        "article"
+      ],
+      "links_out": [
+        "the-question-is-whether-they-miss-it",
+        "how-much-of-this-did-i-write",
+        "knowing-when-to-stop",
+        "a-reading-list-in-a-link",
+        "a-link-to-a-persona",
+        "rfc-0001-public-key-cryptography-for-sgit",
+        "how-to-run-synthetic-users",
+        "no-server-by-design",
+        "where-the-vault-keys-live"
+      ],
+      "links_in": [
+        "the-article-remains-a-product",
+        "explorer-to-villager-newsroom",
+        "the-passkey-opens-the-vault"
+      ],
+      "graph": {
+        "slug": "i-miss-it",
+        "teaser": "I read the newsroom on four devices and they do not agree. Missing a feature is the best sign; the makers must use it. And the brief for the reader's vault.",
+        "topics": [
+          "startups-and-strategy",
+          "site-and-engineering"
+        ],
+        "core_idea": "The people who decide a roadmap have to use the product: they give the best feedback and direction, and when they do not use it, something is missing. Dinis failed that test with earlier startups and the vaults now pass it, getting better because they are used. With agents able to build almost anything, direction from usage is the scarce part, and the speed of the loop from comment to article to feature is the moat. Reading the newsroom on four devices that do not agree is the signal for the next feature: the reader's own encrypted vault, with an access key, a key pair, a log per device merged by union, a way to add a device, and a one-way line to the agent that edits the site.",
+        "nodes": [
+          {
+            "id": "miss",
+            "label": "Whether they miss it",
+            "kind": "concept",
+            "summary": "The test applies to the makers as much as the customers."
+          },
+          {
+            "id": "makers",
+            "label": "Makers as users",
+            "kind": "claim",
+            "summary": "Developers, product owners and founders use it daily, on real work."
+          },
+          {
+            "id": "failed",
+            "label": "Good ideas I did not use",
+            "kind": "example",
+            "summary": "The Cyber Boardroom, MyFeeds and early sgit: the signal I missed."
+          },
+          {
+            "id": "vaults",
+            "label": "The vaults pass the test",
+            "kind": "example",
+            "summary": "Created all the time by me and my agents; 54 published; better because used."
+          },
+          {
+            "id": "direction",
+            "label": "Direction is the scarce part",
+            "kind": "claim",
+            "summary": "Agents can build almost anything; usage supplies direction, context and focus."
+          },
+          {
+            "id": "moat",
+            "label": "The loop is the moat",
+            "kind": "claim",
+            "summary": "Comment, article, feature: 81 minutes for the reading list."
+          },
+          {
+            "id": "devices",
+            "label": "Four devices, four newsrooms",
+            "kind": "example",
+            "summary": "Separate balances, personas and histories in each browser."
+          },
+          {
+            "id": "vault",
+            "label": "The reader's own vault",
+            "kind": "method",
+            "summary": "Access key, key pair, a log per device merged by union, add a device, a line to the agent."
+          }
+        ],
+        "edges": [
+          {
+            "from": "miss",
+            "to": "makers",
+            "rel": "leads-to"
+          },
+          {
+            "from": "failed",
+            "to": "makers",
+            "rel": "example-of"
+          },
+          {
+            "from": "vaults",
+            "to": "makers",
+            "rel": "example-of"
+          },
+          {
+            "from": "makers",
+            "to": "direction",
+            "rel": "produces"
+          },
+          {
+            "from": "direction",
+            "to": "moat",
+            "rel": "leads-to"
+          },
+          {
+            "from": "devices",
+            "to": "vault",
+            "rel": "leads-to"
+          },
+          {
+            "from": "miss",
+            "to": "devices",
+            "rel": "example-of"
+          }
+        ],
+        "links": {
+          "articles": [
+            "the-question-is-whether-they-miss-it",
+            "knowing-when-to-stop",
+            "how-much-of-this-did-i-write",
+            "a-reading-list-in-a-link",
+            "a-link-to-a-persona",
+            "no-server-by-design",
+            "where-the-vault-keys-live",
+            "rfc-0001-public-key-cryptography-for-sgit",
+            "how-to-run-synthetic-users"
+          ],
+          "pages": [],
+          "sites": [
+            "https://vault.sgraph.ai/",
+            "https://tools.sgraph.ai/",
+            "https://secrets.sgit.ai/",
+            "https://newsroom.sgit.ai/account/share.html"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "Momentum does not come from the plan. It comes from use.",
+            "why": "Why releasing and using matter."
+          },
+          {
+            "text": "if I have access, I can customise it, I can do a lot with it, and I still do not use it, then something is missing.",
+            "why": "The test, applied to the makers."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "brief-the-agent-too",
+      "title": "Brief the agent too: the people I talk to work with agents, so what I send has to reach both",
+      "date": "2026-10-11",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/brief-the-agent-too.html",
+      "markdown": "https://newsroom.sgit.ai/articles/brief-the-agent-too.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/brief-the-agent-too.webp",
+      "teaser": "The people I advise read through agents. Content needs a second package, a brief for their agent, and memory, so it reads what changed, not everything.",
+      "topics": [
+        "vaults-and-method",
+        "news-and-evidence"
+      ],
+      "tags": [
+        "agents",
+        "briefs",
+        "reading-list",
+        "personas",
+        "memory",
+        "compression",
+        "tokens",
+        "onboarding",
+        "newsroom",
+        "mentoring",
+        "agent-to-agent",
+        "prompt-injection",
+        "article"
+      ],
+      "links_out": [
+        "a-reading-list-in-a-link",
+        "who-are-you-protecting-against",
+        "the-agent-is-the-reader",
+        "encrypted-memory-for-isolated-agents",
+        "re-anchoring-agent-behaviour-policies",
+        "a-link-to-a-persona"
+      ],
+      "links_in": [
+        "the-article-remains-a-product",
+        "explorer-to-villager-newsroom"
+      ],
+      "graph": {
+        "slug": "brief-the-agent-too",
+        "teaser": "The people I advise read through agents. Content needs a second package, a brief for their agent, and memory, so it reads what changed, not everything.",
+        "topics": [
+          "vaults-and-method",
+          "news-and-evidence"
+        ],
+        "core_idea": "Readers increasingly read through an agent. A founder gave an article on threat tiers to their agent, which saw the team defending against states while backups were undone and reset the target to T3. So content should travel by several routes: to the person, to their agent as a plain-text brief with the articles by number, reasons, graph slices and rules for critical reading, back from the agent to the person as a translation, and later agent to agent through an encrypted lane. Articles are compression we control, which keeps workflows affordable; an agent with an account and memory should read only the delta, which is what it would pay for. Packs must be written safely: data not instructions, nothing hidden, nothing that acts for us, disagreement invited.",
+        "nodes": [
+          {
+            "id": "story",
+            "label": "The founder's agent and the threat tiers",
+            "kind": "example",
+            "summary": "Defending against states with no backups; reset to T3 after one article."
+          },
+          {
+            "id": "routes",
+            "label": "Routes a message takes",
+            "kind": "concept",
+            "summary": "Me to person, me to their agent, agent to person, me to my agent, agent to agent."
+          },
+          {
+            "id": "agentreader",
+            "label": "The agent as a better reader",
+            "kind": "claim",
+            "summary": "More detail, read against the project, challenged rather than accepted."
+          },
+          {
+            "id": "pack",
+            "label": "A pack for someone's agent",
+            "kind": "method",
+            "summary": "Plain text: who, the list by number, reasons, graph slices, rules, where to continue."
+          },
+          {
+            "id": "memory",
+            "label": "Memory and the delta",
+            "kind": "concept",
+            "summary": "Read what changed, not everything again; what an agent would pay for."
+          },
+          {
+            "id": "compression",
+            "label": "Articles as controlled compression",
+            "kind": "claim",
+            "summary": "Why our workflows stay within budget."
+          },
+          {
+            "id": "safely",
+            "label": "Writing to someone else's agent safely",
+            "kind": "method",
+            "summary": "Data not instructions; nothing hidden; nothing that acts for us; disagreement invited."
+          },
+          {
+            "id": "onboarding",
+            "label": "Onboarding by reading",
+            "kind": "example",
+            "summary": "Every new session reads the same sites first; package it for others."
+          },
+          {
+            "id": "next",
+            "label": "What to build next",
+            "kind": "artefact",
+            "summary": "Agent pack on every list, onboarding packs, a changes file, accounts and a direct line."
+          }
+        ],
+        "edges": [
+          {
+            "from": "story",
+            "to": "routes",
+            "rel": "example-of"
+          },
+          {
+            "from": "routes",
+            "to": "pack",
+            "rel": "leads-to"
+          },
+          {
+            "from": "agentreader",
+            "to": "pack",
+            "rel": "leads-to"
+          },
+          {
+            "from": "compression",
+            "to": "memory",
+            "rel": "leads-to"
+          },
+          {
+            "from": "memory",
+            "to": "next",
+            "rel": "produces"
+          },
+          {
+            "from": "pack",
+            "to": "next",
+            "rel": "produces"
+          },
+          {
+            "from": "safely",
+            "to": "pack",
+            "rel": "depends-on"
+          },
+          {
+            "from": "onboarding",
+            "to": "pack",
+            "rel": "example-of"
+          }
+        ],
+        "links": {
+          "articles": [
+            "a-reading-list-in-a-link",
+            "who-are-you-protecting-against",
+            "the-agent-is-the-reader",
+            "encrypted-memory-for-isolated-agents",
+            "re-anchoring-agent-behaviour-policies",
+            "a-link-to-a-persona"
+          ],
+          "pages": [
+            "/docs/guidance/index.html",
+            "/demos/vaults/index.html"
+          ],
+          "sites": [
+            "https://newsroom.sgit.ai/for/index.html",
+            "https://coding.sgit.ai/",
+            "https://nfrs.sgit.ai/",
+            "https://graphs.sgit.ai/"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "Some of what I write is better read by their agent.",
+            "why": "The shift for a writer."
+          },
+          {
+            "text": "A pack that asks for agreement is not worth sending.",
+            "why": "The rule for writing to someone else's agent."
+          }
+        ]
+      }
+    },
+    {
       "slug": "a-reading-list-in-a-link",
       "title": "From me to you, in a link: a personal reading list, two briefs to build and use it, and the loop that makes it a day's work",
       "date": "2026-10-11",
@@ -91,7 +1036,11 @@
         "saas-apocalypse-decided-by-inertia-not-by-ai",
         "the-same-argument-in-our-words"
       ],
-      "links_in": [],
+      "links_in": [
+        "the-article-remains-a-product",
+        "i-miss-it",
+        "brief-the-agent-too"
+      ],
       "graph": {
         "slug": "a-reading-list-in-a-link",
         "teaser": "A reading list from one person to another, in a link the server never sees; a brief to build it, a brief to use it, and the loop that ships it in a day.",
@@ -468,6 +1417,9 @@
         "chat-on-a-static-site"
       ],
       "links_in": [
+        "the-article-remains-a-product",
+        "the-passkey-opens-the-vault",
+        "i-miss-it",
         "a-reading-list-in-a-link",
         "a-model-in-the-tab"
       ],
@@ -676,6 +1628,8 @@
         "future-of-news-story-vault-not-paywall"
       ],
       "links_in": [
+        "the-article-remains-a-product",
+        "brief-the-agent-too",
         "a-model-in-the-tab"
       ],
       "graph": {
@@ -1056,6 +2010,7 @@
         "connector-twin-before-you-deploy-an-agent"
       ],
       "links_in": [
+        "the-article-remains-a-product",
         "a-reading-list-in-a-link",
         "where-the-platform-draws-the-line",
         "authority-outside-the-model"
@@ -1463,6 +2418,10 @@
         "a-link-to-a-persona"
       ],
       "links_in": [
+        "the-article-remains-a-product",
+        "explorer-to-villager-newsroom",
+        "the-passkey-opens-the-vault",
+        "i-miss-it",
         "a-reading-list-in-a-link",
         "a-model-in-the-tab",
         "no-server-by-design",
@@ -1657,6 +2616,8 @@
         "pay-to-keep-your-persona"
       ],
       "links_in": [
+        "i-miss-it",
+        "brief-the-agent-too",
         "a-reading-list-in-a-link",
         "no-server-by-design",
         "the-agent-is-the-reader",
@@ -1851,6 +2812,7 @@
         "pay-to-keep-your-persona"
       ],
       "links_in": [
+        "the-passkey-opens-the-vault",
         "no-server-by-design",
         "the-agent-is-the-reader"
       ],
@@ -2042,6 +3004,9 @@
         "a-personal-agent-that-keeps-your-secrets"
       ],
       "links_in": [
+        "the-article-remains-a-product",
+        "the-passkey-opens-the-vault",
+        "i-miss-it",
         "no-server-by-design",
         "authority-outside-the-model"
       ],
@@ -2452,6 +3417,7 @@
         "one-article-five-readers"
       ],
       "links_in": [
+        "the-article-remains-a-product",
         "a-reading-list-in-a-link",
         "a-model-in-the-tab",
         "no-server-by-design",
@@ -3193,6 +4159,7 @@
         "every-risk-is-already-accepted"
       ],
       "links_in": [
+        "the-article-remains-a-product",
         "the-agent-is-the-reader",
         "authority-outside-the-model",
         "the-infographic-bake-off",
@@ -3607,6 +4574,7 @@
         "a-second-reader-the-agent-cannot-skip"
       ],
       "links_in": [
+        "brief-the-agent-too",
         "the-agent-is-the-reader",
         "authority-outside-the-model",
         "the-infographic-bake-off",
@@ -4194,6 +5162,8 @@
         "encrypted-memory-for-isolated-agents"
       ],
       "links_in": [
+        "the-passkey-opens-the-vault",
+        "i-miss-it",
         "a-reading-list-in-a-link",
         "the-agent-is-the-reader",
         "where-the-vault-keys-live"
@@ -5273,6 +6243,7 @@
         "the-agent-team-as-it-runs"
       ],
       "links_in": [
+        "brief-the-agent-too",
         "no-server-by-design",
         "where-the-vault-keys-live",
         "rfc-0001-public-key-cryptography-for-sgit",
@@ -5511,6 +6482,7 @@
         "the-agent-team-as-it-runs"
       ],
       "links_in": [
+        "i-miss-it",
         "the-same-argument-in-our-words",
         "riskmandate-ten-questions"
       ],
@@ -6141,6 +7113,7 @@
         "every-risk-is-already-accepted"
       ],
       "links_in": [
+        "brief-the-agent-too",
         "no-server-by-design",
         "who-will-game-the-reading-meter",
         "encrypted-memory-for-isolated-agents",
@@ -7105,6 +8078,7 @@
         "the-bridge-followed-to-the-end"
       ],
       "links_in": [
+        "the-article-remains-a-product",
         "the-waiting-room-knew-first",
         "the-bridge-followed-to-the-end"
       ],
@@ -10176,6 +11150,7 @@
         "the-wall-under-the-reply"
       ],
       "links_in": [
+        "i-miss-it",
         "knowing-when-to-stop",
         "agency-is-not-a-yes",
         "liquid-content-needs-water",
@@ -10444,6 +11419,7 @@
         "the-question-is-whether-they-miss-it"
       ],
       "links_in": [
+        "explorer-to-villager-newsroom",
         "the-mandate-stack",
         "send-an-agent-not-a-spreadsheet",
         "how-much-of-this-did-i-write",
@@ -11568,6 +12544,7 @@
         "if-somebody-built-a-company-on-code-review"
       ],
       "links_in": [
+        "explorer-to-villager-newsroom",
         "the-ai-governance-stack-as-a-graph",
         "riskmandate-ten-questions",
         "ai-baseline-control-framework",
@@ -13258,6 +14235,7 @@
         "introducing-fractal-semantic-graphs"
       ],
       "links_in": [
+        "the-article-remains-a-product",
         "going-live-with-the-reading-meter",
         "a-meter-in-the-browser",
         "liquid-content-needs-water",
@@ -14886,6 +15864,7 @@
         "the-question-is-whether-they-miss-it"
       ],
       "links_in": [
+        "the-article-remains-a-product",
         "the-agent-is-the-reader",
         "liquid-content-needs-water",
         "story-vault-meets-reader-skills",
@@ -15168,6 +16147,7 @@
         "price-it-then-give-it-away"
       ],
       "links_in": [
+        "i-miss-it",
         "going-live-with-the-reading-meter",
         "a-meter-in-the-browser",
         "if-somebody-built-a-company-on-code-review",
@@ -17211,6 +18191,7 @@
       ],
       "links_out": [],
       "links_in": [
+        "explorer-to-villager-newsroom",
         "authority-outside-the-model",
         "every-mistake-added-a-rule",
         "the-investigation-github-owes-its-customers"

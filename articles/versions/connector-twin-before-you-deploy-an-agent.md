@@ -2,7 +2,7 @@
 
 > Every published version of the article "Before you give an agent a connector, give the connector a twin", with the date, the words and what changed.
 
-*Source: <https://newsroom.sgit.ai/articles/versions/connector-twin-before-you-deploy-an-agent.html> · sgit.ai v0.7.51 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/versions/connector-twin-before-you-deploy-an-agent.html> · sgit.ai v0.7.61 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 

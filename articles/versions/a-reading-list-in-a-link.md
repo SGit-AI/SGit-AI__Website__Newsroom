@@ -2,7 +2,7 @@
 
 > Every published version of the article "From me to you, in a link", with the date, the words and what changed.
 
-*Source: <https://newsroom.sgit.ai/articles/versions/a-reading-list-in-a-link.html> · sgit.ai v0.7.51 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/versions/a-reading-list-in-a-link.html> · sgit.ai v0.7.61 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 
@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-11 | published | 3,505 | first published | this release | [current](../a-reading-list-in-a-link.md) |
+| **v1.0.0** | 2026-10-11 | published | 3,505 | first published | [`4fc19cc51`](https://github.com/SGit-AI/SGit-AI__Website/commit/4fc19cc51799e9b48a6c1438705678956e344b8e) | [current](../a-reading-list-in-a-link.md) |
 
 [← Back to the article](../a-reading-list-in-a-link.md) · [All articles](../index.md)
 

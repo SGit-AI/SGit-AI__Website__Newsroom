@@ -2,7 +2,7 @@
 
 > The articles here are moving from code-drawn figures to infographics made by image models, and the question was which model, for which job, at what cost. So we ran a bake-off. Every image-output model on OpenRouter on 10 October 2026, its auto-router and our own code-drawn renderer were given the same briefs from one article, from an eighteen-word stat card to the whole 2,800-word article, plus an edit, a UI component, a brand slide and a three-slide deck. Five rounds, models cut after each; 101 images, every one judged blind by a Designer agent; every cent recorded, $10.44 in all; an Accountant and a Data Scientist on the numbers. The result is three models and guidance. Nano Banana 2.1, at four cents an image, for concept slides, charts and decks. Gemini 3 Pro Image, at fourteen cents and twenty seconds, when you are in a hurry. GPT-5.4 Image 2, at seventeen to twenty-three cents and a minute and a half, for anything that starts from a document or where every character is specified. Choose the model by the job, not by the budget.
 
-*Source: <https://newsroom.sgit.ai/articles/the-infographic-bake-off.html> · sgit.ai v0.7.51 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/the-infographic-bake-off.html> · sgit.ai v0.7.61 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 

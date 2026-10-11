@@ -2,7 +2,7 @@
 
 > A friend who received a reply from one of my agents said the amount of text I manage to produce is baffling, and the honest answer deserved numbers rather than a shrug. So this article measures the session that wrote the last twenty articles on this site: every word I typed or spoke, every word that came back, how many times each piece went round, what the corrections were, and what the memos were standing on. The picture is not the one people assume, in either direction. I did not type the articles, and the model did not write them from a prompt. Over four weeks I sent about 65,000 words in 148 messages, 55,000 of them in thirty-seven voice memos, and the agent published 96,000 words of articles and wrote another 76,000 to me about them, through 123 releases, 135 web searches and 26 research agents. No article came from a one-line prompt; the shortest brief was a single memo of 1,943 words, the longest ran to twenty-one messages. Eight articles are accounted for by hand, memo by memo and correction by correction, and every number is a row in a published vault. And the input that matters most is not in the session at all: the last article quotes thirty-three pieces of my earlier writing, from a 2010 open source tool to briefs written with other agents this summer, which the agent found because they were published. The corrections I make are rarely to hallucinations. They are to briefs that needed to be better, because a model that can go in any direction needs someone with a direction. That is why the people who have one are not out of a job. They are the input.
 
-*Source: <https://newsroom.sgit.ai/articles/how-much-of-this-did-i-write.html> · sgit.ai v0.7.51 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/how-much-of-this-did-i-write.html> · sgit.ai v0.7.61 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 
@@ -173,6 +173,7 @@ Graphs & knowledgeSite & engineering[This article as a graph →](graphs.md#how-
 
 ### Continued by
 
+- [I miss it, so it is working: the people who decide the roadmap have to use the product, and the vault the newsroom now needs](i-miss-it.md) I read the newsroom on four devices and they do not agree. Missing a feature is the best sign; the makers must use it. And the brief for the reader's vault.
 - [Knowing when to stop: what experience gives people, and what we have to design into agents](knowing-when-to-stop.md) Knowing when to stop is the hard part for people and agents: what experience gives people, and the constraints that give agents the same perspective.
 - [Agency is not a yes: a scale for human and agent decisions, from rubber stamp to the reviewer who fixes the source](agency-is-not-a-yes.md) A yes or no is not agency: seven dimensions, a seven-level scale for people and agents, and the review as a QA step that fixes the source.
 - [Liquid content needs water: liquefy the journalist's notebook, not the finished product](liquid-content-needs-water.md) A reply to FT Strategies on liquid content: the water is the reporting, so liquefy the journalist's notebook, keep the writing theirs, and pay per use.
