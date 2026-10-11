@@ -1,7 +1,33 @@
 {
+ "labs": [
+  {
+   "path": "passkey/lab.js",
+   "what": "The passkey lab: WebAuthn with PRF, the door derivation, sgit's key derivation, a stand-alone vault client",
+   "lines": 410,
+   "sha256": "b280695ceddde64e9e01a45b827b62fecc9aebc02b9297f189e3c95f372c8140"
+  },
+  {
+   "path": "passkey/lab.css",
+   "what": "its styles",
+   "lines": 28,
+   "sha256": "d6a2b51445e89ca9de81ddc432625981e1fb726f84a37b5a3b8a7bd1b573fab7"
+  },
+  {
+   "path": "passkey/vectors.json",
+   "what": "its test vectors, from sgit's Python",
+   "lines": 19,
+   "sha256": "cfebdc0fe8d139aec4ae19998834767d972195f01c8689d78e56b76ad411ce68"
+  },
+  {
+   "path": "passkey/index.html",
+   "what": "the page",
+   "lines": 116,
+   "sha256": "c718547b21faa47126bb920f1c984334bd1cbeda114156872be2eace9aed4c1e"
+  }
+ ],
  "what": "The map of everything a reader does on newsroom.sgit.ai, and the review of it: phase 0 of the move described in https://newsroom.sgit.ai/articles/explorer-to-villager-newsroom.html. Written by admin/build/api_map.py on every build. The hashes are the 'before' for the move's rule that the live site serves the same bytes after it: scripts, styles and JSON raw; pages with the site chrome and version stamps normalised.",
  "api_means": "client-side: components, formats and contracts the browser runs, with no server and nothing to deploy but files",
- "release": "v0.8.2",
+ "release": "v0.8.3",
  "date": "11 October 2026",
  "source": {
   "sgit_ai": "v0.7.61",
@@ -19,7 +45,7 @@
   "outputs": 8,
   "contracts": 13,
   "findings": 18,
-  "tests": 112,
+  "tests": 141,
   "frozen_files": 20,
   "frozen_lines": 5697,
   "pages_with_csp": 0
@@ -488,12 +514,19 @@
    "what": "the review's findings, pinned as the behaviour is today",
    "lines": 138,
    "checks": 14
+  },
+  {
+   "path": "admin/build/test_passkey.mjs",
+   "what": "the passkey lab in Chromium, with a virtual authenticator that has PRF",
+   "lines": 153,
+   "checks": 29
   }
  ],
  "ci_runs": [
   "admin/build/test_meter.mjs",
   "admin/build/test_lists.mjs",
-  "admin/build/test_review.mjs"
+  "admin/build/test_review.mjs",
+  "admin/build/test_passkey.mjs"
  ],
  "loader": {
   "lines": 17,
@@ -606,7 +639,7 @@
   "account": 1,
   "landing": 6,
   "newsroom": 1,
-  "page": 362,
+  "page": 363,
   "personas": 1,
   "share": 1,
   "topped-up": 1,

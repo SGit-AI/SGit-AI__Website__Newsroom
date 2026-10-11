@@ -261,6 +261,17 @@ Part one of [From me to you, in a link](../../articles/a-reading-list-in-a-link.
   lists; paying for someone else's reading. The agent brief (part two) belongs to the RiskMandate agent: it needs
   `articles/ids.json` and the link format on `/for/`.
 
+## 11 October, v0.8.1 to v0.8.3: the sync, the map, the lab
+
+- **v0.8.1**: sgit.ai v0.7.61 imported (five articles, 75 to 79) and sgit.ai's page for publishers at `/publishers/`.
+- **v0.8.2**: phase 0 of [Go slow to go fast](../../articles/explorer-to-villager-newsroom.html): `/newsroom-api/`,
+  the map of the reader code with before-hashes, controls, inputs, outputs and contracts, and the review with 18
+  findings, each bug pinned by `admin/build/test_review.mjs`; the generated note is
+  `2026-10-11__newsroom-api-map-and-review.md`. CI runs the browser tests before a tag (the one change).
+- **v0.8.3**: `/passkey/`, the lab for [The passkey opens the vault](../../articles/the-passkey-opens-the-vault.html):
+  a passkey with PRF, the door derivation written out, sgit's keys, a recovery code, test vectors against sgit's
+  Python, and the door created on a vault server with an access key. Not a feature; what-runs says so.
+
 ## Things for Dinis
 
 1. **A contact for pilots** (finding 1). It needs an address and a commitment, and I would rather not choose

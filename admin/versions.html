@@ -12,7 +12,7 @@
 
 <nav class="site"><div class="row">
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.8.2</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.8.3</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -74,6 +74,7 @@
       <a class="sl" href="../demos/vaults/newsroom-synthetic-users/index.html">The study: five readers tested this site</a>
       <a class="sl" href="../mvps/seed-companies.html">Seed companies</a>
       <a class="sl" href="../newsroom-api/index.html">The reader API: a map, and a review</a>
+      <a class="sl" href="../passkey/index.html">The passkey lab</a>
       <a class="sl" href="../admin/index.html">How this site is built</a>
       </div>
     </div>
@@ -127,6 +128,15 @@
 <div class="tablewrap"><table class="vers">
   <thead><tr><th>Version</th><th>Date</th><th>What shipped</th></tr></thead>
   <tbody>
+    <tr>
+      <td class="vnum">v0.8.3</td>
+      <td>11 Oct 2026</td>
+      <td><b>The passkey lab: the pieces of a reader account with no server, as things you can press.</b>
+        <p><b>What it is.</b> <a href="../articles/the-passkey-opens-the-vault.html">The passkey opens the vault</a> designs an account with no server, no sign-in and no email: a passkey&rsquo;s PRF bytes derive a small door vault, the door holds the master vault&rsquo;s key, the master holds the rest. Before any of it reaches the reading account, <a href="../passkey/index.html">the passkey lab</a> lets a person try each piece in their own browser. Card 0 reads what the browser can do. Card 1 makes a passkey for this host with the PRF extension and shows whether PRF is on and whether the passkey is synced (the browser&rsquo;s backup flags); when PRF is off it shows the article&rsquo;s ladder. Card 2 gets the 32 PRF bytes with the fixed input and shows a fingerprint to compare with another device, where the same passkey gives the same bytes. Card 3 derives the door from them, the article&rsquo;s steps made exact (HKDF to a seed, a 64-character passphrase and an 8-character vault id with rejection sampling), then sgit&rsquo;s own derivation of the read and write keys, PBKDF2-HMAC-SHA256 at 600,000 iterations each, timed. Card 4 makes a 26-character recovery code and shows it is a second door. Card 5 runs the same derivation from a fixed fake PRF output and compares every value with what sgit&rsquo;s own Python produced (<a href="../passkey/vectors.json">vectors.json</a>, from <code>admin/build/passkey_vectors.py</code>, which uses sgit-ai&rsquo;s <code>Vault__Crypto</code> for the keys, the file ids and a deterministic encryption): the browser and the command line agree on all ten. Card 6, with an access key pasted and kept in memory only, checks the derived address on the vault server, creates the door by writing its one file (the master vault&rsquo;s key, made at random, encrypted in the browser under the door&rsquo;s read key, as a content-addressed sgit object), opens it again as a new device would, and deletes the file; every call is listed as it happens.</p>
+        <p><b>What it is not.</b> A feature. It does not touch the reading account, the balance or the personas, and <a href="../shipped/index.html">what runs</a> lists it as a lab. The master vault, moving the account into it, a second passkey as a door and anything that signs the reader in are not built. The door record it writes is one encrypted object, not yet a commit, so sgit&rsquo;s clone of the door would show an empty history. The vault id is never destroyed, because a destroyed id can never be used again and this one is derived from the passkey. The page loads no code from anywhere else and stores one public thing, the id of a passkey it made.</p>
+        <p><b>Checked.</b> <code>admin/build/test_passkey.mjs</code> drives the page in Chromium with a virtual authenticator that has PRF: the vectors agree, a passkey is made with PRF on, the same bytes come back twice, the door is stable, the recovery code round-trips, and the server flow runs end to end against a stand-in server that checks the access-key and write-key headers; what reached it was ciphertext; the access key was not in storage; no request went to any other host. 26 checks. The real server is for a person with an access key to try; the page says what came back either way. CI now runs four test files.</p>
+      </td>
+    </tr>
     <tr>
       <td class="vnum">v0.8.2</td>
       <td>11 Oct 2026</td>
@@ -617,7 +627,7 @@
     <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="netline"><a href="https://sgit.ai" style="display:inline;padding:0"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://pt.newsroom.sgit.ai" style="display:inline;padding:0">&#8593; pt.newsroom.sgit.ai</a> &middot; <a href="https://graphs.sgit.ai" style="display:inline;padding:0">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai" style="display:inline;padding:0">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai" style="display:inline;padding:0">&#8593; nhi.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai" style="display:inline;padding:0">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.8.2</a> &middot; <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.8.3</a> &middot; <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>The newsroom</h4>

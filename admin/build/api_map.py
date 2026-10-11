@@ -80,8 +80,11 @@ BUILD = [
     ("admin/build/newsroom-text.json", "the eight text rules, applied on import"),
     ("admin/build/validate.js", "the gate: checks 2d (live link), 5 (key tripwire), 11 (imports unedited), 12 (numbers hold)"),
 ]
+LABS = [("passkey/lab.js", "The passkey lab: WebAuthn with PRF, the door derivation, sgit's key derivation, a stand-alone vault client"),
+        ("passkey/lab.css", "its styles"), ("passkey/vectors.json", "its test vectors, from sgit's Python"), ("passkey/index.html", "the page")]
 TESTS = [("admin/build/test_meter.mjs", "the meter in Chromium"), ("admin/build/test_lists.mjs", "the parser in Node and the list pages in Chromium"),
-         ("admin/build/test_review.mjs", "the review's findings, pinned as the behaviour is today")]
+         ("admin/build/test_review.mjs", "the review's findings, pinned as the behaviour is today"),
+         ("admin/build/test_passkey.mjs", "the passkey lab in Chromium, with a virtual authenticator that has PRF")]
 
 # ----------------------------------------------------------------------------------------------- the views and controls
 # What a reader can click, type or pay, per view, and the call it makes. Read from sg-meter.js; a change there is a change here.
@@ -383,7 +386,9 @@ def build_map():
     tests = [{"path": p, "what": w, "lines": lines(p), "checks": counts[p]} for p, w in TESTS if (ROOT / p).exists()]
     fr = frozen()
     code_lines = sum(f["lines"] for f in files if f["path"].endswith((".js", ".css", ".tpl")))
+    labs = [{"path": p, "what": w, "lines": lines(p), "sha256": sha(p)} for p, w in LABS if (ROOT / p).exists()]
     return {
+        "labs": labs,
         "what": "The map of everything a reader does on newsroom.sgit.ai, and the review of it: phase 0 of the move described in "
                 f"https://{HOST}/articles/explorer-to-villager-newsroom.html. Written by admin/build/api_map.py on every build. "
                 "The hashes are the 'before' for the move's rule that the live site serves the same bytes after it: scripts, "
@@ -460,6 +465,9 @@ def page_html(m):
 <p>The code a reader runs, where it comes from, and what each file reaches for. {n_verbatim} of the {n_code} code files come from sgit.ai byte for byte and cannot be changed here by a rule of the import; that is R4 and R12 below.</p>
 {files}
 <p class="small dim">The page loader: an inline script on every imported page ({loader["lines"]} lines, SHA-256 {code(loader["sha256"][:16])}) that loads the stylesheet and <code>assets/site.js</code>, by the vault bridge when the page is inside a vault and otherwise by fetching the text and evaluating it. {loader["pages_that_eval"]} pages carry a script that evaluates fetched text (R10). The {c["frozen_files"]} files of earlier meter versions (1.0.0 to 1.3.1, {c["frozen_lines"]:,} lines) are published artefacts on immutable paths; they move frozen, and their only test is that they are still served byte for byte.</p>
+<h3>Labs, beside the reader code and not part of it</h3>
+<p>Code that runs in a browser on this site, is not on a reader&rsquo;s path, and will move with the rest: today, the passkey lab. It makes no change to the reading account and is counted apart.</p>
+{table(["File", "What it is", "Lines", "SHA-256"], [(code(l["path"]), esc(l["what"]), l["lines"], code(l["sha256"][:16])) for l in m["labs"]])}
 <h2 id="pages">The pages</h2>
 {pages}
 <p class="small dim">Which pages carry which view: {views}. The balance chip is in the nav of every page; every page is a charged or free page.</p>

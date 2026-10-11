@@ -228,6 +228,11 @@ def shipped(f):
          '<a href="../for/index.html">How a link is made</a>.',
          'The names are whatever the link says: there is no way yet to prove who sent a list, and nothing counts who opened one. '
          'The page that makes a list is tested with a script, not yet with a synthetic recipient on a phone.'),
+        ('<b>The passkey lab</b>', 'Proofs of concept for a reader account with no server: a passkey with PRF, the same bytes on '
+         'every device, a door vault derived from them with sgit&rsquo;s own key derivation, a recovery code, and the door '
+         'created on a vault server with an access key. <a href="../passkey/index.html">Try it</a>.',
+         'A lab, not a feature: it does not touch the reading account. The master vault, moving the account into it and '
+         'a second passkey as a door are designed (<a href="../articles/the-passkey-opens-the-vault.html">the passkey opens the vault</a>), not built.'),
         ('<b>Links to a persona</b>', 'A link opens the newsroom as one of five starting personas (founder, journalist, '
          'security lead, AI builder, board member), with its picks, reading list and graph. The persona is added to '
          'the reader&rsquo;s browser as a visitor, which they can keep or remove. <a href="../persona/index.html">The '
