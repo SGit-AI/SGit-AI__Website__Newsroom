@@ -2,7 +2,7 @@
 
 > A business plan, written to be handed to someone who wants to build it or to collaborate on it. The service helps companies manage the cost of agentic AI, and it starts from a claim this site has made before: cost is an engineering problem. An agent estate whose bill nobody can explain is an estate that shipped from the explorer side without the villager's discipline, and the Wardley map says so: prompts and workflows grown in sessions, running in production on commodity model APIs, with logs, traces and invoices that exist and are never read together, and no one who owns the cost. The service installs nothing. It reads what is already there, draws the footprint of every agent, builds a digital twin of the estate, writes the behaviour policy each agent was in fact running under, and maps cost and capability into one graph. The findings are two lists: what to stop paying for, which pays for the engagement, and what to build, which is the reason to have it: the places of attrition, the gaps, the workflow three teams rebuilt, the policy that would end a loop. The gaps are findings too: a company that cannot provide the data has learned the first one. Vaults carry the data in, the transformations as commits, and anonymised extracts out as sealed envelopes. Four price levels on the RiskMandate pattern, every number a labelled assumption.
 
-*Source: <https://newsroom.sgit.ai/articles/agentic-cost-is-an-engineering-problem.html> · sgit.ai v0.7.79 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/agentic-cost-is-an-engineering-problem.html> · sgit.ai v0.7.81 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 
@@ -122,6 +122,7 @@ Startups & strategyAgents & policyVaults & method[This article as a graph →](g
 
 ### Continued by
 
+- [Sovereignty is the ability to move: play where the ball is going, take away the dot, and keep a twin that works](sovereignty-is-the-ability-to-move.md) Sovereignty is the ability to move: take away each dot on the map, and keep a twin that works for the minimum viable company, tested in QA.
 - [Move the cloud, not the code: twins, sovereignty that works in practice, and the migration that pays for itself on the day you switch](move-the-cloud-not-the-code.md) Workloads stay on hyperscalers because moving means changing code; a twin lets the code not know, and the value in the twin is what signs the migration.
 - [Why I love Wardley maps: the best of ours, how I read one, and a map inside a map inside a map](why-i-love-wardley-maps.md) The best of our Wardley maps with their context, why the technique matters, one map read as a story, and a map inside a map inside a map.
 

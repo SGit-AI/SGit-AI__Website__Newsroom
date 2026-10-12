@@ -2,7 +2,7 @@
 
 > I was with someone today who runs their customer relationships in a spreadsheet, a customised one, and runs them well. The jump from that to what our agents do, one folder per person in an encrypted vault with a record, an append-only ledger, every message word for word and a summary the agent rebuilds, is too high to make in one step, and it does not need to be made in one step. Almost all of it can be done with what a Google Workspace account and a Claude seat already give you. This is the walkthrough. The row becomes a folder in Google Drive with four plain documents and one the agent writes; Claude's app, connected to Drive and Gmail, works inside the folder under a behaviour policy that is the instructions of one Project, and the three rules that matter carry straight over from ours: draft and never send, append and never rewrite, stay in the folder. Then the migration from the sheet, five exercises from a question to a campaign so that the habit forms, what the agent will get wrong at first, and when the folders are worth moving into a vault. It is written so that an agent can send it, with the person's own names filled in, to anyone who asks.
 
-*Source: <https://newsroom.sgit.ai/articles/from-a-spreadsheet-to-a-folder-per-person.html> · sgit.ai v0.7.79 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/from-a-spreadsheet-to-a-folder-per-person.html> · sgit.ai v0.7.81 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 

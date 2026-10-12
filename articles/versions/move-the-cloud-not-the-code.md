@@ -2,7 +2,7 @@
 
 > Every published version of the article "Move the cloud, not the code", with the date, the words and what changed.
 
-*Source: <https://newsroom.sgit.ai/articles/versions/move-the-cloud-not-the-code.html> · sgit.ai v0.7.79 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/versions/move-the-cloud-not-the-code.html> · sgit.ai v0.7.81 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 
@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-12 | published | 3,271 | first published | this release | [current](../move-the-cloud-not-the-code.md) |
+| **v1.0.0** | 2026-10-12 | published | 3,271 | first published | [`5f24a3cbe`](https://github.com/SGit-AI/SGit-AI__Website/commit/5f24a3cbed112e40293682bb32c671c84e706f46) | [current](../move-the-cloud-not-the-code.md) |
 
 [← Back to the article](../move-the-cloud-not-the-code.md) · [All articles](../index.md)
 

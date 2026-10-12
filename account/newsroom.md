@@ -2,7 +2,7 @@
 
 > Your own front page, one persona at a time: picks, what you kept, and the graph your reading has grown. Worked out in your browser from a history nobody else holds.
 
-*Source: <https://newsroom.sgit.ai/account/newsroom.html> · sgit.ai v0.7.79 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/account/newsroom.html> · sgit.ai v0.7.81 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 

@@ -1,7 +1,7 @@
 {
   "site": "https://sgit.ai",
   "generated": "2026-10-12",
-  "site_version": "v0.7.79",
+  "site_version": "v0.7.81",
   "schema": "https://newsroom.sgit.ai/articles/graphs.html",
   "topics": [
     {
@@ -55,6 +55,502 @@
   ],
   "articles": [
     {
+      "slug": "sovereignty-is-the-ability-to-move",
+      "title": "Sovereignty is the ability to move: play where the ball is going, take away the dot, and keep a twin that works",
+      "date": "2026-10-12",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/sovereignty-is-the-ability-to-move.html",
+      "markdown": "https://newsroom.sgit.ai/articles/sovereignty-is-the-ability-to-move.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/sovereignty-is-the-ability-to-move.webp",
+      "teaser": "Sovereignty is the ability to move: take away each dot on the map, and keep a twin that works for the minimum viable company, tested in QA.",
+      "topics": [
+        "startups-and-strategy",
+        "site-and-engineering"
+      ],
+      "tags": [
+        "sovereignty",
+        "resilience",
+        "europe",
+        "wardley-maps",
+        "twins",
+        "open-source",
+        "minimum-viable-company",
+        "qa",
+        "testing",
+        "disaster-recovery",
+        "strategy",
+        "article"
+      ],
+      "links_out": [
+        "judo-for-small-countries",
+        "agentic-cost-is-an-engineering-problem",
+        "why-i-love-wardley-maps",
+        "footprint-and-blast-radius",
+        "move-the-cloud-not-the-code"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "sv-dot-1.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/sv-dot-1.webp",
+          "caption": "Take away the dot, in three frames. One service as it runs; object storage removed and the blast radius followed up the edges to the customers; a twin of the storage, tested in QA, putting the service back for the priority customers, degraded but running. Use the controls to stop on each frame.",
+          "kind": "wardley-map",
+          "frames": [
+            "https://newsroom.sgit.ai/articles/images/sv-dot-1.webp",
+            "https://newsroom.sgit.ai/articles/images/sv-dot-2.webp",
+            "https://newsroom.sgit.ai/articles/images/sv-dot-3.webp"
+          ]
+        },
+        {
+          "file": "sv-levels.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/sv-levels.webp",
+          "caption": "A maturity model for every dot you do not control. From 0, it stops, through the data can leave, it runs somewhere once, it runs for the minimum viable company, to 4, it moves when you decide. Each level carries a cost and a population it serves, and each is only real if it was tested.",
+          "kind": "maturity-model"
+        }
+      ],
+      "graph": {
+        "slug": "sovereignty-is-the-ability-to-move",
+        "teaser": "Sovereignty is the ability to move: take away each dot on the map, and keep a twin that works for the minimum viable company, tested in QA.",
+        "topics": [
+          "startups-and-strategy",
+          "site-and-engineering"
+        ],
+        "core_idea": "Europe's sovereignty conversation is mostly about frontier models, data centres and GPUs, which is playing where the ball is rather than where it is going; sovereignty is the ability to move workloads and actions, which most organisations lack because everything is hard-coded and never deployed twice; the test is a Wardley map where each dot is taken away and the blast radius followed up to the customer, across the whole stack; the answer is not an alternative as good as today but a twin that works for the minimum viable company, run in QA all the time, scored on a maturity model; ask whether it can move before asking whether it is cheap; only open source gives control that survives an acquisition; Europe lacks a commercial open source model, not startups or talent; some of this should be provided centrally like a road; and models and twins now make the analysis possible at scale.",
+        "nodes": [
+          {
+            "id": "wrong-things",
+            "label": "The conversation is about things Europe does not control",
+            "kind": "claim",
+            "summary": "Frontier models, giant data centres and GPUs take years and capital and benefit whoever already has them."
+          },
+          {
+            "id": "ball",
+            "label": "Play where the ball is going",
+            "kind": "concept",
+            "summary": "A good padel player has time because they read the ball and move to where it will be; moving after it comes off the glass is hopeless."
+          },
+          {
+            "id": "ability-to-move",
+            "label": "Sovereignty is the ability to move",
+            "kind": "claim",
+            "summary": "Agility, almost liquidity: moving workloads and actions between providers, even within one cloud, which most organisations cannot do."
+          },
+          {
+            "id": "critical",
+            "label": "Critical means the business stops",
+            "kind": "claim",
+            "summary": "For a company a supplier disruption that stops the service is critical whether or not it is national infrastructure."
+          },
+          {
+            "id": "take-away-dot",
+            "label": "Take away the dot",
+            "kind": "method",
+            "summary": "On a Wardley map remove one thing you do not control and follow the blast radius up to the customer; if the service stops, take it to the board."
+          },
+          {
+            "id": "whole-stack",
+            "label": "Every dot must be replaceable, built or bought",
+            "kind": "claim",
+            "summary": "Custom-built systems stand on commodities, and one only a single person can deploy is a single point of failure too."
+          },
+          {
+            "id": "zero-to-hundred",
+            "label": "Do not jump from zero to a hundred",
+            "kind": "method",
+            "summary": "The alternative does not have to be as good as today; it has to work, slower and dearer if need be."
+          },
+          {
+            "id": "mvc",
+            "label": "The minimum viable company",
+            "kind": "concept",
+            "summary": "The smallest version of the business that keeps serving the priority customers while the rest recovers; a backup of operations, not only data."
+          },
+          {
+            "id": "twin",
+            "label": "A twin for every dot you do not control",
+            "kind": "artefact",
+            "summary": "Compatible enough that the application cannot tell, on infrastructure you can run; the S3 twin exists, the others are the work."
+          },
+          {
+            "id": "levels",
+            "label": "Can it move: a maturity model",
+            "kind": "artefact",
+            "summary": "0 it stops, 1 the data can leave, 2 it runs somewhere once, 3 it runs for the minimum viable company, 4 it moves when you decide."
+          },
+          {
+            "id": "qa",
+            "label": "Run it in QA, all the time",
+            "kind": "method",
+            "summary": "Disposable QA environments built on the twins prove each week that the business can run without the dots you do not control."
+          },
+          {
+            "id": "possible-then-cheap",
+            "label": "Can it move, then is it cheap",
+            "kind": "claim",
+            "summary": "Possibility first with a cost and scale matrix per dot; cost effectiveness second; asking the second first ends the conversation."
+          },
+          {
+            "id": "acquisition",
+            "label": "Open source, or one acquisition away",
+            "kind": "claim",
+            "summary": "A European supplier today can be bought tomorrow; only open source and Creative Commons give control that survives a change of owner."
+          },
+          {
+            "id": "europe-gap",
+            "label": "Europe lacks a commercial open source model, not startups",
+            "kind": "claim",
+            "summary": "Prosus and Dealroom: as many AI startups as the US, a third of the breakout rate; 44% of US unicorn founders born abroad."
+          },
+          {
+            "id": "central",
+            "label": "Provided centrally, like a road",
+            "kind": "method",
+            "summary": "Not every company can twin every dependency; governments, industry bodies and large buyers should provide some of it as open infrastructure."
+          },
+          {
+            "id": "now",
+            "label": "Models and twins make the analysis scale",
+            "kind": "claim",
+            "summary": "Mapping, removing dots and simulating the blast radius can now be done at scale, better on twins than in spreadsheets."
+          }
+        ],
+        "edges": [
+          {
+            "from": "wrong-things",
+            "to": "ball",
+            "rel": "contrasts"
+          },
+          {
+            "from": "ball",
+            "to": "ability-to-move",
+            "rel": "leads-to"
+          },
+          {
+            "from": "critical",
+            "to": "ability-to-move",
+            "rel": "extends"
+          },
+          {
+            "from": "ability-to-move",
+            "to": "take-away-dot",
+            "rel": "depends-on"
+          },
+          {
+            "from": "take-away-dot",
+            "to": "whole-stack",
+            "rel": "extends"
+          },
+          {
+            "from": "take-away-dot",
+            "to": "zero-to-hundred",
+            "rel": "leads-to"
+          },
+          {
+            "from": "zero-to-hundred",
+            "to": "mvc",
+            "rel": "depends-on"
+          },
+          {
+            "from": "mvc",
+            "to": "twin",
+            "rel": "depends-on"
+          },
+          {
+            "from": "twin",
+            "to": "qa",
+            "rel": "produces"
+          },
+          {
+            "from": "levels",
+            "to": "take-away-dot",
+            "rel": "answers"
+          },
+          {
+            "from": "qa",
+            "to": "levels",
+            "rel": "produces"
+          },
+          {
+            "from": "possible-then-cheap",
+            "to": "levels",
+            "rel": "depends-on"
+          },
+          {
+            "from": "acquisition",
+            "to": "ability-to-move",
+            "rel": "depends-on"
+          },
+          {
+            "from": "europe-gap",
+            "to": "acquisition",
+            "rel": "extends"
+          },
+          {
+            "from": "central",
+            "to": "twin",
+            "rel": "produces"
+          },
+          {
+            "from": "now",
+            "to": "take-away-dot",
+            "rel": "extends"
+          }
+        ],
+        "links": {
+          "articles": [
+            "judo-for-small-countries",
+            "agentic-cost-is-an-engineering-problem",
+            "why-i-love-wardley-maps",
+            "footprint-and-blast-radius",
+            "move-the-cloud-not-the-code"
+          ],
+          "pages": [],
+          "sites": [
+            "https://www.prosus.com/news-insights/2026/europe-is-ais-invisible-giant",
+            "https://news.crunchbase.com/venture/foreign-born-entrepreneurs-drive-americas-unicorn-boom-strebulaev-stanford/",
+            "https://twins.sgit.ai/what-is-a-twin/index.html",
+            "https://open-source.sgit.ai/"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "If you do not have the software, the schema and the ability to load and move it, you do not have data mobility; you have an archive.",
+            "why": "Why a backup of data is not a backup of operations."
+          },
+          {
+            "text": "Even if a supplier is European today, you are one acquisition away from losing that.",
+            "why": "Why only open source gives control that survives a change of owner."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "the-records-ran-out",
+      "title": "The records ran out: a fresh agent found the shared contract in two MCP calls, and where sgit and RiskMandate fit at the edges",
+      "date": "2026-10-12",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/the-records-ran-out.html",
+      "markdown": "https://newsroom.sgit.ai/articles/the-records-ran-out.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/the-records-ran-out.webp",
+      "teaser": "A fresh agent found a shared contract in two MCP calls from build records; where the records stopped is exactly where evidence labels and sgit vaults fit.",
+      "topics": [
+        "agents-and-policy",
+        "site-and-engineering"
+      ],
+      "tags": [
+        "agents",
+        "mcp",
+        "claude-code",
+        "memory",
+        "records",
+        "evidence",
+        "sgit",
+        "riskmandate",
+        "agent-behaviour-policy",
+        "licence-to-operate",
+        "versioning",
+        "article"
+      ],
+      "links_out": [
+        "connector-twin-before-you-deploy-an-agent",
+        "every-risk-is-already-accepted",
+        "encrypted-memory-for-isolated-agents",
+        "memory-is-not-a-spectator-sport",
+        "the-mandate-stack",
+        "footprint-and-blast-radius"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "rr-gaps.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/rr-gaps.webp",
+          "caption": "Where the records ran out, and what fills each gap. The left two columns are Ignacio Aldama's own findings; the right two are the label each one gets in the vocabulary of evidence and barriers, and what fills it today. The status column says which of those exist, which are documented and untested here, and which are proposed.",
+          "kind": "comparison"
+        }
+      ],
+      "graph": {
+        "slug": "the-records-ran-out",
+        "teaser": "A fresh agent found a shared contract in two MCP calls from build records; where the records stopped is exactly where evidence labels and sgit vaults fit.",
+        "topics": [
+          "agents-and-policy",
+          "site-and-engineering"
+        ],
+        "core_idea": "Ignacio Aldama's test shows build-generated dependency records give a fresh Claude Code session a system's structure in two MCP calls, enough to know what not to touch, and he names where the records stop: they describe structure not behaviour, a green build can hide tests that never ran, a demo carries a public signing secret and unfinished work, and memory holds intent without being tied to a version; each edge has a name in the vocabulary of evidence levels and barriers, and is filled by labelling every fact with how it is known, treating a skipped test as an expectation, accepting a shortcut by name and for an interval, keeping memory and records in one encrypted versioned sgit history, and letting records cross company boundaries with publish, clone and mirror.",
+        "nodes": [
+          {
+            "id": "demo",
+            "label": "Two MCP calls found the shared contract",
+            "kind": "example",
+            "summary": "A fresh session called read_scope and read_components, saw two components share one version of the ticket entity, changed only the app; 41 tests passed, nine new."
+          },
+          {
+            "id": "what-not-to-touch",
+            "label": "Knowing what is shared tells an agent what not to touch",
+            "kind": "claim",
+            "summary": "The records gave structure, and structure was enough to keep the change inside one component."
+          },
+          {
+            "id": "structure-not-behaviour",
+            "label": "Records describe structure, not behaviour",
+            "kind": "claim",
+            "summary": "The route list lived in a test fake's docs and nothing checked it against the real service."
+          },
+          {
+            "id": "evidence-levels",
+            "label": "Label every fact with how it is known",
+            "kind": "method",
+            "summary": "Derived, inferred, self-reported, documented, measured, observed: the route list was documented, the restart check was observed."
+          },
+          {
+            "id": "green-build",
+            "label": "A green build can hide tests that never ran",
+            "kind": "claim",
+            "summary": "Database tests skip when CI cannot start the database, so a pass does not show they ran."
+          },
+          {
+            "id": "expectation",
+            "label": "A skipped test is an expectation reported as a control",
+            "kind": "concept",
+            "summary": "Only a boundary is a control; count the run from what happened and drop the evidence back to documented until the test runs."
+          },
+          {
+            "id": "shortcuts",
+            "label": "Demo shortcuts stay invisible",
+            "kind": "claim",
+            "summary": "A demo account and a public signing secret are a grant wider than the mandate; concurrency, migrations and recovery are still to do."
+          },
+          {
+            "id": "acceptance",
+            "label": "Accept by name, in a direction, for an interval, or stop",
+            "kind": "method",
+            "summary": "No deny button for a deployed system; the unfinished items become conditions in a licence to operate with owners and expiries."
+          },
+          {
+            "id": "memory-drift",
+            "label": "Memory holds intent but is not tied to a version",
+            "kind": "claim",
+            "summary": "A memory note is dated; a record is part of its version but carries no intent."
+          },
+          {
+            "id": "one-history",
+            "label": "Memory and records in one encrypted versioned history",
+            "kind": "method",
+            "summary": "In an sgit vault the intent of version 1.4 is committed at 1.4, and encryption means the sensitive intent can be written down at all."
+          },
+          {
+            "id": "boundary",
+            "label": "Records must cross company boundaries",
+            "kind": "question",
+            "summary": "His goal is a record that holds where the other side is outside the agent's index."
+          },
+          {
+            "id": "publish-mirror",
+            "label": "Publish, clone and mirror",
+            "kind": "artefact",
+            "summary": "sgit publish and clone over plain GETs, vault mirror for custody without access, append lanes for writers who cannot read; documented in 0.21.0, untested here."
+          },
+          {
+            "id": "judgement",
+            "label": "The best decision was the agent's own judgement",
+            "kind": "claim",
+            "summary": "Nothing stopped it changing a contract two components depend on: a write row held by an expectation, which a platform could make a boundary."
+          }
+        ],
+        "edges": [
+          {
+            "from": "demo",
+            "to": "what-not-to-touch",
+            "rel": "produces"
+          },
+          {
+            "from": "demo",
+            "to": "structure-not-behaviour",
+            "rel": "leads-to"
+          },
+          {
+            "from": "structure-not-behaviour",
+            "to": "evidence-levels",
+            "rel": "answers"
+          },
+          {
+            "from": "green-build",
+            "to": "expectation",
+            "rel": "example-of"
+          },
+          {
+            "from": "expectation",
+            "to": "evidence-levels",
+            "rel": "depends-on"
+          },
+          {
+            "from": "shortcuts",
+            "to": "acceptance",
+            "rel": "leads-to"
+          },
+          {
+            "from": "memory-drift",
+            "to": "one-history",
+            "rel": "leads-to"
+          },
+          {
+            "from": "one-history",
+            "to": "evidence-levels",
+            "rel": "extends"
+          },
+          {
+            "from": "boundary",
+            "to": "publish-mirror",
+            "rel": "answers"
+          },
+          {
+            "from": "one-history",
+            "to": "publish-mirror",
+            "rel": "leads-to"
+          },
+          {
+            "from": "what-not-to-touch",
+            "to": "judgement",
+            "rel": "contrasts"
+          },
+          {
+            "from": "judgement",
+            "to": "expectation",
+            "rel": "example-of"
+          }
+        ],
+        "links": {
+          "articles": [
+            "connector-twin-before-you-deploy-an-agent",
+            "every-risk-is-already-accepted",
+            "encrypted-memory-for-isolated-agents",
+            "memory-is-not-a-spectator-sport",
+            "the-mandate-stack",
+            "footprint-and-blast-radius"
+          ],
+          "pages": [
+            "case-studies/exposed-vault-key.html"
+          ],
+          "sites": [
+            "https://thenewstack.io/claude-code-mcp-records/",
+            "https://abp.sgit.ai/data/index.html",
+            "https://riskmandate.ai/acceptance.html",
+            "https://riskmandate.ai/licence-to-operate.html",
+            "https://riskmandate.ai/agent-behaviour-policy.html"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "knowing what is shared also tells an agent what not to touch.",
+            "why": "Aldama's own line for why structure alone was enough in his test."
+          },
+          {
+            "text": "A skipped test is a control that did not run.",
+            "why": "The green-build edge in the vocabulary of barriers."
+          }
+        ]
+      }
+    },
+    {
       "slug": "move-the-cloud-not-the-code",
       "title": "Move the cloud, not the code: twins, sovereignty that works in practice, and the migration that pays for itself on the day you switch",
       "date": "2026-10-12",
@@ -94,7 +590,9 @@
         "why-i-love-wardley-maps",
         "where-the-platform-draws-the-line"
       ],
-      "links_in": [],
+      "links_in": [
+        "sovereignty-is-the-ability-to-move"
+      ],
       "figures": [
         {
           "file": "mc-twin.webp",
@@ -358,6 +856,7 @@
         "agency-is-not-a-yes"
       ],
       "links_in": [
+        "sovereignty-is-the-ability-to-move",
         "move-the-cloud-not-the-code"
       ],
       "figures": [
@@ -637,6 +1136,7 @@
         "where-the-vault-keys-live"
       ],
       "links_in": [
+        "sovereignty-is-the-ability-to-move",
         "move-the-cloud-not-the-code",
         "judo-for-small-countries"
       ],
@@ -1230,6 +1730,7 @@
         "the-article-remains-a-product"
       ],
       "links_in": [
+        "sovereignty-is-the-ability-to-move",
         "move-the-cloud-not-the-code",
         "why-i-love-wardley-maps"
       ],
@@ -10271,6 +10772,7 @@
         "the-agent-team-as-it-runs"
       ],
       "links_in": [
+        "the-records-ran-out",
         "brief-the-agent-too",
         "no-server-by-design",
         "where-the-vault-keys-live",
@@ -13725,6 +14227,7 @@
         "nineteen-sites"
       ],
       "links_in": [
+        "the-records-ran-out",
         "why-i-love-wardley-maps",
         "one-article-five-readers",
         "riskmandate-ten-questions",
@@ -17121,6 +17624,7 @@
         "price-it-then-give-it-away"
       ],
       "links_in": [
+        "the-records-ran-out",
         "from-a-spreadsheet-to-a-folder-per-person",
         "the-agent-is-the-reader",
         "how-i-work-with-claude",
@@ -18336,6 +18840,8 @@
         "six-agents-one-inbox"
       ],
       "links_in": [
+        "sovereignty-is-the-ability-to-move",
+        "the-records-ran-out",
         "move-the-cloud-not-the-code",
         "agentic-cost-is-an-engineering-problem",
         "where-the-platform-draws-the-line",
@@ -20443,6 +20949,7 @@
         "introducing-fractal-semantic-graphs"
       ],
       "links_in": [
+        "the-records-ran-out",
         "where-the-platform-draws-the-line",
         "the-same-argument-in-our-words",
         "authority-outside-the-model",
@@ -20758,6 +21265,7 @@
       ],
       "links_out": [],
       "links_in": [
+        "the-records-ran-out",
         "move-the-cloud-not-the-code",
         "agentic-cost-is-an-engineering-problem",
         "where-the-platform-draws-the-line",

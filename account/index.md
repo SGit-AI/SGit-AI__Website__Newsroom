@@ -2,7 +2,7 @@
 
 > A reading meter kept in your browser: every page costs a few pence, charged by how much of it you read, from £5.00 of starting credit. Credit can go negative and nothing is blocked; your history, graph and personas live here too.
 
-*Source: <https://newsroom.sgit.ai/account/index.html> · sgit.ai v0.7.79 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/account/index.html> · sgit.ai v0.7.81 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 

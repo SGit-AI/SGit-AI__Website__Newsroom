@@ -2,7 +2,7 @@
 
 > I spent today with people from Romania and I spend a lot of my time with people from Portugal, and this is the article I wanted to hand both. The race for the biggest model, the most GPUs and the largest data centre is a race a small country cannot win and should not enter; on a Wardley map that layer is already a commodity and only capital plays there. The opportunity is the opposite end of the map: the plumbing that a talented person in Braga or Cluj needs in order to sell a service to the world, forming a company, hiring across a border, being paid across Europe, working in every language, a contract and a tax form, all of it still custom built in most of Europe when it should be a road the state built once. Estonia built that road and the numbers show what happens. Then the judo: open source and open schemas because there is no sovereignty without them, what the state pays for belongs to the commons, buy the alternative before the day you need it, small models for every language and culture rather than one frontier model, and agents with the least agency rather than the most. A playbook in five moves, a map, what I learned spending millions on a distributed workforce, and why constraints are the input and not the excuse.
 
-*Source: <https://newsroom.sgit.ai/articles/judo-for-small-countries.html> · sgit.ai v0.7.79 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/judo-for-small-countries.html> · sgit.ai v0.7.81 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 
@@ -134,6 +134,7 @@ Startups & strategyAgents & policy[This article as a graph →](graphs.md#judo-f
 
 ### Continued by
 
+- [Sovereignty is the ability to move: play where the ball is going, take away the dot, and keep a twin that works](sovereignty-is-the-ability-to-move.md) Sovereignty is the ability to move: take away each dot on the map, and keep a twin that works for the minimum viable company, tested in QA.
 - [Move the cloud, not the code: twins, sovereignty that works in practice, and the migration that pays for itself on the day you switch](move-the-cloud-not-the-code.md) Workloads stay on hyperscalers because moving means changing code; a twin lets the code not know, and the value in the twin is what signs the migration.
 
 [All articles](index.md) · [All graphs](graphs.md)

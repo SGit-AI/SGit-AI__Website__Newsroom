@@ -2,7 +2,7 @@
 
 > Hari Kota posted The Full AI Governance Stack, ten layers from principles to people, and asked how I would structure the graph across the layers. This is the answer, built as a vault you can open. Hari's table is kept exactly as posted, every cell a node. The table already contains ten edges between layers before anything is added. Each layer is its own world with its own vocabulary, and the edges between those worlds come from the provisions themselves, so a gap is a missing edge and a missing edge is a query. Hari's three gaps and the "do this today" test run as queries on a fictional shop, and the line "most teams cover only 4 or 5" gets three honest readings.
 
-*Source: <https://newsroom.sgit.ai/articles/the-ai-governance-stack-as-a-graph.html> · sgit.ai v0.7.79 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/the-ai-governance-stack-as-a-graph.html> · sgit.ai v0.7.81 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 
