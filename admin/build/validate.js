@@ -32,6 +32,8 @@
 //      numbers and addresses are unique, a number is never reused, and no number that was in
 //      the last commit has moved. A link written today names articles by these numbers and
 //      has to open the same list in a year.
+//  13. the vendored vault library is unedited — every file of assets/vendor/sg-vault/v0.2.3
+//      hashes to what its VENDOR.md records; one code base, pinned, refreshed from upstream.
 // Any failure exits 1: no tag, no publish.
 'use strict';
 const fs   = require('fs');
@@ -450,6 +452,28 @@ try {
         if (doc.next < (base.next || 0)) errors.push(`articles/ids.json: "next" went down from ${base.next} to ${doc.next}`);
       }
     }
+  }
+}
+
+// --- 13. the vendored vault library is unedited -------------------------------
+// assets/vendor/sg-vault/v0.2.3 is the library that runs dev.vault.sgraph.ai, pinned at a commit and
+// never edited here (one code base: a fix goes upstream and the copy is refreshed). VENDOR.md records
+// each file's SHA-256; this recomputes them. A local addition lives in ../local/, which is not covered.
+{
+  const nodeCrypto = require('crypto');
+  const vendorDir = path.join(ROOT, 'assets/vendor/sg-vault/v0.2.3');
+  const vendorMd = path.join(vendorDir, 'VENDOR.md');
+  if (fs.existsSync(vendorMd)) {
+    const rows = [...fs.readFileSync(vendorMd, 'utf8').matchAll(/\| `([^`]+)` \| `([0-9a-f]{64})` \|/g)];
+    if (rows.length !== 12) errors.push(`assets/vendor/sg-vault/v0.2.3/VENDOR.md records ${rows.length} files, not 12`);
+    for (const [, relFile, want] of rows) {
+      const p = path.join(vendorDir, relFile);
+      if (!fs.existsSync(p)) { errors.push(`vendored vault library: ${relFile} is missing`); continue; }
+      const got = nodeCrypto.createHash('sha256').update(fs.readFileSync(p)).digest('hex');
+      if (got !== want) errors.push(`vendored vault library: ${relFile} was edited here (hash differs from VENDOR.md); fix it upstream or refresh the copy`);
+    }
+  } else {
+    errors.push('assets/vendor/sg-vault/v0.2.3/VENDOR.md is missing');
   }
 }
 

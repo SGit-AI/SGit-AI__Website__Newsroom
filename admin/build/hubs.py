@@ -237,12 +237,14 @@ def shipped(f):
          'primary sources were not fetched. The daily run that the vault&rsquo;s runbook describes is not yet scheduled; placement on '
          'the front page and the weekly newsletter are designed, not built.'),
         ('<b>The passkey lab</b>', 'Proofs of concept for a reader account with no server: a passkey with PRF, the same bytes on '
-         'every device through the same path, a door vault derived from them with sgit&rsquo;s own key derivation, a recovery code, and the door '
-         'created on a vault server with an access key. <a href="../passkey/index.html">Try it</a>.',
+         'every device through the same path, a door vault derived from them with sgit&rsquo;s own key derivation, a recovery code, and, with an '
+         'access key, real sgit vaults made and opened in the browser through the vault library that runs dev.vault.sgraph.ai, vendored here: '
+         'the door at its derived address, a master, a reader vault; unlock through the door; the recovery code added as a second door while '
+         'unlocked; a note written into the reader vault and read back. <a href="../passkey/index.html">Try it</a>.',
          'A lab, not a feature: it does not touch the reading account. A test on 12 October found that one passkey gives different '
-         'bytes through a phone over QR than through the provider on the device, so the design now has a door per path '
-         '(<a href="../admin/notes/2026-10-12__one-door-per-passkey-path.md">the note</a>). The master vault, moving the account into it and '
-         'adding a path or a second passkey as a door are designed (<a href="../articles/the-passkey-opens-the-vault.html">the passkey opens the vault</a>), not built.'),
+         'bytes through a phone over QR than through the provider on the device, so the design has a door per path '
+         '(<a href="../admin/notes/2026-10-12__one-door-per-passkey-path.md">the note</a>). Moving the reading account into the reader vault, '
+         'retiring a door and rotating the master&rsquo;s key are designed (<a href="../articles/the-passkey-opens-the-vault.html">the passkey opens the vault</a>), not built.'),
         ('<b>Links to a persona</b>', 'A link opens the newsroom as one of five starting personas (founder, journalist, '
          'security lead, AI builder, board member), with its picks, reading list and graph. The persona is added to '
          'the reader&rsquo;s browser as a visitor, which they can keep or remove. <a href="../persona/index.html">The '
@@ -271,9 +273,10 @@ def shipped(f):
         ('<b>Personas in a vault</b>', 'Personas kept by the newsroom&rsquo;s agents in an encrypted vault, a reader '
          'following one or forking it, and private personas for one person. Designed, not built.'),
         ('<b>One door per passkey path</b>', 'A door vault for each distinct set of PRF bytes, every door holding the master&rsquo;s key and '
-         'recording where it came from; a door added while unlocked, on a device where both paths run, with no key typed; the recovery '
-         'code bringing a new path in where no door opens; the master&rsquo;s list of doors, so one can be retired. '
-         '<a href="../admin/notes/2026-10-12__one-door-per-passkey-path.md">The note</a>. Designed, not built.'),
+         'recording where it came from; a door added while unlocked, with no key typed; the recovery code bringing a new path in where no '
+         'door opens; the master&rsquo;s list of doors, so one can be retired. <a href="../admin/notes/2026-10-12__one-door-per-passkey-path.md">The note</a>. '
+         'The lab now makes the door, the master, the reader vault and a second door as real vaults; the reading account is not in them, and '
+         'retiring a door and rotating the master are designed, not built.'),
         ('<b>Selling the graph</b>', 'Graphs are published free. Nothing sells one.'),
         ('<b>Paying the fact creator</b>', 'No revenue reaches anyone upstream of an article.'),
         ('<b>Corrections that propagate</b>', 'Versions and corrections are kept; they do not reach the pages that cited the corrected claim.'),

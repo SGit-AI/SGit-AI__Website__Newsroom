@@ -14,9 +14,13 @@
  *   4. a recovery code, the second door   26 characters of base32 in place of the PRF bytes
  *   5. test vectors                       the same derivation from a fixed input, compared with what sgit's own
  *                                         code produced in Python (vectors.json)
- *   6. the door on the vault server       with an access key the reader pastes (kept in memory only): check the
- *                                         derived address, create the door by writing its one encrypted file,
- *                                         open it again from the server, delete the file
+ *   6. real vaults                         with an access key the reader pastes (kept in memory only), through the
+ *                                         vault library that runs dev.vault.sgraph.ai (vendored, assets/vendor/sg-vault)
+ *                                         and assets/newsroom-vault.js: is there a door at the derived address; create
+ *                                         the account (the door at its derived id, a random master, a random reader
+ *                                         vault, every one an sgit vault); unlock through the door; add the recovery
+ *                                         code as a second door while unlocked; write a note into the reader vault
+ *                                         and read it back from a fresh open
  *
  * Nothing here touches the reading account. No key is stored anywhere: the access key lives in a variable until
  * the page is closed, and the derived keys are shown only behind a reveal. The page loads no third-party code;
@@ -35,6 +39,8 @@
  *
  * @module passkey-lab
  */
+
+import * as NV from '../assets/newsroom-vault.js'     // the newsroom's layer over the vendored vault library (card 6)
 
 const RP_FOR_DERIVATION = 'newsroom.sgit.ai'        // the constants are the site's, whichever host runs the page
 const ALPHABET = 'abcdefghijklmnopqrstuvwxyz0123456789'
@@ -327,87 +333,106 @@ export async function lab(opts) {
     } catch (e) { out5.replaceChildren(h('p', { class: 'warn' }, `The test vectors could not be loaded: ${err(e)}`)) }
     $('poc5-use-go').addEventListener('click', () => S.vector && derive(S.vector.ikm, 'the test vector (not a real passkey)'))
 
-    // 6 ---------------------------------------------------------------- the server
+    // 6 ---------------------------------------------------------------- real vaults, through the library
     const out6 = $('poc6-out'), log = $('poc6-log')
-    const access = $('poc6-access'), server = $('poc6-server')
-    access.addEventListener('input', () => { S.access = access.value.trim(); for (const b of ['poc6-create', 'poc6-delete']) $(b).disabled = !S.access })
+    const access = $('poc6-access'), server = $('poc6-server'), device = $('poc6-device')
+    S.vaults = null                                                      // { door, master, reader, doors } once created or unlocked
+    const enable = () => {
+        $('poc6-create').disabled = !S.access
+        $('poc6-add').disabled = !(S.access && S.vaults && S.vaults.master && S.recovery)
+        $('poc6-write').disabled = !(S.access && S.vaults && S.vaults.reader)
+    }
+    access.addEventListener('input', () => { S.access = access.value.trim(); enable() })
     window.addEventListener('pagehide', () => { S.access = ''; access.value = '' })
     const say = (line, cls) => { log.prepend(h('li', { class: cls || '' }, `${new Date().toISOString().slice(11, 19)} ${line}`)); log.hidden = false }
-    const call = async (method, path, headers, body) => {
-        const url = server.value.replace(/\/$/, '') + path
-        say(`${method} ${url}`)
-        const r = await fetch(url, { method, headers, body })
-        say(`  ${r.status} ${r.statusText}`, r.ok ? 'ok' : 'warn')
+    // every call the library makes to the chosen vault server is listed as it happens; nothing else is touched
+    const origFetch = window.fetch.bind(window)
+    window.fetch = async (input, init) => {
+        const u = String(input instanceof Request ? input.url : input), base = server.value.replace(/\/$/, '')
+        if (!u.startsWith(base + '/')) return origFetch(input, init)
+        const method = (init && init.method) || (input instanceof Request ? input.method : 'GET')
+        const r = await origFetch(input, init)
+        say(`${method} ${u.slice(base.length).replace(/\/obj-cas-imm-[0-9a-f]{12}/g, '/obj-cas-imm-…')} → ${r.status}`, r.ok || r.status === 404 ? 'ok' : 'warn')
         return r
     }
-    const authHeaders = extra => ({ 'x-sgraph-access-token': S.access, 'X-API-Key': S.access, ...extra })
-    const need = () => { if (!S.door || !S.keys) throw new Error('Derive a door first (3, or the test vector in 5).') }
+    const sgSend = () => NV.client({ endpoint: server.value.replace(/\/$/, ''), token: S.access })
+    const need = () => { if (!S.door) throw new Error('Derive a door first (3, or the recovery code in 4, or the test vector in 5).') }
+    const dim = t => h('p', { class: 'dim' }, t), warn = t => h('p', { class: 'warn' }, t)
+    const vaultRow = (label, v) => row(label, h('span', {}, h('b', { class: 'mono' }, v.vaultId), ` · ${v.getStats().files} file(s), ${v.getStats().folders} folder(s) · for sgit clone: `, secret(NV.prefixedKey(v), 'the key')))
+    const doorsRow = doors => row('Doors in the master', (doors || []).map(d => `${d.vault_id} (${d.kind}${d.path ? ', ' + d.path : ''}${d.device ? ', ' + d.device : ''})`).join(' · ') || 'none')
+    const whence = () => ({
+        kind: S.doorFrom === 'the recovery code' ? 'recovery' : /test vector/.test(S.doorFrom || '') ? 'test-vector' : 'passkey',
+        provider: S.cred && S.cred.transports && S.cred.transports.length ? S.cred.transports.join('+') : '',   // the browser names transports, not the provider
+        path: S.prf ? S.prf.path : '', credential_id: S.prf ? S.prf.credId : (S.cred ? S.cred.id : ''),
+        device: device.value.trim(),
+    })
+    const noDoor = () => out6.replaceChildren(h('p', { class: 'dim', id: 'poc6-nodoor' }, `No door here for this path yet (${S.door.vaultId}). Create the account below; or, if you already have one through another path, unlock there and add this path as a door.`))
+
     $('poc6-check').addEventListener('click', async () => {
         try {
-            need()
-            const id = S.door.vaultId
-            const r = await call('GET', `/api/vault/public-info/${id}`)
-            const t = await r.text()
-            out6.replaceChildren(row(`Door ${id} on the server`, r.status === 404 ? 'no vault at this address yet (404), which is what a first run expects' : `${r.status}: ${t.slice(0, 200)}`))
-            const l = await call('GET', `/api/vault/list/${id}`)
-            const lt = await l.text()
-            out6.append(row('Its objects', l.ok ? lt.slice(0, 300) : `${l.status}: ${lt.slice(0, 160)}`))
-        } catch (e) { out6.replaceChildren(h('p', { class: 'warn' }, err(e))) }
+            need(); out6.replaceChildren(dim('Opening the door: two key derivations, then the branch index and the ref…'))
+            const v = await NV.openVault(sgSend(), vaultKeyString(S.door.passphrase, S.door.vaultId))
+            const rec = await NV.readJson(v, '/' + NV.DOOR.record)
+            out6.replaceChildren(h('p', { class: 'ok' }, `A door exists at ${S.door.vaultId}: a real vault, opened with nothing but the derived key.`),
+                vaultRow('The door', v), row('Where it came from', rec ? `${rec.kind}, ${rec.provider || 'provider not recorded'} ${rec.path || ''}, device “${rec.device || ''}”, ${String(rec.created).slice(0, 10)}` : 'no record in it'))
+        } catch (e) { if (e.code === 'ENOVAULT') noDoor(); else out6.replaceChildren(warn(err(e))) }
     })
     $('poc6-create').addEventListener('click', async () => {
         try {
             need(); if (!S.access) throw new Error('Paste an access key first.')
-            const id = S.door.vaultId
-            const master = randomVaultKey()
-            const record = { kind: 'door', v: 1, opens: 'master', master: vaultKeyString(master.passphrase, master.vaultId), made: new Date().toISOString(), by: S.doorFrom, lab: 'newsroom.sgit.ai/passkey' }
-            const ct = await aesEncrypt(S.keys.read, te.encode(JSON.stringify(record)))
-            const objId = 'obj-cas-imm-' + hex(await sha256(ct)).slice(0, 12)
-            const r = await call('PUT', `/api/vault/write/${id}/${objId}`, authHeaders({ 'Content-Type': 'application/octet-stream', 'x-sgraph-vault-write-key': S.keys.writeHex }), ct)
-            const t = await r.text()
-            if (!r.ok) throw new Error(`The server refused the write: ${r.status} ${t.slice(0, 200)}`)
-            S.written = { objId, master }
-            out6.replaceChildren(
-                h('p', { class: 'ok' }, `The door exists: vault ${id} now holds one object, written with the access key and the door’s write key, encrypted in this browser under the door’s read key.`),
-                row('Object', h('span', { class: 'mono' }, `${objId} (${ct.length} bytes: 12 of iv, the ciphertext, 16 of tag)`)),
-                row('Inside it, encrypted: the master vault’s key (made at random, as sgit does)', secret(record.master, 'the master key')),
-                row('The server said', h('span', { class: 'mono' }, t.slice(0, 160))),
-                h('p', { class: 'dim' }, 'The master vault itself is not created by this lab. Press “Open it from the server” to do what a new device would do.'),
-            )
-        } catch (e) { out6.replaceChildren(h('p', { class: 'warn' }, err(e))) }
+            out6.replaceChildren(dim('Creating three vaults: six key derivations at 600,000 iterations each, three first commits, then the door and the master written and published…'))
+            const t0 = performance.now()
+            const a = await NV.createAccount({ sgSend: sgSend(), door: S.door, record: whence() })
+            S.vaults = a; enable()
+            out6.replaceChildren(h('p', { class: 'ok' }, `Three vaults exist, each one an sgit vault (${Math.round(performance.now() - t0)} ms).`),
+                vaultRow('The door, at its derived address', a.door),
+                row('In the door', `${NV.DOOR.key} (the master’s key) and ${NV.DOOR.record} (${a.record.kind}, ${a.record.provider || 'provider not recorded'} ${a.record.path || ''}, device “${a.record.device || ''}”)`),
+                vaultRow('The master, made at random', a.master),
+                row('In the master', `${NV.MASTER.reader} (the reader vault’s key) and ${NV.MASTER.doors} (1 door)`),
+                vaultRow('The reader vault, made at random', a.reader),
+                dim('Nothing was stored on this device. Press “Unlock” to do what a new device would do, add the recovery code as a second door, or write a note.'))
+        } catch (e) { if (e.code === 'EEXISTS') out6.replaceChildren(warn(`A door already exists at ${S.door.vaultId}: unlock through it instead.`)); else out6.replaceChildren(warn(err(e))) }
     })
-    $('poc6-open').addEventListener('click', async () => {
+    $('poc6-unlock').addEventListener('click', async () => {
         try {
-            need()
-            const id = S.door.vaultId
-            const l = await call('GET', `/api/vault/list/${id}`)
-            if (!l.ok) throw new Error(`No vault to open at ${id} (${l.status}).`)
-            const listed = await l.json()
-            const names = (Array.isArray(listed) ? listed : (listed.files || listed.objects || listed.items || [])).map(x => typeof x === 'string' ? x : (x.file_id || x.id || x.name || x.key || JSON.stringify(x)))
-            const objs = names.map(n => String(n).split('/').pop()).filter(n => n.startsWith('obj-cas-imm-'))
-            out6.replaceChildren(row(`Objects in ${id}`, objs.length ? objs.join(', ') : `none that look like objects (${names.length} entries)`))
-            let opened = 0
-            for (const o of objs.slice(0, 10)) {
-                const r = await call('GET', `/api/vault/read/${id}/${o}`)
-                if (!r.ok) continue
-                const data = new Uint8Array(await r.arrayBuffer())
-                try {
-                    const rec = JSON.parse(td.decode(await aesDecrypt(S.keys.read, data)))
-                    opened++
-                    out6.append(row(`${o}: decrypted with the door’s read key`, h('span', {}, `a ${rec.kind} record made ${String(rec.made || '').slice(0, 16)} by ${rec.by || '?'}; it holds `, rec.master ? secret(rec.master, 'the master key') : 'nothing')))
-                } catch (e) { out6.append(row(o, 'does not decrypt with this door’s key (not a door record, or another key)', 'warn')) }
-            }
-            out6.append(h('p', { class: opened ? 'ok' : 'dim' }, opened ? `Opened: this is what any device with the passkey can do, with nothing stored and no account.` : 'Nothing opened.'))
-        } catch (e) { out6.replaceChildren(h('p', { class: 'warn' }, err(e))) }
+            need(); out6.replaceChildren(dim('Unlocking: the door, then the master, then the reader vault, six key derivations…'))
+            const t0 = performance.now()
+            const u = await NV.unlock({ sgSend: sgSend(), door: S.door })
+            S.vaults = u; enable()
+            const notes = u.reader ? await NV.listFiles(u.reader, '/notes').catch(() => []) : []
+            out6.replaceChildren(h('p', { class: 'ok' }, `Unlocked in ${Math.round(performance.now() - t0)} ms, with nothing stored on this device: the door gave the master, the master gave the reader vault.`),
+                vaultRow('The door', u.door),
+                row('Where it came from', u.record ? `${u.record.kind}, ${u.record.provider || 'provider not recorded'} ${u.record.path || ''}, device “${u.record.device || ''}”, ${String(u.record.created).slice(0, 10)}` : 'no record'),
+                vaultRow('The master', u.master), doorsRow(u.doors),
+                u.reader ? vaultRow('The reader vault', u.reader) : row('The reader vault', 'none recorded in the master'),
+                row('Notes in the reader vault', notes.length ? notes.join(', ') : 'none yet'))
+        } catch (e) { if (e.code === 'ENOVAULT') noDoor(); else out6.replaceChildren(warn(err(e))) }
     })
-    $('poc6-delete').addEventListener('click', async () => {
+    $('poc6-add').addEventListener('click', async () => {
         try {
-            need(); if (!S.access) throw new Error('Paste an access key first.')
-            if (!S.written) throw new Error('Nothing written by this page in this session.')
-            const r = await call('DELETE', `/api/vault/delete/${S.door.vaultId}/${S.written.objId}`, authHeaders({ 'x-sgraph-vault-write-key': S.keys.writeHex }))
-            out6.replaceChildren(h('p', { class: r.ok ? 'ok' : 'warn' }, r.ok ? `Deleted ${S.written.objId}. The vault id stays registered to this door’s write key; it is never destroyed, because a destroyed id can never be used again and this one is derived.` : `The server answered ${r.status}.`))
-            if (r.ok) S.written = null
-        } catch (e) { out6.replaceChildren(h('p', { class: 'warn' }, err(e))) }
+            if (!S.vaults || !S.vaults.master) throw new Error('Create or unlock first.')
+            if (!S.recovery) throw new Error('Make a recovery code in 4 first.')
+            out6.replaceChildren(dim('Adding a door: the recovery code’s bytes derive a second address; the master’s key is written into it; the master’s list grows…'))
+            const d2 = await doorFrom(S.recovery.bytes)
+            const r = await NV.addDoor({ sgSend: sgSend(), master: S.vaults.master, door: d2, record: { kind: 'recovery', device: device.value.trim() } })
+            S.vaults.doors = r.doors
+            out6.replaceChildren(h('p', { class: 'ok' }, `A second door, ${d2.vaultId}, holds the same master key. Nothing was typed or pasted; the key moved inside this page.`),
+                vaultRow('The recovery door', r.door), doorsRow(r.doors),
+                dim('Typing the recovery code on a device with no passkey derives this door and opens the same master.'))
+        } catch (e) { if (e.code === 'EEXISTS') out6.replaceChildren(warn('That door already exists.')); else out6.replaceChildren(warn(err(e))) }
     })
-    $('poc6-open').disabled = false
+    $('poc6-write').addEventListener('click', async () => {
+        try {
+            if (!S.vaults || !S.vaults.reader) throw new Error('Create or unlock first.')
+            const text = ($('poc6-note').value.trim() || `A note written at ${new Date().toISOString()}`) + '\n'
+            out6.replaceChildren(dim('Writing one commit into the reader vault, publishing it, then opening the vault again to read it back…'))
+            const p = await NV.writeNote(S.vaults.reader, text)
+            const again = await NV.openVault(sgSend(), NV.prefixedKey(S.vaults.reader), { cloneBranch: 'nr-readback' })
+            const back = await NV.readText(again, p)
+            out6.replaceChildren(h('p', { class: 'ok' }, 'Written as one commit, published with compare-and-swap, and read back from a fresh open of the vault.'),
+                row('Path in the reader vault', h('span', { class: 'mono' }, p)), row('Read back', h('span', { id: 'poc6-readback' }, (back || '').trim())),
+                vaultRow('The reader vault now', again))
+        } catch (e) { out6.replaceChildren(warn(err(e))) }
+    })
     document.documentElement.setAttribute('data-lab', 'ready')
 }

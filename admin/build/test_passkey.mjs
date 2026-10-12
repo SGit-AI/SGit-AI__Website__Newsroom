@@ -5,10 +5,13 @@
  *
  * Drives passkey/index.html as a reader would: the capabilities card, making a passkey (prf.enabled), getting the
  * PRF bytes twice (the same bytes), the door derived from them (an 8-character id, two PBKDF2 keys), the recovery
- * code round trip, the test vectors (the browser agrees with sgit's Python on every value), and the vault server
- * flow against a stand-in server that behaves like dev.send.sgraph.ai's write, list, read and delete, so the whole
- * create-open-delete path runs without an access key. Also: the page stores nothing but the passkey's id, keeps
- * the access key out of storage, and makes no request to any host but its own and the (stood-in) vault server.
+ * code round trip, the test vectors (the browser agrees with sgit's Python on every value), and card 6 against the
+ * mock of the vault API (admin/build/vault-mock.mjs), to which the page's calls to dev.send.sgraph.ai are
+ * forwarded: an unknown door says "no door here for this path yet"; the account is created as three real vaults;
+ * unlock opens them; the recovery code is added as a second door; a note is written and read back. Also: the page
+ * stores nothing but the passkey's id and the device's clone branch, keeps the access key and every vault key out
+ * of storage, sends only ciphertext, never sends X-API-Key, and makes no request to any host but its own and the
+ * (mocked) vault server.
  *
  * WebAuthn needs a secure context or localhost, so the page is served as http://localhost, not 127.0.0.1. The
  * virtual authenticator comes from Chromium's WebAuthn CDP domain; PRF needs Chromium 128 or later. Skips (exit 0)
@@ -18,6 +21,7 @@ import http from 'http'
 import fs from 'fs'
 import path from 'path'
 import { execSync } from 'child_process'
+import { startMock } from './vault-mock.mjs'
 
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '../..')
 let chromium
@@ -52,27 +56,19 @@ const wait = ms => pg.waitForTimeout(ms)
 const text = id => pg.evaluate(id => (document.getElementById(id) || {}).textContent || '', id)
 const kv = async (id, key) => pg.evaluate(([id, key]) => { const r = [...document.querySelectorAll(`#${id} .kv`)].find(x => x.querySelector('.k').textContent.startsWith(key)); return r ? r.querySelector('.v').textContent : null }, [id, key])
 
-// the stand-in vault server: dev.send.sgraph.ai's write, list, read and delete, in a Map
-const store = new Map()
+// the vault server: the page's calls to dev.send.sgraph.ai are forwarded to the mock of the vault API
+const mock = await startMock()
 const seen = []
 await pg.route('https://dev.send.sgraph.ai/**', async route => {
-    const req = route.request(), u = new URL(req.url()), m = req.method(), h = req.headers()
-    seen.push(`${m} ${u.pathname}`)
-    const [, , , op, vault, file] = u.pathname.split('/')
-    const json = (status, body) => route.fulfill({ status, contentType: 'application/json', headers: { 'access-control-allow-origin': '*' }, body: JSON.stringify(body) })
-    if (op === 'public-info' || op === 'health') return json(store.has(vault) ? 200 : 404, store.has(vault) ? { vault_id: vault, objects: store.get(vault).size } : { detail: 'Public vault not found' })
-    if (op === 'list') return store.has(vault) ? json(200, { files: [...store.get(vault).keys()] }) : json(404, { detail: 'Vault not found' })
-    if (op === 'write') {
-        if (!h['x-sgraph-access-token'] || !h['x-api-key']) return json(401, { detail: 'access token required' })
-        if (!/^[0-9a-f]{64}$/.test(h['x-sgraph-vault-write-key'] || '')) return json(403, { detail: 'write key required' })
-        if (!/^obj-cas-imm-[0-9a-f]{12}$/.test(file)) return json(400, { detail: 'bad file id' })
-        if (!store.has(vault)) store.set(vault, new Map())
-        store.get(vault).set(file, req.postDataBuffer())
-        return json(200, { ok: true, vault_id: vault, file_id: file, size: req.postDataBuffer().length })
-    }
-    if (op === 'read') { const v = store.get(vault); if (!v || !v.has(file)) return route.fulfill({ status: 404, headers: { 'access-control-allow-origin': '*' }, body: 'no' }); return route.fulfill({ status: 200, contentType: 'application/octet-stream', headers: { 'access-control-allow-origin': '*' }, body: v.get(file) }) }
-    if (op === 'delete') { if (!h['x-sgraph-access-token']) return json(401, { detail: 'access token required' }); const v = store.get(vault); if (v) v.delete(file); return json(200, { ok: true }) }
-    return json(404, { detail: 'Not Found' })
+    const req = route.request(), u = new URL(req.url()), m = req.method()
+    seen.push(`${m} ${u.pathname}${req.headers()['x-api-key'] ? ' (with X-API-Key)' : ''}`)
+    const headers = {}
+    for (const [k, v] of Object.entries(req.headers())) if (!/^(host|origin|referer|content-length|connection|accept-encoding)$/i.test(k) && !k.startsWith(':')) headers[k] = v
+    const data = req.postDataBuffer()
+    const r = await fetch(mock.base + u.pathname + u.search, { method: m, headers, body: data && m !== 'GET' && m !== 'HEAD' ? data : undefined })
+    const out = {}
+    r.headers.forEach((v, k) => { if (!/^(content-length|transfer-encoding|connection)$/i.test(k)) out[k] = v })
+    await route.fulfill({ status: r.status, headers: out, body: Buffer.from(await r.arrayBuffer()) })
 })
 
 const cdp = await ctx.newCDPSession(pg)
@@ -124,24 +120,29 @@ try {
     check(/^([A-Z2-7]{4}-){6}[A-Z2-7]{2}$/.test(code) && /^[a-z0-9]{8}$/.test(rdoor) && rdoor !== id1, `card 4: a 26-character recovery code opens a different door (${rdoor})`)
     await pg.fill('#poc4-code', code.toLowerCase()); await pg.click('#poc4-check'); await wait(800)
     check((await text('poc4-check-out')).includes(rdoor), 'card 4: typing the code back gives the same door')
-    // 6, against the stand-in server
+    // 6, real vaults against the mock of the vault API
+    const out6 = re => pg.waitForFunction(re => new RegExp(re).test(document.getElementById('poc6-out').textContent), re, { timeout: 90000 })
     check(!(await pg.evaluate(() => document.getElementById('poc6').hidden)), 'card 6 appears once a door exists')
     check(await pg.evaluate(() => document.getElementById('poc6-create').disabled), 'card 6: create is disabled without an access key')
-    await pg.click('#poc6-check'); await wait(800)
-    check(/no vault at this address yet/.test(await text('poc6-out')), 'card 6: the derived address is empty before the first write')
-    await pg.fill('#poc6-access', 'test-access-key-not-real'); await wait(100)
+    await pg.click('#poc6-check'); await out6('No door here|A door exists|Error|failed')
+    check(/No door here for this path yet/.test(await text('poc6-out')), 'card 6: an address with no door says "no door here for this path yet", not an error')
+    await pg.fill('#poc6-access', mock.token); await pg.fill('#poc6-device', 'the test device'); await wait(100)
     check(!(await pg.evaluate(() => document.getElementById('poc6-create').disabled)), 'card 6: create is enabled with an access key')
-    await pg.click('#poc6-create'); await pg.waitForFunction(() => /The door exists|refused/.test(document.getElementById('poc6-out').textContent), null, { timeout: 10000 })
-    check(/The door exists/.test(await text('poc6-out')) && store.has(id1) && store.get(id1).size === 1, 'card 6: the door is created by writing one object with the access key and the write key')
-    const [objId, bytes] = [...store.get(id1).entries()][0]
-    check(/^obj-cas-imm-[0-9a-f]{12}$/.test(objId) && bytes.length > 12 + 16 + 60, `card 6: the object is content-addressed (${objId}) and is iv + ciphertext + tag`)
-    check(!/"kind"|master|sgit_private/.test(bytes.toString('latin1')), 'card 6: what reached the server is ciphertext, not the record')
-    await pg.click('#poc6-open'); await pg.waitForFunction(() => /Opened|Nothing opened/.test(document.getElementById('poc6-out').textContent), null, { timeout: 10000 })
-    check(/decrypted with the door’s read key/.test(await text('poc6-out')) && /Opened/.test(await text('poc6-out')), 'card 6: the door opens again from the server and decrypts with the read key')
-    await pg.click('#poc6-delete'); await wait(800)
-    check(/Deleted/.test(await text('poc6-out')) && store.get(id1).size === 0, 'card 6: the file is deleted; the vault id is kept')
-    check(await pg.evaluate(() => Object.keys(localStorage).every(k => k === 'sgit.passkey.lab' || k.startsWith('sgit.meter')) && ![...Object.values(localStorage), ...Object.values(sessionStorage)].some(v => /test-access-key/.test(v))), 'the access key is not in storage, and the lab wrote only its one key')
-    check(seen.some(s => /^PUT \/api\/vault\/write\//.test(s)) && seen.some(s => /^GET \/api\/vault\/read\//.test(s)) && seen.some(s => /^DELETE \/api\/vault\/delete\//.test(s)), `the calls the server saw: ${[...new Set(seen.map(s => s.split('/').slice(0, 4).join('/')))].join(', ')}`)
+    await pg.click('#poc6-create'); await out6('Three vaults exist|already exists|Error|failed')
+    check(/Three vaults exist/.test(await text('poc6-out')) && mock.vaults().length === 3 && mock.vaults().includes(id1), `card 6: the account is three real vaults on the server, the door at its derived id ${id1}`)
+    check(mock.files(id1).some(f => /^bare\/refs\/ref-pid-muw-/.test(f)) && mock.files(id1).some(f => /^bare\/indexes\/idx-pid-muw-/.test(f)) && mock.files(id1).filter(f => f.startsWith('bare/data/obj-cas-imm-')).length >= 5, 'card 6: the door has a named ref, a branch index and content-addressed objects, so sgit can clone it')
+    const everything = [...mock.store.values()].map(b => b.toString('latin1')).join('\n')
+    check(!/sgit_private|master-key|"kind"|the test device|reader\.json/.test(everything), 'card 6: what reached the server is ciphertext: no key, no record, no device label in the clear')
+    check(!seen.some(s => /X-API-Key/.test(s)) && !mock.log.some(l => /not allowed/.test(l)), 'card 6: the page never sent X-API-Key, so no preflight was refused')
+    await pg.click('#poc6-unlock'); await out6('Unlocked in|No door here|Error|failed')
+    check(/Unlocked in/.test(await text('poc6-out')) && /the test device/.test(await kv('poc6-out', 'Where it came from') || '') && /\([a-z0-9]{8}|passkey/.test(await kv('poc6-out', 'Doors in the master') || ''), 'card 6: unlock opens the door, the master and the reader vault, with where the door came from and the list of doors')
+    await pg.click('#poc6-add'); await out6('second door|already exists|Error|failed')
+    check(/A second door, [a-z0-9]{8}, holds the same master key/.test(await text('poc6-out')) && mock.vaults().length === 4 && mock.vaults().includes(rdoor), `card 6: the recovery code's door ${rdoor} is added while unlocked, with no key typed or pasted`)
+    await pg.fill('#poc6-note', 'hello from the lab test'); await pg.click('#poc6-write'); await out6('read back from a fresh open|Error|failed')
+    check((await text('poc6-readback')) === 'hello from the lab test', 'card 6: a note is written into the reader vault as one commit, published, and read back from a fresh open')
+    check(await pg.evaluate(() => Object.keys(localStorage).every(k => k === 'sgit.passkey.lab' || k === 'sgit.device-branch' || k.startsWith('sgit.meter')) && ![...Object.values(localStorage), ...Object.values(sessionStorage)].some(v => /mock-|sgit_private|:[a-z0-9]{8}"?$/.test(v))), 'the access key and the vault keys are not in storage; the lab keeps its passkey id and the device\'s clone branch')
+    const puts = seen.filter(s => s.startsWith('PUT '))
+    check(seen.some(s => /^POST \/api\/vault\/batch\//.test(s)) && seen.some(s => /^GET \/api\/vault\/read\//.test(s)) && puts.length > 0 && puts.every(s => /\/bare\/indexes\/idx-pid-muw-/.test(s)), `the calls the server saw: ${[...new Set(seen.map(s => s.split(' ')[0] + ' ' + s.split('/').slice(1, 4).join('/')))].join(', ')} (every commit one batch; the only single PUTs are the branch index on publish, as the library writes it)`)
     const others = [...hosts].filter(h => !h.startsWith('localhost') && h !== 'dev.send.sgraph.ai')
     check(others.length === 0, `no request to any other host${others.length ? ': ' + others.join(', ') : ''}`)
     // phone width
@@ -152,6 +153,7 @@ try {
 } finally {
     await browser.close()
     server.close()
+    await mock.close()
 }
 console.log(failed ? `${failed} FAILED` : 'ALL PASSKEY LAB CHECKS PASS')
 process.exit(failed ? 1 : 0)

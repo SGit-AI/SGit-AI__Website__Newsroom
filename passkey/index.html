@@ -15,11 +15,24 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="../assets/newsroom.css">
 <link rel="stylesheet" href="lab.css">
+<script src="../assets/vendor/sg-vault/v0.2.3/sg-send/sg-send-crypto.js"></script>
+<script src="../assets/vendor/sg-vault/v0.2.3/sg-send/sg-send.js"></script>
+<script src="../assets/vendor/sg-vault/v0.2.3/sg-vault/sg-vault-crypto.js"></script>
+<script src="../assets/vendor/sg-vault/v0.2.3/sg-vault/sg-vault-object-store.js"></script>
+<script src="../assets/vendor/sg-vault/v0.2.3/sg-vault/sg-vault-ref-manager.js"></script>
+<script src="../assets/vendor/sg-vault/v0.2.3/sg-vault/sg-vault-commit.js"></script>
+<script src="../assets/vendor/sg-vault/v0.2.3/sg-vault/sg-vault.js"></script>
+<script src="../assets/vendor/sg-vault/v0.2.3/sg-vault/sg-vault--file-ops.js"></script>
+<script src="../assets/vendor/sg-vault/v0.2.3/sg-vault/sg-vault--folder-ops.js"></script>
+<script src="../assets/vendor/sg-vault/v0.2.3/sg-vault/sg-vault--sync.js"></script>
+<script src="../assets/vendor/sg-vault/v0.2.3/sg-vault/sg-vault--history.js"></script>
+<script src="../assets/vendor/sg-vault/v0.2.3/sg-vault/sg-vault--branches.js"></script>
+<script src="../assets/vendor/sg-vault/local/sg-vault--create-with-id.js"></script>
 </head>
 <body>
 <nav class="site"><div class="row">
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.9.3</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.10.0</a>
   <sg-meter class="meter-nav" view="balance"></sg-meter>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
@@ -186,19 +199,24 @@
 </section>
 
 <section class="poc" id="poc6" hidden>
-<h2>6. The door on the vault server</h2>
-<p class="what">With the door from 3 (or the test vector): check whether a vault exists at the derived address, create it by writing its one file (the master vault&rsquo;s key, made at random and encrypted in this browser under the door&rsquo;s read key), open it again as a new device would, and delete the file. Writing needs an <b>access key</b> for the server, which is the thing a reader will buy; reading needs nothing.</p>
+<h2>6. Real vaults: the door, the master and the reader vault</h2>
+<p class="what">With the door from 3 (or the recovery code from 4, or the test vector), the vault library that runs dev.vault.sgraph.ai, <a href="../assets/vendor/sg-vault/v0.2.3/VENDOR.md">vendored here</a> and loaded from this origin, creates and opens real sgit vaults: the <b>door</b> at its derived address, holding the master&rsquo;s key and a record of where it came from (kind, provider, path, credential id, device, date); the <b>master</b>, made at random, holding the reader vault&rsquo;s key and the list of doors; the <b>reader vault</b>, where a note is written and read back. Every vault made here is one <code>sgit clone</code> opens, with write access, from the key shown behind each reveal. Writing needs an <b>access key</b> for the server, which is the thing a reader will buy; opening and reading need nothing.</p>
 <div class="acts">
   <label>Server <select id="poc6-server"><option value="https://dev.send.sgraph.ai">dev.send.sgraph.ai</option><option value="https://send.sgraph.ai">send.sgraph.ai</option></select></label>
   <label>Access key <input type="password" id="poc6-access" autocomplete="off" placeholder="kept in memory only"></label>
+  <label>This device <input type="text" id="poc6-device" maxlength="40" placeholder="a label for the door&rsquo;s record"></label>
 </div>
 <div class="acts">
-  <button type="button" class="btn" id="poc6-check">Check the address <span class="mono" id="poc6-id"></span></button>
-  <button type="button" class="btn primary" id="poc6-create" disabled>Create the door and write its one file</button>
-  <button type="button" class="btn" id="poc6-open">Open it from the server</button>
-  <button type="button" class="btn" id="poc6-delete" disabled>Delete the file</button>
+  <button type="button" class="btn" id="poc6-check">Is there a door at <span class="mono" id="poc6-id"></span>?</button>
+  <button type="button" class="btn primary" id="poc6-create" disabled>Create the account: door, master, reader vault</button>
+  <button type="button" class="btn" id="poc6-unlock">Unlock through this door</button>
+  <button type="button" class="btn" id="poc6-add" disabled>Add the recovery code as a second door</button>
 </div>
-<p class="dim">The vault id is never destroyed: a destroyed id can never be used again, and this one is derived from your passkey. The master vault itself, and moving the reading account into it, are the next steps and are not built.</p>
+<div class="acts">
+  <label>A note <input type="text" id="poc6-note" maxlength="200" placeholder="goes into the reader vault, notes/"></label>
+  <button type="button" class="btn" id="poc6-write" disabled>Write it and read it back</button>
+</div>
+<p class="dim">An address with no door says so; it is not an error. A vault id is never destroyed, because a destroyed id can never be used again and a door&rsquo;s is derived. The test vector&rsquo;s door has the same address for everyone, so on the real server only the first person can create it. Moving the reading account into the reader vault is the next step and is not built.</p>
 <div class="out" id="poc6-out"></div>
 <ul class="calls" id="poc6-log" hidden></ul>
 </section>
@@ -234,7 +252,7 @@ import('../assets/components/sg-meter/v1/v1.4/v1.4.0/sg-meter.js')
     <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="netline"><a href="https://sgit.ai" style="display:inline;padding:0"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://pt.newsroom.sgit.ai" style="display:inline;padding:0">&#8593; pt.newsroom.sgit.ai</a> &middot; <a href="https://graphs.sgit.ai" style="display:inline;padding:0">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai" style="display:inline;padding:0">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai" style="display:inline;padding:0">&#8593; nhi.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai" style="display:inline;padding:0">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.9.3</a> &middot; <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.10.0</a> &middot; <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>The newsroom</h4>

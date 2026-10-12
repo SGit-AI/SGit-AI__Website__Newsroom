@@ -2,9 +2,9 @@
  "labs": [
   {
    "path": "passkey/lab.js",
-   "what": "The passkey lab: WebAuthn with PRF, the door derivation, sgit's key derivation, a stand-alone vault client",
-   "lines": 413,
-   "sha256": "4c609fa85e041be37ee72c58e6817285e2f2065fe5e8f525dcdd8e1db2f4c015"
+   "what": "The passkey lab: WebAuthn with PRF, the door derivation, sgit's key derivation, and real vaults through assets/newsroom-vault.js",
+   "lines": 438,
+   "sha256": "bdc1987b5a02eb4e6d7b7b14c2fba492a36f6ef794019d14235a2ca5d50fb4b9"
   },
   {
    "path": "passkey/lab.css",
@@ -16,18 +16,18 @@
    "path": "passkey/vectors.json",
    "what": "its test vectors, from sgit's Python",
    "lines": 19,
-   "sha256": "cfebdc0fe8d139aec4ae19998834767d972195f01c8689d78e56b76ad411ce68"
+   "sha256": "d50a3642c131bbaa8b9858438138fc1dc78ae3249e9bab89c1b7541f95a447b8"
   },
   {
    "path": "passkey/index.html",
    "what": "the page",
-   "lines": 297,
-   "sha256": "2734d500402f16ee064126f8711b9e1528f6b849f4cd715ff4c7040d8275a90f"
+   "lines": 315,
+   "sha256": "885911b67d01a6c01836e91782df85ee45d0e30f8f51d581f611665fba372f49"
   }
  ],
  "what": "The map of everything a reader does on newsroom.sgit.ai, and the review of it: phase 0 of the move described in https://newsroom.sgit.ai/articles/explorer-to-villager-newsroom.html. Written by admin/build/api_map.py on every build. The hashes are the 'before' for the move's rule that the live site serves the same bytes after it: scripts, styles and JSON raw; pages with the site chrome and version stamps normalised.",
  "api_means": "client-side: components, formats and contracts the browser runs, with no server and nothing to deploy but files",
- "release": "v0.9.3",
+ "release": "v0.10.0",
  "date": "11 October 2026",
  "source": {
   "sgit_ai": "v0.7.61",
@@ -36,8 +36,8 @@
   "meter_on_sgit_ai": "1.3.1"
  },
  "counts": {
-  "reader_code_lines": 3344,
-  "reader_files": 22,
+  "reader_code_lines": 6441,
+  "reader_files": 36,
   "pages": 21,
   "views": 12,
   "controls": 56,
@@ -45,7 +45,7 @@
   "outputs": 9,
   "contracts": 14,
   "findings": 18,
-  "tests": 171,
+  "tests": 201,
   "frozen_files": 20,
   "frozen_lines": 5697,
   "pages_with_csp": 0
@@ -282,8 +282,8 @@
    "what": "The wire as it was in the vault at the last release: headlines and primary links, the fallback and the agents' index",
    "from": "this site, generated",
    "lines": 412,
-   "bytes": 16825,
-   "sha256": "e3adb1150066e6e90d488c450db98a878f5c6adaefe542691b2b703752f9a12b",
+   "bytes": 16826,
+   "sha256": "771a606d2634539c16f90f50f7bfb735e7475aadcbe31c21b92d9897666d8072",
    "hosts": [],
    "fetch": 0,
    "storage": [],
@@ -398,8 +398,8 @@
    "what": "The persona links, for whoever writes to someone",
    "from": "this site, generated",
    "lines": 268,
-   "bytes": 13439,
-   "sha256": "7b7bc6c112744e508abbd9c9d95037b0226fd41135f008a7311d18cd920a0731",
+   "bytes": 13440,
+   "sha256": "703b806ceb49582bbfe8e70002cd4f8bf28dfd31f6509c87a01cfca0b3c09bb8",
    "hosts": [],
    "fetch": 0,
    "storage": [],
@@ -416,6 +416,232 @@
    "lines": 18379,
    "bytes": 730635,
    "sha256": "a889adb94db50b3237279a6b142481191d6b63f0fd7bfb7ed4264e1ff3091af8",
+   "hosts": [],
+   "fetch": 0,
+   "storage": [],
+   "events": [],
+   "eval": 0,
+   "innerHTML": 0,
+   "confirm": 0,
+   "crypto": false
+  },
+  {
+   "path": "assets/newsroom-vault.js",
+   "what": "The newsroom's vault module: create, open, read, write and publish through the vendored library; the door, master and reader vaults; unlock; add a door",
+   "from": "this site",
+   "lines": 197,
+   "bytes": 12529,
+   "sha256": "81af88b88db58156c7e427bbb228547c3ed3170553d1dadb9ff32223c05d6393",
+   "hosts": [],
+   "fetch": 0,
+   "storage": [
+    "localStorage"
+   ],
+   "events": [],
+   "eval": 0,
+   "innerHTML": 0,
+   "confirm": 0,
+   "crypto": false
+  },
+  {
+   "path": "assets/vendor/sg-vault/local/sg-vault--create-with-id.js",
+   "what": "SGVault.createWithId: a vault at a derived id, a local patch pending upstream",
+   "from": "this site, pending upstream",
+   "lines": 99,
+   "bytes": 5127,
+   "sha256": "b668c4ab0062a3b385882fa593f7213f50f667c777d0614b5ba8abcb5721372e",
+   "hosts": [],
+   "fetch": 0,
+   "storage": [],
+   "events": [],
+   "eval": 0,
+   "innerHTML": 0,
+   "confirm": 0,
+   "crypto": false
+  },
+  {
+   "path": "assets/vendor/sg-vault/v0.2.3/sg-send/sg-send-crypto.js",
+   "what": "AES-256-GCM and PBKDF2 over Web Crypto",
+   "from": "SGraph-AI__App__Send v0.2.3, vendored and unedited (VENDOR.md)",
+   "lines": 151,
+   "bytes": 4927,
+   "sha256": "2c4af16bbaf4f43e7eb0f8298a9cd8338429f99c7bec20c5d7f4da96c88e39ce",
+   "hosts": [],
+   "fetch": 0,
+   "storage": [],
+   "events": [],
+   "eval": 0,
+   "innerHTML": 0,
+   "confirm": 0,
+   "crypto": true
+  },
+  {
+   "path": "assets/vendor/sg-vault/v0.2.3/sg-send/sg-send.js",
+   "what": "The HTTP client: read, write, batch, presigned; x-sgraph-access-token",
+   "from": "SGraph-AI__App__Send v0.2.3, vendored and unedited (VENDOR.md)",
+   "lines": 275,
+   "bytes": 12989,
+   "sha256": "9bc98e580f5fc1adbf8e2d273181e6afa3bd9a3813ea8a1bf24ddd07e1b8b41e",
+   "hosts": [],
+   "fetch": 4,
+   "storage": [],
+   "events": [],
+   "eval": 0,
+   "innerHTML": 0,
+   "confirm": 0,
+   "crypto": false
+  },
+  {
+   "path": "assets/vendor/sg-vault/v0.2.3/sg-vault/sg-vault-crypto.js",
+   "what": "Key derivation: read key, write key, ref and index ids; key prefixes",
+   "from": "SGraph-AI__App__Send v0.2.3, vendored and unedited (VENDOR.md)",
+   "lines": 302,
+   "bytes": 14862,
+   "sha256": "f8d31359204a9e333d27444ea2a37c1bb11bbc790d0cf4cfa95fe9f9282d6e66",
+   "hosts": [],
+   "fetch": 0,
+   "storage": [],
+   "events": [],
+   "eval": 0,
+   "innerHTML": 0,
+   "confirm": 0,
+   "crypto": true
+  },
+  {
+   "path": "assets/vendor/sg-vault/v0.2.3/sg-vault/sg-vault-object-store.js",
+   "what": "Content-addressed objects, the write batch, the block caches",
+   "from": "SGraph-AI__App__Send v0.2.3, vendored and unedited (VENDOR.md)",
+   "lines": 290,
+   "bytes": 14057,
+   "sha256": "a45d7ad0f9dbd91677785c3128a8322d4209cb35ab5d815551dcbf1eceed9c9e",
+   "hosts": [],
+   "fetch": 0,
+   "storage": [],
+   "events": [],
+   "eval": 0,
+   "innerHTML": 0,
+   "confirm": 0,
+   "crypto": true
+  },
+  {
+   "path": "assets/vendor/sg-vault/v0.2.3/sg-vault/sg-vault-ref-manager.js",
+   "what": "Refs and the branch index; write-if-match",
+   "from": "SGraph-AI__App__Send v0.2.3, vendored and unedited (VENDOR.md)",
+   "lines": 158,
+   "bytes": 8368,
+   "sha256": "5b8ea87ace83d59e8954511d9932bd3968020c57070375194c7427a083fb729f",
+   "hosts": [],
+   "fetch": 0,
+   "storage": [],
+   "events": [],
+   "eval": 0,
+   "innerHTML": 0,
+   "confirm": 0,
+   "crypto": false
+  },
+  {
+   "path": "assets/vendor/sg-vault/v0.2.3/sg-vault/sg-vault-commit.js",
+   "what": "Commits and trees, every field encrypted",
+   "from": "SGraph-AI__App__Send v0.2.3, vendored and unedited (VENDOR.md)",
+   "lines": 175,
+   "bytes": 6645,
+   "sha256": "e686de3756eaeed185708a6ba96194429afb3067f145108e7580d876598dd9ce",
+   "hosts": [],
+   "fetch": 0,
+   "storage": [],
+   "events": [],
+   "eval": 0,
+   "innerHTML": 0,
+   "confirm": 0,
+   "crypto": true
+  },
+  {
+   "path": "assets/vendor/sg-vault/v0.2.3/sg-vault/sg-vault.js",
+   "what": "SGVault: create, open, openReadOnly, the tree, the commit",
+   "from": "SGraph-AI__App__Send v0.2.3, vendored and unedited (VENDOR.md)",
+   "lines": 566,
+   "bytes": 28054,
+   "sha256": "0108884f9b8d539e4c9457190326d64adc5a92c808803f0dab14b9e772b3ad26",
+   "hosts": [],
+   "fetch": 0,
+   "storage": [],
+   "events": [],
+   "eval": 0,
+   "innerHTML": 0,
+   "confirm": 0,
+   "crypto": true
+  },
+  {
+   "path": "assets/vendor/sg-vault/v0.2.3/sg-vault/sg-vault--file-ops.js",
+   "what": "addFile, updateFile, getFile, removeFile, renameFile, moveFile",
+   "from": "SGraph-AI__App__Send v0.2.3, vendored and unedited (VENDOR.md)",
+   "lines": 157,
+   "bytes": 7212,
+   "sha256": "f114db89754638b5e4ade1dc3f5d4753ac672a4323c286e8c8ed0412760e6861",
+   "hosts": [],
+   "fetch": 0,
+   "storage": [],
+   "events": [],
+   "eval": 0,
+   "innerHTML": 0,
+   "confirm": 0,
+   "crypto": false
+  },
+  {
+   "path": "assets/vendor/sg-vault/v0.2.3/sg-vault/sg-vault--folder-ops.js",
+   "what": "Folders, lazy sub-trees",
+   "from": "SGraph-AI__App__Send v0.2.3, vendored and unedited (VENDOR.md)",
+   "lines": 125,
+   "bytes": 5680,
+   "sha256": "10fea1377422c5368aead040500c28135fafcb918427901a74483e23e1b36d7f",
+   "hosts": [],
+   "fetch": 0,
+   "storage": [],
+   "events": [],
+   "eval": 0,
+   "innerHTML": 0,
+   "confirm": 0,
+   "crypto": false
+  },
+  {
+   "path": "assets/vendor/sg-vault/v0.2.3/sg-vault/sg-vault--sync.js",
+   "what": "push, pushIfMatch, pull, merge, ahead and behind",
+   "from": "SGraph-AI__App__Send v0.2.3, vendored and unedited (VENDOR.md)",
+   "lines": 456,
+   "bytes": 20598,
+   "sha256": "b9f521e7b70ca66f6d1197378337f954deea4ed3468535ec3064149c7cf1fcc6",
+   "hosts": [],
+   "fetch": 0,
+   "storage": [],
+   "events": [],
+   "eval": 0,
+   "innerHTML": 0,
+   "confirm": 0,
+   "crypto": false
+  },
+  {
+   "path": "assets/vendor/sg-vault/v0.2.3/sg-vault/sg-vault--history.js",
+   "what": "History: commits, trees and files at a commit",
+   "from": "SGraph-AI__App__Send v0.2.3, vendored and unedited (VENDOR.md)",
+   "lines": 89,
+   "bytes": 4142,
+   "sha256": "265b215e27216ad25e8fa7c83b47c8307b7990a0a3fb88254ee2149d2835dd2d",
+   "hosts": [],
+   "fetch": 0,
+   "storage": [],
+   "events": [],
+   "eval": 0,
+   "innerHTML": 0,
+   "confirm": 0,
+   "crypto": false
+  },
+  {
+   "path": "assets/vendor/sg-vault/v0.2.3/sg-vault/sg-vault--branches.js",
+   "what": "Branches from the index",
+   "from": "SGraph-AI__App__Send v0.2.3, vendored and unedited (VENDOR.md)",
+   "lines": 57,
+   "bytes": 2178,
+   "sha256": "bc1eec8bbc2326a73ec1809ed588d26f3fe7511bf24b52e47440c3d90526f3d1",
    "hosts": [],
    "fetch": 0,
    "storage": [],
@@ -520,19 +746,19 @@
   {
    "path": "wire/index.html",
    "what": "the Industry Wire's edition",
-   "lines": 56,
-   "sha256": "ebb2c8b658df44fc0ede40475c6ff4ad68d76e494aa12acc0a8f03528400e865"
+   "lines": 236,
+   "sha256": "83fd5882b86bb78ed04f85de4d15950bb30dd4d1caae5db85fe8f6344092694a"
   },
   {
    "path": "wire/sources.html",
    "what": "the wire's sources",
-   "lines": 52,
+   "lines": 232,
    "sha256": "9e4d5619a961370c4e1ef3cc9284c6d694838b263b7b52dce0178ba63cbfa246"
   },
   {
    "path": "wire/how.html",
    "what": "how the wire is read, and its documents",
-   "lines": 56,
+   "lines": 236,
    "sha256": "f331d73c149731c18bb83d9509634ef32f81e7b9af43845419d0d740bcc338fd"
   },
   {
@@ -598,7 +824,7 @@
   {
    "path": "admin/build/validate.js",
    "what": "the gate: checks 2d (live link), 5 (key tripwire), 11 (imports unedited), 12 (numbers hold)",
-   "lines": 465
+   "lines": 487
   }
  ],
  "tests": [
@@ -622,15 +848,27 @@
   },
   {
    "path": "admin/build/test_passkey.mjs",
-   "what": "the passkey lab in Chromium, with a virtual authenticator that has PRF",
-   "lines": 157,
-   "checks": 31
+   "what": "the passkey lab in Chromium, with a virtual authenticator that has PRF, against the mock of the vault API",
+   "lines": 159,
+   "checks": 33
   },
   {
    "path": "admin/build/test_wire.mjs",
    "what": "the wire pages in Chromium, reading the real vault",
    "lines": 126,
    "checks": 28
+  },
+  {
+   "path": "admin/build/test_vault.mjs",
+   "what": "real vaults in Node: the vendored library against the mock of the vault API, and the sgit CLI round trip",
+   "lines": 177,
+   "checks": 28
+  },
+  {
+   "path": "admin/build/vault-mock.mjs",
+   "what": "the mock of the vault API the two vault tests run against",
+   "lines": 151,
+   "checks": 0
   }
  ],
  "ci_runs": [
@@ -638,7 +876,8 @@
   "admin/build/test_lists.mjs",
   "admin/build/test_review.mjs",
   "admin/build/test_passkey.mjs",
-  "admin/build/test_wire.mjs"
+  "admin/build/test_wire.mjs",
+  "admin/build/test_vault.mjs"
  ],
  "loader": {
   "lines": 17,

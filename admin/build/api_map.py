@@ -63,6 +63,23 @@ FILES = [
     ("articles/ids.json",          "A number for every article: the contract reading lists are built on", "this site, generated"),
     ("persona/links.json",         "The persona links, for whoever writes to someone", "this site, generated"),
     ("articles/graphs.json",       "The feed the picks and the graph read: every article with topics, tags and citations", "sgit.ai, imported"),
+    ("assets/newsroom-vault.js",   "The newsroom's vault module: create, open, read, write and publish through the vendored library; the door, master and reader vaults; unlock; add a door", "this site"),
+    ("assets/vendor/sg-vault/local/sg-vault--create-with-id.js", "SGVault.createWithId: a vault at a derived id, a local patch pending upstream", "this site, pending upstream"),
+] + [
+    (f"assets/vendor/sg-vault/v0.2.3/{f}", d, "SGraph-AI__App__Send v0.2.3, vendored and unedited (VENDOR.md)") for f, d in [
+        ("sg-send/sg-send-crypto.js", "AES-256-GCM and PBKDF2 over Web Crypto"),
+        ("sg-send/sg-send.js", "The HTTP client: read, write, batch, presigned; x-sgraph-access-token"),
+        ("sg-vault/sg-vault-crypto.js", "Key derivation: read key, write key, ref and index ids; key prefixes"),
+        ("sg-vault/sg-vault-object-store.js", "Content-addressed objects, the write batch, the block caches"),
+        ("sg-vault/sg-vault-ref-manager.js", "Refs and the branch index; write-if-match"),
+        ("sg-vault/sg-vault-commit.js", "Commits and trees, every field encrypted"),
+        ("sg-vault/sg-vault.js", "SGVault: create, open, openReadOnly, the tree, the commit"),
+        ("sg-vault/sg-vault--file-ops.js", "addFile, updateFile, getFile, removeFile, renameFile, moveFile"),
+        ("sg-vault/sg-vault--folder-ops.js", "Folders, lazy sub-trees"),
+        ("sg-vault/sg-vault--sync.js", "push, pushIfMatch, pull, merge, ahead and behind"),
+        ("sg-vault/sg-vault--history.js", "History: commits, trees and files at a commit"),
+        ("sg-vault/sg-vault--branches.js", "Branches from the index"),
+    ]
 ]
 PAGES = [
     ("account/index.html", "the reading account"), ("account/newsroom.html", "the reader's newsroom"),
@@ -87,12 +104,14 @@ BUILD = [
     ("admin/build/wire.py", "writes the three wire pages and, from a clone, wire/snapshot.json"),
     ("admin/build/validate.js", "the gate: checks 2d (live link), 5 (key tripwire), 11 (imports unedited), 12 (numbers hold)"),
 ]
-LABS = [("passkey/lab.js", "The passkey lab: WebAuthn with PRF, the door derivation, sgit's key derivation, a stand-alone vault client"),
+LABS = [("passkey/lab.js", "The passkey lab: WebAuthn with PRF, the door derivation, sgit's key derivation, and real vaults through assets/newsroom-vault.js"),
         ("passkey/lab.css", "its styles"), ("passkey/vectors.json", "its test vectors, from sgit's Python"), ("passkey/index.html", "the page")]
 TESTS = [("admin/build/test_meter.mjs", "the meter in Chromium"), ("admin/build/test_lists.mjs", "the parser in Node and the list pages in Chromium"),
          ("admin/build/test_review.mjs", "the review's findings, pinned as the behaviour is today"),
-         ("admin/build/test_passkey.mjs", "the passkey lab in Chromium, with a virtual authenticator that has PRF"),
-         ("admin/build/test_wire.mjs", "the wire pages in Chromium, reading the real vault")]
+         ("admin/build/test_passkey.mjs", "the passkey lab in Chromium, with a virtual authenticator that has PRF, against the mock of the vault API"),
+         ("admin/build/test_wire.mjs", "the wire pages in Chromium, reading the real vault"),
+         ("admin/build/test_vault.mjs", "real vaults in Node: the vendored library against the mock of the vault API, and the sgit CLI round trip"),
+         ("admin/build/vault-mock.mjs", "the mock of the vault API the two vault tests run against")]
 
 # ----------------------------------------------------------------------------------------------- the views and controls
 # What a reader can click, type or pay, per view, and the call it makes. Read from sg-meter.js; a change there is a change here.

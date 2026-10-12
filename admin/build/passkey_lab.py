@@ -19,7 +19,14 @@ from page import newsroom_page, write, HOST  # noqa: E402
 import passkey_vectors  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[2]
-HEAD = '<link rel="stylesheet" href="lab.css">\n'
+# The vault library that runs dev.vault.sgraph.ai, vendored at v0.2.3 and loaded from this origin in VENDOR.md's order,
+# then the one local extension. Plain scripts, each declaring a global; lab.js reaches them through assets/newsroom-vault.js.
+VENDORED = ["sg-send/sg-send-crypto.js", "sg-send/sg-send.js", "sg-vault/sg-vault-crypto.js", "sg-vault/sg-vault-object-store.js",
+            "sg-vault/sg-vault-ref-manager.js", "sg-vault/sg-vault-commit.js", "sg-vault/sg-vault.js", "sg-vault/sg-vault--file-ops.js",
+            "sg-vault/sg-vault--folder-ops.js", "sg-vault/sg-vault--sync.js", "sg-vault/sg-vault--history.js", "sg-vault/sg-vault--branches.js"]
+HEAD = ('<link rel="stylesheet" href="lab.css">\n'
+        + "".join(f'<script src="../assets/vendor/sg-vault/v0.2.3/{f}"></script>\n' for f in VENDORED)
+        + '<script src="../assets/vendor/sg-vault/local/sg-vault--create-with-id.js"></script>\n')
 
 
 def card(n, title, what, acts, extra=""):
@@ -51,19 +58,24 @@ def page():
 {card(5, "Test vectors: the browser and sgit agree", "The same derivation from a fixed, fake PRF output, compared value by value with what sgit&rsquo;s own Python produced (<a href='vectors.json'>vectors.json</a>, from <code>admin/build/passkey_vectors.py</code>). Runs when the page opens. If any line is wrong, the browser and the command line would open different vaults.",
      '<span id="poc5-use" hidden><button type="button" class="btn" id="poc5-use-go">Use the test vector as the door in 3 and 6</button> <span class="dim">for trying the server without a passkey</span></span>')}
 <section class="poc" id="poc6" hidden>
-<h2>6. The door on the vault server</h2>
-<p class="what">With the door from 3 (or the test vector): check whether a vault exists at the derived address, create it by writing its one file (the master vault&rsquo;s key, made at random and encrypted in this browser under the door&rsquo;s read key), open it again as a new device would, and delete the file. Writing needs an <b>access key</b> for the server, which is the thing a reader will buy; reading needs nothing.</p>
+<h2>6. Real vaults: the door, the master and the reader vault</h2>
+<p class="what">With the door from 3 (or the recovery code from 4, or the test vector), the vault library that runs dev.vault.sgraph.ai, <a href="../assets/vendor/sg-vault/v0.2.3/VENDOR.md">vendored here</a> and loaded from this origin, creates and opens real sgit vaults: the <b>door</b> at its derived address, holding the master&rsquo;s key and a record of where it came from (kind, provider, path, credential id, device, date); the <b>master</b>, made at random, holding the reader vault&rsquo;s key and the list of doors; the <b>reader vault</b>, where a note is written and read back. Every vault made here is one <code>sgit clone</code> opens, with write access, from the key shown behind each reveal. Writing needs an <b>access key</b> for the server, which is the thing a reader will buy; opening and reading need nothing.</p>
 <div class="acts">
   <label>Server <select id="poc6-server"><option value="https://dev.send.sgraph.ai">dev.send.sgraph.ai</option><option value="https://send.sgraph.ai">send.sgraph.ai</option></select></label>
   <label>Access key <input type="password" id="poc6-access" autocomplete="off" placeholder="kept in memory only"></label>
+  <label>This device <input type="text" id="poc6-device" maxlength="40" placeholder="a label for the door&rsquo;s record"></label>
 </div>
 <div class="acts">
-  <button type="button" class="btn" id="poc6-check">Check the address <span class="mono" id="poc6-id"></span></button>
-  <button type="button" class="btn primary" id="poc6-create" disabled>Create the door and write its one file</button>
-  <button type="button" class="btn" id="poc6-open">Open it from the server</button>
-  <button type="button" class="btn" id="poc6-delete" disabled>Delete the file</button>
+  <button type="button" class="btn" id="poc6-check">Is there a door at <span class="mono" id="poc6-id"></span>?</button>
+  <button type="button" class="btn primary" id="poc6-create" disabled>Create the account: door, master, reader vault</button>
+  <button type="button" class="btn" id="poc6-unlock">Unlock through this door</button>
+  <button type="button" class="btn" id="poc6-add" disabled>Add the recovery code as a second door</button>
 </div>
-<p class="dim">The vault id is never destroyed: a destroyed id can never be used again, and this one is derived from your passkey. The master vault itself, and moving the reading account into it, are the next steps and are not built.</p>
+<div class="acts">
+  <label>A note <input type="text" id="poc6-note" maxlength="200" placeholder="goes into the reader vault, notes/"></label>
+  <button type="button" class="btn" id="poc6-write" disabled>Write it and read it back</button>
+</div>
+<p class="dim">An address with no door says so; it is not an error. A vault id is never destroyed, because a destroyed id can never be used again and a door&rsquo;s is derived. The test vector&rsquo;s door has the same address for everyone, so on the real server only the first person can create it. Moving the reading account into the reader vault is the next step and is not built.</p>
 <div class="out" id="poc6-out"></div>
 <ul class="calls" id="poc6-log" hidden></ul>
 </section>

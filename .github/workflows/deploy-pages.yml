@@ -65,10 +65,12 @@ jobs:
         run: |
           npm install --no-save --no-audit --no-fund playwright@1.56.1
           npx playwright install --with-deps chromium
-      - name: The meter, the reading lists, the review's findings, the passkey lab and the wire, in Chromium
+      - name: Install sgit-ai 0.21.0, for the vault test's CLI round trip
+        run: python3 -m pip install --quiet 'sgit-ai==0.21.0' && sgit --version
+      - name: The meter, the reading lists, the review's findings, the passkey lab and the wire in Chromium, and the vault library in Node
         run: |
           set -euo pipefail
-          for t in test_meter.mjs test_lists.mjs test_review.mjs test_passkey.mjs test_wire.mjs; do
+          for t in test_meter.mjs test_lists.mjs test_review.mjs test_passkey.mjs test_wire.mjs test_vault.mjs; do
             echo "== $t"
             node admin/build/$t | tee /tmp/$t.log
             if grep -q '^SKIP' /tmp/$t.log; then echo "::error::$t skipped: Playwright or Chromium missing on the runner"; exit 1; fi

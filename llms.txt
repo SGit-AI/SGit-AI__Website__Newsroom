@@ -6,7 +6,7 @@
 > propagate; provenance is the product; pay the person who found the fact), and everything
 > needed to run a newsroom like it.
 
-Site version: v0.9.3 (10 October 2026). Published by the sgit project, which is building
+Site version: v0.10.0 (10 October 2026). Published by the sgit project, which is building
 the stack this site argues for; participant disclosure at /about/participant.html.
 Content CC BY 4.0 unless a page states otherwise; code Apache 2.0.
 
@@ -187,7 +187,11 @@ current, running or planned.
   over QR can give different bytes from the same passkey, see /admin/notes/2026-10-12__one-door-per-passkey-path.md), derive a door vault's passphrase
   and id from them (HKDF) and sgit's read and write keys (PBKDF2, 600,000 iterations), a recovery code as a second door,
   test vectors checked against sgit's own Python (/passkey/vectors.json), and, with an access key kept in memory only,
-  create the door on a vault server and open it again. A lab: it does not touch the reading account
+  REAL SGIT VAULTS made and opened in the browser through the vault library that runs dev.vault.sgraph.ai, vendored unedited
+  at /assets/vendor/sg-vault/v0.2.3/ (VENDOR.md) with one local extension (SGVault.createWithId) and the newsroom's own
+  module /assets/newsroom-vault.js: the door at its derived address, a master and a reader vault; unlock through the door;
+  the recovery code added as a second door; a note written and read back. Every vault it makes is one `sgit clone` opens.
+  A lab: it does not touch the reading account
 - /replicate/index.html: what you can copy today to run a newsroom like this one, where it
   is, and how far each piece is packaged. Only SG Meter and the World News Day vault are
   self-contained; there is NO forkable newsroom template yet

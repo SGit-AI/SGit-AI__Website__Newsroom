@@ -12,7 +12,7 @@
 
 <nav class="site"><div class="row">
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.9.3</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.10.0</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -136,6 +136,15 @@
 <div class="tablewrap"><table class="vers">
   <thead><tr><th>Version</th><th>Date</th><th>What shipped</th></tr></thead>
   <tbody>
+    <tr>
+      <td class="vnum">v0.10.0</td>
+      <td>12 Oct 2026</td>
+      <td><b>Real vaults from the browser: the passkey lab now makes the door, the master and the reader vault as vaults sgit can clone.</b>
+        <p><b>What changed.</b> Card 6 of <a href="../passkey/index.html">the passkey lab</a> used to write one raw encrypted object and call it a door; <code>sgit clone</code> could not open it. It now creates and opens real sgit vaults through the library that runs dev.vault.sgraph.ai, as <a href="https://sgit.ai/docs/vault/vault-from-javascript.html">sgit.ai&rsquo;s page on writing a vault from JavaScript</a> asks: one code base, no vault writer of our own. The twelve files of vault UI v0.2.3 are vendored unedited at <code>assets/vendor/sg-vault/v0.2.3/</code>, loaded from this origin, with the upstream commit and every file&rsquo;s SHA-256 in <code>VENDOR.md</code> and a new check in the validator that fails if one changes. Everything newsroom-specific is one module, <code>assets/newsroom-vault.js</code>: create, open, read, write and publish, with the page&rsquo;s tested helpers verbatim (load a folder before writing into it; every write one commit; publish with compare-and-swap and merge on a conflict, never <code>push()</code>; one clone branch per device; a door&rsquo;s bare key looks like a read key, so it is passed bare to the library and carries the <code>sgit_private_vault_</code> prefix wherever it leaves the page). A door&rsquo;s id and passphrase are derived, and the library can only draw an id at random, so one local extension adds <code>SGVault.createWithId</code>, identical to <code>create</code> but for the id and a check that the address is free; the issue for upstream is written in <code>admin/notes/2026-10-12__upstream-create-with-vault-id.md</code>.</p>
+        <p><b>On the page.</b> With an access key: is there a door at the derived address (an address with no door says <em>no door here for this path yet</em>, which is not an error); create the account, three vaults in one go, the door holding the master&rsquo;s key and a record of where it came from (kind, provider, path, credential id, device, date), the master holding the reader vault&rsquo;s key and the list of doors; unlock through the door as a new device would; add the recovery code as a second door while unlocked, with no key typed or pasted; write a note into the reader vault as one commit and read it back from a fresh open. Each vault&rsquo;s key is behind a reveal in the form <code>sgit clone</code> takes, and every call to the vault server is listed as it happens. Moving the reading account into the reader vault, retiring a door and rotating the master&rsquo;s key are designed, not built.</p>
+        <p><b>Checked.</b> <code>admin/build/test_vault.mjs</code> loads the vendored files the way the page does and runs them against a mock of the vault API in Node (<code>admin/build/vault-mock.mjs</code>: read, write, batch with write-if-match and the conflict shape, list, presigned refused, the first writer&rsquo;s write key fixed, every write needing the access token): the account made and unlocked again from the same bytes; a nested write after a fresh open present afterwards; two clients racing a publish, the second merging and both changes surviving; a second door added and opened on its own; an existing address refused. Then the CLI: sgit-ai 0.21.0 clones the door from its prefixed key and reads its files, commits and pushes from the clone, and the library reads back what the CLI pushed; the reader vault clones with every file. 27 checks; a live check against dev.send.sgraph.ai runs only when an access key is in the environment, and was not run for this release. The passkey lab&rsquo;s test now drives card 6 against the same mock (33 checks), and CI installs sgit for the round trip. The reader API map gains the vendored files and the module.</p>
+      </td>
+    </tr>
     <tr>
       <td class="vnum">v0.9.3</td>
       <td>12 Oct 2026</td>
@@ -669,7 +678,7 @@
     <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="netline"><a href="https://sgit.ai" style="display:inline;padding:0"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://pt.newsroom.sgit.ai" style="display:inline;padding:0">&#8593; pt.newsroom.sgit.ai</a> &middot; <a href="https://graphs.sgit.ai" style="display:inline;padding:0">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai" style="display:inline;padding:0">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai" style="display:inline;padding:0">&#8593; nhi.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai" style="display:inline;padding:0">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.9.3</a> &middot; <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.10.0</a> &middot; <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>The newsroom</h4>
