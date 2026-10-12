@@ -6,9 +6,9 @@
 
 ## In one paragraph
 
-The design derives a small door vault from a passkey's PRF bytes and keeps the master vault's key inside the door. It rests on one claim: the same passkey gives the same bytes wherever it is used. A test on 12 October with one Google Password Manager passkey found that the claim holds along one path and not across paths. Used by the provider on the device (a Mac, then an iPhone), the passkey gave one set of bytes. Used through the cross-device flow, where a phone answers a QR code from a Mac or an iPad, the same passkey gave a different set, and gave it consistently. Same credential id, same user handle, same input, different bytes. The unit of the design is therefore not the passkey but the path: a door per set of bytes, every door pointing at the same master and recording where it came from. The article already has most of this (every passkey is a door, so is a recovery code, a door is added while unlocked, the master lists its doors), so what changes is small and sharp: the middle layer stays because it cannot be removed, adding a door becomes a normal first-week step rather than an edge case, and the page must treat an unknown door address as "no door here yet", never as a failure.
+The design derives a small door vault from a passkey's PRF bytes and keeps the master vault's key inside the door. It rests on one claim: the same passkey gives the same bytes wherever it is used. A test on 12 October with one Google Password Manager passkey found that the claim holds along one path and not across paths. Used by the provider on the device (a Mac, then an iPhone), the passkey gave one set of bytes. Used through the cross-device flow, where a phone answers a QR code from a Mac or an iPad, the same passkey gave a different set, and gave it consistently. Same credential id, same user handle, same input, different bytes. A second test with an iCloud Keychain passkey gave the same bytes on a Mac, a current iPad and a current iPhone, in Safari and in Chrome, which is the main scenario the design is for; an older iPad that could not use the passkey locally offered only the QR path, which is a different path. The unit of the design is therefore not the passkey but the path: a door per set of bytes, every door pointing at the same master and recording where it came from. The article already has most of this (every passkey is a door, so is a recovery code, a door is added while unlocked, the master lists its doors), so what changes is small and sharp: the middle layer stays because it cannot be removed, adding a door becomes a normal first-week step rather than an edge case, and the page must treat an unknown door address as "no door here yet", never as a failure.
 
-## What was tested
+## Tested first: a Google Password Manager passkey
 
 One passkey, made on newsroom.sgit.ai by card 1 of the lab with the PRF extension, stored in Google Password Manager and synced. Card 2 asks the authenticator for the PRF bytes with the fixed input, the SHA-256 of `newsroom.sgit.ai/door/v1`, and shows a fingerprint of the result. Four runs:
 
@@ -22,6 +22,22 @@ One passkey, made on newsroom.sgit.ai by card 1 of the lab with the PRF extensio
 In all four the page showed the same credential id, the same user handle and the same flags (user present, user verified, backup eligible, backed up). The input hash was the same. Runs 3 and 4 share a client-side path, the hybrid transport, and share a result. Runs 1 and 2 share the other path and share the other result. Nothing else distinguishes them: run 1 and run 4 are the same browser on the same machine, minutes apart, differing only in which way the phone's provider was reached.
 
 The fingerprints quoted are those the lab showed on the day. The lab's fingerprint was then the first four bytes of the PRF output itself, which is a careless thing to put on a screen and in a chat; since v0.9.1 it is the first four bytes of the SHA-256 of the output, so the values above are no longer what the page would show, and they remain valid as evidence that the outputs differed.
+
+## Tested second: an iCloud Keychain passkey
+
+A second passkey, made by card 1 and stored in iCloud Keychain instead, on the same day:
+
+| Run | Client | How the passkey answered | Result |
+|---|---|---|---|
+| 5 | Safari on the Mac | iCloud Keychain on the Mac | one fingerprint, call it K |
+| 6 | Chrome on the Mac | iCloud Keychain, through the system's passkey support | K |
+| 7 | Safari on a current iPad | iCloud Keychain on the iPad | K |
+| 8 | Safari on a current iPhone | iCloud Keychain on the phone | K |
+| 9 | Safari on an older iPad | No passkey offered locally; the browser went straight to the QR path | not completed |
+
+Runs 5 to 8 are the scenario the design is for: one person, their own devices, one provider, and the same bytes everywhere through the platform path, in both browsers. Chrome on the Mac matches Safari because it reaches iCloud Keychain passkeys through the same system provider, so the bytes are computed in the same place. Run 9 is the boundary: a device that cannot use the passkey locally, because its operating system predates the support, offers only the cross-device path, and by the first test's result that path should be expected to give its own bytes and therefore its own door. It was not completed, so whether an iCloud Keychain passkey over QR matches its local bytes on these versions is unknown; the lab's path row would tell, and the design does not depend on the answer.
+
+Two conclusions follow. The claim in the article is right for the common case and needs the qualifier "through the same kind of path", not a retraction. And the product should steer a reader to the provider on the device first, and present the QR route as a path that gets its own door, rather than as the same thing done remotely.
 
 ## What the extension is supposed to do
 
@@ -86,6 +102,19 @@ If Apple or Google changes one path so its bytes match the other, the door for t
 Card 2 shows the path (platform or cross-platform) with each result and says that a different path can give different bytes. Its fingerprint is a hash of the bytes rather than a prefix of them. The comparison box names "another path" among the reasons two fingerprints differ. Card 1 already showed the attachment and the transports at creation.
 
 Not built: adding a path as a door (a card that takes an open door and the other path's bytes and writes the second door), the master vault, its door list, retiring a door, rotating the master. Those are the article's phase five. The lab's card 6 writes one door; the add-a-door card is that same write with the master key taken from memory instead of made at random.
+
+## Field notes from the two days
+
+Smaller things seen while testing, for whoever updates the article or builds the next step:
+
+- **Chrome's first attempt to create a Google Password Manager passkey** showed "Can't reach Google Password Manager. Try again in a few minutes"; the second attempt worked. That is Chrome's side, transient, and the page should say "try again" rather than treat it as a failure of the design.
+- **Card 0's PRF capability** reads `null` in some browsers rather than true or false, through `getClientCapabilities()`. The lab now says "the browser does not say" in that case; card 1's `prf.enabled` is the answer that counts.
+- **Safari's QR dialog names the registrable domain** ("sign in to sgit.ai") where Chrome's names the host (newsroom.sgit.ai). The relying party id is newsroom.sgit.ai on both create and get; the dialogs word it differently.
+- **The flags were the same on every path**: user present, user verified, backup eligible, backed up. The flags do not reveal the path; `authenticatorAttachment` does, and card 2 now shows it.
+- **The credential id and the user handle were identical across every path and provider path**, which is how the page can be sure that the differing bytes came from one passkey.
+- **The lab's fingerprint was the first four bytes of the PRF output** until v0.9.1, which put 32 bits of the secret on screen and in chat; it is now a hash of the output. The door derivation was never weakened in practice (the seed is a 256-bit HKDF output), and it was still the wrong thing to show.
+- **PBKDF2 at 600,000 iterations** for the read and write keys took on the order of a tenth of a second each on a laptop and several times that on a phone, as the article estimated; the lab shows the time with each key.
+- **Chrome's own store** (no provider signed in) signs and returns no PRF bytes, as the article says; the lab shows the ladder in that case.
 
 ## Reporting it
 
