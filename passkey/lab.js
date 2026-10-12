@@ -360,6 +360,7 @@ export async function lab(opts) {
     const dim = t => h('p', { class: 'dim' }, t), warn = t => h('p', { class: 'warn' }, t)
     const vaultRow = (label, v) => row(label, h('span', {}, h('b', { class: 'mono' }, v.vaultId), ` · ${v.getStats().files} file(s), ${v.getStats().folders} folder(s) · for sgit clone: `, secret(NV.prefixedKey(v), 'the key')))
     const doorsRow = doors => row('Doors in the master', (doors || []).map(d => `${d.vault_id} (${d.kind}${d.path ? ', ' + d.path : ''}${d.device ? ', ' + d.device : ''})`).join(' · ') || 'none')
+    const whenceText = r => r ? [r.kind, r.path || null, r.provider ? `transports ${r.provider}` : 'provider not recorded', r.device ? `device “${r.device}”` : null, String(r.created || '').slice(0, 10) || null].filter(Boolean).join(', ') : 'no record in it'
     const whence = () => ({
         kind: S.doorFrom === 'the recovery code' ? 'recovery' : /test vector/.test(S.doorFrom || '') ? 'test-vector' : 'passkey',
         provider: S.cred && S.cred.transports && S.cred.transports.length ? S.cred.transports.join('+') : '',   // the browser names transports, not the provider
@@ -374,7 +375,7 @@ export async function lab(opts) {
             const v = await NV.openVault(sgSend(), vaultKeyString(S.door.passphrase, S.door.vaultId))
             const rec = await NV.readJson(v, '/' + NV.DOOR.record)
             out6.replaceChildren(h('p', { class: 'ok' }, `A door exists at ${S.door.vaultId}: a real vault, opened with nothing but the derived key.`),
-                vaultRow('The door', v), row('Where it came from', rec ? `${rec.kind}, ${rec.provider || 'provider not recorded'} ${rec.path || ''}, device “${rec.device || ''}”, ${String(rec.created).slice(0, 10)}` : 'no record in it'))
+                vaultRow('The door', v), row('Where it came from', whenceText(rec)))
         } catch (e) { if (e.code === 'ENOVAULT') noDoor(); else out6.replaceChildren(warn(err(e))) }
     })
     $('poc6-create').addEventListener('click', async () => {
@@ -386,7 +387,7 @@ export async function lab(opts) {
             S.vaults = a; enable()
             out6.replaceChildren(h('p', { class: 'ok' }, `Three vaults exist, each one an sgit vault (${Math.round(performance.now() - t0)} ms).`),
                 vaultRow('The door, at its derived address', a.door),
-                row('In the door', `${NV.DOOR.key} (the master’s key) and ${NV.DOOR.record} (${a.record.kind}, ${a.record.provider || 'provider not recorded'} ${a.record.path || ''}, device “${a.record.device || ''}”)`),
+                row('In the door', `${NV.DOOR.key} (the master’s key) and ${NV.DOOR.record} (${whenceText(a.record)})`),
                 vaultRow('The master, made at random', a.master),
                 row('In the master', `${NV.MASTER.reader} (the reader vault’s key) and ${NV.MASTER.doors} (1 door)`),
                 vaultRow('The reader vault, made at random', a.reader),
@@ -402,7 +403,7 @@ export async function lab(opts) {
             const notes = u.reader ? await NV.listFiles(u.reader, '/notes').catch(() => []) : []
             out6.replaceChildren(h('p', { class: 'ok' }, `Unlocked in ${Math.round(performance.now() - t0)} ms, with nothing stored on this device: the door gave the master, the master gave the reader vault.`),
                 vaultRow('The door', u.door),
-                row('Where it came from', u.record ? `${u.record.kind}, ${u.record.provider || 'provider not recorded'} ${u.record.path || ''}, device “${u.record.device || ''}”, ${String(u.record.created).slice(0, 10)}` : 'no record'),
+                row('Where it came from', whenceText(u.record)),
                 vaultRow('The master', u.master), doorsRow(u.doors),
                 u.reader ? vaultRow('The reader vault', u.reader) : row('The reader vault', 'none recorded in the master'),
                 row('Notes in the reader vault', notes.length ? notes.join(', ') : 'none yet'))

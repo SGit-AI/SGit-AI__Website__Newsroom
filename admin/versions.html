@@ -12,7 +12,7 @@
 
 <nav class="site"><div class="row">
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.10.1</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.10.2</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -136,6 +136,14 @@
 <div class="tablewrap"><table class="vers">
   <thead><tr><th>Version</th><th>Date</th><th>What shipped</th></tr></thead>
   <tbody>
+    <tr>
+      <td class="vnum">v0.10.2</td>
+      <td>12 Oct 2026</td>
+      <td><b>The live check: real vaults made from a passkey on a real iPad, against dev.send.sgraph.ai.</b>
+        <p>Run by hand on 12 October 2026 on a current iPad in Safari, with an iCloud Keychain passkey and an access key, on <a href="../passkey/index.html">the lab</a> at v0.10.1. &ldquo;Create the account&rdquo; made three vaults on dev.send.sgraph.ai: the door at its derived address, <code>mqjs1o8c</code>; the master, <code>bylaydze</code>; the reader vault, <code>e7vj84c9</code>. A note was written into the reader vault and read back; opening that vault in dev.vault.sgraph.ai showed <code>notes/2026-10-12.md</code> with the note, <code>README.md</code> and the settings file, so the vault the browser wrote is one the vault host reads. After a page refresh, with nothing stored on the device, the passkey unlocked the door, the master and the reader vault again, the door&rsquo;s record reading <em>passkey, platform, device &ldquo;DC New IPad&rdquo;</em>. The vault ids are recorded here as the brief asks; no key is.</p>
+        <p>One wording slip seen in the run is fixed: the door&rsquo;s origin read &ldquo;provider not recorded platform&rdquo; when the browser had named no transports; it now reads kind, path, then provider, then device and date. Nothing else changed.</p>
+      </td>
+    </tr>
     <tr>
       <td class="vnum">v0.10.1</td>
       <td>12 Oct 2026</td>
@@ -685,7 +693,7 @@
     <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="netline"><a href="https://sgit.ai" style="display:inline;padding:0"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://pt.newsroom.sgit.ai" style="display:inline;padding:0">&#8593; pt.newsroom.sgit.ai</a> &middot; <a href="https://graphs.sgit.ai" style="display:inline;padding:0">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai" style="display:inline;padding:0">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai" style="display:inline;padding:0">&#8593; nhi.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai" style="display:inline;padding:0">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.10.1</a> &middot; <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.10.2</a> &middot; <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>The newsroom</h4>
