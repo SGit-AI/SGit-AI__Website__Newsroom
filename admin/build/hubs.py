@@ -236,8 +236,9 @@ def shipped(f):
          'A beta. The first edition is a week&rsquo;s catch-up, written by agents and reviewed by none; every story says so, and 22 of its '
          'primary sources were not fetched. The daily run that the vault&rsquo;s runbook describes is not yet scheduled; placement on '
          'the front page and the weekly newsletter are designed, not built.'),
-        ('<b>The feedback loop</b> (beta)', 'Notes kept as you read: one tap at any page or at a wire story (read later, not for me, more like this, '
-         'liked, wrong, fix this, idea), with words and the phrase selected, kept in this browser as it happens; carried to the reader&rsquo;s other '
+        ('<b>The feedback loop</b> (beta)', 'Notes kept as you read: one tap at any page or at a wire story (done, read later, not for me, more like this, '
+         'liked, wrong, fix this, idea), with words and the phrase selected, kept in this browser as it happens; what this browser knows about the page and '
+         'a Reading tab with the done pages folded away; carried to the reader&rsquo;s other '
          'devices by the vault; and sent, when the reader chooses, down a lane of their own: a vault whose write key stays in their master and '
          'whose read key they hand the newsroom once. The newsroom reads the lane with sgit, or <code>admin/build/lane.py</code>, and answers in '
          'the open. A decided wire story folds to its headline. <a href="../vault/index.html#feedback">The page</a>, '

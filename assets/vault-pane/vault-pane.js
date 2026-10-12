@@ -29,15 +29,16 @@ import * as NV from '../newsroom-vault.js'
 import { doorFrom, prfBytes, recoveryBytes, recoveryCode, PRF_INPUT_TEXT, sha256 } from '../door.js'
 import { extract, consolidate, mergeInto, mergeNotes, accountFile, PATHS, describe } from './sync.js'
 import * as N from './notes.js'
+import * as R from './reading.js'
 
 const ROOT = new URL('../../', import.meta.url)                       // assets/vault-pane/ → the site root
 const ENDPOINT = 'https://dev.send.sgraph.ai'
 const LIB = ['sg-send/sg-send-crypto.js', 'sg-send/sg-send.js', 'sg-vault/sg-vault-crypto.js', 'sg-vault/sg-vault-object-store.js', 'sg-vault/sg-vault-ref-manager.js',
              'sg-vault/sg-vault-commit.js', 'sg-vault/sg-vault.js', 'sg-vault/sg-vault--file-ops.js', 'sg-vault/sg-vault--folder-ops.js', 'sg-vault/sg-vault--sync.js',
              'sg-vault/sg-vault--history.js', 'sg-vault/sg-vault--branches.js'].map(f => `assets/vendor/sg-vault/v0.2.3/${f}`).concat(['assets/vendor/sg-vault/local/sg-vault--create-with-id.js'])
-const SESSION = 'sgit.vault.session', LABEL = 'sgit.device-label'
+const SESSION = 'sgit.vault.session', LABEL = 'sgit.device-label', OPEN = 'sgit.vault.open', LAST_SYNC = 'sgit.vault.last-sync'
 const TOKEN_FILE = { folder: '/.vault', name: 'access-token.json' }    // where the library's readEmbeddedAccessToken() looks
-const TABS = [['page', 'This page'], ['vault', 'Vault'], ['keys', 'Keys']]
+const TABS = [['page', 'This page'], ['reading', 'Reading'], ['vault', 'Vault'], ['keys', 'Keys']]
 
 const h = (tag, attrs, ...kids) => {
     const el = document.createElement(tag)
@@ -89,29 +90,34 @@ export function mount() {
     let label = ''; try { label = localStorage.getItem(LABEL) || '' } catch (e) { /* fine */ }
     const state = { drawn: false, vaults: null, lane: null, consolidated: null, busy: false, sg: null, tab: 'page', sel: '', lastKept: null }
     const tabs = h('div', { class: 'tabs', role: 'tablist' })
-    const secs = { page: h('section', { id: 'vault-sec-page', role: 'tabpanel', hidden: true }), vault: h('section', { id: 'vault-sec-vault', role: 'tabpanel', hidden: true }), keys: h('section', { id: 'vault-sec-keys', role: 'tabpanel', hidden: true }) }
+    const secs = Object.fromEntries(TABS.map(([id]) => [id, h('section', { id: `vault-sec-${id}`, role: 'tabpanel', hidden: true })]))
     const body = secs.vault
     const fill = (...kids) => body.replaceChildren(...kids.flat().filter(k => k != null && k !== false))   // replaceChildren would print a null as text
+    const put = (el, ...kids) => el.replaceChildren(...kids.flat().filter(k => k != null && k !== false))
     const log = h('ul', { class: 'log', hidden: true })
     const pane = h('aside', { id: 'sgit-vault-pane', class: 'vault-pane', 'aria-label': 'Your vault' },
         h('div', { class: 'head' }, h('h2', {}, 'Your vault'), h('button', { type: 'button', class: 'btn close', onclick: () => toggle(false) }, 'Close')),
-        h('p', { class: 'dim' }, 'Your notes on what you read, and the reading account this browser keeps, carried between your devices through an encrypted vault that opens with your passkey. Local storage stays the place it lives; the vault is updated when you ask.'),
-        tabs, secs.page, secs.vault, secs.keys,
+        h('p', { class: 'dim' }, 'Your notes on what you read, what you have read, and the reading account this browser keeps, carried between your devices through an encrypted vault that opens with your passkey. Local storage stays the place it lives; the vault is updated when you ask.'),
+        tabs, ...TABS.map(([id]) => secs[id]),
         h('h3', {}, 'Calls to the vault server'), log)
     document.body.append(pane)
     for (const [id, name] of TABS) tabs.append(h('button', { type: 'button', class: 'tab', id: `vault-tab-${id}`, role: 'tab', 'aria-selected': 'false', 'aria-controls': `vault-sec-${id}`, onclick: () => showTab(id) }, name, id === 'page' ? h('span', { class: 'n', id: 'vault-tab-page-n' }, String(N.list().length)) : null))
     const buttons = [...document.querySelectorAll('.vault-btn')]
+    const remember = on => { try { if (on) sessionStorage.setItem(OPEN, state.tab); else sessionStorage.removeItem(OPEN) } catch (e) { /* fine */ } }
     const toggle = open => {
         const on = open == null ? !document.documentElement.classList.contains('vault-open') : open
         document.documentElement.classList.toggle('vault-open', on)
         for (const b of buttons) b.setAttribute('aria-expanded', String(on))
         if (on) { if (!state.drawn) draw(); showTab(state.tab) }
+        remember(on)                                                          // open stays open from page to page, on the same tab
     }
     function showTab(id) {
-        state.tab = id
-        for (const [k] of TABS) { document.getElementById(`vault-tab-${k}`).setAttribute('aria-selected', String(k === id)); secs[k].hidden = k !== id }
-        if (id === 'page') drawPage()
-        if (id === 'keys') drawKeys()
+        state.tab = TABS.some(([k]) => k === id) ? id : 'page'
+        for (const [k] of TABS) { document.getElementById(`vault-tab-${k}`).setAttribute('aria-selected', String(k === state.tab)); secs[k].hidden = k !== state.tab }
+        if (state.tab === 'page') drawPage()
+        if (state.tab === 'reading') drawReading()
+        if (state.tab === 'keys') drawKeys()
+        if (document.documentElement.classList.contains('vault-open')) remember(true)
     }
     for (const b of buttons) b.addEventListener('click', () => toggle())
 
@@ -160,7 +166,8 @@ export function mount() {
     })
     const clearSel = () => { state.sel = ''; selOut.hidden = true; selOut.textContent = '' }
     let pageDrawn = false
-    const lists = { here: h('ul', { class: 'notes', id: 'notes-here' }), all: h('ul', { class: 'notes', id: 'notes-all' }), counts: h('p', { class: 'dim', id: 'notes-count' }), lane: h('div', { id: 'vault-lane' }), sendOut: h('div', { id: 'vault-send-out' }) }
+    const lists = { here: h('ul', { class: 'notes', id: 'notes-here' }), all: h('ul', { class: 'notes', id: 'notes-all' }), counts: h('p', { class: 'dim', id: 'notes-count' }), lane: h('div', { id: 'vault-lane' }), sendOut: h('div', { id: 'vault-send-out' }),
+                    known: h('div', { class: 'known', id: 'page-known' }), steps: h('ol', { class: 'steps', id: 'vault-steps' }) }
     const sendBtn = h('button', { type: 'button', class: 'btn primary', id: 'vault-send', onclick: send }, 'Send to the newsroom')
     const kept = h('p', { class: 'ok', id: 'note-kept', hidden: true })
     const words = h('textarea', { id: 'note-words', rows: 2, placeholder: 'Words, if you want: what is wrong, what to do, why…' })
@@ -172,7 +179,7 @@ export function mount() {
                 const rec = N.keep({ kind, text: words.value, quote: state.sel || '' })
                 if (!rec) return
                 words.value = ''; clearSel(); state.lastKept = rec.id
-                kept.textContent = `Kept: ${N.describeNote(rec)}.${rec.text ? '' : ' Words below and “Keep the words” attach them to it.'}`; kept.hidden = false
+                kept.textContent = `Kept: ${N.describeNote(rec)}.${rec.text ? '' : ' Words typed below and “Keep these words” attach them to it.'}`; kept.hidden = false
             }
             const keepWords = () => {
                 const t = words.value.trim(); if (!t) return
@@ -183,20 +190,66 @@ export function mount() {
                 kept.textContent = `Kept: ${N.describeNote(rec)}.`; kept.hidden = false
             }
             secs.page.replaceChildren(
+                lists.steps,
                 h('h3', {}, 'About this page'),
                 h('p', { class: 'dim' }, page.title ? `${page.title}${page.n ? ` (No. ${page.n})` : ''}` : location.pathname),
+                lists.known,
                 selOut,
                 h('div', { class: 'chips', role: 'group', 'aria-label': 'One tap' }, ...N.KINDS.map(k => h('button', { type: 'button', class: 'chip', id: `note-${k.id}`, title: k.says, onclick: () => tap(k.id) }, k.label))),
                 h('label', {}, words),
-                h('div', { class: 'acts' }, h('button', { type: 'button', class: 'btn primary', id: 'note-keep', onclick: keepWords }, 'Keep the words')),
+                h('div', { class: 'acts' }, h('button', { type: 'button', class: 'btn primary', id: 'note-keep', onclick: keepWords }, 'Keep these words')),
                 kept,
-                h('p', { class: 'dim' }, 'One tap keeps a note in this browser, with the words and whatever you had selected on the page. ', h('em', {}, 'Update the vault'), ' carries your notes to your other devices; ', h('em', {}, 'Send to the newsroom'), ' carries the ones not yet sent into a lane of their own, which the newsroom reads with a key you hand over. ', h('a', { href: new URL('vault/index.html#feedback', ROOT).href }, 'How it works'), '.'),
+                h('p', { class: 'dim' }, 'One tap keeps a note in this browser, with the words and whatever you had selected on the page; ', h('em', {}, 'Done'), ' also takes the page off your reading list. ', h('em', {}, 'Update the vault'), ' carries your notes to your other devices; ', h('em', {}, 'Send to the newsroom'), ' carries the ones not yet sent into a lane of their own, which the newsroom reads with a key you hand over. ', h('a', { href: new URL('vault/index.html#feedback', ROOT).href }, 'How the loop works'), '.'),
                 h('h3', {}, 'Kept on this page'), lists.here,
                 h('h3', {}, 'All your notes'), lists.counts, h('div', { class: 'acts' }, sendBtn), lists.sendOut, lists.lane, lists.all,
             )
         }
         renderNotes()
         if (state.vaults) ensureLane().then(drawLane)
+    }
+    /** What this browser knows about the page: its reads from the meter, and the decision at it. */
+    function renderKnown() {
+        const s = R.summary(location.pathname), d = N.decisionFor(location.pathname)
+        const when = at => String(at || '').slice(0, 16).replace('T', ' ')
+        put(lists.known,
+            d ? h('span', { class: 'decision' }, N.kindLabel(d.kind)) : null,
+            d ? h('span', {}, `on ${when(d.at)}. `) : null,
+            s ? h('span', {}, h('b', {}, s.count === 1 ? 'Read once' : `Read ${s.count} times`), `, last ${when(s.last)}: you ${R.depthWords(s.depth)}`, s.cost ? `, ${s.cost}p` : '', s.rating && s.rating.useful ? `, rated ${s.rating.useful} of 5` : '', s.declined ? ', declined' : '', '.')
+              : h('span', { class: 'dim' }, 'Not read in this browser before now, by the meter’s records.'))
+    }
+    /** The three steps, with the next one in bold. */
+    function renderSteps() {
+        const enabled = !!session.get(), updated = (() => { try { return localStorage.getItem(LAST_SYNC) || '' } catch (e) { return '' } })(), sent = N.own().some(n => n.sent)
+        const steps = [
+            ['Enable the vault with your passkey', enabled, () => showTab('vault')],
+            ['Update the vault, so your notes and reads reach your other devices', !!updated, () => showTab('vault')],
+            ['Send your notes to the newsroom', sent, null],
+        ]
+        let nextSeen = false
+        put(lists.steps, ...steps.map(([text, done, go], i) => {
+            const next = !done && !nextSeen; if (next) nextSeen = true
+            return h('li', { class: done ? 'done' : next ? 'next' : '' }, h('span', { class: 'n' }, String(i + 1)), h('span', {}, text, done && i === 1 ? ` (last ${updated.slice(0, 16).replace('T', ' ')})` : ''), next && go ? h('button', { type: 'button', onclick: go }, 'Go') : null)
+        }))
+    }
+    /** The reading list: every page read here, newest first, with its decision; pages marked done are folded away. */
+    let showDone = false
+    function drawReading() {
+        const hist = R.history()
+        const done = hist.filter(p => N.isDone(p.path)), shown = showDone ? hist : hist.filter(p => !N.isDone(p.path))
+        const when = at => String(at || '').slice(0, 16).replace('T', ' ')
+        const toggleDone = h('input', { type: 'checkbox', id: 'reading-show-done' }); toggleDone.checked = showDone
+        toggleDone.addEventListener('change', () => { showDone = toggleDone.checked; drawReading() })
+        put(secs.reading,
+            h('h3', {}, 'What you have read here'),
+            h('p', { class: 'dim', id: 'reading-count' }, hist.length ? `${hist.length} page(s) read in this browser, ${done.length} marked done${done.length && !showDone ? ' and folded away' : ''}. The meter’s records, as kept; ` : 'Nothing read in this browser yet, by the meter’s records. ', 'Done at a page takes it off this list; Update the vault carries the list to your other devices.'),
+            h('label', { class: 'filter' }, toggleDone, 'Show the pages marked done'),
+            h('ul', { class: 'reading', id: 'reading-list' }, ...shown.map(p => {
+                const d = N.decisionFor(p.path)
+                return h('li', { class: N.isDone(p.path) ? 'done-page' : '', 'data-path': p.path },
+                    h('a', { href: new URL(p.path.replace(/^\//, ''), ROOT).href }, p.title || p.path),
+                    h('span', { class: 'meta' }, d ? h('span', { class: `badge ${d.kind}` }, N.kindLabel(d.kind)) : null, d ? ' · ' : '', `${when(p.last)} · you ${R.depthWords(p.depth)}${p.count > 1 ? `, ${p.count} times` : ''}${p.cost ? `, ${p.cost}p` : ''}`),
+                    N.isDone(p.path) ? null : h('button', { type: 'button', class: 'mark', title: 'Read it, done with it: fold it away', onclick: () => N.keep({ kind: 'done', path: p.path, title: p.title, n: null, quote: '' }) }, 'Done'))
+            }), shown.length ? null : h('li', { class: 'dim' }, done.length ? 'Everything read here is marked done.' : 'Nothing yet.')))
     }
     const item = rec => h('li', { class: 'note', 'data-id': rec.id, 'data-kind': rec.kind },
         rec.device ? null : h('button', { type: 'button', class: 'x', title: 'Remove this note from this browser', onclick: () => N.remove(rec.id) }, 'remove'),
@@ -208,15 +261,16 @@ export function mount() {
     function renderNotes() {
         const all = N.list(), here = N.forPage(location.pathname), own = N.own(), un = N.unsent()
         const badge = document.getElementById('vault-tab-page-n'); if (badge) badge.textContent = String(all.length)
-        lists.here.replaceChildren(...(here.length ? here.map(item) : [h('li', { class: 'dim' }, 'Nothing on this page yet.')]))
-        lists.all.replaceChildren(...(all.length ? all.slice(0, 40).map(item) : [h('li', { class: 'dim' }, 'No notes in this browser yet.')]), all.length > 40 ? h('li', { class: 'dim' }, `and ${all.length - 40} more, in local storage`) : null)
+        put(lists.here, here.length ? here.map(item) : h('li', { class: 'dim' }, 'Nothing on this page yet.'))
+        put(lists.all, all.length ? all.slice(0, 40).map(item) : h('li', { class: 'dim' }, 'No notes in this browser yet.'), all.length > 40 ? h('li', { class: 'dim' }, `and ${all.length - 40} more, in local storage`) : null)
         lists.counts.textContent = `${all.length} note(s) in this browser, ${own.length} of this device, ${un.length} not yet sent.`
         sendBtn.disabled = !un.length
+        renderKnown(); renderSteps()
     }
-    window.addEventListener(N.EVENT, () => { if (pageDrawn) renderNotes() })
+    window.addEventListener(N.EVENT, () => { if (pageDrawn) renderNotes(); if (state.tab === 'reading') drawReading() })
     function drawLane() {
         const L = state.lane
-        lists.lane.replaceChildren(L ? h('div', { class: 'lane' },
+        put(lists.lane, L ? h('div', { class: 'lane' },
             row('The lane', h('span', { class: 'mono' }, L.lane.vaultId)),
             row('Its read key', h('span', {}, h('span', { class: 'mono', id: 'vault-lane-key' }, L.record.read), ' ', copyBtn(L.record.read))),
             h('p', { class: 'dim' }, 'Hand the read key to the newsroom once, in the open: it reads the lane and cannot write to it, and nothing else of yours is in it. The write key stays in your master vault. ', h('span', { class: 'mono' }, `sgit clone ${L.record.read}`), ' reads every note.')) : null)
@@ -224,7 +278,7 @@ export function mount() {
     async function send() {
         const un = N.unsent(); if (!un.length) return
         if (!state.vaults) { lists.sendOut.replaceChildren(h('p', { class: 'warn' }, 'Enable the vault first, in the Vault tab: the lane lives in your master vault, so the newsroom only ever gets what you send.')); return }
-        if (!state.vaults.token) { lists.sendOut.replaceChildren(h('p', { class: 'warn' }, 'The master holds no access key, so nothing can be written; create the account again with one.')); return }
+        if (!state.vaults.token) { lists.sendOut.replaceChildren(h('p', { class: 'warn' }, 'The master holds no access key, so nothing can be written yet: add it once in the Vault tab, and every device of yours gets it from there.')); return }
         await withBusy('vault-send', async () => {
             lists.sendOut.replaceChildren(h('p', { class: 'dim' }, `Sending ${un.length} note(s)…`))
             try {
@@ -234,7 +288,9 @@ export function mount() {
                 try { await L.lane.pull() } catch (e) { /* nothing new, or local commits */ }
                 const paths = await NV.sendToLane(L.lane, un, deviceId)
                 N.markSent(un.map(x => x.id), L.lane.vaultId)
-                lists.sendOut.replaceChildren(h('p', { class: 'ok', id: 'vault-sent' }, `Sent: ${paths.length} note(s) to the lane ${L.lane.vaultId}, published.`))
+                let carried = ''
+                if (state.vaults.reader) { try { await writeDevice(); carried = ' This device’s file in the reader vault is updated too, so your other devices see them as sent.' } catch (e) { carried = '' } }
+                lists.sendOut.replaceChildren(h('p', { class: 'ok', id: 'vault-sent' }, `Sent: ${paths.length} note(s) to the lane ${L.lane.vaultId}, published.${carried}`))
                 drawLane()
             } catch (e) { lists.sendOut.replaceChildren(h('p', { class: 'warn' }, `Not sent: ${err(e)}`)) }
         })
@@ -408,6 +464,7 @@ export function mount() {
         const notes = N.list().length, ownNotes = N.own().length
         const device = h('input', { type: 'text', value: label, maxlength: 40, placeholder: 'this device, e.g. "my laptop"' })
         device.addEventListener('change', () => { label = device.value.trim(); try { localStorage.setItem(LABEL, label) } catch (e) { /* fine */ } })
+        const access = h('input', { type: 'password', autocomplete: 'off', placeholder: 'kept in memory, then inside your master vault' })
         const across = h('div', { id: 'vault-across' }, h('p', { class: 'dim' }, 'Reading the devices’ files…'))
         fill(
             note || null,
@@ -417,17 +474,37 @@ export function mount() {
             row('Door', h('span', { class: 'mono' }, `${v.door.vaultId}${session.get() && session.get().path ? ' · ' + session.get().path : ''}`)),
             row('Master', h('span', { class: 'mono' }, v.master.vaultId)),
             row('Reader vault', v.reader ? h('span', { class: 'mono' }, v.reader.vaultId) : 'none'),
-            row('Access key', v.token ? 'in the master vault, in memory here' : 'none: writes will fail'),
+            row('Access key', v.token ? 'in the master vault, in memory here' : 'none in the master: add it below, once, and every device gets it'),
+            v.token ? null : h('div', { class: 'warn', id: 'vault-notoken' },
+                h('p', {}, 'This account was made without an access key in its master, so nothing can be written yet. Paste the key once: it is written into the master, and from then on every device of yours finds it there.'),
+                h('label', {}, 'Access key', access),
+                h('div', { class: 'acts' }, h('button', { type: 'button', class: 'btn primary', id: 'vault-add-token', onclick: () => addToken(access.value.trim()) }, 'Add the access key'))),
             local ? row('Here', `${local.own} read(s) of this device, ${local.reads - local.own} brought in, balance ${money(local.balance, cfgNow.symbol)}; ${ownNotes} note(s) of this device, ${notes - ownNotes} brought in`) : row('Here', `no reading account in this browser yet; ${ownNotes} note(s) of this device`),
             h('div', { class: 'acts' },
                 h('button', { type: 'button', class: 'btn primary', id: 'vault-sync', disabled: !v.token || !v.reader, onclick: sync }, 'Update the vault'),
                 h('button', { type: 'button', class: 'btn', id: 'vault-refresh', onclick: () => refreshAcross() }, 'Check the vault'),
-                h('button', { type: 'button', class: 'btn', onclick: () => { session.set(null); state.vaults = null; state.lane = null; setButtons(); drawLocked(h('p', { class: 'dim' }, 'Forgotten on this device; the vault is unchanged.')) } }, 'Forget on this device')),
+                h('button', { type: 'button', class: 'btn', onclick: () => { session.set(null); state.vaults = null; state.lane = null; setButtons(); if (pageDrawn) renderSteps(); drawLocked(h('p', { class: 'dim' }, 'Forgotten on this device; the vault is unchanged.')) } }, 'Forget on this device')),
             h('div', { id: 'vault-sync-out' }),
             h('h3', {}, 'Across your devices'), across,
             h('p', { class: 'dim' }, 'The keys of every vault of this account are in the Keys tab; your notes and the lane to the newsroom in This page.'),
         )
         await refreshAcross()
+    }
+
+    /** An account made without an access key in its master (the lab's early accounts): write it in, once. */
+    async function addToken(token) {
+        if (!token) { body.prepend(h('p', { class: 'warn' }, 'Paste the access key first.')); return }
+        await withBusy('vault-add-token', async () => {
+            const status = h('p', { class: 'dim' }, 'Writing the access key into the master…'); body.prepend(status)
+            try {
+                const sg = await client(token)
+                await NV.writeFile(state.vaults.master, TOKEN_FILE.folder, TOKEN_FILE.name, JSON.stringify({ token }))
+                await NV.publish(state.vaults.master)
+                state.vaults.token = token
+                session.set({ ...(session.get() || {}), token }); setButtons()
+                await drawUnlocked(h('p', { class: 'ok', id: 'vault-token-added' }, 'The access key is in the master now; every device of yours gets it from there.'))
+            } catch (e) { status.replaceWith(h('p', { class: 'warn' }, /401|403|access token/i.test(String(e && e.message)) ? `The vault server refused that key (${err(e)}). Check it and try again.` : err(e))) }
+        })
     }
 
     async function readAll() {
@@ -458,17 +535,24 @@ export function mount() {
         } catch (e) { across.replaceChildren(h('p', { class: 'warn' }, `The devices’ files could not be read: ${err(e)}`)) }
     }
 
+    /** This device's file, written whole into the reader vault and published: the one write of the sync model. */
+    async function writeDevice() {
+        const v = state.vaults, cfgNow = meterCfg(), st = readState(cfgNow.storageKey) || emptyState(cfgNow)
+        try { await v.reader.pull() } catch (e) { /* fine */ }
+        const prev = await NV.readJson(v.reader, PATHS.device(deviceId)).catch(() => null)
+        const file = extract(st, { id: deviceId, label, agent: (navigator.userAgentData && navigator.userAgentData.platform) || navigator.platform || '' }, prev, { notes: N.own() })
+        await NV.writeFile(v.reader, PATHS.devicesFolder, `${deviceId}.json`, JSON.stringify(file, null, 1))
+        if (!(await NV.readJson(v.reader, PATHS.account).catch(() => null))) await NV.writeFile(v.reader, '/activity', 'account.json', JSON.stringify(accountFile(cfgNow, deviceId), null, 1))
+        await NV.publish(v.reader)
+        try { localStorage.setItem(LAST_SYNC, file.device.last_sync) } catch (e) { /* fine */ }
+        if (pageDrawn) renderSteps()
+        return file
+    }
     async function sync() {
         await withBusy('vault-sync', async () => {
             const out = document.getElementById('vault-sync-out'); out.replaceChildren(h('p', { class: 'dim' }, 'Writing this device’s records as one commit, then publishing…'))
             try {
-                const v = state.vaults, cfgNow = meterCfg(), st = readState(cfgNow.storageKey) || emptyState(cfgNow)
-                try { await v.reader.pull() } catch (e) { /* fine */ }
-                const prev = await NV.readJson(v.reader, PATHS.device(deviceId)).catch(() => null)
-                const file = extract(st, { id: deviceId, label, agent: (navigator.userAgentData && navigator.userAgentData.platform) || navigator.platform || '' }, prev, { notes: N.own() })
-                await NV.writeFile(v.reader, PATHS.devicesFolder, `${deviceId}.json`, JSON.stringify(file, null, 1))
-                if (!(await NV.readJson(v.reader, PATHS.account).catch(() => null))) await NV.writeFile(v.reader, '/activity', 'account.json', JSON.stringify(accountFile(cfgNow, deviceId), null, 1))
-                await NV.publish(v.reader)
+                const file = await writeDevice()
                 out.replaceChildren(h('p', { class: 'ok', id: 'vault-synced' }, `Updated: ${describe(file)}, as one commit, published. Sync ${file.device.syncs} from this device.`))
                 await refreshAcross()
             } catch (e) { out.replaceChildren(h('p', { class: 'warn' }, `The vault was not updated: ${err(e)}`)) }
@@ -487,9 +571,13 @@ export function mount() {
         })
     }
 
-    // open on arrival: the vault page and #vault on the Vault tab, #notes on This page (after every declaration above)
+    // open on arrival: the vault page and #vault on the Vault tab, #notes on This page, #reading on Reading, and
+    // otherwise as it was on the page before, so the pane stays open from page to page (after every declaration above)
+    let remembered = ''; try { remembered = sessionStorage.getItem(OPEN) || '' } catch (e) { /* fine */ }
     if (location.hash === '#vault' || document.documentElement.hasAttribute('data-vault-open')) { state.tab = 'vault'; toggle(true) }
     else if (location.hash === '#notes') toggle(true)
+    else if (location.hash === '#reading') { state.tab = 'reading'; toggle(true) }
+    else if (remembered) { state.tab = remembered; toggle(true) }
 
     // after a merge, say what arrived
     try {

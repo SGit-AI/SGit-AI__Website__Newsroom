@@ -122,8 +122,9 @@ NAV = [
         ("The network", "network/index.html"),
         ("Release history", "admin/versions.html"),
         ("Admin &amp; engineering", "admin/index.html"),
+        ("Engineering: issues &amp; releases", "engineering/index.html"),
         ("Comms: tasks &amp; requests", "admin/comms.html"),
-    ], ("about/", "network/", "admin/")),
+    ], ("about/", "network/", "admin/", "engineering/")),
 ]
 
 FOOTER = [

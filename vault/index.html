@@ -18,7 +18,7 @@
 <body>
 <nav class="site"><div class="row">
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.12.0</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.12.1</a>
   <sg-meter class="meter-nav" view="balance"></sg-meter>
   <button class="vault-btn" type="button" aria-expanded="false" title="Your vault: the reading account carried between your devices"><span class="dot"></span>Vault</button>
   <link rel="stylesheet" href="../assets/vault-pane/vault-pane.css">
@@ -132,6 +132,7 @@
       <a class="sl" href="../network/index.html">The network</a>
       <a class="sl" href="../admin/versions.html">Release history</a>
       <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../engineering/index.html">Engineering: issues &amp; releases</a>
       <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
       </div>
     </div>
@@ -147,7 +148,7 @@
 <div class="note"><b>A beta.</b> The pane on the right is the vault, in three tabs: <b>This page</b>, your notes on what you read and the lane that carries the ones you choose to the newsroom; <b>Vault</b>, the reading account this browser keeps, carried between your devices through an encrypted vault that opens with your passkey; <b>Keys</b>, every vault of your account with its key. It is on every page, behind the <b>Vault</b> button beside the balance. Nothing about the meter changes; the vault is a second home for its data that you keep current.</div>
 <h2 id="feedback">The feedback loop</h2>
 <ol>
-<li><b>Read, and tap.</b> On any page, open the pane. Select a phrase if one is the point. One tap keeps a note in this browser: <em>Read later</em>, <em>Not for me</em>, <em>More like this</em>, <em>Liked</em>, <em>Wrong</em>, <em>Fix this</em>, <em>Idea</em>; words if you want them, and the phrase you had selected. On <a href="../wire/index.html">the wire</a>, the decision is at each story, and a decided story folds to its headline.</li>
+<li><b>Read, and tap.</b> On any page, open the pane; it stays open from page to page until you close it. Above the chips it says what this browser knows about the page: read how many times, when, how far, what it cost. Select a phrase if one is the point. One tap keeps a note in this browser: <em>Done</em> (read it, done with it, off your lists), <em>Read later</em>, <em>Not for me</em>, <em>More like this</em>, <em>Liked</em>, <em>Wrong</em>, <em>Fix this</em>, <em>Idea</em>; words if you want them, and the phrase you had selected. On <a href="../wire/index.html">the wire</a>, the decision is at each story, and a decided story folds to its headline. The <b>Reading</b> tab lists every page read here, newest first, with its decision, and folds the done ones away.</li>
 <li><b>Update the vault</b>, in the Vault tab, when you like: your notes travel with your reads to your other devices, in this device&rsquo;s own file.</li>
 <li><b>Send to the newsroom</b> the notes you have not sent. The first send makes a <b>lane</b>: a vault of its own, whose write key stays in your master and whose <b>read key</b> the pane shows. Hand that key to the newsroom once, in the open; it reads the lane and cannot write to it, and nothing else of yours is in it. Later sends go to the same lane.</li>
 <li><b>The newsroom reads the lane</b> with <code>sgit clone</code> or <code>admin/build/lane.py</code>, and answers in the open: a fix in a release, a version of an article. Nothing comes back through the lane.</li>
@@ -192,7 +193,7 @@ import('../assets/components/sg-meter/v1/v1.4/v1.4.0/sg-meter.js')
     <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="netline"><a href="https://sgit.ai" style="display:inline;padding:0"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://pt.newsroom.sgit.ai" style="display:inline;padding:0">&#8593; pt.newsroom.sgit.ai</a> &middot; <a href="https://graphs.sgit.ai" style="display:inline;padding:0">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai" style="display:inline;padding:0">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai" style="display:inline;padding:0">&#8593; nhi.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai" style="display:inline;padding:0">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.12.0</a> &middot; <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.12.1</a> &middot; <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>The newsroom</h4>

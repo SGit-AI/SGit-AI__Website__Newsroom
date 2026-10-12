@@ -69,6 +69,10 @@ What the lane is not: a channel the newsroom can write back on. A reply goes the
 - **Sent marks reach other devices only with the next Update**, not with the send; a second device sees a note as unsent until the first device updates. A second device does not send another device's notes.
 - **Pruning**, as before: local storage keeps every note.
 
+## What the first run changed (v0.12.1)
+
+The owner's first run on an iPad, the same afternoon, is on [the engineering board](../../engineering/index.html) as cards 001 to 018. Fixed at once: the pane stays open from page to page; an account made in the lab before the pane existed takes its access key once, in the Vault tab; a stray null. Added at once: *Done* as the first decision, what the browser knows about the page from the meter's records, a Reading tab with done pages folded away, the three steps, and a send that updates the device file. Filed for the next releases: feedback without a vault through the newsroom's own append lane with a typed schema (010), screenshots (011), the early-access key first (012), first-time guidance (018).
+
 ## The experiments
 
 1. **A week of use by one reader**: notes per day, which kinds, how many led to a change in a release. The honest measure is whether the reader keeps doing it.

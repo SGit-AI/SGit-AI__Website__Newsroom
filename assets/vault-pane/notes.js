@@ -26,6 +26,7 @@ export const STORE = 'sgit.notes.v1'
 export const FORMAT = 1
 export const EVENT = 'sgit-notes'
 export const KINDS = [
+    { id: 'done', label: 'Done', about: 'piece', says: 'read it, done with it: hide it from my lists' },
     { id: 'read-later', label: 'Read later', about: 'piece', says: 'come back to this' },
     { id: 'not-for-me', label: 'Not for me', about: 'piece', says: 'this did not need to reach me' },
     { id: 'more-like-this', label: 'More like this', about: 'piece', says: 'more of this, please' },
@@ -34,6 +35,8 @@ export const KINDS = [
     { id: 'fix', label: 'Fix this', about: 'any', says: 'something here is broken or rough' },
     { id: 'idea', label: 'Idea', about: 'any', says: 'do this next' },
 ]
+/** The kinds that are a decision about the piece itself: one of these at a page is its state in the lists. */
+export const DECISIONS = ['done', 'read-later', 'not-for-me', 'more-like-this']
 export const kindLabel = id => (KINDS.find(k => k.id === id) || {}).label || (id === 'note' ? 'Note' : String(id || ''))
 export const QUOTE_MAX = 600, TEXT_MAX = 2000
 
@@ -122,6 +125,9 @@ export const own = () => read().notes.filter(x => !x.device)
 export const unsent = () => read().notes.filter(x => !x.device && !x.sent)
 export const forPage = path => read().notes.filter(x => x.path === (path || location.pathname))
 export const forStory = (path, story) => read().notes.filter(x => x.path === path && x.story === story)
+/** The latest decision at a page itself (not at a story on it): done, read later, not for me, more like this; or null. */
+export const decisionFor = path => read().notes.find(x => x.path === path && !x.story && DECISIONS.includes(x.kind)) || null
+export const isDone = path => { const d = decisionFor(path); return !!d && d.kind === 'done' }
 /** One note in words: "Wrong on The site is an inbox (No. 82): “…”, words". */
 export function describeNote(rec) {
     const where = rec.story ? `story ${rec.story}` : (rec.title || rec.path) + (rec.n ? ` (No. ${rec.n})` : '')

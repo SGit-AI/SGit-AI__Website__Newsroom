@@ -66,7 +66,8 @@ FILES = [
     ("assets/newsroom-vault.js",   "The newsroom's vault module: create, open, read, write and publish through the vendored library; the door, master and reader vaults; unlock; add a door", "this site"),
     ("assets/door.js",             "From a passkey's PRF bytes (or a recovery code) to a door vault's key: the article's derivation, shared by the lab and the pane", "this site"),
     ("assets/vault-pane/vault-pane.js", "The vault pane on every page with the meter, in three tabs: this page (the notes, send to the newsroom, the lane's read key), the vault (enable with the passkey, create or join, update the vault, the table across devices, bring their activity here), the keys (every vault of the account)", "this site"),
-    ("assets/vault-pane/notes.js",  "The reader's notes as records: one tap at a piece with words and the selected phrase, kept in localStorage sgit.notes.v1; keep, add words, remove, mark sent", "this site"),
+    ("assets/vault-pane/notes.js",  "The reader's notes as records: one tap at a piece (done, read later, not for me, more like this, liked, wrong, fix this, idea) with words and the selected phrase, kept in localStorage sgit.notes.v1; keep, add words, remove, mark sent; the decision at a page", "this site"),
+    ("assets/vault-pane/reading.js", "What this browser knows about what it has read, from the meter's records: one page summed up (times, when, how far, cost, rating) and the reading history", "this site"),
     ("assets/vault-pane/sync.js",  "The activity vault's logic as pure functions: a device's file (reads, top-ups, personas, notes), the consolidated view, totals recomputed, merging into local state", "this site"),
     ("assets/vault-pane/vault-pane.css", "Styles for the pane, its tabs, the chips and the notes, and the page shift", "this site"),
     ("assets/vendor/sg-vault/local/sg-vault--create-with-id.js", "SGVault.createWithId: a vault at a derived id, a local patch pending upstream", "this site, pending upstream"),
@@ -110,6 +111,8 @@ BUILD = [
     ("admin/build/wire.py", "writes the three wire pages and, from a clone, wire/snapshot.json"),
     ("admin/build/vault_page.py", "writes the vault page"),
     ("admin/build/lane.py", "the newsroom's end of the feedback loop: clones or pulls a reader's lane with its read key (from the environment, never a file) and prints the notes by page"),
+    ("admin/build/engineering.py", "renders /engineering/ from admin/engineering/: the board, one page per issue card, one per release, issues.json"),
+    ("admin/build/md.py", "the small markdown renderer the engineering pages use; escapes everything first"),
     ("admin/build/chrome.py", "the nav and footer on every page, with the meter's balance and the Vault button and pane on pages that carry the meter"),
     ("admin/build/validate.js", "the gate: checks 2d (live link), 5 (key tripwire), 11 (imports unedited), 12 (numbers hold)"),
 ]

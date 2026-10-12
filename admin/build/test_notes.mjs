@@ -86,6 +86,7 @@ const selectIn = sel => pg.evaluate(sel => { const el = document.querySelector(s
 try {
     // ---- A. notes on an article, no vault
     await pg.goto(B + 'articles/the-site-is-an-inbox.html'); await pg.waitForSelector('.vault-btn', { timeout: 20000 })
+    await pg.evaluate(() => window.scrollTo(0, document.body.scrollHeight)); await wait(900); await pg.evaluate(() => window.scrollTo(0, 0)); await wait(300)   // the meter records the read
     const phrase = await selectIn('main p:not(.small)')
     await openPane()
     check(await pg.evaluate(() => document.getElementById('vault-tab-page').getAttribute('aria-selected') === 'true' && !document.getElementById('vault-sec-page').hidden), 'the pane opens on This page')
@@ -106,6 +107,32 @@ try {
     await pg.click('#notes-here li.note[data-kind=idea] .x'); await wait(200)
     check((await notes()).length === 1 && (await pg.evaluate(() => document.querySelectorAll('#notes-here li.note').length)) === 1, 'remove takes a note out of this browser')
     const wrongId = (await notes())[0].id
+    // the three steps, and what the browser knows about the page (007, 005)
+    check(/Enable the vault/.test(await text('#vault-steps')) && (await pg.evaluate(() => (document.querySelector('#vault-steps li.next .n') || {}).textContent)) === '1', 'the three steps are shown, with Enable the vault as the next one')
+    check(/Read once|Read \d+ times/.test(await text('#page-known')) && /you (read|glanced|opened)/.test(await text('#page-known')), `what the browser knows about the page: ${(await text('#page-known')).trim().slice(0, 70)}`)
+    // Done: the decision at the page, and the Reading tab (004, 006)
+    await pg.click('#note-done'); await wait(200)
+    check(/Done/.test(await text('#page-known')) && (await notes())[0].kind === 'done', 'Done is a note, and the page shows it as its decision')
+    await pg.click('#vault-tab-reading'); await wait(300)
+    const listed = p => pg.evaluate(p => { const li = [...document.querySelectorAll('#reading-list li[data-path]')].find(li => li.dataset.path === p); return li ? { done: li.classList.contains('done-page'), text: li.textContent } : null }, p)
+    check(!(await listed('/articles/the-site-is-an-inbox.html')) && /1 marked done/.test(await text('#reading-count')), 'the Reading tab folds the page marked done away and counts it')
+    await pg.click('#reading-show-done'); await wait(200)
+    const li = await listed('/articles/the-site-is-an-inbox.html')
+    check(!!li && li.done && /Done/.test(li.text) && /you (read|glanced|opened)/.test(li.text), 'showing done pages lists it, marked Done, with how far it was read')
+    await pg.click('#vault-tab-page'); await wait(100); await pg.click('#notes-here li.note[data-kind=done] .x'); await wait(200)
+    check(!(await notes()).some(n => n.kind === 'done') && !/Done/.test(await text('#page-known')), 'removing the Done note gives the page back')
+    await pg.click('#vault-tab-reading'); await wait(200)
+    check(!!(await listed('/articles/the-site-is-an-inbox.html')) && !(await listed('/articles/the-site-is-an-inbox.html')).done, 'the Reading tab lists it again')
+    await pg.click('#reading-show-done'); await wait(200)                                    // back to the default: done pages folded
+    await pg.click('#reading-list li[data-path="/articles/the-site-is-an-inbox.html"] .mark'); await wait(200)
+    check((await notes())[0].kind === 'done' && !(await listed('/articles/the-site-is-an-inbox.html')), 'Done from the Reading tab folds the page away')
+    await pg.click('#vault-tab-page'); await wait(100); await pg.click('#notes-here li.note[data-kind=done] .x'); await wait(200)
+    // the pane stays open from page to page (001)
+    await pg.goto(B + 'articles/the-vault-is-live.html'); await pg.waitForSelector('#sgit-vault-pane', { timeout: 20000 }); await wait(600)
+    check(await pg.evaluate(() => document.documentElement.classList.contains('vault-open') && document.getElementById('vault-tab-page').getAttribute('aria-selected') === 'true'), 'the pane stays open on the next page, on the same tab')
+    check(/Not read in this browser/.test(await text('#page-known')) && (await pg.evaluate(() => document.querySelectorAll('#notes-here li.note').length)) === 0, 'the next page shows its own record: not read here, no notes')
+    await pg.click('#sgit-vault-pane .close'); await pg.goto(B + 'articles/the-site-is-an-inbox.html'); await pg.waitForSelector('#sgit-vault-pane', { timeout: 20000 }); await wait(400)
+    check(!(await pg.evaluate(() => document.documentElement.classList.contains('vault-open'))), 'Close keeps it closed on the next page')
 
     // ---- B. the wire: a decision at a story
     await pg.goto(B + 'wire/'); await pg.waitForFunction(() => document.documentElement.getAttribute('data-wire') === 'ready' || document.querySelector('.wire-err'), null, { timeout: 90000 })
@@ -142,12 +169,29 @@ try {
     await until('1 device\\(s\\)')
     const notesCol = await pg.evaluate(() => { const r = [...document.querySelectorAll('#vault-across tr.total td')]; return r.length ? r[4].textContent.trim() : '' })
     check(notesCol === String(expected), `the table across devices counts the notes (${notesCol})`)
+    check(/2.*Update the vault.*\(last 20/.test((await pg.evaluate(() => [...document.querySelectorAll('#vault-steps li')].map(li => li.className + ' ' + li.textContent).join(' | ')))) && (await pg.evaluate(() => (document.querySelector('#vault-steps li.next .n') || {}).textContent)) === '3', 'steps 1 and 2 are ticked, step 3 is next')
+
+    // ---- the lab's early accounts: no access key in the master (003, 002)
+    await pg.evaluate(async () => {
+        const NV = await import('/assets/newsroom-vault.js')
+        const rec = JSON.parse(sessionStorage.getItem('sgit.vault.session'))
+        const sg = NV.client({ endpoint: 'https://dev.send.sgraph.ai', token: rec.token })
+        const u = await NV.unlock({ sgSend: sg, door: rec.door, cloneBranch: 'nr-test-strip' })
+        await NV.writeFile(u.master, '/.vault', 'access-token.json', JSON.stringify({ token: '' })); await NV.publish(u.master)
+        sessionStorage.setItem('sgit.vault.session', JSON.stringify({ ...rec, token: '' }))
+    })
+    await pg.reload(); await pg.waitForSelector('#sgit-vault-pane', { timeout: 20000 }); await until('Across your devices|could not be opened', 90000)
+    check(await pg.evaluate(() => document.documentElement.classList.contains('vault-open') && !!document.getElementById('vault-notoken') && document.getElementById('vault-sync').disabled), 'an account whose master holds no access key: the pane says so, offers to add it, and Update is off')
+    await pg.click('#vault-tab-page'); await wait(200); await pg.click('#vault-send'); await wait(500)
+    check(/holds no access key/.test(await text('#vault-send-out')) && !/null/.test(await text('#vault-sec-page')), 'Send says the master holds no access key, and prints no stray null')
+    await pg.click('#vault-tab-vault'); await pg.fill('#vault-notoken input[type=password]', mock.token); await pg.click('#vault-add-token'); await until('is in the master now|refused', 90000)
+    check(!!(await pg.$('#vault-token-added')) && !(await pg.evaluate(() => document.getElementById('vault-sync').disabled)), 'Add the access key writes it into the master, and Update is on again')
 
     // ---- D. Send to the newsroom: the lane
     await pg.click('#vault-tab-page'); await wait(300)
     check(!(await pg.evaluate(() => document.getElementById('vault-send').disabled)) && new RegExp(`${expected} not yet sent`).test(await text('#notes-count')), `${expected} note(s) not yet sent, and Send is live`)
     await pg.click('#vault-send'); await until('Sent:|Not sent', 180000)
-    check(new RegExp(`Sent: ${expected} note\\(s\\) to the lane [a-z0-9]{4,24}, published`).test(await text('#vault-sent')), `Send: ${(await text('#vault-sent')).trim()}`)
+    check(new RegExp(`Sent: ${expected} note\\(s\\) to the lane [a-z0-9]{4,24}, published`).test(await text('#vault-sent')) && /updated too/.test(await text('#vault-sent')), `Send: ${(await text('#vault-sent')).trim().slice(0, 90)}`)
     check(mock.vaults().length === 5, `the lane is a fifth vault on the server (${mock.vaults().length})`)
     const readKey = (await text('#vault-lane-key')).trim()
     check(/^sgit_public_read_[0-9a-f]{64}:[a-z0-9]{4,24}$/.test(readKey), 'the lane\'s read key is shown, in the form sgit clones with')
@@ -212,9 +256,8 @@ try {
     await until('All, 1 device')
     await pg.click('#vault-merge'); await pg.waitForSelector('#vault-merged', { timeout: 60000 })
     n = await notes()
-    // A's file in the reader vault was written at Update, before the third note and before the send: the vault has two,
-    // the lane has three. The sent marks reach other devices with the next Update, not with a send.
-    check(new RegExp(`${expected} note\\(s\\)`).test(await text('#vault-merged')) && n.length === expected && n.every(x => x.device === deviceA), `device B: A's ${expected} notes from its last update are here, tagged with A (${(await text('#vault-merged')).trim()})`)
+    // a send rewrites A's device file too (009), so the vault holds every note A sent, marked sent
+    check(new RegExp(`${expected + 1} note\\(s\\)`).test(await text('#vault-merged')) && n.length === expected + 1 && n.every(x => x.device === deviceA && x.sent), `device B: A's ${expected + 1} notes are here, tagged with A and marked sent (${(await text('#vault-merged')).trim().slice(0, 80)})`)
     await pg.click('#vault-tab-page'); await wait(300)
     check(await pg.evaluate(() => [...document.querySelectorAll('#notes-all li.note')].every(li => /from nr-/.test(li.textContent) && !li.querySelector('.x'))), 'device B lists them as from A, with nothing to remove')
     check(await pg.evaluate(() => document.getElementById('vault-send').disabled) && /0 not yet sent/.test(await text('#notes-count')), 'device B has nothing of its own to send: another device\'s notes are not re-sent')

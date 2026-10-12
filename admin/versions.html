@@ -12,7 +12,7 @@
 
 <nav class="site"><div class="row">
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.12.0</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.12.1</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -122,6 +122,7 @@
       <a class="sl" href="../network/index.html">The network</a>
       <a class="sl here" href="../admin/versions.html">Release history</a>
       <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../engineering/index.html">Engineering: issues &amp; releases</a>
       <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
       </div>
     </div>
@@ -137,6 +138,17 @@
 <div class="tablewrap"><table class="vers">
   <thead><tr><th>Version</th><th>Date</th><th>What shipped</th></tr></thead>
   <tbody>
+    <tr id="v0.12.1">
+      <td class="vnum">v0.12.1</td>
+      <td>12 Oct 2026</td>
+      <td><b>The first run&rsquo;s bugs, Done, what the pane knows about the page, the Reading tab, the three steps, and engineering as files.</b> Issues 001 to 009, in <a href="../engineering/releases/v0.12.1.html">the release</a>.
+        <p><b>From the owner&rsquo;s first run</b> of v0.12.0 on an iPad, three screenshots and a note kept in the pane: the pane closed on every navigation, and now stays open from page to page on the same tab until Close (<a href="../engineering/issues/001.html">001</a>); a stray &ldquo;null&rdquo; under Send is gone (<a href="../engineering/issues/002.html">002</a>); an account made in the passkey lab before the pane existed holds no access key in its master, so the Vault tab now says so and takes the key once, writes it into the master, and Update and Send work from then on, on every device (<a href="../engineering/issues/003.html">003</a>).</p>
+        <p><b>Done</b> is the first of eight chips, and the first decision at a wire story: read it, done with it, off my lists (<a href="../engineering/issues/004.html">004</a>). Above the chips the pane now says what this browser knows about the page from the meter&rsquo;s records: read how many times, when last, how far, what it cost, how it was rated, and the decision at it (<a href="../engineering/issues/005.html">005</a>). A <b>Reading</b> tab lists every page read here, newest first, with its decision, and folds the done ones away with a switch to show them (<a href="../engineering/issues/006.html">006</a>). The three steps, enable, update, send, sit at the top of This page with the next one in bold (<a href="../engineering/issues/007.html">007</a>). A send now rewrites this device&rsquo;s file in the reader vault too, so other devices see the notes as sent (<a href="../engineering/issues/009.html">009</a>).</p>
+        <p><b>Engineering as files</b> (<a href="../engineering/issues/008.html">008</a>): <a href="../engineering/index.html">the board</a> under About, rendered from <code>admin/engineering/</code> in the Issues-FS-lite layout, open, blocked and done folders of markdown cards with front matter, a scenario in Gherkin, a mock-up before and an outcome and screenshots after; one file per release naming its cards. Every change from here on is connected to a card, and version rows name the ids. The owner&rsquo;s whole note is on the board as nine done cards and nine open or blocked ones, among them feedback without a vault through the newsroom&rsquo;s append lane (010), screenshots (011), the early-access key first (012) and first-time guidance (018).</p>
+        <p><b>Versioning, from here on.</b> Every push is a patch release; a minor or major release is a consolidation the owner asks for.</p>
+        <p><b>Checked.</b> <code>test_notes.mjs</code> grows to 61 checks: the steps and the page&rsquo;s record, Done folding the page away in the Reading tab and giving it back, Done from the Reading tab, the pane open on the next page and closed after Close, the master&rsquo;s key emptied and the pane offering to add it with Update off, no stray null, the key added and Update on, a send that updates the device file, and device B seeing every note as sent. The nine test files pass; the validator passes.</p>
+      </td>
+    </tr>
     <tr>
       <td class="vnum">v0.12.0</td>
       <td>12 Oct 2026</td>
@@ -723,7 +735,7 @@
     <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="netline"><a href="https://sgit.ai" style="display:inline;padding:0"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://pt.newsroom.sgit.ai" style="display:inline;padding:0">&#8593; pt.newsroom.sgit.ai</a> &middot; <a href="https://graphs.sgit.ai" style="display:inline;padding:0">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai" style="display:inline;padding:0">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai" style="display:inline;padding:0">&#8593; nhi.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai" style="display:inline;padding:0">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.12.0</a> &middot; <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.12.1</a> &middot; <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>The newsroom</h4>

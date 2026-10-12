@@ -22,7 +22,7 @@ import * as N from '../assets/vault-pane/notes.js'
 
 // The reader's decision at a story, one tap: a note kept in the browser (assets/vault-pane/notes.js), carried by
 // the vault pane to their devices and, when they send, to the newsroom's lane. A decided story folds to its headline.
-const DECISIONS = ['read-later', 'not-for-me', 'more-like-this', 'wrong']
+const DECISIONS = ['done', 'read-later', 'not-for-me', 'more-like-this', 'wrong']
 
 const h = (tag, attrs, ...kids) => {
     const el = document.createElement(tag)
