@@ -1,27 +1,34 @@
 /**
- * vault-pane.js: the reader's vault, as a pane on the right of every page.
+ * vault-pane.js: the reader's vault, as a pane on the right of every page, in three tabs.
  *
- * What it does (the design is admin/notes/2026-10-12__the-activity-vault.md, the pieces are the passkey lab's):
- *   - Enable the account on this device: the passkey's PRF bytes derive the door (assets/door.js); the door opens the
- *     master, the master opens the reader vault and gives the access key (assets/newsroom-vault.js). No door at the
- *     address means "no door here for this path yet": create an account (an access key, pasted once, kept in the
- *     master), or type the recovery code to add this path as a door.
- *   - Update the vault: this device's records (reads, top-ups, personas, raw, from the meter's local storage) written
- *     as one file in the reader vault, one commit, published. Only when the reader asks.
- *   - Across your devices: every device's file read, consolidated, totals recomputed (assets/vault-pane/sync.js);
- *     "Bring their activity here" adds other devices' records to this browser's local storage and reloads.
- *   - Every call to the vault server is listed as it happens.
+ *   This page   feedback, one tap at a time (assets/vault-pane/notes.js): read later, not for me, more like this,
+ *               liked, wrong, fix this, idea, with words and the phrase selected on the page; kept in this browser
+ *               as it happens; every note kept, on this page and in all; Send to the newsroom, which carries the
+ *               notes not yet sent into a lane of their own and shows the lane's read key to hand over.
+ *   Vault       enable the account on this device: the passkey's PRF bytes derive the door (assets/door.js); the
+ *               door opens the master, the master opens the reader vault and gives the access key
+ *               (assets/newsroom-vault.js). No door at the address means "no door here for this path yet": create
+ *               an account (an access key, pasted once, kept in the master), or type the recovery code to add this
+ *               path as a door. Update the vault: this device's records (reads, top-ups, personas, notes) written as
+ *               one file in the reader vault, one commit, published, only when the reader asks. Across your devices:
+ *               every device's file read, consolidated, totals recomputed (assets/vault-pane/sync.js); "Bring their
+ *               activity here" adds other devices' records and notes to this browser and reloads.
+ *   Keys        every vault of the account with its key, to open any of them on your own; the lane's read key.
+ *
+ * Every call to the vault server is listed as it happens, under the tabs.
  *
  * Where the keys live: in memory, and for the life of this tab in sessionStorage (so a page change does not ask
- * for the passkey again). Nothing is written to localStorage but this device's id and label. The vault library
- * (assets/vendor/sg-vault, twelve pinned files and one local extension) is loaded from this origin the first time
- * it is needed, not on every page.
+ * for the passkey again). Nothing is written to localStorage but this device's id and label, and the notes. The
+ * vault library (assets/vendor/sg-vault, twelve pinned files and one local extension) is loaded from this origin
+ * the first time it is needed, not on every page. The design: admin/notes/2026-10-12__the-activity-vault.md and
+ * admin/notes/2026-10-12__the-feedback-loop.md.
  *
  * @module vault-pane
  */
 import * as NV from '../newsroom-vault.js'
-import { doorFrom, prfBytes, recoveryBytes, recoveryCode, vaultKeyString, PRF_INPUT_TEXT, sha256 } from '../door.js'
-import { extract, consolidate, mergeInto, accountFile, PATHS, describe } from './sync.js'
+import { doorFrom, prfBytes, recoveryBytes, recoveryCode, PRF_INPUT_TEXT, sha256 } from '../door.js'
+import { extract, consolidate, mergeInto, mergeNotes, accountFile, PATHS, describe } from './sync.js'
+import * as N from './notes.js'
 
 const ROOT = new URL('../../', import.meta.url)                       // assets/vault-pane/ → the site root
 const ENDPOINT = 'https://dev.send.sgraph.ai'
@@ -30,6 +37,7 @@ const LIB = ['sg-send/sg-send-crypto.js', 'sg-send/sg-send.js', 'sg-vault/sg-vau
              'sg-vault/sg-vault--history.js', 'sg-vault/sg-vault--branches.js'].map(f => `assets/vendor/sg-vault/v0.2.3/${f}`).concat(['assets/vendor/sg-vault/local/sg-vault--create-with-id.js'])
 const SESSION = 'sgit.vault.session', LABEL = 'sgit.device-label'
 const TOKEN_FILE = { folder: '/.vault', name: 'access-token.json' }    // where the library's readEmbeddedAccessToken() looks
+const TABS = [['page', 'This page'], ['vault', 'Vault'], ['keys', 'Keys']]
 
 const h = (tag, attrs, ...kids) => {
     const el = document.createElement(tag)
@@ -40,12 +48,13 @@ const h = (tag, attrs, ...kids) => {
 const row = (k, v) => h('div', { class: 'kv' }, h('span', { class: 'k' }, k), h('span', { class: 'v' }, v))
 const err = e => (e && e.name && e.name !== 'Error' ? `${e.name}: ` : '') + String(e && e.message || e)
 const money = (p, sym) => `${p < -0.004 ? '−' : ''}${sym || '£'}${(Math.abs(p) / 100).toFixed(2)}`
+const shorten = (s, n) => { s = String(s || ''); return s.length <= n ? s : s.slice(0, n).replace(/\s+\S*$/, '') + '…' }
+const copyBtn = text => { const b = h('button', { type: 'button', class: 'btn', onclick: async () => { try { await navigator.clipboard.writeText(text); b.textContent = 'Copied' } catch (e) { b.textContent = 'Could not copy' } setTimeout(() => { b.textContent = 'Copy' }, 1500) } }, 'Copy'); return b }
 const secret = (text, label) => {
     const span = h('span', { class: 'mono' }, `•••••••••••• (${text.length} characters)`)
     let shown = false
     const btn = h('button', { type: 'button', class: 'btn', onclick: () => { shown = !shown; span.textContent = shown ? text : `•••••••••••• (${text.length} characters)`; btn.textContent = shown ? 'Hide' : `Reveal ${label}` } }, `Reveal ${label}`)
-    const copy = h('button', { type: 'button', class: 'btn', onclick: async () => { try { await navigator.clipboard.writeText(text); copy.textContent = 'Copied' } catch (e) { copy.textContent = 'Could not copy' } setTimeout(() => { copy.textContent = 'Copy' }, 1500) } }, 'Copy')
-    return h('span', { class: 'secret' }, span, btn, copy)
+    return h('span', { class: 'secret' }, span, btn, copyBtn(text))
 }
 
 // ------------------------------------------------------------ the meter's config and state, read as the meter reads them
@@ -55,6 +64,7 @@ function meterCfg() {
     return { storageKey: cfg.storageKey || 'sg.meter.v1', start: cfg.start == null ? 500 : cfg.start, symbol: cfg.symbol || '£' }
 }
 const readState = key => { try { return JSON.parse(localStorage.getItem(key) || 'null') } catch (e) { return null } }
+const emptyState = cfg => ({ v: 3, created: new Date().toISOString(), balance: cfg.start, spent: 0, reads: 0, declined: 0, paused: false, log: [], topups: [], cart: [], sessions: [], active: 'me', personas: [{ id: 'me', name: '', created: new Date().toISOString(), on: [], off: [] }] })
 
 // ------------------------------------------------------------ the session: keys for the life of this tab
 const session = {
@@ -77,25 +87,33 @@ export function mount() {
     const cfg = meterCfg()
     const deviceId = NV.deviceBranch()
     let label = ''; try { label = localStorage.getItem(LABEL) || '' } catch (e) { /* fine */ }
-    const body = h('div', { class: 'body' })
+    const state = { drawn: false, vaults: null, lane: null, consolidated: null, busy: false, sg: null, tab: 'page', sel: '', lastKept: null }
+    const tabs = h('div', { class: 'tabs', role: 'tablist' })
+    const secs = { page: h('section', { id: 'vault-sec-page', role: 'tabpanel', hidden: true }), vault: h('section', { id: 'vault-sec-vault', role: 'tabpanel', hidden: true }), keys: h('section', { id: 'vault-sec-keys', role: 'tabpanel', hidden: true }) }
+    const body = secs.vault
     const fill = (...kids) => body.replaceChildren(...kids.flat().filter(k => k != null && k !== false))   // replaceChildren would print a null as text
     const log = h('ul', { class: 'log', hidden: true })
     const pane = h('aside', { id: 'sgit-vault-pane', class: 'vault-pane', 'aria-label': 'Your vault' },
         h('div', { class: 'head' }, h('h2', {}, 'Your vault'), h('button', { type: 'button', class: 'btn close', onclick: () => toggle(false) }, 'Close')),
-        h('p', { class: 'dim' }, 'The reading account this browser keeps, carried between your devices through an encrypted vault that opens with your passkey. Local storage stays the place it lives; the vault is updated when you ask.'),
-        body,
+        h('p', { class: 'dim' }, 'Your notes on what you read, and the reading account this browser keeps, carried between your devices through an encrypted vault that opens with your passkey. Local storage stays the place it lives; the vault is updated when you ask.'),
+        tabs, secs.page, secs.vault, secs.keys,
         h('h3', {}, 'Calls to the vault server'), log)
     document.body.append(pane)
-    const state = { drawn: false, vaults: null, consolidated: null, busy: false, sg: null }
+    for (const [id, name] of TABS) tabs.append(h('button', { type: 'button', class: 'tab', id: `vault-tab-${id}`, role: 'tab', 'aria-selected': 'false', 'aria-controls': `vault-sec-${id}`, onclick: () => showTab(id) }, name, id === 'page' ? h('span', { class: 'n', id: 'vault-tab-page-n' }, String(N.list().length)) : null))
     const buttons = [...document.querySelectorAll('.vault-btn')]
     const toggle = open => {
         const on = open == null ? !document.documentElement.classList.contains('vault-open') : open
         document.documentElement.classList.toggle('vault-open', on)
         for (const b of buttons) b.setAttribute('aria-expanded', String(on))
-        if (on && !state.drawn) draw()
+        if (on) { if (!state.drawn) draw(); showTab(state.tab) }
+    }
+    function showTab(id) {
+        state.tab = id
+        for (const [k] of TABS) { document.getElementById(`vault-tab-${k}`).setAttribute('aria-selected', String(k === id)); secs[k].hidden = k !== id }
+        if (id === 'page') drawPage()
+        if (id === 'keys') drawKeys()
     }
     for (const b of buttons) b.addEventListener('click', () => toggle())
-    if (location.hash === '#vault' || document.documentElement.hasAttribute('data-vault-open')) toggle(true)
 
     const say = (line, cls) => { log.prepend(h('li', { class: cls || '' }, `${new Date().toISOString().slice(11, 19)} ${line}`)); log.hidden = false; while (log.children.length > 60) log.lastChild.remove() }
     const origFetch = window.fetch.bind(window)
@@ -121,11 +139,130 @@ export function mount() {
         if (!token) { try { const t = await NV.readJson(u.master, `${TOKEN_FILE.folder}/${TOKEN_FILE.name}`); token = t && t.token || '' } catch (e) { token = '' } }
         if (token) sg.token = token
         state.vaults = { ...u, token }
+        state.lane = null                                                     // not looked for yet
         session.set({ ...rec, token })
         setButtons()
         return state.vaults
     }
+    /** The lane, opened from the master's record the first time it is asked for; null when the account has none. */
+    async function ensureLane() {
+        if (!state.vaults) return null
+        if (state.lane === null) { try { state.lane = (await NV.openLane({ sgSend: await client(state.vaults.token), master: state.vaults.master })) || false } catch (e) { state.lane = false } }
+        return state.lane || null
+    }
 
+    // ------------------------------------------------------------ this page: feedback, one tap at a time
+    const selOut = h('p', { class: 'sel', id: 'note-sel', hidden: true })
+    document.addEventListener('selectionchange', () => {
+        try { const s = document.getSelection(); if (s && s.anchorNode && pane.contains(s.anchorNode)) return } catch (e) { /* fine */ }
+        const t = N.selection()
+        if (t) { state.sel = t; selOut.textContent = `Selected: “${shorten(t, 160)}”`; selOut.hidden = false }
+    })
+    const clearSel = () => { state.sel = ''; selOut.hidden = true; selOut.textContent = '' }
+    let pageDrawn = false
+    const lists = { here: h('ul', { class: 'notes', id: 'notes-here' }), all: h('ul', { class: 'notes', id: 'notes-all' }), counts: h('p', { class: 'dim', id: 'notes-count' }), lane: h('div', { id: 'vault-lane' }), sendOut: h('div', { id: 'vault-send-out' }) }
+    const sendBtn = h('button', { type: 'button', class: 'btn primary', id: 'vault-send', onclick: send }, 'Send to the newsroom')
+    const kept = h('p', { class: 'ok', id: 'note-kept', hidden: true })
+    const words = h('textarea', { id: 'note-words', rows: 2, placeholder: 'Words, if you want: what is wrong, what to do, why…' })
+    function drawPage() {
+        if (!pageDrawn) {
+            pageDrawn = true
+            const page = N.pageInfo()
+            const tap = kind => {
+                const rec = N.keep({ kind, text: words.value, quote: state.sel || '' })
+                if (!rec) return
+                words.value = ''; clearSel(); state.lastKept = rec.id
+                kept.textContent = `Kept: ${N.describeNote(rec)}.${rec.text ? '' : ' Words below and “Keep the words” attach them to it.'}`; kept.hidden = false
+            }
+            const keepWords = () => {
+                const t = words.value.trim(); if (!t) return
+                const last = state.lastKept && N.list().find(x => x.id === state.lastKept)
+                const rec = last && !last.text ? N.addWords(last.id, t) : N.keep({ text: t, quote: state.sel || '' })
+                if (!rec) return
+                words.value = ''; clearSel(); state.lastKept = rec.id
+                kept.textContent = `Kept: ${N.describeNote(rec)}.`; kept.hidden = false
+            }
+            secs.page.replaceChildren(
+                h('h3', {}, 'About this page'),
+                h('p', { class: 'dim' }, page.title ? `${page.title}${page.n ? ` (No. ${page.n})` : ''}` : location.pathname),
+                selOut,
+                h('div', { class: 'chips', role: 'group', 'aria-label': 'One tap' }, ...N.KINDS.map(k => h('button', { type: 'button', class: 'chip', id: `note-${k.id}`, title: k.says, onclick: () => tap(k.id) }, k.label))),
+                h('label', {}, words),
+                h('div', { class: 'acts' }, h('button', { type: 'button', class: 'btn primary', id: 'note-keep', onclick: keepWords }, 'Keep the words')),
+                kept,
+                h('p', { class: 'dim' }, 'One tap keeps a note in this browser, with the words and whatever you had selected on the page. ', h('em', {}, 'Update the vault'), ' carries your notes to your other devices; ', h('em', {}, 'Send to the newsroom'), ' carries the ones not yet sent into a lane of their own, which the newsroom reads with a key you hand over. ', h('a', { href: new URL('vault/index.html#feedback', ROOT).href }, 'How it works'), '.'),
+                h('h3', {}, 'Kept on this page'), lists.here,
+                h('h3', {}, 'All your notes'), lists.counts, h('div', { class: 'acts' }, sendBtn), lists.sendOut, lists.lane, lists.all,
+            )
+        }
+        renderNotes()
+        if (state.vaults) ensureLane().then(drawLane)
+    }
+    const item = rec => h('li', { class: 'note', 'data-id': rec.id, 'data-kind': rec.kind },
+        rec.device ? null : h('button', { type: 'button', class: 'x', title: 'Remove this note from this browser', onclick: () => N.remove(rec.id) }, 'remove'),
+        h('span', { class: 'kind' + (rec.sent ? ' sent' : '') }, N.kindLabel(rec.kind)),
+        h('span', { class: 'where' }, rec.story ? `story ${rec.story} on ` : '', h('a', { href: new URL(rec.path.replace(/^\//, '') + (rec.story ? '#' + rec.story : ''), ROOT).href }, rec.title || rec.path), rec.n ? ` (No. ${rec.n})` : ''),
+        rec.quote ? h('span', { class: 'quote' }, `“${shorten(rec.quote, 220)}”`) : null,
+        rec.text ? h('span', { class: 'words' }, rec.text) : null,
+        h('span', { class: 'meta' }, `${String(rec.at).slice(0, 16).replace('T', ' ')} · ${rec.persona || 'me'}${rec.device ? ' · from ' + rec.device : ''}${rec.sent ? ' · sent ' + String(rec.sent.at).slice(0, 10) : ''}`))
+    function renderNotes() {
+        const all = N.list(), here = N.forPage(location.pathname), own = N.own(), un = N.unsent()
+        const badge = document.getElementById('vault-tab-page-n'); if (badge) badge.textContent = String(all.length)
+        lists.here.replaceChildren(...(here.length ? here.map(item) : [h('li', { class: 'dim' }, 'Nothing on this page yet.')]))
+        lists.all.replaceChildren(...(all.length ? all.slice(0, 40).map(item) : [h('li', { class: 'dim' }, 'No notes in this browser yet.')]), all.length > 40 ? h('li', { class: 'dim' }, `and ${all.length - 40} more, in local storage`) : null)
+        lists.counts.textContent = `${all.length} note(s) in this browser, ${own.length} of this device, ${un.length} not yet sent.`
+        sendBtn.disabled = !un.length
+    }
+    window.addEventListener(N.EVENT, () => { if (pageDrawn) renderNotes() })
+    function drawLane() {
+        const L = state.lane
+        lists.lane.replaceChildren(L ? h('div', { class: 'lane' },
+            row('The lane', h('span', { class: 'mono' }, L.lane.vaultId)),
+            row('Its read key', h('span', {}, h('span', { class: 'mono', id: 'vault-lane-key' }, L.record.read), ' ', copyBtn(L.record.read))),
+            h('p', { class: 'dim' }, 'Hand the read key to the newsroom once, in the open: it reads the lane and cannot write to it, and nothing else of yours is in it. The write key stays in your master vault. ', h('span', { class: 'mono' }, `sgit clone ${L.record.read}`), ' reads every note.')) : null)
+    }
+    async function send() {
+        const un = N.unsent(); if (!un.length) return
+        if (!state.vaults) { lists.sendOut.replaceChildren(h('p', { class: 'warn' }, 'Enable the vault first, in the Vault tab: the lane lives in your master vault, so the newsroom only ever gets what you send.')); return }
+        if (!state.vaults.token) { lists.sendOut.replaceChildren(h('p', { class: 'warn' }, 'The master holds no access key, so nothing can be written; create the account again with one.')); return }
+        await withBusy('vault-send', async () => {
+            lists.sendOut.replaceChildren(h('p', { class: 'dim' }, `Sending ${un.length} note(s)…`))
+            try {
+                const sg = await client(state.vaults.token)
+                let L = await ensureLane()
+                if (!L) { lists.sendOut.firstChild.textContent = 'Making the lane: a vault of its own, its key kept in your master…'; L = await NV.createLane({ sgSend: sg, master: state.vaults.master, device: deviceId }); state.lane = L }
+                try { await L.lane.pull() } catch (e) { /* nothing new, or local commits */ }
+                const paths = await NV.sendToLane(L.lane, un, deviceId)
+                N.markSent(un.map(x => x.id), L.lane.vaultId)
+                lists.sendOut.replaceChildren(h('p', { class: 'ok', id: 'vault-sent' }, `Sent: ${paths.length} note(s) to the lane ${L.lane.vaultId}, published.`))
+                drawLane()
+            } catch (e) { lists.sendOut.replaceChildren(h('p', { class: 'warn' }, `Not sent: ${err(e)}`)) }
+        })
+        renderNotes()                                                          // withBusy re-enabled the button; the count decides
+    }
+
+    // ------------------------------------------------------------ the keys: every vault of the account
+    async function drawKeys() {
+        const v = state.vaults
+        if (!v) { secs.keys.replaceChildren(h('h3', {}, 'Your vaults'), h('p', { class: 'dim' }, 'Enable the vault, in the Vault tab, to see the vaults of your account and their keys.')); return }
+        const rec = session.get() || {}
+        const L = await ensureLane()
+        const doorRows = (v.doors || []).map(d => row(`Door · ${d.kind || 'passkey'}${d.path ? ' · ' + d.path : ''}${d.device ? ' · ' + d.device : ''}`, h('span', {}, h('span', { class: 'mono' }, d.vault_id), ' ', d.vault_key ? secret(d.vault_key, 'the key') : '')))
+        secs.keys.replaceChildren(
+            h('h3', {}, 'Your vaults'),
+            h('p', { class: 'dim' }, 'Every vault of this account, with its key, so you can open any of them on your own: ', h('span', { class: 'mono' }, 'sgit clone <key>'), ', or the key pasted into ', h('a', { href: 'https://dev.vault.sgraph.ai/', target: '_blank', rel: 'noopener' }, 'the vault app'), '. A key opens that vault to whoever holds it, and the master’s opens everything: treat them like the recovery code. The page shows a key only when you press Reveal, and keeps none of them.'),
+            h('div', { class: 'vaults' },
+                row('This door', h('span', {}, h('span', { class: 'mono' }, `${v.door.vaultId}${rec.path ? ' · ' + rec.path : ''}`), ' ', secret(NV.prefixedKey(v.door), 'the key'))),
+                ...doorRows.filter(r => !r.textContent.includes(v.door.vaultId)),
+                row('Master', h('span', {}, h('span', { class: 'mono' }, v.master.vaultId), ' ', secret(NV.prefixedKey(v.master), 'the key'))),
+                v.reader ? row('Reader vault', h('span', {}, h('span', { class: 'mono' }, v.reader.vaultId), ' ', secret(NV.prefixedKey(v.reader), 'the key'))) : null,
+                L ? row('The lane', h('span', {}, h('span', { class: 'mono' }, L.lane.vaultId), ' ', secret(L.record.lane, 'the key'))) : row('The lane', 'none yet: made the first time you send'),
+                L ? row('Its read key', h('span', {}, h('span', { class: 'mono' }, L.record.read), ' ', copyBtn(L.record.read))) : null),
+            h('p', { class: 'dim' }, 'The lane’s read key is the one thing to hand to the newsroom; it reads and cannot write. Everything else stays yours.'),
+        )
+    }
+
+    // ------------------------------------------------------------ the vault
     async function draw() {
         state.drawn = true
         const rec = session.get()
@@ -233,11 +370,12 @@ export function mount() {
                 await NV.publish(a.master)
                 const rc = recoveryCode()
                 const rdoor = await doorFrom(rc.bytes)
-                await NV.addDoor({ sgSend: sg, master: a.master, door: rdoor, record: { kind: 'recovery', device: label || deviceId } })
+                const added = await NV.addDoor({ sgSend: sg, master: a.master, door: rdoor, record: { kind: 'recovery', device: label || deviceId } })
                 const cfgNow = meterCfg()
                 await NV.writeFile(a.reader, '/activity', 'account.json', JSON.stringify(accountFile(cfgNow, deviceId), null, 1))
                 await NV.publish(a.reader)
-                state.vaults = { door: a.door, master: a.master, reader: a.reader, doors: a.doors, record: a.record, token }
+                state.vaults = { door: a.door, master: a.master, reader: a.reader, doors: added.doors || a.doors, record: a.record, token }
+                state.lane = false
                 session.set({ door, path: prf.path, credId: prf.credId, token }); setButtons()
                 await drawUnlocked(h('div', { class: 'warn', id: 'vault-recovery-shown' }, h('p', {}, h('b', {}, 'Your recovery code, shown once. Write it down: '), h('span', { class: 'mono' }, rc.shown)), h('p', { class: 'dim' }, 'It opens a second door to the same master, for a device with no passkey and for the day the passkey is gone. The page does not keep it.')))
             } catch (e) { status.replaceWith(h('p', { class: 'warn' }, e.code === 'EEXISTS' ? 'A vault already exists at this door: enable again to open it.' : err(e))) }
@@ -267,6 +405,7 @@ export function mount() {
     async function drawUnlocked(note) {
         const v = state.vaults, cfgNow = meterCfg(), st = readState(cfgNow.storageKey)
         const local = st ? { reads: (st.log || []).length, own: (st.log || []).filter(e => !e.device || e.device === deviceId).length, balance: st.balance } : null
+        const notes = N.list().length, ownNotes = N.own().length
         const device = h('input', { type: 'text', value: label, maxlength: 40, placeholder: 'this device, e.g. "my laptop"' })
         device.addEventListener('change', () => { label = device.value.trim(); try { localStorage.setItem(LABEL, label) } catch (e) { /* fine */ } })
         const across = h('div', { id: 'vault-across' }, h('p', { class: 'dim' }, 'Reading the devices’ files…'))
@@ -277,15 +416,16 @@ export function mount() {
             h('label', {}, 'Label', device),
             row('Door', h('span', { class: 'mono' }, `${v.door.vaultId}${session.get() && session.get().path ? ' · ' + session.get().path : ''}`)),
             row('Master', h('span', { class: 'mono' }, v.master.vaultId)),
-            row('Reader vault', v.reader ? h('span', {}, h('span', { class: 'mono' }, v.reader.vaultId), ' ', secret(NV.prefixedKey(v.reader), 'the key')) : 'none'),
+            row('Reader vault', v.reader ? h('span', { class: 'mono' }, v.reader.vaultId) : 'none'),
             row('Access key', v.token ? 'in the master vault, in memory here' : 'none: writes will fail'),
-            local ? row('Here', `${local.own} read(s) of this device, ${local.reads - local.own} brought in, balance ${money(local.balance, cfgNow.symbol)}`) : row('Here', 'no reading account in this browser yet'),
+            local ? row('Here', `${local.own} read(s) of this device, ${local.reads - local.own} brought in, balance ${money(local.balance, cfgNow.symbol)}; ${ownNotes} note(s) of this device, ${notes - ownNotes} brought in`) : row('Here', `no reading account in this browser yet; ${ownNotes} note(s) of this device`),
             h('div', { class: 'acts' },
                 h('button', { type: 'button', class: 'btn primary', id: 'vault-sync', disabled: !v.token || !v.reader, onclick: sync }, 'Update the vault'),
                 h('button', { type: 'button', class: 'btn', id: 'vault-refresh', onclick: () => refreshAcross() }, 'Check the vault'),
-                h('button', { type: 'button', class: 'btn', onclick: () => { session.set(null); state.vaults = null; setButtons(); drawLocked(h('p', { class: 'dim' }, 'Forgotten on this device; the vault is unchanged.')) } }, 'Forget on this device')),
+                h('button', { type: 'button', class: 'btn', onclick: () => { session.set(null); state.vaults = null; state.lane = null; setButtons(); drawLocked(h('p', { class: 'dim' }, 'Forgotten on this device; the vault is unchanged.')) } }, 'Forget on this device')),
             h('div', { id: 'vault-sync-out' }),
             h('h3', {}, 'Across your devices'), across,
+            h('p', { class: 'dim' }, 'The keys of every vault of this account are in the Keys tab; your notes and the lane to the newsroom in This page.'),
         )
         await refreshAcross()
     }
@@ -308,9 +448,9 @@ export function mount() {
             const c = await readAll(), sym = meterCfg().symbol
             const others = c.devices.filter(d => d.id !== deviceId)
             across.replaceChildren(
-                c.devices.length ? h('table', {}, h('thead', {}, h('tr', {}, h('th', {}, 'Device'), h('th', { class: 'n' }, 'Reads'), h('th', { class: 'n' }, 'Spent'), h('th', { class: 'n' }, 'Top-ups'), h('th', {}, 'Last sync'))),
-                    h('tbody', {}, ...c.devices.map(d => h('tr', { class: d.id === deviceId ? 'me' : '' }, h('td', {}, d.label || d.id, d.id === deviceId ? ' (here)' : ''), h('td', { class: 'n' }, d.reads), h('td', { class: 'n' }, money(d.spent, sym)), h('td', { class: 'n' }, d.credit ? money(d.credit, sym) : '–'), h('td', {}, String(d.last_sync || '').slice(0, 16).replace('T', ' ')))),
-                        h('tr', { class: 'total' }, h('td', {}, `All, ${c.devices.length} device(s)`), h('td', { class: 'n' }, c.totals.reads), h('td', { class: 'n' }, money(c.totals.spent, sym)), h('td', { class: 'n' }, money(c.totals.credit, sym)), h('td', {}, `balance ${money(c.totals.balance, sym)}`))))
+                c.devices.length ? h('table', {}, h('thead', {}, h('tr', {}, h('th', {}, 'Device'), h('th', { class: 'n' }, 'Reads'), h('th', { class: 'n' }, 'Spent'), h('th', { class: 'n' }, 'Top-ups'), h('th', { class: 'n' }, 'Notes'), h('th', {}, 'Last sync'))),
+                    h('tbody', {}, ...c.devices.map(d => h('tr', { class: d.id === deviceId ? 'me' : '' }, h('td', {}, d.label || d.id, d.id === deviceId ? ' (here)' : ''), h('td', { class: 'n' }, d.reads), h('td', { class: 'n' }, money(d.spent, sym)), h('td', { class: 'n' }, d.credit ? money(d.credit, sym) : '–'), h('td', { class: 'n' }, d.notes || 0), h('td', {}, String(d.last_sync || '').slice(0, 16).replace('T', ' ')))),
+                        h('tr', { class: 'total' }, h('td', {}, `All, ${c.devices.length} device(s)`), h('td', { class: 'n' }, c.totals.reads), h('td', { class: 'n' }, money(c.totals.spent, sym)), h('td', { class: 'n' }, money(c.totals.credit, sym)), h('td', { class: 'n' }, c.totals.notes), h('td', {}, `balance ${money(c.totals.balance, sym)}`))))
                     : h('p', { class: 'dim' }, 'No device has updated the vault yet.'),
                 h('p', { class: 'dim' }, `Totals are recomputed from the records: starting credit ${money(c.start, sym)}, plus top-ups, minus what was read and not declined. The vault holds records, never totals.`),
                 others.length ? h('div', { class: 'acts' }, h('button', { type: 'button', class: 'btn', id: 'vault-merge', onclick: merge }, `Bring ${others.length === 1 ? 'that device’s' : 'their'} activity here`)) : null,
@@ -322,11 +462,10 @@ export function mount() {
         await withBusy('vault-sync', async () => {
             const out = document.getElementById('vault-sync-out'); out.replaceChildren(h('p', { class: 'dim' }, 'Writing this device’s records as one commit, then publishing…'))
             try {
-                const v = state.vaults, cfgNow = meterCfg(), st = readState(cfgNow.storageKey)
-                if (!st) throw new Error('There is no reading account in this browser yet: open an article first.')
+                const v = state.vaults, cfgNow = meterCfg(), st = readState(cfgNow.storageKey) || emptyState(cfgNow)
                 try { await v.reader.pull() } catch (e) { /* fine */ }
                 const prev = await NV.readJson(v.reader, PATHS.device(deviceId)).catch(() => null)
-                const file = extract(st, { id: deviceId, label, agent: (navigator.userAgentData && navigator.userAgentData.platform) || navigator.platform || '' }, prev)
+                const file = extract(st, { id: deviceId, label, agent: (navigator.userAgentData && navigator.userAgentData.platform) || navigator.platform || '' }, prev, { notes: N.own() })
                 await NV.writeFile(v.reader, PATHS.devicesFolder, `${deviceId}.json`, JSON.stringify(file, null, 1))
                 if (!(await NV.readJson(v.reader, PATHS.account).catch(() => null))) await NV.writeFile(v.reader, '/activity', 'account.json', JSON.stringify(accountFile(cfgNow, deviceId), null, 1))
                 await NV.publish(v.reader)
@@ -338,19 +477,24 @@ export function mount() {
 
     async function merge() {
         await withBusy('vault-merge', async () => {
-            const cfgNow = meterCfg(), st = readState(cfgNow.storageKey) || { v: 3, created: new Date().toISOString(), balance: cfgNow.start, spent: 0, reads: 0, declined: 0, paused: false, log: [], topups: [], cart: [], sessions: [], active: 'me', personas: [{ id: 'me', name: '', created: new Date().toISOString(), on: [], off: [] }] }
+            const cfgNow = meterCfg(), st = readState(cfgNow.storageKey) || emptyState(cfgNow)
             const c = state.consolidated || await readAll()
             const m = mergeInto(st, c, deviceId)
-            try { localStorage.setItem(cfgNow.storageKey, JSON.stringify(m.state)) } catch (e) { document.getElementById('vault-across').prepend(h('p', { class: 'warn' }, 'This browser’s storage refused the write.')); return }
-            try { sessionStorage.setItem('sgit.vault.merged', JSON.stringify({ at: Date.now(), added: m.added })) } catch (e) { /* fine */ }
+            const mn = mergeNotes(N.read(), c, deviceId)
+            try { localStorage.setItem(cfgNow.storageKey, JSON.stringify(m.state)); N.write(mn.store) } catch (e) { document.getElementById('vault-across').prepend(h('p', { class: 'warn' }, 'This browser’s storage refused the write.')); return }
+            try { sessionStorage.setItem('sgit.vault.merged', JSON.stringify({ at: Date.now(), added: { ...m.added, notes: mn.added } })) } catch (e) { /* fine */ }
             location.reload()
         })
     }
 
+    // open on arrival: the vault page and #vault on the Vault tab, #notes on This page (after every declaration above)
+    if (location.hash === '#vault' || document.documentElement.hasAttribute('data-vault-open')) { state.tab = 'vault'; toggle(true) }
+    else if (location.hash === '#notes') toggle(true)
+
     // after a merge, say what arrived
     try {
         const m = JSON.parse(sessionStorage.getItem('sgit.vault.merged') || 'null')
-        if (m && Date.now() - m.at < 10000) { sessionStorage.removeItem('sgit.vault.merged'); toggle(true); setTimeout(() => body.prepend(h('p', { class: 'ok', id: 'vault-merged' }, `Brought in: ${m.added.reads} read(s), ${m.added.topups} top-up(s), ${m.added.personas} persona(s). The meter now shows the consolidated figures.`)), 50) }
+        if (m && Date.now() - m.at < 10000) { sessionStorage.removeItem('sgit.vault.merged'); state.tab = 'vault'; toggle(true); setTimeout(() => body.prepend(h('p', { class: 'ok', id: 'vault-merged' }, `Brought in: ${m.added.reads} read(s), ${m.added.topups} top-up(s), ${m.added.personas} persona(s), ${m.added.notes || 0} note(s). The meter now shows the consolidated figures.`)), 50) }
     } catch (e) { /* fine */ }
 }
 

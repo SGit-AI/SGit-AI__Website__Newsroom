@@ -18,6 +18,11 @@
  * @module wire
  */
 import { VaultReader, markdown } from './vault-reader.js'
+import * as N from '../assets/vault-pane/notes.js'
+
+// The reader's decision at a story, one tap: a note kept in the browser (assets/vault-pane/notes.js), carried by
+// the vault pane to their devices and, when they send, to the newsroom's lane. A decided story folds to its headline.
+const DECISIONS = ['read-later', 'not-for-me', 'more-like-this', 'wrong']
 
 const h = (tag, attrs, ...kids) => {
     const el = document.createElement(tag)
@@ -92,6 +97,23 @@ async function edition(r, mount, foot, cfg) {
     const pname = id => { const p = pById.get(id); return p ? `${p.name}, ${p.label.charAt(0).toLowerCase()}${p.label.slice(1)}` : id }
     const delivery = sid => deliveries && deliveries.find(d => d.story === sid && d.persona === lens)
 
+    // the decisions at each story; one listener redraws every row when a note is kept or removed anywhere
+    const renders = new Map()
+    window.addEventListener(N.EVENT, () => { for (const r of renders.values()) r() })
+    const decide = (s, el) => {
+        const rowEl = h('div', { class: 'decide', role: 'group', 'aria-label': 'Your decision' })
+        const render = () => {
+            const kept = N.forStory(location.pathname, s.id).filter(n => !n.device)[0]
+            rowEl.replaceChildren(h('span', { class: 'k' }, kept ? 'You:' : 'You?'),
+                ...(kept
+                    ? [h('span', { class: 'kept' }, N.kindLabel(kept.kind) + (kept.text ? ` — ${kept.text}` : '')), h('button', { type: 'button', class: 'undo', onclick: () => N.remove(kept.id) }, 'undo')]
+                    : DECISIONS.map(k => h('button', { type: 'button', class: 'chip', 'data-kind': k, title: (N.KINDS.find(x => x.id === k) || {}).says || '', onclick: () => N.keep({ kind: k, story: s.id, title: s.headline, n: null }) }, N.kindLabel(k)))))
+            el.classList.toggle('decided', !!kept)
+        }
+        renders.set(s.id, render); render()
+        return rowEl
+    }
+
     const card = (s, isLead) => {
         const d = lens ? delivery(s.id) : null
         const primary = s.primary || {}
@@ -112,6 +134,7 @@ async function edition(r, mount, foot, cfg) {
                 ...(s.personas || []).map(p => h('span', { class: 'chip' }, `for ${pname(p).split(',')[0]}`)),
                 ...(d && d.status === 'reached' ? (d.connections || []).map(c => h('span', { class: 'chip reach' }, `${c.kind}: ${c.term} (+${c.weight})`)) : [])),
             s.status ? h('p', { class: 'status' }, s.status) : null)
+        el.append(decide(s, el))
         return el
     }
 

@@ -15,7 +15,9 @@
  * Nothing here touches storage or the network: the pane (vault-pane.js) reads and writes, this file decides.
  * The meter's state (sg-meter-core.js, v1.4.0): { v, created, balance, spent, reads, declined, log[], topups[],
  * sessions[], active, personas[], shares[] }; a log entry: { id, at, path, title, kind, topics, price, depth,
- * cost, persona, autoKept?, rating?, declined? }.
+ * cost, persona, autoKept?, rating?, declined? }. The notes store (notes.js, kept apart from the meter's state):
+ * { v, notes[] }; a note: { id, at, kind, path, title, n, story, text, quote, persona, sent?, device? }. A device's
+ * file carries its own notes beside its reads, and a merge brings other devices' notes in the same way.
  *
  * @module vault-sync
  */
@@ -36,9 +38,11 @@ export function accountFile(cfg, deviceId) {
 
 /**
  * This device's file: the records it originated, whole. `prev` is the file as last written (for first_sync and
- * the sync count); records merged in from other devices (tagged with their device) are left out.
+ * the sync count); records merged in from other devices (tagged with their device) are left out. `extra.notes` is
+ * the notes store (assets/vault-pane/notes.js), kept apart from the meter's state so the meter's own writes never
+ * touch it; its own notes travel in the same file.
  */
-export function extract(state, device, prev = null) {
+export function extract(state, device, prev = null, extra = {}) {
     const own = e => !e.device || e.device === device.id
     const now = new Date().toISOString()
     return {
@@ -48,6 +52,7 @@ export function extract(state, device, prev = null) {
         reads: (state.log || []).filter(own).map(e => ({ ...e, device: device.id })),
         topups: (state.topups || []).filter(own).map(t => ({ ...t, device: device.id })),
         personas: (state.personas || []).filter(p => own(p)).map(p => ({ ...p, device: p.device || device.id })),
+        notes: ((extra && extra.notes) || []).filter(own).map(n => ({ ...n, device: device.id })),
         active: state.active || 'me',
     }
 }
@@ -60,28 +65,55 @@ function newer(a, b) {
     return score(b) > score(a) ? b : a
 }
 
+/** Of two versions of one note, the one that knows more: sent beats unsent, then the one with words. */
+function newerNote(a, b) {
+    if (!a) return b
+    if (!b) return a
+    const score = n => (n.sent ? 2 : 0) + (n.text ? 1 : 0)
+    return score(b) > score(a) ? b : a
+}
+
 /** Every device's file into one view, with the totals recomputed from the records. */
 export function consolidate(files, account) {
     const start = account && Number.isFinite(Number(account.start)) ? Number(account.start) : 0
-    const reads = new Map(), topups = new Map(), personas = new Map(), devices = []
+    const reads = new Map(), topups = new Map(), personas = new Map(), notes = new Map(), devices = []
     for (const f of (files || []).filter(Boolean).sort((a, b) => String((a.device || {}).last_sync || '').localeCompare(String((b.device || {}).last_sync || '')))) {
         const d = f.device || {}
         let spent = 0, declined = 0, credit = 0
         for (const e of f.reads || []) { reads.set(e.id, newer(reads.get(e.id), e)); spent += e.cost || 0; declined += e.declined ? (e.declined.refunded || 0) : 0 }
         for (const t of f.topups || []) { topups.set(topupKey(t), t); credit += t.credit || 0 }
         for (const p of f.personas || []) { if (p.id === 'me' && personas.has('me')) { const m = personas.get('me'); personas.set('me', { ...m, on: [...new Set([...(m.on || []), ...(p.on || [])])], off: [...new Set([...(m.off || []), ...(p.off || [])])], name: m.name || p.name }) } else personas.set(p.id, p) }
+        for (const n of f.notes || []) notes.set(n.id, newerNote(notes.get(n.id), n))
         devices.push({ id: d.id, label: d.label || '', agent: d.agent || '', first_sync: d.first_sync, last_sync: d.last_sync, syncs: d.syncs || 0,
-                       reads: (f.reads || []).length, spent: r1(spent), declined: r1(declined), topups: (f.topups || []).length, credit: r1(credit), personas: (f.personas || []).length })
+                       reads: (f.reads || []).length, spent: r1(spent), declined: r1(declined), topups: (f.topups || []).length, credit: r1(credit), personas: (f.personas || []).length,
+                       notes: (f.notes || []).length, sent: (f.notes || []).filter(n => n.sent).length })
     }
     const allReads = [...reads.values()].sort((a, b) => String(b.at).localeCompare(String(a.at)))
     const allTopups = [...topups.values()].sort((a, b) => String(b.at).localeCompare(String(a.at)))
+    const allNotes = [...notes.values()].sort((a, b) => String(b.at).localeCompare(String(a.at)))
     const spent = r1(allReads.reduce((s, e) => s + (e.cost || 0), 0))
     const declined = r1(allReads.reduce((s, e) => s + (e.declined ? (e.declined.refunded || 0) : 0), 0))
     const credit = r1(allTopups.reduce((s, t) => s + (t.credit || 0), 0))
     return {
-        v: FORMAT, start, devices, reads: allReads, topups: allTopups, personas: [...personas.values()],
-        totals: { reads: allReads.length, spent, declined, credit, balance: r1(start + credit - spent), devices: devices.length },
+        v: FORMAT, start, devices, reads: allReads, topups: allTopups, personas: [...personas.values()], notes: allNotes,
+        totals: { reads: allReads.length, spent, declined, credit, balance: r1(start + credit - spent), devices: devices.length, notes: allNotes.length, sent: allNotes.filter(n => n.sent).length },
     }
+}
+
+/**
+ * Other devices' notes into this browser's notes store: the ones it does not have, tagged with their device.
+ * This device's own notes are never changed by a merge. Returns { store, added }.
+ */
+export function mergeNotes(store, consolidated, deviceId) {
+    const s = { v: (store && store.v) || FORMAT, notes: [...((store && store.notes) || [])] }
+    const have = new Set(s.notes.map(n => n.id))
+    let added = 0
+    for (const n of consolidated.notes || []) {
+        if (have.has(n.id) || n.device === deviceId) continue
+        s.notes.push({ ...n }); have.add(n.id); added++
+    }
+    s.notes.sort((a, b) => String(b.at).localeCompare(String(a.at)))
+    return { store: s, added }
 }
 
 /**
@@ -121,5 +153,5 @@ export function mergeInto(state, consolidated, deviceId) {
 
 /** What a sync would write, in words, for the pane and the tests. */
 export function describe(file) {
-    return `${file.reads.length} read(s), ${file.topups.length} top-up(s), ${file.personas.length} persona(s) from ${file.device.label || file.device.id}`
+    return `${file.reads.length} read(s), ${file.topups.length} top-up(s), ${file.personas.length} persona(s), ${(file.notes || []).length} note(s) from ${file.device.label || file.device.id}`
 }

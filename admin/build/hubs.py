@@ -236,10 +236,20 @@ def shipped(f):
          'A beta. The first edition is a week&rsquo;s catch-up, written by agents and reviewed by none; every story says so, and 22 of its '
          'primary sources were not fetched. The daily run that the vault&rsquo;s runbook describes is not yet scheduled; placement on '
          'the front page and the weekly newsletter are designed, not built.'),
+        ('<b>The feedback loop</b> (beta)', 'Notes kept as you read: one tap at any page or at a wire story (read later, not for me, more like this, '
+         'liked, wrong, fix this, idea), with words and the phrase selected, kept in this browser as it happens; carried to the reader&rsquo;s other '
+         'devices by the vault; and sent, when the reader chooses, down a lane of their own: a vault whose write key stays in their master and '
+         'whose read key they hand the newsroom once. The newsroom reads the lane with sgit, or <code>admin/build/lane.py</code>, and answers in '
+         'the open. A decided wire story folds to its headline. <a href="../vault/index.html#feedback">The page</a>, '
+         '<a href="../admin/notes/2026-10-12__the-feedback-loop.md">the design</a>.',
+         'A beta with one reader. Three of the brief&rsquo;s seven decisions (read now, comment, move to a persona) and the marks on a phrase are not '
+         'built; nothing is signed; no reply comes back through the lane; sent marks reach other devices only with the next update; the front page, '
+         'being imported, carries no decisions.'),
         ('<b>The vault pane</b> (beta)', 'The reading account this browser keeps, carried between a reader&rsquo;s devices through an encrypted vault '
-         'that opens with their passkey: the Vault button beside the balance opens a pane on the right; enable with the passkey (or the '
+         'that opens with their passkey, in three tabs: This page (the notes and the lane), Vault and Keys. Enable with the passkey (or the '
          'recovery code), create the account once with an access key, press Update the vault, and on another device bring that device&rsquo;s '
-         'activity in and read the same figures. Records, never totals; one file per device; the vault updated when the reader asks. '
+         'activity in and read the same figures. Records, never totals; one file per device; the vault updated when the reader asks. Keys lists '
+         'every vault of the account (the doors, the master, the reader vault, the lane) with its key behind Reveal, to open any of them elsewhere. '
          '<a href="../vault/index.html">The page</a>, <a href="../admin/notes/2026-10-12__the-activity-vault.md">the design</a>.',
          'A beta, against dev.send.sgraph.ai. Local storage stays primary and is not pruned; shares and the active persona are not synced; '
          'the keys of an unlocked session live in the tab&rsquo;s session storage; retiring a device and rotating the master are designed, not built.'),
@@ -291,7 +301,8 @@ def shipped(f):
          'outside, run on this site. <a href="../articles/the-site-is-an-inbox.html">The site is an inbox</a>, '
          '<a href="../articles/ways-to-read-one-article.html">ways to read one article</a>, '
          '<a href="../articles/firing-journalists.html">firing journalists</a>; '
-         '<a href="../admin/notes/2026-10-12__what-the-new-articles-ask.md">what they ask of this site, in order</a>. Designed, not built.'),
+         '<a href="../admin/notes/2026-10-12__what-the-new-articles-ask.md">what they ask of this site, in order</a>. Four of the seven decisions '
+         'are at each wire story and on every page since v0.12.0, as the feedback loop above; the rest is designed, not built.'),
         ('<b>Selling the graph</b>', 'Graphs are published free. Nothing sells one.'),
         ('<b>Paying the fact creator</b>', 'No revenue reaches anyone upstream of an article.'),
         ('<b>Corrections that propagate</b>', 'Versions and corrections are kept; they do not reach the pages that cited the corrected claim.'),

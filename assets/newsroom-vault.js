@@ -15,6 +15,8 @@
  *   createAccount, unlock, addDoor, writeNote      the design: a door vault (derived id and passphrase) holds the
  *                                                   master vault's key; the master holds the reader vault's key and
  *                                                   the list of doors; every door records where it came from
+ *   createLane, openLane, sendToLane, readKeyOf    the lane: a vault of its own for what the reader sends the
+ *                                                   newsroom, its key kept in the master, its read key handed over
  *
  * The library's globals (SGSend, SGVault, SGVaultCrypto) must be loaded first, as plain scripts, in the order
  * VENDOR.md gives; this module reaches them as bare identifiers, which works in a page and in Node (vm.runInThisContext).
@@ -127,7 +129,7 @@ export async function listFiles(vault, folder = '/') { await ensureLoaded(vault,
 
 // ------------------------------------------------------------ the account: door, master, reader
 export const DOOR = { key: 'master-key.json', record: 'door.json' }
-export const MASTER = { reader: 'reader.json', doors: 'doors.json' }
+export const MASTER = { reader: 'reader.json', doors: 'doors.json', lane: 'lane.json' }
 
 const now = () => new Date().toISOString()
 const doorRecord = (door, record) => ({
@@ -194,4 +196,50 @@ export async function writeNote(reader, text, name) {
     await writeFile(reader, '/notes', file, text)
     await publish(reader)
     return '/notes/' + file
+}
+
+// ------------------------------------------------------------ the lane: a vault of its own, from the reader to the newsroom
+export const LANE = { folder: '/notes', readme: 'README.md' }
+const README_LANE = '# A lane to the newsroom\n\nMade by newsroom.sgit.ai for one reader. Every file in notes/ is one note the reader chose to send: a tap at a piece (read later, not for me, more like this, liked, wrong, fix this, idea), the words they added, the phrase they had selected, the page and the persona. Nothing else of theirs is in this vault. The newsroom reads it with the read key the reader handed over; the write key stays in the reader\'s master vault.\n'
+
+/**
+ * A vault's public read key, in the form the sgit CLI clones with (sgit_public_read_<hex>:<id>): the library's own
+ * derivation, exported. Reading is all it allows; the write key is a separate derivation it does not carry.
+ */
+export async function readKeyOf(vault) {
+    const { passphrase, vaultId } = keyParts(vault.getVaultKey())
+    const keys = await libs().SGVaultCrypto.deriveKeys(passphrase, vaultId)
+    const raw = new Uint8Array(await crypto.subtle.exportKey('raw', keys.readKey))
+    return 'sgit_public_' + 'read_' + [...raw].map(b => b.toString(16).padStart(2, '0')).join('') + ':' + vaultId
+}
+
+/** The lane made, its key and read key recorded in the master. Returns { lane, record }. */
+export async function createLane({ sgSend, master, device = '' }) {
+    const lane = await createVault(sgSend, { name: 'lane to the newsroom', description: 'notes a reader of newsroom.sgit.ai chose to send; read with the read key' })
+    const read = await readKeyOf(lane)
+    await writeFile(lane, '/', LANE.readme, README_LANE)
+    await publish(lane)
+    const record = { v: 1, lane: prefixedKey(lane), read, created: now(), created_by: device }
+    await writeFile(master, '/', MASTER.lane, JSON.stringify(record, null, 1))
+    await publish(master)
+    return { lane, record }
+}
+
+/** The lane opened from the master's record; null when the account has none yet. */
+export async function openLane({ sgSend, master, cloneBranch }) {
+    const record = await readJson(master, '/' + MASTER.lane)
+    if (!record || !record.lane) return null
+    return { lane: await openVault(sgSend, record.lane, { cloneBranch }), record }
+}
+
+/** Notes into the lane: one file each (notes/<id>.json, rewritten if sent again), one publish. Returns the paths. */
+export async function sendToLane(lane, notes, device = '') {
+    const paths = []
+    for (const n of notes) {
+        const name = `${n.id}.json`
+        await writeFile(lane, LANE.folder, name, JSON.stringify({ ...n, device: n.device || device, sent_at: now() }, null, 1))
+        paths.push(`${LANE.folder}/${name}`)
+    }
+    await publish(lane)
+    return paths
 }

@@ -27,6 +27,8 @@ html.vault-open .vault-pane { transform: none; }
 .vault-pane input[type=text], .vault-pane input[type=password] { font: inherit; font-size: .88rem; width: 100%; box-sizing: border-box; padding: .35rem .5rem; border: 1px solid var(--line2, #cfd2d8); border-radius: 6px; background: #fff; }
 .vault-pane .kv { display: grid; grid-template-columns: 9rem 1fr; gap: .2rem .6rem; font-size: .86rem; padding: .25rem 0; border-bottom: 1px solid var(--line, #eceef2); }
 .vault-pane .kv .k { color: var(--dim, #5a5e68); }
+.vault-pane .kv .v { min-width: 0; overflow-wrap: anywhere; }
+.vault-pane .lane .mono, .vault-pane .vaults .mono { overflow-wrap: anywhere; }
 .vault-pane table { width: 100%; border-collapse: collapse; font-size: .82rem; }
 .vault-pane th, .vault-pane td { text-align: left; padding: .25rem .3rem; border-bottom: 1px solid var(--line, #eceef2); vertical-align: top; }
 .vault-pane th { font-weight: 600; color: var(--dim, #5a5e68); }
@@ -38,4 +40,31 @@ html.vault-open .vault-pane { transform: none; }
 .vault-pane .log li.warn { color: #ffd38a; background: none; border: 0; padding: 0; }
 .vault-pane details summary { cursor: pointer; color: var(--dim, #5a5e68); font-size: .84rem; }
 .vault-pane .secret button { margin-left: .3rem; }
+.vault-pane .secret .mono { overflow-wrap: anywhere; }
+/* the tabs: this page, the vault, the keys */
+.vault-pane .tabs { display: flex; gap: .25rem; margin: .6rem 0 .4rem; border-bottom: 1px solid var(--line, #e3e5ea); }
+.vault-pane .tab { font: inherit; font-size: .82rem; padding: .35rem .6rem; border: 0; border-bottom: 2px solid transparent; background: none; color: var(--dim, #5a5e68); cursor: pointer; margin-bottom: -1px; }
+.vault-pane .tab[aria-selected="true"] { color: var(--fg, #1c1d21); border-bottom-color: var(--accent, #0f6b4f); font-weight: 600; }
+.vault-pane .tab .n { display: inline-block; min-width: 1.2em; margin-left: .3em; padding: 0 .35em; border-radius: 999px; background: #eef1f4; color: var(--dim, #5a5e68); font-size: .72rem; text-align: center; }
+/* feedback on this page: one tap each */
+.vault-pane .chips { display: flex; flex-wrap: wrap; gap: .35rem; margin: .4rem 0; }
+.vault-pane .chip { font: inherit; font-size: .8rem; padding: .25rem .6rem; border: 1px solid var(--line2, #cfd2d8); border-radius: 999px; background: var(--panel, #fff); color: var(--fg, #1c1d21); cursor: pointer; }
+.vault-pane .chip:hover { border-color: var(--accent, #0f6b4f); }
+.vault-pane .chip[aria-pressed="true"] { background: var(--accent, #0f6b4f); border-color: var(--accent, #0f6b4f); color: #fff; }
+.vault-pane textarea { font: inherit; font-size: .88rem; width: 100%; box-sizing: border-box; min-height: 3.2rem; padding: .35rem .5rem; border: 1px solid var(--line2, #cfd2d8); border-radius: 6px; background: #fff; resize: vertical; }
+.vault-pane .sel { font-size: .8rem; color: var(--dim, #5a5e68); border-left: 3px solid var(--line2, #cfd2d8); padding-left: .5rem; margin: .3rem 0; font-style: italic; overflow-wrap: anywhere; }
+/* the notes kept */
+.vault-pane .notes { list-style: none; margin: .3rem 0; padding: 0; }
+.vault-pane .note { padding: .4rem 0; border-bottom: 1px solid var(--line, #eceef2); font-size: .84rem; }
+.vault-pane .note .kind { display: inline-block; padding: 0 .45em; border-radius: 999px; background: #e6f4ee; color: #0f6b4f; font-size: .74rem; font-weight: 600; margin-right: .35em; }
+.vault-pane .note .kind.sent { background: #eef1f4; color: var(--dim, #5a5e68); }
+.vault-pane .note .where { color: var(--dim, #5a5e68); }
+.vault-pane .note .where a { color: inherit; }
+.vault-pane .note .quote { display: block; font-style: italic; color: #34363c; overflow-wrap: anywhere; }
+.vault-pane .note .words { display: block; overflow-wrap: anywhere; }
+.vault-pane .note .meta { color: var(--dim, #5a5e68); font-size: .76rem; }
+.vault-pane .note .x { float: right; font: inherit; font-size: .76rem; border: 0; background: none; color: var(--dim, #5a5e68); cursor: pointer; }
+.vault-pane .note .x:hover { color: #8a0a0a; }
+/* the keys */
+.vault-pane .vaults .kv { grid-template-columns: 7rem 1fr; }
 @media (max-width: 900px) { html.vault-open body { padding-right: 0; } .vault-pane { width: min(var(--vault-w), 100vw); } }

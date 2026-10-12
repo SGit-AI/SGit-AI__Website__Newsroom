@@ -60,7 +60,27 @@ check(S.consolidate([fA, fB3], acct).totals.reads === 4 && S.consolidate([fA, fB
 // A brings B's in, too: the two browsers agree
 const mA = S.mergeInto(A, S.consolidate([fA, fB3], acct), 'nr-aaaa0001')
 check(mA.state.balance === mB.state.balance && mA.state.reads === mB.state.reads && mA.state.spent === mB.state.spent, 'both browsers show the same balance, reads and spend after each brings the other in')
-check(/2 read\(s\), 1 top-up\(s\), 2 persona\(s\) from laptop/.test(S.describe(fA)), 'describe: what a sync writes, in words')
+check(/2 read\(s\), 1 top-up\(s\), 2 persona\(s\), 0 note\(s\) from laptop/.test(S.describe(fA)), 'describe: what a sync writes, in words')
+
+// notes: kept apart from the meter's state, carried in the same device file, merged the same way
+const note = (id, at, kind, extra = {}) => ({ id, at, kind, path: '/articles/x.html', title: 'X', n: 82, story: null, text: '', quote: '', persona: 'me', ...extra })
+const NA = { v: 1, notes: [note('n-a2', '2026-10-12T10:05:00.000Z', 'idea', { text: 'a mode row' }), note('n-a1', '2026-10-12T09:35:00.000Z', 'wrong', { quote: 'the second paragraph', sent: { at: '2026-10-12T09:40:00.000Z', lane: 'lane0001' } })] }
+const NB = { v: 1, notes: [note('n-b1', '2026-10-12T11:15:00.000Z', 'not-for-me', { path: '/wire/', story: 's-7', n: null })] }
+const gA = S.extract(A, { id: 'nr-aaaa0001', label: 'laptop' }, null, { notes: NA.notes })
+const gB = S.extract(B, { id: 'nr-bbbb0002', label: 'iPad' }, null, { notes: NB.notes })
+check(gA.notes.length === 2 && gA.notes.every(n => n.device === 'nr-aaaa0001') && gB.notes.length === 1 && S.extract(A, { id: 'nr-aaaa0001' }).notes.length === 0, 'extract: a device file carries its own notes, tagged, and none when no store is given')
+check(/2 note\(s\) from laptop/.test(S.describe(gA)), 'describe: counts the notes')
+const CN = S.consolidate([gB, gA], acct)
+check(CN.notes.length === 3 && CN.notes[0].id === 'n-b1' && CN.totals.notes === 3 && CN.totals.sent === 1 && CN.devices.find(d => d.id === 'nr-aaaa0001').notes === 2 && CN.devices.find(d => d.id === 'nr-aaaa0001').sent === 1, `consolidate: notes across devices, newest first, sent counted (${CN.totals.notes} notes, ${CN.totals.sent} sent)`)
+const gA2 = { ...gA, notes: gA.notes.map(n => n.id === 'n-a2' ? { ...n, sent: { at: '2026-10-12T10:10:00.000Z', lane: 'lane0001' } } : n) }
+check(S.consolidate([gA, gA2], acct).notes.find(n => n.id === 'n-a2').sent && S.consolidate([gA2, gA], acct).notes.find(n => n.id === 'n-a2').sent, 'consolidate: of two versions of a note, the sent one wins whichever file comes first')
+const mnB = S.mergeNotes(NB, CN, 'nr-bbbb0002')
+check(mnB.added === 2 && mnB.store.notes.length === 3 && mnB.store.notes.filter(n => n.device === 'nr-aaaa0001').length === 2 && mnB.store.notes.filter(n => !n.device).length === 1, `mergeNotes: B gains A's 2 notes, tagged; its own untouched (${mnB.added} added)`)
+const mnB2 = S.mergeNotes(mnB.store, CN, 'nr-bbbb0002')
+check(mnB2.added === 0 && JSON.stringify(mnB2.store) === JSON.stringify(mnB.store), 'mergeNotes: merging again changes nothing')
+const gB2 = S.extract(B, { id: 'nr-bbbb0002', label: 'iPad' }, gB, { notes: mnB.store.notes })
+check(gB2.notes.length === 1 && gB2.notes[0].id === 'n-b1', 'extract after a merge: B\'s file still holds only B\'s notes')
+check(S.mergeNotes(null, CN, 'nr-cccc0003').store.notes.length === 3 && S.mergeNotes({ v: 1, notes: [] }, { notes: [] }, 'x').added === 0, 'mergeNotes: an empty or missing store takes every note; an empty vault adds none')
 
 console.log(failed ? `${failed} FAILED` : 'ALL SYNC CHECKS PASS')
 process.exit(failed ? 1 : 0)

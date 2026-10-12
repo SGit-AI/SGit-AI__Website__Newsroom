@@ -73,7 +73,8 @@ const readArticle = async rel => {
     await pg.evaluate(() => window.scrollTo(0, document.body.scrollHeight)); await wait(900)
     await pg.evaluate(() => window.scrollTo(0, 0)); await wait(300)
 }
-const openPane = async () => { if (!(await pg.evaluate(() => document.documentElement.classList.contains('vault-open')))) await pg.click('.vault-btn'); await wait(300) }
+// the pane opens on its This page tab; the vault's buttons are on the Vault tab
+const openPane = async () => { if (!(await pg.evaluate(() => document.documentElement.classList.contains('vault-open')))) await pg.click('.vault-btn'); await wait(300); await pg.click('#vault-tab-vault'); await wait(200) }
 
 try {
     // ---- device A
@@ -100,7 +101,7 @@ try {
     check(/\(here\)/.test(await text('#vault-across')) && /All, 1 device/.test(await text('#vault-across')), 'device A: the table across devices shows this device')
     const everything = [...mock.store.values()].map(b => b.toString('latin1')).join('\n')
     check(!/activity|"reads"|the-passkey-opens|access-token|sgit_private/.test(everything), 'what reached the server is ciphertext: no path, no record, no key in the clear')
-    check(await pg.evaluate(() => Object.keys(localStorage).every(k => ['sgit.meter.v1', 'sgit.device-branch', 'sgit.device-label', 'sgit.passkey.lab'].includes(k) || k.startsWith('sgit.meter')) && !Object.values(localStorage).some(v => /mock-|sgit_private/.test(v))), 'localStorage holds the meter, the device id and label, and no key or access key')
+    check(await pg.evaluate(() => Object.keys(localStorage).every(k => ['sgit.meter.v1', 'sgit.device-branch', 'sgit.device-label', 'sgit.passkey.lab', 'sgit.notes.v1'].includes(k) || k.startsWith('sgit.meter')) && !Object.values(localStorage).some(v => /mock-|sgit_private/.test(v))), 'localStorage holds the meter, the device id and label, the notes, and no key or access key')
     check(await pg.evaluate(() => !!sessionStorage.getItem('sgit.vault.session')), 'the unlocked session is kept for the tab in sessionStorage')
     const spentA = sA.log[0].cost
 

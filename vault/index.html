@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Your vault &middot; newsroom.sgit.ai</title>
-<meta name="description" content="The reading account this browser keeps, carried between your devices through an encrypted vault that opens with your passkey: records, never totals; one file per device; the vault updated when you ask.">
+<meta name="description" content="Your notes on what you read, kept as you read and sent to the newsroom down a lane of their own; the reading account carried between your devices through an encrypted vault that opens with your passkey; every key of your account.">
 <link rel="canonical" href="https://newsroom.sgit.ai/vault/index.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="newsroom.sgit.ai">
 <meta property="og:url" content="https://newsroom.sgit.ai/vault/index.html">
 <meta property="og:title" content="Your vault">
-<meta property="og:description" content="The reading account this browser keeps, carried between your devices through an encrypted vault that opens with your passkey: records, never totals; one file per device; the vault updated when you ask.">
+<meta property="og:description" content="Your notes on what you read, kept as you read and sent to the newsroom down a lane of their own; the reading account carried between your devices through an encrypted vault that opens with your passkey; every key of your account.">
 <meta property="og:image" content="https://newsroom.sgit.ai/og/default.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="../assets/newsroom.css">
@@ -18,7 +18,7 @@
 <body>
 <nav class="site"><div class="row">
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.11.1</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.12.0</a>
   <sg-meter class="meter-nav" view="balance"></sg-meter>
   <button class="vault-btn" type="button" aria-expanded="false" title="Your vault: the reading account carried between your devices"><span class="dot"></span>Vault</button>
   <link rel="stylesheet" href="../assets/vault-pane/vault-pane.css">
@@ -142,10 +142,18 @@
  <p class="crumb"><a href="../index.html">Home</a> / <a href="../account/index.html">Account</a> / Your vault</p>
  <p class="eyebrow">Your vault · beta</p>
  <h1>Your vault</h1>
- <p class="lead">The reading account lives in this browser. The vault is its second home, one you own and every device of yours reaches with a passkey. Enable it on the right, read, update; then do the same on another device.</p>
+ <p class="lead">Your notes and your reading account live in this browser. The vault is their second home, one you own and every device of yours reaches with a passkey; the lane is how the notes you choose reach the newsroom without the rest. Enable it on the right, read, tap, update, send.</p>
 <script>document.documentElement.setAttribute('data-vault-open', '')</script>
-<div class="note"><b>A beta.</b> The pane on the right is the vault: the reading account this browser keeps, carried between your devices through an encrypted vault that opens with your passkey. It is on every page, behind the <b>Vault</b> button beside the balance. Nothing about the meter changes; the vault is a second home for its data that you keep current.</div>
-<h2 id="loop">The loop</h2>
+<div class="note"><b>A beta.</b> The pane on the right is the vault, in three tabs: <b>This page</b>, your notes on what you read and the lane that carries the ones you choose to the newsroom; <b>Vault</b>, the reading account this browser keeps, carried between your devices through an encrypted vault that opens with your passkey; <b>Keys</b>, every vault of your account with its key. It is on every page, behind the <b>Vault</b> button beside the balance. Nothing about the meter changes; the vault is a second home for its data that you keep current.</div>
+<h2 id="feedback">The feedback loop</h2>
+<ol>
+<li><b>Read, and tap.</b> On any page, open the pane. Select a phrase if one is the point. One tap keeps a note in this browser: <em>Read later</em>, <em>Not for me</em>, <em>More like this</em>, <em>Liked</em>, <em>Wrong</em>, <em>Fix this</em>, <em>Idea</em>; words if you want them, and the phrase you had selected. On <a href="../wire/index.html">the wire</a>, the decision is at each story, and a decided story folds to its headline.</li>
+<li><b>Update the vault</b>, in the Vault tab, when you like: your notes travel with your reads to your other devices, in this device&rsquo;s own file.</li>
+<li><b>Send to the newsroom</b> the notes you have not sent. The first send makes a <b>lane</b>: a vault of its own, whose write key stays in your master and whose <b>read key</b> the pane shows. Hand that key to the newsroom once, in the open; it reads the lane and cannot write to it, and nothing else of yours is in it. Later sends go to the same lane.</li>
+<li><b>The newsroom reads the lane</b> with <code>sgit clone</code> or <code>admin/build/lane.py</code>, and answers in the open: a fix in a release, a version of an article. Nothing comes back through the lane.</li>
+</ol>
+<p>The design, the record, what is not built and the experiments to run are in <a href="../admin/notes/2026-10-12__the-feedback-loop.md">the feedback loop</a>.</p>
+<h2 id="loop">The reading account, between devices</h2>
 <ol>
 <li><b>On this device,</b> press <em>Enable with your passkey</em>. The first time there is no door at the derived address: paste an access key and <em>Create the account</em>. Three vaults are made (a door, a master, a reader vault), the access key goes into the master, and a recovery code is shown once.</li>
 <li><b>Read.</b> Open a few articles; the meter charges them into local storage as it always has.</li>
@@ -162,12 +170,14 @@
 <li><b>Nothing is typed twice.</b> The access key is pasted once and lives in the master; every other device gets it by opening the master with its passkey, or with the recovery code once.</li>
 </ul>
 <p>The design, the data layout, what is not synced and why, and the experiments to run next are in <a href="../admin/notes/2026-10-12__the-activity-vault.md">the activity vault</a>. The pieces it is made of are in <a href="../passkey/index.html">the passkey lab</a>, and the vault code is the library that runs dev.vault.sgraph.ai, <a href="../assets/vendor/sg-vault/v0.2.3/VENDOR.md">vendored here</a>.</p>
+<h2 id="keys">Your keys</h2>
+<p>The Keys tab lists every vault of your account with its key, shown only when you press Reveal: the door of this device and the other doors, the master, the reader vault, the lane and its read key. Any of them opens on its own, with <code>sgit clone</code> or in the vault app. A key opens that vault to whoever holds it, and the master&rsquo;s opens everything, so handle them like the recovery code. The lane&rsquo;s read key is the one thing meant to be handed over.</p>
 <h2 id="data">What leaves this browser</h2>
-<p>Ciphertext, to the vault server (dev.send.sgraph.ai), when you create, update or open: every file is encrypted here under keys derived from your passkey, and the server sees requests, sizes and times. The pane lists every call as it happens. The access key travels only as a request header to that server. Nothing goes anywhere else.</p>
+<p>Ciphertext, to the vault server (dev.send.sgraph.ai), when you create, update, send or open: every file is encrypted here under keys derived from your passkey, and the server sees requests, sizes and times. The pane lists every call as it happens. The access key travels only as a request header to that server. Your notes leave this browser only when you press Update (to your own reader vault) or Send (to your own lane). Nothing goes anywhere else.</p>
 
 <div class="agent">
   <h4>For an agent</h4>
-  <p>The vault pane (assets/vault-pane/vault-pane.js) carries the reading account between a reader's devices through an sgit vault opened with a passkey: a door derived from the PRF bytes (assets/door.js), the master and the reader vault (assets/newsroom-vault.js). The reader vault holds activity/account.json (one starting credit) and activity/devices/<device>.json (that device's raw reads, top-ups and personas, rewritten whole on each sync); totals are recomputed from the records (assets/vault-pane/sync.js). Local storage stays primary; the vault is updated when the reader presses Update. The design is https://newsroom.sgit.ai/admin/notes/2026-10-12__the-activity-vault.md; the tests are admin/build/test_sync.mjs (the logic) and test_pane.mjs (two devices in Chromium against a mock of the vault API).</p>
+  <p>The vault pane (assets/vault-pane/vault-pane.js) has three tabs. This page: the reader's notes (assets/vault-pane/notes.js; one tap at a piece: read-later, not-for-me, more-like-this, liked, wrong, fix, idea, with words and the selected phrase; kept in localStorage sgit.notes.v1) and Send to the newsroom, which writes the notes not yet sent into a lane, a vault of its own whose key is in the master (lane.json) and whose read key the reader hands over; the newsroom reads it with `NEWSROOM_LANE_KEY=<read key> python3 admin/build/lane.py`. Vault: the reading account carried between devices through an sgit vault opened with a passkey: a door derived from the PRF bytes (assets/door.js), the master and the reader vault (assets/newsroom-vault.js); the reader vault holds activity/account.json (one starting credit) and activity/devices/<device>.json (that device's raw reads, top-ups, personas and notes, rewritten whole on each sync); totals are recomputed from the records (assets/vault-pane/sync.js). Keys: every vault with its key behind Reveal. Local storage stays primary; the vault is updated when the reader presses Update. The designs are https://newsroom.sgit.ai/admin/notes/2026-10-12__the-activity-vault.md and https://newsroom.sgit.ai/admin/notes/2026-10-12__the-feedback-loop.md; the tests are admin/build/test_sync.mjs (the logic), test_pane.mjs (two devices in Chromium against a mock of the vault API) and test_notes.mjs (the feedback loop end to end, including the sgit CLI reading the lane with the read key).</p>
 </div>
 </main>
 <sg-meter view="page" kind="free" date="" topics="" title="Your vault, SGit Newsroom" quiet></sg-meter>
@@ -182,7 +192,7 @@ import('../assets/components/sg-meter/v1/v1.4/v1.4.0/sg-meter.js')
     <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="netline"><a href="https://sgit.ai" style="display:inline;padding:0"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://pt.newsroom.sgit.ai" style="display:inline;padding:0">&#8593; pt.newsroom.sgit.ai</a> &middot; <a href="https://graphs.sgit.ai" style="display:inline;padding:0">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai" style="display:inline;padding:0">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai" style="display:inline;padding:0">&#8593; nhi.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai" style="display:inline;padding:0">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.11.1</a> &middot; <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.12.0</a> &middot; <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>The newsroom</h4>
