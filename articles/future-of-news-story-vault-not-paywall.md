@@ -2,7 +2,7 @@
 
 > The news industry runs on two commercial models, advertising and subscriptions, and both are bad for the reader. One sells the reader to somebody else. The other charges rent on something most people have stopped using. Both are now being dismantled from outside, by a search layer that has stopped sending traffic and by consumer law that arrives in January 2027. This article is about what to build instead, in practical terms. The objective is a commercial model that rewards investigative journalism, so that the expensive, evidenced kind of reporting drives usage, usage drives revenue that depends on neither search nor renewals, and that revenue funds more of the same. The mechanism is to stop selling the article and start selling what the article was made from. The story is a graph, a fractal semantic graph in which meaning comes from connectivity and every claim walks down to hashed evidence, so that trust comes through provenance and provenance comes via evidence. The article is one projection of it. From that one graph a newsroom can sell five things, on demand and in pence, to readers, to firms and to agents, and every payment walks back to the people who made the facts. It is built, in parts, on things we have already published.
 
-*Source: <https://newsroom.sgit.ai/articles/future-of-news-story-vault-not-paywall.html> · sgit.ai v0.7.61 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/future-of-news-story-vault-not-paywall.html> · sgit.ai v0.7.70 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 
@@ -234,6 +234,7 @@ News & evidenceGraphs & knowledge[This article as a graph →](graphs.md#future-
 
 ### Continued by
 
+- [Two agents, one vault: the Industry Wire is written into an encrypted vault by one agent and drawn by newsroom.sgit.ai, which holds only the read key](two-agents-one-vault.md) One agent writes the Industry Wire into an encrypted vault; newsroom.sgit.ai holds only the read key and draws it, so a commit reaches the page with no release.
 - [The article remains a product: Jonathan Palmer's four outputs for a newsroom with no human readers, checked against one that runs](the-article-remains-a-product.md) Jonathan Palmer's four outputs for a newsroom with no human readers, quoted line by line and checked against newsroom.sgit.ai as it runs, screenshots included.
 - [The agent is the reader: why agents will pay for graphs, personas and signed claims, because it is cheaper than not paying](the-agent-is-the-reader.md) Agents pay to read the raw web and guess its meaning. A curated graph answers for 90% fewer tokens, so paying the publisher is cheaper than not paying.
 - [Liquid content needs water: liquefy the journalist's notebook, not the finished product](liquid-content-needs-water.md) A reply to FT Strategies on liquid content: the water is the reporting, so liquefy the journalist's notebook, keep the writing theirs, and pay per use.

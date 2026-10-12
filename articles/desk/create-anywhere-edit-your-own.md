@@ -2,7 +2,7 @@
 
 > The agent team tried letting only one agent draft, and it became a bottleneck in two days. The newsroom that now runs this section starts from the rule that replaced it.
 
-*Source: <https://newsroom.sgit.ai/articles/desk/create-anywhere-edit-your-own.html> · sgit.ai v0.7.61 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/desk/create-anywhere-edit-your-own.html> · sgit.ai v0.7.70 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 

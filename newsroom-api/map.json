@@ -27,11 +27,11 @@
  ],
  "what": "The map of everything a reader does on newsroom.sgit.ai, and the review of it: phase 0 of the move described in https://newsroom.sgit.ai/articles/explorer-to-villager-newsroom.html. Written by admin/build/api_map.py on every build. The hashes are the 'before' for the move's rule that the live site serves the same bytes after it: scripts, styles and JSON raw; pages with the site chrome and version stamps normalised.",
  "api_means": "client-side: components, formats and contracts the browser runs, with no server and nothing to deploy but files",
- "release": "v0.11.0",
+ "release": "v0.11.1",
  "date": "11 October 2026",
  "source": {
-  "sgit_ai": "v0.7.61",
-  "commit": "eaa92d0",
+  "sgit_ai": "v0.7.70",
+  "commit": "06e6413",
   "meter_here": "1.4.0",
   "meter_on_sgit_ai": "1.3.1"
  },
@@ -381,9 +381,9 @@
    "path": "articles/ids.json",
    "what": "A number for every article: the contract reading lists are built on",
    "from": "this site, generated",
-   "lines": 1246,
-   "bytes": 46063,
-   "sha256": "9bf4b1222af05d71a30bbb5b8823ac439d4e50e23b2881d8c546b0cf8b744a1e",
+   "lines": 1319,
+   "bytes": 49073,
+   "sha256": "56a52fa773c0f3d077ef4551d0428e772d5caa8e417041f97406cac91b8c1282",
    "hosts": [],
    "fetch": 0,
    "storage": [],
@@ -413,9 +413,9 @@
    "path": "articles/graphs.json",
    "what": "The feed the picks and the graph read: every article with topics, tags and citations",
    "from": "sgit.ai, imported",
-   "lines": 18379,
-   "bytes": 730635,
-   "sha256": "a889adb94db50b3237279a6b142481191d6b63f0fd7bfb7ed4264e1ff3091af8",
+   "lines": 19535,
+   "bytes": 776824,
+   "sha256": "6782fb1fb415cf7b4e630a0f31b7f87a7f7cd26588c95c9d6c214a075281a1b9",
    "hosts": [],
    "fetch": 0,
    "storage": [],
@@ -464,8 +464,8 @@
    "what": "The vault pane on every page with the meter: enable with the passkey, create or join, update the vault, the table across devices, bring their activity here",
    "from": "this site",
    "lines": 359,
-   "bytes": 27837,
-   "sha256": "c61c1b300c246be509f3161dce694b8c0010a5488c9aa2dc7f896f0bf1b10052",
+   "bytes": 27853,
+   "sha256": "7ba048ce0fe0e3f8b68b325ff6c9873b0c6eaf399b6368a308d3a6735ce569aa",
    "hosts": [
     "dev.send.sgraph.ai"
    ],
@@ -726,43 +726,43 @@
    "path": "account/index.html",
    "what": "the reading account",
    "lines": 254,
-   "sha256": "fbe19375c9e0b1e9f6703b129c242418a1245b90d4c6e4339ff21569cb300e1f"
+   "sha256": "83eb7b81473e275b36324a4e956a1cc62e8d5e716046d10d1c77ffb20de3301b"
   },
   {
    "path": "account/newsroom.html",
    "what": "the reader's newsroom",
    "lines": 249,
-   "sha256": "25ce5685c477f0fc7027f9b27bdbfdd0eca5446f1b9496d9299142b737c36c45"
+   "sha256": "c20bb6c268be7fbfdfa5a8ee8bd8ef53606c35fcf610167f7c2bd45393c14f5a"
   },
   {
    "path": "account/personas.html",
    "what": "the personas",
    "lines": 249,
-   "sha256": "645413ccdf42b9495fff9726edd72d2d86cfcda3c527b5a35a37edf948b761ec"
+   "sha256": "19c233c2d542b2a9b8db7d2e95db1e9f0ce3b6bf4397316b49f0e7333f620f88"
   },
   {
    "path": "account/share.html",
    "what": "send us your reading",
    "lines": 251,
-   "sha256": "f75680bc608081880d25633ed0813ef952507af9775b6110173404a306e7cf3f"
+   "sha256": "f27e2c4b62a9721551f3d86d526512b2d4907ed87d26e9db33e2ccbd12cd00e9"
   },
   {
    "path": "account/top-up.html",
    "what": "the top-up",
    "lines": 249,
-   "sha256": "ea1f9348b198c8fb4c92ee29afed402398c223cd36cff95e609b6e6a2bd90c48"
+   "sha256": "dfed44f3abe11a2ef63b3bca2e7b922893ad143cdcd0ec09bd1b2e22319cc737"
   },
   {
    "path": "account/topped-up.html",
    "what": "the page a payment returns to",
    "lines": 248,
-   "sha256": "518f95ea18b117b4a3b631875a2fef66340194cfa6100e49edb44043330428eb"
+   "sha256": "8e661ec495e81852c2a4782e64b18560a8bcc36ffba312bd5f714cf20d53b627"
   },
   {
    "path": "subscribe/index.html",
    "what": "subscribe",
    "lines": 269,
-   "sha256": "c2027e60d91dbc823a8aa61e03ff6139c666bcdb91b09c5feedf5fb021f539c3"
+   "sha256": "0dc3aa3a3f35294e33b1b8fb40ebf0c314d12fff3fb4a044cca02cc2a90c6da4"
   },
   {
    "path": "persona/index.html",
@@ -815,7 +815,7 @@
   {
    "path": "wire/index.html",
    "what": "the Industry Wire's edition",
-   "lines": 56,
+   "lines": 240,
    "sha256": "ff722c6409cd392b80475cb03df6d4dea5b573639bd1cabd2cf0276a0603f173"
   },
   {
@@ -840,19 +840,19 @@
    "path": "meter/index.html",
    "what": "SG Meter, documented",
    "lines": 390,
-   "sha256": "a55c58061932dc93c0ce532421f6bd6dbb2abef5e70dad77b7e4d098f7bc72e4"
+   "sha256": "b1b555d5fc81fa06693ea25ef7508b5e2698d62f292fa1b1d673114f94d0fc06"
   },
   {
    "path": "meter/security.html",
    "what": "the meter's security model",
    "lines": 275,
-   "sha256": "aa41ecfcbd9cd2110bad0ae2e23072b6d0a4809643e2d59d37b515bc1362f45a"
+   "sha256": "3045a9ef07ddcce97a8909d3403c488fc9a7d6a712e201dd452f1209457c5611"
   },
   {
    "path": "demos/vaults/newsroom-synthetic-users/index.html",
    "what": "the synthetic-readers study, with the embedded vault",
    "lines": 336,
-   "sha256": "0a2a202f29029b4fa8322842496d58d10d8775634e6331f0782c49ea83ba7ee3"
+   "sha256": "76b8043ddba0e7fc6e177598d084dd8b1c3171b968aede2bca51fd36655f32b6"
   }
  ],
  "build": [
@@ -916,7 +916,7 @@
   {
    "path": "admin/build/test_meter.mjs",
    "what": "the meter in Chromium",
-   "lines": 219,
+   "lines": 222,
    "checks": 40
   },
   {
@@ -980,8 +980,8 @@
  ],
  "loader": {
   "lines": 17,
-  "sha256": "a7939d0c7aaca35006465b6d62d5286538f8e993215ac6bd0f254ee6204ea2c5",
-  "pages_that_eval": 350
+  "sha256": "df214a0f52af0ea05e7834ca60abea217cb7a31ca65d53aac8749ff15128db0c",
+  "pages_that_eval": 363
  },
  "frozen": [
   {
@@ -1089,7 +1089,7 @@
   "account": 1,
   "landing": 6,
   "newsroom": 1,
-  "page": 367,
+  "page": 380,
   "personas": 1,
   "share": 1,
   "topped-up": 1,

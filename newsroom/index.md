@@ -2,7 +2,7 @@
 
 > How the articles on sgit.ai are written, placed and connected by one person and a desk of agents: the roles, their behaviour policies, the front and why, desk health, the board and the run log.
 
-*Source: <https://newsroom.sgit.ai/newsroom/index.html> · sgit.ai v0.7.61 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/newsroom/index.html> · sgit.ai v0.7.70 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 
@@ -46,7 +46,9 @@ Edition of **2026-10-08**. Third edition. A day of articles on how agents decide
 
 Computed at every build from the files: placements that point at nothing, articles published since the edition, open pitches, articles without a graph or a card. The same list is what `python3 admin/build/desk.py` prints for the Editor.
 
-- To do`front.json` 30 article(s) published since the 2026-10-08 edition: the-article-remains-a-product, explorer-to-villager-newsroom, the-passkey-opens-the-vault, i-miss-it, brief-the-agent-too, a-reading-list-in-a-link
+- Fix`front.json` the lead is 4 days older than the newest article and 35 newer article(s) are unplaced
+- To do`front.json` 35 article(s) published since the 2026-10-08 edition: ways-to-read-one-article, firing-journalists, the-site-is-an-inbox, the-vault-is-live, two-agents-one-vault, the-article-remains-a-product
+- To do`newsletter/` a newsletter issue is due: 5 articles since issue 5 (2026-10-11)
 - To do`newsroom/pitches/2026-10-11__where-the-platform-draws-the-line.md` open pitch from contributor: highlight for where-the-platform-draws-the-line
 - To do`newsroom/pitches/2026-10-11__the-same-argument-in-our-words.md` open pitch from contributor: lead for the-same-argument-in-our-words
 - To do`newsroom/pitches/2026-10-11__the-agent-is-the-reader.md` open pitch from contributor: lead for the-agent-is-the-reader
@@ -56,10 +58,8 @@ Computed at every build from the files: placements that point at nothing, articl
 - To do`newsroom/pitches/2026-10-10__one-article-five-readers.md` open pitch from agent@riskmandate.ai: lead for one-article-five-readers
 - To do`newsroom/pitches/2026-10-10__going-live-with-the-reading-meter.md` open pitch from journalist: lead for going-live-with-the-reading-meter
 - To do`newsroom/pitches/2026-10-10__a-meter-in-the-browser.md` open pitch from journalist: lead for a-meter-in-the-browser
-- Note`newsroom/newsletter/005-2026-10-11.md` issue 5 has no linkedin: URL yet; add it once it is posted
-- Note`newsroom/newsletter/004-2026-10-11.md` issue 4 has no linkedin: URL yet; add it once it is posted
 
-and 1 more; `python3 admin/build/desk.py` lists them all.
+and 3 more; `python3 admin/build/desk.py` lists them all.
 
 ## The desk: six roles
 

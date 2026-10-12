@@ -2,7 +2,7 @@
 
 > Every published version of the article "A locked-down desktop for an agent, by the minute, is still hard to rent", with the date, the words and what changed.
 
-*Source: <https://newsroom.sgit.ai/articles/versions/an-agent-desktop-by-the-minute.html> · sgit.ai v0.7.61 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/versions/an-agent-desktop-by-the-minute.html> · sgit.ai v0.7.70 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 

@@ -1,0 +1,191 @@
+{
+  "slug": "two-agents-one-vault",
+  "teaser": "One agent writes the Industry Wire into an encrypted vault; newsroom.sgit.ai holds only the read key and draws it, so a commit reaches the page with no release.",
+  "topics": [
+    "vaults-and-method",
+    "news-and-evidence",
+    "agents-and-policy"
+  ],
+  "core_idea": "A vault is the right interface between two agents that never share a session: the wire desk writes 40 stories, 55 sources, 7 personas and a code-only join into an encrypted sgit vault with a write key the site never holds; newsroom.sgit.ai holds the published read key and about four hundred lines that open the vault in the reader's browser, decrypt it and draw it as text, with 28 checks against the real vault in CI; the site owns the presentation and the vault owns the news, a commit is on the page within two minutes with no release, the server sees ciphertext, the history is the audit trail, and the site's agent read the whole vault before publishing the key and held back the one named reader's lens until that person agreed in writing.",
+  "nodes": [
+    {
+      "id": "wire",
+      "label": "The Industry Wire",
+      "kind": "artefact",
+      "summary": "A week of industry news across five beats, read live from a vault on newsroom.sgit.ai, with a lens per persona and one named reader."
+    },
+    {
+      "id": "vault",
+      "label": "Vault u9i9jp0l",
+      "kind": "artefact",
+      "summary": "40 stories, 55 sources, 7 personas, 280 join rows, five design documents, a runbook and an app, in one commit of 24 files on 11 October at 16:16 UTC."
+    },
+    {
+      "id": "desk",
+      "label": "The wire desk",
+      "kind": "method",
+      "summary": "Four roles that may write only their own folders, a gate that fails on a quote not in frozen bytes, stop conditions, and an Editor that places while the desk proposes."
+    },
+    {
+      "id": "readkey",
+      "label": "The site holds only the read key",
+      "kind": "claim",
+      "summary": "Published on purpose in a config file; the write key stays with the desk; everything the key opens is public for good."
+    },
+    {
+      "id": "browser",
+      "label": "Decrypted and drawn in the browser",
+      "kind": "method",
+      "summary": "Pointer, commit, tree, three files; Web Crypto; createElement and textContent; links only from http(s); nothing from the vault runs."
+    },
+    {
+      "id": "twomin",
+      "label": "A commit, not a release",
+      "kind": "claim",
+      "summary": "The pointer is re-checked every two minutes and immutable objects are cached for good, so the desk's commit is on the page without the site moving."
+    },
+    {
+      "id": "join",
+      "label": "The join is code, not a model",
+      "kind": "method",
+      "summary": "Entity 3, editor tag 2, keyword 2, beat 1, each concern once; reached or withheld with the reason; the same rule runs in the vault's app."
+    },
+    {
+      "id": "contract",
+      "label": "The contract",
+      "kind": "claim",
+      "summary": "Named fields the site relies on, status shown as the vault wrote it, and what may never go in a vault whose read key is public."
+    },
+    {
+      "id": "refused",
+      "label": "What the site refused",
+      "kind": "example",
+      "summary": "Read the whole vault before publishing the key; held back the named reader's lens until the agreement was recorded with its date."
+    },
+    {
+      "id": "interface",
+      "label": "The vault is the interface between agents",
+      "kind": "claim",
+      "summary": "Not pages pushed into a repository, not an API, not a shared session: one writes, one reads, the history is the audit trail."
+    },
+    {
+      "id": "tests",
+      "label": "28 checks against the real vault",
+      "kind": "example",
+      "summary": "Run in Chromium in CI: the edition opens, every link is http(s), nothing became a script, the lens reaches and withholds, the brief shows only under the named lens."
+    },
+    {
+      "id": "myfeeds",
+      "label": "MyFeeds, running, with one reader",
+      "kind": "concept",
+      "summary": "The vault calls itself the first step of the MyFeeds plan; the morning read makes every change to what the reader sees a reviewed edit to a file."
+    },
+    {
+      "id": "unreviewed",
+      "label": "Unreviewed, and said so",
+      "kind": "question",
+      "summary": "22 of 40 primaries not fetched, 10 stories checked and 3 corrected, the join is matching not understanding; the page shows the status the vault gave."
+    }
+  ],
+  "edges": [
+    {
+      "from": "desk",
+      "to": "vault",
+      "rel": "produces"
+    },
+    {
+      "from": "vault",
+      "to": "wire",
+      "rel": "produces"
+    },
+    {
+      "from": "readkey",
+      "to": "browser",
+      "rel": "leads-to"
+    },
+    {
+      "from": "browser",
+      "to": "wire",
+      "rel": "produces"
+    },
+    {
+      "from": "twomin",
+      "to": "readkey",
+      "rel": "depends-on"
+    },
+    {
+      "from": "join",
+      "to": "vault",
+      "rel": "example-of"
+    },
+    {
+      "from": "contract",
+      "to": "readkey",
+      "rel": "depends-on"
+    },
+    {
+      "from": "refused",
+      "to": "contract",
+      "rel": "example-of"
+    },
+    {
+      "from": "tests",
+      "to": "contract",
+      "rel": "example-of"
+    },
+    {
+      "from": "interface",
+      "to": "readkey",
+      "rel": "depends-on"
+    },
+    {
+      "from": "wire",
+      "to": "interface",
+      "rel": "example-of"
+    },
+    {
+      "from": "myfeeds",
+      "to": "wire",
+      "rel": "extends"
+    },
+    {
+      "from": "unreviewed",
+      "to": "wire",
+      "rel": "contrasts"
+    }
+  ],
+  "links": {
+    "articles": [
+      "future-of-news-story-vault-not-paywall",
+      "every-mistake-added-a-rule",
+      "where-the-vault-keys-live",
+      "no-server-by-design",
+      "i-miss-it",
+      "the-passkey-opens-the-vault"
+    ],
+    "pages": [
+      "/case-studies/live-vault-docs.html",
+      "/docs/vault/vault-from-javascript.html"
+    ],
+    "sites": [
+      "https://newsroom.sgit.ai/wire/#lens=dinis",
+      "https://newsroom.sgit.ai/wire/how.html",
+      "https://newsroom.sgit.ai/wire/",
+      "https://newsroom.sgit.ai/newsroom/index.html"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "The site owns the presentation and the vault owns the news.",
+      "why": "The division of labour between two agents."
+    },
+    {
+      "text": "Publishing a read key is publishing everything the key opens, for good, and you do not do that on trust.",
+      "why": "Why the site read the whole vault first."
+    },
+    {
+      "text": "Updating is a commit, not a release.",
+      "why": "What the two-minute pointer check buys."
+    }
+  ]
+}

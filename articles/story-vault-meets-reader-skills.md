@@ -2,7 +2,7 @@
 
 > Markus Franz published "The Article Is Only the Beginning" on 7 October 2026, proposing Liquid Utility, journalism that helps people understand, follow and act rather than only read, and six Reader Skills to deliver it, with a bridge closure as the example. He then wrote, under my comment, that his idea and the story vault connect at an architectural level: the story vault answers what we know and why it can be trusted, Reader Skills answer what we can reliably help someone do with it. This article draws that connection. Each of his six skills turns out to be an operation the story graph already supports, and each safeguard he asks for is a property the graph already has: versions for Update, supersede edges for corrections, freshness for "could not check", a flag at the node for protected sources. His bridge is drawn as a graph. And his article adds the piece our monetisation had not mapped: locality, where the trust relationship and the brand are strongest. Local contributors feed local journalists, local stories feed national and international ones, and if every use pays back down the chain of claims it rests on, small payments from many people fund the reporting nearest to them.
 
-*Source: <https://newsroom.sgit.ai/articles/story-vault-meets-reader-skills.html> · sgit.ai v0.7.61 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/story-vault-meets-reader-skills.html> · sgit.ai v0.7.70 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 
@@ -120,6 +120,7 @@ News & evidenceGraphs & knowledge[This article as a graph →](graphs.md#story-v
 
 ### Continued by
 
+- [Ways to read one article: the finished piece stays at the centre, and the reader picks the way in](ways-to-read-one-article.md) The five readers' views arrived as folds inside the long piece; now the reader picks the way in, with a default, and the finished article stays at the centre.
 - [The article remains a product: Jonathan Palmer's four outputs for a newsroom with no human readers, checked against one that runs](the-article-remains-a-product.md) Jonathan Palmer's four outputs for a newsroom with no human readers, quoted line by line and checked against newsroom.sgit.ai as it runs, screenshots included.
 - [The waiting room knew first: a live local story, and the gap where local information used to be](the-waiting-room-knew-first.md) Staff at two London hospitals said the IT was down; nothing a local could check showed it. A live local story about where local information comes from now.
 - [The bridge, followed to the end: what one local story is worth when it is kept as a graph](the-bridge-followed-to-the-end.md) A bridge closure simulated on a story vault: newsworthy on 5 days, needed on 57, used by three readers, four buyers and an agent, and paid back to its sources.

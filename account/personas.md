@@ -2,7 +2,7 @@
 
 > Add, name and switch between reading personas, each with its own picks and graph; start from five made from what sgit.ai publishes. Kept in your browser.
 
-*Source: <https://newsroom.sgit.ai/account/personas.html> · sgit.ai v0.7.61 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/account/personas.html> · sgit.ai v0.7.70 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 

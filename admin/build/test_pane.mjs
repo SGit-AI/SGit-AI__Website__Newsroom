@@ -84,7 +84,8 @@ try {
     await openPane()
     check(await pg.evaluate(() => document.documentElement.classList.contains('vault-open') && parseInt(getComputedStyle(document.body).paddingRight) >= 300), 'opening the pane moves the page left')
     await pg.click('#vault-enable'); await until('No passkey answered|No door here|Opening')
-    if (/No passkey answered/.test(await paneText())) { await pg.click('text=Make a passkey for this site'); await until('A passkey was made'); await pg.click('#vault-enable') }
+    // scoped to the pane: the article's own text may carry the same words (v1.4.0 of the passkey article does)
+    if (/No passkey answered/.test(await paneText())) { await pg.click('#sgit-vault-pane button:has-text("Make a passkey for this site")'); await until('A passkey was made'); await pg.click('#vault-enable') }
     await until('No door here for this path yet')
     check(/No door here for this path yet/.test(await paneText()), 'device A: no door here for this path yet, not an error')
     await pg.fill('#sgit-vault-pane input[type=password]', mock.token)

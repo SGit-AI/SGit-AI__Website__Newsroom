@@ -2,7 +2,7 @@
 
 > Since Chrome 148, on 5 May 2026, any web page can talk to a language model that runs on the reader's own machine: Gemini Nano, through the Prompt API, with text, image and audio input, JSON-schema output, and no network once the model is downloaded. For the pattern I described in No server, by design, that is the missing piece, because the hardest thing to move to the client was always the intelligence itself. I tried it this week, and the experience was rough: a download with no sense of time, a progress bar that vanished on refresh, and a model that turned up by the morning. That is partly the platform and partly the pages, and the documentation explains most of it. I also looked for good examples in the wild and found very few, which is less strange than it looks: the API shipped five months ago, over formal objections from Mozilla, Apple's WebKit team and the W3C TAG, to desktops with a 22 GB free-disk floor, in five languages, with tool calling still experimental. This article is a briefing on what actually works today, an honest account of the rough edges, the case for and against building on it, and a map of where we can put it to real use: answers grounded in the graph instead of the prose, personas inferred without leaving the browser, voice memos transcribed on the device, alt text for every figure, and a download experience that tells people what is happening.
 
-*Source: <https://newsroom.sgit.ai/articles/a-model-in-the-tab.html> · sgit.ai v0.7.61 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/a-model-in-the-tab.html> · sgit.ai v0.7.70 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 
@@ -157,6 +157,10 @@ Site & engineeringGraphs & knowledge[This article as a graph →](graphs.md#a-mo
 - [The agent is the reader: why agents will pay for graphs, personas and signed claims, because it is cheaper than not paying](the-agent-is-the-reader.md) Agents pay to read the raw web and guess its meaning. A curated graph answers for 90% fewer tokens, so paying the publisher is cheaper than not paying.
 - [Pay to keep your persona: readers should pay because it helps them, not because they feel they should](pay-to-keep-your-persona.md) Readers should pay because it helps them: a persona with a name and a graph, several for focus, and one that follows you between devices.
 - [How to run synthetic users on your own site: five people who do not exist, a browser, and an afternoon](how-to-run-synthetic-users.md) Five invented users, a model reading screenshots, and a real browser: how to run synthetic users, from three studies.
+
+### Continued by
+
+- [Ways to read one article: the finished piece stays at the centre, and the reader picks the way in](ways-to-read-one-article.md) The five readers' views arrived as folds inside the long piece; now the reader picks the way in, with a default, and the finished article stays at the centre.
 
 [All articles](index.md) · [All graphs](graphs.md)
 

@@ -2,7 +2,7 @@
 
 > Every vault on this site is encrypted in the client, so the server never sees a key and the key is the whole question. This is the current state of vault key management at sgit-ai v0.20.0: where everything lives, the one secret and the keys derived from it, where vault keys are kept today (a password manager, and a registry vault run by an isolated agent session), how a new key reaches the registry without ever entering a chat, append lanes as the transport behind most of it, the small communication vaults that made the problem urgent, and the four tracks that come next: password manager integrations, secrets.sgit.ai's passkey-unlocked keyring, PKI, and decryption that happens out of band. Plus the one gap we cannot close ourselves: agent platforms have no per-session secrets.
 
-*Source: <https://newsroom.sgit.ai/articles/where-the-vault-keys-live.html> · sgit.ai v0.7.61 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/where-the-vault-keys-live.html> · sgit.ai v0.7.70 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 
@@ -206,8 +206,9 @@ Vaults & methodAgents & policy[This article as a graph →](graphs.md#where-the-
 
 ### Continued by
 
+- [Two agents, one vault: the Industry Wire is written into an encrypted vault by one agent and drawn by newsroom.sgit.ai, which holds only the read key](two-agents-one-vault.md) One agent writes the Industry Wire into an encrypted vault; newsroom.sgit.ai holds only the read key and draws it, so a commit reaches the page with no release.
 - [The article remains a product: Jonathan Palmer's four outputs for a newsroom with no human readers, checked against one that runs](the-article-remains-a-product.md) Jonathan Palmer's four outputs for a newsroom with no human readers, quoted line by line and checked against newsroom.sgit.ai as it runs, screenshots included.
-- [The passkey opens the vault: touch a passkey, and a master vault for every user, with no server of ours, no account and no email](the-passkey-opens-the-vault.md) Sign in with Google says who you are; a passkey's PRF bytes derive a door vault, which opens your master vault. No key is stored anywhere.
+- [The passkey opens the vault: a door per path, a master vault for every user, and no server of ours](the-passkey-opens-the-vault.md) Tested: a passkey's PRF bytes compute a door that holds the master's key, and a different path to the same passkey gives different bytes, so a door per path.
 - [I miss it, so it is working: the people who decide the roadmap have to use the product, and the vault the newsroom now needs](i-miss-it.md) I read the newsroom on four devices and they do not agree. Missing a feature is the best sign; the makers must use it. And the brief for the reader's vault.
 - [No server, by design: first I retired the database, now I am retiring the back end](no-server-by-design.md) First the database went, now the back end: the SGit Newsroom runs all its logic in the browser, on commodity servers that cannot read your data.
 - [Authority outside the model: an answer to Satya Nadella on models as insider risks, principle by principle, with what we run, what we ship and what we plan](authority-outside-the-model.md) Satya Nadella's seven principles for models as insider risks, answered one by one: what we run, what is design, and the five things the list leaves out.

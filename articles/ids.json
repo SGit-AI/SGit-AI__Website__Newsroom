@@ -1,7 +1,7 @@
 {
  "what": "A stable number for every article on newsroom.sgit.ai, assigned once in the order the articles were first published and never changed or reused. A link to a reading list names articles by these numbers (https://newsroom.sgit.ai/for/#r=61,44,70). Only n and slug are the contract; every other field is display text, refreshed on each build. Written by admin/build/ids.py.",
- "count": 79,
- "next": 80,
+ "count": 84,
+ "next": 85,
  "personas": [
   {
    "id": "founder",
@@ -1202,10 +1202,10 @@
   {
    "n": 77,
    "slug": "the-passkey-opens-the-vault",
-   "title": "The passkey opens the vault: touch a passkey, and a master vault for every user, with no server of ours, no account and no email",
+   "title": "The passkey opens the vault: a door per path, a master vault for every user, and no server of ours",
    "date": "2026-10-11",
-   "minutes": 21,
-   "teaser": "Sign in with Google says who you are; a passkey's PRF bytes derive a door vault, which opens your master vault. No key is stored anywhere.",
+   "minutes": 39,
+   "teaser": "Tested: a passkey's PRF bytes compute a door that holds the master's key, and a different path to the same passkey gives different bytes, so a door per path.",
    "topics": [
     "vaults-and-method",
     "site-and-engineering"
@@ -1241,6 +1241,79 @@
    ],
    "personas": [],
    "url": "https://newsroom.sgit.ai/articles/the-article-remains-a-product.html"
+  },
+  {
+   "n": 80,
+   "slug": "two-agents-one-vault",
+   "title": "Two agents, one vault: the Industry Wire is written into an encrypted vault by one agent and drawn by newsroom.sgit.ai, which holds only the read key",
+   "date": "2026-10-12",
+   "minutes": 19,
+   "teaser": "One agent writes the Industry Wire into an encrypted vault; newsroom.sgit.ai holds only the read key and draws it, so a commit reaches the page with no release.",
+   "topics": [
+    "vaults-and-method",
+    "news-and-evidence",
+    "agents-and-policy"
+   ],
+   "personas": [],
+   "url": "https://newsroom.sgit.ai/articles/two-agents-one-vault.html"
+  },
+  {
+   "n": 81,
+   "slug": "the-vault-is-live",
+   "title": "The vault is live: from a design on 11 October to a reader's vault on newsroom.sgit.ai by two in the morning, and how all of it fits together",
+   "date": "2026-10-12",
+   "minutes": 16,
+   "teaser": "The reader's vault runs on newsroom.sgit.ai: a passkey opens three real vaults, each device writes one file, and the architecture is drawn as it stands.",
+   "topics": [
+    "vaults-and-method",
+    "site-and-engineering"
+   ],
+   "personas": [],
+   "url": "https://newsroom.sgit.ai/articles/the-vault-is-live.html"
+  },
+  {
+   "n": 82,
+   "slug": "the-site-is-an-inbox",
+   "title": "The site is an inbox: deciding before reading, marks that build the reader's own graph, and why I could not write this brief until the vault existed",
+   "date": "2026-10-12",
+   "minutes": 16,
+   "teaser": "The site as an inbox that starts empty: decide fast before reading, mark slowly while reading, build a graph you own, and sign what you send to the newsroom.",
+   "topics": [
+    "news-and-evidence",
+    "graphs-and-knowledge",
+    "vaults-and-method"
+   ],
+   "personas": [],
+   "url": "https://newsroom.sgit.ai/articles/the-site-is-an-inbox.html"
+  },
+  {
+   "n": 83,
+   "slug": "firing-journalists",
+   "title": "Firing journalists is the worst thing a publication can do: what a hiring decision says about where a publisher is going, and who to hire instead",
+   "date": "2026-10-12",
+   "minutes": 13,
+   "teaser": "A hiring decision is a direction of travel: fire the journalists and the centre of gravity moves to packaging, where the metric makes clickbait by construction.",
+   "topics": [
+    "news-and-evidence",
+    "startups-and-strategy"
+   ],
+   "personas": [],
+   "url": "https://newsroom.sgit.ai/articles/firing-journalists.html"
+  },
+  {
+   "n": 84,
+   "slug": "ways-to-read-one-article",
+   "title": "Ways to read one article: the finished piece stays at the centre, and the reader picks the way in",
+   "date": "2026-10-12",
+   "minutes": 13,
+   "teaser": "The five readers' views arrived as folds inside the long piece; now the reader picks the way in, with a default, and the finished article stays at the centre.",
+   "topics": [
+    "news-and-evidence",
+    "graphs-and-knowledge",
+    "site-and-engineering"
+   ],
+   "personas": [],
+   "url": "https://newsroom.sgit.ai/articles/ways-to-read-one-article.html"
   }
  ]
 }

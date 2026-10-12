@@ -1,7 +1,7 @@
 {
   "site": "https://sgit.ai",
-  "generated": "2026-10-11",
-  "site_version": "v0.7.61",
+  "generated": "2026-10-12",
+  "site_version": "v0.7.70",
   "schema": "https://newsroom.sgit.ai/articles/graphs.html",
   "topics": [
     {
@@ -55,6 +55,1023 @@
   ],
   "articles": [
     {
+      "slug": "ways-to-read-one-article",
+      "title": "Ways to read one article: the finished piece stays at the centre, and the reader picks the way in",
+      "date": "2026-10-12",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/ways-to-read-one-article.html",
+      "markdown": "https://newsroom.sgit.ai/articles/ways-to-read-one-article.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/ways-to-read-one-article.webp",
+      "teaser": "The five readers' views arrived as folds inside the long piece; now the reader picks the way in, with a default, and the finished article stays at the centre.",
+      "topics": [
+        "news-and-evidence",
+        "graphs-and-knowledge",
+        "site-and-engineering"
+      ],
+      "tags": [
+        "newsroom",
+        "reading",
+        "views",
+        "five-readers",
+        "infographics",
+        "slides",
+        "graphs",
+        "local-models",
+        "personas",
+        "mobile",
+        "email",
+        "brief",
+        "article"
+      ],
+      "links_out": [
+        "one-article-five-readers",
+        "the-site-is-an-inbox",
+        "the-vault-is-live",
+        "the-infographic-bake-off",
+        "a-model-in-the-tab",
+        "the-agent-is-the-reader",
+        "how-to-run-synthetic-users",
+        "story-vault-meets-reader-skills"
+      ],
+      "links_in": [],
+      "graph": {
+        "slug": "ways-to-read-one-article",
+        "teaser": "The five readers' views arrived as folds inside the long piece; now the reader picks the way in, with a default, and the finished article stays at the centre.",
+        "topics": [
+          "news-and-evidence",
+          "graphs-and-knowledge",
+          "site-and-engineering"
+        ],
+        "core_idea": "The views the five readers make, the catalogue, the maps, the arc, the two-minute version and the deck, are good and badly delivered, stacked as folds inside the article; with the pane about the piece the reader picks a mode in one tap and sets a default per persona: headlines, infographic, two minutes, slides, what is new against what they have read, facts, relationships, vocabulary, and, through a model in their own browser, a view at their level; most modes are computed from existing views and the graph, deterministic and explainable, with no round trip to the publisher; and the finished article is kept whole at the centre because it has a beginning, a pacing, a surprise and a voice and is the one artefact that must make sense end to end, which a graph cannot.",
+        "nodes": [
+          {
+            "id": "views",
+            "label": "The views worked, the delivery did not",
+            "kind": "claim",
+            "summary": "Five readers' views on five articles, delivered as folds inside the long piece, mixed with the thing they are an alternative to."
+          },
+          {
+            "id": "modes",
+            "label": "The reader picks the way in",
+            "kind": "method",
+            "summary": "Headlines, infographic, two minutes, slides, what is new, facts, relationships, vocabulary, at my level, the whole article; one tap in the pane; a default per persona; the mode in the address."
+          },
+          {
+            "id": "focus",
+            "label": "Focus and time",
+            "kind": "concept",
+            "summary": "The reader's constraint is time and their need is focus; the unit of choice is the way in, not the article."
+          },
+          {
+            "id": "deterministic",
+            "label": "Deterministic first, a model second",
+            "kind": "claim",
+            "summary": "Most modes are projections of existing views and the graph, computed and explainable; a local model is for fitting the piece to the reader; nothing round-trips to the publisher."
+          },
+          {
+            "id": "infographic",
+            "label": "The infographic is often the article",
+            "kind": "example",
+            "summary": "The figures carry most of the story; a figure drawn for one reader through their own image-model key is a small step."
+          },
+          {
+            "id": "new",
+            "label": "What is new",
+            "kind": "method",
+            "summary": "The Historian's arc crossed with the reader's own records shows only what this article adds to what they have read; needs the vault."
+          },
+          {
+            "id": "centre",
+            "label": "The finished article stays at the centre",
+            "kind": "claim",
+            "summary": "A beginning, a sequence, a pacing, a surprise and a voice; the one artefact that has to make sense end to end, which a graph cannot."
+          },
+          {
+            "id": "graph",
+            "label": "What the graph loses",
+            "kind": "concept",
+            "summary": "Hyperlinked facts, right for provenance and zooming in, with no narrative and no author."
+          },
+          {
+            "id": "devices",
+            "label": "Phone, tablet, desktop, email",
+            "kind": "method",
+            "summary": "On a phone the pane is a sheet and the default mode comes first; in email the newsletter is cut by the reader's default."
+          },
+          {
+            "id": "word",
+            "label": "Not prose: the finished article",
+            "kind": "question",
+            "summary": "The word made the article sound lesser than the graph beside it; from now on it is the finished article, or the narrative."
+          }
+        ],
+        "edges": [
+          {
+            "from": "views",
+            "to": "modes",
+            "rel": "leads-to"
+          },
+          {
+            "from": "focus",
+            "to": "modes",
+            "rel": "depends-on"
+          },
+          {
+            "from": "deterministic",
+            "to": "modes",
+            "rel": "extends"
+          },
+          {
+            "from": "infographic",
+            "to": "modes",
+            "rel": "example-of"
+          },
+          {
+            "from": "new",
+            "to": "modes",
+            "rel": "example-of"
+          },
+          {
+            "from": "centre",
+            "to": "modes",
+            "rel": "contrasts"
+          },
+          {
+            "from": "graph",
+            "to": "centre",
+            "rel": "contrasts"
+          },
+          {
+            "from": "devices",
+            "to": "modes",
+            "rel": "extends"
+          },
+          {
+            "from": "word",
+            "to": "centre",
+            "rel": "extends"
+          }
+        ],
+        "links": {
+          "articles": [
+            "one-article-five-readers",
+            "the-site-is-an-inbox",
+            "the-vault-is-live",
+            "the-infographic-bake-off",
+            "a-model-in-the-tab",
+            "the-agent-is-the-reader",
+            "story-vault-meets-reader-skills",
+            "how-to-run-synthetic-users"
+          ],
+          "pages": [],
+          "sites": []
+        },
+        "quotes": [
+          {
+            "text": "The views exist; the choice does not",
+            "why": "The problem in one line."
+          },
+          {
+            "text": "the article is the one artefact that has to make sense in a coherent way, from end to end, and the graph is the one that has to be checkable.",
+            "why": "The rule that keeps the article at the centre."
+          },
+          {
+            "text": "The modes are ways into the article for a reader with twenty seconds, two minutes or an hour.",
+            "why": "What the modes are, and are not."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "firing-journalists",
+      "title": "Firing journalists is the worst thing a publication can do: what a hiring decision says about where a publisher is going, and who to hire instead",
+      "date": "2026-10-12",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/firing-journalists.html",
+      "markdown": "https://newsroom.sgit.ai/articles/firing-journalists.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/firing-journalists.webp",
+      "teaser": "A hiring decision is a direction of travel: fire the journalists and the centre of gravity moves to packaging, where the metric makes clickbait by construction.",
+      "topics": [
+        "news-and-evidence",
+        "startups-and-strategy"
+      ],
+      "tags": [
+        "journalism",
+        "publishing",
+        "hiring",
+        "layoffs",
+        "strategy",
+        "metrics",
+        "engagement",
+        "provenance",
+        "newsroom",
+        "roles",
+        "article"
+      ],
+      "links_out": [
+        "pay-after-you-read",
+        "the-site-is-an-inbox",
+        "how-news-got-here",
+        "token-bill-nobody-is-sending",
+        "the-article-remains-a-product",
+        "one-article-five-readers",
+        "the-agent-is-the-reader",
+        "liquid-content-needs-water"
+      ],
+      "links_in": [],
+      "graph": {
+        "slug": "firing-journalists",
+        "teaser": "A hiring decision is a direction of travel: fire the journalists and the centre of gravity moves to packaging, where the metric makes clickbait by construction.",
+        "topics": [
+          "news-and-evidence",
+          "startups-and-strategy"
+        ],
+        "core_idea": "Against the 2026 job-cut figures, a publisher's hiring decisions are read as the clearest statement of where its centre of gravity is going: firing the people who make original content and hiring for traffic moves the centre to packaging, where measuring engagement makes clickbait by construction because what you measure is what you become; firing the engineers fails the other way, with journalism nothing enables; the case is to keep and tool the journalists, hire the roles that turn a notebook into a graph and the engineers who build what the tooling needs, measure value to the reader, and read any publisher's real strategy from outside with five counts.",
+        "nodes": [
+          {
+            "id": "cuts",
+            "label": "The 2026 cuts",
+            "kind": "example",
+            "summary": "Press Gazette's tracker: 3,434 in 2025, 3,875 in 2024, about 6,000 in 2023; in 2026 the BBC, the Washington Post, Reach, Scripps and McClatchy, with the Idaho Statesman losing 10 of 18 reporters."
+          },
+          {
+            "id": "signal",
+            "label": "A hiring decision is a direction of travel",
+            "kind": "claim",
+            "summary": "The clearest statement a publisher makes about where its centre of gravity is going, because it is what the company actually spent."
+          },
+          {
+            "id": "centre",
+            "label": "The centre of gravity",
+            "kind": "concept",
+            "summary": "Where the thing the organisation exists to make is made, and where the power is; in a news publisher, the journalists."
+          },
+          {
+            "id": "metric",
+            "label": "What you measure is what you become",
+            "kind": "claim",
+            "summary": "Hire for engagement and the metric becomes pages opened; optimise for it and clickbait follows by construction; the metric is a hiring plan in disguise."
+          },
+          {
+            "id": "packaging",
+            "label": "Failure mode: all packaging",
+            "kind": "claim",
+            "summary": "A coherent business whose world is shrinking: referrals down 58%, newsrooms down 57%, answer engines fetching thousands of pages to send back ten readers."
+          },
+          {
+            "id": "noengineers",
+            "label": "Failure mode: no engineers",
+            "kind": "claim",
+            "summary": "Journalism that nothing enables: no graph, no checkable provenance, no versions, no surfaces for agents, no meter."
+          },
+          {
+            "id": "hire",
+            "label": "Who to hire instead",
+            "kind": "method",
+            "summary": "Keep and tool the journalists; hire historians, cartographers, ontologists and librarians, AI-enabled; hire the engineers and AI product managers; measure value to the reader."
+          },
+          {
+            "id": "outside",
+            "label": "Five counts from outside",
+            "kind": "method",
+            "summary": "Original share, sourcing, corrections, roles hired against roles cut, and the metric the publisher itself reports."
+          },
+          {
+            "id": "parable",
+            "label": "We hire the ones you let go",
+            "kind": "concept",
+            "summary": "Unsourced: the good ones leave first because they want to do the work; in publishing they are the journalists."
+          },
+          {
+            "id": "tooling",
+            "label": "This makes you better, not this replaces you",
+            "kind": "claim",
+            "summary": "The tooling handed to journalists as an advantage is the business case of most of this site."
+          }
+        ],
+        "edges": [
+          {
+            "from": "cuts",
+            "to": "signal",
+            "rel": "leads-to"
+          },
+          {
+            "from": "centre",
+            "to": "signal",
+            "rel": "depends-on"
+          },
+          {
+            "from": "signal",
+            "to": "metric",
+            "rel": "leads-to"
+          },
+          {
+            "from": "metric",
+            "to": "packaging",
+            "rel": "produces"
+          },
+          {
+            "from": "noengineers",
+            "to": "packaging",
+            "rel": "contrasts"
+          },
+          {
+            "from": "hire",
+            "to": "signal",
+            "rel": "answers"
+          },
+          {
+            "from": "tooling",
+            "to": "hire",
+            "rel": "depends-on"
+          },
+          {
+            "from": "outside",
+            "to": "signal",
+            "rel": "extends"
+          },
+          {
+            "from": "parable",
+            "to": "hire",
+            "rel": "example-of"
+          }
+        ],
+        "links": {
+          "articles": [
+            "pay-after-you-read",
+            "the-site-is-an-inbox",
+            "how-news-got-here",
+            "token-bill-nobody-is-sending",
+            "the-article-remains-a-product",
+            "one-article-five-readers",
+            "the-agent-is-the-reader",
+            "liquid-content-needs-water"
+          ],
+          "pages": [
+            "/publishers/index.html"
+          ],
+          "sites": [
+            "https://pressgazette.co.uk/news/journalism-job-cuts-in-2026-updates/",
+            "https://www.techpolicy.press/cutting-local-journalists-mcclatchy-embraces-ai-content/",
+            "https://newsroom.sgit.ai/world-news-day/",
+            "https://newsroom.sgit.ai/corrections/index.html"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "The metric is a hiring plan in disguise.",
+            "why": "The sentence for a board."
+          },
+          {
+            "text": "Fire the journalists and there is nothing to capture. Fire the engineers and it is not captured.",
+            "why": "The two failure modes in one line."
+          },
+          {
+            "text": "The reporting is done, and then it is thrown away as a PDF of the paper.",
+            "why": "What no engineering looks like."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "the-site-is-an-inbox",
+      "title": "The site is an inbox: deciding before reading, marks that build the reader's own graph, and why I could not write this brief until the vault existed",
+      "date": "2026-10-12",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/the-site-is-an-inbox.html",
+      "markdown": "https://newsroom.sgit.ai/articles/the-site-is-an-inbox.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/the-site-is-an-inbox.webp",
+      "teaser": "The site as an inbox that starts empty: decide fast before reading, mark slowly while reading, build a graph you own, and sign what you send to the newsroom.",
+      "topics": [
+        "news-and-evidence",
+        "graphs-and-knowledge",
+        "vaults-and-method"
+      ],
+      "tags": [
+        "newsroom",
+        "reading",
+        "inbox",
+        "personas",
+        "graphs",
+        "feedback-loop",
+        "highlights",
+        "signals",
+        "privacy",
+        "vaults",
+        "pki",
+        "brief",
+        "article"
+      ],
+      "links_out": [
+        "the-vault-is-live",
+        "pay-after-you-read",
+        "two-agents-one-vault",
+        "introducing-fractal-semantic-graphs",
+        "one-article-five-readers",
+        "the-passkey-opens-the-vault",
+        "i-miss-it"
+      ],
+      "links_in": [
+        "ways-to-read-one-article",
+        "firing-journalists"
+      ],
+      "graph": {
+        "slug": "the-site-is-an-inbox",
+        "teaser": "The site as an inbox that starts empty: decide fast before reading, mark slowly while reading, build a graph you own, and sign what you send to the newsroom.",
+        "topics": [
+          "news-and-evidence",
+          "graphs-and-knowledge",
+          "vaults-and-method"
+        ],
+        "core_idea": "With the reader's vault live, the next brief treats the site as an inbox that starts empty: every piece, original or aggregated, waits for a one-tap decision in a fast inbox mode with nothing loaded, and only reading is the slow mode, where marks of six kinds become nodes in a graph the reader owns, connected to the graphs the site publishes for every article; scroll depth, awake time and from-and-to are recorded for the reader and kept as the meter keeps everything, in the browser and the vault; personas each have a key pair so a comment to the newsroom goes down the write-only lane signed with a copy kept; nothing is gamified; and the brief could only be written once the properties of what runs became the constraints to think with.",
+        "nodes": [
+          {
+            "id": "constraints",
+            "label": "The constraints are what let me think",
+            "kind": "claim",
+            "summary": "The brief could not be written until the vault ran; five properties of what runs closed the design space enough to think in a morning."
+          },
+          {
+            "id": "inbox",
+            "label": "The site is an inbox",
+            "kind": "concept",
+            "summary": "It starts empty; every piece, original or aggregated, waits for a decision; deciding is the work and reading is one of the decisions."
+          },
+          {
+            "id": "fast",
+            "label": "The inbox mode",
+            "kind": "method",
+            "summary": "With nothing loaded, one tap: read now, read later, not for me, more like this, less like this, comment, move to a persona."
+          },
+          {
+            "id": "slow",
+            "label": "The reading mode",
+            "kind": "method",
+            "summary": "The piece open, the pane about it: its graph, the reader's marks, the decisions, the cost."
+          },
+          {
+            "id": "nogame",
+            "label": "No gamification",
+            "kind": "claim",
+            "summary": "A decision is offered where the reader would take it, never at the end of a page; a signal the site engineered is not a signal."
+          },
+          {
+            "id": "marks",
+            "label": "Marks of six kinds",
+            "kind": "method",
+            "summary": "Interesting, great phrase, not sure, fact, evidence, question: each a node with the phrase, the article, the version, the persona and the time."
+          },
+          {
+            "id": "mygraph",
+            "label": "The reader's own graph",
+            "kind": "concept",
+            "summary": "Marks connect to the public article graphs; meaning comes from connectivity; the graph is worth more the more it is used."
+          },
+          {
+            "id": "signals",
+            "label": "The free signals",
+            "kind": "method",
+            "summary": "Scroll depth as read or glanced, time while awake, from and to, the decisions; kept in the browser and the vault, seen by an agent only through a read key."
+          },
+          {
+            "id": "personas",
+            "label": "Personas with keys",
+            "kind": "concept",
+            "summary": "Disposable, one key pair each; the editor persona comments on everything; a persona can be handed to an agent as a read key to its slice."
+          },
+          {
+            "id": "lane",
+            "label": "The signed lane",
+            "kind": "method",
+            "summary": "A mark for the newsroom is encrypted to its published key, signed by the persona, copied to the vault; the reply is a new version."
+          },
+          {
+            "id": "bet",
+            "label": "The bet",
+            "kind": "question",
+            "summary": "The loop closes only if reading with a graph that grows is better than reading without one."
+          },
+          {
+            "id": "order",
+            "label": "What to build, in order",
+            "kind": "artefact",
+            "summary": "Inbox mode on the wire first, the pane about the piece, marks, signals, persona keys, the signed lane, the views, an experiment per feature."
+          }
+        ],
+        "edges": [
+          {
+            "from": "constraints",
+            "to": "inbox",
+            "rel": "leads-to"
+          },
+          {
+            "from": "inbox",
+            "to": "fast",
+            "rel": "produces"
+          },
+          {
+            "from": "inbox",
+            "to": "slow",
+            "rel": "produces"
+          },
+          {
+            "from": "fast",
+            "to": "slow",
+            "rel": "contrasts"
+          },
+          {
+            "from": "nogame",
+            "to": "fast",
+            "rel": "depends-on"
+          },
+          {
+            "from": "marks",
+            "to": "mygraph",
+            "rel": "produces"
+          },
+          {
+            "from": "slow",
+            "to": "marks",
+            "rel": "produces"
+          },
+          {
+            "from": "signals",
+            "to": "slow",
+            "rel": "example-of"
+          },
+          {
+            "from": "personas",
+            "to": "lane",
+            "rel": "depends-on"
+          },
+          {
+            "from": "lane",
+            "to": "mygraph",
+            "rel": "extends"
+          },
+          {
+            "from": "mygraph",
+            "to": "bet",
+            "rel": "leads-to"
+          },
+          {
+            "from": "order",
+            "to": "inbox",
+            "rel": "answers"
+          }
+        ],
+        "links": {
+          "articles": [
+            "the-vault-is-live",
+            "pay-after-you-read",
+            "two-agents-one-vault",
+            "introducing-fractal-semantic-graphs",
+            "one-article-five-readers",
+            "the-passkey-opens-the-vault",
+            "i-miss-it"
+          ],
+          "pages": [],
+          "sites": [
+            "https://newsroom.sgit.ai/articles/graphs.html",
+            "https://newsroom.sgit.ai/account/share.html"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "Deciding is the work; reading is one of the decisions.",
+            "why": "The inbox in one line."
+          },
+          {
+            "text": "Ship first, think second, and do not pretend the thinking could have come first.",
+            "why": "The order the feedback loop runs in."
+          },
+          {
+            "text": "I am not highlighting any more. I am building my graph.",
+            "why": "What kinds of mark change."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "the-vault-is-live",
+      "title": "The vault is live: from a design on 11 October to a reader's vault on newsroom.sgit.ai by two in the morning, and how all of it fits together",
+      "date": "2026-10-12",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/the-vault-is-live.html",
+      "markdown": "https://newsroom.sgit.ai/articles/the-vault-is-live.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/the-vault-is-live.webp",
+      "teaser": "The reader's vault runs on newsroom.sgit.ai: a passkey opens three real vaults, each device writes one file, and the architecture is drawn as it stands.",
+      "topics": [
+        "vaults-and-method",
+        "site-and-engineering"
+      ],
+      "tags": [
+        "vaults",
+        "passkeys",
+        "newsroom",
+        "architecture",
+        "client-side",
+        "sync",
+        "local-first",
+        "sgit",
+        "testing",
+        "release",
+        "article"
+      ],
+      "links_out": [
+        "the-passkey-opens-the-vault",
+        "i-miss-it",
+        "no-server-by-design",
+        "pay-after-you-read",
+        "two-agents-one-vault"
+      ],
+      "links_in": [
+        "ways-to-read-one-article",
+        "the-site-is-an-inbox"
+      ],
+      "graph": {
+        "slug": "the-vault-is-live",
+        "teaser": "The reader's vault runs on newsroom.sgit.ai: a passkey opens three real vaults, each device writes one file, and the architecture is drawn as it stands.",
+        "topics": [
+          "vaults-and-method",
+          "site-and-engineering"
+        ],
+        "core_idea": "Between the morning of 11 October and 02:22 UTC on 12 October the reader's vault went from a design to a running feature on newsroom.sgit.ai: a Vault pane on every page enables the account with a passkey, creates a door at its derived address, a master and a reader vault as real sgit vaults through the vendored vault library, writes each device's raw records as one file in one commit, and brings other devices' activity into the browser so the meter shows one balance; local storage stays primary, the vault holds records never totals, one file per device means no conflict by construction, eight test files run in CI against a mock of the vault server plus a CLI round trip, and a live check on an iPad confirmed it; the properties of what runs are the constraints the next brief is thought with.",
+        "nodes": [
+          {
+            "id": "live",
+            "label": "The vault pane, running",
+            "kind": "artefact",
+            "summary": "A Vault button beside the balance on every newsroom page: enable, create once, update, see every device, bring their activity here."
+          },
+          {
+            "id": "chain",
+            "label": "Door, master, reader vault",
+            "kind": "method",
+            "summary": "Three real vaults: the door at its derived address holds the master's key and its record; the master holds the reader's key, the access key and the doors; the reader vault holds the activity files."
+          },
+          {
+            "id": "vendored",
+            "label": "One code base, vendored",
+            "kind": "claim",
+            "summary": "The vault UI library v0.2.3 that runs dev.vault.sgraph.ai, twelve files unedited with every SHA-256 checked at build, and one local patch pending upstream."
+          },
+          {
+            "id": "localfirst",
+            "label": "Local storage stays primary",
+            "kind": "claim",
+            "summary": "The meter is unchanged; the vault is a copy the reader keeps current by pressing a button, so the number of commits is the number of presses."
+          },
+          {
+            "id": "records",
+            "label": "Records, never totals",
+            "kind": "claim",
+            "summary": "Reads, top-ups and personas go in raw; reads, spend, declined, credit and balance are recomputed from the records with one starting credit."
+          },
+          {
+            "id": "onefile",
+            "label": "One file per device",
+            "kind": "method",
+            "summary": "Each device writes what it originated to its own file, whole; two devices never write the same file; brought-in records keep their author."
+          },
+          {
+            "id": "tests",
+            "label": "Eight test files, then an iPad",
+            "kind": "example",
+            "summary": "The account, the sync logic, two devices in Chromium with a virtual authenticator, a CLI round trip in CI; then three vaults made from an iCloud Keychain passkey on a real device."
+          },
+          {
+            "id": "timeline",
+            "label": "From design to pane in a night",
+            "kind": "example",
+            "summary": "22:56 the lab, 00:15 the finding, 01:33 real vaults, 01:57 the live check, 02:22 the pane; none of the steps skipped."
+          },
+          {
+            "id": "constraints",
+            "label": "The properties are the constraints I think with",
+            "kind": "claim",
+            "summary": "The next brief could not be written until this ran, because what works and what does not is what limits the scope enough to think."
+          },
+          {
+            "id": "notbuilt",
+            "label": "Not built",
+            "kind": "question",
+            "summary": "Pruning local storage, retiring a device, rotating the master, automatic sync, the key pairs, the persona vault, the notes lane; each designed, with experiments listed first."
+          }
+        ],
+        "edges": [
+          {
+            "from": "chain",
+            "to": "live",
+            "rel": "produces"
+          },
+          {
+            "from": "vendored",
+            "to": "chain",
+            "rel": "depends-on"
+          },
+          {
+            "from": "localfirst",
+            "to": "live",
+            "rel": "extends"
+          },
+          {
+            "from": "records",
+            "to": "onefile",
+            "rel": "depends-on"
+          },
+          {
+            "from": "onefile",
+            "to": "live",
+            "rel": "produces"
+          },
+          {
+            "from": "tests",
+            "to": "live",
+            "rel": "example-of"
+          },
+          {
+            "from": "timeline",
+            "to": "live",
+            "rel": "example-of"
+          },
+          {
+            "from": "live",
+            "to": "constraints",
+            "rel": "leads-to"
+          },
+          {
+            "from": "notbuilt",
+            "to": "live",
+            "rel": "contrasts"
+          }
+        ],
+        "links": {
+          "articles": [
+            "the-passkey-opens-the-vault",
+            "i-miss-it",
+            "no-server-by-design",
+            "pay-after-you-read",
+            "two-agents-one-vault"
+          ],
+          "pages": [
+            "/docs/vault/vault-from-javascript.html"
+          ],
+          "sites": [
+            "https://newsroom.sgit.ai/",
+            "https://newsroom.sgit.ai/admin/notes/2026-10-12__the-activity-vault.md",
+            "https://newsroom.sgit.ai/vault/",
+            "https://newsroom.sgit.ai/passkey/"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "Two devices never write the same file, so there is nothing to merge and no conflict by construction.",
+            "why": "The sync model's central property."
+          },
+          {
+            "text": "The constraints limit the scope of what I write, and that is what lets me write it.",
+            "why": "Why shipping comes before the next brief."
+          },
+          {
+            "text": "The design went to the lab, the lab corrected the design, the corrected design was built, and the build was checked on a real device before the pane that readers see was written over it.",
+            "why": "The sequence, and why the speed is not recklessness."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "two-agents-one-vault",
+      "title": "Two agents, one vault: the Industry Wire is written into an encrypted vault by one agent and drawn by newsroom.sgit.ai, which holds only the read key",
+      "date": "2026-10-12",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/two-agents-one-vault.html",
+      "markdown": "https://newsroom.sgit.ai/articles/two-agents-one-vault.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/two-agents-one-vault.webp",
+      "teaser": "One agent writes the Industry Wire into an encrypted vault; newsroom.sgit.ai holds only the read key and draws it, so a commit reaches the page with no release.",
+      "topics": [
+        "vaults-and-method",
+        "news-and-evidence",
+        "agents-and-policy"
+      ],
+      "tags": [
+        "vaults",
+        "agents",
+        "newsroom",
+        "industry-wire",
+        "read-key",
+        "client-side",
+        "provenance",
+        "personas",
+        "workflow",
+        "myfeeds",
+        "article"
+      ],
+      "links_out": [
+        "future-of-news-story-vault-not-paywall",
+        "every-mistake-added-a-rule",
+        "where-the-vault-keys-live",
+        "no-server-by-design",
+        "i-miss-it",
+        "the-passkey-opens-the-vault"
+      ],
+      "links_in": [
+        "the-site-is-an-inbox",
+        "the-vault-is-live"
+      ],
+      "graph": {
+        "slug": "two-agents-one-vault",
+        "teaser": "One agent writes the Industry Wire into an encrypted vault; newsroom.sgit.ai holds only the read key and draws it, so a commit reaches the page with no release.",
+        "topics": [
+          "vaults-and-method",
+          "news-and-evidence",
+          "agents-and-policy"
+        ],
+        "core_idea": "A vault is the right interface between two agents that never share a session: the wire desk writes 40 stories, 55 sources, 7 personas and a code-only join into an encrypted sgit vault with a write key the site never holds; newsroom.sgit.ai holds the published read key and about four hundred lines that open the vault in the reader's browser, decrypt it and draw it as text, with 28 checks against the real vault in CI; the site owns the presentation and the vault owns the news, a commit is on the page within two minutes with no release, the server sees ciphertext, the history is the audit trail, and the site's agent read the whole vault before publishing the key and held back the one named reader's lens until that person agreed in writing.",
+        "nodes": [
+          {
+            "id": "wire",
+            "label": "The Industry Wire",
+            "kind": "artefact",
+            "summary": "A week of industry news across five beats, read live from a vault on newsroom.sgit.ai, with a lens per persona and one named reader."
+          },
+          {
+            "id": "vault",
+            "label": "Vault u9i9jp0l",
+            "kind": "artefact",
+            "summary": "40 stories, 55 sources, 7 personas, 280 join rows, five design documents, a runbook and an app, in one commit of 24 files on 11 October at 16:16 UTC."
+          },
+          {
+            "id": "desk",
+            "label": "The wire desk",
+            "kind": "method",
+            "summary": "Four roles that may write only their own folders, a gate that fails on a quote not in frozen bytes, stop conditions, and an Editor that places while the desk proposes."
+          },
+          {
+            "id": "readkey",
+            "label": "The site holds only the read key",
+            "kind": "claim",
+            "summary": "Published on purpose in a config file; the write key stays with the desk; everything the key opens is public for good."
+          },
+          {
+            "id": "browser",
+            "label": "Decrypted and drawn in the browser",
+            "kind": "method",
+            "summary": "Pointer, commit, tree, three files; Web Crypto; createElement and textContent; links only from http(s); nothing from the vault runs."
+          },
+          {
+            "id": "twomin",
+            "label": "A commit, not a release",
+            "kind": "claim",
+            "summary": "The pointer is re-checked every two minutes and immutable objects are cached for good, so the desk's commit is on the page without the site moving."
+          },
+          {
+            "id": "join",
+            "label": "The join is code, not a model",
+            "kind": "method",
+            "summary": "Entity 3, editor tag 2, keyword 2, beat 1, each concern once; reached or withheld with the reason; the same rule runs in the vault's app."
+          },
+          {
+            "id": "contract",
+            "label": "The contract",
+            "kind": "claim",
+            "summary": "Named fields the site relies on, status shown as the vault wrote it, and what may never go in a vault whose read key is public."
+          },
+          {
+            "id": "refused",
+            "label": "What the site refused",
+            "kind": "example",
+            "summary": "Read the whole vault before publishing the key; held back the named reader's lens until the agreement was recorded with its date."
+          },
+          {
+            "id": "interface",
+            "label": "The vault is the interface between agents",
+            "kind": "claim",
+            "summary": "Not pages pushed into a repository, not an API, not a shared session: one writes, one reads, the history is the audit trail."
+          },
+          {
+            "id": "tests",
+            "label": "28 checks against the real vault",
+            "kind": "example",
+            "summary": "Run in Chromium in CI: the edition opens, every link is http(s), nothing became a script, the lens reaches and withholds, the brief shows only under the named lens."
+          },
+          {
+            "id": "myfeeds",
+            "label": "MyFeeds, running, with one reader",
+            "kind": "concept",
+            "summary": "The vault calls itself the first step of the MyFeeds plan; the morning read makes every change to what the reader sees a reviewed edit to a file."
+          },
+          {
+            "id": "unreviewed",
+            "label": "Unreviewed, and said so",
+            "kind": "question",
+            "summary": "22 of 40 primaries not fetched, 10 stories checked and 3 corrected, the join is matching not understanding; the page shows the status the vault gave."
+          }
+        ],
+        "edges": [
+          {
+            "from": "desk",
+            "to": "vault",
+            "rel": "produces"
+          },
+          {
+            "from": "vault",
+            "to": "wire",
+            "rel": "produces"
+          },
+          {
+            "from": "readkey",
+            "to": "browser",
+            "rel": "leads-to"
+          },
+          {
+            "from": "browser",
+            "to": "wire",
+            "rel": "produces"
+          },
+          {
+            "from": "twomin",
+            "to": "readkey",
+            "rel": "depends-on"
+          },
+          {
+            "from": "join",
+            "to": "vault",
+            "rel": "example-of"
+          },
+          {
+            "from": "contract",
+            "to": "readkey",
+            "rel": "depends-on"
+          },
+          {
+            "from": "refused",
+            "to": "contract",
+            "rel": "example-of"
+          },
+          {
+            "from": "tests",
+            "to": "contract",
+            "rel": "example-of"
+          },
+          {
+            "from": "interface",
+            "to": "readkey",
+            "rel": "depends-on"
+          },
+          {
+            "from": "wire",
+            "to": "interface",
+            "rel": "example-of"
+          },
+          {
+            "from": "myfeeds",
+            "to": "wire",
+            "rel": "extends"
+          },
+          {
+            "from": "unreviewed",
+            "to": "wire",
+            "rel": "contrasts"
+          }
+        ],
+        "links": {
+          "articles": [
+            "future-of-news-story-vault-not-paywall",
+            "every-mistake-added-a-rule",
+            "where-the-vault-keys-live",
+            "no-server-by-design",
+            "i-miss-it",
+            "the-passkey-opens-the-vault"
+          ],
+          "pages": [
+            "/case-studies/live-vault-docs.html",
+            "/docs/vault/vault-from-javascript.html"
+          ],
+          "sites": [
+            "https://newsroom.sgit.ai/wire/#lens=dinis",
+            "https://newsroom.sgit.ai/wire/how.html",
+            "https://newsroom.sgit.ai/wire/",
+            "https://newsroom.sgit.ai/newsroom/index.html"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "The site owns the presentation and the vault owns the news.",
+            "why": "The division of labour between two agents."
+          },
+          {
+            "text": "Publishing a read key is publishing everything the key opens, for good, and you do not do that on trust.",
+            "why": "Why the site read the whole vault first."
+          },
+          {
+            "text": "Updating is a commit, not a release.",
+            "why": "What the two-minute pointer check buys."
+          }
+        ]
+      }
+    },
+    {
       "slug": "the-article-remains-a-product",
       "title": "The article remains a product: Jonathan Palmer's four outputs for a newsroom with no human readers, checked against one that runs",
       "date": "2026-10-11",
@@ -98,7 +1115,9 @@
         "no-server-by-design",
         "story-vault-meets-reader-skills"
       ],
-      "links_in": [],
+      "links_in": [
+        "firing-journalists"
+      ],
       "graph": {
         "slug": "the-article-remains-a-product",
         "teaser": "Jonathan Palmer's four outputs for a newsroom with no human readers, quoted line by line and checked against newsroom.sgit.ai as it runs, screenshots included.",
@@ -468,13 +1487,13 @@
     },
     {
       "slug": "the-passkey-opens-the-vault",
-      "title": "The passkey opens the vault: touch a passkey, and a master vault for every user, with no server of ours, no account and no email",
+      "title": "The passkey opens the vault: a door per path, a master vault for every user, and no server of ours",
       "date": "2026-10-11",
-      "updated": "",
+      "updated": "2026-10-12",
       "url": "https://newsroom.sgit.ai/articles/the-passkey-opens-the-vault.html",
       "markdown": "https://newsroom.sgit.ai/articles/the-passkey-opens-the-vault.md",
       "card": "https://newsroom.sgit.ai/articles/cards/the-passkey-opens-the-vault.webp",
-      "teaser": "Sign in with Google says who you are; a passkey's PRF bytes derive a door vault, which opens your master vault. No key is stored anywhere.",
+      "teaser": "Tested: a passkey's PRF bytes compute a door that holds the master's key, and a different path to the same passkey gives different bytes, so a door per path.",
       "topics": [
         "vaults-and-method",
         "site-and-engineering"
@@ -485,81 +1504,85 @@
         "prf",
         "vaults",
         "key-management",
-        "google-sign-in",
+        "pki",
         "client-side",
         "newsroom",
         "architecture",
         "brief",
         "secrets",
+        "lab",
         "article"
       ],
       "links_out": [
         "i-miss-it",
         "no-server-by-design",
-        "how-to-run-synthetic-users",
         "rfc-0001-public-key-cryptography-for-sgit",
+        "how-to-run-synthetic-users",
         "pay-after-you-read",
         "where-the-vault-keys-live"
       ],
       "links_in": [
+        "the-site-is-an-inbox",
+        "the-vault-is-live",
+        "two-agents-one-vault",
         "explorer-to-villager-newsroom"
       ],
       "graph": {
         "slug": "the-passkey-opens-the-vault",
-        "teaser": "Sign in with Google says who you are; a passkey's PRF bytes derive a door vault, which opens your master vault. No key is stored anywhere.",
+        "teaser": "Tested: a passkey's PRF bytes compute a door that holds the master's key, and a different path to the same passkey gives different bytes, so a door per path.",
         "topics": [
           "vaults-and-method",
           "site-and-engineering"
         ],
-        "core_idea": "An end-to-end, client-side account with no sign-in, no account and no email: a passkey with the WebAuthn PRF extension for 32 bytes only the user's authenticator can produce for the site, and sgit vaults. Because sgit vault keys are made in the client, the browser derives a door vault's key and id from the PRF bytes with HKDF, so nothing has to be stored or found first; the door holds the master vault key, and the master holds the keys of the user's other vaults, the access key, a key pair and the list of doors. A 128-bit recovery code derives a recovery door. Google holds no key; Drive's app-data folder can keep a backup. PRF works in Google Password Manager, iCloud Keychain, Windows Hello and Firefox. The page that holds keys loads no third-party scripts. The pattern gives any static site accounts with no server and data the operator cannot read.",
+        "core_idea": "An end-to-end, client-side account with no sign-in to the site: a passkey with the WebAuthn PRF extension gives 32 bytes only the user's authenticator can produce for the site, and because sgit vault keys are made in the client the browser computes a door vault's key and address from them, so nothing is stored or found first; the door holds the master vault's key and a record of its provider, path, credential id, device and date, and the master holds the keys of the vaults below, received read keys, the access key, key pairs generated at random and never derived from the passkey, and the list of its doors. A test on newsroom.sgit.ai on 11 and 12 October 2026 held for the platform path, the derivation and a door on a real server, and showed that the same passkey reached by a phone over QR gives different bytes, so the claim is narrowed to the same kind of path and the unit of the design is a door per path: added in the first week while unlocked with no key typed, bootstrapped by the recovery code where no device has both paths, with an unknown address meaning no door here yet and a door retired by deleting its file, never by destroying its derived address.",
         "nodes": [
           {
-            "id": "google",
-            "label": "Sign in, later and optional",
+            "id": "store",
+            "label": "Signed in where you already are",
             "kind": "concept",
-            "summary": "Not in the MVP; on its own origin; continuity and backup; never a key."
+            "summary": "Apple, Google or Microsoft syncs the passkey store; the site is never signed in to, and the vault travels with the store."
           },
           {
             "id": "prf",
             "label": "Passkey with PRF",
             "kind": "concept",
-            "summary": "32 bytes only your authenticator produces for this site, the same on synced devices."
+            "summary": "32 bytes only your authenticator produces for this site; the same on every device it syncs to, through the same kind of path."
           },
           {
             "id": "door",
-            "label": "A derived door vault",
+            "label": "A door per path, computed",
             "kind": "method",
-            "summary": "Key and id computed from the PRF bytes with HKDF; holds the master key."
+            "summary": "Key and address computed from the PRF bytes with HKDF; one file holding the master key and its record: provider, path, credential id, device, date."
           },
           {
-            "id": "master",
+            "id": "keyring",
             "label": "The master vault",
             "kind": "artefact",
-            "summary": "Keys of other vaults, the access key, a key pair, the list of doors."
+            "summary": "The keys of the vaults below, received read keys, the access key, random key pairs, and the list of doors with their keys."
           },
           {
             "id": "nowhere",
             "label": "Where the key lives: nowhere",
             "kind": "claim",
-            "summary": "sgit keys are made in the client, so the door is computed, not stored."
+            "summary": "sgit keys are made in the client, so the door is computed, not stored; the lab created one on a real server and opened it again."
           },
           {
             "id": "recovery",
-            "label": "The recovery code",
+            "label": "The recovery code, a door of its own",
             "kind": "method",
-            "summary": "128 bits, shown once; derives a recovery door to the same master."
+            "summary": "128 bits, shown once; derives the recovery door, and is the way a new path joins where no device has both paths."
           },
           {
             "id": "noscripts",
             "label": "No third-party scripts where keys live",
             "kind": "claim",
-            "summary": "Sign-in runs on its own page; the unlock page loads nothing it did not build."
+            "summary": "Storage is per origin; the unlock page loads nothing it did not build."
           },
           {
             "id": "support",
             "label": "PRF support in 2026",
             "kind": "example",
-            "summary": "Google Password Manager, iCloud Keychain, Windows Hello, Firefox."
+            "summary": "Google Password Manager, iCloud Keychain, Windows Hello, Firefox; tested on a Mac, an iPhone and an iPad."
           },
           {
             "id": "enables",
@@ -572,6 +1595,54 @@
             "label": "Where the passkey lives",
             "kind": "claim",
             "summary": "A synced provider or a hardware key gives every device; a clean browser gives one device plus recovery; Chrome's own store has no PRF."
+          },
+          {
+            "id": "lock",
+            "label": "A lock, not an identity",
+            "kind": "claim",
+            "summary": "Key pairs are generated at random and stored in the top, never derived from the passkey, so the identity survives any change of lock."
+          },
+          {
+            "id": "several",
+            "label": "Several passkeys, several masters",
+            "kind": "method",
+            "summary": "A second passkey for another role computes its own doors to its own master; the store's picker is the switch."
+          },
+          {
+            "id": "retire",
+            "label": "Retire a door, never destroy its address",
+            "kind": "method",
+            "summary": "A door is retired by deleting its one file; a destroyed vault id can never be used again, and a door's address is derived from the passkey."
+          },
+          {
+            "id": "chain",
+            "label": "Vaults all the way down",
+            "kind": "concept",
+            "summary": "The pattern already in use: vaults that hold the keys of other vaults, so a read key to one child exposes nothing above it."
+          },
+          {
+            "id": "test",
+            "label": "The test, 11 and 12 October",
+            "kind": "example",
+            "summary": "One Google Password Manager passkey: the same bytes on a Mac and an iPhone by the platform path; different bytes, consistently, when the phone answered a QR code from an iPad or that Mac."
+          },
+          {
+            "id": "path",
+            "label": "The unit is the path",
+            "kind": "claim",
+            "summary": "Whatever produced a distinct set of bytes gets a distinct door; every door points at the same master."
+          },
+          {
+            "id": "adddoor",
+            "label": "Add a door, no key typed",
+            "kind": "method",
+            "summary": "While unlocked, ask for the bytes by the other path and write the new door from memory; a normal first-week step."
+          },
+          {
+            "id": "nodoor",
+            "label": "No door here yet",
+            "kind": "claim",
+            "summary": "An unknown derived address means a path with no door; the page offers an open device or the recovery code, never an error."
           }
         ],
         "edges": [
@@ -587,18 +1658,68 @@
           },
           {
             "from": "door",
-            "to": "master",
+            "to": "keyring",
             "rel": "leads-to"
+          },
+          {
+            "from": "test",
+            "to": "path",
+            "rel": "leads-to"
+          },
+          {
+            "from": "path",
+            "to": "door",
+            "rel": "extends"
+          },
+          {
+            "from": "test",
+            "to": "prf",
+            "rel": "contrasts"
+          },
+          {
+            "from": "adddoor",
+            "to": "path",
+            "rel": "depends-on"
+          },
+          {
+            "from": "nodoor",
+            "to": "path",
+            "rel": "depends-on"
           },
           {
             "from": "recovery",
-            "to": "master",
-            "rel": "leads-to"
+            "to": "adddoor",
+            "rel": "extends"
           },
           {
-            "from": "google",
+            "from": "chain",
+            "to": "door",
+            "rel": "extends"
+          },
+          {
+            "from": "lock",
+            "to": "keyring",
+            "rel": "depends-on"
+          },
+          {
+            "from": "store",
             "to": "prf",
-            "rel": "contrasts"
+            "rel": "depends-on"
+          },
+          {
+            "from": "several",
+            "to": "keyring",
+            "rel": "extends"
+          },
+          {
+            "from": "retire",
+            "to": "door",
+            "rel": "depends-on"
+          },
+          {
+            "from": "recovery",
+            "to": "door",
+            "rel": "example-of"
           },
           {
             "from": "noscripts",
@@ -611,7 +1732,7 @@
             "rel": "example-of"
           },
           {
-            "from": "master",
+            "from": "keyring",
             "to": "enables",
             "rel": "produces"
           },
@@ -632,20 +1753,30 @@
           ],
           "pages": [],
           "sites": [
+            "https://newsroom.sgit.ai/passkey/",
+            "https://newsroom.sgit.ai/admin/notes/2026-10-12__one-door-per-passkey-path.md",
+            "https://developer.apple.com/forums/thread/764730",
             "https://secrets.sgit.ai/",
             "https://www.corbado.com/blog/passkeys-prf-webauthn",
-            "https://web.dev/articles/webauthn-related-origin-requests",
-            "https://developers.google.com/workspace/drive/api/guides/api-specific-auth"
+            "https://web.dev/articles/webauthn-related-origin-requests"
           ]
         },
         "quotes": [
           {
-            "text": "The short answer, after the research, is that it is not kept anywhere. It is computed.",
-            "why": "The answer to where the vault key lives."
+            "text": "The same passkey gives the same bytes on every device it syncs to, **through the same kind of path**.",
+            "why": "The narrowed claim."
           },
           {
-            "text": "There is no sign-in in this flow at all: the page registers a discoverable credential with a random user handle, and the only login involved is the one you already have with your passkey provider, which syncs it.",
-            "why": "What the passkey needs, and what it does not."
+            "text": "The test is the requirement.",
+            "why": "Why the door layer is back."
+          },
+          {
+            "text": "The page never treats it as a failure, because a provider's fix can move a path's bytes at any time",
+            "why": "An unknown address means no door here yet."
+          },
+          {
+            "text": "The passkey is a lock, not an identity.",
+            "why": "Why the key pairs are never derived from the passkey."
           }
         ]
       }
@@ -690,6 +1821,9 @@
         "where-the-vault-keys-live"
       ],
       "links_in": [
+        "the-site-is-an-inbox",
+        "the-vault-is-live",
+        "two-agents-one-vault",
         "the-article-remains-a-product",
         "explorer-to-villager-newsroom",
         "the-passkey-opens-the-vault"
@@ -1222,7 +2356,9 @@
         "pay-to-keep-your-persona",
         "how-to-run-synthetic-users"
       ],
-      "links_in": [],
+      "links_in": [
+        "ways-to-read-one-article"
+      ],
       "graph": {
         "slug": "a-model-in-the-tab",
         "teaser": "Chrome now ships a language model any page can prompt, offline, on capable desktops. The last piece of the client-side puzzle, with rough edges.",
@@ -1417,6 +2553,8 @@
         "chat-on-a-static-site"
       ],
       "links_in": [
+        "the-vault-is-live",
+        "two-agents-one-vault",
         "the-article-remains-a-product",
         "the-passkey-opens-the-vault",
         "i-miss-it",
@@ -1628,6 +2766,8 @@
         "future-of-news-story-vault-not-paywall"
       ],
       "links_in": [
+        "ways-to-read-one-article",
+        "firing-journalists",
         "the-article-remains-a-product",
         "brief-the-agent-too",
         "a-model-in-the-tab"
@@ -2418,6 +3558,7 @@
         "a-link-to-a-persona"
       ],
       "links_in": [
+        "ways-to-read-one-article",
         "the-article-remains-a-product",
         "explorer-to-villager-newsroom",
         "the-passkey-opens-the-vault",
@@ -2812,6 +3953,9 @@
         "pay-to-keep-your-persona"
       ],
       "links_in": [
+        "firing-journalists",
+        "the-site-is-an-inbox",
+        "the-vault-is-live",
         "the-passkey-opens-the-vault",
         "no-server-by-design",
         "the-agent-is-the-reader"
@@ -3004,6 +4148,7 @@
         "a-personal-agent-that-keeps-your-secrets"
       ],
       "links_in": [
+        "two-agents-one-vault",
         "the-article-remains-a-product",
         "the-passkey-opens-the-vault",
         "i-miss-it",
@@ -3184,6 +4329,7 @@
         "one-article-five-readers"
       ],
       "links_in": [
+        "ways-to-read-one-article",
         "authority-outside-the-model"
       ],
       "graph": {
@@ -4159,6 +5305,9 @@
         "every-risk-is-already-accepted"
       ],
       "links_in": [
+        "ways-to-read-one-article",
+        "firing-journalists",
+        "the-site-is-an-inbox",
         "the-article-remains-a-product",
         "the-agent-is-the-reader",
         "authority-outside-the-model",
@@ -7359,6 +8508,7 @@
         "green-does-not-mean-live"
       ],
       "links_in": [
+        "two-agents-one-vault",
         "no-server-by-design",
         "pay-after-you-read",
         "one-article-five-readers",
@@ -7641,6 +8791,7 @@
         "token-bill-nobody-is-sending"
       ],
       "links_in": [
+        "firing-journalists",
         "one-article-five-readers"
       ],
       "graph": {
@@ -8078,6 +9229,7 @@
         "the-bridge-followed-to-the-end"
       ],
       "links_in": [
+        "ways-to-read-one-article",
         "the-article-remains-a-product",
         "the-waiting-room-knew-first",
         "the-bridge-followed-to-the-end"
@@ -14235,6 +15387,7 @@
         "introducing-fractal-semantic-graphs"
       ],
       "links_in": [
+        "firing-journalists",
         "the-article-remains-a-product",
         "going-live-with-the-reading-meter",
         "a-meter-in-the-browser",
@@ -14774,6 +15927,7 @@
         "introducing-fractal-semantic-graphs"
       ],
       "links_in": [
+        "firing-journalists",
         "the-agent-is-the-reader",
         "who-will-game-the-reading-meter",
         "a-meter-in-the-browser",
@@ -15864,6 +17018,7 @@
         "the-question-is-whether-they-miss-it"
       ],
       "links_in": [
+        "two-agents-one-vault",
         "the-article-remains-a-product",
         "the-agent-is-the-reader",
         "liquid-content-needs-water",
@@ -16629,6 +17784,7 @@
       ],
       "links_out": [],
       "links_in": [
+        "the-site-is-an-inbox",
         "the-agent-is-the-reader",
         "one-article-five-readers",
         "the-ai-governance-stack-as-a-graph",

@@ -2,7 +2,7 @@
 
 > On 10 October the reading meter on sgit.ai went, in seven releases between 12:09 and 15:49, from an experiment to a working pay-on-demand publication. A reader pays pence for the share of a page they actually read, from a balance that can go below zero without ever blocking them; after reading, they say how useful it was, and that sets the price, from free to double; their reading builds personas and a newsroom of their own, kept in their browser; and they can send it to us, encrypted, for a front page designed for them. Once a Stripe link is set, the only question left is whether people pay. This article introduces each feature, shows how each one grew out of the last, with a Wardley map that adds them one at a time, explains why paying after you see the value is the right way round, and why every decision started from one rule: do not rip off the reader. It ends with an offer to sites with traffic that would like to test it.
 
-*Source: <https://newsroom.sgit.ai/articles/pay-after-you-read.html> · sgit.ai v0.7.61 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/pay-after-you-read.html> · sgit.ai v0.7.70 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 
@@ -183,7 +183,10 @@ News & evidenceStartups & strategy[This article as a graph →](graphs.md#pay-af
 
 ### Continued by
 
-- [The passkey opens the vault: touch a passkey, and a master vault for every user, with no server of ours, no account and no email](the-passkey-opens-the-vault.md) Sign in with Google says who you are; a passkey's PRF bytes derive a door vault, which opens your master vault. No key is stored anywhere.
+- [Firing journalists is the worst thing a publication can do: what a hiring decision says about where a publisher is going, and who to hire instead](firing-journalists.md) A hiring decision is a direction of travel: fire the journalists and the centre of gravity moves to packaging, where the metric makes clickbait by construction.
+- [The site is an inbox: deciding before reading, marks that build the reader's own graph, and why I could not write this brief until the vault existed](the-site-is-an-inbox.md) The site as an inbox that starts empty: decide fast before reading, mark slowly while reading, build a graph you own, and sign what you send to the newsroom.
+- [The vault is live: from a design on 11 October to a reader's vault on newsroom.sgit.ai by two in the morning, and how all of it fits together](the-vault-is-live.md) The reader's vault runs on newsroom.sgit.ai: a passkey opens three real vaults, each device writes one file, and the architecture is drawn as it stands.
+- [The passkey opens the vault: a door per path, a master vault for every user, and no server of ours](the-passkey-opens-the-vault.md) Tested: a passkey's PRF bytes compute a door that holds the master's key, and a different path to the same passkey gives different bytes, so a door per path.
 - [No server, by design: first I retired the database, now I am retiring the back end](no-server-by-design.md) First the database went, now the back end: the SGit Newsroom runs all its logic in the browser, on commodity servers that cannot read your data.
 - [The agent is the reader: why agents will pay for graphs, personas and signed claims, because it is cheaper than not paying](the-agent-is-the-reader.md) Agents pay to read the raw web and guess its meaning. A curated graph answers for 90% fewer tokens, so paying the publisher is cheaper than not paying.
 

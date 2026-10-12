@@ -2,7 +2,7 @@
 
 > Most of what readers are asked to pay for, they pay for because they have to, because they are made to feel they should, or because it is the right thing to do. That works to a degree, and it does not scale. The value proposition we want is the opposite: a reader pays because it helps them, because what they are buying is time, context, focus, the ability to make good decisions and a better experience. On this site that thing now has a name. Your reading builds a persona, with a name and a graph you can watch grow, and you can have several, because a persona is a way to manage focus: one for security, one for AI development, one for everything else. Start from five made from what this site publishes, keep articles in a persona or put them out of it, and switch between them. Today it all lives in one browser, so opening the site on an iPad and then on a laptop gives you two strangers. That is the bad experience worth fixing, and the thing worth paying for: a persona that follows you to your phone, your laptop and your agent, with the privacy intact.
 
-*Source: <https://newsroom.sgit.ai/articles/pay-to-keep-your-persona.html> · sgit.ai v0.7.61 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/pay-to-keep-your-persona.html> · sgit.ai v0.7.70 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 

@@ -1,0 +1,153 @@
+{
+  "slug": "firing-journalists",
+  "teaser": "A hiring decision is a direction of travel: fire the journalists and the centre of gravity moves to packaging, where the metric makes clickbait by construction.",
+  "topics": [
+    "news-and-evidence",
+    "startups-and-strategy"
+  ],
+  "core_idea": "Against the 2026 job-cut figures, a publisher's hiring decisions are read as the clearest statement of where its centre of gravity is going: firing the people who make original content and hiring for traffic moves the centre to packaging, where measuring engagement makes clickbait by construction because what you measure is what you become; firing the engineers fails the other way, with journalism nothing enables; the case is to keep and tool the journalists, hire the roles that turn a notebook into a graph and the engineers who build what the tooling needs, measure value to the reader, and read any publisher's real strategy from outside with five counts.",
+  "nodes": [
+    {
+      "id": "cuts",
+      "label": "The 2026 cuts",
+      "kind": "example",
+      "summary": "Press Gazette's tracker: 3,434 in 2025, 3,875 in 2024, about 6,000 in 2023; in 2026 the BBC, the Washington Post, Reach, Scripps and McClatchy, with the Idaho Statesman losing 10 of 18 reporters."
+    },
+    {
+      "id": "signal",
+      "label": "A hiring decision is a direction of travel",
+      "kind": "claim",
+      "summary": "The clearest statement a publisher makes about where its centre of gravity is going, because it is what the company actually spent."
+    },
+    {
+      "id": "centre",
+      "label": "The centre of gravity",
+      "kind": "concept",
+      "summary": "Where the thing the organisation exists to make is made, and where the power is; in a news publisher, the journalists."
+    },
+    {
+      "id": "metric",
+      "label": "What you measure is what you become",
+      "kind": "claim",
+      "summary": "Hire for engagement and the metric becomes pages opened; optimise for it and clickbait follows by construction; the metric is a hiring plan in disguise."
+    },
+    {
+      "id": "packaging",
+      "label": "Failure mode: all packaging",
+      "kind": "claim",
+      "summary": "A coherent business whose world is shrinking: referrals down 58%, newsrooms down 57%, answer engines fetching thousands of pages to send back ten readers."
+    },
+    {
+      "id": "noengineers",
+      "label": "Failure mode: no engineers",
+      "kind": "claim",
+      "summary": "Journalism that nothing enables: no graph, no checkable provenance, no versions, no surfaces for agents, no meter."
+    },
+    {
+      "id": "hire",
+      "label": "Who to hire instead",
+      "kind": "method",
+      "summary": "Keep and tool the journalists; hire historians, cartographers, ontologists and librarians, AI-enabled; hire the engineers and AI product managers; measure value to the reader."
+    },
+    {
+      "id": "outside",
+      "label": "Five counts from outside",
+      "kind": "method",
+      "summary": "Original share, sourcing, corrections, roles hired against roles cut, and the metric the publisher itself reports."
+    },
+    {
+      "id": "parable",
+      "label": "We hire the ones you let go",
+      "kind": "concept",
+      "summary": "Unsourced: the good ones leave first because they want to do the work; in publishing they are the journalists."
+    },
+    {
+      "id": "tooling",
+      "label": "This makes you better, not this replaces you",
+      "kind": "claim",
+      "summary": "The tooling handed to journalists as an advantage is the business case of most of this site."
+    }
+  ],
+  "edges": [
+    {
+      "from": "cuts",
+      "to": "signal",
+      "rel": "leads-to"
+    },
+    {
+      "from": "centre",
+      "to": "signal",
+      "rel": "depends-on"
+    },
+    {
+      "from": "signal",
+      "to": "metric",
+      "rel": "leads-to"
+    },
+    {
+      "from": "metric",
+      "to": "packaging",
+      "rel": "produces"
+    },
+    {
+      "from": "noengineers",
+      "to": "packaging",
+      "rel": "contrasts"
+    },
+    {
+      "from": "hire",
+      "to": "signal",
+      "rel": "answers"
+    },
+    {
+      "from": "tooling",
+      "to": "hire",
+      "rel": "depends-on"
+    },
+    {
+      "from": "outside",
+      "to": "signal",
+      "rel": "extends"
+    },
+    {
+      "from": "parable",
+      "to": "hire",
+      "rel": "example-of"
+    }
+  ],
+  "links": {
+    "articles": [
+      "pay-after-you-read",
+      "the-site-is-an-inbox",
+      "how-news-got-here",
+      "token-bill-nobody-is-sending",
+      "the-article-remains-a-product",
+      "one-article-five-readers",
+      "the-agent-is-the-reader",
+      "liquid-content-needs-water"
+    ],
+    "pages": [
+      "/publishers/index.html"
+    ],
+    "sites": [
+      "https://pressgazette.co.uk/news/journalism-job-cuts-in-2026-updates/",
+      "https://www.techpolicy.press/cutting-local-journalists-mcclatchy-embraces-ai-content/",
+      "https://newsroom.sgit.ai/world-news-day/",
+      "https://newsroom.sgit.ai/corrections/index.html"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "The metric is a hiring plan in disguise.",
+      "why": "The sentence for a board."
+    },
+    {
+      "text": "Fire the journalists and there is nothing to capture. Fire the engineers and it is not captured.",
+      "why": "The two failure modes in one line."
+    },
+    {
+      "text": "The reporting is done, and then it is thrown away as a PDF of the paper.",
+      "why": "What no engineering looks like."
+    }
+  ]
+}

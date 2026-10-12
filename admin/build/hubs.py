@@ -284,6 +284,14 @@ def shipped(f):
          'door opens; the master&rsquo;s list of doors, so one can be retired. <a href="../admin/notes/2026-10-12__one-door-per-passkey-path.md">The note</a>. '
          'The lab now makes the door, the master, the reader vault and a second door as real vaults; the reading account is not in them, and '
          'retiring a door and rotating the master are designed, not built.'),
+        ('<b>The inbox, the pane about the piece, the ways in</b>', 'The briefs of 12 October on sgit.ai: seven one-tap decisions at each '
+         'piece, recorded as edges and carried by the vault; the right-hand pane about the article in front of the reader, with its graph, '
+         'the reader&rsquo;s marks of six kinds, the decisions taken and the cost; the ways into one article, headlines, two minutes, the facts, '
+         'what is new against what the reader has read, with the finished article kept whole; and five counts that read a publisher from '
+         'outside, run on this site. <a href="../articles/the-site-is-an-inbox.html">The site is an inbox</a>, '
+         '<a href="../articles/ways-to-read-one-article.html">ways to read one article</a>, '
+         '<a href="../articles/firing-journalists.html">firing journalists</a>; '
+         '<a href="../admin/notes/2026-10-12__what-the-new-articles-ask.md">what they ask of this site, in order</a>. Designed, not built.'),
         ('<b>Selling the graph</b>', 'Graphs are published free. Nothing sells one.'),
         ('<b>Paying the fact creator</b>', 'No revenue reaches anyone upstream of an article.'),
         ('<b>Corrections that propagate</b>', 'Versions and corrections are kept; they do not reach the pages that cited the corrected claim.'),

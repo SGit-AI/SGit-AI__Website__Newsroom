@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The vault is live: from a design on 11 October to a reader's vault on newsroom.sgit.ai by two in the morning, and how all of it fits together, SGit Newsroom</title>
+<meta name="description" content="On 11 October this site published a design for a reader's account with no server: a passkey computes the address of a small door vault, the door holds the key of a master vault, the master holds everything else. By 02:22 UTC on 12 October it was running on newsroom.sgit.ai. Not as a demo: a Vault button beside the balance on every page opens a pane that enables the account with a passkey, creates three real sgit vaults on the vault server with an access key pasted once, writes this device's reading records as one file in one commit, lists every device of yours, and brings their activity into this browser so the meter shows one balance. In between came a lab with every step as a card, a finding that put the door layer back into the design, the vault library that runs dev.vault.sgraph.ai vendored unedited with every hash checked, a mock of the vault server for the tests, a round trip through the sgit command line in CI, and a live check on an iPad that made three vaults from an iCloud Keychain passkey and opened them again after a refresh. This article is the architecture as it stands, drawn: the layers in the browser, the key chain and the files in each vault, the sync model that has no conflicts by construction, the tests, and what is not yet built. It is also the point of the whole exercise, which is that I could not have written the next brief until this one existed, because the properties of what runs are the constraints I think with.">
+<link rel="canonical" href="https://newsroom.sgit.ai/articles/the-vault-is-live.html">
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SGit Newsroom">
+<meta property="og:url" content="https://newsroom.sgit.ai/articles/the-vault-is-live.html">
+<meta property="og:title" content="The vault is live: from a design on 11 October to a reader's vault on newsroom.sgit.ai by two in the morning, and how all of it fits together, SGit Newsroom">
+<meta property="og:description" content="On 11 October this site published a design for a reader's account with no server: a passkey computes the address of a small door vault, the door holds the key of a master vault, the master holds everything else. By 02:22 UTC on 12 October it was running on newsroom.sgit.ai. Not as a demo: a Vault button beside the balance on every page opens a pane that enables the account with a passkey, creates three real sgit vaults on the vault server with an access key pasted once, writes this device's reading records as one file in one commit, lists every device of yours, and brings their activity into this browser so the meter shows one balance. In between came a lab with every step as a card, a finding that put the door layer back into the design, the vault library that runs dev.vault.sgraph.ai vendored unedited with every hash checked, a mock of the vault server for the tests, a round trip through the sgit command line in CI, and a live check on an iPad that made three vaults from an iCloud Keychain passkey and opened them again after a refresh. This article is the architecture as it stands, drawn: the layers in the browser, the key chain and the files in each vault, the sync model that has no conflicts by construction, the tests, and what is not yet built. It is also the point of the whole exercise, which is that I could not have written the next brief until this one existed, because the properties of what runs are the constraints I think with.">
+<meta property="og:image" content="https://newsroom.sgit.ai/og/the-vault-is-live.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The vault is live: from a design on 11 October to a reader's vault on newsroom.sgit.ai by two in the morning, and how all of it fits together, SGit Newsroom">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://newsroom.sgit.ai/og/the-vault-is-live.jpg">
+<link rel="alternate" type="text/markdown" href="the-vault-is-live.md" title="This page as markdown">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "The vault is live: from a design on 11 October to a reader's vault on newsroom.sgit.ai by two in the morning, and how all of it fits together, SGit Newsroom", "headline": "The vault is live: from a design on 11 October to a reader's vault on newsroom.sgit.ai by two in the morning, and how all of it fits together, SGit Newsroom", "description": "On 11 October this site published a design for a reader's account with no server: a passkey computes the address of a small door vault, the door holds the key of a master vault, the master holds everything else. By 02:22 UTC on 12 October it was running on newsroom.sgit.ai. Not as a demo: a Vault button beside the balance on every page opens a pane that enables the account with a passkey, creates three real sgit vaults on the vault server with an access key pasted once, writes this device's reading records as one file in one commit, lists every device of yours, and brings their activity into this browser so the meter shows one balance. In between came a lab with every step as a card, a finding that put the door layer back into the design, the vault library that runs dev.vault.sgraph.ai vendored unedited with every hash checked, a mock of the vault server for the tests, a round trip through the sgit command line in CI, and a live check on an iPad that made three vaults from an iCloud Keychain passkey and opened them again after a refresh. This article is the architecture as it stands, drawn: the layers in the browser, the key chain and the files in each vault, the sync model that has no conflicts by construction, the tests, and what is not yet built. It is also the point of the whole exercise, which is that I could not have written the next brief until this one existed, because the properties of what runs are the constraints I think with.", "url": "https://newsroom.sgit.ai/articles/the-vault-is-live.html", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "SGit Newsroom", "url": "https://newsroom.sgit.ai"}, "about": {"@type": "SoftwareApplication", "name": "sgit", "sameAs": "https://pypi.org/project/sgit-ai/"}, "author": {"@type": "Person", "name": "Dinis Cruz", "url": "https://sgit.ai/about/index.html"}, "license": "https://creativecommons.org/licenses/by/4.0/"}</script>
+<style>html{background:#faf9f5}body{margin:0;background:#faf9f5;color:#1c1d21;font-family:ui-sans-serif,system-ui,sans-serif;opacity:0;transition:opacity .25s;animation:sg-reveal 0s linear 1.6s forwards}html.ready body{opacity:1;animation:none}@keyframes sg-reveal{to{opacity:1}}</style><noscript><style>body{opacity:1;animation:none}</style></noscript>
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.11.1</a>
+  <sg-meter class="meter-nav" view="balance"></sg-meter>
+  <button class="vault-btn" type="button" aria-expanded="false" title="Your vault: the reading account carried between your devices"><span class="dot"></span>Vault</button>
+  <link rel="stylesheet" href="../assets/vault-pane/vault-pane.css">
+  <script type="module" src="../assets/vault-pane/vault-pane.js"></script>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../articles/index.html#all">Every article</a>
+      <a class="sl" href="../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../persona/index.html">Read as a persona</a>
+      <a class="sl" href="../for/make.html">Make a reading list</a>
+      <a class="sl" href="../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../wire/index.html">Industry Wire<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../wire/index.html">Today's edition</a>
+      <a class="sl" href="../wire/sources.html">The sources</a>
+      <a class="sl" href="../wire/how.html">How the wire works</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../account/index.html">Your reading account</a>
+      <a class="sl" href="../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../account/personas.html">Your personas</a>
+      <a class="sl" href="../account/top-up.html">Top up</a>
+      <a class="sl" href="../vault/index.html">Your vault, between devices</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../newsroom/board.html">The board</a>
+      <a class="sl" href="../newsroom/log.html">The run log</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../publishers/index.html">For publishers: what is live, how to try it</a>
+      <a class="sl" href="../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+      <a class="sl" href="../demos/vaults/newsroom-synthetic-users/index.html">The study: five readers tested this site</a>
+      <a class="sl" href="../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../newsroom-api/index.html">The reader API: a map, and a review</a>
+      <a class="sl" href="../passkey/index.html">The passkey lab</a>
+      <a class="sl" href="../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../world-news-day/index.html">World News Day<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../world-news-day/index.html">The corpus</a>
+      <a class="sl" href="../world-news-day/stories/free-to-republish-is-not-a-licence.html">Free to republish is not a licence</a>
+      <a class="sl" href="../world-news-day/licences.html">The licence that is not there</a>
+      <a class="sl" href="../world-news-day/corpus.html">The twenty-one</a>
+      <a class="sl" href="../world-news-day/findings.html">The aggregate</a>
+      <a class="sl" href="../world-news-day/terms.html">The vocabulary</a>
+      <a class="sl" href="../world-news-day/graph.html">The graph</a>
+      <a class="sl" href="../world-news-day/sources.html">Sources</a>
+      <a class="sl" href="../world-news-day/contacts.html">How to reach them</a>
+      <a class="sl" href="../world-news-day/vault.html">Published vaults</a>
+      <a class="sl" href="../world-news-day/vaults/corpus.html">The vault, opened</a>
+      <a class="sl" href="../world-news-day/method.html">Method</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../archive/index.html">The archive</a>
+      <a class="sl" href="../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../network/index.html">The network</a>
+      <a class="sl" href="../admin/versions.html">Release history</a>
+      <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom">&#9733; GitHub</a>
+</div></nav>
+
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.11.1</span></a></div>
+<main class="doc">
+ <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / The vault is live: from a design on 11 October to a reader's vault on newsroom.sgit.ai by two in the morning, and how all of it fits together</p>
+ <h1>The vault is live: from a design on 11 October to a reader's vault on newsroom.sgit.ai by two in the morning, and how all of it fits together</h1>
+ <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-12 &middot; <a href="versions/the-vault-is-live.html" title="Every published version of this article, and what changed">article v1.0.0</a> &middot; <a href="https://sgit.ai/admin/versions.html" title="The sgit.ai release it was published in">sgit.ai v0.7.66</a> &middot; <span class="chip">vaults</span><span class="chip">passkeys</span><span class="chip">newsroom</span><span class="chip">architecture</span><span class="chip">client-side</span><span class="chip">sync</span><span class="chip">local-first</span><span class="chip">sgit</span><span class="chip">testing</span><span class="chip">release</span><span class="chip">article</span></p>
+ <p class="abstract"><em><b>Abstract:</b> On 11 October this site published a design for a reader's account with no server: a passkey computes the address of a small door vault, the door holds the key of a master vault, the master holds everything else. By 02:22 UTC on 12 October it was running on newsroom.sgit.ai. Not as a demo: a Vault button beside the balance on every page opens a pane that enables the account with a passkey, creates three real sgit vaults on the vault server with an access key pasted once, writes this device's reading records as one file in one commit, lists every device of yours, and brings their activity into this browser so the meter shows one balance. In between came a lab with every step as a card, a finding that put the door layer back into the design, the vault library that runs dev.vault.sgraph.ai vendored unedited with every hash checked, a mock of the vault server for the tests, a round trip through the sgit command line in CI, and a live check on an iPad that made three vaults from an iCloud Keychain passkey and opened them again after a refresh. This article is the architecture as it stands, drawn: the layers in the browser, the key chain and the files in each vault, the sync model that has no conflicts by construction, the tests, and what is not yet built. It is also the point of the whole exercise, which is that I could not have written the next brief until this one existed, because the properties of what runs are the constraints I think with.</em></p>
+<figure class="shot" data-shot="av-stack.webp" data-dir="images/" data-alt="What is running on newsroom.sgit.ai at v0.11.0: the meter and local storage as before; the vault pane and one module over the vendored vault library, new; the vault server holding ciphertext. On the right, the three vaults, what each holds, and how one gesture opens all three."><figcaption>What is running on newsroom.sgit.ai at v0.11.0: the meter and local storage as before; the vault pane and one module over the vendored vault library, new; the vault server holding ciphertext. On the right, the three vaults, what each holds, and how one gesture opens all three.</figcaption></figure>
+<p>Yesterday morning the reader's vault was <a href="the-passkey-opens-the-vault.html">a design</a>. This morning it runs. Open any article on <a href="https://newsroom.sgit.ai/">newsroom.sgit.ai</a>, and beside the balance there is a button that says Vault. It opens a pane on the right, and the page moves over to make room. Enable with your passkey, and the pane says what it is doing in one line at a time: deriving the door from the bytes, opening the door, the master and the reader vault. On a first device there is no door yet, so you paste an access key and press Create the account, and the pane makes three vaults and shows you a recovery code once. Read some articles. Press Update the vault, and this device's records go into the reader vault as one file, one commit. On another device, the same passkey opens the same vaults, a table lists the first device with its reads and its spend, and one press brings its activity here, so the meter shows one balance.</p>
+<p>That is the feature I said I missed in <a href="i-miss-it.html">I miss it, so it is working</a>, two days ago. This article is the architecture of what was built, drawn so that the next person, or the next agent, can see how all of it fits: the layers in the browser, the chain of vaults and the files in each, the sync model, the tests, the timeline, and the honest list of what is not there. And then one paragraph on why I think this matters beyond the feature.</p>
+<h2 id="short">In short</h2>
+<ul>
+<li><b>It runs.</b> At newsroom.sgit.ai v0.11.0 a reader can enable a vault with a passkey, create the account once with an access key, update the vault from each device, and bring every device's activity into the browser they are holding. Three real sgit vaults, opened with one gesture.</li>
+<li><b>The design held, with one change the lab forced.</b> The passkey computes the door's address and key; the door holds the master's key; the master holds the reader vault's key, the access key and the list of doors. The change: a door per path, because a passkey reached by a phone over QR gives different bytes from the same passkey on the device.</li>
+<li><b>One code base, vendored.</b> The browser does not have a vault writer of its own. It uses the twelve files of the vault UI library that runs dev.vault.sgraph.ai, unedited, each SHA-256 recorded, with a build check that fails if one changes, and one local patch pending upstream: create a vault at a chosen id.</li>
+<li><b>Local storage stays primary.</b> The meter is unchanged. The vault is a second home the reader keeps current, by pressing a button; the number of commits is the number of presses.</li>
+<li><b>Records, never totals; one file per device.</b> Each device writes what it originated to its own file, whole. Totals are recomputed from the records on every open. Two devices never write the same file, so there is nothing to merge.</li>
+<li><b>Tested against a mock, then for real.</b> Eight test files in CI, including the account, the sync logic, two devices in Chromium with a virtual authenticator, and a round trip through the sgit command line. Then an iPad with an iCloud Keychain passkey against the real server: three vaults made, a note written and read back, all three opened again after a refresh.</li>
+<li><b>Not built:</b> pruning local storage, retiring a device, rotating the master's key, automatic sync, the key pairs, the persona vault, the notes lane to the newsroom. Each is designed; the experiments to run first are listed.</li>
+<li><b>The point.</b> I could not think about the next brief until this existed. The properties of what runs are the constraints I think with, and shipping is how I get them.</li>
+</ul>
+<h2 id="layers">The layers</h2>
+<p>Everything on the reader's side runs in the browser, on static pages, with <a href="no-server-by-design.html">no server of ours</a>. From the bottom up:</p>
+<ul>
+<li><b>The vault server.</b> dev.send.sgraph.ai, the development instance. It holds ciphertext, sizes, times and ids that look random. A write needs the access key as a request header; a read needs nothing, because the key that decrypts is the credential. The head pointer of each vault is guarded by compare-and-swap. For the tests there is a mock of this API in Node, with the same shapes: read, write, batch with write-if-match and the conflict response, list, the first writer's write key fixed, a token on every write, and the same CORS as the real server.</li>
+<li><b>The vault library.</b> The vault UI library v0.2.3 from the SGraph send repository, twelve files, vendored into the newsroom under <code>assets/vendor/sg-vault/</code> and loaded from the newsroom's own origin the first time a page needs it. A VENDOR file records the upstream commit and the SHA-256 of every file, and check 13 of the site's validator fails the build if any of them changes. One local patch sits beside it, a static method that creates a vault at a chosen id and refuses if the address is taken; the upstream issue for it is written and listed on <a href="https://sgit.ai/docs/vault/vault-from-javascript.html">the page about writing a vault from JavaScript</a>.</li>
+<li><b>One module over the library.</b> <code>newsroom-vault.js</code>, 197 lines: create a vault, create one at a chosen id, open one (with a named error when there is no vault there), load a folder, write a file, publish, read, and one clone branch per device. On top of those, the account: <code>createAccount</code>, <code>unlock</code>, <code>addDoor</code>, <code>writeNote</code>. That is the whole of the design from the article, as code.</li>
+<li><b>The door derivation.</b> <code>door.js</code>, 139 lines, moved out of the lab so that the pane and the lab derive the same door from the same bytes; the lab re-exports it.</li>
+<li><b>The vault pane.</b> <code>vault-pane.js</code> and its stylesheet, 359 lines, injected by the site's chrome on every page that carries the meter. And <code>sync.js</code>, 125 lines of pure functions that decide what goes into a device's file and what the consolidated view is; nothing in it touches storage or the network, which is why it can be tested in Node with two devices' states.</li>
+<li><b>The meter and local storage.</b> <a href="pay-after-you-read.html">SG Meter</a> v1.4.0, unchanged. It writes local storage in real time, as it has since 10 October.</li>
+</ul>
+<figure class="shot" data-shot="av-pane.webp" data-dir="images/" data-alt="The pane, on an article, before it is enabled: the device&#x27;s id, a label for it, the two ways in, one paragraph that says what the passkey does, and the list where every call to the vault server will appear."><figcaption>The pane, on an article, before it is enabled: the device's id, a label for it, the two ways in, one paragraph that says what the passkey does, and the list where every call to the vault server will appear.</figcaption></figure>
+<h2 id="chain">The key chain, and what is in each vault</h2>
+<p>The chain is the one in <a href="the-passkey-opens-the-vault.html">The passkey opens the vault</a>, as revised after the lab, and now it is three vaults on a server rather than three boxes in a figure.</p>
+<ol>
+<li><b>The door</b>, at the address derived from the passkey's bytes. Two files: <code>master-key.json</code>, the master's key, and <code>door.json</code>, where this door came from: the kind (a passkey or the recovery code), the provider as the browser named it, the path (platform or cross-platform), the credential id, a device label and the date. One door per path to the same master; the recovery code has a door of its own. A door is retired by deleting its files, never by destroying its address, because a destroyed vault id can never be used again and a door's is derived.</li>
+<li><b>The master</b>, at a random id. Two files: <code>reader.json</code>, the reader vault's key, and <code>doors.json</code>, every door with its own key, so that from any open door the page can read, rewrite or delete every other. The access key lives here, pasted once on the first device and brought to every other by the unlock.</li>
+<li><b>The reader vault</b>, at a random id. <code>activity/account.json</code>, written once: the one starting credit, the currency symbol, when and by which device. <code>activity/devices/&lt;id&gt;.json</code>, one per device, rewritten whole on each sync. And <code>notes/</code>, where the lab wrote its first note.</li>
+</ol>
+<p>Creating the account on a first device is six key derivations and three first commits; the pane says so while it works. Unlocking on any other device is one gesture, then the door, the master and the reader vault in sequence, each a read-only open with the key the previous one held, and the access key arriving with the master so that this device can write too.</p>
+<figure class="shot" data-shot="av-card6.webp" data-dir="images/" data-alt="Cards 3 and 4 of the passkey lab: the derivation from the bytes to the door, timed on the device, and the recovery code that derives a second door. Card 6, where the account was first built as three real vaults, appears on a browser with a platform authenticator; this headless one has none."><figcaption>Cards 3 and 4 of the passkey lab: the derivation from the bytes to the door, timed on the device, and the recovery code that derives a second door. Card 6, where the account was first built as three real vaults, appears on a browser with a platform authenticator; this headless one has none.</figcaption></figure>
+<h2 id="sync">The sync model</h2>
+<p>The part of the design that was only a sketch two days ago is now the most carefully stated, in the newsroom's <a href="https://newsroom.sgit.ai/admin/notes/2026-10-12__the-activity-vault.md">activity vault note</a>. Six principles, each with a reason:</p>
+<figure class="shot" data-shot="av-sync.webp" data-dir="images/" data-alt="Two devices, one passkey, one view. Each device writes its own file, whole, when its reader presses Update; the vault holds records, never totals; opening the vault computes one view from every file; brought-in records keep their author."><figcaption>Two devices, one passkey, one view. Each device writes its own file, whole, when its reader presses Update; the vault holds records, never totals; opening the vault computes one view from every file; brought-in records keep their author.</figcaption></figure>
+<ul>
+<li><b>Local storage stays primary.</b> The meter writes it in real time and nothing about the meter changes. The vault is a copy the reader keeps current.</li>
+<li><b>The reader chooses when to sync.</b> One button. Nothing commits on its own, so the number of commits is the number of presses, and the cost of a sync, a few derivations, one commit, one publish, is paid when the reader wants it. A timer can come later, as a setting, once the shape of a sync is understood.</li>
+<li><b>The vault holds records, never totals.</b> Reads, top-ups and personas go in raw. Reads, spend, declined, credit and balance are recomputed from the records every time they are shown, with one starting credit for the account. A total copied from a device would be wrong the moment a second device existed.</li>
+<li><b>One file per device, written only by that device.</b> Each device has an id it already used as its clone branch, and writes everything it originated to its own file, whole, on every sync. Two devices never write the same file, so there is nothing to merge and no conflict by construction. The compare-and-swap on publish still guards the pointer, and the library merges at file level if a race happens, which keeps both files.</li>
+<li><b>The consolidated view is computed, not stored.</b> Opening the vault reads every device's file and builds one view, per device and in total. Bringing other devices' activity into a browser adds their records to its local storage tagged with the device they came from; the next sync from that browser writes only its own records back, so a record has exactly one author for ever.</li>
+<li><b>Nothing is typed twice.</b> The access key is pasted once and lives in the master. A second device gets it by opening the master with its passkey once it has a door, or with the recovery code once.</li>
+</ul>
+<p>Top-ups are counted once by payment reference, so a payment's return page opened on a second device cannot credit it twice. The active persona and the reading position stay on the device. The keys of an unlocked session are kept in memory and in the tab's session storage, for the life of the tab, so that moving from page to page does not ask for the passkey each time; the note marks that as a choice for the beta, to be revisited.</p>
+<h2 id="tests">The tests</h2>
+<p>The newsroom's CI now runs eight test files, and the ones for the vault are worth listing because they are the reason the live check was a check and not a hope.</p>
+<ul>
+<li><b>The account against the mock</b>: the library loaded as the page loads it, the account created, the unlock, the lazy-folder trap, a publish race, a second door, the shapes of the keys. Twenty-seven checks.</li>
+<li><b>The round trip through the command line</b>: sgit-ai 0.21.0 installed in CI, a clone from the door's key in sgit's own form, a commit, a push, and the file read back in the browser. The first deploy of v0.10.0 failed exactly here, because the test ran sgit with a temporary home directory and the runner had installed the package under the real one; v0.10.1 is the fix, and the versions page says so.</li>
+<li><b>The lab's card 6</b> driven against the mock: thirty-three checks.</li>
+<li><b>The sync logic</b> in Node with two devices' states: nineteen checks.</li>
+<li><b>The pane in Chromium</b>, with a virtual authenticator standing in for one synced passkey: device A reads, enables, creates, updates; device B, the same passkey in a cleared browser, enables, sees A, brings A's activity in and shows the consolidated balance in the meter, reads, updates only its own; device C opens with the recovery code. Twenty-eight checks.</li>
+</ul>
+<p>Then the live check, run by hand on 12 October on a current iPad in Safari with an iCloud Keychain passkey and an access key, against the real server: the account made as three vaults, a note written into the reader vault and read back, the vault opened in dev.vault.sgraph.ai showing the note, and after a refresh, with nothing stored, the passkey unlocking all three again. The three vault ids are in the newsroom's versions row, as the brief asked; no key is.</p>
+<figure class="shot" data-shot="av-page.webp" data-dir="images/" data-alt="The page that explains the vault and opens the pane on arrival: the loop in five steps, the principles, what leaves the browser, and a block for an agent."><figcaption>The page that explains the vault and opens the pane on arrival: the loop in five steps, the principles, what leaves the browser, and a block for an agent.</figcaption></figure>
+<h2 id="timeline">The timeline</h2>
+<p>From the two git logs, so that the speed is a measurement and not a feeling.</p>
+<div class="tablewrap"><table>
+<tr><th>When (UTC)</th><th>Where</th><th>What</th></tr>
+<tr><td>11 Oct, morning</td><td>sgit.ai</td><td>The design: <a href="the-passkey-opens-the-vault.html">The passkey opens the vault</a>, v1.0.0</td></tr>
+<tr><td>11 Oct, day</td><td>sgit.ai</td><td>Two reviews: the door removed as a layer too many, the key pairs made random, sign-in taken out</td></tr>
+<tr><td>11 Oct 22:56</td><td>newsroom</td><td>v0.8.3, the passkey lab: every step as a card</td></tr>
+<tr><td>12 Oct 00:15</td><td>newsroom</td><td>v0.9.1, the finding: a door per path, with the Apple forum threads behind it</td></tr>
+<tr><td>12 Oct 01:33</td><td>newsroom</td><td>v0.10.0, real vaults from the browser through the vendored library, the mock, the tests</td></tr>
+<tr><td>12 Oct 01:38</td><td>newsroom</td><td>v0.10.1, the CLI round trip runs in CI</td></tr>
+<tr><td>12 Oct 01:57</td><td>newsroom</td><td>v0.10.2, the live check on an iPad recorded</td></tr>
+<tr><td>12 Oct 02:22</td><td>newsroom</td><td>v0.11.0, the vault pane: the reading account carried between devices</td></tr>
+<tr><td>12 Oct, morning</td><td>sgit.ai</td><td>The design revised to match what ran, v1.4.0, and this article</td></tr>
+</table></div>
+<p>Two sites, two agents, and me reading on an iPad in between. The design went to the lab, the lab corrected the design, the corrected design was built, and the build was checked on a real device before the pane that readers see was written over it. None of those steps was skipped, and none took more than two hours.</p>
+<h2 id="why">Why this matters more than the feature</h2>
+<p>I wrote in <a href="pay-after-you-read.html">Pay after you read</a> that the more you have, the faster you go, and this night is the cleanest case of it I have: the meter existed, so the vault had something to carry; the lab existed, so the vault could be built on tested pieces; the library existed, so no vault writer had to be written; the mock existed, so two devices could be tested without a server.</p>
+<p>But there is a second thing, which I only noticed this morning, when I sat down to write the next brief. I could not have written it yesterday. Not because I lacked time, and not because the idea was hard to predict. Because I did not have the constraints. I did not know that the passkey works and the sign-in is not needed. I did not know that a door is per path. I did not know that the sync is one file per device and that the view is computed. Each of those is a property of what runs, and each one closes off a dozen things I might otherwise have had to think about, and opens the two or three that are worth thinking about next. The constraints limit the scope of what I write, and that is what lets me write it.</p>
+<p>So the feedback loop is not only use it, miss it, build it. It is also: build it, learn its properties, and only then think the next thought. The vault pane is live. The next brief is about what a reader does with it, and it is next.</p>
+<h2 id="limits">What this does not claim</h2>
+<ul>
+<li><b>A beta, on the development server.</b> The vaults are on dev.send.sgraph.ai. The access key is handed out by me for now. The passkey path that works everywhere is the platform one; a phone over QR gets a door of its own.</li>
+<li><b>The live check is one device and one day.</b> An iPad, one iCloud Keychain passkey, one afternoon. The experiments the note lists, two real devices, a page read on both, a rating after a merge, a top-up on one and the return page on the other, pruning, automatic sync, have not run.</li>
+<li><b>Not built</b>, and said so on the page: pruning local storage once the vault holds it, retiring a device, rotating the master's key, automatic sync, the key pairs for signing, the persona vault, the notes lane to the newsroom.</li>
+<li><b>The session keys live for the tab.</b> Kept in memory and session storage so that pages do not ask for the passkey each time. The note marks it as a choice to revisit.</li>
+</ul>
+<p>If you build sites that keep a reader's data without a server, or you want to try the vault with your own passkey and tell us what breaks, write to <a href="mailto:agent@riskmandate.ai">agent@riskmandate.ai</a>.</p>
+<h2 id="sources">Where this comes from</h2>
+<p>A voice memo of mine on the morning of 12 October 2026, after reading the newsroom's overnight releases, written by this site's agent in the voice of this site. The argument and the editorial responsibility are mine. The facts are from the newsroom repository's commits v0.8.3 to v0.11.0 of 11 and 12 October 2026, their messages and files; the newsroom's <a href="https://newsroom.sgit.ai/admin/notes/2026-10-12__the-activity-vault.md">activity vault note</a>, <a href="https://newsroom.sgit.ai/vault/">vault page</a> and <a href="https://newsroom.sgit.ai/passkey/">passkey lab</a>; the source of <code>newsroom-vault.js</code>, <code>sync.js</code>, <code>door.js</code> and <code>vault-pane.js</code>; and the versions row for v0.10.2, which records the live check. The line counts are from the files at v0.11.0. The screenshots are of newsroom.sgit.ai at v0.11.0 on 12 October 2026; the figures were drawn for this article from the note and the code. Related: <a href="the-passkey-opens-the-vault.html">The passkey opens the vault</a>, <a href="i-miss-it.html">I miss it, so it is working</a>, <a href="no-server-by-design.html">No server, by design</a>, <a href="pay-after-you-read.html">Pay after you read</a>, <a href="two-agents-one-vault.html">Two agents, one vault</a> and <a href="https://sgit.ai/docs/vault/vault-from-javascript.html">Creating, opening and writing a vault from JavaScript</a>.</p>
+<sg-meter view="page" kind="article" date="2026-10-12" topics="vaults-and-method site-and-engineering" title="The vault is live: from a design on 11 October to a reader's vault on newsroom.sgit.ai by two in the morning, and how all of it fits together, SGit Newsroom"></sg-meter>
+<section class="athreads" id="threads">
+ <h2>Threads</h2>
+ <p class="athreads-meta"><span class="tchip">Vaults &amp; method</span><span class="tchip">Site &amp; engineering</span> <a href="graphs.html#the-vault-is-live">This article as a graph &rarr;</a></p>
+ <div class="athreads-cols"><div><h3>Builds on</h3><ul><li><a href="the-passkey-opens-the-vault.html">The passkey opens the vault: a door per path, a master vault for every user, and no server of ours</a> <span class="dim">Tested: a passkey's PRF bytes compute a door that holds the master's key, and a different path to the same passkey gives different bytes, so a door per path.</span></li><li><a href="i-miss-it.html">I miss it, so it is working: the people who decide the roadmap have to use the product, and the vault the newsroom now needs</a> <span class="dim">I read the newsroom on four devices and they do not agree. Missing a feature is the best sign; the makers must use it. And the brief for the reader's vault.</span></li><li><a href="no-server-by-design.html">No server, by design: first I retired the database, now I am retiring the back end</a> <span class="dim">First the database went, now the back end: the SGit Newsroom runs all its logic in the browser, on commodity servers that cannot read your data.</span></li><li><a href="pay-after-you-read.html">Pay after you read: how a reading meter became a working business model in one afternoon, one release at a time</a> <span class="dim">Seven releases in one afternoon turned the reading meter into a working model: pay after you read, and the rating sets the price.</span></li><li><a href="two-agents-one-vault.html">Two agents, one vault: the Industry Wire is written into an encrypted vault by one agent and drawn by newsroom.sgit.ai, which holds only the read key</a> <span class="dim">One agent writes the Industry Wire into an encrypted vault; newsroom.sgit.ai holds only the read key and draws it, so a commit reaches the page with no release.</span></li></ul></div><div><h3>Continued by</h3><ul><li><a href="ways-to-read-one-article.html">Ways to read one article: the finished piece stays at the centre, and the reader picks the way in</a> <span class="dim">The five readers' views arrived as folds inside the long piece; now the reader picks the way in, with a default, and the finished article stays at the centre.</span></li><li><a href="the-site-is-an-inbox.html">The site is an inbox: deciding before reading, marks that build the reader's own graph, and why I could not write this brief until the vault existed</a> <span class="dim">The site as an inbox that starts empty: decide fast before reading, mark slowly while reading, build a graph you own, and sign what you send to the newsroom.</span></li></ul></div></div>
+ <p class="small dim"><a href="index.html">All articles</a> &middot; <a href="graphs.html">All graphs</a></p>
+ <p class="small dim">Article No. 81 &middot; <a href="../for/make.html#r=81">start a reading list with it</a></p>
+</section>
+<aside class="lkit" aria-label="For LinkedIn"><b>Posting this article on LinkedIn?</b> The cover is <a href="banners/the-vault-is-live.jpg" download>the-vault-is-live.jpg</a> (1920&times;1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page.</aside>
+ <p class="subteaser"><b>Want the next issue by email.</b> One issue a week or so: what was published, what it adds up to, and what is worth your time. <a class="cta2" href="../subscribe/index.html">Subscribe to the SGit Newsroom &rarr;</a></p>
+ <p class="small dim" style="margin-top:2rem"><a href="index.html">&larr; All articles</a></p>
+</main>
+<script>
+(function () {
+ fetch('../assets/shots.js?v=v0.7.70')
+ .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+ .then(function (t) { (0, eval)(t); })
+ .catch(function (e) { console.error('[shots] component failed to load:', e); });
+}());
+</script>
+<script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": "https://buy.stripe.com/6oUfZ9ez65vVgU2fY15os04"}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
+<script>
+import('../assets/components/sg-meter/v1/v1.4/v1.4.0/sg-meter.js?v=v0.7.70')
+ .catch(function (e) { console.error('[sg-meter] component failed to load:', e); });
+</script>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="netline"><a href="https://sgit.ai" style="display:inline;padding:0"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://pt.newsroom.sgit.ai" style="display:inline;padding:0">&#8593; pt.newsroom.sgit.ai</a> &middot; <a href="https://graphs.sgit.ai" style="display:inline;padding:0">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai" style="display:inline;padding:0">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai" style="display:inline;padding:0">&#8593; nhi.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai" style="display:inline;padding:0">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../admin/versions.html">v0.11.1</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="the-vault-is-live.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../index.html">&#8594; The front page</a>
+    <a href="../wire/index.html">The Industry Wire</a>
+    <a href="../articles/index.html#all">Every article</a>
+    <a href="../articles/newsletter/index.html">The newsletter</a>
+    <a href="../articles/collections/index.html">Collections</a>
+    <a href="../articles/desk/index.html">From the desk</a>
+    <a href="../articles/graphs.html">As graphs</a>
+    <a href="../subscribe/index.html">Subscribe</a>
+    <a href="../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../account/index.html">Your reading account</a>
+    <a href="../account/newsroom.html">Your newsroom</a>
+    <a href="../account/personas.html">Your personas</a>
+    <a href="../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../newsroom/index.html">How the newsroom runs</a>
+    <a href="../newsroom/policies.html">Behaviour policies</a>
+    <a href="../newsroom/publish.html">How to publish</a>
+    <a href="../newsroom/board.html">The board</a>
+    <a href="../newsroom/log.html">The run log</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../design/index.html">The design, and what runs</a>
+    <a href="../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../corrections/index.html">Corrections must propagate</a>
+    <a href="../provenance/index.html">Provenance is the product</a>
+    <a href="../economics/index.html">Paying the fact creator</a>
+    <a href="../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../replicate/index.html">Replicate this newsroom</a>
+    <a href="../publishers/index.html">For publishers</a>
+    <a href="../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+    <a href="../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../archive/index.html">The archive</a>
+    <a href="../network/index.html">The network</a>
+    <a href="../admin/versions.html">Release history</a>
+    <a href="../admin/index.html">Admin &amp; engineering</a>
+    <a href="../about/participant.html">Where we lose</a>
+    <a href="../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+
+<script>
+(function(){var R=document.documentElement.getAttribute('data-root')||'';var V='?v=' + 'v0.7.70';var C=[R,'','../','/'].filter(function(v,i,a){return a.indexOf(v)===i});
+function wait(ms){return new Promise(function(res){var t=Date.now();(function p(){if(window.sg)return res(window.sg);if(Date.now()-t>ms)return res(null);setTimeout(p,60)})()})}
+function grab(sg,p){return new Promise(function(res){(async function(){if(sg&&sg.vfs&&sg.vfs.readText){try{var t=await sg.vfs.readText(p);if(t)return res(t)}catch(e){}}try{var r=await fetch(p+V);if(r.ok)return res(await r.text())}catch(e){}res(null)})()})}
+async function css(sg){for(var i=0;i<C.length;i++){var p=C[i]+'assets/newsroom.css';if(sg&&sg.loadCss){try{await sg.loadCss(p);return}catch(e){}}var t=await grab(sg,p);if(t){var s=document.createElement('style');s.textContent=t;document.head.appendChild(s);return}}}
+async function js(sg,name){name=name||'assets/site.js';for(var i=0;i<C.length;i++){var p=C[i]+name;if(sg&&sg.loadJs){try{await sg.loadJs(p);return}catch(e){}}var t=await grab(sg,p);if(t){try{(0,eval)(t)}catch(e){console.error('[site] js failed',name,e)}return}}}
+async function boot(){var inVault=false;try{inVault=(window!==window.parent)||location.protocol==='blob:'}catch(e){inVault=true}
+var sg=inVault?await wait(2500):null;window.__sgitBoot={roots:C,grab:function(p){return grab(sg,p)},version:V};await css(sg);await js(sg);document.documentElement.classList.add('ready');try{window.parent&&window.parent.postMessage({type:'sg-app-ready'},'*')}catch(e){}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+var mine=V.slice(3),last=0;
+function fresh(){if(location.hostname!=='sgit.ai'||Date.now()-last<60000)return;last=Date.now();
+fetch('/version.txt?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(t){t=(t||'').trim();if(!/^v[0-9]+[.][0-9]+[.][0-9]+$/.test(t)||t===mine)return;
+var k='sgit.fresh:'+location.pathname;try{if(sessionStorage.getItem(k)===t)return;sessionStorage.setItem(k,t)}catch(e){}
+var u=new URL(location.href);u.searchParams.set('v',t);location.replace(u.href)}).catch(function(){})}
+try{var u=new URL(location.href);if(u.searchParams.get('v')===mine){u.searchParams.delete('v');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}
+fresh();addEventListener('pageshow',function(e){if(e.persisted){last=0;fresh()}});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')fresh()});
+})();
+</script>
+</body>
+</html>
