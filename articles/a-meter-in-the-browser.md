@@ -2,7 +2,7 @@
 
 > Every page on sgit.ai now has a price, a few pence, and a meter in the corner of the screen that debits it from five pounds of starting credit. There is a reading account with a history, a price table, a top-up page with a cart and a checkout that has every step except the payment, and an out-of-credit state that never blocks a page. All of it lives in the reader's browser and nowhere else: no account, no server, no card, nothing sent. Open a private window and the meter starts again at five pounds, which looks like a way to read for free, except that it also starts again with no history, and the history is what the site uses to pick articles for you. That is the trade this experiment puts in front of a reader: pay a little, keep the record of what you read on your own machine, and get a site that knows you back. Whether people would make that trade is the question worth testing, and a meter that charges nothing is the cheapest way to start.
 
-*Source: <https://newsroom.sgit.ai/articles/a-meter-in-the-browser.html> · sgit.ai v0.7.81 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/a-meter-in-the-browser.html> · sgit.ai v0.7.82 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 

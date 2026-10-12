@@ -2,7 +2,7 @@
 
 > I read the newsroom on my iPhone, my iPad, my laptops and my iMac, and they do not agree: four balances, four sets of personas, four reading histories. I miss a feature, and that is the best news this week. The test I keep coming back to, from For a startup, the most important question is whether they miss it, applies to the people who build a product too: if they have access, can change it, and still do not use it, something is missing, and it is not the code. I failed that test with good ideas before, The Cyber Boardroom and MyFeeds among them. The vaults pass it now: I create them all the time, my agents create them, and they are getting good because they are used. And when the people who decide the roadmap are users, the next feature announces itself; with agents that can build almost anything, that sense of direction is the scarce part, and the speed of the loop, from a comment to an article to a feature, is the moat. This article makes that case, and ends with the brief for the feature I miss: the reader's own encrypted vault on the newsroom, with an access key, a key pair for signing and receiving, a log per device that merges without conflict, adding a device, and a one-way line to the agent that edits the site.
 
-*Source: <https://newsroom.sgit.ai/articles/i-miss-it.html> · sgit.ai v0.7.81 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/i-miss-it.html> · sgit.ai v0.7.82 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 
@@ -140,6 +140,7 @@ Startups & strategySite & engineering[This article as a graph →](graphs.md#i-m
 
 ### Continued by
 
+- [Not a straight line: working for RiskMandate by working on the newsroom, and why the thinking is never wasted](not-a-straight-line.md) Working on the newsroom solved RiskMandate's oldest problem in two days: progress is not a straight line, and the thinking is never wasted.
 - [Places of highest leverage: where to focus when the agents can go in every direction, told with three days of real steps](places-of-highest-leverage.md) Where to focus when agents can go in every direction: the place of highest leverage, shown on three days of real steps, two walked back and one parked.
 - [The site is an inbox: deciding before reading, marks that build the reader's own graph, and why I could not write this brief until the vault existed](the-site-is-an-inbox.md) The site as an inbox that starts empty: decide fast before reading, mark slowly while reading, build a graph you own, and sign what you send to the newsroom.
 - [The vault is live: from a design on 11 October to a reader's vault on newsroom.sgit.ai by two in the morning, and how all of it fits together](the-vault-is-live.md) The reader's vault runs on newsroom.sgit.ai: a passkey opens three real vaults, each device writes one file, and the architecture is drawn as it stands.

@@ -2,7 +2,7 @@
 
 > I spent today at a sovereignty event, and what struck me most is how much of Europe's sovereignty conversation is about things we do not control and will not control soon: frontier models, giant data centres, GPUs. That is playing where the ball is, not where it is going, and in padel, which I am learning, that is the difference between having all the time in the world and having none. My view is that technology sovereignty is the ability to move, and that it comes from treating every dot in the stack, commodity, product or custom built, as something you can replace. The test is a Wardley map with one question: take away the dot, what happens? If the answer is that the service stops, that is a board-level risk with a name next to it. The fix is not an alternative that is as good as today, which is why most efforts never start. It is a twin of the thing you do not control, running in your QA environment, good enough for the minimum viable company: the priority customers and the services that must not stop, slower, dearer, tested every week. Can it move is the first question; is it cheap and does it scale is the second, and we keep confusing them. Open source is the only kind of control that survives an acquisition. Europe does not lack startups or talent; it lacks the commercial open source model that would let its many small players add up. And now, with models that can read a map and run a simulation on a twin, this analysis can finally be done at scale.
 
-*Source: <https://newsroom.sgit.ai/articles/sovereignty-is-the-ability-to-move.html> · sgit.ai v0.7.81 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/sovereignty-is-the-ability-to-move.html> · sgit.ai v0.7.82 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 
@@ -118,6 +118,8 @@ Startups & strategySite & engineering[This article as a graph →](graphs.md#sov
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 94 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=94)
+
+**Posting this article on LinkedIn?** The cover is [sovereignty-is-the-ability-to-move.jpg](banners/sovereignty-is-the-ability-to-move.jpg) (1920×1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page.
 
 **Want the next issue by email.** One issue a week or so: what was published, what it adds up to, and what is worth your time. [Subscribe to the SGit Newsroom →](../subscribe/index.md)
 

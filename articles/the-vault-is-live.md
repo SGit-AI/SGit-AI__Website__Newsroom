@@ -2,7 +2,7 @@
 
 > On 11 October this site published a design for a reader's account with no server: a passkey computes the address of a small door vault, the door holds the key of a master vault, the master holds everything else. By 02:22 UTC on 12 October it was running on newsroom.sgit.ai. Not as a demo: a Vault button beside the balance on every page opens a pane that enables the account with a passkey, creates three real sgit vaults on the vault server with an access key pasted once, writes this device's reading records as one file in one commit, lists every device of yours, and brings their activity into this browser so the meter shows one balance. In between came a lab with every step as a card, a finding that put the door layer back into the design, the vault library that runs dev.vault.sgraph.ai vendored unedited with every hash checked, a mock of the vault server for the tests, a round trip through the sgit command line in CI, and a live check on an iPad that made three vaults from an iCloud Keychain passkey and opened them again after a refresh. This article is the architecture as it stands, drawn: the layers in the browser, the key chain and the files in each vault, the sync model that has no conflicts by construction, the tests, and what is not yet built. It is also the point of the whole exercise, which is that I could not have written the next brief until this one existed, because the properties of what runs are the constraints I think with.
 
-*Source: <https://newsroom.sgit.ai/articles/the-vault-is-live.html> · sgit.ai v0.7.81 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/the-vault-is-live.html> · sgit.ai v0.7.82 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 
@@ -137,6 +137,7 @@ Vaults & methodSite & engineering[This article as a graph →](graphs.md#the-vau
 
 ### Continued by
 
+- [Not a straight line: working for RiskMandate by working on the newsroom, and why the thinking is never wasted](not-a-straight-line.md) Working on the newsroom solved RiskMandate's oldest problem in two days: progress is not a straight line, and the thinking is never wasted.
 - [Places of highest leverage: where to focus when the agents can go in every direction, told with three days of real steps](places-of-highest-leverage.md) Where to focus when agents can go in every direction: the place of highest leverage, shown on three days of real steps, two walked back and one parked.
 - [The key is the billing system: VoiceDebrief, a product with no server, the one thing it cannot sell, and who could let it](the-key-is-the-billing-system.md) VoiceDebrief runs with no server on the user's own key; the one thing it cannot sell is a capped key, and this maps who could allow it and what to ask them.
 - [Ways to read one article: the finished piece stays at the centre, and the reader picks the way in](ways-to-read-one-article.md) The five readers' views arrived as folds inside the long piece; now the reader picks the way in, with a default, and the finished article stays at the centre.

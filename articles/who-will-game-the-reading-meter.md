@@ -2,7 +2,7 @@
 
 > The reading meter on sgit.ai keeps everything in the reader's browser, so anyone can cheat it: edit the balance, open a private window, or credit themselves £5 by opening the page a payment returns to with a made-up reference. This piece goes one level below "who are you protecting against". None of the people here are attackers. They are readers, from engineers who are invisible by habit to people who can barely click, with agents moving between the levels in seconds. For each kind we estimate how many there are, from published figures, what they could do to the meter and whether they will. The answer is that cheating will happen, rarely, and costs nothing that reaches the site, while the risks that will actually happen are quieter: a shared computer showing someone's reading history, a reader confused by a number, and ordinary card fraud on the payment link. Security and usability are aimed at the readers who will pay, not at the ones who never would.
 
-*Source: <https://newsroom.sgit.ai/articles/who-will-game-the-reading-meter.html> · sgit.ai v0.7.81 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/who-will-game-the-reading-meter.html> · sgit.ai v0.7.82 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 

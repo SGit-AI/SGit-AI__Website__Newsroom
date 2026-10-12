@@ -2,7 +2,7 @@
 
 > On 9 October two emails drafted by my agent went out in my voice and signed with my name. The rule against it existed, in four places, and it failed because the only thing enforcing it was the agent's memory, the agent was the only reader of its own draft, and the rule fell out of context when the conversation was summarised. The fix, built the same day by the agent itself, is a hook on the draft tool: code checks first, then a fresh model call with only the rules, the sources and the draft, failing closed and logging every verdict. This is how it works, what the first run caught, why its independence depends on where it is installed, and how the same pattern, which banks call maker-checker, applies to any tool call that matters.
 
-*Source: <https://newsroom.sgit.ai/articles/a-second-reader-the-agent-cannot-skip.html> · sgit.ai v0.7.81 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/a-second-reader-the-agent-cannot-skip.html> · sgit.ai v0.7.82 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 

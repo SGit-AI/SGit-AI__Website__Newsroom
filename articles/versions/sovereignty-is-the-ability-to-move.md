@@ -2,7 +2,7 @@
 
 > Every published version of the article "Sovereignty is the ability to move", with the date, the words and what changed.
 
-*Source: <https://newsroom.sgit.ai/articles/versions/sovereignty-is-the-ability-to-move.html> · sgit.ai v0.7.81 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/versions/sovereignty-is-the-ability-to-move.html> · sgit.ai v0.7.82 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 
@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-12 | published | 3,046 | first published | this release | [current](../sovereignty-is-the-ability-to-move.md) |
+| **v1.0.0** | 2026-10-12 | published | 3,046 | first published | [`050dcbb60`](https://github.com/SGit-AI/SGit-AI__Website/commit/050dcbb60e645716ca096e911ced9d238de95b29) | [current](../sovereignty-is-the-ability-to-move.md) |
 
 [← Back to the article](../sovereignty-is-the-ability-to-move.md) · [All articles](../index.md)
 

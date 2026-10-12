@@ -2,7 +2,7 @@
 
 > When I send someone to the newsroom today, they land on a front page made for nobody. I would rather send a CISO to the newsroom as a CISO, a data protection officer as a DPO, a developer as a developer, and one particular person as a persona made for them. This is the brief for doing that with nothing but a link. Personas move out of the site's code into an encrypted vault, opened in the reader's browser with a published read key, so a persona can be added or updated by the newsroom's agents without a single change to the site. A few personas get a page of their own, /persona/ciso/; any number more are reached through the part of the link after the #, which browsers never send to a server; and a persona for one person can live in a vault of its own, readable only by whoever has the link. The reader can follow the persona as it is kept up to date, or fork it and make it theirs. It draws on what Netflix, Bluesky, Mastodon, Apple News and Brave News learned about profiles, starter packs and personalisation on the device, and it stays entirely client side.
 
-*Source: <https://newsroom.sgit.ai/articles/a-link-to-a-persona.html> · sgit.ai v0.7.81 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/a-link-to-a-persona.html> · sgit.ai v0.7.82 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 

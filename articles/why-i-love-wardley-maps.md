@@ -2,7 +2,7 @@
 
 > Since 2022 I have said that Wardley maps changed how I think, and this site has quietly become a place where I draw them: eleven so far in the articles, seven in a vault, five in a conference talk. This is the best of them, with the context each one came from, and the reasons the technique matters to me. A map is a graph with two kinds of context, a value chain that starts with a user and an evolution axis that says how mature each piece is, and the second axis does not have to run from genesis to commodity. The map tells you what is moving the needle, whether you are optimising at the wrong altitude, what to build and what to buy, and whether a market exists at all: a commoditised layer is a hard sell, and custom building on top of it is where the market is. Two worked examples, sgit and RiskMandate. Then one map read step by step, as a story, because that is what a map is for. Then the fractal: every node on a map is a map, and the dot's place on the parent is the anchor of the child. Two decks you can print to PDF from your browser, and the maps published as data so anyone can take them.
 
-*Source: <https://newsroom.sgit.ai/articles/why-i-love-wardley-maps.html> · sgit.ai v0.7.81 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/why-i-love-wardley-maps.html> · sgit.ai v0.7.82 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 
