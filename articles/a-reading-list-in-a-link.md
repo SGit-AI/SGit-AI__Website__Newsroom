@@ -2,7 +2,7 @@
 
 > I want to send people I know, founders I mentor, potential clients, other publishers, a link that says: from Dinis, for Steve, here are the articles I think you should read, the ones worth a look, and the ones to follow. The newsroom's curation is close, but it is not personal, and the last 10 to 20% is the part that starts a conversation. This article is three things. A brief for the newsroom: a reading list in a link, with the names and the article numbers in the part of the URL the server never sees, a stable number for every article, a page that opens the list as a persona the reader can keep or remove, and a page to make a list for someone else, which is a business model of its own. A brief for the RiskMandate agent, which already keeps my contacts: choose the person, choose the articles and the reasons, build and test the link, draft the email, and let me send it. And the part I find most interesting: the loop. A feature like this crosses editorial, product, engineering, sales and the founder, which in most companies takes weeks of meetings. Here each hand-off is a written brief, each part is a session with its own repository or vault and its own gates, and the loop closes in a day. This week it closed several times, and it is worth showing how, and what it costs.
 
-*Source: <https://newsroom.sgit.ai/articles/a-reading-list-in-a-link.html> · sgit.ai v0.7.70 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/a-reading-list-in-a-link.html> · sgit.ai v0.7.79 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 
@@ -164,6 +164,7 @@ Site & engineeringStartups & strategy[This article as a graph →](graphs.md#a-r
 
 ### Continued by
 
+- [Places of highest leverage: where to focus when the agents can go in every direction, told with three days of real steps](places-of-highest-leverage.md) Where to focus when agents can go in every direction: the place of highest leverage, shown on three days of real steps, two walked back and one parked.
 - [The article remains a product: Jonathan Palmer's four outputs for a newsroom with no human readers, checked against one that runs](the-article-remains-a-product.md) Jonathan Palmer's four outputs for a newsroom with no human readers, quoted line by line and checked against newsroom.sgit.ai as it runs, screenshots included.
 - [I miss it, so it is working: the people who decide the roadmap have to use the product, and the vault the newsroom now needs](i-miss-it.md) I read the newsroom on four devices and they do not agree. Missing a feature is the best sign; the makers must use it. And the brief for the reader's vault.
 - [Brief the agent too: the people I talk to work with agents, so what I send has to reach both](brief-the-agent-too.md) The people I advise read through agents. Content needs a second package, a brief for their agent, and memory, so it reads what changed, not everything.

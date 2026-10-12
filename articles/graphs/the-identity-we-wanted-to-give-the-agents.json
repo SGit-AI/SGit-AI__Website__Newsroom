@@ -223,5 +223,37 @@
       "text": "The law describes the property; the market does not sell it.",
       "why": "The gap the article ends on: login, zero-knowledge storage and agent identity are still three separate jobs."
     }
+  ],
+  "figures": [
+    {
+      "file": "idf-wanted-vs-terms.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/idf-wanted-vs-terms.webp",
+      "caption": "What was wanted and what the terms allow. Left, the plan as it stood on 4 October: a Workspace seat per person and per agent from our own tenant. Right, the clauses, in the current wording of Google's Cloud terms and acceptable use policy, with one row marked legacy where our own documents had cited an older agreement. Not legal advice."
+    },
+    {
+      "file": "idf-five-options.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/idf-five-options.webp",
+      "caption": "The five options on the table in the first week of October, from the design documents. The constant in every row is the same: sgit encrypts in the browser, a passkey unwraps the key, no server of ours is in the data path. The rows differ in who owns the login and whether there is a mailbox."
+    },
+    {
+      "file": "idf-no-secret-in-idp.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/idf-no-secret-in-idp.webp",
+      "caption": "Why no secret can live inside the identity provider. Whoever controls the login can become the user, so any secret released because a user logged in is a secret the administrator can reach. The authority to decrypt has to come from the user's authenticator. The one place this does not hold is the code served to the browser."
+    },
+    {
+      "file": "idf-keyring.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/idf-keyring.webp",
+      "caption": "The keyring as the MVP brief specifies it. One encrypted file per user holding their private key and every secret, unlocked in the browser by a passkey with the PRF extension, with a recovery code as the second method, per-user key pairs for sharing, and the same algorithms as sgit pki so the CLI can open what the browser sealed."
+    },
+    {
+      "file": "idf-three-jobs.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/idf-three-jobs.webp",
+      "caption": "Three things every product needs, and how much of each is on the shelf as of 5 October 2026. Login is a solved product. Keeping secrets from everyone including the operator exists in pieces. Agent identity exists for machines. None of them is all three, and the joins are where a startup spends its first month."
+    },
+    {
+      "file": "idf-one-page-by-another-model.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/idf-one-page-by-another-model.webp",
+      "caption": "The article as a one-page state, generated with ChatGPT from the published text on 5 October 2026 and credited by it to the source. The style, the slogans in the margins and the closing paraphrase are the other model's, kept as they came, because who made a condensation is part of its provenance."
+    }
   ]
 }

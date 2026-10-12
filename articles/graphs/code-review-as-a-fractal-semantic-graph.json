@@ -230,5 +230,52 @@
       "text": "The answer is not a faster reviewer reading the same diff. It is a different diff.",
       "why": "The article's claim about the review burden of generated code."
     }
+  ],
+  "figures": [
+    {
+      "file": "crg-ladder.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/crg-ladder.webp",
+      "caption": "The altitudes of one Python repository, and where the vocabulary changes. Each layer is a graph of its own. The green marks are where you change universe: the words for architecture are not the words for types, and neither are the words for syntax. C4's four levels and Gherkin's top layer are beside it for comparison. Counts are from the worked example in the vault."
+    },
+    {
+      "file": "crg-files-per-file.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/crg-files-per-file.webp",
+      "caption": "Every source file produces a pile of files, and the review reads the pile. Start from the syntax tree, not the text. Derive each layer once and again only when its inputs change. Keep the results next to the code, in a git repository, in a vault, or in both side by side. The source box is illustrative; the file names and figures are from the worked example."
+    },
+    {
+      "file": "crg-delta-upwards.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/crg-delta-upwards.webp",
+      "caption": "One commit, read upwards. The text diff is 75 lines added and 7 removed in three files. The graph reads the same change at every altitude and climbs the call graph to the commands and stories that can reach it. The pattern across the layers is the shape of a fix: bodies moved, shapes still, a test added."
+    },
+    {
+      "file": "crg-method-stream.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/crg-method-stream.webp",
+      "caption": "A method stream: the code on one path and only that code. The stream from the push command, breadth-first to depth five, is 100 methods and 1,703 lines from 20 classes, which is 7.5 percent of the repository's method code and the whole of what a reviewer of \"publish a new vault\" has to read. The fix in the worked example sits at depth four of it."
+    },
+    {
+      "file": "collage.webp",
+      "url": "https://newsroom.sgit.ai/demos/vaults/code-review-graphs/images/collage.webp",
+      "caption": "The nine views of the vault app: the ladder, the stories, the package graph, the classes, the methods, the two method streams, one commit read upwards, the pattern checks and the test map. Every screenshot in this section is a picture of the real vault, and clicking one opens its page, where the vault runs live with its read key."
+    },
+    {
+      "file": "overview.webp",
+      "url": "https://newsroom.sgit.ai/demos/vaults/code-review-graphs/images/overview.webp",
+      "caption": "The vault as it opens: the ladder of seven altitudes, with how many nodes at each one commit touched. Click a layer to open its layer."
+    },
+    {
+      "file": "delta.webp",
+      "url": "https://newsroom.sgit.ai/demos/vaults/code-review-graphs/images/delta.webp",
+      "caption": "The commit in the vault: every altitude it touched in red, the fix-or-refactor table, and the commit message beside it as evidence to be checked against the graph rather than taken on trust."
+    },
+    {
+      "file": "patterns.webp",
+      "url": "https://newsroom.sgit.ai/demos/vaults/code-review-graphs/images/patterns.webp",
+      "caption": "Ten house rules, each run as a query over the graph, with the count of nodes where it does not hold and the count checked. A rule is a shape; a violation is a node where the shape is missing."
+    },
+    {
+      "file": "crg-reality-loop.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/crg-reality-loop.webp",
+      "caption": "The feedback loop. Derive what a parser can derive and let a model propose the rest, marked as proposed. Confront it with users, who confirm whether a story holds; with experts, who each read the layer they know; and with tests, which are mapped from imports and confirmed by execution. Keep every correction as a commit to the graph files, and re-derive only what changed."
+    }
   ]
 }

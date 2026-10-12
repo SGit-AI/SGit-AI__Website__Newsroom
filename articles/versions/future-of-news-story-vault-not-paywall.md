@@ -2,7 +2,7 @@
 
 > Every published version of the article "The future of news is the story vault, not the paywall", with the date, the words and what changed.
 
-*Source: <https://newsroom.sgit.ai/articles/versions/future-of-news-story-vault-not-paywall.html> · sgit.ai v0.7.70 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/versions/future-of-news-story-vault-not-paywall.html> · sgit.ai v0.7.79 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 

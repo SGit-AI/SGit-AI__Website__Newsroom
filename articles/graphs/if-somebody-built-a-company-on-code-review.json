@@ -267,5 +267,42 @@
       "text": "Review is not saying no. It is sorting what can go fast from what must go slow, and giving the slow part to people who have the context to decide well.",
       "why": "The job of the product, stated as a job to the change rather than to the reviewer."
     }
+  ],
+  "figures": [
+    {
+      "file": "cr2-fractal-or-not.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/cr2-fractal-or-not.webp",
+      "caption": "What is fractal and what is not. The constant across every codebase is the grammar: nodes, edges, an ontology, a taxonomy and a way to zoom in and out. Which layers exist, what they are called, which languages fill the bottom layers and what the business counts as a change that matters are decided by the company you are in. The first article's seven altitudes were one Python repository's layers, not the layers."
+    },
+    {
+      "file": "cr2-projected-meets-derived.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/cr2-projected-meets-derived.webp",
+      "caption": "Two graphs, one grammar. The projected graph is built top down before the code exists: objectives, stories with their rules and examples, features and flows, the commands and surfaces they will touch, and the components as far as design can see. The derived graph is built bottom up from the syntax tree. The review is the join, and the join has three outcomes."
+    },
+    {
+      "file": "cr2-refactor-is-relative.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/cr2-refactor-is-relative.webp",
+      "caption": "Three changes, three held layers. Tidying a method holds the class shapes and is proved by unit tests on them. Migrating an architecture holds the client interface and is proved by contract tests on it, while everything below is new. A change that holds nothing is not a refactor, whatever the commit message says, and the review should treat it as a fix or a feature."
+    },
+    {
+      "file": "cr2-explorer-villager-town-planner.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/cr2-explorer-villager-town-planner.webp",
+      "caption": "Code review by stage of evolution. For explorer code, review is for speed and feedback and the person reads the behaviour, not the lines. For villager code it is for quality and reachability, all the way down, because this is where changes land. For town planner code it is for guarantees at the boundary, read by deterministic checks with a person for the exceptions. The company sits in the two moves between columns."
+    },
+    {
+      "file": "cr2-reshape-the-change.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/cr2-reshape-the-change.webp",
+      "caption": "Reshape the change before you review it. A pull request as it arrived, and the same change split by what it can reach: the part that provably reaches no behaviour, the part that reaches behaviour through tested paths, and the part that reaches a mission-critical path or a layer with no test holding it. Review is sorting what can go fast from what must go slow. Counts are illustrative."
+    },
+    {
+      "file": "cr2-constraints-and-five-whys.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/cr2-constraints-and-five-whys.webp",
+      "caption": "Two mechanisms. Left, a budget per altitude and per change, decided in advance: deterministic checks always run and cost compute, the delta re-derives only what the change touched, a model summarising has a small budget and a hard stop, a model proposing has a larger one and every output marked proposed, onboarding is budgeted per slice, and work handed from agent to agent carries its budget with it. Right, the five whys as the loop: a bug at one layer is a question about the layer below, and the fix is a rule there, so the next change like it is caught for the price of a query. Budgets are illustrative."
+    },
+    {
+      "file": "cr2-one-page-by-another-model.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/cr2-one-page-by-another-model.webp",
+      "caption": "The article as a one-page state, generated with ChatGPT from the published text on 5 October 2026 and credited by it to the source. The style and the slogans in the margins are the other model's, kept as they came, because who made a condensation is part of its provenance."
+    }
   ]
 }

@@ -2,7 +2,7 @@
 
 > On 10 October Jonathan Palmer asked on LinkedIn what a news business would look like if it had no human readers tomorrow, and said every publisher should model that exact scenario. His answer is that the newsroom should produce four things besides the article, structured intelligence, continuous intelligence, provenance and verification, and embedded distribution, and that "The article remains a product. It just stops being the only primary output." We have been building a newsroom on that premise since August, so this article takes his post line by line and checks each line against newsroom.sgit.ai as it runs today, with screenshots: a graph beside all 74 articles as JSON, a version history read from git, 21 World News Day op-eds frozen and hashed with a vault anyone can open, and a markdown twin, an llms.txt and a feed for the agents that already read it. It is also honest about the right-hand column: selling the graph, corrections that propagate and paying the fact creator are designed and not running. Then it answers his three questions, what assets would still have value, who would pay and what needs to be produced differently, with the one number we have, and says where we differ: the data assets he wants kept proprietary are the ones we publish with a read key, because provenance is only worth something if someone else can check it.
 
-*Source: <https://newsroom.sgit.ai/articles/the-article-remains-a-product.html> · sgit.ai v0.7.70 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/the-article-remains-a-product.html> · sgit.ai v0.7.79 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 
@@ -167,6 +167,7 @@ News & evidenceGraphs & knowledgeAgents & policy[This article as a graph →](gr
 
 ### Continued by
 
+- [Agentic cost is an engineering problem: a business plan for a service that reads the logs a company already has and finds the money, then the engineering](agentic-cost-is-an-engineering-problem.md) A business plan: read the logs a company already has, draw each agent's footprint, twin and policy, and find the money first and the engineering second.
 - [Firing journalists is the worst thing a publication can do: what a hiring decision says about where a publisher is going, and who to hire instead](firing-journalists.md) A hiring decision is a direction of travel: fire the journalists and the centre of gravity moves to packaging, where the metric makes clickbait by construction.
 
 [All articles](index.md) · [All graphs](graphs.md)

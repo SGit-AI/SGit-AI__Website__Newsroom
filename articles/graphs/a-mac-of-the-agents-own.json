@@ -161,5 +161,43 @@
       "text": "The only secrets are the ones the agent is supposed to have.",
       "why": "Why a dedicated desktop shrinks the grant."
     }
+  ],
+  "figures": [
+    {
+      "file": "app-desktops.webp",
+      "url": "https://newsroom.sgit.ai/demos/vaults/agent-desk/images/app-desktops.webp",
+      "caption": "The same customer service agent on three desktops, in the published behaviour-policy grammar: on your own Mac, on a dedicated remote Mac, and on a hardened one. What changes is not the agent; it is what the desktop holds and what stands in the way."
+    },
+    {
+      "file": "ad-arch.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ad-arch.webp",
+      "caption": "One Apple silicon Mac per customer, one agent desktop at a time, and up to two virtual machines where the work is development. Keys come from the owner, encrypted to each desktop's own key; set-up, code, data and policy come from vaults; every request goes through a proxy and gateway, and every event goes to an audit vault."
+    },
+    {
+      "file": "ad-boot.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ad-boot.webp",
+      "caption": "Each run starts from a clean macOS on a Mac that belongs to one customer. The desktop's own key unlocks one set-up vault; a signed program in it applies the profiles, starts the proxy and the logging, and clones the agent's slice of the other vaults. At the end, results and the record are pushed and the session is erased."
+    },
+    {
+      "file": "app-case.webp",
+      "url": "https://newsroom.sgit.ai/demos/vaults/agent-desk/images/app-case.webp",
+      "caption": "The customer service agent's 22 hostile inputs, 16 from the Hope or enforcement mailbox and 6 written for a desktop, on the three desktops: what stopped each one, and what still depends on the agent."
+    },
+    {
+      "file": "app-economics.webp",
+      "url": "https://newsroom.sgit.ai/demos/vaults/agent-desk/images/app-economics.webp",
+      "caption": "The calculator: usage, the meter, and five options a month. Every number except Apple's prices is a labelled assumption, with its arithmetic in the vault."
+    },
+    {
+      "file": "ad-map.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ad-map.webp",
+      "caption": "The agent's desktop moves from custom-built to product, on parts that are already products or commodities: Apple silicon Macs, the macOS virtual machine, the models, the desktop agent apps. State, keys and lock-down move with it, because the vaults, the PKI and the policies already exist as parts.",
+      "kind": "wardley-map"
+    },
+    {
+      "file": "ad-queue.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ad-queue.webp",
+      "caption": "Six scenarios against the clauses that decide them. Queueing satisfies \"one user at a time\"; the purpose of a lease, and who the user is, decide the rest. A reading of Apple's text, not legal advice."
+    }
   ]
 }

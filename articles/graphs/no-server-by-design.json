@@ -158,5 +158,27 @@
       "text": "First the database went, and the work got simpler. Now the back end is going, and the work is getting faster.",
       "why": "The pattern in two sentences."
     }
+  ],
+  "figures": [
+    {
+      "file": "ns-architecture.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ns-architecture.webp",
+      "caption": "The SGit Newsroom's architecture. Every piece of application logic runs in the reader's browser. Everything on the server side is a commodity product that holds no logic of ours, and the one that holds the reader's data cannot read it."
+    },
+    {
+      "file": "ns-evolution.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ns-evolution.webp",
+      "caption": "How the pattern evolved: from removing the database, through files as the store of record and engines that read them in the browser, to removing the back end. Each step removed a moving part rather than adding one."
+    },
+    {
+      "file": "ns-tradeoffs.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ns-tradeoffs.webp",
+      "caption": "The gaps a client-side design leaves, as SG Meter's security model lists them, and what a server would cost to close each one. Every gap changes a number only the person exploiting it can see. A server would close them, and bring accounts, a database, webhooks and a deployment with it."
+    },
+    {
+      "file": "ns-shipping.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ns-shipping.webp",
+      "caption": "Releases of sgit.ai per day, 1 to 11 October 2026, from the git log: 114 in eleven days. With no back end, a release is a set of files; there is no migration, no deployment of a server and nothing to roll back but a commit."
+    }
   ]
 }

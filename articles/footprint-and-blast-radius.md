@@ -2,7 +2,7 @@
 
 > RiskMandate's Agent Behaviour Policy is written before an agent runs, in four words: reach, mandate, gap and barriers. This article proposes two more. The footprint is what the agent actually did, read afterwards from logs, traffic and vault history, with nobody inline and no production access needed. Compared with the mandate it gives two kinds of finding: footprint in the gap, which is a near miss, and dormant mandate, which is a check that never ran or a mandate that asked for too much. Read on its own it gives the mandate as practised, a policy reverse-engineered from evidence. Blast radius is the measure that goes with any of them: what it would cost the business if a row of the reach were used in full, today. The same footprint can carry a different blast radius on different days, which is why a near miss on an empty table and an incident on a full one are the same row in the record. One figure carries the whole argument: the gap as a map, each row shaded by what it would cost and marked if there is no way back.
 
-*Source: <https://newsroom.sgit.ai/articles/footprint-and-blast-radius.html> · sgit.ai v0.7.70 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/footprint-and-blast-radius.html> · sgit.ai v0.7.79 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 
@@ -156,6 +156,8 @@ Agents & policyVaults & method[This article as a graph →](graphs.md#footprint-
 
 ### Continued by
 
+- [Move the cloud, not the code: twins, sovereignty that works in practice, and the migration that pays for itself on the day you switch](move-the-cloud-not-the-code.md) Workloads stay on hyperscalers because moving means changing code; a twin lets the code not know, and the value in the twin is what signs the migration.
+- [Agentic cost is an engineering problem: a business plan for a service that reads the logs a company already has and finds the money, then the engineering](agentic-cost-is-an-engineering-problem.md) A business plan: read the logs a company already has, draw each agent's footprint, twin and policy, and find the money first and the engineering second.
 - [Where the platform draws the line: Microsoft Execution Containers, the shared responsibility model for agents, and the business logic above it](where-the-platform-draws-the-line.md) Microsoft's MXC and ACS, briefed field by field and mapped to Agent Behaviour Policies: the platform bounds what it can see; the business logic is above.
 - [The same argument, in our words: Satya Nadella on models as insider risks, translated into the language of RiskMandate](the-same-argument-in-our-words.md) Satya Nadella's case for treating models as insider risks, translated idea by idea into our vocabulary: reach, mandate, gap, barriers and accepted risk.
 - [Authority outside the model: an answer to Satya Nadella on models as insider risks, principle by principle, with what we run, what we ship and what we plan](authority-outside-the-model.md) Satya Nadella's seven principles for models as insider risks, answered one by one: what we run, what is design, and the five things the list leaves out.

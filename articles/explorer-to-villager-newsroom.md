@@ -2,7 +2,7 @@
 
 > The newsroom's first MVP already has a crazy amount of powerful features, and it is live, and it is taking money. Like most explorer projects, it is also bundled in the middle of something much bigger: the application that bills, remembers and personalises sits in the same repository as 74 articles and their images. Measured on newsroom v0.8.0, the live reader code is about 2,700 lines, the tests that cover it are 433 and the one workflow never runs them, and the same application has two upstreams, with two diverging copies of the meter. I want to keep shipping a massive number of features without breaking anything, so this is the moment to take a step back and go slow to go fast. This article is the case for it and the brief: move every feature that is not content into its own repository that both sites consume, as a pure refactoring, with the same behaviour and the same bugs, checked by hashing the files the live site serves; map every file, capability and web control; build the safety net, with bugs and vulnerabilities written down as tests that pass; review it for security and quality, with every finding a GitHub issue; refactor until no change that alters what a reader sees or pays can slip through; and build a pipeline fast enough to run on every commit, in Node, in three browser engines, against a pre-production copy and with synthetic readers. Then the explorer returns, with the vault and the passkey.
 
-*Source: <https://newsroom.sgit.ai/articles/explorer-to-villager-newsroom.html> · sgit.ai v0.7.70 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/explorer-to-villager-newsroom.html> · sgit.ai v0.7.79 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 
@@ -160,6 +160,12 @@ Site & engineeringStartups & strategy[This article as a graph →](graphs.md#exp
 - [Brief the agent too: the people I talk to work with agents, so what I send has to reach both](brief-the-agent-too.md) The people I advise read through agents. Content needs a second package, a brief for their agent, and memory, so it reads what changed, not everything.
 - [Green does not mean live](green-does-not-mean-live.md) Two releases passed every check and never reached the site because the checks stopped at the git remote; a release now ends by asking the live site its version.
 - [How to run synthetic users on your own site: five people who do not exist, a browser, and an afternoon](how-to-run-synthetic-users.md) Five invented users, a model reading screenshots, and a real browser: how to run synthetic users, from three studies.
+
+### Continued by
+
+- [Move the cloud, not the code: twins, sovereignty that works in practice, and the migration that pays for itself on the day you switch](move-the-cloud-not-the-code.md) Workloads stay on hyperscalers because moving means changing code; a twin lets the code not know, and the value in the twin is what signs the migration.
+- [Places of highest leverage: where to focus when the agents can go in every direction, told with three days of real steps](places-of-highest-leverage.md) Where to focus when agents can go in every direction: the place of highest leverage, shown on three days of real steps, two walked back and one parked.
+- [Agentic cost is an engineering problem: a business plan for a service that reads the logs a company already has and finds the money, then the engineering](agentic-cost-is-an-engineering-problem.md) A business plan: read the logs a company already has, draw each agent's footprint, twin and policy, and find the money first and the engineering second.
 
 [All articles](index.md) · [All graphs](graphs.md)
 

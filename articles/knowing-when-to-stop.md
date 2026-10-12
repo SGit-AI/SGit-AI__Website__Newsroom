@@ -2,7 +2,7 @@
 
 > The hardest call in most work is not what to do next but when to stop. This article starts with people, because the problem is not new: security champions who had automated away whole classes of bugs and ended up debating whether GUIDs were random enough; development teams that hit every KPI and did not move the business; teams that found more work for themselves as they grew. What stopped them, when something did, was perspective: knowing who the attackers are, which phase the business is in, where the bottleneck is, and what good enough looks like, which is much of what seniority is. Agents have the same problem, worse. Their range is the feature: they can go in any direction, and variability is what makes them useful. But that range means they will keep going, fixing the twenty things they noticed rather than the one that mattered. The answer, for both, is not draconian rules but constraints that carry perspective: direction, a mandate, memory with the bigger picture, graphs that narrow the scope, a stop named before the work begins, one kind of work per step, and shipping often enough that the users tell you whether it mattered.
 
-*Source: <https://newsroom.sgit.ai/articles/knowing-when-to-stop.html> · sgit.ai v0.7.70 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/knowing-when-to-stop.html> · sgit.ai v0.7.79 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 
@@ -108,6 +108,9 @@ Agents & policyStartups & strategy[This article as a graph →](graphs.md#knowin
 
 ### Continued by
 
+- [Places of highest leverage: where to focus when the agents can go in every direction, told with three days of real steps](places-of-highest-leverage.md) Where to focus when agents can go in every direction: the place of highest leverage, shown on three days of real steps, two walked back and one parked.
+- [Agentic cost is an engineering problem: a business plan for a service that reads the logs a company already has and finds the money, then the engineering](agentic-cost-is-an-engineering-problem.md) A business plan: read the logs a company already has, draw each agent's footprint, twin and policy, and find the money first and the engineering second.
+- [How the voice works: why these articles sound like me, with a section in which Claude explains it from its side](how-the-voice-works.md) Why these articles sound like their author: a corpus, the voice memos, seven wording rules and a reader who corrects, with Claude explaining it from its side.
 - [I miss it, so it is working: the people who decide the roadmap have to use the product, and the vault the newsroom now needs](i-miss-it.md) I read the newsroom on four devices and they do not agree. Missing a feature is the best sign; the makers must use it. And the brief for the reader's vault.
 - [The same argument, in our words: Satya Nadella on models as insider risks, translated into the language of RiskMandate](the-same-argument-in-our-words.md) Satya Nadella's case for treating models as insider risks, translated idea by idea into our vocabulary: reach, mandate, gap, barriers and accepted risk.
 - [Ten hard questions for RiskMandate, answered: the mandate, the reach, the gap, and what we are deliberately not](riskmandate-ten-questions.md) Ten hard questions from a conference, answered in a two-hour interview: what RiskMandate does, what it deliberately is not, and how mature each part is.

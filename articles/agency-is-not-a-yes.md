@@ -2,7 +2,7 @@
 
 > We talk about the human in the loop as if the loop were the point. Most of the time the human, or the agent put in the same place, is asked for a yes or a no, and that is the least interesting part of a decision. This article sets out what agency actually needs, for a person and for an agent: options beyond yes, context in the decider's own terms, the ability to look behind what they are shown, time or tokens, incentives that treat a wrong yes and a wrong no alike, somewhere to escalate, and authority over the system that produced the request. It turns those into a scale of seven levels, from the rubber stamp to the delegator, where the weakest dimension caps the whole decision, and scores fourteen cases from the record and from my own agent team, from a prompt that asks to add label 756-459-3214 to the one email an agent of mine is allowed to send. Below level 3, the decider holds the liability for a decision the system made, and accountability belongs to whoever designed the decision point and up their chain. Above it, the review stops being a sign-off and becomes a QA step: each draft is a chance to validate everything that led to it, to fix the source rather than the output, and to think better. And when a kind of draft keeps going out unchanged, it becomes a rule that runs without review. A vault published with the article holds the scale, the cases and an assessment anyone can run on their own decision points.
 
-*Source: <https://newsroom.sgit.ai/articles/agency-is-not-a-yes.html> · sgit.ai v0.7.70 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/agency-is-not-a-yes.html> · sgit.ai v0.7.79 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 
@@ -146,6 +146,7 @@ Agents & policyGraphs & knowledge[This article as a graph →](graphs.md#agency-
 
 ### Continued by
 
+- [Judo for small countries: where Portugal, Romania and Estonia can add the most value in AI, and why the race for GPUs is not it](judo-for-small-countries.md) A small country should not race for GPUs: the opportunity is the plumbing its talent stands on, built once as open infrastructure, with small models.
 - [Ten hard questions for RiskMandate, answered: the mandate, the reach, the gap, and what we are deliberately not](riskmandate-ten-questions.md) Ten hard questions from a conference, answered in a two-hour interview: what RiskMandate does, what it deliberately is not, and how mature each part is.
 - [How I work with Claude: one session per topic, agents with names, and memory you curate](how-i-work-with-claude.md) A practical guide from a year of daily use: one Claude session per topic, named agents with a role.md, curated memory, vaults, and policy before connectors.
 - [Knowing when to stop: what experience gives people, and what we have to design into agents](knowing-when-to-stop.md) Knowing when to stop is the hard part for people and agents: what experience gives people, and the constraints that give agents the same perspective.

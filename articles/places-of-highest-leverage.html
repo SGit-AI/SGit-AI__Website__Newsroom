@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Places of highest leverage: where to focus when the agents can go in every direction, told with three days of real steps, SGit Newsroom</title>
+<meta name="description" content="When a team of agents can build almost anything, the scarce thing is direction, and this article is about how I choose it. The rule I have used since I was a CISO is to work at the place of highest leverage: where I can add the most value right now, am not blocked, and can just start, even without knowing how the whole problem will be solved, because by the time I get there I will have better tooling and a better view. The last three days are the worked example. The newsroom went from a reading meter to pay by depth, personas, an encrypted share, a persona in a link, a reading list in a link, a passkey design, a lab that corrected the design, real vaults from the browser and a vault pane, each step shipped and used before the next was chosen, two steps walked back, and a branch parked because it is only valuable with many readers. On a Wardley map the passkey work moved from genesis to a product in a day because almost every shoulder it stands on is a commodity someone else matured; the one custom layer we had to add is where a provider is not. The path looks obvious backwards and was five choices at every step going forwards; walking back is not failure, and parking is not either. Constraints, saying no, shipping to a user even when the user is me, and the brief that could not be written until the art of the possible was known.">
+<link rel="canonical" href="https://newsroom.sgit.ai/articles/places-of-highest-leverage.html">
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SGit Newsroom">
+<meta property="og:url" content="https://newsroom.sgit.ai/articles/places-of-highest-leverage.html">
+<meta property="og:title" content="Places of highest leverage: where to focus when the agents can go in every direction, told with three days of real steps, SGit Newsroom">
+<meta property="og:description" content="When a team of agents can build almost anything, the scarce thing is direction, and this article is about how I choose it. The rule I have used since I was a CISO is to work at the place of highest leverage: where I can add the most value right now, am not blocked, and can just start, even without knowing how the whole problem will be solved, because by the time I get there I will have better tooling and a better view. The last three days are the worked example. The newsroom went from a reading meter to pay by depth, personas, an encrypted share, a persona in a link, a reading list in a link, a passkey design, a lab that corrected the design, real vaults from the browser and a vault pane, each step shipped and used before the next was chosen, two steps walked back, and a branch parked because it is only valuable with many readers. On a Wardley map the passkey work moved from genesis to a product in a day because almost every shoulder it stands on is a commodity someone else matured; the one custom layer we had to add is where a provider is not. The path looks obvious backwards and was five choices at every step going forwards; walking back is not failure, and parking is not either. Constraints, saying no, shipping to a user even when the user is me, and the brief that could not be written until the art of the possible was known.">
+<meta property="og:image" content="https://newsroom.sgit.ai/og/places-of-highest-leverage.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Places of highest leverage: where to focus when the agents can go in every direction, told with three days of real steps, SGit Newsroom">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://newsroom.sgit.ai/og/places-of-highest-leverage.jpg">
+<link rel="alternate" type="text/markdown" href="places-of-highest-leverage.md" title="This page as markdown">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Places of highest leverage: where to focus when the agents can go in every direction, told with three days of real steps, SGit Newsroom", "headline": "Places of highest leverage: where to focus when the agents can go in every direction, told with three days of real steps, SGit Newsroom", "description": "When a team of agents can build almost anything, the scarce thing is direction, and this article is about how I choose it. The rule I have used since I was a CISO is to work at the place of highest leverage: where I can add the most value right now, am not blocked, and can just start, even without knowing how the whole problem will be solved, because by the time I get there I will have better tooling and a better view. The last three days are the worked example. The newsroom went from a reading meter to pay by depth, personas, an encrypted share, a persona in a link, a reading list in a link, a passkey design, a lab that corrected the design, real vaults from the browser and a vault pane, each step shipped and used before the next was chosen, two steps walked back, and a branch parked because it is only valuable with many readers. On a Wardley map the passkey work moved from genesis to a product in a day because almost every shoulder it stands on is a commodity someone else matured; the one custom layer we had to add is where a provider is not. The path looks obvious backwards and was five choices at every step going forwards; walking back is not failure, and parking is not either. Constraints, saying no, shipping to a user even when the user is me, and the brief that could not be written until the art of the possible was known.", "url": "https://newsroom.sgit.ai/articles/places-of-highest-leverage.html", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "SGit Newsroom", "url": "https://newsroom.sgit.ai"}, "about": {"@type": "SoftwareApplication", "name": "sgit", "sameAs": "https://pypi.org/project/sgit-ai/"}, "author": {"@type": "Person", "name": "Dinis Cruz", "url": "https://sgit.ai/about/index.html"}, "license": "https://creativecommons.org/licenses/by/4.0/"}</script>
+<style>html{background:#faf9f5}body{margin:0;background:#faf9f5;color:#1c1d21;font-family:ui-sans-serif,system-ui,sans-serif;opacity:0;transition:opacity .25s;animation:sg-reveal 0s linear 1.6s forwards}html.ready body{opacity:1;animation:none}@keyframes sg-reveal{to{opacity:1}}</style><noscript><style>body{opacity:1;animation:none}</style></noscript>
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.12.2</a>
+  <sg-meter class="meter-nav" view="balance"></sg-meter>
+  <button class="vault-btn" type="button" aria-expanded="false" title="Your vault: the reading account carried between your devices"><span class="dot"></span>Vault</button>
+  <link rel="stylesheet" href="../assets/vault-pane/vault-pane.css">
+  <script type="module" src="../assets/vault-pane/vault-pane.js"></script>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../articles/index.html#all">Every article</a>
+      <a class="sl" href="../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../persona/index.html">Read as a persona</a>
+      <a class="sl" href="../for/make.html">Make a reading list</a>
+      <a class="sl" href="../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../wire/index.html">Industry Wire<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../wire/index.html">Today's edition</a>
+      <a class="sl" href="../wire/sources.html">The sources</a>
+      <a class="sl" href="../wire/how.html">How the wire works</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../account/index.html">Your reading account</a>
+      <a class="sl" href="../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../account/personas.html">Your personas</a>
+      <a class="sl" href="../account/top-up.html">Top up</a>
+      <a class="sl" href="../vault/index.html">Your vault, between devices</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../newsroom/board.html">The board</a>
+      <a class="sl" href="../newsroom/log.html">The run log</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../publishers/index.html">For publishers: what is live, how to try it</a>
+      <a class="sl" href="../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+      <a class="sl" href="../demos/vaults/newsroom-synthetic-users/index.html">The study: five readers tested this site</a>
+      <a class="sl" href="../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../newsroom-api/index.html">The reader API: a map, and a review</a>
+      <a class="sl" href="../passkey/index.html">The passkey lab</a>
+      <a class="sl" href="../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../world-news-day/index.html">World News Day<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../world-news-day/index.html">The corpus</a>
+      <a class="sl" href="../world-news-day/stories/free-to-republish-is-not-a-licence.html">Free to republish is not a licence</a>
+      <a class="sl" href="../world-news-day/licences.html">The licence that is not there</a>
+      <a class="sl" href="../world-news-day/corpus.html">The twenty-one</a>
+      <a class="sl" href="../world-news-day/findings.html">The aggregate</a>
+      <a class="sl" href="../world-news-day/terms.html">The vocabulary</a>
+      <a class="sl" href="../world-news-day/graph.html">The graph</a>
+      <a class="sl" href="../world-news-day/sources.html">Sources</a>
+      <a class="sl" href="../world-news-day/contacts.html">How to reach them</a>
+      <a class="sl" href="../world-news-day/vault.html">Published vaults</a>
+      <a class="sl" href="../world-news-day/vaults/corpus.html">The vault, opened</a>
+      <a class="sl" href="../world-news-day/method.html">Method</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../archive/index.html">The archive</a>
+      <a class="sl" href="../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../network/index.html">The network</a>
+      <a class="sl" href="../admin/versions.html">Release history</a>
+      <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../engineering/index.html">Engineering: issues &amp; releases</a>
+      <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom">&#9733; GitHub</a>
+</div></nav>
+
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.12.2</span></a></div>
+<main class="doc">
+ <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / Places of highest leverage: where to focus when the agents can go in every direction, told with three days of real steps</p>
+ <h1>Places of highest leverage: where to focus when the agents can go in every direction, told with three days of real steps</h1>
+ <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-12 &middot; <a href="versions/places-of-highest-leverage.html" title="Every published version of this article, and what changed">article v1.2.0, 3 versions</a> &middot; <a href="https://sgit.ai/admin/versions.html" title="The sgit.ai release it was published in">sgit.ai v0.7.75</a> &middot; <span class="chip">startups</span><span class="chip">focus</span><span class="chip">leverage</span><span class="chip">wardley-maps</span><span class="chip">explorer-villager</span><span class="chip">shipping</span><span class="chip">constraints</span><span class="chip">agents</span><span class="chip">newsroom</span><span class="chip">feedback-loop</span><span class="chip">strategy</span><span class="chip">article</span></p>
+ <p class="abstract"><em><b>Abstract:</b> When a team of agents can build almost anything, the scarce thing is direction, and this article is about how I choose it. The rule I have used since I was a CISO is to work at the place of highest leverage: where I can add the most value right now, am not blocked, and can just start, even without knowing how the whole problem will be solved, because by the time I get there I will have better tooling and a better view. The last three days are the worked example. The newsroom went from a reading meter to pay by depth, personas, an encrypted share, a persona in a link, a reading list in a link, a passkey design, a lab that corrected the design, real vaults from the browser and a vault pane, each step shipped and used before the next was chosen, two steps walked back, and a branch parked because it is only valuable with many readers. On a Wardley map the passkey work moved from genesis to a product in a day because almost every shoulder it stands on is a commodity someone else matured; the one custom layer we had to add is where a provider is not. The path looks obvious backwards and was five choices at every step going forwards; walking back is not failure, and parking is not either. Constraints, saying no, shipping to a user even when the user is me, and the brief that could not be written until the art of the possible was known.</em></p>
+<figure class="shot" data-shot="lv-path.webp" data-dir="images/" data-alt="Five choices at every step; the path only looks obvious backwards. The steps the newsroom actually took from 10 to 12 October, with the choices passed over at each, two walked back, one branch parked, and every step shipped and used before the next was chosen."><figcaption>Five choices at every step; the path only looks obvious backwards. The steps the newsroom actually took from 10 to 12 October, with the choices passed over at each, two walked back, one branch parked, and every step shipped and used before the next was chosen.</figcaption></figure>
+<p>This morning I asked the agent that runs the newsroom to read the day's articles and tell me what it could build next. It came back with a long list, all of it possible: the inbox mode, the reading modes, the marks, automating the wire's daily run, more beats, scheduling, consumption analytics. Every item was a reasonable thing to do, and a team of agents could have started on all of them by lunchtime. That is the problem this article is about. When the agents can go in every direction, where do you focus?</p>
+<p>My answer is the one I have used since I was a CISO, and it has a name I gave it years ago: places of highest leverage. This article says what that means, shows it on the last three days of real work, puts it on a Wardley map, and ends with the part that only became clear this week, which is that the briefs I write depend on knowing what is possible, and knowing what is possible depends on having shipped.</p>
+<h2 id="short">In short</h2>
+<ul>
+<li><b>Direction is the scarce thing.</b> Agents can build in any direction; what they cannot generate is the sense of what to build next and when to stop. Providing that is the job.</li>
+<li><b>Work at the place of highest leverage.</b> Where you can add the most value right now, you are not blocked, and you can start. Not where the biggest problem is; where the next step moves the needle most.</li>
+<li><b>Start without knowing how it ends.</b> By the time you reach the hard part you have better tooling, better data and a better view. Starting somewhere, even somewhere slightly wrong, beats being paralysed by the size of the whole.</li>
+<li><b>Shipped and used, every step.</b> Nothing stays theoretical. Each step goes in front of a user before the next is chosen, and the user can be me.</li>
+<li><b>The path is five choices at every step.</b> It looks linear and obvious backwards; forwards it was a tangent, two steps walked back, and a branch parked. The non-linear path was the efficient one.</li>
+<li><b>Walking back is not failure, and parking is not either.</b> A tangent reaches diminishing returns or no demand; you note it and move. The parked branch is on the map, with the reason.</li>
+<li><b>Shoulders matter.</b> On the Wardley map the passkey work went from genesis to a product in a day because almost everything under it is a commodity someone else matured. The custom layer we had to add is the one place a provider is not.</li>
+<li><b>The brief depends on the possible.</b> The inbox brief could not have been written until the vault ran. Shipping is what tells you what to think next.</li>
+</ul>
+<h2 id="rule">The rule</h2>
+<p>Places of highest leverage means this. At any moment there are many things that could be done. Most of them are blocked on something: a decision, a dependency, a thing that does not exist yet, a person. Some are not blocked but would not change much. A few are not blocked and would change a lot, for the people who use the thing and for everything built after. Work on those, and only those, until they stop being that.</p>
+<p>It is a rule about where, not what. It does not say what the product is; it says where to stand today. And it does not require knowing how the whole problem will be solved. I often do not. What I know is that by the time I get there, I will have better tooling, a better understanding and a better view, because every step taken produces those three things. So instead of standing in front of a large problem being paralysed by it, you start somewhere, and the somewhere can be slightly wrong, because the first step's job is not to be right. It is to produce the second step's information.</p>
+<p>There is a mathematical version of this that I use in security and cannot name from memory in a voice memo, so I will name it here carefully. It is the family of methods that begin with a guess, measure, and narrow: Fermi estimates that start wide and get calibrated; Bayesian updating, where each observation moves the prior; Monte Carlo runs that turn a guess into a range. What they have in common is that the first number is not the point. The range that emerges after a few steps is highly informative, and you cannot get to it without the first bad guess. Engineering under uncertainty works the same way, and so does choosing what to build.</p>
+<p>The other half of the rule is constraints. I have token budgets, hours, attention, and one person's focus, and I think the constraints are the reason it works rather than the price of it. The FIRE model from Dan Ward says it in four words, fast, inexpensive, restrained, elegant, and <a href="knowing-when-to-stop.html">Knowing when to stop</a> is this site's version: value rises fast and then flattens, and past the point of diminishing returns more work is optimising the wrong thing. Constraints are what make you notice the flattening. And saying no is the sharp end of it. Steve Jobs said something like: focus is about saying no to the hundred good ideas, and I am proud of the things we have not done. With agents that is not a slogan. It is most of the work.</p>
+<h2 id="steps">Three days, step by step</h2>
+<p>The figure at the top is the record, from the release logs of this site and the newsroom, and I want to walk it because the rule is easier to see in a sequence than in the abstract.</p>
+<p>On 10 October, <a href="pay-after-you-read.html">Pay after you read</a>: a meter in the browser at 12:09, pay by how far you read at 13:40, personas and your own newsroom at 14:23, sending your reading encrypted at 15:28, usefulness setting the price at 15:49. Each one was the place of highest leverage once the one before it existed. A meter made a price possible; a price made personas worth keeping; personas made sharing worth encrypting. None of them was planned a week ahead. Each was chosen after using the last.</p>
+<p>On 11 October, <a href="a-link-to-a-persona.html">a link to a persona</a> at 09:53 and <a href="a-reading-list-in-a-link.html">a reading list in a link</a> at 14:30, 81 minutes after its brief, because sending someone to the newsroom as nobody was the friction I felt that morning. Then the passkey design, and here the path bends. The first version had a door vault between the passkey and the master. A review in the afternoon took it out as a layer too many: there was no requirement for it in our use case, and I agreed. That is the first orange arc on the figure.</p>
+<p>On 12 October at 00:15, the newsroom's lab, which had built every step of the design as a card, found that <a href="the-passkey-opens-the-vault.html">the same passkey returns different bytes</a> through a phone over QR than through the provider on the device. The door went back, as a door per path. That is the second arc, and it points the other way. Two reversals in twelve hours, both right, both cheap, because the design had been shipped as something you could press rather than argued as a document. At 01:33 real vaults from the browser, through the vendored library rather than a writer of our own, which was a choice passed over. At 02:22 <a href="the-vault-is-live.html">the vault pane</a>, live.</p>
+<p>And then, this morning, the list. The agent offered the inbox, the reading modes, the marks, and also automating the wire, more beats, scheduling, consumption analytics. The second group is parked, and the figure says why in blue: valuable only with many readers. We do not have many readers; we have articles, and me, and the person I showed the walkthrough to. The place of highest leverage is the feedback loop on what exists: the inbox, the marks, the modes, because they make every article better, they are what the readers we do have want, and they make me a better briefer of the agents, which compounds. Improving how the wire is computed is real work for a real day, and that day is not today.</p>
+<h2 id="back">Walking back, and parking</h2>
+<p>Two things in that sequence are easy to read as failures and are not.</p>
+<p>Walking back is what a two-way door looks like from inside. The distinction, from Jeff Bezos, is between decisions you can reverse and decisions you cannot, and the point is to move fast through the first kind. Removing the door was a two-way door; so was putting it back. Neither cost more than an afternoon, both were shipped as a version with the change on its page, and the second was forced by a test, which is the best possible reason. The path with two reversals in it reached a better design faster than a path that had tried to get the design right on paper would have, because the paper could not have known what the phone would return.</p>
+<p>Parking is the same move at the level of a branch. A tangent reaches diminishing returns, or it turns out there is no demand yet, and you stop. Not because it was wrong; because its leverage is lower than something else's today. The parked branch stays on the map, with the reason, and the reason has a date on it: when there are many readers, the wire's scheduling becomes a place of high leverage. That is also why I do not feel ownership of any of these pieces. They are open, the record is public, and the thing I am attached to is the feedback loop, not any one feature in it.</p>
+<figure class="shot" data-shot="lv-zigzag.webp" data-dir="images/" data-alt="The same thing as a shape rather than a record: three to five routes open at every step, one taken and shipped, two walked a little way and walked back, one parked, and the straight line that only exists in hindsight."><figcaption>The same thing as a shape rather than a record: three to five routes open at every step, one taken and shipped, two walked a little way and walked back, one parked, and the straight line that only exists in hindsight.</figcaption></figure>
+<p>The hardest part is that going forwards you cannot see the path. Backwards, from the vault pane, the sequence looks inevitable: of course the meter led to personas led to sharing led to a vault led to a passkey. Forwards, at each step, there were five choices, and the figure shows the ones passed over in grey: a paywall, a subscription, an account, a recommender, analytics, a server, Google sign-in. Any of them could have been taken. The method in the madness is only visible by walking backwards, and that is fine, as long as each step forwards was shipped and used before the next was chosen. That is the discipline that replaces foresight.</p>
+<h2 id="map">Which shoulders, on the map</h2>
+<figure class="shot" data-shot="lv-wardley.webp" data-dir="images/" data-alt="Which shoulders the passkey work stands on. Almost everything under it is a product or a commodity someone else matured; our piece is the door and a door per path; the one custom layer we had to add is the phone by QR, where a provider is not yet mature." data-kind="wardley-map"><figcaption>Which shoulders the passkey work stands on. Almost everything under it is a product or a commodity someone else matured; our piece is the door and a door per path; the one custom layer we had to add is the phone by QR, where a provider is not yet mature.</figcaption></figure>
+<p>There is a second reason the three days went as fast as they did, and the Wardley map shows it. The passkey work went from genesis, a design on a page, through custom-built, a lab you could press, to a product, a pane on every page, in a day. Within hours of that we were building on it: vaults inside vaults, the reading records, the next brief. It is already on its way to being a commodity for us, something that just works and is not thought about. That is only possible because of what it stands on.</p>
+<p>Look at the bottom of the map. Synced passkeys with the PRF extension in iCloud Keychain: commodity, mature, the same bytes on a Mac, an iPad and an iPhone. The WebAuthn PRF extension itself, Web Crypto with HKDF and PBKDF2, sgit keys made in the client, the vault library we vendored unedited, the vault server, the Stripe payment link: all products or commodities, all someone else's work, all matured before we arrived. Our piece, the door and the derivation, is small, and that is the point. We are not building a passkey system. We are adding one small custom layer on top of a stack that is already mature, and a small custom layer on a mature stack becomes a product almost as soon as it works.</p>
+<p>The one exception proves it. Google Password Manager's passkey, reached through a phone over QR, returns different bytes from the same passkey on the device. That is a place where a provider is not yet mature, and it is exactly where we had to add a custom layer, a door per path, and exactly where the work slowed. If we had built on that path alone we would still be building. We built on Apple's synced path, which is further to the right, and the thing shipped. Which shoulders you stand on decides how fast your piece becomes a product. The map tells you where the mature shoulders are, and it is worth drawing before choosing where to stand.</p>
+<h2 id="ship">Shipped, and used</h2>
+<p>Everything above rests on one rule that I want to state on its own: it is about shipping, and it is about a user. Every piece of work, these days, has to be used straight away, by someone, and it is fine if the someone is me. Not a hypothesis, not a design document that waits for a quarter: a thing a person opens. <a href="i-miss-it.html">I miss it, so it is working</a> made the case that the people who decide the roadmap have to use the product; this is the operational version. A step that was shipped and used tells you where the next step is. A step that was only designed tells you nothing, because you have not felt it.</p>
+<p>That is also why the briefs come after the shipping and not before. <a href="the-site-is-an-inbox.html">The site is an inbox</a> begins with a confession: I could not have written it two days earlier, because I did not know the properties of what would run. The vault had to exist, the passkey had to work, the door had to be per path, before I could think about what a reader does with any of it. The art of the possible is not something you reason your way to. It is what shipping leaves behind, and the next brief is made of it.</p>
+<h2 id="limits">What this does not claim</h2>
+<ul>
+<li><b>Three days is a sample.</b> The sequence is real and the times are from the release logs, but it is one project at one speed, chosen because it is the one I can show.</li>
+<li><b>The rule does not pick the product.</b> Places of highest leverage says where to stand, not what to build; the what comes from using the thing and from the people who ask for it.</li>
+<li><b>The mathematics is named carefully.</b> Fermi estimates, Bayesian updating and Monte Carlo ranges are the family I mean; the memo could not name them, and the analogy is mine, not a theorem.</li>
+<li><b>Parking has a cost.</b> A branch left for later can be overtaken; the wire's scheduling may need to be rebuilt when its day comes. That is accepted, and it is cheaper than building it for readers who are not there.</li>
+</ul>
+<p>If you run a team of agents and the hard part has become choosing, or you want to compare maps, write to <a href="mailto:agent@riskmandate.ai">agent@riskmandate.ai</a>.</p>
+<h2 id="sources">Where this comes from</h2>
+<p>A voice memo of mine on 12 October 2026, the last of the day, written by this site's agent in the voice of this site. The argument and the editorial responsibility are mine. The steps and their times are from the release logs of sgit.ai and newsroom.sgit.ai, 10 to 12 October 2026, and from the articles that record them: <a href="pay-after-you-read.html">Pay after you read</a>, <a href="a-link-to-a-persona.html">A link to a persona</a>, <a href="a-reading-list-in-a-link.html">A reading list in a link</a>, <a href="the-passkey-opens-the-vault.html">The passkey opens the vault</a> and <a href="the-vault-is-live.html">The vault is live</a>. The list of what the newsroom's agent could build next is from this morning's session with it. The two-way door is Jeff Bezos's, from his 2015 shareholder letter; the saying-no line is attributed to Steve Jobs and quoted from memory; the FIRE model is Dan Ward's. Both figures were drawn for this article. Related: <a href="knowing-when-to-stop.html">Knowing when to stop</a>, <a href="i-miss-it.html">I miss it, so it is working</a>, <a href="the-site-is-an-inbox.html">The site is an inbox</a>, <a href="explorer-to-villager-newsroom.html">Explorer to villager</a> and <a href="how-much-of-this-did-i-write.html">How much of this did I write?</a>.</p>
+<sg-meter view="page" kind="article" date="2026-10-12" topics="startups-and-strategy agents-and-policy site-and-engineering" title="Places of highest leverage: where to focus when the agents can go in every direction, told with three days of real steps, SGit Newsroom"></sg-meter>
+<section class="athreads" id="threads">
+ <h2>Threads</h2>
+ <p class="athreads-meta"><span class="tchip">Startups &amp; strategy</span><span class="tchip">Agents &amp; policy</span><span class="tchip">Site &amp; engineering</span> <a href="graphs.html#places-of-highest-leverage">This article as a graph &rarr;</a></p>
+ <div class="athreads-cols"><div><h3>Builds on</h3><ul><li><a href="knowing-when-to-stop.html">Knowing when to stop: what experience gives people, and what we have to design into agents</a> <span class="dim">Knowing when to stop is the hard part for people and agents: what experience gives people, and the constraints that give agents the same perspective.</span></li><li><a href="pay-after-you-read.html">Pay after you read: how a reading meter became a working business model in one afternoon, one release at a time</a> <span class="dim">Seven releases in one afternoon turned the reading meter into a working model: pay after you read, and the rating sets the price.</span></li><li><a href="a-link-to-a-persona.html">A link to a persona: send people to the newsroom as someone, not as nobody</a> <span class="dim">Send a CISO to the newsroom as a CISO: personas kept in a vault by the newsroom's agents, opened from a link, followed or forked.</span></li><li><a href="a-reading-list-in-a-link.html">From me to you, in a link: a personal reading list, two briefs to build and use it, and the loop that makes it a day's work</a> <span class="dim">A reading list from one person to another, in a link the server never sees; a brief to build it, a brief to use it, and the loop that ships it in a day.</span></li><li><a href="the-passkey-opens-the-vault.html">The passkey opens the vault: a door per path, a master vault for every user, and no server of ours</a> <span class="dim">Tested: a passkey's PRF bytes compute a door that holds the master's key, and a different path to the same passkey gives different bytes, so a door per path.</span></li><li><a href="the-vault-is-live.html">The vault is live: from a design on 11 October to a reader's vault on newsroom.sgit.ai by two in the morning, and how all of it fits together</a> <span class="dim">The reader's vault runs on newsroom.sgit.ai: a passkey opens three real vaults, each device writes one file, and the architecture is drawn as it stands.</span></li><li><a href="i-miss-it.html">I miss it, so it is working: the people who decide the roadmap have to use the product, and the vault the newsroom now needs</a> <span class="dim">I read the newsroom on four devices and they do not agree. Missing a feature is the best sign; the makers must use it. And the brief for the reader's vault.</span></li><li><a href="the-site-is-an-inbox.html">The site is an inbox: deciding before reading, marks that build the reader's own graph, and why I could not write this brief until the vault existed</a> <span class="dim">The site as an inbox that starts empty: decide fast before reading, mark slowly while reading, build a graph you own, and sign what you send to the newsroom.</span></li><li><a href="explorer-to-villager-newsroom.html">Go slow to go fast: moving the newsroom from an explorer project to a villager one, with the brief to do it</a> <span class="dim">The newsroom is live and charging. Move the reader code to its own repo, same bytes and same bugs, then map, test, review and refactor before new features.</span></li><li><a href="how-much-of-this-did-i-write.html">How much of this did I write? The numbers behind twenty articles in four weeks, and what the input actually was</a> <span class="dim">Twenty articles in four weeks, measured from the session record: 63,000 words in, 85,000 out, no one-line prompts, and the real input is twenty years of writing.</span></li></ul></div><div><h3>Continued by</h3><ul><li><a href="judo-for-small-countries.html">Judo for small countries: where Portugal, Romania and Estonia can add the most value in AI, and why the race for GPUs is not it</a> <span class="dim">A small country should not race for GPUs: the opportunity is the plumbing its talent stands on, built once as open infrastructure, with small models.</span></li><li><a href="why-i-love-wardley-maps.html">Why I love Wardley maps: the best of ours, how I read one, and a map inside a map inside a map</a> <span class="dim">The best of our Wardley maps with their context, why the technique matters, one map read as a story, and a map inside a map inside a map.</span></li></ul></div></div>
+ <p class="small dim"><a href="index.html">All articles</a> &middot; <a href="graphs.html">All graphs</a></p>
+ <p class="small dim">Article No. 89 &middot; <a href="../for/make.html#r=89">start a reading list with it</a></p>
+</section>
+<aside class="lkit" aria-label="For LinkedIn"><b>Posting this article on LinkedIn?</b> The cover is <a href="banners/places-of-highest-leverage.jpg" download>places-of-highest-leverage.jpg</a> (1920&times;1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page.</aside>
+ <p class="subteaser"><b>Want the next issue by email.</b> One issue a week or so: what was published, what it adds up to, and what is worth your time. <a class="cta2" href="../subscribe/index.html">Subscribe to the SGit Newsroom &rarr;</a></p>
+ <p class="small dim" style="margin-top:2rem"><a href="index.html">&larr; All articles</a></p>
+</main>
+<script>
+(function () {
+ fetch('../assets/shots.js?v=v0.7.79')
+ .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+ .then(function (t) { (0, eval)(t); })
+ .catch(function (e) { console.error('[shots] component failed to load:', e); });
+}());
+</script>
+<script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": "https://buy.stripe.com/6oUfZ9ez65vVgU2fY15os04"}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
+<script>
+import('../assets/components/sg-meter/v1/v1.4/v1.4.0/sg-meter.js?v=v0.7.79')
+ .catch(function (e) { console.error('[sg-meter] component failed to load:', e); });
+</script>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="netline"><a href="https://sgit.ai" style="display:inline;padding:0"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://pt.newsroom.sgit.ai" style="display:inline;padding:0">&#8593; pt.newsroom.sgit.ai</a> &middot; <a href="https://graphs.sgit.ai" style="display:inline;padding:0">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai" style="display:inline;padding:0">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai" style="display:inline;padding:0">&#8593; nhi.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai" style="display:inline;padding:0">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../admin/versions.html">v0.12.2</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="places-of-highest-leverage.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../index.html">&#8594; The front page</a>
+    <a href="../wire/index.html">The Industry Wire</a>
+    <a href="../articles/index.html#all">Every article</a>
+    <a href="../articles/newsletter/index.html">The newsletter</a>
+    <a href="../articles/collections/index.html">Collections</a>
+    <a href="../articles/desk/index.html">From the desk</a>
+    <a href="../articles/graphs.html">As graphs</a>
+    <a href="../subscribe/index.html">Subscribe</a>
+    <a href="../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../account/index.html">Your reading account</a>
+    <a href="../account/newsroom.html">Your newsroom</a>
+    <a href="../account/personas.html">Your personas</a>
+    <a href="../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../newsroom/index.html">How the newsroom runs</a>
+    <a href="../newsroom/policies.html">Behaviour policies</a>
+    <a href="../newsroom/publish.html">How to publish</a>
+    <a href="../newsroom/board.html">The board</a>
+    <a href="../newsroom/log.html">The run log</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../design/index.html">The design, and what runs</a>
+    <a href="../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../corrections/index.html">Corrections must propagate</a>
+    <a href="../provenance/index.html">Provenance is the product</a>
+    <a href="../economics/index.html">Paying the fact creator</a>
+    <a href="../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../replicate/index.html">Replicate this newsroom</a>
+    <a href="../publishers/index.html">For publishers</a>
+    <a href="../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+    <a href="../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../archive/index.html">The archive</a>
+    <a href="../network/index.html">The network</a>
+    <a href="../admin/versions.html">Release history</a>
+    <a href="../admin/index.html">Admin &amp; engineering</a>
+    <a href="../about/participant.html">Where we lose</a>
+    <a href="../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+
+<script>
+(function(){var R=document.documentElement.getAttribute('data-root')||'';var V='?v=' + 'v0.7.79';var C=[R,'','../','/'].filter(function(v,i,a){return a.indexOf(v)===i});
+function wait(ms){return new Promise(function(res){var t=Date.now();(function p(){if(window.sg)return res(window.sg);if(Date.now()-t>ms)return res(null);setTimeout(p,60)})()})}
+function grab(sg,p){return new Promise(function(res){(async function(){if(sg&&sg.vfs&&sg.vfs.readText){try{var t=await sg.vfs.readText(p);if(t)return res(t)}catch(e){}}try{var r=await fetch(p+V);if(r.ok)return res(await r.text())}catch(e){}res(null)})()})}
+async function css(sg){for(var i=0;i<C.length;i++){var p=C[i]+'assets/newsroom.css';if(sg&&sg.loadCss){try{await sg.loadCss(p);return}catch(e){}}var t=await grab(sg,p);if(t){var s=document.createElement('style');s.textContent=t;document.head.appendChild(s);return}}}
+async function js(sg,name){name=name||'assets/site.js';for(var i=0;i<C.length;i++){var p=C[i]+name;if(sg&&sg.loadJs){try{await sg.loadJs(p);return}catch(e){}}var t=await grab(sg,p);if(t){try{(0,eval)(t)}catch(e){console.error('[site] js failed',name,e)}return}}}
+async function boot(){var inVault=false;try{inVault=(window!==window.parent)||location.protocol==='blob:'}catch(e){inVault=true}
+var sg=inVault?await wait(2500):null;window.__sgitBoot={roots:C,grab:function(p){return grab(sg,p)},version:V};await css(sg);await js(sg);document.documentElement.classList.add('ready');try{window.parent&&window.parent.postMessage({type:'sg-app-ready'},'*')}catch(e){}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+var mine=V.slice(3),last=0;
+function fresh(){if(location.hostname!=='sgit.ai'||Date.now()-last<60000)return;last=Date.now();
+fetch('/version.txt?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(t){t=(t||'').trim();if(!/^v[0-9]+[.][0-9]+[.][0-9]+$/.test(t)||t===mine)return;
+var k='sgit.fresh:'+location.pathname;try{if(sessionStorage.getItem(k)===t)return;sessionStorage.setItem(k,t)}catch(e){}
+var u=new URL(location.href);u.searchParams.set('v',t);location.replace(u.href)}).catch(function(){})}
+try{var u=new URL(location.href);if(u.searchParams.get('v')===mine){u.searchParams.delete('v');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}
+fresh();addEventListener('pageshow',function(e){if(e.persisted){last=0;fresh()}});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')fresh()});
+})();
+</script>
+</body>
+</html>

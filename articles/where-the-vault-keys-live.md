@@ -2,7 +2,7 @@
 
 > Every vault on this site is encrypted in the client, so the server never sees a key and the key is the whole question. This is the current state of vault key management at sgit-ai v0.20.0: where everything lives, the one secret and the keys derived from it, where vault keys are kept today (a password manager, and a registry vault run by an isolated agent session), how a new key reaches the registry without ever entering a chat, append lanes as the transport behind most of it, the small communication vaults that made the problem urgent, and the four tracks that come next: password manager integrations, secrets.sgit.ai's passkey-unlocked keyring, PKI, and decryption that happens out of band. Plus the one gap we cannot close ourselves: agent platforms have no per-session secrets.
 
-*Source: <https://newsroom.sgit.ai/articles/where-the-vault-keys-live.html> · sgit.ai v0.7.70 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/where-the-vault-keys-live.html> · sgit.ai v0.7.79 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 
@@ -206,6 +206,8 @@ Vaults & methodAgents & policy[This article as a graph →](graphs.md#where-the-
 
 ### Continued by
 
+- [Why I love Wardley maps: the best of ours, how I read one, and a map inside a map inside a map](why-i-love-wardley-maps.md) The best of our Wardley maps with their context, why the technique matters, one map read as a story, and a map inside a map inside a map.
+- [From a spreadsheet to a folder per person: how to run your contacts the way our agents do, with Google Drive, Gmail and the Claude app, before you touch a vault](from-a-spreadsheet-to-a-folder-per-person.md) A walkthrough from a spreadsheet CRM to one Drive folder per person, worked by Claude under a six-line policy, with five exercises, before any vault is needed.
 - [Two agents, one vault: the Industry Wire is written into an encrypted vault by one agent and drawn by newsroom.sgit.ai, which holds only the read key](two-agents-one-vault.md) One agent writes the Industry Wire into an encrypted vault; newsroom.sgit.ai holds only the read key and draws it, so a commit reaches the page with no release.
 - [The article remains a product: Jonathan Palmer's four outputs for a newsroom with no human readers, checked against one that runs](the-article-remains-a-product.md) Jonathan Palmer's four outputs for a newsroom with no human readers, quoted line by line and checked against newsroom.sgit.ai as it runs, screenshots included.
 - [The passkey opens the vault: a door per path, a master vault for every user, and no server of ours](the-passkey-opens-the-vault.md) Tested: a passkey's PRF bytes compute a door that holds the master's key, and a different path to the same passkey gives different bytes, so a door per path.

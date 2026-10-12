@@ -137,5 +137,37 @@
       "text": "If you work on a password manager, let's talk.",
       "why": "The open call."
     }
+  ],
+  "figures": [
+    {
+      "file": "km-architecture.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/km-architecture.webp",
+      "caption": "Where everything lives. Encryption and decryption happen in the client; the edge, the API and the bucket only ever handle ciphertext and hashes of capability keys."
+    },
+    {
+      "file": "km-keys.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/km-keys.webp",
+      "caption": "The vault key, the keys derived from it, and the separate credentials made for one job each. The full table, with the prefixes, is on the vault credentials page."
+    },
+    {
+      "file": "km-handover.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/km-handover.webp",
+      "caption": "How a new vault key reaches the registry without entering a chat. The flow is documented, for the agent that has to follow it, on the Send a vault key page."
+    },
+    {
+      "file": "km-lanes.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/km-lanes.webp",
+      "caption": "Append lanes: one POST from anywhere, readable only by the vault's owner. One lane per sender, so one can be revoked without touching the others."
+    },
+    {
+      "file": "km-small-vaults.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/km-small-vaults.webp",
+      "caption": "Communication vaults: one per pair or group of agents, and one per job. Each agent holds only the keys for the conversations it is part of."
+    },
+    {
+      "file": "km-next.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/km-next.webp",
+      "caption": "The four tracks we are working on, and the one we depend on. Statuses as of 10 October 2026."
+    }
   ]
 }

@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Move the cloud, not the code: twins, sovereignty that works in practice, and the migration that pays for itself on the day you switch, SGit Newsroom</title>
+<meta name="description" content="At a digital sovereignty event today a conversation with the chief executive of an infrastructure company with a large footprint in Romania kept returning to one point: sovereignty has to work in practice, and in practice what stops workloads moving is not policy or price but code. Every call to S3, EC2 and IAM is written into applications that work today and that nobody wants to touch. So the requirement is that the application must not know it has moved: the same calls land on a twin, an open source service the client cannot tell from the real one, and the twin decides where the bytes go, real S3, an sgit vault, a European operator's data centre, a laptop. The S3 twin exists. Then the part I think matters most: the reason to move must never be sovereignty or cost reduction, which are important and never urgent. A migration carries risk, so the person signing it needs value that lands the day they switch and gives them cover: backups that exist, every object version controlled, encryption with the key held elsewhere, a journal of every call, behaviour policies the agents cannot skip, cost per workload, a top-of-register risk moved. That value sits in the twin layer, and an sgit vault behind it supplies most of it. The rule for the project: no new features during the move. And the business model for an infrastructure operator who sells it that way.">
+<link rel="canonical" href="https://newsroom.sgit.ai/articles/move-the-cloud-not-the-code.html">
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SGit Newsroom">
+<meta property="og:url" content="https://newsroom.sgit.ai/articles/move-the-cloud-not-the-code.html">
+<meta property="og:title" content="Move the cloud, not the code: twins, sovereignty that works in practice, and the migration that pays for itself on the day you switch, SGit Newsroom">
+<meta property="og:description" content="At a digital sovereignty event today a conversation with the chief executive of an infrastructure company with a large footprint in Romania kept returning to one point: sovereignty has to work in practice, and in practice what stops workloads moving is not policy or price but code. Every call to S3, EC2 and IAM is written into applications that work today and that nobody wants to touch. So the requirement is that the application must not know it has moved: the same calls land on a twin, an open source service the client cannot tell from the real one, and the twin decides where the bytes go, real S3, an sgit vault, a European operator's data centre, a laptop. The S3 twin exists. Then the part I think matters most: the reason to move must never be sovereignty or cost reduction, which are important and never urgent. A migration carries risk, so the person signing it needs value that lands the day they switch and gives them cover: backups that exist, every object version controlled, encryption with the key held elsewhere, a journal of every call, behaviour policies the agents cannot skip, cost per workload, a top-of-register risk moved. That value sits in the twin layer, and an sgit vault behind it supplies most of it. The rule for the project: no new features during the move. And the business model for an infrastructure operator who sells it that way.">
+<meta property="og:image" content="https://newsroom.sgit.ai/og/move-the-cloud-not-the-code.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Move the cloud, not the code: twins, sovereignty that works in practice, and the migration that pays for itself on the day you switch, SGit Newsroom">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://newsroom.sgit.ai/og/move-the-cloud-not-the-code.jpg">
+<link rel="alternate" type="text/markdown" href="move-the-cloud-not-the-code.md" title="This page as markdown">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Move the cloud, not the code: twins, sovereignty that works in practice, and the migration that pays for itself on the day you switch, SGit Newsroom", "headline": "Move the cloud, not the code: twins, sovereignty that works in practice, and the migration that pays for itself on the day you switch, SGit Newsroom", "description": "At a digital sovereignty event today a conversation with the chief executive of an infrastructure company with a large footprint in Romania kept returning to one point: sovereignty has to work in practice, and in practice what stops workloads moving is not policy or price but code. Every call to S3, EC2 and IAM is written into applications that work today and that nobody wants to touch. So the requirement is that the application must not know it has moved: the same calls land on a twin, an open source service the client cannot tell from the real one, and the twin decides where the bytes go, real S3, an sgit vault, a European operator's data centre, a laptop. The S3 twin exists. Then the part I think matters most: the reason to move must never be sovereignty or cost reduction, which are important and never urgent. A migration carries risk, so the person signing it needs value that lands the day they switch and gives them cover: backups that exist, every object version controlled, encryption with the key held elsewhere, a journal of every call, behaviour policies the agents cannot skip, cost per workload, a top-of-register risk moved. That value sits in the twin layer, and an sgit vault behind it supplies most of it. The rule for the project: no new features during the move. And the business model for an infrastructure operator who sells it that way.", "url": "https://newsroom.sgit.ai/articles/move-the-cloud-not-the-code.html", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "SGit Newsroom", "url": "https://newsroom.sgit.ai"}, "about": {"@type": "SoftwareApplication", "name": "sgit", "sameAs": "https://pypi.org/project/sgit-ai/"}, "author": {"@type": "Person", "name": "Dinis Cruz", "url": "https://sgit.ai/about/index.html"}, "license": "https://creativecommons.org/licenses/by/4.0/"}</script>
+<style>html{background:#faf9f5}body{margin:0;background:#faf9f5;color:#1c1d21;font-family:ui-sans-serif,system-ui,sans-serif;opacity:0;transition:opacity .25s;animation:sg-reveal 0s linear 1.6s forwards}html.ready body{opacity:1;animation:none}@keyframes sg-reveal{to{opacity:1}}</style><noscript><style>body{opacity:1;animation:none}</style></noscript>
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.12.2</a>
+  <sg-meter class="meter-nav" view="balance"></sg-meter>
+  <button class="vault-btn" type="button" aria-expanded="false" title="Your vault: the reading account carried between your devices"><span class="dot"></span>Vault</button>
+  <link rel="stylesheet" href="../assets/vault-pane/vault-pane.css">
+  <script type="module" src="../assets/vault-pane/vault-pane.js"></script>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../articles/index.html#all">Every article</a>
+      <a class="sl" href="../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../persona/index.html">Read as a persona</a>
+      <a class="sl" href="../for/make.html">Make a reading list</a>
+      <a class="sl" href="../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../wire/index.html">Industry Wire<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../wire/index.html">Today's edition</a>
+      <a class="sl" href="../wire/sources.html">The sources</a>
+      <a class="sl" href="../wire/how.html">How the wire works</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../account/index.html">Your reading account</a>
+      <a class="sl" href="../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../account/personas.html">Your personas</a>
+      <a class="sl" href="../account/top-up.html">Top up</a>
+      <a class="sl" href="../vault/index.html">Your vault, between devices</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../newsroom/board.html">The board</a>
+      <a class="sl" href="../newsroom/log.html">The run log</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../publishers/index.html">For publishers: what is live, how to try it</a>
+      <a class="sl" href="../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+      <a class="sl" href="../demos/vaults/newsroom-synthetic-users/index.html">The study: five readers tested this site</a>
+      <a class="sl" href="../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../newsroom-api/index.html">The reader API: a map, and a review</a>
+      <a class="sl" href="../passkey/index.html">The passkey lab</a>
+      <a class="sl" href="../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../world-news-day/index.html">World News Day<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../world-news-day/index.html">The corpus</a>
+      <a class="sl" href="../world-news-day/stories/free-to-republish-is-not-a-licence.html">Free to republish is not a licence</a>
+      <a class="sl" href="../world-news-day/licences.html">The licence that is not there</a>
+      <a class="sl" href="../world-news-day/corpus.html">The twenty-one</a>
+      <a class="sl" href="../world-news-day/findings.html">The aggregate</a>
+      <a class="sl" href="../world-news-day/terms.html">The vocabulary</a>
+      <a class="sl" href="../world-news-day/graph.html">The graph</a>
+      <a class="sl" href="../world-news-day/sources.html">Sources</a>
+      <a class="sl" href="../world-news-day/contacts.html">How to reach them</a>
+      <a class="sl" href="../world-news-day/vault.html">Published vaults</a>
+      <a class="sl" href="../world-news-day/vaults/corpus.html">The vault, opened</a>
+      <a class="sl" href="../world-news-day/method.html">Method</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../archive/index.html">The archive</a>
+      <a class="sl" href="../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../network/index.html">The network</a>
+      <a class="sl" href="../admin/versions.html">Release history</a>
+      <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../engineering/index.html">Engineering: issues &amp; releases</a>
+      <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom">&#9733; GitHub</a>
+</div></nav>
+
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.12.2</span></a></div>
+<main class="doc">
+ <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / Move the cloud, not the code: twins, sovereignty that works in practice, and the migration that pays for itself on the day you switch</p>
+ <h1>Move the cloud, not the code: twins, sovereignty that works in practice, and the migration that pays for itself on the day you switch</h1>
+ <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-12 &middot; <a href="versions/move-the-cloud-not-the-code.html" title="Every published version of this article, and what changed">article v1.0.0</a> &middot; <a href="https://sgit.ai/admin/versions.html" title="The sgit.ai release it was published in">sgit.ai v0.7.79</a> &middot; <span class="chip">twins</span><span class="chip">sovereignty</span><span class="chip">migration</span><span class="chip">hyperscalers</span><span class="chip">s3</span><span class="chip">sgit</span><span class="chip">vaults</span><span class="chip">open-source</span><span class="chip">agent-behaviour-policy</span><span class="chip">business-model</span><span class="chip">villager</span><span class="chip">europe</span><span class="chip">romania</span><span class="chip">article</span></p>
+ <p class="abstract"><em><b>Abstract:</b> At a digital sovereignty event today a conversation with the chief executive of an infrastructure company with a large footprint in Romania kept returning to one point: sovereignty has to work in practice, and in practice what stops workloads moving is not policy or price but code. Every call to S3, EC2 and IAM is written into applications that work today and that nobody wants to touch. So the requirement is that the application must not know it has moved: the same calls land on a twin, an open source service the client cannot tell from the real one, and the twin decides where the bytes go, real S3, an sgit vault, a European operator's data centre, a laptop. The S3 twin exists. Then the part I think matters most: the reason to move must never be sovereignty or cost reduction, which are important and never urgent. A migration carries risk, so the person signing it needs value that lands the day they switch and gives them cover: backups that exist, every object version controlled, encryption with the key held elsewhere, a journal of every call, behaviour policies the agents cannot skip, cost per workload, a top-of-register risk moved. That value sits in the twin layer, and an sgit vault behind it supplies most of it. The rule for the project: no new features during the move. And the business model for an infrastructure operator who sells it that way.</em></p>
+<figure class="shot" data-shot="mc-twin.webp" data-dir="images/" data-alt="The twin layer. The application keeps calling S3, EC2 and IAM exactly as it does today; the calls land on an open source twin, which is where policy, journal, encryption, versions, cost and failure injection live; the twin decides where the bytes go, and switching the backend is a setting. The S3 twin is built; EC2 and IAM are not." data-kind="architecture"><figcaption>The twin layer. The application keeps calling S3, EC2 and IAM exactly as it does today; the calls land on an open source twin, which is where policy, journal, encryption, versions, cost and failure injection live; the twin decides where the bytes go, and switching the backend is a setting. The S3 twin is built; EC2 and IAM are not.</figcaption></figure>
+<h2 id="in-short">In short</h2>
+<ul>
+<li><b>Workloads do not move because moving means changing code.</b> Every call to S3, EC2 and IAM is written into applications that work today. The cost of change is the risk, so most people stay, whatever the policy says.</li>
+<li><b>So the application must not know.</b> Not one line changes. The same calls land on a twin, an interface to a real system that is valued for one thing: the client cannot tell the difference. The destination becomes a setting. The S3 twin exists, as open source; EC2 and IAM do not yet.</li>
+<li><b>The reason to move is never sovereignty.</b> Nor cost reduction. Both are important and never urgent; they sit on the risk register, not on the decision. A migration carries risk, and the person signing it needs a return that lands the day they switch and gives them cover if it goes wrong.</li>
+<li><b>The value lives in the twin, because every call passes through it.</b> Backups that exist, every object version controlled, encryption with the key held elsewhere, a journal of every call, behaviour policies the agents cannot skip, cost per workload. That is a migration that pays on day one, and most of it is what an sgit vault behind the twin provides.</li>
+<li><b>No new features during the move.</b> It is a villager project, explorer to town planner. The moment a feature is added to it, it derails. The move is what makes the features possible afterwards; keep the two apart.</li>
+<li><b>It is a business for infrastructure operators</b>, in Romania, Portugal, the UK or anywhere in Europe: not "move to us", which sells risk, but "keep your code, point it at us, and come out with policies, journals, encryption and cost visibility", which sells value with the risk removed.</li>
+</ul>
+<h2 id="why">Why workloads do not move</h2>
+<p>Today I spent the day at an event about digital sovereignty, and one conversation, with the chief executive of an infrastructure company with a large footprint in Romania, kept coming back to the same point. Sovereignty has to work in practice, not in theory. And in practice the thing that stops it is not policy, regulation or price. It is code.</p>
+<p>Ask an organisation running on a hyperscaler why it has not moved and the honest answer is rarely that it loves its provider. It is that moving means changing the application. Every call to S3, every EC2 API, every IAM check is written into code that works today and that nobody wants to touch. Changing it means rewriting, retesting, and betting the business on a migration whose upside is mostly a principle. Some will do it. Most will not, and they are not wrong.</p>
+<p>The hyperscalers know this. AWS's answer to sovereignty in Europe, the AWS European Sovereign Cloud, <a href="https://press.aboutamazon.com/aws/2026/1/aws-launches-aws-european-sovereign-cloud-and-announces-expansion-across-europe">went live on 15 January 2026</a>: a separate cloud with its first region in Brandenburg, operated by EU residents, with, in AWS's words, "zero operational control outside of EU borders", and sovereign local zones planned for Belgium, the Netherlands and Portugal. That is a real step, and it also makes the point. Your code still talks to one vendor's API under one vendor's terms. Sovereignty that depends on one company's API is sovereignty by permission.</p>
+<p>If the option to move is to be real, the cost of change has to fall to almost nothing. That gives one hard requirement.</p>
+<h2 id="criterion">The criterion: the code must not know</h2>
+<p>The original application must not know that it is not running on a hyperscaler. Not one line of its source changes. It keeps calling S3, EC2 and IAM exactly as it does today, and underneath, those calls land on whatever we choose: another provider, the company's own data centre, a European operator, or a twin running in memory on a laptop.</p>
+<p>That is what I mean by a twin. Not the industry's version, a simulation valued for how faithfully it imitates a physical asset, but <a href="https://twins.sgit.ai/what-is-a-twin/index.html">an interface to a real system</a>, valued for whether the client can tell the difference. A mock is used by tests and measured by fidelity to the original's behaviour; a twin is used by production code, unmodified, with a real backend behind it, and measured by indistinguishability. The cost of switching a mock is a code path. The cost of switching a twin is an endpoint. If switching costs an endpoint, migration becomes a configuration decision. If it costs a code path, it becomes a project, and projects get cancelled.</p>
+<h2 id="s3">This is not theoretical: the S3 twin</h2>
+<p>The first piece is built, as open source. It is an S3-compatible container: code using boto3, the AWS CLI or any S3 SDK believes it is talking to S3, and the only thing that changes is where the endpoint points. Behind the same interface the files can be served from real S3, from an encrypted vault, from local disk or from memory, selected per environment, and <a href="https://twins.sgit.ai/built/index.html">the service's own code does not change</a>. Next to it is an IAM configuration risk engine, partly built, that treats IAM policies, S3 buckets and EC2 permissions as twins grounded in the real account. The bigger idea, twins as the layer that keeps a workload portable across clouds, is <a href="https://twins.sgit.ai/applications/index.html">designed, not finished</a>. I am being explicit about what exists and what does not, because this is exactly the kind of claim that should be checked.</p>
+<p>S3 is the right place to start because it is the service everything touches, it is the best specified, and it is already twinned. EC2 and IAM are harder, and that is where the engineering is. The pattern is the same each time: a wrapping layer between the customer and the cloud, where the destination is a setting.</p>
+<h2 id="reason">The reason to move is never sovereignty</h2>
+<figure class="shot" data-shot="mc-value.webp" data-dir="images/" data-alt="What signs a migration and what does not. Sovereignty, cost and any return that depends on a future event sit on the left; value that lands the day you switch, and gives the signer cover, sits on the right. Underneath, the rule for the project: no new features during the move." data-kind="decision"><figcaption>What signs a migration and what does not. Sovereignty, cost and any return that depends on a future event sit on the left; value that lands the day you switch, and gives the signer cover, sits on the right. Underneath, the rule for the project: no new features during the move.</figcaption></figure>
+<p>Here is the part I think matters most, and it is the theme of everything we build. The main reason to make a move like this must never be sovereignty, and it must never be cost reduction. Both are important. Neither is urgent. They are the kind of value that lands on the risk register under "important, not urgent" and stays there, because a migration always carries risk and nobody signs risk for a principle.</p>
+<p>The way I would put it is that you cannot do a move like this where the return depends on a future event that might occur, might not, and might not even be relevant to the people making the decision now. It is very hard for people to make that decision. They need cover: if anything goes wrong in the transition, there has to have been a value added on the way that anybody can point to. So whenever a solution like this is offered, there has to be a positive loop in it, and the loop has to close before the risk does.</p>
+<p>That is what the twin layer is for, because every call passes through it, and that is where the value goes:</p>
+<ul>
+<li><b>Backups that exist</b>, with a restore that was tested, because the twin can write to two places.</li>
+<li><b>Every object version controlled</b>: what changed, when, by whom, and a rollback that is a commit rather than a ticket.</li>
+<li><b>Encryption the operator cannot read.</b> Put an sgit vault behind the twin and the files land as ciphertext, with the key held by the customer and not by whoever runs the hardware. That is <a href="what-sgit-is.html">what sgit is</a>, and it is not a coincidence that it is on this list.</li>
+<li><b>A journal of every call.</b> Platform logs record that something happened, not what the caller saw or why. A twin keeps every request and response and can replay them later, which is the argument of <a href="connector-twin-before-you-deploy-an-agent.html">Before you give an agent a connector, give the connector a twin</a>.</li>
+<li><b>Behaviour policies the agents cannot skip.</b> More and more of the code calling these APIs is agents. The twin knows what the caller can reach, what it is meant to do, and the gap, and it enforces the barrier at a place the application cannot route around; <a href="the-behaviour-policy-is-the-business-logic.html">the behaviour policy is the business logic</a>, and <a href="footprint-and-blast-radius.html">footprint and blast radius</a> is how the gap is measured and priced.</li>
+<li><b>Cost per workload, visible before the invoice</b>, which is where <a href="agentic-cost-is-an-engineering-problem.html">agentic cost becomes an engineering problem</a> rather than a surprise.</li>
+<li><b>Data in a place where it can legally be traded or shared</b>, and a better understanding of what the data is, because the twin saw every byte go past.</li>
+</ul>
+<p>I will be honest that the list is still a little invisible to a signer; it needs to be sharper than this, and that is work for the next version. But version control and encryption with the key held elsewhere are each on their own a tangible, short-term return, and a journal with policies on top moves risk. That last point is the test: the move has to move the needle significantly on risks that sit at the top of the register, which is also why everything else in the move has to be de-risked first. A migration that lands versions, backups, encryption and a journal on day one, and takes an item off the top of the register, is a decision somebody can sign and defend. "It is in Europe now" is not.</p>
+<h2 id="villager">A villager move: no new features</h2>
+<p>The other rule is about the project itself. This is a pure villager move, from explorer to town planner in the terms of <a href="explorer-to-villager-newsroom.html">Go slow to go fast</a>: take something that works and make it boring, reliable and cheap, without changing what it does. When you do a project like this you cannot add new features. It is very tempting, and it is the moment everything derails, because now the migration is also a product change, and nobody can tell which of the two broke what. The argument people make is that the move is what will allow the features, and that argument is right; it is also exactly why the two must not be mixed. Move first, with the code unmodified and the twin adding its value underneath. Then, on the other side, add the features the move made possible.</p>
+<h2 id="testing">Testing goes to another level</h2>
+<p>There is a side effect that may end up mattering more than sovereignty. If the application cannot tell a twin from the real service, the same unmodified code can run against an in-memory twin, in milliseconds, on a developer's laptop; against a twin replaying last week's production journal; against a twin injecting the failures you never see in staging, a timeout, a throttle, a permission that disappears halfway through a job; and against the real service, for the final check. Today most teams test against mocks they wrote themselves and hope production behaves the same. With twins the environment becomes a setting rather than a guess, and that is a dramatic change in how much you can know before you ship.</p>
+<p>I would go further. Every piece of software should meet this requirement: it must be able to run, unmodified, against a twin of every external service it depends on, without knowing. Software that can only run against one provider's live API is software you cannot test properly, cannot move, and cannot put a policy in front of. That is too much risk to carry for something as basic as where your files live.</p>
+<h2 id="open">Why this has to be open source</h2>
+<p>None of this works if the twin layer is itself closed. Swap one vendor's API for another vendor's proprietary wrapper and the lock-in has moved, not gone. If you depend on somebody else's closed code you are one service agreement away from losing access, and that is the opposite of sovereignty. My view of open source here is not about community or generosity; it is about independence. You can read it, run it, fix it and move it, and that is <a href="https://open-source.sgit.ai/">a strategy, not a charity</a>. Trying to build sovereign infrastructure outside an open source strategy is going to struggle, and <a href="judo-for-small-countries.html">Judo for small countries</a>, written this afternoon for the same people, says why: there is no sovereignty without open source and open schemas, because sovereignty means you can leave.</p>
+<h2 id="business">The business model</h2>
+<p>This is another of the business models we publish, and it is for an infrastructure operator rather than for us. Selling "move to us" means selling risk. Selling "keep your code exactly as it is, point it at us, and gain versions, backups, encryption, a journal, policies and cost visibility on the way" means selling value with the risk removed. Every number below is a labelled assumption.</p>
+<ul>
+<li><b>Who pays.</b> An organisation with workloads on a hyperscaler, an application it will not rewrite, and at least one item on its risk register that the twin's journal and policies would move. The buyer is the person who owns that register line, not the person who owns the cloud bill.</li>
+<li><b>What they buy, in order.</b> First the twin in front of the real service, nothing moving: a monthly fee per workload for the journal, the versions and the policy report, which is value on its own and the only step with no migration risk. Then the backend switch, one environment at a time, priced per terabyte stored and per call journalled, with the vault's encryption and versions included rather than extra. Then the next service.</li>
+<li><b>Where the operator's margin is.</b> Storage and compute are commodities and should be priced as such; the margin is in the twin layer, the journal, the policy enforcement and the reports a regulator or an insurer will accept, because that is the custom-built part the customer would otherwise build badly. On the map it is the same reading as in <a href="why-i-love-wardley-maps.html">Why I love Wardley maps</a>: sell the custom layer above the commodity, not the commodity.</li>
+<li><b>Where sgit sits.</b> The vault is the storage the twin writes to when the customer wants the operator to hold what it cannot read, with a history and keys the customer keeps. It is open source, so the operator's customers are not locked to the operator either, which is the point and also the pitch.</li>
+<li><b>Why an operator in Romania, Portugal or the UK and not a hyperscaler.</b> The hyperscaler cannot sell indistinguishability from itself. A smaller operator can, and it stands on commodities the big players matured. It is the judo move: the customer's existing code, the hyperscaler's own API, and open source, all used as the weight rather than fought.</li>
+<li><b>Assumptions to check.</b> That the S3 API surface the twin covers is enough for the first customers; that a journal and a policy report move a real register line for them; that the per-call price survives contact with a chatty workload; that the first operator will fund the hardening.</li>
+</ul>
+<p>The build order for the operator: start with S3, because it is the most used, the best specified and already twinned. Run the twin in front of the real service first, same backend, every call journalled. Add behaviour policies at the twin and measure what they would have stopped. Then switch the backend one environment at a time. Then the next service. A team with strong engineers can get a first version working quickly, and a large part of the first pass can be generated with today's coding tools; then it has to be hardened and productised properly, because a twin earns trust only by being indistinguishable from the real thing, under load and at the edges.</p>
+<h2 id="limits">What this does not claim</h2>
+<ul>
+<li><b>The S3 twin is the only finished twin.</b> Its S3 API surface still needs confirming against the current repository. The IAM configuration engine is partial. EC2 and IAM twins as drop-in services are not built. The hyperscaler abstraction is designed, not shipped.</li>
+<li><b>Policy enforcement at the twin is the next step</b>, not a feature anyone can download today.</li>
+<li><b>The business model is for somebody else to run.</b> The prices are shapes, not quotes, and the assumptions are listed so they can be tested by the first operator.</li>
+<li><b>The value list is not finished.</b> I said above that it is still a little invisible to a signer; the next version of this needs the two or three returns that close the loop for a specific register line.</li>
+<li><b>The conversation is reported from one side.</b> The chief executive is not named and did not review this.</li>
+</ul>
+<p>If you run infrastructure, or you are on a hyperscaler and want to move without rewriting anything, write to <a href="mailto:agent@riskmandate.ai">agent@riskmandate.ai</a>.</p>
+<h2 id="sources">Where this comes from</h2>
+<p>Voice notes of mine on 12 October 2026 after a digital sovereignty event, first drafted by another of my agents from those notes and then rewritten by this site's agent in the voice of this site, with the sections on why sovereignty never signs a migration, the villager rule and the business model added from a second note the same evening. The argument and the editorial responsibility are mine. The twins are documented at <a href="https://twins.sgit.ai/">twins.sgit.ai</a>: <a href="https://twins.sgit.ai/what-is-a-twin/index.html">what a twin is</a>, <a href="https://twins.sgit.ai/built/index.html">what is built</a>, <a href="https://twins.sgit.ai/applications/index.html">the applications</a>. The AWS European Sovereign Cloud facts are from <a href="https://press.aboutamazon.com/aws/2026/1/aws-launches-aws-european-sovereign-cloud-and-announces-expansion-across-europe">AWS's announcement of 15 January 2026</a>. Agent Behaviour Policies are described at <a href="https://riskmandate.ai/agent-behaviour-policy.html">riskmandate.ai</a>; the open source argument at <a href="https://open-source.sgit.ai/">open-source.sgit.ai</a>; the platform line in <a href="where-the-platform-draws-the-line.html">Where the platform draws the line</a>.</p>
+<sg-meter view="page" kind="article" date="2026-10-12" topics="startups-and-strategy agents-and-policy" title="Move the cloud, not the code: twins, sovereignty that works in practice, and the migration that pays for itself on the day you switch, SGit Newsroom"></sg-meter>
+<section class="athreads" id="threads">
+ <h2>Threads</h2>
+ <p class="athreads-meta"><span class="tchip">Startups &amp; strategy</span><span class="tchip">Agents &amp; policy</span> <a href="graphs.html#move-the-cloud-not-the-code">This article as a graph &rarr;</a></p>
+ <div class="athreads-cols"><div><h3>Builds on</h3><ul><li><a href="what-sgit-is.html">Git for things you cannot put on GitHub</a> <span class="dim">sgit is git for files you cannot put on GitHub: encrypted before they leave your machine, versioned like git, stored where the server cannot read a byte.</span></li><li><a href="connector-twin-before-you-deploy-an-agent.html">Before you give an agent a connector, give the connector a twin</a> <span class="dim">An agent with a Gmail or Calendar connector can do things the platform cannot undo; a journal of every call, replayed, shows what it did and what can go back.</span></li><li><a href="the-behaviour-policy-is-the-business-logic.html">Zoom into an agent's behaviour policy and you find the business logic</a> <span class="dim">Below the first rules, an agent's behaviour policy is the business: functions, processes, clients, values. Layered, owned, counted, and where vendors plug in.</span></li><li><a href="footprint-and-blast-radius.html">Footprint and blast radius: what the agent actually did, and what it would have cost</a> <span class="dim">Footprint is what an agent actually did, read afterwards from logs and vault history; blast radius is what a row of its reach would cost the business today.</span></li><li><a href="agentic-cost-is-an-engineering-problem.html">Agentic cost is an engineering problem: a business plan for a service that reads the logs a company already has and finds the money, then the engineering</a> <span class="dim">A business plan: read the logs a company already has, draw each agent's footprint, twin and policy, and find the money first and the engineering second.</span></li><li><a href="explorer-to-villager-newsroom.html">Go slow to go fast: moving the newsroom from an explorer project to a villager one, with the brief to do it</a> <span class="dim">The newsroom is live and charging. Move the reader code to its own repo, same bytes and same bugs, then map, test, review and refactor before new features.</span></li><li><a href="judo-for-small-countries.html">Judo for small countries: where Portugal, Romania and Estonia can add the most value in AI, and why the race for GPUs is not it</a> <span class="dim">A small country should not race for GPUs: the opportunity is the plumbing its talent stands on, built once as open infrastructure, with small models.</span></li><li><a href="why-i-love-wardley-maps.html">Why I love Wardley maps: the best of ours, how I read one, and a map inside a map inside a map</a> <span class="dim">The best of our Wardley maps with their context, why the technique matters, one map read as a story, and a map inside a map inside a map.</span></li><li><a href="where-the-platform-draws-the-line.html">Where the platform draws the line: Microsoft Execution Containers, the shared responsibility model for agents, and the business logic above it</a> <span class="dim">Microsoft's MXC and ACS, briefed field by field and mapped to Agent Behaviour Policies: the platform bounds what it can see; the business logic is above.</span></li></ul></div></div>
+ <p class="small dim"><a href="index.html">All articles</a> &middot; <a href="graphs.html">All graphs</a></p>
+ <p class="small dim">Article No. 92 &middot; <a href="../for/make.html#r=92">start a reading list with it</a></p>
+</section>
+ <p class="subteaser"><b>Want the next issue by email.</b> One issue a week or so: what was published, what it adds up to, and what is worth your time. <a class="cta2" href="../subscribe/index.html">Subscribe to the SGit Newsroom &rarr;</a></p>
+ <p class="small dim" style="margin-top:2rem"><a href="index.html">&larr; All articles</a></p>
+</main>
+<script>
+(function () {
+ fetch('../assets/shots.js?v=v0.7.79')
+ .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+ .then(function (t) { (0, eval)(t); })
+ .catch(function (e) { console.error('[shots] component failed to load:', e); });
+}());
+</script>
+<script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": "https://buy.stripe.com/6oUfZ9ez65vVgU2fY15os04"}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
+<script>
+import('../assets/components/sg-meter/v1/v1.4/v1.4.0/sg-meter.js?v=v0.7.79')
+ .catch(function (e) { console.error('[sg-meter] component failed to load:', e); });
+</script>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="netline"><a href="https://sgit.ai" style="display:inline;padding:0"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://pt.newsroom.sgit.ai" style="display:inline;padding:0">&#8593; pt.newsroom.sgit.ai</a> &middot; <a href="https://graphs.sgit.ai" style="display:inline;padding:0">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai" style="display:inline;padding:0">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai" style="display:inline;padding:0">&#8593; nhi.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai" style="display:inline;padding:0">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../admin/versions.html">v0.12.2</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="move-the-cloud-not-the-code.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../index.html">&#8594; The front page</a>
+    <a href="../wire/index.html">The Industry Wire</a>
+    <a href="../articles/index.html#all">Every article</a>
+    <a href="../articles/newsletter/index.html">The newsletter</a>
+    <a href="../articles/collections/index.html">Collections</a>
+    <a href="../articles/desk/index.html">From the desk</a>
+    <a href="../articles/graphs.html">As graphs</a>
+    <a href="../subscribe/index.html">Subscribe</a>
+    <a href="../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../account/index.html">Your reading account</a>
+    <a href="../account/newsroom.html">Your newsroom</a>
+    <a href="../account/personas.html">Your personas</a>
+    <a href="../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../newsroom/index.html">How the newsroom runs</a>
+    <a href="../newsroom/policies.html">Behaviour policies</a>
+    <a href="../newsroom/publish.html">How to publish</a>
+    <a href="../newsroom/board.html">The board</a>
+    <a href="../newsroom/log.html">The run log</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../design/index.html">The design, and what runs</a>
+    <a href="../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../corrections/index.html">Corrections must propagate</a>
+    <a href="../provenance/index.html">Provenance is the product</a>
+    <a href="../economics/index.html">Paying the fact creator</a>
+    <a href="../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../replicate/index.html">Replicate this newsroom</a>
+    <a href="../publishers/index.html">For publishers</a>
+    <a href="../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+    <a href="../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../archive/index.html">The archive</a>
+    <a href="../network/index.html">The network</a>
+    <a href="../admin/versions.html">Release history</a>
+    <a href="../admin/index.html">Admin &amp; engineering</a>
+    <a href="../about/participant.html">Where we lose</a>
+    <a href="../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+
+<script>
+(function(){var R=document.documentElement.getAttribute('data-root')||'';var V='?v=' + 'v0.7.79';var C=[R,'','../','/'].filter(function(v,i,a){return a.indexOf(v)===i});
+function wait(ms){return new Promise(function(res){var t=Date.now();(function p(){if(window.sg)return res(window.sg);if(Date.now()-t>ms)return res(null);setTimeout(p,60)})()})}
+function grab(sg,p){return new Promise(function(res){(async function(){if(sg&&sg.vfs&&sg.vfs.readText){try{var t=await sg.vfs.readText(p);if(t)return res(t)}catch(e){}}try{var r=await fetch(p+V);if(r.ok)return res(await r.text())}catch(e){}res(null)})()})}
+async function css(sg){for(var i=0;i<C.length;i++){var p=C[i]+'assets/newsroom.css';if(sg&&sg.loadCss){try{await sg.loadCss(p);return}catch(e){}}var t=await grab(sg,p);if(t){var s=document.createElement('style');s.textContent=t;document.head.appendChild(s);return}}}
+async function js(sg,name){name=name||'assets/site.js';for(var i=0;i<C.length;i++){var p=C[i]+name;if(sg&&sg.loadJs){try{await sg.loadJs(p);return}catch(e){}}var t=await grab(sg,p);if(t){try{(0,eval)(t)}catch(e){console.error('[site] js failed',name,e)}return}}}
+async function boot(){var inVault=false;try{inVault=(window!==window.parent)||location.protocol==='blob:'}catch(e){inVault=true}
+var sg=inVault?await wait(2500):null;window.__sgitBoot={roots:C,grab:function(p){return grab(sg,p)},version:V};await css(sg);await js(sg);document.documentElement.classList.add('ready');try{window.parent&&window.parent.postMessage({type:'sg-app-ready'},'*')}catch(e){}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+var mine=V.slice(3),last=0;
+function fresh(){if(location.hostname!=='sgit.ai'||Date.now()-last<60000)return;last=Date.now();
+fetch('/version.txt?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(t){t=(t||'').trim();if(!/^v[0-9]+[.][0-9]+[.][0-9]+$/.test(t)||t===mine)return;
+var k='sgit.fresh:'+location.pathname;try{if(sessionStorage.getItem(k)===t)return;sessionStorage.setItem(k,t)}catch(e){}
+var u=new URL(location.href);u.searchParams.set('v',t);location.replace(u.href)}).catch(function(){})}
+try{var u=new URL(location.href);if(u.searchParams.get('v')===mine){u.searchParams.delete('v');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}
+fresh();addEventListener('pageshow',function(e){if(e.persisted){last=0;fresh()}});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')fresh()});
+})();
+</script>
+</body>
+</html>

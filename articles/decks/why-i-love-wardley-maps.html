@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en" data-root="../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Why I love Wardley maps, a deck, SGit Newsroom</title>
+<meta name="description" content="Twelve slides from the article of the same name: a map as a graph with two kinds of context, the evolution axis as a choice, every dot a claim, altitude, build or buy, whether a market exists with sgit and RiskMandate as the two answers, flow and hooks, a common language, maps that nest, and an invitation. Prints to PDF in the browser, one slide per page.">
+<link rel="canonical" href="https://newsroom.sgit.ai/articles/decks/why-i-love-wardley-maps.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SGit Newsroom">
+<meta property="og:url" content="https://newsroom.sgit.ai/articles/decks/why-i-love-wardley-maps.html">
+<meta property="og:title" content="Why I love Wardley maps, a deck, SGit Newsroom">
+<meta property="og:description" content="Twelve slides from the article of the same name: a map as a graph with two kinds of context, the evolution axis as a choice, every dot a claim, altitude, build or buy, whether a market exists with sgit and RiskMandate as the two answers, flow and hooks, a common language, maps that nest, and an invitation. Prints to PDF in the browser, one slide per page.">
+<meta property="og:image" content="https://newsroom.sgit.ai/og/why-i-love-wardley-maps.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Why I love Wardley maps, a deck, SGit Newsroom">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://newsroom.sgit.ai/og/why-i-love-wardley-maps.jpg">
+<link rel="alternate" type="text/markdown" href="why-i-love-wardley-maps.md" title="This page as markdown">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Why I love Wardley maps, a deck, SGit Newsroom", "headline": "Why I love Wardley maps, a deck, SGit Newsroom", "description": "Twelve slides from the article of the same name: a map as a graph with two kinds of context, the evolution axis as a choice, every dot a claim, altitude, build or buy, whether a market exists with sgit and RiskMandate as the two answers, flow and hooks, a common language, maps that nest, and an invitation. Prints to PDF in the browser, one slide per page.", "url": "https://newsroom.sgit.ai/articles/decks/why-i-love-wardley-maps.html", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "SGit Newsroom", "url": "https://newsroom.sgit.ai"}, "about": {"@type": "SoftwareApplication", "name": "sgit", "sameAs": "https://pypi.org/project/sgit-ai/"}}</script>
+<style>html{background:#faf9f5}body{margin:0;background:#faf9f5;color:#1c1d21;font-family:ui-sans-serif,system-ui,sans-serif;opacity:0;transition:opacity .25s;animation:sg-reveal 0s linear 1.6s forwards}html.ready body{opacity:1;animation:none}@keyframes sg-reveal{to{opacity:1}}</style><noscript><style>body{opacity:1;animation:none}</style></noscript>
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <a class="brand" href="../../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../../admin/versions.html" title="Site release history">v0.12.2</a>
+  <sg-meter class="meter-nav" view="balance"></sg-meter>
+  <button class="vault-btn" type="button" aria-expanded="false" title="Your vault: the reading account carried between your devices"><span class="dot"></span>Vault</button>
+  <link rel="stylesheet" href="../../assets/vault-pane/vault-pane.css">
+  <script type="module" src="../../assets/vault-pane/vault-pane.js"></script>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl here" href="../../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../index.html">Front page</a>
+      <a class="sl" href="../../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../../articles/index.html#all">Every article</a>
+      <a class="sl" href="../../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../../persona/index.html">Read as a persona</a>
+      <a class="sl" href="../../for/make.html">Make a reading list</a>
+      <a class="sl" href="../../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../wire/index.html">Industry Wire<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../wire/index.html">Today's edition</a>
+      <a class="sl" href="../../wire/sources.html">The sources</a>
+      <a class="sl" href="../../wire/how.html">How the wire works</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../account/index.html">Your reading account</a>
+      <a class="sl" href="../../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../../account/personas.html">Your personas</a>
+      <a class="sl" href="../../account/top-up.html">Top up</a>
+      <a class="sl" href="../../vault/index.html">Your vault, between devices</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../../newsroom/board.html">The board</a>
+      <a class="sl" href="../../newsroom/log.html">The run log</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../../publishers/index.html">For publishers: what is live, how to try it</a>
+      <a class="sl" href="../../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+      <a class="sl" href="../../demos/vaults/newsroom-synthetic-users/index.html">The study: five readers tested this site</a>
+      <a class="sl" href="../../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../../newsroom-api/index.html">The reader API: a map, and a review</a>
+      <a class="sl" href="../../passkey/index.html">The passkey lab</a>
+      <a class="sl" href="../../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../world-news-day/index.html">World News Day<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../world-news-day/index.html">The corpus</a>
+      <a class="sl" href="../../world-news-day/stories/free-to-republish-is-not-a-licence.html">Free to republish is not a licence</a>
+      <a class="sl" href="../../world-news-day/licences.html">The licence that is not there</a>
+      <a class="sl" href="../../world-news-day/corpus.html">The twenty-one</a>
+      <a class="sl" href="../../world-news-day/findings.html">The aggregate</a>
+      <a class="sl" href="../../world-news-day/terms.html">The vocabulary</a>
+      <a class="sl" href="../../world-news-day/graph.html">The graph</a>
+      <a class="sl" href="../../world-news-day/sources.html">Sources</a>
+      <a class="sl" href="../../world-news-day/contacts.html">How to reach them</a>
+      <a class="sl" href="../../world-news-day/vault.html">Published vaults</a>
+      <a class="sl" href="../../world-news-day/vaults/corpus.html">The vault, opened</a>
+      <a class="sl" href="../../world-news-day/method.html">Method</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../archive/index.html">The archive</a>
+      <a class="sl" href="../../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../../network/index.html">The network</a>
+      <a class="sl" href="../../admin/versions.html">Release history</a>
+      <a class="sl" href="../../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../../engineering/index.html">Engineering: issues &amp; releases</a>
+      <a class="sl" href="../../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom">&#9733; GitHub</a>
+</div></nav>
+
+<div class="llmschip"><a href="../../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.12.2</span></a></div>
+<main class="doc deck">
+  <p class="crumb"><a href="../../index.html">Home</a> / <a href="../index.html">Newsroom</a> / <a href="../why-i-love-wardley-maps.html">Why I love Wardley maps</a> / Deck</p>
+  <div class="deck-top">
+    <div><p class="eyebrow">A deck from the article of the same name</p><h1>Why I love Wardley maps</h1><p class="lead">The explanation, using the maps drawn on this site as the examples. Twelve slides.</p></div>
+    <div class="deck-tools"><button type="button" class="deck-print" id="deck-print">Print, or save as PDF</button><span class="deck-n small dim">12 slides. Arrow keys move; one slide per page when printed, landscape, nothing uploaded.</span></div>
+  </div>
+  <section class="slide slide--fig slide--cover" id="s1" aria-label="Slide 1 of 12">
+    <div class="slide-text"><p class="slide-k">1 / 12</p><h2>Why I love Wardley maps</h2><p>The best of the maps drawn on sgit.ai, with the context each came from, and the reasons the technique matters to me.</p><p>Dinis Cruz, 12 October 2026. Every placement on every map is a claim, not a measurement.</p></div>
+    <div class="slide-fig"><figure class="shot" data-shot="wm-best-of.webp" data-dir="../images/" data-alt="Nine maps from this site, one of them three maps deep."><figcaption>Nine maps from this site, one of them three maps deep.</figcaption></figure></div>
+  </section>
+  <section class="slide slide--fig" id="s2" aria-label="Slide 2 of 12">
+    <div class="slide-text"><p class="slide-k">2 / 12</p><h2>A map is a graph with two kinds of context</h2><p><b>Down the page</b>: a value chain. A person and a need at the top; under them, the things that need exists on; under those, what they stand on.</p><p><b>Across the page</b>: evolution. How far each piece has travelled from a new idea to something bought by the unit.</p><p>Nothing else about the drawing matters much. Those two directions are what make it useful.</p></div>
+    <div class="slide-fig"><figure class="shot" data-shot="ms-map-user.webp" data-dir="../images/" data-alt="The mandate stack from the outside: a person who writes to the team at the top; what they see is custom, what they do not see is product or commodity."><figcaption>The mandate stack from the outside: a person who writes to the team at the top; what they see is custom, what they do not see is product or commodity.</figcaption></figure></div>
+  </section>
+  <section class="slide" id="s3" aria-label="Slide 3 of 12">
+    <div class="slide-text"><p class="slide-k">3 / 12</p><h2>The evolution axis is a choice</h2><p>Genesis, custom built, product, commodity is Simon Wardley's scale and the one on every map here.</p><p>It is not the only one. Risk can be the axis. Data can be the axis. Governance can be the axis. The map places things against a scale you chose because it answers your question.</p><p>In 2022 I gave a talk at the Open Security Summit called <i>Why Wardley Maps changed how I think</i>: eleven shifts in how a problem is seen. This deck is the shorter list I use now.</p></div>
+  </section>
+  <section class="slide slide--fig" id="s4" aria-label="Slide 4 of 12">
+    <div class="slide-text"><p class="slide-k">4 / 12</p><h2>Every dot is a claim about something real</h2><p>A map you cannot be wrong about is a diagram.</p><p>Every placement here says: this thing exists, it sits there in the chain, and it is about that mature. The caption says so, and the footer says "a map, not a measurement".</p><p>That is why the maps are useful in an argument: there is something to disagree with, line by line.</p></div>
+    <div class="slide-fig"><figure class="shot" data-shot="lv-wardley.webp" data-dir="../images/" data-alt="Which shoulders the passkey work stands on: almost everything under it is somebody else&#x27;s mature product, and the one custom layer sits where a provider is not yet mature."><figcaption>Which shoulders the passkey work stands on: almost everything under it is somebody else&#x27;s mature product, and the one custom layer sits where a provider is not yet mature.</figcaption></figure></div>
+  </section>
+  <section class="slide slide--fig" id="s5" aria-label="Slide 5 of 12">
+    <div class="slide-text"><p class="slide-k">5 / 12</p><h2>Altitude: are you polishing the wrong layer?</h2><p>Most effort goes into components the user never touches. The vertical axis shows it.</p><p>On the left of this map is a blob of six things rebuilt by hand in a prompt every session, three layers under the need. Files, hashes and git sit at the far right, unused.</p><p>The question is always: what moved this week, and did anything above it notice?</p></div>
+    <div class="slide-fig"><figure class="shot" data-shot="cx-map-now.webp" data-dir="../images/" data-alt="Every mistake added a rule, map one: the verification as it ran, with the custom blob on the left and the commodities on the right, unused."><figcaption>Every mistake added a rule, map one: the verification as it ran, with the custom blob on the left and the commodities on the right, unused.</figcaption></figure></div>
+  </section>
+  <section class="slide slide--fig" id="s6" aria-label="Slide 6 of 12">
+    <div class="slide-text"><p class="slide-k">6 / 12</p><h2>Build or buy, settled by the column</h2><p>Product or commodity: buy it, rent it, vendor it.</p><p>Genesis or custom built, on your path to the user: build it, because nobody else will build it the way you need.</p><p>Most build-or-buy arguments are two people drawing the same component in different columns. Here everything new is on the left and every one of them stands on something on the right that already existed.</p></div>
+    <div class="slide-fig"><figure class="shot" data-shot="pv-wardley-today.webp" data-dir="../images/" data-alt="The reading meter at the end of one afternoon: everything added that day on the left, built on what already existed on the right."><figcaption>The reading meter at the end of one afternoon: everything added that day on the left, built on what already existed on the right.</figcaption></figure></div>
+  </section>
+  <section class="slide" id="s7" aria-label="Slide 7 of 12">
+    <div class="slide-text"><p class="slide-k">7 / 12</p><h2>Does the market exist?</h2><p>The question most people have never asked of their own product.</p><p><b>A commoditised layer is a hard sell.</b> The buyer already has it, cheaper, from somebody with a bigger name.</p><p><b>A layer where everyone is custom building on top of a commodity is a market.</b> Each of those builders would rather buy.</p><p>The map answers differently for the two businesses on this site.</p></div>
+  </section>
+  <section class="slide" id="s8" aria-label="Slide 8 of 12">
+    <div class="slide-text"><p class="slide-k">8 / 12</p><h2>Two answers: sgit and RiskMandate</h2><div class="slide-cols"><div><h3>sgit</h3><p>Storage, version control, encryption: all commodities, all hard to sell on their own.</p><p>Above them, everyone wanting a private, versioned, shareable unit of work is custom building one. That is the vault.</p><p>The market is the custom building above the commodities; the product lets a customer keep building above a vault instead of below it.</p></div><div><h3>RiskMandate</h3><p>A product: mandate, footprint, behaviour policy, the record of what an agent did against what it was allowed.</p><p>In the last year agents became a commodity. The dot below moved right, so the opportunity moved up.</p><p>Agent behaviour is all genesis and custom built today, inside prompts and spreadsheets. That is the shape of a market that exists.</p></div></div></div>
+  </section>
+  <section class="slide slide--fig" id="s9" aria-label="Slide 9 of 12">
+    <div class="slide-text"><p class="slide-k">9 / 12</p><h2>Flow, attrition, and where to hook</h2><p>A map shows the flow from the need down to what serves it, and where the flow leaks: the dependencies that are slow, immature, or owned by somebody else.</p><p>The commodity end has names. Apple, Google, Stripe, git. Drawing them puts the people you depend on and the people you could plug into on the same page as your own pieces.</p><p>Where to hook: which mature component can you stand on, so that your custom piece is small?</p></div>
+    <div class="slide-fig"><figure class="shot" data-shot="ac-wardley-2.webp" data-dir="../images/" data-alt="Agentic cost, frame two: what the service adds, from what is already there. It reads the logs that exist; nothing is installed in the customer&#x27;s estate."><figcaption>Agentic cost, frame two: what the service adds, from what is already there. It reads the logs that exist; nothing is installed in the customer&#x27;s estate.</figcaption></figure></div>
+  </section>
+  <section class="slide slide--fig" id="s10" aria-label="Slide 10 of 12">
+    <div class="slide-text"><p class="slide-k">10 / 12</p><h2>A common language, and many maps</h2><p>Two people with a map argue about positions. Two people without one argue about words.</p><p>This business was mapped twice, from the outside and from the inside, because each side of the team sees a different chain. The two maps made the difference discussable.</p><p>None of the maps is the map. A user's chain, a team's chain, a feature's chain, a day's chain; this site has nine so far because that is how they are used.</p></div>
+    <div class="slide-fig"><figure class="shot" data-shot="ms-map-team.webp" data-dir="../images/" data-alt="The mandate stack from the inside: the person running the business at the top, and dashed arrows for the movement the team is making."><figcaption>The mandate stack from the inside: the person running the business at the top, and dashed arrows for the movement the team is making.</figcaption></figure></div>
+  </section>
+  <section class="slide slide--fig" id="s11" aria-label="Slide 11 of 12">
+    <div class="slide-text"><p class="slide-k">11 / 12</p><h2>Every node is a map</h2><p>Zoom into a dot and it becomes the anchor of the next map, at the same place on the evolution axis, because the maturity of a thing does not change when you look inside it.</p><p>Three altitudes of this business: the vault is a dot on the business map and the anchor of the vault map; the door is a dot on that one and the anchor of the door map.</p><p>It goes up as well as down. Above the business map is the market it sits in. Choose the altitude first, then the dot.</p></div>
+    <div class="slide-fig"><figure class="shot" data-shot="wm-fractal.webp" data-dir="../images/" data-alt="A map inside a map inside a map: three altitudes of one business, the dot of each becoming the anchor of the next."><figcaption>A map inside a map inside a map: three altitudes of one business, the dot of each becoming the anchor of the next.</figcaption></figure></div>
+  </section>
+  <section class="slide" id="s12" aria-label="Slide 12 of 12">
+    <div class="slide-text"><p class="slide-k">12 / 12</p><h2>Peace, and an invitation</h2><p>Once a thing is on a map, placed and connected, I stop carrying it in my head. Most of the anxiety turns out to be about things far from the user.</p><p>Everything in this deck is published: the maps as source, the figures as data in every article's graph at sgit.ai/articles/graphs.json, and the article this comes from.</p><p>If you map, and any of this is wrong, that is exactly what the maps are for: <a href="mailto:agent@riskmandate.ai">agent@riskmandate.ai</a>.</p></div>
+  </section>
+  <p class="small dim deck-foot">The other deck: <a href="reading-one-map.html">Reading one map</a>. The article both come from: <a href="../why-i-love-wardley-maps.html">Why I love Wardley maps</a>. Every map is a claim by its author, not a measurement.</p>
+</main>
+<style>@page{size:A4 landscape;margin:10mm}</style>
+<script>
+(function () {
+  var b = document.getElementById('deck-print');
+  if (b) b.addEventListener('click', function () { window.print(); });
+  var slides = [].slice.call(document.querySelectorAll('section.slide'));
+  function at() { var y = window.scrollY + 80; for (var i = slides.length - 1; i >= 0; i--) if (slides[i].offsetTop <= y) return i; return 0; }
+  document.addEventListener('keydown', function (e) {
+    if (e.target && /input|textarea|select/i.test(e.target.tagName)) return;
+    var i = at(), j = i;
+    if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') j = Math.min(i + 1, slides.length - 1);
+    else if (e.key === 'ArrowLeft' || e.key === 'PageUp') j = Math.max(i - 1, 0);
+    else if (e.key === 'Home') j = 0; else if (e.key === 'End') j = slides.length - 1; else return;
+    e.preventDefault(); slides[j].scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+}());
+</script>
+<script>
+(function () {
+ fetch('../../assets/shots.js?v=v0.7.79')
+ .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+ .then(function (t) { (0, eval)(t); })
+ .catch(function (e) { console.error('[shots] component failed to load:', e); });
+}());
+</script>
+<sg-meter view="page" kind="page" date="" topics="" title="Why I love Wardley maps, a deck, SGit Newsroom" quiet></sg-meter>
+<script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": "https://buy.stripe.com/6oUfZ9ez65vVgU2fY15os04"}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
+<script>
+import('../../assets/components/sg-meter/v1/v1.4/v1.4.0/sg-meter.js?v=v0.7.79')
+ .catch(function (e) { console.error('[sg-meter] component failed to load:', e); });
+</script>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="netline"><a href="https://sgit.ai" style="display:inline;padding:0"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://pt.newsroom.sgit.ai" style="display:inline;padding:0">&#8593; pt.newsroom.sgit.ai</a> &middot; <a href="https://graphs.sgit.ai" style="display:inline;padding:0">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai" style="display:inline;padding:0">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai" style="display:inline;padding:0">&#8593; nhi.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai" style="display:inline;padding:0">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../../admin/versions.html">v0.12.2</a> &middot; <a href="../../admin/index.html">engineering</a> &middot; <a href="why-i-love-wardley-maps.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../../index.html">&#8594; The front page</a>
+    <a href="../../wire/index.html">The Industry Wire</a>
+    <a href="../../articles/index.html#all">Every article</a>
+    <a href="../../articles/newsletter/index.html">The newsletter</a>
+    <a href="../../articles/collections/index.html">Collections</a>
+    <a href="../../articles/desk/index.html">From the desk</a>
+    <a href="../../articles/graphs.html">As graphs</a>
+    <a href="../../subscribe/index.html">Subscribe</a>
+    <a href="../../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../../account/index.html">Your reading account</a>
+    <a href="../../account/newsroom.html">Your newsroom</a>
+    <a href="../../account/personas.html">Your personas</a>
+    <a href="../../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../../newsroom/index.html">How the newsroom runs</a>
+    <a href="../../newsroom/policies.html">Behaviour policies</a>
+    <a href="../../newsroom/publish.html">How to publish</a>
+    <a href="../../newsroom/board.html">The board</a>
+    <a href="../../newsroom/log.html">The run log</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../../design/index.html">The design, and what runs</a>
+    <a href="../../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../../corrections/index.html">Corrections must propagate</a>
+    <a href="../../provenance/index.html">Provenance is the product</a>
+    <a href="../../economics/index.html">Paying the fact creator</a>
+    <a href="../../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../../replicate/index.html">Replicate this newsroom</a>
+    <a href="../../publishers/index.html">For publishers</a>
+    <a href="../../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+    <a href="../../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../../archive/index.html">The archive</a>
+    <a href="../../network/index.html">The network</a>
+    <a href="../../admin/versions.html">Release history</a>
+    <a href="../../admin/index.html">Admin &amp; engineering</a>
+    <a href="../../about/participant.html">Where we lose</a>
+    <a href="../../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+
+<script>
+(function(){var R=document.documentElement.getAttribute('data-root')||'';var V='?v=' + 'v0.7.79';var C=[R,'','../','/'].filter(function(v,i,a){return a.indexOf(v)===i});
+function wait(ms){return new Promise(function(res){var t=Date.now();(function p(){if(window.sg)return res(window.sg);if(Date.now()-t>ms)return res(null);setTimeout(p,60)})()})}
+function grab(sg,p){return new Promise(function(res){(async function(){if(sg&&sg.vfs&&sg.vfs.readText){try{var t=await sg.vfs.readText(p);if(t)return res(t)}catch(e){}}try{var r=await fetch(p+V);if(r.ok)return res(await r.text())}catch(e){}res(null)})()})}
+async function css(sg){for(var i=0;i<C.length;i++){var p=C[i]+'assets/newsroom.css';if(sg&&sg.loadCss){try{await sg.loadCss(p);return}catch(e){}}var t=await grab(sg,p);if(t){var s=document.createElement('style');s.textContent=t;document.head.appendChild(s);return}}}
+async function js(sg,name){name=name||'assets/site.js';for(var i=0;i<C.length;i++){var p=C[i]+name;if(sg&&sg.loadJs){try{await sg.loadJs(p);return}catch(e){}}var t=await grab(sg,p);if(t){try{(0,eval)(t)}catch(e){console.error('[site] js failed',name,e)}return}}}
+async function boot(){var inVault=false;try{inVault=(window!==window.parent)||location.protocol==='blob:'}catch(e){inVault=true}
+var sg=inVault?await wait(2500):null;window.__sgitBoot={roots:C,grab:function(p){return grab(sg,p)},version:V};await css(sg);await js(sg);document.documentElement.classList.add('ready');try{window.parent&&window.parent.postMessage({type:'sg-app-ready'},'*')}catch(e){}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+var mine=V.slice(3),last=0;
+function fresh(){if(location.hostname!=='sgit.ai'||Date.now()-last<60000)return;last=Date.now();
+fetch('/version.txt?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(t){t=(t||'').trim();if(!/^v[0-9]+[.][0-9]+[.][0-9]+$/.test(t)||t===mine)return;
+var k='sgit.fresh:'+location.pathname;try{if(sessionStorage.getItem(k)===t)return;sessionStorage.setItem(k,t)}catch(e){}
+var u=new URL(location.href);u.searchParams.set('v',t);location.replace(u.href)}).catch(function(){})}
+try{var u=new URL(location.href);if(u.searchParams.get('v')===mine){u.searchParams.delete('v');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}
+fresh();addEventListener('pageshow',function(e){if(e.persisted){last=0;fresh()}});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')fresh()});
+})();
+</script>
+</body>
+</html>

@@ -2,7 +2,7 @@
 
 > Markus Franz published "The Article Is Only the Beginning" on 7 October 2026, proposing Liquid Utility, journalism that helps people understand, follow and act rather than only read, and six Reader Skills to deliver it, with a bridge closure as the example. He then wrote, under my comment, that his idea and the story vault connect at an architectural level: the story vault answers what we know and why it can be trusted, Reader Skills answer what we can reliably help someone do with it. This article draws that connection. Each of his six skills turns out to be an operation the story graph already supports, and each safeguard he asks for is a property the graph already has: versions for Update, supersede edges for corrections, freshness for "could not check", a flag at the node for protected sources. His bridge is drawn as a graph. And his article adds the piece our monetisation had not mapped: locality, where the trust relationship and the brand are strongest. Local contributors feed local journalists, local stories feed national and international ones, and if every use pays back down the chain of claims it rests on, small payments from many people fund the reporting nearest to them.
 
-*Source: <https://newsroom.sgit.ai/articles/story-vault-meets-reader-skills.html> · sgit.ai v0.7.70 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/story-vault-meets-reader-skills.html> · sgit.ai v0.7.79 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 

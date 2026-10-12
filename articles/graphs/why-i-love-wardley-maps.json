@@ -1,0 +1,314 @@
+{
+  "slug": "why-i-love-wardley-maps",
+  "teaser": "The best of our Wardley maps with their context, why the technique matters, one map read as a story, and a map inside a map inside a map.",
+  "topics": [
+    "startups-and-strategy",
+    "site-and-engineering"
+  ],
+  "core_idea": "A Wardley map is a graph with context in two directions, a value chain anchored on a user and an evolution axis that is a choice rather than a fixed scale; read well it says what is moving the needle, whether you are optimising at the wrong altitude, what to build and what to buy, and whether a market exists, where a commoditised layer is a hard sell and custom building on top of one is the market, which answers differently for sgit and for RiskMandate; a map is a story to be read out frame by frame; every node is a map of its own, with the dot's place on the parent as the child's anchor; and the maps on this site are now published as data in each article's graph.",
+  "nodes": [
+    {
+      "id": "two-contexts",
+      "label": "A map is a graph with two kinds of context",
+      "kind": "concept",
+      "summary": "Vertical: a value chain anchored on a person and a need, down to its dependencies. Horizontal: evolution, how mature each piece is."
+    },
+    {
+      "id": "axis-choice",
+      "label": "The evolution axis is a choice",
+      "kind": "claim",
+      "summary": "Genesis to commodity is one scale; risk, data and governance can each be the axis. The map places things against a scale chosen for the question."
+    },
+    {
+      "id": "reality",
+      "label": "Every dot is a claim about something real",
+      "kind": "claim",
+      "summary": "A map you cannot be wrong about is a diagram; positions are judgements and the judgements are the argument."
+    },
+    {
+      "id": "altitude",
+      "label": "Optimising at the wrong altitude",
+      "kind": "concept",
+      "summary": "Polishing a component three layers below the need while the layer the user touches has not changed; the vertical axis makes it visible."
+    },
+    {
+      "id": "build-buy",
+      "label": "Build or buy, settled by the column",
+      "kind": "method",
+      "summary": "Product or commodity: buy or vendor. Genesis or custom built on the path to the user: build."
+    },
+    {
+      "id": "market",
+      "label": "Does the market exist",
+      "kind": "method",
+      "summary": "A commoditised layer is a hard sell; a layer where everyone is custom building on top of commodities is a market."
+    },
+    {
+      "id": "sgit-market",
+      "label": "sgit: the market is above the commodities",
+      "kind": "example",
+      "summary": "Storage, version control and encryption are commodities and hard to sell; the vault is the custom layer everyone was building on top, and the product lets customers keep building above it."
+    },
+    {
+      "id": "riskmandate-market",
+      "label": "RiskMandate: the layer below moved",
+      "kind": "example",
+      "summary": "Agents became a commodity in the last year, so the opportunity moved up to agent behaviour, which is all genesis and custom built."
+    },
+    {
+      "id": "attrition",
+      "label": "What is moving the needle, and where the flow leaks",
+      "kind": "concept",
+      "summary": "Which components moved and whether anything above them noticed; the attrition points are the slow, immature or borrowed dependencies, and where to hook is the mature component the custom piece can stand on."
+    },
+    {
+      "id": "language",
+      "label": "A common language, and many maps",
+      "kind": "claim",
+      "summary": "Two people with a map argue about positions, without one they argue about words; the same business is mapped from different angles and altitudes, and none of them is the map."
+    },
+    {
+      "id": "peace",
+      "label": "The peace of a placed thing",
+      "kind": "claim",
+      "summary": "Once a thing is on a map, placed and connected, it leaves the head; most anxiety turns out to be about things far from the user."
+    },
+    {
+      "id": "story",
+      "label": "A map is a story to read out, frame by frame",
+      "kind": "method",
+      "summary": "Where is the user, what is new, what does it stand on, where did the movement happen, where did we walk back, where would somebody else hook in, what is next; the afternoon map read in eight frames."
+    },
+    {
+      "id": "fractal",
+      "label": "A map inside a map inside a map",
+      "kind": "concept",
+      "summary": "Every node is a map, as every node of a fractal semantic graph is a graph; the dot's place on the parent's evolution axis is the child's anchor; three altitudes of this business drawn as one figure."
+    },
+    {
+      "id": "figures-data",
+      "label": "The maps published as data, as decks, and with controls",
+      "kind": "artefact",
+      "summary": "Every figure now sits in its article's graph with file, URL, caption, kind and frames, so every Wardley map on the site is one query; two decks print to PDF in the browser; multi-frame maps have play, pause and step."
+    },
+    {
+      "id": "talk-2022",
+      "label": "Why Wardley Maps changed how I think, 2022",
+      "kind": "artefact",
+      "summary": "An Open Security Summit talk of 14 July 2022 with eleven shifts in how a problem is seen; the alternative-axis post was not found."
+    },
+    {
+      "id": "community",
+      "label": "An invitation to the mapping community",
+      "kind": "question",
+      "summary": "The maps are source, the axis-as-choice argument, and the nested reading: which of these is already known, and which is wrong."
+    }
+  ],
+  "edges": [
+    {
+      "from": "two-contexts",
+      "to": "axis-choice",
+      "rel": "extends"
+    },
+    {
+      "from": "two-contexts",
+      "to": "reality",
+      "rel": "depends-on"
+    },
+    {
+      "from": "two-contexts",
+      "to": "altitude",
+      "rel": "leads-to"
+    },
+    {
+      "from": "two-contexts",
+      "to": "build-buy",
+      "rel": "leads-to"
+    },
+    {
+      "from": "two-contexts",
+      "to": "attrition",
+      "rel": "leads-to"
+    },
+    {
+      "from": "build-buy",
+      "to": "market",
+      "rel": "extends"
+    },
+    {
+      "from": "sgit-market",
+      "to": "market",
+      "rel": "example-of"
+    },
+    {
+      "from": "riskmandate-market",
+      "to": "market",
+      "rel": "example-of"
+    },
+    {
+      "from": "sgit-market",
+      "to": "riskmandate-market",
+      "rel": "contrasts"
+    },
+    {
+      "from": "language",
+      "to": "story",
+      "rel": "leads-to"
+    },
+    {
+      "from": "peace",
+      "to": "reality",
+      "rel": "depends-on"
+    },
+    {
+      "from": "altitude",
+      "to": "fractal",
+      "rel": "extends"
+    },
+    {
+      "from": "language",
+      "to": "figures-data",
+      "rel": "produces"
+    },
+    {
+      "from": "story",
+      "to": "figures-data",
+      "rel": "depends-on"
+    },
+    {
+      "from": "talk-2022",
+      "to": "axis-choice",
+      "rel": "leads-to"
+    },
+    {
+      "from": "community",
+      "to": "axis-choice",
+      "rel": "answers"
+    },
+    {
+      "from": "community",
+      "to": "fractal",
+      "rel": "answers"
+    }
+  ],
+  "links": {
+    "articles": [
+      "the-mandate-stack",
+      "pay-after-you-read",
+      "agentic-cost-is-an-engineering-problem",
+      "places-of-highest-leverage",
+      "a-mac-of-the-agents-own",
+      "every-mistake-added-a-rule",
+      "introducing-fractal-semantic-graphs",
+      "the-passkey-opens-the-vault",
+      "where-the-vault-keys-live"
+    ],
+    "pages": [
+      "demos/vaults/agent-desk/index.html",
+      "demos/vaults/strategy-maps/index.html",
+      "demos/strategy-maps.html",
+      "demos/vaults/threatmodcon-2025/index.html",
+      "articles/graphs.html",
+      "articles/decks/why-i-love-wardley-maps.html",
+      "articles/decks/reading-one-map.html"
+    ],
+    "sites": [
+      "https://riskmandate.ai",
+      "https://www.youtube.com/watch?v=6gpgnYo6M14",
+      "https://open-security-summit.org/sessions/2022/mini-summits/jul/wardley-maps/why-wardley-maps-changed-how-i-think/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "A map you cannot be wrong about is a diagram.",
+      "why": "The reason the maps are useful in an argument: every placement is a claim that can be disagreed with."
+    },
+    {
+      "text": "Every node on a map is a Wardley map.",
+      "why": "The nested reading: the dot on the parent is the anchor of the child, at the same place on the evolution axis."
+    }
+  ],
+  "figures": [
+    {
+      "file": "wm-best-of.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/wm-best-of.webp",
+      "caption": "Nine of the maps drawn on this site since September 2026. Every one is a claim about something real: a product that shipped, a plan that is published, a mistake that became a rule. The ninth is three maps deep.",
+      "kind": "collage"
+    },
+    {
+      "file": "ms-map-user.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ms-map-user.webp",
+      "caption": "Map one, from the outside. The anchor is a person who writes to the team. What they see, a reply with a name on it, is custom. What they do not see, the vaults, the sessions, Workspace and encrypted storage, is product or commodity. Rendered with Mermaid wardley-beta.",
+      "kind": "wardley-map"
+    },
+    {
+      "file": "ms-map-team.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ms-map-team.webp",
+      "caption": "Map two, from the inside. The anchor is the person running the business. The dashed arrows are the movement the team is making: shared memory and the sgit CLI toward commodity, the behaviour policies, the graphs and the custom interfaces from genesis toward product. Everything rests on encrypted storage, which is already a commodity.",
+      "kind": "wardley-map"
+    },
+    {
+      "file": "pv-wardley-today.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/pv-wardley-today.webp",
+      "caption": "The reading meter at the end of 10 October, as a Wardley map: everything added that afternoon sits on the left, built on components that already existed on the right.",
+      "kind": "wardley-map"
+    },
+    {
+      "file": "ac-wardley-1.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ac-wardley-1.webp",
+      "caption": "The map in three frames: the problem as most companies have it, what the service adds from what is already there, and where it goes. Agents in production on the explorer side, billed by the token, with logs nobody reads together; then the footprint, the twin, the policy and the graph; then cost as a discipline.",
+      "kind": "wardley-map",
+      "frames": [
+        "https://newsroom.sgit.ai/articles/images/ac-wardley-1.webp",
+        "https://newsroom.sgit.ai/articles/images/ac-wardley-2.webp",
+        "https://newsroom.sgit.ai/articles/images/ac-wardley-3.webp"
+      ]
+    },
+    {
+      "file": "lv-wardley.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/lv-wardley.webp",
+      "caption": "Which shoulders the passkey work stands on. Almost everything under it is a product or a commodity someone else matured; our piece is the door and a door per path; the one custom layer we had to add is the phone by QR, where a provider is not yet mature.",
+      "kind": "wardley-map"
+    },
+    {
+      "file": "ad-map.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ad-map.webp",
+      "caption": "The agent's desktop moves from custom-built to product, on parts that are already products or commodities: Apple silicon Macs, the macOS virtual machine, the models, the desktop agent apps. State, keys and lock-down move with it, because the vaults, the PKI and the policies already exist as parts.",
+      "kind": "wardley-map"
+    },
+    {
+      "file": "cx-map-now.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/cx-map-now.webp",
+      "caption": "Map one: the verification as it runs. The person preparing the install needs confidence the tool is safe, which comes from a report, which rests on the tool's tests and on a team of agents. The six things that keep failing sit in a blob on the left, each rebuilt by hand inside a prompt every session. Files, hashes and git sit at the far right, unused.",
+      "kind": "wardley-map"
+    },
+    {
+      "file": "cx-map-next.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/cx-map-next.webp",
+      "caption": "Map two: the same verification with each piece of process made small and drawn moving right. The tool's tests and the judgment in the report stay custom, because that is the work. Everything else becomes boring on purpose, leaning on files, hashes and git.",
+      "kind": "wardley-map"
+    },
+    {
+      "file": "pv-wardley-1.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/pv-wardley-1.webp",
+      "caption": "The afternoon as a Wardley map, one release at a time: what already existed, then each feature as it was added and what it was built on, ending with what comes next. Times are UTC, from the commits.",
+      "kind": "wardley-map",
+      "frames": [
+        "https://newsroom.sgit.ai/articles/images/pv-wardley-1.webp",
+        "https://newsroom.sgit.ai/articles/images/pv-wardley-2.webp",
+        "https://newsroom.sgit.ai/articles/images/pv-wardley-3.webp",
+        "https://newsroom.sgit.ai/articles/images/pv-wardley-4.webp",
+        "https://newsroom.sgit.ai/articles/images/pv-wardley-5.webp",
+        "https://newsroom.sgit.ai/articles/images/pv-wardley-6.webp",
+        "https://newsroom.sgit.ai/articles/images/pv-wardley-7.webp",
+        "https://newsroom.sgit.ai/articles/images/pv-wardley-8.webp"
+      ]
+    },
+    {
+      "file": "wm-fractal.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/wm-fractal.webp",
+      "caption": "Three altitudes of one business. The vault is a dot on the business map; zoom in and it is the anchor of the vault map, at the same place on the evolution axis; the door is a dot on that map; zoom in and it is the anchor of the door map. Up from the top is the market the business sits in, down from the bottom is a key derivation, and the axes and the reading do not change.",
+      "kind": "wardley-map"
+    }
+  ]
+}

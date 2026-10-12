@@ -249,5 +249,27 @@
       "text": "The passkey is a lock, not an identity.",
       "why": "Why the key pairs are never derived from the passkey."
     }
+  ],
+  "figures": [
+    {
+      "file": "pk-chain.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/pk-chain.webp",
+      "caption": "The key chain, after the test. The passkey's PRF output, by one path, computes a door; the door holds the master vault's key and a record of where it came from; the master holds the keys of everything else and the list of its doors. A different path to the same passkey can give different bytes, and gets a door of its own."
+    },
+    {
+      "file": "pk-options.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/pk-options.webp",
+      "caption": "The places the key could live, and how you would find each before you could open it. Deriving the door from the passkey needs nothing to be found; the stored options become backups."
+    },
+    {
+      "file": "pk-flows.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/pk-flows.webp",
+      "caption": "The first device, a new device on a path that has a door, adding a door while unlocked, a new device on a path with no door yet, and a lost device. Every step runs in the browser, against the passkey store for the gesture and the vault server for ciphertext."
+    },
+    {
+      "file": "pk-where.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/pk-where.webp",
+      "caption": "Where a passkey can live, what each place needs, whether the passkey travels, whether it can return the PRF bytes, and what that means for the reader. The ladder below the table is what the page offers when PRF is off."
+    }
   ]
 }

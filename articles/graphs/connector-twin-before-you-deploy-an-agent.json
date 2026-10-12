@@ -224,5 +224,32 @@
       "text": "The value of the list is not that most of it is green. It is that the red rows are named.",
       "why": "Why the twin changes governance: irreversible actions become a named list the mandate can be written against."
     }
+  ],
+  "figures": [
+    {
+      "file": "connector-twin-pipeline.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/connector-twin-pipeline.webp",
+      "caption": "A twin of the connector. Every call the agent makes is copied, request and response, into an append-only journal in a vault. The journal is processed later and replayed into the inbox and calendar as the agent saw them, with a before and after for every change, and a revert plan that a person approves."
+    },
+    {
+      "file": "connector-twin-calendar.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/connector-twin-calendar.webp",
+      "caption": "The calendar as the agent saw it and left it, rebuilt from the journal. The review is moved, with a ghost of where it was. The sync is declined. The supplier call is not declined but deleted, and because the agent passed sendUpdates=all, the supplier received a cancellation."
+    },
+    {
+      "file": "connector-twin-deleted.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/connector-twin-deleted.webp",
+      "caption": "Step 15, before and after. The payment reminder is gone from Gmail, permanently, by the platform's own description. The twin still holds the full message, because the agent read it before deleting it, so its content can be put back with messages.insert, as a new message."
+    },
+    {
+      "file": "connector-twin-said.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/connector-twin-said.webp",
+      "caption": "What the agent said, against what the journal shows, and whether each part can be put back."
+    },
+    {
+      "file": "connector-twin-modes.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/connector-twin-modes.webp",
+      "caption": "Three places to capture, and three grades of evidence. The mode does not change what is captured. It changes what the evidence is allowed to claim."
+    }
   ]
 }

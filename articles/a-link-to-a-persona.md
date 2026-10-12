@@ -2,7 +2,7 @@
 
 > When I send someone to the newsroom today, they land on a front page made for nobody. I would rather send a CISO to the newsroom as a CISO, a data protection officer as a DPO, a developer as a developer, and one particular person as a persona made for them. This is the brief for doing that with nothing but a link. Personas move out of the site's code into an encrypted vault, opened in the reader's browser with a published read key, so a persona can be added or updated by the newsroom's agents without a single change to the site. A few personas get a page of their own, /persona/ciso/; any number more are reached through the part of the link after the #, which browsers never send to a server; and a persona for one person can live in a vault of its own, readable only by whoever has the link. The reader can follow the persona as it is kept up to date, or fork it and make it theirs. It draws on what Netflix, Bluesky, Mastodon, Apple News and Brave News learned about profiles, starter packs and personalisation on the device, and it stays entirely client side.
 
-*Source: <https://newsroom.sgit.ai/articles/a-link-to-a-persona.html> · sgit.ai v0.7.70 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/a-link-to-a-persona.html> · sgit.ai v0.7.79 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 
@@ -130,6 +130,7 @@ Startups & strategyVaults & method[This article as a graph →](graphs.md#a-link
 
 ### Continued by
 
+- [Places of highest leverage: where to focus when the agents can go in every direction, told with three days of real steps](places-of-highest-leverage.md) Where to focus when agents can go in every direction: the place of highest leverage, shown on three days of real steps, two walked back and one parked.
 - [I miss it, so it is working: the people who decide the roadmap have to use the product, and the vault the newsroom now needs](i-miss-it.md) I read the newsroom on four devices and they do not agree. Missing a feature is the best sign; the makers must use it. And the brief for the reader's vault.
 - [Brief the agent too: the people I talk to work with agents, so what I send has to reach both](brief-the-agent-too.md) The people I advise read through agents. Content needs a second package, a brief for their agent, and memory, so it reads what changed, not everything.
 - [From me to you, in a link: a personal reading list, two briefs to build and use it, and the loop that makes it a day's work](a-reading-list-in-a-link.md) A reading list from one person to another, in a link the server never sees; a brief to build it, a brief to use it, and the loop that ships it in a day.

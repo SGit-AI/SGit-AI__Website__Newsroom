@@ -2,7 +2,7 @@
 
 > Every published version of the article "Ways to read one article", with the date, the words and what changed.
 
-*Source: <https://newsroom.sgit.ai/articles/versions/ways-to-read-one-article.html> · sgit.ai v0.7.70 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/versions/ways-to-read-one-article.html> · sgit.ai v0.7.79 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 
@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.1** | 2026-10-12 | patch | 2,767 | front matter only (the text is unchanged) | this release | [what changed](ways-to-read-one-article/v1.0.1.md) · [current](../ways-to-read-one-article.md) |
+| **v1.0.1** | 2026-10-12 | patch | 2,767 | front matter only (the text is unchanged) | [`06e64133a`](https://github.com/SGit-AI/SGit-AI__Website/commit/06e64133a6d624e2d3f2cea6732f8f4e7363ccb7) | [what changed](ways-to-read-one-article/v1.0.1.md) · [current](../ways-to-read-one-article.md) |
 | **v1.0.0** | 2026-10-12 | published | 2,767 | first published | [`942ce892f`](https://github.com/SGit-AI/SGit-AI__Website/commit/942ce892f39a12e4047ac87953dd30b682140006) |  |
 
 [← Back to the article](../ways-to-read-one-article.md) · [All articles](../index.md)

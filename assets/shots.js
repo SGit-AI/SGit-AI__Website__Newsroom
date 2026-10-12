@@ -95,13 +95,124 @@
     if (!sg) {                       // the ordinary web: hand the URL straight over
       img.src = path;
       fig.insertBefore(node, fig.firstChild);
+      frames(fig, img);
       return;
     }
     sg.vfs.read(path).then(function (data) {
-      var ext = (path.split('.').pop() || '').toLowerCase();
-      img.src = URL.createObjectURL(new Blob([data], { type: ext === 'jpg' || ext === 'jpeg' ? 'image/jpeg' : ext === 'png' ? 'image/png' : 'image/webp' }));
+      img.src = URL.createObjectURL(new Blob([data], { type: mime(path) }));
       fig.insertBefore(node, fig.firstChild);
+      frames(fig, img);
     }, function () { failed(fig, name); });
+  }
+
+  function mime(path) {
+    var ext = (path.split('.').pop() || '').toLowerCase();
+    return ext === 'jpg' || ext === 'jpeg' ? 'image/jpeg' : ext === 'png' ? 'image/png' : 'image/webp';
+  }
+
+  // A figure with data-frames (the `!frames` directive, v0.7.77) is one picture several images
+  // deep: a Wardley map one release at a time, a plan in three steps. It used to ship as an
+  // animated WebP, which nobody could stop, step through or read at their own pace. Now the
+  // figure shows one frame and grows a control row under the image: previous, play or pause,
+  // next, a "2 of 8" counter, and one numbered button per frame. It plays on its own once it
+  // is in view, stops the moment the reader touches a control, and never plays for a reader
+  // who asked the system for less motion. Arrow keys step while the figure has focus. The
+  // frames are fetched ahead so stepping is instant; inside a vault they come over the bridge
+  // like everything else.
+  function frames(fig, img) {
+    var list = (fig.getAttribute('data-frames') || '').split(',').map(function (s) { return s.trim(); }).filter(Boolean);
+    if (list.length < 2 || fig.querySelector('.frames-ctl')) return;
+    var dir = fig.getAttribute('data-dir') || 'images/';
+    var sg = vaultHost();
+    var urls = list.map(function (n) { return sg ? null : dir + n; });
+    if (sg) {
+      list.forEach(function (n, k) {
+        sg.vfs.read(dir + n).then(function (data) {
+          urls[k] = URL.createObjectURL(new Blob([data], { type: mime(n) }));
+          if (k === at) img.src = urls[k];
+        }, function () { /* a missing frame leaves its button inert */ });
+      });
+    } else {
+      // warm the cache so the first step does not wait on the network
+      list.slice(1).forEach(function (n) { var i = new Image(); i.loading = 'eager'; i.src = dir + n; });
+    }
+    var at = 0, timer = null, n = list.length;
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var period = parseInt(fig.getAttribute('data-period') || '2800', 10);
+
+    var ctl = document.createElement('div');
+    ctl.className = 'frames-ctl';
+    ctl.setAttribute('role', 'group');
+    ctl.setAttribute('aria-label', 'Frames of this figure');
+    function btn(label, title, cls) {
+      var b = document.createElement('button');
+      b.type = 'button'; b.className = 'frames-b' + (cls ? ' ' + cls : '');
+      b.textContent = label; b.title = title; b.setAttribute('aria-label', title);
+      ctl.appendChild(b);
+      return b;
+    }
+    var prev = btn('\u2039', 'Previous frame', 'frames-prev');
+    var play = btn('\u25B6', 'Play', 'frames-play');
+    var next = btn('\u203A', 'Next frame', 'frames-next');
+    var count = document.createElement('span');
+    count.className = 'frames-n'; count.setAttribute('aria-live', 'polite');
+    ctl.appendChild(count);
+    var dots = document.createElement('span');
+    dots.className = 'frames-dots';
+    var dot = list.map(function (_, k) {
+      var d = document.createElement('button');
+      d.type = 'button'; d.className = 'frames-d'; d.textContent = String(k + 1);
+      d.title = 'Frame ' + (k + 1) + ' of ' + n; d.setAttribute('aria-label', d.title);
+      d.addEventListener('click', function () { stop(); show(k); });
+      dots.appendChild(d);
+      return d;
+    });
+    ctl.appendChild(dots);
+    fig.insertBefore(ctl, fig.querySelector('figcaption'));
+
+    function show(k) {
+      at = (k + n) % n;
+      if (urls[at]) img.src = urls[at];
+      fig.setAttribute('data-frame', String(at + 1));
+      count.textContent = (at + 1) + ' of ' + n;
+      dot.forEach(function (d, j) {
+        d.classList.toggle('is-on', j === at);
+        d.setAttribute('aria-pressed', j === at ? 'true' : 'false');
+      });
+    }
+    function start() {
+      if (timer) return;
+      timer = setInterval(function () { show(at + 1); }, period);
+      play.textContent = '\u275A\u275A'; play.title = 'Pause'; play.setAttribute('aria-label', 'Pause');
+      fig.classList.add('frames--playing');
+    }
+    function stop() {
+      if (!timer) return;
+      clearInterval(timer); timer = null;
+      play.textContent = '\u25B6'; play.title = 'Play'; play.setAttribute('aria-label', 'Play');
+      fig.classList.remove('frames--playing');
+    }
+    prev.addEventListener('click', function () { stop(); show(at - 1); });
+    next.addEventListener('click', function () { stop(); show(at + 1); });
+    play.addEventListener('click', function () { if (timer) stop(); else start(); });
+    fig.tabIndex = 0;
+    fig.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight') { stop(); show(at + 1); e.preventDefault(); }
+      else if (e.key === 'ArrowLeft') { stop(); show(at - 1); e.preventDefault(); }
+      else if (e.key === ' ') { if (timer) stop(); else start(); e.preventDefault(); }
+    });
+    // Play while on screen, pause when scrolled away or when the tab is hidden, so a long
+    // page with three of these is not three timers nobody is looking at.
+    var touched = false;
+    ctl.addEventListener('click', function () { touched = true; });
+    if (!reduce && 'IntersectionObserver' in window) {
+      new IntersectionObserver(function (es) {
+        es.forEach(function (e) { if (touched) return; if (e.isIntersecting) start(); else stop(); });
+      }, { threshold: 0.4 }).observe(fig);
+    }
+    document.addEventListener('visibilitychange', function () { if (document.hidden) stop(); });
+    window.addEventListener('beforeprint', stop);
+    show(0);
   }
 
   // Trail cards (v0.6.102): the same two paths as fill(), for a card thumbnail drawn as a background.

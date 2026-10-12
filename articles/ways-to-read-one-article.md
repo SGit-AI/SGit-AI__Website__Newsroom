@@ -2,7 +2,7 @@
 
 > One article, five readers worked: a Librarian, a Cartographer, a Historian, an Explainer and a Storyteller read five articles after they were written and produced the catalogue, the maps, the arc, the two-minute version and the deck. What did not work was the delivery. All of it landed as one more fold under the abstract, everything mixed, a wall of material next to a wall of text, and a reader with two minutes was no better off than before. This article is the next step, now that the pane on the right of every newsroom page is about the piece in front of the reader. The reader picks the way in, one tap, and can set a default: headlines, the infographic, two minutes, the slides, what is new against what they have read, the facts, the relationships, the vocabulary, or, through a model in their own browser, a view at their level and through their persona. Most of those are computed from views that already exist, deterministic and explainable; a local model is for the rest, and none of it round-trips to the publisher. And one thing is kept whole on purpose: the finished article. It has a beginning, a pacing, a surprise and a voice, and it is the one artefact that has to make sense from end to end, which a graph cannot. The modes are ways in, not replacements, and the brief says how to build them for a phone, a tablet, a desktop and an email.
 
-*Source: <https://newsroom.sgit.ai/articles/ways-to-read-one-article.html> · sgit.ai v0.7.70 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/ways-to-read-one-article.html> · sgit.ai v0.7.79 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 
@@ -116,6 +116,10 @@ News & evidenceGraphs & knowledgeSite & engineering[This article as a graph →]
 - [The agent is the reader: why agents will pay for graphs, personas and signed claims, because it is cheaper than not paying](the-agent-is-the-reader.md) Agents pay to read the raw web and guess its meaning. A curated graph answers for 90% fewer tokens, so paying the publisher is cheaper than not paying.
 - [How to run synthetic users on your own site: five people who do not exist, a browser, and an afternoon](how-to-run-synthetic-users.md) Five invented users, a model reading screenshots, and a real browser: how to run synthetic users, from three studies.
 - [Story vault underneath, Reader Skills on top: why local journalism has the most to gain](story-vault-meets-reader-skills.md) Markus Franz's Reader Skills on top, the story vault underneath: each skill is a graph query, and local stories can pay back down their chain of sources.
+
+### Continued by
+
+- [How the voice works: why these articles sound like me, with a section in which Claude explains it from its side](how-the-voice-works.md) Why these articles sound like their author: a corpus, the voice memos, seven wording rules and a reader who corrects, with Claude explaining it from its side.
 
 [All articles](index.md) · [All graphs](graphs.md)
 

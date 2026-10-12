@@ -154,5 +154,32 @@
       "text": "Nothing in the hook changes, only who can change the hook.",
       "why": "Placement decides the barrier."
     }
+  ],
+  "figures": [
+    {
+      "file": "ck-flow.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ck-flow.webp",
+      "caption": "The draft guard: every call to create or update a Gmail draft passes through a hook the harness runs, not the agent. Certain rules are checked in code first; judgement goes to a fresh model call that sees only the rules, the sources and the draft; anything other than an explicit PASS stops the draft."
+    },
+    {
+      "file": "ck-independence.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ck-independence.webp",
+      "caption": "Six kinds of independence, and which check has which. The drafter re-reading its own draft has none; the guard as it runs today has four; the guard under managed settings, with sources written by someone else, has all six."
+    },
+    {
+      "file": "ck-hot-reload.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ck-hot-reload.webp",
+      "caption": "The prompt that loaded the guard: \"A mod is code Claude wrote; it runs with your permissions.\" Enabling hot reloading runs every mod Claude writes in this session, and picks up each later change."
+    },
+    {
+      "file": "ck-ladder.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ck-ladder.webp",
+      "caption": "Who enforces the voice rule, weakest first. The hook took it from expectation to setting; managed placement takes it to boundary, \"enforced above the grant, out of the agent's reach\". Nothing in the hook changes, only who can change the hook."
+    },
+    {
+      "file": "ck-pattern.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ck-pattern.webp",
+      "caption": "A hook on a consequential tool call, code checks first, then a fresh model call with only the rules, the evidence and the proposed action, failing closed and logging every verdict."
+    }
   ]
 }

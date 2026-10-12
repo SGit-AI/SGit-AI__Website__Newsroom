@@ -2,7 +2,7 @@
 
 > We want to give each agent a desktop of its own, away from the laptop, that a person can watch and take over, that can reach only what its task needs, that holds no secret it could leak, that is thrown away afterwards, and that is billed for the minutes it works. In October 2026 every one of those properties can be bought somewhere, and no single product we looked at offers all of them. This article lays out the nine properties, puts nine products against them from their own documentation, prices two hours of work a day on each, and explains the three things that make it hard: macOS cannot be leased for less than a day and Apple's licence limits what a leased Mac is for; the strongest isolation controls are weeks old or in private beta; and prompt injection is not solved, so the desktop has to be the barrier rather than the model. It proposes what we would build from what exists, and closes with the startup credit programmes that would pay for trying it, verified on the day, with how to apply.
 
-*Source: <https://newsroom.sgit.ai/articles/an-agent-desktop-by-the-minute.html> · sgit.ai v0.7.70 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/an-agent-desktop-by-the-minute.html> · sgit.ai v0.7.79 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 
@@ -144,6 +144,8 @@ Agents & policyStartups & strategy[This article as a graph →](graphs.md#an-age
 
 ### Continued by
 
+- [Agentic cost is an engineering problem: a business plan for a service that reads the logs a company already has and finds the money, then the engineering](agentic-cost-is-an-engineering-problem.md) A business plan: read the logs a company already has, draw each agent's footprint, twin and policy, and find the money first and the engineering second.
+- [The key is the billing system: VoiceDebrief, a product with no server, the one thing it cannot sell, and who could let it](the-key-is-the-billing-system.md) VoiceDebrief runs with no server on the user's own key; the one thing it cannot sell is a capped key, and this maps who could allow it and what to ask them.
 - [A Mac of the agent's own: a business plan for agent desktops, what Apple's licence allows, and three behaviour policies](a-mac-of-the-agents-own.md) A business plan for a Mac of the agent's own: what Apple's licence allows, a desktop built from vaults per run, and three behaviour policies for one agent.
 - [Encrypted memory for agents that run somewhere else: sgit deployment patterns, from a Mac mini to Kubernetes](encrypted-memory-for-isolated-agents.md) Agents in isolated, ephemeral places need memory that outlives them. Five sgit deployment patterns, from a Mac mini to Kubernetes, with ciphertext-only servers.
 

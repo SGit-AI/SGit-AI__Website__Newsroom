@@ -1,0 +1,222 @@
+{
+  "slug": "move-the-cloud-not-the-code",
+  "teaser": "Workloads stay on hyperscalers because moving means changing code; a twin lets the code not know, and the value in the twin is what signs the migration.",
+  "topics": [
+    "startups-and-strategy",
+    "agents-and-policy"
+  ],
+  "core_idea": "Sovereignty has to work in practice, and in practice what stops workloads moving is code, so the requirement is that the application must not know it has moved: its S3, EC2 and IAM calls land on an open source twin the client cannot tell from the real service, and the twin decides where the bytes go; the S3 twin exists; the reason to move must never be sovereignty or cost, which are important and never urgent, but value that lands the day you switch and gives the signer cover, backups, versions, encryption with the key held elsewhere, a journal of every call, behaviour policies the agents cannot skip and cost per workload, most of it supplied by an sgit vault behind the twin; the project adds no new features because it is a villager move; and an infrastructure operator in Europe can sell it as value with the risk removed.",
+  "nodes": [
+    {
+      "id": "code-stops-moves",
+      "label": "Workloads do not move because moving means changing code",
+      "kind": "claim",
+      "summary": "Every call to S3, EC2 and IAM is in code that works today; the cost of change is the risk, so most organisations stay whatever the policy says."
+    },
+    {
+      "id": "sovereign-cloud",
+      "label": "AWS European Sovereign Cloud, 15 January 2026",
+      "kind": "example",
+      "summary": "A separate cloud in Brandenburg run by EU residents with zero operational control outside the EU; the code still talks to one vendor's API, so it is sovereignty by permission."
+    },
+    {
+      "id": "must-not-know",
+      "label": "The application must not know",
+      "kind": "claim",
+      "summary": "Not one line changes; the same calls land on whatever backend is chosen, and the destination is a setting."
+    },
+    {
+      "id": "twin",
+      "label": "A twin is measured by indistinguishability",
+      "kind": "concept",
+      "summary": "An interface to a real system used by unmodified production code; a mock is for tests and measured by fidelity; switching a twin costs an endpoint, a mock a code path."
+    },
+    {
+      "id": "s3-twin",
+      "label": "The S3 twin exists, as open source",
+      "kind": "artefact",
+      "summary": "An S3-compatible container that boto3 and the AWS CLI cannot tell from S3, serving from real S3, a vault, local disk or memory per environment; EC2 and IAM are not built."
+    },
+    {
+      "id": "never-sovereignty",
+      "label": "The reason to move is never sovereignty or cost",
+      "kind": "claim",
+      "summary": "Both are important and never urgent; a return that depends on a future event does not sign, and the signer needs cover if the move goes wrong."
+    },
+    {
+      "id": "value-in-twin",
+      "label": "The value lives in the twin because every call passes through it",
+      "kind": "method",
+      "summary": "Backups, versions, encryption with the key elsewhere, a journal of every call, behaviour policies, cost per workload, data where it can be traded."
+    },
+    {
+      "id": "vault-behind",
+      "label": "An sgit vault behind the twin supplies most of the value",
+      "kind": "artefact",
+      "summary": "Files land as ciphertext with a history and keys the customer holds; the operator stores what it cannot read."
+    },
+    {
+      "id": "register",
+      "label": "The move must move a top-of-register risk",
+      "kind": "claim",
+      "summary": "A migration that lands versions, backups, encryption and a journal on day one and takes an item off the top of the register is a decision someone can sign and defend."
+    },
+    {
+      "id": "no-features",
+      "label": "No new features during the move",
+      "kind": "method",
+      "summary": "A villager move from explorer to town planner; adding a feature makes it a product change too, and nobody can tell which broke what."
+    },
+    {
+      "id": "testing",
+      "label": "Testing against twins instead of mocks",
+      "kind": "claim",
+      "summary": "The same unmodified code runs against memory, a replayed journal, injected failures and the real service; the environment becomes a setting."
+    },
+    {
+      "id": "all-software",
+      "label": "Every piece of software should run unmodified against a twin of every dependency",
+      "kind": "claim",
+      "summary": "Software that can only run against one provider's live API cannot be tested, moved or put behind a policy."
+    },
+    {
+      "id": "open-source",
+      "label": "A closed twin layer moves the lock-in",
+      "kind": "claim",
+      "summary": "Open source here is independence, not generosity: you can read it, run it, fix it and move it."
+    },
+    {
+      "id": "business-model",
+      "label": "A business model for an infrastructure operator",
+      "kind": "method",
+      "summary": "Sell the twin in front of the real service first, then the backend switch per environment; margin in the twin layer, storage priced as the commodity it is; the hyperscaler cannot sell indistinguishability from itself."
+    },
+    {
+      "id": "build-order",
+      "label": "Start with S3, in front of the real service, then policies, then switch",
+      "kind": "method",
+      "summary": "S3 is the most used and already twinned; journal first with nothing moving; measure what policies would have stopped; then one environment at a time; then the next service."
+    }
+  ],
+  "edges": [
+    {
+      "from": "code-stops-moves",
+      "to": "must-not-know",
+      "rel": "leads-to"
+    },
+    {
+      "from": "sovereign-cloud",
+      "to": "code-stops-moves",
+      "rel": "example-of"
+    },
+    {
+      "from": "must-not-know",
+      "to": "twin",
+      "rel": "depends-on"
+    },
+    {
+      "from": "s3-twin",
+      "to": "twin",
+      "rel": "example-of"
+    },
+    {
+      "from": "never-sovereignty",
+      "to": "value-in-twin",
+      "rel": "leads-to"
+    },
+    {
+      "from": "value-in-twin",
+      "to": "twin",
+      "rel": "depends-on"
+    },
+    {
+      "from": "vault-behind",
+      "to": "value-in-twin",
+      "rel": "produces"
+    },
+    {
+      "from": "value-in-twin",
+      "to": "register",
+      "rel": "leads-to"
+    },
+    {
+      "from": "never-sovereignty",
+      "to": "no-features",
+      "rel": "extends"
+    },
+    {
+      "from": "twin",
+      "to": "testing",
+      "rel": "produces"
+    },
+    {
+      "from": "testing",
+      "to": "all-software",
+      "rel": "leads-to"
+    },
+    {
+      "from": "must-not-know",
+      "to": "open-source",
+      "rel": "depends-on"
+    },
+    {
+      "from": "value-in-twin",
+      "to": "business-model",
+      "rel": "leads-to"
+    },
+    {
+      "from": "business-model",
+      "to": "build-order",
+      "rel": "produces"
+    },
+    {
+      "from": "register",
+      "to": "business-model",
+      "rel": "depends-on"
+    }
+  ],
+  "links": {
+    "articles": [
+      "what-sgit-is",
+      "connector-twin-before-you-deploy-an-agent",
+      "the-behaviour-policy-is-the-business-logic",
+      "footprint-and-blast-radius",
+      "agentic-cost-is-an-engineering-problem",
+      "explorer-to-villager-newsroom",
+      "judo-for-small-countries",
+      "why-i-love-wardley-maps",
+      "where-the-platform-draws-the-line"
+    ],
+    "pages": [],
+    "sites": [
+      "https://twins.sgit.ai/",
+      "https://open-source.sgit.ai/",
+      "https://riskmandate.ai/agent-behaviour-policy.html",
+      "https://press.aboutamazon.com/aws/2026/1/aws-launches-aws-european-sovereign-cloud-and-announces-expansion-across-europe"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "Sovereignty that depends on one company's API is sovereignty by permission.",
+      "why": "Why a sovereign region from the same vendor does not change the cost of leaving."
+    },
+    {
+      "text": "If switching costs an endpoint, migration becomes a configuration decision. If it costs a code path, it becomes a project, and projects get cancelled.",
+      "why": "The whole case for twins in two sentences."
+    }
+  ],
+  "figures": [
+    {
+      "file": "mc-twin.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/mc-twin.webp",
+      "caption": "The twin layer. The application keeps calling S3, EC2 and IAM exactly as it does today; the calls land on an open source twin, which is where policy, journal, encryption, versions, cost and failure injection live; the twin decides where the bytes go, and switching the backend is a setting. The S3 twin is built; EC2 and IAM are not.",
+      "kind": "architecture"
+    },
+    {
+      "file": "mc-value.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/mc-value.webp",
+      "caption": "What signs a migration and what does not. Sovereignty, cost and any return that depends on a future event sit on the left; value that lands the day you switch, and gives the signer cover, sits on the right. Underneath, the rule for the project: no new features during the move.",
+      "kind": "decision"
+    }
+  ]
+}

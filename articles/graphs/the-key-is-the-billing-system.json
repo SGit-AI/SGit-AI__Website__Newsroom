@@ -1,0 +1,168 @@
+{
+  "slug": "the-key-is-the-billing-system",
+  "teaser": "VoiceDebrief runs with no server on the user's own key; the one thing it cannot sell is a capped key, and this maps who could allow it and what to ask them.",
+  "topics": [
+    "startups-and-strategy",
+    "site-and-engineering",
+    "agents-and-policy"
+  ],
+  "core_idea": "VoiceDebrief turns a voice note into a transcript and a debrief in the browser on the user's own key, with no server by design, and its commercial model was never a billing system: a user pays once, we keep our cut, the rest becomes the credit limit on a key we hand over and the provider meters; OpenRouter's Management API describes that mechanism and its terms forbid reselling access, which is where the project's commit history stops, the same shape as Apple's licence stopping a Mac leased by the minute; the map of every provider's terms and docs shows only OpenRouter and ElevenLabs have keys that carry a ceiling, ElevenLabs has OEM terms and a grants programme, four routes remain, and the brief asks every provider the same sentence: let the credit limit be a property of a key a user can buy.",
+  "nodes": [
+    {
+      "id": "product",
+      "label": "VoiceDebrief",
+      "kind": "artefact",
+      "summary": "One pass in the browser on the user's own OpenRouter key: transcript, translation, debrief, infographic; no account, no server, nothing stored."
+    },
+    {
+      "id": "handbrake",
+      "label": "The handbrake in the commit history",
+      "kind": "example",
+      "summary": "239 commits and 27 releases in three weeks of August 2026, then eleven, then three; the stop is the commercial model, not the code."
+    },
+    {
+      "id": "noserver",
+      "label": "No server is the product",
+      "kind": "claim",
+      "summary": "Never seeing the audio removes custody, governance, breach, key management, billing, scaling and on-call at once; a server brings all of it back at once."
+    },
+    {
+      "id": "keymodel",
+      "label": "The model is a property of the key",
+      "kind": "concept",
+      "summary": "A user pays once, we keep our share at that moment, the rest is the credit limit on a key they hold, the provider meters; billing by not building billing."
+    },
+    {
+      "id": "forbidden",
+      "label": "Described in the docs, forbidden by the terms",
+      "kind": "claim",
+      "summary": "OpenRouter's Management API creates capped keys for each customer instance; section 7(4) of its terms forbids reselling API access to models."
+    },
+    {
+      "id": "sameshape",
+      "label": "The same shape as Agent Desk",
+      "kind": "concept",
+      "summary": "The product is possible and the licence is the blocker, as with Apple's rule against leasing a Mac for less than a day."
+    },
+    {
+      "id": "map",
+      "label": "The provider map",
+      "kind": "method",
+      "summary": "From each provider's own pages: whether one key can carry a ceiling and whether it may be handed to a paying user; only OpenRouter and ElevenLabs cap a key."
+    },
+    {
+      "id": "elevenlabs",
+      "label": "ElevenLabs, the nearest fit",
+      "kind": "example",
+      "summary": "Per-key credit limits, OEM terms for making the service available to end users at the customer's own price, Scribe at $0.22 an hour, a twelve-month grants programme."
+    },
+    {
+      "id": "routes",
+      "label": "Four routes",
+      "kind": "method",
+      "summary": "The forbidden one; a provider that sells or permits the capped key; bring your own key, kept; a metering proxy, which is the backend the product exists to avoid."
+    },
+    {
+      "id": "ask",
+      "label": "The one-sentence ask",
+      "kind": "artefact",
+      "summary": "Let the credit limit be a property of a key that a user can buy through us, so that we never hold the audio and never run the meter; a brief per provider for the agents."
+    }
+  ],
+  "edges": [
+    {
+      "from": "product",
+      "to": "noserver",
+      "rel": "example-of"
+    },
+    {
+      "from": "keymodel",
+      "to": "noserver",
+      "rel": "depends-on"
+    },
+    {
+      "from": "forbidden",
+      "to": "handbrake",
+      "rel": "leads-to"
+    },
+    {
+      "from": "keymodel",
+      "to": "forbidden",
+      "rel": "leads-to"
+    },
+    {
+      "from": "sameshape",
+      "to": "forbidden",
+      "rel": "compared-with"
+    },
+    {
+      "from": "map",
+      "to": "routes",
+      "rel": "produces"
+    },
+    {
+      "from": "elevenlabs",
+      "to": "map",
+      "rel": "example-of"
+    },
+    {
+      "from": "routes",
+      "to": "ask",
+      "rel": "leads-to"
+    },
+    {
+      "from": "ask",
+      "to": "keymodel",
+      "rel": "answers"
+    }
+  ],
+  "links": {
+    "articles": [
+      "an-agent-desktop-by-the-minute",
+      "no-server-by-design",
+      "the-vault-is-live",
+      "pay-after-you-read"
+    ],
+    "pages": [],
+    "sites": [
+      "https://voicedebrief.ai/",
+      "https://voicedebrief.ai/openrouter-key/",
+      "https://openrouter.ai/terms",
+      "https://openrouter.ai/docs/features/provisioning-api-keys",
+      "https://elevenlabs.io/oem-terms",
+      "https://elevenlabs.io/grants",
+      "https://elevenlabs.io/docs/overview/administration/workspaces/api-keys"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "What stopped it was not a server. It was the lack of one.",
+      "why": "The handbrake, in one line."
+    },
+    {
+      "text": "The two providers whose keys carry a ceiling, OpenRouter and ElevenLabs, are the two whose terms say the most about resale, because a capped key is the thing that makes resale easy.",
+      "why": "The pattern the map shows."
+    },
+    {
+      "text": "let the credit limit be a property of a key that a user can buy through us, so that we never hold the audio and never run the meter.",
+      "why": "The ask to every provider."
+    }
+  ],
+  "figures": [
+    {
+      "file": "vd-map.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/vd-map.webp",
+      "caption": "What each provider's terms and docs say, in October 2026, about a capped key in a user's hand, and the four routes: the one that was planned and forbidden, the one to ask for, the one that runs today, and the backend the product was built to avoid."
+    },
+    {
+      "file": "vd-home.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/vd-home.webp",
+      "caption": "voicedebrief.ai on 12 October 2026. One recording in, four artefacts out, in the browser, on the user's own key; the maximum a pass can cost is quoted before it starts."
+    },
+    {
+      "file": "vd-key.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/vd-key.webp",
+      "caption": "The page that gets a user from nothing to a working key, and its one instruction in bold: set a credit limit on the key, because a key with a limit cannot cost you more than the limit. The ceiling is the user's, not ours."
+    }
+  ]
+}

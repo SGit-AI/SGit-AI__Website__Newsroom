@@ -2,7 +2,7 @@
 
 > A Request for Comments, before anything is built. Today an sgit vault is protected by one symmetric read key and a write key that only the server checks, so anyone who holds the read key and can write to the store, the host or a mirror for example, can author history that clients accept. sgit's own threat model says so, and a test performs the attack. This RFC proposes two designs. Native PKI vault mode uses two key pairs, one for reading and one for writing, so a reader cannot write, a host cannot forge, and a write-only depositor becomes possible. Sealed files add an inner envelope to any vault, so chosen files can be read only by named people, whose private keys can live in a key file, an ssh key, a hardware key, or a remote service that logs and approves each decryption. We set out both, what they cost, what they cannot do, the services that could hold the private keys today, and fourteen questions where an outside view would change the design.
 
-*Source: <https://newsroom.sgit.ai/articles/rfc-0001-public-key-cryptography-for-sgit.html> · sgit.ai v0.7.70 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/rfc-0001-public-key-cryptography-for-sgit.html> · sgit.ai v0.7.79 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 
@@ -311,6 +311,7 @@ Vaults & methodSite & engineering[This article as a graph →](graphs.md#rfc-000
 
 ### Continued by
 
+- [Agentic cost is an engineering problem: a business plan for a service that reads the logs a company already has and finds the money, then the engineering](agentic-cost-is-an-engineering-problem.md) A business plan: read the logs a company already has, draw each agent's footprint, twin and policy, and find the money first and the engineering second.
 - [The passkey opens the vault: a door per path, a master vault for every user, and no server of ours](the-passkey-opens-the-vault.md) Tested: a passkey's PRF bytes compute a door that holds the master's key, and a different path to the same passkey gives different bytes, so a door per path.
 - [I miss it, so it is working: the people who decide the roadmap have to use the product, and the vault the newsroom now needs](i-miss-it.md) I read the newsroom on four devices and they do not agree. Missing a feature is the best sign; the makers must use it. And the brief for the reader's vault.
 - [From me to you, in a link: a personal reading list, two briefs to build and use it, and the loop that makes it a day's work](a-reading-list-in-a-link.md) A reading list from one person to another, in a link the server never sees; a brief to build it, a brief to use it, and the loop that ships it in a day.

@@ -2,7 +2,7 @@
 
 > The articles on this site are deep and carry their evidence, and that makes them long and hard to consume. The answer tried here is not shorter articles. It is to keep writing the article first, as prose, because writing is how the argument is found, and then to send five readers through it afterwards, each an agent with a defined role. Two build the platform: a Librarian that catalogues every fact, claim, number, question and source with the sentence it came from, and a Cartographer that turns the catalogues into an ontology at three altitudes and draws the maps. Three write for a person: a Historian that says what the article added and where it sits in the arc, an Explainer that says it in two minutes, and a Storyteller that tells it as a deck. We ran it on the five articles about agent behaviour policies published between 7 and 10 October: 662 items catalogued, 32 problems flagged in published articles, 45 concepts, nine maps, five decks, and one new concept in the most recent article. The views are now on those five articles, and the whole run is in a vault you can open.
 
-*Source: <https://newsroom.sgit.ai/articles/one-article-five-readers.html> · sgit.ai v0.7.70 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/one-article-five-readers.html> · sgit.ai v0.7.79 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 
@@ -213,6 +213,7 @@ News & evidenceGraphs & knowledge[This article as a graph →](graphs.md#one-art
 
 ### Continued by
 
+- [Judo for small countries: where Portugal, Romania and Estonia can add the most value in AI, and why the race for GPUs is not it](judo-for-small-countries.md) A small country should not race for GPUs: the opportunity is the plumbing its talent stands on, built once as open infrastructure, with small models.
 - [Ways to read one article: the finished piece stays at the centre, and the reader picks the way in](ways-to-read-one-article.md) The five readers' views arrived as folds inside the long piece; now the reader picks the way in, with a default, and the finished article stays at the centre.
 - [Firing journalists is the worst thing a publication can do: what a hiring decision says about where a publisher is going, and who to hire instead](firing-journalists.md) A hiring decision is a direction of travel: fire the journalists and the centre of gravity moves to packaging, where the metric makes clickbait by construction.
 - [The site is an inbox: deciding before reading, marks that build the reader's own graph, and why I could not write this brief until the vault existed](the-site-is-an-inbox.md) The site as an inbox that starts empty: decide fast before reading, mark slowly while reading, build a graph you own, and sign what you send to the newsroom.

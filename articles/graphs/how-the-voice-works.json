@@ -1,0 +1,144 @@
+{
+  "slug": "how-the-voice-works",
+  "teaser": "Why these articles sound like their author: a corpus, the voice memos, seven wording rules and a reader who corrects, with Claude explaining it from its side.",
+  "topics": [
+    "agents-and-policy",
+    "site-and-engineering"
+  ],
+  "core_idea": "The voice is not a setting but four inputs: a corpus of 86 articles, 51 from voice memos, each citing the ones before it; the memos themselves, which carry how the author thinks, the rhythm, the tangents and the order the points came in; seven wording rules learned one correction at a time and kept in the session's behaviour policy; and the author reading everything; the corrections have shifted from language to content, which is what a rules file does; and in a marked section Claude explains that it is continuing a body of work with the author's latest thinking in the author's own words rather than imitating a style, that the memo tells it how the author got there and not only what to write, and that nothing is trained, so the method transfers and the voice does not.",
+  "nodes": [
+    {
+      "id": "question",
+      "label": "How do you make your AI sound so human?",
+      "kind": "question",
+      "summary": "Asked by the person the walkthrough was written for; the better question is how to make it sound like one person."
+    },
+    {
+      "id": "corpus",
+      "label": "The corpus",
+      "kind": "concept",
+      "summary": "86 articles, about 347,000 words, 51 from memos, each citing the ones before it and resting on years of earlier writing; the vocabulary and the shape."
+    },
+    {
+      "id": "memo",
+      "label": "The memo",
+      "kind": "concept",
+      "summary": "Spoken, not typed: the rhythm, the tangents, five topics in one breath, the author's own phrases kept; how the author got there, not only what to write."
+    },
+    {
+      "id": "rules",
+      "label": "Seven wording rules",
+      "kind": "method",
+      "summary": "No em-dashes, no unsupported absolutes, great not perfect, a ladder word banned, British English, plainer words, not prose; each a correction once, now a policy line restored after every summary."
+    },
+    {
+      "id": "reader",
+      "label": "The author reads everything",
+      "kind": "method",
+      "summary": "A wrong word becomes a rule; a wrong point becomes a new version; the model never decides whether it sounds right."
+    },
+    {
+      "id": "shift",
+      "label": "Corrections moved from language to content",
+      "kind": "claim",
+      "summary": "In this session, 98 messages and 5 transcripts; one wording correction in two days, the rest content, direction and facts; a rules file makes a language correction once."
+    },
+    {
+      "id": "notimitation",
+      "label": "Not imitation but continuation",
+      "kind": "claim",
+      "summary": "Claude: with the linked articles open, the memo in the author's words and the banned words named, it continues a body of work rather than copying a style sample."
+    },
+    {
+      "id": "nottransfer",
+      "label": "The method transfers, the voice does not",
+      "kind": "claim",
+      "summary": "Nothing is trained; one session's context; another author would need their corpus, memos, rules and reading, and most of those weeks are theirs."
+    },
+    {
+      "id": "twovoices",
+      "label": "Written in two voices",
+      "kind": "artefact",
+      "summary": "The first half in the author's voice as every article is; the second marked as Claude speaking, the only place on the site it does."
+    }
+  ],
+  "edges": [
+    {
+      "from": "question",
+      "to": "corpus",
+      "rel": "leads-to"
+    },
+    {
+      "from": "corpus",
+      "to": "notimitation",
+      "rel": "depends-on"
+    },
+    {
+      "from": "memo",
+      "to": "notimitation",
+      "rel": "depends-on"
+    },
+    {
+      "from": "rules",
+      "to": "shift",
+      "rel": "produces"
+    },
+    {
+      "from": "reader",
+      "to": "rules",
+      "rel": "produces"
+    },
+    {
+      "from": "reader",
+      "to": "shift",
+      "rel": "depends-on"
+    },
+    {
+      "from": "notimitation",
+      "to": "nottransfer",
+      "rel": "leads-to"
+    },
+    {
+      "from": "twovoices",
+      "to": "question",
+      "rel": "answers"
+    },
+    {
+      "from": "memo",
+      "to": "corpus",
+      "rel": "extends"
+    }
+  ],
+  "links": {
+    "articles": [
+      "from-a-spreadsheet-to-a-folder-per-person",
+      "re-anchoring-agent-behaviour-policies",
+      "ways-to-read-one-article",
+      "how-much-of-this-did-i-write",
+      "knowing-when-to-stop"
+    ],
+    "pages": [],
+    "sites": []
+  },
+  "quotes": [
+    {
+      "text": "The voice is not a setting.",
+      "why": "The claim in four words."
+    },
+    {
+      "text": "A typed brief tells me what to write. A memo tells me how he got there.",
+      "why": "Claude's reason the memo hypothesis holds."
+    },
+    {
+      "text": "The method is reusable; the voice is not.",
+      "why": "Why it does not transfer."
+    }
+  ],
+  "figures": [
+    {
+      "file": "hv-loop.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/hv-loop.webp",
+      "caption": "The four inputs that make an article sound like its author: the corpus, the memo, the rules and the reader. Below, what the corrections are about now, and why this suits a model."
+    }
+  ]
+}

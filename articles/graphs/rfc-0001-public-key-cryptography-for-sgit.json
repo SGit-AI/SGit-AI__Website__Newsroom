@@ -160,5 +160,22 @@
       "text": "Disagreement is the point.",
       "why": "Why this is a Request for Comments."
     }
+  ],
+  "figures": [
+    {
+      "file": "rfc-today.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/rfc-today.webp",
+      "caption": "Today: one symmetric read key that encrypts everything, and a write key that only the server checks. Because the read key is symmetric, whoever can read can also create data that decrypts and looks genuine."
+    },
+    {
+      "file": "rfc-design1.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/rfc-design1.webp",
+      "caption": "Two key pairs, neither derivable from the other: one for reading, one for writing. The data key is sealed to the read public key, heads are signed with the write private key, and the vault id is derived from the write public key."
+    },
+    {
+      "file": "rfc-design2.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/rfc-design2.webp",
+      "caption": "An inner envelope, sealed to named people's public keys, inside the vault's own encryption. Only the 16-byte file key crosses to wherever the private key lives, including a remote service that can log, approve or refuse each decryption."
+    }
   ]
 }
