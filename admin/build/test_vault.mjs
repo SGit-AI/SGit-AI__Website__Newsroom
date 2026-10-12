@@ -132,7 +132,10 @@ try {
     } else {
         console.log(`     ${which.stdout.trim()}`)
         const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'nr-vault-'))
-        const env = { ...process.env, HOME: tmp, SGIT_DEFAULT_BASE_URL: mock.baseLocalhost }
+        // HOME is left alone: on a runner that installed sgit-ai with pip --user, the `sgit` script finds sgit_ai through
+        // the user site under HOME, and overriding it hides the install. sgit keeps a clone's remote and token in the
+        // clone's own .sg_vault/, so nothing of this run lands in the real home.
+        const env = { ...process.env, SGIT_DEFAULT_BASE_URL: mock.baseLocalhost }
         const run = (args, opts = {}) => runAsync('sgit', args, { cwd: opts.cwd || tmp, input: opts.input, env })
         // the door, from its prefixed key, on stdin
         const doorDir = path.join(tmp, 'door')

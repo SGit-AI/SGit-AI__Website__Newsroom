@@ -27,7 +27,7 @@
  ],
  "what": "The map of everything a reader does on newsroom.sgit.ai, and the review of it: phase 0 of the move described in https://newsroom.sgit.ai/articles/explorer-to-villager-newsroom.html. Written by admin/build/api_map.py on every build. The hashes are the 'before' for the move's rule that the live site serves the same bytes after it: scripts, styles and JSON raw; pages with the site chrome and version stamps normalised.",
  "api_means": "client-side: components, formats and contracts the browser runs, with no server and nothing to deploy but files",
- "release": "v0.10.0",
+ "release": "v0.10.1",
  "date": "11 October 2026",
  "source": {
   "sgit_ai": "v0.7.61",
@@ -283,7 +283,7 @@
    "from": "this site, generated",
    "lines": 412,
    "bytes": 16826,
-   "sha256": "771a606d2634539c16f90f50f7bfb735e7475aadcbe31c21b92d9897666d8072",
+   "sha256": "8d47e6be58b9d3cca888687263ec7115ac249ece02f6fc1eb72e73b47221ad32",
    "hosts": [],
    "fetch": 0,
    "storage": [],
@@ -746,8 +746,8 @@
   {
    "path": "wire/index.html",
    "what": "the Industry Wire's edition",
-   "lines": 236,
-   "sha256": "83fd5882b86bb78ed04f85de4d15950bb30dd4d1caae5db85fe8f6344092694a"
+   "lines": 56,
+   "sha256": "0cffd256a31bed0f4e5652b3ad912b18c21c8b48dc7a5eea6b13d119d705378d"
   },
   {
    "path": "wire/sources.html",
@@ -824,7 +824,7 @@
   {
    "path": "admin/build/validate.js",
    "what": "the gate: checks 2d (live link), 5 (key tripwire), 11 (imports unedited), 12 (numbers hold)",
-   "lines": 487
+   "lines": 489
   }
  ],
  "tests": [
@@ -861,7 +861,7 @@
   {
    "path": "admin/build/test_vault.mjs",
    "what": "real vaults in Node: the vendored library against the mock of the vault API, and the sgit CLI round trip",
-   "lines": 177,
+   "lines": 180,
    "checks": 28
   },
   {
