@@ -80,10 +80,13 @@ async function edition(r, mount, foot, cfg) {
     const pById = new Map(personas.map(p => [p.id, p]))
     const beatLabel = new Map((b.beats || []).map(x => [x.id, x.label]))
     let deliveries = null, lens = ''
+    // the lenses: the public personas, plus any named reader the site's config records as having agreed to be one
+    const named = (cfg.named_readers || []).map(x => typeof x === 'string' ? x : x.persona).filter(id => pById.has(id))
+    const LENSES = [...PUBLIC_LENSES, ...named.filter(id => !PUBLIC_LENSES.includes(id))]
 
     // the lens: the #lens= fragment, else the reader's active persona when it maps, else all
     const m = /lens=([a-z-]+)/.exec(location.hash)
-    if (m && pById.has(m[1]) && PUBLIC_LENSES.includes(m[1])) lens = m[1]
+    if (m && pById.has(m[1]) && LENSES.includes(m[1])) lens = m[1]
     else { try { const s = JSON.parse(localStorage.getItem('sgit.meter.v1') || 'null'); const p = s && s.personas.find(x => x.id === s.active); if (p && PRESET_TO_WIRE[p.preset]) lens = PRESET_TO_WIRE[p.preset] } catch (e) { /* all */ } }
 
     const pname = id => { const p = pById.get(id); return p ? `${p.name}, ${p.label.charAt(0).toLowerCase()}${p.label.slice(1)}` : id }
@@ -114,7 +117,7 @@ async function edition(r, mount, foot, cfg) {
 
     const lensBar = h('div', { class: 'lens', role: 'group', 'aria-label': 'Read as' }, h('span', { class: 'k' }, 'Read as'),
         h('button', { type: 'button', class: 'btn sm', 'aria-pressed': String(!lens), onclick: () => setLens('') }, 'Everyone'),
-        ...PUBLIC_LENSES.filter(id => pById.has(id)).map(id => h('button', { type: 'button', class: 'btn sm', 'aria-pressed': String(lens === id), onclick: () => setLens(id) }, pname(id))))
+        ...LENSES.filter(id => pById.has(id)).map(id => h('button', { type: 'button', class: 'btn sm', 'aria-pressed': String(lens === id), onclick: () => setLens(id) }, pname(id))))
     const lensNote = h('p', { class: 'lens-note' })
     const body = h('div', {})
     const header = h('section', { class: 'edition' },
@@ -150,7 +153,17 @@ async function edition(r, mount, foot, cfg) {
                 held.length ? h('details', { class: 'withheld' }, h('summary', {}, `Withheld for ${pname(lens).split(',')[0]} (${held.length}), and why`),
                     h('ul', {}, held.map(([s, d]) => h('li', {}, h('b', {}, s.headline), ' — ', d && d.withheld_reason ? d.withheld_reason : 'no delivery recorded for this reader')))) : null)
         }
-        body.replaceChildren(...sections)
+        // the personal brief the vault wrote for a named reader, shown only under that reader's lens
+        const pb = brief.personal
+        const personal = lens && named.includes(lens) && pb && pb.persona === lens ? h('section', { class: 'personal' },
+            h('p', { class: 'k' }, `The personal brief for ${pname(lens).split(',')[0]}, as the vault wrote it`),
+            pb.note ? h('p', { class: 'note' }, pb.note) : null,
+            (pb.top || []).some(t => byId.has(t.story)) ? h('ol', {}, (pb.top || []).filter(t => byId.has(t.story)).map(t => h('li', {},
+                h('a', { href: `#${t.story}` }, byId.get(t.story).headline),
+                t.score != null ? h('span', { class: 'chip' }, `score ${t.score}`) : null,
+                (t.why || []).length ? h('span', { class: 'dim' }, ` · ${t.why.join('; ')}`) : null))) : null,
+            h('p', { class: 'dim' }, 'A named reader, by their own agreement while the wire is a beta. Like everything in the vault, this brief is public.')) : null
+        body.replaceChildren(...(personal ? [personal] : []), ...sections)
         foot(lens ? `${reached} stories reach ${pname(lens).split(',')[0]}, ${withheld} withheld` : `${byId.size} stories in ${beats.length} beats`)
     }
     mount.replaceChildren(header, lensBar, lensNote, body)

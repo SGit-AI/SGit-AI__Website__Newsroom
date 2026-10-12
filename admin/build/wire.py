@@ -28,10 +28,14 @@ ROOT = Path(__file__).resolve().parents[2]
 CFG = json.loads((ROOT / "admin/build/wire-vault.json").read_text(encoding="utf-8"))
 SNAP = ROOT / "wire/snapshot.json"
 HEAD = '<link rel="stylesheet" href="wire.css">\n'
+EYEBROW = "Industry news, read from a vault · beta"
+# the named readers: people who agreed, on a recorded date, to a persona and a personal brief in a public vault
+NAMED = [x for x in CFG.get("named_readers", []) if isinstance(x, dict) and x.get("persona") and x.get("agreed")]
+NAMED_NAMES = ", ".join(x.get("name", x["persona"]) for x in NAMED) or "nobody yet"
 
 
 def config_block():
-    pub = {k: CFG[k] for k in ("endpoint", "vault_id", "read_key", "ref_ttl_s", "clone")}
+    pub = {k: CFG[k] for k in ("endpoint", "vault_id", "read_key", "ref_ttl_s", "clone", "named_readers") if k in CFG}
     return f'<script type="application/json" id="wire-config">{json.dumps(pub)}</script>'
 
 
@@ -65,6 +69,7 @@ def edition_page(snap):
 <noscript><p>The edition is read from an encrypted vault in your browser, which needs a script. Below is what the vault held at the last release of this site.</p></noscript>
 {snapshot_html(snap)}
 <h2 id="about">What this is</h2>
+<div class="note"><b>A beta.</b> The wire is an experiment run in the open: agents find and write the stories, an encrypted vault holds them, and this page draws them. It has one named reader, {esc(NAMED_NAMES)}, who runs this site and has agreed to be one while the wire is a beta; the persona of that name and the personal brief under its lens are theirs, and they are public like everything else in the vault. Expect gaps, repeats and stories whose primary source was never fetched, each marked as such, and expect the shape of the edition to change.</div>
 <p>Once a day, what happened in the five areas this newsroom writes about: building with AI and models, AI business models, open source, cybersecurity, and risk, governance and regulation. For every story: where it came from, who else covered it, one exact quote with its source, and why it matters. The stories are found, grouped and written by agents, from a registry of sources with a licence tier each (<a href="sources.html">the sources</a>), and every story says what it is: <em>ai-generated, unreviewed</em> until a person has reviewed it. The edition of 11 October is a first pass, a week&rsquo;s catch-up, and says so.</p>
 <p><b>Read as someone.</b> The same stories reach different readers. Choose a persona and the edition shows what reached them, through which concern, and what was withheld, with the reason. That join is recorded in the vault by the wire&rsquo;s own code (<code>pipeline/join.py</code>), not computed here; the page shows the record. If you are reading this site as one of its personas, the lens follows it.</p>
 <p><b>Where it comes from.</b> The data is not on this site. It is in an encrypted vault that the wire&rsquo;s agents write to, and this page opens it in your browser with a published read key: {esc(CFG["vault_id"])} on {esc(CFG["endpoint"].replace("https://", ""))}. A commit to the vault is on this page within two minutes, with no release of the site. Anyone can read the whole vault, and its history, with <code>{esc(CFG["clone"])}</code>. <a href="how.html">How the wire works</a> has the design, the workflows and the daily run, read from the same vault.</p>
@@ -72,13 +77,14 @@ def edition_page(snap):
     agent = (f"The Industry Wire's data is in a public-read sgit vault, not on this site: vault {CFG['vault_id']} on {CFG['endpoint']}, read key "
              f"{CFG['read_key']} (read-only, published on purpose). Clone it with `{CFG['clone']}` and read data/bundle.json (beats, stories, sources, personas, "
              f"brief, docs), data/deliveries.json (story × persona: reached or withheld, with the reason) and docs/*.md. https://{HOST}/wire/snapshot.json holds the "
-             "headlines and primary links as of this site's last release. Every story is marked ai-generated, unreviewed until a person reviews it"
+             f"headlines and primary links as of this site's last release. The wire is a beta; its named reader ({NAMED_NAMES}) agreed to be one, and the persona and "
+             "personal brief of that name in the vault are theirs. Every story is marked ai-generated, unreviewed until a person reviews it"
              + (f"; {snap['counts']['primary_not_fetched']} of the {snap['counts']['stories']} stories in the edition of {snap['edition']} have a primary "
                 "source the research agent did not fetch, and those stories say so." if snap and "primary_not_fetched" in snap.get("counts", {}) else "."))
     return newsroom_page("wire/index.html", "The Industry Wire",
-                         "A daily wire of industry news across five beats, read live from an encrypted vault that agents keep: every story with its primary source, who else covered it, one exact quote and why it matters, and a lens per persona showing what reached them and why.",
-                         body, eyebrow="Industry news, read from a vault",
-                         lead="What happened this week in building with AI, AI business, open source, cybersecurity and governance: each story with where it came from and who else covered it, read live from the wire's vault.",
+                         "A daily wire of industry news across five beats, in beta, read live from an encrypted vault that agents keep: every story with its primary source, who else covered it, one exact quote and why it matters, and a lens per persona showing what reached them and why.",
+                         body, eyebrow=EYEBROW,
+                         lead="What happened this week in building with AI, AI business, open source, cybersecurity and governance: each story with where it came from and who else covered it, read live from the wire's vault. A beta, with one named reader by their agreement.",
                          agent=agent, head=HEAD, wide=True)
 
 
@@ -91,7 +97,7 @@ def sources_page():
     agent = f"The source registry of the Industry Wire: data/sources.json in vault {CFG['vault_id']} ({CFG['clone']}). Each source has beats, a tier (A open licence, B quote and link, C link only), a licence and whether a person has verified it."
     return newsroom_page("wire/sources.html", "The wire's sources",
                          "The registry of sources the Industry Wire polls, with the licence tier that decides what may be kept and shown, read live from the wire's vault.",
-                         body, eyebrow="Industry news, read from a vault", crumbs=(("The Industry Wire", "wire/index.html"),),
+                         body, eyebrow=EYEBROW, crumbs=(("The Industry Wire", "wire/index.html"),),
                          lead="Where the wire looks, and what each source's licence allows it to keep.", agent=agent, head=HEAD, wide=True)
 
 
@@ -99,7 +105,7 @@ def how_page():
     reads = ", ".join(f"<code>{esc(r)}</code>" for r in CFG["reads"])
     body = f"""<h2 id="site">How this site reads the vault</h2>
 <p>The wire&rsquo;s data lives in an encrypted sgit vault that its agents write to, with the key that writes it held by them and not by this site. This site holds the vault&rsquo;s <b>read key</b>, published on purpose, and each wire page opens the vault in your browser: it derives the address of the vault&rsquo;s head pointer, fetches ciphertext from <code>{esc(CFG["endpoint"])}</code>, decrypts it with Web Crypto, walks the commit&rsquo;s tree and reads {reads}. Nothing from the vault is run; it is drawn as text, and the documents are rendered from their markdown by a renderer that escapes. The pointer is re-checked at most every two minutes, so a commit by the wire&rsquo;s agents is on the page within that, with no release of this site. Objects that cannot change are cached in the browser for good.</p>
-<div class="note"><b>The contract between the vault and this site.</b> Everything in the vault is public, including its history: a published read key cannot be withdrawn from anyone who has fetched the objects, so nothing private goes in it, not frozen tier-B bytes, not a reader&rsquo;s feedback, not a brief meant for one person; those need a vault of their own. The pages rely on <code>data/bundle.json</code> having <code>beats</code>, <code>stories</code>, <code>sources</code>, <code>personas</code> and <code>brief</code> (edition, window, kind, status, editor_note, lead, threads, beats), on each story carrying <code>id</code>, <code>beat</code>, <code>headline</code>, <code>date</code>, <code>summary</code>, <code>quote</code>, <code>quote_source_url</code>, <code>primary</code>, <code>coverage</code>, <code>entities</code>, <code>why_it_matters</code>, <code>personas</code>, <code>confidence</code>, <code>status</code> and <code>primary_fetched</code>, and on <code>data/deliveries.json</code> rows of <code>story</code>, <code>persona</code>, <code>status</code>, <code>connections</code> and <code>withheld_reason</code>. A story&rsquo;s <code>status</code> is shown as written, so <em>ai-generated, unreviewed</em> stays on the page until the vault says otherwise. The commit message of the head is shown on every wire page.</div>
+<div class="note"><b>The contract between the vault and this site.</b> Everything in the vault is public, including its history: a published read key cannot be withdrawn from anyone who has fetched the objects, so nothing private goes in it, not frozen tier-B bytes, not a reader&rsquo;s feedback, and not a brief meant for one person unless that person has agreed to it being public; those need a vault of their own. The wire&rsquo;s one named reader so far, {esc(NAMED_NAMES)}, has agreed while the wire is a beta, and the agreement is recorded with the date in <code>admin/build/wire-vault.json</code>, which is also what tells the page to offer that lens. The pages rely on <code>data/bundle.json</code> having <code>beats</code>, <code>stories</code>, <code>sources</code>, <code>personas</code> and <code>brief</code> (edition, window, kind, status, editor_note, lead, threads, beats), on each story carrying <code>id</code>, <code>beat</code>, <code>headline</code>, <code>date</code>, <code>summary</code>, <code>quote</code>, <code>quote_source_url</code>, <code>primary</code>, <code>coverage</code>, <code>entities</code>, <code>why_it_matters</code>, <code>personas</code>, <code>confidence</code>, <code>status</code> and <code>primary_fetched</code>, and on <code>data/deliveries.json</code> rows of <code>story</code>, <code>persona</code>, <code>status</code>, <code>connections</code> and <code>withheld_reason</code>. A story&rsquo;s <code>status</code> is shown as written, so <em>ai-generated, unreviewed</em> stays on the page until the vault says otherwise. The commit message of the head is shown on every wire page.</div>
 <p>To read it without this site: <code>{esc(CFG["clone"])}</code>. The read key is <code>{esc(CFG["read_key"])}</code>.</p>
 <h2 id="docs">The wire&rsquo;s own documents</h2>
 <p>Read from the vault as committed: the architecture, the workflows, the sources policy, the UI options, the inspiration, and the runbook that the daily agent starts from.</p>
@@ -111,7 +117,7 @@ def how_page():
              f"The vault's own documents (architecture, workflows, sources policy, runbook) are in it: `{CFG['clone']}`.")
     return newsroom_page("wire/how.html", "How the wire works",
                          "How this site reads the Industry Wire's vault in the browser with a published read key, the contract the pages rely on, and the wire's own documents: architecture, workflows, sources policy and the daily runbook.",
-                         body, eyebrow="Industry news, read from a vault", crumbs=(("The Industry Wire", "wire/index.html"),),
+                         body, eyebrow=EYEBROW, crumbs=(("The Industry Wire", "wire/index.html"),),
                          lead="The data is in a vault the agents write to; this site holds the read key and draws it. Here is how, what the pages rely on, and the wire's own design documents, read from the same vault.",
                          agent=agent, head=HEAD, wide=True)
 

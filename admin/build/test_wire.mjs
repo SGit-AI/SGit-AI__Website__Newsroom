@@ -27,6 +27,7 @@ const check = (ok, what) => { console.log(`${ok ? 'ok  ' : 'FAIL'} ${what}`); if
 
 check(/^sgit_public_read_[0-9a-f]{64}:[a-z0-9]{4,24}$/.test(cfg.read_key), 'the recorded key is a read key in its public form')
 check(cfg.clone === `sgit clone ${cfg.read_key}`, 'the clone command matches the key')
+check(Array.isArray(cfg.named_readers) && cfg.named_readers.length > 0 && cfg.named_readers.every(x => x.persona && x.name && /^\d{4}-\d{2}-\d{2}$/.test(x.agreed)), 'every named reader in the config carries a persona, a name and the date they agreed')
 const vaultHost = new URL(cfg.endpoint).host
 
 let reach = false
@@ -91,6 +92,14 @@ try {
     check(/#lens=security-lead$/.test(await pg.evaluate(() => location.hash)), 'the lens is in the address, so it can be linked to')
     await pg.evaluate(() => [...document.querySelectorAll('.lens button')].find(b => /Everyone/.test(b.textContent)).click()); await pg.waitForTimeout(500)
     check((await count('article.story')) === n, 'Everyone brings every story back')
+    // the named reader, by their recorded agreement
+    const namedName = cfg.named_readers[0].name.split(' ')[0]
+    check(await pg.evaluate(name => !!document.querySelector('.personal') === false && [...document.querySelectorAll('.lens button')].some(b => b.textContent.startsWith(name)), namedName), `the lens bar offers the named reader (${namedName}) and no personal brief shows under Everyone`)
+    await pg.evaluate(name => [...document.querySelectorAll('.lens button')].find(b => b.textContent.startsWith(name)).click(), namedName)
+    await pg.waitForFunction(name => new RegExp(`reach ${name}`).test(document.getElementById('wire-status').textContent), namedName, { timeout: 30000 })
+    check((await count('.personal')) === 1 && (await count('.personal ol li')) >= 3 && (await text('.personal .note')).length > 40, `under ${namedName}'s lens the personal brief the vault wrote is shown, with its top stories`)
+    check(await pg.evaluate(() => [...document.querySelectorAll('.personal a')].every(a => a.getAttribute('href').startsWith('#'))), 'the personal brief links only to stories on the page')
+    check(/A beta\./.test(await pg.evaluate(() => document.body.textContent)) && /agreement/.test(await text('.personal')), 'the page says it is a beta and the brief says the named reader agreed')
     // sources
     await pg.goto(B + 'wire/sources.html'); await ready()
     const rows = await count('.srcs tbody tr')

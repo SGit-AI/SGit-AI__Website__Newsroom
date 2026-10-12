@@ -12,7 +12,7 @@
 
 <nav class="site"><div class="row">
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.9.2</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.9.3</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -136,6 +136,14 @@
 <div class="tablewrap"><table class="vers">
   <thead><tr><th>Version</th><th>Date</th><th>What shipped</th></tr></thead>
   <tbody>
+    <tr>
+      <td class="vnum">v0.9.3</td>
+      <td>12 Oct 2026</td>
+      <td><b>The Industry Wire is a beta with one named reader, by their agreement.</b>
+        <p>The wire&rsquo;s vault carries a seventh persona, named for the person who runs this site, and a personal brief written for them: three things they could write about and the stories that scored highest against their concerns. v0.9.0 held that lens back and flagged it, since a persona aimed at one person is their interest profile and the vault is public. That person has now agreed to be the wire&rsquo;s named reader while it is a beta, on the understanding that the site has few readers and the point is to try the thing. The agreement is recorded with the date in <code>admin/build/wire-vault.json</code>, which is what tells the edition page to offer that lens; under it, the page shows the personal brief as the vault wrote it, with its top stories linked on the page, and says whose it is and why it is public. The pages and the shipped page call the wire a beta, and <a href="../wire/how.html">the contract</a> on the how page now says that a brief for one person goes in only with that person&rsquo;s recorded agreement.</p>
+        <p><b>Checked.</b> The wire test gains five checks: the config&rsquo;s named readers carry a persona, a name and a date; the lens bar offers the named reader and shows no personal brief under Everyone; under the named lens the brief is shown with its top stories; those links stay on the page; and the page says it is a beta. The vault itself has not moved since the first import: its head is still the first-pass commit.</p>
+      </td>
+    </tr>
     <tr>
       <td class="vnum">v0.9.2</td>
       <td>12 Oct 2026</td>
@@ -661,7 +669,7 @@
     <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="netline"><a href="https://sgit.ai" style="display:inline;padding:0"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://pt.newsroom.sgit.ai" style="display:inline;padding:0">&#8593; pt.newsroom.sgit.ai</a> &middot; <a href="https://graphs.sgit.ai" style="display:inline;padding:0">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai" style="display:inline;padding:0">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai" style="display:inline;padding:0">&#8593; nhi.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai" style="display:inline;padding:0">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.9.2</a> &middot; <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.9.3</a> &middot; <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>The newsroom</h4>

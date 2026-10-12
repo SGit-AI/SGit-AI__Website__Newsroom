@@ -228,11 +228,12 @@ def shipped(f):
          '<a href="../for/index.html">How a link is made</a>.',
          'The names are whatever the link says: there is no way yet to prove who sent a list, and nothing counts who opened one. '
          'The page that makes a list is tested with a script, not yet with a synthetic recipient on a phone.'),
-        ('<b>The Industry Wire</b>', 'A daily wire of industry news across five beats, each story with its primary source, who else covered '
+        ('<b>The Industry Wire</b> (beta)', 'A daily wire of industry news across five beats, each story with its primary source, who else covered '
          'it, one exact quote and why it matters, and a lens per persona. The data is in an encrypted vault the wire&rsquo;s agents '
          'write to; the pages open it in the browser with a published read key, so a commit to the vault is on the page within '
-         'two minutes and without a release. <a href="../wire/index.html">The edition</a>, <a href="../wire/how.html">how it is read</a>.',
-         'The first edition is a week&rsquo;s catch-up, written by agents and reviewed by none; every story says so, and 22 of its '
+         'two minutes and without a release. It has one named reader, the site&rsquo;s owner, by their agreement while it is a beta: '
+         'the persona of their name and the personal brief under its lens are theirs. <a href="../wire/index.html">The edition</a>, <a href="../wire/how.html">how it is read</a>.',
+         'A beta. The first edition is a week&rsquo;s catch-up, written by agents and reviewed by none; every story says so, and 22 of its '
          'primary sources were not fetched. The daily run that the vault&rsquo;s runbook describes is not yet scheduled; placement on '
          'the front page and the weekly newsletter are designed, not built.'),
         ('<b>The passkey lab</b>', 'Proofs of concept for a reader account with no server: a passkey with PRF, the same bytes on '

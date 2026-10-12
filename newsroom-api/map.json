@@ -21,13 +21,13 @@
   {
    "path": "passkey/index.html",
    "what": "the page",
-   "lines": 117,
+   "lines": 297,
    "sha256": "2734d500402f16ee064126f8711b9e1528f6b849f4cd715ff4c7040d8275a90f"
   }
  ],
  "what": "The map of everything a reader does on newsroom.sgit.ai, and the review of it: phase 0 of the move described in https://newsroom.sgit.ai/articles/explorer-to-villager-newsroom.html. Written by admin/build/api_map.py on every build. The hashes are the 'before' for the move's rule that the live site serves the same bytes after it: scripts, styles and JSON raw; pages with the site chrome and version stamps normalised.",
  "api_means": "client-side: components, formats and contracts the browser runs, with no server and nothing to deploy but files",
- "release": "v0.9.2",
+ "release": "v0.9.3",
  "date": "11 October 2026",
  "source": {
   "sgit_ai": "v0.7.61",
@@ -36,7 +36,7 @@
   "meter_on_sgit_ai": "1.3.1"
  },
  "counts": {
-  "reader_code_lines": 3325,
+  "reader_code_lines": 3344,
   "reader_files": 22,
   "pages": 21,
   "views": 12,
@@ -45,7 +45,7 @@
   "outputs": 9,
   "contracts": 14,
   "findings": 18,
-  "tests": 166,
+  "tests": 171,
   "frozen_files": 20,
   "frozen_lines": 5697,
   "pages_with_csp": 0
@@ -231,9 +231,9 @@
    "path": "wire/wire.js",
    "what": "The Industry Wire: the edition with its lens, the sources, the documents, drawn from the vault as text",
    "from": "this site",
-   "lines": 201,
-   "bytes": 16024,
-   "sha256": "ca54e94a6075c5ed4f38b09ddf3406aedb122c5ba8581faed12afd631763ed43",
+   "lines": 214,
+   "bytes": 17386,
+   "sha256": "91289d4ad810fcd61cd562f29e2a3fd74a917125909df5aecf518b1b4ab98a2d",
    "hosts": [],
    "fetch": 0,
    "storage": [
@@ -249,9 +249,9 @@
    "path": "wire/wire.css",
    "what": "Styles for the wire pages",
    "from": "this site",
-   "lines": 70,
-   "bytes": 5890,
-   "sha256": "58083d87ccc73889883c4d9b4aff56e931a5a88ec22496b8043659634ed1e012",
+   "lines": 76,
+   "bytes": 6433,
+   "sha256": "51fc706e9725f4b60d22c504e897db5337b365b148a53673c3199c44a33d0b67",
    "hosts": [],
    "fetch": 0,
    "storage": [],
@@ -265,9 +265,9 @@
    "path": "admin/build/wire-vault.json",
    "what": "The wire's vault: endpoint, vault id, the public read key (the only key on this site)",
    "from": "this site",
-   "lines": 9,
-   "bytes": 784,
-   "sha256": "4e04cf61c5dcae24e71d4ec1387f25ab93ef0b5580ef9e278327055feb22f20e",
+   "lines": 14,
+   "bytes": 1312,
+   "sha256": "c8c84bea5a65df09436fdffd813e0ded4c0654644564da11403bb23ed28d5475",
    "hosts": [],
    "fetch": 0,
    "storage": [],
@@ -283,7 +283,7 @@
    "from": "this site, generated",
    "lines": 412,
    "bytes": 16825,
-   "sha256": "830ba14072ea2d024c51380db88b2bdf3620e43213e2646170a1cac808c2c118",
+   "sha256": "e3adb1150066e6e90d488c450db98a878f5c6adaefe542691b2b703752f9a12b",
    "hosts": [],
    "fetch": 0,
    "storage": [],
@@ -399,7 +399,7 @@
    "from": "this site, generated",
    "lines": 268,
    "bytes": 13439,
-   "sha256": "6a0de7851745263aa2afeffd6e367b2c921a20f0a4004100add9236e6953cabd",
+   "sha256": "7b7bc6c112744e508abbd9c9d95037b0226fd41135f008a7311d18cd920a0731",
    "hosts": [],
    "fetch": 0,
    "storage": [],
@@ -520,20 +520,20 @@
   {
    "path": "wire/index.html",
    "what": "the Industry Wire's edition",
-   "lines": 55,
-   "sha256": "c493f856046502b071ceaf89a8b083866c808b5fdbc1b5b44b509906b86e6eac"
+   "lines": 56,
+   "sha256": "ebb2c8b658df44fc0ede40475c6ff4ad68d76e494aa12acc0a8f03528400e865"
   },
   {
    "path": "wire/sources.html",
    "what": "the wire's sources",
-   "lines": 232,
-   "sha256": "66b4426bc906e0e132f84c1afb54db2fce5a8f34a344d89c7bba894e16860b8c"
+   "lines": 52,
+   "sha256": "9e4d5619a961370c4e1ef3cc9284c6d694838b263b7b52dce0178ba63cbfa246"
   },
   {
    "path": "wire/how.html",
    "what": "how the wire is read, and its documents",
-   "lines": 236,
-   "sha256": "58bb67d6fa0d861f3432daa2da76c0ef16f753f761e1750d4d20480a69d5840d"
+   "lines": 56,
+   "sha256": "f331d73c149731c18bb83d9509634ef32f81e7b9af43845419d0d740bcc338fd"
   },
   {
    "path": "meter/index.html",
@@ -593,7 +593,7 @@
   {
    "path": "admin/build/wire.py",
    "what": "writes the three wire pages and, from a clone, wire/snapshot.json",
-   "lines": 161
+   "lines": 167
   },
   {
    "path": "admin/build/validate.js",
@@ -629,8 +629,8 @@
   {
    "path": "admin/build/test_wire.mjs",
    "what": "the wire pages in Chromium, reading the real vault",
-   "lines": 117,
-   "checks": 23
+   "lines": 126,
+   "checks": 28
   }
  ],
  "ci_runs": [
