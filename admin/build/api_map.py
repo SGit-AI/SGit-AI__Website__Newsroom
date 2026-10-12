@@ -64,6 +64,10 @@ FILES = [
     ("persona/links.json",         "The persona links, for whoever writes to someone", "this site, generated"),
     ("articles/graphs.json",       "The feed the picks and the graph read: every article with topics, tags and citations", "sgit.ai, imported"),
     ("assets/newsroom-vault.js",   "The newsroom's vault module: create, open, read, write and publish through the vendored library; the door, master and reader vaults; unlock; add a door", "this site"),
+    ("assets/door.js",             "From a passkey's PRF bytes (or a recovery code) to a door vault's key: the article's derivation, shared by the lab and the pane", "this site"),
+    ("assets/vault-pane/vault-pane.js", "The vault pane on every page with the meter: enable with the passkey, create or join, update the vault, the table across devices, bring their activity here", "this site"),
+    ("assets/vault-pane/sync.js",  "The activity vault's logic as pure functions: a device's file, the consolidated view, totals recomputed, merging into local state", "this site"),
+    ("assets/vault-pane/vault-pane.css", "Styles for the pane and the page shift", "this site"),
     ("assets/vendor/sg-vault/local/sg-vault--create-with-id.js", "SGVault.createWithId: a vault at a derived id, a local patch pending upstream", "this site, pending upstream"),
 ] + [
     (f"assets/vendor/sg-vault/v0.2.3/{f}", d, "SGraph-AI__App__Send v0.2.3, vendored and unedited (VENDOR.md)") for f, d in [
@@ -90,6 +94,7 @@ PAGES = [
     ("persona/security/index.html", "a persona link"), ("persona/builder/index.html", "a persona link"),
     ("persona/board/index.html", "a persona link"), ("for/index.html", "a reading list"), ("for/make.html", "make a reading list"),
     ("wire/index.html", "the Industry Wire's edition"), ("wire/sources.html", "the wire's sources"), ("wire/how.html", "how the wire is read, and its documents"),
+    ("vault/index.html", "your vault: the reading account carried between devices, with the pane open"),
     ("meter/index.html", "SG Meter, documented"), ("meter/security.html", "the meter's security model"),
     ("demos/vaults/newsroom-synthetic-users/index.html", "the synthetic-readers study, with the embedded vault"),
 ]
@@ -102,6 +107,8 @@ BUILD = [
     ("admin/build/newsroom-meter.json", "the top-up link, applied on import"),
     ("admin/build/newsroom-text.json", "the eight text rules, applied on import"),
     ("admin/build/wire.py", "writes the three wire pages and, from a clone, wire/snapshot.json"),
+    ("admin/build/vault_page.py", "writes the vault page"),
+    ("admin/build/chrome.py", "the nav and footer on every page, with the meter's balance and the Vault button and pane on pages that carry the meter"),
     ("admin/build/validate.js", "the gate: checks 2d (live link), 5 (key tripwire), 11 (imports unedited), 12 (numbers hold)"),
 ]
 LABS = [("passkey/lab.js", "The passkey lab: WebAuthn with PRF, the door derivation, sgit's key derivation, and real vaults through assets/newsroom-vault.js"),
@@ -111,6 +118,8 @@ TESTS = [("admin/build/test_meter.mjs", "the meter in Chromium"), ("admin/build/
          ("admin/build/test_passkey.mjs", "the passkey lab in Chromium, with a virtual authenticator that has PRF, against the mock of the vault API"),
          ("admin/build/test_wire.mjs", "the wire pages in Chromium, reading the real vault"),
          ("admin/build/test_vault.mjs", "real vaults in Node: the vendored library against the mock of the vault API, and the sgit CLI round trip"),
+         ("admin/build/test_sync.mjs", "the activity vault's logic in Node, with two devices' states"),
+         ("admin/build/test_pane.mjs", "the vault pane in Chromium: the reading account carried between two devices through the mock vault, and a third opened with the recovery code"),
          ("admin/build/vault-mock.mjs", "the mock of the vault API the two vault tests run against")]
 
 # ----------------------------------------------------------------------------------------------- the views and controls

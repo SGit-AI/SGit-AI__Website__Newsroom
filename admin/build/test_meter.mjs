@@ -106,7 +106,10 @@ try {
     s = await state()
     check(s.balance < 0, `the balance goes below zero (${s.balance})`)
     check(await pg.evaluate(() => document.querySelector('sg-meter.meter-nav').shadowRoot.querySelector('a').classList.contains('neg')), 'the top bar marks a negative balance')
-    // the payment return page, once per reference
+    // the payment return page, once per reference. The article's charge grows with scroll depth for a moment after the
+    // scroll, so wait until the balance has stopped moving before taking it as the figure the top-up adds to.
+    for (let i = 0, prev = s.balance; i < 10; i++) { await wait(300); const n = (await state()).balance; if (n === prev) break; prev = n }
+    s = await state()
     const before = s.balance
     await pg.goto(B + 'account/topped-up.html?session_id=cs_test_1'); await wait(1000)
     await pg.reload(); await wait(1000)

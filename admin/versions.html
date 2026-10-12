@@ -12,7 +12,7 @@
 
 <nav class="site"><div class="row">
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.10.2</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.11.0</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -45,6 +45,7 @@
       <a class="sl" href="../account/share.html">A newsroom designed for you</a>
       <a class="sl" href="../account/personas.html">Your personas</a>
       <a class="sl" href="../account/top-up.html">Top up</a>
+      <a class="sl" href="../vault/index.html">Your vault, between devices</a>
       </div>
     </div>
     <div class="ni ni-has">
@@ -136,6 +137,16 @@
 <div class="tablewrap"><table class="vers">
   <thead><tr><th>Version</th><th>Date</th><th>What shipped</th></tr></thead>
   <tbody>
+    <tr>
+      <td class="vnum">v0.11.0</td>
+      <td>12 Oct 2026</td>
+      <td><b>The vault pane: the reading account carried between devices, when the reader asks.</b>
+        <p><b>What it is.</b> A <b>Vault</b> button beside the balance on every page that carries the meter opens a pane on the right; the page moves left while it is open and the pane overlays at phone width. In it: <em>Enable with your passkey</em> (the passkey&rsquo;s bytes derive the door, the door opens the master, the master opens the reader vault and brings the access key), or <em>I have a recovery code</em>; on a first device, <em>Create the account</em> with an access key pasted once and kept in the master from then on, and a recovery code shown once; <em>Update the vault</em>, which writes this device&rsquo;s records as one file in the reader vault, one commit, published; <em>Across your devices</em>, a table of every device with its reads, spend and top-ups and the totals; <em>Bring that device&rsquo;s activity here</em>, which adds the other devices&rsquo; records to this browser&rsquo;s local storage and reloads with the consolidated balance in the meter; every call to the vault server listed. <a href="../vault/index.html">The page</a> opens the pane on arrival and explains it.</p>
+        <p><b>The design</b>, in <a href="notes/2026-10-12__the-activity-vault.md">the activity vault</a>: local storage stays primary and is written in real time by the meter, which does not change; the vault is updated only when the reader presses the button, so the number of commits is the number of presses; the vault holds records, never totals, and reads, spend, declined, credit and balance are recomputed from the records with one starting credit for the account; one file per device, written only by that device, rewritten whole, so two devices cannot conflict; what is brought in from another device is tagged with it, and the next sync writes only this device&rsquo;s own records back; the access key is typed once. Not synced: the active persona, shares, the simulated cart. Not done: pruning local storage, retiring a device, rotating the master. The experiments to run next are listed in the note, the first being the loop on two real devices with one iCloud Keychain passkey while watching the pane&rsquo;s log.</p>
+        <p><b>Built as.</b> <code>assets/vault-pane/vault-pane.js</code> and <code>.css</code>, injected by the nav on every page with the meter and loading the vendored vault library from this origin the first time it is needed; <code>assets/vault-pane/sync.js</code>, the logic as pure functions; <code>assets/door.js</code>, the door derivation moved out of the lab, which re-exports it; <code>admin/build/vault_page.py</code>. The nav&rsquo;s Account menu gains the page.</p>
+        <p><b>Checked.</b> <code>test_sync.mjs</code>, 19 checks in Node with two devices&rsquo; states: a device file holds only its own records and no totals; the consolidated totals from the records with one starting credit; the same payment reference on two devices counts once; the version of a read that knows more wins; merging is idempotent; after a merge a device&rsquo;s file still holds only its own records; both browsers show the same figures. <code>test_pane.mjs</code>, 28 checks in Chromium against the mock vault with one virtual authenticator standing in for a synced passkey: device A reads an article, makes a passkey, meets &ldquo;no door here for this path yet&rdquo;, creates the account (four vaults: door, master, reader, recovery door), sees the recovery code once, updates; device B, a cleared browser with the same passkey, enables, is brought the access key by the master, sees A, brings A&rsquo;s read in and the meter in the nav shows the consolidated balance, reads its own article, updates only its own read; two devices in the table, two reads in total; device C opens with the recovery code and sees both. What reached the server was ciphertext; no key or access key in local storage; no X-API-Key; no other host. CI runs eight test files.</p>
+      </td>
+    </tr>
     <tr>
       <td class="vnum">v0.10.2</td>
       <td>12 Oct 2026</td>
@@ -693,7 +704,7 @@
     <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="netline"><a href="https://sgit.ai" style="display:inline;padding:0"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://pt.newsroom.sgit.ai" style="display:inline;padding:0">&#8593; pt.newsroom.sgit.ai</a> &middot; <a href="https://graphs.sgit.ai" style="display:inline;padding:0">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai" style="display:inline;padding:0">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai" style="display:inline;padding:0">&#8593; nhi.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai" style="display:inline;padding:0">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.10.2</a> &middot; <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.11.0</a> &middot; <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>The newsroom</h4>

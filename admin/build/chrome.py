@@ -61,7 +61,8 @@ NAV = [
         ("A newsroom designed for you", "account/share.html"),
         ("Your personas", "account/personas.html"),
         ("Top up", "account/top-up.html"),
-    ], ("account/",)),
+        ("Your vault, between devices", "vault/index.html"),
+    ], ("account/", "vault/")),
     ("How it runs", "newsroom/index.html", [
         ("How the newsroom runs", "newsroom/index.html"),
         ("The roles", "newsroom/index.html#roles"),
@@ -235,6 +236,10 @@ def nav_html(rel, up, newsroom=False, meter=False):
             + parent +
             f'  <a class="ver" href="{up}admin/versions.html" title="Site release history">{VERSION}</a>\n'
             + (f'  <sg-meter class="meter-nav" view="balance"></sg-meter>\n' if meter else '')
+            # the vault pane: a button beside the balance, and the pane's script and style, on every page that carries the meter
+            + (f'  <button class="vault-btn" type="button" aria-expanded="false" title="Your vault: the reading account carried between your devices"><span class="dot"></span>Vault</button>\n'
+               f'  <link rel="stylesheet" href="{up}assets/vault-pane/vault-pane.css">\n'
+               f'  <script type="module" src="{up}assets/vault-pane/vault-pane.js"></script>\n' if meter else '')
             + f'  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>\n'
             f'  <div class="nav-items">\n{rows}\n  </div>\n'
             f'  <a class="gh" href="{GH}">&#9733; GitHub</a>\n'

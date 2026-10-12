@@ -3,8 +3,8 @@
   {
    "path": "passkey/lab.js",
    "what": "The passkey lab: WebAuthn with PRF, the door derivation, sgit's key derivation, and real vaults through assets/newsroom-vault.js",
-   "lines": 439,
-   "sha256": "c49e3c1973b73f8de66ebfbaa4540cc19c11cbf7c687d309e1110ba78f087d5c"
+   "lines": 345,
+   "sha256": "08c47eae0b95943e10e919fc770ddd2c0c30b2fd7652a5199fb8b7961f92560a"
   },
   {
    "path": "passkey/lab.css",
@@ -21,13 +21,13 @@
   {
    "path": "passkey/index.html",
    "what": "the page",
-   "lines": 315,
+   "lines": 319,
    "sha256": "885911b67d01a6c01836e91782df85ee45d0e30f8f51d581f611665fba372f49"
   }
  ],
  "what": "The map of everything a reader does on newsroom.sgit.ai, and the review of it: phase 0 of the move described in https://newsroom.sgit.ai/articles/explorer-to-villager-newsroom.html. Written by admin/build/api_map.py on every build. The hashes are the 'before' for the move's rule that the live site serves the same bytes after it: scripts, styles and JSON raw; pages with the site chrome and version stamps normalised.",
  "api_means": "client-side: components, formats and contracts the browser runs, with no server and nothing to deploy but files",
- "release": "v0.10.2",
+ "release": "v0.11.0",
  "date": "11 October 2026",
  "source": {
   "sgit_ai": "v0.7.61",
@@ -36,16 +36,16 @@
   "meter_on_sgit_ai": "1.3.1"
  },
  "counts": {
-  "reader_code_lines": 6441,
-  "reader_files": 36,
-  "pages": 21,
+  "reader_code_lines": 7105,
+  "reader_files": 40,
+  "pages": 22,
   "views": 12,
   "controls": 56,
   "inputs": 11,
   "outputs": 9,
   "contracts": 14,
   "findings": 18,
-  "tests": 201,
+  "tests": 248,
   "frozen_files": 20,
   "frozen_lines": 5697,
   "pages_with_csp": 0
@@ -283,7 +283,7 @@
    "from": "this site, generated",
    "lines": 412,
    "bytes": 16826,
-   "sha256": "07bbb23db7b705c75ea8a876f9a9fab0eae34b19432e372fb79224013dcdcf80",
+   "sha256": "e8268dd0b3dd557940d7cc86a7f782cfde46c6546c7a0624a9fded5bbb8c6796",
    "hosts": [],
    "fetch": 0,
    "storage": [],
@@ -399,7 +399,7 @@
    "from": "this site, generated",
    "lines": 268,
    "bytes": 13440,
-   "sha256": "703b806ceb49582bbfe8e70002cd4f8bf28dfd31f6509c87a01cfca0b3c09bb8",
+   "sha256": "e035cdc9a2ae2bf4c9f878d57c7ca3e7f2308886446ada370348cfc0036222dd",
    "hosts": [],
    "fetch": 0,
    "storage": [],
@@ -437,6 +437,75 @@
    "storage": [
     "localStorage"
    ],
+   "events": [],
+   "eval": 0,
+   "innerHTML": 0,
+   "confirm": 0,
+   "crypto": false
+  },
+  {
+   "path": "assets/door.js",
+   "what": "From a passkey's PRF bytes (or a recovery code) to a door vault's key: the article's derivation, shared by the lab and the pane",
+   "from": "this site",
+   "lines": 139,
+   "bytes": 8954,
+   "sha256": "740779876d19acebd24e493da9616d132a968f8885c013880f383c15d6ef4dff",
+   "hosts": [],
+   "fetch": 0,
+   "storage": [],
+   "events": [],
+   "eval": 0,
+   "innerHTML": 0,
+   "confirm": 0,
+   "crypto": true
+  },
+  {
+   "path": "assets/vault-pane/vault-pane.js",
+   "what": "The vault pane on every page with the meter: enable with the passkey, create or join, update the vault, the table across devices, bring their activity here",
+   "from": "this site",
+   "lines": 359,
+   "bytes": 27837,
+   "sha256": "c61c1b300c246be509f3161dce694b8c0010a5488c9aa2dc7f896f0bf1b10052",
+   "hosts": [
+    "dev.send.sgraph.ai"
+   ],
+   "fetch": 0,
+   "storage": [
+    "localStorage",
+    "sessionStorage"
+   ],
+   "events": [],
+   "eval": 0,
+   "innerHTML": 0,
+   "confirm": 0,
+   "crypto": false
+  },
+  {
+   "path": "assets/vault-pane/sync.js",
+   "what": "The activity vault's logic as pure functions: a device's file, the consolidated view, totals recomputed, merging into local state",
+   "from": "this site",
+   "lines": 125,
+   "bytes": 7932,
+   "sha256": "c49e6a0ff767a27a94c7b795fb8bd1649d8aeeae36e9352b74bb5cde62e8f07b",
+   "hosts": [],
+   "fetch": 0,
+   "storage": [],
+   "events": [],
+   "eval": 0,
+   "innerHTML": 0,
+   "confirm": 0,
+   "crypto": false
+  },
+  {
+   "path": "assets/vault-pane/vault-pane.css",
+   "what": "Styles for the pane and the page shift",
+   "from": "this site",
+   "lines": 41,
+   "bytes": 4246,
+   "sha256": "16edfe6272be49e0d128c77f22302fe17158a35cce502e31f04e00fd0f3ccd40",
+   "hosts": [],
+   "fetch": 0,
+   "storage": [],
    "events": [],
    "eval": 0,
    "innerHTML": 0,
@@ -656,127 +725,133 @@
   {
    "path": "account/index.html",
    "what": "the reading account",
-   "lines": 250,
+   "lines": 254,
    "sha256": "fbe19375c9e0b1e9f6703b129c242418a1245b90d4c6e4339ff21569cb300e1f"
   },
   {
    "path": "account/newsroom.html",
    "what": "the reader's newsroom",
-   "lines": 245,
+   "lines": 249,
    "sha256": "25ce5685c477f0fc7027f9b27bdbfdd0eca5446f1b9496d9299142b737c36c45"
   },
   {
    "path": "account/personas.html",
    "what": "the personas",
-   "lines": 245,
+   "lines": 249,
    "sha256": "645413ccdf42b9495fff9726edd72d2d86cfcda3c527b5a35a37edf948b761ec"
   },
   {
    "path": "account/share.html",
    "what": "send us your reading",
-   "lines": 247,
+   "lines": 251,
    "sha256": "f75680bc608081880d25633ed0813ef952507af9775b6110173404a306e7cf3f"
   },
   {
    "path": "account/top-up.html",
    "what": "the top-up",
-   "lines": 245,
+   "lines": 249,
    "sha256": "ea1f9348b198c8fb4c92ee29afed402398c223cd36cff95e609b6e6a2bd90c48"
   },
   {
    "path": "account/topped-up.html",
    "what": "the page a payment returns to",
-   "lines": 244,
+   "lines": 248,
    "sha256": "518f95ea18b117b4a3b631875a2fef66340194cfa6100e49edb44043330428eb"
   },
   {
    "path": "subscribe/index.html",
    "what": "subscribe",
-   "lines": 265,
+   "lines": 269,
    "sha256": "c2027e60d91dbc823a8aa61e03ff6139c666bcdb91b09c5feedf5fb021f539c3"
   },
   {
    "path": "persona/index.html",
    "what": "the persona picker",
-   "lines": 227,
+   "lines": 231,
    "sha256": "eb1fb60d66f1bc012ea826210b76e8c75ef53ce4687dfc89175cdad273523e37"
   },
   {
    "path": "persona/founder/index.html",
    "what": "a persona link",
-   "lines": 234,
+   "lines": 238,
    "sha256": "7f1158881c4b570820e1bf05bea9db044ac34aeff5057863640803411b7d0d18"
   },
   {
    "path": "persona/journalist/index.html",
    "what": "a persona link",
-   "lines": 234,
+   "lines": 238,
    "sha256": "5e7abe06b002715d09e39f580be402241b2368230e7925317e49151fc268541d"
   },
   {
    "path": "persona/security/index.html",
    "what": "a persona link",
-   "lines": 234,
+   "lines": 238,
    "sha256": "ef7b2f455eb269384cde9a8a0b1935e8f89471917a6b349d938b6d87a5ee62ea"
   },
   {
    "path": "persona/builder/index.html",
    "what": "a persona link",
-   "lines": 234,
+   "lines": 238,
    "sha256": "531be95b48cd5e113477070da851112987cd64f38f438a57baf21cc5606049b7"
   },
   {
    "path": "persona/board/index.html",
    "what": "a persona link",
-   "lines": 234,
+   "lines": 238,
    "sha256": "9db951fc6bd349996233f0e82b9bad2c4c291a3cd96bbfed75c0eefafd25b916"
   },
   {
    "path": "for/index.html",
    "what": "a reading list",
-   "lines": 241,
+   "lines": 245,
    "sha256": "313dac3b3f31ae2929b2c9958acd12f21db431079b70444051dc9b71319ba55b"
   },
   {
    "path": "for/make.html",
    "what": "make a reading list",
-   "lines": 231,
+   "lines": 235,
    "sha256": "3c827cd696b202f3a2d80da77abc6fb97c71378eeb6b9b4d12c8779735ca8bd4"
   },
   {
    "path": "wire/index.html",
    "what": "the Industry Wire's edition",
    "lines": 56,
-   "sha256": "d758d6b6e7cf3956f790ead6b8a2faeef28b97af4208665b4125c6f98658b674"
+   "sha256": "ff722c6409cd392b80475cb03df6d4dea5b573639bd1cabd2cf0276a0603f173"
   },
   {
    "path": "wire/sources.html",
    "what": "the wire's sources",
-   "lines": 232,
+   "lines": 236,
    "sha256": "9e4d5619a961370c4e1ef3cc9284c6d694838b263b7b52dce0178ba63cbfa246"
   },
   {
    "path": "wire/how.html",
    "what": "how the wire is read, and its documents",
-   "lines": 236,
+   "lines": 240,
    "sha256": "f331d73c149731c18bb83d9509634ef32f81e7b9af43845419d0d740bcc338fd"
+  },
+  {
+   "path": "vault/index.html",
+   "what": "your vault: the reading account carried between devices, with the pane open",
+   "lines": 245,
+   "sha256": "303e6990ea69485d632e3e63d7ee466674f2b6d2c2870f6ad7946dbfc94772e8"
   },
   {
    "path": "meter/index.html",
    "what": "SG Meter, documented",
-   "lines": 386,
+   "lines": 390,
    "sha256": "a55c58061932dc93c0ce532421f6bd6dbb2abef5e70dad77b7e4d098f7bc72e4"
   },
   {
    "path": "meter/security.html",
    "what": "the meter's security model",
-   "lines": 271,
+   "lines": 275,
    "sha256": "aa41ecfcbd9cd2110bad0ae2e23072b6d0a4809643e2d59d37b515bc1362f45a"
   },
   {
    "path": "demos/vaults/newsroom-synthetic-users/index.html",
    "what": "the synthetic-readers study, with the embedded vault",
-   "lines": 332,
+   "lines": 336,
    "sha256": "0a2a202f29029b4fa8322842496d58d10d8775634e6331f0782c49ea83ba7ee3"
   }
  ],
@@ -822,6 +897,16 @@
    "lines": 167
   },
   {
+   "path": "admin/build/vault_page.py",
+   "what": "writes the vault page",
+   "lines": 60
+  },
+  {
+   "path": "admin/build/chrome.py",
+   "what": "the nav and footer on every page, with the meter's balance and the Vault button and pane on pages that carry the meter",
+   "lines": 348
+  },
+  {
    "path": "admin/build/validate.js",
    "what": "the gate: checks 2d (live link), 5 (key tripwire), 11 (imports unedited), 12 (numbers hold)",
    "lines": 489
@@ -865,6 +950,18 @@
    "checks": 28
   },
   {
+   "path": "admin/build/test_sync.mjs",
+   "what": "the activity vault's logic in Node, with two devices' states",
+   "lines": 66,
+   "checks": 19
+  },
+  {
+   "path": "admin/build/test_pane.mjs",
+   "what": "the vault pane in Chromium: the reading account carried between two devices through the mock vault, and a third opened with the recovery code",
+   "lines": 157,
+   "checks": 28
+  },
+  {
    "path": "admin/build/vault-mock.mjs",
    "what": "the mock of the vault API the two vault tests run against",
    "lines": 151,
@@ -877,7 +974,9 @@
   "admin/build/test_review.mjs",
   "admin/build/test_passkey.mjs",
   "admin/build/test_wire.mjs",
-  "admin/build/test_vault.mjs"
+  "admin/build/test_vault.mjs",
+  "admin/build/test_sync.mjs",
+  "admin/build/test_pane.mjs"
  ],
  "loader": {
   "lines": 17,
@@ -990,7 +1089,7 @@
   "account": 1,
   "landing": 6,
   "newsroom": 1,
-  "page": 366,
+  "page": 367,
   "personas": 1,
   "share": 1,
   "topped-up": 1,

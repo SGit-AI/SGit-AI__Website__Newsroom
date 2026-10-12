@@ -236,6 +236,13 @@ def shipped(f):
          'A beta. The first edition is a week&rsquo;s catch-up, written by agents and reviewed by none; every story says so, and 22 of its '
          'primary sources were not fetched. The daily run that the vault&rsquo;s runbook describes is not yet scheduled; placement on '
          'the front page and the weekly newsletter are designed, not built.'),
+        ('<b>The vault pane</b> (beta)', 'The reading account this browser keeps, carried between a reader&rsquo;s devices through an encrypted vault '
+         'that opens with their passkey: the Vault button beside the balance opens a pane on the right; enable with the passkey (or the '
+         'recovery code), create the account once with an access key, press Update the vault, and on another device bring that device&rsquo;s '
+         'activity in and read the same figures. Records, never totals; one file per device; the vault updated when the reader asks. '
+         '<a href="../vault/index.html">The page</a>, <a href="../admin/notes/2026-10-12__the-activity-vault.md">the design</a>.',
+         'A beta, against dev.send.sgraph.ai. Local storage stays primary and is not pruned; shares and the active persona are not synced; '
+         'the keys of an unlocked session live in the tab&rsquo;s session storage; retiring a device and rotating the master are designed, not built.'),
         ('<b>The passkey lab</b>', 'Proofs of concept for a reader account with no server: a passkey with PRF, the same bytes on '
          'every device through the same path, a door vault derived from them with sgit&rsquo;s own key derivation, a recovery code, and, with an '
          'access key, real sgit vaults made and opened in the browser through the vault library that runs dev.vault.sgraph.ai, vendored here: '
