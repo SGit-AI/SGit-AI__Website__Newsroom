@@ -30,6 +30,8 @@ Live site: https://newsroom.sgit.ai (GitHub Pages, deployed from `dev`).
 
 The plan, the collisions with sgit.ai, and the content audit behind all of this are in
 [`admin/notes/2026-10-10__newsroom-move-and-content-audit.md`](admin/notes/2026-10-10__newsroom-move-and-content-audit.md).
+The other notes are the reader API's map and review (`2026-10-11__newsroom-api-map-and-review.md`, generated) and the passkey
+finding that a door is per path, not per passkey (`2026-10-12__one-door-per-passkey-path.md`).
 The structure list below is the site as it was built in August and September; most of
 those sections are now archived.
 

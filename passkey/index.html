@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>The passkey lab &middot; newsroom.sgit.ai</title>
-<meta name="description" content="Try the pieces of a reader account with no server: make a passkey with PRF, see the same bytes on every device, derive a door vault and sgit&#x27;s keys from them, make a recovery code, check against sgit&#x27;s own code, and create the door on a vault server.">
+<meta name="description" content="Try the pieces of a reader account with no server: make a passkey with PRF, see the same bytes on every device through the same path, derive a door vault and sgit&#x27;s keys from them, make a recovery code, check against sgit&#x27;s own code, and create the door on a vault server.">
 <link rel="canonical" href="https://newsroom.sgit.ai/passkey/index.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="newsroom.sgit.ai">
 <meta property="og:url" content="https://newsroom.sgit.ai/passkey/index.html">
 <meta property="og:title" content="The passkey lab">
-<meta property="og:description" content="Try the pieces of a reader account with no server: make a passkey with PRF, see the same bytes on every device, derive a door vault and sgit&#x27;s keys from them, make a recovery code, check against sgit&#x27;s own code, and create the door on a vault server.">
+<meta property="og:description" content="Try the pieces of a reader account with no server: make a passkey with PRF, see the same bytes on every device through the same path, derive a door vault and sgit&#x27;s keys from them, make a recovery code, check against sgit&#x27;s own code, and create the door on a vault server.">
 <meta property="og:image" content="https://newsroom.sgit.ai/og/default.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="../assets/newsroom.css">
@@ -19,7 +19,7 @@
 <body>
 <nav class="site"><div class="row">
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.9.0</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.9.1</a>
   <sg-meter class="meter-nav" view="balance"></sg-meter>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
@@ -159,7 +159,7 @@
 
 <section class="poc" id="poc2">
 <h2>2. Touch it: the PRF bytes</h2>
-<p class="what"><code>navigator.credentials.get()</code> with the fixed input, the SHA-256 of a public string. The authenticator returns 32 bytes computed from a secret it keeps for this site and this passkey. The same passkey gives the same bytes on every device it syncs to; that is the whole trick.</p>
+<p class="what"><code>navigator.credentials.get()</code> with the fixed input, the SHA-256 of a public string. The authenticator returns 32 bytes computed from a secret it keeps for this site and this passkey. The same passkey gives the same bytes on every device it syncs to, through the same kind of path; that is the whole trick. Through a different path (a phone over QR, instead of the provider on the device) the same passkey can give different bytes, which a test here found on 12 October 2026; the result shows which path answered, and the design gives each path its own door: <a href='../admin/notes/2026-10-12__one-door-per-passkey-path.md'>one door per passkey path</a>.</p>
 <div class="acts"><label>Input text <input type="text" id="poc2-input" class="mono"></label><button type="button" class="btn primary" id="poc2-go">Get the PRF bytes</button></div>
 <div class="ladder" id="poc2-compare" hidden>Your fingerprint here: <b class="mono" id="poc2-mine"></b>. From another device: <input type="text" id="poc2-other" class="mono" placeholder="8 hex characters" maxlength="8"> <button type="button" class="btn sm" id="poc2-cmp-go">Compare</button> <span id="poc2-cmp-out" class="dim"></span></div><div class="out" id="poc2-out"></div>
 </section>
@@ -207,7 +207,8 @@
 <ul>
 <li><b>The relying party id is this host.</b> On newsroom.sgit.ai a passkey made here is for newsroom.sgit.ai exactly, as the article&rsquo;s trust boundary asks; it does not work on sgit.ai or on any other site. The derivation&rsquo;s constants name newsroom.sgit.ai whichever host runs the page, so the test vectors are the same everywhere.</li>
 <li><b>Where the passkey lives decides what you get.</b> Card 1 shows whether the passkey is backup-eligible, which is the browser&rsquo;s word for synced. A clean browser with no provider may make a passkey that signs and returns no PRF bytes; card 2 says so if it happens, and card 1 shows the ladder.</li>
-<li><b>Not built here:</b> the master vault, the newsroom vault, moving the reading account into it, adding a second passkey as a door, retiring a door, and anything that signs the reader in. The brief&rsquo;s phase five is where those land, after the move.</li>
+<li><b>A door per path, not per passkey.</b> On 12 October 2026 one Google Password Manager passkey gave one set of bytes through the provider on a Mac and on an iPhone, and a different set, consistently, when a phone answered a QR code from a Mac or an iPad: same credential id, same user handle, same input. Apple&rsquo;s developer forums carry the same symptom for iCloud Keychain passkeys since late 2024, with a fix announced and a tester reporting it persisting. The design therefore treats every distinct set of bytes as its own door to the same master, adds a door while unlocked on a device where both paths run (a Mac with Chrome runs both in one session), and uses the recovery code to bring a new path in where no door opens. The finding, the bug and the revised design are written out in <a href="../admin/notes/2026-10-12__one-door-per-passkey-path.md">one door per passkey path</a>.</li>
+<li><b>Not built here:</b> the master vault, the newsroom vault, moving the reading account into it, adding a second path or passkey as a door, retiring a door, and anything that signs the reader in. The brief&rsquo;s phase five is where those land, after the move.</li>
 <li><b>The door record this lab writes</b> is one sgit object (<code>obj-cas-imm-&hellip;</code>, content-addressed), encrypted the way sgit encrypts, so sgit&rsquo;s own code can decrypt it; it is not yet a commit in a tree, so <code>sgit clone</code> of the door would show an empty history. The real door will be a vault with one committed file.</li>
 <li><b>Tests:</b> <code>admin/build/test_passkey.mjs</code> drives the page in Chromium with a virtual authenticator that has PRF, checks the derivation against the vectors, and runs the server flow against a stand-in server; the real server is tried by a person with an access key.</li>
 </ul>
@@ -233,7 +234,7 @@ import('../assets/components/sg-meter/v1/v1.4/v1.4.0/sg-meter.js')
     <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="netline"><a href="https://sgit.ai" style="display:inline;padding:0"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://pt.newsroom.sgit.ai" style="display:inline;padding:0">&#8593; pt.newsroom.sgit.ai</a> &middot; <a href="https://graphs.sgit.ai" style="display:inline;padding:0">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai" style="display:inline;padding:0">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai" style="display:inline;padding:0">&#8593; nhi.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai" style="display:inline;padding:0">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.9.0</a> &middot; <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.9.1</a> &middot; <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>The newsroom</h4>

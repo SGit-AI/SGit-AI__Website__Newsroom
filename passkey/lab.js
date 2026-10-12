@@ -231,16 +231,19 @@ export async function lab(opts) {
             const flags = flagsOf(a.response.authenticatorData)
             if (!ext.prf || !ext.prf.results || !ext.prf.results.first) throw new Error('The authenticator signed, and returned no PRF bytes (prf.results.first is empty). This is the “Chrome’s own store” case in the article.')
             const bytes = new Uint8Array(ext.prf.results.first)
-            S.prf = { bytes, inputText, credId: a.id, userHandle: a.response.userHandle ? hex(a.response.userHandle) : '' }
-            const fp = hex(bytes).slice(0, 8)
+            const path = a.authenticatorAttachment || 'not reported'
+            S.prf = { bytes, inputText, credId: a.id, userHandle: a.response.userHandle ? hex(a.response.userHandle) : '', path }
+            // the fingerprint is a hash of the bytes, not a prefix of them: it is meant to be read out and compared
+            const fp = hex(new Uint8Array(await crypto.subtle.digest('SHA-256', bytes))).slice(0, 8)
             out2.replaceChildren(
                 row('PRF input (SHA-256 of the text; public)', h('span', { class: 'mono' }, hex(prfInput))),
                 row('The 32 PRF bytes', secret(hex(bytes), 'the bytes')),
-                row('Their fingerprint, to compare between devices', h('b', { class: 'mono big' }, fp)),
+                row('Their fingerprint (SHA-256 of the bytes, first 8), to compare between devices', h('b', { class: 'mono big' }, fp)),
+                row('Path', `${path}${path === 'platform' ? ': the provider on this device answered' : path === 'cross-platform' ? ': a phone by QR, or a security key, answered' : ''}`),
                 row('Credential used', h('span', { class: 'mono' }, a.id)),
                 row('User handle', h('span', { class: 'mono' }, S.prf.userHandle || 'none returned')),
                 row('Flags', `user present ${flags.up} · verified ${flags.uv} · backup eligible ${flags.be} · backed up ${flags.bs}`),
-                h('p', { class: 'dim' }, 'Open this page on another device where the same passkey is available (the same Google or Apple account, or the same hardware key), press the same button, and the fingerprint, the credential id and the user handle are the same. Different input text gives different bytes from the same passkey.'),
+                h('p', { class: 'dim' }, 'Open this page on another device where the same passkey is available (the same Google or Apple account, or the same hardware key), press the same button, and the fingerprint, the credential id and the user handle are the same, when the passkey answers by the same kind of path. By a different path (a phone over QR, instead of the provider on the device) the same passkey can give different bytes: a test on 12 October 2026 found exactly that, and the design gives each path its own door (the note linked below). Different input text gives different bytes from the same passkey.'),
             )
             $('poc2-compare').hidden = false
             $('poc2-mine').textContent = fp
@@ -249,7 +252,7 @@ export async function lab(opts) {
     })
     $('poc2-cmp-go').addEventListener('click', () => {
         const other = $('poc2-other').value.trim().toLowerCase(), mine = $('poc2-mine').textContent
-        $('poc2-cmp-out').textContent = !other ? '' : other === mine ? 'The same: the two devices derived the same door.' : 'Different: either another passkey, another input, or a provider that does not sync this one.'
+        $('poc2-cmp-out').textContent = !other ? '' : other === mine ? 'The same: the two devices derived the same door.' : 'Different: another passkey, another input, another path (a phone over QR against the provider on the device), or a provider that does not sync this one.'
     })
 
     // 3 ---------------------------------------------------------------- derive

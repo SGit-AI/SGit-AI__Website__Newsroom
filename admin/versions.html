@@ -12,7 +12,7 @@
 
 <nav class="site"><div class="row">
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.9.0</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.9.1</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -136,6 +136,15 @@
 <div class="tablewrap"><table class="vers">
   <thead><tr><th>Version</th><th>Date</th><th>What shipped</th></tr></thead>
   <tbody>
+    <tr>
+      <td class="vnum">v0.9.1</td>
+      <td>12 Oct 2026</td>
+      <td><b>One door per passkey path: a finding from the lab, the bug behind it, and the design change it forces.</b>
+        <p><b>The finding.</b> One Google Password Manager passkey, used through the provider on a Mac and then on an iPhone, gave one set of PRF bytes. The same passkey, answering a QR code from an iPad and then from the same Mac, gave a different set, and gave it consistently: same credential id, same user handle, same input, different bytes. The design in <a href="../articles/the-passkey-opens-the-vault.html">The passkey opens the vault</a> rested on the same passkey giving the same bytes everywhere; it holds along one path and not across paths. Apple&rsquo;s developer forums carry the same symptom for iCloud Keychain passkeys since late 2024, with an engineer calling it a bug, a fix announced for iOS 18.4, and a later tester reporting it persisting. <a href="notes/2026-10-12__one-door-per-passkey-path.md">The note</a> records the four runs, what the extension is supposed to do, why two paths can disagree, and what the length of time this has sat unfixed says about how few people derive keys this way across the QR path.</p>
+        <p><b>The design change.</b> The unit is the path, not the passkey: every distinct set of bytes is its own door to the same master, and each door records where it came from. The middle layer the design kept, one small vault between the passkey and the master, is the reason a second path costs one small vault rather than a second identity. A door is added while unlocked, on a device where both paths run (a Mac with Chrome runs both in one session), by asking for the bytes again by the other path and writing the master&rsquo;s key under the new door; no key is typed, pasted or shown, and the provider sees a PRF request and nothing else. Where no device has both paths, the recovery code opens the recovery door once and the new path&rsquo;s door is written from there. Providers without PRF cannot be doors and can hold the recovery code, which is a weaker thing and is described as such. The master&rsquo;s list of doors, with each door&rsquo;s own key, is what lets a lost device&rsquo;s door be retired from any other. All of it is designed, not built, and <a href="../shipped/index.html">what runs</a> lists it so.</p>
+        <p><b>The lab.</b> Card 2 now shows the path that answered, platform or cross-platform, so the two cases are told apart on the page; its text and the comparison box say that a different path can give different bytes; and its fingerprint is the first eight characters of the SHA-256 of the bytes, where before it was the first four bytes of the secret itself, a careless thing to put on a screen. The test checks the path row and the hashed fingerprint. The hub pages and llms.txt narrow the claim to &ldquo;through the same kind of path&rdquo;. The CI step that runs the browser tests now names all five.</p>
+      </td>
+    </tr>
     <tr>
       <td class="vnum">v0.9.0</td>
       <td>11 Oct 2026</td>
@@ -645,7 +654,7 @@
     <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="netline"><a href="https://sgit.ai" style="display:inline;padding:0"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://pt.newsroom.sgit.ai" style="display:inline;padding:0">&#8593; pt.newsroom.sgit.ai</a> &middot; <a href="https://graphs.sgit.ai" style="display:inline;padding:0">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai" style="display:inline;padding:0">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai" style="display:inline;padding:0">&#8593; nhi.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai" style="display:inline;padding:0">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.9.0</a> &middot; <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.9.1</a> &middot; <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>The newsroom</h4>
