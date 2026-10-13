@@ -1,5 +1,5 @@
 ---
-title: How cheap is it to undo? A spectrum of trust and side effects, and why the newsroom ships on its own while my email still waits for me
+title: The human in the loop is a spectrum: how cheap it is to undo decides where a person belongs, and why the newsroom ships on its own while my email still waits for me
 date: 2026-10-13
 author: Dinis Cruz
 author_url: about/index.html

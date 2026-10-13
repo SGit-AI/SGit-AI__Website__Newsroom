@@ -12,6 +12,8 @@ status: published
 
 !shot hl-where.webp | images/ | Where the person belongs. Two questions place every output an agent produces: can it be undone, and how much would it cost if it went wrong. The person goes where the answers are no and a lot. Everywhere else, controls that do not get tired do the checking, and the person reads the record afterwards. Examples from the newsroom and from my own agent team. | decision
 
+> **What came next.** [The human in the loop is a spectrum](/articles/how-cheap-is-it-to-undo.html) takes the last section further: why this newsroom ships on its own while my email waits for me, and how both of those can move.
+
 ## In short {#in-short}
 
 - **Checking every output is both, and mostly neither.** It is a bottleneck because it does not scale, and a weak safety net because people approve almost everything: Anthropic measured 93% of permission prompts approved.

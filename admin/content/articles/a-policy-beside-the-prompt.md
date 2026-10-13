@@ -12,6 +12,8 @@ status: published
 
 !shot pp-inputs.webp | images/ | What an agent is given, today in two modes and as proposed. Over the API we write the whole system prompt, so our behaviour policy goes inside it; in the Claude apps and Claude Code the vendor's system prompt comes first and our policy goes into what we add. In both, it is text the model is asked to keep, in the same channel as every email and page it reads, and the vendor's checks are its own. Proposed: the policy as a separate, versioned input, layered over the vendor's own published policy, checked outside the model where it can be. | diagram
 
+> **What came next.** [The human in the loop](/articles/the-human-in-the-loop.html) asks where a person belongs once the policy exists: on the outputs that cannot be undone, with controls that do not get tired everywhere else.
+
 ## In short {#in-short}
 
 - **A third input.** Beside the system prompt and the prompt, an agent should take an Agent Behaviour Policy, written to a published standard, which the vendor acknowledges, enforces where it can, reports against, and answers for.

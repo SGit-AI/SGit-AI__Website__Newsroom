@@ -55,6 +55,237 @@
   ],
   "articles": [
     {
+      "slug": "every-link-points-back",
+      "title": "Every link points back: 566 links between 105 articles, 15 that point forward, and why an article should know what came next and what corrected it",
+      "date": "2026-10-13",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/every-link-points-back.html",
+      "markdown": "https://newsroom.sgit.ai/articles/every-link-points-back.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/every-link-points-back.webp",
+      "teaser": "551 of 566 links between articles point back in time. Why older articles should say what came next and what corrected them.",
+      "topics": [
+        "site-and-engineering",
+        "graphs-and-knowledge"
+      ],
+      "tags": [
+        "links",
+        "graphs",
+        "corrections",
+        "versions",
+        "navigation",
+        "newsroom",
+        "analysis",
+        "reading",
+        "article"
+      ],
+      "links_out": [
+        "the-policy-draws-the-liability-line",
+        "a-policy-beside-the-prompt",
+        "the-human-in-the-loop",
+        "how-cheap-is-it-to-undo",
+        "introducing-fractal-semantic-graphs",
+        "footprint-and-blast-radius",
+        "six-agents-one-inbox",
+        "the-passkey-opens-the-vault",
+        "the-vault-is-live",
+        "not-a-straight-line",
+        "if-somebody-built-a-company-on-code-review",
+        "code-review-as-a-fractal-semantic-graph",
+        "the-site-is-an-inbox",
+        "sixteen-notes-i-did-not-want-to-lose"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "lb-counts.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/lb-counts.webp",
+          "caption": "Every link points back. The links written into the text of 105 articles to other articles, counted by article number: 551 of 566 point to an earlier article; of 551 later citations, 11 are answered by a link the other way; and of 104 pairs published one after the other, the later links the earlier six times as often as the reverse.",
+          "kind": "comparison"
+        },
+        {
+          "file": "lb-chain.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/lb-chain.webp",
+          "caption": "Four articles written in a row on 13 October: each was written with a link back, and none could link forward. This release adds a What came next note to the top of the first three. Below, the four kinds of forward link proposed, three at the top of the page and one at the foot.",
+          "kind": "architecture"
+        }
+      ],
+      "graph": {
+        "slug": "every-link-points-back",
+        "teaser": "551 of 566 links between articles point back in time. Why older articles should say what came next and what corrected them.",
+        "topics": [
+          "site-and-engineering",
+          "graphs-and-knowledge"
+        ],
+        "core_idea": "Links between articles are written when an article is written, so almost all point back in time; the site derives a Continued by list at each article's foot, but it is easy to miss and does not separate a sequel from a correction, so older articles should carry typed forward links, what came next, corrected by and status since, at the top, added in turns from the newest articles down.",
+        "nodes": [
+          {
+            "id": "sequence",
+            "label": "Written in sequence",
+            "kind": "example",
+            "summary": "Four articles written in a row today, each linking only to the one before."
+          },
+          {
+            "id": "counts",
+            "label": "551 of 566 links point back",
+            "kind": "claim",
+            "summary": "15 forward links in 14 articles, all added by edits."
+          },
+          {
+            "id": "answered",
+            "label": "11 of 551 citations answered",
+            "kind": "claim",
+            "summary": "94 articles are cited by a later one; few link forward to it."
+          },
+          {
+            "id": "pairs",
+            "label": "42 versus 7",
+            "kind": "claim",
+            "summary": "In 104 consecutive pairs the later links the earlier 42 times, the earlier the later 7."
+          },
+          {
+            "id": "design",
+            "label": "A link is written once",
+            "kind": "concept",
+            "summary": "The future does not exist when an article is written; a forward link needs an edit."
+          },
+          {
+            "id": "threads",
+            "label": "Continued by, at the foot",
+            "kind": "artefact",
+            "summary": "A derived list below the sources, with no reason and one kind for everything."
+          },
+          {
+            "id": "inplace",
+            "label": "Revised in place",
+            "kind": "example",
+            "summary": "62 of 97 articles have more than one version; the passkey article went to v1.4.0 after a lab."
+          },
+          {
+            "id": "correctedby",
+            "label": "Corrected by a later article",
+            "kind": "example",
+            "summary": "The code review follow-up corrects the first article, which points to it in a list at the end."
+          },
+          {
+            "id": "status",
+            "label": "Status since",
+            "kind": "example",
+            "summary": "A plan in one article that a later article says has not happened yet."
+          },
+          {
+            "id": "kinds",
+            "label": "Four kinds of forward link",
+            "kind": "method",
+            "summary": "What came next, corrected by and status since at the top; cited by at the foot."
+          },
+          {
+            "id": "notes",
+            "label": "What came next notes",
+            "kind": "artefact",
+            "summary": "Added in this release to the first three articles of today's chain."
+          },
+          {
+            "id": "turns",
+            "label": "In turns, newest first",
+            "kind": "method",
+            "summary": "Add forward links a few at a time from the most recent articles down, with a validator to warn."
+          }
+        ],
+        "edges": [
+          {
+            "from": "sequence",
+            "to": "counts",
+            "rel": "leads-to"
+          },
+          {
+            "from": "design",
+            "to": "counts",
+            "rel": "answers"
+          },
+          {
+            "from": "counts",
+            "to": "answered",
+            "rel": "extends"
+          },
+          {
+            "from": "pairs",
+            "to": "sequence",
+            "rel": "example-of"
+          },
+          {
+            "from": "threads",
+            "to": "design",
+            "rel": "answers"
+          },
+          {
+            "from": "threads",
+            "to": "kinds",
+            "rel": "leads-to"
+          },
+          {
+            "from": "inplace",
+            "to": "correctedby",
+            "rel": "contrasts"
+          },
+          {
+            "from": "correctedby",
+            "to": "kinds",
+            "rel": "leads-to"
+          },
+          {
+            "from": "status",
+            "to": "kinds",
+            "rel": "leads-to"
+          },
+          {
+            "from": "kinds",
+            "to": "notes",
+            "rel": "produces"
+          },
+          {
+            "from": "notes",
+            "to": "sequence",
+            "rel": "answers"
+          },
+          {
+            "from": "kinds",
+            "to": "turns",
+            "rel": "depends-on"
+          }
+        ],
+        "links": {
+          "articles": [
+            "the-policy-draws-the-liability-line",
+            "a-policy-beside-the-prompt",
+            "the-human-in-the-loop",
+            "how-cheap-is-it-to-undo",
+            "introducing-fractal-semantic-graphs",
+            "footprint-and-blast-radius",
+            "six-agents-one-inbox",
+            "the-passkey-opens-the-vault",
+            "the-vault-is-live",
+            "not-a-straight-line",
+            "if-somebody-built-a-company-on-code-review",
+            "code-review-as-a-fractal-semantic-graph",
+            "the-site-is-an-inbox",
+            "sixteen-notes-i-did-not-want-to-lose"
+          ],
+          "pages": [],
+          "sites": []
+        },
+        "quotes": [
+          {
+            "text": "A forward link to a sequel is a convenience. A forward link to a correction is the record.",
+            "why": "Why corrections matter more than sequels."
+          },
+          {
+            "text": "When I write in sequence, the later piece usually says so; the earlier piece almost never learns.",
+            "why": "The asymmetry in one line."
+          }
+        ]
+      }
+    },
+    {
       "slug": "sixteen-notes-i-did-not-want-to-lose",
       "title": "Sixteen notes I did not want to lose: a request to send from any browser to my vault, why identity is still this hard, and how two more wires became a product line",
       "date": "2026-10-13",
@@ -90,7 +321,9 @@
         "the-wall-under-the-reply",
         "two-agents-one-vault"
       ],
-      "links_in": [],
+      "links_in": [
+        "every-link-points-back"
+      ],
       "figures": [
         {
           "file": "sn-lane.webp",
@@ -307,7 +540,7 @@
     },
     {
       "slug": "how-cheap-is-it-to-undo",
-      "title": "How cheap is it to undo? A spectrum of trust and side effects, and why the newsroom ships on its own while my email still waits for me",
+      "title": "The human in the loop is a spectrum: how cheap it is to undo decides where a person belongs, and why the newsroom ships on its own while my email still waits for me",
       "date": "2026-10-13",
       "updated": "",
       "url": "https://newsroom.sgit.ai/articles/how-cheap-is-it-to-undo.html",
@@ -336,7 +569,10 @@
         "explorer-to-villager-newsroom",
         "a-second-reader-the-agent-cannot-skip"
       ],
-      "links_in": [],
+      "links_in": [
+        "every-link-points-back",
+        "the-human-in-the-loop"
+      ],
       "figures": [
         {
           "file": "cu-spectrum.webp",
@@ -523,6 +759,7 @@
         "article"
       ],
       "links_out": [
+        "how-cheap-is-it-to-undo",
         "agency-is-not-a-yes",
         "where-is-the-why",
         "footprint-and-blast-radius",
@@ -536,7 +773,9 @@
         "the-agent-team-as-it-runs"
       ],
       "links_in": [
-        "how-cheap-is-it-to-undo"
+        "every-link-points-back",
+        "how-cheap-is-it-to-undo",
+        "a-policy-beside-the-prompt"
       ],
       "figures": [
         {
@@ -696,7 +935,8 @@
             "hope-or-enforcement",
             "a-policy-beside-the-prompt",
             "how-the-voice-works",
-            "the-agent-team-as-it-runs"
+            "the-agent-team-as-it-runs",
+            "how-cheap-is-it-to-undo"
           ],
           "pages": [],
           "sites": [
@@ -743,6 +983,7 @@
         "article"
       ],
       "links_out": [
+        "the-human-in-the-loop",
         "the-policy-draws-the-liability-line",
         "ultimate-insider-three-collisions",
         "the-investigation-github-owes-its-customers",
@@ -751,7 +992,9 @@
         "stop-the-bleeding-then-ask-for-it-back"
       ],
       "links_in": [
-        "the-human-in-the-loop"
+        "every-link-points-back",
+        "the-human-in-the-loop",
+        "the-policy-draws-the-liability-line"
       ],
       "figures": [
         {
@@ -957,7 +1200,8 @@
             "the-investigation-github-owes-its-customers",
             "hope-or-enforcement",
             "authority-outside-the-model",
-            "stop-the-bleeding-then-ask-for-it-back"
+            "stop-the-bleeding-then-ask-for-it-back",
+            "the-human-in-the-loop"
           ],
           "pages": [],
           "sites": [
@@ -1009,6 +1253,7 @@
         "article"
       ],
       "links_out": [
+        "a-policy-beside-the-prompt",
         "riskmandate-ten-questions",
         "where-is-the-why",
         "the-agent-team-as-it-runs",
@@ -1020,6 +1265,7 @@
         "authority-outside-the-model"
       ],
       "links_in": [
+        "every-link-points-back",
         "a-policy-beside-the-prompt"
       ],
       "figures": [
@@ -1206,7 +1452,8 @@
             "hope-or-enforcement",
             "a-second-reader-the-agent-cannot-skip",
             "who-owns-the-words",
-            "authority-outside-the-model"
+            "authority-outside-the-model",
+            "a-policy-beside-the-prompt"
           ],
           "pages": [],
           "sites": [
@@ -2460,6 +2707,7 @@
         "judo-for-small-countries"
       ],
       "links_in": [
+        "every-link-points-back",
         "sixteen-notes-i-did-not-want-to-lose",
         "the-vault-crosses-chrome-profiles"
       ],
@@ -5564,6 +5812,7 @@
         "i-miss-it"
       ],
       "links_in": [
+        "every-link-points-back",
         "sixteen-notes-i-did-not-want-to-lose",
         "the-vault-crosses-chrome-profiles",
         "places-of-highest-leverage",
@@ -5793,6 +6042,7 @@
         "two-agents-one-vault"
       ],
       "links_in": [
+        "every-link-points-back",
         "the-vault-crosses-chrome-profiles",
         "not-a-straight-line",
         "places-of-highest-leverage",
@@ -6773,6 +7023,7 @@
         "where-the-vault-keys-live"
       ],
       "links_in": [
+        "every-link-points-back",
         "the-vault-crosses-chrome-profiles",
         "not-a-straight-line",
         "why-i-love-wardley-maps",
@@ -19329,6 +19580,7 @@
         "the-question-is-whether-they-miss-it"
       ],
       "links_in": [
+        "every-link-points-back",
         "explorer-to-villager-newsroom",
         "the-mandate-stack",
         "send-an-agent-not-a-spreadsheet",
@@ -20582,6 +20834,7 @@
         "if-somebody-built-a-company-on-code-review"
       ],
       "links_in": [
+        "every-link-points-back",
         "explorer-to-villager-newsroom",
         "the-ai-governance-stack-as-a-graph",
         "riskmandate-ten-questions",
@@ -21488,6 +21741,7 @@
         "six-agents-one-inbox"
       ],
       "links_in": [
+        "every-link-points-back",
         "the-human-in-the-loop",
         "sovereignty-is-the-ability-to-move",
         "the-records-ran-out",
@@ -22725,6 +22979,7 @@
         "replicating-the-agentic-inbox"
       ],
       "links_in": [
+        "every-link-points-back",
         "sixteen-notes-i-did-not-want-to-lose",
         "from-a-spreadsheet-to-a-folder-per-person",
         "the-same-argument-in-our-words",
@@ -25031,6 +25286,7 @@
       ],
       "links_out": [],
       "links_in": [
+        "every-link-points-back",
         "why-i-love-wardley-maps",
         "the-site-is-an-inbox",
         "the-agent-is-the-reader",

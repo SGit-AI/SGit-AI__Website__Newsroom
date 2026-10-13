@@ -10,11 +10,13 @@
 
 # A policy beside the prompt: a proposal that every agent takes a behaviour policy as an input, with enforcement and liability attached, and why aviation and payments say the vendors should want it
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-13 · [article v1.1.0, 2 versions](versions/a-policy-beside-the-prompt.md) · [newsroom v0.12.16](https://newsroom.sgit.ai/admin/versions.html) · agentsagent-behaviour-policystandardsliabilityprompt-injectiontrustaviationpaymentsriskmandateproposalarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-13 · [article v1.2.0, 3 versions](versions/a-policy-beside-the-prompt.md) · [newsroom v0.12.16](https://newsroom.sgit.ai/admin/versions.html) · agentsagent-behaviour-policystandardsliabilityprompt-injectiontrustaviationpaymentsriskmandateproposalarticle
 
 ***Abstract:** An idea came up while I was answering a post about agent liability, and I think it deserves to stand on its own as a proposal. Today an agent gets a prompt from us and a system prompt from its vendor. It should also get an Agent Behaviour Policy, written to a published standard, which the vendor accepts, enforces as far as it can, and eventually answers for. It is the beginning of dealing with something the models have got away with for a long time: they do not separate code from data, so every instruction and every piece of content arrives in the same channel. Now that agents can do a great deal, and are starting to go off the rails in public, their behaviour is becoming an existential threat to the companies that make them, through liability and above all through trust: it does not take many users being hurt before people stop giving agents instructions at all. Two industries have been here. Aviation did not get safe out of altruism; it got safe because every crash became world news, and at the accident rate of 1995 today's traffic would bring about a hundred fatal airliner accidents a year instead of twelve. Payments got some of the best security teams anywhere because liability for fraud was moved onto the card companies and the banks, and the fraud detection followed the money, often spotting a merchant's breach before the merchant did. Regulation alone does not do it; some industries are happy to pay the fines. It works when the rule, the liability and the business model point the same way. A policy beside the prompt is how to make them point the same way for agents: the user answers for what is outside the policy, and the vendor for the rows it accepted. Most agents already run a policy of their own; we just cannot see it, rely on it, or stop it changing. And the system prompt itself is a light behaviour policy that is not written like one: the next step is for the vendor's own rules to become a published policy too, layered with ours.*
 
 What an agent is given, today in two modes and as proposed. Over the API we write the whole system prompt, so our behaviour policy goes inside it; in the Claude apps and Claude Code the vendor's system prompt comes first and our policy goes into what we add. In both, it is text the model is asked to keep, in the same channel as every email and page it reads, and the vendor's checks are its own. Proposed: the policy as a separate, versioned input, layered over the vendor's own published policy, checked outside the model where it can be.
+
+**What came next.** [The human in the loop](the-human-in-the-loop.md) asks where a person belongs once the policy exists: on the outputs that cannot be undone, with controls that do not get tired everywhere else.
 
 ## In short
 
@@ -135,6 +137,7 @@ Agents & policyStartups & strategy[This article as a graph →](graphs.md#a-poli
 
 ### Builds on
 
+- [The human in the loop, safety net or bottleneck: both, until you decide which outputs need a person and give that person the why](the-human-in-the-loop.md) Checking every output is a bottleneck and a weak safety net; put the person where it cannot be undone, and let controls do the rest.
 - [The policy draws the liability line: an answer to Ralf Thomas on agent accountability, and why every agent in a loop should take a behaviour policy beside its prompt](the-policy-draws-the-liability-line.md) An answer to Ralf Thomas: the shell game works because nothing is written down, and a behaviour policy's explicit prohibitions move the liability line.
 - [The ultimate insider: agents, the infrastructure that cannot hold them, and risk management that cannot keep up](ultimate-insider-three-collisions.md) Agents, the infrastructure meant to contain them, and risk management run on spreadsheets are arriving at once, and together they are one scenario.
 - [The investigation GitHub owes its customers: why a global outage of a platform the world deploys through deserves an aviation-style inquiry, and how the evidence could now be gathered](the-investigation-github-owes-its-customers.md) A global GitHub Actions outage read the way aviation reads an incident: independent inquiry, near-miss reporting, second and third stories, vaults for the evidence.
@@ -144,7 +147,9 @@ Agents & policyStartups & strategy[This article as a graph →](graphs.md#a-poli
 
 ### Continued by
 
+- [Every link points back: 566 links between 105 articles, 15 that point forward, and why an article should know what came next and what corrected it](every-link-points-back.md) 551 of 566 links between articles point back in time. Why older articles should say what came next and what corrected them.
 - [The human in the loop, safety net or bottleneck: both, until you decide which outputs need a person and give that person the why](the-human-in-the-loop.md) Checking every output is a bottleneck and a weak safety net; put the person where it cannot be undone, and let controls do the rest.
+- [The policy draws the liability line: an answer to Ralf Thomas on agent accountability, and why every agent in a loop should take a behaviour policy beside its prompt](the-policy-draws-the-liability-line.md) An answer to Ralf Thomas: the shell game works because nothing is written down, and a behaviour policy's explicit prohibitions move the liability line.
 
 [All articles](index.md) · [All graphs](graphs.md)
 

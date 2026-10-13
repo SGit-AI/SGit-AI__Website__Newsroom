@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-13 | published | 2,885 | first published | this release | [current](../sixteen-notes-i-did-not-want-to-lose.md) |
+| **v1.0.0** | 2026-10-13 | published | 2,885 | first published | [`8654593cd`](https://github.com/SGit-AI/SGit-AI__Website/commit/8654593cd7f215f845edcc7c7509e03f4d4b3585) | [current](../sixteen-notes-i-did-not-want-to-lose.md) |
 
 [← Back to the article](../sixteen-notes-i-did-not-want-to-lose.md) · [All articles](../index.md)
 

@@ -12,6 +12,8 @@ status: published
 
 !shot pl-shell.webp | images/ | The four moves of the accountability shell game, from Ralf Thomas's post, and what a written behaviour policy changes in each. Without one, every move has an easy answer; with one, the question becomes whether the product honoured what it was explicitly told. | comparison
 
+> **What came next.** [A policy beside the prompt](/articles/a-policy-beside-the-prompt.html), written the same day, takes this answer further: a proposal that every agent takes a behaviour policy as an input, with enforcement and liability attached, and what aviation and payments say about who should want it.
+
 ## In short {#in-short}
 
 - **The post is right about the pattern.** Agents with real reach failed in 2026, and the companies behind them reached for four answers: the agent did it, the customer allowed it, the contract covers it, and the disclosure can wait.

@@ -10,11 +10,13 @@
 
 # The policy draws the liability line: an answer to Ralf Thomas on agent accountability, and why every agent in a loop should take a behaviour policy beside its prompt
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-13 · [article v1.0.0](versions/the-policy-draws-the-liability-line.md) · [newsroom v0.12.15](https://newsroom.sgit.ai/admin/versions.html) · agentsaccountabilityliabilityagent-behaviour-policyriskmandateproduct-liabilityshared-responsibilityprompt-injectiongovernanceresponsearticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-13 · [article v1.1.0, 2 versions](versions/the-policy-draws-the-liability-line.md) · [newsroom v0.12.15](https://newsroom.sgit.ai/admin/versions.html) · agentsaccountabilityliabilityagent-behaviour-policyriskmandateproduct-liabilityshared-responsibilityprompt-injectiongovernanceresponsearticle
 
 ***Abstract:** Ralf Thomas posted on LinkedIn this week that if an employee wrecks a client's systems the company pays, and asked why AI agents should be any different. The post's record of 2026 is mostly right, and its four moves of the accountability shell game, blame the agent, blame the customer, hide behind the contract, disclose late, are a good map. I agree with its conclusion, and I want to add the piece I think is missing, because it explains why the shell game works. When an agent goes wrong today, nothing was written down between the person clicking allow and the failure. The agent had reach, and nobody had told it, in a form anyone could later point to, what it must not do. So "misuse", "full-access mode" and "you allowed it" are hard to answer. An Agent Behaviour Policy changes that. It is still mostly hope, an expectation the model is asked to keep, but it is explicit: do not send email directly, do not touch labels you do not need, do not edit other agents' files, do not start scheduled tasks, do not attack other sites because you can, speak on your own behalf and not mine, make no offers, stay inside the mandate. My hypothesis is that an explicit prohibition the agent then breaks moves liability towards the platform that runs it. That sharpens something I have said before, that liability sits with whoever granted the reach. Towards the world it still does. Between the customer and the vendor, the written policy is the evidence that turns "user error" into "your product ignored what it was told". And that points to the direction of travel: every agent that runs in a loop, anything with the lethal trifecta, should take a behaviour policy beside its system prompt, and its vendor should be accountable for honouring it.*
 
 The four moves of the accountability shell game, from Ralf Thomas's post, and what a written behaviour policy changes in each. Without one, every move has an easy answer; with one, the question becomes whether the product honoured what it was explicitly told.
+
+**What came next.** [A policy beside the prompt](a-policy-beside-the-prompt.md), written the same day, takes this answer further: a proposal that every agent takes a behaviour policy as an input, with enforcement and liability attached, and what aviation and payments say about who should want it.
 
 ## In short
 
@@ -108,6 +110,7 @@ Agents & policy[This article as a graph →](graphs.md#the-policy-draws-the-liab
 
 ### Builds on
 
+- [A policy beside the prompt: a proposal that every agent takes a behaviour policy as an input, with enforcement and liability attached, and why aviation and payments say the vendors should want it](a-policy-beside-the-prompt.md) A proposal: every agent takes a behaviour policy beside its prompt, which the vendor accepts and answers for, as aviation and payments learned to.
 - [Ten hard questions for RiskMandate, answered: the mandate, the reach, the gap, and what we are deliberately not](riskmandate-ten-questions.md) Ten hard questions from a conference, answered in a two-hour interview: what RiskMandate does, what it deliberately is not, and how mature each part is.
 - [Where is the why? A permission prompt asked me to decide, and kept the reason](where-is-the-why.md) A prompt asked for a decision and kept the reason. Read through the policy, the law on uninformed consent, and the fixes that worked: put the why in the prompt.
 - [The agent team as it runs: one person, twelve agents, encrypted vaults, and a mailbox nobody sends from](the-agent-team-as-it-runs.md) Twelve agents on dedicated accounts, encrypted vaults as the only memory, messages as files, a folder per person, and a mailbox nobody sends from.
@@ -120,6 +123,7 @@ Agents & policy[This article as a graph →](graphs.md#the-policy-draws-the-liab
 
 ### Continued by
 
+- [Every link points back: 566 links between 105 articles, 15 that point forward, and why an article should know what came next and what corrected it](every-link-points-back.md) 551 of 566 links between articles point back in time. Why older articles should say what came next and what corrected them.
 - [A policy beside the prompt: a proposal that every agent takes a behaviour policy as an input, with enforcement and liability attached, and why aviation and payments say the vendors should want it](a-policy-beside-the-prompt.md) A proposal: every agent takes a behaviour policy beside its prompt, which the vendor accepts and answers for, as aviation and payments learned to.
 
 [All articles](index.md) · [All graphs](graphs.md)
