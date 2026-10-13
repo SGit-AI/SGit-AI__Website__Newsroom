@@ -31,11 +31,13 @@ nav.site .gh .lbl{margin-left:.3em}
   nav.site .gh .lbl{display:none}
   nav.site .gh{padding:.28rem .5rem}
 }
-/* The phone menu, from 1199 down (newsroom.css took over at 820, site.css at 1200; the sweep
-   found eight groups plus the tools fit at 1200 and not at 1181). The whole list collapses
-   behind Menu; the tools stay on the bar, so the balance, the vault and the theme are one tap
-   on a phone too. */
-@media (max-width:1199px){
+/* The phone menu, from 1279 down (newsroom.css took over at 820, site.css at 1200). The sweep
+   on the machine that built v0.12.12 found eight groups plus the tools fit at 1200 and not at
+   1181, and CI's Ubuntu fonts, a few percent wider, broke the row at exactly 1200 (v0.12.13).
+   A limit measured on one machine's fonts is not a limit, so the collapse is at 1280, a common
+   laptop width, with the slack of the difference. The whole list collapses behind Menu; the
+   tools stay on the bar, so the balance, the vault and the theme are one tap on a phone too. */
+@media (max-width:1279px){
   nav.site .row{position:relative;gap:.5rem}
   .nav-toggle{display:block;order:3;margin-left:0;background:var(--panel);
     border:1px solid var(--line2);border-radius:6px;padding:.3rem .7rem;
@@ -60,7 +62,7 @@ nav.site .gh .lbl{margin-left:.3em}
 @media (max-width:520px){
   nav.site .row{gap:.4rem}
   .nav-toggle{order:3;margin-left:auto}
-  nav.site .nav-tools{order:4;flex:0 0 100%;margin-left:0;gap:.3rem}
+  nav.site .nav-tools{order:4;flex:0 0 100%;margin-left:0;gap:.3rem;flex-wrap:wrap}
   nav.site .nav-tools .gh{display:none}
   nav.site a.ver{display:none}
 }

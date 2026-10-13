@@ -21,7 +21,7 @@
   <link rel="stylesheet" href="../../assets/site-nav.css">
   <script src="../../assets/themes/themes.js"></script>
   <a class="brand" href="../../index.html">newsroom<span>.sgit.ai</span></a>
-  <a class="ver" href="../../admin/versions.html" title="Site release history">v0.12.12</a>
+  <a class="ver" href="../../admin/versions.html" title="Site release history">v0.12.13</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -142,9 +142,9 @@
 <table class="eng-meta"><tr><td class="k">Id</td><td>037</td></tr><tr><td class="k">Status</td><td><span class="eng-tag done">done</span></td></tr><tr><td class="k">Kind</td><td><span class="eng-tag bug">Bug</span></td></tr><tr><td class="k">Priority</td><td><span class="eng-tag high">high</span></td></tr><tr><td class="k">Created</td><td>2026-10-13T13:30:00Z</td></tr><tr><td class="k">Source</td><td>the owner, in chat, with a screenshot of an article at 2000px wide: nine groups, five tools and the version on the bar, GitHub alone on a second line; &quot;can you also clean up the top menu</td></tr><tr><td class="k">Release</td><td><a href="../releases/v0.12.12.html">v0.12.12</a></td></tr><tr><td class="k">Effort</td><td>small</td></tr><tr><td class="k">File</td><td><code>admin/engineering/issues/done/037-the-bar-on-one-row.md</code></td></tr></table><div class="eng-body"><h2 id="what-happens">What happens</h2>
 <p>By v0.12.11 the bar carried nine groups (Newsroom, Industry Wire, Account, How it runs, Design, Replicate, World News Day, Archive, About), Search, the balance, Vault, GitHub and the version, and on the legacy pages a "part of sgit.ai" pill. At 2000px it still wrapped: GitHub sat alone on a second row. Two stylesheets owned the bar's layout and disagreed: sgit.ai's (assets/newsroom.css, which this site cannot edit) collapsed it to the phone menu at 820px and the legacy one (assets/site.css) at 1200px, and neither knew about the tools this site had added. Adding the theme pill (card 036) would have made it worse.</p>
 <h2 id="scenario">Scenario</h2>
-<pre><code class="lang-gherkin">Given a viewport of 1200px or wider, in either look
+<pre><code class="lang-gherkin">Given a viewport of 1280px or wider, in either look
 Then the bar is one row: the brand and the version, the groups, and one cluster of tools on the right
-Given a viewport narrower than 1200px
+Given a viewport narrower than 1280px
 Then the groups collapse behind Menu and the tools stay on the bar
 Given a phone
 Then the bar is two rows on purpose: the brand and Menu, then the tools
@@ -152,9 +152,9 @@ And nothing at any width is wider than the viewport</code></pre>
 <h2 id="mock-up">Mock-up</h2>
 <p><code>newsroom.sgit.ai  v0.12.12 | Newsroom · Industry Wire · Account · How it runs · Design · Replicate · Archive · About | [Search] [£5.00] [Vault] [● Newsprint] [★]</code></p>
 <h2 id="outcome">Outcome</h2>
-<p>Shipped in v0.12.12. <code>assets/site-nav.css</code>, loaded by chrome.py on every page in both looks, owns the bar's layout: the tools are one flex item (<code>.nav-tools</code>) so they move together and never split; the collapse is at 1199px for both looks, found by a sweep of widths (<code>node admin/build/shots_themes.mjs --sweep</code>: eight groups plus the tools fit at 1200 and not at 1181); GitHub is its star below 1400px; a phone is two rows by design, the brand and Menu above the tools. Eight groups, not nine: World News Day moved under Archive, where the footer already had it, and the "part of sgit.ai" pill went, because the footer's network line says it on every page. <code>admin/build/test_themes.mjs</code> section 4 sweeps the widths and fails on a second row at 1200 or above, or on overflow at any width.</p>
+<p>Shipped in v0.12.12. <code>assets/site-nav.css</code>, loaded by chrome.py on every page in both looks, owns the bar's layout: the tools are one flex item (<code>.nav-tools</code>) so they move together and never split; the collapse is at 1279px for both looks. A sweep of widths (<code>node admin/build/shots_themes.mjs --sweep</code>) on the machine that built it found eight groups plus the tools fit at 1200 and not at 1181, and v0.12.12 shipped with the collapse at 1199; CI's Ubuntu fonts, a few percent wider, broke the row at exactly 1200, so v0.12.13 moved the limit to 1280, a common laptop width, with the difference as slack. A limit measured on one machine's fonts is not a limit; GitHub is its star below 1400px; a phone is two rows by design, the brand and Menu above the tools. Eight groups, not nine: World News Day moved under Archive, where the footer already had it, and the "part of sgit.ai" pill went, because the footer's network line says it on every page. <code>admin/build/test_themes.mjs</code> section 4 sweeps the widths and fails on a second row at 1280 or above, or on overflow at any width down to 360.</p>
 <h2 id="screenshots">Screenshots</h2>
-<p><img src="../shots/037-bar-2000.png" alt="The bar at 2000px, one row" loading="lazy"> <img src="../shots/037-bar-1440.png" alt="The bar at 1440px" loading="lazy"> <img src="../shots/037-bar-1280.png" alt="The bar at 1280px, GitHub as its star" loading="lazy"> <img src="../shots/037-bar-1200.png" alt="At 1200px, the last width on one row" loading="lazy"> <img src="../shots/037-bar-1199.png" alt="At 1199px, collapsed behind Menu" loading="lazy"> <img src="../shots/037-bar-390.png" alt="On a phone, two rows by design" loading="lazy"></p></div><p class="dim"><a href="../index.html">Back to the board</a>.</p>
+<p><img src="../shots/037-bar-2000.png" alt="The bar at 2000px, one row" loading="lazy"> <img src="../shots/037-bar-1440.png" alt="The bar at 1440px" loading="lazy"> <img src="../shots/037-bar-1280.png" alt="The bar at 1280px, GitHub as its star" loading="lazy"> <img src="../shots/037-bar-1279.png" alt="At 1279px, collapsed behind Menu" loading="lazy"> <img src="../shots/037-bar-390.png" alt="On a phone, two rows by design" loading="lazy"></p></div><p class="dim"><a href="../index.html">Back to the board</a>.</p>
 <div class="agent">
   <h4>For an agent</h4>
   <p>Issue 037 on newsroom.sgit.ai: The top bar on one row: eight groups, one cluster of tools, measured breakpoints. Status done, kind bug, priority high, release v0.12.12. Source file admin/engineering/issues/done/037-the-bar-on-one-row.md.</p>
@@ -172,7 +172,7 @@ import('../../assets/components/sg-meter/v1/v1.4/v1.4.1/sg-meter.js')
     <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="netline"><a href="https://sgit.ai" style="display:inline;padding:0"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://pt.newsroom.sgit.ai" style="display:inline;padding:0">&#8593; pt.newsroom.sgit.ai</a> &middot; <a href="https://graphs.sgit.ai" style="display:inline;padding:0">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai" style="display:inline;padding:0">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai" style="display:inline;padding:0">&#8593; nhi.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai" style="display:inline;padding:0">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../../admin/versions.html">v0.12.12</a> &middot; <a href="../../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../../admin/versions.html">v0.12.13</a> &middot; <a href="../../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>The newsroom</h4>

@@ -16,7 +16,7 @@
  *      ignored; the page's background and ink actually change; and the computed ink on the page, the
  *      link colour on the page and the ink on the accent each hold 4.5:1 in every theme (WCAG AA, the
  *      contrast the design states).
- *   4. The bar is one row at every width from 1200 up in both looks, collapses behind Menu below, and
+ *   4. The bar is one row at every width from 1280 up in both looks, collapses behind Menu below, and
  *      nothing overflows the viewport at any width down to 390 (card 037's measured claim).
  *
  * Skips (exit 0) when Playwright or Chromium is missing, and says so. No vault, no network.
@@ -129,15 +129,16 @@ try {
     }
 
     /* ---- 4. the bar ---- */
-    for (const [look, rel] of [['newsroom look', 'engineering/index.html'], ['legacy look', 'about/participant.html']]) {
-        for (const w of [2000, 1600, 1440, 1366, 1280, 1200, 1199, 1024, 768, 390]) {
+    // the sweep's pages are short ones: the bar is what is measured, and a wide table on a long page is another test's
+    for (const [look, rel] of [['newsroom look', 'about/newsroom-ux.html'], ['legacy look', 'about/participant.html']]) {
+        for (const w of [2000, 1600, 1440, 1366, 1280, 1279, 1024, 768, 390, 360]) {
             const ctx = await browser.newContext({ viewport: { width: w, height: 900 } })
             const pg = await ctx.newPage(); await pg.goto(B + rel)
             await pg.evaluate(() => document.fonts ? document.fonts.ready : null)
             const m = await pg.evaluate(() => ({ h: Math.round(document.querySelector('nav.site .row').getBoundingClientRect().height),
                 collapsed: getComputedStyle(document.querySelector('.nav-toggle')).display !== 'none',
                 overflow: document.documentElement.scrollWidth > document.documentElement.clientWidth }))
-            if (w >= 1200) check(m.h < 62 && !m.collapsed, `${look} at ${w}: one row (${m.h}px), not collapsed`)
+            if (w >= 1280) check(m.h < 62 && !m.collapsed, `${look} at ${w}: one row (${m.h}px), not collapsed`)
             else check(m.collapsed, `${look} at ${w}: collapsed behind Menu (${m.h}px)`)
             check(!m.overflow, `${look} at ${w}: nothing wider than the viewport`)
             if (w === 768) {

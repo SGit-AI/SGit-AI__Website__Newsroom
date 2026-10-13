@@ -13,7 +13,7 @@
  *   admin/content/articles/images/tm-night.webp     the article's figure of Night, 1400 wide
  *   admin/content/articles/images/tm-collage.webp   the five together
  *   admin/content/articles/images/tm-picker.webp    the picker, open
- *   admin/content/articles/images/tm-bar-*.webp     the bar at 2000 and at 1199
+ *   admin/content/articles/images/tm-bar-*.webp     the bar at 2000 and at 1279
  *
  * The webp files are made from the png by PIL (python3), which this container has; sharp is not needed.
  * The wire reads the real vault, so in a sandbox whose TLS is intercepted set CHROMIUM_SPKI_ALLOW as
@@ -63,7 +63,7 @@ async function open(theme, width = 1440, height = 900) {
 }
 
 /* ---- the sweep: the bar on one row wherever the stylesheet says it fits ---- */
-const WIDTHS = [2000, 1600, 1440, 1400, 1366, 1280, 1200, 1199, 1024, 820, 768, 520, 390]
+const WIDTHS = [2000, 1600, 1440, 1400, 1366, 1280, 1279, 1200, 1024, 820, 768, 520, 390, 360]
 console.log('width  look      rows  bar-h  collapsed  overflow')
 for (const [look, rel] of [['newsroom', 'wire/index.html'], ['legacy', 'about/participant.html']]) {
     for (const w of WIDTHS) {
@@ -78,7 +78,7 @@ for (const [look, rel] of [['newsroom', 'wire/index.html'], ['legacy', 'about/pa
                      overflow: document.documentElement.scrollWidth > document.documentElement.clientWidth }
         })
         console.log(`${String(w).padEnd(6)} ${look.padEnd(9)} ${String(m.rows).padEnd(5)} ${String(m.h).padEnd(6)} ${String(m.collapsed).padEnd(10)} ${m.overflow}`)
-        if (!SWEEP_ONLY && look === 'newsroom' && [2000, 1440, 1280, 1200, 1199, 768, 390].includes(w)) {
+        if (!SWEEP_ONLY && look === 'newsroom' && [2000, 1440, 1280, 1279, 768, 390].includes(w)) {
             await pg.screenshot({ path: path.join(shotsDir, `037-bar-${w}.png`), clip: { x: 0, y: 0, width: w, height: Math.min(140, m.h + 40) } })
         }
         await ctx.close()
@@ -120,7 +120,7 @@ pk = Image.open(f"{shots}/036-picker.png").convert("RGB")
 pk = pk.resize((1400, round(pk.height * 1400 / pk.width)), Image.LANCZOS)
 pk.save(f"{img}/tm-picker.webp", "WEBP", quality=85, method=6)
 # the bar for the nav card's article figures: the widest, the last one-row width, and a phone
-for w, name in ((2000, "bar-2000"), (1199, "bar-1199")):
+for w, name in ((2000, "bar-2000"), (1279, "bar-1279")):
     b = Image.open(f"{shots}/037-bar-{w}.png").convert("RGB")
     b = b.resize((1400, round(b.height * 1400 / b.width)), Image.LANCZOS) if b.width > 1400 else b
     b.save(f"{img}/tm-{name}.webp", "WEBP", quality=85, method=6)
