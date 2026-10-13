@@ -82,5 +82,25 @@ const gB2 = S.extract(B, { id: 'nr-bbbb0002', label: 'iPad' }, gB, { notes: mnB.
 check(gB2.notes.length === 1 && gB2.notes[0].id === 'n-b1', 'extract after a merge: B\'s file still holds only B\'s notes')
 check(S.mergeNotes(null, CN, 'nr-cccc0003').store.notes.length === 3 && S.mergeNotes({ v: 1, notes: [] }, { notes: [] }, 'x').added === 0, 'mergeNotes: an empty or missing store takes every note; an empty vault adds none')
 
+// the wire: stories seen travel in the device file; the earliest sighting wins; a merge tags them and is idempotent
+const WA = { 'sec-01': { at: '2026-10-13T08:00:00.000Z' }, 'ai-01': { at: '2026-10-13T08:00:00.000Z' }, 'biz-01': { at: '2026-10-13T08:05:00.000Z', device: 'nr-cccc0003' } }
+const WB = { 'sec-01': { at: '2026-10-13T07:00:00.000Z' }, 'ai-09': { at: '2026-10-13T09:00:00.000Z' } }
+const hA = S.extract(A, { id: 'nr-aaaa0001' }, null, { notes: [], wire: WA }), hB = S.extract(B, { id: 'nr-bbbb0002' }, null, { notes: [], wire: WB })
+check(Object.keys(hA.wire.seen).sort().join() === 'ai-01,sec-01' && !hA.wire.seen['sec-01'].device, 'extract: a device file carries the stories it saw, not the ones brought in from another device')
+check(Object.keys(S.extract(A, { id: 'nr-aaaa0001' }).wire.seen).length === 0, 'extract: no wire state, no stories seen')
+const CW = S.consolidate([hA, hB], acct)
+check(CW.totals.seen === 3 && CW.wire.seen['sec-01'].at === '2026-10-13T07:00:00.000Z' && CW.wire.seen['sec-01'].device === 'nr-bbbb0002', 'consolidate: the union of stories seen, each with the earliest sighting and the device that made it')
+const mwA = S.mergeWire({ v: 1, seen: { ...WA }, lens: 'dinis' }, CW, 'nr-aaaa0001')
+check(mwA.added === 1 && mwA.store.seen['ai-09'].device === 'nr-bbbb0002' && mwA.store.seen['ai-01'].at === WA['ai-01'].at && mwA.store.lens === 'dinis', `mergeWire: A gains what only B saw, tagged with B, and keeps its own and its lens (${mwA.added} added)`)
+check(S.mergeWire(mwA.store, CW, 'nr-aaaa0001').added === 0, 'mergeWire: merging again adds nothing')
+check(Object.keys(S.extract(A, { id: 'nr-aaaa0001' }, null, { wire: mwA.store.seen }).wire.seen).sort().join() === 'ai-01,sec-01', 'extract after a merge: A still writes only what it saw itself')
+check(/2 wire stories seen/.test(S.describe(hA)), 'describe: counts the wire stories seen')
+// which of the wire vault's releases to show
+const W = await import(path.join(ROOT, 'assets/vault-pane/wire-state.js'))
+const rel = { schema: 'wire-releases/v1', releases: [{ id: 'r1', at: '2026-10-11T08:00:00Z' }, { id: 'r3', at: '2026-10-13T08:30:00Z' }, { id: 'r2', at: '2026-10-12T08:00:00Z' }] }
+check(W.releasesSince(rel, '2026-10-11T12:00:00Z').map(r => r.id).join() === 'r3,r2', 'releasesSince: the releases after the last visit, newest first')
+check(W.releasesSince(rel, null).map(r => r.id).join() === 'r3' && W.releasesSince(rel, '2026-10-14T00:00:00Z').map(r => r.id).join() === 'r3', 'releasesSince: on a first visit, or with nothing newer, the latest alone')
+check(W.releasesSince(null, null).length === 0 && W.releasesSince({ releases: [{ id: 'x' }] }, null).length === 0, 'releasesSince: no file, or entries without a time, show nothing')
+
 console.log(failed ? `${failed} FAILED` : 'ALL SYNC CHECKS PASS')
 process.exit(failed ? 1 : 0)

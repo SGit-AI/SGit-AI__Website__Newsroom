@@ -77,7 +77,8 @@ try {
     check(n >= 30 && beats >= 5, `${n} stories drawn across ${beats} headings (the lead and the beats)`)
     check((await count('article.story.lead')) === 1 && /Why it leads/.test(await text('article.story.lead')), 'the lead story carries why it leads')
     check(await pg.evaluate(() => [...document.querySelectorAll('article.story')].every(a => /ai-generated|reviewed/.test(a.querySelector('.status') ? a.querySelector('.status').textContent : 'reviewed'))), 'every story shows its status as the vault states it')
-    check(await pg.evaluate(() => [...document.querySelectorAll('#wire-mount a[href]')].every(a => /^https?:\/\//.test(a.getAttribute('href')) || a.getAttribute('href').startsWith('#'))), 'every link drawn from the vault is http(s) or an anchor')
+    check(await pg.evaluate(() => [...document.querySelectorAll('#wire-mount a[href]:not([data-site])')].every(a => /^https?:\/\//.test(a.getAttribute('href')) || a.getAttribute('href').startsWith('#'))), 'every link drawn from the vault is http(s) or an anchor')
+    check(await pg.evaluate(() => [...document.querySelectorAll('#wire-mount a[data-site]')].every(a => a.closest('#wire-inbox') && /^\.\.\/admin\/notes\//.test(a.getAttribute('href')))), 'the only site link inside the edition is the bar\'s link to the brief')
     check(await pg.evaluate(() => !document.querySelector('#wire-mount script, #wire-mount iframe, #wire-mount img, #wire-mount [onclick]')), 'nothing from the vault became a script, frame, image or handler')
     check(await pg.evaluate(() => document.getElementById('wire-snapshot').hidden), 'the snapshot stays hidden while the vault is live')
     // the lens

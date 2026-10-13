@@ -67,6 +67,8 @@ FILES = [
     ("assets/door.js",             "From a passkey's PRF bytes (or a recovery code) to a door vault's key: the article's derivation, shared by the lab and the pane", "this site"),
     ("assets/vault-pane/vault-pane.js", "The vault pane on every page with the meter, in three tabs: this page (the notes, send to the newsroom, the lane's read key), the vault (enable with the passkey, create or join, update the vault, the table across devices, bring their activity here), the keys (every vault of the account)", "this site"),
     ("assets/vault-pane/notes.js",  "The reader's notes as records: one tap at a piece (done, read later, not for me, more like this, liked, wrong, fix this, idea) with words and the selected phrase, kept in localStorage sgit.notes.v1; keep, add words, remove, mark sent; the decision at a page", "this site"),
+    ("assets/vault-pane/wire-state.js", "What this browser knows about the wire: stories seen and when, the visit, the lens chosen; and which of the vault's releases to show", "this site"),
+    ("assets/vault-pane/pending.js", "What this browser holds that the reader vault does not yet: reads, top-ups, notes and stories seen since the last update", "this site"),
     ("assets/vault-pane/reading.js", "What this browser knows about what it has read, from the meter's records: one page summed up (times, when, how far, cost, rating) and the reading history", "this site"),
     ("assets/vault-pane/sync.js",  "The activity vault's logic as pure functions: a device's file (reads, top-ups, personas, notes), the consolidated view, totals recomputed, merging into local state", "this site"),
     ("assets/vault-pane/vault-pane.css", "Styles for the pane, its tabs, the chips and the notes, and the page shift", "this site"),

@@ -5,6 +5,14 @@
 .vault-btn[aria-expanded="true"], .vault-btn.on { background: var(--accent, #0f6b4f); border-color: var(--accent, #0f6b4f); color: #fff; }
 .vault-btn .dot { display: inline-block; width: .5em; height: .5em; border-radius: 50%; background: #b8bcc4; margin-right: .4em; vertical-align: .05em; }
 .vault-btn.on .dot { background: #8be0c2; }
+/* what is only in this browser: an amber dot and a count on the button */
+.vault-btn.pending .dot { background: #f0a020; }
+.vault-btn .pend { display: inline-block; min-width: 1.1em; margin-left: .35em; padding: 0 .35em; border-radius: 999px; background: #f0a020; color: #1c1d21; font-size: .72rem; font-weight: 700; line-height: 1.35; text-align: center; }
+.vault-btn .pend[hidden] { display: none; }
+.vault-pane .pending { margin: .5rem 0 .2rem; padding: .5rem .7rem; border: 1px solid #f1d7a2; border-radius: 8px; background: #fff7e6; color: #5c3d06; font-size: .82rem; }
+.vault-pane .pending[hidden] { display: none; }
+.vault-pane .pending .acts { margin: .35rem 0 0; }
+.vault-pane .pending .out { display: block; font-size: .78rem; margin-top: .2rem; overflow-wrap: anywhere; }
 
 html.vault-open body { padding-right: var(--vault-w); transition: padding-right .25s ease; }
 .vault-pane { position: fixed; top: 0; right: 0; bottom: 0; width: var(--vault-w); max-width: 100vw; box-sizing: border-box; overflow-y: auto; z-index: 60;

@@ -15,6 +15,11 @@
  *               activity here" adds other devices' records and notes to this browser and reloads.
  *   Keys        every vault of the account with its key, to open any of them on your own; the lane's read key.
  *
+ * Above the tabs, and as a count on the Vault button: what this browser holds that the vault does not yet
+ * (assets/vault-pane/pending.js), with Update the vault one press away. Local storage is where everything is kept
+ * first; until the reader updates, it exists in this browser alone. Other pages ask for the pane and for an update
+ * with two window events, sgit-vault-open {tab} and sgit-vault-update; the pane answers with sgit-vault-updated.
+ *
  * Every call to the vault server is listed as it happens, under the tabs.
  *
  * Where the keys live: in memory, and for the life of this tab in sessionStorage (so a page change does not ask
@@ -27,9 +32,11 @@
  */
 import * as NV from '../newsroom-vault.js'
 import { doorFrom, prfBytes, recoveryBytes, recoveryCode, PRF_INPUT_TEXT, sha256 } from '../door.js'
-import { extract, consolidate, mergeInto, mergeNotes, accountFile, PATHS, describe } from './sync.js'
+import { extract, consolidate, mergeInto, mergeNotes, mergeWire, accountFile, PATHS, describe } from './sync.js'
 import * as N from './notes.js'
 import * as R from './reading.js'
+import * as W from './wire-state.js'
+import { pending, describePending } from './pending.js'
 
 const ROOT = new URL('../../', import.meta.url)                       // assets/vault-pane/ → the site root
 const ENDPOINT = 'https://dev.send.sgraph.ai'
@@ -95,10 +102,13 @@ export function mount() {
     const fill = (...kids) => body.replaceChildren(...kids.flat().filter(k => k != null && k !== false))   // replaceChildren would print a null as text
     const put = (el, ...kids) => el.replaceChildren(...kids.flat().filter(k => k != null && k !== false))
     const log = h('ul', { class: 'log', hidden: true })
+    const pendingMsg = h('span', { class: 'msg', id: 'vault-pending-msg' }), pendingOut = h('span', { class: 'out', id: 'vault-pending-out' })
+    const pendingBtn = h('button', { type: 'button', class: 'btn primary', id: 'vault-update-now', onclick: () => updateNow() }, 'Update the vault')
+    const pendingStrip = h('div', { class: 'pending', id: 'vault-pending', hidden: true }, pendingMsg, h('div', { class: 'acts' }, pendingBtn), pendingOut)
     const pane = h('aside', { id: 'sgit-vault-pane', class: 'vault-pane', 'aria-label': 'Your vault' },
         h('div', { class: 'head' }, h('h2', {}, 'Your vault'), h('button', { type: 'button', class: 'btn close', onclick: () => toggle(false) }, 'Close')),
         h('p', { class: 'dim' }, 'Your notes on what you read, what you have read, and the reading account this browser keeps, carried between your devices through an encrypted vault that opens with your passkey. Local storage stays the place it lives; the vault is updated when you ask.'),
-        tabs, ...TABS.map(([id]) => secs[id]),
+        pendingStrip, tabs, ...TABS.map(([id]) => secs[id]),
         h('h3', {}, 'Calls to the vault server'), log)
     document.body.append(pane)
     for (const [id, name] of TABS) tabs.append(h('button', { type: 'button', class: 'tab', id: `vault-tab-${id}`, role: 'tab', 'aria-selected': 'false', 'aria-controls': `vault-sec-${id}`, onclick: () => showTab(id) }, name, id === 'page' ? h('span', { class: 'n', id: 'vault-tab-page-n' }, String(N.list().length)) : null))
@@ -134,6 +144,47 @@ export function mount() {
 
     const setButtons = () => { for (const b of buttons) { b.classList.toggle('on', !!session.get()); const d = b.querySelector('.dot'); if (d) d.title = session.get() ? 'enabled on this device' : 'not enabled on this device' } }
     setButtons()
+
+    /** What is only in this browser: the strip above the tabs and the count on the Vault button. */
+    function renderPending() {
+        const p = pending(), enabled = !!session.get()
+        for (const b of buttons) {
+            b.classList.toggle('pending', p.count > 0)
+            let badge = b.querySelector('.pend'); if (!badge) { badge = h('span', { class: 'pend' }); b.append(badge) }
+            badge.textContent = p.count ? String(p.count) : ''; badge.hidden = !p.count
+            b.title = p.count ? `Your vault: ${p.count} change(s) only in this browser, not yet in your vault` : 'Your vault: the reading account carried between your devices'
+        }
+        pendingStrip.hidden = !p.any
+        if (p.any) {
+            pendingMsg.textContent = `${p.count ? `${p.count} change(s) only in this browser` : 'Only in this browser'}: ${describePending(p)}. ${p.last ? `Last update from here ${p.last.slice(0, 16).replace('T', ' ')}.` : 'This device has never updated the vault.'} Clearing the browser would lose ${p.count ? 'them' : 'it'} until you update.`
+            pendingBtn.textContent = enabled ? 'Update the vault' : 'Enable the vault to keep them'
+        }
+        if (pageDrawn) renderSteps()
+        return p
+    }
+    async function updateNow() {
+        if (state.busy) return
+        const rec = session.get()
+        if (!rec) { toggle(true); showTab('vault'); return }
+        pendingBtn.disabled = true; pendingOut.textContent = 'Updating the vault…'; state.busy = true
+        try {
+            if (!state.vaults) await openAll(rec)
+            if (!state.vaults.token) { pendingOut.textContent = ''; toggle(true); showTab('vault'); throw new Error('the master holds no access key: add it once in the Vault tab') }
+            if (!state.vaults.reader) throw new Error('the account has no reader vault')
+            const file = await writeDevice()
+            pendingOut.textContent = `Updated: ${describe(file)}.`
+            try { window.dispatchEvent(new CustomEvent('sgit-vault-updated', { detail: { ok: true, file: describe(file) } })) } catch (e) { /* fine */ }
+            if (state.tab === 'vault' && document.getElementById('vault-across')) refreshAcross()
+        } catch (e) {
+            pendingOut.textContent = `Not updated: ${err(e)}`
+            try { window.dispatchEvent(new CustomEvent('sgit-vault-updated', { detail: { ok: false, error: err(e) } })) } catch (e2) { /* fine */ }
+        } finally { state.busy = false; pendingBtn.disabled = false; renderPending() }
+    }
+    window.addEventListener('sgit-vault-open', e => { toggle(true); if (e.detail && e.detail.tab) showTab(e.detail.tab) })
+    window.addEventListener('sgit-vault-update', () => updateNow())
+    window.addEventListener(W.EVENT, () => renderPending())
+    window.addEventListener(N.EVENT, () => renderPending())
+    setInterval(() => { if (document.visibilityState !== 'hidden') renderPending() }, 3000)   // the meter writes without an event
 
     async function client(token) { await loadLibrary(); if (!state.sg) state.sg = NV.client({ endpoint: ENDPOINT, token: token || '' }); if (token) state.sg.token = token; return state.sg }
 
@@ -220,15 +271,16 @@ export function mount() {
     /** The three steps, with the next one in bold. */
     function renderSteps() {
         const enabled = !!session.get(), updated = (() => { try { return localStorage.getItem(LAST_SYNC) || '' } catch (e) { return '' } })(), sent = N.own().some(n => n.sent)
+        const waiting = pending().any
         const steps = [
             ['Enable the vault with your passkey', enabled, () => showTab('vault')],
-            ['Update the vault, so your notes and reads reach your other devices', !!updated, () => showTab('vault')],
+            [waiting && updated ? `Update the vault: ${waiting} change(s) since the last update` : 'Update the vault, so your notes and reads reach your other devices', !!updated && !waiting, enabled ? () => updateNow() : () => showTab('vault')],
             ['Send your notes to the newsroom', sent, null],
         ]
         let nextSeen = false
         put(lists.steps, ...steps.map(([text, done, go], i) => {
             const next = !done && !nextSeen; if (next) nextSeen = true
-            return h('li', { class: done ? 'done' : next ? 'next' : '' }, h('span', { class: 'n' }, String(i + 1)), h('span', {}, text, done && i === 1 ? ` (last ${updated.slice(0, 16).replace('T', ' ')})` : ''), next && go ? h('button', { type: 'button', onclick: go }, 'Go') : null)
+            return h('li', { class: done ? 'done' : next ? 'next' : '' }, h('span', { class: 'n' }, String(i + 1)), h('span', {}, text, done && i === 1 ? ` (last ${updated.slice(0, 16).replace('T', ' ')})` : ''), next && go ? h('button', { type: 'button', onclick: go }, i === 1 && enabled ? 'Update' : 'Go') : null)
         }))
     }
     /** The reading list: every page read here, newest first, with its decision; pages marked done are folded away. */
@@ -480,6 +532,7 @@ export function mount() {
                 h('label', {}, 'Access key', access),
                 h('div', { class: 'acts' }, h('button', { type: 'button', class: 'btn primary', id: 'vault-add-token', onclick: () => addToken(access.value.trim()) }, 'Add the access key'))),
             local ? row('Here', `${local.own} read(s) of this device, ${local.reads - local.own} brought in, balance ${money(local.balance, cfgNow.symbol)}; ${ownNotes} note(s) of this device, ${notes - ownNotes} brought in`) : row('Here', `no reading account in this browser yet; ${ownNotes} note(s) of this device`),
+            row('Not yet in the vault', (p => p.any ? describePending(p) : 'nothing: the vault has everything of this device')(pending())),
             h('div', { class: 'acts' },
                 h('button', { type: 'button', class: 'btn primary', id: 'vault-sync', disabled: !v.token || !v.reader, onclick: sync }, 'Update the vault'),
                 h('button', { type: 'button', class: 'btn', id: 'vault-refresh', onclick: () => refreshAcross() }, 'Check the vault'),
@@ -540,12 +593,12 @@ export function mount() {
         const v = state.vaults, cfgNow = meterCfg(), st = readState(cfgNow.storageKey) || emptyState(cfgNow)
         try { await v.reader.pull() } catch (e) { /* fine */ }
         const prev = await NV.readJson(v.reader, PATHS.device(deviceId)).catch(() => null)
-        const file = extract(st, { id: deviceId, label, agent: (navigator.userAgentData && navigator.userAgentData.platform) || navigator.platform || '' }, prev, { notes: N.own() })
+        const file = extract(st, { id: deviceId, label, agent: (navigator.userAgentData && navigator.userAgentData.platform) || navigator.platform || '' }, prev, { notes: N.own(), wire: W.read().seen })
         await NV.writeFile(v.reader, PATHS.devicesFolder, `${deviceId}.json`, JSON.stringify(file, null, 1))
         if (!(await NV.readJson(v.reader, PATHS.account).catch(() => null))) await NV.writeFile(v.reader, '/activity', 'account.json', JSON.stringify(accountFile(cfgNow, deviceId), null, 1))
         await NV.publish(v.reader)
         try { localStorage.setItem(LAST_SYNC, file.device.last_sync) } catch (e) { /* fine */ }
-        if (pageDrawn) renderSteps()
+        renderPending()
         return file
     }
     async function sync() {
@@ -565,11 +618,14 @@ export function mount() {
             const c = state.consolidated || await readAll()
             const m = mergeInto(st, c, deviceId)
             const mn = mergeNotes(N.read(), c, deviceId)
-            try { localStorage.setItem(cfgNow.storageKey, JSON.stringify(m.state)); N.write(mn.store) } catch (e) { document.getElementById('vault-across').prepend(h('p', { class: 'warn' }, 'This browser’s storage refused the write.')); return }
-            try { sessionStorage.setItem('sgit.vault.merged', JSON.stringify({ at: Date.now(), added: { ...m.added, notes: mn.added } })) } catch (e) { /* fine */ }
+            const mw = mergeWire(W.read(), c, deviceId)
+            try { localStorage.setItem(cfgNow.storageKey, JSON.stringify(m.state)); N.write(mn.store); W.write(mw.store) } catch (e) { document.getElementById('vault-across').prepend(h('p', { class: 'warn' }, 'This browser’s storage refused the write.')); return }
+            try { sessionStorage.setItem('sgit.vault.merged', JSON.stringify({ at: Date.now(), added: { ...m.added, notes: mn.added, seen: mw.added } })) } catch (e) { /* fine */ }
             location.reload()
         })
     }
+
+    renderPending()
 
     // open on arrival: the vault page and #vault on the Vault tab, #notes on This page, #reading on Reading, and
     // otherwise as it was on the page before, so the pane stays open from page to page (after every declaration above)
@@ -582,7 +638,7 @@ export function mount() {
     // after a merge, say what arrived
     try {
         const m = JSON.parse(sessionStorage.getItem('sgit.vault.merged') || 'null')
-        if (m && Date.now() - m.at < 10000) { sessionStorage.removeItem('sgit.vault.merged'); state.tab = 'vault'; toggle(true); setTimeout(() => body.prepend(h('p', { class: 'ok', id: 'vault-merged' }, `Brought in: ${m.added.reads} read(s), ${m.added.topups} top-up(s), ${m.added.personas} persona(s), ${m.added.notes || 0} note(s). The meter now shows the consolidated figures.`)), 50) }
+        if (m && Date.now() - m.at < 10000) { sessionStorage.removeItem('sgit.vault.merged'); state.tab = 'vault'; toggle(true); setTimeout(() => body.prepend(h('p', { class: 'ok', id: 'vault-merged' }, `Brought in: ${m.added.reads} read(s), ${m.added.topups} top-up(s), ${m.added.personas} persona(s), ${m.added.notes || 0} note(s)${m.added.seen ? `, ${m.added.seen} wire stories seen elsewhere` : ''}. The meter now shows the consolidated figures.`)), 50) }
     } catch (e) { /* fine */ }
 }
 

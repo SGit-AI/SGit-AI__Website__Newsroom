@@ -134,23 +134,46 @@ try {
     await pg.click('#sgit-vault-pane .close'); await pg.goto(B + 'articles/the-site-is-an-inbox.html'); await pg.waitForSelector('#sgit-vault-pane', { timeout: 20000 }); await wait(400)
     check(!(await pg.evaluate(() => document.documentElement.classList.contains('vault-open'))), 'Close keeps it closed on the next page')
 
-    // ---- B. the wire: a decision at a story
-    await pg.goto(B + 'wire/'); await pg.waitForFunction(() => document.documentElement.getAttribute('data-wire') === 'ready' || document.querySelector('.wire-err'), null, { timeout: 90000 })
+    // ---- B. the wire, read as an inbox (023, 024, 025, 027)
+    const wireReady = () => pg.waitForFunction(() => document.documentElement.getAttribute('data-wire') === 'ready' || document.querySelector('.wire-err'), null, { timeout: 90000 })
+    const filterCount = k => pg.evaluate(k => { const b = document.querySelector(`#wire-inbox .filters button[data-filter="${k}"]`); const m = b && /\((\d+)\)/.exec(b.textContent); return m ? Number(m[1]) : -1 }, k)
+    const badge = () => pg.evaluate(() => { const b = document.querySelector('.vault-btn .pend'); return b && !b.hidden ? Number(b.textContent) : 0 })
+    await pg.goto(B + 'wire/'); await wireReady()
     let storyId = null
     if (await pg.$('.wire-err')) {
-        console.log('     the wire\'s vault could not be reached from here; the decision at a story is not checked in this run')
+        console.log('     the wire\'s vault could not be reached from here; the inbox is not checked in this run')
     } else {
-        check((await pg.evaluate(() => document.querySelectorAll('.story .decide .chip[data-kind]').length)) >= 4 * 2, 'every story carries the four decisions')
-        storyId = await pg.evaluate(() => document.querySelector('.story').id)
-        await pg.click('.story .decide .chip[data-kind=not-for-me]'); await wait(300)
+        const total = await pg.evaluate(() => document.querySelectorAll('article.story').length)
+        check(/first visit to the wire/.test(await text('#wire-since')) && new RegExp(`${total} new stories`).test(await text('#wire-since')), `a first visit: every story is new (${(await text('#wire-since')).trim().slice(0, 80)})`)
+        check((await filterCount('inbox')) === total && (await filterCount('new')) === total && (await filterCount('done')) === 0 && (await filterCount('all')) === total, `the filters count the inbox, new, done and everything (${total})`)
+        check((await pg.evaluate(() => document.querySelectorAll('article.story .flag.new').length)) === total, 'every story carries a New flag')
+        check(/release notes|Added:|·/.test(await text('#wire-releases')), `the bar says what changed in the vault: ${(await text('#wire-releases')).trim().slice(0, 70)}`)
+        check((await pg.evaluate(() => document.querySelectorAll('.story .decide .chip[data-kind]').length)) >= 6 * 2 && !!(await pg.$('.story .decide .chip[data-kind=follow-up]')), 'every story carries six decisions, Follow up among them')
+        storyId = await pg.evaluate(() => document.querySelector('article.story').id)
+        await pg.click(`#${storyId} .decide .chip[data-kind=not-for-me]`); await wait(300)
         n = await notes()
         check(n.length === 2 && n[0].kind === 'not-for-me' && n[0].story === storyId && n[0].path === '/wire/' && n[0].n === null, `not for me at a story is a note with the story's id (${storyId})`)
-        check(await pg.evaluate(id => { const s = document.getElementById(id); return s.classList.contains('decided') && !!s.querySelector('.decide .undo') && /Not for me/.test(s.querySelector('.decide').textContent) }, storyId), 'the decided story folds to its headline and the decision, with undo')
+        check(!(await pg.$(`#${storyId}`)) && (await filterCount('inbox')) === total - 1 && /Not for me/.test(await text('#wire-kept')) && !!(await pg.$('#wire-kept .undo')), 'the decided story leaves the inbox, and the bar says so with undo')
+        check((await badge()) >= 2 && /only in this browser/.test(await text('#wire-pending')) && !!(await pg.$('#wire-update')), `the Vault button counts what only this browser holds (${await badge()}) and the bar offers Update the vault`)
+        await pg.click('#wire-inbox .filters button[data-filter="all"]'); await wait(300)
+        check(await pg.evaluate(id => { const s = document.getElementById(id); return !!s && s.classList.contains('decided') && !!s.querySelector('.decide .undo') && /Not for me/.test(s.querySelector('.decide').textContent) }, storyId), 'in Everything the decided story is folded to its headline and the decision, with undo')
+        await pg.click('#wire-inbox .filters button[data-filter="inbox"]'); await wait(200)
         await openPane()
         check(await pg.evaluate(id => [...document.querySelectorAll('#notes-here li.note')].some(li => li.textContent.includes(`story ${id}`)), storyId), 'the pane lists it under this page, by story')
-        await pg.click('#notes-all li.note[data-kind=not-for-me] .x'); await wait(200)
-        check(await pg.evaluate(id => !document.getElementById(id).classList.contains('decided'), storyId) && (await notes()).length === 1, 'removing the note from the pane unfolds the story')
-        await pg.click('.story .decide .chip[data-kind=not-for-me]'); await wait(200)
+        check(!(await pg.$eval('#vault-pending', e => e.hidden)) && /only in this browser/.test(await text('#vault-pending-msg')), 'the pane shows the strip of what only this browser holds')
+        await pg.click('#notes-all li.note[data-kind=not-for-me] .x'); await wait(300)
+        check(!!(await pg.$(`#${storyId}`)) && (await filterCount('inbox')) === total && (await notes()).length === 1, 'removing the note from the pane puts the story back in the inbox')
+        await pg.click(`#${storyId} .decide .chip[data-kind=not-for-me]`); await wait(300)
+        // a new visit: nothing is new; the lens is remembered
+        await pg.evaluate(() => sessionStorage.removeItem('sgit.wire.visit')); await pg.reload(); await wireReady(); await wait(300)
+        check(/Since your last visit/.test(await text('#wire-since')) && /\b0 new stories/.test(await text('#wire-since')) && (await filterCount('new')) === 0 && (await filterCount('inbox')) === total - 1, 'a new visit: the stories seen before are not new, the decision holds')
+        const named = await pg.evaluate(() => { const b = [...document.querySelectorAll('.lens button')].find(b => /personal brief|Dinis/.test(b.textContent)); return b ? b.textContent : '' })
+        if (named) {
+            await pg.evaluate(t => [...document.querySelectorAll('.lens button')].find(b => b.textContent === t).click(), named); await wait(1500)
+            await pg.goto(B + 'wire/'); await wireReady(); await wait(1200)
+            check((await pg.evaluate(() => (document.querySelector('.lens button[aria-pressed=true]') || {}).textContent)) === named, `the lens chosen is remembered (${named.split(',')[0]})`)
+            await pg.evaluate(() => [...document.querySelectorAll('.lens button')].find(b => b.textContent === 'Everyone').click()); await wait(300)
+        }
     }
     const expected = storyId ? 2 : 1
 
@@ -165,7 +188,7 @@ try {
     check(mock.vaults().length === 4, `the account: four vaults on the server (${mock.vaults().length})`)
     const deviceA = await pg.evaluate(() => localStorage.getItem('sgit.device-branch'))
     await pg.click('#vault-sync'); await until('Updated:|not updated', 120000)
-    check(new RegExp(`${expected} note\\(s\\) from`).test(await text('#vault-synced')), `Update the vault carries ${expected} note(s) in this device's file (${(await text('#vault-synced')).trim()})`)
+    check(new RegExp(`${expected} note\\(s\\)(,| from)`).test(await text('#vault-synced')), `Update the vault carries ${expected} note(s) in this device's file (${(await text('#vault-synced')).trim()})`)
     await until('1 device\\(s\\)')
     const notesCol = await pg.evaluate(() => { const r = [...document.querySelectorAll('#vault-across tr.total td')]; return r.length ? r[4].textContent.trim() : '' })
     check(notesCol === String(expected), `the table across devices counts the notes (${notesCol})`)
@@ -266,6 +289,20 @@ try {
     check(/0 note\(s\) from device B/.test(await text('#vault-synced')), 'device B\'s update carries none of A\'s notes')
     await pg.click('#vault-tab-keys'); await until('Its read key')
     check((await text('#vault-sec-keys')).includes(readKey), 'device B sees the same lane and read key, from the master')
+
+    // ---- the wire on device B: what A saw is not new here; Update the vault from the wire's bar (027, 028)
+    await pg.goto(B + 'wire/'); await wireReady(); await wait(500)
+    if (storyId && !(await pg.$('.wire-err'))) {
+        check(/\b0 new stories/.test(await text('#wire-since')) && (await filterCount('new')) === 0, `device B: the stories A saw are not new here (${(await text('#wire-since')).trim().slice(0, 60)})`)
+        check(!(await pg.$(`#${storyId}`)) && (await filterCount('inbox')) === (await filterCount('all')) - 1, 'device B: A\'s decision, brought in, keeps that story out of the inbox')
+        const other = await pg.evaluate(() => document.querySelector('article.story').id)
+        await pg.click(`#${other} .decide .chip[data-kind=follow-up]`); await wait(400)
+        const pb = await badge(), pt = (await text('#wire-pending')).trim()
+        check(pb >= 1 && /1 note/.test(pt) && /only in this browser/.test(pt), `device B: the decision is counted as only in this browser (${pb}: ${pt.slice(0, 90)})`)
+        await pg.click('#wire-update'); await pg.waitForFunction(() => /in your vault \(last update/.test((document.getElementById('wire-pending') || {}).textContent || ''), null, { timeout: 120000 })
+        check((await badge()) === 0 && /Everything you decided here is in your vault/.test(await text('#wire-pending')), 'Update the vault from the wire\'s bar: the count goes to zero')
+        check(/Updated: \d+ read\(s\), \d+ top-up\(s\), \d+ persona\(s\), 1 note\(s\)/.test(await text('#vault-pending-out')), `the pane says what the update wrote: ${(await text('#vault-pending-out')).trim().slice(0, 90)}`)
+    }
 
     // ---- hygiene
     check(!seen.some(s => /X-API-Key/.test(s)), 'the page never sent X-API-Key')

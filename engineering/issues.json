@@ -1,9 +1,9 @@
 {
  "what": "A derived index of the engineering cards on newsroom.sgit.ai; the files under admin/engineering/issues/ are the source.",
  "counts": {
-  "open": 8,
-  "blocked": 1,
-  "done": 13
+  "open": 10,
+  "blocked": 2,
+  "done": 18
  },
  "issues": [
   {
@@ -291,9 +291,126 @@
    "blocked_on": "",
    "path": "admin/engineering/issues/done/022-import-sgit-ai-v0-7-86.md",
    "url": "https://newsroom.sgit.ai/engineering/issues/022.html"
+  },
+  {
+   "id": "023",
+   "title": "The wire as an inbox: filters, decisions that leave the inbox, Follow up",
+   "kind": "story",
+   "priority": "high",
+   "status": "done",
+   "created": "2026-10-13T09:40:00Z",
+   "release": "v0.12.6",
+   "estimated_effort": "medium",
+   "blocked_on": "",
+   "path": "admin/engineering/issues/done/023-wire-inbox.md",
+   "url": "https://newsroom.sgit.ai/engineering/issues/023.html"
+  },
+  {
+   "id": "024",
+   "title": "New since the last visit, for me and not for me, with the lens remembered",
+   "kind": "story",
+   "priority": "high",
+   "status": "done",
+   "created": "2026-10-13T09:40:00Z",
+   "release": "v0.12.6",
+   "estimated_effort": "medium",
+   "blocked_on": "",
+   "path": "admin/engineering/issues/done/024-for-me-not-for-me.md",
+   "url": "https://newsroom.sgit.ai/engineering/issues/024.html"
+  },
+  {
+   "id": "025",
+   "title": "The wire's release notes at the top of the wire: the releases since the last visit",
+   "kind": "story",
+   "priority": "high",
+   "status": "done",
+   "created": "2026-10-13T09:40:00Z",
+   "release": "v0.12.6",
+   "estimated_effort": "small",
+   "blocked_on": "",
+   "path": "admin/engineering/issues/done/025-wire-release-notes.md",
+   "url": "https://newsroom.sgit.ai/engineering/issues/025.html"
+  },
+  {
+   "id": "026",
+   "title": "The wire's vault publishes data/releases.json on every publish",
+   "kind": "task",
+   "priority": "high",
+   "status": "blocked",
+   "created": "2026-10-13T09:40:00Z",
+   "release": "",
+   "estimated_effort": "small",
+   "blocked_on": "the wire's agent, which holds the vault's write key; the owner relays the message at the end of the brief",
+   "path": "admin/engineering/issues/blocked/026-wire-vault-publishes-releases.md",
+   "url": "https://newsroom.sgit.ai/engineering/issues/026.html"
+  },
+  {
+   "id": "027",
+   "title": "What only this browser holds: the count on the Vault button, the strip, Update the vault from anywhere",
+   "kind": "story",
+   "priority": "urgent",
+   "status": "done",
+   "created": "2026-10-13T09:40:00Z",
+   "release": "v0.12.6",
+   "estimated_effort": "medium",
+   "blocked_on": "",
+   "path": "admin/engineering/issues/done/027-pending-and-explicit-update.md",
+   "url": "https://newsroom.sgit.ai/engineering/issues/027.html"
+  },
+  {
+   "id": "028",
+   "title": "Seen stories carried by the vault, so New is right on every device",
+   "kind": "story",
+   "priority": "normal",
+   "status": "done",
+   "created": "2026-10-13T09:40:00Z",
+   "release": "v0.12.6",
+   "estimated_effort": "small",
+   "blocked_on": "",
+   "path": "admin/engineering/issues/done/028-seen-carried-by-the-vault.md",
+   "url": "https://newsroom.sgit.ai/engineering/issues/028.html"
+  },
+  {
+   "id": "029",
+   "title": "Regular or automatic sync of the reader vault",
+   "kind": "story",
+   "priority": "normal",
+   "status": "open",
+   "created": "2026-10-13T09:40:00Z",
+   "release": "",
+   "estimated_effort": "medium",
+   "blocked_on": "",
+   "path": "admin/engineering/issues/open/029-automatic-sync.md",
+   "url": "https://newsroom.sgit.ai/engineering/issues/029.html"
+  },
+  {
+   "id": "030",
+   "title": "The wire's desk reads the reader's decisions: Not for me and Should reach me reach the join",
+   "kind": "story",
+   "priority": "high",
+   "status": "open",
+   "created": "2026-10-13T09:40:00Z",
+   "release": "",
+   "estimated_effort": "medium",
+   "blocked_on": "",
+   "path": "admin/engineering/issues/open/030-desk-reads-decisions.md",
+   "url": "https://newsroom.sgit.ai/engineering/issues/030.html"
   }
  ],
  "releases": [
+  {
+   "version": "v0.12.6",
+   "date": "2026-10-13",
+   "kind": "patch",
+   "issues": [
+    "023",
+    "024",
+    "025",
+    "027",
+    "028"
+   ],
+   "url": "https://newsroom.sgit.ai/engineering/releases/v0.12.6.html"
+  },
   {
    "version": "v0.12.5",
    "date": "2026-10-13",

@@ -232,10 +232,14 @@ def shipped(f):
          'it, one exact quote and why it matters, and a lens per persona. The data is in an encrypted vault the wire&rsquo;s agents '
          'write to; the pages open it in the browser with a published read key, so a commit to the vault is on the page within '
          'two minutes and without a release. It has one named reader, the site&rsquo;s owner, by their agreement while it is a beta: '
-         'the persona of their name and the personal brief under its lens are theirs. <a href="../wire/index.html">The edition</a>, <a href="../wire/how.html">how it is read</a>.',
+         'the persona of their name and the personal brief under its lens are theirs. It reads as an inbox: what is new since the last visit, for the reader '
+         'and not, the vault&rsquo;s release notes, and a decision per story that takes it out of the inbox, kept locally and carried to the reader&rsquo;s '
+         'vault on Update. <a href="../wire/index.html">The edition</a>, <a href="../wire/how.html">how it is read</a>, '
+         '<a href="../admin/notes/2026-10-13__the-wire-as-an-inbox.md">the inbox</a>.',
          'A beta. The first edition is a week&rsquo;s catch-up, written by agents and reviewed by none; every story says so, and 22 of its '
          'primary sources were not fetched. The daily run that the vault&rsquo;s runbook describes is not yet scheduled; placement on '
-         'the front page and the weekly newsletter are designed, not built.'),
+         'the front page and the weekly newsletter are designed, not built. The vault publishes no release notes yet (the brief asks for them), '
+         'and the desk does not yet read the reader&rsquo;s decisions.'),
         ('<b>The feedback loop</b> (beta)', 'Notes kept as you read: one tap at any page or at a wire story (done, read later, not for me, more like this, '
          'liked, wrong, fix this, idea), with words and the phrase selected, kept in this browser as it happens; what this browser knows about the page and '
          'a Reading tab with the done pages folded away; carried to the reader&rsquo;s other '

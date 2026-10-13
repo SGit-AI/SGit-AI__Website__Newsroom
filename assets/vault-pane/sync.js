@@ -53,6 +53,7 @@ export function extract(state, device, prev = null, extra = {}) {
         topups: (state.topups || []).filter(own).map(t => ({ ...t, device: device.id })),
         personas: (state.personas || []).filter(p => own(p)).map(p => ({ ...p, device: p.device || device.id })),
         notes: ((extra && extra.notes) || []).filter(own).map(n => ({ ...n, device: device.id })),
+        wire: { seen: Object.fromEntries(Object.entries(((extra && extra.wire) || {})).filter(([, e]) => e && !e.device).map(([id, e]) => [id, { at: e.at }])) },
         active: state.active || 'me',
     }
 }
@@ -76,7 +77,7 @@ function newerNote(a, b) {
 /** Every device's file into one view, with the totals recomputed from the records. */
 export function consolidate(files, account) {
     const start = account && Number.isFinite(Number(account.start)) ? Number(account.start) : 0
-    const reads = new Map(), topups = new Map(), personas = new Map(), notes = new Map(), devices = []
+    const reads = new Map(), topups = new Map(), personas = new Map(), notes = new Map(), seen = {}, devices = []
     for (const f of (files || []).filter(Boolean).sort((a, b) => String((a.device || {}).last_sync || '').localeCompare(String((b.device || {}).last_sync || '')))) {
         const d = f.device || {}
         let spent = 0, declined = 0, credit = 0
@@ -84,6 +85,7 @@ export function consolidate(files, account) {
         for (const t of f.topups || []) { topups.set(topupKey(t), t); credit += t.credit || 0 }
         for (const p of f.personas || []) { if (p.id === 'me' && personas.has('me')) { const m = personas.get('me'); personas.set('me', { ...m, on: [...new Set([...(m.on || []), ...(p.on || [])])], off: [...new Set([...(m.off || []), ...(p.off || [])])], name: m.name || p.name }) } else personas.set(p.id, p) }
         for (const n of f.notes || []) notes.set(n.id, newerNote(notes.get(n.id), n))
+        for (const [id, e] of Object.entries((f.wire && f.wire.seen) || {})) { if (e && e.at && (!seen[id] || String(e.at) < String(seen[id].at))) seen[id] = { at: e.at, device: d.id } }   // first seen anywhere
         devices.push({ id: d.id, label: d.label || '', agent: d.agent || '', first_sync: d.first_sync, last_sync: d.last_sync, syncs: d.syncs || 0,
                        reads: (f.reads || []).length, spent: r1(spent), declined: r1(declined), topups: (f.topups || []).length, credit: r1(credit), personas: (f.personas || []).length,
                        notes: (f.notes || []).length, sent: (f.notes || []).filter(n => n.sent).length })
@@ -95,9 +97,24 @@ export function consolidate(files, account) {
     const declined = r1(allReads.reduce((s, e) => s + (e.declined ? (e.declined.refunded || 0) : 0), 0))
     const credit = r1(allTopups.reduce((s, t) => s + (t.credit || 0), 0))
     return {
-        v: FORMAT, start, devices, reads: allReads, topups: allTopups, personas: [...personas.values()], notes: allNotes,
-        totals: { reads: allReads.length, spent, declined, credit, balance: r1(start + credit - spent), devices: devices.length, notes: allNotes.length, sent: allNotes.filter(n => n.sent).length },
+        v: FORMAT, start, devices, reads: allReads, topups: allTopups, personas: [...personas.values()], notes: allNotes, wire: { seen },
+        totals: { reads: allReads.length, spent, declined, credit, balance: r1(start + credit - spent), devices: devices.length, notes: allNotes.length, sent: allNotes.filter(n => n.sent).length, seen: Object.keys(seen).length },
     }
+}
+
+/**
+ * What other devices saw on the wire, into this browser's wire state: stories it has not seen, tagged with the
+ * device that saw them first, so they are not new here and the next update from here does not claim them.
+ * Returns { store, added }.
+ */
+export function mergeWire(store, consolidated, deviceId) {
+    const s = { ...(store || {}), seen: { ...((store && store.seen) || {}) } }
+    let added = 0
+    for (const [id, e] of Object.entries((consolidated.wire && consolidated.wire.seen) || {})) {
+        if (s.seen[id] || e.device === deviceId) continue
+        s.seen[id] = { at: e.at, device: e.device }; added++
+    }
+    return { store: s, added }
 }
 
 /**
@@ -153,5 +170,6 @@ export function mergeInto(state, consolidated, deviceId) {
 
 /** What a sync would write, in words, for the pane and the tests. */
 export function describe(file) {
-    return `${file.reads.length} read(s), ${file.topups.length} top-up(s), ${file.personas.length} persona(s), ${(file.notes || []).length} note(s) from ${file.device.label || file.device.id}`
+    const seen = Object.keys((file.wire && file.wire.seen) || {}).length
+    return `${file.reads.length} read(s), ${file.topups.length} top-up(s), ${file.personas.length} persona(s), ${(file.notes || []).length} note(s)${seen ? `, ${seen} wire stories seen` : ''} from ${file.device.label || file.device.id}`
 }

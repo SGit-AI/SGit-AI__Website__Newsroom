@@ -28,6 +28,7 @@ export const EVENT = 'sgit-notes'
 export const KINDS = [
     { id: 'done', label: 'Done', about: 'piece', says: 'read it, done with it: hide it from my lists' },
     { id: 'read-later', label: 'Read later', about: 'piece', says: 'come back to this' },
+    { id: 'follow-up', label: 'Follow up', about: 'piece', says: 'act on this, or write about it' },
     { id: 'not-for-me', label: 'Not for me', about: 'piece', says: 'this did not need to reach me' },
     { id: 'more-like-this', label: 'More like this', about: 'piece', says: 'more of this, please' },
     { id: 'liked', label: 'Liked', about: 'any', says: 'keep this as it is' },
@@ -36,7 +37,7 @@ export const KINDS = [
     { id: 'idea', label: 'Idea', about: 'any', says: 'do this next' },
 ]
 /** The kinds that are a decision about the piece itself: one of these at a page is its state in the lists. */
-export const DECISIONS = ['done', 'read-later', 'not-for-me', 'more-like-this']
+export const DECISIONS = ['done', 'read-later', 'follow-up', 'not-for-me', 'more-like-this']
 export const kindLabel = id => (KINDS.find(k => k.id === id) || {}).label || (id === 'note' ? 'Note' : String(id || ''))
 export const QUOTE_MAX = 600, TEXT_MAX = 2000
 
@@ -103,6 +104,7 @@ export function addWords(id, text) {
     const store = read(), rec = store.notes.find(x => x.id === id)
     if (!rec) return null
     rec.text = String(text || '').trim().slice(0, TEXT_MAX)
+    rec.edited = new Date().toISOString()
     write(store); emit({ what: 'words', id })
     return rec
 }

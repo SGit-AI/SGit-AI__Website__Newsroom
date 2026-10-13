@@ -12,7 +12,7 @@
 
 <nav class="site"><div class="row">
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.12.5</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.12.6</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -138,6 +138,18 @@
 <div class="tablewrap"><table class="vers">
   <thead><tr><th>Version</th><th>Date</th><th>What shipped</th></tr></thead>
   <tbody>
+    <tr id="v0.12.6">
+      <td class="vnum">v0.12.6</td>
+      <td>13 Oct 2026</td>
+      <td><b>The wire as an inbox: what is new, what is for you, what you decided, and what only this browser holds.</b> Issues 023, 024, 025, 027 and 028, in <a href="../engineering/releases/v0.12.6.html">the release</a>.
+        <p><b>The inbox</b> (<a href="../engineering/issues/023.html">023</a>). <a href="../wire/index.html">The wire</a> opens on a bar: what is new since your last visit, the counts per filter (<em>Inbox</em>, <em>New</em>, <em>Read later</em>, <em>Follow up</em>, <em>Done</em>, <em>Everything</em>), the last decision with undo, and what is only in this browser. At each story, six decisions: <em>Done</em>, <em>Read later</em>, <em>Follow up</em> (new), <em>Not for me</em>, <em>More like this</em>, <em>Wrong</em>; a decision takes the story out of the inbox. In <em>Everything</em> and <em>Done</em> a decided story folds to its headline.</p>
+        <p><b>New, for you and not for you</b> (<a href="../engineering/issues/024.html">024</a>). Every story drawn is recorded as seen; one first seen in this visit carries a New flag, through reloads, until the tab is closed. Under the lens you read as, which is now remembered, the bar splits the new stories into for you and not for you by the join the vault records; a withheld story can be marked <em>Should reach me</em> or <em>Done</em>.</p>
+        <p><b>What changed in the vault</b> (<a href="../engineering/issues/025.html">025</a>). When the wire&rsquo;s vault publishes <code>data/releases.json</code>, the bar shows the releases since your last visit, with the stories added and updated, and updated stories carry a flag. The vault does not publish it yet, so the bar shows the head commit&rsquo;s message and links the brief; asking the wire&rsquo;s agent for it is card <a href="../engineering/issues/026.html">026</a>.</p>
+        <p><b>Local first, update explicitly, and see what you would lose</b> (<a href="../engineering/issues/027.html">027</a>, <a href="../engineering/issues/028.html">028</a>). The Vault button carries the count of what you did that the vault does not have yet, with an amber dot; the pane shows a strip above its tabs naming it, and the wire a line, each with <em>Update the vault</em> one press away. Updating stays an explicit press. The stories you have seen travel in the device file, so a story seen on one device is not new on another.</p>
+        <p><b>The design</b>, the records, the release file for the wire&rsquo;s agent and the message to pass on are in <a href="notes/2026-10-13__the-wire-as-an-inbox.md">the wire as an inbox</a>. Not built: the release file itself (026), regular sync (029), the desk reading the decisions (030).</p>
+        <p><b>Checked.</b> <code>test_notes.mjs</code> against the live wire vault: the bar on a first visit, every story new, the filters and their counts, a decision leaving the inbox with undo, Done listing it folded, undo from the pane, the count on the Vault button, a new visit with nothing new, the lens remembered; on the second device, nothing the first device saw is new, and Update the vault from the wire&rsquo;s bar empties the count. <code>test_sync.mjs</code>: seen stories in the device file, the earliest sighting across devices, the merge, and which releases to show. <code>test_wire.mjs</code> keeps its rule that every link drawn from the vault is http(s) or an anchor, and now names the one exception inside the edition: the bar&rsquo;s link to the brief, marked as the site&rsquo;s own. The nine test files and the validator pass.</p>
+      </td>
+    </tr>
     <tr id="v0.12.5">
       <td class="vnum">v0.12.5</td>
       <td>13 Oct 2026</td>
@@ -767,7 +779,7 @@
     <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="netline"><a href="https://sgit.ai" style="display:inline;padding:0"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://pt.newsroom.sgit.ai" style="display:inline;padding:0">&#8593; pt.newsroom.sgit.ai</a> &middot; <a href="https://graphs.sgit.ai" style="display:inline;padding:0">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai" style="display:inline;padding:0">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai" style="display:inline;padding:0">&#8593; nhi.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai" style="display:inline;padding:0">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.12.5</a> &middot; <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.12.6</a> &middot; <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>The newsroom</h4>

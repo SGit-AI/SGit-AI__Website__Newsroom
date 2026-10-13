@@ -32,6 +32,26 @@ main.doc .beat .n { font-weight: 400; color: var(--dim); letter-spacing: 0; text
 .stories { display: grid; gap: .9rem; }
 .story { padding: 1rem 1.2rem 1.05rem; border: 1px solid var(--line); border-radius: 12px; background: var(--panel); }
 .story.unfetched { border-style: dashed; }
+/* the inbox bar: what is new since the last visit, the vault's release note, the filters, what is only in this browser */
+.inbox { margin: 0 0 1.4rem; padding: .9rem 1.1rem; border: 1px solid var(--line); border-radius: 10px; background: var(--panel); font-size: .9rem; }
+.inbox p { margin: 0 0 .5rem; overflow-wrap: anywhere; }
+.inbox .since b { color: var(--accent-dk); }
+.inbox .releases { padding: .45rem .7rem; border-left: 3px solid var(--accent); background: var(--panel2); border-radius: 0 8px 8px 0; margin: 0 0 .6rem; font-size: .85rem; }
+.inbox .releases.none { color: var(--dim); border-left-color: var(--line2); }
+.inbox .release p { margin: 0 0 .25rem; } .inbox .release .sum { color: #34363c; }
+.inbox .release .ids a { font-family: var(--mono); font-size: .8rem; }
+.inbox .filters { display: flex; flex-wrap: wrap; gap: .35rem; margin: .2rem 0 .6rem; }
+.inbox .toast { font-size: .84rem; color: var(--dim); }
+.inbox .pending { margin: 0; font-size: .84rem; color: #5c3d06; background: #fff7e6; border: 1px solid #f1d7a2; border-radius: 8px; padding: .45rem .7rem; }
+.inbox .pending.ok { color: var(--dim); background: none; border: 0; padding: 0; }
+.inbox .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 600; }
+.inbox .undo, .withheld .undo { font: inherit; font-size: .8rem; border: 0; background: none; color: var(--dim2); cursor: pointer; text-decoration: underline; }
+.empty { padding: 1.2rem; border: 1px dashed var(--line2); border-radius: 10px; color: var(--dim); text-align: center; }
+.flag { display: inline-block; margin-right: .45rem; padding: 0 .45em; border-radius: 999px; font: 700 .68rem/1.6 var(--sans); letter-spacing: .06em; text-transform: uppercase; vertical-align: .15em; }
+.flag.new { background: #f0a020; color: #1c1d21; } .flag.upd { background: #e8eefc; color: #1d4ed8; }
+.story.new { border-color: #f0c070; }
+.withheld li .held-acts .chip, .withheld li .kept { font-size: .74rem; }
+.withheld li .held-acts .chip { cursor: pointer; }
 /* the decisions: one tap at the story; a decided story folds to its headline and the decision */
 .story .decide { display: flex; flex-wrap: wrap; align-items: center; gap: .35rem; margin: .6rem 0 0; padding-top: .5rem; border-top: 1px dashed var(--line); }
 .story .decide .k { font: .72rem/1.4 var(--mono); color: var(--dim2); margin-right: .2rem; }
