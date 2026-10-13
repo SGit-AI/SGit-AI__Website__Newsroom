@@ -55,6 +55,237 @@
   ],
   "articles": [
     {
+      "slug": "the-vault-crosses-chrome-profiles",
+      "title": "The vault crosses Chrome profiles: state and memory between browser sessions, found by using it rather than by building it",
+      "date": "2026-10-13",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/the-vault-crosses-chrome-profiles.html",
+      "markdown": "https://newsroom.sgit.ai/articles/the-vault-crosses-chrome-profiles.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/the-vault-crosses-chrome-profiles.webp",
+      "teaser": "The reader's vault carries the newsroom between Chrome profiles as it does between devices, a way to share state across browser sessions nobody built.",
+      "topics": [
+        "vaults-and-method",
+        "graphs-and-knowledge"
+      ],
+      "tags": [
+        "vaults",
+        "chrome-profiles",
+        "browser",
+        "state",
+        "memory",
+        "passkeys",
+        "newsroom",
+        "local-first",
+        "feedback-loop",
+        "agents",
+        "article"
+      ],
+      "links_out": [
+        "replicating-the-agentic-inbox",
+        "not-a-straight-line",
+        "pay-after-you-read",
+        "i-miss-it",
+        "the-passkey-opens-the-vault",
+        "the-vault-is-live",
+        "the-site-is-an-inbox",
+        "encrypted-memory-for-isolated-agents",
+        "memory-is-not-a-spectator-sport",
+        "stop-the-bleeding-then-ask-for-it-back"
+      ],
+      "links_in": [
+        "stop-the-bleeding-then-ask-for-it-back"
+      ],
+      "figures": [
+        {
+          "file": "vp-profiles.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/vp-profiles.webp",
+          "caption": "Two Chrome profiles on one computer, each signed in to a different Google account, each with its own local storage that the other cannot see. The reader's vault sits outside both: each profile writes its own file to it and reads the other's, so the marks, the reading and the balance in one are there in the other. The way in differs by where the passkey lives.",
+          "kind": "architecture"
+        },
+        {
+          "file": "vp-path.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/vp-path.webp",
+          "caption": "Six steps, three days, and not a straight line. Each of the first five was built for its own reason, following what the reader valued; the sixth was not built at all, it was found by using the others. Dates and releases from the release histories of sgit.ai and the newsroom.",
+          "kind": "timeline"
+        }
+      ],
+      "graph": {
+        "slug": "the-vault-crosses-chrome-profiles",
+        "teaser": "The reader's vault carries the newsroom between Chrome profiles as it does between devices, a way to share state across browser sessions nobody built.",
+        "topics": [
+          "vaults-and-method",
+          "graphs-and-knowledge"
+        ],
+        "core_idea": "Because the reader's state is records in a vault, one file per device, a second Chrome profile is just another device, so the vault gives a person memory and state between browser sessions and accounts, the way sgit already does for agents, and it was found by using the newsroom rather than built.",
+        "nodes": [
+          {
+            "id": "profiles",
+            "label": "Separate Chrome profiles",
+            "kind": "concept",
+            "summary": "Each Google account in its own profile, with its own history, passwords, cookies and site storage."
+          },
+          {
+            "id": "awkward",
+            "label": "Moving state between them",
+            "kind": "question",
+            "summary": "Copy, paste or email it to yourself; nothing carries a site's state from one profile to another."
+          },
+          {
+            "id": "meter",
+            "label": "Activity in local storage",
+            "kind": "artefact",
+            "summary": "The reading meter recorded reads, spend, personas and ratings in the browser on 10 October."
+          },
+          {
+            "id": "miss",
+            "label": "I miss it",
+            "kind": "example",
+            "summary": "Four devices, four balances: the value to the reader made the activity worth keeping."
+          },
+          {
+            "id": "vault",
+            "label": "The reader's vault",
+            "kind": "artefact",
+            "summary": "Three sgit vaults opened from a passkey in the browser, one file per device, the view computed."
+          },
+          {
+            "id": "marks",
+            "label": "Marks and a stake",
+            "kind": "example",
+            "summary": "Notes like read later and not for me, and seen wire stories, gave the reader a reason to keep their newsroom."
+          },
+          {
+            "id": "devices",
+            "label": "Across devices",
+            "kind": "claim",
+            "summary": "The feature asked for: every device's activity in the browser you hold, one balance."
+          },
+          {
+            "id": "crossing",
+            "label": "Across profiles",
+            "kind": "claim",
+            "summary": "The feature found: a second profile is a second device to the vault, so the state crosses."
+          },
+          {
+            "id": "doors",
+            "label": "A door per way in",
+            "kind": "method",
+            "summary": "An iCloud Keychain passkey answers both profiles; a Google account's passkey does not follow, so the phone or the recovery code adds a door once."
+          },
+          {
+            "id": "common",
+            "label": "Profiles are more common",
+            "kind": "question",
+            "summary": "A hypothesis: people switch profiles many times a day and computers a few; no published figure was found."
+          },
+          {
+            "id": "memory",
+            "label": "Memory between sessions",
+            "kind": "concept",
+            "summary": "The same thing sgit does for agents in different Claude accounts, done for a person through a website."
+          },
+          {
+            "id": "found",
+            "label": "Found, not built",
+            "kind": "claim",
+            "summary": "No code mentions profiles; the property came from records, never totals, and files with one author."
+          }
+        ],
+        "edges": [
+          {
+            "from": "profiles",
+            "to": "awkward",
+            "rel": "leads-to"
+          },
+          {
+            "from": "meter",
+            "to": "miss",
+            "rel": "leads-to"
+          },
+          {
+            "from": "miss",
+            "to": "vault",
+            "rel": "leads-to"
+          },
+          {
+            "from": "vault",
+            "to": "marks",
+            "rel": "produces"
+          },
+          {
+            "from": "marks",
+            "to": "devices",
+            "rel": "leads-to"
+          },
+          {
+            "from": "devices",
+            "to": "crossing",
+            "rel": "extends"
+          },
+          {
+            "from": "crossing",
+            "to": "awkward",
+            "rel": "answers"
+          },
+          {
+            "from": "crossing",
+            "to": "doors",
+            "rel": "depends-on"
+          },
+          {
+            "from": "crossing",
+            "to": "common",
+            "rel": "leads-to"
+          },
+          {
+            "from": "crossing",
+            "to": "memory",
+            "rel": "example-of"
+          },
+          {
+            "from": "found",
+            "to": "crossing",
+            "rel": "answers"
+          },
+          {
+            "from": "vault",
+            "to": "found",
+            "rel": "produces"
+          }
+        ],
+        "links": {
+          "articles": [
+            "replicating-the-agentic-inbox",
+            "not-a-straight-line",
+            "pay-after-you-read",
+            "i-miss-it",
+            "the-passkey-opens-the-vault",
+            "the-vault-is-live",
+            "the-site-is-an-inbox",
+            "encrypted-memory-for-isolated-agents",
+            "memory-is-not-a-spectator-sport",
+            "stop-the-bleeding-then-ask-for-it-back"
+          ],
+          "pages": [],
+          "sites": [
+            "https://support.google.com/chrome/answer/2364824",
+            "https://support.google.com/chrome/answer/13168025",
+            "https://support.claude.com/en/articles/12902428-using-claude-in-chrome-safely"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "to the vault a second Chrome profile is a second device",
+            "why": "The whole mechanism in one clause."
+          },
+          {
+            "text": "This feature needed no new development.",
+            "why": "The point about features found by use rather than built."
+          }
+        ]
+      }
+    },
+    {
       "slug": "stop-the-bleeding-then-ask-for-it-back",
       "title": "Stop the bleeding, then ask for it back: a helper, an agent and a friendly letter for the subscriptions you keep and do not use",
       "date": "2026-10-13",
@@ -82,11 +313,14 @@
       ],
       "links_out": [
         "replicating-the-agentic-inbox",
-        "who-owns-the-words",
+        "the-vault-crosses-chrome-profiles",
         "a-second-reader-the-agent-cannot-skip",
-        "a-personal-agent-that-keeps-your-secrets"
+        "memory-is-not-a-spectator-sport",
+        "who-owns-the-words"
       ],
-      "links_in": [],
+      "links_in": [
+        "the-vault-crosses-chrome-profiles"
+      ],
       "figures": [
         {
           "file": "sr-flow.webp",
@@ -97,7 +331,7 @@
         {
           "file": "sr-policy.webp",
           "url": "https://newsroom.sgit.ai/articles/images/sr-policy.webp",
-          "caption": "The helper's agent as a behaviour policy: what it could reach once signed in, whether that is in its mandate, the gap, and what actually stands in the way. Green rows need nothing more; the orange row is held by the person pressing the button; the red rows are where a control is still owed. A proposal written before the first run, not a measured deployment.",
+          "caption": "The helper's agent as a behaviour policy: what it could reach once a session is signed in, whether that is in its mandate, the gap, and what actually stands in the way. Green rows need nothing more; orange rows are held by the tool or by a recorded decision; red rows are where a control is still owed. A proposal written before the first run, not a measured deployment.",
           "kind": "comparison"
         }
       ],
@@ -108,7 +342,7 @@
           "startups-and-strategy",
           "agents-and-policy"
         ],
-        "core_idea": "A service in which a helper, with agents doing most of the work under a behaviour policy, asks a company for its record of your usage while doing its own analysis, then sends a friendly request for a suspend mode and a refund, stops the payments either way, and publishes what each company did in an open register, paid at 10% of three months of savings and 20% of what is recovered.",
+        "core_idea": "A service in which a freelancer, with agents doing everything except typing secrets and sending drafts, asks a company for its record of your usage while doing its own analysis, sends a friendly request for a suspend mode and a refund, stops the payments either way, and publishes what each company did in an open register, run from vaults and paid at 10% of three months of savings and 20% of what is recovered.",
         "nodes": [
           {
             "id": "kept",
@@ -177,10 +411,28 @@
             "summary": "The agent reads and drafts; the person signs in, approves and sends from their own address."
           },
           {
-            "id": "logins",
-            "label": "Working inside accounts",
+            "id": "chrome",
+            "label": "Claude in Chrome",
+            "kind": "artefact",
+            "summary": "Drives the browser in the signed-in session, pauses at login pages and is prohibited from inputting sensitive data."
+          },
+          {
+            "id": "controls",
+            "label": "Two controls",
+            "kind": "claim",
+            "summary": "Secrets are entered by the freelancer, drafts are sent by the freelancer, everything else is automated."
+          },
+          {
+            "id": "vaults",
+            "label": "Vaults as the interface",
+            "kind": "method",
+            "summary": "Documentation, tasks in Issues-FS, the map of every subscription and messages in Email-FS, all in vaults."
+          },
+          {
+            "id": "mvp",
+            "label": "A first MVP",
             "kind": "question",
-            "summary": "How an agent works inside many signed-in sessions without ever holding the passwords."
+            "summary": "Early beta users run it on their own subscriptions to learn which tools work, and whether a browser-driving agent belongs here at all."
           }
         ],
         "edges": [
@@ -241,11 +493,6 @@
           },
           {
             "from": "agents",
-            "to": "logins",
-            "rel": "leads-to"
-          },
-          {
-            "from": "agents",
             "to": "request",
             "rel": "produces"
           },
@@ -253,6 +500,31 @@
             "from": "register",
             "to": "floor",
             "rel": "extends"
+          },
+          {
+            "from": "agents",
+            "to": "chrome",
+            "rel": "depends-on"
+          },
+          {
+            "from": "chrome",
+            "to": "controls",
+            "rel": "produces"
+          },
+          {
+            "from": "agents",
+            "to": "vaults",
+            "rel": "depends-on"
+          },
+          {
+            "from": "controls",
+            "to": "mvp",
+            "rel": "leads-to"
+          },
+          {
+            "from": "vaults",
+            "to": "register",
+            "rel": "produces"
           }
         ],
         "links": {
@@ -260,7 +532,8 @@
             "replicating-the-agentic-inbox",
             "who-owns-the-words",
             "a-second-reader-the-agent-cannot-skip",
-            "a-personal-agent-that-keeps-your-secrets"
+            "memory-is-not-a-spectator-sport",
+            "the-vault-crosses-chrome-profiles"
           ],
           "pages": [],
           "sites": [
@@ -268,7 +541,10 @@
             "https://subscriptions.sgit.ai/workflows/index.html",
             "https://www.gov.uk/government/news/pm-starts-roll-out-of-everyday-fixes-on-the-cost-of-living-ending-rip-off-discounts-and-subscription-traps",
             "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/subject-access-requests/a-guide-to-subject-access/",
-            "https://help.rocketmoney.com/en/articles/9744474-bill-negotiation-charge-explained"
+            "https://help.rocketmoney.com/en/articles/9744474-bill-negotiation-charge-explained",
+            "https://claude.com/blog/claude-in-chrome-generally-available",
+            "https://code.claude.com/docs/en/chrome",
+            "https://support.claude.com/en/articles/12902428-using-claude-in-chrome-safely"
           ]
         },
         "quotes": [
@@ -277,8 +553,8 @@
             "why": "The value lands on day one, whether or not any money comes back."
           },
           {
-            "text": "A dated row that says \"asked twice, no reply as at this date\" needs no adjective.",
-            "why": "It is how the register gives kudos and holds companies to account without characterising anyone."
+            "text": "Secrets are entered by the freelancer. Drafts are sent by the freelancer. Everything else is automated.",
+            "why": "The operator's two controls, and the reason the service can scale."
           }
         ]
       }
@@ -758,7 +1034,9 @@
         "pay-after-you-read",
         "judo-for-small-countries"
       ],
-      "links_in": [],
+      "links_in": [
+        "the-vault-crosses-chrome-profiles"
+      ],
       "figures": [
         {
           "file": "nl-path.webp",
@@ -3859,6 +4137,7 @@
         "i-miss-it"
       ],
       "links_in": [
+        "the-vault-crosses-chrome-profiles",
         "places-of-highest-leverage",
         "ways-to-read-one-article",
         "firing-journalists"
@@ -4086,6 +4365,7 @@
         "two-agents-one-vault"
       ],
       "links_in": [
+        "the-vault-crosses-chrome-profiles",
         "not-a-straight-line",
         "places-of-highest-leverage",
         "the-key-is-the-billing-system",
@@ -5063,6 +5343,7 @@
         "where-the-vault-keys-live"
       ],
       "links_in": [
+        "the-vault-crosses-chrome-profiles",
         "not-a-straight-line",
         "why-i-love-wardley-maps",
         "places-of-highest-leverage",
@@ -5387,6 +5668,7 @@
         "where-the-vault-keys-live"
       ],
       "links_in": [
+        "the-vault-crosses-chrome-profiles",
         "not-a-straight-line",
         "places-of-highest-leverage",
         "the-site-is-an-inbox",
@@ -7745,6 +8027,7 @@
         "pay-to-keep-your-persona"
       ],
       "links_in": [
+        "the-vault-crosses-chrome-profiles",
         "not-a-straight-line",
         "why-i-love-wardley-maps",
         "places-of-highest-leverage",
@@ -11680,6 +11963,7 @@
         "the-agent-team-as-it-runs"
       ],
       "links_in": [
+        "the-vault-crosses-chrome-profiles",
         "the-records-ran-out",
         "brief-the-agent-too",
         "no-server-by-design",
@@ -16411,7 +16695,6 @@
         "connector-twin-before-you-deploy-an-agent"
       ],
       "links_in": [
-        "stop-the-bleeding-then-ask-for-it-back",
         "where-the-vault-keys-live",
         "where-is-the-why",
         "why-my-agents-do-not-run-on-my-laptop",
@@ -18535,6 +18818,8 @@
         "price-it-then-give-it-away"
       ],
       "links_in": [
+        "the-vault-crosses-chrome-profiles",
+        "stop-the-bleeding-then-ask-for-it-back",
         "the-records-ran-out",
         "from-a-spreadsheet-to-a-folder-per-person",
         "the-agent-is-the-reader",
@@ -19175,6 +19460,7 @@
         "ultimate-insider-three-collisions"
       ],
       "links_in": [
+        "the-vault-crosses-chrome-profiles",
         "stop-the-bleeding-then-ask-for-it-back",
         "from-a-spreadsheet-to-a-folder-per-person",
         "how-i-work-with-claude",

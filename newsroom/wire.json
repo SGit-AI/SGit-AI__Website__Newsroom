@@ -73,6 +73,39 @@
   ],
   "articles": [
     {
+      "slug": "the-vault-crosses-chrome-profiles",
+      "title": "The vault crosses Chrome profiles: state and memory between browser sessions, found by using it rather than by building it",
+      "date": "2026-10-13",
+      "updated": "",
+      "author": "Dinis Cruz",
+      "url": "https://newsroom.sgit.ai/articles/the-vault-crosses-chrome-profiles.html",
+      "markdown": "https://newsroom.sgit.ai/articles/the-vault-crosses-chrome-profiles.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/the-vault-crosses-chrome-profiles.webp",
+      "graph": "https://newsroom.sgit.ai/articles/graphs/the-vault-crosses-chrome-profiles.json",
+      "teaser": "The reader's vault carries the newsroom between Chrome profiles as it does between devices, a way to share state across browser sessions nobody built.",
+      "summary": "In the newsroom workflow we just found something I did not plan. I keep separate Google accounts in separate Chrome profiles, and moving anything between them has always been awkward. The newsroom's reader vault fixed that without a line of new code. It got there by a path that was not a straight line: first we tracked what a reader does, in local storage; then the activity was worth keeping, so we persisted it, driven by what the reader valued; then we opened sgit vaults in the browser, which we already knew how to do; then the marks arrived, read later, not for me, more like this, and I started to have a stake in my own newsroom, with the usage and the payment travelling with it. Across devices was the feature I asked for. Across Chrome profiles is the one I found, and I suspect it is the more common case, because people switch between browser profiles far more often than between computers. What it really is, is memory and state between sessions, the same thing sgit already does for agents in different Claude accounts, now done through the interface of a website. This is how it works, what each profile needs to get in, and why the best features are sometimes the ones you discover by using what you built.",
+      "topics": [
+        "vaults-and-method",
+        "graphs-and-knowledge"
+      ],
+      "tags": [
+        "vaults",
+        "chrome-profiles",
+        "browser",
+        "state",
+        "memory",
+        "passkeys",
+        "newsroom",
+        "local-first",
+        "feedback-loop",
+        "agents",
+        "article"
+      ],
+      "placement": [],
+      "linkedin": null,
+      "notes": []
+    },
+    {
       "slug": "stop-the-bleeding-then-ask-for-it-back",
       "title": "Stop the bleeding, then ask for it back: a helper, an agent and a friendly letter for the subscriptions you keep and do not use",
       "date": "2026-10-13",
@@ -83,7 +116,7 @@
       "card": "https://newsroom.sgit.ai/articles/cards/stop-the-bleeding-then-ask-for-it-back.webp",
       "graph": "https://newsroom.sgit.ai/articles/graphs/stop-the-bleeding-then-ask-for-it-back.json",
       "teaser": "A helper and an agent ask what you used, ask nicely for a pause and a refund, stop the payments either way, and publish what each company did.",
-      "summary": "I pay for a lot of subscriptions I do not really use, and I think most people do: a tool with a bit of my data in it, a conferencing service I might need next month, a capability I do not want to switch off because restarting it is painful when the day comes. So I keep paying. This is a proposal for a service that fixes that, run by a helper working for one person, with agents doing most of the work. It starts politely, not with the law: ask the company for a detailed account of how much we used the product, and in parallel do our own analysis from statements, invoices and the account's own dashboards. A few days later, with both sets of numbers side by side, send a friendly request that says what we used, what it was worth, and what we like about the product, and asks for two things: a suspend mode that keeps the data, and a refund for the months we did not use. Either way, stop the bleeding. Only if nobody answers does the right of access come in, and only as a genuine request for our own data. The companies are not obliged to refund, and I want to be honest about that, but the direction of travel is clear, with the UK's new subscription rules arriving in January 2027. Everything we learn, the contacts, the templates and which companies refund, goes into an open register under Creative Commons. The helper is paid 10% of the savings for the next three months and 20% of whatever is recovered, which only works if the agents do the heavy lifting, under a behaviour policy, with the one hard problem left in the open: the agent needs to work inside accounts it must never hold the passwords to.",
+      "summary": "I pay for a lot of subscriptions I do not really use, and I think most people do: a tool with a bit of my data in it, a conferencing service I might need next month, a capability I do not want to switch off because restarting it is painful when the day comes. So I keep paying. This is a proposal for a service that fixes that, run by a helper working for one person, with agents doing most of the work. It starts politely, not with the law: ask the company for a detailed account of how much we used the product, and in parallel do our own analysis from statements, invoices and the account's own dashboards. A few days later, with both sets of numbers side by side, send a friendly request that says what we used, what it was worth, and what we like about the product, and asks for two things: a suspend mode that keeps the data, and a refund for the months we did not use. Either way, stop the bleeding. Only if nobody answers does the right of access come in, and only as a genuine request for our own data. The companies are not obliged to refund, and I want to be honest about that, but the direction of travel is clear, with the UK's new subscription rules arriving in January 2027. Everything we learn, the contacts, the templates and which companies refund, goes into an open register under Creative Commons. The helper is paid 10% of the savings for the next three months and 20% of whatever is recovered, which only works if the agents do the heavy lifting. So the agent drives the browser through Claude in Chrome, and the freelancer only types the passwords and the two-factor codes and sends the drafts; everything else is automated, under a behaviour policy, and the freelancer's interface is a set of vaults: the documentation, the tasks, the map of every subscription and the messages between them. It is a first MVP, and a number of early beta users, me included, are about to run it on their own subscriptions.",
       "topics": [
         "startups-and-strategy",
         "agents-and-policy"
