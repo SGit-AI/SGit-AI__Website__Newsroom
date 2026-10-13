@@ -56,6 +56,8 @@ NAV = [
         ("How the wire works", "wire/how.html"),
         ("The OWASP Wire", "wire/owasp/index.html"),
         ("The AWS Wire", "wire/aws/index.html"),
+        ("Day by day", "wire/days.html"),
+        ("The charter", "wire/charter.html"),
         ("Themes: dark mode and four more", "articles/dark-mode-and-four-more.html"),
     ], ("wire/",)),
     ("Account", "account/index.html", [

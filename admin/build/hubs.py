@@ -237,10 +237,13 @@ def shipped(f):
          'vault on Update. The desk writes a release note on every publish, and a corrected story carries its changes, dated, where it is read. '
          'The <a href="../wire/index.html">Industry Wire</a> is daily, across five beats. The <a href="../wire/owasp/index.html">OWASP Wire</a> is weekly and carries a graph of the projects, their leaders and standards, drawn with the stories that name each. '
          'The <a href="../wire/aws/index.html">AWS Wire</a> is filtered by the stack its reader declares in the vault, drawn with its deadlines and each service&rsquo;s items. '
+         'Each wire has a subscription list of its own, a reach page of who should know (organisations, never people), and the verifier&rsquo;s record at each story it checked; <a href="../wire/days.html">day by day</a> shows every wire by date. '
+         '<a href="../wire/charter.html">The charter</a> says what every round enforces; <a href="../wire/desk-brief.html">the brief for the desks</a> carries what the newsroom asks of the vaults&rsquo; writers. '
          '<a href="../wire/how.html">How a wire is read</a>, <a href="../admin/notes/2026-10-13__the-wire-as-an-inbox.md">the inbox</a>, <a href="../admin/notes/2026-10-13__more-than-one-wire.md">more than one wire</a>.',
          'A beta. The Industry Wire has two editions (11 and 13 October 2026, 59 stories), the OWASP and AWS wires one each (13 October, 19 and 88 stories), all written by agents and reviewed by none; every story says so, and a story whose primary source was not fetched says that too. '
          'The runs the vaults&rsquo; runbooks describe are not yet scheduled; placement on the front page and the weekly newsletter are designed, not built. '
-         'The desks do not yet read the reader&rsquo;s decisions: the lane&rsquo;s read key has not reached them. The AWS stack is a file in the vault, not yet derived from an account.'),
+         'The desks do not yet read the reader&rsquo;s decisions: the lane&rsquo;s read key has not reached them. The AWS stack is a file in the vault, not yet derived from an account. '
+         'The verifier checked a sample of the first editions, not every story; the Portugal wire waits on its vault; the Industry Wire&rsquo;s sources have no fetched contact route yet.'),
         ('<b>Search</b>', 'Every article, the wire&rsquo;s stories, the notes and the engineering cards, searched in the reader&rsquo;s browser from an '
          'index built at release: titles, tags and article graphs first, then the text; exact phrases, including wording an article had in an '
          'earlier version; an article by its number; what the reader has read or marked done. Searching sends nothing anywhere. <i>Ask</i> gives the passages found to Chrome&rsquo;s built-in model, on the reader&rsquo;s machine, or to openrouter.ai with the reader&rsquo;s own key, and the answer cites them. '

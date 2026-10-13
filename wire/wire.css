@@ -76,6 +76,32 @@ main.doc .beat .n { font-weight: 400; color: var(--dim); letter-spacing: 0; text
 .extra ul.named { margin: .2rem 0 .3rem 1.1rem; padding: 0; font-size: .86rem; } .extra ul.named li { margin: .15rem 0; }
 .extra .aliases { font-size: .8rem; color: var(--dim); }
 @media (max-width: 640px) { .extra dl { grid-template-columns: 1fr; gap: 0 } .extra dt { margin-top: .3rem; } }
+/* the verifier's record: the file's words in the header, a row at each story it covers */
+.edition .checks { margin: .2rem 0 .8rem; padding: .45rem .8rem; border-left: 3px solid var(--accent); border-radius: 0 8px 8px 0; background: var(--tint-solid, #e8f5ef); font-size: .86rem; line-height: 1.5; }
+.edition .checks p { margin: .2rem 0 0; }
+.story .check { font-size: .82rem; color: var(--accent-dk); }
+.srcs td.n { font-family: var(--mono); text-align: right; }
+/* subscribe to one wire */
+.wire-sub { margin: 1.4rem 0; padding: .9rem 1.1rem; border: 1px dashed var(--line2); border-radius: 10px; background: var(--panel); font-size: .9rem; }
+.wire-sub form { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; margin: .5rem 0 0; }
+.wire-sub input[type=email] { flex: 1 1 14rem; font: inherit; padding: .45rem .6rem; border: 1px solid var(--line2); border-radius: 8px; background: var(--panel2); color: var(--fg); }
+.wire-sub input[name=website] { position: absolute; left: -9999px; }
+.wire-sub label.consent { flex: 1 1 100%; font-size: .84rem; color: var(--dim); }
+.wire-sub .sub-status { flex: 1 1 100%; font-size: .84rem; } .wire-sub .sub-status.warn { color: var(--warn-ink, #5c3d06); } .wire-sub .sub-done { font-weight: 600; }
+/* who should know: routes by organisation */
+.route { margin: .8rem 0; padding: .6rem .9rem; border: 1px solid var(--line); border-radius: 10px; background: var(--panel); }
+.route h3 { margin: 0 0 .3rem; font: 700 1.02rem/1.3 var(--serif); } .route h3 .n { font: .82rem/1.4 var(--sans); color: var(--dim); font-weight: 400; }
+.addrs { margin: .3rem 0 .4rem 1.1rem; padding: 0; font-size: .9rem; } .addrs li { margin: .2rem 0; } .addrs ul { margin: .2rem 0 .2rem 1rem; padding: 0; }
+.also { margin: .2rem 0 .4rem 1.1rem; padding: 0; font-size: .86rem; }
+.srcs-list { columns: 2; column-gap: 2rem; } @media (max-width: 640px) { .srcs-list { columns: 1; } }
+/* day by day */
+.day { margin: 1.4rem 0; }
+.day h2 { margin: 0 0 .4rem; padding-bottom: .25rem; border-bottom: 2px solid var(--fg, #1c1d21); font: 700 1.05rem/1.4 var(--serif); }
+.day h2 .n { font: .82rem/1.4 var(--sans); color: var(--dim); font-weight: 400; }
+.day .releases { margin: .3rem 0 .5rem; padding: .4rem .7rem; border-left: 3px solid var(--accent); background: var(--panel2); border-radius: 0 8px 8px 0; font-size: .86rem; }
+.day .releases p { margin: .15rem 0; } .day .releases .sum { color: var(--text, #34363c); }
+.daylist { margin: .2rem 0 0 1.1rem; padding: 0; font-size: .9rem; } .daylist li { margin: .2rem 0; }
+body .chip.wire { border-color: var(--accent); color: var(--accent-dk); font-weight: 600; }
 .story.new { border-color: #f0c070; }
 .withheld li .held-acts .chip, .withheld li .kept { font-size: .74rem; }
 .withheld li .held-acts .chip { cursor: pointer; }

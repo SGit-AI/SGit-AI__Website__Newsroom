@@ -18,8 +18,13 @@
  *                         the vault's release notes, filters (inbox, new, read later, follow up, done, everything),
  *                         a decision at each story; the editor's note, the desk's corrections, threads, the lead, the
  *                         stories by beat with each story's own changes, a lens
- *   data-wire="sources"   the source registry with its tiers
+ *   data-wire="sources"   the source registry with its tiers, and how many stories each gave this edition
  *   data-wire="how"       the wire's own documents, from docs/*.md
+ *   data-wire="reach"     who a wire concerns and how to reach them, by organisation route only: what the vault
+ *                         carries (the map's projects, the sources' sites, data/contacts.json when the desk adds it)
+ *                         and what this site found under its published contact rules (admin/build/wire-reach.json)
+ *   data-wire="days"      every wire day by day: the releases published and the stories dated that day (one page,
+ *                         every vault; the config carries the wires)
  *
  * @module wire
  */
@@ -65,6 +70,10 @@ export async function wire(opts) {
             h('code', {}, cfg.clone), '.'))
         if (snapshot) snapshot.hidden = false
     }
+    if (kind === 'days') {       // every wire's vault, one page
+        try { await days(mount, cfg, say); document.documentElement.setAttribute('data-wire', 'ready') } catch (e) { fail(e) }
+        return
+    }
     let r
     try {
         say('Opening the vault…')
@@ -81,6 +90,7 @@ export async function wire(opts) {
         if (kind === 'edition') await edition(r, mount, foot, cfg)
         else if (kind === 'sources') await sources(r, mount, foot)
         else if (kind === 'how') await how(r, mount, foot)
+        else if (kind === 'reach') await reach(r, mount, foot, cfg)
         if (snapshot) snapshot.hidden = true
         document.documentElement.setAttribute('data-wire', 'ready')
     } catch (e) { fail(e) }
@@ -107,6 +117,19 @@ async function edition(r, mount, foot, cfg) {
     // the release notes the wire's vault publishes, when it does (data/releases.json, the contract in the brief)
     let releaseFile = null
     try { releaseFile = await r.readJson('data/releases.json') } catch (e) { releaseFile = null }
+    // the verifier's records (data/factcheck-<date>.json, newest first): a row per story when the file has results[],
+    // the file's own words otherwise; drawn at the story and in the edition's header, as written. The charter asks
+    // for one row per story on every run (wire/charter.html).
+    const checks = [], checkOf = new Map()
+    try {
+        const files = await r.files(['data'])
+        for (const p of Object.keys(files).filter(p => /^data\/factcheck-[^/]+\.json$/.test(p)).sort().reverse()) {
+            const f = await r.readJson(p), at = (/(\d{4}-\d{2}-\d{2})/.exec(p) || [])[1] || ''
+            if (!f || typeof f !== 'object') continue
+            checks.push({ path: p, at, file: f })
+            for (const x of (Array.isArray(f.results) ? f.results : [])) if (x && x.story) checkOf.set(x.story, [...(checkOf.get(x.story) || []), { at, ...x }])
+        }
+    } catch (e) { /* no record: nothing drawn */ }
     // the lenses: the public personas, plus any named reader the site's config records as having agreed to be one
     const named = (cfg.named_readers || []).map(x => typeof x === 'string' ? x : x.persona).filter(id => pById.has(id))
     // the public lenses: the Industry Wire's fixed six; on a wire that describes itself, every persona but the personal one
@@ -174,6 +197,7 @@ async function edition(r, mount, foot, cfg) {
             s.quote ? h('blockquote', {}, `“${s.quote}”`, h('cite', {}, isHttp(s.quote_source_url) ? linkText(hostOf(s.quote_source_url), s.quote_source_url) : 'source not given')) : null,
             s.why_it_matters ? h('p', { class: 'why' }, h('b', {}, 'Why it matters: '), s.why_it_matters) : null,
             changesOf(s).length ? h('ul', { class: 'changes', 'aria-label': 'Changed by the desk' }, changesOf(s).map(c => h('li', {}, h('span', { class: 'at' }, when(c.at)), ' ', c.what || ''))) : null,
+            (checkOf.get(s.id) || []).length ? h('p', { class: 'check' }, h('b', {}, 'Checked independently: '), (checkOf.get(s.id) || []).map(x => [x.at, x.quote ? `quote ${x.quote}` : null, x.date ? `date ${x.date}` : null, x.version && x.version !== 'n/a' ? `version ${x.version}` : null, x.independence ? `independence ${x.independence}` : null, x.verdict ? `verdict ${x.verdict}` : null, x.fix ? `fix: ${x.fix}` : null].filter(Boolean).join(' · ')).join(' | ')) : null,
             (s.coverage || []).length ? h('details', {}, h('summary', {}, `Who else covered it (${s.coverage.length})${primary.title ? ', and the primary source' : ''}`),
                 h('ul', { class: 'cov' },
                     primary.title ? h('li', {}, h('b', {}, 'Primary: '), isHttp(primary.url) ? linkText(primary.title, primary.url) : primary.title, primary.publisher ? `, ${primary.publisher}` : '', primary.date ? `, ${primary.date}` : '') : null,
@@ -201,6 +225,10 @@ async function edition(r, mount, foot, cfg) {
         h('p', { class: 'meta' }, [brief.kind, brief.window ? `covers ${brief.window.from} to ${brief.window.to}` : null, brief.status, brief.counts ? `${brief.counts.stories} stories from ${brief.counts.publishers} publishers` : null].filter(Boolean).join(' · ')),
         brief.editor_note ? h('p', { class: 'note' }, brief.editor_note) : null,
         brief.corrections ? h('p', { class: 'corrections' }, h('b', {}, 'Corrections and updates: '), brief.corrections) : null,
+        checks.length ? h('div', { class: 'checks', id: 'wire-checks' }, h('b', {}, 'Checked independently. '), ...checks.map(({ path, at, file: f }) => h('p', {},
+            `${f.checked_by || path}${f.method ? `: ${f.method}` : ''}${f.checked ? `: ${f.checked}` : ''}${f.result ? `. ${f.result}` : ''}`
+            + (Array.isArray(f.results) ? `. ${f.results.length} ${f.results.length === 1 ? 'story' : 'stories'} checked, ${f.results.filter(x => x && x.verdict === 'fixed').length} fixed, each shown at its story` : '')
+            + (f.not_checked ? `. Not checked: ${f.not_checked}` : '') + ` (${path.replace(/^data\//, '')}${at ? `, ${at}` : ''}).`))) : null,
         deadlines.length ? h('div', { class: 'deadlines', id: 'wire-deadlines' }, h('b', {}, 'Deadlines for your stack'), h('ul', {}, deadlines.map(d => { const n = daysTo(d.date); return h('li', {},
             h('span', { class: `dd${Number.isFinite(n) && n <= 30 ? ' soon' : ''}` }, when(d.date)), isHttp(d.source) ? linkText(d.what || d.source, d.source) : (d.what || ''),
             Number.isFinite(n) ? h('span', { class: 'then' }, n < 0 ? ` (${-n} days ago)` : n === 0 ? ' (today)' : ` (in ${n} days)`) : null, d.then ? h('span', { class: 'then' }, ` · then: ${d.then}`) : null) }))) : null,
@@ -349,18 +377,23 @@ async function sources(r, mount, foot) {
     const rows = (b.sources || []).slice().sort((x, y) => (x.tier || 'Z').localeCompare(y.tier || 'Z') || String(x.name).localeCompare(String(y.name)))
     const tiers = { A: 0, B: 0, C: 0 }
     for (const s of rows) if (s.tier in tiers) tiers[s.tier]++
+    // how many stories each source gave this edition: the primary's source id, else its publisher's name
+    const gave = new Map()
+    for (const st of (b.stories || [])) { const p = st.primary || {}; const k = p.source || p.publisher; if (k) gave.set(k, (gave.get(k) || 0) + 1) }
+    const n = s => (gave.get(s.id) || 0) + (s.id !== s.name ? (gave.get(s.name) || 0) : 0)
     mount.replaceChildren(
         h('p', {}, `${rows.length} sources in the registry: ${tiers.A} in tier A (an open licence: the wire may keep and show the full text), ${tiers.B} in tier B (quote up to 25 words and link), ${tiers.C} in tier C (link only). A source is verified once a person has opened its licence page; the rest are provisional.`),
         h('div', { class: 'tablewrap srcs' }, h('table', {},
-            h('thead', {}, h('tr', {}, ['Source', 'Beats', 'Tier', 'Licence', 'Verified', 'Feed and notes'].map(x => h('th', {}, x)))),
+            h('thead', {}, h('tr', {}, ['Source', 'Beats', 'Tier', 'Stories', 'Licence', 'Verified', 'Feed and notes'].map(x => h('th', {}, x)))),
             h('tbody', {}, rows.map(s => h('tr', {},
                 h('td', {}, isHttp(s.url) ? linkText(s.name, s.url) : s.name),
                 h('td', {}, (s.beats || []).map(x => beatLabel.get(x) || x).join(', ')),
                 h('td', {}, h('span', { class: `tier ${s.tier || ''}` }, s.tier || '?')),
+                h('td', { class: 'n' }, String(n(s))),
                 h('td', {}, isHttp(s.licence_url) ? linkText(s.licence || 'licence', s.licence_url) : (s.licence || '')),
                 h('td', {}, s.verified ? 'yes' : 'provisional'),
                 h('td', {}, h('details', {}, h('summary', {}, 'details'), s.feed ? h('p', {}, h('b', {}, 'Feed: '), s.feed) : null, s.notes ? h('p', {}, s.notes) : null))))))))
-    foot(`${rows.length} sources`)
+    foot(`${rows.length} sources, ${[...gave.values()].reduce((a, c) => a + c, 0)} primaries this edition`)
 }
 
 // ------------------------------------------------------------ the documents
@@ -383,4 +416,82 @@ async function how(r, mount, foot) {
     const want = decodeURIComponent(location.hash.slice(1))
     await show(docs.includes(want) ? want : (docs.find(p => /ARCHITECTURE/.test(p)) || docs[0]))
     foot(`${docs.length} documents`)
+}
+
+// ------------------------------------------------------------ who should know, and how to reach them
+/**
+ * By organisation route only, under the contact rules this site publishes (world-news-day/data/contact-rules.json):
+ * what this site found itself (the config's routes, each from the organisation's own contact page, fetched and hashed),
+ * what the desk adds to the vault (data/contacts.json, optional), and what the vault already carries: the map's
+ * projects with their pages and repositories, and the sources' sites. Never a personal address.
+ */
+async function reach(r, mount, foot, cfg) {
+    const b = await r.readJson('data/bundle.json')
+    let fromVault = null
+    try { fromVault = await r.readJson('data/contacts.json') } catch (e) { fromVault = null }
+    const routes = Array.isArray(cfg.reach) ? cfg.reach : []
+    const ents = (b.map && Array.isArray(b.map.entities)) ? b.map.entities : []
+    const terms = s => { const o = new Set(); for (const v of Object.values(s.entities || {})) if (Array.isArray(v)) for (const x of v) o.add(String(x).toLowerCase()); return o }
+    const sets = (b.stories || []).map(s => [s, terms(s)])
+    const naming = e => { const al = [e.name, ...(e.aliases || [])].filter(Boolean).map(x => String(x).toLowerCase()); return sets.filter(([, t]) => al.some(x => t.has(x))).length }
+    const addr = a => h('li', {}, h('code', {}, a.address || ''), a.role ? h('span', { class: 'chip' }, a.role) : null, a.says ? h('span', { class: 'dim' }, ` · the page says: “${a.says}”`) : null)
+    const found = routes.length ? h('section', { class: 'reach-found', id: 'reach-found' },
+        h('h2', {}, 'Routes this site found'),
+        h('p', { class: 'dim' }, 'Each from the organisation’s own contact page, one hop, the page’s bytes hashed when fetched; a role address only, never a person’s. Where a page publishes no address, that is the result.'),
+        ...routes.map(x => h('div', { class: 'route' },
+            h('h3', {}, x.organisation || '?', x.for ? h('span', { class: 'n' }, ` · ${x.for}`) : null),
+            isHttp(x.page) ? h('p', { class: 'dim mono' }, linkText(x.page_title || x.page, x.page), x.fetched ? ` · fetched ${x.fetched}` : '', x.sha256 ? ` · sha256 ${x.sha256}…` : '') : null,
+            (x.addresses || []).length ? h('ul', { class: 'addrs' }, (x.addresses || []).map(addr)) : null,
+            (x.also || []).length ? h('ul', { class: 'also' }, (x.also || []).map(y => h('li', {}, isHttp(y.url) ? linkText(y.label || y.url, y.url) : (y.label || '')))) : null,
+            x.note ? h('p', { class: 'dim' }, x.note) : null))) : null
+    const vaultRows = fromVault && Array.isArray(fromVault.organisations || fromVault.contacts || fromVault) ? (fromVault.organisations || fromVault.contacts || fromVault) : []
+    const fromDesk = h('section', { class: 'reach-vault', id: 'reach-vault' },
+        h('h2', {}, 'From the vault'),
+        vaultRows.length
+            ? h('ul', { class: 'addrs' }, vaultRows.map(o => h('li', {}, h('b', {}, o.organisation || o.name || o.id || '?'), isHttp(o.url) ? [' · ', linkText(hostOf(o.url), o.url)] : null,
+                (o.addresses || []).length ? h('ul', {}, o.addresses.map(a => addr(typeof a === 'string' ? { address: a } : a))) : null, o.note ? h('p', { class: 'dim' }, o.note) : null)))
+            : h('p', { class: 'dim' }, 'The desk has not added data/contacts.json to this vault yet; the brief for the desks asks for it under the same rules.'),
+        ents.length ? [h('h3', {}, `${ents.length} ${ents.length === 1 ? 'entity' : 'entities'} in the vault’s map, each with its public page and repository`),
+            h('ul', { class: 'addrs' }, ents.slice().sort((x, y) => String(x.name).localeCompare(String(y.name))).map(e => { const f = e.facts || {}, n = naming(e); return h('li', {}, h('b', {}, e.name || e.id),
+                isHttp(f.Page) ? [' · ', linkText('page', f.Page)] : null, isHttp(f.Repository) ? [' · ', linkText('repository', f.Repository)] : null,
+                (e.leaders || []).length ? h('span', { class: 'dim' }, ` · leaders: ${e.leaders.join(', ')}`) : null, n ? h('span', { class: 'chip' }, `${n} ${n === 1 ? 'story' : 'stories'}`) : null) }))] : null,
+        (b.sources || []).length ? [h('h3', {}, `${b.sources.length} sources in the registry, each with its site`),
+            h('ul', { class: 'addrs srcs-list' }, b.sources.slice().sort((x, y) => String(x.name).localeCompare(String(y.name))).map(s => h('li', {}, isHttp(s.url) ? linkText(s.name, s.url) : s.name, s.tier ? h('span', { class: 'chip' }, `tier ${s.tier}`) : null)))] : null)
+    mount.replaceChildren(...[found, fromDesk].filter(Boolean))
+    foot(`${routes.length} route(s) found by this site, ${vaultRows.length} from the desk, ${ents.length} in the map, ${(b.sources || []).length} sources`)
+}
+
+// ------------------------------------------------------------ every wire, day by day
+/** One page, every vault: the releases published and the stories dated each day, newest day first. */
+async function days(mount, cfg, say) {
+    const wires = Array.isArray(cfg.wires) ? cfg.wires : []
+    if (!wires.length) throw new Error('no wires are configured')
+    const byDay = new Map(), opened = []
+    const day = d => { const k = String(d || '').slice(0, 10); if (!/^\d{4}-\d{2}-\d{2}$/.test(k)) return null; if (!byDay.has(k)) byDay.set(k, { stories: [], releases: [] }); return byDay.get(k) }
+    for (const w of wires) {
+        say(`Opening ${w.name || w.slug || 'the wire'}’s vault…`)
+        const r = await new VaultReader(w).init()
+        await r.open()
+        const b = await r.readJson('data/bundle.json')
+        let rel = null
+        try { rel = await r.readJson('data/releases.json') } catch (e) { rel = null }
+        const href = `${w.slug ? w.slug + '/' : ''}index.html`
+        for (const s of (b.stories || [])) { const d = day(s.date); if (d) d.stories.push({ w, s, href: `${href}#${s.id}` }) }
+        for (const x of ((rel && Array.isArray(rel.releases)) ? rel.releases : [])) { const d = day(x.at); if (d) d.releases.push({ w, x, href }) }
+        opened.push({ w, head: String(r.head).replace(/^obj-cas-imm-/, ''), n: (b.stories || []).length, edition: (b.brief || {}).edition || '' })
+    }
+    const keys = [...byDay.keys()].sort().reverse()
+    const total = [...byDay.values()].reduce((a, d) => a + d.stories.length, 0)
+    const weekday = k => { try { return new Date(k + 'T12:00:00Z').toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }) } catch (e) { return k } }
+    const chip = w => h('span', { class: 'chip wire' }, w.name || w.slug || 'wire')
+    mount.replaceChildren(
+        h('p', { class: 'dim' }, `${total} stories across ${wires.length} wires, dated over ${keys.length} days; the releases are the desks’ own notes of each publish. Read live from the vaults: `, ...opened.flatMap((o, i) => [i ? ', ' : '', h('a', { href: `${o.w.slug ? o.w.slug + '/' : ''}index.html`, 'data-site': '' }, o.w.name), ` (edition ${o.edition}, ${o.n} stories, commit `, h('span', { class: 'mono' }, o.head), ')']), '.'),
+        ...keys.map(k => { const d = byDay.get(k); const pubs = new Set(d.stories.map(({ s }) => ((s.primary || {}).publisher) || '').filter(Boolean))
+            return h('section', { class: 'day', id: `d-${k}` },
+                h('h2', {}, weekday(k), h('span', { class: 'n' }, ` · ${d.stories.length} ${d.stories.length === 1 ? 'story' : 'stories'} from ${pubs.size} ${pubs.size === 1 ? 'publisher' : 'publishers'}${d.releases.length ? `, ${d.releases.length} ${d.releases.length === 1 ? 'release' : 'releases'}` : ''}`)),
+                d.releases.length ? h('div', { class: 'releases' }, d.releases.map(({ w, x, href }) => h('p', {}, chip(w), ' ', h('b', {}, x.title || x.id || 'A release'), x.at ? ` · ${String(x.at).slice(11, 16)} UTC` : '', ` · ${(x.added || []).length} added, ${(x.updated || []).length} updated${(x.withdrawn || []).length ? `, ${x.withdrawn.length} withdrawn` : ''}`, ' · ', h('a', { href, 'data-site': '' }, 'the edition'), x.summary ? h('span', { class: 'sum' }, ` ${shorten(x.summary, 220)}`) : null))) : null,
+                h('ul', { class: 'daylist' }, d.stories.sort((p, q) => String(p.w.slug).localeCompare(String(q.w.slug)) || String(p.s.id).localeCompare(String(q.s.id))).map(({ w, s, href }) => { const p = s.primary || {}
+                    return h('li', {}, chip(w), ' ', h('a', { href, 'data-site': '' }, s.headline), p.publisher ? h('span', { class: 'dim' }, ` · ${p.publisher}`) : null, p.tier ? h('span', { class: 'chip' }, `tier ${p.tier}`) : null, s.primary_fetched === false ? h('span', { class: 'dim' }, ' · primary not fetched') : null) })))
+        }))
+    say(`Read ${opened.length} vaults at ${new Date().toISOString().slice(11, 16)} UTC: ${opened.map(o => `${o.w.vault_id} ${o.head}`).join(', ')}`)
 }

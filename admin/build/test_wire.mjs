@@ -95,7 +95,18 @@ async function testWire(cfg) {
     check(await pg.evaluate(() => [...document.querySelectorAll('#wire-mount a[data-site]')].every(a => a.closest('#wire-inbox') && /^(\.\.\/)+admin\/notes\//.test(a.getAttribute('href')))), `${W} the only site link inside the edition is the bar's link to the brief`)
     check(await pg.evaluate(() => !document.querySelector('#wire-mount script, #wire-mount iframe, #wire-mount img, #wire-mount [onclick]')), `${W} nothing from the vault became a script, frame, image or handler`)
     check(await pg.evaluate(() => document.getElementById('wire-snapshot').hidden), `${W} the snapshot stays hidden while the vault is live`)
-    check((await count('.wires a[aria-current]')) === 1 && (await count('.wires a')) === cfgs.length, `${W} the strip names every wire and marks this one`)
+    check((await count('.wires a[aria-current]')) === 1 && (await count('.wires a')) === cfgs.length + 3, `${W} the strip names every wire, marks this one, and links the shared pages`)
+    // the verifier's record, when the vault has one: every row at its story, the file's words in the header
+    const checked = await count('.edition .checks'), rowsAtStories = await count('article.story .check')
+    check(checked <= 1 && (checked || rowsAtStories === 0), `${W} the verifier's record is in the header (${checked}) and at ${rowsAtStories} stories`)
+    // subscribe to this wire alone: the form, the headers, the lane; the append is intercepted, nothing leaves
+    let appended = null
+    await pg.route('**/api/vault/append/write/**', async route => { appended = JSON.parse(route.request().postData() || '{}'); await route.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify({ ok: true }) }) })
+    check((await count('form[data-wire-subscribe]')) === 1 && (await pg.getAttribute('form[data-wire-subscribe]', 'data-list')) === `wire:${cfg.slug || 'industry'}`, `${W} the page offers a subscription to this wire alone (wire:${cfg.slug || 'industry'})`)
+    await pg.fill('form[data-wire-subscribe] input[name=email]', 'reader@example.com'); await pg.check('form[data-wire-subscribe] input[name=consent]'); await pg.click('form[data-wire-subscribe] button[type=submit]')
+    await pg.waitForFunction(() => { const f = document.querySelector('form[data-wire-subscribe]'); return f && (f.hidden || /email instead/.test(f.querySelector('.sub-status').textContent)) }, null, { timeout: 20000 })
+    check(!!appended && typeof appended.append_token === 'string' && /^[A-Za-z0-9+/=]+$/.test(appended.payload || '') && await pg.evaluate(() => document.querySelector('form[data-wire-subscribe]').hidden && !document.querySelector('.wire-sub .sub-done').hidden), `${W} the request is encrypted and appended to the lane with the token; the page says it was sent`)
+    await pg.unroute('**/api/vault/append/write/**')
     // the desk's release notes (data/releases.json, written on every publish) and its corrections
     const rel = await count('#wire-releases .release')
     check(rel >= 1 && /Added:/.test(await text('#wire-releases')) && await pg.evaluate(() => [...document.querySelectorAll('#wire-releases .ids a')].every(a => a.getAttribute('href').startsWith('#') && document.getElementById(a.getAttribute('href').slice(1)))), `${W} the bar shows ${rel} release note(s) from the vault, each added or updated id linked to its story on the page`)
@@ -147,6 +158,12 @@ async function testWire(cfg) {
     check(await pg.evaluate(() => !document.querySelector('.doc-body script') && [...document.querySelectorAll('.doc-body a')].every(a => /^https?:/.test(a.href))), `${W} the rendered documents carry no script and only http links`)
     await pg.evaluate(() => [...document.querySelectorAll('.docs-nav button')].find(b => /RUNBOOK/.test(b.textContent)).click()); await pg.waitForTimeout(1500)
     check(/run|daily|weekly/i.test(await text('.doc-body')), `${W} switching to the runbook reads another file from the vault`)
+    // reach
+    await pg.goto(B + W + 'reach.html'); await ready()
+    const routes = await count('.route'), addrs = await count('.route .addrs li')
+    check(await pg.evaluate(() => !/[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[a-z]{2,}/.test([...document.querySelectorAll('#wire-mount li')].filter(li => !li.querySelector('code')).map(li => li.textContent).join(' '))), `${W} no address appears outside a recorded role address (${routes} routes, ${addrs} role addresses)`)
+    check(await pg.evaluate(() => [...document.querySelectorAll('.route .addrs code')].every(c => /^(support|events|aws-security|info|press|contact|hello|media|security|team|office)@/.test(c.textContent))), `${W} every recorded address is a role address`)
+    check((await count('#reach-vault')) === 1 && (await count('#reach-vault li')) >= 5, `${W} the reach page draws the vault's own routes: entities and sources`)
     // phone
     const p = await browser.newPage({ viewport: { width: 390, height: 800 } })
     await p.goto(B + W); await p.waitForFunction(() => document.documentElement.getAttribute('data-wire') === 'ready' || document.querySelector('.wire-err'), null, { timeout: 60000 })
@@ -156,6 +173,15 @@ async function testWire(cfg) {
 
 try {
     for (const cfg of cfgs) await testWire(cfg)
+    // day by day: every vault on one page
+    await pg.goto(B + 'wire/days.html'); await ready()
+    const dayN = await count('.day'), dayStories = await count('.daylist li')
+    check(!(await pg.$('.wire-err')) && dayN >= 5 && dayStories >= 50 && (await count('.day .releases p')) >= cfgs.length, `day by day: ${dayN} days, ${dayStories} stories, the releases of every wire`)
+    check(await pg.evaluate(() => { const ks = [...document.querySelectorAll('.day')].map(d => d.id); return ks.join() === ks.slice().sort().reverse().join() }), 'day by day: newest day first')
+    check(await pg.evaluate(() => [...document.querySelectorAll('.daylist a')].every(a => /^(\w+\/)?index\.html#[\w-]+$/.test(a.getAttribute('href')))), 'day by day: every story links to its wire page')
+    // the charter and the brief for the desks, rendered from their markdown
+    await pg.goto(B + 'wire/charter.html'); check(/Three rounds/.test(await pg.evaluate(() => document.body.textContent)) && (await count('.md-doc h2')) >= 6, 'the charter is published, with its rounds and its nevers')
+    await pg.goto(B + 'wire/desk-brief.html'); check(/X-SGit-List/.test(await pg.evaluate(() => document.body.textContent)) && /wire-factcheck\/v1/.test(await pg.evaluate(() => document.body.textContent)), 'the brief for the desks is published, with the list header and the verifier schema')
     // the wires keep apart in this browser: what one wire saw is not new on another, and each keeps its own lens
     await pg.goto(B + 'wire/'); await ready()
     const st = await pg.evaluate(() => JSON.parse(localStorage.getItem('sgit.wire.v1') || '{}'))

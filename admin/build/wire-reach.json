@@ -1,0 +1,21 @@
+{
+  "what": "Organisation routes this site found itself for each wire's reach page (wire/<slug>/reach.html), under the contact rules it already publishes (world-news-day/data/contact-rules.json): organisations, not people; a role address only, taken from the organisation's own contact page, one hop; the page's bytes hashed when fetched; a failure is a result. No personal address is ever recorded here. The desks may add data/contacts.json to their vaults under the same rules, and the page draws both.",
+  "rules": "world-news-day/data/contact-rules.json",
+  "routes": [
+    {"wire": "owasp", "organisation": "OWASP Foundation", "for": "the Foundation, its board and its staff", "page": "https://owasp.org/contact/", "page_title": "Contact Us | OWASP Foundation", "fetched": "2026-10-13", "sha256": "5eae9c0e1d48ee88", "addresses": [
+      {"address": "support@owasp.org", "says": "Membership, billing, email provisioning, and general Foundation questions", "role": "support"},
+      {"address": "events@owasp.org", "says": "Send a note to events@owasp.org with the event and the kind of support you have in mind", "role": "events"}],
+     "also": [{"label": "A support ticket, the Foundation's Jira service desk, from the same page", "url": "https://owasp.org/contact/"}, {"label": "The Global Board: seven elected members, meetings open to the public, the page lists them and the meetings", "url": "https://owasp.org/board/"}],
+     "note": "The board page publishes no address; the route to the board is the Foundation's support address or a public board meeting."},
+    {"wire": "owasp", "organisation": "Each OWASP project", "for": "a project and its leaders", "page": "", "fetched": "", "sha256": "", "addresses": [],
+     "also": [{"label": "The project's page on owasp.org and its repository on GitHub, both in the vault's map (data/map.json); an issue on the repository reaches the leaders without a private address", "url": "https://owasp.org/projects/"}],
+     "note": "Leaders are named on the project pages and in the map; the route is the project, never a personal address."},
+    {"wire": "aws", "organisation": "Amazon Web Services", "for": "a security finding in an AWS service or an AWS open-source project", "page": "https://aws.amazon.com/security/vulnerability-reporting/", "page_title": "Vulnerability Reporting - Amazon Web Services (AWS)", "fetched": "2026-10-13", "sha256": "fa06b35d1b04a4da", "addresses": [
+      {"address": "aws-security@amazon.com", "says": "For submissions outside of the HackerOne scope/platform, or to address any questions", "role": "security"}],
+     "also": [{"label": "AWS's Vulnerability Disclosure Program on HackerOne, the page's first route", "url": "https://aws.amazon.com/security/vulnerability-reporting/"}],
+     "note": "For What's New items, releases and deadlines there is no route to ask for: they are AWS's own announcements, each linked from the story."},
+    {"wire": "", "organisation": "The sources of the Industry Wire", "for": "the publishers whose coverage the wire links", "page": "", "fetched": "", "sha256": "", "addresses": [],
+     "also": [{"label": "Each source's site, in the wire's registry (data/sources.json), drawn on the sources page", "url": "https://newsroom.sgit.ai/wire/sources.html"}],
+     "note": "No role address has been fetched for the Industry Wire's sources yet; the desk is asked to add data/contacts.json under the rules."}
+  ]
+}

@@ -6,7 +6,7 @@
 > propagate; provenance is the product; pay the person who found the fact), and everything
 > needed to run a newsroom like it.
 
-Site version: v0.12.19 (10 October 2026). Published by the sgit project, which is building
+Site version: v0.12.20 (10 October 2026). Published by the sgit project, which is building
 the stack this site argues for; participant disclosure at /about/participant.html.
 Content CC BY 4.0 unless a page states otherwise; code Apache 2.0.
 
@@ -126,7 +126,18 @@ current, running or planned.
   with the days left and each service with the items that touched it. Its own vault: v202bla5, read key
   sgit_public_read_ad5c3f9e1f4d7632db06cd27f6ee6a256063300c426f4a94e7de33cf5a53e892:v202bla5. First edition 13 October 2026, 88 items
   (29 researched stories for the stack and the What's New firehose). /wire/aws/snapshot.json carries the deadlines
-- /wire/sources.html: the 55 sources with a licence tier each (A: open licence, keep and show; B: quote up to 25 words and
+- /wire/charter.html: THE CHARTER OF THE WIRES: facts first, analysis marked as the desk's; corrections propagate; three rounds (the desk writes
+  and runs its gate, the newsroom reads with a published key and draws as written, an independent verifier checks every story); what is
+  never done; public by default. Source admin/notes/2026-10-13__the-wires-charter.md
+- /wire/desk-brief.md (rendered at /wire/desk-brief.html): THE STANDING BRIEF FOR THE DESKS that write the vaults, read at the start of
+  every run, dated, newest first: the schedule, the reader's lane, the verifier's schema (wire-factcheck/v1), one subscription list per
+  wire (X-SGit-List: wire:<slug>), a Portugal wire, data/contacts.json under the contact rules
+- /wire/days.html: every wire day by day, the releases and the stories by date, read live from every vault
+- /wire/reach.html, /wire/owasp/reach.html, /wire/aws/reach.html: WHO SHOULD KNOW and how to reach them, BY ORGANISATION ROUTE ONLY under
+  world-news-day/data/contact-rules.json; the routes this site found are admin/build/wire-reach.json
+- Each wire's page has a subscription to that wire alone (wire/subscribe.js, the newsletter's lane with X-SGit-List), and draws the
+  verifier's records (data/factcheck-<date>.json) at each story they cover
+- /wire/sources.html: the 55 sources with a licence tier each, and how many stories each gave this edition (A: open licence, keep and show; B: quote up to 25 words and
   link; C: link only) and whether a person has verified it
 - /wire/how.html: how this site reads the vault, the contract the pages rely on, and the wire's own documents (architecture,
   workflows, sources policy, the daily runbook), rendered from the vault's markdown
