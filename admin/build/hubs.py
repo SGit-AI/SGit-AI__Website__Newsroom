@@ -228,7 +228,7 @@ def shipped(f):
          '<a href="../for/index.html">How a link is made</a>.',
          'The names are whatever the link says: there is no way yet to prove who sent a list, and nothing counts who opened one. '
          'The page that makes a list is tested with a script, not yet with a synthetic recipient on a phone.'),
-        ('<b>The wires</b> (beta): the Industry Wire, the OWASP Wire, the AWS Wire', 'Three wires, one code and one contract: each story with its primary source, who else covered '
+        ('<b>The wires</b> (beta): the Industry Wire, the OWASP Wire, the AWS Wire, the Portugal Wire', 'Four wires, one code and one contract: each story with its primary source, who else covered '
          'it, one exact quote and why it matters, and a lens per persona. Each wire&rsquo;s data is in an encrypted vault its agents '
          'write to; the pages open it in the browser with a published read key, so a commit to the vault is on the page within '
          'two minutes and without a release. Each has one named reader, the site&rsquo;s owner, by their agreement while it is a beta: '
@@ -237,13 +237,14 @@ def shipped(f):
          'vault on Update. The desk writes a release note on every publish, and a corrected story carries its changes, dated, where it is read. '
          'The <a href="../wire/index.html">Industry Wire</a> is daily, across five beats. The <a href="../wire/owasp/index.html">OWASP Wire</a> is weekly and carries a graph of the projects, their leaders and standards, drawn with the stories that name each. '
          'The <a href="../wire/aws/index.html">AWS Wire</a> is filtered by the stack its reader declares in the vault, drawn with its deadlines and each service&rsquo;s items. '
+         'The <a href="../wire/portugal/index.html">Portugal Wire</a> is daily, in English and Portuguese with a switch, with an ecosystem map of the organisations named. '
          'Each wire has a subscription list of its own, a reach page of who should know (organisations, never people), and the verifier&rsquo;s record at each story it checked; <a href="../wire/days.html">day by day</a> shows every wire by date. '
          '<a href="../wire/charter.html">The charter</a> says what every round enforces; <a href="../wire/desk-brief.html">the brief for the desks</a> carries what the newsroom asks of the vaults&rsquo; writers. '
          '<a href="../wire/how.html">How a wire is read</a>, <a href="../admin/notes/2026-10-13__the-wire-as-an-inbox.md">the inbox</a>, <a href="../admin/notes/2026-10-13__more-than-one-wire.md">more than one wire</a>.',
-         'A beta. The Industry Wire has two editions (11 and 13 October 2026, 59 stories), the OWASP and AWS wires one each (13 October, 19 and 88 stories), all written by agents and reviewed by none; every story says so, and a story whose primary source was not fetched says that too. '
-         'The runs the vaults&rsquo; runbooks describe are not yet scheduled; placement on the front page and the weekly newsletter are designed, not built. '
+         'A beta. The Industry Wire has two editions (11 and 13 October 2026, 59 stories), the OWASP, AWS and Portugal wires one each (13 October: 19, 88 and 36 stories), all written by agents and reviewed by none; every story says so, and a story whose primary source was not fetched says that too. '
+         'The desks&rsquo; runs are scheduled from 14 October (daily before seven, London; OWASP on Mondays), unattended, their first reports still to come; placement on the front page and the weekly newsletter are designed, not built. '
          'The desks do not yet read the reader&rsquo;s decisions: the lane&rsquo;s read key has not reached them. The AWS stack is a file in the vault, not yet derived from an account. '
-         'The verifier checked a sample of the first editions, not every story; the Portugal wire waits on its vault; the Industry Wire&rsquo;s sources have no fetched contact route yet.'),
+         'The verifier checked a sample of the first editions, not every story; no wire has data/contacts.json yet, and only the OWASP Foundation&rsquo;s and AWS&rsquo;s routes have been fetched by this site.'),
         ('<b>Search</b>', 'Every article, the wire&rsquo;s stories, the notes and the engineering cards, searched in the reader&rsquo;s browser from an '
          'index built at release: titles, tags and article graphs first, then the text; exact phrases, including wording an article had in an '
          'earlier version; an article by its number; what the reader has read or marked done. Searching sends nothing anywhere. <i>Ask</i> gives the passages found to Chrome&rsquo;s built-in model, on the reader&rsquo;s machine, or to openrouter.ai with the reader&rsquo;s own key, and the answer cites them. '

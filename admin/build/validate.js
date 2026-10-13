@@ -45,7 +45,7 @@ const errors = [];
 
 function walk(dir, out = []) {
   for (const name of fs.readdirSync(dir)) {
-    if (name === '.git' || name === '.github' || name === 'node_modules' || name === '.sg_vault') continue;
+    if (name === '.git' || name === '.github' || name === '.claude' || name === 'node_modules' || name === '.sg_vault') continue;   // .claude/: agent worktrees, never the site
     // An archive of pages is not a set of pages: briefs/summit-archive/ holds copies as served
     // at v0.3.12, whose relative links resolve against the site root they were cut from and
     // whose version badge is deliberately frozen. Checking them as live pages produced 413

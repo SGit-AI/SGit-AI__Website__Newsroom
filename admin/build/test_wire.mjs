@@ -109,7 +109,9 @@ async function testWire(cfg) {
     await pg.unroute('**/api/vault/append/write/**')
     // the desk's release notes (data/releases.json, written on every publish) and its corrections
     const rel = await count('#wire-releases .release')
-    check(rel >= 1 && /Added:/.test(await text('#wire-releases')) && await pg.evaluate(() => [...document.querySelectorAll('#wire-releases .ids a')].every(a => a.getAttribute('href').startsWith('#') && document.getElementById(a.getAttribute('href').slice(1)))), `${W} the bar shows ${rel} release note(s) from the vault, each added or updated id linked to its story on the page`)
+    // a release may add nothing (a docs-only publish, as 2026-10-13.2 on every wire): then there is no Added line to look for
+    const relIds = await count('#wire-releases .ids a')
+    check(rel >= 1 && (await text('#wire-releases .release p b')).length > 0 && await pg.evaluate(() => [...document.querySelectorAll('#wire-releases .ids a')].every(a => a.getAttribute('href').startsWith('#') && document.getElementById(a.getAttribute('href').slice(1)))), `${W} the bar shows ${rel} release note(s) from the vault, ${relIds} added or updated ids each linked to its story on the page`)
     check(await pg.evaluate(() => [...document.querySelectorAll('#wire-releases .ids')].filter(p => /^Updated:/.test(p.textContent)).flatMap(p => [...p.querySelectorAll('a')]).every(a => document.getElementById(a.getAttribute('href').slice(1)).querySelector('.flag.upd'))), `${W} every story a shown release names as updated carries an Updated flag`)
     const changed = await count('article.story .changes')
     check(changed >= (counts.corrected ? 1 : 0) && await pg.evaluate(() => [...document.querySelectorAll('article.story .changes li')].every(li => /^\d{4}-\d{2}-\d{2}$/.test(li.querySelector('.at').textContent) && li.textContent.length > 20)), `${W} ${changed} corrected stories carry their changes, dated, as the vault records them (the snapshot counts ${counts.corrected || 0})`)
@@ -126,6 +128,16 @@ async function testWire(cfg) {
         check(svcs === counts.stack_services && dls === counts.deadlines && (await count('#wire-stack .named li')) >= 1, `${W} the stack is drawn: ${svcs} services with the items that touched them, ${dls} deadlines in the header`)
         check(await pg.evaluate(() => [...document.querySelectorAll('#wire-deadlines li')].every(li => /^\d{4}-\d{2}-\d{2}$/.test(li.querySelector('.dd').textContent) && /\((in \d+ days|\d+ days ago|today)\)/.test(li.textContent))), `${W} every deadline is dated and says how far off it is`)
     } else check((await count('#wire-stack, #wire-deadlines')) === 0, `${W} no stack, none drawn`)
+    // a wire in two languages: the switch changes the headlines and is remembered for this wire
+    const langs = (cfg.snap && cfg.snap.wire && Array.isArray(cfg.snap.wire.languages)) ? cfg.snap.wire.languages : []
+    if (langs.length > 1) {
+        const before = await pg.evaluate(() => [...document.querySelectorAll('article.story h3')].map(h => h.textContent).join('|'))
+        await pg.click(`.lens.langs button[data-lang=${langs[1]}]`); await pg.waitForTimeout(500)
+        const after = await pg.evaluate(() => [...document.querySelectorAll('article.story h3')].map(h => h.textContent).join('|'))
+        check(before !== after && (await count('article.story')) === n && (await pg.evaluate(() => localStorage.getItem('sgit.wire.lang:' + location.pathname.split('/')[2]))) === langs[1], `${W} the switch to ${langs[1]} redraws the headlines in that language and is remembered`)
+        check((await count('article.story blockquote .chip.lang')) >= 1, `${W} a quote says which language it is in`)
+        await pg.click(`.lens.langs button[data-lang=${langs[0]}]`); await pg.waitForTimeout(300)
+    } else check((await count('.lens.langs')) === 0, `${W} one language, no switch`)
     // the lens: the first public persona, then the named reader by their recorded agreement
     const namedName = cfg.named_readers[0].name.split(' ')[0]
     const pub = await pg.evaluate(name => ([...document.querySelectorAll('.lens button')].map(b => b.textContent).find(t => t !== 'Everyone' && !t.startsWith(name)) || ''), namedName)

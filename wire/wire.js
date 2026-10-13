@@ -110,6 +110,14 @@ async function edition(r, mount, foot, cfg) {
     const brief = b.brief || {}, byId = new Map((b.stories || []).map(s => [s.id, s]))
     // what the vault says the wire is (data/wire.json, when the vault has one), and whose personal persona it carries
     const wireMeta = b.wire || {}, personal = wireMeta.personal_persona || (b.stack && b.stack.persona) || ''
+    // a wire in more than one language (wire.languages, e.g. ["en", "pt"]): the reader picks one, kept per wire in this browser;
+    // a story's headline, summary and why-it-matters are drawn in it when the vault carries `<field>_<lang>`, else in the first
+    // language; a quote stays in the language of its source, and says which (quote_lang)
+    const langs = (Array.isArray(wireMeta.languages) ? wireMeta.languages : []).filter(l => /^[a-z]{2}$/.test(String(l)))
+    const langKey = `sgit.wire.lang${scope ? ':' + scope : ''}`
+    let lang = langs[0] || ''
+    try { const l = localStorage.getItem(langKey); if (l && langs.includes(l)) lang = l } catch (e) { /* the first language */ }
+    const tx = (o, k) => (lang && lang !== langs[0] && typeof o[`${k}_${lang}`] === 'string' && o[`${k}_${lang}`]) ? o[`${k}_${lang}`] : o[k]
     const personas = (Array.isArray(b.personas) ? b.personas : (b.personas && b.personas.personas) || [])
     const pById = new Map(personas.map(p => [p.id, p]))
     const beatLabel = new Map((b.beats || []).map(x => [x.id, x.label]))
@@ -189,13 +197,13 @@ async function edition(r, mount, foot, cfg) {
         const d = lens ? delivery(s.id) : null
         const primary = s.primary || {}
         const el = h('article', { class: `story${s.primary_fetched === false ? ' unfetched' : ''}${isLead ? ' lead' : ''}${isNew(s.id) ? ' new' : ''}`, id: s.id },
-            h('h3', {}, isNew(s.id) ? h('span', { class: 'flag new' }, 'New') : null, updatedIds.has(s.id) ? h('span', { class: 'flag upd' }, 'Updated') : null, isHttp(primary.url) ? linkText(s.headline, primary.url) : s.headline),
+            h('h3', {}, isNew(s.id) ? h('span', { class: 'flag new' }, 'New') : null, updatedIds.has(s.id) ? h('span', { class: 'flag upd' }, 'Updated') : null, isHttp(primary.url) ? linkText(tx(s, 'headline'), primary.url) : tx(s, 'headline')),
             h('p', { class: 'meta' }, [when(s.date), primary.publisher, s.primary_kind, s.confidence ? h('span', { class: `conf-${s.confidence}` }, `confidence ${s.confidence}`) : null, s.primary_fetched === false ? 'primary not fetched by the research agent' : null, s.edition && brief.edition && s.edition !== brief.edition ? `from the edition of ${s.edition}` : null]
                 .filter(Boolean).flatMap((x, i) => i ? [' · ', x] : [x])),
             isLead && brief.lead && brief.lead.why_it_leads ? h('p', { class: 'leads' }, h('b', {}, 'Why it leads: '), brief.lead.why_it_leads) : null,
-            s.summary ? h('p', {}, s.summary) : null,
-            s.quote ? h('blockquote', {}, `“${s.quote}”`, h('cite', {}, isHttp(s.quote_source_url) ? linkText(hostOf(s.quote_source_url), s.quote_source_url) : 'source not given')) : null,
-            s.why_it_matters ? h('p', { class: 'why' }, h('b', {}, 'Why it matters: '), s.why_it_matters) : null,
+            s.summary ? h('p', {}, tx(s, 'summary')) : null,
+            s.quote ? h('blockquote', {}, `“${s.quote}”`, h('cite', {}, isHttp(s.quote_source_url) ? linkText(hostOf(s.quote_source_url), s.quote_source_url) : 'source not given', langs.length > 1 && s.quote_lang ? h('span', { class: 'chip lang' }, `in ${String(s.quote_lang)}`) : null)) : null,
+            s.why_it_matters ? h('p', { class: 'why' }, h('b', {}, 'Why it matters: '), tx(s, 'why_it_matters')) : null,
             changesOf(s).length ? h('ul', { class: 'changes', 'aria-label': 'Changed by the desk' }, changesOf(s).map(c => h('li', {}, h('span', { class: 'at' }, when(c.at)), ' ', c.what || ''))) : null,
             (checkOf.get(s.id) || []).length ? h('p', { class: 'check' }, h('b', {}, 'Checked independently: '), (checkOf.get(s.id) || []).map(x => [x.at, x.quote ? `quote ${x.quote}` : null, x.date ? `date ${x.date}` : null, x.version && x.version !== 'n/a' ? `version ${x.version}` : null, x.independence ? `independence ${x.independence}` : null, x.verdict ? `verdict ${x.verdict}` : null, x.fix ? `fix: ${x.fix}` : null].filter(Boolean).join(' · ')).join(' | ')) : null,
             (s.coverage || []).length ? h('details', {}, h('summary', {}, `Who else covered it (${s.coverage.length})${primary.title ? ', and the primary source' : ''}`),
@@ -217,6 +225,12 @@ async function edition(r, mount, foot, cfg) {
     const lensBar = h('div', { class: 'lens', role: 'group', 'aria-label': 'Read as' }, h('span', { class: 'k' }, 'Read as'),
         h('button', { type: 'button', class: 'btn sm', 'aria-pressed': String(!lens), onclick: () => setLens('') }, 'Everyone'),
         ...LENSES.filter(id => pById.has(id)).map(id => h('button', { type: 'button', class: 'btn sm', 'aria-pressed': String(lens === id), onclick: () => setLens(id) }, pname(id))))
+    const langBar = langs.length > 1 ? h('div', { class: 'lens langs', role: 'group', 'aria-label': 'Read in' }, h('span', { class: 'k' }, 'Read in'),
+        ...langs.map(l => h('button', { type: 'button', class: 'btn sm', 'data-lang': l, 'aria-pressed': String(lang === l), onclick: () => {
+            lang = l; try { localStorage.setItem(langKey, l) } catch (e) { /* fine */ }
+            for (const btn of langBar.querySelectorAll('button')) btn.setAttribute('aria-pressed', String(btn.getAttribute('data-lang') === l))
+            draw()
+        } }, l.toUpperCase()))) : null
     const lensNote = h('p', { class: 'lens-note' })
     const bar = h('section', { class: 'inbox', id: 'wire-inbox', 'aria-label': 'Your inbox' })
     const body = h('div', {})
@@ -326,7 +340,7 @@ async function edition(r, mount, foot, cfg) {
     window.addEventListener('sgit-vault-updated', () => drawBar())
     setInterval(() => { if (document.visibilityState !== 'hidden') drawBar() }, 4000)       // the count of what is only in this browser
     const extras = [b.map ? mapSection(b.map, b.stories || []) : null, b.stack ? stackSection(b.stack, byId, deliveries) : null].filter(Boolean)
-    mount.replaceChildren(header, lensBar, lensNote, bar, ...extras, body)
+    mount.replaceChildren(header, lensBar, ...(langBar ? [langBar] : []), lensNote, bar, ...extras, body)
     if (lens) await setLens(lens); else draw()
 }
 

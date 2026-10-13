@@ -56,6 +56,7 @@ NAV = [
         ("How the wire works", "wire/how.html"),
         ("The OWASP Wire", "wire/owasp/index.html"),
         ("The AWS Wire", "wire/aws/index.html"),
+        ("The Portugal Wire", "wire/portugal/index.html"),
         ("Day by day", "wire/days.html"),
         ("The charter", "wire/charter.html"),
         ("Themes: dark mode and four more", "articles/dark-mode-and-four-more.html"),
@@ -131,6 +132,7 @@ FOOTER = [
         ("The Industry Wire", "wire/index.html"),
         ("The OWASP Wire", "wire/owasp/index.html"),
         ("The AWS Wire", "wire/aws/index.html"),
+        ("The Portugal Wire", "wire/portugal/index.html"),
         ("Every article", "articles/index.html#all"),
         ("The newsletter", "articles/newsletter/index.html"),
         ("Collections", "articles/collections/index.html"),
@@ -309,7 +311,7 @@ def stamp_text_twins():
 def main():
     changed = []
     for path in sorted(ROOT.rglob("*.html")):
-        if ".git" in path.parts:
+        if ".git" in path.parts or ".claude" in path.parts:      # .claude/: an agent's worktree is a repository of its own, never this site
             continue
         # An archive holds pages AS THEY WERE SERVED at a version, with that version's nav,
         # footer and badge. Restamping them with today's chrome would destroy the only thing an

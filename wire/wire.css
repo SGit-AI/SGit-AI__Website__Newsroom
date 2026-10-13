@@ -76,6 +76,9 @@ main.doc .beat .n { font-weight: 400; color: var(--dim); letter-spacing: 0; text
 .extra ul.named { margin: .2rem 0 .3rem 1.1rem; padding: 0; font-size: .86rem; } .extra ul.named li { margin: .15rem 0; }
 .extra .aliases { font-size: .8rem; color: var(--dim); }
 @media (max-width: 640px) { .extra dl { grid-template-columns: 1fr; gap: 0 } .extra dt { margin-top: .3rem; } }
+/* a wire in two languages: the switch under the lens; a quote says which language it is in */
+.lens.langs { margin-top: -.7rem; }
+.story blockquote cite .chip.lang { margin-left: .4rem; }
 /* the verifier's record: the file's words in the header, a row at each story it covers */
 .edition .checks { margin: .2rem 0 .8rem; padding: .45rem .8rem; border-left: 3px solid var(--accent); border-radius: 0 8px 8px 0; background: var(--tint-solid, #e8f5ef); font-size: .86rem; line-height: 1.5; }
 .edition .checks p { margin: .2rem 0 0; }

@@ -273,7 +273,8 @@ def build():
             for st in b.get("stories", []):
                 add_doc({"u": f"{page}#{st['id']}", "t": st["headline"], "k": "story", "d": st.get("date", ""),
                          "x": f"{b.get('label', '')} · {st.get('publisher', '')} · {wname}, edition of {s.get('edition', '')}", "tg": [b.get("id", "")]},
-                        [(st["id"], f"{c.get('at', '')}: {c['what']}") for c in st.get("changes", []) if c.get("what")])   # a correction is searchable text at the story
+                        [(st["id"], f"{c.get('at', '')}: {c['what']}") for c in st.get("changes", []) if c.get("what")]       # a correction is searchable text at the story
+                        + ([(st["id"], st["headline_pt"])] if st.get("headline_pt") else []))                                     # and a headline in the wire's other language
 
     # this site's own notes, which are markdown only
     for md in sorted((ROOT / "admin/notes").glob("*.md")):

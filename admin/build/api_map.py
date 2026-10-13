@@ -58,9 +58,11 @@ FILES = [
     ("admin/build/wire-vault.json", "The Industry Wire's vault: endpoint, vault id, the public read key (the only kind of key on this site)", "this site"),
     ("admin/build/wire-vault.owasp.json", "The OWASP Wire's vault (wire/owasp/): the same contract, its own public read key", "this site"),
     ("admin/build/wire-vault.aws.json", "The AWS Wire's vault (wire/aws/): the same contract, its own public read key", "this site"),
+    ("admin/build/wire-vault.portugal.json", "The Portugal Wire's vault (wire/portugal/): the same contract, its own public read key; the bundle is bilingual", "this site"),
     ("wire/snapshot.json",         "The Industry Wire as it was in the vault at the last release: headlines, primary links, corrections, the latest release note; the fallback and the agents' index", "this site, generated"),
     ("wire/owasp/snapshot.json",   "The OWASP Wire at the last release, the same shape", "this site, generated"),
     ("wire/aws/snapshot.json",     "The AWS Wire at the last release, the same shape, with the stack's deadlines", "this site, generated"),
+    ("wire/portugal/snapshot.json", "The Portugal Wire at the last release, the same shape, with each headline in Portuguese too", "this site, generated"),
     ("assets/vault-ui-embed.js",   "The study page: embeds the vault browser from dev.vault.sgraph.ai and hands it a read key", "sgit.ai, verbatim"),
     ("assets/shots.js",            "Figures: sets each image's address at runtime", "sgit.ai, verbatim"),
     ("assets/site.js",             "Page behaviour: nav, copy buttons, reveal-on-scroll", "sgit.ai, verbatim"),
@@ -113,7 +115,7 @@ PAGES = [
     ("persona/board/index.html", "a persona link"), ("for/index.html", "a reading list"), ("for/make.html", "make a reading list"),
     ("wire/index.html", "the Industry Wire's edition"), ("wire/sources.html", "the wire's sources"), ("wire/how.html", "how the wire is read, and its documents"),
     ("wire/owasp/index.html", "the OWASP Wire's edition, with the projects graph"), ("wire/aws/index.html", "the AWS Wire's edition, with the stack and its deadlines"),
-    ("wire/days.html", "every wire day by day"), ("wire/charter.html", "the charter of the wires"), ("wire/desk-brief.html", "the brief for the desks"), ("wire/reach.html", "who should know, by organisation route"),
+    ("wire/portugal/index.html", "the Portugal Wire's edition, in English and Portuguese, with the ecosystem map"), ("wire/days.html", "every wire day by day"), ("wire/charter.html", "the charter of the wires"), ("wire/desk-brief.html", "the brief for the desks"), ("wire/reach.html", "who should know, by organisation route"),
     ("vault/index.html", "your vault: the reading account carried between devices, with the pane open"),
     ("meter/index.html", "SG Meter, documented"), ("meter/security.html", "the meter's security model"),
     ("demos/vaults/newsroom-synthetic-users/index.html", "the synthetic-readers study, with the embedded vault"),
@@ -267,7 +269,7 @@ CONTRACTS = [
     ("The share", "a text summary then the same data as JSON {v:1, site, at, balance, spent, declined, reads, topups, active, personas, topics, cols, log}, as an .eml with X-SGit-Form, X-SGit-Reply-To, X-SGit-Name, X-SGit-Subscribe, X-SGit-Page", "shareData(), _send()"),
     ("The envelope", "sgit hybrid envelope v2: {v:2, w, i, c} (RSA-OAEP-SHA256 wrapped AES-256-GCM key, iv, ciphertext), base64, then base64 again as the lane payload", "envelope(), subscribe.js encrypt()"),
     ("The contact file", "sgit-subscribe/v1: recipient{address, fingerprint, encrypt}, inbox{vault, endpoint, encrypt_to, status, lane{name, append_token}}; the fingerprint is recomputed from the PEM before use", ".well-known/sgit-subscribe.json"),
-    ("The wires' vaults", "u9i9jp0l (the Industry Wire), eitf274v (OWASP), v202bla5 (AWS) on dev.send.sgraph.ai, read keys published; data/bundle.json {beats, stories, sources, personas, brief; wire, map, stack when present}, data/deliveries.json, data/releases.json (wire-releases/v1, one entry per publish), docs/*.md; story fields, changes and status shown as written; everything in a vault is public, for ever", "admin/build/wire-vault*.json; wire/how.html; each wire's agents own its content"),
+    ("The wires' vaults", "u9i9jp0l (the Industry Wire), eitf274v (OWASP), v202bla5 (AWS), p6twygul (Portugal) on dev.send.sgraph.ai, read keys published; data/bundle.json {beats, stories, sources, personas, brief; wire, map, stack when present}, data/deliveries.json, data/releases.json (wire-releases/v1, one entry per publish), docs/*.md; story fields, changes and status shown as written; everything in a vault is public, for ever", "admin/build/wire-vault*.json; wire/how.html; each wire's agents own its content"),
     ("Events", "sg:meter.changed · charged · rated · declined · toppedup · reset · restored · persona · shared; sg-meter:error", "sg-meter-core.js _emit(), sg-component.js failed()"),
     ("A component", "static jsUrl, get resourceName(), onReady(); a .tpl and a .css beside the .js; published at an immutable versioned path", "sg-component.js"),
     ("The import's rules", "the meter path rewrite (v1.3.1 → v1.4.1), the top-up link, ten text rules, the article number line, the moved banner cut, the foot of every issue; each stops the import when its anchor moves", "sync_newsroom.py items 9–15"),
@@ -400,7 +402,7 @@ def views_on_pages():
     out = {}
     for p in ROOT.rglob("*.html"):
         rel = p.relative_to(ROOT).as_posix()
-        if rel.startswith(("archive/", "summit-archive/", "vault-app/")):
+        if rel.startswith(("archive/", "summit-archive/", "vault-app/", ".claude/")):
             continue
         for v in re.findall(r'<sg-meter view="([a-z-]+)"', p.read_text(encoding="utf-8", errors="replace")):
             out.setdefault(v, set()).add(rel)
@@ -414,7 +416,7 @@ def loader():
     pages = 0
     for p in ROOT.rglob("*.html"):
         rel = p.relative_to(ROOT).as_posix()
-        if rel.startswith(("archive/", "summit-archive/", "vault-app/")):
+        if rel.startswith(("archive/", "summit-archive/", "vault-app/", ".claude/")):
             continue
         if "(0,eval)(t)" in p.read_text(encoding="utf-8", errors="replace"):
             pages += 1

@@ -304,7 +304,7 @@ def main():
     changed = []
     for path in sorted(ROOT.rglob("*.html")):
         rel = path.relative_to(ROOT).as_posix()
-        if rel.startswith((".git/", "briefs/")) or "vault-app" in path.parts or rel == "archive/index.html":
+        if rel.startswith((".git/", ".claude/", "briefs/")) or "vault-app" in path.parts or rel == "archive/index.html":   # .claude/: agent worktrees
             continue
         e = entry_for(rel)
         t = path.read_text(encoding="utf-8")
@@ -314,7 +314,7 @@ def main():
             changed.append(rel)
     if write("archive/index.html", index_page()):
         changed.append("archive/index.html")
-    stamped = sum(1 for p in ROOT.rglob("*.html") if START in p.read_text(encoding="utf-8", errors="ignore"))
+    stamped = sum(1 for p in ROOT.rglob("*.html") if ".claude" not in p.parts and START in p.read_text(encoding="utf-8", errors="ignore"))
     print(f"archive: {stamped} pages carry the archive note; {len(changed)} file(s) updated")
 
 
