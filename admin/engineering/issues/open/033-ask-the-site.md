@@ -5,7 +5,7 @@ kind: story
 priority: high
 created: 2026-10-13T10:30:00Z
 source: the owner, in chat, 13 October 2026: a client-side search engine, built from the graphs, sections and summaries the site already has; the question just asked about an article should be findable from the website; then a local model, or the reader's OpenRouter key, to talk to the site
-release: v0.12.8
+release: v0.12.9
 estimated_effort: large
 ---
 # Ask the site: Chrome's built-in model, or the reader's OpenRouter key, answering from the search index

@@ -221,7 +221,8 @@ export function mount() {
                     known: h('div', { class: 'known', id: 'page-known' }), steps: h('ol', { class: 'steps', id: 'vault-steps' }) }
     const sendBtn = h('button', { type: 'button', class: 'btn primary', id: 'vault-send', onclick: send }, 'Send to the newsroom')
     const kept = h('p', { class: 'ok', id: 'note-kept', hidden: true })
-    const words = h('textarea', { id: 'note-words', rows: 2, placeholder: 'Words, if you want: what is wrong, what to do, why…' })
+    const words = h('textarea', { id: 'note-words', rows: 3, 'aria-label': 'A message to the newsroom', placeholder: 'To the newsroom: what is wrong, what to change, a question, an idea…' })
+    const saved = h('p', { class: 'ok', id: 'note-saved', hidden: true })
     function drawPage() {
         if (!pageDrawn) {
             pageDrawn = true
@@ -230,27 +231,37 @@ export function mount() {
                 const rec = N.keep({ kind, text: words.value, quote: state.sel || '' })
                 if (!rec) return
                 words.value = ''; clearSel(); state.lastKept = rec.id
-                kept.textContent = `Kept: ${N.describeNote(rec)}.${rec.text ? '' : ' Words typed below and “Keep these words” attach them to it.'}`; kept.hidden = false
+                kept.textContent = `Kept: ${N.describeNote(rec)}.${rec.text ? '' : ' Anything you write to the newsroom next is added to it.'}`; kept.hidden = false; saved.hidden = true
             }
+            // the message: words for the newsroom's agent, saved here as a note and carried with the rest by Send
             const keepWords = () => {
-                const t = words.value.trim(); if (!t) return
+                const t = words.value.trim(); if (!t) { words.focus(); return null }
                 const last = state.lastKept && N.list().find(x => x.id === state.lastKept)
                 const rec = last && !last.text ? N.addWords(last.id, t) : N.keep({ text: t, quote: state.sel || '' })
-                if (!rec) return
-                words.value = ''; clearSel(); state.lastKept = rec.id
-                kept.textContent = `Kept: ${N.describeNote(rec)}.`; kept.hidden = false
+                if (!rec) return null
+                words.value = ''; clearSel(); state.lastKept = null; kept.hidden = true
+                const un = N.unsent().length
+                saved.textContent = `Saved: ${N.describeNote(rec)}. It reaches the newsroom when you send: ${un} note(s) waiting.`; saved.hidden = false
+                return rec
             }
+            const keepAndSend = async () => { if (!keepWords()) return; await send(); lists.sendOut.scrollIntoView({ block: 'nearest' }) }
             secs.page.replaceChildren(
                 lists.steps,
                 h('h3', {}, 'About this page'),
                 h('p', { class: 'dim' }, page.title ? `${page.title}${page.n ? ` (No. ${page.n})` : ''}` : location.pathname),
                 lists.known,
                 selOut,
+                h('p', { class: 'dim lead-in' }, 'One tap, about this page:'),
                 h('div', { class: 'chips', role: 'group', 'aria-label': 'One tap' }, ...N.KINDS.map(k => h('button', { type: 'button', class: 'chip', id: `note-${k.id}`, title: k.says, onclick: () => tap(k.id) }, k.label))),
-                h('label', {}, words),
-                h('div', { class: 'acts' }, h('button', { type: 'button', class: 'btn primary', id: 'note-keep', onclick: keepWords }, 'Keep these words')),
                 kept,
-                h('p', { class: 'dim' }, 'One tap keeps a note in this browser, with the words and whatever you had selected on the page; ', h('em', {}, 'Done'), ' also takes the page off your reading list. ', h('em', {}, 'Update the vault'), ' carries your notes to your other devices; ', h('em', {}, 'Send to the newsroom'), ' carries the ones not yet sent into a lane of their own, which the newsroom reads with a key you hand over. ', h('a', { href: new URL('vault/index.html#feedback', ROOT).href }, 'How the loop works'), '.'),
+                h('h3', { id: 'note-write' }, 'Write to the newsroom'),
+                h('p', { class: 'dim' }, 'A message for the newsroom’s agent, about this page or anything else. It goes with the page’s address and whatever you have selected on it.'),
+                words,
+                h('div', { class: 'acts' },
+                    h('button', { type: 'button', class: 'btn primary', id: 'note-send', onclick: keepAndSend }, 'Save and send'),
+                    h('button', { type: 'button', class: 'btn', id: 'note-keep', onclick: keepWords }, 'Save, send later')),
+                saved,
+                h('p', { class: 'dim' }, 'Everything is kept in this browser first. ', h('em', {}, 'Done'), ' also takes the page off your reading list. ', h('em', {}, 'Update the vault'), ' carries your notes to your other devices; ', h('em', {}, 'Send to the newsroom'), ' carries the ones not yet sent into a lane of their own, which the newsroom reads with a key you hand over. ', h('a', { href: new URL('vault/index.html#feedback', ROOT).href }, 'How the loop works'), '.'),
                 h('h3', {}, 'Kept on this page'), lists.here,
                 h('h3', {}, 'All your notes'), lists.counts, h('div', { class: 'acts' }, sendBtn), lists.sendOut, lists.lane, lists.all,
             )

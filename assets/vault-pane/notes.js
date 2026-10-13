@@ -38,7 +38,7 @@ export const KINDS = [
 ]
 /** The kinds that are a decision about the piece itself: one of these at a page is its state in the lists. */
 export const DECISIONS = ['done', 'read-later', 'follow-up', 'not-for-me', 'more-like-this']
-export const kindLabel = id => (KINDS.find(k => k.id === id) || {}).label || (id === 'note' ? 'Note' : String(id || ''))
+export const kindLabel = id => (KINDS.find(k => k.id === id) || {}).label || (id === 'note' ? 'Message' : String(id || ''))
 export const QUOTE_MAX = 600, TEXT_MAX = 2000
 
 const hex8 = () => { const b = crypto.getRandomValues(new Uint8Array(4)); return [...b].map(x => x.toString(16).padStart(2, '0')).join('') }

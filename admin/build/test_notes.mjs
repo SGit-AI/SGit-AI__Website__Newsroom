@@ -225,6 +225,13 @@ try {
     check(!(await pg.evaluate(() => document.getElementById('vault-send').disabled)), 'a new note makes Send live again')
     await pg.click('#vault-send'); await until('Sent: 1 note', 120000)
     check(mock.vaults().length === 5 && /Sent: 1 note\(s\) to the lane/.test(await text('#vault-sent')), 'a second send goes to the same lane')
+    // a message to the newsroom, saved and sent in one press (034)
+    check(await pg.evaluate(() => /Write to the newsroom/.test((document.getElementById('note-write') || {}).textContent || '') && !/Keep these words/.test(document.getElementById('sgit-vault-pane').textContent)), 'the message box is headed Write to the newsroom, and no button says Keep these words')
+    const MSG = 'a question for the newsroom, saved and sent at once'
+    await pg.fill('#note-words', MSG); await pg.click('#note-send')
+    await pg.waitForFunction(m => { const n = JSON.parse(localStorage.getItem('sgit.notes.v1') || '{"notes":[]}').notes.find(x => x.text === m); return !!(n && n.sent && document.getElementById('vault-sent')) }, MSG, { timeout: 120000 })
+    const msg = (await notes()).find(x => x.text === MSG)
+    check(msg && msg.kind === 'note' && msg.sent.lane === laneId && /^Saved: Message on/.test(await text('#note-saved')) && /Sent: 1 note\(s\) to the lane/.test(await text('#vault-sent')), 'Save and send keeps the message and sends it to the same lane, in one press')
     const everything = [...mock.store.values()].map(b => b.toString('latin1')).join('\n')
     check(!/contradicts|the-site-is-an-inbox|not-for-me|sgit_public_read|sgit_private/.test(everything), 'what reached the server is ciphertext: no note, no page, no key in the clear')
 
@@ -249,7 +256,7 @@ try {
         const laneDir = path.join(tmp, 'lane')
         const c1 = await runAsync('sgit', ['clone', '-', laneDir, '--base-url', mock.baseLocalhost], { cwd: tmp, input: readKey + '\n', env })
         const files = c1.status === 0 && fs.existsSync(path.join(laneDir, 'notes')) ? fs.readdirSync(path.join(laneDir, 'notes')).filter(f => f.endsWith('.json')) : []
-        check(files.length === expected + 1 && fs.existsSync(path.join(laneDir, 'README.md')), `sgit clone with the read key alone reads the lane: ${files.length} note file(s) and the README${c1.status ? ': ' + (c1.stderr || c1.stdout).trim().split('\n').slice(-2).join(' | ') : ''}`)
+        check(files.length === expected + 2 && fs.existsSync(path.join(laneDir, 'README.md')), `sgit clone with the read key alone reads the lane: ${files.length} note file(s) and the README${c1.status ? ': ' + (c1.stderr || c1.stdout).trim().split('\n').slice(-2).join(' | ') : ''}`)
         if (files.length) {
             const recs = files.map(f => JSON.parse(fs.readFileSync(path.join(laneDir, 'notes', f), 'utf8')))
             const w = recs.find(r => r.id === wrongId)
@@ -261,11 +268,11 @@ try {
             check(wrote && (cm.status !== 0 || ps.status !== 0), 'the read key cannot write: a push from the clone is refused')
         }
         const d1 = await runAsync('python3', [path.join(ROOT, 'admin/build/lane.py'), '--dir', path.join(tmp, 'lane2')], { cwd: tmp, env })
-        check(d1.status === 0 && /cloned/.test(d1.stdout) && /No\. 82 · The site is an inbox/.test(d1.stdout) && /- Wrong ·/.test(d1.stdout) && /the second paragraph contradicts the first/.test(d1.stdout) && (!storyId || new RegExp(`story ${storyId}`).test(d1.stdout)), `lane.py clones with the key from the environment and prints the digest by page${d1.status ? ': ' + (d1.stderr || d1.stdout).trim().split('\n').slice(-2).join(' | ') : ''}`)
+        check(d1.status === 0 && /cloned/.test(d1.stdout) && /No\. 82 · The site is an inbox/.test(d1.stdout) && /- Wrong ·/.test(d1.stdout) && /the second paragraph contradicts the first/.test(d1.stdout) && /## Messages \(\d+\)[\s\S]*a question for the newsroom/.test(d1.stdout) && (!storyId || new RegExp(`story ${storyId}`).test(d1.stdout)), `lane.py clones with the key from the environment and prints the digest by page${d1.status ? ': ' + (d1.stderr || d1.stdout).trim().split('\n').slice(-2).join(' | ') : ''}`)
         check(!d1.stdout.includes(readKey) && !d1.stderr.includes(readKey), 'lane.py never prints the key')
         const d2 = await runAsync('python3', [path.join(ROOT, 'admin/build/lane.py'), '--dir', path.join(tmp, 'lane2'), '--json'], { cwd: tmp, env })
         let parsed = []; try { parsed = JSON.parse(d2.stdout.slice(d2.stdout.indexOf('['))) } catch (e) { parsed = [] }
-        check(d2.status === 0 && parsed.length === expected + 1 && parsed[0].at >= parsed[parsed.length - 1].at, `lane.py --json pulls and gives the notes newest first (${parsed.length})`)
+        check(d2.status === 0 && parsed.length === expected + 2 && parsed[0].at >= parsed[parsed.length - 1].at, `lane.py --json pulls and gives the notes newest first (${parsed.length})`)
         const d3 = await runAsync('python3', [path.join(ROOT, 'admin/build/lane.py'), '--dir', path.join(tmp, 'lane2')], { cwd: tmp, env: { ...env, NEWSROOM_LANE_KEY: 'sgit_private_vault_' + 'x'.repeat(64) + ':abcd1234' } })
         check(d3.status !== 0 && /not a public read key/.test(d3.stderr), 'lane.py refuses a vault key: the newsroom is not to hold write access')
         fs.rmSync(tmp, { recursive: true, force: true })
@@ -280,7 +287,7 @@ try {
     await pg.click('#vault-merge'); await pg.waitForSelector('#vault-merged', { timeout: 60000 })
     n = await notes()
     // a send rewrites A's device file too (009), so the vault holds every note A sent, marked sent
-    check(new RegExp(`${expected + 1} note\\(s\\)`).test(await text('#vault-merged')) && n.length === expected + 1 && n.every(x => x.device === deviceA && x.sent), `device B: A's ${expected + 1} notes are here, tagged with A and marked sent (${(await text('#vault-merged')).trim().slice(0, 80)})`)
+    check(new RegExp(`${expected + 2} note\\(s\\)`).test(await text('#vault-merged')) && n.length === expected + 2 && n.every(x => x.device === deviceA && x.sent), `device B: A's ${expected + 2} notes are here, tagged with A and marked sent (${(await text('#vault-merged')).trim().slice(0, 80)})`)
     await pg.click('#vault-tab-page'); await wait(300)
     check(await pg.evaluate(() => [...document.querySelectorAll('#notes-all li.note')].every(li => /from nr-/.test(li.textContent) && !li.querySelector('.x'))), 'device B lists them as from A, with nothing to remove')
     check(await pg.evaluate(() => document.getElementById('vault-send').disabled) && /0 not yet sent/.test(await text('#notes-count')), 'device B has nothing of its own to send: another device\'s notes are not re-sent')

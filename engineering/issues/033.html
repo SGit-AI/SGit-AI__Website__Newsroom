@@ -18,7 +18,7 @@
 <body>
 <nav class="site"><div class="row">
   <a class="brand" href="../../index.html">newsroom<span>.sgit.ai</span></a>
-  <a class="ver" href="../../admin/versions.html" title="Site release history">v0.12.7</a>
+  <a class="ver" href="../../admin/versions.html" title="Site release history">v0.12.8</a>
   <a class="search-btn" href="../../search/index.html" title="Search the site, in your browser">Search</a>
   <link rel="stylesheet" href="../../assets/search/search-nav.css">
   <sg-meter class="meter-nav" view="balance"></sg-meter>
@@ -146,7 +146,7 @@
  <p class="eyebrow">Engineering · open</p>
  <h1>033: Ask the site: Chrome&#x27;s built-in model, or the reader&#x27;s OpenRouter key, answering from the search index</h1>
  <p class="lead">Ask the site: Chrome's built-in model, or the reader's OpenRouter key, answering from the search index</p>
-<table class="eng-meta"><tr><td class="k">Id</td><td>033</td></tr><tr><td class="k">Status</td><td><span class="eng-tag open">open</span></td></tr><tr><td class="k">Kind</td><td><span class="eng-tag story">Story</span></td></tr><tr><td class="k">Priority</td><td><span class="eng-tag high">high</span></td></tr><tr><td class="k">Created</td><td>2026-10-13T10:30:00Z</td></tr><tr><td class="k">Source</td><td>the owner, in chat, 13 October 2026: a client-side search engine, built from the graphs, sections and summaries the site already has; the question just asked about an article should be findable from the website; then a local model, or the reader&#x27;s OpenRouter key, to talk to the site</td></tr><tr><td class="k">Release</td><td>v0.12.8 <span class=dim>(planned)</span></td></tr><tr><td class="k">Effort</td><td>large</td></tr><tr><td class="k">File</td><td><code>admin/engineering/issues/open/033-ask-the-site.md</code></td></tr></table><div class="eng-body"><h2 id="what-is-asked">What is asked</h2>
+<table class="eng-meta"><tr><td class="k">Id</td><td>033</td></tr><tr><td class="k">Status</td><td><span class="eng-tag open">open</span></td></tr><tr><td class="k">Kind</td><td><span class="eng-tag story">Story</span></td></tr><tr><td class="k">Priority</td><td><span class="eng-tag high">high</span></td></tr><tr><td class="k">Created</td><td>2026-10-13T10:30:00Z</td></tr><tr><td class="k">Source</td><td>the owner, in chat, 13 October 2026: a client-side search engine, built from the graphs, sections and summaries the site already has; the question just asked about an article should be findable from the website; then a local model, or the reader&#x27;s OpenRouter key, to talk to the site</td></tr><tr><td class="k">Release</td><td>v0.12.9 <span class=dim>(planned)</span></td></tr><tr><td class="k">Effort</td><td>large</td></tr><tr><td class="k">File</td><td><code>admin/engineering/issues/open/033-ask-the-site.md</code></td></tr></table><div class="eng-body"><h2 id="what-is-asked">What is asked</h2>
 <p>The owner: the next step is a model that talks to the site and its articles, with the reader's OpenRouter key or a local model, now that Chrome's built-in model runs in the browser.</p>
 <h2 id="scenario">Scenario</h2>
 <pre><code class="lang-gherkin">Given I ask a question on the search page
@@ -166,7 +166,7 @@ Then the page says so and shows the passages alone</code></pre>
 <p>Under the search box, a second button, <i>Ask</i>; under it the answer, then "From these passages" with the numbered snippets, then "Answered by: Chrome's built-in model" or "by openrouter.ai, model …, with your key". The design is in <a href="../../admin/notes/2026-10-13__search-in-the-browser.md">search in the browser</a>, "Next: asking the site".</p></div><p class="dim"><a href="../index.html">Back to the board</a>.</p>
 <div class="agent">
   <h4>For an agent</h4>
-  <p>Issue 033 on newsroom.sgit.ai: Ask the site: Chrome's built-in model, or the reader's OpenRouter key, answering from the search index. Status open, kind story, priority high, release v0.12.8. Source file admin/engineering/issues/open/033-ask-the-site.md.</p>
+  <p>Issue 033 on newsroom.sgit.ai: Ask the site: Chrome's built-in model, or the reader's OpenRouter key, answering from the search index. Status open, kind story, priority high, release v0.12.9. Source file admin/engineering/issues/open/033-ask-the-site.md.</p>
 </div>
 </main>
 <sg-meter view="page" kind="free" date="" topics="" title="033: Ask the site: Chrome&#x27;s built-in model, or the reader&#x27;s OpenRouter key, answering from the search index, SGit Newsroom" quiet></sg-meter>
@@ -181,7 +181,7 @@ import('../../assets/components/sg-meter/v1/v1.4/v1.4.0/sg-meter.js')
     <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="netline"><a href="https://sgit.ai" style="display:inline;padding:0"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://pt.newsroom.sgit.ai" style="display:inline;padding:0">&#8593; pt.newsroom.sgit.ai</a> &middot; <a href="https://graphs.sgit.ai" style="display:inline;padding:0">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai" style="display:inline;padding:0">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai" style="display:inline;padding:0">&#8593; nhi.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai" style="display:inline;padding:0">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../../admin/versions.html">v0.12.7</a> &middot; <a href="../../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../../admin/versions.html">v0.12.8</a> &middot; <a href="../../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>The newsroom</h4>

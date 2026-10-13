@@ -6,8 +6,8 @@
     python3 admin/build/lane.py --json                                                   # the notes as JSON, newest first
 
 The lane is a vault the reader made from the vault pane (assets/vault-pane/vault-pane.js, "Send to the newsroom"):
-one file per note under notes/, each a tap at a piece (read later, not for me, more like this, liked, wrong, fix
-this, idea), the words they added, the phrase they had selected, the page, the article number, the persona and the
+one file per note under notes/, each a tap at a piece (done, read later, follow up, not for me, more like this,
+liked, wrong, fix this, idea) or a message written to the newsroom, the words they added, the phrase they had selected, the page, the article number, the persona and the
 device. The reader holds the write key in their master vault and hands the newsroom the read key, so this script can
 only read. The key comes from the environment (NEWSROOM_LANE_KEY) or from stdin with --key -, never from a file in
 this repository, and it is never printed. The clone lives under the system temp directory by vault id unless --dir
@@ -23,8 +23,9 @@ import tempfile
 from collections import OrderedDict
 from pathlib import Path
 
-KINDS = {"read-later": "Read later", "not-for-me": "Not for me", "more-like-this": "More like this", "liked": "Liked",
-         "wrong": "Wrong", "fix": "Fix this", "idea": "Idea", "note": "Note"}
+KINDS = {"done": "Done", "read-later": "Read later", "follow-up": "Follow up", "not-for-me": "Not for me",
+         "more-like-this": "More like this", "liked": "Liked", "wrong": "Wrong", "fix": "Fix this", "idea": "Idea",
+         "note": "Message"}
 KEY_RE = re.compile(r"^sgit_public_read_[0-9a-f]{64}:([a-z0-9]{4,24})$")
 
 
@@ -64,24 +65,41 @@ def load(clone: Path):
 
 
 def digest(notes, host="https://newsroom.sgit.ai"):
-    """The notes grouped by page, newest page first, each note on one line; wire stories named by id."""
+    """The messages first (every note with words, newest first), then the notes grouped by page, each on one line;
+    a wire story is named by its id and its headline."""
     if not notes:
         return "No notes in the lane yet.\n"
+    when = lambda n: str(n.get("at", ""))[:16].replace("T", " ")
     pages = OrderedDict()
     for n in notes:
         pages.setdefault(n.get("path", "?"), []).append(n)
-    out = [f"{len(notes)} note(s) in the lane, {len(pages)} page(s), newest first.\n"]
+    said = [n for n in notes if n.get("text")]
+    out = [f"{len(notes)} note(s) in the lane, {len(pages)} page(s), {len(said)} with words; newest first.\n"]
+
+    def page_title(path):
+        ns = pages.get(path, [])
+        own = next((n for n in ns if not n.get("story") and n.get("title")), None)
+        head = own["title"] if own else ("The Industry Wire" if path.startswith("/wire/") else path)
+        num = next((n.get("n") for n in ns if n.get("n")), None)
+        return f"No. {num} · {head}" if num else head
+
+    if said:
+        out.append(f"## Messages ({len(said)})\n")
+        for n in said:
+            where = f"story {n['story']}: {n.get('title') or ''} on " if n.get("story") else ""
+            out.append(f"   - {when(n)} · {KINDS.get(n.get('kind'), n.get('kind', '?'))} · {where}{page_title(n.get('path', '?'))}, {host}{n.get('path', '')}")
+            if n.get("quote"):
+                q = n["quote"]
+                out.append(f'     “{q if len(q) <= 240 else q[:240] + "…"}”')
+            out.append(f"     {n['text']}")
+        out.append("")
     for path, ns in pages.items():
-        first = ns[0]
-        head = (first.get("title") or path)
-        if first.get("n"):
-            head = f"No. {first['n']} · {head}"
-        out.append(f"## {head}\n   {host}{path}\n")
+        out.append(f"## {page_title(path)}\n   {host}{path}\n")
         for n in ns:
             line = f"   - {KINDS.get(n.get('kind'), n.get('kind', '?'))}"
             if n.get("story"):
-                line += f" · story {n['story']}"
-            line += f" · {str(n.get('at', ''))[:16].replace('T', ' ')} · {n.get('persona') or 'me'}"
+                line += f" · story {n['story']}" + (f": {n['title']}" if n.get("title") else "")
+            line += f" · {when(n)} · {n.get('persona') or 'me'}"
             if n.get("device"):
                 line += f" · {n['device']}"
             if n.get("quote"):

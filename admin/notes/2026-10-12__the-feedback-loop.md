@@ -4,7 +4,7 @@
 
 ## In short
 
-- **A note is one tap at a piece**: read later, not for me, more like this, liked, wrong, fix this, idea; with words if the reader adds them and the phrase they had selected on the page. It is a record, like a read in the meter: kept in local storage the moment it is made.
+- **A note is one tap at a piece**: done, read later, follow up, not for me, more like this, liked, wrong, fix this, idea; with words if the reader adds them and the phrase they had selected on the page. **Or a message**: words alone, written under *Write to the newsroom* (since v0.12.8, after the first lane read asked where to write to the newsroom's agent), sent with *Save and send* in one press. It is a record, like a read in the meter: kept in local storage the moment it is made.
 - **The vault carries it, when the reader asks.** Update the vault writes this device's notes in the same file as its reads; another device brings them in, tagged. Nothing new in the sync model.
 - **The lane carries what the reader chooses to send.** Send to the newsroom puts the notes not yet sent into a vault of their own, one file per note. The reader keeps the write key in their master; the newsroom gets the read key, once, in the open, and reads with `sgit clone` or `admin/build/lane.py`. Nothing else of the reader's is in the lane, so the reader never shares the reading account to be heard.
 - **The keys are the reader's.** A Keys tab lists every vault of the account with its key behind Reveal: the doors, the master, the reader vault, the lane. Any of them opens on its own, in sgit or in the vault app.
@@ -80,3 +80,7 @@ The owner's first run on an iPad, the same afternoon, is on [the engineering boa
 3. **Two devices**: notes made on a phone, updated, brought into a laptop, sent from there; the "sent" marks after the next update.
 4. **The agent reading the lane at the start of a session** and acting before anything else is asked: whether that changes what the sessions do.
 5. **Which chips are never pressed.** Seven is a guess; the brief said six kinds of mark and seven decisions. The ones not used in a month go.
+
+## The first lane, read (13 October 2026, v0.12.8)
+
+The owner's first send arrived whole: seven notes, five decisions on wire stories, a Done on article No. 10, and one message asking where to write to the newsroom's agent, and calling *Keep these words* a weird button. Both were right: the box had no heading and the button described the browser, not the destination. v0.12.8 heads the box *Write to the newsroom* and adds *Save and send*; `lane.py` now prints messages first. The lane is one-way: the reader writes, the newsroom reads with the published read key and cannot write. Replies need a vault on the newsroom's side (card 035).

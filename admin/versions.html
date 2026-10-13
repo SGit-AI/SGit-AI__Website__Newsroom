@@ -12,7 +12,7 @@
 
 <nav class="site"><div class="row">
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.12.7</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.12.8</a>
   <a class="search-btn" href="../search/index.html" title="Search the site, in your browser">Search</a>
   <link rel="stylesheet" href="../assets/search/search-nav.css">
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
@@ -140,6 +140,14 @@
 <div class="tablewrap"><table class="vers">
   <thead><tr><th>Version</th><th>Date</th><th>What shipped</th></tr></thead>
   <tbody>
+    <tr id="v0.12.8">
+      <td class="vnum">v0.12.8</td>
+      <td>13 Oct 2026</td>
+      <td><b>Write to the newsroom: the pane says where a message goes, and sends it in one press.</b> Issue 034, in <a href="../engineering/releases/v0.12.8.html">the release</a>.
+        <p><b>The first lane, read</b> (<a href="../engineering/issues/034.html">034</a>). The owner&rsquo;s first send reached the newsroom whole: seven notes, five of them decisions on wire stories, one Done on article No. 10 and one message, which asked where to write to the newsroom&rsquo;s agent and called <i>Keep these words</i> a weird button. The pane now has a box headed <i>Write to the newsroom</i>, under the one-tap buttons, that says the message goes to the newsroom&rsquo;s agent with the page&rsquo;s address and anything selected, and two buttons: <i>Save and send</i>, which keeps it and sends it to the lane in one press, and <i>Save, send later</i>. A note of words alone is labelled <i>Message</i>. <code>admin/build/lane.py</code>, the newsroom&rsquo;s end, lists messages first, names Done and Follow up, and gives each wire story its headline.</p>
+        <p><b>Filed</b>: replies, the newsroom answering a message under it in the pane (<a href="../engineering/issues/035.html">035</a>, blocked on an access key for the newsroom&rsquo;s side). Asking the site (<a href="../engineering/issues/033.html">033</a>) moves to v0.12.9.</p>
+        <p><b>Checked.</b> <code>test_notes.mjs</code>: the box&rsquo;s heading, no <i>Keep these words</i>, <i>Save and send</i> keeping a message and sending it to the same lane, the lane&rsquo;s digest listing messages first, and the second device bringing in every note sent.</p></td>
+    </tr>
     <tr id="v0.12.7">
       <td class="vnum">v0.12.7</td>
       <td>13 Oct 2026</td>
@@ -791,7 +799,7 @@
     <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="netline"><a href="https://sgit.ai" style="display:inline;padding:0"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://pt.newsroom.sgit.ai" style="display:inline;padding:0">&#8593; pt.newsroom.sgit.ai</a> &middot; <a href="https://graphs.sgit.ai" style="display:inline;padding:0">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai" style="display:inline;padding:0">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai" style="display:inline;padding:0">&#8593; nhi.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai" style="display:inline;padding:0">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.12.7</a> &middot; <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.12.8</a> &middot; <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>The newsroom</h4>
