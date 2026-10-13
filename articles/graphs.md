@@ -31,7 +31,7 @@ Beside the system prompt and the prompt, every agent should take an Agent Behavi
 *[diagram]*
 **concept**claim**method**artefact**example**question
 
-**12 nodes, 12 edges**
+**14 nodes, 15 edges**
 
 - **A third input** (method) A behaviour policy beside the system prompt and the prompt, versioned and loaded by the platform.
 - **Code and data in one channel** (concept) Models do not separate instructions from content, so prompt injection may never be fully fixed.
@@ -45,6 +45,8 @@ Beside the system prompt and the prompt, every agent should take an Agent Behavi
 - **What the standard needs** (artefact) A versioned policy file, per-row acknowledgement, the vendor's own policy, breach reports, liability per row.
 - **Hidden vendor policies** (example) Claude in Chrome will not type a password: a policy we cannot see, rely on, or stop changing.
 - **Reverse-engineer them** (question) Measure the policies agents already run and publish them in the ABP format.
+- **Both modes are hope today** (claim) Over the API the policy goes in our system prompt; in the Claude apps and Claude Code after the vendor's; either way the model is asked to keep it.
+- **A system prompt is a light policy** (concept) It tells the agent how to behave; it should be written as rows, layered: the vendor's policy, then the deployer's.
 
 > The moment you pass the liability for fraud to the company, its security picks up. The payments lesson the proposal rests on.
 

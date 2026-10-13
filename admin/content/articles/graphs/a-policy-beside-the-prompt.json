@@ -78,6 +78,18 @@
    "label": "Reverse-engineer them",
    "kind": "question",
    "summary": "Measure the policies agents already run and publish them in the ABP format."
+  },
+  {
+   "id": "modes",
+   "label": "Both modes are hope today",
+   "kind": "claim",
+   "summary": "Over the API the policy goes in our system prompt; in the Claude apps and Claude Code after the vendor's; either way the model is asked to keep it."
+  },
+  {
+   "id": "light",
+   "label": "A system prompt is a light policy",
+   "kind": "concept",
+   "summary": "It tells the agent how to behave; it should be written as rows, layered: the vendor's policy, then the deployer's."
   }
  ],
  "edges": [
@@ -140,6 +152,21 @@
    "from": "aviation",
    "to": "payments",
    "rel": "compared-with"
+  },
+  {
+   "from": "modes",
+   "to": "third",
+   "rel": "leads-to"
+  },
+  {
+   "from": "light",
+   "to": "standard",
+   "rel": "extends"
+  },
+  {
+   "from": "hidden",
+   "to": "light",
+   "rel": "example-of"
   }
  ],
  "links": {
@@ -158,7 +185,9 @@
    "https://ourworldindata.org/grapher/fatal-airliner-accidents-per-million-flights",
    "https://www.law.cornell.edu/uscode/text/15/1643",
    "https://www.psr.org.uk/information-for-consumers/app-scams-reimbursement-dashboard",
-   "https://support.claude.com/en/articles/12902428-using-claude-in-chrome-safely"
+   "https://support.claude.com/en/articles/12902428-using-claude-in-chrome-safely",
+   "https://docs.claude.com/en/release-notes/system-prompts",
+   "https://code.claude.com/docs/en/memory"
   ]
  },
  "quotes": [
