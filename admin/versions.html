@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="../assets/site-nav.css">
   <script src="../assets/themes/themes.js"></script>
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.12.25</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.12.26</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -137,6 +137,13 @@
 <div class="tablewrap"><table class="vers">
   <thead><tr><th>Version</th><th>Date</th><th>What shipped</th></tr></thead>
   <tbody>
+    <tr id="v0.12.26">
+      <td class="vnum">v0.12.26</td>
+      <td>13 Oct 2026</td>
+      <td><b>Send to my vault from any browser: an inbox on the reader vault, a link three ways, and the drain.</b> Issue 049, in <a href="../engineering/releases/v0.12.26.html">the release</a>.
+        <p><b>The inbox</b> (<a href="../engineering/issues/049.html">049</a>), the feature request in <a href="../articles/sixteen-notes-i-did-not-want-to-lose.html">Sixteen notes I did not want to lose</a>. In the vault pane&rsquo;s Vault tab, <i>Make a link for another browser</i> makes a key pair in the browser (RSA-OAEP 3072), configures an append lane on the reader vault and records both in the master. The link is shown as a URL, as text and as a QR code, and carries the lane, its write-only token and the public key, nothing else. A browser with no passkey opens it on <a href="../vault/send.html">vault/send.html</a>: it keeps the link and takes it out of the address, says what it holds that the vault does not, and on <i>Send to my vault</i> seals its own records, as one device file in the format the vault already uses, with sgit&rsquo;s hybrid envelope, and appends them. It can write and never read. Once it holds a link, the strip above the pane offers the same button on any page. The next time the vault is opened with the passkey, the Vault tab lists what is waiting: from which browser, when, and what it carries; it refuses a message sealed to another key, one changed on the way and one that is not an inbox message, each with the reason; and <i>Bring them in</i> writes each browser&rsquo;s file into the reader vault and runs the merge every device already uses, so the records keep that browser as their author. <i>Make a new link</i> keeps the key, changes the token, and the old link can no longer write. The design is in <a href="../admin/notes/2026-10-13__send-to-my-vault-from-any-browser.md">the note</a>. Not built: expiry, which the append routes have no way to enforce; signatures; purge; the reply lane (015).</p>
+        <p><b>Checked.</b> <code>test_inbox.mjs</code>, the thirteenth file in CI: the link, the envelope, the refusals and the combining of two files of one browser in Node; in Chromium against the mock of the vault API, now with the append routes, a browser with a virtual passkey makes the account and the link (its QR code decoded back with jsQR), a browser with no passkey at all reads, keeps notes and sends twice, three bad messages are appended beside them, and the first browser refuses the three, brings the two in, discards the rest and makes a new link that the old one cannot write past. What reached the lane is ciphertext; neither browser keeps the private key or the enum key.</p></td>
+    </tr>
     <tr id="v0.12.25">
       <td class="vnum">v0.12.25</td>
       <td>13 Oct 2026</td>
@@ -909,7 +916,7 @@
     <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="netline"><a href="https://sgit.ai" style="display:inline;padding:0"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://pt.newsroom.sgit.ai" style="display:inline;padding:0">&#8593; pt.newsroom.sgit.ai</a> &middot; <a href="https://graphs.sgit.ai" style="display:inline;padding:0">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai" style="display:inline;padding:0">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai" style="display:inline;padding:0">&#8593; nhi.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai" style="display:inline;padding:0">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.12.25</a> &middot; <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.12.26</a> &middot; <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>The newsroom</h4>

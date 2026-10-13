@@ -24,6 +24,7 @@ def page():
 <ol>
 <li><b>Read, and tap.</b> On any page, open the pane; it stays open from page to page until you close it. Above the chips it says what this browser knows about the page: read how many times, when, how far, what it cost. Select a phrase if one is the point. One tap keeps a note in this browser: <em>Done</em> (read it, done with it, off your lists), <em>Read later</em>, <em>Not for me</em>, <em>More like this</em>, <em>Liked</em>, <em>Wrong</em>, <em>Fix this</em>, <em>Idea</em>, with the phrase you had selected. Under the chips, <b>Write to the newsroom</b> takes a message for the newsroom&rsquo;s agent, about the page or anything else: <em>Save and send</em> keeps it and sends it in one press. On <a href="../wire/index.html">the wire</a>, the decision is at each story, and a decided story folds to its headline. The <b>Reading</b> tab lists every page read here, newest first, with its decision, and folds the done ones away.</li>
 <li><b>Update the vault</b>, in the Vault tab, when you like: your notes travel with your reads to your other devices, in this device&rsquo;s own file.</li>
+<li><b>Send from a browser without your passkey.</b> One an app opens links in, one signed in to nothing, an old iPad: in the Vault tab, <em>Make a link for another browser</em>, then open it, paste it or scan its QR code there. That browser can add what it holds to your vault&rsquo;s inbox and read nothing; the Vault tab shows what arrived, from which browser, before you bring it in. <a href="send.html">The sending page</a>, <a href="../admin/notes/2026-10-13__send-to-my-vault-from-any-browser.md">the design</a>.</li>
 <li><b>Send to the newsroom</b> the notes you have not sent. The first send makes a <b>lane</b>: a vault of its own, whose write key stays in your master and whose <b>read key</b> the pane shows. Hand that key to the newsroom once, in the open; it reads the lane and cannot write to it, and nothing else of yours is in it. Later sends go to the same lane.</li>
 <li><b>The newsroom reads the lane</b> with <code>sgit clone</code> or <code>admin/build/lane.py</code>, and answers in the open: a fix in a release, a version of an article. Nothing comes back through the lane.</li>
 </ol>
@@ -53,9 +54,9 @@ def page():
     agent = (f"The vault pane (assets/vault-pane/vault-pane.js) has three tabs. This page: the reader's notes (assets/vault-pane/notes.js; one tap at a piece: read-later, not-for-me, "
              "more-like-this, liked, wrong, fix, idea, done, follow-up, with words and the selected phrase, or a message alone, kind note, written under Write to the newsroom; kept in localStorage sgit.notes.v1) and Send to the newsroom, which writes the notes not yet "
              "sent into a lane, a vault of its own whose key is in the master (lane.json) and whose read key the reader hands over; the newsroom reads it with "
-             "`NEWSROOM_LANE_KEY=<read key> python3 admin/build/lane.py`. Vault: the reading account carried between devices through an sgit vault opened with a passkey: "
+             "`NEWSROOM_LANE_KEY=&lt;read key&gt; python3 admin/build/lane.py`. Vault: the reading account carried between devices through an sgit vault opened with a passkey: "
              "a door derived from the PRF bytes (assets/door.js), the master and the reader vault (assets/newsroom-vault.js); the reader vault holds "
-             "activity/account.json (one starting credit) and activity/devices/<device>.json (that device's raw reads, top-ups, personas and notes, rewritten whole on each sync); "
+             "activity/account.json (one starting credit) and activity/devices/&lt;device&gt;.json (that device's raw reads, top-ups, personas and notes, rewritten whole on each sync); "
              "totals are recomputed from the records (assets/vault-pane/sync.js). Keys: every vault with its key behind Reveal. Local storage stays primary; the vault is updated when the reader presses Update. "
              f"The designs are https://{HOST}/{NOTE} and https://{HOST}/{NOTE2}; the tests are admin/build/test_sync.mjs (the logic), test_pane.mjs (two devices in Chromium against a mock of the vault API) "
              "and test_notes.mjs (the feedback loop end to end, including the sgit CLI reading the lane with the read key).")
@@ -66,9 +67,42 @@ def page():
                          agent=agent)
 
 
+def send_page():
+    """vault/send.html: the sending side of the inbox (card 049), for a browser that holds the link and no passkey."""
+    body = """<div id="send-mount" class="send-box"><p class="dim">Loading&hellip;</p></div>
+<noscript><p>Sending needs a script: this page encrypts in your browser and writes nothing anywhere without one.</p></noscript>
+<script type="module">
+import { mountSend } from '../assets/vault-pane/send.js';
+mountSend(document.getElementById('send-mount'));
+</script>
+<h2 id="what">What this page does</h2>
+<p>Your vault opens with your passkey, and some browsers cannot reach it: one an app opens a link in, one signed in to nothing, an old iPad. What they hold, your reads, your notes and the stories you saw on the wire, would stay there. This page sends it to your vault without the passkey.</p>
+<ul>
+<li><b>The link</b> comes from your vault, in the pane&rsquo;s Vault tab, as a URL, as text or as a QR code. It carries two things: where to write, an append lane on your reader vault, and the public key to encrypt to. Nothing else: not your vault&rsquo;s key, not its read key.</li>
+<li><b>What is sent</b> is this browser&rsquo;s own records, as one file, encrypted here to that key (RSA-OAEP and AES-256-GCM, sgit&rsquo;s hybrid envelope) and appended to the lane. The vault server sees ciphertext, a size and a time.</li>
+<li><b>This browser can add and cannot read.</b> The lane answers a write with <code>{"ok": true}</code> and nothing more; not even what was sent can be read back from here.</li>
+<li><b>Your vault takes it in</b> the next time you open it with your passkey: the Vault tab lists what is waiting, from which browser and when, and brings it in on one press, with this browser as its author.</li>
+<li><b>Nothing is removed from this browser.</b> The count of what is only here goes to zero once it is sent; the records stay.</li>
+</ul>
+<p>Anyone holding the link can add to the lane, and nobody holding it can read anything. Your vault shows what arrived before it brings it in, and can make a new link, which stops the old one. The brief is <a href="../articles/sixteen-notes-i-did-not-want-to-lose.html">Sixteen notes I did not want to lose</a>; the design is <a href="../admin/notes/2026-10-13__send-to-my-vault-from-any-browser.md">in the note</a>.</p>
+"""
+    agent = ("vault/send.html is the sending side of the reader's inbox (assets/vault-pane/send.js, assets/vault-pane/inbox.js). The link, in the fragment, is "
+             "sgi1.&lt;reader vault id&gt;.&lt;append token, hex&gt;.&lt;RSA-OAEP 3072 public key, SPKI, base64url&gt;; the page keeps it in localStorage sgit.inbox.link and removes it from the address. "
+             "It extracts this browser's own records as a device file (assets/vault-pane/sync.js format, v 1), wraps it as {kind: 'sgit-newsroom-inbox/v1', to: &lt;key fingerprint&gt;, sent_at, file}, "
+             "seals it with sgit's hybrid envelope v2 and POSTs {append_token, payload} to https://dev.send.sgraph.ai/api/vault/append/write/&lt;vault id&gt;. The reader's vault pane drains the lane with the enum key "
+             "and the private key, both in the master vault.")
+    return newsroom_page("vault/send.html", "Send to my vault",
+                         "Send what this browser holds, your reads, notes and the stories you saw, to your vault, from a browser that cannot reach your passkey: encrypted here, appended to a lane it can write to and never read.",
+                         body, eyebrow="Your vault · send from any browser", crumbs=(("Account", "account/index.html"), ("Your vault", "vault/index.html")),
+                         lead="A browser with no passkey can still keep what it holds: it encrypts it to your vault's key and appends it to your vault's inbox, which it can write to and never read.",
+                         agent=agent, head='<link rel="stylesheet" href="../assets/vault-pane/send.css">')
+
+
 def main():
     changed = write("vault/index.html", page())
     print(f"vault_page: {'written' if changed else 'unchanged'} vault/index.html")
+    changed = write("vault/send.html", send_page())
+    print(f"vault_page: {'written' if changed else 'unchanged'} vault/send.html")
 
 
 if __name__ == "__main__":

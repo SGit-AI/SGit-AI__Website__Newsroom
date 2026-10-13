@@ -101,3 +101,10 @@ html.vault-open .vault-pane { transform: none; }
 /* the keys */
 .vault-pane .vaults .kv { grid-template-columns: 7rem 1fr; }
 @media (max-width: 900px) { html.vault-open body { padding-right: 0; } .vault-pane { width: min(var(--vault-w), 100vw); } }
+/* the inbox: send to my vault from any browser (card 049) */
+.vault-pane .inbox-qr { margin: .5rem 0; }
+.vault-pane .inbox-qr svg { display: block; max-width: 100%; height: auto; border-radius: 6px; }
+.vault-pane .inbox-link .mono { overflow-wrap: anywhere; font-size: .74rem; }
+.vault-pane .waiting { list-style: none; margin: .3rem 0; padding: 0; }
+.vault-pane .waiting li { padding: .35rem 0; border-bottom: 1px solid var(--line, #eceef2); font-size: .84rem; }
+.vault-pane .waiting li.refused { color: var(--warn-ink, #8a5a0a); }
