@@ -55,6 +55,242 @@
   ],
   "articles": [
     {
+      "slug": "a-policy-beside-the-prompt",
+      "title": "A policy beside the prompt: a proposal that every agent takes a behaviour policy as an input, with enforcement and liability attached, and why aviation and payments say the vendors should want it",
+      "date": "2026-10-13",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/a-policy-beside-the-prompt.html",
+      "markdown": "https://newsroom.sgit.ai/articles/a-policy-beside-the-prompt.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/a-policy-beside-the-prompt.webp",
+      "teaser": "A proposal: every agent takes a behaviour policy beside its prompt, which the vendor accepts and answers for, as aviation and payments learned to.",
+      "topics": [
+        "agents-and-policy",
+        "startups-and-strategy"
+      ],
+      "tags": [
+        "agents",
+        "agent-behaviour-policy",
+        "standards",
+        "liability",
+        "prompt-injection",
+        "trust",
+        "aviation",
+        "payments",
+        "riskmandate",
+        "proposal",
+        "article"
+      ],
+      "links_out": [
+        "the-policy-draws-the-liability-line",
+        "ultimate-insider-three-collisions",
+        "the-investigation-github-owes-its-customers",
+        "hope-or-enforcement",
+        "authority-outside-the-model",
+        "stop-the-bleeding-then-ask-for-it-back"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "pp-inputs.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/pp-inputs.webp",
+          "caption": "What an agent is given today, and what this proposes. Today the vendor's system prompt and our prompt arrive in one channel with every email, page and file the agent reads, and the vendor's own rules are invisible. Proposed: a behaviour policy as a separate, versioned input, beside the vendor's own published policy, each row marked with what enforces it and who answers if it breaks.",
+          "kind": "diagram"
+        },
+        {
+          "file": "pp-aviation.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/pp-aviation.webp",
+          "caption": "Fatal airliner accidents, 1995 and 2025. At 1995's rate of 2.72 per million flights, 2025's 38.7 million flights would have produced about 105 fatal accidents. There were 12. Rates from the Aviation Safety Network via Our World in Data; 2025 accidents from the Flight Safety Foundation's report of the ASN data; flights from IATA.",
+          "kind": "comparison"
+        },
+        {
+          "file": "pp-payments.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/pp-payments.webp",
+          "caption": "Where the liability for payment fraud was moved, and what followed. Each step put the loss on the party best placed to stop it, and the security followed the loss: caps for consumers, a liability shift onto whoever had not adopted chip cards, standards written by the card brands, and reimbursement of scam victims.",
+          "kind": "timeline"
+        },
+        {
+          "file": "pp-split.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/pp-split.webp",
+          "caption": "The proposed split. The vendor publishes its own built-in policy and accepts the deployer's; for every row it accepts, it says what enforces it and answers if it breaks. Everything the policy does not cover stays with the user, as it does today. The vendors that keep more rows as boundaries can sell that as the product.",
+          "kind": "decision"
+        }
+      ],
+      "graph": {
+        "slug": "a-policy-beside-the-prompt",
+        "teaser": "A proposal: every agent takes a behaviour policy beside its prompt, which the vendor accepts and answers for, as aviation and payments learned to.",
+        "topics": [
+          "agents-and-policy",
+          "startups-and-strategy"
+        ],
+        "core_idea": "Beside the system prompt and the prompt, every agent should take an Agent Behaviour Policy written to a published standard, which the vendor acknowledges row by row, enforces where it can, reports breaches against and eventually answers for, because agent behaviour is becoming an existential risk to the vendors through liability and trust, and aviation and payments show that safety follows when the rule, the liability and the business model point the same way.",
+        "nodes": [
+          {
+            "id": "third",
+            "label": "A third input",
+            "kind": "method",
+            "summary": "A behaviour policy beside the system prompt and the prompt, versioned and loaded by the platform."
+          },
+          {
+            "id": "codedata",
+            "label": "Code and data in one channel",
+            "kind": "concept",
+            "summary": "Models do not separate instructions from content, so prompt injection may never be fully fixed."
+          },
+          {
+            "id": "channel",
+            "label": "A second channel",
+            "kind": "claim",
+            "summary": "The policy takes the instructions that matter most out of the channel anyone can write into."
+          },
+          {
+            "id": "existential",
+            "label": "An existential risk",
+            "kind": "claim",
+            "summary": "Liability and above all trust: a few people badly hurt can make many stop giving agents instructions."
+          },
+          {
+            "id": "aviation",
+            "label": "Aviation",
+            "kind": "example",
+            "summary": "At 1995's rate, 2025's flights would have brought about 105 fatal airliner accidents; there were 12."
+          },
+          {
+            "id": "payments",
+            "label": "Payments",
+            "kind": "example",
+            "summary": "Liability moved onto card companies and banks, and the security and detection followed the loss."
+          },
+          {
+            "id": "fines",
+            "label": "Fines are not enough",
+            "kind": "claim",
+            "summary": "Some industries pay the fines; improvement comes when rule, liability and business model align."
+          },
+          {
+            "id": "split",
+            "label": "Inside and outside the policy",
+            "kind": "claim",
+            "summary": "The vendor answers for the rows it accepted; the user for everything the policy does not cover."
+          },
+          {
+            "id": "advantage",
+            "label": "A competitive advantage",
+            "kind": "claim",
+            "summary": "A vendor that keeps more rows as boundaries can sell that as the product."
+          },
+          {
+            "id": "standard",
+            "label": "What the standard needs",
+            "kind": "artefact",
+            "summary": "A versioned policy file, per-row acknowledgement, the vendor's own policy, breach reports, liability per row."
+          },
+          {
+            "id": "hidden",
+            "label": "Hidden vendor policies",
+            "kind": "example",
+            "summary": "Claude in Chrome will not type a password: a policy we cannot see, rely on, or stop changing."
+          },
+          {
+            "id": "reverse",
+            "label": "Reverse-engineer them",
+            "kind": "question",
+            "summary": "Measure the policies agents already run and publish them in the ABP format."
+          }
+        ],
+        "edges": [
+          {
+            "from": "third",
+            "to": "codedata",
+            "rel": "answers"
+          },
+          {
+            "from": "third",
+            "to": "channel",
+            "rel": "produces"
+          },
+          {
+            "from": "existential",
+            "to": "third",
+            "rel": "leads-to"
+          },
+          {
+            "from": "aviation",
+            "to": "existential",
+            "rel": "example-of"
+          },
+          {
+            "from": "payments",
+            "to": "split",
+            "rel": "example-of"
+          },
+          {
+            "from": "fines",
+            "to": "payments",
+            "rel": "contrasts"
+          },
+          {
+            "from": "split",
+            "to": "third",
+            "rel": "depends-on"
+          },
+          {
+            "from": "split",
+            "to": "advantage",
+            "rel": "leads-to"
+          },
+          {
+            "from": "standard",
+            "to": "split",
+            "rel": "produces"
+          },
+          {
+            "from": "hidden",
+            "to": "standard",
+            "rel": "compared-with"
+          },
+          {
+            "from": "hidden",
+            "to": "reverse",
+            "rel": "leads-to"
+          },
+          {
+            "from": "aviation",
+            "to": "payments",
+            "rel": "compared-with"
+          }
+        ],
+        "links": {
+          "articles": [
+            "the-policy-draws-the-liability-line",
+            "ultimate-insider-three-collisions",
+            "the-investigation-github-owes-its-customers",
+            "hope-or-enforcement",
+            "authority-outside-the-model",
+            "stop-the-bleeding-then-ask-for-it-back"
+          ],
+          "pages": [],
+          "sites": [
+            "https://abp.sgit.ai/what-is-an-abp/index.html",
+            "https://www.ncsc.gov.uk/blog-post/prompt-injection-is-not-sql-injection",
+            "https://ourworldindata.org/grapher/fatal-airliner-accidents-per-million-flights",
+            "https://www.law.cornell.edu/uscode/text/15/1643",
+            "https://www.psr.org.uk/information-for-consumers/app-scams-reimbursement-dashboard",
+            "https://support.claude.com/en/articles/12902428-using-claude-in-chrome-safely"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "The moment you pass the liability for fraud to the company, its security picks up.",
+            "why": "The payments lesson the proposal rests on."
+          },
+          {
+            "text": "So the user enters the password, because Claude says, I am not going to put a password in.",
+            "why": "A vendor policy already running, invisible and unguaranteed."
+          }
+        ]
+      }
+    },
+    {
       "slug": "the-policy-draws-the-liability-line",
       "title": "The policy draws the liability line: an answer to Ralf Thomas on agent accountability, and why every agent in a loop should take a behaviour policy beside its prompt",
       "date": "2026-10-13",
@@ -90,7 +326,9 @@
         "who-owns-the-words",
         "authority-outside-the-model"
       ],
-      "links_in": [],
+      "links_in": [
+        "a-policy-beside-the-prompt"
+      ],
       "figures": [
         {
           "file": "pl-shell.webp",
@@ -809,6 +1047,7 @@
         "who-owns-the-words"
       ],
       "links_in": [
+        "a-policy-beside-the-prompt",
         "the-vault-crosses-chrome-profiles"
       ],
       "figures": [
@@ -7854,6 +8093,7 @@
         "riskmandate-ten-questions"
       ],
       "links_in": [
+        "a-policy-beside-the-prompt",
         "the-policy-draws-the-liability-line",
         "where-the-platform-draws-the-line",
         "the-same-argument-in-our-words"
@@ -13182,6 +13422,7 @@
         "the-agent-team-as-it-runs"
       ],
       "links_in": [
+        "a-policy-beside-the-prompt",
         "the-policy-draws-the-liability-line",
         "where-the-platform-draws-the-line",
         "the-same-argument-in-our-words",
@@ -17523,6 +17764,7 @@
         "every-risk-is-already-accepted"
       ],
       "links_in": [
+        "a-policy-beside-the-prompt",
         "judo-for-small-countries",
         "authority-outside-the-model",
         "riskmandate-ten-questions"
@@ -21209,6 +21451,7 @@
         "introducing-fractal-semantic-graphs"
       ],
       "links_in": [
+        "a-policy-beside-the-prompt",
         "the-same-argument-in-our-words",
         "authority-outside-the-model",
         "riskmandate-ten-questions",

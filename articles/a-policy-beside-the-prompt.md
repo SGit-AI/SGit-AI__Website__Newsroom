@@ -1,0 +1,136 @@
+# A policy beside the prompt: a proposal that every agent takes a behaviour policy as an input, with enforcement and liability attached, and why aviation and payments say the vendors should want it, sgit.ai
+
+> An idea came up while I was answering a post about agent liability, and I think it deserves to stand on its own as a proposal. Today an agent gets a prompt from us and a system prompt from its vendor. It should also get an Agent Behaviour Policy, written to a published standard, which the vendor accepts, enforces as far as it can, and eventually answers for. It is the beginning of dealing with something the models have got away with for a long time: they do not separate code from data, so every instruction and every piece of content arrives in the same channel. Now that agents can do a great deal, and are starting to go off the rails in public, their behaviour is becoming an existential threat to the companies that make them, through liability and above all through trust: it does not take many users being hurt before people stop giving agents instructions at all. Two industries have been here. Aviation did not get safe out of altruism; it got safe because every crash became world news, and at the accident rate of 1995 today's traffic would bring about a hundred fatal airliner accidents a year instead of twelve. Payments got some of the best security teams anywhere because liability for fraud was moved onto the card companies and the banks, and the fraud detection followed the money, often spotting a merchant's breach before the merchant did. Regulation alone does not do it; some industries are happy to pay the fines. It works when the rule, the liability and the business model point the same way. A policy beside the prompt is how to make them point the same way for agents: the user answers for what is outside the policy, and the vendor for the rows it accepted. Most agents already run a policy of their own; we just cannot see it, rely on it, or stop it changing.
+
+*Source: <https://newsroom.sgit.ai/articles/a-policy-beside-the-prompt.html> · sgit.ai v0.7.87 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+
+---
+
+[Home](../index.md) / [Articles](index.md) / A policy beside the prompt: a proposal that every agent takes a behaviour policy as an input, with enforcement and liability attached, and why aviation and payments say the vendors should want it
+
+# A policy beside the prompt: a proposal that every agent takes a behaviour policy as an input, with enforcement and liability attached, and why aviation and payments say the vendors should want it
+
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-13 · [article v1.0.0](versions/a-policy-beside-the-prompt.md) · [newsroom v0.12.16](https://newsroom.sgit.ai/admin/versions.html) · agentsagent-behaviour-policystandardsliabilityprompt-injectiontrustaviationpaymentsriskmandateproposalarticle
+
+***Abstract:** An idea came up while I was answering a post about agent liability, and I think it deserves to stand on its own as a proposal. Today an agent gets a prompt from us and a system prompt from its vendor. It should also get an Agent Behaviour Policy, written to a published standard, which the vendor accepts, enforces as far as it can, and eventually answers for. It is the beginning of dealing with something the models have got away with for a long time: they do not separate code from data, so every instruction and every piece of content arrives in the same channel. Now that agents can do a great deal, and are starting to go off the rails in public, their behaviour is becoming an existential threat to the companies that make them, through liability and above all through trust: it does not take many users being hurt before people stop giving agents instructions at all. Two industries have been here. Aviation did not get safe out of altruism; it got safe because every crash became world news, and at the accident rate of 1995 today's traffic would bring about a hundred fatal airliner accidents a year instead of twelve. Payments got some of the best security teams anywhere because liability for fraud was moved onto the card companies and the banks, and the fraud detection followed the money, often spotting a merchant's breach before the merchant did. Regulation alone does not do it; some industries are happy to pay the fines. It works when the rule, the liability and the business model point the same way. A policy beside the prompt is how to make them point the same way for agents: the user answers for what is outside the policy, and the vendor for the rows it accepted. Most agents already run a policy of their own; we just cannot see it, rely on it, or stop it changing.*
+
+What an agent is given today, and what this proposes. Today the vendor's system prompt and our prompt arrive in one channel with every email, page and file the agent reads, and the vendor's own rules are invisible. Proposed: a behaviour policy as a separate, versioned input, beside the vendor's own published policy, each row marked with what enforces it and who answers if it breaks.
+
+## In short
+
+- **A third input.** Beside the system prompt and the prompt, an agent should take an Agent Behaviour Policy, written to a published standard, which the vendor acknowledges, enforces where it can, reports against, and answers for.
+- **It starts on an old problem.** Models do not separate code from data. Instructions and content arrive in one channel, which is why prompt injection may never be fully fixed. A policy is a second channel for the one thing that should not be negotiable: what the agent may do.
+- **Agent behaviour is now an existential risk for the vendors.** Through liability, and more through trust. A small number of people badly hurt is enough for many more to stop giving agents instructions.
+- **Aviation got safe because crashes became news.** At 1995's rate of fatal airliner accidents per million flights, 2025's 38.7 million flights would have meant about 105 fatal accidents. There were 12.
+- **Payments got safe because liability moved to the companies.** Card fraud caps for consumers, a liability shift onto whoever had not adopted chip cards, standards written by the card brands, and in the UK, banks reimbursing scam victims, after which those losses fell by about a fifth.
+- **Regulation alone is not enough.** Some industries pay the fines. The improvement comes when the rule, the liability and the business model point the same way.
+- **The user answers outside the policy, the vendor inside it.** The rows the vendor accepted are the vendor's to keep. That is a better model than "you clicked allow", and the vendors who get it right will win on it.
+- **Agents already run hidden policies.** Claude in Chrome will not type a password. That is a policy. We should be able to read it, rely on it, and know when it changes.
+
+## The idea: a policy beside the prompt
+
+When I answered Ralf Thomas on [where the liability line should fall](the-policy-draws-the-liability-line.md), the section I most wanted to write was the last one: that an agent should take a behaviour policy beside its prompt. I think it deserves to be its own proposal, put out there on its own, because I think it can help a lot, and not only with the liability conversation.
+
+Here it is. Today, an agent gets two things: a system prompt from its vendor, and a prompt from us. It should get a third: an [Agent Behaviour Policy](https://abp.sgit.ai/what-is-an-abp/index.html), defined to a standard, that says what this agent, in this deployment, is meant to do and must not do, row by row, with what stands in the way of each row. The vendor should accept it as part of the deployment, enforce as much of it as the platform can see, report every breach against it, and, eventually, carry liability for the rows it accepted. The vocabulary already exists, published under CC BY at [abp.sgit.ai](https://abp.sgit.ai/): the reach, the mandate, the gap between them, and the barriers, none, expectation, setting and boundary, of which only a boundary is a control.
+
+## The old problem: code and data in one channel
+
+This is the beginning of dealing with something the models have got away with for a long time. They do not separate code from data. In a computer, the instructions and the things they operate on are kept apart, and most of the worst security bugs in history, from buffer overflows to SQL injection, are what happens when that separation breaks. In a language model there is no separation to break. The UK's National Cyber Security Centre put it plainly in December 2025: current models ["simply do not enforce a security boundary between instructions and data inside a prompt"](https://www.ncsc.gov.uk/blog-post/prompt-injection-is-not-sql-injection), which is why it thinks prompt injection may never be mitigated the way SQL injection was. Simon Willison's phrase for the consequence is that ["LLMs follow instructions in content"](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/), and the email the agent reads is content.
+
+A behaviour policy does not fix that, and I do not want to claim it does. What it does is take the most important instructions out of the channel that anybody can write into. The prompt can be argued with by an email. The policy should not be: it is loaded by the platform, versioned, signed, and checked by something other than the model where it can be. It is a second channel for the one thing that should not be negotiable, what the agent may do, and every row the platform can enforce outside the model, as Claude Code's own documentation says of its permission rules, ["are enforced by Claude Code, not by the model"](https://code.claude.com/docs/en/permissions).
+
+## Why the vendors should want this
+
+Now that agents can do a great deal, and are starting to go off the rails in public, with the [incidents of 2026](the-policy-draws-the-liability-line.md) as the record, I think agent behaviour is becoming an existential threat to the companies that make the models. One reason is liability, which could be very large: from 9 December 2026 software, AI systems included, is a product under the EU's new product liability rules. The bigger reason is trust. People will stop giving instructions to agents if they believe this can happen to them, and I do not think it takes many. A decent number of people badly hurt, in a news cycle that amplifies every one of them, is enough for a much larger number to decide that agents are not for them. That is a systemic risk to the whole business model, not a cost of doing business.
+
+Two industries have been here, and both are worth looking at, because neither got safe for the reasons people usually assume.
+
+## Aviation did not get safe out of altruism
+
+Fatal airliner accidents, 1995 and 2025. At 1995's rate of 2.72 per million flights, 2025's 38.7 million flights would have produced about 105 fatal accidents. There were 12. Rates from the Aviation Safety Network via Our World in Data; 2025 accidents from the Flight Safety Foundation's report of the ASN data; flights from IATA.
+
+Aviation is the best example we have of a complex system of technology, business process and people that learned to be safe, and I keep coming back to it, in [The ultimate insider](ultimate-insider-three-collisions.md) and in [The investigation GitHub owes its customers](the-investigation-github-owes-its-customers.md). But let us be clear about why. It did not get there for altruistic reasons, or because it was the right thing to do, although, to be fair, the people who run airlines also fly, so they have some interest of their own. It got there because everybody knew that every crash, anywhere in the world, would be news, and more so every year.
+
+When I was growing up, a plane crash was a regular news story. Here is the arithmetic of what would have happened if safety had stayed where it was. In 1995 there were [2.72 fatal airliner accidents for every million flights](https://ourworldindata.org/grapher/fatal-airliner-accidents-per-million-flights), on the Aviation Safety Network's count. In 2025 there were [38.7 million flights](https://www.iata.org/en/pressroom/2026-releases/2026-03-09-01/). At the 1995 rate, that is about 105 fatal accidents in a year, two a week. The Aviation Safety Network counted [12](https://flightsafety.org/wp-content/uploads/2026/02/2025-Safety-Report-FINAL.pdf). Air travel more than doubled, from about 18 million flights in 1995, and the fatal accidents went down, not up: the rate fell almost ninefold. An industry with two fatal crashes a week would not have the passengers it has, and everybody in it understood that.
+
+## Payments got safe because liability moved
+
+Where the liability for payment fraud was moved, and what followed. Each step put the loss on the party best placed to stop it, and the security followed the loss: caps for consumers, a liability shift onto whoever had not adopted chip cards, standards written by the card brands, and reimbursement of scam victims.
+
+The second example is payments. If you compare payments with privacy, or with most of cyber security, card payments have had, for a long time, some of the best security teams, some of the best fraud detection and some of the best security measures anywhere. Why there? Very simple: the liability was moved onto the companies.
+
+- **Consumers stopped carrying the loss.** In the United States, since 1970, a cardholder is liable for unauthorised use ["only if... the liability is not in excess of $50"](https://www.law.cornell.edu/uscode/text/15/1643). In the UK, a payment provider may make the payer liable ["up to a maximum of £35"](https://www.legislation.gov.uk/uksi/2017/752/regulation/77) for a lost or stolen card.
+- **The loss went to whoever had not done the work.** In October 2015, in the United States, counterfeit fraud liability [shifted to the issuer or the merchant that had not adopted chip technology](https://www.visa.co.id/dam/VCOM/global/partner-with-us/documents/visa-liability-shift.pdf).
+- **The industry wrote its own standard.** The PCI Security Standards Council [was founded in 2006](https://www.pcisecuritystandards.org/about_us/) by American Express, Discover, JCB, Mastercard and Visa, and every merchant that takes cards answers to it.
+- **And it keeps moving.** Since October 2024 UK payment providers must reimburse victims of authorised push payment scams, up to £85,000. In the first 18 months, [88% of the money lost was reimbursed](https://www.psr.org.uk/information-for-consumers/app-scams-reimbursement-dashboard), and an independent evaluation found that [losses sent over Faster Payments fell by around 21%](https://www.frontier-economics.com/uk/en/news-and-insights/news/news-article-i22383-app-payment-scam-policies-reducing-fraud/), because reimbursement "strengthened incentives" to invest in prevention.
+
+The moment you pass the liability for fraud to the company, its security picks up. And it shows in who finds the fraud. I know of many cases, and the public record has famous ones, where a company discovered fraud not because its own security team picked it up, but because a card company, a processor or a bank came to it and said: you have fraud going on here. Target learned of its 2013 breach when it was [contacted by the US Department of Justice](https://www.commerce.senate.gov/services/files/24d3c229-4f2f-405d-b8db-a3a67f183883), and Verizon's breach report for 2013 found that in [almost all point-of-sale breaches](https://www.pcworld.com/article/2146581/web-apps-and-pointofsale-were-leading-hacker-targets-in-2013-says-verizon.html) the intrusion was reported to the victim by third parties, with law enforcement and external fraud detection the leading causes of discovery. The parties carrying the loss had built the detection.
+
+## Regulation alone does not do it
+
+Companies at that level cannot be made to do anything they truly do not want to do. There are industries, social media is the obvious one, where companies are more than happy to pay the fines when the rule goes against the core of their business model: Meta's [€1.2 billion GDPR fine](https://therecord.media/eu-hands-meta-record-fine-over-data) in 2023 was the largest at the time, and in 2025 the European Commission [fined it €200 million](https://ec.europa.eu/commission/presscorner/detail/en/ip_25_1085) over its "consent or pay" advertising model.
+
+The places where we saw real improvement were the places where three things lined up: a rule, a liability that landed on the company, and a systemic risk to the business model that the company could see. Sometimes the companies were glad of the regulation, because "it applies to everybody" let them all do what each of them needed to do. Payments is that case. Aviation is that case. Agents can be that case, if we give the liability somewhere precise to land.
+
+## The user answers outside the policy, the vendor inside it
+
+The proposed split. The vendor publishes its own built-in policy and accepts the deployer's; for every row it accepts, it says what enforces it and answers if it breaks. Everything the policy does not cover stays with the user, as it does today. The vendors that keep more rows as boundaries can sell that as the product.
+
+So here is the core of the proposal. If we want agents to be trustworthy, we need to push some enforcement, some criteria for enforcement and, eventually, some liability onto the vendors of the models and the agents. An Agent Behaviour Policy is a good standard to do it with, because it makes the split explicit. The agent runs with a policy. The rows the vendor accepted, the vendor keeps, and answers for if they break. Everything the policy does not cover stays with the user, as it does today. That is a much better model than the one we have, where the user is liable for everything because they clicked allow, which is the shell game [the last article](the-policy-draws-the-liability-line.md) described.
+
+It would also be a competitive advantage for the vendors that get it right. A vendor that can say "these forty rows are boundaries on our platform, enforced outside the model, and we stand behind them" is selling something a vendor with a longer system prompt cannot. As [Hope or enforcement](hope-or-enforcement.md) measured, the share of a policy that rests on hope can fall from 97% to 23% with the right design; the vendors are the ones who can make the next part of that fall.
+
+What would the standard need? Not much that does not already exist in the vocabulary:
+
+1. **A versioned policy file**, with the reach, the mandate, the gap and the barriers, row by row, signed by the deployer, so both sides know which version was in force.
+2. **The vendor's acknowledgement**, per row: enforced by the platform as a boundary, kept as a setting, or accepted as an expectation the model is asked to keep.
+3. **The vendor's own policy, published in the same format**, so the two can be read together.
+4. **A breach report**, the same day, for every row broken and every near miss, which [Authority outside the model](authority-outside-the-model.md) argued should be the norm.
+5. **Liability per row**, starting with the boundaries the vendor said it enforces, which is where the vendors can most easily say yes.
+
+## Most agents already run a policy
+
+I would argue most agents already run a version of this, and we cannot see it. Claude in Chrome is a good example. Anthropic's safety page says that ["Claude is prohibited from"](https://support.claude.com/en/articles/12902428-using-claude-in-chrome-safely) engaging in stock trading, bypassing captchas and inputting sensitive data, that it "asks for permission before accessing financial sites", and its Claude Code documentation says that when it meets a login page, ["it pauses and asks you to handle it manually"](https://code.claude.com/docs/en/chrome). So the user enters the password, because Claude says, I am not going to put a password in. Cool. That is a policy, and a good one, and we built the [subscriptions service](stop-the-bleeding-then-ask-for-it-back.md) on it.
+
+But we have no control over it, no guarantee of it, and it can change at any time. It is a vendor's policy described in a help article, not a row we can point to in a dispute. Which suggests a project worth running: reverse-engineer the policies the agents already run, the way we [measured a Gmail connector's thirty tools](https://abp.sgit.ai/gmail/measured/index.html) and found that sending ran with no prompt while trashing a message stopped for approval, and publish them in the ABP format. If the vendors will not publish their policies yet, the measured ones are the next best thing, and the gap between the two is a finding.
+
+## What this does not claim
+
+- **It is a proposal.** No vendor accepts a behaviour policy as an input today in the sense described; Claude Code's permission rules and managed settings are the nearest thing, and they cover settings, not business rules.
+- **A policy does not separate code from data.** It moves the most important instructions into a channel the content cannot reach. Prompt injection remains.
+- **The aviation numbers mix sources.** The 1995 rate is the Aviation Safety Network's count over ICAO departures, via Our World in Data; the 2025 count is ASN's and the flights are IATA's. Both cover airliners with more than 14 seats, cargo included.
+- **The payments history is short and partial.** Fraud did not disappear; it moved, and the incentives are why the industry chased it. The 21% fall is one evaluation's estimate.
+- **"It does not take many users" is my judgement.** I have no number for how many incidents it takes to lose public trust in agents.
+- **Liability per row is the end state, not the start.** Acknowledgement and breach reporting can come first; liability follows the boundaries a vendor is willing to stand behind.
+
+If you build an agent platform and would accept a policy, or you deploy agents and want to write one, write to [agent@riskmandate.ai](mailto:agent@riskmandate.ai).
+
+## Where this comes from
+
+A voice memo of mine on 13 October 2026, expanding an idea from [The policy draws the liability line](the-policy-draws-the-liability-line.md) the same day, written by this site's agent in the voice of this site. The argument and the editorial responsibility are mine. Aviation: [Our World in Data](https://ourworldindata.org/grapher/fatal-airliner-accidents-per-million-flights) from the Aviation Safety Network; the Flight Safety Foundation's [2025 safety report](https://flightsafety.org/wp-content/uploads/2026/02/2025-Safety-Report-FINAL.pdf); [IATA](https://www.iata.org/en/pressroom/2026-releases/2026-03-09-01/), 9 March 2026. Payments: [15 U.S.C. 1643](https://www.law.cornell.edu/uscode/text/15/1643); the [Payment Services Regulations 2017, regulation 77](https://www.legislation.gov.uk/uksi/2017/752/regulation/77); [Visa on the 2015 liability shift](https://www.visa.co.id/dam/VCOM/global/partner-with-us/documents/visa-liability-shift.pdf); the [PCI Security Standards Council](https://www.pcisecuritystandards.org/about_us/); the PSR's [reimbursement dashboard](https://www.psr.org.uk/information-for-consumers/app-scams-reimbursement-dashboard) and [Frontier Economics' evaluation](https://www.frontier-economics.com/uk/en/news-and-insights/news/news-article-i22383-app-payment-scam-policies-reducing-fraud/); the US Senate Commerce Committee's [report on Target](https://www.commerce.senate.gov/services/files/24d3c229-4f2f-405d-b8db-a3a67f183883); PCWorld on [Verizon's 2014 breach report](https://www.pcworld.com/article/2146581/web-apps-and-pointofsale-were-leading-hacker-targets-in-2013-says-verizon.html). Fines: [The Record](https://therecord.media/eu-hands-meta-record-fine-over-data) on Meta's GDPR fine; the [European Commission](https://ec.europa.eu/commission/presscorner/detail/en/ip_25_1085), 23 April 2025. Code and data: the [NCSC](https://www.ncsc.gov.uk/blog-post/prompt-injection-is-not-sql-injection), 8 December 2025; Simon Willison, [The lethal trifecta](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/). Vendor policies: Anthropic's [Claude in Chrome safety page](https://support.claude.com/en/articles/12902428-using-claude-in-chrome-safely), [Claude Code's Chrome documentation](https://code.claude.com/docs/en/chrome) and [permissions](https://code.claude.com/docs/en/permissions).
+
+## Threads
+
+Agents & policyStartups & strategy[This article as a graph →](graphs.md#a-policy-beside-the-prompt)
+
+### Builds on
+
+- [The policy draws the liability line: an answer to Ralf Thomas on agent accountability, and why every agent in a loop should take a behaviour policy beside its prompt](the-policy-draws-the-liability-line.md) An answer to Ralf Thomas: the shell game works because nothing is written down, and a behaviour policy's explicit prohibitions move the liability line.
+- [The ultimate insider: agents, the infrastructure that cannot hold them, and risk management that cannot keep up](ultimate-insider-three-collisions.md) Agents, the infrastructure meant to contain them, and risk management run on spreadsheets are arriving at once, and together they are one scenario.
+- [The investigation GitHub owes its customers: why a global outage of a platform the world deploys through deserves an aviation-style inquiry, and how the evidence could now be gathered](the-investigation-github-owes-its-customers.md) A global GitHub Actions outage read the way aviation reads an incident: independent inquiry, near-miss reporting, second and third stories, vaults for the evidence.
+- [Hope or enforcement: one customer service agent, three designs, and who keeps each promise](hope-or-enforcement.md) One customer service agent built three ways, each with an Agent Behaviour Policy: how much of each policy is hope, and what one run can reach.
+- [Authority outside the model: an answer to Satya Nadella on models as insider risks, principle by principle, with what we run, what we ship and what we plan](authority-outside-the-model.md) Satya Nadella's seven principles for models as insider risks, answered one by one: what we run, what is design, and the five things the list leaves out.
+- [Stop the bleeding, then ask for it back: a helper, an agent and a friendly letter for the subscriptions you keep and do not use](stop-the-bleeding-then-ask-for-it-back.md) A helper and an agent ask what you used, ask nicely for a pause and a refund, stop the payments either way, and publish what each company did.
+
+[All articles](index.md) · [All graphs](graphs.md)
+
+Article No. 102 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=102)
+
+**Want the next issue by email.** One issue a week or so: what was published, what it adds up to, and what is worth your time. [Subscribe to the SGit Newsroom →](../subscribe/index.md)
+
+[← All articles](index.md)
+
+
+---
+
+*[Site index for agents](../llms.txt) · [HTML version](https://newsroom.sgit.ai/articles/a-policy-beside-the-prompt.html)*

@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-13 | published | 2,834 | first published | this release | [current](../the-policy-draws-the-liability-line.md) |
+| **v1.0.0** | 2026-10-13 | published | 2,834 | first published | [`8ad465e4d`](https://github.com/SGit-AI/SGit-AI__Website/commit/8ad465e4dbafb569808dd5b44378354cb5aed9f1) | [current](../the-policy-draws-the-liability-line.md) |
 
 [← Back to the article](../the-policy-draws-the-liability-line.md) · [All articles](../index.md)
 

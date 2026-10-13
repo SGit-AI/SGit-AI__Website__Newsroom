@@ -118,6 +118,10 @@ Agents & policy[This article as a graph →](graphs.md#the-policy-draws-the-liab
 - [Who owns the words: agents can make decisions, but they cannot hold responsibility](who-owns-the-words.md) Agents in loops make real decisions, but responsibility stays with whoever granted the reach; disclosure is a label, not a team to manage.
 - [Authority outside the model: an answer to Satya Nadella on models as insider risks, principle by principle, with what we run, what we ship and what we plan](authority-outside-the-model.md) Satya Nadella's seven principles for models as insider risks, answered one by one: what we run, what is design, and the five things the list leaves out.
 
+### Continued by
+
+- [A policy beside the prompt: a proposal that every agent takes a behaviour policy as an input, with enforcement and liability attached, and why aviation and payments say the vendors should want it](a-policy-beside-the-prompt.md) A proposal: every agent takes a behaviour policy beside its prompt, which the vendor accepts and answers for, as aviation and payments learned to.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 101 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=101)
