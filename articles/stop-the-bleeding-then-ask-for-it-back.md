@@ -140,6 +140,8 @@ Startups & strategyAgents & policy[This article as a graph →](graphs.md#stop-t
 
 Article No. 98 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=98)
 
+**Posting this article on LinkedIn?** The cover is [stop-the-bleeding-then-ask-for-it-back.jpg](banners/stop-the-bleeding-then-ask-for-it-back.jpg) (1920×1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page.
+
 **Want the next issue by email.** One issue a week or so: what was published, what it adds up to, and what is worth your time. [Subscribe to the SGit Newsroom →](../subscribe/index.md)
 
 [← All articles](index.md)

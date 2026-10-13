@@ -18,6 +18,10 @@ Live site: https://newsroom.sgit.ai (GitHub Pages, deployed from `dev`).
   publishes them: it renders them with sgit.ai's generator in a temporary clone of a read-only
   checkout (nothing is pushed to sgit.ai), validates, and imports the result with the sync. Edit
   these sources, never the generated pages. The generator itself moves here in a later step.
+- `admin/content/newsletter/`: **newsletter issues written here** (since v0.12.18), `NNN-YYYY-MM-DD.md`,
+  in the format of sgit.ai's newsroom README, published by the same `publish.py` to
+  `articles/newsletter/YYYY/MM/DD/NNN-<slug>.html` with a 1920x1080 cover. Issue numbers continue from
+  sgit.ai's 001 to 005; `publish.py` refuses a number sgit.ai already has.
 - `account/`, `subscribe/`, `meter/`: the reader's account, subscribe, and the SG Meter
   library (imported with the newsroom).
 - `newsroom/`: how the newsroom runs: roles, behaviour policies, board, log (imported).
