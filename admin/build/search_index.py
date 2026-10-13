@@ -262,14 +262,18 @@ def build():
         else:
             add_doc(d, blocks)
 
-    # the wire's stories, from the snapshot this site keeps (the live edition is in the vault)
-    snap = ROOT / "wire/snapshot.json"
-    if snap.exists():
+    # the wires' stories, from the snapshots this site keeps (the live editions are in the vaults): wire/snapshot.json and wire/<slug>/snapshot.json
+    for snap in sorted([ROOT / "wire/snapshot.json"] + list((ROOT / "wire").glob("*/snapshot.json"))):
+        if not snap.exists():
+            continue
         s = json.loads(snap.read_text(encoding="utf-8"))
+        page = snap.parent.relative_to(ROOT).as_posix() + "/index.html"
+        wname = (s.get("wire") or {}).get("title") or "The Industry Wire"
         for b in s.get("beats", []):
             for st in b.get("stories", []):
-                add_doc({"u": f"wire/index.html#{st['id']}", "t": st["headline"], "k": "story", "d": st.get("date", ""),
-                         "x": f"{b.get('label', '')} · {st.get('publisher', '')} · the Industry Wire, edition of {s.get('edition', '')}", "tg": [b.get("id", "")]}, [])
+                add_doc({"u": f"{page}#{st['id']}", "t": st["headline"], "k": "story", "d": st.get("date", ""),
+                         "x": f"{b.get('label', '')} · {st.get('publisher', '')} · {wname}, edition of {s.get('edition', '')}", "tg": [b.get("id", "")]},
+                        [(st["id"], f"{c.get('at', '')}: {c['what']}") for c in st.get("changes", []) if c.get("what")])   # a correction is searchable text at the story
 
     # this site's own notes, which are markdown only
     for md in sorted((ROOT / "admin/notes").glob("*.md")):

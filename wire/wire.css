@@ -53,6 +53,29 @@ main.doc .beat .n { font-weight: 400; color: var(--dim); letter-spacing: 0; text
 .empty { padding: 1.2rem; border: 1px dashed var(--line2); border-radius: 10px; color: var(--dim); text-align: center; }
 .flag { display: inline-block; margin-right: .45rem; padding: 0 .45em; border-radius: 999px; font: 700 .68rem/1.6 var(--sans); letter-spacing: .06em; text-transform: uppercase; vertical-align: .15em; }
 .flag.new { background: #f0a020; color: #1c1d21; } .flag.upd { background: var(--info-bg, #e8eefc); color: var(--info-ink, #1d4ed8); }
+/* corrections: the desk's note in the edition's header, and each corrected story's own changes, dated, as the vault records them; the info tokens, the colour of Updated */
+.edition .corrections { margin: .2rem 0 .8rem; padding: .45rem .8rem; border-left: 3px solid var(--info-ink, #1d4ed8); border-radius: 0 8px 8px 0; background: var(--info-bg, #eef2fc); font-size: .88rem; line-height: 1.5; }
+.story .changes { list-style: none; margin: .3rem 0 .6rem; padding: .4rem .8rem; border-left: 3px solid var(--info-ink, #1d4ed8); border-radius: 0 8px 8px 0; background: var(--info-bg, #eef2fc); font-size: .84rem; line-height: 1.5; }
+.story .changes li { margin: .15rem 0; }
+.story .changes .at { font: .74rem/1.5 var(--mono); color: var(--info-ink, #1d4ed8); margin-right: .3rem; }
+/* the wires: the strip naming each wire, drawn by wire.py */
+.wires { margin: -.4rem 0 1.2rem; font-size: .86rem; color: var(--dim); }
+.wires a { margin-right: .6rem; } .wires a[aria-current] { font-weight: 700; color: var(--fg); text-decoration: none; }
+/* what a vault adds beyond the edition: a map (entities, the stories that name them) or a stack (services, the items that touched them); the warn tokens for the deadlines */
+.edition .deadlines { margin: .2rem 0 .8rem; padding: .45rem .8rem; border-left: 3px solid var(--warm); border-radius: 0 8px 8px 0; background: var(--warn-bg, #fff7e6); font-size: .88rem; line-height: 1.5; }
+.edition .deadlines ul { margin: .2rem 0 0 1.1rem; padding: 0; } .edition .deadlines li { margin: .15rem 0; }
+.edition .deadlines .dd { font: .78rem/1.5 var(--mono); margin-right: .35rem; } .edition .deadlines .soon { color: var(--danger-ink, #8a0a0a); font-weight: 700; }
+.edition .deadlines .then { color: var(--dim); }
+.extra { margin: 0 0 1.2rem; padding: .6rem 1rem; border: 1px solid var(--line); border-radius: 10px; background: var(--panel); font-size: .9rem; }
+.extra > summary { cursor: pointer; font-weight: 600; }
+.extra > p { margin: .5rem 0; color: var(--dim); font-size: .86rem; }
+.extra .ent { margin: .4rem 0; padding: .35rem .7rem; border: 1px solid var(--line); border-radius: 8px; background: var(--panel2); }
+.extra .ent > summary { cursor: pointer; } .extra .ent > summary .n { color: var(--dim); font-weight: 400; margin-left: .4rem; font-size: .82rem; }
+.extra dl { display: grid; grid-template-columns: max-content 1fr; gap: .1rem .8rem; margin: .4rem 0; font-size: .84rem; }
+.extra dt { color: var(--dim); } .extra dd { margin: 0; overflow-wrap: anywhere; }
+.extra ul.named { margin: .2rem 0 .3rem 1.1rem; padding: 0; font-size: .86rem; } .extra ul.named li { margin: .15rem 0; }
+.extra .aliases { font-size: .8rem; color: var(--dim); }
+@media (max-width: 640px) { .extra dl { grid-template-columns: 1fr; gap: 0 } .extra dt { margin-top: .3rem; } }
 .story.new { border-color: #f0c070; }
 .withheld li .held-acts .chip, .withheld li .kept { font-size: .74rem; }
 .withheld li .held-acts .chip { cursor: pointer; }

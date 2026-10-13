@@ -2,8 +2,8 @@
  "what": "A derived index of the engineering cards on newsroom.sgit.ai; the files under admin/engineering/issues/ are the source.",
  "counts": {
   "open": 10,
-  "blocked": 3,
-  "done": 25
+  "blocked": 2,
+  "done": 28
  },
  "issues": [
   {
@@ -336,12 +336,12 @@
    "title": "The wire's vault publishes data/releases.json on every publish",
    "kind": "task",
    "priority": "high",
-   "status": "blocked",
+   "status": "done",
    "created": "2026-10-13T09:40:00Z",
-   "release": "",
+   "release": "v0.12.14",
    "estimated_effort": "small",
-   "blocked_on": "the wire's agent, which holds the vault's write key; the owner relays the message at the end of the brief",
-   "path": "admin/engineering/issues/blocked/026-wire-vault-publishes-releases.md",
+   "blocked_on": "",
+   "path": "admin/engineering/issues/done/026-wire-vault-publishes-releases.md",
    "url": "https://newsroom.sgit.ai/engineering/issues/026.html"
   },
   {
@@ -499,9 +499,46 @@
    "blocked_on": "",
    "path": "admin/engineering/issues/done/038-colour-is-a-token.md",
    "url": "https://newsroom.sgit.ai/engineering/issues/038.html"
+  },
+  {
+   "id": "039",
+   "title": "Corrections propagate on the wire: each corrected story carries its changes, the edition its corrections note",
+   "kind": "story",
+   "priority": "high",
+   "status": "done",
+   "created": "2026-10-13T11:20:00Z",
+   "release": "v0.12.14",
+   "estimated_effort": "small",
+   "blocked_on": "",
+   "path": "admin/engineering/issues/done/039-corrections-at-the-story.md",
+   "url": "https://newsroom.sgit.ai/engineering/issues/039.html"
+  },
+  {
+   "id": "040",
+   "title": "More than one wire: the OWASP Wire and the AWS Wire beside the Industry Wire, each from its own vault",
+   "kind": "story",
+   "priority": "high",
+   "status": "done",
+   "created": "2026-10-13T14:10:00Z",
+   "release": "v0.12.14",
+   "estimated_effort": "medium",
+   "blocked_on": "",
+   "path": "admin/engineering/issues/done/040-more-than-one-wire.md",
+   "url": "https://newsroom.sgit.ai/engineering/issues/040.html"
   }
  ],
  "releases": [
+  {
+   "version": "v0.12.14",
+   "date": "2026-10-13",
+   "kind": "patch",
+   "issues": [
+    "026",
+    "039",
+    "040"
+   ],
+   "url": "https://newsroom.sgit.ai/engineering/releases/v0.12.14.html"
+  },
   {
    "version": "v0.12.13",
    "date": "2026-10-13",

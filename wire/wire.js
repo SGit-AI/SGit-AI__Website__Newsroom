@@ -1,9 +1,12 @@
 /**
- * wire.js: the Industry Wire, read from its vault and drawn on this site.
+ * wire.js: the wires, each read from its own vault and drawn on this site.
  *
  * The data is not on this site. It is in an encrypted sgit vault that the wire's agents write to, and this page
- * opens it in the browser with a published read key (admin/build/wire-vault.json, written into the page as
- * #wire-config), through wire/vault-reader.js. A commit to the vault is on this page within ref_ttl_s, with no
+ * opens it in the browser with a published read key (admin/build/wire-vault*.json, one file per wire, written into
+ * the page as #wire-config with the wire's slug and the path up to the site root), through wire/vault-reader.js.
+ * The Industry Wire is /wire/; the other wires are /wire/<slug>/ and share this code. Besides the edition, a vault
+ * may carry a map (entities with aliases, facts, leaders and standards: the OWASP projects graph) or a stack (the
+ * services a reader runs, with aliases and deadlines: the AWS wire); the page draws them when they are there. A commit to the vault is on this page within ref_ttl_s, with no
  * release of the site. What the page reads, and what it relies on, is written on wire/how.html.
  *
  * Everything from the vault is drawn as text, with createElement and textContent. A link is made only from a
@@ -12,8 +15,9 @@
  * and this page treats what it reads as data from them, not as code.
  *
  *   data-wire="edition"   the edition, read as an inbox: what is new since the last visit, for the reader and not,
- *                         the vault's release note, filters (inbox, new, read later, follow up, done, everything),
- *                         a decision at each story; the editor's note, threads, the lead, the stories by beat, a lens
+ *                         the vault's release notes, filters (inbox, new, read later, follow up, done, everything),
+ *                         a decision at each story; the editor's note, the desk's corrections, threads, the lead, the
+ *                         stories by beat with each story's own changes, a lens
  *   data-wire="sources"   the source registry with its tiers
  *   data-wire="how"       the wire's own documents, from docs/*.md
  *
@@ -91,8 +95,11 @@ const FILTERS = [['inbox', 'Inbox'], ['new', 'New'], ['read-later', 'Read later'
 const FILTER_KEY = 'sgit.wire.filter'
 
 async function edition(r, mount, foot, cfg) {
+    const scope = cfg.slug || '', up = cfg.up || '../'          // the wire's scope for seen, visit and lens; the path to the site root
     const b = await r.readJson('data/bundle.json')
     const brief = b.brief || {}, byId = new Map((b.stories || []).map(s => [s.id, s]))
+    // what the vault says the wire is (data/wire.json, when the vault has one), and whose personal persona it carries
+    const wireMeta = b.wire || {}, personal = wireMeta.personal_persona || (b.stack && b.stack.persona) || ''
     const personas = (Array.isArray(b.personas) ? b.personas : (b.personas && b.personas.personas) || [])
     const pById = new Map(personas.map(p => [p.id, p]))
     const beatLabel = new Map((b.beats || []).map(x => [x.id, x.label]))
@@ -102,21 +109,25 @@ async function edition(r, mount, foot, cfg) {
     try { releaseFile = await r.readJson('data/releases.json') } catch (e) { releaseFile = null }
     // the lenses: the public personas, plus any named reader the site's config records as having agreed to be one
     const named = (cfg.named_readers || []).map(x => typeof x === 'string' ? x : x.persona).filter(id => pById.has(id))
-    const LENSES = [...PUBLIC_LENSES, ...named.filter(id => !PUBLIC_LENSES.includes(id))]
+    // the public lenses: the Industry Wire's fixed six; on a wire that describes itself, every persona but the personal one
+    const publicLenses = b.wire ? personas.map(p => p.id).filter(id => id !== personal) : PUBLIC_LENSES
+    const LENSES = [...publicLenses, ...named.filter(id => !publicLenses.includes(id))]
+    if (b.stack) { try { deliveries = await r.readJson('data/deliveries.json') } catch (e) { deliveries = [] } }   // the stack section needs the join
 
     // the lens: the #lens= fragment, else the one this reader chose last time, else the active persona when it maps, else all
     const m = /lens=([a-z-]+)/.exec(location.hash)
     if (m && pById.has(m[1]) && LENSES.includes(m[1])) lens = m[1]
-    else if (W.lens() && pById.has(W.lens()) && LENSES.includes(W.lens())) lens = W.lens()
+    else if (W.lens(scope) && pById.has(W.lens(scope)) && LENSES.includes(W.lens(scope))) lens = W.lens(scope)
     else { try { const s = JSON.parse(localStorage.getItem('sgit.meter.v1') || 'null'); const p = s && s.personas.find(x => x.id === s.active); if (p && PRESET_TO_WIRE[p.preset]) lens = PRESET_TO_WIRE[p.preset] } catch (e) { /* all */ } }
 
     // this visit, and every story of the edition recorded as seen; New is what was first seen in this visit
-    const visit = W.visit()
-    W.markSeen([...byId.keys()])
-    const isNew = id => W.isNew(id, visit)
+    const visit = W.visit(scope)
+    W.markSeen([...byId.keys()], scope)
+    const isNew = id => W.isNew(id, visit, scope)
     const decisionOf = id => N.forStory(location.pathname, id)[0] || null
+    const filterKey = scope ? `${FILTER_KEY}:${scope}` : FILTER_KEY
     let filter = 'inbox'
-    try { const f = sessionStorage.getItem(FILTER_KEY); if (FILTERS.some(([k]) => k === f)) filter = f } catch (e) { /* default */ }
+    try { const f = sessionStorage.getItem(filterKey); if (FILTERS.some(([k]) => k === f)) filter = f } catch (e) { /* default */ }
     let lastKept = null
 
     const pname = id => { const p = pById.get(id); return p ? `${p.name}, ${p.label.charAt(0).toLowerCase()}${p.label.slice(1)}` : id }
@@ -131,7 +142,11 @@ async function edition(r, mount, foot, cfg) {
         return !!d && d.kind === filter
     }
     const releases = W.releasesSince(releaseFile, visit.prev)
-    const updatedIds = new Set(releases.flatMap(x => x.updated || []))
+    // Updated: named by a release shown in the bar, or by the edition itself (brief.updated_in_edition); the story's own
+    // changes[] (each { at, what }) is the correction as the desk recorded it, and is drawn under the story for as long as
+    // the vault keeps it. Corrections must propagate: a corrected story says so where it is read, not only in a note.
+    const updatedIds = new Set([...releases.flatMap(x => x.updated || []), ...(brief.updated_in_edition || [])])
+    const changesOf = s => (Array.isArray(s.changes) ? s.changes : []).filter(c => c && (c.what || c.at))
 
     const keep = (kind, s, text = '') => {
         const rec = N.keep({ kind, story: s.id, title: s.headline, n: null, quote: '', text })   // redraws through the notes event
@@ -152,12 +167,13 @@ async function edition(r, mount, foot, cfg) {
         const primary = s.primary || {}
         const el = h('article', { class: `story${s.primary_fetched === false ? ' unfetched' : ''}${isLead ? ' lead' : ''}${isNew(s.id) ? ' new' : ''}`, id: s.id },
             h('h3', {}, isNew(s.id) ? h('span', { class: 'flag new' }, 'New') : null, updatedIds.has(s.id) ? h('span', { class: 'flag upd' }, 'Updated') : null, isHttp(primary.url) ? linkText(s.headline, primary.url) : s.headline),
-            h('p', { class: 'meta' }, [when(s.date), primary.publisher, s.primary_kind, s.confidence ? h('span', { class: `conf-${s.confidence}` }, `confidence ${s.confidence}`) : null, s.primary_fetched === false ? 'primary not fetched by the research agent' : null]
+            h('p', { class: 'meta' }, [when(s.date), primary.publisher, s.primary_kind, s.confidence ? h('span', { class: `conf-${s.confidence}` }, `confidence ${s.confidence}`) : null, s.primary_fetched === false ? 'primary not fetched by the research agent' : null, s.edition && brief.edition && s.edition !== brief.edition ? `from the edition of ${s.edition}` : null]
                 .filter(Boolean).flatMap((x, i) => i ? [' · ', x] : [x])),
             isLead && brief.lead && brief.lead.why_it_leads ? h('p', { class: 'leads' }, h('b', {}, 'Why it leads: '), brief.lead.why_it_leads) : null,
             s.summary ? h('p', {}, s.summary) : null,
             s.quote ? h('blockquote', {}, `“${s.quote}”`, h('cite', {}, isHttp(s.quote_source_url) ? linkText(hostOf(s.quote_source_url), s.quote_source_url) : 'source not given')) : null,
             s.why_it_matters ? h('p', { class: 'why' }, h('b', {}, 'Why it matters: '), s.why_it_matters) : null,
+            changesOf(s).length ? h('ul', { class: 'changes', 'aria-label': 'Changed by the desk' }, changesOf(s).map(c => h('li', {}, h('span', { class: 'at' }, when(c.at)), ' ', c.what || ''))) : null,
             (s.coverage || []).length ? h('details', {}, h('summary', {}, `Who else covered it (${s.coverage.length})${primary.title ? ', and the primary source' : ''}`),
                 h('ul', { class: 'cov' },
                     primary.title ? h('li', {}, h('b', {}, 'Primary: '), isHttp(primary.url) ? linkText(primary.title, primary.url) : primary.title, primary.publisher ? `, ${primary.publisher}` : '', primary.date ? `, ${primary.date}` : '') : null,
@@ -171,6 +187,9 @@ async function edition(r, mount, foot, cfg) {
         return el
     }
 
+    // the deadlines a stack carries (data/stack.json), soonest first, with the days left; drawn in the edition's header
+    const deadlines = (b.stack && Array.isArray(b.stack.deadlines) ? b.stack.deadlines : []).filter(d => d && d.date).slice().sort((x, y) => String(x.date).localeCompare(String(y.date)))
+    const daysTo = d => Math.round((Date.parse(d) - Date.now()) / 864e5)
     const lensBar = h('div', { class: 'lens', role: 'group', 'aria-label': 'Read as' }, h('span', { class: 'k' }, 'Read as'),
         h('button', { type: 'button', class: 'btn sm', 'aria-pressed': String(!lens), onclick: () => setLens('') }, 'Everyone'),
         ...LENSES.filter(id => pById.has(id)).map(id => h('button', { type: 'button', class: 'btn sm', 'aria-pressed': String(lens === id), onclick: () => setLens(id) }, pname(id))))
@@ -181,11 +200,15 @@ async function edition(r, mount, foot, cfg) {
         h('p', { class: 'k' }, `Edition of ${brief.edition || '?'}`),
         h('p', { class: 'meta' }, [brief.kind, brief.window ? `covers ${brief.window.from} to ${brief.window.to}` : null, brief.status, brief.counts ? `${brief.counts.stories} stories from ${brief.counts.publishers} publishers` : null].filter(Boolean).join(' · ')),
         brief.editor_note ? h('p', { class: 'note' }, brief.editor_note) : null,
+        brief.corrections ? h('p', { class: 'corrections' }, h('b', {}, 'Corrections and updates: '), brief.corrections) : null,
+        deadlines.length ? h('div', { class: 'deadlines', id: 'wire-deadlines' }, h('b', {}, 'Deadlines for your stack'), h('ul', {}, deadlines.map(d => { const n = daysTo(d.date); return h('li', {},
+            h('span', { class: `dd${Number.isFinite(n) && n <= 30 ? ' soon' : ''}` }, when(d.date)), isHttp(d.source) ? linkText(d.what || d.source, d.source) : (d.what || ''),
+            Number.isFinite(n) ? h('span', { class: 'then' }, n < 0 ? ` (${-n} days ago)` : n === 0 ? ' (today)' : ` (in ${n} days)`) : null, d.then ? h('span', { class: 'then' }, ` · then: ${d.then}`) : null) }))) : null,
         (brief.threads || []).length ? h('div', { class: 'threads' }, brief.threads.map(t => h('div', { class: 'thread' }, h('b', {}, t.title), t.note || '', h('div', { class: 'ids' }, (t.stories || []).filter(id => byId.has(id)).map(id => h('a', { href: `#${id}`, title: byId.get(id).headline }, id)))))) : null)
 
     async function setLens(id) {
         lens = id
-        W.setLens(id)
+        W.setLens(id, scope)
         for (const btn of lensBar.querySelectorAll('button')) btn.setAttribute('aria-pressed', String((btn.textContent === 'Everyone' && !id) || (id && btn.textContent === pname(id))))
         if (id && !deliveries) { try { deliveries = await r.readJson('data/deliveries.json') } catch (e) { deliveries = [] } }
         try { history.replaceState(null, '', id ? `#lens=${id}` : location.pathname) } catch (e) { /* fine */ }
@@ -212,8 +235,8 @@ async function edition(r, mount, foot, cfg) {
                     x.summary ? h('p', { class: 'sum' }, x.summary) : null,
                     (x.added || []).length ? h('p', { class: 'ids' }, 'Added: ', ...(x.added || []).flatMap((id, i) => i ? [', ', link(id)] : [link(id)])) : null,
                     (x.updated || []).length ? h('p', { class: 'ids' }, 'Updated: ', ...(x.updated || []).flatMap((id, i) => i ? [', ', link(id)] : [link(id)])) : null)))
-                : h('p', { class: 'releases none', id: 'wire-releases' }, 'What changed in the vault: ', r.message ? `the latest commit says “${shorten(r.message, 160)}”. ` : '', 'The vault does not publish release notes yet; ', h('a', { href: '../admin/notes/2026-10-13__the-wire-as-an-inbox.md#the-release-file', 'data-site': '' }, 'the brief'), ' asks for them.'),
-            h('div', { class: 'filters', role: 'group', 'aria-label': 'Show' }, ...FILTERS.map(([k, label]) => h('button', { type: 'button', class: 'btn sm', 'data-filter': k, 'aria-pressed': String(filter === k), onclick: () => { filter = k; try { sessionStorage.setItem(FILTER_KEY, k) } catch (e) { /* fine */ } draw() } }, `${label} (${count(k)})`))),
+                : h('p', { class: 'releases none', id: 'wire-releases' }, 'What changed in the vault: ', r.message ? `the latest commit says “${shorten(r.message, 160)}”. ` : '', 'The vault does not publish release notes yet; ', h('a', { href: `${up}admin/notes/2026-10-13__the-wire-as-an-inbox.md#the-release-file`, 'data-site': '' }, 'the brief'), ' asks for them.'),
+            h('div', { class: 'filters', role: 'group', 'aria-label': 'Show' }, ...FILTERS.map(([k, label]) => h('button', { type: 'button', class: 'btn sm', 'data-filter': k, 'aria-pressed': String(filter === k), onclick: () => { filter = k; try { sessionStorage.setItem(filterKey, k) } catch (e) { /* fine */ } draw() } }, `${label} (${count(k)})`))),
             lastKept && N.list().some(n => n.id === lastKept.id)
                 ? h('p', { class: 'toast', id: 'wire-kept' }, `${N.kindLabel(lastKept.kind)}: ${shorten(lastKept.headline, 80)}. `, h('button', { type: 'button', class: 'undo', onclick: () => { N.remove(lastKept.id); lastKept = null } }, 'undo'))
                 : null,
@@ -251,7 +274,7 @@ async function edition(r, mount, foot, cfg) {
                 held.length ? h('details', { class: 'withheld', open: held.some(([s]) => isNew(s.id)) && filter === 'new' }, h('summary', {}, `Not for ${first(lens)} (${held.length}${held.some(([s]) => isNew(s.id)) ? `, ${held.filter(([s]) => isNew(s.id)).length} new` : ''}), and why`),
                     h('ul', {}, held.map(([s, d]) => {
                         const kept = decisionOf(s.id)
-                        return h('li', { id: s.id }, isNew(s.id) ? h('span', { class: 'flag new' }, 'New') : null, h('b', {}, s.headline), ' — ', d && d.withheld_reason ? d.withheld_reason : 'no delivery recorded for this reader', ' ',
+                        return h('li', { id: s.id }, isNew(s.id) ? h('span', { class: 'flag new' }, 'New') : null, updatedIds.has(s.id) ? h('span', { class: 'flag upd' }, 'Updated') : null, h('b', {}, s.headline), ' — ', d && d.withheld_reason ? d.withheld_reason : 'no delivery recorded for this reader', ' ',
                             kept ? h('span', { class: 'kept' }, `You: ${N.kindLabel(kept.kind)}`, kept.device ? '' : ' ', kept.device ? null : h('button', { type: 'button', class: 'undo', onclick: () => N.remove(kept.id) }, 'undo'))
                                  : h('span', { class: 'held-acts' }, h('button', { type: 'button', class: 'chip', 'data-kind': 'more-like-this', title: 'the join missed me: this should have reached me', onclick: () => keep('more-like-this', s, `should have reached me as ${first(lens)}`) }, 'Should reach me'), ' ', h('button', { type: 'button', class: 'chip', 'data-kind': 'done', onclick: () => keep('done', s) }, 'Done')))
                     }))) : null)
@@ -274,8 +297,49 @@ async function edition(r, mount, foot, cfg) {
     window.addEventListener(N.EVENT, () => draw())
     window.addEventListener('sgit-vault-updated', () => drawBar())
     setInterval(() => { if (document.visibilityState !== 'hidden') drawBar() }, 4000)       // the count of what is only in this browser
-    mount.replaceChildren(header, lensBar, lensNote, bar, body)
+    const extras = [b.map ? mapSection(b.map, b.stories || []) : null, b.stack ? stackSection(b.stack, byId, deliveries) : null].filter(Boolean)
+    mount.replaceChildren(header, lensBar, lensNote, bar, ...extras, body)
     if (lens) await setLens(lens); else draw()
+}
+
+// ------------------------------------------------------------ what a vault adds beyond the edition
+/** A map (data/map.json: entities with aliases, facts, leaders, standards), each with the stories whose entities name it. */
+function mapSection(map, stories) {
+    const ents = Array.isArray(map.entities) ? map.entities.filter(e => e && (e.name || e.id)) : []
+    if (!ents.length) return null
+    const terms = s => { const o = new Set(); for (const v of Object.values(s.entities || {})) if (Array.isArray(v)) for (const t of v) o.add(String(t).toLowerCase()); return o }
+    const sets = stories.map(s => [s, terms(s)])
+    const naming = e => { const al = [e.name, ...(e.aliases || [])].filter(Boolean).map(x => String(x).toLowerCase()); return sets.filter(([, t]) => al.some(a => t.has(a))).map(([s]) => s) }
+    const rows = ents.map(e => ({ e, ss: naming(e) })).sort((a, b) => b.ss.length - a.ss.length || String(a.e.name || a.e.id).localeCompare(String(b.e.name || b.e.id)))
+    const namedBy = rows.filter(x => x.ss.length).length
+    const storyList = ss => h('ul', { class: 'named' }, ss.map(s => h('li', {}, h('a', { href: `#${s.id}` }, s.headline), h('span', { class: 'dim' }, ` · ${when(s.date)}`))))
+    return h('details', { class: 'extra map', id: 'wire-map' },
+        h('summary', {}, `${map.title || 'The map'}: ${ents.length} ${ents.length === 1 ? 'entity' : 'entities'}, ${namedBy} named by a story in this edition`),
+        map.intro ? h('p', {}, map.intro) : null,
+        ...rows.map(({ e, ss }) => h('details', { class: 'ent' },
+            h('summary', {}, e.name || e.id, h('span', { class: 'n' }, [e.kind, (e.facts || {}).Level, ss.length ? `${ss.length} ${ss.length === 1 ? 'story' : 'stories'}` : 'no story yet'].filter(Boolean).join(' · '))),
+            Object.values(e.facts || {}).some(Boolean) ? h('dl', {}, ...Object.entries(e.facts).filter(([, v]) => v).flatMap(([k, v]) => [h('dt', {}, k), h('dd', {}, isHttp(v) ? linkText(String(v), v) : String(v))])) : null,
+            (e.leaders || []).length ? h('p', { class: 'aliases' }, `Leaders: ${e.leaders.join(', ')}`) : null,
+            (e.standards || []).length ? h('p', { class: 'aliases' }, `Standards: ${e.standards.join(', ')}`) : null,
+            e.notes ? h('p', { class: 'aliases' }, e.notes) : null,
+            ss.length ? storyList(ss) : null)))
+}
+
+/** A stack (data/stack.json: the services a reader runs, with aliases and deadlines), each with the items the join says touched it. */
+function stackSection(stack, byId, deliveries) {
+    const services = Array.isArray(stack.services) ? stack.services.filter(s => s && (s.name || s.id)) : []
+    if (!services.length) return null
+    const touched = svc => (deliveries || []).filter(d => d.persona === stack.persona && d.status === 'reached' && (d.connections || []).some(c => c.concern === svc.id)).map(d => byId.get(d.story)).filter(Boolean)
+    const extra = Array.isArray(stack.extra_concerns) ? stack.extra_concerns : [], deadlines = Array.isArray(stack.deadlines) ? stack.deadlines : []
+    return h('details', { class: 'extra stack', id: 'wire-stack' },
+        h('summary', {}, `Your stack: ${services.length} ${services.length === 1 ? 'service' : 'services'}${extra.length ? `, ${extra.length} more ${extra.length === 1 ? 'concern' : 'concerns'}` : ''}${deadlines.length ? `, ${deadlines.length} ${deadlines.length === 1 ? 'deadline' : 'deadlines'}` : ''}, as the vault declares it for ${stack.persona || 'its reader'}`),
+        stack.what ? h('p', {}, stack.what) : null,
+        ...services.map(svc => { const ss = touched(svc); return h('details', { class: 'ent' },
+            h('summary', {}, svc.name || svc.id, h('span', { class: 'n' }, [svc.runtime, (svc.watch || []).length ? `watching ${svc.watch.join(', ')}` : null, ss.length ? `${ss.length} ${ss.length === 1 ? 'item' : 'items'} touched it` : 'nothing touched it in this edition'].filter(Boolean).join(' · '))),
+            (svc.aliases || []).length ? h('p', { class: 'aliases' }, `Also known as: ${svc.aliases.join(', ')}`) : null,
+            ss.length ? h('ul', { class: 'named' }, ss.map(s => h('li', {}, h('a', { href: `#${s.id}` }, s.headline), h('span', { class: 'dim' }, ` · ${when(s.date)}`)))) : null) }),
+        ...extra.map(c => h('p', { class: 'aliases' }, `${c.label || c.id}: ${(c.terms || []).join(', ')}`)),
+        stack.later ? h('p', {}, h('b', {}, 'Later: '), stack.later) : null)
 }
 
 // ------------------------------------------------------------ the sources

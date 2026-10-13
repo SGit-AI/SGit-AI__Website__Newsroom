@@ -228,23 +228,24 @@ def shipped(f):
          '<a href="../for/index.html">How a link is made</a>.',
          'The names are whatever the link says: there is no way yet to prove who sent a list, and nothing counts who opened one. '
          'The page that makes a list is tested with a script, not yet with a synthetic recipient on a phone.'),
-        ('<b>The Industry Wire</b> (beta)', 'A daily wire of industry news across five beats, each story with its primary source, who else covered '
-         'it, one exact quote and why it matters, and a lens per persona. The data is in an encrypted vault the wire&rsquo;s agents '
+        ('<b>The wires</b> (beta): the Industry Wire, the OWASP Wire, the AWS Wire', 'Three wires, one code and one contract: each story with its primary source, who else covered '
+         'it, one exact quote and why it matters, and a lens per persona. Each wire&rsquo;s data is in an encrypted vault its agents '
          'write to; the pages open it in the browser with a published read key, so a commit to the vault is on the page within '
-         'two minutes and without a release. It has one named reader, the site&rsquo;s owner, by their agreement while it is a beta: '
-         'the persona of their name and the personal brief under its lens are theirs. It reads as an inbox: what is new since the last visit, for the reader '
+         'two minutes and without a release. Each has one named reader, the site&rsquo;s owner, by their agreement while it is a beta: '
+         'the persona of their name and the personal brief under its lens are theirs. Each reads as an inbox of its own: what is new since the last visit, for the reader '
          'and not, the vault&rsquo;s release notes, and a decision per story that takes it out of the inbox, kept locally and carried to the reader&rsquo;s '
-         'vault on Update. <a href="../wire/index.html">The edition</a>, <a href="../wire/how.html">how it is read</a>, '
-         '<a href="../admin/notes/2026-10-13__the-wire-as-an-inbox.md">the inbox</a>.',
-         'A beta. The first edition is a week&rsquo;s catch-up, written by agents and reviewed by none; every story says so, and 22 of its '
-         'primary sources were not fetched. The daily run that the vault&rsquo;s runbook describes is not yet scheduled; placement on '
-         'the front page and the weekly newsletter are designed, not built. The vault publishes no release notes yet (the brief asks for them), '
-         'and the desk does not yet read the reader&rsquo;s decisions.'),
+         'vault on Update. The desk writes a release note on every publish, and a corrected story carries its changes, dated, where it is read. '
+         'The <a href="../wire/index.html">Industry Wire</a> is daily, across five beats. The <a href="../wire/owasp/index.html">OWASP Wire</a> is weekly and carries a graph of the projects, their leaders and standards, drawn with the stories that name each. '
+         'The <a href="../wire/aws/index.html">AWS Wire</a> is filtered by the stack its reader declares in the vault, drawn with its deadlines and each service&rsquo;s items. '
+         '<a href="../wire/how.html">How a wire is read</a>, <a href="../admin/notes/2026-10-13__the-wire-as-an-inbox.md">the inbox</a>, <a href="../admin/notes/2026-10-13__more-than-one-wire.md">more than one wire</a>.',
+         'A beta. The Industry Wire has two editions (11 and 13 October 2026, 59 stories), the OWASP and AWS wires one each (13 October, 19 and 88 stories), all written by agents and reviewed by none; every story says so, and a story whose primary source was not fetched says that too. '
+         'The runs the vaults&rsquo; runbooks describe are not yet scheduled; placement on the front page and the weekly newsletter are designed, not built. '
+         'The desks do not yet read the reader&rsquo;s decisions: the lane&rsquo;s read key has not reached them. The AWS stack is a file in the vault, not yet derived from an account.'),
         ('<b>Search</b>', 'Every article, the wire&rsquo;s stories, the notes and the engineering cards, searched in the reader&rsquo;s browser from an '
          'index built at release: titles, tags and article graphs first, then the text; exact phrases, including wording an article had in an '
          'earlier version; an article by its number; what the reader has read or marked done. Searching sends nothing anywhere. <i>Ask</i> gives the passages found to Chrome&rsquo;s built-in model, on the reader&rsquo;s machine, or to openrouter.ai with the reader&rsquo;s own key, and the answer cites them. '
          '<a href="../search/index.html">Search</a>, <a href="../admin/notes/2026-10-13__search-in-the-browser.md">how it works</a>.',
-         'The wire is searched from its snapshot, taken at release; no synonyms or spelling correction; Ask is one question at a time, with no conversation and no tools, and the key is not yet kept in the vault.'),
+         'The wires are searched from their snapshots, taken at release; no synonyms or spelling correction; Ask is one question at a time, with no conversation and no tools, and the key is not yet kept in the vault.'),
         ('<b>The feedback loop</b> (beta)', 'Notes kept as you read: one tap at any page or at a wire story (done, read later, not for me, more like this, '
          'liked, wrong, fix this, idea), with words and the phrase selected, kept in this browser as it happens; what this browser knows about the page and '
          'a Reading tab with the done pages folded away; carried to the reader&rsquo;s other '

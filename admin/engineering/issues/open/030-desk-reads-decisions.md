@@ -19,3 +19,6 @@ When the wire's agent runs its weekly pass
 Then it reads my lane with the read key it was given, takes the wire decisions (path /wire/, story id, kind)
 And proposes edits to the personas from them, as a diff for approval
 ```
+
+## Seen on the first release, 13 October 2026
+The desk's first release note (`2026-10-13.1`) and the personal brief both say: "Your lane was not read, so your five wire decisions are not reflected yet." The runbook's step 1 now reads the lane when the agent has been given its read key; it has not been given one. What is missing is the handover, not the code: the lane's read key reaches the wire's agent through the owner, as the brief's message to the agent says.

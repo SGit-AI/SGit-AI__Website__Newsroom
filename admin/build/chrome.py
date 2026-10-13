@@ -54,6 +54,8 @@ NAV = [
         ("Today's edition", "wire/index.html"),
         ("The sources", "wire/sources.html"),
         ("How the wire works", "wire/how.html"),
+        ("The OWASP Wire", "wire/owasp/index.html"),
+        ("The AWS Wire", "wire/aws/index.html"),
         ("Themes: dark mode and four more", "articles/dark-mode-and-four-more.html"),
     ], ("wire/",)),
     ("Account", "account/index.html", [
@@ -125,6 +127,8 @@ FOOTER = [
     ("The newsroom", [
         ("&#8594; The front page", "index.html"),
         ("The Industry Wire", "wire/index.html"),
+        ("The OWASP Wire", "wire/owasp/index.html"),
+        ("The AWS Wire", "wire/aws/index.html"),
         ("Every article", "articles/index.html#all"),
         ("The newsletter", "articles/newsletter/index.html"),
         ("Collections", "articles/collections/index.html"),

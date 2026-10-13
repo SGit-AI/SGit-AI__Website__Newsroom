@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="../assets/site-nav.css">
   <script src="../assets/themes/themes.js"></script>
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.12.13</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.12.14</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -38,6 +38,8 @@
       <a class="sl" href="../wire/index.html">Today's edition</a>
       <a class="sl" href="../wire/sources.html">The sources</a>
       <a class="sl" href="../wire/how.html">How the wire works</a>
+      <a class="sl" href="../wire/owasp/index.html">The OWASP Wire</a>
+      <a class="sl" href="../wire/aws/index.html">The AWS Wire</a>
       <a class="sl" href="../articles/dark-mode-and-four-more.html">Themes: dark mode and four more</a>
       </div>
     </div>
@@ -133,6 +135,15 @@
 <div class="tablewrap"><table class="vers">
   <thead><tr><th>Version</th><th>Date</th><th>What shipped</th></tr></thead>
   <tbody>
+    <tr id="v0.12.14">
+      <td class="vnum">v0.12.14</td>
+      <td>13 Oct 2026</td>
+      <td><b>@newsroom.wire: the wire&rsquo;s vault publishes its release notes, corrections propagate to the story, and two more wires, the OWASP Wire with its projects graph and the AWS Wire filtered by a declared stack, each from its own vault.</b> Issues 026, 039 and 040, in <a href="../engineering/releases/v0.12.14.html">the release</a>.
+        <p><b>The release file, from the desk</b> (<a href="../engineering/issues/026.html">026</a>, closed). The Industry Wire&rsquo;s second edition, of 13 October, came with <code>data/releases.json</code> as the brief of v0.12.6 asked: one entry per publish, newest first, the commit message starting with the release id, and the step written into the vault&rsquo;s runbook. Nineteen new stories since the first edition, thirteen corrected after their primary sources were fetched. <code>test_wire.mjs</code> checks the notes against the live vault, each added or updated id linked to its story.</p>
+        <p><b>Corrections propagate</b> (<a href="../engineering/issues/039.html">039</a>). A corrected story carries each change under its text, dated, as the vault records it in the story&rsquo;s <code>changes</code>; the edition&rsquo;s header carries the desk&rsquo;s note of what was corrected; a story from an earlier edition says which; <em>Updated</em> comes from the release shown or from the edition itself. The snapshot carries each story&rsquo;s edition and changes and the desk&rsquo;s latest release note.</p>
+        <p><b>Two wires beside the Industry Wire</b> (<a href="../engineering/issues/040.html">040</a>). <a href="../wire/owasp/index.html">The OWASP Wire</a> (vault eitf274v, weekly, 19 stories in its first edition) and <a href="../wire/aws/index.html">the AWS Wire</a> (vault v202bla5, 88 items filtered by the stack its reader runs), each read in the browser with its own published read key, recorded in <code>admin/build/wire-vault.&lt;slug&gt;.json</code> with the named reader&rsquo;s agreement of 13 October. One code and one builder serve every wire; the lenses come from the vault&rsquo;s own personas when it describes itself; each wire keeps its own inbox, visit and lens, and the stories seen are stored under the wire&rsquo;s slug, so an id shared by two vaults is not confused. A <code>map</code> is drawn as entities with the stories that name them; a <code>stack</code> as the deadlines at the top of the edition with the days left, and each service with the items that touched it. Each wire has its own snapshot, and the search indexes them all. <code>test_wire.mjs</code> runs for every wire recorded.</p>
+        <p><b>Found</b>: the desk could not read the reader&rsquo;s lane, so the decisions sent are not reflected yet; the lane&rsquo;s read key has not reached the wire&rsquo;s agent (<a href="../engineering/issues/030.html">030</a>). Built on the branch of the morning and merged onto v0.12.13, so the colours the wire adds are the themes&rsquo; tokens.</p></td>
+    </tr>
     <tr id="v0.12.13">
       <td class="vnum">v0.12.13</td>
       <td>13 Oct 2026</td>
@@ -828,12 +839,14 @@
     <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="netline"><a href="https://sgit.ai" style="display:inline;padding:0"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://pt.newsroom.sgit.ai" style="display:inline;padding:0">&#8593; pt.newsroom.sgit.ai</a> &middot; <a href="https://graphs.sgit.ai" style="display:inline;padding:0">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai" style="display:inline;padding:0">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai" style="display:inline;padding:0">&#8593; nhi.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai" style="display:inline;padding:0">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.12.13</a> &middot; <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.12.14</a> &middot; <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>The newsroom</h4>
     <a href="../index.html">&#8594; The front page</a>
     <a href="../wire/index.html">The Industry Wire</a>
+    <a href="../wire/owasp/index.html">The OWASP Wire</a>
+    <a href="../wire/aws/index.html">The AWS Wire</a>
     <a href="../articles/index.html#all">Every article</a>
     <a href="../articles/newsletter/index.html">The newsletter</a>
     <a href="../articles/collections/index.html">Collections</a>
