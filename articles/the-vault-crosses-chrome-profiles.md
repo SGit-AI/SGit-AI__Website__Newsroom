@@ -2,7 +2,7 @@
 
 > In the newsroom workflow we just found something I did not plan. I keep separate Google accounts in separate Chrome profiles, and moving anything between them has always been awkward. The newsroom's reader vault fixed that without a line of new code. It got there by a path that was not a straight line: first we tracked what a reader does, in local storage; then the activity was worth keeping, so we persisted it, driven by what the reader valued; then we opened sgit vaults in the browser, which we already knew how to do; then the marks arrived, read later, not for me, more like this, and I started to have a stake in my own newsroom, with the usage and the payment travelling with it. Across devices was the feature I asked for. Across Chrome profiles is the one I found, and I suspect it is the more common case, because people switch between browser profiles far more often than between computers. What it really is, is memory and state between sessions, the same thing sgit already does for agents in different Claude accounts, now done through the interface of a website. This is how it works, what each profile needs to get in, and why the best features are sometimes the ones you discover by using what you built.
 
-*Source: <https://newsroom.sgit.ai/articles/the-vault-crosses-chrome-profiles.html> · sgit.ai v0.7.86 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/the-vault-crosses-chrome-profiles.html> · sgit.ai v0.7.87 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 

@@ -62,6 +62,11 @@ What changes on the way in, and nothing else:
   13. Articles written here (admin/content/articles/, published by admin/build/publish.py) name
      this site's release in their byline, "newsroom v0.12.9", linked to this site's release history,
      because this site published them; sgit.ai's generator only rendered them.
+  14. sgit.ai's "moved" banner is cut (from sgit.ai v0.7.87, phase one of retiring its copy). On a moved
+     page, everything from <!--moved:start--> to <!--moved:end--> and the newline after it; in a markdown
+     twin, the line that opens "> **The SGit Newsroom has moved to newsroom.sgit.ai.**" and the blank line
+     after it. More than one block on a page stops the import. Remove this when the import stops reading
+     sgit.ai.
 
 Scripts, styles, components and /.well-known/sgit-subscribe.json are copied byte for byte.
 The brief requires it twice: a published component path never changes, and the subscribe
@@ -410,7 +415,24 @@ def find_dependencies(src, pages):
     return deps, unresolved
 
 
+MOVED_HTML = re.compile(r"<!--moved:start-->.*?<!--moved:end-->\n?", re.S)
+MOVED_MD   = re.compile(r"^> \*\*The SGit Newsroom has moved to newsroom\.sgit\.ai\.\*\*[^\n]*\n\n?", re.M)
+
+
+def unmoved(text, dest_file, kind):
+    """Item 14: sgit.ai's banner pointing here, which has no place here."""
+    pattern = MOVED_HTML if kind == "html" else MOVED_MD if kind == "md" else None
+    if pattern is None:
+        return text
+    n = len(pattern.findall(text))
+    if n > 1:
+        sys.exit(f"sync: {dest_file} carries sgit.ai's moved banner {n} times, not once; "
+                 f"stopping rather than guessing which to cut")
+    return pattern.sub("", text, count=1)
+
+
 def transform(text, src_file, dest_file, kind):
+    text = unmoved(text, dest_file, kind)
     text = ABS_SRC.sub(rewrite_abs, text)
     if kind == "html":
         # Attributes of real tags only. A code sample on a page is escaped (&lt;script src="/x"&gt;)

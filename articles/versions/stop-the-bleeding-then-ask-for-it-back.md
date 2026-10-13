@@ -2,7 +2,7 @@
 
 > Every published version of the article "Stop the bleeding, then ask for it back", with the date, the words and what changed.
 
-*Source: <https://newsroom.sgit.ai/articles/versions/stop-the-bleeding-then-ask-for-it-back.html> · sgit.ai v0.7.86 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/versions/stop-the-bleeding-then-ask-for-it-back.html> · sgit.ai v0.7.87 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 
@@ -16,8 +16,8 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-10-13 | minor | 4,198 | +1,305 / −543 words; 3 changed, 16 added, 7 removed paragraphs | [`1ef5e6651`](https://github.com/SGit-AI/SGit-AI__Website/commit/1ef5e66513d0febe1daa65c8d17f85469ddbcc0e) | [what changed](stop-the-bleeding-then-ask-for-it-back/v1.1.0.md) · [current](../stop-the-bleeding-then-ask-for-it-back.md) |
-| **v1.0.0** | 2026-10-13 | published | 3,436 | first published | [`1ad2f724e`](https://github.com/SGit-AI/SGit-AI__Website/commit/1ad2f724e728b7506a0d192aa8d18a7cd374aa84) |  |
+| **v1.1.0** | 2026-10-13 | minor | 4,198 | +1,305 / −543 words; 3 changed, 16 added, 7 removed paragraphs | [`c40ffa924`](https://github.com/SGit-AI/SGit-AI__Website/commit/c40ffa924e7cb994112937d3d21b7d0b06ef6c2c) | [what changed](stop-the-bleeding-then-ask-for-it-back/v1.1.0.md) · [current](../stop-the-bleeding-then-ask-for-it-back.md) |
+| **v1.0.0** | 2026-10-13 | published | 3,436 | first published | [`6a7eac04c`](https://github.com/SGit-AI/SGit-AI__Website/commit/6a7eac04cc43f332fd95063147886c636b749024) |  |
 
 [← Back to the article](../stop-the-bleeding-then-ask-for-it-back.md) · [All articles](../index.md)
 

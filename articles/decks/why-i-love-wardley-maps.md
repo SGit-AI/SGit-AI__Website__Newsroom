@@ -2,7 +2,7 @@
 
 > Twelve slides from the article of the same name: a map as a graph with two kinds of context, the evolution axis as a choice, every dot a claim, altitude, build or buy, whether a market exists with sgit and RiskMandate as the two answers, flow and hooks, a common language, maps that nest, and an invitation. Prints to PDF in the browser, one slide per page.
 
-*Source: <https://newsroom.sgit.ai/articles/decks/why-i-love-wardley-maps.html> · sgit.ai v0.7.86 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/decks/why-i-love-wardley-maps.html> · sgit.ai v0.7.87 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 

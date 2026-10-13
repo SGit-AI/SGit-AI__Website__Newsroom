@@ -2,7 +2,7 @@
 
 > A Request for Comments, before anything is built. Today an sgit vault is protected by one symmetric read key and a write key that only the server checks, so anyone who holds the read key and can write to the store, the host or a mirror for example, can author history that clients accept. sgit's own threat model says so, and a test performs the attack. This RFC proposes two designs. Native PKI vault mode uses two key pairs, one for reading and one for writing, so a reader cannot write, a host cannot forge, and a write-only depositor becomes possible. Sealed files add an inner envelope to any vault, so chosen files can be read only by named people, whose private keys can live in a key file, an ssh key, a hardware key, or a remote service that logs and approves each decryption. We set out both, what they cost, what they cannot do, the services that could hold the private keys today, and fourteen questions where an outside view would change the design.
 
-*Source: <https://newsroom.sgit.ai/articles/rfc-0001-public-key-cryptography-for-sgit.html> · sgit.ai v0.7.86 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/rfc-0001-public-key-cryptography-for-sgit.html> · sgit.ai v0.7.87 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 

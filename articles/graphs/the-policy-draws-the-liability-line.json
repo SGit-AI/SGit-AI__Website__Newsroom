@@ -1,0 +1,207 @@
+{
+  "slug": "the-policy-draws-the-liability-line",
+  "teaser": "An answer to Ralf Thomas: the shell game works because nothing is written down, and a behaviour policy's explicit prohibitions move the liability line.",
+  "topics": [
+    "agents-and-policy"
+  ],
+  "core_idea": "Agent vendors can deflect accountability because nothing written stands between a customer's allow and the failure; an Agent Behaviour Policy's explicit prohibitions, still mostly hope, become the evidence that moves liability between deployer and vendor when broken, so every agent in a loop should take a policy beside its prompt and its vendor should honour and report against it.",
+  "nodes": [
+    {
+      "id": "post",
+      "label": "Ralf Thomas's post",
+      "kind": "example",
+      "summary": "If an employee wrecks a client's systems the company pays; why should AI agents be different?"
+    },
+    {
+      "id": "shell",
+      "label": "The shell game",
+      "kind": "concept",
+      "summary": "Blame the agent, blame the customer, hide behind the contract, disclose late."
+    },
+    {
+      "id": "record",
+      "label": "The 2026 record",
+      "kind": "example",
+      "summary": "Deleted files, an escape to Hugging Face, real systems reached in evaluations, an outage called user error."
+    },
+    {
+      "id": "corrections",
+      "label": "Stated more carefully",
+      "kind": "claim",
+      "summary": "The cases were early rulings, the Air Canada phrase is the tribunal's, the Copilot line is gone; the pattern survives."
+    },
+    {
+      "id": "nothing",
+      "label": "Nothing written down",
+      "kind": "claim",
+      "summary": "Between allow and the failure there is reach and a prompt, and no statement of what the agent must not do."
+    },
+    {
+      "id": "abp",
+      "label": "Agent Behaviour Policy",
+      "kind": "artefact",
+      "summary": "The mandate written down beside the measured reach, with explicit prohibitions."
+    },
+    {
+      "id": "prohibitions",
+      "label": "Explicit prohibitions",
+      "kind": "method",
+      "summary": "Do not send, do not start scheduled tasks, do not attack other sites, speak on your own behalf, make no offers."
+    },
+    {
+      "id": "hope",
+      "label": "Still mostly hope",
+      "kind": "concept",
+      "summary": "A written rule kept by the model and enforced by nobody: an expectation, but on the record."
+    },
+    {
+      "id": "shift",
+      "label": "Liability shifts to the platform",
+      "kind": "claim",
+      "summary": "A prohibition the agent breaks turns you allowed it into the product ignored what it was told."
+    },
+    {
+      "id": "world",
+      "label": "Towards the world, the deployer",
+      "kind": "claim",
+      "summary": "Customers and regulators deal with the deployer; the moment of authorisation is the grant."
+    },
+    {
+      "id": "pld",
+      "label": "Software as a product",
+      "kind": "example",
+      "summary": "The EU product liability rules apply from 9 December 2026; the Bundestag passed Germany's version on 8 October."
+    },
+    {
+      "id": "beside",
+      "label": "A policy beside every prompt",
+      "kind": "method",
+      "summary": "Every agent in a loop, anything with the lethal trifecta, takes a behaviour policy as a separate input."
+    },
+    {
+      "id": "vendor",
+      "label": "The vendor's half",
+      "kind": "claim",
+      "summary": "Accept the policy, honour it, enforce what the platform can see, report every breach and near miss."
+    },
+    {
+      "id": "q",
+      "label": "Will vendors accept it?",
+      "kind": "question",
+      "summary": "Whether platforms will take business rules as an input and answer for them."
+    }
+  ],
+  "edges": [
+    {
+      "from": "post",
+      "to": "shell",
+      "rel": "produces"
+    },
+    {
+      "from": "record",
+      "to": "shell",
+      "rel": "example-of"
+    },
+    {
+      "from": "corrections",
+      "to": "record",
+      "rel": "extends"
+    },
+    {
+      "from": "nothing",
+      "to": "shell",
+      "rel": "answers"
+    },
+    {
+      "from": "abp",
+      "to": "nothing",
+      "rel": "answers"
+    },
+    {
+      "from": "prohibitions",
+      "to": "abp",
+      "rel": "extends"
+    },
+    {
+      "from": "hope",
+      "to": "prohibitions",
+      "rel": "contrasts"
+    },
+    {
+      "from": "prohibitions",
+      "to": "shift",
+      "rel": "leads-to"
+    },
+    {
+      "from": "world",
+      "to": "shift",
+      "rel": "compared-with"
+    },
+    {
+      "from": "pld",
+      "to": "shift",
+      "rel": "extends"
+    },
+    {
+      "from": "shift",
+      "to": "beside",
+      "rel": "leads-to"
+    },
+    {
+      "from": "beside",
+      "to": "vendor",
+      "rel": "depends-on"
+    },
+    {
+      "from": "vendor",
+      "to": "q",
+      "rel": "leads-to"
+    }
+  ],
+  "links": {
+    "articles": [
+      "riskmandate-ten-questions",
+      "where-is-the-why",
+      "the-agent-team-as-it-runs",
+      "where-the-platform-draws-the-line",
+      "the-behaviour-policy-is-the-business-logic",
+      "hope-or-enforcement",
+      "a-second-reader-the-agent-cannot-skip",
+      "who-owns-the-words",
+      "authority-outside-the-model"
+    ],
+    "pages": [],
+    "sites": [
+      "https://lnkd.in/p/eEK3TEmc",
+      "https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals",
+      "https://www.bundestag.de/dokumente/textarchiv/2026/kw41-de-produkthaftungsrecht-1222456",
+      "https://code.claude.com/docs/en/permissions",
+      "https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/",
+      "https://riskmandate.ai/agent-behaviour-policy.html"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "The shell game works because nothing was written down.",
+      "why": "The diagnosis the post's four moves share."
+    },
+    {
+      "text": "It is about whether the product did what it was explicitly told.",
+      "why": "Where the written policy moves the dispute."
+    }
+  ],
+  "figures": [
+    {
+      "file": "pl-shell.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/pl-shell.webp",
+      "caption": "The four moves of the accountability shell game, from Ralf Thomas's post, and what a written behaviour policy changes in each. Without one, every move has an easy answer; with one, the question becomes whether the product honoured what it was explicitly told.",
+      "kind": "comparison"
+    },
+    {
+      "file": "pl-lines.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/pl-lines.webp",
+      "caption": "Two directions of liability. Towards the world, the deployer answers for what its agent did, as the tribunal held in Moffatt. Between the deployer and the vendor, the written policy decides whose failure it was: inside the reach and unforbidden, the deployer's; explicitly forbidden and done anyway, the product's.",
+      "kind": "diagram"
+    }
+  ]
+}

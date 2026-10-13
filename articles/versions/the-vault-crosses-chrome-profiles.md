@@ -2,7 +2,7 @@
 
 > Every published version of the article "The vault crosses Chrome profiles", with the date, the words and what changed.
 
-*Source: <https://newsroom.sgit.ai/articles/versions/the-vault-crosses-chrome-profiles.html> · sgit.ai v0.7.86 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/versions/the-vault-crosses-chrome-profiles.html> · sgit.ai v0.7.87 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 
@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-13 | published | 2,421 | first published | [`1ef5e6651`](https://github.com/SGit-AI/SGit-AI__Website/commit/1ef5e66513d0febe1daa65c8d17f85469ddbcc0e) | [current](../the-vault-crosses-chrome-profiles.md) |
+| **v1.0.0** | 2026-10-13 | published | 2,421 | first published | [`c40ffa924`](https://github.com/SGit-AI/SGit-AI__Website/commit/c40ffa924e7cb994112937d3d21b7d0b06ef6c2c) | [current](../the-vault-crosses-chrome-profiles.md) |
 
 [← Back to the article](../the-vault-crosses-chrome-profiles.md) · [All articles](../index.md)
 

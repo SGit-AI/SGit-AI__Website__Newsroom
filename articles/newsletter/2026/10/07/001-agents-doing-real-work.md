@@ -2,7 +2,7 @@
 
 > What it takes to let agents do real work for a business, from four sides: a team of agents running a small business, written up from the inside; the behaviour policy that says what each agent may do, and the business logic it turns out to hold; the desktops and permission prompts those agents need; and an open AI governance framework turned into a graph, a database and a walk down to EU law within a day of reading it.
 
-*Source: <https://newsroom.sgit.ai/articles/newsletter/2026/10/07/001-agents-doing-real-work.html> · sgit.ai v0.7.86 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/newsletter/2026/10/07/001-agents-doing-real-work.html> · sgit.ai v0.7.87 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 

@@ -2,7 +2,7 @@
 
 > An agent session asked, in the middle of a task, to add a repository. The prompt showed three fields, owner, repository and access, and two buttons, Decline and Allow once. It did not say which session was asking, why, what the session would be able to do afterwards that it could not do before, or what would happen on a no. The session was one of several, and one of them was working on a vault holding confidential data. This article reads that prompt through the Agent Behaviour Policy, where a permission prompt is a request to change the grant mid-session and a barrier whose strength is the information the person is given; sets it against what courts, regulators and research have said about decisions taken without the facts, from Montgomery's consent forms and the red hand rule to GDPR's informed consent, token human oversight, and the moral crumple zone; lists the other prompts that asked without a why and the fixes that worked, from Apple's purpose strings and Microsoft's number matching to the CNIL's rule that refusing must be as easy as accepting; puts Anthropic's own figures on how often people approve agent prompts beside them; and proposes a why card, a prompt that carries its reason, its change in reach, its cost, the path if declined, and a record, and that turns into a risk acceptance when the risk rises.
 
-*Source: <https://newsroom.sgit.ai/articles/where-is-the-why.html> · sgit.ai v0.7.86 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/where-is-the-why.html> · sgit.ai v0.7.87 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 
@@ -176,6 +176,7 @@ Agents & policy[This article as a graph →](graphs.md#where-is-the-why)
 
 ### Continued by
 
+- [The policy draws the liability line: an answer to Ralf Thomas on agent accountability, and why every agent in a loop should take a behaviour policy beside its prompt](the-policy-draws-the-liability-line.md) An answer to Ralf Thomas: the shell game works because nothing is written down, and a behaviour policy's explicit prohibitions move the liability line.
 - [Ten hard questions for RiskMandate, answered: the mandate, the reach, the gap, and what we are deliberately not](riskmandate-ten-questions.md) Ten hard questions from a conference, answered in a two-hour interview: what RiskMandate does, what it deliberately is not, and how mature each part is.
 - [Agency is not a yes: a scale for human and agent decisions, from rubber stamp to the reviewer who fixes the source](agency-is-not-a-yes.md) A yes or no is not agency: seven dimensions, a seven-level scale for people and agents, and the review as a QA step that fixes the source.
 - [A locked-down desktop for an agent, by the minute, is still hard to rent](an-agent-desktop-by-the-minute.md) Nine properties a safe agent desktop needs, nine products against them, the macOS day-long lease, and the startup credits that would pay for testing it.
