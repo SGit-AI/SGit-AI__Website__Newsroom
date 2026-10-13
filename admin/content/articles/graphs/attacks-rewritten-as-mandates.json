@@ -1,0 +1,180 @@
+{
+ "slug": "attacks-rewritten-as-mandates",
+ "teaser": "28 supply-chain attacks read as reach beyond mandate: what a hardened registry stops, what only a written mandate can, and why agents change it.",
+ "topics": [
+  "agents-and-policy",
+  "vaults-and-method"
+ ],
+ "core_idea": "Every incident in a public ledger of 28 supply-chain attacks is a credential, tag or build step that could do more than it was meant to, so consumer-side controls a registry sells would likely have held in 26 and publisher-side mandates in 16; as agents become the maintainers that hold tokens and add dependencies, the pipeline needs three records, trusted inputs, a written mandate and provable outputs with memory, and small open source projects need a path onto the trusted list.",
+ "nodes": [
+  {
+   "id": "ledger",
+   "label": "28 incidents, 23 in 2026",
+   "kind": "example",
+   "summary": "Chainguard's public supply-chain ledger, May 2024 to October 2026."
+  },
+  {
+   "id": "reach",
+   "label": "Reach beyond mandate",
+   "kind": "concept",
+   "summary": "A token, tag or CI step could do more than its job, and the attacker used the difference."
+  },
+  {
+   "id": "tensorlake",
+   "label": "tensorlake, in four columns",
+   "kind": "example",
+   "summary": "A token that could publish anything, a mandate to release one SDK, the barrier of CI-bound publishing."
+  },
+  {
+   "id": "consumer",
+   "label": "Consumer side: 26 of 28",
+   "kind": "claim",
+   "summary": "Built from source, cooldown, no install scripts, allowlisted registry; works without trusting the publisher."
+  },
+  {
+   "id": "publisher",
+   "label": "Publisher side: 16 of 28",
+   "kind": "claim",
+   "summary": "Trusted publishing, scoped tokens, two-person release: written answers to what a credential was for."
+  },
+  {
+   "id": "hallucinated",
+   "label": "A model suggested the package",
+   "kind": "example",
+   "summary": "huggingface-cli: a hallucinated name, registered and downloaded 30,000+ times."
+  },
+  {
+   "id": "fleet",
+   "label": "An agent fleet, fenced",
+   "kind": "example",
+   "summary": "4,746 pull requests in eight weeks; 840 auto-merged; sensitive paths capped; grades bound to a commit."
+  },
+  {
+   "id": "scattered",
+   "label": "The mandate is scattered",
+   "kind": "claim",
+   "summary": "Excellent rules, kept in prompts, bot configuration and a blog post rather than one owned document."
+  },
+  {
+   "id": "records",
+   "label": "Three records",
+   "kind": "method",
+   "summary": "Trusted inputs, a written mandate, provable outputs and memory."
+  },
+  {
+   "id": "abp",
+   "label": "Agent Behaviour Policy",
+   "kind": "artefact",
+   "summary": "Reach, mandate, gap and barriers, per agent and deployment."
+  },
+  {
+   "id": "vault",
+   "label": "A vault per unit of work",
+   "kind": "artefact",
+   "summary": "sgit: encrypted, versioned, a branch per agent, memory that outlives the session."
+  },
+  {
+   "id": "oss",
+   "label": "Small projects on the trusted list?",
+   "kind": "question",
+   "summary": "Free images, Libraries on request, a pull-only skills registry; no published path for small active projects."
+  }
+ ],
+ "edges": [
+  {
+   "from": "ledger",
+   "to": "reach",
+   "rel": "leads-to"
+  },
+  {
+   "from": "tensorlake",
+   "to": "reach",
+   "rel": "example-of"
+  },
+  {
+   "from": "reach",
+   "to": "consumer",
+   "rel": "leads-to"
+  },
+  {
+   "from": "reach",
+   "to": "publisher",
+   "rel": "leads-to"
+  },
+  {
+   "from": "consumer",
+   "to": "publisher",
+   "rel": "contrasts"
+  },
+  {
+   "from": "hallucinated",
+   "to": "publisher",
+   "rel": "extends"
+  },
+  {
+   "from": "fleet",
+   "to": "scattered",
+   "rel": "leads-to"
+  },
+  {
+   "from": "scattered",
+   "to": "abp",
+   "rel": "leads-to"
+  },
+  {
+   "from": "records",
+   "to": "abp",
+   "rel": "depends-on"
+  },
+  {
+   "from": "records",
+   "to": "vault",
+   "rel": "depends-on"
+  },
+  {
+   "from": "consumer",
+   "to": "records",
+   "rel": "leads-to"
+  },
+  {
+   "from": "oss",
+   "to": "consumer",
+   "rel": "depends-on"
+  },
+  {
+   "from": "hallucinated",
+   "to": "fleet",
+   "rel": "leads-to"
+  }
+ ],
+ "links": {
+  "articles": [
+   "footprint-and-blast-radius",
+   "hope-or-enforcement",
+   "a-policy-beside-the-prompt",
+   "the-policy-draws-the-liability-line",
+   "what-sgit-is",
+   "two-agents-one-vault"
+  ],
+  "pages": [],
+  "sites": [
+   "https://www.chainguard.dev/solutions/ai-threat-protection",
+   "https://www.chainguard.dev/unchained/this-shit-is-hard-how-ai-keeps-our-code-on-standard",
+   "https://edu.chainguard.dev/chainguard/agent-skills/public-registry.md",
+   "https://riskmandate.ai",
+   "https://www.chainguard.dev/pricing",
+   "https://edu.chainguard.dev/chainguard/libraries/python/overview.md",
+   "https://www.chainguard.dev/unchained/introducing-chainguard-emeritoss"
+  ]
+ },
+ "quotes": [
+  {
+   "text": "A security scanner's breach became an AI gateway's breach, five days later.",
+   "why": "How reach compounds across the supply chain."
+  },
+  {
+   "text": "it is a defence against everyone else's missing mandate",
+   "why": "Why the consumer side, good as it is, is not the whole answer."
+  }
+ ]
+}
