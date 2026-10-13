@@ -1,11 +1,11 @@
 ---
-id: 039
+id: 051
 title: The Newsroom Design Lab, reviewed against v0.12.13
 kind: task
 priority: normal
 created: 2026-10-13T13:20:00Z
 source: the owner, in chat, with the lab's handover zip and its vault keys: "review the work and vaults created by another claude agent (based on a version of the site that was a bit older than the current one), and see what we can use and explore from it"
-release: v0.12.14
+release: v0.12.31
 estimated_effort: small
 ---
 # The Newsroom Design Lab, reviewed against v0.12.13
