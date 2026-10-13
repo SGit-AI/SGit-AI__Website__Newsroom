@@ -110,6 +110,10 @@ Agents & policy[This article as a graph →](graphs.md#who-owns-the-words)
 - [How the voice works: why these articles sound like me, with a section in which Claude explains it from its side](how-the-voice-works.md) Why these articles sound like their author: a corpus, the voice memos, seven wording rules and a reader who corrects, with Claude explaining it from its side.
 - [Agency is not a yes: a scale for human and agent decisions, from rubber stamp to the reviewer who fixes the source](agency-is-not-a-yes.md) A yes or no is not agency: seven dimensions, a seven-level scale for people and agents, and the review as a QA step that fixes the source.
 
+### Continued by
+
+- [Stop the bleeding, then ask for it back: a helper, an agent and a friendly letter for the subscriptions you keep and do not use](stop-the-bleeding-then-ask-for-it-back.md) A helper and an agent ask what you used, ask nicely for a pause and a refund, stop the payments either way, and publish what each company did.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 97 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=97)

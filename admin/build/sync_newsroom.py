@@ -57,6 +57,9 @@ What changes on the way in, and nothing else:
      reading list starting from it. The numbers are assigned once and never change (admin/build/ids.py,
      articles/ids.json); the import calls it before it writes a page. The line is added to the article's page
      and to its markdown twin, and the import stops if the place it goes is not there exactly once.
+  13. Articles written here (admin/content/articles/, published by admin/build/publish.py) name
+     this site's release in their byline, "newsroom v0.12.9", linked to this site's release history,
+     because this site published them; sgit.ai's generator only rendered them.
 
 Scripts, styles, components and /.well-known/sgit-subscribe.json are copied byte for byte.
 The brief requires it twice: a published component path never changes, and the subscribe
@@ -126,6 +129,7 @@ def apply_text_overrides(text, dest_file, kind):
     return text
 
 
+AUTHORED = set()      # slugs of the articles this site wrote itself (item 13), from --authored
 NUMBERS = {}          # slug -> article number, filled by main() from admin/build/ids.py
 NUMBER_HTML = '<p class="small dim"><a href="index.html">All articles</a> &middot; <a href="graphs.html">All graphs</a></p>'
 NUMBER_MD   = "[All articles](index.md) \u00b7 [All graphs](graphs.md)"
@@ -430,6 +434,12 @@ def transform(text, src_file, dest_file, kind):
         # A byline's "site v0.7.36" is the sgit.ai release the article was published in, and links
         # to sgit.ai's release history. On sgit.ai "site" meant the site you were reading; here it
         # means somebody else's, so the label says whose.
+        m_own = re.fullmatch(r"articles/([^/]+)\.html", dest_file)
+        if m_own and m_own.group(1) in AUTHORED:
+            text = re.sub(r'<a href="https://sgit\.ai/admin/versions\.html" title="The site release'
+                          r' it was published in">site (v\d+\.\d+\.\d+)</a>',
+                          r'<a href="../admin/versions.html" title="The newsroom release it was published in">newsroom \1</a>',
+                          text)
         text = re.sub(r'(<a href="https://sgit\.ai/admin/versions\.html" title=")The site release'
                       r'( it was published in">)site (v\d+\.\d+\.\d+</a>)',
                       r'\1The sgit.ai release\2sgit.ai \3', text)
@@ -460,6 +470,10 @@ def transform(text, src_file, dest_file, kind):
         text = apply_text_overrides(text, dest_file, "html")
     elif kind == "md":
         text = MD_LINK.sub(lambda m: m.group(1) + rewrite_url(m.group(2), src_file, dest_file) + m.group(3), text)
+        m_own = re.fullmatch(r"articles/([^/]+)\.md", dest_file)
+        if m_own and m_own.group(1) in AUTHORED:
+            text = re.sub(r'\[site (v\d+\.\d+\.\d+)\]\(https://sgit\.ai/admin/versions\.md\)',
+                          rf'[newsroom \1](https://{HOST}/admin/versions.html)', text)
         text = re.sub(r'\[site (v\d+\.\d+\.\d+)\]\((https://sgit\.ai/admin/versions\.md)\)',
                       r'[sgit.ai \1](\2)', text)
         # The same ambiguity in the line every twin opens with: "site v0.7.40" is the sgit.ai release
@@ -504,7 +518,10 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     ap.add_argument("--from", dest="src", required=True, help="a checkout of SGit-AI/SGit-AI__Website")
     ap.add_argument("--check", action="store_true", help="report what would change, write nothing")
+    ap.add_argument("--authored", default="", help="comma-separated slugs of articles written here (publish.py)")
+    ap.add_argument("--source-meta", help="a JSON file that replaces the record's source (publish.py)")
     args = ap.parse_args()
+    AUTHORED.update(x for x in args.authored.split(",") if x)
     src = Path(args.src).resolve()
     if not (src / "articles/index.html").exists() or not (src / "admin/build/build_pages.py").exists():
         sys.exit(f"sync: {src} is not a checkout of the sgit.ai website")
@@ -571,7 +588,7 @@ def main():
     for d in stale:
         (ROOT / d).unlink(missing_ok=True)
 
-    meta = source_meta(src)
+    meta = json.loads(Path(args.source_meta).read_text()) if args.source_meta else source_meta(src)
     record = {
         "what": "The SGit Newsroom, imported from sgit.ai's built pages at the same paths. "
                 "Written by admin/build/sync_newsroom.py; do not edit the imported files by hand.",

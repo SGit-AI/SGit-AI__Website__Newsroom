@@ -55,6 +55,235 @@
   ],
   "articles": [
     {
+      "slug": "stop-the-bleeding-then-ask-for-it-back",
+      "title": "Stop the bleeding, then ask for it back: a helper, an agent and a friendly letter for the subscriptions you keep and do not use",
+      "date": "2026-10-13",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/stop-the-bleeding-then-ask-for-it-back.html",
+      "markdown": "https://newsroom.sgit.ai/articles/stop-the-bleeding-then-ask-for-it-back.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/stop-the-bleeding-then-ask-for-it-back.webp",
+      "teaser": "A helper and an agent ask what you used, ask nicely for a pause and a refund, stop the payments either way, and publish what each company did.",
+      "topics": [
+        "startups-and-strategy",
+        "agents-and-policy"
+      ],
+      "tags": [
+        "subscriptions",
+        "refunds",
+        "consumer-rights",
+        "freelancers",
+        "agents",
+        "agent-behaviour-policy",
+        "right-of-access",
+        "open-register",
+        "creative-commons",
+        "business-model",
+        "article"
+      ],
+      "links_out": [
+        "replicating-the-agentic-inbox",
+        "who-owns-the-words",
+        "a-second-reader-the-agent-cannot-skip",
+        "a-personal-agent-that-keeps-your-secrets"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "sr-flow.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/sr-flow.webp",
+          "caption": "One subscription, worked by a helper and an agent for the person who pays for it. Two questions run in parallel, ours and theirs; the evidence meets; a friendly letter asks for a pause and a refund; the payments stop either way; and the answer goes into an open register. The right of access is the dashed box: a next step, not the first.",
+          "kind": "playbook"
+        },
+        {
+          "file": "sr-policy.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/sr-policy.webp",
+          "caption": "The helper's agent as a behaviour policy: what it could reach once signed in, whether that is in its mandate, the gap, and what actually stands in the way. Green rows need nothing more; the orange row is held by the person pressing the button; the red rows are where a control is still owed. A proposal written before the first run, not a measured deployment.",
+          "kind": "comparison"
+        }
+      ],
+      "graph": {
+        "slug": "stop-the-bleeding-then-ask-for-it-back",
+        "teaser": "A helper and an agent ask what you used, ask nicely for a pause and a refund, stop the payments either way, and publish what each company did.",
+        "topics": [
+          "startups-and-strategy",
+          "agents-and-policy"
+        ],
+        "core_idea": "A service in which a helper, with agents doing most of the work under a behaviour policy, asks a company for its record of your usage while doing its own analysis, then sends a friendly request for a suspend mode and a refund, stops the payments either way, and publishes what each company did in an open register, paid at 10% of three months of savings and 20% of what is recovered.",
+        "nodes": [
+          {
+            "id": "kept",
+            "label": "Subscriptions we keep",
+            "kind": "concept",
+            "summary": "Paid for and barely used, kept because of the data in them and because restarting is painful."
+          },
+          {
+            "id": "ask",
+            "label": "Ask what we used",
+            "kind": "method",
+            "summary": "A polite request for a detailed account of the usage, not a subject access request."
+          },
+          {
+            "id": "own",
+            "label": "Our own analysis",
+            "kind": "method",
+            "summary": "Statements, invoices and the account's dashboards, exported into the person's vault while there is still access."
+          },
+          {
+            "id": "request",
+            "label": "A friendly request",
+            "kind": "method",
+            "summary": "Maps what was used and its value, says what is good about the product, and asks for a suspend mode and a refund."
+          },
+          {
+            "id": "pause",
+            "label": "Suspend mode",
+            "kind": "concept",
+            "summary": "Keep the data and the settings without paying; several large services already offer a pause."
+          },
+          {
+            "id": "stop",
+            "label": "Stop the bleeding",
+            "kind": "claim",
+            "summary": "Export the data, then pause or cancel; the payments stop whatever the answer to the refund."
+          },
+          {
+            "id": "floor",
+            "label": "The law is a floor",
+            "kind": "claim",
+            "summary": "Unused months are generally not refundable as of right; the UK rules arrive in January 2027 and move the default towards the customer."
+          },
+          {
+            "id": "access",
+            "label": "The right of access",
+            "kind": "method",
+            "summary": "The next step if nobody answers, with a one-month deadline, and only ever a genuine request for the person's own data."
+          },
+          {
+            "id": "register",
+            "label": "The open register",
+            "kind": "artefact",
+            "summary": "Contacts, templates and what each company did, under Creative Commons, recorded as dated facts without adjectives."
+          },
+          {
+            "id": "fee",
+            "label": "The helper's fee",
+            "kind": "claim",
+            "summary": "10% of the savings for three months and 20% of what is recovered, which only pays if agents do most of the work."
+          },
+          {
+            "id": "agents",
+            "label": "Agents under a policy",
+            "kind": "method",
+            "summary": "The agent reads and drafts; the person signs in, approves and sends from their own address."
+          },
+          {
+            "id": "logins",
+            "label": "Working inside accounts",
+            "kind": "question",
+            "summary": "How an agent works inside many signed-in sessions without ever holding the passwords."
+          }
+        ],
+        "edges": [
+          {
+            "from": "kept",
+            "to": "ask",
+            "rel": "leads-to"
+          },
+          {
+            "from": "kept",
+            "to": "own",
+            "rel": "leads-to"
+          },
+          {
+            "from": "ask",
+            "to": "own",
+            "rel": "compared-with"
+          },
+          {
+            "from": "request",
+            "to": "ask",
+            "rel": "depends-on"
+          },
+          {
+            "from": "request",
+            "to": "own",
+            "rel": "depends-on"
+          },
+          {
+            "from": "request",
+            "to": "pause",
+            "rel": "produces"
+          },
+          {
+            "from": "stop",
+            "to": "kept",
+            "rel": "answers"
+          },
+          {
+            "from": "access",
+            "to": "ask",
+            "rel": "extends"
+          },
+          {
+            "from": "floor",
+            "to": "request",
+            "rel": "contrasts"
+          },
+          {
+            "from": "request",
+            "to": "register",
+            "rel": "produces"
+          },
+          {
+            "from": "fee",
+            "to": "agents",
+            "rel": "depends-on"
+          },
+          {
+            "from": "agents",
+            "to": "logins",
+            "rel": "leads-to"
+          },
+          {
+            "from": "agents",
+            "to": "request",
+            "rel": "produces"
+          },
+          {
+            "from": "register",
+            "to": "floor",
+            "rel": "extends"
+          }
+        ],
+        "links": {
+          "articles": [
+            "replicating-the-agentic-inbox",
+            "who-owns-the-words",
+            "a-second-reader-the-agent-cannot-skip",
+            "a-personal-agent-that-keeps-your-secrets"
+          ],
+          "pages": [],
+          "sites": [
+            "https://subscriptions.sgit.ai/",
+            "https://subscriptions.sgit.ai/workflows/index.html",
+            "https://www.gov.uk/government/news/pm-starts-roll-out-of-everyday-fixes-on-the-cost-of-living-ending-rip-off-discounts-and-subscription-traps",
+            "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/subject-access-requests/a-guide-to-subject-access/",
+            "https://help.rocketmoney.com/en/articles/9744474-bill-negotiation-charge-explained"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "Whatever the answer to the refund, the payments should stop.",
+            "why": "The value lands on day one, whether or not any money comes back."
+          },
+          {
+            "text": "A dated row that says \"asked twice, no reply as at this date\" needs no adjective.",
+            "why": "It is how the register gives kudos and holds companies to account without characterising anyone."
+          }
+        ]
+      }
+    },
+    {
       "slug": "who-owns-the-words",
       "title": "Who owns the words: agents can make decisions, but they cannot hold responsibility",
       "date": "2026-10-12",
@@ -86,7 +315,9 @@
         "how-the-voice-works",
         "agency-is-not-a-yes"
       ],
-      "links_in": [],
+      "links_in": [
+        "stop-the-bleeding-then-ask-for-it-back"
+      ],
       "figures": [
         {
           "file": "wo-who.webp",
@@ -9792,6 +10023,7 @@
         "every-mistake-added-a-rule"
       ],
       "links_in": [
+        "stop-the-bleeding-then-ask-for-it-back",
         "who-owns-the-words",
         "a-reading-list-in-a-link",
         "where-the-platform-draws-the-line",
@@ -16179,6 +16411,7 @@
         "connector-twin-before-you-deploy-an-agent"
       ],
       "links_in": [
+        "stop-the-bleeding-then-ask-for-it-back",
         "where-the-vault-keys-live",
         "where-is-the-why",
         "why-my-agents-do-not-run-on-my-laptop",
@@ -18942,6 +19175,7 @@
         "ultimate-insider-three-collisions"
       ],
       "links_in": [
+        "stop-the-bleeding-then-ask-for-it-back",
         "from-a-spreadsheet-to-a-folder-per-person",
         "how-i-work-with-claude",
         "the-mandate-stack",

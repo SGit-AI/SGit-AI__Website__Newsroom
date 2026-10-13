@@ -13,6 +13,11 @@ Live site: https://newsroom.sgit.ai (GitHub Pages, deployed from `dev`).
 - `/` and `articles/`: **the newsroom**, imported from sgit.ai's built pages at the same
   paths by `admin/build/sync_newsroom.py` until cutover. Never edit these by hand: fix them on
   sgit.ai and re-sync. `validate.js` check 11 fails the build if an imported file changes.
+- `admin/content/articles/`: **articles written here** (since v0.12.10), with their graphs in
+  `graphs/` and figures in `images/`, in sgit.ai's authoring contract. `admin/build/publish.py`
+  publishes them: it renders them with sgit.ai's generator in a temporary clone of a read-only
+  checkout (nothing is pushed to sgit.ai), validates, and imports the result with the sync. Edit
+  these sources, never the generated pages. The generator itself moves here in a later step.
 - `account/`, `subscribe/`, `meter/`: the reader's account, subscribe, and the SG Meter
   library (imported with the newsroom).
 - `newsroom/`: how the newsroom runs: roles, behaviour policies, board, log (imported).
@@ -100,7 +105,9 @@ own provenance chain would refute the site on page one.
 
 1. Bump `admin/build/version.txt` (vX.Y.Z, exactly once per release) and add a row to
    `admin/versions.html`.
-2. `python3 admin/build/sync_newsroom.py --from <checkout of SGit-AI/SGit-AI__Website>`:
+2. `python3 admin/build/publish.py --from <checkout of SGit-AI/SGit-AI__Website> --node-modules <dir with sharp and playwright>`:
+   publish the articles written here and import everything (it runs the sync below). Or, with no articles of our own changed,
+   `python3 admin/build/sync_newsroom.py --from <checkout of SGit-AI/SGit-AI__Website>`:
    re-import the newsroom (only when sgit.ai has published since the last sync). It numbers any new article first
    (`admin/build/ids.py`, `articles/ids.json`) and prints each article's number at its foot.
 3. Section builders, if their data or prose changed: `governance/build/build.py`,

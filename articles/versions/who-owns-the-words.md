@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.2.0** | 2026-10-13 | minor | 2,848 | +500 / −237 words; 1 changed, 7 added, 4 removed paragraphs | this release | [what changed](who-owns-the-words/v1.2.0.md) · [current](../who-owns-the-words.md) |
+| **v1.2.0** | 2026-10-13 | minor | 2,848 | +500 / −237 words; 1 changed, 7 added, 4 removed paragraphs | [`2c0eb267a`](https://github.com/SGit-AI/SGit-AI__Website/commit/2c0eb267ac85212ace411146d02b026c75be2a2e) | [what changed](who-owns-the-words/v1.2.0.md) · [current](../who-owns-the-words.md) |
 | **v1.1.0** | 2026-10-13 | minor | 2,585 | +0 / −1 words; 1 changed, 0 added, 0 removed paragraphs | [`2a4142507`](https://github.com/SGit-AI/SGit-AI__Website/commit/2a41425074e783bd79d9c838d8a8f8b14c5344ab) | [what changed](who-owns-the-words/v1.1.0.md) |
 | **v1.0.0** | 2026-10-12 | published | 2,586 | first published | [`31b49ca97`](https://github.com/SGit-AI/SGit-AI__Website/commit/31b49ca9781e471dcc26daf993cc4752fcfbeae5) |  |
 
