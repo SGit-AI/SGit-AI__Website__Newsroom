@@ -107,14 +107,9 @@ A second reader, rules that survive summaries, the daily routine, and a desktop 
 - [**How I work with Claude: one session per topic, agents with names, and memory you curate**](../../../../how-i-work-with-claude.md). A practical guide from a year of daily use: one Claude session per topic, named agents with a role.md, curated memory, vaults, and policy before connectors.
 - [**A Mac of the agent's own: a business plan for agent desktops, what Apple's licence allows, and three behaviour policies**](../../../../a-mac-of-the-agents-own.md). A business plan for a Mac of the agent's own: what Apple's licence allows, a desktop built from vaults per run, and three behaviour policies for one agent.
 
-*This is issue 4 of the SGit Newsroom newsletter, also published on LinkedIn in [Deterministic GenAI](https://www.linkedin.com/newsletters/deterministic-genai-7174563523795005440/). Every article it links to is on [sgit.ai](https://newsroom.sgit.ai/articles/index.html), with its sources and its data. To get the next issue by email, [subscribe at sgit.ai/subscribe](https://newsroom.sgit.ai/subscribe/).*
+*This is issue 4 of the SGit Newsroom newsletter, also published on LinkedIn in [Deterministic GenAI](https://www.linkedin.com/newsletters/deterministic-genai-7174563523795005440/). Every article it links to is on [newsroom.sgit.ai](https://newsroom.sgit.ai/articles/index.html), with its sources and its data. To get the next issue by email, [subscribe at newsroom.sgit.ai/subscribe](https://newsroom.sgit.ai/subscribe/).*
 
-**Posting this issue on LinkedIn?** The cover is [004-authority-outside-the-model.jpg](../../../../banners/004-authority-outside-the-model.jpg) (1920×1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page. LinkedIn drops images from a paste, so add these where they appear, in this order, with the caption under each:
-
-1. [004-2026-10-11-authority.jpg](../../../../banners/collages/004-2026-10-11-authority.jpg) Authority outside the model in six pictures, one from each of the first six articles
-2. [om-seven.webp](../../../../images/om-seven.webp) Nadella's seven principles, and what stands behind each one on this network today.
-3. [pl-stack.webp](../../../../images/pl-stack.webp) The shared responsibility model, drawn for agents: each layer can only name what it can see.
-4. [ra-compactions.webp](../../../../images/ra-compactions.webp) Every summary in the session that runs this site, read from its own transcript: each turned about 785,000 tokens into 9,000 to 19,000, and all eighteen were automatic.
+**Posting this issue on LinkedIn?** The cover is [004-authority-outside-the-model.jpg](../../../../banners/004-authority-outside-the-model.jpg) (1920×1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page. Its images copy with it.
 
 [← All issues](../../../index.md)
 

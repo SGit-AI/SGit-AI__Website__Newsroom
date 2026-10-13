@@ -67,6 +67,13 @@ What changes on the way in, and nothing else:
      twin, the line that opens "> **The SGit Newsroom has moved to newsroom.sgit.ai.**" and the blank line
      after it. More than one block on a page stops the import. Remove this when the import stops reading
      sgit.ai.
+  15. The end of every newsletter issue, which is selected and copied into LinkedIn with the body, names this
+     site: "Every article it links to is on newsroom.sgit.ai ... subscribe at newsroom.sgit.ai/subscribe", both
+     links absolute, because the paragraph is pasted. The "Posting this issue on LinkedIn?" box under it keeps
+     the cover and one line, and loses its list of every image as an upload order: copy and paste of images
+     into LinkedIn works now, so the cover is the only file to upload. The paragraph and the box must each be
+     on an issue page exactly once, or the import stops. When the generator moves here, this goes into
+     issue_body() and linkedin_kit() and the rule is retired.
 
 Scripts, styles, components and /.well-known/sgit-subscribe.json are copied byte for byte.
 The brief requires it twice: a published component path never changes, and the subscribe
@@ -431,6 +438,52 @@ def unmoved(text, dest_file, kind):
     return pattern.sub("", text, count=1)
 
 
+# Item 15: the foot of a newsletter issue, and the LinkedIn box under it.
+ISSUE_PAGE = re.compile(r"articles/newsletter/\d{4}/\d\d/\d\d/\d{3}-[^/]+\.(html|md)")
+ISSUE_FOOT = {
+    "html": re.compile(r'Every article it links to is on <a href="[^"]*">sgit\.ai</a>, with its sources and its data\. '
+                       r'To get the next issue by email, <a href="[^"]*">subscribe at sgit\.ai/subscribe</a>\.'),
+    "md":   re.compile(r'Every article it links to is on \[sgit\.ai\]\([^)]*\), with its sources and its data\. '
+                       r'To get the next issue by email, \[subscribe at sgit\.ai/subscribe\]\([^)]*\)\.'),
+}
+ISSUE_KIT = {
+    "html": re.compile(r'<aside class="lkit" aria-label="For LinkedIn">.*?</aside>', re.S),
+    "md":   re.compile(r'^\*\*Posting this issue on LinkedIn\?\*\*[^\n]*\n(?:\n(?:\d+\. [^\n]*\n)+)?', re.M),
+}
+KIT_LIST = {
+    "html": re.compile(r' LinkedIn drops images from a paste, so add these where they appear, in this order, with the '
+                       r'caption under each:<ol class="lkit-imgs">.*?</ol>', re.S),
+    "md":   re.compile(r' LinkedIn drops images from a paste, so add these where they appear, in this order, with the '
+                       r'caption under each:\n(?:\n(?:\d+\. [^\n]*\n)+)?'),
+}
+KIT_LAST = "then select and copy the body from this page."
+
+
+def issue_foot(text, dest_file, kind):
+    if kind not in ("html", "md") or not ISSUE_PAGE.fullmatch(dest_file):
+        return text
+    for what, pattern in (("subscribe paragraph", ISSUE_FOOT[kind]), ("LinkedIn box", ISSUE_KIT[kind])):
+        n = len(pattern.findall(text))
+        if n != 1:
+            sys.exit(f"sync: {dest_file}: the issue's {what} is in the page {n} times, not once. sgit.ai changed "
+                     f"the foot of its issues, so this rule is stale (item 15 in the docstring)")
+    site, sub = f"https://{HOST}/articles/index.html", f"https://{HOST}/subscribe/"
+    if kind == "html":
+        foot = (f'Every article it links to is on <a href="{site}">{HOST}</a>, with its sources and its data. '
+                f'To get the next issue by email, <a href="{sub}">subscribe at {HOST}/subscribe</a>.')
+    else:
+        foot = (f'Every article it links to is on [{HOST}]({site}), with its sources and its data. '
+                f'To get the next issue by email, [subscribe at {HOST}/subscribe]({sub}).')
+    text = ISSUE_FOOT[kind].sub(lambda m: foot, text, count=1)
+
+    def kit(m):
+        box = KIT_LIST[kind].sub("\n" if kind == "md" else "", m.group(0), count=1)
+        if box.count(KIT_LAST) != 1:
+            sys.exit(f"sync: {dest_file}: the LinkedIn box no longer says {KIT_LAST!r}; item 15 is stale")
+        return box.replace(KIT_LAST, KIT_LAST + " Its images copy with it.")
+    return ISSUE_KIT[kind].sub(kit, text, count=1)
+
+
 def transform(text, src_file, dest_file, kind):
     text = unmoved(text, dest_file, kind)
     text = ABS_SRC.sub(rewrite_abs, text)
@@ -492,6 +545,7 @@ def transform(text, src_file, dest_file, kind):
             text = re.sub(r'(<meta property="og:url" content=")[^"]*(")', rf'\1https://{HOST}/\2', text, count=1)
         text = numbered(text, dest_file, "html")
         text = apply_text_overrides(text, dest_file, "html")
+        text = issue_foot(text, dest_file, "html")
     elif kind == "md":
         text = MD_LINK.sub(lambda m: m.group(1) + rewrite_url(m.group(2), src_file, dest_file) + m.group(3), text)
         m_own = re.fullmatch(r"articles/([^/]+)\.md", dest_file)
@@ -506,6 +560,7 @@ def transform(text, src_file, dest_file, kind):
                       lambda m: f'\u00b7 sgit.ai {m.group(1)} \u00b7 this file is generated', text)
         text = numbered(text, dest_file, "md")
         text = apply_text_overrides(text, dest_file, "md")
+        text = issue_foot(text, dest_file, "md")
     return text
 
 

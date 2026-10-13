@@ -22,6 +22,8 @@ Live site: https://newsroom.sgit.ai (GitHub Pages, deployed from `dev`).
   in the format of sgit.ai's newsroom README, published by the same `publish.py` to
   `articles/newsletter/YYYY/MM/DD/NNN-<slug>.html` with a 1920x1080 cover. Issue numbers continue from
   sgit.ai's 001 to 005; `publish.py` refuses a number sgit.ai already has.
+  An issue's LinkedIn post ends with its subscribe paragraph, which names newsroom.sgit.ai (sync
+  item 15); the cover is the only image to upload, because the body's images copy and paste.
 - `account/`, `subscribe/`, `meter/`: the reader's account, subscribe, and the SG Meter
   library (imported with the newsroom).
 - `newsroom/`: how the newsroom runs: roles, behaviour policies, board, log (imported).

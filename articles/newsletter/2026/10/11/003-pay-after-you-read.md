@@ -107,14 +107,9 @@ Agents that pay to save tokens, and the long tail of open source.
 - [**The agent is the reader: why agents will pay for graphs, personas and signed claims, because it is cheaper than not paying**](../../../../the-agent-is-the-reader.md). Agents pay to read the raw web and guess its meaning. A curated graph answers for 90% fewer tokens, so paying the publisher is cheaper than not paying.
 - [**Open source is not free: who pays to keep the long tail working?**](../../../../open-source-is-not-free.md). An old iMac, the long tail of old versions that projects are not paid to support, measured from public data, and five ways to pay for it, simulated.
 
-*This is issue 3 of the SGit Newsroom newsletter, also published on LinkedIn in [Deterministic GenAI](https://www.linkedin.com/newsletters/deterministic-genai-7174563523795005440/). Every article it links to is on [sgit.ai](https://newsroom.sgit.ai/articles/index.html), with its sources and its data. To get the next issue by email, [subscribe at sgit.ai/subscribe](https://newsroom.sgit.ai/subscribe/).*
+*This is issue 3 of the SGit Newsroom newsletter, also published on LinkedIn in [Deterministic GenAI](https://www.linkedin.com/newsletters/deterministic-genai-7174563523795005440/). Every article it links to is on [newsroom.sgit.ai](https://newsroom.sgit.ai/articles/index.html), with its sources and its data. To get the next issue by email, [subscribe at newsroom.sgit.ai/subscribe](https://newsroom.sgit.ai/subscribe/).*
 
-**Posting this issue on LinkedIn?** The cover is [003-pay-after-you-read.jpg](../../../../banners/003-pay-after-you-read.jpg) (1920×1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page. LinkedIn drops images from a paste, so add these where they appear, in this order, with the caption under each:
-
-1. [003-2026-10-11-meter.jpg](../../../../banners/collages/003-2026-10-11-meter.jpg) The reading meter in six pictures, one from each of the articles that built it
-2. [gl-line.webp](../../../../images/gl-line.webp) The reader card at the foot of an article: what it has cost, how much was read, and the choice not to pay.
-3. [gl-anchors.webp](../../../../images/gl-anchors.webp) Six changes, and five hypotheses written down before the first payment, each with what we expect and what would prove us wrong.
-4. [003-2026-10-11-personas.jpg](../../../../banners/collages/003-2026-10-11-personas.jpg) A newsroom of your own: picks for each persona, the graph of what you read, and the personas you keep
+**Posting this issue on LinkedIn?** The cover is [003-pay-after-you-read.jpg](../../../../banners/003-pay-after-you-read.jpg) (1920×1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page. Its images copy with it.
 
 [← All issues](../../../index.md)
 

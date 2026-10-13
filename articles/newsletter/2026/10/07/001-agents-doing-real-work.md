@@ -117,9 +117,9 @@ The author's input measured, a way to price and give away, a service that charge
 - [**The bridge, followed to the end: what one local story is worth when it is kept as a graph**](../../../../the-bridge-followed-to-the-end.md). A bridge closure simulated on a story vault: newsworthy on 5 days, needed on 57, used by three readers, four buyers and an agent, and paid back to its sources.
 - [**Liquid content needs water: liquefy the journalist's notebook, not the finished product**](../../../../liquid-content-needs-water.md). A reply to FT Strategies on liquid content: the water is the reporting, so liquefy the journalist's notebook, keep the writing theirs, and pay per use.
 
-*This is issue 1 of the SGit Newsroom newsletter, also published on LinkedIn in [Deterministic GenAI](https://www.linkedin.com/newsletters/deterministic-genai-7174563523795005440/). Every article it links to is on [sgit.ai](https://newsroom.sgit.ai/articles/index.html), with its sources and its data. To get the next issue by email, [subscribe at sgit.ai/subscribe](https://newsroom.sgit.ai/subscribe/).*
+*This is issue 1 of the SGit Newsroom newsletter, also published on LinkedIn in [Deterministic GenAI](https://www.linkedin.com/newsletters/deterministic-genai-7174563523795005440/). Every article it links to is on [newsroom.sgit.ai](https://newsroom.sgit.ai/articles/index.html), with its sources and its data. To get the next issue by email, [subscribe at newsroom.sgit.ai/subscribe](https://newsroom.sgit.ai/subscribe/).*
 
-**Posting this issue on LinkedIn?** The cover is [001-agents-doing-real-work.jpg](../../../../banners/001-agents-doing-real-work.jpg) (1920×1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page.
+**Posting this issue on LinkedIn?** The cover is [001-agents-doing-real-work.jpg](../../../../banners/001-agents-doing-real-work.jpg) (1920×1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page. Its images copy with it.
 
 [← All issues](../../../index.md)
 
