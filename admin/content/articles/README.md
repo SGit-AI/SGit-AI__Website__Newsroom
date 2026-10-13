@@ -94,7 +94,7 @@ not publish.
 
 1. **No em-dashes.** A comma, a colon, a semicolon or a full stop does the job. The build fails on one.
 2. **The ladder word.** One word for a step of a ladder is banned from every article, and the build fails on
-   it: `rung`. The articles say "layer", "level" or "tier" instead, and the site refers to it only as "the
+   it, spelled r-u-n-g. The articles say "layer", "level" or "tier" instead, and the site refers to it only as "the
    ladder word".
 3. **No absolutes you cannot back.** "Nobody has", "never scaled", "the first to". If it is true, show the
    count; if it is a feeling, say whose.
