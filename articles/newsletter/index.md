@@ -6,13 +6,21 @@
 
 ---
 
-Edition of 2026-10-08106 articles · 4 desk notes · 5 collections · 5 issuessgit.ai · v0.7.87
+Edition of 2026-10-08106 articles · 4 desk notes · 5 collections · 6 issuessgit.ai · v0.7.87
 
 # The newsletter
 
 The regular issue of the SGit Newsroom: what was published, what it adds up to, and the pieces worth your time. Weekly, or sooner when there is enough to say. The same issue goes out as a LinkedIn article in [Deterministic GenAI](https://www.linkedin.com/newsletters/deterministic-genai-7174563523795005440/).
 
 ## Issues
+
+Issue 62026-10-13
+
+## [The reader's own newsroom: a passkey that opens a vault, a vault that crosses browsers, and what a reader does once their reading is theirs](2026/10/13/006-the-readers-own-newsroom.md)
+
+What would a newsroom look like if your reading was yours, kept in a vault only you can open, on every device and in every browser, with nothing to sign up for? Between 11 and 13 October that went from a design to something that runs on newsroom.sgit.ai, and then did more than it was built for. Eight articles. The design, where a passkey computes a door and the door opens a master vault, and the test that made the door a door per path; the night the vault went live, with three real vaults behind a button on every page; the two things found by using it, that a second Chrome profile is just a second device, and that sixteen changes stranded in one browser are worth a lane any browser can write to; and what a reader does once the reading is theirs: an inbox that starts empty, ways into one article that keep the finished piece at the centre, a reading list sent in a link, and five themes kept in the browser.
+
+8 articles
 
 Issue 52026-10-11
 
@@ -36,7 +44,7 @@ Issue 32026-10-11
 
 What would you pay for an article if you only paid after reading it, and only as much as it was worth to you? On 10 October the reading meter on this site went from a demonstration to a working answer, one release at a time. You pay for the share of a page you scroll through. You say how useful it was, and that sets the price, from free to double. Your balance can go below zero without a word of nagging. And your reading builds personas that are yours, kept in your browser, that a link can share. Eight articles: the plan, the numbers we will be judged on, who could cheat it, why readers should pay because it helps them, and why agents will pay too.
 
-8 articles
+8 articles · [on LinkedIn ↗](https://www.linkedin.com/pulse/pay-after-you-read-newsroom-charges-share-lets-go-below-dinis-cruz-i9owe/)
 
 Issue 22026-10-08
 
@@ -56,7 +64,7 @@ What it takes to let agents do real work for a business, from four sides: a team
 
 **Get the next issue by email.** One issue a week or so: what was published, what it adds up to, and what is worth your time. [Subscribe to the SGit Newsroom →](../../subscribe/index.md)
 
-Next issue: due now (27 articles since issue 5 (2026-10-11)). Issues are written by the [Journalist](../../newsroom/roles/journalist.md) from the articles' own data; every quote is checked against its article when the site is built.
+Next issue: not yet due (0 article(s) since issue 6; due at 5 or after 7 days). Issues are written by the [Journalist](../../newsroom/roles/journalist.md) from the articles' own data; every quote is checked against its article when the site is built.
 
 
 ---

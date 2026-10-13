@@ -48,7 +48,6 @@ Computed at every build from the files: placements that point at nothing, articl
 
 - Fix`front.json` the lead is 5 days older than the newest article and 57 newer article(s) are unplaced
 - To do`front.json` 57 article(s) published since the 2026-10-08 edition: every-link-points-back, sixteen-notes-i-did-not-want-to-lose, how-cheap-is-it-to-undo, the-human-in-the-loop, a-policy-beside-the-prompt, the-policy-draws-the-liability-line
-- To do`newsletter/` a newsletter issue is due: 27 articles since issue 5 (2026-10-11)
 - To do`newsroom/pitches/2026-10-11__where-the-platform-draws-the-line.md` open pitch from contributor: highlight for where-the-platform-draws-the-line
 - To do`newsroom/pitches/2026-10-11__the-same-argument-in-our-words.md` open pitch from contributor: lead for the-same-argument-in-our-words
 - To do`newsroom/pitches/2026-10-11__the-agent-is-the-reader.md` open pitch from contributor: lead for the-agent-is-the-reader
@@ -58,6 +57,7 @@ Computed at every build from the files: placements that point at nothing, articl
 - To do`newsroom/pitches/2026-10-10__one-article-five-readers.md` open pitch from agent@riskmandate.ai: lead for one-article-five-readers
 - To do`newsroom/pitches/2026-10-10__going-live-with-the-reading-meter.md` open pitch from journalist: lead for going-live-with-the-reading-meter
 - To do`newsroom/pitches/2026-10-10__a-meter-in-the-browser.md` open pitch from journalist: lead for a-meter-in-the-browser
+- Note`newsroom/newsletter/006-2026-10-13.md` issue 6 has no linkedin: URL yet; add it once it is posted
 
 and 3 more; `python3 admin/build/desk.py` lists them all.
 

@@ -20,7 +20,7 @@ One issue a week or so, when there is enough to say: what was published on sgit.
 
 **Get new articles by email.** The HTML version of this page has a form that encrypts your address in the browser and drops it into a write-only lane on an encrypted vault, read by the agent that manages the list ([how it works](https://sgit.ai/docs/briefs/subscribe-lane-agent-brief.md)). Or email [agent@riskmandate.ai](mailto:agent@riskmandate.ai?subject=Subscribe%3A%20SGit%20Newsroom%20newsletter&body=Please%20add%20me%20to%20the%20SGit%20Newsroom%20newsletter.) with the subject "Subscribe: sgit.ai articles".
 
-The latest issue: [**Issue 5, No server, by design: a newsroom that runs in your browser, a model in the tab, and the agents that read, test and draw for it**](../articles/newsletter/2026/10/11/005-no-server-by-design.md) (2026-10-11). [All issues](../articles/newsletter/index.md).
+The latest issue: [**Issue 6, The reader's own newsroom: a passkey that opens a vault, a vault that crosses browsers, and what a reader does once their reading is theirs**](../articles/newsletter/2026/10/13/006-the-readers-own-newsroom.md) (2026-10-13). [All issues](../articles/newsletter/index.md).
 
 ## What happens to your address
 

@@ -6,7 +6,7 @@
 
 ---
 
-Edition of 2026-10-08106 articles · 4 desk notes · 5 collections · 5 issuessgit.ai · v0.7.87
+Edition of 2026-10-08106 articles · 4 desk notes · 5 collections · 6 issuessgit.ai · v0.7.87
 
 # SGit Newsroom
 
@@ -171,4 +171,4 @@ Read from the links the articles make to each other. [The same thing drawn as a 
 
 ---
 
-*newsroom.sgit.ai · site v0.12.26 · the front page, imported from sgit.ai. This site's own index is [llms.txt](llms.txt).*
+*newsroom.sgit.ai · site v0.12.27 · the front page, imported from sgit.ai. This site's own index is [llms.txt](llms.txt).*

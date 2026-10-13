@@ -27,7 +27,7 @@
  ],
  "what": "The map of everything a reader does on newsroom.sgit.ai, and the review of it: phase 0 of the move described in https://newsroom.sgit.ai/articles/explorer-to-villager-newsroom.html. Written by admin/build/api_map.py on every build. The hashes are the 'before' for the move's rule that the live site serves the same bytes after it: scripts, styles and JSON raw; pages with the site chrome and version stamps normalised.",
  "api_means": "client-side: components, formats and contracts the browser runs, with no server and nothing to deploy but files",
- "release": "v0.12.26",
+ "release": "v0.12.27",
  "date": "11 October 2026",
  "source": {
   "sgit_ai": "",
@@ -496,7 +496,7 @@
    "from": "this site, generated",
    "lines": 268,
    "bytes": 13441,
-   "sha256": "f9a7140fb868ce610f527b805df144fc73248036bd3f13f19bfaf2d8406c0322",
+   "sha256": "c2391b6ed61aeabb5d57106b5ef3df55e5dc0c4592f52e1cfcf61aa341e0825f",
    "hosts": [],
    "fetch": 0,
    "storage": [],
@@ -1073,8 +1073,8 @@
   {
    "path": "subscribe/index.html",
    "what": "subscribe",
-   "lines": 270,
-   "sha256": "3b736ec367f6e988b0c33106ec52c94161f7f97c14a691c6661806771e1127ad"
+   "lines": 209,
+   "sha256": "1251580b865830dddc208618a16fdaf43b05388f9e2fcc9df8014160c591ccf5"
   },
   {
    "path": "persona/index.html",
@@ -1181,7 +1181,7 @@
   {
    "path": "vault/index.html",
    "what": "your vault: the reading account carried between devices, with the pane open",
-   "lines": 72,
+   "lines": 258,
    "sha256": "247abd6d07b9200be247407c0d4474e6f565fc67da5dbe2da1aaee5ec0207e13"
   },
   {
@@ -1236,8 +1236,8 @@
   },
   {
    "path": "admin/build/newsroom-text.json",
-   "what": "the eight text rules, applied on import",
-   "lines": 135
+   "what": "the ten text rules, applied on import",
+   "lines": 167
   },
   {
    "path": "admin/build/wire.py",
@@ -1377,7 +1377,7 @@
  "loader": {
   "lines": 17,
   "sha256": "f114004ba2928d82754ef83afff66b889bed92db083064323e78440d488e1e91",
-  "pages_that_eval": 425
+  "pages_that_eval": 426
  },
  "frozen": [
   {
@@ -1485,7 +1485,7 @@
   "account": 1,
   "landing": 6,
   "newsroom": 1,
-  "page": 533,
+  "page": 534,
   "personas": 1,
   "share": 1,
   "topped-up": 1,
@@ -2117,8 +2117,8 @@
   },
   {
    "contract": "The import's rules",
-   "shape": "the meter path rewrite (v1.3.1 → v1.4.1), the top-up link, eight text rules, the article number line; each stops the import when its anchor moves",
-   "owner": "sync_newsroom.py items 9–12"
+   "shape": "the meter path rewrite (v1.3.1 → v1.4.1), the top-up link, ten text rules, the article number line, the moved banner cut, the foot of every issue; each stops the import when its anchor moves",
+   "owner": "sync_newsroom.py items 9–15"
   }
  ],
  "findings": [

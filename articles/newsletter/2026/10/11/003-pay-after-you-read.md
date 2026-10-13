@@ -12,7 +12,7 @@ SGit Newsroom · Issue 3 · 2026-10-11
 
 # Pay after you read: a newsroom that charges for the share you read, lets you go below zero, and keeps your persona
 
-By [Dinis Cruz](https://sgit.ai/about/index.md), written with the [Journalist](../../../../../newsroom/roles/journalist.md)
+By [Dinis Cruz](https://sgit.ai/about/index.md), written with the [Journalist](../../../../../newsroom/roles/journalist.md) · [read it on LinkedIn ↗](https://www.linkedin.com/pulse/pay-after-you-read-newsroom-charges-share-lets-go-below-dinis-cruz-i9owe/)
 
 ***Abstract:** What would you pay for an article if you only paid after reading it, and only as much as it was worth to you? On 10 October the reading meter on this site went from a demonstration to a working answer, one release at a time. You pay for the share of a page you scroll through. You say how useful it was, and that sets the price, from free to double. Your balance can go below zero without a word of nagging. And your reading builds personas that are yours, kept in your browser, that a link can share. Eight articles: the plan, the numbers we will be judged on, who could cheat it, why readers should pay because it helps them, and why agents will pay too.*
 
