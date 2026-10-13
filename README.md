@@ -17,7 +17,7 @@ Live site: https://newsroom.sgit.ai (GitHub Pages, deployed from `dev`).
   `graphs/` and figures in `images/`, in sgit.ai's authoring contract. `admin/build/publish.py`
   publishes them: it renders them with sgit.ai's generator in a temporary clone of a read-only
   checkout (nothing is pushed to sgit.ai), validates, and imports the result with the sync. Edit
-  these sources, never the generated pages. The generator itself moves here in a later step.
+  these sources, never the generated pages. The generator itself moves here in a later step. The guide to writing one, the voice, the shape and the run, is `admin/content/articles/README.md`.
 - `admin/content/newsletter/`: **newsletter issues written here** (since v0.12.18), `NNN-YYYY-MM-DD.md`,
   in the format of sgit.ai's newsroom README, published by the same `publish.py` to
   `articles/newsletter/YYYY/MM/DD/NNN-<slug>.html` with a 1920x1080 cover. Issue numbers continue from
