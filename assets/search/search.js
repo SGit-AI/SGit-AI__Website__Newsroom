@@ -303,12 +303,13 @@ export async function mountSearch(mount) {
     try {
         const docs = await (await fetch(new URL('search/docs.json', ROOT).href)).json()
         ix = buildIndex(docs)
+        mount._search = { ix }                                              // for Ask (ask.js): the same index, filled in as the text arrives
         status.textContent = `${docs.docs.length} pages: titles, tags and article graphs searched; loading the full text…`
         draw()
         const text = await (await fetch(new URL('search/text.json', ROOT).href)).json()
         addText(ix, text)
         status.dataset.ready = 'full'
-        status.textContent = `${docs.docs.length} pages and ${text.chunks.length.toLocaleString()} paragraphs, release ${docs.release}, indexed in this browser in ${Math.round(performance.now() - t0)} ms. Nothing you type leaves this page.`
+        status.textContent = `${docs.docs.length} pages and ${text.chunks.length.toLocaleString()} paragraphs, release ${docs.release}, indexed in this browser in ${Math.round(performance.now() - t0)} ms. Searching sends nothing anywhere.`
         mount.dataset.ready = 'full'
         draw()
     } catch (e) {

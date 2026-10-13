@@ -93,7 +93,7 @@ try {
     await pg.evaluate(() => window.scrollTo(0, document.body.scrollHeight)); await pg.waitForTimeout(900); await pg.evaluate(() => window.scrollTo(0, 0)); await pg.waitForTimeout(300)
     check(/Search/.test(await text('nav.site a.search-btn')), 'every page has a Search link in the nav')
     await pg.click('nav.site a.search-btn'); await pg.waitForSelector('#search-q', { timeout: 20000 }); await full()
-    check(/search\/(index\.html)?$/.test(new URL(pg.url()).pathname) && /indexed in this browser/.test(await text('#search-status')) && /Nothing you type leaves this page/.test(await text('#search-status')), `the search page loads the index: ${(await text('#search-status')).trim().slice(0, 90)}`)
+    check(/search\/(index\.html)?$/.test(new URL(pg.url()).pathname) && /indexed in this browser/.test(await text('#search-status')) && /Searching sends nothing anywhere/.test(await text('#search-status')), `the search page loads the index: ${(await text('#search-status')).trim().slice(0, 90)}`)
     check((await pg.evaluate(() => document.querySelectorAll('#search-results li.tips a').length)) >= 4, 'with no query, it offers examples')
     await pg.fill('#search-q', 'sovereignty'); await pg.waitForTimeout(500)
     let res = await results()

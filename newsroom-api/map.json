@@ -27,7 +27,7 @@
  ],
  "what": "The map of everything a reader does on newsroom.sgit.ai, and the review of it: phase 0 of the move described in https://newsroom.sgit.ai/articles/explorer-to-villager-newsroom.html. Written by admin/build/api_map.py on every build. The hashes are the 'before' for the move's rule that the live site serves the same bytes after it: scripts, styles and JSON raw; pages with the site chrome and version stamps normalised.",
  "api_means": "client-side: components, formats and contracts the browser runs, with no server and nothing to deploy but files",
- "release": "v0.12.8",
+ "release": "v0.12.9",
  "date": "11 October 2026",
  "source": {
   "sgit_ai": "v0.7.86",
@@ -36,8 +36,8 @@
   "meter_on_sgit_ai": "1.3.1"
  },
  "counts": {
-  "reader_code_lines": 8453,
-  "reader_files": 47,
+  "reader_code_lines": 8661,
+  "reader_files": 49,
   "pages": 22,
   "views": 12,
   "controls": 56,
@@ -45,7 +45,7 @@
   "outputs": 9,
   "contracts": 14,
   "findings": 18,
-  "tests": 381,
+  "tests": 413,
   "frozen_files": 20,
   "frozen_lines": 5697,
   "pages_with_csp": 0
@@ -284,7 +284,7 @@
    "from": "this site, generated",
    "lines": 412,
    "bytes": 16826,
-   "sha256": "7dcc9f4ae9cda5246d8a241220ebc1d26af7b56b15667a1c52d7d481c4998fa8",
+   "sha256": "486d383235e7ef18aef88ac238e60786b04a2bb4291cb400e58745821f3c49f0",
    "hosts": [],
    "fetch": 0,
    "storage": [],
@@ -400,7 +400,7 @@
    "from": "this site, generated",
    "lines": 268,
    "bytes": 13440,
-   "sha256": "ed8bb1e2952da36c2a3429c1eb6d035557e522f1d12e39dd7f5cc0662108bf69",
+   "sha256": "881ad46a0daacab28d85d6dab8dd1e6a26a4a30dc823b61edb746323ec21e4f2",
    "hosts": [],
    "fetch": 0,
    "storage": [],
@@ -504,9 +504,9 @@
    "path": "assets/search/search.js",
    "what": "Search in the browser: the index from search/docs.json and search/text.json, BM25 over fields and paragraphs, phrases, numbers, prefixes, snippets; the search page",
    "from": "this site",
-   "lines": 317,
-   "bytes": 19797,
-   "sha256": "6a8443643fa92d97e748cc61ad4d66701d91ea749282435be39521e55a4ec0d5",
+   "lines": 318,
+   "bytes": 19939,
+   "sha256": "a1602529e616f0be0f7688c6b7836a88c3a8e186d760088adf2517afa7632678",
    "hosts": [],
    "fetch": 2,
    "storage": [],
@@ -523,6 +523,43 @@
    "lines": 25,
    "bytes": 2815,
    "sha256": "50bb687f48eadfde42348334c660cbd16188e0e1c9342ce5f959596a4445ca3b",
+   "hosts": [],
+   "fetch": 0,
+   "storage": [],
+   "events": [],
+   "eval": 0,
+   "innerHTML": 0,
+   "confirm": 0,
+   "crypto": false
+  },
+  {
+   "path": "assets/search/ask.js",
+   "what": "Ask: the top passages, numbered, given to Chrome's built-in model or to openrouter.ai with the reader's own key, answered with citations; the key in the tab unless kept",
+   "from": "this site; openrouter.ai, only with the reader's key",
+   "lines": 184,
+   "bytes": 14313,
+   "sha256": "ec50bb11017fe7fbbb513315e948020aaa005d14e2554cac15cf13ffedd62079",
+   "hosts": [
+    "openrouter.ai"
+   ],
+   "fetch": 1,
+   "storage": [
+    "localStorage",
+    "sessionStorage"
+   ],
+   "events": [],
+   "eval": 0,
+   "innerHTML": 0,
+   "confirm": 0,
+   "crypto": false
+  },
+  {
+   "path": "assets/search/ask.css",
+   "what": "Styles for Ask on the search page",
+   "from": "this site",
+   "lines": 23,
+   "bytes": 2663,
+   "sha256": "ecdf4ba20ac4af93e15a8d8dcffe473d58565ed747cdd5327fbb9fd6c22971b0",
    "hosts": [],
    "fetch": 0,
    "storage": [],
@@ -939,7 +976,7 @@
    "path": "wire/index.html",
    "what": "the Industry Wire's edition",
    "lines": 57,
-   "sha256": "3b84bbaa1b07fecb8769d42c58cd6e706efe589c13b73bfb65190545bee326ad"
+   "sha256": "64259e16a74c714ca82de7c8c6f1a312e1736d849986a52fd28758050eabe586"
   },
   {
    "path": "wire/sources.html",
@@ -956,7 +993,7 @@
   {
    "path": "vault/index.html",
    "what": "your vault: the reading account carried between devices, with the pane open",
-   "lines": 71,
+   "lines": 258,
    "sha256": "e9b07c2c5e287081656eb84a19858e390bb3fb51fdc8ae1c5b27d5ff33270d5d"
   },
   {
@@ -1032,7 +1069,7 @@
   {
    "path": "admin/build/search_index.py",
    "what": "writes search/docs.json, search/text.json and the search page from the published pages, the article graphs and versions, the wire's snapshot and the notes",
-   "lines": 346
+   "lines": 351
   },
   {
    "path": "admin/build/engineering.py",
@@ -1111,6 +1148,12 @@
    "checks": 37
   },
   {
+   "path": "admin/build/test_ask.mjs",
+   "what": "ask: the passages and the messages in Node; no model, the reader's key (openrouter.ai answered by a route) and the built-in model (faked) in Chromium",
+   "lines": 175,
+   "checks": 32
+  },
+  {
    "path": "admin/build/test_notes.mjs",
    "what": "the feedback loop in Chromium: notes on an article and at a wire story, carried by the vault, sent to the lane, read by the sgit CLI and lane.py with the read key alone, brought into a second device",
    "lines": 330,
@@ -1133,6 +1176,7 @@
   "admin/build/test_sync.mjs",
   "admin/build/test_pane.mjs",
   "admin/build/test_search.mjs",
+  "admin/build/test_ask.mjs",
   "admin/build/test_notes.mjs"
  ],
  "loader": {
@@ -1246,7 +1290,7 @@
   "account": 1,
   "landing": 6,
   "newsroom": 1,
-  "page": 462,
+  "page": 463,
   "personas": 1,
   "share": 1,
   "topped-up": 1,

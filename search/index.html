@@ -4,21 +4,21 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Search &middot; newsroom.sgit.ai</title>
-<meta name="description" content="Search every article, the wire&#x27;s stories and the site&#x27;s notes, in your browser: titles, tags, article graphs and full text, with exact phrases and earlier versions.">
+<meta name="description" content="Search every article, the wire&#x27;s stories and the site&#x27;s notes, in your browser: titles, tags, article graphs and full text, with exact phrases and earlier versions; and ask a question, answered from the passages found by Chrome&#x27;s built-in model or your own OpenRouter key.">
 <link rel="canonical" href="https://newsroom.sgit.ai/search/index.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="newsroom.sgit.ai">
 <meta property="og:url" content="https://newsroom.sgit.ai/search/index.html">
 <meta property="og:title" content="Search">
-<meta property="og:description" content="Search every article, the wire&#x27;s stories and the site&#x27;s notes, in your browser: titles, tags, article graphs and full text, with exact phrases and earlier versions.">
+<meta property="og:description" content="Search every article, the wire&#x27;s stories and the site&#x27;s notes, in your browser: titles, tags, article graphs and full text, with exact phrases and earlier versions; and ask a question, answered from the passages found by Chrome&#x27;s built-in model or your own OpenRouter key.">
 <meta property="og:image" content="https://newsroom.sgit.ai/og/default.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="../assets/newsroom.css">
-<link rel="stylesheet" href="../assets/search/search.css"></head>
+<link rel="stylesheet" href="../assets/search/search.css"><link rel="stylesheet" href="../assets/search/ask.css"></head>
 <body>
 <nav class="site"><div class="row">
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.12.8</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.12.9</a>
   <a class="search-btn" href="../search/index.html" title="Search the site, in your browser">Search</a>
   <link rel="stylesheet" href="../assets/search/search-nav.css">
   <sg-meter class="meter-nav" view="balance"></sg-meter>
@@ -145,7 +145,7 @@
  <p class="crumb"><a href="../index.html">Home</a> / Search</p>
  <p class="eyebrow">Search · in your browser</p>
  <h1>Search</h1>
- <p class="lead">Every article, the wire and the notes, searched here: nothing you type leaves this page.</p>
+ <p class="lead">Every article, the wire and the notes, searched in your browser; and asked, with Chrome’s built-in model or your own OpenRouter key, answered from the passages found.</p>
 <div id="search-mount" class="search">
 <form class="search-box" role="search" action="index.html" method="get">
   <label for="search-q" class="sr">Search the newsroom</label>
@@ -159,14 +159,19 @@
 <noscript><p>Search runs in your browser, which needs a script. The index is <a href="docs.json">docs.json</a> and <a href="text.json">text.json</a>; every page also has a <code>.md</code> twin, and <a href="../llms.txt">llms.txt</a> maps the site.</p></noscript>
 <script type="module">
 import { mountSearch } from '../assets/search/search.js';
-mountSearch(document.getElementById('search-mount'));
+import { mountAsk } from '../assets/search/ask.js';
+const el = document.getElementById('search-mount');
+mountSearch(el); mountAsk(el);
 </script>
 <h2 id="how">How it works</h2>
-<p>There is no search server. When this site is released, a script reads every page it publishes, each article&rsquo;s graph and tags, the earlier versions of each article, the wire&rsquo;s headlines and the site&rsquo;s own notes, and writes two files: <a href="docs.json">docs.json</a>, one entry per page with its title, tags, graph and headings, and <a href="text.json">text.json</a>, the text in paragraphs. This page fetches them like any other file and ranks them here, in your browser: a title, a tag or a node of an article&rsquo;s graph counts for more than a word in the text. Nothing you type leaves this page. Quotes find an exact phrase; a number on its own finds that article; a sentence that has since been changed is found in the earlier version it is from. Pages you have read, and pages you marked done, say so, from your own records. <a href="../admin/notes/2026-10-13__search-in-the-browser.md">The design</a>.</p>
+<p>There is no search server. When this site is released, a script reads every page it publishes, each article&rsquo;s graph and tags, the earlier versions of each article, the wire&rsquo;s headlines and the site&rsquo;s own notes, and writes two files: <a href="docs.json">docs.json</a>, one entry per page with its title, tags, graph and headings, and <a href="text.json">text.json</a>, the text in paragraphs. This page fetches them like any other file and ranks them here, in your browser: a title, a tag or a node of an article&rsquo;s graph counts for more than a word in the text. Searching sends nothing anywhere. Quotes find an exact phrase; a number on its own finds that article; a sentence that has since been changed is found in the earlier version it is from. Pages you have read, and pages you marked done, say so, from your own records. <a href="../admin/notes/2026-10-13__search-in-the-browser.md">The design</a>.</p>
+<h2 id="ask">Asking</h2>
+<p><i>Ask</i> searches the question the same way, takes the best paragraph of each of the top pages (up to eight, the current wording only), numbers them and gives them to a model with one instruction: answer only from them, cite them by number, and say so when they do not hold the answer. The answer comes with the passages under it, each linked to its page and section, so every claim can be checked where it came from; <i>What the model is given</i> shows exactly what was sent.</p>
+<p>The model is <b>Chrome&rsquo;s built-in model</b> when your browser has it (the Prompt API): it runs on your machine, with no key, and nothing is sent anywhere. Otherwise it is <b>your own OpenRouter key</b>, pasted under <i>How questions are answered</i>: kept in this tab unless you ask to keep it in this browser, sent to openrouter.ai with the question and the passages, and nowhere else; this site has no server to send it to. With neither, <i>Ask</i> shows the passages alone. A question can be a link: <code>?q=&hellip;&amp;ask=1</code> asks on arrival.</p>
 
 <div class="agent">
   <h4>For an agent</h4>
-  <p>Search on newsroom.sgit.ai runs in the reader's browser. The index is https://newsroom.sgit.ai/search/docs.json (one entry per page: u address, t title, k kind, n article number, d date, x teaser, tp topics, tg tags, g the article graph's core idea and node labels, h headings with anchors) and https://newsroom.sgit.ai/search/text.json (paragraphs: [doc index, anchor, text] and, for text that is only in an earlier version of an article, [doc index, anchor, text, version, the version page that shows the change]). Built at release time by admin/build/search_index.py from the published pages; 383 documents and 5685 paragraphs at v0.12.8. An agent can fetch the two files and rank them itself, or read /llms.txt and the .md twins.</p>
+  <p>Search on newsroom.sgit.ai runs in the reader's browser. The index is https://newsroom.sgit.ai/search/docs.json (one entry per page: u address, t title, k kind, n article number, d date, x teaser, tp topics, tg tags, g the article graph's core idea and node labels, h headings with anchors) and https://newsroom.sgit.ai/search/text.json (paragraphs: [doc index, anchor, text] and, for text that is only in an earlier version of an article, [doc index, anchor, text, version, the version page that shows the change]). Built at release time by admin/build/search_index.py from the published pages; 384 documents and 5696 paragraphs at v0.12.9. An agent can fetch the two files and rank them itself, or read /llms.txt and the .md twins. Ask on the page (assets/search/ask.js) gives a model the top passages, numbered, with the instruction to answer only from them and cite them: Chrome's built-in model (LanguageModel) on the reader's machine, or the reader's own OpenRouter key, sent to openrouter.ai only.</p>
 </div>
 </main>
 <sg-meter view="page" kind="free" date="" topics="" title="Search, SGit Newsroom" quiet></sg-meter>
@@ -181,7 +186,7 @@ import('../assets/components/sg-meter/v1/v1.4/v1.4.0/sg-meter.js')
     <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="netline"><a href="https://sgit.ai" style="display:inline;padding:0"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://pt.newsroom.sgit.ai" style="display:inline;padding:0">&#8593; pt.newsroom.sgit.ai</a> &middot; <a href="https://graphs.sgit.ai" style="display:inline;padding:0">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai" style="display:inline;padding:0">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai" style="display:inline;padding:0">&#8593; nhi.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai" style="display:inline;padding:0">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.12.8</a> &middot; <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.12.9</a> &middot; <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>The newsroom</h4>

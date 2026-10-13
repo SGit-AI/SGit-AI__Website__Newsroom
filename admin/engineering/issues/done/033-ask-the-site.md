@@ -31,3 +31,11 @@ Then the page says so and shows the passages alone
 
 ## Mock-up
 Under the search box, a second button, *Ask*; under it the answer, then "From these passages" with the numbered snippets, then "Answered by: Chrome's built-in model" or "by openrouter.ai, model …, with your key". The design is in [search in the browser](../../admin/notes/2026-10-13__search-in-the-browser.md), "Next: asking the site".
+
+## Outcome
+Shipped in v0.12.9. *Ask* sits beside *Search*. `assets/search/ask.js` takes the best paragraph of each top page (two from the very best, up to eight, about 700 characters each, current wording only), numbers them, and gives them to the model with the instruction to answer only from them and cite them. The answer's citations link to the passages; *What the model is given* shows exactly what was sent. Chrome's built-in model first (on the device, nothing sent; the download progress shown on first use), the reader's OpenRouter key next (tab-only unless kept; Authorization header to openrouter.ai only; the model, characters and tokens said; a fall-back from the built-in model says why), the passages alone with neither. `?ask=1` asks on arrival. `test_ask.mjs` checks all three paths with openrouter.ai answered by a route in the test and the built-in model faked by an init script; the key is made up per run.
+
+Not built: the key kept in the master vault, a conversation, tools for the model (search again, open a page), answers kept as notes.
+
+## Screenshots
+![Ask: the answer with its citations, who answered, and the passages it came from (openrouter.ai stood in for by the test)](../shots/033-ask.png)

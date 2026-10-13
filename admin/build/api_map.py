@@ -69,6 +69,8 @@ FILES = [
     ("assets/vault-pane/notes.js",  "The reader's notes as records: one tap at a piece (done, read later, not for me, more like this, liked, wrong, fix this, idea) with words and the selected phrase, kept in localStorage sgit.notes.v1; keep, add words, remove, mark sent; the decision at a page", "this site"),
     ("assets/search/search.js", "Search in the browser: the index from search/docs.json and search/text.json, BM25 over fields and paragraphs, phrases, numbers, prefixes, snippets; the search page", "this site"),
     ("assets/search/search.css", "Styles for the search page", "this site"),
+    ("assets/search/ask.js", "Ask: the top passages, numbered, given to Chrome's built-in model or to openrouter.ai with the reader's own key, answered with citations; the key in the tab unless kept", "this site; openrouter.ai, only with the reader's key"),
+    ("assets/search/ask.css", "Styles for Ask on the search page", "this site"),
     ("assets/search/search-nav.css", "The Search link in the nav, on every page", "this site"),
     ("assets/vault-pane/wire-state.js", "What this browser knows about the wire: stories seen and when, the visit, the lens chosen; and which of the vault's releases to show", "this site"),
     ("assets/vault-pane/pending.js", "What this browser holds that the reader vault does not yet: reads, top-ups, notes and stories seen since the last update", "this site"),
@@ -132,6 +134,7 @@ TESTS = [("admin/build/test_meter.mjs", "the meter in Chromium"), ("admin/build/
          ("admin/build/test_sync.mjs", "the activity vault's logic in Node, with two devices' states"),
          ("admin/build/test_pane.mjs", "the vault pane in Chromium: the reading account carried between two devices through the mock vault, and a third opened with the recovery code"),
          ("admin/build/test_search.mjs", "search: the index and the ranking in Node, the page in Chromium"),
+         ("admin/build/test_ask.mjs", "ask: the passages and the messages in Node; no model, the reader's key (openrouter.ai answered by a route) and the built-in model (faked) in Chromium"),
          ("admin/build/test_notes.mjs", "the feedback loop in Chromium: notes on an article and at a wire story, carried by the vault, sent to the lane, read by the sgit CLI and lane.py with the read key alone, brought into a second device"),
          ("admin/build/vault-mock.mjs", "the mock of the vault API the two vault tests run against")]
 

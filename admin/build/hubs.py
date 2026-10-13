@@ -242,9 +242,9 @@ def shipped(f):
          'and the desk does not yet read the reader&rsquo;s decisions.'),
         ('<b>Search</b>', 'Every article, the wire&rsquo;s stories, the notes and the engineering cards, searched in the reader&rsquo;s browser from an '
          'index built at release: titles, tags and article graphs first, then the text; exact phrases, including wording an article had in an '
-         'earlier version; an article by its number; what the reader has read or marked done. Nothing typed is sent anywhere. '
+         'earlier version; an article by its number; what the reader has read or marked done. Searching sends nothing anywhere. <i>Ask</i> gives the passages found to Chrome&rsquo;s built-in model, on the reader&rsquo;s machine, or to openrouter.ai with the reader&rsquo;s own key, and the answer cites them. '
          '<a href="../search/index.html">Search</a>, <a href="../admin/notes/2026-10-13__search-in-the-browser.md">how it works</a>.',
-         'The wire is searched from its snapshot, taken at release; no synonyms or spelling correction; asking a model about the results is designed, not built.'),
+         'The wire is searched from its snapshot, taken at release; no synonyms or spelling correction; Ask is one question at a time, with no conversation and no tools, and the key is not yet kept in the vault.'),
         ('<b>The feedback loop</b> (beta)', 'Notes kept as you read: one tap at any page or at a wire story (done, read later, not for me, more like this, '
          'liked, wrong, fix this, idea), with words and the phrase selected, kept in this browser as it happens; what this browser knows about the page and '
          'a Reading tab with the done pages folded away; carried to the reader&rsquo;s other '

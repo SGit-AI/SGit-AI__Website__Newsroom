@@ -12,7 +12,7 @@
 
 <nav class="site"><div class="row">
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.12.8</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.12.9</a>
   <a class="search-btn" href="../search/index.html" title="Search the site, in your browser">Search</a>
   <link rel="stylesheet" href="../assets/search/search-nav.css">
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
@@ -140,6 +140,13 @@
 <div class="tablewrap"><table class="vers">
   <thead><tr><th>Version</th><th>Date</th><th>What shipped</th></tr></thead>
   <tbody>
+    <tr id="v0.12.9">
+      <td class="vnum">v0.12.9</td>
+      <td>13 Oct 2026</td>
+      <td><b>Ask the site: a question answered from the passages the search finds, by Chrome&rsquo;s built-in model or your own OpenRouter key.</b> Issue 033, in <a href="../engineering/releases/v0.12.9.html">the release</a>.
+        <p><b>Ask</b> (<a href="../engineering/issues/033.html">033</a>). <a href="../search/index.html#ask">The search page</a> has <i>Ask</i> beside <i>Search</i>. The question is searched with the same index; the best paragraph of each of the top pages, two from the very best, up to eight, current wording only, are numbered and given to a model with one instruction: answer only from them, cite them by number, and say so when they do not hold the answer. The answer comes with the passages under it, each linked to its page and section; a citation is a link to its passage; <i>What the model is given</i> shows exactly what was sent. The model is Chrome&rsquo;s built-in model where the browser has it (the Prompt API), on your machine with nothing sent; otherwise your own OpenRouter key, pasted under <i>How questions are answered</i>, kept in the tab unless you ask to keep it, sent to openrouter.ai and nowhere else, with the model, the characters and the tokens said. With neither, the passages alone. A question can be a link: <code>?q=&hellip;&amp;ask=1</code>.</p>
+        <p><b>Checked.</b> <code>test_ask.mjs</code>, the eleventh file in CI: in Node, the passages and the messages; in Chromium, no model (nothing sent), your key with openrouter.ai answered by a route in the test (the key in the Authorization header only, tab-only until kept, gone on Forget; the question and the passages in the body; citations linked; an error said), the built-in model faked by an init script (nothing sent; the fall-back to the key, with the reason), <code>?ask=1</code>, a phone. The key is made up per run and reaches no one.</p></td>
+    </tr>
     <tr id="v0.12.8">
       <td class="vnum">v0.12.8</td>
       <td>13 Oct 2026</td>
@@ -799,7 +806,7 @@
     <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="netline"><a href="https://sgit.ai" style="display:inline;padding:0"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://pt.newsroom.sgit.ai" style="display:inline;padding:0">&#8593; pt.newsroom.sgit.ai</a> &middot; <a href="https://graphs.sgit.ai" style="display:inline;padding:0">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai" style="display:inline;padding:0">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai" style="display:inline;padding:0">&#8593; nhi.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai" style="display:inline;padding:0">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.12.8</a> &middot; <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.12.9</a> &middot; <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>The newsroom</h4>

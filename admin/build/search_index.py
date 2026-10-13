@@ -309,19 +309,24 @@ def page(meta):
 <noscript><p>Search runs in your browser, which needs a script. The index is <a href="docs.json">docs.json</a> and <a href="text.json">text.json</a>; every page also has a <code>.md</code> twin, and <a href="../llms.txt">llms.txt</a> maps the site.</p></noscript>
 <script type="module">
 import { mountSearch } from '../assets/search/search.js';
-mountSearch(document.getElementById('search-mount'));
+import { mountAsk } from '../assets/search/ask.js';
+const el = document.getElementById('search-mount');
+mountSearch(el); mountAsk(el);
 </script>
 <h2 id="how">How it works</h2>
-<p>There is no search server. When this site is released, a script reads every page it publishes, each article&rsquo;s graph and tags, the earlier versions of each article, the wire&rsquo;s headlines and the site&rsquo;s own notes, and writes two files: <a href="docs.json">docs.json</a>, one entry per page with its title, tags, graph and headings, and <a href="text.json">text.json</a>, the text in paragraphs. This page fetches them like any other file and ranks them here, in your browser: a title, a tag or a node of an article&rsquo;s graph counts for more than a word in the text. Nothing you type leaves this page. Quotes find an exact phrase; a number on its own finds that article; a sentence that has since been changed is found in the earlier version it is from. Pages you have read, and pages you marked done, say so, from your own records. <a href="../admin/notes/2026-10-13__search-in-the-browser.md">The design</a>.</p>
+<p>There is no search server. When this site is released, a script reads every page it publishes, each article&rsquo;s graph and tags, the earlier versions of each article, the wire&rsquo;s headlines and the site&rsquo;s own notes, and writes two files: <a href="docs.json">docs.json</a>, one entry per page with its title, tags, graph and headings, and <a href="text.json">text.json</a>, the text in paragraphs. This page fetches them like any other file and ranks them here, in your browser: a title, a tag or a node of an article&rsquo;s graph counts for more than a word in the text. Searching sends nothing anywhere. Quotes find an exact phrase; a number on its own finds that article; a sentence that has since been changed is found in the earlier version it is from. Pages you have read, and pages you marked done, say so, from your own records. <a href="../admin/notes/2026-10-13__search-in-the-browser.md">The design</a>.</p>
+<h2 id="ask">Asking</h2>
+<p><i>Ask</i> searches the question the same way, takes the best paragraph of each of the top pages (up to eight, the current wording only), numbers them and gives them to a model with one instruction: answer only from them, cite them by number, and say so when they do not hold the answer. The answer comes with the passages under it, each linked to its page and section, so every claim can be checked where it came from; <i>What the model is given</i> shows exactly what was sent.</p>
+<p>The model is <b>Chrome&rsquo;s built-in model</b> when your browser has it (the Prompt API): it runs on your machine, with no key, and nothing is sent anywhere. Otherwise it is <b>your own OpenRouter key</b>, pasted under <i>How questions are answered</i>: kept in this tab unless you ask to keep it in this browser, sent to openrouter.ai with the question and the passages, and nowhere else; this site has no server to send it to. With neither, <i>Ask</i> shows the passages alone. A question can be a link: <code>?q=&hellip;&amp;ask=1</code> asks on arrival.</p>
 """
     agent = (f"Search on newsroom.sgit.ai runs in the reader's browser. The index is https://{HOST}/search/docs.json (one entry per page: u address, t title, k kind, n article number, "
              "d date, x teaser, tp topics, tg tags, g the article graph's core idea and node labels, h headings with anchors) and https://" + HOST + "/search/text.json "
              "(paragraphs: [doc index, anchor, text] and, for text that is only in an earlier version of an article, [doc index, anchor, text, version, the version page that shows the change]). Built at release time by admin/build/search_index.py from the published pages; "
-             f"{meta['docs']} documents and {meta['chunks']} paragraphs at {meta['release']}. An agent can fetch the two files and rank them itself, or read /llms.txt and the .md twins.")
+             f"{meta['docs']} documents and {meta['chunks']} paragraphs at {meta['release']}. An agent can fetch the two files and rank them itself, or read /llms.txt and the .md twins. Ask on the page (assets/search/ask.js) gives a model the top passages, numbered, with the instruction to answer only from them and cite them: Chrome's built-in model (LanguageModel) on the reader's machine, or the reader's own OpenRouter key, sent to openrouter.ai only.")
     return newsroom_page("search/index.html", "Search",
-                         "Search every article, the wire's stories and the site's notes, in your browser: titles, tags, article graphs and full text, with exact phrases and earlier versions.",
-                         body, eyebrow="Search · in your browser", lead="Every article, the wire and the notes, searched here: nothing you type leaves this page.",
-                         agent=agent, head='<link rel="stylesheet" href="../assets/search/search.css">', wide=True)
+                         "Search every article, the wire's stories and the site's notes, in your browser: titles, tags, article graphs and full text, with exact phrases and earlier versions; and ask a question, answered from the passages found by Chrome's built-in model or your own OpenRouter key.",
+                         body, eyebrow="Search · in your browser", lead="Every article, the wire and the notes, searched in your browser; and asked, with Chrome’s built-in model or your own OpenRouter key, answered from the passages found.",
+                         agent=agent, head='<link rel="stylesheet" href="../assets/search/search.css"><link rel="stylesheet" href="../assets/search/ask.css">', wide=True)
 
 
 def main():
