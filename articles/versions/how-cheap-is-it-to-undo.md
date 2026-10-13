@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-13 | published | 2,157 | first published | this release | [current](../how-cheap-is-it-to-undo.md) |
+| **v1.0.0** | 2026-10-13 | published | 2,157 | first published | [`891f36bfd`](https://github.com/SGit-AI/SGit-AI__Website/commit/891f36bfd3adb52697c96afb878e888cf6392100) | [current](../how-cheap-is-it-to-undo.md) |
 
 [← Back to the article](../how-cheap-is-it-to-undo.md) · [All articles](../index.md)
 

@@ -1,0 +1,213 @@
+{
+  "slug": "sixteen-notes-i-did-not-want-to-lose",
+  "teaser": "Sixteen notes stuck in a browser with no passkey led to a request: let any browser send to my vault, by link, text or QR code.",
+  "topics": [
+    "vaults-and-method",
+    "site-and-engineering"
+  ],
+  "core_idea": "Notes and reads that only existed in a browser without my passkeys showed the nudge working for the right reason, and point to a lane any browser can write to and none can read, offered as a URL, text or QR code; identity is still messy enough to block adoption, users accept one-off friction for clear value, agent email is harder than the service underneath, and the wires show how a general pipeline makes the next product nearly free.",
+  "nodes": [
+    {
+      "id": "iphone",
+      "label": "Sixteen changes, one browser",
+      "kind": "example",
+      "summary": "On an iPhone, a browser that could not reach my passkeys held sixteen changes my vault did not have."
+    },
+    {
+      "id": "webview",
+      "label": "In-app web views",
+      "kind": "concept",
+      "summary": "Apps on iOS cannot use passkeys outside their associated domains; real browsers can."
+    },
+    {
+      "id": "nudge",
+      "label": "A nudge for the right reason",
+      "kind": "claim",
+      "summary": "The count shows what is yours and at risk, so the reason to act is real."
+    },
+    {
+      "id": "lane",
+      "label": "Send to my vault",
+      "kind": "method",
+      "summary": "An append lane on every reader vault that any browser can write to and none can read."
+    },
+    {
+      "id": "link",
+      "label": "URL, text, QR code",
+      "kind": "artefact",
+      "summary": "The lane address, the append token and the public key, and nothing else."
+    },
+    {
+      "id": "meter",
+      "label": "The meter's reading share",
+      "kind": "example",
+      "summary": "Already encrypts in the browser and appends to sgit.ai's inbox with no vault or passkey."
+    },
+    {
+      "id": "brief",
+      "label": "The six-step brief",
+      "kind": "artefact",
+      "summary": "Reader key pair, lane, link, sender, drain and tests; only the key pair and the link are new."
+    },
+    {
+      "id": "identity",
+      "label": "Identity is a mess",
+      "kind": "claim",
+      "summary": "It works on some browsers and paths and not others, and that is why good ideas are not adopted."
+    },
+    {
+      "id": "friction",
+      "label": "One-off friction for value",
+      "kind": "claim",
+      "summary": "WhatsApp's QR pairing and Midjourney's Discord bot: accepted once when the value is clear; worth an A/B test."
+    },
+    {
+      "id": "email",
+      "label": "Agent email is harder than Gmail",
+      "kind": "example",
+      "summary": "Attachments, clean thread replies and inline images are the connector's limits, not the API's."
+    },
+    {
+      "id": "workaround",
+      "label": "Friction pushes to workarounds",
+      "kind": "claim",
+      "summary": "Blocking a feature for security sends people to other tools, a bigger risk."
+    },
+    {
+      "id": "wires",
+      "label": "Two config files, a product line",
+      "kind": "example",
+      "summary": "The OWASP and AWS wires run on the Industry Wire's pipeline from two 17-line configs."
+    },
+    {
+      "id": "general",
+      "label": "Build the general thing once",
+      "kind": "concept",
+      "summary": "The next use of a general mechanism is nearly free: the lane and the wire alike."
+    }
+  ],
+  "edges": [
+    {
+      "from": "webview",
+      "to": "iphone",
+      "rel": "answers"
+    },
+    {
+      "from": "iphone",
+      "to": "nudge",
+      "rel": "leads-to"
+    },
+    {
+      "from": "nudge",
+      "to": "lane",
+      "rel": "leads-to"
+    },
+    {
+      "from": "lane",
+      "to": "link",
+      "rel": "produces"
+    },
+    {
+      "from": "meter",
+      "to": "lane",
+      "rel": "example-of"
+    },
+    {
+      "from": "lane",
+      "to": "brief",
+      "rel": "produces"
+    },
+    {
+      "from": "iphone",
+      "to": "identity",
+      "rel": "example-of"
+    },
+    {
+      "from": "email",
+      "to": "identity",
+      "rel": "extends"
+    },
+    {
+      "from": "email",
+      "to": "workaround",
+      "rel": "leads-to"
+    },
+    {
+      "from": "link",
+      "to": "friction",
+      "rel": "depends-on"
+    },
+    {
+      "from": "identity",
+      "to": "friction",
+      "rel": "contrasts"
+    },
+    {
+      "from": "wires",
+      "to": "general",
+      "rel": "example-of"
+    },
+    {
+      "from": "lane",
+      "to": "general",
+      "rel": "example-of"
+    },
+    {
+      "from": "wires",
+      "to": "identity",
+      "rel": "contrasts"
+    }
+  ],
+  "links": {
+    "articles": [
+      "the-site-is-an-inbox",
+      "i-miss-it",
+      "connector-twin-before-you-deploy-an-agent",
+      "not-a-straight-line",
+      "six-agents-one-inbox",
+      "the-wall-under-the-reply",
+      "two-agents-one-vault"
+    ],
+    "pages": [],
+    "sites": [
+      "https://developer.apple.com/documentation/authenticationservices/supporting-passkeys",
+      "https://developer.chrome.com/blog/passkeys-gpm-ios",
+      "https://discord.com/build-case-studies/midjourney",
+      "https://developers.google.com/workspace/gmail/api/guides/uploads",
+      "https://developers.google.com/workspace/gmail/api/guides/threads",
+      "https://support.claude.com/en/articles/10166901-use-google-workspace-connectors",
+      "https://newsroom.sgit.ai/wire/owasp/",
+      "https://newsroom.sgit.ai/wire/aws/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "That is a nudge for the right reason, and it is working, on me.",
+      "why": "Why the count on the vault button is not gamification."
+    },
+    {
+      "text": "In real use they are the difference between a workflow and a workaround.",
+      "why": "The cost of small connector limits."
+    }
+  ],
+  "figures": [
+    {
+      "file": "sn-lane.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/sn-lane.webp",
+      "caption": "Send to my vault, from any browser. The reader's vault offers a link three ways, a URL, text and a QR code, carrying only where to write and the public key to encrypt with. Any browser, with no passkey and no sign-in, encrypts what it holds and appends it to the lane; it can write and never read. The next time the vault is opened with the passkey, the pane drains the lane into the reader's records.",
+      "kind": "architecture"
+    },
+    {
+      "file": "sn-brief.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/sn-brief.webp",
+      "caption": "The brief in six steps, with what already exists beside each: the append lanes, the browser-side encryption the meter already uses, the drain the reply lane needs anyway, and the tests. Only the reader's key pair and the pane's link are new.",
+      "kind": "playbook"
+    },
+    {
+      "file": "sn-wires.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/sn-wires.webp",
+      "caption": "One pipeline, three wires. A wire is a vault plus a config: the Industry Wire came first, and the OWASP Wire and the AWS Wire were added on 13 October with two 17-line configs, the same builder and the same reader, each with its own audience to find.",
+      "kind": "architecture"
+    }
+  ]
+}

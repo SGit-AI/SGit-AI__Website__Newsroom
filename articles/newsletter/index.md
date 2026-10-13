@@ -6,7 +6,7 @@
 
 ---
 
-Edition of 2026-10-08104 articles · 4 desk notes · 5 collections · 5 issuessgit.ai · v0.7.87
+Edition of 2026-10-08105 articles · 4 desk notes · 5 collections · 5 issuessgit.ai · v0.7.87
 
 # The newsletter
 
@@ -56,7 +56,7 @@ What it takes to let agents do real work for a business, from four sides: a team
 
 **Get the next issue by email.** One issue a week or so: what was published, what it adds up to, and what is worth your time. [Subscribe to the SGit Newsroom →](../../subscribe/index.md)
 
-Next issue: due now (25 articles since issue 5 (2026-10-11)). Issues are written by the [Journalist](../../newsroom/roles/journalist.md) from the articles' own data; every quote is checked against its article when the site is built.
+Next issue: due now (26 articles since issue 5 (2026-10-11)). Issues are written by the [Journalist](../../newsroom/roles/journalist.md) from the articles' own data; every quote is checked against its article when the site is built.
 
 
 ---
