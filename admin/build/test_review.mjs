@@ -123,7 +123,10 @@ try {
     await pg.evaluate(() => localStorage.clear())
     await pg.goto(B + `articles/${art2}.html`); await wait(1200)      // a charged page, so the state is saved
     s = await state(); s.personas.push({ id: 'p-bad', name: 'broken' }); await setState(s)
-    await pg.goto(B + 'account/personas.html'); await wait(1500)
+    await pg.goto(B + 'account/personas.html')
+    // wait for the meter to say it is ready (or failed), not a fixed time: on a slow runner 1.5 s was not always enough
+    await pg.waitForFunction(() => { const e = document.querySelector('sg-meter[view=personas]'); return e && /^(ready|error)$/.test(e.getAttribute('data-state') || '') }, null, { timeout: 20000 }).catch(() => {})
+    await wait(500)
     const r2 = await pg.evaluate(() => { const e = document.querySelector('sg-meter[view=personas]'); return { state: e.getAttribute('data-state'), text: e.shadowRoot.textContent.trim() } })
     pin('R2', r2.state === 'ready' && r2.text === '', 'a persona without on[] and off[] leaves the personas page blank')
 } finally {

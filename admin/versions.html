@@ -12,7 +12,9 @@
 
 <nav class="site"><div class="row">
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.12.6</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.12.7</a>
+  <a class="search-btn" href="../search/index.html" title="Search the site, in your browser">Search</a>
+  <link rel="stylesheet" href="../assets/search/search-nav.css">
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -138,6 +140,16 @@
 <div class="tablewrap"><table class="vers">
   <thead><tr><th>Version</th><th>Date</th><th>What shipped</th></tr></thead>
   <tbody>
+    <tr id="v0.12.7">
+      <td class="vnum">v0.12.7</td>
+      <td>13 Oct 2026</td>
+      <td><b>Search, in your browser: every article, the wire and the notes, with nothing you type sent anywhere.</b> Issues 031 and 032, in <a href="../engineering/releases/v0.12.7.html">the release</a>.
+        <p><b>Search</b> (<a href="../engineering/issues/031.html">031</a>). <a href="../search/index.html">The search page</a>, linked from the nav of every page, ranks an index built when the site is released from what it already publishes: every page in the sitemap, each article&rsquo;s teaser, topics, tags and graph, its headings with their anchors and its text in paragraphs, the earlier versions of each article (only the wording that is no longer in it), the wire&rsquo;s stories from its snapshot, and the site&rsquo;s own notes and engineering cards: 379 pages and about 5,700 paragraphs in two files, <a href="../search/docs.json">docs.json</a> and <a href="../search/text.json">text.json</a>. The page fetches them from this site and ranks them here, BM25 over fields and paragraphs, titles and tags counting for more than text; results come as you type and the query is in the address. <em>Quotes</em> find an exact phrase, including wording an article had in an earlier version, which is linked to the version page that shows the change: the sentence of <i>Who owns the words</i> corrected on 13 October is found in v1.0.0. A number alone opens that article. Filters for articles, the wire, engineering, pages and the archive, each with its count; a result you have read or marked done says so, and you can hide what you marked done. The design, and the model that comes next, are in <a href="notes/2026-10-13__search-in-the-browser.md">search in the browser</a>.</p>
+        <p><b>A test that waits for the meter</b> (<a href="../engineering/issues/032.html">032</a>). CI of v0.12.6 failed on the review test&rsquo;s R2 check, which read the personas page 1.5 seconds after opening it; with the vault pane&rsquo;s two new modules on every meter page, the meter on the CI runner was not ready by then. The check now waits for the meter to say it is ready. The finding it pins is unchanged. v0.12.6 deployed and was not tagged.</p>
+        <p><b>Next</b>, filed as <a href="../engineering/issues/033.html">033</a>: asking the site, with Chrome&rsquo;s built-in model where the browser has it or your own OpenRouter key, answering only from the passages the search finds and showing them beside the answer.</p>
+        <p><b>Checked.</b> <code>test_search.mjs</code>: in Node, the index (every article with its number, tags, graph and teaser; the wire, the notes and the cards; earlier wording with its version and version page) and the ranking on the owner&rsquo;s examples; in Chromium, the Search link, results as you type, the query in the address, the corrected sentence found in v1.0.0 and linked to its version page, a number, a section anchor, the filters, read and done from your own records, nothing sent to any other host, a phone. CI runs ten test files.</p>
+      </td>
+    </tr>
     <tr id="v0.12.6">
       <td class="vnum">v0.12.6</td>
       <td>13 Oct 2026</td>
@@ -779,7 +791,7 @@
     <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="netline"><a href="https://sgit.ai" style="display:inline;padding:0"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://pt.newsroom.sgit.ai" style="display:inline;padding:0">&#8593; pt.newsroom.sgit.ai</a> &middot; <a href="https://graphs.sgit.ai" style="display:inline;padding:0">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai" style="display:inline;padding:0">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai" style="display:inline;padding:0">&#8593; nhi.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai" style="display:inline;padding:0">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.12.6</a> &middot; <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.12.7</a> &middot; <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>The newsroom</h4>

@@ -70,7 +70,7 @@ jobs:
       - name: The meter, the reading lists, the review's findings, the passkey lab and the wire in Chromium, and the vault library in Node
         run: |
           set -euo pipefail
-          for t in test_meter.mjs test_lists.mjs test_review.mjs test_passkey.mjs test_wire.mjs test_vault.mjs test_sync.mjs test_pane.mjs test_notes.mjs; do
+          for t in test_meter.mjs test_lists.mjs test_review.mjs test_passkey.mjs test_wire.mjs test_vault.mjs test_sync.mjs test_pane.mjs test_notes.mjs test_search.mjs; do
             echo "== $t"
             node admin/build/$t | tee /tmp/$t.log
             if grep -q '^SKIP' /tmp/$t.log; then echo "::error::$t skipped: Playwright or Chromium missing on the runner"; exit 1; fi

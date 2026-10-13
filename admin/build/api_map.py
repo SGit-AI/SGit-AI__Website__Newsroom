@@ -67,6 +67,9 @@ FILES = [
     ("assets/door.js",             "From a passkey's PRF bytes (or a recovery code) to a door vault's key: the article's derivation, shared by the lab and the pane", "this site"),
     ("assets/vault-pane/vault-pane.js", "The vault pane on every page with the meter, in three tabs: this page (the notes, send to the newsroom, the lane's read key), the vault (enable with the passkey, create or join, update the vault, the table across devices, bring their activity here), the keys (every vault of the account)", "this site"),
     ("assets/vault-pane/notes.js",  "The reader's notes as records: one tap at a piece (done, read later, not for me, more like this, liked, wrong, fix this, idea) with words and the selected phrase, kept in localStorage sgit.notes.v1; keep, add words, remove, mark sent; the decision at a page", "this site"),
+    ("assets/search/search.js", "Search in the browser: the index from search/docs.json and search/text.json, BM25 over fields and paragraphs, phrases, numbers, prefixes, snippets; the search page", "this site"),
+    ("assets/search/search.css", "Styles for the search page", "this site"),
+    ("assets/search/search-nav.css", "The Search link in the nav, on every page", "this site"),
     ("assets/vault-pane/wire-state.js", "What this browser knows about the wire: stories seen and when, the visit, the lens chosen; and which of the vault's releases to show", "this site"),
     ("assets/vault-pane/pending.js", "What this browser holds that the reader vault does not yet: reads, top-ups, notes and stories seen since the last update", "this site"),
     ("assets/vault-pane/reading.js", "What this browser knows about what it has read, from the meter's records: one page summed up (times, when, how far, cost, rating) and the reading history", "this site"),
@@ -113,6 +116,7 @@ BUILD = [
     ("admin/build/wire.py", "writes the three wire pages and, from a clone, wire/snapshot.json"),
     ("admin/build/vault_page.py", "writes the vault page"),
     ("admin/build/lane.py", "the newsroom's end of the feedback loop: clones or pulls a reader's lane with its read key (from the environment, never a file) and prints the notes by page"),
+    ("admin/build/search_index.py", "writes search/docs.json, search/text.json and the search page from the published pages, the article graphs and versions, the wire's snapshot and the notes"),
     ("admin/build/engineering.py", "renders /engineering/ from admin/engineering/: the board, one page per issue card, one per release, issues.json"),
     ("admin/build/md.py", "the small markdown renderer the engineering pages use; escapes everything first"),
     ("admin/build/chrome.py", "the nav and footer on every page, with the meter's balance and the Vault button and pane on pages that carry the meter"),
@@ -127,6 +131,7 @@ TESTS = [("admin/build/test_meter.mjs", "the meter in Chromium"), ("admin/build/
          ("admin/build/test_vault.mjs", "real vaults in Node: the vendored library against the mock of the vault API, and the sgit CLI round trip"),
          ("admin/build/test_sync.mjs", "the activity vault's logic in Node, with two devices' states"),
          ("admin/build/test_pane.mjs", "the vault pane in Chromium: the reading account carried between two devices through the mock vault, and a third opened with the recovery code"),
+         ("admin/build/test_search.mjs", "search: the index and the ranking in Node, the page in Chromium"),
          ("admin/build/test_notes.mjs", "the feedback loop in Chromium: notes on an article and at a wire story, carried by the vault, sent to the lane, read by the sgit CLI and lane.py with the read key alone, brought into a second device"),
          ("admin/build/vault-mock.mjs", "the mock of the vault API the two vault tests run against")]
 

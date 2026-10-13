@@ -236,6 +236,9 @@ def nav_html(rel, up, newsroom=False, meter=False):
             f'  <a class="brand" href="{up}index.html">newsroom<span>.sgit.ai</span></a>\n'
             + parent +
             f'  <a class="ver" href="{up}admin/versions.html" title="Site release history">{VERSION}</a>\n'
+            # search, on every page: the page searches an index built at release, in the browser (admin/build/search_index.py)
+            f'  <a class="search-btn" href="{up}search/index.html" title="Search the site, in your browser">Search</a>\n'
+            f'  <link rel="stylesheet" href="{up}assets/search/search-nav.css">\n'
             + (f'  <sg-meter class="meter-nav" view="balance"></sg-meter>\n' if meter else '')
             # the vault pane: a button beside the balance, and the pane's script and style, on every page that carries the meter
             + (f'  <button class="vault-btn" type="button" aria-expanded="false" title="Your vault: the reading account carried between your devices"><span class="dot"></span>Vault</button>\n'

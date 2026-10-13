@@ -1,9 +1,9 @@
 {
  "what": "A derived index of the engineering cards on newsroom.sgit.ai; the files under admin/engineering/issues/ are the source.",
  "counts": {
-  "open": 10,
+  "open": 11,
   "blocked": 2,
-  "done": 18
+  "done": 20
  },
  "issues": [
   {
@@ -395,9 +395,58 @@
    "blocked_on": "",
    "path": "admin/engineering/issues/open/030-desk-reads-decisions.md",
    "url": "https://newsroom.sgit.ai/engineering/issues/030.html"
+  },
+  {
+   "id": "031",
+   "title": "Search in the browser: an index built at release, ranked in the page",
+   "kind": "story",
+   "priority": "high",
+   "status": "done",
+   "created": "2026-10-13T10:30:00Z",
+   "release": "v0.12.7",
+   "estimated_effort": "medium",
+   "blocked_on": "",
+   "path": "admin/engineering/issues/done/031-search-in-the-browser.md",
+   "url": "https://newsroom.sgit.ai/engineering/issues/031.html"
+  },
+  {
+   "id": "032",
+   "title": "CI: the R2 check read the meter after a fixed wait, and failed on a slow runner",
+   "kind": "bug",
+   "priority": "high",
+   "status": "done",
+   "created": "2026-10-13T10:30:00Z",
+   "release": "v0.12.7",
+   "estimated_effort": "small",
+   "blocked_on": "",
+   "path": "admin/engineering/issues/done/032-r2-waits-for-the-meter.md",
+   "url": "https://newsroom.sgit.ai/engineering/issues/032.html"
+  },
+  {
+   "id": "033",
+   "title": "Ask the site: Chrome's built-in model, or the reader's OpenRouter key, answering from the search index",
+   "kind": "story",
+   "priority": "high",
+   "status": "open",
+   "created": "2026-10-13T10:30:00Z",
+   "release": "v0.12.8",
+   "estimated_effort": "large",
+   "blocked_on": "",
+   "path": "admin/engineering/issues/open/033-ask-the-site.md",
+   "url": "https://newsroom.sgit.ai/engineering/issues/033.html"
   }
  ],
  "releases": [
+  {
+   "version": "v0.12.7",
+   "date": "2026-10-13",
+   "kind": "patch",
+   "issues": [
+    "031",
+    "032"
+   ],
+   "url": "https://newsroom.sgit.ai/engineering/releases/v0.12.7.html"
+  },
   {
    "version": "v0.12.6",
    "date": "2026-10-13",
