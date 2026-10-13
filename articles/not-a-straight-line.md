@@ -2,7 +2,7 @@
 
 > Today I spent most of the day dictating voice memos and improving the workflow that turns them into articles, and I would argue I was working for RiskMandate the whole time. This is the meta-strategy behind that. Progress does not go in a straight line, so "focus on one thing only" is good advice that assumes something false. I do focus, with undivided attention, on whichever thing has the highest leverage, and that is the one with users and feedback loops. RiskMandate is where the commercial opportunity is, and its oldest technical problem, where to keep the master vault's key, had resisted six months of attempts that kept failing my simplicity test. The newsroom solved it in two days, because the newsroom had the momentum to need it. The newsroom is also solving the agentic follow-up workflows RiskMandate will need, and becoming the public example of an Agent Behaviour Policy and a licence to operate that customer work can never be. And it has a history: The Cyber Boardroom, where I learned what personas and customised output are worth and paused because it needed somewhere to keep confidential data; MyFeeds, where I built personalised feeds on semantic graphs, found the industry silent and paused again; the writing from 2025 that the newsroom now stands on. I am going back to publishers with an end-to-end example. If it does not land in 2026, I will try in 2027, and the thinking will still be there, because it is open source.
 
-*Source: <https://newsroom.sgit.ai/articles/not-a-straight-line.html> · sgit.ai v0.7.82 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/not-a-straight-line.html> · sgit.ai v0.7.86 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 
@@ -109,6 +109,8 @@ Startups & strategySite & engineering[This article as a graph →](graphs.md#not
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 95 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=95)
+
+**Posting this article on LinkedIn?** The cover is [not-a-straight-line.jpg](banners/not-a-straight-line.jpg) (1920×1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page.
 
 **Want the next issue by email.** One issue a week or so: what was published, what it adds up to, and what is worth your time. [Subscribe to the SGit Newsroom →](../subscribe/index.md)
 

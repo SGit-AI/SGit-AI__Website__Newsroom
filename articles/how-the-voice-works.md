@@ -2,7 +2,7 @@
 
 > I showed this morning's walkthrough to the person it was written for, and the question she asked was not about contacts. It was: how do you make your AI sound so human? I have wanted to write this for a while, and I want to do it in two voices, because the honest answer is that the voice is not a setting and not a trick, it is four inputs, and the model is the right one to describe how they land. The four: a corpus of 86 articles, 51 of them from voice memos, about 347,000 words, each citing the ones before it and resting on years of my earlier writing; the voice memos themselves, which carry how I think, the rhythm, the tangents, the five topics in one breath and the order they came in; a short list of wording rules, seven of them, each learned when a word jarred and written into the session's behaviour policy so it never comes back; and me, reading everything, before and after it goes live. My hypothesis was that the memos do most of the work, and the data from this session is consistent with it: in the last two days the corrections I gave were almost all about content and direction, one about a word. Then Claude speaks, in its own voice, about why this works for a model like it, what it is actually doing when it writes as me, and what it cannot do, which is give this voice to anyone else. The method transfers. The voice does not.
 
-*Source: <https://newsroom.sgit.ai/articles/how-the-voice-works.html> · sgit.ai v0.7.82 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/how-the-voice-works.html> · sgit.ai v0.7.86 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 
@@ -86,6 +86,10 @@ Agents & policySite & engineering[This article as a graph →](graphs.md#how-the
 - [Ways to read one article: the finished piece stays at the centre, and the reader picks the way in](ways-to-read-one-article.md) The five readers' views arrived as folds inside the long piece; now the reader picks the way in, with a default, and the finished article stays at the centre.
 - [How much of this did I write? The numbers behind twenty articles in four weeks, and what the input actually was](how-much-of-this-did-i-write.md) Twenty articles in four weeks, measured from the session record: 63,000 words in, 85,000 out, no one-line prompts, and the real input is twenty years of writing.
 - [Knowing when to stop: what experience gives people, and what we have to design into agents](knowing-when-to-stop.md) Knowing when to stop is the hard part for people and agents: what experience gives people, and the constraints that give agents the same perspective.
+
+### Continued by
+
+- [Who owns the words: agents can make decisions, but they cannot hold responsibility](who-owns-the-words.md) Agents in loops make real decisions, but responsibility stays with whoever granted the reach; disclosure is a label, not a team to manage.
 
 [All articles](index.md) · [All graphs](graphs.md)
 

@@ -2,7 +2,7 @@
 
 > The CEO of one of the largest AI vendors published seven principles for treating models as insider risks, and Microsoft shipped containers and a control specification for agents. Both say what this network has been arguing: an agent's limits must sit outside the agent. Eight articles on what that means in practice. An answer to the seven principles, one by one, with what runs and what is only designed; the same argument translated into the language of behaviour policies; where the platform draws its line and why the business logic sits above it; ten hard questions for RiskMandate; and the controls we run on our own agents every day, from a second reader that fails closed to a desktop of their own.
 
-*Source: <https://newsroom.sgit.ai/articles/newsletter/2026/10/11/004-authority-outside-the-model.html> · sgit.ai v0.7.82 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/newsletter/2026/10/11/004-authority-outside-the-model.html> · sgit.ai v0.7.86 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 

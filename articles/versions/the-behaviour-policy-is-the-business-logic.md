@@ -2,7 +2,7 @@
 
 > Every published version of the article "Zoom into an agent's behaviour policy and you find the business logic", with the date, the words and what changed.
 
-*Source: <https://newsroom.sgit.ai/articles/versions/the-behaviour-policy-is-the-business-logic.html> · sgit.ai v0.7.82 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/versions/the-behaviour-policy-is-the-business-logic.html> · sgit.ai v0.7.86 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 

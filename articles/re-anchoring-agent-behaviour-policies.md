@@ -2,7 +2,7 @@
 
 > Instructions given only in conversation can be lost when a long session is summarised. The session that runs this site has been summarised eighteen times in a month, each time keeping under 2% of what it replaced. Re-anchoring is the answer: keep the agent's rules in a behaviour policy file and have the harness print it back after every summary, so the rules are restored rather than remembered. And because you cannot see what a summary drops, add a canary: a short status report, computed from the transcript, that ends every few answers. If it stops appearing, something in the policy has not been read. Both are running in this session now. This is how they work, what each piece is for, and why the best way to do it today is a recipe that someone has to keep up to date.
 
-*Source: <https://newsroom.sgit.ai/articles/re-anchoring-agent-behaviour-policies.html> · sgit.ai v0.7.82 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/re-anchoring-agent-behaviour-policies.html> · sgit.ai v0.7.86 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 

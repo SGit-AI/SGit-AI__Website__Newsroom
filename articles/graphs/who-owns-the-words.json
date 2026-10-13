@@ -1,0 +1,178 @@
+{
+  "slug": "who-owns-the-words",
+  "teaser": "Agents in loops make real decisions, but responsibility stays with whoever granted the reach; disclosure is a label, not a team to manage.",
+  "topics": [
+    "agents-and-policy"
+  ],
+  "core_idea": "An early user asked who owns the words an agentic workflow drafts and whether they would ever need to address the agents directly; today's models are not sentient but far richer than next-word prediction, mirrors that can simulate any emotion and invite anthropomorphism as ELIZA did; models in loops make real decisions, yet responsibility stays with whoever granted the reach and set the mandate, since the moment of authorisation is the grant; talking to the agents is normal, but going around the accountable person is something only an attacker with an injected instruction would try, while what the agents may do without the person is decided in advance in a published policy; disclosure should be a label on how the words were made, not a team to manage; the best analogy is an employee with a job description, which an Agent Behaviour Policy publishes; diversity of models is resilience; and fluent writing was never the real value, judgement and ownership are.",
+  "nodes": [
+    {
+      "id": "question",
+      "label": "Who owns the words?",
+      "kind": "question",
+      "summary": "If agents only draft and a person signs and sends, does presenting them as a team imply agency, and would a recipient ever address them directly?"
+    },
+    {
+      "id": "not-sentient",
+      "label": "Not sentient, and not just next-word prediction",
+      "kind": "claim",
+      "summary": "Models build rich graphs of our language and may have found relationships we had not; a prompt is a kind of real-time fine-tuning."
+    },
+    {
+      "id": "mirror",
+      "label": "A mirror that can simulate any emotion",
+      "kind": "concept",
+      "summary": "Models reflect whoever talks to them, and people anthropomorphise them, as Weizenbaum's secretary did with ELIZA in 1966."
+    },
+    {
+      "id": "decisions",
+      "label": "Models in loops make real decisions",
+      "kind": "claim",
+      "summary": "Every tool call is a choice; loops became mainstream and reliable this year."
+    },
+    {
+      "id": "grant",
+      "label": "The moment of authorisation is the grant",
+      "kind": "concept",
+      "summary": "Responsibility does not travel with the agent's decisions; it stays with whoever granted the reach and set the mandate."
+    },
+    {
+      "id": "attack",
+      "label": "Talking to the agent is normal; going around the person is not",
+      "kind": "claim",
+      "summary": "Nobody legitimate needs the agent to act without its owner; the only party who would try is an attacker with an injected instruction, and the design should make it fail."
+    },
+    {
+      "id": "without-signoff",
+      "label": "What the agents may do without the person, decided in advance",
+      "kind": "question",
+      "summary": "Not a bypass but an authorisation written down once: today nothing leaves the building; inside it, research, summaries, materials and drafts; the list belongs in a published policy."
+    },
+    {
+      "id": "label",
+      "label": "Disclosure is a label, not a team",
+      "kind": "method",
+      "summary": "Drafted by an agent, approved and sent by a named person; machine-written text should be read differently by people and models."
+    },
+    {
+      "id": "first-person",
+      "label": "Only the accountable person speaks for commitments",
+      "kind": "method",
+      "summary": "An agent can say what it did, but not make commitments in the first person."
+    },
+    {
+      "id": "employee",
+      "label": "An employee with a job description",
+      "kind": "concept",
+      "summary": "Some agency inside a role; an Agent Behaviour Policy is the job description, published, with a feedback loop."
+    },
+    {
+      "id": "diversity",
+      "label": "Diversity is resilience",
+      "kind": "claim",
+      "summary": "Nature favours variety against catastrophic failure; Geer's 2003 monoculture paper says the same of software, and of one model for every agent."
+    },
+    {
+      "id": "devalued",
+      "label": "Fluent writing was never the real value",
+      "kind": "claim",
+      "summary": "As writing becomes a commodity it is devalued; judgement and ownership of the words remain."
+    }
+  ],
+  "edges": [
+    {
+      "from": "question",
+      "to": "not-sentient",
+      "rel": "leads-to"
+    },
+    {
+      "from": "not-sentient",
+      "to": "mirror",
+      "rel": "extends"
+    },
+    {
+      "from": "decisions",
+      "to": "grant",
+      "rel": "contrasts"
+    },
+    {
+      "from": "grant",
+      "to": "question",
+      "rel": "answers"
+    },
+    {
+      "from": "question",
+      "to": "attack",
+      "rel": "leads-to"
+    },
+    {
+      "from": "attack",
+      "to": "without-signoff",
+      "rel": "leads-to"
+    },
+    {
+      "from": "mirror",
+      "to": "label",
+      "rel": "leads-to"
+    },
+    {
+      "from": "label",
+      "to": "first-person",
+      "rel": "extends"
+    },
+    {
+      "from": "without-signoff",
+      "to": "employee",
+      "rel": "answers"
+    },
+    {
+      "from": "employee",
+      "to": "grant",
+      "rel": "depends-on"
+    },
+    {
+      "from": "diversity",
+      "to": "employee",
+      "rel": "extends"
+    },
+    {
+      "from": "devalued",
+      "to": "grant",
+      "rel": "leads-to"
+    }
+  ],
+  "links": {
+    "articles": [
+      "places-of-highest-leverage",
+      "riskmandate-ten-questions",
+      "a-second-reader-the-agent-cannot-skip",
+      "how-the-voice-works",
+      "agency-is-not-a-yes"
+    ],
+    "pages": [],
+    "sites": [
+      "https://en.wikipedia.org/wiki/ELIZA",
+      "https://www.schneier.com/essays/archives/2003/09/cyberinsecurity_the.html",
+      "https://kk.org/outofcontrol/",
+      "https://riskmandate.ai/agent-behaviour-policy.html"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "Yes, the model predicts the next word. To be honest, so do I.",
+      "why": "Why the usual description is accurate and demeaning at the same time."
+    },
+    {
+      "text": "An agent can say what it did, but only the accountable person speaks for decisions and commitments.",
+      "why": "The rule the email exposed."
+    }
+  ],
+  "figures": [
+    {
+      "file": "wo-who.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/wo-who.webp",
+      "caption": "Who decides, and who answers. The grant and the mandate on the left; the agent in a loop making real decisions in the middle; the person who reads, approves, signs and sends; and the recipient, who needs one accountable name and a label on how the words were made. Responsibility runs the whole length and belongs to one person.",
+      "kind": "diagram"
+    }
+  ]
+}

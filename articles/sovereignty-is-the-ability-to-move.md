@@ -2,7 +2,7 @@
 
 > I spent today at a sovereignty event, and what struck me most is how much of Europe's sovereignty conversation is about things we do not control and will not control soon: frontier models, giant data centres, GPUs. That is playing where the ball is, not where it is going, and in padel, which I am learning, that is the difference between having all the time in the world and having none. My view is that technology sovereignty is the ability to move, and that it comes from treating every dot in the stack, commodity, product or custom built, as something you can replace. The test is a Wardley map with one question: take away the dot, what happens? If the answer is that the service stops, that is a board-level risk with a name next to it. The fix is not an alternative that is as good as today, which is why most efforts never start. It is a twin of the thing you do not control, running in your QA environment, good enough for the minimum viable company: the priority customers and the services that must not stop, slower, dearer, tested every week. Can it move is the first question; is it cheap and does it scale is the second, and we keep confusing them. Open source is the only kind of control that survives an acquisition. Europe does not lack startups or talent; it lacks the commercial open source model that would let its many small players add up. And now, with models that can read a map and run a simulation on a twin, this analysis can finally be done at scale.
 
-*Source: <https://newsroom.sgit.ai/articles/sovereignty-is-the-ability-to-move.html> · sgit.ai v0.7.82 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/sovereignty-is-the-ability-to-move.html> · sgit.ai v0.7.86 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 
@@ -114,6 +114,10 @@ Startups & strategySite & engineering[This article as a graph →](graphs.md#sov
 - [Why I love Wardley maps: the best of ours, how I read one, and a map inside a map inside a map](why-i-love-wardley-maps.md) The best of our Wardley maps with their context, why the technique matters, one map read as a story, and a map inside a map inside a map.
 - [Footprint and blast radius: what the agent actually did, and what it would have cost](footprint-and-blast-radius.md) Footprint is what an agent actually did, read afterwards from logs and vault history; blast radius is what a row of its reach would cost the business today.
 - [Move the cloud, not the code: twins, sovereignty that works in practice, and the migration that pays for itself on the day you switch](move-the-cloud-not-the-code.md) Workloads stay on hyperscalers because moving means changing code; a twin lets the code not know, and the value in the twin is what signs the migration.
+
+### Continued by
+
+- [What open source is, and what it is not: six misconceptions, a little history, and why the point is that nobody can lock you in](what-open-source-is-and-is-not.md) Open source is a copyright licence, not a free-for-all: six misconceptions corrected, and why the point is that nobody can lock you in.
 
 [All articles](index.md) · [All graphs](graphs.md)
 

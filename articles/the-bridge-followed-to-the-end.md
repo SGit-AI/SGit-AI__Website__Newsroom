@@ -2,7 +2,7 @@
 
 > A simulation of Markus Franz's bridge example, played out on a story vault from the council's first notice to the first car across. A fictional town's main bridge closes; the council says one week, the contract on site says three, an independent engineer says five to seven, and it opens after forty-six days. The paper leads with it five times; readers need it on fifty-seven days. Three readers, a parent, a café owner on the far bank and a plumber who works both banks, use the same claims in three different ways, each from their own graph, and make better decisions with them: an after-school club booked in time, £640 of stock not wasted and £1,200 of relief claimed, nine hours of driving saved. A county highways team, an investor, a national desk and a routing agent buy from the same graph, and the agent spends a seventh of what it would have spent searching, and is right from the first week. Everything they pay, £2,707 in the simulation, walks back down the claims to the reporter, the paper and the resident whose photos were the evidence. The vault is published with its read key.
 
-*Source: <https://newsroom.sgit.ai/articles/the-bridge-followed-to-the-end.html> · sgit.ai v0.7.82 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/the-bridge-followed-to-the-end.html> · sgit.ai v0.7.86 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 

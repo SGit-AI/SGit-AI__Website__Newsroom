@@ -2,7 +2,7 @@
 
 > I read the newsroom on my iPhone, my iPad, my laptops and my iMac, and they do not agree: four balances, four sets of personas, four reading histories. I miss a feature, and that is the best news this week. The test I keep coming back to, from For a startup, the most important question is whether they miss it, applies to the people who build a product too: if they have access, can change it, and still do not use it, something is missing, and it is not the code. I failed that test with good ideas before, The Cyber Boardroom and MyFeeds among them. The vaults pass it now: I create them all the time, my agents create them, and they are getting good because they are used. And when the people who decide the roadmap are users, the next feature announces itself; with agents that can build almost anything, that sense of direction is the scarce part, and the speed of the loop, from a comment to an article to a feature, is the moat. This article makes that case, and ends with the brief for the feature I miss: the reader's own encrypted vault on the newsroom, with an access key, a key pair for signing and receiving, a log per device that merges without conflict, adding a device, and a one-way line to the agent that edits the site.
 
-*Source: <https://newsroom.sgit.ai/articles/i-miss-it.html> · sgit.ai v0.7.82 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/i-miss-it.html> · sgit.ai v0.7.86 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 

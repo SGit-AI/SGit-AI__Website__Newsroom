@@ -2,7 +2,7 @@
 
 > Ten slides that read one Wardley map as a story: the afternoon of 10 October 2026 on sgit.ai, one release per frame, with one question per slide. Where is the user, what is new, what does it stand on, where did the movement happen, where would somebody else hook in, what is next. Prints to PDF in the browser.
 
-*Source: <https://newsroom.sgit.ai/articles/decks/reading-one-map.html> · sgit.ai v0.7.82 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/decks/reading-one-map.html> · sgit.ai v0.7.86 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 

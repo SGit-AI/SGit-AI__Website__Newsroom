@@ -2,7 +2,7 @@
 
 > RiskMandate's Agent Behaviour Policy applied to real agents: one inbox, a team of twelve, the personal agents of 2026, and what an agent actually did afterwards.
 
-*Source: <https://newsroom.sgit.ai/articles/collections/behaviour-policy-in-practice.html> · sgit.ai v0.7.82 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/collections/behaviour-policy-in-practice.html> · sgit.ai v0.7.86 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 

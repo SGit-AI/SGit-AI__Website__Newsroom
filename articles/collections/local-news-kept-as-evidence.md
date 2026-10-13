@@ -2,7 +2,7 @@
 
 > A bridge closure followed to the end, a hospital outage nobody could check from home, and the case that local journalism has the most to gain from keeping its reporting as a graph.
 
-*Source: <https://newsroom.sgit.ai/articles/collections/local-news-kept-as-evidence.html> · sgit.ai v0.7.82 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/collections/local-news-kept-as-evidence.html> · sgit.ai v0.7.86 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 

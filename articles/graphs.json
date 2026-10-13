@@ -1,7 +1,7 @@
 {
   "site": "https://sgit.ai",
-  "generated": "2026-10-12",
-  "site_version": "v0.7.82",
+  "generated": "2026-10-13",
+  "site_version": "v0.7.86",
   "schema": "https://newsroom.sgit.ai/articles/graphs.html",
   "topics": [
     {
@@ -54,6 +54,441 @@
     "produces"
   ],
   "articles": [
+    {
+      "slug": "who-owns-the-words",
+      "title": "Who owns the words: agents can make decisions, but they cannot hold responsibility",
+      "date": "2026-10-12",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/who-owns-the-words.html",
+      "markdown": "https://newsroom.sgit.ai/articles/who-owns-the-words.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/who-owns-the-words.webp",
+      "teaser": "Agents in loops make real decisions, but responsibility stays with whoever granted the reach; disclosure is a label, not a team to manage.",
+      "topics": [
+        "agents-and-policy"
+      ],
+      "tags": [
+        "agents",
+        "accountability",
+        "responsibility",
+        "agency",
+        "anthropomorphism",
+        "disclosure",
+        "agent-behaviour-policy",
+        "riskmandate",
+        "ai-models",
+        "writing",
+        "article"
+      ],
+      "links_out": [
+        "places-of-highest-leverage",
+        "riskmandate-ten-questions",
+        "a-second-reader-the-agent-cannot-skip",
+        "how-the-voice-works",
+        "agency-is-not-a-yes"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "wo-who.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/wo-who.webp",
+          "caption": "Who decides, and who answers. The grant and the mandate on the left; the agent in a loop making real decisions in the middle; the person who reads, approves, signs and sends; and the recipient, who needs one accountable name and a label on how the words were made. Responsibility runs the whole length and belongs to one person.",
+          "kind": "diagram"
+        }
+      ],
+      "graph": {
+        "slug": "who-owns-the-words",
+        "teaser": "Agents in loops make real decisions, but responsibility stays with whoever granted the reach; disclosure is a label, not a team to manage.",
+        "topics": [
+          "agents-and-policy"
+        ],
+        "core_idea": "An early user asked who owns the words an agentic workflow drafts and whether they would ever need to address the agents directly; today's models are not sentient but far richer than next-word prediction, mirrors that can simulate any emotion and invite anthropomorphism as ELIZA did; models in loops make real decisions, yet responsibility stays with whoever granted the reach and set the mandate, since the moment of authorisation is the grant; talking to the agents is normal, but going around the accountable person is something only an attacker with an injected instruction would try, while what the agents may do without the person is decided in advance in a published policy; disclosure should be a label on how the words were made, not a team to manage; the best analogy is an employee with a job description, which an Agent Behaviour Policy publishes; diversity of models is resilience; and fluent writing was never the real value, judgement and ownership are.",
+        "nodes": [
+          {
+            "id": "question",
+            "label": "Who owns the words?",
+            "kind": "question",
+            "summary": "If agents only draft and a person signs and sends, does presenting them as a team imply agency, and would a recipient ever address them directly?"
+          },
+          {
+            "id": "not-sentient",
+            "label": "Not sentient, and not just next-word prediction",
+            "kind": "claim",
+            "summary": "Models build rich graphs of our language and may have found relationships we had not; a prompt is a kind of real-time fine-tuning."
+          },
+          {
+            "id": "mirror",
+            "label": "A mirror that can simulate any emotion",
+            "kind": "concept",
+            "summary": "Models reflect whoever talks to them, and people anthropomorphise them, as Weizenbaum's secretary did with ELIZA in 1966."
+          },
+          {
+            "id": "decisions",
+            "label": "Models in loops make real decisions",
+            "kind": "claim",
+            "summary": "Every tool call is a choice; loops became mainstream and reliable this year."
+          },
+          {
+            "id": "grant",
+            "label": "The moment of authorisation is the grant",
+            "kind": "concept",
+            "summary": "Responsibility does not travel with the agent's decisions; it stays with whoever granted the reach and set the mandate."
+          },
+          {
+            "id": "attack",
+            "label": "Talking to the agent is normal; going around the person is not",
+            "kind": "claim",
+            "summary": "Nobody legitimate needs the agent to act without its owner; the only party who would try is an attacker with an injected instruction, and the design should make it fail."
+          },
+          {
+            "id": "without-signoff",
+            "label": "What the agents may do without the person, decided in advance",
+            "kind": "question",
+            "summary": "Not a bypass but an authorisation written down once: today nothing leaves the building; inside it, research, summaries, materials and drafts; the list belongs in a published policy."
+          },
+          {
+            "id": "label",
+            "label": "Disclosure is a label, not a team",
+            "kind": "method",
+            "summary": "Drafted by an agent, approved and sent by a named person; machine-written text should be read differently by people and models."
+          },
+          {
+            "id": "first-person",
+            "label": "Only the accountable person speaks for commitments",
+            "kind": "method",
+            "summary": "An agent can say what it did, but not make commitments in the first person."
+          },
+          {
+            "id": "employee",
+            "label": "An employee with a job description",
+            "kind": "concept",
+            "summary": "Some agency inside a role; an Agent Behaviour Policy is the job description, published, with a feedback loop."
+          },
+          {
+            "id": "diversity",
+            "label": "Diversity is resilience",
+            "kind": "claim",
+            "summary": "Nature favours variety against catastrophic failure; Geer's 2003 monoculture paper says the same of software, and of one model for every agent."
+          },
+          {
+            "id": "devalued",
+            "label": "Fluent writing was never the real value",
+            "kind": "claim",
+            "summary": "As writing becomes a commodity it is devalued; judgement and ownership of the words remain."
+          }
+        ],
+        "edges": [
+          {
+            "from": "question",
+            "to": "not-sentient",
+            "rel": "leads-to"
+          },
+          {
+            "from": "not-sentient",
+            "to": "mirror",
+            "rel": "extends"
+          },
+          {
+            "from": "decisions",
+            "to": "grant",
+            "rel": "contrasts"
+          },
+          {
+            "from": "grant",
+            "to": "question",
+            "rel": "answers"
+          },
+          {
+            "from": "question",
+            "to": "attack",
+            "rel": "leads-to"
+          },
+          {
+            "from": "attack",
+            "to": "without-signoff",
+            "rel": "leads-to"
+          },
+          {
+            "from": "mirror",
+            "to": "label",
+            "rel": "leads-to"
+          },
+          {
+            "from": "label",
+            "to": "first-person",
+            "rel": "extends"
+          },
+          {
+            "from": "without-signoff",
+            "to": "employee",
+            "rel": "answers"
+          },
+          {
+            "from": "employee",
+            "to": "grant",
+            "rel": "depends-on"
+          },
+          {
+            "from": "diversity",
+            "to": "employee",
+            "rel": "extends"
+          },
+          {
+            "from": "devalued",
+            "to": "grant",
+            "rel": "leads-to"
+          }
+        ],
+        "links": {
+          "articles": [
+            "places-of-highest-leverage",
+            "riskmandate-ten-questions",
+            "a-second-reader-the-agent-cannot-skip",
+            "how-the-voice-works",
+            "agency-is-not-a-yes"
+          ],
+          "pages": [],
+          "sites": [
+            "https://en.wikipedia.org/wiki/ELIZA",
+            "https://www.schneier.com/essays/archives/2003/09/cyberinsecurity_the.html",
+            "https://kk.org/outofcontrol/",
+            "https://riskmandate.ai/agent-behaviour-policy.html"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "Yes, the model predicts the next word. To be honest, so do I.",
+            "why": "Why the usual description is accurate and demeaning at the same time."
+          },
+          {
+            "text": "An agent can say what it did, but only the accountable person speaks for decisions and commitments.",
+            "why": "The rule the email exposed."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "what-open-source-is-and-is-not",
+      "title": "What open source is, and what it is not: six misconceptions, a little history, and why the point is that nobody can lock you in",
+      "date": "2026-10-12",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/what-open-source-is-and-is-not.html",
+      "markdown": "https://newsroom.sgit.ai/articles/what-open-source-is-and-is-not.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/what-open-source-is-and-is-not.webp",
+      "teaser": "Open source is a copyright licence, not a free-for-all: six misconceptions corrected, and why the point is that nobody can lock you in.",
+      "topics": [
+        "startups-and-strategy",
+        "site-and-engineering"
+      ],
+      "tags": [
+        "open-source",
+        "licensing",
+        "copyleft",
+        "gpl",
+        "apache-2",
+        "copyright",
+        "open-weights",
+        "maintainers",
+        "funding",
+        "security",
+        "sovereignty",
+        "history",
+        "article"
+      ],
+      "links_out": [
+        "supply-chain-of-vaults",
+        "sovereignty-is-the-ability-to-move"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "os-myths.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/os-myths.webp",
+          "caption": "Six misconceptions about open source, and what is true. The control is real and visible; most projects are run by a few people; the security metric is whether somebody had the time to review it; somebody is always paying; weights are a compiled binary; and no licence means all rights reserved.",
+          "kind": "comparison"
+        },
+        {
+          "file": "os-timeline.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/os-timeline.webp",
+          "caption": "From free software to open weights, the short version: GNU in 1983, the Free Software Foundation in 1985, the GPL in 1989, Linux from 1991, the Debian guidelines in 1997, \"open source\" and the OSI in 1998, Apache 2.0 in 2004, and in 2024 both the xz utils backdoor and the Open Source AI Definition.",
+          "kind": "timeline"
+        }
+      ],
+      "graph": {
+        "slug": "what-open-source-is-and-is-not",
+        "teaser": "Open source is a copyright licence, not a free-for-all: six misconceptions corrected, and why the point is that nobody can lock you in.",
+        "topics": [
+          "startups-and-strategy",
+          "site-and-engineering"
+        ],
+        "core_idea": "Open source is a copyright licence in which the holder grants copying, use and change; it began as the GPL's copyleft and was reframed pragmatically as open source in 1998; the common misconceptions are that nobody controls it, that anybody contributes, that it is more or less secure than proprietary software, that it costs nothing, that open weights are open source, and that no licence is the most open choice; the security metric is whether somebody had the time and money to review the code; maintainers need funding models; and the real power of open source is that nobody can lock you in and the whole development workflow is yours, which is why there is no sovereignty without it.",
+        "nodes": [
+          {
+            "id": "copyright",
+            "label": "Open source is a copyright licence",
+            "kind": "concept",
+            "summary": "The holder uses the right to control copying to grant copying, use and change, on stated terms."
+          },
+          {
+            "id": "copyleft",
+            "label": "Copyleft made sharing a condition",
+            "kind": "concept",
+            "summary": "The GPL, from Stallman and the FSF in 1989: distribute what you build from it and it carries the same licence; critics called it viral."
+          },
+          {
+            "id": "pragmatic",
+            "label": "Open source, 1998, the pragmatic reframing",
+            "kind": "example",
+            "summary": "Coined by Christine Peterson; the OSI founded by Perens and Raymond; Linux stayed on GPLv2, its pragmatism was the attitude."
+          },
+          {
+            "id": "no-licence",
+            "label": "No licence is all rights reserved",
+            "kind": "claim",
+            "summary": "Without a licence ordinary copyright applies and nobody may copy; a permissive licence like Apache 2.0 is what opens it."
+          },
+          {
+            "id": "control",
+            "label": "A few maintainers control what goes in",
+            "kind": "claim",
+            "summary": "Contributions are reviewed, signed off and refused; the control is real and visible; anybody can fork, nobody can change yours."
+          },
+          {
+            "id": "few-contributors",
+            "label": "Most projects are run by a few people",
+            "kind": "claim",
+            "summary": "The barrier to contributing is lower, and outside a few very popular projects contributions are not the norm."
+          },
+          {
+            "id": "security-time",
+            "label": "Security is about time, not openness",
+            "kind": "claim",
+            "summary": "Code somebody had the time and money to review is more secure, open or closed; proprietary products are mostly open source underneath."
+          },
+          {
+            "id": "someone-pays",
+            "label": "Somebody is always paying",
+            "kind": "claim",
+            "summary": "Around 60% of maintainers call themselves unpaid hobbyists; paid maintainers adopt more security practices; a tragedy of the commons."
+          },
+          {
+            "id": "xz",
+            "label": "The xz utils backdoor",
+            "kind": "example",
+            "summary": "A critical library maintained by one person, an attacker who earned trust over years, found in 2024 because SSH was slow."
+          },
+          {
+            "id": "open-weights",
+            "label": "Open weights are a compiled binary",
+            "kind": "claim",
+            "summary": "You can run weights, not rebuild them; the OSI's Open Source AI Definition requires code, parameters and data information."
+          },
+          {
+            "id": "fud",
+            "label": "Openness is not the danger",
+            "kind": "claim",
+            "summary": "The question is how tools are used; Metasploit made exploitation easier and the world adjusted; hosting and distribution are themselves control."
+          },
+          {
+            "id": "no-lock-in",
+            "label": "The point is that nobody can lock you in",
+            "kind": "claim",
+            "summary": "Read it, run it, fix it, move it, and own the whole development workflow, which survives an acquisition."
+          },
+          {
+            "id": "sovereignty",
+            "label": "No sovereignty without open source",
+            "kind": "claim",
+            "summary": "Sovereignty is the ability to move, and only control that survives a change of owner counts."
+          }
+        ],
+        "edges": [
+          {
+            "from": "copyright",
+            "to": "copyleft",
+            "rel": "leads-to"
+          },
+          {
+            "from": "copyleft",
+            "to": "pragmatic",
+            "rel": "leads-to"
+          },
+          {
+            "from": "copyright",
+            "to": "no-licence",
+            "rel": "answers"
+          },
+          {
+            "from": "control",
+            "to": "few-contributors",
+            "rel": "extends"
+          },
+          {
+            "from": "few-contributors",
+            "to": "someone-pays",
+            "rel": "leads-to"
+          },
+          {
+            "from": "someone-pays",
+            "to": "security-time",
+            "rel": "depends-on"
+          },
+          {
+            "from": "xz",
+            "to": "someone-pays",
+            "rel": "example-of"
+          },
+          {
+            "from": "open-weights",
+            "to": "copyright",
+            "rel": "contrasts"
+          },
+          {
+            "from": "fud",
+            "to": "control",
+            "rel": "extends"
+          },
+          {
+            "from": "pragmatic",
+            "to": "no-lock-in",
+            "rel": "leads-to"
+          },
+          {
+            "from": "no-lock-in",
+            "to": "sovereignty",
+            "rel": "leads-to"
+          },
+          {
+            "from": "control",
+            "to": "no-lock-in",
+            "rel": "contrasts"
+          }
+        ],
+        "links": {
+          "articles": [
+            "supply-chain-of-vaults",
+            "sovereignty-is-the-ability-to-move"
+          ],
+          "pages": [],
+          "sites": [
+            "https://open-source.sgit.ai/",
+            "https://opensource.org/ai/open-source-ai-definition",
+            "https://choosealicense.com/no-permission/",
+            "https://en.wikipedia.org/wiki/XZ_Utils_backdoor",
+            "https://www.theregister.com/2024/09/18/open_source_maintainers_underpaid/"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "The control is real. It is just visible.",
+            "why": "The answer to the misconception heard at the event."
+          },
+          {
+            "text": "For me, the power of open source has nothing to do with the fact that people can contribute.",
+            "why": "The point is no lock-in and owning the workflow."
+          }
+        ]
+      }
+    },
     {
       "slug": "not-a-straight-line",
       "title": "Not a straight line: working for RiskMandate by working on the newsroom, and why the thinking is never wasted",
@@ -316,7 +751,9 @@
         "footprint-and-blast-radius",
         "move-the-cloud-not-the-code"
       ],
-      "links_in": [],
+      "links_in": [
+        "what-open-source-is-and-is-not"
+      ],
       "figures": [
         {
           "file": "sv-dot-1.webp",
@@ -1725,6 +2162,7 @@
         "how-much-of-this-did-i-write"
       ],
       "links_in": [
+        "who-owns-the-words",
         "not-a-straight-line",
         "judo-for-small-countries",
         "why-i-love-wardley-maps"
@@ -2195,7 +2633,9 @@
         "how-much-of-this-did-i-write",
         "knowing-when-to-stop"
       ],
-      "links_in": [],
+      "links_in": [
+        "who-owns-the-words"
+      ],
       "figures": [
         {
           "file": "hv-loop.webp",
@@ -9352,6 +9792,7 @@
         "every-mistake-added-a-rule"
       ],
       "links_in": [
+        "who-owns-the-words",
         "a-reading-list-in-a-link",
         "where-the-platform-draws-the-line",
         "the-same-argument-in-our-words",
@@ -10323,6 +10764,7 @@
         "the-investigation-github-owes-its-customers"
       ],
       "links_in": [
+        "who-owns-the-words",
         "where-the-platform-draws-the-line",
         "authority-outside-the-model",
         "a-mac-of-the-agents-own"
@@ -11478,6 +11920,7 @@
         "the-agent-team-as-it-runs"
       ],
       "links_in": [
+        "who-owns-the-words",
         "judo-for-small-countries",
         "riskmandate-ten-questions",
         "how-i-work-with-claude",
@@ -20898,6 +21341,7 @@
         "saas-apocalypse-decided-by-inertia-not-by-ai"
       ],
       "links_in": [
+        "what-open-source-is-and-is-not",
         "judo-for-small-countries",
         "the-mandate-stack",
         "the-deck-i-could-not-download",
