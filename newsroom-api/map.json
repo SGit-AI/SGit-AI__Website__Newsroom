@@ -9,8 +9,8 @@
   {
    "path": "passkey/lab.css",
    "what": "its styles",
-   "lines": 28,
-   "sha256": "d6a2b51445e89ca9de81ddc432625981e1fb726f84a37b5a3b8a7bd1b573fab7"
+   "lines": 29,
+   "sha256": "ca352ad9cdc8631d01005bfd94b88b92a646c030a3324d249f77285e48a0b491"
   },
   {
    "path": "passkey/vectors.json",
@@ -21,13 +21,13 @@
   {
    "path": "passkey/index.html",
    "what": "the page",
-   "lines": 322,
+   "lines": 315,
    "sha256": "885911b67d01a6c01836e91782df85ee45d0e30f8f51d581f611665fba372f49"
   }
  ],
  "what": "The map of everything a reader does on newsroom.sgit.ai, and the review of it: phase 0 of the move described in https://newsroom.sgit.ai/articles/explorer-to-villager-newsroom.html. Written by admin/build/api_map.py on every build. The hashes are the 'before' for the move's rule that the live site serves the same bytes after it: scripts, styles and JSON raw; pages with the site chrome and version stamps normalised.",
  "api_means": "client-side: components, formats and contracts the browser runs, with no server and nothing to deploy but files",
- "release": "v0.12.11",
+ "release": "v0.12.12",
  "date": "11 October 2026",
  "source": {
   "sgit_ai": "",
@@ -36,7 +36,7 @@
   "meter_on_sgit_ai": "1.3.1"
  },
  "counts": {
-  "reader_code_lines": 8661,
+  "reader_code_lines": 8673,
   "reader_files": 49,
   "pages": 22,
   "views": 12,
@@ -52,12 +52,12 @@
  },
  "files": [
   {
-   "path": "assets/components/sg-meter/v1/v1.4/v1.4.0/sg-meter.js",
+   "path": "assets/components/sg-meter/v1/v1.4/v1.4.1/sg-meter.js",
    "what": "SG Meter, the element: twelve views, the reader card, the share form, the graph",
    "from": "this site, from sgit.ai's v1.3.1",
-   "lines": 815,
-   "bytes": 55465,
-   "sha256": "82f8c09842290336b208df78936059c69ce3db456e610c785e00cd78065cf55c",
+   "lines": 817,
+   "bytes": 55643,
+   "sha256": "ba46eeca15d5d9b24feb71381c14a0b92bb5d8326492c310824cf8723c431abb",
    "hosts": [],
    "fetch": 2,
    "storage": [],
@@ -70,12 +70,12 @@
    "crypto": true
   },
   {
-   "path": "assets/components/sg-meter/v1/v1.4/v1.4.0/sg-meter-core.js",
+   "path": "assets/components/sg-meter/v1/v1.4/v1.4.1/sg-meter-core.js",
    "what": "SG Meter, the meter: prices, the charge, ratings, declining, credit, personas, picks, the share text",
    "from": "this site, from sgit.ai's v1.3.1",
-   "lines": 511,
-   "bytes": 26424,
-   "sha256": "6a74b1183c766d5aee8a6fdbfd9bfc7885a7c873945cde6ee2061f300d2c2eaf",
+   "lines": 513,
+   "bytes": 26602,
+   "sha256": "9986294b0fbc5a62b56f515eff22867ef59e75e0c63dc048dfda3fdd6dd0e5ba",
    "hosts": [],
    "fetch": 1,
    "storage": [
@@ -98,12 +98,12 @@
    "crypto": false
   },
   {
-   "path": "assets/components/sg-meter/v1/v1.4/v1.4.0/sg-meter.css",
+   "path": "assets/components/sg-meter/v1/v1.4/v1.4.1/sg-meter.css",
    "what": "SG Meter styles, adopted into the shadow root",
    "from": "this site, from sgit.ai's v1.3.1",
-   "lines": 188,
-   "bytes": 16069,
-   "sha256": "98a86404668135893759d018db3f457a6de25698a50c988b00a65fbc88071fa5",
+   "lines": 192,
+   "bytes": 16491,
+   "sha256": "3f464b7d1df4e15ff45809fb155388df357809d79d87609ff0d44514b4438786",
    "hosts": [],
    "fetch": 0,
    "storage": [],
@@ -114,7 +114,7 @@
    "crypto": false
   },
   {
-   "path": "assets/components/sg-meter/v1/v1.4/v1.4.0/sg-meter.tpl",
+   "path": "assets/components/sg-meter/v1/v1.4/v1.4.1/sg-meter.tpl",
    "what": "SG Meter markup (one div)",
    "from": "this site, from sgit.ai's v1.3.1",
    "lines": 1,
@@ -184,8 +184,8 @@
    "what": "Styles for the two reading-list pages",
    "from": "this site",
    "lines": 109,
-   "bytes": 7998,
-   "sha256": "cca712d5810b3085a346ce2704e13b07ba66ca9f9147d20f6604e2b62164cabe",
+   "bytes": 8123,
+   "sha256": "6ad9b2f9c39e99748a089d55670a1233983ff08cc5d02e53a9034adb9735a17d",
    "hosts": [],
    "fetch": 0,
    "storage": [],
@@ -250,9 +250,9 @@
    "path": "wire/wire.css",
    "what": "Styles for the wire pages",
    "from": "this site",
-   "lines": 108,
-   "bytes": 9642,
-   "sha256": "7003c4a048b047f1d14e66ae937ad8089ae5b5df0a27a8c8c9a55aca8dd14d31",
+   "lines": 112,
+   "bytes": 10411,
+   "sha256": "91ed17d30160a95886936c7c5d5a127c1eabfe602813b26dd41cd84e498ec49f",
    "hosts": [],
    "fetch": 0,
    "storage": [],
@@ -382,9 +382,9 @@
    "path": "articles/ids.json",
    "what": "A number for every article: the contract reading lists are built on",
    "from": "this site, generated",
-   "lines": 1531,
-   "bytes": 57856,
-   "sha256": "9bed195ede4317e718fa5910008d7dcad84d9d04f962a9b610edd37ccf2ae4db",
+   "lines": 1544,
+   "bytes": 58389,
+   "sha256": "886e1d22361b205c6563562be5e3bab17d1104f756fd138d6f56548ceacbd929",
    "hosts": [],
    "fetch": 0,
    "storage": [],
@@ -400,7 +400,7 @@
    "from": "this site, generated",
    "lines": 268,
    "bytes": 13441,
-   "sha256": "a11f4f4b6b6903d43c4e2312d6c81b53970ef067a5b76c3e64b3dcd8ff417f40",
+   "sha256": "59f11a7ff63e3f15b13ba3470d6d27d149ef9aa82a73c2c4ef4c39f3b59a7acd",
    "hosts": [],
    "fetch": 0,
    "storage": [],
@@ -414,9 +414,9 @@
    "path": "articles/graphs.json",
    "what": "The feed the picks and the graph read: every article with topics, tags and citations",
    "from": "sgit.ai, imported",
-   "lines": 25494,
-   "bytes": 1104706,
-   "sha256": "099ac9b4ea234758ab84eb29a3e8d3d8529f33cc29d60714a2da8c98f129dc4a",
+   "lines": 25739,
+   "bytes": 1115023,
+   "sha256": "9195b62e3ac9c326f5ada89659f135fcef2a65e869c9fcec953bba3c9b6c5bbe",
    "hosts": [],
    "fetch": 0,
    "storage": [],
@@ -521,8 +521,8 @@
    "what": "Styles for the search page",
    "from": "this site",
    "lines": 25,
-   "bytes": 2815,
-   "sha256": "50bb687f48eadfde42348334c660cbd16188e0e1c9342ce5f959596a4445ca3b",
+   "bytes": 3112,
+   "sha256": "1fcdffcfa53fc8d3f75a92009fce6cb12553d97f110087ca0784653190a12355",
    "hosts": [],
    "fetch": 0,
    "storage": [],
@@ -558,8 +558,8 @@
    "what": "Styles for Ask on the search page",
    "from": "this site",
    "lines": 23,
-   "bytes": 2663,
-   "sha256": "ecdf4ba20ac4af93e15a8d8dcffe473d58565ed747cdd5327fbb9fd6c22971b0",
+   "bytes": 2885,
+   "sha256": "9f8cd3cb95d659e87d4e249947a1fe92f4309cc2192c3b0f428b35440de34549",
    "hosts": [],
    "fetch": 0,
    "storage": [],
@@ -661,8 +661,8 @@
    "what": "Styles for the pane, its tabs, the chips and the notes, and the page shift",
    "from": "this site",
    "lines": 103,
-   "bytes": 10788,
-   "sha256": "f628857853b351f4d08f8f35fdc410c53a3d22a43a7836e1a4c0af61e4a4ec9a",
+   "bytes": 11505,
+   "sha256": "1f431d0c46abbe795dd99c6adad3e58e21fee12e05bd4695cefe10f119a61f68",
    "hosts": [],
    "fetch": 0,
    "storage": [],
@@ -885,134 +885,134 @@
   {
    "path": "account/index.html",
    "what": "the reading account",
-   "lines": 257,
-   "sha256": "5141bbf609d6b95b45a4b197ef89f5b52670a143268de5cd6a0a32e4e07e7eb2"
+   "lines": 211,
+   "sha256": "60750ebe277ac3f7ef75c536f6c587e5562cc8447cb9268c977b8b43f380f603"
   },
   {
    "path": "account/newsroom.html",
    "what": "the reader's newsroom",
-   "lines": 252,
-   "sha256": "2fc5c34be2488c95f8b8387bdca5e43a9a52aa0652cec1a2007c792589a313e3"
+   "lines": 206,
+   "sha256": "f119250bf3df57f51aedf9885a03e7598fc4ffb0f3bcc7bc310be47ba95dbc61"
   },
   {
    "path": "account/personas.html",
    "what": "the personas",
-   "lines": 252,
-   "sha256": "5c36a85cb143df44a3ea3b314792bb8799a94181581ed5d44ef3eab9bf9f5ce4"
+   "lines": 206,
+   "sha256": "45e06452e1854d9e2a8160a7c41973898958f2ee4e699423c4cea6e750d9a8f0"
   },
   {
    "path": "account/share.html",
    "what": "send us your reading",
-   "lines": 254,
-   "sha256": "adaf9055db37b4f144300085f9af4a075ac2831bdb63eddd25fde0d9db82476e"
+   "lines": 208,
+   "sha256": "aed4f9255b74a3e379a248064cb5fa887f0e1f7e5194dcee2427997e2d135673"
   },
   {
    "path": "account/top-up.html",
    "what": "the top-up",
-   "lines": 252,
-   "sha256": "49f2a004537498dfac45bf35f9210a8b00c654b260744fce3ec96dd44b4b9b6a"
+   "lines": 206,
+   "sha256": "2c8c8b247618553aaa54e00adab12cd1d58abb24ec6c4d0156142f2ee6120487"
   },
   {
    "path": "account/topped-up.html",
    "what": "the page a payment returns to",
-   "lines": 251,
-   "sha256": "4617261f978ed41ebf0acb9fd56fd3fa96e28f08a6ede144eead9973c7aaf411"
+   "lines": 205,
+   "sha256": "84061530521949c748343152b1468093926974608d840f83b222256d044c7205"
   },
   {
    "path": "subscribe/index.html",
    "what": "subscribe",
-   "lines": 272,
-   "sha256": "e1d93d5ad08ba1f35a9c8c5a5ff4b2f4918dd347323c9724737acfd05c566dab"
+   "lines": 226,
+   "sha256": "13d2bfccc95fae53e7a2ddacb24d1e0d793be21f4ad14e3e3d91b83c5d9318d8"
   },
   {
    "path": "persona/index.html",
    "what": "the persona picker",
-   "lines": 234,
-   "sha256": "eb1fb60d66f1bc012ea826210b76e8c75ef53ce4687dfc89175cdad273523e37"
+   "lines": 47,
+   "sha256": "7c0c30a9ae0de576350fc7cb57912f062096773e89a5f3fb792ee4e5346b3156"
   },
   {
    "path": "persona/founder/index.html",
    "what": "a persona link",
-   "lines": 241,
-   "sha256": "7f1158881c4b570820e1bf05bea9db044ac34aeff5057863640803411b7d0d18"
+   "lines": 54,
+   "sha256": "043526965d23edb06f766e6abcf81a464c2c41eab578df7b2825beca5c6fe98e"
   },
   {
    "path": "persona/journalist/index.html",
    "what": "a persona link",
-   "lines": 241,
-   "sha256": "5e7abe06b002715d09e39f580be402241b2368230e7925317e49151fc268541d"
+   "lines": 54,
+   "sha256": "8c9acb523b68c36fff8e49e761e8ff302edd4389d4b92bff73ddb2842624628c"
   },
   {
    "path": "persona/security/index.html",
    "what": "a persona link",
-   "lines": 241,
-   "sha256": "ef7b2f455eb269384cde9a8a0b1935e8f89471917a6b349d938b6d87a5ee62ea"
+   "lines": 54,
+   "sha256": "2db575acd574852c2c6e9025ff713d52407d438ec94b711710631cb561616f21"
   },
   {
    "path": "persona/builder/index.html",
    "what": "a persona link",
-   "lines": 241,
-   "sha256": "531be95b48cd5e113477070da851112987cd64f38f438a57baf21cc5606049b7"
+   "lines": 54,
+   "sha256": "fce8ebd416a924a80cf9d5a02ae9e8b81b8ddf16898220353ec381afda008f0c"
   },
   {
    "path": "persona/board/index.html",
    "what": "a persona link",
-   "lines": 241,
-   "sha256": "9db951fc6bd349996233f0e82b9bad2c4c291a3cd96bbfed75c0eefafd25b916"
+   "lines": 54,
+   "sha256": "384885a41bf6abad4f1d50d9fb8e9a3a7579ad267c67c26af840989594ab94e0"
   },
   {
    "path": "for/index.html",
    "what": "a reading list",
-   "lines": 248,
-   "sha256": "313dac3b3f31ae2929b2c9958acd12f21db431079b70444051dc9b71319ba55b"
+   "lines": 61,
+   "sha256": "cbd0376dd53283fe36c447573ddef4698612e2ffe26473dd34a54bec7dad8284"
   },
   {
    "path": "for/make.html",
    "what": "make a reading list",
-   "lines": 238,
-   "sha256": "3c827cd696b202f3a2d80da77abc6fb97c71378eeb6b9b4d12c8779735ca8bd4"
+   "lines": 51,
+   "sha256": "2e61fd52d2b8fc982b8ce5f82d817059e5d2f26e8f7048027ad303ad12019b1e"
   },
   {
    "path": "wire/index.html",
    "what": "the Industry Wire's edition",
-   "lines": 244,
-   "sha256": "64259e16a74c714ca82de7c8c6f1a312e1736d849986a52fd28758050eabe586"
+   "lines": 57,
+   "sha256": "ccb648b29e81e655bf163a762c85e6e472fb594e2b277af7a345d93a017fb37d"
   },
   {
    "path": "wire/sources.html",
    "what": "the wire's sources",
-   "lines": 239,
-   "sha256": "9e4d5619a961370c4e1ef3cc9284c6d694838b263b7b52dce0178ba63cbfa246"
+   "lines": 52,
+   "sha256": "64a35d94ea81295127f1e95b581451fc06d5aee1e68c304ba0b86dfd14780cce"
   },
   {
    "path": "wire/how.html",
    "what": "how the wire is read, and its documents",
-   "lines": 243,
-   "sha256": "c095416ff56fd801a1e050d46aecff3326af7bcada2f2896bf489525b6d44b75"
+   "lines": 56,
+   "sha256": "6d1280c3e571e7d512d73f32c0bbae99280e8703def73585caa5b9b9a6a97e98"
   },
   {
    "path": "vault/index.html",
    "what": "your vault: the reading account carried between devices, with the pane open",
-   "lines": 258,
+   "lines": 251,
    "sha256": "e9b07c2c5e287081656eb84a19858e390bb3fb51fdc8ae1c5b27d5ff33270d5d"
   },
   {
    "path": "meter/index.html",
    "what": "SG Meter, documented",
-   "lines": 393,
-   "sha256": "431cc373de1a09f143a7e1d914525128395dc33c374c5b1ccd3b92056270eaed"
+   "lines": 347,
+   "sha256": "79b605dcd6c957a0b9cd383711c35764deef9e6cb62980d3e71510344a37f679"
   },
   {
    "path": "meter/security.html",
    "what": "the meter's security model",
-   "lines": 278,
-   "sha256": "006aecbc72c94c50cac0bad94a9c8744265a41892ed89488335b55da9da9cc2a"
+   "lines": 232,
+   "sha256": "057a6bd7c0151412ac51ac4f151e993e1eda7d562406818c81f4ec7b8048de26"
   },
   {
    "path": "demos/vaults/newsroom-synthetic-users/index.html",
    "what": "the synthetic-readers study, with the embedded vault",
-   "lines": 339,
-   "sha256": "2533fcdb9956fe74f697dd780b849721fb7f7e164e286e3f9fd565f24a4fb5a8"
+   "lines": 293,
+   "sha256": "41cdf23bf056df473bcc4723ad8dc0955d34429a837a790e7800056087e1a985"
   }
  ],
  "build": [
@@ -1038,8 +1038,8 @@
   },
   {
    "path": "admin/build/sync_newsroom.py",
-   "what": "the import: re-points the meter to v1.4.0, applies the text rules, prints the article number",
-   "lines": 632
+   "what": "the import: re-points the meter to v1.4.1, applies the text rules, prints the article number",
+   "lines": 634
   },
   {
    "path": "admin/build/newsroom-meter.json",
@@ -1084,7 +1084,7 @@
   {
    "path": "admin/build/chrome.py",
    "what": "the nav and footer on every page, with the meter's balance and the Vault button and pane on pages that carry the meter",
-   "lines": 352
+   "lines": 355
   },
   {
    "path": "admin/build/validate.js",
@@ -1182,7 +1182,7 @@
  "loader": {
   "lines": 17,
   "sha256": "5567803221cf6e4270c6a7114817420f3f01a63bce50f5f8152236b384523c2f",
-  "pages_that_eval": 405
+  "pages_that_eval": 407
  },
  "frozen": [
   {
@@ -1290,7 +1290,7 @@
   "account": 1,
   "landing": 6,
   "newsroom": 1,
-  "page": 469,
+  "page": 477,
   "personas": 1,
   "share": 1,
   "topped-up": 1,
@@ -1922,7 +1922,7 @@
   },
   {
    "contract": "The import's rules",
-   "shape": "the meter path rewrite (v1.3.1 → v1.4.0), the top-up link, eight text rules, the article number line; each stops the import when its anchor moves",
+   "shape": "the meter path rewrite (v1.3.1 → v1.4.1), the top-up link, eight text rules, the article number line; each stops the import when its anchor moves",
    "owner": "sync_newsroom.py items 9–12"
   }
  ],

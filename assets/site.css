@@ -30,12 +30,12 @@ code,pre,kbd{font-family:var(--mono)}
 img{max-width:100%;height:auto}
 /* headings were missing from this list until v0.3.1, so a hostname in an h1 — e.g. the
    pt.newsroom.sgit.ai commissioning brief — pushed the page 23px wider than a phone */
-p code,li code,td code,h1 code,h2 code,h3 code,h4 code,.note code{overflow-wrap:anywhere;background:var(--panel2);border:1px solid var(--line);border-radius:4px;padding:.08em .35em;font-size:.84em;color:#24343f}
+p code,li code,td code,h1 code,h2 code,h3 code,h4 code,.note code{overflow-wrap:anywhere;background:var(--panel2);border:1px solid var(--line);border-radius:4px;padding:.08em .35em;font-size:.84em;color:var(--code-ink)}
 .inner{max-width:var(--measure);margin:0 auto;padding:0 1.1rem}
 .dim{color:var(--dim)} .small{font-size:.85rem}
 
 /* ---------- top nav ---------- */
-nav.site{position:sticky;top:0;z-index:50;background:rgba(250,249,245,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav.site{position:sticky;top:0;z-index:50;background:var(--nav-bg);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
 nav.site .row{max-width:var(--wide);margin:0 auto;display:flex;align-items:center;gap:1.1rem;padding:.7rem 1.1rem;flex-wrap:wrap}
 nav.site .brand{font-weight:800;font-size:1.05rem;color:var(--fg);letter-spacing:-.02em;white-space:nowrap}
 nav.site .brand span{color:var(--accent)}
@@ -45,7 +45,7 @@ nav.site a.nl:hover{color:var(--fg);text-decoration:none}
 nav.site .parent{border:1px solid var(--accent);border-radius:6px;padding:.28rem .7rem;
   color:var(--accent-dk);font-size:.78rem;white-space:nowrap;background:var(--panel);font-weight:500}
 nav.site .parent b{font-weight:800}
-nav.site .parent:hover{background:var(--accent);color:#fff;border-color:var(--accent);text-decoration:none}
+nav.site .parent:hover{background:var(--accent);color:var(--on-accent);border-color:var(--accent);text-decoration:none}
 nav.site .gh{border:1px solid var(--line2);border-radius:6px;padding:.28rem .7rem;color:var(--fg);font-size:.78rem;white-space:nowrap;background:var(--panel)}
 nav.site .gh:hover{border-color:var(--accent);text-decoration:none}
 /* Two-level nav, the same component sgit.ai runs. The flat one here reached twelve
@@ -59,7 +59,7 @@ nav.site .ni-has > .nl{display:inline-flex;align-items:center;gap:.25rem}
 nav.site .caret{font-size:.55em;opacity:.55;transition:transform .15s ease}
 nav.site .sub{position:absolute;left:-.7rem;top:100%;min-width:12rem;z-index:60;
   background:var(--panel);border:1px solid var(--line);border-radius:10px;
-  box-shadow:0 6px 24px rgba(28,29,33,.13);padding:.4rem;
+  box-shadow:var(--shadow-pop);padding:.4rem;
   display:none;flex-direction:column;gap:.05rem}
 nav.site .ni-has:hover > .sub,
 nav.site .ni-has:focus-within > .sub,
@@ -70,52 +70,12 @@ nav.site .sub a.sl{display:block;padding:.36rem .6rem;border-radius:6px;
   font-size:.83rem;color:var(--dim);white-space:nowrap}
 nav.site .sub a.sl:hover{background:var(--panel2);color:var(--fg);text-decoration:none}
 nav.site .sub a.sl.here{color:var(--accent-dk);font-weight:600}
-/* Between the full-width bar and the phone menu there was a dead zone. The row is
-   `flex-wrap:wrap`, so once its contents outgrow the viewport ★ GitHub silently drops
-   onto a second line and the bar doubles in height — no overflow, no warning, just a
-   ragged two-row header. The sibling sites have the same latent gap and only escape it
-   because their nav rows are narrower; this site carries five groups, a stage pill and
-   a version badge, and hit it at ~1400px. So: tighten the row on the way down, and
-   collapse to the phone menu before the tightening runs out. Measured, not guessed —
-   the breakpoints below are where a full sweep of widths stops fitting on one line. */
-/* v0.3.6 added three groups (the things that run), and the sweep was done again: eight
-   groups plus the pill and the badge fit one row at 1440 with the parent link, and at 1280
-   only without it, so the parent link — which the footer's network line carries too — now
-   drops at 1500 rather than 1180, and the phone menu takes over at 1200 rather than 1000. */
-nav.site .row{gap:.6rem}
-nav.site a.nl{font-size:.8rem}
-@media (max-width:1500px){
-  nav.site .row{gap:.6rem}
-  nav.site a.nl{font-size:.8rem}
-  nav.site .parent{display:none}
-}
-@media (max-width:1280px){
-  nav.site .row{gap:.5rem}
-  nav.site a.nl{font-size:.78rem}
-}
-
-/* Phone: the whole thing collapses behind one button, so the bar stays a single row and
-   opening it gives a vertical list with each group's children indented under it. */
+/* The bar's responsive layout (the tightening on the way down, the phone menu, the tools cluster)
+   moved to assets/site-nav.css at v0.12.12, which chrome.py loads on every page in BOTH looks,
+   so the two stylesheets stop disagreeing on where the bar collapses (card 037). The base state
+   stays here so a page that somehow loads only this file still has a bar. */
 .nav-items{display:contents}
 .nav-toggle{display:none}
-@media (max-width:1200px){
-  nav.site .row{position:relative;gap:.6rem}
-  .nav-toggle{display:block;margin-left:auto;order:3;background:var(--panel);
-    border:1px solid var(--line2);border-radius:6px;padding:.3rem .7rem;
-    font:600 .78rem/1 var(--sans);color:var(--fg);cursor:pointer}
-  .nav-toggle:hover{border-color:var(--accent)}
-  nav.site .parent{order:2}
-  nav.site .gh{order:4;margin-left:0}
-  .nav-items{display:none;order:5;width:100%;flex-direction:column;gap:.1rem;
-    padding:.5rem 0 .3rem;border-top:1px solid var(--line);margin-top:.4rem}
-  nav.site.open .nav-items{display:flex}
-  nav.site .ni{width:100%}
-  nav.site .ni > .nl{display:block;padding:.42rem .2rem;font-size:.95rem}
-  nav.site .caret{display:none}
-  nav.site .sub{position:static;display:flex;flex-direction:column;border:0;
-    box-shadow:none;background:none;padding:0 0 .3rem .9rem;min-width:0;gap:0}
-  nav.site .sub a.sl{padding:.3rem .2rem;font-size:.86rem}
-}
 .stage-pill{font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--warm);
   border:1px solid rgba(180,83,9,.35);background:rgba(180,83,9,.07);border-radius:99px;padding:.15rem .55rem;white-space:nowrap}
 a.ver{font-family:var(--mono);font-size:.68rem;color:var(--dim2);border:1px solid var(--line);border-radius:99px;padding:.14rem .55rem;white-space:nowrap}
@@ -124,10 +84,10 @@ a.ver:hover{color:var(--accent-dk);border-color:var(--accent);text-decoration:no
 /* ---------- hero ---------- */
 header.hero{text-align:center;padding:4.2rem 1.2rem 2.6rem;max-width:1000px;margin:0 auto}
 .eyebrow{font-size:.7rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--accent)}
-header.hero h1{font-family:var(--serif);font-size:clamp(2rem,5vw,3.1rem);margin:.9rem 0;color:#101114}
+header.hero h1{font-family:var(--serif);font-size:clamp(2rem,5vw,3.1rem);margin:.9rem 0;color:var(--head)}
 header.hero .sub{color:var(--dim);font-size:1.05rem;max-width:680px;margin:0 auto 1.7rem;line-height:1.6}
 .ctas{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap;align-items:center}
-.cta1{background:var(--accent-dk);color:#fff;border-radius:8px;padding:.6rem 1.2rem;font-size:.9rem;font-weight:600}
+.cta1{background:var(--accent-dk);color:var(--on-accent);border-radius:8px;padding:.6rem 1.2rem;font-size:.9rem;font-weight:600}
 .cta1:hover{background:var(--accent);text-decoration:none}
 .cta2{color:var(--accent-dk);font-size:.9rem;font-weight:600}
 
@@ -139,7 +99,7 @@ header.hero .sub{color:var(--dim);font-size:1.05rem;max-width:680px;margin:0 aut
    still centred, just inside a 2.2rem-narrower content box. */
 section.band{padding:3rem 1.1rem;scroll-margin-top:64px}
 section.band.alt{background:var(--panel2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-section.band h2{font-family:var(--serif);font-size:1.9rem;color:#101114;text-align:center;margin:0 0 .6rem}
+section.band h2{font-family:var(--serif);font-size:1.9rem;color:var(--head);text-align:center;margin:0 0 .6rem}
 section.band .blurb{color:var(--dim);text-align:center;max-width:660px;margin:0 auto 1.8rem;font-size:.95rem}
 
 /* ---------- cards ---------- */
@@ -147,7 +107,7 @@ section.band .blurb{color:var(--dim);text-align:center;max-width:660px;margin:0 
 .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:1.05rem 1.15rem;display:block;color:var(--fg);box-shadow:var(--shadow)}
 a.card:hover{border-color:var(--accent);text-decoration:none}
 .card .tag{font-size:.64rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--warm)}
-.card h3,.card h4{margin:.25rem 0 .45rem;font-size:.95rem;color:#101114;font-family:var(--sans)}
+.card h3,.card h4{margin:.25rem 0 .45rem;font-size:.95rem;color:var(--head);font-family:var(--sans)}
 .card p{margin:0;font-size:.8rem;color:var(--dim);line-height:1.55}
 .card .go{display:inline-block;margin-top:.55rem;font-size:.75rem;color:var(--accent-dk);font-weight:600}
 
@@ -156,7 +116,7 @@ a.card:hover{border-color:var(--accent);text-decoration:none}
 .split table{width:100%;border-collapse:collapse;font-size:.9rem;background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;box-shadow:var(--shadow)}
 .split th{background:var(--panel2);text-align:left;padding:.6rem .9rem;font-size:.72rem;letter-spacing:.09em;text-transform:uppercase;color:var(--dim)}
 .split th.run{color:var(--accent-dk)} .split th.rent{color:var(--warm)}
-.split td{padding:.6rem .9rem;border-top:1px solid var(--line);vertical-align:top;line-height:1.5;color:#34363c}
+.split td{padding:.6rem .9rem;border-top:1px solid var(--line);vertical-align:top;line-height:1.5;color:var(--text)}
 .split td b.no{color:var(--red)} .split td b.yes{color:var(--accent-dk)}
 .split .cap{font-size:.78rem;color:var(--dim);text-align:center;margin-top:.9rem;line-height:1.6}
 
@@ -170,25 +130,25 @@ pre.shell .y{color:var(--term-yellow)} pre.shell .d{color:var(--term-dim)}
 main.doc{max-width:var(--measure);margin:0 auto;padding:2.4rem 1.4rem 3.5rem}
 main.doc .crumb{font-size:.75rem;color:var(--dim2);margin-bottom:1rem}
 main.doc .crumb a{color:var(--dim)}
-main.doc h1{font-family:var(--serif);font-size:2.1rem;color:#101114;margin:.2rem 0 .9rem}
-main.doc h2{font-family:var(--serif);font-size:1.4rem;color:#101114;margin:2.2rem 0 .7rem;scroll-margin-top:70px}
-main.doc h3{font-size:1.02rem;color:#101114;margin:1.7rem 0 .5rem}
-main.doc .lead{color:#34363c;font-size:1.12rem}
-main.doc p, main.doc li{color:#34363c;font-size:.98rem}
+main.doc h1{font-family:var(--serif);font-size:2.1rem;color:var(--head);margin:.2rem 0 .9rem}
+main.doc h2{font-family:var(--serif);font-size:1.4rem;color:var(--head);margin:2.2rem 0 .7rem;scroll-margin-top:70px}
+main.doc h3{font-size:1.02rem;color:var(--head);margin:1.7rem 0 .5rem}
+main.doc .lead{color:var(--text);font-size:1.12rem}
+main.doc p, main.doc li{color:var(--text);font-size:.98rem}
 main.doc ul,main.doc ol{padding-left:1.3rem}
 main.doc li{margin:.3rem 0}
 main.doc table{width:100%;border-collapse:collapse;font-size:.88rem;margin:1.1rem 0;background:var(--panel);
   border:1px solid var(--line);border-radius:10px;overflow:hidden;box-shadow:var(--shadow)}
 main.doc th{background:var(--panel2);text-align:left;padding:.55rem .8rem;font-size:.7rem;letter-spacing:.09em;text-transform:uppercase;color:var(--dim)}
-main.doc td{padding:.55rem .8rem;border-top:1px solid var(--line);vertical-align:top;line-height:1.5;color:#34363c}
+main.doc td{padding:.55rem .8rem;border-top:1px solid var(--line);vertical-align:top;line-height:1.5;color:var(--text)}
 .tablewrap{overflow-x:auto}
 .note{border:1px solid var(--line);border-left:3px solid var(--accent);background:var(--panel);border-radius:0 10px 10px 0;
-  padding:.8rem 1rem;font-size:.85rem;color:#34363c;margin:1.2rem 0;box-shadow:var(--shadow)}
+  padding:.8rem 1rem;font-size:.85rem;color:var(--text);margin:1.2rem 0;box-shadow:var(--shadow)}
 .warnbox{border:1px solid var(--line);border-left:3px solid var(--yellow);background:var(--panel);border-radius:0 10px 10px 0;
-  padding:.8rem 1rem;font-size:.85rem;color:#34363c;margin:1.2rem 0;box-shadow:var(--shadow)}
-.note b,.warnbox b{color:#101114}
+  padding:.8rem 1rem;font-size:.85rem;color:var(--text);margin:1.2rem 0;box-shadow:var(--shadow)}
+.note b,.warnbox b{color:var(--head)}
 blockquote.challenge{margin:1.6rem 0;padding:1.1rem 1.3rem;border-left:4px solid var(--warm);
-  background:var(--panel);border-radius:0 10px 10px 0;font-size:1rem;font-style:italic;color:#34363c;
+  background:var(--panel);border-radius:0 10px 10px 0;font-size:1rem;font-style:italic;color:var(--text);
   box-shadow:var(--shadow);line-height:1.7}
 .pagenav{display:flex;justify-content:space-between;gap:1rem;margin-top:2.8rem;padding-top:1.2rem;border-top:1px solid var(--line);font-size:.85rem}
 
@@ -199,22 +159,22 @@ blockquote.challenge{margin:1.6rem 0;padding:1.1rem 1.3rem;border-left:4px solid
 .evbox p:first-of-type{margin-top:.5rem}
 .evbox p:last-child{margin-bottom:0}
 .evtag{display:inline-block;font-size:.62rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;
-  color:#fff;background:var(--accent);border-radius:99px;padding:.16rem .6rem}
+  color:var(--on-accent);background:var(--accent);border-radius:99px;padding:.16rem .6rem}
 .evbox.ev-warn .evtag{background:var(--warm)}
 
 /* option assessment pages */
 .opt-verdict{font-family:var(--mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;
   border-radius:99px;padding:.14rem .6rem;white-space:nowrap;vertical-align:middle}
-.opt-yes{color:#0f766e;border:1px solid rgba(15,118,110,.35);background:rgba(15,118,110,.08)}
-.opt-no{color:#b91c1c;border:1px solid rgba(185,28,28,.35);background:rgba(185,28,28,.08)}
-.opt-part{color:#b45309;border:1px solid rgba(180,83,9,.35);background:rgba(180,83,9,.08)}
+.opt-yes{color:var(--accent);border:1px solid var(--tint-line);background:var(--tint)}
+.opt-no{color:var(--red);border:1px solid rgba(185,28,28,.35);background:rgba(185,28,28,.08)}
+.opt-part{color:var(--warm);border:1px solid rgba(180,83,9,.35);background:rgba(180,83,9,.08)}
 
 /* task board */
 .tstat{font-family:var(--mono);font-size:.68rem;text-transform:uppercase;letter-spacing:.05em;border-radius:99px;padding:.1rem .5rem;white-space:nowrap}
-.t-done{color:#0f766e;border:1px solid rgba(15,118,110,.35);background:rgba(15,118,110,.08)}
-.t-doing{color:#1d4ed8;border:1px solid rgba(29,78,216,.3);background:rgba(29,78,216,.07)}
-.t-open{color:#b45309;border:1px solid rgba(180,83,9,.35);background:rgba(180,83,9,.08)}
-.t-need{color:#b91c1c;border:1px solid rgba(185,28,28,.35);background:rgba(185,28,28,.08)}
+.t-done{color:var(--accent);border:1px solid var(--tint-line);background:var(--tint)}
+.t-doing{color:var(--info-ink);border:1px solid rgba(29,78,216,.3);background:rgba(29,78,216,.07)}
+.t-open{color:var(--warm);border:1px solid rgba(180,83,9,.35);background:rgba(180,83,9,.08)}
+.t-need{color:var(--red);border:1px solid rgba(185,28,28,.35);background:rgba(185,28,28,.08)}
 
 /* versions table */
 table.vers td.vnum{font-family:var(--mono);font-weight:700;color:var(--accent-dk);white-space:nowrap}
@@ -225,8 +185,8 @@ table.vers td.vnum{font-family:var(--mono);font-weight:700;color:var(--accent-dk
   border-left:3px solid var(--accent);border-radius:10px;padding:1.1rem 1.3rem 1.1rem 3.4rem;box-shadow:var(--shadow)}
 .hopeladder .capnum{position:absolute;left:1.15rem;top:1.15rem;font-family:var(--mono);font-size:.78rem;
   font-weight:700;color:var(--accent);letter-spacing:-.03em}
-.hopeladder .cap h3{margin:0 0 .5rem;font-size:1.05rem;color:#101114;letter-spacing:-.015em}
-.hopeladder .cap p{margin:.5rem 0;font-size:.92rem;line-height:1.65;color:#34363c}
+.hopeladder .cap h3{margin:0 0 .5rem;font-size:1.05rem;color:var(--head);letter-spacing:-.015em}
+.hopeladder .cap p{margin:.5rem 0;font-size:.92rem;line-height:1.65;color:var(--text)}
 @media (max-width:560px){.hopeladder .cap{padding:2.4rem 1rem 1rem}.hopeladder .capnum{top:.85rem;left:1rem}}
 
 /* ---------- footer ---------- */
@@ -266,14 +226,14 @@ footer.site .verline a{display:inline;color:var(--accent-dk);padding:0}
   border:1px solid var(--line2);border-bottom:1px dashed var(--line2);border-radius:10px 10px 0 0;
   padding:.5rem 1rem;margin:1.4rem 0 0;font-family:var(--mono);font-size:.7rem;color:var(--dim);letter-spacing:.03em}
 .mdread-label a{color:var(--accent-dk)}
-.mdread{border:1px solid var(--line2);border-top:none;border-radius:0 0 10px 10px;background:#fff;
+.mdread{border:1px solid var(--line2);border-top:none;border-radius:0 0 10px 10px;background:var(--panel);
   padding:2rem 2.4rem;margin:0 0 1.6rem;
   box-shadow:0 2px 6px rgba(28,29,33,.08),0 14px 32px rgba(28,29,33,.08)}
 @media (max-width:560px){.mdread{padding:1.3rem 1rem}}
-.mdread h1{font-family:var(--serif);font-size:1.7rem;color:#101114;margin:.2rem 0 .8rem}
-.mdread h2{font-family:var(--serif);font-size:1.25rem;color:#101114;margin:1.8rem 0 .6rem}
-.mdread h3{font-size:1rem;color:#101114;margin:1.4rem 0 .4rem}
-.mdread p,.mdread li{color:#34363c;font-size:.94rem;line-height:1.65}
+.mdread h1{font-family:var(--serif);font-size:1.7rem;color:var(--head);margin:.2rem 0 .8rem}
+.mdread h2{font-family:var(--serif);font-size:1.25rem;color:var(--head);margin:1.8rem 0 .6rem}
+.mdread h3{font-size:1rem;color:var(--head);margin:1.4rem 0 .4rem}
+.mdread p,.mdread li{color:var(--text);font-size:.94rem;line-height:1.65}
 /* A screenshot in a document is a figure: framed, spaced, and captioned by the paragraph
    under it. The alt text carries the description for anyone not seeing it. */
 /* no width declaration here on purpose: author CSS outranks the HTML width attribute, so
@@ -283,9 +243,9 @@ footer.site .verline a{display:inline;color:var(--accent-dk);padding:0}
 .mdread table{display:block;overflow-x:auto;border-collapse:collapse;font-size:.85rem;margin:1rem 0}
 .mdread th{background:var(--panel2);text-align:left;padding:.5rem .7rem;font-size:.7rem;
   letter-spacing:.08em;text-transform:uppercase;color:var(--dim);border:1px solid var(--line)}
-.mdread td{padding:.5rem .7rem;border:1px solid var(--line);color:#34363c;vertical-align:top}
+.mdread td{padding:.5rem .7rem;border:1px solid var(--line);color:var(--text);vertical-align:top}
 .mdread blockquote{margin:1.2rem 0;padding:.8rem 1.1rem;border-left:4px solid var(--warm);
-  background:var(--panel2);border-radius:0 8px 8px 0;color:#34363c}
+  background:var(--panel2);border-radius:0 8px 8px 0;color:var(--text)}
 .mdread pre{background:var(--term-bg);color:#c9d1d9;border-radius:8px;padding:.8rem 1rem;
   font-size:.78rem;overflow-x:auto;line-height:1.6}
 .mdread hr{border:none;border-top:1px solid var(--line);margin:1.6rem 0}
@@ -294,7 +254,7 @@ footer.site .verline a{display:inline;color:var(--accent-dk);padding:0}
   border:1px solid var(--line);border-radius:10px;padding:.9rem 1.1rem;box-shadow:var(--shadow);
   font-size:.86rem;margin:1rem 0 1.4rem}
 .docmeta .k{color:var(--dim);font-size:.72rem;letter-spacing:.09em;text-transform:uppercase;padding-top:.15rem}
-.docmeta .v{color:#34363c}
+.docmeta .v{color:var(--text)}
 
 /* mermaid diagrams (concept pages + rendered inside .mdread) */
 pre.mermaid{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:1rem;
@@ -308,8 +268,8 @@ pre.mermaid{background:var(--panel);border:1px solid var(--line);border-radius:1
   border-left:3px solid var(--accent);border-radius:10px;padding:1.1rem 1.3rem 1.1rem 3.4rem;box-shadow:var(--shadow)}
 .ladder .capnum{position:absolute;left:1.15rem;top:1.15rem;font-family:var(--mono);font-size:.78rem;
   font-weight:700;color:var(--accent);letter-spacing:-.03em}
-.ladder .cap h3{margin:0 0 .5rem;font-size:1.05rem;color:#101114;letter-spacing:-.015em}
-.ladder .cap p{margin:.5rem 0;font-size:.92rem;line-height:1.65;color:#34363c}
+.ladder .cap h3{margin:0 0 .5rem;font-size:1.05rem;color:var(--head);letter-spacing:-.015em}
+.ladder .cap p{margin:.5rem 0;font-size:.92rem;line-height:1.65;color:var(--text)}
 .ladder .cap .from{display:block;margin-top:.6rem;font-size:.76rem;color:var(--dim);
   border-top:1px dashed var(--line);padding-top:.5rem}
 .ladder .cap .from b{color:var(--warm)}
@@ -327,10 +287,10 @@ pre.mermaid{background:var(--panel);border:1px solid var(--line);border-radius:1
 .timeline li.bad::before{border-color:var(--red)}
 .timeline .when{display:block;font-family:var(--mono);font-size:.7rem;letter-spacing:.06em;
   text-transform:uppercase;color:var(--dim2)}
-.timeline .what{color:#34363c;font-size:.95rem;line-height:1.6}
+.timeline .what{color:var(--text);font-size:.95rem;line-height:1.6}
 
 /* a stated rule, quoted as a claim the reader may check */
-.claim{font-family:var(--serif);font-size:1.12rem;line-height:1.6;color:#101114;
+.claim{font-family:var(--serif);font-size:1.12rem;line-height:1.6;color:var(--head);
   background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--accent);
   border-radius:0 10px 10px 0;padding:1rem 1.2rem;margin:1.3rem 0;box-shadow:var(--shadow)}
 
@@ -343,9 +303,9 @@ pre.mermaid{background:var(--panel);border:1px solid var(--line);border-radius:1
   background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--accent);
   border-radius:12px;padding:1.1rem 1.3rem;margin:1.6rem 0;box-shadow:var(--shadow)}
 .dl > div{flex:1 1 22rem}
-.dl p{margin:.45rem 0 0;font-size:.88rem;color:#34363c;line-height:1.6}
+.dl p{margin:.45rem 0 0;font-size:.88rem;color:var(--text);line-height:1.6}
 .dlbtn{display:flex;flex-direction:column;align-items:center;gap:.15rem;white-space:nowrap;
-  background:var(--accent);color:#fff;border:1px solid var(--accent);border-radius:10px;
+  background:var(--accent);color:var(--on-accent);border:1px solid var(--accent);border-radius:10px;
   padding:.75rem 1.3rem;font-weight:700;font-size:.9rem}
 .dlbtn span{font-family:var(--mono);font-size:.68rem;font-weight:400;opacity:.85;letter-spacing:.04em}
 .dlbtn:hover{background:var(--accent-dk);border-color:var(--accent-dk);text-decoration:none}
@@ -361,7 +321,7 @@ pre.mermaid{background:var(--panel);border:1px solid var(--line);border-radius:1
   border-radius:12px;padding:1.15rem 1.25rem;display:block;color:var(--fg);box-shadow:var(--shadow)}
 a.alt:hover{border-color:var(--accent);text-decoration:none}
 .alt .num{font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
-.alt h3{margin:.3rem 0 .5rem;font-size:1.05rem;color:#101114;font-family:var(--sans)}
+.alt h3{margin:.3rem 0 .5rem;font-size:1.05rem;color:var(--head);font-family:var(--sans)}
 .alt p{margin:0;font-size:.85rem;color:var(--dim);line-height:1.6}
 .alt .go{display:inline-block;margin-top:.6rem;font-size:.75rem;color:var(--accent-dk);font-weight:600}
 .alt.a2{border-top-color:var(--warm)} .alt.a2 .num{color:var(--warm)} .alt.a2 .go{color:var(--warm)}
@@ -384,17 +344,17 @@ a.alt:hover{border-color:var(--accent);text-decoration:none}
   border-radius:0 10px 10px 0;padding:.85rem 1.1rem;margin:1.6rem 0;box-shadow:var(--shadow)}
 .agent h4{margin:0 0 .4rem;font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;
   text-transform:uppercase;color:var(--dim)}
-.agent p{margin:0;font-size:.9rem;color:#101114;line-height:1.6}
+.agent p{margin:0;font-size:.9rem;color:var(--head);line-height:1.6}
 .agent code{background:var(--panel);border:1px solid var(--line)}
 
 /* ---------- a path rendered as a sentence ----------
    "If your path doesn't read as a sentence in the reader's own words, your edges are
    wrong." So the site renders paths as sentences, not as arrows in a box. */
-.pathline{font-family:var(--mono);font-size:.82rem;line-height:2.1;color:#34363c;
+.pathline{font-family:var(--mono);font-size:.82rem;line-height:2.1;color:var(--text);
   background:var(--panel);border:1px solid var(--line);border-radius:10px;
   padding:.9rem 1.1rem;margin:1.1rem 0;overflow-x:auto;box-shadow:var(--shadow)}
 .pathline .nd{background:var(--panel2);border:1px solid var(--line2);border-radius:5px;
-  padding:.1em .4em;color:#101114;font-weight:600;white-space:nowrap}
+  padding:.1em .4em;color:var(--head);font-weight:600;white-space:nowrap}
 .pathline .ed{color:var(--accent-dk);padding:0 .25em;white-space:nowrap}
 .pathline .ed::before{content:"—"} .pathline .ed::after{content:"→"}
 .pathline .ed.back::before{content:"←"} .pathline .ed.back::after{content:"—"}
@@ -417,17 +377,17 @@ a.alt:hover{border-color:var(--accent);text-decoration:none}
 .g-unanswered{color:var(--dim2);font-style:italic}
 
 /* ---------- glossary ---------- */
-table.gloss td:first-child{white-space:nowrap;font-weight:600;color:#101114}
+table.gloss td:first-child{white-space:nowrap;font-weight:600;color:var(--head)}
 table.gloss td.plain{color:var(--accent-dk)}
 .gloss-note{font-size:.8rem;color:var(--dim);margin-top:-.6rem}
 
 /* ---------- status pills reused for maturity / publish state ---------- */
 .pill{font-family:var(--mono);font-size:.66rem;text-transform:uppercase;letter-spacing:.05em;
   border-radius:99px;padding:.1rem .5rem;white-space:nowrap}
-.p-ships{color:#0f766e;border:1px solid rgba(15,118,110,.35);background:rgba(15,118,110,.08)}
-.p-argued{color:#b45309;border:1px solid rgba(180,83,9,.35);background:rgba(180,83,9,.08)}
-.p-absent{color:#b91c1c;border:1px solid rgba(185,28,28,.35);background:rgba(185,28,28,.08)}
-.p-live{color:#1d4ed8;border:1px solid rgba(29,78,216,.3);background:rgba(29,78,216,.07)}
+.p-ships{color:var(--accent);border:1px solid var(--tint-line);background:var(--tint)}
+.p-argued{color:var(--warm);border:1px solid rgba(180,83,9,.35);background:rgba(180,83,9,.08)}
+.p-absent{color:var(--red);border:1px solid rgba(185,28,28,.35);background:rgba(185,28,28,.08)}
+.p-live{color:var(--info-ink);border:1px solid rgba(29,78,216,.3);background:rgba(29,78,216,.07)}
 
 
 /* ---------- issues-fs additions ---------- */
@@ -437,10 +397,10 @@ table.gloss td.plain{color:var(--accent-dk)}
    that a reader can see which is which without reading a paragraph. */
 .verdict{font-family:var(--mono);font-size:.68rem;text-transform:uppercase;letter-spacing:.05em;
   border-radius:99px;padding:.12rem .55rem;white-space:nowrap;font-weight:600}
-.v-real{color:#0f766e;border:1px solid rgba(15,118,110,.35);background:rgba(15,118,110,.08)}
-.v-empty{color:#b45309;border:1px solid rgba(180,83,9,.4);background:rgba(180,83,9,.09)}
-.v-absent{color:#b91c1c;border:1px solid rgba(185,28,28,.32);background:rgba(185,28,28,.07)}
-.v-spec{color:#1d4ed8;border:1px solid rgba(29,78,216,.3);background:rgba(29,78,216,.07)}
+.v-real{color:var(--accent);border:1px solid var(--tint-line);background:var(--tint)}
+.v-empty{color:var(--warm);border:1px solid rgba(180,83,9,.4);background:rgba(180,83,9,.09)}
+.v-absent{color:var(--red);border:1px solid rgba(185,28,28,.32);background:rgba(185,28,28,.07)}
+.v-spec{color:var(--info-ink);border:1px solid rgba(29,78,216,.3);background:rgba(29,78,216,.07)}
 table.pkgs td:first-child{font-family:var(--mono);font-size:.84rem;white-space:nowrap}
 table.pkgs td.num{font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
 
@@ -451,7 +411,7 @@ table.pkgs td.num{font-variant-numeric:tabular-nums;text-align:right;white-space
   border-radius:12px;padding:1.1rem 1.2rem;box-shadow:var(--shadow);display:block;color:var(--fg)}
 a.surface:hover{border-color:var(--accent);text-decoration:none}
 .surface .num{font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
-.surface h3{margin:.3rem 0 .5rem;font-size:1.02rem;color:#101114;font-family:var(--sans)}
+.surface h3{margin:.3rem 0 .5rem;font-size:1.02rem;color:var(--head);font-family:var(--sans)}
 .surface p{margin:0;font-size:.85rem;color:var(--dim);line-height:1.6}
 .surface .st{display:inline-block;margin-top:.6rem;font-size:.72rem;font-family:var(--mono)}
 .surface.s2{border-top-color:var(--warm)} .surface.s2 .num{color:var(--warm)}
@@ -464,19 +424,19 @@ a.surface:hover{border-color:var(--accent);text-decoration:none}
   border-radius:0 10px 10px 0;padding:.85rem 1.1rem;box-shadow:var(--shadow)}
 .ops .op b{font-family:var(--mono);font-size:.78rem;letter-spacing:.08em;color:var(--accent-dk);
   display:block;margin-bottom:.3rem}
-.ops .op p{margin:0;font-size:.9rem;line-height:1.6;color:#34363c}
+.ops .op p{margin:0;font-size:.9rem;line-height:1.6;color:var(--text)}
 .ops .op code{font-size:.82rem}
 
 /* a directory tree, shown as one. The layout IS the data model here, so the tree is
    content rather than decoration. */
 pre.tree{background:var(--panel);border:1px solid var(--line);border-radius:10px;
   padding:.95rem 1.1rem;margin:1.1rem 0;font-family:var(--mono);font-size:.8rem;line-height:1.65;
-  color:#34363c;overflow-x:auto;box-shadow:var(--shadow)}
+  color:var(--text);overflow-x:auto;box-shadow:var(--shadow)}
 pre.tree b{color:var(--accent-dk);font-weight:600}
 pre.tree i{color:var(--dim2);font-style:normal}
 
 /* a claim shown beside what was measured. Used all over /shipped/corrections.html */
-table.corr td:first-child{font-weight:600;color:#101114}
+table.corr td:first-child{font-weight:600;color:var(--head)}
 table.corr td.was{color:var(--red)}
 table.corr td.is{color:var(--accent-dk)}
 
@@ -486,7 +446,7 @@ table.corr td.is{color:var(--accent-dk)}
    light and matches pre.tree. */
 pre.term{background:var(--panel);border:1px solid var(--line);border-radius:10px;
   padding:.9rem 1.1rem;margin:1.1rem 0;font-family:var(--mono);font-size:.79rem;
-  line-height:1.65;color:#34363c;overflow-x:auto;box-shadow:var(--shadow)}
+  line-height:1.65;color:var(--text);overflow-x:auto;box-shadow:var(--shadow)}
 pre.term b{color:var(--accent-dk);font-weight:600}
 pre.term em{font-style:normal;color:var(--dim2)}
 
@@ -501,7 +461,7 @@ pre.term em{font-style:normal;color:var(--dim2)}
 .band th{background:var(--panel2);text-align:left;padding:.55rem .8rem;font-size:.7rem;
   letter-spacing:.09em;text-transform:uppercase;color:var(--dim)}
 .band td{padding:.55rem .8rem;border-top:1px solid var(--line);vertical-align:top;
-  line-height:1.5;color:#34363c}
+  line-height:1.5;color:var(--text)}
 .band .note{max-width:1100px;margin-left:auto;margin-right:auto;text-align:left}
 
 /* A band is full-bleed and has NO horizontal padding, so every component inside one

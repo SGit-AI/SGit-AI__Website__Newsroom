@@ -34,7 +34,7 @@ from page import newsroom_page, write, esc  # noqa: E402
 ROOT = Path(__file__).resolve().parents[2]
 HOST = (ROOT / "CNAME").read_text().strip()
 VERSION = (ROOT / "admin/build/version.txt").read_text().strip()
-METER = "assets/components/sg-meter/v1/v1.4/v1.4.0/"
+METER = "assets/components/sg-meter/v1/v1.4/v1.4.1/"
 DATE = "11 October 2026"
 
 # ----------------------------------------------------------------------------------------------- the files
@@ -112,7 +112,7 @@ BUILD = [
     ("admin/build/lists.py", "writes the two reading-list pages"),
     ("admin/build/personas.py", "writes the persona pages and persona/links.json"),
     ("admin/build/page.py", "the page template, with the meter block every page this site writes carries"),
-    ("admin/build/sync_newsroom.py", "the import: re-points the meter to v1.4.0, applies the text rules, prints the article number"),
+    ("admin/build/sync_newsroom.py", "the import: re-points the meter to v1.4.1, applies the text rules, prints the article number"),
     ("admin/build/newsroom-meter.json", "the top-up link, applied on import"),
     ("admin/build/newsroom-text.json", "the eight text rules, applied on import"),
     ("admin/build/wire.py", "writes the three wire pages and, from a clone, wire/snapshot.json"),
@@ -258,7 +258,7 @@ CONTRACTS = [
     ("The wire's vault", "vault u9i9jp0l on dev.send.sgraph.ai, read key published; data/bundle.json {beats, stories, sources, personas, brief}, data/deliveries.json, docs/*.md; story fields and status shown as written; everything in the vault is public, for ever", "admin/build/wire-vault.json; wire/how.html; the wire's agents own the content"),
     ("Events", "sg:meter.changed · charged · rated · declined · toppedup · reset · restored · persona · shared; sg-meter:error", "sg-meter-core.js _emit(), sg-component.js failed()"),
     ("A component", "static jsUrl, get resourceName(), onReady(); a .tpl and a .css beside the .js; published at an immutable versioned path", "sg-component.js"),
-    ("The import's rules", "the meter path rewrite (v1.3.1 → v1.4.0), the top-up link, eight text rules, the article number line; each stops the import when its anchor moves", "sync_newsroom.py items 9–12"),
+    ("The import's rules", "the meter path rewrite (v1.3.1 → v1.4.1), the top-up link, eight text rules, the article number line; each stops the import when its anchor moves", "sync_newsroom.py items 9–12"),
 ]
 
 # ----------------------------------------------------------------------------------------------- the review

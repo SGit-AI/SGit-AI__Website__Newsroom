@@ -108,6 +108,7 @@ Vaults & methodGraphs & knowledge[This article as a graph →](graphs.md#the-vau
 
 ### Continued by
 
+- [Dark mode, and four more: five themes for the newsroom, chosen once and kept in your browser](dark-mode-and-four-more.md) Five themes behind one pill in the bar, kept in the reader's browser, built as a layer over a stylesheet this site cannot edit, with colour as a token and a test.
 - [Stop the bleeding, then ask for it back: a helper, an agent and a friendly letter for the subscriptions you keep and do not use](stop-the-bleeding-then-ask-for-it-back.md) A helper and an agent ask what you used, ask nicely for a pause and a refund, stop the payments either way, and publish what each company did.
 
 [All articles](index.md) · [All graphs](graphs.md)

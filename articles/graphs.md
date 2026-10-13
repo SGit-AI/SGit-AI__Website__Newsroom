@@ -14,13 +14,44 @@ Every article here has a semantic graph beside it: the ideas it rests on, the cl
 
 The graphs are data first and pictures second. Take them as JSON: [all articles in one file](graphs.json), with the topics, the teasers and the links between articles resolved, or one file per article at `articles/graphs/<slug>.json` (for example [this one](graphs/footprint-and-blast-radius.json)). The pages on this site are rendered from the same files at build time; nothing here is hand-written HTML. Since v0.7.77 each graph also carries the article's `figures`: file, URL, caption, the kind the author gave it (`wardley-map`, for one) and every frame of a multi-frame figure, so a picture and its context travel together and "every Wardley map on this site" is a filter, not a reading list.
 
-99 of 99 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
+100 of 100 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
 
 ## How the articles connect
 
 *[diagram]*
 
-99 articles, 529 links between them (881 mentions in all). 90 articles cite an earlier one; 11 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (23 articles link to it). Most linking: [The Mandate Stack](#the-mandate-stack) (20 links out). 0 articles not yet linked either way.
+100 articles, 530 links between them (882 mentions in all). 91 articles cite an earlier one; 11 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (23 articles link to it). Most linking: [The Mandate Stack](#the-mandate-stack) (20 links out). 0 articles not yet linked either way.
+
+## [Dark mode, and four more: five themes for the newsroom, chosen once and kept in your browser](dark-mode-and-four-more.md)
+
+2026-10-13 · Site & engineering
+
+A reader's two-word reply became five themes: the look the site had stays the default, pixel for pixel, and four more reach every heading because every colour on the site now comes from one file of tokens, with the imported stylesheet's literal colours shadowed rule by rule rather than edited, the theme set before the first paint, and a test that fails on a theme with a hole or a stylesheet with a literal.
+
+*[diagram]*
+**concept**claim**method**artefact**example**question
+
+**13 nodes, 14 edges**
+
+- **Dark mode!** (example) The first reaction to the wire from outside: a reader on WhatsApp, two words, which became the owner's ask for five themes like VoiceDebrief's.
+- **Five themes** (artefact) Newsprint, the default and unchanged; Night, the dark mode; Paper, warm cream; Blueprint, white and blue; Ember, dark and amber.
+- **The pill in the bar** (artefact) A swatch and a name beside Search and Vault; a list of five with a swatch, a name and three words each; keyboard and touch.
+- **Kept in this browser** (claim) The choice lives in localStorage and never leaves the device; the system's dark preference decides only until the reader chooses.
+- **A stylesheet this site cannot edit** (question) The newsroom's look is sgit.ai's stylesheet, imported on every sync and checked unedited, and it writes forty-odd colours as literals.
+- **The override map** (method) Every rule with a literal is restated later in the cascade with a token whose Newsprint value is that literal: same selector, same specificity, generated from a script, not guessed.
+- **Colour is a token** (claim) A stylesheet names a colour through a token, defined once in all five themes; the stylesheets this site owns were rewritten to the rule.
+- **Before the first paint** (method) The theme stylesheet and a classic, blocking script are the first lines of the body on every page, so a page opens in the reader's theme rather than flipping.
+- **--head, not --ink** (concept) A token is named for what it is for: the imported deck viewer reads --ink as a dark bar, so a near-white heading token under that name would have turned the bar white.
+- **The bar on one row** (artefact) Eight groups, the tools as one cluster, the parent pill gone, breakpoints found by a sweep of widths and kept by the test.
+- **The test** (method) Every token in every theme; no literal outside the themes file; the picker and its memory; contrast at 4.5:1 measured in every theme; the bar on one row from 1200 up.
+- **White on white** (example) The map's .btn rule outranked the wire's own button and the first screenshot showed an empty pill; the fix is specificity, and the lesson is in the guidance.
+- **The design guidance** (artefact) assets/themes/README.md: the tokens and what each is for, what stays literal and why, and how to add a theme.
+
+> Newsprint renders pixel for pixel as before, and the other four reach every heading. The whole design constraint and its answer in one sentence.
+
+> A token is named for what it is for, not for what it looks like in one theme. The naming rule, learnt from a bar that would have turned white.
+
+builds on [The vault crosses Chrome profiles: state and memory between browser sessions, found by using it rather than by building it](#the-vault-crosses-chrome-profiles).
 
 ## [The vault crosses Chrome profiles: state and memory between browser sessions, found by using it rather than by building it](the-vault-crosses-chrome-profiles.md)
 
@@ -50,7 +81,7 @@ Because the reader's state is records in a vault, one file per device, a second 
 
 > This feature needed no new development. The point about features found by use rather than built.
 
-builds on [Replicating the agentic inbox: a walkthrough from one Claude session to a team of agents that never press send](#replicating-the-agentic-inbox), [Not a straight line: working for RiskMandate by working on the newsroom, and why the thinking is never wasted](#not-a-straight-line), [Pay after you read: how a reading meter became a working business model in one afternoon, one release at a time](#pay-after-you-read), [I miss it, so it is working: the people who decide the roadmap have to use the product, and the vault the newsroom now needs](#i-miss-it), [The passkey opens the vault: a door per path, a master vault for every user, and no server of ours](#the-passkey-opens-the-vault), [The vault is live: from a design on 11 October to a reader's vault on newsroom.sgit.ai by two in the morning, and how all of it fits together](#the-vault-is-live), [The site is an inbox: deciding before reading, marks that build the reader's own graph, and why I could not write this brief until the vault existed](#the-site-is-an-inbox), [Encrypted memory for agents that run somewhere else: sgit deployment patterns, from a Mac mini to Kubernetes](#encrypted-memory-for-isolated-agents), [Memory is not a spectator sport: how a web of open sites, graphs and vaults became the memory for sessions like this one](#memory-is-not-a-spectator-sport), [Stop the bleeding, then ask for it back: a helper, an agent and a friendly letter for the subscriptions you keep and do not use](#stop-the-bleeding-then-ask-for-it-back); continued by [Stop the bleeding, then ask for it back: a helper, an agent and a friendly letter for the subscriptions you keep and do not use](#stop-the-bleeding-then-ask-for-it-back).
+builds on [Replicating the agentic inbox: a walkthrough from one Claude session to a team of agents that never press send](#replicating-the-agentic-inbox), [Not a straight line: working for RiskMandate by working on the newsroom, and why the thinking is never wasted](#not-a-straight-line), [Pay after you read: how a reading meter became a working business model in one afternoon, one release at a time](#pay-after-you-read), [I miss it, so it is working: the people who decide the roadmap have to use the product, and the vault the newsroom now needs](#i-miss-it), [The passkey opens the vault: a door per path, a master vault for every user, and no server of ours](#the-passkey-opens-the-vault), [The vault is live: from a design on 11 October to a reader's vault on newsroom.sgit.ai by two in the morning, and how all of it fits together](#the-vault-is-live), [The site is an inbox: deciding before reading, marks that build the reader's own graph, and why I could not write this brief until the vault existed](#the-site-is-an-inbox), [Encrypted memory for agents that run somewhere else: sgit deployment patterns, from a Mac mini to Kubernetes](#encrypted-memory-for-isolated-agents), [Memory is not a spectator sport: how a web of open sites, graphs and vaults became the memory for sessions like this one](#memory-is-not-a-spectator-sport), [Stop the bleeding, then ask for it back: a helper, an agent and a friendly letter for the subscriptions you keep and do not use](#stop-the-bleeding-then-ask-for-it-back); continued by [Dark mode, and four more: five themes for the newsroom, chosen once and kept in your browser](#dark-mode-and-four-more), [Stop the bleeding, then ask for it back: a helper, an agent and a friendly letter for the subscriptions you keep and do not use](#stop-the-bleeding-then-ask-for-it-back).
 
 ## [Stop the bleeding, then ask for it back: a helper, an agent and a friendly letter for the subscriptions you keep and do not use](stop-the-bleeding-then-ask-for-it-back.md)
 

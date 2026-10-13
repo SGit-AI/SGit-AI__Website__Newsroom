@@ -1,0 +1,67 @@
+/* newsroom.sgit.ai: the top bar, on one row (card 037).
+
+   Loaded on every page by admin/build/chrome.py after the page's own stylesheet, so it owns
+   the bar's LAYOUT in both looks, the newsroom's (assets/newsroom.css, sgit.ai's, which this
+   site must not edit) and the legacy one (assets/site.css). The two stylesheets collapsed
+   the bar at different widths (820 and 1200) and neither knew about the things this site
+   added to it: Search, the balance, Vault, and now the theme. By 13 October the row held
+   nine groups, five tools and the version, and at 2000px it still broke onto two lines
+   with GitHub alone on the second.
+
+   The shape now: the brand and the version on the left; the groups; then one cluster of
+   tools on the right (Search, the balance, Vault, the theme, GitHub), which is one flex
+   item, so it moves as one thing and never splits across lines. Eight groups, not nine:
+   World News Day moved under Archive, where its pages already were in the footer, and the
+   "part of sgit.ai" pill went, because the footer's network line says it on every page.
+
+   The breakpoints are measured, not guessed: admin/build/test_themes.mjs sweeps the widths
+   and fails if the bar takes more than one row where this file says it fits. */
+
+nav.site .row{gap:.55rem}
+nav.site .parent{display:none}
+nav.site .nav-tools{display:flex;align-items:center;gap:.4rem;margin-left:auto;flex:none}
+nav.site .nav-tools .gh{margin-left:0;order:0}
+nav.site a.nl{font-size:.8rem}
+nav.site .gh .lbl{margin-left:.3em}
+
+/* On the way down: tighten, and GitHub becomes its star. */
+@media (max-width:1400px){
+  nav.site .row{gap:.45rem}
+  nav.site a.nl{font-size:.77rem}
+  nav.site .gh .lbl{display:none}
+  nav.site .gh{padding:.28rem .5rem}
+}
+/* The phone menu, from 1199 down (newsroom.css took over at 820, site.css at 1200; the sweep
+   found eight groups plus the tools fit at 1200 and not at 1181). The whole list collapses
+   behind Menu; the tools stay on the bar, so the balance, the vault and the theme are one tap
+   on a phone too. */
+@media (max-width:1199px){
+  nav.site .row{position:relative;gap:.5rem}
+  .nav-toggle{display:block;order:3;margin-left:0;background:var(--panel);
+    border:1px solid var(--line2);border-radius:6px;padding:.3rem .7rem;
+    font:600 .78rem/1 var(--sans);color:var(--fg);cursor:pointer}
+  .nav-toggle:hover{border-color:var(--accent)}
+  nav.site .nav-tools{order:2;margin-left:auto}
+  .nav-items{display:none;order:5;width:100%;flex-direction:column;gap:.1rem;
+    padding:.5rem 0 .3rem;border-top:1px solid var(--line);margin-top:.4rem}
+  nav.site.open .nav-items{display:flex;
+    max-height:calc(100vh - 7rem);max-height:calc(100dvh - 7rem);
+    overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
+  nav.site .ni{width:100%}
+  nav.site .ni > .nl{display:block;padding:.42rem .2rem;font-size:.95rem}
+  nav.site .caret{display:none}
+  nav.site .sub{position:static;display:flex;flex-direction:column;border:0;
+    box-shadow:none;background:none;padding:0 0 .3rem .9rem;min-width:0;gap:0}
+  nav.site .sub a.sl{padding:.3rem .2rem;font-size:.86rem}
+}
+/* A phone: the bar is two rows on purpose, the brand and Menu on the first and the tools on the
+   second, rather than one row that no longer fits (it measured 467px of controls against a
+   390px screen) or a row that wraps wherever it happens to run out. */
+@media (max-width:520px){
+  nav.site .row{gap:.4rem}
+  .nav-toggle{order:3;margin-left:auto}
+  nav.site .nav-tools{order:4;flex:0 0 100%;margin-left:0;gap:.3rem}
+  nav.site .nav-tools .gh{display:none}
+  nav.site a.ver{display:none}
+}
+@media print{nav.site .nav-tools{display:none}}

@@ -11,10 +11,11 @@
 <body>
 
 <nav class="site"><div class="row">
+  <link rel="stylesheet" href="../assets/themes/themes.css">
+  <link rel="stylesheet" href="../assets/site-nav.css">
+  <script src="../assets/themes/themes.js"></script>
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.12.11</a>
-  <a class="search-btn" href="../search/index.html" title="Search the site, in your browser">Search</a>
-  <link rel="stylesheet" href="../assets/search/search-nav.css">
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.12.12</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -37,6 +38,7 @@
       <a class="sl" href="../wire/index.html">Today's edition</a>
       <a class="sl" href="../wire/sources.html">The sources</a>
       <a class="sl" href="../wire/how.html">How the wire works</a>
+      <a class="sl" href="../articles/dark-mode-and-four-more.html">Themes: dark mode and four more</a>
       </div>
     </div>
     <div class="ni ni-has">
@@ -90,26 +92,12 @@
       </div>
     </div>
     <div class="ni ni-has">
-      <a class="nl" href="../world-news-day/index.html">World News Day<span class="caret">&#9662;</span></a>
-      <div class="sub">
-      <a class="sl" href="../world-news-day/index.html">The corpus</a>
-      <a class="sl" href="../world-news-day/stories/free-to-republish-is-not-a-licence.html">Free to republish is not a licence</a>
-      <a class="sl" href="../world-news-day/licences.html">The licence that is not there</a>
-      <a class="sl" href="../world-news-day/corpus.html">The twenty-one</a>
-      <a class="sl" href="../world-news-day/findings.html">The aggregate</a>
-      <a class="sl" href="../world-news-day/terms.html">The vocabulary</a>
-      <a class="sl" href="../world-news-day/graph.html">The graph</a>
-      <a class="sl" href="../world-news-day/sources.html">Sources</a>
-      <a class="sl" href="../world-news-day/contacts.html">How to reach them</a>
-      <a class="sl" href="../world-news-day/vault.html">Published vaults</a>
-      <a class="sl" href="../world-news-day/vaults/corpus.html">The vault, opened</a>
-      <a class="sl" href="../world-news-day/method.html">Method</a>
-      </div>
-    </div>
-    <div class="ni ni-has">
       <a class="nl" href="../archive/index.html">Archive<span class="caret">&#9662;</span></a>
       <div class="sub">
       <a class="sl" href="../archive/index.html">The archive</a>
+      <a class="sl" href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+      <a class="sl" href="../world-news-day/stories/free-to-republish-is-not-a-licence.html">World News Day: free to republish is not a licence</a>
+      <a class="sl" href="../world-news-day/method.html">World News Day: the method</a>
       <a class="sl" href="../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
       <a class="sl" href="../governance/index.html">The Governance Wire (Aug 2026)</a>
       <a class="sl" href="../portugal/index.html">Portugal Startups (Sep 2026)</a>
@@ -129,7 +117,12 @@
       </div>
     </div>
   </div>
-  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom">&#9733; GitHub</a>
+  <div class="nav-tools">
+  <a class="search-btn" href="../search/index.html" title="Search the site, in your browser">Search</a>
+  <link rel="stylesheet" href="../assets/search/search-nav.css">
+  <div class="theme-pick"></div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
+  </div>
 </div></nav>
 
 <main class="doc">
@@ -140,6 +133,15 @@
 <div class="tablewrap"><table class="vers">
   <thead><tr><th>Version</th><th>Date</th><th>What shipped</th></tr></thead>
   <tbody>
+    <tr id="v0.12.12">
+      <td class="vnum">v0.12.12</td>
+      <td>13 Oct 2026</td>
+      <td><b>Dark mode and four more themes, the top bar on one row, and colour as a token.</b> In <a href="../engineering/releases/v0.12.12.html">the release</a>; cards 036, 037, 038.
+        <p><b>Five themes.</b> A pill in the bar beside Search and Vault: Newsprint (the look since v0.6.0, still the default), Night, Paper, Blueprint and Ember, each with a swatch and three words. The choice is kept in this browser; a system set to dark opens in Night until the reader chooses; print is Newsprint on white. The page paints in the reader&rsquo;s theme the first time: the stylesheet and the script that sets it are the first things in the body, on every page, by <code>chrome.py</code>. sgit.ai&rsquo;s stylesheet, which this site cannot edit, writes forty-odd literal colours; <code>assets/themes/themes.css</code> restates each of those rules with a token, so Newsprint is what it was and the other four reach every heading.</p>
+        <p><b>The bar.</b> One row at 1200px and up in both looks: the brand and the version, eight groups (World News Day under Archive), and the tools as one cluster on the right. The breakpoints were found by a sweep of widths and are kept by the test. The &ldquo;part of sgit.ai&rdquo; pill went; the footer says it.</p>
+        <p><b>Colour is a token.</b> Every stylesheet this site owns reads tokens defined once in all five themes; the reading meter is v1.4.1 for its last five literals. The guidance is <code>assets/themes/README.md</code>; the gate is <code>admin/build/test_themes.mjs</code>, the twelfth browser test in CI: every token in every theme, no literal outside the themes file, the picker and its memory, 4.5:1 contrast in every theme, the bar on one row.</p>
+        <p><b>The article.</b> <a href="../articles/dark-mode-and-four-more.html">Dark mode, and four more</a>, by the agent that did the work, writing as <a href="../about/newsroom-ux.html">newsroom.ux</a>: what a reader sees, the choices behind it, and the cascade underneath.</p></td>
+    </tr>
     <tr id="v0.12.11">
       <td class="vnum">v0.12.11</td>
       <td>13 Oct 2026</td>
@@ -820,7 +822,7 @@
     <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="netline"><a href="https://sgit.ai" style="display:inline;padding:0"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://pt.newsroom.sgit.ai" style="display:inline;padding:0">&#8593; pt.newsroom.sgit.ai</a> &middot; <a href="https://graphs.sgit.ai" style="display:inline;padding:0">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai" style="display:inline;padding:0">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai" style="display:inline;padding:0">&#8593; nhi.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai" style="display:inline;padding:0">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.12.11</a> &middot; <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.12.12</a> &middot; <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>The newsroom</h4>

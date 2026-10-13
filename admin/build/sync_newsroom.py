@@ -47,12 +47,14 @@ What changes on the way in, and nothing else:
      and how to switch it off.
   10. Wording this site changes on named pages (admin/build/newsroom-text.json), each a recorded
      rule that stops the import if sgit.ai's text under it moves. The record lists them.
-  11. Every page loads this site's own build of the reading meter, v1.4.0
-     (assets/components/sg-meter/v1/v1.4/v1.4.0/), instead of sgit.ai's v1.3.1 that the page names.
+  11. Every page loads this site's own build of the reading meter, v1.4.1
+     (assets/components/sg-meter/v1/v1.4/v1.4.1/), instead of sgit.ai's v1.3.1 that the page names.
      v1.4.0 is v1.3.1 without "Pause the meter" and "Start again", and with the view that lets a
      link open the newsroom as a named persona. Only the dynamic import() of the component is
      re-pointed; code samples on the docs page are text and stay as they are. If sgit.ai moves to
-     another version, the import stops: v1.4.0 has to be re-based on it deliberately.
+     another version, the import stops: v1.4.0 has to be re-based on it deliberately. v1.4.1 is v1.4.0 with
+     its last five literal colours read as the page's theme tokens (card 038); a component path is immutable,
+     so the change is a new path.
   12. Each article carries its number ("No. 65"), small, under "All articles / All graphs", with a link to make a
      reading list starting from it. The numbers are assigned once and never change (admin/build/ids.py,
      articles/ids.json); the import calls it before it writes a page. The line is added to the article's page
@@ -103,7 +105,7 @@ LIVE_LINK  = re.compile(r"^https://buy\.stripe\.com/[A-Za-z0-9]+$")
 # written here name METER_OURS. A component path is published and immutable, so a change is a new path.
 METER_PATH     = "assets/components/sg-meter/v1/"
 METER_BASED_ON = "v1.3/v1.3.1"
-METER_OURS     = "v1.4/v1.4.0"
+METER_OURS     = "v1.4/v1.4.1"
 METER_IMPORT   = re.compile(r"(import\(\s*['\"][^'\"]*?" + re.escape(METER_PATH) + r")(v\d+\.\d+/v\d+\.\d+\.\d+)(/sg-meter\.js)")
 
 TEXT_FILE = ROOT / "admin/build/newsroom-text.json"
