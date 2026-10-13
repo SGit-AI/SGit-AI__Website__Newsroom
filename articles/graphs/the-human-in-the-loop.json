@@ -1,0 +1,177 @@
+{
+  "slug": "the-human-in-the-loop",
+  "teaser": "Checking every output is a bottleneck and a weak safety net; put the person where it cannot be undone, and let controls do the rest.",
+  "topics": [
+    "agents-and-policy"
+  ],
+  "core_idea": "A person checking every output an agent produces is both a bottleneck and a weak safety net, because people approve almost everything they are shown; the person belongs where an output cannot be undone and the blast radius is large, given the why, while validators, second readers, boundaries and a record read afterwards check the rest, reviews fix the source, and the record moves the line.",
+  "nodes": [
+    {
+      "id": "question",
+      "label": "Safety net or bottleneck?",
+      "kind": "question",
+      "summary": "A roundtable question: few trust an agent to decide without someone checking every output."
+    },
+    {
+      "id": "both",
+      "label": "Both, and mostly neither",
+      "kind": "claim",
+      "summary": "Checking every output does not scale and protects little, because people approve almost everything."
+    },
+    {
+      "id": "fatigue",
+      "label": "Approval fatigue",
+      "kind": "example",
+      "summary": "Anthropic measured 93% of permission prompts approved, and cut prompts by 84% with sandboxing."
+    },
+    {
+      "id": "agency",
+      "label": "Agency is not a yes",
+      "kind": "concept",
+      "summary": "A yes without context, time or authority is liability, not a decision."
+    },
+    {
+      "id": "where",
+      "label": "Where, not whether",
+      "kind": "method",
+      "summary": "Place each output by whether it can be undone and its blast radius."
+    },
+    {
+      "id": "person",
+      "label": "A person, with the why",
+      "kind": "claim",
+      "summary": "Sending in my name, typing a secret, spending money: a real decision, with the reason."
+    },
+    {
+      "id": "controls",
+      "label": "Controls that do not tire",
+      "kind": "method",
+      "summary": "Validators, tests, leak scans, a second reader and boundaries instead of a person on every output."
+    },
+    {
+      "id": "source",
+      "label": "Fix the source",
+      "kind": "method",
+      "summary": "A review that turns a correction into a rule makes the loop need the person less."
+    },
+    {
+      "id": "record",
+      "label": "The record moves the line",
+      "kind": "claim",
+      "summary": "Drafts nobody had to change are the evidence for giving an agent more room."
+    },
+    {
+      "id": "production",
+      "label": "Production on 13 October",
+      "kind": "example",
+      "summary": "Fourteen releases by agents with no one-by-one approval; an agent team that drafts all email and sends none."
+    },
+    {
+      "id": "roundtable",
+      "label": "Questions for the roundtable",
+      "kind": "artefact",
+      "summary": "Six questions to place the person and remove checks that do not check."
+    }
+  ],
+  "edges": [
+    {
+      "from": "both",
+      "to": "question",
+      "rel": "answers"
+    },
+    {
+      "from": "fatigue",
+      "to": "both",
+      "rel": "example-of"
+    },
+    {
+      "from": "agency",
+      "to": "both",
+      "rel": "extends"
+    },
+    {
+      "from": "where",
+      "to": "question",
+      "rel": "answers"
+    },
+    {
+      "from": "where",
+      "to": "person",
+      "rel": "produces"
+    },
+    {
+      "from": "where",
+      "to": "controls",
+      "rel": "produces"
+    },
+    {
+      "from": "source",
+      "to": "agency",
+      "rel": "extends"
+    },
+    {
+      "from": "record",
+      "to": "where",
+      "rel": "leads-to"
+    },
+    {
+      "from": "production",
+      "to": "where",
+      "rel": "example-of"
+    },
+    {
+      "from": "controls",
+      "to": "production",
+      "rel": "depends-on"
+    },
+    {
+      "from": "roundtable",
+      "to": "where",
+      "rel": "depends-on"
+    }
+  ],
+  "links": {
+    "articles": [
+      "agency-is-not-a-yes",
+      "where-is-the-why",
+      "footprint-and-blast-radius",
+      "replicating-the-agentic-inbox",
+      "who-owns-the-words",
+      "stop-the-bleeding-then-ask-for-it-back",
+      "a-second-reader-the-agent-cannot-skip",
+      "hope-or-enforcement",
+      "a-policy-beside-the-prompt",
+      "how-the-voice-works",
+      "the-agent-team-as-it-runs"
+    ],
+    "pages": [],
+    "sites": [
+      "https://www.anthropic.com/engineering/claude-code-auto-mode",
+      "https://www.anthropic.com/engineering/claude-code-sandboxing"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "So the honest answer to the roundtable's question is: checking every output gives you the cost of a bottleneck and the protection of a rubber stamp.",
+      "why": "The answer in one sentence."
+    },
+    {
+      "text": "It is the same rule applied to two different blast radii.",
+      "why": "Why the newsroom ships unapproved while email waits for a person."
+    }
+  ],
+  "figures": [
+    {
+      "file": "hl-where.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/hl-where.webp",
+      "caption": "Where the person belongs. Two questions place every output an agent produces: can it be undone, and how much would it cost if it went wrong. The person goes where the answers are no and a lot. Everywhere else, controls that do not get tired do the checking, and the person reads the record afterwards. Examples from the newsroom and from my own agent team.",
+      "kind": "decision"
+    },
+    {
+      "file": "hl-production.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/hl-production.webp",
+      "caption": "How far I have got in production, as it ran on 13 October 2026. For each kind of output, who or what checks it before it counts, and what happens afterwards. Only two rows have a person before the fact.",
+      "kind": "comparison"
+    }
+  ]
+}

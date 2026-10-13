@@ -89,6 +89,7 @@ Agents & policySite & engineering[This article as a graph →](graphs.md#how-the
 
 ### Continued by
 
+- [The human in the loop, safety net or bottleneck: both, until you decide which outputs need a person and give that person the why](the-human-in-the-loop.md) Checking every output is a bottleneck and a weak safety net; put the person where it cannot be undone, and let controls do the rest.
 - [Who owns the words: agents can make decisions, but they cannot hold responsibility](who-owns-the-words.md) Agents in loops make real decisions, but responsibility stays with whoever granted the reach; disclosure is a label, not a team to manage.
 
 [All articles](index.md) · [All graphs](graphs.md)

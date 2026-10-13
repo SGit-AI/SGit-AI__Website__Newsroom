@@ -73,6 +73,38 @@
   ],
   "articles": [
     {
+      "slug": "the-human-in-the-loop",
+      "title": "The human in the loop, safety net or bottleneck: both, until you decide which outputs need a person and give that person the why",
+      "date": "2026-10-13",
+      "updated": "",
+      "author": "Dinis Cruz",
+      "url": "https://newsroom.sgit.ai/articles/the-human-in-the-loop.html",
+      "markdown": "https://newsroom.sgit.ai/articles/the-human-in-the-loop.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/the-human-in-the-loop.webp",
+      "graph": "https://newsroom.sgit.ai/articles/graphs/the-human-in-the-loop.json",
+      "teaser": "Checking every output is a bottleneck and a weak safety net; put the person where it cannot be undone, and let controls do the rest.",
+      "summary": "Someone shaping a roundtable in London asked me this week for my thoughts on a question that keeps coming up: is the human in the loop a safety net or a bottleneck? Plenty of companies have agent pilots that look great, and very few trust an agent to make a real decision without someone checking every output. My answer is that a person checking every output is both, and is mostly neither: it is a bottleneck because it does not scale, and it is a weak safety net because people approve almost everything they are shown, which Anthropic measured at 93% of permission prompts. The question is not whether there is a human in the loop. It is which outputs need one, what that person is given to decide with, and what moves the line over time. Put the person where an output cannot be undone and the blast radius is large, sending an email in my name, typing a password, spending money. Everywhere else, replace the human check with controls that do not get tired: a validator, a second reader the agent cannot skip, a policy whose rows are enforced outside the model, and a record read afterwards. Make the review a quality step that fixes the source, not a sign-off. And let the record move the line: trust is built from drafts nobody had to change. This is how far I have got in production. On the day I am writing this, the newsroom shipped fourteen releases, every commit made by an agent, with nobody approving each one before it went live, while the agents that run my correspondence draft every email and send none of them: I do.",
+      "topics": [
+        "agents-and-policy"
+      ],
+      "tags": [
+        "human-in-the-loop",
+        "agents",
+        "agency",
+        "approval-fatigue",
+        "agent-behaviour-policy",
+        "blast-radius",
+        "production",
+        "trust",
+        "governance",
+        "roundtable",
+        "article"
+      ],
+      "placement": [],
+      "linkedin": null,
+      "notes": []
+    },
+    {
       "slug": "a-policy-beside-the-prompt",
       "title": "A policy beside the prompt: a proposal that every agent takes a behaviour policy as an input, with enforcement and liability attached, and why aviation and payments say the vendors should want it",
       "date": "2026-10-13",
