@@ -126,6 +126,7 @@ author: Dinis Cruz
 author_url: about/index.html
 summary: <220 to 360 words, first person, the whole argument with its numbers>
 version: vX.Y.Z              # the site release that publishes it; stays as first published
+time: HH:MM                  # optional, UTC: orders articles published the same day until the file is committed
 license: https://creativecommons.org/licenses/by/4.0/
 tags: <ten or so, kebab-case, the last one "article">
 status: published
@@ -152,6 +153,8 @@ If you <are in the reader's position>, write to [agent@riskmandate.ai](mailto:ag
 ## Where this comes from {#sources}
 <the origin; the responsibility line; every source, linked and dated; what the counts were made from>
 ```
+
+**Links inside the site are root-relative**, `/articles/<slug>.html`, never `../articles/`: the build rewrites each for the page it lands on, and the pages also render inside a vault, where a leading slash would escape the app. That is rule 2 of sgit.ai's `CONTENT.md`.
 
 **The title** is the hook, a colon, and the argument: 17 to 34 words. It names a mechanism, not a topic:
 "The policy draws the liability line", "Every link points back", "How cheap is it to undo?". The part after
@@ -201,6 +204,7 @@ A figure is declared on one line, where it belongs in the text:
 !shot <aa>-<name>.webp | images/ | <caption> | <kind>
 ```
 
+- The trailing kind is carried on the figure as `data-kind`, and into the article's graph with the file, the URL and the caption. sgit.ai's `CONTENT.md` documents the three-field form; the fourth field is the kind.
 - `<aa>` is a two-letter prefix per article (`cu-` for *How cheap is it to undo*, `hl-` for *The human in
   the loop*, `lb-` for *Every link points back*), so the folder reads by article.
 - The file is in `images/`, 1,400 pixels wide, lossy webp, 40 to 70 KB. Screenshots of the site are the one
@@ -212,9 +216,11 @@ A figure is declared on one line, where it belongs in the text:
 
 Figures are drawn, not generated: each is a small web page in the site's colours (Newsprint's warm
 off-white and teal, the same type as the pages) rendered to an image by a headless browser, so a figure is
-text that can be corrected rather than a picture that has to be redrawn. The renderer lives on sgit.ai with
-the generator; until it moves here, draw the page by hand and render it with Playwright's Chromium, then
-convert to webp. The figure is where the evidence is: the counts as a chart, the two workflows as a table,
+text that can be corrected rather than a picture that has to be redrawn. The renderer is not in either
+repository; the figures are drawn in the session that writes the article. The way the four figures of
+*Four frameworks, one agent* were made: one HTML file per figure sharing a small stylesheet in the site's
+tokens, a body 1,400 pixels wide, rendered with Playwright's Chromium as a full-page screenshot clipped to
+that width, and converted to webp at quality 82 with Pillow. The figure is where the evidence is: the counts as a chart, the two workflows as a table,
 the decision as two axes, the six steps as a timeline. A figure that only decorates is left out.
 
 A screenshot of the site is taken from the built site at a named width, and its caption says the width and
