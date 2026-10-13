@@ -2,7 +2,7 @@
 
 > Open newsroom.sgit.ai/wire/#lens=dinis and you get a week of industry news read as me: forty stories across five beats, each with its primary source, who else covered it, one exact quote and why it matters, twenty-five of them reaching me through a named concern and fourteen withheld with the reason, and a personal brief at the top. None of it is on the newsroom. It is in an encrypted sgit vault that a separate agent wrote on the afternoon of 11 October, in a session the newsroom never saw, with a write key the newsroom does not have. The newsroom's own agent, in its session, took the vault's read key, published it on purpose, and built three pages and about four hundred lines of code that open the vault in the reader's browser, decrypt it and draw it as text, with twenty-eight checks against the real vault in CI. A commit to the vault is on the page within two minutes, with no release of the site. This article walks the workflow from both sides, with the two git logs as the record: what the wire desk wrote and under what rules, what the newsroom holds and what it refused, why the vault is the right interface between two agents that never share a session, and the honest list of what is unreviewed. It is also the first running piece of a plan I had years ago and did not use, and I am now its first reader.
 
-*Source: <https://newsroom.sgit.ai/articles/two-agents-one-vault.html> · sgit.ai v0.7.86 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/two-agents-one-vault.html> · sgit.ai v0.7.87 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 
@@ -149,6 +149,7 @@ Vaults & methodNews & evidenceAgents & policy[This article as a graph →](graph
 
 ### Continued by
 
+- [Sixteen notes I did not want to lose: a request to send from any browser to my vault, why identity is still this hard, and how two more wires became a product line](sixteen-notes-i-did-not-want-to-lose.md) Sixteen notes stuck in a browser with no passkey led to a request: let any browser send to my vault, by link, text or QR code.
 - [The site is an inbox: deciding before reading, marks that build the reader's own graph, and why I could not write this brief until the vault existed](the-site-is-an-inbox.md) The site as an inbox that starts empty: decide fast before reading, mark slowly while reading, build a graph you own, and sign what you send to the newsroom.
 - [The vault is live: from a design on 11 October to a reader's vault on newsroom.sgit.ai by two in the morning, and how all of it fits together](the-vault-is-live.md) The reader's vault runs on newsroom.sgit.ai: a passkey opens three real vaults, each device writes one file, and the architecture is drawn as it stands.
 

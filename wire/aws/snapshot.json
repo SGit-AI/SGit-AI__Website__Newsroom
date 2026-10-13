@@ -1,0 +1,1025 @@
+{
+ "what": "The AWS Wire as it was in its vault when this site was last released: headlines and primary links, each story's edition and dated corrections, the desk's latest release note. The live edition is the vault (v202bla5); this file is the fallback and the index for agents.",
+ "release": "v0.12.20",
+ "vault": "v202bla5",
+ "endpoint": "https://dev.send.sgraph.ai",
+ "clone": "sgit clone sgit_public_read_ad5c3f9e1f4d7632db06cd27f6ee6a256063300c426f4a94e7de33cf5a53e892:v202bla5",
+ "wire": {
+  "id": "aws",
+  "title": "The AWS Wire",
+  "cadence": "daily items, weekly digest",
+  "description": "Everything AWS announced, filtered by the stack you declare in data/stack.json: what is new, what is insecure, what is being retired, what costs more, and what tooling changed for the services you actually run. Everything else is still listed, as withheld, with the reason.",
+  "personal_persona": "dinis"
+ },
+ "edition": "2026-10-13",
+ "window": {
+  "from": "2026-09-29",
+  "to": "2026-10-13"
+ },
+ "kind": "first edition: two weeks of AWS, filtered by your stack (Lambda, S3, API Gateway, CloudFront, boto3)",
+ "status": "ai-generated, unreviewed",
+ "counts": {
+  "stories": 88,
+  "sources": 24,
+  "personas": 5,
+  "primary_not_fetched": 0,
+  "corrected": 0,
+  "map_entities": 0,
+  "stack_services": 5,
+  "deadlines": 4
+ },
+ "latest_release": {
+  "id": "2026-10-13.1",
+  "at": "2026-10-13T13:30:00Z",
+  "edition": "2026-10-13",
+  "title": "First edition: two weeks of AWS, filtered by your stack",
+  "summary": "First edition, covering 29 September to 13 October: 29 stories about your stack, plus the What's New firehose, with every item joined to data/stack.json (Lambda, S3, API Gateway, CloudFront, boto3). Lead: Lambda Web Functions. Act now: Python 3.10 on Lambda ends on 31 October; CDK 2.273 changes CloudFront defaults; the re:Invent full refund ends on 16 October.",
+  "added": [
+   "aws-08",
+   "wn-07",
+   "wn-06",
+   "wn-05",
+   "wn-04",
+   "wn-03",
+   "wn-02",
+   "wn-01",
+   "aws-25",
+   "aws-12",
+   "aws-11",
+   "aws-03",
+   "aws-02",
+   "aws-01",
+   "wn-08",
+   "aws-16",
+   "wn-16",
+   "wn-15",
+   "wn-14",
+   "wn-13",
+   "wn-12",
+   "wn-11",
+   "wn-10",
+   "wn-09",
+   "aws-24",
+   "aws-05",
+   "aws-04",
+   "wn-21",
+   "wn-20",
+   "wn-19",
+   "wn-18",
+   "wn-17",
+   "aws-26",
+   "aws-21",
+   "aws-15",
+   "aws-10",
+   "aws-09",
+   "wn-26",
+   "wn-25",
+   "wn-24",
+   "wn-23",
+   "wn-22",
+   "aws-18",
+   "wn-28",
+   "wn-27",
+   "aws-22",
+   "aws-14",
+   "aws-06",
+   "wn-39",
+   "wn-38",
+   "wn-37",
+   "wn-36",
+   "wn-35",
+   "wn-34",
+   "wn-33",
+   "wn-32",
+   "wn-31",
+   "wn-30",
+   "wn-29",
+   "aws-23",
+   "aws-17",
+   "wn-49",
+   "wn-48",
+   "wn-47",
+   "wn-46",
+   "wn-45",
+   "wn-44",
+   "wn-43",
+   "wn-42",
+   "wn-41",
+   "wn-40",
+   "wn-54",
+   "wn-53",
+   "wn-52",
+   "wn-51",
+   "wn-50",
+   "aws-13",
+   "wn-59",
+   "wn-58",
+   "wn-55",
+   "aws-19",
+   "wn-57",
+   "wn-56",
+   "aws-20",
+   "aws-07",
+   "aws-29",
+   "aws-28",
+   "aws-27"
+  ],
+  "updated": [],
+  "withdrawn": []
+ },
+ "threads": [
+  {
+   "id": "web-functions",
+   "title": "Lambda Web Functions",
+   "stories": [
+    "aws-01",
+    "aws-02",
+    "aws-03",
+    "aws-11"
+   ]
+  },
+  {
+   "id": "act-now",
+   "title": "Act now: deadlines and breaking changes",
+   "stories": [
+    "aws-08",
+    "aws-10",
+    "aws-12",
+    "aws-14",
+    "aws-09"
+   ]
+  },
+  {
+   "id": "edge-and-agents",
+   "title": "The edge as the agent's front door",
+   "stories": [
+    "aws-17",
+    "aws-05",
+    "aws-22",
+    "aws-23"
+   ]
+  }
+ ],
+ "beats": [
+  {
+   "id": "security",
+   "label": "Security",
+   "stories": [
+    {
+     "id": "aws-25",
+     "headline": "[AWS general] Enforcing post-quantum ML-DSA signing policy in KMS with SCPs and IAM (kms:KeySpec)",
+     "date": "2026-10-12",
+     "primary_url": "https://aws.amazon.com/blogs/security/quantum-resistant-signing-on-aws-part-2-enforce-your-ml-dsa-algorithm-policy-with-scps-and-iam/",
+     "publisher": "AWS Security Blog",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "aws-16",
+     "headline": "AWS's own SAR Lambda (AmazonConnectSalesforceLambda) ran arbitrary AWS API calls under its role for anyone with invoke rights, CVE-2026-94384",
+     "date": "2026-10-11",
+     "primary_url": "https://shattered.io/aws-lambda-iam-bypass-cvss-8-1-2026/",
+     "publisher": "shattered.io",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "aws-24",
+     "headline": "[AWS general] Security Hub can export findings to S3 as CSV or OCSF JSON",
+     "date": "2026-10-09",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/security-hub-exports-s3-csv-json/",
+     "publisher": "Amazon Web Services",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "aws-15",
+     "headline": "CVE-2026-107332: AWS Toolkit for VS Code cached CodeCatalyst bearer tokens world-readable (fixed 4.10.0)",
+     "date": "2026-10-08",
+     "primary_url": "https://aws.amazon.com/security/security-bulletins/2026-129-aws/",
+     "publisher": "AWS Security Bulletins",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "aws-09",
+     "headline": "CVE-2026-107608: aws-cdk-lib Docker asset bundling could pull symlinked files into deploy artefacts; fixed in 2.267.0",
+     "date": "2026-10-08",
+     "primary_url": "https://aws.amazon.com/security/security-bulletins/2026-131-aws/",
+     "publisher": "AWS Security Bulletins",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "aws-22",
+     "headline": "[AWS general] Bedrock AgentCore Starter Toolkit: code injection and SSRF on agent import (CVE-2026-105812/106032)",
+     "date": "2026-10-06",
+     "primary_url": "https://aws.amazon.com/security/security-bulletins/2026-127-aws/",
+     "publisher": "AWS Security Bulletins",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "aws-14",
+     "headline": "CVE-2026-105811: QnABot's Amazon Q Business Lambda hook sample let authenticated users read arbitrary S3 objects",
+     "date": "2026-10-06",
+     "primary_url": "https://aws.amazon.com/security/security-bulletins/rss/2026-126-aws/",
+     "publisher": "AWS Security Bulletins",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "aws-23",
+     "headline": "[AWS general] IAM Identity Center adds network access controls (VPC endpoint / IP allowlists) for Identity Store and SCIM APIs",
+     "date": "2026-10-05",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/aws-identity-store-network-controls/",
+     "publisher": "Amazon Web Services",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "aws-17",
+     "headline": "AWS pattern: protect MCP servers at the edge with CloudFront + WAF (tool allowlists, SSRF/SQLi rules, per-tool rate limits)",
+     "date": "2026-10-05",
+     "primary_url": "https://aws.amazon.com/blogs/networking-and-content-delivery/protect-mcp-endpoints-at-the-edge-with-amazon-cloudfront-and-aws-waf/",
+     "publisher": "AWS Networking & Content Delivery Blog",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "aws-13",
+     "headline": "CVE-2026-104020: Amazon Ion Python reader DoS via deeply nested input; upgrade to 0.15.0",
+     "date": "2026-10-01",
+     "primary_url": "https://aws.amazon.com/security/security-bulletins/2026-122-aws/",
+     "publisher": "AWS Security Bulletins",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "aws-07",
+     "headline": "Guide: encrypting Lambda durable function state with customer-managed KMS keys",
+     "date": "2026-09-29",
+     "primary_url": "https://aws.amazon.com/blogs/compute/implementing-customer-managed-keys-for-aws-lambda-durable-functions-with-terraform/",
+     "publisher": "AWS Compute Blog",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "aws-27",
+     "headline": "[Context] API Gateway REST APIs can present ACM certificates for mutual TLS to backends",
+     "date": "2026-09-08",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/09/amazon-api-gateway-mutual-tls-backend/",
+     "publisher": "Amazon Web Services",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    }
+   ]
+  },
+  {
+   "id": "lifecycle",
+   "label": "Deprecations and end of support",
+   "stories": [
+    {
+     "id": "aws-08",
+     "headline": "Python 3.10 on Lambda reaches end of support on 31 Oct 2026, 18 days away",
+     "date": "2026-10-13",
+     "primary_url": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html",
+     "publisher": "AWS Documentation",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "aws-20",
+     "headline": "AWS Q3 service availability update: Infrastructure Composer standalone console ends 7 Dec 2026; DevOps Guru, Managed Blockchain to sunset",
+     "date": "2026-09-29",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/09/aws-service-availability/",
+     "publisher": "Amazon Web Services",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    }
+   ]
+  },
+  {
+   "id": "releases",
+   "label": "Releases for your stack",
+   "stories": [
+    {
+     "id": "aws-02",
+     "headline": "CloudFront adds Lambda Web Functions as an origin, with a new OAC signing mode 'always-amz-auth'",
+     "date": "2026-10-12",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/cloudfront-lambda-web-functions-origin/",
+     "publisher": "Amazon Web Services",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "aws-01",
+     "headline": "AWS Lambda launches Web Functions: run Express/Hono-style HTTP servers directly, existing functions renamed 'Event Functions'",
+     "date": "2026-10-12",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/aws-lambda-web-functions/",
+     "publisher": "Amazon Web Services",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "aws-05",
+     "headline": "Lambda metadata endpoint: token-protected in-sandbox API exposes the function's AZ ID; Powertools Python wraps it",
+     "date": "2026-10-09",
+     "primary_url": "https://aws.amazon.com/blogs/compute/reducing-cross-az-latency-with-the-aws-lambda-metadata-endpoint/",
+     "publisher": "AWS Compute Blog (Daniel Abib)",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "aws-04",
+     "headline": "Lambda Kafka event source mappings can now authenticate with OAuth (OAUTHBEARER) and IAM",
+     "date": "2026-10-09",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/aws-Lambda-supports-oauth-kafka-esm/",
+     "publisher": "Amazon Web Services",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "aws-18",
+     "headline": "Pattern: cross-account canary releases with API Gateway stage canaries and VPC Lattice (via a forwarder Lambda)",
+     "date": "2026-10-07",
+     "primary_url": "https://aws.amazon.com/blogs/networking-and-content-delivery/cross-account-canary-routing-with-amazon-vpc-lattice-and-amazon-api-gateway/",
+     "publisher": "AWS Networking & Content Delivery Blog",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "aws-06",
+     "headline": "How-to: Lambda SnapStart for container images, including Python 3.12+ base images",
+     "date": "2026-10-06",
+     "primary_url": "https://aws.amazon.com/blogs/compute/get-started-with-aws-lambda-snapstart-for-container-images/",
+     "publisher": "AWS Compute Blog",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "aws-19",
+     "headline": "Amazon S3 Vectors adds metadata pre-filtering (ENHANCED index mode) at no extra cost",
+     "date": "2026-09-30",
+     "primary_url": "https://aws.amazon.com/blogs/aws/amazon-s3-vectors-now-supports-metadata-pre-filtering-for-higher-recall-on-filtered-searches/",
+     "publisher": "AWS News Blog (Daniel Abib)",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "aws-29",
+     "headline": "[Context] Lambda network bandwidth now scales with memory, from 625 Mbps up to 3 Gbps at 10 GB (non-VPC)",
+     "date": "2026-09-28",
+     "primary_url": "https://aws.amazon.com/blogs/compute/improving-lambda-function-latency-with-scalable-network-bandwidth/",
+     "publisher": "AWS Compute Blog",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "aws-28",
+     "headline": "[Context] API Gateway REST execution logs grow from 1 KB to 1 MB, deliverable to your own CloudWatch, S3 or Firehose",
+     "date": "2026-09-10",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/09/amazon-api-gateway-1-mb-execution-logs/",
+     "publisher": "Amazon Web Services",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    }
+   ]
+  },
+  {
+   "id": "tooling",
+   "label": "SDKs and tooling",
+   "stories": [
+    {
+     "id": "aws-12",
+     "headline": "boto3/botocore 1.43.105-1.43.112 ship near-daily; minimum Python is now 3.10",
+     "date": "2026-10-12",
+     "primary_url": "https://pypi.org/project/boto3/",
+     "publisher": "PyPI",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "aws-11",
+     "headline": "AWS CLI 2.37.6-2.37.13: 'aws lambda-web deploy', OAC always-amz-auth, credential-cache fix, s3 --no-follow-symlinks honoured",
+     "date": "2026-10-12",
+     "primary_url": "https://fossies.org/linux/aws-cli/CHANGELOG.rst",
+     "publisher": "Fossies (mirror of aws/aws-cli)",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "aws-10",
+     "headline": "AWS CDK v2.273.0: CloudFront distributions now redirect HTTP to HTTPS by default; s3-deployment path-escape fixed",
+     "date": "2026-10-08",
+     "primary_url": "https://github.com/aws/aws-cdk/releases/tag/v2.273.0",
+     "publisher": "GitHub aws/aws-cdk",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    }
+   ]
+  },
+  {
+   "id": "cost",
+   "label": "Pricing and cost",
+   "stories": [
+    {
+     "id": "aws-03",
+     "headline": "New Lambda pricing dimension: Web Functions billed per active vCPU-second plus memory-held time",
+     "date": "2026-10-12",
+     "primary_url": "https://aws.amazon.com/lambda/pricing/",
+     "publisher": "Amazon Web Services",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "aws-26",
+     "headline": "[AWS general] Cost Explorer and Budgets can now break down Bedrock spend by model, provider, inference type and feature",
+     "date": "2026-10-08",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/aws-bedrock-attributes-in-cost-explorer/",
+     "publisher": "Amazon Web Services",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    }
+   ]
+  },
+  {
+   "id": "events-videos",
+   "label": "Events and videos",
+   "stories": [
+    {
+     "id": "aws-21",
+     "headline": "re:Invent 2026 (30 Nov-4 Dec, Las Vegas): catalog live, reserved seating open, full-refund cutoff 16 Oct",
+     "date": "2026-10-08",
+     "primary_url": "https://aws.amazon.com/events/reinvent/faqs/",
+     "publisher": "Amazon Web Services",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    }
+   ]
+  },
+  {
+   "id": "whats-new",
+   "label": "Everything else AWS announced (What's New)",
+   "stories": [
+    {
+     "id": "wn-07",
+     "headline": "Amazon OpenSearch Service now supports index-level encryption",
+     "date": "2026-10-12",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/opensearch-index-level-encryption",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "wn-06",
+     "headline": "Amazon EMR now supports native data quality checks in Apache Spark jobs",
+     "date": "2026-10-12",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-emr-data-quality-spark/",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "wn-05",
+     "headline": "Amazon ElastiCache for Valkey introduces ElastiCache Insights",
+     "date": "2026-10-12",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-elasticache-valkey-elasticache-insights/",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "wn-04",
+     "headline": "AWS Secrets Manager adds managed external secrets support for Databricks and Twilio",
+     "date": "2026-10-12",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/secrets-manager-managed-external-secrets-databricks-twilio/",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "wn-03",
+     "headline": "AWS Transfer Family supports custom ports for public SFTP servers",
+     "date": "2026-10-12",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/transfer-family-custom-ports-sftp/",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "wn-02",
+     "headline": "Amazon Connect Customer now prefills step-by-step guides for after contact work",
+     "date": "2026-10-12",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/connect-customer-prefills-guides-acw",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "wn-01",
+     "headline": "Amazon EC2 G7 instances now available in Europe (Frankfurt) and Europe (Stockholm) Regions",
+     "date": "2026-10-12",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-g7-european-regions/",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "wn-08",
+     "headline": "AWS now lets customers sign up for AWS and pay invoices using ACH direct debit",
+     "date": "2026-10-11",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/aws-sign-up-invoices-ach-direct-debit/",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "wn-16",
+     "headline": "TwelveLabs Pegasus 1.5 model now available on Amazon Bedrock",
+     "date": "2026-10-09",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/twelve-labs-pegasus-1-5-aws/",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "wn-15",
+     "headline": "Amazon SageMaker Unified Studio now supports custom Tooling blueprints",
+     "date": "2026-10-09",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/sagemaker-custom-tooling-blueprints/",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "wn-14",
+     "headline": "Amazon Quick now supports brand templates for on-brand presentations and documents",
+     "date": "2026-10-09",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-quick-brand-templates-on-brand-presentations-documents/",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "wn-13",
+     "headline": "Amazon Connect Customer now provides automated checks to improve performance evaluation forms",
+     "date": "2026-10-09",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-connect-customer-automated-checks-evaluation-forms/",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "wn-12",
+     "headline": "Anthropic Claude Sonnet 5.5 and Claude Opus 5.5 are now available on Kiro in AWS GovCloud (US)",
+     "date": "2026-10-09",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/06/kiro-claude-5-5-aws-govcloud-us/",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "wn-11",
+     "headline": "Amazon Bedrock now supports reasoning summaries for OpenAI models",
+     "date": "2026-10-09",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-bedrock-reasoning-summaries-openai/",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "wn-10",
+     "headline": "Amazon EC2 R8g instances now available in additional regions",
+     "date": "2026-10-09",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-ec2-r8g-instances-thf/",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "wn-09",
+     "headline": "Amazon EC2 R8gd instances are now available in additional regions",
+     "date": "2026-10-09",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-ec2-r8gd-thf/",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "wn-21",
+     "headline": "Amazon GuardDuty RDS Protection now detects data exfiltration and destruction in Aurora and RDS databases",
+     "date": "2026-10-08",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/guardduty-rds-data-exfiltration/",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "wn-20",
+     "headline": "Amazon GameLift Servers adds CPU burstability for container fleets",
+     "date": "2026-10-08",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-gamelift-servers-cpu-burstability",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "wn-19",
+     "headline": "AWS Network Firewall adds wildcard support for container attribute filters",
+     "date": "2026-10-08",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/aws-network-firewall-container-attributes-wildcard",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "wn-18",
+     "headline": "Amazon RDS for Oracle now supports minor version upgrade prechecks and a new RDS event to help reduce patching downtime",
+     "date": "2026-10-08",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-rds-oracle-minor-version-upgrade-precheck-new-patching-rds-event/",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "wn-17",
+     "headline": "OpenAI GPT-6.1 Sol now supports Ultrafast mode on Amazon Bedrock",
+     "date": "2026-10-08",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/openai-gpt-sol-ultrafast-amazon/",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "wn-26",
+     "headline": "Claude Haiku 5.5 is now available on AWS GovCloud (US)",
+     "date": "2026-10-07",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/claude-haiku-5-5-aws-govcloud/",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "wn-25",
+     "headline": "Claude Haiku 5.5 is now available on AWS",
+     "date": "2026-10-07",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/claude-haiku-5-5-aws/",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "wn-24",
+     "headline": "AWS Config now supports 77 new resource types",
+     "date": "2026-10-07",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/aws-config-new-resource-types",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "wn-23",
+     "headline": "AWS Capabilities by Region now offers availability notifications for individual features and advanced filters",
+     "date": "2026-10-07",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/awscapabilities-enhancements/",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "wn-22",
+     "headline": "Amazon EC2 C8gb instances now generally available in additional regions",
+     "date": "2026-10-07",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-ec2-c8gb/",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "wn-28",
+     "headline": "AWS Certificate Manager now supports ACME issuance through AWS PrivateLink",
+     "date": "2026-10-06",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/AWS-Certificate-Manager-ACME-Privatelink",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "wn-27",
+     "headline": "AWS Batch now publishes job metrics to Amazon CloudWatch",
+     "date": "2026-10-06",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/aws-batch-job-cloudwatch-metrics/",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "wn-39",
+     "headline": "Announcing Amazon Nova 2.5 Sonic with improved reasoning for voice agents",
+     "date": "2026-10-05",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-nova-2.5-sonic/",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "wn-38",
+     "headline": "AWS Private CA now provides detailed certificate issuance logs",
+     "date": "2026-10-05",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/aws-private-ca-certificate-issuance-logs/",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "wn-37",
+     "headline": "AWS Batch now supports Amazon EKS access entry authentication",
+     "date": "2026-10-05",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/aws-batch-access-entries/",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "wn-36",
+     "headline": "AWS Client VPN now supports device posture assessment",
+     "date": "2026-10-05",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/aws-client-vpn-device-posture/",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "wn-35",
+     "headline": "AWS Advanced Ruby Driver Wrapper is generally available",
+     "date": "2026-10-05",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/aws-ruby-driver-wrapper-available/",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "wn-34",
+     "headline": "Amazon EC2 introduces shared tags for Amazon Machine Images",
+     "date": "2026-10-05",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/ec2-ami-shared-tags",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "wn-33",
+     "headline": "AWS Continuum for Penetration Testing now supports continuous penetration testing integrated directly into your CI/CD pipeline",
+     "date": "2026-10-05",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/aws-continuum-penetration-testing/",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "wn-32",
+     "headline": "AWS Control Tower AFT now supports plan-only customization runs",
+     "date": "2026-10-05",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/09/aws-control-tower-aft/",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "wn-31",
+     "headline": "Amazon EC2 Hpc8a instances are now available in Asia Pacific (Singapore)",
+     "date": "2026-10-05",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-ec2-hpc8a-asia-pacific/",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "wn-30",
+     "headline": "GLM 5.3 by Z.ai is now generally available on Amazon Bedrock",
+     "date": "2026-10-05",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-bedrock-glm-5-3/",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "wn-29",
+     "headline": "Amazon Redshift adds support for creating and refreshing Apache Iceberg materialized views",
+     "date": "2026-10-05",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/redshift-iceberg-materialized-views",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "wn-49",
+     "headline": "GuardDuty Runtime Monitoring is now included in the AWS Security Hub Threat Analytics plan",
+     "date": "2026-10-02",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/aws-security-hub-runtime-monitoring/",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "wn-48",
+     "headline": "Amazon ElastiCache for Valkey now supports OpenTelemetry metrics and detailed monitoring",
+     "date": "2026-10-02",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-elasticache-valkey-opentelemetry-metrics-detailed-monitoring",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "wn-47",
+     "headline": "AgentCore Gateway supports private TLS certificates for VPC endpoints",
+     "date": "2026-10-02",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/agentcore-gateway-private-tls-vpc/",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "wn-46",
+     "headline": "The AWS MCP Server is now available in six additional AWS Regions",
+     "date": "2026-10-02",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/aws-mcp-server-six-additional-regions/",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "wn-45",
+     "headline": "Amazon OpenSearch Service introduces validation advisory for domain configuration changes",
+     "date": "2026-10-02",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/opensearch-validation-advisory/",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "wn-44",
+     "headline": "AWS Brazil automates distribution of non-Brazilian software product licenses to Brazilian customers",
+     "date": "2026-10-02",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/aws-brazil-software-license-distribution/",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "wn-43",
+     "headline": "Amazon Aurora DSQL now supports partial indexes",
+     "date": "2026-10-02",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/aurora-dsql-partial-indexes/",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "wn-42",
+     "headline": "Amazon EKS and Amazon EKS Distro now support Kubernetes version 1.37",
+     "date": "2026-10-02",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-eks-distro-kubernetes-version-1-37",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "wn-41",
+     "headline": "AWS Health introduces the version catalog for software lifecycle management",
+     "date": "2026-10-02",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/aws-health-introduces-version-catalog-software-lifecycle-management",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "wn-40",
+     "headline": "Amazon ECS adds Amazon VPC Lattice support for blue/green, linear, and canary deployments",
+     "date": "2026-10-02",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-ecs-vpc-lattice-blue-green-deployments",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "wn-54",
+     "headline": "Amazon Corretto 8 September 2026 Patch Updates",
+     "date": "2026-10-01",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/09/amazon-corretto-8-sept-2026-updates/",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "wn-53",
+     "headline": "Amazon DynamoDB introduces filtered export to Amazon S3",
+     "date": "2026-10-01",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-dynamodb-introduces-filtered-export/",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "wn-52",
+     "headline": "Amazon Q Developer now delivers enhanced visualizations in the AWS Management Console",
+     "date": "2026-10-01",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-q-developer-enhanced-visualizations-aws-management-console",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "wn-51",
+     "headline": "Amazon Redshift now supports cross-Region queries for your data lake",
+     "date": "2026-10-01",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/redshift-cross-Region-queries-for-data-lake",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "wn-50",
+     "headline": "AWS Well-Architected Agent is now available in preview",
+     "date": "2026-10-01",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/aws-well-architected-agent/",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "wn-59",
+     "headline": "Amazon Aurora PostgreSQL now supports direct querying of Apache Iceberg and Parquet data in your data lake",
+     "date": "2026-09-30",
+     "primary_url": "https://aws.amazon.com/blogs/aws/amazon-aurora-postgresql-now-supports-direct-querying-of-apache-iceberg-and-parquet-data-in-your-data-lake/",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "wn-58",
+     "headline": "Amazon S3 Tables now support all Apache Iceberg V3 data types",
+     "date": "2026-09-30",
+     "primary_url": "https://aws.amazon.com/blogs/aws/amazon-s3-tables-now-support-all-apache-iceberg-v3-data-types/",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "wn-55",
+     "headline": "OpenAI GPT-6 Astra now supports UltraFast mode on Amazon Bedrock",
+     "date": "2026-09-30",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/09/openai-gpt-6-astra-ultrafast-on-amazon-bedrock/",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "wn-57",
+     "headline": "OpenAI GPT-6.1 Sol is now generally available on Amazon Bedrock",
+     "date": "2026-09-29",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/09/openai-gpt-6-1-sol-on-amazon-bedrock/",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "wn-56",
+     "headline": "Amazon Bedrock Managed Agents, powered by OpenAI, is now available in preview",
+     "date": "2026-09-29",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/09/bedrock-managed-agents-preview/",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    }
+   ]
+  }
+ ],
+ "deadlines": [
+  {
+   "what": "re:Invent 2026: full refund deadline",
+   "date": "2026-10-16",
+   "then": "hotel blocks close 2026-11-05; event 30 Nov-4 Dec, Las Vegas",
+   "source": "https://aws.amazon.com/events/reinvent/faqs/"
+  },
+  {
+   "what": "python3.10 on Lambda: end of support",
+   "date": "2026-10-31",
+   "then": "new functions blocked 2027-07-29; updates blocked 2027-08-31",
+   "source": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html"
+  },
+  {
+   "what": "python3.11 on Lambda (Amazon Linux 2): end of support",
+   "date": "2027-06-30",
+   "then": "",
+   "source": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html"
+  },
+  {
+   "what": "python3.12 on Lambda: end of support",
+   "date": "2028-10-31",
+   "then": "new functions blocked 2028-11-30; updates blocked 2029-01-10",
+   "source": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html"
+  }
+ ]
+}

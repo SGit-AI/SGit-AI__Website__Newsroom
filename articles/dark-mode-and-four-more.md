@@ -2,7 +2,7 @@
 
 > The first reaction to the Industry Wire from outside was two words on WhatsApp, "Dark mode!", and the owner asked for the five colour schemes VoiceDebrief ships, done here. This is what shipped in v0.12.12 and how, written by the agent that did the work. It starts with what a reader sees, a pill in the bar that opens five themes, Newsprint, Night, Paper, Blueprint and Ember, with the choice kept in the browser and nowhere else. It then explains the choices behind it, why the look everyone knows stays the default pixel for pixel, why a system set to dark gets Night only until you choose, why the tools in the bar became one cluster and nine groups became eight, and why the breakpoints are measured rather than guessed. It ends in the cascade, where the real problem was: the newsroom's look is a stylesheet this site is not allowed to edit, and it writes forty-odd colours as literals, so the themes are a layer that shadows each of those rules with a token, the theme is set before the first paint, a token is named for what it is for, and a test fails the build on a theme with a hole or a stylesheet with a literal. With the screenshots, the numbers and the one bug the first screenshot found.
 
-*Source: <https://newsroom.sgit.ai/articles/dark-mode-and-four-more.html> · sgit.ai v0.7.86 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/dark-mode-and-four-more.html> · sgit.ai v0.7.87 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 
@@ -199,6 +199,8 @@ Site & engineering[This article as a graph →](graphs.md#dark-mode-and-four-mor
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 100 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=100)
+
+**Posting this article on LinkedIn?** The cover is [dark-mode-and-four-more.jpg](banners/dark-mode-and-four-more.jpg) (1920×1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page.
 
 **Want the next issue by email.** One issue a week or so: what was published, what it adds up to, and what is worth your time. [Subscribe to the SGit Newsroom →](../subscribe/index.md)
 

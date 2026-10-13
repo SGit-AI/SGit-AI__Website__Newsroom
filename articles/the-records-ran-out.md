@@ -2,7 +2,7 @@
 
 > On 11 October The New Stack published a piece by Ignacio Aldama, an engineer at Bit Cloud, in which a brand-new Claude Code session with no history and no local code found a support console's shared ticket contract in two MCP calls, from the dependency records the build platform writes as each component is versioned, and then left the contract alone because it knew two components depended on it. It is a good demonstration and an honest one, because he then says where the records ran out. They describe structure, not behaviour; a green build can hide tests that never ran; a demo carries a public signing secret and a list of unfinished work; and memory, which holds intent, is not tied to a code version. Those edges are exactly where sgit and RiskMandate sit. Label every fact with how it is known. Treat a skipped test as a control that did not run. Accept a demo shortcut by name and for an interval, or stop. Keep memory and records in one encrypted, versioned history so the intent of version 1.4 is recorded at 1.4. And let records cross a company boundary with publish, clone and mirror. What exists, what is documented and what is only proposed are marked as such.
 
-*Source: <https://newsroom.sgit.ai/articles/the-records-ran-out.html> · sgit.ai v0.7.86 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/the-records-ran-out.html> · sgit.ai v0.7.87 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 

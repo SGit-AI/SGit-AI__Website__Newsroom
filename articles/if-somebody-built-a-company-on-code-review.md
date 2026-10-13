@@ -2,7 +2,7 @@
 
 > A reader of the code review article replied with seven good questions, and a voice memo of mine answered them with a change of frame: if somebody were building a company on code review, this is how I would do it. The answers turn on a distinction the first article did not make clearly enough. What is fractal in a fractal semantic graph is the grammar; which layers exist is decided by each company, and a product that standardises them away loses the thing it was meant to review. Two things make the rest possible only now. One technology can read every layer, from strategy to bytecode, so the graphs can be built at every altitude and built close to reality. And that moves code review from an art of opinion and power to a science of facts, provided the models are used to build, prune and maintain the graphs and then taken out of the line. From there: a projected graph from stories before the code exists and a derived graph from the code, with the review as the join; a refactor as relative to the layer held still, correcting the first article; the deploy as a layer; who reads the code at each stage of evolution, after Wardley; reshaping a change by reach; budgets as the objective good enough and the five whys as the loop; behaviour policies for the agents doing the work; and open source as the only model that fits.
 
-*Source: <https://newsroom.sgit.ai/articles/if-somebody-built-a-company-on-code-review.html> · sgit.ai v0.7.86 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/if-somebody-built-a-company-on-code-review.html> · sgit.ai v0.7.87 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 
@@ -257,6 +257,7 @@ Graphs & knowledgeStartups & strategy[This article as a graph →](graphs.md#if-
 
 ### Continued by
 
+- [Every link points back: 566 links between 105 articles, 15 that point forward, and why an article should know what came next and what corrected it](every-link-points-back.md) 551 of 566 links between articles point back in time. Why older articles should say what came next and what corrected them.
 - [Go slow to go fast: moving the newsroom from an explorer project to a villager one, with the brief to do it](explorer-to-villager-newsroom.md) The newsroom is live and charging. Move the reader code to its own repo, same bytes and same bugs, then map, test, review and refactor before new features.
 - [The Mandate Stack: a multi-agent system in production, layer by layer](the-mandate-stack.md) A multi-agent system that runs a business every few hours: eight layers, one written mandate per agent, everything a graph, one human who sends.
 - [Send an agent, not a spreadsheet: the next generation of software due diligence, and why the companies that stopped reading their code are about to be asked about it](send-an-agent-not-a-spreadsheet.md) Due diligence never scaled because it was a form; a buyer can now send an agent into a vendor's environment and read what the code and the practices are.

@@ -121,7 +121,11 @@ try {
 
     // R2: a restored file with a persona that has no arrays blanks the personas page
     await pg.evaluate(() => localStorage.clear())
-    await pg.goto(B + `articles/${art2}.html`); await wait(1200)      // a charged page, so the state is saved
+    await pg.goto(B + `articles/${art2}.html`)                        // a charged page, so the state is saved
+    // wait for the meter to have saved the state with the read logged, not a fixed time: on a loaded runner 1.2 s was not
+    // always enough (the first run of v0.12.20 in CI), and a state pushed to before it is saved is overwritten by the save
+    await pg.waitForFunction(() => { try { const s = JSON.parse(localStorage.getItem('sgit.meter.v1') || 'null'); return !!s && Array.isArray(s.personas) && Array.isArray(s.log) && s.log.length >= 1 } catch (e) { return false } }, null, { timeout: 20000 }).catch(() => {})
+    await wait(300)
     s = await state(); s.personas.push({ id: 'p-bad', name: 'broken' }); await setState(s)
     await pg.goto(B + 'account/personas.html')
     // wait for the meter to say it is ready (or failed), not a fixed time: on a slow runner 1.5 s was not always enough

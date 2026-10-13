@@ -2,7 +2,7 @@
 
 > How the articles on sgit.ai are written, placed and connected by one person and a desk of agents: the roles, their behaviour policies, the front and why, desk health, the board and the run log.
 
-*Source: <https://newsroom.sgit.ai/newsroom/index.html> · sgit.ai v0.7.86 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/newsroom/index.html> · sgit.ai v0.7.87 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 
@@ -46,9 +46,8 @@ Edition of **2026-10-08**. Third edition. A day of articles on how agents decide
 
 Computed at every build from the files: placements that point at nothing, articles published since the edition, open pitches, articles without a graph or a card. The same list is what `python3 admin/build/desk.py` prints for the Editor.
 
-- Fix`front.json` the lead is 5 days older than the newest article and 51 newer article(s) are unplaced
-- To do`front.json` 51 article(s) published since the 2026-10-08 edition: dark-mode-and-four-more, the-vault-crosses-chrome-profiles, stop-the-bleeding-then-ask-for-it-back, who-owns-the-words, what-open-source-is-and-is-not, not-a-straight-line
-- To do`newsletter/` a newsletter issue is due: 21 articles since issue 5 (2026-10-11)
+- Fix`front.json` the lead is 5 days older than the newest article and 58 newer article(s) are unplaced
+- To do`front.json` 58 article(s) published since the 2026-10-08 edition: four-frameworks-one-agent, every-link-points-back, sixteen-notes-i-did-not-want-to-lose, how-cheap-is-it-to-undo, the-human-in-the-loop, a-policy-beside-the-prompt
 - To do`newsroom/pitches/2026-10-11__where-the-platform-draws-the-line.md` open pitch from contributor: highlight for where-the-platform-draws-the-line
 - To do`newsroom/pitches/2026-10-11__the-same-argument-in-our-words.md` open pitch from contributor: lead for the-same-argument-in-our-words
 - To do`newsroom/pitches/2026-10-11__the-agent-is-the-reader.md` open pitch from contributor: lead for the-agent-is-the-reader
@@ -58,6 +57,7 @@ Computed at every build from the files: placements that point at nothing, articl
 - To do`newsroom/pitches/2026-10-10__one-article-five-readers.md` open pitch from agent@riskmandate.ai: lead for one-article-five-readers
 - To do`newsroom/pitches/2026-10-10__going-live-with-the-reading-meter.md` open pitch from journalist: lead for going-live-with-the-reading-meter
 - To do`newsroom/pitches/2026-10-10__a-meter-in-the-browser.md` open pitch from journalist: lead for a-meter-in-the-browser
+- Note`newsroom/newsletter/006-2026-10-13.md` issue 6 has no linkedin: URL yet; add it once it is posted
 
 and 3 more; `python3 admin/build/desk.py` lists them all.
 

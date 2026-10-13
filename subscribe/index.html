@@ -28,7 +28,7 @@
   <link rel="stylesheet" href="../assets/site-nav.css">
   <script src="../assets/themes/themes.js"></script>
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.12.14</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.12.30</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -51,6 +51,10 @@
       <a class="sl" href="../wire/index.html">Today's edition</a>
       <a class="sl" href="../wire/sources.html">The sources</a>
       <a class="sl" href="../wire/how.html">How the wire works</a>
+      <a class="sl" href="../wire/owasp/index.html">The OWASP Wire</a>
+      <a class="sl" href="../wire/aws/index.html">The AWS Wire</a>
+      <a class="sl" href="../wire/days.html">Day by day</a>
+      <a class="sl" href="../wire/charter.html">The charter</a>
       <a class="sl" href="../articles/dark-mode-and-four-more.html">Themes: dark mode and four more</a>
       </div>
     </div>
@@ -141,8 +145,7 @@
   <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
   </div>
 </div></nav>
-
-<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.12.14</span></a></div>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.12.30</span></a></div>
 <main class="doc nlpage">
  <p class="crumb"><a href="../index.html">Home</a> / <a href="../articles/index.html">SGit Newsroom</a> / Subscribe</p>
 <figure class="shot nlbanner" data-shot="subscribe.jpg" data-dir="../articles/banners/" data-alt="Get the next issue of the SGit Newsroom"></figure>
@@ -151,13 +154,13 @@
  <p class="lead">One issue a week or so, when there is enough to say: what was published on sgit.ai, what it adds up to, and the pieces worth your time. Not an email per article; an issue has the context a single article does not.</p>
  <ul><li><b>What is in an issue.</b> The week's articles grouped by what they are about, the arguments in a few lines each, and quotes checked word for word against the articles when the site is built.</li><li><b>What comes next.</b> A personalised issue, picked for the topics you care about, from the same articles and their graphs.</li><li><b>Where else.</b> Each issue is also a LinkedIn article in <a href="https://www.linkedin.com/newsletters/deterministic-genai-7174563523795005440/" rel="noopener" target="_blank">Deterministic GenAI</a>; the articles have a <a href="../articles/feed.xml">feed</a>, and agents can read <a href="../newsroom/wire.json">the wire</a>.</li></ul>
 <aside class="subscribe" id="subscribe" aria-label="Subscribe to the newsletter"><p><b>Get the SGit Newsroom newsletter.</b> One issue a week or so: what was published, what it adds up to, what is worth your time. A personalised issue, picked for what you care about, comes next. Your address is encrypted in your browser to the key of the agent that manages the list and dropped into a write-only lane on an encrypted vault. <a href="https://sgit.ai/docs/briefs/subscribe-lane-agent-brief.html">How it works</a>.</p><form class="subform" data-subscribe novalidate><label class="sr" for="sub-email">Email address</label><input id="sub-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required><label class="sr" for="sub-name">Name, optional</label><input id="sub-name" name="name" type="text" autocomplete="name" placeholder="Name (optional)"><span class="hp" aria-hidden="true"><label for="sub-web">Website</label><input id="sub-web" name="website" type="text" tabindex="-1" autocomplete="off"></span><button class="subbtn" type="submit">Subscribe</button><label class="consent"><input type="checkbox" name="consent"> <span>I am happy for the agent at agent@riskmandate.ai, which runs this list for sgit.ai, to keep this address in a private vault and email me the SGit Newsroom newsletter. I can ask to be removed by replying to any message.</span></label><p class="sub-status small" aria-live="polite"></p><a class="sub-mailto small" href="mailto:agent@riskmandate.ai?subject=Subscribe%3A%20SGit%20Newsroom%20newsletter&amp;body=Please%20add%20me%20to%20the%20SGit%20Newsroom%20newsletter." hidden>Send it as an email instead &rarr;</a></form><div class="sub-done" hidden><b>Sent, encrypted, into the vault.</b> The lane answers only <code>ok</code>, by design, so there is no receipt. If nothing arrives, email <a href="mailto:agent@riskmandate.ai">agent@riskmandate.ai</a>.</div><noscript><p class="small">This form needs JavaScript. Email <a href="mailto:agent@riskmandate.ai?subject=Subscribe%3A%20SGit%20Newsroom%20newsletter&amp;body=Please%20add%20me%20to%20the%20SGit%20Newsroom%20newsletter.">agent@riskmandate.ai</a> instead.</p></noscript><p class="small dim">Prefer a feed? <a href="../articles/feed.xml">articles/feed.xml</a> carries the articles and the desk notes; agents can read <a href="../newsroom/wire.json">the wire</a>.</p></aside>
-<p>The latest issue: <a href="../articles/newsletter/2026/10/11/005-no-server-by-design.html"><b>Issue 5, No server, by design: a newsroom that runs in your browser, a model in the tab, and the agents that read, test and draw for it</b></a> (2026-10-11). <a href="../articles/newsletter/index.html">All issues</a>.</p>
+<p>The latest issue: <a href="../articles/newsletter/2026/10/13/006-the-readers-own-newsroom.html"><b>Issue 6, The reader's own newsroom: a passkey that opens a vault, a vault that crosses browsers, and what a reader does once their reading is theirs</b></a> (2026-10-13). <a href="../articles/newsletter/index.html">All issues</a>.</p>
  <h2 id="privacy">What happens to your address</h2>
  <p>Your browser encrypts it to the public key of the agent that runs the list, then drops it into a write-only lane of an encrypted vault. The site never sees it, and nobody without that agent's key can read it. <a href="https://sgit.ai/docs/briefs/subscribe-lane-agent-brief.html">How the lane works</a>. Every email can be answered with a request to be removed.</p>
 </main>
 <script>
 (function () {
- fetch('../assets/shots.js?v=v0.7.86')
+ fetch('../assets/shots.js?v=v0.7.87')
  .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
  .then(function (t) { (0, eval)(t); })
  .catch(function (e) { console.error('[shots] component failed to load:', e); });
@@ -165,7 +168,7 @@
 </script>
 <script>
 (function () {
- fetch('../assets/subscribe.js?v=v0.7.86')
+ fetch('../assets/subscribe.js?v=v0.7.87')
  .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
  .then(function (t) { (0, eval)(t); })
  .catch(function (e) { console.error('[subscribe] component failed to load:', e); });
@@ -174,7 +177,7 @@
 <sg-meter view="page" kind="free" date="" topics="" title="Subscribe to the SGit Newsroom newsletter, SGit Newsroom" quiet></sg-meter>
 <script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": "https://buy.stripe.com/6oUfZ9ez65vVgU2fY15os04"}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
 <script>
-import('../assets/components/sg-meter/v1/v1.4/v1.4.1/sg-meter.js?v=v0.7.86')
+import('../assets/components/sg-meter/v1/v1.4/v1.4.1/sg-meter.js?v=v0.7.87')
  .catch(function (e) { console.error('[sg-meter] component failed to load:', e); });
 </script>
 
@@ -184,12 +187,14 @@ import('../assets/components/sg-meter/v1/v1.4/v1.4.1/sg-meter.js?v=v0.7.86')
     <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="netline"><a href="https://sgit.ai" style="display:inline;padding:0"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://pt.newsroom.sgit.ai" style="display:inline;padding:0">&#8593; pt.newsroom.sgit.ai</a> &middot; <a href="https://graphs.sgit.ai" style="display:inline;padding:0">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai" style="display:inline;padding:0">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai" style="display:inline;padding:0">&#8593; nhi.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai" style="display:inline;padding:0">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.12.14</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="index.md">this page as markdown</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.12.30</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="index.md">this page as markdown</a></p>
   </div>
   <div>
     <h4>The newsroom</h4>
     <a href="../index.html">&#8594; The front page</a>
     <a href="../wire/index.html">The Industry Wire</a>
+    <a href="../wire/owasp/index.html">The OWASP Wire</a>
+    <a href="../wire/aws/index.html">The AWS Wire</a>
     <a href="../articles/index.html#all">Every article</a>
     <a href="../articles/newsletter/index.html">The newsletter</a>
     <a href="../articles/collections/index.html">Collections</a>
@@ -244,7 +249,7 @@ import('../assets/components/sg-meter/v1/v1.4/v1.4.1/sg-meter.js?v=v0.7.86')
 </div></footer>
 
 <script>
-(function(){var R=document.documentElement.getAttribute('data-root')||'';var V='?v=' + 'v0.7.86';var C=[R,'','../','/'].filter(function(v,i,a){return a.indexOf(v)===i});
+(function(){var R=document.documentElement.getAttribute('data-root')||'';var V='?v=' + 'v0.7.87';var C=[R,'','../','/'].filter(function(v,i,a){return a.indexOf(v)===i});
 function wait(ms){return new Promise(function(res){var t=Date.now();(function p(){if(window.sg)return res(window.sg);if(Date.now()-t>ms)return res(null);setTimeout(p,60)})()})}
 function grab(sg,p){return new Promise(function(res){(async function(){if(sg&&sg.vfs&&sg.vfs.readText){try{var t=await sg.vfs.readText(p);if(t)return res(t)}catch(e){}}try{var r=await fetch(p+V);if(r.ok)return res(await r.text())}catch(e){}res(null)})()})}
 async function css(sg){for(var i=0;i<C.length;i++){var p=C[i]+'assets/newsroom.css';if(sg&&sg.loadCss){try{await sg.loadCss(p);return}catch(e){}}var t=await grab(sg,p);if(t){var s=document.createElement('style');s.textContent=t;document.head.appendChild(s);return}}}

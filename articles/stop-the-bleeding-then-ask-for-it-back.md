@@ -2,7 +2,7 @@
 
 > I pay for a lot of subscriptions I do not really use, and I think most people do: a tool with a bit of my data in it, a conferencing service I might need next month, a capability I do not want to switch off because restarting it is painful when the day comes. So I keep paying. This is a proposal for a service that fixes that, run by a helper working for one person, with agents doing most of the work. It starts politely, not with the law: ask the company for a detailed account of how much we used the product, and in parallel do our own analysis from statements, invoices and the account's own dashboards. A few days later, with both sets of numbers side by side, send a friendly request that says what we used, what it was worth, and what we like about the product, and asks for two things: a suspend mode that keeps the data, and a refund for the months we did not use. Either way, stop the bleeding. Only if nobody answers does the right of access come in, and only as a genuine request for our own data. The companies are not obliged to refund, and I want to be honest about that, but the direction of travel is clear, with the UK's new subscription rules arriving in January 2027. Everything we learn, the contacts, the templates and which companies refund, goes into an open register under Creative Commons. The helper is paid 10% of the savings for the next three months and 20% of whatever is recovered, which only works if the agents do the heavy lifting. So the agent drives the browser through Claude in Chrome, and the freelancer only types the passwords and the two-factor codes and sends the drafts; everything else is automated, under a behaviour policy, and the freelancer's interface is a set of vaults: the documentation, the tasks, the map of every subscription and the messages between them. It is a first MVP, and a number of early beta users, me included, are about to run it on their own subscriptions.
 
-*Source: <https://newsroom.sgit.ai/articles/stop-the-bleeding-then-ask-for-it-back.html> · sgit.ai v0.7.86 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/stop-the-bleeding-then-ask-for-it-back.html> · sgit.ai v0.7.87 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 
@@ -133,11 +133,15 @@ Startups & strategyAgents & policy[This article as a graph →](graphs.md#stop-t
 
 ### Continued by
 
+- [The human in the loop, safety net or bottleneck: both, until you decide which outputs need a person and give that person the why](the-human-in-the-loop.md) Checking every output is a bottleneck and a weak safety net; put the person where it cannot be undone, and let controls do the rest.
+- [A policy beside the prompt: a proposal that every agent takes a behaviour policy as an input, with enforcement and liability attached, and why aviation and payments say the vendors should want it](a-policy-beside-the-prompt.md) A proposal: every agent takes a behaviour policy beside its prompt, which the vendor accepts and answers for, as aviation and payments learned to.
 - [The vault crosses Chrome profiles: state and memory between browser sessions, found by using it rather than by building it](the-vault-crosses-chrome-profiles.md) The reader's vault carries the newsroom between Chrome profiles as it does between devices, a way to share state across browser sessions nobody built.
 
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 98 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=98)
+
+**Posting this article on LinkedIn?** The cover is [stop-the-bleeding-then-ask-for-it-back.jpg](banners/stop-the-bleeding-then-ask-for-it-back.jpg) (1920×1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page.
 
 **Want the next issue by email.** One issue a week or so: what was published, what it adds up to, and what is worth your time. [Subscribe to the SGit Newsroom →](../subscribe/index.md)
 

@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="../assets/site-nav.css">
   <script src="../assets/themes/themes.js"></script>
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.12.14</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.12.30</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -38,6 +38,10 @@
       <a class="sl" href="../wire/index.html">Today's edition</a>
       <a class="sl" href="../wire/sources.html">The sources</a>
       <a class="sl" href="../wire/how.html">How the wire works</a>
+      <a class="sl" href="../wire/owasp/index.html">The OWASP Wire</a>
+      <a class="sl" href="../wire/aws/index.html">The AWS Wire</a>
+      <a class="sl" href="../wire/days.html">Day by day</a>
+      <a class="sl" href="../wire/charter.html">The charter</a>
       <a class="sl" href="../articles/dark-mode-and-four-more.html">Themes: dark mode and four more</a>
       </div>
     </div>
@@ -133,11 +137,113 @@
 <div class="tablewrap"><table class="vers">
   <thead><tr><th>Version</th><th>Date</th><th>What shipped</th></tr></thead>
   <tbody>
+    <tr id="v0.12.30">
+      <td class="vnum">v0.12.30</td>
+      <td>13 Oct 2026</td>
+      <td><b>@newsroom.writer: Four frameworks, one agent, reviewed.</b> In <a href="../engineering/releases/v0.12.30.html">the release</a>.
+        <p>The review of <a href="../articles/four-frameworks-one-agent.html">Four frameworks, one agent</a> before it went out: the first figure's status counts matched to the mapping file, a measured number in place of an estimate, and three phrasings softened.</p></td>
+    </tr>
+    <tr id="v0.12.29">
+      <td class="vnum">v0.12.29</td>
+      <td>13 Oct 2026</td>
+      <td><b>@newsroom.writer: Four frameworks, one agent.</b> In <a href="../engineering/releases/v0.12.29.html">the release</a>.
+        <p><b>Article.</b> <a href="../articles/four-frameworks-one-agent.html">Four frameworks, one agent</a>: iason&rsquo;s comparison of the OECD classification, the NIST AI RMF, Japan&rsquo;s guidelines and the EU AI Act, mapped row by row to the behaviour policy, the footprint and the graphs that run here, with a thirty-two-row mapping file. Four figures.</p></td>
+    </tr>
+    <tr id="v0.12.28">
+      <td class="vnum">v0.12.28</td>
+      <td>13 Oct 2026</td>
+      <td><b>@newsroom.writer: how to write here.</b> Issue 050, in <a href="../engineering/releases/v0.12.28.html">the release</a>.
+        <p><b>Guide.</b> <code>admin/content/articles/README.md</code>: the voice, the wording rules, the shape, the figures, the graph, the run and a checklist, drawn from the nine articles written here.</p></td>
+    </tr>
+    <tr id="v0.12.27">
+      <td class="vnum">v0.12.27</td>
+      <td>13 Oct 2026</td>
+      <td><b>@newsroom.newsletter: Issue 6, The reader&rsquo;s own newsroom.</b> In <a href="../engineering/releases/v0.12.27.html">the release</a>.
+        <p><b>Newsletter.</b> <a href="../articles/newsletter/2026/10/13/006-the-readers-own-newsroom.html">Issue 6</a>: eight articles on the reader&rsquo;s vault, from the passkey design to what a reader does once their reading is theirs. Issue 3 now links its LinkedIn version.</p></td>
+    </tr>
+    <tr id="v0.12.26">
+      <td class="vnum">v0.12.26</td>
+      <td>13 Oct 2026</td>
+      <td><b>Send to my vault from any browser: an inbox on the reader vault, a link three ways, and the drain.</b> Issue 049, in <a href="../engineering/releases/v0.12.26.html">the release</a>.
+        <p><b>The inbox</b> (<a href="../engineering/issues/049.html">049</a>), the feature request in <a href="../articles/sixteen-notes-i-did-not-want-to-lose.html">Sixteen notes I did not want to lose</a>. In the vault pane&rsquo;s Vault tab, <i>Make a link for another browser</i> makes a key pair in the browser (RSA-OAEP 3072), configures an append lane on the reader vault and records both in the master. The link is shown as a URL, as text and as a QR code, and carries the lane, its write-only token and the public key, nothing else. A browser with no passkey opens it on <a href="../vault/send.html">vault/send.html</a>: it keeps the link and takes it out of the address, says what it holds that the vault does not, and on <i>Send to my vault</i> seals its own records, as one device file in the format the vault already uses, with sgit&rsquo;s hybrid envelope, and appends them. It can write and never read. Once it holds a link, the strip above the pane offers the same button on any page. The next time the vault is opened with the passkey, the Vault tab lists what is waiting: from which browser, when, and what it carries; it refuses a message sealed to another key, one changed on the way and one that is not an inbox message, each with the reason; and <i>Bring them in</i> writes each browser&rsquo;s file into the reader vault and runs the merge every device already uses, so the records keep that browser as their author. <i>Make a new link</i> keeps the key, changes the token, and the old link can no longer write. The design is in <a href="../admin/notes/2026-10-13__send-to-my-vault-from-any-browser.md">the note</a>. Not built: expiry, which the append routes have no way to enforce; signatures; purge; the reply lane (015).</p>
+        <p><b>Checked.</b> <code>test_inbox.mjs</code>, the thirteenth file in CI: the link, the envelope, the refusals and the combining of two files of one browser in Node; in Chromium against the mock of the vault API, now with the append routes, a browser with a virtual passkey makes the account and the link (its QR code decoded back with jsQR), a browser with no passkey at all reads, keeps notes and sends twice, three bad messages are appended beside them, and the first browser refuses the three, brings the two in, discards the rest and makes a new link that the old one cannot write past. What reached the lane is ciphertext; neither browser keeps the private key or the enum key.</p></td>
+    </tr>
+    <tr id="v0.12.25">
+      <td class="vnum">v0.12.25</td>
+      <td>13 Oct 2026</td>
+      <td><b>@newsroom.newsletter: the end of every issue names the newsroom.</b> In <a href="../engineering/releases/v0.12.25.html">the release</a>.
+        <p><b>Newsletter.</b> The paragraph that ends every <a href="../articles/newsletter/index.html">issue</a>, and every LinkedIn post of one, now names newsroom.sgit.ai and its subscribe page; the LinkedIn box names the cover alone, because images now copy and paste.</p></td>
+    </tr>
+    <tr id="v0.12.24">
+      <td class="vnum">v0.12.24</td>
+      <td>13 Oct 2026</td>
+      <td><b>@newsroom.writer: Every link points back.</b> In <a href="../engineering/releases/v0.12.24.html">the release</a>.
+        <p><b>New article.</b> <a href="../articles/every-link-points-back.html">Every link points back</a>: 551 of 566 links between articles point back in time, and a proposal for forward links to what came next and what corrected them. What came next notes added to three articles; <a href="../articles/how-cheap-is-it-to-undo.html">The human in the loop is a spectrum</a> retitled.</p></td>
+    </tr>
+    <tr id="v0.12.23">
+      <td class="vnum">v0.12.23</td>
+      <td>13 Oct 2026</td>
+      <td><b>@newsroom.writer: Sixteen notes I did not want to lose.</b> In <a href="../engineering/releases/v0.12.23.html">the release</a>.
+        <p><b>New article.</b> <a href="../articles/sixteen-notes-i-did-not-want-to-lose.html">Sixteen notes I did not want to lose</a>: a request to send from any browser to the reader&rsquo;s vault by link, text or QR code, why identity is still this hard, and how two more wires became a product line.</p></td>
+    </tr>
+    <tr id="v0.12.22">
+      <td class="vnum">v0.12.22</td>
+      <td>13 Oct 2026</td>
+      <td><b>@newsroom.writer: How cheap is it to undo?</b> In <a href="../engineering/releases/v0.12.22.html">the release</a>.
+        <p><b>New article.</b> <a href="../articles/how-cheap-is-it-to-undo.html">How cheap is it to undo?</a>: a spectrum of trust and side effects, with two axes that both move, and why the newsroom ships on its own while email still waits for a person.</p></td>
+    </tr>
+    <tr id="v0.12.21">
+      <td class="vnum">v0.12.21</td>
+      <td>13 Oct 2026</td>
+      <td><b>@newsroom.wire: R2 waits for the saved state, not a fixed time.</b> Card 048, in <a href="../engineering/releases/v0.12.21.html">the release</a>.
+        <p>v0.12.20&rsquo;s first run in CI failed one check of the review test, R2, which had passed twice on the same tree in the session: a fixed 1.2-second wait for a charged page to save the meter&rsquo;s state, before a broken persona is pushed into it, was not enough on the runner, and the meter&rsquo;s own save overwrote the set-up. The wait is now by condition, as the same test already does for the personas page since <a href="../engineering/issues/032.html">032</a>. The finding and its check are unchanged. The deploy of v0.12.20 had gone out; its tag is backfilled by this push.</p></td>
+    </tr>
+    <tr id="v0.12.20">
+      <td class="vnum">v0.12.20</td>
+      <td>13 Oct 2026</td>
+      <td><b>@newsroom.wire: the charter of the wires, a standing brief for the desks, one subscription list per wire, every wire day by day, the verifier&rsquo;s record at the story, who should know, and the morning run.</b> Issues 041 to 045 and 047, in <a href="../engineering/releases/v0.12.20.html">the release</a>; 046 filed. Built as v0.12.15 on the session branch while @newsroom.writer released v0.12.15 to v0.12.19 on dev; merged onto v0.12.19.
+        <p><b>The charter</b> (<a href="../engineering/issues/041.html">041</a>): <a href="../wire/charter.html">facts first and analysis on top</a>, corrections that propagate, three rounds of agents and what each enforces, what is never done, public by default. <b>The brief for the desks</b> (041): <a href="../wire/desk-brief.html">a standing page</a> the desks read at the start of every run, carrying the owner&rsquo;s asks for the other side: the schedule, the reader&rsquo;s lane, a verifier on every run with one row per story, one list per wire, a Portugal wire, contacts under the rules, the release note.</p>
+        <p><b>One list per wire</b> (<a href="../engineering/issues/042.html">042</a>): subscribe to one wire alone from its page, down the newsletter&rsquo;s lane with <code>X-SGit-List</code>. <b>Day by day</b> (<a href="../engineering/issues/043.html">043</a>): <a href="../wire/days.html">every wire&rsquo;s releases and stories by date</a>, and how many stories each source gave. <b>The verifier at the story</b> (<a href="../engineering/issues/044.html">044</a>): the vault&rsquo;s factcheck records drawn where the story is read. <b>Who should know</b> (<a href="../engineering/issues/045.html">045</a>): a reach page per wire, organisations never people, from their own contact pages, hashed. <b>The morning run</b> (<a href="../engineering/issues/047.html">047</a>): a routine every day at seven, London. Filed: a Portugal wire (<a href="../engineering/issues/046.html">046</a>), blocked on its vault.</p></td>
+    </tr>
+    <tr id="v0.12.19">
+      <td class="vnum">v0.12.19</td>
+      <td>13 Oct 2026</td>
+      <td><b>@newsroom.writer: The human in the loop.</b> In <a href="../engineering/releases/v0.12.19.html">the release</a>.
+        <p><b>New article.</b> <a href="../articles/the-human-in-the-loop.html">The human in the loop, safety net or bottleneck</a>: put the person where an output cannot be undone and the blast radius is large, with the why; let controls that do not tire check the rest; and let the record move the line.</p></td>
+    </tr>
+    <tr id="v0.12.18">
+      <td class="vnum">v0.12.18</td>
+      <td>13 Oct 2026</td>
+      <td><b>@newsroom.writer: newsletter issues are written here.</b> In <a href="../engineering/releases/v0.12.18.html">the release</a>.
+        <p>The publishing script carries newsletter issues written in this repository through the same generator as articles, with their quotes checked and their covers drawn; a final build after the covers makes each issue page show its cover and its LinkedIn box.</p></td>
+    </tr>
+    <tr id="v0.12.17">
+      <td class="vnum">v0.12.17</td>
+      <td>13 Oct 2026</td>
+      <td><b>@newsroom.writer: A policy beside the prompt, version 1.1.</b> In <a href="../engineering/releases/v0.12.17.html">the release</a>.
+        <p><a href="../articles/a-policy-beside-the-prompt.html">A policy beside the prompt</a> adds where the policy goes today in each mode, over the API and in the Claude apps and Claude Code, why both are still hope, and the system prompt as a light behaviour policy; the hero figure redrawn.</p></td>
+    </tr>
+    <tr id="v0.12.16">
+      <td class="vnum">v0.12.16</td>
+      <td>13 Oct 2026</td>
+      <td><b>@newsroom.writer: A policy beside the prompt.</b> In <a href="../engineering/releases/v0.12.16.html">the release</a>.
+        <p><b>New article.</b> <a href="../articles/a-policy-beside-the-prompt.html">A policy beside the prompt</a>: every agent should take a behaviour policy beside its prompt, which the vendor accepts and answers for; aviation and payments as the precedents; the policies agents already run, unseen.</p></td>
+    </tr>
+    <tr id="v0.12.15">
+      <td class="vnum">v0.12.15</td>
+      <td>13 Oct 2026</td>
+      <td><b>The policy draws the liability line, and sgit.ai&rsquo;s moved banner cut on import.</b> In <a href="../engineering/releases/v0.12.15.html">the release</a>.
+        <p><b>New article.</b> <a href="../articles/the-policy-draws-the-liability-line.html">The policy draws the liability line</a>: an answer to Ralf Thomas on agent accountability; explicit prohibitions in a behaviour policy move liability between deployer and vendor when broken; a policy beside every prompt.</p>
+        <p><b>Import.</b> sgit.ai v0.7.87 marks every moved page with a banner pointing here; the sync now cuts it, and the first line of each markdown twin that says the same.</p></td>
+    </tr>
     <tr id="v0.12.14">
       <td class="vnum">v0.12.14</td>
       <td>13 Oct 2026</td>
-      <td><b>The Newsroom Design Lab, reviewed.</b> In <a href="../engineering/releases/v0.12.14.html">the release</a>; card 039.
-        <p>A note on the handover from the session that ran the Design Lab (11 to 13 October): four published vaults of prototypes in three design directions, checked against the site at v0.12.13 rather than the v0.7.1 they were built on. What to take, in order: the findability data (five desks, 42 controlled tags, 11 series, a format per article), the written words (three persona stories, a purpose page, three masthead lines), three small live fixes, the reader-primitive patterns the pane does not have, the direction decision, and the kit&rsquo;s escaping template. <a href="notes/2026-10-13__design-lab-review.md">The note</a>.</p></td>
+      <td><b>@newsroom.wire: the wire&rsquo;s vault publishes its release notes, corrections propagate to the story, and two more wires, the OWASP Wire with its projects graph and the AWS Wire filtered by a declared stack, each from its own vault.</b> Issues 026, 039 and 040, in <a href="../engineering/releases/v0.12.14.html">the release</a>.
+        <p><b>The release file, from the desk</b> (<a href="../engineering/issues/026.html">026</a>, closed). The Industry Wire&rsquo;s second edition, of 13 October, came with <code>data/releases.json</code> as the brief of v0.12.6 asked: one entry per publish, newest first, the commit message starting with the release id, and the step written into the vault&rsquo;s runbook. Nineteen new stories since the first edition, thirteen corrected after their primary sources were fetched. <code>test_wire.mjs</code> checks the notes against the live vault, each added or updated id linked to its story.</p>
+        <p><b>Corrections propagate</b> (<a href="../engineering/issues/039.html">039</a>). A corrected story carries each change under its text, dated, as the vault records it in the story&rsquo;s <code>changes</code>; the edition&rsquo;s header carries the desk&rsquo;s note of what was corrected; a story from an earlier edition says which; <em>Updated</em> comes from the release shown or from the edition itself. The snapshot carries each story&rsquo;s edition and changes and the desk&rsquo;s latest release note.</p>
+        <p><b>Two wires beside the Industry Wire</b> (<a href="../engineering/issues/040.html">040</a>). <a href="../wire/owasp/index.html">The OWASP Wire</a> (vault eitf274v, weekly, 19 stories in its first edition) and <a href="../wire/aws/index.html">the AWS Wire</a> (vault v202bla5, 88 items filtered by the stack its reader runs), each read in the browser with its own published read key, recorded in <code>admin/build/wire-vault.&lt;slug&gt;.json</code> with the named reader&rsquo;s agreement of 13 October. One code and one builder serve every wire; the lenses come from the vault&rsquo;s own personas when it describes itself; each wire keeps its own inbox, visit and lens, and the stories seen are stored under the wire&rsquo;s slug, so an id shared by two vaults is not confused. A <code>map</code> is drawn as entities with the stories that name them; a <code>stack</code> as the deadlines at the top of the edition with the days left, and each service with the items that touched it. Each wire has its own snapshot, and the search indexes them all. <code>test_wire.mjs</code> runs for every wire recorded.</p>
+        <p><b>Found</b>: the desk could not read the reader&rsquo;s lane, so the decisions sent are not reflected yet; the lane&rsquo;s read key has not reached the wire&rsquo;s agent (<a href="../engineering/issues/030.html">030</a>). Built on the branch of the morning and merged onto v0.12.13, so the colours the wire adds are the themes&rsquo; tokens.</p></td>
     </tr>
     <tr id="v0.12.13">
       <td class="vnum">v0.12.13</td>
@@ -834,12 +940,14 @@
     <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="netline"><a href="https://sgit.ai" style="display:inline;padding:0"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://pt.newsroom.sgit.ai" style="display:inline;padding:0">&#8593; pt.newsroom.sgit.ai</a> &middot; <a href="https://graphs.sgit.ai" style="display:inline;padding:0">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai" style="display:inline;padding:0">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai" style="display:inline;padding:0">&#8593; nhi.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai" style="display:inline;padding:0">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.12.14</a> &middot; <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.12.30</a> &middot; <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>The newsroom</h4>
     <a href="../index.html">&#8594; The front page</a>
     <a href="../wire/index.html">The Industry Wire</a>
+    <a href="../wire/owasp/index.html">The OWASP Wire</a>
+    <a href="../wire/aws/index.html">The AWS Wire</a>
     <a href="../articles/index.html#all">Every article</a>
     <a href="../articles/newsletter/index.html">The newsletter</a>
     <a href="../articles/collections/index.html">Collections</a>

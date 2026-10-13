@@ -1,0 +1,50 @@
+{
+ "slug": "four-frameworks-one-agent",
+ "teaser": "iason's comparison of four AI risk frameworks, mapped to the behaviour policy, the footprint and the graphs that run here, with the status of each row.",
+ "topics": ["agents-and-policy", "graphs-and-knowledge"],
+ "core_idea": "The OECD classification, the NIST AI RMF, Japan's guidelines and the EU AI Act converge on five principles, as iason's paper says, but their unit is an AI system classified before deployment; for an agent the unit is one agent in one deployment, described by a written behaviour policy, measured by its footprint and blast radius, and each framework's question has a mechanism here that runs, is designed or is argued, which the mapping file published with the article records row by row.",
+ "nodes": [
+  {"id": "paper", "label": "iason's four-framework paper", "kind": "artefact", "summary": "AI Risk Management Frameworks, November 2025: the OECD classification, the NIST AI RMF, Japan's guidelines and the EU AI Act, converging on five principles."},
+  {"id": "unit", "label": "The unit is one agent in one deployment", "kind": "claim", "summary": "The frameworks classify an AI system before deployment; an agent's risk is its reach in a given setup, not a property of the model."},
+  {"id": "policy", "label": "The behaviour policy", "kind": "method", "summary": "Reach measured, mandate written, the gap typed by what stands in the way, written before the agent runs and restored after every summary."},
+  {"id": "footprint", "label": "Footprint and blast radius", "kind": "method", "summary": "What the agent did, read afterwards from logs, and what each row would cost if used in full today."},
+  {"id": "oecd", "label": "OECD: five dimensions", "kind": "concept", "summary": "People and Planet, Economic Context, Data and Input, AI Model, Task and Output; the last two matter most for an agent."},
+  {"id": "nist", "label": "NIST: govern, map, measure, manage", "kind": "concept", "summary": "Fifteen numbered outcomes, each with a mechanism here and the article where it runs."},
+  {"id": "japan", "label": "Japan: three roles", "kind": "concept", "summary": "Developer, provider and business user: the model vendor, the platform and the deployer of an agent."},
+  {"id": "act", "label": "The EU AI Act: tier, word, dates", "kind": "concept", "summary": "Obligations by tier; residual risk 'judged to be acceptable' undefined; application dates moved after the paper."},
+  {"id": "oversight", "label": "Oversight by reversibility", "kind": "method", "summary": "A person where an output cannot be undone, controls that do not get tired elsewhere, one position per output rather than per system."},
+  {"id": "accepted", "label": "Accepted is not acceptable", "kind": "claim", "summary": "A risk has a holder, an interval and the facts that would end it; three doors and no deny button."},
+  {"id": "beside", "label": "A policy beside the prompt", "kind": "method", "summary": "The contract between vendor, platform and deployer: published, accepted, enforced where it can be, breaches reported."},
+  {"id": "since", "label": "The paper needs a status since", "kind": "example", "summary": "Written before Regulation (EU) 2026/1744 moved the Act's dates and before software became a product under EU liability rules."},
+  {"id": "graphs", "label": "Three graphs already hold two of the four", "kind": "artefact", "summary": "The Act parsed into a vault; a control framework joined to the Act's text; a ten-layer stack with 119 edges from provisions."},
+  {"id": "map", "label": "The mapping file", "kind": "artefact", "summary": "Thirty-two rows, each framework element against what answers it here, where to check, and whether it runs, is designed or is argued."},
+  {"id": "mandate", "label": "The mandate is the hard part", "kind": "claim", "summary": "Observation tells you what an agent did; only a written mandate tells you whether it was allowed."}
+ ],
+ "edges": [
+  {"from": "paper", "to": "unit", "rel": "leads-to"},
+  {"from": "unit", "to": "policy", "rel": "produces"},
+  {"from": "policy", "to": "footprint", "rel": "extends"},
+  {"from": "oecd", "to": "footprint", "rel": "answers"},
+  {"from": "nist", "to": "policy", "rel": "answers"},
+  {"from": "nist", "to": "oversight", "rel": "answers"},
+  {"from": "japan", "to": "beside", "rel": "answers"},
+  {"from": "act", "to": "accepted", "rel": "answers"},
+  {"from": "act", "to": "since", "rel": "leads-to"},
+  {"from": "oversight", "to": "unit", "rel": "example-of"},
+  {"from": "graphs", "to": "map", "rel": "leads-to"},
+  {"from": "map", "to": "paper", "rel": "extends"},
+  {"from": "oecd", "to": "nist", "rel": "compared-with"},
+  {"from": "japan", "to": "act", "rel": "compared-with"},
+  {"from": "footprint", "to": "mandate", "rel": "depends-on"},
+  {"from": "mandate", "to": "policy", "rel": "leads-to"}
+ ],
+ "links": {
+  "articles": ["authority-outside-the-model", "footprint-and-blast-radius", "how-cheap-is-it-to-undo", "the-policy-draws-the-liability-line", "who-owns-the-words", "a-second-reader-the-agent-cannot-skip", "a-policy-beside-the-prompt", "connector-twin-before-you-deploy-an-agent", "hope-or-enforcement", "how-to-run-synthetic-users", "re-anchoring-agent-behaviour-policies", "every-risk-is-already-accepted", "where-the-platform-draws-the-line", "the-human-in-the-loop", "the-ai-governance-stack-as-a-graph", "every-link-points-back", "the-vault-is-live", "ai-baseline-control-framework"],
+  "pages": ["newsroom/policies.html"],
+  "sites": ["https://oecd.ai/en/classification", "https://www.nist.gov/itl/ai-risk-management-framework", "https://eur-lex.europa.eu/eli/reg/2024/1689/oj", "https://artificialintelligenceact.eu/article/9/", "https://www.anthropic.com/engineering/claude-code-auto-mode", "https://sgit.ai/demos/vaults/regulation-graph/index.html", "https://sgit.ai/demos/vaults/risk-acceptance/index.html"]
+ },
+ "quotes": [
+  {"text": "Observation tells you what an agent did. Only a written mandate tells you whether it was allowed, and without one every finding in the footprint is a judgement call and every deflection in the liability line is available.", "why": "The answer to which part of governance is hardest, from this record."},
+  {"text": "The same model that drafts an email with no way to send it, and the same model with a send button and a customer database, are not the same system, and no tier assigned to the model tells you which one you have.", "why": "Why the unit has to be one agent in one deployment."}
+ ]
+}

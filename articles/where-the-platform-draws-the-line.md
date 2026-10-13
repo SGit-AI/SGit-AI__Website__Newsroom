@@ -2,7 +2,7 @@
 
 > On 7 October Microsoft made Microsoft Execution Containers (MXC) generally available: a containment layer for AI agents, declared in JSON and enforced by the operating system. With its companion, the Agent Control Specification (ACS), it is the most complete platform control for agents I have seen, and it confirms the direction of travel: the policy sits outside the agent, the agent cannot grant itself more, and you observe before you enforce. This article is a briefing on how the two actually work, field by field, and a map from them to RiskMandate's Agent Behaviour Policy. My argument is the shared responsibility model, applied to agents. Every platform draws its line where it can see and touch: files, network addresses and ports, the desktop, and with ACS the arguments of a tool call. Above that line is what a business actually runs on: what a Gmail label means, whose voice an email goes out in, how many refunds in a day is normal, which customer this run is for. Eight scenarios, each run three ways (a plain agent, an agent with a behaviour policy, and an agent with a behaviour policy on top of MXC and ACS), show what the platform turns into boundaries, what it hands back to the business, and what only a named person can accept. The platform is an important stage of the climb, not the summit.
 
-*Source: <https://newsroom.sgit.ai/articles/where-the-platform-draws-the-line.html> · sgit.ai v0.7.86 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/where-the-platform-draws-the-line.html> · sgit.ai v0.7.87 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 
@@ -222,6 +222,8 @@ Agents & policy[This article as a graph →](graphs.md#where-the-platform-draws-
 
 ### Continued by
 
+- [Four frameworks, one agent: iason's comparison of the OECD classification, the NIST AI RMF, Japan's guidelines and the EU AI Act, read against what runs here, with the evidence and the graphs](four-frameworks-one-agent.md) iason's comparison of four AI risk frameworks, mapped to the behaviour policy, the footprint and the graphs that run here, with the status of each row.
+- [The policy draws the liability line: an answer to Ralf Thomas on agent accountability, and why every agent in a loop should take a behaviour policy beside its prompt](the-policy-draws-the-liability-line.md) An answer to Ralf Thomas: the shell game works because nothing is written down, and a behaviour policy's explicit prohibitions move the liability line.
 - [Move the cloud, not the code: twins, sovereignty that works in practice, and the migration that pays for itself on the day you switch](move-the-cloud-not-the-code.md) Workloads stay on hyperscalers because moving means changing code; a twin lets the code not know, and the value in the twin is what signs the migration.
 
 [All articles](index.md) · [All graphs](graphs.md)

@@ -3,7 +3,7 @@
  "counts": {
   "open": 10,
   "blocked": 3,
-  "done": 26
+  "done": 37
  },
  "issues": [
   {
@@ -336,12 +336,12 @@
    "title": "The wire's vault publishes data/releases.json on every publish",
    "kind": "task",
    "priority": "high",
-   "status": "blocked",
+   "status": "done",
    "created": "2026-10-13T09:40:00Z",
-   "release": "",
+   "release": "v0.12.14",
    "estimated_effort": "small",
-   "blocked_on": "the wire's agent, which holds the vault's write key; the owner relays the message at the end of the brief",
-   "path": "admin/engineering/issues/blocked/026-wire-vault-publishes-releases.md",
+   "blocked_on": "",
+   "path": "admin/engineering/issues/done/026-wire-vault-publishes-releases.md",
    "url": "https://newsroom.sgit.ai/engineering/issues/026.html"
   },
   {
@@ -502,25 +502,295 @@
   },
   {
    "id": "039",
-   "title": "The Newsroom Design Lab, reviewed against v0.12.13",
-   "kind": "task",
-   "priority": "normal",
+   "title": "Corrections propagate on the wire: each corrected story carries its changes, the edition its corrections note",
+   "kind": "story",
+   "priority": "high",
    "status": "done",
-   "created": "2026-10-13T13:20:00Z",
+   "created": "2026-10-13T11:20:00Z",
    "release": "v0.12.14",
    "estimated_effort": "small",
    "blocked_on": "",
-   "path": "admin/engineering/issues/done/039-design-lab-review.md",
+   "path": "admin/engineering/issues/done/039-corrections-at-the-story.md",
    "url": "https://newsroom.sgit.ai/engineering/issues/039.html"
+  },
+  {
+   "id": "040",
+   "title": "More than one wire: the OWASP Wire and the AWS Wire beside the Industry Wire, each from its own vault",
+   "kind": "story",
+   "priority": "high",
+   "status": "done",
+   "created": "2026-10-13T14:10:00Z",
+   "release": "v0.12.14",
+   "estimated_effort": "medium",
+   "blocked_on": "",
+   "path": "admin/engineering/issues/done/040-more-than-one-wire.md",
+   "url": "https://newsroom.sgit.ai/engineering/issues/040.html"
+  },
+  {
+   "id": "041",
+   "title": "The charter of the wires, and a standing brief for the desks",
+   "kind": "story",
+   "priority": "high",
+   "status": "done",
+   "created": "2026-10-13T15:10:00Z",
+   "release": "v0.12.20",
+   "estimated_effort": "medium",
+   "blocked_on": "",
+   "path": "admin/engineering/issues/done/041-the-charter-and-the-brief-for-the-desks.md",
+   "url": "https://newsroom.sgit.ai/engineering/issues/041.html"
+  },
+  {
+   "id": "042",
+   "title": "Subscribe to one wire alone, down the same lane",
+   "kind": "story",
+   "priority": "high",
+   "status": "done",
+   "created": "2026-10-13T15:10:00Z",
+   "release": "v0.12.20",
+   "estimated_effort": "small",
+   "blocked_on": "",
+   "path": "admin/engineering/issues/done/042-subscribe-to-one-wire.md",
+   "url": "https://newsroom.sgit.ai/engineering/issues/042.html"
+  },
+  {
+   "id": "043",
+   "title": "Every wire day by day, and how many stories each source gave",
+   "kind": "story",
+   "priority": "normal",
+   "status": "done",
+   "created": "2026-10-13T15:10:00Z",
+   "release": "v0.12.20",
+   "estimated_effort": "small",
+   "blocked_on": "",
+   "path": "admin/engineering/issues/done/043-day-by-day-and-source-counts.md",
+   "url": "https://newsroom.sgit.ai/engineering/issues/043.html"
+  },
+  {
+   "id": "044",
+   "title": "The verifier's record drawn at the story, and asked for on every run",
+   "kind": "story",
+   "priority": "high",
+   "status": "done",
+   "created": "2026-10-13T15:10:00Z",
+   "release": "v0.12.20",
+   "estimated_effort": "small",
+   "blocked_on": "",
+   "path": "admin/engineering/issues/done/044-the-verifier-at-the-story.md",
+   "url": "https://newsroom.sgit.ai/engineering/issues/044.html"
+  },
+  {
+   "id": "045",
+   "title": "Who should know: a reach page per wire, by organisation route only",
+   "kind": "story",
+   "priority": "normal",
+   "status": "done",
+   "created": "2026-10-13T15:10:00Z",
+   "release": "v0.12.20",
+   "estimated_effort": "medium",
+   "blocked_on": "",
+   "path": "admin/engineering/issues/done/045-who-should-know.md",
+   "url": "https://newsroom.sgit.ai/engineering/issues/045.html"
+  },
+  {
+   "id": "046",
+   "title": "A Portugal wire: the same beats, Portuguese sources and stories, under the same contract",
+   "kind": "story",
+   "priority": "high",
+   "status": "blocked",
+   "created": "2026-10-13T15:10:00Z",
+   "release": "",
+   "estimated_effort": "medium",
+   "blocked_on": "the desk building the vault and publishing its read key to the owner; the newsroom adds it with one config file (the brief for the desks, 13 October)",
+   "path": "admin/engineering/issues/blocked/046-a-portugal-wire.md",
+   "url": "https://newsroom.sgit.ai/engineering/issues/046.html"
+  },
+  {
+   "id": "047",
+   "title": "The newsroom's morning run: a routine that refreshes the wires every day at seven",
+   "kind": "task",
+   "priority": "high",
+   "status": "done",
+   "created": "2026-10-13T15:10:00Z",
+   "release": "v0.12.20",
+   "estimated_effort": "small",
+   "blocked_on": "",
+   "path": "admin/engineering/issues/done/047-the-morning-run.md",
+   "url": "https://newsroom.sgit.ai/engineering/issues/047.html"
+  },
+  {
+   "id": "048",
+   "title": "R2 waits for the charged page to save its state, not a fixed time",
+   "kind": "bug",
+   "priority": "high",
+   "status": "done",
+   "created": "2026-10-13T17:40:00Z",
+   "release": "v0.12.21",
+   "estimated_effort": "small",
+   "blocked_on": "",
+   "path": "admin/engineering/issues/done/048-r2-waits-for-the-saved-state.md",
+   "url": "https://newsroom.sgit.ai/engineering/issues/048.html"
+  },
+  {
+   "id": "049",
+   "title": "Send to my vault from any browser: an inbox lane on the reader vault, a link three ways, and the drain",
+   "kind": "story",
+   "priority": "high",
+   "status": "done",
+   "created": "2026-10-13T18:45:00Z",
+   "release": "v0.12.26",
+   "estimated_effort": "large",
+   "blocked_on": "",
+   "path": "admin/engineering/issues/done/049-send-to-my-vault-from-any-browser.md",
+   "url": "https://newsroom.sgit.ai/engineering/issues/049.html"
+  },
+  {
+   "id": "050",
+   "title": "How to write here: the guide beside the article sources",
+   "kind": "task",
+   "priority": "normal",
+   "status": "done",
+   "created": "2026-10-13T21:30:00Z",
+   "release": "v0.12.28",
+   "estimated_effort": "small",
+   "blocked_on": "",
+   "path": "admin/engineering/issues/done/050-how-to-write-here.md",
+   "url": "https://newsroom.sgit.ai/engineering/issues/050.html"
   }
  ],
  "releases": [
+  {
+   "version": "v0.12.30",
+   "date": "2026-10-13",
+   "kind": "patch",
+   "issues": [],
+   "url": "https://newsroom.sgit.ai/engineering/releases/v0.12.30.html"
+  },
+  {
+   "version": "v0.12.29",
+   "date": "2026-10-13",
+   "kind": "patch",
+   "issues": [],
+   "url": "https://newsroom.sgit.ai/engineering/releases/v0.12.29.html"
+  },
+  {
+   "version": "v0.12.28",
+   "date": "2026-10-13",
+   "kind": "patch",
+   "issues": [
+    "050"
+   ],
+   "url": "https://newsroom.sgit.ai/engineering/releases/v0.12.28.html"
+  },
+  {
+   "version": "v0.12.27",
+   "date": "2026-10-13",
+   "kind": "patch",
+   "issues": [],
+   "url": "https://newsroom.sgit.ai/engineering/releases/v0.12.27.html"
+  },
+  {
+   "version": "v0.12.26",
+   "date": "2026-10-13",
+   "kind": "patch",
+   "issues": [
+    "049"
+   ],
+   "url": "https://newsroom.sgit.ai/engineering/releases/v0.12.26.html"
+  },
+  {
+   "version": "v0.12.25",
+   "date": "2026-10-13",
+   "kind": "patch",
+   "issues": [],
+   "url": "https://newsroom.sgit.ai/engineering/releases/v0.12.25.html"
+  },
+  {
+   "version": "v0.12.24",
+   "date": "2026-10-13",
+   "kind": "patch",
+   "issues": [],
+   "url": "https://newsroom.sgit.ai/engineering/releases/v0.12.24.html"
+  },
+  {
+   "version": "v0.12.23",
+   "date": "2026-10-13",
+   "kind": "patch",
+   "issues": [],
+   "url": "https://newsroom.sgit.ai/engineering/releases/v0.12.23.html"
+  },
+  {
+   "version": "v0.12.22",
+   "date": "2026-10-13",
+   "kind": "patch",
+   "issues": [],
+   "url": "https://newsroom.sgit.ai/engineering/releases/v0.12.22.html"
+  },
+  {
+   "version": "v0.12.21",
+   "date": "2026-10-13",
+   "kind": "patch",
+   "issues": [
+    "048"
+   ],
+   "url": "https://newsroom.sgit.ai/engineering/releases/v0.12.21.html"
+  },
+  {
+   "version": "v0.12.20",
+   "date": "2026-10-13",
+   "kind": "patch",
+   "issues": [
+    "041",
+    "042",
+    "043",
+    "044",
+    "045",
+    "047"
+   ],
+   "url": "https://newsroom.sgit.ai/engineering/releases/v0.12.20.html"
+  },
+  {
+   "version": "v0.12.19",
+   "date": "2026-10-13",
+   "kind": "patch",
+   "issues": [],
+   "url": "https://newsroom.sgit.ai/engineering/releases/v0.12.19.html"
+  },
+  {
+   "version": "v0.12.18",
+   "date": "2026-10-13",
+   "kind": "patch",
+   "issues": [],
+   "url": "https://newsroom.sgit.ai/engineering/releases/v0.12.18.html"
+  },
+  {
+   "version": "v0.12.17",
+   "date": "2026-10-13",
+   "kind": "patch",
+   "issues": [],
+   "url": "https://newsroom.sgit.ai/engineering/releases/v0.12.17.html"
+  },
+  {
+   "version": "v0.12.16",
+   "date": "2026-10-13",
+   "kind": "patch",
+   "issues": [],
+   "url": "https://newsroom.sgit.ai/engineering/releases/v0.12.16.html"
+  },
+  {
+   "version": "v0.12.15",
+   "date": "2026-10-13",
+   "kind": "patch",
+   "issues": [],
+   "url": "https://newsroom.sgit.ai/engineering/releases/v0.12.15.html"
+  },
   {
    "version": "v0.12.14",
    "date": "2026-10-13",
    "kind": "patch",
    "issues": [
-    "039"
+    "026",
+    "039",
+    "040"
    ],
    "url": "https://newsroom.sgit.ai/engineering/releases/v0.12.14.html"
   },

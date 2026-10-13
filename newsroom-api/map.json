@@ -21,31 +21,31 @@
   {
    "path": "passkey/index.html",
    "what": "the page",
-   "lines": 315,
+   "lines": 321,
    "sha256": "6620cffd5731fd4b1499d6e509b1684586cfcf4ac6fadd83afc2eb7679e7f9e9"
   }
  ],
  "what": "The map of everything a reader does on newsroom.sgit.ai, and the review of it: phase 0 of the move described in https://newsroom.sgit.ai/articles/explorer-to-villager-newsroom.html. Written by admin/build/api_map.py on every build. The hashes are the 'before' for the move's rule that the live site serves the same bytes after it: scripts, styles and JSON raw; pages with the site chrome and version stamps normalised.",
  "api_means": "client-side: components, formats and contracts the browser runs, with no server and nothing to deploy but files",
- "release": "v0.12.13",
+ "release": "v0.12.30",
  "date": "11 October 2026",
  "source": {
   "sgit_ai": "",
-  "commit": "2c0eb26",
+  "commit": "4e00434",
   "meter_here": "1.4.0",
   "meter_on_sgit_ai": "1.3.1"
  },
  "counts": {
-  "reader_code_lines": 8673,
-  "reader_files": 49,
-  "pages": 22,
+  "reader_code_lines": 9510,
+  "reader_files": 58,
+  "pages": 28,
   "views": 12,
   "controls": 56,
   "inputs": 11,
   "outputs": 9,
   "contracts": 14,
   "findings": 18,
-  "tests": 413,
+  "tests": 486,
   "frozen_files": 20,
   "frozen_lines": 5697,
   "pages_with_csp": 0
@@ -229,11 +229,11 @@
   },
   {
    "path": "wire/wire.js",
-   "what": "The Industry Wire: the edition with its lens, the sources, the documents, drawn from the vault as text",
+   "what": "The wires: the edition with its lens, release notes and corrections, a map or a stack when the vault has one, the sources, the documents, drawn from the vault as text; one code for every wire",
    "from": "this site",
-   "lines": 322,
-   "bytes": 27599,
-   "sha256": "5df279bc72a7f8d586d530ed07742c6003557114e35cb1d31b1fd77884badf73",
+   "lines": 497,
+   "bytes": 47924,
+   "sha256": "64b82659a1ac2fa1f35d248b31a39be3936ef549635357d466f156807b0a7305",
    "hosts": [],
    "fetch": 0,
    "storage": [
@@ -250,9 +250,41 @@
    "path": "wire/wire.css",
    "what": "Styles for the wire pages",
    "from": "this site",
-   "lines": 112,
-   "bytes": 10411,
-   "sha256": "91ed17d30160a95886936c7c5d5a127c1eabfe602813b26dd41cd84e498ec49f",
+   "lines": 161,
+   "bytes": 15835,
+   "sha256": "d2377174d873de7a0c6ec8cbc14d9c3d9204e43786b109b2654b5c609cfed958",
+   "hosts": [],
+   "fetch": 0,
+   "storage": [],
+   "events": [],
+   "eval": 0,
+   "innerHTML": 0,
+   "confirm": 0,
+   "crypto": false
+  },
+  {
+   "path": "wire/subscribe.js",
+   "what": "Subscribe to one wire alone: the newsletter's envelope and lane (assets/subscribe.js, unedited), with X-SGit-List naming the wire",
+   "from": "this site",
+   "lines": 103,
+   "bytes": 6862,
+   "sha256": "e08913d389ede55fb0787cba7752920c28b43735ff767795e11ac43224c5a12b",
+   "hosts": [],
+   "fetch": 2,
+   "storage": [],
+   "events": [],
+   "eval": 0,
+   "innerHTML": 0,
+   "confirm": 0,
+   "crypto": true
+  },
+  {
+   "path": "admin/build/wire-reach.json",
+   "what": "The organisation routes this site found for each wire's reach page, under the published contact rules: page, date, hash, role addresses",
+   "from": "this site",
+   "lines": 21,
+   "bytes": 3433,
+   "sha256": "7089f4484921fe46527c29f40beb5e1f96b5ab4fc9d0f3d229a503f5516ac9d9",
    "hosts": [],
    "fetch": 0,
    "storage": [],
@@ -264,7 +296,7 @@
   },
   {
    "path": "admin/build/wire-vault.json",
-   "what": "The wire's vault: endpoint, vault id, the public read key (the only key on this site)",
+   "what": "The Industry Wire's vault: endpoint, vault id, the public read key (the only kind of key on this site)",
    "from": "this site",
    "lines": 14,
    "bytes": 1312,
@@ -279,12 +311,76 @@
    "crypto": false
   },
   {
+   "path": "admin/build/wire-vault.owasp.json",
+   "what": "The OWASP Wire's vault (wire/owasp/): the same contract, its own public read key",
+   "from": "this site",
+   "lines": 17,
+   "bytes": 1760,
+   "sha256": "d584c029352338f26eaa496cda1c4ca62c38f932efe54c366d2d8869387ea1fd",
+   "hosts": [],
+   "fetch": 0,
+   "storage": [],
+   "events": [],
+   "eval": 0,
+   "innerHTML": 0,
+   "confirm": 0,
+   "crypto": false
+  },
+  {
+   "path": "admin/build/wire-vault.aws.json",
+   "what": "The AWS Wire's vault (wire/aws/): the same contract, its own public read key",
+   "from": "this site",
+   "lines": 17,
+   "bytes": 1907,
+   "sha256": "3c0448d6e39bfeeacdfe41ddf7805a6e2023751c2ecdc9e71d9df9bc86be78f0",
+   "hosts": [],
+   "fetch": 0,
+   "storage": [],
+   "events": [],
+   "eval": 0,
+   "innerHTML": 0,
+   "confirm": 0,
+   "crypto": false
+  },
+  {
    "path": "wire/snapshot.json",
-   "what": "The wire as it was in the vault at the last release: headlines and primary links, the fallback and the agents' index",
+   "what": "The Industry Wire as it was in the vault at the last release: headlines, primary links, corrections, the latest release note; the fallback and the agents' index",
    "from": "this site, generated",
-   "lines": 412,
-   "bytes": 16826,
-   "sha256": "486d383235e7ef18aef88ac238e60786b04a2bb4291cb400e58745821f3c49f0",
+   "lines": 751,
+   "bytes": 30816,
+   "sha256": "98ab31dc5a74c3091035aaa2722de124c0dc0d60777e6979a2852bfe87fa4ae7",
+   "hosts": [],
+   "fetch": 0,
+   "storage": [],
+   "events": [],
+   "eval": 0,
+   "innerHTML": 0,
+   "confirm": 0,
+   "crypto": false
+  },
+  {
+   "path": "wire/owasp/snapshot.json",
+   "what": "The OWASP Wire at the last release, the same shape",
+   "from": "this site, generated",
+   "lines": 296,
+   "bytes": 10327,
+   "sha256": "fdd6ef3aa552a3d20e0eb1d35eda753d28454b05337b75e6c10e679265c6297d",
+   "hosts": [],
+   "fetch": 0,
+   "storage": [],
+   "events": [],
+   "eval": 0,
+   "innerHTML": 0,
+   "confirm": 0,
+   "crypto": false
+  },
+  {
+   "path": "wire/aws/snapshot.json",
+   "what": "The AWS Wire at the last release, the same shape, with the stack's deadlines",
+   "from": "this site, generated",
+   "lines": 1025,
+   "bytes": 38965,
+   "sha256": "09d02f4835a9667df69feed2e222bb6e5cc5a308df5cbf0e9e25cc71ad7dff66",
    "hosts": [],
    "fetch": 0,
    "storage": [],
@@ -382,9 +478,9 @@
    "path": "articles/ids.json",
    "what": "A number for every article: the contract reading lists are built on",
    "from": "this site, generated",
-   "lines": 1544,
-   "bytes": 58389,
-   "sha256": "886e1d22361b205c6563562be5e3bab17d1104f756fd138d6f56548ceacbd929",
+   "lines": 1640,
+   "bytes": 62625,
+   "sha256": "00cf0598ad4a0ceeeb86e9bbcb51b3031dce13a97c863d72d03c45b28a487dec",
    "hosts": [],
    "fetch": 0,
    "storage": [],
@@ -400,7 +496,7 @@
    "from": "this site, generated",
    "lines": 268,
    "bytes": 13441,
-   "sha256": "61418f1dcb6584b337190ee942644f4b67de13f32d21d69b63d6e6b9f5bec18f",
+   "sha256": "f3abf32fdd0ca75bb3e402f934611e963933c3384ccdcb8a5faa33dfa67e712e",
    "hosts": [],
    "fetch": 0,
    "storage": [],
@@ -414,9 +510,9 @@
    "path": "articles/graphs.json",
    "what": "The feed the picks and the graph read: every article with topics, tags and citations",
    "from": "sgit.ai, imported",
-   "lines": 25739,
-   "bytes": 1115014,
-   "sha256": "a3b0070885759ba66cbb0a80599f09aa48e8484cd9c1da792062cd2d524927c3",
+   "lines": 27526,
+   "bytes": 1186488,
+   "sha256": "476817ced1bc32d16d98249f9039fc4d542660f37baa448ef978a3bfc1841112",
    "hosts": [],
    "fetch": 0,
    "storage": [],
@@ -430,9 +526,9 @@
    "path": "assets/newsroom-vault.js",
    "what": "The newsroom's vault module: create, open, read, write and publish through the vendored library; the door, master and reader vaults; unlock; add a door",
    "from": "this site",
-   "lines": 245,
-   "bytes": 15564,
-   "sha256": "0e71c28b5acf02ba1b25bf936013ec60432301c948ac896ec546aefbf8971264",
+   "lines": 255,
+   "bytes": 16265,
+   "sha256": "29003efa52c408b9d26e58ce86ecc897fda2439f739e803df7b9399a4520705e",
    "hosts": [],
    "fetch": 0,
    "storage": [
@@ -464,9 +560,9 @@
    "path": "assets/vault-pane/vault-pane.js",
    "what": "The vault pane on every page with the meter, in three tabs: this page (the notes, send to the newsroom, the lane's read key), the vault (enable with the passkey, create or join, update the vault, the table across devices, bring their activity here), the keys (every vault of the account)",
    "from": "this site",
-   "lines": 658,
-   "bytes": 54957,
-   "sha256": "b67f2363645bf4d48a4ddb1eb77d0f143d585a72b8cf28058c06e49cd55a88d1",
+   "lines": 784,
+   "bytes": 66189,
+   "sha256": "7176fa08921a26cfded65f5a8b3b20410c910b26b4e182e73edcee5991d88ef3",
    "hosts": [
     "dev.send.sgraph.ai",
     "dev.vault.sgraph.ai"
@@ -478,7 +574,7 @@
    ],
    "events": [],
    "eval": 0,
-   "innerHTML": 0,
+   "innerHTML": 1,
    "confirm": 0,
    "crypto": false
   },
@@ -570,6 +666,62 @@
    "crypto": false
   },
   {
+   "path": "assets/vault-pane/inbox.js",
+   "what": "The inbox (049): the reader's RSA-OAEP key pair, the link (sgi1.<vault>.<token>.<key>), sgit's hybrid envelope, the append routes (configure, write, list, fetch, mark-processed), the drain, the QR code",
+   "from": "dev.send.sgraph.ai /api/vault/append/*",
+   "lines": 227,
+   "bytes": 15367,
+   "sha256": "0d31b92a8827d26a0ddd7e8f076315d6db4b48dfe719f28dafec100eb6bed59b",
+   "hosts": [
+    "dev.send.sgraph.ai"
+   ],
+   "fetch": 1,
+   "storage": [],
+   "events": [],
+   "eval": 0,
+   "innerHTML": 0,
+   "confirm": 0,
+   "crypto": true
+  },
+  {
+   "path": "assets/vault-pane/send.js",
+   "what": "The sending side of the inbox, for a browser with the link and no passkey: its own records as one device file, sealed and appended",
+   "from": "dev.send.sgraph.ai /api/vault/append/write",
+   "lines": 104,
+   "bytes": 8078,
+   "sha256": "ca0512a3474140277f57e70a696d597c0c3ed11c5f61d5228ca2ef4be302aecb",
+   "hosts": [],
+   "fetch": 0,
+   "storage": [
+    "localStorage"
+   ],
+   "events": [],
+   "eval": 0,
+   "innerHTML": 0,
+   "confirm": 0,
+   "crypto": true
+  },
+  {
+   "path": "assets/vendor/qrcode-generator/2.0.4/qrcode.mjs",
+   "what": "QR code generator (Kazuhiko Arase, MIT), vendored unchanged, for the inbox link",
+   "from": "this site",
+   "lines": 2237,
+   "bytes": 51907,
+   "sha256": "ea91d7118a5395289170da848b7c6758b996163bfbccf312591ab65a4911b7c0",
+   "hosts": [
+    "www.d-project.com",
+    "www.denso-wave.com",
+    "www.opensource.org"
+   ],
+   "fetch": 0,
+   "storage": [],
+   "events": [],
+   "eval": 0,
+   "innerHTML": 0,
+   "confirm": 0,
+   "crypto": false
+  },
+  {
    "path": "assets/search/search-nav.css",
    "what": "The Search link in the nav, on every page",
    "from": "this site",
@@ -589,9 +741,9 @@
    "path": "assets/vault-pane/wire-state.js",
    "what": "What this browser knows about the wire: stories seen and when, the visit, the lens chosen; and which of the vault's releases to show",
    "from": "this site",
-   "lines": 66,
-   "bytes": 4069,
-   "sha256": "d4f134cdf3ac9d0f01303140856f3cdffdc86e726db84fdd617aa09eedce45b7",
+   "lines": 78,
+   "bytes": 5432,
+   "sha256": "36e1d5bbbd300c622fadf48748d4485e1b7818f666733c90c9d5f9153dcaea35",
    "hosts": [],
    "fetch": 0,
    "storage": [
@@ -644,9 +796,9 @@
    "path": "assets/vault-pane/sync.js",
    "what": "The activity vault's logic as pure functions: a device's file (reads, top-ups, personas, notes), the consolidated view, totals recomputed, merging into local state",
    "from": "this site",
-   "lines": 175,
-   "bytes": 11131,
-   "sha256": "96b3701ec97d89aa0a55fdd2c6d7743deb5e145ceef53aeb58ae247accccdc75",
+   "lines": 199,
+   "bytes": 13017,
+   "sha256": "0a56700e5b9db9f567fb843366fbaad9ff950202abbe1804d4dcf04b8824a193",
    "hosts": [],
    "fetch": 0,
    "storage": [],
@@ -660,9 +812,9 @@
    "path": "assets/vault-pane/vault-pane.css",
    "what": "Styles for the pane, its tabs, the chips and the notes, and the page shift",
    "from": "this site",
-   "lines": 103,
-   "bytes": 11505,
-   "sha256": "1f431d0c46abbe795dd99c6adad3e58e21fee12e05bd4695cefe10f119a61f68",
+   "lines": 110,
+   "bytes": 12039,
+   "sha256": "f25e2596761414c4495e3b2fc380d3cb055f86f33a8d6cdd17c3d34d8928f5b9",
    "hosts": [],
    "fetch": 0,
    "storage": [],
@@ -885,134 +1037,170 @@
   {
    "path": "account/index.html",
    "what": "the reading account",
-   "lines": 250,
-   "sha256": "60750ebe277ac3f7ef75c536f6c587e5562cc8447cb9268c977b8b43f380f603"
+   "lines": 255,
+   "sha256": "bc2f591e3a4525429105327a371c1ce490160c5d7465944b08b97b4d452d03f4"
   },
   {
    "path": "account/newsroom.html",
    "what": "the reader's newsroom",
-   "lines": 245,
-   "sha256": "f119250bf3df57f51aedf9885a03e7598fc4ffb0f3bcc7bc310be47ba95dbc61"
+   "lines": 250,
+   "sha256": "d51094542674dd01e916bfec91c4ace063bac9909a4f35f064bd9d4b52e38793"
   },
   {
    "path": "account/personas.html",
    "what": "the personas",
-   "lines": 245,
-   "sha256": "45e06452e1854d9e2a8160a7c41973898958f2ee4e699423c4cea6e750d9a8f0"
+   "lines": 250,
+   "sha256": "21ad4f65ea6c5ad0f7ad4f22dfc2d7a9dbf6334aaa4f3dba227e0cb25d0ff4af"
   },
   {
    "path": "account/share.html",
    "what": "send us your reading",
-   "lines": 247,
-   "sha256": "aed4f9255b74a3e379a248064cb5fa887f0e1f7e5194dcee2427997e2d135673"
+   "lines": 252,
+   "sha256": "a21883ac53716f44b9d98f3979d842f5bcee83b157da16ea31a6c9f11481cde8"
   },
   {
    "path": "account/top-up.html",
    "what": "the top-up",
-   "lines": 245,
-   "sha256": "2c8c8b247618553aaa54e00adab12cd1d58abb24ec6c4d0156142f2ee6120487"
+   "lines": 250,
+   "sha256": "6a94fbab4eace27cbdd496ac9783adab1c4f2aa6ab2415745d8755ef458c13c2"
   },
   {
    "path": "account/topped-up.html",
    "what": "the page a payment returns to",
-   "lines": 244,
-   "sha256": "84061530521949c748343152b1468093926974608d840f83b222256d044c7205"
+   "lines": 249,
+   "sha256": "74dc5138c955974150931bb370fd4d873f4a156fba199666735dbc9cb00460da"
   },
   {
    "path": "subscribe/index.html",
    "what": "subscribe",
-   "lines": 265,
-   "sha256": "13d2bfccc95fae53e7a2ddacb24d1e0d793be21f4ad14e3e3d91b83c5d9318d8"
+   "lines": 270,
+   "sha256": "1251580b865830dddc208618a16fdaf43b05388f9e2fcc9df8014160c591ccf5"
   },
   {
    "path": "persona/index.html",
    "what": "the persona picker",
-   "lines": 227,
+   "lines": 233,
    "sha256": "7c0c30a9ae0de576350fc7cb57912f062096773e89a5f3fb792ee4e5346b3156"
   },
   {
    "path": "persona/founder/index.html",
    "what": "a persona link",
-   "lines": 234,
+   "lines": 240,
    "sha256": "043526965d23edb06f766e6abcf81a464c2c41eab578df7b2825beca5c6fe98e"
   },
   {
    "path": "persona/journalist/index.html",
    "what": "a persona link",
-   "lines": 234,
+   "lines": 240,
    "sha256": "8c9acb523b68c36fff8e49e761e8ff302edd4389d4b92bff73ddb2842624628c"
   },
   {
    "path": "persona/security/index.html",
    "what": "a persona link",
-   "lines": 234,
+   "lines": 240,
    "sha256": "2db575acd574852c2c6e9025ff713d52407d438ec94b711710631cb561616f21"
   },
   {
    "path": "persona/builder/index.html",
    "what": "a persona link",
-   "lines": 234,
+   "lines": 240,
    "sha256": "fce8ebd416a924a80cf9d5a02ae9e8b81b8ddf16898220353ec381afda008f0c"
   },
   {
    "path": "persona/board/index.html",
    "what": "a persona link",
-   "lines": 234,
+   "lines": 240,
    "sha256": "384885a41bf6abad4f1d50d9fb8e9a3a7579ad267c67c26af840989594ab94e0"
   },
   {
    "path": "for/index.html",
    "what": "a reading list",
-   "lines": 241,
+   "lines": 247,
    "sha256": "cbd0376dd53283fe36c447573ddef4698612e2ffe26473dd34a54bec7dad8284"
   },
   {
    "path": "for/make.html",
    "what": "make a reading list",
-   "lines": 231,
+   "lines": 237,
    "sha256": "2e61fd52d2b8fc982b8ce5f82d817059e5d2f26e8f7048027ad303ad12019b1e"
   },
   {
    "path": "wire/index.html",
    "what": "the Industry Wire's edition",
-   "lines": 237,
-   "sha256": "ccb648b29e81e655bf163a762c85e6e472fb594e2b277af7a345d93a017fb37d"
+   "lines": 258,
+   "sha256": "40d37e47a2c0a23540c5513688b012ea341e4d123c617386c91c55630e224a7e"
   },
   {
    "path": "wire/sources.html",
    "what": "the wire's sources",
-   "lines": 232,
-   "sha256": "64a35d94ea81295127f1e95b581451fc06d5aee1e68c304ba0b86dfd14780cce"
+   "lines": 238,
+   "sha256": "d40cd17d1c67184f57038027fc9282433900206ffc1fe0599ef93c88e681eb13"
   },
   {
    "path": "wire/how.html",
    "what": "how the wire is read, and its documents",
-   "lines": 236,
-   "sha256": "6d1280c3e571e7d512d73f32c0bbae99280e8703def73585caa5b9b9a6a97e98"
+   "lines": 242,
+   "sha256": "bd14a6837ed335be2160ee88ad21883e3acbd1349aa3b1050401788fe051b730"
+  },
+  {
+   "path": "wire/owasp/index.html",
+   "what": "the OWASP Wire's edition, with the projects graph",
+   "lines": 259,
+   "sha256": "cd50108053b3b038ea1f9dd3ce1cda786b4c1bb597b247fc8b63eb8503bda869"
+  },
+  {
+   "path": "wire/aws/index.html",
+   "what": "the AWS Wire's edition, with the stack and its deadlines",
+   "lines": 259,
+   "sha256": "b639cad9fd6a5194ab2297631f984ca14353d1e2c4319d4d005a210fad4b2f74"
+  },
+  {
+   "path": "wire/days.html",
+   "what": "every wire day by day",
+   "lines": 239,
+   "sha256": "6639f3e4b8dc262b0b472ca50ce0c5b403d4f80ea99eff573c5dc9efced18f7b"
+  },
+  {
+   "path": "wire/charter.html",
+   "what": "the charter of the wires",
+   "lines": 251,
+   "sha256": "ed7a35522cdd2b8164494575181b867376b8a31a6926a19175930d5b820a623a"
+  },
+  {
+   "path": "wire/desk-brief.html",
+   "what": "the brief for the desks",
+   "lines": 251,
+   "sha256": "8f18113a1658ad958f49dbdf30c84269522c4f4bfd122029f8520ae35ecf594a"
+  },
+  {
+   "path": "wire/reach.html",
+   "what": "who should know, by organisation route",
+   "lines": 238,
+   "sha256": "c16eadf2a51b1f5782743ee054b6911d2a0a8e2af4512d25fd3d04dc9c177c80"
   },
   {
    "path": "vault/index.html",
    "what": "your vault: the reading account carried between devices, with the pane open",
-   "lines": 251,
-   "sha256": "e9b07c2c5e287081656eb84a19858e390bb3fb51fdc8ae1c5b27d5ff33270d5d"
+   "lines": 258,
+   "sha256": "247abd6d07b9200be247407c0d4474e6f565fc67da5dbe2da1aaee5ec0207e13"
   },
   {
    "path": "meter/index.html",
    "what": "SG Meter, documented",
-   "lines": 386,
-   "sha256": "79b605dcd6c957a0b9cd383711c35764deef9e6cb62980d3e71510344a37f679"
+   "lines": 391,
+   "sha256": "55656dcab6bf28872c4133c9ea7e609b617606ad703aad883e30fe7d3cb58c70"
   },
   {
    "path": "meter/security.html",
    "what": "the meter's security model",
-   "lines": 271,
-   "sha256": "057a6bd7c0151412ac51ac4f151e993e1eda7d562406818c81f4ec7b8048de26"
+   "lines": 276,
+   "sha256": "9fc8faaf1fc72627c3b858600b635089339c5c3df8fc359d76cd1879b5f4a9ca"
   },
   {
    "path": "demos/vaults/newsroom-synthetic-users/index.html",
    "what": "the synthetic-readers study, with the embedded vault",
-   "lines": 332,
-   "sha256": "41cdf23bf056df473bcc4723ad8dc0955d34429a837a790e7800056087e1a985"
+   "lines": 337,
+   "sha256": "e8d83c803a3e0e72922a77b9668bbf778b042f9241616a7e19fbc684b06154f2"
   }
  ],
  "build": [
@@ -1039,7 +1227,7 @@
   {
    "path": "admin/build/sync_newsroom.py",
    "what": "the import: re-points the meter to v1.4.1, applies the text rules, prints the article number",
-   "lines": 634
+   "lines": 711
   },
   {
    "path": "admin/build/newsroom-meter.json",
@@ -1048,18 +1236,18 @@
   },
   {
    "path": "admin/build/newsroom-text.json",
-   "what": "the eight text rules, applied on import",
-   "lines": 135
+   "what": "the ten text rules, applied on import",
+   "lines": 167
   },
   {
    "path": "admin/build/wire.py",
-   "what": "writes the three wire pages and, from a clone, wire/snapshot.json",
-   "lines": 170
+   "what": "writes the three pages of every wire (wire/, wire/owasp/, wire/aws/) and, from a clone, each wire's snapshot.json",
+   "lines": 355
   },
   {
    "path": "admin/build/vault_page.py",
    "what": "writes the vault page",
-   "lines": 75
+   "lines": 109
   },
   {
    "path": "admin/build/lane.py",
@@ -1068,8 +1256,8 @@
   },
   {
    "path": "admin/build/search_index.py",
-   "what": "writes search/docs.json, search/text.json and the search page from the published pages, the article graphs and versions, the wire's snapshot and the notes",
-   "lines": 351
+   "what": "writes search/docs.json, search/text.json and the search page from the published pages, the article graphs and versions, the wires' snapshots and the notes",
+   "lines": 355
   },
   {
    "path": "admin/build/engineering.py",
@@ -1084,7 +1272,7 @@
   {
    "path": "admin/build/chrome.py",
    "what": "the nav and footer on every page, with the meter's balance and the Vault button and pane on pages that carry the meter",
-   "lines": 355
+   "lines": 361
   },
   {
    "path": "admin/build/validate.js",
@@ -1108,7 +1296,7 @@
   {
    "path": "admin/build/test_review.mjs",
    "what": "the review's findings, pinned as the behaviour is today",
-   "lines": 141,
+   "lines": 145,
    "checks": 14
   },
   {
@@ -1119,9 +1307,9 @@
   },
   {
    "path": "admin/build/test_wire.mjs",
-   "what": "the wire pages in Chromium, reading the real vault",
-   "lines": 127,
-   "checks": 29
+   "what": "every wire's pages in Chromium, each reading its real vault",
+   "lines": 199,
+   "checks": 56
   },
   {
    "path": "admin/build/test_vault.mjs",
@@ -1154,6 +1342,12 @@
    "checks": 32
   },
   {
+   "path": "admin/build/test_inbox.mjs",
+   "what": "the inbox: the link, the envelope, the refusals in Node; a browser with a passkey and one without, the QR code decoded, the drain and a new link, in Chromium against the mock with the append routes",
+   "lines": 236,
+   "checks": 46
+  },
+  {
    "path": "admin/build/test_notes.mjs",
    "what": "the feedback loop in Chromium: notes on an article and at a wire story, carried by the vault, sent to the lane, read by the sgit CLI and lane.py with the read key alone, brought into a second device",
    "lines": 330,
@@ -1162,7 +1356,7 @@
   {
    "path": "admin/build/vault-mock.mjs",
    "what": "the mock of the vault API the two vault tests run against",
-   "lines": 151,
+   "lines": 207,
    "checks": 0
   }
  ],
@@ -1177,12 +1371,13 @@
   "admin/build/test_pane.mjs",
   "admin/build/test_search.mjs",
   "admin/build/test_ask.mjs",
+  "admin/build/test_inbox.mjs",
   "admin/build/test_notes.mjs"
  ],
  "loader": {
   "lines": 17,
-  "sha256": "5567803221cf6e4270c6a7114817420f3f01a63bce50f5f8152236b384523c2f",
-  "pages_that_eval": 408
+  "sha256": "f114004ba2928d82754ef83afff66b889bed92db083064323e78440d488e1e91",
+  "pages_that_eval": 429
  },
  "frozen": [
   {
@@ -1290,7 +1485,7 @@
   "account": 1,
   "landing": 6,
   "newsroom": 1,
-  "page": 478,
+  "page": 541,
   "personas": 1,
   "share": 1,
   "topped-up": 1,
@@ -1730,8 +1925,8 @@
    "where": "_send(), subscribe.js, make.js"
   },
   {
-   "input": "The wire's vault",
-   "what": "data/bundle.json, data/deliveries.json, docs/*.md, decrypted in the browser",
+   "input": "The wires' vaults",
+   "what": "data/bundle.json (with wire, map or stack when the vault has them), data/deliveries.json, data/releases.json, docs/*.md, decrypted in the browser; one vault per wire",
    "who": "whoever holds the vault's write key (the wire's agents); drawn as text, links only from http(s) values, markdown rendered by an escaping renderer; the vault's own HTML is not used",
    "where": "wire/wire.js"
   },
@@ -1906,9 +2101,9 @@
    "owner": ".well-known/sgit-subscribe.json"
   },
   {
-   "contract": "The wire's vault",
-   "shape": "vault u9i9jp0l on dev.send.sgraph.ai, read key published; data/bundle.json {beats, stories, sources, personas, brief}, data/deliveries.json, docs/*.md; story fields and status shown as written; everything in the vault is public, for ever",
-   "owner": "admin/build/wire-vault.json; wire/how.html; the wire's agents own the content"
+   "contract": "The wires' vaults",
+   "shape": "u9i9jp0l (the Industry Wire), eitf274v (OWASP), v202bla5 (AWS) on dev.send.sgraph.ai, read keys published; data/bundle.json {beats, stories, sources, personas, brief; wire, map, stack when present}, data/deliveries.json, data/releases.json (wire-releases/v1, one entry per publish), docs/*.md; story fields, changes and status shown as written; everything in a vault is public, for ever",
+   "owner": "admin/build/wire-vault*.json; wire/how.html; each wire's agents own its content"
   },
   {
    "contract": "Events",
@@ -1922,8 +2117,8 @@
   },
   {
    "contract": "The import's rules",
-   "shape": "the meter path rewrite (v1.3.1 → v1.4.1), the top-up link, eight text rules, the article number line; each stops the import when its anchor moves",
-   "owner": "sync_newsroom.py items 9–12"
+   "shape": "the meter path rewrite (v1.3.1 → v1.4.1), the top-up link, ten text rules, the article number line, the moved banner cut, the foot of every issue; each stops the import when its anchor moves",
+   "owner": "sync_newsroom.py items 9–15"
   }
  ],
  "findings": [
