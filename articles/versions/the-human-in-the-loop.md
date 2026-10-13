@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-13 | published | 2,409 | first published | this release | [current](../the-human-in-the-loop.md) |
+| **v1.0.0** | 2026-10-13 | published | 2,409 | first published | [`a0a7cc4d6`](https://github.com/SGit-AI/SGit-AI__Website/commit/a0a7cc4d616eced584612125fdb1e9c257ddc7fb) | [current](../the-human-in-the-loop.md) |
 
 [← Back to the article](../the-human-in-the-loop.md) · [All articles](../index.md)
 

@@ -119,6 +119,10 @@ Agents & policy[This article as a graph →](graphs.md#the-human-in-the-loop)
 - [How the voice works: why these articles sound like me, with a section in which Claude explains it from its side](how-the-voice-works.md) Why these articles sound like their author: a corpus, the voice memos, seven wording rules and a reader who corrects, with Claude explaining it from its side.
 - [The agent team as it runs: one person, twelve agents, encrypted vaults, and a mailbox nobody sends from](the-agent-team-as-it-runs.md) Twelve agents on dedicated accounts, encrypted vaults as the only memory, messages as files, a folder per person, and a mailbox nobody sends from.
 
+### Continued by
+
+- [How cheap is it to undo? A spectrum of trust and side effects, and why the newsroom ships on its own while my email still waits for me](how-cheap-is-it-to-undo.md) How much to let an agent ship on its own depends on how cheap it is to undo and how mature the controls are, and both of those move.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 103 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=103)

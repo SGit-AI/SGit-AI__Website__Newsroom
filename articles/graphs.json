@@ -55,6 +55,198 @@
   ],
   "articles": [
     {
+      "slug": "how-cheap-is-it-to-undo",
+      "title": "How cheap is it to undo? A spectrum of trust and side effects, and why the newsroom ships on its own while my email still waits for me",
+      "date": "2026-10-13",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/how-cheap-is-it-to-undo.html",
+      "markdown": "https://newsroom.sgit.ai/articles/how-cheap-is-it-to-undo.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/how-cheap-is-it-to-undo.webp",
+      "teaser": "How much to let an agent ship on its own depends on how cheap it is to undo and how mature the controls are, and both of those move.",
+      "topics": [
+        "agents-and-policy",
+        "site-and-engineering"
+      ],
+      "tags": [
+        "reversibility",
+        "two-way-doors",
+        "trust",
+        "side-effects",
+        "human-in-the-loop",
+        "agents",
+        "release",
+        "maturity",
+        "wardley-maps",
+        "newsroom",
+        "article"
+      ],
+      "links_out": [
+        "the-human-in-the-loop",
+        "explorer-to-villager-newsroom",
+        "a-second-reader-the-agent-cannot-skip"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "cu-spectrum.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/cu-spectrum.webp",
+          "caption": "The spectrum. Across: how much it costs to undo, from a two-way door to a one-way door. Up: how mature the controls and the record are, from explorer to town planner. Where an output sits decides how much a person has to hold it. The newsroom's articles sit where they can ship on their own; email in my name sits where I decide every one. The arrows are where each is moving.",
+          "kind": "decision"
+        },
+        {
+          "file": "cu-compare.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/cu-compare.webp",
+          "caption": "The two workflows side by side, by what decides where they sit: how cheap it is to undo, how large the side effects are today, how mature the controls are, and what the record says. The same agents and the same person; opposite places on the spectrum.",
+          "kind": "comparison"
+        }
+      ],
+      "graph": {
+        "slug": "how-cheap-is-it-to-undo",
+        "teaser": "How much to let an agent ship on its own depends on how cheap it is to undo and how mature the controls are, and both of those move.",
+        "topics": [
+          "agents-and-policy",
+          "site-and-engineering"
+        ],
+        "core_idea": "Whether an agent's output needs a person is a position on a spectrum with two axes, the cost of undoing it and the maturity of the controls and the record, which is why the newsroom ships on its own as a two-way door with mature controls while email in my name, a one-way door still in its explorer phase, waits for me; and both positions move as readership grows and controls mature.",
+        "nodes": [
+          {
+            "id": "noticed",
+            "label": "Auto-release, arrived at",
+            "kind": "example",
+            "summary": "Fourteen releases in a day by agents with no one-by-one approval, while every email waits for me."
+          },
+          {
+            "id": "undo",
+            "label": "How cheap is it to undo?",
+            "kind": "concept",
+            "summary": "The test for how much to let go: if it can be switched off with little side effect, say yes."
+          },
+          {
+            "id": "doors",
+            "label": "One-way and two-way doors",
+            "kind": "concept",
+            "summary": "Bezos's Type 1 and Type 2 decisions: irreversible ones slowly, reversible ones fast."
+          },
+          {
+            "id": "rollback",
+            "label": "Rollback makes a two-way door",
+            "kind": "method",
+            "summary": "Progressive rollouts, fast detection and safe rollback keep a release reversible."
+          },
+          {
+            "id": "email",
+            "label": "Email: one-way, explorer",
+            "kind": "example",
+            "summary": "Cannot be claimed back, damage is immediate, controls are nascent and the record is short."
+          },
+          {
+            "id": "newsroom",
+            "label": "Newsroom: two-way, villager",
+            "kind": "example",
+            "summary": "A fix is a new version, few readers, unplaced new pieces, mature checks, a record of small changes."
+          },
+          {
+            "id": "axes",
+            "label": "Two axes",
+            "kind": "method",
+            "summary": "Cost to undo across, maturity of controls and record up; the position decides how much a person holds."
+          },
+          {
+            "id": "moves",
+            "label": "Both axes move",
+            "kind": "claim",
+            "summary": "Readership raises the newsroom's side effects; maturing controls let email move the other way."
+          },
+          {
+            "id": "stage",
+            "label": "A stage before promotion",
+            "kind": "artefact",
+            "summary": "New articles land in the latest list without being placed on the front page."
+          },
+          {
+            "id": "byoutput",
+            "label": "Decide by output, and revisit",
+            "kind": "claim",
+            "summary": "Not by department or by trust in the model, but by each output's position, revisited as it changes."
+          }
+        ],
+        "edges": [
+          {
+            "from": "noticed",
+            "to": "undo",
+            "rel": "leads-to"
+          },
+          {
+            "from": "doors",
+            "to": "undo",
+            "rel": "extends"
+          },
+          {
+            "from": "rollback",
+            "to": "doors",
+            "rel": "example-of"
+          },
+          {
+            "from": "email",
+            "to": "axes",
+            "rel": "example-of"
+          },
+          {
+            "from": "newsroom",
+            "to": "axes",
+            "rel": "example-of"
+          },
+          {
+            "from": "email",
+            "to": "newsroom",
+            "rel": "contrasts"
+          },
+          {
+            "from": "undo",
+            "to": "axes",
+            "rel": "produces"
+          },
+          {
+            "from": "axes",
+            "to": "moves",
+            "rel": "leads-to"
+          },
+          {
+            "from": "stage",
+            "to": "newsroom",
+            "rel": "extends"
+          },
+          {
+            "from": "moves",
+            "to": "byoutput",
+            "rel": "leads-to"
+          }
+        ],
+        "links": {
+          "articles": [
+            "the-human-in-the-loop",
+            "explorer-to-villager-newsroom",
+            "a-second-reader-the-agent-cannot-skip"
+          ],
+          "pages": [],
+          "sites": [
+            "https://s2.q4cdn.com/299287126/files/doc_financials/annual/2015-Letter-to-Shareholders.PDF",
+            "https://sre.google/sre-book/introduction/"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "I have not yet read one and thought, I do not want that live.",
+            "why": "The record that makes auto-release comfortable."
+          },
+          {
+            "text": "A change you can roll back is a two-way door; the work of a release pipeline is to keep it one.",
+            "why": "Why the newsroom's pipeline is what keeps it on the cheap side of the spectrum."
+          }
+        ]
+      }
+    },
+    {
       "slug": "the-human-in-the-loop",
       "title": "The human in the loop, safety net or bottleneck: both, until you decide which outputs need a person and give that person the why",
       "date": "2026-10-13",
@@ -92,7 +284,9 @@
         "how-the-voice-works",
         "the-agent-team-as-it-runs"
       ],
-      "links_in": [],
+      "links_in": [
+        "how-cheap-is-it-to-undo"
+      ],
       "figures": [
         {
           "file": "hl-where.webp",
@@ -6144,6 +6338,7 @@
         "how-to-run-synthetic-users"
       ],
       "links_in": [
+        "how-cheap-is-it-to-undo",
         "move-the-cloud-not-the-code",
         "places-of-highest-leverage",
         "agentic-cost-is-an-engineering-problem"
@@ -11290,6 +11485,7 @@
         "every-mistake-added-a-rule"
       ],
       "links_in": [
+        "how-cheap-is-it-to-undo",
         "the-human-in-the-loop",
         "the-policy-draws-the-liability-line",
         "stop-the-bleeding-then-ask-for-it-back",
