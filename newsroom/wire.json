@@ -73,6 +73,40 @@
   ],
   "articles": [
     {
+      "slug": "chainguard-mapped",
+      "title": "Chainguard, mapped: what it builds, what it publishes, how far up the stack its context goes, and where an open behaviour policy and an encrypted vault could plug in",
+      "date": "2026-10-14",
+      "updated": "",
+      "author": "Dinis Cruz",
+      "url": "https://newsroom.sgit.ai/articles/chainguard-mapped.html",
+      "markdown": "https://newsroom.sgit.ai/articles/chainguard-mapped.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/chainguard-mapped.webp",
+      "graph": "https://newsroom.sgit.ai/articles/graphs/chainguard-mapped.json",
+      "teaser": "Chainguard mapped from OS to agents, its public feeds counted, and the context layer above the package where an open policy and a vault fit.",
+      "summary": "Chainguard is one of the companies doing the most interesting work in software supply chain security, and much of it is open: the Wolfi distribution, public advisory feeds, Sigstore in its lineage, and a growing set of products for agents. So I mapped it: the company, what it builds from the operating system up to agents, what data it publishes that anyone can read, and how deep that data goes. I read the feeds and counted them. 12,480 advisories covering 12,125 distinct CVEs; in a sample, about seven in ten findings marked fixed and one in five marked as not applying. And in the archived Wolfi advisories, where the reasons were public, 2,850 determinations that a vulnerability did not apply, of which 177 gave a reason about context: the vulnerable code is not in the execution path, an attacker cannot control it, or it is mitigated. That is where the graph stops, and it is the question that matters to me. As with everything in security, it is about context. An image with many vulnerabilities is fine if the application on top never reaches them; one reachable flaw is not. Deciding which images are non-negotiable and which can ship today needs a graph from the user story, through the code and its dependencies, to the container. That context layer is where an open behaviour policy and an encrypted vault fit, next to the agent products Chainguard is now shipping, which already talk about policies. I make the case for each.",
+      "topics": [
+        "startups-and-strategy",
+        "agents-and-policy"
+      ],
+      "tags": [
+        "chainguard",
+        "supply-chain",
+        "containers",
+        "vulnerabilities",
+        "vex",
+        "osv",
+        "context",
+        "agent-behaviour-policy",
+        "sgit",
+        "open-source",
+        "agents",
+        "article"
+      ],
+      "placement": [],
+      "linkedin": null,
+      "notes": []
+    },
+    {
       "slug": "the-wire-as-a-graph",
       "title": "The wire as a graph: start from what the reader sees, give every story and every name a long-lived ID, link every phrase of a short narrative, and a brief for the desks",
       "date": "2026-10-14",
