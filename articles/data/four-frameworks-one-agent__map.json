@@ -1,0 +1,347 @@
+{
+ "what": "iason's AI Risk Management Frameworks (November 2025), the four frameworks it compares and the five principles it draws, mapped to what runs on newsroom.sgit.ai and at RiskMandate: for each element, the question, what answers it here, where to check, and whether it runs, is designed or is argued.",
+ "article": "four-frameworks-one-agent",
+ "date": "2026-10-13",
+ "status_values": {
+  "runs": "a thing that runs on this newsroom or the agent team, described in the article linked",
+  "designed": "a published design, with a demo or a business plan, not run for a customer",
+  "argued": "an argument this site has made, with nothing built for it"
+ },
+ "counts": {
+  "runs": 23,
+  "argued": 4,
+  "designed": 5
+ },
+ "rows": [
+  {
+   "framework": "OECD Framework for the Classification of AI Systems",
+   "element": "People and Planet",
+   "question": "Who does the system touch, and what could it cost them?",
+   "here": "The blast radius: what a row of the reach would cost if used in full today, defined over the reach because whoever takes the agent over inherits it.",
+   "check": [
+    "/articles/footprint-and-blast-radius.html"
+   ],
+   "status": "runs"
+  },
+  {
+   "framework": "OECD Framework for the Classification of AI Systems",
+   "element": "Economic Context",
+   "question": "How critical is the system, and how far does it spread?",
+   "here": "The newsroom's side effects are small because its readership is small, and the position moves as it grows; the stage before promotion becomes a canary.",
+   "check": [
+    "/articles/how-cheap-is-it-to-undo.html"
+   ],
+   "status": "runs"
+  },
+  {
+   "framework": "OECD Framework for the Classification of AI Systems",
+   "element": "Data and Input",
+   "question": "What can the system see, and is it sensitive?",
+   "here": "Whether the agent has private data, untrusted content and a way to send at once, the lethal trifecta, is what decides that it takes a policy.",
+   "check": [
+    "/articles/the-policy-draws-the-liability-line.html"
+   ],
+   "status": "runs"
+  },
+  {
+   "framework": "OECD Framework for the Classification of AI Systems",
+   "element": "AI Model",
+   "question": "What is the model, and how does it learn?",
+   "here": "The same model anyone else uses; the risk is a property of one agent in one deployment, not of the model.",
+   "check": [
+    "/articles/authority-outside-the-model.html"
+   ],
+   "status": "argued"
+  },
+  {
+   "framework": "OECD Framework for the Classification of AI Systems",
+   "element": "Task and Output",
+   "question": "Is human intervention active, passive or absent at the point of decision?",
+   "here": "One position per output, not per system: a person where an output cannot be undone, controls that do not get tired elsewhere.",
+   "check": [
+    "/articles/the-human-in-the-loop.html"
+   ],
+   "status": "runs"
+  },
+  {
+   "framework": "NIST AI Risk Management Framework",
+   "element": "Govern 1",
+   "question": "Policies and processes in place and implemented",
+   "here": "A behaviour policy written before the agent runs, in four words: reach, mandate, gap, barriers; restored after every summary; the newsroom's own policies public.",
+   "check": [
+    "/articles/footprint-and-blast-radius.html",
+    "/articles/re-anchoring-agent-behaviour-policies.html",
+    "/newsroom/policies.html"
+   ],
+   "status": "runs"
+  },
+  {
+   "framework": "NIST AI Risk Management Framework",
+   "element": "Govern 2",
+   "question": "Accountability structures, empowered and trained",
+   "here": "One person's name on every message that leaves; responsibility stays with whoever granted the reach.",
+   "check": [
+    "/articles/who-owns-the-words.html"
+   ],
+   "status": "runs"
+  },
+  {
+   "framework": "NIST AI Risk Management Framework",
+   "element": "Govern 4",
+   "question": "A culture that considers and communicates risk",
+   "here": "Every incident of our own written up, including the two emails that went out wrong and what was built the next day.",
+   "check": [
+    "/articles/a-second-reader-the-agent-cannot-skip.html"
+   ],
+   "status": "runs"
+  },
+  {
+   "framework": "NIST AI Risk Management Framework",
+   "element": "Govern 6",
+   "question": "Third-party software and data",
+   "here": "The vendor publishes its built-in policy, accepts the deployer's, and says what it enforces.",
+   "check": [
+    "/articles/a-policy-beside-the-prompt.html"
+   ],
+   "status": "designed"
+  },
+  {
+   "framework": "NIST AI Risk Management Framework",
+   "element": "Map 1 and 2",
+   "question": "Context established; the system categorised",
+   "here": "The reach, measured from connectors and accounts; the mandate, written.",
+   "check": [
+    "/articles/footprint-and-blast-radius.html"
+   ],
+   "status": "runs"
+  },
+  {
+   "framework": "NIST AI Risk Management Framework",
+   "element": "Map 4",
+   "question": "Third-party components mapped",
+   "here": "A connector twin: a journal of every request and response, replayed with a revert plan for each change, proposed as the minimum before an agent gets the real connector.",
+   "check": [
+    "/articles/connector-twin-before-you-deploy-an-agent.html"
+   ],
+   "status": "designed"
+  },
+  {
+   "framework": "NIST AI Risk Management Framework",
+   "element": "Map 5",
+   "question": "Impacts characterised",
+   "here": "Blast radius: what a row would cost if used in full today, and whether there is a way back.",
+   "check": [
+    "/articles/footprint-and-blast-radius.html"
+   ],
+   "status": "runs"
+  },
+  {
+   "framework": "NIST AI Risk Management Framework",
+   "element": "Measure 1",
+   "question": "Methods and metrics applied",
+   "here": "The share of a policy that is hope: one agent built three ways, 97%, 73% and 23% of its rules kept only by the model; reach cut from 38,000 customer records to one customer.",
+   "check": [
+    "/articles/hope-or-enforcement.html"
+   ],
+   "status": "runs"
+  },
+  {
+   "framework": "NIST AI Risk Management Framework",
+   "element": "Measure 2",
+   "question": "Evaluated for trustworthy characteristics",
+   "here": "A second reader on every draft that sees only the rules, the sources and the draft, and fails closed; synthetic users that drive a real browser.",
+   "check": [
+    "/articles/a-second-reader-the-agent-cannot-skip.html",
+    "/articles/how-to-run-synthetic-users.html"
+   ],
+   "status": "runs"
+  },
+  {
+   "framework": "NIST AI Risk Management Framework",
+   "element": "Measure 3",
+   "question": "Risks tracked over time",
+   "here": "The footprint read afterwards, accumulating over weeks; every article versioned with a diff page.",
+   "check": [
+    "/articles/footprint-and-blast-radius.html"
+   ],
+   "status": "runs"
+  },
+  {
+   "framework": "NIST AI Risk Management Framework",
+   "element": "Measure 4",
+   "question": "Feedback on the measurement itself",
+   "here": "A canary report at the end of every few answers, so a rule summarised away is noticed.",
+   "check": [
+    "/articles/re-anchoring-agent-behaviour-policies.html"
+   ],
+   "status": "runs"
+  },
+  {
+   "framework": "NIST AI Risk Management Framework",
+   "element": "Manage 1",
+   "question": "Risks prioritised and responded to",
+   "here": "Three doors and no deny button: accept for a stated interval, fund the work, or fix it; silence escalates.",
+   "check": [
+    "/articles/every-risk-is-already-accepted.html"
+   ],
+   "status": "designed"
+  },
+  {
+   "framework": "NIST AI Risk Management Framework",
+   "element": "Manage 2",
+   "question": "Strategies documented",
+   "here": "Every row of the policy marked by what enforces it, so the policy says which rows are hope.",
+   "check": [
+    "/articles/hope-or-enforcement.html"
+   ],
+   "status": "runs"
+  },
+  {
+   "framework": "NIST AI Risk Management Framework",
+   "element": "Manage 3",
+   "question": "Third-party risks managed",
+   "here": "Where the platform draws its line: eight scenarios run three ways, three becoming operating-system boundaries under MXC and ACS.",
+   "check": [
+    "/articles/where-the-platform-draws-the-line.html"
+   ],
+   "status": "argued"
+  },
+  {
+   "framework": "NIST AI Risk Management Framework",
+   "element": "Manage 4",
+   "question": "Response and recovery",
+   "here": "The person placed where an output cannot be undone; a correction as a new version; one agent allowed one email, to one address, to put the team on hold.",
+   "check": [
+    "/articles/the-human-in-the-loop.html"
+   ],
+   "status": "runs"
+  },
+  {
+   "framework": "Japan's AI Guidelines for Business",
+   "element": "Part 3: AI developers",
+   "question": "What the maker of the model owes",
+   "here": "The model vendor publishes its own built-in policy and accepts the deployer's, for every row saying whether it enforces it or asks the model to keep it.",
+   "check": [
+    "/articles/a-policy-beside-the-prompt.html"
+   ],
+   "status": "argued"
+  },
+  {
+   "framework": "Japan's AI Guidelines for Business",
+   "element": "Part 4: AI providers",
+   "question": "Operational parameters: purpose, constraints, risks",
+   "here": "The platform enforces the rows it can see: Microsoft's execution containers and agent control specification put the policy outside the workload.",
+   "check": [
+    "/articles/where-the-platform-draws-the-line.html"
+   ],
+   "status": "argued"
+  },
+  {
+   "framework": "Japan's AI Guidelines for Business",
+   "element": "Part 5: AI business users",
+   "question": "Monitor behaviour and outputs, report deviations",
+   "here": "The deployer reads the footprint against the mandate; a near miss becomes a row or a boundary.",
+   "check": [
+    "/articles/footprint-and-blast-radius.html"
+   ],
+   "status": "runs"
+  },
+  {
+   "framework": "EU AI Act, Regulation (EU) 2024/1689",
+   "element": "Risk tiers and proportionality",
+   "question": "Which tier, and what obligations follow",
+   "here": "Proportionality per row of reach, with a blast radius, rather than per system, because a tier for the model misses the send button.",
+   "check": [
+    "/articles/footprint-and-blast-radius.html"
+   ],
+   "status": "runs"
+  },
+  {
+   "framework": "EU AI Act, Regulation (EU) 2024/1689",
+   "element": "Transparency for limited risk",
+   "question": "Say that it is an AI system",
+   "here": "The disclosure this site carries on machine-written text, because people should read machine-written words differently.",
+   "check": [
+    "/articles/who-owns-the-words.html"
+   ],
+   "status": "runs"
+  },
+  {
+   "framework": "EU AI Act, Regulation (EU) 2024/1689",
+   "element": "Article 9: residual risk judged to be acceptable",
+   "question": "Acceptable is never defined",
+   "here": "Accepted is not acceptable: a holder, an interval and the facts that would end the risk; a register with a business plan and a demo, not yet run by a customer.",
+   "check": [
+    "/articles/every-risk-is-already-accepted.html",
+    "https://sgit.ai/demos/vaults/risk-acceptance/index.html"
+   ],
+   "status": "designed"
+  },
+  {
+   "framework": "EU AI Act, Regulation (EU) 2024/1689",
+   "element": "The application dates",
+   "question": "When the obligations apply",
+   "here": "The paper's dates as of November 2025, and the amendment, the product liability date and the new application dates recorded since, kept as dated edges in a graph.",
+   "check": [
+    "/articles/the-ai-governance-stack-as-a-graph.html",
+    "/articles/the-policy-draws-the-liability-line.html"
+   ],
+   "status": "runs"
+  },
+  {
+   "framework": "The paper's five shared principles",
+   "element": "Centrality of ethics and human rights",
+   "question": "Whose decision, whose words",
+   "here": "Nothing leaves the agent team without the person whose name is on it pressing send; machine-written text says so.",
+   "check": [
+    "/articles/who-owns-the-words.html",
+    "/articles/the-mandate-stack.html"
+   ],
+   "status": "runs"
+  },
+  {
+   "framework": "The paper's five shared principles",
+   "element": "The AI lifecycle as the foundation of governance",
+   "question": "From design to decommissioning",
+   "here": "Every push a release, every article versioned, every incident written up, the footprint read for weeks; no retirement step yet.",
+   "check": [
+    "/articles/footprint-and-blast-radius.html",
+    "/articles/the-vault-is-live.html"
+   ],
+   "status": "runs"
+  },
+  {
+   "framework": "The paper's five shared principles",
+   "element": "Human oversight as a safeguard",
+   "question": "Where a person belongs",
+   "here": "Placed by reversibility, enforced by controls where a person would be a rubber stamp, measured by a record of unchanged drafts.",
+   "check": [
+    "/articles/the-human-in-the-loop.html",
+    "/articles/a-second-reader-the-agent-cannot-skip.html"
+   ],
+   "status": "runs"
+  },
+  {
+   "framework": "The paper's five shared principles",
+   "element": "Risk tiering and proportionality",
+   "question": "Controls proportionate to impact",
+   "here": "Per row of reach in the policy, which runs; as a register with holders and intervals, a published design.",
+   "check": [
+    "/articles/footprint-and-blast-radius.html",
+    "/articles/every-risk-is-already-accepted.html"
+   ],
+   "status": "designed"
+  },
+  {
+   "framework": "The paper's five shared principles",
+   "element": "Organisational approaches",
+   "question": "Governance as a corporate mindset",
+   "here": "One person and about fifteen agents, with the roles, the policies, the board and the log public.",
+   "check": [
+    "/articles/the-mandate-stack.html",
+    "/newsroom/policies.html"
+   ],
+   "status": "runs"
+  }
+ ]
+}

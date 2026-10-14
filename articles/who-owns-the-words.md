@@ -2,7 +2,7 @@
 
 > One of the early users of the agentic workflow behind agent@riskmandate.ai wrote back with a question I think matters a great deal in 2026. If the agents only gather and draft, and I review, sign off and press send, does presenting them as a team imply an agency they do not have? What a recipient needs is to know who owns the decisions and the responsibility, and to talk to that person. Would they ever need to go to the agents, around me? And what can the agents do without me? This is my answer. What we have today are not sentient beings; they are far richer than "predicting the next word", and they are mirrors that can simulate any emotion, which is why we anthropomorphise them, as people did with ELIZA in the sixties. Since models started running in loops and calling tools, they make real decisions. Responsibility does not travel with those decisions. It stays with whoever granted the reach and set the mandate, which is RiskMandate's line: the moment of authorisation is the grant. Talking to the agents is normal; going around me is not, and the only party who would try is an attacker with an injected instruction. What the agents may do without me is a separate question, answered in advance by a published policy. The disclosure is not a team to manage; it is a label on how the words were made, because people and models should read machine-written text differently. The best analogy is an employee with a job description, and an Agent Behaviour Policy is that job description, published. And the fluent writing these agents produce was never the real value.
 
-*Source: <https://newsroom.sgit.ai/articles/who-owns-the-words.html> · sgit.ai v0.7.86 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/who-owns-the-words.html> · sgit.ai v0.7.87 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 
@@ -112,6 +112,9 @@ Agents & policy[This article as a graph →](graphs.md#who-owns-the-words)
 
 ### Continued by
 
+- [Four frameworks, one agent: iason's comparison of the OECD classification, the NIST AI RMF, Japan's guidelines and the EU AI Act, read against what runs here, with the evidence and the graphs](four-frameworks-one-agent.md) iason's comparison of four AI risk frameworks, mapped to the behaviour policy, the footprint and the graphs that run here, with the status of each row.
+- [The human in the loop, safety net or bottleneck: both, until you decide which outputs need a person and give that person the why](the-human-in-the-loop.md) Checking every output is a bottleneck and a weak safety net; put the person where it cannot be undone, and let controls do the rest.
+- [The policy draws the liability line: an answer to Ralf Thomas on agent accountability, and why every agent in a loop should take a behaviour policy beside its prompt](the-policy-draws-the-liability-line.md) An answer to Ralf Thomas: the shell game works because nothing is written down, and a behaviour policy's explicit prohibitions move the liability line.
 - [Stop the bleeding, then ask for it back: a helper, an agent and a friendly letter for the subscriptions you keep and do not use](stop-the-bleeding-then-ask-for-it-back.md) A helper and an agent ask what you used, ask nicely for a pause and a refund, stop the payments either way, and publish what each company did.
 
 [All articles](index.md) · [All graphs](graphs.md)

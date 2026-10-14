@@ -1,0 +1,17 @@
+{
+  "what": "The vault the Portugal Wire pages (/wire/portugal/) read in the browser, under the same contract as admin/build/wire-vault.json: the read key is public on purpose, it reads every file and every commit of this vault and cannot write, so everything in it is public, for ever. The write key is held by the agents that run the wire and is not on this site.",
+  "slug": "portugal",
+  "name": "The Portugal Wire",
+  "about": "What happened in Portugal in the five areas this newsroom writes about: building with AI and models, AI business, open source, cybersecurity, and risk, governance and regulation. Portuguese sources and Portuguese stories, each with its headline and summary in English and Portuguese, the quote in the language of its source, and a map of the organisations named, which this page draws from the same vault. A source for the Portuguese publication this site designed.",
+  "endpoint": "https://dev.send.sgraph.ai",
+  "vault_id": "p6twygul",
+  "read_key": "sgit_public_read_faa3377d2556713fc959e68bc7bd8a2303cd4bd0862fdf18a4bf51c0c0d3ee08:p6twygul",
+  "ref_ttl_s": 120,
+  "reads": ["data/bundle.json", "data/deliveries.json", "data/releases.json", "docs/*.md"],
+  "clone": "sgit clone sgit_public_read_faa3377d2556713fc959e68bc7bd8a2303cd4bd0862fdf18a4bf51c0c0d3ee08:p6twygul",
+  "status": "beta",
+  "named_readers_what": "People who agreed, on the date recorded, to be a named reader of this wire while it is a beta: the vault carries a persona in their name and a personal brief for them, both public. The edition page offers a lens for each persona listed here and for no other named person.",
+  "named_readers": [
+    {"persona": "dinis", "name": "Dinis Cruz", "agreed": "2026-10-13", "how": "in chat, 13 October 2026, when the Portugal wire was published by the desk: the persona dinis is the named reader by the same agreement as on the other wires"}
+  ]
+}

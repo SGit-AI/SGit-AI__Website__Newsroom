@@ -47,13 +47,15 @@ What changes on the way in, and nothing else:
      and how to switch it off.
   10. Wording this site changes on named pages (admin/build/newsroom-text.json), each a recorded
      rule that stops the import if sgit.ai's text under it moves. The record lists them.
-  11. Every page loads this site's own build of the reading meter, v1.4.0, from the API host
-     (api.py: https://api.newsroom.sgit.ai/<release>/assets/components/sg-meter/v1/v1.4/v1.4.0/),
+  11. Every page loads this site's own build of the reading meter, v1.4.1, from the API host
+     (api.py: https://api.newsroom.sgit.ai/<release>/assets/components/sg-meter/v1/v1.4/v1.4.1/),
      instead of sgit.ai's v1.3.1 that the page names by a relative path.
      v1.4.0 is v1.3.1 without "Pause the meter" and "Start again", and with the view that lets a
      link open the newsroom as a named persona. Only the dynamic import() of the component is
      re-pointed; code samples on the docs page are text and stay as they are. If sgit.ai moves to
-     another version, the import stops: v1.4.0 has to be re-based on it deliberately.
+     another version, the import stops: v1.4.0 has to be re-based on it deliberately. v1.4.1 is v1.4.0 with
+     its last five literal colours read as the page's theme tokens (card 038); a component path is immutable,
+     so the change is a new path.
   12. Each article carries its number ("No. 65"), small, under "All articles / All graphs", with a link to make a
      reading list starting from it. The numbers are assigned once and never change (admin/build/ids.py,
      articles/ids.json); the import calls it before it writes a page. The line is added to the article's page
@@ -61,11 +63,23 @@ What changes on the way in, and nothing else:
   13. Articles written here (admin/content/articles/, published by admin/build/publish.py) name
      this site's release in their byline, "newsroom v0.12.9", linked to this site's release history,
      because this site published them; sgit.ai's generator only rendered them.
-  14. The reader code is not imported at all since v0.13.0: the components, assets/subscribe.js and
-     every other file of the move live in SGit-AI__Website__Newsroom__API and are served from
-     api.newsroom.sgit.ai at a pinned release (admin/build/api.json). A link or a loader on an imported
-     page that names one of them (the subscribe page's fetch of subscribe.js, the docs page's links to
-     the component files) is re-pointed at that host; the normaliser below reads either form the same.
+  14. sgit.ai's "moved" banner is cut (from sgit.ai v0.7.87, phase one of retiring its copy). On a moved
+     page, everything from <!--moved:start--> to <!--moved:end--> and the newline after it; in a markdown
+     twin, the line that opens "> **The SGit Newsroom has moved to newsroom.sgit.ai.**" and the blank line
+     after it. More than one block on a page stops the import. Remove this when the import stops reading
+     sgit.ai.
+  15. The end of every newsletter issue, which is selected and copied into LinkedIn with the body, names this
+     site: "Every article it links to is on newsroom.sgit.ai ... subscribe at newsroom.sgit.ai/subscribe", both
+     links absolute, because the paragraph is pasted. The "Posting this issue on LinkedIn?" box under it keeps
+     the cover and one line, and loses its list of every image as an upload order: copy and paste of images
+     into LinkedIn works now, so the cover is the only file to upload. The paragraph and the box must each be
+     on an issue page exactly once, or the import stops. When the generator moves here, this goes into
+     issue_body() and linkedin_kit() and the rule is retired.
+
+  16. The reader code is not imported at all since v0.13.0: the components (but the frozen meter versions),
+     assets/subscribe.js and every other file of the move live in SGit-AI__Website__Newsroom__API and are
+     served from api.newsroom.sgit.ai at a pinned release (admin/build/api.json). A link or a loader that names
+     one of them is re-pointed at that host; the normaliser reads either form the same (api.py).
 
 Scripts, styles and /.well-known/sgit-subscribe.json are copied byte for byte.
 The brief requires it twice: a published component path never changes, and the subscribe
@@ -111,7 +125,7 @@ LIVE_LINK  = re.compile(r"^https://buy\.stripe\.com/[A-Za-z0-9]+$")
 # written here name METER_OURS. A component path is published and immutable, so a change is a new path.
 METER_PATH     = "assets/components/sg-meter/v1/"
 METER_BASED_ON = "v1.3/v1.3.1"
-METER_OURS     = "v1.4/v1.4.0"
+METER_OURS     = "v1.4/v1.4.1"
 METER_IMPORT   = re.compile(r"(import\(\s*['\"])(?:\./|(?:\.\./)+)?" + re.escape(METER_PATH) + r"(v\d+\.\d+/v\d+\.\d+\.\d+)(/sg-meter\.js)")
 # item 14: the subscribe page fetches subscribe.js as text and runs it; it comes from the API host too
 SUBSCRIBE_FETCH = re.compile(r"(fetch\(\s*['\"])(?:\./|(?:\.\./)+)?assets/subscribe\.js")
@@ -186,9 +200,9 @@ RECORD   = ROOT / "admin/build/newsroom-sync.json"
 
 # The moved tree, from the brief's "What moves" table.
 MOVED_DIRS = ["articles", "newsroom", "account", "subscribe", "meter", "og",
-              # assets/components left this list in v0.13.0: the reader code is served from the API host (item 14)
-              # ...except the frozen meter versions, published artefacts this site keeps serving byte for byte
-              # until phase 4 of the move; validate.js check 13 holds them to the API release's bytes
+              # assets/components left this list in v0.13.0: the reader code is served from the API host (item 14),
+              # except the frozen meter versions, published artefacts this site keeps serving byte for byte until
+              # phase 4 of the move; validate.js check 13 holds them to the API release's bytes
               "assets/components/sg-meter/v1/v1.0", "assets/components/sg-meter/v1/v1.1",
               "assets/components/sg-meter/v1/v1.2", "assets/components/sg-meter/v1/v1.3",
               # Not in the brief's list: a vault page, which stays on sgit.ai as a rule. This one is
@@ -428,7 +442,70 @@ def find_dependencies(src, pages):
     return deps, unresolved
 
 
+MOVED_HTML = re.compile(r"<!--moved:start-->.*?<!--moved:end-->\n?", re.S)
+MOVED_MD   = re.compile(r"^> \*\*The SGit Newsroom has moved to newsroom\.sgit\.ai\.\*\*[^\n]*\n\n?", re.M)
+
+
+def unmoved(text, dest_file, kind):
+    """Item 14: sgit.ai's banner pointing here, which has no place here."""
+    pattern = MOVED_HTML if kind == "html" else MOVED_MD if kind == "md" else None
+    if pattern is None:
+        return text
+    n = len(pattern.findall(text))
+    if n > 1:
+        sys.exit(f"sync: {dest_file} carries sgit.ai's moved banner {n} times, not once; "
+                 f"stopping rather than guessing which to cut")
+    return pattern.sub("", text, count=1)
+
+
+# Item 15: the foot of a newsletter issue, and the LinkedIn box under it.
+ISSUE_PAGE = re.compile(r"articles/newsletter/\d{4}/\d\d/\d\d/\d{3}-[^/]+\.(html|md)")
+ISSUE_FOOT = {
+    "html": re.compile(r'Every article it links to is on <a href="[^"]*">sgit\.ai</a>, with its sources and its data\. '
+                       r'To get the next issue by email, <a href="[^"]*">subscribe at sgit\.ai/subscribe</a>\.'),
+    "md":   re.compile(r'Every article it links to is on \[sgit\.ai\]\([^)]*\), with its sources and its data\. '
+                       r'To get the next issue by email, \[subscribe at sgit\.ai/subscribe\]\([^)]*\)\.'),
+}
+ISSUE_KIT = {
+    "html": re.compile(r'<aside class="lkit" aria-label="For LinkedIn">.*?</aside>', re.S),
+    "md":   re.compile(r'^\*\*Posting this issue on LinkedIn\?\*\*[^\n]*\n(?:\n(?:\d+\. [^\n]*\n)+)?', re.M),
+}
+KIT_LIST = {
+    "html": re.compile(r' LinkedIn drops images from a paste, so add these where they appear, in this order, with the '
+                       r'caption under each:<ol class="lkit-imgs">.*?</ol>', re.S),
+    "md":   re.compile(r' LinkedIn drops images from a paste, so add these where they appear, in this order, with the '
+                       r'caption under each:\n(?:\n(?:\d+\. [^\n]*\n)+)?'),
+}
+KIT_LAST = "then select and copy the body from this page."
+
+
+def issue_foot(text, dest_file, kind):
+    if kind not in ("html", "md") or not ISSUE_PAGE.fullmatch(dest_file):
+        return text
+    for what, pattern in (("subscribe paragraph", ISSUE_FOOT[kind]), ("LinkedIn box", ISSUE_KIT[kind])):
+        n = len(pattern.findall(text))
+        if n != 1:
+            sys.exit(f"sync: {dest_file}: the issue's {what} is in the page {n} times, not once. sgit.ai changed "
+                     f"the foot of its issues, so this rule is stale (item 15 in the docstring)")
+    site, sub = f"https://{HOST}/articles/index.html", f"https://{HOST}/subscribe/"
+    if kind == "html":
+        foot = (f'Every article it links to is on <a href="{site}">{HOST}</a>, with its sources and its data. '
+                f'To get the next issue by email, <a href="{sub}">subscribe at {HOST}/subscribe</a>.')
+    else:
+        foot = (f'Every article it links to is on [{HOST}]({site}), with its sources and its data. '
+                f'To get the next issue by email, [subscribe at {HOST}/subscribe]({sub}).')
+    text = ISSUE_FOOT[kind].sub(lambda m: foot, text, count=1)
+
+    def kit(m):
+        box = KIT_LIST[kind].sub("\n" if kind == "md" else "", m.group(0), count=1)
+        if box.count(KIT_LAST) != 1:
+            sys.exit(f"sync: {dest_file}: the LinkedIn box no longer says {KIT_LAST!r}; item 15 is stale")
+        return box.replace(KIT_LAST, KIT_LAST + " Its images copy with it.")
+    return ISSUE_KIT[kind].sub(kit, text, count=1)
+
+
 def transform(text, src_file, dest_file, kind):
+    text = unmoved(text, dest_file, kind)
     text = ABS_SRC.sub(rewrite_abs, text)
     if kind == "html":
         # Attributes of real tags only. A code sample on a page is escaped (&lt;script src="/x"&gt;)
@@ -488,6 +565,7 @@ def transform(text, src_file, dest_file, kind):
             text = re.sub(r'(<meta property="og:url" content=")[^"]*(")', rf'\1https://{HOST}/\2', text, count=1)
         text = numbered(text, dest_file, "html")
         text = apply_text_overrides(text, dest_file, "html")
+        text = issue_foot(text, dest_file, "html")
     elif kind == "md":
         text = MD_LINK.sub(lambda m: m.group(1) + rewrite_url(m.group(2), src_file, dest_file) + m.group(3), text)
         m_own = re.fullmatch(r"articles/([^/]+)\.md", dest_file)
@@ -502,6 +580,7 @@ def transform(text, src_file, dest_file, kind):
                       lambda m: f'\u00b7 sgit.ai {m.group(1)} \u00b7 this file is generated', text)
         text = numbered(text, dest_file, "md")
         text = apply_text_overrides(text, dest_file, "md")
+        text = issue_foot(text, dest_file, "md")
     return text
 
 
@@ -599,10 +678,6 @@ def main():
                if not (ROOT / d).exists() or content_sha((ROOT / d).read_bytes(), d) != f["sha256"]]
     if args.check:
         print(f"sync --check: {len(changed)} file(s) would change, {len(stale)} would be removed")
-        for d in changed:
-            print(f"  ~ {d}")
-        for d in stale:
-            print(f"  - {d}")
         return
 
     for d in changed:

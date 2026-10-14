@@ -8,8 +8,8 @@ a passkey's PRF bytes derive a door vault, the door holds the master vault's key
 any of it is built into the reader's account, this page lets a person try each piece in their own browser: make a
 passkey for this site, get the PRF bytes and see that they are the same on another device, derive the door and
 sgit's keys from them, make a recovery code, check the browser against sgit's own Python, and, with an access key,
-create the door on the vault server and open it again. The code is passkey/lab.js and the vectors are passkey/vectors.json,
-both in SGit-AI__Website__Newsroom__API (tools/passkey_vectors.py there writes the vectors) and served from api.newsroom.sgit.ai. Nothing on the page touches the reading account.
+create the door on the vault server and open it again. The code is passkey/lab.js; the vectors come from
+admin/build/passkey_vectors.py. Nothing on the page touches the reading account.
 """
 import sys
 from pathlib import Path

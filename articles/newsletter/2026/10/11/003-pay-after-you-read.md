@@ -2,7 +2,7 @@
 
 > What would you pay for an article if you only paid after reading it, and only as much as it was worth to you? On 10 October the reading meter on this site went from a demonstration to a working answer, one release at a time. You pay for the share of a page you scroll through. You say how useful it was, and that sets the price, from free to double. Your balance can go below zero without a word of nagging. And your reading builds personas that are yours, kept in your browser, that a link can share. Eight articles: the plan, the numbers we will be judged on, who could cheat it, why readers should pay because it helps them, and why agents will pay too.
 
-*Source: <https://newsroom.sgit.ai/articles/newsletter/2026/10/11/003-pay-after-you-read.html> · sgit.ai v0.7.86 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/newsletter/2026/10/11/003-pay-after-you-read.html> · sgit.ai v0.7.87 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 
@@ -12,7 +12,7 @@ SGit Newsroom · Issue 3 · 2026-10-11
 
 # Pay after you read: a newsroom that charges for the share you read, lets you go below zero, and keeps your persona
 
-By [Dinis Cruz](https://sgit.ai/about/index.md), written with the [Journalist](../../../../../newsroom/roles/journalist.md)
+By [Dinis Cruz](https://sgit.ai/about/index.md), written with the [Journalist](../../../../../newsroom/roles/journalist.md) · [read it on LinkedIn ↗](https://www.linkedin.com/pulse/pay-after-you-read-newsroom-charges-share-lets-go-below-dinis-cruz-i9owe/)
 
 ***Abstract:** What would you pay for an article if you only paid after reading it, and only as much as it was worth to you? On 10 October the reading meter on this site went from a demonstration to a working answer, one release at a time. You pay for the share of a page you scroll through. You say how useful it was, and that sets the price, from free to double. Your balance can go below zero without a word of nagging. And your reading builds personas that are yours, kept in your browser, that a link can share. Eight articles: the plan, the numbers we will be judged on, who could cheat it, why readers should pay because it helps them, and why agents will pay too.*
 
@@ -107,14 +107,9 @@ Agents that pay to save tokens, and the long tail of open source.
 - [**The agent is the reader: why agents will pay for graphs, personas and signed claims, because it is cheaper than not paying**](../../../../the-agent-is-the-reader.md). Agents pay to read the raw web and guess its meaning. A curated graph answers for 90% fewer tokens, so paying the publisher is cheaper than not paying.
 - [**Open source is not free: who pays to keep the long tail working?**](../../../../open-source-is-not-free.md). An old iMac, the long tail of old versions that projects are not paid to support, measured from public data, and five ways to pay for it, simulated.
 
-*This is issue 3 of the SGit Newsroom newsletter, also published on LinkedIn in [Deterministic GenAI](https://www.linkedin.com/newsletters/deterministic-genai-7174563523795005440/). Every article it links to is on [sgit.ai](https://newsroom.sgit.ai/articles/index.html), with its sources and its data. To get the next issue by email, [subscribe at sgit.ai/subscribe](https://newsroom.sgit.ai/subscribe/).*
+*This is issue 3 of the SGit Newsroom newsletter, also published on LinkedIn in [Deterministic GenAI](https://www.linkedin.com/newsletters/deterministic-genai-7174563523795005440/). Every article it links to is on [newsroom.sgit.ai](https://newsroom.sgit.ai/articles/index.html), with its sources and its data. To get the next issue by email, [subscribe at newsroom.sgit.ai/subscribe](https://newsroom.sgit.ai/subscribe/).*
 
-**Posting this issue on LinkedIn?** The cover is [003-pay-after-you-read.jpg](../../../../banners/003-pay-after-you-read.jpg) (1920×1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page. LinkedIn drops images from a paste, so add these where they appear, in this order, with the caption under each:
-
-1. [003-2026-10-11-meter.jpg](../../../../banners/collages/003-2026-10-11-meter.jpg) The reading meter in six pictures, one from each of the articles that built it
-2. [gl-line.webp](../../../../images/gl-line.webp) The reader card at the foot of an article: what it has cost, how much was read, and the choice not to pay.
-3. [gl-anchors.webp](../../../../images/gl-anchors.webp) Six changes, and five hypotheses written down before the first payment, each with what we expect and what would prove us wrong.
-4. [003-2026-10-11-personas.jpg](../../../../banners/collages/003-2026-10-11-personas.jpg) A newsroom of your own: picks for each persona, the graph of what you read, and the personas you keep
+**Posting this issue on LinkedIn?** The cover is [003-pay-after-you-read.jpg](../../../../banners/003-pay-after-you-read.jpg) (1920×1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page. Its images copy with it.
 
 [← All issues](../../../index.md)
 

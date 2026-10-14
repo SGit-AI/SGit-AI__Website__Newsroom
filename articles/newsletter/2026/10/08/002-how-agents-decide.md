@@ -2,7 +2,7 @@
 
 > A day of articles on deciding: what a real decision needs, why an agent that can go anywhere has no reason to stop, what happens when every mistake adds a rule, and one customer service agent built three ways to count which rules are only hoped for. Alongside, a live local story, a hospital outage nobody could check from home, kept as evidence while it was happening.
 
-*Source: <https://newsroom.sgit.ai/articles/newsletter/2026/10/08/002-how-agents-decide.html> · sgit.ai v0.7.86 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/newsletter/2026/10/08/002-how-agents-decide.html> · sgit.ai v0.7.87 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 
@@ -108,18 +108,9 @@ A story written while it was happening, with its evidence kept.
 
 - [**The waiting room knew first: a live local story, and the gap where local information used to be**](../../../../the-waiting-room-knew-first.md). Staff at two London hospitals said the IT was down; nothing a local could check showed it. A live local story about where local information comes from now.
 
-*This is issue 2 of the SGit Newsroom newsletter, also published on LinkedIn in [Deterministic GenAI](https://www.linkedin.com/newsletters/deterministic-genai-7174563523795005440/). Every article it links to is on [sgit.ai](https://newsroom.sgit.ai/articles/index.html), with its sources and its data. To get the next issue by email, [subscribe at sgit.ai/subscribe](https://newsroom.sgit.ai/subscribe/).*
+*This is issue 2 of the SGit Newsroom newsletter, also published on LinkedIn in [Deterministic GenAI](https://www.linkedin.com/newsletters/deterministic-genai-7174563523795005440/). Every article it links to is on [newsroom.sgit.ai](https://newsroom.sgit.ai/articles/index.html), with its sources and its data. To get the next issue by email, [subscribe at newsroom.sgit.ai/subscribe](https://newsroom.sgit.ai/subscribe/).*
 
-**Posting this issue on LinkedIn?** The cover is [002-how-agents-decide.jpg](../../../../banners/002-how-agents-decide.jpg) (1920×1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page. LinkedIn drops images from a paste, so add these where they appear, in this order, with the caption under each:
-
-1. [002-2026-10-08-week.jpg](../../../../banners/collages/002-2026-10-08-week.jpg) The day in six pictures, one from each article
-2. [002-2026-10-08-agency-vault.jpg](../../../../banners/collages/002-2026-10-08-agency-vault.jpg) Inside the agency scale vault: the levels, the decisions scored against them, and the law
-3. [st-stop.webp](../../../../images/st-stop.webp) Value rises fast, then flattens. Past the point of diminishing returns, more work is optimising the wrong thing.
-4. [002-2026-10-08-maps.jpg](../../../../banners/collages/002-2026-10-08-maps.jpg) The same process mapped twice: as it runs, and with each piece made a small shipped component
-5. [ts-ladder.webp](../../../../images/ts-ladder.webp) Six tiers of attacker, from your own mistakes to elevated threats, with what stops each.
-6. [002-2026-10-08-designs.jpg](../../../../banners/collages/002-2026-10-08-designs.jpg) Inside the vault: the three designs, and one hostile email run through each
-7. [dp-run.webp](../../../../images/dp-run.webp) The compute is disposable and the memory is not: each run starts from a scoped clone of the vault and ends with a push.
-8. [002-2026-10-08-evidence.jpg](../../../../banners/collages/002-2026-10-08-evidence.jpg) The local evidence log: the gap, the claims, and where a local could have looked
+**Posting this issue on LinkedIn?** The cover is [002-how-agents-decide.jpg](../../../../banners/002-how-agents-decide.jpg) (1920×1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page. Its images copy with it.
 
 [← All issues](../../../index.md)
 

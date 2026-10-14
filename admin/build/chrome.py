@@ -56,6 +56,12 @@ NAV = [
         ("Today's edition", "wire/index.html"),
         ("The sources", "wire/sources.html"),
         ("How the wire works", "wire/how.html"),
+        ("The OWASP Wire", "wire/owasp/index.html"),
+        ("The AWS Wire", "wire/aws/index.html"),
+        ("The Portugal Wire", "wire/portugal/index.html"),
+        ("Day by day", "wire/days.html"),
+        ("The charter", "wire/charter.html"),
+        ("Themes: dark mode and four more", "articles/dark-mode-and-four-more.html"),
     ], ("wire/",)),
     ("Account", "account/index.html", [
         ("Your reading account", "account/index.html"),
@@ -96,28 +102,21 @@ NAV = [
         ("The passkey lab", "passkey/index.html"),
         ("How this site is built", "admin/index.html"),
     ], ("replicate/", "meter/", "mvps/seed-companies.html", "demos/vaults/newsroom-synthetic-users/", "publishers/", "newsroom-api/", "passkey/")),
-    ("World News Day", "world-news-day/index.html", [
-        ("The corpus", "world-news-day/index.html"),
-        ("Free to republish is not a licence", "world-news-day/stories/free-to-republish-is-not-a-licence.html"),
-        ("The licence that is not there", "world-news-day/licences.html"),
-        ("The twenty-one", "world-news-day/corpus.html"),
-        ("The aggregate", "world-news-day/findings.html"),
-        ("The vocabulary", "world-news-day/terms.html"),
-        ("The graph", "world-news-day/graph.html"),
-        ("Sources", "world-news-day/sources.html"),
-        ("How to reach them", "world-news-day/contacts.html"),
-        ("Published vaults", "world-news-day/vault.html"),
-        ("The vault, opened", "world-news-day/vaults/corpus.html"),
-        ("Method", "world-news-day/method.html"),
-    ], ("world-news-day/",)),
+    # World News Day was its own group until v0.12.12 (card 037). It is a running instance,
+    # and the people its outreach writes to still land on it, by the links in that outreach,
+    # which a top-level group never carried. Its hub page is the door to its twelve pages;
+    # the group it sat in made the bar nine groups wide and broke the row.
     ("Archive", "archive/index.html", [
         ("The archive", "archive/index.html"),
+        ("World News Day 2026: the corpus", "world-news-day/index.html"),
+        ("World News Day: free to republish is not a licence", "world-news-day/stories/free-to-republish-is-not-a-licence.html"),
+        ("World News Day: the method", "world-news-day/method.html"),
         ("The first home page (Aug 2026)", "archive/2026-08-22-home.html"),
         ("The Governance Wire (Aug 2026)", "governance/index.html"),
         ("Portugal Startups (Sep 2026)", "portugal/index.html"),
         ("The brief pack (Aug 2026)", "documents/index.html"),
         ("The library: prior art (2025)", "library/index.html"),
-    ], ("archive/", "governance/", "portugal/", "pt-newsroom/", "documents/", "library/",
+    ], ("archive/", "world-news-day/", "governance/", "portugal/", "pt-newsroom/", "documents/", "library/",
         "mvps/index.html", "mvps/portugal.html")),
     ("About", "about/participant.html", [
         ("Where we lose: the disclosure", "about/participant.html"),
@@ -133,6 +132,9 @@ FOOTER = [
     ("The newsroom", [
         ("&#8594; The front page", "index.html"),
         ("The Industry Wire", "wire/index.html"),
+        ("The OWASP Wire", "wire/owasp/index.html"),
+        ("The AWS Wire", "wire/aws/index.html"),
+        ("The Portugal Wire", "wire/portugal/index.html"),
         ("Every article", "articles/index.html#all"),
         ("The newsletter", "articles/newsletter/index.html"),
         ("Collections", "articles/collections/index.html"),
@@ -230,25 +232,34 @@ def nav_html(rel, up, newsroom=False, meter=False):
             f'      <div class="sub">\n{links}\n      </div>\n'
             f'    </div>')
     rows = "\n".join(groups)
-    # The "part of sgit.ai" link is the legacy look's. In the newsroom look it is the item that
-    # pushes the row onto two lines at 1440px, and the footer's network line already says it.
-    parent = ('' if newsroom else
-              f'  <a class="parent" href="{PARENT}" title="{PARENT_TITLE}">&#8593; part of <b>sgit.ai</b></a>\n')
+    # The "part of sgit.ai" pill was the legacy look's until v0.12.12; the footer's network line
+    # says it on every page, and the bar needed the room (card 037). PARENT stays named here
+    # because the footer and the disclosure still point at it.
     return (f'<nav class="site"><div class="row">\n'
+            # the themes (card 036): the stylesheet that defines the five, then the script that sets
+            # data-theme on <html> from what this browser remembers. Both before anything else in the
+            # body, and the script a classic one, so the page paints in the reader's theme the first
+            # time, not Newsprint and then a flip. Then the bar's own layout (card 037).
+            f'  <link rel="stylesheet" href="{up}assets/themes/themes.css">\n'
+            f'  <link rel="stylesheet" href="{up}assets/site-nav.css">\n'
+            f'  <script src="{up}assets/themes/themes.js"></script>\n'
             f'  <a class="brand" href="{up}index.html">newsroom<span>.sgit.ai</span></a>\n'
-            + parent +
             f'  <a class="ver" href="{up}admin/versions.html" title="Site release history">{VERSION}</a>\n'
-            # search, on every page: the page searches an index built at release, in the browser (admin/build/search_index.py)
+            f'  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>\n'
+            f'  <div class="nav-items">\n{rows}\n  </div>\n'
+            # the tools, one cluster on the right: search (the page searches an index built at release,
+            # in the browser: admin/build/search_index.py), the balance and the vault on every page that
+            # carries the meter, the theme, and the source.
+            f'  <div class="nav-tools">\n'
             f'  <a class="search-btn" href="{up}search/index.html" title="Search the site, in your browser">Search</a>\n'
             f'  <link rel="stylesheet" href="{api_url("assets/search/search-nav.css")}">\n'
             + (f'  <sg-meter class="meter-nav" view="balance"></sg-meter>\n' if meter else '')
-            # the vault pane: a button beside the balance, and the pane's script and style, on every page that carries the meter
             + (f'  <button class="vault-btn" type="button" aria-expanded="false" title="Your vault: the reading account carried between your devices"><span class="dot"></span>Vault</button>\n'
                f'  <link rel="stylesheet" href="{api_url("assets/vault-pane/vault-pane.css")}">\n'
                f'  <script type="module" src="{api_url("assets/vault-pane/vault-pane.js")}"></script>\n' if meter else '')
-            + f'  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>\n'
-            f'  <div class="nav-items">\n{rows}\n  </div>\n'
-            f'  <a class="gh" href="{GH}">&#9733; GitHub</a>\n'
+            + f'  <div class="theme-pick"></div>\n'
+            f'  <a class="gh" href="{GH}" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>\n'
+            f'  </div>\n'
             + ('' if newsroom else f'  <script src="{up}assets/nav.js" defer></script>\n')
             + '</div></nav>')
 
@@ -302,7 +313,7 @@ def stamp_text_twins():
 def main():
     changed = []
     for path in sorted(ROOT.rglob("*.html")):
-        if ".git" in path.parts:
+        if {".git", ".claude"} & set(path.relative_to(ROOT).parts):      # .claude/: an agent's worktree is a repository of its own, never this site (relative, so a build run inside one still stamps it)
             continue
         # An archive holds pages AS THEY WERE SERVED at a version, with that version's nav,
         # footer and badge. Restamping them with today's chrome would destroy the only thing an

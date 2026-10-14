@@ -2,7 +2,7 @@
 
 > Owns how the articles section looks and reads. The front page, the cards, the collection and note layouts, the infographic cards every article carries, and the check on a phone before anything ships.
 
-*Source: <https://newsroom.sgit.ai/newsroom/roles/designer.html> · sgit.ai v0.7.86 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/newsroom/roles/designer.html> · sgit.ai v0.7.87 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 

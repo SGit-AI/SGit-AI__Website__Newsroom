@@ -24,9 +24,8 @@ def esc(s):
     return _html.escape(s, quote=True)
 
 
-# SG Meter, the reading meter, at a versioned path that never changes. v1.4.0 is this site's own build, served from the API host
-# (admin/build/api.py) since v0.13.0; sync_newsroom.py item 11 points imported pages at the same URL.
-METER_JS = "assets/components/sg-meter/v1/v1.4/v1.4.0/sg-meter.js"
+# SG Meter, the reading meter, at a versioned path that never changes. v1.4.1 is this site's own build (see sync_newsroom.py, item 11).
+METER_JS = "assets/components/sg-meter/v1/v1.4/v1.4.1/sg-meter.js"   # served from the API host (admin/build/api.py) since v0.13.0
 METER_URL = api_url(METER_JS)
 
 

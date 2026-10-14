@@ -47,14 +47,40 @@ jobs:
       - name: Validate the site (structure, links, version, canonical, key-leak tripwire)
         run: node admin/build/validate.js
 
-  # The reader's code (the meter, the lists, the vault pane, search, the wire reader, the passkey lab) and its tests moved to
-  # SGit-AI/SGit-AI__Website__Newsroom__API in v0.13.0 and run there, in three browser engines, against this repository's pages
-  # (its tests/newsroom.json names the ref). This gate checks the pin instead: validate.js checks 13 and 14.
+  # The reader's code in a real browser: the meter, the reading lists and the review's pinned findings
+  # (admin/build/test_*.mjs). Before this job existed the one workflow validated the site and never ran
+  # them (newsroom-api/, finding R11). Playwright's Chromium is the only install; the tests skip, and
+  # pass, without it, so the install is checked for too.
+  reader-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install Playwright's Chromium
+        run: |
+          npm install --no-save --no-audit --no-fund playwright@1.56.1 jsqr@1.4.0
+          npx playwright install --with-deps chromium
+      - name: The meter, the reading lists, the review's findings, the passkey lab, the wire and the themes in Chromium, and the vault library in Node
+        run: |
+          set -euo pipefail
+          # the reader's tests (the meter, the lists, the pane, search, the wire, the passkey lab, the inbox, the graphs) moved to
+          # SGit-AI/SGit-AI__Website__Newsroom__API in v0.13.0 and run there, in three engines, against this repository's pages;
+          # what stays here is this site's own: the themes and the newsletter issues' foot
+          for t in test_themes.mjs test_issues.mjs; do
+            echo "== $t"
+            node admin/build/$t | tee /tmp/$t.log
+            if grep -q '^SKIP' /tmp/$t.log; then echo "::error::$t skipped: Playwright or Chromium missing on the runner"; exit 1; fi
+          done
 
   tag-release:
     runs-on: ubuntu-latest
     timeout-minutes: 5
-    needs: [validate]
+    needs: [validate, reader-tests]
     if: github.event_name == 'push' && github.ref == 'refs/heads/dev'
     permissions:
       contents: write

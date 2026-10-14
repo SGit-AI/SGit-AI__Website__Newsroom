@@ -2,7 +2,7 @@
 
 > Everything in the last two issues runs in the reader's browser. First the database was retired and the file system took its place; now the back end is retired too, and what is left on the server side is commodity that holds no logic and cannot read the data. Eight articles on how that works and what it makes possible. Why there is no server, and why that made a business decision possible; Chrome's model in the tab, the hardest remaining piece; where the vault keys live and an RFC for keys a reader cannot write with; and the agents that do the newsroom's work: five readers sent through every article, synthetic users driving a real browser, image models judged blind, and a governance framework kept as a graph.
 
-*Source: <https://newsroom.sgit.ai/articles/newsletter/2026/10/11/005-no-server-by-design.html> · sgit.ai v0.7.86 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/newsletter/2026/10/11/005-no-server-by-design.html> · sgit.ai v0.7.87 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 
@@ -107,14 +107,9 @@ Five readers per article, synthetic users, image models judged blind, and a gove
 - [**The infographic bake-off: which image model for which job, judged blind on 10 October 2026**](../../../../the-infographic-bake-off.md). Every image model on OpenRouter, eleven briefs, 101 images judged blind, $10.44: which model for which infographic, and what it costs.
 - [**The AI governance stack, as a graph: an answer to Hari Kota, built**](../../../../the-ai-governance-stack-as-a-graph.md). Hari Kota's ten-layer AI governance stack, kept as posted and turned into a fractal semantic graph: the gaps become missing edges, and queries.
 
-*This is issue 5 of the SGit Newsroom newsletter, also published on LinkedIn in [Deterministic GenAI](https://www.linkedin.com/newsletters/deterministic-genai-7174563523795005440/). Every article it links to is on [sgit.ai](https://newsroom.sgit.ai/articles/index.html), with its sources and its data. To get the next issue by email, [subscribe at sgit.ai/subscribe](https://newsroom.sgit.ai/subscribe/).*
+*This is issue 5 of the SGit Newsroom newsletter, also published on LinkedIn in [Deterministic GenAI](https://www.linkedin.com/newsletters/deterministic-genai-7174563523795005440/). Every article it links to is on [newsroom.sgit.ai](https://newsroom.sgit.ai/articles/index.html), with its sources and its data. To get the next issue by email, [subscribe at newsroom.sgit.ai/subscribe](https://newsroom.sgit.ai/subscribe/).*
 
-**Posting this issue on LinkedIn?** The cover is [005-no-server-by-design.jpg](../../../../banners/005-no-server-by-design.jpg) (1920×1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page. LinkedIn drops images from a paste, so add these where they appear, in this order, with the caption under each:
-
-1. [005-2026-10-11-noserver.jpg](../../../../banners/collages/005-2026-10-11-noserver.jpg) No server, by design, in six pictures, one from each of six of the articles
-2. [ns-architecture.webp](../../../../images/ns-architecture.webp) The SGit Newsroom's architecture: every piece of application logic runs in the reader's browser.
-3. [km-architecture.webp](../../../../images/km-architecture.webp) Where everything lives: encryption and decryption happen in the client; the edge, the API and the bucket only ever handle ciphertext and hashes of capability keys.
-4. [fr-five.webp](../../../../images/fr-five.webp) One article, five readers: the catalogue, the map, the place in the arc, two minutes, and a deck.
+**Posting this issue on LinkedIn?** The cover is [005-no-server-by-design.jpg](../../../../banners/005-no-server-by-design.jpg) (1920×1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page. Its images copy with it.
 
 [← All issues](../../../index.md)
 

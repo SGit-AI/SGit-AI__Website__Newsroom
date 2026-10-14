@@ -45,7 +45,7 @@ const errors = [];
 
 function walk(dir, out = []) {
   for (const name of fs.readdirSync(dir)) {
-    if (name === '.git' || name === '.github' || name === 'node_modules' || name === '.sg_vault') continue;
+    if (name === '.git' || name === '.github' || name === '.claude' || name === 'node_modules' || name === '.sg_vault') continue;   // .claude/: agent worktrees, never the site
     // An archive of pages is not a set of pages: briefs/summit-archive/ holds copies as served
     // at v0.3.12, whose relative links resolve against the site root they were cut from and
     // whose version badge is deliberately frozen. Checking them as live pages produced 413
@@ -245,6 +245,10 @@ const KEY_SHAPES = [
   // read key inside an imported article's version history.
   [/\bsgit\s+(?:clone|init)\s+(?!sgit_public_read_|sgit_rk1_)[A-Za-z0-9_-]{16,}:[A-Za-z0-9]{4,}/,
    'a command line carrying a credential that is not a published read key'],
+  // An OpenRouter key (v0.12.42): the infographic pipeline reads it from the environment only; the prefix alone, as
+  // a note names it, is not a key, so the shape needs the hex body that a real key carries.
+  [/\bsk-or-v1-[0-9a-f]{40,}/,
+   'an OPENROUTER API KEY; the pipeline reads it from OPENROUTER_API_KEY, never from a file'],
 ];
 for (const f of files) {
   if (/\.(png|jpg|jpeg|gif|webp|ico|woff2?|zip|svg|pdf)$/.test(f)) continue;
@@ -374,7 +378,7 @@ try {
 
 // --- the reader code's host: api.newsroom.sgit.ai, pinned ----------------------
 // Since v0.13.0 the code a reader runs (the meter, the lists, subscribe, the vault layer, search, the
-// wire reader, the vendored vault library, the passkey lab) is served from the API host at one pinned
+// wire reader, the vendored libraries, the passkey lab) is served from the API host at one pinned
 // release (admin/build/api.json; its manifest copied to admin/build/api-manifest.json). The regexes
 // here mirror admin/build/api.py exactly: a reader-file reference, relative (as before the move) or on
 // the host (as after it), normalises to "API/<path>", which is what keeps check 11's hashes true across
@@ -383,15 +387,15 @@ const API_PIN = JSON.parse(fs.readFileSync(path.join(ROOT, 'admin/build/api.json
 const API_MANIFEST = JSON.parse(fs.readFileSync(path.join(ROOT, 'admin/build/api-manifest.json'), 'utf8'));
 const API_SERVED = new Map(API_MANIFEST.files.map(f => [f.path, f.sha256]));
 if (API_MANIFEST.release !== API_PIN.release) errors.push(`admin/build/api-manifest.json is ${API_MANIFEST.release}; api.json pins ${API_PIN.release}`);
-const API_PATH = String.raw`(assets/(?:components|vault-pane|search|vendor/sg-vault)/[^"'\s<>]+|assets/(?:subscribe\.js|newsroom-vault\.js|door\.js)(?:\?[^"'\s<>]*)?|for/(?:reading-list|make)\.js|for/for\.css|wire/(?:wire|vault-reader)\.js|wire/wire\.css|passkey/(?:lab\.js|lab\.css|vectors\.json))`;
-const API_SAME = { 'reading-list.js': 'for/', 'make.js': 'for/', 'for.css': 'for/', 'wire.js': 'wire/', 'wire.css': 'wire/', 'vault-reader.js': 'wire/', 'lab.js': 'passkey/', 'lab.css': 'passkey/', 'vectors.json': 'passkey/' };
+const API_PATH = String.raw`(assets/(?:components|vault-pane|search|vendor/sg-vault|vendor/qrcode-generator)/[^"'\s<>]+|assets/(?:subscribe\.js|newsroom-vault\.js|door\.js)(?:\?[^"'\s<>]*)?|for/(?:reading-list|make)\.js|for/for\.css|wire/(?:wire|vault-reader|graphs|subscribe)\.js|wire/wire\.css|passkey/(?:lab\.js|lab\.css|vectors\.json))`;
+const API_SAME = { 'reading-list.js': 'for/', 'make.js': 'for/', 'for.css': 'for/', 'wire.js': 'wire/', 'wire.css': 'wire/', 'vault-reader.js': 'wire/', 'graphs.js': 'wire/', 'subscribe.js': 'wire/', 'lab.js': 'passkey/', 'lab.css': 'passkey/', 'vectors.json': 'passkey/' };
 const API_SAME_RE = '(' + Object.keys(API_SAME).map(s => s.replace(/\./g, '\\.')).join('|') + ')';
 const API_HOST_RE = API_PIN.host.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + String.raw`/v\d+\.\d+\.\d+/`;
-const API_REL = String.raw`(?:\./|(?:\.\./)+)?`;
+const API_REL = String.raw`(?:\.\.?/)*`;
 const API_NORMALISE = [
   [new RegExp(`(["'])${API_HOST_RE}${API_PATH}\\1`, 'g'), '$1API/$2$1'],
   [new RegExp(`(["'])${API_REL}${API_PATH}\\1`, 'g'), '$1API/$2$1'],
-  [new RegExp(`(["'])(?:\\./)?${API_SAME_RE}\\1`, 'g'), (m, q, n) => `${q}API/${API_SAME[n]}${n}${q}`],
+  [new RegExp(`(["'])${API_REL}${API_SAME_RE}\\1`, 'g'), (m, q, n) => `${q}API/${API_SAME[n]}${n}${q}`],
 ];
 const apiNormalise = text => { for (const [re, r] of API_NORMALISE) text = text.replace(re, r); return text; };
 
@@ -480,22 +484,27 @@ const apiNormalise = text => { for (const [re, r] of API_NORMALISE) text = text.
 }
 
 // --- 13. the frozen meter versions this site still serves are the API release's bytes ----------
-// v1.0.0 to v1.3.1 of the meter are published artefacts: they moved to the API host with the rest, and this
-// site keeps its copies in place until phase 4 of the move (GitHub Pages cannot redirect a script). Each copy
-// must be the bytes the pinned release serves, and nothing else of the reader code may still be here.
+// Earlier meter versions are published artefacts: they moved to the API host with the rest, and this site keeps
+// its copies in place until phase 4 of the move (GitHub Pages cannot redirect a script). Each copy must be the
+// bytes the pinned release serves, nothing else of the reader code may still be here, and the current version
+// (the newest in the manifest) is loaded from the host, never from here.
 {
   const nodeCrypto = require('crypto');
+  const versionOf = p => (p.match(/sg-meter\/v1\/v[\d.]+\/(v[\d.]+)\//) || [])[1];
+  const meterVersions = [...new Set([...API_SERVED.keys()].map(versionOf).filter(Boolean))].sort((a, b) => a.localeCompare(b, undefined, { numeric: true }));
+  const current = meterVersions[meterVersions.length - 1];
   const compDir = path.join(ROOT, 'assets/components');
   const local = fs.existsSync(compDir) ? walk(compDir).map(f => path.relative(ROOT, f).split(path.sep).join('/')) : [];
   for (const relFile of local) {
     const want = API_SERVED.get(relFile);
     if (!want) { errors.push(`${relFile}: not a file of the pinned API release; the reader code lives in SGit-AI__Website__Newsroom__API`); continue; }
-    if (!/^assets\/components\/sg-meter\/v1\/v1\.[0-3]\//.test(relFile)) { errors.push(`${relFile}: only the frozen meter versions (v1.0.0 to v1.3.1) stay here; this file is served from the API host`); continue; }
+    if (!versionOf(relFile) || versionOf(relFile) === current) { errors.push(`${relFile}: only the frozen meter versions stay here; this file is served from the API host`); continue; }
     const got = nodeCrypto.createHash('sha256').update(fs.readFileSync(path.join(ROOT, relFile))).digest('hex');
     if (got !== want) errors.push(`${relFile}: a frozen copy that differs from the API release's bytes`);
   }
-  for (const gone of ['assets/vendor/sg-vault', 'assets/vault-pane', 'assets/search', 'assets/subscribe.js', 'assets/newsroom-vault.js', 'assets/door.js',
-                      'for/reading-list.js', 'for/make.js', 'for/for.css', 'wire/wire.js', 'wire/wire.css', 'wire/vault-reader.js', 'passkey/lab.js', 'passkey/lab.css', 'passkey/vectors.json']) {
+  for (const gone of ['assets/vendor/sg-vault', 'assets/vendor/qrcode-generator', 'assets/vault-pane', 'assets/search', 'assets/subscribe.js', 'assets/newsroom-vault.js', 'assets/door.js',
+                      'for/reading-list.js', 'for/make.js', 'for/for.css', 'wire/wire.js', 'wire/wire.css', 'wire/vault-reader.js', 'wire/graphs.js', 'wire/subscribe.js',
+                      'passkey/lab.js', 'passkey/lab.css', 'passkey/vectors.json']) {
     if (fs.existsSync(path.join(ROOT, gone))) errors.push(`${gone}: moved to the API host in v0.13.0 and still here`);
   }
 }
@@ -505,7 +514,7 @@ const apiNormalise = text => { for (const [re, r] of API_NORMALISE) text = text.
 // writes them: never a relative path to a moved file, never another release, never a path the manifest lacks.
 {
   const relForm = new RegExp(`^${API_REL}${API_PATH}$`);
-  const sameForm = new RegExp(`^(?:\\./)?${API_SAME_RE}$`);
+  const sameForm = new RegExp(`^${API_REL}${API_SAME_RE}$`);
   const hostForm = new RegExp(`^${API_PIN.host.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}/(v\\d+\\.\\d+\\.\\d+)/${API_PATH}$`);
   const judge = (f, s, where) => {
     if (relForm.test(s) || sameForm.test(s)) errors.push(`${rel(f)}: ${where} loads a reader file by a relative path -> ${s}; run admin/build/api.py --repoint`);

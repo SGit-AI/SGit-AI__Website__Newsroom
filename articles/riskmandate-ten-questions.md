@@ -2,7 +2,7 @@
 
 > My co-founder came back from a conference with ten hard questions, the ones people actually ask about a product like RiskMandate. What happens when an agent bypasses its policy? How do you keep a policy current when the agent gains new powers? What exactly am I paying for? Who is liable when it goes wrong? What stops a big platform absorbing you? Why behaviour and not the supply chain? Who enforces? What happens after a breach? What about agents instructing agents? And what can you measure? I answered them in a two-hour interview with Claude acting as a journalist with an eye for detail, challenging every answer until the whole set was detailed and coherent. This page is the result, written for someone who has not seen the questions: the model every answer rests on, the ten answers in brief, what RiskMandate deliberately is not, an honest table of what is live and what is design, three things the exercise showed we must fix on our own site, and then each question in full, linked to the work behind it.
 
-*Source: <https://newsroom.sgit.ai/articles/riskmandate-ten-questions.html> · sgit.ai v0.7.86 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/riskmandate-ten-questions.html> · sgit.ai v0.7.87 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 
@@ -402,6 +402,8 @@ Agents & policyStartups & strategy[This article as a graph →](graphs.md#riskma
 
 ### Continued by
 
+- [A policy for every skill: Sean Turner's natural-language control for agent skills, the behaviour policy behind it, and using models to need them less](a-policy-for-every-skill.md) Sean Turner's natural-language control for agent skills, read as a behaviour policy, and why the description, not the code, stays canonical.
+- [The policy draws the liability line: an answer to Ralf Thomas on agent accountability, and why every agent in a loop should take a behaviour policy beside its prompt](the-policy-draws-the-liability-line.md) An answer to Ralf Thomas: the shell game works because nothing is written down, and a behaviour policy's explicit prohibitions move the liability line.
 - [Who owns the words: agents can make decisions, but they cannot hold responsibility](who-owns-the-words.md) Agents in loops make real decisions, but responsibility stays with whoever granted the reach; disclosure is a label, not a team to manage.
 - [Where the platform draws the line: Microsoft Execution Containers, the shared responsibility model for agents, and the business logic above it](where-the-platform-draws-the-line.md) Microsoft's MXC and ACS, briefed field by field and mapped to Agent Behaviour Policies: the platform bounds what it can see; the business logic is above.
 - [Authority outside the model: an answer to Satya Nadella on models as insider risks, principle by principle, with what we run, what we ship and what we plan](authority-outside-the-model.md) Satya Nadella's seven principles for models as insider risks, answered one by one: what we run, what is design, and the five things the list leaves out.

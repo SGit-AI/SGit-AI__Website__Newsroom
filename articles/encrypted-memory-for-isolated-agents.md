@@ -2,7 +2,7 @@
 
 > Agents are safer when they run in isolated places: a cloud VM, a local VM, a container on a Mac mini, a GPU machine, a job that exists for one task. Isolation takes away the shared drive, and ephemeral compute takes away the disk, so the memory has to live somewhere else, somewhere the owner controls and a breach does not expose. This article maps how to give those agents encrypted memory with sgit and a vault server you run yourself: one container, an access token, storage in a folder or a bucket, and only ciphertext on the server. Five patterns, each drawn as a diagram with its Mermaid source: a Mac mini with Docker Compose, the life of one ephemeral agent run with a scoped clone, Kubernetes, a private cloud VPC with CloudFront in front, and two servers holding one vault. Every command was run against a local server for this article, including a scoped clone, a push from a second agent, replication to a second server and a restore after a restart, and a search of the server's storage that found none of the plaintext.
 
-*Source: <https://newsroom.sgit.ai/articles/encrypted-memory-for-isolated-agents.html> · sgit.ai v0.7.86 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/encrypted-memory-for-isolated-agents.html> · sgit.ai v0.7.87 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 
@@ -383,6 +383,10 @@ Vaults & methodAgents & policySite & engineering[This article as a graph →](gr
 
 ### Continued by
 
+- [Agent workflows on ephemeral vaults: seven architectures from one agent to a swarm, a repository of recipes that gates sgit's releases, and what a hundred writers did to an append lane](agent-workflows-on-ephemeral-vaults.md) Seven architectures for agents on ephemeral vaults, a recipe repository that gates sgit's releases, and a hundred writers measured on an append lane.
+- [Knowledge that maintains itself: semantic graphs for an organisation's policies and internal knowledge, briefing people and agents from the graph, and vaults to carry the brief](knowledge-that-maintains-itself.md) Fractal semantic graphs for policies and internal knowledge: brief people and agents from the graph, maintain it in a loop, carry the brief in a vault.
+- [sgit in a CI pipeline: encrypted, versioned data in and out of GitHub Actions, between its jobs, through write-only lanes, and a key for every job](sgit-in-a-ci-pipeline.md) Encrypted, versioned vaults as the way data gets into, out of and between CI jobs, with a key per job and a sidecar when there is no server.
+- [The vault crosses Chrome profiles: state and memory between browser sessions, found by using it rather than by building it](the-vault-crosses-chrome-profiles.md) The reader's vault carries the newsroom between Chrome profiles as it does between devices, a way to share state across browser sessions nobody built.
 - [The records ran out: a fresh agent found the shared contract in two MCP calls, and where sgit and RiskMandate fit at the edges](the-records-ran-out.md) A fresh agent found a shared contract in two MCP calls from build records; where the records stopped is exactly where evidence labels and sgit vaults fit.
 - [Brief the agent too: the people I talk to work with agents, so what I send has to reach both](brief-the-agent-too.md) The people I advise read through agents. Content needs a second package, a brief for their agent, and memory, so it reads what changed, not everything.
 - [No server, by design: first I retired the database, now I am retiring the back end](no-server-by-design.md) First the database went, now the back end: the SGit Newsroom runs all its logic in the browser, on commodity servers that cannot read your data.

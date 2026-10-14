@@ -130,6 +130,38 @@
         "md": "| Any other page that charges: an article's version history, the newsroom's roles and policies | 1p |\n| The front page, the subscribe page, your account, the design, replicate and persona pages | free |"
       },
       "why": "The price table named sgit.ai's docs, vaults and network, which this site does not charge for. It now names the pages here that carry the 1p price, and the pages this site writes, which are free."
+    },
+    {
+      "id": "issue-3-linkedin",
+      "files": [
+        "articles/newsletter/2026/10/11/003-pay-after-you-read.html",
+        "articles/newsletter/2026/10/11/003-pay-after-you-read.md"
+      ],
+      "find": {
+        "html": "written with the <a href=\"../../../../../newsroom/roles/journalist.html\">Journalist</a></p>",
+        "md": "written with the [Journalist](../../../../../newsroom/roles/journalist.md)\n"
+      },
+      "with": {
+        "html": "written with the <a href=\"../../../../../newsroom/roles/journalist.html\">Journalist</a> &middot; <a href=\"https://www.linkedin.com/pulse/pay-after-you-read-newsroom-charges-share-lets-go-below-dinis-cruz-i9owe/\" rel=\"noopener\" target=\"_blank\">read it on LinkedIn &#8599;</a></p>",
+        "md": "written with the [Journalist](../../../../../newsroom/roles/journalist.md) · [read it on LinkedIn ↗](https://www.linkedin.com/pulse/pay-after-you-read-newsroom-charges-share-lets-go-below-dinis-cruz-i9owe/)\n"
+      },
+      "why": "Issue 3 was posted on LinkedIn on 13 October 2026. Its source is sgit.ai's, which this site does not edit, so the link its linkedin: field would have rendered is added here, in the same words and markup as issues 1 and 2. Retire this rule when sgit.ai's issue 3 carries the link, or when the generator moves here."
+    },
+    {
+      "id": "issue-3-linkedin-card",
+      "files": [
+        "articles/newsletter/index.html",
+        "articles/newsletter/index.md"
+      ],
+      "find": {
+        "html": "why agents will pay too.</p><p class=\"small dim\">8 articles</p>",
+        "md": "why agents will pay too.\n\n8 articles\n"
+      },
+      "with": {
+        "html": "why agents will pay too.</p><p class=\"small dim\">8 articles &middot; <a href=\"https://www.linkedin.com/pulse/pay-after-you-read-newsroom-charges-share-lets-go-below-dinis-cruz-i9owe/\" rel=\"noopener\" target=\"_blank\">on LinkedIn &#8599;</a></p>",
+        "md": "why agents will pay too.\n\n8 articles · [on LinkedIn ↗](https://www.linkedin.com/pulse/pay-after-you-read-newsroom-charges-share-lets-go-below-dinis-cruz-i9owe/)\n"
+      },
+      "why": "The same link on issue 3's card in the list of issues, as issues 1 and 2 have it. Retire with issue-3-linkedin."
     }
   ]
 }

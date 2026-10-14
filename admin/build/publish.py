@@ -9,6 +9,7 @@ Articles are now written in this repository, not on sgit.ai:
     admin/content/articles/graphs/<slug>.json     its semantic graph
     admin/content/articles/images/<name>.webp     its figures
     admin/content/articles/data/<slug>__*.json    the data it was written from, when there is some
+    admin/content/newsletter/NNN-YYYY-MM-DD.md     a newsletter issue (sgit.ai's newsroom README has the format)
 
 The generator has not moved yet: it is sgit.ai's 680 KB build_pages.py, which also builds the rest of
 sgit.ai. Until it is ported, this script borrows it without touching sgit.ai. It never writes to the
@@ -26,7 +27,8 @@ checkout it is given, and nothing is pushed anywhere:
      (--authored), so their bylines name this site's release, and recording the source as sgit.ai's
      commit plus this repository's article sources (--source-meta).
 
-A slug written here that already exists on sgit.ai stops the run: the two would fight for one page.
+A slug written here that already exists on sgit.ai stops the run: the two would fight for one page. So does
+a newsletter issue whose number sgit.ai already has.
 The temporary clone is deleted at the end unless --keep is given.
 """
 import argparse
@@ -41,6 +43,13 @@ from pathlib import Path
 
 ROOT    = Path(__file__).resolve().parents[2]
 CONTENT = "admin/content/articles"
+NEWSLETTER = "admin/content/newsletter"                 # -> sgit.ai's admin/content/newsroom/newsletter/
+# Folded history: sources whose published version pages start from the current text. For each path
+# listed, the replay writes the working tree's version at every past commit, so the site shows one
+# version and no diff page repeats what was removed. The repository's git history is untouched and
+# keeps every version. Use only for text the owner decides must not be on the site, such as a name
+# published before its owner agreed. Each entry records why.
+FOLDS = ROOT / "admin/build/history-folds.json"
 # Where each kind of source lands in the sgit.ai tree.
 TARGETS = (("images/", "articles/images/"), ("data/", "articles/data/"), ("graphs/", CONTENT + "/graphs/"), ("", CONTENT + "/"))
 
@@ -65,7 +74,9 @@ def git(*a, cwd=ROOT):
 
 
 def target(rel):
-    """admin/content/articles/<rest> here -> its path in the sgit.ai tree."""
+    """admin/content/articles/<rest> or admin/content/newsletter/<issue> here -> its path in the sgit.ai tree."""
+    if rel.startswith(NEWSLETTER + "/"):
+        return "admin/content/newsroom/newsletter/" + rel[len(NEWSLETTER) + 1:]
     rest = rel[len(CONTENT) + 1:]
     for prefix, dest in TARGETS:
         if rest.startswith(prefix):
@@ -73,9 +84,11 @@ def target(rel):
 
 
 def sources():
-    base = ROOT / CONTENT
-    return sorted(p.relative_to(ROOT).as_posix() for p in base.rglob("*")
-                  if p.is_file() and p.name != "README.md") if base.exists() else []
+    out = []
+    for base in (ROOT / CONTENT, ROOT / NEWSLETTER):
+        if base.exists():
+            out += [p.relative_to(ROOT).as_posix() for p in base.rglob("*") if p.is_file() and p.name != "README.md"]
+    return sorted(out)
 
 
 def authored_slugs(files):
@@ -84,10 +97,11 @@ def authored_slugs(files):
 
 def replay(clone):
     """One commit in the clone for each commit here that touched the article sources."""
-    log = git("log", "--reverse", "--format=%H%x09%aI%x09%an%x09%ae%x09%s", "--", CONTENT).splitlines()
+    log = git("log", "--reverse", "--format=%H%x09%aI%x09%an%x09%ae%x09%s", "--", CONTENT, NEWSLETTER).splitlines()
+    folds = json.loads(FOLDS.read_text())["paths"] if FOLDS.exists() else {}
     for line in log:
         sha, date, name, email, subject = line.split("\t", 4)
-        changed = git("diff-tree", "--no-commit-id", "--name-status", "-r", "--root", sha, "--", CONTENT).splitlines()
+        changed = git("diff-tree", "--no-commit-id", "--name-status", "-r", "--root", sha, "--", CONTENT, NEWSLETTER).splitlines()
         for row in changed:
             status, *paths = row.split("\t")
             path = paths[-1]
@@ -100,6 +114,9 @@ def replay(clone):
             if status.startswith("R"):
                 (clone / target(paths[0])).unlink(missing_ok=True)
             dest.parent.mkdir(parents=True, exist_ok=True)
+            if path in folds and (ROOT / path).exists():
+                dest.write_bytes((ROOT / path).read_bytes())          # folded: the current text at every commit
+                continue
             dest.write_bytes(subprocess.run(["git", "show", f"{sha}:{path}"], cwd=ROOT, capture_output=True).stdout)
         run(["git", "add", "-A"], clone, quiet=True)
         env = dict(os.environ, GIT_AUTHOR_DATE=date, GIT_COMMITTER_DATE=date, GIT_AUTHOR_NAME=name,
@@ -123,6 +140,10 @@ def main():
     slugs = authored_slugs(files)
     if not slugs:
         sys.exit(f"publish: no articles in {CONTENT}/")
+    theirs = {Path(f).name[:3] for f in run(["git", "ls-files", "--", "admin/content/newsroom/newsletter/"], src, quiet=True).split()}
+    dup = sorted(Path(f).name for f in files if f.startswith(NEWSLETTER + "/") and Path(f).name[:3] in theirs)
+    if dup:
+        sys.exit(f"publish: {', '.join(dup)}: sgit.ai already has an issue with that number")
     upstream = run(["git", "ls-files", "--", f"{CONTENT}/*.md"], src, quiet=True).split()
     clash = sorted(set(slugs) & {Path(f).stem for f in upstream})
     if clash:
@@ -154,7 +175,10 @@ def main():
     steps = [["python3", "admin/build/build_pages.py"]]
     if args.node_modules:
         steps += [["node", "admin/build/make_og_cards.mjs"], ["node", "admin/build/make_banners.mjs"],
-                  ["python3", "admin/build/build_pages.py"], ["node", "admin/build/make_banners.mjs"]]
+                  ["python3", "admin/build/build_pages.py"], ["node", "admin/build/make_banners.mjs"],
+                  # A new issue's cover is first drawn by the last banner pass, and an issue page shows its cover
+                  # and its LinkedIn box only when the cover exists, so build once more after it.
+                  ["python3", "admin/build/build_pages.py"]]
     else:
         print("    no --node-modules: link-preview cards and banners are not made")
     steps += [["node", "admin/build/validate.js"]]

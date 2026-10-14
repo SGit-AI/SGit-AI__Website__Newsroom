@@ -5,7 +5,7 @@
     "startups-and-strategy",
     "agents-and-policy"
   ],
-  "core_idea": "A service in which a helper, with agents doing most of the work under a behaviour policy, asks a company for its record of your usage while doing its own analysis, then sends a friendly request for a suspend mode and a refund, stops the payments either way, and publishes what each company did in an open register, paid at 10% of three months of savings and 20% of what is recovered.",
+  "core_idea": "A service in which a freelancer, with agents doing everything except typing secrets and sending drafts, asks a company for its record of your usage while doing its own analysis, sends a friendly request for a suspend mode and a refund, stops the payments either way, and publishes what each company did in an open register, run from vaults and paid at 10% of three months of savings and 20% of what is recovered.",
   "nodes": [
     {
       "id": "kept",
@@ -74,10 +74,28 @@
       "summary": "The agent reads and drafts; the person signs in, approves and sends from their own address."
     },
     {
-      "id": "logins",
-      "label": "Working inside accounts",
+      "id": "chrome",
+      "label": "Claude in Chrome",
+      "kind": "artefact",
+      "summary": "Drives the browser in the signed-in session, pauses at login pages and is prohibited from inputting sensitive data."
+    },
+    {
+      "id": "controls",
+      "label": "Two controls",
+      "kind": "claim",
+      "summary": "Secrets are entered by the freelancer, drafts are sent by the freelancer, everything else is automated."
+    },
+    {
+      "id": "vaults",
+      "label": "Vaults as the interface",
+      "kind": "method",
+      "summary": "Documentation, tasks in Issues-FS, the map of every subscription and messages in Email-FS, all in vaults."
+    },
+    {
+      "id": "mvp",
+      "label": "A first MVP",
       "kind": "question",
-      "summary": "How an agent works inside many signed-in sessions without ever holding the passwords."
+      "summary": "Early beta users run it on their own subscriptions to learn which tools work, and whether a browser-driving agent belongs here at all."
     }
   ],
   "edges": [
@@ -138,11 +156,6 @@
     },
     {
       "from": "agents",
-      "to": "logins",
-      "rel": "leads-to"
-    },
-    {
-      "from": "agents",
       "to": "request",
       "rel": "produces"
     },
@@ -150,6 +163,31 @@
       "from": "register",
       "to": "floor",
       "rel": "extends"
+    },
+    {
+      "from": "agents",
+      "to": "chrome",
+      "rel": "depends-on"
+    },
+    {
+      "from": "chrome",
+      "to": "controls",
+      "rel": "produces"
+    },
+    {
+      "from": "agents",
+      "to": "vaults",
+      "rel": "depends-on"
+    },
+    {
+      "from": "controls",
+      "to": "mvp",
+      "rel": "leads-to"
+    },
+    {
+      "from": "vaults",
+      "to": "register",
+      "rel": "produces"
     }
   ],
   "links": {
@@ -157,7 +195,8 @@
       "replicating-the-agentic-inbox",
       "who-owns-the-words",
       "a-second-reader-the-agent-cannot-skip",
-      "a-personal-agent-that-keeps-your-secrets"
+      "memory-is-not-a-spectator-sport",
+      "the-vault-crosses-chrome-profiles"
     ],
     "pages": [],
     "sites": [
@@ -165,7 +204,10 @@
       "https://subscriptions.sgit.ai/workflows/index.html",
       "https://www.gov.uk/government/news/pm-starts-roll-out-of-everyday-fixes-on-the-cost-of-living-ending-rip-off-discounts-and-subscription-traps",
       "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/subject-access-requests/a-guide-to-subject-access/",
-      "https://help.rocketmoney.com/en/articles/9744474-bill-negotiation-charge-explained"
+      "https://help.rocketmoney.com/en/articles/9744474-bill-negotiation-charge-explained",
+      "https://claude.com/blog/claude-in-chrome-generally-available",
+      "https://code.claude.com/docs/en/chrome",
+      "https://support.claude.com/en/articles/12902428-using-claude-in-chrome-safely"
     ]
   },
   "quotes": [
@@ -174,8 +216,8 @@
       "why": "The value lands on day one, whether or not any money comes back."
     },
     {
-      "text": "A dated row that says \"asked twice, no reply as at this date\" needs no adjective.",
-      "why": "It is how the register gives kudos and holds companies to account without characterising anyone."
+      "text": "Secrets are entered by the freelancer. Drafts are sent by the freelancer. Everything else is automated.",
+      "why": "The operator's two controls, and the reason the service can scale."
     }
   ],
   "figures": [
@@ -188,7 +230,7 @@
     {
       "file": "sr-policy.webp",
       "url": "https://newsroom.sgit.ai/articles/images/sr-policy.webp",
-      "caption": "The helper's agent as a behaviour policy: what it could reach once signed in, whether that is in its mandate, the gap, and what actually stands in the way. Green rows need nothing more; the orange row is held by the person pressing the button; the red rows are where a control is still owed. A proposal written before the first run, not a measured deployment.",
+      "caption": "The helper's agent as a behaviour policy: what it could reach once a session is signed in, whether that is in its mandate, the gap, and what actually stands in the way. Green rows need nothing more; orange rows are held by the tool or by a recorded decision; red rows are where a control is still owed. A proposal written before the first run, not a measured deployment.",
       "kind": "comparison"
     }
   ]

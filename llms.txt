@@ -12,7 +12,7 @@ Content CC BY 4.0 unless a page states otherwise; code Apache 2.0.
 
 ## The honest sentence
 
-Since v0.6.0 this site is a newsroom first. WHAT RUNS: the newsroom (/ and /articles/: 98
+Since v0.6.0 this site is a newsroom first. WHAT RUNS: the newsroom (/ and /articles/: 122
 articles since 17 August 2026, each with its own graph and full version history, a
 newsletter, collections, desk notes and a feed); how it runs (/newsroom/: six agent roles
 under written behaviour policies, a board, pitches and a run log); the reader's account
@@ -78,8 +78,8 @@ current, running or planned.
   and this site on 10 October 2026): five to ten invented users, each with a profile, a question they
   arrive with and an expected journey, drive a real browser one screenshot at a time, are interviewed and
   rate it; findings ordered by what they cost. NOT user research: the users are invented by a model
-- /articles/graphs.html and /articles/graphs.json: every article's graph, 98, drawn together
-- /articles/newsletter/index.html: the newsletter, 5 issues so far, also on LinkedIn
+- /articles/graphs.html and /articles/graphs.json: every article's graph, 122, drawn together
+- /articles/newsletter/index.html: the newsletter, 6 issues so far, also on LinkedIn
 - /articles/collections/index.html: 5 collections; /articles/desk/index.html: 4 desk notes
 - /articles/views/<slug>/: five alternative readers (librarian, cartographer, historian,
   explainer, storyteller) of the same article, for 5 articles
@@ -98,7 +98,7 @@ current, running or planned.
   number per article, assigned once in the order they were published and never changed or reused; each article shows
   its number at its foot. An agent drafts a list and the email; the person sends it
 
-### The Industry Wire (industry news, read live from an encrypted vault; a beta)
+### The wires (news read live from encrypted vaults; a beta): the Industry Wire, the OWASP Wire, the AWS Wire, the Portugal Wire
 - /wire/index.html: THE INDUSTRY WIRE, A BETA. Once a day, what happened in five beats (building with AI, AI business, open source,
   cybersecurity, risk and governance), each story with its primary source, who else covered it, one exact quote and why it
   matters, and a lens per persona showing what reached them and what was withheld, with the reason. THE DATA IS NOT ON THIS
@@ -106,13 +106,43 @@ current, running or planned.
   in the browser with the read key sgit_public_read_4c7aefb739e52e9a03c35be01bf7e311af00872e33c477b4d7c4319cdb91bdba:u9i9jp0l
   (read-only, published on purpose). Read it yourself: `sgit clone sgit_public_read_4c7aefb739e52e9a03c35be01bf7e311af00872e33c477b4d7c4319cdb91bdba:u9i9jp0l`,
   then data/bundle.json (beats, stories, sources, personas, brief), data/deliveries.json (story × persona, reached or
-  withheld, with the reason) and docs/*.md. /wire/snapshot.json has the headlines and primary links as of this site's last
-  release, for an agent without a browser. EVERY STORY IS MARKED ai-generated, unreviewed UNTIL A PERSON REVIEWS IT; the first
-  edition (11 October 2026, a week's catch-up) says 22 of its primary sources were not fetched. The wire has ONE NAMED READER,
+  withheld, with the reason), data/releases.json (one release note per publish, written by the desk since 13 October 2026)
+  and docs/*.md. /wire/snapshot.json has the headlines, primary links, each story's dated corrections and the desk's latest
+  release note as of this site's last release, for an agent without a browser. EVERY STORY IS MARKED ai-generated, unreviewed
+  UNTIL A PERSON REVIEWS IT; two editions so far (11 October 2026, a week's catch-up, and 13 October, an update with 19 new
+  stories and 13 corrected after their primary sources were fetched), 59 stories, 27 with a primary source not fetched. A
+  corrected story carries its changes, dated, under its text: CORRECTIONS PROPAGATE TO WHERE THE STORY IS READ. The wire has ONE NAMED READER,
   Dinis Cruz, who runs this site and agreed on 2026-10-12 to be one while the wire is a beta (admin/build/wire-vault.json records
   it); the persona "dinis" and the personal brief in the vault are theirs and are public like the rest. No other named person
   gets a lens without a recorded agreement
-- /wire/sources.html: the 55 sources with a licence tier each (A: open licence, keep and show; B: quote up to 25 words and
+- /wire/owasp/index.html: THE OWASP WIRE, weekly: everything at and about OWASP (projects and releases, the GenAI Security Project, the
+  Foundation, events and chapters, OWASP in the news), with a PROJECTS GRAPH (20 projects, their leaders and the standards they map to,
+  each drawn with the stories that name it). Same code, same contract, its own vault: eitf274v, read key
+  sgit_public_read_b09571f053cc19f5f8b50f8a8d0d82a115e07282fca14e58e7c3328975cd9d79:eitf274v; data/map.json is the graph. First
+  edition 13 October 2026, 19 stories. /wire/owasp/snapshot.json, /wire/owasp/sources.html, /wire/owasp/how.html as for the Industry Wire
+- /wire/aws/index.html: THE AWS WIRE: everything AWS announced, FILTERED BY THE STACK its named reader declares in the vault (data/stack.json:
+  Lambda, S3, API Gateway, CloudFront, boto3, with aliases and the deadlines that matter); the join turns each service into a concern, so
+  under that reader's lens a story reaches them when it names a service they run. The page draws the deadlines at the top of the edition
+  with the days left and each service with the items that touched it. Its own vault: v202bla5, read key
+  sgit_public_read_ad5c3f9e1f4d7632db06cd27f6ee6a256063300c426f4a94e7de33cf5a53e892:v202bla5. First edition 13 October 2026, 88 items
+  (29 researched stories for the stack and the What's New firehose). /wire/aws/snapshot.json carries the deadlines
+- /wire/charter.html: THE CHARTER OF THE WIRES: facts first, analysis marked as the desk's; corrections propagate; three rounds (the desk writes
+  and runs its gate, the newsroom reads with a published key and draws as written, an independent verifier checks every story); what is
+  never done; public by default. Source admin/notes/2026-10-13__the-wires-charter.md
+- /wire/desk-brief.md (rendered at /wire/desk-brief.html): THE STANDING BRIEF FOR THE DESKS that write the vaults, read at the start of
+  every run, dated, newest first: the schedule, the reader's lane, the verifier's schema (wire-factcheck/v1), one subscription list per
+  wire (X-SGit-List: wire:<slug>), a Portugal wire, data/contacts.json under the contact rules
+- /wire/days.html: every wire day by day, the releases and the stories by date, read live from every vault
+- /wire/reach.html, /wire/owasp/reach.html, /wire/aws/reach.html: WHO SHOULD KNOW and how to reach them, BY ORGANISATION ROUTE ONLY under
+  world-news-day/data/contact-rules.json; the routes this site found are admin/build/wire-reach.json
+- Each wire's page has a subscription to that wire alone (wire/subscribe.js, the newsletter's lane with X-SGit-List), and draws the
+  verifier's records (data/factcheck-<date>.json) at each story they cover
+- /wire/portugal/index.html: THE PORTUGAL WIRE, daily: what happened in Portugal in the five beats, IN ENGLISH AND PORTUGUESE (a switch
+  under the lens; each story's headline_pt and summary_pt; the quote in the language of its source, quote_lang), with an ECOSYSTEM MAP of
+  40 organisations and 45 Portuguese sources. Its own vault: p6twygul, read key
+  sgit_public_read_faa3377d2556713fc959e68bc7bd8a2303cd4bd0862fdf18a4bf51c0c0d3ee08:p6twygul. First edition 13 October 2026, 36 stories;
+  a source for the Portuguese publication this site designed (/pt-newsroom/)
+- /wire/sources.html: the 55 sources with a licence tier each, and how many stories each gave this edition (A: open licence, keep and show; B: quote up to 25 words and
   link; C: link only) and whether a person has verified it
 - /wire/how.html: how this site reads the vault, the contract the pages rely on, and the wire's own documents (architecture,
   workflows, sources policy, the daily runbook), rendered from the vault's markdown

@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The minimum code below: container security from the top down, from the user story to the immutable line, measured on one real tool, SGit Newsroom</title>
+<meta name="description" content="A conversation at Chainguard's event today sharpened something I have thought for a while. Chainguard does security from the bottom up, and does it very well: it rebuilds the operating system and the libraries from source, keeps the images minimal and manages the whole process. But even the most locked-down image still holds a great deal of code the application never runs, the assurance still depends on testing, and the loop that caused the problem in the first place is still there: when something breaks, you give it more. As soon as the work reaches the application, it stops. My proposal is to come from the other end. Start from the user story and, at every layer down, ask one question: what is the minimum code below this that the layer above needs? Keep that, remove everything else, and draw the immutable line as high as the evidence allows. It did not scale before; with models and fractal semantic graphs, it can. I measured it for this article on a real tool, sgit and its dependencies, running a CI-style use case under coverage and then running it again from a tree holding only the files that ran. Of 1,500 files, 428 were kept, and the use case passed; commands outside it failed because their code was not there. It also showed the limits: one compiled binary held three quarters of the bytes and no coverage tool can see inside it, and coverage missed a compiled module the tests then caught. Tools that minimise containers at run time already exist, so the new part is the direction: from what the application is for, through a graph, down to a build that can be certified. Chainguard is unusually well placed to offer it, and someone will build it.">
+<link rel="canonical" href="https://newsroom.sgit.ai/articles/the-minimum-code-below.html">
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SGit Newsroom">
+<meta property="og:url" content="https://newsroom.sgit.ai/articles/the-minimum-code-below.html">
+<meta property="og:title" content="The minimum code below: container security from the top down, from the user story to the immutable line, measured on one real tool, SGit Newsroom">
+<meta property="og:description" content="A conversation at Chainguard's event today sharpened something I have thought for a while. Chainguard does security from the bottom up, and does it very well: it rebuilds the operating system and the libraries from source, keeps the images minimal and manages the whole process. But even the most locked-down image still holds a great deal of code the application never runs, the assurance still depends on testing, and the loop that caused the problem in the first place is still there: when something breaks, you give it more. As soon as the work reaches the application, it stops. My proposal is to come from the other end. Start from the user story and, at every layer down, ask one question: what is the minimum code below this that the layer above needs? Keep that, remove everything else, and draw the immutable line as high as the evidence allows. It did not scale before; with models and fractal semantic graphs, it can. I measured it for this article on a real tool, sgit and its dependencies, running a CI-style use case under coverage and then running it again from a tree holding only the files that ran. Of 1,500 files, 428 were kept, and the use case passed; commands outside it failed because their code was not there. It also showed the limits: one compiled binary held three quarters of the bytes and no coverage tool can see inside it, and coverage missed a compiled module the tests then caught. Tools that minimise containers at run time already exist, so the new part is the direction: from what the application is for, through a graph, down to a build that can be certified. Chainguard is unusually well placed to offer it, and someone will build it.">
+<meta property="og:image" content="https://newsroom.sgit.ai/og/the-minimum-code-below.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The minimum code below: container security from the top down, from the user story to the immutable line, measured on one real tool, SGit Newsroom">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://newsroom.sgit.ai/og/the-minimum-code-below.jpg">
+<link rel="alternate" type="text/markdown" href="the-minimum-code-below.md" title="This page as markdown">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "The minimum code below: container security from the top down, from the user story to the immutable line, measured on one real tool, SGit Newsroom", "headline": "The minimum code below: container security from the top down, from the user story to the immutable line, measured on one real tool, SGit Newsroom", "description": "A conversation at Chainguard's event today sharpened something I have thought for a while. Chainguard does security from the bottom up, and does it very well: it rebuilds the operating system and the libraries from source, keeps the images minimal and manages the whole process. But even the most locked-down image still holds a great deal of code the application never runs, the assurance still depends on testing, and the loop that caused the problem in the first place is still there: when something breaks, you give it more. As soon as the work reaches the application, it stops. My proposal is to come from the other end. Start from the user story and, at every layer down, ask one question: what is the minimum code below this that the layer above needs? Keep that, remove everything else, and draw the immutable line as high as the evidence allows. It did not scale before; with models and fractal semantic graphs, it can. I measured it for this article on a real tool, sgit and its dependencies, running a CI-style use case under coverage and then running it again from a tree holding only the files that ran. Of 1,500 files, 428 were kept, and the use case passed; commands outside it failed because their code was not there. It also showed the limits: one compiled binary held three quarters of the bytes and no coverage tool can see inside it, and coverage missed a compiled module the tests then caught. Tools that minimise containers at run time already exist, so the new part is the direction: from what the application is for, through a graph, down to a build that can be certified. Chainguard is unusually well placed to offer it, and someone will build it.", "url": "https://newsroom.sgit.ai/articles/the-minimum-code-below.html", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "SGit Newsroom", "url": "https://newsroom.sgit.ai"}, "about": {"@type": "SoftwareApplication", "name": "sgit", "sameAs": "https://pypi.org/project/sgit-ai/"}, "author": {"@type": "Person", "name": "Dinis Cruz", "url": "https://sgit.ai/about/index.html"}, "license": "https://creativecommons.org/licenses/by/4.0/"}</script>
+<style>html{background:#faf9f5}body{margin:0;background:#faf9f5;color:#1c1d21;font-family:ui-sans-serif,system-ui,sans-serif;opacity:0;transition:opacity .25s;animation:sg-reveal 0s linear 1.6s forwards}html.ready body{opacity:1;animation:none}@keyframes sg-reveal{to{opacity:1}}</style><noscript><style>body{opacity:1;animation:none}</style></noscript>
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <link rel="stylesheet" href="../assets/themes/themes.css">
+  <link rel="stylesheet" href="../assets/site-nav.css">
+  <script src="../assets/themes/themes.js"></script>
+  <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.0</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../articles/index.html#all">Every article</a>
+      <a class="sl" href="../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../persona/index.html">Read as a persona</a>
+      <a class="sl" href="../for/make.html">Make a reading list</a>
+      <a class="sl" href="../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../wire/index.html">Industry Wire<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../wire/index.html">Today's edition</a>
+      <a class="sl" href="../wire/sources.html">The sources</a>
+      <a class="sl" href="../wire/how.html">How the wire works</a>
+      <a class="sl" href="../wire/owasp/index.html">The OWASP Wire</a>
+      <a class="sl" href="../wire/aws/index.html">The AWS Wire</a>
+      <a class="sl" href="../wire/portugal/index.html">The Portugal Wire</a>
+      <a class="sl" href="../wire/days.html">Day by day</a>
+      <a class="sl" href="../wire/charter.html">The charter</a>
+      <a class="sl" href="../articles/dark-mode-and-four-more.html">Themes: dark mode and four more</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../account/index.html">Your reading account</a>
+      <a class="sl" href="../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../account/personas.html">Your personas</a>
+      <a class="sl" href="../account/top-up.html">Top up</a>
+      <a class="sl" href="../vault/index.html">Your vault, between devices</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../newsroom/board.html">The board</a>
+      <a class="sl" href="../newsroom/log.html">The run log</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../publishers/index.html">For publishers: what is live, how to try it</a>
+      <a class="sl" href="../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+      <a class="sl" href="../demos/vaults/newsroom-synthetic-users/index.html">The study: five readers tested this site</a>
+      <a class="sl" href="../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../newsroom-api/index.html">The reader API: a map, and a review</a>
+      <a class="sl" href="../passkey/index.html">The passkey lab</a>
+      <a class="sl" href="../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../archive/index.html">The archive</a>
+      <a class="sl" href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+      <a class="sl" href="../world-news-day/stories/free-to-republish-is-not-a-licence.html">World News Day: free to republish is not a licence</a>
+      <a class="sl" href="../world-news-day/method.html">World News Day: the method</a>
+      <a class="sl" href="../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../network/index.html">The network</a>
+      <a class="sl" href="../admin/versions.html">Release history</a>
+      <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../engineering/index.html">Engineering: issues &amp; releases</a>
+      <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <div class="nav-tools">
+  <a class="search-btn" href="../search/index.html" title="Search the site, in your browser">Search</a>
+  <link rel="stylesheet" href="https://api.newsroom.sgit.ai/v0.2.0/assets/search/search-nav.css">
+  <sg-meter class="meter-nav" view="balance"></sg-meter>
+  <button class="vault-btn" type="button" aria-expanded="false" title="Your vault: the reading account carried between your devices"><span class="dot"></span>Vault</button>
+  <link rel="stylesheet" href="https://api.newsroom.sgit.ai/v0.2.0/assets/vault-pane/vault-pane.css">
+  <script type="module" src="https://api.newsroom.sgit.ai/v0.2.0/assets/vault-pane/vault-pane.js"></script>
+  <div class="theme-pick"></div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
+  </div>
+</div></nav>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.13.0</span></a></div>
+<main class="doc">
+ <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / The minimum code below: container security from the top down, from the user story to the immutable line, measured on one real tool</p>
+ <h1>The minimum code below: container security from the top down, from the user story to the immutable line, measured on one real tool</h1>
+ <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-14 &middot; <a href="versions/the-minimum-code-below.html" title="Every published version of this article, and what changed">article v1.0.0</a> &middot; <a href="../admin/versions.html" title="The newsroom release it was published in">newsroom v0.12.38</a> &middot; <span class="chip">containers</span><span class="chip">supply-chain</span><span class="chip">attack-surface</span><span class="chip">minimisation</span><span class="chip">chainguard</span><span class="chip">fractal-semantic-graphs</span><span class="chip">code-coverage</span><span class="chip">high-assurance</span><span class="chip">python</span><span class="chip">article</span></p>
+ <p class="abstract"><em><b>Abstract:</b> A conversation at Chainguard's event today sharpened something I have thought for a while. Chainguard does security from the bottom up, and does it very well: it rebuilds the operating system and the libraries from source, keeps the images minimal and manages the whole process. But even the most locked-down image still holds a great deal of code the application never runs, the assurance still depends on testing, and the loop that caused the problem in the first place is still there: when something breaks, you give it more. As soon as the work reaches the application, it stops. My proposal is to come from the other end. Start from the user story and, at every layer down, ask one question: what is the minimum code below this that the layer above needs? Keep that, remove everything else, and draw the immutable line as high as the evidence allows. It did not scale before; with models and fractal semantic graphs, it can. I measured it for this article on a real tool, sgit and its dependencies, running a CI-style use case under coverage and then running it again from a tree holding only the files that ran. Of 1,500 files, 428 were kept, and the use case passed; commands outside it failed because their code was not there. It also showed the limits: one compiled binary held three quarters of the bytes and no coverage tool can see inside it, and coverage missed a compiled module the tests then caught. Tools that minimise containers at run time already exist, so the new part is the direction: from what the application is for, through a graph, down to a build that can be certified. Chainguard is unusually well placed to offer it, and someone will build it.</em></p>
+<figure class="shot" data-shot="mq-layers.webp" data-dir="images/" data-alt="Top down, one question at every layer: what is the minimum code below this that the layer above needs? From a user story, through the workflow, modules and functions, to the dependencies, the language runtime and the operating system. Projected from the top, derived from the code; derived and not projected is code nobody asked for." data-kind="architecture"><figcaption>Top down, one question at every layer: what is the minimum code below this that the layer above needs? From a user story, through the workflow, modules and functions, to the dependencies, the language runtime and the operating system. Projected from the top, derived from the code; derived and not projected is code nobody asked for.</figcaption></figure>
+<h2 id="in-short">In short</h2>
+<ul>
+<li><b>Chainguard secures from the bottom up.</b> Rebuilt from source, minimal images, a managed process, and it stops where the application starts.</li>
+<li><b>Three gaps remain.</b> Code the application never runs, assurance that depends on testing, and the loop of granting more when something breaks.</li>
+<li><b>Come from the top.</b> At every layer, ask for the minimum code below that the layer above needs, and remove the rest.</li>
+<li><b>Measured on one tool.</b> sgit and its dependencies, one use case: 1,500 files down to 428, the use case passing, other commands failing because their code was gone.</li>
+<li><b>And its limits.</b> One compiled binary was three quarters of the bytes; coverage missed a compiled module; only 38% of the statements in the kept files ran.</li>
+<li><b>Others minimise at run time already.</b> SlimToolkit and RapidFort watch what a container touches. The new part is starting from the use case, through a graph.</li>
+<li><b>The prize is assurance.</b> If the code with a vulnerability is not there, there is nothing to patch, and a build traced to its use case can be certified.</li>
+</ul>
+<h2 id="bottom-up">Bottom up, and where it stops</h2>
+<p>I have a lot of time for what Chainguard does. In <a href="attacks-rewritten-as-mandates.html">Attacks rewritten as mandates</a> its public ledger of supply-chain attacks was the example, and the controls it sells, packages rebuilt from source, no install-time scripts, actions pinned to a commit, would by my reading have held in most of them. Its images come in minimal variants without shells or package managers. That is security built from the bottom up: take the operating system, take the libraries, rebuild them, keep them current, and give the customer something they can trust more than the public registry.</p>
+<p>But bottom up has three gaps, and the conversation today made them clearer.</p>
+<p>First, even the most locked-down image holds code the application never runs. My estimate is that in most images it is the large majority; the one case measured below found about 70% of the files in the dependency tree never ran. Every one of those files is attack surface and a source of vulnerability reports.</p>
+<p>Second, the assurance still depends on testing. A hardened base says the parts are trustworthy; whether the application still works on them, and does only what it should, is the customer's problem.</p>
+<p>Third, the loop that caused the problem in the first place is still there. When something breaks, the reflex is to give it more: another package, another permission, a shell back in the image. Chainguard's own tool for tailoring images, Custom Assembly, is built in that direction. Its documentation says it "only allows you to add packages into a given container image" and that "you cannot remove the packages included in the source application image by default."</p>
+<p>And the application itself, where the code is hardest to change, is where the bottom-up model stops. When I asked about virtual patching and similar fixes at the application layer, I did not hear that it is something they do, and I could not find it on their public pages.</p>
+<h2 id="top-down">Top down: the minimum code below</h2>
+<p>My proposal is to come from the other end, and ask one question at every layer: what is the minimum code below this that the layer above needs?</p>
+<p>Start from the user story. What is the code needed to run this use case? Then the workflow: which commands does it call? Then the modules those commands load, the functions in them that actually run, the files in each dependency those functions touch, the parts of the language runtime the code imports, and the binaries and libraries in the operating system the runtime calls. At each layer, keep what the layer above needs and remove everything else. The higher you can draw the line below which nothing changes, the immutable line, the more of the system is fixed, exact and small.</p>
+<p>This is the same shape as the review model in <a href="if-somebody-built-a-company-on-code-review.html">If somebody built a company on code review</a>: a graph projected from the top, from objectives and stories down to the commands they will touch, joined to a graph derived from the code. In that article's words, a node the code has and no story asked for is "derived, not projected". In a code review that is a question for the author. In an image, it is code to remove.</p>
+<p>What it kills is living off the land. An attacker who gets into a process uses what is already there: a shell, an interpreter's standard library, a network tool, a module that can write files. If the only code on the box is the code the use case runs, there is very little to live off. It is what a good linker does when it pulls in only the functions a program references, applied to the whole stack, from the story to the operating system.</p>
+<h2 id="measured">Measured on one real tool</h2>
+<figure class="shot" data-shot="mq-measured.webp" data-dir="images/" data-alt="One use case, measured. sgit 0.21.0 and its dependencies, run under coverage for a CI-style use case, then run again from a tree holding only the files that ran: 1,500 files down to 428, Python source from 4.72 MB to 1.98 MB, compiled code unchanged at 14.78 MB. Inside the kept files 38% of the statements ran; commands outside the use case failed; coverage missed a compiled module the tests caught." data-kind="comparison"><figcaption>One use case, measured. sgit 0.21.0 and its dependencies, run under coverage for a CI-style use case, then run again from a tree holding only the files that ran: 1,500 files down to 428, Python source from 4.72 MB to 1.98 MB, compiled code unchanged at 14.78 MB. Inside the kept files 38% of the statements ran; commands outside the use case failed; coverage missed a compiled module the tests caught.</figcaption></figure>
+<p>Years ago I did a version of this by hand. I had a Python application with close to full code coverage, ran the coverage across the dependencies as well as my own code, took every file the coverage had touched, built a new package from only those, and deployed it. It worked. I used it to shrink Python deployments for Lambda functions, and the cut, as I remember it, was close to 90% of the dependency code.</p>
+<p>So I did it again for this article, on a real tool. The tool was sgit 0.21.0, installed in a fresh virtual environment with its four dependencies: cryptography, osbot-utils, cffi and pycparser. The use case was the one from <a href="sgit-in-a-ci-pipeline.html">sgit in a CI pipeline</a>, run against a local vault server: create a vault, commit a build manifest, push it, clone only the build folder in a fresh home, make a key pair, encrypt a file and decrypt it. I ran it under coverage, measuring every file in the dependency tree, not only sgit's own. Then I copied only the files that had run, plus the compiled modules and data files beside them, into a new tree, and ran the same use case again from that tree with the original packages out of reach.</p>
+<ul>
+<li><b>It worked.</b> The use case passed from the minimal tree: the manifest came back from the scoped clone and the decrypted file read "secret".</li>
+<li><b>The tree was much smaller.</b> 1,500 files became 428. Of 1,416 Python files, 418 had run, and the Python source went from 4.72 MB to 1.98 MB. Two of the four dependencies, cffi and pycparser, ran no Python code at all.</li>
+<li><b>What was not needed was not there.</b> Commands outside the use case failed: <code>sgit history log</code> and <code>sgit vault backup</code> both stopped with <code>ModuleNotFoundError</code>, because the code they needed had been removed.</li>
+</ul>
+<h2 id="limits-measured">What the measurement also showed</h2>
+<p>Three results matter as much as the cut.</p>
+<p><b>The compiled code did not move.</b> 14.78 MB of the dependencies is compiled, three quarters of the whole, and almost all of it is one file: the 14.4 MB Rust binary inside cryptography. Coverage sees Python; it cannot see which functions inside a compiled library ran, so file-level minimisation keeps all of it. Going further means building that binary with only what is used, which is a build-time decision, made by whoever builds from source.</p>
+<p><b>Coverage was not enough.</b> cffi ran no Python code, so a pure coverage cut would drop it. When I removed its compiled backend, the use case failed with <code>No module named '_cffi_backend'</code>: something in the stack loads it without running any of cffi's Python. The tests caught what the coverage missed, which is the point of the method. The evidence for what is needed is the test suite passing, not the coverage report.</p>
+<p><b>Files are a coarse unit.</b> <code>sgit publish</code>, which was not in the use case, still worked, because the module it lives in was loaded by commands that were. Inside the 418 files that ran, only 38% of the statements executed. Function-level removal would cut much more than file-level, and that is where a semantic graph of the code, function by function, earns its place.</p>
+<h2 id="scale">It did not scale before, and now it can</h2>
+<p>None of this is new as an idea. Doing it for one application, by hand, with coverage and a script, works and is too much effort to do for every service and every release. What changed is that the expensive part, understanding what each layer is for and what it calls, is now the part models are good at, and the result can be held as a <a href="introducing-fractal-semantic-graphs.html">fractal semantic graph</a>: the story, its workflows, the modules, the functions, the dependencies and the files of the operating system, each in its own vocabulary, with named edges between them. Then "what is the minimum below this?" is a walk, and "why is this file here?" has an answer, the path up to the story that needs it.</p>
+<p>And it is deterministic where it matters. The graph says what should be kept; the build keeps exactly that; the tests prove the use case still works. Change the use case, and the build is regenerated.</p>
+<h2 id="landscape">Who does what today</h2>
+<figure class="shot" data-shot="mq-landscape.webp" data-dir="images/" data-alt="Three ways to get to less code. Bottom up and hardened, as Chainguard does; runtime minimisation, as SlimToolkit and RapidFort do; and top down by use case, proposed here, which starts from what the application is for and ties every remaining line to a reason." data-kind="comparison"><figcaption>Three ways to get to less code. Bottom up and hardened, as Chainguard does; runtime minimisation, as SlimToolkit and RapidFort do; and top down by use case, proposed here, which starts from what the application is for and ties every remaining line to a reason.</figcaption></figure>
+<p>I said it never scaled before, and that needs a correction: minimising containers is a real field already. <a href="https://github.com/slimtoolkit/slim">SlimToolkit</a>, formerly DockerSlim and now a CNCF Sandbox project, runs a container, watches what it touches and builds a smaller image, by up to 30 times in its own words. <a href="https://www.rapidfort.com/">RapidFort</a> profiles applications at run time and removes the components that never run, and reports large reductions in attack surface and in vulnerabilities; those are its own figures.</p>
+<p>Both work from what a container did. What I am proposing starts from what the application is for: the use case defines what must run, the graph traces every layer, the unit of removal goes down to the function and the build, and the tests are the evidence. Runtime observation is one input to that, not the whole of it.</p>
+<h2 id="certify">The business model: certify what is left</h2>
+<p>Here is the question that turns this into a business. A package has a vulnerability. If the vulnerable code is never called by the use case, why care? And more to the point, why is that code there at all? In a build that keeps only the code a use case needs, a vulnerability in removed code is not a patch to apply; it is a line in the record saying the code is absent.</p>
+<p>That is something that can be certified. A build traced from the story to the operating system, with the graph saying why every remaining line is there and the tests proving the use case, is a high-assurance artefact: a third party can check that the code with each known vulnerability is not present, and say so. That is the next product for a company like Chainguard, which already builds every layer from source and is trusted to say what is in it. It is also the product that, built by someone else on top of a platform like theirs, could eventually deploy without needing the base images at all, which is why I think they should build it, or partner with whoever does.</p>
+<h2 id="limits">What this does not claim</h2>
+<ul>
+<li><b>One tool, one use case.</b> sgit and four dependencies, measured once; other applications will differ, and the bottom two layers, the Python runtime and the operating system, were not measured here.</li>
+<li><b>The 70% to 90% figures are estimates and memory.</b> My Lambda result is from memory; the 70% is this measurement's share of files that never ran.</li>
+<li><b>Chainguard's plans are not public to me.</b> That they do not do this is from their public pages and one conversation; they may be working on it.</li>
+<li><b>Runtime minimisation tools exist.</b> SlimToolkit's and RapidFort's figures are their own; I have not tested them here.</li>
+<li><b>A use case is only as complete as its tests.</b> Anything the tests do not exercise is removed, so the test suite becomes the definition of the application.</li>
+</ul>
+<p>If you are running hardened images and wondering how much of what is in them your application needs, or you want to build the top-down version, write to <a href="mailto:agent@riskmandate.ai">agent@riskmandate.ai</a>.</p>
+<h2 id="sources">Where this comes from</h2>
+<p>A voice memo of mine on 14 October 2026, after a conversation at Chainguard's event, written by this site's agent in the voice of this site; the argument and the editorial responsibility are mine. The measurement was run for this article: sgit 0.21.0 in a fresh virtual environment, a use case against a local vault server run under coverage 7 across the whole dependency tree, a tree built from the files that ran, and the same use case run from it. Chainguard, <a href="https://edu.chainguard.dev/chainguard/containers/custom-assembly/overview/">Custom Assembly overview</a>; <a href="https://github.com/slimtoolkit/slim">SlimToolkit</a>; <a href="https://www.rapidfort.com/">RapidFort</a>. All read on 14 October 2026.</p>
+<sg-meter view="page" kind="article" date="2026-10-14" topics="site-and-engineering graphs-and-knowledge" title="The minimum code below: container security from the top down, from the user story to the immutable line, measured on one real tool, SGit Newsroom"></sg-meter>
+<section class="athreads" id="threads">
+ <h2>Threads</h2>
+ <p class="athreads-meta"><span class="tchip">Site &amp; engineering</span><span class="tchip">Graphs &amp; knowledge</span> <a href="graphs.html#the-minimum-code-below">This article as a graph &rarr;</a></p>
+ <div class="athreads-cols"><div><h3>Builds on</h3><ul><li><a href="attacks-rewritten-as-mandates.html">Attacks rewritten as mandates: 28 supply-chain incidents, the column each one was missing, and why the next maintainer is an agent</a> <span class="dim">28 supply-chain attacks read as reach beyond mandate: what a hardened registry stops, what only a written mandate can, and why agents change it.</span></li><li><a href="if-somebody-built-a-company-on-code-review.html">If somebody built a company on code review: how I would do it, and why it is only now possible</a> <span class="dim">A reader's seven questions answered as a company plan: one reader for every layer, review as a science, and the layers as the customer's own.</span></li><li><a href="sgit-in-a-ci-pipeline.html">sgit in a CI pipeline: encrypted, versioned data in and out of GitHub Actions, between its jobs, through write-only lanes, and a key for every job</a> <span class="dim">Encrypted, versioned vaults as the way data gets into, out of and between CI jobs, with a key per job and a sidecar when there is no server.</span></li><li><a href="introducing-fractal-semantic-graphs.html">Fractal Semantic Graphs: everything connects to everything, and nobody has to share a schema</a> <span class="dim">A fractal semantic graph has no privileged level and no single schema: each world keeps its own vocabulary and connects to others through named edges.</span></li></ul></div><div><h3>Continued by</h3><ul><li><a href="chainguard-mapped.html">Chainguard, mapped: what it builds, what it publishes, how far up the stack its context goes, and where an open behaviour policy and an encrypted vault could plug in</a> <span class="dim">Chainguard mapped from OS to agents, its public feeds counted, and the context layer above the package where an open policy and a vault fit.</span></li></ul></div></div>
+ <p class="small dim"><a href="index.html">All articles</a> &middot; <a href="graphs.html">All graphs</a></p>
+ <p class="small dim">Article No. 112 &middot; <a href="../for/make.html#r=112">start a reading list with it</a></p>
+</section>
+<aside class="lkit" aria-label="For LinkedIn"><b>Posting this article on LinkedIn?</b> The cover is <a href="banners/the-minimum-code-below.jpg" download>the-minimum-code-below.jpg</a> (1920&times;1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page.</aside>
+ <p class="subteaser"><b>Want the next issue by email.</b> One issue a week or so: what was published, what it adds up to, and what is worth your time. <a class="cta2" href="../subscribe/index.html">Subscribe to the SGit Newsroom &rarr;</a></p>
+ <p class="small dim" style="margin-top:2rem"><a href="index.html">&larr; All articles</a></p>
+</main>
+<script>
+(function () {
+ fetch('../assets/shots.js?v=v0.7.87')
+ .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+ .then(function (t) { (0, eval)(t); })
+ .catch(function (e) { console.error('[shots] component failed to load:', e); });
+}());
+</script>
+<script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": "https://buy.stripe.com/6oUfZ9ez65vVgU2fY15os04"}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
+<script>
+import('https://api.newsroom.sgit.ai/v0.2.0/assets/components/sg-meter/v1/v1.4/v1.4.1/sg-meter.js?v=v0.7.87')
+ .catch(function (e) { console.error('[sg-meter] component failed to load:', e); });
+</script>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="netline"><a href="https://sgit.ai" style="display:inline;padding:0"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://pt.newsroom.sgit.ai" style="display:inline;padding:0">&#8593; pt.newsroom.sgit.ai</a> &middot; <a href="https://graphs.sgit.ai" style="display:inline;padding:0">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai" style="display:inline;padding:0">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai" style="display:inline;padding:0">&#8593; nhi.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai" style="display:inline;padding:0">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../admin/versions.html">v0.13.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="the-minimum-code-below.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../index.html">&#8594; The front page</a>
+    <a href="../wire/index.html">The Industry Wire</a>
+    <a href="../wire/owasp/index.html">The OWASP Wire</a>
+    <a href="../wire/aws/index.html">The AWS Wire</a>
+    <a href="../wire/portugal/index.html">The Portugal Wire</a>
+    <a href="../articles/index.html#all">Every article</a>
+    <a href="../articles/newsletter/index.html">The newsletter</a>
+    <a href="../articles/collections/index.html">Collections</a>
+    <a href="../articles/desk/index.html">From the desk</a>
+    <a href="../articles/graphs.html">As graphs</a>
+    <a href="../subscribe/index.html">Subscribe</a>
+    <a href="../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../account/index.html">Your reading account</a>
+    <a href="../account/newsroom.html">Your newsroom</a>
+    <a href="../account/personas.html">Your personas</a>
+    <a href="../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../newsroom/index.html">How the newsroom runs</a>
+    <a href="../newsroom/policies.html">Behaviour policies</a>
+    <a href="../newsroom/publish.html">How to publish</a>
+    <a href="../newsroom/board.html">The board</a>
+    <a href="../newsroom/log.html">The run log</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../design/index.html">The design, and what runs</a>
+    <a href="../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../corrections/index.html">Corrections must propagate</a>
+    <a href="../provenance/index.html">Provenance is the product</a>
+    <a href="../economics/index.html">Paying the fact creator</a>
+    <a href="../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../replicate/index.html">Replicate this newsroom</a>
+    <a href="../publishers/index.html">For publishers</a>
+    <a href="../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+    <a href="../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../archive/index.html">The archive</a>
+    <a href="../network/index.html">The network</a>
+    <a href="../admin/versions.html">Release history</a>
+    <a href="../admin/index.html">Admin &amp; engineering</a>
+    <a href="../about/participant.html">Where we lose</a>
+    <a href="../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+
+<script>
+(function(){var R=document.documentElement.getAttribute('data-root')||'';var V='?v=' + 'v0.7.87';var C=[R,'','../','/'].filter(function(v,i,a){return a.indexOf(v)===i});
+function wait(ms){return new Promise(function(res){var t=Date.now();(function p(){if(window.sg)return res(window.sg);if(Date.now()-t>ms)return res(null);setTimeout(p,60)})()})}
+function grab(sg,p){return new Promise(function(res){(async function(){if(sg&&sg.vfs&&sg.vfs.readText){try{var t=await sg.vfs.readText(p);if(t)return res(t)}catch(e){}}try{var r=await fetch(p+V);if(r.ok)return res(await r.text())}catch(e){}res(null)})()})}
+async function css(sg){for(var i=0;i<C.length;i++){var p=C[i]+'assets/newsroom.css';if(sg&&sg.loadCss){try{await sg.loadCss(p);return}catch(e){}}var t=await grab(sg,p);if(t){var s=document.createElement('style');s.textContent=t;document.head.appendChild(s);return}}}
+async function js(sg,name){name=name||'assets/site.js';for(var i=0;i<C.length;i++){var p=C[i]+name;if(sg&&sg.loadJs){try{await sg.loadJs(p);return}catch(e){}}var t=await grab(sg,p);if(t){try{(0,eval)(t)}catch(e){console.error('[site] js failed',name,e)}return}}}
+async function boot(){var inVault=false;try{inVault=(window!==window.parent)||location.protocol==='blob:'}catch(e){inVault=true}
+var sg=inVault?await wait(2500):null;window.__sgitBoot={roots:C,grab:function(p){return grab(sg,p)},version:V};await css(sg);await js(sg);document.documentElement.classList.add('ready');try{window.parent&&window.parent.postMessage({type:'sg-app-ready'},'*')}catch(e){}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+var mine=V.slice(3),last=0;
+function fresh(){if(location.hostname!=='sgit.ai'||Date.now()-last<60000)return;last=Date.now();
+fetch('/version.txt?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(t){t=(t||'').trim();if(!/^v[0-9]+[.][0-9]+[.][0-9]+$/.test(t)||t===mine)return;
+var k='sgit.fresh:'+location.pathname;try{if(sessionStorage.getItem(k)===t)return;sessionStorage.setItem(k,t)}catch(e){}
+var u=new URL(location.href);u.searchParams.set('v',t);location.replace(u.href)}).catch(function(){})}
+try{var u=new URL(location.href);if(u.searchParams.get('v')===mine){u.searchParams.delete('v');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}
+fresh();addEventListener('pageshow',function(e){if(e.persisted){last=0;fresh()}});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')fresh()});
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,189 @@
+{
+  "slug": "the-vault-crosses-chrome-profiles",
+  "teaser": "The reader's vault carries the newsroom between Chrome profiles as it does between devices, a way to share state across browser sessions nobody built.",
+  "topics": [
+    "vaults-and-method",
+    "graphs-and-knowledge"
+  ],
+  "core_idea": "Because the reader's state is records in a vault, one file per device, a second Chrome profile is just another device, so the vault gives a person memory and state between browser sessions and accounts, the way sgit already does for agents, and it was found by using the newsroom rather than built.",
+  "nodes": [
+    {
+      "id": "profiles",
+      "label": "Separate Chrome profiles",
+      "kind": "concept",
+      "summary": "Each Google account in its own profile, with its own history, passwords, cookies and site storage."
+    },
+    {
+      "id": "awkward",
+      "label": "Moving state between them",
+      "kind": "question",
+      "summary": "Copy, paste or email it to yourself; nothing carries a site's state from one profile to another."
+    },
+    {
+      "id": "meter",
+      "label": "Activity in local storage",
+      "kind": "artefact",
+      "summary": "The reading meter recorded reads, spend, personas and ratings in the browser on 10 October."
+    },
+    {
+      "id": "miss",
+      "label": "I miss it",
+      "kind": "example",
+      "summary": "Four devices, four balances: the value to the reader made the activity worth keeping."
+    },
+    {
+      "id": "vault",
+      "label": "The reader's vault",
+      "kind": "artefact",
+      "summary": "Three sgit vaults opened from a passkey in the browser, one file per device, the view computed."
+    },
+    {
+      "id": "marks",
+      "label": "Marks and a stake",
+      "kind": "example",
+      "summary": "Notes like read later and not for me, and seen wire stories, gave the reader a reason to keep their newsroom."
+    },
+    {
+      "id": "devices",
+      "label": "Across devices",
+      "kind": "claim",
+      "summary": "The feature asked for: every device's activity in the browser you hold, one balance."
+    },
+    {
+      "id": "crossing",
+      "label": "Across profiles",
+      "kind": "claim",
+      "summary": "The feature found: a second profile is a second device to the vault, so the state crosses."
+    },
+    {
+      "id": "doors",
+      "label": "A door per way in",
+      "kind": "method",
+      "summary": "An iCloud Keychain passkey answers both profiles; a Google account's passkey does not follow, so the phone or the recovery code adds a door once."
+    },
+    {
+      "id": "common",
+      "label": "Profiles are more common",
+      "kind": "question",
+      "summary": "A hypothesis: people switch profiles many times a day and computers a few; no published figure was found."
+    },
+    {
+      "id": "memory",
+      "label": "Memory between sessions",
+      "kind": "concept",
+      "summary": "The same thing sgit does for agents in different Claude accounts, done for a person through a website."
+    },
+    {
+      "id": "found",
+      "label": "Found, not built",
+      "kind": "claim",
+      "summary": "No code mentions profiles; the property came from records, never totals, and files with one author."
+    }
+  ],
+  "edges": [
+    {
+      "from": "profiles",
+      "to": "awkward",
+      "rel": "leads-to"
+    },
+    {
+      "from": "meter",
+      "to": "miss",
+      "rel": "leads-to"
+    },
+    {
+      "from": "miss",
+      "to": "vault",
+      "rel": "leads-to"
+    },
+    {
+      "from": "vault",
+      "to": "marks",
+      "rel": "produces"
+    },
+    {
+      "from": "marks",
+      "to": "devices",
+      "rel": "leads-to"
+    },
+    {
+      "from": "devices",
+      "to": "crossing",
+      "rel": "extends"
+    },
+    {
+      "from": "crossing",
+      "to": "awkward",
+      "rel": "answers"
+    },
+    {
+      "from": "crossing",
+      "to": "doors",
+      "rel": "depends-on"
+    },
+    {
+      "from": "crossing",
+      "to": "common",
+      "rel": "leads-to"
+    },
+    {
+      "from": "crossing",
+      "to": "memory",
+      "rel": "example-of"
+    },
+    {
+      "from": "found",
+      "to": "crossing",
+      "rel": "answers"
+    },
+    {
+      "from": "vault",
+      "to": "found",
+      "rel": "produces"
+    }
+  ],
+  "links": {
+    "articles": [
+      "replicating-the-agentic-inbox",
+      "not-a-straight-line",
+      "pay-after-you-read",
+      "i-miss-it",
+      "the-passkey-opens-the-vault",
+      "the-vault-is-live",
+      "the-site-is-an-inbox",
+      "encrypted-memory-for-isolated-agents",
+      "memory-is-not-a-spectator-sport",
+      "stop-the-bleeding-then-ask-for-it-back"
+    ],
+    "pages": [],
+    "sites": [
+      "https://support.google.com/chrome/answer/2364824",
+      "https://support.google.com/chrome/answer/13168025",
+      "https://support.claude.com/en/articles/12902428-using-claude-in-chrome-safely"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "to the vault a second Chrome profile is a second device",
+      "why": "The whole mechanism in one clause."
+    },
+    {
+      "text": "This feature needed no new development.",
+      "why": "The point about features found by use rather than built."
+    }
+  ],
+  "figures": [
+    {
+      "file": "vp-profiles.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/vp-profiles.webp",
+      "caption": "Two Chrome profiles on one computer, each signed in to a different Google account, each with its own local storage that the other cannot see. The reader's vault sits outside both: each profile writes its own file to it and reads the other's, so the marks, the reading and the balance in one are there in the other. The way in differs by where the passkey lives.",
+      "kind": "architecture"
+    },
+    {
+      "file": "vp-path.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/vp-path.webp",
+      "caption": "Six steps, three days, and not a straight line. Each of the first five was built for its own reason, following what the reader valued; the sixth was not built at all, it was found by using the others. Dates and releases from the release histories of sgit.ai and the newsroom.",
+      "kind": "timeline"
+    }
+  ]
+}

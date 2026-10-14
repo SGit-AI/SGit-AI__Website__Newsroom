@@ -55,15 +55,16 @@ def served_paths():
 
 
 # The reader files, by path from the site root: what tools/served.json in the API repository lists, as prefixes.
-_PATH = (r"(assets/(?:components|vault-pane|search|vendor/sg-vault)/[^\"'\s<>]+"
+_PATH = (r"(assets/(?:components|vault-pane|search|vendor/sg-vault|vendor/qrcode-generator)/[^\"'\s<>]+"
          r"|assets/(?:subscribe\.js|newsroom-vault\.js|door\.js)(?:\?[^\"'\s<>]*)?"
          r"|for/(?:reading-list|make)\.js|for/for\.css"
-         r"|wire/(?:wire|vault-reader)\.js|wire/wire\.css"
+         r"|wire/(?:wire|vault-reader|graphs|subscribe)\.js|wire/wire\.css"
          r"|passkey/(?:lab\.js|lab\.css|vectors\.json))")
 # A page in for/, wire/ or passkey/ named its own files without a directory.
 SAME_DIR = {"reading-list.js": "for/", "make.js": "for/", "for.css": "for/",
-            "wire.js": "wire/", "wire.css": "wire/", "vault-reader.js": "wire/",
+            "wire.js": "wire/", "wire.css": "wire/", "vault-reader.js": "wire/", "graphs.js": "wire/", "subscribe.js": "wire/",
             "lab.js": "passkey/", "lab.css": "passkey/", "vectors.json": "passkey/"}
+# a wire page one level down (wire/<slug>/index.html) names the wire's own files as ../wire.css, ../subscribe.js
 _SAME = r"(" + "|".join(re.escape(k) for k in SAME_DIR) + r")"
 
 
@@ -71,14 +72,14 @@ def is_reader_path(path):
     """A site-root path that the API host serves (a file of the move)."""
     return bool(re.fullmatch(_PATH, path.lstrip("/")))
 
-_REL = r"(?:\./|(?:\.\./)+)?"                       # '../', '../../', './' or nothing (a page at the root)
+_REL = r"(?:\.\.?/)*"                              # any run of './' and '../' (a wire page one level down writes '.././'), or nothing
 _API = re.escape(HOST) + r"/v\d+\.\d+\.\d+/"        # any release of the host
 
 # The normaliser: three quoted forms of a reader-file reference, each read as "API/<path>".
 NORMALISE = [
     (re.compile(r"([\"'])" + _API + _PATH + r"\1"), r"\1API/\2\1"),
     (re.compile(r"([\"'])" + _REL + _PATH + r"\1"), r"\1API/\2\1"),
-    (re.compile(r"([\"'])(?:\./)?" + _SAME + r"\1"), lambda m: f"{m.group(1)}API/{SAME_DIR[m.group(2)]}{m.group(2)}{m.group(1)}"),
+    (re.compile(r"([\"'])" + _REL + _SAME + r"\1"), lambda m: f"{m.group(1)}API/{SAME_DIR[m.group(2)]}{m.group(2)}{m.group(1)}"),
 ]
 
 
@@ -95,7 +96,7 @@ URL_ATTR = re.compile(r"""\b(href|src|data-src|action|poster|data-dir|data-trail
 SCRIPT = re.compile(r"(<script\b[^>]*>)([\s\S]*?)(</script>)")
 QUOTED = re.compile(r"""(["'])([^"'\n]*)\1""")
 _FULL_REL = re.compile(_REL + _PATH)
-_FULL_SAME = re.compile(r"(?:\./)?" + _SAME)
+_FULL_SAME = re.compile(_REL + _SAME)
 _FULL_API = re.compile(_API + _PATH)
 
 

@@ -1,0 +1,17 @@
+{
+  "what": "The vault the AWS Wire pages (/wire/aws/) read in the browser, under the same contract as admin/build/wire-vault.json: the read key is public on purpose, it reads every file and every commit of this vault and cannot write, so everything in it is public, for ever. The write key is held by the agents that run the wire and is not on this site.",
+  "slug": "aws",
+  "name": "The AWS Wire",
+  "about": "Everything AWS announced, filtered by a declared stack: what is new, what is insecure, what is being retired, what costs more and what tooling changed for the services the named reader runs, with everything else still listed as withheld, with the reason. The stack is a file in the vault (data/stack.json: the services, their aliases and the deadlines that matter), and this page draws it: the deadlines at the top of the edition, each service with the items that touched it.",
+  "endpoint": "https://dev.send.sgraph.ai",
+  "vault_id": "v202bla5",
+  "read_key": "sgit_public_read_ad5c3f9e1f4d7632db06cd27f6ee6a256063300c426f4a94e7de33cf5a53e892:v202bla5",
+  "ref_ttl_s": 120,
+  "reads": ["data/bundle.json", "data/deliveries.json", "data/releases.json", "docs/*.md"],
+  "clone": "sgit clone sgit_public_read_ad5c3f9e1f4d7632db06cd27f6ee6a256063300c426f4a94e7de33cf5a53e892:v202bla5",
+  "status": "beta",
+  "named_readers_what": "People who agreed, on the date recorded, to be a named reader of this wire while it is a beta: the vault carries a persona in their name, a personal brief and the stack they run, all public. The edition page offers a lens for each persona listed here and for no other named person.",
+  "named_readers": [
+    {"persona": "dinis", "name": "Dinis Cruz", "agreed": "2026-10-13", "how": "in chat, 13 October 2026, when the OWASP and AWS wires were added: the lens dinis is the named reader as before, extending the agreement of 12 October for the Industry Wire"}
+  ]
+}

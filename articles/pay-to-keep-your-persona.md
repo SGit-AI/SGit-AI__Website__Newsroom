@@ -2,7 +2,7 @@
 
 > Most of what readers are asked to pay for, they pay for because they have to, because they are made to feel they should, or because it is the right thing to do. That works to a degree, and it does not scale. The value proposition we want is the opposite: a reader pays because it helps them, because what they are buying is time, context, focus, the ability to make good decisions and a better experience. On this site that thing now has a name. Your reading builds a persona, with a name and a graph you can watch grow, and you can have several, because a persona is a way to manage focus: one for security, one for AI development, one for everything else. Start from five made from what this site publishes, keep articles in a persona or put them out of it, and switch between them. Today it all lives in one browser, so opening the site on an iPad and then on a laptop gives you two strangers. That is the bad experience worth fixing, and the thing worth paying for: a persona that follows you to your phone, your laptop and your agent, with the privacy intact.
 
-*Source: <https://newsroom.sgit.ai/articles/pay-to-keep-your-persona.html> · sgit.ai v0.7.86 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+*Source: <https://newsroom.sgit.ai/articles/pay-to-keep-your-persona.html> · sgit.ai v0.7.87 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 
@@ -130,6 +130,7 @@ Startups & strategyNews & evidence[This article as a graph →](graphs.md#pay-to
 
 ### Continued by
 
+- [Hooks are kernel code: a maturity model, the first ten hooks mapped, and a brief for a hooks site and feed where you pay for state, never to run](hooks-are-kernel-code.md) Hooks are small code with kernel reach: a maturity model, the first ten hooks mapped, and a brief for a hooks site where you pay for state, never to run.
 - [The article remains a product: Jonathan Palmer's four outputs for a newsroom with no human readers, checked against one that runs](the-article-remains-a-product.md) Jonathan Palmer's four outputs for a newsroom with no human readers, quoted line by line and checked against newsroom.sgit.ai as it runs, screenshots included.
 - [From me to you, in a link: a personal reading list, two briefs to build and use it, and the loop that makes it a day's work](a-reading-list-in-a-link.md) A reading list from one person to another, in a link the server never sees; a brief to build it, a brief to use it, and the loop that ships it in a day.
 - [A model in the tab: Chrome now ships an LLM to capable desktops, and it is the hardest piece of the client-side puzzle](a-model-in-the-tab.md) Chrome now ships a language model any page can prompt, offline, on capable desktops. The last piece of the client-side puzzle, with rough edges.
