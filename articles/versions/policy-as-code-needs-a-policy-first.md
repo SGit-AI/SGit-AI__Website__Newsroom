@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-14 | published | 2,821 | first published | this release | [current](../policy-as-code-needs-a-policy-first.md) |
+| **v1.0.0** | 2026-10-14 | published | 2,821 | first published | [`484d23815`](https://github.com/SGit-AI/SGit-AI__Website/commit/484d2381504a0c3db8db5f0a30fb5bfc627bd553) | [current](../policy-as-code-needs-a-policy-first.md) |
 
 [← Back to the article](../policy-as-code-needs-a-policy-first.md) · [All articles](../index.md)
 

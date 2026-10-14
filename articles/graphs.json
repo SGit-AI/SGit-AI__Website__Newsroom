@@ -55,6 +55,230 @@
   ],
   "articles": [
     {
+      "slug": "a-policy-for-every-skill",
+      "title": "A policy for every skill: Sean Turner's natural-language control for agent skills, the behaviour policy behind it, and using models to need them less",
+      "date": "2026-10-14",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/a-policy-for-every-skill.html",
+      "markdown": "https://newsroom.sgit.ai/articles/a-policy-for-every-skill.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/a-policy-for-every-skill.webp",
+      "teaser": "Sean Turner's natural-language control for agent skills, read as a behaviour policy, and why the description, not the code, stays canonical.",
+      "topics": [
+        "agents-and-policy",
+        "graphs-and-knowledge"
+      ],
+      "tags": [
+        "agent-skills",
+        "agent-behaviour-policy",
+        "natural-language-policy",
+        "ci",
+        "policy-as-code",
+        "supply-chain",
+        "prompt-injection",
+        "fractal-semantic-graphs",
+        "governance",
+        "article"
+      ],
+      "links_out": [
+        "attacks-rewritten-as-mandates",
+        "footprint-and-blast-radius",
+        "the-policy-draws-the-liability-line",
+        "hope-or-enforcement",
+        "policy-as-code-needs-a-policy-first",
+        "introducing-fractal-semantic-graphs",
+        "riskmandate-ten-questions"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "sk-pipeline.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/sk-pipeline.webp",
+          "caption": "A policy for every skill. The natural-language control at the top is the canonical source; each contributed skill passes deterministic checks, a model that reads it in its context, rules an agent generated from the control, and a human review, before it reaches the organisation's repository and the developers who pull it.",
+          "kind": "architecture"
+        },
+        {
+          "file": "sk-context.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/sk-context.webp",
+          "caption": "Same check, different context, different verdict. Two illustrative skills described in the columns of an agent behaviour policy: one that turns internal documentation into a post, with trusted inputs and a person pressing publish; one that researches the web, with untrusted inputs and a barrier that must treat fetched text as data.",
+          "kind": "comparison"
+        }
+      ],
+      "graph": {
+        "slug": "a-policy-for-every-skill",
+        "teaser": "Sean Turner's natural-language control for agent skills, read as a behaviour policy, and why the description, not the code, stays canonical.",
+        "topics": [
+          "agents-and-policy",
+          "graphs-and-knowledge"
+        ],
+        "core_idea": "A natural-language control checked in CI for every skill contributed to an organisation's repository is an agent behaviour policy for a skill, judged in context by its mandate, reach and inputs; on its own it is hope-based security, so an agent should generate deterministic rules from it while the description stays canonical, and a catalogue of skills in a common ontology turns dangerous combinations into queries.",
+        "nodes": [
+          {
+            "id": "skills",
+            "label": "Skills are the new dependency",
+            "kind": "concept",
+            "summary": "Instructions an agent follows with a developer's reach, pulled by hundreds of people."
+          },
+          {
+            "id": "control",
+            "label": "Sean Turner's skill control",
+            "kind": "example",
+            "summary": "A natural-language policy and a CI pipeline for every contributed skill."
+          },
+          {
+            "id": "context",
+            "label": "Read in context",
+            "kind": "method",
+            "summary": "Internal documents in is different from web pages in; untrusted text must be treated as data."
+          },
+          {
+            "id": "beside",
+            "label": "Beside the security scan",
+            "kind": "claim",
+            "summary": "An operational question: is this the right way to give this skill to the workforce?"
+          },
+          {
+            "id": "quality",
+            "label": "Quality review leaves inputs out",
+            "kind": "example",
+            "summary": "A structural validator and an LLM judge score clarity and scope; none asks where inputs come from."
+          },
+          {
+            "id": "abp",
+            "label": "A behaviour policy for a skill",
+            "kind": "concept",
+            "summary": "Mandate is what it is for, reach is what it touches, the gap is the risk."
+          },
+          {
+            "id": "trifecta",
+            "label": "The lethal trifecta",
+            "kind": "concept",
+            "summary": "Private data, untrusted content and external communication together."
+          },
+          {
+            "id": "hope",
+            "label": "Hope-based security",
+            "kind": "claim",
+            "summary": "A natural-language control is better than nothing and needs deterministic controls around it."
+          },
+          {
+            "id": "codify",
+            "label": "Models write the rules",
+            "kind": "method",
+            "summary": "An agent writes deterministic checks from the control; the code runs every time."
+          },
+          {
+            "id": "canonical",
+            "label": "The description stays canonical",
+            "kind": "claim",
+            "summary": "Change the description, regenerate the code."
+          },
+          {
+            "id": "graph",
+            "label": "A catalogue is a graph",
+            "kind": "method",
+            "summary": "Skills in a common ontology make dangerous combinations a query."
+          },
+          {
+            "id": "licence",
+            "label": "Policy, licence, insurance",
+            "kind": "artefact",
+            "summary": "Describe the behaviour, grant a licence to operate, make the agent insurable: designs today."
+          }
+        ],
+        "edges": [
+          {
+            "from": "skills",
+            "to": "control",
+            "rel": "leads-to"
+          },
+          {
+            "from": "control",
+            "to": "context",
+            "rel": "depends-on"
+          },
+          {
+            "from": "control",
+            "to": "beside",
+            "rel": "extends"
+          },
+          {
+            "from": "quality",
+            "to": "context",
+            "rel": "contrasts"
+          },
+          {
+            "from": "control",
+            "to": "abp",
+            "rel": "example-of"
+          },
+          {
+            "from": "context",
+            "to": "trifecta",
+            "rel": "answers"
+          },
+          {
+            "from": "abp",
+            "to": "hope",
+            "rel": "leads-to"
+          },
+          {
+            "from": "hope",
+            "to": "codify",
+            "rel": "leads-to"
+          },
+          {
+            "from": "codify",
+            "to": "canonical",
+            "rel": "depends-on"
+          },
+          {
+            "from": "abp",
+            "to": "graph",
+            "rel": "produces"
+          },
+          {
+            "from": "graph",
+            "to": "trifecta",
+            "rel": "answers"
+          },
+          {
+            "from": "canonical",
+            "to": "licence",
+            "rel": "leads-to"
+          }
+        ],
+        "links": {
+          "articles": [
+            "attacks-rewritten-as-mandates",
+            "footprint-and-blast-radius",
+            "the-policy-draws-the-liability-line",
+            "hope-or-enforcement",
+            "policy-as-code-needs-a-policy-first",
+            "introducing-fractal-semantic-graphs",
+            "riskmandate-ten-questions"
+          ],
+          "pages": [],
+          "sites": [
+            "https://www.mongodb.com/docs/meta/tutorials/review-agent-skill/",
+            "https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/",
+            "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/policy.html",
+            "https://riskmandate.ai",
+            "https://riskmandate.ai/licence-to-operate.html"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "I usually put that as using models to not use models.",
+            "why": "The model writes the deterministic part instead of judging every case."
+          },
+          {
+            "text": "the description stays the canonical version, not the code",
+            "why": "What makes regenerating the rules safe."
+          }
+        ]
+      }
+    },
+    {
       "slug": "policy-as-code-needs-a-policy-first",
       "title": "Policy as code needs a policy first: what an agent behaviour policy adds, and how to reverse engineer one from the code, the spreadsheet or the paper you already have",
       "date": "2026-10-14",
@@ -90,7 +314,9 @@
         "hope-or-enforcement",
         "the-human-in-the-loop"
       ],
-      "links_in": [],
+      "links_in": [
+        "a-policy-for-every-skill"
+      ],
       "figures": [
         {
           "file": "pq-altitudes.webp",
@@ -558,6 +784,7 @@
         "two-agents-one-vault"
       ],
       "links_in": [
+        "a-policy-for-every-skill",
         "sgit-in-a-ci-pipeline"
       ],
       "figures": [
@@ -2284,6 +2511,7 @@
         "authority-outside-the-model"
       ],
       "links_in": [
+        "a-policy-for-every-skill",
         "policy-as-code-needs-a-policy-first",
         "attacks-rewritten-as-mandates",
         "four-frameworks-one-agent",
@@ -14001,6 +14229,7 @@
         "the-investigation-github-owes-its-customers"
       ],
       "links_in": [
+        "a-policy-for-every-skill",
         "the-policy-draws-the-liability-line",
         "who-owns-the-words",
         "where-the-platform-draws-the-line",
@@ -15412,6 +15641,7 @@
         "the-agent-team-as-it-runs"
       ],
       "links_in": [
+        "a-policy-for-every-skill",
         "policy-as-code-needs-a-policy-first",
         "sgit-in-a-ci-pipeline",
         "attacks-rewritten-as-mandates",
@@ -22783,6 +23013,7 @@
         "six-agents-one-inbox"
       ],
       "links_in": [
+        "a-policy-for-every-skill",
         "policy-as-code-needs-a-policy-first",
         "attacks-rewritten-as-mandates",
         "four-frameworks-one-agent",
@@ -26333,6 +26564,7 @@
       ],
       "links_out": [],
       "links_in": [
+        "a-policy-for-every-skill",
         "policy-as-code-needs-a-policy-first",
         "every-link-points-back",
         "why-i-love-wardley-maps",

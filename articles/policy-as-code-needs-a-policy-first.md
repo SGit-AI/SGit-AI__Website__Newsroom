@@ -137,6 +137,10 @@ Agents & policyGraphs & knowledge[This article as a graph →](graphs.md#policy-
 - [Hope or enforcement: one customer service agent, three designs, and who keeps each promise](hope-or-enforcement.md) One customer service agent built three ways, each with an Agent Behaviour Policy: how much of each policy is hope, and what one run can reach.
 - [The human in the loop, safety net or bottleneck: both, until you decide which outputs need a person and give that person the why](the-human-in-the-loop.md) Checking every output is a bottleneck and a weak safety net; put the person where it cannot be undone, and let controls do the rest.
 
+### Continued by
+
+- [A policy for every skill: Sean Turner's natural-language control for agent skills, the behaviour policy behind it, and using models to need them less](a-policy-for-every-skill.md) Sean Turner's natural-language control for agent skills, read as a behaviour policy, and why the description, not the code, stays canonical.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 110 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=110)
