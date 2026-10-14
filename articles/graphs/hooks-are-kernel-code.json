@@ -1,0 +1,219 @@
+{
+  "slug": "hooks-are-kernel-code",
+  "teaser": "Hooks are small code with kernel reach: a maturity model, the first ten hooks mapped, and a brief for a hooks site where you pay for state, never to run.",
+  "topics": [
+    "agents-and-policy",
+    "site-and-engineering"
+  ],
+  "core_idea": "Agent hooks are tiny but run on every matching action with the user's permissions and can block or rewrite, so they should be managed like kernel code; their small size makes them the best case study for code review, fractal semantic graphs and change blast radius, a maturity model rates each from the prompt to off the machine against its power, trifecta legs and sandbox, the first ten are mapped with their dependencies, and a proposed site and feed publishes each hook from its intent with graph, tests, version and signature, free to run and paid for the state it keeps.",
+  "nodes": [
+    {
+      "id": "kernel",
+      "label": "Hooks are kernel code",
+      "kind": "claim",
+      "summary": "Every matching action, the user's permissions, the power to block or rewrite."
+    },
+    {
+      "id": "small",
+      "label": "Small enough to do completely",
+      "kind": "concept",
+      "summary": "A hook can be five lines; the whole graph fits on a page."
+    },
+    {
+      "id": "first10",
+      "label": "The first ten hooks",
+      "kind": "artefact",
+      "summary": "Three in use, five tested, two proposed; 4 to 26 lines each."
+    },
+    {
+      "id": "scan",
+      "label": "The scan below the hook",
+      "kind": "example",
+      "summary": "An eleven-line hook calls a 37-line scan, where the gap was."
+    },
+    {
+      "id": "fractal",
+      "label": "Hooks of hooks",
+      "kind": "concept",
+      "summary": "Hooks call scripts, models, agents and other hooks."
+    },
+    {
+      "id": "integrity",
+      "label": "The integrity hook",
+      "kind": "method",
+      "summary": "Checks every installed hook against signed hashes at session start."
+    },
+    {
+      "id": "review-agent",
+      "label": "A security review agent",
+      "kind": "method",
+      "summary": "Most capable model, read-only tools, no network."
+    },
+    {
+      "id": "blast",
+      "label": "Change blast radius",
+      "kind": "method",
+      "summary": "A change climbs the graph to the intents and installs it affects."
+    },
+    {
+      "id": "maturity",
+      "label": "A maturity model",
+      "kind": "concept",
+      "summary": "L0 prompt, L1 model decides, L2 script, L3 managed and proven, L4 off the machine."
+    },
+    {
+      "id": "questions",
+      "label": "Power, trifecta, sandbox",
+      "kind": "method",
+      "summary": "Three questions for every hook at every level."
+    },
+    {
+      "id": "thumb",
+      "label": "Less deterministic, less reach",
+      "kind": "claim",
+      "summary": "The rule of thumb that comes out of the model."
+    },
+    {
+      "id": "site",
+      "label": "A hooks site and feed",
+      "kind": "artefact",
+      "summary": "Every hook from its intent, with graph, tests, version and signature."
+    },
+    {
+      "id": "billing",
+      "label": "Pay for state, never to run",
+      "kind": "concept",
+      "summary": "Free and offline to run; paying buys history, alerts, attestations."
+    },
+    {
+      "id": "brief",
+      "label": "The brief",
+      "kind": "artefact",
+      "summary": "Nine steps for the session that builds the site."
+    }
+  ],
+  "edges": [
+    {
+      "from": "kernel",
+      "to": "site",
+      "rel": "leads-to"
+    },
+    {
+      "from": "small",
+      "to": "blast",
+      "rel": "leads-to"
+    },
+    {
+      "from": "first10",
+      "to": "kernel",
+      "rel": "example-of"
+    },
+    {
+      "from": "scan",
+      "to": "fractal",
+      "rel": "example-of"
+    },
+    {
+      "from": "integrity",
+      "to": "fractal",
+      "rel": "example-of"
+    },
+    {
+      "from": "fractal",
+      "to": "blast",
+      "rel": "leads-to"
+    },
+    {
+      "from": "review-agent",
+      "to": "thumb",
+      "rel": "example-of"
+    },
+    {
+      "from": "maturity",
+      "to": "questions",
+      "rel": "extends"
+    },
+    {
+      "from": "questions",
+      "to": "thumb",
+      "rel": "produces"
+    },
+    {
+      "from": "first10",
+      "to": "maturity",
+      "rel": "depends-on"
+    },
+    {
+      "from": "site",
+      "to": "blast",
+      "rel": "depends-on"
+    },
+    {
+      "from": "billing",
+      "to": "site",
+      "rel": "extends"
+    },
+    {
+      "from": "brief",
+      "to": "site",
+      "rel": "produces"
+    },
+    {
+      "from": "small",
+      "to": "kernel",
+      "rel": "contrasts"
+    }
+  ],
+  "links": {
+    "articles": [
+      "agent-hooks-october-2026",
+      "are-hooks-the-sweet-spot",
+      "why-my-agents-do-not-run-on-my-laptop",
+      "code-review-as-a-fractal-semantic-graph",
+      "sovereignty-is-the-ability-to-move",
+      "chainguard-mapped",
+      "a-policy-for-every-skill",
+      "pay-after-you-read",
+      "pay-to-keep-your-persona"
+    ],
+    "pages": [],
+    "sites": [
+      "https://code.claude.com/docs/en/hooks",
+      "https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "An operating system has two hard walls, the kernel and the user.",
+      "why": "Why hooks are the agent's kernel."
+    },
+    {
+      "text": "The blast radius of a change is the climb from the methods it touched to the stories that can reach them",
+      "why": "How a hook change is measured."
+    },
+    {
+      "text": "The less deterministic a hook is, the less it should be able to reach.",
+      "why": "The rule of thumb of the maturity model."
+    }
+  ],
+  "figures": [
+    {
+      "file": "hk-first10.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/hk-first10.webp",
+      "caption": "The first ten hooks. Three this session runs, five tested in a sandbox, and two proposed: a hook that checks the other hooks, and an agent hook that reviews a push on the most capable model, read-only and without network. Between 4 and 26 lines of code each, and every one runs on every matching action, with the user's permissions.",
+      "kind": "comparison"
+    },
+    {
+      "file": "hk-maturity.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/hk-maturity.webp",
+      "caption": "A maturity model for hooks: five levels of how a rule is kept, from the prompt to off the machine, and three questions for every hook at every level: its power, the legs of the lethal trifecta it touches, and its sandbox. The less deterministic a hook is, the less it should be able to reach.",
+      "kind": "architecture"
+    },
+    {
+      "file": "hk-site.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/hk-site.webp",
+      "caption": "A hooks site and feed, run like a kernel tree. Every hook starts as an intent, a row of a behaviour policy, and is published with its graph, tests, version and signature. The feed lists every hook with its level, power, trifecta legs, version and hash; the change blast radius view climbs from a change to the intents and sessions it affects; installs are free and can run inside an organisation with no call home; paying buys state.",
+      "kind": "architecture"
+    }
+  ]
+}

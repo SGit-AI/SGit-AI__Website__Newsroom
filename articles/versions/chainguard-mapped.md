@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-14 | published | 2,392 | first published | this release | [current](../chainguard-mapped.md) |
+| **v1.0.0** | 2026-10-14 | published | 2,392 | first published | [`2c8701766`](https://github.com/SGit-AI/SGit-AI__Website/commit/2c87017665c60aead10458bd5a85afcf20c1c35b) | [current](../chainguard-mapped.md) |
 
 [← Back to the article](../chainguard-mapped.md) · [All articles](../index.md)
 

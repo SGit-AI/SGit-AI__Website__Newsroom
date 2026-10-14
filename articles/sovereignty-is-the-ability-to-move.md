@@ -117,6 +117,7 @@ Startups & strategySite & engineering[This article as a graph →](graphs.md#sov
 
 ### Continued by
 
+- [Hooks are kernel code: a maturity model, the first ten hooks mapped, and a brief for a hooks site and feed where you pay for state, never to run](hooks-are-kernel-code.md) Hooks are small code with kernel reach: a maturity model, the first ten hooks mapped, and a brief for a hooks site where you pay for state, never to run.
 - [What open source is, and what it is not: six misconceptions, a little history, and why the point is that nobody can lock you in](what-open-source-is-and-is-not.md) Open source is a copyright licence, not a free-for-all: six misconceptions corrected, and why the point is that nobody can lock you in.
 
 [All articles](index.md) · [All graphs](graphs.md)
