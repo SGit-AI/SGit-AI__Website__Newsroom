@@ -73,6 +73,38 @@
   ],
   "articles": [
     {
+      "slug": "are-hooks-the-sweet-spot",
+      "title": "Are hooks the sweet spot? Moving an agent's rules from hope into hooks, rule by rule, until enforcement moves off the machine",
+      "date": "2026-10-14",
+      "updated": "",
+      "author": "Dinis Cruz",
+      "url": "https://newsroom.sgit.ai/articles/are-hooks-the-sweet-spot.html",
+      "markdown": "https://newsroom.sgit.ai/articles/are-hooks-the-sweet-spot.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/are-hooks-the-sweet-spot.webp",
+      "graph": "https://newsroom.sgit.ai/articles/graphs/are-hooks-the-sweet-spot.json",
+      "teaser": "One agent's eleven rules, moved from the prompt into hooks and tested: four fully, two mostly, three partly, two not at all, and a gap in the leak scan.",
+      "summary": "Most of the rules we give agents today are hope-based security: written in the prompt, kept only if the model keeps them. The agent writing this site works under a behaviour policy of eleven rules, and only one of them is kept by something other than the agent. So I asked the question directly: in October 2026, are hooks the sweet spot? Can we move the rules out of the prompt and into small deterministic programs the agent's harness runs before and after every action, and keep them there until enforcement moves into a gateway or the platform itself? I took this session's own policy and tried, rule by rule, in a throwaway repository. Four rules moved into hooks fully, two mostly, three partly and two not at all, and the tests found a gap in the check I trust most. Hooks are the first layer that does not rely on the model and the last that still sees the action in the agent's own terms, which is why I think they are the right place to start, provided they are installed where the agent cannot edit them and set to fail closed. The open hook collections that exist block dangerous commands; the step that is missing is generating hooks from a written policy, and testing them, so the same rules can later be enforced by a gateway. We already need this for our own agents, so we can be among its heaviest users.",
+      "topics": [
+        "agents-and-policy",
+        "site-and-engineering"
+      ],
+      "tags": [
+        "hooks",
+        "agents",
+        "agent-behaviour-policy",
+        "enforcement",
+        "policy-as-code",
+        "claude-code",
+        "guardrails",
+        "owasp",
+        "security",
+        "article"
+      ],
+      "placement": [],
+      "linkedin": null,
+      "notes": []
+    },
+    {
       "slug": "agent-hooks-october-2026",
       "title": "Agent hooks in October 2026: a technical debrief on what each platform lets you see, stop and change, where hooks run, and where they fail",
       "date": "2026-10-14",

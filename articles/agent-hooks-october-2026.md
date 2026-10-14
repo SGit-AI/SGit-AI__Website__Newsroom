@@ -10,11 +10,13 @@
 
 # Agent hooks in October 2026: a technical debrief on what each platform lets you see, stop and change, where hooks run, and where they fail
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-14 · [article v1.0.0](versions/agent-hooks-october-2026.md) · [newsroom v0.12.41](https://newsroom.sgit.ai/admin/versions.html) · hooksagentsclaude-codecodexgemini-clicopilotcursorguardrailssecurityenforcementowasparticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-14 · [article v1.1.0, 2 versions](versions/agent-hooks-october-2026.md) · [newsroom v0.12.41](https://newsroom.sgit.ai/admin/versions.html) · hooksagentsclaude-codecodexgemini-clicopilotcursorguardrailssecurityenforcementowasparticle
 
 ***Abstract:** More and more of the technical people I talk to who are trying to control agents for real are reaching for the same tool: hooks, small programs the agent's harness runs at fixed points, before a tool call, after it, when a prompt is submitted, when the agent stops. This is the debrief I wanted to read: the lay of the land on 14 October 2026, from each vendor's own documentation. The short version is that the design has converged. Claude Code, OpenAI's Codex, Gemini CLI, GitHub Copilot, Cursor, Devin Desktop (formerly Windsurf), Grok Build, Factory, Augment and Kiro all offer a hook before a tool call that can block it, and most can ask the user or rewrite the call. They differ where it matters for security: whether an organisation can force its own hooks and switch everyone else's off, whether a failing hook blocks or lets the action through, whether hooks shipped in a repository need trust before they run, and whether anything can see the model's own output. ChatGPT offers admin controls rather than hooks, and Lovable gates publishing rather than agent actions. The vendors and the people who publish hook collections say the same thing about their limits: guardrails, not walls. Hooks see what the harness routes through them, run with the user's permissions, fail open by default on most tools, and have been an attack surface themselves. I ran a small test of my own in a throwaway repository, and the companion article asks what this means for agent behaviour policies.*
 
 Agent hooks in October 2026, from each vendor's documentation: whether a hook can block a tool call, rewrite its input, act at the model call, be forced by the organisation, fail closed, and whether hooks shipped in a repository need trust. The design has converged; the security properties have not.
+
+**What came next.** [Are hooks the sweet spot?](are-hooks-the-sweet-spot.md) takes this site's own behaviour policy and moves it into hooks rule by rule, tested in a sandbox, and asks how long hooks are the right place to keep an agent's rules.
 
 ## In short
 
@@ -106,7 +108,12 @@ Agents & policySite & engineering[This article as a graph →](graphs.md#agent-h
 
 ### Builds on
 
+- [Are hooks the sweet spot? Moving an agent's rules from hope into hooks, rule by rule, until enforcement moves off the machine](are-hooks-the-sweet-spot.md) One agent's eleven rules, moved from the prompt into hooks and tested: four fully, two mostly, three partly, two not at all, and a gap in the leak scan.
 - [Re-anchoring: keeping an agent's rules alive through every summary, and a canary that shows when they are not](re-anchoring-agent-behaviour-policies.md) Summaries keep under 2% of a long session. Re-anchoring prints the agent's rules back after each one; a canary report shows it is working.
+
+### Continued by
+
+- [Are hooks the sweet spot? Moving an agent's rules from hope into hooks, rule by rule, until enforcement moves off the machine](are-hooks-the-sweet-spot.md) One agent's eleven rules, moved from the prompt into hooks and tested: four fully, two mostly, three partly, two not at all, and a gap in the leak scan.
 
 [All articles](index.md) · [All graphs](graphs.md)
 

@@ -12,6 +12,8 @@ status: published
 
 !shot hq-map.webp | images/ | Agent hooks in October 2026, from each vendor's documentation: whether a hook can block a tool call, rewrite its input, act at the model call, be forced by the organisation, fail closed, and whether hooks shipped in a repository need trust. The design has converged; the security properties have not. | comparison
 
+> **What came next.** [Are hooks the sweet spot?](/articles/are-hooks-the-sweet-spot.html) takes this site's own behaviour policy and moves it into hooks rule by rule, tested in a sandbox, and asks how long hooks are the right place to keep an agent's rules.
+
 ## In short {#in-short}
 
 - **Hooks are now standard.** At least ten agent tools document a hook before a tool call that can block it; most can also ask or rewrite.
