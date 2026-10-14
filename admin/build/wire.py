@@ -23,11 +23,12 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 from page import newsroom_page, write, esc, HOST  # noqa: E402
+from api import api_url  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[2]
 CFG = json.loads((ROOT / "admin/build/wire-vault.json").read_text(encoding="utf-8"))
 SNAP = ROOT / "wire/snapshot.json"
-HEAD = '<link rel="stylesheet" href="wire.css">\n'
+HEAD = f'<link rel="stylesheet" href="{api_url("wire/wire.css")}">\n'
 EYEBROW = "Industry news, read from a vault · beta"
 # the named readers: people who agreed, on a recorded date, to a persona and a personal brief in a public vault
 NAMED = [x for x in CFG.get("named_readers", []) if isinstance(x, dict) and x.get("persona") and x.get("agreed")]
@@ -58,7 +59,7 @@ def loader(kind):
 <div id="wire-mount" data-wire="{kind}"><p class="dim">Opening the vault&hellip;</p></div>
 {config_block()}
 <script type="module">
-import {{ wire }} from './wire.js';
+import {{ wire }} from '{api_url('wire/wire.js')}';
 wire({{ mount: document.getElementById('wire-mount') }});
 </script>
 """

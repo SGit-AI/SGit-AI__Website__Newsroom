@@ -47,8 +47,9 @@ What changes on the way in, and nothing else:
      and how to switch it off.
   10. Wording this site changes on named pages (admin/build/newsroom-text.json), each a recorded
      rule that stops the import if sgit.ai's text under it moves. The record lists them.
-  11. Every page loads this site's own build of the reading meter, v1.4.0
-     (assets/components/sg-meter/v1/v1.4/v1.4.0/), instead of sgit.ai's v1.3.1 that the page names.
+  11. Every page loads this site's own build of the reading meter, v1.4.0, from the API host
+     (api.py: https://api.newsroom.sgit.ai/<release>/assets/components/sg-meter/v1/v1.4/v1.4.0/),
+     instead of sgit.ai's v1.3.1 that the page names by a relative path.
      v1.4.0 is v1.3.1 without "Pause the meter" and "Start again", and with the view that lets a
      link open the newsroom as a named persona. Only the dynamic import() of the component is
      re-pointed; code samples on the docs page are text and stay as they are. If sgit.ai moves to
@@ -60,8 +61,13 @@ What changes on the way in, and nothing else:
   13. Articles written here (admin/content/articles/, published by admin/build/publish.py) name
      this site's release in their byline, "newsroom v0.12.9", linked to this site's release history,
      because this site published them; sgit.ai's generator only rendered them.
+  14. The reader code is not imported at all since v0.13.0: the components, assets/subscribe.js and
+     every other file of the move live in SGit-AI__Website__Newsroom__API and are served from
+     api.newsroom.sgit.ai at a pinned release (admin/build/api.json). A link or a loader on an imported
+     page that names one of them (the subscribe page's fetch of subscribe.js, the docs page's links to
+     the component files) is re-pointed at that host; the normaliser below reads either form the same.
 
-Scripts, styles, components and /.well-known/sgit-subscribe.json are copied byte for byte.
+Scripts, styles and /.well-known/sgit-subscribe.json are copied byte for byte.
 The brief requires it twice: a published component path never changes, and the subscribe
 lane keeps the same public key so subscriptions land in the same vault. The sync refuses
 to run if any of them would change.
@@ -91,6 +97,8 @@ import ids  # noqa: E402
 ROOT     = Path(__file__).resolve().parents[2]
 HOST     = (ROOT / "CNAME").read_text().strip()               # newsroom.sgit.ai
 THIS_VERSION = (ROOT / "admin/build/version.txt").read_text().strip()
+sys.path.insert(0, str(Path(__file__).parent))
+import api as API  # noqa: E402  (the reader code's host and pinned release: admin/build/api.json, api-manifest.json)
 
 # Settings this site applies to the meter's config on import (admin/build/newsroom-meter.json).
 # A live Stripe Payment Link has no underscore in it; a test-mode link is buy.stripe.com/test_...
@@ -104,7 +112,9 @@ LIVE_LINK  = re.compile(r"^https://buy\.stripe\.com/[A-Za-z0-9]+$")
 METER_PATH     = "assets/components/sg-meter/v1/"
 METER_BASED_ON = "v1.3/v1.3.1"
 METER_OURS     = "v1.4/v1.4.0"
-METER_IMPORT   = re.compile(r"(import\(\s*['\"][^'\"]*?" + re.escape(METER_PATH) + r")(v\d+\.\d+/v\d+\.\d+\.\d+)(/sg-meter\.js)")
+METER_IMPORT   = re.compile(r"(import\(\s*['\"])(?:\./|(?:\.\./)+)?" + re.escape(METER_PATH) + r"(v\d+\.\d+/v\d+\.\d+\.\d+)(/sg-meter\.js)")
+# item 14: the subscribe page fetches subscribe.js as text and runs it; it comes from the API host too
+SUBSCRIBE_FETCH = re.compile(r"(fetch\(\s*['\"])(?:\./|(?:\.\./)+)?assets/subscribe\.js")
 
 TEXT_FILE = ROOT / "admin/build/newsroom-text.json"
 APPLIED = set()
@@ -158,11 +168,11 @@ def own_meter(text, dest_file):
             sys.exit(f"sync: {dest_file} loads the reading meter at {m.group(2)}, and this site's build "
                      f"({METER_OURS}) is based on {METER_BASED_ON}. sgit.ai moved the component, so re-base "
                      f"{METER_PATH}{METER_OURS}/ on it before importing")
-        return m.group(1) + METER_OURS + m.group(3)
+        return m.group(1) + API.api_url(METER_PATH + METER_OURS + "/sg-meter.js")
     out = METER_IMPORT.sub(swap, text)
     if out != text:
-        assert (ROOT / (METER_PATH + METER_OURS + "/sg-meter.js")).exists(), f"{METER_OURS} is not on disk"
-    return out
+        assert METER_PATH + METER_OURS + "/sg-meter.js" in API.served_paths(), f"{METER_OURS} is not in the pinned API release"
+    return SUBSCRIBE_FETCH.sub(lambda m: m.group(1) + API.api_url("assets/subscribe.js"), out)
 
 
 def topup_link():
@@ -175,7 +185,12 @@ SRC_HOST = "sgit.ai"
 RECORD   = ROOT / "admin/build/newsroom-sync.json"
 
 # The moved tree, from the brief's "What moves" table.
-MOVED_DIRS = ["articles", "newsroom", "account", "subscribe", "meter", "og", "assets/components",
+MOVED_DIRS = ["articles", "newsroom", "account", "subscribe", "meter", "og",
+              # assets/components left this list in v0.13.0: the reader code is served from the API host (item 14)
+              # ...except the frozen meter versions, published artefacts this site keeps serving byte for byte
+              # until phase 4 of the move; validate.js check 13 holds them to the API release's bytes
+              "assets/components/sg-meter/v1/v1.0", "assets/components/sg-meter/v1/v1.1",
+              "assets/components/sg-meter/v1/v1.2", "assets/components/sg-meter/v1/v1.3",
               # Not in the brief's list: a vault page, which stays on sgit.ai as a rule. This one is
               # the study of this site by five synthetic readers, and Dinis asked for it here.
               "demos/vaults/newsroom-synthetic-users",
@@ -188,7 +203,7 @@ MOVED_FILES = {
     "assets/site.css": "assets/newsroom.css",
     "assets/site.js": "assets/site.js",
     "assets/shots.js": "assets/shots.js",
-    "assets/subscribe.js": "assets/subscribe.js",
+    # "assets/subscribe.js" left this list in v0.13.0: served from the API host (item 14)
     # The live-vault embed on the synthetic-users study page: mounts the official vault viewer in an
     # iframe from dev.vault.sgraph.ai. Loaded by a script that builds the file name at run time,
     # so no static reader of the page finds it. Copied byte for byte like every script here.
@@ -241,6 +256,7 @@ def content_sha(data, path):
     text = data.decode("utf-8")
     for pattern, repl in NORMALISE:
         text = pattern.sub(repl, text, count=1)
+    text = API.normalise(text)       # a reader-file reference, relative or on the API host, reads the same (api.py)
     return sha(text.encode("utf-8"))
 
 
@@ -300,6 +316,8 @@ def rewrite_url(url, src_file, dest_file):
         return url
     path, parts = r
     bare = path.rstrip("/")
+    if API.is_reader_path(bare):      # item 14: the reader code is on the API host
+        return API.api_url(bare) + (f"?{parts.query}" if parts.query else "") + (f"#{parts.fragment}" if parts.fragment else "")
     target = moved_target(bare)
     if target is not None:
         new = relative(dest_file, target + ("/" if path.endswith("/") else ""))
@@ -313,6 +331,8 @@ def rewrite_url(url, src_file, dest_file):
 def rewrite_abs(m):
     tail = m.group(1)
     path = urlsplit("/" + tail).path.lstrip("/")
+    if API.is_reader_path(path.rstrip("/")):
+        return API.api_url(path) + tail[len(path):]
     target = moved_target(path.rstrip("/"))
     if target is None:
         return m.group(0)
@@ -579,6 +599,10 @@ def main():
                if not (ROOT / d).exists() or content_sha((ROOT / d).read_bytes(), d) != f["sha256"]]
     if args.check:
         print(f"sync --check: {len(changed)} file(s) would change, {len(stale)} would be removed")
+        for d in changed:
+            print(f"  ~ {d}")
+        for d in stale:
+            print(f"  - {d}")
         return
 
     for d in changed:

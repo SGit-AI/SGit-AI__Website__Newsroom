@@ -372,6 +372,29 @@ try {
   console.warn('validate: check 10 skipped (git not available)');
 }
 
+// --- the reader code's host: api.newsroom.sgit.ai, pinned ----------------------
+// Since v0.13.0 the code a reader runs (the meter, the lists, subscribe, the vault layer, search, the
+// wire reader, the vendored vault library, the passkey lab) is served from the API host at one pinned
+// release (admin/build/api.json; its manifest copied to admin/build/api-manifest.json). The regexes
+// here mirror admin/build/api.py exactly: a reader-file reference, relative (as before the move) or on
+// the host (as after it), normalises to "API/<path>", which is what keeps check 11's hashes true across
+// the move. Keep the two in step.
+const API_PIN = JSON.parse(fs.readFileSync(path.join(ROOT, 'admin/build/api.json'), 'utf8'));
+const API_MANIFEST = JSON.parse(fs.readFileSync(path.join(ROOT, 'admin/build/api-manifest.json'), 'utf8'));
+const API_SERVED = new Map(API_MANIFEST.files.map(f => [f.path, f.sha256]));
+if (API_MANIFEST.release !== API_PIN.release) errors.push(`admin/build/api-manifest.json is ${API_MANIFEST.release}; api.json pins ${API_PIN.release}`);
+const API_PATH = String.raw`(assets/(?:components|vault-pane|search|vendor/sg-vault)/[^"'\s<>]+|assets/(?:subscribe\.js|newsroom-vault\.js|door\.js)(?:\?[^"'\s<>]*)?|for/(?:reading-list|make)\.js|for/for\.css|wire/(?:wire|vault-reader)\.js|wire/wire\.css|passkey/(?:lab\.js|lab\.css|vectors\.json))`;
+const API_SAME = { 'reading-list.js': 'for/', 'make.js': 'for/', 'for.css': 'for/', 'wire.js': 'wire/', 'wire.css': 'wire/', 'vault-reader.js': 'wire/', 'lab.js': 'passkey/', 'lab.css': 'passkey/', 'vectors.json': 'passkey/' };
+const API_SAME_RE = '(' + Object.keys(API_SAME).map(s => s.replace(/\./g, '\\.')).join('|') + ')';
+const API_HOST_RE = API_PIN.host.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + String.raw`/v\d+\.\d+\.\d+/`;
+const API_REL = String.raw`(?:\./|(?:\.\./)+)?`;
+const API_NORMALISE = [
+  [new RegExp(`(["'])${API_HOST_RE}${API_PATH}\\1`, 'g'), '$1API/$2$1'],
+  [new RegExp(`(["'])${API_REL}${API_PATH}\\1`, 'g'), '$1API/$2$1'],
+  [new RegExp(`(["'])(?:\\./)?${API_SAME_RE}\\1`, 'g'), (m, q, n) => `${q}API/${API_SAME[n]}${n}${q}`],
+];
+const apiNormalise = text => { for (const [re, r] of API_NORMALISE) text = text.replace(re, r); return text; };
+
 // --- 11. the imported newsroom is unedited -----------------------------------
 // The newsroom is built on sgit.ai and imported here until cutover. Editing an imported page
 // on this side makes the two copies disagree silently, and the next sync then either loses
@@ -397,6 +420,7 @@ try {
       if (/\.(html|md)$/.test(rel)) {
         let text = buf.toString('utf8');
         for (const [re, repl] of NORMALISE) text = text.replace(re, repl);
+        text = apiNormalise(text);
         buf = Buffer.from(text, 'utf8');
       }
       const got = crypto.createHash('sha256').update(buf).digest('hex');
@@ -455,25 +479,50 @@ try {
   }
 }
 
-// --- 13. the vendored vault library is unedited -------------------------------
-// assets/vendor/sg-vault/v0.2.3 is the library that runs dev.vault.sgraph.ai, pinned at a commit and
-// never edited here (one code base: a fix goes upstream and the copy is refreshed). VENDOR.md records
-// each file's SHA-256; this recomputes them. A local addition lives in ../local/, which is not covered.
+// --- 13. the frozen meter versions this site still serves are the API release's bytes ----------
+// v1.0.0 to v1.3.1 of the meter are published artefacts: they moved to the API host with the rest, and this
+// site keeps its copies in place until phase 4 of the move (GitHub Pages cannot redirect a script). Each copy
+// must be the bytes the pinned release serves, and nothing else of the reader code may still be here.
 {
   const nodeCrypto = require('crypto');
-  const vendorDir = path.join(ROOT, 'assets/vendor/sg-vault/v0.2.3');
-  const vendorMd = path.join(vendorDir, 'VENDOR.md');
-  if (fs.existsSync(vendorMd)) {
-    const rows = [...fs.readFileSync(vendorMd, 'utf8').matchAll(/\| `([^`]+)` \| `([0-9a-f]{64})` \|/g)];
-    if (rows.length !== 12) errors.push(`assets/vendor/sg-vault/v0.2.3/VENDOR.md records ${rows.length} files, not 12`);
-    for (const [, relFile, want] of rows) {
-      const p = path.join(vendorDir, relFile);
-      if (!fs.existsSync(p)) { errors.push(`vendored vault library: ${relFile} is missing`); continue; }
-      const got = nodeCrypto.createHash('sha256').update(fs.readFileSync(p)).digest('hex');
-      if (got !== want) errors.push(`vendored vault library: ${relFile} was edited here (hash differs from VENDOR.md); fix it upstream or refresh the copy`);
+  const compDir = path.join(ROOT, 'assets/components');
+  const local = fs.existsSync(compDir) ? walk(compDir).map(f => path.relative(ROOT, f).split(path.sep).join('/')) : [];
+  for (const relFile of local) {
+    const want = API_SERVED.get(relFile);
+    if (!want) { errors.push(`${relFile}: not a file of the pinned API release; the reader code lives in SGit-AI__Website__Newsroom__API`); continue; }
+    if (!/^assets\/components\/sg-meter\/v1\/v1\.[0-3]\//.test(relFile)) { errors.push(`${relFile}: only the frozen meter versions (v1.0.0 to v1.3.1) stay here; this file is served from the API host`); continue; }
+    const got = nodeCrypto.createHash('sha256').update(fs.readFileSync(path.join(ROOT, relFile))).digest('hex');
+    if (got !== want) errors.push(`${relFile}: a frozen copy that differs from the API release's bytes`);
+  }
+  for (const gone of ['assets/vendor/sg-vault', 'assets/vault-pane', 'assets/search', 'assets/subscribe.js', 'assets/newsroom-vault.js', 'assets/door.js',
+                      'for/reading-list.js', 'for/make.js', 'for/for.css', 'wire/wire.js', 'wire/wire.css', 'wire/vault-reader.js', 'passkey/lab.js', 'passkey/lab.css', 'passkey/vectors.json']) {
+    if (fs.existsSync(path.join(ROOT, gone))) errors.push(`${gone}: moved to the API host in v0.13.0 and still here`);
+  }
+}
+
+// --- 14. every page loads the reader code from the pinned release -------------------------------
+// In real tags (href, src and the other URL attributes) and in <script> bodies, as admin/build/api.py --repoint
+// writes them: never a relative path to a moved file, never another release, never a path the manifest lacks.
+{
+  const relForm = new RegExp(`^${API_REL}${API_PATH}$`);
+  const sameForm = new RegExp(`^(?:\\./)?${API_SAME_RE}$`);
+  const hostForm = new RegExp(`^${API_PIN.host.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}/(v\\d+\\.\\d+\\.\\d+)/${API_PATH}$`);
+  const judge = (f, s, where) => {
+    if (relForm.test(s) || sameForm.test(s)) errors.push(`${rel(f)}: ${where} loads a reader file by a relative path -> ${s}; run admin/build/api.py --repoint`);
+    const m = hostForm.exec(s);
+    if (!m) return;
+    const p = m[2].split('?')[0];
+    if (m[1] !== API_PIN.release) errors.push(`${rel(f)}: ${where} loads ${m[1]}/${p}, not the pinned release ${API_PIN.release}`);
+    else if (!API_SERVED.has(p)) errors.push(`${rel(f)}: ${where} loads ${p}, which is not in the pinned release's manifest`);
+  };
+  for (const f of htmlFiles) {
+    const t = fs.readFileSync(f, 'utf8');
+    for (const tag of t.matchAll(/<[a-zA-Z][^<>]*>/g)) {
+      for (const a of tag[0].matchAll(/\b(?:href|src|data-src|action|poster|data-dir|data-trail-img)=(["'])([^"']*)\1/g)) judge(f, a[2], 'a tag');
     }
-  } else {
-    errors.push('assets/vendor/sg-vault/v0.2.3/VENDOR.md is missing');
+    for (const s of t.matchAll(/<script\b[^>]*>([\s\S]*?)<\/script>/g)) {
+      for (const q of s[1].matchAll(/(["'])([^"'\n]*)\1/g)) judge(f, q[2], 'a script');
+    }
   }
 }
 
@@ -486,4 +535,4 @@ if (errors.length) {
 console.log(`validate: OK — ${VERSION} on ${HOST}, ${htmlFiles.length} pages, ` +
             `${hubs.length} hubs in llms.txt, sitemap agrees, links resolve, blocks balanced, ` +
             `every page carries an agent block, provenance blocks sourced, no redacted material, ` +
-            `no key-shaped strings, the imported newsroom unedited, the article numbers hold`);
+            `no key-shaped strings, the imported newsroom unedited, the article numbers hold, the reader code pinned to ${API_PIN.release}`);

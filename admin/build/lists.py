@@ -14,10 +14,11 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 from page import METER_JS, newsroom_page, write, esc, HOST  # noqa: E402
+from api import api_url  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[2]
-CORE = METER_JS.replace("sg-meter.js", "sg-meter-core.js")
-HEAD = '<link rel="stylesheet" href="for.css">\n'
+CORE = api_url(METER_JS.replace("sg-meter.js", "sg-meter-core.js"))
+HEAD = f'<link rel="stylesheet" href="{api_url("for/for.css")}">\n'
 SITE = f"https://{HOST}/for/"
 EXAMPLE = f"{SITE}#from=Dinis&amp;to=Steve&amp;r=65,60,62&amp;s=66&amp;f=founder"
 
@@ -42,8 +43,8 @@ def open_page(d):
     body = f"""<div id="rl-mount" class="rl-mount"><p class="dim">Opening the list&hellip;</p></div>
 <noscript><p>A reading list needs a script to open. The link has the form <code>{SITE}#from=Dinis&amp;to=Steve&amp;r=65,60,62</code>, and the numbers are the articles in <a href="../articles/ids.json">articles/ids.json</a>.</p></noscript>
 <script type="module">
-import {{ openList }} from './reading-list.js';
-openList({{ core: '../{CORE}', ids: '../articles/ids.json', root: '../', mount: document.getElementById('rl-mount') }});
+import {{ openList }} from '{api_url('for/reading-list.js')}';
+openList({{ core: '{CORE}', ids: '../articles/ids.json', root: '../', mount: document.getElementById('rl-mount') }});
 </script>
 
 <div id="rl-docs">
@@ -75,8 +76,8 @@ def make_page(d):
     body = f"""<div id="mk-mount" data-site="{SITE}"><p class="dim">Loading the articles&hellip;</p></div>
 <noscript><p>Making a list needs a script. A link has the form <code>{SITE}#from=Dinis&amp;to=Steve&amp;r=65,60,62</code>, with the numbers from <a href="../articles/ids.json">articles/ids.json</a>; <a href="index.html#link">the fields are described here</a>.</p></noscript>
 <script type="module">
-import {{ makeList }} from './make.js';
-makeList({{ core: '../{CORE}', ids: '../articles/ids.json', root: '../', site: '{SITE}', mount: document.getElementById('mk-mount') }});
+import {{ makeList }} from '{api_url('for/make.js')}';
+makeList({{ core: '{CORE}', ids: '../articles/ids.json', root: '../', site: '{SITE}', mount: document.getElementById('mk-mount') }});
 </script>
 
 <h2 id="how">What this page does</h2>

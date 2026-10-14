@@ -10,6 +10,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
+from api import api_url  # noqa: E402
 from page import newsroom_page, write, HOST  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -44,7 +45,7 @@ def page():
 <li><b>Brought-in records keep their author.</b> What arrives from another device is tagged with it, and the next sync from here writes only this device&rsquo;s own records back.</li>
 <li><b>Nothing is typed twice.</b> The access key is pasted once and lives in the master; every other device gets it by opening the master with its passkey, or with the recovery code once.</li>
 </ul>
-<p>The design, the data layout, what is not synced and why, and the experiments to run next are in <a href="../{NOTE}">the activity vault</a>. The pieces it is made of are in <a href="../passkey/index.html">the passkey lab</a>, and the vault code is the library that runs dev.vault.sgraph.ai, <a href="../assets/vendor/sg-vault/v0.2.3/VENDOR.md">vendored here</a>.</p>
+<p>The design, the data layout, what is not synced and why, and the experiments to run next are in <a href="../{NOTE}">the activity vault</a>. The pieces it is made of are in <a href="../passkey/index.html">the passkey lab</a>, and the vault code is the library that runs dev.vault.sgraph.ai, <a href="{api_url('assets/vendor/sg-vault/v0.2.3/VENDOR.md')}">vendored here</a>.</p>
 <h2 id="keys">Your keys</h2>
 <p>The Keys tab lists every vault of your account with its key, shown only when you press Reveal: the door of this device and the other doors, the master, the reader vault, the lane and its read key. Any of them opens on its own, with <code>sgit clone</code> or in the vault app. A key opens that vault to whoever holds it, and the master&rsquo;s opens everything, so handle them like the recovery code. The lane&rsquo;s read key is the one thing meant to be handed over.</p>
 <h2 id="data">What leaves this browser</h2>

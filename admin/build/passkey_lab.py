@@ -1,22 +1,22 @@
 #!/usr/bin/env python3
 """The passkey lab: a page of proofs of concept for "The passkey opens the vault".
 
-    python3 admin/build/passkey_lab.py        # writes passkey/index.html and passkey/vectors.json
+    python3 admin/build/passkey_lab.py        # writes passkey/index.html (lab.js, lab.css and vectors.json are served from the API host)
 
 The article (articles/the-passkey-opens-the-vault.html) designs a reader account with no server and no sign-in:
 a passkey's PRF bytes derive a door vault, the door holds the master vault's key, the master holds the rest. Before
 any of it is built into the reader's account, this page lets a person try each piece in their own browser: make a
 passkey for this site, get the PRF bytes and see that they are the same on another device, derive the door and
 sgit's keys from them, make a recovery code, check the browser against sgit's own Python, and, with an access key,
-create the door on the vault server and open it again. The code is passkey/lab.js; the vectors come from
-admin/build/passkey_vectors.py. Nothing on the page touches the reading account.
+create the door on the vault server and open it again. The code is passkey/lab.js and the vectors are passkey/vectors.json,
+both in SGit-AI__Website__Newsroom__API (tools/passkey_vectors.py there writes the vectors) and served from api.newsroom.sgit.ai. Nothing on the page touches the reading account.
 """
 import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 from page import newsroom_page, write, HOST  # noqa: E402
-import passkey_vectors  # noqa: E402
+from api import api_url  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[2]
 # The vault library that runs dev.vault.sgraph.ai, vendored at v0.2.3 and loaded from this origin in VENDOR.md's order,
@@ -24,9 +24,9 @@ ROOT = Path(__file__).resolve().parents[2]
 VENDORED = ["sg-send/sg-send-crypto.js", "sg-send/sg-send.js", "sg-vault/sg-vault-crypto.js", "sg-vault/sg-vault-object-store.js",
             "sg-vault/sg-vault-ref-manager.js", "sg-vault/sg-vault-commit.js", "sg-vault/sg-vault.js", "sg-vault/sg-vault--file-ops.js",
             "sg-vault/sg-vault--folder-ops.js", "sg-vault/sg-vault--sync.js", "sg-vault/sg-vault--history.js", "sg-vault/sg-vault--branches.js"]
-HEAD = ('<link rel="stylesheet" href="lab.css">\n'
-        + "".join(f'<script src="../assets/vendor/sg-vault/v0.2.3/{f}"></script>\n' for f in VENDORED)
-        + '<script src="../assets/vendor/sg-vault/local/sg-vault--create-with-id.js"></script>\n')
+HEAD = (f'<link rel="stylesheet" href="{api_url("passkey/lab.css")}">\n'
+        + "".join(f'<script src="{api_url("assets/vendor/sg-vault/v0.2.3/" + f)}"></script>\n' for f in VENDORED)
+        + f'<script src="{api_url("assets/vendor/sg-vault/local/sg-vault--create-with-id.js")}"></script>\n')
 
 
 def card(n, title, what, acts, extra=""):
@@ -55,11 +55,11 @@ def page():
 {card(4, "A recovery code: the second door", "26 characters of base32, 128 bits, made by the page and in the real flow shown once. In place of the PRF bytes it derives a second door to the same master, for the day every passkey is gone.",
      '<button type="button" class="btn primary" id="poc4-go">Make a recovery code</button>',
      '<div class="ladder">Type a code back: <input type="text" id="poc4-code" class="mono" placeholder="XXXX-XXXX-…"> <button type="button" class="btn sm" id="poc4-check">Which door?</button> <label class="dim"><input type="checkbox" id="poc4-use"> use it as the door in 3 and 6 when there is no passkey</label> <span id="poc4-check-out" class="dim"></span></div>')}
-{card(5, "Test vectors: the browser and sgit agree", "The same derivation from a fixed, fake PRF output, compared value by value with what sgit&rsquo;s own Python produced (<a href='vectors.json'>vectors.json</a>, from <code>admin/build/passkey_vectors.py</code>). Runs when the page opens. If any line is wrong, the browser and the command line would open different vaults.",
+{card(5, "Test vectors: the browser and sgit agree", f"The same derivation from a fixed, fake PRF output, compared value by value with what sgit&rsquo;s own Python produced (<a href='{api_url('passkey/vectors.json')}'>vectors.json</a>, from <code>admin/build/passkey_vectors.py</code>). Runs when the page opens. If any line is wrong, the browser and the command line would open different vaults.",
      '<span id="poc5-use" hidden><button type="button" class="btn" id="poc5-use-go">Use the test vector as the door in 3 and 6</button> <span class="dim">for trying the server without a passkey</span></span>')}
 <section class="poc" id="poc6" hidden>
 <h2>6. Real vaults: the door, the master and the reader vault</h2>
-<p class="what">With the door from 3 (or the recovery code from 4, or the test vector), the vault library that runs dev.vault.sgraph.ai, <a href="../assets/vendor/sg-vault/v0.2.3/VENDOR.md">vendored here</a> and loaded from this origin, creates and opens real sgit vaults: the <b>door</b> at its derived address, holding the master&rsquo;s key and a record of where it came from (kind, provider, path, credential id, device, date); the <b>master</b>, made at random, holding the reader vault&rsquo;s key and the list of doors; the <b>reader vault</b>, where a note is written and read back. Every vault made here is one <code>sgit clone</code> opens, with write access, from the key shown behind each reveal. Writing needs an <b>access key</b> for the server, which is the thing a reader will buy; opening and reading need nothing.</p>
+<p class="what">With the door from 3 (or the recovery code from 4, or the test vector), the vault library that runs dev.vault.sgraph.ai, <a href="{api_url('assets/vendor/sg-vault/v0.2.3/VENDOR.md')}">vendored here</a> and loaded from this origin, creates and opens real sgit vaults: the <b>door</b> at its derived address, holding the master&rsquo;s key and a record of where it came from (kind, provider, path, credential id, device, date); the <b>master</b>, made at random, holding the reader vault&rsquo;s key and the list of doors; the <b>reader vault</b>, where a note is written and read back. Every vault made here is one <code>sgit clone</code> opens, with write access, from the key shown behind each reveal. Writing needs an <b>access key</b> for the server, which is the thing a reader will buy; opening and reading need nothing.</p>
 <div class="acts">
   <label>Server <select id="poc6-server"><option value="https://dev.send.sgraph.ai">dev.send.sgraph.ai</option><option value="https://send.sgraph.ai">send.sgraph.ai</option></select></label>
   <label>Access key <input type="password" id="poc6-access" autocomplete="off" placeholder="kept in memory only"></label>
@@ -90,8 +90,8 @@ def page():
 <li><b>Tests:</b> <code>admin/build/test_passkey.mjs</code> drives the page in Chromium with a virtual authenticator that has PRF, checks the derivation against the vectors, and runs the server flow against a stand-in server; the real server is tried by a person with an access key.</li>
 </ul>
 <script type="module">
-import {{ lab }} from './lab.js';
-lab({{ vectors: 'vectors.json' }});
+import {{ lab }} from '{api_url('passkey/lab.js')}';
+lab({{ vectors: '{api_url('passkey/vectors.json')}' }});
 </script>
 """
     agent = (f"A lab page for the design in https://{HOST}/articles/the-passkey-opens-the-vault.html: in a browser, make a passkey with the PRF extension, "
@@ -106,7 +106,6 @@ lab({{ vectors: 'vectors.json' }});
 
 
 def main():
-    passkey_vectors.main()
     changed = write("passkey/index.html", page())
     print(f"passkey_lab: {'written' if changed else 'unchanged'} passkey/index.html")
 

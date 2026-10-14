@@ -11,9 +11,12 @@ The nav and footer are left empty here and filled by chrome.py, like every page.
 """
 import html as _html
 import re
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(Path(__file__).parent))
+from api import api_url, served_paths  # noqa: E402
 HOST = (ROOT / "CNAME").read_text().strip()
 
 
@@ -21,8 +24,10 @@ def esc(s):
     return _html.escape(s, quote=True)
 
 
-# SG Meter, the reading meter, at a versioned path that never changes. v1.4.0 is this site's own build (see sync_newsroom.py, item 11).
+# SG Meter, the reading meter, at a versioned path that never changes. v1.4.0 is this site's own build, served from the API host
+# (admin/build/api.py) since v0.13.0; sync_newsroom.py item 11 points imported pages at the same URL.
 METER_JS = "assets/components/sg-meter/v1/v1.4/v1.4.0/sg-meter.js"
+METER_URL = api_url(METER_JS)
 
 
 def meter_config():
@@ -45,10 +50,10 @@ def meter_block(up, title):
     cfg = meter_config()
     if cfg is None:
         return ""
-    assert (ROOT / METER_JS).exists(), f"{METER_JS} is not on disk; run admin/build/sync_newsroom.py"
+    assert METER_JS in served_paths(), f"{METER_JS} is not in the pinned API release; see admin/build/api.json"
     return (f'<sg-meter view="page" kind="free" date="" topics="" title="{esc(title)}, SGit Newsroom" quiet></sg-meter>\n'
             f'<script type="application/json" id="sg-meter-config">{cfg}</script>\n'
-            f'<script>\nimport(\'{up}{METER_JS}\')\n'
+            f'<script>\nimport(\'{METER_URL}\')\n'
             f" .catch(function (e) {{ console.error('[sg-meter] component failed to load:', e); }});\n</script>\n")
 
 

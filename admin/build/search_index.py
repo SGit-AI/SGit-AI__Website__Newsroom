@@ -26,6 +26,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 from page import newsroom_page, write, HOST  # noqa: E402
+from api import api_url  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[2]
 SKIP_PREFIX = ("search/", "og/", "assets/", "404")
@@ -323,10 +324,13 @@ mountSearch(el); mountAsk(el);
              "d date, x teaser, tp topics, tg tags, g the article graph's core idea and node labels, h headings with anchors) and https://" + HOST + "/search/text.json "
              "(paragraphs: [doc index, anchor, text] and, for text that is only in an earlier version of an article, [doc index, anchor, text, version, the version page that shows the change]). Built at release time by admin/build/search_index.py from the published pages; "
              f"{meta['docs']} documents and {meta['chunks']} paragraphs at {meta['release']}. An agent can fetch the two files and rank them itself, or read /llms.txt and the .md twins. Ask on the page (assets/search/ask.js) gives a model the top passages, numbered, with the instruction to answer only from them and cite them: Chrome's built-in model (LanguageModel) on the reader's machine, or the reader's own OpenRouter key, sent to openrouter.ai only.")
+    # the code is served from the API host (admin/build/api.py)
+    body = (body.replace("'../assets/search/search.js'", f"'{api_url('assets/search/search.js')}'")
+                .replace("'../assets/search/ask.js'", f"'{api_url('assets/search/ask.js')}'"))
     return newsroom_page("search/index.html", "Search",
                          "Search every article, the wire's stories and the site's notes, in your browser: titles, tags, article graphs and full text, with exact phrases and earlier versions; and ask a question, answered from the passages found by Chrome's built-in model or your own OpenRouter key.",
                          body, eyebrow="Search · in your browser", lead="Every article, the wire and the notes, searched in your browser; and asked, with Chrome’s built-in model or your own OpenRouter key, answered from the passages found.",
-                         agent=agent, head='<link rel="stylesheet" href="../assets/search/search.css"><link rel="stylesheet" href="../assets/search/ask.css">', wide=True)
+                         agent=agent, head=f'<link rel="stylesheet" href="{api_url("assets/search/search.css")}"><link rel="stylesheet" href="{api_url("assets/search/ask.css")}">', wide=True)
 
 
 def main():
