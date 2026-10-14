@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-14 | published | 1,858 | first published | this release | [current](../sgit-actions-side-by-side.md) |
+| **v1.0.0** | 2026-10-14 | published | 1,858 | first published | [`362d46bff`](https://github.com/SGit-AI/SGit-AI__Website/commit/362d46bff1ef62c3ea1e8fb4af336873a1a49bc3) | [current](../sgit-actions-side-by-side.md) |
 
 [← Back to the article](../sgit-actions-side-by-side.md) · [All articles](../index.md)
 

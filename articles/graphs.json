@@ -55,6 +55,263 @@
   ],
   "articles": [
     {
+      "slug": "skill-behaviour-policy",
+      "title": "A skill behaviour policy: what a skill says it does, what it can do, what it is given, and the control that closes the gap, measured on 899 skills",
+      "date": "2026-10-14",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/skill-behaviour-policy.html",
+      "markdown": "https://newsroom.sgit.ai/articles/skill-behaviour-policy.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/skill-behaviour-policy.webp",
+      "teaser": "A skill behaviour policy compares what a skill says, what it can do and what it is given, then generates the control; measured on 899 skills.",
+      "topics": [
+        "agents-and-policy"
+      ],
+      "tags": [
+        "agent-skills",
+        "skill-behaviour-policy",
+        "agent-behaviour-policy",
+        "hooks",
+        "sandbox",
+        "lethal-trifecta",
+        "supply-chain",
+        "skillspector",
+        "mcp",
+        "article"
+      ],
+      "links_out": [
+        "a-policy-for-every-skill",
+        "footprint-and-blast-radius",
+        "are-hooks-the-sweet-spot",
+        "hooks-are-kernel-code",
+        "policy-as-code-needs-a-policy-first",
+        "chainguard-mapped"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "sb-three.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/sb-three.webp",
+          "caption": "A skill behaviour policy: three mandates, two gaps, one control. What the description says, what the skill's files and instructions can do, and what the environment grants. Actual minus described is the suspicious part; grant minus actual is the reach nobody asked for; the control brings the grant down to the described mandate.",
+          "kind": "architecture"
+        },
+        {
+          "file": "sb-measured.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/sb-measured.webp",
+          "caption": "899 skills from three public sources, every file read as text and nothing run: what they can reach, and what their descriptions leave out. 812 can reach something beyond their own scripts, 782 of them through one third-party tool server; 39 have a feature their description does not mention; none was obfuscated, and none sets allowed-tools.",
+          "kind": "comparison"
+        },
+        {
+          "file": "sb-example.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/sb-example.webp",
+          "caption": "One skill, end to end: developer-growth-analysis. An honest description and the whole lethal trifecta: it reads your Claude Code chat history, searches HackerNews, and sends a report to Slack through a third-party tool server. The policy states the minimal grant and the reach on Claude Code, and generates a hook, tested on nine fixed inputs, with what it cannot see and what stays an expectation.",
+          "kind": "architecture"
+        }
+      ],
+      "graph": {
+        "slug": "skill-behaviour-policy",
+        "teaser": "A skill behaviour policy compares what a skill says, what it can do and what it is given, then generates the control; measured on 899 skills.",
+        "topics": [
+          "agents-and-policy"
+        ],
+        "core_idea": "The claim that one in twenty Claude skills is built to hack you overstates a study that found 5.2% of marketplace skills with patterns suggesting malicious intent; a skill behaviour policy instead compares the described mandate, the actual mandate found as features in a skill's files, and the grant of the environment it runs in, records dual-use features with their reasons rather than verdicts, and generates hooks and sandbox settings that bring the grant down to the description; on 899 public skills, 812 reach beyond their own scripts, 782 through one third-party tool server, 39 have undescribed features, and an honest skill with the whole lethal trifecta still needs a control that a malice scanner would not ask for.",
+        "nodes": [
+          {
+            "id": "claim",
+            "label": "One in twenty, corrected",
+            "kind": "claim",
+            "summary": "5.2% of 31,132 marketplace skills showed patterns suggesting malicious intent."
+          },
+          {
+            "id": "described",
+            "label": "The described mandate",
+            "kind": "concept",
+            "summary": "What the description promises."
+          },
+          {
+            "id": "actual",
+            "label": "The actual mandate",
+            "kind": "concept",
+            "summary": "What the instructions and files can do, found as features."
+          },
+          {
+            "id": "grant",
+            "label": "The grant",
+            "kind": "concept",
+            "summary": "What the environment allows: Claude Code, claude.ai, the API."
+          },
+          {
+            "id": "allowed-tools",
+            "label": "allowed-tools widens the grant",
+            "kind": "example",
+            "summary": "It pre-approves tools; it does not restrict them."
+          },
+          {
+            "id": "features",
+            "label": "Features, not verdicts",
+            "kind": "method",
+            "summary": "An upload can be exfiltration or a login; the row records which."
+          },
+          {
+            "id": "calculator",
+            "label": "A static calculator",
+            "kind": "method",
+            "summary": "Reads a skill as text, finds features, compares the description."
+          },
+          {
+            "id": "measured",
+            "label": "899 skills",
+            "kind": "artefact",
+            "summary": "812 reach beyond their scripts; 782 via one tool server; 39 with gaps."
+          },
+          {
+            "id": "dga",
+            "label": "developer-growth-analysis",
+            "kind": "example",
+            "summary": "Chat history, HackerNews, Slack: the whole trifecta, described."
+          },
+          {
+            "id": "hook",
+            "label": "A generated hook",
+            "kind": "artefact",
+            "summary": "Nine fixtures: allow the history, deny secrets and startup files, ask before sending."
+          },
+          {
+            "id": "limits",
+            "label": "What the hook cannot see",
+            "kind": "claim",
+            "summary": "Scripts' own network is the sandbox's job; MCP servers run outside it."
+          },
+          {
+            "id": "scanner",
+            "label": "SkillSpector, static",
+            "kind": "example",
+            "summary": "Rated the trifecta skill safe; flagged the bashrc line as a backdoor pattern."
+          },
+          {
+            "id": "questions",
+            "label": "Different questions",
+            "kind": "claim",
+            "summary": "Does it look malicious, or what does it need and get here?"
+          },
+          {
+            "id": "service",
+            "label": "A service and a standard",
+            "kind": "artefact",
+            "summary": "Mandates, minimal grant, reach per environment, tested controls."
+          }
+        ],
+        "edges": [
+          {
+            "from": "claim",
+            "to": "described",
+            "rel": "leads-to"
+          },
+          {
+            "from": "described",
+            "to": "actual",
+            "rel": "compared-with"
+          },
+          {
+            "from": "actual",
+            "to": "grant",
+            "rel": "compared-with"
+          },
+          {
+            "from": "allowed-tools",
+            "to": "grant",
+            "rel": "example-of"
+          },
+          {
+            "from": "features",
+            "to": "actual",
+            "rel": "extends"
+          },
+          {
+            "from": "calculator",
+            "to": "measured",
+            "rel": "produces"
+          },
+          {
+            "from": "calculator",
+            "to": "features",
+            "rel": "depends-on"
+          },
+          {
+            "from": "dga",
+            "to": "measured",
+            "rel": "example-of"
+          },
+          {
+            "from": "dga",
+            "to": "hook",
+            "rel": "produces"
+          },
+          {
+            "from": "limits",
+            "to": "hook",
+            "rel": "extends"
+          },
+          {
+            "from": "scanner",
+            "to": "questions",
+            "rel": "example-of"
+          },
+          {
+            "from": "questions",
+            "to": "service",
+            "rel": "leads-to"
+          },
+          {
+            "from": "hook",
+            "to": "service",
+            "rel": "example-of"
+          },
+          {
+            "from": "scanner",
+            "to": "calculator",
+            "rel": "contrasts"
+          }
+        ],
+        "links": {
+          "articles": [
+            "a-policy-for-every-skill",
+            "footprint-and-blast-radius",
+            "are-hooks-the-sweet-spot",
+            "hooks-are-kernel-code",
+            "policy-as-code-needs-a-policy-first",
+            "chainguard-mapped"
+          ],
+          "pages": [],
+          "sites": [
+            "https://arxiv.org/abs/2601.10338",
+            "https://github.com/NVIDIA/SkillSpector",
+            "https://developer.nvidia.com/blog/nvidia-verified-agent-skills-provide-capability-governance-for-ai-agents/",
+            "https://github.com/anthropics/skills",
+            "https://github.com/obra/superpowers",
+            "https://github.com/ComposioHQ/awesome-claude-skills",
+            "https://code.claude.com/docs/en/skills",
+            "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview",
+            "https://code.claude.com/docs/en/sandboxing",
+            "https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "5.2% of skills exhibit high-severity patterns strongly suggesting malicious intent",
+            "why": "What the study found, behind the one-in-twenty claim."
+          },
+          {
+            "text": "A skill can grant itself broad tool access",
+            "why": "Why the grant can be wider than the environment's default."
+          },
+          {
+            "text": "Verified skills govern capabilities that enter the workflow.",
+            "why": "NVIDIA's framing of the question a policy asks."
+          }
+        ]
+      }
+    },
+    {
       "slug": "sgit-actions-side-by-side",
       "title": "sgit in GitHub Actions, side by side: a showcase repository and site that runs four ways of moving a vault between jobs on every run, measured, with a budget for its LLM steps",
       "date": "2026-10-14",
@@ -547,7 +804,9 @@
         "pay-after-you-read",
         "pay-to-keep-your-persona"
       ],
-      "links_in": [],
+      "links_in": [
+        "skill-behaviour-policy"
+      ],
       "figures": [
         {
           "file": "hk-first10.webp",
@@ -806,6 +1065,7 @@
         "sgit-in-a-ci-pipeline"
       ],
       "links_in": [
+        "skill-behaviour-policy",
         "hooks-are-kernel-code"
       ],
       "figures": [
@@ -1834,6 +2094,7 @@
         "a-policy-for-every-skill"
       ],
       "links_in": [
+        "skill-behaviour-policy",
         "hooks-are-kernel-code",
         "system-prompts-as-behaviour-policies",
         "the-agents-write-too",
@@ -2809,6 +3070,7 @@
         "riskmandate-ten-questions"
       ],
       "links_in": [
+        "skill-behaviour-policy",
         "hooks-are-kernel-code",
         "chainguard-mapped",
         "are-hooks-the-sweet-spot"
@@ -3039,6 +3301,7 @@
         "the-human-in-the-loop"
       ],
       "links_in": [
+        "skill-behaviour-policy",
         "system-prompts-as-behaviour-policies",
         "are-hooks-the-sweet-spot",
         "knowledge-that-maintains-itself",
@@ -25782,6 +26045,7 @@
         "six-agents-one-inbox"
       ],
       "links_in": [
+        "skill-behaviour-policy",
         "chainguard-mapped",
         "system-prompts-as-behaviour-policies",
         "are-hooks-the-sweet-spot",

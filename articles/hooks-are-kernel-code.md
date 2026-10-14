@@ -150,6 +150,10 @@ Agents & policySite & engineering[This article as a graph →](graphs.md#hooks-a
 - [Pay after you read: how a reading meter became a working business model in one afternoon, one release at a time](pay-after-you-read.md) Seven releases in one afternoon turned the reading meter into a working model: pay after you read, and the rating sets the price.
 - [Pay to keep your persona: readers should pay because it helps them, not because they feel they should](pay-to-keep-your-persona.md) Readers should pay because it helps them: a persona with a name and a graph, several for focus, and one that follows you between devices.
 
+### Continued by
+
+- [A skill behaviour policy: what a skill says it does, what it can do, what it is given, and the control that closes the gap, measured on 899 skills](skill-behaviour-policy.md) A skill behaviour policy compares what a skill says, what it can do and what it is given, then generates the control; measured on 899 skills.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 120 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=120)

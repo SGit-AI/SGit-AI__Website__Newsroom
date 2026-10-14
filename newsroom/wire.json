@@ -73,6 +73,37 @@
   ],
   "articles": [
     {
+      "slug": "skill-behaviour-policy",
+      "title": "A skill behaviour policy: what a skill says it does, what it can do, what it is given, and the control that closes the gap, measured on 899 skills",
+      "date": "2026-10-14",
+      "updated": "",
+      "author": "Dinis Cruz",
+      "url": "https://newsroom.sgit.ai/articles/skill-behaviour-policy.html",
+      "markdown": "https://newsroom.sgit.ai/articles/skill-behaviour-policy.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/skill-behaviour-policy.webp",
+      "graph": "https://newsroom.sgit.ai/articles/graphs/skill-behaviour-policy.json",
+      "teaser": "A skill behaviour policy compares what a skill says, what it can do and what it is given, then generates the control; measured on 899 skills.",
+      "summary": "I saw a video today that said \"1 in 20 Claude skills are built to hack your computer\". It is an overstatement of a real study, and the real finding is interesting enough: in one large study of public marketplaces, 5.2% of the skills analysed showed \"high-severity patterns strongly suggesting malicious intent\". It made me think about what an agent behaviour policy can do for skills. A skill behaviour policy looks at three things. The mandate the description promises; the mandate the skill actually has, from what its instructions and files can do, treated as features; and the grant, which depends on where it runs. The gap between the first two is the suspicious part; the gap between the last two is the reach nobody asked for. Then the policy becomes a control: a hook and a sandbox setting, generated from the described mandate, that bring the grant down to what you expected. I built a static calculator and ran it on 899 public skills from three sources: 812 can reach something beyond their own scripts, 782 of them through one third-party tool server, and 39 have a feature their description does not mention. None was obfuscated. The clearest case was honest: a skill that reads your Claude Code chat history, searches HackerNews and sends a report to Slack has the whole lethal trifecta, says so, and still needs a control. NVIDIA's scanner rated it safe, which is right for the question a scanner asks. A policy asks a different one.",
+      "topics": [
+        "agents-and-policy"
+      ],
+      "tags": [
+        "agent-skills",
+        "skill-behaviour-policy",
+        "agent-behaviour-policy",
+        "hooks",
+        "sandbox",
+        "lethal-trifecta",
+        "supply-chain",
+        "skillspector",
+        "mcp",
+        "article"
+      ],
+      "placement": [],
+      "linkedin": null,
+      "notes": []
+    },
+    {
       "slug": "sgit-actions-side-by-side",
       "title": "sgit in GitHub Actions, side by side: a showcase repository and site that runs four ways of moving a vault between jobs on every run, measured, with a budget for its LLM steps",
       "date": "2026-10-14",
