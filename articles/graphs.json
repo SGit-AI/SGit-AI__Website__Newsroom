@@ -55,6 +55,263 @@
   ],
   "articles": [
     {
+      "slug": "commanders-intent-is-a-behaviour-policy",
+      "title": "Commander's intent is a behaviour policy: Sondera's argument in our words, the business layer above it, and five of our rules compiled to Cedar and tested",
+      "date": "2026-10-14",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/commanders-intent-is-a-behaviour-policy.html",
+      "markdown": "https://newsroom.sgit.ai/articles/commanders-intent-is-a-behaviour-policy.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/commanders-intent-is-a-behaviour-policy.webp",
+      "teaser": "Sondera's commander's intent and our behaviour policies are one idea: twelve terms joined, the business layer above, and five rules tested in Cedar.",
+      "topics": [
+        "agents-and-policy",
+        "graphs-and-knowledge"
+      ],
+      "tags": [
+        "commanders-intent",
+        "agent-behaviour-policy",
+        "policy-as-code",
+        "cedar",
+        "sondera",
+        "business-logic",
+        "liability",
+        "fractal-semantic-graphs",
+        "agents",
+        "article"
+      ],
+      "links_out": [
+        "introducing-fractal-semantic-graphs",
+        "the-same-argument-in-our-words",
+        "footprint-and-blast-radius",
+        "hope-or-enforcement",
+        "re-anchoring-agent-behaviour-policies",
+        "how-cheap-is-it-to-undo",
+        "skill-behaviour-policy",
+        "the-policy-draws-the-liability-line",
+        "are-hooks-the-sweet-spot",
+        "hooks-are-kernel-code",
+        "the-behaviour-policy-is-the-business-logic",
+        "policy-as-code-needs-a-policy-first"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "ci-crosswalk.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ci-crosswalk.webp",
+          "caption": "Two vocabularies, one idea: twelve of Sondera's terms from \"Your Agents Need Commander's Intent\" against the terms this site and RiskMandate use. Most are the same idea in different words; we extend theirs at the business layer, and they extend ours with proof.",
+          "kind": "comparison"
+        },
+        {
+          "file": "ci-layers.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ci-layers.webp",
+          "caption": "Limits about effects, all the way up. Sondera's published example sits just above the mechanics; the business logic sits above it, and each layer can be written as an effect and compiled to the same kind of rule. What changes going up is where the facts come from: the platform, the session, the ledger, the CRM, and at the top, judgement.",
+          "kind": "architecture"
+        }
+      ],
+      "graph": {
+        "slug": "commanders-intent-is-a-behaviour-policy",
+        "teaser": "Sondera's commander's intent and our behaviour policies are one idea: twelve terms joined, the business layer above, and five rules tested in Cedar.",
+        "topics": [
+          "agents-and-policy",
+          "graphs-and-knowledge"
+        ],
+        "core_idea": "Sondera argues that agents do not go rogue but fill unstated gaps, so limits must be written as effects, compiled into checkable rules and enforced outside the agent, which is commander's intent; joined to this site's vocabulary it is the mandate, the gap and the barriers of an agent behaviour policy, with this site going further up into the business layer, where only the company can write the limits, and Sondera going further in proof by compiling plain English into Cedar; five rules from both sides and the business layer evaluated in Cedar gave fourteen of fourteen intended verdicts, and the hard part is where each rule's facts come from.",
+        "nodes": [
+          {
+            "id": "not-rogue",
+            "label": "Agents do not go rogue",
+            "kind": "claim",
+            "summary": "They follow the sentence and fill the gaps; the limits were never written."
+          },
+          {
+            "id": "tip-form",
+            "label": "The tip form",
+            "kind": "example",
+            "summary": "The instructions did not rule out form submissions."
+          },
+          {
+            "id": "intent",
+            "label": "Commander's intent",
+            "kind": "concept",
+            "summary": "The objective and its limits, written together before anyone moves."
+          },
+          {
+            "id": "effects",
+            "label": "Limits about effects",
+            "kind": "method",
+            "summary": "Not lists of forbidden actions, which invite the one you missed."
+          },
+          {
+            "id": "momentum",
+            "label": "Rules fade",
+            "kind": "example",
+            "summary": "90% stop when the limit is last in context, 40% three turns earlier."
+          },
+          {
+            "id": "crosswalk",
+            "label": "Two vocabularies joined",
+            "kind": "artefact",
+            "summary": "Twelve of their terms against ours, as edges of a graph."
+          },
+          {
+            "id": "abp",
+            "label": "Agent behaviour policy",
+            "kind": "concept",
+            "summary": "Mandate, grant, gap and barriers, row by row."
+          },
+          {
+            "id": "business",
+            "label": "We go further up",
+            "kind": "claim",
+            "summary": "Function, process, relationship, organisation: limits only the company can write."
+          },
+          {
+            "id": "proof",
+            "label": "They go further in proof",
+            "kind": "claim",
+            "summary": "Plain English compiled to Cedar and checked by a theorem prover."
+          },
+          {
+            "id": "cedar",
+            "label": "Five rules in Cedar",
+            "kind": "artefact",
+            "summary": "Theirs, ours, the skill policy and the business layer."
+          },
+          {
+            "id": "fourteen",
+            "label": "Fourteen of fourteen",
+            "kind": "claim",
+            "summary": "Every request came out as intended."
+          },
+          {
+            "id": "facts",
+            "label": "Where the facts come from",
+            "kind": "question",
+            "summary": "The ledger and the CRM, not the syntax, are the hard part."
+          },
+          {
+            "id": "liability",
+            "label": "What the humans allowed",
+            "kind": "concept",
+            "summary": "The law asks what was allowed, not what the agent intended."
+          },
+          {
+            "id": "checked",
+            "label": "The sources, checked",
+            "kind": "method",
+            "summary": "Primary reports hold; a few figures rounded; two items unconfirmed."
+          }
+        ],
+        "edges": [
+          {
+            "from": "tip-form",
+            "to": "not-rogue",
+            "rel": "example-of"
+          },
+          {
+            "from": "not-rogue",
+            "to": "intent",
+            "rel": "leads-to"
+          },
+          {
+            "from": "intent",
+            "to": "effects",
+            "rel": "produces"
+          },
+          {
+            "from": "momentum",
+            "to": "effects",
+            "rel": "leads-to"
+          },
+          {
+            "from": "intent",
+            "to": "abp",
+            "rel": "compared-with"
+          },
+          {
+            "from": "crosswalk",
+            "to": "abp",
+            "rel": "depends-on"
+          },
+          {
+            "from": "business",
+            "to": "effects",
+            "rel": "extends"
+          },
+          {
+            "from": "proof",
+            "to": "abp",
+            "rel": "extends"
+          },
+          {
+            "from": "cedar",
+            "to": "fourteen",
+            "rel": "produces"
+          },
+          {
+            "from": "business",
+            "to": "cedar",
+            "rel": "example-of"
+          },
+          {
+            "from": "fourteen",
+            "to": "facts",
+            "rel": "leads-to"
+          },
+          {
+            "from": "liability",
+            "to": "intent",
+            "rel": "depends-on"
+          },
+          {
+            "from": "checked",
+            "to": "not-rogue",
+            "rel": "answers"
+          }
+        ],
+        "links": {
+          "articles": [
+            "introducing-fractal-semantic-graphs",
+            "the-same-argument-in-our-words",
+            "footprint-and-blast-radius",
+            "hope-or-enforcement",
+            "re-anchoring-agent-behaviour-policies",
+            "how-cheap-is-it-to-undo",
+            "skill-behaviour-policy",
+            "the-policy-draws-the-liability-line",
+            "are-hooks-the-sweet-spot",
+            "hooks-are-kernel-code",
+            "the-behaviour-policy-is-the-business-logic",
+            "policy-as-code-needs-a-policy-first"
+          ],
+          "pages": [],
+          "sites": [
+            "https://blog.sondera.ai/p/ai-agents-commanders-intent",
+            "https://docs.sondera.ai",
+            "https://www.anthropic.com/research/investigating-unintended-model-actions",
+            "https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents",
+            "https://arxiv.org/abs/2609.38415",
+            "https://arxiv.org/abs/2606.26649",
+            "https://armypubs.army.mil/epubs/DR_pubs/DR_a/ARN47032-ADP_6-0-000-WEB-1.pdf"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "An agent has no intent, just an optimization target.",
+            "why": "Why the limits have to be ours."
+          },
+          {
+            "text": "So limits have to be written about effects, not actions.",
+            "why": "The method both sides share."
+          },
+          {
+            "text": "The rule that the user interface enforced by omission is no longer enforced, unless somebody writes it down and something enforces it.",
+            "why": "Why the business layer has to be written now."
+          }
+        ]
+      }
+    },
+    {
       "slug": "skill-behaviour-policy",
       "title": "A skill behaviour policy: what a skill says it does, what it can do, what it is given, and the control that closes the gap, measured on 899 skills",
       "date": "2026-10-14",
@@ -86,7 +343,9 @@
         "policy-as-code-needs-a-policy-first",
         "chainguard-mapped"
       ],
-      "links_in": [],
+      "links_in": [
+        "commanders-intent-is-a-behaviour-policy"
+      ],
       "figures": [
         {
           "file": "sb-three.webp",
@@ -805,6 +1064,7 @@
         "pay-to-keep-your-persona"
       ],
       "links_in": [
+        "commanders-intent-is-a-behaviour-policy",
         "skill-behaviour-policy"
       ],
       "figures": [
@@ -2094,6 +2354,7 @@
         "a-policy-for-every-skill"
       ],
       "links_in": [
+        "commanders-intent-is-a-behaviour-policy",
         "skill-behaviour-policy",
         "hooks-are-kernel-code",
         "system-prompts-as-behaviour-policies",
@@ -3301,6 +3562,7 @@
         "the-human-in-the-loop"
       ],
       "links_in": [
+        "commanders-intent-is-a-behaviour-policy",
         "skill-behaviour-policy",
         "system-prompts-as-behaviour-policies",
         "are-hooks-the-sweet-spot",
@@ -4811,6 +5073,7 @@
         "a-second-reader-the-agent-cannot-skip"
       ],
       "links_in": [
+        "commanders-intent-is-a-behaviour-policy",
         "four-frameworks-one-agent",
         "every-link-points-back",
         "the-human-in-the-loop"
@@ -5512,6 +5775,7 @@
         "authority-outside-the-model"
       ],
       "links_in": [
+        "commanders-intent-is-a-behaviour-policy",
         "a-policy-for-every-skill",
         "policy-as-code-needs-a-policy-first",
         "attacks-rewritten-as-mandates",
@@ -13084,6 +13348,7 @@
         "connector-twin-before-you-deploy-an-agent"
       ],
       "links_in": [
+        "commanders-intent-is-a-behaviour-policy",
         "the-article-remains-a-product",
         "a-reading-list-in-a-link",
         "where-the-platform-draws-the-line",
@@ -16051,6 +16316,7 @@
         "a-second-reader-the-agent-cannot-skip"
       ],
       "links_in": [
+        "commanders-intent-is-a-behaviour-policy",
         "system-prompts-as-behaviour-policies",
         "the-agents-write-too",
         "agent-hooks-october-2026",
@@ -18662,6 +18928,7 @@
         "the-agent-team-as-it-runs"
       ],
       "links_in": [
+        "commanders-intent-is-a-behaviour-policy",
         "are-hooks-the-sweet-spot",
         "a-policy-for-every-skill",
         "policy-as-code-needs-a-policy-first",
@@ -20307,6 +20574,7 @@
         "ai-baseline-control-framework"
       ],
       "links_in": [
+        "commanders-intent-is-a-behaviour-policy",
         "system-prompts-as-behaviour-policies",
         "policy-as-code-needs-a-policy-first",
         "the-policy-draws-the-liability-line",
@@ -26045,6 +26313,7 @@
         "six-agents-one-inbox"
       ],
       "links_in": [
+        "commanders-intent-is-a-behaviour-policy",
         "skill-behaviour-policy",
         "chainguard-mapped",
         "system-prompts-as-behaviour-policies",
@@ -29600,6 +29869,7 @@
       ],
       "links_out": [],
       "links_in": [
+        "commanders-intent-is-a-behaviour-policy",
         "the-wire-as-a-graph",
         "knowledge-that-maintains-itself",
         "the-minimum-code-below",

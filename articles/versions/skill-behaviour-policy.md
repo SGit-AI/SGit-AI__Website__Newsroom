@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-14 | published | 2,605 | first published | this release | [current](../skill-behaviour-policy.md) |
+| **v1.0.0** | 2026-10-14 | published | 2,605 | first published | [`7f9533d32`](https://github.com/SGit-AI/SGit-AI__Website/commit/7f9533d3227f5619c1750d67a39a8573bc04a54c) | [current](../skill-behaviour-policy.md) |
 
 [← Back to the article](../skill-behaviour-policy.md) · [All articles](../index.md)
 

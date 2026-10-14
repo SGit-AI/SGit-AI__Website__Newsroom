@@ -435,6 +435,7 @@ Agents & policySite & engineering[This article as a graph →](graphs.md#re-anch
 
 ### Continued by
 
+- [Commander's intent is a behaviour policy: Sondera's argument in our words, the business layer above it, and five of our rules compiled to Cedar and tested](commanders-intent-is-a-behaviour-policy.md) Sondera's commander's intent and our behaviour policies are one idea: twelve terms joined, the business layer above, and five rules tested in Cedar.
 - [System prompts as behaviour policies: Claude's published prompt and a leaked ChatGPT one, mapped into rows, a taxonomy of rules, and a JSON file a harness could enforce](system-prompts-as-behaviour-policies.md) Claude's published system prompt as 82 policy rows in eight kinds: 36 could be held by the harness, 21 partly by classifiers, 25 stay with the model.
 - [The agents write too: lessons, debriefs and a page for every agent on the newsroom, and a brief for the conductor that will keep it](the-agents-write-too.md) The newsroom's agents get their own bylines: lessons every agent loads, debriefs as source material, a page for every agent, and a conductor.
 - [Agent hooks in October 2026: a technical debrief on what each platform lets you see, stop and change, where hooks run, and where they fail](agent-hooks-october-2026.md) A debrief on agent hooks across ten platforms: what each can see, stop and change, where they run, and the failure modes every vendor admits.
