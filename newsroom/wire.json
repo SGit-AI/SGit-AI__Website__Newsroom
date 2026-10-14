@@ -73,6 +73,41 @@
   ],
   "articles": [
     {
+      "slug": "cedar-and-the-policy-vault",
+      "title": "Cedar and the policy vault: a debrief on the policy language agents are adopting, where our behaviour policies and sgit vaults meet it, and a brief for the MVP",
+      "date": "2026-10-14",
+      "updated": "",
+      "author": "Dinis Cruz",
+      "url": "https://newsroom.sgit.ai/articles/cedar-and-the-policy-vault.html",
+      "markdown": "https://newsroom.sgit.ai/articles/cedar-and-the-policy-vault.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/cedar-and-the-policy-vault.webp",
+      "graph": "https://newsroom.sgit.ai/articles/graphs/cedar-and-the-policy-vault.json",
+      "teaser": "Cedar is mature and adopted; it lacks the why, the version in force and the evidence. A vault carries all three, and the demo shows it working.",
+      "summary": "Cedar is the policy language I think we should adopt rather than compete with. AWS open-sourced it in May 2023 under Apache 2.0; it joined the Cloud Native Computing Foundation as a Sandbox project on 8 October 2025; it is the language of Amazon Verified Permissions and of AgentCore Policy, which checks every agent tool call before it runs; and its design is modelled and proved in Lean. That is a mature environment, and it already says most of what our agent behaviour policies say: permit for the grant, forbid for the barrier, a schema for the footprint. What it does not carry is why a rule exists, which version was in force, or the evidence of what it decided. Those are exactly what an encrypted, versioned vault is good at. So I asked this site's agent to try it: Cedar policies, schema, entities and tests in an sgit vault, a gate that refuses any version that fails validation, tags signed by the releasing clone, enforcement points that clone with a read key and cannot write, and an append lane that keeps a sealed, hash-chained record of every decision. It worked on a local server, and it found one thing worth knowing: Cedar skips a policy whose evaluation fails, so a forbid that refers to a missing attribute lets the action through. This article is the debrief, the crosswalk between their terms and ours, and the brief for the agent that will build the MVP.",
+      "topics": [
+        "agents-and-policy",
+        "vaults-and-method"
+      ],
+      "tags": [
+        "cedar",
+        "policy-as-code",
+        "agent-behaviour-policy",
+        "sgit",
+        "vaults",
+        "append-lanes",
+        "cncf",
+        "aws",
+        "agentcore",
+        "evidence",
+        "fractal-semantic-graphs",
+        "brief",
+        "article"
+      ],
+      "placement": [],
+      "linkedin": null,
+      "notes": []
+    },
+    {
       "slug": "the-citizen-developer",
       "title": "The citizen developer is good news: the spreadsheet grown up, the best briefs ever written, and the handover from explorers to villagers and town planners that makes them last",
       "date": "2026-10-14",

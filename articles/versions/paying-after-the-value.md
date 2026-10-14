@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-14 | published | 2,173 | first published | this release | [current](../paying-after-the-value.md) |
+| **v1.0.0** | 2026-10-14 | published | 2,173 | first published | [`8bc8089f5`](https://github.com/SGit-AI/SGit-AI__Website/commit/8bc8089f55771baaf7704512e905ac7ed251977e) | [current](../paying-after-the-value.md) |
 
 [← Back to the article](../paying-after-the-value.md) · [All articles](../index.md)
 

@@ -55,6 +55,290 @@
   ],
   "articles": [
     {
+      "slug": "cedar-and-the-policy-vault",
+      "title": "Cedar and the policy vault: a debrief on the policy language agents are adopting, where our behaviour policies and sgit vaults meet it, and a brief for the MVP",
+      "date": "2026-10-14",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/cedar-and-the-policy-vault.html",
+      "markdown": "https://newsroom.sgit.ai/articles/cedar-and-the-policy-vault.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/cedar-and-the-policy-vault.webp",
+      "teaser": "Cedar is mature and adopted; it lacks the why, the version in force and the evidence. A vault carries all three, and the demo shows it working.",
+      "topics": [
+        "agents-and-policy",
+        "vaults-and-method"
+      ],
+      "tags": [
+        "cedar",
+        "policy-as-code",
+        "agent-behaviour-policy",
+        "sgit",
+        "vaults",
+        "append-lanes",
+        "cncf",
+        "aws",
+        "agentcore",
+        "evidence",
+        "fractal-semantic-graphs",
+        "brief",
+        "article"
+      ],
+      "links_out": [
+        "policy-as-code-needs-a-policy-first",
+        "commanders-intent-is-a-behaviour-policy",
+        "re-anchoring-agent-behaviour-policies",
+        "footprint-and-blast-radius",
+        "skill-behaviour-policy",
+        "the-behaviour-policy-is-the-business-logic",
+        "introducing-fractal-semantic-graphs",
+        "the-same-argument-in-our-words",
+        "hooks-are-kernel-code",
+        "agent-workflows-on-ephemeral-vaults",
+        "sgit-in-a-ci-pipeline",
+        "the-policy-draws-the-liability-line"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "cd-pipeline.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/cd-pipeline.webp",
+          "caption": "Cedar policies in an sgit vault, from the rule to the evidence: a gate that validates every version against the schema and its tests, tags signed by the releasing clone, enforcement points that clone with the read key only, and an append lane that keeps a sealed record of every decision. What ran in the demo for this article is solid; the gateway and the sync into managed stores are proposed.",
+          "kind": "architecture"
+        },
+        {
+          "file": "cd-crosswalk.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/cd-crosswalk.webp",
+          "caption": "Our behaviour-policy terms, Cedar's, and where each one lives in the vault. Most map directly: the grant is permit, the barrier is forbid, the footprint is the entities. Two have no Cedar construct, the mandate and the version in force, and those are what the vault adds.",
+          "kind": "comparison"
+        },
+        {
+          "file": "cd-today.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/cd-today.webp",
+          "caption": "Amazon Verified Permissions as its documentation describes it, a plain repository, and the vault from the demo. The managed store validates strictly and is protected by IAM, but its API has no history or export, and deleting it is permanent. A repository has history but no keys. The vault has both, and puts the evidence next to the rules.",
+          "kind": "comparison"
+        }
+      ],
+      "graph": {
+        "slug": "cedar-and-the-policy-vault",
+        "teaser": "Cedar is mature and adopted; it lacks the why, the version in force and the evidence. A vault carries all three, and the demo shows it working.",
+        "topics": [
+          "agents-and-policy",
+          "vaults-and-method"
+        ],
+        "core_idea": "Cedar, open-sourced by AWS in 2023, in the CNCF Sandbox since October 2025 and used by AgentCore Policy to check agent tool calls, already expresses most of an agent behaviour policy: permit for the grant, forbid for the barrier, entities for the footprint; it does not carry why a rule exists, which version was in force, or what it decided, and an sgit vault carries all three, as a local demo showed with a validation gate, signed tags, read-only enforcement clones and a sealed, hash-chained append lane of decisions; it also showed that Cedar skips a policy that errors, so an invalid forbid fails open, and the MVP must validate before release and deny on error.",
+        "nodes": [
+          {
+            "id": "cedar",
+            "label": "Cedar",
+            "kind": "concept",
+            "summary": "Open-source policy language and engine, formally modelled in Lean."
+          },
+          {
+            "id": "mature",
+            "label": "Mature and adopted",
+            "kind": "claim",
+            "summary": "CNCF Sandbox since 8 October 2025; Verified Permissions, AgentCore Policy, Sondera."
+          },
+          {
+            "id": "agentcore",
+            "label": "AgentCore Policy",
+            "kind": "example",
+            "summary": "Checks every agent tool call against Cedar before it runs."
+          },
+          {
+            "id": "abp",
+            "label": "Agent behaviour policy",
+            "kind": "concept",
+            "summary": "Mandate, grant, barriers, layers."
+          },
+          {
+            "id": "crosswalk",
+            "label": "Term by term",
+            "kind": "artefact",
+            "summary": "Permit is the grant, forbid the barrier, entities the footprint."
+          },
+          {
+            "id": "edges",
+            "label": "Annotations as edges",
+            "kind": "method",
+            "summary": "@abp_rule and @sbp_row join their graph to ours."
+          },
+          {
+            "id": "missing",
+            "label": "What Cedar does not carry",
+            "kind": "claim",
+            "summary": "Why a rule exists, the version in force, the evidence."
+          },
+          {
+            "id": "today",
+            "label": "Policy stores today",
+            "kind": "example",
+            "summary": "Strict validation and IAM, but no history API and permanent deletion."
+          },
+          {
+            "id": "vault",
+            "label": "The policy vault",
+            "kind": "artefact",
+            "summary": "Rules, schema, tests and decisions in one versioned, encrypted unit."
+          },
+          {
+            "id": "gate",
+            "label": "The gate",
+            "kind": "method",
+            "summary": "Validate and test every version; v2 without its schema was refused."
+          },
+          {
+            "id": "failopen",
+            "label": "An invalid forbid fails open",
+            "kind": "claim",
+            "summary": "Cedar skips a policy that errors; deny on error."
+          },
+          {
+            "id": "readonly",
+            "label": "Read-only enforcement",
+            "kind": "method",
+            "summary": "Clone with the read key, load only a signed tag."
+          },
+          {
+            "id": "lane",
+            "label": "The evidence lane",
+            "kind": "artefact",
+            "summary": "Sealed, hash-chained decisions, write-only for the decider."
+          },
+          {
+            "id": "dogwood",
+            "label": "Rules about history",
+            "kind": "question",
+            "summary": "Session-aware policies need a history you can trust."
+          },
+          {
+            "id": "brief",
+            "label": "The MVP brief",
+            "kind": "artefact",
+            "summary": "Eight steps, from the demo to a real hook and a report."
+          }
+        ],
+        "edges": [
+          {
+            "from": "mature",
+            "to": "cedar",
+            "rel": "depends-on"
+          },
+          {
+            "from": "agentcore",
+            "to": "mature",
+            "rel": "example-of"
+          },
+          {
+            "from": "crosswalk",
+            "to": "abp",
+            "rel": "depends-on"
+          },
+          {
+            "from": "crosswalk",
+            "to": "cedar",
+            "rel": "compared-with"
+          },
+          {
+            "from": "edges",
+            "to": "crosswalk",
+            "rel": "extends"
+          },
+          {
+            "from": "crosswalk",
+            "to": "missing",
+            "rel": "leads-to"
+          },
+          {
+            "from": "today",
+            "to": "missing",
+            "rel": "example-of"
+          },
+          {
+            "from": "vault",
+            "to": "missing",
+            "rel": "answers"
+          },
+          {
+            "from": "vault",
+            "to": "today",
+            "rel": "contrasts"
+          },
+          {
+            "from": "gate",
+            "to": "failopen",
+            "rel": "answers"
+          },
+          {
+            "from": "vault",
+            "to": "readonly",
+            "rel": "produces"
+          },
+          {
+            "from": "readonly",
+            "to": "lane",
+            "rel": "produces"
+          },
+          {
+            "from": "lane",
+            "to": "dogwood",
+            "rel": "answers"
+          },
+          {
+            "from": "brief",
+            "to": "vault",
+            "rel": "extends"
+          },
+          {
+            "from": "brief",
+            "to": "failopen",
+            "rel": "depends-on"
+          }
+        ],
+        "links": {
+          "articles": [
+            "policy-as-code-needs-a-policy-first",
+            "commanders-intent-is-a-behaviour-policy",
+            "re-anchoring-agent-behaviour-policies",
+            "footprint-and-blast-radius",
+            "skill-behaviour-policy",
+            "the-behaviour-policy-is-the-business-logic",
+            "introducing-fractal-semantic-graphs",
+            "the-same-argument-in-our-words",
+            "hooks-are-kernel-code",
+            "agent-workflows-on-ephemeral-vaults",
+            "sgit-in-a-ci-pipeline",
+            "the-policy-draws-the-liability-line"
+          ],
+          "pages": [],
+          "sites": [
+            "https://www.cncf.io/projects/cedar/",
+            "https://aws.amazon.com/blogs/opensource/cedar-joins-cncf-as-a-sandbox-project",
+            "https://docs.cedarpolicy.com/auth/authorization.html",
+            "https://arxiv.org/abs/2403.04651",
+            "https://lean-lang.org/use-cases/cedar/",
+            "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/policy.html",
+            "https://docs.aws.amazon.com/verifiedpermissions/latest/userguide/policy-stores-delete.html",
+            "https://github.com/cedar-policy/cedar-for-agents",
+            "https://dogwood-policy.github.io/dogwood/index.html"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "No new Cedar version is released unless its model, proofs, and differential tests are current.",
+            "why": "Why Cedar is the mature place to connect to."
+          },
+          {
+            "text": "A forbid that cannot be evaluated fails open.",
+            "why": "The sharp edge the demo found."
+          },
+          {
+            "text": "A read key is a deployment credential that cannot change the rules.",
+            "why": "What the vault adds to distribution."
+          }
+        ]
+      }
+    },
+    {
       "slug": "the-citizen-developer",
       "title": "The citizen developer is good news: the spreadsheet grown up, the best briefs ever written, and the handover from explorers to villagers and town planners that makes them last",
       "date": "2026-10-14",
@@ -770,7 +1054,9 @@
         "the-behaviour-policy-is-the-business-logic",
         "policy-as-code-needs-a-policy-first"
       ],
-      "links_in": [],
+      "links_in": [
+        "cedar-and-the-policy-vault"
+      ],
       "figures": [
         {
           "file": "ci-crosswalk.webp",
@@ -1021,6 +1307,7 @@
         "chainguard-mapped"
       ],
       "links_in": [
+        "cedar-and-the-policy-vault",
         "commanders-intent-is-a-behaviour-policy"
       ],
       "figures": [
@@ -1501,7 +1788,9 @@
         "sgit-in-a-ci-pipeline",
         "sgit-actions-side-by-side"
       ],
-      "links_in": [],
+      "links_in": [
+        "cedar-and-the-policy-vault"
+      ],
       "figures": [
         {
           "file": "aw-catalogue.webp",
@@ -1741,6 +2030,7 @@
         "pay-to-keep-your-persona"
       ],
       "links_in": [
+        "cedar-and-the-policy-vault",
         "commanders-intent-is-a-behaviour-policy",
         "skill-behaviour-policy"
       ],
@@ -4241,6 +4531,7 @@
         "the-human-in-the-loop"
       ],
       "links_in": [
+        "cedar-and-the-policy-vault",
         "commanders-intent-is-a-behaviour-policy",
         "skill-behaviour-policy",
         "system-prompts-as-behaviour-policies",
@@ -4476,6 +4767,7 @@
         "two-agents-one-vault"
       ],
       "links_in": [
+        "cedar-and-the-policy-vault",
         "sgit-actions-side-by-side",
         "agent-workflows-on-ephemeral-vaults",
         "chainguard-mapped",
@@ -6454,6 +6746,7 @@
         "authority-outside-the-model"
       ],
       "links_in": [
+        "cedar-and-the-policy-vault",
         "commanders-intent-is-a-behaviour-policy",
         "a-policy-for-every-skill",
         "policy-as-code-needs-a-policy-first",
@@ -14033,6 +14326,7 @@
         "connector-twin-before-you-deploy-an-agent"
       ],
       "links_in": [
+        "cedar-and-the-policy-vault",
         "commanders-intent-is-a-behaviour-policy",
         "the-article-remains-a-product",
         "a-reading-list-in-a-link",
@@ -17006,6 +17300,7 @@
         "a-second-reader-the-agent-cannot-skip"
       ],
       "links_in": [
+        "cedar-and-the-policy-vault",
         "commanders-intent-is-a-behaviour-policy",
         "system-prompts-as-behaviour-policies",
         "the-agents-write-too",
@@ -21264,6 +21559,7 @@
         "ai-baseline-control-framework"
       ],
       "links_in": [
+        "cedar-and-the-policy-vault",
         "commanders-intent-is-a-behaviour-policy",
         "system-prompts-as-behaviour-policies",
         "policy-as-code-needs-a-policy-first",
@@ -27004,6 +27300,7 @@
         "six-agents-one-inbox"
       ],
       "links_in": [
+        "cedar-and-the-policy-vault",
         "commanders-intent-is-a-behaviour-policy",
         "skill-behaviour-policy",
         "chainguard-mapped",
@@ -30563,6 +30860,7 @@
       ],
       "links_out": [],
       "links_in": [
+        "cedar-and-the-policy-vault",
         "commanders-intent-is-a-behaviour-policy",
         "the-wire-as-a-graph",
         "knowledge-that-maintains-itself",
