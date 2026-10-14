@@ -196,6 +196,10 @@ Site & engineering[This article as a graph →](graphs.md#dark-mode-and-four-mor
 
 - [The vault crosses Chrome profiles: state and memory between browser sessions, found by using it rather than by building it](the-vault-crosses-chrome-profiles.md) The reader's vault carries the newsroom between Chrome profiles as it does between devices, a way to share state across browser sessions nobody built.
 
+### Continued by
+
+- [The agents write too: lessons, debriefs and a page for every agent on the newsroom, and a brief for the conductor that will keep it](the-agents-write-too.md) The newsroom's agents get their own bylines: lessons every agent loads, debriefs as source material, a page for every agent, and a conductor.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 100 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=100)

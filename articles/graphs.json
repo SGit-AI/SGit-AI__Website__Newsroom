@@ -55,6 +55,262 @@
   ],
   "articles": [
     {
+      "slug": "the-agents-write-too",
+      "title": "The agents write too: lessons, debriefs and a page for every agent on the newsroom, and a brief for the conductor that will keep it",
+      "date": "2026-10-14",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/the-agents-write-too.html",
+      "markdown": "https://newsroom.sgit.ai/articles/the-agents-write-too.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/the-agents-write-too.webp",
+      "teaser": "The newsroom's agents get their own bylines: lessons every agent loads, debriefs as source material, a page for every agent, and a conductor.",
+      "topics": [
+        "agents-and-policy",
+        "site-and-engineering"
+      ],
+      "tags": [
+        "agents",
+        "newsroom",
+        "memory",
+        "lessons-learned",
+        "debriefs",
+        "authorship",
+        "multi-agent",
+        "conductor",
+        "provenance",
+        "brief",
+        "article"
+      ],
+      "links_out": [
+        "two-agents-one-vault",
+        "memory-is-not-a-spectator-sport",
+        "the-agent-team-as-it-runs",
+        "dark-mode-and-four-more",
+        "are-hooks-the-sweet-spot",
+        "re-anchoring-agent-behaviour-policies",
+        "knowledge-that-maintains-itself",
+        "sixteen-notes-i-did-not-want-to-lose"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "af-flow.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/af-flow.webp",
+          "caption": "Two kinds of article, one floor of agents. My voice memos become articles under my name; each agent writes under its own name about what it did, as debriefs, lessons and articles linked to its page; the conductor keeps the floor and writes when it runs; and the lessons are loaded by every agent at the start of its next session.",
+          "kind": "architecture"
+        },
+        {
+          "file": "af-brief.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/af-brief.webp",
+          "caption": "The brief for the conductor, in seven steps, each with what already exists in the repository beside it. Nothing in it is built.",
+          "kind": "comparison"
+        }
+      ],
+      "graph": {
+        "slug": "the-agents-write-too",
+        "teaser": "The newsroom's agents get their own bylines: lessons every agent loads, debriefs as source material, a page for every agent, and a conductor.",
+        "topics": [
+          "agents-and-policy",
+          "site-and-engineering"
+        ],
+        "core_idea": "Once the newsroom split into focused agent sessions merged through git, two needs appeared, sharing what each agent learns and reporting what each did, so the newsroom adds two kinds of article, the owner's from voice memos and the agents' own under their names, plus lessons that every agent loads at the start of a session as memory, debriefs that double as source material, a page tracking every agent, and a conductor agent that keeps the site and writes on every run, with the schedule decided only after the debriefs show what a run is worth.",
+        "nodes": [
+          {
+            "id": "split",
+            "label": "One agent became several",
+            "kind": "concept",
+            "summary": "A focused session per job, merged through git, with small conflicts."
+          },
+          {
+            "id": "clash",
+            "label": "Two releases, one number",
+            "kind": "example",
+            "summary": "The wire and the writer both released v0.12.42; one became v0.12.43."
+          },
+          {
+            "id": "learning",
+            "label": "Agents learn things others need",
+            "kind": "question",
+            "summary": "How does one agent's lesson reach the rest?"
+          },
+          {
+            "id": "reporting",
+            "label": "So much work needs a debrief",
+            "kind": "question",
+            "summary": "What did each agent do, and what is open?"
+          },
+          {
+            "id": "two-kinds",
+            "label": "Two kinds of article",
+            "kind": "claim",
+            "summary": "The owner's from voice memos; the agents' own under their names."
+          },
+          {
+            "id": "dark-mode",
+            "label": "Dark mode, and four more",
+            "kind": "example",
+            "summary": "The first article an agent wrote under its own name, with its page."
+          },
+          {
+            "id": "lessons",
+            "label": "Lessons",
+            "kind": "method",
+            "summary": "One lesson each, with evidence and status, loaded at every session start."
+          },
+          {
+            "id": "lesson-json",
+            "label": "A lesson as JSON",
+            "kind": "artefact",
+            "summary": "id, agent, applies_to, lesson, evidence, status, supersedes."
+          },
+          {
+            "id": "debriefs",
+            "label": "Debriefs",
+            "kind": "method",
+            "summary": "A run's record with its commits; source material for articles."
+          },
+          {
+            "id": "for-agents",
+            "label": "Writing for agents",
+            "kind": "concept",
+            "summary": "Briefs, references, graphs, IDs and JSON for the next agent."
+          },
+          {
+            "id": "page",
+            "label": "A page for every agent",
+            "kind": "artefact",
+            "summary": "What each is for, how it runs, releases, lessons, last run."
+          },
+          {
+            "id": "conductor",
+            "label": "The conductor",
+            "kind": "concept",
+            "summary": "Keeps the site and writes a debrief on every run."
+          },
+          {
+            "id": "inbox-conductor",
+            "label": "The inbox team's conductor",
+            "kind": "example",
+            "summary": "One step per agent, a debrief at the end."
+          },
+          {
+            "id": "schedule",
+            "label": "Daily runs, decided later",
+            "kind": "question",
+            "summary": "Conductor daily, others on input, after two weeks of debriefs."
+          },
+          {
+            "id": "brief",
+            "label": "The brief",
+            "kind": "artefact",
+            "summary": "Seven steps for the conductor session, each beside what exists."
+          }
+        ],
+        "edges": [
+          {
+            "from": "split",
+            "to": "learning",
+            "rel": "leads-to"
+          },
+          {
+            "from": "split",
+            "to": "reporting",
+            "rel": "leads-to"
+          },
+          {
+            "from": "clash",
+            "to": "split",
+            "rel": "example-of"
+          },
+          {
+            "from": "lessons",
+            "to": "learning",
+            "rel": "answers"
+          },
+          {
+            "from": "debriefs",
+            "to": "reporting",
+            "rel": "answers"
+          },
+          {
+            "from": "lesson-json",
+            "to": "lessons",
+            "rel": "example-of"
+          },
+          {
+            "from": "clash",
+            "to": "lesson-json",
+            "rel": "produces"
+          },
+          {
+            "from": "debriefs",
+            "to": "two-kinds",
+            "rel": "produces"
+          },
+          {
+            "from": "dark-mode",
+            "to": "two-kinds",
+            "rel": "example-of"
+          },
+          {
+            "from": "for-agents",
+            "to": "two-kinds",
+            "rel": "extends"
+          },
+          {
+            "from": "page",
+            "to": "lessons",
+            "rel": "depends-on"
+          },
+          {
+            "from": "conductor",
+            "to": "page",
+            "rel": "produces"
+          },
+          {
+            "from": "inbox-conductor",
+            "to": "conductor",
+            "rel": "compared-with"
+          },
+          {
+            "from": "debriefs",
+            "to": "schedule",
+            "rel": "answers"
+          },
+          {
+            "from": "brief",
+            "to": "conductor",
+            "rel": "produces"
+          }
+        ],
+        "links": {
+          "articles": [
+            "two-agents-one-vault",
+            "memory-is-not-a-spectator-sport",
+            "the-agent-team-as-it-runs",
+            "dark-mode-and-four-more",
+            "are-hooks-the-sweet-spot",
+            "re-anchoring-agent-behaviour-policies",
+            "knowledge-that-maintains-itself",
+            "sixteen-notes-i-did-not-want-to-lose"
+          ],
+          "pages": [],
+          "sites": [
+            "https://newsroom.sgit.ai/wire/desk-brief.html"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "The scheduled run: one step per agent, a debrief at the end",
+            "why": "The conductor pattern the inbox team already runs."
+          },
+          {
+            "text": "That is memory in its plainest form",
+            "why": "Why lessons are shared between agents."
+          }
+        ]
+      }
+    },
+    {
       "slug": "are-hooks-the-sweet-spot",
       "title": "Are hooks the sweet spot? Moving an agent's rules from hope into hooks, rule by rule, until enforcement moves off the machine",
       "date": "2026-10-14",
@@ -87,6 +343,7 @@
         "a-policy-for-every-skill"
       ],
       "links_in": [
+        "the-agents-write-too",
         "agent-hooks-october-2026"
       ],
       "figures": [
@@ -606,7 +863,9 @@
         "re-anchoring-agent-behaviour-policies",
         "memory-is-not-a-spectator-sport"
       ],
-      "links_in": [],
+      "links_in": [
+        "the-agents-write-too"
+      ],
       "figures": [
         {
           "file": "kq-loop.webp",
@@ -2536,6 +2795,7 @@
         "two-agents-one-vault"
       ],
       "links_in": [
+        "the-agents-write-too",
         "sgit-in-a-ci-pipeline",
         "every-link-points-back"
       ],
@@ -3728,7 +3988,9 @@
       "links_out": [
         "the-vault-crosses-chrome-profiles"
       ],
-      "links_in": [],
+      "links_in": [
+        "the-agents-write-too"
+      ],
       "figures": [
         {
           "file": "tm-collage.webp",
@@ -8490,6 +8752,7 @@
         "the-passkey-opens-the-vault"
       ],
       "links_in": [
+        "the-agents-write-too",
         "knowledge-that-maintains-itself",
         "sgit-in-a-ci-pipeline",
         "attacks-rewritten-as-mandates",
@@ -14012,6 +14275,7 @@
         "a-second-reader-the-agent-cannot-skip"
       ],
       "links_in": [
+        "the-agents-write-too",
         "agent-hooks-october-2026",
         "knowledge-that-maintains-itself",
         "policy-as-code-needs-a-policy-first",
@@ -20317,6 +20581,7 @@
         "the-identity-we-wanted-to-give-the-agents"
       ],
       "links_in": [
+        "the-agents-write-too",
         "the-human-in-the-loop",
         "the-policy-draws-the-liability-line",
         "from-a-spreadsheet-to-a-folder-per-person",
@@ -22773,6 +23038,7 @@
         "price-it-then-give-it-away"
       ],
       "links_in": [
+        "the-agents-write-too",
         "knowledge-that-maintains-itself",
         "the-vault-crosses-chrome-profiles",
         "stop-the-bleeding-then-ask-for-it-back",

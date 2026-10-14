@@ -111,6 +111,7 @@ Agents & policySite & engineering[This article as a graph →](graphs.md#are-hoo
 
 ### Continued by
 
+- [The agents write too: lessons, debriefs and a page for every agent on the newsroom, and a brief for the conductor that will keep it](the-agents-write-too.md) The newsroom's agents get their own bylines: lessons every agent loads, debriefs as source material, a page for every agent, and a conductor.
 - [Agent hooks in October 2026: a technical debrief on what each platform lets you see, stop and change, where hooks run, and where they fail](agent-hooks-october-2026.md) A debrief on agent hooks across ten platforms: what each can see, stop and change, where they run, and the failure modes every vendor admits.
 
 [All articles](index.md) · [All graphs](graphs.md)

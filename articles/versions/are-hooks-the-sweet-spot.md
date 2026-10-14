@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-14 | published | 2,609 | first published | this release | [current](../are-hooks-the-sweet-spot.md) |
+| **v1.0.0** | 2026-10-14 | published | 2,609 | first published | [`2d0143c83`](https://github.com/SGit-AI/SGit-AI__Website/commit/2d0143c83ae2b667233dccc90729828966ad88b4) | [current](../are-hooks-the-sweet-spot.md) |
 
 [← Back to the article](../are-hooks-the-sweet-spot.md) · [All articles](../index.md)
 

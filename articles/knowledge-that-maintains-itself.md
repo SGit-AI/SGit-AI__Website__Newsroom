@@ -105,6 +105,10 @@ Graphs & knowledgeVaults & method[This article as a graph →](graphs.md#knowled
 - [Re-anchoring: keeping an agent's rules alive through every summary, and a canary that shows when they are not](re-anchoring-agent-behaviour-policies.md) Summaries keep under 2% of a long session. Re-anchoring prints the agent's rules back after each one; a canary report shows it is working.
 - [Memory is not a spectator sport: how a web of open sites, graphs and vaults became the memory for sessions like this one](memory-is-not-a-spectator-sport.md) Agentic memory as context management: many published, fractal, provenance-carrying memories rather than one store, shown in the session that wrote the article.
 
+### Continued by
+
+- [The agents write too: lessons, debriefs and a page for every agent on the newsroom, and a brief for the conductor that will keep it](the-agents-write-too.md) The newsroom's agents get their own bylines: lessons every agent loads, debriefs as source material, a page for every agent, and a conductor.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 113 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=113)
