@@ -162,3 +162,15 @@ body .chip.ent { background: var(--panel); }
 main.doc .agent p, .wire-status, .snapshot { overflow-wrap: anywhere; } /* the read key and the clone command are one unbroken token */
 [hidden] { display: none !important; }
 @media (max-width: 640px) { .wire-status .btn { margin-left: 0; } .story { padding: .85rem .95rem; } }
+/* the graphs (wire/graphs.js): the SVG names every colour through a token in its own fill and stroke attributes, so
+   this file holds only sizes and type. A figure scales to its column (viewBox), which is what keeps the phone free of
+   sideways scroll; the strip keeps its own pixel size, since it sits in a line of text. */
+.graph { margin: .6rem 0; }
+.graph > svg { display: block; width: 100%; max-width: 100%; height: auto; font-family: var(--sans); }
+.graph text.mono { font-family: var(--mono); } .graph text.serif { font-family: var(--serif); }
+.graph figcaption { margin: .3rem 0 0; font-size: .8rem; color: var(--dim); }
+.graph .legend { list-style: none; display: flex; flex-wrap: wrap; gap: .25rem .9rem; margin: .4rem 0 0; padding: 0; font-size: .8rem; color: var(--dim); }
+.graph .legend .sw { display: inline-block; width: .7rem; height: .7rem; border-radius: 2px; margin-right: .35rem; vertical-align: -.05em; }
+.graph-err { font-size: .82rem; }
+.pv-strip { display: inline-block; width: auto; height: 16px; vertical-align: -.2em; margin-right: .2rem; }
+.edition details.graph { margin: .4rem 0 .8rem; font-size: .86rem; } .edition details.graph > summary { cursor: pointer; color: var(--accent-dk); }

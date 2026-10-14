@@ -179,4 +179,4 @@ Read from the links the articles make to each other. [The same thing drawn as a 
 
 ---
 
-*newsroom.sgit.ai · site v0.12.41 · the front page, imported from sgit.ai. This site's own index is [llms.txt](llms.txt).*
+*newsroom.sgit.ai · site v0.12.42 · the front page, imported from sgit.ai. This site's own index is [llms.txt](llms.txt).*

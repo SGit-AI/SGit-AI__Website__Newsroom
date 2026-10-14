@@ -51,6 +51,8 @@ FILES = [
     ("for/for.css",                "Styles for the two reading-list pages", "this site"),
     ("assets/subscribe.js",        "The subscribe form: encrypts the address and posts it to the lane", "sgit.ai, verbatim"),
     ("wire/vault-reader.js",       "Reads an sgit vault in the browser with a published read key: ref, commit, tree, blobs, decrypted with Web Crypto; the markdown renderer", "this site, vendored from sgit.ai's vault-docs.js"),
+    ("wire/graphs.js",             "The wires' graphs: a provenance strip per story, stories per day by beat, the threads on a date axis, the entities stories share, a sources tally, a story-by-persona matrix; SVG from the bundle, text nodes only, colours as theme tokens", "this site"),
+    ("admin/build/infographics.py", "One card per story and one hero per edition through dev.tools.sgraph.ai, with a cost ledger per edition and per wire; the key from the environment only, a dry run without it", "this site"),
     ("wire/wire.js",               "The wires: the edition with its lens, release notes and corrections, a map or a stack when the vault has one, the sources, the documents, drawn from the vault as text; one code for every wire", "this site"),
     ("wire/wire.css",              "Styles for the wire pages", "this site"),
     ("wire/subscribe.js",          "Subscribe to one wire alone: the newsletter's envelope and lane (assets/subscribe.js, unedited), with X-SGit-List naming the wire", "this site"),

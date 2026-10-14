@@ -314,7 +314,7 @@ def main():
             changed.append(rel)
     if write("archive/index.html", index_page()):
         changed.append("archive/index.html")
-    stamped = sum(1 for p in ROOT.rglob("*.html") if ".claude" not in p.parts and START in p.read_text(encoding="utf-8", errors="ignore"))
+    stamped = sum(1 for p in ROOT.rglob("*.html") if ".claude" not in p.relative_to(ROOT).parts and START in p.read_text(encoding="utf-8", errors="ignore"))
     print(f"archive: {stamped} pages carry the archive note; {len(changed)} file(s) updated")
 
 

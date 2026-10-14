@@ -27,7 +27,7 @@
  ],
  "what": "The map of everything a reader does on newsroom.sgit.ai, and the review of it: phase 0 of the move described in https://newsroom.sgit.ai/articles/explorer-to-villager-newsroom.html. Written by admin/build/api_map.py on every build. The hashes are the 'before' for the move's rule that the live site serves the same bytes after it: scripts, styles and JSON raw; pages with the site chrome and version stamps normalised.",
  "api_means": "client-side: components, formats and contracts the browser runs, with no server and nothing to deploy but files",
- "release": "v0.12.41",
+ "release": "v0.12.42",
  "date": "11 October 2026",
  "source": {
   "sgit_ai": "",
@@ -36,8 +36,8 @@
   "meter_on_sgit_ai": "1.3.1"
  },
  "counts": {
-  "reader_code_lines": 9527,
-  "reader_files": 60,
+  "reader_code_lines": 9903,
+  "reader_files": 62,
   "pages": 29,
   "views": 12,
   "controls": 56,
@@ -45,7 +45,7 @@
   "outputs": 9,
   "contracts": 14,
   "findings": 18,
-  "tests": 489,
+  "tests": 491,
   "frozen_files": 20,
   "frozen_lines": 5697,
   "pages_with_csp": 0
@@ -228,12 +228,47 @@
    "crypto": true
   },
   {
+   "path": "wire/graphs.js",
+   "what": "The wires' graphs: a provenance strip per story, stories per day by beat, the threads on a date axis, the entities stories share, a sources tally, a story-by-persona matrix; SVG from the bundle, text nodes only, colours as theme tokens",
+   "from": "this site",
+   "lines": 356,
+   "bytes": 32479,
+   "sha256": "22f48fcb1185389f8c477b382f422b42e7916bc2f1920598049f490cca3490e1",
+   "hosts": [],
+   "fetch": 0,
+   "storage": [],
+   "events": [],
+   "eval": 0,
+   "innerHTML": 0,
+   "confirm": 0,
+   "crypto": false
+  },
+  {
+   "path": "admin/build/infographics.py",
+   "what": "One card per story and one hero per edition through dev.tools.sgraph.ai, with a cost ledger per edition and per wire; the key from the environment only, a dry run without it",
+   "from": "this site",
+   "lines": 617,
+   "bytes": 36281,
+   "sha256": "b92e5cf4a6dba62f01baa6551b179fc7e7f0baa879cb9fe2b5cf9c4e3495c561",
+   "hosts": [
+    "dev.tools.sgraph.ai",
+    "openrouter.ai"
+   ],
+   "fetch": 0,
+   "storage": [],
+   "events": [],
+   "eval": 0,
+   "innerHTML": 0,
+   "confirm": 0,
+   "crypto": false
+  },
+  {
    "path": "wire/wire.js",
    "what": "The wires: the edition with its lens, release notes and corrections, a map or a stack when the vault has one, the sources, the documents, drawn from the vault as text; one code for every wire",
    "from": "this site",
-   "lines": 511,
-   "bytes": 49509,
-   "sha256": "52dc844536433a2e05b4f9933ecde2fc1c9aea2350ac6af3a46fcfb2f7544828",
+   "lines": 519,
+   "bytes": 50728,
+   "sha256": "372f85ab8ffd75beb8eaec31aa64884dcaff8286b961a353cc7cf0bfdd3dc1c7",
    "hosts": [],
    "fetch": 0,
    "storage": [
@@ -250,9 +285,9 @@
    "path": "wire/wire.css",
    "what": "Styles for the wire pages",
    "from": "this site",
-   "lines": 164,
-   "bytes": 16024,
-   "sha256": "1d61c6cb87f9e7093088df2f77f3b263af74e8b91ebca62231498e296a1a5210",
+   "lines": 176,
+   "bytes": 17244,
+   "sha256": "f61bc914b5303dced5b03e16a81c7bca33e534bd88eb5a049718e1a7b094d3d7",
    "hosts": [],
    "fetch": 0,
    "storage": [],
@@ -364,7 +399,7 @@
    "from": "this site, generated",
    "lines": 717,
    "bytes": 30076,
-   "sha256": "a065fe8467954414ccb85ca96446d9579ec7de471e33f224df57486286cb4c36",
+   "sha256": "550abde85cacfb45826086e2e9157c9a019deae3da2e25891256d01ff4106e57",
    "hosts": [],
    "fetch": 0,
    "storage": [],
@@ -380,7 +415,7 @@
    "from": "this site, generated",
    "lines": 284,
    "bytes": 10550,
-   "sha256": "ee158c435e6cba861bba9cae3f569996fb0b53f03624829c933357e3012a22b0",
+   "sha256": "c43c1a032d41eeb3fd72492b0216cf79c5ec317bc894583361e193ee2bbe33a3",
    "hosts": [],
    "fetch": 0,
    "storage": [],
@@ -396,7 +431,7 @@
    "from": "this site, generated",
    "lines": 936,
    "bytes": 37933,
-   "sha256": "8ccd9db4de1d65ab480895c7ed282aaeb2b2b4007f4af89e477dfefdae23a8a0",
+   "sha256": "22ae5c7762267e7eb2f95eb55252d4ca074e13c5f395765255c517d5e2a9df17",
    "hosts": [],
    "fetch": 0,
    "storage": [],
@@ -412,7 +447,7 @@
    "from": "this site, generated",
    "lines": 507,
    "bytes": 26120,
-   "sha256": "2575e689b551f9e52c0e48fe8d2d165ed736fdf65e657f0c643030844e918491",
+   "sha256": "bc2a72f92b49d3971ed47ad4f09c85b7aa7155bcf51b88131f024294729cc119",
    "hosts": [],
    "fetch": 0,
    "storage": [],
@@ -528,7 +563,7 @@
    "from": "this site, generated",
    "lines": 268,
    "bytes": 13441,
-   "sha256": "a530875df9469d2ec04ff4b33a83ea28d5d356763673ead981c09c2b848ba5c9",
+   "sha256": "d653bab985c8dedbf4e3c172e2586409e68a68d27670329d5837b5b1976cf03c",
    "hosts": [],
    "fetch": 0,
    "storage": [],
@@ -1160,7 +1195,7 @@
    "path": "wire/index.html",
    "what": "the Industry Wire's edition",
    "lines": 260,
-   "sha256": "486754984a00c86bf7ae139335a9e65865fcec6e3ce2e9a54b2bd31c36e98548"
+   "sha256": "2fa0d1b27600146d88802648f5275199db25d5b9cff58fbb3671cdbfcab6c824"
   },
   {
    "path": "wire/sources.html",
@@ -1178,19 +1213,19 @@
    "path": "wire/owasp/index.html",
    "what": "the OWASP Wire's edition, with the projects graph",
    "lines": 261,
-   "sha256": "3ffabe608b45771c81cff00a5efc3a8162c7e95802b648556d681ee5557fd1a0"
+   "sha256": "c35eba5acc0e667f2fa45abdbbb0eafe203d5ac69669e445e4afe99842bfdf83"
   },
   {
    "path": "wire/aws/index.html",
    "what": "the AWS Wire's edition, with the stack and its deadlines",
    "lines": 261,
-   "sha256": "8c8f3d20c37721df7389be9c583f23b470bb879495f7e9e20cbc00bef8701c81"
+   "sha256": "0c180e155ae0397e8e45086023e0fa7e4c007802b8ba67f82c627a44b7bcf340"
   },
   {
    "path": "wire/portugal/index.html",
    "what": "the Portugal Wire's edition, in English and Portuguese, with the ecosystem map",
    "lines": 261,
-   "sha256": "66d4b9b088b7f7dd7ec711adee34b8b25356180ed02a93df92471a247ea9fc65"
+   "sha256": "180cfe5c1e9353319688b17bbdc027747b5bbcd56f9577f1a68508f76d247ed2"
   },
   {
    "path": "wire/days.html",
@@ -1207,8 +1242,8 @@
   {
    "path": "wire/desk-brief.html",
    "what": "the brief for the desks",
-   "lines": 257,
-   "sha256": "e81e9461774a0df9669d3e360727496950308c8948f78c086668021402d3a5af"
+   "lines": 259,
+   "sha256": "45930a885e1475f10ec2e88255b76d0e751d4638279b778cca985831a55e1e06"
   },
   {
    "path": "wire/reach.html",
@@ -1315,7 +1350,7 @@
   {
    "path": "admin/build/validate.js",
    "what": "the gate: checks 2d (live link), 5 (key tripwire), 11 (imports unedited), 12 (numbers hold)",
-   "lines": 489
+   "lines": 493
   }
  ],
  "tests": [
@@ -1346,8 +1381,8 @@
   {
    "path": "admin/build/test_wire.mjs",
    "what": "every wire's pages in Chromium, each reading its real vault",
-   "lines": 211,
-   "checks": 59
+   "lines": 214,
+   "checks": 61
   },
   {
    "path": "admin/build/test_vault.mjs",
@@ -1523,7 +1558,7 @@
   "account": 1,
   "landing": 6,
   "newsroom": 1,
-  "page": 575,
+  "page": 581,
   "personas": 1,
   "share": 1,
   "topped-up": 1,

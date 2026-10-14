@@ -17,7 +17,9 @@
  *   data-wire="edition"   the edition, read as an inbox: what is new since the last visit, for the reader and not,
  *                         the vault's release notes, filters (inbox, new, read later, follow up, done, everything),
  *                         a decision at each story; the editor's note, the desk's corrections, threads, the lead, the
- *                         stories by beat with each story's own changes, a lens
+ *                         stories by beat with each story's own changes, a lens; the edition as graphs (wire/graphs.js):
+ *                         a provenance strip under each headline, and folded in the header the stories per day by
+ *                         beat, the threads on a date axis and the entities two or more stories share
  *   data-wire="sources"   the source registry with its tiers, and how many stories each gave this edition
  *   data-wire="how"       the wire's own documents, from docs/*.md
  *   data-wire="reach"     who a wire concerns and how to reach them, by organisation route only: what the vault
@@ -32,6 +34,7 @@ import { VaultReader, markdown } from './vault-reader.js'
 import * as N from '../assets/vault-pane/notes.js'
 import * as W from '../assets/vault-pane/wire-state.js'
 import { pending, describePending } from '../assets/vault-pane/pending.js'
+import { provenanceStrip, cooccurrence, threadsTimeline, storiesByDay } from './graphs.js'
 
 // The reader's decision at a story, one tap: a note kept in the browser (assets/vault-pane/notes.js), carried by
 // the vault pane to their devices and, when they send, to the newsroom's lane. A decision takes the story out of the
@@ -198,7 +201,7 @@ async function edition(r, mount, foot, cfg) {
         const primary = s.primary || {}
         const el = h('article', { class: `story${s.primary_fetched === false ? ' unfetched' : ''}${isLead ? ' lead' : ''}${isNew(s.id) ? ' new' : ''}`, id: s.id },
             h('h3', {}, isNew(s.id) ? h('span', { class: 'flag new' }, 'New') : null, updatedIds.has(s.id) ? h('span', { class: 'flag upd' }, 'Updated') : null, isHttp(primary.url) ? linkText(tx(s, 'headline'), primary.url) : tx(s, 'headline')),
-            h('p', { class: 'meta' }, [when(s.date), primary.publisher, s.primary_kind, s.confidence ? h('span', { class: `conf-${s.confidence}` }, `confidence ${s.confidence}`) : null, s.primary_fetched === false ? 'primary not fetched by the research agent' : null, s.edition && brief.edition && s.edition !== brief.edition ? `from the edition of ${s.edition}` : null]
+            h('p', { class: 'meta' }, [provenanceStrip(s), when(s.date), primary.publisher, s.primary_kind, s.confidence ? h('span', { class: `conf-${s.confidence}` }, `confidence ${s.confidence}`) : null, s.primary_fetched === false ? 'primary not fetched by the research agent' : null, s.edition && brief.edition && s.edition !== brief.edition ? `from the edition of ${s.edition}` : null]
                 .filter(Boolean).flatMap((x, i) => i ? [' · ', x] : [x])),
             isLead && brief.lead && brief.lead.why_it_leads ? h('p', { class: 'leads' }, h('b', {}, 'Why it leads: '), brief.lead.why_it_leads) : null,
             s.summary ? h('p', {}, tx(s, 'summary')) : null,
@@ -246,7 +249,12 @@ async function edition(r, mount, foot, cfg) {
         deadlines.length ? h('div', { class: 'deadlines', id: 'wire-deadlines' }, h('b', {}, 'Deadlines for your stack'), h('ul', {}, deadlines.map(d => { const n = daysTo(d.date); return h('li', {},
             h('span', { class: `dd${Number.isFinite(n) && n <= 30 ? ' soon' : ''}` }, when(d.date)), isHttp(d.source) ? linkText(d.what || d.source, d.source) : (d.what || ''),
             Number.isFinite(n) ? h('span', { class: 'then' }, n < 0 ? ` (${-n} days ago)` : n === 0 ? ' (today)' : ` (in ${n} days)`) : null, d.then ? h('span', { class: 'then' }, ` · then: ${d.then}`) : null) }))) : null,
-        (brief.threads || []).length ? h('div', { class: 'threads' }, brief.threads.map(t => h('div', { class: 'thread' }, h('b', {}, t.title), t.note || '', h('div', { class: 'ids' }, (t.stories || []).filter(id => byId.has(id)).map(id => h('a', { href: `#${id}`, title: byId.get(id).headline }, id)))))) : null)
+        (brief.threads || []).length ? h('div', { class: 'threads' }, brief.threads.map(t => h('div', { class: 'thread' }, h('b', {}, t.title), t.note || '', h('div', { class: 'ids' }, (t.stories || []).filter(id => byId.has(id)).map(id => h('a', { href: `#${id}`, title: byId.get(id).headline }, id)))))) : null,
+        // the edition as graphs (wire/graphs.js): the week by day and beat, the threads on a date axis, the entities two
+        // or more stories share; each folded so the header stays the editor's note, each drawn from the bundle alone
+        (b.stories || []).length ? h('details', { class: 'graph', id: 'wire-byday' }, h('summary', {}, 'Stories per day, the last 14 days, by beat'), storiesByDay(b.stories, { days: 14, beats: b.beats || [] })) : null,
+        (brief.threads || []).length ? h('details', { class: 'graph', id: 'wire-threads' }, h('summary', {}, 'The threads on a date axis'), threadsTimeline(brief.threads, byId)) : null,
+        (b.stories || []).length > 1 ? h('details', { class: 'graph', id: 'wire-entities' }, h('summary', {}, 'Who is named by more than one story'), cooccurrence(b.stories, { min: 2, max: 24 })) : null)
 
     async function setLens(id) {
         lens = id

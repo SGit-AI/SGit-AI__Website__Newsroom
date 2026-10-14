@@ -245,6 +245,10 @@ const KEY_SHAPES = [
   // read key inside an imported article's version history.
   [/\bsgit\s+(?:clone|init)\s+(?!sgit_public_read_|sgit_rk1_)[A-Za-z0-9_-]{16,}:[A-Za-z0-9]{4,}/,
    'a command line carrying a credential that is not a published read key'],
+  // An OpenRouter key (v0.12.42): the infographic pipeline reads it from the environment only; the prefix alone, as
+  // a note names it, is not a key, so the shape needs the hex body that a real key carries.
+  [/\bsk-or-v1-[0-9a-f]{40,}/,
+   'an OPENROUTER API KEY; the pipeline reads it from OPENROUTER_API_KEY, never from a file'],
 ];
 for (const f of files) {
   if (/\.(png|jpg|jpeg|gif|webp|ico|woff2?|zip|svg|pdf)$/.test(f)) continue;

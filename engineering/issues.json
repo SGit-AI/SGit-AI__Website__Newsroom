@@ -1,9 +1,9 @@
 {
  "what": "A derived index of the engineering cards on newsroom.sgit.ai; the files under admin/engineering/issues/ are the source.",
  "counts": {
-  "open": 10,
+  "open": 12,
   "blocked": 2,
-  "done": 40
+  "done": 43
  },
  "issues": [
   {
@@ -681,9 +681,85 @@
    "blocked_on": "",
    "path": "admin/engineering/issues/done/052-a-wire-in-two-languages.md",
    "url": "https://newsroom.sgit.ai/engineering/issues/052.html"
+  },
+  {
+   "id": "053",
+   "title": "The edition as graphs: a provenance strip per story, the week by beat, the threads on a date axis, who is named twice",
+   "kind": "story",
+   "priority": "high",
+   "status": "done",
+   "created": "2026-10-13T20:40:00Z",
+   "release": "v0.12.42",
+   "estimated_effort": "medium",
+   "blocked_on": "",
+   "path": "admin/engineering/issues/done/053-the-edition-as-graphs.md",
+   "url": "https://newsroom.sgit.ai/engineering/issues/053.html"
+  },
+  {
+   "id": "054",
+   "title": "An infographic per story and per edition, with what each cost, made by the newsroom and never by the desks",
+   "kind": "story",
+   "priority": "high",
+   "status": "done",
+   "created": "2026-10-13T20:45:00Z",
+   "release": "v0.12.42",
+   "estimated_effort": "large",
+   "blocked_on": "",
+   "path": "admin/engineering/issues/done/054-an-infographic-per-story-with-its-cost.md",
+   "url": "https://newsroom.sgit.ai/engineering/issues/054.html"
+  },
+  {
+   "id": "055",
+   "title": "Five wires, five pages: the design note and the staged plan for the wires' UX",
+   "kind": "design",
+   "priority": "high",
+   "status": "done",
+   "created": "2026-10-13T20:30:00Z",
+   "release": "v0.12.42",
+   "estimated_effort": "medium",
+   "blocked_on": "",
+   "path": "admin/engineering/issues/done/055-five-wires-five-pages.md",
+   "url": "https://newsroom.sgit.ai/engineering/issues/055.html"
+  },
+  {
+   "id": "056",
+   "title": "The first live edition with pictures: the key in the routine's environment, the images and the ledger on the pages",
+   "kind": "story",
+   "priority": "high",
+   "status": "open",
+   "created": "2026-10-14T16:00:00Z",
+   "release": "null",
+   "estimated_effort": "medium",
+   "blocked_on": "the OpenRouter key, handed to the routine's environment as OPENROUTER_API_KEY and never to a file",
+   "path": "admin/engineering/issues/open/056-the-first-live-edition-with-pictures.md",
+   "url": "https://newsroom.sgit.ai/engineering/issues/056.html"
+  },
+  {
+   "id": "057",
+   "title": "The overview at /wire/: the four wires as tiles, one lens across them, the week as small multiples; the Industry Wire moves to /wire/industry/",
+   "kind": "story",
+   "priority": "high",
+   "status": "open",
+   "created": "2026-10-14T16:05:00Z",
+   "release": "null",
+   "estimated_effort": "large",
+   "blocked_on": "the owner's yes to moving the Industry Wire to /wire/industry/ (the old address keeps a line saying where it went; the inbox state and the notes carry over)",
+   "path": "admin/engineering/issues/open/057-the-overview-at-wire.md",
+   "url": "https://newsroom.sgit.ai/engineering/issues/057.html"
   }
  ],
  "releases": [
+  {
+   "version": "v0.12.42",
+   "date": "2026-10-14",
+   "kind": "patch",
+   "issues": [
+    "053",
+    "054",
+    "055"
+   ],
+   "url": "https://newsroom.sgit.ai/engineering/releases/v0.12.42.html"
+  },
   {
    "version": "v0.12.41",
    "date": "2026-10-14",

@@ -311,7 +311,7 @@ def stamp_text_twins():
 def main():
     changed = []
     for path in sorted(ROOT.rglob("*.html")):
-        if ".git" in path.parts or ".claude" in path.parts:      # .claude/: an agent's worktree is a repository of its own, never this site
+        if {".git", ".claude"} & set(path.relative_to(ROOT).parts):      # .claude/: an agent's worktree is a repository of its own, never this site (relative, so a build run inside one still stamps it)
             continue
         # An archive holds pages AS THEY WERE SERVED at a version, with that version's nav,
         # footer and badge. Restamping them with today's chrome would destroy the only thing an

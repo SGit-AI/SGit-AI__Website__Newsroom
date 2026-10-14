@@ -34,7 +34,7 @@ def main():
     today = datetime.date.today().isoformat()
     dates = last_dates()
     pages = sorted(p.relative_to(ROOT).as_posix() for p in ROOT.rglob("*.html")
-                   if not ({".git", ".claude", "node_modules", ".sg_vault", "summit-archive", "vault-app"} & set(p.parts)))   # .claude/: agent worktrees, never the site
+                   if not ({".git", ".claude", "node_modules", ".sg_vault", "summit-archive", "vault-app"} & set(p.relative_to(ROOT).parts)))   # .claude/: agent worktrees, never the site
     # The home page first, then the rest in path order.
     pages.sort(key=lambda p: (p != "index.html", p))
     rows = "\n".join(f"  <url><loc>https://{HOST}/{p}</loc><lastmod>{dates.get(p, today)}</lastmod></url>"
