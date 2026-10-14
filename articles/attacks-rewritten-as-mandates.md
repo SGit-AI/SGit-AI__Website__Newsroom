@@ -117,6 +117,7 @@ Agents & policyVaults & method[This article as a graph →](graphs.md#attacks-re
 
 ### Continued by
 
+- [The minimum code below: container security from the top down, from the user story to the immutable line, measured on one real tool](the-minimum-code-below.md) Container security from the top down: at every layer, keep only the code the layer above needs. Measured on one real tool, with its limits.
 - [A policy for every skill: a friend's natural-language control for agent skills, the behaviour policy behind it, and using models to need them less](a-policy-for-every-skill.md) A friend's natural-language control for agent skills, read as a behaviour policy, and why the description, not the code, stays canonical.
 - [sgit in a CI pipeline: encrypted, versioned data in and out of GitHub Actions, between its jobs, through write-only lanes, and a key for every job](sgit-in-a-ci-pipeline.md) Encrypted, versioned vaults as the way data gets into, out of and between CI jobs, with a key per job and a sidecar when there is no server.
 

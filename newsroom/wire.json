@@ -73,6 +73,38 @@
   ],
   "articles": [
     {
+      "slug": "the-minimum-code-below",
+      "title": "The minimum code below: container security from the top down, from the user story to the immutable line, measured on one real tool",
+      "date": "2026-10-14",
+      "updated": "",
+      "author": "Dinis Cruz",
+      "url": "https://newsroom.sgit.ai/articles/the-minimum-code-below.html",
+      "markdown": "https://newsroom.sgit.ai/articles/the-minimum-code-below.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/the-minimum-code-below.webp",
+      "graph": "https://newsroom.sgit.ai/articles/graphs/the-minimum-code-below.json",
+      "teaser": "Container security from the top down: at every layer, keep only the code the layer above needs. Measured on one real tool, with its limits.",
+      "summary": "A conversation at Chainguard's event today sharpened something I have thought for a while. Chainguard does security from the bottom up, and does it very well: it rebuilds the operating system and the libraries from source, keeps the images minimal and manages the whole process. But even the most locked-down image still holds a great deal of code the application never runs, the assurance still depends on testing, and the loop that caused the problem in the first place is still there: when something breaks, you give it more. As soon as the work reaches the application, it stops. My proposal is to come from the other end. Start from the user story and, at every layer down, ask one question: what is the minimum code below this that the layer above needs? Keep that, remove everything else, and draw the immutable line as high as the evidence allows. It did not scale before; with models and fractal semantic graphs, it can. I measured it for this article on a real tool, sgit and its dependencies, running a CI-style use case under coverage and then running it again from a tree holding only the files that ran. Of 1,500 files, 428 were kept, and the use case passed; commands outside it failed because their code was not there. It also showed the limits: one compiled binary held three quarters of the bytes and no coverage tool can see inside it, and coverage missed a compiled module the tests then caught. Tools that minimise containers at run time already exist, so the new part is the direction: from what the application is for, through a graph, down to a build that can be certified. Chainguard is unusually well placed to offer it, and someone will build it.",
+      "topics": [
+        "site-and-engineering",
+        "graphs-and-knowledge"
+      ],
+      "tags": [
+        "containers",
+        "supply-chain",
+        "attack-surface",
+        "minimisation",
+        "chainguard",
+        "fractal-semantic-graphs",
+        "code-coverage",
+        "high-assurance",
+        "python",
+        "article"
+      ],
+      "placement": [],
+      "linkedin": null,
+      "notes": []
+    },
+    {
       "slug": "a-policy-for-every-skill",
       "title": "A policy for every skill: a friend's natural-language control for agent skills, the behaviour policy behind it, and using models to need them less",
       "date": "2026-10-14",

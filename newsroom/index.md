@@ -46,8 +46,8 @@ Edition of **2026-10-08**. Third edition. A day of articles on how agents decide
 
 Computed at every build from the files: placements that point at nothing, articles published since the edition, open pitches, articles without a graph or a card. The same list is what `python3 admin/build/desk.py` prints for the Editor.
 
-- Fix`front.json` the lead is 6 days older than the newest article and 62 newer article(s) are unplaced
-- To do`front.json` 62 article(s) published since the 2026-10-08 edition: a-policy-for-every-skill, policy-as-code-needs-a-policy-first, sgit-in-a-ci-pipeline, attacks-rewritten-as-mandates, four-frameworks-one-agent, every-link-points-back
+- Fix`front.json` the lead is 6 days older than the newest article and 63 newer article(s) are unplaced
+- To do`front.json` 63 article(s) published since the 2026-10-08 edition: the-minimum-code-below, a-policy-for-every-skill, policy-as-code-needs-a-policy-first, sgit-in-a-ci-pipeline, attacks-rewritten-as-mandates, four-frameworks-one-agent
 - To do`newsroom/pitches/2026-10-11__where-the-platform-draws-the-line.md` open pitch from contributor: highlight for where-the-platform-draws-the-line
 - To do`newsroom/pitches/2026-10-11__the-same-argument-in-our-words.md` open pitch from contributor: lead for the-same-argument-in-our-words
 - To do`newsroom/pitches/2026-10-11__the-agent-is-the-reader.md` open pitch from contributor: lead for the-agent-is-the-reader
