@@ -1,6 +1,6 @@
 {
   "site": "https://sgit.ai",
-  "generated": "2026-10-13",
+  "generated": "2026-10-14",
   "site_version": "v0.7.87",
   "about": "https://newsroom.sgit.ai/newsroom/index.html",
   "front": {
@@ -72,6 +72,40 @@
     }
   ],
   "articles": [
+    {
+      "slug": "sgit-in-a-ci-pipeline",
+      "title": "sgit in a CI pipeline: encrypted, versioned data in and out of GitHub Actions, between its jobs, through write-only lanes, and a key for every job",
+      "date": "2026-10-14",
+      "updated": "",
+      "author": "Dinis Cruz",
+      "url": "https://newsroom.sgit.ai/articles/sgit-in-a-ci-pipeline.html",
+      "markdown": "https://newsroom.sgit.ai/articles/sgit-in-a-ci-pipeline.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/sgit-in-a-ci-pipeline.webp",
+      "graph": "https://newsroom.sgit.ai/articles/graphs/sgit-in-a-ci-pipeline.json",
+      "teaser": "Encrypted, versioned vaults as the way data gets into, out of and between CI jobs, with a key per job and a sidecar when there is no server.",
+      "summary": "Getting data in and out of a CI pipeline is harder than it should be. GitHub Actions has artifacts, kept 90 days by default and deleted with their run; caches, 10 GB per repository and evicted after a week unused; and job outputs, at most 1 MB per job. Each is fine for its job, and none is a versioned, encrypted record that a person, an auditor or another pipeline can read from outside GitHub. This article maps how sgit vaults fill that gap, and every pattern in it was run for the article against a local vault server. A job pushes what it produced to a vault, and anything with the read key can clone it from anywhere, with history. Jobs pass data to each other through the same vault, each cloning only the folders it needs with --path, which is a large saving in time and in what lands on the runner, though it is a speed setting rather than a boundary. The boundaries are the keys: a read key clones and cannot commit; an append token, one per test shard, adds to its own write-only inbox and reads nothing; and each job can have its own key pair, so a deploy configuration encrypted to the deploy job fails to decrypt anywhere else, and a signed manifest fails verification once it is changed. Even done a little loosely, that turns wiring mistakes into loud failures. The keys come from secrets on stdin, and only the ciphertext half of a vault ever leaves the runner. And when you would rather not depend on a hosted server, the vault server runs as a sidecar whose storage folder holds only ciphertext: archive it into the Actions cache, an artifact or a git branch, and the next run restores it with its full history.",
+      "topics": [
+        "vaults-and-method",
+        "site-and-engineering"
+      ],
+      "tags": [
+        "sgit",
+        "ci",
+        "github-actions",
+        "pipelines",
+        "vaults",
+        "append-lanes",
+        "pki",
+        "secrets",
+        "scoped-clone",
+        "supply-chain",
+        "artifacts",
+        "article"
+      ],
+      "placement": [],
+      "linkedin": null,
+      "notes": []
+    },
     {
       "slug": "attacks-rewritten-as-mandates",
       "title": "Attacks rewritten as mandates: 28 supply-chain incidents, the column each one was missing, and why the next maintainer is an agent",

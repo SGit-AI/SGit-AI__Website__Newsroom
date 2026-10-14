@@ -1,6 +1,6 @@
 {
   "site": "https://sgit.ai",
-  "generated": "2026-10-13",
+  "generated": "2026-10-14",
   "site_version": "v0.7.87",
   "schema": "https://newsroom.sgit.ai/articles/graphs.html",
   "topics": [
@@ -55,6 +55,244 @@
   ],
   "articles": [
     {
+      "slug": "sgit-in-a-ci-pipeline",
+      "title": "sgit in a CI pipeline: encrypted, versioned data in and out of GitHub Actions, between its jobs, through write-only lanes, and a key for every job",
+      "date": "2026-10-14",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/sgit-in-a-ci-pipeline.html",
+      "markdown": "https://newsroom.sgit.ai/articles/sgit-in-a-ci-pipeline.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/sgit-in-a-ci-pipeline.webp",
+      "teaser": "Encrypted, versioned vaults as the way data gets into, out of and between CI jobs, with a key per job and a sidecar when there is no server.",
+      "topics": [
+        "vaults-and-method",
+        "site-and-engineering"
+      ],
+      "tags": [
+        "sgit",
+        "ci",
+        "github-actions",
+        "pipelines",
+        "vaults",
+        "append-lanes",
+        "pki",
+        "secrets",
+        "scoped-clone",
+        "supply-chain",
+        "artifacts",
+        "article"
+      ],
+      "links_out": [
+        "encrypted-memory-for-isolated-agents",
+        "hope-or-enforcement",
+        "attacks-rewritten-as-mandates",
+        "sixteen-notes-i-did-not-want-to-lose",
+        "two-agents-one-vault"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "vc-pipeline.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/vc-pipeline.webp",
+          "caption": "A pipeline whose stages talk through a vault. Each job clones only the folders it needs, with only the key it needs: build writes with the vault key, test shards append to write-only inboxes, the summary reads the lane, release and deploy read with the read key and their own key pairs, and anyone outside GitHub can clone the results with a read key. What leaves a runner is ciphertext.",
+          "kind": "architecture"
+        },
+        {
+          "file": "vc-keys.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/vc-keys.webp",
+          "caption": "Which job holds which key. Build and the summary hold the vault key, release, deploy and outside readers the read key, each test shard one append token, the summary the lane's enum key, and the jobs that sign or decrypt their own key pair. The server access token opens a private server's door for everyone; it is not a vault permission.",
+          "kind": "comparison"
+        },
+        {
+          "file": "vc-noserver.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/vc-noserver.webp",
+          "caption": "No hosted server. The vault server runs as a container inside the job with its storage in a folder; the folder holds only ciphertext, so it can be saved to the Actions cache, an artifact, a release asset or a git branch, and the next run restores it and clones with its full history. Reading needs no server at all; pushing needs the server's API, which the sidecar provides.",
+          "kind": "architecture"
+        }
+      ],
+      "graph": {
+        "slug": "sgit-in-a-ci-pipeline",
+        "teaser": "Encrypted, versioned vaults as the way data gets into, out of and between CI jobs, with a key per job and a sidecar when there is no server.",
+        "topics": [
+          "vaults-and-method",
+          "site-and-engineering"
+        ],
+        "core_idea": "A CI pipeline needs a versioned, encrypted record that outlives its runs and can be read outside GitHub, and sgit vaults provide it: jobs push and clone only their folders with --path, keys rather than scopes set what each job may do, append lanes collect shard results write-only, per-job key pairs make wiring mistakes fail loudly, and a sidecar server with a cached ciphertext folder removes the need for a hosted server.",
+        "nodes": [
+          {
+            "id": "exits",
+            "label": "Three exits, none a record",
+            "kind": "claim",
+            "summary": "Artifacts, caches and outputs each have limits on size, life and reach, and none is versioned or readable outside GitHub."
+          },
+          {
+            "id": "inout",
+            "label": "Data in and out",
+            "kind": "method",
+            "summary": "A job pushes outputs; anyone with the read key clones them with history, from anywhere."
+          },
+          {
+            "id": "between",
+            "label": "Jobs talk through the vault",
+            "kind": "method",
+            "summary": "Each job clones only its folders; release never downloaded the build archive."
+          },
+          {
+            "id": "path",
+            "label": "--path is speed, not a wall",
+            "kind": "claim",
+            "summary": "A scoped clone limits what lands on the runner; a vault key can widen it."
+          },
+          {
+            "id": "keys",
+            "label": "Keys are the boundaries",
+            "kind": "concept",
+            "summary": "Vault key, read key, append token, own key pair; the server token is only the door."
+          },
+          {
+            "id": "readonly",
+            "label": "A read-key clone refused to commit",
+            "kind": "example",
+            "summary": "Read and write keys are derived separately; a read clone holds no write key."
+          },
+          {
+            "id": "lanes",
+            "label": "Append lanes for shards",
+            "kind": "method",
+            "summary": "One token per shard, write-only inboxes, a separate key to list; wrong keys refused with 403."
+          },
+          {
+            "id": "pki",
+            "label": "A key pair per job",
+            "kind": "method",
+            "summary": "Encrypt to the deploy job, sign the manifest; wrong job cannot decrypt, a changed file fails verification."
+          },
+          {
+            "id": "loud",
+            "label": "Wiring mistakes fail loudly",
+            "kind": "claim",
+            "summary": "Even with keys held loosely, a step that reads what was not meant for it fails instead of leaking."
+          },
+          {
+            "id": "stdin",
+            "label": "Keys on stdin, bare only",
+            "kind": "artefact",
+            "summary": "Keys from secrets via sgit clone -, and only .sg_vault/bare is ever cached or uploaded."
+          },
+          {
+            "id": "sidecar",
+            "label": "A sidecar and cached ciphertext",
+            "kind": "method",
+            "summary": "The server as a container in the job; its storage archived and restored with full history."
+          },
+          {
+            "id": "readonlynet",
+            "label": "Reading needs no server",
+            "kind": "concept",
+            "summary": "Local, static and attach read a vault from a folder; pushing needs the server's API."
+          },
+          {
+            "id": "workflow",
+            "label": "A workflow sketch",
+            "kind": "artefact",
+            "summary": "Two jobs, a vault key for build and a read key for release, keys from secrets."
+          }
+        ],
+        "edges": [
+          {
+            "from": "exits",
+            "to": "inout",
+            "rel": "leads-to"
+          },
+          {
+            "from": "inout",
+            "to": "between",
+            "rel": "extends"
+          },
+          {
+            "from": "between",
+            "to": "path",
+            "rel": "depends-on"
+          },
+          {
+            "from": "path",
+            "to": "keys",
+            "rel": "contrasts"
+          },
+          {
+            "from": "readonly",
+            "to": "keys",
+            "rel": "example-of"
+          },
+          {
+            "from": "keys",
+            "to": "lanes",
+            "rel": "produces"
+          },
+          {
+            "from": "keys",
+            "to": "pki",
+            "rel": "produces"
+          },
+          {
+            "from": "pki",
+            "to": "loud",
+            "rel": "leads-to"
+          },
+          {
+            "from": "stdin",
+            "to": "keys",
+            "rel": "depends-on"
+          },
+          {
+            "from": "sidecar",
+            "to": "inout",
+            "rel": "answers"
+          },
+          {
+            "from": "readonlynet",
+            "to": "sidecar",
+            "rel": "contrasts"
+          },
+          {
+            "from": "workflow",
+            "to": "between",
+            "rel": "example-of"
+          },
+          {
+            "from": "lanes",
+            "to": "loud",
+            "rel": "leads-to"
+          }
+        ],
+        "links": {
+          "articles": [
+            "encrypted-memory-for-isolated-agents",
+            "hope-or-enforcement",
+            "attacks-rewritten-as-mandates",
+            "sixteen-notes-i-did-not-want-to-lose",
+            "two-agents-one-vault"
+          ],
+          "pages": [],
+          "sites": [
+            "https://github.com/actions/upload-artifact",
+            "https://docs.github.com/en/actions/reference/workflows-and-actions/dependency-caching",
+            "https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax",
+            "https://docs.github.com/en/actions/concepts/security/secrets"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "A configuration that only the deploy job can decrypt is a bug that cannot ship to the wrong place.",
+            "why": "Per-job keys as a correctness tool."
+          },
+          {
+            "text": "So the folder can live wherever a CI system keeps bytes",
+            "why": "Why ciphertext storage removes the hosted server."
+          }
+        ]
+      }
+    },
+    {
       "slug": "attacks-rewritten-as-mandates",
       "title": "Attacks rewritten as mandates: 28 supply-chain incidents, the column each one was missing, and why the next maintainer is an agent",
       "date": "2026-10-13",
@@ -89,7 +327,9 @@
         "what-sgit-is",
         "two-agents-one-vault"
       ],
-      "links_in": [],
+      "links_in": [
+        "sgit-in-a-ci-pipeline"
+      ],
       "figures": [
         {
           "file": "am-ledger.webp",
@@ -863,6 +1103,7 @@
         "two-agents-one-vault"
       ],
       "links_in": [
+        "sgit-in-a-ci-pipeline",
         "every-link-points-back"
       ],
       "figures": [
@@ -6813,6 +7054,7 @@
         "the-passkey-opens-the-vault"
       ],
       "links_in": [
+        "sgit-in-a-ci-pipeline",
         "attacks-rewritten-as-mandates",
         "sixteen-notes-i-did-not-want-to-lose",
         "the-site-is-an-inbox",
@@ -14209,6 +14451,7 @@
         "the-agent-team-as-it-runs"
       ],
       "links_in": [
+        "sgit-in-a-ci-pipeline",
         "the-vault-crosses-chrome-profiles",
         "the-records-ran-out",
         "brief-the-agent-too",
@@ -14934,6 +15177,7 @@
         "the-agent-team-as-it-runs"
       ],
       "links_in": [
+        "sgit-in-a-ci-pipeline",
         "attacks-rewritten-as-mandates",
         "four-frameworks-one-agent",
         "the-human-in-the-loop",
