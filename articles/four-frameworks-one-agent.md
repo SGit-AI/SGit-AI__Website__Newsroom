@@ -169,6 +169,10 @@ Agents & policyGraphs & knowledge[This article as a graph →](graphs.md#four-fr
 - [The vault is live: from a design on 11 October to a reader's vault on newsroom.sgit.ai by two in the morning, and how all of it fits together](the-vault-is-live.md) The reader's vault runs on newsroom.sgit.ai: a passkey opens three real vaults, each device writes one file, and the architecture is drawn as it stands.
 - [An open AI governance framework, and what its licence let us build](ai-baseline-control-framework.md) Twenty open AI governance controls under CC BY-SA, why the licence matters, and the same day's conversion into a graph, a database and a walk down to EU law.
 
+### Continued by
+
+- [Policy as code needs a policy first: what an agent behaviour policy adds, and how to reverse engineer one from the code, the spreadsheet or the paper you already have](policy-as-code-needs-a-policy-first.md) Policy as code answers one question. An agent behaviour policy holds the rest, and can be generated into code or reverse engineered from it.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 107 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=107)

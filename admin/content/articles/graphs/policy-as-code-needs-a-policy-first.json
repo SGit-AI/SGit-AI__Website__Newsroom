@@ -1,0 +1,172 @@
+{
+ "slug": "policy-as-code-needs-a-policy-first",
+ "teaser": "Policy as code answers one question. An agent behaviour policy holds the rest, and can be generated into code or reverse engineered from it.",
+ "topics": [
+  "agents-and-policy",
+  "graphs-and-knowledge"
+ ],
+ "core_idea": "Policy as code answers whether a request is allowed, while an Agent Behaviour Policy holds the reach, the mandate and its reasons, the gap, the unencodable rows, the owner and who can change each rule's code; with those columns a policy can be generated into engine code and reverse engineered from code, spreadsheets and paper, and fractal semantic graphs connect the altitudes so the gaps in both directions become queries.",
+ "nodes": [
+  {
+   "id": "pac",
+   "label": "Policy as code",
+   "kind": "concept",
+   "summary": "Rules decoupled from services, declarative, returning structured decisions."
+  },
+  {
+   "id": "question",
+   "label": "One question: is this allowed?",
+   "kind": "claim",
+   "summary": "The engine decides requests routed through it; governance asks about everything around them."
+  },
+  {
+   "id": "abp",
+   "label": "What an ABP adds",
+   "kind": "concept",
+   "summary": "Reach, mandate with reasons, gap, unencodable rows, owner, and who can change the code."
+  },
+  {
+   "id": "flip",
+   "label": "Who can change the code",
+   "kind": "claim",
+   "summary": "A rule the agent can rewrite is a setting, not a boundary."
+  },
+  {
+   "id": "session",
+   "label": "This session, reverse engineered",
+   "kind": "example",
+   "summary": "Eleven rules, eight with code, one boundary: the GitHub scope."
+  },
+  {
+   "id": "comments",
+   "label": "Reasons hide in comments",
+   "kind": "example",
+   "summary": "The validator carries why each rule exists in its comments: the paper policy, scattered."
+  },
+  {
+   "id": "generate",
+   "label": "ABP rows to Rego",
+   "kind": "method",
+   "summary": "Five rows generated into a 35-line policy that OPA ran against seven requests."
+  },
+  {
+   "id": "decisions",
+   "label": "Deny, ask, allow, with the row",
+   "kind": "artefact",
+   "summary": "Three denied, one asked, three allowed; each decision names its row."
+  },
+  {
+   "id": "reverse",
+   "label": "Rego back to rows",
+   "kind": "method",
+   "summary": "opa parse and a diff: a row with no code, a rule with no row."
+  },
+  {
+   "id": "paper",
+   "label": "Spreadsheets and paper",
+   "kind": "example",
+   "summary": "A control CSV became a graph joined to the Act; a role file renders as a page and a check."
+  },
+  {
+   "id": "fsg",
+   "label": "Fractal semantic graphs",
+   "kind": "concept",
+   "summary": "Each altitude keeps its vocabulary; edges carry verbs both ways; gaps become queries."
+  },
+  {
+   "id": "jobs",
+   "label": "Enabler, scaling, enforcer, decision-maker",
+   "kind": "claim",
+   "summary": "With an ABP as the source, each of policy as code's jobs gets sharper."
+  }
+ ],
+ "edges": [
+  {
+   "from": "pac",
+   "to": "question",
+   "rel": "leads-to"
+  },
+  {
+   "from": "question",
+   "to": "abp",
+   "rel": "contrasts"
+  },
+  {
+   "from": "abp",
+   "to": "flip",
+   "rel": "produces"
+  },
+  {
+   "from": "session",
+   "to": "flip",
+   "rel": "example-of"
+  },
+  {
+   "from": "comments",
+   "to": "session",
+   "rel": "extends"
+  },
+  {
+   "from": "abp",
+   "to": "generate",
+   "rel": "leads-to"
+  },
+  {
+   "from": "generate",
+   "to": "decisions",
+   "rel": "produces"
+  },
+  {
+   "from": "reverse",
+   "to": "generate",
+   "rel": "contrasts"
+  },
+  {
+   "from": "paper",
+   "to": "reverse",
+   "rel": "extends"
+  },
+  {
+   "from": "fsg",
+   "to": "reverse",
+   "rel": "answers"
+  },
+  {
+   "from": "fsg",
+   "to": "generate",
+   "rel": "answers"
+  },
+  {
+   "from": "abp",
+   "to": "jobs",
+   "rel": "leads-to"
+  }
+ ],
+ "links": {
+  "articles": [
+   "footprint-and-blast-radius",
+   "the-policy-draws-the-liability-line",
+   "re-anchoring-agent-behaviour-policies",
+   "ai-baseline-control-framework",
+   "four-frameworks-one-agent",
+   "introducing-fractal-semantic-graphs",
+   "the-behaviour-policy-is-the-business-logic",
+   "hope-or-enforcement",
+   "the-human-in-the-loop"
+  ],
+  "pages": [],
+  "sites": [
+   "https://www.openpolicyagent.org/docs/philosophy"
+  ]
+ },
+ "quotes": [
+  {
+   "text": "A rule the agent can rewrite is a setting.",
+   "why": "Why code alone is not a control."
+  },
+  {
+   "text": "That is the paper policy, scattered through the code.",
+   "why": "What reverse engineering collects."
+  }
+ ]
+}

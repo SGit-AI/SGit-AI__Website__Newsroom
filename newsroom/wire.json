@@ -73,6 +73,38 @@
   ],
   "articles": [
     {
+      "slug": "policy-as-code-needs-a-policy-first",
+      "title": "Policy as code needs a policy first: what an agent behaviour policy adds, and how to reverse engineer one from the code, the spreadsheet or the paper you already have",
+      "date": "2026-10-14",
+      "updated": "",
+      "author": "Dinis Cruz",
+      "url": "https://newsroom.sgit.ai/articles/policy-as-code-needs-a-policy-first.html",
+      "markdown": "https://newsroom.sgit.ai/articles/policy-as-code-needs-a-policy-first.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/policy-as-code-needs-a-policy-first.webp",
+      "graph": "https://newsroom.sgit.ai/articles/graphs/policy-as-code-needs-a-policy-first.json",
+      "teaser": "Policy as code answers one question. An agent behaviour policy holds the rest, and can be generated into code or reverse engineered from it.",
+      "summary": "At an event this week a speaker described policy as code as the way to scale governance and AI innovation together, and it clicked. Policy as code is right, and it is where agent governance has to end up. But for agents it answers one question, is this request allowed, and the questions a business, an auditor or an insurer asks are the ones around it, the ones an Agent Behaviour Policy holds. What can this agent reach, measured. What was it asked to do, and why. Where the two differ. Which rules can no engine ever see. And the one that surprised me when I checked: for every rule that is code, who can change that code. A rule the agent can rewrite is a setting, not a control. Because an ABP has those columns, it can be written in both directions. From the policy, generate code: for this article, five rows of a real ABP became a Rego policy that Open Policy Agent ran against seven requests, denying a push to the wrong repository, a commit without a leak scan and a model id in a diff, asking before a pull request, and allowing a sentence no engine can judge. From what exists, reverse engineer the policy: parse the code back, and the gaps show on both sides, a row with no code and a rule nobody wrote a reason for. I did it to this session's own policy: of its eleven rules, eight have some code behind them, and only one has code the agent cannot change. Fractal semantic graphs are what make the round trip work across paper, spreadsheets, regulations and code, because each keeps its own vocabulary and the edges between them carry verbs both ways.",
+      "topics": [
+        "agents-and-policy",
+        "graphs-and-knowledge"
+      ],
+      "tags": [
+        "policy-as-code",
+        "agent-behaviour-policy",
+        "open-policy-agent",
+        "rego",
+        "fractal-semantic-graphs",
+        "governance",
+        "enforcement",
+        "reverse-engineering",
+        "agents",
+        "article"
+      ],
+      "placement": [],
+      "linkedin": null,
+      "notes": []
+    },
+    {
       "slug": "sgit-in-a-ci-pipeline",
       "title": "sgit in a CI pipeline: encrypted, versioned data in and out of GitHub Actions, between its jobs, through write-only lanes, and a key for every job",
       "date": "2026-10-14",
