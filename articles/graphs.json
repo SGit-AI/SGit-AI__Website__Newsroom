@@ -55,6 +55,232 @@
   ],
   "articles": [
     {
+      "slug": "knowledge-that-maintains-itself",
+      "title": "Knowledge that maintains itself: semantic graphs for an organisation's policies and internal knowledge, briefing people and agents from the graph, and vaults to carry the brief",
+      "date": "2026-10-14",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/knowledge-that-maintains-itself.html",
+      "markdown": "https://newsroom.sgit.ai/articles/knowledge-that-maintains-itself.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/knowledge-that-maintains-itself.webp",
+      "teaser": "Fractal semantic graphs for policies and internal knowledge: brief people and agents from the graph, maintain it in a loop, carry the brief in a vault.",
+      "topics": [
+        "graphs-and-knowledge",
+        "vaults-and-method"
+      ],
+      "tags": [
+        "knowledge-management",
+        "fractal-semantic-graphs",
+        "ontologies",
+        "taxonomies",
+        "briefing",
+        "agents",
+        "tokens",
+        "vectors",
+        "sgit",
+        "vaults",
+        "policies",
+        "article"
+      ],
+      "links_out": [
+        "introducing-fractal-semantic-graphs",
+        "every-link-points-back",
+        "ai-baseline-control-framework",
+        "the-ai-governance-stack-as-a-graph",
+        "policy-as-code-needs-a-policy-first",
+        "code-review-as-a-fractal-semantic-graph",
+        "what-sgit-is",
+        "sgit-in-a-ci-pipeline",
+        "two-agents-one-vault",
+        "encrypted-memory-for-isolated-agents",
+        "re-anchoring-agent-behaviour-policies",
+        "memory-is-not-a-spectator-sport"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "kq-loop.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/kq-loop.webp",
+          "caption": "Knowledge that maintains itself. Sources kept in their own vocabularies; agents build and maintain the graph; people and agents are briefed from it; what looks odd is noticed and asked about; the fix lands at the right altitude; and each brief travels as a vault, scoped and encrypted to the one who needs it.",
+          "kind": "architecture"
+        },
+        {
+          "file": "kq-briefing.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/kq-briefing.webp",
+          "caption": "Briefing from the graph, measured on this site. The 112 articles in full are about 704,000 tokens; their graphs as JSON with all their structure about 199,000; the graphs' text alone, teaser, core idea, nodes and edges, about 87,000. Below, what a graph gives that similarity search does not: the same answer to the same question, the path behind it, a diff of what changed, and a maintainer.",
+          "kind": "comparison"
+        }
+      ],
+      "graph": {
+        "slug": "knowledge-that-maintains-itself",
+        "teaser": "Fractal semantic graphs for policies and internal knowledge: brief people and agents from the graph, maintain it in a loop, carry the brief in a vault.",
+        "topics": [
+          "graphs-and-knowledge",
+          "vaults-and-method"
+        ],
+        "core_idea": "An organisation's policies and internal knowledge can be held as a fractal semantic graph with an ontology and taxonomy per element, from which people and agents are briefed with the slice and the diff they need, at about an eighth of the text on this site; unlike vector search it is repeatable and explainable, it does not need to be right first because agents maintain it and a validator checks it, and the brief travels in sgit vaults scoped and encrypted to its reader.",
+        "nodes": [
+          {
+            "id": "graph",
+            "label": "Knowledge as a graph",
+            "kind": "concept",
+            "summary": "An ontology and taxonomy per element, each part in its own vocabulary, named edges between."
+          },
+          {
+            "id": "brief",
+            "label": "Brief from the graph",
+            "kind": "method",
+            "summary": "The slice a person or agent needs, and the diff since they last read."
+          },
+          {
+            "id": "eighth",
+            "label": "About an eighth",
+            "kind": "claim",
+            "summary": "The graphs of 112 articles hold 12.4% of their text: 87k tokens against 704k."
+          },
+          {
+            "id": "diff",
+            "label": "Diffs, not re-reads",
+            "kind": "method",
+            "summary": "A superseded node, an added edge, a claim marked out of date."
+          },
+          {
+            "id": "vectors",
+            "label": "Graphs and vectors",
+            "kind": "concept",
+            "summary": "Similarity finds a starting point; a graph gives the same answer and its path."
+          },
+          {
+            "id": "maintain",
+            "label": "Maintain, not get right",
+            "kind": "claim",
+            "summary": "The graph does not have to be right first; the loop maintains it."
+          },
+          {
+            "id": "agents",
+            "label": "Agents maintain, code checks",
+            "kind": "method",
+            "summary": "Models propose and update nodes and edges; a validator checks the rules."
+          },
+          {
+            "id": "why",
+            "label": "Why is this happening?",
+            "kind": "question",
+            "summary": "An odd edge is a question whose answer is a fix at the right altitude."
+          },
+          {
+            "id": "examples",
+            "label": "Found this way here",
+            "kind": "example",
+            "summary": "The link graph, a control spreadsheet, a governance stack, policies against code."
+          },
+          {
+            "id": "sgit",
+            "label": "The brief travels in a vault",
+            "kind": "artefact",
+            "summary": "An encrypted git: a key per agent, a scoped folder, a key pair, a history."
+          },
+          {
+            "id": "lane",
+            "label": "Findings come back",
+            "kind": "method",
+            "summary": "An append lane lets an agent report without being able to read."
+          }
+        ],
+        "edges": [
+          {
+            "from": "graph",
+            "to": "brief",
+            "rel": "produces"
+          },
+          {
+            "from": "eighth",
+            "to": "brief",
+            "rel": "example-of"
+          },
+          {
+            "from": "brief",
+            "to": "diff",
+            "rel": "extends"
+          },
+          {
+            "from": "vectors",
+            "to": "graph",
+            "rel": "contrasts"
+          },
+          {
+            "from": "maintain",
+            "to": "graph",
+            "rel": "depends-on"
+          },
+          {
+            "from": "agents",
+            "to": "maintain",
+            "rel": "answers"
+          },
+          {
+            "from": "why",
+            "to": "maintain",
+            "rel": "leads-to"
+          },
+          {
+            "from": "examples",
+            "to": "why",
+            "rel": "example-of"
+          },
+          {
+            "from": "brief",
+            "to": "sgit",
+            "rel": "depends-on"
+          },
+          {
+            "from": "sgit",
+            "to": "lane",
+            "rel": "produces"
+          },
+          {
+            "from": "lane",
+            "to": "why",
+            "rel": "leads-to"
+          }
+        ],
+        "links": {
+          "articles": [
+            "introducing-fractal-semantic-graphs",
+            "every-link-points-back",
+            "ai-baseline-control-framework",
+            "the-ai-governance-stack-as-a-graph",
+            "policy-as-code-needs-a-policy-first",
+            "code-review-as-a-fractal-semantic-graph",
+            "what-sgit-is",
+            "sgit-in-a-ci-pipeline",
+            "two-agents-one-vault",
+            "encrypted-memory-for-isolated-agents",
+            "re-anchoring-agent-behaviour-policies",
+            "memory-is-not-a-spectator-sport"
+          ],
+          "pages": [],
+          "sites": [
+            "https://newsroom.sgit.ai/articles/graphs.json",
+            "https://newsroom.sgit.ai/articles/graphs.html",
+            "https://newsroom.sgit.ai/llms.txt",
+            "https://sgit.ai/demos/vaults/code-review-graphs/index.html",
+            "https://sgit.ai/demos/fractal-graphs/index.html",
+            "https://sgit.ai/demos/vaults/regulation-graph/index.html"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "You do not have to get it right; you have to maintain it",
+            "why": "The principle that makes graph knowledge management practical."
+          },
+          {
+            "text": "The maintenance is done by models and verified by code.",
+            "why": "Who does the work and what checks it."
+          }
+        ]
+      }
+    },
+    {
       "slug": "the-minimum-code-below",
       "title": "The minimum code below: container security from the top down, from the user story to the immutable line, measured on one real tool",
       "date": "2026-10-14",
@@ -543,6 +769,7 @@
         "the-human-in-the-loop"
       ],
       "links_in": [
+        "knowledge-that-maintains-itself",
         "a-policy-for-every-skill"
       ],
       "figures": [
@@ -773,6 +1000,7 @@
         "two-agents-one-vault"
       ],
       "links_in": [
+        "knowledge-that-maintains-itself",
         "the-minimum-code-below"
       ],
       "figures": [
@@ -1564,6 +1792,7 @@
         "sixteen-notes-i-did-not-want-to-lose"
       ],
       "links_in": [
+        "knowledge-that-maintains-itself",
         "four-frameworks-one-agent"
       ],
       "figures": [
@@ -7747,6 +7976,7 @@
         "the-passkey-opens-the-vault"
       ],
       "links_in": [
+        "knowledge-that-maintains-itself",
         "sgit-in-a-ci-pipeline",
         "attacks-rewritten-as-mandates",
         "sixteen-notes-i-did-not-want-to-lose",
@@ -13268,6 +13498,7 @@
         "a-second-reader-the-agent-cannot-skip"
       ],
       "links_in": [
+        "knowledge-that-maintains-itself",
         "policy-as-code-needs-a-policy-first",
         "four-frameworks-one-agent",
         "how-the-voice-works",
@@ -13711,6 +13942,7 @@
         "code-review-as-a-fractal-semantic-graph"
       ],
       "links_in": [
+        "knowledge-that-maintains-itself",
         "four-frameworks-one-agent"
       ],
       "figures": [
@@ -15146,6 +15378,7 @@
         "the-agent-team-as-it-runs"
       ],
       "links_in": [
+        "knowledge-that-maintains-itself",
         "sgit-in-a-ci-pipeline",
         "the-vault-crosses-chrome-profiles",
         "the-records-ran-out",
@@ -18021,6 +18254,7 @@
         "code-review-as-a-fractal-semantic-graph"
       ],
       "links_in": [
+        "knowledge-that-maintains-itself",
         "policy-as-code-needs-a-policy-first",
         "four-frameworks-one-agent",
         "the-behaviour-policy-is-the-business-logic"
@@ -22023,6 +22257,7 @@
         "price-it-then-give-it-away"
       ],
       "links_in": [
+        "knowledge-that-maintains-itself",
         "the-vault-crosses-chrome-profiles",
         "stop-the-bleeding-then-ask-for-it-back",
         "the-records-ran-out",
@@ -22338,6 +22573,7 @@
         "if-somebody-built-a-company-on-code-review"
       ],
       "links_in": [
+        "knowledge-that-maintains-itself",
         "every-link-points-back",
         "explorer-to-villager-newsroom",
         "the-ai-governance-stack-as-a-graph",
@@ -26796,6 +27032,7 @@
       ],
       "links_out": [],
       "links_in": [
+        "knowledge-that-maintains-itself",
         "the-minimum-code-below",
         "a-policy-for-every-skill",
         "policy-as-code-needs-a-policy-first",
@@ -28023,6 +28260,7 @@
       ],
       "links_out": [],
       "links_in": [
+        "knowledge-that-maintains-itself",
         "attacks-rewritten-as-mandates",
         "move-the-cloud-not-the-code",
         "pay-to-keep-your-persona",

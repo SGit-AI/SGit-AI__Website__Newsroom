@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.2.0** | 2026-10-14 | minor | 2,357 | +17 / −1 words; 16 changed, 0 added, 0 removed paragraphs | this release | [what changed](a-policy-for-every-skill/v1.2.0.md) · [current](../a-policy-for-every-skill.md) |
+| **v1.2.0** | 2026-10-14 | minor | 2,357 | +17 / −1 words; 16 changed, 0 added, 0 removed paragraphs | [`e1d5ff4a7`](https://github.com/SGit-AI/SGit-AI__Website/commit/e1d5ff4a70f59f5ace768c75a130c0ee62c68ec7) | [what changed](a-policy-for-every-skill/v1.2.0.md) · [current](../a-policy-for-every-skill.md) |
 | **v1.1.0** | 2026-10-14 | minor | 2,341 | +1 / −4 words; 16 changed, 0 added, 0 removed paragraphs | [`c3de98c26`](https://github.com/SGit-AI/SGit-AI__Website/commit/c3de98c26bfa35cb33d38999278f9deb9bc9ba4f) | [what changed](a-policy-for-every-skill/v1.1.0.md) |
 | **v1.0.0** | 2026-10-14 | published | 2,344 | first published | [`611ba354e`](https://github.com/SGit-AI/SGit-AI__Website/commit/611ba354efe7e33f43169452abce93ffe59a6555) |  |
 
