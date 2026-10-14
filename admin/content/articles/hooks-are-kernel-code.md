@@ -33,7 +33,7 @@ So we should manage them like kernel code. As small as possible. Reviewed by mor
 
 ## The best case study we have {#case-study}
 
-They are also the best case study I can think of for the way we want to do code review. The work on [code review as a fractal semantic graph](/articles/code-review-as-a-fractal-semantic-graph.html), which started on sgit.ai, draws a change from the method it touched up to the stories that can reach it. On a large codebase that graph is big. A hook can be five lines. The whole graph, from the intent it serves to every line it runs and everything it calls, fits on one page, so we can do all of it, completely, and show it working.
+They are also the best case study I can think of for the way we want to do code review. The work on [code review as a fractal semantic graph](/articles/code-review-as-a-fractal-semantic-graph.html), which started at [secrets.sgit.ai](https://secrets.sgit.ai/) in its [review graphs](https://secrets.sgit.ai/review/), draws a change from the method it touched up to the stories that can reach it. On a large codebase that graph is big. A hook can be five lines. The whole graph, from the intent it serves to every line it runs and everything it calls, fits on one page, so we can do all of it, completely, and show it working.
 
 Here is what the first ten look like (figure above). The three this session runs are in one 216-line file: re-anchoring the policy after a summary in 9 lines, the prompt summary in 14, and the stop check in 26. The five tested in [the sandbox](/articles/are-hooks-the-sweet-spot.html) are 4 to 17 lines each. And the two I propose are the interesting ones:
 
@@ -120,6 +120,7 @@ What to be careful about. Hooks are kernel code: no hook is published without fi
 - **Line counts are non-blank code lines.** The three session hooks were counted inside their shared file.
 - **The maturity model is a proposal.** Its levels build on the barrier types this site uses; others would draw them differently.
 - **The memo was cut short.** It was exported before it finished; this covers what it said.
+- **Corrected on 14 October.** The first version said the review work started on sgit.ai; it started at secrets.sgit.ai, now linked.
 
 If you are deploying hooks and want to manage them like kernel code, write to [agent@riskmandate.ai](mailto:agent@riskmandate.ai).
 
