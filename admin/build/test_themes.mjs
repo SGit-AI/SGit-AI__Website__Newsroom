@@ -19,7 +19,9 @@
  *   4. The bar is one row at every width from 1280 up in both looks, collapses behind Menu below, and
  *      nothing overflows the viewport at any width down to 390 (card 037's measured claim).
  *
- * Skips (exit 0) when Playwright or Chromium is missing, and says so. No vault, no network.
+ * Skips (exit 0) when Playwright or Chromium is missing, and says so. No vault. The pages load the reader code from the
+ * release pinned in admin/build/api.json on api.newsroom.sgit.ai, so that release must be live (the deploy order: the API
+ * repository's dev first); the 'no page errors' checks fail with CORS errors when it is not.
  */
 import http from 'http'
 import fs from 'fs'
@@ -47,10 +49,11 @@ for (const t of THEMES) {
 }
 
 /* ---- 2. no literal colour outside the themes file ---- */
-const OWN = ['assets/site.css', 'assets/site-nav.css', 'assets/vault-pane/vault-pane.css', 'assets/search/search.css', 'assets/search/ask.css',
-             'assets/search/search-nav.css', 'wire/wire.css', 'for/for.css', 'passkey/lab.css', 'assets/fonts.css', 'engineering/engineering.css', 'assets/components/sg-meter/v1/v1.4/v1.4.1/sg-meter.css']
-// the signals that stay literal on purpose: the vault button's dots, the wire's amber "new" flag and its ink, the terminal
-// panel (and its text), the print page, and the sg-meter's neutral fallbacks inside var(), which the token overrides
+// The stylesheets that live in this repository. The reader's own (the meter's, the vault pane's, search's, the wire's,
+// the reading-list pages' and the passkey lab's) moved to SGit-AI/SGit-AI__Website__Newsroom__API in v0.13.0 and are held to
+// the same rule there (tests/test_styles.mjs, the same ALLOWED list), where the files are.
+const OWN = ['assets/site.css', 'assets/site-nav.css', 'assets/fonts.css', 'engineering/engineering.css']
+// the signals that stay literal on purpose: the vault button's dots, the terminal panel (and its text), the print page
 const ALLOWED = /#(b8bcc4|8be0c2|f0a020|f0c070|ffd38a|14161a|a6e3c3|e6e8ec|1c1d21|0d1117|c9d1d9|3fb950|d29922|fff)\b/
 for (const rel of OWN) {
     const t = fs.readFileSync(path.join(ROOT, rel), 'utf8').replace(/\/\*[\s\S]*?\*\//g, '')
