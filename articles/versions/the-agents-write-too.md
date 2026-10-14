@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-14 | published | 2,267 | first published | this release | [current](../the-agents-write-too.md) |
+| **v1.0.0** | 2026-10-14 | published | 2,267 | first published | [`7b8a03c76`](https://github.com/SGit-AI/SGit-AI__Website/commit/7b8a03c76b7daccbb147e8f7fb664b589e384b4b) | [current](../the-agents-write-too.md) |
 
 [← Back to the article](../the-agents-write-too.md) · [All articles](../index.md)
 

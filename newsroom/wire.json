@@ -73,6 +73,37 @@
   ],
   "articles": [
     {
+      "slug": "system-prompts-as-behaviour-policies",
+      "title": "System prompts as behaviour policies: Claude's published prompt and a leaked ChatGPT one, mapped into rows, a taxonomy of rules, and a JSON file a harness could enforce",
+      "date": "2026-10-14",
+      "updated": "",
+      "author": "Dinis Cruz",
+      "url": "https://newsroom.sgit.ai/articles/system-prompts-as-behaviour-policies.html",
+      "markdown": "https://newsroom.sgit.ai/articles/system-prompts-as-behaviour-policies.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/system-prompts-as-behaviour-policies.webp",
+      "graph": "https://newsroom.sgit.ai/articles/graphs/system-prompts-as-behaviour-policies.json",
+      "teaser": "Claude's published system prompt as 82 policy rows in eight kinds: 36 could be held by the harness, 21 partly by classifiers, 25 stay with the model.",
+      "summary": "I have said before that a system prompt is a light behaviour policy. So I tested it. The hypothesis: can an existing system prompt be represented as an agent behaviour policy, and if so, what should that look like as a JSON file that models can read and harnesses can enforce, with stronger controls in more places than the prompt itself? Anthropic publishes Claude's system prompts, so the test used the real one: Claude Haiku 5.5's, published on 7 October 2026. It holds 4,255 words and 82 rules. Sorted by kind, 36 of them, about tool use, conversation state, referrals, knowledge and input trust, could be held by the harness rather than by the model's good behaviour; 21 harm restrictions could be held in part by classifiers outside the model, which Anthropic already uses; and 25, about judgement and presentation, stay with the model. For contrast, a leaked ChatGPT prompt, unverified, is the opposite shape: about six words in seven sit under its tool sections. Between them they are the two halves of a behaviour policy, the rules and the reach. What neither has is a mandate, a statement of who may override whom that the harness can check, or a record of what keeps each rule. So I propose an ontology and a taxonomy for it, and a JSON shape. And I looked for anyone running a written agent behaviour policy for real: the formats are arriving, the published policies are not.",
+      "topics": [
+        "agents-and-policy"
+      ],
+      "tags": [
+        "system-prompts",
+        "agent-behaviour-policy",
+        "claude",
+        "chatgpt",
+        "ontology",
+        "taxonomy",
+        "policy-as-code",
+        "json",
+        "guardrails",
+        "article"
+      ],
+      "placement": [],
+      "linkedin": null,
+      "notes": []
+    },
+    {
       "slug": "the-agents-write-too",
       "title": "The agents write too: lessons, debriefs and a page for every agent on the newsroom, and a brief for the conductor that will keep it",
       "date": "2026-10-14",
