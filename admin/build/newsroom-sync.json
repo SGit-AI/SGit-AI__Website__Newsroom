@@ -38,6 +38,7 @@
    "admin/content/articles/graphs/the-minimum-code-below.json": "d5baf19d787741d7b607fb4ef5916b22b7fc9bcbb1ac7922065f350759f44fa7",
    "admin/content/articles/graphs/the-policy-draws-the-liability-line.json": "e53dba09cf1937b6a963bf939bd668279b551b14c2ffbeaf7df6a9f8771552f5",
    "admin/content/articles/graphs/the-vault-crosses-chrome-profiles.json": "a98eef0c5628432a407dae3dfe3f5b9f83d4da3a541aec79a53f113f5434d4ce",
+   "admin/content/articles/graphs/the-wire-as-a-graph.json": "080bea9e81fd7f99003129a02742ed019e313a5166f748413164912f6f867df3",
    "admin/content/articles/how-cheap-is-it-to-undo.md": "fbb0e404fda9f499b735f681ad9ef8f1a839c3d063be1b6c5900277bffaedde4",
    "admin/content/articles/images/af-brief.webp": "2ee6e611da1ded082faf74d948b2d9f29719a964d0bc822447fba50fc514f6f8",
    "admin/content/articles/images/af-flow.webp": "93a0bb8d1a4c718b8b9cb015cb401bc1509de9c98c6a0164b62aecb2f234ce57",
@@ -91,6 +92,8 @@
    "admin/content/articles/images/vc-pipeline.webp": "2b673d2bd080709747bba8d074c4080b515bd4b993e30aeaadad1b93afa95800",
    "admin/content/articles/images/vp-path.webp": "ef001fa99b004aa6c7c711fe38d31245d1bee6d6c74834705af05c850bf88135",
    "admin/content/articles/images/vp-profiles.webp": "e16331cdd02aa0507b5d6c21d8ffc0bba622e555d42fde51bad27abac5fcbb92",
+   "admin/content/articles/images/wg-model.webp": "1366841b229ea0d7396a38aaba57a91352aaf444254cbeeba789a9c553d1b02e",
+   "admin/content/articles/images/wg-reader.webp": "6fca61da6d1db3f76da68356006e9d951f4d86da0d563d064f4a64c270b414eb",
    "admin/content/articles/knowledge-that-maintains-itself.md": "3cb79968a29ed18ed864bef702c61a33962b71dff9e0f2115ba52ab968a7aa75",
    "admin/content/articles/policy-as-code-needs-a-policy-first.md": "ae312f8648badcb22a981f36748bc6a27492a08b224197888cfd80921a257d8b",
    "admin/content/articles/sgit-in-a-ci-pipeline.md": "6007a0bbfb6ac40002783f481db82d6eda9261e64cf4ed7eb6425ece66a08742",
@@ -102,6 +105,7 @@
    "admin/content/articles/the-minimum-code-below.md": "a2292316a7ffe248c985ac5e5d7e656daacaa98b35fa42ad9a03303812c3c0a7",
    "admin/content/articles/the-policy-draws-the-liability-line.md": "ca9be7e764d7e0c193598a061c733a2a561838db8337de94c7e81dff3a7c273d",
    "admin/content/articles/the-vault-crosses-chrome-profiles.md": "cd0ec68bcfaed2755653791deb46006bd06f7de05457d65da05f59f54a4b8248",
+   "admin/content/articles/the-wire-as-a-graph.md": "f66ae627332de3e9ed723268a980b92677d3ed420f0b969cf4ce2f9f14fa3247",
    "admin/content/newsletter/006-2026-10-13.md": "01cbfee8d00ad57ef5c5c02a83aa1d9abeb8f4f478c0ee9b975c1ad3ad1cbd3b"
   }
  },
@@ -191,10 +195,10 @@
   }
  ],
  "counts": {
-  "files": 1995,
-  "pages": 452,
-  "articles": 117,
-  "verbatim": 973,
+  "files": 2005,
+  "pages": 454,
+  "articles": 118,
+  "verbatim": 978,
   "dependencies": 52,
   "text_overrides": 10,
   "unresolved_on_sgit_ai": 0
@@ -437,8 +441,8 @@
   },
   "articles/banners/.hashes.json": {
    "from": "articles/banners/.hashes.json",
-   "sha256_source": "f56cb872d5cfe0c585fc0c3a7318424e16f8debcc09b300dab73ecd9676d187d",
-   "sha256": "f56cb872d5cfe0c585fc0c3a7318424e16f8debcc09b300dab73ecd9676d187d"
+   "sha256_source": "81013312f90467b9d2dc15ae32156240618f53528453d3ff1e11fe764915e4bd",
+   "sha256": "81013312f90467b9d2dc15ae32156240618f53528453d3ff1e11fe764915e4bd"
   },
   "articles/banners/001-agents-doing-real-work.jpg": {
    "from": "articles/banners/001-agents-doing-real-work.jpg",
@@ -767,8 +771,8 @@
   },
   "articles/banners/manifest.json": {
    "from": "articles/banners/manifest.json",
-   "sha256_source": "8062a375101cd6e8e2dc3eed3859f5095c2ece5d5f113e8f4f8afea83b54f207",
-   "sha256": "8062a375101cd6e8e2dc3eed3859f5095c2ece5d5f113e8f4f8afea83b54f207"
+   "sha256_source": "89f417cca5f82eb853204965b67b22d249654427f469d4c76aeae0129180c7c8",
+   "sha256": "89f417cca5f82eb853204965b67b22d249654427f469d4c76aeae0129180c7c8"
   },
   "articles/banners/memory-is-not-a-spectator-sport.jpg": {
    "from": "articles/banners/memory-is-not-a-spectator-sport.jpg",
@@ -907,8 +911,8 @@
   },
   "articles/banners/subscribe.jpg": {
    "from": "articles/banners/subscribe.jpg",
-   "sha256_source": "8ca5048dc79b320047d9004babde029cc0d381513d991ecaa66da0980ee2bba9",
-   "sha256": "8ca5048dc79b320047d9004babde029cc0d381513d991ecaa66da0980ee2bba9"
+   "sha256_source": "7eb7b9dcf598d1642a396f322cf2e5769fb9ef276033f3ee6fd538e3566c2137",
+   "sha256": "7eb7b9dcf598d1642a396f322cf2e5769fb9ef276033f3ee6fd538e3566c2137"
   },
   "articles/banners/supply-chain-of-vaults.jpg": {
    "from": "articles/banners/supply-chain-of-vaults.jpg",
@@ -1044,6 +1048,11 @@
    "from": "articles/banners/the-wall-under-the-reply.jpg",
    "sha256_source": "5ab4fe65df93110297bbeb50db2128376273625642936ad24b63239bf92fe46a",
    "sha256": "5ab4fe65df93110297bbeb50db2128376273625642936ad24b63239bf92fe46a"
+  },
+  "articles/banners/the-wire-as-a-graph.jpg": {
+   "from": "articles/banners/the-wire-as-a-graph.jpg",
+   "sha256_source": "269cec2ca1a8535201aade8861716f5854fbedbf32a1f1c1fa383edda64881f8",
+   "sha256": "269cec2ca1a8535201aade8861716f5854fbedbf32a1f1c1fa383edda64881f8"
   },
   "articles/banners/token-bill-nobody-is-sending.jpg": {
    "from": "articles/banners/token-bill-nobody-is-sending.jpg",
@@ -1645,6 +1654,11 @@
    "sha256_source": "3c4bf2c6d559fb1def6f2233c2bcfbaffc54441574e734b23cd495cedad22bc3",
    "sha256": "3c4bf2c6d559fb1def6f2233c2bcfbaffc54441574e734b23cd495cedad22bc3"
   },
+  "articles/cards/the-wire-as-a-graph.webp": {
+   "from": "articles/cards/the-wire-as-a-graph.webp",
+   "sha256_source": "0b218b44af25a3ed23ae30d60c46bffcb8b48faaa045268e737284c50512379e",
+   "sha256": "0b218b44af25a3ed23ae30d60c46bffcb8b48faaa045268e737284c50512379e"
+  },
   "articles/cards/token-bill-nobody-is-sending.webp": {
    "from": "articles/cards/token-bill-nobody-is-sending.webp",
    "sha256_source": "59a91305732f6ae24c5c9887ea9cd79d3a8c070c6b5d1796594a45afef48fb8f",
@@ -1757,13 +1771,13 @@
   },
   "articles/collections/index.html": {
    "from": "articles/collections/index.html",
-   "sha256_source": "10ad8da18665c69e5a0ebcf9941851e17925d85422ec23f7f5af18ab7b9a97e9",
-   "sha256": "e5efa23affdf7d1c0baa5eb40365ec5e1850f98767f101c75d79687b996536e6"
+   "sha256_source": "15b4dab330cfa182bd3da4c24b1d8dc741c818b66a5fe8399d3e8bf3764ab9c8",
+   "sha256": "a9aeb4e8876bbd28cc6870a9b7a4f0d194e0f6c641e687e82001b5132d650b56"
   },
   "articles/collections/index.md": {
    "from": "articles/collections/index.md",
-   "sha256_source": "f72188a183a5b00ec993c218e85ff9bab068ea7cfb17e7ffa31a7686f806e3d6",
-   "sha256": "71e1650c86304931aacb4b4bb99d87d5fbe4c42a4ea16f897a28278197f1340e"
+   "sha256_source": "557648fb5353acd70f185a0217ad4ffe9633adf84bf84c2680505e600a8a1255",
+   "sha256": "97270d90f4faa7f25d93973355164b75f4d268eaa8a67f2584f24bbd7389cff6"
   },
   "articles/collections/local-news-kept-as-evidence.html": {
    "from": "articles/collections/local-news-kept-as-evidence.html",
@@ -1897,13 +1911,13 @@
   },
   "articles/desk/index.html": {
    "from": "articles/desk/index.html",
-   "sha256_source": "f2981010d0cf876f30d13880f929fc91c962f0c8b29e8e7e0f8a985216d9ad38",
-   "sha256": "6ba8cf1dfe1578bcea4a7854bfe9c1a3eb158275f30e21896d37ddd0c0f921cf"
+   "sha256_source": "02a8e454ca49a1818622ba953155527ce239e32dbecb9b24d0c9b028c443bda7",
+   "sha256": "f33e71c5569a8e54e2a59e6cced4c9670b49715c2fc9b5ed90a90246129a11fb"
   },
   "articles/desk/index.md": {
    "from": "articles/desk/index.md",
-   "sha256_source": "c5d801d1ad4786892d0a77e1f1f7fd8d1a5a86714f9e95cd67b4a1c3f3ebfc3c",
-   "sha256": "ed3988c97a4960662bfc8fe830550b09116ab36f09b00816d27c07a83692bff1"
+   "sha256_source": "2df18c625d7e9b4593a33bc8f8f80aec500188041a2d4b49a3bec17243adbb54",
+   "sha256": "8efa9818b3b3d51d789aab8f5779528ff3d763738b0e6bbd42c5bac3498ac89b"
   },
   "articles/desk/range-is-the-feature-so-the-stop-is-designed.html": {
    "from": "articles/desk/range-is-the-feature-so-the-stop-is-designed.html",
@@ -1987,8 +2001,8 @@
   },
   "articles/feed.xml": {
    "from": "articles/feed.xml",
-   "sha256_source": "27d0ca2b51d16857d95e88422d9221fcdf409d1a9d7c43298d194bb35a45352b",
-   "sha256": "1567cdbf8ad620aa807beb4c0504f55f23770b445d21dba6bb850a31dd7d845a"
+   "sha256_source": "fafa6c1b7b7599e49aebcf7679892614c98402ca9d547b9b2e03f94f081bbcb0",
+   "sha256": "15e41e1744e0c0fd94e8d8b57fb49d35b682a2a7a5b5672a150970707d3c6a3e"
   },
   "articles/firing-journalists.html": {
    "from": "articles/firing-journalists.html",
@@ -2052,18 +2066,18 @@
   },
   "articles/graphs.html": {
    "from": "articles/graphs.html",
-   "sha256_source": "cdfd5b1470086be98fd3e594930bc311a07847a2caf899510c7369b0c9f4e8da",
-   "sha256": "e9506fe6bd657691ee47807298f2f78e5fe87e3a3eb49a6d2bbba9d6ed0cdcd6"
+   "sha256_source": "c828336ba79ca64ba3fecf9996d9f1bf7065378cf70ab34b68b88a18538ec8d6",
+   "sha256": "9cf46fc49bb39b10d8472429a82213b7d501b18d76cc6b4adb4f64b11ffc1b13"
   },
   "articles/graphs.json": {
    "from": "articles/graphs.json",
-   "sha256_source": "f7abf810fc4e11279af53e3f3cba8d019f50a4565a65ac3174ce9cdbce7042cb",
-   "sha256": "be0b66b2937fd1fab184b9e10e6a1b665a9fc98094a40265d653295d197ab13b"
+   "sha256_source": "95912cbd05f913a9f44c10666b34606076dec9828f68a5db0e1492ffd4310870",
+   "sha256": "e86b511cae14d7f4ce4a86ccd4fd265835d4d0b263d4c0266c2eeb985adf50ae"
   },
   "articles/graphs.md": {
    "from": "articles/graphs.md",
-   "sha256_source": "39230615e4eedf6a5f69bd36515b335f90f1308b7d54b9ced67eacffe093faac",
-   "sha256": "55b499ca2c4e1b2d13f02d2a16ee1c0b91154cf099c47ea7c9c7455a06b6621b"
+   "sha256_source": "d3dd7877698d874d78dcdf306a7594d05289b70de5b0d7b096359ea96c2cd3cb",
+   "sha256": "8ba435f74ce7b1431e67018bd3d5be21a1a8178082b9e18e9c4aab3606d40b01"
   },
   "articles/graphs/a-link-to-a-persona.json": {
    "from": "articles/graphs/a-link-to-a-persona.json",
@@ -2579,6 +2593,11 @@
    "from": "articles/graphs/the-wall-under-the-reply.json",
    "sha256_source": "640b5e052527626cb80a14107e482b58226c45ac3e97a1f076e698bbf9e80a71",
    "sha256": "fbc251433a996ceabc8e388d1062e8a5ea99e5970704c477ce69aea671f5cf09"
+  },
+  "articles/graphs/the-wire-as-a-graph.json": {
+   "from": "articles/graphs/the-wire-as-a-graph.json",
+   "sha256_source": "337ab42f286dd1746e99e5d60ec3f9af46f35c209fafa739f3c10cbc0dd5510b",
+   "sha256": "850bcc774a28ecc769a7c90b9fc22616d3fcbf6643e1d1f5f04d5e50229979e5"
   },
   "articles/graphs/token-bill-nobody-is-sending.json": {
    "from": "articles/graphs/token-bill-nobody-is-sending.json",
@@ -4935,6 +4954,16 @@
    "sha256_source": "e16331cdd02aa0507b5d6c21d8ffc0bba622e555d42fde51bad27abac5fcbb92",
    "sha256": "e16331cdd02aa0507b5d6c21d8ffc0bba622e555d42fde51bad27abac5fcbb92"
   },
+  "articles/images/wg-model.webp": {
+   "from": "articles/images/wg-model.webp",
+   "sha256_source": "1366841b229ea0d7396a38aaba57a91352aaf444254cbeeba789a9c553d1b02e",
+   "sha256": "1366841b229ea0d7396a38aaba57a91352aaf444254cbeeba789a9c553d1b02e"
+  },
+  "articles/images/wg-reader.webp": {
+   "from": "articles/images/wg-reader.webp",
+   "sha256_source": "6fca61da6d1db3f76da68356006e9d951f4d86da0d563d064f4a64c270b414eb",
+   "sha256": "6fca61da6d1db3f76da68356006e9d951f4d86da0d563d064f4a64c270b414eb"
+  },
   "articles/images/why-abp.webp": {
    "from": "articles/images/why-abp.webp",
    "sha256_source": "b93b704476916ab195247ebdcd346c4ba255ce879a152b741f20dc64ec2d3640",
@@ -4987,23 +5016,23 @@
   },
   "articles/index.html": {
    "from": "articles/index.html",
-   "sha256_source": "1a6a5c2acd6a3c9ee693b23ed7dd2b5fbd16a87eb7eba6ddad400e00c5c6fa45",
-   "sha256": "8779809bffb4dc6241f50047e32dc9e36614beebc2c6a29ad92b3d0f29698f45"
+   "sha256_source": "38124f37ebbea9f12493cef6651e73d829b7d5f8019b20341ac2873389dc6d14",
+   "sha256": "14646144c1a440652f9fb7fd74c1f035ef27bb31b14407426344166045a810fe"
   },
   "articles/index.md": {
    "from": "articles/index.md",
-   "sha256_source": "bf8422069f12f72bcac73f799f4b5c49a60e1fc52353bd48e4edb38adaef7391",
-   "sha256": "303711924a88cc39e633a2bc1c1c34a0e1aa1e4eb6df410da446a1521b8bf435"
+   "sha256_source": "f8cdadb45011ad14cf4abe3340b62bc70657a7f2ad81505b145fd4291a8ab917",
+   "sha256": "47e851f4f2bd7a8be4a7ce84a3d13626f868a18ab3755a0e9885461f3e8e4447"
   },
   "articles/introducing-fractal-semantic-graphs.html": {
    "from": "articles/introducing-fractal-semantic-graphs.html",
-   "sha256_source": "b9b95704370febbfc47e77cec7d3e6592cf69f3aa85eb021a3894d5b489318d7",
-   "sha256": "ffda0b3f0561c1cf99c8271cbdce32f99d4d3c221a8a56fb6a3d36f6fa518b2b"
+   "sha256_source": "b51d9fbb3290170ab50f5f1259bcf3df872f4a1af9505f1aae7dd5505e24dd9a",
+   "sha256": "498ecc16d80c68a7dc7c58c548d13600e20e859ae6b8c74e4b8ff1e4c823d993"
   },
   "articles/introducing-fractal-semantic-graphs.md": {
    "from": "articles/introducing-fractal-semantic-graphs.md",
-   "sha256_source": "7ad23413e0a0bf498c6d2537fcfeb61f8f55a9b1e1132d37ea6e2e9f387f506a",
-   "sha256": "295b22e970b46da393e88e8b20e4a528da695a983e31e3d94f98794758fb818c"
+   "sha256_source": "beff4d7532ce2a7b990cee2e9b6ca23c68987395be21a714a335e1b06faac9a1",
+   "sha256": "e608ca9585cae6b52eff0765ebc2422a9f1b59c82de664fab301c3dae45cd928"
   },
   "articles/judo-for-small-countries.html": {
    "from": "articles/judo-for-small-countries.html",
@@ -5127,13 +5156,13 @@
   },
   "articles/newsletter/index.html": {
    "from": "articles/newsletter/index.html",
-   "sha256_source": "629d4923a336171627a86df74edf553b32a9e64796c8bfd1ace880f574257bf9",
-   "sha256": "99bad4c5d635eebe6361eac56f003430b429c3aafe623aed7dc5be5a2076216e"
+   "sha256_source": "7718017d920705ddc01accb8be0972ca4c1c60a97714e919cca7abcd37382e3d",
+   "sha256": "5a135a8656e3774ca8f080931e47f94b811b813ab89462d2479238c74a0d4fe6"
   },
   "articles/newsletter/index.md": {
    "from": "articles/newsletter/index.md",
-   "sha256_source": "eb41e6c72f14f4990c5cf5c7eb69166940f45e28e1394cd8f004d0a1a1243220",
-   "sha256": "81c04d0bf7833caa1a0ca0b423d7b144fb0bc69b160e91c75617c0a7fc18747a"
+   "sha256_source": "dad1f54be4c871b69f3145b42c125ec78017c485fb49d7c2b1d72a3e548166d3",
+   "sha256": "a7eb57981c11a23a760b71341de2e2a29f08875d1a1d56d6d96e40157979fb97"
   },
   "articles/nineteen-sites.html": {
    "from": "articles/nineteen-sites.html",
@@ -5167,13 +5196,13 @@
   },
   "articles/one-article-five-readers.html": {
    "from": "articles/one-article-five-readers.html",
-   "sha256_source": "b95163f54baddd30a166b5d59b0b72a3afc4a9eec7aa932a97946c2888db1c20",
-   "sha256": "1ea6e82f97eff495e271ac470e07d483045f578aef7373f4630a00f72e9be62f"
+   "sha256_source": "ad2879f7ed05ed5dcb26744a82df86f1b5db059e9702145aa67e3526be1866a5",
+   "sha256": "8b5c707d3a3b0048e2ec90f434c69240ef400a96aa3333f6679212c9ef89a430"
   },
   "articles/one-article-five-readers.md": {
    "from": "articles/one-article-five-readers.md",
-   "sha256_source": "63372edf41c64eda58d7dcad932e0220229fd218a2477de87cfb0efffda30fa7",
-   "sha256": "cf0e2f25e616ca7d36c5be54ced7e5c9df060509eb965036bcecd7d05704466c"
+   "sha256_source": "d885e59bc7105f20f5e65916da7e11f9bb372a0caef44d975f769a8ca478c58f",
+   "sha256": "9893b6eae28d3676939c12f9b24e686417862b35261ddaa2b6228a6ec8d6e19f"
   },
   "articles/open-source-is-not-free.html": {
    "from": "articles/open-source-is-not-free.html",
@@ -5407,13 +5436,13 @@
   },
   "articles/the-agent-is-the-reader.html": {
    "from": "articles/the-agent-is-the-reader.html",
-   "sha256_source": "0e6009451950243d783d252d41e8029c2432fa74cfe4120753c48ae8acdf2698",
-   "sha256": "022b69283570ccd26cfe42ac24e0d2b5ef62f7838f29ffee4d87149d7ed33cdf"
+   "sha256_source": "fd059660edccca24358bdfeb0ad83a14d3cb0357bba40ff1b75064e438551e05",
+   "sha256": "c3596e629fc9960c43db923888e0dc015ddea9061c9229f4d05a1095efedb2aa"
   },
   "articles/the-agent-is-the-reader.md": {
    "from": "articles/the-agent-is-the-reader.md",
-   "sha256_source": "49d8ce9895af3fe2532a70434a3fa9d7376c0cf233138fb4f2686554cdae4064",
-   "sha256": "cb9d024a99e1bf3f64657f0bebb71353c31609ae49f5f9301e30c8817024d332"
+   "sha256_source": "cf4c83fad887b06304582dc8a8ce73afc7fdd63ef7860894851517e2d43a22f8",
+   "sha256": "0e894f31a99cedce4810b2afe440e88d3a41a3d92deb3491da1dcd50feec6b0f"
   },
   "articles/the-agent-team-as-it-runs.html": {
    "from": "articles/the-agent-team-as-it-runs.html",
@@ -5607,13 +5636,13 @@
   },
   "articles/the-site-is-an-inbox.html": {
    "from": "articles/the-site-is-an-inbox.html",
-   "sha256_source": "862e61d5322f8ba14585df8c0b2829ee489c56beff467e77271701cdaf3924dd",
-   "sha256": "c0ade7c98cc0f850459156fe20916c5a46e988cf541437f515518e7c3b269bff"
+   "sha256_source": "6f9077eb01e102e3387726c1752d5551d22f316558709ef736d890b5261c409d",
+   "sha256": "3351b928c2b4fdf514094554db5196c256776f88e368f2269f20ca732daa4f70"
   },
   "articles/the-site-is-an-inbox.md": {
    "from": "articles/the-site-is-an-inbox.md",
-   "sha256_source": "d596049169b56dd882471c4686ee2c292db59a43ffe331dfd3305198a40e1cec",
-   "sha256": "605263c83f176d649d08b4506ba21919d914b4596d78801ce11236ead1203af1"
+   "sha256_source": "6d69b35c809c395bf037088f04e195be44f97a229f5b24c12a60aaae2a438268",
+   "sha256": "aec099854683d8d6d18e57a165f6f7f5ba2dff862eaaf1c39d49a8adb3fcacec"
   },
   "articles/the-vault-crosses-chrome-profiles.html": {
    "from": "articles/the-vault-crosses-chrome-profiles.html",
@@ -5654,6 +5683,16 @@
    "from": "articles/the-wall-under-the-reply.md",
    "sha256_source": "e87f73b88c9987809b931e36552fe6cbb68903adc78e70e4d075a58ce32315b5",
    "sha256": "f769e930cf4b44afa428c6571a029ed87fa9a454f25441c755dee9c79a3c6e9b"
+  },
+  "articles/the-wire-as-a-graph.html": {
+   "from": "articles/the-wire-as-a-graph.html",
+   "sha256_source": "287c40658416f2758923ea44666df0e1bb9296ce81b9f1d4e6694582392363a2",
+   "sha256": "9d992ad5360cccdfca54d1204d723b35770906f4a5678c55885ebd40b59f87c0"
+  },
+  "articles/the-wire-as-a-graph.md": {
+   "from": "articles/the-wire-as-a-graph.md",
+   "sha256_source": "d8637a9ee4423b0a3fc4869191037ca45f7e033b2c16030a62cf41c47528f021",
+   "sha256": "c00ee643fc7eb9e8b4595a7be1f6b795198b8258364f44be739126f9c4fd3f2e"
   },
   "articles/token-bill-nobody-is-sending.html": {
    "from": "articles/token-bill-nobody-is-sending.html",
@@ -7667,13 +7706,13 @@
   },
   "articles/versions/system-prompts-as-behaviour-policies.html": {
    "from": "articles/versions/system-prompts-as-behaviour-policies.html",
-   "sha256_source": "36d885ab91af2bf512b51d78086d189cc6c3f078726b75009cb6dfeb61ba57bd",
-   "sha256": "dfb05299511a2c906bd9ca51df271bef7f6f120380f463fc3ceee6a7e3d37505"
+   "sha256_source": "5b0632776c82445d5a81bd03d9c2d354710e35f0d6ff1103bc15521647602341",
+   "sha256": "ad9d45b7ed53171bf617828624ad1f40f953e3599d59a57de2c0f5e0ba859056"
   },
   "articles/versions/system-prompts-as-behaviour-policies.md": {
    "from": "articles/versions/system-prompts-as-behaviour-policies.md",
-   "sha256_source": "609aba562726a279e0bab48f7d9796778b5a686bd020ff8dbc4b662308ce5456",
-   "sha256": "b90b3e2f1e1d34c49c4dbb7d0d77021218dbe3abda24b690fbf9b7e4b901223b"
+   "sha256_source": "7541c65961a627363f73bd5b96b077408004a01b21b0bbfbcbfab5e718e78e78",
+   "sha256": "3c87fac0d156541ce7bd2e84b074acd7fd3cda28f3a4277df9098f798ed3e5c1"
   },
   "articles/versions/the-agent-is-the-reader.html": {
    "from": "articles/versions/the-agent-is-the-reader.html",
@@ -8244,6 +8283,16 @@
    "from": "articles/versions/the-wall-under-the-reply/v1.3.1.md",
    "sha256_source": "10ed469b8489cfc933eb7be47c33ba3db395aaa6fac87d83500da13cfb092e50",
    "sha256": "31a5a1fd1671b46d09cc11746422a38e96b926a6d1b7b45385b4bc9283f07b43"
+  },
+  "articles/versions/the-wire-as-a-graph.html": {
+   "from": "articles/versions/the-wire-as-a-graph.html",
+   "sha256_source": "93d0b6bfbfbd3d313c6665e88c7c705e57b8d283b1c763f0b968e311d6c09a56",
+   "sha256": "73d4213b980e74019969ab602763b89c20dce87003b55001a3e31d1b9a08b4bd"
+  },
+  "articles/versions/the-wire-as-a-graph.md": {
+   "from": "articles/versions/the-wire-as-a-graph.md",
+   "sha256_source": "19de88aab2f62cf955b6c4bcc2072a574e215165d13eb05e7b99887ce378f6e1",
+   "sha256": "0c52076ddad92c4fa184a21ffa28bbd45207a6419b9036292f4000be7898d72f"
   },
   "articles/versions/token-bill-nobody-is-sending.html": {
    "from": "articles/versions/token-bill-nobody-is-sending.html",
@@ -9559,13 +9608,13 @@
   },
   "index.html": {
    "from": "articles/index.html",
-   "sha256_source": "1a6a5c2acd6a3c9ee693b23ed7dd2b5fbd16a87eb7eba6ddad400e00c5c6fa45",
-   "sha256": "2b6c57eb4791dcad84f977500132b51f5268318b018ef4e78def3097d4869adf"
+   "sha256_source": "38124f37ebbea9f12493cef6651e73d829b7d5f8019b20341ac2873389dc6d14",
+   "sha256": "94177aeb30fc780cb497a8fe4be24c581f33516445014dbd2f2ffa097f0c9335"
   },
   "index.md": {
    "from": "articles/index.md",
-   "sha256_source": "bf8422069f12f72bcac73f799f4b5c49a60e1fc52353bd48e4edb38adaef7391",
-   "sha256": "c5357998667542bd14721e39052263e0f64108b02b7555e204221a5b59aa8dd0"
+   "sha256_source": "f8cdadb45011ad14cf4abe3340b62bc70657a7f2ad81505b145fd4291a8ab917",
+   "sha256": "a3a0188a658c49505aaa660ef20791181eee28190dbd750a6d041da53ead9cf1"
   },
   "meter/index.html": {
    "from": "meter/index.html",
@@ -9599,13 +9648,13 @@
   },
   "newsroom/index.html": {
    "from": "newsroom/index.html",
-   "sha256_source": "841cd8f4dae5db72e0c352c19786255ffd42c10864e49dbaf2d4c902d5676417",
-   "sha256": "e108e4ec421d6e36547116b3f48b34b32a7ad49616a798c3cd58a4c93fb3a2ee"
+   "sha256_source": "31fee4ebe2eabde69abc4a0e8b0ce48fe21c22ef8d93dea4abb5fab755e4497a",
+   "sha256": "20b08b0319a5c4f78fb5de9f006b469132f268ce3d189d9c2deed72871318cb7"
   },
   "newsroom/index.md": {
    "from": "newsroom/index.md",
-   "sha256_source": "587617138a52a34e85e045fa5056b410aa0b4a021660d87d664ad7341aa8d824",
-   "sha256": "e07108c98ebe476fbffb753f1ff65cb3395e63bab4b9c4471fe2c6b9cee1cfbc"
+   "sha256_source": "e5c8d64ebd407d9d3baa2fc9943a03389ef3f22b2b505a613406f47230915fd3",
+   "sha256": "07013e50488923354b70bfb943a499639ec1026c34490b6e03d076222de0b92a"
   },
   "newsroom/log.html": {
    "from": "newsroom/log.html",
@@ -9699,8 +9748,8 @@
   },
   "newsroom/wire.json": {
    "from": "newsroom/wire.json",
-   "sha256_source": "6bde7d1e989430d66d97d5e96eca18c612810d18185d6b50a0b54b6428f5ddab",
-   "sha256": "320c636643454015bdbb2b6eb5e0d8289437f7fe221570f931176fae33773188"
+   "sha256_source": "a59b0e48a7f8469efc48306b33dbbf1a93c55dd18c4fe5f2330f5872e8e4df5d",
+   "sha256": "c4c457c5d13ba297624954abc6539d1a9602d8d50024edace97c27a1860a2054"
   },
   "og/a-link-to-a-persona.jpg": {
    "from": "og/a-link-to-a-persona.jpg",
@@ -10221,6 +10270,11 @@
    "from": "og/the-wall-under-the-reply.jpg",
    "sha256_source": "f326c4e9529510cfc195242267bf9a5c19b9787b2bf65fbd7cb03333d4a63848",
    "sha256": "f326c4e9529510cfc195242267bf9a5c19b9787b2bf65fbd7cb03333d4a63848"
+  },
+  "og/the-wire-as-a-graph.jpg": {
+   "from": "og/the-wire-as-a-graph.jpg",
+   "sha256_source": "568d7f88534b1d08946152941b6d073cd3fd9a09259e693860b04db63a967787",
+   "sha256": "568d7f88534b1d08946152941b6d073cd3fd9a09259e693860b04db63a967787"
   },
   "og/token-bill-nobody-is-sending.jpg": {
    "from": "og/token-bill-nobody-is-sending.jpg",

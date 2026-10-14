@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-14 | published | 2,924 | first published | this release | [current](../system-prompts-as-behaviour-policies.md) |
+| **v1.0.0** | 2026-10-14 | published | 2,924 | first published | [`a5d5f7d8e`](https://github.com/SGit-AI/SGit-AI__Website/commit/a5d5f7d8e52cb0960b803bd16c928a12cd6b7a15) | [current](../system-prompts-as-behaviour-policies.md) |
 
 [← Back to the article](../system-prompts-as-behaviour-policies.md) · [All articles](../index.md)
 

@@ -55,6 +55,249 @@
   ],
   "articles": [
     {
+      "slug": "the-wire-as-a-graph",
+      "title": "The wire as a graph: start from what the reader sees, give every story and every name a long-lived ID, link every phrase of a short narrative, and a brief for the desks",
+      "date": "2026-10-14",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/the-wire-as-a-graph.html",
+      "markdown": "https://newsroom.sgit.ai/articles/the-wire-as-a-graph.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/the-wire-as-a-graph.webp",
+      "teaser": "Design the wire from what the reader sees: every name a link with a long-lived ID, every sentence a claim, stories of stories, folders by gravity.",
+      "topics": [
+        "news-and-evidence",
+        "graphs-and-knowledge"
+      ],
+      "tags": [
+        "wire",
+        "newsroom",
+        "fractal-semantic-graphs",
+        "ontology",
+        "ids",
+        "evidence",
+        "provenance",
+        "vaults",
+        "sgit",
+        "multi-model",
+        "brief",
+        "article"
+      ],
+      "links_out": [
+        "introducing-fractal-semantic-graphs",
+        "one-article-five-readers",
+        "the-agent-is-the-reader",
+        "the-site-is-an-inbox"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "wg-reader.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/wg-reader.webp",
+          "caption": "Start from what the reader sees. One story from the Industry Wire, shortened, as it could read: every name in its narrative is a link to something with an ID and a type, and every sentence is a claim with its evidence. The NCSC is named in this story's text but not in its tags, and is tagged in another story; with an ID, the two would join. Below, the three other views the same data gives: the day, the story of stories, and the name.",
+          "kind": "architecture"
+        },
+        {
+          "file": "wg-model.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/wg-model.webp",
+          "caption": "The primitives, and where each lives. A run collects; captures freeze what was read; claims are typed and point at evidence; a story is a short narrative over claims and names; stories group into stories; a name earns its own folder when it has gravity. Every object has a long-lived random ID, and an index of every ID, alias and slug.",
+          "kind": "architecture"
+        }
+      ],
+      "graph": {
+        "slug": "the-wire-as-a-graph",
+        "teaser": "Design the wire from what the reader sees: every name a link with a long-lived ID, every sentence a claim, stories of stories, folders by gravity.",
+        "topics": [
+          "news-and-evidence",
+          "graphs-and-knowledge"
+        ],
+        "core_idea": "Designing backwards from the reader, each wire story should be a short narrative in which every name links to a typed, long-lived random ID and every sentence is a typed claim with evidence, with runs, captures, claims, stories, stories of stories and names as the primitives; measured on the four public wire vaults, 202 stories list 1,358 names of which 171 recur across stories, 48 across wires and only 44% appear in the text, so IDs, spans and merges are the work, a name earns a folder by gravity, linking a 55-word narrative avoids the earlier too-much experiments, and cheap models extract while a capable model checks.",
+        "nodes": [
+          {
+            "id": "reader",
+            "label": "Start from what the reader sees",
+            "kind": "method",
+            "summary": "Design the story page first, then the data and the runs."
+          },
+          {
+            "id": "links",
+            "label": "Every name is a link",
+            "kind": "concept",
+            "summary": "A company, a person, an event, a place: each with an ID and a type."
+          },
+          {
+            "id": "claims",
+            "label": "Every sentence is a claim",
+            "kind": "concept",
+            "summary": "Fact, observation, statement by a party, or our analysis, with evidence."
+          },
+          {
+            "id": "sec10",
+            "label": "The Asos story",
+            "kind": "example",
+            "summary": "The NCSC is in the text, not the tags; tagged in another story."
+          },
+          {
+            "id": "measured",
+            "label": "Measured on four wires",
+            "kind": "artefact",
+            "summary": "202 stories, 1,358 names, 171 recur, 48 across wires, 44% in text."
+          },
+          {
+            "id": "primitives",
+            "label": "The primitives",
+            "kind": "concept",
+            "summary": "Run, capture, claim, story, story of stories, name."
+          },
+          {
+            "id": "fractal",
+            "label": "Stories of stories",
+            "kind": "claim",
+            "summary": "A thread is a story of stories; another outlet's article is a story too."
+          },
+          {
+            "id": "ids",
+            "label": "Long-lived random IDs",
+            "kind": "method",
+            "summary": "Minted once, never reused; slugs and merged IDs kept as aliases."
+          },
+          {
+            "id": "too-much",
+            "label": "The right thing done too much",
+            "kind": "example",
+            "summary": "Word-level graphs of long texts made more graph than text."
+          },
+          {
+            "id": "size",
+            "label": "Link the short narrative",
+            "kind": "claim",
+            "summary": "About 55 words, small enough to link every phrase."
+          },
+          {
+            "id": "gravity",
+            "label": "Folders by gravity",
+            "kind": "method",
+            "summary": "A name gets a folder in two or more stories or wires."
+          },
+          {
+            "id": "models",
+            "label": "Many models",
+            "kind": "method",
+            "summary": "Cheaper models extract and link; a capable one checks; code gates."
+          },
+          {
+            "id": "charter",
+            "label": "Facts first, analysis on top",
+            "kind": "artefact",
+            "summary": "The wires' charter, with tiers for what may be kept."
+          },
+          {
+            "id": "brief",
+            "label": "The brief for the desks",
+            "kind": "artefact",
+            "summary": "Eight steps from the reader view to runs and models."
+          }
+        ],
+        "edges": [
+          {
+            "from": "reader",
+            "to": "links",
+            "rel": "leads-to"
+          },
+          {
+            "from": "reader",
+            "to": "claims",
+            "rel": "leads-to"
+          },
+          {
+            "from": "sec10",
+            "to": "links",
+            "rel": "example-of"
+          },
+          {
+            "from": "measured",
+            "to": "ids",
+            "rel": "leads-to"
+          },
+          {
+            "from": "links",
+            "to": "primitives",
+            "rel": "depends-on"
+          },
+          {
+            "from": "claims",
+            "to": "charter",
+            "rel": "extends"
+          },
+          {
+            "from": "fractal",
+            "to": "primitives",
+            "rel": "extends"
+          },
+          {
+            "from": "primitives",
+            "to": "ids",
+            "rel": "depends-on"
+          },
+          {
+            "from": "too-much",
+            "to": "size",
+            "rel": "contrasts"
+          },
+          {
+            "from": "size",
+            "to": "links",
+            "rel": "answers"
+          },
+          {
+            "from": "measured",
+            "to": "gravity",
+            "rel": "produces"
+          },
+          {
+            "from": "models",
+            "to": "claims",
+            "rel": "produces"
+          },
+          {
+            "from": "brief",
+            "to": "primitives",
+            "rel": "depends-on"
+          },
+          {
+            "from": "sec10",
+            "to": "measured",
+            "rel": "example-of"
+          }
+        ],
+        "links": {
+          "articles": [
+            "introducing-fractal-semantic-graphs",
+            "one-article-five-readers",
+            "the-agent-is-the-reader",
+            "the-site-is-an-inbox"
+          ],
+          "pages": [],
+          "sites": [
+            "https://newsroom.sgit.ai/wire/charter.html",
+            "https://newsroom.sgit.ai/engineering/releases/v0.12.42.html"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "Facts first, analysis on top",
+            "why": "The charter the claims build on."
+          },
+          {
+            "text": "2.8 times the size of the articles it catalogues",
+            "why": "Why word-level linking of long texts was too much."
+          },
+          {
+            "text": "If everything is mapped to IDs, we can always find it.",
+            "why": "Why IDs come first."
+          }
+        ]
+      }
+    },
+    {
       "slug": "system-prompts-as-behaviour-policies",
       "title": "System prompts as behaviour policies: Claude's published prompt and a leaked ChatGPT one, mapped into rows, a taxonomy of rules, and a JSON file a harness could enforce",
       "date": "2026-10-14",
@@ -8563,6 +8806,7 @@
         "i-miss-it"
       ],
       "links_in": [
+        "the-wire-as-a-graph",
         "every-link-points-back",
         "sixteen-notes-i-did-not-want-to-lose",
         "the-vault-crosses-chrome-profiles",
@@ -11147,6 +11391,7 @@
         "future-of-news-story-vault-not-paywall"
       ],
       "links_in": [
+        "the-wire-as-a-graph",
         "agentic-cost-is-an-engineering-problem",
         "ways-to-read-one-article",
         "firing-journalists",
@@ -14051,6 +14296,7 @@
         "every-risk-is-already-accepted"
       ],
       "links_in": [
+        "the-wire-as-a-graph",
         "judo-for-small-countries",
         "ways-to-read-one-article",
         "firing-journalists",
@@ -28082,6 +28328,7 @@
       ],
       "links_out": [],
       "links_in": [
+        "the-wire-as-a-graph",
         "knowledge-that-maintains-itself",
         "the-minimum-code-below",
         "a-policy-for-every-skill",
