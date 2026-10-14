@@ -55,6 +55,242 @@
   ],
   "articles": [
     {
+      "slug": "agent-hooks-october-2026",
+      "title": "Agent hooks in October 2026: a technical debrief on what each platform lets you see, stop and change, where hooks run, and where they fail",
+      "date": "2026-10-14",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/agent-hooks-october-2026.html",
+      "markdown": "https://newsroom.sgit.ai/articles/agent-hooks-october-2026.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/agent-hooks-october-2026.webp",
+      "teaser": "A debrief on agent hooks across ten platforms: what each can see, stop and change, where they run, and the failure modes every vendor admits.",
+      "topics": [
+        "agents-and-policy",
+        "site-and-engineering"
+      ],
+      "tags": [
+        "hooks",
+        "agents",
+        "claude-code",
+        "codex",
+        "gemini-cli",
+        "copilot",
+        "cursor",
+        "guardrails",
+        "security",
+        "enforcement",
+        "owasp",
+        "article"
+      ],
+      "links_out": [
+        "re-anchoring-agent-behaviour-policies"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "hq-map.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/hq-map.webp",
+          "caption": "Agent hooks in October 2026, from each vendor's documentation: whether a hook can block a tool call, rewrite its input, act at the model call, be forced by the organisation, fail closed, and whether hooks shipped in a repository need trust. The design has converged; the security properties have not.",
+          "kind": "comparison"
+        },
+        {
+          "file": "hq-where.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/hq-where.webp",
+          "caption": "Where a hook sits: beside the agent, on the same machine, with the user's permissions. Hooks fire when a prompt is submitted, before and after a tool call, at the stop, and on one platform around the model call itself. They are good at deterministic checks at the moment of action, and cannot undo what ran or see what was not routed through them.",
+          "kind": "architecture"
+        }
+      ],
+      "graph": {
+        "slug": "agent-hooks-october-2026",
+        "teaser": "A debrief on agent hooks across ten platforms: what each can see, stop and change, where they run, and the failure modes every vendor admits.",
+        "topics": [
+          "agents-and-policy",
+          "site-and-engineering"
+        ],
+        "core_idea": "By October 2026 the major coding agents have converged on hooks that can block a tool call and often ask or rewrite it, but they differ on the security properties that matter, organisation-only hooks, failing closed, trust for repository hooks and visibility of the model, and every vendor and hook author agrees hooks are guardrails not a boundary because they fail open, see only routed actions, run with the user's permissions and are themselves an attack surface, while OWASP's Agent Control Standard is the forming shared standard.",
+        "nodes": [
+          {
+            "id": "hook",
+            "label": "What a hook is",
+            "kind": "concept",
+            "summary": "A program the harness runs at a fixed point, with the event in and a decision out."
+          },
+          {
+            "id": "converged",
+            "label": "The design converged",
+            "kind": "claim",
+            "summary": "Ten tools document a pre-tool hook that can block, most can ask or rewrite."
+          },
+          {
+            "id": "claude",
+            "label": "Claude Code and the SDK",
+            "kind": "example",
+            "summary": "33 events, allow/deny/ask/rewrite, managed-only hooks, block-on-failure."
+          },
+          {
+            "id": "openai",
+            "label": "OpenAI Codex and SDK",
+            "kind": "example",
+            "summary": "Hooks on by default, managed-only; 'a useful guardrail, not a complete enforcement boundary'."
+          },
+          {
+            "id": "gemini",
+            "label": "Gemini CLI",
+            "kind": "example",
+            "summary": "The only one with hooks around the model call: block or redact its output."
+          },
+          {
+            "id": "copilot",
+            "label": "GitHub Copilot",
+            "kind": "example",
+            "summary": "Pre-tool decision and machine-wide policy hooks; timeouts always fail open."
+          },
+          {
+            "id": "cursor",
+            "label": "Cursor and the rest",
+            "kind": "example",
+            "summary": "Four levels, a failClosed option, a partner programme; Devin, Grok, Factory, Kiro, Lovable differ."
+          },
+          {
+            "id": "failopen",
+            "label": "Fail open by default",
+            "kind": "claim",
+            "summary": "A crashing or slow hook usually lets the action through."
+          },
+          {
+            "id": "routed",
+            "label": "Only what is routed",
+            "kind": "claim",
+            "summary": "A hook on one tool misses the same effect reached another way."
+          },
+          {
+            "id": "privileged",
+            "label": "User permissions, same box",
+            "kind": "claim",
+            "summary": "Hooks run beside an agent with the same rights; the agent can rewrite them unless managed."
+          },
+          {
+            "id": "surface",
+            "label": "Hooks are an attack surface",
+            "kind": "example",
+            "summary": "Repository hooks ran code on open; a paper compromised all seven harnesses tested."
+          },
+          {
+            "id": "guardrail",
+            "label": "Guardrails, not walls",
+            "kind": "claim",
+            "summary": "Vendors and hook authors say hooks are not a security boundary."
+          },
+          {
+            "id": "defend",
+            "label": "Configuring hooks as a defender",
+            "kind": "method",
+            "summary": "Managed-only, fail closed, hook every path, watch the config, review repo settings, pair with a boundary."
+          },
+          {
+            "id": "standard",
+            "label": "A standard is forming",
+            "kind": "artefact",
+            "summary": "OWASP's Agent Control Standard; other cross-vendor specs are drafts."
+          }
+        ],
+        "edges": [
+          {
+            "from": "hook",
+            "to": "converged",
+            "rel": "leads-to"
+          },
+          {
+            "from": "claude",
+            "to": "converged",
+            "rel": "example-of"
+          },
+          {
+            "from": "openai",
+            "to": "converged",
+            "rel": "example-of"
+          },
+          {
+            "from": "gemini",
+            "to": "converged",
+            "rel": "example-of"
+          },
+          {
+            "from": "copilot",
+            "to": "converged",
+            "rel": "example-of"
+          },
+          {
+            "from": "cursor",
+            "to": "converged",
+            "rel": "example-of"
+          },
+          {
+            "from": "converged",
+            "to": "failopen",
+            "rel": "leads-to"
+          },
+          {
+            "from": "failopen",
+            "to": "guardrail",
+            "rel": "leads-to"
+          },
+          {
+            "from": "routed",
+            "to": "guardrail",
+            "rel": "leads-to"
+          },
+          {
+            "from": "privileged",
+            "to": "guardrail",
+            "rel": "leads-to"
+          },
+          {
+            "from": "surface",
+            "to": "guardrail",
+            "rel": "leads-to"
+          },
+          {
+            "from": "guardrail",
+            "to": "defend",
+            "rel": "leads-to"
+          },
+          {
+            "from": "defend",
+            "to": "standard",
+            "rel": "leads-to"
+          }
+        ],
+        "links": {
+          "articles": [
+            "re-anchoring-agent-behaviour-policies"
+          ],
+          "pages": [],
+          "sites": [
+            "https://code.claude.com/docs/en/hooks",
+            "https://learn.chatgpt.com/docs/hooks",
+            "https://geminicli.com/docs/hooks/",
+            "https://docs.github.com/en/copilot/reference/hooks-configuration",
+            "https://cursor.com/docs/agent/hooks",
+            "https://research.checkpoint.com/2026/rce-and-api-token-exfiltration-through-claude-code-project-files-cve-2025-59536/",
+            "https://arxiv.org/abs/2609.03884",
+            "https://github.com/trailofbits/claude-code-config",
+            "https://github.com/kenryu42/cc-safety-net",
+            "https://github.com/GenAI-Security-Project/agent-control-standard"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "guardrails, not walls",
+            "why": "The consensus on what hooks are."
+          },
+          {
+            "text": "Hooks see what the harness routes through them.",
+            "why": "The structural limit of a hook."
+          }
+        ]
+      }
+    },
+    {
       "slug": "knowledge-that-maintains-itself",
       "title": "Knowledge that maintains itself: semantic graphs for an organisation's policies and internal knowledge, briefing people and agents from the graph, and vaults to carry the brief",
       "date": "2026-10-14",
@@ -13498,6 +13734,7 @@
         "a-second-reader-the-agent-cannot-skip"
       ],
       "links_in": [
+        "agent-hooks-october-2026",
         "knowledge-that-maintains-itself",
         "policy-as-code-needs-a-policy-first",
         "four-frameworks-one-agent",

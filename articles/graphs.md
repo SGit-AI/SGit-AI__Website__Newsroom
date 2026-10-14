@@ -14,13 +14,45 @@ Every article here has a semantic graph beside it: the ideas it rests on, the cl
 
 The graphs are data first and pictures second. Take them as JSON: [all articles in one file](graphs.json), with the topics, the teasers and the links between articles resolved, or one file per article at `articles/graphs/<slug>.json` (for example [this one](graphs/footprint-and-blast-radius.json)). The pages on this site are rendered from the same files at build time; nothing here is hand-written HTML. Since v0.7.77 each graph also carries the article's `figures`: file, URL, caption, the kind the author gave it (`wardley-map`, for one) and every frame of a multi-frame figure, so a picture and its context travel together and "every Wardley map on this site" is a filter, not a reading list.
 
-113 of 113 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
+114 of 114 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
 
 ## How the articles connect
 
 *[diagram]*
 
-113 articles, 644 links between them (1021 mentions in all). 104 articles cite an earlier one; 14 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Footprint and blast radius](#footprint-and-blast-radius) (28 articles link to it). Most linking: [The Mandate Stack](#the-mandate-stack) (20 links out). 0 articles not yet linked either way.
+114 articles, 645 links between them (1022 mentions in all). 105 articles cite an earlier one; 14 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Footprint and blast radius](#footprint-and-blast-radius) (28 articles link to it). Most linking: [The Mandate Stack](#the-mandate-stack) (20 links out). 0 articles not yet linked either way.
+
+## [Agent hooks in October 2026: a technical debrief on what each platform lets you see, stop and change, where hooks run, and where they fail](agent-hooks-october-2026.md)
+
+2026-10-14 · Agents & policySite & engineering
+
+By October 2026 the major coding agents have converged on hooks that can block a tool call and often ask or rewrite it, but they differ on the security properties that matter, organisation-only hooks, failing closed, trust for repository hooks and visibility of the model, and every vendor and hook author agrees hooks are guardrails not a boundary because they fail open, see only routed actions, run with the user's permissions and are themselves an attack surface, while OWASP's Agent Control Standard is the forming shared standard.
+
+*[diagram]*
+**concept**claim**method**artefact**example
+
+**14 nodes, 13 edges**
+
+- **What a hook is** (concept) A program the harness runs at a fixed point, with the event in and a decision out.
+- **The design converged** (claim) Ten tools document a pre-tool hook that can block, most can ask or rewrite.
+- **Claude Code and the SDK** (example) 33 events, allow/deny/ask/rewrite, managed-only hooks, block-on-failure.
+- **OpenAI Codex and SDK** (example) Hooks on by default, managed-only; 'a useful guardrail, not a complete enforcement boundary'.
+- **Gemini CLI** (example) The only one with hooks around the model call: block or redact its output.
+- **GitHub Copilot** (example) Pre-tool decision and machine-wide policy hooks; timeouts always fail open.
+- **Cursor and the rest** (example) Four levels, a failClosed option, a partner programme; Devin, Grok, Factory, Kiro, Lovable differ.
+- **Fail open by default** (claim) A crashing or slow hook usually lets the action through.
+- **Only what is routed** (claim) A hook on one tool misses the same effect reached another way.
+- **User permissions, same box** (claim) Hooks run beside an agent with the same rights; the agent can rewrite them unless managed.
+- **Hooks are an attack surface** (example) Repository hooks ran code on open; a paper compromised all seven harnesses tested.
+- **Guardrails, not walls** (claim) Vendors and hook authors say hooks are not a security boundary.
+- **Configuring hooks as a defender** (method) Managed-only, fail closed, hook every path, watch the config, review repo settings, pair with a boundary.
+- **A standard is forming** (artefact) OWASP's Agent Control Standard; other cross-vendor specs are drafts.
+
+> guardrails, not walls The consensus on what hooks are.
+
+> Hooks see what the harness routes through them. The structural limit of a hook.
+
+builds on [Re-anchoring: keeping an agent's rules alive through every summary, and a canary that shows when they are not](#re-anchoring-agent-behaviour-policies).
 
 ## [Knowledge that maintains itself: semantic graphs for an organisation's policies and internal knowledge, briefing people and agents from the graph, and vaults to carry the brief](knowledge-that-maintains-itself.md)
 
@@ -1736,7 +1768,7 @@ Instructions given only in conversation can be lost when a long session is summa
 
 > A policy row with a number next to it is a different thing from a policy row on its own. Why the canary measures a rule.
 
-builds on [A second reader the agent cannot skip: how two wrong emails became a gate on every draft](#a-second-reader-the-agent-cannot-skip); continued by [Knowledge that maintains itself: semantic graphs for an organisation's policies and internal knowledge, briefing people and agents from the graph, and vaults to carry the brief](#knowledge-that-maintains-itself), [Policy as code needs a policy first: what an agent behaviour policy adds, and how to reverse engineer one from the code, the spreadsheet or the paper you already have](#policy-as-code-needs-a-policy-first), [Four frameworks, one agent: iason's comparison of the OECD classification, the NIST AI RMF, Japan's guidelines and the EU AI Act, read against what runs here, with the evidence and the graphs](#four-frameworks-one-agent), [How the voice works: why these articles sound like me, with a section in which Claude explains it from its side](#how-the-voice-works), [Brief the agent too: the people I talk to work with agents, so what I send has to reach both](#brief-the-agent-too), [The agent is the reader: why agents will pay for graphs, personas and signed claims, because it is cheaper than not paying](#the-agent-is-the-reader), [Authority outside the model: an answer to Satya Nadella on models as insider risks, principle by principle, with what we run, what we ship and what we plan](#authority-outside-the-model), [The infographic bake-off: which image model for which job, judged blind on 10 October 2026](#the-infographic-bake-off), [One article, five readers: a librarian, a cartographer, a historian, an explainer and a storyteller read the same piece](#one-article-five-readers).
+builds on [A second reader the agent cannot skip: how two wrong emails became a gate on every draft](#a-second-reader-the-agent-cannot-skip); continued by [Agent hooks in October 2026: a technical debrief on what each platform lets you see, stop and change, where hooks run, and where they fail](#agent-hooks-october-2026), [Knowledge that maintains itself: semantic graphs for an organisation's policies and internal knowledge, briefing people and agents from the graph, and vaults to carry the brief](#knowledge-that-maintains-itself), [Policy as code needs a policy first: what an agent behaviour policy adds, and how to reverse engineer one from the code, the spreadsheet or the paper you already have](#policy-as-code-needs-a-policy-first), [Four frameworks, one agent: iason's comparison of the OECD classification, the NIST AI RMF, Japan's guidelines and the EU AI Act, read against what runs here, with the evidence and the graphs](#four-frameworks-one-agent), [How the voice works: why these articles sound like me, with a section in which Claude explains it from its side](#how-the-voice-works), [Brief the agent too: the people I talk to work with agents, so what I send has to reach both](#brief-the-agent-too), [The agent is the reader: why agents will pay for graphs, personas and signed claims, because it is cheaper than not paying](#the-agent-is-the-reader), [Authority outside the model: an answer to Satya Nadella on models as insider risks, principle by principle, with what we run, what we ship and what we plan](#authority-outside-the-model), [The infographic bake-off: which image model for which job, judged blind on 10 October 2026](#the-infographic-bake-off), [One article, five readers: a librarian, a cartographer, a historian, an explainer and a storyteller read the same piece](#one-article-five-readers).
 
 ## [A second reader the agent cannot skip: how two wrong emails became a gate on every draft](a-second-reader-the-agent-cannot-skip.md)
 

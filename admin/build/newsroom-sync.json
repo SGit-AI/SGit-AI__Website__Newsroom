@@ -11,6 +11,7 @@
   "authored_here": {
    "admin/content/articles/a-policy-beside-the-prompt.md": "5a5061697e3d6e40e5c0b49615ef2bddb5ac1b739f9be8a154bbf97664066561",
    "admin/content/articles/a-policy-for-every-skill.md": "4e5afe1fc69ee307f1ad71cc9f4cb8ce077f6de099b2feab7da3bc98463ab5bb",
+   "admin/content/articles/agent-hooks-october-2026.md": "66fad4a477f210ee88122f364ac09b6c42b58d01356e0d102c639aa06cd5744c",
    "admin/content/articles/attacks-rewritten-as-mandates.md": "dc9974273e369694c3512d3e64194145acb57711da3e61f7a9f03fa975bbe275",
    "admin/content/articles/dark-mode-and-four-more.md": "de908afae2727c72919f9ce835953c1944adcbde2355fc45b89999bcbf038f39",
    "admin/content/articles/data/four-frameworks-one-agent__map.json": "976a1ef962c8548fffcc41abdd77063fcd673fc94824625a2206d5d061ed2783",
@@ -18,6 +19,7 @@
    "admin/content/articles/four-frameworks-one-agent.md": "5e703d8db3bb725d44dae664a6594cbba0efda8e42316472aa57b036b42a23a2",
    "admin/content/articles/graphs/a-policy-beside-the-prompt.json": "58d4c0285441be3c918a21882d6f5886532b991626b148c7452ce7693e4a23dd",
    "admin/content/articles/graphs/a-policy-for-every-skill.json": "0f6715b974daa0be1d516abcf915ce9e98089e2845f02e447482e9b5819374ad",
+   "admin/content/articles/graphs/agent-hooks-october-2026.json": "0b95c66dce79c4c5334e2e76329cb571588aea29ed4959e189efe0bb450a6af8",
    "admin/content/articles/graphs/attacks-rewritten-as-mandates.json": "e70e4b2b4e0c0b6c756f08d816155894271ba16d6973c05ba3f72225210f23f4",
    "admin/content/articles/graphs/dark-mode-and-four-more.json": "038d53dcb0a285fd7a55c7028dd03176a58d2a22b7276651c0c5d0a6e57b6505",
    "admin/content/articles/graphs/every-link-points-back.json": "29be81c493990ea60efc80722c3dfcafd619359667f93e6d46cf76508f819f9f",
@@ -44,6 +46,8 @@
    "admin/content/articles/images/ff-unit.webp": "ead7736f71c902500980d3bf112a14398696e8d140575e280668187a0c31af16",
    "admin/content/articles/images/hl-production.webp": "907819eb418b322c454c0902a5019bbf7d0be7c8217f0aff63a7168cfa65edf4",
    "admin/content/articles/images/hl-where.webp": "768c8ec865083c580de493ea5cf8ae315fb3aeba7368da1fc8b46071208c2b20",
+   "admin/content/articles/images/hq-map.webp": "52cf04cc2b020bfdb1415e8c7bd564f2062a73fcf5823be1c18aec4b364e668d",
+   "admin/content/articles/images/hq-where.webp": "99c15357707676d3305d8808fcc323375b3f2e34571519d7c5c64df8b0159add",
    "admin/content/articles/images/kq-briefing.webp": "a36f757bac13f15536c182d6c178ccbc78be68b14eb7197a00e13bf9cb7271b6",
    "admin/content/articles/images/kq-loop.webp": "f0c0e788d9499bb54251ecdd302f44efdebb5a35610ba862dd1ae5d5320bcd1a",
    "admin/content/articles/images/lb-chain.webp": "271d59bc705d9f8d210f10626eaa2fddbf6fa56aa6295c71bbde306bf693f9e8",
@@ -175,10 +179,10 @@
   }
  ],
  "counts": {
-  "files": 1953,
-  "pages": 443,
-  "articles": 113,
-  "verbatim": 953,
+  "files": 1963,
+  "pages": 445,
+  "articles": 114,
+  "verbatim": 958,
   "dependencies": 52,
   "text_overrides": 10,
   "unresolved_on_sgit_ai": 0
@@ -349,6 +353,16 @@
    "sha256_source": "70b43df7e2942376360094bfb9d0573124528a7743b707949ff6a5923ffdef16",
    "sha256": "26b22b5945e3323d0962c05afb136d2c3b1ac98c2dc11b98cfe5a64f5e1464dc"
   },
+  "articles/agent-hooks-october-2026.html": {
+   "from": "articles/agent-hooks-october-2026.html",
+   "sha256_source": "0232c23e96b6061a495c0542b6e32322932bd342e4c826a192731959bc166b1c",
+   "sha256": "649aa1ac8e9c5f947c8f514b9294bd3b2711341d6227f17ba4ae17ecaec1d253"
+  },
+  "articles/agent-hooks-october-2026.md": {
+   "from": "articles/agent-hooks-october-2026.md",
+   "sha256_source": "318a7ebeb26bb1e25cf15a23896203dfb7f04e9c6b864083c71c445f12092699",
+   "sha256": "a9b2fa51c6bea94ded683d1f652d31f7bcf8628102f8bb646761770a5afcf409"
+  },
   "articles/agentic-cost-is-an-engineering-problem.html": {
    "from": "articles/agentic-cost-is-an-engineering-problem.html",
    "sha256_source": "6be538f73fd69b2c35e41af785da410b52a46c7c0f7caae27dd7689eb8fd2c7b",
@@ -401,8 +415,8 @@
   },
   "articles/banners/.hashes.json": {
    "from": "articles/banners/.hashes.json",
-   "sha256_source": "795c465325e5dd121e4fae1a748285452c080bf25bca00a1fd0d1aac1fc2537d",
-   "sha256": "795c465325e5dd121e4fae1a748285452c080bf25bca00a1fd0d1aac1fc2537d"
+   "sha256_source": "94d79d745e1710a6ab86673e7032939d3e53a26375171de6e1f537d615a071ae",
+   "sha256": "94d79d745e1710a6ab86673e7032939d3e53a26375171de6e1f537d615a071ae"
   },
   "articles/banners/001-agents-doing-real-work.jpg": {
    "from": "articles/banners/001-agents-doing-real-work.jpg",
@@ -483,6 +497,11 @@
    "from": "articles/banners/agency-is-not-a-yes.jpg",
    "sha256_source": "b11b57bd136509b5747baa42458f97f8e6c73fe23189ce8f18b84e8c29bad882",
    "sha256": "b11b57bd136509b5747baa42458f97f8e6c73fe23189ce8f18b84e8c29bad882"
+  },
+  "articles/banners/agent-hooks-october-2026.jpg": {
+   "from": "articles/banners/agent-hooks-october-2026.jpg",
+   "sha256_source": "bd4433835c6e03292c9219c0638af78c48535391015afd81ba3d3771102d2739",
+   "sha256": "bd4433835c6e03292c9219c0638af78c48535391015afd81ba3d3771102d2739"
   },
   "articles/banners/agentic-cost-is-an-engineering-problem.jpg": {
    "from": "articles/banners/agentic-cost-is-an-engineering-problem.jpg",
@@ -721,8 +740,8 @@
   },
   "articles/banners/manifest.json": {
    "from": "articles/banners/manifest.json",
-   "sha256_source": "c63c26e6d095d4d4745c7b5845c6a93b46e3ce53a088cb3cd903b8995a4519c6",
-   "sha256": "c63c26e6d095d4d4745c7b5845c6a93b46e3ce53a088cb3cd903b8995a4519c6"
+   "sha256_source": "275d1d84e48901cd5555caee0e6fc420ff2709ad16baf1a30b498a2a7cf3ee39",
+   "sha256": "275d1d84e48901cd5555caee0e6fc420ff2709ad16baf1a30b498a2a7cf3ee39"
   },
   "articles/banners/memory-is-not-a-spectator-sport.jpg": {
    "from": "articles/banners/memory-is-not-a-spectator-sport.jpg",
@@ -861,8 +880,8 @@
   },
   "articles/banners/subscribe.jpg": {
    "from": "articles/banners/subscribe.jpg",
-   "sha256_source": "2875cb8027c7afce2a5d958bc9b3b51a746868fc75e9a36a156fcf11817560f4",
-   "sha256": "2875cb8027c7afce2a5d958bc9b3b51a746868fc75e9a36a156fcf11817560f4"
+   "sha256_source": "20ee5d0dc03537ba25a3725681fba0ec66bcde14e8b33cd424f5868a6b250828",
+   "sha256": "20ee5d0dc03537ba25a3725681fba0ec66bcde14e8b33cd424f5868a6b250828"
   },
   "articles/banners/supply-chain-of-vaults.jpg": {
    "from": "articles/banners/supply-chain-of-vaults.jpg",
@@ -1118,6 +1137,11 @@
    "from": "articles/cards/agency-is-not-a-yes.webp",
    "sha256_source": "e31b742b50f72fdd27598b1ee4de6a419281d158c56d5a30c0c6247fcdb17f05",
    "sha256": "e31b742b50f72fdd27598b1ee4de6a419281d158c56d5a30c0c6247fcdb17f05"
+  },
+  "articles/cards/agent-hooks-october-2026.webp": {
+   "from": "articles/cards/agent-hooks-october-2026.webp",
+   "sha256_source": "3fd798c361edbd9191f9c83d9d8ee7ce4e6fb1f8ec22b1bb891c3c4361b797a0",
+   "sha256": "3fd798c361edbd9191f9c83d9d8ee7ce4e6fb1f8ec22b1bb891c3c4361b797a0"
   },
   "articles/cards/agentic-cost-is-an-engineering-problem.webp": {
    "from": "articles/cards/agentic-cost-is-an-engineering-problem.webp",
@@ -1681,13 +1705,13 @@
   },
   "articles/collections/index.html": {
    "from": "articles/collections/index.html",
-   "sha256_source": "430f88a449f21d8e4ea497e7e03b96266589292f3aed84527ed5aab3e557d3e2",
-   "sha256": "2386c9658557c84b6b56f942d09482c3b6c3ab0ff8df34f3e98ace2630c57559"
+   "sha256_source": "3a0910c96fb3d298e911ee4f75055b8ca126902786ae8e46f94160654f395605",
+   "sha256": "b117edf5fcbd2250c89b2769baf48c3f7b4c587a5fdb6be1392bc998996123d7"
   },
   "articles/collections/index.md": {
    "from": "articles/collections/index.md",
-   "sha256_source": "d4dd3150609129c8a83e862b6039be867aa0844873fa92752d9f52e90bf1e1dc",
-   "sha256": "8820c2af1bea675d35a2b5d7a9c8a4c8456d3e22df28f2524926f0fa211ce7d2"
+   "sha256_source": "ade99cc7e6abf33517cee1c5bccd87d7724199c5074c15fc809e685169dbdc95",
+   "sha256": "a9c0475f164cdc10cd56166c3555a869a97c5d7714d0acda27161fad41ac69f0"
   },
   "articles/collections/local-news-kept-as-evidence.html": {
    "from": "articles/collections/local-news-kept-as-evidence.html",
@@ -1821,13 +1845,13 @@
   },
   "articles/desk/index.html": {
    "from": "articles/desk/index.html",
-   "sha256_source": "94bbc442f8a9408d791be76f18634e9e961da77084091166732b71dc5a9c709c",
-   "sha256": "6e87c647f841da37d334cf9d3916e49bd33bd0bb266ba7a4d2b5d8430e6d5595"
+   "sha256_source": "7443277e1ebd767976dee9adda664876dc8eca7c956ed8c68c9a3748553cf475",
+   "sha256": "9247df1554ffad6f479ef8927bdf44e318d0e831e2ea6441df28d13dbeb21bc9"
   },
   "articles/desk/index.md": {
    "from": "articles/desk/index.md",
-   "sha256_source": "7744dffbb2622724bf650524739227cff8023cba1096aa6bf6f9dd690cb85094",
-   "sha256": "ae4a32f76c8614cf869aece3c0aee0f5de2055a8118f09777b6e6a3512a8a58c"
+   "sha256_source": "6cea63ae209745b786820ddee5d941f192cae9087fecfb35e11e5f72e1acfdde",
+   "sha256": "828ac5d9d692dd85f6a4906a15cc265e1907981a2389f335aae3da210c489ca5"
   },
   "articles/desk/range-is-the-feature-so-the-stop-is-designed.html": {
    "from": "articles/desk/range-is-the-feature-so-the-stop-is-designed.html",
@@ -1911,8 +1935,8 @@
   },
   "articles/feed.xml": {
    "from": "articles/feed.xml",
-   "sha256_source": "d31b238a13424d5ff92797c1d9a16756532393e1a418bc5e57d9c78a7b67ed53",
-   "sha256": "2c72008a5a7837703448d394a1ef68823599e28fe6ee4bc1e9cf1db5f5d4dbf7"
+   "sha256_source": "b2ecfde378ec143d5fc1f7d2e0d66181d7ac27020a5bc02a3de9ea805e037466",
+   "sha256": "61a34ce8c91f144aaa06af8f466def9a96af06d450559944a45f034f7aa8bda3"
   },
   "articles/firing-journalists.html": {
    "from": "articles/firing-journalists.html",
@@ -1976,18 +2000,18 @@
   },
   "articles/graphs.html": {
    "from": "articles/graphs.html",
-   "sha256_source": "a540e955f2422ddd420dadbb3b210fe760f6f04a0cbcb8dac737d4229ee0f142",
-   "sha256": "fc9b3eaab3dc533d03159883f49f3d5efe3cb380d4222911a82ebb0b7f9fb9e8"
+   "sha256_source": "958e59da3d4e2488a61f5dc2c43dbe82460a60ddf5db56ee3a7035f236ce29fd",
+   "sha256": "ace042e366de93a048e0689a6c9f8716a047ab4f88e9db43a59a3e89414a611d"
   },
   "articles/graphs.json": {
    "from": "articles/graphs.json",
-   "sha256_source": "0d8907918548e02f9ac3fd01ed16f57894564804ab85b3debe6610981c4138a5",
-   "sha256": "e0f8bf26634472ea0c20ade50cac70bf2ab701ab3a62e4328a7f03f3e3189f05"
+   "sha256_source": "dd266343c649a7a8be90c0b329ca13055aa0f42e41aa8d4923a6e522cbe32ea3",
+   "sha256": "969807fa9788013202057b9edb40ce16ae1eb6f520ad15037a3691a4f7608c77"
   },
   "articles/graphs.md": {
    "from": "articles/graphs.md",
-   "sha256_source": "bdd0ee45f9da760a929c1ba3a1c0e7ecc33082ff3816aaf4281c201d77ceadff",
-   "sha256": "0f4f859a75b6ab77e012cad004bc9dad0d65e2cdae1bf0826c4331f774849b15"
+   "sha256_source": "bfebc179bc9101a8f47633404862b53a6410d778211e597f168158f4527453db",
+   "sha256": "9a7055e7001407a1fb726764bd1ce9604549d5866f3cc8355db24ada9cbb608e"
   },
   "articles/graphs/a-link-to-a-persona.json": {
    "from": "articles/graphs/a-link-to-a-persona.json",
@@ -2038,6 +2062,11 @@
    "from": "articles/graphs/agency-is-not-a-yes.json",
    "sha256_source": "d96f32d91114e5901ff494f59f1db4a233c423a0683f8854194b7c36e239bf36",
    "sha256": "9dec8b18145a358e7dc86df7e00b24d4177c8742ed0641af861727ec43ffdeb8"
+  },
+  "articles/graphs/agent-hooks-october-2026.json": {
+   "from": "articles/graphs/agent-hooks-october-2026.json",
+   "sha256_source": "346f210d6014537992b26f98d2d2d8033c3de2d0116e1d0f3d239a4eea2d0600",
+   "sha256": "4f91b037213825aba88665b9048308996ae02d2b45f68fc846c1c749da5b950a"
   },
   "articles/graphs/agentic-cost-is-an-engineering-problem.json": {
    "from": "articles/graphs/agentic-cost-is-an-engineering-problem.json",
@@ -3428,6 +3457,16 @@
    "from": "articles/images/ho-three.webp",
    "sha256_source": "6cb0ab197718214ce91e8aab077b9d2d2837a4db49d9285d9e85c867818b2abd",
    "sha256": "6cb0ab197718214ce91e8aab077b9d2d2837a4db49d9285d9e85c867818b2abd"
+  },
+  "articles/images/hq-map.webp": {
+   "from": "articles/images/hq-map.webp",
+   "sha256_source": "52cf04cc2b020bfdb1415e8c7bd564f2062a73fcf5823be1c18aec4b364e668d",
+   "sha256": "52cf04cc2b020bfdb1415e8c7bd564f2062a73fcf5823be1c18aec4b364e668d"
+  },
+  "articles/images/hq-where.webp": {
+   "from": "articles/images/hq-where.webp",
+   "sha256_source": "99c15357707676d3305d8808fcc323375b3f2e34571519d7c5c64df8b0159add",
+   "sha256": "99c15357707676d3305d8808fcc323375b3f2e34571519d7c5c64df8b0159add"
   },
   "articles/images/hv-loop.webp": {
    "from": "articles/images/hv-loop.webp",
@@ -4851,13 +4890,13 @@
   },
   "articles/index.html": {
    "from": "articles/index.html",
-   "sha256_source": "bf2b77a6038be9d5487411b54752e3c5dc343c6f3f3a2669748c0b3284c3114a",
-   "sha256": "2e121eb19dd9597839a788a63b473c2d900b65402e732ba0ea6a2d08f7f32c26"
+   "sha256_source": "1cede793f155dcea85958c59003714a5162e2772daf729f5bc84bce277f39b56",
+   "sha256": "a3f4316ed6862c3ebcf8556936b7889d35d78da033fc2a3d7dc7de3622be92d5"
   },
   "articles/index.md": {
    "from": "articles/index.md",
-   "sha256_source": "b329504a3ff12b5254d12d949572691cb06733791ef0ea0dfc346f8c54232bc9",
-   "sha256": "35d6d72e0580400edc73a862b9f8721ba0565065ea251f8a833516b01287f947"
+   "sha256_source": "b9bfafd7da94fb67f2a36f2741ab67c75fa44b8b6abad3da044ea4fbc0628984",
+   "sha256": "761bf4d130c183356b1d30afa40515ff617180b5cf633e7e3a4d102be4d3bf6a"
   },
   "articles/introducing-fractal-semantic-graphs.html": {
    "from": "articles/introducing-fractal-semantic-graphs.html",
@@ -4991,13 +5030,13 @@
   },
   "articles/newsletter/index.html": {
    "from": "articles/newsletter/index.html",
-   "sha256_source": "383c71975190485f483f675bf72cc4e110e31d393a959204cd9ce6cf5e3dd981",
-   "sha256": "d4af4b3225f6c145e96e089cdf41e99fcda358a296db5900fdcac617041837e8"
+   "sha256_source": "7dd8568f8b40dda7a7d3d5094bbb69b1bc87af8fdd8519c19916d2adb9fc6b29",
+   "sha256": "59cbf4376836076ed0ba6e77163dd9f415e2fbc3cd2233d45ad102346c508e36"
   },
   "articles/newsletter/index.md": {
    "from": "articles/newsletter/index.md",
-   "sha256_source": "670f69da0907463f37e9f1705a963321f320f8e3ba25861f9d43c4fb89c36a8d",
-   "sha256": "054823468914d4f5c5a40e248936ea79d61c682adf7c8b7ea4373cf3fa3181ae"
+   "sha256_source": "1bcb3820a1281231bfa3cf673ee62aa872b7cae4bb4092d5eae0fa98dda1621e",
+   "sha256": "5a7bd29c00924c70b15c667984167a0afe3d36b77312177eb1ba01a0cbcff70b"
   },
   "articles/nineteen-sites.html": {
    "from": "articles/nineteen-sites.html",
@@ -5121,13 +5160,13 @@
   },
   "articles/re-anchoring-agent-behaviour-policies.html": {
    "from": "articles/re-anchoring-agent-behaviour-policies.html",
-   "sha256_source": "b70ef0238120a8d6c99809ea03ba951b8017eeab85d17e00ed190114e9ab5734",
-   "sha256": "09ea378ff72c7a44905e1f4522fc5116264601a329a09a9a673981f6eff1edfc"
+   "sha256_source": "cbe868bfb04c76ae33a8e11babcd313a832708ece69ced0346da5b7c46596163",
+   "sha256": "abb893be4a0e7ffa8fa167f8345819ebe48aadce752f1bc942f2aea6b79428f5"
   },
   "articles/re-anchoring-agent-behaviour-policies.md": {
    "from": "articles/re-anchoring-agent-behaviour-policies.md",
-   "sha256_source": "f60562736907e65dada1a611497a46e91e7fcc6141a8aa158521b2c09a20dffe",
-   "sha256": "8fd5fbd1c9383c79139cf94d994cb009d6cdaefd96948460a5f813da6d141129"
+   "sha256_source": "641498ffe3902e279d2cdd9d0282476dc57a12b3cd52c35923d25b83d85b9c11",
+   "sha256": "b4d9faaad4837b12d4e489b700a633c36ad0edc440d0dfe7166011f0ed55284f"
   },
   "articles/replicating-the-agentic-inbox.html": {
    "from": "articles/replicating-the-agentic-inbox.html",
@@ -5718,6 +5757,16 @@
    "from": "articles/versions/agency-is-not-a-yes.md",
    "sha256_source": "10d7d6045dfecd355a8bdd552378246c908d5d8cd8045eae834274a512c2b717",
    "sha256": "0c7f7ee1f272c841d977c30713be3237d2edc38e6ac6efebfcf78b7e14dcc3ed"
+  },
+  "articles/versions/agent-hooks-october-2026.html": {
+   "from": "articles/versions/agent-hooks-october-2026.html",
+   "sha256_source": "381637e8e283dac35dca8bfdab469cf5095518cace5e4f60c324351a34ff5564",
+   "sha256": "35581e374b6a52a3f8e8b3fb7d6aaeb16547aaf52b00b9e8a26245d77f9d27d4"
+  },
+  "articles/versions/agent-hooks-october-2026.md": {
+   "from": "articles/versions/agent-hooks-october-2026.md",
+   "sha256_source": "a7d0fe6985c6024c974fdde273d0ee9a059f7575d7287b204fc798d1d63c0f1d",
+   "sha256": "73e33cf087a97ed91de23f4edce69ad161482e69c72acf489d8b96b7d614663d"
   },
   "articles/versions/agentic-cost-is-an-engineering-problem.html": {
    "from": "articles/versions/agentic-cost-is-an-engineering-problem.html",
@@ -6661,13 +6710,13 @@
   },
   "articles/versions/knowledge-that-maintains-itself.html": {
    "from": "articles/versions/knowledge-that-maintains-itself.html",
-   "sha256_source": "881eb6565ff869f11766e2dbf2c1f0d5e3cb166c779807e6dd936257a77aa24b",
-   "sha256": "89a2f78866ad3f45cec0f33cb19cf6ebf3c5bd7fc3bf9a01a7a81f60a3e2dfe7"
+   "sha256_source": "9f5097fe630cc202132fdb8ee50fdad418d5fb22b6c641073b6e89e088520d4e",
+   "sha256": "6323e1631f1cadb708cdc2aa29b076ceccfd0c38da12d9fcd0c3523fabf6146c"
   },
   "articles/versions/knowledge-that-maintains-itself.md": {
    "from": "articles/versions/knowledge-that-maintains-itself.md",
-   "sha256_source": "a88a94bd9535ac0265e9008ce4ed06a5028347290d34172337be96bf732d1865",
-   "sha256": "e1270a0b7e24692fb38ecd8706584a09c3c698b70c3c580568506412d5cd623d"
+   "sha256_source": "7b200c01f58d088aedd4c635561abcdf414a743bfb61ce105a120dabdf82ff0b",
+   "sha256": "5d1127a26dcf7878560e4b4b1b4e2213733da9735aa47361a4bb806e26c5e9f2"
   },
   "articles/versions/liquid-content-needs-water.html": {
    "from": "articles/versions/liquid-content-needs-water.html",
@@ -9353,13 +9402,13 @@
   },
   "index.html": {
    "from": "articles/index.html",
-   "sha256_source": "bf2b77a6038be9d5487411b54752e3c5dc343c6f3f3a2669748c0b3284c3114a",
-   "sha256": "c633dd3e3c2a547a3fc70e6114e31c238ae4e97afa0224a3c8fc116af3a6758d"
+   "sha256_source": "1cede793f155dcea85958c59003714a5162e2772daf729f5bc84bce277f39b56",
+   "sha256": "f813a9e678a9f60dc120bafcd06b887d1e7d0607f912aa2fae351158c9e07580"
   },
   "index.md": {
    "from": "articles/index.md",
-   "sha256_source": "b329504a3ff12b5254d12d949572691cb06733791ef0ea0dfc346f8c54232bc9",
-   "sha256": "e579a05a6af98593e974ffc36f6e6ab017c51328ab260108fa14dd40461b317f"
+   "sha256_source": "b9bfafd7da94fb67f2a36f2741ab67c75fa44b8b6abad3da044ea4fbc0628984",
+   "sha256": "6dc1785ac6e54381bca6227c2b3ab47054ab655a40ffb780d49a00cfebbd76fa"
   },
   "meter/index.html": {
    "from": "meter/index.html",
@@ -9393,13 +9442,13 @@
   },
   "newsroom/index.html": {
    "from": "newsroom/index.html",
-   "sha256_source": "8263b251246f83bbfb64b56ccf347968af517653afd4b386e0381b197ace65d4",
-   "sha256": "7fe68fd201cb3b67385aeec2b600898c7afab725a5cf4c8bd21e25c7a74b94e7"
+   "sha256_source": "7f97dbd32229e859c11f4727f9597c9df0720ab2f00453065636593bfbd4bfb4",
+   "sha256": "26fb8542b6dbc7902e06c9b8f6c97866c0edfef5706765315ad862c76db72751"
   },
   "newsroom/index.md": {
    "from": "newsroom/index.md",
-   "sha256_source": "6c52200212464f6207afc2a6c3ac7ddab03cc7377aeed71f4c861b37f9a6d6fb",
-   "sha256": "4e1483b8cd3deb94f10cc4b14f3998355cbfea2f88166d397a02d656ac61f695"
+   "sha256_source": "3cca9073183df5e54ff47b49dbe0821441e4113055787f5a79957e13a498789a",
+   "sha256": "1576ee16a81e0f68513eb43ad5ca22a1eb8ae7c9c266d66809892d5f0fa53be3"
   },
   "newsroom/log.html": {
    "from": "newsroom/log.html",
@@ -9493,8 +9542,8 @@
   },
   "newsroom/wire.json": {
    "from": "newsroom/wire.json",
-   "sha256_source": "c6504f984c5a3213b91064698111554a2fbdf0e9477dc1ded0688e095c11cbcb",
-   "sha256": "8960bf03d85cfc2b7b9c8b604a547264732a1f89baec7f683f45ab6073e2d86c"
+   "sha256_source": "da06ee75adfcb80f7e737df81d3ceefa6a688e559331d3dec7be2b4d42c15038",
+   "sha256": "9991583a173a7251ab67dd352c7ba40b25b8e832211d45bfebd44084e9f6e8ed"
   },
   "og/a-link-to-a-persona.jpg": {
    "from": "og/a-link-to-a-persona.jpg",
@@ -9545,6 +9594,11 @@
    "from": "og/agency-is-not-a-yes.jpg",
    "sha256_source": "524f2952c3d9b0d7e90c4a28994c074b929346c2e90034a25cfdf01992fa44b1",
    "sha256": "524f2952c3d9b0d7e90c4a28994c074b929346c2e90034a25cfdf01992fa44b1"
+  },
+  "og/agent-hooks-october-2026.jpg": {
+   "from": "og/agent-hooks-october-2026.jpg",
+   "sha256_source": "3c5dbcc3ab0de0b92ac95092505072110df5af1e2fb45f996362b508e74845f4",
+   "sha256": "3c5dbcc3ab0de0b92ac95092505072110df5af1e2fb45f996362b508e74845f4"
   },
   "og/agentic-cost-is-an-engineering-problem.jpg": {
    "from": "og/agentic-cost-is-an-engineering-problem.jpg",

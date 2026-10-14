@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Agent hooks in October 2026: a technical debrief on what each platform lets you see, stop and change, where hooks run, and where they fail, SGit Newsroom</title>
+<meta name="description" content="More and more of the technical people I talk to who are trying to control agents for real are reaching for the same tool: hooks, small programs the agent's harness runs at fixed points, before a tool call, after it, when a prompt is submitted, when the agent stops. This is the debrief I wanted to read: the lay of the land on 14 October 2026, from each vendor's own documentation. The short version is that the design has converged. Claude Code, OpenAI's Codex, Gemini CLI, GitHub Copilot, Cursor, Devin Desktop (formerly Windsurf), Grok Build, Factory, Augment and Kiro all offer a hook before a tool call that can block it, and most can ask the user or rewrite the call. They differ where it matters for security: whether an organisation can force its own hooks and switch everyone else's off, whether a failing hook blocks or lets the action through, whether hooks shipped in a repository need trust before they run, and whether anything can see the model's own output. ChatGPT offers admin controls rather than hooks, and Lovable gates publishing rather than agent actions. The vendors and the people who publish hook collections say the same thing about their limits: guardrails, not walls. Hooks see what the harness routes through them, run with the user's permissions, fail open by default on most tools, and have been an attack surface themselves. I ran a small test of my own in a throwaway repository, and the companion article asks what this means for agent behaviour policies.">
+<link rel="canonical" href="https://newsroom.sgit.ai/articles/agent-hooks-october-2026.html">
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SGit Newsroom">
+<meta property="og:url" content="https://newsroom.sgit.ai/articles/agent-hooks-october-2026.html">
+<meta property="og:title" content="Agent hooks in October 2026: a technical debrief on what each platform lets you see, stop and change, where hooks run, and where they fail, SGit Newsroom">
+<meta property="og:description" content="More and more of the technical people I talk to who are trying to control agents for real are reaching for the same tool: hooks, small programs the agent's harness runs at fixed points, before a tool call, after it, when a prompt is submitted, when the agent stops. This is the debrief I wanted to read: the lay of the land on 14 October 2026, from each vendor's own documentation. The short version is that the design has converged. Claude Code, OpenAI's Codex, Gemini CLI, GitHub Copilot, Cursor, Devin Desktop (formerly Windsurf), Grok Build, Factory, Augment and Kiro all offer a hook before a tool call that can block it, and most can ask the user or rewrite the call. They differ where it matters for security: whether an organisation can force its own hooks and switch everyone else's off, whether a failing hook blocks or lets the action through, whether hooks shipped in a repository need trust before they run, and whether anything can see the model's own output. ChatGPT offers admin controls rather than hooks, and Lovable gates publishing rather than agent actions. The vendors and the people who publish hook collections say the same thing about their limits: guardrails, not walls. Hooks see what the harness routes through them, run with the user's permissions, fail open by default on most tools, and have been an attack surface themselves. I ran a small test of my own in a throwaway repository, and the companion article asks what this means for agent behaviour policies.">
+<meta property="og:image" content="https://newsroom.sgit.ai/og/agent-hooks-october-2026.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Agent hooks in October 2026: a technical debrief on what each platform lets you see, stop and change, where hooks run, and where they fail, SGit Newsroom">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://newsroom.sgit.ai/og/agent-hooks-october-2026.jpg">
+<link rel="alternate" type="text/markdown" href="agent-hooks-october-2026.md" title="This page as markdown">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Agent hooks in October 2026: a technical debrief on what each platform lets you see, stop and change, where hooks run, and where they fail, SGit Newsroom", "headline": "Agent hooks in October 2026: a technical debrief on what each platform lets you see, stop and change, where hooks run, and where they fail, SGit Newsroom", "description": "More and more of the technical people I talk to who are trying to control agents for real are reaching for the same tool: hooks, small programs the agent's harness runs at fixed points, before a tool call, after it, when a prompt is submitted, when the agent stops. This is the debrief I wanted to read: the lay of the land on 14 October 2026, from each vendor's own documentation. The short version is that the design has converged. Claude Code, OpenAI's Codex, Gemini CLI, GitHub Copilot, Cursor, Devin Desktop (formerly Windsurf), Grok Build, Factory, Augment and Kiro all offer a hook before a tool call that can block it, and most can ask the user or rewrite the call. They differ where it matters for security: whether an organisation can force its own hooks and switch everyone else's off, whether a failing hook blocks or lets the action through, whether hooks shipped in a repository need trust before they run, and whether anything can see the model's own output. ChatGPT offers admin controls rather than hooks, and Lovable gates publishing rather than agent actions. The vendors and the people who publish hook collections say the same thing about their limits: guardrails, not walls. Hooks see what the harness routes through them, run with the user's permissions, fail open by default on most tools, and have been an attack surface themselves. I ran a small test of my own in a throwaway repository, and the companion article asks what this means for agent behaviour policies.", "url": "https://newsroom.sgit.ai/articles/agent-hooks-october-2026.html", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "SGit Newsroom", "url": "https://newsroom.sgit.ai"}, "about": {"@type": "SoftwareApplication", "name": "sgit", "sameAs": "https://pypi.org/project/sgit-ai/"}, "author": {"@type": "Person", "name": "Dinis Cruz", "url": "https://sgit.ai/about/index.html"}, "license": "https://creativecommons.org/licenses/by/4.0/"}</script>
+<style>html{background:#faf9f5}body{margin:0;background:#faf9f5;color:#1c1d21;font-family:ui-sans-serif,system-ui,sans-serif;opacity:0;transition:opacity .25s;animation:sg-reveal 0s linear 1.6s forwards}html.ready body{opacity:1;animation:none}@keyframes sg-reveal{to{opacity:1}}</style><noscript><style>body{opacity:1;animation:none}</style></noscript>
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <link rel="stylesheet" href="../assets/themes/themes.css">
+  <link rel="stylesheet" href="../assets/site-nav.css">
+  <script src="../assets/themes/themes.js"></script>
+  <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.12.41</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../articles/index.html#all">Every article</a>
+      <a class="sl" href="../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../persona/index.html">Read as a persona</a>
+      <a class="sl" href="../for/make.html">Make a reading list</a>
+      <a class="sl" href="../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../wire/index.html">Industry Wire<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../wire/index.html">Today's edition</a>
+      <a class="sl" href="../wire/sources.html">The sources</a>
+      <a class="sl" href="../wire/how.html">How the wire works</a>
+      <a class="sl" href="../wire/owasp/index.html">The OWASP Wire</a>
+      <a class="sl" href="../wire/aws/index.html">The AWS Wire</a>
+      <a class="sl" href="../wire/portugal/index.html">The Portugal Wire</a>
+      <a class="sl" href="../wire/days.html">Day by day</a>
+      <a class="sl" href="../wire/charter.html">The charter</a>
+      <a class="sl" href="../articles/dark-mode-and-four-more.html">Themes: dark mode and four more</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../account/index.html">Your reading account</a>
+      <a class="sl" href="../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../account/personas.html">Your personas</a>
+      <a class="sl" href="../account/top-up.html">Top up</a>
+      <a class="sl" href="../vault/index.html">Your vault, between devices</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../newsroom/board.html">The board</a>
+      <a class="sl" href="../newsroom/log.html">The run log</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../publishers/index.html">For publishers: what is live, how to try it</a>
+      <a class="sl" href="../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+      <a class="sl" href="../demos/vaults/newsroom-synthetic-users/index.html">The study: five readers tested this site</a>
+      <a class="sl" href="../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../newsroom-api/index.html">The reader API: a map, and a review</a>
+      <a class="sl" href="../passkey/index.html">The passkey lab</a>
+      <a class="sl" href="../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../archive/index.html">The archive</a>
+      <a class="sl" href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+      <a class="sl" href="../world-news-day/stories/free-to-republish-is-not-a-licence.html">World News Day: free to republish is not a licence</a>
+      <a class="sl" href="../world-news-day/method.html">World News Day: the method</a>
+      <a class="sl" href="../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../network/index.html">The network</a>
+      <a class="sl" href="../admin/versions.html">Release history</a>
+      <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../engineering/index.html">Engineering: issues &amp; releases</a>
+      <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <div class="nav-tools">
+  <a class="search-btn" href="../search/index.html" title="Search the site, in your browser">Search</a>
+  <link rel="stylesheet" href="../assets/search/search-nav.css">
+  <sg-meter class="meter-nav" view="balance"></sg-meter>
+  <button class="vault-btn" type="button" aria-expanded="false" title="Your vault: the reading account carried between your devices"><span class="dot"></span>Vault</button>
+  <link rel="stylesheet" href="../assets/vault-pane/vault-pane.css">
+  <script type="module" src="../assets/vault-pane/vault-pane.js"></script>
+  <div class="theme-pick"></div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
+  </div>
+</div></nav>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.12.41</span></a></div>
+<main class="doc">
+ <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / Agent hooks in October 2026: a technical debrief on what each platform lets you see, stop and change, where hooks run, and where they fail</p>
+ <h1>Agent hooks in October 2026: a technical debrief on what each platform lets you see, stop and change, where hooks run, and where they fail</h1>
+ <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-14 &middot; <a href="versions/agent-hooks-october-2026.html" title="Every published version of this article, and what changed">article v1.0.0</a> &middot; <a href="../admin/versions.html" title="The newsroom release it was published in">newsroom v0.12.41</a> &middot; <span class="chip">hooks</span><span class="chip">agents</span><span class="chip">claude-code</span><span class="chip">codex</span><span class="chip">gemini-cli</span><span class="chip">copilot</span><span class="chip">cursor</span><span class="chip">guardrails</span><span class="chip">security</span><span class="chip">enforcement</span><span class="chip">owasp</span><span class="chip">article</span></p>
+ <p class="abstract"><em><b>Abstract:</b> More and more of the technical people I talk to who are trying to control agents for real are reaching for the same tool: hooks, small programs the agent's harness runs at fixed points, before a tool call, after it, when a prompt is submitted, when the agent stops. This is the debrief I wanted to read: the lay of the land on 14 October 2026, from each vendor's own documentation. The short version is that the design has converged. Claude Code, OpenAI's Codex, Gemini CLI, GitHub Copilot, Cursor, Devin Desktop (formerly Windsurf), Grok Build, Factory, Augment and Kiro all offer a hook before a tool call that can block it, and most can ask the user or rewrite the call. They differ where it matters for security: whether an organisation can force its own hooks and switch everyone else's off, whether a failing hook blocks or lets the action through, whether hooks shipped in a repository need trust before they run, and whether anything can see the model's own output. ChatGPT offers admin controls rather than hooks, and Lovable gates publishing rather than agent actions. The vendors and the people who publish hook collections say the same thing about their limits: guardrails, not walls. Hooks see what the harness routes through them, run with the user's permissions, fail open by default on most tools, and have been an attack surface themselves. I ran a small test of my own in a throwaway repository, and the companion article asks what this means for agent behaviour policies.</em></p>
+<figure class="shot" data-shot="hq-map.webp" data-dir="images/" data-alt="Agent hooks in October 2026, from each vendor&#x27;s documentation: whether a hook can block a tool call, rewrite its input, act at the model call, be forced by the organisation, fail closed, and whether hooks shipped in a repository need trust. The design has converged; the security properties have not." data-kind="comparison"><figcaption>Agent hooks in October 2026, from each vendor's documentation: whether a hook can block a tool call, rewrite its input, act at the model call, be forced by the organisation, fail closed, and whether hooks shipped in a repository need trust. The design has converged; the security properties have not.</figcaption></figure>
+<h2 id="in-short">In short</h2>
+<ul>
+<li><b>Hooks are now standard.</b> At least ten agent tools document a hook before a tool call that can block it; most can also ask or rewrite.</li>
+<li><b>The differences are the security properties.</b> Organisation-only hooks, failing closed, trust for repository hooks, and visibility of the model's output.</li>
+<li><b>Fail-open is the default on most tools.</b> A hook that crashes or times out usually lets the action through, unless you set the option to block.</li>
+<li><b>Hooks see what the harness routes through them.</b> Actions that do not go through a hooked tool path are invisible to them.</li>
+<li><b>Hooks are an attack surface too.</b> Hooks shipped in a repository have run code on open, and research reports compromising every harness it tested.</li>
+<li><b>Everyone says the same thing.</b> "Hooks are not a security boundary", "not a complete enforcement boundary", "Guardrails, not walls."</li>
+<li><b>A standard is forming.</b> OWASP's GenAI Security Project hosts the Agent Control Standard, built around hooks; other cross-vendor specs are drafts.</li>
+</ul>
+<h2 id="what">What a hook is</h2>
+<figure class="shot" data-shot="hq-where.webp" data-dir="images/" data-alt="Where a hook sits: beside the agent, on the same machine, with the user&#x27;s permissions. Hooks fire when a prompt is submitted, before and after a tool call, at the stop, and on one platform around the model call itself. They are good at deterministic checks at the moment of action, and cannot undo what ran or see what was not routed through them." data-kind="architecture"><figcaption>Where a hook sits: beside the agent, on the same machine, with the user's permissions. Hooks fire when a prompt is submitted, before and after a tool call, at the stop, and on one platform around the model call itself. They are good at deterministic checks at the moment of action, and cannot undo what ran or see what was not routed through them.</figcaption></figure>
+<p>A hook is a program the agent's harness runs at a fixed point in its loop, with a description of the event on its input and a decision on its output. The harness is the program around the model: it sends the prompt, receives the model's request to use a tool, runs the tool and returns the result. Hooks plug into that loop. The one that matters most for security runs before a tool call: it sees the tool's name and its full input, the shell command, the file path, the MCP server and tool, and it can allow the call, deny it with a reason the model sees, ask the person, or on most platforms rewrite the input.</p>
+<p>Claude Code's <a href="https://code.claude.com/docs/en/hooks">reference</a> lists 33 events, from session start to configuration changes. Most tools have between ten and twenty. Hooks are usually shell commands that read JSON and write JSON, and on several tools they can also be HTTP endpoints, prompts to a model or plugins. A conventional exit code carries the decision: on most tools, exit code 2 blocks.</p>
+<p>This site already runs on them. The agent writing it works under a written policy that a hook prints back after every summary, as <a href="re-anchoring-agent-behaviour-policies.html">Re-anchoring</a> describes, and another hook appends the status report you see at the end of its answers.</p>
+<h2 id="platforms">The lay of the land</h2>
+<p><b>Anthropic, Claude Code and the Agent SDK.</b> The richest surface: a pre-tool hook that can allow, deny, ask, defer or rewrite; post-tool hooks that can replace the output; hooks on prompts, stops, subagents, compaction, configuration changes and instruction files. An organisation can set <code>allowManagedHooksOnly</code>, which in the settings reference reads "Run only the hooks your organization deploys". Since version 2.1.295 a hook can set <code>"onFailure": "block"</code>, because, in the docs' own words, "a policy hook with a wrong path or a crashing script lets everything through". The Agent SDK exposes the same events as callbacks.</p>
+<p><b>OpenAI.</b> Codex has <a href="https://learn.chatgpt.com/docs/hooks">hooks</a>, enabled by default, with a pre-tool hook that can deny or rewrite and <code>allow_managed_hooks_only = true</code>, which "skips hooks from user, project, session, and plugin sources". Hosted tools such as web search are not covered: "These don't use the local function-tool hook path." The docs are direct: "Treat tool hooks as a useful guardrail, not a complete enforcement boundary." The Agents SDK has guardrails that can stop a run and lifecycle hooks that observe it. ChatGPT itself has no user hooks; it has admin controls, and in its Work product admin-managed hooks for MCP tools.</p>
+<p><b>Google, Gemini CLI.</b> The only coding agent with documented <a href="https://geminicli.com/docs/hooks/">hooks</a> around the model call itself: <code>BeforeModel</code> can "Block Turn / Mock", and <code>AfterModel</code> can "Filter/redact responses". It fingerprints project hooks and warns that "Project-level hooks are particularly risky when opening untrusted projects." For unpaid users Gemini CLI has been replaced by Antigravity CLI, which I did not research.</p>
+<p><b>GitHub Copilot.</b> The cloud agent and Copilot CLI have <a href="https://docs.github.com/en/copilot/reference/hooks-configuration">hooks</a> with a pre-tool decision and argument rewriting. Organisations can install machine-wide policy hooks for the CLI, which "Load before all other hooks" and need elevated privileges. One line matters: "Command hook timeouts are always fail-open, even for preToolUse and admin-deployed policy hooks."</p>
+<p><b>Cursor.</b> <a href="https://cursor.com/docs/agent/hooks">Hooks</a> before shell commands, MCP calls and file reads, and at four levels with the priority "Enterprise → Team → Project → User". "Crashes, timeouts, and non-zero exit codes other than 2 fail open by default", with a <code>failClosed</code> option the docs recommend for MCP hooks. Cursor also runs a partner programme of security vendors building on its hooks.</p>
+<p><b>The rest.</b> Devin Desktop, formerly Windsurf, has twelve hook points with system hooks users cannot disable without root. Grok Build blocks only before a tool call, says that "timeouts, crashes, malformed output" are "fail-open", and also reads Claude Code's and Cursor's hook files. Factory and Augment support organisation-level hooks; Kiro and Cline have hooks, with less documented enforcement. Lovable has no agent hooks: it scans on publish and lets admins block publishing with critical findings.</p>
+<h2 id="fail">Where hooks fail</h2>
+<p>The failure modes are documented by the vendors, by the people who publish hook collections, and by researchers. I keep them at the level a defender needs.</p>
+<p><b>They fail open by default.</b> On most tools, a hook that crashes, times out or returns something malformed lets the action go ahead. A security hook with a bug is no hook at all, unless the option to fail closed is set where it exists.</p>
+<p><b>They only see what is routed through them.</b> A hook on one tool does not see the same effect reached through another. Anthropic's own issue tracker has a case where a hook on file edits blocked an edit and the agent made the change through a different tool the hook did not cover; the issue was closed "not planned". Hooks keyed on the text of a command see the text, not what it will do.</p>
+<p><b>They run with the user's permissions, beside an agent with the same permissions.</b> Claude Code's docs say command hooks "execute shell commands with your full user permissions". Unless they are installed where the agent cannot write, an agent can change the files that define them; organisation-managed hooks are the answer several vendors give.</p>
+<p><b>Hooks shipped in a repository are an attack surface.</b> Check Point's "Caught in the Hook", published on 25 February 2026, found that "hook commands defined in .claude/settings.json will run automatically without confirmation"; all the reported issues were "successfully patched prior to this publication". And hook files written for one tool can be read by another: before version 3.0.0, according to CVE-2026-48124, Cursor "could execute workspace-defined Claude hook commands" without dedicated approval; it was fixed in June 2026. In September 2026, a paper on <a href="https://arxiv.org/abs/2609.03884">attacker-controlled hook updates</a> reported compromising "all seven evaluated harnesses". And Claude Code's docs note that in a headless or SDK run, "Claude Code never shows the dialog and treats the folder as trusted", so a repository's hooks run there unreviewed.</p>
+<p><b>Most cannot see the model's output.</b> Except where a tool hooks the model call, a hook sees actions, not what the model said or what it read that made it act.</p>
+<p>The people who build hook collections agree. Trail of Bits' widely used <a href="https://github.com/trailofbits/claude-code-config">configuration</a> says "Hooks are not a security boundary -- a prompt injection can work around them" and "Guardrails, not walls." cc-safety-net, which works across sixteen coding tools, says "It is not a sandbox" and "A broken config file never blocks anything."</p>
+<h2 id="test">A small test of my own</h2>
+<p>I ran one check in a throwaway repository with two local remotes. A project-level hook implemented one rule from this site's own policy: pushes go only to the allowed remote. In a real headless Claude Code run, the hook stopped the push to the other remote, and nothing arrived there. Asked to try other ways, the agent declined to go further, saying the remaining routes would mean defeating the control itself. Run directly, though, the same hook let through a command whose text did not show where it would push, which is the limit of any hook that reads text rather than effects.</p>
+<p>The test also showed two things I had not planned to see. The headless run loaded my own user-level hooks as well, because hooks follow the user, not the project. And my status counter, which counts commits from the text of commands, counted the throwaway repository's commit as one of this site's: a hook that infers behaviour from text cannot tell one repository from another.</p>
+<h2 id="defend">Configuring hooks as a defender</h2>
+<p>From the vendors' guidance and the failure modes above:</p>
+<ol>
+<li><b>Make the organisation's hooks the only hooks</b> where the platform allows it, and install them where the agent cannot write.</li>
+<li><b>Fail closed</b> on the hooks that enforce policy: exit code 2, and the block-on-failure option where it exists.</li>
+<li><b>Hook every path to the same effect,</b> not one tool: shell, file tools and MCP, and prefer checks on effects over checks on text.</li>
+<li><b>Watch the configuration itself,</b> with hooks or managed settings that block or report changes to settings and hook files.</li>
+<li><b>Review a repository's agent settings before a headless run,</b> or run with repository hooks switched off.</li>
+<li><b>Pair hooks with a boundary:</b> a sandbox, network rules, and credentials scoped to the task. Hooks decide; the boundary holds.</li>
+</ol>
+<h2 id="standard">The standard is forming</h2>
+<p>The <a href="https://github.com/GenAI-Security-Project/agent-control-standard">Agent Control Standard</a>, which calls itself "The open standard for runtime agent control" built on "declarative hooks, policy enforcement, and observability", is "an open project of the OWASP GenAI Security Project": a separate guardian inspects what an agent is about to do, and answers with allow, deny, modify, ask or defer, using policy engines such as OPA or Cedar. Several other cross-vendor hook specifications exist as drafts at version 0.1. None is yet the way the major coding agents expose their hooks, which is why the same hook still has to be written several times.</p>
+<h2 id="limits">What this does not claim</h2>
+<ul>
+<li><b>The map is from documentation.</b> Read on 14 October 2026, partly by research agents; the claims quoted here were re-checked, and the cells marked unknown were not verified.</li>
+<li><b>Products move fast.</b> Several of these hook systems are months old and their behaviour is changing release by release.</li>
+<li><b>The test was one check in one tool.</b> It shows a hook enforcing a rule and its limit, not a measure of any product's security.</li>
+<li><b>Failure modes are described, not demonstrated.</b> The sources are cited for anyone who needs the detail.</li>
+</ul>
+<p>If you are deploying hooks to govern agents, or building a shared library of them, write to <a href="mailto:agent@riskmandate.ai">agent@riskmandate.ai</a>.</p>
+<h2 id="sources">Where this comes from</h2>
+<p>A voice memo of mine on 14 October 2026, written by this site's agent in the voice of this site; the argument and the editorial responsibility are mine. The research was done the same day by four research agents reading each vendor's documentation, issue trackers, advisories and papers, with the quoted claims re-checked. Primary sources: Anthropic, <a href="https://code.claude.com/docs/en/hooks">Claude Code hooks reference</a>; OpenAI, <a href="https://learn.chatgpt.com/docs/hooks">Codex hooks</a>; Google, <a href="https://geminicli.com/docs/hooks/">Gemini CLI hooks</a>; GitHub, <a href="https://docs.github.com/en/copilot/reference/hooks-configuration">Copilot hooks configuration</a>; Cursor, <a href="https://cursor.com/docs/agent/hooks">hooks</a>; Check Point Research, <a href="https://research.checkpoint.com/2026/rce-and-api-token-exfiltration-through-claude-code-project-files-cve-2025-59536/">Caught in the Hook</a>; <a href="https://arxiv.org/abs/2609.03884">arXiv 2609.03884</a>; <a href="https://github.com/trailofbits/claude-code-config">trailofbits/claude-code-config</a>; <a href="https://github.com/kenryu42/cc-safety-net">kenryu42/cc-safety-net</a>; OWASP GenAI Security Project, <a href="https://github.com/GenAI-Security-Project/agent-control-standard">Agent Control Standard</a>.</p>
+<sg-meter view="page" kind="article" date="2026-10-14" topics="agents-and-policy site-and-engineering" title="Agent hooks in October 2026: a technical debrief on what each platform lets you see, stop and change, where hooks run, and where they fail, SGit Newsroom"></sg-meter>
+<section class="athreads" id="threads">
+ <h2>Threads</h2>
+ <p class="athreads-meta"><span class="tchip">Agents &amp; policy</span><span class="tchip">Site &amp; engineering</span> <a href="graphs.html#agent-hooks-october-2026">This article as a graph &rarr;</a></p>
+ <div class="athreads-cols"><div><h3>Builds on</h3><ul><li><a href="re-anchoring-agent-behaviour-policies.html">Re-anchoring: keeping an agent's rules alive through every summary, and a canary that shows when they are not</a> <span class="dim">Summaries keep under 2% of a long session. Re-anchoring prints the agent's rules back after each one; a canary report shows it is working.</span></li></ul></div></div>
+ <p class="small dim"><a href="index.html">All articles</a> &middot; <a href="graphs.html">All graphs</a></p>
+ <p class="small dim">Article No. 114 &middot; <a href="../for/make.html#r=114">start a reading list with it</a></p>
+</section>
+<aside class="lkit" aria-label="For LinkedIn"><b>Posting this article on LinkedIn?</b> The cover is <a href="banners/agent-hooks-october-2026.jpg" download>agent-hooks-october-2026.jpg</a> (1920&times;1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page.</aside>
+ <p class="subteaser"><b>Want the next issue by email.</b> One issue a week or so: what was published, what it adds up to, and what is worth your time. <a class="cta2" href="../subscribe/index.html">Subscribe to the SGit Newsroom &rarr;</a></p>
+ <p class="small dim" style="margin-top:2rem"><a href="index.html">&larr; All articles</a></p>
+</main>
+<script>
+(function () {
+ fetch('../assets/shots.js?v=v0.7.87')
+ .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+ .then(function (t) { (0, eval)(t); })
+ .catch(function (e) { console.error('[shots] component failed to load:', e); });
+}());
+</script>
+<script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": "https://buy.stripe.com/6oUfZ9ez65vVgU2fY15os04"}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
+<script>
+import('../assets/components/sg-meter/v1/v1.4/v1.4.1/sg-meter.js?v=v0.7.87')
+ .catch(function (e) { console.error('[sg-meter] component failed to load:', e); });
+</script>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="netline"><a href="https://sgit.ai" style="display:inline;padding:0"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://pt.newsroom.sgit.ai" style="display:inline;padding:0">&#8593; pt.newsroom.sgit.ai</a> &middot; <a href="https://graphs.sgit.ai" style="display:inline;padding:0">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai" style="display:inline;padding:0">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai" style="display:inline;padding:0">&#8593; nhi.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai" style="display:inline;padding:0">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../admin/versions.html">v0.12.41</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="agent-hooks-october-2026.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../index.html">&#8594; The front page</a>
+    <a href="../wire/index.html">The Industry Wire</a>
+    <a href="../wire/owasp/index.html">The OWASP Wire</a>
+    <a href="../wire/aws/index.html">The AWS Wire</a>
+    <a href="../wire/portugal/index.html">The Portugal Wire</a>
+    <a href="../articles/index.html#all">Every article</a>
+    <a href="../articles/newsletter/index.html">The newsletter</a>
+    <a href="../articles/collections/index.html">Collections</a>
+    <a href="../articles/desk/index.html">From the desk</a>
+    <a href="../articles/graphs.html">As graphs</a>
+    <a href="../subscribe/index.html">Subscribe</a>
+    <a href="../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../account/index.html">Your reading account</a>
+    <a href="../account/newsroom.html">Your newsroom</a>
+    <a href="../account/personas.html">Your personas</a>
+    <a href="../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../newsroom/index.html">How the newsroom runs</a>
+    <a href="../newsroom/policies.html">Behaviour policies</a>
+    <a href="../newsroom/publish.html">How to publish</a>
+    <a href="../newsroom/board.html">The board</a>
+    <a href="../newsroom/log.html">The run log</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../design/index.html">The design, and what runs</a>
+    <a href="../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../corrections/index.html">Corrections must propagate</a>
+    <a href="../provenance/index.html">Provenance is the product</a>
+    <a href="../economics/index.html">Paying the fact creator</a>
+    <a href="../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../replicate/index.html">Replicate this newsroom</a>
+    <a href="../publishers/index.html">For publishers</a>
+    <a href="../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+    <a href="../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../archive/index.html">The archive</a>
+    <a href="../network/index.html">The network</a>
+    <a href="../admin/versions.html">Release history</a>
+    <a href="../admin/index.html">Admin &amp; engineering</a>
+    <a href="../about/participant.html">Where we lose</a>
+    <a href="../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+
+<script>
+(function(){var R=document.documentElement.getAttribute('data-root')||'';var V='?v=' + 'v0.7.87';var C=[R,'','../','/'].filter(function(v,i,a){return a.indexOf(v)===i});
+function wait(ms){return new Promise(function(res){var t=Date.now();(function p(){if(window.sg)return res(window.sg);if(Date.now()-t>ms)return res(null);setTimeout(p,60)})()})}
+function grab(sg,p){return new Promise(function(res){(async function(){if(sg&&sg.vfs&&sg.vfs.readText){try{var t=await sg.vfs.readText(p);if(t)return res(t)}catch(e){}}try{var r=await fetch(p+V);if(r.ok)return res(await r.text())}catch(e){}res(null)})()})}
+async function css(sg){for(var i=0;i<C.length;i++){var p=C[i]+'assets/newsroom.css';if(sg&&sg.loadCss){try{await sg.loadCss(p);return}catch(e){}}var t=await grab(sg,p);if(t){var s=document.createElement('style');s.textContent=t;document.head.appendChild(s);return}}}
+async function js(sg,name){name=name||'assets/site.js';for(var i=0;i<C.length;i++){var p=C[i]+name;if(sg&&sg.loadJs){try{await sg.loadJs(p);return}catch(e){}}var t=await grab(sg,p);if(t){try{(0,eval)(t)}catch(e){console.error('[site] js failed',name,e)}return}}}
+async function boot(){var inVault=false;try{inVault=(window!==window.parent)||location.protocol==='blob:'}catch(e){inVault=true}
+var sg=inVault?await wait(2500):null;window.__sgitBoot={roots:C,grab:function(p){return grab(sg,p)},version:V};await css(sg);await js(sg);document.documentElement.classList.add('ready');try{window.parent&&window.parent.postMessage({type:'sg-app-ready'},'*')}catch(e){}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+var mine=V.slice(3),last=0;
+function fresh(){if(location.hostname!=='sgit.ai'||Date.now()-last<60000)return;last=Date.now();
+fetch('/version.txt?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(t){t=(t||'').trim();if(!/^v[0-9]+[.][0-9]+[.][0-9]+$/.test(t)||t===mine)return;
+var k='sgit.fresh:'+location.pathname;try{if(sessionStorage.getItem(k)===t)return;sessionStorage.setItem(k,t)}catch(e){}
+var u=new URL(location.href);u.searchParams.set('v',t);location.replace(u.href)}).catch(function(){})}
+try{var u=new URL(location.href);if(u.searchParams.get('v')===mine){u.searchParams.delete('v');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}
+fresh();addEventListener('pageshow',function(e){if(e.persisted){last=0;fresh()}});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')fresh()});
+})();
+</script>
+</body>
+</html>

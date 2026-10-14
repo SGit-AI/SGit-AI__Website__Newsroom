@@ -73,6 +73,40 @@
   ],
   "articles": [
     {
+      "slug": "agent-hooks-october-2026",
+      "title": "Agent hooks in October 2026: a technical debrief on what each platform lets you see, stop and change, where hooks run, and where they fail",
+      "date": "2026-10-14",
+      "updated": "",
+      "author": "Dinis Cruz",
+      "url": "https://newsroom.sgit.ai/articles/agent-hooks-october-2026.html",
+      "markdown": "https://newsroom.sgit.ai/articles/agent-hooks-october-2026.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/agent-hooks-october-2026.webp",
+      "graph": "https://newsroom.sgit.ai/articles/graphs/agent-hooks-october-2026.json",
+      "teaser": "A debrief on agent hooks across ten platforms: what each can see, stop and change, where they run, and the failure modes every vendor admits.",
+      "summary": "More and more of the technical people I talk to who are trying to control agents for real are reaching for the same tool: hooks, small programs the agent's harness runs at fixed points, before a tool call, after it, when a prompt is submitted, when the agent stops. This is the debrief I wanted to read: the lay of the land on 14 October 2026, from each vendor's own documentation. The short version is that the design has converged. Claude Code, OpenAI's Codex, Gemini CLI, GitHub Copilot, Cursor, Devin Desktop (formerly Windsurf), Grok Build, Factory, Augment and Kiro all offer a hook before a tool call that can block it, and most can ask the user or rewrite the call. They differ where it matters for security: whether an organisation can force its own hooks and switch everyone else's off, whether a failing hook blocks or lets the action through, whether hooks shipped in a repository need trust before they run, and whether anything can see the model's own output. ChatGPT offers admin controls rather than hooks, and Lovable gates publishing rather than agent actions. The vendors and the people who publish hook collections say the same thing about their limits: guardrails, not walls. Hooks see what the harness routes through them, run with the user's permissions, fail open by default on most tools, and have been an attack surface themselves. I ran a small test of my own in a throwaway repository, and the companion article asks what this means for agent behaviour policies.",
+      "topics": [
+        "agents-and-policy",
+        "site-and-engineering"
+      ],
+      "tags": [
+        "hooks",
+        "agents",
+        "claude-code",
+        "codex",
+        "gemini-cli",
+        "copilot",
+        "cursor",
+        "guardrails",
+        "security",
+        "enforcement",
+        "owasp",
+        "article"
+      ],
+      "placement": [],
+      "linkedin": null,
+      "notes": []
+    },
+    {
       "slug": "knowledge-that-maintains-itself",
       "title": "Knowledge that maintains itself: semantic graphs for an organisation's policies and internal knowledge, briefing people and agents from the graph, and vaults to carry the brief",
       "date": "2026-10-14",
