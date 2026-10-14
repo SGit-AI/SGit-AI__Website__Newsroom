@@ -136,6 +136,10 @@ Startups & strategySite & engineeringAgents & policy[This article as a graph →
 - [The vault is live: from a design on 11 October to a reader's vault on newsroom.sgit.ai by two in the morning, and how all of it fits together](the-vault-is-live.md) The reader's vault runs on newsroom.sgit.ai: a passkey opens three real vaults, each device writes one file, and the architecture is drawn as it stands.
 - [Pay after you read: how a reading meter became a working business model in one afternoon, one release at a time](pay-after-you-read.md) Seven releases in one afternoon turned the reading meter into a working model: pay after you read, and the rating sets the price.
 
+### Continued by
+
+- [sgit in GitHub Actions, side by side: a showcase repository and site that runs four ways of moving a vault between jobs on every run, measured, with a budget for its LLM steps](sgit-actions-side-by-side.md) A showcase repository that runs four ways of moving a vault between GitHub Actions jobs side by side, measured, with a budget for its LLM steps.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 85 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=85)

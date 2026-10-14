@@ -73,6 +73,72 @@
   ],
   "articles": [
     {
+      "slug": "sgit-actions-side-by-side",
+      "title": "sgit in GitHub Actions, side by side: a showcase repository and site that runs four ways of moving a vault between jobs on every run, measured, with a budget for its LLM steps",
+      "date": "2026-10-14",
+      "updated": "",
+      "author": "Dinis Cruz",
+      "url": "https://newsroom.sgit.ai/articles/sgit-actions-side-by-side.html",
+      "markdown": "https://newsroom.sgit.ai/articles/sgit-actions-side-by-side.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/sgit-actions-side-by-side.webp",
+      "graph": "https://newsroom.sgit.ai/articles/graphs/sgit-actions-side-by-side.json",
+      "teaser": "A showcase repository that runs four ways of moving a vault between GitHub Actions jobs side by side, measured, with a budget for its LLM steps.",
+      "summary": "sgit in a CI pipeline described how an encrypted vault can carry data in and out of GitHub Actions, and between its jobs. The next step is to show it running, and to keep showing it. So this is a brief for a dedicated repository and website, just for that: its own issues, its own CI pipeline, and on every run four ways of moving a vault between jobs, side by side, in parallel. A vault server with the keys in the repository's secrets; the encrypted vault itself as an artefact, a zip that one job uploads and the next downloads; the vault published as files and cloned read-only from any web host; and append lanes for jobs that only need to hand results in. Each lane reports its time, its bytes, the keys each job held and a screenshot, and repeats on vaults of growing size with full, thin and path clones. I measured the core of it locally for this article. A clone of one folder barely grows with the vault: 0.59 seconds at 100 files, 0.77 at 2,000. A full clone grows with it, from 0.95 to 5.55 seconds. The repository should also have a budget, because some steps will call models, from more than one provider, and every token they spend should be counted against it.",
+      "topics": [
+        "vaults-and-method",
+        "site-and-engineering"
+      ],
+      "tags": [
+        "sgit",
+        "github-actions",
+        "ci",
+        "vaults",
+        "artefacts",
+        "append-lanes",
+        "performance",
+        "llm",
+        "token-budget",
+        "brief",
+        "article"
+      ],
+      "placement": [],
+      "linkedin": null,
+      "notes": []
+    },
+    {
+      "slug": "agent-workflows-on-ephemeral-vaults",
+      "title": "Agent workflows on ephemeral vaults: seven architectures from one agent to a swarm, a repository of recipes that gates sgit's releases, and what a hundred writers did to an append lane",
+      "date": "2026-10-14",
+      "updated": "",
+      "author": "Dinis Cruz",
+      "url": "https://newsroom.sgit.ai/articles/agent-workflows-on-ephemeral-vaults.html",
+      "markdown": "https://newsroom.sgit.ai/articles/agent-workflows-on-ephemeral-vaults.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/agent-workflows-on-ephemeral-vaults.webp",
+      "graph": "https://newsroom.sgit.ai/articles/graphs/agent-workflows-on-ephemeral-vaults.json",
+      "teaser": "Seven architectures for agents on ephemeral vaults, a recipe repository that gates sgit's releases, and a hundred writers measured on an append lane.",
+      "summary": "There is a pattern I keep using for agents that work together: give them an encrypted vault as their shared memory and their way of talking, and let it exist only for as long as the work does. I want to capture it properly, as a series of architectures from simple to complex, each in a repository of its own with its agents, its keys, its fixtures and a CI job that proves it works, so that people and agents can fork them as templates, recipes and skills. The repository should run as one of the checks before anything reaches sgit's main branch. The key questions are the same at every level: how do you give agents shared memory, how do they communicate, how do they work asynchronously, and how do you know what each one is doing at any moment. The answer depends on who holds which key. Because the only thing that ever leaves the environment is ciphertext, you can be more relaxed about where the logs and the data go: it is all about the keys, and about whether the vault is ephemeral. A vault app can draw what the agents are doing, and the screenshot can go back into the vault. And I wanted to know how far it scales, so we measured it locally: a hundred writers posting ten entries each landed a thousand entries in an append lane in 4.9 seconds, none lost. The same test found four defects, which is the case for the release gate in one paragraph.",
+      "topics": [
+        "vaults-and-method",
+        "agents-and-policy"
+      ],
+      "tags": [
+        "sgit",
+        "agents",
+        "multi-agent",
+        "ephemeral-vaults",
+        "append-lanes",
+        "vault-apps",
+        "architecture",
+        "ci",
+        "templates",
+        "brief",
+        "article"
+      ],
+      "placement": [],
+      "linkedin": null,
+      "notes": []
+    },
+    {
       "slug": "hooks-are-kernel-code",
       "title": "Hooks are kernel code: a maturity model, the first ten hooks mapped, and a brief for a hooks site and feed where you pay for state, never to run",
       "date": "2026-10-14",

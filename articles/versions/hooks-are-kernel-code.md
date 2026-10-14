@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-10-14 | minor | 2,751 | +25 / −0 words; 1 changed, 1 added, 0 removed paragraphs | this release | [what changed](hooks-are-kernel-code/v1.1.0.md) · [current](../hooks-are-kernel-code.md) |
+| **v1.1.0** | 2026-10-14 | minor | 2,751 | +25 / −0 words; 1 changed, 1 added, 0 removed paragraphs | [`1f0b50266`](https://github.com/SGit-AI/SGit-AI__Website/commit/1f0b5026671c37652ebc90d7aefd8a733ec522ae) | [what changed](hooks-are-kernel-code/v1.1.0.md) · [current](../hooks-are-kernel-code.md) |
 | **v1.0.0** | 2026-10-14 | published | 2,726 | first published | [`dad31e35f`](https://github.com/SGit-AI/SGit-AI__Website/commit/dad31e35f1c82880a0dcc824fb16f35e2b8eaa80) |  |
 
 [← Back to the article](../hooks-are-kernel-code.md) · [All articles](../index.md)
