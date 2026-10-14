@@ -1,0 +1,42 @@
+{
+ "slug": "paying-after-the-value",
+ "teaser": "Most purchases are bets on future value; a reading balance that can go negative asks for payment when the value is already in view.",
+ "topics": ["startups-and-strategy", "site-and-engineering"],
+ "core_idea": "Subscriptions, gym memberships and annual donations ask people to pay at the moment of most doubt for value that may not arrive, and research shows they often overpay and keep paying; this newsroom's meter reverses it with a £5 credit that reading draws down, prices the reader can lower or refuse, and a balance allowed to go negative, so payment arrives when accumulated value is visible, which works only where serving costs almost nothing and value adds up visibly, and could be made fairer with prices by purchasing power and a view of where the money goes, tested against written hypotheses with a December review.",
+ "nodes": [
+  {"id": "future", "label": "Buying the future", "kind": "concept", "summary": "Paying first and betting on enough use."},
+  {"id": "gym", "label": "Paying not to go to the gym", "kind": "example", "summary": "Over $17 a visit when $10 was on offer."},
+  {"id": "pain", "label": "The pain of paying", "kind": "concept", "summary": "Paying hurts; prepaid use feels free and decouples from payment."},
+  {"id": "plays", "label": "The season ticket no-shows", "kind": "example", "summary": "21.5 percent no-shows when paid in advance for four plays."},
+  {"id": "after", "label": "Paying after the value", "kind": "method", "summary": "Credit used page by page; payment when the value is visible."},
+  {"id": "meter", "label": "The reading meter", "kind": "artefact", "summary": "£5 credit, 10p a new article read, price set or refused, negative allowed."},
+  {"id": "wikipedia", "label": "Wikipedia's yearly ask", "kind": "example", "summary": "A lump sum at a moment with no value in view."},
+  {"id": "commons", "label": "Value nobody adds up", "kind": "concept", "summary": "Many small benefits, too small to feel, never totalled."},
+  {"id": "condition", "label": "Near-zero cost to serve", "kind": "claim", "summary": "The model needs a huge gap between cost and price."},
+  {"id": "fair", "label": "Fair, visible, chosen", "kind": "method", "summary": "Prices by country, where the money goes, verified facts as a product."},
+  {"id": "photo", "label": "Paying for a cause", "kind": "example", "summary": "92 cents a photo; $5.33 when half went to charity."},
+  {"id": "hypotheses", "label": "Seven hypotheses, one review", "kind": "artefact", "summary": "H1 to H7, reviewed on 6 December 2026."}
+ ],
+ "edges": [
+  {"from": "gym", "to": "future", "rel": "example-of"},
+  {"from": "pain", "to": "future", "rel": "extends"},
+  {"from": "plays", "to": "pain", "rel": "example-of"},
+  {"from": "after", "to": "future", "rel": "contrasts"},
+  {"from": "meter", "to": "after", "rel": "example-of"},
+  {"from": "wikipedia", "to": "commons", "rel": "example-of"},
+  {"from": "after", "to": "commons", "rel": "answers"},
+  {"from": "condition", "to": "after", "rel": "depends-on"},
+  {"from": "fair", "to": "after", "rel": "extends"},
+  {"from": "photo", "to": "fair", "rel": "example-of"},
+  {"from": "meter", "to": "hypotheses", "rel": "produces"}
+ ],
+ "links": {
+  "articles": ["going-live-with-the-reading-meter", "pay-after-you-read", "pay-to-keep-your-persona"],
+  "pages": [],
+  "sites": ["https://eml.berkeley.edu/~ulrike/Papers/gym.pdf", "https://ideas.repec.org/a/inm/ormksc/v17y1998i1p4-28.html", "https://www.wilsonquarterly.com/quarterly/_/feel-pain/", "https://newsroom.haas.berkeley.edu/name-your-price-pricing-strategy-aimed-achieving-corporate-social-responsibility-and/", "https://meta.wikimedia.org/wiki/Fundraising/2024-25_Report", "https://en.wikipedia.org/wiki/Big_Mac_Index", "https://www.lw.com/en/insights/eighth-circuit-vacates-ftc-click-to-cancel-rule"]
+ },
+ "quotes": [
+  {"text": "The pain of paying, we argue, plays an important role in consumer self-regulation, but is hedonically costly.", "why": "Why when you pay matters."},
+  {"text": "Your balance can go below zero and stay there; nothing is blocked and nothing nags.", "why": "The rule that makes the experiment different."}
+ ]
+}

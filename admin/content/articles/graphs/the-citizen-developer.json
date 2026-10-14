@@ -1,0 +1,41 @@
+{
+ "slug": "the-citizen-developer",
+ "teaser": "The citizen developer is the spreadsheet grown up: the best briefs ever written, handed to villagers and town planners, carried in versioned vaults.",
+ "topics": ["startups-and-strategy", "vaults-and-method"],
+ "core_idea": "Citizen developers, the employees, owners and experts who now build full applications, are good news rather than a risk: they are the evolution of the error-prone but indispensable spreadsheet, their working apps are the best briefs ever written, and the real work is the handover from explorer to villagers and town planners who add the non-functional requirements; encrypted, versioned vaults carry a mini app and its data through that handover, and the shift moves people and organisations from rent-seeking software towards tools and business models they choose.",
+ "nodes": [
+  {"id": "worry", "label": "A worry, turned round", "kind": "claim", "summary": "Citizen developers are good news, not a risk to contain."},
+  {"id": "who", "label": "Not only citizens", "kind": "concept", "summary": "Employees, business owners, experts: the people who know the work."},
+  {"id": "spreadsheet", "label": "The spreadsheet", "kind": "concept", "summary": "A UI and data in one file, the tool people controlled."},
+  {"id": "errors", "label": "Spreadsheet errors", "kind": "example", "summary": "49 of 54 audited with significant errors; London Whale; 65,536 rows."},
+  {"id": "apps", "label": "Full applications now", "kind": "claim", "summary": "The same people can build real apps because they can."},
+  {"id": "brief", "label": "The best briefs ever written", "kind": "claim", "summary": "A working app says what the user wants, in a form that runs."},
+  {"id": "not-product", "label": "A brief is not a product", "kind": "concept", "summary": "Not yet maintained, secured, tested or able to scale."},
+  {"id": "handover", "label": "Explorers, villagers, town planners", "kind": "method", "summary": "Stabilise, harden, scale, with the non-functional requirements."},
+  {"id": "vault", "label": "A vault as the carrier", "kind": "artefact", "summary": "A mini app with UI and data, versioned, encrypted, handed over."},
+  {"id": "empowerment", "label": "From rent-seeking to empowerment", "kind": "claim", "summary": "People, organisations and countries building what they need."},
+  {"id": "choose-to-pay", "label": "Business models people choose", "kind": "concept", "summary": "Serving well enough that people choose to pay."}
+ ],
+ "edges": [
+  {"from": "worry", "to": "who", "rel": "leads-to"},
+  {"from": "errors", "to": "spreadsheet", "rel": "example-of"},
+  {"from": "spreadsheet", "to": "apps", "rel": "leads-to"},
+  {"from": "who", "to": "apps", "rel": "produces"},
+  {"from": "apps", "to": "brief", "rel": "produces"},
+  {"from": "not-product", "to": "brief", "rel": "contrasts"},
+  {"from": "brief", "to": "handover", "rel": "leads-to"},
+  {"from": "vault", "to": "handover", "rel": "depends-on"},
+  {"from": "vault", "to": "spreadsheet", "rel": "extends"},
+  {"from": "apps", "to": "empowerment", "rel": "leads-to"},
+  {"from": "empowerment", "to": "choose-to-pay", "rel": "leads-to"}
+ ],
+ "links": {
+  "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "why-i-love-wardley-maps", "explorer-to-villager-newsroom", "the-eyeballs-get-cheap", "custom-uis-are-not-the-exception", "what-sgit-is", "sovereignty-is-the-ability-to-move", "pay-after-you-read", "paying-after-the-value"],
+  "pages": [],
+  "sites": ["https://aws.amazon.com/what-is/low-code/", "https://www.gartner.com/en/information-technology/glossary/citizen-developer", "https://en.wikipedia.org/wiki/Vibe_coding", "https://www.theregister.com/2006/05/03/buggy_spreadsheet", "https://www.theregister.com/2020/10/05/excel_england_coronavirus_contact_error/", "https://baselinescenario.com/2013/02/09/the-importance-of-excel", "https://blog.gardeviance.org/2015/03/on-pioneers-settlers-town-planners-and.html"]
+ },
+ "quotes": [
+  {"text": "Every department will now have people building software the way they build spreadsheets", "why": "The earlier article this one answers."},
+  {"text": "Of 54 spreadsheets audited between 1997 and 2000, no fewer than 49 were found to contain significant errors", "why": "How badly the old tool served its builders."}
+ ]
+}

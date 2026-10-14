@@ -110,6 +110,10 @@ Startups & strategyNews & evidence[This article as a graph →](graphs.md#the-ey
 - [Open source is not free: who pays to keep the long tail working?](open-source-is-not-free.md) An old iMac, the long tail of old versions that projects are not paid to support, measured from public data, and five ways to pay for it, simulated.
 - [The minimum code below: container security from the top down, from the user story to the immutable line, measured on one real tool](the-minimum-code-below.md) Container security from the top down: at every layer, keep only the code the layer above needs. Measured on one real tool, with its limits.
 
+### Continued by
+
+- [The citizen developer is good news: the spreadsheet grown up, the best briefs ever written, and the handover from explorers to villagers and town planners that makes them last](the-citizen-developer.md) The citizen developer is the spreadsheet grown up: the best briefs ever written, handed to villagers and town planners, carried in versioned vaults.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 125 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=125)

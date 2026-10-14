@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-14 | published | 2,228 | first published | this release | [current](../the-eyeballs-get-cheap.md) |
+| **v1.0.0** | 2026-10-14 | published | 2,228 | first published | [`bb6b171a1`](https://github.com/SGit-AI/SGit-AI__Website/commit/bb6b171a1cfd2dcc3f4b00d5ac788e64b5051fef) | [current](../the-eyeballs-get-cheap.md) |
 
 [← Back to the article](../the-eyeballs-get-cheap.md) · [All articles](../index.md)
 
