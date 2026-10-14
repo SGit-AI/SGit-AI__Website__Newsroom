@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-14 | published | 2,643 | first published | this release | [current](../the-minimum-code-below.md) |
+| **v1.0.0** | 2026-10-14 | published | 2,643 | first published | [`326027680`](https://github.com/SGit-AI/SGit-AI__Website/commit/32602768027df0491912b82d06ca7bb2405601d9) | [current](../the-minimum-code-below.md) |
 
 [← Back to the article](../the-minimum-code-below.md) · [All articles](../index.md)
 

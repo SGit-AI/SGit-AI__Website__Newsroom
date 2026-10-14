@@ -402,7 +402,7 @@ Agents & policyStartups & strategy[This article as a graph →](graphs.md#riskma
 
 ### Continued by
 
-- [A policy for every skill: a friend's natural-language control for agent skills, the behaviour policy behind it, and using models to need them less](a-policy-for-every-skill.md) A friend's natural-language control for agent skills, read as a behaviour policy, and why the description, not the code, stays canonical.
+- [A policy for every skill: Sean Turner's natural-language control for agent skills, the behaviour policy behind it, and using models to need them less](a-policy-for-every-skill.md) Sean Turner's natural-language control for agent skills, read as a behaviour policy, and why the description, not the code, stays canonical.
 - [The policy draws the liability line: an answer to Ralf Thomas on agent accountability, and why every agent in a loop should take a behaviour policy beside its prompt](the-policy-draws-the-liability-line.md) An answer to Ralf Thomas: the shell game works because nothing is written down, and a behaviour policy's explicit prohibitions move the liability line.
 - [Who owns the words: agents can make decisions, but they cannot hold responsibility](who-owns-the-words.md) Agents in loops make real decisions, but responsibility stays with whoever granted the reach; disclosure is a label, not a team to manage.
 - [Where the platform draws the line: Microsoft Execution Containers, the shared responsibility model for agents, and the business logic above it](where-the-platform-draws-the-line.md) Microsoft's MXC and ACS, briefed field by field and mapped to Agent Behaviour Policies: the platform bounds what it can see; the business logic is above.
