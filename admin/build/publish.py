@@ -44,6 +44,12 @@ from pathlib import Path
 ROOT    = Path(__file__).resolve().parents[2]
 CONTENT = "admin/content/articles"
 NEWSLETTER = "admin/content/newsletter"                 # -> sgit.ai's admin/content/newsroom/newsletter/
+# Folded history: sources whose published version pages start from the current text. For each path
+# listed, the replay writes the working tree's version at every past commit, so the site shows one
+# version and no diff page repeats what was removed. The repository's git history is untouched and
+# keeps every version. Use only for text the owner decides must not be on the site, such as a name
+# published before its owner agreed. Each entry records why.
+FOLDS = ROOT / "admin/build/history-folds.json"
 # Where each kind of source lands in the sgit.ai tree.
 TARGETS = (("images/", "articles/images/"), ("data/", "articles/data/"), ("graphs/", CONTENT + "/graphs/"), ("", CONTENT + "/"))
 
@@ -92,6 +98,7 @@ def authored_slugs(files):
 def replay(clone):
     """One commit in the clone for each commit here that touched the article sources."""
     log = git("log", "--reverse", "--format=%H%x09%aI%x09%an%x09%ae%x09%s", "--", CONTENT, NEWSLETTER).splitlines()
+    folds = json.loads(FOLDS.read_text())["paths"] if FOLDS.exists() else {}
     for line in log:
         sha, date, name, email, subject = line.split("\t", 4)
         changed = git("diff-tree", "--no-commit-id", "--name-status", "-r", "--root", sha, "--", CONTENT, NEWSLETTER).splitlines()
@@ -107,6 +114,9 @@ def replay(clone):
             if status.startswith("R"):
                 (clone / target(paths[0])).unlink(missing_ok=True)
             dest.parent.mkdir(parents=True, exist_ok=True)
+            if path in folds and (ROOT / path).exists():
+                dest.write_bytes((ROOT / path).read_bytes())          # folded: the current text at every commit
+                continue
             dest.write_bytes(subprocess.run(["git", "show", f"{sha}:{path}"], cwd=ROOT, capture_output=True).stdout)
         run(["git", "add", "-A"], clone, quiet=True)
         env = dict(os.environ, GIT_AUTHOR_DATE=date, GIT_COMMITTER_DATE=date, GIT_AUTHOR_NAME=name,
