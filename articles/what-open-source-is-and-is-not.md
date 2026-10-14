@@ -99,6 +99,10 @@ Startups & strategySite & engineering[This article as a graph →](graphs.md#wha
 - [A supply chain of vaults: how GenAI, open data and small custom tools could bring the price of food down](supply-chain-of-vaults.md) The food chain is a data problem: one encrypted vault per party, joined by append lanes and a typed graph, could cut the waste that keeps prices high.
 - [Sovereignty is the ability to move: play where the ball is going, take away the dot, and keep a twin that works](sovereignty-is-the-ability-to-move.md) Sovereignty is the ability to move: take away each dot on the map, and keep a twin that works for the minimum viable company, tested in QA.
 
+### Continued by
+
+- [The eyeballs get cheap: why open source is about to become the most secure software we have, and why secure, sovereign and paid-for meet at the least code in production](the-eyeballs-get-cheap.md) Cheap, deep AI security review gives open source the eyeballs it never had; with sovereignty and paid maintenance, all point at the least code in production.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 96 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=96)

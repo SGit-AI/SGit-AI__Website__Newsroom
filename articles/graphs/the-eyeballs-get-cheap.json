@@ -1,0 +1,212 @@
+{
+  "slug": "the-eyeballs-get-cheap",
+  "teaser": "Cheap, deep AI security review gives open source the eyeballs it never had; with sovereignty and paid maintenance, all point at the least code in production.",
+  "topics": [
+    "startups-and-strategy",
+    "news-and-evidence"
+  ],
+  "core_idea": "Open source and proprietary software had no clear security winner because open source had visibility without paid review and proprietary had budget and the cover of being hidden; model-driven review makes deep attention cheap and repeatable, which helps open source far more, as curl's year shows with noise, then hundreds of real fixes, a quiet frontier scan and deeper tools finding more; with sovereignty requiring open code and schemas and a business model of maintaining each customer's minimal version, secure, sovereign and paid-for converge on running the least code in production.",
+  "nodes": [
+    {
+      "id": "eyeballs",
+      "label": "Given enough eyeballs",
+      "kind": "concept",
+      "summary": "Raymond's argument; the eyeballs were rarely there."
+    },
+    {
+      "id": "old-balance",
+      "label": "No clear winner",
+      "kind": "claim",
+      "summary": "Open source had visibility, proprietary had budget and cover."
+    },
+    {
+      "id": "understaffed",
+      "label": "Unpaid maintainers",
+      "kind": "example",
+      "summary": "60 percent unpaid hobbyists in Tidelift's 2024 survey."
+    },
+    {
+      "id": "cheap",
+      "label": "The eyeballs get cheap",
+      "kind": "claim",
+      "summary": "Deep model-driven review, repeatable on every change."
+    },
+    {
+      "id": "scale",
+      "label": "Review at scale",
+      "kind": "example",
+      "summary": "Over 1,000 projects scanned; 2,000 patches across 500 projects."
+    },
+    {
+      "id": "curl",
+      "label": "curl's year",
+      "kind": "example",
+      "summary": "Noise, hundreds of fixes, one bug in a frontier scan, then more."
+    },
+    {
+      "id": "bottleneck",
+      "label": "Judging, not finding",
+      "kind": "claim",
+      "summary": "Maintainers' time to verify and patch is the new bottleneck."
+    },
+    {
+      "id": "bar",
+      "label": "A higher bar",
+      "kind": "claim",
+      "summary": "Proof, provenance, fewer and better projects, a shorter long tail."
+    },
+    {
+      "id": "town-planners",
+      "label": "Town planner code",
+      "kind": "concept",
+      "summary": "Mission-critical code industrialised, reviewed and accountable."
+    },
+    {
+      "id": "secure",
+      "label": "Secure",
+      "kind": "concept",
+      "summary": "Open source with the attention it never had."
+    },
+    {
+      "id": "sovereign",
+      "label": "Sovereign",
+      "kind": "concept",
+      "summary": "You can only move what you can read and run elsewhere."
+    },
+    {
+      "id": "paid",
+      "label": "Paid for",
+      "kind": "concept",
+      "summary": "Each customer's private version, maintained by the experts."
+    },
+    {
+      "id": "least-code",
+      "label": "The least code in production",
+      "kind": "claim",
+      "summary": "Where maintainer, customer and security all point."
+    }
+  ],
+  "edges": [
+    {
+      "from": "understaffed",
+      "to": "eyeballs",
+      "rel": "contrasts"
+    },
+    {
+      "from": "eyeballs",
+      "to": "old-balance",
+      "rel": "leads-to"
+    },
+    {
+      "from": "cheap",
+      "to": "old-balance",
+      "rel": "answers"
+    },
+    {
+      "from": "scale",
+      "to": "cheap",
+      "rel": "example-of"
+    },
+    {
+      "from": "curl",
+      "to": "cheap",
+      "rel": "example-of"
+    },
+    {
+      "from": "curl",
+      "to": "bottleneck",
+      "rel": "produces"
+    },
+    {
+      "from": "cheap",
+      "to": "bar",
+      "rel": "leads-to"
+    },
+    {
+      "from": "town-planners",
+      "to": "bar",
+      "rel": "extends"
+    },
+    {
+      "from": "bar",
+      "to": "secure",
+      "rel": "produces"
+    },
+    {
+      "from": "secure",
+      "to": "least-code",
+      "rel": "leads-to"
+    },
+    {
+      "from": "sovereign",
+      "to": "least-code",
+      "rel": "leads-to"
+    },
+    {
+      "from": "paid",
+      "to": "least-code",
+      "rel": "leads-to"
+    }
+  ],
+  "links": {
+    "articles": [
+      "chainguard-mapped",
+      "code-review-as-a-fractal-semantic-graph",
+      "sovereignty-is-the-ability-to-move",
+      "saas-apocalypse-decided-by-inertia-not-by-ai",
+      "what-open-source-is-and-is-not",
+      "open-source-is-not-free",
+      "the-minimum-code-below"
+    ],
+    "pages": [],
+    "sites": [
+      "https://daniel.haxx.se/blog/",
+      "https://daniel.haxx.se/blog/2026/01/26/the-end-of-the-curl-bug-bounty/",
+      "https://daniel.haxx.se/blog/2026/05/11/",
+      "https://daniel.haxx.se/blog/2026/10/14/a-uaf-turned-rce/",
+      "https://daniel.haxx.se/blog/2026/10/14/a-curl-audit-by-aisle/",
+      "https://github.com/curl/curl/blob/master/docs/CONTRIBUTE.md",
+      "https://www.anthropic.com/news/glasswing-initial-update",
+      "https://www.chainguard.dev/unchained/the-first-disclosure-from-our-mythos-harness",
+      "https://helpnetsecurity.com/2026/06/17/chainguard-athena-coalition-fix-open-source-vulnerabilities/",
+      "https://www.darpa.mil/news/2025/aixcc-results",
+      "https://www.theregister.com/2024/09/18/open_source_maintainers_underpaid/",
+      "http://www.catb.org/~esr/writings/cathedral-bazaar/cathedral-bazaar/ar01s04.html",
+      "https://blog.gardeviance.org/2015/03/on-pioneers-settlers-town-planners-and.html"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "Given enough eyeballs, all bugs are shallow.",
+      "why": "The old argument, finally affordable."
+    },
+    {
+      "text": "Any project that has not scanned their source code with AI powered tooling will likely find huge number of flaws",
+      "why": "A maintainer's view of the new baseline."
+    },
+    {
+      "text": "Town Planners are brilliant people. They are able to take something and industrialise it",
+      "why": "Where mission-critical code belongs."
+    }
+  ],
+  "figures": [
+    {
+      "file": "ox-balance.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ox-balance.webp",
+      "caption": "Open source against proprietary: the balance that just moved. Open source had the source in view and paid for few reviews; proprietary had the budget and the cover of being hidden. Cheap, deep, model-driven security review changes one side of that balance far more than the other.",
+      "kind": "comparison"
+    },
+    {
+      "file": "ox-curl.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ox-curl.webp",
+      "caption": "One project, one year of machine eyeballs: curl, from its maintainer's own posts. A bug bounty that found 87 vulnerabilities; a year of reports that were mostly noise; a first wave of AI-assisted reports that triggered hundreds of fixes; the end of the bounty; a frontier scan that found one bug; and, in October, deeper tools finding more.",
+      "kind": "comparison"
+    },
+    {
+      "file": "ox-forces.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ox-forces.webp",
+      "caption": "Three forces meeting at the least code in production: open source becoming very secure, open source becoming required for sovereignty, and open source with commercial models that pay for maintenance. Where they meet is the customer running exactly the code they need, maintained by the people who know it best.",
+      "kind": "architecture"
+    }
+  ]
+}

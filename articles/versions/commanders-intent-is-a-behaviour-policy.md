@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-14 | published | 2,619 | first published | this release | [current](../commanders-intent-is-a-behaviour-policy.md) |
+| **v1.0.0** | 2026-10-14 | published | 2,619 | first published | [`915fd959b`](https://github.com/SGit-AI/SGit-AI__Website/commit/915fd959b4d4999946b204903172340120fc06eb) | [current](../commanders-intent-is-a-behaviour-policy.md) |
 
 [← Back to the article](../commanders-intent-is-a-behaviour-policy.md) · [All articles](../index.md)
 
