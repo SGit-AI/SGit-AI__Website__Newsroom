@@ -125,6 +125,25 @@ def replay(clone):
     return len(log)
 
 
+TRAILS = ROOT / "admin/content/trails.json"
+
+
+def merge_trails(clone):
+    """Add the trails written here to sgit.ai's admin/content/trails.json in the clone, so `!trail <name>` in an
+    article written here renders the same row of cards the generator renders for sgit.ai's own trails. A trail
+    has one publisher: a name sgit.ai already uses is refused, never overwritten."""
+    if not TRAILS.exists():
+        return
+    ours = json.loads(TRAILS.read_text())
+    dest = clone / "admin/content/trails.json"
+    theirs = json.loads(dest.read_text()) if dest.exists() else {}
+    clash = sorted(set(ours) & set(theirs))
+    if clash:
+        sys.exit(f"publish: trail {', '.join(clash)} also exists on sgit.ai; a trail has one publisher")
+    theirs.update(ours)
+    dest.write_text(json.dumps(theirs, indent=1, ensure_ascii=False) + "\n")
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     ap.add_argument("--from", dest="src", required=True, help="a checkout of SGit-AI/SGit-AI__Website (read only)")
@@ -165,6 +184,7 @@ def main():
         dest = clone / target(f)
         dest.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(ROOT / f, dest)
+    merge_trails(clone)
     print(f"2/4 replayed {n} commit(s) of {CONTENT}/ and the working tree: {', '.join(slugs)}")
 
     print("3/4 generate and validate")

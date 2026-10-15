@@ -1,43 +1,226 @@
 {
  "slug": "your-own-newsroom",
  "teaser": "The recipe for a founder's own site: voice memos, an agent wired to GitHub that checks and publishes, GitHub Pages, and readers who pay a little.",
- "topics": ["site-and-engineering", "startups-and-strategy"],
+ "topics": [
+  "site-and-engineering",
+  "startups-and-strategy"
+ ],
  "core_idea": "An authentic founder's brand is their story, and it needs a medium that keeps it; the loop this site runs on can be replicated with what exists today: a public GitHub repository published to GitHub Pages by a workflow that validates first, a Claude cloud session that reads a house-rules file, researches, checks, writes and pushes, voice memos as the input, and the reader meter from api.newsroom.sgit.ai with a Stripe Payment Link the founder owns; the writing pipeline is a pattern to copy, not yet a kit, and nothing confidential belongs in a public repository.",
  "nodes": [
-  {"id": "brand", "label": "The founder is the brand", "kind": "claim", "summary": "Authentic founders need a medium that keeps their story."},
-  {"id": "record", "label": "History, stories, milestones", "kind": "concept", "summary": "What to capture, dated and checked."},
-  {"id": "loop", "label": "The loop", "kind": "method", "summary": "Speak, research, write, check, push, publish, read, pay."},
-  {"id": "repo", "label": "One public repository", "kind": "artefact", "summary": "Every article a file with a history."},
-  {"id": "pages", "label": "GitHub Pages via Actions", "kind": "artefact", "summary": "Validate, then publish; free within 1 GB and 100 GB a month."},
-  {"id": "session", "label": "A Claude cloud session", "kind": "artefact", "summary": "From browser or phone, connected to the repository."},
-  {"id": "rules", "label": "The house rules", "kind": "method", "summary": "Voice, verification, never publish, release steps."},
-  {"id": "meter", "label": "The reader meter", "kind": "artefact", "summary": "api.newsroom.sgit.ai v0.2.5: pay after reading, balance in the browser."},
-  {"id": "stripe", "label": "A Stripe Payment Link you own", "kind": "artefact", "summary": "Top-ups without card data on the site."},
-  {"id": "clientside", "label": "Pure client-side", "kind": "concept", "summary": "Static files, code in the reader's browser, no server holding data."},
-  {"id": "confidential", "label": "Nothing confidential", "kind": "question", "summary": "A public repository is public."},
-  {"id": "gap", "label": "Not a kit yet", "kind": "question", "summary": "The writing pipeline is a pattern to copy."}
+  {
+   "id": "brand",
+   "label": "The founder is the brand",
+   "kind": "claim",
+   "summary": "Authentic founders need a medium that keeps their story."
+  },
+  {
+   "id": "record",
+   "label": "History, stories, milestones",
+   "kind": "concept",
+   "summary": "What to capture, dated and checked."
+  },
+  {
+   "id": "loop",
+   "label": "The loop",
+   "kind": "method",
+   "summary": "Speak, research, write, check, push, publish, read, pay."
+  },
+  {
+   "id": "repo",
+   "label": "One public repository",
+   "kind": "artefact",
+   "summary": "Every article a file with a history."
+  },
+  {
+   "id": "pages",
+   "label": "GitHub Pages via Actions",
+   "kind": "artefact",
+   "summary": "Validate, then publish; free within 1 GB and 100 GB a month."
+  },
+  {
+   "id": "session",
+   "label": "A Claude cloud session",
+   "kind": "artefact",
+   "summary": "From browser or phone, connected to the repository."
+  },
+  {
+   "id": "rules",
+   "label": "The house rules",
+   "kind": "method",
+   "summary": "Voice, verification, never publish, release steps."
+  },
+  {
+   "id": "meter",
+   "label": "The reader meter",
+   "kind": "artefact",
+   "summary": "api.newsroom.sgit.ai v0.2.5: pay after reading, balance in the browser."
+  },
+  {
+   "id": "stripe",
+   "label": "A Stripe Payment Link you own",
+   "kind": "artefact",
+   "summary": "Top-ups without card data on the site."
+  },
+  {
+   "id": "clientside",
+   "label": "Pure client-side",
+   "kind": "concept",
+   "summary": "Static files, code in the reader's browser, no server holding data."
+  },
+  {
+   "id": "confidential",
+   "label": "Nothing confidential",
+   "kind": "question",
+   "summary": "A public repository is public."
+  },
+  {
+   "id": "gap",
+   "label": "Not a kit yet",
+   "kind": "question",
+   "summary": "The writing pipeline is a pattern to copy."
+  },
+  {
+   "id": "abp",
+   "label": "A behaviour policy for the agents",
+   "kind": "method",
+   "summary": "Grant, mandate and rules, down to tone and how often to publish."
+  },
+  {
+   "id": "roles",
+   "label": "Writer, editor, publisher",
+   "kind": "example",
+   "summary": "Separate agents with separate grants."
+  },
+  {
+   "id": "hooks",
+   "label": "Prompt or hook",
+   "kind": "concept",
+   "summary": "A rule in a prompt is kept by the agent; a hook keeps it whatever the agent intends."
+  },
+  {
+   "id": "privatevault",
+   "label": "A private vault beside the site",
+   "kind": "artefact",
+   "summary": "Drafts, data and guidance encrypted; only approved text published."
+  }
  ],
  "edges": [
-  {"from": "brand", "to": "record", "rel": "depends-on"},
-  {"from": "loop", "to": "record", "rel": "produces"},
-  {"from": "loop", "to": "session", "rel": "depends-on"},
-  {"from": "session", "to": "rules", "rel": "depends-on"},
-  {"from": "session", "to": "repo", "rel": "produces"},
-  {"from": "repo", "to": "pages", "rel": "leads-to"},
-  {"from": "meter", "to": "stripe", "rel": "depends-on"},
-  {"from": "meter", "to": "clientside", "rel": "example-of"},
-  {"from": "pages", "to": "clientside", "rel": "example-of"},
-  {"from": "rules", "to": "confidential", "rel": "answers"},
-  {"from": "gap", "to": "loop", "rel": "extends"}
+  {
+   "from": "brand",
+   "to": "record",
+   "rel": "depends-on"
+  },
+  {
+   "from": "loop",
+   "to": "record",
+   "rel": "produces"
+  },
+  {
+   "from": "loop",
+   "to": "session",
+   "rel": "depends-on"
+  },
+  {
+   "from": "session",
+   "to": "rules",
+   "rel": "depends-on"
+  },
+  {
+   "from": "session",
+   "to": "repo",
+   "rel": "produces"
+  },
+  {
+   "from": "repo",
+   "to": "pages",
+   "rel": "leads-to"
+  },
+  {
+   "from": "meter",
+   "to": "stripe",
+   "rel": "depends-on"
+  },
+  {
+   "from": "meter",
+   "to": "clientside",
+   "rel": "example-of"
+  },
+  {
+   "from": "pages",
+   "to": "clientside",
+   "rel": "example-of"
+  },
+  {
+   "from": "rules",
+   "to": "confidential",
+   "rel": "answers"
+  },
+  {
+   "from": "gap",
+   "to": "loop",
+   "rel": "extends"
+  },
+  {
+   "from": "abp",
+   "to": "rules",
+   "rel": "extends"
+  },
+  {
+   "from": "roles",
+   "to": "abp",
+   "rel": "depends-on"
+  },
+  {
+   "from": "hooks",
+   "to": "abp",
+   "rel": "answers"
+  },
+  {
+   "from": "privatevault",
+   "to": "confidential",
+   "rel": "answers"
+  }
  ],
  "links": {
-  "articles": ["the-expert-founders", "my-memory-checked", "every-mistake-added-a-rule", "how-the-voice-works", "paying-after-the-value", "riskmandate-ten-questions", "omnichannel-programming"],
+  "articles": [
+   "the-expert-founders",
+   "my-memory-checked",
+   "every-mistake-added-a-rule",
+   "how-the-voice-works",
+   "paying-after-the-value",
+   "riskmandate-ten-questions",
+   "omnichannel-programming",
+   "a-policy-beside-the-prompt",
+   "the-policy-draws-the-liability-line",
+   "commanders-intent-is-a-behaviour-policy",
+   "are-hooks-the-sweet-spot",
+   "the-agents-write-too",
+   "agent-workflows-on-ephemeral-vaults"
+  ],
   "pages": [],
-  "sites": ["https://api.newsroom.sgit.ai/", "https://api.newsroom.sgit.ai/for-publishers/", "https://api.newsroom.sgit.ai/for-developers/", "https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits", "https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site", "https://code.claude.com/docs/en/claude-code-on-the-web"]
+  "sites": [
+   "https://api.newsroom.sgit.ai/",
+   "https://api.newsroom.sgit.ai/for-publishers/",
+   "https://api.newsroom.sgit.ai/for-developers/",
+   "https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits",
+   "https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site",
+   "https://code.claude.com/docs/en/claude-code-on-the-web",
+   "https://abp.sgit.ai/what-is-an-abp/index.html",
+   "https://sgit.ai/"
+  ]
  },
  "quotes": [
-  {"text": "The memo is a draft of a thought; the article is the thought, checked.", "why": "What the loop does."},
-  {"text": "It is an honesty box, not a paywall", "why": "How readers pay."},
-  {"text": "Published GitHub Pages sites may be no larger than 1 GB", "why": "The host's limit."}
+  {
+   "text": "The memo is a draft of a thought; the article is the thought, checked.",
+   "why": "What the loop does."
+  },
+  {
+   "text": "It is an honesty box, not a paywall",
+   "why": "How readers pay."
+  },
+  {
+   "text": "Published GitHub Pages sites may be no larger than 1 GB",
+   "why": "The host's limit."
+  }
  ]
 }

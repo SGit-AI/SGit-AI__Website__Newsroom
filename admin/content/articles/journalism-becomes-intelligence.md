@@ -3,7 +3,7 @@ title: When journalism becomes intelligence, built: an observation desk for one 
 date: 2026-10-15
 author: Dinis Cruz
 author_url: about/index.html
-summary: Francesco Marconi shared the slides of an INMA talk with a line I agree with completely: "As AI makes content production easier, journalism's competitive advantage will increasingly come from how we observe the world." His deck makes it concrete with a data-center buildout in the desert: journalism as delta science, a map of who wants what, an atlas of events each with a definition and an observable signal, a domain ontology, observations that add to what the newsroom knows, a workflow of observe, compare, check, report and update, and a community impact tracker. I wanted to see it working, so this site's agent built it: a vault on this site, an app that follows the eleven slides and runs each one on real data structures. The atlas has all 12 families and 78 event types; the ontology has six entities and six relationships; sixteen source records produce seventeen observations, each a subject, a change, a time and its evidence; and the tracker turns them into an article and two alerts. The records are synthetic, on purpose: a fictional campus in a fictional county, because fake permits under real agencies' names would be exactly the kind of record a newsroom like this should never publish. The method is the point, and a vault is a natural home for it: the observation history is a versioned record, the evidence travels with every claim, and anyone with the read key can open it, check it, and copy it for their own beat.
+summary: Francesco Marconi shared the slides of an INMA talk with a line I agree with completely: "As AI makes content production easier, journalism's competitive advantage will increasingly come from how we observe the world." His deck makes it concrete with a data-center buildout in the desert: journalism as delta science, a map of who wants what, an atlas of events each with a definition and an observable signal, a domain ontology, observations that add to what the newsroom knows, a workflow of observe, compare, check, report and update, and a community impact tracker. I wanted to see it working, so this site's agent built it: a vault on this site, an app of seventeen pages that follows the eleven slides, runs each one on real data structures, and adds five graphs of the same knowledge. The atlas has all 12 families and 78 event types; the ontology has six entities and six relationships; sixteen source records produce seventeen observations, each a subject, a change, a time and its evidence; and the tracker turns them into an article and two alerts. The records are synthetic, on purpose: a fictional campus in a fictional county, because fake permits under real agencies' names would be exactly the kind of record a newsroom like this should never publish. The method is the point, and a vault is a natural home for it: the observation history is a versioned record, the evidence travels with every claim, and anyone with the read key can open it, check it, and copy it for their own beat.
 version: v0.12.69
 license: https://creativecommons.org/licenses/by/4.0/
 tags: journalism, intelligence, observation, events, ontology, data-centers, vaults, sgit, provenance, local-news, synthetic-data, article
@@ -12,6 +12,8 @@ status: published
 
 !shot ji-desk.webp | images/ | The observation desk's cover, in the deck's style: the headline, and a synthetic data-center campus drawn in pen and ink, with orange markers on the power station, the data halls, the water tower, the town and the reservoir. Every marker in the vault opens a record. | comparison
 
+!trail mesa-ranch
+
 ## In short {#in-short}
 
 - **The advantage is how you observe.** Marconi's argument, and the reason this site exists.
@@ -19,6 +21,7 @@ status: published
 - **So we built it.** A vault that follows the eleven slides, each one working on data.
 - **78 event types, 6 entities, 16 records, 17 observations.** Each observation a subject, a change, a time and evidence.
 - **Synthetic on purpose.** A fictional campus; no fake records under real agencies' names.
+- **Five graphs of one knowledge.** A fractal graph you open level by level, and a knowledge graph you play in time.
 - **A vault is the right home.** The history is versioned, the evidence travels, the read key opens it.
 - **Copy it for your beat.** Replace the families and records; the app does not change.
 
@@ -58,6 +61,16 @@ The synthetic records were written to behave like real ones: they disagree with 
 
 Each of those is an observation with its evidence attached, and two became alerts and one a draft article in the tracker. None of them needed a model to be clever. They needed the atlas to say what a change is, the ontology to say what it changes, and the history to say what was known before.
 
+## The same knowledge, at every level {#graphs}
+
+!shot ji-fractal.webp | images/ | The fractal semantic graph in the vault: the question opens into the actors and the campus, the campus into twelve event families, and here Power and utilities into its seven event types; the breadcrumb leads back up, and every node's details open on the right. | architecture
+
+An atlas, an ontology and an observation history are three views of one graph, and the vault draws it five ways. The [fractal semantic graph](/articles/introducing-fractal-semantic-graphs.html) starts at the question and opens any node into the graph inside it: the campus into its twelve event families, a family into its event types, an event type into the observations that matched it, an observation into its records. Every level has the same shape, which is the point of a fractal graph, and it is the same idea as [reading code as a fractal semantic graph](/articles/code-review-as-a-fractal-semantic-graph.html): you never need the whole thing at once, only the level you are on and the way down. A radial view puts every level on one page, with the evidence in orange. A bipartite graph joins the sixteen records to the seventeen observations they support. And a delta chain lays the observations on a time axis, with an arc from each one to the earlier observation it was compared with.
+
+!shot ji-knowledge.webp | images/ | The knowledge graph, in time: the ontology instantiated with the campus, its buildings, the projects, the companies, the county, the water district and the residents, played one observation at a time; at the acquisition, the new relationship is orange. | architecture
+
+The one I like most is the knowledge graph played in time. It is the ontology instantiated, the campus, its three buildings, the two projects, four companies and the public bodies, and each relationship carries the observation that created it, and, if one did, the observation that ended it. Press play and it is delta science you can watch: the generation station appears with its permit, the development agreement ties the county to the campus, two buildings appear in August, the developer is bought, and the ownership edge moves from one company to another. That is what a newsroom's memory should look like: not a pile of articles, but a graph whose every edge has a date and a source.
+
 ## Where AI fits {#ai}
 
 This is also where I think the deck is right about AI, and where it matters for newsrooms. Observing and comparing used to be the expensive part: reading every registry, every agenda, every filing, every week. Models make that cheap. What they do not replace is the definition of what matters, the check before anything is published, and the judgement about what to report, which is exactly the part the deck gives to journalists, in three labels: "Direct attention", "Investigate significance" and "Exercise editorial judgment". The workflow slide in the vault walks one cycle through it: the investor presentation arrives, is matched to *Planned milestone revised*, is compared with April's statement, is checked by a person, becomes an alert, and updates the history so the next statement is compared with 2028, not 2027.
@@ -84,6 +97,7 @@ The slide that closes the deck is the brief: "Choose a question. Map the system.
 - **The atlas is ours.** The deck names 12 families and 12 examples; the other 66 event types were written for this vault.
 - **It does not watch anything.** The desk shows the method on fixed records; it does not read live registries.
 - **It is not Marconi's work or endorsed by him.** It is our reading of his public slides.
+- **Updated on 15 October.** The vault became seventeen pages with a menu and a details panel, and gained the five graph pages.
 
 If you run a local desk and want an observation vault for your own patch, write to [agent@riskmandate.ai](mailto:agent@riskmandate.ai).
 

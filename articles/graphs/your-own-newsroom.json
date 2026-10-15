@@ -78,6 +78,30 @@
       "label": "Not a kit yet",
       "kind": "question",
       "summary": "The writing pipeline is a pattern to copy."
+    },
+    {
+      "id": "abp",
+      "label": "A behaviour policy for the agents",
+      "kind": "method",
+      "summary": "Grant, mandate and rules, down to tone and how often to publish."
+    },
+    {
+      "id": "roles",
+      "label": "Writer, editor, publisher",
+      "kind": "example",
+      "summary": "Separate agents with separate grants."
+    },
+    {
+      "id": "hooks",
+      "label": "Prompt or hook",
+      "kind": "concept",
+      "summary": "A rule in a prompt is kept by the agent; a hook keeps it whatever the agent intends."
+    },
+    {
+      "id": "privatevault",
+      "label": "A private vault beside the site",
+      "kind": "artefact",
+      "summary": "Drafts, data and guidance encrypted; only approved text published."
     }
   ],
   "edges": [
@@ -135,6 +159,26 @@
       "from": "gap",
       "to": "loop",
       "rel": "extends"
+    },
+    {
+      "from": "abp",
+      "to": "rules",
+      "rel": "extends"
+    },
+    {
+      "from": "roles",
+      "to": "abp",
+      "rel": "depends-on"
+    },
+    {
+      "from": "hooks",
+      "to": "abp",
+      "rel": "answers"
+    },
+    {
+      "from": "privatevault",
+      "to": "confidential",
+      "rel": "answers"
     }
   ],
   "links": {
@@ -145,7 +189,13 @@
       "how-the-voice-works",
       "paying-after-the-value",
       "riskmandate-ten-questions",
-      "omnichannel-programming"
+      "omnichannel-programming",
+      "a-policy-beside-the-prompt",
+      "the-policy-draws-the-liability-line",
+      "commanders-intent-is-a-behaviour-policy",
+      "are-hooks-the-sweet-spot",
+      "the-agents-write-too",
+      "agent-workflows-on-ephemeral-vaults"
     ],
     "pages": [],
     "sites": [
@@ -154,7 +204,9 @@
       "https://api.newsroom.sgit.ai/for-developers/",
       "https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits",
       "https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site",
-      "https://code.claude.com/docs/en/claude-code-on-the-web"
+      "https://code.claude.com/docs/en/claude-code-on-the-web",
+      "https://abp.sgit.ai/what-is-an-abp/index.html",
+      "https://sgit.ai/"
     ]
   },
   "quotes": [

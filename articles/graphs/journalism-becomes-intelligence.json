@@ -78,6 +78,12 @@
       "label": "Make one for your beat",
       "kind": "question",
       "summary": "Choose a question, map the system, define events, keep observing."
+    },
+    {
+      "id": "graphs",
+      "label": "Five graphs of one knowledge",
+      "kind": "artefact",
+      "summary": "Fractal, radial, knowledge graph in time, evidence, delta chain."
     }
   ],
   "edges": [
@@ -135,13 +141,20 @@
       "from": "advantage",
       "to": "yours",
       "rel": "leads-to"
+    },
+    {
+      "from": "graphs",
+      "to": "observations",
+      "rel": "depends-on"
     }
   ],
   "links": {
     "articles": [
       "the-wire-as-a-graph",
       "my-memory-checked",
-      "every-link-points-back"
+      "every-link-points-back",
+      "introducing-fractal-semantic-graphs",
+      "code-review-as-a-fractal-semantic-graph"
     ],
     "pages": [
       "demos/vaults/mesa-ranch-desk/index.html"
@@ -157,8 +170,8 @@
       "why": "Marconi's argument."
     },
     {
-      "text": "a single record says little, and the change only appears when it is compared with the last one",
-      "why": "Why the history matters."
+      "text": "not a pile of articles, but a graph whose every edge has a date and a source",
+      "why": "What a newsroom's memory should look like."
     },
     {
       "text": "The shape is the deck's; the facts are fiction, and the vault says so first.",
@@ -183,6 +196,18 @@
       "url": "https://newsroom.sgit.ai/articles/images/ji-observations.webp",
       "caption": "Every observation adds to what the newsroom knows: four headline observations as folders, January to September 2026, and the full history below, each with time, subject, change, event type and the records it rests on.",
       "kind": "comparison"
+    },
+    {
+      "file": "ji-fractal.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ji-fractal.webp",
+      "caption": "The fractal semantic graph in the vault: the question opens into the actors and the campus, the campus into twelve event families, and here Power and utilities into its seven event types; the breadcrumb leads back up, and every node's details open on the right.",
+      "kind": "architecture"
+    },
+    {
+      "file": "ji-knowledge.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ji-knowledge.webp",
+      "caption": "The knowledge graph, in time: the ontology instantiated with the campus, its buildings, the projects, the companies, the county, the water district and the residents, played one observation at a time; at the acquisition, the new relationship is orange.",
+      "kind": "architecture"
     },
     {
       "file": "ji-tracker.webp",

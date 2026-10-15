@@ -4,18 +4,18 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.12.70 · 139 articles since 2026-08-17; the newest is 2026-10-15. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v0.12.71 · 140 articles since 2026-08-17; the newest is 2026-10-15. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## The lead
 
-- [When journalism becomes intelligence, built: an observation desk for one data-center buildout, from an atlas of 78 events to a community impact tracker, in a vault you can open](articles/journalism-becomes-intelligence.md), 2026-10-15, 7 min. Marconi's deck on journalism as intelligence, built as a working vault: 78 event types, an ontology, 17 observations and a community tracker, all synthetic.
+- [Inside the Mesa Ranch desk: a page-by-page tour of an observation vault, from the cover to the knowledge graph you can play in time](articles/inside-the-mesa-ranch-desk.md), 2026-10-15, 10 min. A page-by-page tour of the Mesa Ranch observation vault: the argument, the system, the record, five graphs, and how to open and rebuild it.
 
 ## Highlights
 
-- [Your own newsroom: how a founder can tell their story by voice memo, with an agent that checks it and publishes it to GitHub Pages, and readers who pay a little if they find it useful](articles/your-own-newsroom.md), 2026-10-15, 7 min.
+- [When journalism becomes intelligence, built: an observation desk for one data-center buildout, from an atlas of 78 events to a community impact tracker, in a vault you can open](articles/journalism-becomes-intelligence.md), 2026-10-15, 9 min.
+- [Your own newsroom: how a founder can tell their story by voice memo, with an agent that checks it and publishes it to GitHub Pages, and readers who pay a little if they find it useful](articles/your-own-newsroom.md), 2026-10-15, 12 min.
 - [The expert founders: why the next startups will be built by the people who know the problem, and why Europe's slower, sceptical money suits them](articles/the-expert-founders.md), 2026-10-15, 12 min.
 - [Omnichannel programming: briefs by voice, reviews by voice, previews on the phone, and one shared state underneath, at every stage from explorer to town planner](articles/omnichannel-programming.md), 2026-10-15, 9 min.
-- [secrets.sgit.ai on public keys: no more shared keys, eight ways a secret moves, a vault for the private key, and the commercial service it becomes](articles/secrets-on-public-keys.md), 2026-10-15, 8 min.
 
 ## Who are you reading as?
 
@@ -36,7 +36,7 @@ For security leads, risk owners and boards deciding what an agent may do and who
 
 ### Building with agents (27)
 For engineers and builders running agents day to day: tools, memory, email, desktops and review.
-- [Your own newsroom: how a founder can tell their story by voice memo, with an agent that checks it and publishes it to GitHub Pages, and readers who pay a little if they find it useful](articles/your-own-newsroom.md), 2026-10-15, 7 min.
+- [Your own newsroom: how a founder can tell their story by voice memo, with an agent that checks it and publishes it to GitHub Pages, and readers who pay a little if they find it useful](articles/your-own-newsroom.md), 2026-10-15, 12 min.
 - [The scripted talk: a presentation as a timeline that plays on a clock, the two vaults it grows out of, and a player built for tonight's ten minutes](articles/the-scripted-talk.md), 2026-10-15, 7 min.
 - [sgit in GitHub Actions, side by side: a showcase repository and site that runs four ways of moving a vault between jobs on every run, measured, with a budget for its LLM steps](articles/sgit-actions-side-by-side.md), 2026-10-14, 7 min.
 
@@ -46,11 +46,11 @@ For anyone who needs evidence they can open: encrypted vaults, keys, graphs and 
 - [secrets.sgit.ai on public keys: no more shared keys, eight ways a secret moves, a vault for the private key, and the commercial service it becomes](articles/secrets-on-public-keys.md), 2026-10-15, 8 min.
 - [My memory, checked: thinking out loud in a voice memo, publishing only what the record supports, and why peer review has moved to before publishing](articles/my-memory-checked.md), 2026-10-15, 6 min.
 
-### The future of news (25)
+### The future of news (26)
 For editors, journalists and publishers asking how news gets paid for when agents do the reading.
-- [When journalism becomes intelligence, built: an observation desk for one data-center buildout, from an atlas of 78 events to a community impact tracker, in a vault you can open](articles/journalism-becomes-intelligence.md), 2026-10-15, 7 min.
+- [Inside the Mesa Ranch desk: a page-by-page tour of an observation vault, from the cover to the knowledge graph you can play in time](articles/inside-the-mesa-ranch-desk.md), 2026-10-15, 10 min.
+- [When journalism becomes intelligence, built: an observation desk for one data-center buildout, from an atlas of 78 events to a community impact tracker, in a vault you can open](articles/journalism-becomes-intelligence.md), 2026-10-15, 9 min.
 - [The wire as a graph: start from what the reader sees, give every story and every name a long-lived ID, link every phrase of a short narrative, and a brief for the desks](articles/the-wire-as-a-graph.md), 2026-10-14, 10 min.
-- [Dark mode, and four more: five themes for the newsroom, chosen once and kept in your browser](articles/dark-mode-and-four-more.md), 2026-10-13, 14 min.
 
 ### Strategy & startups (23)
 For founders and investors: pricing, early access, Wardley maps and who pays for open source.

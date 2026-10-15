@@ -67,3 +67,6 @@ nav.site .gh .lbl{margin-left:.3em}
   nav.site a.ver{display:none}
 }
 @media print{nav.site .nav-tools{display:none}}
+
+/* A trail of exactly three cards fills the row in three columns (the imported stylesheet lays trails out in four). */
+@media (min-width:861px){.trail-row:has(> .trail-c:nth-child(3):last-child){grid-template-columns:repeat(3,minmax(0,1fr))}}

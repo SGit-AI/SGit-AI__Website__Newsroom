@@ -4,7 +4,7 @@ date: 2026-10-15
 author: Dinis Cruz
 author_url: about/index.html
 summary: The founders I most want to see succeed are the authentic ones, the people who come from the field they are building for. Their brand is themselves, and they need a medium for it: a place that keeps their history, what they do, their stories, their struggles, their ideas, their path and their milestones, so that they remember it and others can find it. This site is written that way. I record a voice memo, an agent session wired to GitHub researches it, checks every claim, writes it in my voice and publishes it to a static site, and readers pay a few pence a page if they find it useful. Everything needed to do the same exists today. This is the recipe, step by step: one public GitHub repository; GitHub Pages, published by GitHub Actions after a validation step; a Claude plan with cloud sessions and the Claude GitHub App, used from a browser or a phone; a house-rules file the agent reads first; the reader meter from api.newsroom.sgit.ai, pinned to a release, with a Stripe Payment Link you own; and the habits that make it trustworthy: corrections in the open, sources at the end, and nothing confidential in a public repository. It is simpler than this newsroom, and it does not need to be called a newsroom. It is also a good way to learn, in a native way, what publishing a pure client-side site actually means.
-version: v0.12.68
+version: v0.12.71
 license: https://creativecommons.org/licenses/by/4.0/
 tags: newsroom, replicate, voice-memos, github-pages, github-actions, claude-code, founders, sg-meter, payments, client-side, how-to, article
 status: published
@@ -19,6 +19,9 @@ status: published
 - **Everything needed exists today.** GitHub, GitHub Pages, Claude cloud sessions, the reader meter, a Stripe Payment Link.
 - **The house rules are the product.** One file the agent reads first: your voice, what to check, what never to publish.
 - **It is pure client-side.** Static files on a free host; the reader's balance lives in the reader's browser.
+- **A behaviour policy runs the agents.** From the privileges they get to how often you publish and in what tone.
+- **Writer, editor, publisher.** Separate agents, separate grants, enforced by prompt or by hook.
+- **A private vault beside the public site.** Drafts, data and guidance stay encrypted; only the final text is published.
 - **Honest about the gaps.** The writing pipeline is a pattern to copy, not yet a kit.
 
 ## Why a founder needs one {#why}
@@ -153,6 +156,43 @@ Put your own Stripe Payment Link in `topup.link`; while it is empty, no money mo
 
 One condition to know. GitHub says Pages "is not intended for or allowed to be used as a free web-hosting service to run your online business", or a site "primarily directed at either facilitating commercial transactions or providing commercial software as a service". A writing site with an optional meter is primarily writing; if yours becomes primarily a shop, move it to a host that allows that. The files are static, so they move anywhere.
 
+## A behaviour policy for your agents {#policy}
+
+The house rules are a start. The next step is to write them as an [Agent Behaviour Policy](https://abp.sgit.ai/what-is-an-abp/index.html): a versioned file that says what the agent is given, what it is for, and what it must not do, with each rule marked by what keeps it. It does two jobs at once, and both matter for a founder.
+
+The first is security. An agent that publishes for you needs real privileges: it can push to your repository, which means it can publish anything to your site. The policy is where you write down exactly what it is granted and what it is not: push to the one repository, never to another; publish from the main branch only after the checks pass; never hold your Stripe keys; never commit a key, a password or a client's name. [A policy beside the prompt](/articles/a-policy-beside-the-prompt.html) argued that every agent should take one as an input, and [the policy draws the liability line](/articles/the-policy-draws-the-liability-line.html): what the agent was allowed to do is what you are accountable for.
+
+The second is the business logic, and this is where it becomes yours. A behaviour policy is not only a security control; it goes all the way down to how you want the work done. You can write that you do not want more than one post a day; that the tone is warm, plain and first person; that every claim about a client needs their written permission; that nothing goes out on a Sunday; that every article ends with what it does not claim. These are the instructions you would give a new member of staff, written once, in a form an agent can follow and a person can check. [Commander's intent is a behaviour policy](/articles/commanders-intent-is-a-behaviour-policy.html) makes the same point from the other end: say what you want achieved and the limits, and let the agent work inside them.
+
+```markdown
+# Behaviour policy: my site (v1.0)
+
+## Grant
+- Push to github.com/me/my-site, branch main. Nothing else.
+- Read my drafts vault. Never write to it without asking.
+
+## Mandate
+- Turn my voice memos into articles in my voice, check them, publish them.
+
+## Rules  [barrier: expectation = the agent keeps it, setting = a hook keeps it]
+1. At most one new article a day.                        [setting: pre-push hook]
+2. Every fact has a source link; correct my memo where it is wrong.   [expectation]
+3. Tone: warm, plain, first person; British spelling.    [expectation]
+4. Never publish a client's name without written consent. [expectation, checked by the editor]
+5. Leak scan before every commit: no keys, no client data. [setting: pre-commit hook]
+6. Every release is built and validated before it is pushed. [setting: CI]
+```
+
+It also lets you split the work, as this site does, across more than one agent. A **writer** turns the memo into a draft; an **editor** checks it against the rules, the sources and your voice, and can send it back; a **publisher** is the only one granted the push, and only for drafts the editor has passed. Each has its own section of the policy and its own grant, so the agent that writes cannot publish on its own, and the one that publishes cannot invent. This newsroom works the same way, with named agents for writing, the wire and the design, each with its own page; [the agents write too](/articles/the-agents-write-too.html) describes them.
+
+The policy is enforced in two ways, and the difference is worth knowing. The simplest is the prompt: the policy is read at the start of every session and summarised on every prompt, which is how this site's own writing session works, under a policy of eleven rules that is re-read after every summary and reports its status every few answers. That keeps the rules in view, but it is still the agent keeping them. The stronger way is a hook: a small program the agent's environment runs before and after each action, which blocks a push on a second article in a day or a commit that contains a key, whatever the agent intended. [Are hooks the sweet spot?](/articles/are-hooks-the-sweet-spot.html) moved this site's own policy into hooks, rule by rule, and more than half of its rules could move. Mark each rule by which of the two keeps it, and you know which ones to trust.
+
+## Further: a private vault beside the public site {#vault}
+
+A more advanced setup keeps everything that should not be public out of the public repository altogether. The repository holds what is published. Beside it, an [sgit](https://sgit.ai/) vault holds the rest: drafts you are not ready to show, transcripts of the interviews the agent ran with you, the data an article was built from, notes about clients, the guidance and examples you want the agent to learn your voice from, and the agent's own working files. A vault is encrypted on your machine before anything is uploaded, versioned like git, and opened only with its key, so the server that stores it cannot read it.
+
+The workflow stays the same, with one more step. The agent session clones the vault with a key you give it through the environment, never in a file in the repository; it writes the draft and its working material into the vault; the editor reads it there; and only when an article is approved does the publisher copy the final text into the public repository. Nothing private ever touches the public history. This is how this site's own writing session keeps its working material: scripts, figures, measurements and reviews in a vault of its own, while only the articles reach the site. And because a vault can publish a read-only key on purpose, you can choose to share a single folder, a data set behind an article, say, without sharing the rest. [Agent workflows on ephemeral vaults](/articles/agent-workflows-on-ephemeral-vaults.html) goes further, with seven architectures from one agent to a swarm.
+
 ## What it is like to run {#running}
 
 On this site, in three days, 54 messages from me, ten of them voice memos, became 40 releases, each with figures, sources and a section on what it does not claim. The memo is a draft of a thought; the article is the thought, checked. Two habits make the biggest difference. Ask the agent to interview you when a story is thin: a session acting as a journalist, challenging every answer, is how [Ten hard questions for RiskMandate](/articles/riskmandate-ten-questions.html) was written. And let the record build on itself: every article links to the ones before it, so the history is not a list of posts but a map of the path, which is what [Omnichannel programming](/articles/omnichannel-programming.html) means by one shared state.
@@ -163,6 +203,8 @@ On this site, in three days, 54 messages from me, ten of them voice memos, becam
 - **The meter trusts the reader.** Balances can be edited, and the return page does not verify a payment, both by design.
 - **Costs vary.** GitHub Pages is free within its limits; a Claude plan, a domain and Stripe's fees are not.
 - **A public repository is public.** On a free plan, Pages needs it; nothing confidential belongs in it.
+- **A rule in a prompt is a hope.** Only the rules a hook or CI keeps are enforced; mark which is which.
+- **Updated on 15 October.** Added the behaviour policy and the private vault.
 
 If you want help setting one up for your own story, write to [agent@riskmandate.ai](mailto:agent@riskmandate.ai).
 
