@@ -298,6 +298,7 @@ Agents & policyVaults & method[This article as a graph →](graphs.md#the-agent-
 
 ### Continued by
 
+- [From sending a file to sgit: eight months of SG/Send, told by its own briefs and commits, and how a file-sharing service became encrypted version control and vaults](from-send-to-sgit.md) Eight months of SG/Send, checked against its own briefs and commits: how file sharing became sgit and vaults, the pace, and what the market said.
 - [The agents write too: lessons, debriefs and a page for every agent on the newsroom, and a brief for the conductor that will keep it](the-agents-write-too.md) The newsroom's agents get their own bylines: lessons every agent loads, debriefs as source material, a page for every agent, and a conductor.
 - [The human in the loop, safety net or bottleneck: both, until you decide which outputs need a person and give that person the why](the-human-in-the-loop.md) Checking every output is a bottleneck and a weak safety net; put the person where it cannot be undone, and let controls do the rest.
 - [The policy draws the liability line: an answer to Ralf Thomas on agent accountability, and why every agent in a loop should take a behaviour policy beside its prompt](the-policy-draws-the-liability-line.md) An answer to Ralf Thomas: the shell game works because nothing is written down, and a behaviour policy's explicit prohibitions move the liability line.

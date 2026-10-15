@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-15 | published | 1,942 | first published | this release | [current](../the-scripted-talk.md) |
+| **v1.0.0** | 2026-10-15 | published | 1,942 | first published | [`30214b1fa`](https://github.com/SGit-AI/SGit-AI__Website/commit/30214b1fa9b7cff77ab8dc2e1713241d822936da) | [current](../the-scripted-talk.md) |
 
 [← Back to the article](../the-scripted-talk.md) · [All articles](../index.md)
 
