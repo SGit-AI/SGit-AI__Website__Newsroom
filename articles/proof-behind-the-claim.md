@@ -106,6 +106,7 @@ Site & engineeringVaults & method[This article as a graph →](graphs.md#proof-b
 
 ### Continued by
 
+- [My memory, checked: thinking out loud in a voice memo, publishing only what the record supports, and why peer review has moved to before publishing](my-memory-checked.md) I say it as I remember it; the agent checks it against the record before anyone reads it. Five confirmed, five corrected, two not found.
 - [The proof moved up, the homepage after the rebuild, next to the before pictures](proof-moved-up.md) The rebuilt homepage puts four real vaults under one sentence, picks six by the job they do, and computes its numbers at build time from the site's own data.
 
 [All articles](index.md) · [All graphs](graphs.md)

@@ -106,6 +106,10 @@ Vaults & methodStartups & strategy[This article as a graph →](graphs.md#from-s
 - [Git for things you cannot put on GitHub](what-sgit-is.md) sgit is git for files you cannot put on GitHub: encrypted before they leave your machine, versioned like git, stored where the server cannot read a byte.
 - [The agent team as it runs: one person, twelve agents, encrypted vaults, and a mailbox nobody sends from](the-agent-team-as-it-runs.md) Twelve agents on dedicated accounts, encrypted vaults as the only memory, messages as files, a folder per person, and a mailbox nobody sends from.
 
+### Continued by
+
+- [My memory, checked: thinking out loud in a voice memo, publishing only what the record supports, and why peer review has moved to before publishing](my-memory-checked.md) I say it as I remember it; the agent checks it against the record before anyone reads it. Five confirmed, five corrected, two not found.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 132 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=132)
