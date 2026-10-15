@@ -88,6 +88,10 @@ News & evidenceAgents & policy[This article as a graph →](graphs.md#my-memory-
 - [How much of this did I write? The numbers behind twenty articles in four weeks, and what the input actually was](how-much-of-this-did-i-write.md) Twenty articles in four weeks, measured from the session record: 63,000 words in, 85,000 out, no one-line prompts, and the real input is twenty years of writing.
 - [Fractal Semantic Graphs: everything connects to everything, and nobody has to share a schema](introducing-fractal-semantic-graphs.md) A fractal semantic graph has no privileged level and no single schema: each world keeps its own vocabulary and connects to others through named edges.
 
+### Continued by
+
+- [Omnichannel programming: briefs by voice, reviews by voice, previews on the phone, and one shared state underneath, at every stage from explorer to town planner](omnichannel-programming.md) Programming by voice, chat, phone, IDE and pull request, with one shared state underneath, at every stage from explorer to town planner. This site, counted.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 133 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=133)

@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-15 | published | 2,093 | first published | this release | [current](../secrets-on-public-keys.md) |
+| **v1.0.0** | 2026-10-15 | published | 2,093 | first published | [`9dede7851`](https://github.com/SGit-AI/SGit-AI__Website/commit/9dede78514b22264f3d17f17e92b7cbbf5e5764f) | [current](../secrets-on-public-keys.md) |
 
 [← Back to the article](../secrets-on-public-keys.md) · [All articles](../index.md)
 

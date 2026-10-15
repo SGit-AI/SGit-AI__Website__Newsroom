@@ -101,6 +101,10 @@ Vaults & methodSite & engineering[This article as a graph →](graphs.md#the-scr
 
 - [Custom UIs are not the exception: the inbox in 2026, where every message has its own universe](custom-uis-are-not-the-exception.md) Every message has a graph, so it can be shaped for the reader's moment; a custom interface per moment is now how interfaces get made, and each gets a policy.
 
+### Continued by
+
+- [Omnichannel programming: briefs by voice, reviews by voice, previews on the phone, and one shared state underneath, at every stage from explorer to town planner](omnichannel-programming.md) Programming by voice, chat, phone, IDE and pull request, with one shared state underneath, at every stage from explorer to town planner. This site, counted.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 131 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=131)
