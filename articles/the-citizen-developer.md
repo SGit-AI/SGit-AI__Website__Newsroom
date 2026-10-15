@@ -91,6 +91,10 @@ Startups & strategyVaults & method[This article as a graph →](graphs.md#the-ci
 - [Pay after you read: how a reading meter became a working business model in one afternoon, one release at a time](pay-after-you-read.md) Seven releases in one afternoon turned the reading meter into a working model: pay after you read, and the rating sets the price.
 - [Paying after the value: why a balance that can go negative feels different from a subscription, the psychology behind it, and the experiment this newsroom is running](paying-after-the-value.md) Most purchases are bets on future value; a reading balance that can go negative asks for payment when the value is already in view.
 
+### Continued by
+
+- [The expert founders: why the next startups will be built by the people who know the problem, and why Europe's slower, sceptical money suits them](the-expert-founders.md) Agents make execution cheap, so the people who know the problem can build first. The data favours experts, and Europe's sceptical money suits them.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 127 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=127)

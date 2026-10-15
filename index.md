@@ -4,18 +4,18 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.12.66 · 136 articles since 2026-08-17; the newest is 2026-10-15. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v0.12.67 · 137 articles since 2026-08-17; the newest is 2026-10-15. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## The lead
 
-- [Omnichannel programming: briefs by voice, reviews by voice, previews on the phone, and one shared state underneath, at every stage from explorer to town planner](articles/omnichannel-programming.md), 2026-10-15, 9 min. Programming by voice, chat, phone, IDE and pull request, with one shared state underneath, at every stage from explorer to town planner. This site, counted.
+- [The expert founders: why the next startups will be built by the people who know the problem, and why Europe's slower, sceptical money suits them](articles/the-expert-founders.md), 2026-10-15, 12 min. Agents make execution cheap, so the people who know the problem can build first. The data favours experts, and Europe's sceptical money suits them.
 
 ## Highlights
 
+- [Omnichannel programming: briefs by voice, reviews by voice, previews on the phone, and one shared state underneath, at every stage from explorer to town planner](articles/omnichannel-programming.md), 2026-10-15, 9 min.
 - [secrets.sgit.ai on public keys: no more shared keys, eight ways a secret moves, a vault for the private key, and the commercial service it becomes](articles/secrets-on-public-keys.md), 2026-10-15, 8 min.
 - [Handing secrets to agents and browsers: SG/Send's next focus, a key pair where the work runs, one-time drops, and a brief for a site that does only this](articles/handing-secrets-to-agents.md), 2026-10-15, 10 min.
 - [My memory, checked: thinking out loud in a voice memo, publishing only what the record supports, and why peer review has moved to before publishing](articles/my-memory-checked.md), 2026-10-15, 6 min.
-- [From sending a file to sgit: eight months of SG/Send, told by its own briefs and commits, and how a file-sharing service became encrypted version control and vaults](articles/from-send-to-sgit.md), 2026-10-15, 9 min.
 
 ## Who are you reading as?
 
@@ -52,11 +52,11 @@ For editors, journalists and publishers asking how news gets paid for when agent
 - [Dark mode, and four more: five themes for the newsroom, chosen once and kept in your browser](articles/dark-mode-and-four-more.md), 2026-10-13, 14 min.
 - [Ways to read one article: the finished piece stays at the centre, and the reader picks the way in](articles/ways-to-read-one-article.md), 2026-10-12, 10 min.
 
-### Strategy & startups (22)
+### Strategy & startups (23)
 For founders and investors: pricing, early access, Wardley maps and who pays for open source.
+- [The expert founders: why the next startups will be built by the people who know the problem, and why Europe's slower, sceptical money suits them](articles/the-expert-founders.md), 2026-10-15, 12 min.
 - [The citizen developer is good news: the spreadsheet grown up, the best briefs ever written, and the handover from explorers to villagers and town planners that makes them last](articles/the-citizen-developer.md), 2026-10-14, 6 min.
 - [Paying after the value: why a balance that can go negative feels different from a subscription, the psychology behind it, and the experiment this newsroom is running](articles/paying-after-the-value.md), 2026-10-14, 8 min.
-- [The eyeballs get cheap: why open source is about to become the most secure software we have, and why secure, sovereign and paid-for meet at the least code in production](articles/the-eyeballs-get-cheap.md), 2026-10-14, 9 min.
 
 ## Collections
 

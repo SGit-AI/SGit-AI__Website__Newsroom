@@ -113,6 +113,10 @@ Site & engineeringVaults & method[This article as a graph →](graphs.md#omnicha
 - [Handing secrets to agents and browsers: SG/Send's next focus, a key pair where the work runs, one-time drops, and a brief for a site that does only this](handing-secrets-to-agents.md) SG/Send's next focus: agents and browsers make their own key pair, owners encrypt to it, the drop is read once, and the secret never enters the chat.
 - [The homepage is a vault: a fresh edition every morning, every past homepage one commit away, served from plain files, and a brief for the agent that builds it](the-homepage-is-a-vault.md) A new homepage edition every morning, each a signed commit in a vault, served from plain files: every past homepage one commit id away.
 
+### Continued by
+
+- [The expert founders: why the next startups will be built by the people who know the problem, and why Europe's slower, sceptical money suits them](the-expert-founders.md) Agents make execution cheap, so the people who know the problem can build first. The data favours experts, and Europe's sceptical money suits them.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 136 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=136)

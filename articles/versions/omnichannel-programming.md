@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-15 | published | 2,247 | first published | this release | [current](../omnichannel-programming.md) |
+| **v1.0.0** | 2026-10-15 | published | 2,247 | first published | [`6b5fe96be`](https://github.com/SGit-AI/SGit-AI__Website/commit/6b5fe96be389c6c03f49646d83a1dc24e5b0424e) | [current](../omnichannel-programming.md) |
 
 [← Back to the article](../omnichannel-programming.md) · [All articles](../index.md)
 
