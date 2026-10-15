@@ -1,0 +1,43 @@
+{
+ "slug": "the-tokens-hook",
+ "teaser": "A token behaviour policy as a 132-line hook: the user sees what each session reads, caches and costs; a prompt cannot do it.",
+ "topics": ["agents-and-policy", "site-and-engineering"],
+ "core_idea": "Tokens deserve their own small agent behaviour policy, observe mode first: a Claude Code hook that reads only the new lines of the session transcript, counts each response once, prices it by model and shows the user a box of reads, cache share, writes, context and cost; asked through a prompt, the model correctly said it could not see its usage, while the hook gave exact figures one turn behind in about a millisecond; building it exposed double counting in our own session report and showed the transcript carries the system prompt and tool definitions; caching was 99% of this session's input, and the brief is a site, tokens.hook.sgit.ai, that treats one small hook as mission-critical code.",
+ "nodes": [
+  {"id": "policy", "label": "A token behaviour policy", "kind": "concept", "summary": "Count, show, limit; observe first."},
+  {"id": "caching", "label": "Caching is the bill", "kind": "claim", "summary": "99% of this session's input came from the cache."},
+  {"id": "prompt", "label": "Asking the model", "kind": "example", "summary": "Twice it said it could not see the numbers."},
+  {"id": "hook", "label": "The tokens hook", "kind": "artefact", "summary": "132 lines and a policy file; about 1 ms a call warm."},
+  {"id": "exact", "label": "Exact, one turn behind", "kind": "claim", "summary": "37,087 tokens and $0.0484 against $0.0486 actual."},
+  {"id": "repeats", "label": "Usage repeats per block", "kind": "example", "summary": "Counting lines gave 1.06B cache reads; responses gave 459M."},
+  {"id": "abpbug", "label": "Our own report was wrong", "kind": "claim", "summary": "The ABP block counted responses two or three times."},
+  {"id": "snapshot", "label": "The transcript holds the request", "kind": "question", "summary": "System prompt and 49 tool definitions, undocumented."},
+  {"id": "outputs", "label": "Who sees what", "kind": "method", "summary": "systemMessage to the user, context to the model, block, log, lane."},
+  {"id": "otel", "label": "Status line and OpenTelemetry", "kind": "method", "summary": "Claude Code's own views, and a collector already built."},
+  {"id": "tools", "label": "Other tools", "kind": "example", "summary": "Hooks and usage commands in Codex, Gemini CLI, Cursor; limits only in chat apps."},
+  {"id": "site", "label": "tokens.hook.sgit.ai", "kind": "artefact", "summary": "Code, policy, graph, tests, numbers and releases for one hook."}
+ ],
+ "edges": [
+  {"from": "caching", "to": "policy", "rel": "leads-to"},
+  {"from": "prompt", "to": "hook", "rel": "contrasts"},
+  {"from": "hook", "to": "exact", "rel": "produces"},
+  {"from": "hook", "to": "policy", "rel": "example-of"},
+  {"from": "repeats", "to": "abpbug", "rel": "leads-to"},
+  {"from": "hook", "to": "repeats", "rel": "answers"},
+  {"from": "snapshot", "to": "hook", "rel": "extends"},
+  {"from": "hook", "to": "outputs", "rel": "produces"},
+  {"from": "otel", "to": "hook", "rel": "compared-with"},
+  {"from": "tools", "to": "policy", "rel": "compared-with"},
+  {"from": "site", "to": "hook", "rel": "depends-on"}
+ ],
+ "links": {
+  "articles": ["re-anchoring-agent-behaviour-policies", "are-hooks-the-sweet-spot", "hooks-are-kernel-code"],
+  "pages": [],
+  "sites": ["https://claude.dev/blog/lessons-from-building-claude-code-prompt-caching-is-everything/", "https://code.claude.com/docs/en/hooks.md", "https://code.claude.com/docs/en/statusline.md", "https://code.claude.com/docs/en/monitoring-usage.md", "https://code.claude.com/docs/en/managed-settings.md", "https://platform.claude.com/docs/en/about-claude/pricing", "https://learn.chatgpt.com/docs/hooks", "https://cursor.com/changelog/1-7", "https://sgit.ai/api/append-lanes.html"]
+ },
+ "quotes": [
+  {"text": "A prompt can ask for behaviour; only a hook can supply data", "why": "The experiment in one line."},
+  {"text": "A few percentage points of cache miss rate can dramatically affect cost and latency.", "why": "Why tokens need a policy."},
+  {"text": "a token hook should handle numbers only and never send text anywhere", "why": "What the transcript finding means for the design."}
+ ]
+}

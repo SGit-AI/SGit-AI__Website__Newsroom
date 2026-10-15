@@ -55,6 +55,234 @@
   ],
   "articles": [
     {
+      "slug": "the-tokens-hook",
+      "title": "The tokens hook: a token behaviour policy that shows what every session reads, caches, writes and costs, why a prompt cannot do it, and a brief for tokens.hook.sgit.ai",
+      "date": "2026-10-15",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/the-tokens-hook.html",
+      "markdown": "https://newsroom.sgit.ai/articles/the-tokens-hook.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/the-tokens-hook.webp",
+      "teaser": "A token behaviour policy as a 132-line hook: the user sees what each session reads, caches and costs; a prompt cannot do it.",
+      "topics": [
+        "agents-and-policy",
+        "site-and-engineering"
+      ],
+      "tags": [
+        "tokens",
+        "costs",
+        "prompt-caching",
+        "hooks",
+        "claude-code",
+        "agent-behaviour-policy",
+        "observability",
+        "opentelemetry",
+        "codex",
+        "gemini-cli",
+        "cursor",
+        "brief",
+        "article"
+      ],
+      "links_out": [
+        "re-anchoring-agent-behaviour-policies",
+        "are-hooks-the-sweet-spot",
+        "hooks-are-kernel-code"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "tk-architecture.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/tk-architecture.webp",
+          "caption": "The tokens hook: a policy file says what to count, show and limit; the hook reads only the new lines of the session transcript each time, counts each response once, prices it by its model and keeps running totals. Its output goes to the user, to the model, to a block when the budget is spent, or to a collector. Dashed boxes are proposed.",
+          "kind": "architecture"
+        },
+        {
+          "file": "tk-prompt-vs-hook.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/tk-prompt-vs-hook.webp",
+          "caption": "The same two-turn conversation in headless Claude Code, once with a system prompt asking the model to report its tokens and cost, once with the tokens hook. With the prompt, the model said it could not see the numbers. With the hook, it reported them exactly, one turn behind.",
+          "kind": "comparison"
+        },
+        {
+          "file": "tk-where.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/tk-where.webp",
+          "caption": "Where the token numbers are, tool by tool: what a hook can see and what the user is shown in the coding agents and chat apps checked for this article, from each tool's documentation or source code.",
+          "kind": "comparison"
+        }
+      ],
+      "graph": {
+        "slug": "the-tokens-hook",
+        "teaser": "A token behaviour policy as a 132-line hook: the user sees what each session reads, caches and costs; a prompt cannot do it.",
+        "topics": [
+          "agents-and-policy",
+          "site-and-engineering"
+        ],
+        "core_idea": "Tokens deserve their own small agent behaviour policy, observe mode first: a Claude Code hook that reads only the new lines of the session transcript, counts each response once, prices it by model and shows the user a box of reads, cache share, writes, context and cost; asked through a prompt, the model correctly said it could not see its usage, while the hook gave exact figures one turn behind in about a millisecond; building it exposed double counting in our own session report and showed the transcript carries the system prompt and tool definitions; caching was 99% of this session's input, and the brief is a site, tokens.hook.sgit.ai, that treats one small hook as mission-critical code.",
+        "nodes": [
+          {
+            "id": "policy",
+            "label": "A token behaviour policy",
+            "kind": "concept",
+            "summary": "Count, show, limit; observe first."
+          },
+          {
+            "id": "caching",
+            "label": "Caching is the bill",
+            "kind": "claim",
+            "summary": "99% of this session's input came from the cache."
+          },
+          {
+            "id": "prompt",
+            "label": "Asking the model",
+            "kind": "example",
+            "summary": "Twice it said it could not see the numbers."
+          },
+          {
+            "id": "hook",
+            "label": "The tokens hook",
+            "kind": "artefact",
+            "summary": "132 lines and a policy file; about 1 ms a call warm."
+          },
+          {
+            "id": "exact",
+            "label": "Exact, one turn behind",
+            "kind": "claim",
+            "summary": "37,087 tokens and $0.0484 against $0.0486 actual."
+          },
+          {
+            "id": "repeats",
+            "label": "Usage repeats per block",
+            "kind": "example",
+            "summary": "Counting lines gave 1.06B cache reads; responses gave 459M."
+          },
+          {
+            "id": "abpbug",
+            "label": "Our own report was wrong",
+            "kind": "claim",
+            "summary": "The ABP block counted responses two or three times."
+          },
+          {
+            "id": "snapshot",
+            "label": "The transcript holds the request",
+            "kind": "question",
+            "summary": "System prompt and 49 tool definitions, undocumented."
+          },
+          {
+            "id": "outputs",
+            "label": "Who sees what",
+            "kind": "method",
+            "summary": "systemMessage to the user, context to the model, block, log, lane."
+          },
+          {
+            "id": "otel",
+            "label": "Status line and OpenTelemetry",
+            "kind": "method",
+            "summary": "Claude Code's own views, and a collector already built."
+          },
+          {
+            "id": "tools",
+            "label": "Other tools",
+            "kind": "example",
+            "summary": "Hooks and usage commands in Codex, Gemini CLI, Cursor; limits only in chat apps."
+          },
+          {
+            "id": "site",
+            "label": "tokens.hook.sgit.ai",
+            "kind": "artefact",
+            "summary": "Code, policy, graph, tests, numbers and releases for one hook."
+          }
+        ],
+        "edges": [
+          {
+            "from": "caching",
+            "to": "policy",
+            "rel": "leads-to"
+          },
+          {
+            "from": "prompt",
+            "to": "hook",
+            "rel": "contrasts"
+          },
+          {
+            "from": "hook",
+            "to": "exact",
+            "rel": "produces"
+          },
+          {
+            "from": "hook",
+            "to": "policy",
+            "rel": "example-of"
+          },
+          {
+            "from": "repeats",
+            "to": "abpbug",
+            "rel": "leads-to"
+          },
+          {
+            "from": "hook",
+            "to": "repeats",
+            "rel": "answers"
+          },
+          {
+            "from": "snapshot",
+            "to": "hook",
+            "rel": "extends"
+          },
+          {
+            "from": "hook",
+            "to": "outputs",
+            "rel": "produces"
+          },
+          {
+            "from": "otel",
+            "to": "hook",
+            "rel": "compared-with"
+          },
+          {
+            "from": "tools",
+            "to": "policy",
+            "rel": "compared-with"
+          },
+          {
+            "from": "site",
+            "to": "hook",
+            "rel": "depends-on"
+          }
+        ],
+        "links": {
+          "articles": [
+            "re-anchoring-agent-behaviour-policies",
+            "are-hooks-the-sweet-spot",
+            "hooks-are-kernel-code"
+          ],
+          "pages": [],
+          "sites": [
+            "https://claude.dev/blog/lessons-from-building-claude-code-prompt-caching-is-everything/",
+            "https://code.claude.com/docs/en/hooks.md",
+            "https://code.claude.com/docs/en/statusline.md",
+            "https://code.claude.com/docs/en/monitoring-usage.md",
+            "https://code.claude.com/docs/en/managed-settings.md",
+            "https://platform.claude.com/docs/en/about-claude/pricing",
+            "https://learn.chatgpt.com/docs/hooks",
+            "https://cursor.com/changelog/1-7",
+            "https://sgit.ai/api/append-lanes.html"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "A prompt can ask for behaviour; only a hook can supply data",
+            "why": "The experiment in one line."
+          },
+          {
+            "text": "A few percentage points of cache miss rate can dramatically affect cost and latency.",
+            "why": "Why tokens need a policy."
+          },
+          {
+            "text": "a token hook should handle numbers only and never send text anywhere",
+            "why": "What the transcript finding means for the design."
+          }
+        ]
+      }
+    },
+    {
       "slug": "cedar-and-the-policy-vault",
       "title": "Cedar and the policy vault: a debrief on the policy language agents are adopting, where our behaviour policies and sgit vaults meet it, and a brief for the MVP",
       "date": "2026-10-14",
@@ -536,7 +764,7 @@
             "https://www.theregister.com/2006/05/03/buggy_spreadsheet",
             "https://www.theregister.com/2020/10/05/excel_england_coronavirus_contact_error/",
             "https://baselinescenario.com/2013/02/09/the-importance-of-excel",
-            "https://blog.gardeviance.org/2015/03/on-pioneers-settlers-town-planners-and.html"
+            "https://blog.gardeviance.org/2023/12/how-to-organise-yourself-dangerous-path.html"
           ]
         },
         "quotes": [
@@ -2030,6 +2258,7 @@
         "pay-to-keep-your-persona"
       ],
       "links_in": [
+        "the-tokens-hook",
         "cedar-and-the-policy-vault",
         "commanders-intent-is-a-behaviour-policy",
         "skill-behaviour-policy"
@@ -3322,6 +3551,7 @@
         "a-policy-for-every-skill"
       ],
       "links_in": [
+        "the-tokens-hook",
         "commanders-intent-is-a-behaviour-policy",
         "skill-behaviour-policy",
         "hooks-are-kernel-code",
@@ -17556,6 +17786,7 @@
         "a-second-reader-the-agent-cannot-skip"
       ],
       "links_in": [
+        "the-tokens-hook",
         "cedar-and-the-policy-vault",
         "commanders-intent-is-a-behaviour-policy",
         "system-prompts-as-behaviour-policies",

@@ -1,0 +1,111 @@
+---
+title: The tokens hook: a token behaviour policy that shows what every session reads, caches, writes and costs, why a prompt cannot do it, and a brief for tokens.hook.sgit.ai
+date: 2026-10-15
+author: Dinis Cruz
+author_url: about/index.html
+summary: It is easy to spend a lot of money on model calls without seeing where it goes, and the user is the person who sees least. So I asked for a small, focused agent behaviour policy about tokens: in observe mode first, it should show the user, in a box of ASCII under each answer, how many tokens the session has read, how many came from the cache, how many it wrote, how big the context is and roughly what it has cost. This site's agent built it as a Claude Code hook of 132 lines with a policy file, and tested it. A prompt cannot do this job: asked to report its own usage, the model said twice, correctly, that it could not see the numbers. The hook gave it the exact figures, one turn behind, in about a millisecond. Building it found a bug in our own session report, which had been counting every response two or three times, because the transcript repeats a response's usage on each of its content blocks. It also found that, in this version of Claude Code, the transcript a hook can read carries the system prompt and every tool definition, though the documentation does not say so. This session has read 99% of its input from the cache, which at list prices is the difference between about $170 and about $1,950. The other tools vary: Codex, Gemini CLI and Cursor have hooks and usage commands, the chat apps show only limits. And this is the brief for tokens.hook.sgit.ai, a small site for a small, mission-critical piece of code.
+version: v0.12.57
+license: https://creativecommons.org/licenses/by/4.0/
+tags: tokens, costs, prompt-caching, hooks, claude-code, agent-behaviour-policy, observability, opentelemetry, codex, gemini-cli, cursor, brief, article
+status: published
+---
+
+!shot tk-architecture.webp | images/ | The tokens hook: a policy file says what to count, show and limit; the hook reads only the new lines of the session transcript each time, counts each response once, prices it by its model and keeps running totals. Its output goes to the user, to the model, to a block when the budget is spent, or to a collector. Dashed boxes are proposed. | architecture
+
+## In short {#in-short}
+
+- **A behaviour policy about tokens.** Observe first: show the user what the session reads, caches, writes and costs.
+- **A prompt cannot do it.** The model cannot see its own usage, and said so twice.
+- **A hook can.** Exact figures, one turn behind, in about a millisecond a call.
+- **It found a bug in our own report.** Usage repeats on every content block; counting lines counted responses two or three times.
+- **The transcript holds more than the docs say.** In this version, the system prompt and every tool definition.
+- **Caching is most of the bill.** This session read 99% of its input from the cache.
+- **Other tools differ.** Hooks and usage commands in Codex, Gemini CLI and Cursor; only limit bars in the chat apps.
+- **A site for one small hook.** tokens.hook.sgit.ai: the code, the policy, the graph, the tests, the releases.
+
+## Why tokens need a policy {#why}
+
+Models are paid for by the token, and an agent spends tokens in ways nobody sees: every call re-sends the system prompt, the tool definitions and the whole conversation, and the only thing that makes that affordable is the prompt cache. Anthropic's Claude Code team put it plainly in [Prompt caching is everything](https://claude.dev/blog/lessons-from-building-claude-code-prompt-caching-is-everything/): "we run alerts on our prompt cache hit rate and declare SEVs if they're too low", because "A few percentage points of cache miss rate can dramatically affect cost and latency."
+
+That is a reason to treat tokens as one more thing an [agent behaviour policy](/articles/re-anchoring-agent-behaviour-policies.html) governs, with its own small policy: what to count, what to show, what limits to set, and what to do when one is crossed. The first mode is to observe. Before anything is limited, the user should be able to see what is happening.
+
+## Asking the model does not work {#prompt}
+
+!shot tk-prompt-vs-hook.webp | images/ | The same two-turn conversation in headless Claude Code, once with a system prompt asking the model to report its tokens and cost, once with the tokens hook. With the prompt, the model said it could not see the numbers. With the hook, it reported them exactly, one turn behind. | comparison
+
+The obvious first attempt is a line in the system prompt or in a project's instructions: report your token usage and cost at the end of every answer. This site's agent tried it, with a two-turn conversation in headless Claude Code. The model was honest both times: "I can't give you these figures… Any split or dollar amount from me would be invented." The numbers existed, 37,019 tokens of input in the first turn, $0.05 and then $0.09, but not anywhere the model could read them.
+
+Then the same conversation with the tokens hook. Before each prompt, the hook added the running totals as context; after each answer, it showed the box to the user. In the second turn, the model reported a context of 37,087 tokens, 353 output tokens and about $0.05, which were exactly the first turn's figures. They are one turn behind, because a hook that runs before the answer cannot count it. A prompt can ask for behaviour; only a hook can supply data, which is why [hooks are the sweet spot](/articles/are-hooks-the-sweet-spot.html) for anything that has to be true rather than hoped for.
+
+## What a hook can see in Claude Code {#see}
+
+Every hook receives a small JSON object; the [hooks reference](https://code.claude.com/docs/en/hooks.md) lists its common fields, among them the session id and `transcript_path`. No event carries token usage in general: the only token fields are on a resumed or forked session's start, `context_tokens` and `estimated_cache_write_usd`. Everything else has to come from the transcript, a JSON file with one line per event.
+
+Two findings came out of reading it.
+
+**Each response is written several times.** One API response with text, thinking and a tool call becomes several lines, and each one repeats the response's full usage. In this session's transcript, 2,621 lines carried usage, for 1,165 responses; 849 responses appeared more than once, always with identical figures. Counting lines gave 1.06 billion cache-read tokens; counting responses gave 459 million. This session's own status report, the ABP block at the end of each answer, had been counting lines since it was written: it said "2.9M out · 1.0B cached" when the truth was 1.1 million and 460 million. It now counts each message id once.
+
+**The transcript carries the request, not only the conversation.** The documentation does not say whether a hook can see what is sent to the model. In this version of Claude Code, 2.1.300, it can: the transcript has `prompt_snapshot` records holding the system prompt, in 13 parts, and all 49 tool definitions, about 34,000 and 198,000 characters. A marker added to the system prompt for a test appeared there too. Two consequences follow. A token hook can see the fixed cost of every call; at about four characters a token, the tool definitions alone are around 50,000 tokens, six times the system prompt. And anything that can read the transcript can read everything the model was told, so a token hook should handle numbers only and never send text anywhere. This is an undocumented internal format, and it may change.
+
+## The hook {#hook}
+
+The hook is one Python file of 132 lines and a policy file. Every time it runs, it seeks to where it stopped last time, reads only the new lines, counts each response once, prices it by its model, and saves the totals. The first run on this session's 66 MB transcript took 252 milliseconds; every run after it took about one millisecond inside the hook, and about 31 milliseconds including starting Python. If the file gets shorter, as it can after a compaction or a restore, it starts again.
+
+The policy carries the version, the mode, the limits and the prices, with their source. Prices are per model, from [Anthropic's pricing page](https://platform.claude.com/docs/en/about-claude/pricing): a five-minute cache write is 1.25 times the base input price, a one-hour write twice, a read a tenth, and "Cache hits and refreshes on Claude Opus 5.5 and Claude Sonnet 5.5 are priced at 0.05x the base input price." The modes are the ones I want for every policy: observe shows and logs; warn also warns when a limit is crossed; enforce blocks the next prompt once the session's budget is spent.
+
+Where the output goes decides who sees it. A `systemMessage` on `Stop` is shown to the user under the answer. Additional context on `UserPromptSubmit` goes to the model, so it can be frugal. A log line per event stays on the machine. Here is the box for this session, as the hook drew it while this article was written:
+
+```
+┌──────────────────────────────────────────────────────────────┐
+│ tokens · observe · policy 0.1.0                              │
+│ calls    1,193 responses                                     │
+│ input    474.0M: 467.6M cache read, 6.4M written, 2.4K fresh │
+│ cache    ██████████ 99% read from cache                      │
+│ context  ████░░░░░░ 361.4K of 1.0M                           │
+│ output   1.1M (253.0K thinking)                              │
+│ cost     ~$171.68 at policy prices · cache saved ~$1,784.03  │
+│ ! over the session budget of $25.00                          │
+└──────────────────────────────────────────────────────────────┘
+```
+
+Claude Code's own estimate for the session, which it writes into the transcript from time to time, was about $175, including the helper model and the agents. At list prices, reading those 467 million tokens fresh instead of from the cache would have cost about $1,780 more. The cost is at list prices; on a subscription the bill is different, but the cache share matters just as much to the limits.
+
+## The other places to look {#elsewhere}
+
+Claude Code already shows a lot without any hook. The [status line](https://code.claude.com/docs/en/statusline.md) receives the session's cost, the context window's size and use, and the latest call's cache reads and writes, and it updates as messages arrive; `/usage` and `/context` show the same from inside the session. For a team, the [OpenTelemetry export](https://code.claude.com/docs/en/monitoring-usage.md) sends a `claude_code.token.usage` metric with types for input, output, cache reads and cache writes, and an event per API request with its tokens and cost; prompt text is only included if `OTEL_LOG_USER_PROMPTS` is set. That is the central telemetry collector, already built.
+
+The hook still earns its place, because it is a policy: it carries limits and modes, it can tell the model, it can block, and it is the same small file wherever it runs. For a collector without OpenTelemetry, it can also send numbers, never text, to an sgit [append lane](https://sgit.ai/api/append-lanes.html), which a sender can write to but not read. Locally, that took the hook from about 31 to about 96 milliseconds a call; all 20 test events arrived, with nine fields each and no text.
+
+## Other tools {#tools}
+
+!shot tk-where.webp | images/ | Where the token numbers are, tool by tool: what a hook can see and what the user is shown in the coding agents and chat apps checked for this article, from each tool's documentation or source code. | comparison
+
+The coding agents are converging on the same shape. OpenAI's Codex CLI has [hooks](https://learn.chatgpt.com/docs/hooks) for prompts, tools and stops, a `/status` command that shows "token usage" and "remaining context capacity", and OpenTelemetry. Google's Gemini CLI has hooks before and after each model call, and its `/stats` command shows "token usage and cached token savings". Cursor added hooks in [version 1.7](https://cursor.com/changelog/1-7) on 29 September 2025, "to observe, control, and extend the Agent loop"; its documented hooks carry context tokens only before a compaction, and its admin API reports cache writes, cache reads and cost. GitHub Copilot moved to usage-based billing on 1 June 2026, where the cost "depends on … the model and the number of tokens consumed". Cline shows prompt tokens, completion tokens, cache writes, cache reads and cost on every task. The chat apps show least: Claude.ai has bars for the five-hour session and the week, and I found no token count per conversation in Claude.ai or ChatGPT.
+
+Caching works differently in each. OpenAI's is on by default and discounts reused tokens "up to 95%"; Gemini's implicit caching is on by default for its recent models, with savings passed on automatically. The policy file is where those differences belong: one hook, one price table per provider.
+
+## A site for one small hook {#site}
+
+I want this to live at tokens.hook.sgit.ai, as an example of how a mission-critical hook should be run: a small code base, mapped completely, measured, and released like any other software. [Hooks are kernel code](/articles/hooks-are-kernel-code.html) made the argument; this is the first hook to get the treatment.
+
+1. **The code and the policy.** The hook, the policy file and its schema, under version control, with releases signed and tagged.
+2. **The graph.** Every input field, every output, every mode and every limit, as a graph that links to the line of code that handles it.
+3. **The tests.** Fixtures of real transcripts with known totals, including the repeated usage lines, a rewritten file and a missing model price, run on every change.
+4. **The numbers.** Time per call cold and warm, on transcripts from 1 MB to 100 MB, published with each release.
+5. **Install and distribute.** For one user, a few lines of settings; for an organisation, [managed settings](https://code.claude.com/docs/en/managed-settings.md), which Claude Code applies "above every other level", or a plugin; for sgit users, a vault with the hook, its policy and its releases, and an append lane beside it.
+6. **Other tools.** The same policy file read by a Codex hook and a Gemini CLI hook, once their payloads are mapped.
+
+## What this does not claim {#limits}
+
+- **One tool, one version.** The hook ran in Claude Code 2.1.300; the transcript format is internal and may change.
+- **The prompt test was small.** Two turns each, one model; other models may guess where this one refused.
+- **Costs are at list prices.** Subscriptions, discounts and regional pricing change the bill.
+- **The token estimate for tool definitions is rough.** Characters divided by four.
+- **The other tools are from their documentation.** Not run for this article.
+- **tokens.hook.sgit.ai does not exist yet.** It is the proposal.
+
+If you are trying to see where your agents' tokens go, write to [agent@riskmandate.ai](mailto:agent@riskmandate.ai).
+
+## Where this comes from {#sources}
+
+A voice memo of mine on 15 October 2026, written by this site's agent in the voice of this site; the argument and the editorial responsibility are mine. The hook, the experiments and the measurements were made by this site's agent on 15 October 2026; two research agents read the documentation, and the quotes were checked. Anthropic, [Prompt caching is everything](https://claude.dev/blog/lessons-from-building-claude-code-prompt-caching-is-everything/), 30 April 2026; Claude Code documentation on [hooks](https://code.claude.com/docs/en/hooks.md), [the status line](https://code.claude.com/docs/en/statusline.md), [monitoring usage](https://code.claude.com/docs/en/monitoring-usage.md) and [managed settings](https://code.claude.com/docs/en/managed-settings.md); Anthropic, [pricing](https://platform.claude.com/docs/en/about-claude/pricing); OpenAI, [Codex hooks](https://learn.chatgpt.com/docs/hooks) and [prompt caching](https://developers.openai.com/api/docs/guides/prompt-caching); Google, [Gemini CLI](https://github.com/google-gemini/gemini-cli) and [context caching](https://ai.google.dev/gemini-api/docs/caching); Cursor, [1.7 changelog](https://cursor.com/changelog/1-7); GitHub, [Copilot billing](https://docs.github.com/en/copilot/reference/copilot-billing/request-based-billing-legacy/what-changed-with-billing); Claude, [usage limit best practices](https://support.claude.com/en/articles/9797557-usage-limit-best-practices); sgit.ai, [append lanes](https://sgit.ai/api/append-lanes.html).

@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-15 | published | 2,573 | first published | this release | [current](../the-homepage-is-a-vault.md) |
+| **v1.0.0** | 2026-10-15 | published | 2,573 | first published | [`abd6663ae`](https://github.com/SGit-AI/SGit-AI__Website/commit/abd6663ae688c77c40d8909aa2878f02e2068f46) | [current](../the-homepage-is-a-vault.md) |
 
 [← Back to the article](../the-homepage-is-a-vault.md) · [All articles](../index.md)
 

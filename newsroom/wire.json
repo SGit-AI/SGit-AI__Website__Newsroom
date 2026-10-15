@@ -73,6 +73,41 @@
   ],
   "articles": [
     {
+      "slug": "the-tokens-hook",
+      "title": "The tokens hook: a token behaviour policy that shows what every session reads, caches, writes and costs, why a prompt cannot do it, and a brief for tokens.hook.sgit.ai",
+      "date": "2026-10-15",
+      "updated": "",
+      "author": "Dinis Cruz",
+      "url": "https://newsroom.sgit.ai/articles/the-tokens-hook.html",
+      "markdown": "https://newsroom.sgit.ai/articles/the-tokens-hook.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/the-tokens-hook.webp",
+      "graph": "https://newsroom.sgit.ai/articles/graphs/the-tokens-hook.json",
+      "teaser": "A token behaviour policy as a 132-line hook: the user sees what each session reads, caches and costs; a prompt cannot do it.",
+      "summary": "It is easy to spend a lot of money on model calls without seeing where it goes, and the user is the person who sees least. So I asked for a small, focused agent behaviour policy about tokens: in observe mode first, it should show the user, in a box of ASCII under each answer, how many tokens the session has read, how many came from the cache, how many it wrote, how big the context is and roughly what it has cost. This site's agent built it as a Claude Code hook of 132 lines with a policy file, and tested it. A prompt cannot do this job: asked to report its own usage, the model said twice, correctly, that it could not see the numbers. The hook gave it the exact figures, one turn behind, in about a millisecond. Building it found a bug in our own session report, which had been counting every response two or three times, because the transcript repeats a response's usage on each of its content blocks. It also found that, in this version of Claude Code, the transcript a hook can read carries the system prompt and every tool definition, though the documentation does not say so. This session has read 99% of its input from the cache, which at list prices is the difference between about $170 and about $1,950. The other tools vary: Codex, Gemini CLI and Cursor have hooks and usage commands, the chat apps show only limits. And this is the brief for tokens.hook.sgit.ai, a small site for a small, mission-critical piece of code.",
+      "topics": [
+        "agents-and-policy",
+        "site-and-engineering"
+      ],
+      "tags": [
+        "tokens",
+        "costs",
+        "prompt-caching",
+        "hooks",
+        "claude-code",
+        "agent-behaviour-policy",
+        "observability",
+        "opentelemetry",
+        "codex",
+        "gemini-cli",
+        "cursor",
+        "brief",
+        "article"
+      ],
+      "placement": [],
+      "linkedin": null,
+      "notes": []
+    },
+    {
       "slug": "cedar-and-the-policy-vault",
       "title": "Cedar and the policy vault: a debrief on the policy language agents are adopting, where our behaviour policies and sgit vaults meet it, and a brief for the MVP",
       "date": "2026-10-14",
