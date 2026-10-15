@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-15 | published | 1,652 | first published | this release | [current](../my-memory-checked.md) |
+| **v1.0.0** | 2026-10-15 | published | 1,652 | first published | [`00890bba0`](https://github.com/SGit-AI/SGit-AI__Website/commit/00890bba06c93be86156bc769e180d7cbc357c38) | [current](../my-memory-checked.md) |
 
 [← Back to the article](../my-memory-checked.md) · [All articles](../index.md)
 

@@ -36,6 +36,7 @@
    "admin/content/articles/graphs/every-link-points-back.json": "29be81c493990ea60efc80722c3dfcafd619359667f93e6d46cf76508f819f9f",
    "admin/content/articles/graphs/four-frameworks-one-agent.json": "2ee7def6a37c6b413bde49fcec24c71652290c9a489388eb631a1fd0e9c97a5f",
    "admin/content/articles/graphs/from-send-to-sgit.json": "695e5766273a50c241eae5b8bf60d5af5152f866bc624c6f4c8e3eab8e686338",
+   "admin/content/articles/graphs/handing-secrets-to-agents.json": "f9d747a2dd23696defbfb0ccade28dfa3bee34a4e663e61db0404d4454daac90",
    "admin/content/articles/graphs/hooks-are-kernel-code.json": "0d940b45db4f7e669abff65776888c62d0256612532b6ef367fe6cde19194c2a",
    "admin/content/articles/graphs/how-cheap-is-it-to-undo.json": "7a6d8cb815ba668d48b6329972a0d7ed252663a0105e1a1673631c849f7b7877",
    "admin/content/articles/graphs/knowledge-that-maintains-itself.json": "dcd057f80ebda7e5fb5e2cda40998679d228592b3172303f1cae776a4151ce81",
@@ -59,6 +60,7 @@
    "admin/content/articles/graphs/the-tokens-hook.json": "ad4880983bf0ccf3ee6c6cab31c4930deaf1ffb292b5e470e9428e70ced848f0",
    "admin/content/articles/graphs/the-vault-crosses-chrome-profiles.json": "a98eef0c5628432a407dae3dfe3f5b9f83d4da3a541aec79a53f113f5434d4ce",
    "admin/content/articles/graphs/the-wire-as-a-graph.json": "080bea9e81fd7f99003129a02742ed019e313a5166f748413164912f6f867df3",
+   "admin/content/articles/handing-secrets-to-agents.md": "f4c10229859d536820634e270d1020c29789b5f3ac0c882b3ae8a0ec1c5b9366",
    "admin/content/articles/hooks-are-kernel-code.md": "eeb722febe977db04c4643dfa914a225c6c054bc6c952e0ec6cee48c84ae6aa5",
    "admin/content/articles/how-cheap-is-it-to-undo.md": "fbb0e404fda9f499b735f681ad9ef8f1a839c3d063be1b6c5900277bffaedde4",
    "admin/content/articles/images/af-brief.webp": "2ee6e611da1ded082faf74d948b2d9f29719a964d0bc822447fba50fc514f6f8",
@@ -99,6 +101,8 @@
    "admin/content/articles/images/hs-rules.webp": "05357df9d61cd0d20a4c90604dae0e4a83c0876a320927a44c9378db75abde8d",
    "admin/content/articles/images/kq-briefing.webp": "a36f757bac13f15536c182d6c178ccbc78be68b14eb7197a00e13bf9cb7271b6",
    "admin/content/articles/images/kq-loop.webp": "f0c0e788d9499bb54251ecdd302f44efdebb5a35610ba862dd1ae5d5320bcd1a",
+   "admin/content/articles/images/ks-flow.webp": "4a914e5d64dd2968d252d12998e19f0357ac5e1ec880da940f239326cb8fc79a",
+   "admin/content/articles/images/ks-prior.webp": "55a313dcf0446adae0376bdc2fe06c0e8e517a44bd1ae87c370b505d550b488b",
    "admin/content/articles/images/lb-chain.webp": "271d59bc705d9f8d210f10626eaa2fddbf6fa56aa6295c71bbde306bf693f9e8",
    "admin/content/articles/images/lb-counts.webp": "df9458deacb7583c0750eee4990f34191e40a8f02ce0c0377290ff82c9b84104",
    "admin/content/articles/images/mc-ledger.webp": "e2f60e63881fadf189df2bc0dabde56eeaefa552ca2cff1957fea575abb6ecba",
@@ -263,10 +267,10 @@
   }
  ],
  "counts": {
-  "files": 2167,
-  "pages": 486,
-  "articles": 133,
-  "verbatim": 1061,
+  "files": 2177,
+  "pages": 488,
+  "articles": 134,
+  "verbatim": 1066,
   "dependencies": 52,
   "text_overrides": 10,
   "unresolved_on_sgit_ai": 0
@@ -519,8 +523,8 @@
   },
   "articles/banners/.hashes.json": {
    "from": "articles/banners/.hashes.json",
-   "sha256_source": "3b50aeb32ed19be801fbe4f7b275866e96d8e4b0e15c486436680d5b6273650e",
-   "sha256": "3b50aeb32ed19be801fbe4f7b275866e96d8e4b0e15c486436680d5b6273650e"
+   "sha256_source": "71ef2d1e161e370f0c0eb62ec535a53f6b41c59f45e127cff1b36971e825371d",
+   "sha256": "71ef2d1e161e370f0c0eb62ec535a53f6b41c59f45e127cff1b36971e825371d"
   },
   "articles/banners/001-agents-doing-real-work.jpg": {
    "from": "articles/banners/001-agents-doing-real-work.jpg",
@@ -802,6 +806,11 @@
    "sha256_source": "a8b887b37ae87015f2ae1de937e81ac19403c5bff134b970388f6e2a4e8bc811",
    "sha256": "a8b887b37ae87015f2ae1de937e81ac19403c5bff134b970388f6e2a4e8bc811"
   },
+  "articles/banners/handing-secrets-to-agents.jpg": {
+   "from": "articles/banners/handing-secrets-to-agents.jpg",
+   "sha256_source": "93b102d3369936181627d81778ecae026d3528e70380fa7e9a72bf1803aeffdf",
+   "sha256": "93b102d3369936181627d81778ecae026d3528e70380fa7e9a72bf1803aeffdf"
+  },
   "articles/banners/hooks-are-kernel-code.jpg": {
    "from": "articles/banners/hooks-are-kernel-code.jpg",
    "sha256_source": "6c5894f789ff143ba79eb78fe99e24c0f9c51865051ef70e4764861892e7944e",
@@ -879,8 +888,8 @@
   },
   "articles/banners/manifest.json": {
    "from": "articles/banners/manifest.json",
-   "sha256_source": "dab004136632d672006a5117b22f3939b8131d22667b09c060acf7d1eb571d00",
-   "sha256": "dab004136632d672006a5117b22f3939b8131d22667b09c060acf7d1eb571d00"
+   "sha256_source": "bf6036ac4ab3dbb5e2cf0593cb1214d43b46977599f7bd038e961b5687b6ef15",
+   "sha256": "bf6036ac4ab3dbb5e2cf0593cb1214d43b46977599f7bd038e961b5687b6ef15"
   },
   "articles/banners/memory-is-not-a-spectator-sport.jpg": {
    "from": "articles/banners/memory-is-not-a-spectator-sport.jpg",
@@ -1039,8 +1048,8 @@
   },
   "articles/banners/subscribe.jpg": {
    "from": "articles/banners/subscribe.jpg",
-   "sha256_source": "12bf21822c759a1d7dd4bd961f339ab6c840616d7d9fe3f822125bb138c0a00a",
-   "sha256": "12bf21822c759a1d7dd4bd961f339ab6c840616d7d9fe3f822125bb138c0a00a"
+   "sha256_source": "dbe695df22e3c70401d3d7d2ad7b5b9591b290e814810bd8542848cb33b912cf",
+   "sha256": "dbe695df22e3c70401d3d7d2ad7b5b9591b290e814810bd8542848cb33b912cf"
   },
   "articles/banners/supply-chain-of-vaults.jpg": {
    "from": "articles/banners/supply-chain-of-vaults.jpg",
@@ -1491,6 +1500,11 @@
    "from": "articles/cards/green-does-not-mean-live.webp",
    "sha256_source": "f8bc3c6d9ec2d5288e067b3e6eab2e8dd6585dca27684d20e1bca7eb34daf91d",
    "sha256": "f8bc3c6d9ec2d5288e067b3e6eab2e8dd6585dca27684d20e1bca7eb34daf91d"
+  },
+  "articles/cards/handing-secrets-to-agents.webp": {
+   "from": "articles/cards/handing-secrets-to-agents.webp",
+   "sha256_source": "d0117c5aa0e88c601c55466195ec47a9799da7e4d26d4fc88fa875c5e161ad54",
+   "sha256": "d0117c5aa0e88c601c55466195ec47a9799da7e4d26d4fc88fa875c5e161ad54"
   },
   "articles/cards/hooks-are-kernel-code.webp": {
    "from": "articles/cards/hooks-are-kernel-code.webp",
@@ -2019,13 +2033,13 @@
   },
   "articles/collections/index.html": {
    "from": "articles/collections/index.html",
-   "sha256_source": "f8e5bcadf9485f44212466c8ba3135f681f2f20a479a441f6a02e202ff997c71",
-   "sha256": "282ef71a86076b323e57e3b1681c168bd79b825dcb7b500063a9e5b9d355f8ce"
+   "sha256_source": "414c849e5f1430058138746331c535d8161a88ad00bedc53d3c9f6a05d2051e6",
+   "sha256": "c98e71429bff72b9e2995899f64f40268cd998e76904795a12419d4f8cbea7b5"
   },
   "articles/collections/index.md": {
    "from": "articles/collections/index.md",
-   "sha256_source": "0dcc226c5ae242115f645ff165d59467d5c02f7f9fb36cc5c2b14cb8529f72ce",
-   "sha256": "b04e6dfecb23fd5d4bdb46790ce6cbf51401146dccb4d5aad365f8d8d718f898"
+   "sha256_source": "99be51084cb1741771bce90ee000e103f287eb5b0c475bd5d3ee1320eff4a764",
+   "sha256": "e2111917843411e6cb185e82afff8a3f0f93133ca0a29711e3140bb5b6adc981"
   },
   "articles/collections/local-news-kept-as-evidence.html": {
    "from": "articles/collections/local-news-kept-as-evidence.html",
@@ -2169,13 +2183,13 @@
   },
   "articles/desk/index.html": {
    "from": "articles/desk/index.html",
-   "sha256_source": "c2100836952d25a605ade59a237d60596b34cf955fc0efa53b36bc3ad598bd61",
-   "sha256": "366dccfe91f31b633af0da5b1680c74804e391d3dcef16e521feeeca142cecda"
+   "sha256_source": "18ad21c7d2f55b4685a1bd204ae3b3b7681d88a726cf86ed3c1577ce4ad670d7",
+   "sha256": "ea8c7953f96332629a02095df38279ca59ae74a74720df65edd2546bf43e7935"
   },
   "articles/desk/index.md": {
    "from": "articles/desk/index.md",
-   "sha256_source": "9cfe339f9dfdbb72998c1ffd788beb13ce88530426aa65021833fc6bd4e5235e",
-   "sha256": "c10f7c5d76972a6f52f85eb09d1baefa9ddad75d8733b920527e5ad2431c6e5b"
+   "sha256_source": "f2d074bf78dc0d5cf1e1d3442b2a270ad3a0abd2a734bd39afdd8b006971ee5a",
+   "sha256": "8c51feb8b9885f6b5146ad7a6b3de00e5f71058aec3dfe1703df3d846626945e"
   },
   "articles/desk/range-is-the-feature-so-the-stop-is-designed.html": {
    "from": "articles/desk/range-is-the-feature-so-the-stop-is-designed.html",
@@ -2259,8 +2273,8 @@
   },
   "articles/feed.xml": {
    "from": "articles/feed.xml",
-   "sha256_source": "1119d2f528302904d305396826ea96471b39b59815ecd302a2f2e323bd6b2a96",
-   "sha256": "511308cb8ad684013f6dd951ba8d06e3a36958a4810887badcde7aa134486e86"
+   "sha256_source": "7dfdcd0540a4fc79e74cd0e9054c77a26fc2a90798c9040bcd58a98a8db94a0f",
+   "sha256": "7df76ae967e03814f65e807f9247b6ebcb5a876f65232be919b4085ea47f15a5"
   },
   "articles/firing-journalists.html": {
    "from": "articles/firing-journalists.html",
@@ -2334,18 +2348,18 @@
   },
   "articles/graphs.html": {
    "from": "articles/graphs.html",
-   "sha256_source": "b322213d6189a57d41bb4013e8c64ffaa0d9597d096e4c146a4a97f82d72d981",
-   "sha256": "73a8c76126b154a4f70813d1bc3b8994b6a21e11a8172549684c93830957a241"
+   "sha256_source": "b53beb13a1fae3522079877d8eb95a7f6c38dce7dd04e4e8496783d3648af3ed",
+   "sha256": "078211513e15688727618da597ba02f526f1722ec4e37c562c47448d6ca1df75"
   },
   "articles/graphs.json": {
    "from": "articles/graphs.json",
-   "sha256_source": "799aa4030ac4707a3bfecc0613331ed3b64fde2996ea9a4bf56f7098e21d243f",
-   "sha256": "2214a0f1dd20980e051a2d39f378a5a1bfe1e83c3b5d9d964062272a459c1ac3"
+   "sha256_source": "369392341430e1e9e14e14156ac866ca127b20f89ac4475d5ddf63da6f38ee3d",
+   "sha256": "0dac67c154b6fe7bbdd5edf8647cbdf5ba796c9b8ce3dbe76ba37a3ec38b0b57"
   },
   "articles/graphs.md": {
    "from": "articles/graphs.md",
-   "sha256_source": "0ab501d7ac820517d0283e19490a9451159f5fb64585eb0ab81247b6db69e02d",
-   "sha256": "2cd1a6a5d0ab920ce2420c7442a33a188e6ae99bfd2316d288b91a4a70fd57e4"
+   "sha256_source": "559c500bd45c5f2823a8cb033eaf3e664b3973b3305e3a7ba5af9ee7c2fa5e2c",
+   "sha256": "e12ce0d33965b756c84751fae145c282c1304e906fca16ebb17d8cd2feec6a7d"
   },
   "articles/graphs/a-link-to-a-persona.json": {
    "from": "articles/graphs/a-link-to-a-persona.json",
@@ -2546,6 +2560,11 @@
    "from": "articles/graphs/green-does-not-mean-live.json",
    "sha256_source": "2e61233f6b397c51c7b8cebd5409830b79e60d38b2293c4f0353f7de15c1f816",
    "sha256": "2e61233f6b397c51c7b8cebd5409830b79e60d38b2293c4f0353f7de15c1f816"
+  },
+  "articles/graphs/handing-secrets-to-agents.json": {
+   "from": "articles/graphs/handing-secrets-to-agents.json",
+   "sha256_source": "0491bd8b197c5387eb05a35b315e2a8f6064bead93ea41ea5ad404e0f7e2b862",
+   "sha256": "01f90a27e0d1d566577e5cd44f6a99392f2788f4e555f73586a3e6b2cb19aa8f"
   },
   "articles/graphs/hooks-are-kernel-code.json": {
    "from": "articles/graphs/hooks-are-kernel-code.json",
@@ -3021,6 +3040,16 @@
    "from": "articles/green-does-not-mean-live.md",
    "sha256_source": "4f28e9e8b10be95ba2353d16eeea332e0f727ebb8223b6214b907f63a04b709e",
    "sha256": "ab2475b0344c93d1e7da9f41dc885f3e1a3409977f73ebd6ece9d2e9f2ca6c80"
+  },
+  "articles/handing-secrets-to-agents.html": {
+   "from": "articles/handing-secrets-to-agents.html",
+   "sha256_source": "e0a63f2a44e1c22f886a4618e091aa3bc3464104301bbe43f010d3dea22e61bc",
+   "sha256": "ddd72a4760723d7acc75f6710e012bd5152d06561b9bc9092ebdfacfb46e03ee"
+  },
+  "articles/handing-secrets-to-agents.md": {
+   "from": "articles/handing-secrets-to-agents.md",
+   "sha256_source": "9b30088035ead654c1f4841beaaff7778b34c497086bf3b69676d00c51e75b0e",
+   "sha256": "ff37415b0f77cf2df9374b7cad3df8c10fdf40a8fe48ff4dbcd443746e4c4ab7"
   },
   "articles/hooks-are-kernel-code.html": {
    "from": "articles/hooks-are-kernel-code.html",
@@ -4297,6 +4326,16 @@
    "sha256_source": "f0c0e788d9499bb54251ecdd302f44efdebb5a35610ba862dd1ae5d5320bcd1a",
    "sha256": "f0c0e788d9499bb54251ecdd302f44efdebb5a35610ba862dd1ae5d5320bcd1a"
   },
+  "articles/images/ks-flow.webp": {
+   "from": "articles/images/ks-flow.webp",
+   "sha256_source": "4a914e5d64dd2968d252d12998e19f0357ac5e1ec880da940f239326cb8fc79a",
+   "sha256": "4a914e5d64dd2968d252d12998e19f0357ac5e1ec880da940f239326cb8fc79a"
+  },
+  "articles/images/ks-prior.webp": {
+   "from": "articles/images/ks-prior.webp",
+   "sha256_source": "55a313dcf0446adae0376bdc2fe06c0e8e517a44bd1ae87c370b505d550b488b",
+   "sha256": "55a313dcf0446adae0376bdc2fe06c0e8e517a44bd1ae87c370b505d550b488b"
+  },
   "articles/images/la-incidents.webp": {
    "from": "articles/images/la-incidents.webp",
    "sha256_source": "b30518fe5cbcee9dc90f7d054a985f1e0b61a97aeafdae16da7cccc0e4c8ecf0",
@@ -5559,13 +5598,13 @@
   },
   "articles/index.html": {
    "from": "articles/index.html",
-   "sha256_source": "60d80dbd35cfa35f1bd21e662f3b1f245f26318736afaa10d5976d57a6b9f2fc",
-   "sha256": "13ecde986227b77f719a66a633400a0de3099eca965cb7c15b0d7e61e04a0ce4"
+   "sha256_source": "4b0c7a6dd0fccac39677335cc57c30c050b44740fe08271ae6ef3516a471b261",
+   "sha256": "c495c418321eb864252bbcbe1a2024d4f7a37a2030db372adb116980125a197b"
   },
   "articles/index.md": {
    "from": "articles/index.md",
-   "sha256_source": "b6a939dd875e79e79368ca83c3746f9adfb87a27fab05744692d08f978f235e6",
-   "sha256": "b9048076dfe6bad4de5f634e2c3342463ff646cbb48a09f10e1567cbbc260a51"
+   "sha256_source": "9079c3d8086f93815eae77b8e67ea7928e6207a939f9b508f2af87cc03f0f17c",
+   "sha256": "e04d9dfd0c12932437386f7e0145a739246c2ab521fb39556e4c66af1439bf89"
   },
   "articles/introducing-fractal-semantic-graphs.html": {
    "from": "articles/introducing-fractal-semantic-graphs.html",
@@ -5709,13 +5748,13 @@
   },
   "articles/newsletter/index.html": {
    "from": "articles/newsletter/index.html",
-   "sha256_source": "e30828a55d585d1c99141b39fe1c45850c76ee3085e7847f27bd8a81032babcb",
-   "sha256": "1aa12cb97e7e3604ba34be72b958c52ddcc2891a9730f7ca3fa7a961d0021eba"
+   "sha256_source": "3d3d008b459e20d5aa9410e2cd28774de0373e0863808ec7538ad1b73d450282",
+   "sha256": "2807404e24e0c2afe24cbf0f5f6a91924520bf6d559a8a1698e460b1621e2c3b"
   },
   "articles/newsletter/index.md": {
    "from": "articles/newsletter/index.md",
-   "sha256_source": "8c9bb3f406b8762e59e100aaea74c3e2da404f3dfb36ee8323e5ca81e18161a9",
-   "sha256": "66c087ccef255949c3e1d73f1233398eb1182c52ad9beccc76547858a71e6641"
+   "sha256_source": "acf698a7fb013c002f7647d5f4944daad16ccf572a6a59e2de0108226bee79c7",
+   "sha256": "53bf2ab472cb61ee243594ba58536648ea0262e840ef3204ee14e4be4b6ce5d7"
   },
   "articles/nineteen-sites.html": {
    "from": "articles/nineteen-sites.html",
@@ -5949,13 +5988,13 @@
   },
   "articles/sixteen-notes-i-did-not-want-to-lose.html": {
    "from": "articles/sixteen-notes-i-did-not-want-to-lose.html",
-   "sha256_source": "902eff347b6d6a20f62c5aa50e80edd3e02329ee946e69d131c42526b7a9a0b1",
-   "sha256": "b723fd95825fe0fb706acb93b89f5a3d3270db203468b47ceb147fbcb866182c"
+   "sha256_source": "0bb66287eb631c5828e92f6a4f2e788bfc3328b641d38deb494768eb7691be76",
+   "sha256": "ae0f4327d5f494750c2bf67d04a82c65343bf7e74eca54e86738dcef763cb330"
   },
   "articles/sixteen-notes-i-did-not-want-to-lose.md": {
    "from": "articles/sixteen-notes-i-did-not-want-to-lose.md",
-   "sha256_source": "d2f9c37342063858feb6c28839d9fa435b437efe70aebcbdc1e6cdeeace246eb",
-   "sha256": "bc483f91c83b4e1f0bdada784b486e4993226b074e660878a00a48139f4c81cb"
+   "sha256_source": "dc1414c6a01f8f94a953fec72f1b56e6dbfa355c25ced4d4c9022a1c67735cac",
+   "sha256": "ce5c444e675356c95de4d2dd91f84e7fdb784c3e9238cdb5e38ab6ceae303315"
   },
   "articles/skill-behaviour-policy.html": {
    "from": "articles/skill-behaviour-policy.html",
@@ -6199,13 +6238,13 @@
   },
   "articles/the-passkey-opens-the-vault.html": {
    "from": "articles/the-passkey-opens-the-vault.html",
-   "sha256_source": "920e117a9e9c0c64a987e97aa3d756eec7103ce98f9a2223f66f9157e2c9fc0c",
-   "sha256": "176ab33d4e740301a5fff05cee3a70c898eb5a967e98560ef7236d172d3d881d"
+   "sha256_source": "a722da41f7c59c4f7d30649491bb4033f6d7af3b4aa84048e4e579f2029c6458",
+   "sha256": "a534176a4fb5088c4c0739cab42d8b997a8a093e3e5ccfd2fee5aecd6480804b"
   },
   "articles/the-passkey-opens-the-vault.md": {
    "from": "articles/the-passkey-opens-the-vault.md",
-   "sha256_source": "f57bda972025fcdc9104a45694c2351da377a88ffc7b36998b580b93dffda819",
-   "sha256": "9560db4c78745bcf3783156e8791563495cf43de48cf6129042a3ea020d9c80f"
+   "sha256_source": "e23f4c58a0acb79aaff545f316a51a8e83b11d8e19bd864726160a6ce2df324e",
+   "sha256": "ec8874f8d6eee7cae44b427a967781171c31d7c9f779a0eda2e81e885661f1e1"
   },
   "articles/the-policy-draws-the-liability-line.html": {
    "from": "articles/the-policy-draws-the-liability-line.html",
@@ -6269,13 +6308,13 @@
   },
   "articles/the-tokens-hook.html": {
    "from": "articles/the-tokens-hook.html",
-   "sha256_source": "e5b8383a0915f8339059d7a438987bfba30f31b3f229c09059d6edc664e1fb4d",
-   "sha256": "58d9a38ac03442a39909017dcd31caa7b1befaf7fcfb80755612e7f38f320969"
+   "sha256_source": "c70573ff040ba64105fb69817cf1cb8c39825a207f8f8572c3b8a2fb3f491271",
+   "sha256": "dfd65bc48b68edd16c6f47b5a591b53584cfc4d123017b1a71059b531e02be0c"
   },
   "articles/the-tokens-hook.md": {
    "from": "articles/the-tokens-hook.md",
-   "sha256_source": "d94b7ddb63f121e0792ffdd7408de47bc0c531c97ac1a8cbbd4e823496c21af2",
-   "sha256": "f59dda5bcfbfe659319649741c6929298ab001fbf8546f3cd7ec0bafa86f24ad"
+   "sha256_source": "e64a7351e560341e84c4f392b4f5c10909f3903d391004c6e0ac2406509a2d52",
+   "sha256": "12c1eebe374268a5ebdd79d3590b1f3d24bf7f76a55a9270007764aa7e2b6140"
   },
   "articles/the-vault-crosses-chrome-profiles.html": {
    "from": "articles/the-vault-crosses-chrome-profiles.html",
@@ -7277,6 +7316,16 @@
    "sha256_source": "fa35a707ba31a7aee2f72152587f5ac6d1f96baffc2ea9f627c62873dad5d1d1",
    "sha256": "1e3b6ef52c5b9e99780d323999fdc56d4764688958b0e336fe78f1484b06c990"
   },
+  "articles/versions/handing-secrets-to-agents.html": {
+   "from": "articles/versions/handing-secrets-to-agents.html",
+   "sha256_source": "8cd291426ee37c3f7d0f8dbf1729b968805a8099593ce655dbdc0115edd78d46",
+   "sha256": "51c69dfb84e51cb89889a53f2a88553f55e3911d8afb6fbe3632ecb7d66b46e3"
+  },
+  "articles/versions/handing-secrets-to-agents.md": {
+   "from": "articles/versions/handing-secrets-to-agents.md",
+   "sha256_source": "7521f893db34311129c7cf451ef0d9bd106bc9c5308a2f60cfd92e259116bf28",
+   "sha256": "970862c9e2cbbefc9ecb67e2a36158926ec9c14653f17518ab5f73ecc19dd762"
+  },
   "articles/versions/hooks-are-kernel-code.html": {
    "from": "articles/versions/hooks-are-kernel-code.html",
    "sha256_source": "e01e85900b58b1e897fb12e3089972e6286f110e06d847066aef7f1b87eb6d17",
@@ -7649,13 +7698,13 @@
   },
   "articles/versions/my-memory-checked.html": {
    "from": "articles/versions/my-memory-checked.html",
-   "sha256_source": "a9ea0be4149e73e7456830f7e595669e12590e13b218aed8e3099b884c15fd36",
-   "sha256": "1046737e1b3a48c14ebe1e3d2ee9a28a27dab28a3bef443542b071121cb4503d"
+   "sha256_source": "62233cad0cb5b437962b68296c2a1d69d27bb770bd275b0cf9951a4a8a826b7e",
+   "sha256": "91d538302e6660ed92dfb654bf888550fd20f8c4717053805f7666ffc0340728"
   },
   "articles/versions/my-memory-checked.md": {
    "from": "articles/versions/my-memory-checked.md",
-   "sha256_source": "ac4262ab6e85c23d86b2ec992b695789a23868a8420cb80a20a7bbddfd8b700a",
-   "sha256": "6747d5dbf67e206b2d6899f2734ae5b43cedeebd3d7d9a8ccada49d5052c1550"
+   "sha256_source": "ca680bb7f06ab398756c0d26ece430fbaa0e3ca386a09698b3ea791baf705448",
+   "sha256": "f837498e9af281aa9547aeb755a483d1ae3a0bfd193a628bf236e99c719d73b7"
   },
   "articles/versions/nineteen-sites.html": {
    "from": "articles/versions/nineteen-sites.html",
@@ -10451,13 +10500,13 @@
   },
   "newsroom/index.html": {
    "from": "newsroom/index.html",
-   "sha256_source": "cac539a8414956de6bb2876f92d6b0e2a7bfcb8206a75592518bbb00b7d10828",
-   "sha256": "be4b082aff3dfc34265dee41f5207a24d2e8d8bf28269472c3f006842e4b5461"
+   "sha256_source": "ea52fa4274bcc12d3c91c5225d8d549fb1d079abbc7675ec2c755580e81f98a0",
+   "sha256": "a0f0fde9aaf24e38f8809839ac573013df785a8748d82226d20cc7fa35c22553"
   },
   "newsroom/index.md": {
    "from": "newsroom/index.md",
-   "sha256_source": "e194978713fd60e73799775c2ac3603afb69ad6df348724e77ad34253c4de2b6",
-   "sha256": "f72f5ed1b91f20e3b48ec11a4435f58350dbf41d450bdab0520eee359e23a854"
+   "sha256_source": "33416c997fda8a8f20d928c27ab53b9b09d17ca33e4fd75c1fd5b2a7ccb331fa",
+   "sha256": "5861d3dd13ee71785cd592d9d9e3837a2fbf898d291117b18b481d2b08b1599a"
   },
   "newsroom/log.html": {
    "from": "newsroom/log.html",
@@ -10551,8 +10600,8 @@
   },
   "newsroom/wire.json": {
    "from": "newsroom/wire.json",
-   "sha256_source": "6332fdd53ac9375f4b88b9f0e373b650cc0a5de9b633dfe7c53dbc884f26fcf3",
-   "sha256": "2fbb5e2a5f61c62b0b7bc62364f759027b88da1db26b1585ae8cf6308dd2e307"
+   "sha256_source": "b69e9dae813c7e0e0ec064e1c648cfb26b7901c825ba8cea6ee8acd964a3a0d8",
+   "sha256": "627ac77a08fe98adc52e4b2b00f7889d1f2b7df34b41d02696a19d2d42751e63"
   },
   "og/a-link-to-a-persona.jpg": {
    "from": "og/a-link-to-a-persona.jpg",
@@ -10758,6 +10807,11 @@
    "from": "og/green-does-not-mean-live.jpg",
    "sha256_source": "d1999a650346221661f3b7135abc920272896b9f3a169c680d084b96fa767207",
    "sha256": "d1999a650346221661f3b7135abc920272896b9f3a169c680d084b96fa767207"
+  },
+  "og/handing-secrets-to-agents.jpg": {
+   "from": "og/handing-secrets-to-agents.jpg",
+   "sha256_source": "0d77c71c33ff38287dc737ce0a961823fdace25b7f77e4c786c0f0fc82eb4d3f",
+   "sha256": "0d77c71c33ff38287dc737ce0a961823fdace25b7f77e4c786c0f0fc82eb4d3f"
   },
   "og/hooks-are-kernel-code.jpg": {
    "from": "og/hooks-are-kernel-code.jpg",

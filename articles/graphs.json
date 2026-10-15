@@ -55,6 +55,225 @@
   ],
   "articles": [
     {
+      "slug": "handing-secrets-to-agents",
+      "title": "Handing secrets to agents and browsers: SG/Send's next focus, a key pair where the work runs, one-time drops, and a brief for a site that does only this",
+      "date": "2026-10-15",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/handing-secrets-to-agents.html",
+      "markdown": "https://newsroom.sgit.ai/articles/handing-secrets-to-agents.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/handing-secrets-to-agents.webp",
+      "teaser": "SG/Send's next focus: agents and browsers make their own key pair, owners encrypt to it, the drop is read once, and the secret never enters the chat.",
+      "topics": [
+        "vaults-and-method",
+        "agents-and-policy"
+      ],
+      "tags": [
+        "secrets",
+        "pki",
+        "agents",
+        "browsers",
+        "sg-send",
+        "sgit",
+        "vaults",
+        "qr-codes",
+        "passkeys",
+        "one-time-links",
+        "brief",
+        "article"
+      ],
+      "links_out": [
+        "the-passkey-opens-the-vault",
+        "sixteen-notes-i-did-not-want-to-lose",
+        "the-tokens-hook"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "ks-flow.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ks-flow.webp",
+          "caption": "Handing a secret to an agent or a browser, without anyone seeing it: the recipient makes its own key pair and shows only the public half; the owner encrypts to it, signs and drops the ciphertext for one download; the recipient decrypts it straight into the tool that needs it. Steps 1 to 4 ran end to end on a local SG/Send server.",
+          "kind": "architecture"
+        },
+        {
+          "file": "ks-prior.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ks-prior.webp",
+          "caption": "One-time secret sharing, and what is different about handing one to an agent: where the secret is encrypted, whether it is read once, whether it expires, whether it is encrypted to the recipient's own key, and whether there is a command line, from each tool's documentation; the last row was run.",
+          "kind": "comparison"
+        }
+      ],
+      "graph": {
+        "slug": "handing-secrets-to-agents",
+        "teaser": "SG/Send's next focus: agents and browsers make their own key pair, owners encrypt to it, the drop is read once, and the secret never enters the chat.",
+        "topics": [
+          "vaults-and-method",
+          "agents-and-policy"
+        ],
+        "core_idea": "Giving vault keys to browsers and scheduled agent sessions is the current pain, so SG/Send's technology should focus on one use case as a separate client-first site: the recipient makes its own key pair where it runs and shows the public half by QR code, link or text; the owner encrypts and signs; SG/Send holds the ciphertext for one download with deletion and expiry, which it already supports; the recipient verifies against a pinned owner key and pipes the secret into the tool, never into the model's context; it was run end to end locally; the first secret moves to the environment or a pairing step; and unlike API keys, which proxies keep out of agents, a vault key must reach the place that decrypts.",
+        "nodes": [
+          {
+            "id": "pain",
+            "label": "Secrets to sessions and browsers",
+            "kind": "question",
+            "summary": "Vault keys by hand; passkeys that do not always reach."
+          },
+          {
+            "id": "refusal",
+            "label": "Warned agents refuse",
+            "kind": "example",
+            "summary": "The more the prompt insists, the more it refuses."
+          },
+          {
+            "id": "backend",
+            "label": "SG/Send already has it",
+            "kind": "artefact",
+            "summary": "One download, deletion, expiry, client-side encryption; no location limit."
+          },
+          {
+            "id": "friendly",
+            "label": "Thirty-bit codes",
+            "kind": "claim",
+            "summary": "Fine for minutes and one download, not for keys that last."
+          },
+          {
+            "id": "flip",
+            "label": "The recipient makes the key",
+            "kind": "method",
+            "summary": "Public half by QR code, link or text; owner encrypts and signs."
+          },
+          {
+            "id": "pipe",
+            "label": "Into the tool, not the chat",
+            "kind": "method",
+            "summary": "Decrypted into sgit clone; never in the prompt or transcript."
+          },
+          {
+            "id": "test",
+            "label": "Tested end to end",
+            "kind": "example",
+            "summary": "Decrypted once, 410 twice, signature verified, key unexportable."
+          },
+          {
+            "id": "first",
+            "label": "The first secret",
+            "kind": "question",
+            "summary": "From the environment, or a pairing step approved from a phone."
+          },
+          {
+            "id": "trend",
+            "label": "Against the trend",
+            "kind": "claim",
+            "summary": "Proxies hide API keys; a vault key must reach the decrypter."
+          },
+          {
+            "id": "prior",
+            "label": "What exists",
+            "kind": "concept",
+            "summary": "Send, share links, Yopass, PrivateBin, Wormhole, age."
+          },
+          {
+            "id": "name",
+            "label": "SealDrop",
+            "kind": "artefact",
+            "summary": "A working name; Handoff, KeyDrop, Courier, Baton are taken."
+          },
+          {
+            "id": "brief",
+            "label": "The brief",
+            "kind": "artefact",
+            "summary": "One site, client first, pairing, no passphrase prompts."
+          }
+        ],
+        "edges": [
+          {
+            "from": "refusal",
+            "to": "pain",
+            "rel": "example-of"
+          },
+          {
+            "from": "pain",
+            "to": "flip",
+            "rel": "leads-to"
+          },
+          {
+            "from": "flip",
+            "to": "backend",
+            "rel": "depends-on"
+          },
+          {
+            "from": "friendly",
+            "to": "backend",
+            "rel": "contrasts"
+          },
+          {
+            "from": "pipe",
+            "to": "refusal",
+            "rel": "answers"
+          },
+          {
+            "from": "flip",
+            "to": "test",
+            "rel": "produces"
+          },
+          {
+            "from": "first",
+            "to": "flip",
+            "rel": "depends-on"
+          },
+          {
+            "from": "trend",
+            "to": "flip",
+            "rel": "contrasts"
+          },
+          {
+            "from": "prior",
+            "to": "flip",
+            "rel": "compared-with"
+          },
+          {
+            "from": "brief",
+            "to": "flip",
+            "rel": "extends"
+          },
+          {
+            "from": "name",
+            "to": "brief",
+            "rel": "example-of"
+          }
+        ],
+        "links": {
+          "articles": [
+            "the-passkey-opens-the-vault",
+            "sixteen-notes-i-did-not-want-to-lose",
+            "the-tokens-hook"
+          ],
+          "pages": [],
+          "sites": [
+            "https://code.claude.com/docs/en/cloud-environments",
+            "https://www.1password.dev/environments/mcp-codex-server",
+            "https://w3c.github.io/webcrypto/",
+            "https://www.qrcode.com/en/about/version.html",
+            "https://magic-wormhole.readthedocs.io/en/latest/welcome.html",
+            "https://github.com/FiloSottile/age",
+            "https://github.com/the-cyber-boardroom/SGraph-AI__App__Send"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "Anyone who uses the environment can read the values.",
+            "why": "Why the first secret is a choice about identity."
+          },
+          {
+            "text": "The agent is never shown the secret, and never asked to be careful with it.",
+            "why": "The answer to the refusals."
+          },
+          {
+            "text": "Each code is one-time use only",
+            "why": "How short codes are done properly."
+          }
+        ]
+      }
+    },
+    {
       "slug": "my-memory-checked",
       "title": "My memory, checked: thinking out loud in a voice memo, publishing only what the record supports, and why peer review has moved to before publishing",
       "date": "2026-10-15",
@@ -749,6 +968,7 @@
         "hooks-are-kernel-code"
       ],
       "links_in": [
+        "handing-secrets-to-agents",
         "my-memory-checked"
       ],
       "figures": [
@@ -6942,6 +7162,7 @@
         "two-agents-one-vault"
       ],
       "links_in": [
+        "handing-secrets-to-agents",
         "the-agents-write-too",
         "sgit-in-a-ci-pipeline",
         "every-link-points-back"
@@ -13678,6 +13899,7 @@
         "where-the-vault-keys-live"
       ],
       "links_in": [
+        "handing-secrets-to-agents",
         "every-link-points-back",
         "the-vault-crosses-chrome-profiles",
         "not-a-straight-line",
