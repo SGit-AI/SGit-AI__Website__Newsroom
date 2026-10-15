@@ -1,5 +1,5 @@
 {
- "what": "The SGit Newsroom, imported from sgit.ai's built pages at the same paths. Written by admin/build/sync_newsroom.py; do not edit the imported files by hand. Since v0.12.60 the root index.html and index.md are this site's own (admin/build/front.py) and are not in this record.",
+ "what": "The SGit Newsroom, imported from sgit.ai's built pages at the same paths. Written by admin/build/sync_newsroom.py; do not edit the imported files by hand.",
  "sha256": "sha256_source is the file as sgit.ai serves it. sha256 is the file as imported, with the site nav, the site footer, the agent-chip stamp and the index.md version line emptied, because chrome.py restamps those on every release. validate.js check 11 recomputes it for every file listed here.",
  "source": {
   "repository": "https://github.com/SGit-AI/SGit-AI__Website",
@@ -52,6 +52,7 @@
    "admin/content/articles/graphs/the-human-in-the-loop.json": "54a94cb87f6ffc7fd1dd52a36d9bb816c58f64c756b45b3ab7398d381b7a8471",
    "admin/content/articles/graphs/the-minimum-code-below.json": "d5baf19d787741d7b607fb4ef5916b22b7fc9bcbb1ac7922065f350759f44fa7",
    "admin/content/articles/graphs/the-policy-draws-the-liability-line.json": "e53dba09cf1937b6a963bf939bd668279b551b14c2ffbeaf7df6a9f8771552f5",
+   "admin/content/articles/graphs/the-scripted-talk.json": "4147cc84145881e5f18e685a641a3f3bba802d6d2813a5d7b8266ce0a4723664",
    "admin/content/articles/graphs/the-tokens-hook.json": "ad4880983bf0ccf3ee6c6cab31c4930deaf1ffb292b5e470e9428e70ced848f0",
    "admin/content/articles/graphs/the-vault-crosses-chrome-profiles.json": "a98eef0c5628432a407dae3dfe3f5b9f83d4da3a541aec79a53f113f5434d4ce",
    "admin/content/articles/graphs/the-wire-as-a-graph.json": "080bea9e81fd7f99003129a02742ed019e313a5166f748413164912f6f867df3",
@@ -134,6 +135,9 @@
    "admin/content/articles/images/tm-collage.webp": "064783ec603ac9243e882fcd1fa307f5da7d584b90cb89417d941f4b94d15456",
    "admin/content/articles/images/tm-night.webp": "6f4e003ccd3bc9b520574eb6ab0527bbf062c305d7871bdf142afe6f4cf4bee2",
    "admin/content/articles/images/tm-picker.webp": "88fe146a1ebf307302e86bf229e88bae6585d448241579157e24c31482678648",
+   "admin/content/articles/images/tp-architecture.webp": "dab649dd32f5c2e246ccdb895d5f0f8497b542e2975aace5d9024c81785f6d8a",
+   "admin/content/articles/images/tp-lineage.webp": "a940f9bff67eebb67c157434aede53f1e82228ed3f921d93727d7c109d23937d",
+   "admin/content/articles/images/tp-presenter.webp": "78f3011480b2ba74961bd1c40d069ccfe97a73e8d93a6e3f805d5b367d8eefcd",
    "admin/content/articles/images/vc-keys.webp": "4bbff6fe29b6ad3736cd4eab4e5c134b4d1b50ac7718b38535842a48151a0083",
    "admin/content/articles/images/vc-noserver.webp": "58b1c5afa765e3f423e47d3ed4a6b86b2bab089022c93c7662742beb68a69bd0",
    "admin/content/articles/images/vc-pipeline.webp": "2b673d2bd080709747bba8d074c4080b515bd4b993e30aeaadad1b93afa95800",
@@ -157,6 +161,7 @@
    "admin/content/articles/the-human-in-the-loop.md": "4e98e807a8b6d51395d536e7778f0f340a852a3fa886d4b8627ce099acc681f2",
    "admin/content/articles/the-minimum-code-below.md": "a2292316a7ffe248c985ac5e5d7e656daacaa98b35fa42ad9a03303812c3c0a7",
    "admin/content/articles/the-policy-draws-the-liability-line.md": "ca9be7e764d7e0c193598a061c733a2a561838db8337de94c7e81dff3a7c273d",
+   "admin/content/articles/the-scripted-talk.md": "85ad2ca1f70d3320237709cd7415ab69492db0fe0c759f7cc737c54c1463ab19",
    "admin/content/articles/the-tokens-hook.md": "0f63fd1f8a330b922d3d1c6f9ce67923d4d301e8fb0613801e597a6db4d9888f",
    "admin/content/articles/the-vault-crosses-chrome-profiles.md": "cd0ec68bcfaed2755653791deb46006bd06f7de05457d65da05f59f54a4b8248",
    "admin/content/articles/the-wire-as-a-graph.md": "f66ae627332de3e9ed723268a980b92677d3ed420f0b969cf4ce2f9f14fa3247",
@@ -249,10 +254,10 @@
   }
  ],
  "counts": {
-  "files": 2135,
-  "pages": 481,
-  "articles": 130,
-  "verbatim": 1044,
+  "files": 2146,
+  "pages": 482,
+  "articles": 131,
+  "verbatim": 1050,
   "dependencies": 52,
   "text_overrides": 10,
   "unresolved_on_sgit_ai": 0
@@ -505,8 +510,8 @@
   },
   "articles/banners/.hashes.json": {
    "from": "articles/banners/.hashes.json",
-   "sha256_source": "c0302172c260076506af1a22bc6f2dce6ae0234a313e6cdcd2140ffaa2d5bbab",
-   "sha256": "c0302172c260076506af1a22bc6f2dce6ae0234a313e6cdcd2140ffaa2d5bbab"
+   "sha256_source": "4669db78096c94429cf2dc67f0f59d108f2f1412609e03ca7efa8b9c008850b2",
+   "sha256": "4669db78096c94429cf2dc67f0f59d108f2f1412609e03ca7efa8b9c008850b2"
   },
   "articles/banners/001-agents-doing-real-work.jpg": {
    "from": "articles/banners/001-agents-doing-real-work.jpg",
@@ -860,8 +865,8 @@
   },
   "articles/banners/manifest.json": {
    "from": "articles/banners/manifest.json",
-   "sha256_source": "3b3b3a27debf86757d31d72a4709710863513c91bb58c00fbf0ba9b5d66b626a",
-   "sha256": "3b3b3a27debf86757d31d72a4709710863513c91bb58c00fbf0ba9b5d66b626a"
+   "sha256_source": "c18594aff9feba6f72cb7b9c64dc016e9de05f767a2efb64d08101ddb310134f",
+   "sha256": "c18594aff9feba6f72cb7b9c64dc016e9de05f767a2efb64d08101ddb310134f"
   },
   "articles/banners/memory-is-not-a-spectator-sport.jpg": {
    "from": "articles/banners/memory-is-not-a-spectator-sport.jpg",
@@ -1015,8 +1020,8 @@
   },
   "articles/banners/subscribe.jpg": {
    "from": "articles/banners/subscribe.jpg",
-   "sha256_source": "86fd5bb1573e51d6472389153029d4261ff85a8ca3085466c932e43ae70d93b4",
-   "sha256": "86fd5bb1573e51d6472389153029d4261ff85a8ca3085466c932e43ae70d93b4"
+   "sha256_source": "d211963f1490bc5c24f2fc02fdc7ede3fd3c9831610d8d9d9db75e2f3692fe86",
+   "sha256": "d211963f1490bc5c24f2fc02fdc7ede3fd3c9831610d8d9d9db75e2f3692fe86"
   },
   "articles/banners/supply-chain-of-vaults.jpg": {
    "from": "articles/banners/supply-chain-of-vaults.jpg",
@@ -1142,6 +1147,11 @@
    "from": "articles/banners/the-same-argument-in-our-words.jpg",
    "sha256_source": "54012d70dcd4e472b4f64be6265b2b57a8a808e59692d4ab68a6dbc3ad426c41",
    "sha256": "54012d70dcd4e472b4f64be6265b2b57a8a808e59692d4ab68a6dbc3ad426c41"
+  },
+  "articles/banners/the-scripted-talk.jpg": {
+   "from": "articles/banners/the-scripted-talk.jpg",
+   "sha256_source": "1adff8d23011c9d6bc6a1bd8b3dd91c58e3914a01a66b9e658162c0a703e212b",
+   "sha256": "1adff8d23011c9d6bc6a1bd8b3dd91c58e3914a01a66b9e658162c0a703e212b"
   },
   "articles/banners/the-site-is-an-inbox.jpg": {
    "from": "articles/banners/the-site-is-an-inbox.jpg",
@@ -1808,6 +1818,11 @@
    "sha256_source": "717461a448845999495f5e374c4ddc49c5ff76ac079e06322798a2a6c6afb01b",
    "sha256": "717461a448845999495f5e374c4ddc49c5ff76ac079e06322798a2a6c6afb01b"
   },
+  "articles/cards/the-scripted-talk.webp": {
+   "from": "articles/cards/the-scripted-talk.webp",
+   "sha256_source": "e28cc4f88528862991f63ee92834bfd9c330f7b0bfb393b053efef3db0064d2f",
+   "sha256": "e28cc4f88528862991f63ee92834bfd9c330f7b0bfb393b053efef3db0064d2f"
+  },
   "articles/cards/the-site-is-an-inbox.webp": {
    "from": "articles/cards/the-site-is-an-inbox.webp",
    "sha256_source": "6d970e58b1663a2fd8d0b2c3af9aa57656d3eba38640c109a608279718e00943",
@@ -1975,13 +1990,13 @@
   },
   "articles/collections/index.html": {
    "from": "articles/collections/index.html",
-   "sha256_source": "f15ef1ae99251e9287332421e6413b2b0dd0b0c302416383cf175e2d11960e6b",
-   "sha256": "0c7c560ada210a41cec72a72dd5507c9c52a1e84c0012c9ee9fe6e05bb8f254a"
+   "sha256_source": "f30e52eacb3296c7b8c211c50c26d0461d79a2db438af2fb7604b6bb89695ccc",
+   "sha256": "2045bcd3bcd487debe01351865756360b17643291b14069751063bb0159ce4cf"
   },
   "articles/collections/index.md": {
    "from": "articles/collections/index.md",
-   "sha256_source": "96415315626bb2d13f3e98fffc2eaa82d9045de33dddf0549d66e59121149c44",
-   "sha256": "fe10435bda49ea0b60a6e0e930a10c4fa8ef72f64c63537cb009a96402b16f6d"
+   "sha256_source": "e66629259d18395717c8e770c84f478e4856b2bdba3eb2e12588011c93b50d1d",
+   "sha256": "7876e8d7a82a28391c464369d052d3a9100e54338a121a5bebc934e04957b969"
   },
   "articles/collections/local-news-kept-as-evidence.html": {
    "from": "articles/collections/local-news-kept-as-evidence.html",
@@ -1995,13 +2010,13 @@
   },
   "articles/collections/wardley-maps.html": {
    "from": "articles/collections/wardley-maps.html",
-   "sha256_source": "ddd1c1a7fd581ced528d16b28a7eadc5e5a12b24cae3ea4ef9c15b1815bc12af",
-   "sha256": "fe1c752d58f46faf1f368abdc0e946a5d4ed5946363a360cca33718879cb6380"
+   "sha256_source": "9cd7550c7ded458689b4a1a70ab0462b9c644f40971f76806000b4c93b4a1f70",
+   "sha256": "abcae58088010bac99726e80e0b7ef5585e220bd9666b6e0d5e48dbfd3915c56"
   },
   "articles/collections/wardley-maps.md": {
    "from": "articles/collections/wardley-maps.md",
-   "sha256_source": "a39a0c9fcec1fe5e718cb164ff971ca4cebf09690a06eb081552964da2ba392b",
-   "sha256": "38607ed6febdac8b7f3a9a226afa94ceab9715657870f8499951a7c8e7fb6cde"
+   "sha256_source": "af8cd66a6e63c4665058955fd291d7e386498899e0700b229a517abddd8482cf",
+   "sha256": "5aa9b134fc389f94d6a3472f5ab3b1a36c1bbcbe9dbf6b9a94ede651966686f7"
   },
   "articles/collections/what-the-human-brings.html": {
    "from": "articles/collections/what-the-human-brings.html",
@@ -2035,13 +2050,13 @@
   },
   "articles/custom-uis-are-not-the-exception.html": {
    "from": "articles/custom-uis-are-not-the-exception.html",
-   "sha256_source": "fb8d1a6c5adee347cd70b648d1f0659bda7f52f17b0a2817ec6eaea48f6075bf",
-   "sha256": "971b234dab85c55046bc8c3591323c08ecdbce6529c89dc70a1cf8770b58b00e"
+   "sha256_source": "65abcb59c8e4c980a3d3beadf198bda257167fe3dd32fe096aa74c1bf02f317e",
+   "sha256": "a32403fa8def732da6597df4037c627df42ab102d899d09fc8e01c30e8ca9df3"
   },
   "articles/custom-uis-are-not-the-exception.md": {
    "from": "articles/custom-uis-are-not-the-exception.md",
-   "sha256_source": "7a1b27e14778068265d32ac64d70e3ceda159545ac573b2a0b06fc9e4246bb57",
-   "sha256": "b3ab61104bd5cbc0029e325f919d0df1cb245869202bbdf1157617f197ba9234"
+   "sha256_source": "6e744b5ae3d47eb03b5ec9b6be1ea03ed7f7fa4c087b46ab05795bd0bc98649a",
+   "sha256": "af615bf03e7275b7aa2083213ce9d97d3ab46a06701c73fcbc63f9218331641c"
   },
   "articles/dark-mode-and-four-more.html": {
    "from": "articles/dark-mode-and-four-more.html",
@@ -2125,13 +2140,13 @@
   },
   "articles/desk/index.html": {
    "from": "articles/desk/index.html",
-   "sha256_source": "0591d722ae56ec887ffa6d132acbc73fe119e956294293c4248e3e733b1caa24",
-   "sha256": "fd423825e6d14566f9a77a4970e6daa8dcddc9c44ae6a354a2e0c43f06bf6a3d"
+   "sha256_source": "439e590f513b27a360e02d0dbdede4b2d2e37099aecac9d00b07e17636ae3578",
+   "sha256": "f68070c8200cac515ebfc51c959cb941de3b517ada7df9c5bdb1910d4d02e1bd"
   },
   "articles/desk/index.md": {
    "from": "articles/desk/index.md",
-   "sha256_source": "0b542da6468fc0bc305fc8f2ad7d92c482f92ad0fc9f9344ac03d6ca91b2d881",
-   "sha256": "b8c4fdd508ecea4ea147d9c1b8a553351d81bd6b5088b2832e96c924429859f3"
+   "sha256_source": "03859bc18524828c508b15a912b22bb05e926c2c81ed86b94aa6dc3407541c23",
+   "sha256": "55c5b369009c5ac90ae2f2f608b027671c23f06cb297a0d80e3e85762c0353db"
   },
   "articles/desk/range-is-the-feature-so-the-stop-is-designed.html": {
    "from": "articles/desk/range-is-the-feature-so-the-stop-is-designed.html",
@@ -2215,8 +2230,8 @@
   },
   "articles/feed.xml": {
    "from": "articles/feed.xml",
-   "sha256_source": "a6a95ecf13515a1085610fc82d39270e2a2c3e75060e2f2532e0f3d4f674ba87",
-   "sha256": "7c05f679b45ddf912c9cb0f8774201c825595513a64dfbaceac0f81c9d8cd80a"
+   "sha256_source": "e57f1ec1c2d91b2dd06ffc565c0dbf12818835b583e4321eea426710c39b0807",
+   "sha256": "10d4de33512a02c5fde3719ebf8427299018c3c60069bdb5f761d9b92ca2bee5"
   },
   "articles/firing-journalists.html": {
    "from": "articles/firing-journalists.html",
@@ -2280,18 +2295,18 @@
   },
   "articles/graphs.html": {
    "from": "articles/graphs.html",
-   "sha256_source": "5175913a6e0b87ba6ba7925bfb317c65f2456db2252e36504eefbb9262c518af",
-   "sha256": "74ca684c946036b9b8bf6263006465f552a700ddd8756e318619d62ee2f7bd56"
+   "sha256_source": "df6b94ceb23aca54e07185dfa904cbbeb9f01d2d668377e2b82a8ca97973ec22",
+   "sha256": "3eb0972ea67a44cfd48df14d42deb2fff62b71fc7f55f9fae90ea7d12f1febea"
   },
   "articles/graphs.json": {
    "from": "articles/graphs.json",
-   "sha256_source": "8a701f98abd472ff51ebf18dcb2532001f7ca370ab37b44b7a02797403fcf520",
-   "sha256": "62f542f293777c0c416e245c1477207302f2813bf75d3382c081c9829c2b7cef"
+   "sha256_source": "93467d22aba33811a4bff731372384ad8ea27fd068fea77ad8443844a146367a",
+   "sha256": "719c5fe891a7c721b52b66bf2e495ad9de00bf70c8cc984fc08410a5c40a50a2"
   },
   "articles/graphs.md": {
    "from": "articles/graphs.md",
-   "sha256_source": "0d6a0d2aa8d801bec0bf992b21497a98a396196c55e504a39cad257f601c39c7",
-   "sha256": "80f1e3f132bfe05eb30b5ce8031b03e923e815f489520d91ce300ff410dbadc4"
+   "sha256_source": "b8c6b7279937b78207f7579f320cd2c2074cbd708dcba4392ff0d8b13af62575",
+   "sha256": "467ab630f22c6079b8ae7916791252c60aad71ff4462b16d36a2cb23d0821afc"
   },
   "articles/graphs/a-link-to-a-persona.json": {
    "from": "articles/graphs/a-link-to-a-persona.json",
@@ -2837,6 +2852,11 @@
    "from": "articles/graphs/the-same-argument-in-our-words.json",
    "sha256_source": "bf09b322972e418adac2bef029ac4443ea702fa8e3658c001ef21451059646aa",
    "sha256": "4e3f250669675a663c40e67f8bb1a20197ee3a944dd2c11f5172a56a7fc6487a"
+  },
+  "articles/graphs/the-scripted-talk.json": {
+   "from": "articles/graphs/the-scripted-talk.json",
+   "sha256_source": "183020c9e0b3c8ce3b5989c6196461f887f8930e0c46bd899e8b0fba6d9e283e",
+   "sha256": "4fdaacd4d8948f4e6c3fa6605f21672e326508f9974af3ae58674bd9071f47f5"
   },
   "articles/graphs/the-site-is-an-inbox.json": {
    "from": "articles/graphs/the-site-is-an-inbox.json",
@@ -5333,6 +5353,21 @@
    "sha256_source": "54eff02b786070be12c3b8629cc7264e5aa1fd8eab2ca61b18196ffe9a7468a0",
    "sha256": "54eff02b786070be12c3b8629cc7264e5aa1fd8eab2ca61b18196ffe9a7468a0"
   },
+  "articles/images/tp-architecture.webp": {
+   "from": "articles/images/tp-architecture.webp",
+   "sha256_source": "dab649dd32f5c2e246ccdb895d5f0f8497b542e2975aace5d9024c81785f6d8a",
+   "sha256": "dab649dd32f5c2e246ccdb895d5f0f8497b542e2975aace5d9024c81785f6d8a"
+  },
+  "articles/images/tp-lineage.webp": {
+   "from": "articles/images/tp-lineage.webp",
+   "sha256_source": "a940f9bff67eebb67c157434aede53f1e82228ed3f921d93727d7c109d23937d",
+   "sha256": "a940f9bff67eebb67c157434aede53f1e82228ed3f921d93727d7c109d23937d"
+  },
+  "articles/images/tp-presenter.webp": {
+   "from": "articles/images/tp-presenter.webp",
+   "sha256_source": "78f3011480b2ba74961bd1c40d069ccfe97a73e8d93a6e3f805d5b367d8eefcd",
+   "sha256": "78f3011480b2ba74961bd1c40d069ccfe97a73e8d93a6e3f805d5b367d8eefcd"
+  },
   "articles/images/tq-model.webp": {
    "from": "articles/images/tq-model.webp",
    "sha256_source": "902e6277dffecad12d0c95eeb402edaa912048819a8b7ef91a5ddcd3489030fb",
@@ -5450,13 +5485,13 @@
   },
   "articles/index.html": {
    "from": "articles/index.html",
-   "sha256_source": "1678164ed03b44a7aaf342293d68628cc7be088a2663b657fb107de7430d9735",
-   "sha256": "ca0ac7ce9f2b6fac5524f76c9f0d8c9953eb2771839e48d1865ce33db9d07173"
+   "sha256_source": "87395eceaa57178807e134b45b58cbd81086da400a469c54a9b14c90cc27fc0f",
+   "sha256": "47fcf60e424dd93372562a135d0df769223e474629602977d34ab2b8ad0487b6"
   },
   "articles/index.md": {
    "from": "articles/index.md",
-   "sha256_source": "4d3c254d19f52597a201e2e5ad57e2618d4e77ca339a301dc46057001f7684e3",
-   "sha256": "7f4dcd686a697af9ef871c21b3e5d9c69f210a44bf17f567e7f21cce701c0025"
+   "sha256_source": "1515ce5e7065af72b282bf22fed850bdb7abb775d2669adeaecb720eb298f29a",
+   "sha256": "07b359c63ced6572454900df4761a67ab6d46a8e7d1636fa9bf089142e18a2af"
   },
   "articles/introducing-fractal-semantic-graphs.html": {
    "from": "articles/introducing-fractal-semantic-graphs.html",
@@ -5590,13 +5625,13 @@
   },
   "articles/newsletter/index.html": {
    "from": "articles/newsletter/index.html",
-   "sha256_source": "e2ee175a5e45404a9dc9e5e3bdd1e9a19a3a89c8deab24cc97cc6fe5b574d4ae",
-   "sha256": "5ac06e44123bc98dffbb56db399813d0bebcb2eec34971651f7d345dcd3b2da1"
+   "sha256_source": "019fc0ff7ac12f92be7a318d1795eede3ffcd34d3132bcec929301ff3c853730",
+   "sha256": "c9eba3ba894d0c8ce6f2a76c2a894ced46c2f0ffd7d16cd9daf4bd08631e76be"
   },
   "articles/newsletter/index.md": {
    "from": "articles/newsletter/index.md",
-   "sha256_source": "56b3fffd36d77b1b1823da93e21b5cfe652268b3baeac2669d9c8e94f4ca82f9",
-   "sha256": "f314a1999ff4bc7f63efcea2b8141d9efc76cd830ddb017b93d4cd55b7e1dad5"
+   "sha256_source": "940be0c0dd0b2cc466f6c443a691e526aa9ee859e4da09d5d61590010db7fb9a",
+   "sha256": "61ffd609d4ae5eaf549482c011323bfd8212fdb48760b22e2baa9a652bc801be"
   },
   "articles/nineteen-sites.html": {
    "from": "articles/nineteen-sites.html",
@@ -6127,6 +6162,16 @@
    "from": "articles/the-same-argument-in-our-words.md",
    "sha256_source": "93c3fc442ff64cdd2d39cda7dc4ba6e2433424956c3cdf9afd2c55619545d9a3",
    "sha256": "ab81be5af37fa825b5899e194348933190c03139208bc0b2efcf04b474bf3543"
+  },
+  "articles/the-scripted-talk.html": {
+   "from": "articles/the-scripted-talk.html",
+   "sha256_source": "40d298cb28dcba22af41e383660207c7ee453c93b10f54af98ba39f729dd8145",
+   "sha256": "d2d69b7009a0edfe99815b3d92f18aa9737f5e1708818772051f6b1209588d84"
+  },
+  "articles/the-scripted-talk.md": {
+   "from": "articles/the-scripted-talk.md",
+   "sha256_source": "408c478a828b06c684ac915f635be57938839a5c5a4f9c905341c07dd7d3f523",
+   "sha256": "b6b39981e0353b8d0fc85960b8a3b5714a774ce1f48d46dca032701148927a97"
   },
   "articles/the-site-is-an-inbox.html": {
    "from": "articles/the-site-is-an-inbox.html",
@@ -8440,23 +8485,23 @@
   },
   "articles/versions/the-citizen-developer.html": {
    "from": "articles/versions/the-citizen-developer.html",
-   "sha256_source": "e6f8f4fd0974d93abe0161fe69ec81b0b361e1d561b65accb7371f82d881e4c7",
-   "sha256": "f4d3e41bba4d3bb205cdb2c68a6e6bc08e719c094501eda1704111b2b25d59bb"
+   "sha256_source": "6baca78f36fe55df32887a212f94a9f1b716940da439df40ae9cab66bcb8e9dd",
+   "sha256": "593e1f62595fbb95b5ffa5030e123b5628109457699f3d95513795322b007c0e"
   },
   "articles/versions/the-citizen-developer.md": {
    "from": "articles/versions/the-citizen-developer.md",
-   "sha256_source": "344e72b506c30fa80a043bdcdb710494fc6594ebdaf777465b15e92f4343f5d4",
-   "sha256": "86cf7aeaa5ad7947bc2c7211a4ac3d81a16dfcd0a8000987adfa04cd30eecc28"
+   "sha256_source": "4eed66d34872c6e9ab4548486281c5d25075625f3c570a52f85c3cd1a64cb823",
+   "sha256": "9605da6d69f38ede2d7601cf8f4a3fc263668d85c9e288bbd2da84fe67aa4346"
   },
   "articles/versions/the-citizen-developer/v1.1.0.html": {
    "from": "articles/versions/the-citizen-developer/v1.1.0.html",
-   "sha256_source": "29d9e081283565c17585a3344d93696368d05ef54ab21e1e19e771b6ad9c1c02",
-   "sha256": "c592f8e8cc285bc737acd71dd9e403de2812417cc97b297f69a4c5c650f0de40"
+   "sha256_source": "07349e3e8ab346e99c17b53501317bad7d30e36238cabefcd994c1d08743c095",
+   "sha256": "7af4149789dfe4282f18ef96eb031d8fd1eefe70296f124e5ce2e50b382fed58"
   },
   "articles/versions/the-citizen-developer/v1.1.0.md": {
    "from": "articles/versions/the-citizen-developer/v1.1.0.md",
-   "sha256_source": "9d1c394840ce3072eed1e2dd299be01537ac055b291d8d02c0d1d7e993b1bdbe",
-   "sha256": "f07e64e59cd8f0338b10909ab5ca0aceecfb71784a59cc08c08f6a6e41c36c40"
+   "sha256_source": "0dfcebd71a6bfb961229deea468c503d57ad96bd57ec43443304ebf10d3242f6",
+   "sha256": "d257366e2fadb710eb48e9d0abe912edba6ea6178b19ff5a08d3f3d325921722"
   },
   "articles/versions/the-deck-i-could-not-download.html": {
    "from": "articles/versions/the-deck-i-could-not-download.html",
@@ -8480,23 +8525,23 @@
   },
   "articles/versions/the-eyeballs-get-cheap.html": {
    "from": "articles/versions/the-eyeballs-get-cheap.html",
-   "sha256_source": "c07570e732b00379f69553c50602afe4f13af6bf761be0940bdfe51916327e4c",
-   "sha256": "0249f32af1d3e53f903c2bef0fecc87db2ed8d48164552092274dd1d7c69ca35"
+   "sha256_source": "47b6297a43779f54c17e51382dbb3d3e55c3cf979e6493979f5b79503851f461",
+   "sha256": "af015c7ec26a12684ebffd5591eb6d7d4f0dcab5aacf35bac1f797cce9c80d27"
   },
   "articles/versions/the-eyeballs-get-cheap.md": {
    "from": "articles/versions/the-eyeballs-get-cheap.md",
-   "sha256_source": "881e7861548c8f96e175094369cbc970397fdc1fa61c0276d7efece611b61ddc",
-   "sha256": "3330a8050be1891157093f800fe16778b4e123b04ffc1d50a2e2c73352ccd5b3"
+   "sha256_source": "5e73c200e4b70a89c88519abd84eee3a8ce7dd52d66c5a9ddc8d6a9dc9068f2f",
+   "sha256": "e3b5a5870da737a3cf20fa73dae08e602c6e8f2c87ac4ed68b6a7ca407bc2780"
   },
   "articles/versions/the-eyeballs-get-cheap/v1.1.0.html": {
    "from": "articles/versions/the-eyeballs-get-cheap/v1.1.0.html",
-   "sha256_source": "75478729d4a31c0c784ec6003acfd3e58c6dfad1d60023239ebc316a1707d15e",
-   "sha256": "fbd07f25aa74fc34551430eb16ed97648c71a2109b143d5bc76d9a6440fec5d3"
+   "sha256_source": "9b8a0c6b73b0063c1be6cd77e434a2a5f9d76e76f8db8a82e81338aaccd86e28",
+   "sha256": "0735c0ba511171528242151aa197fc7d598c6c9eeb71207a10dc5a8bad01a0f4"
   },
   "articles/versions/the-eyeballs-get-cheap/v1.1.0.md": {
    "from": "articles/versions/the-eyeballs-get-cheap/v1.1.0.md",
-   "sha256_source": "6e1e96441e73b7b53280a55a296dbe8fb7f0c826550699c9b8496f0b84532602",
-   "sha256": "f7ce8c8fe6b69771d2e30a5800e3ea0533a26f1a39153ae945794c356093ede6"
+   "sha256_source": "abb4dff5e0050fdcfaf2cbd95404d322ac77235094959b98d2c5e1b5e1a39afa",
+   "sha256": "661710bf806e63658335778bb8a842ac2004ac37b99e9b82819c83a19d4fb49b"
   },
   "articles/versions/the-homepage-is-a-vault.html": {
    "from": "articles/versions/the-homepage-is-a-vault.html",
@@ -8838,6 +8883,16 @@
    "sha256_source": "e3176c0fd4c42c4be64420a54454f14b8189b70df7274d29f1b0981c701c2889",
    "sha256": "5772270b2c093bd783e96a34af6aa1551580aa626376c2de5a0eb7880d4fa660"
   },
+  "articles/versions/the-scripted-talk.html": {
+   "from": "articles/versions/the-scripted-talk.html",
+   "sha256_source": "4b6c341e07d86de3413d5e25abc3779919f8a89705c7adc27670958ca7943c55",
+   "sha256": "730da73692363665c7172500e685670a5bd90a8372c4672ec0c4ecf94b0c4ba5"
+  },
+  "articles/versions/the-scripted-talk.md": {
+   "from": "articles/versions/the-scripted-talk.md",
+   "sha256_source": "d322219ebff4fc137d63563c7aca1e8a395e60d4af4127498a05f7ff86e506b8",
+   "sha256": "b119d0a18804c92a56c22c68c1f331de4a1c6175bb66c986e8f304bdda8e16cc"
+  },
   "articles/versions/the-site-is-an-inbox.html": {
    "from": "articles/versions/the-site-is-an-inbox.html",
    "sha256_source": "767ea1bcf140061a30ed6b8c1e84f6d4f6c049cfb606871f7a18aa53c286e1fe",
@@ -8850,13 +8905,13 @@
   },
   "articles/versions/the-tokens-hook.html": {
    "from": "articles/versions/the-tokens-hook.html",
-   "sha256_source": "de76a59edefadab552425487fb50f761523bf46515c118f73179287e16d830c5",
-   "sha256": "ad1350cc74e7534799fe1e5e20ddd17ab04ed9eea889a8c5ec39129080879683"
+   "sha256_source": "28eff013843fbc0d2f9460a987330b9ee096c4d18c604e5a63442336fce12581",
+   "sha256": "9371a8369ecc764fd54cda6bd644ef39d44d127442e75069861b84cba39dfb9f"
   },
   "articles/versions/the-tokens-hook.md": {
    "from": "articles/versions/the-tokens-hook.md",
-   "sha256_source": "fd66292b1b7a444fffbd689ad3f7122ff65c3b0b2fe0aee38a9f6cc4155e5d5f",
-   "sha256": "48929efbf2edf0f881dbdeaa3de6846162230edc67b20a702e5d4469e46a2668"
+   "sha256_source": "4626604612630974f0f5bad25a0c54a59dc1b2214888d91bb7826909c8d8877c",
+   "sha256": "e67113b8b135a632cbdf1962467fbb7cabad1893a99d3053ca6d216d17c26951"
   },
   "articles/versions/the-vault-crosses-chrome-profiles.html": {
    "from": "articles/versions/the-vault-crosses-chrome-profiles.html",
@@ -10292,13 +10347,13 @@
   },
   "newsroom/index.html": {
    "from": "newsroom/index.html",
-   "sha256_source": "73674a71d7216bc811c184c2facb10e5d920f1685a4c45340b2f9745a7807ed1",
-   "sha256": "b5d5ecc3f12cfcda3e9300b35173e72c5dbbb715dcd76a2e9aec4d09a66616f1"
+   "sha256_source": "f809c019200c492da9a9bfe2d9cdbc631853930b21f389f9235edf278bd3a896",
+   "sha256": "1d38859b5bde629bd488b22d6d3966c291c9f8cd6a80c2f4ff942e246a3c5862"
   },
   "newsroom/index.md": {
    "from": "newsroom/index.md",
-   "sha256_source": "50fc54ca60b22dd1c2c50b55f7ceb5f02f5a5b3d969e9dd72f09e4c628ad9d55",
-   "sha256": "0e7017f4445b3155e30a0a61d71d6e3249f540814b8b620ab47b44672796a0cb"
+   "sha256_source": "d1fde1e7b2a0b3e18c049c5be04bbcaa6420e6633dce2ae99f86a15bc78a14dc",
+   "sha256": "baa1f0a0699d9668ecf0c9a0fb995e61c66527b07afd45a9d852412152c12f54"
   },
   "newsroom/log.html": {
    "from": "newsroom/log.html",
@@ -10392,8 +10447,8 @@
   },
   "newsroom/wire.json": {
    "from": "newsroom/wire.json",
-   "sha256_source": "88e96666716ec1991fb57da530729d30974166846dc46b13b659fc83d5a471a6",
-   "sha256": "2c3c413cfbb424366b48d3d2fffe43336826849970f2c85ddd4885627d0fa20f"
+   "sha256_source": "8711ff1691a3a2b48e7a9a07b234085309f2f5a32e10f2c101d89ff1371145af",
+   "sha256": "f0f2b40d27b30e612099413e192d5baae50d7c403ed33eab957e6210d276fb61"
   },
   "og/a-link-to-a-persona.jpg": {
    "from": "og/a-link-to-a-persona.jpg",
@@ -10944,6 +10999,11 @@
    "from": "og/the-same-argument-in-our-words.jpg",
    "sha256_source": "331734d7d95f71bd4b2d0ad9313b97876589d8639debd8c68dd1b101b5429315",
    "sha256": "331734d7d95f71bd4b2d0ad9313b97876589d8639debd8c68dd1b101b5429315"
+  },
+  "og/the-scripted-talk.jpg": {
+   "from": "og/the-scripted-talk.jpg",
+   "sha256_source": "f047a7f7244c46c3dea97dea1eab4b97db6b855e5ae3cfb101199800a5046729",
+   "sha256": "f047a7f7244c46c3dea97dea1eab4b97db6b855e5ae3cfb101199800a5046729"
   },
   "og/the-site-is-an-inbox.jpg": {
    "from": "og/the-site-is-an-inbox.jpg",

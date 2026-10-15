@@ -4,15 +4,15 @@ Written by `admin/build/deps.py`; do not edit. The rule: the newsroom is self-co
 
 | kind | files | references | what it is |
 |---|---:|---:|---|
-| generator | 513 | | pages imported from sgit.ai's build; goes when the generator is ported here |
-| network | 329 | 1615 | links to sgit.ai's pages and the network sites (16 files this site writes itself) |
-| words | 638 | 4475 | sgit.ai or the sgit project named in prose: the disclosure, the kit, the method |
+| generator | 516 | | pages imported from sgit.ai's build; goes when the generator is ported here |
+| network | 332 | 1630 | links to sgit.ai's pages and the network sites (16 files this site writes itself) |
+| words | 642 | 4531 | sgit.ai or the sgit project named in prose: the disclosure, the kit, the method |
 | vault | 39 | 102 | links to a vault: the one dependency that stays |
 
 ## Network links, by target
 
-- 251 × `sgit.ai/about/index.html`
-- 129 × `sgit.ai/about/index.md`
+- 253 × `sgit.ai/about/index.html`
+- 130 × `sgit.ai/about/index.md`
 - 97 × `sgit.ai/admin/versions.html`
 - 97 × `sgit.ai/admin/versions.md`
 - 33 × `graphs.sgit.ai/`
@@ -110,10 +110,9 @@ The pages this site can fix now (an imported page is fixed in the generator, whe
 - `engineering/issues/037.html` (7)
 - `replicate/index.html` (7)
 - `shipped/index.html` (7)
-- `desks/building.html` (6)
-- `desks/vaults.html` (6)
 - `engineering/issues/010.html` (6)
 - `engineering/issues/017.html` (6)
+- `engineering/releases/v0.12.61.html` (6)
 - `about/participant.html` (5)
 - `assets/newsroom-vault.js` (5)
 - `desks/security.html` (5)
@@ -126,12 +125,13 @@ The pages this site can fix now (an imported page is fixed in the generator, whe
 - `engineering/releases/v0.12.27.html` (5)
 - `engineering/releases/v0.12.29.html` (5)
 - `engineering/releases/v0.12.57.html` (5)
-- `index.html` (5)
 - `passkey/index.html` (5)
 - `about/newsroom-ux.html` (4)
 - `admin/comms.html` (4)
+- `articles/find.json` (4)
 - `assets/themes/README.md` (4)
 - `corrections/how-a-graph-answers-it.html` (4)
 - `design/index.html` (4)
-- `desks/index.html` (4)
 - `desks/news.html` (4)
+- `desks/strategy.html` (4)
+- `economics/index.html` (4)

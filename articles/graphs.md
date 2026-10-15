@@ -14,13 +14,43 @@ Every article here has a semantic graph beside it: the ideas it rests on, the cl
 
 The graphs are data first and pictures second. Take them as JSON: [all articles in one file](graphs.json), with the topics, the teasers and the links between articles resolved, or one file per article at `articles/graphs/<slug>.json` (for example [this one](graphs/footprint-and-blast-radius.json)). The pages on this site are rendered from the same files at build time; nothing here is hand-written HTML. Since v0.7.77 each graph also carries the article's `figures`: file, URL, caption, the kind the author gave it (`wardley-map`, for one) and every frame of a multi-frame figure, so a picture and its context travel together and "every Wardley map on this site" is a filter, not a reading list.
 
-130 of 130 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
+131 of 131 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
 
 ## How the articles connect
 
 *[diagram]*
 
-130 articles, 745 links between them (1126 mentions in all). 121 articles cite an earlier one; 16 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Footprint and blast radius](#footprint-and-blast-radius) (34 articles link to it). Most linking: [The Mandate Stack](#the-mandate-stack) (20 links out). 0 articles not yet linked either way.
+131 articles, 746 links between them (1127 mentions in all). 122 articles cite an earlier one; 16 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Footprint and blast radius](#footprint-and-blast-radius) (34 articles link to it). Most linking: [The Mandate Stack](#the-mandate-stack) (20 links out). 0 articles not yet linked either way.
+
+## [The scripted talk: a presentation as a timeline that plays on a clock, the two vaults it grows out of, and a player built for tonight's ten minutes](the-scripted-talk.md)
+
+2026-10-15 · Vaults & methodSite & engineering
+
+A short talk can be completely scripted: a timeline of beats, each with a slide and the words to say, played on a clock by one HTML file, with builds, a terminal that prints the recorded output of the real run, tables, video and a presenter view, and a rehearsal mode that records planned against actual times; it grows out of the Black Hat Europe 2025 deck, whose slides are data in a vault, and the VoiceDebrief pitch, which added timings and a presenter; animations made as code, in Claude Motion, Manim or Remotion, fit the same timeline; the first use is the five-minute demo for ruv.sgit.ai at Agentic Engineering Live with rUv in London.
+
+*[diagram]*
+**concept**claim**method**artefact**example**question
+
+**12 nodes, 11 edges**
+
+- **A scripted talk** (concept) Slides, builds, animations and the demo on a clock.
+- **Black Hat Europe 2025** (example) 26 slides as one JSON file in a vault, ten renderer versions.
+- **The VoiceDebrief pitch** (example) Per-slide timings, a countdown and notes, built by a script.
+- **Content is data** (claim) The renderer is code, and they change separately.
+- **The player** (artefact) One HTML file plays a file of beats; tested in Chromium.
+- **Presenter view** (method) The words, the seconds left, what comes next.
+- **Rehearsal as a test** (method) Planned against actual times, saved as a file.
+- **The demo is recorded truth** (claim) The command typed, the real output printed.
+- **Animations as code** (concept) Claude Motion, Manim, Remotion: editable, exported as MP4.
+- **ruv.sgit.ai** (example) The first timeline: the five-minute demo for tonight.
+- **The talk vault** (artefact) Timeline, player, assets and rehearsals under one read key.
+- **Read or speak** (question) The words are there; whether to read them is the speaker's choice.
+
+> content is data, the renderer is code, and they change separately The lesson from the Black Hat vault.
+
+> The pace is set before I walk on, the demo cannot fail live Why script a short talk.
+
+builds on [Custom UIs are not the exception: the inbox in 2026, where every message has its own universe](#custom-uis-are-not-the-exception).
 
 ## [The tokens hook: a token behaviour policy that shows what every session reads, caches, writes and costs, why a prompt cannot do it, and a brief for tokens.hook.sgit.ai](the-tokens-hook.md)
 
@@ -3457,7 +3487,7 @@ Every message has a graph with altitudes, so a message is designed for the recip
 
 > The graph is the medium. Email, cards, voice and boards are views of it. The turn where email stops being the medium and becomes one projection of the graph.
 
-builds on [Fractal Semantic Graphs: everything connects to everything, and nobody has to share a schema](#introducing-fractal-semantic-graphs), [Six agents, one inbox: what a real multi-agent setup taught me about access policies](#six-agents-one-inbox), [The future of news is the story vault, not the paywall](#future-of-news-story-vault-not-paywall), [Before you give an agent a connector, give the connector a twin](#connector-twin-before-you-deploy-an-agent), [A chat box on a site with no server, the plan, and the trade it makes](#chat-on-a-static-site), [Seven vaults, one method](#seven-vaults-one-method), [Sixteen thousand fetches, ten clicks, and a token bill nobody is sending: the case for paying publishers to be easy to read](#token-bill-nobody-is-sending), [The ultimate insider: agents, the infrastructure that cannot hold them, and risk management that cannot keep up](#ultimate-insider-three-collisions); continued by [The citizen developer is good news: the spreadsheet grown up, the best briefs ever written, and the handover from explorers to villagers and town planners that makes them last](#the-citizen-developer), [From a spreadsheet to a folder per person: how to run your contacts the way our agents do, with Google Drive, Gmail and the Claude app, before you touch a vault](#from-a-spreadsheet-to-a-folder-per-person), [Liquid content needs water: liquefy the journalist's notebook, not the finished product](#liquid-content-needs-water), [The Mandate Stack: a multi-agent system in production, layer by layer](#the-mandate-stack), [The agent team as it runs: one person, twelve agents, encrypted vaults, and a mailbox nobody sends from](#the-agent-team-as-it-runs), [The wall under the reply: end an email with the state of the thread, not the thread](#the-wall-under-the-reply), [Memory is not a spectator sport: how a web of open sites, graphs and vaults became the memory for sessions like this one](#memory-is-not-a-spectator-sport), [Code review as a fractal semantic graph: source code is already one, and the review should read every layer of it](#code-review-as-a-fractal-semantic-graph), [Replicating the agentic inbox: a walkthrough from one Claude session to a team of agents that never press send](#replicating-the-agentic-inbox), [Footprint and blast radius: what the agent actually did, and what it would have cost](#footprint-and-blast-radius).
+builds on [Fractal Semantic Graphs: everything connects to everything, and nobody has to share a schema](#introducing-fractal-semantic-graphs), [Six agents, one inbox: what a real multi-agent setup taught me about access policies](#six-agents-one-inbox), [The future of news is the story vault, not the paywall](#future-of-news-story-vault-not-paywall), [Before you give an agent a connector, give the connector a twin](#connector-twin-before-you-deploy-an-agent), [A chat box on a site with no server, the plan, and the trade it makes](#chat-on-a-static-site), [Seven vaults, one method](#seven-vaults-one-method), [Sixteen thousand fetches, ten clicks, and a token bill nobody is sending: the case for paying publishers to be easy to read](#token-bill-nobody-is-sending), [The ultimate insider: agents, the infrastructure that cannot hold them, and risk management that cannot keep up](#ultimate-insider-three-collisions); continued by [The scripted talk: a presentation as a timeline that plays on a clock, the two vaults it grows out of, and a player built for tonight's ten minutes](#the-scripted-talk), [The citizen developer is good news: the spreadsheet grown up, the best briefs ever written, and the handover from explorers to villagers and town planners that makes them last](#the-citizen-developer), [From a spreadsheet to a folder per person: how to run your contacts the way our agents do, with Google Drive, Gmail and the Claude app, before you touch a vault](#from-a-spreadsheet-to-a-folder-per-person), [Liquid content needs water: liquefy the journalist's notebook, not the finished product](#liquid-content-needs-water), [The Mandate Stack: a multi-agent system in production, layer by layer](#the-mandate-stack), [The agent team as it runs: one person, twelve agents, encrypted vaults, and a mailbox nobody sends from](#the-agent-team-as-it-runs), [The wall under the reply: end an email with the state of the thread, not the thread](#the-wall-under-the-reply), [Memory is not a spectator sport: how a web of open sites, graphs and vaults became the memory for sessions like this one](#memory-is-not-a-spectator-sport), [Code review as a fractal semantic graph: source code is already one, and the review should read every layer of it](#code-review-as-a-fractal-semantic-graph), [Replicating the agentic inbox: a walkthrough from one Claude session to a team of agents that never press send](#replicating-the-agentic-inbox), [Footprint and blast radius: what the agent actually did, and what it would have cost](#footprint-and-blast-radius).
 
 ## [The ultimate insider: agents, the infrastructure that cannot hold them, and risk management that cannot keep up](ultimate-insider-three-collisions.md)
 

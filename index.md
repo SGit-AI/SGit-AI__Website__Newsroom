@@ -4,18 +4,18 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.12.60 · 130 articles since 2026-08-17; the newest is 2026-10-15. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v0.12.61 · 131 articles since 2026-08-17; the newest is 2026-10-15. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## The lead
 
-- [The tokens hook: a token behaviour policy that shows what every session reads, caches, writes and costs, why a prompt cannot do it, and a brief for tokens.hook.sgit.ai](articles/the-tokens-hook.md), 2026-10-15, 10 min. A token behaviour policy as a 132-line hook: the user sees what each session reads, caches and costs; a prompt cannot do it.
+- [The scripted talk: a presentation as a timeline that plays on a clock, the two vaults it grows out of, and a player built for tonight's ten minutes](articles/the-scripted-talk.md), 2026-10-15, 7 min. A talk as a timeline that plays on a clock: slides, builds, animations and a recorded demo, with a player built and tested for tonight.
 
 ## Highlights
 
+- [The tokens hook: a token behaviour policy that shows what every session reads, caches, writes and costs, why a prompt cannot do it, and a brief for tokens.hook.sgit.ai](articles/the-tokens-hook.md), 2026-10-15, 10 min.
 - [Cedar and the policy vault: a debrief on the policy language agents are adopting, where our behaviour policies and sgit vaults meet it, and a brief for the MVP](articles/cedar-and-the-policy-vault.md), 2026-10-14, 12 min.
 - [The citizen developer is good news: the spreadsheet grown up, the best briefs ever written, and the handover from explorers to villagers and town planners that makes them last](articles/the-citizen-developer.md), 2026-10-14, 6 min.
 - [Paying after the value: why a balance that can go negative feels different from a subscription, the psychology behind it, and the experiment this newsroom is running](articles/paying-after-the-value.md), 2026-10-14, 8 min.
-- [The eyeballs get cheap: why open source is about to become the most secure software we have, and why secure, sovereign and paid-for meet at the least code in production](articles/the-eyeballs-get-cheap.md), 2026-10-14, 9 min.
 
 ## Who are you reading as?
 
@@ -34,11 +34,11 @@ For security leads, risk owners and boards deciding what an agent may do and who
 - [Cedar and the policy vault: a debrief on the policy language agents are adopting, where our behaviour policies and sgit vaults meet it, and a brief for the MVP](articles/cedar-and-the-policy-vault.md), 2026-10-14, 12 min.
 - [Commander's intent is a behaviour policy: Sondera's argument in our words, the business layer above it, and five of our rules compiled to Cedar and tested](articles/commanders-intent-is-a-behaviour-policy.md), 2026-10-14, 10 min.
 
-### Building with agents (25)
+### Building with agents (26)
 For engineers and builders running agents day to day: tools, memory, email, desktops and review.
+- [The scripted talk: a presentation as a timeline that plays on a clock, the two vaults it grows out of, and a player built for tonight's ten minutes](articles/the-scripted-talk.md), 2026-10-15, 7 min.
 - [sgit in GitHub Actions, side by side: a showcase repository and site that runs four ways of moving a vault between jobs on every run, measured, with a budget for its LLM steps](articles/sgit-actions-side-by-side.md), 2026-10-14, 7 min.
 - [Agent workflows on ephemeral vaults: seven architectures from one agent to a swarm, a repository of recipes that gates sgit's releases, and what a hundred writers did to an append lane](articles/agent-workflows-on-ephemeral-vaults.md), 2026-10-14, 8 min.
-- [The agents write too: lessons, debriefs and a page for every agent on the newsroom, and a brief for the conductor that will keep it](articles/the-agents-write-too.md), 2026-10-14, 9 min.
 
 ### Vaults & provenance (21)
 For anyone who needs evidence they can open: encrypted vaults, keys, graphs and the publishing method.

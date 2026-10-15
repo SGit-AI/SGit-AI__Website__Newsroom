@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-10-15 | minor | 1,704 | +0 / −5 words; 2 changed, 0 added, 0 removed paragraphs | this release | [what changed](the-citizen-developer/v1.1.0.md) · [current](../the-citizen-developer.md) |
+| **v1.1.0** | 2026-10-15 | minor | 1,704 | +0 / −5 words; 2 changed, 0 added, 0 removed paragraphs | [`e4a2670ec`](https://github.com/SGit-AI/SGit-AI__Website/commit/e4a2670ec788c55ffc9da1bf151fcd97a5f67cf6) | [what changed](the-citizen-developer/v1.1.0.md) · [current](../the-citizen-developer.md) |
 | **v1.0.0** | 2026-10-14 | published | 1,709 | first published | [`8bc8089f5`](https://github.com/SGit-AI/SGit-AI__Website/commit/8bc8089f55771baaf7704512e905ac7ed251977e) |  |
 
 [← Back to the article](../the-citizen-developer.md) · [All articles](../index.md)

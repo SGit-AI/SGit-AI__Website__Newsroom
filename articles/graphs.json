@@ -55,6 +55,226 @@
   ],
   "articles": [
     {
+      "slug": "the-scripted-talk",
+      "title": "The scripted talk: a presentation as a timeline that plays on a clock, the two vaults it grows out of, and a player built for tonight's ten minutes",
+      "date": "2026-10-15",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/the-scripted-talk.html",
+      "markdown": "https://newsroom.sgit.ai/articles/the-scripted-talk.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/the-scripted-talk.webp",
+      "teaser": "A talk as a timeline that plays on a clock: slides, builds, animations and a recorded demo, with a player built and tested for tonight.",
+      "topics": [
+        "vaults-and-method",
+        "site-and-engineering"
+      ],
+      "tags": [
+        "presentations",
+        "talks",
+        "slides",
+        "scripting",
+        "animation",
+        "claude-motion",
+        "vault-apps",
+        "sgit",
+        "ruv",
+        "agentics",
+        "brief",
+        "article"
+      ],
+      "links_out": [
+        "custom-uis-are-not-the-exception"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "tp-architecture.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/tp-architecture.webp",
+          "caption": "A scripted talk, from the memo to the room: a file of beats, each with its slide and its words; a player that turns it into slides on a clock; the audience sees the slide, the speaker sees the words, the time left and what comes next; a rehearsal records planned against actual times. Dashed boxes are proposed.",
+          "kind": "architecture"
+        },
+        {
+          "file": "tp-lineage.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/tp-lineage.webp",
+          "caption": "Three talks, one direction: Black Hat Europe 2025 made the slides data; the VoiceDebrief pitch added a presenter with timings, notes and a countdown; the player for tonight makes the whole talk a timeline that plays on a clock. All three live in vaults.",
+          "kind": "comparison"
+        },
+        {
+          "file": "tp-presenter.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/tp-presenter.webp",
+          "caption": "The prototype's presenter view, at 2:58 of the five-minute demo: the slide on the left, with every row of the table revealed; on the right, the words for this beat, the seconds left and what comes next; along the bottom, the clock and a progress bar marked at every beat.",
+          "kind": "comparison"
+        }
+      ],
+      "graph": {
+        "slug": "the-scripted-talk",
+        "teaser": "A talk as a timeline that plays on a clock: slides, builds, animations and a recorded demo, with a player built and tested for tonight.",
+        "topics": [
+          "vaults-and-method",
+          "site-and-engineering"
+        ],
+        "core_idea": "A short talk can be completely scripted: a timeline of beats, each with a slide and the words to say, played on a clock by one HTML file, with builds, a terminal that prints the recorded output of the real run, tables, video and a presenter view, and a rehearsal mode that records planned against actual times; it grows out of the Black Hat Europe 2025 deck, whose slides are data in a vault, and the VoiceDebrief pitch, which added timings and a presenter; animations made as code, in Claude Motion, Manim or Remotion, fit the same timeline; the first use is the five-minute demo for ruv.sgit.ai at Agentic Engineering Live with rUv in London.",
+        "nodes": [
+          {
+            "id": "scripted",
+            "label": "A scripted talk",
+            "kind": "concept",
+            "summary": "Slides, builds, animations and the demo on a clock."
+          },
+          {
+            "id": "blackhat",
+            "label": "Black Hat Europe 2025",
+            "kind": "example",
+            "summary": "26 slides as one JSON file in a vault, ten renderer versions."
+          },
+          {
+            "id": "voicedebrief",
+            "label": "The VoiceDebrief pitch",
+            "kind": "example",
+            "summary": "Per-slide timings, a countdown and notes, built by a script."
+          },
+          {
+            "id": "data",
+            "label": "Content is data",
+            "kind": "claim",
+            "summary": "The renderer is code, and they change separately."
+          },
+          {
+            "id": "player",
+            "label": "The player",
+            "kind": "artefact",
+            "summary": "One HTML file plays a file of beats; tested in Chromium."
+          },
+          {
+            "id": "presenter",
+            "label": "Presenter view",
+            "kind": "method",
+            "summary": "The words, the seconds left, what comes next."
+          },
+          {
+            "id": "rehearsal",
+            "label": "Rehearsal as a test",
+            "kind": "method",
+            "summary": "Planned against actual times, saved as a file."
+          },
+          {
+            "id": "recorded",
+            "label": "The demo is recorded truth",
+            "kind": "claim",
+            "summary": "The command typed, the real output printed."
+          },
+          {
+            "id": "motion",
+            "label": "Animations as code",
+            "kind": "concept",
+            "summary": "Claude Motion, Manim, Remotion: editable, exported as MP4."
+          },
+          {
+            "id": "ruv",
+            "label": "ruv.sgit.ai",
+            "kind": "example",
+            "summary": "The first timeline: the five-minute demo for tonight."
+          },
+          {
+            "id": "vault",
+            "label": "The talk vault",
+            "kind": "artefact",
+            "summary": "Timeline, player, assets and rehearsals under one read key."
+          },
+          {
+            "id": "reading",
+            "label": "Read or speak",
+            "kind": "question",
+            "summary": "The words are there; whether to read them is the speaker's choice."
+          }
+        ],
+        "edges": [
+          {
+            "from": "blackhat",
+            "to": "data",
+            "rel": "example-of"
+          },
+          {
+            "from": "voicedebrief",
+            "to": "blackhat",
+            "rel": "extends"
+          },
+          {
+            "from": "player",
+            "to": "voicedebrief",
+            "rel": "extends"
+          },
+          {
+            "from": "scripted",
+            "to": "player",
+            "rel": "produces"
+          },
+          {
+            "from": "player",
+            "to": "presenter",
+            "rel": "produces"
+          },
+          {
+            "from": "player",
+            "to": "rehearsal",
+            "rel": "produces"
+          },
+          {
+            "from": "recorded",
+            "to": "scripted",
+            "rel": "depends-on"
+          },
+          {
+            "from": "motion",
+            "to": "player",
+            "rel": "extends"
+          },
+          {
+            "from": "ruv",
+            "to": "player",
+            "rel": "example-of"
+          },
+          {
+            "from": "vault",
+            "to": "data",
+            "rel": "depends-on"
+          },
+          {
+            "from": "reading",
+            "to": "presenter",
+            "rel": "answers"
+          }
+        ],
+        "links": {
+          "articles": [
+            "custom-uis-are-not-the-exception"
+          ],
+          "pages": [],
+          "sites": [
+            "https://sgit.ai/demos/vaults/blackhat-eu-2025/index.html",
+            "https://sgit.ai/demos/vaults/voicedebrief-pitch/index.html",
+            "https://claude.com/resources/articles/dashboards-and-motion",
+            "https://support.claude.com/en/articles/17454997-get-started-with-claude-motion",
+            "https://ruv.sgit.ai/index.html",
+            "https://ruv.sgit.ai/demo.html"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "content is data, the renderer is code, and they change separately",
+            "why": "The lesson from the Black Hat vault."
+          },
+          {
+            "text": "The pace is set before I walk on, the demo cannot fail live",
+            "why": "Why script a short talk."
+          },
+          {
+            "text": "Claude writes code that animates your text, charts, shapes, and images, so you can change any word, number, or timing.",
+            "why": "Why animations fit the timeline."
+          }
+        ]
+      }
+    },
+    {
       "slug": "the-tokens-hook",
       "title": "The tokens hook: a token behaviour policy that shows what every session reads, caches, writes and costs, why a prompt cannot do it, and a brief for tokens.hook.sgit.ai",
       "date": "2026-10-15",
@@ -28132,6 +28352,7 @@
         "ultimate-insider-three-collisions"
       ],
       "links_in": [
+        "the-scripted-talk",
         "the-citizen-developer",
         "from-a-spreadsheet-to-a-folder-per-person",
         "liquid-content-needs-water",
