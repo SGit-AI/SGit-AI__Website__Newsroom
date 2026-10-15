@@ -4,18 +4,18 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.12.52 · 123 articles since 2026-08-17; the newest is 2026-10-14. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v0.12.60 · 130 articles since 2026-08-17; the newest is 2026-10-15. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## The lead
 
-- [A skill behaviour policy: what a skill says it does, what it can do, what it is given, and the control that closes the gap, measured on 899 skills](articles/skill-behaviour-policy.md), 2026-10-14, 10 min. A skill behaviour policy compares what a skill says, what it can do and what it is given, then generates the control; measured on 899 skills.
+- [The tokens hook: a token behaviour policy that shows what every session reads, caches, writes and costs, why a prompt cannot do it, and a brief for tokens.hook.sgit.ai](articles/the-tokens-hook.md), 2026-10-15, 10 min. A token behaviour policy as a 132-line hook: the user sees what each session reads, caches and costs; a prompt cannot do it.
 
 ## Highlights
 
-- [sgit in GitHub Actions, side by side: a showcase repository and site that runs four ways of moving a vault between jobs on every run, measured, with a budget for its LLM steps](articles/sgit-actions-side-by-side.md), 2026-10-14, 7 min.
-- [Agent workflows on ephemeral vaults: seven architectures from one agent to a swarm, a repository of recipes that gates sgit's releases, and what a hundred writers did to an append lane](articles/agent-workflows-on-ephemeral-vaults.md), 2026-10-14, 8 min.
-- [Hooks are kernel code: a maturity model, the first ten hooks mapped, and a brief for a hooks site and feed where you pay for state, never to run](articles/hooks-are-kernel-code.md), 2026-10-14, 10 min.
-- [Chainguard, mapped: what it builds, what it publishes, how far up the stack its context goes, and where an open behaviour policy and an encrypted vault could plug in](articles/chainguard-mapped.md), 2026-10-14, 10 min.
+- [Cedar and the policy vault: a debrief on the policy language agents are adopting, where our behaviour policies and sgit vaults meet it, and a brief for the MVP](articles/cedar-and-the-policy-vault.md), 2026-10-14, 12 min.
+- [The citizen developer is good news: the spreadsheet grown up, the best briefs ever written, and the handover from explorers to villagers and town planners that makes them last](articles/the-citizen-developer.md), 2026-10-14, 6 min.
+- [Paying after the value: why a balance that can go negative feels different from a subscription, the psychology behind it, and the experiment this newsroom is running](articles/paying-after-the-value.md), 2026-10-14, 8 min.
+- [The eyeballs get cheap: why open source is about to become the most secure software we have, and why secure, sovereign and paid-for meet at the least code in production](articles/the-eyeballs-get-cheap.md), 2026-10-14, 9 min.
 
 ## Who are you reading as?
 
@@ -28,11 +28,11 @@ The reading meter charges a few pence a page from credit kept in your browser, b
 
 ## The five desks
 
-### Agent security & policy (35)
+### Agent security & policy (38)
 For security leads, risk owners and boards deciding what an agent may do and who carries the risk.
-- [A skill behaviour policy: what a skill says it does, what it can do, what it is given, and the control that closes the gap, measured on 899 skills](articles/skill-behaviour-policy.md), 2026-10-14, 10 min.
-- [Hooks are kernel code: a maturity model, the first ten hooks mapped, and a brief for a hooks site and feed where you pay for state, never to run](articles/hooks-are-kernel-code.md), 2026-10-14, 10 min.
-- [System prompts as behaviour policies: Claude's published prompt and a leaked ChatGPT one, mapped into rows, a taxonomy of rules, and a JSON file a harness could enforce](articles/system-prompts-as-behaviour-policies.md), 2026-10-14, 11 min.
+- [The tokens hook: a token behaviour policy that shows what every session reads, caches, writes and costs, why a prompt cannot do it, and a brief for tokens.hook.sgit.ai](articles/the-tokens-hook.md), 2026-10-15, 10 min.
+- [Cedar and the policy vault: a debrief on the policy language agents are adopting, where our behaviour policies and sgit vaults meet it, and a brief for the MVP](articles/cedar-and-the-policy-vault.md), 2026-10-14, 12 min.
+- [Commander's intent is a behaviour policy: Sondera's argument in our words, the business layer above it, and five of our rules compiled to Cedar and tested](articles/commanders-intent-is-a-behaviour-policy.md), 2026-10-14, 10 min.
 
 ### Building with agents (25)
 For engineers and builders running agents day to day: tools, memory, email, desktops and review.
@@ -40,7 +40,7 @@ For engineers and builders running agents day to day: tools, memory, email, desk
 - [Agent workflows on ephemeral vaults: seven architectures from one agent to a swarm, a repository of recipes that gates sgit's releases, and what a hundred writers did to an append lane](articles/agent-workflows-on-ephemeral-vaults.md), 2026-10-14, 8 min.
 - [The agents write too: lessons, debriefs and a page for every agent on the newsroom, and a brief for the conductor that will keep it](articles/the-agents-write-too.md), 2026-10-14, 9 min.
 
-### Vaults & provenance (20)
+### Vaults & provenance (21)
 For anyone who needs evidence they can open: encrypted vaults, keys, graphs and the publishing method.
 - [Knowledge that maintains itself: semantic graphs for an organisation's policies and internal knowledge, briefing people and agents from the graph, and vaults to carry the brief](articles/knowledge-that-maintains-itself.md), 2026-10-14, 8 min.
 - [The minimum code below: container security from the top down, from the user story to the immutable line, measured on one real tool](articles/the-minimum-code-below.md), 2026-10-14, 10 min.
@@ -52,11 +52,11 @@ For editors, journalists and publishers asking how news gets paid for when agent
 - [Dark mode, and four more: five themes for the newsroom, chosen once and kept in your browser](articles/dark-mode-and-four-more.md), 2026-10-13, 14 min.
 - [Ways to read one article: the finished piece stays at the centre, and the reader picks the way in](articles/ways-to-read-one-article.md), 2026-10-12, 10 min.
 
-### Strategy & startups (19)
+### Strategy & startups (22)
 For founders and investors: pricing, early access, Wardley maps and who pays for open source.
-- [Chainguard, mapped: what it builds, what it publishes, how far up the stack its context goes, and where an open behaviour policy and an encrypted vault could plug in](articles/chainguard-mapped.md), 2026-10-14, 10 min.
-- [What open source is, and what it is not: six misconceptions, a little history, and why the point is that nobody can lock you in](articles/what-open-source-is-and-is-not.md), 2026-10-12, 10 min.
-- [Not a straight line: working for RiskMandate by working on the newsroom, and why the thinking is never wasted](articles/not-a-straight-line.md), 2026-10-12, 11 min.
+- [The citizen developer is good news: the spreadsheet grown up, the best briefs ever written, and the handover from explorers to villagers and town planners that makes them last](articles/the-citizen-developer.md), 2026-10-14, 6 min.
+- [Paying after the value: why a balance that can go negative feels different from a subscription, the psychology behind it, and the experiment this newsroom is running](articles/paying-after-the-value.md), 2026-10-14, 8 min.
+- [The eyeballs get cheap: why open source is about to become the most secure software we have, and why secure, sovereign and paid-for meet at the least code in production](articles/the-eyeballs-get-cheap.md), 2026-10-14, 9 min.
 
 ## Collections
 

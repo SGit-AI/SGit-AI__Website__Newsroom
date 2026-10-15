@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>058: The front page in three views, this site&#x27;s own &middot; newsroom.sgit.ai</title>
-<meta name="description" content="Issue 058 (feature, done): The front page in three views, this site&#x27;s own">
+<title>058: The vault&#x27;s documentation says what the pane does &middot; newsroom.sgit.ai</title>
+<meta name="description" content="Issue 058 (task, done): The vault&#x27;s documentation says what the pane does">
 <link rel="canonical" href="https://newsroom.sgit.ai/engineering/issues/058.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="newsroom.sgit.ai">
 <meta property="og:url" content="https://newsroom.sgit.ai/engineering/issues/058.html">
-<meta property="og:title" content="058: The front page in three views, this site&#x27;s own">
-<meta property="og:description" content="Issue 058 (feature, done): The front page in three views, this site&#x27;s own">
+<meta property="og:title" content="058: The vault&#x27;s documentation says what the pane does">
+<meta property="og:description" content="Issue 058 (task, done): The vault&#x27;s documentation says what the pane does">
 <meta property="og:image" content="https://newsroom.sgit.ai/og/default.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="../../assets/newsroom.css">
@@ -21,7 +21,7 @@
   <link rel="stylesheet" href="../../assets/site-nav.css">
   <script src="../../assets/themes/themes.js"></script>
   <a class="brand" href="../../index.html">newsroom<span>.sgit.ai</span></a>
-  <a class="ver" href="../../admin/versions.html" title="Site release history">v0.12.52</a>
+  <a class="ver" href="../../admin/versions.html" title="Site release history">v0.12.60</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -144,33 +144,33 @@
   </div>
 </div></nav>
 <main class="doc">
- <p class="crumb"><a href="../../index.html">Home</a> / <a href="../../about/participant.html">About</a> / <a href="../../engineering/index.html">Engineering</a> / 058: The front page in three views, this site&#x27;s own</p>
+ <p class="crumb"><a href="../../index.html">Home</a> / <a href="../../about/participant.html">About</a> / <a href="../../engineering/index.html">Engineering</a> / 058: The vault&#x27;s documentation says what the pane does</p>
  <p class="eyebrow">Engineering · done</p>
- <h1>058: The front page in three views, this site&#x27;s own</h1>
- <p class="lead">The front page in three views, this site's own</p>
-<table class="eng-meta"><tr><td class="k">Id</td><td>058</td></tr><tr><td class="k">Status</td><td><span class="eng-tag done">done</span></td></tr><tr><td class="k">Kind</td><td><span class="eng-tag feature">feature</span></td></tr><tr><td class="k">Priority</td><td><span class="eng-tag high">high</span></td></tr><tr><td class="k">Created</td><td>2026-10-14T18:00:00Z</td></tr><tr><td class="k">Source</td><td>the owner, in chat, 14 October 2026: &quot;I really like those designs... we need to A/B test them... present multiple views so that they show quite nicely. And I quite like that the first one looks like a broadsheet... make it big and visible that we now have a user area... the little progress bar of what&#x27;s been read... and also the spend... pull the latest articles and just start taking from there</td></tr><tr><td class="k">Release</td><td><a href="../releases/v0.12.52.html">v0.12.52</a></td></tr><tr><td class="k">Effort</td><td>large</td></tr><tr><td class="k">File</td><td><code>admin/engineering/issues/done/058-the-front-page-in-three-views.md</code></td></tr></table><div class="eng-body"><h2 id="what-is-asked">What is asked</h2>
-<p>The Newsroom Design Lab's three directions (A Broadsheet, B Briefing, C Your desk), reviewed in card 051, go live as the front page, all three, so readers can be sent to one and the views compared. The front page stops being the copy of sgit.ai's <code>articles/index.html</code> written to the root and becomes a page this repository writes from its own data. The reader's own area is big and visible on every view: what they read, what it cost, their board, with a progress bar, from the records the meter and the pane already keep in the browser, whether or not a vault holds them.</p>
+ <h1>058: The vault&#x27;s documentation says what the pane does</h1>
+ <p class="lead">The vault's documentation says what the pane does</p>
+<table class="eng-meta"><tr><td class="k">Id</td><td>058</td></tr><tr><td class="k">Status</td><td><span class="eng-tag done">done</span></td></tr><tr><td class="k">Kind</td><td><span class="eng-tag task">Task</span></td></tr><tr><td class="k">Priority</td><td><span class="eng-tag normal">normal</span></td></tr><tr><td class="k">Created</td><td>2026-10-13T11:05:00Z</td></tr><tr><td class="k">Source</td><td>the owner, in chat, 13 October 2026: take a good look at how the newsroom works, then the vault pane; review its documentation and make sure it is in sync with reality</td></tr><tr><td class="k">Release</td><td><a href="../releases/v0.12.58.html">v0.12.58</a></td></tr><tr><td class="k">Effort</td><td>small</td></tr><tr><td class="k">File</td><td><code>admin/engineering/issues/done/058-vault-docs-in-sync.md</code></td></tr></table><div class="eng-body"><h2 id="what-happens">What happens</h2>
+<p>The pane gained a Reading tab (006), Done and Follow up (004, 023), the strip and the count of what only this browser holds (027), the wire's seen stories in the device file (028), a send that rewrites the device file (009) Write to the newsroom (034), more than one wire (040) and the inbox (049), and the writing about it did not keep up. The vault page, the README, the design and shipped hubs, the reader API map, llms.txt and the pane's own header all said three tabs; the chips were listed without Follow up, and in places without Done; the device file was described as reads, top-ups and personas; the feedback loop's note still said sent marks reach other devices only with the next update, and told the reader to press <i>Keep the words</i>; the lane's README named seven kinds.</p>
 <h2 id="scenario">Scenario</h2>
-<pre><code class="lang-gherkin">Given a reader who has never been here
-When they open the front page
-Then they see the Broadsheet: the masthead, one lead, the latest, the doors, the five desks, collections, the newsletter, start here
-And the switcher offers Briefing and Your desk, and the glance beside it says 0 read, nothing spent, the credit left
-When they pick Your desk
-Then the page shows their picks with a status each, the progress bar, the You card and the board
-And the choice is remembered in this browser, and ?view= in a link opens a view directly
-Given the reader read one pick to the end and marked another read later in the pane
-When they return
-Then the first is Done, the second Follow-up, the bar has moved, the board counts agree, the glance says the same
-Given a reader without JavaScript
-Then the Broadsheet shows, the switcher does not, and nothing is missing</code></pre>
+<pre><code class="lang-gherkin">Given a reader opens /vault/ beside the pane
+Then every tab the pane has is named, in order, and nothing the page names is missing from the pane
+And the one-tap kinds on the page are the pane&#x27;s nine, and the wire&#x27;s six are said to be six
+And what an update carries is what the device file holds: reads, top-ups, personas, notes and the stories seen
+And where the keys live, what local storage holds, and which buttons only read are said
+
+Given an agent reads llms.txt, the vault page&#x27;s agent block or the reader API map
+Then it finds the same four tabs and the same record
+
+Given the design notes are read for the record
+Then the device file&#x27;s layout shows notes and wire.seen with the version each arrived in
+And what changed after the first build is listed, dated, before the experiments</code></pre>
 <h2 id="outcome">Outcome</h2>
-<p><code>admin/build/front.py</code> writes <code>index.html</code> (three <code>&lt;section class="view" data-view&gt;</code> in one page; <code>assets/front/front.css</code> shows the one <code>data-view</code> on <code>&lt;html&gt;</code> names, Broadsheet when none), <code>index.md</code>, <code>about/index.html</code> and <code>articles/front.json</code>. <code>assets/front/front.js</code>, a classic script in <code>&lt;head&gt;</code>, sets the view before paint (<code>newsroom.view</code>; <code>?view=</code> wins and is remembered), runs the switcher as a radio group, and fills Your desk and the glance from the meter's state (<code>sgit.meter.v1</code>) and the pane's notes (<code>sgit.notes.v1</code>): balance, spend, reads, notes, a status per pick (Done at depth 0.9 or a done decision; Follow-up from a read-later or follow-up decision; Reading when opened), the progress bar, the board; the chooser changes the meter's active persona through the meter's own module. The lead is the newest article unless the editor names one in <code>admin/content/front/front.json</code>. The sync no longer writes the root; <code>articles/index.html</code> stays as Every article. Test: <code>admin/build/test_front.mjs</code> (46 checks, in CI).</p></div><p class="dim"><a href="../index.html">Back to the board</a>.</p>
+<p>Shipped in v0.12.58, with no change to what the pane does. Written against v0.12.9, then carried onto v0.12.27, so it also names the inbox where the pane now has it. Brought into line: <code>admin/build/vault_page.py</code> (four tabs; the nine kinds and the wire's six; Update from the strip, the tab or the wire; a send rewrites the device file; the passkey made on the spot, the recovery code's two uses, Check the vault and Forget; the read key shown with Copy; where the keys live and what local storage holds; the agent block, the inbox in the intro, in what leaves the browser and in the agent block), <code>README.md</code>, <code>admin/build/hubs.py</code> (the two hub entries), <code>admin/build/api_map.py</code> (two rows), <code>llms.txt</code>, the headers of <code>assets/vault-pane/vault-pane.js</code> and <code>notes.js</code>, the README written into a new lane (<code>assets/newsroom-vault.js</code>), and the two design notes (the record and the device file as they are, a dated list of what the pane gained after v0.11.0 up to the inbox, the sent-marks bullet corrected). Found and left as it is, for a card of its own if wanted: <code>vault-pane.js</code> falls back to the meter library's default storage key (<code>sg.meter.v1</code>) where <code>notes.js</code>, <code>pending.js</code> and <code>reading.js</code> fall back to <code>sgit.meter.v1</code>; every page sets the key, so neither default is reached.</p></div><p class="dim"><a href="../index.html">Back to the board</a>.</p>
 <div class="agent">
   <h4>For an agent</h4>
-  <p>Issue 058 on newsroom.sgit.ai: The front page in three views, this site's own. Status done, kind feature, priority high, release v0.12.52. Source file admin/engineering/issues/done/058-the-front-page-in-three-views.md.</p>
+  <p>Issue 058 on newsroom.sgit.ai: The vault's documentation says what the pane does. Status done, kind task, priority normal, release v0.12.58. Source file admin/engineering/issues/done/058-vault-docs-in-sync.md.</p>
 </div>
 </main>
-<sg-meter view="page" kind="free" date="" topics="" title="058: The front page in three views, this site&#x27;s own, SGit Newsroom" quiet></sg-meter>
+<sg-meter view="page" kind="free" date="" topics="" title="058: The vault&#x27;s documentation says what the pane does, SGit Newsroom" quiet></sg-meter>
 <script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": "https://buy.stripe.com/6oUfZ9ez65vVgU2fY15os04"}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
 <script>
 import('../../assets/components/sg-meter/v1/v1.4/v1.4.1/sg-meter.js')
@@ -181,7 +181,7 @@ import('../../assets/components/sg-meter/v1/v1.4/v1.4.1/sg-meter.js')
     <div class="brandline">newsroom<span>.sgit.ai</span></div>
     <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../../admin/versions.html">v0.12.52</a> &middot; <a href="../../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../../admin/versions.html">v0.12.60</a> &middot; <a href="../../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>The newsroom</h4>

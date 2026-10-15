@@ -238,7 +238,7 @@ def shipped(f):
          'The <a href="../wire/index.html">Industry Wire</a> is daily, across five beats. The <a href="../wire/owasp/index.html">OWASP Wire</a> is weekly and carries a graph of the projects, their leaders and standards, drawn with the stories that name each. '
          'The <a href="../wire/aws/index.html">AWS Wire</a> is filtered by the stack its reader declares in the vault, drawn with its deadlines and each service&rsquo;s items. '
          'The <a href="../wire/portugal/index.html">Portugal Wire</a> is daily, in English and Portuguese with a switch, with an ecosystem map of the organisations named. '
-         'Each wire has a subscription list of its own, a reach page of who should know (organisations, never people), and the verifier&rsquo;s record at each story it checked; <a href="../wire/days.html">day by day</a> shows every wire by date. '
+         'Each wire has a subscription list of its own, a reach page of who should know (organisations, never people), and the verifier&rsquo;s record at each story it checked; <a href="../wire/days.html">day by day</a> shows every wire by date, and <a href="../wire/costs.html">what it costs</a> what every picture cost. '
          '<a href="../wire/charter.html">The charter</a> says what every round enforces; <a href="../wire/desk-brief.html">the brief for the desks</a> carries what the newsroom asks of the vaults&rsquo; writers. '
          '<a href="../wire/how.html">How a wire is read</a>, <a href="../admin/notes/2026-10-13__the-wire-as-an-inbox.md">the inbox</a>, <a href="../admin/notes/2026-10-13__more-than-one-wire.md">more than one wire</a>.',
          'A beta. The Industry Wire has two editions (11 and 13 October 2026, 59 stories), the OWASP, AWS and Portugal wires one each (13 October: 19, 88 and 36 stories), all written by agents and reviewed by none; every story says so, and a story whose primary source was not fetched says that too. '
@@ -250,20 +250,19 @@ def shipped(f):
          'earlier version; an article by its number; what the reader has read or marked done. Searching sends nothing anywhere. <i>Ask</i> gives the passages found to Chrome&rsquo;s built-in model, on the reader&rsquo;s machine, or to openrouter.ai with the reader&rsquo;s own key, and the answer cites them. '
          '<a href="../search/index.html">Search</a>, <a href="../admin/notes/2026-10-13__search-in-the-browser.md">how it works</a>.',
          'The wires are searched from their snapshots, taken at release; no synonyms or spelling correction; Ask is one question at a time, with no conversation and no tools, and the key is not yet kept in the vault.'),
-        ('<b>The feedback loop</b> (beta)', 'Notes kept as you read: one tap at any page or at a wire story (done, read later, not for me, more like this, '
-         'liked, wrong, fix this, idea), with words and the phrase selected, kept in this browser as it happens; what this browser knows about the page and '
+        ('<b>The feedback loop</b> (beta)', 'Notes kept as you read: one tap at any page or at a wire story (done, read later, follow up, not for me, more like this, '
+         'liked, wrong, fix this, idea), with words and the phrase selected, or a message written to the newsroom, kept in this browser as it happens; what this browser knows about the page and '
          'a Reading tab with the done pages folded away; carried to the reader&rsquo;s other '
          'devices by the vault; and sent, when the reader chooses, down a lane of their own: a vault whose write key stays in their master and '
          'whose read key they hand the newsroom once. The newsroom reads the lane with sgit, or <code>admin/build/lane.py</code>, and answers in '
          'the open. A decided wire story folds to its headline. <a href="../vault/index.html#feedback">The page</a>, '
          '<a href="../admin/notes/2026-10-12__the-feedback-loop.md">the design</a>.',
          'A beta with one reader. Three of the brief&rsquo;s seven decisions (read now, comment, move to a persona) and the marks on a phrase are not '
-         'built; nothing is signed; no reply comes back through the lane; sent marks reach other devices only with the next update; the front page, '
+         'built; nothing is signed; no reply comes back through the lane; the front page, '
          'being imported, carries no decisions.'),
         ('<b>The vault pane</b> (beta)', 'The reading account this browser keeps, carried between a reader&rsquo;s devices through an encrypted vault '
-         'that opens with their passkey, in three tabs: This page (the notes and the lane), Vault and Keys. Enable with the passkey (or the '
-         'recovery code), create the account once with an access key, press Update the vault, and on another device bring that device&rsquo;s '
-         'activity in and read the same figures. Records, never totals; one file per device; the vault updated when the reader asks. Keys lists '
+         'that opens with their passkey, in four tabs: This page (the notes and the lane), Reading, Vault and Keys. The Vault button counts what is only in this browser, with Update the vault one press away, and the strip above the tabs what is in the vault and not here. Open with the passkey (or the '
+         'recovery code), say which device this browser is when the vault already knows some, and what the vault holds comes in on its own: the same figures on every device. A browser that cannot reach the passkey connects with a link and only sends; what it sent is filed, where the vault is open, under a device you choose. Records, never totals; one file per device; the vault updated when the reader asks. Keys lists '
          'every vault of the account (the doors, the master, the reader vault, the lane) with its key behind Reveal, to open any of them elsewhere. '
          '<a href="../vault/index.html">The page</a>, <a href="../admin/notes/2026-10-12__the-activity-vault.md">the design</a>.',
          'A beta, against dev.send.sgraph.ai. Local storage stays primary and is not pruned; shares and the active persona are not synced; '

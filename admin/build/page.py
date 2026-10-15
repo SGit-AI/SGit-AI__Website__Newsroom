@@ -27,7 +27,7 @@ METER_JS = "assets/components/sg-meter/v1/v1.4/v1.4.1/sg-meter.js"
 
 def meter_config():
     """The meter's config, taken from the imported Every article page (articles/index.html, which was the
-    front page until v0.12.52) so it is written once and is the same on every page. None until the
+    front page until v0.12.60) so it is written once and is the same on every page. None until the
     newsroom has been imported."""
     front = ROOT / "articles/index.html"
     if not front.exists():

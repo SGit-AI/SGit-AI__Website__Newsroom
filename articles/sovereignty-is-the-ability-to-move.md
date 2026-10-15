@@ -117,6 +117,8 @@ Startups & strategySite & engineering[This article as a graph →](graphs.md#sov
 
 ### Continued by
 
+- [The citizen developer is good news: the spreadsheet grown up, the best briefs ever written, and the handover from explorers to villagers and town planners that makes them last](the-citizen-developer.md) The citizen developer is the spreadsheet grown up: the best briefs ever written, handed to villagers and town planners, carried in versioned vaults.
+- [The eyeballs get cheap: why open source is about to become the most secure software we have, and why secure, sovereign and paid-for meet at the least code in production](the-eyeballs-get-cheap.md) Cheap, deep AI security review gives open source the eyeballs it never had; with sovereignty and paid maintenance, all point at the least code in production.
 - [Hooks are kernel code: a maturity model, the first ten hooks mapped, and a brief for a hooks site and feed where you pay for state, never to run](hooks-are-kernel-code.md) Hooks are small code with kernel reach: a maturity model, the first ten hooks mapped, and a brief for a hooks site where you pay for state, never to run.
 - [What open source is, and what it is not: six misconceptions, a little history, and why the point is that nobody can lock you in](what-open-source-is-and-is-not.md) Open source is a copyright licence, not a free-for-all: six misconceptions corrected, and why the point is that nobody can lock you in.
 

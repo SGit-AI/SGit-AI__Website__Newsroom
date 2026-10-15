@@ -1,6 +1,6 @@
 {
   "site": "https://sgit.ai",
-  "generated": "2026-10-14",
+  "generated": "2026-10-15",
   "site_version": "v0.7.87",
   "schema": "https://newsroom.sgit.ai/articles/graphs.html",
   "topics": [
@@ -55,6 +55,1454 @@
   ],
   "articles": [
     {
+      "slug": "the-tokens-hook",
+      "title": "The tokens hook: a token behaviour policy that shows what every session reads, caches, writes and costs, why a prompt cannot do it, and a brief for tokens.hook.sgit.ai",
+      "date": "2026-10-15",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/the-tokens-hook.html",
+      "markdown": "https://newsroom.sgit.ai/articles/the-tokens-hook.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/the-tokens-hook.webp",
+      "teaser": "A token behaviour policy as a 132-line hook: the user sees what each session reads, caches and costs; a prompt cannot do it.",
+      "topics": [
+        "agents-and-policy",
+        "site-and-engineering"
+      ],
+      "tags": [
+        "tokens",
+        "costs",
+        "prompt-caching",
+        "hooks",
+        "claude-code",
+        "agent-behaviour-policy",
+        "observability",
+        "opentelemetry",
+        "codex",
+        "gemini-cli",
+        "cursor",
+        "brief",
+        "article"
+      ],
+      "links_out": [
+        "re-anchoring-agent-behaviour-policies",
+        "are-hooks-the-sweet-spot",
+        "hooks-are-kernel-code"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "tk-architecture.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/tk-architecture.webp",
+          "caption": "The tokens hook: a policy file says what to count, show and limit; the hook reads only the new lines of the session transcript each time, counts each response once, prices it by its model and keeps running totals. Its output goes to the user, to the model, to a block when the budget is spent, or to a collector. Dashed boxes are proposed.",
+          "kind": "architecture"
+        },
+        {
+          "file": "tk-prompt-vs-hook.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/tk-prompt-vs-hook.webp",
+          "caption": "The same two-turn conversation in headless Claude Code, once with a system prompt asking the model to report its tokens and cost, once with the tokens hook. With the prompt, the model said it could not see the numbers. With the hook, it reported them exactly, one turn behind.",
+          "kind": "comparison"
+        },
+        {
+          "file": "tk-where.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/tk-where.webp",
+          "caption": "Where the token numbers are, tool by tool: what a hook can see and what the user is shown in the coding agents and chat apps checked for this article, from each tool's documentation or source code.",
+          "kind": "comparison"
+        }
+      ],
+      "graph": {
+        "slug": "the-tokens-hook",
+        "teaser": "A token behaviour policy as a 132-line hook: the user sees what each session reads, caches and costs; a prompt cannot do it.",
+        "topics": [
+          "agents-and-policy",
+          "site-and-engineering"
+        ],
+        "core_idea": "Tokens deserve their own small agent behaviour policy, observe mode first: a Claude Code hook that reads only the new lines of the session transcript, counts each response once, prices it by model and shows the user a box of reads, cache share, writes, context and cost; asked through a prompt, the model correctly said it could not see its usage, while the hook gave exact figures one turn behind in about a millisecond; building it exposed double counting in our own session report and showed the transcript carries the system prompt and tool definitions; caching was 99% of this session's input, and the brief is a site, tokens.hook.sgit.ai, that treats one small hook as mission-critical code.",
+        "nodes": [
+          {
+            "id": "policy",
+            "label": "A token behaviour policy",
+            "kind": "concept",
+            "summary": "Count, show, limit; observe first."
+          },
+          {
+            "id": "caching",
+            "label": "Caching is the bill",
+            "kind": "claim",
+            "summary": "99% of this session's input came from the cache."
+          },
+          {
+            "id": "prompt",
+            "label": "Asking the model",
+            "kind": "example",
+            "summary": "Twice it said it could not see the numbers."
+          },
+          {
+            "id": "hook",
+            "label": "The tokens hook",
+            "kind": "artefact",
+            "summary": "132 lines and a policy file; about 1 ms a call warm."
+          },
+          {
+            "id": "exact",
+            "label": "Exact, one turn behind",
+            "kind": "claim",
+            "summary": "37,087 tokens and $0.0484 against $0.0486 actual."
+          },
+          {
+            "id": "repeats",
+            "label": "Usage repeats per block",
+            "kind": "example",
+            "summary": "Counting lines gave 1.06B cache reads; responses gave 459M."
+          },
+          {
+            "id": "abpbug",
+            "label": "Our own report was wrong",
+            "kind": "claim",
+            "summary": "The ABP block counted responses two or three times."
+          },
+          {
+            "id": "snapshot",
+            "label": "The transcript holds the request",
+            "kind": "question",
+            "summary": "System prompt and 49 tool definitions, undocumented."
+          },
+          {
+            "id": "outputs",
+            "label": "Who sees what",
+            "kind": "method",
+            "summary": "systemMessage to the user, context to the model, block, log, lane."
+          },
+          {
+            "id": "otel",
+            "label": "Status line and OpenTelemetry",
+            "kind": "method",
+            "summary": "Claude Code's own views, and a collector already built."
+          },
+          {
+            "id": "tools",
+            "label": "Other tools",
+            "kind": "example",
+            "summary": "Hooks and usage commands in Codex, Gemini CLI, Cursor; limits only in chat apps."
+          },
+          {
+            "id": "site",
+            "label": "tokens.hook.sgit.ai",
+            "kind": "artefact",
+            "summary": "Code, policy, graph, tests, numbers and releases for one hook."
+          }
+        ],
+        "edges": [
+          {
+            "from": "caching",
+            "to": "policy",
+            "rel": "leads-to"
+          },
+          {
+            "from": "prompt",
+            "to": "hook",
+            "rel": "contrasts"
+          },
+          {
+            "from": "hook",
+            "to": "exact",
+            "rel": "produces"
+          },
+          {
+            "from": "hook",
+            "to": "policy",
+            "rel": "example-of"
+          },
+          {
+            "from": "repeats",
+            "to": "abpbug",
+            "rel": "leads-to"
+          },
+          {
+            "from": "hook",
+            "to": "repeats",
+            "rel": "answers"
+          },
+          {
+            "from": "snapshot",
+            "to": "hook",
+            "rel": "extends"
+          },
+          {
+            "from": "hook",
+            "to": "outputs",
+            "rel": "produces"
+          },
+          {
+            "from": "otel",
+            "to": "hook",
+            "rel": "compared-with"
+          },
+          {
+            "from": "tools",
+            "to": "policy",
+            "rel": "compared-with"
+          },
+          {
+            "from": "site",
+            "to": "hook",
+            "rel": "depends-on"
+          }
+        ],
+        "links": {
+          "articles": [
+            "re-anchoring-agent-behaviour-policies",
+            "are-hooks-the-sweet-spot",
+            "hooks-are-kernel-code"
+          ],
+          "pages": [],
+          "sites": [
+            "https://claude.dev/blog/lessons-from-building-claude-code-prompt-caching-is-everything/",
+            "https://code.claude.com/docs/en/hooks.md",
+            "https://code.claude.com/docs/en/statusline.md",
+            "https://code.claude.com/docs/en/monitoring-usage.md",
+            "https://code.claude.com/docs/en/managed-settings.md",
+            "https://platform.claude.com/docs/en/about-claude/pricing",
+            "https://learn.chatgpt.com/docs/hooks",
+            "https://cursor.com/changelog/1-7",
+            "https://sgit.ai/api/append-lanes.html"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "A prompt can ask for behaviour; only a hook can supply data",
+            "why": "The experiment in one line."
+          },
+          {
+            "text": "A few percentage points of cache miss rate can dramatically affect cost and latency.",
+            "why": "Why tokens need a policy."
+          },
+          {
+            "text": "a token hook should handle numbers only and never send text anywhere",
+            "why": "What the transcript finding means for the design."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "cedar-and-the-policy-vault",
+      "title": "Cedar and the policy vault: a debrief on the policy language agents are adopting, where our behaviour policies and sgit vaults meet it, and a brief for the MVP",
+      "date": "2026-10-14",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/cedar-and-the-policy-vault.html",
+      "markdown": "https://newsroom.sgit.ai/articles/cedar-and-the-policy-vault.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/cedar-and-the-policy-vault.webp",
+      "teaser": "Cedar is mature and adopted; it lacks the why, the version in force and the evidence. A vault carries all three, and the demo shows it working.",
+      "topics": [
+        "agents-and-policy",
+        "vaults-and-method"
+      ],
+      "tags": [
+        "cedar",
+        "policy-as-code",
+        "agent-behaviour-policy",
+        "sgit",
+        "vaults",
+        "append-lanes",
+        "cncf",
+        "aws",
+        "agentcore",
+        "evidence",
+        "fractal-semantic-graphs",
+        "brief",
+        "article"
+      ],
+      "links_out": [
+        "policy-as-code-needs-a-policy-first",
+        "commanders-intent-is-a-behaviour-policy",
+        "re-anchoring-agent-behaviour-policies",
+        "footprint-and-blast-radius",
+        "skill-behaviour-policy",
+        "the-behaviour-policy-is-the-business-logic",
+        "introducing-fractal-semantic-graphs",
+        "the-same-argument-in-our-words",
+        "hooks-are-kernel-code",
+        "agent-workflows-on-ephemeral-vaults",
+        "sgit-in-a-ci-pipeline",
+        "the-policy-draws-the-liability-line"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "cd-pipeline.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/cd-pipeline.webp",
+          "caption": "Cedar policies in an sgit vault, from the rule to the evidence: a gate that validates every version against the schema and its tests, tags signed by the releasing clone, enforcement points that clone with the read key only, and an append lane that keeps a sealed record of every decision. What ran in the demo for this article is solid; the gateway and the sync into managed stores are proposed.",
+          "kind": "architecture"
+        },
+        {
+          "file": "cd-crosswalk.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/cd-crosswalk.webp",
+          "caption": "Our behaviour-policy terms, Cedar's, and where each one lives in the vault. Most map directly: the grant is permit, the barrier is forbid, the footprint is the entities. Two have no Cedar construct, the mandate and the version in force, and those are what the vault adds.",
+          "kind": "comparison"
+        },
+        {
+          "file": "cd-today.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/cd-today.webp",
+          "caption": "Amazon Verified Permissions as its documentation describes it, a plain repository, and the vault from the demo. The managed store validates strictly and is protected by IAM, but its API has no history or export, and deleting it is permanent. A repository has history but no keys. The vault has both, and puts the evidence next to the rules.",
+          "kind": "comparison"
+        }
+      ],
+      "graph": {
+        "slug": "cedar-and-the-policy-vault",
+        "teaser": "Cedar is mature and adopted; it lacks the why, the version in force and the evidence. A vault carries all three, and the demo shows it working.",
+        "topics": [
+          "agents-and-policy",
+          "vaults-and-method"
+        ],
+        "core_idea": "Cedar, open-sourced by AWS in 2023, in the CNCF Sandbox since October 2025 and used by AgentCore Policy to check agent tool calls, already expresses most of an agent behaviour policy: permit for the grant, forbid for the barrier, entities for the footprint; it does not carry why a rule exists, which version was in force, or what it decided, and an sgit vault carries all three, as a local demo showed with a validation gate, signed tags, read-only enforcement clones and a sealed, hash-chained append lane of decisions; it also showed that Cedar skips a policy that errors, so an invalid forbid fails open, and the MVP must validate before release and deny on error.",
+        "nodes": [
+          {
+            "id": "cedar",
+            "label": "Cedar",
+            "kind": "concept",
+            "summary": "Open-source policy language and engine, formally modelled in Lean."
+          },
+          {
+            "id": "mature",
+            "label": "Mature and adopted",
+            "kind": "claim",
+            "summary": "CNCF Sandbox since 8 October 2025; Verified Permissions, AgentCore Policy, Sondera."
+          },
+          {
+            "id": "agentcore",
+            "label": "AgentCore Policy",
+            "kind": "example",
+            "summary": "Checks every agent tool call against Cedar before it runs."
+          },
+          {
+            "id": "abp",
+            "label": "Agent behaviour policy",
+            "kind": "concept",
+            "summary": "Mandate, grant, barriers, layers."
+          },
+          {
+            "id": "crosswalk",
+            "label": "Term by term",
+            "kind": "artefact",
+            "summary": "Permit is the grant, forbid the barrier, entities the footprint."
+          },
+          {
+            "id": "edges",
+            "label": "Annotations as edges",
+            "kind": "method",
+            "summary": "@abp_rule and @sbp_row join their graph to ours."
+          },
+          {
+            "id": "missing",
+            "label": "What Cedar does not carry",
+            "kind": "claim",
+            "summary": "Why a rule exists, the version in force, the evidence."
+          },
+          {
+            "id": "today",
+            "label": "Policy stores today",
+            "kind": "example",
+            "summary": "Strict validation and IAM, but no history API and permanent deletion."
+          },
+          {
+            "id": "vault",
+            "label": "The policy vault",
+            "kind": "artefact",
+            "summary": "Rules, schema, tests and decisions in one versioned, encrypted unit."
+          },
+          {
+            "id": "gate",
+            "label": "The gate",
+            "kind": "method",
+            "summary": "Validate and test every version; v2 without its schema was refused."
+          },
+          {
+            "id": "failopen",
+            "label": "An invalid forbid fails open",
+            "kind": "claim",
+            "summary": "Cedar skips a policy that errors; deny on error."
+          },
+          {
+            "id": "readonly",
+            "label": "Read-only enforcement",
+            "kind": "method",
+            "summary": "Clone with the read key, load only a signed tag."
+          },
+          {
+            "id": "lane",
+            "label": "The evidence lane",
+            "kind": "artefact",
+            "summary": "Sealed, hash-chained decisions, write-only for the decider."
+          },
+          {
+            "id": "dogwood",
+            "label": "Rules about history",
+            "kind": "question",
+            "summary": "Session-aware policies need a history you can trust."
+          },
+          {
+            "id": "brief",
+            "label": "The MVP brief",
+            "kind": "artefact",
+            "summary": "Eight steps, from the demo to a real hook and a report."
+          }
+        ],
+        "edges": [
+          {
+            "from": "mature",
+            "to": "cedar",
+            "rel": "depends-on"
+          },
+          {
+            "from": "agentcore",
+            "to": "mature",
+            "rel": "example-of"
+          },
+          {
+            "from": "crosswalk",
+            "to": "abp",
+            "rel": "depends-on"
+          },
+          {
+            "from": "crosswalk",
+            "to": "cedar",
+            "rel": "compared-with"
+          },
+          {
+            "from": "edges",
+            "to": "crosswalk",
+            "rel": "extends"
+          },
+          {
+            "from": "crosswalk",
+            "to": "missing",
+            "rel": "leads-to"
+          },
+          {
+            "from": "today",
+            "to": "missing",
+            "rel": "example-of"
+          },
+          {
+            "from": "vault",
+            "to": "missing",
+            "rel": "answers"
+          },
+          {
+            "from": "vault",
+            "to": "today",
+            "rel": "contrasts"
+          },
+          {
+            "from": "gate",
+            "to": "failopen",
+            "rel": "answers"
+          },
+          {
+            "from": "vault",
+            "to": "readonly",
+            "rel": "produces"
+          },
+          {
+            "from": "readonly",
+            "to": "lane",
+            "rel": "produces"
+          },
+          {
+            "from": "lane",
+            "to": "dogwood",
+            "rel": "answers"
+          },
+          {
+            "from": "brief",
+            "to": "vault",
+            "rel": "extends"
+          },
+          {
+            "from": "brief",
+            "to": "failopen",
+            "rel": "depends-on"
+          }
+        ],
+        "links": {
+          "articles": [
+            "policy-as-code-needs-a-policy-first",
+            "commanders-intent-is-a-behaviour-policy",
+            "re-anchoring-agent-behaviour-policies",
+            "footprint-and-blast-radius",
+            "skill-behaviour-policy",
+            "the-behaviour-policy-is-the-business-logic",
+            "introducing-fractal-semantic-graphs",
+            "the-same-argument-in-our-words",
+            "hooks-are-kernel-code",
+            "agent-workflows-on-ephemeral-vaults",
+            "sgit-in-a-ci-pipeline",
+            "the-policy-draws-the-liability-line"
+          ],
+          "pages": [],
+          "sites": [
+            "https://www.cncf.io/projects/cedar/",
+            "https://aws.amazon.com/blogs/opensource/cedar-joins-cncf-as-a-sandbox-project",
+            "https://docs.cedarpolicy.com/auth/authorization.html",
+            "https://arxiv.org/abs/2403.04651",
+            "https://lean-lang.org/use-cases/cedar/",
+            "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/policy.html",
+            "https://docs.aws.amazon.com/verifiedpermissions/latest/userguide/policy-stores-delete.html",
+            "https://github.com/cedar-policy/cedar-for-agents",
+            "https://dogwood-policy.github.io/dogwood/index.html"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "No new Cedar version is released unless its model, proofs, and differential tests are current.",
+            "why": "Why Cedar is the mature place to connect to."
+          },
+          {
+            "text": "A forbid that cannot be evaluated fails open.",
+            "why": "The sharp edge the demo found."
+          },
+          {
+            "text": "A read key is a deployment credential that cannot change the rules.",
+            "why": "What the vault adds to distribution."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "the-citizen-developer",
+      "title": "The citizen developer is good news: the spreadsheet grown up, the best briefs ever written, and the handover from explorers to villagers and town planners that makes them last",
+      "date": "2026-10-14",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/the-citizen-developer.html",
+      "markdown": "https://newsroom.sgit.ai/articles/the-citizen-developer.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/the-citizen-developer.webp",
+      "teaser": "The citizen developer is the spreadsheet grown up: the best briefs ever written, handed to villagers and town planners, carried in versioned vaults.",
+      "topics": [
+        "startups-and-strategy",
+        "vaults-and-method"
+      ],
+      "tags": [
+        "citizen-developer",
+        "vibe-coding",
+        "spreadsheets",
+        "wardley-maps",
+        "villagers",
+        "town-planners",
+        "vault-apps",
+        "sgit",
+        "empowerment",
+        "article"
+      ],
+      "links_out": [
+        "saas-apocalypse-decided-by-inertia-not-by-ai",
+        "why-i-love-wardley-maps",
+        "explorer-to-villager-newsroom",
+        "the-eyeballs-get-cheap",
+        "custom-uis-are-not-the-exception",
+        "what-sgit-is",
+        "sovereignty-is-the-ability-to-move",
+        "pay-after-you-read",
+        "paying-after-the-value"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "cz-path.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/cz-path.webp",
+          "caption": "From the spreadsheet to the town planners: the citizen developer's path. People built with what they controlled, a spreadsheet; now they build the application they need, which is also the best brief ever written; villagers harden it and town planners make it scale, and an sgit vault carries the app and its data through every handover.",
+          "kind": "architecture"
+        }
+      ],
+      "graph": {
+        "slug": "the-citizen-developer",
+        "teaser": "The citizen developer is the spreadsheet grown up: the best briefs ever written, handed to villagers and town planners, carried in versioned vaults.",
+        "topics": [
+          "startups-and-strategy",
+          "vaults-and-method"
+        ],
+        "core_idea": "Citizen developers, the employees, owners and experts who now build full applications, are good news rather than a risk: they are the evolution of the error-prone but indispensable spreadsheet, their working apps are the best briefs ever written, and the real work is the handover from explorer to villagers and town planners who add the non-functional requirements; encrypted, versioned vaults carry a mini app and its data through that handover, and the shift moves people and organisations from rent-seeking software towards tools and business models they choose.",
+        "nodes": [
+          {
+            "id": "worry",
+            "label": "A worry, turned round",
+            "kind": "claim",
+            "summary": "Citizen developers are good news, not a risk to contain."
+          },
+          {
+            "id": "who",
+            "label": "Not only citizens",
+            "kind": "concept",
+            "summary": "Employees, business owners, experts: the people who know the work."
+          },
+          {
+            "id": "spreadsheet",
+            "label": "The spreadsheet",
+            "kind": "concept",
+            "summary": "A UI and data in one file, the tool people controlled."
+          },
+          {
+            "id": "errors",
+            "label": "Spreadsheet errors",
+            "kind": "example",
+            "summary": "49 of 54 audited with significant errors; London Whale; 65,536 rows."
+          },
+          {
+            "id": "apps",
+            "label": "Full applications now",
+            "kind": "claim",
+            "summary": "The same people can build real apps because they can."
+          },
+          {
+            "id": "brief",
+            "label": "The best briefs ever written",
+            "kind": "claim",
+            "summary": "A working app says what the user wants, in a form that runs."
+          },
+          {
+            "id": "not-product",
+            "label": "A brief is not a product",
+            "kind": "concept",
+            "summary": "Not yet maintained, secured, tested or able to scale."
+          },
+          {
+            "id": "handover",
+            "label": "Explorers, villagers, town planners",
+            "kind": "method",
+            "summary": "Stabilise, harden, scale, with the non-functional requirements."
+          },
+          {
+            "id": "vault",
+            "label": "A vault as the carrier",
+            "kind": "artefact",
+            "summary": "A mini app with UI and data, versioned, encrypted, handed over."
+          },
+          {
+            "id": "empowerment",
+            "label": "From rent-seeking to empowerment",
+            "kind": "claim",
+            "summary": "People, organisations and countries building what they need."
+          },
+          {
+            "id": "choose-to-pay",
+            "label": "Business models people choose",
+            "kind": "concept",
+            "summary": "Serving well enough that people choose to pay."
+          }
+        ],
+        "edges": [
+          {
+            "from": "worry",
+            "to": "who",
+            "rel": "leads-to"
+          },
+          {
+            "from": "errors",
+            "to": "spreadsheet",
+            "rel": "example-of"
+          },
+          {
+            "from": "spreadsheet",
+            "to": "apps",
+            "rel": "leads-to"
+          },
+          {
+            "from": "who",
+            "to": "apps",
+            "rel": "produces"
+          },
+          {
+            "from": "apps",
+            "to": "brief",
+            "rel": "produces"
+          },
+          {
+            "from": "not-product",
+            "to": "brief",
+            "rel": "contrasts"
+          },
+          {
+            "from": "brief",
+            "to": "handover",
+            "rel": "leads-to"
+          },
+          {
+            "from": "vault",
+            "to": "handover",
+            "rel": "depends-on"
+          },
+          {
+            "from": "vault",
+            "to": "spreadsheet",
+            "rel": "extends"
+          },
+          {
+            "from": "apps",
+            "to": "empowerment",
+            "rel": "leads-to"
+          },
+          {
+            "from": "empowerment",
+            "to": "choose-to-pay",
+            "rel": "leads-to"
+          }
+        ],
+        "links": {
+          "articles": [
+            "saas-apocalypse-decided-by-inertia-not-by-ai",
+            "why-i-love-wardley-maps",
+            "explorer-to-villager-newsroom",
+            "the-eyeballs-get-cheap",
+            "custom-uis-are-not-the-exception",
+            "what-sgit-is",
+            "sovereignty-is-the-ability-to-move",
+            "pay-after-you-read",
+            "paying-after-the-value"
+          ],
+          "pages": [],
+          "sites": [
+            "https://aws.amazon.com/what-is/low-code/",
+            "https://www.gartner.com/en/information-technology/glossary/citizen-developer",
+            "https://en.wikipedia.org/wiki/Vibe_coding",
+            "https://www.theregister.com/2006/05/03/buggy_spreadsheet",
+            "https://www.theregister.com/2020/10/05/excel_england_coronavirus_contact_error/",
+            "https://baselinescenario.com/2013/02/09/the-importance-of-excel",
+            "https://blog.gardeviance.org/2023/12/how-to-organise-yourself-dangerous-path.html"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "Every department will now have people building software the way they build spreadsheets",
+            "why": "The earlier article this one answers."
+          },
+          {
+            "text": "Of 54 spreadsheets audited between 1997 and 2000, no fewer than 49 were found to contain significant errors",
+            "why": "How badly the old tool served its builders."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "paying-after-the-value",
+      "title": "Paying after the value: why a balance that can go negative feels different from a subscription, the psychology behind it, and the experiment this newsroom is running",
+      "date": "2026-10-14",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/paying-after-the-value.html",
+      "markdown": "https://newsroom.sgit.ai/articles/paying-after-the-value.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/paying-after-the-value.webp",
+      "teaser": "Most purchases are bets on future value; a reading balance that can go negative asks for payment when the value is already in view.",
+      "topics": [
+        "startups-and-strategy",
+        "site-and-engineering"
+      ],
+      "tags": [
+        "business-models",
+        "pricing",
+        "psychology",
+        "subscriptions",
+        "reading-meter",
+        "pay-after-you-read",
+        "wikipedia",
+        "newsroom",
+        "article"
+      ],
+      "links_out": [
+        "pay-after-you-read",
+        "going-live-with-the-reading-meter",
+        "pay-to-keep-your-persona"
+      ],
+      "links_in": [
+        "the-citizen-developer"
+      ],
+      "figures": [
+        {
+          "file": "py-before-after.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/py-before-after.webp",
+          "caption": "Paying for the future, or paying for what you got. A subscription, a gym or an annual donation asks you to pay at the moment of most doubt, for value that may arrive. A meter that lets the balance go negative turns it round: the value arrives first, piece by piece, and the payment comes when you can see what it bought.",
+          "kind": "comparison"
+        },
+        {
+          "file": "py-experiment.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/py-experiment.webp",
+          "caption": "The experiment, as it runs today and what comes next: what the reading meter on this site does now, what is partly built, and what this article proposes, with the five hypotheses it will be reviewed against on 6 December 2026.",
+          "kind": "comparison"
+        }
+      ],
+      "graph": {
+        "slug": "paying-after-the-value",
+        "teaser": "Most purchases are bets on future value; a reading balance that can go negative asks for payment when the value is already in view.",
+        "topics": [
+          "startups-and-strategy",
+          "site-and-engineering"
+        ],
+        "core_idea": "Subscriptions, gym memberships and annual donations ask people to pay at the moment of most doubt for value that may not arrive, and research shows they often overpay and keep paying; this newsroom's meter reverses it with a £5 credit that reading draws down, prices the reader can lower or refuse, and a balance allowed to go negative, so payment arrives when accumulated value is visible, which works only where serving costs almost nothing and value adds up visibly, and could be made fairer with prices by purchasing power and a view of where the money goes, tested against written hypotheses with a December review.",
+        "nodes": [
+          {
+            "id": "future",
+            "label": "Buying the future",
+            "kind": "concept",
+            "summary": "Paying first and betting on enough use."
+          },
+          {
+            "id": "gym",
+            "label": "Paying not to go to the gym",
+            "kind": "example",
+            "summary": "Over $17 a visit when $10 was on offer."
+          },
+          {
+            "id": "pain",
+            "label": "The pain of paying",
+            "kind": "concept",
+            "summary": "Paying hurts; prepaid use feels free and decouples from payment."
+          },
+          {
+            "id": "plays",
+            "label": "The season ticket no-shows",
+            "kind": "example",
+            "summary": "21.5 percent no-shows when paid in advance for four plays."
+          },
+          {
+            "id": "after",
+            "label": "Paying after the value",
+            "kind": "method",
+            "summary": "Credit used page by page; payment when the value is visible."
+          },
+          {
+            "id": "meter",
+            "label": "The reading meter",
+            "kind": "artefact",
+            "summary": "£5 credit, 10p a new article read, price set or refused, negative allowed."
+          },
+          {
+            "id": "wikipedia",
+            "label": "Wikipedia's yearly ask",
+            "kind": "example",
+            "summary": "A lump sum at a moment with no value in view."
+          },
+          {
+            "id": "commons",
+            "label": "Value nobody adds up",
+            "kind": "concept",
+            "summary": "Many small benefits, too small to feel, never totalled."
+          },
+          {
+            "id": "condition",
+            "label": "Near-zero cost to serve",
+            "kind": "claim",
+            "summary": "The model needs a huge gap between cost and price."
+          },
+          {
+            "id": "fair",
+            "label": "Fair, visible, chosen",
+            "kind": "method",
+            "summary": "Prices by country, where the money goes, verified facts as a product."
+          },
+          {
+            "id": "photo",
+            "label": "Paying for a cause",
+            "kind": "example",
+            "summary": "92 cents a photo; $5.33 when half went to charity."
+          },
+          {
+            "id": "hypotheses",
+            "label": "Seven hypotheses, one review",
+            "kind": "artefact",
+            "summary": "H1 to H7, reviewed on 6 December 2026."
+          }
+        ],
+        "edges": [
+          {
+            "from": "gym",
+            "to": "future",
+            "rel": "example-of"
+          },
+          {
+            "from": "pain",
+            "to": "future",
+            "rel": "extends"
+          },
+          {
+            "from": "plays",
+            "to": "pain",
+            "rel": "example-of"
+          },
+          {
+            "from": "after",
+            "to": "future",
+            "rel": "contrasts"
+          },
+          {
+            "from": "meter",
+            "to": "after",
+            "rel": "example-of"
+          },
+          {
+            "from": "wikipedia",
+            "to": "commons",
+            "rel": "example-of"
+          },
+          {
+            "from": "after",
+            "to": "commons",
+            "rel": "answers"
+          },
+          {
+            "from": "condition",
+            "to": "after",
+            "rel": "depends-on"
+          },
+          {
+            "from": "fair",
+            "to": "after",
+            "rel": "extends"
+          },
+          {
+            "from": "photo",
+            "to": "fair",
+            "rel": "example-of"
+          },
+          {
+            "from": "meter",
+            "to": "hypotheses",
+            "rel": "produces"
+          }
+        ],
+        "links": {
+          "articles": [
+            "going-live-with-the-reading-meter",
+            "pay-after-you-read",
+            "pay-to-keep-your-persona"
+          ],
+          "pages": [],
+          "sites": [
+            "https://eml.berkeley.edu/~ulrike/Papers/gym.pdf",
+            "https://ideas.repec.org/a/inm/ormksc/v17y1998i1p4-28.html",
+            "https://www.wilsonquarterly.com/quarterly/_/feel-pain/",
+            "https://newsroom.haas.berkeley.edu/name-your-price-pricing-strategy-aimed-achieving-corporate-social-responsibility-and/",
+            "https://meta.wikimedia.org/wiki/Fundraising/2024-25_Report",
+            "https://en.wikipedia.org/wiki/Big_Mac_Index",
+            "https://www.lw.com/en/insights/eighth-circuit-vacates-ftc-click-to-cancel-rule"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "The pain of paying, we argue, plays an important role in consumer self-regulation, but is hedonically costly.",
+            "why": "Why when you pay matters."
+          },
+          {
+            "text": "Your balance can go below zero and stay there; nothing is blocked and nothing nags.",
+            "why": "The rule that makes the experiment different."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "the-eyeballs-get-cheap",
+      "title": "The eyeballs get cheap: why open source is about to become the most secure software we have, and why secure, sovereign and paid-for meet at the least code in production",
+      "date": "2026-10-14",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/the-eyeballs-get-cheap.html",
+      "markdown": "https://newsroom.sgit.ai/articles/the-eyeballs-get-cheap.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/the-eyeballs-get-cheap.webp",
+      "teaser": "Cheap, deep AI security review gives open source the eyeballs it never had; with sovereignty and paid maintenance, all point at the least code in production.",
+      "topics": [
+        "startups-and-strategy",
+        "news-and-evidence"
+      ],
+      "tags": [
+        "open-source",
+        "security",
+        "ai-security-review",
+        "vulnerabilities",
+        "curl",
+        "sovereignty",
+        "business-models",
+        "wardley-maps",
+        "supply-chain",
+        "article"
+      ],
+      "links_out": [
+        "chainguard-mapped",
+        "code-review-as-a-fractal-semantic-graph",
+        "sovereignty-is-the-ability-to-move",
+        "saas-apocalypse-decided-by-inertia-not-by-ai",
+        "what-open-source-is-and-is-not",
+        "open-source-is-not-free",
+        "the-minimum-code-below"
+      ],
+      "links_in": [
+        "the-citizen-developer"
+      ],
+      "figures": [
+        {
+          "file": "ox-balance.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ox-balance.webp",
+          "caption": "Open source against proprietary: the balance that just moved. Open source had the source in view and paid for few reviews; proprietary had the budget and the cover of being hidden. Cheap, deep, model-driven security review changes one side of that balance far more than the other.",
+          "kind": "comparison"
+        },
+        {
+          "file": "ox-curl.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ox-curl.webp",
+          "caption": "One project, one year of machine eyeballs: curl, from its maintainer's own posts. A bug bounty that found 87 vulnerabilities; a year of reports that were mostly noise; a first wave of AI-assisted reports that triggered hundreds of fixes; the end of the bounty; a frontier scan that found one bug; and, in October, deeper tools finding more.",
+          "kind": "comparison"
+        },
+        {
+          "file": "ox-forces.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ox-forces.webp",
+          "caption": "Three forces meeting at the least code in production: open source becoming very secure, open source becoming required for sovereignty, and open source with commercial models that pay for maintenance. Where they meet is the customer running exactly the code they need, maintained by the people who know it best.",
+          "kind": "architecture"
+        }
+      ],
+      "graph": {
+        "slug": "the-eyeballs-get-cheap",
+        "teaser": "Cheap, deep AI security review gives open source the eyeballs it never had; with sovereignty and paid maintenance, all point at the least code in production.",
+        "topics": [
+          "startups-and-strategy",
+          "news-and-evidence"
+        ],
+        "core_idea": "Open source and proprietary software had no clear security winner because open source had visibility without paid review and proprietary had budget and the cover of being hidden; model-driven review makes deep attention cheap and repeatable, which helps open source far more, as curl's year shows with noise, then hundreds of real fixes, a quiet frontier scan and deeper tools finding more; with sovereignty requiring open code and schemas and a business model of maintaining each customer's minimal version, secure, sovereign and paid-for converge on running the least code in production.",
+        "nodes": [
+          {
+            "id": "eyeballs",
+            "label": "Given enough eyeballs",
+            "kind": "concept",
+            "summary": "Raymond's argument; the eyeballs were rarely there."
+          },
+          {
+            "id": "old-balance",
+            "label": "No clear winner",
+            "kind": "claim",
+            "summary": "Open source had visibility, proprietary had budget and cover."
+          },
+          {
+            "id": "understaffed",
+            "label": "Unpaid maintainers",
+            "kind": "example",
+            "summary": "60 percent unpaid hobbyists in Tidelift's 2024 survey."
+          },
+          {
+            "id": "cheap",
+            "label": "The eyeballs get cheap",
+            "kind": "claim",
+            "summary": "Deep model-driven review, repeatable on every change."
+          },
+          {
+            "id": "scale",
+            "label": "Review at scale",
+            "kind": "example",
+            "summary": "Over 1,000 projects scanned; 2,000 patches across 500 projects."
+          },
+          {
+            "id": "curl",
+            "label": "curl's year",
+            "kind": "example",
+            "summary": "Noise, hundreds of fixes, one bug in a frontier scan, then more."
+          },
+          {
+            "id": "bottleneck",
+            "label": "Judging, not finding",
+            "kind": "claim",
+            "summary": "Maintainers' time to verify and patch is the new bottleneck."
+          },
+          {
+            "id": "bar",
+            "label": "A higher bar",
+            "kind": "claim",
+            "summary": "Proof, provenance, fewer and better projects, a shorter long tail."
+          },
+          {
+            "id": "town-planners",
+            "label": "Town planner code",
+            "kind": "concept",
+            "summary": "Mission-critical code industrialised, reviewed and accountable."
+          },
+          {
+            "id": "secure",
+            "label": "Secure",
+            "kind": "concept",
+            "summary": "Open source with the attention it never had."
+          },
+          {
+            "id": "sovereign",
+            "label": "Sovereign",
+            "kind": "concept",
+            "summary": "You can only move what you can read and run elsewhere."
+          },
+          {
+            "id": "paid",
+            "label": "Paid for",
+            "kind": "concept",
+            "summary": "Each customer's private version, maintained by the experts."
+          },
+          {
+            "id": "least-code",
+            "label": "The least code in production",
+            "kind": "claim",
+            "summary": "Where maintainer, customer and security all point."
+          }
+        ],
+        "edges": [
+          {
+            "from": "understaffed",
+            "to": "eyeballs",
+            "rel": "contrasts"
+          },
+          {
+            "from": "eyeballs",
+            "to": "old-balance",
+            "rel": "leads-to"
+          },
+          {
+            "from": "cheap",
+            "to": "old-balance",
+            "rel": "answers"
+          },
+          {
+            "from": "scale",
+            "to": "cheap",
+            "rel": "example-of"
+          },
+          {
+            "from": "curl",
+            "to": "cheap",
+            "rel": "example-of"
+          },
+          {
+            "from": "curl",
+            "to": "bottleneck",
+            "rel": "produces"
+          },
+          {
+            "from": "cheap",
+            "to": "bar",
+            "rel": "leads-to"
+          },
+          {
+            "from": "town-planners",
+            "to": "bar",
+            "rel": "extends"
+          },
+          {
+            "from": "bar",
+            "to": "secure",
+            "rel": "produces"
+          },
+          {
+            "from": "secure",
+            "to": "least-code",
+            "rel": "leads-to"
+          },
+          {
+            "from": "sovereign",
+            "to": "least-code",
+            "rel": "leads-to"
+          },
+          {
+            "from": "paid",
+            "to": "least-code",
+            "rel": "leads-to"
+          }
+        ],
+        "links": {
+          "articles": [
+            "chainguard-mapped",
+            "code-review-as-a-fractal-semantic-graph",
+            "sovereignty-is-the-ability-to-move",
+            "saas-apocalypse-decided-by-inertia-not-by-ai",
+            "what-open-source-is-and-is-not",
+            "open-source-is-not-free",
+            "the-minimum-code-below"
+          ],
+          "pages": [],
+          "sites": [
+            "https://daniel.haxx.se/blog/",
+            "https://daniel.haxx.se/blog/2026/01/26/the-end-of-the-curl-bug-bounty/",
+            "https://daniel.haxx.se/blog/2026/05/11/",
+            "https://daniel.haxx.se/blog/2026/10/14/a-uaf-turned-rce/",
+            "https://daniel.haxx.se/blog/2026/10/14/a-curl-audit-by-aisle/",
+            "https://github.com/curl/curl/blob/master/docs/CONTRIBUTE.md",
+            "https://www.anthropic.com/news/glasswing-initial-update",
+            "https://www.chainguard.dev/unchained/the-first-disclosure-from-our-mythos-harness",
+            "https://helpnetsecurity.com/2026/06/17/chainguard-athena-coalition-fix-open-source-vulnerabilities/",
+            "https://www.darpa.mil/news/2025/aixcc-results",
+            "https://www.theregister.com/2024/09/18/open_source_maintainers_underpaid/",
+            "http://www.catb.org/~esr/writings/cathedral-bazaar/cathedral-bazaar/ar01s04.html",
+            "https://blog.gardeviance.org/2015/03/on-pioneers-settlers-town-planners-and.html"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "Given enough eyeballs, all bugs are shallow.",
+            "why": "The old argument, finally affordable."
+          },
+          {
+            "text": "Any project that has not scanned their source code with AI powered tooling will likely find huge number of flaws",
+            "why": "A maintainer's view of the new baseline."
+          },
+          {
+            "text": "Town Planners are brilliant people. They are able to take something and industrialise it",
+            "why": "Where mission-critical code belongs."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "commanders-intent-is-a-behaviour-policy",
+      "title": "Commander's intent is a behaviour policy: Sondera's argument in our words, the business layer above it, and five of our rules compiled to Cedar and tested",
+      "date": "2026-10-14",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/commanders-intent-is-a-behaviour-policy.html",
+      "markdown": "https://newsroom.sgit.ai/articles/commanders-intent-is-a-behaviour-policy.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/commanders-intent-is-a-behaviour-policy.webp",
+      "teaser": "Sondera's commander's intent and our behaviour policies are one idea: twelve terms joined, the business layer above, and five rules tested in Cedar.",
+      "topics": [
+        "agents-and-policy",
+        "graphs-and-knowledge"
+      ],
+      "tags": [
+        "commanders-intent",
+        "agent-behaviour-policy",
+        "policy-as-code",
+        "cedar",
+        "sondera",
+        "business-logic",
+        "liability",
+        "fractal-semantic-graphs",
+        "agents",
+        "article"
+      ],
+      "links_out": [
+        "introducing-fractal-semantic-graphs",
+        "the-same-argument-in-our-words",
+        "footprint-and-blast-radius",
+        "hope-or-enforcement",
+        "re-anchoring-agent-behaviour-policies",
+        "how-cheap-is-it-to-undo",
+        "skill-behaviour-policy",
+        "the-policy-draws-the-liability-line",
+        "are-hooks-the-sweet-spot",
+        "hooks-are-kernel-code",
+        "the-behaviour-policy-is-the-business-logic",
+        "policy-as-code-needs-a-policy-first"
+      ],
+      "links_in": [
+        "cedar-and-the-policy-vault"
+      ],
+      "figures": [
+        {
+          "file": "ci-crosswalk.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ci-crosswalk.webp",
+          "caption": "Two vocabularies, one idea: twelve of Sondera's terms from \"Your Agents Need Commander's Intent\" against the terms this site and RiskMandate use. Most are the same idea in different words; we extend theirs at the business layer, and they extend ours with proof.",
+          "kind": "comparison"
+        },
+        {
+          "file": "ci-layers.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ci-layers.webp",
+          "caption": "Limits about effects, all the way up. Sondera's published example sits just above the mechanics; the business logic sits above it, and each layer can be written as an effect and compiled to the same kind of rule. What changes going up is where the facts come from: the platform, the session, the ledger, the CRM, and at the top, judgement.",
+          "kind": "architecture"
+        }
+      ],
+      "graph": {
+        "slug": "commanders-intent-is-a-behaviour-policy",
+        "teaser": "Sondera's commander's intent and our behaviour policies are one idea: twelve terms joined, the business layer above, and five rules tested in Cedar.",
+        "topics": [
+          "agents-and-policy",
+          "graphs-and-knowledge"
+        ],
+        "core_idea": "Sondera argues that agents do not go rogue but fill unstated gaps, so limits must be written as effects, compiled into checkable rules and enforced outside the agent, which is commander's intent; joined to this site's vocabulary it is the mandate, the gap and the barriers of an agent behaviour policy, with this site going further up into the business layer, where only the company can write the limits, and Sondera going further in proof by compiling plain English into Cedar; five rules from both sides and the business layer evaluated in Cedar gave fourteen of fourteen intended verdicts, and the hard part is where each rule's facts come from.",
+        "nodes": [
+          {
+            "id": "not-rogue",
+            "label": "Agents do not go rogue",
+            "kind": "claim",
+            "summary": "They follow the sentence and fill the gaps; the limits were never written."
+          },
+          {
+            "id": "tip-form",
+            "label": "The tip form",
+            "kind": "example",
+            "summary": "The instructions did not rule out form submissions."
+          },
+          {
+            "id": "intent",
+            "label": "Commander's intent",
+            "kind": "concept",
+            "summary": "The objective and its limits, written together before anyone moves."
+          },
+          {
+            "id": "effects",
+            "label": "Limits about effects",
+            "kind": "method",
+            "summary": "Not lists of forbidden actions, which invite the one you missed."
+          },
+          {
+            "id": "momentum",
+            "label": "Rules fade",
+            "kind": "example",
+            "summary": "90% stop when the limit is last in context, 40% three turns earlier."
+          },
+          {
+            "id": "crosswalk",
+            "label": "Two vocabularies joined",
+            "kind": "artefact",
+            "summary": "Twelve of their terms against ours, as edges of a graph."
+          },
+          {
+            "id": "abp",
+            "label": "Agent behaviour policy",
+            "kind": "concept",
+            "summary": "Mandate, grant, gap and barriers, row by row."
+          },
+          {
+            "id": "business",
+            "label": "We go further up",
+            "kind": "claim",
+            "summary": "Function, process, relationship, organisation: limits only the company can write."
+          },
+          {
+            "id": "proof",
+            "label": "They go further in proof",
+            "kind": "claim",
+            "summary": "Plain English compiled to Cedar and checked by a theorem prover."
+          },
+          {
+            "id": "cedar",
+            "label": "Five rules in Cedar",
+            "kind": "artefact",
+            "summary": "Theirs, ours, the skill policy and the business layer."
+          },
+          {
+            "id": "fourteen",
+            "label": "Fourteen of fourteen",
+            "kind": "claim",
+            "summary": "Every request came out as intended."
+          },
+          {
+            "id": "facts",
+            "label": "Where the facts come from",
+            "kind": "question",
+            "summary": "The ledger and the CRM, not the syntax, are the hard part."
+          },
+          {
+            "id": "liability",
+            "label": "What the humans allowed",
+            "kind": "concept",
+            "summary": "The law asks what was allowed, not what the agent intended."
+          },
+          {
+            "id": "checked",
+            "label": "The sources, checked",
+            "kind": "method",
+            "summary": "Primary reports hold; a few figures rounded; two items unconfirmed."
+          }
+        ],
+        "edges": [
+          {
+            "from": "tip-form",
+            "to": "not-rogue",
+            "rel": "example-of"
+          },
+          {
+            "from": "not-rogue",
+            "to": "intent",
+            "rel": "leads-to"
+          },
+          {
+            "from": "intent",
+            "to": "effects",
+            "rel": "produces"
+          },
+          {
+            "from": "momentum",
+            "to": "effects",
+            "rel": "leads-to"
+          },
+          {
+            "from": "intent",
+            "to": "abp",
+            "rel": "compared-with"
+          },
+          {
+            "from": "crosswalk",
+            "to": "abp",
+            "rel": "depends-on"
+          },
+          {
+            "from": "business",
+            "to": "effects",
+            "rel": "extends"
+          },
+          {
+            "from": "proof",
+            "to": "abp",
+            "rel": "extends"
+          },
+          {
+            "from": "cedar",
+            "to": "fourteen",
+            "rel": "produces"
+          },
+          {
+            "from": "business",
+            "to": "cedar",
+            "rel": "example-of"
+          },
+          {
+            "from": "fourteen",
+            "to": "facts",
+            "rel": "leads-to"
+          },
+          {
+            "from": "liability",
+            "to": "intent",
+            "rel": "depends-on"
+          },
+          {
+            "from": "checked",
+            "to": "not-rogue",
+            "rel": "answers"
+          }
+        ],
+        "links": {
+          "articles": [
+            "introducing-fractal-semantic-graphs",
+            "the-same-argument-in-our-words",
+            "footprint-and-blast-radius",
+            "hope-or-enforcement",
+            "re-anchoring-agent-behaviour-policies",
+            "how-cheap-is-it-to-undo",
+            "skill-behaviour-policy",
+            "the-policy-draws-the-liability-line",
+            "are-hooks-the-sweet-spot",
+            "hooks-are-kernel-code",
+            "the-behaviour-policy-is-the-business-logic",
+            "policy-as-code-needs-a-policy-first"
+          ],
+          "pages": [],
+          "sites": [
+            "https://blog.sondera.ai/p/ai-agents-commanders-intent",
+            "https://docs.sondera.ai",
+            "https://www.anthropic.com/research/investigating-unintended-model-actions",
+            "https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents",
+            "https://arxiv.org/abs/2609.38415",
+            "https://arxiv.org/abs/2606.26649",
+            "https://armypubs.army.mil/epubs/DR_pubs/DR_a/ARN47032-ADP_6-0-000-WEB-1.pdf"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "An agent has no intent, just an optimization target.",
+            "why": "Why the limits have to be ours."
+          },
+          {
+            "text": "So limits have to be written about effects, not actions.",
+            "why": "The method both sides share."
+          },
+          {
+            "text": "The rule that the user interface enforced by omission is no longer enforced, unless somebody writes it down and something enforces it.",
+            "why": "Why the business layer has to be written now."
+          }
+        ]
+      }
+    },
+    {
       "slug": "skill-behaviour-policy",
       "title": "A skill behaviour policy: what a skill says it does, what it can do, what it is given, and the control that closes the gap, measured on 899 skills",
       "date": "2026-10-14",
@@ -86,7 +1534,10 @@
         "policy-as-code-needs-a-policy-first",
         "chainguard-mapped"
       ],
-      "links_in": [],
+      "links_in": [
+        "cedar-and-the-policy-vault",
+        "commanders-intent-is-a-behaviour-policy"
+      ],
       "figures": [
         {
           "file": "sb-three.webp",
@@ -565,7 +2016,9 @@
         "sgit-in-a-ci-pipeline",
         "sgit-actions-side-by-side"
       ],
-      "links_in": [],
+      "links_in": [
+        "cedar-and-the-policy-vault"
+      ],
       "figures": [
         {
           "file": "aw-catalogue.webp",
@@ -805,6 +2258,9 @@
         "pay-to-keep-your-persona"
       ],
       "links_in": [
+        "the-tokens-hook",
+        "cedar-and-the-policy-vault",
+        "commanders-intent-is-a-behaviour-policy",
         "skill-behaviour-policy"
       ],
       "figures": [
@@ -1065,6 +2521,7 @@
         "sgit-in-a-ci-pipeline"
       ],
       "links_in": [
+        "the-eyeballs-get-cheap",
         "skill-behaviour-policy",
         "hooks-are-kernel-code"
       ],
@@ -2094,6 +3551,8 @@
         "a-policy-for-every-skill"
       ],
       "links_in": [
+        "the-tokens-hook",
+        "commanders-intent-is-a-behaviour-policy",
         "skill-behaviour-policy",
         "hooks-are-kernel-code",
         "system-prompts-as-behaviour-policies",
@@ -2837,6 +4296,7 @@
         "introducing-fractal-semantic-graphs"
       ],
       "links_in": [
+        "the-eyeballs-get-cheap",
         "chainguard-mapped"
       ],
       "figures": [
@@ -3301,6 +4761,8 @@
         "the-human-in-the-loop"
       ],
       "links_in": [
+        "cedar-and-the-policy-vault",
+        "commanders-intent-is-a-behaviour-policy",
         "skill-behaviour-policy",
         "system-prompts-as-behaviour-policies",
         "are-hooks-the-sweet-spot",
@@ -3535,6 +4997,7 @@
         "two-agents-one-vault"
       ],
       "links_in": [
+        "cedar-and-the-policy-vault",
         "sgit-actions-side-by-side",
         "agent-workflows-on-ephemeral-vaults",
         "chainguard-mapped",
@@ -3740,6 +5203,260 @@
           {
             "text": "So the folder can live wherever a CI system keeps bytes",
             "why": "Why ciphertext storage removes the hosted server."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "the-homepage-is-a-vault",
+      "title": "The homepage is a vault: a fresh edition every morning, every past homepage one commit away, served from plain files, and a brief for the agent that builds it",
+      "date": "2026-10-14",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/the-homepage-is-a-vault.html",
+      "markdown": "https://newsroom.sgit.ai/articles/the-homepage-is-a-vault.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/the-homepage-is-a-vault.webp",
+      "teaser": "A new homepage edition every morning, each a signed commit in a vault, served from plain files: every past homepage one commit id away.",
+      "topics": [
+        "vaults-and-method",
+        "site-and-engineering"
+      ],
+      "tags": [
+        "homepage",
+        "vaults",
+        "sgit",
+        "static-hosting",
+        "performance",
+        "ab-testing",
+        "append-lanes",
+        "scheduled-agents",
+        "synthetic-users",
+        "version-control",
+        "architecture",
+        "brief",
+        "article"
+      ],
+      "links_out": [
+        "two-agents-one-vault",
+        "how-to-run-synthetic-users"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "hm-architecture.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/hm-architecture.webp",
+          "caption": "The homepage as a vault: a morning job writes an edition and tags it, the encrypted objects go to plain static hosting, a small shell on GitHub Pages carries the read key and a snapshot for search engines, and the browser reads the edition. A stats lane and a daily run of synthetic users feed the next morning's edition. Dashed boxes are proposed.",
+          "kind": "architecture"
+        },
+        {
+          "file": "hm-editions.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/hm-editions.webp",
+          "caption": "Three editions of the demo homepage vault, each a commit with a signed tag, carrying its page, the links it showed and why, both variants, its release note and a screenshot of itself. Any edition opens again from its commit id.",
+          "kind": "comparison"
+        },
+        {
+          "file": "hm-sequence.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/hm-sequence.webp",
+          "caption": "One page load: the shell from GitHub Pages, then four chained requests to the static host for the ref, the commit, the tree and the page, decrypted in the browser; the dynamic slots load from their own vaults; a beacon goes to the stats lane. Each step waits for the one before, so where the bytes come from decides the time.",
+          "kind": "architecture"
+        },
+        {
+          "file": "hm-numbers.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/hm-numbers.webp",
+          "caption": "What the measurements say: the live numbers from this sandbox to newsroom.sgit.ai and its vault API, and the vault numbers from a local static server and a local vault server, which count requests and bytes, not network time.",
+          "kind": "comparison"
+        }
+      ],
+      "graph": {
+        "slug": "the-homepage-is-a-vault",
+        "teaser": "A new homepage edition every morning, each a signed commit in a vault, served from plain files: every past homepage one commit id away.",
+        "topics": [
+          "vaults-and-method",
+          "site-and-engineering"
+        ],
+        "core_idea": "The homepage should be a fresh edition every morning, written by a scheduled job into an sgit vault, where every edition is a commit with a signed tag, its links, a screenshot and a release note, variants sit side by side for A/B tests and a fork is a whole homepage; the encrypted objects can be served as plain files, since the site is on GitHub Pages and the time is lost in the vault API at 317 ms a request against 44 ms static; a local demo rendered today's edition in four requests, a past one in three and nothing inside two minutes, and a stats lane took 300 beacons.",
+        "nodes": [
+          {
+            "id": "fresh",
+            "label": "Fresh every morning",
+            "kind": "claim",
+            "summary": "A job writes a new edition at about 05:45."
+          },
+          {
+            "id": "edition",
+            "label": "The edition",
+            "kind": "concept",
+            "summary": "Structure, highlights and selections; the wire stays live."
+          },
+          {
+            "id": "vault",
+            "label": "The homepage vault",
+            "kind": "artefact",
+            "summary": "Page, links and why, variants, screenshot, release note."
+          },
+          {
+            "id": "correction",
+            "label": "Not a Lambda",
+            "kind": "claim",
+            "summary": "The site is on GitHub Pages; the Lambda is the vault API."
+          },
+          {
+            "id": "latency",
+            "label": "317 ms against 44",
+            "kind": "example",
+            "summary": "One request through the API, one from GitHub Pages."
+          },
+          {
+            "id": "static",
+            "label": "Plain files are enough",
+            "kind": "method",
+            "summary": "Objects cached for ever, one ref never cached."
+          },
+          {
+            "id": "demo",
+            "label": "Three editions, three tags",
+            "kind": "artefact",
+            "summary": "Built and exported locally with sgit 0.21.0."
+          },
+          {
+            "id": "requests",
+            "label": "4, 0 and 3 requests",
+            "kind": "example",
+            "summary": "Today cold, today warm, yesterday by commit id."
+          },
+          {
+            "id": "history",
+            "label": "Every past homepage",
+            "kind": "concept",
+            "summary": "Any day's page, its links and its screenshot, one commit away."
+          },
+          {
+            "id": "variants",
+            "label": "Variants and forks",
+            "kind": "method",
+            "summary": "A/B in one commit; another language is a fork."
+          },
+          {
+            "id": "stats",
+            "label": "The stats lane",
+            "kind": "method",
+            "summary": "A beacon per load, collected and cleared each morning."
+          },
+          {
+            "id": "synthetic",
+            "label": "Readers who do not exist",
+            "kind": "method",
+            "summary": "Synthetic users every day, findings in their own vault."
+          },
+          {
+            "id": "seo",
+            "label": "Search engines see a shell",
+            "kind": "question",
+            "summary": "A snapshot projected from the same commit."
+          },
+          {
+            "id": "brief",
+            "label": "The brief",
+            "kind": "artefact",
+            "summary": "Start on /front/, measure for two weeks, then move."
+          }
+        ],
+        "edges": [
+          {
+            "from": "fresh",
+            "to": "edition",
+            "rel": "produces"
+          },
+          {
+            "from": "edition",
+            "to": "vault",
+            "rel": "depends-on"
+          },
+          {
+            "from": "latency",
+            "to": "correction",
+            "rel": "example-of"
+          },
+          {
+            "from": "correction",
+            "to": "static",
+            "rel": "leads-to"
+          },
+          {
+            "from": "static",
+            "to": "vault",
+            "rel": "extends"
+          },
+          {
+            "from": "demo",
+            "to": "requests",
+            "rel": "produces"
+          },
+          {
+            "from": "requests",
+            "to": "static",
+            "rel": "example-of"
+          },
+          {
+            "from": "vault",
+            "to": "history",
+            "rel": "produces"
+          },
+          {
+            "from": "vault",
+            "to": "variants",
+            "rel": "produces"
+          },
+          {
+            "from": "stats",
+            "to": "variants",
+            "rel": "answers"
+          },
+          {
+            "from": "synthetic",
+            "to": "fresh",
+            "rel": "extends"
+          },
+          {
+            "from": "seo",
+            "to": "static",
+            "rel": "contrasts"
+          },
+          {
+            "from": "brief",
+            "to": "demo",
+            "rel": "extends"
+          }
+        ],
+        "links": {
+          "articles": [
+            "two-agents-one-vault",
+            "how-to-run-synthetic-users"
+          ],
+          "pages": [],
+          "sites": [
+            "https://sgit.ai/updates/index.html#take-the-api-out-of-the-path",
+            "https://sgit.ai/docs/vault/static-hosting.html",
+            "https://sgit.ai/case-studies/live-vault-docs.html",
+            "https://sgit.ai/demos/fractal-graphs/performance.html",
+            "https://sgit.ai/docs/surfaces.html",
+            "https://sgit.ai/docs/credentials.html",
+            "https://sgit.ai/api/append-lanes.html",
+            "https://sgit.ai/docs/briefs/vault-telemetry-append-lanes.html",
+            "https://sgit.ai/updates/index.html#the-mirror-is-gone"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "Twenty five times faster, with nothing about the vault changed.",
+            "why": "Plain files are enough."
+          },
+          {
+            "text": "Version control of the homepage is the feature I like most.",
+            "why": "Every past homepage, one commit away."
+          },
+          {
+            "text": "give a mirror a reader before giving it a remote",
+            "why": "The homepage is the mirror's reader from day one."
           }
         ]
       }
@@ -4811,6 +6528,7 @@
         "a-second-reader-the-agent-cannot-skip"
       ],
       "links_in": [
+        "commanders-intent-is-a-behaviour-policy",
         "four-frameworks-one-agent",
         "every-link-points-back",
         "the-human-in-the-loop"
@@ -5512,6 +7230,8 @@
         "authority-outside-the-model"
       ],
       "links_in": [
+        "cedar-and-the-policy-vault",
+        "commanders-intent-is-a-behaviour-policy",
         "a-policy-for-every-skill",
         "policy-as-code-needs-a-policy-first",
         "attacks-rewritten-as-mandates",
@@ -6731,7 +8451,9 @@
         "supply-chain-of-vaults",
         "sovereignty-is-the-ability-to-move"
       ],
-      "links_in": [],
+      "links_in": [
+        "the-eyeballs-get-cheap"
+      ],
       "figures": [
         {
           "file": "os-myths.webp",
@@ -7189,6 +8911,8 @@
         "move-the-cloud-not-the-code"
       ],
       "links_in": [
+        "the-citizen-developer",
+        "the-eyeballs-get-cheap",
         "hooks-are-kernel-code",
         "what-open-source-is-and-is-not"
       ],
@@ -8240,6 +9964,7 @@
         "where-the-vault-keys-live"
       ],
       "links_in": [
+        "the-citizen-developer",
         "sovereignty-is-the-ability-to-move",
         "move-the-cloud-not-the-code",
         "judo-for-small-countries"
@@ -10527,6 +12252,7 @@
         "the-agents-write-too",
         "knowledge-that-maintains-itself",
         "sgit-in-a-ci-pipeline",
+        "the-homepage-is-a-vault",
         "attacks-rewritten-as-mandates",
         "sixteen-notes-i-did-not-want-to-lose",
         "the-site-is-an-inbox",
@@ -11106,6 +12832,7 @@
         "how-to-run-synthetic-users"
       ],
       "links_in": [
+        "the-citizen-developer",
         "how-cheap-is-it-to-undo",
         "move-the-cloud-not-the-code",
         "places-of-highest-leverage",
@@ -13084,6 +14811,8 @@
         "connector-twin-before-you-deploy-an-agent"
       ],
       "links_in": [
+        "cedar-and-the-policy-vault",
+        "commanders-intent-is-a-behaviour-policy",
         "the-article-remains-a-product",
         "a-reading-list-in-a-link",
         "where-the-platform-draws-the-line",
@@ -13529,6 +15258,7 @@
         "a-link-to-a-persona"
       ],
       "links_in": [
+        "the-homepage-is-a-vault",
         "four-frameworks-one-agent",
         "ways-to-read-one-article",
         "the-article-remains-a-product",
@@ -13980,6 +15710,8 @@
         "pay-to-keep-your-persona"
       ],
       "links_in": [
+        "the-citizen-developer",
+        "paying-after-the-value",
         "hooks-are-kernel-code",
         "the-vault-crosses-chrome-profiles",
         "not-a-straight-line",
@@ -14726,6 +16458,7 @@
         "one-article-five-readers"
       ],
       "links_in": [
+        "paying-after-the-value",
         "hooks-are-kernel-code",
         "the-article-remains-a-product",
         "a-reading-list-in-a-link",
@@ -15115,6 +16848,7 @@
         "who-will-game-the-reading-meter"
       ],
       "links_in": [
+        "paying-after-the-value",
         "no-server-by-design",
         "pay-after-you-read",
         "pay-to-keep-your-persona",
@@ -15316,6 +17050,7 @@
         "a-meter-in-the-browser"
       ],
       "links_in": [
+        "the-eyeballs-get-cheap",
         "pay-after-you-read"
       ],
       "figures": [
@@ -16051,6 +17786,9 @@
         "a-second-reader-the-agent-cannot-skip"
       ],
       "links_in": [
+        "the-tokens-hook",
+        "cedar-and-the-policy-vault",
+        "commanders-intent-is-a-behaviour-policy",
         "system-prompts-as-behaviour-policies",
         "the-agents-write-too",
         "agent-hooks-october-2026",
@@ -18662,6 +20400,7 @@
         "the-agent-team-as-it-runs"
       ],
       "links_in": [
+        "commanders-intent-is-a-behaviour-policy",
         "are-hooks-the-sweet-spot",
         "a-policy-for-every-skill",
         "policy-as-code-needs-a-policy-first",
@@ -20307,6 +22046,8 @@
         "ai-baseline-control-framework"
       ],
       "links_in": [
+        "cedar-and-the-policy-vault",
+        "commanders-intent-is-a-behaviour-policy",
         "system-prompts-as-behaviour-policies",
         "policy-as-code-needs-a-policy-first",
         "the-policy-draws-the-liability-line",
@@ -25135,6 +26876,7 @@
         "if-somebody-built-a-company-on-code-review"
       ],
       "links_in": [
+        "the-eyeballs-get-cheap",
         "hooks-are-kernel-code",
         "chainguard-mapped",
         "knowledge-that-maintains-itself",
@@ -26045,6 +27787,8 @@
         "six-agents-one-inbox"
       ],
       "links_in": [
+        "cedar-and-the-policy-vault",
+        "commanders-intent-is-a-behaviour-policy",
         "skill-behaviour-policy",
         "chainguard-mapped",
         "system-prompts-as-behaviour-policies",
@@ -26388,6 +28132,7 @@
         "ultimate-insider-three-collisions"
       ],
       "links_in": [
+        "the-citizen-developer",
         "from-a-spreadsheet-to-a-folder-per-person",
         "liquid-content-needs-water",
         "the-mandate-stack",
@@ -29334,6 +31079,8 @@
       ],
       "links_out": [],
       "links_in": [
+        "the-citizen-developer",
+        "the-eyeballs-get-cheap",
         "a-reading-list-in-a-link",
         "the-deck-i-could-not-download",
         "if-somebody-built-a-company-on-code-review",
@@ -29600,6 +31347,8 @@
       ],
       "links_out": [],
       "links_in": [
+        "cedar-and-the-policy-vault",
+        "commanders-intent-is-a-behaviour-policy",
         "the-wire-as-a-graph",
         "knowledge-that-maintains-itself",
         "the-minimum-code-below",
@@ -30829,6 +32578,7 @@
       ],
       "links_out": [],
       "links_in": [
+        "the-citizen-developer",
         "knowledge-that-maintains-itself",
         "attacks-rewritten-as-mandates",
         "move-the-cloud-not-the-code",

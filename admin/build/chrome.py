@@ -196,8 +196,8 @@ PARTNOTE = ('&#9888; Participant disclosure: published by the sgit project, whic
             'Read the disclosure</a>.')
 PARTNOTE_SELF = '&#9888; Participant disclosure: published by the sgit project. You are on the disclosure page.'
 # The network line (sgit.ai, pt.newsroom, graphs, pki, nhi, docs.diniscruz.ai, each with an arrow) left the
-# footer in v0.12.52: the newsroom stands on its own, and the only thing it points at outside itself is a
-# vault, from the page that has one (card 062). The network has its own page, network/index.html.
+# footer in v0.12.60: the newsroom stands on its own, and the only thing it points at outside itself is a
+# vault, from the page that has one (card 067). The network has its own page, network/index.html.
 
 
 def newsroom_style(text):

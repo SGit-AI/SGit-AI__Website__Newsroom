@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Findability: desks, controlled tags, series, formats and reading time, derived once for every page (card 059).
+"""Findability: desks, controlled tags, series, formats and reading time, derived once for every page (card 064).
 
     python3 admin/build/find.py
 

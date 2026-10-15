@@ -46,9 +46,9 @@ Edition of **2026-10-08**. Third edition. A day of articles on how agents decide
 
 Computed at every build from the files: placements that point at nothing, articles published since the edition, open pitches, articles without a graph or a card. The same list is what `python3 admin/build/desk.py` prints for the Editor.
 
-- Fix`front.json` the lead is 6 days older than the newest article and 74 newer article(s) are unplaced
-- To do`front.json` 74 article(s) published since the 2026-10-08 edition: skill-behaviour-policy, sgit-actions-side-by-side, agent-workflows-on-ephemeral-vaults, hooks-are-kernel-code, chainguard-mapped, the-wire-as-a-graph
-- To do`newsletter/` a newsletter issue is due: 15 articles since issue 6 (2026-10-13)
+- Fix`front.json` the lead is 7 days older than the newest article and 81 newer article(s) are unplaced
+- To do`front.json` 81 article(s) published since the 2026-10-08 edition: the-tokens-hook, cedar-and-the-policy-vault, the-citizen-developer, paying-after-the-value, the-eyeballs-get-cheap, commanders-intent-is-a-behaviour-policy
+- To do`newsletter/` a newsletter issue is due: 22 articles since issue 6 (2026-10-13)
 - To do`newsroom/pitches/2026-10-11__where-the-platform-draws-the-line.md` open pitch from contributor: highlight for where-the-platform-draws-the-line
 - To do`newsroom/pitches/2026-10-11__the-same-argument-in-our-words.md` open pitch from contributor: lead for the-same-argument-in-our-words
 - To do`newsroom/pitches/2026-10-11__the-agent-is-the-reader.md` open pitch from contributor: lead for the-agent-is-the-reader

@@ -217,7 +217,7 @@ REPLACES = {"newsroom/index.html"}
 # Copied byte for byte and never transformed (see the docstring).
 VERBATIM = re.compile(r"\.(js|css|tpl|mjs)$|^\.well-known/")
 TEXT     = re.compile(r"\.(html|md|xml|json|txt)$")
-FRONT    = ("articles/index.html", "articles/index.md")    # was also written to the root until v0.12.52; now admin/build/front.py writes the root
+FRONT    = ("articles/index.html", "articles/index.md")    # was also written to the root until v0.12.60; now admin/build/front.py writes the root
 
 REAL_TAG = re.compile(r"<[a-zA-Z][^<>]*>")
 # data-dir and data-trail-img are read by assets/shots.js, which sets img.src from them at runtime

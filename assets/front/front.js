@@ -1,4 +1,4 @@
-/* newsroom.sgit.ai: the front page's behaviour (card 058). Plain script, loaded in <head> on purpose.
+/* newsroom.sgit.ai: the front page's behaviour (card 063). Plain script, loaded in <head> on purpose.
  *
  * 1. Before the first paint: which of the three views to show. The reader's last choice is kept in this
  *    browser under newsroom.view; a ?view= in the address wins for that visit (and is remembered), which is

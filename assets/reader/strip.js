@@ -1,4 +1,4 @@
-/* newsroom.sgit.ai: the reading strip (card 061). Loaded by the nav on every page that carries the meter
+/* newsroom.sgit.ai: the reading strip (card 066). Loaded by the nav on every page that carries the meter
  * (admin/build/chrome.py); runs only where the page's <sg-meter view="page"> has a kind that is charged,
  * which is the imported articles, issues, notes and collections. Draws a hairline that fills as the reader
  * scrolls through <main> (or the body), and a chip with how far they are, what this page cost and the

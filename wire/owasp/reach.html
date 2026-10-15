@@ -22,7 +22,7 @@
   <link rel="stylesheet" href="../../assets/site-nav.css">
   <script src="../../assets/themes/themes.js"></script>
   <a class="brand" href="../../index.html">newsroom<span>.sgit.ai</span></a>
-  <a class="ver" href="../../admin/versions.html" title="Site release history">v0.12.52</a>
+  <a class="ver" href="../../admin/versions.html" title="Site release history">v0.12.60</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -149,10 +149,10 @@
  <p class="eyebrow">Industry news, read from a vault · beta</p>
  <h1>The OWASP Wire: who should know</h1>
  <p class="lead">Who should be told, and the route to tell them: organisations, never people, from their own published contact pages.</p>
-<p class="wires">The wires: <a href="../../wire/index.html">The Industry Wire</a><a href="../../wire/aws/index.html">The AWS Wire</a><a href="../../wire/owasp/index.html" aria-current=page>The OWASP Wire</a><a href="../../wire/portugal/index.html">The Portugal Wire</a> · <a href="../../wire/days.html">Day by day</a><a href="../../wire/charter.html">The charter</a><a href="../../wire/desk-brief.html">For the desks</a></p>
+<p class="wires">The wires: <a href="../../wire/index.html">The Industry Wire</a><a href="../../wire/aws/index.html">The AWS Wire</a><a href="../../wire/owasp/index.html" aria-current=page>The OWASP Wire</a><a href="../../wire/portugal/index.html">The Portugal Wire</a> · <a href="../../wire/days.html">Day by day</a><a href="../../wire/costs.html">What it costs</a><a href="../../wire/charter.html">The charter</a><a href="../../wire/desk-brief.html">For the desks</a></p>
 <p>Who the stories of The OWASP Wire concern, and how to reach them, so that they can be told this wire exists and sent what it found. <b>By organisation route only</b>, under <a href="../../world-news-day/data/contact-rules.json">the contact rules</a> this site already publishes: a role address from the organisation&rsquo;s own contact page, one hop, the page&rsquo;s bytes hashed when fetched; never a person&rsquo;s address, never a directory, never a guess. Everything here is public, so anyone can check who was told. The routes this site found are recorded in <code>admin/build/wire-reach.json</code>; the desk adds its own to the vault as <code>data/contacts.json</code> under the same rules, and this page draws both, with what the vault already carries: the map&rsquo;s entities with their public pages and repositories, and the sources&rsquo; sites.</p>
 <div id="wire-status" class="wire-status" hidden></div>
-<div id="wire-mount" data-wire="reach"><p class="dim">Opening the vault&hellip;</p></div>
+<div id="wire-mount" data-wire="reach" data-pictures="1"><p class="dim">Opening the vault&hellip;</p></div>
 <script type="application/json" id="wire-config">{"endpoint": "https://dev.send.sgraph.ai", "vault_id": "eitf274v", "read_key": "sgit_public_read_b09571f053cc19f5f8b50f8a8d0d82a115e07282fca14e58e7c3328975cd9d79:eitf274v", "ref_ttl_s": 120, "clone": "sgit clone sgit_public_read_b09571f053cc19f5f8b50f8a8d0d82a115e07282fca14e58e7c3328975cd9d79:eitf274v", "named_readers": [{"persona": "dinis", "name": "Dinis Cruz", "agreed": "2026-10-13", "how": "in chat, 13 October 2026, when the OWASP and AWS wires were added: the lens dinis is the named reader as before, extending the agreement of 12 October for the Industry Wire"}], "slug": "owasp", "up": "../../", "name": "The OWASP Wire", "reach": [{"wire": "owasp", "organisation": "OWASP Foundation", "for": "the Foundation, its board and its staff", "page": "https://owasp.org/contact/", "page_title": "Contact Us | OWASP Foundation", "fetched": "2026-10-13", "sha256": "5eae9c0e1d48ee88", "addresses": [{"address": "support@owasp.org", "says": "Membership, billing, email provisioning, and general Foundation questions", "role": "support"}, {"address": "events@owasp.org", "says": "Send a note to events@owasp.org with the event and the kind of support you have in mind", "role": "events"}], "also": [{"label": "A support ticket, the Foundation's Jira service desk, from the same page", "url": "https://owasp.org/contact/"}, {"label": "The Global Board: seven elected members, meetings open to the public, the page lists them and the meetings", "url": "https://owasp.org/board/"}], "note": "The board page publishes no address; the route to the board is the Foundation's support address or a public board meeting."}, {"wire": "owasp", "organisation": "Each OWASP project", "for": "a project and its leaders", "page": "", "fetched": "", "sha256": "", "addresses": [], "also": [{"label": "The project's page on owasp.org and its repository on GitHub, both in the vault's map (data/map.json); an issue on the repository reaches the leaders without a private address", "url": "https://owasp.org/projects/"}], "note": "Leaders are named on the project pages and in the map; the route is the project, never a personal address."}]}</script>
 <script type="module">
 import { wire } from '.././wire.js';
@@ -177,7 +177,7 @@ import('../../assets/components/sg-meter/v1/v1.4/v1.4.1/sg-meter.js')
     <div class="brandline">newsroom<span>.sgit.ai</span></div>
     <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../../admin/versions.html">v0.12.52</a> &middot; <a href="../../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../../admin/versions.html">v0.12.60</a> &middot; <a href="../../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>The newsroom</h4>

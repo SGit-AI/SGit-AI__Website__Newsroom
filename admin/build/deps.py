@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""What this site still takes from sgit.ai, by kind (card 062).
+"""What this site still takes from sgit.ai, by kind (card 067).
 
     python3 admin/build/deps.py
 

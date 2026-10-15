@@ -1,0 +1,47 @@
+{
+ "slug": "the-homepage-is-a-vault",
+ "teaser": "A new homepage edition every morning, each a signed commit in a vault, served from plain files: every past homepage one commit id away.",
+ "topics": ["vaults-and-method", "site-and-engineering"],
+ "core_idea": "The homepage should be a fresh edition every morning, written by a scheduled job into an sgit vault, where every edition is a commit with a signed tag, its links, a screenshot and a release note, variants sit side by side for A/B tests and a fork is a whole homepage; the encrypted objects can be served as plain files, since the site is on GitHub Pages and the time is lost in the vault API at 317 ms a request against 44 ms static; a local demo rendered today's edition in four requests, a past one in three and nothing inside two minutes, and a stats lane took 300 beacons.",
+ "nodes": [
+  {"id": "fresh", "label": "Fresh every morning", "kind": "claim", "summary": "A job writes a new edition at about 05:45."},
+  {"id": "edition", "label": "The edition", "kind": "concept", "summary": "Structure, highlights and selections; the wire stays live."},
+  {"id": "vault", "label": "The homepage vault", "kind": "artefact", "summary": "Page, links and why, variants, screenshot, release note."},
+  {"id": "correction", "label": "Not a Lambda", "kind": "claim", "summary": "The site is on GitHub Pages; the Lambda is the vault API."},
+  {"id": "latency", "label": "317 ms against 44", "kind": "example", "summary": "One request through the API, one from GitHub Pages."},
+  {"id": "static", "label": "Plain files are enough", "kind": "method", "summary": "Objects cached for ever, one ref never cached."},
+  {"id": "demo", "label": "Three editions, three tags", "kind": "artefact", "summary": "Built and exported locally with sgit 0.21.0."},
+  {"id": "requests", "label": "4, 0 and 3 requests", "kind": "example", "summary": "Today cold, today warm, yesterday by commit id."},
+  {"id": "history", "label": "Every past homepage", "kind": "concept", "summary": "Any day's page, its links and its screenshot, one commit away."},
+  {"id": "variants", "label": "Variants and forks", "kind": "method", "summary": "A/B in one commit; another language is a fork."},
+  {"id": "stats", "label": "The stats lane", "kind": "method", "summary": "A beacon per load, collected and cleared each morning."},
+  {"id": "synthetic", "label": "Readers who do not exist", "kind": "method", "summary": "Synthetic users every day, findings in their own vault."},
+  {"id": "seo", "label": "Search engines see a shell", "kind": "question", "summary": "A snapshot projected from the same commit."},
+  {"id": "brief", "label": "The brief", "kind": "artefact", "summary": "Start on /front/, measure for two weeks, then move."}
+ ],
+ "edges": [
+  {"from": "fresh", "to": "edition", "rel": "produces"},
+  {"from": "edition", "to": "vault", "rel": "depends-on"},
+  {"from": "latency", "to": "correction", "rel": "example-of"},
+  {"from": "correction", "to": "static", "rel": "leads-to"},
+  {"from": "static", "to": "vault", "rel": "extends"},
+  {"from": "demo", "to": "requests", "rel": "produces"},
+  {"from": "requests", "to": "static", "rel": "example-of"},
+  {"from": "vault", "to": "history", "rel": "produces"},
+  {"from": "vault", "to": "variants", "rel": "produces"},
+  {"from": "stats", "to": "variants", "rel": "answers"},
+  {"from": "synthetic", "to": "fresh", "rel": "extends"},
+  {"from": "seo", "to": "static", "rel": "contrasts"},
+  {"from": "brief", "to": "demo", "rel": "extends"}
+ ],
+ "links": {
+  "articles": ["two-agents-one-vault", "how-to-run-synthetic-users"],
+  "pages": [],
+  "sites": ["https://sgit.ai/updates/index.html#take-the-api-out-of-the-path", "https://sgit.ai/docs/vault/static-hosting.html", "https://sgit.ai/case-studies/live-vault-docs.html", "https://sgit.ai/demos/fractal-graphs/performance.html", "https://sgit.ai/docs/surfaces.html", "https://sgit.ai/docs/credentials.html", "https://sgit.ai/api/append-lanes.html", "https://sgit.ai/docs/briefs/vault-telemetry-append-lanes.html", "https://sgit.ai/updates/index.html#the-mirror-is-gone"]
+ },
+ "quotes": [
+  {"text": "Twenty five times faster, with nothing about the vault changed.", "why": "Plain files are enough."},
+  {"text": "Version control of the homepage is the feature I like most.", "why": "Every past homepage, one commit away."},
+  {"text": "give a mirror a reader before giving it a remote", "why": "The homepage is the mirror's reader from day one."}
+ ]
+}

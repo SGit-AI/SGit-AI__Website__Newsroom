@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cedar and the policy vault: a debrief on the policy language agents are adopting, where our behaviour policies and sgit vaults meet it, and a brief for the MVP, SGit Newsroom</title>
+<meta name="description" content="Cedar is the policy language I think we should adopt rather than compete with. AWS open-sourced it in May 2023 under Apache 2.0; it joined the Cloud Native Computing Foundation as a Sandbox project on 8 October 2025; it is the language of Amazon Verified Permissions and of AgentCore Policy, which checks every agent tool call before it runs; and its design is modelled and proved in Lean. That is a mature environment, and it already says most of what our agent behaviour policies say: permit for the grant, forbid for the barrier, a schema for the footprint. What it does not carry is why a rule exists, which version was in force, or the evidence of what it decided. Those are exactly what an encrypted, versioned vault is good at. So I asked this site's agent to try it: Cedar policies, schema, entities and tests in an sgit vault, a gate that refuses any version that fails validation, tags signed by the releasing clone, enforcement points that clone with a read key and cannot write, and an append lane that keeps a sealed, hash-chained record of every decision. It worked on a local server, and it found one thing worth knowing: Cedar skips a policy whose evaluation fails, so a forbid that refers to a missing attribute lets the action through. This article is the debrief, the crosswalk between their terms and ours, and the brief for the agent that will build the MVP.">
+<link rel="canonical" href="https://newsroom.sgit.ai/articles/cedar-and-the-policy-vault.html">
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SGit Newsroom">
+<meta property="og:url" content="https://newsroom.sgit.ai/articles/cedar-and-the-policy-vault.html">
+<meta property="og:title" content="Cedar and the policy vault: a debrief on the policy language agents are adopting, where our behaviour policies and sgit vaults meet it, and a brief for the MVP, SGit Newsroom">
+<meta property="og:description" content="Cedar is the policy language I think we should adopt rather than compete with. AWS open-sourced it in May 2023 under Apache 2.0; it joined the Cloud Native Computing Foundation as a Sandbox project on 8 October 2025; it is the language of Amazon Verified Permissions and of AgentCore Policy, which checks every agent tool call before it runs; and its design is modelled and proved in Lean. That is a mature environment, and it already says most of what our agent behaviour policies say: permit for the grant, forbid for the barrier, a schema for the footprint. What it does not carry is why a rule exists, which version was in force, or the evidence of what it decided. Those are exactly what an encrypted, versioned vault is good at. So I asked this site's agent to try it: Cedar policies, schema, entities and tests in an sgit vault, a gate that refuses any version that fails validation, tags signed by the releasing clone, enforcement points that clone with a read key and cannot write, and an append lane that keeps a sealed, hash-chained record of every decision. It worked on a local server, and it found one thing worth knowing: Cedar skips a policy whose evaluation fails, so a forbid that refers to a missing attribute lets the action through. This article is the debrief, the crosswalk between their terms and ours, and the brief for the agent that will build the MVP.">
+<meta property="og:image" content="https://newsroom.sgit.ai/og/cedar-and-the-policy-vault.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cedar and the policy vault: a debrief on the policy language agents are adopting, where our behaviour policies and sgit vaults meet it, and a brief for the MVP, SGit Newsroom">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://newsroom.sgit.ai/og/cedar-and-the-policy-vault.jpg">
+<link rel="alternate" type="text/markdown" href="cedar-and-the-policy-vault.md" title="This page as markdown">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Cedar and the policy vault: a debrief on the policy language agents are adopting, where our behaviour policies and sgit vaults meet it, and a brief for the MVP, SGit Newsroom", "headline": "Cedar and the policy vault: a debrief on the policy language agents are adopting, where our behaviour policies and sgit vaults meet it, and a brief for the MVP, SGit Newsroom", "description": "Cedar is the policy language I think we should adopt rather than compete with. AWS open-sourced it in May 2023 under Apache 2.0; it joined the Cloud Native Computing Foundation as a Sandbox project on 8 October 2025; it is the language of Amazon Verified Permissions and of AgentCore Policy, which checks every agent tool call before it runs; and its design is modelled and proved in Lean. That is a mature environment, and it already says most of what our agent behaviour policies say: permit for the grant, forbid for the barrier, a schema for the footprint. What it does not carry is why a rule exists, which version was in force, or the evidence of what it decided. Those are exactly what an encrypted, versioned vault is good at. So I asked this site's agent to try it: Cedar policies, schema, entities and tests in an sgit vault, a gate that refuses any version that fails validation, tags signed by the releasing clone, enforcement points that clone with a read key and cannot write, and an append lane that keeps a sealed, hash-chained record of every decision. It worked on a local server, and it found one thing worth knowing: Cedar skips a policy whose evaluation fails, so a forbid that refers to a missing attribute lets the action through. This article is the debrief, the crosswalk between their terms and ours, and the brief for the agent that will build the MVP.", "url": "https://newsroom.sgit.ai/articles/cedar-and-the-policy-vault.html", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "SGit Newsroom", "url": "https://newsroom.sgit.ai"}, "about": {"@type": "SoftwareApplication", "name": "sgit", "sameAs": "https://pypi.org/project/sgit-ai/"}, "author": {"@type": "Person", "name": "Dinis Cruz", "url": "https://sgit.ai/about/index.html"}, "license": "https://creativecommons.org/licenses/by/4.0/"}</script>
+<style>html{background:#faf9f5}body{margin:0;background:#faf9f5;color:#1c1d21;font-family:ui-sans-serif,system-ui,sans-serif;opacity:0;transition:opacity .25s;animation:sg-reveal 0s linear 1.6s forwards}html.ready body{opacity:1;animation:none}@keyframes sg-reveal{to{opacity:1}}</style><noscript><style>body{opacity:1;animation:none}</style></noscript>
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <link rel="stylesheet" href="../assets/themes/themes.css">
+  <link rel="stylesheet" href="../assets/site-nav.css">
+  <script src="../assets/themes/themes.js"></script>
+  <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.12.60</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../about/index.html">Why this exists</a>
+      <a class="sl" href="../desks/index.html">The five desks</a>
+      <a class="sl" href="../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../articles/index.html#all">Every article</a>
+      <a class="sl" href="../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../persona/index.html">Read as a persona</a>
+      <a class="sl" href="../for/make.html">Make a reading list</a>
+      <a class="sl" href="../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../wire/index.html">Industry Wire<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../wire/index.html">Today's edition</a>
+      <a class="sl" href="../wire/sources.html">The sources</a>
+      <a class="sl" href="../wire/how.html">How the wire works</a>
+      <a class="sl" href="../wire/owasp/index.html">The OWASP Wire</a>
+      <a class="sl" href="../wire/aws/index.html">The AWS Wire</a>
+      <a class="sl" href="../wire/portugal/index.html">The Portugal Wire</a>
+      <a class="sl" href="../wire/days.html">Day by day</a>
+      <a class="sl" href="../wire/charter.html">The charter</a>
+      <a class="sl" href="../articles/dark-mode-and-four-more.html">Themes: dark mode and four more</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../account/index.html">Your reading account</a>
+      <a class="sl" href="../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../account/personas.html">Your personas</a>
+      <a class="sl" href="../account/top-up.html">Top up</a>
+      <a class="sl" href="../vault/index.html">Your vault, between devices</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../newsroom/board.html">The board</a>
+      <a class="sl" href="../newsroom/log.html">The run log</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../publishers/index.html">For publishers: what is live, how to try it</a>
+      <a class="sl" href="../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+      <a class="sl" href="../demos/vaults/newsroom-synthetic-users/index.html">The study: five readers tested this site</a>
+      <a class="sl" href="../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../newsroom-api/index.html">The reader API: a map, and a review</a>
+      <a class="sl" href="../passkey/index.html">The passkey lab</a>
+      <a class="sl" href="../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../archive/index.html">The archive</a>
+      <a class="sl" href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+      <a class="sl" href="../world-news-day/stories/free-to-republish-is-not-a-licence.html">World News Day: free to republish is not a licence</a>
+      <a class="sl" href="../world-news-day/method.html">World News Day: the method</a>
+      <a class="sl" href="../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../network/index.html">The network</a>
+      <a class="sl" href="../admin/versions.html">Release history</a>
+      <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../engineering/index.html">Engineering: issues &amp; releases</a>
+      <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <div class="nav-tools">
+  <a class="search-btn" href="../search/index.html" title="Search the site, in your browser">Search</a>
+  <link rel="stylesheet" href="../assets/search/search-nav.css">
+  <sg-meter class="meter-nav" view="balance"></sg-meter>
+  <button class="vault-btn" type="button" aria-expanded="false" title="Your vault: the reading account carried between your devices"><span class="dot"></span>Vault</button>
+  <link rel="stylesheet" href="../assets/vault-pane/vault-pane.css">
+  <script type="module" src="../assets/vault-pane/vault-pane.js"></script>
+  <link rel="stylesheet" href="../assets/reader/strip.css">
+  <script src="../assets/reader/strip.js" defer></script>
+  <div class="theme-pick"></div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
+  </div>
+</div></nav>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.12.60</span></a></div>
+<main class="doc">
+ <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / Cedar and the policy vault: a debrief on the policy language agents are adopting, where our behaviour policies and sgit vaults meet it, and a brief for the MVP</p>
+ <h1>Cedar and the policy vault: a debrief on the policy language agents are adopting, where our behaviour policies and sgit vaults meet it, and a brief for the MVP</h1>
+ <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-14 &middot; <a href="versions/cedar-and-the-policy-vault.html" title="Every published version of this article, and what changed">article v1.0.0</a> &middot; <a href="../admin/versions.html" title="The newsroom release it was published in">newsroom v0.12.55</a> &middot; <span class="chip">cedar</span><span class="chip">policy-as-code</span><span class="chip">agent-behaviour-policy</span><span class="chip">sgit</span><span class="chip">vaults</span><span class="chip">append-lanes</span><span class="chip">cncf</span><span class="chip">aws</span><span class="chip">agentcore</span><span class="chip">evidence</span><span class="chip">fractal-semantic-graphs</span><span class="chip">brief</span><span class="chip">article</span></p>
+ <p class="abstract"><em><b>Abstract:</b> Cedar is the policy language I think we should adopt rather than compete with. AWS open-sourced it in May 2023 under Apache 2.0; it joined the Cloud Native Computing Foundation as a Sandbox project on 8 October 2025; it is the language of Amazon Verified Permissions and of AgentCore Policy, which checks every agent tool call before it runs; and its design is modelled and proved in Lean. That is a mature environment, and it already says most of what our agent behaviour policies say: permit for the grant, forbid for the barrier, a schema for the footprint. What it does not carry is why a rule exists, which version was in force, or the evidence of what it decided. Those are exactly what an encrypted, versioned vault is good at. So I asked this site's agent to try it: Cedar policies, schema, entities and tests in an sgit vault, a gate that refuses any version that fails validation, tags signed by the releasing clone, enforcement points that clone with a read key and cannot write, and an append lane that keeps a sealed, hash-chained record of every decision. It worked on a local server, and it found one thing worth knowing: Cedar skips a policy whose evaluation fails, so a forbid that refers to a missing attribute lets the action through. This article is the debrief, the crosswalk between their terms and ours, and the brief for the agent that will build the MVP.</em></p>
+<figure class="shot" data-shot="cd-pipeline.webp" data-dir="images/" data-alt="Cedar policies in an sgit vault, from the rule to the evidence: a gate that validates every version against the schema and its tests, tags signed by the releasing clone, enforcement points that clone with the read key only, and an append lane that keeps a sealed record of every decision. What ran in the demo for this article is solid; the gateway and the sync into managed stores are proposed." data-kind="architecture"><figcaption>Cedar policies in an sgit vault, from the rule to the evidence: a gate that validates every version against the schema and its tests, tags signed by the releasing clone, enforcement points that clone with the read key only, and an append lane that keeps a sealed record of every decision. What ran in the demo for this article is solid; the gateway and the sync into managed stores are proposed.</figcaption></figure>
+<h2 id="in-short">In short</h2>
+<ul>
+<li><b>Adopt, do not compete.</b> Cedar is open source, formally modelled, in the CNCF, and already deciding agent tool calls.</li>
+<li><b>It already speaks our language.</b> Permit is the grant, forbid is the barrier, the schema is the footprint.</li>
+<li><b>Three things it does not carry.</b> Why a rule exists, which version was in force, and what it decided.</li>
+<li><b>A vault carries all three.</b> History and diffs, signed releases, read keys for enforcement, and an append lane for evidence.</li>
+<li><b>The demo worked.</b> Two releases, a refused third attempt, fifteen decisions, a chain the auditor could check.</li>
+<li><b>One sharp edge.</b> Cedar skips a policy that errors, so an invalid forbid fails open; validate before you deploy, and deny on error.</li>
+<li><b>A brief for the MVP.</b> What the next agent builds, and how we know it works.</li>
+</ul>
+<h2 id="why">Why Cedar</h2>
+<p>I want our agent behaviour policies to connect to what others are already using, not to sit beside them as one more format. When I looked at Cedar, it looked like the most mature place to connect to, and the facts hold that up.</p>
+<p>AWS <a href="https://aws.amazon.com/about-aws/whats-new/2023/05/cedar-open-source-language-access-control/">open-sourced Cedar</a> on 10 May 2023: "Cedar is open-sourced under the Apache License 2.0", and it is written in Rust. The project's own line is that "Cedar is an open source policy language and evaluation engine", and "the first policy language built from the ground up to be verified formally". My memory of the Cloud Native Computing Foundation was right: the <a href="https://www.cncf.io/projects/cedar/">CNCF's page</a> says "Cedar was accepted to CNCF on October 8, 2025 at the Sandbox maturity level", the first of its three levels. In AWS's <a href="https://aws.amazon.com/blogs/opensource/cedar-joins-cncf-as-a-sandbox-project">announcement</a> of the move, "Current adopters and maintainers include Cloudflare, MongoDB, StrongDM, Cloudinary, and AWS services", which I have not checked with each company.</p>
+<p>For agents, the important adopter is AWS's own. <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/policy.html">Policy in AgentCore</a> "intercepts all agent traffic through Amazon Bedrock AgentCore Gateways and evaluates each request against defined policies in the policy engine before allowing tool access", and its policies "are constructed using Cedar language". You can write them in plain English, and it "generates candidate policies, validates them against the tool schema, and uses automated reasoning to check safety conditions". That is the round trip <a href="policy-as-code-needs-a-policy-first.html">Policy as code needs a policy first</a> argued for, shipped as a product. Sondera's open-source harness, which <a href="commanders-intent-is-a-behaviour-policy.html">Commander's intent is a behaviour policy</a> mapped, "evaluates Cedar policies before your agent's actions execute". And the Cedar project has its own repository for agents, <a href="https://github.com/cedar-policy/cedar-for-agents">cedar-for-agents</a>, with "A crate for auto-generating a Cedar Schema for an MCP Server's tool descriptions."</p>
+<h2 id="language">Cedar in five ideas</h2>
+<p>The <a href="https://docs.cedarpolicy.com/auth/authorization.html">documentation</a> is short and clear, and five ideas carry most of it.</p>
+<ol>
+<li><b>Default deny.</b> "no request is authorized (decision Allow) unless there is a specific permit policy that grants it".</li>
+<li><b>Forbid wins.</b> "even if a permit policy is satisfied, any satisfied forbid policy overrides it, producing a Deny decision."</li>
+<li><b>Four parts to every request.</b> A principal, an action, a resource and a context, where the first three are entities and the context is a record of facts about this request.</li>
+<li><b>A schema and a validator.</b> The schema says which entities and actions exist and what each action's context holds; the validator checks every policy against it before it runs.</li>
+<li><b>Proof, not only tests.</b> The <a href="https://arxiv.org/abs/2403.04651">OOPSLA 2024 paper</a> says "We have modeled Cedar in the Lean programming language, and used Lean's proof assistant to prove important properties of Cedar's design", and the <a href="https://lean-lang.org/use-cases/cedar/">Lean case study</a> adds the rule that matters most to me: "No new Cedar version is released unless its model, proofs, and differential tests are current."</li>
+</ol>
+<p>The paper is also direct about the comparison with the other two languages people reach for: "Comparing Cedar to two open-source languages, OpenFGA and Rego, we find (subjectively) that Cedar has equally or more readable policies, but (objectively) performs far better."</p>
+<h2 id="crosswalk">Their terms, our terms</h2>
+<figure class="shot" data-shot="cd-crosswalk.webp" data-dir="images/" data-alt="Our behaviour-policy terms, Cedar&#x27;s, and where each one lives in the vault. Most map directly: the grant is permit, the barrier is forbid, the footprint is the entities. Two have no Cedar construct, the mandate and the version in force, and those are what the vault adds." data-kind="comparison"><figcaption>Our behaviour-policy terms, Cedar's, and where each one lives in the vault. Most map directly: the grant is permit, the barrier is forbid, the footprint is the entities. Two have no Cedar construct, the mandate and the version in force, and those are what the vault adds.</figcaption></figure>
+<p>Most of an <a href="re-anchoring-agent-behaviour-policies.html">agent behaviour policy</a> maps onto Cedar without strain. The grant, what the agent can touch, is a permit and the actions and resource types in the schema. A barrier, a limit on the grant, is a forbid, and Cedar's rule that forbid always wins is exactly how we want barriers to behave. The footprint, what exists to act on, from <a href="footprint-and-blast-radius.html">Footprint and blast radius</a>, is the entities. A row of a <a href="skill-behaviour-policy.html">skill behaviour policy</a> is a forbid on labels the session carries. And the business layers of <a href="the-behaviour-policy-is-the-business-logic.html">The behaviour policy is the business logic</a> are forbids on facts from the ledger or the CRM, passed in as context.</p>
+<p>Two things have no Cedar construct. The mandate, what the agent is for and why each limit exists, is the description the rules are compiled from, and it has to stay the canonical version. And the version in force, which set of rules applied to a given decision, belongs to whatever stores the policies, not to the language.</p>
+<p>This is the translation element I keep coming back to. A <a href="introducing-fractal-semantic-graphs.html">fractal semantic graph</a> does not ask everyone to share a schema; it connects graphs that each keep their own. Cedar has its own world: entities, actions, a schema. Our behaviour policy has its own: mandate, grant, barriers, layers. We do not need to replace either. We need edges between them, and Cedar gives us a place to put them: annotations. In the demo, every policy carries one, <code>@abp_rule("9")</code> or <code>@sbp_row("dga-2")</code> or <code>@layer("process")</code>, and those are edges from a node in their graph to a node in ours. It is the same move as <a href="the-same-argument-in-our-words.html">The same argument, in our words</a>, done in code.</p>
+<h2 id="today">How Cedar policies are kept today</h2>
+<figure class="shot" data-shot="cd-today.webp" data-dir="images/" data-alt="Amazon Verified Permissions as its documentation describes it, a plain repository, and the vault from the demo. The managed store validates strictly and is protected by IAM, but its API has no history or export, and deleting it is permanent. A repository has history but no keys. The vault has both, and puts the evidence next to the rules." data-kind="comparison"><figcaption>Amazon Verified Permissions as its documentation describes it, a plain repository, and the vault from the demo. The managed store validates strictly and is protected by IAM, but its API has no history or export, and deleting it is permanent. A repository has history but no keys. The vault has both, and puts the evidence next to the rules.</figcaption></figure>
+<p>My guess in the memo was that policies are often deployed as loose JSON with no version control. The truth is better than that, and the gap is still real. Cedar policies are text, with a JSON form "to allow for programmatically constructing and parsing policies". In AWS, they live in a <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/userguide/policy-stores.html">policy store</a>, "a container for policies and policy templates", with a STRICT validation mode that "Requires a schema to be present in the policy store", and IAM deciding who can change what.</p>
+<p>But the store is a current state, not a history. The <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_Operations.html">API reference</a> lists create, get, list, update and delete operations, and none for versions, history or export. <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/userguide/policy-stores-delete.html">Deleting a store</a> "permanently deletes the schema and any policies and policy templates in the policy store", and deletion protection is on for stores made in the console but "disabled for all policy stores created through an API or SDK call". The <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-verifiedpermissions-policystore.html">CloudFormation reference</a> adds a subtle one: "Existing policies and templates are not re-evaluated against the changed schema." I found no signing or provenance mechanism for policies, in Cedar or in the store.</p>
+<p>So most teams who take this seriously will keep the source in a repository and push it into the store. That gives history, but the rules are plaintext to everyone who can read the repository, and nothing ties a decision back to the commit that made it.</p>
+<h2 id="demo">The demo</h2>
+<p>To find out whether a vault fills that gap, this site's agent built it on a local vault server, with sgit 0.21.0 and cedarpy 4.12.2. The vault holds a schema, four policy files with the rules tested in <a href="commanders-intent-is-a-behaviour-policy.html">Commander's intent is a behaviour policy</a>, seven policies in all, the entities, and the test cases, each a request with the decision we expect.</p>
+<p><b>The gate.</b> Before anything is committed, a script validates every policy against the schema and runs every test. Version one passed, fourteen of fourteen, and was pushed and tagged <code>policies-v1</code>. For version two, the agent added ABP rule 2, no push before the leak scan, as a new forbid, without changing the schema. The gate refused it: the attribute <code>leak_scan_clean</code> was "not found" in the context the schema gives a push. With the schema and the tests changed in the same commit, fifteen of fifteen passed, and it was tagged <code>policies-v2</code>. A diff between the two tags shows the policy, the schema and the tests changing together, which is the unit I want: a rule is not just a line of Cedar.</p>
+<p><b>The sharp edge.</b> That refusal matters more than it looks, because of what Cedar does at run time: "if a policy's evaluation returns error, the policy does not factor into the authorization response; it is skipped." The agent sent the version-two policies a request in the old shape, a push with no <code>leak_scan_clean</code> in the context, and the answer was Allow, with the error in the diagnostics. A forbid that cannot be evaluated fails open. Validation before deployment is not optional, and an enforcement point should deny on any evaluation error, which is what <a href="hooks-are-kernel-code.html">Hooks are kernel code</a> would ask of any hook that guards an action.</p>
+<p><b>Signed releases, read-only enforcement.</b> Each tag is signed by the clone that made it, and <code>sgit vault tag show</code> reported "signature verified". The enforcement point cloned the vault with the read key only; when it tried to commit and push, sgit answered "This vault was cloned read-only. To write, re-clone with the full vault key." It loads only a verified tag, checks that its working copy is at that tag, and runs the gate again before it decides anything.</p>
+<p><b>Decisions and evidence.</b> The enforcement point decided all fifteen test requests: eight allowed, seven denied, each denial named by the <code>@id</code> of the policy that made it. Every decision was sealed and appended to an append lane on the same vault: the request, the decision, the determining policies, the tag, the commit, and the hash of the previous record. The enforcement point holds an append token and nothing else; asked to list its own lane, the server answered 403. The auditor, with the enum key, read all fifteen back and found the chain intact. A decision took 1.2 milliseconds one at a time and 0.06 batched; 200 sealed appends took 2.2 milliseconds each, on one machine.</p>
+<h2 id="adds">What a vault adds</h2>
+<p><b>Distribution.</b> A read key is a deployment credential that cannot change the rules. The ciphertext can sit on any server, a CDN, or a folder copied into a sandbox with no network, and the <a href="agent-workflows-on-ephemeral-vaults.html">append-lane architectures</a> already measured how many readers and writers a vault can take.</p>
+<p><b>Validation, at both ends.</b> The same gate runs before push and after load. A policy that has not passed it is not a release, and a release that is not signed is not loaded. That is the same release-gate idea as <a href="sgit-in-a-ci-pipeline.html">sgit in a CI pipeline</a>, applied to rules instead of code.</p>
+<p><b>Evidence.</b> Every decision names its policy, its tag and its commit, in a lane the decider can write but not read or rewrite. <a href="the-policy-draws-the-liability-line.html">The policy draws the liability line</a> argued that the written policy is the evidence that turns "user error" into "your product ignored what it was told"; a lane like this shows which written policy was in force, and what it decided.</p>
+<p><b>History and translation.</b> The English behaviour policy, the Cedar, the schema, the tests and the decisions live in one versioned unit. A zip or a JSON projection for a managed store can be generated from any tag, and it is a projection of something with a history, not the only copy.</p>
+<p>There is one more reason the timing is good. AgentCore now also accepts <a href="https://dogwood-policy.github.io/dogwood/index.html">Dogwood</a>, "an open-source policy language" whose core syntax is derived from Cedar, adding conditions "that decide based on what has already happened earlier in the same session". Rules about history need a trustworthy history, and an append lane of sealed, chained decisions is one.</p>
+<h2 id="brief">A brief for the MVP</h2>
+<p>For the agent that builds the integration, here is the brief.</p>
+<ol>
+<li><b>Start from the demo.</b> Schema, four policy files, entities, test cases, the gate, the enforcement point and the auditor; all of it ran locally and is the starting point.</li>
+<li><b>Make the gate a release rule.</b> No commit without validation and every test passing; a policy change without its test change is refused.</li>
+<li><b>Deny on error.</b> The enforcement point treats any evaluation error as Deny and records the error in the evidence.</li>
+<li><b>Wire it to a real hook.</b> A pre-tool hook in this newsroom's own agent session, deciding the seven rules for real actions, with the session's labels as context.</li>
+<li><b>Keep the edges.</b> Every policy carries <code>@id</code> and an annotation back to its ABP rule, skill row or business layer; a check fails any policy without one.</li>
+<li><b>Project, do not fork.</b> A job that exports a signed tag to the JSON a managed store accepts, and records which commit is live there.</li>
+<li><b>Prove it.</b> In CI: the fifteen cases, a refused unsigned tag, a refused invalid policy, a read-only clone that cannot push, and an auditor that finds the chain intact. Then run it on the newsroom's own releases for two weeks and report what it denied.</li>
+<li><b>Never print a key.</b> Read keys, append tokens and enum keys are separate files; nothing logs them.</li>
+</ol>
+<h2 id="limits">What this does not claim</h2>
+<ul>
+<li><b>The demo is local.</b> One machine, an in-memory vault server, fifteen decisions; not production, not a cloud store.</li>
+<li><b>Not proved, only tested.</b> The Cedar ran in cedarpy, an unofficial binding; we did not use Cedar's symbolic analysis.</li>
+<li><b>No AWS integration yet.</b> The sync into Verified Permissions or AgentCore is proposed, not built.</li>
+<li><b>The adopters list is AWS's.</b> I have not checked each company's own use.</li>
+<li><b>The evidence key is shared.</b> The demo sealed records with one symmetric key; a real deployment should seal them to the auditor's public key.</li>
+<li><b>Dogwood is new.</b> I have read its page and AWS's description, not used it.</li>
+</ul>
+<p>If you run Cedar policies, or want your agents' rules to arrive signed and leave evidence behind, write to <a href="mailto:agent@riskmandate.ai">agent@riskmandate.ai</a>.</p>
+<h2 id="sources">Where this comes from</h2>
+<p>A voice memo of mine on 14 October 2026, written by this site's agent in the voice of this site; the argument and the editorial responsibility are mine. A research agent gathered the facts and the quotes were checked on the primary pages; the demo was built and run by this site's agent. AWS, <a href="https://aws.amazon.com/about-aws/whats-new/2023/05/cedar-open-source-language-access-control/">Cedar open-sourced</a> and <a href="https://aws.amazon.com/blogs/opensource/cedar-joins-cncf-as-a-sandbox-project">Cedar joins CNCF</a>; CNCF, <a href="https://www.cncf.io/projects/cedar/">Cedar</a>; Cedar, <a href="https://github.com/cedar-policy">GitHub</a>, <a href="https://docs.cedarpolicy.com/auth/authorization.html">authorization</a> and <a href="https://docs.cedarpolicy.com/policies/json-format.html">JSON policy format</a>; Cutler and others, <a href="https://arxiv.org/abs/2403.04651">Cedar: A New Language for Expressive, Fast, Safe, and Analyzable Authorization</a>, OOPSLA 2024; Lean, <a href="https://lean-lang.org/use-cases/cedar/">Cedar case study</a>; AWS documentation for <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/policy.html">AgentCore Policy</a>, <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/userguide/policy-stores.html">policy stores</a>, <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/userguide/policy-stores-delete.html">deleting a store</a>, <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_Operations.html">the API operations</a> and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-verifiedpermissions-policystore.html">the CloudFormation resource</a>; Sondera, <a href="https://pypi.org/project/sondera-harness/">harness on PyPI</a>; <a href="https://dogwood-policy.github.io/dogwood/index.html">Dogwood</a>. All read on 14 October 2026.</p>
+<sg-meter view="page" kind="article" date="2026-10-14" topics="agents-and-policy vaults-and-method" title="Cedar and the policy vault: a debrief on the policy language agents are adopting, where our behaviour policies and sgit vaults meet it, and a brief for the MVP, SGit Newsroom"></sg-meter>
+<section class="athreads" id="threads">
+ <h2>Threads</h2>
+ <p class="athreads-meta"><span class="tchip">Agents &amp; policy</span><span class="tchip">Vaults &amp; method</span> <a href="graphs.html#cedar-and-the-policy-vault">This article as a graph &rarr;</a></p>
+ <div class="athreads-cols"><div><h3>Builds on</h3><ul><li><a href="policy-as-code-needs-a-policy-first.html">Policy as code needs a policy first: what an agent behaviour policy adds, and how to reverse engineer one from the code, the spreadsheet or the paper you already have</a> <span class="dim">Policy as code answers one question. An agent behaviour policy holds the rest, and can be generated into code or reverse engineered from it.</span></li><li><a href="commanders-intent-is-a-behaviour-policy.html">Commander's intent is a behaviour policy: Sondera's argument in our words, the business layer above it, and five of our rules compiled to Cedar and tested</a> <span class="dim">Sondera's commander's intent and our behaviour policies are one idea: twelve terms joined, the business layer above, and five rules tested in Cedar.</span></li><li><a href="re-anchoring-agent-behaviour-policies.html">Re-anchoring: keeping an agent's rules alive through every summary, and a canary that shows when they are not</a> <span class="dim">Summaries keep under 2% of a long session. Re-anchoring prints the agent's rules back after each one; a canary report shows it is working.</span></li><li><a href="footprint-and-blast-radius.html">Footprint and blast radius: what the agent actually did, and what it would have cost</a> <span class="dim">Footprint is what an agent actually did, read afterwards from logs and vault history; blast radius is what a row of its reach would cost the business today.</span></li><li><a href="skill-behaviour-policy.html">A skill behaviour policy: what a skill says it does, what it can do, what it is given, and the control that closes the gap, measured on 899 skills</a> <span class="dim">A skill behaviour policy compares what a skill says, what it can do and what it is given, then generates the control; measured on 899 skills.</span></li><li><a href="the-behaviour-policy-is-the-business-logic.html">Zoom into an agent's behaviour policy and you find the business logic</a> <span class="dim">Below the first rules, an agent's behaviour policy is the business: functions, processes, clients, values. Layered, owned, counted, and where vendors plug in.</span></li><li><a href="introducing-fractal-semantic-graphs.html">Fractal Semantic Graphs: everything connects to everything, and nobody has to share a schema</a> <span class="dim">A fractal semantic graph has no privileged level and no single schema: each world keeps its own vocabulary and connects to others through named edges.</span></li><li><a href="the-same-argument-in-our-words.html">The same argument, in our words: Satya Nadella on models as insider risks, translated into the language of RiskMandate</a> <span class="dim">Satya Nadella's case for treating models as insider risks, translated idea by idea into our vocabulary: reach, mandate, gap, barriers and accepted risk.</span></li><li><a href="hooks-are-kernel-code.html">Hooks are kernel code: a maturity model, the first ten hooks mapped, and a brief for a hooks site and feed where you pay for state, never to run</a> <span class="dim">Hooks are small code with kernel reach: a maturity model, the first ten hooks mapped, and a brief for a hooks site where you pay for state, never to run.</span></li><li><a href="agent-workflows-on-ephemeral-vaults.html">Agent workflows on ephemeral vaults: seven architectures from one agent to a swarm, a repository of recipes that gates sgit's releases, and what a hundred writers did to an append lane</a> <span class="dim">Seven architectures for agents on ephemeral vaults, a recipe repository that gates sgit's releases, and a hundred writers measured on an append lane.</span></li><li><a href="sgit-in-a-ci-pipeline.html">sgit in a CI pipeline: encrypted, versioned data in and out of GitHub Actions, between its jobs, through write-only lanes, and a key for every job</a> <span class="dim">Encrypted, versioned vaults as the way data gets into, out of and between CI jobs, with a key per job and a sidecar when there is no server.</span></li><li><a href="the-policy-draws-the-liability-line.html">The policy draws the liability line: an answer to Ralf Thomas on agent accountability, and why every agent in a loop should take a behaviour policy beside its prompt</a> <span class="dim">An answer to Ralf Thomas: the shell game works because nothing is written down, and a behaviour policy's explicit prohibitions move the liability line.</span></li></ul></div></div>
+ <p class="small dim"><a href="index.html">All articles</a> &middot; <a href="graphs.html">All graphs</a></p>
+ <p class="small dim">Article No. 128 &middot; <a href="../for/make.html#r=128">start a reading list with it</a></p>
+</section>
+<aside class="lkit" aria-label="For LinkedIn"><b>Posting this article on LinkedIn?</b> The cover is <a href="banners/cedar-and-the-policy-vault.jpg" download>cedar-and-the-policy-vault.jpg</a> (1920&times;1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page.</aside>
+ <p class="subteaser"><b>Want the next issue by email.</b> One issue a week or so: what was published, what it adds up to, and what is worth your time. <a class="cta2" href="../subscribe/index.html">Subscribe to the SGit Newsroom &rarr;</a></p>
+ <p class="small dim" style="margin-top:2rem"><a href="index.html">&larr; All articles</a></p>
+</main>
+<script>
+(function () {
+ fetch('../assets/shots.js?v=v0.7.87')
+ .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+ .then(function (t) { (0, eval)(t); })
+ .catch(function (e) { console.error('[shots] component failed to load:', e); });
+}());
+</script>
+<script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": "https://buy.stripe.com/6oUfZ9ez65vVgU2fY15os04"}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
+<script>
+import('../assets/components/sg-meter/v1/v1.4/v1.4.1/sg-meter.js?v=v0.7.87')
+ .catch(function (e) { console.error('[sg-meter] component failed to load:', e); });
+</script>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../admin/versions.html">v0.12.60</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="cedar-and-the-policy-vault.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../index.html">&#8594; The front page</a>
+    <a href="../about/index.html">Why this exists</a>
+    <a href="../desks/index.html">The five desks</a>
+    <a href="../wire/index.html">The Industry Wire</a>
+    <a href="../wire/owasp/index.html">The OWASP Wire</a>
+    <a href="../wire/aws/index.html">The AWS Wire</a>
+    <a href="../wire/portugal/index.html">The Portugal Wire</a>
+    <a href="../articles/index.html#all">Every article</a>
+    <a href="../articles/newsletter/index.html">The newsletter</a>
+    <a href="../articles/collections/index.html">Collections</a>
+    <a href="../articles/desk/index.html">From the desk</a>
+    <a href="../articles/graphs.html">As graphs</a>
+    <a href="../subscribe/index.html">Subscribe</a>
+    <a href="../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../account/index.html">Your reading account</a>
+    <a href="../account/newsroom.html">Your newsroom</a>
+    <a href="../account/personas.html">Your personas</a>
+    <a href="../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../newsroom/index.html">How the newsroom runs</a>
+    <a href="../newsroom/policies.html">Behaviour policies</a>
+    <a href="../newsroom/publish.html">How to publish</a>
+    <a href="../newsroom/board.html">The board</a>
+    <a href="../newsroom/log.html">The run log</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../design/index.html">The design, and what runs</a>
+    <a href="../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../corrections/index.html">Corrections must propagate</a>
+    <a href="../provenance/index.html">Provenance is the product</a>
+    <a href="../economics/index.html">Paying the fact creator</a>
+    <a href="../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../replicate/index.html">Replicate this newsroom</a>
+    <a href="../publishers/index.html">For publishers</a>
+    <a href="../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+    <a href="../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../archive/index.html">The archive</a>
+    <a href="../network/index.html">The network</a>
+    <a href="../admin/versions.html">Release history</a>
+    <a href="../admin/index.html">Admin &amp; engineering</a>
+    <a href="../about/participant.html">Where we lose</a>
+    <a href="../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+
+<script>
+(function(){var R=document.documentElement.getAttribute('data-root')||'';var V='?v=' + 'v0.7.87';var C=[R,'','../','/'].filter(function(v,i,a){return a.indexOf(v)===i});
+function wait(ms){return new Promise(function(res){var t=Date.now();(function p(){if(window.sg)return res(window.sg);if(Date.now()-t>ms)return res(null);setTimeout(p,60)})()})}
+function grab(sg,p){return new Promise(function(res){(async function(){if(sg&&sg.vfs&&sg.vfs.readText){try{var t=await sg.vfs.readText(p);if(t)return res(t)}catch(e){}}try{var r=await fetch(p+V);if(r.ok)return res(await r.text())}catch(e){}res(null)})()})}
+async function css(sg){for(var i=0;i<C.length;i++){var p=C[i]+'assets/newsroom.css';if(sg&&sg.loadCss){try{await sg.loadCss(p);return}catch(e){}}var t=await grab(sg,p);if(t){var s=document.createElement('style');s.textContent=t;document.head.appendChild(s);return}}}
+async function js(sg,name){name=name||'assets/site.js';for(var i=0;i<C.length;i++){var p=C[i]+name;if(sg&&sg.loadJs){try{await sg.loadJs(p);return}catch(e){}}var t=await grab(sg,p);if(t){try{(0,eval)(t)}catch(e){console.error('[site] js failed',name,e)}return}}}
+async function boot(){var inVault=false;try{inVault=(window!==window.parent)||location.protocol==='blob:'}catch(e){inVault=true}
+var sg=inVault?await wait(2500):null;window.__sgitBoot={roots:C,grab:function(p){return grab(sg,p)},version:V};await css(sg);await js(sg);document.documentElement.classList.add('ready');try{window.parent&&window.parent.postMessage({type:'sg-app-ready'},'*')}catch(e){}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+var mine=V.slice(3),last=0;
+function fresh(){if(location.hostname!=='sgit.ai'||Date.now()-last<60000)return;last=Date.now();
+fetch('/version.txt?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(t){t=(t||'').trim();if(!/^v[0-9]+[.][0-9]+[.][0-9]+$/.test(t)||t===mine)return;
+var k='sgit.fresh:'+location.pathname;try{if(sessionStorage.getItem(k)===t)return;sessionStorage.setItem(k,t)}catch(e){}
+var u=new URL(location.href);u.searchParams.set('v',t);location.replace(u.href)}).catch(function(){})}
+try{var u=new URL(location.href);if(u.searchParams.get('v')===mine){u.searchParams.delete('v');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}
+fresh();addEventListener('pageshow',function(e){if(e.persisted){last=0;fresh()}});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')fresh()});
+})();
+</script>
+</body>
+</html>

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""The desks: one page per desk, and the index of the five (card 059).
+"""The desks: one page per desk, and the index of the five (card 064).
 
     python3 admin/build/desks.py
 

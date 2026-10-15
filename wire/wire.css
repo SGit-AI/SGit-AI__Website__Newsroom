@@ -33,7 +33,8 @@ body .btn[aria-pressed=true] { background: var(--accent); border-color: var(--ac
 
 main.doc .beat { margin: 2rem 0 .7rem; padding-bottom: .3rem; border-bottom: 2px solid var(--fg, #1c1d21); font: 700 .8rem/1.4 var(--sans); letter-spacing: .14em; text-transform: uppercase; }
 main.doc .beat .n { font-weight: 400; color: var(--dim); letter-spacing: 0; text-transform: none; margin-left: .5rem; }
-.stories { display: grid; gap: .9rem; }
+.stories { display: grid; gap: .9rem; grid-template-columns: minmax(0, 1fr); }
+.story { min-width: 0; overflow-wrap: anywhere; }
 .story { padding: 1rem 1.2rem 1.05rem; border: 1px solid var(--line); border-radius: 12px; background: var(--panel); }
 .story.unfetched { border-style: dashed; }
 /* the inbox bar: what is new since the last visit, the vault's release note, the filters, what is only in this browser */
@@ -174,3 +175,16 @@ main.doc .agent p, .wire-status, .snapshot { overflow-wrap: anywhere; } /* the r
 .graph-err { font-size: .82rem; }
 .pv-strip { display: inline-block; width: auto; height: 16px; vertical-align: -.2em; margin-right: .2rem; }
 .edition details.graph { margin: .4rem 0 .8rem; font-size: .86rem; } .edition details.graph > summary { cursor: pointer; color: var(--accent-dk); }
+
+/* the pictures (admin/build/infographics.py; drawn by wire.js from the edition's ledger): the hero in the header, a card beside its story */
+.ig { margin: .6rem 0; }
+.ig img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 8px; background: var(--panel2); }
+.ig figcaption { margin: .3rem 0 0; font-size: .78rem; line-height: 1.45; color: var(--dim); }
+.ig .chip.ai { font-weight: 700; }
+.ig-prompt { display: inline; } .ig-prompt > summary { display: inline; cursor: pointer; color: var(--accent-dk); }
+.ig-prompt pre { white-space: pre-wrap; font: .74rem/1.45 var(--mono); max-height: 14rem; overflow: auto; margin: .4rem 0 0; padding: .5rem .7rem; border: 1px solid var(--line); border-radius: 8px; background: var(--panel2); color: var(--fg); }
+.edition .ig.hero { max-width: 560px; margin: .6rem 0 .8rem; }
+.edition .ig-cost { font-size: .82rem; color: var(--dim); margin: .2rem 0 .8rem; }
+.story .ig.card { float: right; width: min(40%, 300px); margin: 0 0 .6rem 1rem; }
+.story::after { content: ''; display: block; clear: both; }
+@media (max-width: 700px) { .story .ig.card { float: none; width: 100%; margin: .6rem 0; } }

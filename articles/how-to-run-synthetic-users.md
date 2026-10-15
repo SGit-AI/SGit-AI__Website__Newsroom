@@ -234,6 +234,7 @@ Vaults & methodSite & engineering[This article as a graph →](graphs.md#how-to-
 
 ### Continued by
 
+- [The homepage is a vault: a fresh edition every morning, every past homepage one commit away, served from plain files, and a brief for the agent that builds it](the-homepage-is-a-vault.md) A new homepage edition every morning, each a signed commit in a vault, served from plain files: every past homepage one commit id away.
 - [Four frameworks, one agent: iason's comparison of the OECD classification, the NIST AI RMF, Japan's guidelines and the EU AI Act, read against what runs here, with the evidence and the graphs](four-frameworks-one-agent.md) iason's comparison of four AI risk frameworks, mapped to the behaviour policy, the footprint and the graphs that run here, with the status of each row.
 - [Ways to read one article: the finished piece stays at the centre, and the reader picks the way in](ways-to-read-one-article.md) The five readers' views arrived as folds inside the long piece; now the reader picks the way in, with a default, and the finished article stays at the centre.
 - [The article remains a product: Jonathan Palmer's four outputs for a newsroom with no human readers, checked against one that runs](the-article-remains-a-product.md) Jonathan Palmer's four outputs for a newsroom with no human readers, quoted line by line and checked against newsroom.sgit.ai as it runs, screenshots included.

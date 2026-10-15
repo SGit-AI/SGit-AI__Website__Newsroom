@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-/* test_front.mjs: the front page in three views (card 058), the desks (card 059) and the reading strip (card 061).
+/* test_front.mjs: the front page in three views (card 063), the desks (card 064) and the reading strip (card 066).
  *
  *   export NODE_PATH=$(npm root -g); node admin/build/test_front.mjs
  *

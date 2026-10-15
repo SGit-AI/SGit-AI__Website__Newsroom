@@ -124,6 +124,10 @@ Vaults & methodAgents & policy[This article as a graph →](graphs.md#agent-work
 - [sgit in a CI pipeline: encrypted, versioned data in and out of GitHub Actions, between its jobs, through write-only lanes, and a key for every job](sgit-in-a-ci-pipeline.md) Encrypted, versioned vaults as the way data gets into, out of and between CI jobs, with a key per job and a sidecar when there is no server.
 - [sgit in GitHub Actions, side by side: a showcase repository and site that runs four ways of moving a vault between jobs on every run, measured, with a budget for its LLM steps](sgit-actions-side-by-side.md) A showcase repository that runs four ways of moving a vault between GitHub Actions jobs side by side, measured, with a budget for its LLM steps.
 
+### Continued by
+
+- [Cedar and the policy vault: a debrief on the policy language agents are adopting, where our behaviour policies and sgit vaults meet it, and a brief for the MVP](cedar-and-the-policy-vault.md) Cedar is mature and adopted; it lacks the why, the version in force and the evidence. A vault carries all three, and the demo shows it working.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 121 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=121)

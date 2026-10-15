@@ -43,8 +43,21 @@ For the desks, optional, in the brief: `card.claim` (a claim of at most eight wo
 | R1, done (v0.12.32) | the Portugal Wire and the language switch | nothing more |
 | R2 | `wire/graphs.js`: the provenance strip on every card, the evidence grid, sources by day, the reach matrix, corrections over time, threads as timelines, the projects graph and the stack as graphs with the deadlines timeline; the chart tokens in the themes; tests | nothing |
 | R3 | per-edition history kept, `wire/overview.json`, the overview at `/wire/`, the Industry Wire at `/wire/industry/` | the owner's yes to the move |
-| R4 | `admin/build/infographics.py`, the templates, the ledger, the image slots and the cost line on every page; a dry run, then one live edition | the key in the environment |
-| R5 | the morning routine gains the infographic step, the caps and the ninety-day archive | the key present where the routine runs |
+| R4, done (v0.12.42 the pipeline, v0.12.59 the first live editions and the pictures on the pages) | `admin/build/infographics.py`, the templates, the ledger, the image slots and the cost line on every page; a dry run, then one live edition | nothing more |
+| R5 | the morning routine gains the infographic step, the caps and the ninety-day archive | the key present where the routine runs (`OPENROUTER_API_KEY` in the environment's secrets) |
+
+## What the first live run taught, 14 October
+
+The owner handed the key the same evening and the first editions were made ([the ledgers](../../wire/infographics/ledger.json) carry every figure). Four things the design above got wrong, corrected in the pipeline and here:
+
+- **Every image is a square.** The tool's `generate()` takes a prompt and a model and nothing about size; every model behind it returns 1024 by 1024. The prompts asked for 16:9 and 4:5 and got squares, so now they ask for a square and lay the card out for one. The hero reads well as a square; the page shows it at up to 560 px in the header.
+- **Nano Banana 2.1 could not be had.** OpenRouter answered every request with "temporarily rate-limited upstream" for the whole evening, for everyone, not for this key. The fallback the bake-off would suggest, Gemini 3.1 Flash Image, made two cards in six seconds each for seven cents, and misspelt both headlines ("patch paph", "IoT T devices"). A card whose headline is not exact breaks the first rule, so the cards now go to Gemini 3 Pro Image: about twenty seconds and fourteen cents each, every word exact in the probe. The pipeline tries the preferred model, waits out a 429 three times, and when the model stays refused for the run falls through to the next preference and records why in the ledger.
+- **The prices.** The bake-off's table (10 October) said 0.039 for a card and 0.176 for a hero; OpenRouter billed 0.14 and 0.24. The cap is counted in the billed figures now, and the ledger says which table it used. At these prices the two-dollar cap per wire is a hero and twelve cards, not forty; a first edition of eighty-eight stories (the AWS Wire) gets its lead and its first dozen, and the rest wait for a bigger cap or a cheaper exact model.
+- **Burst and failure.** The first run fired every card at once after the hero and spent its whole plan on refusals; now there are six seconds between images, a refusal costs an attempt against the cap, and three failures in a row stop the run.
+
+The accountant, the owner's next ask the same evening ("really capture the cost of all these runs, the cost per edition and the cost per work, and provide visibility"): `admin/build/accountant.py`, a role called @newsroom.accountant that reads every ledger and writes [what the wires cost](../../wire/costs.html) at each release, by wire, edition, month, model and kind, per piece of work, with the key's budget as OpenRouter last reported it, and says what is not counted (the desks' runs, this site's sessions).
+
+What held: the hero from the editor's note as a document is the best picture of the set, exactly as the bake-off found; the hero attached to each card keeps the palette and the type; the key never touched a file; the pages are complete without pictures and better with them; and the cost is on the page, to the cent, beside the thing it paid for.
 
 ## Where the material is
 

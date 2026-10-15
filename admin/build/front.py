@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""The front page, in three views, and the purpose page (cards 058, 060).
+"""The front page, in three views, and the purpose page (cards 063, 065).
 
     python3 admin/build/front.py
 
@@ -18,7 +18,7 @@ with a kicker and a why); otherwise the newest article leads and the next four a
 the teaser standing in for the why. The placement data imported from sgit.ai (wire.front) is not read:
 it stopped on 8 October, when the newsroom moved here.
 
-The front page was imported from sgit.ai (articles/index.html written to the root) until v0.12.52.
+The front page was imported from sgit.ai (articles/index.html written to the root) until v0.12.60.
 sync_newsroom.py no longer writes the root copy; articles/index.html stays, as Every article.
 
 Also writes about/index.html, "Why this exists", from admin/content/front/purpose.json, which the masthead
