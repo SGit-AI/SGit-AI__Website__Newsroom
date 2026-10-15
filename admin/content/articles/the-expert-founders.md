@@ -3,7 +3,7 @@ title: The expert founders: why the next startups will be built by the people wh
 date: 2026-10-15
 author: Dinis Cruz
 author_url: about/index.html
-summary: For twenty years the winning technology startup was usually built by a clever, ambitious outsider: someone who found a pain point, often through a hundred conversations with people they could reach, raised money on belief, hired the subject-matter experts, and displaced incumbents that had the customers, the knowledge and sometimes the money. It is a very American playbook, many bets for a few large wins, and it changed whole industries. It also has a second act: the disruptors became the incumbents, and much of what they built is now the software everyone complains about. My argument is that generative AI changes who can start. When agents do most of the execution, the people who know the problem can build the product themselves, without the millions that used to come first. The data on experts was always on their side: the fastest-growing US startups are founded at a mean age of 45, and three or more years in the same industry doubles the rate of top-tier success. And this favours Europe: its investors want to see it working, value lower, and ask for more revenue at the raise, which is exactly the discipline an expert founder needs, because money too early is one of the most reliable ways to kill a startup. Three examples: me in security, a knee surgeon in knee health, and a founder in legal records.
+summary: For twenty years the winning technology startup was usually built by a clever, ambitious outsider: someone who found a pain point, often through a hundred conversations with people they could reach, raised money on belief, hired the subject-matter experts, and displaced incumbents that had the customers, the knowledge and sometimes the money. It is a very American playbook, many bets for a few large wins, and it changed whole industries. It also has a second act: the disruptors became the incumbents, and much of what they built is now the software everyone complains about. My argument is that generative AI changes who can start. When agents do most of the execution, the people who know the problem can build the product themselves, without the millions that used to come first. The data on experts was always on their side: the fastest-growing US startups are founded at a mean age of 45, and three or more years in the same industry doubles the rate of top-tier success. And this favours Europe: its investors want to see it working, value lower, and ask for more revenue at the raise, which is exactly the discipline an expert founder needs, because money too early is one of the most reliable ways to kill a startup. Three examples: me in security, a knee surgeon in knee health, and a transcriber in legal transcription.
 version: v0.12.67
 license: https://creativecommons.org/licenses/by/4.0/
 tags: startups, founders, subject-matter-experts, venture-capital, europe, open-source, generative-ai, wardley-maps, incumbents, funding, article
@@ -19,7 +19,7 @@ status: published
 - **Then they became the incumbents.** Tools piled up, innovation slowed, and a lot was lost on the way.
 - **Execution just got cheap.** Agents do most of the building; a third of new US startups now have a single founder.
 - **The experts were always the better bet.** Mean founding age of the fastest-growing firms is 45; industry experience doubles the odds.
-- **Three examples.** Me in security, a knee surgeon in knee health, a founder in legal records.
+- **Three examples.** Me in security, a knee surgeon in knee health, a transcriber in legal transcription.
 - **This favours Europe.** Investors who want to see it working, and money that comes later, suit founders who can now build first.
 
 ## The playbook that worked {#playbook}
@@ -64,7 +64,7 @@ What held the experts back was not knowledge. It was access: to capital, to engi
 
 **Chim Gupte, in knee health.** [Chinmay Gupte](https://www.chinmaygupte.com) is a consultant knee surgeon in London, a clinical reader at Imperial College, "an ex professional sportsman who has a PhD in knee ligament research". He is building [OmKneeHealth](https://www.omkneehealth.com), "a clinically led platform dedicated exclusively to knee health", with [My Knee Score](https://mykneescore.com), "Ten questions about pain, movement and daily life. One score out of 100." He knows knees, and the patients and clinicians who need the product were his long before there was one. I have been helping him.
 
-**Kate, in legal records.** Kate is building a product for legal documents and transcription. It could be used for a lot of things; she knows legal, so it starts there. Some of the documents I have written were written with her work in mind. Her site will be linked here when I have the link.
+**Kate Curtis-Evans, in legal transcription.** Kate is the founder of Audio Genius, which she describes as "the future of Legal Transcription & Workflow Management", "Built by a Transcriber, for Transcription Professionals". It could be used for a lot of things; she knows legal transcription from the inside, so it starts there. Some of the documents I have written were written with her work in mind.
 
 None of these is a hundred-call outsider. Each comes from the field, has the contacts in it, and is focused on one thing. That focus used to be a weakness in front of an investor who wanted a huge market. It is now the advantage, because the build is no longer what stops them.
 
@@ -84,7 +84,8 @@ The gap is real at the other end, and I do not want to hide it. The Draghi repor
 - **The AI growth figures are the fastest, not the typical.** Some, like Y Combinator's, are the promoter's own.
 - **The Europe and US comparison is weakly evidenced.** One vendor's aggregated data; no clean Series A study was found.
 - **No survey of software satisfaction was found.** The friction figures stand in for it.
-- **Two of the three founders are people I help.** Their pages are public; Kate's link is to follow.
+- **Two of the three founders are people I help.** What is said about them is from their own public descriptions.
+- **Updated on 15 October.** Kate's surname, company and her own description were added after publication.
 - **I have a stake.** sgit.ai and RiskMandate are mine.
 
 If you are an expert building in your own field, and want to compare notes, write to [agent@riskmandate.ai](mailto:agent@riskmandate.ai).

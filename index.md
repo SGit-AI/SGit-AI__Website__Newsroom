@@ -4,18 +4,18 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.12.67 · 137 articles since 2026-08-17; the newest is 2026-10-15. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v0.12.68 · 138 articles since 2026-08-17; the newest is 2026-10-15. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## The lead
 
-- [The expert founders: why the next startups will be built by the people who know the problem, and why Europe's slower, sceptical money suits them](articles/the-expert-founders.md), 2026-10-15, 12 min. Agents make execution cheap, so the people who know the problem can build first. The data favours experts, and Europe's sceptical money suits them.
+- [Your own newsroom: how a founder can tell their story by voice memo, with an agent that checks it and publishes it to GitHub Pages, and readers who pay a little if they find it useful](articles/your-own-newsroom.md), 2026-10-15, 7 min. The recipe for a founder's own site: voice memos, an agent wired to GitHub that checks and publishes, GitHub Pages, and readers who pay a little.
 
 ## Highlights
 
+- [The expert founders: why the next startups will be built by the people who know the problem, and why Europe's slower, sceptical money suits them](articles/the-expert-founders.md), 2026-10-15, 12 min.
 - [Omnichannel programming: briefs by voice, reviews by voice, previews on the phone, and one shared state underneath, at every stage from explorer to town planner](articles/omnichannel-programming.md), 2026-10-15, 9 min.
 - [secrets.sgit.ai on public keys: no more shared keys, eight ways a secret moves, a vault for the private key, and the commercial service it becomes](articles/secrets-on-public-keys.md), 2026-10-15, 8 min.
 - [Handing secrets to agents and browsers: SG/Send's next focus, a key pair where the work runs, one-time drops, and a brief for a site that does only this](articles/handing-secrets-to-agents.md), 2026-10-15, 10 min.
-- [My memory, checked: thinking out loud in a voice memo, publishing only what the record supports, and why peer review has moved to before publishing](articles/my-memory-checked.md), 2026-10-15, 6 min.
 
 ## Who are you reading as?
 
@@ -34,11 +34,11 @@ For security leads, risk owners and boards deciding what an agent may do and who
 - [The tokens hook: a token behaviour policy that shows what every session reads, caches, writes and costs, why a prompt cannot do it, and a brief for tokens.hook.sgit.ai](articles/the-tokens-hook.md), 2026-10-15, 10 min.
 - [Cedar and the policy vault: a debrief on the policy language agents are adopting, where our behaviour policies and sgit vaults meet it, and a brief for the MVP](articles/cedar-and-the-policy-vault.md), 2026-10-14, 12 min.
 
-### Building with agents (26)
+### Building with agents (27)
 For engineers and builders running agents day to day: tools, memory, email, desktops and review.
+- [Your own newsroom: how a founder can tell their story by voice memo, with an agent that checks it and publishes it to GitHub Pages, and readers who pay a little if they find it useful](articles/your-own-newsroom.md), 2026-10-15, 7 min.
 - [The scripted talk: a presentation as a timeline that plays on a clock, the two vaults it grows out of, and a player built for tonight's ten minutes](articles/the-scripted-talk.md), 2026-10-15, 7 min.
 - [sgit in GitHub Actions, side by side: a showcase repository and site that runs four ways of moving a vault between jobs on every run, measured, with a budget for its LLM steps](articles/sgit-actions-side-by-side.md), 2026-10-14, 7 min.
-- [Agent workflows on ephemeral vaults: seven architectures from one agent to a swarm, a repository of recipes that gates sgit's releases, and what a hundred writers did to an append lane](articles/agent-workflows-on-ephemeral-vaults.md), 2026-10-14, 8 min.
 
 ### Vaults & provenance (25)
 For anyone who needs evidence they can open: encrypted vaults, keys, graphs and the publishing method.
