@@ -1,0 +1,958 @@
+{
+ "schema": "wire-costs/v1",
+ "kept_by": "newsroom.accountant",
+ "updated": "2026-10-15T07:56:49Z",
+ "what": "What the wires' pictures cost: every image the pipeline made (admin/build/infographics.py), with OpenRouter's own cost per image, summed by wire, edition, month, model and kind, and per piece of work. Not here: the desks' own runs and this site's sessions.",
+ "total": {
+  "images": 71,
+  "cost_usd": 10.237898,
+  "failed": 0
+ },
+ "per_work": {
+  "hero_usd": 0.2454,
+  "card_usd": 0.1365,
+  "edition_usd": 2.0476,
+  "image_usd": 0.1442,
+  "seconds_per_image": 26.3
+ },
+ "by_month": {
+  "2026-10": {
+   "images": 71,
+   "cost_usd": 10.237892,
+   "duration_s": 1866.9
+  }
+ },
+ "by_model": {
+  "google/gemini-3-pro-image": {
+   "images": 64,
+   "cost_usd": 8.87598,
+   "duration_s": 1278.5
+  },
+  "openai/gpt-5.4-image-2": {
+   "images": 5,
+   "cost_usd": 1.22722,
+   "duration_s": 575.9
+  },
+  "google/gemini-3.1-flash-image-preview": {
+   "images": 2,
+   "cost_usd": 0.134692,
+   "duration_s": 12.5
+  }
+ },
+ "by_kind": {
+  "hero": {
+   "images": 5,
+   "cost_usd": 1.22722,
+   "duration_s": 575.9
+  },
+  "card": {
+   "images": 66,
+   "cost_usd": 9.010672,
+   "duration_s": 1291.0
+  }
+ },
+ "key_budget": {
+  "at": "2026-10-15T07:55:16Z",
+  "limit_usd": 25.0,
+  "remaining_usd": 2.6177,
+  "spent_usd": 22.3823
+ },
+ "wires": [
+  {
+   "slug": "industry",
+   "name": "The Industry Wire",
+   "dir": "wire/",
+   "editions": [
+    {
+     "edition": "2026-10-13",
+     "updated": "2026-10-14T21:43:22Z",
+     "images": 19,
+     "failed": 0,
+     "cost_usd": 2.5891,
+     "duration_s": 437.1,
+     "heroes": 1,
+     "cards": 18,
+     "hero_cost_usd": 0.242209,
+     "card_cost_usd": 2.346891,
+     "stopped": "max-cost 2.00 USD would be exceeded (estimated 1.960 so far, 0.140 for the next)",
+     "rows": [
+      {
+       "id": "edition",
+       "kind": "hero",
+       "model": "openai/gpt-5.4-image-2",
+       "model_wanted": "openai/gpt-5.4-image-2",
+       "cost_usd": 0.24220944,
+       "duration_s": 110.9,
+       "at": "2026-10-14T21:21:32Z",
+       "file": "edition.ea7ea10d.webp",
+       "status": "done"
+      },
+      {
+       "id": "biz-09",
+       "kind": "card",
+       "model": "google/gemini-3-pro-image",
+       "model_wanted": "google/gemini-3-pro-image",
+       "cost_usd": 0.13769118,
+       "duration_s": 19.3,
+       "at": "2026-10-14T21:42:37Z",
+       "file": "biz-09.89367cf9.webp",
+       "status": "done"
+      },
+      {
+       "id": "biz-10",
+       "kind": "card",
+       "model": "google/gemini-3-pro-image",
+       "model_wanted": "google/gemini-3-pro-image",
+       "cost_usd": 0.13747536,
+       "duration_s": 18.2,
+       "at": "2026-10-14T21:42:12Z",
+       "file": "biz-10.f68df590.webp",
+       "status": "done"
+      },
+      {
+       "id": "biz-11",
+       "kind": "card",
+       "model": "google/gemini-3-pro-image",
+       "model_wanted": "google/gemini-3-pro-image",
+       "cost_usd": 0.13782582,
+       "duration_s": 19.0,
+       "at": "2026-10-14T21:41:47Z",
+       "file": "biz-11.59e97f24.webp",
+       "status": "done"
+      },
+      {
+       "id": "biz-12",
+       "kind": "card",
+       "model": "google/gemini-3-pro-image",
+       "model_wanted": "google/gemini-3-pro-image",
+       "cost_usd": 0.13769712,
+       "duration_s": 19.9,
+       "at": "2026-10-14T21:41:21Z",
+       "file": "biz-12.00154bd1.webp",
+       "status": "done"
+      },
+      {
+       "id": "biz-13",
+       "kind": "card",
+       "model": "google/gemini-3-pro-image",
+       "model_wanted": "google/gemini-3-pro-image",
+       "cost_usd": 0.1375308,
+       "duration_s": 17.5,
+       "at": "2026-10-14T21:40:57Z",
+       "file": "biz-13.8472efa2.webp",
+       "status": "done"
+      },
+      {
+       "id": "gov-07",
+       "kind": "card",
+       "model": "google/gemini-3-pro-image",
+       "model_wanted": "google/gemini-3-pro-image",
+       "cost_usd": 0.13918014,
+       "duration_s": 20.0,
+       "at": "2026-10-14T21:40:31Z",
+       "file": "gov-07.2ac4dc2d.webp",
+       "status": "done"
+      },
+      {
+       "id": "oss-10",
+       "kind": "card",
+       "model": "google/gemini-3-pro-image",
+       "model_wanted": "google/gemini-3-pro-image",
+       "cost_usd": 0.13800006,
+       "duration_s": 20.8,
+       "at": "2026-10-14T21:40:04Z",
+       "file": "oss-10.62b20314.webp",
+       "status": "done"
+      },
+      {
+       "id": "sec-11",
+       "kind": "card",
+       "model": "google/gemini-3-pro-image",
+       "model_wanted": "google/gemini-3-pro-image",
+       "cost_usd": 0.13779414,
+       "duration_s": 18.6,
+       "at": "2026-10-14T21:39:39Z",
+       "file": "sec-11.454f5d0e.webp",
+       "status": "done"
+      },
+      {
+       "id": "sec-12",
+       "kind": "card",
+       "model": "google/gemini-3-pro-image",
+       "model_wanted": "google/gemini-3-pro-image",
+       "cost_usd": 0.13862772,
+       "duration_s": 19.9,
+       "at": "2026-10-14T21:39:12Z",
+       "file": "sec-12.421095b0.webp",
+       "status": "done"
+      },
+      {
+       "id": "sec-13",
+       "kind": "card",
+       "model": "google/gemini-3-pro-image",
+       "model_wanted": "google/gemini-3-pro-image",
+       "cost_usd": 0.13750506,
+       "duration_s": 18.4,
+       "at": "2026-10-14T21:38:48Z",
+       "file": "sec-13.ea99e75d.webp",
+       "status": "done"
+      },
+      {
+       "id": "sec-14",
+       "kind": "card",
+       "model": "google/gemini-3-pro-image",
+       "model_wanted": "google/gemini-3-pro-image",
+       "cost_usd": 0.13819608,
+       "duration_s": 20.1,
+       "at": "2026-10-14T21:38:21Z",
+       "file": "sec-14.797c71ff.webp",
+       "status": "done"
+      },
+      {
+       "id": "sec-14",
+       "kind": "card",
+       "model": "google/gemini-3-pro-image",
+       "model_wanted": "google/gemini-3-pro-image",
+       "cost_usd": 0.13830894,
+       "duration_s": 20.4,
+       "at": "2026-10-14T21:35:15Z",
+       "file": "sec-14.d228cec1.webp",
+       "status": "done"
+      },
+      {
+       "id": "sec-15",
+       "kind": "card",
+       "model": "google/gemini-3-pro-image",
+       "model_wanted": "google/gemini-3-pro-image",
+       "cost_usd": 0.1381248,
+       "duration_s": 19.4,
+       "at": "2026-10-14T21:37:55Z",
+       "file": "sec-15.04c9305d.webp",
+       "status": "done"
+      },
+      {
+       "id": "sec-15",
+       "kind": "card",
+       "model": "google/gemini-3-pro-image",
+       "model_wanted": "google/gemini-3-pro-image",
+       "cost_usd": 0.14143338,
+       "duration_s": 22.6,
+       "at": "2026-10-14T21:34:52Z",
+       "file": "sec-15.6e559267.webp",
+       "status": "done"
+      },
+      {
+       "id": "sec-16",
+       "kind": "card",
+       "model": "google/gemini-3-pro-image",
+       "model_wanted": "google/gemini-3-pro-image",
+       "cost_usd": 0.13903956,
+       "duration_s": 19.8,
+       "at": "2026-10-14T21:37:29Z",
+       "file": "sec-16.08fb6272.webp",
+       "status": "done"
+      },
+      {
+       "id": "sec-16",
+       "kind": "card",
+       "model": "google/gemini-3.1-flash-image-preview",
+       "model_wanted": "google/gemini-3.1-flash-image-preview",
+       "cost_usd": 0.067260105,
+       "duration_s": 6.4,
+       "at": "2026-10-14T21:33:05Z",
+       "file": "sec-16.76068475.webp",
+       "status": "done"
+      },
+      {
+       "id": "sec-17",
+       "kind": "card",
+       "model": "google/gemini-3-pro-image",
+       "model_wanted": "google/gemini-3-pro-image",
+       "cost_usd": 0.1377684,
+       "duration_s": 19.8,
+       "at": "2026-10-14T21:37:09Z",
+       "file": "sec-17.e67bdf11.webp",
+       "status": "done"
+      },
+      {
+       "id": "sec-17",
+       "kind": "card",
+       "model": "google/gemini-3.1-flash-image-preview",
+       "model_wanted": "google/gemini-3.1-flash-image-preview",
+       "cost_usd": 0.067432365,
+       "duration_s": 6.1,
+       "at": "2026-10-14T21:30:21Z",
+       "file": "sec-17.f063c33c.webp",
+       "status": "done"
+      }
+     ]
+    },
+    {
+     "edition": "2026-10-15",
+     "updated": "2026-10-15T07:54:51Z",
+     "images": 13,
+     "failed": 0,
+     "cost_usd": 1.915569,
+     "duration_s": 403.4,
+     "heroes": 1,
+     "cards": 12,
+     "hero_cost_usd": 0.245393,
+     "card_cost_usd": 1.670176,
+     "stopped": "max-cost 2.00 USD would be exceeded (estimated 1.925 so far, 0.140 for the next)",
+     "rows": [
+      {
+       "id": "edition",
+       "kind": "hero",
+       "model": "openai/gpt-5.4-image-2",
+       "model_wanted": "openai/gpt-5.4-image-2",
+       "cost_usd": 0.24539328,
+       "duration_s": 122.7,
+       "at": "2026-10-15T07:46:30Z",
+       "file": "edition.abcc840d.webp",
+       "status": "done"
+      },
+      {
+       "id": "ai-15",
+       "kind": "card",
+       "model": "google/gemini-3-pro-image",
+       "model_wanted": "google/gemini-3-pro-image",
+       "cost_usd": 0.13850298,
+       "duration_s": 22.3,
+       "at": "2026-10-15T07:48:35Z",
+       "file": "ai-15.74e6936b.webp",
+       "status": "done"
+      },
+      {
+       "id": "ai-16",
+       "kind": "card",
+       "model": "google/gemini-3-pro-image",
+       "model_wanted": "google/gemini-3-pro-image",
+       "cost_usd": 0.13894848,
+       "duration_s": 26.7,
+       "at": "2026-10-15T07:49:04Z",
+       "file": "ai-16.c57f2293.webp",
+       "status": "done"
+      },
+      {
+       "id": "ai-17",
+       "kind": "card",
+       "model": "google/gemini-3-pro-image",
+       "model_wanted": "google/gemini-3-pro-image",
+       "cost_usd": 0.13918608,
+       "duration_s": 21.2,
+       "at": "2026-10-15T07:49:37Z",
+       "file": "ai-17.59329ef4.webp",
+       "status": "done"
+      },
+      {
+       "id": "ai-18",
+       "kind": "card",
+       "model": "google/gemini-3-pro-image",
+       "model_wanted": "google/gemini-3-pro-image",
+       "cost_usd": 0.13863168,
+       "duration_s": 20.6,
+       "at": "2026-10-15T07:50:04Z",
+       "file": "ai-18.3166a6f7.webp",
+       "status": "done"
+      },
+      {
+       "id": "biz-19",
+       "kind": "card",
+       "model": "google/gemini-3-pro-image",
+       "model_wanted": "google/gemini-3-pro-image",
+       "cost_usd": 0.13883958,
+       "duration_s": 22.1,
+       "at": "2026-10-15T07:50:31Z",
+       "file": "biz-19.3a2fbbe3.webp",
+       "status": "done"
+      },
+      {
+       "id": "biz-20",
+       "kind": "card",
+       "model": "google/gemini-3-pro-image",
+       "model_wanted": "google/gemini-3-pro-image",
+       "cost_usd": 0.13914648,
+       "duration_s": 21.9,
+       "at": "2026-10-15T07:50:59Z",
+       "file": "biz-20.6fd059c0.webp",
+       "status": "done"
+      },
+      {
+       "id": "biz-21",
+       "kind": "card",
+       "model": "google/gemini-3-pro-image",
+       "model_wanted": "google/gemini-3-pro-image",
+       "cost_usd": 0.13953258,
+       "duration_s": 25.5,
+       "at": "2026-10-15T07:51:28Z",
+       "file": "biz-21.241ec949.webp",
+       "status": "done"
+      },
+      {
+       "id": "oss-14",
+       "kind": "card",
+       "model": "google/gemini-3-pro-image",
+       "model_wanted": "google/gemini-3-pro-image",
+       "cost_usd": 0.14297184,
+       "duration_s": 25.6,
+       "at": "2026-10-15T07:51:59Z",
+       "file": "oss-14.e8a485c1.webp",
+       "status": "done"
+      },
+      {
+       "id": "oss-15",
+       "kind": "card",
+       "model": "google/gemini-3-pro-image",
+       "model_wanted": "google/gemini-3-pro-image",
+       "cost_usd": 0.13890492,
+       "duration_s": 26.0,
+       "at": "2026-10-15T07:52:31Z",
+       "file": "oss-15.12be9b0f.webp",
+       "status": "done"
+      },
+      {
+       "id": "oss-16",
+       "kind": "card",
+       "model": "google/gemini-3-pro-image",
+       "model_wanted": "google/gemini-3-pro-image",
+       "cost_usd": 0.13801986,
+       "duration_s": 25.0,
+       "at": "2026-10-15T07:53:04Z",
+       "file": "oss-16.771d4648.webp",
+       "status": "done"
+      },
+      {
+       "id": "sec-22",
+       "kind": "card",
+       "model": "google/gemini-3-pro-image",
+       "model_wanted": "google/gemini-3-pro-image",
+       "cost_usd": 0.13869306,
+       "duration_s": 21.0,
+       "at": "2026-10-15T07:53:35Z",
+       "file": "sec-22.248692af.webp",
+       "status": "done"
+      },
+      {
+       "id": "sec-23",
+       "kind": "card",
+       "model": "google/gemini-3-pro-image",
+       "model_wanted": "google/gemini-3-pro-image",
+       "cost_usd": 0.138798,
+       "duration_s": 22.8,
+       "at": "2026-10-15T07:54:02Z",
+       "file": "sec-23.667fdd59.webp",
+       "status": "done"
+      }
+     ]
+    }
+   ],
+   "images": 32,
+   "cost_usd": 4.504669,
+   "failed": 0
+  },
+  {
+   "slug": "aws",
+   "name": "The AWS Wire",
+   "dir": "wire/aws/",
+   "editions": [
+    {
+     "edition": "2026-10-13",
+     "updated": "2026-10-14T22:05:39Z",
+     "images": 13,
+     "failed": 0,
+     "cost_usd": 1.913083,
+     "duration_s": 351.0,
+     "heroes": 1,
+     "cards": 12,
+     "hero_cost_usd": 0.247067,
+     "card_cost_usd": 1.666016,
+     "stopped": "max-cost 2.00 USD would be exceeded (estimated 1.925 so far, 0.140 for the next)",
+     "rows": [
+      {
+       "id": "edition",
+       "kind": "hero",
+       "model": "openai/gpt-5.4-image-2",
+       "model_wanted": "openai/gpt-5.4-image-2",
+       "cost_usd": 0.24706737,
+       "duration_s": 117.2,
+       "at": "2026-10-14T21:58:11Z",
+       "file": "edition.04ef5618.webp",
+       "status": "done"
+      },
+      {
+       "id": "aws-03",
+       "kind": "card",
+       "model": "google/gemini-3-pro-image",
+       "model_wanted": "google/gemini-3-pro-image",
+       "cost_usd": 0.13918608,
+       "duration_s": 19.5,
+       "at": "2026-10-14T22:04:54Z",
+       "file": "aws-03.adbdda65.webp",
+       "status": "done"
+      },
+      {
+       "id": "aws-08",
+       "kind": "card",
+       "model": "google/gemini-3-pro-image",
+       "model_wanted": "google/gemini-3-pro-image",
+       "cost_usd": 0.13830696,
+       "duration_s": 18.8,
+       "at": "2026-10-14T22:00:10Z",
+       "file": "aws-08.0ee69b32.webp",
+       "status": "done"
+      },
+      {
+       "id": "aws-11",
+       "kind": "card",
+       "model": "google/gemini-3-pro-image",
+       "model_wanted": "google/gemini-3-pro-image",
+       "cost_usd": 0.13937418,
+       "duration_s": 19.8,
+       "at": "2026-10-14T22:04:28Z",
+       "file": "aws-11.58044d21.webp",
+       "status": "done"
+      },
+      {
+       "id": "aws-12",
+       "kind": "card",
+       "model": "google/gemini-3-pro-image",
+       "model_wanted": "google/gemini-3-pro-image",
+       "cost_usd": 0.13982562,
+       "duration_s": 21.5,
+       "at": "2026-10-14T22:04:00Z",
+       "file": "aws-12.36094b91.webp",
+       "status": "done"
+      },
+      {
+       "id": "aws-25",
+       "kind": "card",
+       "model": "google/gemini-3-pro-image",
+       "model_wanted": "google/gemini-3-pro-image",
+       "cost_usd": 0.13810104,
+       "duration_s": 18.0,
+       "at": "2026-10-14T22:03:36Z",
+       "file": "aws-25.6a0b7784.webp",
+       "status": "done"
+      },
+      {
+       "id": "wn-01",
+       "kind": "card",
+       "model": "google/gemini-3-pro-image",
+       "model_wanted": "google/gemini-3-pro-image",
+       "cost_usd": 0.13809114,
+       "duration_s": 18.9,
+       "at": "2026-10-14T22:03:10Z",
+       "file": "wn-01.16e16687.webp",
+       "status": "done"
+      },
+      {
+       "id": "wn-02",
+       "kind": "card",
+       "model": "google/gemini-3-pro-image",
+       "model_wanted": "google/gemini-3-pro-image",
+       "cost_usd": 0.13916232,
+       "duration_s": 19.1,
+       "at": "2026-10-14T22:02:45Z",
+       "file": "wn-02.12b7a957.webp",
+       "status": "done"
+      },
+      {
+       "id": "wn-03",
+       "kind": "card",
+       "model": "google/gemini-3-pro-image",
+       "model_wanted": "google/gemini-3-pro-image",
+       "cost_usd": 0.13859406,
+       "duration_s": 20.2,
+       "at": "2026-10-14T22:02:18Z",
+       "file": "wn-03.9c83bfec.webp",
+       "status": "done"
+      },
+      {
+       "id": "wn-04",
+       "kind": "card",
+       "model": "google/gemini-3-pro-image",
+       "model_wanted": "google/gemini-3-pro-image",
+       "cost_usd": 0.13832874,
+       "duration_s": 18.0,
+       "at": "2026-10-14T22:01:54Z",
+       "file": "wn-04.64e3db35.webp",
+       "status": "done"
+      },
+      {
+       "id": "wn-05",
+       "kind": "card",
+       "model": "google/gemini-3-pro-image",
+       "model_wanted": "google/gemini-3-pro-image",
+       "cost_usd": 0.14019984,
+       "duration_s": 22.0,
+       "at": "2026-10-14T22:01:26Z",
+       "file": "wn-05.3c3bfaad.webp",
+       "status": "done"
+      },
+      {
+       "id": "wn-06",
+       "kind": "card",
+       "model": "google/gemini-3-pro-image",
+       "model_wanted": "google/gemini-3-pro-image",
+       "cost_usd": 0.13817034,
+       "duration_s": 18.9,
+       "at": "2026-10-14T22:01:00Z",
+       "file": "wn-06.42d43123.webp",
+       "status": "done"
+      },
+      {
+       "id": "wn-07",
+       "kind": "card",
+       "model": "google/gemini-3-pro-image",
+       "model_wanted": "google/gemini-3-pro-image",
+       "cost_usd": 0.13867524,
+       "duration_s": 19.1,
+       "at": "2026-10-14T22:00:35Z",
+       "file": "wn-07.ce65af0b.webp",
+       "status": "done"
+      }
+     ]
+    }
+   ],
+   "images": 13,
+   "cost_usd": 1.913083,
+   "failed": 0
+  },
+  {
+   "slug": "owasp",
+   "name": "The OWASP Wire",
+   "dir": "wire/owasp/",
+   "editions": [
+    {
+     "edition": "2026-10-13",
+     "updated": "2026-10-14T21:50:40Z",
+     "images": 13,
+     "failed": 0,
+     "cost_usd": 1.905798,
+     "duration_s": 335.1,
+     "heroes": 1,
+     "cards": 12,
+     "hero_cost_usd": 0.244092,
+     "card_cost_usd": 1.661705,
+     "stopped": "max-cost 2.00 USD would be exceeded (estimated 1.925 so far, 0.140 for the next)",
+     "rows": [
+      {
+       "id": "edition",
+       "kind": "hero",
+       "model": "openai/gpt-5.4-image-2",
+       "model_wanted": "openai/gpt-5.4-image-2",
+       "cost_usd": 0.24409242,
+       "duration_s": 112.6,
+       "at": "2026-10-14T21:43:29Z",
+       "file": "edition.3e012f0c.webp",
+       "status": "done"
+      },
+      {
+       "id": "ow-01",
+       "kind": "card",
+       "model": "google/gemini-3-pro-image",
+       "model_wanted": "google/gemini-3-pro-image",
+       "cost_usd": 0.13946328,
+       "duration_s": 20.6,
+       "at": "2026-10-14T21:49:05Z",
+       "file": "ow-01.f6377bb4.webp",
+       "status": "done"
+      },
+      {
+       "id": "ow-04",
+       "kind": "card",
+       "model": "google/gemini-3-pro-image",
+       "model_wanted": "google/gemini-3-pro-image",
+       "cost_usd": 0.13846734,
+       "duration_s": 18.8,
+       "at": "2026-10-14T21:48:40Z",
+       "file": "ow-04.abe93b39.webp",
+       "status": "done"
+      },
+      {
+       "id": "ow-08",
+       "kind": "card",
+       "model": "google/gemini-3-pro-image",
+       "model_wanted": "google/gemini-3-pro-image",
+       "cost_usd": 0.13786542,
+       "duration_s": 18.2,
+       "at": "2026-10-14T21:47:27Z",
+       "file": "ow-08.cffce906.webp",
+       "status": "done"
+      },
+      {
+       "id": "ow-09",
+       "kind": "card",
+       "model": "google/gemini-3-pro-image",
+       "model_wanted": "google/gemini-3-pro-image",
+       "cost_usd": 0.13839012,
+       "duration_s": 18.1,
+       "at": "2026-10-14T21:47:03Z",
+       "file": "ow-09.0ba98ea1.webp",
+       "status": "done"
+      },
+      {
+       "id": "ow-11",
+       "kind": "card",
+       "model": "google/gemini-3-pro-image",
+       "model_wanted": "google/gemini-3-pro-image",
+       "cost_usd": 0.13858614,
+       "duration_s": 18.4,
+       "at": "2026-10-14T21:49:56Z",
+       "file": "ow-11.15951b53.webp",
+       "status": "done"
+      },
+      {
+       "id": "ow-12",
+       "kind": "card",
+       "model": "google/gemini-3-pro-image",
+       "model_wanted": "google/gemini-3-pro-image",
+       "cost_usd": 0.1381545,
+       "duration_s": 18.2,
+       "at": "2026-10-14T21:46:38Z",
+       "file": "ow-12.c1f7d7a8.webp",
+       "status": "done"
+      },
+      {
+       "id": "ow-13",
+       "kind": "card",
+       "model": "google/gemini-3-pro-image",
+       "model_wanted": "google/gemini-3-pro-image",
+       "cost_usd": 0.1386693,
+       "duration_s": 18.8,
+       "at": "2026-10-14T21:46:13Z",
+       "file": "ow-13.5bc17eb2.webp",
+       "status": "done"
+      },
+      {
+       "id": "ow-14",
+       "kind": "card",
+       "model": "google/gemini-3-pro-image",
+       "model_wanted": "google/gemini-3-pro-image",
+       "cost_usd": 0.13915836,
+       "duration_s": 18.4,
+       "at": "2026-10-14T21:45:48Z",
+       "file": "ow-14.8703faa1.webp",
+       "status": "done"
+      },
+      {
+       "id": "ow-15",
+       "kind": "card",
+       "model": "google/gemini-3-pro-image",
+       "model_wanted": "google/gemini-3-pro-image",
+       "cost_usd": 0.13845744,
+       "duration_s": 19.3,
+       "at": "2026-10-14T21:45:23Z",
+       "file": "ow-15.68d53626.webp",
+       "status": "done"
+      },
+      {
+       "id": "ow-16",
+       "kind": "card",
+       "model": "google/gemini-3-pro-image",
+       "model_wanted": "google/gemini-3-pro-image",
+       "cost_usd": 0.13838814,
+       "duration_s": 17.5,
+       "at": "2026-10-14T21:49:32Z",
+       "file": "ow-16.7b7e44c5.webp",
+       "status": "done"
+      },
+      {
+       "id": "ow-17",
+       "kind": "card",
+       "model": "google/gemini-3-pro-image",
+       "model_wanted": "google/gemini-3-pro-image",
+       "cost_usd": 0.13794462,
+       "duration_s": 17.4,
+       "at": "2026-10-14T21:48:17Z",
+       "file": "ow-17.f5f4653c.webp",
+       "status": "done"
+      },
+      {
+       "id": "ow-18",
+       "kind": "card",
+       "model": "google/gemini-3-pro-image",
+       "model_wanted": "google/gemini-3-pro-image",
+       "cost_usd": 0.13816044,
+       "duration_s": 18.8,
+       "at": "2026-10-14T21:47:52Z",
+       "file": "ow-18.76b303dd.webp",
+       "status": "done"
+      }
+     ]
+    }
+   ],
+   "images": 13,
+   "cost_usd": 1.905798,
+   "failed": 0
+  },
+  {
+   "slug": "portugal",
+   "name": "The Portugal Wire",
+   "dir": "wire/portugal/",
+   "editions": [
+    {
+     "edition": "2026-10-13",
+     "updated": "2026-10-14T21:58:04Z",
+     "images": 13,
+     "failed": 0,
+     "cost_usd": 1.914348,
+     "duration_s": 340.3,
+     "heroes": 1,
+     "cards": 12,
+     "hero_cost_usd": 0.248459,
+     "card_cost_usd": 1.665889,
+     "stopped": "max-cost 2.00 USD would be exceeded (estimated 1.925 so far, 0.140 for the next)",
+     "rows": [
+      {
+       "id": "edition",
+       "kind": "hero",
+       "model": "openai/gpt-5.4-image-2",
+       "model_wanted": "openai/gpt-5.4-image-2",
+       "cost_usd": 0.24845931,
+       "duration_s": 112.5,
+       "at": "2026-10-14T21:50:47Z",
+       "file": "edition.b07cb67b.webp",
+       "status": "done"
+      },
+      {
+       "id": "pt-ai-05",
+       "kind": "card",
+       "model": "google/gemini-3-pro-image",
+       "model_wanted": "google/gemini-3-pro-image",
+       "cost_usd": 0.13869306,
+       "duration_s": 19.2,
+       "at": "2026-10-14T21:56:28Z",
+       "file": "pt-ai-05.59c5ec92.webp",
+       "status": "done"
+      },
+      {
+       "id": "pt-ai-06",
+       "kind": "card",
+       "model": "google/gemini-3-pro-image",
+       "model_wanted": "google/gemini-3-pro-image",
+       "cost_usd": 0.13790502,
+       "duration_s": 20.2,
+       "at": "2026-10-14T21:55:34Z",
+       "file": "pt-ai-06.9cb8573b.webp",
+       "status": "done"
+      },
+      {
+       "id": "pt-ai-07",
+       "kind": "card",
+       "model": "google/gemini-3-pro-image",
+       "model_wanted": "google/gemini-3-pro-image",
+       "cost_usd": 0.13880196,
+       "duration_s": 18.2,
+       "at": "2026-10-14T21:55:09Z",
+       "file": "pt-ai-07.347fa274.webp",
+       "status": "done"
+      },
+      {
+       "id": "pt-ai-08",
+       "kind": "card",
+       "model": "google/gemini-3-pro-image",
+       "model_wanted": "google/gemini-3-pro-image",
+       "cost_usd": 0.13890096,
+       "duration_s": 18.0,
+       "at": "2026-10-14T21:54:45Z",
+       "file": "pt-ai-08.5d7ba9dc.webp",
+       "status": "done"
+      },
+      {
+       "id": "pt-biz-10",
+       "kind": "card",
+       "model": "google/gemini-3-pro-image",
+       "model_wanted": "google/gemini-3-pro-image",
+       "cost_usd": 0.13953258,
+       "duration_s": 18.8,
+       "at": "2026-10-14T21:54:20Z",
+       "file": "pt-biz-10.6c843124.webp",
+       "status": "done"
+      },
+      {
+       "id": "pt-gov-07",
+       "kind": "card",
+       "model": "google/gemini-3-pro-image",
+       "model_wanted": "google/gemini-3-pro-image",
+       "cost_usd": 0.13765158,
+       "duration_s": 21.2,
+       "at": "2026-10-14T21:56:00Z",
+       "file": "pt-gov-07.92028ce1.webp",
+       "status": "done"
+      },
+      {
+       "id": "pt-gov-08",
+       "kind": "card",
+       "model": "google/gemini-3-pro-image",
+       "model_wanted": "google/gemini-3-pro-image",
+       "cost_usd": 0.13777632,
+       "duration_s": 17.3,
+       "at": "2026-10-14T21:53:56Z",
+       "file": "pt-gov-08.186a54b1.webp",
+       "status": "done"
+      },
+      {
+       "id": "pt-oss-02",
+       "kind": "card",
+       "model": "google/gemini-3-pro-image",
+       "model_wanted": "google/gemini-3-pro-image",
+       "cost_usd": 0.13870692,
+       "duration_s": 18.5,
+       "at": "2026-10-14T21:53:32Z",
+       "file": "pt-oss-02.5b56992b.webp",
+       "status": "done"
+      },
+      {
+       "id": "pt-sec-05",
+       "kind": "card",
+       "model": "google/gemini-3-pro-image",
+       "model_wanted": "google/gemini-3-pro-image",
+       "cost_usd": 0.1393425,
+       "duration_s": 19.2,
+       "at": "2026-10-14T21:57:19Z",
+       "file": "pt-sec-05.5d39f2f5.webp",
+       "status": "done"
+      },
+      {
+       "id": "pt-sec-06",
+       "kind": "card",
+       "model": "google/gemini-3-pro-image",
+       "model_wanted": "google/gemini-3-pro-image",
+       "cost_usd": 0.13808322,
+       "duration_s": 19.2,
+       "at": "2026-10-14T21:56:53Z",
+       "file": "pt-sec-06.5b0fe503.webp",
+       "status": "done"
+      },
+      {
+       "id": "pt-sec-07",
+       "kind": "card",
+       "model": "google/gemini-3-pro-image",
+       "model_wanted": "google/gemini-3-pro-image",
+       "cost_usd": 0.13813668,
+       "duration_s": 16.6,
+       "at": "2026-10-14T21:53:09Z",
+       "file": "pt-sec-07.fe2ee758.webp",
+       "status": "done"
+      },
+      {
+       "id": "pt-sec-08",
+       "kind": "card",
+       "model": "google/gemini-3-pro-image",
+       "model_wanted": "google/gemini-3-pro-image",
+       "cost_usd": 0.14235804,
+       "duration_s": 21.4,
+       "at": "2026-10-14T21:52:41Z",
+       "file": "pt-sec-08.f328cd95.webp",
+       "status": "done"
+      }
+     ]
+    }
+   ],
+   "images": 13,
+   "cost_usd": 1.914348,
+   "failed": 0
+  }
+ ]
+}

@@ -82,7 +82,7 @@ def wires_strip(cfg, up=None):
     """The strip naming every wire, with the current one marked, and the pages they share."""
     up = cfg["up"] if up is None else up
     links = "".join(f'<a href="{up}{c["dir"]}index.html"{" aria-current=page" if c is cfg else ""}>{esc(c["name"])}</a>' for c in CFGS)
-    shared = f'<a href="{up}wire/days.html">Day by day</a><a href="{up}wire/charter.html">The charter</a><a href="{up}wire/desk-brief.html">For the desks</a>'
+    shared = f'<a href="{up}wire/days.html">Day by day</a><a href="{up}wire/costs.html">What it costs</a><a href="{up}wire/charter.html">The charter</a><a href="{up}wire/desk-brief.html">For the desks</a>'
     return f'<p class="wires">The wires: {links} · {shared}</p>'
 
 
@@ -104,6 +104,24 @@ def subscribe_block(cfg):
 """
 
 
+def pictures_ledger(cfg):
+    """The cumulative ledger of the pictures this site made for the wire (admin/build/infographics.py), or None."""
+    if not isinstance(cfg, dict) or not cfg.get("dir"):   # the shared pages (day by day, the charter) mount with no wire of their own
+        return None
+    f = ROOT / cfg["dir"] / "infographics" / "ledger.json"
+    if not f.exists():
+        return None
+    try:
+        return json.loads(f.read_text(encoding="utf-8"))
+    except ValueError:
+        return None
+
+
+def pictures_attr(cfg):
+    """data-pictures on the mount when the wire has a ledger, so wire.js asks for the edition's pictures only when there can be some."""
+    return ' data-pictures="1"' if pictures_ledger(cfg) else ''
+
+
 def snapshot_html(snap):
     if not snap:
         return '<section id="wire-snapshot" class="snapshot" hidden><p>No snapshot has been taken yet.</p></section>'
@@ -120,7 +138,7 @@ def snapshot_html(snap):
 
 def loader(cfg, kind, **extra):
     return f"""<div id="wire-status" class="wire-status" hidden></div>
-<div id="wire-mount" data-wire="{kind}"><p class="dim">Opening the vault&hellip;</p></div>
+<div id="wire-mount" data-wire="{kind}"{pictures_attr(cfg)}><p class="dim">Opening the vault&hellip;</p></div>
 {config_block(cfg, **extra)}
 <script type="module">
 import {{ wire }} from '{cfg["rel"]}./wire.js';
@@ -201,6 +219,7 @@ def how_page(cfg):
     body = f"""<h2 id="site">How this site reads the vault</h2>
 <p>The wire&rsquo;s data lives in an encrypted sgit vault that its agents write to, with the key that writes it held by them and not by this site. This site holds the vault&rsquo;s <b>read key</b>, published on purpose, and each wire page opens the vault in your browser: it derives the address of the vault&rsquo;s head pointer, fetches ciphertext from <code>{esc(cfg["endpoint"])}</code>, decrypts it with Web Crypto, walks the commit&rsquo;s tree and reads {reads}. Nothing from the vault is run; it is drawn as text, and the documents are rendered from their markdown by a renderer that escapes. The pointer is re-checked at most every two minutes, so a commit by the wire&rsquo;s agents is on the page within that, with no release of this site. Objects that cannot change are cached in the browser for good. {esc(cfg["name"])} is one of {len(CFGS)} wires on this site ({others}); they share one code (<code>wire/wire.js</code>), one contract, and one config each (<code>admin/build/wire-vault{("." + cfg["slug"]) if cfg["slug"] else ""}.json</code>).</p>
 <div class="note"><b>The contract between the vault and this site.</b> Everything in the vault is public, including its history: a published read key cannot be withdrawn from anyone who has fetched the objects, so nothing private goes in it, not frozen tier-B bytes, not a reader&rsquo;s feedback, and not a brief meant for one person unless that person has agreed to it being public; those need a vault of their own. The wire&rsquo;s one named reader so far, {esc(named)}, has agreed while the wire is a beta, and the agreement is recorded with the date in the wire&rsquo;s config, which is also what tells the page to offer that lens. The pages rely on <code>data/bundle.json</code> having <code>beats</code>, <code>stories</code>, <code>sources</code>, <code>personas</code> and <code>brief</code> (edition, window, kind, status, editor_note, lead, threads, beats), on each story carrying <code>id</code>, <code>beat</code>, <code>headline</code>, <code>date</code>, <code>summary</code>, <code>quote</code>, <code>quote_source_url</code>, <code>primary</code>, <code>coverage</code>, <code>entities</code>, <code>why_it_matters</code>, <code>personas</code>, <code>confidence</code>, <code>status</code> and <code>primary_fetched</code>, and on <code>data/deliveries.json</code> rows of <code>story</code>, <code>persona</code>, <code>status</code>, <code>connections</code> and <code>withheld_reason</code>. When the vault has <code>data/releases.json</code> (<code>wire-releases/v1</code>: releases newest first, each with <code>id</code>, <code>at</code>, <code>edition</code>, <code>title</code>, <code>summary</code>, and the story ids <code>added</code>, <code>updated</code> and <code>withdrawn</code>), the edition shows the releases since the reader&rsquo;s last visit; the desk writes it on every publish (its runbook&rsquo;s step 11), as <a href="{up}{BRIEF}">the brief</a> asked, and the page still stands when it is missing. Three more fields are drawn when they are there and nothing breaks when they are not: a story&rsquo;s <code>changes</code>, a list of <code>{{at, what}}</code> that the desk appends to when it corrects the story, drawn under the story; the brief&rsquo;s <code>corrections</code>, the desk&rsquo;s note of what the edition corrected, in the edition&rsquo;s header; and the brief&rsquo;s <code>updated_in_edition</code>, story ids flagged <em>Updated</em> like the ids a release names. A story&rsquo;s <code>edition</code>, when it is not the current one, is said in the story&rsquo;s meta line. A vault that describes itself in <code>wire</code> (<code>id</code>, <code>title</code>, <code>beats</code>, <code>personal_persona</code>) offers every persona but the personal one as a public lens; without it the page offers the Industry Wire&rsquo;s six. A <code>wire.languages</code> list of two or more (the Portugal Wire: <code>["en", "pt"]</code>) puts a language switch under the lens, kept per wire in the browser: a story&rsquo;s <code>headline_&lt;lang&gt;</code>, <code>summary_&lt;lang&gt;</code> and <code>why_it_matters_&lt;lang&gt;</code> are drawn in the chosen language when the vault carries them, the first language otherwise; a quote stays in the language of its source and <code>quote_lang</code> says which. A <code>map</code> (<code>title</code>, <code>intro</code>, <code>entities</code> each with <code>id</code>, <code>name</code>, <code>kind</code>, <code>aliases</code>, <code>facts</code>, <code>leaders</code>, <code>standards</code>, <code>notes</code>) is drawn as a list of entities, each with the stories whose <code>entities</code> values match its name or an alias. A <code>stack</code> (<code>persona</code>, <code>what</code>, <code>services</code> each with <code>id</code>, <code>name</code>, <code>aliases</code>, <code>runtime</code>, <code>watch</code>; <code>extra_concerns</code>; <code>deadlines</code> each with <code>what</code>, <code>date</code>, <code>then</code>, <code>source</code>; <code>later</code>) is drawn as the deadlines in the edition&rsquo;s header and each service with the items whose delivery to the stack&rsquo;s persona connects through the service&rsquo;s id. When the vault carries the verifier&rsquo;s records, <code>data/factcheck-&lt;date&gt;.json</code> (<code>wire-factcheck/v1</code> as <a href="{up}wire/desk-brief.html">the brief for the desks</a> asks: <code>checked_by</code>, <code>method</code>, <code>results</code> rows of <code>story</code>, <code>quote</code>, <code>date</code>, <code>version</code>, <code>independence</code>, <code>verdict</code>, <code>fix</code>, and <code>not_checked</code>), each row is drawn at its story and the file&rsquo;s words in the edition&rsquo;s header; a file with a prose <code>result</code> alone is drawn in the header as it is. When it carries <code>data/contacts.json</code>, the reach page draws it under the contact rules. A story&rsquo;s <code>status</code> is shown as written, so <em>ai-generated, unreviewed</em> stays on the page until the vault says otherwise. The commit message of the head is shown on every wire page.</div>
+<div class="note"><b>The pictures.</b> Since v0.12.59 this site makes, on its own side and never in the vault, one picture for the edition (the lead, the threads and the editor&rsquo;s note as a square) and one card per story the edition added (the headline exactly, the date, the source with its licence tier, one number when the summary holds one, and the beat), through the SGraph infographic generator with an image model from OpenRouter; <code>admin/build/infographics.py</code>, run by the morning routine after the desk publishes, with the key in its environment and nowhere else. Each image is kept under <code>infographics/&lt;edition&gt;/</code> beside this page with a ledger (<code>wire-infographics/v1</code>: the model asked for and the one that answered, the seconds, OpenRouter&rsquo;s own cost, the prompt&rsquo;s hash and file) and <code>infographics/ledger.json</code> sums every edition by month. The page draws the hero in the edition&rsquo;s header and a card beside its story, each with an <em>AI image</em> chip, its model, its cost and the prompt on request; the line under the header says what the edition&rsquo;s pictures cost, this month&rsquo;s and the total. The text is the record and the picture illustrates it: a card says nothing the story does not, the headline is drawn exactly, no quote and no number the story does not carry, and the desk is never asked for anything. When no picture exists the page is complete without one.</div>
 <p>To read it without this site: <code>{esc(cfg["clone"])}</code>. The read key is <code>{esc(cfg["read_key"])}</code>.</p>
 <h2 id="docs">The wire&rsquo;s own documents</h2>
 <p>Read from the vault as committed: the architecture, the sources policy, the workflows where the vault has them, and the runbook that the wire&rsquo;s agent starts from.</p>
@@ -252,6 +271,10 @@ def take_snapshot(cfg, clone: Path):
                                 **({"changes": [{"at": c.get("at", ""), "what": c.get("what", "")} for c in by_id[sid]["changes"]]} if by_id[sid].get("changes") else {})}
                                for sid in (bt.get("stories") or []) if sid in by_id]} for bt in beats],
     }
+    led = pictures_ledger(cfg)
+    if led:   # the pictures this site made, summed, so an agent knows they exist and what they cost (the images are beside the ledger)
+        snap["pictures"] = {"what": f"AI-made pictures for the editions, a hero per edition and a card per story, made by this site from the stories' text; https://{HOST}/{cfg['dir']}infographics/ledger.json and infographics/<edition>/ledger.json with each image's model, cost and prompt",
+                            "images": (led.get("total") or {}).get("images", 0), "cost_usd": (led.get("total") or {}).get("cost_usd", 0.0), "editions": sorted((led.get("editions") or {}).keys())}
     if stack.get("deadlines"):
         snap["deadlines"] = [{k: d.get(k, "") for k in ("what", "date", "then", "source")} for d in sorted(stack["deadlines"], key=lambda d: str(d.get("date", "")))]
     text = json.dumps(snap, indent=1, ensure_ascii=False) + "\n"
@@ -283,7 +306,9 @@ def main():
             if write(rel, text):
                 changed.append(rel)
         print(f"wire {cfg['dir']}: vault {cfg['vault_id']}, snapshot {'of ' + snap['edition'] if snap else 'none'}")
-    for rel, text in (("wire/days.html", days_page()), ("wire/charter.html", charter_page()), ("wire/desk-brief.html", brief_page())):
+    import accountant   # the costs page and wire/costs.json, from every wire's ledgers (admin/build/accountant.py)
+    for rel, text in (("wire/days.html", days_page()), ("wire/charter.html", charter_page()), ("wire/desk-brief.html", brief_page()),
+                      *accountant.pages(CFGS, wires_strip(None, up="../"), newsroom_page, EYEBROW)):
         if write(rel, text):
             changed.append(rel)
     print(f"wire: {len(CFGS)} wires; {len(changed)} written {changed}")

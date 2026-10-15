@@ -48,6 +48,44 @@ const h = (tag, attrs, ...kids) => {
     return el
 }
 const isHttp = u => /^https?:\/\/[^\s"'<>]+$/.test(String(u || ''))
+// the pictures this site made for an edition (admin/build/infographics.py writes wire/<slug>/infographics/<edition>/ledger.json beside
+// the images): a site file, read only when the page was built with data-pictures, never a vault file; a file name is used only when it
+// has the shape the pipeline writes, and every other field is drawn as text
+const SAFE_FILE = /^[A-Za-z0-9_.-]+\.(webp|png)$/, SAFE_PROMPT = /^prompts\/[A-Za-z0-9_.-]+\.txt$/, EDITION = /^\d{4}-\d{2}-\d{2}$/
+async function pictures(edition) {
+    if (!EDITION.test(String(edition || ''))) return null
+    const get = async p => { const res = await fetch(p, { cache: 'no-cache' }); if (!res.ok) throw new Error(String(res.status)); return res.json() }
+    let total = null
+    try { total = await get('infographics/ledger.json') } catch (e) { return null }
+    // every edition's ledger the cumulative one names (a story keeps its card across editions: a card made for the 13 October edition
+    // is still that story's card on the 14th; the hero is the current edition's only)
+    const editions = Object.keys(total && total.editions && typeof total.editions === 'object' ? total.editions : {}).filter(d => EDITION.test(d)).sort()
+    if (!editions.includes(edition)) editions.push(edition)
+    const ledgers = new Map()
+    for (const d of editions.slice(-12)) { try { ledgers.set(d, await get(`infographics/${d}/ledger.json`)) } catch (e) { /* none for that day */ } }
+    if (!ledgers.size) return null
+    const done = [...ledgers].flatMap(([d, led]) => (Array.isArray(led.images) ? led.images : []).filter(e => e && e.status === 'done' && SAFE_FILE.test(String(e.file || ''))).map(e => ({ ...e, edition: d })))
+        .sort((a, b) => String(b.at || '').localeCompare(String(a.at || '')))
+    const byStory = new Map(); let hero = null
+    for (const e of done) { if (e.kind === 'hero') { if (e.edition === edition) hero = hero || e } else if (e.kind === 'card' && !byStory.has(String(e.id))) byStory.set(String(e.id), e) }   // the latest per story
+    const months = total && total.months && typeof total.months === 'object' ? total.months : {}
+    const led = ledgers.get(edition) || {}
+    return { edition, hero, byStory, totals: led.totals || {}, month: months[edition.slice(0, 7)] || null, all: total && total.total ? total.total : null }
+}
+const usd = x => typeof x === 'number' && Number.isFinite(x) ? `$${x.toFixed(x < 1 ? 3 : 2)}` : 'cost not reported'
+/** One picture with its disclosure: an AI-image chip, the model, OpenRouter's cost, the seconds, and the prompt on request. */
+function picture(pics, e, alt, cls) {
+    const pre = h('pre', {}, 'Loading the prompt…')
+    const prompt = SAFE_PROMPT.test(String(e.prompt_file || '')) ? h('details', { class: 'ig-prompt' }, h('summary', {}, 'The prompt it was made from'), pre) : null
+    if (prompt) prompt.addEventListener('toggle', async () => {
+        if (!prompt.open || prompt.dataset.loaded) return
+        prompt.dataset.loaded = '1'
+        try { const res = await fetch(`infographics/${e.edition}/${e.prompt_file}`); pre.textContent = res.ok ? await res.text() : 'The prompt file could not be read.' } catch (x) { pre.textContent = 'The prompt file could not be read.' }
+    })
+    return h('figure', { class: `ig ${cls}` },
+        h('img', { src: `infographics/${e.edition}/${e.file}`, alt, loading: 'lazy', width: '1024', height: '1024' }),
+        h('figcaption', {}, h('span', { class: 'chip ai' }, 'AI image'), ` ${String(e.model || 'model not recorded')} · ${usd(e.cost_usd)}${typeof e.duration_s === 'number' ? ` · ${e.duration_s} s` : ''}. The text is the record; the picture illustrates it. `, prompt))
+}
 const link = (text, url, cls) => isHttp(url) ? h('a', { href: url, target: '_blank', rel: 'noopener', class: cls }) : h('span', { class: cls }),
       linkText = (text, url, cls) => { const a = link(text, url, cls); a.textContent = text; return a }
 const when = d => /^\d{4}-\d{2}-\d{2}$/.test(d || '') ? d : (d || 'date not given')
@@ -125,6 +163,8 @@ async function edition(r, mount, foot, cfg) {
     const pById = new Map(personas.map(p => [p.id, p]))
     const beatLabel = new Map((b.beats || []).map(x => [x.id, x.label]))
     let deliveries = null, lens = ''
+    // the pictures this site made for the edition, when the page was built with some (wire.py sets data-pictures from the ledger)
+    const pics = mount.dataset.pictures ? await pictures(brief.edition) : null
     // the release notes the wire's vault publishes, when it does (data/releases.json, the contract in the brief)
     let releaseFile = null
     try { releaseFile = await r.readJson('data/releases.json') } catch (e) { releaseFile = null }
@@ -203,6 +243,7 @@ async function edition(r, mount, foot, cfg) {
             h('h3', {}, isNew(s.id) ? h('span', { class: 'flag new' }, 'New') : null, updatedIds.has(s.id) ? h('span', { class: 'flag upd' }, 'Updated') : null, isHttp(primary.url) ? linkText(tx(s, 'headline'), primary.url) : tx(s, 'headline')),
             h('p', { class: 'meta' }, [provenanceStrip(s), when(s.date), primary.publisher, s.primary_kind, s.confidence ? h('span', { class: `conf-${s.confidence}` }, `confidence ${s.confidence}`) : null, s.primary_fetched === false ? 'primary not fetched by the research agent' : null, s.edition && brief.edition && s.edition !== brief.edition ? `from the edition of ${s.edition}` : null]
                 .filter(Boolean).flatMap((x, i) => i ? [' · ', x] : [x])),
+            pics && pics.byStory.has(s.id) ? picture(pics, pics.byStory.get(s.id), `${s.headline} (an AI-made card: the headline, the date, the source and the beat as a picture)`, 'card') : null,
             isLead && brief.lead && brief.lead.why_it_leads ? h('p', { class: 'leads' }, h('b', {}, 'Why it leads: '), brief.lead.why_it_leads) : null,
             s.summary ? h('p', {}, tx(s, 'summary')) : null,
             s.quote ? h('blockquote', {}, `“${s.quote}”`, h('cite', {}, isHttp(s.quote_source_url) ? linkText(hostOf(s.quote_source_url), s.quote_source_url) : 'source not given', langs.length > 1 && s.quote_lang ? h('span', { class: 'chip lang' }, `in ${String(s.quote_lang)}`) : null)) : null,
@@ -241,6 +282,10 @@ async function edition(r, mount, foot, cfg) {
         h('p', { class: 'k' }, `Edition of ${brief.edition || '?'}`),
         h('p', { class: 'meta' }, [brief.kind, brief.window ? `covers ${brief.window.from} to ${brief.window.to}` : null, brief.status, brief.counts ? `${brief.counts.stories} stories from ${brief.counts.publishers} publishers` : null].filter(Boolean).join(' · ')),
         brief.editor_note ? h('p', { class: 'note' }, brief.editor_note) : null,
+        pics && pics.hero ? picture(pics, pics.hero, `What is going on in ${wireMeta.title || cfg.name || 'this wire'}, edition of ${brief.edition}: the lead, the threads and the editor's note as an AI-made picture`, 'hero') : null,
+        pics ? h('p', { class: 'ig-cost', id: 'wire-pictures' }, h('b', {}, 'What the pictures cost: '), `${pics.byStory.size + (pics.hero ? 1 : 0)} shown for this edition, ${usd(pics.totals.cost_usd)} for ${pics.totals.images || 0} made`
+            + (pics.totals.failed ? ` (${pics.totals.failed} failed)` : '') + (pics.month ? `; this month ${usd(pics.month.cost_usd)} for ${pics.month.images}` : '') + (pics.all ? `; since the start ${usd(pics.all.cost_usd)} for ${pics.all.images}` : '')
+            + '. OpenRouter\'s own figures, from the ledger beside the images; made by this site, never by the desk. A story keeps its card from the edition that added it.') : null,
         brief.corrections ? h('p', { class: 'corrections' }, h('b', {}, 'Corrections and updates: '), brief.corrections) : null,
         checks.length ? h('div', { class: 'checks', id: 'wire-checks' }, h('b', {}, 'Checked independently. '), ...checks.map(({ path, at, file: f }) => h('p', {},
             `${f.checked_by || path}${f.method ? `: ${f.method}` : ''}${f.checked ? `: ${f.checked}` : ''}${f.result ? `. ${f.result}` : ''}`

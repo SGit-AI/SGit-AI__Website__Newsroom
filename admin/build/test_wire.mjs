@@ -40,6 +40,22 @@ for (const cfg of cfgs) {
     check(Array.isArray(cfg.named_readers) && cfg.named_readers.length > 0 && cfg.named_readers.every(x => x.persona && x.name && /^\d{4}-\d{2}-\d{2}$/.test(x.agreed)), `${cfg.dir}: every named reader in the config carries a persona, a name and the date they agreed`)
 }
 const vaultHost = new URL(cfgs[0].endpoint).host
+{   // the accountant: wire/costs.json is the sum of every ledger the pipeline wrote, and the page carries the same total
+    const costs = JSON.parse(fs.readFileSync(path.join(ROOT, 'wire/costs.json'), 'utf8'))
+    let images = 0, cost = 0
+    for (const cfg of cfgs) {
+        const dir = path.join(ROOT, cfg.dir, 'infographics')
+        if (!fs.existsSync(dir)) continue
+        for (const ed of fs.readdirSync(dir)) {
+            const f = path.join(dir, ed, 'ledger.json')
+            if (!fs.existsSync(f)) continue
+            for (const e of JSON.parse(fs.readFileSync(f, 'utf8')).images || []) if (e.status === 'done') { images++; cost += e.cost_usd || 0 }
+        }
+    }
+    const page = fs.readFileSync(path.join(ROOT, 'wire/costs.html'), 'utf8')
+    check(costs.schema === 'wire-costs/v1' && costs.total.images === images && Math.abs(costs.total.cost_usd - cost) < 0.001 && page.includes('id="costs-tiles"') && page.includes(`<td class="n">${images}</td>`), `the accountant's costs.json and costs.html carry what the ledgers hold: ${images} images, ${cost.toFixed(4)} USD`)
+    check(!/sk-or-v1-[0-9a-f]{40,}/.test(page) && !/sk-or-v1-[0-9a-f]{40,}/.test(JSON.stringify(costs)), 'no key on the costs page or in its data')
+}
 
 let reach = false
 try { const r = await fetch(`${cfgs[0].endpoint}/api/vault/health/${cfgs[0].vault_id}`, { signal: AbortSignal.timeout(10000) }); reach = r.status < 500 } catch (e) { reach = false }
@@ -93,12 +109,14 @@ async function testWire(cfg) {
     check(await pg.evaluate(() => [...document.querySelectorAll('article.story')].every(a => /ai-generated|reviewed/.test(a.querySelector('.status') ? a.querySelector('.status').textContent : 'reviewed'))), `${W} every story shows its status as the vault states it`)
     check(await pg.evaluate(() => [...document.querySelectorAll('#wire-mount a[href]:not([data-site])')].every(a => /^https?:\/\//.test(a.getAttribute('href')) || a.getAttribute('href').startsWith('#'))), `${W} every link drawn from the vault is http(s) or an anchor`)
     check(await pg.evaluate(() => [...document.querySelectorAll('#wire-mount a[data-site]')].every(a => a.closest('#wire-inbox') && /^(\.\.\/)+admin\/notes\//.test(a.getAttribute('href')))), `${W} the only site link inside the edition is the bar's link to the brief`)
-    check(await pg.evaluate(() => !document.querySelector('#wire-mount script, #wire-mount iframe, #wire-mount img, #wire-mount [onclick]')), `${W} nothing from the vault became a script, frame, image or handler`)
+    check(await pg.evaluate(() => !document.querySelector('#wire-mount script, #wire-mount iframe, #wire-mount [onclick]') && [...document.querySelectorAll('#wire-mount img')].every(i => i.closest('figure.ig') && /^infographics\/\d{4}-\d{2}-\d{2}\/[A-Za-z0-9_.-]+\.(webp|png)$/.test(i.getAttribute('src')))), `${W} nothing from the vault became a script, frame, image or handler; the only images are this site's pictures from the ledger`)
+    const pix = await pg.evaluate(() => ({ flag: !!document.getElementById('wire-mount').dataset.pictures, hero: !!document.querySelector('.edition figure.ig.hero img[alt]'), cards: document.querySelectorAll('article.story figure.ig.card img[alt]').length, cost: (document.getElementById('wire-pictures') || {}).textContent || '', chips: [...document.querySelectorAll('figure.ig .chip.ai')].length, figs: document.querySelectorAll('figure.ig').length }))
+    check(pix.flag ? (pix.hero || pix.cards > 0) && pix.chips === pix.figs && /\$\d/.test(pix.cost) && /OpenRouter/.test(pix.cost) : pix.figs === 0 && !pix.cost, `${W} ${pix.flag ? `the pictures this site made are shown with an AI-image chip and their cost (hero ${pix.hero}, ${pix.cards} cards; ${pix.cost.slice(0, 70)}…)` : 'no pictures made for this wire, none shown'}`)
     check(await pg.evaluate(() => document.getElementById('wire-snapshot').hidden), `${W} the snapshot stays hidden while the vault is live`)
     const strips = await count('article.story .meta svg.pv-strip'), graphs = await pg.evaluate(() => ['wire-byday', 'wire-threads', 'wire-entities'].filter(id => { const d = document.getElementById(id); return d && d.tagName === 'DETAILS' && !d.open && d.querySelector('figure.graph svg[role=img][aria-label]') }))
     check(strips === n && graphs.includes('wire-byday') && graphs.includes('wire-entities') && await pg.evaluate(() => [...document.querySelectorAll('#wire-mount figure.graph svg')].every(s => s.getAttribute('aria-label') === (s.querySelector('title') || {}).textContent)), `${W} a provenance strip under every headline (${strips}), and the edition's graphs folded in the header (${graphs.join(', ')}), each svg labelled`)
     check(await pg.evaluate(() => [...document.querySelectorAll('#wire-mount svg [fill], #wire-mount svg [stroke]')].every(e => ['fill', 'stroke'].every(k => { const v = e.getAttribute(k); return v == null || v === 'none' || v === 'currentColor' || /^var\(--[a-z0-9-]+\)$/.test(v) }))), `${W} every colour in the graphs is a theme token`)
-    check((await count('.wires a[aria-current]')) === 1 && (await count('.wires a')) === cfgs.length + 3, `${W} the strip names every wire, marks this one, and links the shared pages`)
+    check((await count('.wires a[aria-current]')) === 1 && (await count('.wires a')) === cfgs.length + 4, `${W} the strip names every wire, marks this one, and links the shared pages (day by day, what it costs, the charter, the desks)`)
     // the verifier's record, when the vault has one: every row at its story, the file's words in the header
     const checked = await count('.edition .checks'), rowsAtStories = await count('article.story .check')
     check(checked <= 1 && (checked || rowsAtStories === 0), `${W} the verifier's record is in the header (${checked}) and at ${rowsAtStories} stories`)

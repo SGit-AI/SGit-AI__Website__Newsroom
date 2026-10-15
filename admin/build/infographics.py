@@ -19,16 +19,21 @@ source's publisher and its licence tier, one key number only when the summary ho
 The stories are --stories when given, else the ones the edition added (brief.new_in_edition), else every story that
 carries that edition, else every story.
 
-PORTRAIT 4:5, NOT SQUARE, for the cards. A card is read in a feed, mostly on a phone, where height is free and width is
-not: 4:5 gives a twenty-word headline (the wires' run to that) three lines at a readable size and still leaves room for
-the four facts under it; a square squeezes the same headline into a smaller face. The bake-off's first rule says to ask
-for the ratio by name and never for the platform.
+SQUARE. The tool's generate() takes a prompt and a model and nothing about size: every model behind it returns a
+1024 by 1024 image (the first live run, 14 October 2026, asked for 16:9 and got a square). So the prompts ask for a
+square and lay the card out for one: the headline in the top two thirds, the four facts under a rule; a ratio the
+prompt names and the model ignores would only make the disclosure untrue. The bake-off's first rule still holds: the
+format by name, never the platform.
 
 THE PROMPT RULES, from articles/the-infographic-bake-off.md: never name the platform; end with "No other text."; say
 "no numbers other than those given"; keep hex codes, type sizes and separators out of any text to be drawn; and attach
 the first image to the later ones for consistency, so the edition's hero is attached to every card as the style
-reference when the tool offers its image input. The model per job also follows the bake-off: a card is a concept slide,
-so the cheap model (Nano Banana 2.1); the hero starts from a document, so GPT-5.4 Image 2. The ids are not hard-coded:
+reference when the tool offers its image input. The model per job started from the bake-off: a card is a concept slide,
+so the cheap model (Nano Banana 2.1); the hero starts from a document, so GPT-5.4 Image 2. The first live run (14 October
+2026) changed the card's model: Nano Banana 2.1 was rate-limited upstream for everyone, and the fallback, Gemini 3.1 Flash
+Image, misspelt two headlines in two cards ("patch paph", "IoT T devices"); a card whose headline is not exact breaks the
+rule the design note sets, so Gemini 3 Pro Image (about 0.14 USD, every word exact in the probe) is now first for cards,
+with the cheaper ids behind it. The ids are not hard-coded:
 at run time the script reads the model ids the tool's own skill files list and takes the first that matches each
 preference, falling back to the tool's default model when none is offered.
 
@@ -78,16 +83,21 @@ BUILD = ROOT / "admin/build"
 TOOL_URL = "https://dev.tools.sgraph.ai/en-gb/infographic-gen/"
 OPENROUTER_GENERATION = "https://openrouter.ai/api/v1/generation?id="
 CA_BUNDLE = Path("/root/.ccr/ca-bundle.crt")
-PRICE_SOURCE = "articles/the-infographic-bake-off.md, OpenRouter prices of 10 October 2026"
-PRICES = {"card": 0.039, "hero": 0.176}          # price per image, from the bake-off's table; the cap is counted in these
+PRICE_SOURCE = "OpenRouter's own figures on the first live run of 14 October 2026 (the bake-off article, 10 October, had 0.039 and 0.176 for Nano Banana 2.1 and GPT-5.4 Image 2)"
+PRICES = {"card": 0.14, "hero": 0.245}           # price per image as OpenRouter billed the first live run (14 October 2026: a card on
+                                                  # Gemini 3 Pro Image, a hero on GPT-5.4 Image 2); the bake-off's table said 0.039 and
+                                                  # 0.176 for Nano Banana 2.1 and GPT-5.4 Image 2. The cap is counted in these.
 # the model per job, as the bake-off's guidance names them; matched, in this order, against the ids the tool's own skill
 # files list at run time, then against OpenRouter's public catalogue of image-output models (no key needed), else the
 # tool's default. On 13 October 2026 the tool's files named three ids and none of these; the catalogue named both.
-MODEL_PREFS = {"card": ["nano-banana-2.1", "gemini-3.1-flash-image", "nano-banana"],
+MODEL_PREFS = {"card": ["gemini-3-pro-image", "nano-banana-2.1", "gemini-3.1-flash-image", "nano-banana"],
                "hero": ["gpt-5.4-image-2", "gpt-5.4-image", "gpt-5-image"]}
 OPENROUTER_MODELS = "https://openrouter.ai/api/v1/models"
 TEMPLATES = {"card": "executive", "hero": "executive"}
 SETTLE_S = 15                                     # OpenRouter's accounting settles after the generation; the skill waits this long
+PAUSE_S = 6                                       # between two generations, so a batch is not a burst
+RETRY_WAITS_S = (20, 45, 90)                      # after an HTTP 429 or a 5xx from the tool or the model: wait, then try again, three times
+MAX_FAILURES_IN_A_ROW = 3                         # then the run stops: a storm of refusals is not a reason to work through the plan
 SAFE_ID = re.compile(r"[^A-Za-z0-9_-]")
 DATE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 # a key number in a summary: money of three figures or more or with a magnitude word (a bare "$4" is a unit price, not a
@@ -193,7 +203,7 @@ def card_prompt(story, wire, beat_label, edition):
     tier = p.get("tier") if p.get("tier") in ("A", "B", "C") else None
     date = story.get("date") if DATE.match(str(story.get("date") or "")) else "date not given"
     number = key_number(story.get("summary"))
-    lines = [f'Portrait 4:5 news card for a daily wire called "{clean(wire, 60)}", edition of {edition}: one story, as text, laid out as a card.',
+    lines = [f'Square news card for a daily wire called "{clean(wire, 60)}", edition of {edition}: one story, as text, laid out as a card that fills the whole square, paper edge to edge: no frame, no border, no background around it, no icons, no illustration.',
              "Draw exactly these lines and nothing else:",
              f'Headline: "{clean(story.get("headline"), 220) or "untitled"}"',
              f"Date: {date}",
@@ -219,7 +229,7 @@ def hero_prompt(bundle, wire, edition, by_id):
     for i, t in enumerate(threads[:5], 1):
         ids = [str(x) for x in (t.get("stories") or []) if isinstance(x, str) and x in by_id]
         doc.append(f"Thread {i}: {clean(t.get('title'), 80) or t.get('id') or 'untitled'} ({', '.join(ids) or 'no stories'}): {clean(t.get('note'), 260)}")
-    lines = [f'Landscape 16:9 overview infographic titled "{clean(wire, 60)}: what is going on, edition of {edition}".',
+    lines = [f'Square overview infographic titled "{clean(wire, 60)}: what is going on, edition of {edition}".',
              "Here is the editor's brief as a document. Draw the picture of it:",
              "---", *doc, "---",
              "Layout: the title across the top; the lead as the largest panel on the left with its headline and its story id as a small label; "
@@ -280,7 +290,7 @@ def write_json(f: Path, data):
     f.write_text(json.dumps(data, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
 
 
-def write_ledgers(slug, edition, out_dir: Path, wire_root: Path, ledger, entries, stopped=None):
+def write_ledgers(slug, edition, out_dir: Path, wire_root: Path, ledger, entries, stopped=None, budget=None):
     """The edition's ledger (entries merged by key, newest state wins) and the wire's cumulative ledger, summed by month."""
     by_key = {e["key"]: e for e in ledger.get("images", []) if e.get("key")}
     for e in entries:
@@ -314,11 +324,14 @@ def write_ledgers(slug, edition, out_dir: Path, wire_root: Path, ledger, entries
             row["images"] += 1
             row["cost_usd"] = round(row["cost_usd"] + (e.get("cost_usd") or 0), 6)
             row["duration_s"] = round(row["duration_s"] + (e.get("duration_s") or 0), 1)
+    if not budget:
+        budget = (load_json(wire_root / "ledger.json", {}) or {}).get("key_budget")   # a dry run keeps the last live run's figure
     write_json(wire_root / "ledger.json", {
         "schema": "wire-infographics-total/v1", "wire": slug or "industry", "updated": now_iso(),
         "what": "Every infographic made for this wire, summed by month and by edition from the editions' ledgers; the figures are OpenRouter's recorded costs.",
         "months": dict(sorted(months.items())), "editions": dict(sorted(editions.items())),
         "total": {"images": sum(r["images"] for r in months.values()), "cost_usd": round(sum(r["cost_usd"] for r in months.values()), 6)},
+        **({"key_budget": budget} if budget else {}),
     })
 
 
@@ -393,16 +406,25 @@ def catalogue_models():
     return [(str(m.get("id")), str(m.get("name") or "")) for m in data if isinstance(m, dict) and "image" in ((m.get("architecture") or {}).get("output_modalities") or [])]
 
 
-def choose_model(kind, offered, catalogue):
-    """Preferences in order; for each, the tool's own list first, then the catalogue; else the tool's default (offered[0]). Returns (id, how)."""
+def choose_models(kind, offered, catalogue):
+    """Every preference that is offered, in order: for each, the tool's own list first, then the catalogue; the tool's default
+    (offered[0]) last. A list of (id, how), so that a model refused upstream for the whole run gives way to the next."""
+    out, seen = [], set()
     for pref in MODEL_PREFS[kind]:
         for m in offered:
-            if pref in m:
-                return m, f"the tool lists it (matched {pref})"
+            if pref in m and m not in seen:
+                out.append((m, f"the tool lists it (matched {pref})")); seen.add(m)
         for m, name in catalogue:
-            if pref in m or pref.replace("-", " ") in name.lower():
-                return m, f"OpenRouter's catalogue lists it as {name} (matched {pref}); the tool passes the id through"
-    return (offered[0] if offered else None), "no preference offered; the tool's default"
+            if (pref in m or pref.replace("-", " ") in name.lower()) and m not in seen:
+                out.append((m, f"OpenRouter's catalogue lists it as {name} (matched {pref}); the tool passes the id through")); seen.add(m)
+    if offered and offered[0] not in seen:
+        out.append((offered[0], "the tool's default"))
+    return out or [(None, "no model offered; the tool's default")]
+
+
+def choose_model(kind, offered, catalogue):
+    """The first choice, as (id, how)."""
+    return choose_models(kind, offered, catalogue)[0]
 
 
 def check(args):
@@ -430,6 +452,27 @@ def check(args):
         m, how = choose_model(kind, models, catalogue)
         say(f"{kind}: {m or 'the tool default'} ({how})")
     return 0
+
+
+OPENROUTER_KEY_INFO = "https://openrouter.ai/api/v1/auth/key"
+
+
+def query_budget(key):
+    """What OpenRouter says about the key's own budget: its limit, what it has spent and what is left, in USD; the key itself never
+    leaves the header. None when the key is absent or the request fails. The accountant shows this on the costs page."""
+    if not key:
+        return None
+    ctx = ssl.create_default_context(cafile=str(CA_BUNDLE) if CA_BUNDLE.exists() else None)
+    req = urllib.request.Request(OPENROUTER_KEY_INFO, headers={"Authorization": f"Bearer {key}", "Accept": "application/json"})
+    try:
+        with urllib.request.urlopen(req, timeout=30, context=ctx) as r:
+            d = json.loads(r.read().decode("utf-8")).get("data") or {}
+        limit, left = d.get("limit"), d.get("limit_remaining")
+        out = {"at": now_iso(), "limit_usd": float(limit) if limit is not None else None, "remaining_usd": round(float(left), 4) if left is not None else None}
+        out["spent_usd"] = round(out["limit_usd"] - out["remaining_usd"], 4) if out["limit_usd"] is not None and out["remaining_usd"] is not None else None
+        return out
+    except (urllib.error.URLError, ValueError, OSError, TypeError):
+        return None
 
 
 def query_cost(generation_id, key):
@@ -475,16 +518,21 @@ def generate(args, slug, edition, jobs, out_dir: Path, key):
         browser, page = open_tool(p)
         try:
             offered, catalogue = offered_models(page), catalogue_models()
-            models = {k: choose_model(k, offered, catalogue) for k in ("hero", "card")}
+            candidates = {k: choose_models(k, offered, catalogue) for k in ("hero", "card")}
+            for k in ("hero", "card"):      # --hero-model / --card-model: the owner's choice first, the preferences behind it
+                forced = getattr(args, f"{k}_model", None)
+                if forced:
+                    candidates[k] = [(forced, "named on the command line")] + [c for c in candidates[k] if c[0] != forced]
+            models = {k: v[0] for k, v in candidates.items()}
             say("models: " + "; ".join(f"{k} {m or 'tool default'} ({how})" for k, (m, how) in models.items()))
             try:
                 page.evaluate("async (k) => { await window.__tool.connect({ apiKey: k }); return true }", key)   # the key is an argument, never in a script string
             except Exception as e:
                 raise SystemExit(f"infographics: the tool could not connect to OpenRouter: {scrub(e, key)[:200]}")
             hero_png = None
-            made = 0
+            made = failed_in_a_row = 0
             for j in todo:
-                if args.max_images is not None and made >= args.max_images:
+                if args.max_images is not None and made + sum(1 for e in entries if e.get('status') == 'failed') >= args.max_images:   # attempts, not successes: a refusal spends the cap too
                     stopped = f"max-images {args.max_images} reached"
                     break
                 if args.max_cost is not None and spent_est + PRICES[j["kind"]] > args.max_cost + 1e-9:
@@ -496,14 +544,23 @@ def generate(args, slug, edition, jobs, out_dir: Path, key):
                 entry = {"key": j["key"], "kind": j["kind"], "id": j["id"], "prompt_sha256": j["prompt_sha256"], "prompt_file": j["prompt_file"], "template": TEMPLATES[j["kind"]],
                          "model_wanted": model, "model_chosen_because": how, "style_reference": bool(hero_png) if j["kind"] == "card" else None, "at": now_iso()}
                 t0 = time.time()
+                if entries:
+                    time.sleep(PAUSE_S)
                 try:
-                    result = page.evaluate("""async (q) => {
-                        if (q.template) { try { window.__tool.setTemplate(q.template) } catch (e) { /* the template is a nicety */ } }
-                        const opts = { prompt: q.prompt, renderUI: false }
-                        if (q.model) opts.model = q.model
-                        const r = await window.__tool.generate(opts)
-                        return { generationId: r.generationId || null, model: r.model || null, duration: r.duration || null, imageSrc: r.imageSrc || '' }
-                    }""", {"prompt": j["prompt"], "model": model, "template": TEMPLATES[j["kind"]]})
+                    try:
+                        result = generate_with_retries(page, j, model)
+                    except Exception as e:
+                        # the model refused for the whole of the waits (rate-limited upstream, for everyone, as OpenRouter's reply says
+                        # for Nano Banana 2.1 on 14 October 2026): the next preference takes the job and the rest of the run
+                        if not (RETRYABLE.search(str(e)) and len(candidates[j["kind"]]) > 1):
+                            raise
+                        was = candidates[j["kind"]].pop(0)[0]
+                        models[j["kind"]] = model, how = candidates[j["kind"]][0]
+                        how = f"{how}; after {was} was refused upstream ({str(e).splitlines()[0][:60]})"
+                        models[j["kind"]] = (model, how)
+                        entry.update({"model_wanted": model, "model_chosen_because": how})
+                        say(f"{j['kind']}: {was} refused for the run; falling through to {model}")
+                        result = generate_with_retries(page, j, model)
                     src = result.get("imageSrc") or ""
                     if not src.startswith("data:"):
                         raise RuntimeError("the tool returned no image")
@@ -516,12 +573,17 @@ def generate(args, slug, edition, jobs, out_dir: Path, key):
                     if j["kind"] == "hero":
                         hero_png = raw
                     made += 1
+                    failed_in_a_row = 0
                     spent_est += PRICES[j["kind"]]
                     say(f"made {j['kind']} {j['id']} -> {fname} ({entry['duration_s']} s, {entry['model']})")
                 except Exception as e:
                     entry.update({"status": "failed", "error": scrub(e, key)[:300]})
                     say(f"failed {j['kind']} {j['id']}: {entry['error'][:120]}")
+                    failed_in_a_row += 1
                 entries.append(entry)
+                if failed_in_a_row >= MAX_FAILURES_IN_A_ROW:
+                    stopped = f"{failed_in_a_row} failures in a row"
+                    break
         finally:
             browser.close()
     # the costs, from OpenRouter's own accounting, once it has settled
@@ -534,6 +596,29 @@ def generate(args, slug, edition, jobs, out_dir: Path, key):
         known = [e["cost_usd"] for e in with_ids if e["cost_usd"] is not None]
         say(f"cost: {sum(known):.4f} USD over {len(known)} images" + (f", {len(with_ids) - len(known)} not reported" if len(known) < len(with_ids) else ""))
     return entries, stopped
+
+
+RETRYABLE = re.compile(r"HTTP (429|5\d\d)\b|Too Many Requests|rate limit|overloaded|timed? ?out", re.I)
+
+
+def generate_with_retries(page, j, model):
+    """One generation through the tool; a 429 or a 5xx is waited out and tried again, up to len(RETRY_WAITS_S) times."""
+    waits = list(RETRY_WAITS_S)
+    while True:
+        try:
+            return page.evaluate("""async (q) => {
+                if (q.template) { try { window.__tool.setTemplate(q.template) } catch (e) { /* the template is a nicety */ } }
+                const opts = { prompt: q.prompt, renderUI: false }
+                if (q.model) opts.model = q.model
+                const r = await window.__tool.generate(opts)
+                return { generationId: r.generationId || null, model: r.model || null, duration: r.duration || null, imageSrc: r.imageSrc || '' }
+            }""", {"prompt": j["prompt"], "model": model, "template": TEMPLATES[j["kind"]]})
+        except Exception as e:
+            if not waits or not RETRYABLE.search(str(e)):
+                raise
+            w = waits.pop(0)
+            say(f"{j['kind']} {j['id']}: {str(e).splitlines()[0][:80]}; waiting {w} s, then trying again ({len(waits)} left)")
+            time.sleep(w)
 
 
 def attach_reference(page, out_dir: Path, hero_png: bytes):
@@ -569,6 +654,8 @@ def main():
     ap.add_argument("--max-images", type=int, help="make at most this many images in this run")
     ap.add_argument("--max-cost", type=float, help="stop before the estimated spend of this run would exceed this many USD")
     ap.add_argument("--out", help="the output folder; wire/<slug>/infographics under the site by default")
+    ap.add_argument("--card-model", default=None, help="an OpenRouter model id for the cards, ahead of the preferences")
+    ap.add_argument("--hero-model", default=None, help="an OpenRouter model id for the hero, ahead of the preferences")
     args = ap.parse_args()
     if args.check:
         return check(args)
@@ -607,7 +694,7 @@ def main():
         say("nothing to make: every image of this plan exists")
         return 0
     entries, stopped = generate(args, slug, edition, todo, out_dir, key)
-    write_ledgers(slug, edition, out_dir, wire_root, ledger, entries, stopped)
+    write_ledgers(slug, edition, out_dir, wire_root, ledger, entries, stopped, budget=query_budget(key))   # the key's budget after the run, never the key
     made = [e for e in entries if e.get("status") == "done"]
     say(f"{len(made)} made, {len(entries) - len(made)} failed, {len(todo) - len(entries)} not attempted{'; stopped: ' + stopped if stopped else ''}; ledgers written")
     return 0

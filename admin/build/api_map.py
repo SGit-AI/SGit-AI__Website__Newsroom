@@ -117,7 +117,7 @@ PAGES = [
     ("persona/board/index.html", "a persona link"), ("for/index.html", "a reading list"), ("for/make.html", "make a reading list"),
     ("wire/index.html", "the Industry Wire's edition"), ("wire/sources.html", "the wire's sources"), ("wire/how.html", "how the wire is read, and its documents"),
     ("wire/owasp/index.html", "the OWASP Wire's edition, with the projects graph"), ("wire/aws/index.html", "the AWS Wire's edition, with the stack and its deadlines"),
-    ("wire/portugal/index.html", "the Portugal Wire's edition, in English and Portuguese, with the ecosystem map"), ("wire/days.html", "every wire day by day"), ("wire/charter.html", "the charter of the wires"), ("wire/desk-brief.html", "the brief for the desks"), ("wire/reach.html", "who should know, by organisation route"),
+    ("wire/portugal/index.html", "the Portugal Wire's edition, in English and Portuguese, with the ecosystem map"), ("wire/days.html", "every wire day by day"), ("wire/costs.html", "what the wires' pictures cost: every image, edition, wire and month, and the key's budget; wire/costs.json is the data"), ("wire/charter.html", "the charter of the wires"), ("wire/desk-brief.html", "the brief for the desks"), ("wire/reach.html", "who should know, by organisation route"),
     ("vault/index.html", "your vault: the reading account carried between devices, with the pane open"),
     ("meter/index.html", "SG Meter, documented"), ("meter/security.html", "the meter's security model"),
     ("demos/vaults/newsroom-synthetic-users/index.html", "the synthetic-readers study, with the embedded vault"),
