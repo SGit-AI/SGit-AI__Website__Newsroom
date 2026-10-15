@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-15 | published | 2,251 | first published | this release | [current](../your-own-newsroom.md) |
+| **v1.0.0** | 2026-10-15 | published | 2,251 | first published | [`97c691038`](https://github.com/SGit-AI/SGit-AI__Website/commit/97c6910387dbafeb1fabccded8cfadf2297ab226) | [current](../your-own-newsroom.md) |
 
 [← Back to the article](../your-own-newsroom.md) · [All articles](../index.md)
 

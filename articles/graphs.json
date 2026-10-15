@@ -55,6 +55,234 @@
   ],
   "articles": [
     {
+      "slug": "journalism-becomes-intelligence",
+      "title": "When journalism becomes intelligence, built: an observation desk for one data-center buildout, from an atlas of 78 events to a community impact tracker, in a vault you can open",
+      "date": "2026-10-15",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/journalism-becomes-intelligence.html",
+      "markdown": "https://newsroom.sgit.ai/articles/journalism-becomes-intelligence.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/journalism-becomes-intelligence.webp",
+      "teaser": "Marconi's deck on journalism as intelligence, built as a working vault: 78 event types, an ontology, 17 observations and a community tracker, all synthetic.",
+      "topics": [
+        "news-and-evidence",
+        "vaults-and-method"
+      ],
+      "tags": [
+        "journalism",
+        "intelligence",
+        "observation",
+        "events",
+        "ontology",
+        "data-centers",
+        "vaults",
+        "sgit",
+        "provenance",
+        "local-news",
+        "synthetic-data",
+        "article"
+      ],
+      "links_out": [
+        "the-wire-as-a-graph",
+        "my-memory-checked",
+        "every-link-points-back"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "ji-desk.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ji-desk.webp",
+          "caption": "The observation desk's cover, in the deck's style: the headline, and a synthetic data-center campus drawn in pen and ink, with orange markers on the power station, the data halls, the water tower, the town and the reservoir. Every marker in the vault opens a record.",
+          "kind": "comparison"
+        },
+        {
+          "file": "ji-ontology.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ji-ontology.webp",
+          "caption": "The ontology slide, working: six entities with their attributes and the six relationships between them, each entity drawn as a pen-and-ink vignette. Clicking an entity lists the observations that changed it.",
+          "kind": "architecture"
+        },
+        {
+          "file": "ji-observations.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ji-observations.webp",
+          "caption": "Every observation adds to what the newsroom knows: four headline observations as folders, January to September 2026, and the full history below, each with time, subject, change, event type and the records it rests on.",
+          "kind": "comparison"
+        },
+        {
+          "file": "ji-tracker.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ji-tracker.webp",
+          "caption": "What is this project changing for the community: the impact tracker by jobs, water, power, land and public commitments, each item a claim, a change or an open question with its record, and the article and alerts it produced.",
+          "kind": "comparison"
+        }
+      ],
+      "graph": {
+        "slug": "journalism-becomes-intelligence",
+        "teaser": "Marconi's deck on journalism as intelligence, built as a working vault: 78 event types, an ontology, 17 observations and a community tracker, all synthetic.",
+        "topics": [
+          "news-and-evidence",
+          "vaults-and-method"
+        ],
+        "core_idea": "Francesco Marconi argues that journalism's advantage moves to how it observes: delta science, an atlas of events with definitions and observable signals, a domain ontology and a persistent record of observations backed by evidence; built here as a vault app that follows his eleven slides on a synthetic data-center buildout, it shows that comparing each new record with the last is where the stories appear, that AI makes observing and comparing cheap while journalists keep the definitions, the checks and the judgement, and that a vault suits an observation desk because the history is versioned, the evidence travels with each claim and the read key opens it.",
+        "nodes": [
+          {
+            "id": "advantage",
+            "label": "The advantage is how you observe",
+            "kind": "claim",
+            "summary": "Marconi: as production gets easy, observation is the edge."
+          },
+          {
+            "id": "delta",
+            "label": "Journalism is delta science",
+            "kind": "concept",
+            "summary": "What changed, why it matters, who is affected."
+          },
+          {
+            "id": "atlas",
+            "label": "An atlas of 78 event types",
+            "kind": "artefact",
+            "summary": "12 families; each event with a definition and a signal."
+          },
+          {
+            "id": "ontology",
+            "label": "A domain ontology",
+            "kind": "artefact",
+            "summary": "Six entities, six relationships."
+          },
+          {
+            "id": "observations",
+            "label": "17 observations",
+            "kind": "artefact",
+            "summary": "Subject, change, time, evidence."
+          },
+          {
+            "id": "workflow",
+            "label": "Observe, compare, check, report, update",
+            "kind": "method",
+            "summary": "One cycle stepped through in the vault."
+          },
+          {
+            "id": "found",
+            "label": "What comparison found",
+            "kind": "example",
+            "summary": "Permit grew, jobs shrank, schedule slipped, water open."
+          },
+          {
+            "id": "tracker",
+            "label": "Community impact tracker",
+            "kind": "artefact",
+            "summary": "Jobs, water, power, land, commitments; an article and alerts."
+          },
+          {
+            "id": "ai",
+            "label": "Where AI fits",
+            "kind": "claim",
+            "summary": "Cheap observing and comparing; people define, check and judge."
+          },
+          {
+            "id": "synthetic",
+            "label": "Synthetic on purpose",
+            "kind": "method",
+            "summary": "A fictional twin of the deck's real example."
+          },
+          {
+            "id": "vault",
+            "label": "Why a vault",
+            "kind": "concept",
+            "summary": "Versioned history, evidence beside claims, a read key."
+          },
+          {
+            "id": "yours",
+            "label": "Make one for your beat",
+            "kind": "question",
+            "summary": "Choose a question, map the system, define events, keep observing."
+          }
+        ],
+        "edges": [
+          {
+            "from": "delta",
+            "to": "advantage",
+            "rel": "extends"
+          },
+          {
+            "from": "atlas",
+            "to": "observations",
+            "rel": "produces"
+          },
+          {
+            "from": "ontology",
+            "to": "observations",
+            "rel": "depends-on"
+          },
+          {
+            "from": "workflow",
+            "to": "observations",
+            "rel": "depends-on"
+          },
+          {
+            "from": "observations",
+            "to": "found",
+            "rel": "produces"
+          },
+          {
+            "from": "found",
+            "to": "tracker",
+            "rel": "leads-to"
+          },
+          {
+            "from": "ai",
+            "to": "workflow",
+            "rel": "extends"
+          },
+          {
+            "from": "synthetic",
+            "to": "observations",
+            "rel": "answers"
+          },
+          {
+            "from": "vault",
+            "to": "observations",
+            "rel": "depends-on"
+          },
+          {
+            "from": "yours",
+            "to": "atlas",
+            "rel": "leads-to"
+          },
+          {
+            "from": "advantage",
+            "to": "yours",
+            "rel": "leads-to"
+          }
+        ],
+        "links": {
+          "articles": [
+            "the-wire-as-a-graph",
+            "my-memory-checked",
+            "every-link-points-back"
+          ],
+          "pages": [
+            "demos/vaults/mesa-ranch-desk/index.html"
+          ],
+          "sites": [
+            "https://bigbendsentinel.com/2026/02/04/massive-ai-data-center-coming-to-pecos-county/",
+            "https://techcrunch.com/?p=2142211"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "As AI makes content production easier, journalism's competitive advantage will increasingly come from how we observe the world.",
+            "why": "Marconi's argument."
+          },
+          {
+            "text": "a single record says little, and the change only appears when it is compared with the last one",
+            "why": "Why the history matters."
+          },
+          {
+            "text": "The shape is the deck's; the facts are fiction, and the vault says so first.",
+            "why": "Why it is synthetic."
+          }
+        ]
+      }
+    },
+    {
       "slug": "your-own-newsroom",
       "title": "Your own newsroom: how a founder can tell their story by voice memo, with an agent that checks it and publishes it to GitHub Pages, and readers who pay a little if they find it useful",
       "date": "2026-10-15",
@@ -1231,6 +1459,7 @@
         "introducing-fractal-semantic-graphs"
       ],
       "links_in": [
+        "journalism-becomes-intelligence",
         "your-own-newsroom",
         "omnichannel-programming"
       ],
@@ -4606,7 +4835,9 @@
         "the-agent-is-the-reader",
         "the-site-is-an-inbox"
       ],
-      "links_in": [],
+      "links_in": [
+        "journalism-becomes-intelligence"
+      ],
       "figures": [
         {
           "file": "wg-reader.webp",
@@ -7867,6 +8098,7 @@
         "sixteen-notes-i-did-not-want-to-lose"
       ],
       "links_in": [
+        "journalism-becomes-intelligence",
         "my-memory-checked",
         "knowledge-that-maintains-itself",
         "four-frameworks-one-agent"

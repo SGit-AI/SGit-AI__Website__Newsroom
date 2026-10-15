@@ -1,0 +1,43 @@
+{
+ "slug": "journalism-becomes-intelligence",
+ "teaser": "Marconi's deck on journalism as intelligence, built as a working vault: 78 event types, an ontology, 17 observations and a community tracker, all synthetic.",
+ "topics": ["news-and-evidence", "vaults-and-method"],
+ "core_idea": "Francesco Marconi argues that journalism's advantage moves to how it observes: delta science, an atlas of events with definitions and observable signals, a domain ontology and a persistent record of observations backed by evidence; built here as a vault app that follows his eleven slides on a synthetic data-center buildout, it shows that comparing each new record with the last is where the stories appear, that AI makes observing and comparing cheap while journalists keep the definitions, the checks and the judgement, and that a vault suits an observation desk because the history is versioned, the evidence travels with each claim and the read key opens it.",
+ "nodes": [
+  {"id": "advantage", "label": "The advantage is how you observe", "kind": "claim", "summary": "Marconi: as production gets easy, observation is the edge."},
+  {"id": "delta", "label": "Journalism is delta science", "kind": "concept", "summary": "What changed, why it matters, who is affected."},
+  {"id": "atlas", "label": "An atlas of 78 event types", "kind": "artefact", "summary": "12 families; each event with a definition and a signal."},
+  {"id": "ontology", "label": "A domain ontology", "kind": "artefact", "summary": "Six entities, six relationships."},
+  {"id": "observations", "label": "17 observations", "kind": "artefact", "summary": "Subject, change, time, evidence."},
+  {"id": "workflow", "label": "Observe, compare, check, report, update", "kind": "method", "summary": "One cycle stepped through in the vault."},
+  {"id": "found", "label": "What comparison found", "kind": "example", "summary": "Permit grew, jobs shrank, schedule slipped, water open."},
+  {"id": "tracker", "label": "Community impact tracker", "kind": "artefact", "summary": "Jobs, water, power, land, commitments; an article and alerts."},
+  {"id": "ai", "label": "Where AI fits", "kind": "claim", "summary": "Cheap observing and comparing; people define, check and judge."},
+  {"id": "synthetic", "label": "Synthetic on purpose", "kind": "method", "summary": "A fictional twin of the deck's real example."},
+  {"id": "vault", "label": "Why a vault", "kind": "concept", "summary": "Versioned history, evidence beside claims, a read key."},
+  {"id": "yours", "label": "Make one for your beat", "kind": "question", "summary": "Choose a question, map the system, define events, keep observing."}
+ ],
+ "edges": [
+  {"from": "delta", "to": "advantage", "rel": "extends"},
+  {"from": "atlas", "to": "observations", "rel": "produces"},
+  {"from": "ontology", "to": "observations", "rel": "depends-on"},
+  {"from": "workflow", "to": "observations", "rel": "depends-on"},
+  {"from": "observations", "to": "found", "rel": "produces"},
+  {"from": "found", "to": "tracker", "rel": "leads-to"},
+  {"from": "ai", "to": "workflow", "rel": "extends"},
+  {"from": "synthetic", "to": "observations", "rel": "answers"},
+  {"from": "vault", "to": "observations", "rel": "depends-on"},
+  {"from": "yours", "to": "atlas", "rel": "leads-to"},
+  {"from": "advantage", "to": "yours", "rel": "leads-to"}
+ ],
+ "links": {
+  "articles": ["the-wire-as-a-graph", "my-memory-checked", "every-link-points-back"],
+  "pages": ["demos/vaults/mesa-ranch-desk/index.html"],
+  "sites": ["https://bigbendsentinel.com/2026/02/04/massive-ai-data-center-coming-to-pecos-county/", "https://techcrunch.com/?p=2142211"]
+ },
+ "quotes": [
+  {"text": "As AI makes content production easier, journalism's competitive advantage will increasingly come from how we observe the world.", "why": "Marconi's argument."},
+  {"text": "a single record says little, and the change only appears when it is compared with the last one", "why": "Why the history matters."},
+  {"text": "The shape is the deck's; the facts are fiction, and the vault says so first.", "why": "Why it is synthetic."}
+ ]
+}

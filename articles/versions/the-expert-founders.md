@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-10-15 | minor | 2,640 | +47 / −19 words; 3 changed, 2 added, 1 removed paragraphs | this release | [what changed](the-expert-founders/v1.1.0.md) · [current](../the-expert-founders.md) |
+| **v1.1.0** | 2026-10-15 | minor | 2,640 | +47 / −19 words; 3 changed, 2 added, 1 removed paragraphs | [`97c691038`](https://github.com/SGit-AI/SGit-AI__Website/commit/97c6910387dbafeb1fabccded8cfadf2297ab226) | [what changed](the-expert-founders/v1.1.0.md) · [current](../the-expert-founders.md) |
 | **v1.0.0** | 2026-10-15 | published | 2,612 | first published | [`a41cf8745`](https://github.com/SGit-AI/SGit-AI__Website/commit/a41cf874549e7e20e12220c727873da9f261495e) |  |
 
 [← Back to the article](../the-expert-founders.md) · [All articles](../index.md)
