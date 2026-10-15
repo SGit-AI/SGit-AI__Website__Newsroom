@@ -55,6 +55,213 @@
   ],
   "articles": [
     {
+      "slug": "secrets-on-public-keys",
+      "title": "secrets.sgit.ai on public keys: no more shared keys, eight ways a secret moves, a vault for the private key, and the commercial service it becomes",
+      "date": "2026-10-15",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/secrets-on-public-keys.html",
+      "markdown": "https://newsroom.sgit.ai/articles/secrets-on-public-keys.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/secrets-on-public-keys.webp",
+      "teaser": "secrets.sgit.ai becomes a service for moving a secret from A to B on public keys only: no shared keys, a vault for the private key, eight scenarios.",
+      "topics": [
+        "vaults-and-method",
+        "startups-and-strategy"
+      ],
+      "tags": [
+        "secrets",
+        "pki",
+        "public-keys",
+        "passkeys",
+        "vaults",
+        "sgit",
+        "sg-send",
+        "qr-codes",
+        "password-managers",
+        "business-models",
+        "brief",
+        "article"
+      ],
+      "links_out": [
+        "the-passkey-opens-the-vault",
+        "handing-secrets-to-agents",
+        "paying-after-the-value"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "ss-architecture.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ss-architecture.webp",
+          "caption": "secrets.sgit.ai on public keys: an identity vault for the private key, unlocked by a passkey; a directory of signed public keys; a request that carries my public key and where to write; channels and clients that mostly exist; and what is charged for. Dashed boxes are to build.",
+          "kind": "architecture"
+        },
+        {
+          "file": "ss-scenarios.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ss-scenarios.webp",
+          "caption": "Eight ways a secret moves, on public keys only: who needs the secret, how the public key reaches the sender, how the ciphertext comes back, where the private key lives, and what exists today.",
+          "kind": "comparison"
+        }
+      ],
+      "graph": {
+        "slug": "secrets-on-public-keys",
+        "teaser": "secrets.sgit.ai becomes a service for moving a secret from A to B on public keys only: no shared keys, a vault for the private key, eight scenarios.",
+        "topics": [
+          "vaults-and-method",
+          "startups-and-strategy"
+        ],
+        "core_idea": "secrets.sgit.ai, a site whose app was never built but whose design already shares secrets through key pairs, a directory and inboxes, becomes a commercial service for moving secrets from A to B; shared keys are dropped because the easy two-word codes were found broken, recoverable offline from their public id; every person, browser and agent gets a key pair, the public key travels by link, QR code, email or WhatsApp, secrets come back encrypted as one-time drops, files or QR codes, and the private key lives in an identity vault unlocked by a passkey that a password manager keeps; most plumbing exists in SG/Send, append lanes and sgit pki, and the capabilities, not the transport, are what is charged for.",
+        "nodes": [
+          {
+            "id": "site",
+            "label": "secrets.sgit.ai today",
+            "kind": "example",
+            "summary": "42 claims shipped, all site and labs; the app proposed."
+          },
+          {
+            "id": "broken",
+            "label": "Easy keys were broken",
+            "kind": "claim",
+            "summary": "30 bits, recoverable from the public id; disabled in June."
+          },
+          {
+            "id": "pki",
+            "label": "Public keys only",
+            "kind": "concept",
+            "summary": "No shared keys, no short codes."
+          },
+          {
+            "id": "scenarios",
+            "label": "Eight ways a secret moves",
+            "kind": "artefact",
+            "summary": "Ask, give, agent, scheduled agent, browser, new device, no server, team."
+          },
+          {
+            "id": "browserkey",
+            "label": "A browser key that stays",
+            "kind": "example",
+            "summary": "Survived a restart, still decrypted, refused export."
+          },
+          {
+            "id": "vault",
+            "label": "The identity vault",
+            "kind": "method",
+            "summary": "The private key, wrapped by passkey PRF, with a recovery code."
+          },
+          {
+            "id": "managers",
+            "label": "Password managers keep the passkey",
+            "kind": "method",
+            "summary": "Google, iCloud, Bitwarden; LastPass unconfirmed."
+          },
+          {
+            "id": "plumbing",
+            "label": "The plumbing exists",
+            "kind": "artefact",
+            "summary": "One-time drops, append lanes, sgit pki."
+          },
+          {
+            "id": "build",
+            "label": "What to build",
+            "kind": "question",
+            "summary": "Requests, directory, one envelope format, a client."
+          },
+          {
+            "id": "commercial",
+            "label": "Charge for the capabilities",
+            "kind": "claim",
+            "summary": "Vault, directory, pairing, teams; one secret free."
+          },
+          {
+            "id": "brief",
+            "label": "The brief",
+            "kind": "artefact",
+            "summary": "Ten steps to refactor the site around public keys."
+          }
+        ],
+        "edges": [
+          {
+            "from": "broken",
+            "to": "pki",
+            "rel": "leads-to"
+          },
+          {
+            "from": "site",
+            "to": "scenarios",
+            "rel": "leads-to"
+          },
+          {
+            "from": "pki",
+            "to": "scenarios",
+            "rel": "produces"
+          },
+          {
+            "from": "browserkey",
+            "to": "scenarios",
+            "rel": "example-of"
+          },
+          {
+            "from": "vault",
+            "to": "pki",
+            "rel": "depends-on"
+          },
+          {
+            "from": "managers",
+            "to": "vault",
+            "rel": "extends"
+          },
+          {
+            "from": "plumbing",
+            "to": "scenarios",
+            "rel": "answers"
+          },
+          {
+            "from": "build",
+            "to": "plumbing",
+            "rel": "extends"
+          },
+          {
+            "from": "commercial",
+            "to": "vault",
+            "rel": "depends-on"
+          },
+          {
+            "from": "brief",
+            "to": "build",
+            "rel": "produces"
+          }
+        ],
+        "links": {
+          "articles": [
+            "the-passkey-opens-the-vault",
+            "handing-secrets-to-agents",
+            "paying-after-the-value"
+          ],
+          "pages": [],
+          "sites": [
+            "https://secrets.sgit.ai/",
+            "https://secrets.sgit.ai/sharing/",
+            "https://github.com/SGit-AI/SGit-AI__CLI/tree/dev/team/explorer/architect/reviews/08/06",
+            "https://www.w3.org/TR/webauthn-3/",
+            "https://developer.mozilla.org/en-US/docs/Web/API/PasswordCredential",
+            "https://github.com/SGit-AI/SGit-AI__Website__Secrets"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "The public key shares *keys*, not data. The server carries the package and can never read it.",
+            "why": "The secrets site's own design, now the product."
+          },
+          {
+            "text": "Public keys remove the need to move a secret key at all.",
+            "why": "The principle."
+          },
+          {
+            "text": "the value is the identity and the workflow, not the transport",
+            "why": "What is charged for."
+          }
+        ]
+      }
+    },
+    {
       "slug": "handing-secrets-to-agents",
       "title": "Handing secrets to agents and browsers: SG/Send's next focus, a key pair where the work runs, one-time drops, and a brief for a site that does only this",
       "date": "2026-10-15",
@@ -86,7 +293,9 @@
         "sixteen-notes-i-did-not-want-to-lose",
         "the-tokens-hook"
       ],
-      "links_in": [],
+      "links_in": [
+        "secrets-on-public-keys"
+      ],
       "figures": [
         {
           "file": "ks-flow.webp",
@@ -130,9 +339,9 @@
           },
           {
             "id": "friendly",
-            "label": "Thirty-bit codes",
+            "label": "Short codes are broken",
             "kind": "claim",
-            "summary": "Fine for minutes and one download, not for keys that last."
+            "summary": "The public id is an unsalted hash of the code: recoverable offline."
           },
           {
             "id": "flip",
@@ -1692,6 +1901,7 @@
         "pay-to-keep-your-persona"
       ],
       "links_in": [
+        "secrets-on-public-keys",
         "the-citizen-developer"
       ],
       "figures": [
@@ -13899,6 +14109,7 @@
         "where-the-vault-keys-live"
       ],
       "links_in": [
+        "secrets-on-public-keys",
         "handing-secrets-to-agents",
         "every-link-points-back",
         "the-vault-crosses-chrome-profiles",

@@ -4,16 +4,16 @@ Written by `admin/build/deps.py`; do not edit. The rule: the newsroom is self-co
 
 | kind | files | references | what it is |
 |---|---:|---:|---|
-| generator | 525 | | pages imported from sgit.ai's build; goes when the generator is ported here |
-| network | 342 | 2369 | links to sgit.ai's pages and the network sites (16 files this site writes itself) |
-| words | 650 | 4547 | sgit.ai or the sgit project named in prose: the disclosure, the kit, the method |
+| generator | 528 | | pages imported from sgit.ai's build; goes when the generator is ported here |
+| network | 344 | 2372 | links to sgit.ai's pages and the network sites (16 files this site writes itself) |
+| words | 655 | 4696 | sgit.ai or the sgit project named in prose: the disclosure, the kit, the method |
 | vault | 39 | 102 | links to a vault: the one dependency that stays |
 
 ## Network links, by target
 
-- 269 × `sgit.ai/about/index.html`
+- 271 × `sgit.ai/about/index.html`
 - 137 × `sgit.ai/admin/versions.html`
-- 133 × `sgit.ai/about/index.md`
+- 134 × `sgit.ai/about/index.md`
 - 97 × `sgit.ai/admin/versions.md`
 - 33 × `graphs.sgit.ai/`
 - 32 × `sgit.ai/network/index.html`
@@ -75,7 +75,7 @@ The pages this site can fix now (an imported page is fixed in the generator, whe
 
 ## Words, in pages this site writes itself
 
-- `admin/versions.html` (95)
+- `admin/versions.html` (97)
 - `admin/notes/2026-10-10__newsroom-move-and-content-audit.md` (50)
 - `newsroom-api/index.html` (30)
 - `newsroom-api/map.json` (24)
@@ -83,9 +83,9 @@ The pages this site can fix now (an imported page is fixed in the generator, whe
 - `engineering/issues/067.html` (19)
 - `engineering/issues/019.html` (18)
 - `engineering/issues/022.html` (18)
+- `engineering/index.html` (17)
 - `engineering/issues/020.html` (17)
 - `llms.txt` (17)
-- `engineering/index.html` (16)
 - `README.md` (15)
 - `engineering/issues/021.html` (15)
 - `admin/build/validate.js` (14)
@@ -95,6 +95,7 @@ The pages this site can fix now (an imported page is fixed in the generator, whe
 - `engineering/releases/v0.12.3.html` (12)
 - `engineering/releases/v0.12.4.html` (12)
 - `engineering/releases/v0.12.5.html` (12)
+- `engineering/releases/v0.12.65.html` (12)
 - `admin/notes/2026-10-11__newsroom-api-map-and-review.md` (11)
 - `admin/build/newsroom-text.json` (9)
 - `assets/site.css` (8)
@@ -108,6 +109,7 @@ The pages this site can fix now (an imported page is fixed in the generator, whe
 - `admin/notes/2026-10-13__design-lab-review.md` (7)
 - `engineering/issues.json` (7)
 - `engineering/issues/037.html` (7)
+- `index.html` (7)
 - `replicate/index.html` (7)
 - `shipped/index.html` (7)
 - `desks/building.html` (6)
@@ -115,7 +117,9 @@ The pages this site can fix now (an imported page is fixed in the generator, whe
 - `engineering/issues/017.html` (6)
 - `engineering/releases/v0.12.61.html` (6)
 - `about/participant.html` (5)
+- `articles/find.json` (5)
 - `assets/newsroom-vault.js` (5)
+- `desks/vaults.html` (5)
 - `engineering/issues/008.html` (5)
 - `engineering/issues/036.html` (5)
 - `engineering/issues/049.html` (5)
@@ -128,10 +132,6 @@ The pages this site can fix now (an imported page is fixed in the generator, whe
 - `passkey/index.html` (5)
 - `about/newsroom-ux.html` (4)
 - `admin/comms.html` (4)
-- `articles/find.json` (4)
 - `assets/themes/README.md` (4)
 - `corrections/how-a-graph-answers-it.html` (4)
 - `design/index.html` (4)
-- `desks/news.html` (4)
-- `desks/strategy.html` (4)
-- `economics/index.html` (4)

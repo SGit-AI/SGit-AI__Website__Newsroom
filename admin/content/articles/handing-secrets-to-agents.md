@@ -32,7 +32,7 @@ The agents are the other half. My observation, from many sessions, is that the m
 
 The back end does most of this already, and I wanted to know exactly how much. The transfer API takes, at creation, `max_downloads` ("Max downloads before exhausted"), `auto_delete` ("Wipe payload after last allowed download"), `expires_at`, and the hash of a delete code; the payload is encrypted in the client before upload; access tokens carry a usage limit and log a hash of the caller's address. What it does not have is a restriction by location. I thought it did; the code has no geographic check, so that is new work if we want it.
 
-It also has a friendly mode, where two words and four digits derive both the key and the transfer id. The word list has 320 words, so a code is one of about a billion, roughly 30 bits, stretched with PBKDF2 at 600,000 iterations. That is fine for a single download that expires in minutes, where every guess has to go through the server. It is not enough to protect a key that lasts, if anyone ever gets the ciphertext. And sgit already has public-key cryptography: `sgit pki keygen` makes an RSA-OAEP 4096 key for encryption and an ECDSA P-256 key for signing, and `encrypt` and `decrypt` do the rest.
+It also has a friendly mode, where two words and four digits derive both the key and the transfer id. The word list has 320 words, so a code is one of about a billion, roughly 30 bits, stretched with PBKDF2 at 600,000 iterations. That is not enough for anything. The sgit team's [security review of 6 August](https://github.com/SGit-AI/SGit-AI__CLI/tree/dev/team/explorer/architect/reviews/08/06) found that the public id is an unsalted hash of the code, so anyone who sees the id can recover the code offline, and that the fixed salt lets one precomputed table open every such transfer; the command line stopped creating them in June. And sgit already has public-key cryptography: `sgit pki keygen` makes an RSA-OAEP 4096 key for encryption and an ECDSA P-256 key for signing, and `encrypt` and `decrypt` do the rest.
 
 ## The design: the recipient makes the key {#design}
 
@@ -78,7 +78,7 @@ The name needs work. Handoff is Apple's; KeyDrop is a Consumer Reports project t
 5. **Receive into the tool.** One command downloads, verifies the owner's signature against a pinned key, decrypts and pipes into `sgit clone -`; nothing is printed.
 6. **Pairing for new sessions.** A session that has no key yet shows a fingerprint and a QR code; the owner approves it from a phone.
 7. **No passphrase prompt for agents.** A documented way to give the private key's protection from the environment, and a test that it never reaches a log.
-8. **Short codes stay short-lived.** The friendly code only for single downloads that expire in minutes.
+8. **No short codes.** The friendly code is retired; a short code is only safe inside a key exchange built for it, as Magic Wormhole does.
 9. **Location limits, if wanted.** New work in the back end, not something it has today.
 
 ## What this does not claim {#limits}
@@ -88,6 +88,7 @@ The name needs work. Handoff is Apple's; KeyDrop is a Consumer Reports project t
 - **The first secret is not solved.** It is moved to the environment, or to a pairing step.
 - **The prior art is from documentation.** None of the other tools was run for this article.
 - **SealDrop is a working name.** Checked on the web, not in trademark registries.
+- **Corrected on 15 October.** The first version said the friendly code was fine for a single download that expires in minutes; the sgit security review shows the code can be recovered offline from the public id, so it is not.
 
 If you hand secrets to agents and have found a better way, write to [agent@riskmandate.ai](mailto:agent@riskmandate.ai).
 

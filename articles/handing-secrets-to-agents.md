@@ -10,7 +10,7 @@
 
 # Handing secrets to agents and browsers: SG/Send's next focus, a key pair where the work runs, one-time drops, and a brief for a site that does only this
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-15 · [article v1.0.0](versions/handing-secrets-to-agents.md) · [newsroom v0.12.64](https://newsroom.sgit.ai/admin/versions.html) · secretspkiagentsbrowserssg-sendsgitvaultsqr-codespasskeysone-time-linksbriefarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-15 · [article v1.1.0, 2 versions](versions/handing-secrets-to-agents.md) · [newsroom v0.12.64](https://newsroom.sgit.ai/admin/versions.html) · secretspkiagentsbrowserssg-sendsgitvaultsqr-codespasskeysone-time-linksbriefarticle
 
 ***Abstract:** The pain I have right now is giving secrets to the places that do my work: vault keys to a browser where the passkey does not reach, and vault keys to the agent sessions I schedule every day. Copying them by hand is slow and risky, and when I tell an agent in its prompt that something is a secret to be careful with, it sometimes refuses to use it at all. So I want SG/Send's technology to focus on one use case: handing a secret, or a public key, to an agent or a browser, as a separate site, mostly client-side, with a command line. The back end already has most of what this needs: a transfer that can be downloaded once and then deleted, an expiry, and client-side encryption; it does not, I found, restrict by location, which I thought it did. The design flips the usual direction: the recipient makes its own key pair where it runs and shows only the public half, by QR code, link or paste; the owner encrypts the secret to it and signs it; the drop is read once; and the secret goes from the drop into the tool, never into the chat. This site's agent ran it end to end on a local server: the agent decrypted the secret, the second download got a 410, the owner's signature verified once the agent knew the owner's key, and a browser made a key pair it refused to export. The industry is moving the other way, keeping secrets out of agents entirely; for an encrypted vault that cannot work, because the key has to reach the place that decrypts.*
 
@@ -36,7 +36,7 @@ The agents are the other half. My observation, from many sessions, is that the m
 
 The back end does most of this already, and I wanted to know exactly how much. The transfer API takes, at creation, `max_downloads` ("Max downloads before exhausted"), `auto_delete` ("Wipe payload after last allowed download"), `expires_at`, and the hash of a delete code; the payload is encrypted in the client before upload; access tokens carry a usage limit and log a hash of the caller's address. What it does not have is a restriction by location. I thought it did; the code has no geographic check, so that is new work if we want it.
 
-It also has a friendly mode, where two words and four digits derive both the key and the transfer id. The word list has 320 words, so a code is one of about a billion, roughly 30 bits, stretched with PBKDF2 at 600,000 iterations. That is fine for a single download that expires in minutes, where every guess has to go through the server. It is not enough to protect a key that lasts, if anyone ever gets the ciphertext. And sgit already has public-key cryptography: `sgit pki keygen` makes an RSA-OAEP 4096 key for encryption and an ECDSA P-256 key for signing, and `encrypt` and `decrypt` do the rest.
+It also has a friendly mode, where two words and four digits derive both the key and the transfer id. The word list has 320 words, so a code is one of about a billion, roughly 30 bits, stretched with PBKDF2 at 600,000 iterations. That is not enough for anything. The sgit team's [security review of 6 August](https://github.com/SGit-AI/SGit-AI__CLI/tree/dev/team/explorer/architect/reviews/08/06) found that the public id is an unsalted hash of the code, so anyone who sees the id can recover the code offline, and that the fixed salt lets one precomputed table open every such transfer; the command line stopped creating them in June. And sgit already has public-key cryptography: `sgit pki keygen` makes an RSA-OAEP 4096 key for encryption and an ECDSA P-256 key for signing, and `encrypt` and `decrypt` do the rest.
 
 ## The design: the recipient makes the key
 
@@ -82,7 +82,7 @@ The name needs work. Handoff is Apple's; KeyDrop is a Consumer Reports project t
 5. **Receive into the tool.** One command downloads, verifies the owner's signature against a pinned key, decrypts and pipes into `sgit clone -`; nothing is printed.
 6. **Pairing for new sessions.** A session that has no key yet shows a fingerprint and a QR code; the owner approves it from a phone.
 7. **No passphrase prompt for agents.** A documented way to give the private key's protection from the environment, and a test that it never reaches a log.
-8. **Short codes stay short-lived.** The friendly code only for single downloads that expire in minutes.
+8. **No short codes.** The friendly code is retired; a short code is only safe inside a key exchange built for it, as Magic Wormhole does.
 9. **Location limits, if wanted.** New work in the back end, not something it has today.
 
 ## What this does not claim
@@ -92,6 +92,7 @@ The name needs work. Handoff is Apple's; KeyDrop is a Consumer Reports project t
 - **The first secret is not solved.** It is moved to the environment, or to a pairing step.
 - **The prior art is from documentation.** None of the other tools was run for this article.
 - **SealDrop is a working name.** Checked on the web, not in trademark registries.
+- **Corrected on 15 October.** The first version said the friendly code was fine for a single download that expires in minutes; the sgit security review shows the code can be recovered offline from the public id, so it is not.
 
 If you hand secrets to agents and have found a better way, write to [agent@riskmandate.ai](mailto:agent@riskmandate.ai).
 
@@ -108,6 +109,10 @@ Vaults & methodAgents & policy[This article as a graph →](graphs.md#handing-se
 - [The passkey opens the vault: a door per path, a master vault for every user, and no server of ours](the-passkey-opens-the-vault.md) Tested: a passkey's PRF bytes compute a door that holds the master's key, and a different path to the same passkey gives different bytes, so a door per path.
 - [Sixteen notes I did not want to lose: a request to send from any browser to my vault, why identity is still this hard, and how two more wires became a product line](sixteen-notes-i-did-not-want-to-lose.md) Sixteen notes stuck in a browser with no passkey led to a request: let any browser send to my vault, by link, text or QR code.
 - [The tokens hook: a token behaviour policy that shows what every session reads, caches, writes and costs, why a prompt cannot do it, and a brief for tokens.hook.sgit.ai](the-tokens-hook.md) A token behaviour policy as a 132-line hook: the user sees what each session reads, caches and costs; a prompt cannot do it.
+
+### Continued by
+
+- [secrets.sgit.ai on public keys: no more shared keys, eight ways a secret moves, a vault for the private key, and the commercial service it becomes](secrets-on-public-keys.md) secrets.sgit.ai becomes a service for moving a secret from A to B on public keys only: no shared keys, a vault for the private key, eight scenarios.
 
 [All articles](index.md) · [All graphs](graphs.md)
 

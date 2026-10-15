@@ -4,18 +4,18 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.12.64 · 134 articles since 2026-08-17; the newest is 2026-10-15. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v0.12.65 · 135 articles since 2026-08-17; the newest is 2026-10-15. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## The lead
 
-- [Handing secrets to agents and browsers: SG/Send's next focus, a key pair where the work runs, one-time drops, and a brief for a site that does only this](articles/handing-secrets-to-agents.md), 2026-10-15, 9 min. SG/Send's next focus: agents and browsers make their own key pair, owners encrypt to it, the drop is read once, and the secret never enters the chat.
+- [secrets.sgit.ai on public keys: no more shared keys, eight ways a secret moves, a vault for the private key, and the commercial service it becomes](articles/secrets-on-public-keys.md), 2026-10-15, 8 min. secrets.sgit.ai becomes a service for moving a secret from A to B on public keys only: no shared keys, a vault for the private key, eight scenarios.
 
 ## Highlights
 
+- [Handing secrets to agents and browsers: SG/Send's next focus, a key pair where the work runs, one-time drops, and a brief for a site that does only this](articles/handing-secrets-to-agents.md), 2026-10-15, 10 min.
 - [My memory, checked: thinking out loud in a voice memo, publishing only what the record supports, and why peer review has moved to before publishing](articles/my-memory-checked.md), 2026-10-15, 6 min.
 - [From sending a file to sgit: eight months of SG/Send, told by its own briefs and commits, and how a file-sharing service became encrypted version control and vaults](articles/from-send-to-sgit.md), 2026-10-15, 9 min.
 - [The scripted talk: a presentation as a timeline that plays on a clock, the two vaults it grows out of, and a player built for tonight's ten minutes](articles/the-scripted-talk.md), 2026-10-15, 7 min.
-- [The tokens hook: a token behaviour policy that shows what every session reads, caches, writes and costs, why a prompt cannot do it, and a brief for tokens.hook.sgit.ai](articles/the-tokens-hook.md), 2026-10-15, 10 min.
 
 ## Who are you reading as?
 
@@ -30,7 +30,7 @@ The reading meter charges a few pence a page from credit kept in your browser, b
 
 ### Agent security & policy (39)
 For security leads, risk owners and boards deciding what an agent may do and who carries the risk.
-- [Handing secrets to agents and browsers: SG/Send's next focus, a key pair where the work runs, one-time drops, and a brief for a site that does only this](articles/handing-secrets-to-agents.md), 2026-10-15, 9 min.
+- [Handing secrets to agents and browsers: SG/Send's next focus, a key pair where the work runs, one-time drops, and a brief for a site that does only this](articles/handing-secrets-to-agents.md), 2026-10-15, 10 min.
 - [The tokens hook: a token behaviour policy that shows what every session reads, caches, writes and costs, why a prompt cannot do it, and a brief for tokens.hook.sgit.ai](articles/the-tokens-hook.md), 2026-10-15, 10 min.
 - [Cedar and the policy vault: a debrief on the policy language agents are adopting, where our behaviour policies and sgit vaults meet it, and a brief for the MVP](articles/cedar-and-the-policy-vault.md), 2026-10-14, 12 min.
 
@@ -40,11 +40,11 @@ For engineers and builders running agents day to day: tools, memory, email, desk
 - [sgit in GitHub Actions, side by side: a showcase repository and site that runs four ways of moving a vault between jobs on every run, measured, with a budget for its LLM steps](articles/sgit-actions-side-by-side.md), 2026-10-14, 7 min.
 - [Agent workflows on ephemeral vaults: seven architectures from one agent to a swarm, a repository of recipes that gates sgit's releases, and what a hundred writers did to an append lane](articles/agent-workflows-on-ephemeral-vaults.md), 2026-10-14, 8 min.
 
-### Vaults & provenance (23)
+### Vaults & provenance (24)
 For anyone who needs evidence they can open: encrypted vaults, keys, graphs and the publishing method.
+- [secrets.sgit.ai on public keys: no more shared keys, eight ways a secret moves, a vault for the private key, and the commercial service it becomes](articles/secrets-on-public-keys.md), 2026-10-15, 8 min.
 - [My memory, checked: thinking out loud in a voice memo, publishing only what the record supports, and why peer review has moved to before publishing](articles/my-memory-checked.md), 2026-10-15, 6 min.
 - [From sending a file to sgit: eight months of SG/Send, told by its own briefs and commits, and how a file-sharing service became encrypted version control and vaults](articles/from-send-to-sgit.md), 2026-10-15, 9 min.
-- [Knowledge that maintains itself: semantic graphs for an organisation's policies and internal knowledge, briefing people and agents from the graph, and vaults to carry the brief](articles/knowledge-that-maintains-itself.md), 2026-10-14, 8 min.
 
 ### The future of news (24)
 For editors, journalists and publishers asking how news gets paid for when agents do the reading.

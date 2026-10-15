@@ -14,13 +14,42 @@ Every article here has a semantic graph beside it: the ideas it rests on, the cl
 
 The graphs are data first and pictures second. Take them as JSON: [all articles in one file](graphs.json), with the topics, the teasers and the links between articles resolved, or one file per article at `articles/graphs/<slug>.json` (for example [this one](graphs/footprint-and-blast-radius.json)). The pages on this site are rendered from the same files at build time; nothing here is hand-written HTML. Since v0.7.77 each graph also carries the article's `figures`: file, URL, caption, the kind the author gave it (`wardley-map`, for one) and every frame of a multi-frame figure, so a picture and its context travel together and "every Wardley map on this site" is a filter, not a reading list.
 
-134 of 134 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
+135 of 135 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
 
 ## How the articles connect
 
 *[diagram]*
 
-134 articles, 759 links between them (1140 mentions in all). 125 articles cite an earlier one; 16 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Footprint and blast radius](#footprint-and-blast-radius) (34 articles link to it). Most linking: [The Mandate Stack](#the-mandate-stack) (20 links out). 0 articles not yet linked either way.
+135 articles, 762 links between them (1144 mentions in all). 126 articles cite an earlier one; 16 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Footprint and blast radius](#footprint-and-blast-radius) (34 articles link to it). Most linking: [The Mandate Stack](#the-mandate-stack) (20 links out). 0 articles not yet linked either way.
+
+## [secrets.sgit.ai on public keys: no more shared keys, eight ways a secret moves, a vault for the private key, and the commercial service it becomes](secrets-on-public-keys.md)
+
+2026-10-15 · Vaults & methodStartups & strategy
+
+secrets.sgit.ai, a site whose app was never built but whose design already shares secrets through key pairs, a directory and inboxes, becomes a commercial service for moving secrets from A to B; shared keys are dropped because the easy two-word codes were found broken, recoverable offline from their public id; every person, browser and agent gets a key pair, the public key travels by link, QR code, email or WhatsApp, secrets come back encrypted as one-time drops, files or QR codes, and the private key lives in an identity vault unlocked by a passkey that a password manager keeps; most plumbing exists in SG/Send, append lanes and sgit pki, and the capabilities, not the transport, are what is charged for.
+
+*[diagram]*
+**concept**claim**method**artefact**example**question
+
+**11 nodes, 10 edges**
+
+- **secrets.sgit.ai today** (example) 42 claims shipped, all site and labs; the app proposed.
+- **Easy keys were broken** (claim) 30 bits, recoverable from the public id; disabled in June.
+- **Public keys only** (concept) No shared keys, no short codes.
+- **Eight ways a secret moves** (artefact) Ask, give, agent, scheduled agent, browser, new device, no server, team.
+- **A browser key that stays** (example) Survived a restart, still decrypted, refused export.
+- **The identity vault** (method) The private key, wrapped by passkey PRF, with a recovery code.
+- **Password managers keep the passkey** (method) Google, iCloud, Bitwarden; LastPass unconfirmed.
+- **The plumbing exists** (artefact) One-time drops, append lanes, sgit pki.
+- **What to build** (question) Requests, directory, one envelope format, a client.
+- **Charge for the capabilities** (claim) Vault, directory, pairing, teams; one secret free.
+- **The brief** (artefact) Ten steps to refactor the site around public keys.
+
+> The public key shares *keys*, not data. The server carries the package and can never read it. The secrets site's own design, now the product.
+
+> Public keys remove the need to move a secret key at all. The principle.
+
+builds on [The passkey opens the vault: a door per path, a master vault for every user, and no server of ours](#the-passkey-opens-the-vault), [Handing secrets to agents and browsers: SG/Send's next focus, a key pair where the work runs, one-time drops, and a brief for a site that does only this](#handing-secrets-to-agents), [Paying after the value: why a balance that can go negative feels different from a subscription, the psychology behind it, and the experiment this newsroom is running](#paying-after-the-value).
 
 ## [Handing secrets to agents and browsers: SG/Send's next focus, a key pair where the work runs, one-time drops, and a brief for a site that does only this](handing-secrets-to-agents.md)
 
@@ -36,7 +65,7 @@ Giving vault keys to browsers and scheduled agent sessions is the current pain, 
 - **Secrets to sessions and browsers** (question) Vault keys by hand; passkeys that do not always reach.
 - **Warned agents refuse** (example) The more the prompt insists, the more it refuses.
 - **SG/Send already has it** (artefact) One download, deletion, expiry, client-side encryption; no location limit.
-- **Thirty-bit codes** (claim) Fine for minutes and one download, not for keys that last.
+- **Short codes are broken** (claim) The public id is an unsalted hash of the code: recoverable offline.
 - **The recipient makes the key** (method) Public half by QR code, link or text; owner encrypts and signs.
 - **Into the tool, not the chat** (method) Decrypted into sgit clone; never in the prompt or transcript.
 - **Tested end to end** (example) Decrypted once, 410 twice, signature verified, key unexportable.
@@ -50,7 +79,7 @@ Giving vault keys to browsers and scheduled agent sessions is the current pain, 
 
 > The agent is never shown the secret, and never asked to be careful with it. The answer to the refusals.
 
-builds on [The passkey opens the vault: a door per path, a master vault for every user, and no server of ours](#the-passkey-opens-the-vault), [Sixteen notes I did not want to lose: a request to send from any browser to my vault, why identity is still this hard, and how two more wires became a product line](#sixteen-notes-i-did-not-want-to-lose), [The tokens hook: a token behaviour policy that shows what every session reads, caches, writes and costs, why a prompt cannot do it, and a brief for tokens.hook.sgit.ai](#the-tokens-hook).
+builds on [The passkey opens the vault: a door per path, a master vault for every user, and no server of ours](#the-passkey-opens-the-vault), [Sixteen notes I did not want to lose: a request to send from any browser to my vault, why identity is still this hard, and how two more wires became a product line](#sixteen-notes-i-did-not-want-to-lose), [The tokens hook: a token behaviour policy that shows what every session reads, caches, writes and costs, why a prompt cannot do it, and a brief for tokens.hook.sgit.ai](#the-tokens-hook); continued by [secrets.sgit.ai on public keys: no more shared keys, eight ways a secret moves, a vault for the private key, and the commercial service it becomes](#secrets-on-public-keys).
 
 ## [My memory, checked: thinking out loud in a voice memo, publishing only what the record supports, and why peer review has moved to before publishing](my-memory-checked.md)
 
@@ -262,7 +291,7 @@ Subscriptions, gym memberships and annual donations ask people to pay at the mom
 
 > Your balance can go below zero and stay there; nothing is blocked and nothing nags. The rule that makes the experiment different.
 
-builds on [Pay after you read: how a reading meter became a working business model in one afternoon, one release at a time](#pay-after-you-read), [Going live with the reading meter: pay for what you read, go below zero if you like, and the numbers we will check in eight weeks](#going-live-with-the-reading-meter), [Pay to keep your persona: readers should pay because it helps them, not because they feel they should](#pay-to-keep-your-persona); continued by [The citizen developer is good news: the spreadsheet grown up, the best briefs ever written, and the handover from explorers to villagers and town planners that makes them last](#the-citizen-developer).
+builds on [Pay after you read: how a reading meter became a working business model in one afternoon, one release at a time](#pay-after-you-read), [Going live with the reading meter: pay for what you read, go below zero if you like, and the numbers we will check in eight weeks](#going-live-with-the-reading-meter), [Pay to keep your persona: readers should pay because it helps them, not because they feel they should](#pay-to-keep-your-persona); continued by [secrets.sgit.ai on public keys: no more shared keys, eight ways a secret moves, a vault for the private key, and the commercial service it becomes](#secrets-on-public-keys), [The citizen developer is good news: the spreadsheet grown up, the best briefs ever written, and the handover from explorers to villagers and town planners that makes them last](#the-citizen-developer).
 
 ## [The eyeballs get cheap: why open source is about to become the most secure software we have, and why secure, sovereign and paid-for meet at the least code in production](the-eyeballs-get-cheap.md)
 
@@ -1807,7 +1836,7 @@ An end-to-end, client-side account with no sign-in to the site: a passkey with t
 
 > The test is the requirement. Why the door layer is back.
 
-builds on [I miss it, so it is working: the people who decide the roadmap have to use the product, and the vault the newsroom now needs](#i-miss-it), [No server, by design: first I retired the database, now I am retiring the back end](#no-server-by-design), [RFC 0001: two ways to add public-key cryptography to sgit, and the questions we want you to answer](#rfc-0001-public-key-cryptography-for-sgit), [How to run synthetic users on your own site: five people who do not exist, a browser, and an afternoon](#how-to-run-synthetic-users), [Pay after you read: how a reading meter became a working business model in one afternoon, one release at a time](#pay-after-you-read), [Where the vault keys live: key management at sgit-ai v0.20.0, and what comes next](#where-the-vault-keys-live); continued by [Handing secrets to agents and browsers: SG/Send's next focus, a key pair where the work runs, one-time drops, and a brief for a site that does only this](#handing-secrets-to-agents), [Every link points back: 566 links between 105 articles, 15 that point forward, and why an article should know what came next and what corrected it](#every-link-points-back), [The vault crosses Chrome profiles: state and memory between browser sessions, found by using it rather than by building it](#the-vault-crosses-chrome-profiles), [Not a straight line: working for RiskMandate by working on the newsroom, and why the thinking is never wasted](#not-a-straight-line), [Why I love Wardley maps: the best of ours, how I read one, and a map inside a map inside a map](#why-i-love-wardley-maps), [Places of highest leverage: where to focus when the agents can go in every direction, told with three days of real steps](#places-of-highest-leverage), [The site is an inbox: deciding before reading, marks that build the reader's own graph, and why I could not write this brief until the vault existed](#the-site-is-an-inbox), [The vault is live: from a design on 11 October to a reader's vault on newsroom.sgit.ai by two in the morning, and how all of it fits together](#the-vault-is-live), [Two agents, one vault: the Industry Wire is written into an encrypted vault by one agent and drawn by newsroom.sgit.ai, which holds only the read key](#two-agents-one-vault), [Go slow to go fast: moving the newsroom from an explorer project to a villager one, with the brief to do it](#explorer-to-villager-newsroom).
+builds on [I miss it, so it is working: the people who decide the roadmap have to use the product, and the vault the newsroom now needs](#i-miss-it), [No server, by design: first I retired the database, now I am retiring the back end](#no-server-by-design), [RFC 0001: two ways to add public-key cryptography to sgit, and the questions we want you to answer](#rfc-0001-public-key-cryptography-for-sgit), [How to run synthetic users on your own site: five people who do not exist, a browser, and an afternoon](#how-to-run-synthetic-users), [Pay after you read: how a reading meter became a working business model in one afternoon, one release at a time](#pay-after-you-read), [Where the vault keys live: key management at sgit-ai v0.20.0, and what comes next](#where-the-vault-keys-live); continued by [secrets.sgit.ai on public keys: no more shared keys, eight ways a secret moves, a vault for the private key, and the commercial service it becomes](#secrets-on-public-keys), [Handing secrets to agents and browsers: SG/Send's next focus, a key pair where the work runs, one-time drops, and a brief for a site that does only this](#handing-secrets-to-agents), [Every link points back: 566 links between 105 articles, 15 that point forward, and why an article should know what came next and what corrected it](#every-link-points-back), [The vault crosses Chrome profiles: state and memory between browser sessions, found by using it rather than by building it](#the-vault-crosses-chrome-profiles), [Not a straight line: working for RiskMandate by working on the newsroom, and why the thinking is never wasted](#not-a-straight-line), [Why I love Wardley maps: the best of ours, how I read one, and a map inside a map inside a map](#why-i-love-wardley-maps), [Places of highest leverage: where to focus when the agents can go in every direction, told with three days of real steps](#places-of-highest-leverage), [The site is an inbox: deciding before reading, marks that build the reader's own graph, and why I could not write this brief until the vault existed](#the-site-is-an-inbox), [The vault is live: from a design on 11 October to a reader's vault on newsroom.sgit.ai by two in the morning, and how all of it fits together](#the-vault-is-live), [Two agents, one vault: the Industry Wire is written into an encrypted vault by one agent and drawn by newsroom.sgit.ai, which holds only the read key](#two-agents-one-vault), [Go slow to go fast: moving the newsroom from an explorer project to a villager one, with the brief to do it](#explorer-to-villager-newsroom).
 
 ## [I miss it, so it is working: the people who decide the roadmap have to use the product, and the vault the newsroom now needs](i-miss-it.md)
 

@@ -73,6 +73,40 @@
   ],
   "articles": [
     {
+      "slug": "secrets-on-public-keys",
+      "title": "secrets.sgit.ai on public keys: no more shared keys, eight ways a secret moves, a vault for the private key, and the commercial service it becomes",
+      "date": "2026-10-15",
+      "updated": "",
+      "author": "Dinis Cruz",
+      "url": "https://newsroom.sgit.ai/articles/secrets-on-public-keys.html",
+      "markdown": "https://newsroom.sgit.ai/articles/secrets-on-public-keys.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/secrets-on-public-keys.webp",
+      "graph": "https://newsroom.sgit.ai/articles/graphs/secrets-on-public-keys.json",
+      "teaser": "secrets.sgit.ai becomes a service for moving a secret from A to B on public keys only: no shared keys, a vault for the private key, eight scenarios.",
+      "summary": "secrets.sgit.ai started on 5 October as the MVP of a password manager unlocked by a passkey, and it is a good example of our non-linear path: its passkey work became the reader's vault on this newsroom, and its own app was never built; its reality page lists 42 claims shipped, all of them the site, the pipeline and the labs, and the app itself as proposed. Now I want to turn it into a commercial service for one job: moving a secret from A to B. The principle is to stop sharing keys altogether. We tried keys that were easy to use, and the sgit team's own security review found them broken: about 30 bits, a public id that is an unsalted hash of the key, and one precomputed table that opens every one; the command line team disabled creating them in June. So everything moves to public-key cryptography, which the pieces we already have support. Every person, browser and agent has a key pair; the public key is shared freely, by link, QR code, email or WhatsApp; the secret comes back encrypted to it, as a one-time drop, a file or a QR code; and the private key lives in a vault of its own, unlocked by a passkey that Google Password Manager or iCloud Keychain keeps. This site's agent tested the parts that matter: an agent's key pair and a one-time drop, end to end; and a browser key that cannot be exported, which survived a restart and still decrypted. Eight scenarios, what exists for each, what to build, and what to charge for.",
+      "topics": [
+        "vaults-and-method",
+        "startups-and-strategy"
+      ],
+      "tags": [
+        "secrets",
+        "pki",
+        "public-keys",
+        "passkeys",
+        "vaults",
+        "sgit",
+        "sg-send",
+        "qr-codes",
+        "password-managers",
+        "business-models",
+        "brief",
+        "article"
+      ],
+      "placement": [],
+      "linkedin": null,
+      "notes": []
+    },
+    {
       "slug": "handing-secrets-to-agents",
       "title": "Handing secrets to agents and browsers: SG/Send's next focus, a key pair where the work runs, one-time drops, and a brief for a site that does only this",
       "date": "2026-10-15",
