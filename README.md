@@ -53,7 +53,10 @@ those sections are now archived.
 
 ## Structure
 
-- `index.html` — front page: the claim, the 10,000-hours story, the proof strip
+- `index.html` — **the front page, this site's own since v0.12.52, in three views** (`admin/build/front.py`): Broadsheet, Briefing and Your desk are all in the page; `data-view` on `<html>` shows one, set by `assets/front/front.js` before the first paint from what the browser remembers (`newsroom.view`; `?view=briefing` opens one directly, which is how an A/B test sends readers to a view). The views are the Newsroom Design Lab's three directions on this site's tokens (`assets/front/front.css`, tokens only). The editor's words are `admin/content/front/` (the masthead: "Pay for what you read."; the door lines, the publishers' door, the lead when the editor names one; otherwise the newest article leads). Your desk is filled from the meter's and the pane's local records: the balance, the spend, a status per pick, the progress bar, the board; the chooser changes the meter's active persona. `index.md` is the twin; `articles/front.json` the data. `about/index.html`, "Why this exists", comes from `admin/content/front/purpose.json`. Test: `admin/build/test_front.mjs`.
+- `desks/` — the five desks, each an audience (`admin/build/desks.py`), from `articles/find.json`, which `admin/build/find.py` derives from the wire, the articles' markdown twins and the editor's `admin/content/find/find-editorial.json`: a primary and secondary desk, controlled tags, series in order, a format and a reading time for every article. A raw tag the editor has not mapped is listed under `unmapped`, never fatal.
+- `assets/reader/` — the reading strip (`strip.css`, `strip.js`), injected by `chrome.py` on every page with the meter and running where the page is charged: a hairline that fills as the reader goes down the page, and a chip with how far, what this page cost and what is left, from the meter's records.
+- `admin/notes/sgit-ai-dependencies.md` — what the site still takes from sgit.ai, by kind (`admin/build/deps.py`); the rule is that the newsroom is self-contained and the one link it keeps outside itself is to a vault.
 - `thesis/` — the thesis: sell the graph, evidence not truth, the author is the oracle
 - `corrections/` — **corrections must propagate**, the site's most distinctive argument:
   the 10,000-hours case, the 242-paper citation network, how a graph answers it, the
@@ -120,7 +123,7 @@ own provenance chain would refute the site on page one.
    (`admin/build/ids.py`, `articles/ids.json`) and prints each article's number at its foot.
 3. Section builders, if their data or prose changed: `governance/build/build.py`,
    `world-news-day/build/build.py`, and so on, each followed by its own `gates.py`.
-4. `python3 admin/build/ids.py`: refresh `articles/ids.json` (the numbers never change). `python3 admin/build/hubs.py`:
+4. `python3 admin/build/find.py`: the findability data (`articles/find.json`); then `python3 admin/build/front.py`: the front page in three views, `index.md`, `about/index.html` and `articles/front.json`; `python3 admin/build/desks.py`: the desk pages; `python3 admin/build/deps.py`: the sgit.ai dependency report. `python3 admin/build/ids.py`: refresh `articles/ids.json` (the numbers never change). `python3 admin/build/hubs.py`:
    the design, replicate and shipped pages. `python3 admin/build/agents.py`: the agents' pages under `about/`. `python3 admin/build/personas.py`: the persona pages and
    `persona/links.json`. `python3 admin/build/lists.py`: the reading list pages (`for/`). `python3 admin/build/passkey_lab.py`: the passkey lab
    and its vectors. `python3 admin/build/wire.py [--from <clone of the wire's vault>]`: the wire pages, and the snapshot. `python3 admin/build/api_map.py`: the reader API map (`newsroom-api/`), last, so it hashes what the other builders wrote.
@@ -129,8 +132,8 @@ own provenance chain would refute the site on page one.
    and `index.md`.
 7. `python3 admin/build/gen_sitemap.py` and `python3 admin/build/gen_llms_full.py`.
 8. `node admin/build/validate.js`, and, when the meter, the persona pages or the reading lists changed, `node admin/build/test_meter.mjs` and
-   `node admin/build/test_lists.mjs` `node admin/build/test_review.mjs`, `node admin/build/test_passkey.mjs`, `node admin/build/test_wire.mjs`, `node admin/build/test_graphs.mjs`, `node admin/build/test_vault.mjs`, `node admin/build/test_sync.mjs`, `node admin/build/test_pane.mjs`, `node admin/build/test_notes.mjs`, `node admin/build/test_search.mjs`, `node admin/build/test_ask.mjs`, `node admin/build/test_themes.mjs` and `node admin/build/test_inbox.mjs`
-   (browser tests; they need Playwright and skip without it; the wire test reads the real vault). CI runs all thirteen before it tags a release; the inbox test also needs jsqr (`npm install jsqr@1.4.0`) to read the QR code back.
+   `node admin/build/test_lists.mjs` `node admin/build/test_review.mjs`, `node admin/build/test_passkey.mjs`, `node admin/build/test_wire.mjs`, `node admin/build/test_graphs.mjs`, `node admin/build/test_vault.mjs`, `node admin/build/test_sync.mjs`, `node admin/build/test_pane.mjs`, `node admin/build/test_notes.mjs`, `node admin/build/test_search.mjs`, `node admin/build/test_ask.mjs`, `node admin/build/test_themes.mjs`, `node admin/build/test_inbox.mjs` and `node admin/build/test_front.mjs`
+   (browser tests; they need Playwright and skip without it; the wire test reads the real vault). CI runs all fifteen before it tags a release; the inbox test also needs jsqr (`npm install jsqr@1.4.0`) to read the QR code back.
 9. `git commit -am "site vX.Y.Z: ..." && git push origin dev`
 
 Running steps 4 to 7 twice changes nothing; if a second run writes files, something is wrong.

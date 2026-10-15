@@ -15,13 +15,15 @@
   <link rel="stylesheet" href="../assets/site-nav.css">
   <script src="../assets/themes/themes.js"></script>
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.12.51</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.12.52</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
       <a class="nl" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
       <div class="sub">
       <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../about/index.html">Why this exists</a>
+      <a class="sl" href="../desks/index.html">The five desks</a>
       <a class="sl" href="../articles/newsletter/index.html">Newsletter</a>
       <a class="sl" href="../articles/index.html#all">Every article</a>
       <a class="sl" href="../articles/collections/index.html">Collections</a>
@@ -138,6 +140,13 @@
 <div class="tablewrap"><table class="vers">
   <thead><tr><th>Version</th><th>Date</th><th>What shipped</th></tr></thead>
   <tbody>
+    <tr id="v0.12.52">
+      <td class="vnum">v0.12.52</td>
+      <td>15 Oct 2026</td>
+      <td><b>@newsroom.ux: the front page in three views, this site's own.</b> In <a href="../engineering/releases/v0.12.52.html">the release</a>.
+        <p><b>The front page</b> is written here now (<code>admin/build/front.py</code>), in the Design Lab's three directions on one page: Broadsheet, Briefing and <a href="../index.html">Your desk</a>, with a switcher, a memory, and <code>?view=</code> for links and A/B tests. The masthead says <i>Pay for what you read.</i> Your desk and the glance beside the switcher show the reader's own numbers from the meter and the pane: read, spent, left, a status per pick, the progress bar, the board. Six doors, one for publishers.</p>
+        <p><b>Findability:</b> five desks as audiences, a controlled vocabulary, series, formats and reading time for every article (<a href="../articles/find.json">find.json</a>, <a href="../desks/index.html">the desks</a>). <b>The reading strip</b> on every charged page. The footer's sgit.ai network line is gone; <a href="notes/sgit-ai-dependencies.md">the dependency report</a> counts what is left. Cards 058 to 062; <code>test_front.mjs</code> in CI.</p></td>
+    </tr>
     <tr id="v0.12.51">
       <td class="vnum">v0.12.51</td>
       <td>14 Oct 2026</td>
@@ -1064,14 +1073,15 @@
 <footer class="site"><div class="cols">
   <div>
     <div class="brandline">newsroom<span>.sgit.ai</span></div>
-    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
-    <p class="netline"><a href="https://sgit.ai" style="display:inline;padding:0"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://pt.newsroom.sgit.ai" style="display:inline;padding:0">&#8593; pt.newsroom.sgit.ai</a> &middot; <a href="https://graphs.sgit.ai" style="display:inline;padding:0">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai" style="display:inline;padding:0">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai" style="display:inline;padding:0">&#8593; nhi.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai" style="display:inline;padding:0">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.12.51</a> &middot; <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.12.52</a> &middot; <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>The newsroom</h4>
     <a href="../index.html">&#8594; The front page</a>
+    <a href="../about/index.html">Why this exists</a>
+    <a href="../desks/index.html">The five desks</a>
     <a href="../wire/index.html">The Industry Wire</a>
     <a href="../wire/owasp/index.html">The OWASP Wire</a>
     <a href="../wire/aws/index.html">The AWS Wire</a>

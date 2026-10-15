@@ -1,5 +1,5 @@
 {
- "what": "The SGit Newsroom, imported from sgit.ai's built pages at the same paths. Written by admin/build/sync_newsroom.py; do not edit the imported files by hand.",
+ "what": "The SGit Newsroom, imported from sgit.ai's built pages at the same paths. Written by admin/build/sync_newsroom.py; do not edit the imported files by hand. Since v0.12.52 the root index.html and index.md are this site's own (admin/build/front.py) and are not in this record.",
  "sha256": "sha256_source is the file as sgit.ai serves it. sha256 is the file as imported, with the site nav, the site footer, the agent-chip stamp and the index.md version line emptied, because chrome.py restamps those on every release. validate.js check 11 recomputes it for every file listed here.",
  "source": {
   "repository": "https://github.com/SGit-AI/SGit-AI__Website",
@@ -217,7 +217,7 @@
   }
  ],
  "counts": {
-  "files": 2059,
+  "files": 2057,
   "pages": 465,
   "articles": 123,
   "verbatim": 1005,
@@ -9872,16 +9872,6 @@
    "needed_by": [
     "articles/who-are-you-protecting-against.html"
    ]
-  },
-  "index.html": {
-   "from": "articles/index.html",
-   "sha256_source": "a7e1ecc90148aa4668627cbf3943601c27e4046ecd5eb31e244928b716061776",
-   "sha256": "0e91c839805df4c716f2e80b876374426ac32c3bc25bfb71cea6b719ba6d0829"
-  },
-  "index.md": {
-   "from": "articles/index.md",
-   "sha256_source": "2ecbf5b1561e058bcaa9fac06b8e85859ceca8e1e104ccaa58c7b224d0ea870b",
-   "sha256": "8c8b57be9271fb6bb17e0202da17f169b05bccdae21d95eebeafe3fb5523c88a"
   },
   "meter/index.html": {
    "from": "meter/index.html",

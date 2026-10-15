@@ -41,6 +41,8 @@ PARENT_TITLE = ("sgit.ai — the parent project: the vault layer and the shipped
 NAV = [
     ("Newsroom", "index.html", [
         ("Front page", "index.html"),
+        ("Why this exists", "about/index.html"),
+        ("The five desks", "desks/index.html"),
         ("Newsletter", "articles/newsletter/index.html"),
         ("Every article", "articles/index.html#all"),
         ("Collections", "articles/collections/index.html"),
@@ -129,6 +131,8 @@ NAV = [
 FOOTER = [
     ("The newsroom", [
         ("&#8594; The front page", "index.html"),
+        ("Why this exists", "about/index.html"),
+        ("The five desks", "desks/index.html"),
         ("The Industry Wire", "wire/index.html"),
         ("The OWASP Wire", "wire/owasp/index.html"),
         ("The AWS Wire", "wire/aws/index.html"),
@@ -184,23 +188,16 @@ FOOTER = [
 BLURB = ("The SGit Newsroom: one page, one argument, with the figures, the data and the links "
          "to check it. Articles by Dinis Cruz, written from his voice notes by an agent working "
          "as the newsroom; the roles and the rules they work under are public. The method is "
-         "published so that anyone can run a newsroom like it. Part of the "
-         "<a href=\"https://sgit.ai\" style=\"display:inline;padding:0\"><b>sgit.ai</b></a> "
-         "network. All content CC BY 4.0 unless a page states otherwise.")
+         "published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page "
+         "states otherwise.")
 PARTNOTE = ('&#9888; Participant disclosure: published by the sgit project, which is '
             'building the stack this site argues for. '
             '<a href="{up}about/participant.html" style="display:inline;padding:0">'
             'Read the disclosure</a>.')
 PARTNOTE_SELF = '&#9888; Participant disclosure: published by the sgit project. You are on the disclosure page.'
-# Inline on purpose: the newsroom stylesheet sets footer links to display:block, which put
-# each site of the network on its own line with a stray separator between them.
-_NET = 'style="display:inline;padding:0"'
-NETLINE = (f'<a href="https://sgit.ai" {_NET}><b>&#8593; sgit.ai</b></a> &middot; '
-           f'<a href="https://pt.newsroom.sgit.ai" {_NET}>&#8593; pt.newsroom.sgit.ai</a> &middot; '
-           f'<a href="https://graphs.sgit.ai" {_NET}>&#8593; graphs.sgit.ai</a> &middot; '
-           f'<a href="https://pki.sgit.ai" {_NET}>&#8593; pki.sgit.ai</a> &middot; '
-           f'<a href="https://nhi.sgit.ai" {_NET}>&#8593; nhi.sgit.ai</a> &middot; '
-           f'<a href="https://docs.diniscruz.ai" {_NET}>&#8593; docs.diniscruz.ai</a> &mdash; the prior art')
+# The network line (sgit.ai, pt.newsroom, graphs, pki, nhi, docs.diniscruz.ai, each with an arrow) left the
+# footer in v0.12.52: the newsroom stands on its own, and the only thing it points at outside itself is a
+# vault, from the page that has one (card 062). The network has its own page, network/index.html.
 
 
 def newsroom_style(text):
@@ -254,7 +251,9 @@ def nav_html(rel, up, newsroom=False, meter=False):
             + (f'  <sg-meter class="meter-nav" view="balance"></sg-meter>\n' if meter else '')
             + (f'  <button class="vault-btn" type="button" aria-expanded="false" title="Your vault: the reading account carried between your devices"><span class="dot"></span>Vault</button>\n'
                f'  <link rel="stylesheet" href="{up}assets/vault-pane/vault-pane.css">\n'
-               f'  <script type="module" src="{up}assets/vault-pane/vault-pane.js"></script>\n' if meter else '')
+               f'  <script type="module" src="{up}assets/vault-pane/vault-pane.js"></script>\n'
+               f'  <link rel="stylesheet" href="{up}assets/reader/strip.css">\n'
+               f'  <script src="{up}assets/reader/strip.js" defer></script>\n' if meter else '')
             + f'  <div class="theme-pick"></div>\n'
             f'  <a class="gh" href="{GH}" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>\n'
             f'  </div>\n'
@@ -277,7 +276,6 @@ def footer_html(rel, up, twin=None):
             f'  <div>\n'
             f'    <div class="brandline">newsroom<span>.sgit.ai</span></div>\n'
             f'    <p>{BLURB}</p>\n'
-            f'    <p class="netline">{NETLINE}</p>\n'
             f'    <p class="partnote">{partnote}</p>\n'
             f'    <p class="verline">site <a href="{up}admin/versions.html">{VERSION}</a> &middot; '
             f'<a href="{up}admin/index.html">engineering</a>{md_twin}</p>\n'

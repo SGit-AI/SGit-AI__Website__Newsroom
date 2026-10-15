@@ -21,13 +21,15 @@
   <link rel="stylesheet" href="../assets/site-nav.css">
   <script src="../assets/themes/themes.js"></script>
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.12.51</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.12.52</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
       <a class="nl" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
       <div class="sub">
       <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../about/index.html">Why this exists</a>
+      <a class="sl" href="../desks/index.html">The five desks</a>
       <a class="sl" href="../articles/newsletter/index.html">Newsletter</a>
       <a class="sl" href="../articles/index.html#all">Every article</a>
       <a class="sl" href="../articles/collections/index.html">Collections</a>
@@ -171,7 +173,11 @@
 <h2 id="chrome">The chrome</h2>
 <p>Every page is hand-written static HTML. The nav row and footer columns are defined once in <code>admin/build/chrome.py</code> and rewritten in place across the tree on every run.</p>
 <p>Since v0.12.12 the nav block also carries the site's colour and the bar's layout, in that order, as the first things in the body of every page: <code>assets/themes/themes.css</code> (the five themes, every token in every theme, and the rules that shadow the imported stylesheet's literal colours), <code>assets/themes/themes.js</code> (a classic script that sets <code>data-theme</code> on <code>&lt;html&gt;</code> from what this browser remembers, before the first paint, and draws the picker) and <code>assets/site-nav.css</code> (the bar on one row in both looks, with the tools as one cluster). The rule that a stylesheet names a colour through a token, and the tokens themselves, are in <a href="../assets/themes/README.md"><code>assets/themes/README.md</code></a>; <code>admin/build/test_themes.mjs</code> keeps it, and <code>admin/build/shots_themes.mjs</code> takes the pictures. The design note is <a href="notes/2026-10-13__five-themes-and-the-bar.md">five themes, and the bar on one row</a>.</p>
-<pre class="term"><code>python3 admin/build/gen_documents.py   # reader pages for every document under briefs/
+<p>Since v0.12.52 the front page is this site's own: <code>admin/build/front.py</code> writes <code>index.html</code> in three views (Broadsheet, Briefing, Your desk; all in the page, <code>data-view</code> on <code>&lt;html&gt;</code> shows one, set by <code>assets/front/front.js</code> before the first paint and kept under <code>newsroom.view</code>), <code>index.md</code>, <code>about/index.html</code> and <code>articles/front.json</code>, from the wire, <code>articles/find.json</code> (<code>admin/build/find.py</code>: desks, controlled tags, series, formats, reading time) and the editor's words in <code>admin/content/front/</code>. <code>admin/build/desks.py</code> writes the desk pages. The nav block also carries the reading strip (<code>assets/reader/</code>) on every page with the meter. <code>admin/build/deps.py</code> writes <a href="notes/sgit-ai-dependencies.md">what the site still takes from sgit.ai</a>. Test: <code>admin/build/test_front.mjs</code>.</p>
+<pre class="term"><code>python3 admin/build/find.py            # findability: articles/find.json
+python3 admin/build/front.py           # the front page in three views, index.md, about/, articles/front.json
+python3 admin/build/desks.py           # the desk pages
+python3 admin/build/gen_documents.py   # reader pages for every document under briefs/
 python3 admin/build/gen_llms_full.py   # the whole document set as one fetchable file
 python3 admin/build/chrome.py         # rewrites nav + footer everywhere, stamps the version
 node    admin/build/validate.js       # the gate</code></pre>
@@ -193,6 +199,10 @@ node    admin/build/validate.js       # the gate</code></pre>
 <pre class="tree"><code>.github/workflows/deploy-pages.yml   <i>validate → tag → deploy</i>
 admin/build/validate.js              <i>the gate</i>
 admin/build/chrome.py                <i>the single definition of nav and footer</i>
+admin/build/front.py                 <i>the front page in three views (index.html, index.md, about/, articles/front.json)</i>
+admin/build/find.py                  <i>findability: desks, tags, series, formats, reading time (articles/find.json)</i>
+admin/build/desks.py                 <i>the desk pages</i>
+admin/build/deps.py                  <i>what the site still takes from sgit.ai (admin/notes/sgit-ai-dependencies.md)</i>
 admin/build/gen_documents.py         <i>reader pages from briefs/, raw md stays the source</i>
 admin/build/gen_llms_full.py         <i>llms-full.txt — the whole document set in one fetch</i>
 admin/build/version.txt              <i>the version, owned here</i>
@@ -219,14 +229,15 @@ LICENSE  LICENSES.md                 <i>code Apache 2.0, content CC BY 4.0</i></
 <footer class="site"><div class="cols">
   <div>
     <div class="brandline">newsroom<span>.sgit.ai</span></div>
-    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
-    <p class="netline"><a href="https://sgit.ai" style="display:inline;padding:0"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://pt.newsroom.sgit.ai" style="display:inline;padding:0">&#8593; pt.newsroom.sgit.ai</a> &middot; <a href="https://graphs.sgit.ai" style="display:inline;padding:0">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai" style="display:inline;padding:0">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai" style="display:inline;padding:0">&#8593; nhi.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai" style="display:inline;padding:0">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.12.51</a> &middot; <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.12.52</a> &middot; <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>The newsroom</h4>
     <a href="../index.html">&#8594; The front page</a>
+    <a href="../about/index.html">Why this exists</a>
+    <a href="../desks/index.html">The five desks</a>
     <a href="../wire/index.html">The Industry Wire</a>
     <a href="../wire/owasp/index.html">The OWASP Wire</a>
     <a href="../wire/aws/index.html">The AWS Wire</a>

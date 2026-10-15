@@ -1,0 +1,20 @@
+/* newsroom.sgit.ai: the reading strip (card 061). On every page that carries the meter and charges for
+   itself: a hairline across the top of the viewport that fills as the reader goes down the page, and a
+   small chip, bottom right, that says how far they are, what this page has cost and what is left. The
+   chip is the meter's own numbers, read from its records; nothing here charges. Tokens only
+   (assets/themes/README.md); the gate is admin/build/test_themes.mjs. */
+.read-strip { position: fixed; top: 0; left: 0; right: 0; height: 3px; z-index: 60; pointer-events: none; background: transparent; }
+.read-strip > i { display: block; height: 100%; width: 0; background: var(--accent); transition: width .15s linear; }
+.read-chip {
+  position: fixed; right: 12px; bottom: 12px; z-index: 59; display: inline-flex; align-items: center; gap: .5rem;
+  padding: .4rem .7rem; border-radius: 999px; border: 1px solid var(--line2); background: var(--panel); color: var(--text);
+  font: 600 .74rem/1.2 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  box-shadow: var(--shadow-pop); text-decoration: none; opacity: 0; transform: translateY(8px); transition: opacity .2s, transform .2s;
+}
+.read-chip.on { opacity: 1; transform: none; }
+.read-chip:hover { border-color: var(--accent); text-decoration: none; color: var(--head); }
+.read-chip b { color: var(--head); font-weight: 700; }
+.read-chip .pct { color: var(--accent-dk); }
+.read-chip .sep { color: var(--dim2); }
+@media (max-width: 520px) { .read-chip { right: 8px; bottom: 8px; font-size: .7rem; padding: .35rem .6rem; } .read-chip .hide-sm { display: none; } }
+@media print { .read-strip, .read-chip { display: none; } }

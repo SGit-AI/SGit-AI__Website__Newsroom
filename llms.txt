@@ -6,7 +6,7 @@
 > propagate; provenance is the product; pay the person who found the fact), and everything
 > needed to run a newsroom like it.
 
-Site version: v0.12.51 (10 October 2026). Published by the sgit project, which is building
+Site version: v0.12.52 (10 October 2026). Published by the sgit project, which is building
 the stack this site argues for; participant disclosure at /about/participant.html.
 Content CC BY 4.0 unless a page states otherwise; code Apache 2.0.
 
@@ -67,10 +67,23 @@ current, running or planned.
 ## Site map
 
 ### The newsroom
-- /index.html and /articles/index.html: THE FRONT PAGE, the same page at two addresses
-  (canonical /). The edition, a note from the editor, the lead and why it leads, the latest
-  ten, highlights, desk notes, collections, the newsletter, and every article newest first
-  with a topic filter and search. Placement is the Editor role's, from one file
+- /index.html: THE FRONT PAGE, this site's own since v0.12.52 (admin/build/front.py), IN THREE
+  VIEWS on one page: Broadsheet (one lead, the desks, the doors), Briefing (the lead and four
+  more in two sentences each, then a door) and Your desk (the reader's own: what they read, what
+  it cost, their board), chosen by data-view on <html> and kept in the browser under
+  newsroom.view; ?view=briefing or ?view=desk opens one directly. The masthead's heart line is
+  "Pay for what you read." The lead is the newest article unless the editor names one in
+  admin/content/front/front.json. /index.md is the page as markdown; /articles/front.json its
+  data; /articles/find.json the findability data (desks, controlled vocabulary, series, format
+  and reading time per article). Six doors: five personas and one for publishers
+- /about/index.html: WHY THIS EXISTS: the agenda, open by default, who it is for, what the
+  author wants from a reader; the disclosure is at /about/participant.html
+- /desks/index.html and /desks/<id>.html: THE FIVE DESKS, each an audience (Security, Building
+  with agents, Vaults, The news business, Strategy): who it is for, three to start with, its
+  series in reading order, every article on it newest first
+- /articles/index.html: EVERY ARTICLE, the page that was the front page until v0.12.52: the
+  edition, the lead, the latest ten, highlights, desk notes, collections, the newsletter, and
+  every article newest first with a topic filter and search
 - /articles/<slug>.html: an article. Beside it /articles/<slug>.md (markdown twin),
   /articles/versions/<slug>.html (every published version and what changed) and
   /articles/graphs/<slug>.json (its graph)

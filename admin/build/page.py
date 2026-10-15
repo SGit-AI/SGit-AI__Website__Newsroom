@@ -26,9 +26,10 @@ METER_JS = "assets/components/sg-meter/v1/v1.4/v1.4.1/sg-meter.js"
 
 
 def meter_config():
-    """The meter's config, taken from the imported front page so it is written once and is the
-    same on every page. None until the newsroom has been imported."""
-    front = ROOT / "index.html"
+    """The meter's config, taken from the imported Every article page (articles/index.html, which was the
+    front page until v0.12.52) so it is written once and is the same on every page. None until the
+    newsroom has been imported."""
+    front = ROOT / "articles/index.html"
     if not front.exists():
         return None
     m = re.search(r'<script type="application/json" id="sg-meter-config">(.*?)</script>',
@@ -48,7 +49,8 @@ def meter_block(up, title):
     assert (ROOT / METER_JS).exists(), f"{METER_JS} is not on disk; run admin/build/sync_newsroom.py"
     return (f'<sg-meter view="page" kind="free" date="" topics="" title="{esc(title)}, SGit Newsroom" quiet></sg-meter>\n'
             f'<script type="application/json" id="sg-meter-config">{cfg}</script>\n'
-            f'<script>\nimport(\'{up}{METER_JS}\')\n'
+            # a page at the root (up == "") must say ./: a bare specifier is not a module path
+            f'<script>\nimport(\'{up or "./"}{METER_JS}\')\n'
             f" .catch(function (e) {{ console.error('[sg-meter] component failed to load:', e); }});\n</script>\n")
 
 

@@ -1,0 +1,7261 @@
+{
+ "what": "Findability for newsroom.sgit.ai, derived by admin/build/find.py from newsroom/wire.json, the articles' markdown twins and admin/content/find/find-editorial.json. Desks by audience, a controlled vocabulary, series in reading order, a format and a reading time per article. Edit the editorial file, not this one.",
+ "generated_from": [
+  "newsroom/wire.json",
+  "articles/<slug>.md",
+  "admin/content/find/find-editorial.json"
+ ],
+ "rule": {
+  "desks": "Each controlled tag belongs to one desk. An article scores 3 for the desk of its first controlled tag, 2 for its second and 1 for each further one, plus its topics (first 2, others 1; Graphs & knowledge counts for Vaults, Site & engineering for Building). The highest score is the primary desk, the runner-up the secondary. An editor override replaces the rule and says why. A call is debatable when the runner-up scores at least 80% of the winner, or when it was overridden.",
+  "tags": "Near-duplicates and plurals merge into one subject. Format words become the format label. Our own products are never subject tags. Tags that apply to most of the newsroom are rejected: the desk does that job. A raw tag the editor has not mapped is listed under unmapped and waits for the Librarian.",
+  "series": "Two or more articles that tell one story in order; each later part builds on an earlier one.",
+  "formats": "An editor override; else a raw format tag; else a cue in the title or teaser; else Analysis.",
+  "minutes": "words / 230, measured on the markdown twin from the first h2 to Threads."
+ },
+ "desks": [
+  {
+   "id": "security",
+   "label": "Agent security & policy",
+   "short": "Security & policy",
+   "for_whom": "For security leads, risk owners and boards deciding what an agent may do and who carries the risk.",
+   "start_here": [
+    {
+     "slug": "every-risk-is-already-accepted",
+     "why": "Start with the idea the rest stands on: a risk exists the moment the exposure does, so the only question is who accepted it."
+    },
+    {
+     "slug": "footprint-and-blast-radius",
+     "why": "Then the two words this desk uses most, defined: what an agent did, and what its reach could cost."
+    },
+    {
+     "slug": "six-agents-one-inbox",
+     "why": "A real six-agent setup, rule by rule, graded by what actually enforces each one today."
+    },
+    {
+     "slug": "hope-or-enforcement",
+     "why": "The argument measured: one customer service agent built three ways, and how much of each policy is only hope."
+    },
+    {
+     "slug": "authority-outside-the-model",
+     "why": "Where the desk had got to by 11 October: Satya Nadella's seven principles, answered with what runs and what is still design."
+    }
+   ],
+   "count": 35,
+   "secondary_count": 22,
+   "series": [
+    "nadella-answer",
+    "behaviour-policy-arc"
+   ]
+  },
+  {
+   "id": "building",
+   "label": "Building with agents",
+   "short": "Building",
+   "for_whom": "For engineers and builders running agents day to day: tools, memory, email, desktops and review.",
+   "start_here": [
+    {
+     "slug": "replicating-the-agentic-inbox",
+     "why": "Begin where the team began: one Claude session with a policy, then roles talking in files, in phases you can copy."
+    },
+    {
+     "slug": "why-my-agents-do-not-run-on-my-laptop",
+     "why": "Why the agents moved off the laptop, and the two walls an operating system gives you."
+    },
+    {
+     "slug": "how-i-work-with-claude",
+     "why": "A year of daily practice in one guide: a session per topic, named agents, curated memory."
+    },
+    {
+     "slug": "a-second-reader-the-agent-cannot-skip",
+     "why": "What happened when a written rule was not enough, and the hook that now checks every draft."
+    },
+    {
+     "slug": "every-mistake-added-a-rule",
+     "why": "The warning that follows: when every mistake adds a rule, complexity wins, and the way back to shipping."
+    }
+   ],
+   "count": 25,
+   "secondary_count": 36,
+   "series": [
+    "agent-team",
+    "where-agents-run",
+    "code-review"
+   ]
+  },
+  {
+   "id": "vaults",
+   "label": "Vaults & provenance",
+   "short": "Vaults",
+   "for_whom": "For anyone who needs evidence they can open: encrypted vaults, keys, graphs and the publishing method.",
+   "start_here": [
+    {
+     "slug": "what-sgit-is",
+     "why": "The shortest way in: git for the files you cannot put on GitHub, encrypted before they leave your machine."
+    },
+    {
+     "slug": "seven-vaults-one-method",
+     "why": "The method, from the first fortnight of August, where every rule exists because something went wrong first."
+    },
+    {
+     "slug": "introducing-fractal-semantic-graphs",
+     "why": "The other idea the site keeps returning to: graphs with no privileged level and no shared schema."
+    },
+    {
+     "slug": "proof-behind-the-claim",
+     "why": "Why the vaults matter to a stranger: proof a reader can open, and what happens when it sits two clicks away."
+    },
+    {
+     "slug": "no-server-by-design",
+     "why": "Where the method stands now: no database, no back end, and servers that cannot read your data."
+    }
+   ],
+   "count": 20,
+   "secondary_count": 33,
+   "series": [
+    "homepage-rebuild",
+    "keys"
+   ]
+  },
+  {
+   "id": "news",
+   "label": "The future of news",
+   "short": "News",
+   "for_whom": "For editors, journalists and publishers asking how news gets paid for when agents do the reading.",
+   "start_here": [
+    {
+     "slug": "future-of-news-story-vault-not-paywall",
+     "why": "The founding argument: the story is a graph of claims and evidence, and the article is one view of it."
+    },
+    {
+     "slug": "how-news-got-here",
+     "why": "The history behind it: the reader was always the product, from 1833 to AI taking the traffic."
+    },
+    {
+     "slug": "the-bridge-followed-to-the-end",
+     "why": "The idea made concrete on one local story, followed to the end and paid back to its sources."
+    },
+    {
+     "slug": "a-meter-in-the-browser",
+     "why": "The newsroom tries it on itself: a penny a page, from credit kept in your browser."
+    },
+    {
+     "slug": "the-agent-is-the-reader",
+     "why": "Where the argument lands on 11 October: agents will pay to read, because it is cheaper than not paying."
+    }
+   ],
+   "count": 24,
+   "secondary_count": 8,
+   "series": [
+    "reading-meter",
+    "local-news",
+    "news-economics"
+   ]
+  },
+  {
+   "id": "strategy",
+   "label": "Strategy & startups",
+   "short": "Strategy",
+   "for_whom": "For founders and investors: pricing, early access, Wardley maps and who pays for open source.",
+   "start_here": [
+    {
+     "slug": "the-question-is-whether-they-miss-it",
+     "why": "The startup question this desk keeps asking first: would anybody miss it if you took it away?"
+    },
+    {
+     "slug": "price-it-then-give-it-away",
+     "why": "The next step: price it, then give it away to people who know you, and measure what it costs them."
+    },
+    {
+     "slug": "saas-apocalypse-decided-by-inertia-not-by-ai",
+     "why": "A Wardley-style reading of the SaaS shake-out: inertia decides, not the AI."
+    },
+    {
+     "slug": "open-source-is-not-free",
+     "why": "Who pays for the long tail, measured from public data, with five ways to pay simulated."
+    },
+    {
+     "slug": "riskmandate-ten-questions",
+     "why": "The founder answering ten hard questions about the company: what it does, and what it deliberately is not."
+    }
+   ],
+   "count": 19,
+   "secondary_count": 16,
+   "series": [
+    "startup-loop"
+   ]
+  }
+ ],
+ "topics_today": {
+  "agents-and-policy": 66,
+  "vaults-and-method": 41,
+  "news-and-evidence": 21,
+  "startups-and-strategy": 37,
+  "graphs-and-knowledge": 29,
+  "site-and-engineering": 40
+ },
+ "vocabulary": [
+  {
+   "id": "behaviour-policy",
+   "label": "Behaviour policy",
+   "desk": "security",
+   "scope": "What an agent is allowed to do, written down, and what enforces each rule: mandate, grants, barriers, the enforcer test.",
+   "absorbs": [
+    [
+     "agent-behaviour-policy",
+     42
+    ],
+    [
+     "agent-behaviour-policies",
+     2
+    ],
+    [
+     "mandate",
+     4
+    ],
+    [
+     "grant",
+     2
+    ],
+    [
+     "delta",
+     1
+    ],
+    [
+     "barriers",
+     4
+    ],
+    [
+     "guardrails",
+     5
+    ],
+    [
+     "business-logic",
+     2
+    ],
+    [
+     "enforcement",
+     4
+    ],
+    [
+     "enforcer-test",
+     1
+    ],
+    [
+     "access-policies",
+     1
+    ],
+    [
+     "agent-control-specification",
+     1
+    ],
+    [
+     "rbac",
+     1
+    ],
+    [
+     "software-was-the-law",
+     1
+    ]
+   ],
+   "count": 44
+  },
+  {
+   "id": "blast-radius",
+   "label": "Blast radius and footprint",
+   "desk": "security",
+   "scope": "What an agent did (footprint, read from logs) and what its reach could cost (blast radius), and how to contain it.",
+   "absorbs": [
+    [
+     "blast-radius",
+     8
+    ],
+    [
+     "footprint",
+     3
+    ],
+    [
+     "containment",
+     2
+    ],
+    [
+     "observability",
+     1
+    ],
+    [
+     "logs",
+     2
+    ]
+   ],
+   "count": 11
+  },
+  {
+   "id": "prompt-injection",
+   "label": "Prompt injection",
+   "desk": "security",
+   "scope": "Hostile instructions arriving in the content an agent reads, and designs that limit what they can reach.",
+   "absorbs": [
+    [
+     "prompt-injection",
+     6
+    ]
+   ],
+   "count": 5
+  },
+  {
+   "id": "insider-risk",
+   "label": "Insider risk",
+   "desk": "security",
+   "scope": "Agents and models treated as insiders with access, the way security teams treat staff.",
+   "absorbs": [
+    [
+     "insider-threat",
+     3
+    ]
+   ],
+   "count": 3
+  },
+  {
+   "id": "human-in-the-loop",
+   "label": "Decisions and human review",
+   "desk": "security",
+   "scope": "Who decides, with what information, and how a second reader, a person or a model, checks the work.",
+   "absorbs": [
+    [
+     "human-in-the-loop",
+     6
+    ],
+    [
+     "accountability",
+     4
+    ],
+    [
+     "agency",
+     3
+    ],
+    [
+     "decision-making",
+     1
+    ],
+    [
+     "maturity-model",
+     2
+    ],
+    [
+     "consent",
+     1
+    ],
+    [
+     "permission-prompts",
+     1
+    ],
+    [
+     "security-ux",
+     1
+    ],
+    [
+     "maker-checker",
+     1
+    ],
+    [
+     "second-reader",
+     1
+    ],
+    [
+     "llm-as-a-judge",
+     1
+    ]
+   ],
+   "count": 10
+  },
+  {
+   "id": "risk-acceptance",
+   "label": "Risk and risk acceptance",
+   "desk": "security",
+   "scope": "Every risk is carried by somebody: who accepted it, until when, and what it costs if it lands.",
+   "absorbs": [
+    [
+     "risk",
+     3
+    ],
+    [
+     "risk-acceptance",
+     5
+    ],
+    [
+     "risk-management",
+     2
+    ],
+    [
+     "grc",
+     1
+    ],
+    [
+     "licence-to-operate",
+     2
+    ],
+    [
+     "insurance",
+     1
+    ],
+    [
+     "liability",
+     3
+    ]
+   ],
+   "count": 12
+  },
+  {
+   "id": "threat-modelling",
+   "label": "Threat modelling",
+   "desk": "security",
+   "scope": "Naming the attacker before choosing the defence: threat models, attack trees, the security line.",
+   "absorbs": [
+    [
+     "security",
+     10
+    ],
+    [
+     "threat-modelling",
+     4
+    ],
+    [
+     "threat-model",
+     1
+    ],
+    [
+     "threat-models",
+     1
+    ],
+    [
+     "threat-agents",
+     1
+    ],
+    [
+     "attack-trees",
+     1
+    ],
+    [
+     "mitre-attack",
+     1
+    ],
+    [
+     "ncsc",
+     1
+    ],
+    [
+     "nist",
+     1
+    ],
+    [
+     "air-gap",
+     1
+    ]
+   ],
+   "count": 12
+  },
+  {
+   "id": "ai-governance",
+   "label": "AI governance frameworks",
+   "desk": "security",
+   "scope": "Control frameworks and standards for AI: the governance stack, AI-BCF, ISO 42001, NIST AI RMF.",
+   "absorbs": [
+    [
+     "ai-governance",
+     2
+    ],
+    [
+     "governance",
+     9
+    ],
+    [
+     "ai-bcf",
+     1
+    ],
+    [
+     "iso-42001",
+     2
+    ],
+    [
+     "nist-ai-rmf",
+     3
+    ],
+    [
+     "controls",
+     1
+    ],
+    [
+     "inventory",
+     1
+    ],
+    [
+     "competence",
+     1
+    ]
+   ],
+   "count": 9
+  },
+  {
+   "id": "regulation",
+   "label": "Regulation and law",
+   "desk": "security",
+   "scope": "The EU AI Act, GDPR, the Cyber Resilience Act and product liability, read for what they ask of builders.",
+   "absorbs": [
+    [
+     "regulation",
+     1
+    ],
+    [
+     "eu-ai-act",
+     5
+    ],
+    [
+     "gdpr",
+     2
+    ],
+    [
+     "right-of-access",
+     2
+    ],
+    [
+     "cyber-resilience-act",
+     1
+    ],
+    [
+     "product-liability",
+     2
+    ]
+   ],
+   "count": 11
+  },
+  {
+   "id": "incidents",
+   "label": "Incidents and resilience",
+   "desk": "security",
+   "scope": "Outages and failures read the way aviation reads them: inquiry, near misses, disclosure.",
+   "absorbs": [
+    [
+     "incidents",
+     1
+    ],
+    [
+     "resilience",
+     3
+    ],
+    [
+     "near-misses",
+     1
+    ],
+    [
+     "second-stories",
+     1
+    ],
+    [
+     "investigation",
+     1
+    ],
+    [
+     "aviation",
+     2
+    ],
+    [
+     "incident-disclosure",
+     1
+    ]
+   ],
+   "count": 4
+  },
+  {
+   "id": "identity-and-secrets",
+   "label": "Identity and secrets",
+   "desk": "security",
+   "scope": "Who an agent or user is, and where their secrets live: passkeys, keyrings, non-human identity.",
+   "absorbs": [
+    [
+     "identity",
+     2
+    ],
+    [
+     "identity-platform",
+     1
+    ],
+    [
+     "cognito",
+     1
+    ],
+    [
+     "secrets",
+     5
+    ],
+    [
+     "passkeys",
+     8
+    ],
+    [
+     "webauthn",
+     2
+    ],
+    [
+     "prf",
+     2
+    ],
+    [
+     "password-managers",
+     1
+    ],
+    [
+     "non-human-identity",
+     1
+    ]
+   ],
+   "count": 10
+  },
+  {
+   "id": "agent-tooling",
+   "label": "Claude, hooks and agent tools",
+   "desk": "building",
+   "scope": "Working with Claude, Claude Code, Cowork and ChatGPT: sessions, hooks, skills, prompts, workflow.",
+   "absorbs": [
+    [
+     "claude",
+     10
+    ],
+    [
+     "claude-code",
+     7
+    ],
+    [
+     "cowork",
+     4
+    ],
+    [
+     "chatgpt",
+     3
+    ],
+    [
+     "hooks",
+     6
+    ],
+    [
+     "skills",
+     2
+    ],
+    [
+     "sessions",
+     1
+    ],
+    [
+     "prompts",
+     1
+    ],
+    [
+     "workflow",
+     3
+    ]
+   ],
+   "count": 19
+  },
+  {
+   "id": "multi-agent",
+   "label": "Multi-agent designs",
+   "desk": "building",
+   "scope": "Teams of agents, orchestration and harnesses, as designed and as they run in production.",
+   "absorbs": [
+    [
+     "multi-agent",
+     3
+    ],
+    [
+     "orchestration",
+     2
+    ],
+    [
+     "harness",
+     1
+    ],
+    [
+     "customer-service",
+     1
+    ],
+    [
+     "production",
+     2
+    ]
+   ],
+   "count": 5
+  },
+  {
+   "id": "agent-memory",
+   "label": "Memory and context",
+   "desk": "building",
+   "scope": "What an agent remembers and how its context survives: memory, compaction, re-anchoring.",
+   "absorbs": [
+    [
+     "memory",
+     9
+    ],
+    [
+     "agentic-memory",
+     1
+    ],
+    [
+     "context",
+     3
+    ],
+    [
+     "context-engineering",
+     1
+    ],
+    [
+     "context-management",
+     1
+    ],
+    [
+     "context-window",
+     1
+    ],
+    [
+     "compaction",
+     2
+    ],
+    [
+     "re-anchoring",
+     1
+    ]
+   ],
+   "count": 13
+  },
+  {
+   "id": "agentic-email",
+   "label": "Agents and email",
+   "desk": "building",
+   "scope": "Inboxes run by agents: email as files, replies that carry the state of the thread, drafts nobody sends.",
+   "absorbs": [
+    [
+     "email",
+     5
+    ],
+    [
+     "email-fs",
+     6
+    ],
+    [
+     "inbox",
+     3
+    ],
+    [
+     "reply",
+     1
+    ],
+    [
+     "summary",
+     1
+    ],
+    [
+     "netiquette",
+     1
+    ],
+    [
+     "bluf",
+     1
+    ],
+    [
+     "drafts",
+     1
+    ]
+   ],
+   "count": 9
+  },
+  {
+   "id": "connectors",
+   "label": "Connectors and twins",
+   "desk": "building",
+   "scope": "What an agent can touch through Gmail, Calendar, CRM or MCP connectors, and a twin that records every call.",
+   "absorbs": [
+    [
+     "connectors",
+     3
+    ],
+    [
+     "connector-twin",
+     2
+    ],
+    [
+     "digital-twins",
+     2
+    ],
+    [
+     "mcp",
+     4
+    ],
+    [
+     "integrations",
+     1
+    ],
+    [
+     "gmail",
+     3
+    ],
+    [
+     "google-workspace",
+     5
+    ],
+    [
+     "crm",
+     4
+    ]
+   ],
+   "count": 15
+  },
+  {
+   "id": "agent-isolation",
+   "label": "Isolation and agent desktops",
+   "desk": "building",
+   "scope": "Where an agent runs and what walls hold it: sandboxes, desktops, execution containers, egress.",
+   "absorbs": [
+    [
+     "isolation",
+     4
+    ],
+    [
+     "sandboxes",
+     1
+    ],
+    [
+     "agent-desktops",
+     2
+    ],
+    [
+     "computer-use",
+     2
+    ],
+    [
+     "egress",
+     1
+    ],
+    [
+     "laptop",
+     1
+    ],
+    [
+     "macos",
+     3
+    ],
+    [
+     "windows-365",
+     1
+    ],
+    [
+     "execution-containers",
+     1
+    ],
+    [
+     "mxc",
+     1
+    ],
+    [
+     "shared-responsibility",
+     2
+    ],
+    [
+     "infrastructure",
+     2
+    ]
+   ],
+   "count": 8
+  },
+  {
+   "id": "code-review",
+   "label": "Code review and due diligence",
+   "desk": "building",
+   "scope": "Reading code at every layer, AI-generated code, and sending an agent to do due diligence.",
+   "absorbs": [
+    [
+     "code-review",
+     5
+    ],
+    [
+     "ai-generated-code",
+     3
+    ],
+    [
+     "static-analysis",
+     1
+    ],
+    [
+     "ast",
+     1
+    ],
+    [
+     "refactoring",
+     2
+    ],
+    [
+     "c4",
+     1
+    ],
+    [
+     "gherkin",
+     1
+    ],
+    [
+     "example-mapping",
+     1
+    ],
+    [
+     "five-whys",
+     1
+    ],
+    [
+     "method-streams",
+     1
+    ],
+    [
+     "o2-platform",
+     1
+    ],
+    [
+     "due-diligence",
+     1
+    ],
+    [
+     "sbom",
+     1
+    ]
+   ],
+   "count": 5
+  },
+  {
+   "id": "synthetic-users",
+   "label": "Synthetic users and simulation",
+   "desk": "building",
+   "scope": "Invented users, simulated runs and tests that show what a design does before real people meet it.",
+   "absorbs": [
+    [
+     "synthetic-users",
+     2
+    ],
+    [
+     "simulation",
+     3
+    ],
+    [
+     "testing",
+     5
+    ],
+    [
+     "ux",
+     1
+    ],
+    [
+     "usability",
+     2
+    ],
+    [
+     "playwright",
+     1
+    ]
+   ],
+   "count": 8
+  },
+  {
+   "id": "client-side",
+   "label": "Client-side and on-device",
+   "desk": "building",
+   "scope": "Logic and models that run in the reader's browser: no server, local first, the Prompt API.",
+   "absorbs": [
+    [
+     "client-side",
+     6
+    ],
+    [
+     "local-first",
+     7
+    ],
+    [
+     "serverless",
+     1
+    ],
+    [
+     "no-database",
+     1
+    ],
+    [
+     "on-device",
+     1
+    ],
+    [
+     "built-in-ai",
+     1
+    ],
+    [
+     "gemini-nano",
+     1
+    ],
+    [
+     "prompt-api",
+     1
+    ],
+    [
+     "chrome",
+     1
+    ],
+    [
+     "webgpu",
+     1
+    ],
+    [
+     "byok",
+     2
+    ],
+    [
+     "chat",
+     1
+    ]
+   ],
+   "count": 14
+  },
+  {
+   "id": "shipping",
+   "label": "Complexity and shipping",
+   "desk": "building",
+   "scope": "Knowing when to stop, keeping complexity down, and checks that prove a release is live.",
+   "absorbs": [
+    [
+     "shipping",
+     3
+    ],
+    [
+     "complexity",
+     1
+    ],
+    [
+     "engineering-practice",
+     1
+    ],
+    [
+     "nfrs",
+     2
+    ],
+    [
+     "knowing-when-to-stop",
+     1
+    ],
+    [
+     "diminishing-returns",
+     1
+    ],
+    [
+     "constraints",
+     2
+    ],
+    [
+     "goodhart",
+     1
+    ],
+    [
+     "kpis",
+     1
+    ],
+    [
+     "seniority",
+     1
+    ],
+    [
+     "ci",
+     6
+    ],
+    [
+     "deploy",
+     1
+    ]
+   ],
+   "count": 10
+  },
+  {
+   "id": "custom-interfaces",
+   "label": "Custom interfaces and vault apps",
+   "desk": "building",
+   "scope": "An interface shaped for each moment, built as a small app on a vault.",
+   "absorbs": [
+    [
+     "custom-ui",
+     2
+    ],
+    [
+     "vault-apps",
+     3
+    ]
+   ],
+   "count": 2
+  },
+  {
+   "id": "deployment",
+   "label": "Deployment and self-hosting",
+   "desk": "building",
+   "scope": "Running sgit and agents somewhere else: Docker, Kubernetes, AWS, a Mac mini.",
+   "absorbs": [
+    [
+     "deployment",
+     1
+    ],
+    [
+     "self-hosting",
+     1
+    ],
+    [
+     "docker",
+     2
+    ],
+    [
+     "docker-compose",
+     1
+    ],
+    [
+     "kubernetes",
+     1
+    ],
+    [
+     "aws",
+     1
+    ],
+    [
+     "cloudfront",
+     1
+    ],
+    [
+     "fargate",
+     1
+    ],
+    [
+     "lambda",
+     1
+    ],
+    [
+     "mac-mini",
+     1
+    ],
+    [
+     "cloud",
+     1
+    ]
+   ],
+   "count": 3
+  },
+  {
+   "id": "encryption-and-keys",
+   "label": "Encryption and keys",
+   "desk": "vaults",
+   "scope": "Encryption a server cannot read, and the keys behind it: key management, public-key cryptography, sealed files.",
+   "absorbs": [
+    [
+     "encryption",
+     5
+    ],
+    [
+     "zero-knowledge",
+     3
+    ],
+    [
+     "confidential-computing",
+     1
+    ],
+    [
+     "enclaves",
+     1
+    ],
+    [
+     "key-management",
+     3
+    ],
+    [
+     "vault-keys",
+     1
+    ],
+    [
+     "pki",
+     9
+    ],
+    [
+     "public-key-cryptography",
+     1
+    ],
+    [
+     "signatures",
+     1
+    ],
+    [
+     "ed25519",
+     1
+    ],
+    [
+     "x25519",
+     1
+    ],
+    [
+     "hpke",
+     1
+    ],
+    [
+     "age",
+     1
+    ],
+    [
+     "sealed-files",
+     1
+    ]
+   ],
+   "count": 13
+  },
+  {
+   "id": "provenance",
+   "label": "Provenance and evidence",
+   "desk": "vaults",
+   "scope": "Where a claim comes from and how a reader can check it: evidence levels, signed claims, verification.",
+   "absorbs": [
+    [
+     "provenance",
+     16
+    ],
+    [
+     "evidence",
+     3
+    ],
+    [
+     "evidence-levels",
+     1
+    ],
+    [
+     "live-evidence",
+     1
+    ],
+    [
+     "signed-claims",
+     1
+    ],
+    [
+     "verification",
+     2
+    ]
+   ],
+   "count": 18
+  },
+  {
+   "id": "fractal-semantic-graphs",
+   "label": "Fractal semantic graphs",
+   "desk": "vaults",
+   "scope": "Graphs with no privileged level and no shared schema, used for stories, code, policy and governance.",
+   "absorbs": [
+    [
+     "fractal-semantic-graphs",
+     27
+    ],
+    [
+     "graphs",
+     9
+    ],
+    [
+     "semantic-graphs",
+     2
+    ],
+    [
+     "ontology",
+     3
+    ]
+   ],
+   "count": 31
+  },
+  {
+   "id": "vault-design",
+   "label": "Vault design",
+   "desk": "vaults",
+   "scope": "How a vault is built: append lanes, partial clones, files instead of a database.",
+   "absorbs": [
+    [
+     "append-lanes",
+     7
+    ],
+    [
+     "partial-clones",
+     1
+    ],
+    [
+     "file-system",
+     1
+    ],
+    [
+     "issues-fs",
+     1
+    ]
+   ],
+   "count": 8
+  },
+  {
+   "id": "publishing-method",
+   "label": "How sgit.ai publishes",
+   "desk": "vaults",
+   "scope": "The method behind sgit.ai: the site network, the homepage, releases, writing with agents.",
+   "absorbs": [
+    [
+     "method",
+     3
+    ],
+    [
+     "publishing",
+     7
+    ],
+    [
+     "network",
+     1
+    ],
+    [
+     "open-publishing",
+     1
+    ],
+    [
+     "homepage",
+     2
+    ],
+    [
+     "agentic-writing",
+     1
+    ],
+    [
+     "voice-memos",
+     2
+    ]
+   ],
+   "count": 12
+  },
+  {
+   "id": "privacy",
+   "label": "Privacy and sovereignty",
+   "desk": "vaults",
+   "scope": "Data that stays the owner's: privacy, data sovereignty, personal agents nobody else holds a key to.",
+   "absorbs": [
+    [
+     "privacy",
+     9
+    ],
+    [
+     "sovereignty",
+     6
+    ],
+    [
+     "data-sovereignty",
+     1
+    ],
+    [
+     "data-classes",
+     1
+    ],
+    [
+     "personal-agents",
+     1
+    ]
+   ],
+   "count": 11
+  },
+  {
+   "id": "micropayments",
+   "label": "Micropayments and the reading meter",
+   "desk": "news",
+   "scope": "Paying a few pence for what you read: the reading meter, credit in the browser, Stripe top-ups.",
+   "absorbs": [
+    [
+     "micropayments",
+     13
+    ],
+    [
+     "reading-meter",
+     1
+    ],
+    [
+     "stripe",
+     1
+    ]
+   ],
+   "count": 11
+  },
+  {
+   "id": "personas",
+   "label": "Personas and personalisation",
+   "desk": "news",
+   "scope": "A reader as someone, not nobody: personas, personalisation, focus, onboarding.",
+   "absorbs": [
+    [
+     "personas",
+     12
+    ],
+    [
+     "personalisation",
+     6
+    ],
+    [
+     "focus",
+     3
+    ],
+    [
+     "onboarding",
+     4
+    ]
+   ],
+   "count": 18
+  },
+  {
+   "id": "story-vault",
+   "label": "Story vaults and liquid content",
+   "desk": "news",
+   "scope": "The story kept as a graph of claims and evidence, with the article as one projection of it.",
+   "absorbs": [
+    [
+     "story-vault",
+     4
+    ],
+    [
+     "liquid-content",
+     2
+    ],
+    [
+     "liquid-utility",
+     2
+    ],
+    [
+     "reader-skills",
+     2
+    ]
+   ],
+   "count": 5
+  },
+  {
+   "id": "local-news",
+   "label": "Local news",
+   "desk": "news",
+   "scope": "Local stories and the gap where local information used to be.",
+   "absorbs": [
+    [
+     "local-news",
+     3
+    ],
+    [
+     "news-deserts",
+     1
+    ],
+    [
+     "nhs",
+     1
+    ],
+    [
+     "hospitals",
+     1
+    ],
+    [
+     "public-information",
+     1
+    ],
+    [
+     "it-outage",
+     1
+    ]
+   ],
+   "count": 3
+  },
+  {
+   "id": "journalism",
+   "label": "Journalism and the news business",
+   "desk": "news",
+   "scope": "How news got here: journalism, advertising, history.",
+   "absorbs": [
+    [
+     "journalism",
+     5
+    ],
+    [
+     "news",
+     3
+    ],
+    [
+     "advertising",
+     1
+    ],
+    [
+     "history",
+     2
+    ]
+   ],
+   "count": 8
+  },
+  {
+   "id": "the-newsroom",
+   "label": "How this newsroom works",
+   "desk": "news",
+   "scope": "The SGit Newsroom itself: its agent readers (Librarian, Cartographer, Historian), its images, its reader features.",
+   "absorbs": [
+    [
+     "newsroom",
+     32
+    ],
+    [
+     "librarian",
+     2
+    ],
+    [
+     "cartographer",
+     2
+    ],
+    [
+     "historian",
+     1
+    ],
+    [
+     "multi-view",
+     1
+    ],
+    [
+     "designer",
+     1
+    ],
+    [
+     "accountant",
+     1
+    ],
+    [
+     "data-scientist",
+     1
+    ],
+    [
+     "evaluation",
+     1
+    ],
+    [
+     "image-models",
+     1
+    ],
+    [
+     "infographics",
+     2
+    ],
+    [
+     "gpt-image",
+     1
+    ],
+    [
+     "gemini",
+     1
+    ],
+    [
+     "openrouter",
+     2
+    ]
+   ],
+   "count": 33
+  },
+  {
+   "id": "agent-readable-web",
+   "label": "Tokens and the agent-readable web",
+   "desk": "news",
+   "scope": "Agents as readers: the token bill, markdown and llms.txt, graphs that answer for fewer tokens.",
+   "absorbs": [
+    [
+     "tokens",
+     6
+    ],
+    [
+     "compression",
+     2
+    ],
+    [
+     "llms-txt",
+     3
+    ],
+    [
+     "markdown",
+     1
+    ],
+    [
+     "webmcp",
+     1
+    ],
+    [
+     "interoperability",
+     1
+    ]
+   ],
+   "count": 8
+  },
+  {
+   "id": "startups",
+   "label": "Startups and early access",
+   "desk": "strategy",
+   "scope": "Founding and launching: does anybody miss it, early access, go to market, investors.",
+   "absorbs": [
+    [
+     "startups",
+     11
+    ],
+    [
+     "founders",
+     2
+    ],
+    [
+     "early-access",
+     2
+    ],
+    [
+     "go-to-market",
+     1
+    ],
+    [
+     "investing",
+     1
+    ],
+    [
+     "startup-programmes",
+     1
+    ]
+   ],
+   "count": 11
+  },
+  {
+   "id": "pricing",
+   "label": "Pricing and economics",
+   "desk": "strategy",
+   "scope": "What to charge and who pays: pricing, business cases, cost and value.",
+   "absorbs": [
+    [
+     "pricing",
+     4
+    ],
+    [
+     "economics",
+     5
+    ],
+    [
+     "cost",
+     2
+    ],
+    [
+     "business-case",
+     1
+    ],
+    [
+     "hypotheses",
+     1
+    ],
+    [
+     "value-proposition",
+     1
+    ]
+   ],
+   "count": 11
+  },
+  {
+   "id": "wardley-maps",
+   "label": "Wardley maps",
+   "desk": "strategy",
+   "scope": "Placing something on the evolution axis, from genesis to commodity, and arguing from where it sits.",
+   "absorbs": [
+    [
+     "wardley-maps",
+     15
+    ],
+    [
+     "wardley",
+     1
+    ],
+    [
+     "explorer-villager-town-planner",
+     1
+    ],
+    [
+     "innovation",
+     1
+    ]
+   ],
+   "count": 13
+  },
+  {
+   "id": "open-source",
+   "label": "Open source and open licences",
+   "desk": "strategy",
+   "scope": "Who keeps the long tail working, open licences, copyright and paying creators.",
+   "absorbs": [
+    [
+     "open-source",
+     11
+    ],
+    [
+     "long-tail",
+     1
+    ],
+    [
+     "homebrew",
+     1
+    ],
+    [
+     "support",
+     1
+    ],
+    [
+     "funding",
+     2
+    ],
+    [
+     "creative-commons",
+     3
+    ],
+    [
+     "open-licence",
+     1
+    ],
+    [
+     "licensing",
+     3
+    ],
+    [
+     "copyright",
+     2
+    ],
+    [
+     "content-creators",
+     1
+    ]
+   ],
+   "count": 15
+  },
+  {
+   "id": "strategy",
+   "label": "Strategy and positioning",
+   "desk": "strategy",
+   "scope": "Inertia, positioning and the SaaS shake-out.",
+   "absorbs": [
+    [
+     "strategy",
+     9
+    ],
+    [
+     "saas",
+     1
+    ],
+    [
+     "inertia",
+     1
+    ],
+    [
+     "positioning",
+     3
+    ]
+   ],
+   "count": 9
+  },
+  {
+   "id": "supply-chains",
+   "label": "Supply chains",
+   "desk": "strategy",
+   "scope": "Chains of parties sharing data: food prices, software supply chains.",
+   "absorbs": [
+    [
+     "supply-chain",
+     8
+    ],
+    [
+     "food",
+     1
+    ],
+    [
+     "deflation",
+     1
+    ]
+   ],
+   "count": 8
+  }
+ ],
+ "rejected": [
+  [
+   "article",
+   116,
+   "format"
+  ],
+  [
+   "agents",
+   67,
+   "too broad to choose from"
+  ],
+  [
+   "vaults",
+   41,
+   "too broad to choose from"
+  ],
+  [
+   "riskmandate",
+   26,
+   "product"
+  ],
+  [
+   "sgit",
+   23,
+   "product"
+  ],
+  [
+   "brief",
+   13,
+   "format"
+  ],
+  [
+   "architecture",
+   4,
+   "too broad to choose from"
+  ],
+  [
+   "response",
+   4,
+   "format"
+  ],
+  [
+   "briefing",
+   2,
+   "format"
+  ],
+  [
+   "business-plan",
+   2,
+   "format"
+  ],
+  [
+   "github",
+   2,
+   "third-party name with no subject of its own"
+  ],
+  [
+   "llm",
+   2,
+   "too broad to choose from"
+  ],
+  [
+   "metrics",
+   2,
+   "too broad to choose from"
+  ],
+  [
+   "sg-meter",
+   2,
+   "product"
+  ],
+  [
+   "walkthrough",
+   2,
+   "format"
+  ],
+  [
+   "ai",
+   1,
+   "too broad to choose from"
+  ],
+  [
+   "business-plans",
+   1,
+   "format"
+  ],
+  [
+   "data-science",
+   1,
+   "too broad to choose from"
+  ],
+  [
+   "experiment",
+   1,
+   "format"
+  ],
+  [
+   "fire",
+   1,
+   "unclear or one-off word"
+  ],
+  [
+   "ft-strategies",
+   1,
+   "third-party name with no subject of its own"
+  ],
+  [
+   "genai",
+   1,
+   "too broad to choose from"
+  ],
+  [
+   "guide",
+   1,
+   "format"
+  ],
+  [
+   "how-to",
+   1,
+   "format"
+  ],
+  [
+   "interview",
+   1,
+   "format"
+  ],
+  [
+   "intro",
+   1,
+   "format"
+  ],
+  [
+   "lets",
+   1,
+   "unclear or one-off word"
+  ],
+  [
+   "llms",
+   1,
+   "too broad to choose from"
+  ],
+  [
+   "mermaid",
+   1,
+   "third-party name with no subject of its own"
+  ],
+  [
+   "meta-muse",
+   1,
+   "third-party name with no subject of its own"
+  ],
+  [
+   "microsoft",
+   1,
+   "third-party name with no subject of its own"
+  ],
+  [
+   "openclaw",
+   1,
+   "third-party name with no subject of its own"
+  ],
+  [
+   "philosophy",
+   1,
+   "unclear or one-off word"
+  ],
+  [
+   "plan",
+   1,
+   "format"
+  ],
+  [
+   "request-for-comments",
+   1,
+   "format"
+  ],
+  [
+   "rfc",
+   1,
+   "format"
+  ],
+  [
+   "slideshare",
+   1,
+   "third-party name with no subject of its own"
+  ],
+  [
+   "sqlite",
+   1,
+   "third-party name with no subject of its own"
+  ],
+  [
+   "talk",
+   1,
+   "format"
+  ],
+  [
+   "users",
+   1,
+   "too broad to choose from"
+  ]
+ ],
+ "rejected_why": {
+  "format": "A format, not a subject. It becomes the format label instead.",
+  "product": "One of our own products. Shown as a product label on the card, never as a subject tag.",
+  "third-party name with no subject of its own": "A company or tool name that adds nothing the subject tags do not already say.",
+  "too broad to choose from": "Applies to most of the newsroom, so it cannot narrow a search. The desk does that job.",
+  "unclear or one-off word": "Used once, with no scope a reader could guess."
+ },
+ "unmapped": [
+  [
+   "accessibility",
+   1
+  ],
+  [
+   "agent-skills",
+   2
+  ],
+  [
+   "agent-to-agent",
+   1
+  ],
+  [
+   "agentic-ai",
+   1
+  ],
+  [
+   "ai-models",
+   1
+  ],
+  [
+   "ai-risk-management",
+   1
+  ],
+  [
+   "analysis",
+   1
+  ],
+  [
+   "anthropomorphism",
+   1
+  ],
+  [
+   "apache-2",
+   1
+  ],
+  [
+   "api-keys",
+   1
+  ],
+  [
+   "approval-fatigue",
+   1
+  ],
+  [
+   "artefacts",
+   1
+  ],
+  [
+   "artifacts",
+   1
+  ],
+  [
+   "attack-surface",
+   1
+  ],
+  [
+   "authorship",
+   2
+  ],
+  [
+   "billing",
+   2
+  ],
+  [
+   "briefs",
+   2
+  ],
+  [
+   "browser",
+   1
+  ],
+  [
+   "build-vs-buy",
+   1
+  ],
+  [
+   "business-model",
+   2
+  ],
+  [
+   "chainguard",
+   3
+  ],
+  [
+   "chrome-profiles",
+   1
+  ],
+  [
+   "code-coverage",
+   1
+  ],
+  [
+   "codex",
+   1
+  ],
+  [
+   "conductor",
+   1
+  ],
+  [
+   "consumer-rights",
+   1
+  ],
+  [
+   "contacts",
+   1
+  ],
+  [
+   "containers",
+   2
+  ],
+  [
+   "copilot",
+   1
+  ],
+  [
+   "copyleft",
+   1
+  ],
+  [
+   "corpus",
+   1
+  ],
+  [
+   "corrections",
+   1
+  ],
+  [
+   "css",
+   1
+  ],
+  [
+   "curation",
+   1
+  ],
+  [
+   "cursor",
+   1
+  ],
+  [
+   "customisation",
+   1
+  ],
+  [
+   "dark-mode",
+   1
+  ],
+  [
+   "debriefs",
+   1
+  ],
+  [
+   "design-system",
+   1
+  ],
+  [
+   "digital-twin",
+   1
+  ],
+  [
+   "disaster-recovery",
+   1
+  ],
+  [
+   "disclosure",
+   1
+  ],
+  [
+   "distributed-work",
+   1
+  ],
+  [
+   "dogfooding",
+   1
+  ],
+  [
+   "elevenlabs",
+   1
+  ],
+  [
+   "engagement",
+   1
+  ],
+  [
+   "engineering",
+   1
+  ],
+  [
+   "ephemeral-vaults",
+   1
+  ],
+  [
+   "estonia",
+   1
+  ],
+  [
+   "europe",
+   3
+  ],
+  [
+   "execution-speed",
+   1
+  ],
+  [
+   "explorer",
+   1
+  ],
+  [
+   "explorer-villager",
+   2
+  ],
+  [
+   "feedback-loop",
+   6
+  ],
+  [
+   "five-readers",
+   1
+  ],
+  [
+   "frameworks",
+   1
+  ],
+  [
+   "freelancers",
+   1
+  ],
+  [
+   "future-of-news",
+   1
+  ],
+  [
+   "gemini-cli",
+   1
+  ],
+  [
+   "github-actions",
+   2
+  ],
+  [
+   "github-issues",
+   1
+  ],
+  [
+   "google-drive",
+   1
+  ],
+  [
+   "gpl",
+   1
+  ],
+  [
+   "high-assurance",
+   1
+  ],
+  [
+   "highlights",
+   1
+  ],
+  [
+   "hiring",
+   1
+  ],
+  [
+   "hyperscalers",
+   1
+  ],
+  [
+   "ids",
+   1
+  ],
+  [
+   "industry-wire",
+   1
+  ],
+  [
+   "japan-ai-guidelines",
+   1
+  ],
+  [
+   "json",
+   1
+  ],
+  [
+   "kernel",
+   1
+  ],
+  [
+   "knowledge-management",
+   1
+  ],
+  [
+   "lab",
+   1
+  ],
+  [
+   "layoffs",
+   1
+  ],
+  [
+   "lessons-learned",
+   1
+  ],
+  [
+   "lethal-trifecta",
+   2
+  ],
+  [
+   "leverage",
+   2
+  ],
+  [
+   "links",
+   1
+  ],
+  [
+   "local-models",
+   1
+  ],
+  [
+   "maintainers",
+   1
+  ],
+  [
+   "maps",
+   1
+  ],
+  [
+   "maturity",
+   1
+  ],
+  [
+   "mentoring",
+   1
+  ],
+  [
+   "migration",
+   1
+  ],
+  [
+   "minimisation",
+   1
+  ],
+  [
+   "minimum-viable-company",
+   1
+  ],
+  [
+   "mobile",
+   1
+  ],
+  [
+   "multi-model",
+   1
+  ],
+  [
+   "myfeeds",
+   1
+  ],
+  [
+   "natural-language-policy",
+   1
+  ],
+  [
+   "navigation",
+   1
+  ],
+  [
+   "no-server",
+   1
+  ],
+  [
+   "oecd",
+   1
+  ],
+  [
+   "ontologies",
+   1
+  ],
+  [
+   "open-policy-agent",
+   1
+  ],
+  [
+   "open-register",
+   1
+  ],
+  [
+   "open-weights",
+   1
+  ],
+  [
+   "osv",
+   1
+  ],
+  [
+   "outreach",
+   1
+  ],
+  [
+   "owasp",
+   2
+  ],
+  [
+   "payments",
+   1
+  ],
+  [
+   "performance",
+   1
+  ],
+  [
+   "pipelines",
+   1
+  ],
+  [
+   "policies",
+   1
+  ],
+  [
+   "policy-as-code",
+   4
+  ],
+  [
+   "portugal",
+   1
+  ],
+  [
+   "product",
+   3
+  ],
+  [
+   "proposal",
+   1
+  ],
+  [
+   "python",
+   1
+  ],
+  [
+   "qa",
+   1
+  ],
+  [
+   "qr-codes",
+   1
+  ],
+  [
+   "reach",
+   1
+  ],
+  [
+   "read-key",
+   1
+  ],
+  [
+   "reading",
+   3
+  ],
+  [
+   "reading-list",
+   2
+  ],
+  [
+   "records",
+   1
+  ],
+  [
+   "refunds",
+   1
+  ],
+  [
+   "registries",
+   1
+  ],
+  [
+   "rego",
+   1
+  ],
+  [
+   "release",
+   2
+  ],
+  [
+   "responsibility",
+   1
+  ],
+  [
+   "reverse-engineering",
+   1
+  ],
+  [
+   "reversibility",
+   1
+  ],
+  [
+   "roles",
+   1
+  ],
+  [
+   "romania",
+   2
+  ],
+  [
+   "roundtable",
+   1
+  ],
+  [
+   "s3",
+   1
+  ],
+  [
+   "sandbox",
+   1
+  ],
+  [
+   "scoped-clone",
+   1
+  ],
+  [
+   "security-review",
+   1
+  ],
+  [
+   "side-effects",
+   1
+  ],
+  [
+   "signals",
+   1
+  ],
+  [
+   "site-engineering",
+   1
+  ],
+  [
+   "skill-behaviour-policy",
+   1
+  ],
+  [
+   "skillspector",
+   1
+  ],
+  [
+   "slides",
+   1
+  ],
+  [
+   "small-models",
+   1
+  ],
+  [
+   "speech-to-text",
+   1
+  ],
+  [
+   "standards",
+   1
+  ],
+  [
+   "state",
+   1
+  ],
+  [
+   "structured-intelligence",
+   1
+  ],
+  [
+   "subscriptions",
+   1
+  ],
+  [
+   "sync",
+   2
+  ],
+  [
+   "system-prompts",
+   1
+  ],
+  [
+   "taxonomies",
+   1
+  ],
+  [
+   "taxonomy",
+   1
+  ],
+  [
+   "templates",
+   1
+  ],
+  [
+   "themes",
+   1
+  ],
+  [
+   "token-budget",
+   1
+  ],
+  [
+   "trust",
+   3
+  ],
+  [
+   "twins",
+   2
+  ],
+  [
+   "two-way-doors",
+   1
+  ],
+  [
+   "vectors",
+   1
+  ],
+  [
+   "versioning",
+   1
+  ],
+  [
+   "versions",
+   2
+  ],
+  [
+   "vex",
+   1
+  ],
+  [
+   "views",
+   1
+  ],
+  [
+   "villager",
+   2
+  ],
+  [
+   "voice",
+   1
+  ],
+  [
+   "voicedebrief",
+   1
+  ],
+  [
+   "vulnerabilities",
+   1
+  ],
+  [
+   "wire",
+   2
+  ],
+  [
+   "world-news-day",
+   1
+  ],
+  [
+   "writing",
+   2
+  ]
+ ],
+ "series": [
+  {
+   "id": "reading-meter",
+   "title": "The reading meter",
+   "dek": "Five pieces from one afternoon, 10 October: the meter ships, goes live, is attacked on paper, earns its keep and becomes a business model.",
+   "found": "Named in the review. All five carry micropayments; the order is publication order on 10 October (wire order, oldest first), and the last part lists the other four under \"Builds on\".",
+   "desk": "news",
+   "minutes": 55,
+   "first": "2026-10-10",
+   "last": "2026-10-10",
+   "parts": [
+    {
+     "slug": "a-meter-in-the-browser",
+     "position": 1,
+     "why": "The meter itself: a penny a page from £5 of credit kept in your browser."
+    },
+    {
+     "slug": "going-live-with-the-reading-meter",
+     "position": 2,
+     "why": "Going live: below zero allowed, Stripe top-ups, and the numbers to check in eight weeks."
+    },
+    {
+     "slug": "who-will-game-the-reading-meter",
+     "position": 3,
+     "why": "The threat model: eight kinds of reader and nine ways to cheat."
+    },
+    {
+     "slug": "pay-to-keep-your-persona",
+     "position": 4,
+     "why": "Why a reader would pay: a persona that helps them."
+    },
+    {
+     "slug": "pay-after-you-read",
+     "position": 5,
+     "why": "The model that came out of it: pay after you read, and the rating sets the price."
+    }
+   ]
+  },
+  {
+   "id": "homepage-rebuild",
+   "title": "The homepage, diagnosed and rebuilt",
+   "dek": "What the sgit.ai homepage got wrong, and the page after the fix, both from 7 September.",
+   "found": "Named in the review. Both share the homepage tag; the second lists the first under \"Builds on\".",
+   "desk": "vaults",
+   "minutes": 10,
+   "first": "2026-09-07",
+   "last": "2026-09-07",
+   "parts": [
+    {
+     "slug": "proof-behind-the-claim",
+     "position": 1,
+     "why": "The diagnosis: the proof sits two clicks behind the claim."
+    },
+    {
+     "slug": "proof-moved-up",
+     "position": 2,
+     "why": "The rebuild, next to the before pictures."
+    }
+   ]
+  },
+  {
+   "id": "agent-team",
+   "title": "The agent team, at three depths",
+   "dek": "One team of agents running a business, told three times: the walkthrough, the field notes, the full stack.",
+   "found": "Named in the review and in the weekly note of 7 October (\"from the walkthrough to the field notes to the full stack\"). Ordered by depth, which is also publication order.",
+   "desk": "building",
+   "minutes": 70,
+   "first": "2026-10-02",
+   "last": "2026-10-06",
+   "parts": [
+    {
+     "slug": "replicating-the-agentic-inbox",
+     "position": 1,
+     "why": "The walkthrough: from one Claude session to a team that never presses send."
+    },
+    {
+     "slug": "the-agent-team-as-it-runs",
+     "position": 2,
+     "why": "The field notes: twelve agents, encrypted vaults, a mailbox nobody sends from."
+    },
+    {
+     "slug": "the-mandate-stack",
+     "position": 3,
+     "why": "The full stack: eight layers and one written mandate per agent."
+    }
+   ]
+  },
+  {
+   "id": "nadella-answer",
+   "title": "Answering Satya Nadella",
+   "dek": "Satya Nadella on models as insider risks: answered principle by principle, then retold in our own vocabulary, on 11 October.",
+   "found": "Each part lists the other under \"Builds on\"; the answer was published first (wire order).",
+   "desk": "security",
+   "minutes": 35,
+   "first": "2026-10-11",
+   "last": "2026-10-11",
+   "parts": [
+    {
+     "slug": "authority-outside-the-model",
+     "position": 1,
+     "why": "The answer: seven principles, what runs, what is design, and five things the list leaves out."
+    },
+    {
+     "slug": "the-same-argument-in-our-words",
+     "position": 2,
+     "why": "The translation: the same case in the language of reach, mandate, gap and barriers."
+    }
+   ]
+  },
+  {
+   "id": "behaviour-policy-arc",
+   "title": "Behaviour policy, from argument to gate",
+   "dek": "Four days, 7 to 10 October: the policy is the business logic, then measured, then enforced on every draft, then kept alive through every summary.",
+   "found": "A chain of \"Builds on\" links, one article a day: each part names the one before it.",
+   "desk": "security",
+   "minutes": 47,
+   "first": "2026-10-07",
+   "last": "2026-10-10",
+   "parts": [
+    {
+     "slug": "the-behaviour-policy-is-the-business-logic",
+     "position": 1,
+     "why": "The argument: zoom into the policy and you find the business."
+    },
+    {
+     "slug": "hope-or-enforcement",
+     "position": 2,
+     "why": "The measurement: one agent built three ways, and how much of each policy is hope."
+    },
+    {
+     "slug": "a-second-reader-the-agent-cannot-skip",
+     "position": 3,
+     "why": "The first gate: a second model approves every draft, failing closed."
+    },
+    {
+     "slug": "re-anchoring-agent-behaviour-policies",
+     "position": 4,
+     "why": "Keeping it alive: the rules printed back after every summary, with a canary."
+    }
+   ]
+  },
+  {
+   "id": "where-agents-run",
+   "title": "Where agents run",
+   "dek": "Off the laptop, onto a rented desktop, with memory that outlives the run, and finally a Mac of the agent's own.",
+   "found": "Found at build time: each part lists the one before it under \"Builds on\", 6 to 9 October.",
+   "desk": "building",
+   "minutes": 55,
+   "first": "2026-10-06",
+   "last": "2026-10-09",
+   "parts": [
+    {
+     "slug": "why-my-agents-do-not-run-on-my-laptop",
+     "position": 1,
+     "why": "Why not the laptop: an operating system has two walls, and the agent sits inside yours."
+    },
+    {
+     "slug": "an-agent-desktop-by-the-minute",
+     "position": 2,
+     "why": "Renting a locked-down desktop is still hard: nine properties, nine products."
+    },
+    {
+     "slug": "encrypted-memory-for-isolated-agents",
+     "position": 3,
+     "why": "Memory for agents that run somewhere else: five deployment patterns."
+    },
+    {
+     "slug": "a-mac-of-the-agents-own",
+     "position": 4,
+     "why": "A business plan for a Mac of the agent's own."
+    }
+   ]
+  },
+  {
+   "id": "code-review",
+   "title": "Code review as a graph, then as a company",
+   "dek": "Read code at every layer, imagine the company that sells it, then send an agent in to do due diligence.",
+   "found": "Found at build time: shared code-review tags and a \"Builds on\" chain, 3 to 5 October.",
+   "desk": "building",
+   "minutes": 87,
+   "first": "2026-10-03",
+   "last": "2026-10-05",
+   "parts": [
+    {
+     "slug": "code-review-as-a-fractal-semantic-graph",
+     "position": 1,
+     "why": "The idea: source code is already a fractal graph, so review every layer."
+    },
+    {
+     "slug": "if-somebody-built-a-company-on-code-review",
+     "position": 2,
+     "why": "The company plan: one reader for every layer."
+    },
+    {
+     "slug": "send-an-agent-not-a-spreadsheet",
+     "position": 3,
+     "why": "The use: due diligence by agent, not by form."
+    }
+   ]
+  },
+  {
+   "id": "local-news",
+   "title": "Local news, kept as evidence",
+   "dek": "The story vault as an idea, two readers' tools on top of it, a bridge followed to the end, and a hospital outage kept while it happened.",
+   "found": "Named in the review; matches the Historian's collection of the same name, ordered by publication.",
+   "desk": "news",
+   "minutes": 72,
+   "first": "2026-09-22",
+   "last": "2026-10-08",
+   "parts": [
+    {
+     "slug": "future-of-news-story-vault-not-paywall",
+     "position": 1,
+     "why": "The idea: sell the story vault, not the paywall."
+    },
+    {
+     "slug": "story-vault-meets-reader-skills",
+     "position": 2,
+     "why": "Reader Skills on top of the vault, and why local news gains most."
+    },
+    {
+     "slug": "the-bridge-followed-to-the-end",
+     "position": 3,
+     "why": "A bridge closure simulated end to end on a story vault."
+    },
+    {
+     "slug": "the-waiting-room-knew-first",
+     "position": 4,
+     "why": "A live local story, kept as evidence while it was happening."
+    }
+   ]
+  },
+  {
+   "id": "news-economics",
+   "title": "Who pays for news when agents read it",
+   "dek": "From the story vault to the token bill to a corrected history, and the case that agents will pay.",
+   "found": "Found at build time: a \"Builds on\" chain through the token bill, 22 September to 11 October.",
+   "desk": "news",
+   "minutes": 61,
+   "first": "2026-09-28",
+   "last": "2026-10-11",
+   "parts": [
+    {
+     "slug": "token-bill-nobody-is-sending",
+     "position": 1,
+     "why": "The token bill: publishers who are easy to read should get a share."
+    },
+    {
+     "slug": "how-news-got-here",
+     "position": 2,
+     "why": "The history: the reader was always the product."
+    },
+    {
+     "slug": "the-agent-is-the-reader",
+     "position": 3,
+     "why": "The answer: agents pay because it is cheaper than not paying."
+    }
+   ]
+  },
+  {
+   "id": "keys",
+   "title": "Public keys for sgit",
+   "dek": "A Request for Comments, then where the keys live a day later.",
+   "found": "Found at build time: the second lists the first under \"Builds on\".",
+   "desk": "vaults",
+   "minutes": 34,
+   "first": "2026-10-09",
+   "last": "2026-10-10",
+   "parts": [
+    {
+     "slug": "rfc-0001-public-key-cryptography-for-sgit",
+     "position": 1,
+     "why": "The proposal: two key pairs, sealed files, fourteen questions."
+    },
+    {
+     "slug": "where-the-vault-keys-live",
+     "position": 2,
+     "why": "Key management as it stands at v0.20.0, and what comes next."
+    }
+   ]
+  },
+  {
+   "id": "startup-loop",
+   "title": "Miss it, then price it",
+   "dek": "The startup question first, then the early access programme that follows from it.",
+   "found": "Found at build time: the second continues the first (\"the next step after do they miss it\").",
+   "desk": "strategy",
+   "minutes": 18,
+   "first": "2026-09-21",
+   "last": "2026-10-02",
+   "parts": [
+    {
+     "slug": "the-question-is-whether-they-miss-it",
+     "position": 1,
+     "why": "The question: would anybody miss it?"
+    },
+    {
+     "slug": "price-it-then-give-it-away",
+     "position": 2,
+     "why": "The next step: price it, then give it away and measure."
+    }
+   ]
+  }
+ ],
+ "formats": {
+  "labels": [
+   {
+    "id": "field-report",
+    "label": "Field report",
+    "means": "What we built or ran, and what happened, written from the inside."
+   },
+   {
+    "id": "explainer",
+    "label": "Explainer",
+    "means": "What a thing is and how it works, for someone meeting it for the first time."
+   },
+   {
+    "id": "analysis",
+    "label": "Analysis",
+    "means": "An argument, with evidence, about why something is the way it is or should change."
+   },
+   {
+    "id": "business-plan",
+    "label": "Business plan",
+    "means": "A product or company somebody could build, with its market and costs."
+   },
+   {
+    "id": "rfc",
+    "label": "RFC",
+    "means": "A Request for Comments: a design with open questions for reviewers."
+   },
+   {
+    "id": "response",
+    "label": "Answer",
+    "means": "A reply to someone else's published argument, point by point."
+   },
+   {
+    "id": "how-to",
+    "label": "How-to",
+    "means": "Steps a reader can follow on their own setup."
+   },
+   {
+    "id": "interview",
+    "label": "Interview",
+    "means": "Questions put to us, answered."
+   },
+   {
+    "id": "desk-note",
+    "label": "Desk note",
+    "means": "A short note from the desk (Historian, Journalist) tying articles together. Notes only, not articles."
+   }
+  ],
+  "counts": {
+   "field-report": 18,
+   "explainer": 10,
+   "analysis": 77,
+   "business-plan": 4,
+   "rfc": 1,
+   "response": 7,
+   "how-to": 5,
+   "interview": 1,
+   "desk-note": 0
+  }
+ },
+ "raw_tags": {
+  "distinct": 504,
+  "uses": 1356,
+  "singletons": 322
+ },
+ "articles": {
+  "skill-behaviour-policy": {
+   "desk": "security",
+   "desk2": "building",
+   "debatable": false,
+   "desk_by": "rule",
+   "desk_why": "Highest score: Agent security & policy 5, next Building with agents 3",
+   "tags": [
+    "behaviour-policy",
+    "agent-tooling",
+    "supply-chains",
+    "connectors"
+   ],
+   "products": [],
+   "series": [],
+   "format": "analysis",
+   "format_label": "Analysis",
+   "format_by": "default",
+   "words": 2364,
+   "minutes": 10,
+   "headings": [
+    "In short",
+    "The claim, and what the study found",
+    "Three mandates",
+    "Features, not verdicts",
+    "899 skills, read statically",
+    "One skill, end to end",
+    "A scanner and a policy",
+    "A service, and a standard",
+    "What this does not claim",
+    "Where this comes from"
+   ]
+  },
+  "sgit-actions-side-by-side": {
+   "desk": "building",
+   "desk2": "vaults",
+   "debatable": true,
+   "desk_by": "rule",
+   "desk_why": "Highest score: Building with agents 4, next Vaults & provenance 4",
+   "tags": [
+    "shipping",
+    "vault-design"
+   ],
+   "products": [
+    "sgit"
+   ],
+   "series": [],
+   "format": "analysis",
+   "format_label": "Analysis",
+   "format_by": "default",
+   "words": 1605,
+   "minutes": 7,
+   "headings": [
+    "In short",
+    "Why a site of its own",
+    "Four lanes",
+    "What each run reports",
+    "Measured locally",
+    "A budget for the models",
+    "The brief",
+    "What this does not claim",
+    "Where this comes from"
+   ]
+  },
+  "agent-workflows-on-ephemeral-vaults": {
+   "desk": "building",
+   "desk2": "vaults",
+   "debatable": true,
+   "desk_by": "rule",
+   "desk_why": "Highest score: Building with agents 5, next Vaults & provenance 4",
+   "tags": [
+    "multi-agent",
+    "vault-design",
+    "custom-interfaces",
+    "shipping"
+   ],
+   "products": [
+    "sgit"
+   ],
+   "series": [],
+   "format": "analysis",
+   "format_label": "Analysis",
+   "format_by": "default",
+   "words": 1866,
+   "minutes": 8,
+   "headings": [
+    "In short",
+    "The pattern",
+    "Four questions at every level",
+    "Seven architectures",
+    "Watched by a vault app",
+    "The swarm, measured",
+    "Four defects, and the case for a gate",
+    "The brief",
+    "What this does not claim",
+    "Where this comes from"
+   ]
+  },
+  "hooks-are-kernel-code": {
+   "desk": "security",
+   "desk2": "building",
+   "debatable": true,
+   "desk_by": "rule",
+   "desk_why": "Highest score: Agent security & policy 6, next Building with agents 5",
+   "tags": [
+    "agent-tooling",
+    "human-in-the-loop",
+    "code-review",
+    "fractal-semantic-graphs",
+    "blast-radius"
+   ],
+   "products": [],
+   "series": [],
+   "format": "analysis",
+   "format_label": "Analysis",
+   "format_by": "default",
+   "words": 2378,
+   "minutes": 10,
+   "headings": [
+    "In short",
+    "Kernel code",
+    "The best case study we have",
+    "Hooks of hooks",
+    "A maturity model",
+    "Where hooks run",
+    "A site and a feed",
+    "Pay for state, never to run",
+    "The brief",
+    "What this does not claim",
+    "Where this comes from"
+   ]
+  },
+  "chainguard-mapped": {
+   "desk": "strategy",
+   "desk2": "security",
+   "debatable": false,
+   "desk_by": "rule",
+   "desk_why": "Highest score: Strategy & startups 6, next Agent security & policy 2",
+   "tags": [
+    "supply-chains",
+    "agent-memory",
+    "behaviour-policy",
+    "open-source"
+   ],
+   "products": [
+    "sgit"
+   ],
+   "series": [],
+   "format": "analysis",
+   "format_label": "Analysis",
+   "format_by": "default",
+   "words": 2222,
+   "minutes": 10,
+   "headings": [
+    "In short",
+    "Why Chainguard",
+    "The company",
+    "What it builds",
+    "What it publishes",
+    "How deep the graph goes",
+    "The context layer",
+    "Where we plug in",
+    "What this does not claim",
+    "Where this comes from"
+   ]
+  },
+  "the-wire-as-a-graph": {
+   "desk": "news",
+   "desk2": "vaults",
+   "debatable": true,
+   "desk_by": "rule",
+   "desk_why": "Highest score: The future of news 5, next Vaults & provenance 4",
+   "tags": [
+    "the-newsroom",
+    "fractal-semantic-graphs",
+    "provenance"
+   ],
+   "products": [
+    "sgit"
+   ],
+   "series": [],
+   "format": "analysis",
+   "format_label": "Analysis",
+   "format_by": "default",
+   "words": 2295,
+   "minutes": 10,
+   "headings": [
+    "In short",
+    "Start from the end",
+    "What is there today",
+    "The primitives",
+    "Long-lived IDs",
+    "Every phrase, at the right size",
+    "The folder tree, and gravity",
+    "Many models",
+    "The brief",
+    "What this does not claim",
+    "Where this comes from"
+   ]
+  },
+  "system-prompts-as-behaviour-policies": {
+   "desk": "security",
+   "desk2": "building",
+   "debatable": false,
+   "desk_by": "rule",
+   "desk_why": "Highest score: Agent security & policy 5, next Building with agents 2",
+   "tags": [
+    "behaviour-policy",
+    "agent-tooling",
+    "fractal-semantic-graphs"
+   ],
+   "products": [],
+   "series": [],
+   "format": "analysis",
+   "format_label": "Analysis",
+   "format_by": "default",
+   "words": 2505,
+   "minutes": 11,
+   "headings": [
+    "In short",
+    "The hypothesis",
+    "The prompts",
+    "Claude's prompt, as rows",
+    "What could leave the prompt",
+    "The leaked ChatGPT prompt: the other half",
+    "Who may override whom",
+    "A proposed ontology",
+    "Is anyone using this for real?",
+    "What this does not claim",
+    "Where this comes from"
+   ]
+  },
+  "the-agents-write-too": {
+   "desk": "building",
+   "desk2": "news",
+   "debatable": false,
+   "desk_by": "rule",
+   "desk_why": "Highest score: Building with agents 4, next The future of news 3",
+   "tags": [
+    "the-newsroom",
+    "agent-memory",
+    "multi-agent",
+    "provenance"
+   ],
+   "products": [],
+   "series": [],
+   "format": "analysis",
+   "format_label": "Analysis",
+   "format_by": "default",
+   "words": 1968,
+   "minutes": 9,
+   "headings": [
+    "In short",
+    "One agent became several",
+    "Two problems: learning and reporting",
+    "Two kinds of article",
+    "Lessons and debriefs",
+    "A page for every agent, and a conductor",
+    "The brief",
+    "What this does not claim",
+    "Where this comes from"
+   ]
+  },
+  "are-hooks-the-sweet-spot": {
+   "desk": "security",
+   "desk2": "building",
+   "debatable": true,
+   "desk_by": "rule",
+   "desk_why": "Highest score: Agent security & policy 5, next Building with agents 4",
+   "tags": [
+    "agent-tooling",
+    "behaviour-policy",
+    "threat-modelling"
+   ],
+   "products": [],
+   "series": [],
+   "format": "analysis",
+   "format_label": "Analysis",
+   "format_by": "default",
+   "words": 2394,
+   "minutes": 10,
+   "headings": [
+    "In short",
+    "The question",
+    "This session's own policy",
+    "Rule by rule, in a sandbox",
+    "Where a hook sits",
+    "Chained, not ordered",
+    "Who else is doing this",
+    "A hook pack generated from a policy",
+    "What this does not claim",
+    "Where this comes from"
+   ]
+  },
+  "agent-hooks-october-2026": {
+   "desk": "security",
+   "desk2": "building",
+   "debatable": true,
+   "desk_by": "rule",
+   "desk_why": "Highest score: Agent security & policy 5, next Building with agents 4",
+   "tags": [
+    "agent-tooling",
+    "behaviour-policy",
+    "threat-modelling"
+   ],
+   "products": [],
+   "series": [],
+   "format": "analysis",
+   "format_label": "Analysis",
+   "format_by": "default",
+   "words": 2054,
+   "minutes": 9,
+   "headings": [
+    "In short",
+    "What a hook is",
+    "The lay of the land",
+    "Where hooks fail",
+    "A small test of my own",
+    "Configuring hooks as a defender",
+    "The standard is forming",
+    "What this does not claim",
+    "Where this comes from"
+   ]
+  },
+  "knowledge-that-maintains-itself": {
+   "desk": "vaults",
+   "desk2": "news",
+   "debatable": false,
+   "desk_by": "rule",
+   "desk_why": "Highest score: Vaults & provenance 5, next The future of news 2",
+   "tags": [
+    "fractal-semantic-graphs",
+    "agent-readable-web"
+   ],
+   "products": [
+    "sgit"
+   ],
+   "series": [],
+   "format": "analysis",
+   "format_label": "Analysis",
+   "format_by": "default",
+   "words": 1873,
+   "minutes": 8,
+   "headings": [
+    "In short",
+    "The idea",
+    "Briefing from the graph",
+    "Graphs and vectors",
+    "You do not have to get it right; you have to maintain it",
+    "The brief has to travel",
+    "What this does not claim",
+    "Where this comes from"
+   ]
+  },
+  "the-minimum-code-below": {
+   "desk": "vaults",
+   "desk2": "strategy",
+   "debatable": true,
+   "desk_by": "rule",
+   "desk_why": "Highest score: Vaults & provenance 3, next Strategy & startups 3",
+   "tags": [
+    "supply-chains",
+    "fractal-semantic-graphs"
+   ],
+   "products": [],
+   "series": [],
+   "format": "analysis",
+   "format_label": "Analysis",
+   "format_by": "default",
+   "words": 2308,
+   "minutes": 10,
+   "headings": [
+    "In short",
+    "Bottom up, and where it stops",
+    "Top down: the minimum code below",
+    "Measured on one real tool",
+    "What the measurement also showed",
+    "It did not scale before, and now it can",
+    "Who does what today",
+    "The business model: certify what is left",
+    "What this does not claim",
+    "Where this comes from"
+   ]
+  },
+  "a-policy-for-every-skill": {
+   "desk": "security",
+   "desk2": "building",
+   "debatable": false,
+   "desk_by": "rule",
+   "desk_why": "Highest score: Agent security & policy 7, next Building with agents 2",
+   "tags": [
+    "behaviour-policy",
+    "shipping",
+    "supply-chains",
+    "prompt-injection",
+    "fractal-semantic-graphs"
+   ],
+   "products": [],
+   "series": [],
+   "format": "analysis",
+   "format_label": "Analysis",
+   "format_by": "default",
+   "words": 2081,
+   "minutes": 9,
+   "headings": [
+    "In short",
+    "What Sean built",
+    "Skills are the new dependency",
+    "It is a behaviour policy for a skill",
+    "Hope-based security, and why it is still worth writing",
+    "Use models to need them less",
+    "A catalogue is a graph",
+    "From policy to licence to insurance",
+    "What this does not claim",
+    "Where this comes from"
+   ]
+  },
+  "policy-as-code-needs-a-policy-first": {
+   "desk": "security",
+   "desk2": "vaults",
+   "debatable": false,
+   "desk_by": "rule",
+   "desk_why": "Highest score: Agent security & policy 6, next Vaults & provenance 3",
+   "tags": [
+    "behaviour-policy",
+    "fractal-semantic-graphs",
+    "ai-governance"
+   ],
+   "products": [],
+   "series": [],
+   "format": "how-to",
+   "format_label": "How-to",
+   "format_by": "title or teaser says \"how to\"",
+   "words": 2438,
+   "minutes": 11,
+   "headings": [
+    "In short",
+    "Policy as code, and the question it answers",
+    "What an agent behaviour policy adds",
+    "Reverse engineering this session's own policy",
+    "Generating code from the policy",
+    "From spreadsheets and paper",
+    "Why it needs fractal semantic graphs",
+    "The four jobs",
+    "What this does not claim",
+    "Where this comes from"
+   ]
+  },
+  "sgit-in-a-ci-pipeline": {
+   "desk": "vaults",
+   "desk2": "building",
+   "debatable": true,
+   "desk_by": "rule",
+   "desk_why": "Highest score: Vaults & provenance 5, next Building with agents 4",
+   "tags": [
+    "shipping",
+    "vault-design",
+    "encryption-and-keys",
+    "identity-and-secrets",
+    "supply-chains"
+   ],
+   "products": [
+    "sgit"
+   ],
+   "series": [],
+   "format": "analysis",
+   "format_label": "Analysis",
+   "format_by": "default",
+   "words": 2647,
+   "minutes": 12,
+   "headings": [
+    "In short",
+    "Why CI data is awkward",
+    "What was tested",
+    "Data in and out",
+    "Between jobs, and only what each job needs",
+    "The keys are the boundaries",
+    "Append lanes for shards",
+    "A key pair for every job",
+    "No hosted server",
+    "A workflow sketch",
+    "What this does not claim",
+    "Where this comes from"
+   ]
+  },
+  "attacks-rewritten-as-mandates": {
+   "desk": "security",
+   "desk2": "strategy",
+   "debatable": true,
+   "desk_by": "rule",
+   "desk_why": "Highest score: Agent security & policy 4, next Strategy & startups 4",
+   "tags": [
+    "supply-chains",
+    "behaviour-policy",
+    "open-source",
+    "agent-tooling"
+   ],
+   "products": [
+    "sgit",
+    "riskmandate"
+   ],
+   "series": [],
+   "format": "analysis",
+   "format_label": "Analysis",
+   "format_by": "default",
+   "words": 2827,
+   "minutes": 12,
+   "headings": [
+    "In short",
+    "A ledger of attacks",
+    "Every attack is reach beyond mandate",
+    "Two kinds of barrier",
+    "The next maintainer is an agent",
+    "One pipeline, three records",
+    "An open source question",
+    "What this does not claim",
+    "Where this comes from"
+   ]
+  },
+  "four-frameworks-one-agent": {
+   "desk": "security",
+   "desk2": "vaults",
+   "debatable": false,
+   "desk_by": "rule",
+   "desk_why": "Highest score: Agent security & policy 10, next Vaults & provenance 2",
+   "tags": [
+    "ai-governance",
+    "regulation",
+    "behaviour-policy",
+    "blast-radius",
+    "risk-acceptance"
+   ],
+   "products": [],
+   "series": [],
+   "format": "analysis",
+   "format_label": "Analysis",
+   "format_by": "default",
+   "words": 5041,
+   "minutes": 22,
+   "headings": [
+    "In short",
+    "The paper, and what it gets right",
+    "The unit: a system before deployment, or one agent in one deployment",
+    "OECD: five dimensions, and the two that matter most for an agent",
+    "NIST: govern, map, measure, manage, as they run here",
+    "Japan: three roles, one policy between them",
+    "The EU AI Act: the tier, the undefined word, and the dates",
+    "The five principles on one small system",
+    "What the graphs add, and the one to build next",
+    "Where it is hardest",
+    "What this does not claim",
+    "Where this comes from"
+   ]
+  },
+  "every-link-points-back": {
+   "desk": "vaults",
+   "desk2": "news",
+   "debatable": false,
+   "desk_by": "rule",
+   "desk_why": "Highest score: Vaults & provenance 4, next The future of news 2",
+   "tags": [
+    "fractal-semantic-graphs",
+    "the-newsroom"
+   ],
+   "products": [],
+   "series": [],
+   "format": "analysis",
+   "format_label": "Analysis",
+   "format_by": "default",
+   "words": 1818,
+   "minutes": 8,
+   "headings": [
+    "In short",
+    "The problem",
+    "What the links say",
+    "The path exists, at the foot",
+    "Corrections are the sharper case",
+    "Four kinds of forward link",
+    "What this does not claim",
+    "Where this comes from"
+   ]
+  },
+  "sixteen-notes-i-did-not-want-to-lose": {
+   "desk": "vaults",
+   "desk2": "building",
+   "debatable": false,
+   "desk_by": "rule",
+   "desk_why": "Highest score: Vaults & provenance 5, next Building with agents 3",
+   "tags": [
+    "vault-design",
+    "identity-and-secrets",
+    "synthetic-users",
+    "connectors"
+   ],
+   "products": [],
+   "series": [],
+   "format": "analysis",
+   "format_label": "Analysis",
+   "format_by": "default",
+   "words": 2568,
+   "minutes": 11,
+   "headings": [
+    "In short",
+    "What happened",
+    "The nudge is working, for the right reason",
+    "The request: send from any browser to my vault",
+    "The brief",
+    "This stuff is hard in the real world",
+    "And then there is email",
+    "Two config files, a new product line",
+    "What this does not claim",
+    "Where this comes from"
+   ]
+  },
+  "how-cheap-is-it-to-undo": {
+   "desk": "security",
+   "desk2": "strategy",
+   "debatable": false,
+   "desk_by": "rule",
+   "desk_why": "Highest score: Agent security & policy 5, next Strategy & startups 2",
+   "tags": [
+    "human-in-the-loop",
+    "wardley-maps",
+    "the-newsroom"
+   ],
+   "products": [],
+   "series": [],
+   "format": "analysis",
+   "format_label": "Analysis",
+   "format_by": "default",
+   "words": 1755,
+   "minutes": 8,
+   "headings": [
+    "In short",
+    "What we noticed",
+    "The test: how cheap is it to undo?",
+    "Email is a one-way door, and still an explorer",
+    "The newsroom is a two-way door, with mature controls",
+    "Two axes, and both move",
+    "What this does not claim",
+    "Where this comes from"
+   ]
+  },
+  "the-human-in-the-loop": {
+   "desk": "security",
+   "desk2": "building",
+   "debatable": false,
+   "desk_by": "rule",
+   "desk_why": "Highest score: Agent security & policy 9, next Building with agents 1",
+   "tags": [
+    "human-in-the-loop",
+    "behaviour-policy",
+    "blast-radius",
+    "multi-agent",
+    "ai-governance"
+   ],
+   "products": [],
+   "series": [],
+   "format": "analysis",
+   "format_label": "Analysis",
+   "format_by": "default",
+   "words": 2085,
+   "minutes": 9,
+   "headings": [
+    "In short",
+    "The question",
+    "Checking every output is both, and mostly neither",
+    "The question is where, not whether",
+    "Replace the other checks with controls that do not get tired",
+    "A review should fix the source, not sign the output",
+    "The record moves the line",
+    "How far I have got in production",
+    "Questions for the roundtable",
+    "What this does not claim",
+    "Where this comes from"
+   ]
+  },
+  "a-policy-beside-the-prompt": {
+   "desk": "security",
+   "desk2": "strategy",
+   "debatable": false,
+   "desk_by": "rule",
+   "desk_why": "Highest score: Agent security & policy 9, next Strategy & startups 1",
+   "tags": [
+    "behaviour-policy",
+    "risk-acceptance",
+    "prompt-injection",
+    "incidents"
+   ],
+   "products": [
+    "riskmandate"
+   ],
+   "series": [],
+   "format": "analysis",
+   "format_label": "Analysis",
+   "format_by": "default",
+   "words": 3981,
+   "minutes": 17,
+   "headings": [
+    "In short",
+    "The idea: a policy beside the prompt",
+    "The old problem: code and data in one channel",
+    "Why the vendors should want this",
+    "Aviation did not get safe out of altruism",
+    "Payments got safe because liability moved",
+    "Regulation alone does not do it",
+    "The user answers outside the policy, the vendor inside it",
+    "Where the policy goes today, in each mode",
+    "A system prompt is a light behaviour policy",
+    "Most agents already run a policy",
+    "What this does not claim",
+    "Where this comes from"
+   ]
+  },
+  "the-policy-draws-the-liability-line": {
+   "desk": "security",
+   "desk2": "building",
+   "debatable": false,
+   "desk_by": "rule",
+   "desk_why": "Highest score: Agent security & policy 11, next Building with agents 1",
+   "tags": [
+    "human-in-the-loop",
+    "risk-acceptance",
+    "behaviour-policy",
+    "regulation",
+    "agent-isolation"
+   ],
+   "products": [
+    "riskmandate"
+   ],
+   "series": [],
+   "format": "response",
+   "format_label": "Answer",
+   "format_by": "raw tag \"response\"",
+   "words": 2634,
+   "minutes": 11,
+   "headings": [
+    "In short",
+    "What the post argues, and what it gets right",
+    "Why the shell game works",
+    "The policy draws the line",
+    "Where the liability goes",
+    "The direction of travel: a policy beside every prompt",
+    "What this does not claim",
+    "Where this comes from"
+   ]
+  },
+  "dark-mode-and-four-more": {
+   "desk": "news",
+   "desk2": "building",
+   "debatable": false,
+   "desk_by": "rule",
+   "desk_why": "Highest score: The future of news 5, next Building with agents 1",
+   "tags": [
+    "agent-readable-web",
+    "the-newsroom"
+   ],
+   "products": [],
+   "series": [],
+   "format": "analysis",
+   "format_label": "Analysis",
+   "format_by": "default",
+   "words": 3329,
+   "minutes": 14,
+   "headings": [
+    "In short",
+    "What a reader sees",
+    "The choices, and why",
+    "Under the hood",
+    "What this does not claim",
+    "Where this comes from"
+   ]
+  },
+  "the-vault-crosses-chrome-profiles": {
+   "desk": "building",
+   "desk2": "vaults",
+   "debatable": false,
+   "desk_by": "rule",
+   "desk_why": "Highest score: Building with agents 4, next Vaults & provenance 3",
+   "tags": [
+    "agent-memory",
+    "identity-and-secrets",
+    "the-newsroom",
+    "client-side"
+   ],
+   "products": [],
+   "series": [],
+   "format": "analysis",
+   "format_label": "Analysis",
+   "format_by": "default",
+   "words": 2210,
+   "minutes": 10,
+   "headings": [
+    "In short",
+    "The problem: two accounts, two browsers in one",
+    "How we got here, which was not a straight line",
+    "Across profiles, as found",
+    "What each profile needs to get in",
+    "Profiles are the more common case",
+    "Memory and state between sessions",
+    "The best features are found",
+    "What this does not claim",
+    "Where this comes from"
+   ]
+  },
+  "stop-the-bleeding-then-ask-for-it-back": {
+   "desk": "security",
+   "desk2": "strategy",
+   "debatable": false,
+   "desk_by": "rule",
+   "desk_why": "Highest score: Agent security & policy 6, next Strategy & startups 3",
+   "tags": [
+    "behaviour-policy",
+    "regulation",
+    "open-source"
+   ],
+   "products": [],
+   "series": [],
+   "format": "analysis",
+   "format_label": "Analysis",
+   "format_by": "default",
+   "words": 4107,
+   "minutes": 18,
+   "headings": [
+    "In short",
+    "The subscriptions we keep",
+    "Step one: ask them what we used, and work it out ourselves",
+    "Step two: a friendly request for a pause and a refund",
+    "Stop the bleeding",
+    "What the law does, and what it does not",
+    "If nobody answers: the right of access",
+    "An open register, under Creative Commons",
+    "A service for helpers",
+    "Done by agents, under a policy",
+    "What this does not claim",
+    "Where this comes from"
+   ]
+  },
+  "who-owns-the-words": {
+   "desk": "security",
+   "desk2": null,
+   "debatable": false,
+   "desk_by": "rule",
+   "desk_why": "Highest score: Agent security & policy 7",
+   "tags": [
+    "human-in-the-loop",
+    "behaviour-policy"
+   ],
+   "products": [
+    "riskmandate"
+   ],
+   "series": [],
+   "format": "analysis",
+   "format_label": "Analysis",
+   "format_by": "default",
+   "words": 2551,
+   "minutes": 11,
+   "headings": [
+    "In short",
+    "The question",
+    "What we have today",
+    "Decisions without responsibility",
+    "Talking to the agents, and going around me",
+    "Why say it at all",
+    "An employee with a job description",
+    "Diversity, briefly",
+    "What gets devalued",
+    "What this does not claim",
+    "Where this comes from"
+   ]
+  },
+  "what-open-source-is-and-is-not": {
+   "desk": "strategy",
+   "desk2": "security",
+   "debatable": false,
+   "desk_by": "rule",
+   "desk_why": "Highest score: Strategy & startups 5, next Agent security & policy 2",
+   "tags": [
+    "open-source",
+    "threat-modelling",
+    "privacy",
+    "journalism"
+   ],
+   "products": [],
+   "series": [],
+   "format": "analysis",
+   "format_label": "Analysis",
+   "format_by": "default",
+   "words": 2351,
+   "minutes": 10,
+   "headings": [
+    "In short",
+    "A copyright licence, from copyleft to open source",
+    "Misconception one: anybody can change it, so nobody controls it",
+    "Misconception two: open source means anybody contributes",
+    "Misconception three: it is more, or less, secure",
+    "Misconception four: it is free, so it costs nothing",
+    "Misconception five: open weights are open source",
+    "Misconception six: openness is the danger",
+    "What open source is for",
+    "What this does not claim",
+    "Where this comes from"
+   ]
+  },
+  "not-a-straight-line": {
+   "desk": "strategy",
+   "desk2": "news",
+   "debatable": false,
+   "desk_by": "rule",
+   "desk_why": "Highest score: Strategy & startups 7, next The future of news 3",
+   "tags": [
+    "strategy",
+    "personas",
+    "startups",
+    "the-newsroom",
+    "open-source"
+   ],
+   "products": [
+    "riskmandate"
+   ],
+   "series": [],
+   "format": "analysis",
+   "format_label": "Analysis",
+   "format_by": "default",
+   "words": 2447,
+   "minutes": 11,
+   "headings": [
+    "In short",
+    "Am I getting better?",
+    "Six months on one problem, then two days",
+    "Why the newsroom could solve it and RiskMandate could not",
+    "The newsroom is RiskMandate's workflow, and its example",
+    "The line that runs back",
+    "Going back, with something that works",
+    "The thinking is never wasted",
+    "What this does not claim",
+    "Where this comes from"
+   ]
+  },
+  "sovereignty-is-the-ability-to-move": {
+   "desk": "strategy",
+   "desk2": "vaults",
+   "debatable": false,
+   "desk_by": "rule",
+   "desk_why": "Highest score: Strategy & startups 5, next Vaults & provenance 3",
+   "tags": [
+    "privacy",
+    "incidents",
+    "wardley-maps",
+    "open-source",
+    "synthetic-users"
+   ],
+   "products": [],
+   "series": [],
+   "format": "analysis",
+   "format_label": "Analysis",
+   "format_by": "default",
+   "words": 2751,
+   "minutes": 12,
+   "headings": [
+    "In short",
+    "Where the ball is going",
+    "Sovereignty is the ability to move",
+    "Take away the dot",
+    "Do not jump from zero to a hundred",
+    "Run it in QA, all the time",
+    "Can it move, then is it cheap",
+    "Open source, or one acquisition away",
+    "Provided centrally, like a road",
+    "Why now",
+    "What this does not claim",
+    "Where this comes from"
+   ]
+  },
+  "the-records-ran-out": {
+   "desk": "building",
+   "desk2": "security",
+   "debatable": false,
+   "desk_by": "rule",
+   "desk_why": "Highest score: Building with agents 7, next Agent security & policy 4",
+   "tags": [
+    "connectors",
+    "agent-tooling",
+    "agent-memory",
+    "provenance",
+    "behaviour-policy"
+   ],
+   "products": [
+    "sgit",
+    "riskmandate"
+   ],
+   "series": [],
+   "format": "analysis",
+   "format_label": "Analysis",
+   "format_by": "default",
+   "words": 2212,
+   "minutes": 10,
+   "headings": [
+    "In short",
+    "What the article reports",
+    "Structure, not behaviour: label every fact with how it is known",
+    "A green build is an expectation until the tests ran",
+    "Demo shortcuts: name the gap and accept it for an interval",
+    "Memory and records in one versioned history",
+    "The other side of the dependency",
+    "What the article does not say",
+    "What this does not claim",
+    "Where this comes from"
+   ]
+  },
+  "move-the-cloud-not-the-code": {
+   "desk": "strategy",
+   "desk2": "vaults",
+   "debatable": false,
+   "desk_by": "rule",
+   "desk_why": "Highest score: Strategy & startups 4, next Vaults & provenance 3",
+   "tags": [
+    "privacy",
+    "open-source",
+    "behaviour-policy"
+   ],
+   "products": [
+    "sgit"
+   ],
+   "series": [],
+   "format": "analysis",
+   "format_label": "Analysis",
+   "format_by": "default",
+   "words": 3038,
+   "minutes": 13,
+   "headings": [
+    "In short",
+    "Why workloads do not move",
+    "The criterion: the code must not know",
+    "This is not theoretical: the S3 twin",
+    "The reason to move is never sovereignty",
+    "A villager move: no new features",
+    "Testing goes to another level",
+    "Why this has to be open source",
+    "The business model",
+    "What this does not claim",
+    "Where this comes from"
+   ]
+  },
+  "judo-for-small-countries": {
+   "desk": "strategy",
+   "desk2": "vaults",
+   "debatable": false,
+   "desk_by": "rule",
+   "desk_why": "Highest score: Strategy & startups 6, next Vaults & provenance 3",
+   "tags": [
+    "privacy",
+    "open-source",
+    "wardley-maps",
+    "agent-isolation",
+    "strategy"
+   ],
+   "products": [],
+   "series": [],
+   "format": "analysis",
+   "format_label": "Analysis",
+   "format_by": "default",
+   "words": 4139,
+   "minutes": 18,
+   "headings": [
+    "In short",
+    "The event, and the word for what I mean",
+    "The race you cannot win, and should not enter",
+    "The opportunity is the plumbing",
+    "Infrastructure is the state's job",
+    "Why it has to be open source",
+    "Create the demand before the day you need it",
+    "Smaller models, more of them",
+    "Constraints are the input",
+    "What I learned spending millions on a distributed workforce",
+    "The playbook",
+    "What this does not claim",
+    "Where this comes from"
+   ]
+  },
+  "why-i-love-wardley-maps": {
+   "desk": "strategy",
+   "desk2": "building",
+   "debatable": false,
+   "desk_by": "rule",
+   "desk_why": "Highest score: Strategy & startups 8, next Building with agents 1",
+   "tags": [
+    "wardley-maps",
+    "strategy",
+    "startups",
+    "fractal-semantic-graphs"
+   ],
+   "products": [
+    "sgit",
+    "riskmandate"
+   ],
+   "series": [],
+   "format": "analysis",
+   "format_label": "Analysis",
+   "format_by": "default",
+   "words": 4403,
+   "minutes": 19,
+   "headings": [
+    "In short",
+    "What a map is, to me",
+    "Why they are so powerful",
+    "The best of ours",
+    "Two examples of \"does the market exist\"",
+    "Reading one map, as a story",
+    "A map inside a map inside a map",
+    "Two decks",
+    "The maps as data",
+    "For the mapping community",
+    "What this does not claim",
+    "Where this comes from"
+   ]
+  },
+  "places-of-highest-leverage": {
+   "desk": "strategy",
+   "desk2": "news",
+   "debatable": false,
+   "desk_by": "rule",
+   "desk_why": "Highest score: Strategy & startups 7, next The future of news 3",
+   "tags": [
+    "startups",
+    "personas",
+    "wardley-maps",
+    "shipping",
+    "the-newsroom"
+   ],
+   "products": [],
+   "series": [],
+   "format": "analysis",
+   "format_label": "Analysis",
+   "format_by": "default",
+   "words": 2618,
+   "minutes": 11,
+   "headings": [
+    "In short",
+    "The rule",
+    "Three days, step by step",
+    "Walking back, and parking",
+    "Which shoulders, on the map",
+    "Shipped, and used",
+    "What this does not claim",
+    "Where this comes from"
+   ]
+  },
+  "agentic-cost-is-an-engineering-problem": {
+   "desk": "strategy",
+   "desk2": "security",
+   "debatable": false,
+   "desk_by": "rule",
+   "desk_why": "Highest score: Strategy & startups 8, next Agent security & policy 3",
+   "tags": [
+    "pricing",
+    "wardley-maps",
+    "behaviour-policy",
+    "blast-radius",
+    "startups"
+   ],
+   "products": [
+    "riskmandate"
+   ],
+   "series": [],
+   "format": "business-plan",
+   "format_label": "Business plan",
+   "format_by": "raw tag \"business-plan\"",
+   "words": 2241,
+   "minutes": 10,
+   "headings": [
+    "In short",
+    "The problem, on a map",
+    "What the service does",
+    "Why the positive frame matters",
+    "Why vaults",
+    "How it makes money",
+    "What is already here, and what is not",
+    "What this does not claim",
+    "Where this comes from"
+   ]
+  },
+  "how-the-voice-works": {
+   "desk": "security",
+   "desk2": "building",
+   "debatable": true,
+   "desk_by": "rule",
+   "desk_why": "Highest score: Agent security & policy 3, next Building with agents 3",
+   "tags": [
+    "publishing-method",
+    "agent-tooling",
+    "behaviour-policy",
+    "the-newsroom"
+   ],
+   "products": [],
+   "series": [],
+   "format": "analysis",
+   "format_label": "Analysis",
+   "format_by": "default",
+   "words": 2284,
+   "minutes": 10,
+   "headings": [
+    "In short",
+    "The four inputs",
+    "What the corrections are about now",
+    "This is Claude speaking",
+    "What this does not claim",
+    "Where this comes from"
+   ]
+  },
+  "from-a-spreadsheet-to-a-folder-per-person": {
+   "desk": "building",
+   "desk2": "security",
+   "debatable": false,
+   "desk_by": "rule",
+   "desk_why": "Highest score: Building with agents 6, next Agent security & policy 3",
+   "tags": [
+    "connectors",
+    "agent-tooling",
+    "behaviour-policy",
+    "agent-memory",
+    "personas"
+   ],
+   "products": [
+    "riskmandate"
+   ],
+   "series": [],
+   "format": "how-to",
+   "format_label": "How-to",
+   "format_by": "raw tag \"walkthrough\"",
+   "words": 2573,
+   "minutes": 11,
+   "headings": [
+    "In short",
+    "What a spreadsheet cannot hold, and a folder can",
+    "The folder",
+    "The agent, and its policy",
+    "The migration",
+    "Five exercises, from simple to harder",
+    "What it will get wrong, and the fix",
+    "When to move the folders into a vault",
+    "For the agent that sends this",
+    "What this does not claim",
+    "Where this comes from"
+   ]
+  },
+  "the-key-is-the-billing-system": {
+   "desk": "building",
+   "desk2": "strategy",
+   "debatable": true,
+   "desk_by": "rule",
+   "desk_why": "Highest score: Building with agents 4, next Strategy & startups 4",
+   "tags": [
+    "client-side",
+    "the-newsroom",
+    "open-source",
+    "startups"
+   ],
+   "products": [],
+   "series": [],
+   "format": "analysis",
+   "format_label": "Analysis",
+   "format_by": "default",
+   "words": 3914,
+   "minutes": 17,
+   "headings": [
+    "In short",
+    "What VoiceDebrief is",
+    "Why no server is the product",
+    "The commercial model that was never a billing system",
+    "The map: every provider, from their own pages",
+    "The four routes",
+    "The brief for the agents that will write to them",
+    "What this does not claim",
+    "Where this comes from"
+   ]
+  },
+  "ways-to-read-one-article": {
+   "desk": "news",
+   "desk2": "vaults",
+   "debatable": false,
+   "desk_by": "rule",
+   "desk_why": "Highest score: The future of news 6, next Vaults & provenance 3",
+   "tags": [
+    "the-newsroom",
+    "fractal-semantic-graphs",
+    "personas",
+    "agentic-email"
+   ],
+   "products": [],
+   "series": [],
+   "format": "analysis",
+   "format_label": "Analysis",
+   "format_by": "default",
+   "words": 2195,
+   "minutes": 10,
+   "headings": [
+    "In short",
+    "Focus and time",
+    "The modes",
+    "Deterministic first, a model second",
+    "What the article keeps that the graph loses",
+    "The brief",
+    "What this does not claim",
+    "Where this comes from"
+   ]
+  },
+  "firing-journalists": {
+   "desk": "news",
+   "desk2": "vaults",
+   "debatable": false,
+   "desk_by": "rule",
+   "desk_why": "Highest score: The future of news 6, next Vaults & provenance 3",
+   "tags": [
+    "journalism",
+    "publishing-method",
+    "strategy",
+    "provenance",
+    "the-newsroom"
+   ],
+   "products": [],
+   "series": [],
+   "format": "analysis",
+   "format_label": "Analysis",
+   "format_by": "default",
+   "words": 2195,
+   "minutes": 10,
+   "headings": [
+    "In short",
+    "The centre of gravity",
+    "What you measure is what you become",
+    "The spectrum, honestly",
+    "The other way to fail",
+    "Who to hire instead",
+    "Read it from outside",
+    "What this does not claim",
+    "Where this comes from"
+   ]
+  },
+  "the-site-is-an-inbox": {
+   "desk": "news",
+   "desk2": "vaults",
+   "debatable": true,
+   "desk_by": "rule",
+   "desk_why": "Highest score: The future of news 6, next Vaults & provenance 5",
+   "tags": [
+    "the-newsroom",
+    "agentic-email",
+    "personas",
+    "fractal-semantic-graphs",
+    "privacy"
+   ],
+   "products": [],
+   "series": [],
+   "format": "analysis",
+   "format_label": "Analysis",
+   "format_by": "default",
+   "words": 3028,
+   "minutes": 13,
+   "headings": [
+    "In short",
+    "Part one: the constraints are what let me think",
+    "Part two: the brief",
+    "What this does not claim",
+    "Where this comes from"
+   ]
+  },
+  "the-vault-is-live": {
+   "desk": "security",
+   "desk2": "building",
+   "debatable": true,
+   "desk_by": "rule",
+   "desk_why": "Highest score: Agent security & policy 3, next Building with agents 3",
+   "tags": [
+    "identity-and-secrets",
+    "the-newsroom",
+    "client-side",
+    "synthetic-users"
+   ],
+   "products": [
+    "sgit"
+   ],
+   "series": [],
+   "format": "analysis",
+   "format_label": "Analysis",
+   "format_by": "default",
+   "words": 2997,
+   "minutes": 13,
+   "headings": [
+    "In short",
+    "The layers",
+    "The key chain, and what is in each vault",
+    "The sync model",
+    "The tests",
+    "The timeline",
+    "Why this matters more than the feature",
+    "What this does not claim",
+    "Where this comes from"
+   ]
+  },
+  "two-agents-one-vault": {
+   "desk": "news",
+   "desk2": "building",
+   "debatable": false,
+   "desk_by": "rule",
+   "desk_why": "Highest score: The future of news 5, next Building with agents 3",
+   "tags": [
+    "the-newsroom",
+    "client-side",
+    "provenance",
+    "personas",
+    "agent-tooling"
+   ],
+   "products": [],
+   "series": [],
+   "format": "analysis",
+   "format_label": "Analysis",
+   "format_by": "default",
+   "words": 3708,
+   "minutes": 16,
+   "headings": [
+    "In short",
+    "What the reader sees",
+    "The vault, and the agent that keeps it",
+    "The site that only reads",
+    "Why the vault is the interface",
+    "The loop, and whose plan this was",
+    "What this does not claim",
+    "Where this comes from"
+   ]
+  },
+  "the-article-remains-a-product": {
+   "desk": "news",
+   "desk2": "vaults",
+   "debatable": false,
+   "desk_by": "rule",
+   "desk_why": "Highest score: The future of news 6, next Vaults & provenance 4",
+   "tags": [
+    "the-newsroom",
+    "provenance",
+    "fractal-semantic-graphs",
+    "agent-readable-web",
+    "pricing"
+   ],
+   "products": [],
+   "series": [],
+   "format": "response",
+   "format_label": "Answer",
+   "format_by": "raw tag \"response\"",
+   "words": 3542,
+   "minutes": 15,
+   "headings": [
+    "In short",
+    "Model that exact scenario",
+    "Structured intelligence",
+    "Continuous intelligence",
+    "Provenance and verification",
+    "Embedded distribution",
+    "Who would pay?",
+    "The article remains a product",
+    "Cultural, not technical",
+    "What this does not claim",
+    "Where this comes from"
+   ]
+  },
+  "explorer-to-villager-newsroom": {
+   "desk": "building",
+   "desk2": "news",
+   "debatable": false,
+   "desk_by": "rule",
+   "desk_why": "Highest score: Building with agents 7, next The future of news 1",
+   "tags": [
+    "code-review",
+    "synthetic-users",
+    "shipping",
+    "the-newsroom"
+   ],
+   "products": [
+    "sg-meter"
+   ],
+   "series": [],
+   "format": "analysis",
+   "format_label": "Analysis",
+   "format_by": "default",
+   "words": 2905,
+   "minutes": 13,
+   "headings": [
+    "In short",
+    "Why now",
+    "What I measured",
+    "The six phases",
+    "The pipeline",
+    "The brief",
+    "What this does not claim",
+    "Where this comes from"
+   ]
+  },
+  "the-passkey-opens-the-vault": {
+   "desk": "vaults",
+   "desk2": "security",
+   "debatable": false,
+   "desk_by": "rule",
+   "desk_why": "Highest score: Vaults & provenance 4, next Agent security & policy 3",
+   "tags": [
+    "identity-and-secrets",
+    "encryption-and-keys",
+    "client-side",
+    "the-newsroom"
+   ],
+   "products": [],
+   "series": [],
+   "format": "analysis",
+   "format_label": "Analysis",
+   "format_by": "default",
+   "words": 7758,
+   "minutes": 34,
+   "headings": [
+    "In short",
+    "Part one: the design",
+    "Part two: what this enables",
+    "What this does not claim",
+    "Where this comes from"
+   ]
+  },
+  "i-miss-it": {
+   "desk": "strategy",
+   "desk2": "vaults",
+   "debatable": false,
+   "desk_by": "rule",
+   "desk_why": "Highest score: Strategy & startups 5, next Vaults & provenance 2",
+   "tags": [
+    "startups",
+    "encryption-and-keys",
+    "identity-and-secrets",
+    "the-newsroom",
+    "personas"
+   ],
+   "products": [],
+   "series": [],
+   "format": "analysis",
+   "format_label": "Analysis",
+   "format_by": "default",
+   "words": 2291,
+   "minutes": 10,
+   "headings": [
+    "In short",
+    "The people who decide the roadmap have to use it",
+    "The brutal part",
+    "Direction is the scarce part",
+    "The loop is the moat",
+    "Part two: the brief for the feature I miss",
+    "What this does not claim",
+    "Where this comes from"
+   ]
+  },
+  "brief-the-agent-too": {
+   "desk": "news",
+   "desk2": "building",
+   "debatable": false,
+   "desk_by": "rule",
+   "desk_why": "Highest score: The future of news 6, next Building with agents 2",
+   "tags": [
+    "personas",
+    "agent-memory",
+    "agent-readable-web",
+    "the-newsroom",
+    "prompt-injection"
+   ],
+   "products": [],
+   "series": [],
+   "format": "analysis",
+   "format_label": "Analysis",
+   "format_by": "default",
+   "words": 2326,
+   "minutes": 10,
+   "headings": [
+    "In short",
+    "A founder, an article and an agent",
+    "Who reads what, now",
+    "Why an agent is a better reader for some things",
+    "Memory: why this stays affordable, and why an agent would pay",
+    "What a pack for someone's agent looks like",
+    "Writing to someone else's agent, safely",
+    "What to build next",
+    "What this does not claim",
+    "Where this comes from"
+   ]
+  },
+  "a-reading-list-in-a-link": {
+   "desk": "news",
+   "desk2": "building",
+   "debatable": false,
+   "desk_by": "rule",
+   "desk_why": "Highest score: The future of news 5, next Building with agents 3",
+   "tags": [
+    "the-newsroom",
+    "personas",
+    "connectors",
+    "agent-tooling"
+   ],
+   "products": [],
+   "series": [],
+   "format": "analysis",
+   "format_label": "Analysis",
+   "format_by": "default",
+   "words": 2937,
+   "minutes": 13,
+   "headings": [
+    "In short",
+    "Part one: the brief for the newsroom",
+    "Part two: the brief for the RiskMandate agent",
+    "Part three: the loop",
+    "Where this comes from"
+   ]
+  },
+  "a-model-in-the-tab": {
+   "desk": "building",
+   "desk2": "vaults",
+   "debatable": false,
+   "desk_by": "rule",
+   "desk_why": "Highest score: Building with agents 4, next Vaults & provenance 3",
+   "tags": [
+    "client-side",
+    "privacy",
+    "agent-readable-web",
+    "the-newsroom",
+    "personas"
+   ],
+   "products": [],
+   "series": [],
+   "format": "explainer",
+   "format_label": "Explainer",
+   "format_by": "override: A briefing on what the Prompt API does today.",
+   "words": 3260,
+   "minutes": 14,
+   "headings": [
+    "In short",
+    "What Chrome actually ships",
+    "Why the download felt so bad",
+    "Why there are so few examples",
+    "The case against, taken seriously",
+    "Why this fits what we have built",
+    "Where we can use it",
+    "What we are building next",
+    "Where this comes from"
+   ]
+  },
+  "no-server-by-design": {
+   "desk": "vaults",
+   "desk2": "building",
+   "debatable": true,
+   "desk_by": "override",
+   "desk_why": "The architecture of the publishing method: files and vaults, no back end.",
+   "tags": [
+    "client-side",
+    "vault-design",
+    "privacy",
+    "threat-modelling",
+    "the-newsroom"
+   ],
+   "products": [
+    "sg-meter"
+   ],
+   "series": [],
+   "format": "field-report",
+   "format_label": "Field report",
+   "format_by": "override: The back end retired, as done.",
+   "words": 4060,
+   "minutes": 18,
+   "headings": [
+    "In short",
+    "Step one: the file system is the database",
+    "Step two: the back end goes too",
+    "What the newsroom is now",
+    "Not \"no servers\": commodity servers",
+    "It scales without the complexity scaling",
+    "Security as a business tool",
+    "Why it is easy to throw technology away",
+    "It ships fast",
+    "Sovereignty, privacy, explainability, determinism",
+    "How far can it be pushed?",
+    "What this does not claim",
+    "What comes next",
+    "Where this comes from"
+   ]
+  },
+  "the-agent-is-the-reader": {
+   "desk": "news",
+   "desk2": "strategy",
+   "debatable": false,
+   "desk_by": "rule",
+   "desk_why": "Highest score: The future of news 8, next Strategy & startups 3",
+   "tags": [
+    "the-newsroom",
+    "pricing",
+    "micropayments",
+    "fractal-semantic-graphs",
+    "agent-readable-web"
+   ],
+   "products": [],
+   "series": [
+    [
+     "news-economics",
+     3,
+     3
+    ]
+   ],
+   "format": "analysis",
+   "format_label": "Analysis",
+   "format_by": "default",
+   "words": 4405,
+   "minutes": 19,
+   "headings": [
+    "In short",
+    "What five articles became",
+    "The readers check each other",
+    "Does it compress as it grows?",
+    "Meaning, not just compression",
+    "Agents are personas too",
+    "The agent pays not to pay",
+    "Signed claims, with an expiry date",
+    "What would Wikipedia do?",
+    "What this does not show",
+    "What comes next",
+    "Where this comes from"
+   ]
+  },
+  "where-the-platform-draws-the-line": {
+   "desk": "security",
+   "desk2": "building",
+   "debatable": false,
+   "desk_by": "rule",
+   "desk_why": "Highest score: Agent security & policy 6, next Building with agents 2",
+   "tags": [
+    "behaviour-policy",
+    "agent-isolation",
+    "blast-radius"
+   ],
+   "products": [
+    "riskmandate"
+   ],
+   "series": [],
+   "format": "explainer",
+   "format_label": "Explainer",
+   "format_by": "override: Tagged briefing: Microsoft MXC and ACS field by field.",
+   "words": 4315,
+   "minutes": 19,
+   "headings": [
+    "In short",
+    "What Microsoft shipped: a briefing",
+    "The shared responsibility model, applied to agents",
+    "One agent, three ways: eight scenarios",
+    "How MXC and ACS map to an Agent Behaviour Policy",
+    "Not the summit",
+    "Where to start",
+    "Where this comes from"
+   ]
+  },
+  "the-same-argument-in-our-words": {
+   "desk": "security",
+   "desk2": null,
+   "debatable": false,
+   "desk_by": "rule",
+   "desk_why": "Highest score: Agent security & policy 8",
+   "tags": [
+    "behaviour-policy",
+    "insider-risk",
+    "risk-acceptance"
+   ],
+   "products": [
+    "riskmandate"
+   ],
+   "series": [
+    [
+     "nadella-answer",
+     2,
+     2
+    ]
+   ],
+   "format": "response",
+   "format_label": "Answer",
+   "format_by": "override: A translation of Satya Nadella's argument, idea by idea.",
+   "words": 3410,
+   "minutes": 15,
+   "headings": [
+    "In short",
+    "Where our words came from",
+    "His words, translated",
+    "Where the two languages differ",
+    "A shared language is the next step",
+    "Where this comes from"
+   ]
+  },
+  "authority-outside-the-model": {
+   "desk": "security",
+   "desk2": "building",
+   "debatable": false,
+   "desk_by": "rule",
+   "desk_why": "Highest score: Agent security & policy 11, next Building with agents 2",
+   "tags": [
+    "behaviour-policy",
+    "insider-risk",
+    "blast-radius",
+    "human-in-the-loop",
+    "connectors"
+   ],
+   "products": [
+    "riskmandate"
+   ],
+   "series": [
+    [
+     "nadella-answer",
+     1,
+     2
+    ]
+   ],
+   "format": "response",
+   "format_label": "Answer",
+   "format_by": "raw tag \"response\"",
+   "words": 4660,
+   "minutes": 20,
+   "headings": [
+    "In short",
+    "His argument, in brief",
+    "Seven principles, seven answers",
+    "Five things the list leaves out",
+    "What his post has that we do not",
+    "Honest maturity, principle by principle",
+    "Where to start, if you agree with him",
+    "Where this comes from"
+   ]
+  },
+  "how-to-run-synthetic-users": {
+   "desk": "building",
+   "desk2": "news",
+   "debatable": true,
+   "desk_by": "override",
+   "desk_why": "A method any builder can run; the newsroom is only the example.",
+   "tags": [
+    "synthetic-users",
+    "personas",
+    "agent-tooling",
+    "the-newsroom"
+   ],
+   "products": [],
+   "series": [],
+   "format": "how-to",
+   "format_label": "How-to",
+   "format_by": "raw tag \"how-to\"",
+   "words": 3447,
+   "minutes": 15,
+   "headings": [
+    "In short",
+    "What you need",
+    "The method, step by step",
+    "What went wrong, so you can skip it",
+    "A template to start from",
+    "What is next",
+    "Where this comes from"
+   ]
+  },
+  "a-link-to-a-persona": {
+   "desk": "news",
+   "desk2": "vaults",
+   "debatable": true,
+   "desk_by": "override",
+   "desk_why": "Personas are how the newsroom meets its readers.",
+   "tags": [
+    "the-newsroom",
+    "personas",
+    "client-side",
+    "privacy"
+   ],
+   "products": [],
+   "series": [],
+   "format": "analysis",
+   "format_label": "Analysis",
+   "format_by": "default",
+   "words": 2432,
+   "minutes": 11,
+   "headings": [
+    "In short",
+    "Landing as nobody",
+    "Three kinds of link",
+    "What happens when the link opens",
+    "The vault, and who keeps it",
+    "What others learned, and what it means here",
+    "Risks, and how the design answers them",
+    "How to build it",
+    "Why this matters beyond a link"
+   ]
+  },
+  "pay-after-you-read": {
+   "desk": "news",
+   "desk2": "strategy",
+   "debatable": false,
+   "desk_by": "rule",
+   "desk_why": "Highest score: The future of news 8, next Strategy & startups 3",
+   "tags": [
+    "the-newsroom",
+    "micropayments",
+    "pricing",
+    "personas",
+    "wardley-maps"
+   ],
+   "products": [],
+   "series": [
+    [
+     "reading-meter",
+     5,
+     5
+    ]
+   ],
+   "format": "field-report",
+   "format_label": "Field report",
+   "format_by": "override: Seven releases in one afternoon.",
+   "words": 4035,
+   "minutes": 18,
+   "headings": [
+    "In short",
+    "What a reader gets now",
+    "Pay after you see the value",
+    "Every decision started with the reader",
+    "How it grew: one release at a time",
+    "The zigzag: innovate, leverage, commoditise",
+    "Why it could go this fast",
+    "Do we have all the pieces?",
+    "Want to try it on your site?",
+    "Where this comes from"
+   ]
+  },
+  "where-the-vault-keys-live": {
+   "desk": "vaults",
+   "desk2": "security",
+   "debatable": false,
+   "desk_by": "rule",
+   "desk_why": "Highest score: Vaults & provenance 6, next Agent security & policy 3",
+   "tags": [
+    "encryption-and-keys",
+    "identity-and-secrets",
+    "vault-design"
+   ],
+   "products": [
+    "sgit"
+   ],
+   "series": [
+    [
+     "keys",
+     2,
+     2
+    ]
+   ],
+   "format": "explainer",
+   "format_label": "Explainer",
+   "format_by": "override: Key management as it stands at one version.",
+   "words": 3678,
+   "minutes": 16,
+   "headings": [
+    "In short",
+    "Where everything lives",
+    "One secret, and the keys derived from it",
+    "Where the vault keys are kept today",
+    "How a new key reaches the registry",
+    "The weakest step: giving a key to an agent",
+    "Append lanes, the transport behind most of this",
+    "Small vaults for small jobs",
+    "What comes next",
+    "How do you manage yours?",
+    "What changed in the docs",
+    "Where this comes from"
+   ]
+  },
+  "the-infographic-bake-off": {
+   "desk": "news",
+   "desk2": "strategy",
+   "debatable": false,
+   "desk_by": "rule",
+   "desk_why": "Highest score: The future of news 4, next Strategy & startups 2",
+   "tags": [
+    "the-newsroom",
+    "pricing"
+   ],
+   "products": [],
+   "series": [],
+   "format": "field-report",
+   "format_label": "Field report",
+   "format_by": "override: 101 images judged blind on one day.",
+   "words": 1869,
+   "minutes": 8,
+   "headings": [
+    "In short",
+    "The team",
+    "Round 1: who can put the right words in a picture?",
+    "Round 2: numbers, a document, a whole article",
+    "Round 3: can you direct it?",
+    "Round 4: three slides that belong together",
+    "Round 5: the conclusion, drawn by the models it recommends",
+    "What it cost",
+    "The guidance",
+    "What this does not show",
+    "What comes next"
+   ]
+  },
+  "pay-to-keep-your-persona": {
+   "desk": "news",
+   "desk2": "strategy",
+   "debatable": false,
+   "desk_by": "rule",
+   "desk_why": "Highest score: The future of news 7, next Strategy & startups 3",
+   "tags": [
+    "the-newsroom",
+    "personas",
+    "pricing",
+    "micropayments",
+    "client-side"
+   ],
+   "products": [],
+   "series": [
+    [
+     "reading-meter",
+     4,
+     5
+    ]
+   ],
+   "format": "analysis",
+   "format_label": "Analysis",
+   "format_by": "default",
+   "words": 2167,
+   "minutes": 9,
+   "headings": [
+    "In short",
+    "Three reasons readers are asked to pay, and why none of them is ours",
+    "What a reader is actually buying",
+    "The persona",
+    "Personas are focus",
+    "The iPad problem",
+    "What people will pay for",
+    "The question after that",
+    "Help us design it",
+    "What we expect, written down now",
+    "Try it"
+   ]
+  },
+  "who-will-game-the-reading-meter": {
+   "desk": "news",
+   "desk2": "security",
+   "debatable": true,
+   "desk_by": "override",
+   "desk_why": "A threat model of the newsroom's own meter, part 3 of the reading meter.",
+   "tags": [
+    "threat-modelling",
+    "micropayments",
+    "client-side",
+    "privacy",
+    "synthetic-users"
+   ],
+   "products": [],
+   "series": [
+    [
+     "reading-meter",
+     3,
+     5
+    ]
+   ],
+   "format": "analysis",
+   "format_label": "Analysis",
+   "format_by": "default",
+   "words": 2225,
+   "minutes": 10,
+   "headings": [
+    "In short",
+    "The question one level down",
+    "Eight kinds of reader",
+    "Agents change level in a single request",
+    "Nine ways to cheat or leak",
+    "The risks that will actually happen",
+    "Aim at the readers who will pay",
+    "What would change the answer"
+   ]
+  },
+  "going-live-with-the-reading-meter": {
+   "desk": "news",
+   "desk2": "strategy",
+   "debatable": false,
+   "desk_by": "rule",
+   "desk_why": "Highest score: The future of news 7, next Strategy & startups 3",
+   "tags": [
+    "the-newsroom",
+    "micropayments",
+    "pricing",
+    "personas",
+    "client-side"
+   ],
+   "products": [],
+   "series": [
+    [
+     "reading-meter",
+     2,
+     5
+    ]
+   ],
+   "format": "field-report",
+   "format_label": "Field report",
+   "format_by": "override: Going live, with the numbers to check.",
+   "words": 3092,
+   "minutes": 13,
+   "headings": [
+    "In short",
+    "What changes today",
+    "Why below zero, and why no nagging",
+    "Why by depth",
+    "Why \"don't charge me\" is the most useful button",
+    "The price is the hypothesis",
+    "The business case, honestly",
+    "Why an honesty box can work",
+    "The anchors: what we expect, and what would prove us wrong",
+    "What would make us change course",
+    "Who could cheat, and why we let them",
+    "Try it"
+   ]
+  },
+  "open-source-is-not-free": {
+   "desk": "strategy",
+   "desk2": "building",
+   "debatable": false,
+   "desk_by": "rule",
+   "desk_why": "Highest score: Strategy & startups 7, next Building with agents 3",
+   "tags": [
+    "open-source",
+    "pricing",
+    "micropayments",
+    "synthetic-users",
+    "deployment"
+   ],
+   "products": [],
+   "series": [],
+   "format": "analysis",
+   "format_label": "Analysis",
+   "format_by": "default",
+   "words": 4205,
+   "minutes": 18,
+   "headings": [
+    "In short",
+    "The iMac",
+    "The long tail, measured",
+    "Where the money flows",
+    "Why not just charge?",
+    "The pence problem",
+    "Five ways to pay for the long tail, simulated",
+    "What price pays for the long tail?",
+    "What matters most",
+    "The satellites",
+    "What this says",
+    "Check my numbers",
+    "Where this comes from"
+   ]
+  },
+  "one-article-five-readers": {
+   "desk": "news",
+   "desk2": "vaults",
+   "debatable": false,
+   "desk_by": "rule",
+   "desk_why": "Highest score: The future of news 8, next Vaults & provenance 2",
+   "tags": [
+    "the-newsroom",
+    "journalism",
+    "story-vault",
+    "fractal-semantic-graphs"
+   ],
+   "products": [],
+   "series": [],
+   "format": "explainer",
+   "format_label": "Explainer",
+   "format_by": "override: How the five agent readers work.",
+   "words": 3529,
+   "minutes": 15,
+   "headings": [
+    "In short",
+    "Why the prose comes first",
+    "Five readers",
+    "The simulation",
+    "What the Librarian found",
+    "What the Cartographer built",
+    "What the Historian found",
+    "The Explainer and the Storyteller",
+    "What it looks like on the page",
+    "What this does not do",
+    "What comes next"
+   ]
+  },
+  "a-meter-in-the-browser": {
+   "desk": "news",
+   "desk2": "strategy",
+   "debatable": false,
+   "desk_by": "rule",
+   "desk_why": "Highest score: The future of news 7, next Strategy & startups 4",
+   "tags": [
+    "the-newsroom",
+    "micropayments",
+    "personas",
+    "client-side",
+    "privacy"
+   ],
+   "products": [],
+   "series": [
+    [
+     "reading-meter",
+     1,
+     5
+    ]
+   ],
+   "format": "field-report",
+   "format_label": "Field report",
+   "format_by": "override: A release, described as shipped.",
+   "words": 1162,
+   "minutes": 5,
+   "headings": [
+    "What it does",
+    "The history is the product",
+    "Why a meter that charges nothing",
+    "Where it came from",
+    "What it does not do, yet",
+    "Try it"
+   ]
+  },
+  "re-anchoring-agent-behaviour-policies": {
+   "desk": "building",
+   "desk2": "security",
+   "debatable": true,
+   "desk_by": "override",
+   "desk_why": "A hook built for Claude Code sessions: a builder's fix, though the rules it protects are policy.",
+   "tags": [
+    "agent-tooling",
+    "behaviour-policy",
+    "agent-memory",
+    "ai-governance"
+   ],
+   "products": [],
+   "series": [
+    [
+     "behaviour-policy-arc",
+     4,
+     4
+    ]
+   ],
+   "format": "field-report",
+   "format_label": "Field report",
+   "format_by": "override: A fix built and measured with a canary report.",
+   "words": 2782,
+   "minutes": 12,
+   "headings": [
+    "In short",
+    "What summarisation does to a session",
+    "Three ways a rule fails",
+    "Re-anchoring: the rules come back from disk",
+    "One file, three jobs",
+    "The canary: a report that ends every few answers",
+    "Living with it",
+    "The recipe changes with the platform",
+    "What it does not do",
+    "Build your own"
+   ]
+  },
+  "a-second-reader-the-agent-cannot-skip": {
+   "desk": "building",
+   "desk2": "security",
+   "debatable": true,
+   "desk_by": "override",
+   "desk_why": "A hook any builder can copy; the policy is the motive, the build is the content.",
+   "tags": [
+    "agent-tooling",
+    "behaviour-policy",
+    "human-in-the-loop",
+    "agentic-email",
+    "ai-governance"
+   ],
+   "products": [],
+   "series": [
+    [
+     "behaviour-policy-arc",
+     3,
+     4
+    ]
+   ],
+   "format": "field-report",
+   "format_label": "Field report",
+   "format_by": "override: Two wrong emails and the gate built after them.",
+   "words": 3292,
+   "minutes": 14,
+   "headings": [
+    "In short",
+    "Why the rule failed: hope held by the agent it governs",
+    "How the guard works",
+    "What the first run caught",
+    "Six kinds of independence",
+    "From setting to boundary: where the hook lives decides what it is",
+    "Building it with what is public today",
+    "The pattern is old, and it has a name",
+    "The pattern, reusable",
+    "What it does not do"
+   ]
+  },
+  "the-ai-governance-stack-as-a-graph": {
+   "desk": "security",
+   "desk2": "vaults",
+   "debatable": false,
+   "desk_by": "rule",
+   "desk_why": "Highest score: Agent security & policy 6, next Vaults & provenance 3",
+   "tags": [
+    "ai-governance",
+    "fractal-semantic-graphs",
+    "regulation",
+    "risk-acceptance"
+   ],
+   "products": [],
+   "series": [],
+   "format": "response",
+   "format_label": "Answer",
+   "format_by": "title or teaser says \"an answer to\"",
+   "words": 3498,
+   "minutes": 15,
+   "headings": [
+    "In short",
+    "Hari's stack, exactly as posted",
+    "The table already contains a graph",
+    "Each layer is its own world",
+    "The edges between worlds come from the provisions",
+    "Zoom from one cell down",
+    "The stack is a snapshot; the graph keeps time",
+    "Do this today, as a traversal",
+    "Hari's three gaps, as queries",
+    "What \"4 or 5\" means in a graph",
+    "Bring your own",
+    "How the vault is built, and what it does not claim",
+    "Prior art",
+    "Open it"
+   ]
+  },
+  "rfc-0001-public-key-cryptography-for-sgit": {
+   "desk": "vaults",
+   "desk2": "security",
+   "debatable": false,
+   "desk_by": "rule",
+   "desk_why": "Highest score: Vaults & provenance 5, next Agent security & policy 2",
+   "tags": [
+    "encryption-and-keys",
+    "threat-modelling"
+   ],
+   "products": [
+    "sgit"
+   ],
+   "series": [
+    [
+     "keys",
+     1,
+     2
+    ]
+   ],
+   "format": "rfc",
+   "format_label": "RFC",
+   "format_by": "raw tag \"rfc\"",
+   "words": 4182,
+   "minutes": 18,
+   "headings": [
+    "In short",
+    "How sgit protects a vault today",
+    "The honest problem",
+    "The obvious idea, and the correction",
+    "The first step both designs share: a writer signature",
+    "Design 1: native PKI vault mode",
+    "Design 2: sealed files",
+    "How the pieces fit",
+    "Prior art",
+    "Questions for reviewers",
+    "How to comment"
+   ]
+  },
+  "a-mac-of-the-agents-own": {
+   "desk": "strategy",
+   "desk2": "building",
+   "debatable": true,
+   "desk_by": "override",
+   "desk_why": "Written as a business plan; the build serves the plan.",
+   "tags": [
+    "agent-isolation",
+    "behaviour-policy",
+    "open-source",
+    "encryption-and-keys",
+    "wardley-maps"
+   ],
+   "products": [
+    "sgit"
+   ],
+   "series": [
+    [
+     "where-agents-run",
+     4,
+     4
+    ]
+   ],
+   "format": "business-plan",
+   "format_label": "Business plan",
+   "format_by": "raw tag \"business-plan\"",
+   "words": 3057,
+   "minutes": 13,
+   "headings": [
+    "In short",
+    "The next dedicated resource",
+    "Why a Mac",
+    "What Apple's licence allows",
+    "The shapes that are allowed",
+    "A clean Mac, a key, and everything else from the vaults",
+    "Three desktops, one agent",
+    "The numbers",
+    "The map",
+    "What we are looking for",
+    "Where to start",
+    "One Mac, many agents: what changes when you queue them"
+   ]
+  },
+  "riskmandate-ten-questions": {
+   "desk": "strategy",
+   "desk2": "security",
+   "debatable": true,
+   "desk_by": "override",
+   "desk_why": "A founder answering for the company: what it is and is not.",
+   "tags": [
+    "behaviour-policy",
+    "risk-acceptance",
+    "supply-chains",
+    "encryption-and-keys",
+    "connectors"
+   ],
+   "products": [
+    "riskmandate"
+   ],
+   "series": [],
+   "format": "interview",
+   "format_label": "Interview",
+   "format_by": "raw tag \"interview\"",
+   "words": 6652,
+   "minutes": 29,
+   "headings": [
+    "If you have not met RiskMandate",
+    "The ten questions",
+    "The answers, in brief",
+    "Three things we are deliberately not",
+    "Honest maturity, across all ten",
+    "Three things this exercise showed we must fix on our own site",
+    "The ten answers in full",
+    "Across all ten"
+   ]
+  },
+  "how-i-work-with-claude": {
+   "desk": "building",
+   "desk2": "security",
+   "debatable": false,
+   "desk_by": "rule",
+   "desk_why": "Highest score: Building with agents 5, next Agent security & policy 3",
+   "tags": [
+    "agent-tooling",
+    "agent-memory",
+    "personas",
+    "behaviour-policy"
+   ],
+   "products": [],
+   "series": [],
+   "format": "how-to",
+   "format_label": "How-to",
+   "format_by": "raw tag \"guide\"",
+   "words": 1825,
+   "minutes": 8,
+   "headings": [
+    "In short",
+    "One session per topic",
+    "Name every session",
+    "What an agent is",
+    "Memory is what the session reads, so curate it",
+    "Access by default",
+    "Vaults: how agents receive and send information",
+    "Starter prompts",
+    "Tips",
+    "Where to start"
+   ]
+  },
+  "the-waiting-room-knew-first": {
+   "desk": "news",
+   "desk2": "vaults",
+   "debatable": false,
+   "desk_by": "rule",
+   "desk_why": "Highest score: The future of news 6, next Vaults & provenance 3",
+   "tags": [
+    "local-news",
+    "provenance",
+    "story-vault"
+   ],
+   "products": [],
+   "series": [
+    [
+     "local-news",
+     4,
+     4
+    ]
+   ],
+   "format": "field-report",
+   "format_label": "Field report",
+   "format_by": "override: A live local story, reported as it happened.",
+   "words": 2380,
+   "minutes": 10,
+   "headings": [
+    "In short",
+    "What happened, separated by level",
+    "Newsworthy to me",
+    "Where a local person could look, today",
+    "Why the gap is wider now",
+    "Not naming and shaming",
+    "The vault, and what happens next",
+    "What would close the gap",
+    "From the desk"
+   ]
+  },
+  "encrypted-memory-for-isolated-agents": {
+   "desk": "building",
+   "desk2": "vaults",
+   "debatable": true,
+   "desk_by": "override",
+   "desk_why": "Deployment patterns for agents, written for whoever runs them.",
+   "tags": [
+    "agent-memory",
+    "deployment",
+    "encryption-and-keys",
+    "vault-design",
+    "agent-isolation"
+   ],
+   "products": [
+    "sgit"
+   ],
+   "series": [
+    [
+     "where-agents-run",
+     3,
+     4
+    ]
+   ],
+   "format": "analysis",
+   "format_label": "Analysis",
+   "format_by": "default",
+   "words": 3135,
+   "minutes": 14,
+   "headings": [
+    "In short",
+    "Why isolated agents need memory somewhere else",
+    "What is in the box",
+    "Pattern one: a Mac mini, a vault container and a folder",
+    "Pattern two: one agent run, from nothing to memory and back",
+    "Pattern three: Kubernetes",
+    "Pattern four: the cloud, with no public route to the server",
+    "Pattern five: two servers, one vault",
+    "What a breach of the server gives an attacker",
+    "Which pattern, when",
+    "Where to start"
+   ]
+  },
+  "knowing-when-to-stop": {
+   "desk": "building",
+   "desk2": "security",
+   "debatable": true,
+   "desk_by": "override",
+   "desk_why": "Designing stops into agents; the security examples serve that.",
+   "tags": [
+    "shipping",
+    "threat-modelling",
+    "wardley-maps",
+    "behaviour-policy"
+   ],
+   "products": [],
+   "series": [],
+   "format": "analysis",
+   "format_label": "Analysis",
+   "format_by": "default",
+   "words": 2053,
+   "minutes": 9,
+   "headings": [
+    "In short",
+    "Variability is the feature",
+    "What seniority gives you",
+    "When good teams run out of real work",
+    "Crushing every KPI and not moving the needle",
+    "Art is knowing when to stop",
+    "Why it is harder for agents",
+    "Constraints that carry perspective",
+    "Where to start",
+    "From the desk"
+   ]
+  },
+  "agency-is-not-a-yes": {
+   "desk": "security",
+   "desk2": "vaults",
+   "debatable": false,
+   "desk_by": "rule",
+   "desk_why": "Highest score: Agent security & policy 8, next Vaults & provenance 3",
+   "tags": [
+    "human-in-the-loop",
+    "behaviour-policy",
+    "provenance",
+    "fractal-semantic-graphs",
+    "regulation"
+   ],
+   "products": [],
+   "series": [],
+   "format": "analysis",
+   "format_label": "Analysis",
+   "format_by": "default",
+   "words": 3076,
+   "minutes": 13,
+   "headings": [
+    "In short",
+    "The least interesting part of a decision",
+    "The incentive to say no, or to say yes",
+    "Everything you are shown is a compression",
+    "Accountability without agency is liability",
+    "The scale",
+    "Agents are deciders too",
+    "The review is a QA step, not a sign-off",
+    "From review to rule",
+    "The law already asks for most of this",
+    "Where to start",
+    "From the desk"
+   ]
+  },
+  "hope-or-enforcement": {
+   "desk": "security",
+   "desk2": "building",
+   "debatable": false,
+   "desk_by": "rule",
+   "desk_why": "Highest score: Agent security & policy 7, next Building with agents 3",
+   "tags": [
+    "behaviour-policy",
+    "multi-agent",
+    "blast-radius",
+    "prompt-injection",
+    "agent-readable-web"
+   ],
+   "products": [
+    "riskmandate"
+   ],
+   "series": [
+    [
+     "behaviour-policy-arc",
+     2,
+     4
+    ]
+   ],
+   "format": "field-report",
+   "format_label": "Field report",
+   "format_by": "override: One agent built three ways, with a published vault.",
+   "words": 2851,
+   "minutes": 12,
+   "headings": [
+    "In short",
+    "The scenario",
+    "Design 1: one agent, two connectors",
+    "Design 2: one agent, a harness of business tools",
+    "Design 3: a team of narrow agents behind a gateway",
+    "Even narrow agents have too much power",
+    "After the run: how did the policy survive?",
+    "What the client sees",
+    "What this shows",
+    "Where to start",
+    "From the desk"
+   ]
+  },
+  "who-are-you-protecting-against": {
+   "desk": "security",
+   "desk2": "strategy",
+   "debatable": false,
+   "desk_by": "rule",
+   "desk_why": "Highest score: Agent security & policy 5, next Strategy & startups 3",
+   "tags": [
+    "threat-modelling",
+    "startups",
+    "deployment"
+   ],
+   "products": [],
+   "series": [],
+   "format": "analysis",
+   "format_label": "Analysis",
+   "format_by": "default",
+   "words": 2677,
+   "minutes": 12,
+   "headings": [
+    "In short",
+    "A Mac mini that will never touch the internet",
+    "Three questions before any control",
+    "The ladder",
+    "The Mac mini, read against the ladder",
+    "The same mistake, one size up: local versus cloud",
+    "Sell better than what they have, not beyond what they need",
+    "Eight startups, eight lines",
+    "Draw your own line",
+    "Where to start",
+    "From the desk"
+   ]
+  },
+  "every-mistake-added-a-rule": {
+   "desk": "building",
+   "desk2": "strategy",
+   "debatable": false,
+   "desk_by": "rule",
+   "desk_why": "Highest score: Building with agents 7, next Strategy & startups 3",
+   "tags": [
+    "shipping",
+    "wardley-maps",
+    "agent-memory",
+    "startups",
+    "synthetic-users"
+   ],
+   "products": [],
+   "series": [],
+   "format": "analysis",
+   "format_label": "Analysis",
+   "format_by": "default",
+   "words": 4351,
+   "minutes": 19,
+   "headings": [
+    "In short",
+    "Two messages from somebody doing the right thing",
+    "Complexity is a position on a map",
+    "Move the pieces right",
+    "The principles I work by",
+    "Answers to the questions",
+    "The same lesson, one level up",
+    "Where to start",
+    "From the desk"
+   ]
+  },
+  "liquid-content-needs-water": {
+   "desk": "news",
+   "desk2": "vaults",
+   "debatable": false,
+   "desk_by": "rule",
+   "desk_why": "Highest score: The future of news 10, next Vaults & provenance 2",
+   "tags": [
+    "journalism",
+    "story-vault",
+    "fractal-semantic-graphs",
+    "the-newsroom",
+    "personas"
+   ],
+   "products": [],
+   "series": [],
+   "format": "response",
+   "format_label": "Answer",
+   "format_by": "override: The teaser opens \"A reply to FT Strategies\".",
+   "words": 2361,
+   "minutes": 10,
+   "headings": [
+    "Liquid needs water",
+    "The method already exists",
+    "Writing is how the story is found",
+    "The experts a newsroom could rarely afford",
+    "The three \"is not\"s, with a graph underneath",
+    "Readers' tastes are not the brief",
+    "How it pays",
+    "Where I would start",
+    "From the desk"
+   ]
+  },
+  "the-bridge-followed-to-the-end": {
+   "desk": "news",
+   "desk2": "vaults",
+   "debatable": false,
+   "desk_by": "rule",
+   "desk_why": "Highest score: The future of news 9, next Vaults & provenance 2",
+   "tags": [
+    "journalism",
+    "local-news",
+    "story-vault",
+    "fractal-semantic-graphs",
+    "micropayments"
+   ],
+   "products": [],
+   "series": [
+    [
+     "local-news",
+     3,
+     4
+    ]
+   ],
+   "format": "analysis",
+   "format_label": "Analysis",
+   "format_by": "default",
+   "words": 3865,
+   "minutes": 17,
+   "headings": [
+    "The journalism is getting the date right",
+    "Newsworthy on five days, needed on fifty-seven",
+    "Three readers, three graphs, one story",
+    "With accurate information, and without it",
+    "The buyers who do not read the paper",
+    "Where the money goes",
+    "Version 0.2: what it cost, and what it keeps earning",
+    "Version 0.3: a professional finish, and the reporter in profit",
+    "What the simulation is for",
+    "From the desk"
+   ]
+  },
+  "story-vault-meets-reader-skills": {
+   "desk": "news",
+   "desk2": "vaults",
+   "debatable": false,
+   "desk_by": "rule",
+   "desk_why": "Highest score: The future of news 9, next Vaults & provenance 3",
+   "tags": [
+    "journalism",
+    "local-news",
+    "story-vault",
+    "fractal-semantic-graphs",
+    "provenance"
+   ],
+   "products": [],
+   "series": [
+    [
+     "local-news",
+     2,
+     4
+    ]
+   ],
+   "format": "response",
+   "format_label": "Answer",
+   "format_by": "override: Built on Markus Franz's Reader Skills post, answered point by point.",
+   "words": 2393,
+   "minutes": 10,
+   "headings": [
+    "Each Reader Skill is a question the graph can already answer",
+    "The bridge, drawn",
+    "What his article adds: the job, and the place",
+    "Local is where the facts are found, so let the money flow back to it",
+    "What a publisher could test, with both halves",
+    "Played out in full",
+    "Two infographics",
+    "From the desk"
+   ]
+  },
+  "the-behaviour-policy-is-the-business-logic": {
+   "desk": "security",
+   "desk2": "building",
+   "debatable": false,
+   "desk_by": "rule",
+   "desk_why": "Highest score: Agent security & policy 7, next Building with agents 2",
+   "tags": [
+    "behaviour-policy",
+    "fractal-semantic-graphs",
+    "ai-governance",
+    "risk-acceptance",
+    "agent-tooling"
+   ],
+   "products": [],
+   "series": [
+    [
+     "behaviour-policy-arc",
+     1,
+     4
+    ]
+   ],
+   "format": "analysis",
+   "format_label": "Analysis",
+   "format_by": "default",
+   "words": 2021,
+   "minutes": 9,
+   "headings": [
+    "The bottom is mechanics, and vendors do it well",
+    "Above the mechanics is the business",
+    "Why the vendors stop at the mechanics",
+    "Software was the law",
+    "Policies inside policies",
+    "How much of it is hope?",
+    "Where the vendors plug in",
+    "It looks a lot like a skill",
+    "What comes next",
+    "From the desk"
+   ]
+  },
+  "an-agent-desktop-by-the-minute": {
+   "desk": "building",
+   "desk2": "security",
+   "debatable": true,
+   "desk_by": "override",
+   "desk_why": "Renting desktops for agents: products and prices for whoever runs them.",
+   "tags": [
+    "agent-isolation",
+    "identity-and-secrets",
+    "startups",
+    "behaviour-policy"
+   ],
+   "products": [],
+   "series": [
+    [
+     "where-agents-run",
+     2,
+     4
+    ]
+   ],
+   "format": "analysis",
+   "format_label": "Analysis",
+   "format_by": "default",
+   "words": 2833,
+   "minutes": 12,
+   "headings": [
+    "What locked down means",
+    "What exists, from the vendors' own pages",
+    "Why it is hard",
+    "What we would build from what exists",
+    "The programmes that would pay for finding out",
+    "Back to the question",
+    "From the desk"
+   ]
+  },
+  "ai-baseline-control-framework": {
+   "desk": "security",
+   "desk2": "vaults",
+   "debatable": false,
+   "desk_by": "rule",
+   "desk_why": "Highest score: Agent security & policy 6, next Vaults & provenance 2",
+   "tags": [
+    "ai-governance",
+    "regulation",
+    "open-source",
+    "fractal-semantic-graphs"
+   ],
+   "products": [],
+   "series": [],
+   "format": "analysis",
+   "format_label": "Analysis",
+   "format_by": "default",
+   "words": 3196,
+   "minutes": 14,
+   "headings": [
+    "Part one: the framework",
+    "Part two: what we did with it",
+    "From the desk"
+   ]
+  },
+  "where-is-the-why": {
+   "desk": "security",
+   "desk2": "building",
+   "debatable": false,
+   "desk_by": "rule",
+   "desk_why": "Highest score: Agent security & policy 8, next Building with agents 2",
+   "tags": [
+    "behaviour-policy",
+    "human-in-the-loop",
+    "risk-acceptance",
+    "agent-tooling",
+    "connectors"
+   ],
+   "products": [],
+   "series": [],
+   "format": "field-report",
+   "format_label": "Field report",
+   "format_by": "override: One permission prompt, read through policy and law.",
+   "words": 3420,
+   "minutes": 15,
+   "headings": [
+    "In short",
+    "The prompt",
+    "The choice it offered",
+    "The same request, read through the policy",
+    "How often people say yes",
+    "Who is accountable",
+    "Others who asked without a why, and what fixed it",
+    "The why card",
+    "What this site's own team already does, and what it does not",
+    "What is not known",
+    "Threads woven here",
+    "Sources",
+    "From the desk"
+   ]
+  },
+  "the-mandate-stack": {
+   "desk": "building",
+   "desk2": "security",
+   "debatable": true,
+   "desk_by": "override",
+   "desk_why": "The full stack of a running system, part 3 of the agent team.",
+   "tags": [
+    "behaviour-policy",
+    "agentic-email",
+    "connectors",
+    "fractal-semantic-graphs",
+    "multi-agent"
+   ],
+   "products": [
+    "riskmandate",
+    "sgit"
+   ],
+   "series": [
+    [
+     "agent-team",
+     3,
+     3
+    ]
+   ],
+   "format": "explainer",
+   "format_label": "Explainer",
+   "format_by": "override: A production system explained layer by layer.",
+   "words": 6788,
+   "minutes": 30,
+   "headings": [
+    "In short",
+    "One that runs",
+    "From the outside in",
+    "Layer 1: compute",
+    "Layer 2: channels",
+    "Layer 3: shared memory and messaging",
+    "Layer 4: domain vaults",
+    "Layer 5: semantic graphs",
+    "Layer 6: orchestration",
+    "Layer 7: governance",
+    "Layer 8: the human",
+    "The vault is not storage: the tool loop",
+    "The feedback loop: the draft is pre-production",
+    "Two maps: what is being commoditised, and what is being made",
+    "Why it holds",
+    "A working name",
+    "What is not in it",
+    "The record, for anyone who asks why this is worth writing down",
+    "Threads woven here",
+    "Sources",
+    "From the desk"
+   ]
+  },
+  "why-my-agents-do-not-run-on-my-laptop": {
+   "desk": "building",
+   "desk2": "security",
+   "debatable": true,
+   "desk_by": "override",
+   "desk_why": "Where to run agents is a builder's decision, argued from security.",
+   "tags": [
+    "threat-modelling",
+    "agent-isolation",
+    "agent-tooling",
+    "behaviour-policy",
+    "prompt-injection"
+   ],
+   "products": [
+    "sgit"
+   ],
+   "series": [
+    [
+     "where-agents-run",
+     1,
+     4
+    ]
+   ],
+   "format": "analysis",
+   "format_label": "Analysis",
+   "format_by": "default",
+   "words": 3701,
+   "minutes": 16,
+   "headings": [
+    "In short",
+    "The question, and the short answer",
+    "The two walls",
+    "The evidence",
+    "The setup",
+    "The vault is the shared drive",
+    "Same mandate, two deployments",
+    "What it costs me",
+    "Three things I wish the platforms gave me",
+    "The caveat, properly",
+    "What exists today, and what does not",
+    "Threads woven here",
+    "Sources",
+    "From the desk"
+   ]
+  },
+  "the-deck-i-could-not-download": {
+   "desk": "strategy",
+   "desk2": "vaults",
+   "debatable": true,
+   "desk_by": "override",
+   "desk_why": "A business plan for an author-first service.",
+   "tags": [
+    "open-source",
+    "encryption-and-keys",
+    "micropayments",
+    "provenance",
+    "regulation"
+   ],
+   "products": [
+    "sgit"
+   ],
+   "series": [],
+   "format": "business-plan",
+   "format_label": "Business plan",
+   "format_by": "override: Subtitle: \"as a business plan somebody else can build\".",
+   "words": 3841,
+   "minutes": 17,
+   "headings": [
+    "In short",
+    "What happened to SlideShare",
+    "What the author agreed to",
+    "What an author can ask for today",
+    "The design: the author holds the keys",
+    "Seven roles, no single owner",
+    "The flows",
+    "The economics of one author",
+    "What the service sells: provenance",
+    "The vault",
+    "What exists, and what does not",
+    "Threads woven here",
+    "Sources",
+    "From the desk"
+   ]
+  },
+  "the-agent-team-as-it-runs": {
+   "desk": "building",
+   "desk2": "security",
+   "debatable": true,
+   "desk_by": "override",
+   "desk_why": "Field notes from running the team, part 2 of the agent team.",
+   "tags": [
+    "behaviour-policy",
+    "agentic-email",
+    "connectors",
+    "provenance",
+    "encryption-and-keys"
+   ],
+   "products": [
+    "riskmandate",
+    "sgit"
+   ],
+   "series": [
+    [
+     "agent-team",
+     2,
+     3
+    ]
+   ],
+   "format": "field-report",
+   "format_label": "Field report",
+   "format_by": "override: The team as it runs, from the inside.",
+   "words": 4685,
+   "minutes": 20,
+   "headings": [
+    "In short",
+    "The picture",
+    "Accounts: the account is the blast radius",
+    "The agents",
+    "How they talk: email, but as files",
+    "The CRM: memory is one folder per person",
+    "The rules that are never negotiated",
+    "The policies in practice: barriers typed honestly",
+    "The security properties, as properties",
+    "The privacy properties: three classes of information",
+    "The logic: files, graphs and a state machine",
+    "Build your own: the first week",
+    "What is not working yet",
+    "The question this leaves open",
+    "Threads woven here",
+    "Sources",
+    "From the desk"
+   ]
+  },
+  "a-personal-agent-that-keeps-your-secrets": {
+   "desk": "vaults",
+   "desk2": "security",
+   "debatable": true,
+   "desk_by": "rule",
+   "desk_why": "Highest score: Vaults & provenance 5, next Agent security & policy 4",
+   "tags": [
+    "privacy",
+    "behaviour-policy",
+    "encryption-and-keys",
+    "client-side"
+   ],
+   "products": [
+    "sgit",
+    "riskmandate"
+   ],
+   "series": [],
+   "format": "analysis",
+   "format_label": "Analysis",
+   "format_by": "default",
+   "words": 5266,
+   "minutes": 23,
+   "headings": [
+    "In short",
+    "The year the agent got a computer",
+    "Lens one: what stops the agent",
+    "Lens two: who can read what it knows",
+    "What pays for it, and how much to trust",
+    "The convergence",
+    "A privacy-first design on this technology",
+    "What exists today, and what does not",
+    "The question underneath",
+    "Threads woven here",
+    "Sources",
+    "From the desk"
+   ]
+  },
+  "the-investigation-github-owes-its-customers": {
+   "desk": "security",
+   "desk2": "vaults",
+   "debatable": true,
+   "desk_by": "override",
+   "desk_why": "An incident inquiry: the risk owner's question.",
+   "tags": [
+    "incidents",
+    "blast-radius",
+    "regulation"
+   ],
+   "products": [
+    "sgit"
+   ],
+   "series": [],
+   "format": "analysis",
+   "format_label": "Analysis",
+   "format_by": "default",
+   "words": 4864,
+   "minutes": 21,
+   "headings": [
+    "In short",
+    "What happened, as far as anyone outside can tell",
+    "Why \"everybody\" is the point",
+    "What aviation does instead",
+    "Near misses, and counting the rolls of the dice",
+    "The first, second and third story",
+    "The what-if ladder",
+    "Why the market does not fix this",
+    "The objection, and why it has expired",
+    "What the regulation does and does not do",
+    "What I would ask for",
+    "What is open",
+    "Threads woven here",
+    "Sources"
+   ]
+  },
+  "send-an-agent-not-a-spreadsheet": {
+   "desk": "security",
+   "desk2": "building",
+   "debatable": false,
+   "desk_by": "rule",
+   "desk_why": "Highest score: Agent security & policy 7, next Building with agents 3",
+   "tags": [
+    "code-review",
+    "behaviour-policy",
+    "blast-radius",
+    "threat-modelling",
+    "regulation"
+   ],
+   "products": [],
+   "series": [
+    [
+     "code-review",
+     3,
+     3
+    ]
+   ],
+   "format": "analysis",
+   "format_label": "Analysis",
+   "format_by": "default",
+   "words": 5708,
+   "minutes": 25,
+   "headings": [
+    "In short",
+    "The form that never connected to anything",
+    "What changed",
+    "Questions where the non-answer is also an answer",
+    "Risk-based, not pure",
+    "The behaviour policy is the due diligence document",
+    "The consequence that has been missing",
+    "What the regulation does and does not do",
+    "The twist on the last article",
+    "What is open",
+    "Threads woven here",
+    "Sources"
+   ]
+  },
+  "how-much-of-this-did-i-write": {
+   "desk": "vaults",
+   "desk2": "building",
+   "debatable": true,
+   "desk_by": "override",
+   "desk_why": "Provenance of the writing itself.",
+   "tags": [
+    "publishing-method",
+    "provenance",
+    "agent-memory",
+    "human-in-the-loop"
+   ],
+   "products": [
+    "sgit"
+   ],
+   "series": [],
+   "format": "field-report",
+   "format_label": "Field report",
+   "format_by": "override: Measured from the session record.",
+   "words": 6490,
+   "minutes": 28,
+   "headings": [
+    "In short",
+    "The question, and why it needs numbers",
+    "What went in, and what came out",
+    "What the corrections were",
+    "What the memos were standing on",
+    "The form, the workflow and the tools",
+    "The evidence, as a vault",
+    "Why this is a better universe to learn from",
+    "The compounding",
+    "What is open",
+    "The article as one page, by another model",
+    "Threads woven here",
+    "Sources",
+    "From the desk"
+   ]
+  },
+  "if-somebody-built-a-company-on-code-review": {
+   "desk": "strategy",
+   "desk2": "building",
+   "debatable": false,
+   "desk_by": "rule",
+   "desk_why": "Highest score: Strategy & startups 4, next Building with agents 3",
+   "tags": [
+    "code-review",
+    "fractal-semantic-graphs",
+    "wardley-maps",
+    "behaviour-policy",
+    "blast-radius"
+   ],
+   "products": [],
+   "series": [
+    [
+     "code-review",
+     2,
+     3
+    ]
+   ],
+   "format": "business-plan",
+   "format_label": "Business plan",
+   "format_by": "override: A reader's seven questions answered as a company plan.",
+   "words": 9469,
+   "minutes": 41,
+   "headings": [
+    "In short",
+    "One technology, every layer",
+    "From art to science",
+    "The grammar is fractal, the layers are yours",
+    "Build the graph from the top, before the code exists",
+    "The layers the example had and the text did not walk",
+    "Stories as rules and examples",
+    "A refactor is relative to a layer",
+    "Down to the deploy",
+    "Who reads the code",
+    "Review is not saying no",
+    "Replicate reality first",
+    "Constraints keep it in control, the five whys make it cheaper",
+    "What to compare the blast radius to, and how long the report should be",
+    "The company",
+    "What the first article got wrong, and what this one leaves open",
+    "The article as one page, by another model",
+    "Threads woven here",
+    "Sources",
+    "From the desk"
+   ]
+  },
+  "the-identity-we-wanted-to-give-the-agents": {
+   "desk": "security",
+   "desk2": "building",
+   "debatable": false,
+   "desk_by": "rule",
+   "desk_why": "Highest score: Agent security & policy 6, next Building with agents 2",
+   "tags": [
+    "identity-and-secrets",
+    "connectors",
+    "encryption-and-keys",
+    "regulation"
+   ],
+   "products": [
+    "riskmandate",
+    "sgit"
+   ],
+   "series": [],
+   "format": "field-report",
+   "format_label": "Field report",
+   "format_by": "override: A week of design, and what survived.",
+   "words": 4010,
+   "minutes": 17,
+   "headings": [
+    "In short",
+    "What I wanted, and why",
+    "What the terms say",
+    "Five options, one table",
+    "The rule that no secret can live in the login",
+    "The keyring",
+    "Agents, after all that",
+    "Why this is still too hard",
+    "What exists today, and what does not",
+    "The article as one page, by another model",
+    "Threads woven here",
+    "Sources"
+   ]
+  },
+  "the-wall-under-the-reply": {
+   "desk": "building",
+   "desk2": "security",
+   "debatable": false,
+   "desk_by": "rule",
+   "desk_why": "Highest score: Building with agents 5, next Agent security & policy 2",
+   "tags": [
+    "agentic-email",
+    "agent-memory"
+   ],
+   "products": [
+    "riskmandate"
+   ],
+   "series": [],
+   "format": "analysis",
+   "format_label": "Analysis",
+   "format_by": "default",
+   "words": 3180,
+   "minutes": 14,
+   "headings": [
+    "In short",
+    "The wall, and what it costs",
+    "The proposal: end with the state, not the history",
+    "What others have done, and where the pieces came from",
+    "Who writes it",
+    "The experiment",
+    "What exists today, and what does not",
+    "The article, condensed by another model",
+    "Threads woven here",
+    "Sources",
+    "From the desk"
+   ]
+  },
+  "memory-is-not-a-spectator-sport": {
+   "desk": "vaults",
+   "desk2": "building",
+   "debatable": true,
+   "desk_by": "rule",
+   "desk_why": "Highest score: Vaults & provenance 6, next Building with agents 5",
+   "tags": [
+    "agent-memory",
+    "fractal-semantic-graphs",
+    "provenance",
+    "publishing-method",
+    "agentic-email"
+   ],
+   "products": [],
+   "series": [],
+   "format": "analysis",
+   "format_label": "Analysis",
+   "format_by": "default",
+   "words": 3900,
+   "minutes": 17,
+   "headings": [
+    "In short",
+    "Memory is not a spectator sport",
+    "What the industry built, and where we agree",
+    "Memory is context management",
+    "Many memories, each its own context",
+    "Provenance built in",
+    "What it looked like in the session that wrote this",
+    "The loop, and the conventions that keep it cheap",
+    "Where it falls short",
+    "What exists today, and what does not",
+    "Threads woven here",
+    "Sources"
+   ]
+  },
+  "code-review-as-a-fractal-semantic-graph": {
+   "desk": "building",
+   "desk2": "vaults",
+   "debatable": false,
+   "desk_by": "rule",
+   "desk_why": "Highest score: Building with agents 4, next Vaults & provenance 3",
+   "tags": [
+    "code-review",
+    "fractal-semantic-graphs",
+    "threat-modelling",
+    "shipping"
+   ],
+   "products": [],
+   "series": [
+    [
+     "code-review",
+     1,
+     3
+    ]
+   ],
+   "format": "analysis",
+   "format_label": "Analysis",
+   "format_by": "default",
+   "words": 4811,
+   "minutes": 21,
+   "headings": [
+    "In short",
+    "Source code is already the thing",
+    "What C4 saw, and what Gherkin got right",
+    "What changed",
+    "Review every layer, diff every layer",
+    "Method streams, again",
+    "The worked example",
+    "What makes it work is reality",
+    "What exists today, and what does not",
+    "For somebody to build",
+    "Threads woven here",
+    "Sources",
+    "From the desk"
+   ]
+  },
+  "replicating-the-agentic-inbox": {
+   "desk": "building",
+   "desk2": "security",
+   "debatable": true,
+   "desk_by": "rule",
+   "desk_why": "Highest score: Building with agents 5, next Agent security & policy 4",
+   "tags": [
+    "agentic-email",
+    "behaviour-policy",
+    "agent-tooling",
+    "connectors"
+   ],
+   "products": [
+    "riskmandate"
+   ],
+   "series": [
+    [
+     "agent-team",
+     1,
+     3
+    ]
+   ],
+   "format": "how-to",
+   "format_label": "How-to",
+   "format_by": "raw tag \"walkthrough\"",
+   "words": 4641,
+   "minutes": 20,
+   "headings": [
+    "In short",
+    "Why this is on a separate page",
+    "The core idea: Claude as a state machine",
+    "Phase 0: the accounts",
+    "Phase 1: one session, one inbox",
+    "Phase 2: roles, talking in files",
+    "Phase 3: the interfaces and the record",
+    "The rule that never changes",
+    "The checklist",
+    "What the agents will add",
+    "Threads woven here",
+    "From the desk"
+   ]
+  },
+  "price-it-then-give-it-away": {
+   "desk": "strategy",
+   "desk2": "security",
+   "debatable": false,
+   "desk_by": "rule",
+   "desk_why": "Highest score: Strategy & startups 8, next Agent security & policy 2",
+   "tags": [
+    "startups",
+    "strategy",
+    "pricing",
+    "behaviour-policy"
+   ],
+   "products": [
+    "riskmandate"
+   ],
+   "series": [
+    [
+     "startup-loop",
+     2,
+     2
+    ]
+   ],
+   "format": "analysis",
+   "format_label": "Analysis",
+   "format_by": "default",
+   "words": 2528,
+   "minutes": 11,
+   "headings": [
+    "In short",
+    "The step after \"do they miss it\"",
+    "Free is not zero",
+    "How to offer it",
+    "What the programme is, as published",
+    "What brutal means",
+    "What we count",
+    "For the agents running this",
+    "Why this is on a site about encrypted vaults"
+   ]
+  },
+  "footprint-and-blast-radius": {
+   "desk": "security",
+   "desk2": "building",
+   "debatable": false,
+   "desk_by": "rule",
+   "desk_why": "Highest score: Agent security & policy 8, next Building with agents 1",
+   "tags": [
+    "behaviour-policy",
+    "blast-radius",
+    "risk-acceptance",
+    "connectors"
+   ],
+   "products": [
+    "riskmandate"
+   ],
+   "series": [],
+   "format": "explainer",
+   "format_label": "Explainer",
+   "format_by": "override: Defines the two terms the security desk uses most.",
+   "words": 3482,
+   "minutes": 15,
+   "headings": [
+    "In short",
+    "Four words, written before anything happens",
+    "The fifth set: footprint",
+    "What the footprint reveals",
+    "The mandate as practised",
+    "Blast radius: the measure, not a sixth set",
+    "Same footprint, different blast radius",
+    "What the cloud already does, and what it cannot",
+    "What vaults change",
+    "Reading our own footprint",
+    "What to add to the policy",
+    "Threads woven here",
+    "From the desk"
+   ]
+  },
+  "custom-uis-are-not-the-exception": {
+   "desk": "building",
+   "desk2": "vaults",
+   "debatable": false,
+   "desk_by": "rule",
+   "desk_why": "Highest score: Building with agents 5, next Vaults & provenance 3",
+   "tags": [
+    "agentic-email",
+    "custom-interfaces",
+    "fractal-semantic-graphs",
+    "vault-design",
+    "wardley-maps"
+   ],
+   "products": [
+    "riskmandate"
+   ],
+   "series": [],
+   "format": "analysis",
+   "format_label": "Analysis",
+   "format_by": "default",
+   "words": 5362,
+   "minutes": 23,
+   "headings": [
+    "In short",
+    "The follow-up problem",
+    "Every message has a graph",
+    "Email is a medium, so design for the recipient's moment",
+    "It starts with the user",
+    "Custom interfaces are not the exception",
+    "The page that is both the to-do and the place to act",
+    "Eight days, not one afternoon",
+    "Why it compounds",
+    "This is the beginning of what email becomes",
+    "The future of email",
+    "Who builds them",
+    "An interface is an agent surface, so it gets a policy",
+    "What this looks like from here",
+    "Threads woven here",
+    "From the desk"
+   ]
+  },
+  "ultimate-insider-three-collisions": {
+   "desk": "security",
+   "desk2": "building",
+   "debatable": false,
+   "desk_by": "rule",
+   "desk_why": "Highest score: Agent security & policy 10, next Building with agents 1",
+   "tags": [
+    "insider-risk",
+    "risk-acceptance",
+    "agent-isolation",
+    "behaviour-policy",
+    "incidents"
+   ],
+   "products": [
+    "riskmandate"
+   ],
+   "series": [],
+   "format": "analysis",
+   "format_label": "Analysis",
+   "format_by": "default",
+   "words": 4020,
+   "minutes": 17,
+   "headings": [
+    "In short",
+    "One: the ultimate insider",
+    "Two: the infrastructure that cannot hold them",
+    "Three: risk management at the speed of spreadsheets",
+    "Why we do not see more of it",
+    "The collision",
+    "The other half: the way out, and the irony",
+    "How this might become a talk",
+    "Sources"
+   ]
+  },
+  "how-news-got-here": {
+   "desk": "news",
+   "desk2": "vaults",
+   "debatable": false,
+   "desk_by": "rule",
+   "desk_why": "Highest score: The future of news 6, next Vaults & provenance 3",
+   "tags": [
+    "journalism",
+    "publishing-method",
+    "provenance",
+    "micropayments",
+    "pricing"
+   ],
+   "products": [],
+   "series": [
+    [
+     "news-economics",
+     2,
+     3
+    ]
+   ],
+   "format": "analysis",
+   "format_label": "Analysis",
+   "format_by": "default",
+   "words": 4364,
+   "minutes": 19,
+   "headings": [
+    "In short",
+    "Era one: print, and what I got wrong about it",
+    "Era two: the web takes the bridge",
+    "Era three: the platforms make the reader measurable",
+    "Era four: AI removes the traffic",
+    "The road not taken was in the protocol",
+    "What the corrected history says to build",
+    "Sources",
+    "From the desk"
+   ]
+  },
+  "six-agents-one-inbox": {
+   "desk": "security",
+   "desk2": "building",
+   "debatable": false,
+   "desk_by": "rule",
+   "desk_why": "Highest score: Agent security & policy 6, next Building with agents 3",
+   "tags": [
+    "connectors",
+    "behaviour-policy",
+    "identity-and-secrets",
+    "threat-modelling"
+   ],
+   "products": [
+    "riskmandate"
+   ],
+   "series": [],
+   "format": "field-report",
+   "format_label": "Field report",
+   "format_by": "override: Every rule in a real six-agent setup, graded.",
+   "words": 3671,
+   "minutes": 16,
+   "headings": [
+    "In short",
+    "The setup, and what it costs",
+    "Finding one: the account does more than segregate",
+    "Finding two: the exception arrived before the policy",
+    "Finding three: the policy written from the documentation was wrong",
+    "Where the reach differs: Cowork and Claude Code",
+    "The table",
+    "What I would tell somebody starting this",
+    "What exists today, and what does not",
+    "Sources",
+    "From the desk"
+   ]
+  },
+  "token-bill-nobody-is-sending": {
+   "desk": "vaults",
+   "desk2": "news",
+   "debatable": true,
+   "desk_by": "rule",
+   "desk_why": "Highest score: Vaults & provenance 6, next The future of news 5",
+   "tags": [
+    "publishing-method",
+    "agent-readable-web",
+    "provenance",
+    "fractal-semantic-graphs",
+    "pricing"
+   ],
+   "products": [],
+   "series": [
+    [
+     "news-economics",
+     1,
+     3
+    ]
+   ],
+   "format": "analysis",
+   "format_label": "Analysis",
+   "format_by": "default",
+   "words": 5201,
+   "minutes": 23,
+   "headings": [
+    "In short",
+    "The commons reading, and where it has got to",
+    "The other side of the ledger",
+    "The arithmetic, honestly",
+    "What \"easy to read\" means, in four steps",
+    "The exchange",
+    "Why it might not work",
+    "What this site already does, and what would settle it",
+    "Sources"
+   ]
+  },
+  "supply-chain-of-vaults": {
+   "desk": "strategy",
+   "desk2": "vaults",
+   "debatable": true,
+   "desk_by": "override",
+   "desk_why": "A market argument about food prices, with vaults as the means.",
+   "tags": [
+    "supply-chains",
+    "fractal-semantic-graphs",
+    "open-source"
+   ],
+   "products": [],
+   "series": [],
+   "format": "analysis",
+   "format_label": "Analysis",
+   "format_by": "default",
+   "words": 4761,
+   "minutes": 21,
+   "headings": [
+    "In short",
+    "What the food pound says",
+    "The chokepoint",
+    "All of it is logistics",
+    "A supply chain of vaults",
+    "Use GenAI not to use GenAI",
+    "The hypothesis, and what the evidence says",
+    "The deflation dogma",
+    "The other half: openness",
+    "What exists today, and what does not",
+    "Sources"
+   ]
+  },
+  "every-risk-is-already-accepted": {
+   "desk": "security",
+   "desk2": "vaults",
+   "debatable": false,
+   "desk_by": "rule",
+   "desk_why": "Highest score: Agent security & policy 8, next Vaults & provenance 2",
+   "tags": [
+    "risk-acceptance",
+    "ai-governance",
+    "fractal-semantic-graphs",
+    "regulation"
+   ],
+   "products": [],
+   "series": [],
+   "format": "analysis",
+   "format_label": "Analysis",
+   "format_by": "default",
+   "words": 3542,
+   "minutes": 15,
+   "headings": [
+    "In short",
+    "A risk you are already carrying",
+    "There is no deny button",
+    "The interval is the decision",
+    "Accepted is not acceptable",
+    "Every risk has a boss",
+    "From the board to the bytes",
+    "Established by facts, ended by facts",
+    "One risk, six weeks",
+    "A vault per risk",
+    "Twins, and where this goes",
+    "Why this is hard, and why people resist",
+    "It fits alongside every GRC platform",
+    "What exists today, and what does not",
+    "For somebody to build",
+    "Sources"
+   ]
+  },
+  "connector-twin-before-you-deploy-an-agent": {
+   "desk": "security",
+   "desk2": "building",
+   "debatable": true,
+   "desk_by": "rule",
+   "desk_why": "Highest score: Agent security & policy 3, next Building with agents 3",
+   "tags": [
+    "connectors",
+    "provenance",
+    "risk-acceptance"
+   ],
+   "products": [
+    "riskmandate"
+   ],
+   "series": [],
+   "format": "explainer",
+   "format_label": "Explainer",
+   "format_by": "override: Explains one pattern, the connector twin.",
+   "words": 3259,
+   "minutes": 14,
+   "headings": [
+    "In short",
+    "The question nobody can answer yet",
+    "What the platform keeps, stated precisely",
+    "Twin, not backup, log or replay",
+    "How it works",
+    "One session, replayed",
+    "Undo is a list, not a promise",
+    "Where the capture runs",
+    "What it does to the agent's behaviour policy",
+    "What exists today, and what does not",
+    "For somebody to build",
+    "Sources",
+    "From the desk"
+   ]
+  },
+  "future-of-news-story-vault-not-paywall": {
+   "desk": "news",
+   "desk2": "vaults",
+   "debatable": true,
+   "desk_by": "rule",
+   "desk_why": "Highest score: The future of news 6, next Vaults & provenance 5",
+   "tags": [
+    "journalism",
+    "publishing-method",
+    "provenance",
+    "micropayments",
+    "fractal-semantic-graphs"
+   ],
+   "products": [],
+   "series": [
+    [
+     "local-news",
+     1,
+     4
+    ]
+   ],
+   "format": "analysis",
+   "format_label": "Analysis",
+   "format_by": "default",
+   "words": 8138,
+   "minutes": 35,
+   "headings": [
+    "In short",
+    "Both models are bad for the reader",
+    "The objective, stated once",
+    "The two clocks, briefly",
+    "Why paying per item failed before, and why that is about the wrong thing",
+    "The story is a graph, and the article is a projection",
+    "The graph is fractal, and meaning comes from connectivity",
+    "Trust through provenance, provenance via evidence",
+    "What a story vault holds",
+    "Five things to sell, and how each one works",
+    "Who gets paid, and how the money moves",
+    "The parts that already run",
+    "What I would do, if I ran a publisher",
+    "The dataset was always worth more than the article",
+    "From the desk"
+   ]
+  },
+  "the-question-is-whether-they-miss-it": {
+   "desk": "strategy",
+   "desk2": null,
+   "debatable": false,
+   "desk_by": "rule",
+   "desk_why": "Highest score: Strategy & startups 8",
+   "tags": [
+    "startups",
+    "strategy",
+    "open-source"
+   ],
+   "products": [],
+   "series": [
+    [
+     "startup-loop",
+     1,
+     2
+    ]
+   ],
+   "format": "analysis",
+   "format_label": "Analysis",
+   "format_by": "default",
+   "words": 1695,
+   "minutes": 7,
+   "headings": [
+    "Pillar one: ship something somebody can use",
+    "Then give it away, and then take it away",
+    "Can you charge, and can you charge at a profit?",
+    "Pillar two: the investors should be calling you",
+    "Pillar three: open source everything",
+    "Why this is on a site about encrypted vaults"
+   ]
+  },
+  "saas-apocalypse-decided-by-inertia-not-by-ai": {
+   "desk": "strategy",
+   "desk2": null,
+   "debatable": false,
+   "desk_by": "rule",
+   "desk_why": "Highest score: Strategy & startups 7",
+   "tags": [
+    "strategy",
+    "wardley-maps"
+   ],
+   "products": [],
+   "series": [],
+   "format": "analysis",
+   "format_label": "Analysis",
+   "format_by": "default",
+   "words": 3195,
+   "minutes": 14,
+   "headings": [
+    "The market already had this argument once this year",
+    "First, the part nobody likes to say: users were never happy",
+    "Why it got this way, in one line from Wardley",
+    "Everybody was already vibe coding, just very slowly",
+    "And the reason the incumbents cannot simply do this themselves",
+    "The irony, which is the whole article in one paragraph",
+    "The mistake, and where the money actually is",
+    "Strip the UI and see what is left",
+    "More engineers, not fewer",
+    "From the desk"
+   ]
+  },
+  "introducing-fractal-semantic-graphs": {
+   "desk": "vaults",
+   "desk2": null,
+   "debatable": false,
+   "desk_by": "rule",
+   "desk_why": "Highest score: Vaults & provenance 6",
+   "tags": [
+    "fractal-semantic-graphs",
+    "publishing-method"
+   ],
+   "products": [],
+   "series": [],
+   "format": "explainer",
+   "format_label": "Explainer",
+   "format_by": "override: The introduction to fractal semantic graphs.",
+   "words": 2647,
+   "minutes": 12,
+   "headings": [
+    "Four words, and only one of them is new",
+    "The test is what happens at a link",
+    "Everything is already a graph, including every file format",
+    "The grammar is short, and one rule does most of the work",
+    "The evidence: eleven altitudes, seven vaults, one grammar",
+    "What is still modelled rather than imported",
+    "Why now",
+    "Open them"
+   ]
+  },
+  "proof-moved-up": {
+   "desk": "vaults",
+   "desk2": "strategy",
+   "debatable": false,
+   "desk_by": "rule",
+   "desk_why": "Highest score: Vaults & provenance 4, next Strategy & startups 2",
+   "tags": [
+    "publishing-method",
+    "strategy"
+   ],
+   "products": [],
+   "series": [
+    [
+     "homepage-rebuild",
+     2,
+     2
+    ]
+   ],
+   "format": "field-report",
+   "format_label": "Field report",
+   "format_by": "override: The rebuilt homepage next to the before pictures.",
+   "words": 842,
+   "minutes": 4,
+   "headings": [
+    "The first screen",
+    "The use cases became things",
+    "The collaboration story got a front door",
+    "What was cut",
+    "What it cannot show yet",
+    "What it is generated from"
+   ]
+  },
+  "proof-behind-the-claim": {
+   "desk": "vaults",
+   "desk2": "strategy",
+   "debatable": false,
+   "desk_by": "rule",
+   "desk_why": "Highest score: Vaults & provenance 4, next Strategy & startups 2",
+   "tags": [
+    "publishing-method",
+    "strategy"
+   ],
+   "products": [],
+   "series": [
+    [
+     "homepage-rebuild",
+     1,
+     2
+    ]
+   ],
+   "format": "analysis",
+   "format_label": "Analysis",
+   "format_by": "default",
+   "words": 1390,
+   "minutes": 6,
+   "headings": [
+    "The homepage leads with the thing you cannot see",
+    "The use cases are abstract while twenty-five concrete ones sit one level down",
+    "The proof is a table, two clicks away",
+    "The strongest story has no front door",
+    "One gap worth naming",
+    "The fix, in order",
+    "And a page that says who is behind it",
+    "What happens next"
+   ]
+  },
+  "chat-on-a-static-site": {
+   "desk": "building",
+   "desk2": null,
+   "debatable": false,
+   "desk_by": "rule",
+   "desk_why": "Highest score: Building with agents 4",
+   "tags": [
+    "client-side"
+   ],
+   "products": [],
+   "series": [],
+   "format": "explainer",
+   "format_label": "Explainer",
+   "format_by": "override: The plan for a chat box with no server, and its trade.",
+   "words": 1071,
+   "minutes": 5,
+   "headings": [
+    "The constraint nobody can design around",
+    "The three tiers",
+    "What would need building",
+    "Addendum, 7 September, the pane grew tools",
+    "What it does not do"
+   ]
+  },
+  "nineteen-sites": {
+   "desk": "vaults",
+   "desk2": "building",
+   "debatable": false,
+   "desk_by": "rule",
+   "desk_why": "Highest score: Vaults & provenance 4, next Building with agents 1",
+   "tags": [
+    "publishing-method"
+   ],
+   "products": [],
+   "series": [],
+   "format": "field-report",
+   "format_label": "Field report",
+   "format_by": "override: Twenty sites in fifteen days.",
+   "words": 831,
+   "minutes": 4,
+   "headings": [
+    "What forced it",
+    "What it cost",
+    "What we did about discovery",
+    "The thing that made it cheap",
+    "Where it is honest"
+   ]
+  },
+  "what-sgit-is": {
+   "desk": "vaults",
+   "desk2": null,
+   "debatable": false,
+   "desk_by": "rule",
+   "desk_why": "Highest score: Vaults & provenance 5",
+   "tags": [
+    "encryption-and-keys"
+   ],
+   "products": [],
+   "series": [],
+   "format": "explainer",
+   "format_label": "Explainer",
+   "format_by": "override: The introduction to sgit.",
+   "words": 986,
+   "minutes": 4,
+   "headings": [
+    "The part that is easy to say and hard to build",
+    "Ten seconds of proof",
+    "Nineteen vaults you can open right now",
+    "The part that surprises people",
+    "Why there is a network of sites",
+    "Try it"
+   ]
+  },
+  "seven-vaults-one-method": {
+   "desk": "vaults",
+   "desk2": null,
+   "debatable": false,
+   "desk_by": "rule",
+   "desk_why": "Highest score: Vaults & provenance 5",
+   "tags": [
+    "publishing-method"
+   ],
+   "products": [],
+   "series": [],
+   "format": "field-report",
+   "format_label": "Field report",
+   "format_by": "override: Seven vaults in a fortnight, and the rules that came out.",
+   "words": 967,
+   "minutes": 4,
+   "headings": [
+    "The rule that matters most",
+    "Derive rather than refuse",
+    "Audit with the key you are about to publish",
+    "Capture evidence by driving the real product",
+    "Describe, show, then admit",
+    "What it cost, and what it bought"
+   ]
+  },
+  "green-does-not-mean-live": {
+   "desk": "vaults",
+   "desk2": "building",
+   "debatable": true,
+   "desk_by": "override",
+   "desk_why": "A release check in the publishing method: prove the live site has the version.",
+   "tags": [
+    "shipping",
+    "provenance"
+   ],
+   "products": [],
+   "series": [],
+   "format": "field-report",
+   "format_label": "Field report",
+   "format_by": "override: Two releases that never reached the site.",
+   "words": 689,
+   "minutes": 3,
+   "headings": [
+    "What the release actually verified",
+    "The gap, named",
+    "What actually failed",
+    "The fix is one question, asked at the end",
+    "The rule underneath",
+    "What this does not fix"
+   ]
+  }
+ }
+}

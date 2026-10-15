@@ -213,11 +213,11 @@ MOVED_FILES = {
 LOCAL_EQUIVALENTS = {"index.html", "index.md", "llms.txt", "llms-full.txt"}
 # Pages this site owned before the import and the import now owns. Each must already be
 # held, dated, in archive/ (see archive.py SNAPSHOTS) before it may be replaced.
-REPLACES = {"index.html", "index.md", "newsroom/index.html"}
+REPLACES = {"newsroom/index.html"}
 # Copied byte for byte and never transformed (see the docstring).
 VERBATIM = re.compile(r"\.(js|css|tpl|mjs)$|^\.well-known/")
 TEXT     = re.compile(r"\.(html|md|xml|json|txt)$")
-FRONT    = ("articles/index.html", "articles/index.md")    # also written to the root
+FRONT    = ("articles/index.html", "articles/index.md")    # was also written to the root until v0.12.52; now admin/build/front.py writes the root
 
 REAL_TAG = re.compile(r"<[a-zA-Z][^<>]*>")
 # data-dir and data-trail-img are read by assets/shots.js, which sets img.src from them at runtime
@@ -588,8 +588,6 @@ def plan(src):
     for s, d in MOVED_FILES.items():
         if (src / s).is_file():
             out.append((s, d))
-    for s in FRONT:
-        out.append((s, s.split("/", 1)[1]))           # articles/index.html -> index.html
     return out
 
 
