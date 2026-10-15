@@ -78,12 +78,12 @@ def wires_public():
     return [{k: c[k] for k in PUB_KEYS if k in c} for c in CFGS]
 
 
-def wires_strip(cfg, up=None):
-    """The strip naming every wire, with the current one marked, and the pages they share."""
+def wires_strip(cfg, up=None, tag="p"):
+    """The strip naming every wire, with the current one marked, and the pages they share; a span when it is the page's eyebrow."""
     up = cfg["up"] if up is None else up
     links = "".join(f'<a href="{up}{c["dir"]}index.html"{" aria-current=page" if c is cfg else ""}>{esc(c["name"])}</a>' for c in CFGS)
     shared = f'<a href="{up}wire/days.html">Day by day</a><a href="{up}wire/costs.html">What it costs</a><a href="{up}wire/charter.html">The charter</a><a href="{up}wire/desk-brief.html">For the desks</a>'
-    return f'<p class="wires">The wires: {links} · {shared}</p>'
+    return f'<{tag} class="wires">The wires: {links} · {shared}</{tag}>'
 
 
 def subscribe_block(cfg):
@@ -137,8 +137,8 @@ def snapshot_html(snap):
 
 
 def loader(cfg, kind, **extra):
-    return f"""<div id="wire-status" class="wire-status" hidden></div>
-<div id="wire-mount" data-wire="{kind}"{pictures_attr(cfg)}><p class="dim">Opening the vault&hellip;</p></div>
+    return f"""<div id="wire-mount" data-wire="{kind}"{pictures_attr(cfg)}><p class="dim">Opening the vault&hellip;</p></div>
+<div id="wire-status" class="wire-status" hidden></div>
 {config_block(cfg, **extra)}
 <script type="module">
 import {{ wire }} from '{cfg["rel"]}./wire.js';
@@ -164,8 +164,7 @@ def edition_page(cfg, snap):
         extras += (f"<p><b>The stack.</b> The vault carries the {counts['stack_services']} services its named reader runs (<code>data/stack.json</code>: each with its aliases, what to watch it for, and {counts.get('deadlines', 0)} dated deadlines), "
                    "and the join turns each service into a concern, so under that reader&rsquo;s lens a story reaches them when it names a service they run and is withheld, with the reason, when it does not. "
                    "The page draws the deadlines at the top of the edition with the days left, and each service with the items that touched it. To change what reaches the reader, the desk edits the file in the vault; nothing on this site changes.</p>\n")
-    body = f"""{wires_strip(cfg)}
-{loader(cfg, "edition")}
+    body = f"""{loader(cfg, "edition")}
 <noscript><p>The edition is read from an encrypted vault in your browser, which needs a script. Below is what the vault held at the last release of this site.</p></noscript>
 {snapshot_html(snap)}
 <h2 id="about">What this is</h2>
@@ -195,8 +194,8 @@ def edition_page(cfg, snap):
             "What happened in building with AI, AI business, open source, cybersecurity and governance: each story with where it came from and who else covered it, corrected where it is read, live from the wire's vault. A beta, with one named reader by their agreement.")
     return newsroom_page(cfg["dir"] + "index.html", name,
                          f"{name}, in beta, read live from an encrypted vault that agents keep: every story with its primary source, who else covered it, one exact quote and why it matters, corrected where it is read, and a lens per persona showing what reached them and why.",
-                         body, eyebrow=EYEBROW, crumbs=(() if not cfg["slug"] else (("The Industry Wire", "wire/index.html"),)),
-                         lead=esc(lead) if cfg["slug"] else lead, agent=agent, head=f'<link rel="stylesheet" href="{cfg["rel"]}wire.css">\n', wide=True)
+                         body, eyebrow=wires_strip(cfg, tag="span"), crumbs=(() if not cfg["slug"] else (("The Industry Wire", "wire/index.html"),)),
+                         lead="", agent=agent, head=f'<link rel="stylesheet" href="{cfg["rel"]}wire.css">\n', wide=True)
 
 
 def sources_page(cfg):

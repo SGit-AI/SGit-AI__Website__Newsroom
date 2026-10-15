@@ -72,11 +72,12 @@ async function pictures(edition) {
     const led = ledgers.get(edition) || {}
     return { edition, hero, byStory, totals: led.totals || {}, month: months[edition.slice(0, 7)] || null, all: total && total.total ? total.total : null }
 }
+const longDate = d => EDITION.test(String(d || '')) ? new Date(`${d}T00:00:00Z`).toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }) : String(d || '?')
 const usd = x => typeof x === 'number' && Number.isFinite(x) ? `$${x.toFixed(x < 1 ? 3 : 2)}` : 'cost not reported'
 /** One picture with its disclosure: an AI-image chip, the model, OpenRouter's cost, the seconds, and the prompt on request. */
 function picture(pics, e, alt, cls) {
     const pre = h('pre', {}, 'Loading the prompt…')
-    const prompt = SAFE_PROMPT.test(String(e.prompt_file || '')) ? h('details', { class: 'ig-prompt' }, h('summary', {}, 'The prompt it was made from'), pre) : null
+    const prompt = SAFE_PROMPT.test(String(e.prompt_file || '')) ? h('details', { class: 'ig-prompt' }, h('summary', {}, '· the prompt'), pre) : null
     if (prompt) prompt.addEventListener('toggle', async () => {
         if (!prompt.open || prompt.dataset.loaded) return
         prompt.dataset.loaded = '1'
@@ -84,7 +85,7 @@ function picture(pics, e, alt, cls) {
     })
     return h('figure', { class: `ig ${cls}` },
         h('img', { src: `infographics/${e.edition}/${e.file}`, alt, loading: 'lazy', width: '1024', height: '1024' }),
-        h('figcaption', {}, h('span', { class: 'chip ai' }, 'AI image'), ` ${String(e.model || 'model not recorded')} · ${usd(e.cost_usd)}${typeof e.duration_s === 'number' ? ` · ${e.duration_s} s` : ''}. The text is the record; the picture illustrates it. `, prompt))
+        h('figcaption', {}, h('span', { class: 'chip ai' }, 'AI image'), ` ${String(e.model || 'model not recorded')} · ${usd(e.cost_usd)} `, prompt))
 }
 const link = (text, url, cls) => isHttp(url) ? h('a', { href: url, target: '_blank', rel: 'noopener', class: cls }) : h('span', { class: cls }),
       linkText = (text, url, cls) => { const a = link(text, url, cls); a.textContent = text; return a }
@@ -98,6 +99,8 @@ const PUBLIC_LENSES = ['founder', 'ai-builder', 'security-lead', 'board-member',
 
 export async function wire(opts) {
     const mount = opts.mount, kind = mount.getAttribute('data-wire') || 'edition'
+    // ?share: the page becomes its masthead and the today band (wire.css, html[data-share]) for a 1200 by 630 screenshot
+    try { if (new URLSearchParams(location.search).has('share')) document.documentElement.setAttribute('data-share', '') } catch (e) { /* the full page */ }
     const cfg = JSON.parse(document.getElementById('wire-config').textContent)
     const status = document.getElementById('wire-status')
     const snapshot = document.getElementById('wire-snapshot')
@@ -278,28 +281,50 @@ async function edition(r, mount, foot, cfg) {
     const lensNote = h('p', { class: 'lens-note' })
     const bar = h('section', { class: 'inbox', id: 'wire-inbox', 'aria-label': 'Your inbox' })
     const body = h('div', {})
-    const header = h('section', { class: 'edition' },
-        h('p', { class: 'k' }, `Edition of ${brief.edition || '?'}`),
-        h('p', { class: 'meta' }, [brief.kind, brief.window ? `covers ${brief.window.from} to ${brief.window.to}` : null, brief.status, brief.counts ? `${brief.counts.stories} stories from ${brief.counts.publishers} publishers` : null].filter(Boolean).join(' · ')),
-        brief.editor_note ? h('p', { class: 'note' }, brief.editor_note) : null,
-        pics && pics.hero ? picture(pics, pics.hero, `What is going on in ${wireMeta.title || cfg.name || 'this wire'}, edition of ${brief.edition}: the lead, the threads and the editor's note as an AI-made picture`, 'hero') : null,
-        pics ? h('p', { class: 'ig-cost', id: 'wire-pictures' }, h('b', {}, 'What the pictures cost: '), `${pics.byStory.size + (pics.hero ? 1 : 0)} shown for this edition, ${usd(pics.totals.cost_usd)} for ${pics.totals.images || 0} made`
+    // the first screen (admin/notes/wires-ux/first-screen.md): a masthead (the dateline, one honest status line), then one band
+    // with the edition's hero at the left and, at the right, the editor's note, the deadlines when the vault has them, the threads
+    // folded to a line each, and the lead; under the band the desk's record folded into one row. Every vault value is still a text node.
+    const name = wireMeta.title || cfg.name || 'this wire'
+    const newN = (brief.new_in_edition || []).filter(id => byId.has(id)).length
+    const leadId = brief.lead && brief.lead.story, leadStory = leadId && byId.get(leadId)
+    const costLine = pics ? h('p', { class: 'ig-cost', id: 'wire-pictures' }, h('b', {}, 'What the pictures cost: '), `${pics.byStory.size + (pics.hero ? 1 : 0)} shown for this edition, ${usd(pics.totals.cost_usd)} for ${pics.totals.images || 0} made`
             + (pics.totals.failed ? ` (${pics.totals.failed} failed)` : '') + (pics.month ? `; this month ${usd(pics.month.cost_usd)} for ${pics.month.images}` : '') + (pics.all ? `; since the start ${usd(pics.all.cost_usd)} for ${pics.all.images}` : '')
-            + '. OpenRouter\'s own figures, from the ledger beside the images; made by this site, never by the desk. A story keeps its card from the edition that added it.') : null,
-        brief.corrections ? h('p', { class: 'corrections' }, h('b', {}, 'Corrections and updates: '), brief.corrections) : null,
-        checks.length ? h('div', { class: 'checks', id: 'wire-checks' }, h('b', {}, 'Checked independently. '), ...checks.map(({ path, at, file: f }) => h('p', {},
-            `${f.checked_by || path}${f.method ? `: ${f.method}` : ''}${f.checked ? `: ${f.checked}` : ''}${f.result ? `. ${f.result}` : ''}`
-            + (Array.isArray(f.results) ? `. ${f.results.length} ${f.results.length === 1 ? 'story' : 'stories'} checked, ${f.results.filter(x => x && x.verdict === 'fixed').length} fixed, each shown at its story` : '')
-            + (f.not_checked ? `. Not checked: ${f.not_checked}` : '') + ` (${path.replace(/^data\//, '')}${at ? `, ${at}` : ''}).`))) : null,
-        deadlines.length ? h('div', { class: 'deadlines', id: 'wire-deadlines' }, h('b', {}, 'Deadlines for your stack'), h('ul', {}, deadlines.map(d => { const n = daysTo(d.date); return h('li', {},
-            h('span', { class: `dd${Number.isFinite(n) && n <= 30 ? ' soon' : ''}` }, when(d.date)), isHttp(d.source) ? linkText(d.what || d.source, d.source) : (d.what || ''),
-            Number.isFinite(n) ? h('span', { class: 'then' }, n < 0 ? ` (${-n} days ago)` : n === 0 ? ' (today)' : ` (in ${n} days)`) : null, d.then ? h('span', { class: 'then' }, ` · then: ${d.then}`) : null) }))) : null,
-        (brief.threads || []).length ? h('div', { class: 'threads' }, brief.threads.map(t => h('div', { class: 'thread' }, h('b', {}, t.title), t.note || '', h('div', { class: 'ids' }, (t.stories || []).filter(id => byId.has(id)).map(id => h('a', { href: `#${id}`, title: byId.get(id).headline }, id)))))) : null,
-        // the edition as graphs (wire/graphs.js): the week by day and beat, the threads on a date axis, the entities two
-        // or more stories share; each folded so the header stays the editor's note, each drawn from the bundle alone
+            + '. OpenRouter\'s own figures, from the ledger beside the images; made by this site, never by the desk; the text is the record and the picture illustrates it. A story keeps its card from the edition that added it. ',
+            h('a', { href: `${up}wire/costs.html`, 'data-site': '' }, 'What the wires cost')) : null
+    const checksN = checks.reduce((a, { file: f }) => a + (Array.isArray(f.results) ? f.results.length : 0), 0)
+    const graphs = [
         (b.stories || []).length ? h('details', { class: 'graph', id: 'wire-byday' }, h('summary', {}, 'Stories per day, the last 14 days, by beat'), storiesByDay(b.stories, { days: 14, beats: b.beats || [] })) : null,
         (brief.threads || []).length ? h('details', { class: 'graph', id: 'wire-threads' }, h('summary', {}, 'The threads on a date axis'), threadsTimeline(brief.threads, byId)) : null,
-        (b.stories || []).length > 1 ? h('details', { class: 'graph', id: 'wire-entities' }, h('summary', {}, 'Who is named by more than one story'), cooccurrence(b.stories, { min: 2, max: 24 })) : null)
+        (b.stories || []).length > 1 ? h('details', { class: 'graph', id: 'wire-entities' }, h('summary', {}, 'Who is named by more than one story'), cooccurrence(b.stories, { min: 2, max: 24 })) : null,
+    ].filter(Boolean)
+    const header = h('section', { class: 'edition' },
+        h('p', { class: 'k' }, 'Edition of ', h('time', { datetime: EDITION.test(String(brief.edition || '')) ? brief.edition : null }, longDate(brief.edition)), wireMeta.cadence ? ` · ${String(wireMeta.cadence)}` : '', ' · beta'),
+        h('p', { class: 'meta' }, ...[brief.counts ? `${brief.counts.stories} stories from ${brief.counts.publishers} publishers` : `${byId.size} stories`,
+            newN || updatedIds.size ? `${newN} new in this edition${updatedIds.size ? `, ${updatedIds.size} updated` : ''}` : null, brief.status || null,
+            h('a', { href: '#wire-status' }, 'live from the wire\'s vault')].filter(Boolean).flatMap((x, i) => i ? [' · ', x] : [x])),
+        h('div', { class: 'today' },
+            pics && pics.hero ? picture(pics, pics.hero, `What is going on in ${name}, edition of ${brief.edition}: the lead, the threads and the editor's note as an AI-made picture`, 'hero') : null,
+            h('div', { class: 'side' },
+                brief.editor_note ? h('p', { class: 'k' }, 'The editor\'s note') : null,
+                brief.editor_note ? h('p', { class: 'note' }, brief.editor_note) : null,
+                deadlines.length ? h('div', { class: 'deadlines', id: 'wire-deadlines' }, h('b', {}, 'Deadlines for your stack'), h('ul', {}, deadlines.map(d => { const n = daysTo(d.date); return h('li', {},
+                    h('span', { class: `dd${Number.isFinite(n) && n <= 30 ? ' soon' : ''}` }, when(d.date)), isHttp(d.source) ? linkText(d.what || d.source, d.source) : (d.what || ''),
+                    Number.isFinite(n) ? h('span', { class: 'then' }, n < 0 ? ` (${-n} days ago)` : n === 0 ? ' (today)' : ` (in ${n} days)`) : null, d.then ? h('span', { class: 'then' }, ` · then: ${d.then}`) : null) }))) : null,
+                (brief.threads || []).length ? h('div', { class: 'threads' }, brief.threads.map(t => { const ids = (t.stories || []).filter(id => byId.has(id)); return h('details', { class: 'thread' },
+                    h('summary', {}, h('b', {}, t.title), h('span', { class: 'n' }, `${ids.length} ${ids.length === 1 ? 'story' : 'stories'}`)),
+                    t.note ? h('p', {}, t.note) : null,
+                    h('div', { class: 'ids' }, ids.map(id => h('a', { href: `#${id}`, title: byId.get(id).headline }, id)))) })) : null,
+                leadStory ? h('p', { class: 'leadline' }, h('b', {}, 'The lead'), h('a', { href: `#${leadId}` }, tx(leadStory, 'headline')),
+                    h('span', { class: 'more' }, `The ${Math.max(0, byId.size - 1)} other stories, by beat, below · `, h('a', { href: '#subscribe' }, 'Subscribe by email'))) : null)),
+        h('div', { class: 'folds' },
+            h('details', {}, h('summary', {}, 'This edition'), h('p', { class: 'meta' }, [brief.kind, brief.window ? `covers ${brief.window.from} to ${brief.window.to}` : null].filter(Boolean).join(' · ') || 'The desk gave no description of this edition.')),
+            brief.corrections ? h('details', {}, h('summary', {}, `Corrections and updates${updatedIds.size ? ` (${updatedIds.size})` : ''}`), h('p', { class: 'corrections' }, h('b', {}, 'Corrections and updates: '), brief.corrections)) : null,
+            checks.length ? h('details', {}, h('summary', {}, `Checked independently${checksN ? ` (${checksN} ${checksN === 1 ? 'story' : 'stories'})` : ''}`), h('div', { class: 'checks', id: 'wire-checks' }, h('b', {}, 'Checked independently. '), ...checks.map(({ path, at, file: f }) => h('p', {},
+                `${f.checked_by || path}${f.method ? `: ${f.method}` : ''}${f.checked ? `: ${f.checked}` : ''}${f.result ? `. ${f.result}` : ''}`
+                + (Array.isArray(f.results) ? `. ${f.results.length} ${f.results.length === 1 ? 'story' : 'stories'} checked, ${f.results.filter(x => x && x.verdict === 'fixed').length} fixed, each shown at its story` : '')
+                + (f.not_checked ? `. Not checked: ${f.not_checked}` : '') + ` (${path.replace(/^data\//, '')}${at ? `, ${at}` : ''}).`)))) : null,
+            // the edition as graphs (wire/graphs.js): the week by day and beat, the threads on a date axis, the entities two or more stories share
+            graphs.length ? h('details', { class: 'graphs', id: 'wire-graphs' }, h('summary', {}, `The edition as graphs (${graphs.length})`), ...graphs) : null))
 
     async function setLens(id) {
         lens = id
@@ -317,6 +342,21 @@ async function edition(r, mount, foot, cfg) {
         const count = k => ids.filter(id => { const d = decisionOf(id); return k === 'inbox' ? !d : k === 'new' ? isNew(id) : k === 'all' ? true : !!d && d.kind === k }).length
         const p = pending(), stamp = at => String(at || '').slice(0, 16).replace('T', ' ')
         const link = id => byId.has(id) ? h('a', { href: `#${id}`, title: byId.get(id).headline }, id) : h('span', { class: 'mono' }, id)
+        // a first visit with nothing decided is one line and the desk's note folded; the filters and the vault's state appear once
+        // the reader has state (a previous visit, a decision, or something waiting for their vault)
+        const hasState = !!visit.prev || N.list().length > 0 || p.count > 0
+        const releaseRows = () => releases.map(x => h('div', { class: 'release' },
+            h('p', {}, h('b', {}, x.title || x.id || 'A release'), ` · ${stamp(x.at)} UTC`, x.edition ? ` · edition ${x.edition}` : ''),
+            x.summary ? h('p', { class: 'sum' }, x.summary) : null,
+            (x.added || []).length ? h('p', { class: 'ids' }, 'Added: ', ...(x.added || []).flatMap((id, i) => i ? [', ', link(id)] : [link(id)])) : null,
+            (x.updated || []).length ? h('p', { class: 'ids' }, 'Updated: ', ...(x.updated || []).flatMap((id, i) => i ? [', ', link(id)] : [link(id)])) : null))
+        if (!hasState) {
+            bar.replaceChildren(
+                h('p', { class: 'since', id: 'wire-since' }, 'Your first visit to the wire in this browser: ', h('b', {}, `${fresh.length} ${fresh.length === 1 ? 'story' : 'stories'}, all new`),
+                    '. Decide at each story (done, read later, follow up…) and this bar becomes your inbox', lens ? '' : '; choose who you read as to split the stories into for you and not for you', '.'),
+                releases.length ? h('details', { class: 'releases', id: 'wire-releases' }, h('summary', {}, h('b', {}, 'What the desk says changed: '), `${releases[0].title || releases[0].id || 'a release'} · ${stamp(releases[0].at)} UTC`), ...releaseRows()) : null)
+            return
+        }
         bar.replaceChildren(...[
             h('p', { class: 'since', id: 'wire-since' },
                 visit.prev ? `Since your last visit (${stamp(visit.prev)} UTC): ` : 'Your first visit to the wire in this browser: ',
@@ -325,7 +365,7 @@ async function edition(r, mount, foot, cfg) {
                 !lens && fresh.length ? '. Choose who you read as to split them into for you and not for you' : '',
                 '.'),
             releases.length
-                ? h('div', { class: 'releases', id: 'wire-releases' }, ...releases.map(x => h('div', { class: 'release' },
+                ? h('details', { class: 'releases', id: 'wire-releases', open: true }, h('summary', {}, h('b', {}, 'What the desk says changed')), ...releases.map(x => h('div', { class: 'release' },
                     h('p', {}, h('b', {}, x.title || x.id || 'A release'), ` · ${stamp(x.at)} UTC`, x.edition ? ` · edition ${x.edition}` : ''),
                     x.summary ? h('p', { class: 'sum' }, x.summary) : null,
                     (x.added || []).length ? h('p', { class: 'ids' }, 'Added: ', ...(x.added || []).flatMap((id, i) => i ? [', ', link(id)] : [link(id)])) : null,
@@ -393,7 +433,7 @@ async function edition(r, mount, foot, cfg) {
     window.addEventListener('sgit-vault-updated', () => drawBar())
     setInterval(() => { if (document.visibilityState !== 'hidden') drawBar() }, 4000)       // the count of what is only in this browser
     const extras = [b.map ? mapSection(b.map, b.stories || []) : null, b.stack ? stackSection(b.stack, byId, deliveries) : null].filter(Boolean)
-    mount.replaceChildren(header, lensBar, ...(langBar ? [langBar] : []), lensNote, bar, ...extras, body)
+    mount.replaceChildren(header, lensBar, ...(langBar ? [langBar] : []), lensNote, bar, ...extras, body, ...(costLine ? [costLine] : []))
     if (lens) await setLens(lens); else draw()
 }
 

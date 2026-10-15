@@ -60,7 +60,6 @@ main.doc .beat .n { font-weight: 400; color: var(--dim); letter-spacing: 0; text
 .story .changes li { margin: .15rem 0; }
 .story .changes .at { font: .74rem/1.5 var(--mono); color: var(--info-ink, #1d4ed8); margin-right: .3rem; }
 /* the wires: the strip naming each wire, drawn by wire.py */
-.wires { margin: -.4rem 0 1.2rem; font-size: .86rem; color: var(--dim); }
 .wires a { margin-right: .6rem; } .wires a[aria-current] { font-weight: 700; color: var(--fg); text-decoration: none; }
 /* what a vault adds beyond the edition: a map (entities, the stories that name them) or a stack (services, the items that touched them); the warn tokens for the deadlines */
 .edition .deadlines { margin: .2rem 0 .8rem; padding: .45rem .8rem; border-left: 3px solid var(--warm); border-radius: 0 8px 8px 0; background: var(--warn-bg, #fff7e6); font-size: .88rem; line-height: 1.5; }
@@ -184,7 +183,97 @@ main.doc .agent p, .wire-status, .snapshot { overflow-wrap: anywhere; } /* the r
 .ig-prompt { display: inline; } .ig-prompt > summary { display: inline; cursor: pointer; color: var(--accent-dk); }
 .ig-prompt pre { white-space: pre-wrap; font: .74rem/1.45 var(--mono); max-height: 14rem; overflow: auto; margin: .4rem 0 0; padding: .5rem .7rem; border: 1px solid var(--line); border-radius: 8px; background: var(--panel2); color: var(--fg); }
 .edition .ig.hero { max-width: 560px; margin: .6rem 0 .8rem; }
-.edition .ig-cost { font-size: .82rem; color: var(--dim); margin: .2rem 0 .8rem; }
 .story .ig.card { float: right; width: min(40%, 300px); margin: 0 0 .6rem 1rem; }
 .story::after { content: ''; display: block; clear: both; }
 @media (max-width: 700px) { .story .ig.card { float: none; width: 100%; margin: .6rem 0; } }
+/* The industry home, first screen: the CSS proposed in spec.md, verbatim, loaded AFTER wire.css and BEFORE
+   themes.css (as wire.css is on the site). Selectors are against the existing DOM of wire.js / wire.py plus
+   two wrappers the spec asks wire.js for: div.today (hero + side) and div.folds (the desk's record, folded).
+   Every colour is a token from assets/themes/themes.css. Nothing here changes a text node. */
+
+/* 1. The masthead: the strip of wires is the eyebrow, the title, then the dateline. The edition header loses
+      its box: at the top of a page a box is a notice, and the edition is the page. */
+main.doc .crumb { margin-bottom: .35rem; }
+main.doc .eyebrow { margin: 0 0 .15rem; }
+main.doc .wires { display: block; font: 400 .8rem/1.6 var(--sans); letter-spacing: 0; text-transform: none; color: var(--dim); white-space: nowrap; overflow-x: auto; scrollbar-width: none; }
+main.doc .wires a { margin-right: .75rem; }
+main.doc h1 { margin: 0 0 .2rem; font-size: 2.5rem; line-height: 1.1; letter-spacing: -.012em; }
+.edition { padding: 0; border: 0; border-radius: 0; background: none; margin: 0 0 1.1rem; }
+.edition .k { margin: 0; font: 700 .74rem/1.6 var(--sans); letter-spacing: .16em; text-transform: uppercase; color: var(--accent-dk); }
+.edition .meta { margin: .05rem 0 0; padding: 0 0 .65rem; border-bottom: 2px solid var(--fg); font: .78rem/1.6 var(--mono); color: var(--dim); }
+.edition .meta a { color: var(--accent-dk); text-decoration: none; }
+
+/* 2. The today band: the hero at the left, the editor's note and the threads at the right; one column on a phone. */
+.edition .today { display: grid; grid-template-columns: minmax(0, 400px) minmax(0, 1fr); gap: 1rem 2rem; align-items: start; margin: .9rem 0 0; }
+.edition .ig.hero { max-width: none; margin: 0; }
+.edition .ig.hero img { border-radius: 6px; }
+.edition .ig figcaption { margin-top: .35rem; font-size: .74rem; }
+.edition .today .note { margin: 0 0 .8rem; padding: 0; border: 0; border-radius: 0; background: none; box-shadow: none; font: 1.06rem/1.52 var(--serif); color: var(--fg); }
+.edition .today .side > .k { margin: .1rem 0 .2rem; }
+.threads { display: block; margin: 0; border-top: 1px solid var(--line); }
+.thread { padding: .5rem 0; border: 0; border-bottom: 1px solid var(--line); border-radius: 0; background: none; font-size: .88rem; }
+.thread > summary { cursor: pointer; list-style: none; display: flex; align-items: baseline; gap: .55rem; }
+.thread > summary::-webkit-details-marker { display: none; }
+.thread > summary::before { content: '\25B8'; color: var(--accent); font-size: .8em; flex: none; }
+.thread[open] > summary::before { content: '\25BE'; }
+.thread b { display: inline; margin: 0; font: 700 1.02rem/1.35 var(--serif); color: var(--head); }
+.thread .n { margin-left: auto; font: .72rem/1.5 var(--mono); color: var(--dim2); white-space: nowrap; }
+.thread > p { margin: .35rem 0 0; color: var(--text); }
+.thread .ids { margin-top: .3rem; }
+.edition .leadline { margin: .8rem 0 0; font-size: .95rem; line-height: 1.45; }
+.edition .leadline > b { display: inline-block; margin-right: .5rem; font: 700 .7rem/1.6 var(--sans); letter-spacing: .14em; text-transform: uppercase; color: var(--accent-dk); vertical-align: .08em; }
+.edition .leadline a { font: 700 1.05rem/1.4 var(--serif); color: var(--head); text-decoration: none; }
+.edition .leadline a:hover { color: var(--accent-dk); text-decoration: underline; }
+.edition .leadline .more { margin-left: .5rem; font-size: .82rem; color: var(--dim); }
+
+/* 3. The desk's record for the edition, folded into one row: corrections, the verifier, the graphs. The texts
+      and their classes are unchanged; only the wrapper and the summaries are new. */
+.edition .folds { display: flex; flex-wrap: wrap; gap: .2rem 1.3rem; margin: .9rem 0 0; padding: .45rem 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); font-size: .84rem; }
+.edition .folds > details { margin: 0; flex: 0 1 auto; }
+.edition .folds > details[open] { flex: 1 1 100%; }
+.edition .folds > details > summary { cursor: pointer; color: var(--accent-dk); }
+.edition .folds > details[open] > summary { font-weight: 600; }
+.edition .folds .corrections, .edition .folds .checks { margin: .5rem 0 .4rem; }
+.edition .folds .corrections > b, .edition .folds .checks > b { display: none; }   /* the summary already says it */
+.edition details.graph { margin: 0; }
+.edition .folds .graphs > .graph { margin: .5rem 0 .3rem; }
+.edition .folds .graph > figure, .edition .folds .graph > .graph { margin: .6rem 0 .4rem; }
+
+/* 4. The inbox bar: one quiet line on a first visit; the release note folded; the filters only once there is
+      something to filter (wire.js draws them when the reader has state; the mock-up shows the first visit). */
+.inbox { margin: 1rem 0 .9rem; padding: .55rem .9rem; font-size: .86rem; }
+.inbox p.since { margin: 0; }
+.inbox details.releases { margin: .35rem 0 0; padding: .3rem .7rem; }
+.inbox details.releases > summary { cursor: pointer; }
+.inbox details.releases > summary b { color: var(--fg); }
+.inbox details.releases > .release { margin-top: .4rem; }
+.inbox .filters { margin: .45rem 0 0; }
+.inbox .pending.ok { display: none; }
+
+/* 5. The lens row and the note under it: one line each, tighter. */
+.lens { margin: 0 0 .5rem; }
+.lens-note { margin: 0 0 1rem; font-size: .82rem; }
+
+/* 6. The foot: the status line as a line, not a box, and the cost of the pictures beside it. */
+.wire-status { margin: 1.8rem 0 .3rem; padding: .55rem 0 0; border: 0; border-top: 1px solid var(--line); border-radius: 0; background: none; font-size: .76rem; }
+main.doc .ig-cost { margin: 0 0 1.2rem; font: .78rem/1.5 var(--mono); color: var(--dim); }
+
+/* 7. The share view: ?share on the address sets html[data-share]; the page becomes the masthead and the band,
+      1200 wide, for a 1200×630 screenshot. Nothing else changes. */
+html[data-share] nav.site, html[data-share] footer.site, html[data-share] main.doc > :not(h1):not(#wire-mount),
+html[data-share] #wire-mount > :not(.edition), html[data-share] .edition .folds, html[data-share] .edition .leadline .more, html[data-share] .ig-prompt { display: none; }
+html[data-share] main.doc { max-width: 1200px; padding: 26px 44px 30px; }
+html[data-share] main.doc h1 { font-size: 2.5rem; }
+html[data-share] .edition .today { grid-template-columns: 430px 1fr; gap: 1rem 2.2rem; margin-top: .9rem; }
+html[data-share] .edition .today .note { font-size: 1.02rem; line-height: 1.5; }
+html[data-share] .thread .ids, html[data-share] .thread > p { display: none; }
+html[data-share] .edition .leadline { margin-top: .6rem; }
+
+/* 8. The phone. */
+@media (max-width: 760px) {
+  main.doc .wires { mask-image: linear-gradient(90deg, var(--fg) 88%, transparent); -webkit-mask-image: linear-gradient(90deg, var(--fg) 88%, transparent); padding-right: 2rem; }
+  main.doc h1 { font-size: 2.05rem; }
+  .edition .today { grid-template-columns: 1fr; gap: .8rem; }
+  .edition .today .note { font-size: 1.02rem; }
+  .edition .folds { gap: .2rem .9rem; }
+}

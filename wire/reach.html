@@ -22,7 +22,7 @@
   <link rel="stylesheet" href="../assets/site-nav.css">
   <script src="../assets/themes/themes.js"></script>
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.12.69</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.12.70</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -151,8 +151,8 @@
  <p class="lead">Who should be told, and the route to tell them: organisations, never people, from their own published contact pages.</p>
 <p class="wires">The wires: <a href="../wire/index.html" aria-current=page>The Industry Wire</a><a href="../wire/aws/index.html">The AWS Wire</a><a href="../wire/owasp/index.html">The OWASP Wire</a><a href="../wire/portugal/index.html">The Portugal Wire</a> · <a href="../wire/days.html">Day by day</a><a href="../wire/costs.html">What it costs</a><a href="../wire/charter.html">The charter</a><a href="../wire/desk-brief.html">For the desks</a></p>
 <p>Who the stories of The Industry Wire concern, and how to reach them, so that they can be told this wire exists and sent what it found. <b>By organisation route only</b>, under <a href="../world-news-day/data/contact-rules.json">the contact rules</a> this site already publishes: a role address from the organisation&rsquo;s own contact page, one hop, the page&rsquo;s bytes hashed when fetched; never a person&rsquo;s address, never a directory, never a guess. Everything here is public, so anyone can check who was told. The routes this site found are recorded in <code>admin/build/wire-reach.json</code>; the desk adds its own to the vault as <code>data/contacts.json</code> under the same rules, and this page draws both, with what the vault already carries: the map&rsquo;s entities with their public pages and repositories, and the sources&rsquo; sites.</p>
-<div id="wire-status" class="wire-status" hidden></div>
 <div id="wire-mount" data-wire="reach" data-pictures="1"><p class="dim">Opening the vault&hellip;</p></div>
+<div id="wire-status" class="wire-status" hidden></div>
 <script type="application/json" id="wire-config">{"endpoint": "https://dev.send.sgraph.ai", "vault_id": "u9i9jp0l", "read_key": "sgit_public_read_4c7aefb739e52e9a03c35be01bf7e311af00872e33c477b4d7c4319cdb91bdba:u9i9jp0l", "ref_ttl_s": 120, "clone": "sgit clone sgit_public_read_4c7aefb739e52e9a03c35be01bf7e311af00872e33c477b4d7c4319cdb91bdba:u9i9jp0l", "named_readers": [{"persona": "dinis", "name": "Dinis Cruz", "agreed": "2026-10-12", "how": "in writing, in the session that built the wire pages; the site's owner, while the site has few readers"}], "slug": "", "up": "../", "name": "The Industry Wire", "reach": [{"wire": "", "organisation": "The sources of the Industry Wire", "for": "the publishers whose coverage the wire links", "page": "", "fetched": "", "sha256": "", "addresses": [], "also": [{"label": "Each source's site, in the wire's registry (data/sources.json), drawn on the sources page", "url": "https://newsroom.sgit.ai/wire/sources.html"}], "note": "No role address has been fetched for the Industry Wire's sources yet; the desk is asked to add data/contacts.json under the rules."}]}</script>
 <script type="module">
 import { wire } from './wire.js';
@@ -177,7 +177,7 @@ import('../assets/components/sg-meter/v1/v1.4/v1.4.1/sg-meter.js')
     <div class="brandline">newsroom<span>.sgit.ai</span></div>
     <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.12.69</a> &middot; <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.12.70</a> &middot; <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>The newsroom</h4>

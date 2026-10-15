@@ -44,6 +44,7 @@ For the desks, optional, in the brief: `card.claim` (a claim of at most eight wo
 | R2 | `wire/graphs.js`: the provenance strip on every card, the evidence grid, sources by day, the reach matrix, corrections over time, threads as timelines, the projects graph and the stack as graphs with the deadlines timeline; the chart tokens in the themes; tests | nothing |
 | R3 | per-edition history kept, `wire/overview.json`, the overview at `/wire/`, the Industry Wire at `/wire/industry/` | the owner's yes to the move |
 | R4, done (v0.12.42 the pipeline, v0.12.59 the first live editions and the pictures on the pages) | `admin/build/infographics.py`, the templates, the ledger, the image slots and the cost line on every page; a dry run, then one live edition | nothing more |
+| R4b, done (v0.12.70) | the wire's first screen as a front page, for a first-time visitor and a screenshot to send ([the designer's spec](wires-ux/first-screen.md)) | nothing more |
 | R5 | the morning routine gains the infographic step, the caps and the ninety-day archive | the key present where the routine runs (`OPENROUTER_API_KEY` in the environment's secrets) |
 
 ## What the first live run taught, 14 October

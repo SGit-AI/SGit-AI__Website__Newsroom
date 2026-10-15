@@ -22,7 +22,7 @@
   <link rel="stylesheet" href="../../assets/site-nav.css">
   <script src="../../assets/themes/themes.js"></script>
   <a class="brand" href="../../index.html">newsroom<span>.sgit.ai</span></a>
-  <a class="ver" href="../../admin/versions.html" title="Site release history">v0.12.69</a>
+  <a class="ver" href="../../admin/versions.html" title="Site release history">v0.12.70</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -151,8 +151,8 @@
  <p class="lead">Who should be told, and the route to tell them: organisations, never people, from their own published contact pages.</p>
 <p class="wires">The wires: <a href="../../wire/index.html">The Industry Wire</a><a href="../../wire/aws/index.html" aria-current=page>The AWS Wire</a><a href="../../wire/owasp/index.html">The OWASP Wire</a><a href="../../wire/portugal/index.html">The Portugal Wire</a> · <a href="../../wire/days.html">Day by day</a><a href="../../wire/costs.html">What it costs</a><a href="../../wire/charter.html">The charter</a><a href="../../wire/desk-brief.html">For the desks</a></p>
 <p>Who the stories of The AWS Wire concern, and how to reach them, so that they can be told this wire exists and sent what it found. <b>By organisation route only</b>, under <a href="../../world-news-day/data/contact-rules.json">the contact rules</a> this site already publishes: a role address from the organisation&rsquo;s own contact page, one hop, the page&rsquo;s bytes hashed when fetched; never a person&rsquo;s address, never a directory, never a guess. Everything here is public, so anyone can check who was told. The routes this site found are recorded in <code>admin/build/wire-reach.json</code>; the desk adds its own to the vault as <code>data/contacts.json</code> under the same rules, and this page draws both, with what the vault already carries: the map&rsquo;s entities with their public pages and repositories, and the sources&rsquo; sites.</p>
-<div id="wire-status" class="wire-status" hidden></div>
 <div id="wire-mount" data-wire="reach" data-pictures="1"><p class="dim">Opening the vault&hellip;</p></div>
+<div id="wire-status" class="wire-status" hidden></div>
 <script type="application/json" id="wire-config">{"endpoint": "https://dev.send.sgraph.ai", "vault_id": "v202bla5", "read_key": "sgit_public_read_ad5c3f9e1f4d7632db06cd27f6ee6a256063300c426f4a94e7de33cf5a53e892:v202bla5", "ref_ttl_s": 120, "clone": "sgit clone sgit_public_read_ad5c3f9e1f4d7632db06cd27f6ee6a256063300c426f4a94e7de33cf5a53e892:v202bla5", "named_readers": [{"persona": "dinis", "name": "Dinis Cruz", "agreed": "2026-10-13", "how": "in chat, 13 October 2026, when the OWASP and AWS wires were added: the lens dinis is the named reader as before, extending the agreement of 12 October for the Industry Wire"}], "slug": "aws", "up": "../../", "name": "The AWS Wire", "reach": [{"wire": "aws", "organisation": "Amazon Web Services", "for": "a security finding in an AWS service or an AWS open-source project", "page": "https://aws.amazon.com/security/vulnerability-reporting/", "page_title": "Vulnerability Reporting - Amazon Web Services (AWS)", "fetched": "2026-10-13", "sha256": "fa06b35d1b04a4da", "addresses": [{"address": "aws-security@amazon.com", "says": "For submissions outside of the HackerOne scope/platform, or to address any questions", "role": "security"}], "also": [{"label": "AWS's Vulnerability Disclosure Program on HackerOne, the page's first route", "url": "https://aws.amazon.com/security/vulnerability-reporting/"}], "note": "For What's New items, releases and deadlines there is no route to ask for: they are AWS's own announcements, each linked from the story."}]}</script>
 <script type="module">
 import { wire } from '.././wire.js';
@@ -177,7 +177,7 @@ import('../../assets/components/sg-meter/v1/v1.4/v1.4.1/sg-meter.js')
     <div class="brandline">newsroom<span>.sgit.ai</span></div>
     <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../../admin/versions.html">v0.12.69</a> &middot; <a href="../../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../../admin/versions.html">v0.12.70</a> &middot; <a href="../../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>The newsroom</h4>

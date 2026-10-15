@@ -27,7 +27,7 @@
  ],
  "what": "The map of everything a reader does on newsroom.sgit.ai, and the review of it: phase 0 of the move described in https://newsroom.sgit.ai/articles/explorer-to-villager-newsroom.html. Written by admin/build/api_map.py on every build. The hashes are the 'before' for the move's rule that the live site serves the same bytes after it: scripts, styles and JSON raw; pages with the site chrome and version stamps normalised.",
  "api_means": "client-side: components, formats and contracts the browser runs, with no server and nothing to deploy but files",
- "release": "v0.12.69",
+ "release": "v0.12.70",
  "date": "11 October 2026",
  "source": {
   "sgit_ai": "",
@@ -36,7 +36,7 @@
   "meter_on_sgit_ai": "1.3.1"
  },
  "counts": {
-  "reader_code_lines": 10134,
+  "reader_code_lines": 10263,
   "reader_files": 62,
   "pages": 30,
   "views": 12,
@@ -45,7 +45,7 @@
   "outputs": 9,
   "contracts": 14,
   "findings": 18,
-  "tests": 510,
+  "tests": 511,
   "frozen_files": 20,
   "frozen_lines": 5697,
   "pages_with_csp": 0
@@ -266,9 +266,9 @@
    "path": "wire/wire.js",
    "what": "The wires: the edition with its lens, release notes and corrections, a map or a stack when the vault has one, the sources, the documents, drawn from the vault as text; one code for every wire",
    "from": "this site",
-   "lines": 564,
-   "bytes": 55714,
-   "sha256": "20477655e87b57726f3e5bd94c0326324f14022fe2db71c9bf55bcdee5eff13d",
+   "lines": 604,
+   "bytes": 60494,
+   "sha256": "c7d5e1ecbed37d7ba63902c876430e38b2d58de69bcbfe9bab8df5bb546472b7",
    "hosts": [],
    "fetch": 2,
    "storage": [
@@ -285,9 +285,9 @@
    "path": "wire/wire.css",
    "what": "Styles for the wire pages",
    "from": "this site",
-   "lines": 190,
-   "bytes": 18506,
-   "sha256": "b30dcf3bfc7e6eedf6fc66d337e425a7027051749f37e70e08ef38272e55ff91",
+   "lines": 279,
+   "bytes": 25395,
+   "sha256": "f134589e1aac457e23088e9cc72b96847ea5bedea50f77e93594c78f43dda19e",
    "hosts": [],
    "fetch": 0,
    "storage": [],
@@ -399,7 +399,7 @@
    "from": "this site, generated",
    "lines": 1337,
    "bytes": 62345,
-   "sha256": "1faf8d424e16d41478594e6ae93696d3ea43ae100858aca48010b053110e4757",
+   "sha256": "62085ccd612b1abfa47679e5ec77320eb73ec78d063931e7ef4afa2bdba66e56",
    "hosts": [],
    "fetch": 0,
    "storage": [],
@@ -415,7 +415,7 @@
    "from": "this site, generated",
    "lines": 292,
    "bytes": 10917,
-   "sha256": "914e0fa54db660aea76517ce86993885ba78c5719e03eb0865f1bce898624db3",
+   "sha256": "42aa828998de833a6d39eca2d67979ab3e90933e714efd09a8066db1eb33bdb1",
    "hosts": [],
    "fetch": 0,
    "storage": [],
@@ -431,7 +431,7 @@
    "from": "this site, generated",
    "lines": 944,
    "bytes": 38298,
-   "sha256": "62a6ceb68cc5ab1935e7682b6094c2bdaa43111b06390f262fe464904958c9e5",
+   "sha256": "073f0270783a41d21622f55b50880a5dde234b6abb517d8a8aca169bea9656e1",
    "hosts": [],
    "fetch": 0,
    "storage": [],
@@ -447,7 +447,7 @@
    "from": "this site, generated",
    "lines": 515,
    "bytes": 26490,
-   "sha256": "674340688530a2c72f8b7e93edc426304ed62aaf5b9d07e10f27248b893add60",
+   "sha256": "e188f02148e47a55d4c4c87f9eb2e6c2b83453cb10e8588c179934541c2075b3",
    "hosts": [],
    "fetch": 0,
    "storage": [],
@@ -563,7 +563,7 @@
    "from": "this site, generated",
    "lines": 268,
    "bytes": 13441,
-   "sha256": "f54945309dcba12b2578d41ffd0621f500f0563a8362bcf120b50c80cf520e1e",
+   "sha256": "897499479227ca3e17d1ac529f5d1801ea8fa7ff36e6adcaf1faec5c6b3ffb6d",
    "hosts": [],
    "fetch": 0,
    "storage": [],
@@ -1194,44 +1194,44 @@
   {
    "path": "wire/index.html",
    "what": "the Industry Wire's edition",
-   "lines": 265,
-   "sha256": "35f02106aece08fab9a46ea0dd914d6c8db5263ed0d8f89ec95d06d2d2be1d3b"
+   "lines": 264,
+   "sha256": "a89dfc55f0e31f7eb1b44cbda7c02b229c8e6753750cd7a63e137fddcd897dc7"
   },
   {
    "path": "wire/sources.html",
    "what": "the wire's sources",
    "lines": 245,
-   "sha256": "f93c8289847990ef6fb4b78354fa6360358c2e2b066fc045b97ca429cbfda463"
+   "sha256": "ff37914b86bdcd7c1a1c60dd26b37e7ed45f842f2561536ef9dcece2326ad558"
   },
   {
    "path": "wire/how.html",
    "what": "how the wire is read, and its documents",
    "lines": 250,
-   "sha256": "13cc865f063001479998892790169adaac4e990625e58bb90f957f0fec73c896"
+   "sha256": "74e7248838ce7d1bcb1ceaf389763a64fde5ab006b38007af703a2ac39ec861a"
   },
   {
    "path": "wire/owasp/index.html",
    "what": "the OWASP Wire's edition, with the projects graph",
-   "lines": 266,
-   "sha256": "d13374892c8ad38834cf9a8b2e1b5af544693d8d90d885fb108897588358ae36"
+   "lines": 265,
+   "sha256": "fc2c31f75ffeb12edc16d91ee33882e699f80831a99e9b418ea213b595f415ca"
   },
   {
    "path": "wire/aws/index.html",
    "what": "the AWS Wire's edition, with the stack and its deadlines",
-   "lines": 266,
-   "sha256": "6d8b0009394cbf9297e5b5d253470d63ba56135f02b91b52c3301ce64c70e7db"
+   "lines": 265,
+   "sha256": "3ea762f3c45529c1dae075af00fd24bd38716bca69141950b4e599ceb4106461"
   },
   {
    "path": "wire/portugal/index.html",
    "what": "the Portugal Wire's edition, in English and Portuguese, with the ecosystem map",
-   "lines": 266,
-   "sha256": "21243cc027fbb5d509faf8ccd8a238b7612ae6cd82052b3fcf39a8851fe7d6f2"
+   "lines": 265,
+   "sha256": "eea9703a0319827a62d357b032c4c1de9b0235f207928f0cc70f471e7a584590"
   },
   {
    "path": "wire/days.html",
    "what": "every wire day by day",
    "lines": 246,
-   "sha256": "6877307687e259292715f84d4cfb376f30293ab647a0daf1c4db05d8e667d34c"
+   "sha256": "21de5ee688ca60104f9983321471307e25f854df5d7ef16863b6df6d3d59491d"
   },
   {
    "path": "wire/costs.html",
@@ -1255,7 +1255,7 @@
    "path": "wire/reach.html",
    "what": "who should know, by organisation route",
    "lines": 245,
-   "sha256": "5f7b94a3081d13e000907d37c42f0cf69704bb3aeac19e37b7db867763836cb4"
+   "sha256": "5d4214dad6ff3f65b7a83aaa96133e1ab8f5b0ed7e0376931c850c44e973fe10"
   },
   {
    "path": "vault/index.html",
@@ -1321,7 +1321,7 @@
   {
    "path": "admin/build/wire.py",
    "what": "writes the three pages of every wire (wire/, wire/owasp/, wire/aws/) and, from a clone, each wire's snapshot.json",
-   "lines": 381
+   "lines": 380
   },
   {
    "path": "admin/build/vault_page.py",
@@ -1387,8 +1387,8 @@
   {
    "path": "admin/build/test_wire.mjs",
    "what": "every wire's pages in Chromium, each reading its real vault",
-   "lines": 232,
-   "checks": 64
+   "lines": 236,
+   "checks": 65
   },
   {
    "path": "admin/build/test_vault.mjs",
@@ -1564,7 +1564,7 @@
   "account": 1,
   "landing": 6,
   "newsroom": 1,
-  "page": 681,
+  "page": 684,
   "personas": 1,
   "share": 1,
   "topped-up": 1,
