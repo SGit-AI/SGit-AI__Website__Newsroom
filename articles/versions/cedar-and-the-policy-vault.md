@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-14 | published | 2,891 | first published | this release | [current](../cedar-and-the-policy-vault.md) |
+| **v1.0.0** | 2026-10-14 | published | 2,891 | first published | [`ad8bf5ac5`](https://github.com/SGit-AI/SGit-AI__Website/commit/ad8bf5ac53660f99ac08822678b28c50c3a7d866) | [current](../cedar-and-the-policy-vault.md) |
 
 [← Back to the article](../cedar-and-the-policy-vault.md) · [All articles](../index.md)
 

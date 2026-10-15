@@ -1,6 +1,6 @@
 {
   "site": "https://sgit.ai",
-  "generated": "2026-10-14",
+  "generated": "2026-10-15",
   "site_version": "v0.7.87",
   "about": "https://newsroom.sgit.ai/newsroom/index.html",
   "front": {
@@ -721,6 +721,41 @@
         "scoped-clone",
         "supply-chain",
         "artifacts",
+        "article"
+      ],
+      "placement": [],
+      "linkedin": null,
+      "notes": []
+    },
+    {
+      "slug": "the-homepage-is-a-vault",
+      "title": "The homepage is a vault: a fresh edition every morning, every past homepage one commit away, served from plain files, and a brief for the agent that builds it",
+      "date": "2026-10-14",
+      "updated": "",
+      "author": "Dinis Cruz",
+      "url": "https://newsroom.sgit.ai/articles/the-homepage-is-a-vault.html",
+      "markdown": "https://newsroom.sgit.ai/articles/the-homepage-is-a-vault.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/the-homepage-is-a-vault.webp",
+      "graph": "https://newsroom.sgit.ai/articles/graphs/the-homepage-is-a-vault.json",
+      "teaser": "A new homepage edition every morning, each a signed commit in a vault, served from plain files: every past homepage one commit id away.",
+      "summary": "The homepage of this site has to be fresh every day, and today it changes only when someone releases the site. I want a job that runs every morning at about 05:45, reads the latest articles, the wires and what is happening in the industry, and writes a new edition of the homepage. And I want that homepage to be a vault. Every edition a commit with a signed tag and its own version line; every edition carrying the links it showed and why, a screenshot of itself and the release note that explains it; any past homepage one commit id away; variants side by side for A/B tests; and anyone who wants their own homepage, in another language or for another audience, forks the vault. The encrypted objects can be served as plain files from S3, a CDN or GitHub Pages, read in the browser with a published read key. I had two facts wrong: this site is not served by a Lambda, it is on GitHub Pages; the Lambda is the vault API the wire reads through, and that is where the time goes, at 317 milliseconds a request against 44 for a static file. This site's agent built the homepage vault locally: three editions, three signed tags, a static export, and a browser that rendered today's edition in four requests, yesterday's in three, and nothing at all inside two minutes. A stats lane took 300 page-load beacons. This is the design, the measurements, and the brief.",
+      "topics": [
+        "vaults-and-method",
+        "site-and-engineering"
+      ],
+      "tags": [
+        "homepage",
+        "vaults",
+        "sgit",
+        "static-hosting",
+        "performance",
+        "ab-testing",
+        "append-lanes",
+        "scheduled-agents",
+        "synthetic-users",
+        "version-control",
+        "architecture",
+        "brief",
         "article"
       ],
       "placement": [],
