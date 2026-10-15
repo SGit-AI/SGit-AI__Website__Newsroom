@@ -82,6 +82,27 @@ const gB2 = S.extract(B, { id: 'nr-bbbb0002', label: 'iPad' }, gB, { notes: mnB.
 check(gB2.notes.length === 1 && gB2.notes[0].id === 'n-b1', 'extract after a merge: B\'s file still holds only B\'s notes')
 check(S.mergeNotes(null, CN, 'nr-cccc0003').store.notes.length === 3 && S.mergeNotes({ v: 1, notes: [] }, { notes: [] }, 'x').added === 0, 'mergeNotes: an empty or missing store takes every note; an empty vault adds none')
 
+// open, or connect (card 053): what the vault holds that a browser does not; a browser taking a device as its own; a batch refiled; a write combined
+const inB = S.inbound(CN, { state: B, notes: NB, wire: null }, 'nr-bbbb0002')
+check(inB.reads === 2 && inB.topups === 1 && inB.personas === 1 && inB.notes === 2 && inB.seen === 0 && inB.devices === 1 && inB.any === 6, `inbound: what a merge would add, counted without writing (${JSON.stringify(inB)})`)
+check(S.describeInbound(inB) === '2 reads, 1 top-up, 1 persona and 2 notes from 1 other device', `describeInbound: in words (${S.describeInbound(inB)})`)
+const inB2 = S.inbound(CN, { state: S.mergeInto(B, CN, 'nr-bbbb0002').state, notes: S.mergeNotes(NB, CN, 'nr-bbbb0002').store, wire: null }, 'nr-bbbb0002')
+check(inB2.any === 0 && inB2.devices === 1, 'inbound: nothing after the merge, the other device still counted')
+const fresh = { v: 3, created: null, balance: 500, spent: 0, reads: 0, declined: 0, log: [], topups: [], sessions: [], cart: [], active: 'me', personas: [{ id: 'me', name: '', created: '2026-10-13T20:00:00.000Z', on: [], off: [] }] }
+const asA = S.mergeInto(fresh, CN, 'nr-aaaa0001', { own: true }), asAnotes = S.mergeNotes({ v: 1, notes: [] }, CN, 'nr-aaaa0001', { own: true })
+check(asA.state.log.length === 4 && asA.state.log.filter(e => !e.device).length === 2 && asA.state.log.filter(e => e.device === 'nr-bbbb0002').length === 2 && asA.state.topups.length === 1 && !asA.state.topups[0].device && asA.state.balance === 982.5, `a cleared browser that takes device A as its own: A's reads and top-up are its own here, B's are tagged B, the balance is the account's (${asA.state.balance}p)`)
+check(asAnotes.store.notes.length === 3 && asAnotes.store.notes.filter(n => !n.device).length === 2 && asAnotes.store.notes.find(n => n.id === 'n-a1').sent && asAnotes.store.notes.filter(n => n.device === 'nr-bbbb0002').length === 1, 'the same for the notes: A\'s two are its own (one still marked sent), B\'s one is tagged B')
+const notA = S.mergeInto(fresh, CN, 'nr-aaaa0001')
+check(notA.state.log.length === 2 && notA.state.log.every(e => e.device === 'nr-bbbb0002'), 'without own, a device\'s records missing locally are left out: the local copy is the truth')
+check(S.extract(asA.state, { id: 'nr-aaaa0001' }, null, { notes: asAnotes.store.notes }).reads.length === 2 && S.extract(asA.state, { id: 'nr-aaaa0001' }, null, { notes: asAnotes.store.notes }).notes.length === 2, 'extract after taking a device as its own: the file holds that device\'s records, not the other\'s')
+const rf = S.refile(gB, 'nr-aaaa0001', 'laptop')
+check(rf.device.id === 'nr-aaaa0001' && rf.device.label === 'laptop' && rf.device.from === 'nr-bbbb0002' && rf.reads.every(e => e.device === 'nr-aaaa0001') && rf.notes.every(n => n.device === 'nr-aaaa0001') && rf.reads.length === 2 && gB.reads.every(e => e.device === 'nr-bbbb0002'), 'refile: a batch filed under another device is re-tagged whole, keeps where it came from, and the original is unchanged')
+check(S.refile(gB, 'nr-bbbb0002') === gB, 'refile: under its own device, the file as it is')
+const cmb = S.combine(gA, S.extract(A, { id: 'nr-aaaa0001', label: 'laptop' }, gA, { notes: [NA.notes[0]] }))
+check(cmb.notes.length === 2 && cmb.reads.length === 2 && cmb.device.syncs === 2 && cmb.device.first_sync === gA.device.first_sync, 'a write combined with the file as it is: a note removed in the browser stays in the vault, the sync count goes up, first_sync is kept')
+const CR = S.consolidate([S.combine(gA, rf)], acct)
+check(CR.devices.length === 1 && CR.devices[0].reads === 4 && CR.devices[0].notes === 3 && CR.totals.balance === 982.5, 'one file carrying two browsers\' records: one row across the devices, the same totals')
+
 // the wire: stories seen travel in the device file; the earliest sighting wins; a merge tags them and is idempotent
 const WA = { 'sec-01': { at: '2026-10-13T08:00:00.000Z' }, 'ai-01': { at: '2026-10-13T08:00:00.000Z' }, 'biz-01': { at: '2026-10-13T08:05:00.000Z', device: 'nr-cccc0003' } }
 const WB = { 'sec-01': { at: '2026-10-13T07:00:00.000Z' }, 'ai-09': { at: '2026-10-13T09:00:00.000Z' } }

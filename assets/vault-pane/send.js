@@ -80,7 +80,7 @@ export function mountSend(mount) {
             return
         }
         const fp = await I.fingerprint(link.spki)
-        const label = h('input', { type: 'text', id: 'send-label', maxlength: 40, value: ls.get(LABEL) || '', placeholder: 'this browser, e.g. "iPhone, in WhatsApp"' })
+        const label = h('input', { type: 'text', id: 'send-label', maxlength: 40, value: ls.get(LABEL) || '', placeholder: 'e.g. "iPhone, in WhatsApp", or the name of a device you already have' })
         label.addEventListener('change', () => ls.set(LABEL, label.value.trim()))
         const btn = h('button', { type: 'button', class: 'btn primary', id: 'send-now', onclick: async () => {
             btn.disabled = true; out.replaceChildren(h('p', { class: 'dim' }, 'Encrypting in this browser, then appending to the lane…'))
@@ -95,7 +95,7 @@ export function mountSend(mount) {
             h('div', { class: 'kv' }, h('span', { class: 'k' }, 'The vault'), h('span', { class: 'v mono', id: 'send-vault' }, `${link.vault} · key ${fp}`)),
             h('div', { class: 'kv' }, h('span', { class: 'k' }, 'Only in this browser'), h('span', { class: 'v', id: 'send-pending' }, p.any ? `${p.count ? `${p.count} change(s): ` : ''}${describePending(p)}` : 'nothing new since the last send')),
             last && last.vault === link.vault ? h('div', { class: 'kv' }, h('span', { class: 'k' }, 'Last sent from here'), h('span', { class: 'v' }, when(last.at))) : null,
-            h('label', {}, 'A name for this browser, so you know it in your vault ', label),
+            h('label', {}, 'A name for this browser, so you know it in your vault; where the vault is open, what it sent can be filed under a device you already have ', label),
             h('div', { class: 'acts' }, btn, h('button', { type: 'button', class: 'btn', id: 'send-forget', onclick: () => { forget(); draw(h('p', { class: 'dim' }, 'This browser no longer holds the link.')) } }, 'Forget the link')),
             out)
     }

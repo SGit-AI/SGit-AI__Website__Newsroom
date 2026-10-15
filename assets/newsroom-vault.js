@@ -53,8 +53,11 @@ export function randomPassphrase(n = 24) {
 
 /** This device's clone branch, made once and kept in local storage; in memory where there is no storage. */
 let memBranch = null
+export const DEVICE_KEY = 'sgit.device-branch'
+/** This browser takes another id as its own (the vault pane, when the reader says which device this is). */
+export function setDeviceBranch(id) { memBranch = id; try { localStorage.setItem(DEVICE_KEY, id) } catch (e) { /* memory only */ } }
 export function deviceBranch() {
-    const KEY = 'sgit.device-branch'
+    const KEY = DEVICE_KEY
     try { const v = localStorage.getItem(KEY); if (v) return v } catch (e) { /* no storage */ }
     if (!memBranch) memBranch = 'nr-' + crypto.randomUUID().slice(0, 8)
     try { localStorage.setItem(KEY, memBranch) } catch (e) { /* fine */ }
@@ -200,7 +203,7 @@ export async function writeNote(reader, text, name) {
 
 // ------------------------------------------------------------ the lane: a vault of its own, from the reader to the newsroom
 export const LANE = { folder: '/notes', readme: 'README.md' }
-const README_LANE = '# A lane to the newsroom\n\nMade by newsroom.sgit.ai for one reader. Every file in notes/ is one note the reader chose to send: a tap at a piece (read later, not for me, more like this, liked, wrong, fix this, idea), the words they added, the phrase they had selected, the page and the persona. Nothing else of theirs is in this vault. The newsroom reads it with the read key the reader handed over; the write key stays in the reader\'s master vault.\n'
+const README_LANE = '# A lane to the newsroom\n\nMade by newsroom.sgit.ai for one reader. Every file in notes/ is one note the reader chose to send: a tap at a piece (done, read later, follow up, not for me, more like this, liked, wrong, fix this, idea) or a message written to the newsroom, the words they added, the phrase they had selected, the page and the persona. Nothing else of theirs is in this vault. The newsroom reads it with the read key the reader handed over; the write key stays in the reader\'s master vault.\n'
 
 /**
  * A vault's public read key, in the form the sgit CLI clones with (sgit_public_read_<hex>:<id>): the library's own

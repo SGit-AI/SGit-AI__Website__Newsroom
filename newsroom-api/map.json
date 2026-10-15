@@ -27,7 +27,7 @@
  ],
  "what": "The map of everything a reader does on newsroom.sgit.ai, and the review of it: phase 0 of the move described in https://newsroom.sgit.ai/articles/explorer-to-villager-newsroom.html. Written by admin/build/api_map.py on every build. The hashes are the 'before' for the move's rule that the live site serves the same bytes after it: scripts, styles and JSON raw; pages with the site chrome and version stamps normalised.",
  "api_means": "client-side: components, formats and contracts the browser runs, with no server and nothing to deploy but files",
- "release": "v0.12.57",
+ "release": "v0.12.58",
  "date": "11 October 2026",
  "source": {
   "sgit_ai": "",
@@ -36,7 +36,7 @@
   "meter_on_sgit_ai": "1.3.1"
  },
  "counts": {
-  "reader_code_lines": 9904,
+  "reader_code_lines": 10076,
   "reader_files": 62,
   "pages": 29,
   "views": 12,
@@ -45,7 +45,7 @@
   "outputs": 9,
   "contracts": 14,
   "findings": 18,
-  "tests": 491,
+  "tests": 507,
   "frozen_files": 20,
   "frozen_lines": 5697,
   "pages_with_csp": 0
@@ -593,9 +593,9 @@
    "path": "assets/newsroom-vault.js",
    "what": "The newsroom's vault module: create, open, read, write and publish through the vendored library; the door, master and reader vaults; unlock; add a door",
    "from": "this site",
-   "lines": 255,
-   "bytes": 16265,
-   "sha256": "29003efa52c408b9d26e58ce86ecc897fda2439f739e803df7b9399a4520705e",
+   "lines": 258,
+   "bytes": 16598,
+   "sha256": "aaa49a06cb76f82c1f6bc4f7937dd81d5f7b4a1a6798638855f5f0de6ace9330",
    "hosts": [],
    "fetch": 0,
    "storage": [
@@ -625,11 +625,11 @@
   },
   {
    "path": "assets/vault-pane/vault-pane.js",
-   "what": "The vault pane on every page with the meter, in three tabs: this page (the notes, send to the newsroom, the lane's read key), the vault (enable with the passkey, create or join, update the vault, the table across devices, bring their activity here), the keys (every vault of the account)",
+   "what": "The vault pane on every page with the meter, in four tabs: this page (the three steps, what the browser knows about the page, the notes, write to the newsroom, send to the newsroom, the lane's read key), reading (every page read here, with its decision), the vault (enable with the passkey, create or join, update the vault, the table across devices, bring their activity here), the keys (every vault of the account); above the tabs, what is only in this browser",
    "from": "this site",
-   "lines": 784,
-   "bytes": 66189,
-   "sha256": "7176fa08921a26cfded65f5a8b3b20410c910b26b4e182e73edcee5991d88ef3",
+   "lines": 904,
+   "bytes": 79298,
+   "sha256": "40f1981a99cdcc1826be810fabed563a958873a54558a3443bfa86c871495d1e",
    "hosts": [
     "dev.send.sgraph.ai",
     "dev.vault.sgraph.ai"
@@ -647,11 +647,11 @@
   },
   {
    "path": "assets/vault-pane/notes.js",
-   "what": "The reader's notes as records: one tap at a piece (done, read later, not for me, more like this, liked, wrong, fix this, idea) with words and the selected phrase, kept in localStorage sgit.notes.v1; keep, add words, remove, mark sent; the decision at a page",
+   "what": "The reader's notes as records: one tap at a piece (done, read later, follow up, not for me, more like this, liked, wrong, fix this, idea) with words and the selected phrase, or a message alone, kept in localStorage sgit.notes.v1; keep, add words, remove, mark sent; the decision at a page",
    "from": "this site",
-   "lines": 137,
-   "bytes": 8318,
-   "sha256": "21f583f801906d8b3b9bad289a31919e88be02344f4156afd5f04831c83e9198",
+   "lines": 139,
+   "bytes": 8487,
+   "sha256": "283e816e1fe724569d1eea682d6dad73f9b9ae15da73eeee481ffdafa94bb1fb",
    "hosts": [],
    "fetch": 0,
    "storage": [
@@ -755,8 +755,8 @@
    "what": "The sending side of the inbox, for a browser with the link and no passkey: its own records as one device file, sealed and appended",
    "from": "dev.send.sgraph.ai /api/vault/append/write",
    "lines": 104,
-   "bytes": 8078,
-   "sha256": "ca0512a3474140277f57e70a696d597c0c3ed11c5f61d5228ca2ef4be302aecb",
+   "bytes": 8190,
+   "sha256": "06b1b151b35f927bd2155ede5e7fbb8a7d8a9dd24fb0da1a5fbac5f003919ff1",
    "hosts": [],
    "fetch": 0,
    "storage": [
@@ -863,9 +863,9 @@
    "path": "assets/vault-pane/sync.js",
    "what": "The activity vault's logic as pure functions: a device's file (reads, top-ups, personas, notes), the consolidated view, totals recomputed, merging into local state",
    "from": "this site",
-   "lines": 199,
-   "bytes": 13017,
-   "sha256": "0a56700e5b9db9f567fb843366fbaad9ff950202abbe1804d4dcf04b8824a193",
+   "lines": 237,
+   "bytes": 15914,
+   "sha256": "f00763d6b4f17156813b870e2ec5fbf98f83d0c6e558754c7e651e0a3acde12f",
    "hosts": [],
    "fetch": 0,
    "storage": [],
@@ -879,9 +879,9 @@
    "path": "assets/vault-pane/vault-pane.css",
    "what": "Styles for the pane, its tabs, the chips and the notes, and the page shift",
    "from": "this site",
-   "lines": 110,
-   "bytes": 12039,
-   "sha256": "f25e2596761414c4495e3b2fc380d3cb055f86f33a8d6cdd17c3d34d8928f5b9",
+   "lines": 119,
+   "bytes": 12830,
+   "sha256": "8a6aa362c7ee9b864d66ef064340d52979b0d2842c78fc25835cf6c496abee55",
    "hosts": [],
    "fetch": 0,
    "storage": [],
@@ -1254,8 +1254,8 @@
   {
    "path": "vault/index.html",
    "what": "your vault: the reading account carried between devices, with the pane open",
-   "lines": 260,
-   "sha256": "247abd6d07b9200be247407c0d4474e6f565fc67da5dbe2da1aaee5ec0207e13"
+   "lines": 264,
+   "sha256": "7db79ab551958dfaf5cb11ae05d2f52a00a37c40c387c41db30285a366ecf733"
   },
   {
    "path": "meter/index.html",
@@ -1320,7 +1320,7 @@
   {
    "path": "admin/build/vault_page.py",
    "what": "writes the vault page",
-   "lines": 109
+   "lines": 113
   },
   {
    "path": "admin/build/lane.py",
@@ -1393,14 +1393,14 @@
   {
    "path": "admin/build/test_sync.mjs",
    "what": "the activity vault's logic in Node, with two devices' states",
-   "lines": 106,
-   "checks": 37
+   "lines": 127,
+   "checks": 48
   },
   {
    "path": "admin/build/test_pane.mjs",
    "what": "the vault pane in Chromium: the reading account carried between two devices through the mock vault, and a third opened with the recovery code",
-   "lines": 159,
-   "checks": 28
+   "lines": 164,
+   "checks": 31
   },
   {
    "path": "admin/build/test_search.mjs",
@@ -1417,13 +1417,13 @@
   {
    "path": "admin/build/test_inbox.mjs",
    "what": "the inbox: the link, the envelope, the refusals in Node; a browser with a passkey and one without, the QR code decoded, the drain and a new link, in Chromium against the mock with the append routes",
-   "lines": 236,
-   "checks": 46
+   "lines": 247,
+   "checks": 48
   },
   {
    "path": "admin/build/test_notes.mjs",
    "what": "the feedback loop in Chromium: notes on an article and at a wire story, carried by the vault, sent to the lane, read by the sgit CLI and lane.py with the read key alone, brought into a second device",
-   "lines": 330,
+   "lines": 329,
    "checks": 77
   },
   {
@@ -1558,7 +1558,7 @@
   "account": 1,
   "landing": 6,
   "newsroom": 1,
-  "page": 631,
+  "page": 635,
   "personas": 1,
   "share": 1,
   "topped-up": 1,

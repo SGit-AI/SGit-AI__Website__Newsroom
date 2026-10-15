@@ -13,6 +13,15 @@
 .vault-pane .pending[hidden] { display: none; }
 .vault-pane .pending .acts { margin: .35rem 0 0; }
 .vault-pane .pending .out { display: block; font-size: .78rem; margin-top: .2rem; overflow-wrap: anywhere; }
+.vault-pane .pending .msg, .vault-pane .pending .inbound { display: block; }
+.vault-pane .pending .inbound { margin-top: .3rem; }
+.vault-pane .pending .msg[hidden], .vault-pane .pending .inbound[hidden], .vault-pane .pending .acts .btn[hidden] { display: none; }
+/* which device this is (card 053) */
+.vault-pane .devices label.device { display: flex; gap: .5rem; align-items: flex-start; padding: .4rem 0; border-bottom: 1px solid var(--line, #eceef2); font-size: .84rem; margin: 0; }
+.vault-pane .devices input[type=radio] { margin: .25rem 0 0; flex: none; }
+.vault-pane .devices input[type=text] { margin-top: .3rem; }
+.vault-pane .file-under { font-size: .82rem; margin: .4rem 0; }
+.vault-pane .file-under select { font: inherit; font-size: .82rem; max-width: 100%; margin-top: .2rem; }
 
 html.vault-open body { padding-right: var(--vault-w); transition: padding-right .25s ease; }
 .vault-pane { position: fixed; top: 0; right: 0; bottom: 0; width: var(--vault-w); max-width: 100vw; box-sizing: border-box; overflow-y: auto; z-index: 60;

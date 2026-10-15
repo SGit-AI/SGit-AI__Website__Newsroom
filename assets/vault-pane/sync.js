@@ -131,11 +131,12 @@ export function combine(prev, next) {
  * device that saw them first, so they are not new here and the next update from here does not claim them.
  * Returns { store, added }.
  */
-export function mergeWire(store, consolidated, deviceId) {
+export function mergeWire(store, consolidated, deviceId, { own = false } = {}) {
     const s = { ...(store || {}), seen: { ...((store && store.seen) || {}) } }
     let added = 0
     for (const [id, e] of Object.entries((consolidated.wire && consolidated.wire.seen) || {})) {
-        if (s.seen[id] || e.device === deviceId) continue
+        if (s.seen[id]) continue
+        if (e.device === deviceId) { if (!own) continue; s.seen[id] = { at: e.at }; added++; continue }   // this device's own, missing here: adopted as own
         s.seen[id] = { at: e.at, device: e.device }; added++
     }
     return { store: s, added }
@@ -145,12 +146,13 @@ export function mergeWire(store, consolidated, deviceId) {
  * Other devices' notes into this browser's notes store: the ones it does not have, tagged with their device.
  * This device's own notes are never changed by a merge. Returns { store, added }.
  */
-export function mergeNotes(store, consolidated, deviceId) {
+export function mergeNotes(store, consolidated, deviceId, { own = false } = {}) {
     const s = { v: (store && store.v) || FORMAT, notes: [...((store && store.notes) || [])] }
     const have = new Set(s.notes.map(n => n.id))
     let added = 0
     for (const n of consolidated.notes || []) {
-        if (have.has(n.id) || n.device === deviceId) continue
+        if (have.has(n.id)) continue
+        if (n.device === deviceId) { if (!own) continue; const { device, ...mine } = n; s.notes.push(mine); have.add(n.id); added++; continue }   // adopted as own
         s.notes.push({ ...n }); have.add(n.id); added++
     }
     s.notes.sort((a, b) => String(b.at).localeCompare(String(a.at)))
@@ -162,20 +164,24 @@ export function mergeNotes(store, consolidated, deviceId) {
  * personas it does not have; the totals recomputed from the merged records with the account's starting credit.
  * The local state's own records are never changed. Returns { state, added }.
  */
-export function mergeInto(state, consolidated, deviceId) {
+export function mergeInto(state, consolidated, deviceId, { own = false } = {}) {
     const s = { ...state, log: [...(state.log || [])], topups: [...(state.topups || [])], sessions: [...(state.sessions || [])], personas: [...(state.personas || [])] }
     const added = { reads: 0, topups: 0, personas: 0 }
     const have = new Set(s.log.map(e => e.id))
     for (const e of consolidated.reads || []) {
         if (have.has(e.id)) continue
-        if (e.device === deviceId) continue                      // this device's own record, missing locally: the local copy is the truth here
+        if (e.device === deviceId) {                             // this device's own record, missing locally
+            if (!own) continue                                   // the local copy is the truth here, unless this browser just adopted the device
+            const { device, ...mine } = e; s.log.push(mine); have.add(e.id); added.reads++; continue
+        }
         s.log.push({ ...e }); have.add(e.id); added.reads++
     }
     s.log.sort((a, b) => String(b.at).localeCompare(String(a.at)))
     const haveT = new Set(s.topups.map(topupKey))
     for (const t of consolidated.topups || []) {
-        if (haveT.has(topupKey(t)) || t.device === deviceId) continue
-        s.topups.push({ ...t }); haveT.add(topupKey(t)); added.topups++
+        if (haveT.has(topupKey(t))) continue
+        if (t.device === deviceId) { if (!own) continue; const { device, ...mine } = t; s.topups.push(mine) } else s.topups.push({ ...t })
+        haveT.add(topupKey(t)); added.topups++
         if (t.source === 'link' && t.ref && !s.sessions.includes(t.ref)) s.sessions.push(t.ref)
     }
     s.topups.sort((a, b) => String(b.at).localeCompare(String(a.at)))
@@ -190,6 +196,38 @@ export function mergeInto(state, consolidated, deviceId) {
     s.reads = s.log.length
     s.balance = r1(start + s.topups.reduce((a, t) => a + (t.credit || 0), 0) - s.spent)
     return { state: s, added }
+}
+
+/**
+ * What the vault holds that this browser does not: the records a merge would add, counted without writing. `local`
+ * is { state, notes, wire }, the three stores as read; `own` as in mergeInto. `devices` is how many other devices
+ * have a file. The pane shows it beside what is only in this browser, so neither direction is silent.
+ */
+export function inbound(consolidated, local, deviceId, opts = {}) {
+    const l = local || {}
+    const m = mergeInto(l.state || {}, consolidated, deviceId, opts), n = mergeNotes(l.notes, consolidated, deviceId, opts), w = mergeWire(l.wire, consolidated, deviceId, opts)
+    const devices = (consolidated.devices || []).filter(d => d.id !== deviceId).length
+    return { reads: m.added.reads, topups: m.added.topups, personas: m.added.personas, notes: n.added, seen: w.added, devices, any: m.added.reads + m.added.topups + m.added.personas + n.added + w.added }
+}
+/** In words: "17 reads and 7 notes from 3 other devices". */
+export function describeInbound(i) {
+    const parts = [[i.reads, 'read'], [i.topups, 'top-up'], [i.personas, 'persona'], [i.notes, 'note'], [i.seen, 'story seen on the wire', 'stories seen on the wire']]
+        .filter(([n]) => n).map(([n, one, many]) => `${n} ${n === 1 ? one : (many || one + 's')}`)
+    const what = parts.length > 1 ? parts.slice(0, -1).join(', ') + ' and ' + parts[parts.length - 1] : (parts[0] || 'nothing')
+    return i.devices ? `${what} from ${i.devices} other device${i.devices === 1 ? '' : 's'}` : what
+}
+
+/**
+ * A device file filed under another device: every record re-tagged with the target's id, the header renamed, the
+ * sender's id kept as `from`. For a batch a browser sent through the inbox that the reader wants under a device they
+ * already have (an iPad's second browser under "iPad"), rather than as a device of its own.
+ */
+export function refile(file, id, label = '') {
+    const d = file.device || {}
+    if (d.id === id) return file
+    const tag = x => ({ ...x, device: id })
+    return { ...file, device: { ...d, id, label: label || d.label || '', from: d.id },
+             reads: (file.reads || []).map(tag), topups: (file.topups || []).map(tag), personas: (file.personas || []).map(tag), notes: (file.notes || []).map(tag) }
 }
 
 /** What a sync would write, in words, for the pane and the tests. */

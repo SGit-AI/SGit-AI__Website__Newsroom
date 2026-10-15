@@ -22,13 +22,14 @@ The wire's next turns (a pitched story becoming an article, placement on the fro
 
 | Field | What it is |
 |---|---|
-| `kind` | `read-later`, `not-for-me`, `more-like-this`, `liked`, `wrong`, `fix`, `idea`; or `note` when there are words alone |
+| `kind` | `done`, `read-later`, `follow-up`, `not-for-me`, `more-like-this`, `liked`, `wrong`, `fix`, `idea`; or `note` when there are words alone (`done` since v0.12.1, `follow-up` since v0.12.6) |
 | `path` | the page, as the meter records it (`/articles/the-site-is-an-inbox.html`, `/wire/`) |
 | `n` | the article's number from `articles/ids.json` when the page is an article, else null; the number is the contract |
 | `story` | a wire story's id when the note is about one, else null |
 | `text` | the words the reader added, up to 2,000 characters |
 | `quote` | what was selected on the page when the note was made, up to 600 characters |
 | `persona` | the meter's active persona at the time |
+| `edited` | when words were added to a note kept by a tap |
 | `sent` | `{ at, lane }` once it has gone to the lane; set only on this device's own notes |
 | `device` | set on notes brought in from another device, never on this device's own |
 
@@ -44,9 +45,9 @@ What the lane is not: a channel the newsroom can write back on. A reply goes the
 
 **The reader.**
 
-1. Read. On any page, open the pane (the Vault button beside the balance; it opens on *This page*). Select a phrase if one is the point. Tap a kind. Add words and press *Keep the words* if there is more to say. On the wire, tap the decision at the story.
-2. Now and then, in the *Vault* tab, *Update the vault*: the notes travel with the reads to the other devices.
-3. When there is something for the newsroom, *Send to the newsroom*. The first send makes the lane and shows its read key; hand that key to the agent once. Later sends go to the same lane and need nothing handed over.
+1. Read. On any page, open the pane (the Vault button beside the balance; it opens on *This page*). Select a phrase if one is the point. Tap a kind. Write under *Write to the newsroom* if there is more to say: *Save and send* keeps the message and sends it in one press, *Save, send later* keeps it for the next send (since v0.12.8; before that the box was unnamed and its button read *Keep the words*). On the wire, tap the decision at the story.
+2. Now and then, *Update the vault*, from the strip above the tabs, the *Vault* tab or the wire's bar: the notes travel with the reads to the other devices. Until then the Vault button counts what is only in this browser (since v0.12.6).
+3. When there is something for the newsroom, *Send to the newsroom*. The first send makes the lane and shows its read key; hand that key to the agent once. Later sends go to the same lane and need nothing handed over. A send also rewrites this device's file in the reader vault, so the other devices see the notes as sent (since v0.12.1, card 009).
 4. In *Keys*, any vault's key, to open it elsewhere.
 
 **The newsroom.**
@@ -66,7 +67,7 @@ What the lane is not: a channel the newsroom can write back on. A reply goes the
 - **Signing.** A note in the lane is not signed; the lane's existence in the reader's master is what says whose it is. Persona key pairs are item 5 of the brief.
 - **A reply lane** from the newsroom to the reader.
 - **The front page.** It is imported, so the decisions are on the wire and on article pages, not on the front page's cards.
-- **Sent marks reach other devices only with the next Update**, not with the send; a second device sees a note as unsent until the first device updates. A second device does not send another device's notes.
+- **A second device does not send another device's notes**: only this device's own unsent notes go to the lane. (Sent marks reached other devices only with the next Update in v0.12.0; since v0.12.1 a send rewrites the device's file too.)
 - **Pruning**, as before: local storage keeps every note.
 
 ## What the first run changed (v0.12.1)

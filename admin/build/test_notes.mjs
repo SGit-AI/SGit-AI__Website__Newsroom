@@ -108,7 +108,7 @@ try {
     check((await notes()).length === 1 && (await pg.evaluate(() => document.querySelectorAll('#notes-here li.note').length)) === 1, 'remove takes a note out of this browser')
     const wrongId = (await notes())[0].id
     // the three steps, and what the browser knows about the page (007, 005)
-    check(/Enable the vault/.test(await text('#vault-steps')) && (await pg.evaluate(() => (document.querySelector('#vault-steps li.next .n') || {}).textContent)) === '1', 'the three steps are shown, with Enable the vault as the next one')
+    check(/Open the vault/.test(await text('#vault-steps')) && (await pg.evaluate(() => (document.querySelector('#vault-steps li.next .n') || {}).textContent)) === '1', 'the three steps are shown, with Open the vault as the next one')
     check(/Read once|Read \d+ times/.test(await text('#page-known')) && /you (read|glanced|opened)/.test(await text('#page-known')), `what the browser knows about the page: ${(await text('#page-known')).trim().slice(0, 70)}`)
     // Done: the decision at the page, and the Reading tab (004, 006)
     await pg.click('#note-done'); await wait(200)
@@ -281,10 +281,9 @@ try {
     // ---- F. device B: the same passkey, a cleared browser, brings A's notes in
     await pg.evaluate(() => { localStorage.clear(); sessionStorage.clear() })
     await pg.goto(B + 'vault/'); await pg.waitForSelector('#sgit-vault-pane', { timeout: 20000 }); await wait(500)
-    await pg.fill('#sgit-vault-pane input[type=text]', 'device B'); await pg.press('#sgit-vault-pane input[type=text]', 'Tab')
-    await pg.click('#vault-enable'); await until('Across your devices|No door here|Error', 120000)
-    await until('All, 1 device')
-    await pg.click('#vault-merge'); await pg.waitForSelector('#vault-merged', { timeout: 60000 })
+    await pg.click('#vault-enable'); await until('Which device is this|No door here|Error', 120000)
+    await pg.fill('#vault-new-label', 'device B'); await pg.click('#vault-choose')            // a new device; what the vault holds comes in on its own
+    await pg.waitForSelector('#vault-merged', { timeout: 60000 })
     n = await notes()
     // a send rewrites A's device file too (009), so the vault holds every note A sent, marked sent
     check(new RegExp(`${expected + 2} note\\(s\\)`).test(await text('#vault-merged')) && n.length === expected + 2 && n.every(x => x.device === deviceA && x.sent), `device B: A's ${expected + 2} notes are here, tagged with A and marked sent (${(await text('#vault-merged')).trim().slice(0, 80)})`)

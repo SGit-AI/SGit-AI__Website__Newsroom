@@ -1,19 +1,21 @@
 /**
  * notes.js: the reader's feedback, as records.
  *
- * A note is one tap at a piece (read later, not for me, more like this, liked, wrong, fix this, idea), with words if
- * the reader adds them and the phrase they had selected if any. It is kept in this browser's local storage the moment
+ * A note is one tap at a piece (done, read later, follow up, not for me, more like this, liked, wrong, fix this, idea),
+ * with words if the reader adds them and the phrase they had selected if any; or a message alone, kind "note", written
+ * under Write to the newsroom. It is kept in this browser's local storage the moment
  * it is made, like everything the meter keeps; it goes into the reader vault when they press Update the vault
  * (assets/vault-pane/sync.js carries it in the device's file); and it goes to the newsroom only when they press Send,
  * into a lane of its own (assets/newsroom-vault.js, createLane and sendToLane). Nothing here touches the network.
  *
- * The record: { id, at, kind, path, title, n, story, text, quote, persona, sent? , device? }
+ * The record: { id, at, kind, path, title, n, story, text, quote, persona, edited?, sent?, device? }
  *   kind     one of KINDS, or "note" when there are words alone
  *   path     the page, as the meter records it (location.pathname)
  *   n        the article's number when the page is an article (articles/ids.json), else null
  *   story    a wire story's id when the note is about one, else null
  *   quote    what was selected on the page when the note was made, up to 600 characters
  *   persona  the meter's active persona at the time
+ *   edited   when words were added to a note kept by a tap (addWords)
  *   sent     { at, lane } once it has gone to the lane; set only on this device's own notes
  *   device   set on notes brought in from another device, never on this device's own
  *

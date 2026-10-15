@@ -1,6 +1,6 @@
 # The activity vault: the reading account, carried between devices
 
-**Date:** 12 October 2026. **Status:** the design, and a first build (the vault pane, v0.11.0). The experiments it calls for are listed at the end; the design will move as they are run.
+**Date:** 12 October 2026. **Status:** the design, and a first build (the vault pane, v0.11.0); what the pane gained since is at the end, before the experiments. The experiments it calls for are listed at the end; the design will move as they are run.
 
 **Related:** [The passkey opens the vault](../../articles/the-passkey-opens-the-vault.html) (the account with no server), [one door per passkey path](2026-10-12__one-door-per-passkey-path.md) (why the doors are per path), [the passkey lab](../../passkey/index.html) (every piece, as a thing you can press), [the vault pane](../../vault/index.html) (where this runs), `assets/vault-pane/sync.js` (the logic, as pure functions), `admin/build/test_sync.mjs` and `test_pane.mjs` (what is checked).
 
@@ -38,10 +38,12 @@ A device file:
   "reads":    [ { id, at, path, title, kind, topics, price, depth, cost, persona, autoKept?, rating?, declined?, device } ],
   "topups":   [ { ref, at, credit, source, device } ],
   "personas": [ { id, preset?, name, created, on[], off[], visitor?, list?, theme?, device } ],
+  "notes":    [ { id, at, kind, path, title, n, story, text, quote, persona, sent?, device } ],      since v0.12.0: the feedback loop
+  "wire":     { "seen": { "<story id>": { at } } },                                                  since v0.12.6: what the wire drew for this reader
   "active":   "me" }
 ```
 
-Every record is the meter's own, unchanged, plus the `device` that originated it. A read's id is made on one device and only that device's meter changes it afterwards (its depth grows while the page is read; a rating or a decline is added), so the device's next sync carries the latest version and the rule "the version that knows most wins" (declined over rated over deeper) is a safety net, not the mechanism.
+Every record is the meter's own, unchanged, plus the `device` that originated it (the notes are `assets/vault-pane/notes.js`'s own records, kept apart from the meter's state, and travel in the same file; the stories seen are `assets/vault-pane/wire-state.js`'s). A read's id is made on one device and only that device's meter changes it afterwards (its depth grows while the page is read; a rating or a decline is added), so the device's next sync carries the latest version and the rule "the version that knows most wins" (declined over rated over deeper) is a safety net, not the mechanism.
 
 The totals, recomputed:
 
@@ -79,6 +81,16 @@ The keys for an unlocked session are kept in memory and, for the life of the tab
 - `assets/door.js`: the door derivation, moved out of the lab so the pane and the lab derive the same door from the same bytes; the lab re-exports it.
 - `admin/build/test_pane.mjs`: the loop in Chromium against the mock of the vault API, with a virtual authenticator standing in for one synced passkey: device A reads, enables, creates, updates; device B (the same passkey, a cleared browser) enables, sees A, brings A's activity in and shows the consolidated balance, reads, updates; a third opens with the recovery code.
 - `/vault/index.html`: the page that explains this and opens the pane.
+
+## What the pane gained after v0.11.0
+
+- **v0.12.0**: a *This page* tab before the vault's, with the notes and the lane to the newsroom, and a *Keys* tab with every vault's key behind Reveal ([the feedback loop](2026-10-12__the-feedback-loop.md)). A device's file carries its notes beside its reads.
+- **v0.12.1**: the pane stays open from page to page (the open state and the tab in session storage); a *Reading* tab, every page read here with its decision and the done ones folded away; what the browser knows about the page above the chips; the three steps with the next one in bold; an account made without an access key in its master asks for it once; a send rewrites the device's file (cards 001 to 009).
+- **v0.12.6**: what only this browser holds, counted on the Vault button and named in a strip above the tabs with *Update the vault* one press away (`assets/vault-pane/pending.js`); the wire's seen stories in the device file as `wire.seen`, so *New* is right on every device; two window events, `sgit-vault-open` and `sgit-vault-update`, so the wire can ask for the pane and for an update (cards 027, 028).
+- **v0.12.8**: *Write to the newsroom*, with *Save and send* (card 034).
+- **v0.12.14**: more than one wire, so a seen story's id carries the wire's scope in the device file (`owasp:sec-01`); the Industry Wire's stay bare.
+- **v0.12.26**: the inbox, an append lane on the reader vault that a browser without the passkey writes into with a link; what arrives is written as that browser's device file (`combine()` in `sync.js` when it already has one) and brought in by the same merge ([send to my vault from any browser](2026-10-13__send-to-my-vault-from-any-browser.md), card 049).
+- **v0.12.58**: two ways in, *Open with your passkey* and *Connect with a link*, nothing named first; after an explicit open the pane asks which device this browser is when the vault knows devices (an existing one is adopted with its records) and brings in what the vault holds on its own; both directions counted above the tabs; every write `combine(prev, extract(local))`, so two browsers may share a device; a sent batch filed under a device of the reader's choosing ([open, or connect](2026-10-13__open-or-connect-a-vault.md), card 059). Principle 4 above now reads: one file per device, and a device is a bucket the reader names.
 
 ## The experiments to run next
 
