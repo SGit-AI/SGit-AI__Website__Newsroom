@@ -1,0 +1,186 @@
+{
+  "slug": "scion-and-sgit",
+  "teaser": "Anthropic's Scion replaced Git for agents inside one company; sgit, open source and encrypted, shares its core ideas from the other direction. Measured.",
+  "topics": [
+    "vaults-and-method",
+    "site-and-engineering"
+  ],
+  "core_idea": "Agents broke Git's offline, full-clone assumptions at Anthropic, which built Scion: a server that does history, blame, merges and commits, immutable objects served from cache tiers, and clients that fetch only what they need; sgit reaches the same properties from the opposite design, a dumb server that stores encrypted objects named by their ciphertext, reads from any static host or CDN, and scoped, shallow and on-demand clones, measured on 0.22.0; Scion is ahead on server-side history, merge, blame and proven scale, but it is internal, while sgit is open source and encrypts everything.",
+  "nodes": [
+    {
+      "id": "agents",
+      "label": "Agents broke Git's assumptions",
+      "kind": "claim",
+      "summary": "30,000 merges a day; always-online clients."
+    },
+    {
+      "id": "scion",
+      "label": "Scion: the server does the work",
+      "kind": "artefact",
+      "summary": "History, blame, merges server-side; cache tiers; no full copy."
+    },
+    {
+      "id": "sgit",
+      "label": "sgit: a dumb, blind server",
+      "kind": "artefact",
+      "summary": "Client encrypts, merges and verifies; server stores ciphertext."
+    },
+    {
+      "id": "ids",
+      "label": "Immutable ids that cache",
+      "kind": "concept",
+      "summary": "SHA-256 of the ciphertext; served immutable for a year."
+    },
+    {
+      "id": "partial",
+      "label": "Fetch only what you need",
+      "kind": "method",
+      "summary": "--path, --depth, --sparse."
+    },
+    {
+      "id": "static",
+      "label": "Reads from any GET host",
+      "kind": "method",
+      "summary": "--transport static; no sgit server in the path."
+    },
+    {
+      "id": "cas",
+      "label": "Compare-and-swap refs",
+      "kind": "concept",
+      "summary": "Both move refs atomically."
+    },
+    {
+      "id": "bench",
+      "label": "Measured on 0.22.0",
+      "kind": "example",
+      "summary": "Scoped clone 4 s against 59; static host clone identical."
+    },
+    {
+      "id": "gaps",
+      "label": "Where Scion is ahead",
+      "kind": "question",
+      "summary": "Server-side merge, blame, bisect; proven scale; no packing in sgit."
+    },
+    {
+      "id": "git",
+      "label": "Git side by side",
+      "kind": "concept",
+      "summary": "Coexist in a folder; no history bridge."
+    },
+    {
+      "id": "open",
+      "label": "Internal versus open",
+      "kind": "claim",
+      "summary": "Scion unreleased; sgit on PyPI today."
+    }
+  ],
+  "edges": [
+    {
+      "from": "agents",
+      "to": "scion",
+      "rel": "leads-to"
+    },
+    {
+      "from": "scion",
+      "to": "sgit",
+      "rel": "compared-with"
+    },
+    {
+      "from": "ids",
+      "to": "sgit",
+      "rel": "example-of"
+    },
+    {
+      "from": "partial",
+      "to": "sgit",
+      "rel": "example-of"
+    },
+    {
+      "from": "static",
+      "to": "ids",
+      "rel": "depends-on"
+    },
+    {
+      "from": "cas",
+      "to": "scion",
+      "rel": "example-of"
+    },
+    {
+      "from": "cas",
+      "to": "sgit",
+      "rel": "example-of"
+    },
+    {
+      "from": "bench",
+      "to": "partial",
+      "rel": "answers"
+    },
+    {
+      "from": "bench",
+      "to": "static",
+      "rel": "answers"
+    },
+    {
+      "from": "gaps",
+      "to": "sgit",
+      "rel": "contrasts"
+    },
+    {
+      "from": "git",
+      "to": "sgit",
+      "rel": "extends"
+    },
+    {
+      "from": "open",
+      "to": "gaps",
+      "rel": "compared-with"
+    }
+  ],
+  "links": {
+    "articles": [
+      "from-send-to-sgit",
+      "what-sgit-is"
+    ],
+    "pages": [],
+    "sites": [
+      "https://www.anthropic.com/engineering/redesigning-source-control",
+      "https://pypi.org/project/sgit-ai/",
+      "https://github.com/SGit-AI/SGit-AI__CLI",
+      "https://sgit.ai/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "was actively undermining our ability to scale",
+      "why": "Anthropic on Git's offline, full-clone design."
+    },
+    {
+      "text": "by no means a suitable replacement for git for general use",
+      "why": "Scion's own status."
+    },
+    {
+      "text": "Being designed for something is not the same as being proven at it.",
+      "why": "sgit's scale is untested."
+    }
+  ],
+  "figures": [
+    {
+      "file": "sq-architecture.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/sq-architecture.webp",
+      "caption": "Two answers to agents at scale: Scion's always-online clients, three cache tiers and a server that does history, blame, merges and commits; and sgit's clients that encrypt, merge and read history, a dumb server that stores encrypted objects, and reads that any static host or CDN can serve.",
+      "kind": "architecture"
+    },
+    {
+      "file": "sq-matrix.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/sq-matrix.webp",
+      "caption": "Scion, sgit 0.22.0 and Git side by side: who does the work, encryption, object ids, partial copies, reads without the server, writes, merge, history queries, proven scale and availability.",
+      "kind": "comparison"
+    },
+    {
+      "file": "sq-bench.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/sq-bench.webp",
+      "caption": "One vault, five ways: a full clone in 58.6 seconds holding 12,664 KB of encrypted objects; depth 1 in 60.7 seconds; a scoped clone of one folder in 4.2 seconds and 412 KB; an on-demand clone in 3.6 seconds and 180 KB; and a full clone from a plain static file server in 1.6 seconds.",
+      "kind": "comparison"
+    }
+  ]
+}

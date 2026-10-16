@@ -1,6 +1,6 @@
 {
   "site": "https://sgit.ai",
-  "generated": "2026-10-15",
+  "generated": "2026-10-16",
   "site_version": "v0.7.87",
   "about": "https://newsroom.sgit.ai/newsroom/index.html",
   "front": {
@@ -72,6 +72,40 @@
     }
   ],
   "articles": [
+    {
+      "slug": "scion-and-sgit",
+      "title": "Scion and sgit: Anthropic rebuilt source control for agents inside one company, and an open-source encrypted version already does much of the same thing outside it",
+      "date": "2026-10-16",
+      "updated": "",
+      "author": "Dinis Cruz",
+      "url": "https://newsroom.sgit.ai/articles/scion-and-sgit.html",
+      "markdown": "https://newsroom.sgit.ai/articles/scion-and-sgit.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/scion-and-sgit.webp",
+      "graph": "https://newsroom.sgit.ai/articles/graphs/scion-and-sgit.json",
+      "teaser": "Anthropic's Scion replaced Git for agents inside one company; sgit, open source and encrypted, shares its core ideas from the other direction. Measured.",
+      "summary": "On 13 October Anthropic described Scion, the system that replaced Git for its monorepo after merges grew from about 2,500 a day in May to more than 30,000 in September, most of them by Claude. Git's offline, full-clone design, its post says, \"was actively undermining our ability to scale\", because nearly every client is now an always-online agent or job. Scion moves the work to the server, fetches only what a job needs, and serves immutable objects from three tiers of cache. Reading it, I recognised most of the ideas, because sgit, the encrypted version control we build in the open, arrived at many of them from the other direction. Its object ids are immutable content addresses, so objects cache for a year at a CDN; its server is a dumb store that cannot read what it holds, so reads can come from any static host; and its latest releases add scoped, shallow and on-demand clones. This site's agent checked each claim against sgit 0.22.0's code and measured it on a real vault: a scoped clone in 4 seconds against 59 for the full one, and a full clone served by a plain file server with no sgit server at all. The differences are real too. Scion does history, blame and merges on the server, and runs at a scale sgit has never been tested at; sgit does them on the client, has no blame or bisect yet, and does no packing on the server. But Scion is internal and, in Anthropic's words, \"by no means a suitable replacement for git for general use\". sgit is open source and on PyPI today, and it encrypts everything.",
+      "topics": [
+        "vaults-and-method",
+        "site-and-engineering"
+      ],
+      "tags": [
+        "sgit",
+        "scion",
+        "anthropic",
+        "version-control",
+        "git",
+        "agents",
+        "encryption",
+        "caching",
+        "monorepo",
+        "open-source",
+        "comparison",
+        "article"
+      ],
+      "placement": [],
+      "linkedin": null,
+      "notes": []
+    },
     {
       "slug": "inside-the-mesa-ranch-desk",
       "title": "Inside the Mesa Ranch desk: a page-by-page tour of an observation vault, from the cover to the knowledge graph you can play in time",

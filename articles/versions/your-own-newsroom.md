@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-10-15 | minor | 3,330 | +1,079 / −0 words; 0 changed, 18 added, 0 removed paragraphs | this release | [what changed](your-own-newsroom/v1.1.0.md) · [current](../your-own-newsroom.md) |
+| **v1.1.0** | 2026-10-15 | minor | 3,330 | +1,079 / −0 words; 0 changed, 18 added, 0 removed paragraphs | [`b4d872995`](https://github.com/SGit-AI/SGit-AI__Website/commit/b4d872995721407b9723e840e250e3e1d634d405) | [what changed](your-own-newsroom/v1.1.0.md) · [current](../your-own-newsroom.md) |
 | **v1.0.0** | 2026-10-15 | published | 2,251 | first published | [`97c691038`](https://github.com/SGit-AI/SGit-AI__Website/commit/97c6910387dbafeb1fabccded8cfadf2297ab226) |  |
 
 [← Back to the article](../your-own-newsroom.md) · [All articles](../index.md)

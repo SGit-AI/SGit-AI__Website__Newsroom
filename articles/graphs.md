@@ -14,13 +14,42 @@ Every article here has a semantic graph beside it: the ideas it rests on, the cl
 
 The graphs are data first and pictures second. Take them as JSON: [all articles in one file](graphs.json), with the topics, the teasers and the links between articles resolved, or one file per article at `articles/graphs/<slug>.json` (for example [this one](graphs/footprint-and-blast-radius.json)). The pages on this site are rendered from the same files at build time; nothing here is hand-written HTML. Since v0.7.77 each graph also carries the article's `figures`: file, URL, caption, the kind the author gave it (`wardley-map`, for one) and every frame of a multi-frame figure, so a picture and its context travel together and "every Wardley map on this site" is a filter, not a reading list.
 
-140 of 140 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
+141 of 141 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
 
 ## How the articles connect
 
 *[diagram]*
 
-140 articles, 796 links between them (1179 mentions in all). 131 articles cite an earlier one; 16 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Footprint and blast radius](#footprint-and-blast-radius) (34 articles link to it). Most linking: [The Mandate Stack](#the-mandate-stack) (20 links out). 0 articles not yet linked either way.
+141 articles, 798 links between them (1181 mentions in all). 132 articles cite an earlier one; 16 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Footprint and blast radius](#footprint-and-blast-radius) (34 articles link to it). Most linking: [The Mandate Stack](#the-mandate-stack) (20 links out). 0 articles not yet linked either way.
+
+## [Scion and sgit: Anthropic rebuilt source control for agents inside one company, and an open-source encrypted version already does much of the same thing outside it](scion-and-sgit.md)
+
+2026-10-16 · Vaults & methodSite & engineering
+
+Agents broke Git's offline, full-clone assumptions at Anthropic, which built Scion: a server that does history, blame, merges and commits, immutable objects served from cache tiers, and clients that fetch only what they need; sgit reaches the same properties from the opposite design, a dumb server that stores encrypted objects named by their ciphertext, reads from any static host or CDN, and scoped, shallow and on-demand clones, measured on 0.22.0; Scion is ahead on server-side history, merge, blame and proven scale, but it is internal, while sgit is open source and encrypts everything.
+
+*[diagram]*
+**concept**claim**method**artefact**example**question
+
+**11 nodes, 12 edges**
+
+- **Agents broke Git's assumptions** (claim) 30,000 merges a day; always-online clients.
+- **Scion: the server does the work** (artefact) History, blame, merges server-side; cache tiers; no full copy.
+- **sgit: a dumb, blind server** (artefact) Client encrypts, merges and verifies; server stores ciphertext.
+- **Immutable ids that cache** (concept) SHA-256 of the ciphertext; served immutable for a year.
+- **Fetch only what you need** (method) --path, --depth, --sparse.
+- **Reads from any GET host** (method) --transport static; no sgit server in the path.
+- **Compare-and-swap refs** (concept) Both move refs atomically.
+- **Measured on 0.22.0** (example) Scoped clone 4 s against 59; static host clone identical.
+- **Where Scion is ahead** (question) Server-side merge, blame, bisect; proven scale; no packing in sgit.
+- **Git side by side** (concept) Coexist in a folder; no history bridge.
+- **Internal versus open** (claim) Scion unreleased; sgit on PyPI today.
+
+> was actively undermining our ability to scale Anthropic on Git's offline, full-clone design.
+
+> by no means a suitable replacement for git for general use Scion's own status.
+
+builds on [From sending a file to sgit: eight months of SG/Send, told by its own briefs and commits, and how a file-sharing service became encrypted version control and vaults](#from-send-to-sgit), [Git for things you cannot put on GitHub](#what-sgit-is).
 
 ## [Inside the Mesa Ranch desk: a page-by-page tour of an observation vault, from the cover to the knowledge graph you can play in time](inside-the-mesa-ranch-desk.md)
 
@@ -295,7 +324,7 @@ SG/Send began as file sharing where the server holds nothing, went live five day
 
 > Users buy credits, test once, and don't come back. Credits sit unused. What the market said, already on 5 March.
 
-builds on [No server, by design: first I retired the database, now I am retiring the back end](#no-server-by-design), [How much of this did I write? The numbers behind twenty articles in four weeks, and what the input actually was](#how-much-of-this-did-i-write), [Git for things you cannot put on GitHub](#what-sgit-is), [The agent team as it runs: one person, twelve agents, encrypted vaults, and a mailbox nobody sends from](#the-agent-team-as-it-runs); continued by [The expert founders: why the next startups will be built by the people who know the problem, and why Europe's slower, sceptical money suits them](#the-expert-founders), [My memory, checked: thinking out loud in a voice memo, publishing only what the record supports, and why peer review has moved to before publishing](#my-memory-checked).
+builds on [No server, by design: first I retired the database, now I am retiring the back end](#no-server-by-design), [How much of this did I write? The numbers behind twenty articles in four weeks, and what the input actually was](#how-much-of-this-did-i-write), [Git for things you cannot put on GitHub](#what-sgit-is), [The agent team as it runs: one person, twelve agents, encrypted vaults, and a mailbox nobody sends from](#the-agent-team-as-it-runs); continued by [Scion and sgit: Anthropic rebuilt source control for agents inside one company, and an open-source encrypted version already does much of the same thing outside it](#scion-and-sgit), [The expert founders: why the next startups will be built by the people who know the problem, and why Europe's slower, sceptical money suits them](#the-expert-founders), [My memory, checked: thinking out loud in a voice memo, publishing only what the record supports, and why peer review has moved to before publishing](#my-memory-checked).
 
 ## [The scripted talk: a presentation as a timeline that plays on a clock, the two vaults it grows out of, and a player built for tonight's ten minutes](the-scripted-talk.md)
 
@@ -4283,7 +4312,7 @@ sgit gives the files people say they cannot put on GitHub the history, branches 
 
 > We would rather be checkable than impressive. The house style that the live vaults, the version log and the NOT BUILT pages all follow.
 
-continued by [From sending a file to sgit: eight months of SG/Send, told by its own briefs and commits, and how a file-sharing service became encrypted version control and vaults](#from-send-to-sgit), [The citizen developer is good news: the spreadsheet grown up, the best briefs ever written, and the handover from explorers to villagers and town planners that makes them last](#the-citizen-developer), [Knowledge that maintains itself: semantic graphs for an organisation's policies and internal knowledge, briefing people and agents from the graph, and vaults to carry the brief](#knowledge-that-maintains-itself), [Attacks rewritten as mandates: 28 supply-chain incidents, the column each one was missing, and why the next maintainer is an agent](#attacks-rewritten-as-mandates), [Move the cloud, not the code: twins, sovereignty that works in practice, and the migration that pays for itself on the day you switch](#move-the-cloud-not-the-code), [Pay to keep your persona: readers should pay because it helps them, not because they feel they should](#pay-to-keep-your-persona), [Ten hard questions for RiskMandate, answered: the mandate, the reach, the gap, and what we are deliberately not](#riskmandate-ten-questions), [Every mistake added a rule: complexity, agents, and the way back to shipping](#every-mistake-added-a-rule), [The Mandate Stack: a multi-agent system in production, layer by layer](#the-mandate-stack), [A personal agent that keeps your secrets: the 2026 agents read through behaviour policy and encryption, and a privacy-first design on vaults, enclaves and the browser](#a-personal-agent-that-keeps-your-secrets), [Twenty sites in fifteen days, and what that did to the writing](#nineteen-sites).
+continued by [Scion and sgit: Anthropic rebuilt source control for agents inside one company, and an open-source encrypted version already does much of the same thing outside it](#scion-and-sgit), [From sending a file to sgit: eight months of SG/Send, told by its own briefs and commits, and how a file-sharing service became encrypted version control and vaults](#from-send-to-sgit), [The citizen developer is good news: the spreadsheet grown up, the best briefs ever written, and the handover from explorers to villagers and town planners that makes them last](#the-citizen-developer), [Knowledge that maintains itself: semantic graphs for an organisation's policies and internal knowledge, briefing people and agents from the graph, and vaults to carry the brief](#knowledge-that-maintains-itself), [Attacks rewritten as mandates: 28 supply-chain incidents, the column each one was missing, and why the next maintainer is an agent](#attacks-rewritten-as-mandates), [Move the cloud, not the code: twins, sovereignty that works in practice, and the migration that pays for itself on the day you switch](#move-the-cloud-not-the-code), [Pay to keep your persona: readers should pay because it helps them, not because they feel they should](#pay-to-keep-your-persona), [Ten hard questions for RiskMandate, answered: the mandate, the reach, the gap, and what we are deliberately not](#riskmandate-ten-questions), [Every mistake added a rule: complexity, agents, and the way back to shipping](#every-mistake-added-a-rule), [The Mandate Stack: a multi-agent system in production, layer by layer](#the-mandate-stack), [A personal agent that keeps your secrets: the 2026 agents read through behaviour policy and encryption, and a privacy-first design on vaults, enclaves and the browser](#a-personal-agent-that-keeps-your-secrets), [Twenty sites in fifteen days, and what that did to the writing](#nineteen-sites).
 
 ## [Seven vaults, one method](seven-vaults-one-method.md)
 

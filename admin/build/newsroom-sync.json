@@ -46,6 +46,7 @@
    "admin/content/articles/graphs/omnichannel-programming.json": "01ddf0c98f5e3c61bcde63e6f97df3f5c5f20bb45274ab48ae13f1a7d1652dff",
    "admin/content/articles/graphs/paying-after-the-value.json": "62e84859b55080eee881056c7a669ccbdfa1076ad62c3bf726d418ba08c12726",
    "admin/content/articles/graphs/policy-as-code-needs-a-policy-first.json": "365e698135ba9a1da6a5f377590fd4edb32f02c8d109aac822b0b46d3b525f8a",
+   "admin/content/articles/graphs/scion-and-sgit.json": "0d4480933b8929a2ec60b3d08cb7ee72d0c087ef728ce268925ae4ef937bf5fc",
    "admin/content/articles/graphs/secrets-on-public-keys.json": "62d34d2c41d8bde79ff611ae26e4c6c814c4b91eb7b34fa785e5c86897fbc0cd",
    "admin/content/articles/graphs/sgit-actions-side-by-side.json": "bfbe0428ff948bbe8cecc9c070aeb2049352b7cd24be50e222c57128196948cf",
    "admin/content/articles/graphs/sgit-in-a-ci-pipeline.json": "963df998b0f069a36d4f7343637deb4b44ee72946a465dad9e14b1b1150f47b7",
@@ -167,6 +168,9 @@
    "admin/content/articles/images/sn-wires.webp": "924a36ca6036c73e7044eba5d0cc1dc5b005ab013a7545d3a77d57b6b848d500",
    "admin/content/articles/images/sp-map.webp": "e328b9877d6712bd89be5f0a90c8e9aea9e606a852a2f1e0c2b882d683c360ff",
    "admin/content/articles/images/sp-ontology.webp": "c1d75be70c35365f660396e664fc6f70f0e34feecdfac1980ab014ffab5326dc",
+   "admin/content/articles/images/sq-architecture.webp": "4a21bbd60e96d6c5050cd4f0b6f80961368b449b7f239af47e1ae79f7c97f1eb",
+   "admin/content/articles/images/sq-bench.webp": "e8014948e10a61c9b20c1c66be980db5570792c64de60c393195185a19926c2b",
+   "admin/content/articles/images/sq-matrix.webp": "f02740821e3d1ba5f8499affbecae9221c5e2c24bc232f3017395cdbdb1031a4",
    "admin/content/articles/images/sr-flow.webp": "1b64d63cda208157e56629286922485c0d37383de676531c0e9e76413812d70c",
    "admin/content/articles/images/sr-policy.webp": "9a11193b813ef8680afe4af4c2282864899c463156aca299e955e2754b75cb55",
    "admin/content/articles/images/ss-architecture.webp": "61ed59d6484fe0568ec13b4ac4ab3f329cc6907de900f995d9092a5bcdff7e58",
@@ -198,6 +202,7 @@
    "admin/content/articles/omnichannel-programming.md": "c8febbca189f6c0da40a5fe0af3ee9f1e88c32a71107d0947864a2f0051a6190",
    "admin/content/articles/paying-after-the-value.md": "054cf9b08e33c44bda2d249a793e58d868aa9cef2eabf187abd11b8e76f48e11",
    "admin/content/articles/policy-as-code-needs-a-policy-first.md": "ae312f8648badcb22a981f36748bc6a27492a08b224197888cfd80921a257d8b",
+   "admin/content/articles/scion-and-sgit.md": "ca97aa26a2a7258a16a2b1df08722b34eaf2de932b1462b4c0c82450c6538aff",
    "admin/content/articles/secrets-on-public-keys.md": "4b15379953954a60b1ca84e35fc75b8cde2e7e2806c0896ddbaeaf8ab9bf3f95",
    "admin/content/articles/sgit-actions-side-by-side.md": "e360a3085ed76e8f40962d74bd48d8d76cc4b32bfe80efed416999ec644a8e5a",
    "admin/content/articles/sgit-in-a-ci-pipeline.md": "6007a0bbfb6ac40002783f481db82d6eda9261e64cf4ed7eb6425ece66a08742",
@@ -307,10 +312,10 @@
   }
  ],
  "counts": {
-  "files": 2261,
-  "pages": 504,
-  "articles": 140,
-  "verbatim": 1112,
+  "files": 2272,
+  "pages": 506,
+  "articles": 141,
+  "verbatim": 1118,
   "dependencies": 52,
   "text_overrides": 10,
   "unresolved_on_sgit_ai": 0
@@ -563,8 +568,8 @@
   },
   "articles/banners/.hashes.json": {
    "from": "articles/banners/.hashes.json",
-   "sha256_source": "578ab7770a8e61fde8c69edd3d9358bae1691838ce715843e80989c252753a1c",
-   "sha256": "578ab7770a8e61fde8c69edd3d9358bae1691838ce715843e80989c252753a1c"
+   "sha256_source": "ce66b9399b604ebcd07f0136950be1f1634544a6a12dfb6f299d30b0186e283f",
+   "sha256": "ce66b9399b604ebcd07f0136950be1f1634544a6a12dfb6f299d30b0186e283f"
   },
   "articles/banners/001-agents-doing-real-work.jpg": {
    "from": "articles/banners/001-agents-doing-real-work.jpg",
@@ -938,8 +943,8 @@
   },
   "articles/banners/manifest.json": {
    "from": "articles/banners/manifest.json",
-   "sha256_source": "7f89b91093e517393067b69d58afc2c48578cd9af173869c111749c619324d2c",
-   "sha256": "7f89b91093e517393067b69d58afc2c48578cd9af173869c111749c619324d2c"
+   "sha256_source": "ec42ca919a25d2e82a0ee036bb496702fdeb0328840e0d611d87bd81ba66f901",
+   "sha256": "ec42ca919a25d2e82a0ee036bb496702fdeb0328840e0d611d87bd81ba66f901"
   },
   "articles/banners/memory-is-not-a-spectator-sport.jpg": {
    "from": "articles/banners/memory-is-not-a-spectator-sport.jpg",
@@ -1051,6 +1056,11 @@
    "sha256_source": "94ab2f51a01ad84d3190aec8fa0b154cbf117443ac4f3aab6357e4f5f93b4f13",
    "sha256": "94ab2f51a01ad84d3190aec8fa0b154cbf117443ac4f3aab6357e4f5f93b4f13"
   },
+  "articles/banners/scion-and-sgit.jpg": {
+   "from": "articles/banners/scion-and-sgit.jpg",
+   "sha256_source": "21d0fbc6a43c82c9c2179add13ed201fad8119053df380fd6bba44516f005a9a",
+   "sha256": "21d0fbc6a43c82c9c2179add13ed201fad8119053df380fd6bba44516f005a9a"
+  },
   "articles/banners/secrets-on-public-keys.jpg": {
    "from": "articles/banners/secrets-on-public-keys.jpg",
    "sha256_source": "b6577cbf0e39a215d1129b9c1a9005cd0f8cb0fd4253049a8dac4e4d3cb409ab",
@@ -1108,8 +1118,8 @@
   },
   "articles/banners/subscribe.jpg": {
    "from": "articles/banners/subscribe.jpg",
-   "sha256_source": "158c2d52018c37611e0230cd16be83280cdef0907569b6613c2ceae3111a5b8a",
-   "sha256": "158c2d52018c37611e0230cd16be83280cdef0907569b6613c2ceae3111a5b8a"
+   "sha256_source": "7b84f60e33927055d2335d59e394a4c8c011349f202630fb068a0f083f631ae5",
+   "sha256": "7b84f60e33927055d2335d59e394a4c8c011349f202630fb068a0f083f631ae5"
   },
   "articles/banners/supply-chain-of-vaults.jpg": {
    "from": "articles/banners/supply-chain-of-vaults.jpg",
@@ -1771,6 +1781,11 @@
    "sha256_source": "6d1c65ac1025699ecf92bc732c681d14f82f7c2ae2a6c4e989b50e515d38d6dc",
    "sha256": "6d1c65ac1025699ecf92bc732c681d14f82f7c2ae2a6c4e989b50e515d38d6dc"
   },
+  "articles/cards/scion-and-sgit.webp": {
+   "from": "articles/cards/scion-and-sgit.webp",
+   "sha256_source": "450f9bc7e997decb3e2f52f13ffba7ee8a1a05e193835d3fdd86e6a67df10ca5",
+   "sha256": "450f9bc7e997decb3e2f52f13ffba7ee8a1a05e193835d3fdd86e6a67df10ca5"
+  },
   "articles/cards/secrets-on-public-keys.webp": {
    "from": "articles/cards/secrets-on-public-keys.webp",
    "sha256_source": "eda7099c0a5de5e5993ce1634b2439c9c9d0d3e03570ae73c5b9b8a092d3cbad",
@@ -2133,13 +2148,13 @@
   },
   "articles/collections/index.html": {
    "from": "articles/collections/index.html",
-   "sha256_source": "d2b5d17f6d431d8482e289a92e92a595268cab7d9ef92a039de28fa2c0abf461",
-   "sha256": "2844cb0c62df3e166d720e2e44c3f0191178c50be9ac63f3c3e84ac2b0a0638c"
+   "sha256_source": "5defb75beff5b7d9a8bdb45c4f2a273e952821ebe84d451f5999532af84e0ba9",
+   "sha256": "9176f5e1834fb1d56e82a9b44285e2f0eac82c2f7c8c99d97c84ba39311e8a1f"
   },
   "articles/collections/index.md": {
    "from": "articles/collections/index.md",
-   "sha256_source": "90923d162956fb7a144856d1dae2146cf6d703f05c89b3e8cfee401ef7f7ca8c",
-   "sha256": "8891c94f888be11dc7828ffef8d508642d96971263086c519397f323e71f1c0b"
+   "sha256_source": "08640aee7fd2fc7045991b1059824c8f7626d4fc3f0686dd5b2468fe404c0e07",
+   "sha256": "ff33d4d175b80259f6bcfab33c5ae7e518d407adb208d7f1905f0c455d1efe3d"
   },
   "articles/collections/local-news-kept-as-evidence.html": {
    "from": "articles/collections/local-news-kept-as-evidence.html",
@@ -2283,13 +2298,13 @@
   },
   "articles/desk/index.html": {
    "from": "articles/desk/index.html",
-   "sha256_source": "fcb7d0e4385972aafdfda0b63c5fe6620631b0fb92953f5528a85e8a094a369f",
-   "sha256": "ed83be0a685b286e146b0ed810de6075453f810d4a0b084341d05fc87d3bceda"
+   "sha256_source": "f1423f0913455ac363cf68ffc7257ea580154093302e2da60e1ea7e6f2c4cfcb",
+   "sha256": "96b1bd1f809c50a66303ebbb5549a7185ea691f04e34c7e1bdc5f0410c00f550"
   },
   "articles/desk/index.md": {
    "from": "articles/desk/index.md",
-   "sha256_source": "ba63b8101d2a9f27cf812e6b4ac3745a7de70e171db5f51ad68caf868914d9a4",
-   "sha256": "0c97a2e5331fa19cd17ffc323ff253079c0b02df54b99a9e0af94fa11ef2f776"
+   "sha256_source": "2873ae93eb180a87167f6ad7bb0b940d2a9597c5d5d6277ef335523e8c7a8f54",
+   "sha256": "6df444a3d393ae7f90df36935f0b62d4b343a876b0b11f751a728e114685a4de"
   },
   "articles/desk/range-is-the-feature-so-the-stop-is-designed.html": {
    "from": "articles/desk/range-is-the-feature-so-the-stop-is-designed.html",
@@ -2373,8 +2388,8 @@
   },
   "articles/feed.xml": {
    "from": "articles/feed.xml",
-   "sha256_source": "a3b52ab4f04efbbe7206730bb94042a29e4a3d85381dc66b284e03882c6024ec",
-   "sha256": "eb75dff4c7bd451bff46e7e42775e7ec1c2b9fd19150c8f606f4af4f2e036cb2"
+   "sha256_source": "2661aa9146aa883f638e9fae439d27359e8ec2f3a3401601fb1e16ef844cfd35",
+   "sha256": "a5780994612a088c17a4083479d163dfc26be2fcc4bd94a172eaafbb4b209b1d"
   },
   "articles/firing-journalists.html": {
    "from": "articles/firing-journalists.html",
@@ -2418,13 +2433,13 @@
   },
   "articles/from-send-to-sgit.html": {
    "from": "articles/from-send-to-sgit.html",
-   "sha256_source": "d85007d7a9801473ca40c2ecf98fbf77b348b2e542778497b130b8d3530c4a27",
-   "sha256": "f1b7fe696e72127080c09b71898eb061dbc6b27a58c683743564e16381601362"
+   "sha256_source": "470b8063847e927cb83496402d7f6a520610a00ab24a0a3adb50bbb26151f8b0",
+   "sha256": "71b0473b3fff16b07c48d3cff1de330134ac22045d7d78a2daa8ee3326242ea1"
   },
   "articles/from-send-to-sgit.md": {
    "from": "articles/from-send-to-sgit.md",
-   "sha256_source": "cce618a440631fad3b67a64f08d4a87f8e9289bcc73c148b35450a0fdd4e5b75",
-   "sha256": "c249b2c1455418d45a74f84ee72512e79dc857233a428a3ee267843d080a0472"
+   "sha256_source": "d06cf75f65eb23f7bbea492ca75eb68e7d677771e2473a648c6d9b3738f5c1b6",
+   "sha256": "a57d8ac036e3ff834e74775c619f7fd88c425f7cb8d66cdd0b49a11bdd1baa93"
   },
   "articles/future-of-news-story-vault-not-paywall.html": {
    "from": "articles/future-of-news-story-vault-not-paywall.html",
@@ -2448,18 +2463,18 @@
   },
   "articles/graphs.html": {
    "from": "articles/graphs.html",
-   "sha256_source": "b49813ecab8d7d798e68e7f0f7bb2112d63bedf7f0a91d39195cc59e2cc58692",
-   "sha256": "19259b5a29ca5eb54ccdb9d0e1f3def9b02df5faf8be1b1738a29087412a71ed"
+   "sha256_source": "b4e1e3e6ba54e1488f6a2153166b515b0bcc3c3217d4c4c27abe1660abc96764",
+   "sha256": "6026de20dafcbd3dadb1fbd21d13aae59bd155f53394313e7538895c58dde8ad"
   },
   "articles/graphs.json": {
    "from": "articles/graphs.json",
-   "sha256_source": "c250e23aa0d924d90f89a221f191e9de172172737b2c1ac783289410d3d6ebc4",
-   "sha256": "f01d6a741e6ecd22feb70538df6490084993de65b2895a1d133bfb01fbf91252"
+   "sha256_source": "03eddf598a8a575ede9a1dcb0b4d99b4b17b35fe192c39c6e793c9bb4aed49d0",
+   "sha256": "3a8b7ff07506f8860f2b113921651864cae28ac7bfd99f545a2ad8fef03e283c"
   },
   "articles/graphs.md": {
    "from": "articles/graphs.md",
-   "sha256_source": "d693da197375c8f7d11901326bbd42d80eb1d4f029bd99cf910e712886d13f4f",
-   "sha256": "69425b542dc73a2e875e954a96430687a70233e6fcebcbd6282caddc392324d3"
+   "sha256_source": "5a9b2f3c66146c19ce4cbc40e997c9291253bc043373e529a279cc5c48b55435",
+   "sha256": "1901e08ddf13757fe0b7dbdc5cfc51d7ebc88fb17b0c3c1e74882cb80c34137d"
   },
   "articles/graphs/a-link-to-a-persona.json": {
    "from": "articles/graphs/a-link-to-a-persona.json",
@@ -2860,6 +2875,11 @@
    "from": "articles/graphs/saas-apocalypse-decided-by-inertia-not-by-ai.json",
    "sha256_source": "82d1e92c508b56ffc47a7536de2ef61b3e86515fb59d079187bc5686295d3904",
    "sha256": "2f1b1a9ba04de1471fcc1205d5282aefb77690488829ae04a18055e478318f5c"
+  },
+  "articles/graphs/scion-and-sgit.json": {
+   "from": "articles/graphs/scion-and-sgit.json",
+   "sha256_source": "445e2f6ef4045e50a3b157b3f4a98fef65134f3d50a08e7a90e153ba90eadb19",
+   "sha256": "8c2edbfb3af0836ae26c8fad7abbfd8b8e6725de0804927d9346943c6b7c8688"
   },
   "articles/graphs/secrets-on-public-keys.json": {
    "from": "articles/graphs/secrets-on-public-keys.json",
@@ -5466,6 +5486,21 @@
    "sha256_source": "c1d75be70c35365f660396e664fc6f70f0e34feecdfac1980ab014ffab5326dc",
    "sha256": "c1d75be70c35365f660396e664fc6f70f0e34feecdfac1980ab014ffab5326dc"
   },
+  "articles/images/sq-architecture.webp": {
+   "from": "articles/images/sq-architecture.webp",
+   "sha256_source": "4a21bbd60e96d6c5050cd4f0b6f80961368b449b7f239af47e1ae79f7c97f1eb",
+   "sha256": "4a21bbd60e96d6c5050cd4f0b6f80961368b449b7f239af47e1ae79f7c97f1eb"
+  },
+  "articles/images/sq-bench.webp": {
+   "from": "articles/images/sq-bench.webp",
+   "sha256_source": "e8014948e10a61c9b20c1c66be980db5570792c64de60c393195185a19926c2b",
+   "sha256": "e8014948e10a61c9b20c1c66be980db5570792c64de60c393195185a19926c2b"
+  },
+  "articles/images/sq-matrix.webp": {
+   "from": "articles/images/sq-matrix.webp",
+   "sha256_source": "f02740821e3d1ba5f8499affbecae9221c5e2c24bc232f3017395cdbdb1031a4",
+   "sha256": "f02740821e3d1ba5f8499affbecae9221c5e2c24bc232f3017395cdbdb1031a4"
+  },
   "articles/images/sr-flow.webp": {
    "from": "articles/images/sr-flow.webp",
    "sha256_source": "1b64d63cda208157e56629286922485c0d37383de676531c0e9e76413812d70c",
@@ -5868,13 +5903,13 @@
   },
   "articles/index.html": {
    "from": "articles/index.html",
-   "sha256_source": "893846e300a188e1394f958d92fd69b109bab67d7518130366466301d9a2740d",
-   "sha256": "3f586dc3b81b4db8efe3c1e21eda8ec0518bebaf30eb87f6ec9c1bcc45d18eef"
+   "sha256_source": "1df0277183bd9aa10f8c45d6bcd9151f43f5a750c4e14d074aee499665188711",
+   "sha256": "9322cd215e2433f328b2efbdb71f4b571788af268226b3185321acbb4d737ea4"
   },
   "articles/index.md": {
    "from": "articles/index.md",
-   "sha256_source": "af2c5324a4ec27a2b0e646ed59df31e80cb085226fd08dc412a5f058daf5881b",
-   "sha256": "ddd1cfd6e8ba687e0d7bde58ec60edd93abcaad8603a9bfa852dcdbe7dea5e07"
+   "sha256_source": "776d74c966ab45ee6e187e1ce31eabb6f1b2463d91e5b1fb077e20396f1c4c4b",
+   "sha256": "f7dea678899e97e99602d0e781be2d3e396b5b8b0a8a1bccd53a60b22e643662"
   },
   "articles/inside-the-mesa-ranch-desk.html": {
    "from": "articles/inside-the-mesa-ranch-desk.html",
@@ -6038,13 +6073,13 @@
   },
   "articles/newsletter/index.html": {
    "from": "articles/newsletter/index.html",
-   "sha256_source": "397c9c0b34c88305a70a9f37aed02729dd2a2e61f26321f2f3e5246e10d33b46",
-   "sha256": "a5951d1f762cc8603c022cb9930e6d612382b8d7d97d21f631d2c9c8cf2cb643"
+   "sha256_source": "bba42fb048fcb4e4b6283c064b374d780bf3d2cbf4cf5749c00ca77675e55d3c",
+   "sha256": "02e6e27df64de4bb09e95da45107f5fe4abd2eed39b0cbcf5040b888e8fef4df"
   },
   "articles/newsletter/index.md": {
    "from": "articles/newsletter/index.md",
-   "sha256_source": "e5bf6973139a697c965d4a92d81c39424e6e0a4dfa6362d8b113e8e80ccaeb24",
-   "sha256": "f701176ca534a62915b809d49adddf662bdf67cf94f39fba055233ad0deac71d"
+   "sha256_source": "eee88f509be7f9a6df00260bd7ef9d1ca61bf22c2dc62aacc120fc480e8cef26",
+   "sha256": "4d3bad39434401194d87657acefd1cc8bcbd7d6bc6adaa75fbceceedf4df411a"
   },
   "articles/nineteen-sites.html": {
    "from": "articles/nineteen-sites.html",
@@ -6235,6 +6270,16 @@
    "from": "articles/saas-apocalypse-decided-by-inertia-not-by-ai.md",
    "sha256_source": "18e61fcab8fb698793144ce901a29b1142247a52629b065b82fb47db2c8eb703",
    "sha256": "17acd806a631d5e500084454da39ab1a760223c2c3dfded29fb7ca1118e293dc"
+  },
+  "articles/scion-and-sgit.html": {
+   "from": "articles/scion-and-sgit.html",
+   "sha256_source": "e37308b6447981acf0f101b3f1f78e7e15a0f3c1ad05a02851587577f9f21174",
+   "sha256": "0a99dfdee8246c61cf34d65bb6566d08a624962929e3a91ea8cfed6dbc8b99c9"
+  },
+  "articles/scion-and-sgit.md": {
+   "from": "articles/scion-and-sgit.md",
+   "sha256_source": "ab5106e68a2e292e8168f223328797fc6d3d4da22f9c6bd233dcfaf0d1660483",
+   "sha256": "ddd624f92b860d1cfc30edaceba85ef53d4acfc2f1ef9dc51225343ab1cccc5d"
   },
   "articles/secrets-on-public-keys.html": {
    "from": "articles/secrets-on-public-keys.html",
@@ -7888,13 +7933,13 @@
   },
   "articles/versions/inside-the-mesa-ranch-desk.html": {
    "from": "articles/versions/inside-the-mesa-ranch-desk.html",
-   "sha256_source": "ab5c8b5e0be28942ec5d37a213133084711ec2a1e49a49c79ad1fc8d09b260ab",
-   "sha256": "ae2ab992ba1cae58797254c1c494fcc1988fc87fe88d44025aed7c5c6593cb0f"
+   "sha256_source": "87e330821b08f238a8b560e49b38e0017084e99afd1f9cdefeefb42821f39775",
+   "sha256": "55e32a22cbca86c6c413752e36c75bb77863c75a152e6756280390a7786531fe"
   },
   "articles/versions/inside-the-mesa-ranch-desk.md": {
    "from": "articles/versions/inside-the-mesa-ranch-desk.md",
-   "sha256_source": "3a7d59e393542ccbbc5a91f28d6e01c50d28ba18a3c071d6a62526e1abcd9be5",
-   "sha256": "df8f9ed3bb6ea0b7316790dda033d22712daf47365fddf3799e5ea0c54e6421f"
+   "sha256_source": "1d0e4ab4a9e0cd61957f7b0d9ee622bc588d7a2179f9eb8767b1a48f4a070c2f",
+   "sha256": "e665be4c4074508c8785d21c3d8031c539ff661f7c738757ebb674e1f80e358d"
   },
   "articles/versions/introducing-fractal-semantic-graphs.html": {
    "from": "articles/versions/introducing-fractal-semantic-graphs.html",
@@ -7958,23 +8003,23 @@
   },
   "articles/versions/journalism-becomes-intelligence.html": {
    "from": "articles/versions/journalism-becomes-intelligence.html",
-   "sha256_source": "18f06bc6cf147929783a1baffa0e2fb4689387eb2105454be76c60e1d5264827",
-   "sha256": "2aa07df53cb0eba8efb74a92c986f03e87200701613841699bed635abfa361d0"
+   "sha256_source": "57e2ab8cab27262b9052daadb0e2c769ebe48dbf6369846fbcf1ee6a936837d8",
+   "sha256": "107aed3ec450a885507b66c01d986ee9a9a708f18ffd79a09792b0948ba67637"
   },
   "articles/versions/journalism-becomes-intelligence.md": {
    "from": "articles/versions/journalism-becomes-intelligence.md",
-   "sha256_source": "3dd422c5048acbb49e860a2cae1854034d38a5fd743618a4134416447784eab9",
-   "sha256": "07f2508e962dc1dee2b3e219c373cff90140d4536ee0f9f9f3b8fe61bd0b9595"
+   "sha256_source": "1a5d84906b161b4473825d96161a267f8fe63131f57bcee446f97c25fc9ec29b",
+   "sha256": "e5f1327fdef1855bd883520e606aedc8942f0657df8ac413aa01657af8ca6ccd"
   },
   "articles/versions/journalism-becomes-intelligence/v1.1.0.html": {
    "from": "articles/versions/journalism-becomes-intelligence/v1.1.0.html",
-   "sha256_source": "3422a65b97d476b1c5ff4014d8f03093a6b5e150346d83cc22284b71a3be1557",
-   "sha256": "58869844347a365cbad2fad2a08a2da9f1c214fa2afd43dc3f2994fa6a5c7f97"
+   "sha256_source": "53b2ef91dccbadac987afe1dca60a222f2d2aa2a5db979dc11d7893c53f57f63",
+   "sha256": "005425c5969ba88b921d9d0bae430449ecec0019cf866c342e386931d1b9ac5d"
   },
   "articles/versions/journalism-becomes-intelligence/v1.1.0.md": {
    "from": "articles/versions/journalism-becomes-intelligence/v1.1.0.md",
-   "sha256_source": "f30dabdcd1f23beecd57a8c4571d0ef5ccb25a4da6e3fa6ed7bbf1300b6ccb60",
-   "sha256": "bc6c530595784d8b95134c3e7b8dd3cd9e334db7672664dede4710af3c9e00e8"
+   "sha256_source": "4484a5b304f449557c29d5abcac201539e77f1161b7aea08dcce15fdf74a2f26",
+   "sha256": "7a499586ea8c103e82d864f98f86d5d99a18dd24d0f9f3bbbe59056ff4bbbbe1"
   },
   "articles/versions/judo-for-small-countries.html": {
    "from": "articles/versions/judo-for-small-countries.html",
@@ -8575,6 +8620,16 @@
    "from": "articles/versions/saas-apocalypse-decided-by-inertia-not-by-ai/v1.5.0.md",
    "sha256_source": "c45a33c2b69eb59f085776222cc509910423673e9770e73510e5287bd6ea87ca",
    "sha256": "f92271bde2ccefb7fef6a4d23bfc9fa581ea3e0532f5d912cbb77c4afa073ad7"
+  },
+  "articles/versions/scion-and-sgit.html": {
+   "from": "articles/versions/scion-and-sgit.html",
+   "sha256_source": "0d0cbf14a1f2bd0c6a5288a5197a6be4b6e61c43eb673c1e2108b9bfc826a353",
+   "sha256": "8f89c1c4539d0d934446f695d65752d466fe8405bd93906467dc8491fd7e0c7e"
+  },
+  "articles/versions/scion-and-sgit.md": {
+   "from": "articles/versions/scion-and-sgit.md",
+   "sha256_source": "a2dc4f98804e4fee174a9e929a11ea5cbc9ac8ec45d95b9397a94851c66797f7",
+   "sha256": "9b647bb4788748efd42ce0e456bdfea240e1cc759c1410b30e37a11576492165"
   },
   "articles/versions/secrets-on-public-keys.html": {
    "from": "articles/versions/secrets-on-public-keys.html",
@@ -9888,23 +9943,23 @@
   },
   "articles/versions/your-own-newsroom.html": {
    "from": "articles/versions/your-own-newsroom.html",
-   "sha256_source": "67f3883d28655c6fe35d34fdee0d81f879faa6891fe0f1c8149893d3292edea7",
-   "sha256": "c82bc92ed283920a83548060b96d62684fcec82eb789822464d13f251a56804a"
+   "sha256_source": "99c505b1c9f331259cf9066a9fbfe1cfd9617132445c284c24f0de51d59e9f9e",
+   "sha256": "27cf48214661300e8718c5f247f42623a72f53369799766168fca1d93d9f1a21"
   },
   "articles/versions/your-own-newsroom.md": {
    "from": "articles/versions/your-own-newsroom.md",
-   "sha256_source": "6a24a37bad0c832618f47eb2dec7362964c4daf2c10865862693280aa7d885a7",
-   "sha256": "1f821a41a6d1f64d85d4af8daca12dad20605fd15c0d422bc7d99ef669655559"
+   "sha256_source": "f68ac86aeff748e6396efaec7130f1be1ed930866ce3cd3299906ae5cffe1dea",
+   "sha256": "5ed08a62e44c5d063b6d5fd6983986f912da6bc54b07e62f2980d775f8889ae9"
   },
   "articles/versions/your-own-newsroom/v1.1.0.html": {
    "from": "articles/versions/your-own-newsroom/v1.1.0.html",
-   "sha256_source": "9ca5ebcea60a5cd4573f392f1fa5dbe1cdc8809a8b8a3718c2cdbef6637a1caa",
-   "sha256": "dca7b2a44114fb13d9ec068cb05cda51ecf1df7b549f86dc15da19ee3f9e6c1c"
+   "sha256_source": "a09d3bf8f5fe043b016b15e540f756848bc3532a5b5d3d01cb5ed5b913d02e3e",
+   "sha256": "f122378da7e0fd6db7e82d62dd270850832f11a9aab50de9b64390c17f92b0ff"
   },
   "articles/versions/your-own-newsroom/v1.1.0.md": {
    "from": "articles/versions/your-own-newsroom/v1.1.0.md",
-   "sha256_source": "8c078f29c857046617dab8c17c4c0d5e4f4fc99b7c0295d14bc6a1cae0343c8b",
-   "sha256": "bad9658a421fd98f166371a2bbb221e110e9e0104249c02e7aca80115b82c1a5"
+   "sha256_source": "36b3bf4fef6b7dbef4224597bb160ae099da00692114db24578ce948a84355b4",
+   "sha256": "8615eaa91d07c9dda20ca343675d6580d1a55b7bce073f60beb2025356ab4433"
   },
   "articles/views/a-second-reader-the-agent-cannot-skip/a-second-reader-the-agent-cannot-skip.pdf": {
    "from": "articles/views/a-second-reader-the-agent-cannot-skip/a-second-reader-the-agent-cannot-skip.pdf",
@@ -10203,13 +10258,13 @@
   },
   "articles/what-sgit-is.html": {
    "from": "articles/what-sgit-is.html",
-   "sha256_source": "a83706e61e56bea5702f11b5b0f0e9eb420f3f4c7c88e653fb5ab2ebba0c4e6b",
-   "sha256": "5856d5622b479421638b607ea0e783f97c73b9b6a2c5be0810fe2637c352a297"
+   "sha256_source": "b20e612a336577f464f6d07bdb11dfe8327e5017ebf657860451d854722b97ca",
+   "sha256": "0d5c7186054125ae2548c589f3b12bfaeae4743894a9c91b9fd866e52171fb03"
   },
   "articles/what-sgit-is.md": {
    "from": "articles/what-sgit-is.md",
-   "sha256_source": "d90dbd02089d888fa1bfc3ce07ca6c8a9014350d97cc1d207b7218d0271dad4e",
-   "sha256": "ab48d7a2548c5ef6fa56b905c0b695110124e6adf5a0110ba6c7d6c4e755f6ef"
+   "sha256_source": "6adc9f1539db06822808dc61459600ff6a0b74b78fbbd21247c4e05d04bbdafe",
+   "sha256": "48b960d24854992a6e7f1bbde8058e3cb74759ad5f0bbab77ed7470c12621129"
   },
   "articles/where-is-the-why.html": {
    "from": "articles/where-is-the-why.html",
@@ -10930,13 +10985,13 @@
   },
   "newsroom/index.html": {
    "from": "newsroom/index.html",
-   "sha256_source": "e3b5ecd192cce2098664fa9c703965c4a351dff5510f0fd123430f0e66260d36",
-   "sha256": "15783babb65cda50bebe729ae9aab1b22f86a99b2f457b67e70ecd6f670d9b0b"
+   "sha256_source": "413fab5b0ac8e849b63902b83a46e76c4bc00be3ca35d396c70f2e4a40b7ced8",
+   "sha256": "bd576eacc5c14d7a11f19891ddc3979b45cb5ca9ed6cf1a1b57b66730e7780c2"
   },
   "newsroom/index.md": {
    "from": "newsroom/index.md",
-   "sha256_source": "453bc4f8518f5aa8c23323bf953c653e9881c849f0d53ec3edbff0f6adcb4cdf",
-   "sha256": "5d51e27bbfae0681321d87b61878ded833ff7501bd51bf5618eaaa0679c6b270"
+   "sha256_source": "90d37a470f9d988735b26dabf2d55b6bf1133d9fbd6e9bc3636fb503101b4a09",
+   "sha256": "ab0a8f7281e4d4926e709c4d010aebfa113dfaa849b68468f179201f037ebfa8"
   },
   "newsroom/log.html": {
    "from": "newsroom/log.html",
@@ -11030,8 +11085,8 @@
   },
   "newsroom/wire.json": {
    "from": "newsroom/wire.json",
-   "sha256_source": "7f7a3aaf596561f7ecdbf4e3743b1998621e6603300988409048beddde2225b6",
-   "sha256": "cdef8a4da70c0c7344cfee8292e46a1726052586647ba552b9560a5c8e42914b"
+   "sha256_source": "beed05436389db6f4bbe4b6ee40fecff691b39fd08d8da274e4d1f64d7c327c8",
+   "sha256": "32ab75fe2abc7226aa353cb829dba1ad0424fbbaf23197f81daa7fa4948375ea"
   },
   "og/a-link-to-a-persona.jpg": {
    "from": "og/a-link-to-a-persona.jpg",
@@ -11437,6 +11492,11 @@
    "from": "og/saas-apocalypse-decided-by-inertia-not-by-ai.jpg",
    "sha256_source": "37d5e7ab73bdaa586dd8c8f958861f602656aaff466f0e008eadc221c3609887",
    "sha256": "37d5e7ab73bdaa586dd8c8f958861f602656aaff466f0e008eadc221c3609887"
+  },
+  "og/scion-and-sgit.jpg": {
+   "from": "og/scion-and-sgit.jpg",
+   "sha256_source": "037d1e3b54aadeee9a97ba9149de3bc13c91fab5b07e7028d05f2791350759d1",
+   "sha256": "037d1e3b54aadeee9a97ba9149de3bc13c91fab5b07e7028d05f2791350759d1"
   },
   "og/secrets-on-public-keys.jpg": {
    "from": "og/secrets-on-public-keys.jpg",
