@@ -1,6 +1,6 @@
 {
  "what": "The AWS Wire as it was in its vault when this site was last released: headlines and primary links, each story's edition and dated corrections, the desk's latest release note. The live edition is the vault (v202bla5); this file is the fallback and the index for agents.",
- "release": "v0.12.74",
+ "release": "v0.12.75",
  "vault": "v202bla5",
  "endpoint": "https://dev.send.sgraph.ai",
  "clone": "sgit clone sgit_public_read_ad5c3f9e1f4d7632db06cd27f6ee6a256063300c426f4a94e7de33cf5a53e892:v202bla5",
@@ -11,63 +11,118 @@
   "description": "Everything AWS announced, filtered by the stack you declare in data/stack.json: what is new, what is insecure, what is being retired, what costs more, and what tooling changed for the services you actually run. Everything else is still listed, as withheld, with the reason.",
   "personal_persona": "dinis"
  },
- "edition": "2026-10-13",
+ "edition": "2026-10-16",
  "window": {
-  "from": "2026-09-29",
-  "to": "2026-10-13"
+  "from": "2026-10-13",
+  "to": "2026-10-16"
  },
- "kind": "first edition: two weeks of AWS, filtered by your stack (Lambda, S3, API Gateway, CloudFront, boto3)",
+ "kind": "morning edition and Friday digest: what changed for your stack since Tuesday",
  "status": "ai-generated, unreviewed",
  "counts": {
-  "stories": 88,
+  "stories": 141,
   "sources": 24,
   "personas": 5,
   "primary_not_fetched": 0,
-  "corrected": 0,
+  "corrected": 7,
   "map_entities": 0,
   "stack_services": 5,
   "deadlines": 4
  },
  "latest_release": {
-  "id": "2026-10-13.2",
-  "at": "2026-10-13T21:05:00Z",
-  "edition": "2026-10-13",
-  "title": "Docs: the graphs brief for the newsroom; runbook gains the verifier and contacts steps",
-  "summary": "No story changes. docs/GRAPHS.md explains the graphs each vault already holds (provenance per story, the OWASP projects graph, the AWS stack, the persona join) and how to draw them. The runbook now reads the newsroom's desk brief at the start of every run, adds a third-round verifier writing wire-factcheck/v1 with one row per story, and a contacts step under the site's contact rules.",
-  "added": [],
-  "updated": [],
+  "id": "2026-10-16.1",
+  "at": "2026-10-16T12:45:00Z",
+  "edition": "2026-10-16",
+  "title": "Friday digest: Lambda durable functions grow, a .NET S3 client flaw, and two deadlines unchanged",
+  "summary": "Friday digest. Touched your stack: Lambda durable functions raise their caps to 30,000 operations and 1 MB checkpoints (aws-34) and gain a Go SDK (aws-40); recursive-loop detection now covers EventBridge custom buses (aws-35); Powertools for Lambda (Python) 3.36.0 adds an alpha Auth utility (aws-41); CloudFront gets IPv6 to VPC origins (aws-36); S3 Metadata reaches six more Regions (aws-37); and a .NET S3 Encryption Client padding-oracle flaw, CVE-2026-110310, is fixed in 3.2.2 and 4.0.3 (aws-30; not boto3). AWS says Lambda is unaffected by the 15 Oct kernel bulletin (aws-31). Deadlines: the re:Invent full refund ends today, 16 Oct; Python 3.10 on Lambda ends support on 31 Oct (the runtimes table was re-read and is unchanged); hotel blocks close 5 Nov. Updated: boto3 is now at 1.43.114 (aws-12), Web Functions got a new coverage link and an unresolved question over the 128-concurrent-requests figure (aws-01), and the re:Invent FAQ date was corrected (aws-21). Gaps: the What's New feed was truncated so a few items may be missing, one Bedrock AgentCore item could not be fetched, and CLI and CDK releases past 2.37.13 and 2.273.0 are unconfirmed. Fact-check by a Haiku verifier is in data/factcheck-2026-10-16.json.",
+  "added": [
+   "aws-30",
+   "aws-31",
+   "aws-32",
+   "aws-33",
+   "aws-34",
+   "aws-35",
+   "aws-36",
+   "aws-37",
+   "aws-38",
+   "aws-39",
+   "aws-40",
+   "aws-41",
+   "aws-42",
+   "wn-60",
+   "wn-61",
+   "wn-62",
+   "wn-63",
+   "wn-64",
+   "wn-65",
+   "wn-66",
+   "wn-67",
+   "wn-68",
+   "wn-69",
+   "wn-70",
+   "wn-71",
+   "wn-72",
+   "wn-73",
+   "wn-74",
+   "wn-75",
+   "wn-76",
+   "wn-77",
+   "wn-78",
+   "wn-79",
+   "wn-80",
+   "wn-81",
+   "wn-82",
+   "wn-83",
+   "wn-84",
+   "wn-85",
+   "wn-86",
+   "wn-87",
+   "wn-88",
+   "wn-89",
+   "wn-90",
+   "wn-91",
+   "wn-92",
+   "wn-93",
+   "wn-94",
+   "wn-95",
+   "wn-96",
+   "wn-97",
+   "wn-98",
+   "wn-99"
+  ],
+  "updated": [
+   "aws-12",
+   "aws-01",
+   "aws-21"
+  ],
   "withdrawn": []
  },
  "threads": [
   {
-   "id": "web-functions",
-   "title": "Lambda Web Functions",
+   "id": "lambda-new-primitives",
+   "title": "Lambda grows new primitives",
    "stories": [
-    "aws-01",
-    "aws-02",
-    "aws-03",
-    "aws-11"
+    "aws-34",
+    "aws-40",
+    "aws-35",
+    "aws-01"
    ]
   },
   {
    "id": "act-now",
-   "title": "Act now: deadlines and breaking changes",
+   "title": "Deadlines that have not moved",
    "stories": [
-    "aws-08",
-    "aws-10",
-    "aws-12",
-    "aws-14",
-    "aws-09"
+    "aws-21",
+    "aws-08"
    ]
   },
   {
-   "id": "edge-and-agents",
-   "title": "The edge as the agent's front door",
+   "id": "security-this-week",
+   "title": "Security bulletins 14 to 15 October",
    "stories": [
-    "aws-17",
-    "aws-05",
-    "aws-22",
-    "aws-23"
+    "aws-30",
+    "aws-31",
+    "aws-32",
+    "aws-33"
    ]
   }
  ],
@@ -183,6 +238,48 @@
      "publisher": "Amazon Web Services",
      "status": "ai-generated, unreviewed",
      "edition": "2026-10-13"
+    },
+    {
+     "id": "aws-30",
+     "headline": "Bulletin 2026-135-AWS (CVE-2026-110310): S3 Encryption Client for .NET open to a padding-oracle attack via legacy key format",
+     "date": "2026-10-14",
+     "primary_url": "https://aws.amazon.com/security/security-bulletins/2026-135-aws/",
+     "publisher": "Amazon Web Services",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-16"
+    },
+    {
+     "id": "aws-31",
+     "headline": "Bulletin 2026-137-AWS: Linux kernel virtio-net flaw for self-managed KVM hosts; AWS says Lambda, EC2 and Fargate are not affected",
+     "date": "2026-10-15",
+     "primary_url": "https://aws.amazon.com/security/security-bulletins/2026-137-aws/",
+     "publisher": "Amazon Web Services",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-16"
+    },
+    {
+     "id": "aws-32",
+     "headline": "[AWS general] Bulletin 2026-136-AWS (CVE-2026-110812): Amazon Neptune Gremlin graph-import deserialization flaw",
+     "date": "2026-10-15",
+     "primary_url": "https://aws.amazon.com/security/security-bulletins/2026-136-aws/",
+     "publisher": "Amazon Web Services",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-16",
+     "changes": [
+      {
+       "at": "2026-10-16",
+       "what": "Fact-check fix: summary reworded; 'graph-import' appears only in the bulletin title, not its body."
+      }
+     ]
+    },
+    {
+     "id": "aws-33",
+     "headline": "[AWS general] Bulletin 2026-134-AWS (CVE-2026-110248): SageMaker Python SDK writes repository credentials to CloudWatch Logs",
+     "date": "2026-10-14",
+     "primary_url": "https://aws.amazon.com/security/security-bulletins/2026-134-aws/",
+     "publisher": "Amazon Web Services",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-16"
     }
    ]
   },
@@ -230,7 +327,17 @@
      "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/aws-lambda-web-functions/",
      "publisher": "Amazon Web Services",
      "status": "ai-generated, unreviewed",
-     "edition": "2026-10-13"
+     "edition": "2026-10-13",
+     "changes": [
+      {
+       "at": "2026-10-16",
+       "what": "2026-10-16: the AWS News Blog launch post shows 'last modified 14 Oct 2026' (published 12 Oct). Still Node.js 24 on Arm64 in 5 Regions; no Python and no AWS errata found. Independent coverage so far is blogs and aggregators only; no critical press found."
+      },
+      {
+       "at": "2026-10-16",
+       "what": "Fact-check note, unresolved: the verifier could not find '128 concurrent requests per environment' on AWS's launch page and saw it only on the DEV Community post; a research agent read it on the AWS News Blog launch post. The figure is left as published and needs a person to confirm against the blog."
+      }
+     ]
     },
     {
      "id": "aws-05",
@@ -294,6 +401,90 @@
      "publisher": "Amazon Web Services",
      "status": "ai-generated, unreviewed",
      "edition": "2026-10-13"
+    },
+    {
+     "id": "aws-34",
+     "headline": "Lambda durable functions: per-execution operation cap rises from 3,000 to 30,000, checkpoint payload from 256 KB to 1 MB",
+     "date": "2026-10-13",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/aws-lambda-durable-gen-limit-increase/",
+     "publisher": "Amazon Web Services",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-16"
+    },
+    {
+     "id": "aws-35",
+     "headline": "Lambda recursive loop detection now covers EventBridge custom event buses, on by default",
+     "date": "2026-10-14",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/lambda-recursive-loops-eventbridge-custom",
+     "publisher": "Amazon Web Services",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-16"
+    },
+    {
+     "id": "aws-36",
+     "headline": "CloudFront adds end-to-end IPv6 to VPC origins (dual-stack), no extra charge",
+     "date": "2026-10-15",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/cloudfront-vpc-origin-dualstack/",
+     "publisher": "Amazon Web Services",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-16"
+    },
+    {
+     "id": "aws-37",
+     "headline": "S3 Metadata reaches six more Regions (38 in total)",
+     "date": "2026-10-15",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-s3-metadata-six-additional-regions/",
+     "publisher": "Amazon Web Services",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-16"
+    },
+    {
+     "id": "aws-38",
+     "headline": "Amazon S3, S3 Tables and S3 Vectors arrive on the Vercel Marketplace and v0",
+     "date": "2026-10-14",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-s3-vercel-marketplace-v0",
+     "publisher": "Amazon Web Services",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-16",
+     "changes": [
+      {
+       "at": "2026-10-16",
+       "what": "Fact-check fix: credit validity is 'up to six months' on the primary page."
+      }
+     ]
+    },
+    {
+     "id": "aws-39",
+     "headline": "ARC Region switch: custom-action blocks can pass payloads to Lambda, plus quota comparison and target-health waits",
+     "date": "2026-10-14",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/region-switch-target-health-ssm-lambda/",
+     "publisher": "Amazon Web Services",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-16",
+     "changes": [
+      {
+       "at": "2026-10-16",
+       "what": "Fact-check fix: the page's own name for the feature."
+      }
+     ]
+    },
+    {
+     "id": "aws-40",
+     "headline": "Lambda Durable Execution SDK for Go is generally available",
+     "date": "2026-10-15",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/aws-lambda-durable-go-sdk-support/",
+     "publisher": "Amazon Web Services",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-16"
+    },
+    {
+     "id": "aws-42",
+     "headline": "Pattern: multi-Region disaster recovery for API Gateway WebSocket APIs, with state kept outside the connection",
+     "date": "2026-10-14",
+     "primary_url": "https://aws.amazon.com/blogs/architecture/multi-region-disaster-recovery-for-amazon-api-gateway-websocket-apis/",
+     "publisher": "AWS Architecture Blog",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-16"
     }
    ]
   },
@@ -303,12 +494,26 @@
    "stories": [
     {
      "id": "aws-12",
-     "headline": "boto3/botocore 1.43.105-1.43.112 ship near-daily; minimum Python is now 3.10",
+     "headline": "boto3/botocore 1.43.105-1.43.114 ship near-daily; minimum Python is now 3.10",
      "date": "2026-10-12",
      "primary_url": "https://pypi.org/project/boto3/",
      "publisher": "PyPI",
      "status": "ai-generated, unreviewed",
-     "edition": "2026-10-13"
+     "edition": "2026-10-13",
+     "changes": [
+      {
+       "at": "2026-10-16",
+       "what": "2026-10-16: PyPI lists boto3 1.43.114 (14 Oct 2026), two versions past the 1.43.112 in the headline; the research agent could not retrieve the 1.43.113/1.43.114 changelog. The minimum-Python claim is unchanged."
+      },
+      {
+       "at": "2026-10-16",
+       "what": "Fact-check fix: PyPI lists 1.43.113 (13 Oct) and 1.43.114 (14 Oct)."
+      },
+      {
+       "at": "2026-10-16",
+       "what": "Fact-check fix: summary now says ten versions to 1.43.114 (14 Oct); the changelog for 1.43.113 and 1.43.114 was not verified, so the service-model sentence covers 1.43.105 to 1.43.112 only."
+      }
+     ]
     },
     {
      "id": "aws-11",
@@ -327,6 +532,15 @@
      "publisher": "GitHub aws/aws-cdk",
      "status": "ai-generated, unreviewed",
      "edition": "2026-10-13"
+    },
+    {
+     "id": "aws-41",
+     "headline": "Powertools for AWS Lambda (Python) 3.36.0 ships an alpha Auth utility: JWT verifier and OAuth2 client",
+     "date": "2026-10-15",
+     "primary_url": "https://github.com/aws-powertools/powertools-lambda-python/releases/tag/v3.36.0",
+     "publisher": "GitHub (aws-powertools)",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-16"
     }
    ]
   },
@@ -365,7 +579,17 @@
      "primary_url": "https://aws.amazon.com/events/reinvent/faqs/",
      "publisher": "Amazon Web Services",
      "status": "ai-generated, unreviewed",
-     "edition": "2026-10-13"
+     "edition": "2026-10-13",
+     "changes": [
+      {
+       "at": "2026-10-16",
+       "what": "2026-10-16: the re:Invent FAQ shows an update on 14 Oct 2026. The full-refund cancellation deadline (16 Oct 2026) is today; 50% refund 17 Oct to 23 Nov; hotel blocks close 5 Nov 2026. The FAQ is inconsistent on reserved seating (says it opens 6 Oct and also 'now open')."
+      },
+      {
+       "at": "2026-10-16",
+       "what": "Fact-check fix: FAQ metadata shows 14 Oct, not 8 Oct."
+      }
+     ]
     }
    ]
   },
@@ -903,6 +1127,372 @@
      "publisher": "AWS What's New",
      "status": "ai-generated, unreviewed",
      "edition": "2026-10-13"
+    },
+    {
+     "id": "wn-60",
+     "headline": "AWS Lambda durable functions increases durable operation and checkpoint payload limits",
+     "date": "2026-10-13",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/aws-lambda-durable-gen-limit-increase/",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-16"
+    },
+    {
+     "id": "wn-61",
+     "headline": "Amazon ECS adds LiveTaskCount and removes the charge for RunningTaskCount metric",
+     "date": "2026-10-13",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/ecs-service-metrics",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-16"
+    },
+    {
+     "id": "wn-62",
+     "headline": "AWS Agent Registry now supports custom metadata for registry records",
+     "date": "2026-10-13",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/aws-agent-registry-custom-metadata-registry-records",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-16"
+    },
+    {
+     "id": "wn-63",
+     "headline": "Amazon DCV releases version 2026.0 with RHEL 10 support and new clients",
+     "date": "2026-10-13",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-dcv-2026-0",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-16"
+    },
+    {
+     "id": "wn-64",
+     "headline": "AWS Deadline Cloud now helps users find their accessible resources in the Deadline Cloud monitor",
+     "date": "2026-10-13",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/deadline-cloud/resources",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-16"
+    },
+    {
+     "id": "wn-65",
+     "headline": "Amazon Location Service launches an interactive API Playground featuring Places, Routes and Maps APIs",
+     "date": "2026-10-13",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-location-service-api-playground",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-16"
+    },
+    {
+     "id": "wn-66",
+     "headline": "Bring deep SageMaker AI expertise to your coding agent with the AWS AI/ML skill in the Agent Toolkit for AWS",
+     "date": "2026-10-13",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/bring-sagemaker-ai-expertise-to-your-coding-agent",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-16"
+    },
+    {
+     "id": "wn-67",
+     "headline": "AWS DataSync Enhanced mode now supports FSx for OpenZFS, NFS 4.2, and object metadata controls",
+     "date": "2026-10-13",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/datasync-enhanced-openzfs-nfs42-metadata",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-16"
+    },
+    {
+     "id": "wn-68",
+     "headline": "Amazon Route 53 now supports registrations, transfers, and renewals for Premium Domains",
+     "date": "2026-10-13",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/route-53-premium-domains",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-16"
+    },
+    {
+     "id": "wn-69",
+     "headline": "Amazon RDS now supports the latest Cumulative Update for Microsoft SQL Server",
+     "date": "2026-10-13",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/09/amazon-rds-supports-latest-cumulative-update-microsoft-sql-server/",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-16"
+    },
+    {
+     "id": "wn-70",
+     "headline": "Amazon CloudWatch announces log routing and chained log parsers",
+     "date": "2026-10-14",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/cloudwatch-pipelines-log-routing",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-16"
+    },
+    {
+     "id": "wn-71",
+     "headline": "AWS HealthOmics expands container registry support for private workflows",
+     "date": "2026-10-14",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/aws-healthomics-expanded-container-registry-support",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-16"
+    },
+    {
+     "id": "wn-72",
+     "headline": "AWS License Manager now supports license type conversions for Ubuntu Pro purchased through AWS Marketplace",
+     "date": "2026-10-14",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/aws-license-manager-conversions-ubuntu-pro-marketplace",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-16"
+    },
+    {
+     "id": "wn-73",
+     "headline": "AWS HealthOmics introduces resource fallback order for Nextflow workflows",
+     "date": "2026-10-14",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/aws-healthomics-resource-fallback-for-Nextflow",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-16"
+    },
+    {
+     "id": "wn-74",
+     "headline": "AWS Backup now supports Amazon FSx file systems in the Asia Pacific (New Zealand) Region",
+     "date": "2026-10-14",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/aws-backup-fsx-asia-pacific-new-zealand",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-16"
+    },
+    {
+     "id": "wn-75",
+     "headline": "AWS Transfer Family console supports SVG logos and ICO favicons for web apps",
+     "date": "2026-10-14",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/transfer-family-svg-ico-favicons",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-16"
+    },
+    {
+     "id": "wn-76",
+     "headline": "AWS Transfer Family now supports AWS Secrets Manager storage for SFTP server host keys",
+     "date": "2026-10-14",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/transfer-family-secrets-host-keys",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-16"
+    },
+    {
+     "id": "wn-77",
+     "headline": "Amazon RDS Proxy now supports SQL Server 2022",
+     "date": "2026-10-14",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/rds-proxy-supports-sqlserver-2022",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-16"
+    },
+    {
+     "id": "wn-78",
+     "headline": "AWS Security Hub now supports resource criticality for prioritization",
+     "date": "2026-10-14",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/security-hub-resource-criticality",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-16"
+    },
+    {
+     "id": "wn-79",
+     "headline": "AWS Lambda recursive loop detection now supports Amazon EventBridge Custom event buses",
+     "date": "2026-10-14",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/lambda-recursive-loops-eventbridge-custom",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-16"
+    },
+    {
+     "id": "wn-80",
+     "headline": "ARC Region switch adds four new capabilities",
+     "date": "2026-10-14",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/region-switch-target-health-ssm-lambda/",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-16"
+    },
+    {
+     "id": "wn-81",
+     "headline": "Announcing Blockchain Snapshots on AWS for node bootstrapping",
+     "date": "2026-10-14",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/blockchain-snapshots-node-bootstrapping",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-16"
+    },
+    {
+     "id": "wn-82",
+     "headline": "Amazon S3 is now available on the Vercel Marketplace and v0 by Vercel",
+     "date": "2026-10-14",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-s3-vercel-marketplace-v0",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-16"
+    },
+    {
+     "id": "wn-83",
+     "headline": "AWS Lambda Durable Execution SDK for Go is now generally available",
+     "date": "2026-10-15",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/aws-lambda-durable-go-sdk-support/",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-16"
+    },
+    {
+     "id": "wn-84",
+     "headline": "Amazon CloudFront announces dual-stack support for VPC origins",
+     "date": "2026-10-15",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/cloudfront-vpc-origin-dualstack/",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-16"
+    },
+    {
+     "id": "wn-85",
+     "headline": "Amazon S3 Metadata now available in six additional AWS Regions",
+     "date": "2026-10-15",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-s3-metadata-six-additional-regions/",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-16"
+    },
+    {
+     "id": "wn-86",
+     "headline": "Amazon Redshift long-term system table retention with Amazon S3 Tables is now available in additional AWS Regions",
+     "date": "2026-10-15",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/redshift-long-term-system-table-retention-expansion/",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-16"
+    },
+    {
+     "id": "wn-87",
+     "headline": "Amazon SageMaker Studio simplifies getting started for new AI/ML builders with new sign-in options",
+     "date": "2026-10-15",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/sagemaker-studio-new-sign-in-options",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-16"
+    },
+    {
+     "id": "wn-88",
+     "headline": "Amazon EC2 T8i instances are now available in South America (São Paulo)",
+     "date": "2026-10-15",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/ec2-t8i-instances-south-america",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-16",
+     "changes": [
+      {
+       "at": "2026-10-16",
+       "what": "Fact-check fix: diacritic restored to match the source title."
+      }
+     ]
+    },
+    {
+     "id": "wn-89",
+     "headline": "Amazon DynamoDB Streams now supports timestamp-based stream processing",
+     "date": "2026-10-15",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-dynamodb-streams-timestamp-processing",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-16"
+    },
+    {
+     "id": "wn-90",
+     "headline": "AWS HealthOmics now supports shared VPCs",
+     "date": "2026-10-15",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/omics-workflows-shared-vpcs",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-16"
+    },
+    {
+     "id": "wn-91",
+     "headline": "Muse Spark Open model now available on Amazon SageMaker JumpStart",
+     "date": "2026-10-15",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/01/muse-spark-open-on-sagemaker-jumpstart/",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-16"
+    },
+    {
+     "id": "wn-92",
+     "headline": "Amazon Time Sync Service adds support for microsecond-accurate time on 135 additional EC2 instance types in all commercial regions",
+     "date": "2026-10-15",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/time-sync-additional-instances-all-regions",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-16"
+    },
+    {
+     "id": "wn-93",
+     "headline": "AWS Transform for full-stack Windows modernization now supports Aurora PostgreSQL cross-region deployment in 7 more Regions",
+     "date": "2026-10-15",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/aws-transform-full-stack-aurora-cross-region",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-16"
+    },
+    {
+     "id": "wn-94",
+     "headline": "Amazon MSK Connect and AWS Glue Schema Registry are now available in the AWS European Sovereign Cloud (Germany) region",
+     "date": "2026-10-15",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-msk-connect-aws-gsr-additional-aws-regions",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-16"
+    },
+    {
+     "id": "wn-95",
+     "headline": "PostgreSQL 19 RC1 is now available in Amazon RDS Database Preview Environment",
+     "date": "2026-10-15",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/postgresql-19-rc1-amazon-rds-database-preview-environment",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-16"
+    },
+    {
+     "id": "wn-96",
+     "headline": "AWS Security Hub CSPM now supports the Cyber Risk Institute profile version 2.2",
+     "date": "2026-10-15",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/security-hub-cspm-cri-profile-v22",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-16"
+    },
+    {
+     "id": "wn-97",
+     "headline": "Amazon Managed Service for Prometheus Collector now available in Asia Pacific (New Zealand) Region",
+     "date": "2026-10-15",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/ams-prometheus-collector-apac-nz",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-16"
+    },
+    {
+     "id": "wn-98",
+     "headline": "Amazon Managed Workflows for Apache Airflow now offers AI agent skills",
+     "date": "2026-10-15",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-mwaa-ai-agent-skills",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-16"
+    },
+    {
+     "id": "wn-99",
+     "headline": "Oracle Database@AWS supports aggregate and default routes for ODB peering",
+     "date": "2026-10-15",
+     "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/10/oracle-database-aws-aggregate-routes-odb",
+     "publisher": "AWS What's New",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-16"
     }
    ]
   }

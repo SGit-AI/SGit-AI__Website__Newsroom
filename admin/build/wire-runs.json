@@ -203,6 +203,72 @@
    "added": null,
    "updated": null,
    "note": "the install of the sgit client was refused as code from external"
+  },
+  {
+   "id": "645d22b9de8f",
+   "task": "aws",
+   "trigger": "trig_01Ag6kKsgRHFRG8yAs6G47MH",
+   "fired_at": "2026-10-16T12:00:07Z",
+   "finished_at": "2026-10-16T12:13:09Z",
+   "duration_s": 777.5,
+   "models": {
+    "claude-sonnet-5-5": {
+     "cost_usd": 2.266418,
+     "input": 114,
+     "output": 89014,
+     "cache_read": 4697695,
+     "cache_write": 288385,
+     "thinking": 12057
+    },
+    "claude-haiku-5-5": {
+     "cost_usd": 0.309748,
+     "input": 1576576,
+     "output": 261690,
+     "cache_read": 675862,
+     "cache_write": 115892,
+     "thinking": 194384
+    }
+   },
+   "cost_usd": 2.576165,
+   "turns": 41,
+   "subagents": 9,
+   "refused": 0,
+   "refused_kinds": [],
+   "outcome": "published",
+   "release": "2026-10-16.1",
+   "added": 53,
+   "updated": 3,
+   "note": "the re-run on Sonnet with the new wording; nothing refused; the Friday digest"
+  },
+  {
+   "id": "64ab573e188d",
+   "task": "portugal",
+   "trigger": "trig_01DsBEr34j7yERR8yQRRhWWU",
+   "fired_at": "2026-10-16T12:00:09Z",
+   "finished_at": "2026-10-16T12:01:27Z",
+   "duration_s": 72.9,
+   "models": {
+    "claude-sonnet-5-5": {
+     "cost_usd": 0.152985,
+     "input": 18,
+     "output": 1823,
+     "cache_read": 609953,
+     "cache_write": 18431,
+     "thinking": 571
+    }
+   },
+   "cost_usd": 0.152985,
+   "turns": 9,
+   "subagents": 0,
+   "refused": 3,
+   "refused_kinds": [
+    "sgit clone"
+   ],
+   "outcome": "blocked",
+   "release": null,
+   "added": null,
+   "updated": null,
+   "note": "the re-run on Sonnet: the install went through, the clone was refused three times as code from external"
   }
  ],
  "sessions": [

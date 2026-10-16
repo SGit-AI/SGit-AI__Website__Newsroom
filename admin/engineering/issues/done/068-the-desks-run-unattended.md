@@ -18,4 +18,4 @@ And every desk runs on Sonnet, with its verifier on a different model (Haiku)
 ```
 
 ## Outcome
-The four desks' prompts updated on 16 October 2026 (Industry, AWS, Portugal, OWASP), all on Sonnet; the AWS and Portugal runs fired again the same day to test. The durable fix is the owner's: pre-installing the sgit client in the desks' environment and allowing `sgit clone` and `sgit push` to the owner's server in the tasks' settings, so no run depends on a retry.
+The four desks' prompts updated on 16 October 2026 (Industry, AWS, Portugal, OWASP), all on Sonnet; the AWS and Portugal runs fired again the same day to test. Tested the same day: the AWS re-run published its edition (53 new stories, the Friday digest) on Sonnet for $2.58 with nothing refused, against $10.06 for the Industry run on Opus that morning; the Portugal re-run, under the same wording, had its clone refused three more times ("Code from External"). So the wording helps and does not settle it. The durable fix is the owner's: pre-installing the sgit client in the desks' environment and allowing `sgit clone` and `sgit push` to the owner's server in the tasks' settings, so no run depends on a retry.
