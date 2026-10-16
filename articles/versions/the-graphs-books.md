@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-16 | published | 1,809 | first published | this release | [current](../the-graphs-books.md) |
+| **v1.0.0** | 2026-10-16 | published | 1,809 | first published | [`e7ee4035c`](https://github.com/SGit-AI/SGit-AI__Website/commit/e7ee4035c1d1460ffc449c42732714e10204560e) | [current](../the-graphs-books.md) |
 
 [← Back to the article](../the-graphs-books.md) · [All articles](../index.md)
 

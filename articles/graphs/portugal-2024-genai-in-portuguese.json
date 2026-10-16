@@ -1,0 +1,140 @@
+{
+  "slug": "portugal-2024-genai-in-portuguese",
+  "teaser": "My 2024 OWASP talk in Lisbon: Portuguese as a programming language, provenance, graphs instead of RAG, and the first public demo of The Cyber Boardroom.",
+  "topics": [
+    "agents-and-policy",
+    "graphs-and-knowledge"
+  ],
+  "core_idea": "The June 2024 talk argued that GenAI matters because it understands, that Portuguese is a programming language because prompts are natural language, that outputs need determinism and provenance, with read-only models, your own content and graphs instead of RAG, and demoed The Cyber Boardroom explaining security to boards; two years later provenance and graphs became the newsroom's rules, models became agents that need a mandate, and Portugal released an open model for European Portuguese.",
+  "nodes": [
+    {
+      "id": "talk",
+      "label": "OWASP Global AppSec, Lisbon",
+      "kind": "artefact",
+      "summary": "28 June 2024; 132 slides."
+    },
+    {
+      "id": "language",
+      "label": "Portuguese is a programming language",
+      "kind": "claim",
+      "summary": "236 million first-language speakers."
+    },
+    {
+      "id": "understand",
+      "label": "GenAI understands",
+      "kind": "concept",
+      "summary": "Not because it creates."
+    },
+    {
+      "id": "principles",
+      "label": "Key principles",
+      "kind": "method",
+      "summary": "Read-only models, own content, prompts exposed."
+    },
+    {
+      "id": "graphs",
+      "label": "Graphs instead of RAG",
+      "kind": "method",
+      "summary": "Summarise, build graphs, navigate."
+    },
+    {
+      "id": "boardroom",
+      "label": "The Cyber Boardroom",
+      "kind": "example",
+      "summary": "Security explained to a board, in its language."
+    },
+    {
+      "id": "amalia",
+      "label": "Amália",
+      "kind": "example",
+      "summary": "An open model for European Portuguese."
+    },
+    {
+      "id": "agents",
+      "label": "Models became agents",
+      "kind": "claim",
+      "summary": "The problem is now control."
+    },
+    {
+      "id": "challenge",
+      "label": "Lead, or consume",
+      "kind": "question",
+      "summary": "The future of Portugal depends on it."
+    }
+  ],
+  "edges": [
+    {
+      "from": "talk",
+      "to": "language",
+      "rel": "produces"
+    },
+    {
+      "from": "talk",
+      "to": "principles",
+      "rel": "produces"
+    },
+    {
+      "from": "understand",
+      "to": "principles",
+      "rel": "leads-to"
+    },
+    {
+      "from": "principles",
+      "to": "graphs",
+      "rel": "extends"
+    },
+    {
+      "from": "boardroom",
+      "to": "principles",
+      "rel": "example-of"
+    },
+    {
+      "from": "amalia",
+      "to": "language",
+      "rel": "answers"
+    },
+    {
+      "from": "agents",
+      "to": "boardroom",
+      "rel": "extends"
+    },
+    {
+      "from": "talk",
+      "to": "challenge",
+      "rel": "leads-to"
+    }
+  ],
+  "links": {
+    "articles": [
+      "portugal-2010-a-challenge",
+      "portugal-2016-hacking-portugal",
+      "portugal-and-europe-2025",
+      "introducing-fractal-semantic-graphs",
+      "the-mandate-stack"
+    ],
+    "pages": [],
+    "sites": [
+      "https://diniscruz.ai/2024/06/28/deterministic-genai-outputs-with-provenance__owasp-appsec-lisbon__gslides.html",
+      "https://www.youtube.com/watch?v=IEN9Ittv4V0",
+      "https://thenextweb.com/news/portugal-open-source-ai-model-amalia"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "I think the stuff with graphs is a lot more interesting. I think you take the content, you summarize, you build graphs of it, then you navigate the graph.",
+      "why": "Graphs instead of RAG, in 2024."
+    },
+    {
+      "text": "Otherwise, Portugal just becomes another consumer of global technology, which is not where it should be, because now we actually have the ability to make a difference.",
+      "why": "The challenge."
+    }
+  ],
+  "figures": [
+    {
+      "file": "pt-2024-slides.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/pt-2024-slides.webp",
+      "caption": "Twelve slides from Deterministic GenAI Outputs with Provenance, OWASP Global AppSec EU, Lisbon, June 2024: the title, prompts in natural language, Portuguese as a programming language, GenAI understands, hallucinations, secure or safe, The Cyber Boardroom, GenAI as the most vulnerable API, key principles, what GenAI is good at, graphs instead of RAG, and security incidents as a good thing.",
+      "kind": "comparison"
+    }
+  ]
+}

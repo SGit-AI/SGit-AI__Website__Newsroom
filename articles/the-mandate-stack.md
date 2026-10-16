@@ -367,6 +367,8 @@ Agents & policyGraphs & knowledge[This article as a graph →](graphs.md#the-man
 
 ### Continued by
 
+- [GenAI in Portuguese, 2024: my OWASP Global AppSec talk in Lisbon, the first public demo of The Cyber Boardroom, slide by slide, with what two years of agents have confirmed and changed](portugal-2024-genai-in-portuguese.md) My 2024 OWASP talk in Lisbon: Portuguese as a programming language, provenance, graphs instead of RAG, and the first public demo of The Cyber Boardroom.
+- [Hacking Portugal, 2016: my BSidesLisbon keynote and the book that stopped at 95%, slide by slide, with what holds ten years later and what a new edition needs](portugal-2016-hacking-portugal.md) Hacking Portugal, my 2016 BSidesLisbon keynote and the book at 95%: a Hacking Service, OpenSource.pt, a Ministry of Code, and what holds ten years on.
 - [Books from articles: why my books stall at 95%, why these articles do not, and a plan to turn them into books by Web Summit](books-from-articles.md) My books stall at 60 to 95%; these articles do not. The hypothesis: a book is an ordered set of finished articles, tested by Web Summit in November.
 - [Not a straight line: working for RiskMandate by working on the newsroom, and why the thinking is never wasted](not-a-straight-line.md) Working on the newsroom solved RiskMandate's oldest problem in two days: progress is not a straight line, and the thinking is never wasted.
 - [The records ran out: a fresh agent found the shared contract in two MCP calls, and where sgit and RiskMandate fit at the edges](the-records-ran-out.md) A fresh agent found a shared contract in two MCP calls from build records; where the records stopped is exactly where evidence labels and sgit vaults fit.

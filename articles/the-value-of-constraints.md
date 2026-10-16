@@ -102,6 +102,8 @@ Vaults & methodStartups & strategy[This article as a graph →](graphs.md#the-va
 
 ### Continued by
 
+- [Portugal and Europe, 2025: five essays on Portuguese as a programming language, an open-source sovereign cloud, regulation as graphs and Europe's chance in GenAI, and how they read a year and a half later](portugal-and-europe-2025.md) Five 2025 essays on Portuguese as code, a sovereign open-source cloud, regulation as graphs and Europe in GenAI, read again: two moved, one did not.
+- [A web application security challenge to Portugal, 2010: my IBWAS keynote in Lisbon, slide by slide, with what came true, what I got wrong and what still stands](portugal-2010-a-challenge.md) My 2010 IBWAS keynote in Lisbon, slide by slide: twelve actions for Portugal, more of which came true than I expected, mostly from Brussels.
 - [A custom Firefox of my own: the full plan to build one with a governed agent hive, for the laptop and the iPad, and how Mozilla could sell me the part I do not want to do, which is keeping it working](a-custom-firefox-of-my-own.md) A full plan to build a custom Firefox for laptop and iPad with a governed agent hive, and why the part worth paying Mozilla for is keeping it working.
 
 [All articles](index.md) · [All graphs](graphs.md)

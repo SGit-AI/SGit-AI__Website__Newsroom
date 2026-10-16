@@ -92,6 +92,8 @@ Startups & strategyAgents & policy[This article as a graph →](graphs.md#explor
 
 ### Continued by
 
+- [GenAI in Portuguese, 2024: my OWASP Global AppSec talk in Lisbon, the first public demo of The Cyber Boardroom, slide by slide, with what two years of agents have confirmed and changed](portugal-2024-genai-in-portuguese.md) My 2024 OWASP talk in Lisbon: Portuguese as a programming language, provenance, graphs instead of RAG, and the first public demo of The Cyber Boardroom.
+- [Hacking Portugal, 2016: my BSidesLisbon keynote and the book that stopped at 95%, slide by slide, with what holds ten years later and what a new edition needs](portugal-2016-hacking-portugal.md) Hacking Portugal, my 2016 BSidesLisbon keynote and the book at 95%: a Hacking Service, OpenSource.pt, a Ministry of Code, and what holds ten years on.
 - [Software vendors should become villagers and town planners: let users explore on top of the product, sell them the maintenance of what they build, and use Firefox as the example of what happens if you don't](software-vendors-as-villagers.md) Users can now rebuild the part of a product they need; what stops them is maintenance. Vendors should sell that, as villagers and town planners.
 - [A custom Firefox of my own: the full plan to build one with a governed agent hive, for the laptop and the iPad, and how Mozilla could sell me the part I do not want to do, which is keeping it working](a-custom-firefox-of-my-own.md) A full plan to build a custom Firefox for laptop and iPad with a governed agent hive, and why the part worth paying Mozilla for is keeping it working.
 

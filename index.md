@@ -4,18 +4,18 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.12.77 · 148 articles since 2026-08-17; the newest is 2026-10-16. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v0.12.78 · 152 articles since 2026-08-17; the newest is 2026-10-16. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## The lead
 
-- [The graphs books: three books written by agents in a day, the altitudes, the board and the book as a graph, what they got right, and why they stopped under review](articles/the-graphs-books.md), 2026-10-16, 7 min. Three books on graphs.sgit.ai, written by agents in a day: the altitudes, the board, the book as a graph, and why they stopped under review.
+- [Portugal and Europe, 2025: five essays on Portuguese as a programming language, an open-source sovereign cloud, regulation as graphs and Europe's chance in GenAI, and how they read a year and a half later](articles/portugal-and-europe-2025.md), 2026-10-16, 5 min. Five 2025 essays on Portuguese as code, a sovereign open-source cloud, regulation as graphs and Europe in GenAI, read again: two moved, one did not.
 
 ## Highlights
 
-- [Books from articles: why my books stall at 95%, why these articles do not, and a plan to turn them into books by Web Summit](articles/books-from-articles.md), 2026-10-16, 8 min.
-- [The value of constraints: what client-side encryption and open source actually gave us, which is not what you would think](articles/the-value-of-constraints.md), 2026-10-16, 8 min.
-- [Software vendors should become villagers and town planners: let users explore on top of the product, sell them the maintenance of what they build, and use Firefox as the example of what happens if you don't](articles/software-vendors-as-villagers.md), 2026-10-16, 8 min.
-- [Explorer coding: a better name for what people call vibe coding, what it is good for, and the handover to villagers and town planners before anyone depends on it](articles/explorer-coding.md), 2026-10-16, 7 min.
+- [GenAI in Portuguese, 2024: my OWASP Global AppSec talk in Lisbon, the first public demo of The Cyber Boardroom, slide by slide, with what two years of agents have confirmed and changed](articles/portugal-2024-genai-in-portuguese.md), 2026-10-16, 5 min.
+- [Hacking Portugal, 2016: my BSidesLisbon keynote and the book that stopped at 95%, slide by slide, with what holds ten years later and what a new edition needs](articles/portugal-2016-hacking-portugal.md), 2026-10-16, 6 min.
+- [A web application security challenge to Portugal, 2010: my IBWAS keynote in Lisbon, slide by slide, with what came true, what I got wrong and what still stands](articles/portugal-2010-a-challenge.md), 2026-10-16, 5 min.
+- [The graphs books: three books written by agents in a day, the altitudes, the board and the book as a graph, what they got right, and why they stopped under review](articles/the-graphs-books.md), 2026-10-16, 7 min.
 
 ## Who are you reading as?
 
@@ -40,17 +40,17 @@ For engineers and builders running agents day to day: tools, memory, email, desk
 - [The scripted talk: a presentation as a timeline that plays on a clock, the two vaults it grows out of, and a player built for tonight's ten minutes](articles/the-scripted-talk.md), 2026-10-15, 7 min.
 - [sgit in GitHub Actions, side by side: a showcase repository and site that runs four ways of moving a vault between jobs on every run, measured, with a budget for its LLM steps](articles/sgit-actions-side-by-side.md), 2026-10-14, 7 min.
 
-### Vaults & provenance (29)
+### Vaults & provenance (31)
 For anyone who needs evidence they can open: encrypted vaults, keys, graphs and the publishing method.
+- [Portugal and Europe, 2025: five essays on Portuguese as a programming language, an open-source sovereign cloud, regulation as graphs and Europe's chance in GenAI, and how they read a year and a half later](articles/portugal-and-europe-2025.md), 2026-10-16, 5 min.
+- [GenAI in Portuguese, 2024: my OWASP Global AppSec talk in Lisbon, the first public demo of The Cyber Boardroom, slide by slide, with what two years of agents have confirmed and changed](articles/portugal-2024-genai-in-portuguese.md), 2026-10-16, 5 min.
 - [The graphs books: three books written by agents in a day, the altitudes, the board and the book as a graph, what they got right, and why they stopped under review](articles/the-graphs-books.md), 2026-10-16, 7 min.
-- [Books from articles: why my books stall at 95%, why these articles do not, and a plan to turn them into books by Web Summit](articles/books-from-articles.md), 2026-10-16, 8 min.
-- [The value of constraints: what client-side encryption and open source actually gave us, which is not what you would think](articles/the-value-of-constraints.md), 2026-10-16, 8 min.
 
-### The future of news (26)
+### The future of news (28)
 For editors, journalists and publishers asking how news gets paid for when agents do the reading.
+- [Hacking Portugal, 2016: my BSidesLisbon keynote and the book that stopped at 95%, slide by slide, with what holds ten years later and what a new edition needs](articles/portugal-2016-hacking-portugal.md), 2026-10-16, 6 min.
+- [A web application security challenge to Portugal, 2010: my IBWAS keynote in Lisbon, slide by slide, with what came true, what I got wrong and what still stands](articles/portugal-2010-a-challenge.md), 2026-10-16, 5 min.
 - [Inside the Mesa Ranch desk: a page-by-page tour of an observation vault, from the cover to the knowledge graph you can play in time](articles/inside-the-mesa-ranch-desk.md), 2026-10-15, 10 min.
-- [When journalism becomes intelligence, built: an observation desk for one data-center buildout, from an atlas of 78 events to a community impact tracker, in a vault you can open](articles/journalism-becomes-intelligence.md), 2026-10-15, 9 min.
-- [The wire as a graph: start from what the reader sees, give every story and every name a long-lived ID, link every phrase of a short narrative, and a brief for the desks](articles/the-wire-as-a-graph.md), 2026-10-14, 10 min.
 
 ### Strategy & startups (26)
 For founders and investors: pricing, early access, Wardley maps and who pays for open source.
