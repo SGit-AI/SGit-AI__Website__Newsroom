@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-16 | published | 2,263 | first published | this release | [current](../agentics-ready-to-sell.md) |
+| **v1.0.0** | 2026-10-16 | published | 2,263 | first published | [`ed5490c7c`](https://github.com/SGit-AI/SGit-AI__Website/commit/ed5490c7c0d9ba91d284ffdc0116bff3f61b3c62) | [current](../agentics-ready-to-sell.md) |
 
 [← Back to the article](../agentics-ready-to-sell.md) · [All articles](../index.md)
 

@@ -91,6 +91,10 @@ Vaults & methodSite & engineering[This article as a graph →](graphs.md#scion-a
 - [From sending a file to sgit: eight months of SG/Send, told by its own briefs and commits, and how a file-sharing service became encrypted version control and vaults](from-send-to-sgit.md) Eight months of SG/Send, checked against its own briefs and commits: how file sharing became sgit and vaults, the pace, and what the market said.
 - [Git for things you cannot put on GitHub](what-sgit-is.md) sgit is git for files you cannot put on GitHub: encrypted before they leave your machine, versioned like git, stored where the server cannot read a byte.
 
+### Continued by
+
+- [The value of constraints: what client-side encryption and open source actually gave us, which is not what you would think](the-value-of-constraints.md) sgit's encryption and open source matter less as features than as constraints: they remove the temptations that lead to server code, lock-in and bad decisions.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 141 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=141)

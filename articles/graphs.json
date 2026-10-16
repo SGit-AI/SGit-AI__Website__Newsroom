@@ -55,6 +55,909 @@
   ],
   "articles": [
     {
+      "slug": "the-value-of-constraints",
+      "title": "The value of constraints: what client-side encryption and open source actually gave us, which is not what you would think",
+      "date": "2026-10-16",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/the-value-of-constraints.html",
+      "markdown": "https://newsroom.sgit.ai/articles/the-value-of-constraints.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/the-value-of-constraints.webp",
+      "teaser": "sgit's encryption and open source matter less as features than as constraints: they remove the temptations that lead to server code, lock-in and bad decisions.",
+      "topics": [
+        "vaults-and-method",
+        "startups-and-strategy"
+      ],
+      "tags": [
+        "constraints",
+        "encryption",
+        "sgit",
+        "open-source",
+        "sovereignty",
+        "gdpr",
+        "engineering",
+        "business-models",
+        "open-core",
+        "design",
+        "article"
+      ],
+      "links_out": [
+        "what-sgit-is",
+        "scion-and-sgit",
+        "sovereignty-is-the-ability-to-move",
+        "sgit-in-a-ci-pipeline",
+        "open-source-is-not-free",
+        "saas-apocalypse-decided-by-inertia-not-by-ai",
+        "software-vendors-as-villagers"
+      ],
+      "links_in": [
+        "a-custom-firefox-of-my-own"
+      ],
+      "figures": [
+        {
+          "file": "cv-table.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/cv-table.webp",
+          "caption": "Two constraints and what they take away: client-side encryption forbids the server from reading the data and removes the temptation to process there; open source, all of it, forbids private code and removes lock-in, the evaluation edition and building every customer's integration.",
+          "kind": "comparison"
+        },
+        {
+          "file": "cv-keys.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/cv-keys.webp",
+          "caption": "Encryption on the client moves the problem from the data to the keys: a server that can read has to protect all the data, runs code next to it, and puts the sovereignty line where the data is; a server that holds ciphertext needs the keys protected, runs no code next to the data, and puts the line at whoever holds the keys.",
+          "kind": "comparison"
+        }
+      ],
+      "graph": {
+        "slug": "the-value-of-constraints",
+        "teaser": "sgit's encryption and open source matter less as features than as constraints: they remove the temptations that lead to server code, lock-in and bad decisions.",
+        "topics": [
+          "vaults-and-method",
+          "startups-and-strategy"
+        ],
+        "core_idea": "Client-side encryption and open source are constraints whose main value is not the obvious one: encryption moves protection from the data to the keys and the sovereignty line to whoever holds them, without removing GDPR, but above all it removes the temptation to process on the server, so there is no server code and features like scoped clones follow; open source removes the temptations of lock-in, the evaluation edition and building every customer's integration, which is why it has to be all of it, and leaves selling customisation as the business model.",
+        "nodes": [
+          {
+            "id": "mistake",
+            "label": "Encryption is not the selling point",
+            "kind": "claim",
+            "summary": "Better features and workflows are."
+          },
+          {
+            "id": "constraints",
+            "label": "Constraints drive innovation",
+            "kind": "concept",
+            "summary": "An inverted U: some helps, too much hurts."
+          },
+          {
+            "id": "keys",
+            "label": "From the data to the keys",
+            "kind": "concept",
+            "summary": "Protect the keys, not every copy of the data."
+          },
+          {
+            "id": "sovereignty",
+            "label": "Sovereignty is who holds the keys",
+            "kind": "claim",
+            "summary": "The EDPB treats it as an effective measure."
+          },
+          {
+            "id": "gdpr",
+            "label": "Not out of GDPR",
+            "kind": "question",
+            "summary": "Still personal data for the key holder; Art. 34(3)(a) helps."
+          },
+          {
+            "id": "server",
+            "label": "Nothing on the server",
+            "kind": "claim",
+            "summary": "No temptation to process; no server code."
+          },
+          {
+            "id": "path",
+            "label": "clone --path and static reads",
+            "kind": "artefact",
+            "summary": "Features born of the constraint."
+          },
+          {
+            "id": "open",
+            "label": "Open source as a constraint",
+            "kind": "concept",
+            "summary": "No private code; easy to deploy and change."
+          },
+          {
+            "id": "lockin",
+            "label": "No lock-in, no curse",
+            "kind": "claim",
+            "summary": "Here is the code: integrate it, or pay for it."
+          },
+          {
+            "id": "all",
+            "label": "All of it, or an evaluation version",
+            "kind": "claim",
+            "summary": "Open core brings the dependencies back."
+          },
+          {
+            "id": "forks",
+            "label": "Relicensing produced forks",
+            "kind": "example",
+            "summary": "OpenSearch, OpenTofu, Valkey."
+          },
+          {
+            "id": "business",
+            "label": "Sell customisation",
+            "kind": "method",
+            "summary": "The model left when the bad ones are removed."
+          }
+        ],
+        "edges": [
+          {
+            "from": "mistake",
+            "to": "constraints",
+            "rel": "leads-to"
+          },
+          {
+            "from": "constraints",
+            "to": "keys",
+            "rel": "produces"
+          },
+          {
+            "from": "keys",
+            "to": "sovereignty",
+            "rel": "leads-to"
+          },
+          {
+            "from": "gdpr",
+            "to": "keys",
+            "rel": "contrasts"
+          },
+          {
+            "from": "constraints",
+            "to": "server",
+            "rel": "produces"
+          },
+          {
+            "from": "server",
+            "to": "path",
+            "rel": "produces"
+          },
+          {
+            "from": "constraints",
+            "to": "open",
+            "rel": "produces"
+          },
+          {
+            "from": "open",
+            "to": "lockin",
+            "rel": "leads-to"
+          },
+          {
+            "from": "lockin",
+            "to": "all",
+            "rel": "depends-on"
+          },
+          {
+            "from": "forks",
+            "to": "all",
+            "rel": "example-of"
+          },
+          {
+            "from": "all",
+            "to": "business",
+            "rel": "leads-to"
+          }
+        ],
+        "links": {
+          "articles": [
+            "scion-and-sgit",
+            "what-sgit-is",
+            "open-source-is-not-free",
+            "sovereignty-is-the-ability-to-move",
+            "software-vendors-as-villagers"
+          ],
+          "pages": [],
+          "sites": [
+            "https://www.edpb.europa.eu/our-work-tools/our-documents/recommendations/recommendations-012020-measures-supplement-transfer_en",
+            "https://ico.org.uk/media2/bi0bcdxr/encryption-guidance.pdf",
+            "https://openaccess.city.ac.uk/id/eprint/20459/",
+            "https://sgit.ai/"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "But I do not think anyone will buy sgit because it is encrypted.",
+            "why": "The mistake, named."
+          },
+          {
+            "text": "once nothing can run on the server, there is no server code",
+            "why": "The biggest gain."
+          },
+          {
+            "text": "A community edition that turns proprietary as soon as you use it for real is an evaluation version with a better name.",
+            "why": "Why it has to be all of it."
+          },
+          {
+            "text": "take things away until it hurts, and stop there",
+            "why": "The design rule."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "software-vendors-as-villagers",
+      "title": "Software vendors should become villagers and town planners: let users explore on top of the product, sell them the maintenance of what they build, and use Firefox as the example of what happens if you don't",
+      "date": "2026-10-16",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/software-vendors-as-villagers.html",
+      "markdown": "https://newsroom.sgit.ai/articles/software-vendors-as-villagers.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/software-vendors-as-villagers.webp",
+      "teaser": "Users can now rebuild the part of a product they need; what stops them is maintenance. Vendors should sell that, as villagers and town planners.",
+      "topics": [
+        "startups-and-strategy",
+        "agents-and-policy"
+      ],
+      "tags": [
+        "wardley-maps",
+        "explorers",
+        "villagers",
+        "town-planners",
+        "citizen-developer",
+        "firefox",
+        "mozilla",
+        "malleable-software",
+        "business-models",
+        "customisation",
+        "saas",
+        "article"
+      ],
+      "links_out": [
+        "custom-uis-are-not-the-exception",
+        "the-citizen-developer",
+        "a-custom-firefox-of-my-own",
+        "explorer-coding",
+        "dark-mode-and-four-more"
+      ],
+      "links_in": [
+        "the-value-of-constraints",
+        "explorer-coding",
+        "a-custom-firefox-of-my-own"
+      ],
+      "figures": [
+        {
+          "file": "vt-map.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/vt-map.webp",
+          "caption": "A product as explorers, villagers and town planners: users explore on top, talking to the app, keeping a personal version and writing the best brief the vendor will get; the vendor maintains customisations and turns popular ones into features; the core is a set of primitives, deterministic and accountable.",
+          "kind": "architecture"
+        },
+        {
+          "file": "vt-tiers.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/vt-tiers.webp",
+          "caption": "Four ways a user would pay the vendor: explore, free or a pound a month; keep, ten to fifty pounds a year for changes maintained across releases; adopt, fifty to five hundred pounds a change built properly; own, a maintained fork by contract.",
+          "kind": "comparison"
+        }
+      ],
+      "graph": {
+        "slug": "software-vendors-as-villagers",
+        "teaser": "Users can now rebuild the part of a product they need; what stops them is maintenance. Vendors should sell that, as villagers and town planners.",
+        "topics": [
+          "startups-and-strategy",
+          "agents-and-policy"
+        ],
+        "core_idea": "When users can rebuild the 10% of a product they need, every friction becomes a decision, and what stops them is maintaining what they built; a software company should position itself, in Wardley's terms, as the villager and town planner under its users, letting them explore on top of the product by talking to it and selling them the maintenance of their versions, from a pound to a maintained fork; Firefox, a good browser funded about 73% by royalties from mostly one customer, is the example of a product that could take that money instead.",
+        "nodes": [
+          {
+            "id": "friction",
+            "label": "Every friction is a decision",
+            "kind": "claim",
+            "summary": "Users know they could rebuild the part they need."
+          },
+          {
+            "id": "signs",
+            "label": "The signs are here",
+            "kind": "example",
+            "summary": "February's sell-off; Adobe's apps cloned in the open."
+          },
+          {
+            "id": "maintenance",
+            "label": "What stops me is maintenance",
+            "kind": "claim",
+            "summary": "Building it is cheap; keeping it working is not."
+          },
+          {
+            "id": "ewt",
+            "label": "Explorers, villagers, town planners",
+            "kind": "concept",
+            "summary": "Wardley's three kinds of people, as a product strategy."
+          },
+          {
+            "id": "position",
+            "label": "Vendor as villager and town planner",
+            "kind": "method",
+            "summary": "Users explore on top; the vendor maintains and industrialises."
+          },
+          {
+            "id": "ilc",
+            "label": "Innovate on a commodity",
+            "kind": "concept",
+            "summary": "Wardley's ILC: let the ecosystem innovate, spot what works."
+          },
+          {
+            "id": "malleable",
+            "label": "Malleable software",
+            "kind": "concept",
+            "summary": "Ink & Switch, June 2025: code generation alone is not enough."
+          },
+          {
+            "id": "tiers",
+            "label": "Explore, keep, adopt, own",
+            "kind": "artefact",
+            "summary": "From a pound a month to a maintained fork."
+          },
+          {
+            "id": "firefox",
+            "label": "Firefox, a browser I could not bend",
+            "kind": "example",
+            "summary": "Compact mode back in 157; no hidden toolbar on iPad."
+          },
+          {
+            "id": "money",
+            "label": "73% royalties",
+            "kind": "example",
+            "summary": "Mozilla 2024: $680M revenue, 86% of contract revenue from one customer."
+          },
+          {
+            "id": "settings",
+            "label": "Settings are not the answer",
+            "kind": "claim",
+            "summary": "Primitives and design systems make variation cheap."
+          },
+          {
+            "id": "who",
+            "label": "Who will make the move?",
+            "kind": "question",
+            "summary": "No vendor found doing it yet."
+          }
+        ],
+        "edges": [
+          {
+            "from": "signs",
+            "to": "friction",
+            "rel": "example-of"
+          },
+          {
+            "from": "friction",
+            "to": "maintenance",
+            "rel": "leads-to"
+          },
+          {
+            "from": "maintenance",
+            "to": "position",
+            "rel": "leads-to"
+          },
+          {
+            "from": "position",
+            "to": "ewt",
+            "rel": "depends-on"
+          },
+          {
+            "from": "position",
+            "to": "ilc",
+            "rel": "extends"
+          },
+          {
+            "from": "malleable",
+            "to": "position",
+            "rel": "compared-with"
+          },
+          {
+            "from": "position",
+            "to": "tiers",
+            "rel": "produces"
+          },
+          {
+            "from": "firefox",
+            "to": "position",
+            "rel": "example-of"
+          },
+          {
+            "from": "money",
+            "to": "tiers",
+            "rel": "contrasts"
+          },
+          {
+            "from": "settings",
+            "to": "position",
+            "rel": "depends-on"
+          },
+          {
+            "from": "who",
+            "to": "position",
+            "rel": "answers"
+          }
+        ],
+        "links": {
+          "articles": [
+            "custom-uis-are-not-the-exception",
+            "the-citizen-developer",
+            "dark-mode-and-four-more"
+          ],
+          "pages": [],
+          "sites": [
+            "https://blog.gardeviance.org/2023/12/how-to-organise-yourself-dangerous-path.html",
+            "https://www.inkandswitch.com/essay/malleable-software/",
+            "https://www.firefox.com/en-US/firefox/157.0/releasenotes/",
+            "https://stateof.mozilla.org/pdf/Mozilla%20Fdn%202024%20-%20AuditedFinancials.pdf"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "It is easy to rebuild 10% of a product's features.",
+            "why": "Why every friction is now a decision."
+          },
+          {
+            "text": "Firefox is a good browser that I could not bend.",
+            "why": "The example in one line."
+          },
+          {
+            "text": "the barrier left is not writing the code, it is who maintains it.",
+            "why": "Where the vendor's business is."
+          },
+          {
+            "text": "Every setting is a branch in the code that has to be tested forever",
+            "why": "Why settings are not the answer."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "explorer-coding",
+      "title": "Explorer coding: a better name for what people call vibe coding, what it is good for, and the handover to villagers and town planners before anyone depends on it",
+      "date": "2026-10-16",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/explorer-coding.html",
+      "markdown": "https://newsroom.sgit.ai/articles/explorer-coding.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/explorer-coding.webp",
+      "teaser": "Call it explorer coding, not vibe coding: the best thing since the spreadsheet, the best brief there is, and not ready to be in line until villagers take it.",
+      "topics": [
+        "startups-and-strategy",
+        "agents-and-policy"
+      ],
+      "tags": [
+        "explorer-coding",
+        "vibe-coding",
+        "wardley-maps",
+        "explorers",
+        "villagers",
+        "town-planners",
+        "citizen-developer",
+        "accountability",
+        "business-models",
+        "agents",
+        "article"
+      ],
+      "links_out": [
+        "saas-apocalypse-decided-by-inertia-not-by-ai",
+        "custom-uis-are-not-the-exception",
+        "the-citizen-developer",
+        "your-own-newsroom",
+        "if-somebody-built-a-company-on-code-review",
+        "agentic-cost-is-an-engineering-problem",
+        "software-vendors-as-villagers",
+        "a-custom-firefox-of-my-own"
+      ],
+      "links_in": [
+        "software-vendors-as-villagers",
+        "a-custom-firefox-of-my-own"
+      ],
+      "figures": [
+        {
+          "file": "ec-handover.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ec-handover.webp",
+          "caption": "Explorer coding and the handover that makes it last: explorers build by talking to an agent, and what they build is the brief; villagers maintain it, with policies, data handling and tests; town planners own the code in production. From left to right, fewer agents in line and more deterministic code.",
+          "kind": "architecture"
+        },
+        {
+          "file": "ec-tiers.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ec-tiers.webp",
+          "caption": "An explorer version of every product, and paid conversions from it: the explorer version where users reshape the product by talking to it; the submission, which is the brief; the villager product, maintained; and the town planner product, built properly or as a maintained fork. Proposed.",
+          "kind": "comparison"
+        }
+      ],
+      "graph": {
+        "slug": "explorer-coding",
+        "teaser": "Call it explorer coding, not vibe coding: the best thing since the spreadsheet, the best brief there is, and not ready to be in line until villagers take it.",
+        "topics": [
+          "startups-and-strategy",
+          "agents-and-policy"
+        ],
+        "core_idea": "What is called vibe coding is explorers at work, in Wardley's sense: everyone with a need can now build with the fast feedback loop that made spreadsheets win, and what they build is the best brief there is; but it is not ready to be in line, so villagers maintain it with policies, data handling and safe releases, and town planners own and answer for the code, with fewer agents in line and more deterministic code towards commodity; products should offer an explorer version, with paid conversions to villager and town planner products.",
+        "nodes": [
+          {
+            "id": "vibe",
+            "label": "Vibe coding, the word",
+            "kind": "concept",
+            "summary": "Karpathy, February 2025; it hides what is happening."
+          },
+          {
+            "id": "explorer",
+            "label": "Explorer coding",
+            "kind": "claim",
+            "summary": "The better name, from Wardley's explorers."
+          },
+          {
+            "id": "exploratory",
+            "label": "Exploratory programming",
+            "kind": "concept",
+            "summary": "The research ancestor of the term."
+          },
+          {
+            "id": "spreadsheet",
+            "label": "Since the spreadsheet",
+            "kind": "claim",
+            "summary": "A fast feedback loop for anything, for everyone."
+          },
+          {
+            "id": "hr",
+            "label": "When can I start?",
+            "kind": "example",
+            "summary": "An HR conversation this week."
+          },
+          {
+            "id": "brief",
+            "label": "The best brief there is",
+            "kind": "artefact",
+            "summary": "A working app says what its user wants."
+          },
+          {
+            "id": "inline",
+            "label": "Not ready to be in line",
+            "kind": "claim",
+            "summary": "Once people depend on it, it is mission critical."
+          },
+          {
+            "id": "villagers",
+            "label": "Villagers maintain it",
+            "kind": "method",
+            "summary": "Policies, data, tests, releases that do not break it."
+          },
+          {
+            "id": "planners",
+            "label": "Town planners own it",
+            "kind": "method",
+            "summary": "Accountable for the code in production."
+          },
+          {
+            "id": "accountable",
+            "label": "Whoever ships is accountable",
+            "kind": "example",
+            "summary": "Linux kernel and Fedora rules on AI-assisted code."
+          },
+          {
+            "id": "deterministic",
+            "label": "Fewer agents in line",
+            "kind": "concept",
+            "summary": "Towards commodity, more deterministic code."
+          },
+          {
+            "id": "versions",
+            "label": "An explorer version of every product",
+            "kind": "method",
+            "summary": "Paid conversions to villager and town planner products."
+          }
+        ],
+        "edges": [
+          {
+            "from": "explorer",
+            "to": "vibe",
+            "rel": "contrasts"
+          },
+          {
+            "from": "explorer",
+            "to": "exploratory",
+            "rel": "extends"
+          },
+          {
+            "from": "explorer",
+            "to": "spreadsheet",
+            "rel": "compared-with"
+          },
+          {
+            "from": "hr",
+            "to": "spreadsheet",
+            "rel": "example-of"
+          },
+          {
+            "from": "explorer",
+            "to": "brief",
+            "rel": "produces"
+          },
+          {
+            "from": "brief",
+            "to": "inline",
+            "rel": "leads-to"
+          },
+          {
+            "from": "inline",
+            "to": "villagers",
+            "rel": "leads-to"
+          },
+          {
+            "from": "villagers",
+            "to": "planners",
+            "rel": "leads-to"
+          },
+          {
+            "from": "accountable",
+            "to": "planners",
+            "rel": "example-of"
+          },
+          {
+            "from": "planners",
+            "to": "deterministic",
+            "rel": "depends-on"
+          },
+          {
+            "from": "versions",
+            "to": "villagers",
+            "rel": "extends"
+          }
+        ],
+        "links": {
+          "articles": [
+            "the-citizen-developer",
+            "software-vendors-as-villagers",
+            "a-custom-firefox-of-my-own",
+            "saas-apocalypse-decided-by-inertia-not-by-ai",
+            "if-somebody-built-a-company-on-code-review"
+          ],
+          "pages": [],
+          "sites": [
+            "https://blog.gardeviance.org/2023/12/how-to-organise-yourself-dangerous-path.html",
+            "https://docs.kernel.org/process/coding-assistants.html",
+            "https://en.wikipedia.org/wiki/Vibe_coding"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "Amazing! When can I start?",
+            "why": "What explorer coding means to someone in HR."
+          },
+          {
+            "text": "A working app says what its user wants better than any document, because it runs.",
+            "why": "Why it is the best brief."
+          },
+          {
+            "text": "Once something gets used, it is mission critical, because people depend on it",
+            "why": "Why the handover matters."
+          },
+          {
+            "text": "The contributor is always the author and is fully accountable for their contributions.",
+            "why": "Fedora on accountability."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "a-custom-firefox-of-my-own",
+      "title": "A custom Firefox of my own: the full plan to build one with a governed agent hive, for the laptop and the iPad, and how Mozilla could sell me the part I do not want to do, which is keeping it working",
+      "date": "2026-10-16",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/a-custom-firefox-of-my-own.html",
+      "markdown": "https://newsroom.sgit.ai/articles/a-custom-firefox-of-my-own.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/a-custom-firefox-of-my-own.webp",
+      "teaser": "A full plan to build a custom Firefox for laptop and iPad with a governed agent hive, and why the part worth paying Mozilla for is keeping it working.",
+      "topics": [
+        "agents-and-policy",
+        "startups-and-strategy"
+      ],
+      "tags": [
+        "firefox",
+        "mozilla",
+        "customisation",
+        "forks",
+        "agents",
+        "ruflo",
+        "sgit",
+        "agent-behaviour-policy",
+        "ipad",
+        "business-models",
+        "explorers",
+        "villagers",
+        "town-planners",
+        "article"
+      ],
+      "links_out": [
+        "software-vendors-as-villagers",
+        "agentics-ready-to-sell",
+        "explorer-coding",
+        "the-value-of-constraints"
+      ],
+      "links_in": [
+        "software-vendors-as-villagers",
+        "explorer-coding"
+      ],
+      "figures": [
+        {
+          "file": "fx-layers.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/fx-layers.webp",
+          "caption": "A custom Firefox, from the least invasive layer to a fork: policies, preferences, the browser's own stylesheet, an extension, and a patch set rebased every two weeks; the iPad has only one option, a fork of the separate iOS codebase.",
+          "kind": "architecture"
+        },
+        {
+          "file": "fx-loop.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/fx-loop.webp",
+          "caption": "The maintenance loop: each Firefox release starts a run in which the hive rebases the patches, rebuilds, tests each want, compares screenshots and reports, with everything in the sgit vault and every role under a behaviour policy; I approve or refuse.",
+          "kind": "architecture"
+        },
+        {
+          "file": "fx-model.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/fx-model.webp",
+          "caption": "How Mozilla could sell it: explore in the browser for free; keep your customisation tested against every release for about 50p a release; adopt a change built properly for £50 to £500; own a maintained branded build by contract, which exists today for organisations.",
+          "kind": "comparison"
+        }
+      ],
+      "graph": {
+        "slug": "a-custom-firefox-of-my-own",
+        "teaser": "A full plan to build a custom Firefox for laptop and iPad with a governed agent hive, and why the part worth paying Mozilla for is keeping it working.",
+        "topics": [
+          "agents-and-policy",
+          "startups-and-strategy"
+        ],
+        "core_idea": "A custom Firefox can be built with a Ruflo hive, an sgit vault and a behaviour policy by putting each want on the least invasive layer, policies, preferences, the browser's stylesheet and an extension, and only the rest in a renamed front-end patch set; the iPad needs a fork of the separate WebKit codebase; with releases every two weeks the real cost is maintenance on two codebases, which is what Mozilla, already selling a branded build and custom development to organisations, should sell to one person, per release or per change.",
+        "nodes": [
+          {
+            "id": "want",
+            "label": "A Firefox that stays mine",
+            "kind": "question",
+            "summary": "Laptop and iPad, next month and next year."
+          },
+          {
+            "id": "workflow",
+            "label": "Hive, memory, mandate",
+            "kind": "method",
+            "summary": "Ruflo workers, an sgit vault, a behaviour policy."
+          },
+          {
+            "id": "brief",
+            "label": "The brief and its triage",
+            "kind": "artefact",
+            "summary": "Each want to the lowest layer."
+          },
+          {
+            "id": "layers",
+            "label": "Policies, prefs, CSS, extension",
+            "kind": "method",
+            "summary": "Most wants stop before a fork."
+          },
+          {
+            "id": "fork",
+            "label": "A renamed patch set",
+            "kind": "method",
+            "summary": "Front end, artifact builds; trademark rule."
+          },
+          {
+            "id": "ipad",
+            "label": "The iPad is a second codebase",
+            "kind": "example",
+            "summary": "WebKit, Swift, a developer account."
+          },
+          {
+            "id": "cadence",
+            "label": "Every two weeks",
+            "kind": "example",
+            "summary": "Since Firefox 155: 26 releases a year."
+          },
+          {
+            "id": "loop",
+            "label": "The maintenance loop",
+            "kind": "method",
+            "summary": "Rebase, rebuild, test, report, approve."
+          },
+          {
+            "id": "agents",
+            "label": "Agents can carry patches",
+            "kind": "example",
+            "summary": "PortGPT: 89.15% on 1,815 cases; people still check."
+          },
+          {
+            "id": "enterprise",
+            "label": "Firefox Enterprise",
+            "kind": "example",
+            "summary": "A branded build and custom development, for organisations."
+          },
+          {
+            "id": "model",
+            "label": "Explore, keep, adopt, own",
+            "kind": "artefact",
+            "summary": "Free, 50p a release, £50 to £500 a change, a contract."
+          }
+        ],
+        "edges": [
+          {
+            "from": "want",
+            "to": "workflow",
+            "rel": "depends-on"
+          },
+          {
+            "from": "workflow",
+            "to": "brief",
+            "rel": "produces"
+          },
+          {
+            "from": "brief",
+            "to": "layers",
+            "rel": "leads-to"
+          },
+          {
+            "from": "layers",
+            "to": "fork",
+            "rel": "leads-to"
+          },
+          {
+            "from": "ipad",
+            "to": "fork",
+            "rel": "extends"
+          },
+          {
+            "from": "cadence",
+            "to": "loop",
+            "rel": "leads-to"
+          },
+          {
+            "from": "fork",
+            "to": "loop",
+            "rel": "depends-on"
+          },
+          {
+            "from": "agents",
+            "to": "loop",
+            "rel": "answers"
+          },
+          {
+            "from": "loop",
+            "to": "model",
+            "rel": "leads-to"
+          },
+          {
+            "from": "enterprise",
+            "to": "model",
+            "rel": "example-of"
+          }
+        ],
+        "links": {
+          "articles": [
+            "software-vendors-as-villagers",
+            "explorer-coding",
+            "the-value-of-constraints",
+            "agentics-ready-to-sell"
+          ],
+          "pages": [],
+          "sites": [
+            "https://firefox-admin-docs.mozilla.org/guides/firefox-channels/",
+            "https://blog.mozilla.org/en/firefox/introducing-firefox-enterprise/",
+            "https://ruv.sgit.ai/articles/how-it-was-made.html",
+            "https://abp.sgit.ai/what-is-an-abp/index.html"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "After that, I do not want it to break.",
+            "why": "The whole point."
+          },
+          {
+            "text": "you may not distribute a modified form of Firefox and continue to call it Firefox",
+            "why": "Why only Mozilla can ship it branded."
+          },
+          {
+            "text": "would mean we would basically have to double the size of our iOS team",
+            "why": "Why the iPad is a second codebase."
+          },
+          {
+            "text": "The plan works, and it makes the case for its own replacement.",
+            "why": "Maintenance is the product."
+          }
+        ]
+      }
+    },
+    {
       "slug": "agentics-ready-to-sell",
       "title": "Agentics, ready to sell: what we showed at Agentic Engineering Live, who else is selling agentic services and at what price, the engagement path, and a marketplace for the consultants who deliver it",
       "date": "2026-10-16",
@@ -82,7 +985,9 @@
         "article"
       ],
       "links_out": [],
-      "links_in": [],
+      "links_in": [
+        "a-custom-firefox-of-my-own"
+      ],
       "figures": [
         {
           "file": "gx-market.webp",
@@ -303,7 +1208,9 @@
         "from-send-to-sgit",
         "what-sgit-is"
       ],
-      "links_in": [],
+      "links_in": [
+        "the-value-of-constraints"
+      ],
       "figures": [
         {
           "file": "sq-architecture.webp",
@@ -1060,7 +1967,9 @@
         "riskmandate-ten-questions",
         "omnichannel-programming"
       ],
-      "links_in": [],
+      "links_in": [
+        "explorer-coding"
+      ],
       "figures": [
         {
           "file": "yn-loop.webp",
@@ -3439,6 +4348,8 @@
         "paying-after-the-value"
       ],
       "links_in": [
+        "software-vendors-as-villagers",
+        "explorer-coding",
         "the-expert-founders"
       ],
       "figures": [
@@ -7844,6 +8755,7 @@
         "two-agents-one-vault"
       ],
       "links_in": [
+        "the-value-of-constraints",
         "cedar-and-the-policy-vault",
         "sgit-actions-side-by-side",
         "agent-workflows-on-ephemeral-vaults",
@@ -10330,6 +11242,7 @@
         "the-vault-crosses-chrome-profiles"
       ],
       "links_in": [
+        "software-vendors-as-villagers",
         "the-agents-write-too"
       ],
       "figures": [
@@ -11766,6 +12679,7 @@
         "move-the-cloud-not-the-code"
       ],
       "links_in": [
+        "the-value-of-constraints",
         "the-citizen-developer",
         "the-eyeballs-get-cheap",
         "hooks-are-kernel-code",
@@ -13416,6 +14330,7 @@
         "the-article-remains-a-product"
       ],
       "links_in": [
+        "explorer-coding",
         "sovereignty-is-the-ability-to-move",
         "move-the-cloud-not-the-code",
         "why-i-love-wardley-maps"
@@ -19910,6 +20825,7 @@
         "a-meter-in-the-browser"
       ],
       "links_in": [
+        "the-value-of-constraints",
         "the-eyeballs-get-cheap",
         "pay-after-you-read"
       ],
@@ -28485,6 +29401,7 @@
         "the-question-is-whether-they-miss-it"
       ],
       "links_in": [
+        "explorer-coding",
         "the-minimum-code-below",
         "every-link-points-back",
         "explorer-to-villager-newsroom",
@@ -31000,6 +31917,8 @@
         "ultimate-insider-three-collisions"
       ],
       "links_in": [
+        "software-vendors-as-villagers",
+        "explorer-coding",
         "omnichannel-programming",
         "the-scripted-talk",
         "the-citizen-developer",
@@ -33949,6 +34868,8 @@
       ],
       "links_out": [],
       "links_in": [
+        "the-value-of-constraints",
+        "explorer-coding",
         "the-citizen-developer",
         "the-eyeballs-get-cheap",
         "a-reading-list-in-a-link",
@@ -35452,6 +36373,7 @@
       ],
       "links_out": [],
       "links_in": [
+        "the-value-of-constraints",
         "scion-and-sgit",
         "from-send-to-sgit",
         "the-citizen-developer",

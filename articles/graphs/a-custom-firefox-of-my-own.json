@@ -1,0 +1,182 @@
+{
+  "slug": "a-custom-firefox-of-my-own",
+  "teaser": "A full plan to build a custom Firefox for laptop and iPad with a governed agent hive, and why the part worth paying Mozilla for is keeping it working.",
+  "topics": [
+    "agents-and-policy",
+    "startups-and-strategy"
+  ],
+  "core_idea": "A custom Firefox can be built with a Ruflo hive, an sgit vault and a behaviour policy by putting each want on the least invasive layer, policies, preferences, the browser's stylesheet and an extension, and only the rest in a renamed front-end patch set; the iPad needs a fork of the separate WebKit codebase; with releases every two weeks the real cost is maintenance on two codebases, which is what Mozilla, already selling a branded build and custom development to organisations, should sell to one person, per release or per change.",
+  "nodes": [
+    {
+      "id": "want",
+      "label": "A Firefox that stays mine",
+      "kind": "question",
+      "summary": "Laptop and iPad, next month and next year."
+    },
+    {
+      "id": "workflow",
+      "label": "Hive, memory, mandate",
+      "kind": "method",
+      "summary": "Ruflo workers, an sgit vault, a behaviour policy."
+    },
+    {
+      "id": "brief",
+      "label": "The brief and its triage",
+      "kind": "artefact",
+      "summary": "Each want to the lowest layer."
+    },
+    {
+      "id": "layers",
+      "label": "Policies, prefs, CSS, extension",
+      "kind": "method",
+      "summary": "Most wants stop before a fork."
+    },
+    {
+      "id": "fork",
+      "label": "A renamed patch set",
+      "kind": "method",
+      "summary": "Front end, artifact builds; trademark rule."
+    },
+    {
+      "id": "ipad",
+      "label": "The iPad is a second codebase",
+      "kind": "example",
+      "summary": "WebKit, Swift, a developer account."
+    },
+    {
+      "id": "cadence",
+      "label": "Every two weeks",
+      "kind": "example",
+      "summary": "Since Firefox 155: 26 releases a year."
+    },
+    {
+      "id": "loop",
+      "label": "The maintenance loop",
+      "kind": "method",
+      "summary": "Rebase, rebuild, test, report, approve."
+    },
+    {
+      "id": "agents",
+      "label": "Agents can carry patches",
+      "kind": "example",
+      "summary": "PortGPT: 89.15% on 1,815 cases; people still check."
+    },
+    {
+      "id": "enterprise",
+      "label": "Firefox Enterprise",
+      "kind": "example",
+      "summary": "A branded build and custom development, for organisations."
+    },
+    {
+      "id": "model",
+      "label": "Explore, keep, adopt, own",
+      "kind": "artefact",
+      "summary": "Free, 50p a release, £50 to £500 a change, a contract."
+    }
+  ],
+  "edges": [
+    {
+      "from": "want",
+      "to": "workflow",
+      "rel": "depends-on"
+    },
+    {
+      "from": "workflow",
+      "to": "brief",
+      "rel": "produces"
+    },
+    {
+      "from": "brief",
+      "to": "layers",
+      "rel": "leads-to"
+    },
+    {
+      "from": "layers",
+      "to": "fork",
+      "rel": "leads-to"
+    },
+    {
+      "from": "ipad",
+      "to": "fork",
+      "rel": "extends"
+    },
+    {
+      "from": "cadence",
+      "to": "loop",
+      "rel": "leads-to"
+    },
+    {
+      "from": "fork",
+      "to": "loop",
+      "rel": "depends-on"
+    },
+    {
+      "from": "agents",
+      "to": "loop",
+      "rel": "answers"
+    },
+    {
+      "from": "loop",
+      "to": "model",
+      "rel": "leads-to"
+    },
+    {
+      "from": "enterprise",
+      "to": "model",
+      "rel": "example-of"
+    }
+  ],
+  "links": {
+    "articles": [
+      "software-vendors-as-villagers",
+      "explorer-coding",
+      "the-value-of-constraints",
+      "agentics-ready-to-sell"
+    ],
+    "pages": [],
+    "sites": [
+      "https://firefox-admin-docs.mozilla.org/guides/firefox-channels/",
+      "https://blog.mozilla.org/en/firefox/introducing-firefox-enterprise/",
+      "https://ruv.sgit.ai/articles/how-it-was-made.html",
+      "https://abp.sgit.ai/what-is-an-abp/index.html"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "After that, I do not want it to break.",
+      "why": "The whole point."
+    },
+    {
+      "text": "you may not distribute a modified form of Firefox and continue to call it Firefox",
+      "why": "Why only Mozilla can ship it branded."
+    },
+    {
+      "text": "would mean we would basically have to double the size of our iOS team",
+      "why": "Why the iPad is a second codebase."
+    },
+    {
+      "text": "The plan works, and it makes the case for its own replacement.",
+      "why": "Maintenance is the product."
+    }
+  ],
+  "figures": [
+    {
+      "file": "fx-layers.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/fx-layers.webp",
+      "caption": "A custom Firefox, from the least invasive layer to a fork: policies, preferences, the browser's own stylesheet, an extension, and a patch set rebased every two weeks; the iPad has only one option, a fork of the separate iOS codebase.",
+      "kind": "architecture"
+    },
+    {
+      "file": "fx-loop.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/fx-loop.webp",
+      "caption": "The maintenance loop: each Firefox release starts a run in which the hive rebases the patches, rebuilds, tests each want, compares screenshots and reports, with everything in the sgit vault and every role under a behaviour policy; I approve or refuse.",
+      "kind": "architecture"
+    },
+    {
+      "file": "fx-model.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/fx-model.webp",
+      "caption": "How Mozilla could sell it: explore in the browser for free; keep your customisation tested against every release for about 50p a release; adopt a change built properly for £50 to £500; own a maintained branded build by contract, which exists today for organisations.",
+      "kind": "comparison"
+    }
+  ]
+}

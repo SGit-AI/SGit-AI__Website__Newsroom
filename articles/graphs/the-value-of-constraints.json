@@ -1,0 +1,188 @@
+{
+  "slug": "the-value-of-constraints",
+  "teaser": "sgit's encryption and open source matter less as features than as constraints: they remove the temptations that lead to server code, lock-in and bad decisions.",
+  "topics": [
+    "vaults-and-method",
+    "startups-and-strategy"
+  ],
+  "core_idea": "Client-side encryption and open source are constraints whose main value is not the obvious one: encryption moves protection from the data to the keys and the sovereignty line to whoever holds them, without removing GDPR, but above all it removes the temptation to process on the server, so there is no server code and features like scoped clones follow; open source removes the temptations of lock-in, the evaluation edition and building every customer's integration, which is why it has to be all of it, and leaves selling customisation as the business model.",
+  "nodes": [
+    {
+      "id": "mistake",
+      "label": "Encryption is not the selling point",
+      "kind": "claim",
+      "summary": "Better features and workflows are."
+    },
+    {
+      "id": "constraints",
+      "label": "Constraints drive innovation",
+      "kind": "concept",
+      "summary": "An inverted U: some helps, too much hurts."
+    },
+    {
+      "id": "keys",
+      "label": "From the data to the keys",
+      "kind": "concept",
+      "summary": "Protect the keys, not every copy of the data."
+    },
+    {
+      "id": "sovereignty",
+      "label": "Sovereignty is who holds the keys",
+      "kind": "claim",
+      "summary": "The EDPB treats it as an effective measure."
+    },
+    {
+      "id": "gdpr",
+      "label": "Not out of GDPR",
+      "kind": "question",
+      "summary": "Still personal data for the key holder; Art. 34(3)(a) helps."
+    },
+    {
+      "id": "server",
+      "label": "Nothing on the server",
+      "kind": "claim",
+      "summary": "No temptation to process; no server code."
+    },
+    {
+      "id": "path",
+      "label": "clone --path and static reads",
+      "kind": "artefact",
+      "summary": "Features born of the constraint."
+    },
+    {
+      "id": "open",
+      "label": "Open source as a constraint",
+      "kind": "concept",
+      "summary": "No private code; easy to deploy and change."
+    },
+    {
+      "id": "lockin",
+      "label": "No lock-in, no curse",
+      "kind": "claim",
+      "summary": "Here is the code: integrate it, or pay for it."
+    },
+    {
+      "id": "all",
+      "label": "All of it, or an evaluation version",
+      "kind": "claim",
+      "summary": "Open core brings the dependencies back."
+    },
+    {
+      "id": "forks",
+      "label": "Relicensing produced forks",
+      "kind": "example",
+      "summary": "OpenSearch, OpenTofu, Valkey."
+    },
+    {
+      "id": "business",
+      "label": "Sell customisation",
+      "kind": "method",
+      "summary": "The model left when the bad ones are removed."
+    }
+  ],
+  "edges": [
+    {
+      "from": "mistake",
+      "to": "constraints",
+      "rel": "leads-to"
+    },
+    {
+      "from": "constraints",
+      "to": "keys",
+      "rel": "produces"
+    },
+    {
+      "from": "keys",
+      "to": "sovereignty",
+      "rel": "leads-to"
+    },
+    {
+      "from": "gdpr",
+      "to": "keys",
+      "rel": "contrasts"
+    },
+    {
+      "from": "constraints",
+      "to": "server",
+      "rel": "produces"
+    },
+    {
+      "from": "server",
+      "to": "path",
+      "rel": "produces"
+    },
+    {
+      "from": "constraints",
+      "to": "open",
+      "rel": "produces"
+    },
+    {
+      "from": "open",
+      "to": "lockin",
+      "rel": "leads-to"
+    },
+    {
+      "from": "lockin",
+      "to": "all",
+      "rel": "depends-on"
+    },
+    {
+      "from": "forks",
+      "to": "all",
+      "rel": "example-of"
+    },
+    {
+      "from": "all",
+      "to": "business",
+      "rel": "leads-to"
+    }
+  ],
+  "links": {
+    "articles": [
+      "scion-and-sgit",
+      "what-sgit-is",
+      "open-source-is-not-free",
+      "sovereignty-is-the-ability-to-move",
+      "software-vendors-as-villagers"
+    ],
+    "pages": [],
+    "sites": [
+      "https://www.edpb.europa.eu/our-work-tools/our-documents/recommendations/recommendations-012020-measures-supplement-transfer_en",
+      "https://ico.org.uk/media2/bi0bcdxr/encryption-guidance.pdf",
+      "https://openaccess.city.ac.uk/id/eprint/20459/",
+      "https://sgit.ai/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "But I do not think anyone will buy sgit because it is encrypted.",
+      "why": "The mistake, named."
+    },
+    {
+      "text": "once nothing can run on the server, there is no server code",
+      "why": "The biggest gain."
+    },
+    {
+      "text": "A community edition that turns proprietary as soon as you use it for real is an evaluation version with a better name.",
+      "why": "Why it has to be all of it."
+    },
+    {
+      "text": "take things away until it hurts, and stop there",
+      "why": "The design rule."
+    }
+  ],
+  "figures": [
+    {
+      "file": "cv-table.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/cv-table.webp",
+      "caption": "Two constraints and what they take away: client-side encryption forbids the server from reading the data and removes the temptation to process there; open source, all of it, forbids private code and removes lock-in, the evaluation edition and building every customer's integration.",
+      "kind": "comparison"
+    },
+    {
+      "file": "cv-keys.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/cv-keys.webp",
+      "caption": "Encryption on the client moves the problem from the data to the keys: a server that can read has to protect all the data, runs code next to it, and puts the sovereignty line where the data is; a server that holds ciphertext needs the keys protected, runs no code next to the data, and puts the line at whoever holds the keys.",
+      "kind": "comparison"
+    }
+  ]
+}

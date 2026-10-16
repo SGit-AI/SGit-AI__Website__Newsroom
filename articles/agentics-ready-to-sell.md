@@ -107,7 +107,9 @@ A voice memo of mine on 16 October 2026, written by this site's agent in the voi
 
 Startups & strategyAgents & policy[This article as a graph →](graphs.md#agentics-ready-to-sell)
 
-No other article links here yet.
+### Continued by
+
+- [A custom Firefox of my own: the full plan to build one with a governed agent hive, for the laptop and the iPad, and how Mozilla could sell me the part I do not want to do, which is keeping it working](a-custom-firefox-of-my-own.md) A full plan to build a custom Firefox for laptop and iPad with a governed agent hive, and why the part worth paying Mozilla for is keeping it working.
 
 [All articles](index.md) · [All graphs](graphs.md)
 

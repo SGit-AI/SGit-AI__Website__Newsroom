@@ -1,0 +1,44 @@
+{
+ "slug": "software-vendors-as-villagers",
+ "teaser": "Users can now rebuild the part of a product they need; what stops them is maintenance. Vendors should sell that, as villagers and town planners.",
+ "topics": ["startups-and-strategy", "agents-and-policy"],
+ "core_idea": "When users can rebuild the 10% of a product they need, every friction becomes a decision, and what stops them is maintaining what they built; a software company should position itself, in Wardley's terms, as the villager and town planner under its users, letting them explore on top of the product by talking to it and selling them the maintenance of their versions, from a pound to a maintained fork; Firefox, a good browser funded about 73% by royalties from mostly one customer, is the example of a product that could take that money instead.",
+ "nodes": [
+  {"id": "friction", "label": "Every friction is a decision", "kind": "claim", "summary": "Users know they could rebuild the part they need."},
+  {"id": "signs", "label": "The signs are here", "kind": "example", "summary": "February's sell-off; Adobe's apps cloned in the open."},
+  {"id": "maintenance", "label": "What stops me is maintenance", "kind": "claim", "summary": "Building it is cheap; keeping it working is not."},
+  {"id": "ewt", "label": "Explorers, villagers, town planners", "kind": "concept", "summary": "Wardley's three kinds of people, as a product strategy."},
+  {"id": "position", "label": "Vendor as villager and town planner", "kind": "method", "summary": "Users explore on top; the vendor maintains and industrialises."},
+  {"id": "ilc", "label": "Innovate on a commodity", "kind": "concept", "summary": "Wardley's ILC: let the ecosystem innovate, spot what works."},
+  {"id": "malleable", "label": "Malleable software", "kind": "concept", "summary": "Ink & Switch, June 2025: code generation alone is not enough."},
+  {"id": "tiers", "label": "Explore, keep, adopt, own", "kind": "artefact", "summary": "From a pound a month to a maintained fork."},
+  {"id": "firefox", "label": "Firefox, a browser I could not bend", "kind": "example", "summary": "Compact mode back in 157; no hidden toolbar on iPad."},
+  {"id": "money", "label": "73% royalties", "kind": "example", "summary": "Mozilla 2024: $680M revenue, 86% of contract revenue from one customer."},
+  {"id": "settings", "label": "Settings are not the answer", "kind": "claim", "summary": "Primitives and design systems make variation cheap."},
+  {"id": "who", "label": "Who will make the move?", "kind": "question", "summary": "No vendor found doing it yet."}
+ ],
+ "edges": [
+  {"from": "signs", "to": "friction", "rel": "example-of"},
+  {"from": "friction", "to": "maintenance", "rel": "leads-to"},
+  {"from": "maintenance", "to": "position", "rel": "leads-to"},
+  {"from": "position", "to": "ewt", "rel": "depends-on"},
+  {"from": "position", "to": "ilc", "rel": "extends"},
+  {"from": "malleable", "to": "position", "rel": "compared-with"},
+  {"from": "position", "to": "tiers", "rel": "produces"},
+  {"from": "firefox", "to": "position", "rel": "example-of"},
+  {"from": "money", "to": "tiers", "rel": "contrasts"},
+  {"from": "settings", "to": "position", "rel": "depends-on"},
+  {"from": "who", "to": "position", "rel": "answers"}
+ ],
+ "links": {
+  "articles": ["custom-uis-are-not-the-exception", "the-citizen-developer", "dark-mode-and-four-more"],
+  "pages": [],
+  "sites": ["https://blog.gardeviance.org/2023/12/how-to-organise-yourself-dangerous-path.html", "https://www.inkandswitch.com/essay/malleable-software/", "https://www.firefox.com/en-US/firefox/157.0/releasenotes/", "https://stateof.mozilla.org/pdf/Mozilla%20Fdn%202024%20-%20AuditedFinancials.pdf"]
+ },
+ "quotes": [
+  {"text": "It is easy to rebuild 10% of a product's features.", "why": "Why every friction is now a decision."},
+  {"text": "Firefox is a good browser that I could not bend.", "why": "The example in one line."},
+  {"text": "the barrier left is not writing the code, it is who maintains it.", "why": "Where the vendor's business is."},
+  {"text": "Every setting is a branch in the code that has to be tested forever", "why": "Why settings are not the answer."}
+ ]
+}
