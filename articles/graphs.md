@@ -14,13 +14,69 @@ Every article here has a semantic graph beside it: the ideas it rests on, the cl
 
 The graphs are data first and pictures second. Take them as JSON: [all articles in one file](graphs.json), with the topics, the teasers and the links between articles resolved, or one file per article at `articles/graphs/<slug>.json` (for example [this one](graphs/footprint-and-blast-radius.json)). The pages on this site are rendered from the same files at build time; nothing here is hand-written HTML. Since v0.7.77 each graph also carries the article's `figures`: file, URL, caption, the kind the author gave it (`wardley-map`, for one) and every frame of a multi-frame figure, so a picture and its context travel together and "every Wardley map on this site" is a filter, not a reading list.
 
-152 of 152 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
+154 of 154 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
 
 ## How the articles connect
 
 *[diagram]*
 
-152 articles, 864 links between them (1247 mentions in all). 142 articles cite an earlier one; 30 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (37 articles link to it). Most linking: [The Mandate Stack](#the-mandate-stack) (20 links out). 0 articles not yet linked either way.
+154 articles, 874 links between them (1257 mentions in all). 144 articles cite an earlier one; 33 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (37 articles link to it). Most linking: [The Mandate Stack](#the-mandate-stack) (20 links out). 0 articles not yet linked either way.
+
+## [sgit is a standard, not a server: everything in a vault is one hash away, any storage can serve it, and the server is the least interesting part](sgit-is-a-standard.md)
+
+2026-10-16 · Vaults & methodSite & engineering
+
+Like git, sgit is a format rather than a product: encrypted blobs, trees, commits and refs laid out by a convention, immutable objects named by the hash of their ciphertext and marked -imm-, every name derived from the key so a file is four GETs from any host, writes one batch and a compare-and-swap, two implementations that agree; deployment is choosing where the objects live and speed is how close they are; a cache layer computed by the writer replaces server-side derived data; and the design is what remains when the server cannot read.
+
+*[diagram]*
+**concept**claim**method**artefact**example
+
+**10 nodes, 9 edges**
+
+- **Git is a standard** (concept) Why it outlived every central server.
+- **A vault is a convention** (concept) Blobs, trees, commits, refs; all ciphertext.
+- **The name says -imm-** (method) Anyone can keep the object for ever.
+- **Everything from one hash** (claim) The key gives every name; four GETs to a file.
+- **Two implementations** (example) The CLI and the browser app agree.
+- **Any storage reads it** (claim) Bucket, CDN, GitHub Pages, a folder.
+- **Writes need one CAS** (method) The API's main job.
+- **A cache you can compute** (artefact) sgit cache add; one batch read.
+- **Merges stay on the client** (claim) A merge is a workflow step.
+- **The constraint designed it** (concept) A server that cannot read.
+
+> There is a server, and it is the least interesting part. The thesis.
+
+> "How fast is sgit" is the wrong question. The right one is where the storage is, and how close. Deployment as storage.
+
+builds on [From sending a file to sgit: eight months of SG/Send, told by its own briefs and commits, and how a file-sharing service became encrypted version control and vaults](#from-send-to-sgit), [The homepage is a vault: a fresh edition every morning, every past homepage one commit away, served from plain files, and a brief for the agent that builds it](#the-homepage-is-a-vault), [One vault, ten agents, 35,000 objects: what sgit does when the repository is big and the clients are many, measured on the vault behind this newsroom](#one-vault-ten-agents), [Scion and sgit: Anthropic rebuilt source control for agents inside one company, and an open-source encrypted version already does much of the same thing outside it](#scion-and-sgit), [The value of constraints: what client-side encryption and open source actually gave us, which is not what you would think](#the-value-of-constraints); continued by [One vault, ten agents, 35,000 objects: what sgit does when the repository is big and the clients are many, measured on the vault behind this newsroom](#one-vault-ten-agents), [Scion and sgit: Anthropic rebuilt source control for agents inside one company, and an open-source encrypted version already does much of the same thing outside it](#scion-and-sgit).
+
+## [One vault, ten agents, 35,000 objects: what sgit does when the repository is big and the clients are many, measured on the vault behind this newsroom](one-vault-ten-agents.md)
+
+2026-10-16 · Vaults & methodSite & engineering
+
+The vault the newsroom's ten agents share, 1,295 commits, 5,281 files and 35,000 encrypted objects, is the size of a real application's source repository; a full clone takes three and a half minutes but an agent takes one folder with one commit in 13 seconds and 3 MB, a file on demand in under 3, a pull in 2.5; without a depth a partial clone walks history one request per commit, a fix is designed; and from local disk the same clone is 0.8 seconds, so the time is the storage, which makes sgit plausible for source code.
+
+*[diagram]*
+**claim**method**artefact**example**question
+
+**10 nodes, 9 edges**
+
+- **The newsroom's vault** (artefact) 1,295 commits, 5,281 files, 35,000 objects.
+- **The size of real source code** (claim) Like the SG/Send repository: 5,584 files.
+- **A full clone** (example) 3½ minutes, 527 MB; nobody needs one.
+- **One folder, one commit** (method) 13 seconds, 3 MB, whatever the size.
+- **History walked per commit** (question) 227 s for a folder's full history.
+- **A commit-chain object** (method) Designed fix: 26 batched requests.
+- **The pull, fixed** (example) About 53 minutes to about 3.
+- **The time is the storage** (claim) 0.8 s from a local server.
+- **Many clients** (example) Ten scoped clones at once: 1.9 s.
+- **A code base in a vault** (question) The next test.
+
+> A clone that carries a depth costs seconds and megabytes however large the vault is The agent pattern.
+
+> So sgit is not the bottleneck; the distance to the storage is. Where the time goes.
+
+builds on [sgit is a standard, not a server: everything in a vault is one hash away, any storage can serve it, and the server is the least interesting part](#sgit-is-a-standard), [Agent workflows on ephemeral vaults: seven architectures from one agent to a swarm, a repository of recipes that gates sgit's releases, and what a hundred writers did to an append lane](#agent-workflows-on-ephemeral-vaults), [Scion and sgit: Anthropic rebuilt source control for agents inside one company, and an open-source encrypted version already does much of the same thing outside it](#scion-and-sgit); continued by [sgit is a standard, not a server: everything in a vault is one hash away, any storage can serve it, and the server is the least interesting part](#sgit-is-a-standard), [Scion and sgit: Anthropic rebuilt source control for agents inside one company, and an open-source encrypted version already does much of the same thing outside it](#scion-and-sgit).
 
 ## [Portugal and Europe, 2025: five essays on Portuguese as a programming language, an open-source sovereign cloud, regulation as graphs and Europe's chance in GenAI, and how they read a year and a half later](portugal-and-europe-2025.md)
 
@@ -214,7 +270,7 @@ Client-side encryption and open source are constraints whose main value is not t
 
 > once nothing can run on the server, there is no server code The biggest gain.
 
-builds on [Git for things you cannot put on GitHub](#what-sgit-is), [Scion and sgit: Anthropic rebuilt source control for agents inside one company, and an open-source encrypted version already does much of the same thing outside it](#scion-and-sgit), [Sovereignty is the ability to move: play where the ball is going, take away the dot, and keep a twin that works](#sovereignty-is-the-ability-to-move), [sgit in a CI pipeline: encrypted, versioned data in and out of GitHub Actions, between its jobs, through write-only lanes, and a key for every job](#sgit-in-a-ci-pipeline), [Open source is not free: who pays to keep the long tail working?](#open-source-is-not-free), [The SaaS apocalypse will be decided by inertia, not by AI](#saas-apocalypse-decided-by-inertia-not-by-ai), [Software vendors should become villagers and town planners: let users explore on top of the product, sell them the maintenance of what they build, and use Firefox as the example of what happens if you don't](#software-vendors-as-villagers); continued by [Portugal and Europe, 2025: five essays on Portuguese as a programming language, an open-source sovereign cloud, regulation as graphs and Europe's chance in GenAI, and how they read a year and a half later](#portugal-and-europe-2025), [A web application security challenge to Portugal, 2010: my IBWAS keynote in Lisbon, slide by slide, with what came true, what I got wrong and what still stands](#portugal-2010-a-challenge), [A custom Firefox of my own: the full plan to build one with a governed agent hive, for the laptop and the iPad, and how Mozilla could sell me the part I do not want to do, which is keeping it working](#a-custom-firefox-of-my-own).
+builds on [Git for things you cannot put on GitHub](#what-sgit-is), [Scion and sgit: Anthropic rebuilt source control for agents inside one company, and an open-source encrypted version already does much of the same thing outside it](#scion-and-sgit), [Sovereignty is the ability to move: play where the ball is going, take away the dot, and keep a twin that works](#sovereignty-is-the-ability-to-move), [sgit in a CI pipeline: encrypted, versioned data in and out of GitHub Actions, between its jobs, through write-only lanes, and a key for every job](#sgit-in-a-ci-pipeline), [Open source is not free: who pays to keep the long tail working?](#open-source-is-not-free), [The SaaS apocalypse will be decided by inertia, not by AI](#saas-apocalypse-decided-by-inertia-not-by-ai), [Software vendors should become villagers and town planners: let users explore on top of the product, sell them the maintenance of what they build, and use Firefox as the example of what happens if you don't](#software-vendors-as-villagers); continued by [sgit is a standard, not a server: everything in a vault is one hash away, any storage can serve it, and the server is the least interesting part](#sgit-is-a-standard), [Portugal and Europe, 2025: five essays on Portuguese as a programming language, an open-source sovereign cloud, regulation as graphs and Europe's chance in GenAI, and how they read a year and a half later](#portugal-and-europe-2025), [A web application security challenge to Portugal, 2010: my IBWAS keynote in Lisbon, slide by slide, with what came true, what I got wrong and what still stands](#portugal-2010-a-challenge), [A custom Firefox of my own: the full plan to build one with a governed agent hive, for the laptop and the iPad, and how Mozilla could sell me the part I do not want to do, which is keeping it working](#a-custom-firefox-of-my-own).
 
 ## [Software vendors should become villagers and town planners: let users explore on top of the product, sell them the maintenance of what they build, and use Firefox as the example of what happens if you don't](software-vendors-as-villagers.md)
 
@@ -339,7 +395,7 @@ continued by [GenAI in Portuguese, 2024: my OWASP Global AppSec talk in Lisbon, 
 
 2026-10-16 · Vaults & methodSite & engineering
 
-Agents broke Git's offline, full-clone assumptions at Anthropic, which built Scion: a server that does history, blame, merges and commits, immutable objects served from cache tiers, and clients that fetch only what they need; sgit reaches the same properties from the opposite design, a dumb server that stores encrypted objects named by their ciphertext, reads from any static host or CDN, and scoped, shallow and on-demand clones, measured on 0.22.0; Scion is ahead on server-side history, merge, blame and proven scale, but it is internal, while sgit is open source and encrypts everything.
+Agents broke Git's offline, full-clone assumptions at Anthropic, which built Scion: a server that does history, blame, merges and commits, immutable objects served from cache tiers, and clients that fetch only what they need; sgit reaches the same properties from the opposite design, a dumb server that stores encrypted objects named by their ciphertext, reads from any static host and objects any cache can keep, and scoped, shallow and on-demand clones, measured on the 35,000-object vault the newsroom's agents share; Scion is ahead on server-side history, merge, blame and proven scale, but it is internal, while sgit is open source and encrypts everything.
 
 *[diagram]*
 **concept**claim**method**artefact**example**question
@@ -349,12 +405,12 @@ Agents broke Git's offline, full-clone assumptions at Anthropic, which built Sci
 - **Agents broke Git's assumptions** (claim) 30,000 merges a day; always-online clients.
 - **Scion: the server does the work** (artefact) History, blame, merges server-side; cache tiers; no full copy.
 - **sgit: a dumb, blind server** (artefact) Client encrypts, merges and verifies; server stores ciphertext.
-- **Immutable ids that cache** (concept) SHA-256 of the ciphertext; served immutable for a year.
+- **Immutable ids that cache** (concept) SHA-256 of the ciphertext; the name says -imm-, so anyone can keep them.
 - **Fetch only what you need** (method) --path, --depth, --sparse.
 - **Reads from any GET host** (method) --transport static; no sgit server in the path.
 - **Compare-and-swap refs** (concept) Both move refs atomically.
-- **Measured on 0.22.0** (example) Scoped clone 4 s against 59; static host clone identical.
-- **Where Scion is ahead** (question) Server-side merge, blame, bisect; proven scale; no packing in sgit.
+- **Measured on a busy vault** (example) 35,000 objects: one folder, one commit, 13 s; the 59 s was a bug.
+- **Where Scion is ahead** (question) Server-side blame and bisect; proven scale; history walked per commit.
 - **Git side by side** (concept) Coexist in a folder; no history bridge.
 - **Internal versus open** (claim) Scion unreleased; sgit on PyPI today.
 
@@ -362,7 +418,7 @@ Agents broke Git's offline, full-clone assumptions at Anthropic, which built Sci
 
 > by no means a suitable replacement for git for general use Scion's own status.
 
-builds on [From sending a file to sgit: eight months of SG/Send, told by its own briefs and commits, and how a file-sharing service became encrypted version control and vaults](#from-send-to-sgit), [Git for things you cannot put on GitHub](#what-sgit-is); continued by [The value of constraints: what client-side encryption and open source actually gave us, which is not what you would think](#the-value-of-constraints).
+builds on [From sending a file to sgit: eight months of SG/Send, told by its own briefs and commits, and how a file-sharing service became encrypted version control and vaults](#from-send-to-sgit), [sgit is a standard, not a server: everything in a vault is one hash away, any storage can serve it, and the server is the least interesting part](#sgit-is-a-standard), [One vault, ten agents, 35,000 objects: what sgit does when the repository is big and the clients are many, measured on the vault behind this newsroom](#one-vault-ten-agents), [Git for things you cannot put on GitHub](#what-sgit-is); continued by [sgit is a standard, not a server: everything in a vault is one hash away, any storage can serve it, and the server is the least interesting part](#sgit-is-a-standard), [One vault, ten agents, 35,000 objects: what sgit does when the repository is big and the clients are many, measured on the vault behind this newsroom](#one-vault-ten-agents), [The value of constraints: what client-side encryption and open source actually gave us, which is not what you would think](#the-value-of-constraints).
 
 ## [Inside the Mesa Ranch desk: a page-by-page tour of an observation vault, from the cover to the knowledge graph you can play in time](inside-the-mesa-ranch-desk.md)
 
@@ -637,7 +693,7 @@ SG/Send began as file sharing where the server holds nothing, went live five day
 
 > Users buy credits, test once, and don't come back. Credits sit unused. What the market said, already on 5 March.
 
-builds on [No server, by design: first I retired the database, now I am retiring the back end](#no-server-by-design), [How much of this did I write? The numbers behind twenty articles in four weeks, and what the input actually was](#how-much-of-this-did-i-write), [Git for things you cannot put on GitHub](#what-sgit-is), [The agent team as it runs: one person, twelve agents, encrypted vaults, and a mailbox nobody sends from](#the-agent-team-as-it-runs); continued by [Scion and sgit: Anthropic rebuilt source control for agents inside one company, and an open-source encrypted version already does much of the same thing outside it](#scion-and-sgit), [The expert founders: why the next startups will be built by the people who know the problem, and why Europe's slower, sceptical money suits them](#the-expert-founders), [My memory, checked: thinking out loud in a voice memo, publishing only what the record supports, and why peer review has moved to before publishing](#my-memory-checked).
+builds on [No server, by design: first I retired the database, now I am retiring the back end](#no-server-by-design), [How much of this did I write? The numbers behind twenty articles in four weeks, and what the input actually was](#how-much-of-this-did-i-write), [Git for things you cannot put on GitHub](#what-sgit-is), [The agent team as it runs: one person, twelve agents, encrypted vaults, and a mailbox nobody sends from](#the-agent-team-as-it-runs); continued by [sgit is a standard, not a server: everything in a vault is one hash away, any storage can serve it, and the server is the least interesting part](#sgit-is-a-standard), [Scion and sgit: Anthropic rebuilt source control for agents inside one company, and an open-source encrypted version already does much of the same thing outside it](#scion-and-sgit), [The expert founders: why the next startups will be built by the people who know the problem, and why Europe's slower, sceptical money suits them](#the-expert-founders), [My memory, checked: thinking out loud in a voice memo, publishing only what the record supports, and why peer review has moved to before publishing](#my-memory-checked).
 
 ## [The scripted talk: a presentation as a timeline that plays on a clock, the two vaults it grows out of, and a player built for tonight's ten minutes](the-scripted-talk.md)
 
@@ -947,7 +1003,7 @@ Agents that work together can use an ephemeral encrypted vault as shared memory,
 
 > the vault's key stays in the HOST; your frame never sees it How a vault app watches agents without holding the key.
 
-builds on [Two agents, one vault: the Industry Wire is written into an encrypted vault by one agent and drawn by newsroom.sgit.ai, which holds only the read key](#two-agents-one-vault), [Encrypted memory for agents that run somewhere else: sgit deployment patterns, from a Mac mini to Kubernetes](#encrypted-memory-for-isolated-agents), [The agents write too: lessons, debriefs and a page for every agent on the newsroom, and a brief for the conductor that will keep it](#the-agents-write-too), [sgit in a CI pipeline: encrypted, versioned data in and out of GitHub Actions, between its jobs, through write-only lanes, and a key for every job](#sgit-in-a-ci-pipeline), [sgit in GitHub Actions, side by side: a showcase repository and site that runs four ways of moving a vault between jobs on every run, measured, with a budget for its LLM steps](#sgit-actions-side-by-side); continued by [Your own newsroom: how a founder can tell their story by voice memo, with an agent that checks it and publishes it to GitHub Pages, and readers who pay a little if they find it useful](#your-own-newsroom), [Cedar and the policy vault: a debrief on the policy language agents are adopting, where our behaviour policies and sgit vaults meet it, and a brief for the MVP](#cedar-and-the-policy-vault).
+builds on [Two agents, one vault: the Industry Wire is written into an encrypted vault by one agent and drawn by newsroom.sgit.ai, which holds only the read key](#two-agents-one-vault), [Encrypted memory for agents that run somewhere else: sgit deployment patterns, from a Mac mini to Kubernetes](#encrypted-memory-for-isolated-agents), [The agents write too: lessons, debriefs and a page for every agent on the newsroom, and a brief for the conductor that will keep it](#the-agents-write-too), [sgit in a CI pipeline: encrypted, versioned data in and out of GitHub Actions, between its jobs, through write-only lanes, and a key for every job](#sgit-in-a-ci-pipeline), [sgit in GitHub Actions, side by side: a showcase repository and site that runs four ways of moving a vault between jobs on every run, measured, with a budget for its LLM steps](#sgit-actions-side-by-side); continued by [One vault, ten agents, 35,000 objects: what sgit does when the repository is big and the clients are many, measured on the vault behind this newsroom](#one-vault-ten-agents), [Your own newsroom: how a founder can tell their story by voice memo, with an agent that checks it and publishes it to GitHub Pages, and readers who pay a little if they find it useful](#your-own-newsroom), [Cedar and the policy vault: a debrief on the policy language agents are adopting, where our behaviour policies and sgit vaults meet it, and a brief for the MVP](#cedar-and-the-policy-vault).
 
 ## [Hooks are kernel code: a maturity model, the first ten hooks mapped, and a brief for a hooks site and feed where you pay for state, never to run](hooks-are-kernel-code.md)
 
@@ -1358,7 +1414,7 @@ The homepage should be a fresh edition every morning, written by a scheduled job
 
 > Version control of the homepage is the feature I like most. Every past homepage, one commit away.
 
-builds on [Two agents, one vault: the Industry Wire is written into an encrypted vault by one agent and drawn by newsroom.sgit.ai, which holds only the read key](#two-agents-one-vault), [How to run synthetic users on your own site: five people who do not exist, a browser, and an afternoon](#how-to-run-synthetic-users); continued by [Omnichannel programming: briefs by voice, reviews by voice, previews on the phone, and one shared state underneath, at every stage from explorer to town planner](#omnichannel-programming).
+builds on [Two agents, one vault: the Industry Wire is written into an encrypted vault by one agent and drawn by newsroom.sgit.ai, which holds only the read key](#two-agents-one-vault), [How to run synthetic users on your own site: five people who do not exist, a browser, and an afternoon](#how-to-run-synthetic-users); continued by [sgit is a standard, not a server: everything in a vault is one hash away, any storage can serve it, and the server is the least interesting part](#sgit-is-a-standard), [Omnichannel programming: briefs by voice, reviews by voice, previews on the phone, and one shared state underneath, at every stage from explorer to town planner](#omnichannel-programming).
 
 ## [Attacks rewritten as mandates: 28 supply-chain incidents, the column each one was missing, and why the next maintainer is an agent](attacks-rewritten-as-mandates.md)
 

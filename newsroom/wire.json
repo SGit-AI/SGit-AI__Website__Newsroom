@@ -73,6 +73,71 @@
   ],
   "articles": [
     {
+      "slug": "sgit-is-a-standard",
+      "title": "sgit is a standard, not a server: everything in a vault is one hash away, any storage can serve it, and the server is the least interesting part",
+      "date": "2026-10-16",
+      "updated": "",
+      "author": "Dinis Cruz",
+      "url": "https://newsroom.sgit.ai/articles/sgit-is-a-standard.html",
+      "markdown": "https://newsroom.sgit.ai/articles/sgit-is-a-standard.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/sgit-is-a-standard.webp",
+      "graph": "https://newsroom.sgit.ai/articles/graphs/sgit-is-a-standard.json",
+      "teaser": "Git won as a standard, not a server. sgit is one too: every name computed from the key, a file four GETs away, any storage can serve it.",
+      "summary": "Git won not because of GitHub but because it is a standard: a way of laying out objects that any tool, any host and any person can read, and that GitHub, GitLab and a folder on a laptop all implement. sgit is the same kind of thing, and I think that is the most important thing to understand about it. People read encrypted git and picture a product with a server in the middle. There is a server, and it is the least interesting part. A vault is a set of encrypted files laid out by a convention: blobs, trees, commits and one mutable pointer per branch, every immutable object named by the SHA-256 of its ciphertext and marked -imm- in its name. Nothing in it has to be discovered: the vault key gives the read key, the read key gives the name of the ref, and the ref leads to the commit, the trees and the file, four plain GETs from any host that answers one. Writing is the same objects plus one compare-and-swap, which is all the API is for. Two independent implementations, the CLI and the browser app, speak it and check each other. So deploying sgit is choosing where the objects live, from a folder to a laptop to a static host to the hosted service, and how fast it is depends on how close they are. That design was not a plan to be minimal: it is what is left when the server cannot read a byte.",
+      "topics": [
+        "vaults-and-method",
+        "site-and-engineering"
+      ],
+      "tags": [
+        "sgit",
+        "standards",
+        "git",
+        "vaults",
+        "encryption",
+        "architecture",
+        "caching",
+        "static-hosting",
+        "open-source",
+        "deployment",
+        "article"
+      ],
+      "placement": [],
+      "linkedin": null,
+      "notes": []
+    },
+    {
+      "slug": "one-vault-ten-agents",
+      "title": "One vault, ten agents, 35,000 objects: what sgit does when the repository is big and the clients are many, measured on the vault behind this newsroom",
+      "date": "2026-10-16",
+      "updated": "",
+      "author": "Dinis Cruz",
+      "url": "https://newsroom.sgit.ai/articles/one-vault-ten-agents.html",
+      "markdown": "https://newsroom.sgit.ai/articles/one-vault-ten-agents.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/one-vault-ten-agents.webp",
+      "graph": "https://newsroom.sgit.ai/articles/graphs/one-vault-ten-agents.json",
+      "teaser": "The vault behind this newsroom, 35,000 objects and ten agents, measured eight ways: one folder in 13 seconds, history as the edge, storage as the bottleneck.",
+      "summary": "Anthropic's post on Scion makes one observation that holds for any version control system: when the clients are agents, they are always online, there are many of them, and the expensive thing is moving bytes nobody needs. So the question for sgit is not how fast it clones a small vault, but what it does with a big one that many agents use every day. We have one. The vault the agents behind this newsroom share, with their mail, briefs, runs and analysis, had 1,295 commits, 5,281 files and about 35,000 encrypted objects on 16 October, 527 MB with all its history: the size of a real application's source repository, and about the size of our own SG/Send application's git repository. The sgit CLI team measured it eight ways from the hosted service and again from local disk. A full clone takes three and a half minutes; nobody needs one. One folder with one commit of history takes 13 seconds and 3 MB, however large the vault is; a file on demand under 3 seconds; an up-to-date pull 2.5. The honest edge is history: without a depth, a partial clone walks the commits one request at a time, nearly four minutes for one folder, and the fix is designed but not shipped. And with the same objects on local disk, the one-folder clone is 0.8 seconds: the time is the distance to the storage, not sgit. Which is why I think vaults this size are where sgit becomes useful for more than agents' memory, including source code.",
+      "topics": [
+        "vaults-and-method",
+        "site-and-engineering"
+      ],
+      "tags": [
+        "sgit",
+        "vaults",
+        "agents",
+        "performance",
+        "measurement",
+        "partial-clones",
+        "scion",
+        "version-control",
+        "source-code",
+        "article"
+      ],
+      "placement": [],
+      "linkedin": null,
+      "notes": []
+    },
+    {
       "slug": "portugal-and-europe-2025",
       "title": "Portugal and Europe, 2025: five essays on Portuguese as a programming language, an open-source sovereign cloud, regulation as graphs and Europe's chance in GenAI, and how they read a year and a half later",
       "date": "2026-10-16",
@@ -447,8 +512,8 @@
       "markdown": "https://newsroom.sgit.ai/articles/scion-and-sgit.md",
       "card": "https://newsroom.sgit.ai/articles/cards/scion-and-sgit.webp",
       "graph": "https://newsroom.sgit.ai/articles/graphs/scion-and-sgit.json",
-      "teaser": "Anthropic's Scion replaced Git for agents inside one company; sgit, open source and encrypted, shares its core ideas from the other direction. Measured.",
-      "summary": "On 13 October Anthropic described Scion, the system that replaced Git for its monorepo after merges grew from about 2,500 a day in May to more than 30,000 in September, most of them by Claude. Git's offline, full-clone design, its post says, \"was actively undermining our ability to scale\", because nearly every client is now an always-online agent or job. Scion moves the work to the server, fetches only what a job needs, and serves immutable objects from three tiers of cache. Reading it, I recognised most of the ideas, because sgit, the encrypted version control we build in the open, arrived at many of them from the other direction. Its object ids are immutable content addresses, so objects cache for a year at a CDN; its server is a dumb store that cannot read what it holds, so reads can come from any static host; and its latest releases add scoped, shallow and on-demand clones. This site's agent checked each claim against sgit 0.22.0's code and measured it on a real vault: a scoped clone in 4 seconds against 59 for the full one, and a full clone served by a plain file server with no sgit server at all. The differences are real too. Scion does history, blame and merges on the server, and runs at a scale sgit has never been tested at; sgit does them on the client, has no blame or bisect yet, and does no packing on the server. But Scion is internal and, in Anthropic's words, \"by no means a suitable replacement for git for general use\". sgit is open source and on PyPI today, and it encrypts everything.",
+      "teaser": "Anthropic's Scion replaced Git for agents inside one company; sgit, open source and encrypted, shares its core ideas. Revised and re-measured.",
+      "summary": "On 13 October Anthropic described Scion, the system that replaced Git for its monorepo after merges grew from about 2,500 a day in May to more than 30,000 in September, most of them by Claude. Git's offline, full-clone design, its post says, \"was actively undermining our ability to scale\", because nearly every client is now an always-online agent or job. Scion moves the work to the server, fetches only what a job needs, and serves immutable objects from three tiers of cache. Reading it, I recognised most of the ideas, because sgit, the encrypted version control we build in the open, arrived at many of them from the other direction: immutable objects named by the hash of their ciphertext, which anyone can keep for ever; a server that cannot read what it holds, so reads can come from any static host; clones that take one folder, one commit or only the structure; and, like Scion, no packfiles and no maintenance. This is a revised version. The first one overstated one claim, that a CDN caches sgit's objects for a year, and its headline measurement turned out to be a bug: the 59-second clone was a size limit and a slow fallback, now fixed, and the same clone takes about 11 seconds. After the sgit CLI team reviewed it, the article now carries the measurement that answers Scion's real question, on the 35,000-object vault the agents behind this newsroom share every day: one folder with one commit of history in 13 seconds and 3 MB. The differences are real too. Scion does history, blame and merges on the server and runs at a scale sgit has never been tested at; sgit does them on the client and has no blame or bisect yet. But Scion is internal and, in Anthropic's words, \"by no means a suitable replacement for git for general use\". sgit is open source and on PyPI today, and it encrypts everything.",
       "topics": [
         "vaults-and-method",
         "site-and-engineering"
@@ -465,6 +530,7 @@
         "monorepo",
         "open-source",
         "comparison",
+        "correction",
         "article"
       ],
       "placement": [],

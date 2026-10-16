@@ -10,13 +10,14 @@
 
 # Versions of: Scion and sgit
 
-1 published version of [Scion and sgit: Anthropic rebuilt source control for agents inside one company, and an open-source encrypted version already does much of the same thing outside it](../scion-and-sgit.md). The current one is **v1.0.0**.
+2 published versions of [Scion and sgit: Anthropic rebuilt source control for agents inside one company, and an open-source encrypted version already does much of the same thing outside it](../scion-and-sgit.md). The current one is **v1.1.0**.
 
 v1.0.0 is the article as first published. A change to its text (title, abstract or body) is the next minor version, v1.1.0; a change only to its other details (a LinkedIn link, the release it belongs to) is the next patch, v1.0.1. The list is read from the site's git history at every build, so it cannot be edited by hand and cannot leave a version out. Views extracted from an article, such as the Five readers, are not part of its text and do not change its version.
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-16 | published | 2,099 | first published | [`c062663c2`](https://github.com/SGit-AI/SGit-AI__Website/commit/c062663c26412fb41cb0c8d84ac3605eafea0aaa) | [current](../scion-and-sgit.md) |
+| **v1.1.0** | 2026-10-16 | minor | 2,531 | +1,493 / −1,061 words; 8 changed, 27 added, 18 removed paragraphs | this release | [what changed](scion-and-sgit/v1.1.0.md) · [current](../scion-and-sgit.md) |
+| **v1.0.0** | 2026-10-16 | published | 2,099 | first published | [`c062663c2`](https://github.com/SGit-AI/SGit-AI__Website/commit/c062663c26412fb41cb0c8d84ac3605eafea0aaa) |  |
 
 [← Back to the article](../scion-and-sgit.md) · [All articles](../index.md)
 

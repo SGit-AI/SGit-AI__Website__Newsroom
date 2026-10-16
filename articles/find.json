@@ -75,7 +75,7 @@
     }
    ],
    "count": 27,
-   "secondary_count": 42,
+   "secondary_count": 44,
    "series": [
     "agent-team",
     "where-agents-run",
@@ -109,7 +109,7 @@
      "why": "Where the method stands now: no database, no back end, and servers that cannot read your data."
     }
    ],
-   "count": 31,
+   "count": 33,
    "secondary_count": 39,
    "series": [
     "homepage-rebuild",
@@ -187,11 +187,11 @@
  ],
  "topics_today": {
   "agents-and-policy": 76,
-  "vaults-and-method": 53,
+  "vaults-and-method": 55,
   "news-and-evidence": 28,
   "startups-and-strategy": 53,
   "graphs-and-knowledge": 33,
-  "site-and-engineering": 49
+  "site-and-engineering": 51
  },
  "vocabulary": [
   {
@@ -1096,7 +1096,7 @@
    "absorbs": [
     [
      "deployment",
-     1
+     2
     ],
     [
      "self-hosting",
@@ -1139,7 +1139,7 @@
      2
     ]
    ],
-   "count": 5
+   "count": 6
   },
   {
    "id": "encryption-and-keys",
@@ -1149,7 +1149,7 @@
    "absorbs": [
     [
      "encryption",
-     8
+     9
     ],
     [
      "zero-knowledge",
@@ -1204,7 +1204,7 @@
      1
     ]
    ],
-   "count": 18
+   "count": 19
   },
   {
    "id": "provenance",
@@ -1276,7 +1276,7 @@
     ],
     [
      "partial-clones",
-     1
+     2
     ],
     [
      "file-system",
@@ -1287,7 +1287,7 @@
      1
     ]
    ],
-   "count": 10
+   "count": 11
   },
   {
    "id": "publishing-method",
@@ -1681,7 +1681,7 @@
    "absorbs": [
     [
      "open-source",
-     18
+     19
     ],
     [
      "long-tail",
@@ -1720,7 +1720,7 @@
      1
     ]
    ],
-   "count": 22
+   "count": 23
   },
   {
    "id": "strategy",
@@ -1772,22 +1772,22 @@
  "rejected": [
   [
    "article",
-   145,
+   147,
    "format"
   ],
   [
    "agents",
-   76,
+   77,
    "too broad to choose from"
   ],
   [
    "vaults",
-   49,
+   51,
    "too broad to choose from"
   ],
   [
    "sgit",
-   36,
+   38,
    "product"
   ],
   [
@@ -1802,7 +1802,7 @@
   ],
   [
    "architecture",
-   5,
+   6,
    "too broad to choose from"
   ],
   [
@@ -2117,7 +2117,7 @@
   ],
   [
    "caching",
-   1
+   2
   ],
   [
    "case-study",
@@ -2197,6 +2197,10 @@
   ],
   [
    "corpus",
+   1
+  ],
+  [
+   "correction",
    1
   ],
   [
@@ -2377,7 +2381,7 @@
   ],
   [
    "git",
-   1
+   2
   ],
   [
    "github-actions",
@@ -2512,6 +2516,10 @@
    1
   ],
   [
+   "measurement",
+   1
+  ],
+  [
    "mentoring",
    1
   ],
@@ -2625,7 +2633,7 @@
   ],
   [
    "performance",
-   2
+   3
   ],
   [
    "pipelines",
@@ -2777,7 +2785,7 @@
   ],
   [
    "scion",
-   1
+   2
   ],
   [
    "scoped-clone",
@@ -2828,6 +2836,10 @@
    1
   ],
   [
+   "source-code",
+   1
+  ],
+  [
    "speech-to-text",
    1
   ],
@@ -2837,7 +2849,7 @@
   ],
   [
    "standards",
-   1
+   2
   ],
   [
    "state",
@@ -2845,7 +2857,7 @@
   ],
   [
    "static-hosting",
-   1
+   2
   ],
   [
    "structured-intelligence",
@@ -2921,7 +2933,7 @@
   ],
   [
    "version-control",
-   2
+   3
   ],
   [
    "versioning",
@@ -3343,7 +3355,7 @@
   "counts": {
    "field-report": 18,
    "explainer": 10,
-   "analysis": 104,
+   "analysis": 106,
    "business-plan": 4,
    "rfc": 1,
    "response": 7,
@@ -3353,11 +3365,74 @@
   }
  },
  "raw_tags": {
-  "distinct": 591,
-  "uses": 1685,
-  "singletons": 363
+  "distinct": 594,
+  "uses": 1707,
+  "singletons": 359
  },
  "articles": {
+  "sgit-is-a-standard": {
+   "desk": "vaults",
+   "desk2": "building",
+   "debatable": false,
+   "desk_by": "rule",
+   "desk_why": "Highest score: Vaults & provenance 5, next Building with agents 2",
+   "tags": [
+    "encryption-and-keys",
+    "open-source",
+    "deployment"
+   ],
+   "products": [
+    "sgit"
+   ],
+   "series": [],
+   "format": "analysis",
+   "format_label": "Analysis",
+   "format_by": "default",
+   "words": 1865,
+   "minutes": 8,
+   "headings": [
+    "In short",
+    "Git is a standard",
+    "What a vault is",
+    "Everything from one hash",
+    "Any storage implements the read half",
+    "A cache you can compute",
+    "Why the work stays on the client",
+    "The constraint that designed it",
+    "What this does not claim",
+    "Where this comes from"
+   ]
+  },
+  "one-vault-ten-agents": {
+   "desk": "vaults",
+   "desk2": "building",
+   "debatable": false,
+   "desk_by": "rule",
+   "desk_why": "Highest score: Vaults & provenance 5, next Building with agents 1",
+   "tags": [
+    "vault-design"
+   ],
+   "products": [
+    "sgit"
+   ],
+   "series": [],
+   "format": "analysis",
+   "format_label": "Analysis",
+   "format_by": "default",
+   "words": 1630,
+   "minutes": 7,
+   "headings": [
+    "In short",
+    "The vault",
+    "What an agent fetches",
+    "What an agent does every session",
+    "Where the time goes",
+    "Many clients at once",
+    "From agents' memory to source code",
+    "What this does not claim",
+    "Where this comes from"
+   ]
+  },
   "portugal-and-europe-2025": {
    "desk": "vaults",
    "desk2": "strategy",
@@ -3706,13 +3781,14 @@
    "format": "analysis",
    "format_label": "Analysis",
    "format_by": "default",
-   "words": 1830,
-   "minutes": 8,
+   "words": 2181,
+   "minutes": 9,
    "headings": [
     "In short",
+    "What changed in this version",
     "What Anthropic built",
     "Why I recognised it",
-    "Measured on 0.22.0",
+    "Measured on a real, busy vault",
     "Where Scion is ahead",
     "What it means",
     "What this does not claim",

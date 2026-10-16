@@ -1,11 +1,11 @@
 {
   "slug": "scion-and-sgit",
-  "teaser": "Anthropic's Scion replaced Git for agents inside one company; sgit, open source and encrypted, shares its core ideas from the other direction. Measured.",
+  "teaser": "Anthropic's Scion replaced Git for agents inside one company; sgit, open source and encrypted, shares its core ideas. Revised and re-measured.",
   "topics": [
     "vaults-and-method",
     "site-and-engineering"
   ],
-  "core_idea": "Agents broke Git's offline, full-clone assumptions at Anthropic, which built Scion: a server that does history, blame, merges and commits, immutable objects served from cache tiers, and clients that fetch only what they need; sgit reaches the same properties from the opposite design, a dumb server that stores encrypted objects named by their ciphertext, reads from any static host or CDN, and scoped, shallow and on-demand clones, measured on 0.22.0; Scion is ahead on server-side history, merge, blame and proven scale, but it is internal, while sgit is open source and encrypts everything.",
+  "core_idea": "Agents broke Git's offline, full-clone assumptions at Anthropic, which built Scion: a server that does history, blame, merges and commits, immutable objects served from cache tiers, and clients that fetch only what they need; sgit reaches the same properties from the opposite design, a dumb server that stores encrypted objects named by their ciphertext, reads from any static host and objects any cache can keep, and scoped, shallow and on-demand clones, measured on the 35,000-object vault the newsroom's agents share; Scion is ahead on server-side history, merge, blame and proven scale, but it is internal, while sgit is open source and encrypts everything.",
   "nodes": [
     {
       "id": "agents",
@@ -29,7 +29,7 @@
       "id": "ids",
       "label": "Immutable ids that cache",
       "kind": "concept",
-      "summary": "SHA-256 of the ciphertext; served immutable for a year."
+      "summary": "SHA-256 of the ciphertext; the name says -imm-, so anyone can keep them."
     },
     {
       "id": "partial",
@@ -51,15 +51,15 @@
     },
     {
       "id": "bench",
-      "label": "Measured on 0.22.0",
+      "label": "Measured on a busy vault",
       "kind": "example",
-      "summary": "Scoped clone 4 s against 59; static host clone identical."
+      "summary": "35,000 objects: one folder, one commit, 13 s; the 59 s was a bug."
     },
     {
       "id": "gaps",
       "label": "Where Scion is ahead",
       "kind": "question",
-      "summary": "Server-side merge, blame, bisect; proven scale; no packing in sgit."
+      "summary": "Server-side blame and bisect; proven scale; history walked per commit."
     },
     {
       "id": "git",
@@ -138,6 +138,8 @@
   ],
   "links": {
     "articles": [
+      "one-vault-ten-agents",
+      "sgit-is-a-standard",
       "from-send-to-sgit",
       "what-sgit-is"
     ],
@@ -165,21 +167,21 @@
   ],
   "figures": [
     {
-      "file": "sq-architecture.webp",
-      "url": "https://newsroom.sgit.ai/articles/images/sq-architecture.webp",
-      "caption": "Two answers to agents at scale: Scion's always-online clients, three cache tiers and a server that does history, blame, merges and commits; and sgit's clients that encrypt, merge and read history, a dumb server that stores encrypted objects, and reads that any static host or CDN can serve.",
+      "file": "sq-architecture-v2.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/sq-architecture-v2.webp",
+      "caption": "Two answers to agents at scale: Scion's always-online clients, three cache tiers and a server that does history, blame, merges and commits; and sgit's clients that encrypt, merge and read history, a dumb server that stores encrypted objects in batches of 50, and reads that any static host can serve, from objects any cache can keep.",
       "kind": "architecture"
     },
     {
-      "file": "sq-matrix.webp",
-      "url": "https://newsroom.sgit.ai/articles/images/sq-matrix.webp",
-      "caption": "Scion, sgit 0.22.0 and Git side by side: who does the work, encryption, object ids, partial copies, reads without the server, writes, merge, history queries, proven scale and availability.",
+      "file": "sq-matrix-v2.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/sq-matrix-v2.webp",
+      "caption": "Scion, sgit and Git side by side, revised: who does the work, whether the server holds plaintext, how a folder is protected, object ids, packing, partial copies, reads without the server, writes, merge, history, implementations, deployment, proven scale and availability.",
       "kind": "comparison"
     },
     {
-      "file": "sq-bench.webp",
-      "url": "https://newsroom.sgit.ai/articles/images/sq-bench.webp",
-      "caption": "One vault, five ways: a full clone in 58.6 seconds holding 12,664 KB of encrypted objects; depth 1 in 60.7 seconds; a scoped clone of one folder in 4.2 seconds and 412 KB; an on-demand clone in 3.6 seconds and 180 KB; and a full clone from a plain static file server in 1.6 seconds.",
+      "file": "sq-bench-v2.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/sq-bench-v2.webp",
+      "caption": "The measurements now: the 83-file vault this article first measured, 59 seconds with sgit 0.22.0 and about 11 with the fix, 4 seconds for one folder, 1.6 from a plain static host; and the 35,000-object vault the newsroom's agents share, 210 seconds in full, 57 with one commit of history, 13 for one folder with one commit.",
       "kind": "comparison"
     }
   ]

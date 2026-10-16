@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-16 | published | 1,394 | first published | this release | [current](../portugal-2010-a-challenge.md) |
+| **v1.0.0** | 2026-10-16 | published | 1,394 | first published | [`96399b767`](https://github.com/SGit-AI/SGit-AI__Website/commit/96399b76723378d4d98520c296ecb182ba9c0842) | [current](../portugal-2010-a-challenge.md) |
 
 [← Back to the article](../portugal-2010-a-challenge.md) · [All articles](../index.md)
 

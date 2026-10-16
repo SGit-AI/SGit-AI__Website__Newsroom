@@ -55,6 +55,401 @@
   ],
   "articles": [
     {
+      "slug": "sgit-is-a-standard",
+      "title": "sgit is a standard, not a server: everything in a vault is one hash away, any storage can serve it, and the server is the least interesting part",
+      "date": "2026-10-16",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/sgit-is-a-standard.html",
+      "markdown": "https://newsroom.sgit.ai/articles/sgit-is-a-standard.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/sgit-is-a-standard.webp",
+      "teaser": "Git won as a standard, not a server. sgit is one too: every name computed from the key, a file four GETs away, any storage can serve it.",
+      "topics": [
+        "vaults-and-method",
+        "site-and-engineering"
+      ],
+      "tags": [
+        "sgit",
+        "standards",
+        "git",
+        "vaults",
+        "encryption",
+        "architecture",
+        "caching",
+        "static-hosting",
+        "open-source",
+        "deployment",
+        "article"
+      ],
+      "links_out": [
+        "from-send-to-sgit",
+        "the-homepage-is-a-vault",
+        "one-vault-ten-agents",
+        "scion-and-sgit",
+        "the-value-of-constraints"
+      ],
+      "links_in": [
+        "one-vault-ten-agents",
+        "scion-and-sgit"
+      ],
+      "figures": [
+        {
+          "file": "sd-onehash.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/sd-onehash.webp",
+          "caption": "Everything in a vault is one hash away: the vault key gives the read key, the read key gives the ref's name by an HMAC, and the ref, the commit, the trees on the path and the blob are plain GETs; reads come from any host that answers a GET, writes need a compare-and-swap, and caching is by name, not by header.",
+          "kind": "architecture"
+        },
+        {
+          "file": "sd-storage.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/sd-storage.webp",
+          "caption": "Deploying sgit is choosing where the objects live: a folder; a laptop running the hosted image; your own server; a static host such as GitHub Pages; or the hosted service, a Lambda in front of S3 behind CloudFront; from closer and faster to further and shared.",
+          "kind": "comparison"
+        }
+      ],
+      "graph": {
+        "slug": "sgit-is-a-standard",
+        "teaser": "Git won as a standard, not a server. sgit is one too: every name computed from the key, a file four GETs away, any storage can serve it.",
+        "topics": [
+          "vaults-and-method",
+          "site-and-engineering"
+        ],
+        "core_idea": "Like git, sgit is a format rather than a product: encrypted blobs, trees, commits and refs laid out by a convention, immutable objects named by the hash of their ciphertext and marked -imm-, every name derived from the key so a file is four GETs from any host, writes one batch and a compare-and-swap, two implementations that agree; deployment is choosing where the objects live and speed is how close they are; a cache layer computed by the writer replaces server-side derived data; and the design is what remains when the server cannot read.",
+        "nodes": [
+          {
+            "id": "git",
+            "label": "Git is a standard",
+            "kind": "concept",
+            "summary": "Why it outlived every central server."
+          },
+          {
+            "id": "vault",
+            "label": "A vault is a convention",
+            "kind": "concept",
+            "summary": "Blobs, trees, commits, refs; all ciphertext."
+          },
+          {
+            "id": "imm",
+            "label": "The name says -imm-",
+            "kind": "method",
+            "summary": "Anyone can keep the object for ever."
+          },
+          {
+            "id": "hash",
+            "label": "Everything from one hash",
+            "kind": "claim",
+            "summary": "The key gives every name; four GETs to a file."
+          },
+          {
+            "id": "impls",
+            "label": "Two implementations",
+            "kind": "example",
+            "summary": "The CLI and the browser app agree."
+          },
+          {
+            "id": "storage",
+            "label": "Any storage reads it",
+            "kind": "claim",
+            "summary": "Bucket, CDN, GitHub Pages, a folder."
+          },
+          {
+            "id": "cas",
+            "label": "Writes need one CAS",
+            "kind": "method",
+            "summary": "The API's main job."
+          },
+          {
+            "id": "cache",
+            "label": "A cache you can compute",
+            "kind": "artefact",
+            "summary": "sgit cache add; one batch read."
+          },
+          {
+            "id": "client",
+            "label": "Merges stay on the client",
+            "kind": "claim",
+            "summary": "A merge is a workflow step."
+          },
+          {
+            "id": "constraint",
+            "label": "The constraint designed it",
+            "kind": "concept",
+            "summary": "A server that cannot read."
+          }
+        ],
+        "edges": [
+          {
+            "from": "git",
+            "to": "vault",
+            "rel": "extends"
+          },
+          {
+            "from": "vault",
+            "to": "imm",
+            "rel": "produces"
+          },
+          {
+            "from": "vault",
+            "to": "hash",
+            "rel": "produces"
+          },
+          {
+            "from": "impls",
+            "to": "hash",
+            "rel": "example-of"
+          },
+          {
+            "from": "hash",
+            "to": "storage",
+            "rel": "leads-to"
+          },
+          {
+            "from": "cas",
+            "to": "storage",
+            "rel": "contrasts"
+          },
+          {
+            "from": "cache",
+            "to": "hash",
+            "rel": "extends"
+          },
+          {
+            "from": "client",
+            "to": "git",
+            "rel": "depends-on"
+          },
+          {
+            "from": "constraint",
+            "to": "vault",
+            "rel": "produces"
+          }
+        ],
+        "links": {
+          "articles": [
+            "scion-and-sgit",
+            "one-vault-ten-agents",
+            "the-value-of-constraints",
+            "the-homepage-is-a-vault",
+            "from-send-to-sgit"
+          ],
+          "pages": [],
+          "sites": [
+            "https://sgit.ai/case-studies/live-vault-docs.html",
+            "https://github.com/SGit-AI/SGit-AI__CLI",
+            "https://pypi.org/project/sgit-ai/"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "There is a server, and it is the least interesting part.",
+            "why": "The thesis."
+          },
+          {
+            "text": "\"How fast is sgit\" is the wrong question. The right one is where the storage is, and how close.",
+            "why": "Deployment as storage."
+          },
+          {
+            "text": "Every feature had to be expressible as objects a writer produces and a reader derives.",
+            "why": "Why the designs are small."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "one-vault-ten-agents",
+      "title": "One vault, ten agents, 35,000 objects: what sgit does when the repository is big and the clients are many, measured on the vault behind this newsroom",
+      "date": "2026-10-16",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/one-vault-ten-agents.html",
+      "markdown": "https://newsroom.sgit.ai/articles/one-vault-ten-agents.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/one-vault-ten-agents.webp",
+      "teaser": "The vault behind this newsroom, 35,000 objects and ten agents, measured eight ways: one folder in 13 seconds, history as the edge, storage as the bottleneck.",
+      "topics": [
+        "vaults-and-method",
+        "site-and-engineering"
+      ],
+      "tags": [
+        "sgit",
+        "vaults",
+        "agents",
+        "performance",
+        "measurement",
+        "partial-clones",
+        "scion",
+        "version-control",
+        "source-code",
+        "article"
+      ],
+      "links_out": [
+        "sgit-is-a-standard",
+        "agent-workflows-on-ephemeral-vaults",
+        "scion-and-sgit"
+      ],
+      "links_in": [
+        "sgit-is-a-standard",
+        "scion-and-sgit"
+      ],
+      "figures": [
+        {
+          "file": "ov-size.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ov-size.webp",
+          "caption": "The newsroom's vault against two of our own git repositories: 5,281 files, 1,295 commits and 35,423 objects, against the SG/Send application's 5,584 files, 4,399 commits and 42,434 objects, and the sgit CLI's 1,811 files, 1,603 commits and 13,985 objects.",
+          "kind": "comparison"
+        },
+        {
+          "file": "ov-fetch.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ov-fetch.webp",
+          "caption": "What an agent fetches from the 35,000-object vault and what it costs, on a log scale: the full clone 210 seconds; the whole tree with one commit 57; one 130-file folder with one commit 13 seconds and 137 objects; structure only 27; one folder with all its history 227; the biggest folder with all its history 264; widening a clone by a folder 7.8; one file on demand 2.9; a pull with nothing new 2.5.",
+          "kind": "comparison"
+        },
+        {
+          "file": "ov-storage.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ov-storage.webp",
+          "caption": "The same vault and client with the objects in three places: hosted, a plain file server on local disk, and a local API server. Full clone 210, 111 and 69 seconds; one commit 57, 25 and 12; one folder with one commit 13, 2.3 and 0.8; one folder with all history 181 hosted against 7.1 locally; one file on demand 2.5, 1.8 and 1.8.",
+          "kind": "comparison"
+        }
+      ],
+      "graph": {
+        "slug": "one-vault-ten-agents",
+        "teaser": "The vault behind this newsroom, 35,000 objects and ten agents, measured eight ways: one folder in 13 seconds, history as the edge, storage as the bottleneck.",
+        "topics": [
+          "vaults-and-method",
+          "site-and-engineering"
+        ],
+        "core_idea": "The vault the newsroom's ten agents share, 1,295 commits, 5,281 files and 35,000 encrypted objects, is the size of a real application's source repository; a full clone takes three and a half minutes but an agent takes one folder with one commit in 13 seconds and 3 MB, a file on demand in under 3, a pull in 2.5; without a depth a partial clone walks history one request per commit, a fix is designed; and from local disk the same clone is 0.8 seconds, so the time is the storage, which makes sgit plausible for source code.",
+        "nodes": [
+          {
+            "id": "vault",
+            "label": "The newsroom's vault",
+            "kind": "artefact",
+            "summary": "1,295 commits, 5,281 files, 35,000 objects."
+          },
+          {
+            "id": "code",
+            "label": "The size of real source code",
+            "kind": "claim",
+            "summary": "Like the SG/Send repository: 5,584 files."
+          },
+          {
+            "id": "full",
+            "label": "A full clone",
+            "kind": "example",
+            "summary": "3½ minutes, 527 MB; nobody needs one."
+          },
+          {
+            "id": "depth",
+            "label": "One folder, one commit",
+            "kind": "method",
+            "summary": "13 seconds, 3 MB, whatever the size."
+          },
+          {
+            "id": "history",
+            "label": "History walked per commit",
+            "kind": "question",
+            "summary": "227 s for a folder's full history."
+          },
+          {
+            "id": "chain",
+            "label": "A commit-chain object",
+            "kind": "method",
+            "summary": "Designed fix: 26 batched requests."
+          },
+          {
+            "id": "pull",
+            "label": "The pull, fixed",
+            "kind": "example",
+            "summary": "About 53 minutes to about 3."
+          },
+          {
+            "id": "storage",
+            "label": "The time is the storage",
+            "kind": "claim",
+            "summary": "0.8 s from a local server."
+          },
+          {
+            "id": "many",
+            "label": "Many clients",
+            "kind": "example",
+            "summary": "Ten scoped clones at once: 1.9 s."
+          },
+          {
+            "id": "next",
+            "label": "A code base in a vault",
+            "kind": "question",
+            "summary": "The next test."
+          }
+        ],
+        "edges": [
+          {
+            "from": "vault",
+            "to": "code",
+            "rel": "compared-with"
+          },
+          {
+            "from": "vault",
+            "to": "full",
+            "rel": "produces"
+          },
+          {
+            "from": "depth",
+            "to": "full",
+            "rel": "contrasts"
+          },
+          {
+            "from": "history",
+            "to": "depth",
+            "rel": "contrasts"
+          },
+          {
+            "from": "chain",
+            "to": "history",
+            "rel": "answers"
+          },
+          {
+            "from": "pull",
+            "to": "vault",
+            "rel": "example-of"
+          },
+          {
+            "from": "storage",
+            "to": "depth",
+            "rel": "extends"
+          },
+          {
+            "from": "many",
+            "to": "depth",
+            "rel": "depends-on"
+          },
+          {
+            "from": "code",
+            "to": "next",
+            "rel": "leads-to"
+          }
+        ],
+        "links": {
+          "articles": [
+            "scion-and-sgit",
+            "sgit-is-a-standard",
+            "agent-workflows-on-ephemeral-vaults"
+          ],
+          "pages": [],
+          "sites": [
+            "https://pypi.org/project/sgit-ai/",
+            "https://github.com/SGit-AI/SGit-AI__CLI",
+            "https://www.anthropic.com/engineering/redesigning-source-control"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "A clone that carries a depth costs seconds and megabytes however large the vault is",
+            "why": "The agent pattern."
+          },
+          {
+            "text": "So sgit is not the bottleneck; the distance to the storage is.",
+            "why": "Where the time goes."
+          }
+        ]
+      }
+    },
+    {
       "slug": "portugal-and-europe-2025",
       "title": "Portugal and Europe, 2025: five essays on Portuguese as a programming language, an open-source sovereign cloud, regulation as graphs and Europe's chance in GenAI, and how they read a year and a half later",
       "date": "2026-10-16",
@@ -1236,6 +1631,7 @@
         "software-vendors-as-villagers"
       ],
       "links_in": [
+        "sgit-is-a-standard",
         "portugal-and-europe-2025",
         "portugal-2010-a-challenge",
         "a-custom-firefox-of-my-own"
@@ -2336,7 +2732,7 @@
       "url": "https://newsroom.sgit.ai/articles/scion-and-sgit.html",
       "markdown": "https://newsroom.sgit.ai/articles/scion-and-sgit.md",
       "card": "https://newsroom.sgit.ai/articles/cards/scion-and-sgit.webp",
-      "teaser": "Anthropic's Scion replaced Git for agents inside one company; sgit, open source and encrypted, shares its core ideas from the other direction. Measured.",
+      "teaser": "Anthropic's Scion replaced Git for agents inside one company; sgit, open source and encrypted, shares its core ideas. Revised and re-measured.",
       "topics": [
         "vaults-and-method",
         "site-and-engineering"
@@ -2353,43 +2749,48 @@
         "monorepo",
         "open-source",
         "comparison",
+        "correction",
         "article"
       ],
       "links_out": [
         "from-send-to-sgit",
+        "sgit-is-a-standard",
+        "one-vault-ten-agents",
         "what-sgit-is"
       ],
       "links_in": [
+        "sgit-is-a-standard",
+        "one-vault-ten-agents",
         "the-value-of-constraints"
       ],
       "figures": [
         {
-          "file": "sq-architecture.webp",
-          "url": "https://newsroom.sgit.ai/articles/images/sq-architecture.webp",
-          "caption": "Two answers to agents at scale: Scion's always-online clients, three cache tiers and a server that does history, blame, merges and commits; and sgit's clients that encrypt, merge and read history, a dumb server that stores encrypted objects, and reads that any static host or CDN can serve.",
+          "file": "sq-architecture-v2.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/sq-architecture-v2.webp",
+          "caption": "Two answers to agents at scale: Scion's always-online clients, three cache tiers and a server that does history, blame, merges and commits; and sgit's clients that encrypt, merge and read history, a dumb server that stores encrypted objects in batches of 50, and reads that any static host can serve, from objects any cache can keep.",
           "kind": "architecture"
         },
         {
-          "file": "sq-matrix.webp",
-          "url": "https://newsroom.sgit.ai/articles/images/sq-matrix.webp",
-          "caption": "Scion, sgit 0.22.0 and Git side by side: who does the work, encryption, object ids, partial copies, reads without the server, writes, merge, history queries, proven scale and availability.",
+          "file": "sq-matrix-v2.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/sq-matrix-v2.webp",
+          "caption": "Scion, sgit and Git side by side, revised: who does the work, whether the server holds plaintext, how a folder is protected, object ids, packing, partial copies, reads without the server, writes, merge, history, implementations, deployment, proven scale and availability.",
           "kind": "comparison"
         },
         {
-          "file": "sq-bench.webp",
-          "url": "https://newsroom.sgit.ai/articles/images/sq-bench.webp",
-          "caption": "One vault, five ways: a full clone in 58.6 seconds holding 12,664 KB of encrypted objects; depth 1 in 60.7 seconds; a scoped clone of one folder in 4.2 seconds and 412 KB; an on-demand clone in 3.6 seconds and 180 KB; and a full clone from a plain static file server in 1.6 seconds.",
+          "file": "sq-bench-v2.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/sq-bench-v2.webp",
+          "caption": "The measurements now: the 83-file vault this article first measured, 59 seconds with sgit 0.22.0 and about 11 with the fix, 4 seconds for one folder, 1.6 from a plain static host; and the 35,000-object vault the newsroom's agents share, 210 seconds in full, 57 with one commit of history, 13 for one folder with one commit.",
           "kind": "comparison"
         }
       ],
       "graph": {
         "slug": "scion-and-sgit",
-        "teaser": "Anthropic's Scion replaced Git for agents inside one company; sgit, open source and encrypted, shares its core ideas from the other direction. Measured.",
+        "teaser": "Anthropic's Scion replaced Git for agents inside one company; sgit, open source and encrypted, shares its core ideas. Revised and re-measured.",
         "topics": [
           "vaults-and-method",
           "site-and-engineering"
         ],
-        "core_idea": "Agents broke Git's offline, full-clone assumptions at Anthropic, which built Scion: a server that does history, blame, merges and commits, immutable objects served from cache tiers, and clients that fetch only what they need; sgit reaches the same properties from the opposite design, a dumb server that stores encrypted objects named by their ciphertext, reads from any static host or CDN, and scoped, shallow and on-demand clones, measured on 0.22.0; Scion is ahead on server-side history, merge, blame and proven scale, but it is internal, while sgit is open source and encrypts everything.",
+        "core_idea": "Agents broke Git's offline, full-clone assumptions at Anthropic, which built Scion: a server that does history, blame, merges and commits, immutable objects served from cache tiers, and clients that fetch only what they need; sgit reaches the same properties from the opposite design, a dumb server that stores encrypted objects named by their ciphertext, reads from any static host and objects any cache can keep, and scoped, shallow and on-demand clones, measured on the 35,000-object vault the newsroom's agents share; Scion is ahead on server-side history, merge, blame and proven scale, but it is internal, while sgit is open source and encrypts everything.",
         "nodes": [
           {
             "id": "agents",
@@ -2413,7 +2814,7 @@
             "id": "ids",
             "label": "Immutable ids that cache",
             "kind": "concept",
-            "summary": "SHA-256 of the ciphertext; served immutable for a year."
+            "summary": "SHA-256 of the ciphertext; the name says -imm-, so anyone can keep them."
           },
           {
             "id": "partial",
@@ -2435,15 +2836,15 @@
           },
           {
             "id": "bench",
-            "label": "Measured on 0.22.0",
+            "label": "Measured on a busy vault",
             "kind": "example",
-            "summary": "Scoped clone 4 s against 59; static host clone identical."
+            "summary": "35,000 objects: one folder, one commit, 13 s; the 59 s was a bug."
           },
           {
             "id": "gaps",
             "label": "Where Scion is ahead",
             "kind": "question",
-            "summary": "Server-side merge, blame, bisect; proven scale; no packing in sgit."
+            "summary": "Server-side blame and bisect; proven scale; history walked per commit."
           },
           {
             "id": "git",
@@ -2522,6 +2923,8 @@
         ],
         "links": {
           "articles": [
+            "one-vault-ten-agents",
+            "sgit-is-a-standard",
             "from-send-to-sgit",
             "what-sgit-is"
           ],
@@ -4525,6 +4928,7 @@
         "the-agent-team-as-it-runs"
       ],
       "links_in": [
+        "sgit-is-a-standard",
         "scion-and-sgit",
         "the-expert-founders",
         "my-memory-checked"
@@ -6921,6 +7325,7 @@
         "sgit-actions-side-by-side"
       ],
       "links_in": [
+        "one-vault-ten-agents",
         "your-own-newsroom",
         "cedar-and-the-policy-vault"
       ],
@@ -10151,6 +10556,7 @@
         "how-to-run-synthetic-users"
       ],
       "links_in": [
+        "sgit-is-a-standard",
         "omnichannel-programming"
       ],
       "figures": [
