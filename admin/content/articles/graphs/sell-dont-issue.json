@@ -1,0 +1,41 @@
+{
+ "slug": "sell-dont-issue",
+ "teaser": "For founders who have already won: the investor buys the founder's shares, the founder lends the company what it needs, and open source keeps everyone honest.",
+ "topics": ["startups-and-strategy"],
+ "core_idea": "A founder with a working, profitable product and competing investors can sell existing shares instead of issuing new ones, so the founder is paid and no control changes hands, then lend part of the proceeds back as a subordinated loan; open source replaces control rights as the investor's protection, because a fork gets the position but not the velocity; the costs are real: no EIS on bought shares, a signalling problem, a creditor conflict, and tax and articles fine print.",
+ "nodes": [
+  {"id": "strength", "label": "Start from strength", "kind": "claim", "summary": "Profit, growth, competing investors."},
+  {"id": "sell", "label": "Sell, don't issue", "kind": "method", "summary": "The investor buys the founder's ordinary shares."},
+  {"id": "lend", "label": "Lend, don't dilute", "kind": "method", "summary": "A subordinated founder loan, repaid from success."},
+  {"id": "fork", "label": "The fork as insurance", "kind": "concept", "summary": "Position, not velocity."},
+  {"id": "example", "label": "The same £2m, two ways", "kind": "artefact", "summary": "80% either way; who holds cash and control changes."},
+  {"id": "odds", "label": "Why it raises the odds", "kind": "claim", "summary": "Money discipline, focus, direction."},
+  {"id": "eis", "label": "No EIS on bought shares", "kind": "question", "summary": "Relief only on newly issued shares."},
+  {"id": "signal", "label": "It can read as doubt", "kind": "question", "summary": "Balderton: 10% at growth stage."},
+  {"id": "creditor", "label": "Founder as creditor", "kind": "question", "summary": "Subordinate the loan by contract."},
+  {"id": "fineprint", "label": "The fine print", "kind": "question", "summary": "Transfer rights, above-market sales, results-linked interest."},
+  {"id": "controllable", "label": "The controllable founder", "kind": "concept", "summary": "The deal this is designed against."}
+ ],
+ "edges": [
+  {"from": "strength", "to": "sell", "rel": "leads-to"},
+  {"from": "sell", "to": "lend", "rel": "leads-to"},
+  {"from": "fork", "to": "sell", "rel": "answers"},
+  {"from": "example", "to": "sell", "rel": "example-of"},
+  {"from": "lend", "to": "odds", "rel": "produces"},
+  {"from": "eis", "to": "sell", "rel": "contrasts"},
+  {"from": "signal", "to": "sell", "rel": "contrasts"},
+  {"from": "creditor", "to": "lend", "rel": "contrasts"},
+  {"from": "fineprint", "to": "sell", "rel": "depends-on"},
+  {"from": "controllable", "to": "strength", "rel": "leads-to"}
+ ],
+ "links": {
+  "articles": ["the-controllable-founder", "the-expert-founders", "the-value-of-constraints", "paying-after-the-value"],
+  "pages": [],
+  "sites": ["https://open-source.sgit.ai/views/index.html", "https://www.gov.uk/guidance/venture-capital-schemes-tax-relief-for-investors", "https://www.gov.uk/business-asset-disposal-relief"]
+ },
+ "quotes": [
+  {"text": "So the investor's protection moves from the contract to the commons.", "why": "The core move."},
+  {"text": "the fork disciplines the founder because it is possible, and protects the founder because it is slow.", "why": "Why the fork balances."},
+  {"text": "no part of the money buys the steering wheel", "why": "What matters in any mix."}
+ ]
+}

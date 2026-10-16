@@ -1,0 +1,177 @@
+{
+  "slug": "the-controllable-founder",
+  "teaser": "Why investors pick one founder over another who looks just as good: coachability, contracts that move control, and who the commodity is.",
+  "topics": [
+    "startups-and-strategy",
+    "news-and-evidence"
+  ],
+  "core_idea": "We study survivors, so the question is why one founder was chosen over another who did the same; the hypothesis is that investors select partly for control, moving the founder towards commodity as labels did to performers; investors prefer coachable founders though coachability does not reliably predict success, contracts hand control to investors when performance is poor and make leaving expensive, and half of founders were replaced by year three; founder control lowers valuations, but over the long run founder-led companies returned more, and the hypothesis can be tested.",
+  "nodes": [
+    {
+      "id": "survivors",
+      "label": "We study survivors",
+      "kind": "concept",
+      "summary": "Denrell, 2003: undersampling of failure."
+    },
+    {
+      "id": "hypothesis",
+      "label": "Investors select for control",
+      "kind": "claim",
+      "summary": "One deciding factor between equal founders."
+    },
+    {
+      "id": "commodity",
+      "label": "The founder as commodity",
+      "kind": "concept",
+      "summary": "As labels did to performers."
+    },
+    {
+      "id": "coachable",
+      "label": "Coachability",
+      "kind": "example",
+      "summary": "Preferred, but does not reliably predict success."
+    },
+    {
+      "id": "contract",
+      "label": "Control in the contract",
+      "kind": "example",
+      "summary": "Kaplan and Strömberg: control moves with performance."
+    },
+    {
+      "id": "replaced",
+      "label": "Founders replaced",
+      "kind": "example",
+      "summary": "Half gone as CEO by year three."
+    },
+    {
+      "id": "value",
+      "label": "The investors' answer",
+      "kind": "claim",
+      "summary": "Founder control lowers valuation 17 to 22% per level."
+    },
+    {
+      "id": "longrun",
+      "label": "The long run",
+      "kind": "example",
+      "summary": "Founder-led S&P 500 companies: 3.1x returns, 1990 to 2014."
+    },
+    {
+      "id": "stick",
+      "label": "The big stick",
+      "kind": "concept",
+      "summary": "I leave and you cannot replace me; dual-class shares."
+    },
+    {
+      "id": "test",
+      "label": "How to test it",
+      "kind": "question",
+      "summary": "Follow the ratings; compare the mission; count the refusers."
+    },
+    {
+      "id": "europe",
+      "label": "Strong-minded founders",
+      "kind": "claim",
+      "summary": "The profile the filter screens out."
+    }
+  ],
+  "edges": [
+    {
+      "from": "survivors",
+      "to": "hypothesis",
+      "rel": "leads-to"
+    },
+    {
+      "from": "commodity",
+      "to": "hypothesis",
+      "rel": "extends"
+    },
+    {
+      "from": "coachable",
+      "to": "hypothesis",
+      "rel": "example-of"
+    },
+    {
+      "from": "contract",
+      "to": "hypothesis",
+      "rel": "example-of"
+    },
+    {
+      "from": "replaced",
+      "to": "contract",
+      "rel": "depends-on"
+    },
+    {
+      "from": "value",
+      "to": "hypothesis",
+      "rel": "contrasts"
+    },
+    {
+      "from": "longrun",
+      "to": "value",
+      "rel": "contrasts"
+    },
+    {
+      "from": "stick",
+      "to": "contract",
+      "rel": "extends"
+    },
+    {
+      "from": "test",
+      "to": "hypothesis",
+      "rel": "answers"
+    },
+    {
+      "from": "hypothesis",
+      "to": "europe",
+      "rel": "leads-to"
+    }
+  ],
+  "links": {
+    "articles": [
+      "sell-dont-issue",
+      "the-expert-founders",
+      "why-i-love-wardley-maps"
+    ],
+    "pages": [],
+    "sites": [
+      "https://www.gsb.stanford.edu/faculty-research/publications/vicarious-learning-undersampling-failure-myths-management",
+      "https://doi.org/10.1111/1467-937X.00245",
+      "https://doi.org/10.1002/smj.2478",
+      "https://media.bain.com/Images/CHART_DIGEST_Barriers_and_Pathways_to_Sustainable_Growth.pdf"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "Coachability is a polite word for it. Controllability is a less polite one.",
+      "why": "The hypothesis in two sentences."
+    },
+    {
+      "text": "Replaceability is not an accident of venture capital; it is designed in.",
+      "why": "What the contracts show."
+    },
+    {
+      "text": "It is to get to the big stick before you need their money",
+      "why": "The practical conclusion."
+    }
+  ],
+  "figures": [
+    {
+      "file": "fo-survivors.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/fo-survivors.webp",
+      "caption": "We study the survivors: of everyone who made the same moves, a few won and are studied; others were funded, did the same and failed; most did the same and were never funded. A risky practice can be unrelated to success across everyone and still look like its cause among survivors. Illustrative.",
+      "kind": "comparison"
+    },
+    {
+      "file": "fo-commodity.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/fo-commodity.webp",
+      "caption": "Who is the commodity: in music, the songs, the producers, the venues and radio stay scarce while the performer is moved towards commodity; in venture, the investor's network stays scarce while the founder is moved the same way. A sketch of the argument, not a measured map.",
+      "kind": "architecture"
+    },
+    {
+      "file": "fo-control.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/fo-control.webp",
+      "caption": "Control moves with performance: when a company performs poorly, investors take full control; as it improves, the founder gains control; when it performs very well, investors keep their cash-flow rights but give up most control. A schematic of Kaplan and Strömberg's finding, not their data.",
+      "kind": "comparison"
+    }
+  ]
+}

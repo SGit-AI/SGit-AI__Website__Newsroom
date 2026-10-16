@@ -4,18 +4,18 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.12.81 · 155 articles since 2026-08-17; the newest is 2026-10-16. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v0.12.82 · 157 articles since 2026-08-17; the newest is 2026-10-16. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## The lead
 
-- [Research, delivered as a vault: what companies that sell research could do with fractal graphs, behaviour policies for AI-enabled products, and evaluations run by a governed agent hive](articles/research-delivered-as-a-vault.md), 2026-10-16, 10 min. Companies that sell research could deliver it as a vault: evidence, a fractal graph, briefings per reader, behaviour policies for AI products, a lane back.
+- [The controllable founder: why investors pick one founder over another who looks just as good, and what record labels taught us about who the commodity is](articles/the-controllable-founder.md), 2026-10-16, 13 min. Why investors pick one founder over another who looks just as good: coachability, contracts that move control, and who the commodity is.
 
 ## Highlights
 
+- [Sell, don't issue: a funding model for founders who have already won, where the investor buys the founder's shares, the founder lends the company what it needs, and open source keeps everyone honest](articles/sell-dont-issue.md), 2026-10-16, 14 min.
+- [Research, delivered as a vault: what companies that sell research could do with fractal graphs, behaviour policies for AI-enabled products, and evaluations run by a governed agent hive](articles/research-delivered-as-a-vault.md), 2026-10-16, 10 min.
 - [sgit is a standard, not a server: everything in a vault is one hash away, any storage can serve it, and the server is the least interesting part](articles/sgit-is-a-standard.md), 2026-10-16, 8 min.
 - [One vault, ten agents, 35,000 objects: what sgit does when the repository is big and the clients are many, measured on the vault behind this newsroom](articles/one-vault-ten-agents.md), 2026-10-16, 7 min.
-- [Portugal and Europe, 2025: five essays on Portuguese as a programming language, an open-source sovereign cloud, regulation as graphs and Europe's chance in GenAI, and how they read a year and a half later](articles/portugal-and-europe-2025.md), 2026-10-16, 5 min.
-- [GenAI in Portuguese, 2024: my OWASP Global AppSec talk in Lisbon, the first public demo of The Cyber Boardroom, slide by slide, with what two years of agents have confirmed and changed](articles/portugal-2024-genai-in-portuguese.md), 2026-10-16, 5 min.
 
 ## Who are you reading as?
 
@@ -52,11 +52,11 @@ For editors, journalists and publishers asking how news gets paid for when agent
 - [A web application security challenge to Portugal, 2010: my IBWAS keynote in Lisbon, slide by slide, with what came true, what I got wrong and what still stands](articles/portugal-2010-a-challenge.md), 2026-10-16, 5 min.
 - [Inside the Mesa Ranch desk: a page-by-page tour of an observation vault, from the cover to the knowledge graph you can play in time](articles/inside-the-mesa-ranch-desk.md), 2026-10-15, 10 min.
 
-### Strategy & startups (26)
+### Strategy & startups (28)
 For founders and investors: pricing, early access, Wardley maps and who pays for open source.
+- [The controllable founder: why investors pick one founder over another who looks just as good, and what record labels taught us about who the commodity is](articles/the-controllable-founder.md), 2026-10-16, 13 min.
+- [Sell, don't issue: a funding model for founders who have already won, where the investor buys the founder's shares, the founder lends the company what it needs, and open source keeps everyone honest](articles/sell-dont-issue.md), 2026-10-16, 14 min.
 - [Software vendors should become villagers and town planners: let users explore on top of the product, sell them the maintenance of what they build, and use Firefox as the example of what happens if you don't](articles/software-vendors-as-villagers.md), 2026-10-16, 8 min.
-- [Explorer coding: a better name for what people call vibe coding, what it is good for, and the handover to villagers and town planners before anyone depends on it](articles/explorer-coding.md), 2026-10-16, 7 min.
-- [Agentics, ready to sell: what we showed at Agentic Engineering Live, who else is selling agentic services and at what price, the engagement path, and a marketplace for the consultants who deliver it](articles/agentics-ready-to-sell.md), 2026-10-16, 9 min.
 
 ## Collections
 
