@@ -4,18 +4,18 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.12.72 · 141 articles since 2026-08-17; the newest is 2026-10-16. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v0.12.73 · 142 articles since 2026-08-17; the newest is 2026-10-16. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## The lead
 
-- [Scion and sgit: Anthropic rebuilt source control for agents inside one company, and an open-source encrypted version already does much of the same thing outside it](articles/scion-and-sgit.md), 2026-10-16, 8 min. Anthropic's Scion replaced Git for agents inside one company; sgit, open source and encrypted, shares its core ideas from the other direction. Measured.
+- [Agentics, ready to sell: what we showed at Agentic Engineering Live, who else is selling agentic services and at what price, the engagement path, and a marketplace for the consultants who deliver it](articles/agentics-ready-to-sell.md), 2026-10-16, 9 min. After the London talk, agentics is ready to sell: the market and its prices, our evidence-first position, the engagement path, and a consultants marketplace.
 
 ## Highlights
 
+- [Scion and sgit: Anthropic rebuilt source control for agents inside one company, and an open-source encrypted version already does much of the same thing outside it](articles/scion-and-sgit.md), 2026-10-16, 8 min.
 - [Inside the Mesa Ranch desk: a page-by-page tour of an observation vault, from the cover to the knowledge graph you can play in time](articles/inside-the-mesa-ranch-desk.md), 2026-10-15, 10 min.
 - [When journalism becomes intelligence, built: an observation desk for one data-center buildout, from an atlas of 78 events to a community impact tracker, in a vault you can open](articles/journalism-becomes-intelligence.md), 2026-10-15, 9 min.
 - [Your own newsroom: how a founder can tell their story by voice memo, with an agent that checks it and publishes it to GitHub Pages, and readers who pay a little if they find it useful](articles/your-own-newsroom.md), 2026-10-15, 12 min.
-- [The expert founders: why the next startups will be built by the people who know the problem, and why Europe's slower, sceptical money suits them](articles/the-expert-founders.md), 2026-10-15, 12 min.
 
 ## Who are you reading as?
 
@@ -52,11 +52,11 @@ For editors, journalists and publishers asking how news gets paid for when agent
 - [When journalism becomes intelligence, built: an observation desk for one data-center buildout, from an atlas of 78 events to a community impact tracker, in a vault you can open](articles/journalism-becomes-intelligence.md), 2026-10-15, 9 min.
 - [The wire as a graph: start from what the reader sees, give every story and every name a long-lived ID, link every phrase of a short narrative, and a brief for the desks](articles/the-wire-as-a-graph.md), 2026-10-14, 10 min.
 
-### Strategy & startups (23)
+### Strategy & startups (24)
 For founders and investors: pricing, early access, Wardley maps and who pays for open source.
+- [Agentics, ready to sell: what we showed at Agentic Engineering Live, who else is selling agentic services and at what price, the engagement path, and a marketplace for the consultants who deliver it](articles/agentics-ready-to-sell.md), 2026-10-16, 9 min.
 - [The expert founders: why the next startups will be built by the people who know the problem, and why Europe's slower, sceptical money suits them](articles/the-expert-founders.md), 2026-10-15, 12 min.
 - [The citizen developer is good news: the spreadsheet grown up, the best briefs ever written, and the handover from explorers to villagers and town planners that makes them last](articles/the-citizen-developer.md), 2026-10-14, 6 min.
-- [Paying after the value: why a balance that can go negative feels different from a subscription, the psychology behind it, and the experiment this newsroom is running](articles/paying-after-the-value.md), 2026-10-14, 8 min.
 
 ## Collections
 

@@ -14,13 +14,41 @@ Every article here has a semantic graph beside it: the ideas it rests on, the cl
 
 The graphs are data first and pictures second. Take them as JSON: [all articles in one file](graphs.json), with the topics, the teasers and the links between articles resolved, or one file per article at `articles/graphs/<slug>.json` (for example [this one](graphs/footprint-and-blast-radius.json)). The pages on this site are rendered from the same files at build time; nothing here is hand-written HTML. Since v0.7.77 each graph also carries the article's `figures`: file, URL, caption, the kind the author gave it (`wardley-map`, for one) and every frame of a multi-frame figure, so a picture and its context travel together and "every Wardley map on this site" is a filter, not a reading list.
 
-141 of 141 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
+142 of 142 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
 
 ## How the articles connect
 
 *[diagram]*
 
-141 articles, 798 links between them (1181 mentions in all). 132 articles cite an earlier one; 16 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Footprint and blast radius](#footprint-and-blast-radius) (34 articles link to it). Most linking: [The Mandate Stack](#the-mandate-stack) (20 links out). 0 articles not yet linked either way.
+142 articles, 798 links between them (1181 mentions in all). 132 articles cite an earlier one; 16 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Footprint and blast radius](#footprint-and-blast-radius) (34 articles link to it). Most linking: [The Mandate Stack](#the-mandate-stack) (20 links out). 1 article not yet linked either way.
+
+## [Agentics, ready to sell: what we showed at Agentic Engineering Live, who else is selling agentic services and at what price, the engagement path, and a marketplace for the consultants who deliver it](agentics-ready-to-sell.md)
+
+2026-10-16 · Startups & strategyAgents & policy
+
+The talk at Agentic Engineering Live showed a governed agent hive end to end, a Ruflo hive with Claude Code workers, an sgit vault per run and behaviour policies per role, with its evidence published; the market for agentic services is crowded at the top with platforms, partner networks and forward-deployed engineers, and boutiques sell fixed-price audits from £2,500, while Gartner expects over 40% of agentic projects to be cancelled by 2027; our position is evidence first, every engagement leaving a vault and a ledger the client keeps, sold along a path from a cheap first run to a four-day pilot, and delivered through a curated marketplace of consultants, Mondweep Chakravorty and Dinis Cruz first.
+
+*[diagram]*
+**concept**claim**method**artefact**example**question
+
+**12 nodes, 11 edges**
+
+- **The talk that ran itself** (example) 26 slides on a clock, built by the method it described.
+- **A hive, a memory and a mandate** (concept) Ruflo, an sgit vault per run, a behaviour policy per role.
+- **The run ledger** (artefact) 28 workers, 57 commits, no plaintext found, every clone identical.
+- **Who else sells agentic services** (concept) Consultancies, vendor partners, forward-deployed engineers, boutiques.
+- **Cognitum consulting** (example) Four-week discovery on the same stack; prices by scope.
+- **Fixed-price boutiques** (example) £2,500 audits, €2,900 sprints, $4,999 assessments.
+- **The trust gap** (claim) Over 40% of agentic projects expected to be cancelled by 2027.
+- **Evidence first** (claim) Every engagement leaves a vault and a ledger the client keeps.
+- **The engagement path** (method) A run, expert time, a pilot, then a maintained setup.
+- **A consultants marketplace** (method) Project type first, then the people; Mondweep and Dinis first.
+- **How to join** (method) Apply, proof of work, peer review, interview, pilot, standards.
+- **Who else wants to join?** (question) An invitation to the community.
+
+> Over 40% of agentic AI projects will be canceled by the end of 2027 The gap in the market.
+
+> Most offers in the market promise governance; few hand the client the record. Our position.
 
 ## [Scion and sgit: Anthropic rebuilt source control for agents inside one company, and an open-source encrypted version already does much of the same thing outside it](scion-and-sgit.md)
 

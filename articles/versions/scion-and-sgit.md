@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-16 | published | 2,099 | first published | this release | [current](../scion-and-sgit.md) |
+| **v1.0.0** | 2026-10-16 | published | 2,099 | first published | [`c062663c2`](https://github.com/SGit-AI/SGit-AI__Website/commit/c062663c26412fb41cb0c8d84ac3605eafea0aaa) | [current](../scion-and-sgit.md) |
 
 [← Back to the article](../scion-and-sgit.md) · [All articles](../index.md)
 
