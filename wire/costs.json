@@ -3,11 +3,11 @@
  "kept_by": "newsroom.accountant",
  "runs": {
   "total": {
-   "runs": 8,
-   "cost_usd": 13.828692,
+   "runs": 9,
+   "cost_usd": 14.0076,
    "published": 2,
-   "blocked": 6,
-   "refused": 13
+   "blocked": 7,
+   "refused": 18
   },
   "per_edition_usd": 6.3173,
   "by_task": {
@@ -42,16 +42,24 @@
     "blocked": 2,
     "output": 3361,
     "duration_s": 150.4
+   },
+   "dinis": {
+    "runs": 1,
+    "cost_usd": 0.178908,
+    "published": 0,
+    "blocked": 1,
+    "output": 2761,
+    "duration_s": 1286.7
    }
   },
   "by_day": {
    "2026-10-16": {
-    "runs": 6,
-    "cost_usd": 13.474184,
+    "runs": 7,
+    "cost_usd": 13.653092,
     "published": 2,
-    "blocked": 4,
-    "output": 936910,
-    "duration_s": 2420.7
+    "blocked": 5,
+    "output": 939671,
+    "duration_s": 3707.4
    },
    "2026-10-15": {
     "runs": 1,
@@ -80,12 +88,12 @@
     "thinking": 19418
    },
    "claude-sonnet-5-5": {
-    "cost_usd": 4.828902,
-    "input": 282,
-    "output": 168570,
-    "cache_read": 9908408,
-    "cache_write": 724058,
-    "thinking": 25073
+    "cost_usd": 5.00781,
+    "input": 304,
+    "output": 171331,
+    "cache_read": 10295466,
+    "cache_write": 752195,
+    "thinking": 25430
    },
    "claude-haiku-5-5": {
     "cost_usd": 0.796784,
@@ -97,6 +105,36 @@
    }
   },
   "rows": [
+   {
+    "id": "d8bd42b01d0f",
+    "task": "dinis",
+    "trigger": "trig_01HpWP4wn9pvaWDi2XC5AnQo",
+    "fired_at": "2026-10-16T12:08:23Z",
+    "finished_at": "2026-10-16T12:29:57Z",
+    "duration_s": 1286.7,
+    "models": {
+     "claude-sonnet-5-5": {
+      "cost_usd": 0.178908,
+      "input": 22,
+      "output": 2761,
+      "cache_read": 387058,
+      "cache_write": 28137,
+      "thinking": 357
+     }
+    },
+    "cost_usd": 0.178908,
+    "turns": 16,
+    "subagents": 0,
+    "refused": 5,
+    "refused_kinds": [
+     "web fetch"
+    ],
+    "outcome": "blocked",
+    "release": null,
+    "added": null,
+    "updated": null,
+    "note": "the first run: every web fetch waited for an approval no one gave, then the account's session limit stopped it"
+   },
    {
     "id": "64ab573e188d",
     "task": "portugal",
@@ -385,7 +423,7 @@
    }
   ]
  },
- "updated": "2026-10-16T22:37:13Z",
+ "updated": "2026-10-16T23:10:52Z",
  "what": "What the wires cost: every image the pipeline made (admin/build/infographics.py), with OpenRouter's own cost per image, summed by wire, edition, month, model and kind, and per piece of work; and every scheduled run of the desks and the newsroom (admin/build/wire-runs.json), with the platform's own cost and tokens per model.",
  "total": {
   "images": 71,

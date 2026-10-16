@@ -17,3 +17,7 @@ When the desk publishes its first edition (the last 30 days of the person's publ
 Then the site adds the wire with its read key under the same contract, at wire/dinis/ and wire/ruv/
 And the charter's rules for a wire about a person hold: works, not life; primary first; no scraping behind logins; corrections and stopping; agreement recorded
 ```
+
+## Progress, 16 October 2026
+The Dinis Cruz Wire's first run (fired 12:08 UTC, Sonnet, $0.18) published nothing: every web fetch (the desk brief, the charter, his GitHub page) waited for an approval no one was there to give, so the desk rightly refused to publish a first edition from search results alone; its second turn then hit the account's five-hour session limit. It had cloned its vault and the Industry Wire's pipeline, ready to adapt. The desk tasks that run unattended were made in the app with web fetches judged automatically; a task created from this session is not, so its fetches wait. The fix is the owner's: recreate the Dinis Cruz Wire's task from the routines page with the same prompt, or allow web fetches for it.
+
