@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-16 | published | 2,107 | first published | this release | [current](../software-vendors-as-villagers.md) |
+| **v1.0.0** | 2026-10-16 | published | 2,107 | first published | [`25f7ed3c9`](https://github.com/SGit-AI/SGit-AI__Website/commit/25f7ed3c90e43eb20fed9ceebddab0647c8f0ba9) | [current](../software-vendors-as-villagers.md) |
 
 [← Back to the article](../software-vendors-as-villagers.md) · [All articles](../index.md)
 

@@ -127,6 +127,7 @@ News & evidenceGraphs & knowledge[This article as a graph →](graphs.md#the-wir
 
 ### Continued by
 
+- [Books from articles: why my books stall at 95%, why these articles do not, and a plan to turn them into books by Web Summit](books-from-articles.md) My books stall at 60 to 95%; these articles do not. The hypothesis: a book is an ordered set of finished articles, tested by Web Summit in November.
 - [When journalism becomes intelligence, built: an observation desk for one data-center buildout, from an atlas of 78 events to a community impact tracker, in a vault you can open](journalism-becomes-intelligence.md) Marconi's deck on journalism as intelligence, built as a working vault: 78 event types, an ontology, 17 observations and a community tracker, all synthetic.
 
 [All articles](index.md) · [All graphs](graphs.md)

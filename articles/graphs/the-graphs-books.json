@@ -1,0 +1,181 @@
+{
+  "slug": "the-graphs-books",
+  "teaser": "Three books on graphs.sgit.ai, written by agents in a day: the altitudes, the board, the book as a graph, and why they stopped under review.",
+  "topics": [
+    "graphs-and-knowledge",
+    "site-and-engineering"
+  ],
+  "core_idea": "In August agents wrote three books on fractal semantic graphs in a day, about 100,000 words, with experiments around them that now run this newsroom: an altitude ladder, a book decomposed to the word and rebuilt byte-identical, seven roles, versions and per-document graphs; the making-of read far better because it was written over a real record, and the books stopped because the change-control workflow made every step big and its approve stage waited on one person.",
+  "nodes": [
+    {
+      "id": "memo",
+      "label": "Three books for a flight",
+      "kind": "example",
+      "summary": "A memo on 26 August; three sessions, one day."
+    },
+    {
+      "id": "fsg",
+      "label": "Fractal Semantic Graphs",
+      "kind": "artefact",
+      "summary": "v0.3.0; 38,824 words; 119 pages."
+    },
+    {
+      "id": "making",
+      "label": "Creating a Book",
+      "kind": "artefact",
+      "summary": "v0.2.0; 31,435 words; 92 pages."
+    },
+    {
+      "id": "universe",
+      "label": "The Universe volume",
+      "kind": "artefact",
+      "summary": "v0.1.0, held; an atlas of 90 concepts."
+    },
+    {
+      "id": "ladder",
+      "label": "The altitude ladder",
+      "kind": "method",
+      "summary": "Five altitudes, each a compression of the one below."
+    },
+    {
+      "id": "bookgraph",
+      "label": "The book as a graph",
+      "kind": "method",
+      "summary": "Down to the word, rebuilt byte-identical."
+    },
+    {
+      "id": "record",
+      "label": "Written over a record",
+      "kind": "claim",
+      "summary": "Why the making-of read better."
+    },
+    {
+      "id": "board",
+      "label": "Seven stages, one approver",
+      "kind": "claim",
+      "summary": "Nothing ever passed through approve."
+    },
+    {
+      "id": "stall",
+      "label": "Where it stopped",
+      "kind": "question",
+      "summary": "Last release 20 September; energy moved on."
+    },
+    {
+      "id": "newsroom",
+      "label": "What lives on here",
+      "kind": "concept",
+      "summary": "Roles, versions, where we lose, per-article graphs."
+    }
+  ],
+  "edges": [
+    {
+      "from": "memo",
+      "to": "fsg",
+      "rel": "produces"
+    },
+    {
+      "from": "memo",
+      "to": "making",
+      "rel": "produces"
+    },
+    {
+      "from": "memo",
+      "to": "universe",
+      "rel": "produces"
+    },
+    {
+      "from": "ladder",
+      "to": "fsg",
+      "rel": "extends"
+    },
+    {
+      "from": "bookgraph",
+      "to": "making",
+      "rel": "extends"
+    },
+    {
+      "from": "record",
+      "to": "making",
+      "rel": "answers"
+    },
+    {
+      "from": "making",
+      "to": "fsg",
+      "rel": "compared-with"
+    },
+    {
+      "from": "board",
+      "to": "stall",
+      "rel": "leads-to"
+    },
+    {
+      "from": "stall",
+      "to": "newsroom",
+      "rel": "contrasts"
+    },
+    {
+      "from": "bookgraph",
+      "to": "newsroom",
+      "rel": "leads-to"
+    }
+  ],
+  "links": {
+    "articles": [
+      "books-from-articles",
+      "introducing-fractal-semantic-graphs",
+      "places-of-highest-leverage"
+    ],
+    "pages": [],
+    "sites": [
+      "https://graphs.sgit.ai/v2/books/index.html",
+      "https://graphs.sgit.ai/v1/altitudes/index.html",
+      "https://graphs.sgit.ai/v2/books/making-a-book/board.html",
+      "https://graphs.sgit.ai/v2/books/making-a-book/graph/index.html"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "A node connected to nothing is literally meaningless. This book is what follows from taking that seriously.",
+      "why": "The argument in one line."
+    },
+    {
+      "text": "a compression puts sentences next to each other that the full text keeps forty pages apart",
+      "why": "What the altitude ladder found."
+    },
+    {
+      "text": "while book B was written over an argument",
+      "why": "Why one book read better."
+    },
+    {
+      "text": "The two change-control workstreams are both blocked at the same stage, on the same person.",
+      "why": "Where it stopped."
+    }
+  ],
+  "figures": [
+    {
+      "file": "bk-shelf.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/bk-shelf.webp",
+      "caption": "The shelf on graphs.sgit.ai: three books, each with its own version, and v1.0.0 reserved for a final release; Fractal Semantic Graphs at v0.3.0, under review, 18 chapters and 38,824 words, with the change that moved it.",
+      "kind": "comparison"
+    },
+    {
+      "file": "bk-ladder.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/bk-ladder.webp",
+      "caption": "The altitude ladder: the first edition at five altitudes, from the book in one paragraph to the six parts, the seventeen units, the sections and the book itself; every highlighted phrase descends into what it compressed, coloured by the evidence behind it.",
+      "kind": "comparison"
+    },
+    {
+      "file": "bk-graph.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/bk-graph.webp",
+      "caption": "The book as a graph: Creating a Book Using Agentic Workflows decomposed into book, chapter, section, block, sentence and word, with the counts per chapter, and every chapter rebuilt byte-identical on the build.",
+      "kind": "comparison"
+    },
+    {
+      "file": "bk-board.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/bk-board.webp",
+      "caption": "The project board for the making-of book: queued, up next and in progress, nothing done; the naming question and the workflow document both four stages of seven in and blocked, waiting on the founder, and publishing held until part one lands.",
+      "kind": "comparison"
+    }
+  ]
+}

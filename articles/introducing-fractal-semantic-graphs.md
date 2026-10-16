@@ -154,6 +154,7 @@ Graphs & knowledge[This article as a graph →](graphs.md#introducing-fractal-se
 
 ### Continued by
 
+- [Books from articles: why my books stall at 95%, why these articles do not, and a plan to turn them into books by Web Summit](books-from-articles.md) My books stall at 60 to 95%; these articles do not. The hypothesis: a book is an ordered set of finished articles, tested by Web Summit in November.
 - [Inside the Mesa Ranch desk: a page-by-page tour of an observation vault, from the cover to the knowledge graph you can play in time](inside-the-mesa-ranch-desk.md) A page-by-page tour of the Mesa Ranch observation vault: the argument, the system, the record, five graphs, and how to open and rebuild it.
 - [When journalism becomes intelligence, built: an observation desk for one data-center buildout, from an atlas of 78 events to a community impact tracker, in a vault you can open](journalism-becomes-intelligence.md) Marconi's deck on journalism as intelligence, built as a working vault: 78 event types, an ontology, 17 observations and a community tracker, all synthetic.
 - [My memory, checked: thinking out loud in a voice memo, publishing only what the record supports, and why peer review has moved to before publishing](my-memory-checked.md) I say it as I remember it; the agent checks it against the record before anyone reads it. Five confirmed, five corrected, two not found.

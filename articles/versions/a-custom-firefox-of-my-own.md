@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-16 | published | 2,070 | first published | this release | [current](../a-custom-firefox-of-my-own.md) |
+| **v1.0.0** | 2026-10-16 | published | 2,070 | first published | [`25f7ed3c9`](https://github.com/SGit-AI/SGit-AI__Website/commit/25f7ed3c90e43eb20fed9ceebddab0647c8f0ba9) | [current](../a-custom-firefox-of-my-own.md) |
 
 [← Back to the article](../a-custom-firefox-of-my-own.md) · [All articles](../index.md)
 

@@ -4,53 +4,53 @@ Written by `admin/build/deps.py`; do not edit. The rule: the newsroom is self-co
 
 | kind | files | references | what it is |
 |---|---:|---:|---|
-| generator | 561 | | pages imported from sgit.ai's build; goes when the generator is ported here |
-| network | 372 | 3441 | links to sgit.ai's pages and the network sites (16 files this site writes itself) |
-| words | 698 | 4886 | sgit.ai or the sgit project named in prose: the disclosure, the kit, the method |
+| generator | 567 | | pages imported from sgit.ai's build; goes when the generator is ported here |
+| network | 380 | 3136 | links to sgit.ai's pages and the network sites (16 files this site writes itself) |
+| words | 704 | 4981 | sgit.ai or the sgit project named in prose: the disclosure, the kit, the method |
 | vault | 44 | 111 | links to a vault: the one dependency that stays |
 
 ## Network links, by target
 
-- 307 × `sgit.ai/about/index.html`
-- 193 × `sgit.ai/admin/versions.html`
-- 145 × `sgit.ai/about/index.md`
+- 306 × `sgit.ai/about/index.html`
+- 173 × `sgit.ai/admin/versions.html`
+- 147 × `sgit.ai/about/index.md`
 - 97 × `sgit.ai/admin/versions.md`
-- 74 × `sgit.ai/team/index.html`
-- 72 × `sgit.ai/why/index.html`
-- 60 × `sgit.ai/network/index.html`
-- 58 × `sgit.ai/demos/fractal-graphs/performance.html`
-- 56 × `sgit.ai/demos/vaults/index.html`
-- 56 × `sgit.ai/security/index.html`
-- 52 × `sgit.ai/skills/index.html`
-- 50 × `sgit.ai/docs/index.html`
-- 50 × `sgit.ai/compare/index.html`
-- 49 × `sgit.ai/docs/guidance/index.html`
-- 48 × `sgit.ai/docs/vault/index.html`
-- 48 × `sgit.ai/docs/briefs/index.html`
-- 48 × `sgit.ai/case-studies/index.html`
-- 48 × `sgit.ai/use-cases/index.html`
-- 48 × `sgit.ai/admin/index.html`
-- 43 × `sgit.ai/docs/credentials.html`
-- 38 × `sgit.ai/updates/index.html`
-- 34 × `sgit.ai/startups/business-plans.html`
-- 33 × `sgit.ai/demos/fractal-graphs/index.html`
-- 33 × `graphs.sgit.ai/`
-- 32 × `sgit.ai/docs/surfaces.html`
-- 31 × `sgit.ai/docs/limitations.html`
-- 30 × `sgit.ai/docs/vault/vault-from-javascript.html`
-- 30 × `sgit.ai/docs/vault/static-hosting.html`
+- 59 × `sgit.ai/team/index.html`
+- 57 × `sgit.ai/why/index.html`
+- 50 × `sgit.ai/network/index.html`
+- 48 × `sgit.ai/demos/fractal-graphs/performance.html`
+- 46 × `sgit.ai/security/index.html`
+- 46 × `sgit.ai/demos/vaults/index.html`
+- 42 × `sgit.ai/skills/index.html`
+- 40 × `sgit.ai/docs/index.html`
+- 40 × `sgit.ai/compare/index.html`
+- 39 × `sgit.ai/docs/guidance/index.html`
+- 38 × `sgit.ai/docs/credentials.html`
+- 38 × `sgit.ai/docs/vault/index.html`
+- 38 × `sgit.ai/docs/briefs/index.html`
+- 38 × `sgit.ai/case-studies/index.html`
+- 38 × `sgit.ai/use-cases/index.html`
+- 38 × `sgit.ai/admin/index.html`
+- 37 × `graphs.sgit.ai/`
+- 33 × `sgit.ai/updates/index.html`
 - 29 × `sgit.ai/api/append-lanes.html`
-- 27 × `sgit.ai/docs/what-is-sgit.html`
-- 27 × `sgit.ai/docs/agents.html`
-- 26 × `sgit.ai/try/index.html`
-- 26 × `sgit.ai/catalogue/index.html`
-- 26 × `sgit.ai/network/graphs.html`
-- 26 × `sgit.ai/network/sg-sentinel.html`
-- 26 × `sgit.ai/docs/vault/vault-apps.html`
-- 25 × `sgit.ai/deploy/index.html`
-- 25 × `sgit.ai/lessons/index.html`
+- 29 × `sgit.ai/startups/business-plans.html`
+- 28 × `sgit.ai/demos/fractal-graphs/index.html`
+- 27 × `sgit.ai/docs/surfaces.html`
+- 26 × `sgit.ai/docs/limitations.html`
+- 25 × `sgit.ai/docs/vault/vault-from-javascript.html`
+- 25 × `sgit.ai/docs/vault/static-hosting.html`
 - 24 × `sgit.ai/`
-- 24 × `sgit.ai/investors/index.html`
+- 22 × `sgit.ai/docs/what-is-sgit.html`
+- 22 × `sgit.ai/docs/agents.html`
+- 21 × `sgit.ai/try/index.html`
+- 21 × `sgit.ai/catalogue/index.html`
+- 21 × `sgit.ai/network/graphs.html`
+- 21 × `sgit.ai/network/sg-sentinel.html`
+- 21 × `sgit.ai/docs/vault/vault-apps.html`
+- 20 × `sgit.ai/deploy/index.html`
+- 20 × `sgit.ai/lessons/index.html`
+- 19 × `sgit.ai/investors/index.html`
 
 ## Network links in pages this site writes itself
 
@@ -75,7 +75,7 @@ The pages this site can fix now (an imported page is fixed in the generator, whe
 
 ## Words, in pages this site writes itself
 
-- `admin/versions.html` (97)
+- `admin/versions.html` (98)
 - `admin/notes/2026-10-10__newsroom-move-and-content-audit.md` (50)
 - `newsroom-api/index.html` (30)
 - `newsroom-api/map.json` (24)
@@ -111,6 +111,8 @@ The pages this site can fix now (an imported page is fixed in the generator, whe
 - `engineering/issues/037.html` (7)
 - `replicate/index.html` (7)
 - `shipped/index.html` (7)
+- `desks/security.html` (6)
+- `desks/vaults.html` (6)
 - `engineering/issues/010.html` (6)
 - `engineering/issues/017.html` (6)
 - `engineering/releases/v0.12.61.html` (6)
@@ -119,7 +121,6 @@ The pages this site can fix now (an imported page is fixed in the generator, whe
 - `about/participant.html` (5)
 - `articles/find.json` (5)
 - `assets/newsroom-vault.js` (5)
-- `desks/vaults.html` (5)
 - `engineering/issues/008.html` (5)
 - `engineering/issues/036.html` (5)
 - `engineering/issues/049.html` (5)
@@ -131,7 +132,6 @@ The pages this site can fix now (an imported page is fixed in the generator, whe
 - `engineering/releases/v0.12.29.html` (5)
 - `engineering/releases/v0.12.57.html` (5)
 - `engineering/releases/v0.12.69.html` (5)
+- `index.html` (5)
 - `passkey/index.html` (5)
 - `about/newsroom-ux.html` (4)
-- `admin/comms.html` (4)
-- `articles/ids.json` (4)

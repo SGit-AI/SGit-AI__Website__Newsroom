@@ -4,18 +4,18 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.12.76 · 146 articles since 2026-08-17; the newest is 2026-10-16. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v0.12.77 · 148 articles since 2026-08-17; the newest is 2026-10-16. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## The lead
 
-- [The value of constraints: what client-side encryption and open source actually gave us, which is not what you would think](articles/the-value-of-constraints.md), 2026-10-16, 8 min. sgit's encryption and open source matter less as features than as constraints: they remove the temptations that lead to server code, lock-in and bad decisions.
+- [The graphs books: three books written by agents in a day, the altitudes, the board and the book as a graph, what they got right, and why they stopped under review](articles/the-graphs-books.md), 2026-10-16, 7 min. Three books on graphs.sgit.ai, written by agents in a day: the altitudes, the board, the book as a graph, and why they stopped under review.
 
 ## Highlights
 
+- [Books from articles: why my books stall at 95%, why these articles do not, and a plan to turn them into books by Web Summit](articles/books-from-articles.md), 2026-10-16, 8 min.
+- [The value of constraints: what client-side encryption and open source actually gave us, which is not what you would think](articles/the-value-of-constraints.md), 2026-10-16, 8 min.
 - [Software vendors should become villagers and town planners: let users explore on top of the product, sell them the maintenance of what they build, and use Firefox as the example of what happens if you don't](articles/software-vendors-as-villagers.md), 2026-10-16, 8 min.
 - [Explorer coding: a better name for what people call vibe coding, what it is good for, and the handover to villagers and town planners before anyone depends on it](articles/explorer-coding.md), 2026-10-16, 7 min.
-- [A custom Firefox of my own: the full plan to build one with a governed agent hive, for the laptop and the iPad, and how Mozilla could sell me the part I do not want to do, which is keeping it working](articles/a-custom-firefox-of-my-own.md), 2026-10-16, 9 min.
-- [Agentics, ready to sell: what we showed at Agentic Engineering Live, who else is selling agentic services and at what price, the engagement path, and a marketplace for the consultants who deliver it](articles/agentics-ready-to-sell.md), 2026-10-16, 9 min.
 
 ## Who are you reading as?
 
@@ -40,11 +40,11 @@ For engineers and builders running agents day to day: tools, memory, email, desk
 - [The scripted talk: a presentation as a timeline that plays on a clock, the two vaults it grows out of, and a player built for tonight's ten minutes](articles/the-scripted-talk.md), 2026-10-15, 7 min.
 - [sgit in GitHub Actions, side by side: a showcase repository and site that runs four ways of moving a vault between jobs on every run, measured, with a budget for its LLM steps](articles/sgit-actions-side-by-side.md), 2026-10-14, 7 min.
 
-### Vaults & provenance (27)
+### Vaults & provenance (29)
 For anyone who needs evidence they can open: encrypted vaults, keys, graphs and the publishing method.
+- [The graphs books: three books written by agents in a day, the altitudes, the board and the book as a graph, what they got right, and why they stopped under review](articles/the-graphs-books.md), 2026-10-16, 7 min.
+- [Books from articles: why my books stall at 95%, why these articles do not, and a plan to turn them into books by Web Summit](articles/books-from-articles.md), 2026-10-16, 8 min.
 - [The value of constraints: what client-side encryption and open source actually gave us, which is not what you would think](articles/the-value-of-constraints.md), 2026-10-16, 8 min.
-- [Scion and sgit: Anthropic rebuilt source control for agents inside one company, and an open-source encrypted version already does much of the same thing outside it](articles/scion-and-sgit.md), 2026-10-16, 8 min.
-- [Omnichannel programming: briefs by voice, reviews by voice, previews on the phone, and one shared state underneath, at every stage from explorer to town planner](articles/omnichannel-programming.md), 2026-10-15, 9 min.
 
 ### The future of news (26)
 For editors, journalists and publishers asking how news gets paid for when agents do the reading.
