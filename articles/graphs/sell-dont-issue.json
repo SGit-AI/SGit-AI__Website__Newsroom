@@ -67,6 +67,12 @@
       "summary": "Transfer rights, above-market sales, results-linked interest."
     },
     {
+      "id": "noncompete",
+      "label": "Refuse a broad non-compete",
+      "kind": "question",
+      "summary": "It keeps the fork for the investors only."
+    },
+    {
       "id": "controllable",
       "label": "The controllable founder",
       "kind": "concept",
@@ -120,6 +126,11 @@
       "rel": "depends-on"
     },
     {
+      "from": "noncompete",
+      "to": "fork",
+      "rel": "depends-on"
+    },
+    {
       "from": "controllable",
       "to": "strength",
       "rel": "leads-to"
@@ -128,6 +139,7 @@
   "links": {
     "articles": [
       "the-controllable-founder",
+      "the-fork-next-door",
       "the-expert-founders",
       "the-value-of-constraints",
       "paying-after-the-value"

@@ -14,6 +14,7 @@
   {"id": "signal", "label": "It can read as doubt", "kind": "question", "summary": "Balderton: 10% at growth stage."},
   {"id": "creditor", "label": "Founder as creditor", "kind": "question", "summary": "Subordinate the loan by contract."},
   {"id": "fineprint", "label": "The fine print", "kind": "question", "summary": "Transfer rights, above-market sales, results-linked interest."},
+  {"id": "noncompete", "label": "Refuse a broad non-compete", "kind": "question", "summary": "It keeps the fork for the investors only."},
   {"id": "controllable", "label": "The controllable founder", "kind": "concept", "summary": "The deal this is designed against."}
  ],
  "edges": [
@@ -26,10 +27,11 @@
   {"from": "signal", "to": "sell", "rel": "contrasts"},
   {"from": "creditor", "to": "lend", "rel": "contrasts"},
   {"from": "fineprint", "to": "sell", "rel": "depends-on"},
+  {"from": "noncompete", "to": "fork", "rel": "depends-on"},
   {"from": "controllable", "to": "strength", "rel": "leads-to"}
  ],
  "links": {
-  "articles": ["the-controllable-founder", "the-expert-founders", "the-value-of-constraints", "paying-after-the-value"],
+  "articles": ["the-controllable-founder", "the-fork-next-door", "the-expert-founders", "the-value-of-constraints", "paying-after-the-value"],
   "pages": [],
   "sites": ["https://open-source.sgit.ai/views/index.html", "https://www.gov.uk/guidance/venture-capital-schemes-tax-relief-for-investors", "https://www.gov.uk/business-asset-disposal-relief"]
  },

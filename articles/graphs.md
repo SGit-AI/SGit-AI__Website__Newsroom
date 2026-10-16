@@ -14,13 +14,45 @@ Every article here has a semantic graph beside it: the ideas it rests on, the cl
 
 The graphs are data first and pictures second. Take them as JSON: [all articles in one file](graphs.json), with the topics, the teasers and the links between articles resolved, or one file per article at `articles/graphs/<slug>.json` (for example [this one](graphs/footprint-and-blast-radius.json)). The pages on this site are rendered from the same files at build time; nothing here is hand-written HTML. Since v0.7.77 each graph also carries the article's `figures`: file, URL, caption, the kind the author gave it (`wardley-map`, for one) and every frame of a multi-frame figure, so a picture and its context travel together and "every Wardley map on this site" is a filter, not a reading list.
 
-157 of 157 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
+158 of 158 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
 
 ## How the articles connect
 
 *[diagram]*
 
-157 articles, 888 links between them (1272 mentions in all). 147 articles cite an earlier one; 34 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (38 articles link to it). Most linking: [The Mandate Stack](#the-mandate-stack) (20 links out). 0 articles not yet linked either way.
+158 articles, 892 links between them (1277 mentions in all). 148 articles cite an earlier one; 36 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (38 articles link to it). Most linking: [The Mandate Stack](#the-mandate-stack) (20 links out). 0 articles not yet linked either way.
+
+## [The fork next door: why open source protects founders, customers and investors from each other, why forks only take hold when someone stops executing, and why a maturing company should give its explorers a way out](the-fork-next-door.md)
+
+2026-10-16 · Startups & strategy
+
+In an open source company every corner of the triangle of founders, customers and investors has an exit that takes the technology with it, and each exit has a condition: founders need no broad non-compete, customers need their data to move, investors need to afford a team. Forking is a last resort and the famous forks that took hold followed a breakdown; where the original kept executing, the fork stayed a hedge. A maturing company can move a shared component to a neutral home and let its explorers carry on with the code.
+
+*[diagram]*
+**concept**claim**method**example**question
+
+**14 nodes, 13 edges**
+
+- **The triangle** (concept) Founders, customers, investors; anyone can fork.
+- **Forking is a last resort** (claim) 7 of 220 significant forks merged back.
+- **Forks follow breakdowns** (claim) A new owner, a governance fight, a licence change.
+- **LibreOffice** (example) 15,000 commits against 595 in 2019.
+- **Valkey and OpenTofu** (example) Funded by companies whose businesses ran on the code.
+- **io.js** (example) Forked, fixed the governance, merged back.
+- **Execution is the defence** (claim) A rate, not a wall.
+- **MySQL and MariaDB** (example) The fork stayed a hedge; MySQL commits fell two thirds.
+- **No broad non-compete** (method) The founder's exit depends on the contract.
+- **Nextcloud** (example) The founder forked his own company.
+- **Data that moves** (method) The customer's real exit.
+- **A neutral home** (method) Kubernetes moved to the CNCF.
+- **Out-served with your own code** (question) Why Redis and Elastic relicensed.
+- **Sell, don't issue** (concept) The fork as the investor's insurance.
+
+> a competitor who forks today gets your position, not your velocity Why execution is the defence.
+
+> So the founder's corner of the triangle is only as strong as the founder's contract. The condition on the founder's exit.
+
+builds on [Sell, don't issue: a funding model for founders who have already won, where the investor buys the founder's shares, the founder lends the company what it needs, and open source keeps everyone honest](#sell-dont-issue), [The controllable founder: why investors pick one founder over another who looks just as good, and what record labels taught us about who the commodity is](#the-controllable-founder); continued by [The controllable founder: why investors pick one founder over another who looks just as good, and what record labels taught us about who the commodity is](#the-controllable-founder), [Sell, don't issue: a funding model for founders who have already won, where the investor buys the founder's shares, the founder lends the company what it needs, and open source keeps everyone honest](#sell-dont-issue).
 
 ## [The controllable founder: why investors pick one founder over another who looks just as good, and what record labels taught us about who the commodity is](the-controllable-founder.md)
 
@@ -49,7 +81,7 @@ We study survivors, so the question is why one founder was chosen over another w
 
 > Replaceability is not an accident of venture capital; it is designed in. What the contracts show.
 
-builds on [Why I love Wardley maps: the best of ours, how I read one, and a map inside a map inside a map](#why-i-love-wardley-maps), [The expert founders: why the next startups will be built by the people who know the problem, and why Europe's slower, sceptical money suits them](#the-expert-founders), [Sell, don't issue: a funding model for founders who have already won, where the investor buys the founder's shares, the founder lends the company what it needs, and open source keeps everyone honest](#sell-dont-issue); continued by [Sell, don't issue: a funding model for founders who have already won, where the investor buys the founder's shares, the founder lends the company what it needs, and open source keeps everyone honest](#sell-dont-issue).
+builds on [Why I love Wardley maps: the best of ours, how I read one, and a map inside a map inside a map](#why-i-love-wardley-maps), [The expert founders: why the next startups will be built by the people who know the problem, and why Europe's slower, sceptical money suits them](#the-expert-founders), [Sell, don't issue: a funding model for founders who have already won, where the investor buys the founder's shares, the founder lends the company what it needs, and open source keeps everyone honest](#sell-dont-issue), [The fork next door: why open source protects founders, customers and investors from each other, why forks only take hold when someone stops executing, and why a maturing company should give its explorers a way out](#the-fork-next-door); continued by [The fork next door: why open source protects founders, customers and investors from each other, why forks only take hold when someone stops executing, and why a maturing company should give its explorers a way out](#the-fork-next-door), [Sell, don't issue: a funding model for founders who have already won, where the investor buys the founder's shares, the founder lends the company what it needs, and open source keeps everyone honest](#sell-dont-issue).
 
 ## [Sell, don't issue: a funding model for founders who have already won, where the investor buys the founder's shares, the founder lends the company what it needs, and open source keeps everyone honest](sell-dont-issue.md)
 
@@ -60,7 +92,7 @@ A founder with a working, profitable product and competing investors can sell ex
 *[diagram]*
 **concept**claim**method**artefact**question
 
-**11 nodes, 10 edges**
+**12 nodes, 11 edges**
 
 - **Start from strength** (claim) Profit, growth, competing investors.
 - **Sell, don't issue** (method) The investor buys the founder's ordinary shares.
@@ -72,13 +104,14 @@ A founder with a working, profitable product and competing investors can sell ex
 - **It can read as doubt** (question) Balderton: 10% at growth stage.
 - **Founder as creditor** (question) Subordinate the loan by contract.
 - **The fine print** (question) Transfer rights, above-market sales, results-linked interest.
+- **Refuse a broad non-compete** (question) It keeps the fork for the investors only.
 - **The controllable founder** (concept) The deal this is designed against.
 
 > So the investor's protection moves from the contract to the commons. The core move.
 
 > the fork disciplines the founder because it is possible, and protects the founder because it is slow. Why the fork balances.
 
-builds on [The expert founders: why the next startups will be built by the people who know the problem, and why Europe's slower, sceptical money suits them](#the-expert-founders), [The controllable founder: why investors pick one founder over another who looks just as good, and what record labels taught us about who the commodity is](#the-controllable-founder), [The value of constraints: what client-side encryption and open source actually gave us, which is not what you would think](#the-value-of-constraints), [Paying after the value: why a balance that can go negative feels different from a subscription, the psychology behind it, and the experiment this newsroom is running](#paying-after-the-value); continued by [The controllable founder: why investors pick one founder over another who looks just as good, and what record labels taught us about who the commodity is](#the-controllable-founder).
+builds on [The expert founders: why the next startups will be built by the people who know the problem, and why Europe's slower, sceptical money suits them](#the-expert-founders), [The controllable founder: why investors pick one founder over another who looks just as good, and what record labels taught us about who the commodity is](#the-controllable-founder), [The fork next door: why open source protects founders, customers and investors from each other, why forks only take hold when someone stops executing, and why a maturing company should give its explorers a way out](#the-fork-next-door), [The value of constraints: what client-side encryption and open source actually gave us, which is not what you would think](#the-value-of-constraints), [Paying after the value: why a balance that can go negative feels different from a subscription, the psychology behind it, and the experiment this newsroom is running](#paying-after-the-value); continued by [The fork next door: why open source protects founders, customers and investors from each other, why forks only take hold when someone stops executing, and why a maturing company should give its explorers a way out](#the-fork-next-door), [The controllable founder: why investors pick one founder over another who looks just as good, and what record labels taught us about who the commodity is](#the-controllable-founder).
 
 ## [Research, delivered as a vault: what companies that sell research could do with fractal graphs, behaviour policies for AI-enabled products, and evaluations run by a governed agent hive](research-delivered-as-a-vault.md)
 

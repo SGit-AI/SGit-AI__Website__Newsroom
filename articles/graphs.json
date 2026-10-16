@@ -55,6 +55,247 @@
   ],
   "articles": [
     {
+      "slug": "the-fork-next-door",
+      "title": "The fork next door: why open source protects founders, customers and investors from each other, why forks only take hold when someone stops executing, and why a maturing company should give its explorers a way out",
+      "date": "2026-10-16",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/the-fork-next-door.html",
+      "markdown": "https://newsroom.sgit.ai/articles/the-fork-next-door.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/the-fork-next-door.webp",
+      "teaser": "Founders, customers and investors are each protected from the others because anyone can fork; forks take hold only after a breakdown.",
+      "topics": [
+        "startups-and-strategy"
+      ],
+      "tags": [
+        "founders",
+        "startups",
+        "investors",
+        "open-source",
+        "forks",
+        "governance",
+        "wardley-maps",
+        "non-competes",
+        "research",
+        "article"
+      ],
+      "links_out": [
+        "sell-dont-issue",
+        "the-controllable-founder"
+      ],
+      "links_in": [
+        "the-controllable-founder",
+        "sell-dont-issue"
+      ],
+      "figures": [
+        {
+          "file": "fk-triangle.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/fk-triangle.webp",
+          "caption": "Three corners, one exit each: the open code sits in the middle, and each corner can take it and carry on. The founders can leave if no broad non-compete stops them; the investors can fund a team next door if they can pay for it; the customers can move if their data leaves with them, cheaply. Illustrative.",
+          "kind": "architecture"
+        },
+        {
+          "file": "fk-forks.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/fk-forks.webp",
+          "caption": "Six forks: what broke, the year each fork began, and what happened next. MariaDB stayed a hedge while MySQL kept shipping; io.js merged back once a foundation fixed the governance; LibreOffice, Nextcloud, OpenTofu and Valkey took hold after a new owner, a change of direction or a licence change.",
+          "kind": "comparison"
+        },
+        {
+          "file": "fk-mysql.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/fk-mysql.webp",
+          "caption": "Commits a year to the trunk branch of mysql/mysql-server: about 8,900 in 2019 and about 2,800 in 2025, a fall of roughly two thirds. 2026 runs to 28 September. Measured by this site from a clone of the repository.",
+          "kind": "comparison"
+        }
+      ],
+      "graph": {
+        "slug": "the-fork-next-door",
+        "teaser": "Founders, customers and investors are each protected from the others because anyone can fork; forks take hold only after a breakdown.",
+        "topics": [
+          "startups-and-strategy"
+        ],
+        "core_idea": "In an open source company every corner of the triangle of founders, customers and investors has an exit that takes the technology with it, and each exit has a condition: founders need no broad non-compete, customers need their data to move, investors need to afford a team. Forking is a last resort and the famous forks that took hold followed a breakdown; where the original kept executing, the fork stayed a hedge. A maturing company can move a shared component to a neutral home and let its explorers carry on with the code.",
+        "nodes": [
+          {
+            "id": "triangle",
+            "label": "The triangle",
+            "kind": "concept",
+            "summary": "Founders, customers, investors; anyone can fork."
+          },
+          {
+            "id": "lastresort",
+            "label": "Forking is a last resort",
+            "kind": "claim",
+            "summary": "7 of 220 significant forks merged back."
+          },
+          {
+            "id": "breakdowns",
+            "label": "Forks follow breakdowns",
+            "kind": "claim",
+            "summary": "A new owner, a governance fight, a licence change."
+          },
+          {
+            "id": "libreoffice",
+            "label": "LibreOffice",
+            "kind": "example",
+            "summary": "15,000 commits against 595 in 2019."
+          },
+          {
+            "id": "valkey",
+            "label": "Valkey and OpenTofu",
+            "kind": "example",
+            "summary": "Funded by companies whose businesses ran on the code."
+          },
+          {
+            "id": "iojs",
+            "label": "io.js",
+            "kind": "example",
+            "summary": "Forked, fixed the governance, merged back."
+          },
+          {
+            "id": "execution",
+            "label": "Execution is the defence",
+            "kind": "claim",
+            "summary": "A rate, not a wall."
+          },
+          {
+            "id": "mysql",
+            "label": "MySQL and MariaDB",
+            "kind": "example",
+            "summary": "The fork stayed a hedge; MySQL commits fell two thirds."
+          },
+          {
+            "id": "noncompete",
+            "label": "No broad non-compete",
+            "kind": "method",
+            "summary": "The founder's exit depends on the contract."
+          },
+          {
+            "id": "nextcloud",
+            "label": "Nextcloud",
+            "kind": "example",
+            "summary": "The founder forked his own company."
+          },
+          {
+            "id": "portability",
+            "label": "Data that moves",
+            "kind": "method",
+            "summary": "The customer's real exit."
+          },
+          {
+            "id": "neutral",
+            "label": "A neutral home",
+            "kind": "method",
+            "summary": "Kubernetes moved to the CNCF."
+          },
+          {
+            "id": "outserved",
+            "label": "Out-served with your own code",
+            "kind": "question",
+            "summary": "Why Redis and Elastic relicensed."
+          },
+          {
+            "id": "selldontissue",
+            "label": "Sell, don't issue",
+            "kind": "concept",
+            "summary": "The fork as the investor's insurance."
+          }
+        ],
+        "edges": [
+          {
+            "from": "selldontissue",
+            "to": "triangle",
+            "rel": "extends"
+          },
+          {
+            "from": "lastresort",
+            "to": "triangle",
+            "rel": "depends-on"
+          },
+          {
+            "from": "breakdowns",
+            "to": "lastresort",
+            "rel": "extends"
+          },
+          {
+            "from": "libreoffice",
+            "to": "breakdowns",
+            "rel": "example-of"
+          },
+          {
+            "from": "valkey",
+            "to": "breakdowns",
+            "rel": "example-of"
+          },
+          {
+            "from": "iojs",
+            "to": "breakdowns",
+            "rel": "example-of"
+          },
+          {
+            "from": "mysql",
+            "to": "execution",
+            "rel": "example-of"
+          },
+          {
+            "from": "execution",
+            "to": "breakdowns",
+            "rel": "contrasts"
+          },
+          {
+            "from": "noncompete",
+            "to": "triangle",
+            "rel": "depends-on"
+          },
+          {
+            "from": "nextcloud",
+            "to": "noncompete",
+            "rel": "example-of"
+          },
+          {
+            "from": "portability",
+            "to": "triangle",
+            "rel": "depends-on"
+          },
+          {
+            "from": "neutral",
+            "to": "triangle",
+            "rel": "extends"
+          },
+          {
+            "from": "outserved",
+            "to": "execution",
+            "rel": "contrasts"
+          }
+        ],
+        "links": {
+          "articles": [
+            "the-controllable-founder",
+            "sell-dont-issue",
+            "software-vendors-as-villagers"
+          ],
+          "pages": [],
+          "sites": [
+            "https://open-source.sgit.ai/index.html",
+            "https://open-source.sgit.ai/survivability/index.html",
+            "https://inria.hal.science/hal-01519079/document"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "a competitor who forks today gets your position, not your velocity",
+            "why": "Why execution is the defence."
+          },
+          {
+            "text": "So the founder's corner of the triangle is only as strong as the founder's contract.",
+            "why": "The condition on the founder's exit."
+          },
+          {
+            "text": "The customer's real exit is their data",
+            "why": "The condition on the customer's exit."
+          }
+        ]
+      }
+    },
+    {
       "slug": "the-controllable-founder",
       "title": "The controllable founder: why investors pick one founder over another who looks just as good, and what record labels taught us about who the commodity is",
       "date": "2026-10-16",
@@ -82,9 +323,11 @@
       "links_out": [
         "why-i-love-wardley-maps",
         "the-expert-founders",
-        "sell-dont-issue"
+        "sell-dont-issue",
+        "the-fork-next-door"
       ],
       "links_in": [
+        "the-fork-next-door",
         "sell-dont-issue"
       ],
       "figures": [
@@ -237,6 +480,7 @@
         ],
         "links": {
           "articles": [
+            "the-fork-next-door",
             "sell-dont-issue",
             "the-expert-founders",
             "why-i-love-wardley-maps"
@@ -292,10 +536,12 @@
       "links_out": [
         "the-expert-founders",
         "the-controllable-founder",
+        "the-fork-next-door",
         "the-value-of-constraints",
         "paying-after-the-value"
       ],
       "links_in": [
+        "the-fork-next-door",
         "the-controllable-founder"
       ],
       "figures": [
@@ -381,6 +627,12 @@
             "summary": "Transfer rights, above-market sales, results-linked interest."
           },
           {
+            "id": "noncompete",
+            "label": "Refuse a broad non-compete",
+            "kind": "question",
+            "summary": "It keeps the fork for the investors only."
+          },
+          {
             "id": "controllable",
             "label": "The controllable founder",
             "kind": "concept",
@@ -434,6 +686,11 @@
             "rel": "depends-on"
           },
           {
+            "from": "noncompete",
+            "to": "fork",
+            "rel": "depends-on"
+          },
+          {
             "from": "controllable",
             "to": "strength",
             "rel": "leads-to"
@@ -442,6 +699,7 @@
         "links": {
           "articles": [
             "the-controllable-founder",
+            "the-fork-next-door",
             "the-expert-founders",
             "the-value-of-constraints",
             "paying-after-the-value"

@@ -10,11 +10,17 @@
 
 # The controllable founder: why investors pick one founder over another who looks just as good, and what record labels taught us about who the commodity is
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-16 · [article v1.0.0](versions/the-controllable-founder.md) · [newsroom v0.12.82](https://newsroom.sgit.ai/admin/versions.html) · foundersstartupsinvestorsventure-capitalsurvivorship-biaswardley-mapscontroleuroperesearcharticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-16 · [article v1.1.0, 2 versions](versions/the-controllable-founder.md) · [newsroom v0.12.83](https://newsroom.sgit.ai/admin/versions.html) · foundersstartupsinvestorsventure-capitalsurvivorship-biaswardley-mapscontroleuroperesearcharticle
 
 ***Abstract:** We tend to explain success by studying the winners: they did this, this and this, so do the same. We rarely count the people who did exactly the same things and failed. My hypothesis is that, when an investor chooses between two founders with the same idea, drive and talent, one of the deciding factors is which one they believe they can control. The investor's relationship with the founder is financial, not emotional; the founder is a means to a return, and replaceable if needed. In Wardley terms, the investor moves the founder towards commodity, the way record labels moved performers once the songs, the producers and the distribution were the real assets. The research gets close to this without testing it directly. Investors prefer coachable founders, even though coachability does not reliably predict success. Venture contracts hand investors control when things go badly, and include clauses that make it expensive for founders to leave. Half of founders were no longer CEO three years in. The investors' answer is that control creates value, and the data partly backs them; but it measures valuations and exits, not the mission, and over the long run founder-led companies have returned more to shareholders. Strong-minded founders with strong ethics are the profile this selection filters out, and I propose how to test whether it does.*
 
 We study the survivors: of everyone who made the same moves, a few won and are studied; others were funded, did the same and failed; most did the same and were never funded. A risky practice can be unrelated to success across everyone and still look like its cause among survivors. Illustrative.
+
+Founders, investors and the fork
+
+One argument in three parts: who investors choose and why, a deal a founder with leverage could offer instead, and what keeps every side honest once control is out of the contract.
+
+[you are here1 · The choiceThe controllable founderWhy investors may pick the founder they can steer, and what record labels taught us about who the commodity is.](the-controllable-founder.md)[2 · The dealSell, don't issueThe investor buys the founder's shares, the founder lends the company what it needs, and nobody buys the steering wheel.](sell-dont-issue.md)[3 · The protectionThe fork next doorFounders, customers and investors are each protected from the others because anyone can fork, and forks win only after a breakdown.](the-fork-next-door.md)
 
 ## In short
 
@@ -97,7 +103,7 @@ If the hypothesis holds, a particular profile is at a disadvantage in early-stag
 
 That is close to how I would describe many European founders, and it connects to [The expert founders](the-expert-founders.md): the people who know the problem best are often the hardest to steer, because they know better. Tech is the partial exception: winner-takes-all markets mean investors will sometimes accept a founder they cannot control, because the upside of the rare winner pays for everything. But at angel, seed and Series A, before the big stick exists, the founder is negotiating from the weak end of the contract.
 
-The practical conclusion is not to avoid investors. It is to get to the big stick before you need their money, so that the choice of investor is yours. With agents making execution cheap, that is more possible now than it has ever been. What a founder can do with that leverage is the subject of the next piece, [Sell, don't issue](sell-dont-issue.md).
+The practical conclusion is not to avoid investors. It is to get to the big stick before you need their money, so that the choice of investor is yours. With agents making execution cheap, that is more possible now than it has ever been. What a founder can do with that leverage is the subject of the next piece, [Sell, don't issue](sell-dont-issue.md); what protects each side once control is out of the contract is the subject of the third, [The fork next door](the-fork-next-door.md).
 
 ## What this does not claim
 
@@ -125,9 +131,11 @@ Startups & strategyNews & evidence[This article as a graph →](graphs.md#the-co
 - [Why I love Wardley maps: the best of ours, how I read one, and a map inside a map inside a map](why-i-love-wardley-maps.md) The best of our Wardley maps with their context, why the technique matters, one map read as a story, and a map inside a map inside a map.
 - [The expert founders: why the next startups will be built by the people who know the problem, and why Europe's slower, sceptical money suits them](the-expert-founders.md) Agents make execution cheap, so the people who know the problem can build first. The data favours experts, and Europe's sceptical money suits them.
 - [Sell, don't issue: a funding model for founders who have already won, where the investor buys the founder's shares, the founder lends the company what it needs, and open source keeps everyone honest](sell-dont-issue.md) For founders who have already won: the investor buys the founder's shares, the founder lends the company what it needs, and open source keeps everyone honest.
+- [The fork next door: why open source protects founders, customers and investors from each other, why forks only take hold when someone stops executing, and why a maturing company should give its explorers a way out](the-fork-next-door.md) Founders, customers and investors are each protected from the others because anyone can fork; forks take hold only after a breakdown.
 
 ### Continued by
 
+- [The fork next door: why open source protects founders, customers and investors from each other, why forks only take hold when someone stops executing, and why a maturing company should give its explorers a way out](the-fork-next-door.md) Founders, customers and investors are each protected from the others because anyone can fork; forks take hold only after a breakdown.
 - [Sell, don't issue: a funding model for founders who have already won, where the investor buys the founder's shares, the founder lends the company what it needs, and open source keeps everyone honest](sell-dont-issue.md) For founders who have already won: the investor buys the founder's shares, the founder lends the company what it needs, and open source keeps everyone honest.
 
 [All articles](index.md) · [All graphs](graphs.md)

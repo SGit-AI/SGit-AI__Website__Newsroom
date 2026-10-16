@@ -4,18 +4,18 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.12.82 · 157 articles since 2026-08-17; the newest is 2026-10-16. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v0.12.83 · 158 articles since 2026-08-17; the newest is 2026-10-16. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## The lead
 
-- [The controllable founder: why investors pick one founder over another who looks just as good, and what record labels taught us about who the commodity is](articles/the-controllable-founder.md), 2026-10-16, 13 min. Why investors pick one founder over another who looks just as good: coachability, contracts that move control, and who the commodity is.
+- [The fork next door: why open source protects founders, customers and investors from each other, why forks only take hold when someone stops executing, and why a maturing company should give its explorers a way out](articles/the-fork-next-door.md), 2026-10-16, 15 min. Founders, customers and investors are each protected from the others because anyone can fork; forks take hold only after a breakdown.
 
 ## Highlights
 
-- [Sell, don't issue: a funding model for founders who have already won, where the investor buys the founder's shares, the founder lends the company what it needs, and open source keeps everyone honest](articles/sell-dont-issue.md), 2026-10-16, 14 min.
+- [The controllable founder: why investors pick one founder over another who looks just as good, and what record labels taught us about who the commodity is](articles/the-controllable-founder.md), 2026-10-16, 13 min.
+- [Sell, don't issue: a funding model for founders who have already won, where the investor buys the founder's shares, the founder lends the company what it needs, and open source keeps everyone honest](articles/sell-dont-issue.md), 2026-10-16, 15 min.
 - [Research, delivered as a vault: what companies that sell research could do with fractal graphs, behaviour policies for AI-enabled products, and evaluations run by a governed agent hive](articles/research-delivered-as-a-vault.md), 2026-10-16, 10 min.
 - [sgit is a standard, not a server: everything in a vault is one hash away, any storage can serve it, and the server is the least interesting part](articles/sgit-is-a-standard.md), 2026-10-16, 8 min.
-- [One vault, ten agents, 35,000 objects: what sgit does when the repository is big and the clients are many, measured on the vault behind this newsroom](articles/one-vault-ten-agents.md), 2026-10-16, 7 min.
 
 ## Who are you reading as?
 
@@ -52,11 +52,11 @@ For editors, journalists and publishers asking how news gets paid for when agent
 - [A web application security challenge to Portugal, 2010: my IBWAS keynote in Lisbon, slide by slide, with what came true, what I got wrong and what still stands](articles/portugal-2010-a-challenge.md), 2026-10-16, 5 min.
 - [Inside the Mesa Ranch desk: a page-by-page tour of an observation vault, from the cover to the knowledge graph you can play in time](articles/inside-the-mesa-ranch-desk.md), 2026-10-15, 10 min.
 
-### Strategy & startups (28)
+### Strategy & startups (29)
 For founders and investors: pricing, early access, Wardley maps and who pays for open source.
+- [The fork next door: why open source protects founders, customers and investors from each other, why forks only take hold when someone stops executing, and why a maturing company should give its explorers a way out](articles/the-fork-next-door.md), 2026-10-16, 15 min.
 - [The controllable founder: why investors pick one founder over another who looks just as good, and what record labels taught us about who the commodity is](articles/the-controllable-founder.md), 2026-10-16, 13 min.
-- [Sell, don't issue: a funding model for founders who have already won, where the investor buys the founder's shares, the founder lends the company what it needs, and open source keeps everyone honest](articles/sell-dont-issue.md), 2026-10-16, 14 min.
-- [Software vendors should become villagers and town planners: let users explore on top of the product, sell them the maintenance of what they build, and use Firefox as the example of what happens if you don't](articles/software-vendors-as-villagers.md), 2026-10-16, 8 min.
+- [Sell, don't issue: a funding model for founders who have already won, where the investor buys the founder's shares, the founder lends the company what it needs, and open source keeps everyone honest](articles/sell-dont-issue.md), 2026-10-16, 15 min.
 
 ## Collections
 
