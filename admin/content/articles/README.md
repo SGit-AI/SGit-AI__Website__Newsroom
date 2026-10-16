@@ -194,7 +194,16 @@ address, `agent@riskmandate.ai`.
 are mine." Where there was no memo, say so: "There was no voice memo: this article was assembled by this
 site's agent from my published positions". Then every outside source, linked, with its date and, for a
 quote, the words quoted. Then what the counts were made from: the git log, a script over the article
-sources, a file by name. A revision adds a line: "Version 1.1, the same day, adds ...".
+sources, a file by name.
+
+**A revision is a republish, not a story.** When an article changes, write the latest version as if it were
+being published for the first time: the summary, In short and body say what is true now, with no "what
+changed" section, no "the first version said" and no narrative of how the article evolved. The reader wants
+the current article; the evolution is one click away, in the article's version history and its diff pages,
+and the release note in `admin/engineering/releases/` says what moved and why. Where this comes from still
+names who supplied or checked a fact (a review, a re-measurement), as provenance of the facts, not as a
+history of the text. A fact that matters to the reader stays in, said plainly (a bug that was fixed, a
+feature not yet released); the fact that an earlier version got it wrong does not.
 
 ## Figures
 

@@ -4,7 +4,7 @@ date: 2026-10-15
 author: Dinis Cruz
 author_url: about/index.html
 summary: The founders I most want to see succeed are the authentic ones, the people who come from the field they are building for. Their brand is themselves, and they need a medium for it: a place that keeps their history, what they do, their stories, their struggles, their ideas, their path and their milestones, so that they remember it and others can find it. This site is written that way. I record a voice memo, an agent session wired to GitHub researches it, checks every claim, writes it in my voice and publishes it to a static site, and readers pay a few pence a page if they find it useful. Everything needed to do the same exists today. This is the recipe, step by step: one public GitHub repository; GitHub Pages, published by GitHub Actions after a validation step; a Claude plan with cloud sessions and the Claude GitHub App, used from a browser or a phone; a house-rules file the agent reads first; the reader meter from api.newsroom.sgit.ai, pinned to a release, with a Stripe Payment Link you own; and the habits that make it trustworthy: corrections in the open, sources at the end, and nothing confidential in a public repository. It is simpler than this newsroom, and it does not need to be called a newsroom. It is also a good way to learn, in a native way, what publishing a pure client-side site actually means.
-version: v0.12.71
+version: v0.12.80
 license: https://creativecommons.org/licenses/by/4.0/
 tags: newsroom, replicate, voice-memos, github-pages, github-actions, claude-code, founders, sg-meter, payments, client-side, how-to, article
 status: published
@@ -51,7 +51,7 @@ And there is a second reason. Building one teaches what a pure client-side site 
 5. **Give it the first brief.** Paste the brief below. The agent sets up the folders, the article template, a small build script that turns Markdown into pages, and a validator, and publishes a first page about you.
 6. **Record, paste, review.** Record a memo, paste the transcript into the session, and read what comes back on your phone. Correct it by voice. The agent changes it, rebuilds, validates, pushes, and checks the live page.
 7. **Add the meter.** When there is something worth paying for, add the reader meter (next section).
-8. **Keep the record.** Every article ends with what it does not claim and where it comes from; corrections are added in the open, dated; every release gets a version and a one-line note.
+8. **Keep the record.** Every article ends with what it does not claim and where it comes from; a correction is a new version of the article, with its diff, not a note about the old one; every release gets a version and a one-line note.
 
 The workflow, small enough to read:
 
@@ -113,7 +113,7 @@ The file the agent reads first is what turns a general model into your writer. T
 ## Every article
 - A title, a summary, "In short", the argument in sections,
   "What this does not claim", and "Where this comes from".
-- Corrections are added at the end, dated. Nothing is silently changed.
+- A correction is a new version: republish the article as it should read now, and let the version history and its diff show what changed. Nothing is silently changed.
 
 ## Every release
 1. Build and validate. Stop on any failure.

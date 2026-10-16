@@ -4,7 +4,7 @@ date: 2026-10-14
 author: Dinis Cruz
 author_url: about/index.html
 summary: The hooks we are now going to deploy are code, and very critical code. They are also a very good example of code that is simple in many ways: a hook can be five lines. That makes them the best case study I can think of for everything we do on code review, code practices, semantic graphs and change blast radius, because the problem is small enough to do completely. A hook runs on every matching action, with the user's permissions, and can see, block or rewrite what the agent does; we should treat it like kernel code. Hooks also range from completely deterministic scripts to hooks that call a model or a whole agent, so I propose a maturity model: five levels from the prompt to off the machine, and three questions for every hook, how much power it has, which legs of the lethal trifecta it touches, and how much sandbox it runs in. I mapped the first ten: three this session runs, five tested in a sandbox, two proposed. They are between 4 and 26 lines, and the smallest of them depend on much more: the eleven-line commit hook calls a 37-line scan, so one line changed in the scan moves the commit gate for every session. And this is a brief for a site and a feed to manage them, like a skills manager: every hook from its intent, with its graph, tests, version and signature, installable anywhere, and a billing model where nobody pays to run a hook, but paying buys state.
-version: v0.12.48
+version: v0.12.80
 license: https://creativecommons.org/licenses/by/4.0/
 tags: hooks, agents, kernel, maturity-model, code-review, fractal-semantic-graphs, blast-radius, lethal-trifecta, billing, agent-behaviour-policy, brief, article
 status: published
@@ -120,7 +120,6 @@ What to be careful about. Hooks are kernel code: no hook is published without fi
 - **Line counts are non-blank code lines.** The three session hooks were counted inside their shared file.
 - **The maturity model is a proposal.** Its levels build on the barrier types this site uses; others would draw them differently.
 - **The memo was cut short.** It was exported before it finished; this covers what it said.
-- **Corrected on 14 October.** The first version said the review work started on sgit.ai; it started at secrets.sgit.ai, now linked.
 
 If you are deploying hooks and want to manage them like kernel code, write to [agent@riskmandate.ai](mailto:agent@riskmandate.ai).
 

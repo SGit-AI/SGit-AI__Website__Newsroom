@@ -10,7 +10,7 @@
 
 # sgit is a standard, not a server: everything in a vault is one hash away, any storage can serve it, and the server is the least interesting part
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-16 · [article v1.0.0](versions/sgit-is-a-standard.md) · [newsroom v0.12.79](https://newsroom.sgit.ai/admin/versions.html) · sgitstandardsgitvaultsencryptionarchitecturecachingstatic-hostingopen-sourcedeploymentarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-16 · [article v1.1.0, 2 versions](versions/sgit-is-a-standard.md) · [newsroom v0.12.80](https://newsroom.sgit.ai/admin/versions.html) · sgitstandardsgitvaultsencryptionarchitecturecachingstatic-hostingopen-sourcedeploymentarticle
 
 ***Abstract:** Git won not because of GitHub but because it is a standard: a way of laying out objects that any tool, any host and any person can read, and that GitHub, GitLab and a folder on a laptop all implement. sgit is the same kind of thing, and I think that is the most important thing to understand about it. People read encrypted git and picture a product with a server in the middle. There is a server, and it is the least interesting part. A vault is a set of encrypted files laid out by a convention: blobs, trees, commits and one mutable pointer per branch, every immutable object named by the SHA-256 of its ciphertext and marked -imm- in its name. Nothing in it has to be discovered: the vault key gives the read key, the read key gives the name of the ref, and the ref leads to the commit, the trees and the file, four plain GETs from any host that answers one. Writing is the same objects plus one compare-and-swap, which is all the API is for. Two independent implementations, the CLI and the browser app, speak it and check each other. So deploying sgit is choosing where the objects live, from a folder to a laptop to a static host to the hosted service, and how fast it is depends on how close they are. That design was not a plan to be minimal: it is what is left when the server cannot read a byte.*
 
@@ -88,7 +88,7 @@ If you want to implement the format somewhere new, write to [agent@riskmandate.a
 
 ## Where this comes from
 
-A voice memo of mine on 16 October 2026, after the sgit CLI team's review of the Scion article; written by this site's agent in the voice of this site, from the CLI team's draft; the editorial responsibility is mine. The derivation and the cache layer were checked by this site's agent in the [SGit-AI__CLI](https://github.com/SGit-AI/SGit-AI__CLI) code (`Vault__Crypto`, `CLI__Cache`) and changelog; the loading numbers are from sgit.ai's [live-vault case study](https://sgit.ai/case-studies/live-vault-docs.html); the hive timings from ruv.sgit.ai's published ledger of 16 October; the Scion quote from [Anthropic's post](https://www.anthropic.com/engineering/redesigning-source-control).
+A voice memo of mine on 16 October 2026, written by this site's agent in the voice of this site from a draft by the sgit CLI team; the editorial responsibility is mine. The derivation and the cache layer were checked by this site's agent in the [SGit-AI__CLI](https://github.com/SGit-AI/SGit-AI__CLI) code (`Vault__Crypto`, `CLI__Cache`) and changelog; the loading numbers are from sgit.ai's [live-vault case study](https://sgit.ai/case-studies/live-vault-docs.html); the hive timings from ruv.sgit.ai's published ledger of 16 October; the Scion quote from [Anthropic's post](https://www.anthropic.com/engineering/redesigning-source-control).
 
 ## Threads
 
@@ -99,13 +99,13 @@ Vaults & methodSite & engineering[This article as a graph →](graphs.md#sgit-is
 - [From sending a file to sgit: eight months of SG/Send, told by its own briefs and commits, and how a file-sharing service became encrypted version control and vaults](from-send-to-sgit.md) Eight months of SG/Send, checked against its own briefs and commits: how file sharing became sgit and vaults, the pace, and what the market said.
 - [The homepage is a vault: a fresh edition every morning, every past homepage one commit away, served from plain files, and a brief for the agent that builds it](the-homepage-is-a-vault.md) A new homepage edition every morning, each a signed commit in a vault, served from plain files: every past homepage one commit id away.
 - [One vault, ten agents, 35,000 objects: what sgit does when the repository is big and the clients are many, measured on the vault behind this newsroom](one-vault-ten-agents.md) The vault behind this newsroom, 35,000 objects and ten agents, measured eight ways: one folder in 13 seconds, history as the edge, storage as the bottleneck.
-- [Scion and sgit: Anthropic rebuilt source control for agents inside one company, and an open-source encrypted version already does much of the same thing outside it](scion-and-sgit.md) Anthropic's Scion replaced Git for agents inside one company; sgit, open source and encrypted, shares its core ideas. Revised and re-measured.
+- [Scion and sgit: Anthropic rebuilt source control for agents inside one company, and an open-source encrypted version already does much of the same thing outside it](scion-and-sgit.md) Anthropic's Scion replaced Git for agents inside one company; sgit, open source and encrypted, shares its core ideas, measured on a 35,000-object vault.
 - [The value of constraints: what client-side encryption and open source actually gave us, which is not what you would think](the-value-of-constraints.md) sgit's encryption and open source matter less as features than as constraints: they remove the temptations that lead to server code, lock-in and bad decisions.
 
 ### Continued by
 
 - [One vault, ten agents, 35,000 objects: what sgit does when the repository is big and the clients are many, measured on the vault behind this newsroom](one-vault-ten-agents.md) The vault behind this newsroom, 35,000 objects and ten agents, measured eight ways: one folder in 13 seconds, history as the edge, storage as the bottleneck.
-- [Scion and sgit: Anthropic rebuilt source control for agents inside one company, and an open-source encrypted version already does much of the same thing outside it](scion-and-sgit.md) Anthropic's Scion replaced Git for agents inside one company; sgit, open source and encrypted, shares its core ideas. Revised and re-measured.
+- [Scion and sgit: Anthropic rebuilt source control for agents inside one company, and an open-source encrypted version already does much of the same thing outside it](scion-and-sgit.md) Anthropic's Scion replaced Git for agents inside one company; sgit, open source and encrypted, shares its core ideas, measured on a 35,000-object vault.
 
 [All articles](index.md) · [All graphs](graphs.md)
 

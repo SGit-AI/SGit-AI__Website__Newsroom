@@ -10,7 +10,7 @@
 
 # One vault, ten agents, 35,000 objects: what sgit does when the repository is big and the clients are many, measured on the vault behind this newsroom
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-16 · [article v1.0.0](versions/one-vault-ten-agents.md) · [newsroom v0.12.79](https://newsroom.sgit.ai/admin/versions.html) · sgitvaultsagentsperformancemeasurementpartial-clonesscionversion-controlsource-codearticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-16 · [article v1.1.0, 2 versions](versions/one-vault-ten-agents.md) · [newsroom v0.12.80](https://newsroom.sgit.ai/admin/versions.html) · sgitvaultsagentsperformancemeasurementpartial-clonesscionversion-controlsource-codearticle
 
 ***Abstract:** Anthropic's post on Scion makes one observation that holds for any version control system: when the clients are agents, they are always online, there are many of them, and the expensive thing is moving bytes nobody needs. So the question for sgit is not how fast it clones a small vault, but what it does with a big one that many agents use every day. We have one. The vault the agents behind this newsroom share, with their mail, briefs, runs and analysis, had 1,295 commits, 5,281 files and about 35,000 encrypted objects on 16 October, 527 MB with all its history: the size of a real application's source repository, and about the size of our own SG/Send application's git repository. The sgit CLI team measured it eight ways from the hosted service and again from local disk. A full clone takes three and a half minutes; nobody needs one. One folder with one commit of history takes 13 seconds and 3 MB, however large the vault is; a file on demand under 3 seconds; an up-to-date pull 2.5. The honest edge is history: without a depth, a partial clone walks the commits one request at a time, nearly four minutes for one folder, and the fix is designed but not shipped. And with the same objects on local disk, the one-folder clone is 0.8 seconds: the time is the distance to the storage, not sgit. Which is why I think vaults this size are where sgit becomes useful for more than agents' memory, including source code.*
 
@@ -88,7 +88,7 @@ If you want to try a code base in a vault, write to [agent@riskmandate.ai](mailt
 
 ## Where this comes from
 
-A voice memo of mine on 16 October 2026, after the sgit CLI team's review of [Scion and sgit](scion-and-sgit.md); written by this site's agent in the voice of this site; the editorial responsibility is mine. The vault's measurements are the CLI team's, from 14 and 16 October, with sgit 0.22.0 and the 14 October fixes; the vault's id and contents are not published. The git repositories were counted by this site's agent with `git ls-files`, `git rev-list --count` and `git count-objects`. The hive runs are from ruv.sgit.ai's published ledger of 16 October.
+A voice memo of mine on 16 October 2026, a companion to [Scion and sgit](scion-and-sgit.md); written by this site's agent in the voice of this site; the editorial responsibility is mine. The vault's measurements are the CLI team's, from 14 and 16 October, with sgit 0.22.0 and the 14 October fixes; the vault's id and contents are not published. The git repositories were counted by this site's agent with `git ls-files`, `git rev-list --count` and `git count-objects`. The hive runs are from ruv.sgit.ai's published ledger of 16 October.
 
 ## Threads
 
@@ -98,12 +98,12 @@ Vaults & methodSite & engineering[This article as a graph →](graphs.md#one-vau
 
 - [sgit is a standard, not a server: everything in a vault is one hash away, any storage can serve it, and the server is the least interesting part](sgit-is-a-standard.md) Git won as a standard, not a server. sgit is one too: every name computed from the key, a file four GETs away, any storage can serve it.
 - [Agent workflows on ephemeral vaults: seven architectures from one agent to a swarm, a repository of recipes that gates sgit's releases, and what a hundred writers did to an append lane](agent-workflows-on-ephemeral-vaults.md) Seven architectures for agents on ephemeral vaults, a recipe repository that gates sgit's releases, and a hundred writers measured on an append lane.
-- [Scion and sgit: Anthropic rebuilt source control for agents inside one company, and an open-source encrypted version already does much of the same thing outside it](scion-and-sgit.md) Anthropic's Scion replaced Git for agents inside one company; sgit, open source and encrypted, shares its core ideas. Revised and re-measured.
+- [Scion and sgit: Anthropic rebuilt source control for agents inside one company, and an open-source encrypted version already does much of the same thing outside it](scion-and-sgit.md) Anthropic's Scion replaced Git for agents inside one company; sgit, open source and encrypted, shares its core ideas, measured on a 35,000-object vault.
 
 ### Continued by
 
 - [sgit is a standard, not a server: everything in a vault is one hash away, any storage can serve it, and the server is the least interesting part](sgit-is-a-standard.md) Git won as a standard, not a server. sgit is one too: every name computed from the key, a file four GETs away, any storage can serve it.
-- [Scion and sgit: Anthropic rebuilt source control for agents inside one company, and an open-source encrypted version already does much of the same thing outside it](scion-and-sgit.md) Anthropic's Scion replaced Git for agents inside one company; sgit, open source and encrypted, shares its core ideas. Revised and re-measured.
+- [Scion and sgit: Anthropic rebuilt source control for agents inside one company, and an open-source encrypted version already does much of the same thing outside it](scion-and-sgit.md) Anthropic's Scion replaced Git for agents inside one company; sgit, open source and encrypted, shares its core ideas, measured on a 35,000-object vault.
 
 [All articles](index.md) · [All graphs](graphs.md)
 

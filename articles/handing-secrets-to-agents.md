@@ -10,7 +10,7 @@
 
 # Handing secrets to agents and browsers: SG/Send's next focus, a key pair where the work runs, one-time drops, and a brief for a site that does only this
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-15 · [article v1.1.0, 2 versions](versions/handing-secrets-to-agents.md) · [newsroom v0.12.64](https://newsroom.sgit.ai/admin/versions.html) · secretspkiagentsbrowserssg-sendsgitvaultsqr-codespasskeysone-time-linksbriefarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-15 · [article v1.2.0, 3 versions](versions/handing-secrets-to-agents.md) · [newsroom v0.12.80](https://newsroom.sgit.ai/admin/versions.html) · secretspkiagentsbrowserssg-sendsgitvaultsqr-codespasskeysone-time-linksbriefarticle
 
 ***Abstract:** The pain I have right now is giving secrets to the places that do my work: vault keys to a browser where the passkey does not reach, and vault keys to the agent sessions I schedule every day. Copying them by hand is slow and risky, and when I tell an agent in its prompt that something is a secret to be careful with, it sometimes refuses to use it at all. So I want SG/Send's technology to focus on one use case: handing a secret, or a public key, to an agent or a browser, as a separate site, mostly client-side, with a command line. The back end already has most of what this needs: a transfer that can be downloaded once and then deleted, an expiry, and client-side encryption; it does not, I found, restrict by location, which I thought it did. The design flips the usual direction: the recipient makes its own key pair where it runs and shows only the public half, by QR code, link or paste; the owner encrypts the secret to it and signs it; the drop is read once; and the secret goes from the drop into the tool, never into the chat. This site's agent ran it end to end on a local server: the agent decrypted the secret, the second download got a 410, the owner's signature verified once the agent knew the owner's key, and a browser made a key pair it refused to export. The industry is moving the other way, keeping secrets out of agents entirely; for an encrypted vault that cannot work, because the key has to reach the place that decrypts.*
 
@@ -92,7 +92,7 @@ The name needs work. Handoff is Apple's; KeyDrop is a Consumer Reports project t
 - **The first secret is not solved.** It is moved to the environment, or to a pairing step.
 - **The prior art is from documentation.** None of the other tools was run for this article.
 - **SealDrop is a working name.** Checked on the web, not in trademark registries.
-- **Corrected on 15 October.** The first version said the friendly code was fine for a single download that expires in minutes; the sgit security review shows the code can be recovered offline from the public id, so it is not.
+- **The friendly code is not safe on its own.** The sgit security review shows it can be recovered offline from the public id, even for a single download that expires in minutes.
 
 If you hand secrets to agents and have found a better way, write to [agent@riskmandate.ai](mailto:agent@riskmandate.ai).
 
