@@ -84,6 +84,7 @@ class Front:
         self.front = load("admin/content/front/front.json")
         self.mast = load("admin/content/front/masthead.json")
         self.purpose = load("admin/content/front/purpose.json")
+        self.agents = {a["name"]: a for a in load("admin/content/agents.json")["agents"]}
         self.written = {}
         for p in sorted((ROOT / "admin/content/front/personas").glob("*.json")):
             w = json.loads(p.read_text(encoding="utf-8"))
@@ -98,6 +99,7 @@ class Front:
                 "minutes": f.get("minutes") or 0, "format": f.get("format_label") or "Analysis", "desk": f.get("desk"),
                 "series": f.get("series") or [],
                 "url": f"articles/{a['slug']}.html", "card": f"articles/cards/{a['slug']}.webp",
+                "by_agent": a.get("author") in self.agents,
             })
         self.by = {a["slug"]: a for a in self.articles}
         self.desk_label = {d["id"]: d for d in self.find["desks"]}
@@ -110,7 +112,7 @@ class Front:
     # ---- placement ----
     def _placement(self):
         ed = self.front.get("lead")
-        newest = sorted(self.articles, key=lambda a: (a["date"], -a["index"]), reverse=True)
+        newest = sorted((a for a in self.articles if not a["by_agent"]), key=lambda a: (a["date"], -a["index"]), reverse=True)
         if ed and ed.get("slug") in self.by:
             lead = dict(self.by[ed["slug"]], kicker=ed.get("kicker") or "", why=ed.get("why") or "", by="editor")
         else:
@@ -152,8 +154,9 @@ class Front:
         return out
 
     # ---- pieces ----
-    def newest(self, n, skip=(), where=None):
-        out = [a for a in self.articles if a["slug"] not in skip and (where is None or where(a))]
+    def newest(self, n, skip=(), where=None, agents=False):
+        """The newest n articles; the agents' own are left out unless asked for (they have agents/index.html)."""
+        out = [a for a in self.articles if a["slug"] not in skip and (where is None or where(a)) and (agents or not a["by_agent"])]
         out.sort(key=lambda a: (a["date"], -a["index"]), reverse=True)
         return out[:n]
 
@@ -195,6 +198,21 @@ class Front:
                 + '<button type="button" class="view-me" title="Your desk: what you read, what it cost, your board">'
                   '<span class="bar"><span style="width:0%"></span></span><span data-glance><b>0/0</b> read &middot; <b>&pound;0.00</b> spent</span></button>'
                 + '</div>')
+
+    def from_agents(self, cls):
+        """The agents' own articles, newest three: briefs about work on the site, in the agent's voice."""
+        arts = self.newest(3, where=lambda a: a["by_agent"], agents=True)
+        if not arts:
+            return ""
+        li = "".join(f'<li><a href="{a["url"]}">{esc(a["head"])}</a> <span class="meta">{day_short(a["date"])} &middot; '
+                     f'{esc(self.agents[next(x["author"] for x in self.wire["articles"] if x["slug"] == a["slug"])]["handle"])}'
+                     f'{" &middot; " + mins(a["minutes"]) if a["minutes"] else ""}</span></li>' for a in arts)
+        if cls == "bs":
+            return (f'<section class="agents-strip" aria-labelledby="bs-agents-h"><div class="sec-rule"><h2 id="bs-agents-h">From the agents</h2>'
+                    f'<span class="sec-side">Briefs written by the newsroom\'s agents in their own voice &middot; <a href="agents/index.html">all of them</a></span></div>'
+                    f'<ul class="agents-list">{li}</ul></section>')
+        return (f'<section class="bf-block" aria-labelledby="bf-agents-h"><h2 class="bf-sec" id="bf-agents-h">From the agents</h2>'
+                f'<ul class="bf-coll">{li}</ul><p class="bf-more"><a href="agents/index.html">Written by the agents &rarr;</a></p></section>')
 
     # ---- A · Broadsheet ----
     def broadsheet(self):
@@ -253,6 +271,7 @@ class Front:
   <div class="sec-rule"><h2 id="bs-desks-h">The five desks</h2><span class="sec-side">Three newest per desk &middot; <a href="desks/index.html">every desk</a></span></div>
   <div class="desk-grid">{desk_html}</div>
 </section>
+{self.from_agents("bs")}
 <section class="colls" aria-labelledby="bs-colls-h">
   <div class="sec-rule"><h2 id="bs-colls-h">Collections</h2><span class="sec-side"><a href="articles/collections/index.html">All collections</a></span></div>
   <ul class="coll-list">{colls}</ul>
@@ -320,6 +339,7 @@ class Front:
   <h2 class="bf-sec" id="bf-desks-h">The five desks <span class="muted">&middot; three each</span></h2>
   <div class="bf-desks">{desk_html}</div>
 </section>
+{self.from_agents("bf")}
 <div class="bf-pair">
   <section class="bf-block" aria-labelledby="bf-start-h">
     <h2 class="bf-sec" id="bf-start-h">{esc(self.front["start_here_title"])} <span class="muted">&middot; {mins(neutral["minutes"])}</span></h2>

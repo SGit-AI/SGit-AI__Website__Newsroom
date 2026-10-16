@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-10-16 | minor | 3,541 | +280 / −0 words; 3 changed, 3 added, 0 removed paragraphs | this release | [what changed](sell-dont-issue/v1.1.0.md) · [current](../sell-dont-issue.md) |
+| **v1.1.0** | 2026-10-16 | minor | 3,541 | +280 / −0 words; 3 changed, 3 added, 0 removed paragraphs | [`ebc03336e`](https://github.com/SGit-AI/SGit-AI__Website/commit/ebc03336e9788a2c8e70e23e57053bc1e17f816e) | [what changed](sell-dont-issue/v1.1.0.md) · [current](../sell-dont-issue.md) |
 | **v1.0.0** | 2026-10-16 | published | 3,261 | first published | [`94931f47c`](https://github.com/SGit-AI/SGit-AI__Website/commit/94931f47c178da87ced6c2ec10d74cd3af4ad46a) |  |
 
 [← Back to the article](../sell-dont-issue.md) · [All articles](../index.md)

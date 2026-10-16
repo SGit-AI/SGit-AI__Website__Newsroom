@@ -55,6 +55,296 @@
   ],
   "articles": [
     {
+      "slug": "scrolled-is-not-read",
+      "title": "Scrolled is not read: what the reading meter measures, what it should, highlights you can keep, and the page as the reader's own graph",
+      "date": "2026-10-16",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/scrolled-is-not-read.html",
+      "markdown": "https://newsroom.sgit.ai/articles/scrolled-is-not-read.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/scrolled-is-not-read.webp",
+      "teaser": "The reading meter charged by scroll and called it read; now each section keeps scrolled and read, the chip holds still, and highlights take one tap.",
+      "topics": [
+        "site-and-engineering",
+        "graphs-and-knowledge"
+      ],
+      "tags": [
+        "reading",
+        "reading-meter",
+        "attention",
+        "engaged-time",
+        "highlights",
+        "annotation",
+        "graphs",
+        "personalisation",
+        "design-system",
+        "newsroom",
+        "site-engineering",
+        "agents",
+        "brief",
+        "article"
+      ],
+      "links_out": [
+        "a-meter-in-the-browser",
+        "going-live-with-the-reading-meter",
+        "dark-mode-and-four-more",
+        "the-tokens-hook"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "sr-collage.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/sr-collage.webp",
+          "caption": "What this release adds to an article, and what it proposes next. Top left, the page as you read it: each section, how far you scrolled past it (pale) and how long you were there to read it (solid), with a highlight counted. Top right, a highlight, kept in the browser and drawn without changing the page. Bottom left, a prototype: the concepts the newsroom's other articles already define, turned into links in this one. Bottom right, a prototype: how this article connects to the rest.",
+          "kind": "collage"
+        },
+        {
+          "file": "sr-before-foot.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/sr-before-foot.webp",
+          "caption": "The meter's block at the foot of an article, as it stands in v0.12.73: 6.5p charged, \"65% read · 10p to the end\", three ratings and the way out. The 65% is how far the page was scrolled, not how much of it was read. The chip in the corner says 88%: it was measuring something else again, the position of the window on the whole page.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "sr-chips.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/sr-chips.webp",
+          "caption": "The chip, three times. v1 scrolled down: the position, the page's cost and the balance again. v1 scrolled back up: the same page, now \"15%\". v2: how much was scrolled, how much was read, and what this page cost; every value in a box of fixed width with tabular figures, so nothing moves but the digits.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "sr-map.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/sr-map.webp",
+          "caption": "The map of an article, opened from the chip: 73% scrolled and 43% read of 2,509 words in 11 sections. The first four sections were read through; \"What a hook can see\" and \"The hook\" were scrolled past with a quarter of the time they need, and one highlight sits in \"The hook\". The highlighted sentence is visible on the left.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "sr-map-night.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/sr-map-night.webp",
+          "caption": "The same map in Night. Everything in the strip, the chip, the map and the highlight is drawn from the theme's tokens, and checked at 4.5:1 in all five themes by the same test as the rest of the site.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "sr-hl-select.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/sr-hl-select.webp",
+          "caption": "A sentence selected in an article, with the Highlight button above it. After the tap the selection becomes a soft mark in the theme's highlight colour, and the map counts it under its section.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "sr-links.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/sr-links.webp",
+          "caption": "Prototype: the tokens hook article in \"Links: more\". Dotted underlines are concepts defined in other articles' graphs; dashed ones are subjects other articles carry. The card on \"Codex\" names the articles that share it. The toggle on the right would choose between the links as written, more, and the graph.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "sr-graph.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/sr-graph.webp",
+          "caption": "Prototype: how the tokens hook connects. Solid teal: articles it links to. Solid orange: articles that link to it. Dashed: articles that share at least two of its subjects without linking. The lists below say the same without the drawing.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "sr-reading.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/sr-reading.webp",
+          "caption": "Prototype: the reading account, by article, with sample rows. \"Agentics, ready to sell\" was scrolled to the end and 4% read: skimmed. \"A skill behaviour policy\" was read through and has five highlights. The verdicts come from the two measures this release keeps.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "sr-front-agents.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/sr-front-agents.webp",
+          "caption": "The Broadsheet front page with the new block, \"From the agents\", between the desks and the collections: briefs written by the newsroom's agents in their own voice, with the agent's name on each.",
+          "kind": "screenshot"
+        }
+      ],
+      "graph": {
+        "slug": "scrolled-is-not-read",
+        "teaser": "The reading meter charged by scroll and called it read; now each section keeps scrolled and read, the chip holds still, and highlights take one tap.",
+        "topics": [
+          "site-and-engineering",
+          "graphs-and-knowledge"
+        ],
+        "core_idea": "How far a reader scrolled is not how much they read, so the newsroom now keeps both, per section, in the reader's own browser: scrolled only grows, read is time on the words while the tab is in front and the reader present, counted against 300 words a minute; the page becomes a small graph the reader owns, with highlights anchored by quote, while the billing stays on scroll until the data says whether to settle it by reading.",
+        "nodes": [
+          {
+            "id": "ask",
+            "label": "The chip moves",
+            "kind": "example",
+            "summary": "The owner's two fixes: drop the balance the bar already shows, and stop the flicker; measured as 20 positions in 30 scroll steps."
+          },
+          {
+            "id": "position",
+            "label": "Position is not progress",
+            "kind": "claim",
+            "summary": "The chip showed where the window was, so scrolling back up made a page look unread."
+          },
+          {
+            "id": "scroll-read",
+            "label": "Scrolled is not read",
+            "kind": "claim",
+            "summary": "The meter charges by the deepest point scrolled and its foot block calls that read; a page flicked to the end is not read."
+          },
+          {
+            "id": "meter",
+            "label": "The reading meter",
+            "kind": "artefact",
+            "summary": "A few pence a page from credit in the browser, charged by scroll depth in 5% steps, once a session, re-priced by the rating."
+          },
+          {
+            "id": "engaged",
+            "label": "Engaged time",
+            "kind": "concept",
+            "summary": "Chartbeat counts attention while the tab is in front and the reader acted in the last five seconds; Medium counts a read after thirty."
+          },
+          {
+            "id": "pace",
+            "label": "Reading pace",
+            "kind": "concept",
+            "summary": "Adults read non-fiction at 238 words a minute, most between 175 and 300 (Brysbaert 2019)."
+          },
+          {
+            "id": "two",
+            "label": "Scrolled and read, per section",
+            "kind": "method",
+            "summary": "Scrolled is how much of each section passed the reading band; read is attended time on it against its words at 300 a minute."
+          },
+          {
+            "id": "map",
+            "label": "The page as you read it",
+            "kind": "artefact",
+            "summary": "The chip opens the article as its sections, each with scrolled, read, time and highlights."
+          },
+          {
+            "id": "highlight",
+            "label": "Highlights by quote",
+            "kind": "method",
+            "summary": "Exact words with 32 characters either side, as the W3C annotation model anchors them, drawn with the CSS Custom Highlight API without changing the page."
+          },
+          {
+            "id": "local",
+            "label": "The reader's own records",
+            "kind": "concept",
+            "summary": "Everything is kept in the browser and sent nowhere; the vault is where it would travel, later."
+          },
+          {
+            "id": "billing",
+            "label": "Charge by scroll or by read",
+            "kind": "question",
+            "summary": "Keep scroll, charge by read, or charge by scroll and settle by read when the reader leaves or rates."
+          },
+          {
+            "id": "islands",
+            "label": "Graphs are islands",
+            "kind": "claim",
+            "summary": "1,788 concept labels across 142 article graphs, only 32 shared: a shared vocabulary comes before more links."
+          },
+          {
+            "id": "protos",
+            "label": "Three prototypes",
+            "kind": "artefact",
+            "summary": "Links: more, How this connects, and What you read, drawn from the newsroom's real data for the screenshots only."
+          },
+          {
+            "id": "agents",
+            "label": "Written by the agents",
+            "kind": "artefact",
+            "summary": "A section for articles an agent writes under its own name, as briefs, kept off the front page's automatic lead."
+          }
+        ],
+        "edges": [
+          {
+            "from": "ask",
+            "to": "position",
+            "rel": "leads-to"
+          },
+          {
+            "from": "position",
+            "to": "scroll-read",
+            "rel": "leads-to"
+          },
+          {
+            "from": "scroll-read",
+            "to": "meter",
+            "rel": "contrasts"
+          },
+          {
+            "from": "engaged",
+            "to": "two",
+            "rel": "leads-to"
+          },
+          {
+            "from": "pace",
+            "to": "two",
+            "rel": "leads-to"
+          },
+          {
+            "from": "two",
+            "to": "scroll-read",
+            "rel": "answers"
+          },
+          {
+            "from": "two",
+            "to": "map",
+            "rel": "produces"
+          },
+          {
+            "from": "highlight",
+            "to": "map",
+            "rel": "extends"
+          },
+          {
+            "from": "two",
+            "to": "local",
+            "rel": "depends-on"
+          },
+          {
+            "from": "highlight",
+            "to": "local",
+            "rel": "depends-on"
+          },
+          {
+            "from": "two",
+            "to": "billing",
+            "rel": "leads-to"
+          },
+          {
+            "from": "islands",
+            "to": "protos",
+            "rel": "leads-to"
+          },
+          {
+            "from": "map",
+            "to": "protos",
+            "rel": "extends"
+          },
+          {
+            "from": "agents",
+            "to": "ask",
+            "rel": "compared-with"
+          }
+        ],
+        "links": {
+          "articles": [
+            "a-meter-in-the-browser",
+            "going-live-with-the-reading-meter",
+            "dark-mode-and-four-more",
+            "the-tokens-hook"
+          ],
+          "pages": [],
+          "sites": [
+            "https://help.chartbeat.com/hc/en-us/articles/360045890913",
+            "https://www.nngroup.com/articles/scrolling-and-attention/",
+            "https://developer.mozilla.org/en-US/docs/Web/API/CSS_Custom_Highlight_API"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "Position is not progress.",
+            "why": "The first fault of the chip, and the reason it now shows what the reader did, not where they are."
+          },
+          {
+            "text": "Scrolling past is cheap. Attention is not.",
+            "why": "The one line from the research that the design rests on."
+          }
+        ]
+      }
+    },
+    {
       "slug": "the-fork-next-door",
       "title": "The fork next door: why open source protects founders, customers and investors from each other, why forks only take hold when someone stops executing, and why a maturing company should give its explorers a way out",
       "date": "2026-10-16",
@@ -6316,6 +6606,7 @@
         "hooks-are-kernel-code"
       ],
       "links_in": [
+        "scrolled-is-not-read",
         "handing-secrets-to-agents",
         "my-memory-checked"
       ],
@@ -13732,6 +14023,7 @@
         "the-vault-crosses-chrome-profiles"
       ],
       "links_in": [
+        "scrolled-is-not-read",
         "software-vendors-as-villagers",
         "the-agents-write-too"
       ],
@@ -23123,6 +23415,7 @@
         "who-will-game-the-reading-meter"
       ],
       "links_in": [
+        "scrolled-is-not-read",
         "paying-after-the-value",
         "no-server-by-design",
         "pay-after-you-read",
@@ -23880,6 +24173,7 @@
         "the-bridge-followed-to-the-end"
       ],
       "links_in": [
+        "scrolled-is-not-read",
         "pay-after-you-read",
         "going-live-with-the-reading-meter",
         "open-source-is-not-free"

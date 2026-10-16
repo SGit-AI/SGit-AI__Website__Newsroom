@@ -11,7 +11,7 @@
  * meter's state (a seeded balance, spend and a read at depth 1 make a Done, the progress bar moves, the board counts)
  * and the pane's decisions (a read-later note makes a Follow-up); the glance in the switcher row says the same; the
  * chooser changes the meter's active persona and the picks follow; the five themes hold 4.5:1 on each view's body
- * text; the bar stays one row at 1280 on every view; an article page gets the strip and its chip says the page's cost.
+ * text; the bar stays one row at 1280 on every view; an article page gets the strip (its measures are test_reading.mjs).
  */
 import http from 'http'
 import fs from 'fs'
@@ -161,8 +161,8 @@ const open = async (opts = {}) => {
   const [ctx, pg] = await open({ url: `articles/${lead}.html`, init: () => localStorage.setItem('sgit.meter.v1', JSON.stringify({ v: 3, created: '2026-10-14T00:00:00Z', balance: 480, spent: 20, reads: 1, declined: 0, paused: false, topups: [], cart: [], sessions: [], active: 'me', personas: [{ id: 'me', name: '', created: '2026-10-14T00:00:00Z', on: [], off: [] }], log: [] })) })
   await pg.waitForTimeout(800)
   await pg.mouse.wheel(0, 2400); await pg.waitForTimeout(500)
-  const s = await pg.evaluate(() => ({ bar: parseInt(document.querySelector('.read-strip > i').style.width), chip: document.querySelector('.read-chip').textContent, on: document.querySelector('.read-chip').classList.contains('on'), href: document.querySelector('.read-chip').getAttribute('href') }))
-  check(s.bar > 0 && s.bar < 100 && s.on && /^\d+%·£0\.\d\d this page·£\d\.\d\d left$/.test(s.chip) && s.href === '../account/index.html', `the strip fills (${s.bar}%) and the chip says the cost and the balance (${s.chip})`)
+  const s = await pg.evaluate(() => ({ bar: parseInt(document.querySelector('.read-strip .rs-scrolled').style.width), chip: document.querySelector('.read-chip').textContent }))
+  check(s.bar > 0 && /^Scrolled\s*\d+%\s*Read\s*\d+%\s*£\d\.\d\d$/.test(s.chip), `the strip fills (${s.bar}% scrolled) and the chip says scrolled, read and the page's cost (${s.chip}); the rest is test_reading.mjs`)
   await ctx.close()
   const [ctx2, pg2] = await open({ url: 'about/index.html' })
   check(await pg2.evaluate(() => !document.querySelector('.read-strip')), 'a free page of this site gets no strip')

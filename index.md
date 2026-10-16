@@ -4,7 +4,7 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.12.84 · 158 articles since 2026-08-17; the newest is 2026-10-16. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v0.12.85 · 159 articles since 2026-08-17; the newest is 2026-10-16. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## The lead
 
@@ -46,7 +46,7 @@ For anyone who needs evidence they can open: encrypted vaults, keys, graphs and 
 - [sgit is a standard, not a server: everything in a vault is one hash away, any storage can serve it, and the server is the least interesting part](articles/sgit-is-a-standard.md), 2026-10-16, 8 min.
 - [One vault, ten agents, 35,000 objects: what sgit does when the repository is big and the clients are many, measured on the vault behind this newsroom](articles/one-vault-ten-agents.md), 2026-10-16, 7 min.
 
-### The future of news (28)
+### The future of news (29)
 For editors, journalists and publishers asking how news gets paid for when agents do the reading.
 - [Hacking Portugal, 2016: my BSidesLisbon keynote and the book that stopped at 95%, slide by slide, with what holds ten years later and what a new edition needs](articles/portugal-2016-hacking-portugal.md), 2026-10-16, 6 min.
 - [A web application security challenge to Portugal, 2010: my IBWAS keynote in Lisbon, slide by slide, with what came true, what I got wrong and what still stands](articles/portugal-2010-a-challenge.md), 2026-10-16, 5 min.

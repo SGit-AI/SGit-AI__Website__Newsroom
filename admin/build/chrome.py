@@ -43,6 +43,7 @@ NAV = [
         ("Front page", "index.html"),
         ("Why this exists", "about/index.html"),
         ("The five desks", "desks/index.html"),
+        ("Written by the agents", "agents/index.html"),
         ("Newsletter", "articles/newsletter/index.html"),
         ("Every article", "articles/index.html#all"),
         ("Collections", "articles/collections/index.html"),
@@ -133,6 +134,7 @@ FOOTER = [
         ("&#8594; The front page", "index.html"),
         ("Why this exists", "about/index.html"),
         ("The five desks", "desks/index.html"),
+        ("Written by the agents", "agents/index.html"),
         ("The Industry Wire", "wire/index.html"),
         ("The OWASP Wire", "wire/owasp/index.html"),
         ("The AWS Wire", "wire/aws/index.html"),
@@ -253,7 +255,8 @@ def nav_html(rel, up, newsroom=False, meter=False):
                f'  <link rel="stylesheet" href="{up}assets/vault-pane/vault-pane.css">\n'
                f'  <script type="module" src="{up}assets/vault-pane/vault-pane.js"></script>\n'
                f'  <link rel="stylesheet" href="{up}assets/reader/strip.css">\n'
-               f'  <script src="{up}assets/reader/strip.js" defer></script>\n' if meter else '')
+               f'  <script src="{up}assets/reader/strip.js" defer></script>\n'
+               f'  <script src="{up}assets/reader/highlights.js" defer></script>\n' if meter else '')
             + f'  <div class="theme-pick"></div>\n'
             f'  <a class="gh" href="{GH}" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>\n'
             f'  </div>\n'

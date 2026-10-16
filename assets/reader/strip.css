@@ -1,20 +1,66 @@
-/* newsroom.sgit.ai: the reading strip (card 066). On every page that carries the meter and charges for
-   itself: a hairline across the top of the viewport that fills as the reader goes down the page, and a
-   small chip, bottom right, that says how far they are, what this page has cost and what is left. The
-   chip is the meter's own numbers, read from its records; nothing here charges. Tokens only
-   (assets/themes/README.md); the gate is admin/build/test_themes.mjs. */
-.read-strip { position: fixed; top: 0; left: 0; right: 0; height: 3px; z-index: 60; pointer-events: none; background: transparent; }
-.read-strip > i { display: block; height: 100%; width: 0; background: var(--accent); transition: width .15s linear; }
+/* newsroom.sgit.ai: the reading strip, v2, and highlights (cards 066, 073, 074). On every page that carries the
+   meter and charges for itself: a hairline across the top of the viewport (pale: scrolled; solid: read), a
+   chip bottom right (scrolled, read, what this page cost) that opens the page as the reader's own map, and
+   the highlight button and marks. Tokens only (assets/themes/README.md); the gate is
+   admin/build/test_themes.mjs.
+
+   THE CHIP MUST NOT MOVE. v1 rewrote its contents on every scroll step and its width followed the digits,
+   so its left edge jumped while the reader read: motion at the edge of the eye is exactly what pulls it.
+   Every value now sits in a box of fixed width with tabular figures, and only the text changes. */
+.read-strip { position: fixed; top: 0; left: 0; right: 0; height: 3px; z-index: 60; pointer-events: none; }
+.read-strip > i { position: absolute; top: 0; left: 0; height: 100%; width: 0; transition: width .4s ease-out; }
+.read-strip .rs-scrolled { background: var(--tint-line); }
+.read-strip .rs-read { background: var(--accent); }
+
 .read-chip {
-  position: fixed; right: 12px; bottom: 12px; z-index: 59; display: inline-flex; align-items: center; gap: .5rem;
-  padding: .4rem .7rem; border-radius: 999px; border: 1px solid var(--line2); background: var(--panel); color: var(--text);
+  position: fixed; right: 12px; bottom: 12px; z-index: 59; display: inline-flex; align-items: baseline; gap: .35rem;
+  padding: .4rem .75rem; border-radius: 999px; border: 1px solid var(--line2); background: var(--panel); color: var(--dim);
   font: 600 .74rem/1.2 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  box-shadow: var(--shadow-pop); text-decoration: none; opacity: 0; transform: translateY(8px); transition: opacity .2s, transform .2s;
+  font-variant-numeric: tabular-nums; box-shadow: var(--shadow-pop); cursor: pointer; white-space: nowrap;
 }
-.read-chip.on { opacity: 1; transform: none; }
-.read-chip:hover { border-color: var(--accent); text-decoration: none; color: var(--head); }
-.read-chip b { color: var(--head); font-weight: 700; }
-.read-chip .pct { color: var(--accent-dk); }
-.read-chip .sep { color: var(--dim2); }
-@media (max-width: 520px) { .read-chip { right: 8px; bottom: 8px; font-size: .7rem; padding: .35rem .6rem; } .read-chip .hide-sm { display: none; } }
-@media print { .read-strip, .read-chip { display: none; } }
+.read-chip:hover, .read-chip[aria-expanded="true"] { border-color: var(--accent); }
+.read-chip:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.read-chip .rc-k { font-weight: 500; }
+.read-chip .rc-v { display: inline-block; min-width: 5ch; text-align: right; color: var(--head); font-weight: 700; }
+.read-chip .rc-cost { min-width: 6.5ch; margin-left: .35rem; padding-left: .55rem; border-left: 1px solid var(--line2); color: var(--accent-dk); }
+
+.read-map {
+  position: fixed; right: 12px; bottom: 56px; z-index: 61; width: min(420px, calc(100vw - 24px)); max-height: min(70vh, 560px); overflow: auto;
+  padding: .9rem 1rem; border-radius: 12px; border: 1px solid var(--line2); background: var(--panel); color: var(--text);
+  box-shadow: var(--shadow-pop); font: .82rem/1.45 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+.read-map[hidden] { display: none; }
+.read-map .rm-h { display: flex; justify-content: space-between; align-items: center; gap: .5rem; color: var(--head); }
+.read-map .rm-x { border: 0; background: transparent; color: var(--dim); font-size: 1.2rem; line-height: 1; cursor: pointer; padding: .1rem .3rem; }
+.read-map .rm-sum { margin: .35rem 0 .6rem; color: var(--dim); font-variant-numeric: tabular-nums; }
+.read-map .rm-sum b { color: var(--head); }
+.read-map .rm-list { list-style: none; margin: 0; padding: 0; }
+.read-map .rm-list li { border-top: 1px solid var(--line); }
+.read-map .rm-list a { display: grid; gap: .25rem; padding: .45rem 0; color: inherit; text-decoration: none; }
+.read-map .rm-list a:hover .rm-l { color: var(--accent-dk); }
+.read-map .rm-l { color: var(--head); font-weight: 600; }
+.read-map .rm-bar { position: relative; display: block; height: 6px; border-radius: 999px; background: var(--panel2); overflow: hidden; }
+.read-map .rm-bar i { position: absolute; top: 0; left: 0; height: 100%; }
+.read-map .rm-bar i:first-child { background: var(--tint-line); }
+.read-map .rm-bar i:last-child { background: var(--accent); }
+.read-map .rm-n { color: var(--dim); font-size: .74rem; font-variant-numeric: tabular-nums; }
+.read-map .rm-note { margin: .6rem 0 0; color: var(--dim2); font-size: .72rem; }
+
+::highlight(sgit-highlight) { background-color: var(--mark); color: var(--head); }
+.hl-btn {
+  position: fixed; z-index: 62; padding: .35rem .7rem; border-radius: 999px; border: 1px solid var(--accent); background: var(--accent);
+  color: var(--on-accent); font: 700 .74rem/1.2 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  box-shadow: var(--shadow-pop); cursor: pointer;
+}
+.hl-btn[hidden] { display: none; }
+.hl-btn.hl-remove { background: var(--panel); color: var(--head); border-color: var(--line2); }
+
+@media (max-width: 520px) {
+  .read-chip { right: 8px; bottom: 8px; font-size: .7rem; padding: .35rem .6rem; }
+  .read-chip .rc-k { display: none; }
+  .read-chip .rc-v[data-k="scrolled"]::after { content: " scrolled"; font-weight: 500; color: var(--dim); }
+  .read-chip .rc-v[data-k="read"]::after { content: " read"; font-weight: 500; color: var(--dim); }
+  .read-chip .rc-v[data-k="scrolled"], .read-chip .rc-v[data-k="read"] { min-width: 0; }
+  .read-map { right: 8px; bottom: 48px; }
+}
+@media print { .read-strip, .read-chip, .read-map, .hl-btn { display: none; } }
