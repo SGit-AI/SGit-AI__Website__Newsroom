@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-10-16 | minor | 1,944 | +0 / −4 words; 1 changed, 0 added, 0 removed paragraphs | this release | [what changed](one-vault-ten-agents/v1.1.0.md) · [current](../one-vault-ten-agents.md) |
+| **v1.1.0** | 2026-10-16 | minor | 1,944 | +0 / −4 words; 1 changed, 0 added, 0 removed paragraphs | [`62d7d61bb`](https://github.com/SGit-AI/SGit-AI__Website/commit/62d7d61bbe675fde217c65280275f5bf66ca5c92) | [what changed](one-vault-ten-agents/v1.1.0.md) · [current](../one-vault-ten-agents.md) |
 | **v1.0.0** | 2026-10-16 | published | 1,948 | first published | [`ae3c7e836`](https://github.com/SGit-AI/SGit-AI__Website/commit/ae3c7e836736cca2090dd560d3666b75c20c7d0a) |  |
 
 [← Back to the article](../one-vault-ten-agents.md) · [All articles](../index.md)

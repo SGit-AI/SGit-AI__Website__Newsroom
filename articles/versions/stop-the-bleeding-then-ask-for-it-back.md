@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.2.0** | 2026-10-16 | minor | 4,196 | +0 / −2 words; 1 changed, 0 added, 0 removed paragraphs | this release | [what changed](stop-the-bleeding-then-ask-for-it-back/v1.2.0.md) · [current](../stop-the-bleeding-then-ask-for-it-back.md) |
+| **v1.2.0** | 2026-10-16 | minor | 4,196 | +0 / −2 words; 1 changed, 0 added, 0 removed paragraphs | [`62d7d61bb`](https://github.com/SGit-AI/SGit-AI__Website/commit/62d7d61bbe675fde217c65280275f5bf66ca5c92) | [what changed](stop-the-bleeding-then-ask-for-it-back/v1.2.0.md) · [current](../stop-the-bleeding-then-ask-for-it-back.md) |
 | **v1.1.0** | 2026-10-13 | minor | 4,198 | +1,305 / −543 words; 3 changed, 16 added, 7 removed paragraphs | [`c40ffa924`](https://github.com/SGit-AI/SGit-AI__Website/commit/c40ffa924e7cb994112937d3d21b7d0b06ef6c2c) | [what changed](stop-the-bleeding-then-ask-for-it-back/v1.1.0.md) |
 | **v1.0.0** | 2026-10-13 | published | 3,436 | first published | [`6a7eac04c`](https://github.com/SGit-AI/SGit-AI__Website/commit/6a7eac04cc43f332fd95063147886c636b749024) |  |
 

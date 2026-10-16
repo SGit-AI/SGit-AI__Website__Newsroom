@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-10-16 | minor | 2,149 | +0 / −7 words; 1 changed, 0 added, 0 removed paragraphs | this release | [what changed](sgit-is-a-standard/v1.1.0.md) · [current](../sgit-is-a-standard.md) |
+| **v1.1.0** | 2026-10-16 | minor | 2,149 | +0 / −7 words; 1 changed, 0 added, 0 removed paragraphs | [`62d7d61bb`](https://github.com/SGit-AI/SGit-AI__Website/commit/62d7d61bbe675fde217c65280275f5bf66ca5c92) | [what changed](sgit-is-a-standard/v1.1.0.md) · [current](../sgit-is-a-standard.md) |
 | **v1.0.0** | 2026-10-16 | published | 2,156 | first published | [`ae3c7e836`](https://github.com/SGit-AI/SGit-AI__Website/commit/ae3c7e836736cca2090dd560d3666b75c20c7d0a) |  |
 
 [← Back to the article](../sgit-is-a-standard.md) · [All articles](../index.md)

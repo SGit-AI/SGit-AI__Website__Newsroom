@@ -1,0 +1,43 @@
+{
+ "slug": "research-delivered-as-a-vault",
+ "teaser": "Companies that sell research could deliver it as a vault: evidence, a fractal graph, briefings per reader, behaviour policies for AI products, a lane back.",
+ "topics": ["vaults-and-method", "startups-and-strategy"],
+ "core_idea": "Research is sold by subscription and delivered as documents, one reading for everyone; delivered as an sgit vault it becomes findings with evidence, a fractal graph instead of one taxonomy, a briefing per reader, calculations, a branded app and an append lane back, refreshed as commits; for AI-enabled products the research should include an Agent Behaviour Policy with and without the AI, over which the firm judges licence to operate and insurability; the evidence can come from a governed agent hive with a ledger, and the whole can be sold by the block.",
+ "nodes": [
+  {"id": "today", "label": "Research sold by subscription", "kind": "example", "summary": "Delivered as documents, the same for every reader."},
+  {"id": "taxonomy", "label": "One taxonomy is version one", "kind": "concept", "summary": "A category and a row of fields."},
+  {"id": "fsg", "label": "A fractal graph", "kind": "concept", "summary": "From the question to the evidence and who made it."},
+  {"id": "vault", "label": "Research as a vault", "kind": "method", "summary": "Evidence, graph, calculations, app, versioned and encrypted."},
+  {"id": "briefings", "label": "A briefing per reader", "kind": "artefact", "summary": "CISO, CFO, counsel, procurement, board, insurer."},
+  {"id": "lane", "label": "The client writes back", "kind": "method", "summary": "An append lane: comments, votes, flags."},
+  {"id": "aiproducts", "label": "AI-enabled products", "kind": "claim", "summary": "A model in front of an API widens reach and blast radius."},
+  {"id": "abp", "label": "Two behaviour policies", "kind": "method", "summary": "With and without the AI; it describes, it does not score."},
+  {"id": "insure", "label": "Licence to operate, insurability", "kind": "claim", "summary": "The firm's judgement over the policy's facts."},
+  {"id": "hive", "label": "Evaluations with provenance", "kind": "method", "summary": "A governed agent hive; every action in a ledger."},
+  {"id": "business", "label": "Sold by the block", "kind": "artefact", "summary": "Run, vault, briefing, subscription, app."},
+  {"id": "example", "label": "Corvane Research, synthetic", "kind": "example", "summary": "A vault you can open: 13 pages."}
+ ],
+ "edges": [
+  {"from": "today", "to": "taxonomy", "rel": "depends-on"},
+  {"from": "fsg", "to": "taxonomy", "rel": "extends"},
+  {"from": "vault", "to": "today", "rel": "contrasts"},
+  {"from": "vault", "to": "fsg", "rel": "depends-on"},
+  {"from": "vault", "to": "briefings", "rel": "produces"},
+  {"from": "vault", "to": "lane", "rel": "produces"},
+  {"from": "aiproducts", "to": "abp", "rel": "leads-to"},
+  {"from": "abp", "to": "insure", "rel": "leads-to"},
+  {"from": "hive", "to": "abp", "rel": "produces"},
+  {"from": "vault", "to": "business", "rel": "leads-to"},
+  {"from": "example", "to": "vault", "rel": "example-of"}
+ ],
+ "links": {
+  "articles": ["introducing-fractal-semantic-graphs", "sgit-is-a-standard", "footprint-and-blast-radius", "every-risk-is-already-accepted", "your-own-newsroom", "agentics-ready-to-sell"],
+  "pages": ["demos/vaults/corvane-research/index.html"],
+  "sites": ["https://abp.sgit.ai/what-is-an-abp/index.html", "https://ruv.sgit.ai/business/", "https://genai.owasp.org/llmrisk/llm062025-excessive-agency/"]
+ },
+ "quotes": [
+  {"text": "Your client receives the run's vault.", "why": "ruv.sgit's offer, the line a research firm needs."},
+  {"text": "The policy describes; the research firm judges.", "why": "Where the rating comes from."},
+  {"text": "We are many versions past the single taxonomy", "why": "Graphs against categories."}
+ ]
+}

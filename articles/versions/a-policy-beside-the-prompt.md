@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.3.0** | 2026-10-16 | minor | 4,137 | +0 / −2 words; 1 changed, 0 added, 0 removed paragraphs | this release | [what changed](a-policy-beside-the-prompt/v1.3.0.md) · [current](../a-policy-beside-the-prompt.md) |
+| **v1.3.0** | 2026-10-16 | minor | 4,137 | +0 / −2 words; 1 changed, 0 added, 0 removed paragraphs | [`62d7d61bb`](https://github.com/SGit-AI/SGit-AI__Website/commit/62d7d61bbe675fde217c65280275f5bf66ca5c92) | [what changed](a-policy-beside-the-prompt/v1.3.0.md) · [current](../a-policy-beside-the-prompt.md) |
 | **v1.2.0** | 2026-10-13 | minor | 4,139 | +34 / −0 words; 0 changed, 1 added, 0 removed paragraphs | [`c5ffd852e`](https://github.com/SGit-AI/SGit-AI__Website/commit/c5ffd852ef02454da93747b2016b63ca4ec8aea3) | [what changed](a-policy-beside-the-prompt/v1.2.0.md) |
 | **v1.1.0** | 2026-10-13 | minor | 4,105 | +846 / −0 words; 3 changed, 12 added, 0 removed paragraphs | [`8ef6586b3`](https://github.com/SGit-AI/SGit-AI__Website/commit/8ef6586b3e9e8245196493e6ac16f6774d3454e7) | [what changed](a-policy-beside-the-prompt/v1.1.0.md) |
 | **v1.0.0** | 2026-10-13 | published | 3,259 | first published | [`e22357971`](https://github.com/SGit-AI/SGit-AI__Website/commit/e22357971100d4d536feb0d47ea78e5fb4614385) |  |
