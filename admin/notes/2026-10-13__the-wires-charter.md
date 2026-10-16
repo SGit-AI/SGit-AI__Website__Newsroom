@@ -49,6 +49,17 @@ Every vault is readable by anyone with its published read key, including its his
 
 One named reader so far, by their recorded agreement while the wires are a beta. Their decisions on the wire (done, not for me, should reach me, wrong) are kept in their own browser first, carried by their own vault, and reach the desk only down their own lane. A *wrong* becomes a correction; the rest become proposed edits to the personas, as a diff for approval. Anyone can read a wire as any public persona; nobody else gets a lens in their name without agreeing to it being public.
 
+## A wire about a person
+
+Added 16 October 2026, when the owner asked for two wires about people whose public output is high: himself (the Dinis Cruz Wire) and Reuven Cohen, rUv, of the Agentics Foundation (the rUv Wire). Each vault carries the rules in `docs/PERSON-WIRE-RULES.md`; in short:
+
+1. **Works, not life.** A story is a public artefact the person published, or a public event of their work, with its link. Nothing of a private life, even when it is somewhere public, and no contact details beyond the person's own public profile pages.
+2. **Their words, then ours.** Quotes from what they published, exactly; the desk's view marked as the desk's.
+3. **Primary first.** The primary source is the person's own publication.
+4. **No scraping behind logins.** Only what any visitor can read without signing in.
+5. **Corrections and stopping.** The person can correct any story, and can ask for the wire to stop; the owner stops it.
+6. **Agreement.** For a person other than the owner, the vault's README records whether they have been told and what they said. Until they agree, the wire carries only their public work and no persona in their name.
+
 ## Holding the wires to this
 
 The contract and the tests are the barriers. The desk's gate stops a publish that breaks its rules; the newsroom's test fails a release that draws a vault wrongly; the verifier's record says what was checked and what was not. Where the charter asks for something not yet built, the engineering board says so by card: the verifier on every run, the desks reading the reader's lane, the scheduled runs. The charter is changed by a release of this site, with the date, like everything else here.

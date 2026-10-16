@@ -1,9 +1,9 @@
 {
  "what": "A derived index of the engineering cards on newsroom.sgit.ai; the files under admin/engineering/issues/ are the source.",
  "counts": {
-  "open": 12,
+  "open": 14,
   "blocked": 2,
-  "done": 53
+  "done": 56
  },
  "issues": [
   {
@@ -876,9 +876,85 @@
    "blocked_on": "",
    "path": "admin/engineering/issues/done/067-every-dependency-on-sgit-ai-but-the-vaults.md",
    "url": "https://newsroom.sgit.ai/engineering/issues/067.html"
+  },
+  {
+   "id": "068",
+   "title": "The desks run unattended: one wording for the four, Sonnet as the model, and what the permission check refused, recorded",
+   "kind": "story",
+   "priority": "high",
+   "status": "done",
+   "created": "2026-10-16T12:00:00Z",
+   "release": "v0.12.74",
+   "estimated_effort": "small",
+   "blocked_on": "",
+   "path": "admin/engineering/issues/done/068-the-desks-run-unattended.md",
+   "url": "https://newsroom.sgit.ai/engineering/issues/068.html"
+  },
+  {
+   "id": "069",
+   "title": "The newsroom's morning run reads the vaults without installing anything",
+   "kind": "story",
+   "priority": "high",
+   "status": "done",
+   "created": "2026-10-16T12:05:00Z",
+   "release": "v0.12.74",
+   "estimated_effort": "small",
+   "blocked_on": "",
+   "path": "admin/engineering/issues/done/069-the-newsroom-reads-without-installing.md",
+   "url": "https://newsroom.sgit.ai/engineering/issues/069.html"
+  },
+  {
+   "id": "070",
+   "title": "Every run costed: the platform's own cost and tokens for each scheduled run, on the costs page",
+   "kind": "story",
+   "priority": "high",
+   "status": "done",
+   "created": "2026-10-16T12:10:00Z",
+   "release": "v0.12.74",
+   "estimated_effort": "small",
+   "blocked_on": "",
+   "path": "admin/engineering/issues/done/070-every-run-costed.md",
+   "url": "https://newsroom.sgit.ai/engineering/issues/070.html"
+  },
+  {
+   "id": "071",
+   "title": "The accountant runs daily: a session of its own records every run's cost and releases the costs page",
+   "kind": "story",
+   "priority": "high",
+   "status": "open",
+   "created": "2026-10-16T12:15:00Z",
+   "release": "null",
+   "estimated_effort": "small",
+   "blocked_on": "",
+   "path": "admin/engineering/issues/open/071-the-accountant-runs-daily.md",
+   "url": "https://newsroom.sgit.ai/engineering/issues/071.html"
+  },
+  {
+   "id": "072",
+   "title": "Two wires about people: the Dinis Cruz Wire, and the rUv Wire once its desk is allowed to run",
+   "kind": "story",
+   "priority": "high",
+   "status": "open",
+   "created": "2026-10-16T12:20:00Z",
+   "release": "null",
+   "estimated_effort": "medium",
+   "blocked_on": "the rUv Wire's desk task, which this session's permission check refused to create (a scheduled run following a named person who has not agreed); the owner decides, and records rUv's answer in the vault's README",
+   "path": "admin/engineering/issues/open/072-the-person-wires.md",
+   "url": "https://newsroom.sgit.ai/engineering/issues/072.html"
   }
  ],
  "releases": [
+  {
+   "version": "v0.12.74",
+   "date": "2026-10-16",
+   "kind": "patch",
+   "issues": [
+    "068",
+    "069",
+    "070"
+   ],
+   "url": "https://newsroom.sgit.ai/engineering/releases/v0.12.74.html"
+  },
   {
    "version": "v0.12.73",
    "date": "2026-10-16",

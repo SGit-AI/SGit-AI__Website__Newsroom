@@ -77,13 +77,48 @@ def gather(cfgs):
         "image_usd": round(cost / images, 4) if images else None,
         "seconds_per_image": round(sum(r["duration_s"] for r in by_kind.values()) / images, 1) if images else None,
     }
+    runs = gather_runs()
     return {
-        "schema": "wire-costs/v1", "kept_by": ROLE, "updated": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
-        "what": "What the wires' pictures cost: every image the pipeline made (admin/build/infographics.py), with OpenRouter's own cost per image, summed by wire, edition, month, model and kind, and per piece of work. Not here: the desks' own runs and this site's sessions.",
+        "schema": "wire-costs/v1", "kept_by": ROLE, "runs": runs, "updated": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "what": "What the wires cost: every image the pipeline made (admin/build/infographics.py), with OpenRouter's own cost per image, summed by wire, edition, month, model and kind, and per piece of work; and every scheduled run of the desks and the newsroom (admin/build/wire-runs.json), with the platform's own cost and tokens per model.",
         "total": {"images": images, "cost_usd": cost, "failed": sum(w["failed"] for w in wires)},
         "per_work": per_work, "by_month": dict(sorted(by_month.items())), "by_model": dict(sorted(by_model.items(), key=lambda kv: -kv[1]["cost_usd"])), "by_kind": by_kind,
         "key_budget": budget, "wires": wires,
     }
+
+
+def gather_runs():
+    """The scheduled runs (admin/build/wire-runs.json, written with runs_ledger.py): totals by task, day and model."""
+    led = load(ROOT / "admin/build/wire-runs.json") or {"runs": [], "sessions": []}
+    rows = [r for r in led.get("runs", []) if isinstance(r, dict)]
+    def tally(key):
+        out = {}
+        for r in rows:
+            k = key(r)
+            t = out.setdefault(k, {"runs": 0, "cost_usd": 0.0, "published": 0, "blocked": 0, "output": 0, "duration_s": 0.0})
+            t["runs"] += 1; t["cost_usd"] = round(t["cost_usd"] + (r.get("cost_usd") or 0), 6)
+            t["published"] += r.get("outcome") == "published"; t["blocked"] += r.get("outcome") == "blocked"
+            t["output"] += sum((u or {}).get("output", 0) for u in (r.get("models") or {}).values()); t["duration_s"] = round(t["duration_s"] + (r.get("duration_s") or 0), 1)
+        return out
+    by_model = {}
+    for r in rows:
+        for m, u in (r.get("models") or {}).items():
+            t = by_model.setdefault(m, {"cost_usd": 0.0, "input": 0, "output": 0, "cache_read": 0, "cache_write": 0, "thinking": 0})
+            for k in t:
+                t[k] = round(t[k] + (u.get(k) or 0), 6) if k == "cost_usd" else t[k] + int(u.get(k) or 0)
+    pub = [r for r in rows if r.get("outcome") == "published"]
+    return {
+        "total": {"runs": len(rows), "cost_usd": round(sum(r.get("cost_usd") or 0 for r in rows), 6), "published": len(pub),
+                  "blocked": sum(1 for r in rows if r.get("outcome") == "blocked"), "refused": sum(r.get("refused") or 0 for r in rows)},
+        "per_edition_usd": round(sum(r["cost_usd"] for r in pub) / len(pub), 4) if pub else None,
+        "by_task": tally(lambda r: r.get("task") or "?"), "by_day": dict(sorted(tally(lambda r: str(r.get("fired_at") or "")[:10]).items(), reverse=True)),
+        "by_model": dict(sorted(by_model.items(), key=lambda kv: -kv[1]["cost_usd"])),
+        "rows": sorted(rows, key=lambda r: str(r.get("fired_at") or ""), reverse=True), "sessions": led.get("sessions", []),
+    }
+
+
+def tokens(n):
+    return f"{n / 1e6:.1f}M" if n >= 1e6 else f"{n / 1e3:.0f}k" if n >= 1e3 else str(n)
 
 
 def usd(x):
@@ -120,7 +155,10 @@ def costs_html(data, cfgs, strip, newsroom_page, eyebrow):
         for w, e in sorted(eds, key=lambda x: x[1]["edition"], reverse=True) for r in e["rows"])
     body = f"""{strip}
 <div class="tiles" id="costs-tiles">{tiles}</div>
-<p>Every figure here is OpenRouter&rsquo;s own, asked per image after the generation (<code>GET /api/v1/generation</code>), never an estimate; the ledgers the pipeline writes beside the images are the record, and this page only adds them up. The data is <a href="costs.json">costs.json</a>. Not counted: the desks&rsquo; own runs (their models and tokens are in their sessions, not in any vault) and this site&rsquo;s sessions. Kept by <b>@{esc(ROLE)}</b>, a role of the morning routine that writes nothing of its own and spends nothing.</p>
+<p>Every figure here is OpenRouter&rsquo;s own, asked per image after the generation (<code>GET /api/v1/generation</code>), never an estimate; the ledgers the pipeline writes beside the images are the record, and this page only adds them up. The data is <a href="costs.json">costs.json</a>. The runs that make the editions (the desks&rsquo; and the newsroom&rsquo;s) are counted below, from the platform&rsquo;s own figures for each session. Kept by <b>@{esc(ROLE)}</b>, which writes nothing of its own and spends nothing but its own run.</p>
+<h2 id="runs">What the runs cost</h2>
+<p>Every scheduled run of the wires&rsquo; desks and of the newsroom&rsquo;s morning run, with the platform&rsquo;s own cost per model, the tokens, the turns, the subagents, what the session&rsquo;s permission check refused, and what the run published. The ledger is <a href="../admin/build/wire-runs.json">wire-runs.json</a>, written by the accountant from each session&rsquo;s usage and its final result; a refused command is kept as its kind, never its arguments.</p>
+{{runs_html}}
 <h2 id="wires">By wire</h2>
 <table class="costs"><thead><tr><th>Wire</th><th class="n">Editions</th><th class="n">Images</th><th class="n">Failed</th><th class="n">Cost</th><th></th></tr></thead><tbody>{wires_rows}</tbody>
 <tfoot><tr><td>All</td><td class="n">{sum(len(w["editions"]) for w in data["wires"])}</td><td class="n">{t["images"]}</td><td class="n">{t["failed"]}</td><td class="n">{esc(usd(t["cost_usd"]))}</td><td></td></tr></tfoot></table>
@@ -138,13 +176,35 @@ def costs_html(data, cfgs, strip, newsroom_page, eyebrow):
 <h2 id="how">How this is kept</h2>
 <p>The pipeline (<code>admin/build/infographics.py</code>) writes a ledger per edition (<code>wire-infographics/v1</code>: per image the key, the kind, the model asked for and the one that answered, the generation id, the seconds, OpenRouter&rsquo;s cost, the prompt&rsquo;s hash and file, the status or the error) and a cumulative one per wire (<code>wire-infographics-total/v1</code>, by month and edition, with the key&rsquo;s budget as OpenRouter last reported it: the limit, what is spent, what is left; never the key). This page is rebuilt at every release by <code>admin/build/accountant.py</code> from those files alone. The owner caps a run at forty images and two dollars; the routine runs it after the desks publish, with the key in its environment and nowhere else.</p>
 """
-    agent = (f"What the wires' pictures cost, from the ledgers admin/build/infographics.py writes: {t['images']} images for {usd(t['cost_usd'])} across {len(data['wires'])} wires; "
+    R = data.get("runs") or {}
+    rt = R.get("total") or {"runs": 0, "cost_usd": 0, "published": 0, "blocked": 0, "refused": 0}
+    LABEL = {c["slug"] or "industry": c["name"] for c in cfgs}
+    LABEL.update({"newsroom": "The newsroom's morning run", "accountant": "The accountant's run"})
+    run_tiles = "".join(f'<div class="tile"><b>{esc(v)}</b><span>{esc(k)}</span></div>' for k, v in (
+        ("spent on runs", usd(rt["cost_usd"])), ("runs recorded", f'{rt["runs"]}'), ("published an edition", f'{rt["published"]}'),
+        ("stopped by the permission check", f'{rt["blocked"]}'), ("an edition costs, in runs", usd(R.get("per_edition_usd")))))
+    task_rows = "".join(f'<tr><td>{esc(LABEL.get(k, k))}</td><td class="n">{t["runs"]}</td><td class="n">{t["published"]}</td><td class="n">{t["blocked"]}</td><td class="n">{esc(usd(t["cost_usd"]))}</td><td class="n">{esc(usd(t["cost_usd"] / t["runs"]))}</td></tr>' for k, t in sorted((R.get("by_task") or {}).items(), key=lambda kv: -kv[1]["cost_usd"]))
+    model_rows_r = "".join(f'<tr><td><code>{esc(m)}</code></td><td class="n">{esc(usd(u["cost_usd"]))}</td><td class="n">{tokens(u["input"])}</td><td class="n">{tokens(u["output"])}</td><td class="n">{tokens(u["thinking"])}</td><td class="n">{tokens(u["cache_read"])}</td><td class="n">{tokens(u["cache_write"])}</td></tr>' for m, u in (R.get("by_model") or {}).items())
+    run_rows = "".join(
+        f'<tr><td class="dim">{esc(str(r.get("fired_at") or "")[:16].replace("T", " "))}</td><td>{esc(LABEL.get(r.get("task"), r.get("task") or ""))}</td><td>{esc(", ".join(m.replace("claude-", "") for m in (r.get("models") or {})))}</td>'
+        f'<td class="n">{esc(usd(r.get("cost_usd")))}</td><td class="n">{tokens(sum((u or {}).get("output", 0) for u in (r.get("models") or {}).values()))}</td><td class="n">{r.get("turns") or 0}</td><td class="n">{r.get("subagents") or 0}</td>'
+        f'<td class="n">{round((r.get("duration_s") or 0) / 60, 1)} min</td><td>{esc(r.get("outcome") or "")}{(" " + esc(r["release"])) if r.get("release") else ""}{(" (" + str(r.get("added")) + " new, " + str(r.get("updated")) + " updated)") if r.get("added") is not None else ""}</td>'
+        f'<td class="dim">{esc(str(r.get("refused") or 0) + " refused" + (": " + ", ".join(r.get("refused_kinds") or []) if r.get("refused") else "") if r.get("refused") else "")}</td></tr>'
+        for r in R.get("rows") or [])
+    sess_rows = "".join(f'<tr><td>{esc(x.get("name") or "")}</td><td>{esc(", ".join(x.get("models") or []))}</td><td class="n">{esc(usd(x.get("cost_usd")))}</td><td class="n">{tokens(int(x.get("output") or 0))}</td><td class="dim">{esc(str(x.get("as_of") or "")[:10])}</td></tr>' for x in R.get("sessions") or [])
+    runs_html = (f'<div class="tiles">{run_tiles}</div>'
+        f'<table class="costs"><thead><tr><th>Task</th><th class="n">Runs</th><th class="n">Published</th><th class="n">Stopped</th><th class="n">Cost</th><th class="n">Per run</th></tr></thead><tbody>{task_rows}</tbody></table>'
+        f'<table class="costs"><thead><tr><th>Model</th><th class="n">Cost</th><th class="n">Input</th><th class="n">Output</th><th class="n">Thinking</th><th class="n">Cache read</th><th class="n">Cache write</th></tr></thead><tbody>{model_rows_r}</tbody></table>'
+        f'<details open><summary>Every run ({rt["runs"]})</summary><table class="costs small"><thead><tr><th>Fired (UTC)</th><th>Task</th><th>Models</th><th class="n">Cost</th><th class="n">Output</th><th class="n">Turns</th><th class="n">Subagents</th><th class="n">Time</th><th>Outcome</th><th>Refused</th></tr></thead><tbody>{run_rows}</tbody></table></details>'
+        + (f'<p>The working sessions that built the wires are counted apart, since they are not runs: </p><table class="costs small"><thead><tr><th>Session</th><th>Models</th><th class="n">Cost</th><th class="n">Output</th><th>As of</th></tr></thead><tbody>{sess_rows}</tbody></table>' if sess_rows else ''))
+    body = body.replace("{runs_html}", runs_html)
+    agent = (f"What the wires' runs cost: {rt['runs']} runs for {usd(rt['cost_usd'])}, {rt['published']} published, {rt['blocked']} stopped by the permission check (admin/build/wire-runs.json). " + f"What the wires' pictures cost, from the ledgers admin/build/infographics.py writes: {t['images']} images for {usd(t['cost_usd'])} across {len(data['wires'])} wires; "
              f"a hero about {usd(pw['hero_usd'])}, a card about {usd(pw['card_usd'])}, an edition about {usd(pw['edition_usd'])}. The data is wire/costs.json (wire-costs/v1). Kept by @{ROLE}.")
     head = '<link rel="stylesheet" href="wire.css">\n<style>.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.6rem;margin:0 0 1rem}.tile{padding:.7rem .8rem;border:1px solid var(--line);border-radius:10px;background:var(--panel)}.tile b{display:block;font:700 1.5rem/1.2 var(--serif);color:var(--fg)}.tile span{font-size:.78rem;color:var(--dim)}table.costs{width:100%;border-collapse:collapse;font-size:.88rem;margin:0 0 1.2rem}table.costs th,table.costs td{padding:.35rem .5rem;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}table.costs .n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}table.costs tfoot td{font-weight:700}table.costs.small{font-size:.78rem}.bar{display:inline-block;width:100%;min-width:60px;height:.6rem;background:var(--panel2);border-radius:3px;overflow:hidden}.bar i{display:block;height:100%;background:var(--accent)}</style>\n'
     return newsroom_page("wire/costs.html", "What the wires cost",
-                         "What the wires' pictures cost, to the cent: every image, edition, wire and month from the pipeline's ledgers, with OpenRouter's own figures and the key's budget.",
+                         "What the wires cost, to the cent: every scheduled run with its tokens and models, and every picture by wire, edition and month, from the platform's and OpenRouter's own figures.",
                          body, eyebrow=eyebrow, crumbs=(("The Industry Wire", "wire/index.html"),),
-                         lead="Every picture the wires made and what it cost, by wire, edition, month and model, from OpenRouter's own figures; and what a hero, a card and an edition cost.",
+                         lead="What every run of the wires cost, with its tokens, models and outcome, and what every picture cost, by wire, edition, month and model: the platform's and OpenRouter's own figures.",
                          agent=agent, head=head, wide=True)
 
 

@@ -1,8 +1,326 @@
 {
  "schema": "wire-costs/v1",
  "kept_by": "newsroom.accountant",
- "updated": "2026-10-16T09:52:16Z",
- "what": "What the wires' pictures cost: every image the pipeline made (admin/build/infographics.py), with OpenRouter's own cost per image, summed by wire, edition, month, model and kind, and per piece of work. Not here: the desks' own runs and this site's sessions.",
+ "runs": {
+  "total": {
+   "runs": 6,
+   "cost_usd": 11.099542,
+   "published": 1,
+   "blocked": 5,
+   "refused": 10
+  },
+  "per_edition_usd": 10.0584,
+  "by_task": {
+   "newsroom": {
+    "runs": 3,
+    "cost_usd": 0.532532,
+    "published": 0,
+    "blocked": 3,
+    "output": 6001,
+    "duration_s": 285.4
+   },
+   "industry": {
+    "runs": 1,
+    "cost_usd": 10.058393,
+    "published": 1,
+    "blocked": 0,
+    "output": 579146,
+    "duration_s": 1277.4
+   },
+   "aws": {
+    "runs": 1,
+    "cost_usd": 0.290337,
+    "published": 0,
+    "blocked": 1,
+    "output": 1659,
+    "duration_s": 131.4
+   },
+   "portugal": {
+    "runs": 1,
+    "cost_usd": 0.21828,
+    "published": 0,
+    "blocked": 1,
+    "output": 1538,
+    "duration_s": 77.5
+   }
+  },
+  "by_day": {
+   "2026-10-16": {
+    "runs": 4,
+    "cost_usd": 10.745034,
+    "published": 1,
+    "blocked": 3,
+    "output": 584383,
+    "duration_s": 1570.3
+   },
+   "2026-10-15": {
+    "runs": 1,
+    "cost_usd": 0.159767,
+    "published": 0,
+    "blocked": 1,
+    "output": 1676,
+    "duration_s": 93.9
+   },
+   "2026-10-14": {
+    "runs": 1,
+    "cost_usd": 0.194741,
+    "published": 0,
+    "blocked": 1,
+    "output": 2285,
+    "duration_s": 107.5
+   }
+  },
+  "by_model": {
+   "claude-opus-5-5": {
+    "cost_usd": 8.203007,
+    "input": 316,
+    "output": 126712,
+    "cache_read": 13090586,
+    "cache_write": 510289,
+    "thinking": 19418
+   },
+   "claude-sonnet-5-5": {
+    "cost_usd": 2.409499,
+    "input": 150,
+    "output": 77733,
+    "cache_read": 4600760,
+    "cache_write": 417242,
+    "thinking": 12445
+   },
+   "claude-haiku-5-5": {
+    "cost_usd": 0.487036,
+    "input": 2950861,
+    "output": 383899,
+    "cache_read": 0,
+    "cache_write": 0,
+    "thinking": 249670
+   }
+  },
+  "rows": [
+   {
+    "id": "1363f8428ee5",
+    "task": "newsroom",
+    "trigger": "trig_01H41yFnc3ZmuahVDLaPkCYr",
+    "fired_at": "2026-10-16T05:57:01Z",
+    "finished_at": "2026-10-16T05:58:30Z",
+    "duration_s": 84.0,
+    "models": {
+     "claude-sonnet-5-5": {
+      "cost_usd": 0.178024,
+      "input": 18,
+      "output": 2040,
+      "cache_read": 416595,
+      "cache_write": 28982,
+      "thinking": 164
+     }
+    },
+    "cost_usd": 0.178024,
+    "turns": 9,
+    "subagents": 0,
+    "refused": 1,
+    "refused_kinds": [
+     "pip install",
+     "sgit clone"
+    ],
+    "outcome": "blocked",
+    "release": null,
+    "added": null,
+    "updated": null,
+    "note": "the install of the sgit client was refused as code from external"
+   },
+   {
+    "id": "f050ea9959a5",
+    "task": "portugal",
+    "trigger": "trig_01DsBEr34j7yERR8yQRRhWWU",
+    "fired_at": "2026-10-16T04:58:33Z",
+    "finished_at": "2026-10-16T04:59:54Z",
+    "duration_s": 77.5,
+    "models": {
+     "claude-opus-5-5": {
+      "cost_usd": 0.21828,
+      "input": 10,
+      "output": 1538,
+      "cache_read": 355318,
+      "cache_write": 14552,
+      "thinking": 460
+     }
+    },
+    "cost_usd": 0.21828,
+    "turns": 6,
+    "subagents": 0,
+    "refused": 2,
+    "refused_kinds": [
+     "pip install",
+     "sgit clone"
+    ],
+    "outcome": "blocked",
+    "release": null,
+    "added": null,
+    "updated": null,
+    "note": "the install was refused as data exfiltration, the clone as credential exploration"
+   },
+   {
+    "id": "e3faa7ef5a92",
+    "task": "aws",
+    "trigger": "trig_01Ag6kKsgRHFRG8yAs6G47MH",
+    "fired_at": "2026-10-16T04:53:27Z",
+    "finished_at": "2026-10-16T04:55:42Z",
+    "duration_s": 131.4,
+    "models": {
+     "claude-opus-5-5": {
+      "cost_usd": 0.290337,
+      "input": 16,
+      "output": 1659,
+      "cache_read": 585463,
+      "cache_write": 17500,
+      "thinking": 357
+     }
+    },
+    "cost_usd": 0.290337,
+    "turns": 9,
+    "subagents": 0,
+    "refused": 3,
+    "refused_kinds": [
+     "pip install",
+     "sgit clone"
+    ],
+    "outcome": "blocked",
+    "release": null,
+    "added": null,
+    "updated": null,
+    "note": "the clone was refused as data exfiltration"
+   },
+   {
+    "id": "e8664880bccc",
+    "task": "industry",
+    "trigger": "trig_011zoPuraUqDP1iQczeDj4rX",
+    "fired_at": "2026-10-16T04:47:44Z",
+    "finished_at": "2026-10-16T05:09:06Z",
+    "duration_s": 1277.4,
+    "models": {
+     "claude-opus-5-5": {
+      "cost_usd": 7.69439,
+      "input": 290,
+      "output": 123515,
+      "cache_read": 12149805,
+      "cache_write": 478237,
+      "thinking": 18601
+     },
+     "claude-sonnet-5-5": {
+      "cost_usd": 1.876967,
+      "input": 94,
+      "output": 71732,
+      "cache_read": 3308345,
+      "cache_write": 331450,
+      "thinking": 11888
+     },
+     "claude-haiku-5-5": {
+      "cost_usd": 0.487036,
+      "input": 2950861,
+      "output": 383899,
+      "cache_read": 0,
+      "cache_write": 0,
+      "thinking": 249670
+     }
+    },
+    "cost_usd": 10.058393,
+    "turns": 43,
+    "subagents": 8,
+    "refused": 1,
+    "refused_kinds": [
+     "pip install",
+     "sgit clone"
+    ],
+    "outcome": "published",
+    "release": "2026-10-16.1",
+    "added": 18,
+    "updated": 16,
+    "note": "the first install-and-clone was refused; the second, separate, went through"
+   },
+   {
+    "id": "85e0959d708d",
+    "task": "newsroom",
+    "trigger": "trig_01H41yFnc3ZmuahVDLaPkCYr",
+    "fired_at": "2026-10-15T05:56:17Z",
+    "finished_at": "2026-10-15T05:57:55Z",
+    "duration_s": 93.9,
+    "models": {
+     "claude-sonnet-5-5": {
+      "cost_usd": 0.159767,
+      "input": 16,
+      "output": 1676,
+      "cache_read": 362834,
+      "cache_write": 26673,
+      "thinking": 166
+     }
+    },
+    "cost_usd": 0.159767,
+    "turns": 8,
+    "subagents": 0,
+    "refused": 1,
+    "refused_kinds": [
+     "pip install",
+     "sgit clone"
+    ],
+    "outcome": "blocked",
+    "release": null,
+    "added": null,
+    "updated": null,
+    "note": "the install of the sgit client and the clones were refused"
+   },
+   {
+    "id": "439de67e42b1",
+    "task": "newsroom",
+    "trigger": "trig_01H41yFnc3ZmuahVDLaPkCYr",
+    "fired_at": "2026-10-14T05:56:56Z",
+    "finished_at": "2026-10-14T05:58:51Z",
+    "duration_s": 107.5,
+    "models": {
+     "claude-sonnet-5-5": {
+      "cost_usd": 0.194741,
+      "input": 22,
+      "output": 2285,
+      "cache_read": 512986,
+      "cache_write": 30137,
+      "thinking": 227
+     }
+    },
+    "cost_usd": 0.194741,
+    "turns": 12,
+    "subagents": 0,
+    "refused": 2,
+    "refused_kinds": [
+     "pip install",
+     "sgit clone"
+    ],
+    "outcome": "blocked",
+    "release": null,
+    "added": null,
+    "updated": null,
+    "note": "the install of the sgit client was refused as code from external"
+   }
+  ],
+  "sessions": [
+   {
+    "name": "@newsroom.wire's working session (13 to 16 October 2026): the wires, the graphs, the pictures, the accountant, the first screen, the fixes of 16 October",
+    "kind": "build",
+    "from": "2026-10-13",
+    "as_of": "2026-10-16T12:05:00Z",
+    "models": [
+     "claude-fable-5-1",
+     "claude-opus-5-5"
+    ],
+    "cost_usd": 150.63,
+    "input": 16938,
+    "output": 756325,
+    "cache_read": 108567451,
+    "cache_write": 4712954,
+    "note": "an interactive session the owner steers; its cost includes its subagents (the architect, the designer, the developer)"
+   }
+  ]
+ },
+ "updated": "2026-10-16T12:10:36Z",
+ "what": "What the wires cost: every image the pipeline made (admin/build/infographics.py), with OpenRouter's own cost per image, summed by wire, edition, month, model and kind, and per piece of work; and every scheduled run of the desks and the newsroom (admin/build/wire-runs.json), with the platform's own cost and tokens per model.",
  "total": {
   "images": 71,
   "cost_usd": 10.237898,

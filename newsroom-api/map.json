@@ -27,7 +27,7 @@
  ],
  "what": "The map of everything a reader does on newsroom.sgit.ai, and the review of it: phase 0 of the move described in https://newsroom.sgit.ai/articles/explorer-to-villager-newsroom.html. Written by admin/build/api_map.py on every build. The hashes are the 'before' for the move's rule that the live site serves the same bytes after it: scripts, styles and JSON raw; pages with the site chrome and version stamps normalised.",
  "api_means": "client-side: components, formats and contracts the browser runs, with no server and nothing to deploy but files",
- "release": "v0.12.73",
+ "release": "v0.12.74",
  "date": "11 October 2026",
  "source": {
   "sgit_ai": "",
@@ -37,7 +37,7 @@
  },
  "counts": {
   "reader_code_lines": 10263,
-  "reader_files": 62,
+  "reader_files": 64,
   "pages": 30,
   "views": 12,
   "controls": 56,
@@ -244,6 +244,38 @@
    "crypto": false
   },
   {
+   "path": "admin/build/vault_fetch.mjs",
+   "what": "A wire's vault as files on disk, read with the site's own reader and its published read key; no sgit client, no package to install",
+   "from": "this site",
+   "lines": 54,
+   "bytes": 3408,
+   "sha256": "afa8a7cbd1a15f77e24094f67ead2992a80991aec0ddb73e0095748431864ebf",
+   "hosts": [],
+   "fetch": 0,
+   "storage": [],
+   "events": [],
+   "eval": 0,
+   "innerHTML": 0,
+   "confirm": 0,
+   "crypto": false
+  },
+  {
+   "path": "admin/build/runs_ledger.py",
+   "what": "The ledger of every scheduled run of the wires: cost and tokens per model, turns, subagents, refusals, outcome (admin/build/wire-runs.json)",
+   "from": "this site",
+   "lines": 105,
+   "bytes": 5495,
+   "sha256": "8d1832bbe84cb5828432cc561280cf7925f89ba9e56b1e7eeab5aa3a4db38cd8",
+   "hosts": [],
+   "fetch": 0,
+   "storage": [],
+   "events": [],
+   "eval": 0,
+   "innerHTML": 0,
+   "confirm": 0,
+   "crypto": false
+  },
+  {
    "path": "admin/build/infographics.py",
    "what": "One card per story and one hero per edition through dev.tools.sgraph.ai, with a cost ledger per edition and per wire; the key from the environment only, a dry run without it",
    "from": "this site",
@@ -397,9 +429,9 @@
    "path": "wire/snapshot.json",
    "what": "The Industry Wire as it was in the vault at the last release: headlines, primary links, corrections, the latest release note; the fallback and the agents' index",
    "from": "this site, generated",
-   "lines": 1337,
-   "bytes": 62345,
-   "sha256": "62085ccd612b1abfa47679e5ec77320eb73ec78d063931e7ef4afa2bdba66e56",
+   "lines": 1715,
+   "bytes": 85350,
+   "sha256": "4d98c644257d6a4f50601a3441ff7e9cc0b90e01ea9b3afe5e7bde7e2c8b003d",
    "hosts": [],
    "fetch": 0,
    "storage": [],
@@ -415,7 +447,7 @@
    "from": "this site, generated",
    "lines": 292,
    "bytes": 10917,
-   "sha256": "42aa828998de833a6d39eca2d67979ab3e90933e714efd09a8066db1eb33bdb1",
+   "sha256": "7bf84930fd16d8eca37a554d923ee2299e76bdb05b79b11fb96a80a3bfd8326c",
    "hosts": [],
    "fetch": 0,
    "storage": [],
@@ -431,7 +463,7 @@
    "from": "this site, generated",
    "lines": 944,
    "bytes": 38298,
-   "sha256": "073f0270783a41d21622f55b50880a5dde234b6abb517d8a8aca169bea9656e1",
+   "sha256": "ff16ba9f98b09cea92193d5cfdc94bef6a81358290b2ffa8d7a88c75cc5673a5",
    "hosts": [],
    "fetch": 0,
    "storage": [],
@@ -447,7 +479,7 @@
    "from": "this site, generated",
    "lines": 515,
    "bytes": 26490,
-   "sha256": "e188f02148e47a55d4c4c87f9eb2e6c2b83453cb10e8588c179934541c2075b3",
+   "sha256": "9951eca5d4c9e7392de11a60baa999d43cfeb7f396dc6d931e2acf637799cbdb",
    "hosts": [],
    "fetch": 0,
    "storage": [],
@@ -563,7 +595,7 @@
    "from": "this site, generated",
    "lines": 268,
    "bytes": 13441,
-   "sha256": "fb65c9a70b2486dcbcfc09f6ece990686ae7e775763f6cbab6745ebce4933482",
+   "sha256": "6607e933ac03d70f6ffdc03ae784f7d4b6e1f5b19b8c3f1fedf6257a0c5ada1f",
    "hosts": [],
    "fetch": 0,
    "storage": [],
@@ -1195,7 +1227,7 @@
    "path": "wire/index.html",
    "what": "the Industry Wire's edition",
    "lines": 264,
-   "sha256": "a89dfc55f0e31f7eb1b44cbda7c02b229c8e6753750cd7a63e137fddcd897dc7"
+   "sha256": "bc1b1010b85e06c29346c540203a2248120af9ee67e7f8e4ac518a2b36668e3f"
   },
   {
    "path": "wire/sources.html",
@@ -1213,19 +1245,19 @@
    "path": "wire/owasp/index.html",
    "what": "the OWASP Wire's edition, with the projects graph",
    "lines": 265,
-   "sha256": "fc2c31f75ffeb12edc16d91ee33882e699f80831a99e9b418ea213b595f415ca"
+   "sha256": "27ecdbb8392a9bcfcedf85f6e521a8a1ff8c09fbe27b1398f5781a8e95b32adb"
   },
   {
    "path": "wire/aws/index.html",
    "what": "the AWS Wire's edition, with the stack and its deadlines",
    "lines": 265,
-   "sha256": "3ea762f3c45529c1dae075af00fd24bd38716bca69141950b4e599ceb4106461"
+   "sha256": "ee9a39c7c90e1189acabea02edd74fcf5402520fa0eed7368edda511d9c2ccf1"
   },
   {
    "path": "wire/portugal/index.html",
    "what": "the Portugal Wire's edition, in English and Portuguese, with the ecosystem map",
    "lines": 265,
-   "sha256": "eea9703a0319827a62d357b032c4c1de9b0235f207928f0cc70f471e7a584590"
+   "sha256": "e495c3bceaceca7ab559c56562ed10f1e9a788d65311553ba04bddeb79b21fe6"
   },
   {
    "path": "wire/days.html",
@@ -1236,20 +1268,20 @@
   {
    "path": "wire/costs.html",
    "what": "what the wires' pictures cost: every image, edition, wire and month, and the key's budget; wire/costs.json is the data",
-   "lines": 254,
-   "sha256": "bc2f78a98c4fdb785b9f7dfbdf3a7a3cfe9a781d2eb95d44f0334c00fd0ec0fe"
+   "lines": 257,
+   "sha256": "9cd34a694fb4d0a4cdfb4abd36a793c33d142a549d703c8257a5122d0113aed7"
   },
   {
    "path": "wire/charter.html",
    "what": "the charter of the wires",
-   "lines": 258,
-   "sha256": "1f4cc9dc555555d8e2954dbbcf65055e38046cfc9cd55eedb5fa638290ddcf1c"
+   "lines": 261,
+   "sha256": "45e1753e2375829b5e5d993b89a6e2dd5cb24f11f47f687a146c4b66b7c33e73"
   },
   {
    "path": "wire/desk-brief.html",
    "what": "the brief for the desks",
-   "lines": 264,
-   "sha256": "9ab290dea086eb67f7803f9758f0bc4ca35902225adc64c187631669a12aaffa"
+   "lines": 266,
+   "sha256": "7ed37fe6e8b0697d5ce02f1e910fd7291a8fdded06fde8a8938856f5dde98e57"
   },
   {
    "path": "wire/reach.html",
@@ -1564,7 +1596,7 @@
   "account": 1,
   "landing": 6,
   "newsroom": 1,
-  "page": 694,
+  "page": 701,
   "personas": 1,
   "share": 1,
   "topped-up": 1,
