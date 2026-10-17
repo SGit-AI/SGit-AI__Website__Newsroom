@@ -230,6 +230,58 @@ export function refile(file, id, label = '') {
              reads: (file.reads || []).map(tag), topups: (file.topups || []).map(tag), personas: (file.personas || []).map(tag), notes: (file.notes || []).map(tag) }
 }
 
+/** Where the device aliases live in the reader vault: { v, aliases: { <merged id>: <device it was merged into> }, merges: [...] }. */
+PATHS.aliases = '/activity/aliases.json'
+
+/** The device an id is filed under now: followed through the aliases, with a guard against a loop. */
+export function resolveAlias(id, aliases) {
+    const a = (aliases && aliases.aliases) || aliases || {}
+    let cur = id, hops = 0
+    while (a[cur] && a[cur] !== cur && hops++ < 20) cur = a[cur]
+    return cur
+}
+
+/**
+ * Merge several devices into one (card 077): every record of each is kept, re-tagged with the target's id
+ * (refile), and combined into the target's file; nothing is dropped, a payment record included. Returns the
+ * target's new file and the aliases to record, so a browser still using a merged id is filed under the target
+ * the next time it opens the vault, and an inbox batch from it is filed there too. `files` are the device files
+ * to merge, the target's own among them when it has one. Pure: nothing is written.
+ */
+export function mergeDevices(files, targetId, { label = '', at = new Date().toISOString(), by = '' } = {}) {
+    const list = (files || []).filter(Boolean)
+    const target = list.find(f => f.device && f.device.id === targetId) || null
+    const sources = list.filter(f => f.device && f.device.id !== targetId)
+    const name = label || (target && target.device.label) || (sources[0] && sources[0].device.label) || targetId
+    let out = target
+    for (const f of sources) out = combine(out, refile(f, targetId, name))
+    if (!out) return { file: null, aliases: {}, merged: [] }
+    const merged = [...new Set([...(((target || {}).device || {}).merged_from || []), ...sources.map(f => f.device.id), ...sources.flatMap(f => f.device.merged_from || [])])]
+    const { from, ...head } = out.device
+    out = { ...out, device: { ...head, id: targetId, label: name, merged_from: merged } }
+    return { file: out, aliases: Object.fromEntries(sources.map(f => [f.device.id, targetId])), merged: sources.map(f => f.device.id), record: { at, into: targetId, from: sources.map(f => f.device.id), by } }
+}
+
+/**
+ * Device files as the aliases file them: a file whose id was merged into another device (one written again by a
+ * browser that had not opened the vault since the merge) is folded into its target, so no record is counted twice
+ * and no merged device comes back as a row of its own. Pure.
+ */
+export function applyAliases(files, aliases) {
+    const byId = new Map()
+    for (const f of (files || []).filter(f => f && f.device && f.device.id)) {
+        const to = resolveAlias(f.device.id, aliases)
+        const g = to === f.device.id ? f : refile(f, to, '')
+        const prev = byId.get(to)
+        if (!prev) { byId.set(to, g); continue }
+        const keep = prev.device.id === to && prev.device.label ? prev.device.label : (g.device.label || '')
+        const c = combine(prev, g)
+        const { from, ...head } = c.device
+        byId.set(to, { ...c, device: { ...head, id: to, label: keep || head.label || '' } })
+    }
+    return [...byId.values()]
+}
+
 /** What a sync would write, in words, for the pane and the tests. */
 export function describe(file) {
     const seen = Object.keys((file.wire && file.wire.seen) || {}).length

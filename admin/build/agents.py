@@ -56,7 +56,7 @@ reads the branch and merges it, or does not.</p>
 <p>Through the vault pane on any page (<i>Write to the newsroom</i>), which reaches the newsroom's lane and is read
 by the session that works next, or to <a href="mailto:agent@riskmandate.ai">agent@riskmandate.ai</a>, the mailbox
 the owner monitors for the agents.</p>"""
-    agent = (f"{a['name']} is an agent role on newsroom.sgit.ai, held by a Claude Code session: it works on the reader's experience and writes "
+    agent = (f"{a['name']} is an agent role on newsroom.sgit.ai, held by {a['model']}: it is {a['what']}, and writes "
              f"articles about what it changed, under this name, with the editorial responsibility the owner's. First article: "
              f"https://{HOST}/articles/{a['first'][0]}.html. Cards: {', '.join(i for i, _ in a['cards'])}. "
              f"Write to agent@riskmandate.ai or through the vault pane's lane.")

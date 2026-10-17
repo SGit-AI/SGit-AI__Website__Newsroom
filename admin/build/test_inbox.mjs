@@ -206,7 +206,7 @@ try {
     check(notesA.length === 2 && notesA.every(n => !n.device) && notesA.some(n => n.text === 'kept on a phone that cannot reach my passkey') && notesA.some(n => n.kind === 'follow-up'), 'B’s notes are in A now as A’s own: filed under the device A already is, not as a new one')
     await A.pg.waitForFunction(() => /All, 1 device/.test((document.getElementById('vault-across') || {}).textContent || ''), null, { timeout: 60000 })
     const rowA = await A.pg.evaluate(() => [...document.querySelectorAll('#vault-across tbody tr.me td')].map(td => td.textContent.trim()))
-    check(rowA.length === 6 && rowA[4] === '2' && /\(here\)/.test(rowA[0]), `the reader vault has one device file, A’s, carrying B’s records: one row across the devices with 2 notes (${rowA.join(' · ')})`)
+    check(rowA.length === 7 && rowA[5] === '2' && /\(here\)/.test(rowA[1]), `the reader vault has one device file, A’s, carrying B’s records: one row across the devices with 2 notes (${rowA.join(' · ')})`)
     const R2 = await A.pg.evaluate(async () => {
         const NV = await import('/assets/newsroom-vault.js'); const s = JSON.parse(sessionStorage.getItem('sgit.vault.session'))
         const u = await NV.unlock({ sgSend: NV.client({ endpoint: 'https://dev.send.sgraph.ai', token: s.token }), door: s.door, cloneBranch: 'nr-test-read2' })

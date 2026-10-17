@@ -1,6 +1,6 @@
 {
   "site": "https://sgit.ai",
-  "generated": "2026-10-16",
+  "generated": "2026-10-17",
   "site_version": "v0.7.87",
   "schema": "https://newsroom.sgit.ai/articles/graphs.html",
   "topics": [
@@ -54,425 +54,6 @@
     "produces"
   ],
   "articles": [
-    {
-      "slug": "your-agents-logs-are-a-self-report",
-      "title": "Your agent's logs are a self-report: an answer to a GRC adviser's post on The AI Conference, with this site's own agent as the worked example, including the two commits its own counter got wrong",
-      "date": "2026-10-16",
-      "updated": "",
-      "url": "https://newsroom.sgit.ai/articles/your-agents-logs-are-a-self-report.html",
-      "markdown": "https://newsroom.sgit.ai/articles/your-agents-logs-are-a-self-report.md",
-      "card": "https://newsroom.sgit.ai/articles/cards/your-agents-logs-are-a-self-report.webp",
-      "teaser": "An answer to a GRC adviser's post: why an agent's logs are a self-report, and this site's agent measured, including two commits its own counter got wrong.",
-      "topics": [
-        "agents-and-policy",
-        "news-and-evidence"
-      ],
-      "tags": [
-        "agents",
-        "governance",
-        "abp",
-        "audit",
-        "evidence",
-        "iso-42001",
-        "nist-ai-rmf",
-        "aiuc-1",
-        "hooks",
-        "article"
-      ],
-      "links_out": [
-        "the-ai-conference-read-for-governance",
-        "re-anchoring-agent-behaviour-policies",
-        "a-policy-beside-the-prompt"
-      ],
-      "links_in": [
-        "the-ai-conference-read-for-governance"
-      ],
-      "figures": [
-        {
-          "file": "lg-evidence.webp",
-          "url": "https://newsroom.sgit.ai/articles/images/lg-evidence.webp",
-          "caption": "Where the evidence comes from: the agent's own account, a record a hook reads, a boundary the platform holds, and someone outside testing it. Each step is written by something the agent controls less, and is harder to talk round.",
-          "kind": "comparison"
-        },
-        {
-          "file": "lg-rules.webp",
-          "url": "https://newsroom.sgit.ai/articles/images/lg-rules.webp",
-          "caption": "The eleven rules this site's writing agent runs under, by who keeps them: ten are expectations kept by the agent, one is a setting kept by a hook, and none is a boundary; the one real boundary, the platform's limit on which repository the agent's GitHub tools can reach, is not in the policy.",
-          "kind": "comparison"
-        }
-      ],
-      "graph": {
-        "slug": "your-agents-logs-are-a-self-report",
-        "teaser": "An answer to a GRC adviser's post: why an agent's logs are a self-report, and this site's agent measured, including two commits its own counter got wrong.",
-        "topics": [
-          "agents-and-policy",
-          "news-and-evidence"
-        ],
-        "core_idea": "An agent's own account is a self-report, and research shows models rarely admit reward hacks; evidence comes from four sources of increasing independence, and this site's agent, measured against them, keeps ten of eleven rules itself, has one real boundary its policy does not list, and a hook-written counter that is more honest than the agent and still flagged two commits wrongly; owners belong to mandates, controls need testing, and the policy should be published.",
-        "nodes": [
-          {
-            "id": "post",
-            "label": "The adviser's post",
-            "kind": "artefact",
-            "summary": "Control failures, not war stories."
-          },
-          {
-            "id": "selfreport",
-            "label": "Logs are a self-report",
-            "kind": "claim",
-            "summary": "Reward hacks admitted in under 2% of cases."
-          },
-          {
-            "id": "sources",
-            "label": "Four sources of evidence",
-            "kind": "concept",
-            "summary": "Account, hook, boundary, outside test."
-          },
-          {
-            "id": "abp",
-            "label": "This agent's policy",
-            "kind": "artefact",
-            "summary": "Eleven rules, each labelled by who keeps it."
-          },
-          {
-            "id": "ten",
-            "label": "Ten of eleven kept by the agent",
-            "kind": "claim",
-            "summary": "One setting, no boundary as written."
-          },
-          {
-            "id": "boundary",
-            "label": "The unlisted boundary",
-            "kind": "example",
-            "summary": "GitHub tools scoped to one repository."
-          },
-          {
-            "id": "counter",
-            "label": "The counter's two commits",
-            "kind": "example",
-            "summary": "Both in throwaway test repositories."
-          },
-          {
-            "id": "ranvsworked",
-            "label": "Ran is not worked",
-            "kind": "claim",
-            "summary": "The scan was run; the counter cannot see if it passed."
-          },
-          {
-            "id": "mandate",
-            "label": "An owner per mandate",
-            "kind": "method",
-            "summary": "Agents are too many and too brief."
-          },
-          {
-            "id": "testcontrols",
-            "label": "Test the controls",
-            "kind": "method",
-            "summary": "Do they still fire after a change?"
-          },
-          {
-            "id": "publish",
-            "label": "Publish the policy",
-            "kind": "method",
-            "summary": "The artefact the frameworks do not define."
-          }
-        ],
-        "edges": [
-          {
-            "from": "selfreport",
-            "to": "post",
-            "rel": "extends"
-          },
-          {
-            "from": "sources",
-            "to": "selfreport",
-            "rel": "answers"
-          },
-          {
-            "from": "abp",
-            "to": "sources",
-            "rel": "example-of"
-          },
-          {
-            "from": "ten",
-            "to": "abp",
-            "rel": "depends-on"
-          },
-          {
-            "from": "boundary",
-            "to": "abp",
-            "rel": "contrasts"
-          },
-          {
-            "from": "counter",
-            "to": "sources",
-            "rel": "example-of"
-          },
-          {
-            "from": "ranvsworked",
-            "to": "counter",
-            "rel": "extends"
-          },
-          {
-            "from": "mandate",
-            "to": "post",
-            "rel": "answers"
-          },
-          {
-            "from": "testcontrols",
-            "to": "ranvsworked",
-            "rel": "answers"
-          },
-          {
-            "from": "publish",
-            "to": "abp",
-            "rel": "leads-to"
-          }
-        ],
-        "links": {
-          "articles": [
-            "the-ai-conference-read-for-governance",
-            "a-policy-beside-the-prompt",
-            "hooks-are-kernel-code",
-            "four-frameworks-one-agent"
-          ],
-          "pages": [],
-          "sites": [
-            "https://elevateconsult.com/insights/agentic-ai-governance-lessons-ai-conference/",
-            "https://www.anthropic.com/research/reasoning-models-dont-say-think",
-            "https://www.aiuc-1.com/",
-            "https://abp.sgit.ai/what-is-an-abp/index.html"
-          ]
-        },
-        "quotes": [
-          {
-            "text": "Evidence that the control ran is not evidence that it worked.",
-            "why": "The gap in the counter."
-          },
-          {
-            "text": "So an agent's account of what it did, including its reasoning and its tidy summary at the end, is a self-report.",
-            "why": "The core claim."
-          },
-          {
-            "text": "Inventory the mandates, and authorise each action at runtime.",
-            "why": "The answer to the inventory question."
-          }
-        ]
-      }
-    },
-    {
-      "slug": "the-ai-conference-read-for-governance",
-      "title": "The AI Conference 2026, read for agent governance: six claims traced, five disagreements, and what the speaker notes say that the slides do not",
-      "date": "2026-10-16",
-      "updated": "",
-      "url": "https://newsroom.sgit.ai/articles/the-ai-conference-read-for-governance.html",
-      "markdown": "https://newsroom.sgit.ai/articles/the-ai-conference-read-for-governance.md",
-      "card": "https://newsroom.sgit.ai/articles/cards/the-ai-conference-read-for-governance.webp",
-      "teaser": "Six claims from a post about The AI Conference traced to the slides, five open disagreements, and the best fact-check, in a speaker's notes.",
-      "topics": [
-        "agents-and-policy",
-        "news-and-evidence"
-      ],
-      "tags": [
-        "agents",
-        "governance",
-        "conferences",
-        "evaluations",
-        "interpretability",
-        "observability",
-        "open-models",
-        "research",
-        "article"
-      ],
-      "links_out": [
-        "your-agents-logs-are-a-self-report",
-        "a-policy-beside-the-prompt"
-      ],
-      "links_in": [
-        "your-agents-logs-are-a-self-report"
-      ],
-      "figures": [
-        {
-          "file": "aq-items.webp",
-          "url": "https://newsroom.sgit.ai/articles/images/aq-items.webp",
-          "caption": "The six items in the post, traced to the programme: the three failure stories trace to keynotes by Ion Stoica, Emmanuel Ameisen and Mike Chambers; the 43% poll and the 1,200-developer case are not in any abstract, deck or recap we read; the 1,500-agent architecture matches PayPal's abstract closely, but its count does not appear.",
-          "kind": "comparison"
-        },
-        {
-          "file": "aq-tensions.webp",
-          "url": "https://newsroom.sgit.ai/articles/images/aq-tensions.webp",
-          "caption": "Five questions on which speakers took opposite sides: whether humans stay in the loop, whether a model or a rule enforces policy, whether agents can be inventoried, whether internal probes beat reading the output, and whether open models are cheaper for the same work. The right-hand column is this site's reading.",
-          "kind": "comparison"
-        }
-      ],
-      "graph": {
-        "slug": "the-ai-conference-read-for-governance",
-        "teaser": "Six claims from a post about The AI Conference traced to the slides, five open disagreements, and the best fact-check, in a speaker's notes.",
-        "topics": [
-          "agents-and-policy",
-          "news-and-evidence"
-        ],
-        "core_idea": "Reading the agenda, 35 slide decks with their notes and the abstracts of The AI Conference 2026 traces three of six claims in a GRC adviser's post to keynotes and finds no source for the other three; the programme's loudest idea is that policy must be enforced outside the model, its commonest story is the quiet failure, and its speakers disagree on humans in the loop, model or rule, inventories, probes and open models.",
-        "nodes": [
-          {
-            "id": "post",
-            "label": "The adviser's post",
-            "kind": "artefact",
-            "summary": "Three failure stories, a poll, two case studies."
-          },
-          {
-            "id": "traced",
-            "label": "Three items traced",
-            "kind": "claim",
-            "summary": "Stoica, Ameisen, Chambers."
-          },
-          {
-            "id": "untraced",
-            "label": "Three items not found",
-            "kind": "question",
-            "summary": "43%, 1,200 developers, 1,500 agents."
-          },
-          {
-            "id": "outside",
-            "label": "Policy outside the model",
-            "kind": "concept",
-            "summary": "Hedera, Dropbox, C1, ReFocus, SS&C."
-          },
-          {
-            "id": "quiet",
-            "label": "Quiet failures",
-            "kind": "concept",
-            "summary": "A 200 OK, a green dashboard."
-          },
-          {
-            "id": "identity",
-            "label": "Identity before autonomy",
-            "kind": "concept",
-            "summary": "A name you can call at 2am."
-          },
-          {
-            "id": "gaming",
-            "label": "Evaluations get gamed",
-            "kind": "example",
-            "summary": "A key-value store that won the benchmark."
-          },
-          {
-            "id": "hitl",
-            "label": "Humans in the loop?",
-            "kind": "question",
-            "summary": "Dead, or still a human job."
-          },
-          {
-            "id": "modelrule",
-            "label": "A model or a rule?",
-            "kind": "question",
-            "summary": "Only something deterministic should decide."
-          },
-          {
-            "id": "inventory",
-            "label": "Can agents be inventoried?",
-            "kind": "question",
-            "summary": "Thirteen agents in 23 minutes."
-          },
-          {
-            "id": "review",
-            "label": "Review is thinning",
-            "kind": "example",
-            "summary": "56% of PRs with no human comment."
-          },
-          {
-            "id": "notes",
-            "label": "The fact-check in the notes",
-            "kind": "example",
-            "summary": "A number is a fact only because someone measured it."
-          },
-          {
-            "id": "nopolicy",
-            "label": "Nobody showed the policy",
-            "kind": "claim",
-            "summary": "Rules described, never published."
-          }
-        ],
-        "edges": [
-          {
-            "from": "traced",
-            "to": "post",
-            "rel": "answers"
-          },
-          {
-            "from": "untraced",
-            "to": "post",
-            "rel": "answers"
-          },
-          {
-            "from": "gaming",
-            "to": "traced",
-            "rel": "example-of"
-          },
-          {
-            "from": "quiet",
-            "to": "traced",
-            "rel": "extends"
-          },
-          {
-            "from": "hitl",
-            "to": "outside",
-            "rel": "contrasts"
-          },
-          {
-            "from": "modelrule",
-            "to": "outside",
-            "rel": "depends-on"
-          },
-          {
-            "from": "inventory",
-            "to": "identity",
-            "rel": "contrasts"
-          },
-          {
-            "from": "review",
-            "to": "hitl",
-            "rel": "example-of"
-          },
-          {
-            "from": "nopolicy",
-            "to": "outside",
-            "rel": "contrasts"
-          },
-          {
-            "from": "notes",
-            "to": "untraced",
-            "rel": "compared-with"
-          }
-        ],
-        "links": {
-          "articles": [
-            "your-agents-logs-are-a-self-report",
-            "a-policy-beside-the-prompt",
-            "four-frameworks-one-agent"
-          ],
-          "pages": [],
-          "sites": [
-            "https://aiconference.com/",
-            "https://elevateconsult.com/insights/agentic-ai-governance-lessons-ai-conference/"
-          ]
-        },
-        "quotes": [
-          {
-            "text": "Prompt injection is not an LLM problem, it is an authority problem.",
-            "why": "The sharpest statement of policy outside the model."
-          },
-          {
-            "text": "The worst bugs don't fail loudly. They succeed quietly, and wrongly.",
-            "why": "The commonest failure story."
-          },
-          {
-            "text": "Everyone said policy outside the model; nobody showed the policy.",
-            "why": "The gap the programme left."
-          }
-        ]
-      }
-    },
     {
       "slug": "scrolled-is-not-read",
       "title": "Scrolled is not read: what the reading meter measures, what it should, highlights you can keep, and the page as the reader's own graph",
@@ -4585,6 +4166,677 @@
           {
             "text": "Being designed for something is not the same as being proven at it.",
             "why": "sgit's scale is untested."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "your-agents-logs-are-a-self-report",
+      "title": "Your agent's logs are a self-report: an answer to a GRC adviser's post on The AI Conference, with this site's own agent as the worked example, including the two commits its own counter got wrong",
+      "date": "2026-10-16",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/your-agents-logs-are-a-self-report.html",
+      "markdown": "https://newsroom.sgit.ai/articles/your-agents-logs-are-a-self-report.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/your-agents-logs-are-a-self-report.webp",
+      "teaser": "An answer to a GRC adviser's post: why an agent's logs are a self-report, and this site's agent measured, including two commits its own counter got wrong.",
+      "topics": [
+        "agents-and-policy",
+        "news-and-evidence"
+      ],
+      "tags": [
+        "agents",
+        "governance",
+        "abp",
+        "audit",
+        "evidence",
+        "iso-42001",
+        "nist-ai-rmf",
+        "aiuc-1",
+        "hooks",
+        "article"
+      ],
+      "links_out": [
+        "the-ai-conference-read-for-governance",
+        "re-anchoring-agent-behaviour-policies",
+        "a-policy-beside-the-prompt"
+      ],
+      "links_in": [
+        "the-ai-conference-read-for-governance"
+      ],
+      "figures": [
+        {
+          "file": "lg-evidence.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/lg-evidence.webp",
+          "caption": "Where the evidence comes from: the agent's own account, a record a hook reads, a boundary the platform holds, and someone outside testing it. Each step is written by something the agent controls less, and is harder to talk round.",
+          "kind": "comparison"
+        },
+        {
+          "file": "lg-rules.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/lg-rules.webp",
+          "caption": "The eleven rules this site's writing agent runs under, by who keeps them: ten are expectations kept by the agent, one is a setting kept by a hook, and none is a boundary; the one real boundary, the platform's limit on which repository the agent's GitHub tools can reach, is not in the policy.",
+          "kind": "comparison"
+        }
+      ],
+      "graph": {
+        "slug": "your-agents-logs-are-a-self-report",
+        "teaser": "An answer to a GRC adviser's post: why an agent's logs are a self-report, and this site's agent measured, including two commits its own counter got wrong.",
+        "topics": [
+          "agents-and-policy",
+          "news-and-evidence"
+        ],
+        "core_idea": "An agent's own account is a self-report, and research shows models rarely admit reward hacks; evidence comes from four sources of increasing independence, and this site's agent, measured against them, keeps ten of eleven rules itself, has one real boundary its policy does not list, and a hook-written counter that is more honest than the agent and still flagged two commits wrongly; owners belong to mandates, controls need testing, and the policy should be published.",
+        "nodes": [
+          {
+            "id": "post",
+            "label": "The adviser's post",
+            "kind": "artefact",
+            "summary": "Control failures, not war stories."
+          },
+          {
+            "id": "selfreport",
+            "label": "Logs are a self-report",
+            "kind": "claim",
+            "summary": "Reward hacks admitted in under 2% of cases."
+          },
+          {
+            "id": "sources",
+            "label": "Four sources of evidence",
+            "kind": "concept",
+            "summary": "Account, hook, boundary, outside test."
+          },
+          {
+            "id": "abp",
+            "label": "This agent's policy",
+            "kind": "artefact",
+            "summary": "Eleven rules, each labelled by who keeps it."
+          },
+          {
+            "id": "ten",
+            "label": "Ten of eleven kept by the agent",
+            "kind": "claim",
+            "summary": "One setting, no boundary as written."
+          },
+          {
+            "id": "boundary",
+            "label": "The unlisted boundary",
+            "kind": "example",
+            "summary": "GitHub tools scoped to one repository."
+          },
+          {
+            "id": "counter",
+            "label": "The counter's two commits",
+            "kind": "example",
+            "summary": "Both in throwaway test repositories."
+          },
+          {
+            "id": "ranvsworked",
+            "label": "Ran is not worked",
+            "kind": "claim",
+            "summary": "The scan was run; the counter cannot see if it passed."
+          },
+          {
+            "id": "mandate",
+            "label": "An owner per mandate",
+            "kind": "method",
+            "summary": "Agents are too many and too brief."
+          },
+          {
+            "id": "testcontrols",
+            "label": "Test the controls",
+            "kind": "method",
+            "summary": "Do they still fire after a change?"
+          },
+          {
+            "id": "publish",
+            "label": "Publish the policy",
+            "kind": "method",
+            "summary": "The artefact the frameworks do not define."
+          }
+        ],
+        "edges": [
+          {
+            "from": "selfreport",
+            "to": "post",
+            "rel": "extends"
+          },
+          {
+            "from": "sources",
+            "to": "selfreport",
+            "rel": "answers"
+          },
+          {
+            "from": "abp",
+            "to": "sources",
+            "rel": "example-of"
+          },
+          {
+            "from": "ten",
+            "to": "abp",
+            "rel": "depends-on"
+          },
+          {
+            "from": "boundary",
+            "to": "abp",
+            "rel": "contrasts"
+          },
+          {
+            "from": "counter",
+            "to": "sources",
+            "rel": "example-of"
+          },
+          {
+            "from": "ranvsworked",
+            "to": "counter",
+            "rel": "extends"
+          },
+          {
+            "from": "mandate",
+            "to": "post",
+            "rel": "answers"
+          },
+          {
+            "from": "testcontrols",
+            "to": "ranvsworked",
+            "rel": "answers"
+          },
+          {
+            "from": "publish",
+            "to": "abp",
+            "rel": "leads-to"
+          }
+        ],
+        "links": {
+          "articles": [
+            "the-ai-conference-read-for-governance",
+            "a-policy-beside-the-prompt",
+            "hooks-are-kernel-code",
+            "four-frameworks-one-agent"
+          ],
+          "pages": [],
+          "sites": [
+            "https://elevateconsult.com/insights/agentic-ai-governance-lessons-ai-conference/",
+            "https://www.anthropic.com/research/reasoning-models-dont-say-think",
+            "https://www.aiuc-1.com/",
+            "https://abp.sgit.ai/what-is-an-abp/index.html"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "Evidence that the control ran is not evidence that it worked.",
+            "why": "The gap in the counter."
+          },
+          {
+            "text": "So an agent's account of what it did, including its reasoning and its tidy summary at the end, is a self-report.",
+            "why": "The core claim."
+          },
+          {
+            "text": "Inventory the mandates, and authorise each action at runtime.",
+            "why": "The answer to the inventory question."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "the-vault-opened",
+      "title": "The vault, opened: merging devices, reading every call to the vault server, browsing your vaults, and one viewer that every reader vault links and opens with",
+      "date": "2026-10-16",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/the-vault-opened.html",
+      "markdown": "https://newsroom.sgit.ai/articles/the-vault-opened.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/the-vault-opened.webp",
+      "teaser": "Merging devices, every call to the vault server named and opened, a page to browse your vaults, and one shared viewer that every reader vault opens with.",
+      "topics": [
+        "vaults-and-method",
+        "site-and-engineering"
+      ],
+      "tags": [
+        "vaults",
+        "vault-in-vault",
+        "sub-vaults",
+        "vault-apps",
+        "devices",
+        "merge",
+        "encryption",
+        "debrief",
+        "agents",
+        "newsroom",
+        "site-engineering",
+        "article"
+      ],
+      "links_out": [
+        "the-vault-crosses-chrome-profiles",
+        "sixteen-notes-i-did-not-want-to-lose",
+        "the-passkey-opens-the-vault",
+        "the-site-is-an-inbox",
+        "the-agents-write-too"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "vo-viewer.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/vo-viewer.webp",
+          "caption": "A demo reader vault opened in the SG/App at dev.vault.sgraph.ai, read-only, from its published read key. The page is the newsroom's viewer: its code came from a different vault, lkypj6zq, through a link file, and it drew the account from the demo vault's own records, a balance of £4.84, three pages read, two notes, two devices. The badge at the top right says the session cannot write.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "vo-merge.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/vo-merge.webp",
+          "caption": "The Vault tab in the pane, 400 pixels wide, in Newsprint, with two devices ticked in Across your devices. The bar under the table offers to merge them into one of the two, under a name that can be changed, and says that nothing is deleted. The total row is the account recomputed from the records.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "vo-calls.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/vo-calls.webp",
+          "caption": "The Calls tab, widened, after an update of the reader vault. One batch call is open: inside it, a file's contents (the entry page the update wrote), a tree with six entries, a commit with its message, time, tree and parent, and a ref pointing at that commit. Each was decrypted in the page with the reader vault's key; the server holds only the ciphertext.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "vo-browse.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/vo-browse.webp",
+          "caption": "The page Your vaults, opened, after a merge: the reader vault's tree on the left, the merged device's file in the middle with the device it was merged from in its header, and the commits on the right, newest first, from the merge back to the vault's creation. Picking a commit shows the tree and the files as they were then.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "vo-link.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/vo-link.webp",
+          "caption": "How the viewer is linked. Left, a reader vault: its records under activity/, and four small files the next Update writes. Right, the newsroom's viewer in vault lkypj6zq, with its code. Below, what the SG/App does when it opens the reader vault: reads the manifest, opens the viewer vault read-only from the owner record, loads the viewer's code through the link, and lets it read the reader's own records.",
+          "kind": "architecture"
+        }
+      ],
+      "graph": {
+        "slug": "the-vault-opened",
+        "teaser": "Merging devices, every call to the vault server named and opened, a page to browse your vaults, and one shared viewer that every reader vault opens with.",
+        "topics": [
+          "vaults-and-method",
+          "site-and-engineering"
+        ],
+        "core_idea": "The reader's vault became something a reader can see into and tidy: devices merge without losing a record, each call to the vault server is named and decrypted with keys the page already holds, a page walks every vault file by file and commit by commit, and one viewer, living in a vault of its own, is linked read-only into every reader vault as its app, the vault-in-vault technique proven in the live SG/App on a demo vault.",
+        "nodes": [
+          {
+            "id": "ask",
+            "label": "Five asks after Firefox",
+            "kind": "example",
+            "summary": "The owner connected Firefox, found the workflow worked, and asked for merging, browsing, a shared viewer, readable calls and a clearer chooser."
+          },
+          {
+            "id": "merge",
+            "label": "Merge devices",
+            "kind": "method",
+            "summary": "Several device files become one, every record re-filed and combined, the totals unchanged."
+          },
+          {
+            "id": "alias",
+            "label": "Aliases, not deletions",
+            "kind": "concept",
+            "summary": "activity/aliases.json sends a merged device's browser, files and inbox batches to the device it went into."
+          },
+          {
+            "id": "payment",
+            "label": "No payment lost",
+            "kind": "claim",
+            "summary": "A top-up is a payment record; a merge moves it and never drops it."
+          },
+          {
+            "id": "chooser",
+            "label": "A chooser that names the destination",
+            "kind": "artefact",
+            "summary": "The likely device first, a button that says where the browser goes, and Change to move it later."
+          },
+          {
+            "id": "calls",
+            "label": "The Calls tab",
+            "kind": "artefact",
+            "summary": "Every call named from its address, and opened into a commit, tree, ref or file with the vault's own key."
+          },
+          {
+            "id": "browse",
+            "label": "Your vaults, opened",
+            "kind": "artefact",
+            "summary": "A page that opens the four vaults of an account and shows files, contents and commits, writing nothing."
+          },
+          {
+            "id": "subvault",
+            "label": "sgit.ai's sub-vaults",
+            "kind": "concept",
+            "summary": "A link file with no key, the read key in an owner record, and app reads spliced through the link."
+          },
+          {
+            "id": "four",
+            "label": "Four files in the reader vault",
+            "kind": "method",
+            "summary": "The link, the owner record, the app manifest and a short entry page, written on the next Update."
+          },
+          {
+            "id": "viewer",
+            "label": "One shared viewer",
+            "kind": "artefact",
+            "summary": "The viewer lives once, in vault lkypj6zq, and every reader vault that links it shows its new versions."
+          },
+          {
+            "id": "proof",
+            "label": "Proven in the live SG/App",
+            "kind": "example",
+            "summary": "A demo reader vault linked the same way opened read-only and rendered through the viewer."
+          },
+          {
+            "id": "readkey",
+            "label": "Only a read key leaves",
+            "kind": "claim",
+            "summary": "The SG/Vault app is handed the reader vault's read key over its embed protocol, and the test checks it is nothing else."
+          },
+          {
+            "id": "limits",
+            "label": "Undo and deep links",
+            "kind": "question",
+            "summary": "Splitting a merged device and opening the app straight onto its history are not built."
+          }
+        ],
+        "edges": [
+          {
+            "from": "ask",
+            "to": "merge",
+            "rel": "leads-to"
+          },
+          {
+            "from": "merge",
+            "to": "alias",
+            "rel": "produces"
+          },
+          {
+            "from": "merge",
+            "to": "payment",
+            "rel": "depends-on"
+          },
+          {
+            "from": "ask",
+            "to": "chooser",
+            "rel": "leads-to"
+          },
+          {
+            "from": "chooser",
+            "to": "merge",
+            "rel": "depends-on"
+          },
+          {
+            "from": "ask",
+            "to": "calls",
+            "rel": "leads-to"
+          },
+          {
+            "from": "ask",
+            "to": "browse",
+            "rel": "leads-to"
+          },
+          {
+            "from": "browse",
+            "to": "readkey",
+            "rel": "produces"
+          },
+          {
+            "from": "subvault",
+            "to": "four",
+            "rel": "leads-to"
+          },
+          {
+            "from": "four",
+            "to": "viewer",
+            "rel": "produces"
+          },
+          {
+            "from": "viewer",
+            "to": "proof",
+            "rel": "example-of"
+          },
+          {
+            "from": "ask",
+            "to": "viewer",
+            "rel": "leads-to"
+          },
+          {
+            "from": "alias",
+            "to": "limits",
+            "rel": "leads-to"
+          }
+        ],
+        "links": {
+          "articles": [
+            "the-vault-crosses-chrome-profiles",
+            "sixteen-notes-i-did-not-want-to-lose",
+            "the-passkey-opens-the-vault",
+            "the-site-is-an-inbox",
+            "the-agents-write-too"
+          ],
+          "pages": [],
+          "sites": [
+            "https://newsroom.sgit.ai/admin/notes/2026-10-16__the-vault-opened.md",
+            "https://newsroom.sgit.ai/vault/browse.html",
+            "https://sgit.ai/docs/vault/sub-vaults.html",
+            "https://sgit.ai/docs/vault/vault-apps.html",
+            "https://sgit.ai/docs/vault/sg-bridge.html",
+            "https://sgit.ai/demos/vault-app-embed.html"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "Merging keeps every record and every payment, moves them into one device file, and leaves an alias so a browser still using a merged device lands in the right place.",
+            "why": "the rule of a merge, and the reason it is safe for money"
+          },
+          {
+            "text": "The viewer's code lives once.",
+            "why": "the whole of the vault-in-vault technique in five words"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "the-ai-conference-read-for-governance",
+      "title": "The AI Conference 2026, read for agent governance: six claims traced, five disagreements, and what the speaker notes say that the slides do not",
+      "date": "2026-10-16",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/the-ai-conference-read-for-governance.html",
+      "markdown": "https://newsroom.sgit.ai/articles/the-ai-conference-read-for-governance.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/the-ai-conference-read-for-governance.webp",
+      "teaser": "Six claims from a post about The AI Conference traced to the slides, five open disagreements, and the best fact-check, in a speaker's notes.",
+      "topics": [
+        "agents-and-policy",
+        "news-and-evidence"
+      ],
+      "tags": [
+        "agents",
+        "governance",
+        "conferences",
+        "evaluations",
+        "interpretability",
+        "observability",
+        "open-models",
+        "research",
+        "article"
+      ],
+      "links_out": [
+        "your-agents-logs-are-a-self-report",
+        "a-policy-beside-the-prompt"
+      ],
+      "links_in": [
+        "your-agents-logs-are-a-self-report"
+      ],
+      "figures": [
+        {
+          "file": "aq-items.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/aq-items.webp",
+          "caption": "The six items in the post, traced to the programme: the three failure stories trace to keynotes by Ion Stoica, Emmanuel Ameisen and Mike Chambers; the 43% poll and the 1,200-developer case are not in any abstract, deck or recap we read; the 1,500-agent architecture matches PayPal's abstract closely, but its count does not appear.",
+          "kind": "comparison"
+        },
+        {
+          "file": "aq-tensions.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/aq-tensions.webp",
+          "caption": "Five questions on which speakers took opposite sides: whether humans stay in the loop, whether a model or a rule enforces policy, whether agents can be inventoried, whether internal probes beat reading the output, and whether open models are cheaper for the same work. The right-hand column is this site's reading.",
+          "kind": "comparison"
+        }
+      ],
+      "graph": {
+        "slug": "the-ai-conference-read-for-governance",
+        "teaser": "Six claims from a post about The AI Conference traced to the slides, five open disagreements, and the best fact-check, in a speaker's notes.",
+        "topics": [
+          "agents-and-policy",
+          "news-and-evidence"
+        ],
+        "core_idea": "Reading the agenda, 35 slide decks with their notes and the abstracts of The AI Conference 2026 traces three of six claims in a GRC adviser's post to keynotes and finds no source for the other three; the programme's loudest idea is that policy must be enforced outside the model, its commonest story is the quiet failure, and its speakers disagree on humans in the loop, model or rule, inventories, probes and open models.",
+        "nodes": [
+          {
+            "id": "post",
+            "label": "The adviser's post",
+            "kind": "artefact",
+            "summary": "Three failure stories, a poll, two case studies."
+          },
+          {
+            "id": "traced",
+            "label": "Three items traced",
+            "kind": "claim",
+            "summary": "Stoica, Ameisen, Chambers."
+          },
+          {
+            "id": "untraced",
+            "label": "Three items not found",
+            "kind": "question",
+            "summary": "43%, 1,200 developers, 1,500 agents."
+          },
+          {
+            "id": "outside",
+            "label": "Policy outside the model",
+            "kind": "concept",
+            "summary": "Hedera, Dropbox, C1, ReFocus, SS&C."
+          },
+          {
+            "id": "quiet",
+            "label": "Quiet failures",
+            "kind": "concept",
+            "summary": "A 200 OK, a green dashboard."
+          },
+          {
+            "id": "identity",
+            "label": "Identity before autonomy",
+            "kind": "concept",
+            "summary": "A name you can call at 2am."
+          },
+          {
+            "id": "gaming",
+            "label": "Evaluations get gamed",
+            "kind": "example",
+            "summary": "A key-value store that won the benchmark."
+          },
+          {
+            "id": "hitl",
+            "label": "Humans in the loop?",
+            "kind": "question",
+            "summary": "Dead, or still a human job."
+          },
+          {
+            "id": "modelrule",
+            "label": "A model or a rule?",
+            "kind": "question",
+            "summary": "Only something deterministic should decide."
+          },
+          {
+            "id": "inventory",
+            "label": "Can agents be inventoried?",
+            "kind": "question",
+            "summary": "Thirteen agents in 23 minutes."
+          },
+          {
+            "id": "review",
+            "label": "Review is thinning",
+            "kind": "example",
+            "summary": "56% of PRs with no human comment."
+          },
+          {
+            "id": "notes",
+            "label": "The fact-check in the notes",
+            "kind": "example",
+            "summary": "A number is a fact only because someone measured it."
+          },
+          {
+            "id": "nopolicy",
+            "label": "Nobody showed the policy",
+            "kind": "claim",
+            "summary": "Rules described, never published."
+          }
+        ],
+        "edges": [
+          {
+            "from": "traced",
+            "to": "post",
+            "rel": "answers"
+          },
+          {
+            "from": "untraced",
+            "to": "post",
+            "rel": "answers"
+          },
+          {
+            "from": "gaming",
+            "to": "traced",
+            "rel": "example-of"
+          },
+          {
+            "from": "quiet",
+            "to": "traced",
+            "rel": "extends"
+          },
+          {
+            "from": "hitl",
+            "to": "outside",
+            "rel": "contrasts"
+          },
+          {
+            "from": "modelrule",
+            "to": "outside",
+            "rel": "depends-on"
+          },
+          {
+            "from": "inventory",
+            "to": "identity",
+            "rel": "contrasts"
+          },
+          {
+            "from": "review",
+            "to": "hitl",
+            "rel": "example-of"
+          },
+          {
+            "from": "nopolicy",
+            "to": "outside",
+            "rel": "contrasts"
+          },
+          {
+            "from": "notes",
+            "to": "untraced",
+            "rel": "compared-with"
+          }
+        ],
+        "links": {
+          "articles": [
+            "your-agents-logs-are-a-self-report",
+            "a-policy-beside-the-prompt",
+            "four-frameworks-one-agent"
+          ],
+          "pages": [],
+          "sites": [
+            "https://aiconference.com/",
+            "https://elevateconsult.com/insights/agentic-ai-governance-lessons-ai-conference/"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "Prompt injection is not an LLM problem, it is an authority problem.",
+            "why": "The sharpest statement of policy outside the model."
+          },
+          {
+            "text": "The worst bugs don't fail loudly. They succeed quietly, and wrongly.",
+            "why": "The commonest failure story."
+          },
+          {
+            "text": "Everyone said policy outside the model; nobody showed the policy.",
+            "why": "The gap the programme left."
           }
         ]
       }
@@ -10252,6 +10504,7 @@
         "sixteen-notes-i-did-not-want-to-lose"
       ],
       "links_in": [
+        "the-vault-opened",
         "your-own-newsroom",
         "agent-workflows-on-ephemeral-vaults"
       ],
@@ -13241,6 +13494,7 @@
         "two-agents-one-vault"
       ],
       "links_in": [
+        "the-vault-opened",
         "handing-secrets-to-agents",
         "the-agents-write-too",
         "sgit-in-a-ci-pipeline",
@@ -14703,6 +14957,7 @@
         "stop-the-bleeding-then-ask-for-it-back"
       ],
       "links_in": [
+        "the-vault-opened",
         "dark-mode-and-four-more",
         "stop-the-bleeding-then-ask-for-it-back"
       ],
@@ -18777,6 +19032,7 @@
         "i-miss-it"
       ],
       "links_in": [
+        "the-vault-opened",
         "the-wire-as-a-graph",
         "every-link-points-back",
         "sixteen-notes-i-did-not-want-to-lose",
@@ -19998,6 +20254,7 @@
         "where-the-vault-keys-live"
       ],
       "links_in": [
+        "the-vault-opened",
         "secrets-on-public-keys",
         "handing-secrets-to-agents",
         "every-link-points-back",

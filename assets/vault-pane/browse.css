@@ -1,0 +1,15 @@
+/* vault/browse.html: your vaults, opened (card 079) */
+.browse-tabs { display: flex; flex-wrap: wrap; gap: .4rem; margin: .5rem 0; }
+.browse-tab { font: inherit; display: flex; flex-direction: column; align-items: flex-start; gap: .05rem; padding: .45rem .75rem; border: 1px solid var(--line2, #cfd2d8); border-radius: 10px; background: var(--panel, #fff); color: var(--fg, #1c1d21); cursor: pointer; }
+.browse-tab[aria-selected="true"] { border-color: var(--accent, #0f6b4f); box-shadow: 0 0 0 1px var(--accent, #0f6b4f) inset; }
+.browse-tab .mono, .browse-grid .mono { font-family: var(--mono, ui-monospace, monospace); font-size: .78rem; color: var(--dim, #5a5e68); }
+.browse-grid { display: grid; grid-template-columns: minmax(14rem, 1fr) minmax(0, 2fr) minmax(14rem, 1fr); gap: 1rem; align-items: start; margin: .8rem 0 1.5rem; }
+@media (max-width: 1100px) { .browse-grid { grid-template-columns: 1fr; } }
+.browse-grid section { min-width: 0; border: 1px solid var(--line, #e3e5ea); border-radius: 10px; padding: .6rem .8rem; background: var(--panel, #fff); }
+.browse-grid h3, .browse-app h3 { margin: 0 0 .4rem; font: 700 .72rem/1.4 var(--sans, system-ui); letter-spacing: .14em; text-transform: uppercase; color: var(--dim, #5a5e68); }
+ul.tree, ol.commits { list-style: none; margin: 0; padding: 0; font-size: .86rem; }
+ul.tree li, ol.commits li { padding: .12rem 0; overflow-wrap: anywhere; }
+ul.tree li.on .tree-btn, ol.commits li.on .tree-btn { font-weight: 700; color: var(--accent, #0f6b4f); }
+.tree-btn { font: inherit; background: none; border: 0; padding: 0; color: var(--link, var(--accent, #0f6b4f)); cursor: pointer; text-align: left; }
+.browse-pre { max-height: 32rem; overflow: auto; background: var(--chip-bg, #f4f5f7); border-radius: 8px; padding: .6rem .7rem; font: .78rem/1.45 var(--mono, ui-monospace, monospace); white-space: pre-wrap; overflow-wrap: anywhere; }
+.browse-app { margin: 1rem 0 2rem; }

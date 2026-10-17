@@ -103,6 +103,24 @@ check(cmb.notes.length === 2 && cmb.reads.length === 2 && cmb.device.syncs === 2
 const CR = S.consolidate([S.combine(gA, rf)], acct)
 check(CR.devices.length === 1 && CR.devices[0].reads === 4 && CR.devices[0].notes === 3 && CR.totals.balance === 982.5, 'one file carrying two browsers\' records: one row across the devices, the same totals')
 
+// merging devices (card 077): several files into one, nothing dropped; the aliases redirect the merged ids
+const ipad1 = S.extract(A, { id: 'nr-ipad0001', label: 'iPad 1' }, null, { notes: NA.notes })
+const ipad2 = S.extract(B, { id: 'nr-ipad0002', label: 'iPad 2' }, null, { notes: NB.notes })
+const ipad3 = { ...S.extract({ ...fresh, log: [read('c1', '2026-10-13T08:00:00.000Z', 1)] }, { id: 'nr-ipad0003', label: 'iPad 3' }), topups: [{ ref: 'cs_test_9', at: '2026-10-13T08:05:00.000Z', credit: 200, source: 'link', device: 'nr-ipad0003' }] }
+const before = S.consolidate([ipad1, ipad2, ipad3], acct)
+const md = S.mergeDevices([ipad1, ipad2, ipad3], 'nr-ipad0001', { label: 'iPad' })
+check(md.file.device.id === 'nr-ipad0001' && md.file.device.label === 'iPad' && md.file.reads.length === 5 && md.file.notes.length === 3 && md.file.topups.length === 2 && md.file.reads.every(e => e.device === 'nr-ipad0001') && !('from' in md.file.device), `mergeDevices: three iPads into one, every read, note and top-up kept and re-tagged (${md.file.reads.length} reads, ${md.file.notes.length} notes, ${md.file.topups.length} top-ups)`)
+check(JSON.stringify(md.aliases) === JSON.stringify({ 'nr-ipad0002': 'nr-ipad0001', 'nr-ipad0003': 'nr-ipad0001' }) && md.file.device.merged_from.sort().join() === 'nr-ipad0002,nr-ipad0003' && md.record.from.length === 2, 'mergeDevices: the merged ids are aliased to the target and recorded in its header')
+const after = S.consolidate([md.file], acct)
+check(after.devices.length === 1 && after.totals.reads === before.totals.reads && after.totals.spent === before.totals.spent && after.totals.credit === before.totals.credit && after.totals.balance === before.totals.balance && after.totals.notes === before.totals.notes, `mergeDevices: one row, and the account's totals are unchanged (balance ${after.totals.balance}p before and after)`)
+const al = { v: 1, aliases: md.aliases }
+check(S.resolveAlias('nr-ipad0003', al) === 'nr-ipad0001' && S.resolveAlias('nr-other', al) === 'nr-other' && S.resolveAlias('x', { aliases: { x: 'y', y: 'x' } }) !== undefined, 'resolveAlias: a merged id resolves to its device; others are themselves; a loop does not hang')
+const back = S.extract({ ...fresh, log: [read('c2', '2026-10-14T08:00:00.000Z', 2)] }, { id: 'nr-ipad0003', label: 'iPad 3' })
+const folded = S.applyAliases([md.file, back], al)
+check(folded.length === 1 && folded[0].device.id === 'nr-ipad0001' && folded[0].device.label === 'iPad' && folded[0].reads.length === 6 && S.consolidate(folded, acct).devices.length === 1, 'applyAliases: a merged device written again by an old browser folds into its target, not a row of its own')
+const md2 = S.mergeDevices([md.file, S.extract(A, { id: 'nr-laptop01', label: 'laptop' })], 'nr-laptop01')
+check(md2.file.device.merged_from.sort().join() === 'nr-ipad0001,nr-ipad0002,nr-ipad0003' && md2.file.device.label === 'laptop' && md2.file.reads.length === 5, 'mergeDevices again: earlier merges are remembered, the reads that were already the same records are not doubled')
+
 // the wire: stories seen travel in the device file; the earliest sighting wins; a merge tags them and is idempotent
 const WA = { 'sec-01': { at: '2026-10-13T08:00:00.000Z' }, 'ai-01': { at: '2026-10-13T08:00:00.000Z' }, 'biz-01': { at: '2026-10-13T08:05:00.000Z', device: 'nr-cccc0003' } }
 const WB = { 'sec-01': { at: '2026-10-13T07:00:00.000Z' }, 'ai-09': { at: '2026-10-13T09:00:00.000Z' } }

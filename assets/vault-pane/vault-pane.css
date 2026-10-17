@@ -117,3 +117,32 @@ html.vault-open .vault-pane { transform: none; }
 .vault-pane .waiting { list-style: none; margin: .3rem 0; padding: 0; }
 .vault-pane .waiting li { padding: .35rem 0; border-bottom: 1px solid var(--line, #eceef2); font-size: .84rem; }
 .vault-pane .waiting li.refused { color: var(--warn-ink, #8a5a0a); }
+/* the calls to the vault server, as a tab (card 078) */
+html.vault-wide { --vault-w: min(760px, 100vw); }
+.vault-pane ul.calls { list-style: none; margin: .3rem 0; padding: 0; }
+.vault-pane .call { border-bottom: 1px solid var(--line, #eceef2); }
+.vault-pane .call-h { display: grid; grid-template-columns: auto auto 1fr; gap: .1rem .45rem; align-items: baseline; width: 100%; text-align: left; font: inherit; font-size: .8rem; background: none; border: 0; padding: .35rem 0; color: inherit; cursor: pointer; }
+.vault-pane .call-h .when { font-family: var(--mono, ui-monospace, monospace); color: var(--dim, #5a5e68); font-size: .74rem; }
+.vault-pane .call-h .what { font-family: var(--mono, ui-monospace, monospace); overflow-wrap: anywhere; font-size: .76rem; }
+.vault-pane .call-h .meta { grid-column: 2 / -1; color: var(--dim, #5a5e68); font-size: .74rem; }
+.vault-pane .call.warn .call-h .meta { color: var(--warn-ink, #8a5a0a); }
+.vault-pane .badge { display: inline-block; font-size: .66rem; font-weight: 700; padding: .02rem .4rem; border-radius: 999px; background: var(--chip-bg, #eef0f3); color: var(--fg, #1c1d21); white-space: nowrap; }
+.vault-pane .badge.k-object, .vault-pane .badge.k-commit { background: var(--tint, #e8f2ee); color: var(--accent, #0f6b4f); }
+.vault-pane .badge.k-ref, .vault-pane .badge.k-clone-ref, .vault-pane .badge.k-branch-index { background: var(--info-bg, #eef0fb); color: var(--info-ink, #3943a0); }
+.vault-pane .badge.k-append { background: var(--warn-bg, #fff7e6); color: var(--warn-ink, #8a5a0a); }
+.vault-pane .call-b { padding: .2rem 0 .6rem .6rem; border-left: 2px solid var(--line2, #cfd2d8); margin: 0 0 .4rem; font-size: .8rem; }
+.vault-pane .call-item { margin: .3rem 0 .5rem; }
+.vault-pane .call-item p { margin: .1rem 0; overflow-wrap: anywhere; }
+.vault-pane .call-pre { max-height: 18rem; overflow: auto; background: var(--chip-bg, #f4f5f7); border-radius: 6px; padding: .4rem .5rem; font: .72rem/1.4 var(--mono, ui-monospace, monospace); white-space: pre-wrap; overflow-wrap: anywhere; }
+.vault-pane .call-v table td { font-size: .74rem; padding: .1rem .3rem; }
+.vault-pane ul.calls.earlier .call-h { cursor: default; opacity: .75; }
+/* which device is this (cards 059, 068) */
+.vault-pane .devices label.device { border: 1px solid var(--line, #e3e5ea); border-radius: 10px; padding: .55rem .7rem; margin: .4rem 0; cursor: pointer; }
+.vault-pane .devices label.device.on { border-color: var(--accent, #0f6b4f); box-shadow: 0 0 0 1px var(--accent, #0f6b4f) inset; }
+.vault-pane .devices .dev { display: flex; flex-direction: column; gap: .1rem; min-width: 0; flex: 1; }
+.vault-pane .devices .dev b { font-size: .95rem; }
+.vault-pane .devices .sug { align-self: flex-start; font-size: .68rem; font-weight: 700; padding: 0 .4rem; border-radius: 999px; background: var(--tint, #e8f2ee); color: var(--accent, #0f6b4f); }
+/* merging devices (card 077) */
+.vault-pane th.pick, .vault-pane td.pick { width: 1.4rem; padding-left: 0; padding-right: 0; }
+.vault-pane .merge-bar { margin: .5rem 0; padding: .5rem .7rem; border: 1px dashed var(--line2, #cfd2d8); border-radius: 8px; font-size: .84rem; }
+.vault-pane .merge-bar select, .vault-pane .merge-bar input[type=text] { font: inherit; font-size: .84rem; max-width: 11rem; width: auto; display: inline-block; padding: .1rem .3rem; }

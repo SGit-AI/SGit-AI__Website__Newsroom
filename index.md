@@ -4,18 +4,18 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.12.87 · 161 articles since 2026-08-17; the newest is 2026-10-16. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v0.12.88 · 162 articles since 2026-08-17; the newest is 2026-10-16. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## The lead
 
-- [Your agent's logs are a self-report: an answer to a GRC adviser's post on The AI Conference, with this site's own agent as the worked example, including the two commits its own counter got wrong](articles/your-agents-logs-are-a-self-report.md), 2026-10-16, 9 min. An answer to a GRC adviser's post: why an agent's logs are a self-report, and this site's agent measured, including two commits its own counter got wrong.
+- [The fork next door: why open source protects founders, customers and investors from each other, why forks only take hold when someone stops executing, and why a maturing company should give its explorers a way out](articles/the-fork-next-door.md), 2026-10-16, 15 min. Founders, customers and investors are each protected from the others because anyone can fork; forks take hold only after a breakdown.
 
 ## Highlights
 
-- [The AI Conference 2026, read for agent governance: six claims traced, five disagreements, and what the speaker notes say that the slides do not](articles/the-ai-conference-read-for-governance.md), 2026-10-16, 11 min.
-- [The fork next door: why open source protects founders, customers and investors from each other, why forks only take hold when someone stops executing, and why a maturing company should give its explorers a way out](articles/the-fork-next-door.md), 2026-10-16, 15 min.
 - [The controllable founder: why investors pick one founder over another who looks just as good, and what record labels taught us about who the commodity is](articles/the-controllable-founder.md), 2026-10-16, 13 min.
 - [Sell, don't issue: a funding model for founders who have already won, where the investor buys the founder's shares, the founder lends the company what it needs, and open source keeps everyone honest](articles/sell-dont-issue.md), 2026-10-16, 15 min.
+- [Research, delivered as a vault: what companies that sell research could do with fractal graphs, behaviour policies for AI-enabled products, and evaluations run by a governed agent hive](articles/research-delivered-as-a-vault.md), 2026-10-16, 10 min.
+- [sgit is a standard, not a server: everything in a vault is one hash away, any storage can serve it, and the server is the least interesting part](articles/sgit-is-a-standard.md), 2026-10-16, 8 min.
 
 ## Who are you reading as?
 
@@ -30,9 +30,9 @@ The reading meter charges a few pence a page from credit kept in your browser, b
 
 ### Agent security & policy (42)
 For security leads, risk owners and boards deciding what an agent may do and who carries the risk.
+- [A custom Firefox of my own: the full plan to build one with a governed agent hive, for the laptop and the iPad, and how Mozilla could sell me the part I do not want to do, which is keeping it working](articles/a-custom-firefox-of-my-own.md), 2026-10-16, 9 min.
 - [Your agent's logs are a self-report: an answer to a GRC adviser's post on The AI Conference, with this site's own agent as the worked example, including the two commits its own counter got wrong](articles/your-agents-logs-are-a-self-report.md), 2026-10-16, 9 min.
 - [The AI Conference 2026, read for agent governance: six claims traced, five disagreements, and what the speaker notes say that the slides do not](articles/the-ai-conference-read-for-governance.md), 2026-10-16, 11 min.
-- [A custom Firefox of my own: the full plan to build one with a governed agent hive, for the laptop and the iPad, and how Mozilla could sell me the part I do not want to do, which is keeping it working](articles/a-custom-firefox-of-my-own.md), 2026-10-16, 9 min.
 
 ### Building with agents (27)
 For engineers and builders running agents day to day: tools, memory, email, desktops and review.

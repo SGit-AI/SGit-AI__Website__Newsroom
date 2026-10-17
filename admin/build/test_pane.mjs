@@ -129,7 +129,7 @@ try {
     await until('All, 2 device')
     const acrossB = await text('#vault-across')
     check(/All, 2 device/.test(acrossB) && /device B \(here\)/.test(acrossB), 'device B: two devices in the table, this one named')
-    const totalReads = await pg.evaluate(() => { const r = [...document.querySelectorAll('#vault-across tr.total td')]; return r.length ? r[1].textContent : '' })
+    const totalReads = await pg.evaluate(() => { const r = [...document.querySelectorAll('#vault-across tr.total td')]; return r.length ? r[2].textContent : '' })
     check(totalReads.trim() === '2', `the consolidated total is 2 reads (${totalReads.trim()})`)
     check(mock.files(mock.vaults().find(v => mock.files(v).length > 20) || '').length > 0 || true, 'the reader vault grew by the device files')
 

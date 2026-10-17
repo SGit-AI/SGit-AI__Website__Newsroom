@@ -27,7 +27,7 @@
  ],
  "what": "The map of everything a reader does on newsroom.sgit.ai, and the review of it: phase 0 of the move described in https://newsroom.sgit.ai/articles/explorer-to-villager-newsroom.html. Written by admin/build/api_map.py on every build. The hashes are the 'before' for the move's rule that the live site serves the same bytes after it: scripts, styles and JSON raw; pages with the site chrome and version stamps normalised.",
  "api_means": "client-side: components, formats and contracts the browser runs, with no server and nothing to deploy but files",
- "release": "v0.12.87",
+ "release": "v0.12.88",
  "date": "11 October 2026",
  "source": {
   "sgit_ai": "",
@@ -36,8 +36,8 @@
   "meter_on_sgit_ai": "1.3.1"
  },
  "counts": {
-  "reader_code_lines": 10263,
-  "reader_files": 64,
+  "reader_code_lines": 11059,
+  "reader_files": 68,
   "pages": 30,
   "views": 12,
   "controls": 56,
@@ -45,7 +45,7 @@
   "outputs": 9,
   "contracts": 14,
   "findings": 18,
-  "tests": 511,
+  "tests": 517,
   "frozen_files": 20,
   "frozen_lines": 5697,
   "pages_with_csp": 0
@@ -577,9 +577,9 @@
    "path": "articles/ids.json",
    "what": "A number for every article: the contract reading lists are built on",
    "from": "this site, generated",
-   "lines": 2392,
-   "bytes": 95511,
-   "sha256": "1e06814ff9d853df07dc3dc379b69d96c325c16977bf1332d7fbf26670543cb3",
+   "lines": 2406,
+   "bytes": 96110,
+   "sha256": "e510fdaaafd6a29a309429ffe68369e40edfdcad444d4886fa0a6c9a2b3858c1",
    "hosts": [],
    "fetch": 0,
    "storage": [],
@@ -595,7 +595,7 @@
    "from": "this site, generated",
    "lines": 268,
    "bytes": 13441,
-   "sha256": "5f28f6a64a331df5bb066fd00f7efa1d7799bdf2905e5316a84bca72336d3869",
+   "sha256": "fcb3400341967fdb43600126e96de1ac8f08780d8a61aa46ca1ea5807fd268d5",
    "hosts": [],
    "fetch": 0,
    "storage": [],
@@ -609,9 +609,9 @@
    "path": "articles/graphs.json",
    "what": "The feed the picks and the graph read: every article with topics, tags and citations",
    "from": "sgit.ai, imported",
-   "lines": 40300,
-   "bytes": 1673906,
-   "sha256": "a99a79099ad362226b4228ac9d135c83094737cf6794fdaea9d151dfc240d42a",
+   "lines": 40557,
+   "bytes": 1684863,
+   "sha256": "cb65322dca534ab3c78c68df78577f97e773290fae203f597ebbca73a217b8dd",
    "hosts": [],
    "fetch": 0,
    "storage": [],
@@ -625,9 +625,9 @@
    "path": "assets/newsroom-vault.js",
    "what": "The newsroom's vault module: create, open, read, write and publish through the vendored library; the door, master and reader vaults; unlock; add a door",
    "from": "this site",
-   "lines": 258,
-   "bytes": 16598,
-   "sha256": "aaa49a06cb76f82c1f6bc4f7937dd81d5f7b4a1a6798638855f5f0de6ace9330",
+   "lines": 364,
+   "bytes": 24602,
+   "sha256": "fbcbb66d04bcc8f178ee4d387d587d6285c94be7d52e96a616882b8fe1f04d59",
    "hosts": [],
    "fetch": 0,
    "storage": [
@@ -635,7 +635,7 @@
    ],
    "events": [],
    "eval": 0,
-   "innerHTML": 0,
+   "innerHTML": 1,
    "confirm": 0,
    "crypto": true
   },
@@ -659,9 +659,9 @@
    "path": "assets/vault-pane/vault-pane.js",
    "what": "The vault pane on every page with the meter, in four tabs: this page (the three steps, what the browser knows about the page, the notes, write to the newsroom, send to the newsroom, the lane's read key), reading (every page read here, with its decision), the vault (enable with the passkey, create or join, update the vault, the table across devices, bring their activity here), the keys (every vault of the account); above the tabs, what is only in this browser",
    "from": "this site",
-   "lines": 904,
-   "bytes": 79298,
-   "sha256": "40f1981a99cdcc1826be810fabed563a958873a54558a3443bfa86c871495d1e",
+   "lines": 1132,
+   "bytes": 103495,
+   "sha256": "b9f86fc6be357144d32c11713b58a59498381c4fd3ff303190ce7ec6fa938db7",
    "hosts": [
     "dev.send.sgraph.ai",
     "dev.vault.sgraph.ai"
@@ -671,6 +671,76 @@
     "localStorage",
     "sessionStorage"
    ],
+   "events": [],
+   "eval": 0,
+   "innerHTML": 1,
+   "confirm": 0,
+   "crypto": false
+  },
+  {
+   "path": "assets/vault-pane/calls.js",
+   "what": "The Calls tab's decoding (078): a call named from its address, a batch split into operations, the plaintext classified as a commit, tree, ref or file, credentials masked",
+   "from": "this site",
+   "lines": 114,
+   "bytes": 7411,
+   "sha256": "ed911ecdf47336775fa6db3b9e8638532f11db4ee9fcdabde6a343fcead81d79",
+   "hosts": [
+    "dev.send.sgraph.ai"
+   ],
+   "fetch": 0,
+   "storage": [],
+   "events": [],
+   "eval": 0,
+   "innerHTML": 0,
+   "confirm": 0,
+   "crypto": false
+  },
+  {
+   "path": "assets/vault-pane/browse.js",
+   "what": "vault/browse.html (079): the account's vaults opened with the pane's session, files, contents, commits; the reader vault handed to the SG/Vault app with its read key",
+   "from": "this site; dev.vault.sgraph.ai, on a press",
+   "lines": 135,
+   "bytes": 11030,
+   "sha256": "d331aaf91fa9cf0cf382abcec73bd73578c7ad6ef14623818af72fd60372bb37",
+   "hosts": [],
+   "fetch": 0,
+   "storage": [
+    "sessionStorage"
+   ],
+   "events": [],
+   "eval": 0,
+   "innerHTML": 0,
+   "confirm": 0,
+   "crypto": false
+  },
+  {
+   "path": "assets/vault-pane/sg-embed.js",
+   "what": "Opens a vault in the SG/Vault app by its embed protocol from code (079): the read key handed over postMessage, never in an address or the markup",
+   "from": "dev.vault.sgraph.ai, on a press",
+   "lines": 36,
+   "bytes": 3077,
+   "sha256": "68c3bb86325bc165f923df8158ba85e46623f0ce141ed7d79f30452f08c7f7df",
+   "hosts": [
+    "dev.vault.sgraph.ai"
+   ],
+   "fetch": 0,
+   "storage": [],
+   "events": [],
+   "eval": 0,
+   "innerHTML": 0,
+   "confirm": 0,
+   "crypto": false
+  },
+  {
+   "path": "vault/vault-app/viewer.js",
+   "what": "The shared viewer (079), in its own vault lkypj6zq: linked into each reader vault and run there by the SG/App, it reads the reader's records with sg.vfs and renders the account",
+   "from": "inside the vault app",
+   "lines": 96,
+   "bytes": 10557,
+   "sha256": "9c1157a6a67cb6694096930346c321518a2eae5e91e32fead052e20f0f964ff3",
+   "hosts": [],
+   "fetch": 0,
+   "storage": [],
    "events": [],
    "eval": 0,
    "innerHTML": 1,
@@ -895,9 +965,9 @@
    "path": "assets/vault-pane/sync.js",
    "what": "The activity vault's logic as pure functions: a device's file (reads, top-ups, personas, notes), the consolidated view, totals recomputed, merging into local state",
    "from": "this site",
-   "lines": 237,
-   "bytes": 15914,
-   "sha256": "f00763d6b4f17156813b870e2ec5fbf98f83d0c6e558754c7e651e0a3acde12f",
+   "lines": 289,
+   "bytes": 19007,
+   "sha256": "c97865c00bc8b6396a19e9379e33d45e6cf1ac199ce9123a36d7278d2ba0d79e",
    "hosts": [],
    "fetch": 0,
    "storage": [],
@@ -911,9 +981,9 @@
    "path": "assets/vault-pane/vault-pane.css",
    "what": "Styles for the pane, its tabs, the chips and the notes, and the page shift",
    "from": "this site",
-   "lines": 119,
-   "bytes": 12830,
-   "sha256": "8a6aa362c7ee9b864d66ef064340d52979b0d2842c78fc25835cf6c496abee55",
+   "lines": 148,
+   "bytes": 16163,
+   "sha256": "1a8081bfe249889c5dc61a6cff974715d925f9d6ec1356ea03c8daed55628a3e",
    "hosts": [],
    "fetch": 0,
    "storage": [],
@@ -1292,8 +1362,8 @@
   {
    "path": "vault/index.html",
    "what": "your vault: the reading account carried between devices, with the pane open",
-   "lines": 272,
-   "sha256": "7db79ab551958dfaf5cb11ae05d2f52a00a37c40c387c41db30285a366ecf733"
+   "lines": 279,
+   "sha256": "2f141b0342bbcdc9b90e7779e8d7029801f034c97532de40ae3242a05f31eec2"
   },
   {
    "path": "meter/index.html",
@@ -1358,7 +1428,7 @@
   {
    "path": "admin/build/vault_page.py",
    "what": "writes the vault page",
-   "lines": 113
+   "lines": 165
   },
   {
    "path": "admin/build/lane.py",
@@ -1431,8 +1501,8 @@
   {
    "path": "admin/build/test_sync.mjs",
    "what": "the activity vault's logic in Node, with two devices' states",
-   "lines": 127,
-   "checks": 48
+   "lines": 145,
+   "checks": 54
   },
   {
    "path": "admin/build/test_pane.mjs",
@@ -1488,7 +1558,7 @@
  "loader": {
   "lines": 17,
   "sha256": "f114004ba2928d82754ef83afff66b889bed92db083064323e78440d488e1e91",
-  "pages_that_eval": 558
+  "pages_that_eval": 560
  },
  "frozen": [
   {
@@ -1596,7 +1666,7 @@
   "account": 1,
   "landing": 6,
   "newsroom": 1,
-  "page": 770,
+  "page": 778,
   "personas": 1,
   "share": 1,
   "topped-up": 1,

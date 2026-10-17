@@ -14,73 +14,13 @@ Every article here has a semantic graph beside it: the ideas it rests on, the cl
 
 The graphs are data first and pictures second. Take them as JSON: [all articles in one file](graphs.json), with the topics, the teasers and the links between articles resolved, or one file per article at `articles/graphs/<slug>.json` (for example [this one](graphs/footprint-and-blast-radius.json)). The pages on this site are rendered from the same files at build time; nothing here is hand-written HTML. Since v0.7.77 each graph also carries the article's `figures`: file, URL, caption, the kind the author gave it (`wardley-map`, for one) and every frame of a multi-frame figure, so a picture and its context travel together and "every Wardley map on this site" is a filter, not a reading list.
 
-161 of 161 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
+162 of 162 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
 
 ## How the articles connect
 
 *[diagram]*
 
-161 articles, 901 links between them (1289 mentions in all). 151 articles cite an earlier one; 37 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (38 articles link to it). Most linking: [The Mandate Stack](#the-mandate-stack) (20 links out). 0 articles not yet linked either way.
-
-## [Your agent's logs are a self-report: an answer to a GRC adviser's post on The AI Conference, with this site's own agent as the worked example, including the two commits its own counter got wrong](your-agents-logs-are-a-self-report.md)
-
-2026-10-16 · Agents & policyNews & evidence
-
-An agent's own account is a self-report, and research shows models rarely admit reward hacks; evidence comes from four sources of increasing independence, and this site's agent, measured against them, keeps ten of eleven rules itself, has one real boundary its policy does not list, and a hook-written counter that is more honest than the agent and still flagged two commits wrongly; owners belong to mandates, controls need testing, and the policy should be published.
-
-*[diagram]*
-**concept**claim**method**artefact**example
-
-**11 nodes, 10 edges**
-
-- **The adviser's post** (artefact) Control failures, not war stories.
-- **Logs are a self-report** (claim) Reward hacks admitted in under 2% of cases.
-- **Four sources of evidence** (concept) Account, hook, boundary, outside test.
-- **This agent's policy** (artefact) Eleven rules, each labelled by who keeps it.
-- **Ten of eleven kept by the agent** (claim) One setting, no boundary as written.
-- **The unlisted boundary** (example) GitHub tools scoped to one repository.
-- **The counter's two commits** (example) Both in throwaway test repositories.
-- **Ran is not worked** (claim) The scan was run; the counter cannot see if it passed.
-- **An owner per mandate** (method) Agents are too many and too brief.
-- **Test the controls** (method) Do they still fire after a change?
-- **Publish the policy** (method) The artefact the frameworks do not define.
-
-> Evidence that the control ran is not evidence that it worked. The gap in the counter.
-
-> So an agent's account of what it did, including its reasoning and its tidy summary at the end, is a self-report. The core claim.
-
-builds on [The AI Conference 2026, read for agent governance: six claims traced, five disagreements, and what the speaker notes say that the slides do not](#the-ai-conference-read-for-governance), [Re-anchoring: keeping an agent's rules alive through every summary, and a canary that shows when they are not](#re-anchoring-agent-behaviour-policies), [A policy beside the prompt: a proposal that every agent takes a behaviour policy as an input, with enforcement and liability attached, and why aviation and payments say the vendors should want it](#a-policy-beside-the-prompt); continued by [The AI Conference 2026, read for agent governance: six claims traced, five disagreements, and what the speaker notes say that the slides do not](#the-ai-conference-read-for-governance).
-
-## [The AI Conference 2026, read for agent governance: six claims traced, five disagreements, and what the speaker notes say that the slides do not](the-ai-conference-read-for-governance.md)
-
-2026-10-16 · Agents & policyNews & evidence
-
-Reading the agenda, 35 slide decks with their notes and the abstracts of The AI Conference 2026 traces three of six claims in a GRC adviser's post to keynotes and finds no source for the other three; the programme's loudest idea is that policy must be enforced outside the model, its commonest story is the quiet failure, and its speakers disagree on humans in the loop, model or rule, inventories, probes and open models.
-
-*[diagram]*
-**concept**claim**artefact**example**question
-
-**13 nodes, 10 edges**
-
-- **The adviser's post** (artefact) Three failure stories, a poll, two case studies.
-- **Three items traced** (claim) Stoica, Ameisen, Chambers.
-- **Three items not found** (question) 43%, 1,200 developers, 1,500 agents.
-- **Policy outside the model** (concept) Hedera, Dropbox, C1, ReFocus, SS&C.
-- **Quiet failures** (concept) A 200 OK, a green dashboard.
-- **Identity before autonomy** (concept) A name you can call at 2am.
-- **Evaluations get gamed** (example) A key-value store that won the benchmark.
-- **Humans in the loop?** (question) Dead, or still a human job.
-- **A model or a rule?** (question) Only something deterministic should decide.
-- **Can agents be inventoried?** (question) Thirteen agents in 23 minutes.
-- **Review is thinning** (example) 56% of PRs with no human comment.
-- **The fact-check in the notes** (example) A number is a fact only because someone measured it.
-- **Nobody showed the policy** (claim) Rules described, never published.
-
-> Prompt injection is not an LLM problem, it is an authority problem. The sharpest statement of policy outside the model.
-
-> The worst bugs don't fail loudly. They succeed quietly, and wrongly. The commonest failure story.
-
-builds on [Your agent's logs are a self-report: an answer to a GRC adviser's post on The AI Conference, with this site's own agent as the worked example, including the two commits its own counter got wrong](#your-agents-logs-are-a-self-report), [A policy beside the prompt: a proposal that every agent takes a behaviour policy as an input, with enforcement and liability attached, and why aviation and payments say the vendors should want it](#a-policy-beside-the-prompt); continued by [Your agent's logs are a self-report: an answer to a GRC adviser's post on The AI Conference, with this site's own agent as the worked example, including the two commits its own counter got wrong](#your-agents-logs-are-a-self-report).
+162 articles, 906 links between them (1294 mentions in all). 152 articles cite an earlier one; 37 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (38 articles link to it). Most linking: [The Mandate Stack](#the-mandate-stack) (20 links out). 0 articles not yet linked either way.
 
 ## [Scrolled is not read: what the reading meter measures, what it should, highlights you can keep, and the page as the reader's own graph](scrolled-is-not-read.md)
 
@@ -632,6 +572,97 @@ Agents broke Git's offline, full-clone assumptions at Anthropic, which built Sci
 > by no means a suitable replacement for git for general use Scion's own status.
 
 builds on [From sending a file to sgit: eight months of SG/Send, told by its own briefs and commits, and how a file-sharing service became encrypted version control and vaults](#from-send-to-sgit), [sgit is a standard, not a server: everything in a vault is one hash away, any storage can serve it, and the server is the least interesting part](#sgit-is-a-standard), [One vault, ten agents, 35,000 objects: what sgit does when the repository is big and the clients are many, measured on the vault behind this newsroom](#one-vault-ten-agents), [Git for things you cannot put on GitHub](#what-sgit-is); continued by [sgit is a standard, not a server: everything in a vault is one hash away, any storage can serve it, and the server is the least interesting part](#sgit-is-a-standard), [One vault, ten agents, 35,000 objects: what sgit does when the repository is big and the clients are many, measured on the vault behind this newsroom](#one-vault-ten-agents), [The value of constraints: what client-side encryption and open source actually gave us, which is not what you would think](#the-value-of-constraints).
+
+## [Your agent's logs are a self-report: an answer to a GRC adviser's post on The AI Conference, with this site's own agent as the worked example, including the two commits its own counter got wrong](your-agents-logs-are-a-self-report.md)
+
+2026-10-16 · Agents & policyNews & evidence
+
+An agent's own account is a self-report, and research shows models rarely admit reward hacks; evidence comes from four sources of increasing independence, and this site's agent, measured against them, keeps ten of eleven rules itself, has one real boundary its policy does not list, and a hook-written counter that is more honest than the agent and still flagged two commits wrongly; owners belong to mandates, controls need testing, and the policy should be published.
+
+*[diagram]*
+**concept**claim**method**artefact**example
+
+**11 nodes, 10 edges**
+
+- **The adviser's post** (artefact) Control failures, not war stories.
+- **Logs are a self-report** (claim) Reward hacks admitted in under 2% of cases.
+- **Four sources of evidence** (concept) Account, hook, boundary, outside test.
+- **This agent's policy** (artefact) Eleven rules, each labelled by who keeps it.
+- **Ten of eleven kept by the agent** (claim) One setting, no boundary as written.
+- **The unlisted boundary** (example) GitHub tools scoped to one repository.
+- **The counter's two commits** (example) Both in throwaway test repositories.
+- **Ran is not worked** (claim) The scan was run; the counter cannot see if it passed.
+- **An owner per mandate** (method) Agents are too many and too brief.
+- **Test the controls** (method) Do they still fire after a change?
+- **Publish the policy** (method) The artefact the frameworks do not define.
+
+> Evidence that the control ran is not evidence that it worked. The gap in the counter.
+
+> So an agent's account of what it did, including its reasoning and its tidy summary at the end, is a self-report. The core claim.
+
+builds on [The AI Conference 2026, read for agent governance: six claims traced, five disagreements, and what the speaker notes say that the slides do not](#the-ai-conference-read-for-governance), [Re-anchoring: keeping an agent's rules alive through every summary, and a canary that shows when they are not](#re-anchoring-agent-behaviour-policies), [A policy beside the prompt: a proposal that every agent takes a behaviour policy as an input, with enforcement and liability attached, and why aviation and payments say the vendors should want it](#a-policy-beside-the-prompt); continued by [The AI Conference 2026, read for agent governance: six claims traced, five disagreements, and what the speaker notes say that the slides do not](#the-ai-conference-read-for-governance).
+
+## [The vault, opened: merging devices, reading every call to the vault server, browsing your vaults, and one viewer that every reader vault links and opens with](the-vault-opened.md)
+
+2026-10-16 · Vaults & methodSite & engineering
+
+The reader's vault became something a reader can see into and tidy: devices merge without losing a record, each call to the vault server is named and decrypted with keys the page already holds, a page walks every vault file by file and commit by commit, and one viewer, living in a vault of its own, is linked read-only into every reader vault as its app, the vault-in-vault technique proven in the live SG/App on a demo vault.
+
+*[diagram]*
+**concept**claim**method**artefact**example**question
+
+**13 nodes, 13 edges**
+
+- **Five asks after Firefox** (example) The owner connected Firefox, found the workflow worked, and asked for merging, browsing, a shared viewer, readable calls and a clearer chooser.
+- **Merge devices** (method) Several device files become one, every record re-filed and combined, the totals unchanged.
+- **Aliases, not deletions** (concept) activity/aliases.json sends a merged device's browser, files and inbox batches to the device it went into.
+- **No payment lost** (claim) A top-up is a payment record; a merge moves it and never drops it.
+- **A chooser that names the destination** (artefact) The likely device first, a button that says where the browser goes, and Change to move it later.
+- **The Calls tab** (artefact) Every call named from its address, and opened into a commit, tree, ref or file with the vault's own key.
+- **Your vaults, opened** (artefact) A page that opens the four vaults of an account and shows files, contents and commits, writing nothing.
+- **sgit.ai's sub-vaults** (concept) A link file with no key, the read key in an owner record, and app reads spliced through the link.
+- **Four files in the reader vault** (method) The link, the owner record, the app manifest and a short entry page, written on the next Update.
+- **One shared viewer** (artefact) The viewer lives once, in vault lkypj6zq, and every reader vault that links it shows its new versions.
+- **Proven in the live SG/App** (example) A demo reader vault linked the same way opened read-only and rendered through the viewer.
+- **Only a read key leaves** (claim) The SG/Vault app is handed the reader vault's read key over its embed protocol, and the test checks it is nothing else.
+- **Undo and deep links** (question) Splitting a merged device and opening the app straight onto its history are not built.
+
+> Merging keeps every record and every payment, moves them into one device file, and leaves an alias so a browser still using a merged device lands in the right place. the rule of a merge, and the reason it is safe for money
+
+> The viewer's code lives once. the whole of the vault-in-vault technique in five words
+
+builds on [The vault crosses Chrome profiles: state and memory between browser sessions, found by using it rather than by building it](#the-vault-crosses-chrome-profiles), [Sixteen notes I did not want to lose: a request to send from any browser to my vault, why identity is still this hard, and how two more wires became a product line](#sixteen-notes-i-did-not-want-to-lose), [The passkey opens the vault: a door per path, a master vault for every user, and no server of ours](#the-passkey-opens-the-vault), [The site is an inbox: deciding before reading, marks that build the reader's own graph, and why I could not write this brief until the vault existed](#the-site-is-an-inbox), [The agents write too: lessons, debriefs and a page for every agent on the newsroom, and a brief for the conductor that will keep it](#the-agents-write-too).
+
+## [The AI Conference 2026, read for agent governance: six claims traced, five disagreements, and what the speaker notes say that the slides do not](the-ai-conference-read-for-governance.md)
+
+2026-10-16 · Agents & policyNews & evidence
+
+Reading the agenda, 35 slide decks with their notes and the abstracts of The AI Conference 2026 traces three of six claims in a GRC adviser's post to keynotes and finds no source for the other three; the programme's loudest idea is that policy must be enforced outside the model, its commonest story is the quiet failure, and its speakers disagree on humans in the loop, model or rule, inventories, probes and open models.
+
+*[diagram]*
+**concept**claim**artefact**example**question
+
+**13 nodes, 10 edges**
+
+- **The adviser's post** (artefact) Three failure stories, a poll, two case studies.
+- **Three items traced** (claim) Stoica, Ameisen, Chambers.
+- **Three items not found** (question) 43%, 1,200 developers, 1,500 agents.
+- **Policy outside the model** (concept) Hedera, Dropbox, C1, ReFocus, SS&C.
+- **Quiet failures** (concept) A 200 OK, a green dashboard.
+- **Identity before autonomy** (concept) A name you can call at 2am.
+- **Evaluations get gamed** (example) A key-value store that won the benchmark.
+- **Humans in the loop?** (question) Dead, or still a human job.
+- **A model or a rule?** (question) Only something deterministic should decide.
+- **Can agents be inventoried?** (question) Thirteen agents in 23 minutes.
+- **Review is thinning** (example) 56% of PRs with no human comment.
+- **The fact-check in the notes** (example) A number is a fact only because someone measured it.
+- **Nobody showed the policy** (claim) Rules described, never published.
+
+> Prompt injection is not an LLM problem, it is an authority problem. The sharpest statement of policy outside the model.
+
+> The worst bugs don't fail loudly. They succeed quietly, and wrongly. The commonest failure story.
+
+builds on [Your agent's logs are a self-report: an answer to a GRC adviser's post on The AI Conference, with this site's own agent as the worked example, including the two commits its own counter got wrong](#your-agents-logs-are-a-self-report), [A policy beside the prompt: a proposal that every agent takes a behaviour policy as an input, with enforcement and liability attached, and why aviation and payments say the vendors should want it](#a-policy-beside-the-prompt); continued by [Your agent's logs are a self-report: an answer to a GRC adviser's post on The AI Conference, with this site's own agent as the worked example, including the two commits its own counter got wrong](#your-agents-logs-are-a-self-report).
 
 ## [Inside the Mesa Ranch desk: a page-by-page tour of an observation vault, from the cover to the knowledge graph you can play in time](inside-the-mesa-ranch-desk.md)
 
@@ -1379,7 +1410,7 @@ Once the newsroom split into focused agent sessions merged through git, two need
 
 > That is memory in its plainest form Why lessons are shared between agents.
 
-builds on [Two agents, one vault: the Industry Wire is written into an encrypted vault by one agent and drawn by newsroom.sgit.ai, which holds only the read key](#two-agents-one-vault), [Memory is not a spectator sport: how a web of open sites, graphs and vaults became the memory for sessions like this one](#memory-is-not-a-spectator-sport), [The agent team as it runs: one person, twelve agents, encrypted vaults, and a mailbox nobody sends from](#the-agent-team-as-it-runs), [Dark mode, and four more: five themes for the newsroom, chosen once and kept in your browser](#dark-mode-and-four-more), [Are hooks the sweet spot? Moving an agent's rules from hope into hooks, rule by rule, until enforcement moves off the machine](#are-hooks-the-sweet-spot), [Re-anchoring: keeping an agent's rules alive through every summary, and a canary that shows when they are not](#re-anchoring-agent-behaviour-policies), [Knowledge that maintains itself: semantic graphs for an organisation's policies and internal knowledge, briefing people and agents from the graph, and vaults to carry the brief](#knowledge-that-maintains-itself), [Sixteen notes I did not want to lose: a request to send from any browser to my vault, why identity is still this hard, and how two more wires became a product line](#sixteen-notes-i-did-not-want-to-lose); continued by [Your own newsroom: how a founder can tell their story by voice memo, with an agent that checks it and publishes it to GitHub Pages, and readers who pay a little if they find it useful](#your-own-newsroom), [Agent workflows on ephemeral vaults: seven architectures from one agent to a swarm, a repository of recipes that gates sgit's releases, and what a hundred writers did to an append lane](#agent-workflows-on-ephemeral-vaults).
+builds on [Two agents, one vault: the Industry Wire is written into an encrypted vault by one agent and drawn by newsroom.sgit.ai, which holds only the read key](#two-agents-one-vault), [Memory is not a spectator sport: how a web of open sites, graphs and vaults became the memory for sessions like this one](#memory-is-not-a-spectator-sport), [The agent team as it runs: one person, twelve agents, encrypted vaults, and a mailbox nobody sends from](#the-agent-team-as-it-runs), [Dark mode, and four more: five themes for the newsroom, chosen once and kept in your browser](#dark-mode-and-four-more), [Are hooks the sweet spot? Moving an agent's rules from hope into hooks, rule by rule, until enforcement moves off the machine](#are-hooks-the-sweet-spot), [Re-anchoring: keeping an agent's rules alive through every summary, and a canary that shows when they are not](#re-anchoring-agent-behaviour-policies), [Knowledge that maintains itself: semantic graphs for an organisation's policies and internal knowledge, briefing people and agents from the graph, and vaults to carry the brief](#knowledge-that-maintains-itself), [Sixteen notes I did not want to lose: a request to send from any browser to my vault, why identity is still this hard, and how two more wires became a product line](#sixteen-notes-i-did-not-want-to-lose); continued by [The vault, opened: merging devices, reading every call to the vault server, browsing your vaults, and one viewer that every reader vault links and opens with](#the-vault-opened), [Your own newsroom: how a founder can tell their story by voice memo, with an agent that checks it and publishes it to GitHub Pages, and readers who pay a little if they find it useful](#your-own-newsroom), [Agent workflows on ephemeral vaults: seven architectures from one agent to a swarm, a repository of recipes that gates sgit's releases, and what a hundred writers did to an append lane](#agent-workflows-on-ephemeral-vaults).
 
 ## [Are hooks the sweet spot? Moving an agent's rules from hope into hooks, rule by rule, until enforcement moves off the machine](are-hooks-the-sweet-spot.md)
 
@@ -1751,7 +1782,7 @@ Notes and reads that only existed in a browser without my passkeys showed the nu
 
 > In real use they are the difference between a workflow and a workaround. The cost of small connector limits.
 
-builds on [The site is an inbox: deciding before reading, marks that build the reader's own graph, and why I could not write this brief until the vault existed](#the-site-is-an-inbox), [I miss it, so it is working: the people who decide the roadmap have to use the product, and the vault the newsroom now needs](#i-miss-it), [Before you give an agent a connector, give the connector a twin](#connector-twin-before-you-deploy-an-agent), [Not a straight line: working for RiskMandate by working on the newsroom, and why the thinking is never wasted](#not-a-straight-line), [Six agents, one inbox: what a real multi-agent setup taught me about access policies](#six-agents-one-inbox), [The wall under the reply: end an email with the state of the thread, not the thread](#the-wall-under-the-reply), [Two agents, one vault: the Industry Wire is written into an encrypted vault by one agent and drawn by newsroom.sgit.ai, which holds only the read key](#two-agents-one-vault); continued by [Handing secrets to agents and browsers: SG/Send's next focus, a key pair where the work runs, one-time drops, and a brief for a site that does only this](#handing-secrets-to-agents), [The agents write too: lessons, debriefs and a page for every agent on the newsroom, and a brief for the conductor that will keep it](#the-agents-write-too), [sgit in a CI pipeline: encrypted, versioned data in and out of GitHub Actions, between its jobs, through write-only lanes, and a key for every job](#sgit-in-a-ci-pipeline), [Every link points back: 566 links between 105 articles, 15 that point forward, and why an article should know what came next and what corrected it](#every-link-points-back).
+builds on [The site is an inbox: deciding before reading, marks that build the reader's own graph, and why I could not write this brief until the vault existed](#the-site-is-an-inbox), [I miss it, so it is working: the people who decide the roadmap have to use the product, and the vault the newsroom now needs](#i-miss-it), [Before you give an agent a connector, give the connector a twin](#connector-twin-before-you-deploy-an-agent), [Not a straight line: working for RiskMandate by working on the newsroom, and why the thinking is never wasted](#not-a-straight-line), [Six agents, one inbox: what a real multi-agent setup taught me about access policies](#six-agents-one-inbox), [The wall under the reply: end an email with the state of the thread, not the thread](#the-wall-under-the-reply), [Two agents, one vault: the Industry Wire is written into an encrypted vault by one agent and drawn by newsroom.sgit.ai, which holds only the read key](#two-agents-one-vault); continued by [The vault, opened: merging devices, reading every call to the vault server, browsing your vaults, and one viewer that every reader vault links and opens with](#the-vault-opened), [Handing secrets to agents and browsers: SG/Send's next focus, a key pair where the work runs, one-time drops, and a brief for a site that does only this](#handing-secrets-to-agents), [The agents write too: lessons, debriefs and a page for every agent on the newsroom, and a brief for the conductor that will keep it](#the-agents-write-too), [sgit in a CI pipeline: encrypted, versioned data in and out of GitHub Actions, between its jobs, through write-only lanes, and a key for every job](#sgit-in-a-ci-pipeline), [Every link points back: 566 links between 105 articles, 15 that point forward, and why an article should know what came next and what corrected it](#every-link-points-back).
 
 ## [The human in the loop is a spectrum: how cheap it is to undo decides where a person belongs, and why the newsroom ships on its own while my email still waits for me](how-cheap-is-it-to-undo.md)
 
@@ -1933,7 +1964,7 @@ Because the reader's state is records in a vault, one file per device, a second 
 
 > This feature needed no new development. The point about features found by use rather than built.
 
-builds on [Replicating the agentic inbox: a walkthrough from one Claude session to a team of agents that never press send](#replicating-the-agentic-inbox), [Not a straight line: working for RiskMandate by working on the newsroom, and why the thinking is never wasted](#not-a-straight-line), [Pay after you read: how a reading meter became a working business model in one afternoon, one release at a time](#pay-after-you-read), [I miss it, so it is working: the people who decide the roadmap have to use the product, and the vault the newsroom now needs](#i-miss-it), [The passkey opens the vault: a door per path, a master vault for every user, and no server of ours](#the-passkey-opens-the-vault), [The vault is live: from a design on 11 October to a reader's vault on newsroom.sgit.ai by two in the morning, and how all of it fits together](#the-vault-is-live), [The site is an inbox: deciding before reading, marks that build the reader's own graph, and why I could not write this brief until the vault existed](#the-site-is-an-inbox), [Encrypted memory for agents that run somewhere else: sgit deployment patterns, from a Mac mini to Kubernetes](#encrypted-memory-for-isolated-agents), [Memory is not a spectator sport: how a web of open sites, graphs and vaults became the memory for sessions like this one](#memory-is-not-a-spectator-sport), [Stop the bleeding, then ask for it back: a helper, an agent and a friendly letter for the subscriptions you keep and do not use](#stop-the-bleeding-then-ask-for-it-back); continued by [Dark mode, and four more: five themes for the newsroom, chosen once and kept in your browser](#dark-mode-and-four-more), [Stop the bleeding, then ask for it back: a helper, an agent and a friendly letter for the subscriptions you keep and do not use](#stop-the-bleeding-then-ask-for-it-back).
+builds on [Replicating the agentic inbox: a walkthrough from one Claude session to a team of agents that never press send](#replicating-the-agentic-inbox), [Not a straight line: working for RiskMandate by working on the newsroom, and why the thinking is never wasted](#not-a-straight-line), [Pay after you read: how a reading meter became a working business model in one afternoon, one release at a time](#pay-after-you-read), [I miss it, so it is working: the people who decide the roadmap have to use the product, and the vault the newsroom now needs](#i-miss-it), [The passkey opens the vault: a door per path, a master vault for every user, and no server of ours](#the-passkey-opens-the-vault), [The vault is live: from a design on 11 October to a reader's vault on newsroom.sgit.ai by two in the morning, and how all of it fits together](#the-vault-is-live), [The site is an inbox: deciding before reading, marks that build the reader's own graph, and why I could not write this brief until the vault existed](#the-site-is-an-inbox), [Encrypted memory for agents that run somewhere else: sgit deployment patterns, from a Mac mini to Kubernetes](#encrypted-memory-for-isolated-agents), [Memory is not a spectator sport: how a web of open sites, graphs and vaults became the memory for sessions like this one](#memory-is-not-a-spectator-sport), [Stop the bleeding, then ask for it back: a helper, an agent and a friendly letter for the subscriptions you keep and do not use](#stop-the-bleeding-then-ask-for-it-back); continued by [The vault, opened: merging devices, reading every call to the vault server, browsing your vaults, and one viewer that every reader vault links and opens with](#the-vault-opened), [Dark mode, and four more: five themes for the newsroom, chosen once and kept in your browser](#dark-mode-and-four-more), [Stop the bleeding, then ask for it back: a helper, an agent and a friendly letter for the subscriptions you keep and do not use](#stop-the-bleeding-then-ask-for-it-back).
 
 ## [Stop the bleeding, then ask for it back: a helper, an agent and a friendly letter for the subscriptions you keep and do not use](stop-the-bleeding-then-ask-for-it-back.md)
 
@@ -2451,7 +2482,7 @@ With the reader's vault live, the next brief treats the site as an inbox that st
 
 > Ship first, think second, and do not pretend the thinking could have come first. The order the feedback loop runs in.
 
-builds on [The vault is live: from a design on 11 October to a reader's vault on newsroom.sgit.ai by two in the morning, and how all of it fits together](#the-vault-is-live), [Pay after you read: how a reading meter became a working business model in one afternoon, one release at a time](#pay-after-you-read), [Two agents, one vault: the Industry Wire is written into an encrypted vault by one agent and drawn by newsroom.sgit.ai, which holds only the read key](#two-agents-one-vault), [Fractal Semantic Graphs: everything connects to everything, and nobody has to share a schema](#introducing-fractal-semantic-graphs), [One article, five readers: a librarian, a cartographer, a historian, an explainer and a storyteller read the same piece](#one-article-five-readers), [The passkey opens the vault: a door per path, a master vault for every user, and no server of ours](#the-passkey-opens-the-vault), [I miss it, so it is working: the people who decide the roadmap have to use the product, and the vault the newsroom now needs](#i-miss-it); continued by [The wire as a graph: start from what the reader sees, give every story and every name a long-lived ID, link every phrase of a short narrative, and a brief for the desks](#the-wire-as-a-graph), [Every link points back: 566 links between 105 articles, 15 that point forward, and why an article should know what came next and what corrected it](#every-link-points-back), [Sixteen notes I did not want to lose: a request to send from any browser to my vault, why identity is still this hard, and how two more wires became a product line](#sixteen-notes-i-did-not-want-to-lose), [The vault crosses Chrome profiles: state and memory between browser sessions, found by using it rather than by building it](#the-vault-crosses-chrome-profiles), [Places of highest leverage: where to focus when the agents can go in every direction, told with three days of real steps](#places-of-highest-leverage), [Ways to read one article: the finished piece stays at the centre, and the reader picks the way in](#ways-to-read-one-article), [Firing journalists is the worst thing a publication can do: what a hiring decision says about where a publisher is going, and who to hire instead](#firing-journalists).
+builds on [The vault is live: from a design on 11 October to a reader's vault on newsroom.sgit.ai by two in the morning, and how all of it fits together](#the-vault-is-live), [Pay after you read: how a reading meter became a working business model in one afternoon, one release at a time](#pay-after-you-read), [Two agents, one vault: the Industry Wire is written into an encrypted vault by one agent and drawn by newsroom.sgit.ai, which holds only the read key](#two-agents-one-vault), [Fractal Semantic Graphs: everything connects to everything, and nobody has to share a schema](#introducing-fractal-semantic-graphs), [One article, five readers: a librarian, a cartographer, a historian, an explainer and a storyteller read the same piece](#one-article-five-readers), [The passkey opens the vault: a door per path, a master vault for every user, and no server of ours](#the-passkey-opens-the-vault), [I miss it, so it is working: the people who decide the roadmap have to use the product, and the vault the newsroom now needs](#i-miss-it); continued by [The vault, opened: merging devices, reading every call to the vault server, browsing your vaults, and one viewer that every reader vault links and opens with](#the-vault-opened), [The wire as a graph: start from what the reader sees, give every story and every name a long-lived ID, link every phrase of a short narrative, and a brief for the desks](#the-wire-as-a-graph), [Every link points back: 566 links between 105 articles, 15 that point forward, and why an article should know what came next and what corrected it](#every-link-points-back), [Sixteen notes I did not want to lose: a request to send from any browser to my vault, why identity is still this hard, and how two more wires became a product line](#sixteen-notes-i-did-not-want-to-lose), [The vault crosses Chrome profiles: state and memory between browser sessions, found by using it rather than by building it](#the-vault-crosses-chrome-profiles), [Places of highest leverage: where to focus when the agents can go in every direction, told with three days of real steps](#places-of-highest-leverage), [Ways to read one article: the finished piece stays at the centre, and the reader picks the way in](#ways-to-read-one-article), [Firing journalists is the worst thing a publication can do: what a hiring decision says about where a publisher is going, and who to hire instead](#firing-journalists).
 
 ## [The vault is live: from a design on 11 October to a reader's vault on newsroom.sgit.ai by two in the morning, and how all of it fits together](the-vault-is-live.md)
 
@@ -2603,7 +2634,7 @@ An end-to-end, client-side account with no sign-in to the site: a passkey with t
 
 > The test is the requirement. Why the door layer is back.
 
-builds on [I miss it, so it is working: the people who decide the roadmap have to use the product, and the vault the newsroom now needs](#i-miss-it), [No server, by design: first I retired the database, now I am retiring the back end](#no-server-by-design), [RFC 0001: two ways to add public-key cryptography to sgit, and the questions we want you to answer](#rfc-0001-public-key-cryptography-for-sgit), [How to run synthetic users on your own site: five people who do not exist, a browser, and an afternoon](#how-to-run-synthetic-users), [Pay after you read: how a reading meter became a working business model in one afternoon, one release at a time](#pay-after-you-read), [Where the vault keys live: key management at sgit-ai v0.20.0, and what comes next](#where-the-vault-keys-live); continued by [secrets.sgit.ai on public keys: no more shared keys, eight ways a secret moves, a vault for the private key, and the commercial service it becomes](#secrets-on-public-keys), [Handing secrets to agents and browsers: SG/Send's next focus, a key pair where the work runs, one-time drops, and a brief for a site that does only this](#handing-secrets-to-agents), [Every link points back: 566 links between 105 articles, 15 that point forward, and why an article should know what came next and what corrected it](#every-link-points-back), [The vault crosses Chrome profiles: state and memory between browser sessions, found by using it rather than by building it](#the-vault-crosses-chrome-profiles), [Not a straight line: working for RiskMandate by working on the newsroom, and why the thinking is never wasted](#not-a-straight-line), [Why I love Wardley maps: the best of ours, how I read one, and a map inside a map inside a map](#why-i-love-wardley-maps), [Places of highest leverage: where to focus when the agents can go in every direction, told with three days of real steps](#places-of-highest-leverage), [The site is an inbox: deciding before reading, marks that build the reader's own graph, and why I could not write this brief until the vault existed](#the-site-is-an-inbox), [The vault is live: from a design on 11 October to a reader's vault on newsroom.sgit.ai by two in the morning, and how all of it fits together](#the-vault-is-live), [Two agents, one vault: the Industry Wire is written into an encrypted vault by one agent and drawn by newsroom.sgit.ai, which holds only the read key](#two-agents-one-vault), [Go slow to go fast: moving the newsroom from an explorer project to a villager one, with the brief to do it](#explorer-to-villager-newsroom).
+builds on [I miss it, so it is working: the people who decide the roadmap have to use the product, and the vault the newsroom now needs](#i-miss-it), [No server, by design: first I retired the database, now I am retiring the back end](#no-server-by-design), [RFC 0001: two ways to add public-key cryptography to sgit, and the questions we want you to answer](#rfc-0001-public-key-cryptography-for-sgit), [How to run synthetic users on your own site: five people who do not exist, a browser, and an afternoon](#how-to-run-synthetic-users), [Pay after you read: how a reading meter became a working business model in one afternoon, one release at a time](#pay-after-you-read), [Where the vault keys live: key management at sgit-ai v0.20.0, and what comes next](#where-the-vault-keys-live); continued by [The vault, opened: merging devices, reading every call to the vault server, browsing your vaults, and one viewer that every reader vault links and opens with](#the-vault-opened), [secrets.sgit.ai on public keys: no more shared keys, eight ways a secret moves, a vault for the private key, and the commercial service it becomes](#secrets-on-public-keys), [Handing secrets to agents and browsers: SG/Send's next focus, a key pair where the work runs, one-time drops, and a brief for a site that does only this](#handing-secrets-to-agents), [Every link points back: 566 links between 105 articles, 15 that point forward, and why an article should know what came next and what corrected it](#every-link-points-back), [The vault crosses Chrome profiles: state and memory between browser sessions, found by using it rather than by building it](#the-vault-crosses-chrome-profiles), [Not a straight line: working for RiskMandate by working on the newsroom, and why the thinking is never wasted](#not-a-straight-line), [Why I love Wardley maps: the best of ours, how I read one, and a map inside a map inside a map](#why-i-love-wardley-maps), [Places of highest leverage: where to focus when the agents can go in every direction, told with three days of real steps](#places-of-highest-leverage), [The site is an inbox: deciding before reading, marks that build the reader's own graph, and why I could not write this brief until the vault existed](#the-site-is-an-inbox), [The vault is live: from a design on 11 October to a reader's vault on newsroom.sgit.ai by two in the morning, and how all of it fits together](#the-vault-is-live), [Two agents, one vault: the Industry Wire is written into an encrypted vault by one agent and drawn by newsroom.sgit.ai, which holds only the read key](#two-agents-one-vault), [Go slow to go fast: moving the newsroom from an explorer project to a villager one, with the brief to do it](#explorer-to-villager-newsroom).
 
 ## [I miss it, so it is working: the people who decide the roadmap have to use the product, and the vault the newsroom now needs](i-miss-it.md)
 

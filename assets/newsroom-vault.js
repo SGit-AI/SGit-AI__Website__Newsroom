@@ -256,3 +256,109 @@ export async function writeInbox(master, record) {
     await publish(master)
     return record
 }
+
+// ------------------------------------------------------------ files, read-only opens, and the shared viewer (cards 077, 079)
+/** Remove one file as one commit; false when it was not there. */
+export async function removeFile(vault, folder, name) {
+    await ensureLoaded(vault, folder)
+    if (!(vault.listFolder(folder) || []).some(e => e.name === name && e.type === 'file')) return false
+    await vault.removeFile(folder, name)
+    return true
+}
+const hexOf = bytes => [...new Uint8Array(bytes)].map(b => b.toString(16).padStart(2, '0')).join('')
+const b64OfHex = hex => btoa(String.fromCharCode(...hex.match(/../g).map(h => parseInt(h, 16))))
+/** An open vault's read key as 64 hex, the form a read-only open and the vault UI's embed take. */
+export async function readKeyHex(vault) {
+    const raw = typeof vault.readKeyRawBytes === 'function' ? await vault.readKeyRawBytes() : null
+    if (raw) return hexOf(raw)
+    return (await readKeyOf(vault)).replace(/^sgit_public_read_/, '').split(':')[0]
+}
+/** A published read key (sgit_public_read_<hex>[:id], sgit_rk1_…, or bare hex) as { hex, vaultId }. */
+export function parseReadKey(key, vaultId = '') {
+    const m = /([0-9a-f]{64})(?::([a-z0-9]{4,24}))?/.exec(String(key || ''))
+    return m ? { hex: m[1], vaultId: m[2] || vaultId } : null
+}
+/** Open a vault read-only from its read key alone: the ref file id is derived from it (the vault UI does the same). */
+export async function openReadOnly(sgSend, vaultId, readKey) {
+    const k = parseReadKey(readKey, vaultId); if (!k) throw new Error('not a read key')
+    const creds = await libs().SGVaultCrypto.deriveReadOnlyCreds(k.vaultId, k.hex)
+    return libs().SGVault.openReadOnly(sgSend, k.vaultId, b64OfHex(k.hex), creds.refFileId)
+}
+
+/**
+ * The shared viewer (card 079): an app in a vault of its own, linked into every reader vault read-only and made
+ * that vault's default app, the vault-in-vault technique of https://sgit.ai/docs/vault/sub-vaults.html. The reader
+ * vault holds four small things: the link file (no key), the owner record with the viewer's READ key and ref file
+ * id (.vault/owner/ro-links.json, the vault UI's own convention), the app manifest (.vault/app.json) and an entry
+ * page that loads the viewer's code from the linked vault through the window.sg bridge. The viewer's code is never
+ * copied: when the newsroom publishes a new version, every vault that links it shows it.
+ */
+export const VIEWER = { link: 'newsroom-viewer.link.json', mount: 'newsroom-viewer', ref: 'lk-newsroom-viewer', entry: 'index.html', label: 'The newsroom’s vault viewer (shared, read-only)' }
+const VIEWER_MARK = '<!-- newsroom.sgit.ai: the entry that loads the shared vault viewer (card 079) -->'
+export function viewerEntryHtml(viewerId) {
+    return `<!doctype html>
+${VIEWER_MARK}
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Your newsroom vault</title>
+<style>body{font:15px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif;margin:0;padding:1.2rem;color:#1c1d21;background:#fbfaf7}.dim{color:#5a5e68}.warn{background:#fff7e6;border:1px solid #f1d7a2;border-radius:8px;padding:.6rem .8rem;color:#5c3d06}table{border-collapse:collapse;font-size:.9rem}td,th{padding:.25rem .6rem;border-bottom:1px solid #e3e5ea;text-align:left}</style></head>
+<body><div id="app"><p class="dim">Opening your vault…</p></div>
+<script>
+(async function () {
+  var app = document.getElementById('app'), VIEWER = '${VIEWER.mount}/viewer.js', READY = function () { try { parent.postMessage({ type: 'sg-app-ready' }, '*') } catch (e) {} }
+  try {
+    if (!window.sg || !sg.vfs) throw new Error('this page runs inside the vault app, where window.sg reads the vault')
+    await sg.loadJs(VIEWER)
+    if (!window.NewsroomViewer) throw new Error('the viewer did not load')
+    await window.NewsroomViewer.render({ sg: sg, mount: app, base: 'activity/', viewer: { id: '${viewerId}', path: '${VIEWER.mount}/' } })
+  } catch (e) {
+    // the fallback: what is in the vault, without the shared viewer
+    var msg = String(e && e.message || e), rows = ''
+    try {
+      var idx = JSON.parse(await sg.vfs.readText('activity/index.json'))
+      for (var i = 0; i < (idx.devices || []).length; i++) {
+        var f = JSON.parse(await sg.vfs.readText('activity/devices/' + idx.devices[i] + '.json'))
+        rows += '<tr><td>' + String(f.device.label || f.device.id).replace(/</g, '&lt;') + '</td><td>' + (f.reads || []).length + ' read(s)</td><td>' + (f.notes || []).length + ' note(s)</td></tr>'
+      }
+    } catch (e2) { rows = '' }
+    app.innerHTML = '<h1>Your newsroom vault</h1><p class="warn">The shared viewer (vault ${viewerId}, linked at ${VIEWER.mount}/) could not be read: ' + msg.replace(/</g, '&lt;') + '. What is here, without it:</p>' + (rows ? '<table><tbody>' + rows + '</tbody></table>' : '<p class="dim">No device has updated this vault yet.</p>')
+  }
+  READY()
+})()
+</script></body></html>
+`
+}
+/** What the reader vault holds of the viewer: { installed, vaultId, current } (current: it links the viewer given). */
+export async function viewerStatus(reader, viewer) {
+    const app = await readJson(reader, '/.vault/app.json').catch(() => null)
+    const link = await readJson(reader, '/' + VIEWER.link).catch(() => null)
+    const installed = !!(app && app.newsroom && app.newsroom.viewer && link && link.vault_id)
+    return { installed, vaultId: link && link.vault_id || null, current: installed && !!viewer && link.vault_id === viewer.vault_id, app }
+}
+/**
+ * Link the shared viewer into a reader vault and make it the default app. Writes only what differs; never replaces
+ * an app.json or an index.html this site did not write. Returns { changed: [paths], skipped: [reasons] }. The caller publishes.
+ */
+export async function installViewer(reader, viewer, { at = new Date().toISOString(), device = '' } = {}) {
+    const k = parseReadKey(viewer.read_key, viewer.vault_id); if (!k) throw new Error('the viewer has no read key')
+    const creds = await libs().SGVaultCrypto.deriveReadOnlyCreds(k.vaultId, k.hex)
+    const changed = [], skipped = []
+    const put = async (folder, name, text) => {
+        const path = (folder === '/' ? '' : folder) + '/' + name
+        const now = await readText(reader, path).catch(() => null)
+        if (now === text) return
+        await writeFile(reader, folder, name, text); changed.push(path)
+    }
+    const link = { vault_id: k.vaultId, ref_id: VIEWER.ref, type: 'vault', label: VIEWER.label, pin: { mode: 'latest' },
+                   description: 'The app this vault opens with. It lives in a vault of its own that the newsroom publishes; this vault reads it, read-only, and never copies it.' }
+    await put('/', VIEWER.link, JSON.stringify(link, null, 1))
+    const ro = (await readJson(reader, '/.vault/owner/ro-links.json').catch(() => null)) || {}
+    ro[VIEWER.ref] = { type: 'vault', label: VIEWER.label, pin: { mode: 'latest' }, vault_id: k.vaultId, read_key: b64OfHex(k.hex), ref_file_id: creds.refFileId }
+    await put('/.vault/owner', 'ro-links.json', JSON.stringify(ro, null, 2))
+    const app = await readJson(reader, '/.vault/app.json').catch(() => null)
+    if (app && !app.newsroom) skipped.push('this vault already has an app of its own (.vault/app.json): left as it is')
+    else await put('/.vault', 'app.json', JSON.stringify({ entry: VIEWER.entry, present: true, title: 'Your newsroom vault', hud: { mode: 'minimal' }, permissions: { fs: { read: true } },
+                                                       newsroom: { viewer: k.vaultId, installed: (app && app.newsroom && app.newsroom.installed) || at, by: device } }, null, 1))
+    const entry = await readText(reader, '/' + VIEWER.entry).catch(() => null)
+    if (entry && !entry.includes(VIEWER_MARK)) skipped.push('this vault already has an index.html of its own: left as it is')
+    else await put('/', VIEWER.entry, viewerEntryHtml(k.vaultId))
+    return { changed, skipped }
+}

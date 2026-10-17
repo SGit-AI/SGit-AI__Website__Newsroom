@@ -6,13 +6,13 @@
 > propagate; provenance is the product; pay the person who found the fact), and everything
 > needed to run a newsroom like it.
 
-Site version: v0.12.87 (10 October 2026). Published by the sgit project, which is building
+Site version: v0.12.88 (10 October 2026). Published by the sgit project, which is building
 the stack this site argues for; participant disclosure at /about/participant.html.
 Content CC BY 4.0 unless a page states otherwise; code Apache 2.0.
 
 ## The honest sentence
 
-Since v0.6.0 this site is a newsroom first. WHAT RUNS: the newsroom (/ and /articles/: 161
+Since v0.6.0 this site is a newsroom first. WHAT RUNS: the newsroom (/ and /articles/: 162
 articles since 17 August 2026, each with its own graph and full version history, a
 newsletter, collections, desk notes and a feed); how it runs (/newsroom/: six agent roles
 under written behaviour policies, a board, pitches and a run log); the reader's account
@@ -101,7 +101,7 @@ current, running or planned.
   and this site on 10 October 2026): five to ten invented users, each with a profile, a question they
   arrive with and an expected journey, drive a real browser one screenshot at a time, are interviewed and
   rate it; findings ordered by what they cost. NOT user research: the users are invented by a model
-- /articles/graphs.html and /articles/graphs.json: every article's graph, 161, drawn together
+- /articles/graphs.html and /articles/graphs.json: every article's graph, 162, drawn together
 - /articles/newsletter/index.html: the newsletter, 6 issues so far, also on LinkedIn
 - /articles/collections/index.html: 5 collections; /articles/desk/index.html: 4 desk notes
 - /articles/views/<slug>/: five alternative readers (librarian, cartographer, historian,
@@ -178,7 +178,11 @@ current, running or planned.
   notes and wire stories seen as ONE FILE PER DEVICE, rewritten whole, one commit), and on another device bring that device's
   activity in; totals are RECOMPUTED FROM THE RECORDS, never stored. The pane has four tabs (This page, Reading, Vault,
   Keys); the Vault button counts what is only in this browser, and a strip above the tabs offers Update the vault and,
-  the other way, Bring them here. TWO WAYS IN (v0.12.58): OPEN with the passkey, after which the pane asks which device
+  the other way, Bring them here. Since v0.12.88: devices MERGE into one (every record kept, aliases in
+  activity/aliases.json); a CALLS tab names and decrypts every call to the vault server; /vault/browse.html opens
+  every vault of the account file by file and commit by commit; and the SHARED VIEWER (vault lkypj6zq, public read
+  key in /admin/content/vaults/vault-viewer.json) is linked into each reader vault and opens as its app
+  (/admin/notes/2026-10-16__the-vault-opened.md). TWO WAYS IN (v0.12.58): OPEN with the passkey, after which the pane asks which device
   this browser is (one the vault knows, adopted with its records, or a new one) and brings in what the vault holds on its
   own, so the meter shows the account's balance; or CONNECT with a link, send only, filed where the vault is open under a
   device the reader chooses (/admin/notes/2026-10-13__open-or-connect-a-vault.md). The design, the data layout and the

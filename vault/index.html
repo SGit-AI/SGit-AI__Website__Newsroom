@@ -21,7 +21,7 @@
   <link rel="stylesheet" href="../assets/site-nav.css">
   <script src="../assets/themes/themes.js"></script>
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.12.87</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.12.88</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -172,6 +172,13 @@
 <li><b>File what arrived.</b> Where the vault is open, the Vault tab lists what each browser sent, from which browser and what it carries, with a choice of where to file it: as a device of its own, or under one you already have, this one included. The choice is remembered for that browser&rsquo;s next batch; a name that matches a device you have is offered first.</li>
 <li><b>Recovery code, check, forget.</b> <em>I have a recovery code</em> opens the account on a device whose passkey cannot be a door, and <em>Add this device with the code</em> gives that path a door of its own. <em>Check the vault</em> re-reads every device&rsquo;s file; <em>Forget on this device</em> clears the keys from this tab and leaves the vault unchanged.</li>
 </ol>
+<h2 id="opened">Your vaults, opened</h2>
+<ul>
+<li><b>Browse them.</b> <a href="browse.html">Your vaults, opened</a> shows every vault of your account, here with your keys: the files, any file&rsquo;s contents, the commits and the files as they were at each. The master&rsquo;s and the door&rsquo;s files open only behind Reveal, because they hold keys.</li>
+<li><b>Your reader vault has an app.</b> The newsroom&rsquo;s viewer lives in a vault of its own, published with a public read key. Your next Update links it into your reader vault, read-only, and makes it the vault&rsquo;s app, so the vault opened in the SG/Vault app shows your account, devices, reading and notes. The code is shared and never copied; your records never go into it. <a href="browse.html#demo">See it on a demo account</a>.</li>
+<li><b>Merge devices.</b> In the Vault tab, tick two or more devices in <em>Across your devices</em> and merge them into one, iPad 1, iPad 2 and iPad 3 into iPad. Every read, note, top-up and story seen is kept; a browser still using a merged device is filed under the one it went into. <em>Change</em> beside <em>Device</em> moves this browser into another device the same way.</li>
+<li><b>See the calls.</b> The <em>Calls</em> tab names every call to the vault server, a commit, a tree, a file, a ref, an append-lane operation, and, on a press, decrypts what it carried with the key of its vault, when that vault is open in the page. The server only ever had the ciphertext.</li>
+</ul>
 <h2 id="principles">The principles</h2>
 <ul>
 <li><b>Local storage stays primary</b>, written in real time by the meter; the vault is updated when you ask, and what it holds is brought in when you open it.</li>
@@ -203,7 +210,7 @@ import('../assets/components/sg-meter/v1/v1.4/v1.4.1/sg-meter.js')
     <div class="brandline">newsroom<span>.sgit.ai</span></div>
     <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.12.87</a> &middot; <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.12.88</a> &middot; <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>The newsroom</h4>

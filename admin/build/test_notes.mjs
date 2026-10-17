@@ -190,7 +190,7 @@ try {
     await pg.click('#vault-sync'); await until('Updated:|not updated', 120000)
     check(new RegExp(`${expected} note\\(s\\)(,| from)`).test(await text('#vault-synced')), `Update the vault carries ${expected} note(s) in this device's file (${(await text('#vault-synced')).trim()})`)
     await until('1 device\\(s\\)')
-    const notesCol = await pg.evaluate(() => { const r = [...document.querySelectorAll('#vault-across tr.total td')]; return r.length ? r[4].textContent.trim() : '' })
+    const notesCol = await pg.evaluate(() => { const r = [...document.querySelectorAll('#vault-across tr.total td')]; return r.length ? r[5].textContent.trim() : '' })
     check(notesCol === String(expected), `the table across devices counts the notes (${notesCol})`)
     check(/2.*Update the vault.*\(last 20/.test((await pg.evaluate(() => [...document.querySelectorAll('#vault-steps li')].map(li => li.className + ' ' + li.textContent).join(' | ')))) && (await pg.evaluate(() => (document.querySelector('#vault-steps li.next .n') || {}).textContent)) === '3', 'steps 1 and 2 are ticked, step 3 is next')
 

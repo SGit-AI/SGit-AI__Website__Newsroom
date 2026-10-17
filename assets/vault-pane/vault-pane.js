@@ -37,7 +37,11 @@
  * first; until the reader updates, it exists in this browser alone. Other pages ask for the pane and for an update
  * with two window events, sgit-vault-open {tab} and sgit-vault-update; the pane answers with sgit-vault-updated.
  *
- * Every call to the vault server is listed as it happens, under the tabs.
+ * Every call to the vault server is listed as it happens, in the Calls tab (card 078, assets/vault-pane/calls.js): named
+ * from its address (a read or write of a commit, a tree, a file, a ref), and decrypted on demand with the key of the
+ * vault it belongs to when that vault is open here. The devices can be merged (card 077): several into one, every
+ * record kept, the merged ids redirected by activity/aliases.json. The Vault tab links the vault browser
+ * (vault/browse.html) and makes the newsroom's shared viewer the reader vault's app (card 079).
  *
  * Where the keys live: in memory, and for the life of this tab in sessionStorage (so a page change does not ask
  * for the passkey again). Nothing is written to localStorage but this device's id and label, the notes, what was seen
@@ -50,7 +54,8 @@
  */
 import * as NV from '../newsroom-vault.js'
 import { doorFrom, prfBytes, recoveryBytes, recoveryCode, PRF_INPUT_TEXT, sha256 } from '../door.js'
-import { extract, consolidate, combine, mergeInto, mergeNotes, mergeWire, inbound, describeInbound, refile, accountFile, PATHS, describe } from './sync.js'
+import { extract, consolidate, combine, mergeInto, mergeNotes, mergeWire, inbound, describeInbound, refile, mergeDevices, applyAliases, resolveAlias, accountFile, PATHS, describe } from './sync.js'
+import * as C from './calls.js'
 import * as N from './notes.js'
 import * as R from './reading.js'
 import * as W from './wire-state.js'
@@ -59,13 +64,15 @@ import * as I from './inbox.js'
 import * as SND from './send.js'
 
 const ROOT = new URL('../../', import.meta.url)                       // assets/vault-pane/ → the site root
-const ENDPOINT = 'https://dev.send.sgraph.ai'
-const LIB = ['sg-send/sg-send-crypto.js', 'sg-send/sg-send.js', 'sg-vault/sg-vault-crypto.js', 'sg-vault/sg-vault-object-store.js', 'sg-vault/sg-vault-ref-manager.js',
+export const ENDPOINT = 'https://dev.send.sgraph.ai'
+export const LIB = ['sg-send/sg-send-crypto.js', 'sg-send/sg-send.js', 'sg-vault/sg-vault-crypto.js', 'sg-vault/sg-vault-object-store.js', 'sg-vault/sg-vault-ref-manager.js',
              'sg-vault/sg-vault-commit.js', 'sg-vault/sg-vault.js', 'sg-vault/sg-vault--file-ops.js', 'sg-vault/sg-vault--folder-ops.js', 'sg-vault/sg-vault--sync.js',
              'sg-vault/sg-vault--history.js', 'sg-vault/sg-vault--branches.js'].map(f => `assets/vendor/sg-vault/v0.2.3/${f}`).concat(['assets/vendor/sg-vault/local/sg-vault--create-with-id.js'])
 const SESSION = 'sgit.vault.session', LABEL = 'sgit.device-label', OPEN = 'sgit.vault.open', LAST_SYNC = 'sgit.vault.last-sync'
 const TOKEN_FILE = { folder: '/.vault', name: 'access-token.json' }    // where the library's readEmbeddedAccessToken() looks
-const TABS = [['page', 'This page'], ['reading', 'Reading'], ['vault', 'Vault'], ['keys', 'Keys']]
+const TABS = [['page', 'This page'], ['reading', 'Reading'], ['vault', 'Vault'], ['keys', 'Keys'], ['calls', 'Calls']]
+const CALLS_KEPT = 'sgit.vault.calls'                                   // the calls of earlier pages in this tab, without their bytes
+const VIEWER_CFG = 'admin/content/vaults/vault-viewer.json'             // the shared viewer: its vault id and public read key (card 079)
 
 const h = (tag, attrs, ...kids) => {
     const el = document.createElement(tag)
@@ -100,7 +107,7 @@ const session = {
     set(v) { try { if (v) sessionStorage.setItem(SESSION, JSON.stringify(v)); else sessionStorage.removeItem(SESSION) } catch (e) { /* no storage: memory only */ } },
 }
 let libLoading = null
-function loadLibrary() {
+export function loadLibrary() {
     if (typeof SGVault !== 'undefined' && typeof SGVault.createWithId === 'function') return Promise.resolve()
     if (libLoading) return libLoading
     libLoading = (async () => {
@@ -115,13 +122,12 @@ export function mount() {
     const cfg = meterCfg()
     let deviceId = NV.deviceBranch()
     let label = ''; try { label = localStorage.getItem(LABEL) || '' } catch (e) { /* fine */ }
-    const state = { drawn: false, vaults: null, lane: null, inbox: undefined, waiting: [], consolidated: null, inbound: null, note: null, busy: false, sg: null, tab: 'page', sel: '', lastKept: null }
+    const state = { drawn: false, vaults: null, lane: null, inbox: undefined, waiting: [], consolidated: null, inbound: null, note: null, aliases: null, viewer: undefined, viewerChecked: false, busy: false, sg: null, tab: 'page', sel: '', lastKept: null }
     const tabs = h('div', { class: 'tabs', role: 'tablist' })
     const secs = Object.fromEntries(TABS.map(([id]) => [id, h('section', { id: `vault-sec-${id}`, role: 'tabpanel', hidden: true })]))
     const body = secs.vault
     const fill = (...kids) => body.replaceChildren(...kids.flat().filter(k => k != null && k !== false))   // replaceChildren would print a null as text
     const put = (el, ...kids) => el.replaceChildren(...kids.flat().filter(k => k != null && k !== false))
-    const log = h('ul', { class: 'log', hidden: true })
     const pendingMsg = h('span', { class: 'msg', id: 'vault-pending-msg' }), pendingOut = h('span', { class: 'out', id: 'vault-pending-out' })
     const pendingBtn = h('button', { type: 'button', class: 'btn primary', id: 'vault-update-now', onclick: () => updateNow() }, 'Update the vault')
     const inboxBtn = h('button', { type: 'button', class: 'btn', id: 'vault-inbox-send', hidden: true, onclick: () => sendFromHere() }, 'Send to my vault')
@@ -131,10 +137,9 @@ export function mount() {
     const pane = h('aside', { id: 'sgit-vault-pane', class: 'vault-pane', 'aria-label': 'Your vault' },
         h('div', { class: 'head' }, h('h2', {}, 'Your vault'), h('button', { type: 'button', class: 'btn close', onclick: () => toggle(false) }, 'Close')),
         h('p', { class: 'dim' }, 'Your notes on what you read, what you have read, and the reading account this browser keeps, carried between your devices through an encrypted vault that opens with your passkey. Local storage stays the place it lives; the vault is updated when you ask.'),
-        pendingStrip, tabs, ...TABS.map(([id]) => secs[id]),
-        h('h3', {}, 'Calls to the vault server'), log)
+        pendingStrip, tabs, ...TABS.map(([id]) => secs[id]))
     document.body.append(pane)
-    for (const [id, name] of TABS) tabs.append(h('button', { type: 'button', class: 'tab', id: `vault-tab-${id}`, role: 'tab', 'aria-selected': 'false', 'aria-controls': `vault-sec-${id}`, onclick: () => showTab(id) }, name, id === 'page' ? h('span', { class: 'n', id: 'vault-tab-page-n' }, String(N.list().length)) : null))
+    for (const [id, name] of TABS) tabs.append(h('button', { type: 'button', class: 'tab', id: `vault-tab-${id}`, role: 'tab', 'aria-selected': 'false', 'aria-controls': `vault-sec-${id}`, onclick: () => showTab(id) }, name, id === 'page' ? h('span', { class: 'n', id: 'vault-tab-page-n' }, String(N.list().length)) : id === 'calls' ? h('span', { class: 'n', id: 'vault-tab-calls-n' }, '0') : null))
     const buttons = [...document.querySelectorAll('.vault-btn')]
     const remember = on => { try { if (on) sessionStorage.setItem(OPEN, state.tab); else sessionStorage.removeItem(OPEN) } catch (e) { /* fine */ } }
     const toggle = open => {
@@ -150,20 +155,118 @@ export function mount() {
         if (state.tab === 'page') drawPage()
         if (state.tab === 'reading') drawReading()
         if (state.tab === 'keys') drawKeys()
+        if (state.tab === 'calls') drawCalls()
         if (document.documentElement.classList.contains('vault-open')) remember(true)
     }
     for (const b of buttons) b.addEventListener('click', () => toggle())
 
-    const say = (line, cls) => { log.prepend(h('li', { class: cls || '' }, `${new Date().toISOString().slice(11, 19)} ${line}`)); log.hidden = false; while (log.children.length > 60) log.lastChild.remove() }
+    // ------------------------------------------------------------ the calls to the vault server (card 078)
+    const calls = { list: [], earlier: (() => { try { return JSON.parse(sessionStorage.getItem(CALLS_KEPT) || '[]') } catch (e) { return [] } })(), n: 0, open: new Set() }
+    const keepCalls = () => { try { sessionStorage.setItem(CALLS_KEPT, JSON.stringify([...calls.list.map(callMeta), ...calls.earlier].slice(0, 150))) } catch (e) { /* fine */ } }
+    const callMeta = e => ({ at: e.at, method: e.method, short: e.d.short, kind: e.d.kind, vault: vaultName(e.d.vaultId), status: e.status, ms: e.ms, size: e.size, page: location.pathname })
+    const sizeOf = b => b == null ? 0 : typeof b === 'string' ? b.length : (b.byteLength || 0)
     const origFetch = window.fetch.bind(window)
     window.fetch = async (input, init) => {
         const u = String(input instanceof Request ? input.url : input)
         if (!u.startsWith(ENDPOINT + '/')) return origFetch(input, init)
         const method = (init && init.method) || (input instanceof Request ? input.method : 'GET')
-        const r = await origFetch(input, init)
-        say(`${method} ${u.slice(ENDPOINT.length).replace(/\/obj-cas-imm-[0-9a-f]{12}/g, '/obj-cas-imm-…')} → ${r.status}`, r.ok || r.status === 404 ? '' : 'warn')
+        const t0 = performance.now(), body = init && init.body
+        const e = { n: ++calls.n, at: new Date().toISOString(), method, url: u, d: C.describeCall(method, u, ENDPOINT), status: 0, ms: 0, size: 0,
+                    req: body instanceof Uint8Array || body instanceof ArrayBuffer || typeof body === 'string' ? body : null, res: null }
+        let r
+        try { r = await origFetch(input, init) } catch (err2) { e.status = 'failed'; e.ms = Math.round(performance.now() - t0); calls.list.unshift(e); callAdded(); throw err2 }
+        e.status = r.status; e.ms = Math.round(performance.now() - t0)
+        calls.list.unshift(e); if (calls.list.length > 300) calls.list.length = 300
+        r.clone().arrayBuffer().then(b => { e.res = b.byteLength <= 2e6 ? b : null; e.size = sizeOf(e.req) + b.byteLength; callAdded() }).catch(() => callAdded())
         return r
     }
+    function callAdded() {
+        const badge = document.getElementById('vault-tab-calls-n'); if (badge) badge.textContent = String(calls.list.length)
+        keepCalls()
+        if (state.tab === 'calls' && document.documentElement.classList.contains('vault-open')) drawCallsSoon()
+    }
+    let callsTimer = null
+    const drawCallsSoon = () => { clearTimeout(callsTimer); callsTimer = setTimeout(drawCalls, 150) }
+    /** The vaults this page has open, by id, with a name a reader knows them by. */
+    function openVaults() {
+        const v = state.vaults || {}, out = new Map()
+        const add = (vault, name, secret) => { if (vault && (vault.vaultId || vault._vaultId)) out.set(vault.vaultId || vault._vaultId, { vault, name, secret }) }
+        add(v.door, 'your door', true); add(v.master, 'your master vault', true); add(v.reader, 'your reader vault', false)
+        if (state.lane && state.lane.lane) add(state.lane.lane, 'your lane to the newsroom', false)
+        return out
+    }
+    function vaultName(id) {
+        if (!id) return ''
+        const o = openVaults().get(id); if (o) return o.name
+        const d = ((state.vaults || {}).doors || []).find(x => x.vault_id === id); if (d) return 'a door of another device'
+        if (state.viewer && state.viewer.vault_id === id) return 'the newsroom’s viewer (shared)'
+        return `vault ${id}`
+    }
+    /** One call, opened: what it carried, decrypted with the key of its vault when that vault is open in this page. */
+    async function decodeCall(e) {
+        const o = openVaults().get(e.d.vaultId)
+        const decrypt = o && o.vault._readKey ? async bytes => new Uint8Array(await SGSendCrypto.decrypt(bytes, o.vault._readKey)) : null
+        const td = x => typeof x === 'string' ? x : new TextDecoder().decode(x)
+        const items = []
+        if (e.d.op === 'batch') {
+            for (const op of C.batchOps(e.req ? td(e.req) : '', e.res ? td(e.res) : '').slice(0, 40)) items.push({ label: `${op.op} ${op.fileId}`, kind: op.kind, bytes: op.data ? C.fromBase64(op.data) : null, status: op.status })
+        } else if (e.d.kind === 'append' || e.d.kind === 'list' || e.d.kind === 'info') {
+            const text = [e.req ? 'sent: ' + (C.maskJson(td(e.req)) || td(e.req).slice(0, 400)) : '', e.res ? 'answered: ' + (C.maskJson(td(e.res)) || td(e.res).slice(0, 400)) : ''].filter(Boolean).join('\n')
+            return [{ label: e.d.op, kind: e.d.kind, plain: { type: 'json', summary: e.d.kind === 'append' ? 'an append-lane call: what is sealed stays sealed; tokens and keys are masked' : 'what the server answered', value: text } }]
+        } else {
+            const bytes = e.d.op === 'write' ? (e.req ? new Uint8Array(typeof e.req === 'string' ? new TextEncoder().encode(e.req) : e.req) : null) : (e.res ? new Uint8Array(e.res) : null)
+            items.push({ label: e.d.fileId, kind: e.d.kind, bytes })
+        }
+        for (const it of items) {
+            if (!it.bytes || !it.bytes.length) { it.plain = { type: 'none', summary: it.status === 'not_found' ? 'not found on the server' : 'no bytes in this call', value: null }; continue }
+            if (!decrypt) { it.plain = { type: 'cipher', summary: `${it.bytes.length} bytes of ciphertext; ${vaultName(e.d.vaultId)} is not open in this page, so it stays sealed`, value: null }; continue }
+            try { it.plain = await C.classifyPlain(await decrypt(it.bytes), decrypt) }
+            catch (err2) { it.plain = { type: 'cipher', summary: `${it.bytes.length} bytes that do not open with this vault’s read key (${err(err2)})`, value: null } }
+            it.secret = o.secret && it.plain.type === 'file'
+        }
+        return items
+    }
+    function drawCalls() {
+        const sec = secs.calls; if (!sec) return
+        const byKind = {}
+        for (const e of calls.list) byKind[e.d.op] = (byKind[e.d.op] || 0) + 1
+        const total = calls.list.reduce((s, e) => s + (e.size || 0), 0)
+        const row = e => {
+            const li = h('li', { class: 'call' + (typeof e.status === 'number' && (e.status < 400 || e.status === 404) ? '' : ' warn'), 'data-n': e.n })
+            const head = h('button', { type: 'button', class: 'call-h', 'aria-expanded': String(calls.open.has(e.n)), onclick: () => { if (calls.open.has(e.n)) calls.open.delete(e.n); else calls.open.add(e.n); drawCalls() } },
+                h('span', { class: 'when' }, e.at.slice(11, 19)), h('span', { class: `badge k-${e.d.kind}` }, e.d.kind.replace('-', ' ')), h('span', { class: 'what' }, `${e.method} ${e.d.short}`),
+                h('span', { class: 'meta' }, `${vaultName(e.d.vaultId)} · ${e.status}${e.size ? ' · ' + (e.size > 2048 ? Math.round(e.size / 1024) + ' KB' : e.size + ' B') : ''} · ${e.ms} ms`))
+            li.append(head)
+            if (calls.open.has(e.n)) {
+                const box = h('div', { class: 'call-b' }, h('p', { class: 'dim' }, 'Decoding…'))
+                li.append(box)
+                decodeCall(e).then(items => put(box, ...items.map(it => {
+                    const p = it.plain || {}, body = h('div', { class: 'call-v' })
+                    const show = () => {
+                        if (p.type === 'commit') put(body, row2('message', p.value.message || '(none)'), row2('time', p.value.timestamp || ''), row2('tree', h('span', { class: 'mono' }, p.value.tree_id || '')), row2('parents', h('span', { class: 'mono' }, p.value.parents.join(', ') || 'none: the first commit')))
+                        else if (p.type === 'tree') put(body, h('table', {}, h('tbody', {}, ...p.value.entries.map(x => h('tr', {}, h('td', {}, x.name + (x.kind === 'folder' ? '/' : '')), h('td', { class: 'n' }, x.kind === 'folder' ? '' : (x.size || '') + ' B'), h('td', { class: 'mono' }, String(x.id).slice(0, 24)))))))
+                        else if (p.type === 'ref') put(body, row2('commit', h('span', { class: 'mono' }, p.value.commit_id)))
+                        else if (p.value != null) put(body, h('pre', { class: 'call-pre' }, typeof p.value === 'string' ? prettyText(p.value) : JSON.stringify(p.value, null, 1)))
+                    }
+                    if (it.secret) put(body, h('button', { type: 'button', class: 'btn', onclick: show }, 'Reveal (this vault holds keys)'))
+                    else show()
+                    return h('div', { class: 'call-item' }, h('p', {}, h('b', {}, C.KINDS[p.type] || p.type || it.kind), ': ', p.summary || '', h('span', { class: 'mono dim' }, ` ${String(it.label || '').replace(/^bare\//, '')}`)), body)
+                }))).catch(err2 => put(box, h('p', { class: 'warn' }, `Could not decode: ${err(err2)}`)))
+            }
+            return li
+        }
+        put(sec,
+            h('h3', {}, 'Calls to the vault server'),
+            h('p', { class: 'dim', id: 'calls-summary' }, calls.list.length ? `${calls.list.length} call(s) on this page, ${Math.round(total / 1024)} KB: ${Object.entries(byKind).map(([k, n]) => `${n} ${k}`).join(', ')}. ` : 'No calls on this page yet. ',
+                'Each is named from its address; open one to see what it carried, decrypted here with the key of its vault when that vault is open in this page. The server only ever sees ciphertext.'),
+            h('div', { class: 'acts' }, h('button', { type: 'button', class: 'btn', id: 'calls-wide', onclick: () => { document.documentElement.classList.toggle('vault-wide'); drawCalls() } }, document.documentElement.classList.contains('vault-wide') ? 'Narrower' : 'Wider'),
+                h('button', { type: 'button', class: 'btn', onclick: () => { calls.list = []; calls.earlier = []; calls.open.clear(); keepCalls(); callAdded(); drawCalls() } }, 'Clear')),
+            h('ul', { class: 'calls', id: 'calls-list' }, ...calls.list.slice(0, 120).map(row)),
+            calls.earlier.length ? h('h3', {}, 'On earlier pages in this tab') : null,
+            calls.earlier.length ? h('ul', { class: 'calls earlier' }, ...calls.earlier.slice(0, 60).map(x => h('li', { class: 'call' }, h('div', { class: 'call-h' }, h('span', { class: 'when' }, String(x.at).slice(11, 19)), h('span', { class: `badge k-${x.kind}` }, String(x.kind).replace('-', ' ')), h('span', { class: 'what' }, `${x.method} ${x.short}`), h('span', { class: 'meta' }, `${x.vault} · ${x.status} · ${x.page}`))))) : null)
+    }
+    const row2 = (k, v) => h('div', { class: 'kv' }, h('span', { class: 'k' }, k), h('span', { class: 'v' }, v))
+    const prettyText = s => { try { return JSON.stringify(JSON.parse(s), null, 1).slice(0, 8000) } catch (e) { return String(s).slice(0, 8000) } }
 
     const setButtons = () => { for (const b of buttons) { b.classList.toggle('on', !!session.get()); const d = b.querySelector('.dot'); if (d) d.title = session.get() ? 'enabled on this device' : 'not enabled on this device' } }
     setButtons()
@@ -237,6 +340,7 @@ export function mount() {
         state.inbox = undefined; state.waiting = []; state.inbound = null
         session.set({ ...rec, token })
         setButtons()
+        try { window.dispatchEvent(new CustomEvent('sgit-vault-session')) } catch (e) { /* fine */ }
         return state.vaults
     }
     /** The lane, opened from the master's record the first time it is asked for; null when the account has none. */
@@ -415,7 +519,7 @@ export function mount() {
                 v.reader ? row('Reader vault', h('span', {}, h('span', { class: 'mono' }, v.reader.vaultId), ' ', secret(NV.prefixedKey(v.reader), 'the key'))) : null,
                 L ? row('The lane', h('span', {}, h('span', { class: 'mono' }, L.lane.vaultId), ' ', secret(L.record.lane, 'the key'))) : row('The lane', 'none yet: made the first time you send'),
                 L ? row('Its read key', h('span', {}, h('span', { class: 'mono' }, L.record.read), ' ', copyBtn(L.record.read))) : null),
-            h('p', { class: 'dim' }, 'The lane’s read key is the one thing to hand to the newsroom; it reads and cannot write. Everything else stays yours.'),
+            h('p', { class: 'dim' }, 'The lane’s read key is the one thing to hand to the newsroom; it reads and cannot write. Everything else stays yours. ', h('a', { href: new URL('vault/browse.html', ROOT).href }, 'Browse your vaults'), ' to see what each holds.'),
             await (async () => { if (state.inbox === undefined) { try { state.inbox = await NV.readInbox(v.master) } catch (e) { state.inbox = null } } return state.inbox ? h('div', { class: 'vaults' }, row('Your inbox', h('span', { class: 'mono', id: 'keys-inbox' }, `a lane on ${state.inbox.vault} · key ${state.inbox.fingerprint}`)), h('p', { class: 'dim' }, 'Its link is in the Vault tab; its private key and enum key stay in the master.')) : null })(),
         )
     }
@@ -496,23 +600,57 @@ export function mount() {
         if (inboundNow(c).any) return merge({ own: false })
         return drawUnlocked(note)
     }
-    function drawChooser(c, note) {
+    /**
+     * Which device is this browser: one the vault knows, or a new one. Asked once after an explicit open when there is
+     * a choice, and again from the Vault tab with Change. The device whose name this browser last used, or the one
+     * device on the same platform, is offered first; Change moves what this browser already wrote into the device
+     * chosen, as a merge, so nothing is lost.
+     */
+    function drawChooser(c, note, { change = false } = {}) {
+        const here = c.devices.find(d => d.id === deviceId)
         const others = c.devices.filter(d => d.id !== deviceId)
-        const newLabel = h('input', { type: 'text', id: 'vault-new-label', value: label, maxlength: 40, placeholder: 'e.g. "my laptop"' })
-        newLabel.addEventListener('focus', () => { const r = body.querySelector('input[name=vault-device][value=""]'); if (r) r.checked = true })
+        const platform = (navigator.userAgentData && navigator.userAgentData.platform) || navigator.platform || ''
+        const byName = label && others.find(d => (d.label || '').toLowerCase() === label.toLowerCase())
+        const samePlatform = others.filter(d => d.agent && d.agent === platform)
+        const suggested = byName || (samePlatform.length === 1 ? samePlatform[0] : null)
+        const newLabel = h('input', { type: 'text', id: 'vault-new-label', value: change ? (label || '') : (byName ? '' : label), maxlength: 40, placeholder: 'e.g. "iPad", "laptop", "Firefox at work"' })
+        const go = h('button', { type: 'button', class: 'btn primary', id: 'vault-choose' }, '')
+        const pickedId = () => (body.querySelector('input[name=vault-device]:checked') || {}).value || ''
+        const sync2 = () => {
+            const id = pickedId(), d = others.find(x => x.id === id)
+            for (const card of body.querySelectorAll('#vault-devices label.device')) card.classList.toggle('on', !!card.querySelector('input:checked'))
+            go.textContent = d ? `Continue as ${d.label || d.id}` : change ? `Keep this browser as ${newLabel.value.trim() || here && here.label || 'this device'}` : `Continue as a new device${newLabel.value.trim() ? ': ' + newLabel.value.trim() : ''}`
+        }
+        newLabel.addEventListener('focus', () => { const r = body.querySelector('input[name=vault-device][value=""]'); if (r) { r.checked = true; sync2() } })
+        newLabel.addEventListener('input', sync2)
+        const card = (d, sug) => h('label', { class: 'device' + (sug ? ' suggested' : '') },
+            h('input', { type: 'radio', name: 'vault-device', value: d.id, checked: sug ? true : false, onchange: sync2 }),
+            h('span', { class: 'dev' }, h('b', {}, d.label || d.id), sug ? h('span', { class: 'sug' }, byName ? 'the name this browser used' : 'same kind of browser') : null,
+                h('span', { class: 'dim' }, `${d.agent ? d.agent + ' · ' : ''}${d.reads} read(s) · ${d.notes || 0} note(s) · last update ${when(d.last_sync) || 'never'}`), h('span', { class: 'mono dim' }, d.id)))
+        go.addEventListener('click', async () => {
+            const picked = pickedId()
+            if (change && picked && here) {                                      // move what this browser wrote into the device chosen
+                const d = others.find(x => x.id === picked)
+                await mergeSelected([deviceId, picked], picked, (d && d.label) || '', { quiet: true }).catch(() => null)
+                adopt(picked, (d && d.label) || '')
+                return merge({ own: true })
+            }
+            if (picked) adopt(picked, (others.find(d => d.id === picked) || {}).label || '')
+            else { label = newLabel.value.trim(); try { localStorage.setItem(LABEL, label) } catch (e) { /* fine */ } }
+            if (inboundNow(c, !!picked).any) return merge({ own: !!picked })
+            await drawUnlocked(change ? h('p', { class: 'ok' }, `This browser is ${label || deviceId}.`) : null)
+        })
         fill(note || null,
-            h('h3', {}, 'Which device is this?'),
-            h('p', { class: 'dim' }, `Your vault knows ${others.length} device${others.length === 1 ? '' : 's'} and this browser is none of them yet. File what it reads under one of them, or as a new one. Two browsers can share a device: one row across your devices, one author on the records.`),
+            h('h3', {}, change ? 'Change which device this is' : 'Which device is this?'),
+            h('p', { class: 'dim' }, change
+                ? `This browser is filed as ${here ? (here.label || here.id) : (label || deviceId)}. Choose another device and what this browser wrote moves into it, every record kept; or keep it and rename it.`
+                : `Your vault knows ${others.length} device${others.length === 1 ? '' : 's'} and this browser is none of them yet. Pick the one this is, or add it as a new one. Two browsers can share a device: one row across your devices, one author on the records. You can change it later, and merge devices, in the Vault tab.`),
             h('div', { class: 'devices', id: 'vault-devices' },
-                ...others.map(d => h('label', { class: 'device' }, h('input', { type: 'radio', name: 'vault-device', value: d.id }), h('span', {}, h('b', {}, d.label || d.id), ` · ${d.reads} read(s), ${d.notes || 0} note(s), last update ${when(d.last_sync)} · `, h('span', { class: 'mono' }, d.id)))),
-                h('label', { class: 'device' }, h('input', { type: 'radio', name: 'vault-device', value: '', checked: true }), h('span', {}, h('b', {}, 'A new device'), h('br'), newLabel))),
-            h('div', { class: 'acts' }, h('button', { type: 'button', class: 'btn primary', id: 'vault-choose', onclick: async () => {
-                const picked = (body.querySelector('input[name=vault-device]:checked') || {}).value || ''
-                if (picked) adopt(picked, (others.find(d => d.id === picked) || {}).label || '')
-                else { label = newLabel.value.trim(); try { localStorage.setItem(LABEL, label) } catch (e) { /* fine */ } }
-                if (inboundNow(c, !!picked).any) return merge({ own: !!picked })
-                await drawUnlocked()
-            } }, 'Continue')))
+                ...others.map(d => card(d, suggested && d.id === suggested.id)),
+                h('label', { class: 'device new' + (suggested ? '' : ' on') }, h('input', { type: 'radio', name: 'vault-device', value: '', checked: suggested ? false : true, onchange: sync2 }),
+                    h('span', { class: 'dev' }, h('b', {}, change ? 'Keep this one' : 'A new device'), h('span', { class: 'dim' }, change ? 'with this name:' : `this browser (${platform || 'unknown platform'}), named:`), newLabel))),
+            h('div', { class: 'acts' }, go, change ? h('button', { type: 'button', class: 'btn', onclick: () => drawUnlocked() }, 'Cancel') : null))
+        sync2()
     }
 
     async function withBusy(btnId, fn) {
@@ -641,7 +779,7 @@ export function mount() {
         fill(
             note || null,
             h('h3', {}, 'This device'),
-            row('Device', h('span', {}, h('span', { class: 'mono' }, deviceId), label ? ` · ${label}` : '')),
+            row('Device', h('span', {}, label ? h('b', {}, label) : null, label ? ' · ' : '', h('span', { class: 'mono' }, deviceId), ' ', h('button', { type: 'button', class: 'btn', id: 'vault-change-device', onclick: async () => drawChooser(state.consolidated || await readAll(), null, { change: true }) }, 'Change'))),
             h('label', {}, 'Label', device),
             row('Door', h('span', { class: 'mono' }, `${v.door.vaultId}${session.get() && session.get().path ? ' · ' + session.get().path : ''}`)),
             row('Master', h('span', { class: 'mono' }, v.master.vaultId)),
@@ -662,10 +800,21 @@ export function mount() {
             h('div', { id: 'vault-sync-out' }),
             h('h3', {}, 'Across your devices'), across,
             h('h3', { id: 'vault-inbox-h' }, 'Send from another browser'), h('div', { id: 'vault-inbox' }),
-            h('p', { class: 'dim' }, 'The keys of every vault of this account are in the Keys tab; your notes and the lane to the newsroom in This page.'),
+            h('h3', {}, 'See inside your vault'),
+            h('p', {}, h('a', { href: new URL('vault/browse.html', ROOT).href, id: 'vault-browse-link', class: 'btn' }, 'Browse your vault'), ' ', h('span', { class: 'dim', id: 'vault-app-status' }, '')),
+            h('p', { class: 'dim' }, 'Every file, folder and commit of your vaults, opened here with your keys; and your reader vault in the SG/Vault app, read-only, where it opens with the newsroom’s viewer. The keys of every vault are in the Keys tab; your notes and the lane to the newsroom in This page; every call to the vault server in Calls.'),
         )
         await refreshAcross()
         await drawInbox()
+        appStatus()
+    }
+    /** Whether the reader vault opens with the shared viewer, in a word beside the Browse link. */
+    async function appStatus() {
+        const el = document.getElementById('vault-app-status'); if (!el || !state.vaults || !state.vaults.reader) return
+        const viewer = await viewerConfig()
+        if (!viewer) { el.textContent = 'The newsroom’s shared viewer is not published yet; the vault browser works without it.'; return }
+        const st = await NV.viewerStatus(state.vaults.reader, viewer).catch(() => null)
+        el.textContent = st && st.current ? `Your reader vault opens with the newsroom’s viewer (vault ${viewer.vault_id}, linked read-only).` : 'The next Update links the newsroom’s viewer into your reader vault and makes it its app.'
     }
 
     /** An account made without an access key in its master (the lab's early accounts): write it in, once. */
@@ -734,7 +883,7 @@ export function mount() {
                 // under which device: its own (a new row), or one the vault already has; what was chosen last time, or a device of the same name, first
                 senders.length ? h('div', { class: 'file-under', id: 'vault-inbox-under' }, ...senders.map(([id, d]) => {
                     const byLabel = d.label && devices.find(x => x.label && x.label.toLowerCase() === String(d.label).toLowerCase() && x.id !== id)
-                    const pre = aliases[id] && devices.some(x => x.id === aliases[id]) ? aliases[id] : devices.some(x => x.id === id) ? id : byLabel ? byLabel.id : id
+                    const pre = aliases[id] && devices.some(x => x.id === resolveAlias(aliases[id], state.aliases)) ? resolveAlias(aliases[id], state.aliases) : devices.some(x => x.id === id) ? id : byLabel ? byLabel.id : id
                     const sel = h('select', { id: `inbox-file-${id}` },
                         h('option', { value: id }, `${d.label || id}: a device of its own${devices.some(x => x.id === id) ? '' : ' (new)'}`),
                         ...devices.filter(x => x.id !== id).map(x => h('option', { value: x.id }, `${x.label || x.id}${x.id === deviceId ? ' (here)' : ''} · ${x.reads} read(s), ${x.notes || 0} note(s)`)))
@@ -759,7 +908,7 @@ export function mount() {
                 const byTarget = new Map(), aliases = { ...(state.inbox.aliases || {}) }
                 let ownTouched = false
                 for (const [sender, file] of bySender) {
-                    const target = fileUnder(sender)                               // the device the reader chose for this browser's records
+                    const target = resolveAlias(fileUnder(sender), state.aliases)  // the device the reader chose for this browser's records, followed through merges
                     const known = (state.consolidated && state.consolidated.devices.find(d => d.id === target)) || null
                     byTarget.set(target, combine(byTarget.get(target), target === sender ? file : refile(file, target, known ? known.label : '')))
                     if (target !== sender) aliases[sender] = target; else delete aliases[sender]
@@ -817,7 +966,11 @@ export function mount() {
         const files = []
         for (const n of names) { try { files.push(await NV.readJson(v.reader, `${PATHS.devicesFolder}/${n}`)) } catch (e) { /* a bad file is left out */ } }
         const account = await NV.readJson(v.reader, PATHS.account).catch(() => null)
-        state.consolidated = consolidate(files, account || { start: meterCfg().start })
+        state.aliases = await NV.readJson(v.reader, PATHS.aliases).catch(() => null)
+        const to = resolveAlias(deviceId, state.aliases)
+        if (to !== deviceId) adopt(to, '')                                     // this browser's device was merged into another: it is that one now
+        state.consolidated = consolidate(applyAliases(files, state.aliases), account || { start: meterCfg().start })
+        if (to !== deviceId || state.consolidated.devices.some(d => d.id === deviceId && d.label && !label)) { const d = state.consolidated.devices.find(x => x.id === deviceId); if (d && d.label && !label) { label = d.label; try { localStorage.setItem(LABEL, label) } catch (e) { /* fine */ } } }
         return state.consolidated
     }
 
@@ -833,35 +986,110 @@ export function mount() {
             const bring = document.getElementById('vault-merge'); if (bring) bring.hidden = !i.any
             renderPending()
             across.replaceChildren(
-                c.devices.length ? h('table', {}, h('thead', {}, h('tr', {}, h('th', {}, 'Device'), h('th', { class: 'n' }, 'Reads'), h('th', { class: 'n' }, 'Spent'), h('th', { class: 'n' }, 'Top-ups'), h('th', { class: 'n' }, 'Notes'), h('th', {}, 'Last sync'))),
-                    h('tbody', {}, ...c.devices.map(d => h('tr', { class: d.id === deviceId ? 'me' : '' }, h('td', {}, d.label || d.id, d.id === deviceId ? ' (here)' : ''), h('td', { class: 'n' }, d.reads), h('td', { class: 'n' }, money(d.spent, sym)), h('td', { class: 'n' }, d.credit ? money(d.credit, sym) : '–'), h('td', { class: 'n' }, d.notes || 0), h('td', {}, String(d.last_sync || '').slice(0, 16).replace('T', ' ')))),
-                        h('tr', { class: 'total' }, h('td', {}, `All, ${c.devices.length} device(s)`), h('td', { class: 'n' }, c.totals.reads), h('td', { class: 'n' }, money(c.totals.spent, sym)), h('td', { class: 'n' }, c.totals.credit ? money(c.totals.credit, sym) : '–'), h('td', { class: 'n' }, c.totals.notes), h('td', {}, `balance ${money(c.totals.balance, sym)}`))))
+                c.devices.length ? h('table', {}, h('thead', {}, h('tr', {}, h('th', { class: 'pick', title: 'Pick two or more to merge them' }, ''), h('th', {}, 'Device'), h('th', { class: 'n' }, 'Reads'), h('th', { class: 'n' }, 'Spent'), h('th', { class: 'n' }, 'Top-ups'), h('th', { class: 'n' }, 'Notes'), h('th', {}, 'Last sync'))),
+                    h('tbody', {}, ...c.devices.map(d => h('tr', { class: d.id === deviceId ? 'me' : '' }, h('td', { class: 'pick' }, h('input', { type: 'checkbox', 'data-merge': d.id, 'aria-label': `Pick ${d.label || d.id} to merge`, onchange: () => mergeBar(c) })), h('td', {}, d.label || d.id, d.id === deviceId ? ' (here)' : ''), h('td', { class: 'n' }, d.reads), h('td', { class: 'n' }, money(d.spent, sym)), h('td', { class: 'n' }, d.credit ? money(d.credit, sym) : '–'), h('td', { class: 'n' }, d.notes || 0), h('td', {}, String(d.last_sync || '').slice(0, 16).replace('T', ' ')))),
+                        h('tr', { class: 'total' }, h('td', {}), h('td', {}, `All, ${c.devices.length} device(s)`), h('td', { class: 'n' }, c.totals.reads), h('td', { class: 'n' }, money(c.totals.spent, sym)), h('td', { class: 'n' }, c.totals.credit ? money(c.totals.credit, sym) : '–'), h('td', { class: 'n' }, c.totals.notes), h('td', {}, `balance ${money(c.totals.balance, sym)}`))))
                     : h('p', { class: 'dim' }, 'No device has updated the vault yet.'),
+                c.devices.length > 1 ? h('div', { class: 'merge-bar', id: 'vault-merge-bar' }, h('p', { class: 'dim' }, 'Pick two or more devices to merge them into one: iPad 1, iPad 2 and iPad 3 into iPad, say.')) : null,
                 h('p', { class: 'dim' }, `Totals are recomputed from the records: starting credit ${money(c.start, sym)}, plus top-ups, minus what was read and not declined. The vault holds records, never totals.`),
             )
         } catch (e) { across.replaceChildren(h('p', { class: 'warn' }, `The devices’ files could not be read: ${err(e)}`)) }
+    }
+
+    /** The bar under the table: which devices are picked, into which one they merge, under what name. */
+    function mergeBar(c) {
+        const bar = document.getElementById('vault-merge-bar'); if (!bar) return
+        const picked = [...document.querySelectorAll('#vault-across input[data-merge]:checked')].map(x => x.dataset.merge)
+        const devs = picked.map(id => c.devices.find(d => d.id === id)).filter(Boolean)
+        if (devs.length < 2) { put(bar, h('p', { class: 'dim' }, devs.length ? `${devs[0].label || devs[0].id} picked: pick one more to merge.` : 'Pick two or more devices to merge them into one: iPad 1, iPad 2 and iPad 3 into iPad, say.')); return }
+        const pre = devs.find(d => d.id === deviceId) || devs.slice().sort((a, b) => String(b.last_sync || '').localeCompare(String(a.last_sync || '')))[0]
+        const into = h('select', { id: 'vault-merge-into' }, ...devs.map(d => h('option', { value: d.id }, `${d.label || d.id}${d.id === deviceId ? ' (here)' : ''}`)))
+        into.value = pre.id
+        const name = h('input', { type: 'text', id: 'vault-merge-label', maxlength: 40, value: (pre.label || '').replace(/\s*\d+$/, '') || pre.label || '' })
+        into.addEventListener('change', () => { const d = devs.find(x => x.id === into.value); if (d) name.value = (d.label || '').replace(/\s*\d+$/, '') || d.label || '' })
+        const reads = devs.reduce((s, d) => s + d.reads, 0), notes = devs.reduce((s, d) => s + (d.notes || 0), 0)
+        put(bar,
+            h('p', {}, h('b', {}, `Merge ${devs.length} devices`), ` (${reads} read(s), ${notes} note(s)) into `, into, ' named ', name),
+            h('p', { class: 'dim' }, 'Every read, note, top-up and story seen is kept, filed under the one device; nothing is deleted, a payment included, and the earlier files stay in the vault’s history. A browser still using one of the merged devices is filed under this one the next time it opens the vault, and so is anything one of them sends.'),
+            h('div', { class: 'acts' }, h('button', { type: 'button', class: 'btn primary', id: 'vault-merge-devices', onclick: () => mergeSelected(devs.map(d => d.id), into.value, name.value.trim()) }, `Merge into ${devs.find(d => d.id === into.value).label || into.value}`)))
+        into.addEventListener('change', () => { document.getElementById('vault-merge-devices').textContent = `Merge into ${(devs.find(x => x.id === into.value) || {}).label || into.value}` })
+    }
+    /** Several devices into one, in the reader vault: the target's file combined from all of theirs, theirs removed, the aliases recorded. One publish. */
+    async function mergeSelected(ids, targetId, name, { quiet = false } = {}) {
+        return withBusy('vault-merge-devices', async () => {
+            const v = state.vaults, out = document.getElementById('vault-sync-out')
+            try {
+                try { await v.reader.pull() } catch (e) { /* fine */ }
+                const files = []
+                for (const id of ids) { const f = await NV.readJson(v.reader, PATHS.device(id)).catch(() => null); if (f) files.push(f) }
+                const r = mergeDevices(files, targetId, { label: name, by: label || deviceId })
+                if (!r.file) throw new Error('none of those devices has a file in the vault')
+                await NV.writeFile(v.reader, PATHS.devicesFolder, `${targetId}.json`, JSON.stringify(r.file, null, 1))
+                for (const id of r.merged) await NV.removeFile(v.reader, PATHS.devicesFolder, `${id}.json`)
+                const prev = (await NV.readJson(v.reader, PATHS.aliases).catch(() => null)) || { v: 1, aliases: {}, merges: [] }
+                const aliases = { v: 1, aliases: { ...(prev.aliases || {}), ...r.aliases }, merges: [...(prev.merges || []), r.record] }
+                for (const k of Object.keys(aliases.aliases)) aliases.aliases[k] = resolveAlias(aliases.aliases[k], aliases)   // no chains: every merged id points at where it is now
+                await NV.writeFile(v.reader, '/activity', 'aliases.json', JSON.stringify(aliases, null, 1))
+                await writeIndex(v.reader)
+                await NV.publish(v.reader)
+                if (r.merged.includes(deviceId)) adopt(targetId, name)
+                else if (targetId === deviceId && name) { label = name; try { localStorage.setItem(LABEL, label) } catch (e) { /* fine */ } }
+                state.consolidated = null
+                if (!quiet && out) out.replaceChildren(h('p', { class: 'ok', id: 'vault-devices-merged' }, `Merged ${r.merged.length + 1} devices into ${name || targetId}: ${r.file.reads.length} read(s), ${(r.file.notes || []).length} note(s), ${r.file.topups.length} top-up(s), every one kept, as one commit, published.`))
+                await refreshAcross()
+                return r
+            } catch (e) { if (out) out.replaceChildren(h('p', { class: 'warn' }, `The devices were not merged: ${err(e)}`)); throw e }
+        })
     }
 
     /** This device's file, written whole into the reader vault and published: the one write of the sync model. */
     async function writeDevice() {
         const v = state.vaults, cfgNow = meterCfg(), st = readState(cfgNow.storageKey) || emptyState(cfgNow)
         try { await v.reader.pull() } catch (e) { /* fine */ }
+        const aliases = await NV.readJson(v.reader, PATHS.aliases).catch(() => null), to = resolveAlias(deviceId, aliases)
+        if (to !== deviceId) adopt(to, '')                                     // merged elsewhere since this browser last looked: write there
         const prev = await NV.readJson(v.reader, PATHS.device(deviceId)).catch(() => null)
         // combined with what the vault already holds for this device, so two browsers sharing a device never lose each other's records
         const file = combine(prev, extract(st, { id: deviceId, label, agent: (navigator.userAgentData && navigator.userAgentData.platform) || navigator.platform || '' }, prev, { notes: N.own(), wire: W.read().seen }))
         await NV.writeFile(v.reader, PATHS.devicesFolder, `${deviceId}.json`, JSON.stringify(file, null, 1))
         if (!(await NV.readJson(v.reader, PATHS.account).catch(() => null))) await NV.writeFile(v.reader, '/activity', 'account.json', JSON.stringify(accountFile(cfgNow, deviceId), null, 1))
+        await writeIndex(v.reader)
+        await ensureViewer(v.reader)                                          // the shared viewer, linked and made the vault's app, once
         await NV.publish(v.reader)
         try { localStorage.setItem(LAST_SYNC, file.device.last_sync) } catch (e) { /* fine */ }
         renderPending()
         return file
+    }
+    /** activity/index.json: the device files by id, so an app that cannot list a folder (the viewer) can find them. */
+    async function writeIndex(reader) {
+        const ids = (await NV.listFiles(reader, PATHS.devicesFolder).catch(() => [])).filter(n => n.endsWith('.json')).map(n => n.slice(0, -5)).sort()
+        const prev = await NV.readJson(reader, '/activity/index.json').catch(() => null)
+        if (prev && JSON.stringify(prev.devices) === JSON.stringify(ids)) return
+        await NV.writeFile(reader, '/activity', 'index.json', JSON.stringify({ v: 1, devices: ids, note: 'the device files in activity/devices/, for apps that cannot list a folder' }, null, 1))
+    }
+    /** The shared viewer's record, from this site: its vault id and public read key; null until it is published. */
+    async function viewerConfig() {
+        if (state.viewer !== undefined) return state.viewer
+        try { const r = await origFetch(new URL(VIEWER_CFG, ROOT).href, { cache: 'no-cache' }); const j = r.ok ? await r.json() : null; state.viewer = j && j.vault_id && j.read_key && (!j.remote || j.remote === ENDPOINT) ? j : null }
+        catch (e) { state.viewer = null }
+        return state.viewer
+    }
+    /** Link the shared viewer into the reader vault and make it the default app, when it is published and not linked yet. Never fails the update. */
+    async function ensureViewer(reader) {
+        if (state.viewerChecked) return
+        try {
+            const viewer = await viewerConfig(); if (!viewer) return
+            const st = await NV.viewerStatus(reader, viewer)
+            if (!st.current) { const r = await NV.installViewer(reader, viewer, { device: label || deviceId }); state.viewerNote = r.changed.length ? `and the newsroom’s viewer is now this vault’s app (${r.changed.length} file(s))` : ''; if (r.skipped.length) state.viewerNote = r.skipped.join('; ') }
+            state.viewerChecked = true
+        } catch (e) { state.viewerNote = `the viewer was not linked: ${err(e)}` }
     }
     async function sync() {
         await withBusy('vault-sync', async () => {
             const out = document.getElementById('vault-sync-out'); out.replaceChildren(h('p', { class: 'dim' }, 'Writing this device’s records as one commit, then publishing…'))
             try {
                 const file = await writeDevice()
-                out.replaceChildren(h('p', { class: 'ok', id: 'vault-synced' }, `Updated: ${describe(file)}, as one commit, published. Sync ${file.device.syncs} from this device.`))
+                out.replaceChildren(h('p', { class: 'ok', id: 'vault-synced' }, `Updated: ${describe(file)}, as one commit, published. Sync ${file.device.syncs} from this device.${state.viewerNote ? ' ' + state.viewerNote.replace(/^./, c => c.toUpperCase()) + '.' : ''}`)); state.viewerNote = ''
                 await refreshAcross()
             } catch (e) { out.replaceChildren(h('p', { class: 'warn' }, `The vault was not updated: ${err(e)}`)) }
         })

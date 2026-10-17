@@ -40,6 +40,13 @@ def page():
 <li><b>File what arrived.</b> Where the vault is open, the Vault tab lists what each browser sent, from which browser and what it carries, with a choice of where to file it: as a device of its own, or under one you already have, this one included. The choice is remembered for that browser&rsquo;s next batch; a name that matches a device you have is offered first.</li>
 <li><b>Recovery code, check, forget.</b> <em>I have a recovery code</em> opens the account on a device whose passkey cannot be a door, and <em>Add this device with the code</em> gives that path a door of its own. <em>Check the vault</em> re-reads every device&rsquo;s file; <em>Forget on this device</em> clears the keys from this tab and leaves the vault unchanged.</li>
 </ol>
+<h2 id="opened">Your vaults, opened</h2>
+<ul>
+<li><b>Browse them.</b> <a href="browse.html">Your vaults, opened</a> shows every vault of your account, here with your keys: the files, any file&rsquo;s contents, the commits and the files as they were at each. The master&rsquo;s and the door&rsquo;s files open only behind Reveal, because they hold keys.</li>
+<li><b>Your reader vault has an app.</b> The newsroom&rsquo;s viewer lives in a vault of its own, published with a public read key. Your next Update links it into your reader vault, read-only, and makes it the vault&rsquo;s app, so the vault opened in the SG/Vault app shows your account, devices, reading and notes. The code is shared and never copied; your records never go into it. <a href="browse.html#demo">See it on a demo account</a>.</li>
+<li><b>Merge devices.</b> In the Vault tab, tick two or more devices in <em>Across your devices</em> and merge them into one, iPad 1, iPad 2 and iPad 3 into iPad. Every read, note, top-up and story seen is kept; a browser still using a merged device is filed under the one it went into. <em>Change</em> beside <em>Device</em> moves this browser into another device the same way.</li>
+<li><b>See the calls.</b> The <em>Calls</em> tab names every call to the vault server, a commit, a tree, a file, a ref, an append-lane operation, and, on a press, decrypts what it carried with the key of its vault, when that vault is open in the page. The server only ever had the ciphertext.</li>
+</ul>
 <h2 id="principles">The principles</h2>
 <ul>
 <li><b>Local storage stays primary</b>, written in real time by the meter; the vault is updated when you ask, and what it holds is brought in when you open it.</li>
@@ -102,7 +109,52 @@ mountSend(document.getElementById('send-mount'));
                          agent=agent, head='<link rel="stylesheet" href="../assets/vault-pane/send.css">')
 
 
+def browse_page():
+    """vault/browse.html: your vaults, opened, with the session the pane keeps (card 079)."""
+    import json
+    demo = json.loads((ROOT / "admin/content/vaults/vault-viewer-demo.json").read_text())
+    viewer = json.loads((ROOT / "admin/content/vaults/vault-viewer.json").read_text())
+    demo_id, demo_hex, viewer_id = demo["vault_id"], demo["read_key"][-64:], viewer["vault_id"]
+    body = f"""<div id="browse-mount" class="browse"><p class="dim">Loading&hellip;</p></div>
+<noscript><p>This page opens your vaults in your browser and needs a script to do it.</p></noscript>
+<script type="module">
+import {{ mountBrowse }} from '../assets/vault-pane/browse.js';
+mountBrowse(document.getElementById('browse-mount'));
+</script>
+<h2 id="demo">The viewer, on a demo account</h2>
+<p>A reader vault made for showing, with a made-up account, linked to the newsroom&rsquo;s viewer exactly as yours is: press to open it in the SG/Vault app, read-only, with its published read key. What you see is the viewer, loaded from its own vault <code>{viewer_id}</code> through the link, reading the demo vault&rsquo;s records.</p>
+<p><button type="button" class="btn" id="browse-demo-open">Open the demo in the SG/Vault app</button></p>
+<div class="sgv-host" id="browse-demo"></div>
+<script type="module">
+import {{ mountEmbed }} from '../assets/vault-pane/sg-embed.js';
+document.getElementById('browse-demo-open').addEventListener('click', function () {{ this.remove(); mountEmbed(document.getElementById('browse-demo'), {{ vaultId: '{demo_id}', readKeyHex: '{demo_hex}', mode: 'app', label: 'The demo reader vault, in App Mode' }}) }});
+</script>
+<p class="small"><img src="../engineering/shots/079-viewer-in-the-sg-app.png" alt="The demo reader vault in the SG/App, read-only: the newsroom's viewer shows a balance of £4.84, 3 pages read, 2 notes, 2 devices, the reading and the notes" style="max-width:100%;border:1px solid var(--line, #e3e5ea);border-radius:8px"></p>
+<h2 id="what">What this page shows</h2>
+<ul>
+<li><b>Every vault of your account</b>, opened here with the keys the pane holds for this tab: the reader vault (your reads, notes and devices, one file per device, and the link to the newsroom&rsquo;s viewer), the lane (the notes you sent to the newsroom), the master (the keys of the others) and this door (the master&rsquo;s key). The master&rsquo;s and the door&rsquo;s files open only behind Reveal.</li>
+<li><b>The files and the commits.</b> The tree as published now, any file&rsquo;s contents, and the commits, newest first; pick one to see the tree and the files as they were.</li>
+<li><b>The reader vault in the SG/Vault app</b>, on a press: its read key is handed to the app at dev.vault.sgraph.ai over its embed protocol, never in an address, never stored, and it cannot write. App Mode opens the vault with its app: <b>the newsroom&rsquo;s viewer</b>, a vault of its own that every reader vault links read-only and opens with. The vault browser there shows the files, the SGit history and the settings.</li>
+<li><b>Nothing is written from this page</b>, and nothing leaves the browser but requests for ciphertext; every one is listed in the pane&rsquo;s Calls tab, named and, on a press, decrypted.</li>
+</ul>
+<p>The design is <a href="../admin/notes/2026-10-16__the-vault-opened.md">the vault, opened</a>; the viewer&rsquo;s source is <a href="vault-app/README.md">vault/vault-app/</a>.</p>
+"""
+    agent = ("vault/browse.html opens the reader's vaults in the page with the session the vault pane keeps in sessionStorage (sgit.vault.session: the door): "
+             "assets/vault-pane/browse.js unlocks the door, the master, the reader vault and the lane with the vendored library, lists every file (vault.listFolder), "
+             "reads any file (master and door behind Reveal), lists the commits (vault.logCommits) and the files at a commit (listTreeAt, readFileAt). It writes nothing. "
+             "The reader vault also opens in the SG/Vault app (dev.vault.sgraph.ai) through assets/vault-pane/sg-embed.js (the embed protocol, as sgit.ai's vault-ui-embed.js uses it), with the vault's read key handed over postMessage; "
+             "App Mode opens the shared viewer, a vault linked read-only into each reader vault (newsroom-viewer.link.json, .vault/owner/ro-links.json, .vault/app.json, index.html). "
+             "The viewer's source is vault/vault-app/ and its public record admin/content/vaults/vault-viewer.json, published by admin/build/viewer_vault.mjs.")
+    return newsroom_page("vault/browse.html", "Your vaults, opened",
+                         "Every vault of your account, opened in your browser: the files, any file's contents, the commits, and your reader vault in the SG/Vault app with the newsroom's viewer.",
+                         body, eyebrow="Your vault · browse", crumbs=(("Account", "account/index.html"), ("Your vault", "vault/index.html")),
+                         lead="What your vaults hold, file by file and commit by commit, opened here with your keys. The server only ever had the ciphertext.",
+                         agent=agent, head='<link rel="stylesheet" href="../assets/vault-pane/browse.css">')
+
+
 def main():
+    changed = write("vault/browse.html", browse_page())
+    print(f"vault_page: {'written' if changed else 'unchanged'} vault/browse.html")
     changed = write("vault/index.html", page())
     print(f"vault_page: {'written' if changed else 'unchanged'} vault/index.html")
     changed = write("vault/send.html", send_page())

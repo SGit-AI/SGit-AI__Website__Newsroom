@@ -1,0 +1,184 @@
+{
+ "slug": "the-vault-opened",
+ "teaser": "Merging devices, every call to the vault server named and opened, a page to browse your vaults, and one shared viewer that every reader vault opens with.",
+ "topics": [
+  "vaults-and-method",
+  "site-and-engineering"
+ ],
+ "core_idea": "The reader's vault became something a reader can see into and tidy: devices merge without losing a record, each call to the vault server is named and decrypted with keys the page already holds, a page walks every vault file by file and commit by commit, and one viewer, living in a vault of its own, is linked read-only into every reader vault as its app, the vault-in-vault technique proven in the live SG/App on a demo vault.",
+ "nodes": [
+  {
+   "id": "ask",
+   "label": "Five asks after Firefox",
+   "kind": "example",
+   "summary": "The owner connected Firefox, found the workflow worked, and asked for merging, browsing, a shared viewer, readable calls and a clearer chooser."
+  },
+  {
+   "id": "merge",
+   "label": "Merge devices",
+   "kind": "method",
+   "summary": "Several device files become one, every record re-filed and combined, the totals unchanged."
+  },
+  {
+   "id": "alias",
+   "label": "Aliases, not deletions",
+   "kind": "concept",
+   "summary": "activity/aliases.json sends a merged device's browser, files and inbox batches to the device it went into."
+  },
+  {
+   "id": "payment",
+   "label": "No payment lost",
+   "kind": "claim",
+   "summary": "A top-up is a payment record; a merge moves it and never drops it."
+  },
+  {
+   "id": "chooser",
+   "label": "A chooser that names the destination",
+   "kind": "artefact",
+   "summary": "The likely device first, a button that says where the browser goes, and Change to move it later."
+  },
+  {
+   "id": "calls",
+   "label": "The Calls tab",
+   "kind": "artefact",
+   "summary": "Every call named from its address, and opened into a commit, tree, ref or file with the vault's own key."
+  },
+  {
+   "id": "browse",
+   "label": "Your vaults, opened",
+   "kind": "artefact",
+   "summary": "A page that opens the four vaults of an account and shows files, contents and commits, writing nothing."
+  },
+  {
+   "id": "subvault",
+   "label": "sgit.ai's sub-vaults",
+   "kind": "concept",
+   "summary": "A link file with no key, the read key in an owner record, and app reads spliced through the link."
+  },
+  {
+   "id": "four",
+   "label": "Four files in the reader vault",
+   "kind": "method",
+   "summary": "The link, the owner record, the app manifest and a short entry page, written on the next Update."
+  },
+  {
+   "id": "viewer",
+   "label": "One shared viewer",
+   "kind": "artefact",
+   "summary": "The viewer lives once, in vault lkypj6zq, and every reader vault that links it shows its new versions."
+  },
+  {
+   "id": "proof",
+   "label": "Proven in the live SG/App",
+   "kind": "example",
+   "summary": "A demo reader vault linked the same way opened read-only and rendered through the viewer."
+  },
+  {
+   "id": "readkey",
+   "label": "Only a read key leaves",
+   "kind": "claim",
+   "summary": "The SG/Vault app is handed the reader vault's read key over its embed protocol, and the test checks it is nothing else."
+  },
+  {
+   "id": "limits",
+   "label": "Undo and deep links",
+   "kind": "question",
+   "summary": "Splitting a merged device and opening the app straight onto its history are not built."
+  }
+ ],
+ "edges": [
+  {
+   "from": "ask",
+   "to": "merge",
+   "rel": "leads-to"
+  },
+  {
+   "from": "merge",
+   "to": "alias",
+   "rel": "produces"
+  },
+  {
+   "from": "merge",
+   "to": "payment",
+   "rel": "depends-on"
+  },
+  {
+   "from": "ask",
+   "to": "chooser",
+   "rel": "leads-to"
+  },
+  {
+   "from": "chooser",
+   "to": "merge",
+   "rel": "depends-on"
+  },
+  {
+   "from": "ask",
+   "to": "calls",
+   "rel": "leads-to"
+  },
+  {
+   "from": "ask",
+   "to": "browse",
+   "rel": "leads-to"
+  },
+  {
+   "from": "browse",
+   "to": "readkey",
+   "rel": "produces"
+  },
+  {
+   "from": "subvault",
+   "to": "four",
+   "rel": "leads-to"
+  },
+  {
+   "from": "four",
+   "to": "viewer",
+   "rel": "produces"
+  },
+  {
+   "from": "viewer",
+   "to": "proof",
+   "rel": "example-of"
+  },
+  {
+   "from": "ask",
+   "to": "viewer",
+   "rel": "leads-to"
+  },
+  {
+   "from": "alias",
+   "to": "limits",
+   "rel": "leads-to"
+  }
+ ],
+ "links": {
+  "articles": [
+   "the-vault-crosses-chrome-profiles",
+   "sixteen-notes-i-did-not-want-to-lose",
+   "the-passkey-opens-the-vault",
+   "the-site-is-an-inbox",
+   "the-agents-write-too"
+  ],
+  "pages": [],
+  "sites": [
+   "https://newsroom.sgit.ai/admin/notes/2026-10-16__the-vault-opened.md",
+   "https://newsroom.sgit.ai/vault/browse.html",
+   "https://sgit.ai/docs/vault/sub-vaults.html",
+   "https://sgit.ai/docs/vault/vault-apps.html",
+   "https://sgit.ai/docs/vault/sg-bridge.html",
+   "https://sgit.ai/demos/vault-app-embed.html"
+  ]
+ },
+ "quotes": [
+  {
+   "text": "Merging keeps every record and every payment, moves them into one device file, and leaves an alias so a browser still using a merged device lands in the right place.",
+   "why": "the rule of a merge, and the reason it is safe for money"
+  },
+  {
+   "text": "The viewer's code lives once.",
+   "why": "the whole of the vault-in-vault technique in five words"
+  }
+ ]
+}
