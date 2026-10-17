@@ -1,0 +1,399 @@
+{
+ "title": "SGit × Ruflo | Working Proof of Concept",
+ "credit": "Created by Mondweep Chakravorty | linkedin.com/in/mondweepchakravorty/ | Working as a member of #Ruflo-Federation (x.ruv.io/mcp) | #License-To-Operate #AgenticAI",
+ "youtube": "https://youtu.be/rkh6BJiaIrQ",
+ "published": "17 October 2026",
+ "duration_s": 104.73,
+ "analysis": "Claude (Anthropic), 17 October 2026, for Dinis Cruz, from on-screen content only; the audio was not transcribed",
+ "slides": [
+  {
+   "n": 0,
+   "video_from_s": 0.0,
+   "video_to_s": 9.0,
+   "run_elapsed": null,
+   "headline": "What if an agent loses its workspace?",
+   "command": null,
+   "result": null,
+   "story": "Watch the explanations on the left. No code knowledge is needed."
+  },
+  {
+   "n": 1,
+   "video_from_s": 9.0,
+   "video_to_s": 14.1,
+   "run_elapsed": "00:04",
+   "headline": "Can the agent remember after a restart?",
+   "command": "ruflo --version",
+   "result": "ruflo v3.56.10; exit 0; SGit source 559752641bc520986fb0851b4a43875b6ad0d4ad; Adapter: ABP-governed local MCP, version 0.2",
+   "story": "Goal: recover the same two facts after the original workspace is gone."
+  },
+  {
+   "n": 2,
+   "video_from_s": 14.1,
+   "video_to_s": 21.1,
+   "run_elapsed": "00:11",
+   "headline": "Set the Agent Behaviour Policies.",
+   "command": "show reviewed ABP capability rows",
+   "result": "write.memory.project yes; read.memory.project yes; read.record.history yes; delete.memory.project approval; all scope ['project']. No raw rule overrides; unsupported or ambiguous policies fail closed.",
+   "story": "The agent must follow its written permissions throughout the test."
+  },
+  {
+   "n": 3,
+   "video_from_s": 21.1,
+   "video_to_s": 31.8,
+   "run_elapsed": "00:39-00:46",
+   "headline": "Give it something to remember.",
+   "command": "ruflo memory store --key <key> --value <fact> --no-embedding --path memory.db",
+   "result": "charging-window = 'Kestrel vehicles may charge only between 01:00 and 04:00 UTC.'; retention-policy = 'Kestrel checkpoints are retained for seven days.' (48 bytes, namespace project, Vector No); [OK] Data stored successfully; exit 0",
+   "story": "The facts: charging 01:00-04:00 UTC; checkpoints kept for seven days."
+  },
+  {
+   "n": 4,
+   "video_from_s": 31.8,
+   "video_to_s": 37.8,
+   "run_elapsed": "00:52",
+   "headline": "Try something outside its permission.",
+   "command": "MCP checkpoint(namespace=\"forbidden\")",
+   "result": "isError true; PermissionError: operation failed; check configuration, policy and integrity; checkpoint_files 0",
+   "story": "Expected safeguard: refuse access outside the permitted scope."
+  },
+  {
+   "n": 5,
+   "video_from_s": 37.8,
+   "video_to_s": 45.2,
+   "run_elapsed": "00:59",
+   "headline": "Save an encrypted recovery point.",
+   "command": "MCP checkpoint(namespace=\"project\")",
+   "result": "status checkpointed; id 2fa35d1b71ce4361b458c8a64f6ec668; backend sqlite-backup; database_sha256 10ab6c56…d66a0b; abp_sha256 aad790d1…183b30a; policy_sha256 3c0c94f7…890265955. Only encrypted SGit bare objects enter the checkpoint store; private keys stay in a separate private directory.",
+   "story": "A checkpoint is a saved recovery copy of the memory database."
+  },
+  {
+   "n": 6,
+   "video_from_s": 45.2,
+   "video_to_s": 51.4,
+   "run_elapsed": "01:05",
+   "headline": "Check that permission really matters.",
+   "command": "MCP close_run(checkpoint_id)",
+   "result": "isError true; PermissionError; checkpoint_retained true",
+   "story": "Deletion requires approval; no approval is supplied in this test."
+  },
+  {
+   "n": 7,
+   "video_from_s": 51.4,
+   "video_to_s": 58.2,
+   "run_elapsed": "01:12",
+   "headline": "Now remove the original workspace.",
+   "command": "stop source daemon; remove disposable source project; assert database absent",
+   "result": "Worker daemon was not running; exit 0; source_project_exists false; original_database_exists false",
+   "story": "Only the disposable test workspace is removed. The saved copy remains."
+  },
+  {
+   "n": 8,
+   "video_from_s": 58.2,
+   "video_to_s": 64.5,
+   "run_elapsed": "01:19",
+   "headline": "Recover into a fresh workspace.",
+   "command": "new MCP server → restore(checkpoint_id, workspace=\"fresh-runner\")",
+   "result": "status restored; new_workspace fresh-runner; database_sha256 10ab6c56…d66a0b (same as step 5); matches_checkpoint true",
+   "story": "Recovery uses a new process and a fresh workspace."
+  },
+  {
+   "n": 9,
+   "video_from_s": 64.5,
+   "video_to_s": 73.9,
+   "run_elapsed": "01:28",
+   "headline": "Ask Ruflo what it remembers.",
+   "command": "ruflo memory retrieve --key <key> --namespace project --path memory.sqlite --value-only",
+   "result": "both facts returned verbatim; exit 0 twice; PASS: both values match the CLI-written facts exactly",
+   "story": "Result: both stored facts are returned exactly as saved."
+  },
+  {
+   "n": 10,
+   "video_from_s": 73.9,
+   "video_to_s": 79.5,
+   "run_elapsed": "01:34",
+   "headline": "A missing fact should stay missing.",
+   "command": "ruflo memory retrieve --key never-stored --namespace project --path memory.sqlite",
+   "result": "[WARN] Key not found: never-stored; exit 1",
+   "story": "Result: a fact that was never stored is reported as missing."
+  },
+  {
+   "n": 11,
+   "video_from_s": 79.5,
+   "video_to_s": 85.8,
+   "run_elapsed": "01:40",
+   "headline": "Change the saved copy. Try again.",
+   "command": "alter one checkpoint object; MCP restore(..., workspace=\"tampered\")",
+   "result": "isError true; ValueError: operation failed; check configuration, policy and integrity; tampered_workspace_created false",
+   "story": "Result: the changed checkpoint is rejected."
+  },
+  {
+   "n": 12,
+   "video_from_s": 85.8,
+   "video_to_s": 94.8,
+   "run_elapsed": "01:49",
+   "headline": "The memory returned. The rules still held.",
+   "command": "acceptance summary",
+   "result": "ruflo_cli_exact_recall PASS 2/2; abp_denial PASS; approval_required_deletion BLOCKED, checkpoint retained; source_project_removed true; fresh_process_restore PASS; tampered_restore BLOCKED; semantic_recall NOT VALIDATED (--no-embedding). Previous keyword-recovery test PASS; previous embedding-enabled test: no stored vectors, semantic quality not validated.",
+   "story": "Scope: exact fact recovery tested; recall by meaning remains unvalidated."
+  },
+  {
+   "n": 13,
+   "video_from_s": 94.8,
+   "video_to_s": 104.73,
+   "run_elapsed": null,
+   "headline": "The facts came back. The safeguards held.",
+   "command": null,
+   "result": "Passed: both facts recovered exactly; unauthorised access blocked; unapproved deletion blocked; altered checkpoint rejected. Still to validate: recall by meaning; real-world value; installation and ongoing reliability.",
+   "story": "Working Proof of Concept: technical feasibility demonstrated in this test."
+  }
+ ],
+ "steps": [
+  {
+   "n": 1,
+   "cls": "info",
+   "title": "A real, pinned runtime",
+   "when": "Video 0:09–0:14 · run clock 00:04",
+   "verdict": "Pinned",
+   "what": "Ruflo reports its version, and the run prints the exact SGit source commit and the adapter it uses: an ABP-governed local MCP server, version 0.2.",
+   "cmd": "$ ruflo --version",
+   "out": "ruflo v3.56.10\nSGit source: 559752641bc5…6ad0d4ad\nAdapter: ABP-governed local MCP, version 0.2",
+   "stage": {
+    "title": "A real, pinned runtime",
+    "intro": "Ruflo reports its version. The run also prints which SGit source commit and which adapter version it uses.",
+    "ruflo": "–",
+    "abp": "Named only",
+    "vault": "Not yet",
+    "takeaway": "Only Ruflo’s command-line tool runs. SGit and the adapter are named, not called.",
+    "shown": "ruflo --version returns v3.56.10; the SGit commit and adapter version are printed.",
+    "inferred": "None"
+   },
+   "code": "The README pins SGit to reviewed source commit 559752641bc5…6ad0d4ad, and the adapter imports that library."
+  },
+  {
+   "n": 2,
+   "cls": "info",
+   "title": "Define the mandate",
+   "when": "Video 0:14–0:21 · run clock 00:11",
+   "verdict": "Rules set",
+   "what": "Four Agent Behaviour Policy rows, all limited to the project. Writing, reading and history are allowed; deleting memory needs a human’s approval. Anything unsupported or ambiguous fails closed.",
+   "cmd": "$ show reviewed ABP capability rows",
+   "out": "write.memory.project   mandate=yes\nread.memory.project    mandate=yes\nread.record.history    mandate=yes\ndelete.memory.project  mandate=approval",
+   "stage": {
+    "title": "Define the mandate",
+    "intro": "Four ABP rows are loaded and shown. Each says what the agent may do, scoped to the project.",
+    "ruflo": "–",
+    "abp": "Rows loaded",
+    "vault": "Not yet",
+    "takeaway": "The ABP lives with the adapter, not with Ruflo, compiled into Ruflo's own rule format. From here on it guards the adapter's tools.",
+    "shown": "The four rows and the line “No raw rule overrides. Unsupported or ambiguous policies fail closed.”",
+    "inferred": "None"
+   },
+   "code": "The rows are compiled at server start into Ruflo rules (4 rules; delete as approval required), and every tool call is checked by a pinned copy of Ruflo's policy evaluator in enforce mode. Raw rules and expiry overrides in the config are rejected."
+  },
+  {
+   "n": 3,
+   "cls": "pass",
+   "title": "Store two facts through Ruflo",
+   "when": "Video 0:21–0:32 · run clock 00:39–00:46",
+   "verdict": "Stored",
+   "what": "Two synthetic facts go into Ruflo’s memory, with embeddings switched off: Kestrel vehicles may charge only between 01:00 and 04:00 UTC, and Kestrel checkpoints are kept for seven days.",
+   "cmd": "$ ruflo memory store --key <key> --value <fact> --no-embedding --path memory.db",
+   "out": "[OK] Data stored successfully\nKey: retention-policy · Namespace: project · 48 bytes · Vector: No",
+   "stage": {
+    "title": "Store two facts through Ruflo",
+    "intro": "Ruflo’s command-line tool writes the two facts straight into its SQLite memory file.",
+    "ruflo": "Writes memory.db",
+    "abp": "Not on path",
+    "vault": "Not involved",
+    "takeaway": "This write does not pass through the ABP. The memory file is ordinary, unencrypted SQLite at this point.",
+    "shown": "ruflo memory store with --no-embedding --path memory.db; [OK] Data stored; Vector: No; the model name is logged.",
+    "inferred": "Nothing important; the call is direct."
+   }
+  },
+  {
+   "n": 4,
+   "cls": "blocked",
+   "title": "Try something outside its permission",
+   "when": "Video 0:32–0:38 · run clock 00:52",
+   "verdict": "Refused, as expected",
+   "what": "The agent asks for a checkpoint of a namespace it has no rights to. It’s refused before anything is written.",
+   "cmd": "$ MCP checkpoint(namespace=\"forbidden\")",
+   "out": "\"isError\": true\n\"response\": \"PermissionError: operation failed; …\"\n\"checkpoint_files\": 0",
+   "stage": {
+    "title": "Try something outside its permission",
+    "intro": "The agent asks the adapter to checkpoint a namespace it has no rights to.",
+    "ruflo": "–",
+    "abp": "Denied",
+    "vault": "Nothing written",
+    "takeaway": "The ABP stops the request before SGit is called, so nothing reaches the vault.",
+    "shown": "isError true, PermissionError, checkpoint_files 0.",
+    "inferred": "That the gate, not SGit, refused it. The zero files written is consistent with that."
+   }
+  },
+  {
+   "n": 5,
+   "cls": "pass",
+   "title": "Save an encrypted recovery point",
+   "when": "Video 0:38–0:45 · run clock 00:59",
+   "verdict": "Checkpointed",
+   "what": "A consistent copy of the memory database is saved as encrypted SGit objects. The checkpoint records three fingerprints: the database, the ABP and the policy. Private keys stay in a separate directory.",
+   "cmd": "$ MCP checkpoint(namespace=\"project\")",
+   "out": "\"status\": \"checkpointed\"\n\"backend\": \"sqlite-backup\"\n\"database_sha256\": \"10ab6c56…d66a0b\"\n\"abp_sha256\": \"aad790d1…183b30a\"",
+   "stage": {
+    "title": "Save an encrypted recovery point",
+    "intro": "This is where the vault is created. The adapter copies Ruflo’s memory file, fingerprints it, and SGit stores it encrypted.",
+    "ruflo": "File copied",
+    "abp": "Allowed",
+    "vault": "Written",
+    "takeaway": "What goes into the vault: one consistent copy of Ruflo’s memory database, sealed with fingerprints of the data and of the rules in force. Where: a checkpoint folder on the same machine. Keys sit in a different folder.",
+    "shown": "status checkpointed, backend sqlite-backup, the three SHA-256 values, “Only encrypted SGit bare objects enter the checkpoint store. Private keys remain in a separate private directory.”",
+    "inferred": "None"
+   },
+   "code": "The order is: policy check, consistent SQLite backup, integrity check, a new SGit vault for this checkpoint, commit, then only the encrypted bare store is copied out. No remote push is performed. The encrypted manifest records the ABP hash, the compiled-rule hash, the profile, owner, principal, database digest and time; the README says these are not digital signatures."
+  },
+  {
+   "n": 6,
+   "cls": "blocked",
+   "title": "Approval means stop",
+   "when": "Video 0:45–0:51 · run clock 01:05",
+   "verdict": "Stopped, as expected",
+   "what": "Closing the run would delete memory, which needs approval. None is given, so it stops and the checkpoint is kept.",
+   "cmd": "$ MCP close_run(checkpoint_id)",
+   "out": "\"isError\": true\n\"response\": \"PermissionError: …\"\n\"checkpoint_retained\": true",
+   "stage": {
+    "title": "Approval means stop",
+    "intro": "Closing the run would delete memory. That ABP row needs approval, and none is given.",
+    "ruflo": "–",
+    "abp": "Stopped",
+    "vault": "Protected",
+    "takeaway": "The vault is what the ABP is protecting here. It is not touched.",
+    "shown": "isError true, PermissionError, checkpoint_retained true.",
+    "inferred": "None"
+   },
+   "code": "close_run asks the gate for memory.delete, which the delete.memory.project row maps to. The README: there is no human approval fulfilment mechanism yet, so approval rows block."
+  },
+  {
+   "n": 7,
+   "cls": "info",
+   "title": "Remove the original workspace",
+   "when": "Video 0:51–0:58 · run clock 01:12",
+   "verdict": "Deleted",
+   "what": "The disposable test project and its database are really deleted. Only the encrypted checkpoint remains.",
+   "cmd": "$ stop source daemon; remove disposable source project; assert database absent",
+   "out": "\"source_project_exists\": false\n\"original_database_exists\": false",
+   "stage": {
+    "title": "Remove the original workspace",
+    "intro": "The test deletes the source project, including Ruflo’s memory file.",
+    "ruflo": "Daemon stopped",
+    "abp": "–",
+    "vault": "Survives",
+    "takeaway": "The vault and keys survive because they live in folders outside the project.",
+    "shown": "Worker daemon was not running; source_project_exists false; original_database_exists false.",
+    "inferred": "The store and key folders sit outside the deleted project. Step 8 confirms they were still there."
+   }
+  },
+  {
+   "n": 8,
+   "cls": "pass",
+   "title": "Restore in a fresh process",
+   "when": "Video 0:58–1:04 · run clock 01:19",
+   "verdict": "Restored",
+   "what": "A brand-new MCP server restores the checkpoint into a new workspace. The database fingerprint is identical to the one saved in step 5.",
+   "cmd": "$ new MCP server → restore(checkpoint_id, workspace=\"fresh-runner\")",
+   "out": "\"status\": \"restored\"\n\"database_sha256\": \"10ab6c56…d66a0b\"\n\"matches_checkpoint\": true",
+   "stage": {
+    "title": "Restore in a fresh process",
+    "intro": "A brand-new adapter process restores the checkpoint into a new workspace.",
+    "ruflo": "–",
+    "abp": "Allowed",
+    "vault": "Read",
+    "takeaway": "This is the vault being read. The restored database is byte-for-byte the one saved in step 5.",
+    "shown": "status restored, new_workspace fresh-runner, database_sha256 identical to step 5, matches_checkpoint true.",
+    "inferred": "None"
+   },
+   "code": "Restore checks the stored ciphertext's digest, decrypts with the key record from the private folder, checks the manifest and the database digest, checks SQLite, and only then promotes to a new workspace, always named memory.sqlite. It never overwrites an existing workspace."
+  },
+  {
+   "n": 9,
+   "cls": "pass",
+   "title": "Ask Ruflo what it remembers",
+   "when": "Video 1:04–1:14 · run clock 01:28",
+   "verdict": "Both facts back",
+   "what": "Ruflo itself, not the adapter, reads the recovered database. Both facts come back word for word.",
+   "cmd": "$ ruflo memory retrieve --key <key> --namespace project --path memory.sqlite --value-only",
+   "out": "Kestrel vehicles may charge only between 01:00 and 04:00 UTC.\nKestrel checkpoints are retained for seven days.\nPASS: both values match the CLI-written facts exactly.",
+   "stage": {
+    "title": "Ask Ruflo what it remembers",
+    "intro": "Ruflo’s own tool reads the restored file. Both facts come back word for word.",
+    "ruflo": "Reads memory.sqlite",
+    "abp": "Not on path",
+    "vault": "Not touched",
+    "takeaway": "Ruflo reads a plain copy that came out of the vault. Neither the vault nor the ABP is on this path.",
+    "shown": "Both values printed; PASS, exact match; exit 0.",
+    "inferred": "None."
+   }
+  },
+  {
+   "n": 10,
+   "cls": "pass",
+   "title": "A missing fact stays missing",
+   "when": "Video 1:14–1:20 · run clock 01:34",
+   "verdict": "Not found, as expected",
+   "what": "A key that was never stored is reported as missing, so the restore didn’t invent anything.",
+   "cmd": "$ ruflo memory retrieve --key never-stored --namespace project --path memory.sqlite",
+   "out": "[WARN] Key not found: never-stored\n[process exit: 1]",
+   "stage": {
+    "title": "A missing fact stays missing",
+    "intro": "A key that was never stored is looked up in the restored file.",
+    "ruflo": "Lookup fails",
+    "abp": "Not on path",
+    "vault": "Not touched",
+    "takeaway": "A control on the restored data: nothing was added on the way through the vault.",
+    "shown": "[WARN] Key not found: never-stored; exit 1.",
+    "inferred": "None."
+   }
+  },
+  {
+   "n": 11,
+   "cls": "blocked",
+   "title": "Change the saved copy, try again",
+   "when": "Video 1:20–1:26 · run clock 01:40",
+   "verdict": "Rejected, as expected",
+   "what": "One encrypted checkpoint object is altered. The restore detects it and no workspace is created.",
+   "cmd": "$ alter one checkpoint object; MCP restore(..., workspace=\"tampered\")",
+   "out": "\"isError\": true\n\"response\": \"ValueError: …\"\n\"tampered_workspace_created\": false",
+   "stage": {
+    "title": "Change the saved copy, try again",
+    "intro": "One encrypted object in the vault is altered, then a restore is attempted.",
+    "ruflo": "–",
+    "abp": "Allowed",
+    "vault": "Read, rejected",
+    "takeaway": "The ABP allows the restore; the adapter's check of the stored ciphertext is what refuses it.",
+    "shown": "isError true, ValueError, tampered_workspace_created false.",
+    "inferred": "None"
+   },
+   "code": "The adapter compares the digest of the stored ciphertext with the one recorded at checkpoint time and refuses with 'Checkpoint ciphertext integrity mismatch' before SGit is asked to decrypt."
+  },
+  {
+   "n": 12,
+   "cls": "info",
+   "title": "What this run proves",
+   "when": "Video 1:26–1:35 · run clock 01:49",
+   "verdict": "Summary",
+   "what": "The acceptance summary: exact recall passed, all three safeguards held, and recall by meaning is explicitly marked as not validated.",
+   "cmd": "$ acceptance summary",
+   "out": "\"ruflo_cli_exact_recall\": \"PASS: 2/2 facts\"\n\"abp_denial\": \"PASS\"\n\"approval_required_deletion\": \"BLOCKED\"\n\"fresh_process_restore\": \"PASS\"\n\"tampered_restore\": \"BLOCKED\"\n\"semantic_recall\": \"NOT VALIDATED\"",
+   "stage": {
+    "title": "What this run proves",
+    "intro": "Each result in the acceptance summary, traced to the component that produced it.",
+    "ruflo": "Recall checked",
+    "abp": "2 results",
+    "vault": "2 results",
+    "takeaway": "Two results belong to the ABP, two to the vault, one to Ruflo, and one was deliberately left untested.",
+    "shown": "The acceptance summary JSON.",
+    "inferred": "Which component each line belongs to."
+   }
+  }
+ ],
+ "repo": "https://github.com/mondweep/sgit-ruv-memory"
+}

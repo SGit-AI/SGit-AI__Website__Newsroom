@@ -120,6 +120,9 @@ Agents & policyNews & evidence[This article as a graph →](graphs.md#your-agent
 
 ### Continued by
 
+- [Three decisions, mapped: an agent's memory, this newsroom's release and a customer refund, through behaviour, decision and workflow](three-decisions-mapped.md) An agent's memory, this newsroom's release and a refund, mapped through behaviour, decision and workflow: the gaps are in the decisions.
+- [Case law for agents: principles from the top, precedent from the cases, and how a decision earns its way into code](case-law-for-agents.md) Nobody predicts every case. Borrow the shape of English case law: escalate what the policy does not settle, record it, follow it, then compile it.
+- [The policy guards the door; the command line uses the window: in the SGit × Ruflo run, the ABP is compiled into Ruflo's own rules and enforced on the adapter's tools, while Ruflo's command line reaches the same memory file without it, as the author's own README says](the-policy-guards-the-door.md) The ABP in the SGit × Ruflo run is compiled into Ruflo's rules and guards the adapter's tools; Ruflo's own command line reaches the memory without it.
 - [The AI Conference 2026, read for agent governance: six claims traced, five disagreements, and what the speaker notes say that the slides do not](the-ai-conference-read-for-governance.md) Six claims from a post about The AI Conference traced to the slides, five open disagreements, and the best fact-check, in a speaker's notes.
 
 [All articles](index.md) · [All graphs](graphs.md)

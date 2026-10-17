@@ -1,0 +1,43 @@
+{
+ "slug": "i-just-want-to-buy-the-article",
+ "teaser": "I tried to pay HBR for one article and was offered a subscription. The arithmetic says 24p to 55p; and ten things HBR could sell a reader like me.",
+ "topics": ["news-and-evidence", "startups-and-strategy"],
+ "core_idea": "A reader who wants to pay for one article is offered only subscriptions or a team-priced reprint, while a month's price divided by the month's articles is 24p to 55p; the article is the least of what a publisher could sell, since the graph, the vocabulary, the evidence, versions, the reader's record and a licence to quote with a share are each billable units, most of which run on newsroom.sgit.ai with open reader code.",
+ "nodes": [
+  {"id": "tried", "label": "I tried to pay", "kind": "example", "summary": "A LinkedIn link, a modal, three plans."},
+  {"id": "modal", "label": "Only part of the story", "kind": "artefact", "summary": "HBR's message to LinkedIn readers."},
+  {"id": "arith", "label": "The arithmetic", "kind": "claim", "summary": "£11 over 45 articles is about 24p."},
+  {"id": "reprint", "label": "The reprint", "kind": "example", "summary": "$11.95, priced for a team."},
+  {"id": "meter", "label": "Pay after you read", "kind": "method", "summary": "A few pence, by share read, rated."},
+  {"id": "record", "label": "My reading, my vault", "kind": "method", "summary": "Scrolled versus read, highlights, kept by me."},
+  {"id": "graph", "label": "The argument as a graph", "kind": "artefact", "summary": "To reuse inside a company."},
+  {"id": "vocab", "label": "The vocabulary", "kind": "concept", "summary": "Ontologies and taxonomies, verified."},
+  {"id": "evidence", "label": "The evidence, followed", "kind": "method", "summary": "Each step a small charge."},
+  {"id": "licence", "label": "A licence to quote, with a share", "kind": "question", "summary": "Proposed: my readers pay, HBR earns."},
+  {"id": "loop", "label": "LinkedIn as a storefront", "kind": "claim", "summary": "Readers discussing the article want to pay."},
+  {"id": "open", "label": "Open reader code", "kind": "artefact", "summary": "api.newsroom.sgit.ai, for any publisher."}
+ ],
+ "edges": [
+  {"from": "tried", "to": "modal", "rel": "leads-to"},
+  {"from": "arith", "to": "tried", "rel": "answers"},
+  {"from": "reprint", "to": "arith", "rel": "contrasts"},
+  {"from": "meter", "to": "arith", "rel": "answers"},
+  {"from": "record", "to": "meter", "rel": "extends"},
+  {"from": "graph", "to": "meter", "rel": "extends"},
+  {"from": "vocab", "to": "graph", "rel": "depends-on"},
+  {"from": "evidence", "to": "graph", "rel": "extends"},
+  {"from": "licence", "to": "loop", "rel": "answers"},
+  {"from": "loop", "to": "modal", "rel": "contrasts"},
+  {"from": "open", "to": "meter", "rel": "produces"}
+ ],
+ "links": {
+  "articles": ["who-will-fix-your-mess", "paying-after-the-value", "scrolled-is-not-read", "the-vault-opened", "research-delivered-as-a-vault", "stop-the-bleeding-then-ask-for-it-back"],
+  "pages": [],
+  "sites": ["https://hbr.org/2026/10/turn-vibe-coded-prototypes-into-tools-your-company-can-actually-use", "https://newsroom.sgit.ai/publishers/index.html", "https://api.newsroom.sgit.ai/", "https://newsroom.sgit.ai/articles/pay-after-you-read.html"]
+ },
+ "quotes": [
+  {"text": "It is not that readers like me will not pay.", "why": "The heart of it."},
+  {"text": "I think it is HBR's best market.", "why": "LinkedIn as a storefront."},
+  {"text": "so that my answer makes HBR money instead of competing with it", "why": "The licence to quote."}
+ ]
+}

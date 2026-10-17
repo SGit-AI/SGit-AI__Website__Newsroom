@@ -1,0 +1,40 @@
+{
+ "slug": "when-is-the-vault-actually-used",
+ "teaser": "In the SGit × Ruflo run the vault is written or read in three steps of twelve, on one machine, inside the adapter: the right shape for a recovery copy.",
+ "topics": ["vaults-and-method", "agents-and-policy"],
+ "core_idea": "Read stage by stage, the encrypted vault in Mondweep Chakravorty's run is written in step 5, read in step 8 and read and rejected in step 11, protected in step 6 and surviving step 7; it lives on one machine, is implemented in the adapter rather than in Ruflo, and binds the data to the policy in force; what is not yet shown is the vault leaving the machine.",
+ "nodes": [
+  {"id": "three", "label": "Three steps of twelve", "kind": "claim", "summary": "Written 5, read 8, rejected 11."},
+  {"id": "map", "label": "The component map", "kind": "artefact", "summary": "Two lines from the test script."},
+  {"id": "written", "label": "Step 5: written", "kind": "example", "summary": "A consistent copy, fingerprinted, encrypted."},
+  {"id": "read", "label": "Step 8: read", "kind": "example", "summary": "Byte for byte the same."},
+  {"id": "rejected", "label": "Step 11: rejected", "kind": "example", "summary": "The adapter's digest check refuses."},
+  {"id": "protected", "label": "Steps 6 and 7", "kind": "example", "summary": "Protected, then survives."},
+  {"id": "onemachine", "label": "One machine", "kind": "claim", "summary": "Survives the project, not the machine."},
+  {"id": "adapter", "label": "In the adapter, not Ruflo", "kind": "concept", "summary": "One vault per checkpoint; wraps any tool's memory file."},
+  {"id": "binding", "label": "Data bound to its policy", "kind": "concept", "summary": "The checkpoint records the rules in force."},
+  {"id": "shownvsinferred", "label": "Shown and inferred", "kind": "method", "summary": "Solid arrows on screen, dashed inferred."},
+  {"id": "next", "label": "The vault leaving the machine", "kind": "question", "summary": "Push, clone, a server holding only ciphertext."}
+ ],
+ "edges": [
+  {"from": "written", "to": "three", "rel": "example-of"},
+  {"from": "read", "to": "three", "rel": "example-of"},
+  {"from": "rejected", "to": "three", "rel": "example-of"},
+  {"from": "protected", "to": "three", "rel": "extends"},
+  {"from": "map", "to": "adapter", "rel": "produces"},
+  {"from": "binding", "to": "written", "rel": "depends-on"},
+  {"from": "onemachine", "to": "next", "rel": "leads-to"},
+  {"from": "adapter", "to": "three", "rel": "answers"},
+  {"from": "shownvsinferred", "to": "map", "rel": "depends-on"}
+ ],
+ "links": {
+  "articles": ["what-if-an-agent-loses-its-workspace", "the-policy-guards-the-door", "one-vault-ten-agents", "sgit-is-a-standard"],
+  "pages": [],
+  "sites": ["https://youtu.be/rkh6BJiaIrQ", "https://github.com/mondweep/sgit-ruv-memory", "https://newsroom.sgit.ai/demos/videos/sgit-ruflo-poc/index.html", "https://github.com/ruvnet/ruflo"]
+ },
+ "quotes": [
+  {"text": "A recovery copy should be touched when you save and when you restore, and otherwise left alone.", "why": "Why three steps is right."},
+  {"text": "The ABP allows the restore; the adapter's check of the stored ciphertext is what refuses it.", "why": "Two different guards."},
+  {"text": "It would not survive the machine being lost, which the video does not claim.", "why": "The honest limit."}
+ ]
+}

@@ -198,6 +198,7 @@ Site & engineering[This article as a graph →](graphs.md#dark-mode-and-four-mor
 
 ### Continued by
 
+- [Fix the page yourself: the bookmarklet trick from my security days, a page API every site should publish, and why the next user experience is the one the user customises, with six fixes running on this newsroom](fix-the-page-yourself.md) A bookmarklet from my security days, a page API every site should publish, and six fixes running on this newsroom: the next UX is the user's own.
 - [Scrolled is not read: what the reading meter measures, what it should, highlights you can keep, and the page as the reader's own graph](scrolled-is-not-read.md) The reading meter charged by scroll and called it read; now each section keeps scrolled and read, the chip holds still, and highlights take one tap.
 - [Software vendors should become villagers and town planners: let users explore on top of the product, sell them the maintenance of what they build, and use Firefox as the example of what happens if you don't](software-vendors-as-villagers.md) Users can now rebuild the part of a product they need; what stops them is maintenance. Vendors should sell that, as villagers and town planners.
 - [The agents write too: lessons, debriefs and a page for every agent on the newsroom, and a brief for the conductor that will keep it](the-agents-write-too.md) The newsroom's agents get their own bylines: lessons every agent loads, debriefs as source material, a page for every agent, and a conductor.

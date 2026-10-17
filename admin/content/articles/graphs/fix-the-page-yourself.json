@@ -1,0 +1,42 @@
+{
+ "slug": "fix-the-page-yourself",
+ "teaser": "A bookmarklet from my security days, a page API every site should publish, and six fixes running on this newsroom: the next UX is the user's own.",
+ "topics": ["site-and-engineering", "startups-and-strategy"],
+ "core_idea": "Most sites are built for ads and attention, and readers could fix them in a line of code; if a site publishes a small JavaScript API of primitives, every fix is one line, tests and agents use the same surface, accessibility becomes each reader's to build, and the fixes people keep are the best brief the site will get; this newsroom now runs six such fixes.",
+ "nodes": [
+  {"id": "story", "label": "The bookmarklet demo", "kind": "example", "summary": "The owner wanted the UI, not the fix."},
+  {"id": "bookmarklet", "label": "A bookmarklet", "kind": "concept", "summary": "A line of code you click."},
+  {"id": "fight", "label": "Sites fight their readers", "kind": "claim", "summary": "Built for ads and attention."},
+  {"id": "customised", "label": "The UX the user customises", "kind": "claim", "summary": "The next generation of UX."},
+  {"id": "primitives", "label": "A page API", "kind": "method", "summary": "window.__tools, tool:ready, api.json."},
+  {"id": "agents", "label": "Tests and agents use it too", "kind": "claim", "summary": "One surface for people and code."},
+  {"id": "brief", "label": "The fix is a brief", "kind": "concept", "summary": "Explorer coding applied to the page."},
+  {"id": "adopt", "label": "Adopt, or maintain", "kind": "method", "summary": "Dark mode came from a reader."},
+  {"id": "a11y", "label": "Accessibility", "kind": "claim", "summary": "Each reader builds what they need."},
+  {"id": "delivery", "label": "Bookmarklet, per-site extension", "kind": "method", "summary": "activeTab: only the tab you click."},
+  {"id": "here", "label": "Six fixes on this newsroom", "kind": "artefact", "summary": "Buttons, bookmarklets, an API."},
+  {"id": "model", "label": "A model writes the fix", "kind": "question", "summary": "The model in the tab."}
+ ],
+ "edges": [
+  {"from": "story", "to": "bookmarklet", "rel": "example-of"},
+  {"from": "fight", "to": "customised", "rel": "leads-to"},
+  {"from": "primitives", "to": "customised", "rel": "depends-on"},
+  {"from": "agents", "to": "primitives", "rel": "extends"},
+  {"from": "brief", "to": "customised", "rel": "extends"},
+  {"from": "adopt", "to": "brief", "rel": "leads-to"},
+  {"from": "a11y", "to": "primitives", "rel": "depends-on"},
+  {"from": "delivery", "to": "primitives", "rel": "depends-on"},
+  {"from": "here", "to": "primitives", "rel": "example-of"},
+  {"from": "model", "to": "brief", "rel": "extends"}
+ ],
+ "links": {
+  "articles": ["explorer-coding", "software-vendors-as-villagers", "a-custom-firefox-of-my-own"],
+  "pages": [],
+  "sites": ["https://newsroom.sgit.ai/demos/fixes/index.html", "https://github.com/the-cyber-boardroom/SGraph-AI__Tools", "https://developer.chrome.com/docs/extensions/develop/concepts/activeTab", "https://www.w3.org/TR/WCAG22/#text-spacing"]
+ },
+ "quotes": [
+  {"text": "A security consultant's afternoon of Bootstrap beat years of the product.", "why": "The story's point."},
+  {"text": "The next generation of user experience is the one the user customises", "why": "The argument."},
+  {"text": "A fix a user writes, and keeps, is the clearest brief the site will ever get", "why": "Why sites should want it."}
+ ]
+}

@@ -55,6 +55,2540 @@
   ],
   "articles": [
     {
+      "slug": "three-policies-for-an-agent",
+      "title": "Three policies for an agent: behaviour says what it may do, decision says who chooses, workflow says in what order",
+      "date": "2026-10-17",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/three-policies-for-an-agent.html",
+      "markdown": "https://newsroom.sgit.ai/articles/three-policies-for-an-agent.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/three-policies-for-an-agent.webp",
+      "teaser": "Behaviour says what an agent may do, decision who chooses at a branch point, workflow in what order. Zoom into one ABP cell and it becomes both.",
+      "topics": [
+        "agents-and-policy"
+      ],
+      "tags": [
+        "agents",
+        "agent-behaviour-policy",
+        "agent-decision-policy",
+        "agent-workflow-policy",
+        "decision-making",
+        "governance",
+        "risk",
+        "fractal-semantic-graphs",
+        "series",
+        "article"
+      ],
+      "links_out": [
+        "our-first-pr-in-ruflo",
+        "the-policy-guards-the-door",
+        "code-review-as-a-fractal-semantic-graph",
+        "hooks-are-kernel-code",
+        "how-cheap-is-it-to-undo",
+        "three-decisions-mapped",
+        "approve-at-altitude",
+        "case-law-for-agents",
+        "agency-is-not-a-yes"
+      ],
+      "links_in": [
+        "three-decisions-mapped",
+        "case-law-for-agents",
+        "approve-at-altitude"
+      ],
+      "figures": [
+        {
+          "file": "dn-three.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/dn-three.webp",
+          "caption": "The three policies, behaviour, decision and workflow, each with the question it answers; and one ABP row from the SGit memory adapter merged into Ruflo's docs, delete.memory.project with mandate approval, zoomed in: today the row says only that a human must approve, so the answer is stop; zoomed in, it holds a decision policy (who decides, on what evidence, within what envelope, with a record) and a workflow (request, verify the checkpoint, approve or refuse, delete, record).",
+          "kind": "concept"
+        }
+      ],
+      "graph": {
+        "slug": "three-policies-for-an-agent",
+        "teaser": "Behaviour says what an agent may do, decision who chooses at a branch point, workflow in what order. Zoom into one ABP cell and it becomes both.",
+        "topics": [
+          "agents-and-policy"
+        ],
+        "core_idea": "An agent needs three policies, not one: behaviour, decision and workflow, meeting where a workflow transition is gated by a decision carried out by permitted behaviours; light decisions stay inline in the ABP, heavy ones get their own policy, and every element is mapped as defined, implemented, enforced and observed.",
+        "nodes": [
+          {
+            "id": "question",
+            "label": "How did the agent decide?",
+            "kind": "question",
+            "summary": "The question a behaviour policy cannot answer."
+          },
+          {
+            "id": "abp",
+            "label": "Agent Behaviour Policy",
+            "kind": "concept",
+            "summary": "What an agent may do, and where."
+          },
+          {
+            "id": "adp",
+            "label": "Agent Decision Policy",
+            "kind": "concept",
+            "summary": "Who chooses, on what evidence, within what limits."
+          },
+          {
+            "id": "awp",
+            "label": "Agent Workflow Policy",
+            "kind": "concept",
+            "summary": "Which steps, in what order."
+          },
+          {
+            "id": "meet",
+            "label": "Where they meet",
+            "kind": "claim",
+            "summary": "Transitions gated by decisions, carried out by behaviours."
+          },
+          {
+            "id": "cell",
+            "label": "The approval cell",
+            "kind": "example",
+            "summary": "delete.memory.project, mandate approval."
+          },
+          {
+            "id": "zoom",
+            "label": "Zoom into one cell",
+            "kind": "method",
+            "summary": "A cell becomes a decision and a workflow policy."
+          },
+          {
+            "id": "light",
+            "label": "Light decisions stay inline",
+            "kind": "claim",
+            "summary": "Money, people, irreversibility, risk earn their own."
+          },
+          {
+            "id": "states",
+            "label": "Four states",
+            "kind": "method",
+            "summary": "Defined, implemented, enforced, observed."
+          },
+          {
+            "id": "levels",
+            "label": "Where it is enforced",
+            "kind": "concept",
+            "summary": "From the prompt to off the machine."
+          },
+          {
+            "id": "business",
+            "label": "Decision is the business's word",
+            "kind": "claim",
+            "summary": "Budgets, owners, risk appetite."
+          },
+          {
+            "id": "dmn",
+            "label": "DMN beside BPMN",
+            "kind": "example",
+            "summary": "The same split in enterprise architecture."
+          }
+        ],
+        "edges": [
+          {
+            "from": "question",
+            "to": "adp",
+            "rel": "answers"
+          },
+          {
+            "from": "abp",
+            "to": "meet",
+            "rel": "leads-to"
+          },
+          {
+            "from": "adp",
+            "to": "meet",
+            "rel": "leads-to"
+          },
+          {
+            "from": "awp",
+            "to": "meet",
+            "rel": "leads-to"
+          },
+          {
+            "from": "cell",
+            "to": "zoom",
+            "rel": "example-of"
+          },
+          {
+            "from": "zoom",
+            "to": "adp",
+            "rel": "leads-to"
+          },
+          {
+            "from": "zoom",
+            "to": "awp",
+            "rel": "leads-to"
+          },
+          {
+            "from": "light",
+            "to": "zoom",
+            "rel": "extends"
+          },
+          {
+            "from": "states",
+            "to": "levels",
+            "rel": "extends"
+          },
+          {
+            "from": "business",
+            "to": "adp",
+            "rel": "answers"
+          },
+          {
+            "from": "dmn",
+            "to": "business",
+            "rel": "example-of"
+          }
+        ],
+        "links": {
+          "articles": [
+            "approve-at-altitude",
+            "case-law-for-agents",
+            "three-decisions-mapped",
+            "our-first-pr-in-ruflo",
+            "hooks-are-kernel-code",
+            "how-cheap-is-it-to-undo",
+            "the-policy-guards-the-door"
+          ],
+          "pages": [],
+          "sites": [
+            "https://abp.sgit.ai/",
+            "https://www.omg.org/spec/DMN/",
+            "https://github.com/ruvnet/ruflo/blob/main/docs/integrations/sgit-memory-checkpoints.md"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "Neither says how it decided.",
+            "why": "The gap."
+          },
+          {
+            "text": "Zoom further and each of those has cells of its own.",
+            "why": "The fractal."
+          },
+          {
+            "text": "\"Decision\" is the word that connects an agent's step to a budget, an owner and a risk, and that is the connection the agent's behaviour policy lacks.",
+            "why": "Why the word."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "three-decisions-mapped",
+      "title": "Three decisions, mapped: an agent's memory, this newsroom's release and a customer refund, through behaviour, decision and workflow",
+      "date": "2026-10-17",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/three-decisions-mapped.html",
+      "markdown": "https://newsroom.sgit.ai/articles/three-decisions-mapped.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/three-decisions-mapped.webp",
+      "teaser": "An agent's memory, this newsroom's release and a refund, mapped through behaviour, decision and workflow: the gaps are in the decisions.",
+      "topics": [
+        "agents-and-policy",
+        "vaults-and-method"
+      ],
+      "tags": [
+        "agents",
+        "agent-behaviour-policy",
+        "agent-decision-policy",
+        "agent-workflow-policy",
+        "scenarios",
+        "ruflo",
+        "sgit",
+        "newsroom",
+        "customer-service",
+        "governance",
+        "series",
+        "article"
+      ],
+      "links_out": [
+        "three-policies-for-an-agent",
+        "our-first-pr-in-ruflo",
+        "what-if-an-agent-loses-its-workspace",
+        "the-policy-guards-the-door",
+        "case-law-for-agents",
+        "how-cheap-is-it-to-undo",
+        "hope-or-enforcement",
+        "approve-at-altitude",
+        "your-agents-logs-are-a-self-report"
+      ],
+      "links_in": [
+        "three-policies-for-an-agent",
+        "case-law-for-agents",
+        "approve-at-altitude"
+      ],
+      "figures": [
+        {
+          "file": "dn-map.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/dn-map.webp",
+          "caption": "Three scenarios mapped element by element: memory deletion in the SGit adapter for Ruflo, this newsroom's release, and an illustrative customer refund. Each element is labelled ABP, decision or workflow, with four states: defined, implemented, enforced and observed. The memory row is enforced but not observed; the newsroom's decision to ship with a failing test is not defined at all; the refund's limits hold at every state because they are in the tools.",
+          "kind": "matrix"
+        }
+      ],
+      "graph": {
+        "slug": "three-decisions-mapped",
+        "teaser": "An agent's memory, this newsroom's release and a refund, mapped through behaviour, decision and workflow: the gaps are in the decisions.",
+        "topics": [
+          "agents-and-policy",
+          "vaults-and-method"
+        ],
+        "core_idea": "Mapping three scenarios element by element, with four states each, shows behaviour policies are the most mature, the gaps sit in decisions that are unnamed, unwritten or unrecorded, observation lags enforcement, and naming an element is what makes its gap visible.",
+        "nodes": [
+          {
+            "id": "map",
+            "label": "The map",
+            "kind": "method",
+            "summary": "Policy and four states per element."
+          },
+          {
+            "id": "memory",
+            "label": "Memory deletion",
+            "kind": "example",
+            "summary": "Enforced, not observed; the decider unnamed."
+          },
+          {
+            "id": "newsroom",
+            "label": "This newsroom's release",
+            "kind": "example",
+            "summary": "Ships on its own."
+          },
+          {
+            "id": "failing",
+            "label": "Shipping with a failing test",
+            "kind": "example",
+            "summary": "Eight calls under no written rule."
+          },
+          {
+            "id": "figure",
+            "label": "A figure with an unchecked date",
+            "kind": "example",
+            "summary": "A new precedent."
+          },
+          {
+            "id": "counter",
+            "label": "Two flagged commits",
+            "kind": "example",
+            "summary": "Scratch repositories: distinguished."
+          },
+          {
+            "id": "refund",
+            "label": "A customer refund",
+            "kind": "example",
+            "summary": "Limits in the tools."
+          },
+          {
+            "id": "vip",
+            "label": "The VIP workflow",
+            "kind": "example",
+            "summary": "Caught by the subset check."
+          },
+          {
+            "id": "gaps",
+            "label": "The gaps are in decisions",
+            "kind": "claim",
+            "summary": "Unnamed, unwritten, unrecorded."
+          },
+          {
+            "id": "observed",
+            "label": "Observation lags enforcement",
+            "kind": "claim",
+            "summary": "Works, and leaves no trace."
+          },
+          {
+            "id": "naming",
+            "label": "Naming makes the gap visible",
+            "kind": "claim",
+            "summary": "No new technology needed to see it."
+          }
+        ],
+        "edges": [
+          {
+            "from": "memory",
+            "to": "map",
+            "rel": "example-of"
+          },
+          {
+            "from": "newsroom",
+            "to": "map",
+            "rel": "example-of"
+          },
+          {
+            "from": "refund",
+            "to": "map",
+            "rel": "example-of"
+          },
+          {
+            "from": "failing",
+            "to": "newsroom",
+            "rel": "example-of"
+          },
+          {
+            "from": "figure",
+            "to": "newsroom",
+            "rel": "example-of"
+          },
+          {
+            "from": "counter",
+            "to": "newsroom",
+            "rel": "example-of"
+          },
+          {
+            "from": "vip",
+            "to": "refund",
+            "rel": "example-of"
+          },
+          {
+            "from": "memory",
+            "to": "observed",
+            "rel": "example-of"
+          },
+          {
+            "from": "failing",
+            "to": "gaps",
+            "rel": "example-of"
+          },
+          {
+            "from": "map",
+            "to": "naming",
+            "rel": "leads-to"
+          },
+          {
+            "from": "gaps",
+            "to": "naming",
+            "rel": "answers"
+          }
+        ],
+        "links": {
+          "articles": [
+            "three-policies-for-an-agent",
+            "approve-at-altitude",
+            "case-law-for-agents",
+            "our-first-pr-in-ruflo",
+            "the-policy-guards-the-door",
+            "how-cheap-is-it-to-undo",
+            "your-agents-logs-are-a-self-report",
+            "what-if-an-agent-loses-its-workspace"
+          ],
+          "pages": [],
+          "sites": [
+            "https://github.com/mondweep/sgit-ruv-memory",
+            "https://github.com/ruvnet/ruflo/blob/main/docs/integrations/sgit-memory-checkpoints.md"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "A gap you have named is a gap you can decide about.",
+            "why": "Why map before wiring."
+          },
+          {
+            "text": "It should be a decision policy:",
+            "why": "The newsroom's unwritten decision."
+          },
+          {
+            "text": "A rule that works and leaves no trace cannot be shown to work",
+            "why": "Observation."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "case-law-for-agents",
+      "title": "Case law for agents: principles from the top, precedent from the cases, and how a decision earns its way into code",
+      "date": "2026-10-17",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/case-law-for-agents.html",
+      "markdown": "https://newsroom.sgit.ai/articles/case-law-for-agents.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/case-law-for-agents.webp",
+      "teaser": "Nobody predicts every case. Borrow the shape of English case law: escalate what the policy does not settle, record it, follow it, then compile it.",
+      "topics": [
+        "agents-and-policy"
+      ],
+      "tags": [
+        "agents",
+        "agent-decision-policy",
+        "case-law",
+        "precedent",
+        "common-law",
+        "governance",
+        "decision-records",
+        "maturity-model",
+        "series",
+        "article"
+      ],
+      "links_out": [
+        "approve-at-altitude",
+        "agency-is-not-a-yes",
+        "hooks-are-kernel-code",
+        "the-policy-guards-the-door",
+        "your-agents-logs-are-a-self-report",
+        "three-decisions-mapped",
+        "three-policies-for-an-agent"
+      ],
+      "links_in": [
+        "three-policies-for-an-agent",
+        "three-decisions-mapped",
+        "approve-at-altitude"
+      ],
+      "figures": [
+        {
+          "file": "dn-caselaw.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/dn-caselaw.webp",
+          "caption": "How a decision earns its way into code. A case arrives at a branch point. If a rule settles it, or a recorded precedent with the same material facts matches, it is resolved and recorded. If not, or if the facts differ in a way that matters, it is distinguished and escalated to a person with the context to decide. The decision is recorded with its reasons and becomes a precedent that the next matching case follows. A precedent that holds case after case is written into the policy, then compiled into deterministic, tested code.",
+          "kind": "process"
+        }
+      ],
+      "graph": {
+        "slug": "case-law-for-agents",
+        "teaser": "Nobody predicts every case. Borrow the shape of English case law: escalate what the policy does not settle, record it, follow it, then compile it.",
+        "topics": [
+          "agents-and-policy"
+        ],
+        "core_idea": "Decision policies handle unpredicted cases the way common law does: principles from the top, escalation to a person for cases no rule or precedent settles, recorded decisions that bind the next matching case, distinguishing as the escalation trigger, and precedents that keep holding written into policy and then compiled into code.",
+        "nodes": [
+          {
+            "id": "unpredicted",
+            "label": "The cases nobody predicted",
+            "kind": "question",
+            "summary": "Inside every envelope, covered by no rule."
+          },
+          {
+            "id": "statute",
+            "label": "Statutes set principles",
+            "kind": "concept",
+            "summary": "Read in the light of their purpose."
+          },
+          {
+            "id": "precedent",
+            "label": "Binding precedent",
+            "kind": "concept",
+            "summary": "Higher courts bind lower ones."
+          },
+          {
+            "id": "distinguish",
+            "label": "Distinguishing",
+            "kind": "method",
+            "summary": "Facts differ in a way that matters."
+          },
+          {
+            "id": "depart",
+            "label": "Departing from precedent",
+            "kind": "concept",
+            "summary": "The 1966 Practice Statement."
+          },
+          {
+            "id": "loop",
+            "label": "The loop for agents",
+            "kind": "method",
+            "summary": "Rule, precedent, or escalate and record."
+          },
+          {
+            "id": "record",
+            "label": "A decision record as a law report",
+            "kind": "artefact",
+            "summary": "Facts, rule, decider, outcome, reasons."
+          },
+          {
+            "id": "maturity",
+            "label": "Precedent to policy to code",
+            "kind": "claim",
+            "summary": "A decision earns its way into code."
+          },
+          {
+            "id": "agency",
+            "label": "Delegation at the top of the agency scale",
+            "kind": "example",
+            "summary": "Cases approved unchanged become rules."
+          },
+          {
+            "id": "tonight",
+            "label": "Two cases from tonight",
+            "kind": "example",
+            "summary": "A new rule, and a case distinguished."
+          },
+          {
+            "id": "bias",
+            "label": "Precedent can carry a bias",
+            "kind": "question",
+            "summary": "Overruling matters more at volume."
+          },
+          {
+            "id": "selfreport",
+            "label": "No record, a self-report",
+            "kind": "claim",
+            "summary": "The Ruflo run computes, writes nothing."
+          }
+        ],
+        "edges": [
+          {
+            "from": "unpredicted",
+            "to": "loop",
+            "rel": "answers"
+          },
+          {
+            "from": "statute",
+            "to": "loop",
+            "rel": "extends"
+          },
+          {
+            "from": "precedent",
+            "to": "loop",
+            "rel": "extends"
+          },
+          {
+            "from": "distinguish",
+            "to": "loop",
+            "rel": "extends"
+          },
+          {
+            "from": "loop",
+            "to": "record",
+            "rel": "leads-to"
+          },
+          {
+            "from": "record",
+            "to": "maturity",
+            "rel": "leads-to"
+          },
+          {
+            "from": "agency",
+            "to": "maturity",
+            "rel": "example-of"
+          },
+          {
+            "from": "tonight",
+            "to": "distinguish",
+            "rel": "example-of"
+          },
+          {
+            "from": "depart",
+            "to": "bias",
+            "rel": "answers"
+          },
+          {
+            "from": "selfreport",
+            "to": "record",
+            "rel": "extends"
+          }
+        ],
+        "links": {
+          "articles": [
+            "three-policies-for-an-agent",
+            "approve-at-altitude",
+            "three-decisions-mapped",
+            "hooks-are-kernel-code",
+            "your-agents-logs-are-a-self-report",
+            "the-policy-guards-the-door"
+          ],
+          "pages": [],
+          "sites": [
+            "https://www.open.edu/openlearn/society-politics-law/law/judicial-decision-making/content-section-9.2",
+            "https://caselaw.nationalarchives.gov.uk/uksc/2017/51",
+            "https://caselaw.nationalarchives.gov.uk/uksc/2016/9"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "Each step is earned by cases, not assumed in advance.",
+            "why": "The difference from writing every rule up front."
+          },
+          {
+            "text": "Most agent systems keep a log of what happened; a precedent needs more:",
+            "why": "The record."
+          },
+          {
+            "text": "This is the part that makes it a precedent rather than a statistic.",
+            "why": "Why reasons matter."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "approve-at-altitude",
+      "title": "Approve at altitude: decisions at every level, from strategy to one agent's step, where each level may narrow the one above and never widen it",
+      "date": "2026-10-17",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/approve-at-altitude.html",
+      "markdown": "https://newsroom.sgit.ai/articles/approve-at-altitude.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/approve-at-altitude.webp",
+      "teaser": "Models can draft two hundred decision policies; nobody can sign two hundred. Approve at altitude: each level may narrow the one above, never widen it.",
+      "topics": [
+        "agents-and-policy"
+      ],
+      "tags": [
+        "agents",
+        "agent-decision-policy",
+        "agent-behaviour-policy",
+        "risk-appetite",
+        "governance",
+        "fractal-semantic-graphs",
+        "delegation",
+        "scaling",
+        "series",
+        "article"
+      ],
+      "links_out": [
+        "three-policies-for-an-agent",
+        "agency-is-not-a-yes",
+        "case-law-for-agents",
+        "three-decisions-mapped",
+        "hope-or-enforcement",
+        "commanders-intent-is-a-behaviour-policy",
+        "code-review-as-a-fractal-semantic-graph"
+      ],
+      "links_in": [
+        "three-policies-for-an-agent",
+        "three-decisions-mapped",
+        "case-law-for-agents"
+      ],
+      "figures": [
+        {
+          "file": "dn-altitude.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/dn-altitude.webp",
+          "caption": "One envelope, automatic refunds, followed down five altitudes: the board's risk appetite; the head of support's limits, 2,000 GBP a day and a person above 100 GBP an order; the product workflow, a team lead to 500 GBP and finance above; the refund tool's limits; and one agent's run, one customer and one refund. Each level sits inside the one above. A new VIP workflow with automatic refunds up to 1,000 GBP an order is wider than the business limit, so it is flagged as out of its powers before it runs.",
+          "kind": "concept"
+        }
+      ],
+      "graph": {
+        "slug": "approve-at-altitude",
+        "teaser": "Models can draft two hundred decision policies; nobody can sign two hundred. Approve at altitude: each level may narrow the one above, never widen it.",
+        "topics": [
+          "agents-and-policy"
+        ],
+        "core_idea": "Decision policies scale through the fractal: decisions exist at every altitude, each level signs off once and is inherited below, every policy declares an envelope, and a lower level may narrow its parent but never widen it, a check that is mechanical for numbers and lists and model-assisted for words.",
+        "nodes": [
+          {
+            "id": "cheap",
+            "label": "Drafting is cheap, sign-off is not",
+            "kind": "claim",
+            "summary": "Two hundred policies, one owner."
+          },
+          {
+            "id": "altitudes",
+            "label": "Decisions at every altitude",
+            "kind": "concept",
+            "summary": "Strategic, business, product, technical, run."
+          },
+          {
+            "id": "approve",
+            "label": "Approve at altitude",
+            "kind": "method",
+            "summary": "Sign off once; inherited below."
+          },
+          {
+            "id": "narrow",
+            "label": "Narrow, never widen",
+            "kind": "claim",
+            "summary": "The scaling rule."
+          },
+          {
+            "id": "ultra",
+            "label": "Ultra vires",
+            "kind": "example",
+            "summary": "Delegated rules beyond their powers can be quashed."
+          },
+          {
+            "id": "unison",
+            "label": "The tribunal fees case",
+            "kind": "example",
+            "summary": "UNISON, 2017: unlawful from the start."
+          },
+          {
+            "id": "envelope",
+            "label": "The envelope",
+            "kind": "method",
+            "summary": "Money, blast radius, data, people, reversibility, duration."
+          },
+          {
+            "id": "check",
+            "label": "The subset check",
+            "kind": "method",
+            "summary": "Mechanical for numbers, flagged for words."
+          },
+          {
+            "id": "vip",
+            "label": "The VIP workflow",
+            "kind": "example",
+            "summary": "1,000 GBP against a 100 GBP limit."
+          },
+          {
+            "id": "appetite",
+            "label": "Risk appetite",
+            "kind": "concept",
+            "summary": "What the board is willing to take."
+          },
+          {
+            "id": "kill",
+            "label": "Kill switches at altitude",
+            "kind": "claim",
+            "summary": "Where the envelope they protect is owned."
+          },
+          {
+            "id": "gaming",
+            "label": "Envelopes can be gamed",
+            "kind": "question",
+            "summary": "Split one refund into many."
+          }
+        ],
+        "edges": [
+          {
+            "from": "cheap",
+            "to": "approve",
+            "rel": "answers"
+          },
+          {
+            "from": "altitudes",
+            "to": "approve",
+            "rel": "leads-to"
+          },
+          {
+            "from": "approve",
+            "to": "narrow",
+            "rel": "leads-to"
+          },
+          {
+            "from": "ultra",
+            "to": "narrow",
+            "rel": "example-of"
+          },
+          {
+            "from": "unison",
+            "to": "ultra",
+            "rel": "example-of"
+          },
+          {
+            "from": "envelope",
+            "to": "check",
+            "rel": "leads-to"
+          },
+          {
+            "from": "narrow",
+            "to": "check",
+            "rel": "leads-to"
+          },
+          {
+            "from": "vip",
+            "to": "check",
+            "rel": "example-of"
+          },
+          {
+            "from": "appetite",
+            "to": "altitudes",
+            "rel": "extends"
+          },
+          {
+            "from": "kill",
+            "to": "envelope",
+            "rel": "extends"
+          },
+          {
+            "from": "gaming",
+            "to": "envelope",
+            "rel": "extends"
+          }
+        ],
+        "links": {
+          "articles": [
+            "three-policies-for-an-agent",
+            "case-law-for-agents",
+            "three-decisions-mapped",
+            "hooks-are-kernel-code"
+          ],
+          "pages": [],
+          "sites": [
+            "https://caselaw.nationalarchives.gov.uk/uksc/2017/51",
+            "https://www.frc.org.uk/documents/6709/UK_Corporate_Governance_Code_2024_a2hmQmY.pdf"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "A lower level may narrow the level above it. It may never widen it.",
+            "why": "The rule."
+          },
+          {
+            "text": "Each sign-off is small, because each level only has to read its own level.",
+            "why": "Why it scales."
+          },
+          {
+            "text": "it widens what a person can review, it does not replace the review.",
+            "why": "The model's place."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "our-first-pr-in-ruflo",
+      "title": "Our first PR in Ruflo: an ABP-governed SGit page, merged into ruvnet/ruflo, and the four pieces that got it there",
+      "date": "2026-10-17",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/our-first-pr-in-ruflo.html",
+      "markdown": "https://newsroom.sgit.ai/articles/our-first-pr-in-ruflo.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/our-first-pr-in-ruflo.webp",
+      "teaser": "rUv merged Mondweep's pull request #4239: one docs page, the first commit on Ruflo's main branch to mention SGit or an ABP. The four pieces, shown.",
+      "topics": [
+        "agents-and-policy",
+        "vaults-and-method"
+      ],
+      "tags": [
+        "agents",
+        "ruflo",
+        "sgit",
+        "agent-behaviour-policy",
+        "open-source",
+        "pull-request",
+        "github",
+        "memory",
+        "milestone",
+        "article"
+      ],
+      "links_out": [
+        "agentics-ready-to-sell",
+        "what-if-an-agent-loses-its-workspace",
+        "when-is-the-vault-actually-used",
+        "the-policy-guards-the-door"
+      ],
+      "links_in": [
+        "three-policies-for-an-agent",
+        "three-decisions-mapped"
+      ],
+      "figures": [
+        {
+          "file": "mg-puzzle.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/mg-puzzle.webp",
+          "caption": "The pieces in order, London time: the talk and ruv.sgit.ai on 15 October; Mondweep's proof of concept on 16 October; pull request #4239 opened at 23:02 with three commits in the next hour; merged by rUv at 14:59 on 17 October as commit 332f22e; the page on Ruflo's main branch. Beside it, the video, our analysis, and the companion pull request on our side, still open.",
+          "kind": "timeline"
+        },
+        {
+          "file": "mg-repo.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/mg-repo.webp",
+          "caption": "mondweep/sgit-ruv-memory on GitHub: public, MIT licence, one contributor, five commits, the last of them 7607d72, \"Validate Ruflo CLI exact and keyword recovery; disclose semantic vector gap\". Folders for evidence, examples, scripts, the package, tests and the vendored Ruflo evaluator.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "mg-pr.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/mg-pr.webp",
+          "caption": "Pull request #4239 on ruvnet/ruflo, marked Merged: \"ruvnet merged 3 commits into ruvnet:main from mondweep:docs/sgit-memory-checkpoints\". Conversation 2, Commits 3, Checks 0, Files changed 1, +83. Mondweep's description gives the flow, the validation, the source at 7607d72, the executable example in SGit-AI/SGit-AI__Website__Ruv#1, and \"Documentation-only change in Ruflo\". On the right, ruvnet is listed as reviewer, with the review still pending.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "mg-files.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/mg-files.webp",
+          "caption": "Files changed: one new file, docs/integrations/sgit-memory-checkpoints.md, 83 lines added, none removed. It opens with \"External SGit memory checkpoints governed by an ABP\", \"This opt-in community example connects an Agent Behaviour Policy to a local memory adapter\", the chain in bold, and a reproduce section that checks out the code at commit 7607d72.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "mg-merged.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/mg-merged.webp",
+          "caption": "The end of the pull request's timeline: Mondweep's follow-up to @ruvnet, \"the missing ABP layer is now implemented and validated\", with the source at e86cefa and the SGit example; the third commit, 6b49d58; the title change; and \"ruvnet merged commit 332f22e into ruvnet:main\".",
+          "kind": "screenshot"
+        },
+        {
+          "file": "mg-live.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/mg-live.webp",
+          "caption": "The merged file on Ruflo's main branch, at ruflo / docs / integrations / sgit-memory-checkpoints.md: 83 lines, 7.5 KB, last commit 332f22e by mondweep. The rendered page, \"External SGit memory checkpoints governed by an ABP\", with links to the source and the SGit executable-example PR, and install steps that check out the code at an exact commit.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "mg-ours.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/mg-ours.webp",
+          "caption": "SGit-AI/SGit-AI__Website__Ruv pull request #1, \"Add local MCP example for policy-gated SQLite checkpoints and restore\", marked Open: mondweep wants to merge 3 commits into SGit-AI:dev from mondweep:feat/mcp-memory-checkpoints. 35 files, +3,081. Companion: ruvnet/ruflo#4239, shown as Merged. No reviews.",
+          "kind": "screenshot"
+        }
+      ],
+      "graph": {
+        "slug": "our-first-pr-in-ruflo",
+        "teaser": "rUv merged Mondweep's pull request #4239: one docs page, the first commit on Ruflo's main branch to mention SGit or an ABP. The four pieces, shown.",
+        "topics": [
+          "agents-and-policy",
+          "vaults-and-method"
+        ],
+        "core_idea": "A proof of concept, a one-file documentation pull request, a maintainer's merge and a pinned page on Ruflo's main branch: the first time SGit and the ABP appear in Ruflo's history, accepted quickly because the page is exact about what it does not claim; the companion example on our side is still open.",
+        "nodes": [
+          {
+            "id": "merged",
+            "label": "PR #4239 merged",
+            "kind": "artefact",
+            "summary": "17 October, 14:59, commit 332f22e."
+          },
+          {
+            "id": "first",
+            "label": "A first in Ruflo's history",
+            "kind": "claim",
+            "summary": "First of 9,625 commits to mention SGit or an ABP."
+          },
+          {
+            "id": "poc",
+            "label": "The proof of concept",
+            "kind": "artefact",
+            "summary": "mondweep/sgit-ruv-memory, MIT, 16 tests."
+          },
+          {
+            "id": "pr",
+            "label": "Three commits, one file",
+            "kind": "artefact",
+            "summary": "83 lines of documentation in one hour."
+          },
+          {
+            "id": "abp",
+            "label": "The ABP layer added",
+            "kind": "method",
+            "summary": "Compiled to Ruflo rules, enforce mode."
+          },
+          {
+            "id": "accepted",
+            "label": "Merged by the maintainer",
+            "kind": "claim",
+            "summary": "No formal approval, no checks."
+          },
+          {
+            "id": "live",
+            "label": "The page on main",
+            "kind": "artefact",
+            "summary": "docs/integrations, pinned to exact commits."
+          },
+          {
+            "id": "careful",
+            "label": "It states its own limits",
+            "kind": "claim",
+            "summary": "Proposed vocabulary, vendored evaluator, partial recall."
+          },
+          {
+            "id": "vocab",
+            "label": "Proposed memory vocabulary",
+            "kind": "concept",
+            "summary": "Three capabilities for the ABP."
+          },
+          {
+            "id": "ours",
+            "label": "Our PR is still open",
+            "kind": "question",
+            "summary": "SGit-AI__Website__Ruv #1, no reviews."
+          },
+          {
+            "id": "evidence",
+            "label": "Evidence first",
+            "kind": "concept",
+            "summary": "Pinned, tested, reproducible."
+          },
+          {
+            "id": "trail",
+            "label": "The SGit × Ruflo analysis",
+            "kind": "example",
+            "summary": "The run, the vault, the gap."
+          }
+        ],
+        "edges": [
+          {
+            "from": "poc",
+            "to": "pr",
+            "rel": "leads-to"
+          },
+          {
+            "from": "abp",
+            "to": "pr",
+            "rel": "extends"
+          },
+          {
+            "from": "pr",
+            "to": "accepted",
+            "rel": "leads-to"
+          },
+          {
+            "from": "accepted",
+            "to": "merged",
+            "rel": "leads-to"
+          },
+          {
+            "from": "merged",
+            "to": "live",
+            "rel": "leads-to"
+          },
+          {
+            "from": "merged",
+            "to": "first",
+            "rel": "example-of"
+          },
+          {
+            "from": "careful",
+            "to": "accepted",
+            "rel": "answers"
+          },
+          {
+            "from": "vocab",
+            "to": "careful",
+            "rel": "example-of"
+          },
+          {
+            "from": "live",
+            "to": "ours",
+            "rel": "leads-to"
+          },
+          {
+            "from": "live",
+            "to": "evidence",
+            "rel": "example-of"
+          },
+          {
+            "from": "trail",
+            "to": "poc",
+            "rel": "extends"
+          }
+        ],
+        "links": {
+          "articles": [
+            "what-if-an-agent-loses-its-workspace",
+            "when-is-the-vault-actually-used",
+            "the-policy-guards-the-door",
+            "agentics-ready-to-sell"
+          ],
+          "pages": [],
+          "sites": [
+            "https://github.com/ruvnet/ruflo/pull/4239",
+            "https://github.com/ruvnet/ruflo/blob/main/docs/integrations/sgit-memory-checkpoints.md",
+            "https://github.com/mondweep/sgit-ruv-memory",
+            "https://github.com/SGit-AI/SGit-AI__Website__Ruv/pull/1",
+            "https://youtu.be/rkh6BJiaIrQ",
+            "https://newsroom.sgit.ai/demos/videos/sgit-ruflo-poc/index.html"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "The page does not oversell.",
+            "why": "Why it was merged quickly."
+          },
+          {
+            "text": "Ruflo merged first. The next merge is ours to make, after a review.",
+            "why": "The open piece."
+          },
+          {
+            "text": "Now the method has a page inside the project it governs, written by someone outside our team, and accepted by the project's maintainer.",
+            "why": "Why it is a milestone."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "fix-the-page-yourself",
+      "title": "Fix the page yourself: the bookmarklet trick from my security days, a page API every site should publish, and why the next user experience is the one the user customises, with six fixes running on this newsroom",
+      "date": "2026-10-17",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/fix-the-page-yourself.html",
+      "markdown": "https://newsroom.sgit.ai/articles/fix-the-page-yourself.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/fix-the-page-yourself.webp",
+      "teaser": "A bookmarklet from my security days, a page API every site should publish, and six fixes running on this newsroom: the next UX is the user's own.",
+      "topics": [
+        "site-and-engineering",
+        "startups-and-strategy"
+      ],
+      "tags": [
+        "ux",
+        "customisation",
+        "bookmarklets",
+        "browser-extensions",
+        "javascript",
+        "accessibility",
+        "explorer-coding",
+        "agents",
+        "playwright",
+        "brief",
+        "article"
+      ],
+      "links_out": [
+        "software-vendors-as-villagers",
+        "explorer-coding",
+        "dark-mode-and-four-more",
+        "a-model-in-the-tab",
+        "a-custom-firefox-of-my-own",
+        "custom-uis-are-not-the-exception"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "pz-before-after.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/pz-before-after.webp",
+          "caption": "One click on this newsroom: an article as published, and the same page after three fixes from its page API, reading mode, bigger text and an outline of the headings. Nothing on the site changed; it is CSS in the reader's browser.",
+          "kind": "comparison"
+        },
+        {
+          "file": "pz-loop.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/pz-loop.webp",
+          "caption": "The user's fix is the best brief the site will get: the site publishes primitives; readers write fixes in a line or two; the site learns from the fixes people keep; popular ones are adopted as settings or themes, and personal ones are maintained for a fee.",
+          "kind": "architecture"
+        }
+      ],
+      "graph": {
+        "slug": "fix-the-page-yourself",
+        "teaser": "A bookmarklet from my security days, a page API every site should publish, and six fixes running on this newsroom: the next UX is the user's own.",
+        "topics": [
+          "site-and-engineering",
+          "startups-and-strategy"
+        ],
+        "core_idea": "Most sites are built for ads and attention, and readers could fix them in a line of code; if a site publishes a small JavaScript API of primitives, every fix is one line, tests and agents use the same surface, accessibility becomes each reader's to build, and the fixes people keep are the best brief the site will get; this newsroom now runs six such fixes.",
+        "nodes": [
+          {
+            "id": "story",
+            "label": "The bookmarklet demo",
+            "kind": "example",
+            "summary": "The owner wanted the UI, not the fix."
+          },
+          {
+            "id": "bookmarklet",
+            "label": "A bookmarklet",
+            "kind": "concept",
+            "summary": "A line of code you click."
+          },
+          {
+            "id": "fight",
+            "label": "Sites fight their readers",
+            "kind": "claim",
+            "summary": "Built for ads and attention."
+          },
+          {
+            "id": "customised",
+            "label": "The UX the user customises",
+            "kind": "claim",
+            "summary": "The next generation of UX."
+          },
+          {
+            "id": "primitives",
+            "label": "A page API",
+            "kind": "method",
+            "summary": "window.__tools, tool:ready, api.json."
+          },
+          {
+            "id": "agents",
+            "label": "Tests and agents use it too",
+            "kind": "claim",
+            "summary": "One surface for people and code."
+          },
+          {
+            "id": "brief",
+            "label": "The fix is a brief",
+            "kind": "concept",
+            "summary": "Explorer coding applied to the page."
+          },
+          {
+            "id": "adopt",
+            "label": "Adopt, or maintain",
+            "kind": "method",
+            "summary": "Dark mode came from a reader."
+          },
+          {
+            "id": "a11y",
+            "label": "Accessibility",
+            "kind": "claim",
+            "summary": "Each reader builds what they need."
+          },
+          {
+            "id": "delivery",
+            "label": "Bookmarklet, per-site extension",
+            "kind": "method",
+            "summary": "activeTab: only the tab you click."
+          },
+          {
+            "id": "here",
+            "label": "Six fixes on this newsroom",
+            "kind": "artefact",
+            "summary": "Buttons, bookmarklets, an API."
+          },
+          {
+            "id": "model",
+            "label": "A model writes the fix",
+            "kind": "question",
+            "summary": "The model in the tab."
+          }
+        ],
+        "edges": [
+          {
+            "from": "story",
+            "to": "bookmarklet",
+            "rel": "example-of"
+          },
+          {
+            "from": "fight",
+            "to": "customised",
+            "rel": "leads-to"
+          },
+          {
+            "from": "primitives",
+            "to": "customised",
+            "rel": "depends-on"
+          },
+          {
+            "from": "agents",
+            "to": "primitives",
+            "rel": "extends"
+          },
+          {
+            "from": "brief",
+            "to": "customised",
+            "rel": "extends"
+          },
+          {
+            "from": "adopt",
+            "to": "brief",
+            "rel": "leads-to"
+          },
+          {
+            "from": "a11y",
+            "to": "primitives",
+            "rel": "depends-on"
+          },
+          {
+            "from": "delivery",
+            "to": "primitives",
+            "rel": "depends-on"
+          },
+          {
+            "from": "here",
+            "to": "primitives",
+            "rel": "example-of"
+          },
+          {
+            "from": "model",
+            "to": "brief",
+            "rel": "extends"
+          }
+        ],
+        "links": {
+          "articles": [
+            "explorer-coding",
+            "software-vendors-as-villagers",
+            "a-custom-firefox-of-my-own"
+          ],
+          "pages": [],
+          "sites": [
+            "https://newsroom.sgit.ai/demos/fixes/index.html",
+            "https://github.com/the-cyber-boardroom/SGraph-AI__Tools",
+            "https://developer.chrome.com/docs/extensions/develop/concepts/activeTab",
+            "https://www.w3.org/TR/WCAG22/#text-spacing"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "A security consultant's afternoon of Bootstrap beat years of the product.",
+            "why": "The story's point."
+          },
+          {
+            "text": "The next generation of user experience is the one the user customises",
+            "why": "The argument."
+          },
+          {
+            "text": "A fix a user writes, and keeps, is the clearest brief the site will ever get",
+            "why": "Why sites should want it."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "i-just-want-to-buy-the-article",
+      "title": "I just want to buy the article: what happened when I tried to pay Harvard Business Review for one piece I wanted to answer, the arithmetic of a subscription, and ten things HBR could sell a reader like me, most of them already running on this newsroom",
+      "date": "2026-10-17",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/i-just-want-to-buy-the-article.html",
+      "markdown": "https://newsroom.sgit.ai/articles/i-just-want-to-buy-the-article.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/i-just-want-to-buy-the-article.webp",
+      "teaser": "I tried to pay HBR for one article and was offered a subscription. The arithmetic says 24p to 55p; and ten things HBR could sell a reader like me.",
+      "topics": [
+        "news-and-evidence",
+        "startups-and-strategy"
+      ],
+      "tags": [
+        "news",
+        "publishing",
+        "business-models",
+        "micropayments",
+        "paywalls",
+        "subscriptions",
+        "hbr",
+        "reading-meter",
+        "graphs",
+        "licensing",
+        "article"
+      ],
+      "links_out": [
+        "who-will-fix-your-mess",
+        "stop-the-bleeding-then-ask-for-it-back",
+        "pay-after-you-read",
+        "paying-after-the-value",
+        "scrolled-is-not-read",
+        "the-vault-opened",
+        "pay-to-keep-your-persona",
+        "introducing-fractal-semantic-graphs",
+        "future-of-news-story-vault-not-paywall",
+        "research-delivered-as-a-vault",
+        "one-article-five-readers",
+        "how-news-got-here",
+        "the-agent-is-the-reader"
+      ],
+      "links_in": [
+        "who-will-fix-your-mess"
+      ],
+      "figures": [
+        {
+          "file": "bh-cost.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/bh-cost.webp",
+          "caption": "What it costs to read one HBR article, and what it could cost: £11 for a month of the digital plan, £105 billed yearly, against about 24p an article if £11 covers the 45 articles HBR.org published in September 2026, or 55p if I read twenty; and 10p for a new article on this newsroom. The reprint, $11.95, is noted separately.",
+          "kind": "comparison"
+        },
+        {
+          "file": "bh-modal.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/bh-modal.webp",
+          "caption": "What a LinkedIn reader sees on arriving at the article: \"If you only read HBR on Linkedin, you're only getting part of the story. Subscribe for unlimited access to every can't-miss core article on HBR.org.\" Screenshot of hbr.org, 17 October 2026.",
+          "kind": "comparison"
+        },
+        {
+          "file": "bh-plans.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/bh-plans.webp",
+          "caption": "HBR's subscription offer to a UK reader: Digital at £8.75 a month billed yearly or £11 monthly; Digital & Print at £10 or £13; Premium at £15 or £18. Screenshot of hbr.org, 17 October 2026.",
+          "kind": "comparison"
+        },
+        {
+          "file": "bh-card.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/bh-card.webp",
+          "caption": "The card at the foot of every article on newsroom.sgit.ai: what the page cost, the share read, the reading list, three ratings that set the price and the reader's picks, and \"Something wrong with this page? Don't charge me\".",
+          "kind": "comparison"
+        },
+        {
+          "file": "bh-account.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/bh-account.webp",
+          "caption": "The reading account: every page has a price of a few pence and you pay for the share you read; your balance, history and receipts are kept in your browser; credit can go below zero and no page is blocked; top up £5.",
+          "kind": "comparison"
+        },
+        {
+          "file": "bh-units.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/bh-units.webp",
+          "caption": "Ten things a reader like me would buy from one article, each a billable unit: the article as read, my reading record, my vault, personas, the argument as a graph, the ontology and taxonomy, the evidence, other versions, a licence to quote, and a check of my use. Eight run on newsroom.sgit.ai today; two are proposed.",
+          "kind": "comparison"
+        }
+      ],
+      "graph": {
+        "slug": "i-just-want-to-buy-the-article",
+        "teaser": "I tried to pay HBR for one article and was offered a subscription. The arithmetic says 24p to 55p; and ten things HBR could sell a reader like me.",
+        "topics": [
+          "news-and-evidence",
+          "startups-and-strategy"
+        ],
+        "core_idea": "A reader who wants to pay for one article is offered only subscriptions or a team-priced reprint, while a month's price divided by the month's articles is 24p to 55p; the article is the least of what a publisher could sell, since the graph, the vocabulary, the evidence, versions, the reader's record and a licence to quote with a share are each billable units, most of which run on newsroom.sgit.ai with open reader code.",
+        "nodes": [
+          {
+            "id": "tried",
+            "label": "I tried to pay",
+            "kind": "example",
+            "summary": "A LinkedIn link, a modal, three plans."
+          },
+          {
+            "id": "modal",
+            "label": "Only part of the story",
+            "kind": "artefact",
+            "summary": "HBR's message to LinkedIn readers."
+          },
+          {
+            "id": "arith",
+            "label": "The arithmetic",
+            "kind": "claim",
+            "summary": "£11 over 45 articles is about 24p."
+          },
+          {
+            "id": "reprint",
+            "label": "The reprint",
+            "kind": "example",
+            "summary": "$11.95, priced for a team."
+          },
+          {
+            "id": "meter",
+            "label": "Pay after you read",
+            "kind": "method",
+            "summary": "A few pence, by share read, rated."
+          },
+          {
+            "id": "record",
+            "label": "My reading, my vault",
+            "kind": "method",
+            "summary": "Scrolled versus read, highlights, kept by me."
+          },
+          {
+            "id": "graph",
+            "label": "The argument as a graph",
+            "kind": "artefact",
+            "summary": "To reuse inside a company."
+          },
+          {
+            "id": "vocab",
+            "label": "The vocabulary",
+            "kind": "concept",
+            "summary": "Ontologies and taxonomies, verified."
+          },
+          {
+            "id": "evidence",
+            "label": "The evidence, followed",
+            "kind": "method",
+            "summary": "Each step a small charge."
+          },
+          {
+            "id": "licence",
+            "label": "A licence to quote, with a share",
+            "kind": "question",
+            "summary": "Proposed: my readers pay, HBR earns."
+          },
+          {
+            "id": "loop",
+            "label": "LinkedIn as a storefront",
+            "kind": "claim",
+            "summary": "Readers discussing the article want to pay."
+          },
+          {
+            "id": "open",
+            "label": "Open reader code",
+            "kind": "artefact",
+            "summary": "api.newsroom.sgit.ai, for any publisher."
+          }
+        ],
+        "edges": [
+          {
+            "from": "tried",
+            "to": "modal",
+            "rel": "leads-to"
+          },
+          {
+            "from": "arith",
+            "to": "tried",
+            "rel": "answers"
+          },
+          {
+            "from": "reprint",
+            "to": "arith",
+            "rel": "contrasts"
+          },
+          {
+            "from": "meter",
+            "to": "arith",
+            "rel": "answers"
+          },
+          {
+            "from": "record",
+            "to": "meter",
+            "rel": "extends"
+          },
+          {
+            "from": "graph",
+            "to": "meter",
+            "rel": "extends"
+          },
+          {
+            "from": "vocab",
+            "to": "graph",
+            "rel": "depends-on"
+          },
+          {
+            "from": "evidence",
+            "to": "graph",
+            "rel": "extends"
+          },
+          {
+            "from": "licence",
+            "to": "loop",
+            "rel": "answers"
+          },
+          {
+            "from": "loop",
+            "to": "modal",
+            "rel": "contrasts"
+          },
+          {
+            "from": "open",
+            "to": "meter",
+            "rel": "produces"
+          }
+        ],
+        "links": {
+          "articles": [
+            "who-will-fix-your-mess",
+            "paying-after-the-value",
+            "scrolled-is-not-read",
+            "the-vault-opened",
+            "research-delivered-as-a-vault",
+            "stop-the-bleeding-then-ask-for-it-back"
+          ],
+          "pages": [],
+          "sites": [
+            "https://hbr.org/2026/10/turn-vibe-coded-prototypes-into-tools-your-company-can-actually-use",
+            "https://newsroom.sgit.ai/publishers/index.html",
+            "https://api.newsroom.sgit.ai/",
+            "https://newsroom.sgit.ai/articles/pay-after-you-read.html"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "It is not that readers like me will not pay.",
+            "why": "The heart of it."
+          },
+          {
+            "text": "I think it is HBR's best market.",
+            "why": "LinkedIn as a storefront."
+          },
+          {
+            "text": "so that my answer makes HBR money instead of competing with it",
+            "why": "The licence to quote."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "who-will-fix-your-mess",
+      "title": "Who will fix your mess? An answer to HBR's \"deployment gap\" from what this site has already published: explorers, villagers and town planners, a record of what the agents built, and open source so the answer never depends on one partner",
+      "date": "2026-10-17",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/who-will-fix-your-mess.html",
+      "markdown": "https://newsroom.sgit.ai/articles/who-will-fix-your-mess.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/who-will-fix-your-mess.webp",
+      "teaser": "HBR's deployment gap, answered from this site's articles: explorers, villagers and town planners, a record the agents keep, and open source.",
+      "topics": [
+        "startups-and-strategy",
+        "agents-and-policy"
+      ],
+      "tags": [
+        "explorer-coding",
+        "vibe-coding",
+        "wardley-maps",
+        "build-or-buy",
+        "deployment-gap",
+        "open-source",
+        "agents",
+        "startups",
+        "hbr",
+        "article"
+      ],
+      "links_out": [
+        "explorer-coding",
+        "the-citizen-developer",
+        "knowledge-that-maintains-itself",
+        "what-if-an-agent-loses-its-workspace",
+        "when-is-the-vault-actually-used",
+        "the-policy-guards-the-door",
+        "how-cheap-is-it-to-undo",
+        "the-expert-founders",
+        "software-vendors-as-villagers",
+        "a-custom-firefox-of-my-own",
+        "the-value-of-constraints",
+        "the-fork-next-door",
+        "i-just-want-to-buy-the-article",
+        "saas-apocalypse-decided-by-inertia-not-by-ai"
+      ],
+      "links_in": [
+        "i-just-want-to-buy-the-article"
+      ],
+      "figures": [
+        {
+          "file": "hb-map.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/hb-map.webp",
+          "caption": "The points in the HBR article's public summary and in Olivier Laplace's post, on the left, and the article on this site that answers each one, on the right: explorer coding, the citizen developer, knowledge that maintains itself, how cheap it is to undo, the expert founders, software vendors as villagers and the fork next door.",
+          "kind": "comparison"
+        },
+        {
+          "file": "ec-handover.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ec-handover.webp",
+          "caption": "Explorer coding and the handover that makes it last: explorers build by talking to an agent, and what they build is the brief; villagers maintain it, with policies, data handling and tests; town planners own the code in production. From Explorer coding.",
+          "kind": "architecture"
+        },
+        {
+          "file": "hb-wardley.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/hb-wardley.webp",
+          "caption": "The deployment gap on a Wardley map: the prototype in genesis, built by explorers; the tool people rely on, made reliable by villagers; the platform it runs on, owned by town planners. The gap is the handover from explorer to villager.",
+          "kind": "architecture"
+        },
+        {
+          "file": "cz-path.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/cz-path.webp",
+          "caption": "From the spreadsheet to the town planners: the citizen developer's path, from what people built with what they controlled, to the application they need, to the villagers and town planners who make it last. From The citizen developer.",
+          "kind": "architecture"
+        },
+        {
+          "file": "kq-loop.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/kq-loop.webp",
+          "caption": "Knowledge that maintains itself: sources kept in their own vocabularies, agents that keep a semantic graph of them up to date, and people and agents briefed from the graph. From Knowledge that maintains itself.",
+          "kind": "architecture"
+        },
+        {
+          "file": "hb-graph.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/hb-graph.webp",
+          "caption": "One article as a graph, as this site publishes it for every article: Explorer coding's twelve nodes, from \"vibe coding, the word\" to \"town planners own it\", with the edges between them and the quotes that carry them. A screenshot of the graphs page on newsroom.sgit.ai.",
+          "kind": "comparison"
+        },
+        {
+          "file": "rf-board.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/rf-board.webp",
+          "caption": "A prototype that is ready for the villagers: Mondweep Chakravorty's SGit × Ruflo run, twelve steps, five worked, three safeguards refused as intended, recall by meaning marked as not tested. From What if an agent loses its workspace?",
+          "kind": "comparison"
+        },
+        {
+          "file": "cu-spectrum.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/cu-spectrum.webp",
+          "caption": "The spectrum: across, how much it costs to undo, from a two-way door to a one-way door; up, how mature the controls and the record are, from explorer to town planner. Where an output sits decides how much a person needs to be in the loop. From How cheap is it to undo?",
+          "kind": "comparison"
+        },
+        {
+          "file": "ef-playbooks.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ef-playbooks.webp",
+          "caption": "Two playbooks: the outsider who finds a gap, raises first and hires the experts; and the expert who lives the problem and builds it with agents. From The expert founders.",
+          "kind": "comparison"
+        },
+        {
+          "file": "vt-map.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/vt-map.webp",
+          "caption": "A product as explorers, villagers and town planners: users explore on top, talking to the app and writing the best brief the vendor will get; the vendor maintains the customisations, and runs the platform. From Software vendors should become villagers and town planners.",
+          "kind": "architecture"
+        }
+      ],
+      "graph": {
+        "slug": "who-will-fix-your-mess",
+        "teaser": "HBR's deployment gap, answered from this site's articles: explorers, villagers and town planners, a record the agents keep, and open source.",
+        "topics": [
+          "startups-and-strategy",
+          "agents-and-policy"
+        ],
+        "core_idea": "The gap between a vibe-coded prototype and a tool people rely on is the handover from explorers to villagers and town planners; the prototype is the best brief, not the mess; agents that keep a mandate, a memory and a graph make the architecture knowable; the bonus test is the town planner's accountability; and open source means more than one party can fix it.",
+        "nodes": [
+          {
+            "id": "hbr",
+            "label": "The deployment gap",
+            "kind": "concept",
+            "summary": "HBR's name for prototype to daily tool."
+          },
+          {
+            "id": "question",
+            "label": "Who will fix your mess?",
+            "kind": "question",
+            "summary": "Olivier Laplace's reframing of build or buy."
+          },
+          {
+            "id": "brief",
+            "label": "The prototype is the best brief",
+            "kind": "claim",
+            "summary": "Explorer coding, not a mess."
+          },
+          {
+            "id": "handover",
+            "label": "The gap is a handover",
+            "kind": "claim",
+            "summary": "Explorers to villagers to town planners."
+          },
+          {
+            "id": "bank",
+            "label": "The bank's year",
+            "kind": "example",
+            "summary": "Built in-house, went back to the startup."
+          },
+          {
+            "id": "record",
+            "label": "A record the agents keep",
+            "kind": "method",
+            "summary": "Mandate, memory and graph."
+          },
+          {
+            "id": "bonus",
+            "label": "The bonus test",
+            "kind": "method",
+            "summary": "Whoever ships answers for it."
+          },
+          {
+            "id": "undo",
+            "label": "Cheap to undo",
+            "kind": "method",
+            "summary": "Build where mistakes reverse easily."
+          },
+          {
+            "id": "experts",
+            "label": "Expert founders",
+            "kind": "concept",
+            "summary": "The specialist may be the founder."
+          },
+          {
+            "id": "villagers",
+            "label": "Vendors as villagers",
+            "kind": "concept",
+            "summary": "Sell the maintenance of what users build."
+          },
+          {
+            "id": "open",
+            "label": "Open source",
+            "kind": "method",
+            "summary": "Anyone can fix it, not one partner."
+          },
+          {
+            "id": "poc",
+            "label": "SGit × Ruflo",
+            "kind": "example",
+            "summary": "A prototype ready for the handover."
+          }
+        ],
+        "edges": [
+          {
+            "from": "question",
+            "to": "hbr",
+            "rel": "extends"
+          },
+          {
+            "from": "brief",
+            "to": "hbr",
+            "rel": "contrasts"
+          },
+          {
+            "from": "handover",
+            "to": "hbr",
+            "rel": "answers"
+          },
+          {
+            "from": "bank",
+            "to": "handover",
+            "rel": "example-of"
+          },
+          {
+            "from": "record",
+            "to": "question",
+            "rel": "answers"
+          },
+          {
+            "from": "poc",
+            "to": "record",
+            "rel": "example-of"
+          },
+          {
+            "from": "bonus",
+            "to": "handover",
+            "rel": "depends-on"
+          },
+          {
+            "from": "undo",
+            "to": "handover",
+            "rel": "depends-on"
+          },
+          {
+            "from": "experts",
+            "to": "villagers",
+            "rel": "leads-to"
+          },
+          {
+            "from": "villagers",
+            "to": "handover",
+            "rel": "answers"
+          },
+          {
+            "from": "open",
+            "to": "question",
+            "rel": "answers"
+          }
+        ],
+        "links": {
+          "articles": [
+            "explorer-coding",
+            "the-citizen-developer",
+            "knowledge-that-maintains-itself",
+            "how-cheap-is-it-to-undo",
+            "the-expert-founders",
+            "software-vendors-as-villagers",
+            "a-custom-firefox-of-my-own",
+            "the-value-of-constraints",
+            "the-fork-next-door",
+            "what-if-an-agent-loses-its-workspace"
+          ],
+          "pages": [],
+          "sites": [
+            "https://hbr.org/2026/10/turn-vibe-coded-prototypes-into-tools-your-company-can-actually-use",
+            "https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai",
+            "https://newsroom.sgit.ai/articles/graphs.html"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "The prototype is not a mess. It is the most precise requirement the company has ever had.",
+            "why": "The reframing."
+          },
+          {
+            "text": "It is a record the next team can read.",
+            "why": "How the architecture becomes knowable."
+          },
+          {
+            "text": "If the only people who can fix a tool are one partner's engineers, the company has swapped a deployment gap for a dependency.",
+            "why": "Why open source."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "when-is-the-vault-actually-used",
+      "title": "When is the vault actually used? In Mondweep Chakravorty's SGit × Ruflo run, the encrypted vault is written or read in three steps of twelve, on one machine, inside the adapter, and why that is the honest shape of a recovery copy",
+      "date": "2026-10-17",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/when-is-the-vault-actually-used.html",
+      "markdown": "https://newsroom.sgit.ai/articles/when-is-the-vault-actually-used.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/when-is-the-vault-actually-used.webp",
+      "teaser": "In the SGit × Ruflo run the vault is written or read in three steps of twelve, on one machine, inside the adapter: the right shape for a recovery copy.",
+      "topics": [
+        "vaults-and-method",
+        "agents-and-policy"
+      ],
+      "tags": [
+        "agents",
+        "ruflo",
+        "sgit",
+        "vaults",
+        "architecture",
+        "agent-behaviour-policy",
+        "mcp",
+        "memory",
+        "video",
+        "article"
+      ],
+      "links_out": [
+        "what-if-an-agent-loses-its-workspace",
+        "the-policy-guards-the-door",
+        "one-vault-ten-agents",
+        "sgit-is-a-standard"
+      ],
+      "links_in": [
+        "our-first-pr-in-ruflo",
+        "who-will-fix-your-mess",
+        "what-if-an-agent-loses-its-workspace",
+        "the-policy-guards-the-door"
+      ],
+      "figures": [
+        {
+          "file": "rf-matrix.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/rf-matrix.webp",
+          "caption": "Who does what, step by step: the vault is written or read in steps 5, 8 and 11, protected in step 6 and survives step 7; Ruflo's own command line touches memory in steps 3, 9 and 10, where the ABP is not on the path. From the architecture addendum to the analysis of Mondweep Chakravorty's video.",
+          "kind": "comparison"
+        },
+        {
+          "file": "rf-map.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/rf-map.webp",
+          "caption": "The component map: the test script calls Ruflo's command line in steps 3, 9 and 10 and the ABP adapter's tools in steps 4, 5, 6, 8 and 11; the ABP rows are compiled to Ruflo rules and checked by a pinned copy of Ruflo's evaluator in enforce mode, which leads to the SGit library, which writes the vault and its keys on the machine's disk. Ruflo's hive-mind, its running policy state and a remote vault server were not used. Blue is Ruflo, amber the ABP adapter, green SGit and the vault, grey plain files.",
+          "kind": "architecture"
+        },
+        {
+          "file": "rf-stage-05.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/rf-stage-05.webp",
+          "caption": "Step 5: the checkpoint tool passes the policy gate; a SQLite backup takes a consistent copy of memory.db; fingerprints of the database, the ABP and the policy are taken; the SGit library encrypts on the machine and writes ciphertext only to the checkpoint store, with keys kept apart.",
+          "kind": "architecture"
+        },
+        {
+          "file": "rf-stage-08.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/rf-stage-08.webp",
+          "caption": "Step 8: a new MCP server process restores the checkpoint; the policy gate allows it; the SGit library reads ciphertext from the vault and keys from the private folder, decrypts and verifies, and writes memory.sqlite into the fresh-runner workspace, with the same SHA-256 as in step 5.",
+          "kind": "architecture"
+        },
+        {
+          "file": "rf-stage-11.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/rf-stage-11.webp",
+          "caption": "Step 11: one object in the vault is altered; the restore tool passes the policy gate; the adapter compares the digest of the stored ciphertext with the one recorded in step 5, finds a mismatch, and a ValueError means the tampered workspace is never created; SGit is never asked to decrypt.",
+          "kind": "architecture"
+        },
+        {
+          "file": "rf-where.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/rf-where.webp",
+          "caption": "Where the video's vault lives: on one machine, the adapter and SGit library, the checkpoint store, the private key folder and the workspaces; a vault server was not used.",
+          "kind": "architecture"
+        }
+      ],
+      "graph": {
+        "slug": "when-is-the-vault-actually-used",
+        "teaser": "In the SGit × Ruflo run the vault is written or read in three steps of twelve, on one machine, inside the adapter: the right shape for a recovery copy.",
+        "topics": [
+          "vaults-and-method",
+          "agents-and-policy"
+        ],
+        "core_idea": "Read stage by stage, the encrypted vault in Mondweep Chakravorty's run is written in step 5, read in step 8 and read and rejected in step 11, protected in step 6 and surviving step 7; it lives on one machine, is implemented in the adapter rather than in Ruflo, and binds the data to the policy in force; what is not yet shown is the vault leaving the machine.",
+        "nodes": [
+          {
+            "id": "three",
+            "label": "Three steps of twelve",
+            "kind": "claim",
+            "summary": "Written 5, read 8, rejected 11."
+          },
+          {
+            "id": "map",
+            "label": "The component map",
+            "kind": "artefact",
+            "summary": "Two lines from the test script."
+          },
+          {
+            "id": "written",
+            "label": "Step 5: written",
+            "kind": "example",
+            "summary": "A consistent copy, fingerprinted, encrypted."
+          },
+          {
+            "id": "read",
+            "label": "Step 8: read",
+            "kind": "example",
+            "summary": "Byte for byte the same."
+          },
+          {
+            "id": "rejected",
+            "label": "Step 11: rejected",
+            "kind": "example",
+            "summary": "The adapter's digest check refuses."
+          },
+          {
+            "id": "protected",
+            "label": "Steps 6 and 7",
+            "kind": "example",
+            "summary": "Protected, then survives."
+          },
+          {
+            "id": "onemachine",
+            "label": "One machine",
+            "kind": "claim",
+            "summary": "Survives the project, not the machine."
+          },
+          {
+            "id": "adapter",
+            "label": "In the adapter, not Ruflo",
+            "kind": "concept",
+            "summary": "One vault per checkpoint; wraps any tool's memory file."
+          },
+          {
+            "id": "binding",
+            "label": "Data bound to its policy",
+            "kind": "concept",
+            "summary": "The checkpoint records the rules in force."
+          },
+          {
+            "id": "shownvsinferred",
+            "label": "Shown and inferred",
+            "kind": "method",
+            "summary": "Solid arrows on screen, dashed inferred."
+          },
+          {
+            "id": "next",
+            "label": "The vault leaving the machine",
+            "kind": "question",
+            "summary": "Push, clone, a server holding only ciphertext."
+          }
+        ],
+        "edges": [
+          {
+            "from": "written",
+            "to": "three",
+            "rel": "example-of"
+          },
+          {
+            "from": "read",
+            "to": "three",
+            "rel": "example-of"
+          },
+          {
+            "from": "rejected",
+            "to": "three",
+            "rel": "example-of"
+          },
+          {
+            "from": "protected",
+            "to": "three",
+            "rel": "extends"
+          },
+          {
+            "from": "map",
+            "to": "adapter",
+            "rel": "produces"
+          },
+          {
+            "from": "binding",
+            "to": "written",
+            "rel": "depends-on"
+          },
+          {
+            "from": "onemachine",
+            "to": "next",
+            "rel": "leads-to"
+          },
+          {
+            "from": "adapter",
+            "to": "three",
+            "rel": "answers"
+          },
+          {
+            "from": "shownvsinferred",
+            "to": "map",
+            "rel": "depends-on"
+          }
+        ],
+        "links": {
+          "articles": [
+            "what-if-an-agent-loses-its-workspace",
+            "the-policy-guards-the-door",
+            "one-vault-ten-agents",
+            "sgit-is-a-standard"
+          ],
+          "pages": [],
+          "sites": [
+            "https://youtu.be/rkh6BJiaIrQ",
+            "https://github.com/mondweep/sgit-ruv-memory",
+            "https://newsroom.sgit.ai/demos/videos/sgit-ruflo-poc/index.html",
+            "https://github.com/ruvnet/ruflo"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "A recovery copy should be touched when you save and when you restore, and otherwise left alone.",
+            "why": "Why three steps is right."
+          },
+          {
+            "text": "The ABP allows the restore; the adapter's check of the stored ciphertext is what refuses it.",
+            "why": "Two different guards."
+          },
+          {
+            "text": "It would not survive the machine being lost, which the video does not claim.",
+            "why": "The honest limit."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "what-if-an-agent-loses-its-workspace",
+      "title": "What if an agent loses its workspace? Mondweep Chakravorty's SGit × Ruflo proof of concept, step by step: memory saved encrypted, the project deleted, the memory back in a fresh process, and three safeguards that held",
+      "date": "2026-10-17",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/what-if-an-agent-loses-its-workspace.html",
+      "markdown": "https://newsroom.sgit.ai/articles/what-if-an-agent-loses-its-workspace.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/what-if-an-agent-loses-its-workspace.webp",
+      "teaser": "Mondweep Chakravorty's SGit × Ruflo run: an agent's memory saved encrypted, the project deleted, the memory back in a fresh process.",
+      "topics": [
+        "vaults-and-method",
+        "agents-and-policy"
+      ],
+      "tags": [
+        "agents",
+        "ruflo",
+        "sgit",
+        "vaults",
+        "agent-behaviour-policy",
+        "mcp",
+        "memory",
+        "recovery",
+        "video",
+        "article"
+      ],
+      "links_out": [
+        "a-policy-beside-the-prompt",
+        "agentics-ready-to-sell",
+        "when-is-the-vault-actually-used",
+        "the-policy-guards-the-door"
+      ],
+      "links_in": [
+        "three-decisions-mapped",
+        "our-first-pr-in-ruflo",
+        "who-will-fix-your-mess",
+        "when-is-the-vault-actually-used",
+        "the-policy-guards-the-door"
+      ],
+      "figures": [
+        {
+          "file": "rf-board.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/rf-board.webp",
+          "caption": "The twelve steps of the run and how each ended: five worked, three were safeguards refusing as intended, four were setup or summary. Not tested, and said so on screen: recall by meaning. From the video by Mondweep Chakravorty.",
+          "kind": "comparison"
+        },
+        {
+          "file": "rf-term-05.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/rf-term-05.webp",
+          "caption": "Step 5 on the terminal: the checkpoint is saved with its id, a consistent SQLite backup, and three SHA-256 fingerprints, of the database, the ABP and the compiled policy. \"Only encrypted SGit bare objects enter the checkpoint store.\" Frame from the video by Mondweep Chakravorty.",
+          "kind": "comparison"
+        },
+        {
+          "file": "rf-term-08.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/rf-term-08.webp",
+          "caption": "Step 8 on the terminal: a new MCP server restores the checkpoint into a workspace called fresh-runner; the database fingerprint is the same as in step 5, and matches_checkpoint is true. Frame from the video by Mondweep Chakravorty.",
+          "kind": "comparison"
+        },
+        {
+          "file": "rf-term-09.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/rf-term-09.webp",
+          "caption": "Step 9 on the terminal: Ruflo's own retrieve command returns both facts word for word, and the run reports a pass. Frame from the video by Mondweep Chakravorty.",
+          "kind": "comparison"
+        },
+        {
+          "file": "rf-term-11.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/rf-term-11.webp",
+          "caption": "Step 11 on the terminal: one checkpoint object is altered, the restore fails with a ValueError, and tampered_workspace_created is false. Frame from the video by Mondweep Chakravorty.",
+          "kind": "comparison"
+        },
+        {
+          "file": "rf-outcome.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/rf-outcome.webp",
+          "caption": "The video's closing slide: the facts came back and the safeguards held; still to validate, recall by meaning, real-world value, and installation and ongoing reliability. Frame from the video by Mondweep Chakravorty.",
+          "kind": "comparison"
+        }
+      ],
+      "graph": {
+        "slug": "what-if-an-agent-loses-its-workspace",
+        "teaser": "Mondweep Chakravorty's SGit × Ruflo run: an agent's memory saved encrypted, the project deleted, the memory back in a fresh process.",
+        "topics": [
+          "vaults-and-method",
+          "agents-and-policy"
+        ],
+        "core_idea": "A replayed terminal run in twelve steps shows Ruflo's memory saved as an encrypted SGit checkpoint by an ABP-governed adapter, the original project deleted, and both facts read back exactly by Ruflo in a fresh process, with matching fingerprints, while three safeguards hold and recall by meaning is marked not tested.",
+        "nodes": [
+          {
+            "id": "question",
+            "label": "What if an agent loses its workspace?",
+            "kind": "question",
+            "summary": "Does memory come back, with its rules?"
+          },
+          {
+            "id": "pinned",
+            "label": "A pinned runtime",
+            "kind": "method",
+            "summary": "Ruflo v3.56.10, SGit commit, adapter 0.2."
+          },
+          {
+            "id": "mandate",
+            "label": "Four ABP rows",
+            "kind": "artefact",
+            "summary": "Delete needs approval; ambiguity fails closed."
+          },
+          {
+            "id": "store",
+            "label": "Two facts stored",
+            "kind": "example",
+            "summary": "Kestrel charging window and retention."
+          },
+          {
+            "id": "checkpoint",
+            "label": "Encrypted checkpoint",
+            "kind": "method",
+            "summary": "Database, ABP and policy fingerprinted."
+          },
+          {
+            "id": "delete",
+            "label": "The project deleted",
+            "kind": "example",
+            "summary": "The loss is real."
+          },
+          {
+            "id": "restore",
+            "label": "Fresh-process restore",
+            "kind": "claim",
+            "summary": "Same SHA-256 as the saved copy."
+          },
+          {
+            "id": "recall",
+            "label": "Ruflo reads it back",
+            "kind": "claim",
+            "summary": "Both facts word for word."
+          },
+          {
+            "id": "safeguards",
+            "label": "Three safeguards held",
+            "kind": "claim",
+            "summary": "Scope, approval, tamper."
+          },
+          {
+            "id": "control",
+            "label": "A negative control",
+            "kind": "method",
+            "summary": "A missing fact stays missing."
+          },
+          {
+            "id": "notyet",
+            "label": "Not tested: recall by meaning",
+            "kind": "question",
+            "summary": "Embeddings were switched off."
+          },
+          {
+            "id": "agentics",
+            "label": "A hive, a memory, a mandate",
+            "kind": "concept",
+            "summary": "The product this run proves out."
+          }
+        ],
+        "edges": [
+          {
+            "from": "pinned",
+            "to": "question",
+            "rel": "answers"
+          },
+          {
+            "from": "mandate",
+            "to": "checkpoint",
+            "rel": "depends-on"
+          },
+          {
+            "from": "store",
+            "to": "checkpoint",
+            "rel": "leads-to"
+          },
+          {
+            "from": "checkpoint",
+            "to": "delete",
+            "rel": "leads-to"
+          },
+          {
+            "from": "delete",
+            "to": "restore",
+            "rel": "leads-to"
+          },
+          {
+            "from": "restore",
+            "to": "recall",
+            "rel": "leads-to"
+          },
+          {
+            "from": "control",
+            "to": "recall",
+            "rel": "compared-with"
+          },
+          {
+            "from": "safeguards",
+            "to": "mandate",
+            "rel": "example-of"
+          },
+          {
+            "from": "notyet",
+            "to": "recall",
+            "rel": "contrasts"
+          },
+          {
+            "from": "recall",
+            "to": "agentics",
+            "rel": "example-of"
+          }
+        ],
+        "links": {
+          "articles": [
+            "when-is-the-vault-actually-used",
+            "the-policy-guards-the-door",
+            "agentics-ready-to-sell",
+            "a-policy-beside-the-prompt"
+          ],
+          "pages": [],
+          "sites": [
+            "https://youtu.be/rkh6BJiaIrQ",
+            "https://github.com/mondweep/sgit-ruv-memory",
+            "https://newsroom.sgit.ai/demos/videos/sgit-ruflo-poc/index.html",
+            "https://github.com/ruvnet/ruflo"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "No raw rule overrides. Unsupported or ambiguous policies fail closed.",
+            "why": "The mandate in one line."
+          },
+          {
+            "text": "Binding the data to the rules in force is the detail I like most.",
+            "why": "Why the checkpoint matters."
+          },
+          {
+            "text": "PASS: both values match the CLI-written facts exactly.",
+            "why": "The result, on screen."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "the-policy-guards-the-door",
+      "title": "The policy guards the door; the command line uses the window: in the SGit × Ruflo run, the ABP is compiled into Ruflo's own rules and enforced on the adapter's tools, while Ruflo's command line reaches the same memory file without it, as the author's own README says",
+      "date": "2026-10-17",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/the-policy-guards-the-door.html",
+      "markdown": "https://newsroom.sgit.ai/articles/the-policy-guards-the-door.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/the-policy-guards-the-door.webp",
+      "teaser": "The ABP in the SGit × Ruflo run is compiled into Ruflo's rules and guards the adapter's tools; Ruflo's own command line reaches the memory without it.",
+      "topics": [
+        "agents-and-policy",
+        "vaults-and-method"
+      ],
+      "tags": [
+        "agents",
+        "ruflo",
+        "sgit",
+        "agent-behaviour-policy",
+        "security",
+        "mcp",
+        "enforcement",
+        "memory",
+        "video",
+        "article"
+      ],
+      "links_out": [
+        "when-is-the-vault-actually-used",
+        "your-agents-logs-are-a-self-report",
+        "the-ai-conference-read-for-governance",
+        "what-if-an-agent-loses-its-workspace",
+        "a-policy-beside-the-prompt"
+      ],
+      "links_in": [
+        "three-policies-for-an-agent",
+        "three-decisions-mapped",
+        "case-law-for-agents",
+        "our-first-pr-in-ruflo",
+        "who-will-fix-your-mess",
+        "when-is-the-vault-actually-used",
+        "what-if-an-agent-loses-its-workspace"
+      ],
+      "figures": [
+        {
+          "file": "rf-gap.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/rf-gap.webp",
+          "caption": "Two ways into the same memory: the adapter's tools pass the policy gate, a pinned copy of Ruflo's evaluator running the compiled ABP rules, on their way to SGit and the vault, in steps 4, 5, 6, 8 and 11; Ruflo's own command line reads and writes the memory file directly, in steps 3, 9 and 10, with no ABP check. The author states this limit in his README.",
+          "kind": "architecture"
+        },
+        {
+          "file": "rf-stage-03.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/rf-stage-03.webp",
+          "caption": "Step 3: the test script calls the ruflo command line's memory store, which loads its embedding model, stores no vectors, and writes two rows of plain text into the source workspace's memory.db; the ABP adapter and the vault are not on this path.",
+          "kind": "architecture"
+        },
+        {
+          "file": "rf-stage-09.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/rf-stage-09.webp",
+          "caption": "Step 9: the ruflo command line's memory retrieve reads memory.sqlite in the fresh-runner workspace and returns both facts exactly; the vault and the ABP adapter are not on this path.",
+          "kind": "architecture"
+        }
+      ],
+      "graph": {
+        "slug": "the-policy-guards-the-door",
+        "teaser": "The ABP in the SGit × Ruflo run is compiled into Ruflo's rules and guards the adapter's tools; Ruflo's own command line reaches the memory without it.",
+        "topics": [
+          "agents-and-policy",
+          "vaults-and-method"
+        ],
+        "core_idea": "Every step the ABP guarded behaved as written, but the policy is enforced by the adapter on its three tools, while Ruflo's command line writes and reads the same memory file directly in steps 3, 9 and 10; a policy holds only on the paths through its enforcer, and compiling the rows into Ruflo's own policy engine is one way to cover the rest.",
+        "nodes": [
+          {
+            "id": "twopaths",
+            "label": "Two paths to the memory",
+            "kind": "concept",
+            "summary": "Through the gate, and around it."
+          },
+          {
+            "id": "guarded",
+            "label": "The guarded steps behaved",
+            "kind": "claim",
+            "summary": "4, 5, 6, 8 and 11."
+          },
+          {
+            "id": "cli",
+            "label": "Ruflo's command line",
+            "kind": "example",
+            "summary": "Steps 3, 9 and 10, no ABP check."
+          },
+          {
+            "id": "inferred",
+            "label": "An agent with a shell",
+            "kind": "question",
+            "summary": "Could it change memory unchecked?"
+          },
+          {
+            "id": "enforcer",
+            "label": "A policy holds on its enforcer's paths",
+            "kind": "claim",
+            "summary": "The general lesson."
+          },
+          {
+            "id": "selfreport",
+            "label": "This site's own agent",
+            "kind": "example",
+            "summary": "Ten of eleven rules kept by the agent."
+          },
+          {
+            "id": "outside",
+            "label": "Outside the model is not enough",
+            "kind": "claim",
+            "summary": "Around every path is the harder part."
+          },
+          {
+            "id": "engine",
+            "label": "Native plugin registration",
+            "kind": "method",
+            "summary": "The author's follow-up: rules where Ruflo runs."
+          },
+          {
+            "id": "questions",
+            "label": "Five questions, answered in the code",
+            "kind": "claim",
+            "summary": "Errors, records, the vault's home, a file name, approval."
+          },
+          {
+            "id": "reply",
+            "label": "The author documents the limit",
+            "kind": "artefact",
+            "summary": "Only adapter tools pass through this gate."
+          }
+        ],
+        "edges": [
+          {
+            "from": "guarded",
+            "to": "twopaths",
+            "rel": "example-of"
+          },
+          {
+            "from": "cli",
+            "to": "twopaths",
+            "rel": "example-of"
+          },
+          {
+            "from": "inferred",
+            "to": "cli",
+            "rel": "extends"
+          },
+          {
+            "from": "enforcer",
+            "to": "twopaths",
+            "rel": "answers"
+          },
+          {
+            "from": "selfreport",
+            "to": "enforcer",
+            "rel": "example-of"
+          },
+          {
+            "from": "outside",
+            "to": "enforcer",
+            "rel": "extends"
+          },
+          {
+            "from": "engine",
+            "to": "cli",
+            "rel": "answers"
+          },
+          {
+            "from": "questions",
+            "to": "reply",
+            "rel": "leads-to"
+          }
+        ],
+        "links": {
+          "articles": [
+            "what-if-an-agent-loses-its-workspace",
+            "when-is-the-vault-actually-used",
+            "your-agents-logs-are-a-self-report",
+            "the-ai-conference-read-for-governance",
+            "a-policy-beside-the-prompt"
+          ],
+          "pages": [],
+          "sites": [
+            "https://youtu.be/rkh6BJiaIrQ",
+            "https://github.com/mondweep/sgit-ruv-memory",
+            "https://newsroom.sgit.ai/demos/videos/sgit-ruflo-poc/index.html",
+            "https://github.com/ruvnet/ruflo"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "A policy holds on the paths that pass through its enforcer, and nowhere else.",
+            "why": "The lesson."
+          },
+          {
+            "text": "Outside the model is necessary; around every path to the data is the harder part.",
+            "why": "The step beyond the conference."
+          },
+          {
+            "text": "The gap is not a mistake in the test.",
+            "why": "Fair to the author."
+          }
+        ]
+      }
+    },
+    {
       "slug": "scrolled-is-not-read",
       "title": "Scrolled is not read: what the reading meter measures, what it should, highlights you can keep, and the page as the reader's own graph",
       "date": "2026-10-16",
@@ -89,7 +2623,9 @@
         "dark-mode-and-four-more",
         "the-tokens-hook"
       ],
-      "links_in": [],
+      "links_in": [
+        "i-just-want-to-buy-the-article"
+      ],
       "figures": [
         {
           "file": "sr-collage.webp",
@@ -373,6 +2909,7 @@
         "the-controllable-founder"
       ],
       "links_in": [
+        "who-will-fix-your-mess",
         "the-controllable-founder",
         "sell-dont-issue"
       ],
@@ -1052,7 +3589,9 @@
         "every-risk-is-already-accepted",
         "the-value-of-constraints"
       ],
-      "links_in": [],
+      "links_in": [
+        "i-just-want-to-buy-the-article"
+      ],
       "figures": [
         {
           "file": "rq-cover.webp",
@@ -1304,6 +3843,7 @@
         "the-value-of-constraints"
       ],
       "links_in": [
+        "when-is-the-vault-actually-used",
         "research-delivered-as-a-vault",
         "one-vault-ten-agents",
         "scion-and-sgit"
@@ -1501,6 +4041,7 @@
         "scion-and-sgit"
       ],
       "links_in": [
+        "when-is-the-vault-actually-used",
         "sgit-is-a-standard",
         "scion-and-sgit"
       ],
@@ -2848,6 +5389,7 @@
         "software-vendors-as-villagers"
       ],
       "links_in": [
+        "who-will-fix-your-mess",
         "sell-dont-issue",
         "research-delivered-as-a-vault",
         "sgit-is-a-standard",
@@ -3079,6 +5621,8 @@
         "dark-mode-and-four-more"
       ],
       "links_in": [
+        "fix-the-page-yourself",
+        "who-will-fix-your-mess",
         "the-value-of-constraints",
         "explorer-coding",
         "a-custom-firefox-of-my-own"
@@ -3307,6 +5851,8 @@
         "a-custom-firefox-of-my-own"
       ],
       "links_in": [
+        "fix-the-page-yourself",
+        "who-will-fix-your-mess",
         "portugal-2024-genai-in-portuguese",
         "portugal-2016-hacking-portugal",
         "software-vendors-as-villagers",
@@ -3536,6 +6082,8 @@
         "the-value-of-constraints"
       ],
       "links_in": [
+        "fix-the-page-yourself",
+        "who-will-fix-your-mess",
         "software-vendors-as-villagers",
         "explorer-coding"
       ],
@@ -3751,6 +6299,8 @@
       ],
       "links_out": [],
       "links_in": [
+        "our-first-pr-in-ruflo",
+        "what-if-an-agent-loses-its-workspace",
         "portugal-2024-genai-in-portuguese",
         "a-custom-firefox-of-my-own"
       ],
@@ -4201,6 +6751,9 @@
         "a-policy-beside-the-prompt"
       ],
       "links_in": [
+        "three-decisions-mapped",
+        "case-law-for-agents",
+        "the-policy-guards-the-door",
         "the-ai-conference-read-for-governance"
       ],
       "figures": [
@@ -4410,7 +6963,9 @@
         "the-site-is-an-inbox",
         "the-agents-write-too"
       ],
-      "links_in": [],
+      "links_in": [
+        "i-just-want-to-buy-the-article"
+      ],
       "figures": [
         {
           "file": "vo-viewer.webp",
@@ -4657,6 +7212,7 @@
         "a-policy-beside-the-prompt"
       ],
       "links_in": [
+        "the-policy-guards-the-door",
         "your-agents-logs-are-a-self-report"
       ],
       "figures": [
@@ -5690,6 +8246,7 @@
         "the-eyeballs-get-cheap"
       ],
       "links_in": [
+        "who-will-fix-your-mess",
         "the-controllable-founder",
         "sell-dont-issue",
         "your-own-newsroom"
@@ -7796,6 +10353,7 @@
         "paying-after-the-value"
       ],
       "links_in": [
+        "who-will-fix-your-mess",
         "software-vendors-as-villagers",
         "explorer-coding",
         "the-expert-founders"
@@ -8006,6 +10564,7 @@
         "pay-to-keep-your-persona"
       ],
       "links_in": [
+        "i-just-want-to-buy-the-article",
         "sell-dont-issue",
         "your-own-newsroom",
         "secrets-on-public-keys",
@@ -8484,6 +11043,7 @@
         "policy-as-code-needs-a-policy-first"
       ],
       "links_in": [
+        "approve-at-altitude",
         "your-own-newsroom",
         "cedar-and-the-policy-vault"
       ],
@@ -9462,6 +12022,8 @@
         "pay-to-keep-your-persona"
       ],
       "links_in": [
+        "three-policies-for-an-agent",
+        "case-law-for-agents",
         "the-tokens-hook",
         "cedar-and-the-policy-vault",
         "commanders-intent-is-a-behaviour-policy",
@@ -11288,6 +13850,7 @@
         "memory-is-not-a-spectator-sport"
       ],
       "links_in": [
+        "who-will-fix-your-mess",
         "the-agents-write-too"
       ],
       "figures": [
@@ -13746,6 +16309,9 @@
         "a-second-reader-the-agent-cannot-skip"
       ],
       "links_in": [
+        "three-policies-for-an-agent",
+        "three-decisions-mapped",
+        "who-will-fix-your-mess",
         "commanders-intent-is-a-behaviour-policy",
         "four-frameworks-one-agent",
         "every-link-points-back",
@@ -14172,6 +16738,8 @@
         "stop-the-bleeding-then-ask-for-it-back"
       ],
       "links_in": [
+        "what-if-an-agent-loses-its-workspace",
+        "the-policy-guards-the-door",
         "your-agents-logs-are-a-self-report",
         "the-ai-conference-read-for-governance",
         "your-own-newsroom",
@@ -14698,6 +17266,7 @@
         "the-vault-crosses-chrome-profiles"
       ],
       "links_in": [
+        "fix-the-page-yourself",
         "scrolled-is-not-read",
         "software-vendors-as-villagers",
         "the-agents-write-too"
@@ -15185,6 +17754,7 @@
         "who-owns-the-words"
       ],
       "links_in": [
+        "i-just-want-to-buy-the-article",
         "the-human-in-the-loop",
         "a-policy-beside-the-prompt",
         "the-vault-crosses-chrome-profiles"
@@ -21170,6 +23740,7 @@
         "how-to-run-synthetic-users"
       ],
       "links_in": [
+        "fix-the-page-yourself",
         "ways-to-read-one-article"
       ],
       "figures": [
@@ -21626,6 +24197,7 @@
         "future-of-news-story-vault-not-paywall"
       ],
       "links_in": [
+        "i-just-want-to-buy-the-article",
         "the-wire-as-a-graph",
         "agentic-cost-is-an-engineering-problem",
         "ways-to-read-one-article",
@@ -22954,6 +25526,7 @@
         "pay-to-keep-your-persona"
       ],
       "links_in": [
+        "i-just-want-to-buy-the-article",
         "the-citizen-developer",
         "paying-after-the-value",
         "hooks-are-kernel-code",
@@ -23703,6 +26276,7 @@
         "one-article-five-readers"
       ],
       "links_in": [
+        "i-just-want-to-buy-the-article",
         "paying-after-the-value",
         "hooks-are-kernel-code",
         "the-article-remains-a-product",
@@ -24545,6 +27119,7 @@
         "every-risk-is-already-accepted"
       ],
       "links_in": [
+        "i-just-want-to-buy-the-article",
         "the-wire-as-a-graph",
         "judo-for-small-countries",
         "ways-to-read-one-article",
@@ -27401,6 +29976,9 @@
         "the-agent-team-as-it-runs"
       ],
       "links_in": [
+        "three-policies-for-an-agent",
+        "case-law-for-agents",
+        "approve-at-altitude",
         "the-human-in-the-loop",
         "who-owns-the-words",
         "judo-for-small-countries",
@@ -27653,6 +30231,8 @@
         "the-agent-team-as-it-runs"
       ],
       "links_in": [
+        "three-decisions-mapped",
+        "approve-at-altitude",
         "commanders-intent-is-a-behaviour-policy",
         "are-hooks-the-sweet-spot",
         "a-policy-for-every-skill",
@@ -34137,6 +36717,8 @@
         "if-somebody-built-a-company-on-code-review"
       ],
       "links_in": [
+        "three-policies-for-an-agent",
+        "approve-at-altitude",
         "journalism-becomes-intelligence",
         "omnichannel-programming",
         "the-eyeballs-get-cheap",
@@ -35396,6 +37978,7 @@
         "ultimate-insider-three-collisions"
       ],
       "links_in": [
+        "fix-the-page-yourself",
         "software-vendors-as-villagers",
         "explorer-coding",
         "omnichannel-programming",
@@ -36035,6 +38618,7 @@
         "introducing-fractal-semantic-graphs"
       ],
       "links_in": [
+        "i-just-want-to-buy-the-article",
         "firing-journalists",
         "the-article-remains-a-product",
         "going-live-with-the-reading-meter",
@@ -37801,6 +40385,7 @@
         "the-question-is-whether-they-miss-it"
       ],
       "links_in": [
+        "i-just-want-to-buy-the-article",
         "not-a-straight-line",
         "two-agents-one-vault",
         "the-article-remains-a-product",
@@ -38348,6 +40933,7 @@
       ],
       "links_out": [],
       "links_in": [
+        "who-will-fix-your-mess",
         "the-value-of-constraints",
         "explorer-coding",
         "the-citizen-developer",
@@ -38618,6 +41204,7 @@
       ],
       "links_out": [],
       "links_in": [
+        "i-just-want-to-buy-the-article",
         "research-delivered-as-a-vault",
         "portugal-and-europe-2025",
         "portugal-2024-genai-in-portuguese",

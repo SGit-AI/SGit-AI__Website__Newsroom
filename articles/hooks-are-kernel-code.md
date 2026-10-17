@@ -151,6 +151,8 @@ Agents & policySite & engineering[This article as a graph →](graphs.md#hooks-a
 
 ### Continued by
 
+- [Three policies for an agent: behaviour says what it may do, decision says who chooses, workflow says in what order](three-policies-for-an-agent.md) Behaviour says what an agent may do, decision who chooses at a branch point, workflow in what order. Zoom into one ABP cell and it becomes both.
+- [Case law for agents: principles from the top, precedent from the cases, and how a decision earns its way into code](case-law-for-agents.md) Nobody predicts every case. Borrow the shape of English case law: escalate what the policy does not settle, record it, follow it, then compile it.
 - [The tokens hook: a token behaviour policy that shows what every session reads, caches, writes and costs, why a prompt cannot do it, and a brief for tokens.hook.sgit.ai](the-tokens-hook.md) A token behaviour policy as a 132-line hook: the user sees what each session reads, caches and costs; a prompt cannot do it.
 - [Cedar and the policy vault: a debrief on the policy language agents are adopting, where our behaviour policies and sgit vaults meet it, and a brief for the MVP](cedar-and-the-policy-vault.md) Cedar is mature and adopted; it lacks the why, the version in force and the evidence. A vault carries all three, and the demo shows it working.
 - [Commander's intent is a behaviour policy: Sondera's argument in our words, the business layer above it, and five of our rules compiled to Cedar and tested](commanders-intent-is-a-behaviour-policy.md) Sondera's commander's intent and our behaviour policies are one idea: twelve terms joined, the business layer above, and five rules tested in Cedar.

@@ -1,0 +1,43 @@
+{
+ "slug": "our-first-pr-in-ruflo",
+ "teaser": "rUv merged Mondweep's pull request #4239: one docs page, the first commit on Ruflo's main branch to mention SGit or an ABP. The four pieces, shown.",
+ "topics": ["agents-and-policy", "vaults-and-method"],
+ "core_idea": "A proof of concept, a one-file documentation pull request, a maintainer's merge and a pinned page on Ruflo's main branch: the first time SGit and the ABP appear in Ruflo's history, accepted quickly because the page is exact about what it does not claim; the companion example on our side is still open.",
+ "nodes": [
+  {"id": "merged", "label": "PR #4239 merged", "kind": "artefact", "summary": "17 October, 14:59, commit 332f22e."},
+  {"id": "first", "label": "A first in Ruflo's history", "kind": "claim", "summary": "First of 9,625 commits to mention SGit or an ABP."},
+  {"id": "poc", "label": "The proof of concept", "kind": "artefact", "summary": "mondweep/sgit-ruv-memory, MIT, 16 tests."},
+  {"id": "pr", "label": "Three commits, one file", "kind": "artefact", "summary": "83 lines of documentation in one hour."},
+  {"id": "abp", "label": "The ABP layer added", "kind": "method", "summary": "Compiled to Ruflo rules, enforce mode."},
+  {"id": "accepted", "label": "Merged by the maintainer", "kind": "claim", "summary": "No formal approval, no checks."},
+  {"id": "live", "label": "The page on main", "kind": "artefact", "summary": "docs/integrations, pinned to exact commits."},
+  {"id": "careful", "label": "It states its own limits", "kind": "claim", "summary": "Proposed vocabulary, vendored evaluator, partial recall."},
+  {"id": "vocab", "label": "Proposed memory vocabulary", "kind": "concept", "summary": "Three capabilities for the ABP."},
+  {"id": "ours", "label": "Our PR is still open", "kind": "question", "summary": "SGit-AI__Website__Ruv #1, no reviews."},
+  {"id": "evidence", "label": "Evidence first", "kind": "concept", "summary": "Pinned, tested, reproducible."},
+  {"id": "trail", "label": "The SGit × Ruflo analysis", "kind": "example", "summary": "The run, the vault, the gap."}
+ ],
+ "edges": [
+  {"from": "poc", "to": "pr", "rel": "leads-to"},
+  {"from": "abp", "to": "pr", "rel": "extends"},
+  {"from": "pr", "to": "accepted", "rel": "leads-to"},
+  {"from": "accepted", "to": "merged", "rel": "leads-to"},
+  {"from": "merged", "to": "live", "rel": "leads-to"},
+  {"from": "merged", "to": "first", "rel": "example-of"},
+  {"from": "careful", "to": "accepted", "rel": "answers"},
+  {"from": "vocab", "to": "careful", "rel": "example-of"},
+  {"from": "live", "to": "ours", "rel": "leads-to"},
+  {"from": "live", "to": "evidence", "rel": "example-of"},
+  {"from": "trail", "to": "poc", "rel": "extends"}
+ ],
+ "links": {
+  "articles": ["what-if-an-agent-loses-its-workspace", "when-is-the-vault-actually-used", "the-policy-guards-the-door", "agentics-ready-to-sell"],
+  "pages": [],
+  "sites": ["https://github.com/ruvnet/ruflo/pull/4239", "https://github.com/ruvnet/ruflo/blob/main/docs/integrations/sgit-memory-checkpoints.md", "https://github.com/mondweep/sgit-ruv-memory", "https://github.com/SGit-AI/SGit-AI__Website__Ruv/pull/1", "https://youtu.be/rkh6BJiaIrQ", "https://newsroom.sgit.ai/demos/videos/sgit-ruflo-poc/index.html"]
+ },
+ "quotes": [
+  {"text": "The page does not oversell.", "why": "Why it was merged quickly."},
+  {"text": "Ruflo merged first. The next merge is ours to make, after a review.", "why": "The open piece."},
+  {"text": "Now the method has a page inside the project it governs, written by someone outside our team, and accepted by the project's maintainer.", "why": "Why it is a milestone."}
+ ]
+}
