@@ -1,0 +1,118 @@
+{
+ "slug": "the-deck-i-could-not-download",
+ "what": "The sections of this article, each with a line and a paragraph, for showing what the reader has already read. Built by admin/build/summaries.py from admin/content/articles/summaries/.",
+ "sections": [
+  {
+   "id": "top",
+   "label": "The opening",
+   "words": 485,
+   "line": "SlideShare pays authors nothing; a vault service could",
+   "para": "One SlideShare download meant a 30-day trial then £10.99 a month, while the author, under the uploader agreement, receives nothing. I have 69 decks there. The article traces SlideShare's history, sets out what authors can ask for today, and designs a vault service where keys decide access and the author takes 85%.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s0",
+   "label": "In short",
+   "words": 386,
+   "line": "Readers pay a subscription and authors get nothing",
+   "para": "The paywall arrived in September 2021 with the free download setting reportedly off by default, and the August 2024 agreement grants a royalty-free licence including model training. Inertia, not technology, protects the incumbent. The design uses encrypted vaults, keys not settings, seven roles and 85% to the author, with the card fee as the hard row.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s1",
+   "label": "What happened to SlideShare",
+   "words": 334,
+   "line": "Inertia, not technology, keeps SlideShare in place",
+   "para": "Founded in 2006, SlideShare went to LinkedIn for about $119 million in 2012 and to Scribd in 2020, which added a download paywall in September 2021. It now cites twenty-five million presentations, not forty, yet still draws thirty-six to forty-three million visits a month, mostly from search. Fifteen years of links are the moat.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s2",
+   "label": "What the author agreed to",
+   "words": 304,
+   "line": "The platform keeps rights it forbids its own users",
+   "para": "Uploaders keep copyright, but grant a royalty-free, sublicensable licence to monetise, restrict and train models on their work, with no payment. The September 2026 terms forbid users from training models on the same content. No rule was broken: the service an author would have chosen simply does not exist.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s3",
+   "label": "What an author can ask for today",
+   "words": 428,
+   "line": "Authors can demand download counts and recipients today",
+   "para": "An author can switch on free downloads and send a GDPR Article 15 request for per-upload counts and named recipients, backed by EDPB guidance and Court of Justice rulings. In the EU, Article 19 of the 2019 Copyright Directive may add revenue information, but the UK did not implement it. I will send the request for my 69 decks.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s4",
+   "label": "The design: the author holds the keys",
+   "words": 376,
+   "line": "In the design, the author holds the keys",
+   "para": "Every author gets a vault the host cannot read, encrypted on the device. A passkey-bound publishing key signs every decision; each deck has its own content key, a one-way read key for free decks, revocable grants, and a payment receipt turned by an attested enclave into a ten-minute key. Decryption happens in the browser.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s5",
+   "label": "Seven roles, no single owner",
+   "words": 343,
+   "line": "Seven separated roles mean no single owner holds everything",
+   "para": "The incumbent holds files, keys, payments, identities and front page. The plan separates storage host, key service, unlock enclave, payments, identity, front and add-ons, so no party holds more than one of content, keys and money. Each can be provided per country or profession, and authors move by changing a key binding.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s6",
+   "label": "The flows",
+   "words": 317,
+   "line": "Reading, paying, sharing and migrating all run on keys",
+   "para": "Free reads decrypt in the browser and append an anonymous count, while a one-off payment yields a receipt the enclave turns into a ten-minute key, with an 85% and 15% split on the ledger. Private grants can be revoked and the deck re-keyed, and migration means republishing one's own decks with stable addresses.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s7",
+   "label": "The economics of one author",
+   "words": 396,
+   "line": "Serving a shelf costs pennies; card fees are hard",
+   "para": "For 69 decks of about 5 MB, a month of storage, bandwidth and enclave time costs under a pound, less than one incumbent download. A UK card fee of 1.5% plus 20p with a 30p minimum eats about a fifth of a £1 download, so the platform pays it from its 15% and earns on wallets, batching and add-ons.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s8",
+   "label": "What the service sells: provenance",
+   "words": 167,
+   "line": "What the service really sells is provenance",
+   "para": "Without storage and payments, what remains is assurance that a file with a given hash was published by a verified person. Every deck carries a signature from an identity-bound key, so conferences, employers, journalists and readers can trust authorship and version, the same provenance argument the site made about news.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s9",
+   "label": "The vault",
+   "words": 155,
+   "line": "Deck Vault publishes the plan with a working mock",
+   "para": "The vault holds ten plan documents, data, the right-of-access letter, a register of ten risks as acceptances, and a mock: a fictional author's twelve-deck shelf, pay-once pages, the author's recomputable statement, roles, flows and economics. It is built as web components in the coding.sgit.ai shape, bundled into one file.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s10",
+   "label": "What exists, and what does not",
+   "words": 207,
+   "line": "Most primitives exist; the unlock enclave does not yet",
+   "para": "Client-side vaults, read keys, write-only lanes, confidential compute, receipts and content credentials exist. Missing are the deck unlock enclave, key release per task, grant service, receipt-to-key, read-key fronts, the migration tool and a sub-five-pence rail. The build has nine steps, and I will build step zero for my own decks.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s11",
+   "label": "Threads woven here",
+   "words": 143,
+   "line": "Related articles on vaults, provenance and platform inertia",
+   "para": "Links to the agent team and personal agent articles for vaults and enclaves, A supply chain of vaults, the story vault and reader-as-product pieces on provenance, and the SaaS inertia argument. Also vault credentials, the security model, append-lane messaging and the site's business plans for founders.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s12",
+   "label": "Sources",
+   "words": 353,
+   "line": "Sources: platform terms, data law, and pricing pages",
+   "para": "Sources include Scribd's uploader agreement and terms, LinkedIn's 2020 announcement, Terence Eden's 2021 post, Similarweb and Simon Wardley. Legal sources cover GDPR Article 15, EDPB guidance, the Nowak and Österreichische Post rulings and Article 19 of Directive 2019/790, alongside Stripe, Cloudflare R2, Backblaze and x402 pricing.",
+   "by": "newsroom.ux"
+  }
+ ]
+}

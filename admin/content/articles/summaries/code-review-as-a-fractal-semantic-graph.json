@@ -1,0 +1,71 @@
+{
+  "slug": "code-review-as-a-fractal-semantic-graph",
+  "by": "newsroom.ux",
+  "sections": {
+    "top": {
+      "line": "Code review should read a change at every layer",
+      "para": "Source code is a fractal semantic graph, from user stories down to the syntax tree, and language models now make naming each layer cheap. Reviewing every layer shows a refactor as bottom layers moving and a bug fix as a story holding again. A vault reads the sgit tool, 377 classes and 1,111 methods, this way.",
+      "hash": "cc66cc23235c"
+    },
+    "s0": {
+      "line": "Code is layered graphs; review and diff every layer",
+      "para": "C4 and Gherkin saw the layers but stopped early; naming is now cheap. A refactor should leave the top still, a fix shows at the top, and blast radius is the climb from touched methods to stories. Method streams return as one script, and what makes the graph trustworthy is reality correcting it, not accuracy.",
+      "hash": "3913df7f1c71"
+    },
+    "s1": {
+      "line": "Source code is the clearest fractal semantic graph",
+      "para": "Every node opens into another graph with its own ontology: user intent, flows, components, classes, methods and calls, the syntax tree, then bytecode and machine. Each layer's edges differ: imports and data flows, field types and inheritance, calls, grammar. The meaning of a node comes from the altitude where it sits.",
+      "hash": "8bafaeea7647"
+    },
+    "s2": {
+      "line": "C4, Gherkin and threat modelling all saw layers",
+      "para": "C4 named four levels and called the code level optional. Gherkin, created by Aslak Hellesøy in 2008, gave the top layer Given, When, Then but glued it to code with regular expressions, which I called a hack. Threat modelling's hierarchical data flow diagrams drew a fractal graph by hand at one altitude.",
+      "hash": "c3c5670a9f26"
+    },
+    "s3": {
+      "line": "Cheap naming, syntax trees and files change everything",
+      "para": "A language model can now name what a method does and propose edges, written as schema-validated files rather than prose. Syntax trees are the right start: tree-sitter, code property graphs, Joern and difftastic exist, and a January 2026 paper found AST-derived graphs more reliable than LLM-extracted ones. Files can be versioned, diffed and regenerated per change.",
+      "hash": "f919dfc7f72a"
+    },
+    "s4": {
+      "line": "A different diff, not a faster reviewer, is needed",
+      "para": "Text diffs sit at the wrong altitude. Diffing every layer shows refactors, fixes, features and leaks as distinct shapes, and the blast radius is the climb from touched methods to stories. GitClear found cloned code rising from 8.3 to 12.3 percent while moved code fell under 10, and reviews are the bottleneck.",
+      "hash": "0bf48aab19b5"
+    },
+    "s5": {
+      "line": "Method streams from 2012 are now one script",
+      "para": "On the O2 Platform I reviewed code by following one entry point's call tree into a single file. From a resolved syntax tree it takes seconds: the push stream is 100 methods and 1,703 of 22,773 lines, 7.5 percent. Calls through queues or dynamic handlers are where a model proposes edges.",
+      "hash": "9d8a43eea180"
+    },
+    "s6": {
+      "line": "The sgit worked example reads a real fix upwards",
+      "para": "At commit 397be83 sgit is 427 files, 377 classes, 1,111 methods and 2,592 resolved calls, read with Python's parser and no model. One 404 bug fix touched seven methods and reaches nine of 72 commands and six of eleven stories. Firmly stated house rules hold; mirrored tests are missing for 143 of 253 classes.",
+      "hash": "bcf802ae2a57"
+    },
+    "s7": {
+      "line": "Reality, not accuracy, is what makes the graph trustworthy",
+      "para": "The graph need not be right, only checkable. Users confirm the top by whether stories hold, experts each confirm their own layer by correcting files, and tests confirm execution paths against the predicted stream. Patterns such as untested classes or broken house rules are findings, as coding.sgit.ai and nfrs.sgit.ai assume.",
+      "hash": "190fd8aacffb"
+    },
+    "s8": {
+      "line": "The parts exist; the layered review itself does not",
+      "para": "The vault, scripts, method streams and mature third-party parsers already exist. Missing are model-proposed stories and edges, node-level syntax diffs, a second language, the interface layer, test paths compared to streams and, above all, the review tool on a pull request. A competent team could start any of these on Monday.",
+      "hash": "688cd1f96b00"
+    },
+    "s9": {
+      "line": "Layered code review is a company someone should build",
+      "para": "The product attaches to a repository, keeps the graph current per commit and shows each change at every altitude with its climb to stories. Buyers are anyone generating code faster than they review it, especially regulated teams. The defensible asset is the corrected graph of a codebase, not the model; the scripts are Apache-2.0.",
+      "hash": "1c00f557a46f"
+    },
+    "s10": {
+      "line": "Related articles, vaults and sites this one builds on",
+      "para": "Links to the fractal semantic graphs introduction, footprint and blast radius, custom UIs, and every risk is already accepted. Also the Code Review Graphs vault, the follow-up on building a company, the repository build brief, the ThreatModCon 2025 vault, and coding.sgit.ai and nfrs.sgit.ai.",
+      "hash": "7540e4c0f733"
+    },
+    "s11": {
+      "line": "Sources: the studies, tools and writings cited",
+      "para": "Dinis Cruz's O2 Platform and method streams posts from 2010 to 2013 and 2025 graph writing, Simon Brown's C4, Cucumber's Gherkin docs, code property graphs, Joern, tree-sitter, difftastic, GitClear, DORA 2024, Stack Overflow 2025 and Veracode 2025. Drafted by Claude Fable 5.1 on 3 October 2026, licensed CC BY 4.0.",
+      "hash": "ae264522996c"
+    }
+  }
+}

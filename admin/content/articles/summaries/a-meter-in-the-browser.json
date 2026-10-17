@@ -1,0 +1,41 @@
+{
+  "slug": "a-meter-in-the-browser",
+  "by": "newsroom.ux",
+  "sections": {
+    "top": {
+      "line": "A browser-only meter prices every sgit.ai page in pence",
+      "para": "Every page now has a price debited from £5 of starting credit, with a reading account, price table and a top-up checkout lacking only payment, all kept in the browser. A private window resets the credit but also the reading history that drives personalisation. The meter has since gone live, as the v0.7.26 update notes.",
+      "hash": "4344cf3bfe39"
+    },
+    "s0": {
+      "line": "Pages cost 1p to 5p from £5 of credit",
+      "para": "New articles cost 5p, older ones 3p, newsletters, desk notes and collections 2p, other pages 1p, and the homepage, subscribe and account pages are free. Each page is debited once per visit, and running out blocks nothing. A simulated top-up has four packs, a cart and a receipt, and the account offers history, receipts, pause, export and reset.",
+      "hash": "404d50b49ee1"
+    },
+    "s1": {
+      "line": "Reading history, not the balance, is the real product",
+      "para": "The meter's ledger records what you read and each article's topics, which is enough to pick unread articles on your account page and in a Picked for you band. It uses the published articles/graphs.json and never leaves the machine. A private window escapes the meter but loses the history: the experiment asks whether that trade feels fair.",
+      "hash": "a003d57760a0"
+    },
+    "s2": {
+      "line": "Showing prices while charging nothing tests the idea cheaply",
+      "para": "Following the ship, give away and watch approach, and pricing before giving away, a meter that shows prices but charges nothing makes value visible without money moving. HTTP 402 Payment Required, reserved in 1997, still awaits a payment system. The meter asks whether the payment matters, or what readers get back for having paid.",
+      "hash": "d791db6ae1a7"
+    },
+    "s3": {
+      "line": "The Portuguese newsroom's one-cent meter came first",
+      "para": "pt.newsroom.sgit.ai had one cent a page, a self-refilling five-euro wallet and a ledger page, and its rules carry over: say it is a demonstration, never block, charge once per visit, work without storage. This version adds prices set in one build place, a chosen top-up through a cart, and personalisation.",
+      "hash": "af9e91dc33bb"
+    },
+    "s4": {
+      "line": "No real money, no syncing, no agent metering yet",
+      "para": "The balance can be edited in developer tools, so real money would need a server or signed receipts. History stays on one device, though a reader-keyed encrypted vault could sync it. Markdown twins and the wire are free to agents, and every reader pays the same; per-question pricing is the obvious next step.",
+      "hash": "a8b8c8441be5"
+    },
+    "s5": {
+      "line": "Your meter is already running; try starting again",
+      "para": "The account page shows what the meter recorded, the top-up walks through the cart, and a private window shows what starting again costs. Drafted on 10 October 2026 from a voice note by Dinis Cruz, the idea's author, by a Claude Code session; the meter is assets/meter.js with prices in admin/build/build_pages.py.",
+      "hash": "4451223985ed"
+    }
+  }
+}

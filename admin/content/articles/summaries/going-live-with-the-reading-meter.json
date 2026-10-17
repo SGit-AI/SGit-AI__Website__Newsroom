@@ -1,0 +1,71 @@
+{
+  "slug": "going-live-with-the-reading-meter",
+  "by": "newsroom.ux",
+  "sections": {
+    "top": {
+      "line": "The reading meter goes live, charging by depth read",
+      "para": "The sgit.ai reading meter stops being a demonstration: a page costs the share of it you scroll, up to 10p for a new article. Balances can go below zero with no nagging, readers can refuse a charge with a reason, and topping up is one £5 Stripe payment. The plan, expectations and disproof criteria are written down first.",
+      "hash": "7d9ef0ef86a1"
+    },
+    "s0": {
+      "line": "Pay by depth, go negative freely, refuse with reasons",
+      "para": "The meter charges by scroll depth, allows a permanently negative balance shown only in the top bar, and lets readers decline a charge with a reason. Payment is one unverified £5 Stripe top-up, and prices are a hypothesis with five expectations, disproof numbers and a review eight weeks after launch. SG Meter is now a library.",
+      "hash": "e0913bb25ac4"
+    },
+    "s1": {
+      "line": "Six changes turn the demonstration into a live meter",
+      "para": "Readers pay a page's price times the share scrolled, never less than a tenth: 1p for a first screen of a new article, 5p for half. Balances go below zero with no blocks or pop-ups, and a \"Don't charge me\" option offers four reasons. Top-ups become real £5 Stripe payments, and the meter becomes the SG Meter web component.",
+      "hash": "7bb96cb5294c"
+    },
+    "s2": {
+      "line": "No ask and no commitment, unlike subscription paywalls",
+      "para": "The Guardian counts articles locally and asks for support; its digital reader revenue rose 22% to £107m, with tiers of £4, £12 and £27 a month. This meter never asks or demands commitment: readers pay after reading and can refuse. Since v0.7.34 a reader card lets usefulness ratings set price, from free to double.",
+      "hash": "2d5d73564259"
+    },
+    "s3": {
+      "line": "Charging by depth stops rewarding clickbait over finished pages",
+      "para": "A reader who leaves after one paragraph has not had the same page as one who finished, so charging both equally rewards headlines nobody finishes. Depth is measured on the main column, rounded to 5%, at most every 400 milliseconds and on leaving. It is not reading time; the refusal covers cases where depth misleads.",
+      "hash": "f8776220704d"
+    },
+    "s4": {
+      "line": "A refusal with a reason is the useful signal",
+      "para": "Every scroll triggers a charge, so charges say little, but a refusal with a reason is the first unprompted reader verdict the site has had. The reasons judge the writing, the placement or the depth measure. They stay in the reader's browser, where \"not relevant\" pushes a page's topics down that reader's picks, and the site sees none of it.",
+      "hash": "b2e972902212"
+    },
+    "s5": {
+      "line": "Prices from free to 10p are deliberately testable",
+      "para": "A new article read to the end costs 10p, older articles 5p, newsletter issues 3p, desk notes 2p, other pages 1p, and the homepage free; £5 buys 50 new articles fully read. Prices were raised from 5p and 3p so they are noticed. The build prints the table from the same METER rules the meter charges by.",
+      "hash": "a4f30a4eeb52"
+    },
+    "s6": {
+      "line": "The money is small; evidence is the real payoff",
+      "para": "Stripe's UK fee of 1.5% plus 20p leaves £4.72 of £5, which is why top-ups are not £1. Even 200 payers would bring £945. The case is evidence that people pay unforced, a test bed for personalisation built on reading history, and a library any site could add.",
+      "hash": "794356aad313"
+    },
+    "s7": {
+      "line": "Honesty boxes work, but people pay less without force",
+      "para": "Paul Feldman's unwatched bagel boxes saw about 87% paid by 2001, and Radiohead's In Rainbows had 38% paying, averaging about $6. In Gneezy's 2010 theme-park study, pay what you want lifted buyers from 0.5% to 8.39% at 92 cents each. Removing force raises participation and lowers averages, and a stated price sits between.",
+      "hash": "e07268fb5550"
+    },
+    "s8": {
+      "line": "Five hypotheses fixed before launch, reviewed 6 December 2026",
+      "para": "Expectations are a payment within 14 days, at least 10 payers, at least 3 repeat payers, no non-fraud disputes, and negative balances being normal, each with a disproof threshold. The link went live on 11 October 2026, so the review is 6 December. Only Stripe and LinkedIn views are visible, and results will be published regardless.",
+      "hash": "7bac82b5a19c"
+    },
+    "s9": {
+      "line": "Each failed hypothesis points to a specific next fix",
+      "para": "If nobody pays, the first suspect is an invisible trade, so picks improve before the meter gets louder; one-off payments only point at the personal front page. Cheating would mean the balance unlocks something, or stolen cards, which a disabled link stops in a minute. Reasons about misleading headlines go to the newsroom's behaviour policies.",
+      "hash": "addcea766ea0"
+    },
+    "s10": {
+      "line": "Anyone can cheat, and it costs the site nothing",
+      "para": "Editing the balance in developer tools, using a private window or faking a payment return reference all work. Each changes only a number the cheater sees and costs the site a payment it would never have received. Who would actually do it, and which risks are real, is covered in the companion piece on gaming the meter.",
+      "hash": "56a26263470c"
+    },
+    "s11": {
+      "line": "Your meter is running; check it at the foot",
+      "para": "The foot of the page shows what reading it cost and offers the refusal; the account page shows balance, history and depth, with optional top-up. Written on 10 October 2026 from Dinis Cruz's voice note by a Claude Code session, with Guardian figures from Press Gazette, Stripe's UK prices and SG Meter v1.0.0.",
+      "hash": "f82aa18456b2"
+    }
+  }
+}

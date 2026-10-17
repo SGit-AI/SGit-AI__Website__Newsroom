@@ -1,0 +1,61 @@
+{
+  "slug": "a-second-reader-the-agent-cannot-skip",
+  "by": "newsroom.ux",
+  "sections": {
+    "top": {
+      "line": "A self-kept rule failed; an unskippable checker now holds",
+      "para": "On 9 October two emails drafted by my agent went out signed with my name, though a rule against it existed in four places, enforced only by the agent's memory and lost to summarisation. The same-day fix is a hook on the draft tool: code checks, then a fresh model call that fails closed and logs every verdict.",
+      "hash": "f017983bfc47"
+    },
+    "s0": {
+      "line": "An unskippable second reader turns hope into control",
+      "para": "A rule kept by the agent it governs is hope. The fix pairs an independent reader with a gate the harness runs: certain checks in code, judgement to a model with no history or tools, and anything but an explicit PASS fails. Today it is a setting; under managed settings it becomes a boundary.",
+      "hash": "defd554b8650"
+    },
+    "s1": {
+      "line": "Self-held rules fail three ways, needing different fixes",
+      "para": "An agent can forget a rule, fail to see its own violation, or decide an exception applies. Research backs the middle one: models struggle to self-correct (Huang et al.) and favour their own outputs (Panickssery et al.). A reminder fixes only forgetting; a fresh second reader fixes the rest, and an unskippable gate makes it hold.",
+      "hash": "7b3840ac6c5b"
+    },
+    "s2": {
+      "line": "Code checks first, then a fresh model, failing closed",
+      "para": "The guard hooks tool.call on the Gmail create_draft and update_draft tools, so sub-agents cannot route around it. Code checks voice, HTML, dashes, secrets and Cc first; then Sonnet, with no history or tools, judges ten numbered rules against recent sources. Errors, timeouts and malformed answers all deny, and every verdict is logged.",
+      "hash": "4b455aead232"
+    },
+    "s3": {
+      "line": "The first run caught four invented claims, cheaply",
+      "para": "With Haiku as checker, the first run caught four statements presented as my view or promise that I had never made, plus false FAILs for unsourced but correct facts. Haiku over-flagged on R7, so Sonnet became the default. At $2 and $10 per million tokens, thirty drafts a day costs roughly $12 to $21 a month.",
+      "hash": "5f79a287832b"
+    },
+    "s4": {
+      "line": "Independence has six parts; drafter-written sources are weakest",
+      "para": "A checker is only as independent as what it does not share with the author: three kinds about what it sees, two about who decides it runs, one about who wrote the evidence. A spawned checker sub-agent is still an expectation, and because the drafter writes the sources today, it could pad them.",
+      "hash": "8e79abb354f8"
+    },
+    "s5": {
+      "line": "Installation, not code, decides whether the hook is control",
+      "para": "The agent built the guard in its own session, loaded with one hot-reload click, so it can edit the hook: a setting, not a control. A plugin from a repository still counts as the user's. Only a managed-settings hook or admin-only organisation mod gives a final block; same code, different owner.",
+      "hash": "03069ad8cd01"
+    },
+    "s6": {
+      "line": "Of three public routes, the command hook is strongest",
+      "para": "The guard can be a mod, a PreToolUse command hook, or a prompt hook. The command hook, with onFailure set to block and exit code 2, is the most robust and works under managed settings. Anthropic's auto mode classifier uses the same shape, and its docs warn that compaction can lose a conversational boundary.",
+      "hash": "a285e25651b4"
+    },
+    "s7": {
+      "line": "Maker-checker is old; the guard places it precisely",
+      "para": "Segregation of duties appears in Basel's 1998 Principle 6, NIST, ISO 27001 control A.5.3 and pharmacy double checks. AI Control, Dual LLM, CaMeL, Meta's Rule of Two and OWASP LLM06 carry it into AI. The guard adds no new idea, only placement on one consequential tool call with business rules and sources.",
+      "hash": "01e2fb1d74e3"
+    },
+    "s8": {
+      "line": "Six steps reuse the guard on any consequential call",
+      "para": "Pick the call that matters, write numbered rules with a fixed answer format, put certainties in code, give the checker only rules, sources and the action, deny anything but an explicit PASS, and log every verdict. Next candidates are CRM writes, page promotions, Slack posts and the vault leak check.",
+      "hash": "5c06500bdb09"
+    },
+    "s9": {
+      "line": "It checks drafts, not quality, and remains a setting",
+      "para": "The guard is only as independent as its installation, R7 depends on sources the drafter writes, and false FAILs cost a retry. It checks drafts, not sending, and a PASS means ten rules held, not a good email. The design document's guard passed 11 of 11 tests.",
+      "hash": "964c2a894589"
+    }
+  }
+}

@@ -1,0 +1,102 @@
+{
+ "slug": "replicating-the-agentic-inbox",
+ "what": "The sections of this article, each with a line and a paragraph, for showing what the reader has already read. Built by admin/build/summaries.py from admin/content/articles/summaries/.",
+ "sections": [
+  {
+   "id": "top",
+   "label": "The opening",
+   "words": 431,
+   "line": "The agent drafts and a person sends, in phases",
+   "para": "Two callers asked how to copy my email setup, so this is the walkthrough. Claude runs as a state machine, one session per role, with messages between agents as vault files and every email a draft a person sends. It goes in phases: accounts, one inbox session, split roles, then interfaces and a conductor.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s0",
+   "label": "In short",
+   "words": 350,
+   "line": "Own accounts, written policies, and nothing sent by agents",
+   "para": "The agent gets its own Workspace mailbox and its own Claude Team seat, never your inbox. Start with one inbox session and a policy written first, then split into roles that talk through Email-FS lite in a vault. Nothing is sent by an agent, except one named security exception with a hold.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s1",
+   "label": "Why this is on a separate page",
+   "words": 72,
+   "line": "The setup is copyable, and nothing is clever",
+   "para": "Two calls ended with the same question, so the walkthrough gets its own page. The simple version takes an afternoon and the full one a week. It is accounts, a policy, drafts and files, and the discipline of the phases makes it work; you can stop at any phase.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s2",
+   "label": "The core idea: Claude as a state machine",
+   "words": 197,
+   "line": "Each role session reads state, works, writes, stops",
+   "para": "Claude is good enough to be a step in a state machine. Each role reads its state from vault files, does one kind of work, writes results back as files and stops. Sessions can be opened by hand or scheduled; start with ones you open, so every run is one you watched.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s3",
+   "label": "Phase 0: the accounts",
+   "words": 526,
+   "line": "The agent needs its own mailbox, seat and grants",
+   "para": "Phase 0 gives the agent a Workspace mailbox on a domain you own, never your own inbox, plus a separate Claude Team seat whose OAuth grants live only there. Connectors must first be enabled by an organisation owner. Add a GitHub account on the same identity and share your calendar read-only.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s4",
+   "label": "Phase 1: one session, one inbox",
+   "words": 564,
+   "line": "One inbox session, a policy first, and you send",
+   "para": "The inbox agent reads, labels, summarises and writes replies as drafts. Its policy is a table of reach, mandate, gap and barriers, and on a Team plan most barriers are honestly just expectations. Each draft leaves a record line with a body hash, and sends are recorded by a different role.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s5",
+   "label": "Phase 2: roles, talking in files",
+   "words": 830,
+   "line": "Split roles talk in vault files, not the mailbox",
+   "para": "Roles such as @inbox, @drafts, @crm, @briefs and @dev each have a short policy; only @inbox reads the mailbox and only @drafts writes Drafts. They exchange files through Email-FS lite with typed blocks. Clone time grows with commits: after three days a vault took seven minutes, so commit once per run.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s6",
+   "label": "Phase 3: the interfaces and the record",
+   "words": 476,
+   "line": "Agents build interfaces; a conductor runs every role once",
+   "para": "Agents built phone cards and waiting-on boards in an afternoon because the data was already vault files, and each interface got its own policy. The record lets you read what agents did. A conductor runs each role once in fixed order, with twelve-minute time boxes and a security role first and last.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s7",
+   "label": "The rule that never changes",
+   "words": 444,
+   "line": "Agents never send, except one held security alert",
+   "para": "The drafts role writes, and the person reads and sends. The one exception lets the security role send one critical email to the person and write a hold file that stops every run until the person releases it. A vault key leaked on day five, so a leaked write key now means a new vault.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s8",
+   "label": "The checklist",
+   "words": 236,
+   "line": "A checklist from accounts to the never-send rule",
+   "para": "Buy a Workspace seat, create a Claude Team account, enable then connect the connectors, and share your calendar read-only. Write the policy first, run one session for a week, then split roles that talk through Email-FS lite. Read the footprint monthly, watch clone time, and keep the rule: the agent drafts, you send.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s9",
+   "label": "What the agents will add",
+   "words": 476,
+   "line": "The agents add their own accounts, starting with @dev",
+   "para": "The dev agent shipped nineteen releases in eight days, wrote policies for five future roles, and refuses to fix other agents' files. A briefs-drawn roster shows twelve agents, not five, and corrects the schedule: four runs on weekdays, two at weekends, starting and ending with security.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s10",
+   "label": "Threads woven here",
+   "words": 328,
+   "line": "Related articles, and how this page was drafted",
+   "para": "Links to Six agents, one inbox, Custom UIs are not the exception, Footprint and blast radius, the connector twin, The ultimate insider, append-lane messaging and RiskMandate.ai. Drafted from Dinis Cruz's voice memo on 2 October 2026 and revised on 3 October from the dev agent's review pack.",
+   "by": "newsroom.ux"
+  }
+ ]
+}

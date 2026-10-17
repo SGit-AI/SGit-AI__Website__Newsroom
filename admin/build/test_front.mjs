@@ -162,7 +162,7 @@ const open = async (opts = {}) => {
   await pg.waitForTimeout(800)
   await pg.mouse.wheel(0, 2400); await pg.waitForTimeout(500)
   const s = await pg.evaluate(() => ({ bar: parseInt(document.querySelector('.read-strip .rs-scrolled').style.width), chip: document.querySelector('.read-chip').textContent }))
-  check(s.bar > 0 && /^Scrolled\s*\d+%\s*Read\s*\d+%\s*£\d\.\d\d$/.test(s.chip), `the strip fills (${s.bar}% scrolled) and the chip says scrolled, read and the page's cost (${s.chip}); the rest is test_reading.mjs`)
+  check(s.bar > 0 && /^[●‖]?Scrolled\s*\d+%\s*Read\s*\d+%\s*£\d\.\d\d$/.test(s.chip), `the strip fills (${s.bar}% scrolled) and the chip says scrolled, read and the page's cost (${s.chip}); the rest is test_reading.mjs`)
   await ctx.close()
   const [ctx2, pg2] = await open({ url: 'about/index.html' })
   check(await pg2.evaluate(() => !document.querySelector('.read-strip')), 'a free page of this site gets no strip')

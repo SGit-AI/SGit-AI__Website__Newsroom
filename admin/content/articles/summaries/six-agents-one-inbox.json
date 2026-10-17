@@ -1,0 +1,61 @@
+{
+  "slug": "six-agents-one-inbox",
+  "by": "newsroom.ux",
+  "sections": {
+    "top": {
+      "line": "A policy is as real as its worst row",
+      "para": "Running six agent roles on dedicated Workspace, Claude and GitHub accounts produced three findings: the account is the blast radius and enables per-agent compliance rules, the first exception arrived before the first policy, and an assumed limit on attachments was wrong. Every rule should be tabled with how it is enforced, and rows that say told are hopes.",
+      "hash": "51ffcf6192f3"
+    },
+    "s0": {
+      "line": "Dedicated accounts bound agents, but some rules stay instructions",
+      "para": "A dedicated seat per agent bounds what a session can reach and puts each agent in its own organisational unit for Gmail compliance rules. The reader's never-reply rule needed an exception for my messages on day one. An agent proved the connector can attach files, contradicting Anthropic's own documentation. Cowork and Claude Code have different reach.",
+      "hash": "3ad02d451696"
+    },
+    "s1": {
+      "line": "Two identities, six roles, each on its own account",
+      "para": "Each agent identity has a Google Workspace account at about £7 a month, a Claude Team seat and its own GitHub account, so nothing runs as me. Six roles share them: the reader, the mailbox, the inbox, the CRM, the dev team and the site editor. Each gets a short policy, and they differ mainly on who may send.",
+      "hash": "56da8fe41418"
+    },
+    "s2": {
+      "line": "Per-agent organisational units turn Gmail compliance into enforcement",
+      "para": "Gmail compliance settings apply per organisational unit, so an account per agent makes them per-agent rules. Restrict delivery limits whom an agent can mail, attachment compliance can strip outbound files, and API scope limits restrict third-party apps. On GitHub, installing the app per repository or using fine-grained tokens means the site editor sees only the website.",
+      "hash": "d18fbb702eb6"
+    },
+    "s3": {
+      "line": "The never-reply rule needed an exception on day one",
+      "para": "The reader was never to send, but messages from me carry instructions, so the rule became never reply unless it came from me. Policies grow from workflow exceptions. Verifying the sender is a signature problem, solvable with the append-lane key registry, and restricting the reader's delivery to my domain bounds the damage from a spoofed instruction.",
+      "hash": "95741d8cea30"
+    },
+    "s4": {
+      "line": "The connector could attach files after all; documentation disagreed",
+      "para": "On 27 September an agent found that create_draft and update_draft accept a base64 attachments array, and sent a 17 KB signed PDF intact. Two Anthropic pages disagree on whether the connector can send at all. Gmail scopes put drafting and sending in one grant, so a drafts-only rule cannot be enforced by scope limits.",
+      "hash": "b70841e36c5f"
+    },
+    "s5": {
+      "line": "Cowork and Claude Code on one seat reach differently",
+      "para": "In this setup the Cowork agent has no GitHub connector and cannot open the repository, while Claude Code on the same seat edits the site, so the site editor role is built around that boundary. On a Team plan, connectors are enabled organisation-wide and sending can only require approval; per-tool blocking exists only on Enterprise.",
+      "hash": "5ac978fb9da6"
+    },
+    "s6": {
+      "line": "Most rules are enforced, but two rely on instruction",
+      "para": "The table grades every rule by enforcement. Account isolation, repository access and vault keys are enforced by the platform or cryptography. Mail rules rely on admin settings and approval prompts. Two rows rely on instruction: replying to my verified messages, which has a known fix, and acting outside its role, which nothing enforces.",
+      "hash": "5120ce4bf007"
+    },
+    "s7": {
+      "line": "Buy segregation, table the policy, and replay before writing",
+      "para": "Give each agent a £7 Workspace seat in its own organisational unit, restrict delivery and strip outbound attachments where appropriate, and give each its own GitHub account installed per repository. Write the policy as a table with an honest enforcement column, test what agents can do before forbidding it, expect early exceptions and journal everything.",
+      "hash": "c15d60b10b10"
+    },
+    "s8": {
+      "line": "The setup runs, but two rules remain only instructions",
+      "para": "Running today: the accounts, roles, scheduled reader, drafting and sending split, the site editor's GitHub account, the attachment finding and the append-lane registry. Missing: my own key in that registry, a broker making drafts-only a block on a Team plan, and any enforcement of acting outside a role, as of 29 September 2026.",
+      "hash": "cb825f69ac65"
+    },
+    "s9": {
+      "line": "Sources: Workspace, Gmail, Anthropic and GitHub documentation",
+      "para": "Sources are the agent's attachment debrief of 27 September 2026, nhi.sgit.ai on shared drives, Google Workspace admin help on delivery restriction, attachment compliance and API scopes, Gmail API scopes, Anthropic's two conflicting Gmail connector pages, its Cowork and permissions pages, and GitHub's token documentation, plus related articles on this site.",
+      "hash": "1106bf0d17fe"
+    }
+  }
+}

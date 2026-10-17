@@ -1,0 +1,110 @@
+{
+ "slug": "sgit-in-a-ci-pipeline",
+ "what": "The sections of this article, each with a line and a paragraph, for showing what the reader has already read. Built by admin/build/summaries.py from admin/content/articles/summaries/.",
+ "sections": [
+  {
+   "id": "top",
+   "label": "The opening",
+   "words": 302,
+   "line": "sgit vaults give CI pipelines a versioned, encrypted record",
+   "para": "GitHub Actions artifacts, caches and job outputs each have limits and none is a versioned, encrypted record readable outside GitHub. sgit vaults fill the gap: jobs push and clone data, scope clones with the path option, and use read keys, append tokens and per-job key pairs as boundaries. A sidecar server removes the need for a hosted one.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "in-short",
+   "label": "In short",
+   "words": 227,
+   "line": "CI data flows through a vault; keys are boundaries",
+   "para": "Jobs push outputs to a vault that anyone with a read key can clone, with history. The path option speeds clones but keys are the boundaries: a read-key clone refused to commit. Shards append through write-only tokens, per-job key pairs make misrouted data fail, keys come on stdin, and a sidecar server's ciphertext storage can be cached.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "why",
+   "label": "Why CI data is awkward",
+   "words": 200,
+   "line": "Artifacts, caches and outputs are limited and GitHub-bound",
+   "para": "Artifacts are kept 90 days by default and die with their run; caches are 10 GB per repository and evicted after 7 days unused; job outputs are capped at 1 MB. All live inside GitHub and none is a versioned history for outsiders. A CI job is compute that ends with a memory that should not.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "tested",
+   "label": "What was tested",
+   "words": 77,
+   "line": "Every pattern ran locally with sgit 0.21.0",
+   "para": "Everything was run with sgit 0.21.0 against a local vault server, version 0.34.0, with disk storage and an access token. Each job ran in its own empty home directory, so only the vault carried data. The workflow file at the end is a sketch and has not been run on GitHub Actions.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "in-out",
+   "label": "Data in and out",
+   "words": 211,
+   "line": "A vault makes build outputs readable anywhere, with history",
+   "para": "The build job clones the vault, reading the key from stdin, copies outputs in, commits and pushes. Anyone with a read key, such as an auditor or another pipeline, can then clone and diff every run without a GitHub account, long after artifacts expire. The server sees only ciphertext, and inputs can arrive the same way.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "between",
+   "label": "Between jobs, and only what each job needs",
+   "words": 231,
+   "line": "Scoped clones save downloads, but are not a wall",
+   "para": "The test job cloned only build/ and test/; the release job, with a read key scoped to test/, held just the report and was refused when it tried to commit. Scoping by path keeps jobs cheap and data off runners that do not need it, but a full-key holder can widen the clone. The keys are the boundaries.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "keys",
+   "label": "The keys are the boundaries",
+   "words": 223,
+   "line": "Four kinds of key decide each job's powers",
+   "para": "The vault key reads and writes; the read key only reads; an append token adds to one inbox and reads nothing; a job's key pair encrypts and signs. The server's access token is the door, and an append without it got 401. Giving each job only the key its step needs writes the mandate as a barrier.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "lanes",
+   "label": "Append lanes for shards",
+   "words": 243,
+   "line": "Append tokens let shards report without reading anything",
+   "para": "Three shards each appended with their own token; unknown tokens, wrong enumeration keys and wrong write keys were all refused with 403. Limits are 5 MB per entry, 1,000 waiting per inbox and 200 listed at a time. Payloads are stored as sent, so shards should encrypt to the summary job's key.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "pki",
+   "label": "A key pair for every job",
+   "words": 242,
+   "line": "Per-job key pairs turn wiring mistakes into loud failures",
+   "para": "sgit pki keygen gives each job encryption and signing keys. A deploy configuration encrypted to the deploy job failed to decrypt in the test job, and a manifest with one appended line returned \"Signature INVALID\". Each job's 5 KB key folder and passphrase sit in its secrets; imperfect, but misrouted data fails rather than leaks.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "no-server",
+   "label": "No hosted server",
+   "words": 330,
+   "line": "A sidecar server with cached ciphertext storage replaces hosting",
+   "para": "The vault server runs beside the job; its storage was 388 KB, 208 KB archived, with no plaintext found, and restored with all three commits. Reading works from a folder or static host without a server, but pushing needs the API. Sidecars do not serve parallel jobs, and .sg_vault/local, holding the key in clear, must never be archived.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "workflow",
+   "label": "A workflow sketch",
+   "words": 355,
+   "line": "An untested workflow sketch built from the tested commands",
+   "para": "A build job installs sgit 0.21.0, clones with the vault key from secrets, pushes the build, and a release job clones it read-only. The sidecar variant restores storage from the cache, runs diniscruz/sg-send-vault on localhost and saves under a new key. The newsroom already uses parts of this in its deploy tests.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "limits",
+   "label": "What this does not claim",
+   "words": 152,
+   "line": "Tested locally; path scoping and sidecars have limits",
+   "para": "Results come from a local server and separate home directories, not GitHub Actions. Path scoping is not access control, sidecars do not serve parallel jobs, per-job keys are only as separate as the secrets holding them, and append payloads are stored as sent. GitHub's secret redaction is \"not guaranteed\".",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "sources",
+   "label": "Where this comes from",
+   "words": 87,
+   "line": "Sources: local runs and GitHub Actions documentation",
+   "para": "The piece comes from a voice memo of 14 October 2026. Commands were run with sgit 0.21.0 and sgraph-ai-app-send 0.34.0 on a local server, with append lane limits from the server's source. GitHub pages on dependency caching, outputs, service containers, secrets and upload-artifact were read on 14 October 2026.",
+   "by": "newsroom.ux"
+  }
+ ]
+}

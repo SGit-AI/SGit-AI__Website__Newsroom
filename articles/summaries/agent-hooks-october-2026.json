@@ -1,0 +1,86 @@
+{
+ "slug": "agent-hooks-october-2026",
+ "what": "The sections of this article, each with a line and a paragraph, for showing what the reader has already read. Built by admin/build/summaries.py from admin/content/articles/summaries/.",
+ "sections": [
+  {
+   "id": "top",
+   "label": "The opening",
+   "words": 296,
+   "line": "Agent hooks have converged, but are guardrails, not walls",
+   "para": "On 14 October 2026, ten agent tools, from Claude Code and Codex to Cursor and Kiro, offer a pre-tool hook that can block a call. They differ on organisation-only hooks, failing closed, trust for repository hooks and seeing model output. Hooks fail open by default on most tools and have been an attack surface.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "in-short",
+   "label": "In short",
+   "words": 158,
+   "line": "Hooks are standard, fail open, and miss unrouted actions",
+   "para": "At least ten tools document a blocking pre-tool hook, differing on organisation-only hooks, failing closed, repository trust and model output visibility. Hooks miss unrouted actions, have run code from repositories, and everyone calls them guardrails, not walls. OWASP's Agent Control Standard is forming around them.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "what",
+   "label": "What a hook is",
+   "words": 220,
+   "line": "A hook runs at fixed points in the loop",
+   "para": "The harness runs hooks with an event description in and a decision out; the pre-tool hook sees the tool and its full input and can allow, deny, ask or often rewrite. Claude Code lists 33 events, most tools ten to twenty, and exit code 2 usually blocks. This site already runs on hooks.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "platforms",
+   "label": "The lay of the land",
+   "words": 440,
+   "line": "Every major vendor has hooks, with differing enforcement",
+   "para": "Claude Code is richest, with allowManagedHooksOnly and onFailure block since 2.1.295. Codex has managed-only hooks but misses hosted tools; Gemini CLI alone hooks the model call. Copilot's timeouts always fail open, Cursor fails open by default with a failClosed option, and Lovable only gates publishing.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "fail",
+   "label": "Where hooks fail",
+   "words": 411,
+   "line": "Hooks fail open, miss routes, and can be attacked",
+   "para": "A crashing hook usually lets the action through, and an agent can bypass a hook via another tool. Hooks run with the user's permissions, and Check Point and CVE-2026-48124 showed repository hooks running unapproved, while one paper compromised all seven harnesses tested. Trail of Bits and cc-safety-net both say hooks are not a boundary.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "test",
+   "label": "A small test of my own",
+   "words": 168,
+   "line": "My hook blocked a push but read only text",
+   "para": "In a throwaway repository, a project hook allowing pushes to one remote stopped a headless Claude Code push elsewhere, and the agent declined to defeat it. Run directly, it passed a command whose text hid the destination. My user-level hooks also loaded, and my status counter miscounted the test commit as this site's.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "defend",
+   "label": "Configuring hooks as a defender",
+   "words": 126,
+   "line": "Make hooks organisational, fail closed, and pair with boundaries",
+   "para": "Make organisation hooks the only hooks, installed where the agent cannot write. Fail closed on policy hooks, hook every path to the same effect and check effects over text, and watch the configuration. Review repository settings before headless runs, and pair hooks with sandboxes, network rules and scoped credentials: hooks decide, the boundary holds.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "standard",
+   "label": "The standard is forming",
+   "words": 97,
+   "line": "OWASP's Agent Control Standard is forming around hooks",
+   "para": "The Agent Control Standard, an OWASP GenAI Security Project, uses a separate guardian answering allow, deny, modify, ask or defer, with engines such as OPA or Cedar. Other cross-vendor specifications are drafts at version 0.1, and none matches how major coding agents expose hooks today.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "limits",
+   "label": "What this does not claim",
+   "words": 108,
+   "line": "A documentation map and one test, not a measurement",
+   "para": "The map was read from documentation on 14 October 2026, partly by research agents, with quotes re-checked and unknowns unverified. Products change release by release. The single test shows a hook enforcing a rule and its limit, and failure modes are described rather than demonstrated.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "sources",
+   "label": "Where this comes from",
+   "words": 94,
+   "line": "Sources: vendor hook docs, advisories and research",
+   "para": "From my voice memo of 14 October 2026, researched the same day by four agents with quotes re-checked. Primary sources include the Claude Code, Codex, Gemini CLI, Copilot and Cursor hook documentation, Check Point's Caught in the Hook, arXiv 2609.03884, Trail of Bits, cc-safety-net and OWASP's Agent Control Standard.",
+   "by": "newsroom.ux"
+  }
+ ]
+}

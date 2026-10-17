@@ -1,0 +1,36 @@
+{
+  "slug": "chat-on-a-static-site",
+  "by": "newsroom.ux",
+  "sections": {
+    "top": {
+      "line": "The directory's chat box answers with no key",
+      "para": "With nineteen sibling sites too many to browse, the network directory now answers which site is yours, with no key, account or network call. Because sgit.ai has no server, the options are a local matcher, a key in the browser, or a vault app, and only one is free.",
+      "hash": "6ab51d71c03d"
+    },
+    "s0": {
+      "line": "A static site has nowhere to keep a key",
+      "para": "sgit.ai and every *.sgit.ai sibling are static sites on GitHub Pages, with no server, session or place for a secret. The usual chat box calls a model from a backend holding the API key, and there is no backend here. That leaves only three real options.",
+      "hash": "07de3535c3b0"
+    },
+    "s1": {
+      "line": "Matching is free, own keys cost, the bridge waits",
+      "para": "Tier 0, the default, scores queries in the browser against the nineteen-site catalogue and shows which words matched. Tier 1 lets readers paste an OpenRouter key, stored in localStorage, falling back to Tier 0 on failure. Tier 2, unbuilt, serves the directory as a vault app whose host holds the key, though it does not yet prevent all egress.",
+      "hash": "9e1fc83e7716"
+    },
+    "s2": {
+      "line": "The catalogue, matcher and key client are done",
+      "para": "The generated catalogue, the dependency-free matcher and the OpenRouter client are done. A vault build of the directory and sg.llm bridge detection are not started. A site-wide pane with tools exists as of 7 September but is one site's copy. A shared panel across all nineteen sites is what would make the network navigable.",
+      "hash": "07149b4c9bc8"
+    },
+    "s3": {
+      "line": "Ten days later, every page gained a tool-using pane",
+      "para": "An Ask this site pane now sits on every page, giving the model seven tools such as search_site, read_page and get_board, run in the page over a build-emitted index, with every call shown. Without a key the same tools run from typed commands. Tier 2 remains unwired, now board item T11.",
+      "hash": "7b00a06e5d39"
+    },
+    "s4": {
+      "line": "It routes to sites; it does not teach subjects",
+      "para": "Asked how to threat-model a payment gateway, it points to a site rather than answering, because a drifting summary is worse than a link. It knows only the catalogue: nineteen theses, summaries and categories, quoted from each site's own words. Written by Dinis Cruz and his agentic team, licensed CC BY 4.0.",
+      "hash": "56d097601ccc"
+    }
+  }
+}

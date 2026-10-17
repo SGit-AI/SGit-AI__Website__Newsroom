@@ -1,0 +1,61 @@
+{
+ "slug": "sgit-is-a-standard",
+ "by": "newsroom.ux",
+ "sections": {
+  "top": {
+   "line": "Like git, sgit is a standard, not a server",
+   "para": "Git won because it is a standard any tool can read, and sgit is the same: encrypted blobs, trees, commits and one ref per branch, named by the SHA-256 of their ciphertext. Reading is four plain GETs from any host; writing adds one compare-and-swap. Deploying sgit is choosing where the objects live.",
+   "hash": "c3565e7cc899"
+  },
+  "in-short": {
+   "line": "A file is four GETs from its key",
+   "para": "Git won as a standard, and sgit is one too: encrypted objects laid out by convention, with every name derived from the key, so a file is four GETs. Names marked -imm- are cacheable for ever and -muw- marks the ref. Any storage serves reads, the server only protects writes, and the constraint shaped the design.",
+   "hash": "7cbaf28cee5a"
+  },
+  "git": {
+   "line": "sgit copies git's object model and moves the trust",
+   "para": "Git is a format, not GitHub: hash-named blobs, trees, commits and refs that any tool can read, which is why history outlived centralised systems. sgit copies git's object model on purpose and changes only where trust sits: everything is encrypted on the client, and reading needs nobody's help.",
+   "hash": "f10b39cf2acc"
+  },
+  "vault": {
+   "line": "Object names say what can be cached for ever",
+   "para": "A vault holds encrypted blobs, trees, commits and one ref per branch; immutable objects are named obj-cas-imm- plus the SHA-256 of their ciphertext, so anything can cache them unread, while refs are ref-pid-muw-. sgit.ai's docs load 18 objects cold, then one 69-byte ref. sgit stores whole objects, not deltas.",
+   "hash": "dd7248dc1358"
+  },
+  "one-hash": {
+   "line": "Every name derives from the key; nothing is discovered",
+   "para": "The vault key gives the vault id and, one way, a publishable read key; an HMAC of the read key gives the ref's name. Ref, commit, trees and blob make four kinds of GET. Writing is batched PUTs and one compare-and-swap, and two independent implementations, the CLI and browser app, verify each other.",
+   "hash": "bd9ccd0dbf6d"
+  },
+  "storage": {
+   "line": "Speed depends on how close the storage is",
+   "para": "Any host answering a GET serves the read half: S3, a CDN, GitHub Pages, a folder. The API protects writes with a token and compare-and-swap. Reads took 317 milliseconds via the API against 44 from GitHub Pages, and a one-folder clone took 13 seconds hosted against 0.8 locally.",
+   "hash": "9fde20275dbe"
+  },
+  "cache": {
+   "line": "Readers compute where the cache object lives",
+   "para": "sgit cache add declares a path, and every push writes an encrypted cache object at a location derived from the read key and path. A reader makes one batch request, checks the commit against the ref and skips the tree walk. A miss falls back to the walk, so a lost cache costs speed, not correctness.",
+   "hash": "0b2a71719ff3"
+  },
+  "client": {
+   "line": "Merges stay on the client, where the context is",
+   "para": "Unlike Scion, sgit keeps history and merges on the client, because a merge needs the change's context and the policy on who may merge. Hive workers write their own branches and the host merges under the mandate. A full clone is still one verifiable command, but folder scopes, depth, sparse clones and caching make it optional.",
+   "hash": "602c9dd9ba84"
+  },
+  "constraint": {
+   "line": "A server that cannot read forced small designs",
+   "para": "Minimalism was not the plan. Because the server cannot read a byte, there could be no server-side index, render, merge or derived data. Every feature had to be objects a writer produces and a reader derives, which kept the designs small enough to be a standard, as The value of constraints argued.",
+   "hash": "6c89ed97e67b"
+  },
+  "limits": {
+   "line": "A documented format, not a formal standard yet",
+   "para": "There is no standards body, only a documented format with two implementations. The largest vault in daily use is about 35,000 objects and ten agents, far from Scion's scale. Blame and bisect are missing, long partial clones walk commits one by one, and the hosted CDN does not cache object reads yet.",
+   "hash": "ff2e6b32c72d"
+  },
+  "sources": {
+   "line": "Sources: the sgit CLI code, case studies and Scion",
+   "para": "From my voice memo of 16 October 2026, written by the site's agent from a draft by the sgit CLI team. The derivation and cache layer were checked in the SGit-AI__CLI code and changelog; loading numbers come from sgit.ai's live-vault case study, hive timings from ruv.sgit.ai's ledger, and the Scion quote from Anthropic's post.",
+   "hash": "15550f0bd0df"
+  }
+ }
+}

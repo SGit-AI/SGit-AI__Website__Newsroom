@@ -1,0 +1,81 @@
+{
+  "slug": "no-server-by-design",
+  "by": "newsroom.ux",
+  "sections": {
+    "top": {
+      "line": "After the database, I am retiring the back end",
+      "para": "My rule was no database: the file system is the database, via LETS. The newsroom makes the second step explicit: personas, a reading meter, payments and browser databases, with no application logic on any server of mine and only commodity services left. It scales, shipped 114 releases between 1 and 11 October, and supports sovereignty and privacy.",
+      "hash": "4d63d69cec97"
+    },
+    "s0": {
+      "line": "No servers of mine with logic; only rented commodities",
+      "para": "Step one retired the database through LETS; step two moves the application into the browser. A vault server that cannot read anything forced the design, and the accepted security gaps only change numbers the cheater sees. Complexity does not scale with readers, and 114 releases shipped in eleven days.",
+      "hash": "f4f057d00836"
+    },
+    "files": {
+      "line": "The file system is the database; engines just read",
+      "para": "LETS, a May 2025 paper, treats every stage as reading and writing files, keeping each intermediate state, with git giving history. MyFeeds.ai, The Cyber Boardroom, Memory-FS and Issues-FS run on it. In September the newsroom ran SQLite and a SPARQL store in WebAssembly over its JSON files.",
+      "hash": "85a70b73eb9b"
+    },
+    "backend": {
+      "line": "Encryption came first, so logic moved to the browser",
+      "para": "Vaults are encrypted in the client and the server stores ciphertext in S3, never seeing a key. So any feature that reads the reader's data must run in the browser, where the key is. A constraint did the design work, and the question became why anything would need a server.",
+      "hash": "397390732abb"
+    },
+    "newsroom": {
+      "line": "Every newsroom feature runs in browsers or as files",
+      "para": "The newsroom publishes for several audiences with markdown twins, personas, SG Meter, pay after you read, a £5 Stripe link live since 11 October, encrypted sending to a write-only lane, versions and in-browser SQL and SPARQL. No account database, session store or API server exists; payments and sign-in are rented.",
+      "hash": "a4cb1809f1ba"
+    },
+    "commodity": {
+      "line": "There are servers, but none of mine hold logic",
+      "para": "GitHub Pages, the vault server, a payment provider, a future sign-in provider, DNS and GitHub Actions are all products used as they come. The vault server is the closest to custom and is still a generic store. In Wardley terms, a back end is a custom blob where commodities already exist.",
+      "hash": "47d10f8dfd13"
+    },
+    "scale": {
+      "line": "Readers add bandwidth, not complexity or moving parts",
+      "para": "A back end's cost and complexity grow with users. Here a hundred thousand readers mean a hundred thousand browsers doing their own work against cached static files and ciphertext, so only bandwidth grows. Browsers now run WebAssembly databases, Python, cryptography, gigabytes of storage and increasingly models.",
+      "hash": "00c02d23dc5e"
+    },
+    "security": {
+      "line": "The accepted gaps do not match this site's threat",
+      "para": "A reader can edit their balance, restart in a private window, credit themselves through the unprotected top-up page or wipe a negative balance. Closing these needs accounts and a server to protect a number that unlocks nothing. Synthetic readers found no security problem, only confusing wording, which is being fixed.",
+      "hash": "50a0eaa194ed"
+    },
+    "openness": {
+      "line": "Open source means no moat forcing me to stay",
+      "para": "Because everything I build is open source, no part of the stack needs protecting from replacement, and I am usually the first to replace it. If a browser and a vault do Memory-FS's job, the application stops using it. Open source removes the bad reason to keep something: that I built it.",
+      "hash": "37224d5a63e5"
+    },
+    "speed": {
+      "line": "Releases are files, so features ship in an afternoon",
+      "para": "Between 1 and 11 October the site shipped 114 releases, up to 19 a day, and the reading meter became a pay-on-demand design in seven releases over three hours and forty minutes. No migrations or back-end deploys exist. The cost: 51 of 527 figures were lost in the domain move, caught by synthetic readers.",
+      "hash": "8f9d3ef062cc"
+    },
+    "principles": {
+      "line": "The pattern delivers sovereignty, privacy, explainability and determinism",
+      "para": "The reader holds the data and keys, the server cannot read what it stores, the whole application is readable files with version history, and the same files give the same result. It echoes the 2019 local-first software argument, with vaults adding shared storage the operator cannot read across devices.",
+      "hash": "eea476a38a12"
+    },
+    "push": {
+      "line": "Only secrets kept from the reader truly need servers",
+      "para": "Payment proof, identity, cross-device personas, reader messages, models, search and rate limits each have a commodity or design answer: signed receipts, client-side OAuth, vaults, append lanes, client models, static indexes. The real limit is anything the reader must not hold, which needs a signed artefact or small commodity function.",
+      "hash": "041fdc849777"
+    },
+    "limits": {
+      "line": "Servers are not bad; the gaps are not free",
+      "para": "Applications needing shared, live, authoritative state, like trading systems, games or bank ledgers, still need servers. The gaps are accepted only because of this site's readers and what the meter protects. Sign-in, cross-device personas, a client model and signed receipts are not yet done.",
+      "hash": "05b144e8a763"
+    },
+    "next": {
+      "line": "Next: client models, roaming personas, receipts, a template",
+      "para": "Next come a model in the client using the reader's own key, personas following readers to every device and agent through a vault, signed payment receipts, and the architecture packaged as a template for other publications. First the database went, now the back end, and the stopping point is unknown.",
+      "hash": "15218597843e"
+    },
+    "sources": {
+      "line": "Sources: my memos, LETS, newsroom pages, local-first paper",
+      "para": "Built from two memos of mine; a separate session drafted it and this site's agent corrected the payment link and sign-in status. Release counts come from the git log as of 11 October 2026. Sources include the LETS paper, Issues-FS, SG Meter's security model, related site articles and Ink & Switch's 2019 local-first paper.",
+      "hash": "222cd81f2ff4"
+    }
+  }
+}

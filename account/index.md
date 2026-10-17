@@ -12,7 +12,7 @@ SGit Newsroom · reading account
 
 # Your reading account
 
-Every page here has a price of a few pence, and you pay for the share of it you read: scroll a tenth of the way down and you pay a tenth. You started with £5.00 of credit. If a page was not worth it, say so at its foot and it is not charged. What you read is also what builds your graph below, and your [newsroom](newsroom.md): a front page for each of your [personas](personas.md).
+Every page here has a price of a few pence, and you pay for the share of it you read, measured section by section in this browser: read a tenth of it and you pay a tenth, and a page you only scroll through costs the minimum, a tenth of its price. You can pause the measuring, or reset a page, from the chip at the foot of every article. You started with £5.00 of credit. If a page was not worth it, say so at its foot and it is not charged. What you read is also what builds your graph below, and your [newsroom](newsroom.md): a front page for each of your [personas](personas.md).
 
 **Where your data is kept.** Your balance, history and receipts are kept in this browser’s storage, and your reading is not sent anywhere unless you choose to send it. There is no account. This is a client-side application: the pages are static files, with no server of ours behind them for now, and if encrypted vaults are added this page will say so. [Why it is built this way](../articles/no-server-by-design.md).
 

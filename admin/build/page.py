@@ -21,8 +21,9 @@ def esc(s):
     return _html.escape(s, quote=True)
 
 
-# SG Meter, the reading meter, at a versioned path that never changes. v1.4.1 is this site's own build (see sync_newsroom.py, item 11).
-METER_JS = "assets/components/sg-meter/v1/v1.4/v1.4.1/sg-meter.js"
+# SG Meter, the reading meter, at a versioned path that never changes. v1.5.0 is this site's own build (see sync_newsroom.py, item 11):
+# it charges by the share read (card 080).
+METER_JS = "assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js"
 
 
 def meter_config():

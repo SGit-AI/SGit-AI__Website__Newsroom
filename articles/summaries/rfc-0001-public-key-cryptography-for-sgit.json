@@ -1,0 +1,102 @@
+{
+ "slug": "rfc-0001-public-key-cryptography-for-sgit",
+ "what": "The sections of this article, each with a line and a paragraph, for showing what the reader has already read. Built by admin/build/summaries.py from admin/content/articles/summaries/.",
+ "sections": [
+  {
+   "id": "top",
+   "label": "The opening",
+   "words": 390,
+   "line": "Read-key holders who can write can forge vault history",
+   "para": "RFC 0001, open for comment and unimplemented, starts from a gap: one symmetric read key plus a server-checked write key lets a host or mirror author history clients accept. It proposes native PKI vault mode with two key pairs, and sealed files readable only by named people, plus fourteen questions for reviewers. From a 9 October 2026 design session.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s0",
+   "label": "In short",
+   "words": 254,
+   "line": "Two key pairs close the gap; one pair cannot",
+   "para": "Making the read key public and the write key private fails, because whatever decrypts must stay secret. Native PKI mode uses separate read and write pairs so readers cannot write and hosts cannot forge, while sealed files add per-person encryption to any vault. Both start with a writer signature; withholding, replay and visible metadata remain as limits.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s1",
+   "label": "How sgit protects a vault today",
+   "words": 126,
+   "line": "Today one passphrase derives both read and write keys",
+   "para": "A vault key is passphrase plus vault id, and PBKDF2-SHA256 with 600,000 iterations derives two keys from it. The read key encrypts everything with AES-256-GCM, with objects named by ciphertext hash so clients can check them. The write key is only a password the server compares, and commits are signed with ECDSA P-256 per clone.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s2",
+   "label": "The honest problem",
+   "words": 171,
+   "line": "Anyone who can decrypt can also forge accepted objects",
+   "para": "The symmetric read key lets its holder create objects, branch pointers and signing-key files that clients accept, so commit signatures do not help. Only the server's write-key check stops forgery, which fails against the host, a compromised host or a static mirror. Public read shares hold read keys. sgit's threat model lists it, with a test proving the attack.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s3",
+   "label": "The obvious idea, and the correction",
+   "words": 139,
+   "line": "One key pair gives authorship, never secrecy as well",
+   "para": "A key pair's directions are fixed: encrypt with the public key for confidentiality, sign with the private key for authorship. The private half always yields the public half, and decrypting with a public key is really signing. So one pair proves who wrote something but cannot keep it secret; a second pair for reading delivers every property.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s4",
+   "label": "The first step both designs share: a writer signature",
+   "words": 171,
+   "line": "A writer signature closes today's forgery gap first",
+   "para": "Both designs begin with an Ed25519 vault signing key, derived from the passphrase on a third path, that signs branch pointers and the index; content addressing means signing the roots authenticates the whole tree. The hard part is downgrade resistance, solved by a new key version. The estimate is one and a half to two weeks for the command line.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s5",
+   "label": "Design 1: native PKI vault mode",
+   "words": 763,
+   "line": "Native PKI mode separates reading and writing completely",
+   "para": "An X25519 read pair and an Ed25519 write pair come from an owner seed; a random data key sealed to the read public key with HPKE keeps today's deterministic object format. Readers cannot write, hosts cannot forge, and write-only depositors append to inbox branches. The vault id is a hash of the write public key.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s6",
+   "label": "Design 2: sealed files",
+   "words": 1734,
+   "line": "Sealed files let only named people read chosen files",
+   "para": "An inner age v1 envelope seals a file key to recipients' public keys, set by a committed policy file; private keys can sit in a file, ssh key, hardware or a remote approving service. A survey of thirty services on 9 October 2026 found they share RSA-OAEP-256, not X25519, so both recipient types are needed.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s7",
+   "label": "How the pieces fit",
+   "words": 83,
+   "line": "Each piece solves a different part of the problem",
+   "para": "The writer signature closes the forgery gap with a small format change, and native PKI mode closes it as a second vault mode with write-only depositors and no bearer write key. Sealed files do not address forgery; they give content only named people can read, with the private key held anywhere.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s8",
+   "label": "Prior art",
+   "words": 86,
+   "line": "The designs borrow deliberately from well-known prior systems",
+   "para": "Nothing proposed is new. Tahoe-LAFS separates read and write capabilities for mutable files; Hypercore and Dat use a key pair as feed identity; git-crypt and SOPS seal files in git repositories; age plugins put decryption where the key lives; HPKE is RFC 9180. The aim is to fit these shapes into an encrypted, versioned vault.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "questions",
+   "label": "Questions for reviewers",
+   "words": 454,
+   "line": "Fourteen questions where outside review would change the design",
+   "para": "Reviewers are asked about the two-pair construction, sealing a data key versus per-object encryption, deriving the vault id, append-only depositors, freshness and capability strings. For sealed files the questions cover age versus custom HPKE, plaintext working copies, sealed-path integrity, the first remote provider and visible metadata, then two modes side by side, post-quantum timing and threat model gaps.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s10",
+   "label": "How to comment",
+   "words": 126,
+   "line": "Comment through a titled sgit issue or by email",
+   "para": "Open an issue on the sgit repository titled \"RFC 0001:\" with the question number, or write to agent@riskmandate.ai. Comments will be summarised on the page with resulting design changes. The design came from the sgit CLI agent for Dinis Cruz on 9 October 2026; nothing is implemented and effort figures are estimates.",
+   "by": "newsroom.ux"
+  }
+ ]
+}

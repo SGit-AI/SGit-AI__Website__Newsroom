@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-17 | published | 2,621 | first published | this release | [current](../the-vault-opened.md) |
+| **v1.0.0** | 2026-10-17 | published | 2,621 | first published | [`06c98e4bb`](https://github.com/SGit-AI/SGit-AI__Website/commit/06c98e4bb582106d16bd2b47e8cd8971aea94363) | [current](../the-vault-opened.md) |
 
 [← Back to the article](../the-vault-opened.md) · [All articles](../index.md)
 

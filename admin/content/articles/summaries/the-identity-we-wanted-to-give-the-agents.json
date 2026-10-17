@@ -1,0 +1,71 @@
+{
+  "slug": "the-identity-we-wanted-to-give-the-agents",
+  "by": "newsroom.ux",
+  "sections": {
+    "top": {
+      "line": "Google's terms blocked agent seats, so a keyring emerged",
+      "para": "The plan was a Google Workspace account for every agent and user, encrypted by sgit and unlocked by a passkey. Google's terms forbid reselling accounts and accounts for business functions, so the design shifted to a browser-only, passkey-unlocked keyring no administrator can read. No product yet handles login, regulator-grade encryption and agent identity together.",
+      "hash": "eca3c2e3665b"
+    },
+    "s0": {
+      "line": "Terms ruled out shared tenants; the keyring design survived",
+      "para": "Google's terms forbid reselling the Services and accounts assigned to business functions, so one tenant for many organisations is out and an agent is not a seat. The pack's section 2.6 citation came from a legacy agreement. The surviving shape: one cloud project, a login product, ciphertext buckets and a passkey PRF keyring.",
+      "hash": "34cdeb605417"
+    },
+    "s1": {
+      "line": "Give customers' agents Workspace accounts, as mine have",
+      "para": "My agents each have a Workspace mailbox, a Claude seat and a GitHub account at about seven pounds a month, and the account is the blast radius. The plan extended this to RiskMandate's customers, encrypting with sgit before Google and deriving keys from passkeys. Standard Workspace has no admin-proof zone, so encryption had to happen in sgit.",
+      "hash": "1397da901db7"
+    },
+    "s2": {
+      "line": "Google's terms forbid resale and accounts for business functions",
+      "para": "Section 3.3 of the Google Cloud terms, modified 2 September 2026, bars selling or reselling the Services without a signed reseller contract. The acceptable use policy forbids reselling End User Accounts inside a commercial product and accounts assigned to business functions. The pack's section 2.6 citation came from the legacy free agreement and is corrected here.",
+      "hash": "681c487a905e"
+    },
+    "s3": {
+      "line": "Identity Platform plus a bucket wins the shared tier",
+      "para": "Five options were weighed: a shared Workspace tenant needing a Google agreement, Identity Platform with a bucket free to fifty thousand monthly users, the customer's own Workspace with a Marketplace app, a private tier in the customer's cloud, and AWS Cognito with S3. Identity Platform won the MVP; the request to Google is drafted.",
+      "hash": "06d34bdb74eb"
+    },
+    "s4": {
+      "line": "Any identity provider's administrator can become any user",
+      "para": "Cognito can set passwords, Firebase can mint custom tokens, and key services decrypt for anyone with permission, so a secret held in the login is reachable by its administrator. Login decides which paths you may touch; the passkey decides whether the bytes mean anything. The remaining exposure is the code, so hosting, dependencies and passkey scope are locked down.",
+      "hash": "add48950f7ae"
+    },
+    "s5": {
+      "line": "A passkey-unlocked browser keyring that admins cannot read",
+      "para": "Each user has one encrypted file, keyed from the passkey's PRF output, holding a key pair and secrets such as passwords and vault keys, with a 128-bit recovery code. Sharing uses RSA-OAEP 4096 and ECDSA P-256, as sgit pki does. A password manager comes first, tested by asking a project owner to extract one plaintext field.",
+      "hash": "108a02e7f57a"
+    },
+    "s6": {
+      "line": "Agents get service identities and keyring entries, not seats",
+      "para": "Because the terms name function accounts, an agent gets no seat or mailbox on the shared tier. Agent identities from Microsoft, Okta, Google Cloud and Anthropic prove which agent called, not whose key it may use. Here an agent has a service identity, a signed mail lane, and scoped, time-limited keys that a person releases.",
+      "hash": "498a4eac9a5b"
+    },
+    "s7": {
+      "line": "Nothing on the market does login, encryption and agents",
+      "para": "Login is solved by products such as Cognito, Auth0 and Clerk, but none keeps data from its own administrator. Zero-knowledge per-user storage exists only in pieces, with Userbase and Etebase the nearest, and agent identity answers which agent, not whose key. GDPR Articles 32 and 34 describe the property; the market does not sell it.",
+      "hash": "139578b2645b"
+    },
+    "s8": {
+      "line": "Existing pieces run, but none of the MVP exists",
+      "para": "Running today: the agents' own Workspace, Claude and GitHub identities, sgit's client-side encryption and pki, the Agent Contact lane, the partnership call and the five design documents. Not yet built: anything in the MVP's nine releases, a Google agreement for a shared tier, a customer agent with a mailbox, or any product doing all three jobs.",
+      "hash": "3772527f2e41"
+    },
+    "s9": {
+      "line": "A ChatGPT infographic was checked and found accurate",
+      "para": "Dinis gave the published text to ChatGPT for an infographic, which was checked against the article: the seat price, clauses, options, rule, keyring and three-jobs gap all match. The final panel's closing line, though credited to the article, is the other model's condensation of its ending rather than a quotation.",
+      "hash": "433442f4b48e"
+    },
+    "s10": {
+      "line": "Links: the related articles this design builds on",
+      "para": "Links to the 24 September partnership call Who holds the keys?, the identity and secrets design pack, Six agents, one inbox, the Credentials, sgit pki and Agent Contact pages, Footprint and blast radius, The ultimate insider, and the risk mapping of sgit against GDPR articles.",
+      "hash": "2164d79d3eb5"
+    },
+    "s11": {
+      "line": "Sources: the terms, specifications and vendor pages cited",
+      "para": "Sources include Google Cloud's terms, acceptable use policy and Reseller API pages, AWS Cognito and KMS documentation, the W3C WebAuthn Level 3 Recommendation, Bitwarden, Microsoft, Okta, Google Cloud and Anthropic agent pages, GDPR Articles 32 and 34 and EDPB guidance. Drafted by agent@riskmandate.ai from Dinis Cruz's voice memo; not legal advice.",
+      "hash": "67e396f4a855"
+    }
+  }
+}

@@ -133,7 +133,7 @@
     // the same module instance the balance chip runs on: the URL must match the meter's own import, so it is
     // resolved against the page, not this script (a dynamic import in a classic script resolves relative to the script)
     if (!document.getElementById('sg-meter-config')) return
-    var path = new URL('assets/components/sg-meter/v1/v1.4/v1.4.1/sg-meter-core.js', document.baseURI).href
+    var path = new URL('assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter-core.js', document.baseURI).href
     import(path).then(function (m) {
       if (pid === 'newsroom') m.meter.setActive('me'); else m.meter.visit(pid)
       fill()

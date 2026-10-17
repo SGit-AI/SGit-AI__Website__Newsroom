@@ -1,0 +1,94 @@
+{
+ "slug": "a-policy-for-every-skill",
+ "what": "The sections of this article, each with a line and a paragraph, for showing what the reader has already read. Built by admin/build/summaries.py from admin/content/articles/summaries/.",
+ "sections": [
+  {
+   "id": "top",
+   "label": "The opening",
+   "words": 268,
+   "line": "Check every contributed agent skill against a policy",
+   "para": "Sean Turner built a natural-language control policy and CI pipeline that checks each skill contributed to an organisation-wide repository, reading it in context, beside a security scan. It is a behaviour policy for a skill. Natural language alone is hope-based, so agents should write deterministic rules from it, keeping the description canonical.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "in-short",
+   "label": "In short",
+   "words": 187,
+   "line": "Skills are dependencies and need context-aware behaviour policies",
+   "para": "A skill runs with a developer's reach and is pulled by hundreds. Sean's pipeline checks safety, security, documentation, usability and clarity, treating web input as data. Mandate, reach and gap describe a skill, deterministic rules come from the description, and a common ontology makes a catalogue queryable as a graph.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "built",
+   "label": "What Sean built",
+   "words": 335,
+   "line": "Sean's pipeline judges each skill against what it touches",
+   "para": "In an organisation where anyone contributes skills that hundreds pull down, a CI pipeline checks each against a plain-language policy. A LinkedIn skill working from internal documents has little injection risk; a web-fetching skill must treat input as untrusted data. It complements a scanner and is described from conversation, unseen and unpublished.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "dependency",
+   "label": "Skills are the new dependency",
+   "words": 209,
+   "line": "Skills are code nobody compiles, with a developer's reach",
+   "para": "A loaded skill's instructions act with access to repositories, mail and cloud credentials. Chainguard's hardened skills make inputs trustworthy but do not limit behaviour. MongoDB's review guide scores clarity and token efficiency but not input provenance, and admits no tool reasons across skill boundaries.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "abp",
+   "label": "It is a behaviour policy for a skill",
+   "words": 263,
+   "line": "Mandate, reach and gap describe a skill's risk",
+   "para": "The LinkedIn skill's gap is posting other than the reviewed draft, with a person pressing publish as barrier. The web research skill's gap is obeying instructions inside a page, so fetched text must be data. Untrusted input is one leg of Simon Willison's lethal trifecta, with private data and external communication.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "hope",
+   "label": "Hope-based security, and why it is still worth writing",
+   "words": 132,
+   "line": "A natural-language control is hope, but still essential",
+   "para": "A rule a model is trusted to follow is hope-based security; Hope or enforcement found 97% of one agent's rules rested on the model. Yet the written control is the only place intent exists, what reviewers read and what deterministic rules derive from. Without it there is nothing to enforce.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "codify",
+   "label": "Use models to need them less",
+   "words": 285,
+   "line": "Models should write deterministic rules from the written control",
+   "para": "An agent reads the control once and writes code that runs every time at no model cost, such as checks for web input routing or a human step before posting. The description stays canonical and code is regenerated when it changes, as in the Open Policy Agent round trip and AWS's plain-English Cedar policies.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "graph",
+   "label": "A catalogue is a graph",
+   "words": 143,
+   "line": "A common ontology turns a skill catalogue into queries",
+   "para": "Describing hundreds of skills by the same columns, mandate, reach, input trust and barriers, makes cross-catalogue questions into queries, such as which skills read untrusted content, reach private data and can send it out, or which changed reach since approval. A graph is how tools could reason across skill boundaries.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "licence",
+   "label": "From policy to licence to insurance",
+   "words": 113,
+   "line": "A checked skill policy is insurability's first link",
+   "para": "RiskMandate's line runs from a policy, to a revocable licence to operate, to an insurable agent with a record. It makes agents insurable but does not insure them, and the licence and insurability index are designs. A skill policy checked at contribution and enforced at runtime is the smallest version.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "limits",
+   "label": "What this does not claim",
+   "words": 133,
+   "line": "The tool is described from conversation, not seen",
+   "para": "Sean's code is unseen and unpublished, and the two figure skills are illustrations. Generated rules can check the wrong thing and need tests and review. Treat it as data stays an expectation until enforced outside the skill, and the licence and insurability are designs.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "sources",
+   "label": "Where this comes from",
+   "words": 87,
+   "line": "Sources: a conversation with Sean Turner and three guides",
+   "para": "A conversation with Sean Turner on 14 October 2026, recorded as a voice memo; Sean read the article and agreed to be named. MongoDB's How to Review an Agent Skill, AWS's Policy in Amazon Bedrock AgentCore and Simon Willison's lethal trifecta post of 16 June 2025.",
+   "by": "newsroom.ux"
+  }
+ ]
+}

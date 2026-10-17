@@ -1,0 +1,91 @@
+{
+  "slug": "the-agent-team-as-it-runs",
+  "by": "newsroom.ux",
+  "sections": {
+    "top": {
+      "line": "Twelve agents run on vaults and files, never sending",
+      "para": "The running agentic inbox: twelve Claude agents on dedicated accounts, each with one focus and a behaviour policy, encrypted vaults driven by sgit as the only memory, messages as files, a CRM of one folder per person, and a conductor four times a day. It names the security and privacy properties and maps each piece to an earlier idea.",
+      "hash": "054a5a2f705a"
+    },
+    "s0": {
+      "line": "Twelve focused agents share one rule: none sends",
+      "para": "Every agent is a Claude session on a dedicated account with a brief and a policy, and eleven of twelve policies forbid sending. Memory is encrypted vaults; agents talk through files in mailroom folders; the CRM is one folder per person. A conductor runs four times a day with security first and last.",
+      "hash": "52786bda65d3"
+    },
+    "s1": {
+      "line": "On 6 October, agents had sent 0 emails alone",
+      "para": "The person talks to the agents from a phone, and the agents work in their own cloud sessions, keep files in encrypted vaults and leave email as drafts the person sends. On 6 October 2026: 12 agents, 4 runs a day on weekdays, 71 people in the CRM, and 0 emails an agent sent on its own.",
+      "hash": "47b37b61c9da"
+    },
+    "s2": {
+      "line": "Separate accounts keep any mistake inside one account",
+      "para": "The agents use a dedicated Google Workspace mailbox, a dedicated Claude Team account, encrypted SG/Send vaults with keys handed out of band, and a separate personal agent for private life. This is the first control because it depends on nobody behaving: a policy asks an agent not to look, an account boundary leaves nothing to see.",
+      "hash": "23806021d079"
+    },
+    "s3": {
+      "line": "Each role has one focus and a checkable policy",
+      "para": "Twelve lowercase roles, from @inbox and @drafts to @security, @conductor and @newsroom, each have a brief and an Agent Behaviour Policy listing what they cannot do. Splitting roles keeps each policy short enough to check. Every account has the same reach to the mailbox: one reads it, one drafts into it, none sends.",
+      "hash": "c3c661e7f351"
+    },
+    "s4": {
+      "line": "Agents talk by dropping email files into mailroom folders",
+      "para": "Under the Email-FS lite convention, messages are .eml files in a recipient's mailroom, moved to inbox and filed as done; nothing calls anything. The conductor runs security, then each agent for up to twelve minutes, then security. Each session pulls, works, runs a leak check, commits, and ends with a card read against the policy.",
+      "hash": "89ea986265a5"
+    },
+    "s5": {
+      "line": "The CRM is append-only files with provenance and hashes",
+      "para": "Each person gets a folder of plain JSON and Markdown: a record, an append-only ledger, every message word for word with provenance and a hash, meeting notes, a graph and a generated README. Inbound messages are data, never instructions. A \"what we know about you\" pack lets the person correct what is held.",
+      "hash": "fd06c554d184"
+    },
+    "s6": {
+      "line": "Four fixed rules: no keys in files, no sending",
+      "para": "Keys never go into any file, message or draft; no agent sends, except @security's one hold email to one address; no agent changes scheduled tasks from a step; anyone may create, only the creator edits. That last rule replaced \"only one agent may draft\", which became a bottleneck in two days.",
+      "hash": "066522398021"
+    },
+    "s7": {
+      "line": "Most of the team's barriers are weak policy text",
+      "para": "The team grades barriers: identity and encryption strong, grant and record medium, policy weak, which many rows including \"no agent sends\" rely on. In RiskMandate's terms only identity and encryption are boundaries. The policies caught a mid-session Zapier connector, calendar invites without drafts, and a refused workaround with 9,000-app reach.",
+      "hash": "1b49cf41c34e"
+    },
+    "s8": {
+      "line": "Host blindness is mathematical; no-send is still a prompt",
+      "para": "Properties include: the host cannot read memory (AES-256-GCM, HKDF-SHA256 keys), read keys cannot write, append lanes are write-only, keys never touch files, rotation means a new vault, and a hold file stops the team. Limits remain: unsigned commit authorship, no key revocation, and the inter-vault lane not wired end to end.",
+      "hash": "704810591a8f"
+    },
+    "s9": {
+      "line": "Vaults hold public and private-ish data, never personal",
+      "para": "Information comes in three classes: public, private-ish working records kept in the CRM with provenance, and personal matters such as health or finances, which are not captured and go to the separate personal agent. Because policies are per agent and memory per person, rules can be scoped per customer and written to protect the recipient.",
+      "hash": "11b7bef52cb3"
+    },
+    "s10": {
+      "line": "Files, fractal graphs and state-machine steps explain the shape",
+      "para": "Every piece of state is a file that can be encrypted, versioned, hashed and read without tools, which made each interface an afternoon's work. The CRM's graph.json is a fractal semantic graph, auditable by its subject. Each role behaves as a state machine: read state, do one job, write state, stop.",
+      "hash": "298e1a5c058b"
+    },
+    "s11": {
+      "line": "Start with one account, one agent, one written policy",
+      "para": "In the first week create a separate Workspace mailbox, Claude account and vault, and never connect your own inbox. Write an inbox agent's policy before connecting anything, keep a folder per person for your first twenty people, and add voice debriefs. Split roles next, then a security role, and the schedule last.",
+      "hash": "439a2d21bb0b"
+    },
+    "s12": {
+      "line": "Five gaps remain; \"no agent sends\" is a promise",
+      "para": "Two email registers disagree, so dashboards under-count. Messaging between vaults still needs a person to paste text. @dev holds most open work. There is no daily brief channel, after WhatsApp suspended the account and Discord failed twice. Most barriers are policy-only, since send tools cannot be removed per agent.",
+      "hash": "a5f6336a60b9"
+    },
+    "s13": {
+      "line": "Who gives the mandate over information remains unanswered",
+      "para": "Something sent to a person was not sent to a team of agents or whatever they pass it to. Holding less and saying what is held is not an answer to who gives the mandate over information. That question gets its own document, but the mechanisms to enforce any answer are already running.",
+      "hash": "92f988c78d23"
+    },
+    "s14": {
+      "line": "Links: the earlier articles each piece builds on",
+      "para": "Related pieces include Replicating the agentic inbox, Six agents, one inbox, Footprint and blast radius, Every risk is already accepted, Introducing fractal semantic graphs, Memory is not a spectator sport, The identity we wanted to give the agents, Vault credentials, append-lane messaging, Agent Contact and Code review graphs in the repository.",
+      "hash": "91cfa5b0312c"
+    },
+    "s15": {
+      "line": "Sources: the team's field notes and sgit docs",
+      "para": "The main source is the team's field notes, How our agent team works, and how to build your own, written by the briefs role on 6 October 2026. Others are RiskMandate.ai's Agent Behaviour Policy and the sgit documentation pages What is sgit, Vault credentials and Limitations. Text is CC BY 4.0.",
+      "hash": "3ddac0a8a4dc"
+    }
+  }
+}

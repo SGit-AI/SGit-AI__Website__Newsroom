@@ -1,0 +1,94 @@
+{
+ "slug": "the-vault-crosses-chrome-profiles",
+ "what": "The sections of this article, each with a line and a paragraph, for showing what the reader has already read. Built by admin/build/summaries.py from admin/content/articles/summaries/.",
+ "sections": [
+  {
+   "id": "top",
+   "label": "The opening",
+   "words": 222,
+   "line": "The reader vault crosses Chrome profiles without new code",
+   "para": "Separate Chrome profiles for separate Google accounts make moving anything between them awkward, and the newsroom's reader vault fixed that with no new code. It arrived by a non-linear path from local storage to vaults and marks. Across profiles was found, not asked for, and is probably more common than across devices.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "in-short",
+   "label": "In short",
+   "words": 242,
+   "line": "Vault state now crosses profiles, found, not built",
+   "para": "The newsroom on one profile now shows what I read, marked and paid for on another. It came from tracking, persisting, vaults, marks, then devices. Profiles are likely the more common case. It is memory between sessions, as sgit gives agents. Passkey storage decides each profile's door, and nothing in the code mentions profiles.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "problem",
+   "label": "The problem: two accounts, two browsers in one",
+   "words": 121,
+   "line": "Separate Chrome profiles make moving anything between them awkward",
+   "para": "Each Google account lives in its own Chrome profile, including the agents' accounts, which must never be mine. A profile is effectively a separate browser with its own history, passwords, extensions and site storage. The usual workaround is copy and paste or emailing yourself, which pollutes the agent's clean mailbox.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "path",
+   "label": "How we got here, which was not a straight line",
+   "words": 326,
+   "line": "The feature emerged along a path, not straight",
+   "para": "On 10 October the meter recorded reading in local storage; the next day four disagreeing devices made it worth keeping. By early 12 October the vault was live using the existing vault library. Marks such as read later and not for me gave a stake in the newsroom, then came devices, then profiles.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "found",
+   "label": "Across profiles, as found",
+   "words": 186,
+   "line": "To the vault, another profile is another device",
+   "para": "In another account's profile the newsroom showed my marks, reading and balance, by the same steps as a second device. A new profile has its own device id and file, and reads every other device's file. Nothing in the code mentions profiles; it works because state is records, each device writes only its own file.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "door",
+   "label": "What each profile needs to get in",
+   "words": 205,
+   "line": "Where the passkey lives decides each profile's way in",
+   "para": "An iCloud Keychain passkey on a Mac gives the same bytes in Safari and Chrome, so both profiles share a door. A Google Password Manager passkey follows its Google account, so another profile needs the phone by QR or the recovery code once. Chrome's own profile store returns no bytes, so the recovery code is the way.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "common",
+   "label": "Profiles are the more common case",
+   "words": 221,
+   "line": "Profile switching is likely commoner than switching devices",
+   "para": "People change computers a few times a day but switch profiles many times, and every site treats each profile as a stranger. No published figures exist from Google or Chromium. Google says profiles keep accounts separate, Chromium gives each its own directory, and Anthropic advises a separate profile for Claude in Chrome.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "memory",
+   "label": "Memory and state between sessions",
+   "words": 226,
+   "line": "It is memory between sessions, through a website",
+   "para": "This gives a person state across browsers and accounts with no server holding it and no sign-in. Agents already share memory through encrypted vaults, Email-FS and Issues-FS; the reader's vault is the same idea with a website as the interface. Today it carries only newsroom state, and only when the reader presses Update.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "discovered",
+   "label": "The best features are found",
+   "words": 144,
+   "line": "The best features are found by using general pieces",
+   "para": "No new development was needed; earlier features were general enough and then used in an unplanned way. That is the I miss it loop again: use it, notice, then decide its purpose. Designing state across profiles directly would probably have been worse. Next: test two real profiles and label them in the pane.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "limits",
+   "label": "What this does not claim",
+   "words": 185,
+   "line": "Profiles are untested, sync is manual, claims are hypotheses",
+   "para": "No test yet covers two real signed-in profiles. Sync happens only when the reader presses the button. Entry depends on the passkey store, from lab runs on a Mac. That profiles are more common than devices is a hypothesis without published figures. Only the newsroom's state crosses today.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "sources",
+   "label": "Where this comes from",
+   "words": 120,
+   "line": "Sources: a voice memo, release history, Google, Chromium, Anthropic",
+   "para": "Written by the site's agent from my voice memo of 13 October 2026. The path comes from newsroom releases v0.11.0 to v0.12.8 and sgit.ai releases of 10 October; doors from The passkey opens the vault. Also Google's help on profiles and passkeys, Chromium's user data directory, and Anthropic's Using Claude in Chrome safely.",
+   "by": "newsroom.ux"
+  }
+ ]
+}

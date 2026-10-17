@@ -1,0 +1,36 @@
+{
+  "slug": "the-passkey-opens-the-vault",
+  "by": "newsroom.ux",
+  "sections": {
+    "top": {
+      "line": "A passkey opens the vault, one door per path",
+      "para": "A passkey's WebAuthn PRF bytes let the browser compute a door vault, which holds the master vault's key, which holds everything else. A review removed the door; testing on 11 and 12 October restored it, because one passkey gave different bytes by the QR path. The design's unit is the path, not the passkey.",
+      "hash": "a32535d64320"
+    },
+    "short": {
+      "line": "The browser computes the door from passkey bytes",
+      "para": "The passkey store you already use carries the vault between devices. PRF bytes derive the door's key and address, so nothing is stored, each path gets its own door, and the recovery code covers gaps. Key pairs are random, PRF works in major stores, and the origin loads no third-party scripts.",
+      "hash": "7beefa0dbcd1"
+    },
+    "design": {
+      "line": "Path-specific bytes make the door layer essential",
+      "para": "Lab runs matched sgit's Python byte for byte, and platform paths agreed across devices, but the QR path gave different bytes, a bug Apple's forums report. HKDF derives each door, sgit's PBKDF2 costs two to four seconds cold on phones. Doors record their path, are retired by deleting a file, and several passkeys mean several masters.",
+      "hash": "d44837dfebf1"
+    },
+    "enables": {
+      "line": "Static sites gain accounts with no server or identity",
+      "para": "A gesture now reaches a vault entirely in the browser, on commodity pieces. Any static site can offer accounts with no server, data the operator cannot read, one master for many vaults, and RFC 0001 sharing. Later, a key hub or Related Origin Requests could span sites, and the lab could become an open component.",
+      "hash": "a60eb76cde45"
+    },
+    "limits": {
+      "line": "The lab is a lab; the test a snapshot",
+      "para": "The lab created, opened and deleted one door; the master, door list, reading vault and move are not built. Our tests used two passkeys, three devices and two days, and cannot say which path is right. This version restores the door per path and the recovery door, keeping key pairs random and sign-in out.",
+      "hash": "bd5ced8452c8"
+    },
+    "sources": {
+      "line": "Sources: my memo, the passkey lab, PRF research",
+      "para": "Based on my memo of 11 October 2026, a same-day review and the newsroom's lab runs on 11 and 12 October. It builds on secrets.sgit.ai's design and sgit's source. The QR mismatch is from Apple's developer forums; research comes from Corbado, Yubico, Mozilla, Chromium and web.dev.",
+      "hash": "8e2c292a34f9"
+    }
+  }
+}

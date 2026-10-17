@@ -1,0 +1,51 @@
+{
+  "slug": "scion-and-sgit",
+  "by": "newsroom.ux",
+  "sections": {
+    "top": {
+      "line": "Anthropic's Scion and sgit reached the same ideas separately",
+      "para": "Anthropic replaced Git with Scion after merges rose from about 2,500 a day in May to over 30,000 in September, moving work to the server. sgit arrived at many of the same ideas from the other side: immutable ciphertext-named objects, a blind server, partial clones and no packfiles. Scion is internal; sgit is open source today.",
+      "hash": "e4e52c7cf20a"
+    },
+    "in-short": {
+      "line": "Shared core ideas, opposite centres of gravity, real gaps",
+      "para": "Agents broke Git's assumptions at Anthropic, so Scion moved history and merges to the server. sgit shares immutable objects, fetch-only-what-you-need, no packfiles and compare-and-swap, but keeps the server dumb and blind. On a 35,000-object vault one folder clones in 13 seconds and 3 MB; blame and bisect are missing.",
+      "hash": "144143e8109a"
+    },
+    "scion": {
+      "line": "Scion inverts Git, moving history and merges server-side",
+      "para": "Anthropic's monorepo saw over 30,000 merges a day, a 100 GB history and 25 million CI checkouts daily. Scion keeps history, blame and merges on the server, fetches only needed objects and serves immutable objects from caches. It uses about 200 times less CPU and memory, but is not a general Git replacement.",
+      "hash": "b1ed534a1491"
+    },
+    "recognised": {
+      "line": "sgit shares Scion's fast properties but protects with keys",
+      "para": "Both fetch only wanted trees and blobs, use immutable objects any cache can keep, skip packfiles and move refs by compare-and-swap. sgit names objects by the SHA-256 of their ciphertext, marked -imm- or -muw-. Scion protects directories with permissions on a plaintext server; sgit uses keys and encrypts everything client-side.",
+      "hash": "a14b86f581f5"
+    },
+    "measured": {
+      "line": "One folder clones in 13 seconds, however large",
+      "para": "The newsroom agents' vault had 1,295 commits, 5,281 files and about 35,000 objects. A full clone took three and a half minutes, but one 130-file folder with one commit took 13 seconds and 3 MB. Time is distance to storage: locally that clone took 0.8 seconds, and a Lambda batch limit slowed small clones.",
+      "hash": "ebd83f0dbf8a"
+    },
+    "gaps": {
+      "line": "Scion leads on blame, bisect, server merges and scale",
+      "para": "sgit's server cannot read commits, so history work runs on the client, and there is no blame or bisect yet. A partial clone with all 1,295 commits takes nearly four minutes, file history costs minutes of CPU, and proof stops at 35,000 objects and ten agents. No bridge converts Git history to sgit.",
+      "hash": "4e7b113f5eb3"
+    },
+    "means": {
+      "line": "Trusted servers suit one company; blind servers suit everyone",
+      "para": "Agents make source control always online and machine-scale. Anthropic answered with a powerful trusted server; sgit encrypts everything and keeps the server dumb, and both meet on immutable objects, partial fetches and compare-and-swap. Scion handed merges back to Claude, where sgit keeps them, and sgit is installable now.",
+      "hash": "e067fc7b01ac"
+    },
+    "limits": {
+      "line": "sgit is unproven at Scion's scale, and ours",
+      "para": "sgit's largest daily vault is about 35,000 objects and ten agents, measured once each from cloud sandboxes. The small-vault fix sits on the CLI's development branch, unreleased. Scion's figures are Anthropic's own and not independently verified, and sgit is ours, so there is a stake.",
+      "hash": "eeb2a6aaffea"
+    },
+    "sources": {
+      "line": "Sources: Anthropic's Scion post and sgit team measurements",
+      "para": "Drafted from a voice memo of 16 October 2026. Sources are Anthropic's Redesigning source control at Anthropic of 13 October 2026, the sgit CLI team's measurements of 14 and 16 October, which this site's agent rechecked, the sgit-ai package and SGit-AI__CLI code and changelog, and sgit.ai's live-vault case study.",
+      "hash": "125c3281f1d6"
+    }
+  }
+}

@@ -1,0 +1,62 @@
+{
+ "slug": "what-sgit-is",
+ "what": "The sections of this article, each with a line and a paragraph, for showing what the reader has already read. Built by admin/build/summaries.py from admin/content/articles/summaries/.",
+ "sections": [
+  {
+   "id": "top",
+   "label": "The opening",
+   "words": 194,
+   "line": "An introduction to sgit and sgit.ai, what an encrypted…",
+   "para": "An introduction to sgit and sgit.ai, what an encrypted vault is, why version control had to be rebuilt to get one, and what nineteen published vaults look like when the server storing them cannot read a byte. There is a category of file that has nowhere good to live. A risk register with real system names in it.",
+   "by": "extract"
+  },
+  {
+   "id": "s0",
+   "label": "The part that is easy to say and hard to build",
+   "words": 192,
+   "line": "Zero knowledge is a claim people make loosely, so…",
+   "para": "Zero knowledge is a claim people make loosely, so here is the precise version: the server holds ciphertext and nothing else. Not your filenames, not your directory structure, not your commit messages. Encryption and decryption happen on your machine.",
+   "by": "extract"
+  },
+  {
+   "id": "s1",
+   "label": "Ten seconds of proof",
+   "words": 129,
+   "line": "The read key is the entire credential.",
+   "para": "The read key is the entire credential. No account, no login, no access request: Now the same vault, as the machine storing it sees it: That second screenshot is the argument.",
+   "by": "extract"
+  },
+  {
+   "id": "s2",
+   "label": "Nineteen vaults you can open right now",
+   "words": 72,
+   "line": "The best way to understand a vault is to…",
+   "para": "The best way to understand a vault is to open one. Every vault on sgit.ai is live : the screenshots are of real vaults, opened with the read keys published beside them. They range from a photo library to Regulation (EU) 2024/1689 parsed from official Formex XML into 1,523 nodes and 1,944 edges.",
+   "by": "extract"
+  },
+  {
+   "id": "s3",
+   "label": "The part that surprises people",
+   "words": 94,
+   "line": "A vault can contain an application , not just…",
+   "para": "A vault can contain an application , not just documents, and that application runs against the vault without ever being handed a credential. Look at \"permissions\": {} in that file. The app asks for no filesystem access at all. It still renders the whole risk graph, because the host reads the vault and passes results in.",
+   "by": "extract"
+  },
+  {
+   "id": "s4",
+   "label": "Why there is a network of sites",
+   "words": 192,
+   "line": "sgit.ai is one of nineteen sites on *.sgit.ai …",
+   "para": "sgit.ai is one of nineteen sites on *.sgit.ai , each taking one question further than a section could. Most of the thinking behind sgit now lives out there rather than here. A few of them, to give the range: graphs.sgit.ai , \"A node is just a node. Meaning lives in the edges.\" risks.sgit.ai , \"You cannot deny a risk.",
+   "by": "extract"
+  },
+  {
+   "id": "s5",
+   "label": "Try it",
+   "words": 146,
+   "line": "pip install sgit-ai sgit clone sgit_public_read_c004daae386e8d17fa648884acc527018bd4ea1116ad673fb2f1b068011695c9:73heuprz That is the…",
+   "para": "pip install sgit-ai sgit clone sgit_public_read_c004daae386e8d17fa648884acc527018bd4ea1116ad673fb2f1b068011695c9:73heuprz That is the EU AI Act vault, 207 files on your disk in under a minute, from a key printed on a public web page, with no account anywhere. If you would rather not install anything, every vault opens in the browser from the same key.",
+   "by": "extract"
+  }
+ ]
+}

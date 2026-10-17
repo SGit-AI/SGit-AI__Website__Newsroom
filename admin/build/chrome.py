@@ -256,7 +256,8 @@ def nav_html(rel, up, newsroom=False, meter=False):
                f'  <script type="module" src="{up}assets/vault-pane/vault-pane.js"></script>\n'
                f'  <link rel="stylesheet" href="{up}assets/reader/strip.css">\n'
                f'  <script src="{up}assets/reader/strip.js" defer></script>\n'
-               f'  <script src="{up}assets/reader/highlights.js" defer></script>\n' if meter else '')
+               f'  <script src="{up}assets/reader/highlights.js" defer></script>\n'
+               f'  <script src="{up}assets/reader/folds.js" defer></script>\n' if meter else '')
             + f'  <div class="theme-pick"></div>\n'
             f'  <a class="gh" href="{GH}" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>\n'
             f'  </div>\n'

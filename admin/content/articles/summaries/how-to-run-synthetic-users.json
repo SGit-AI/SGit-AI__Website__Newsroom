@@ -1,0 +1,46 @@
+{
+  "slug": "how-to-run-synthetic-users",
+  "by": "newsroom.ux",
+  "sections": {
+    "top": {
+      "line": "Synthetic users driving a real browser find real problems",
+      "para": "Five to ten invented users drive a real browser one screenshot at a time, are interviewed, and their findings are ordered by cost. On newsroom.sgit.ai five readers took 62 steps, asked 51 unanswered questions and produced 31 findings, six blocking, and four left. One was a real bug: 51 of 527 figures missing.",
+      "hash": "30f34eca808b"
+    },
+    "s0": {
+      "line": "Give the agent the screenshot, never the page code",
+      "para": "A synthetic user is a record of situation, question, knowledge and reasons to leave. Claude Sonnet plays each user in parallel, with the study kept in a repository or vault. Write the expected journey first, interview everyone with the same questions, order findings by cost, and check surprising ones before publishing.",
+      "hash": "8804b478fd00"
+    },
+    "pieces": {
+      "line": "Three pieces: Sonnet, a browser helper, a study store",
+      "para": "Claude Sonnet is good enough to play each user, while Opus writes personas and checks findings. A 58-line Playwright helper takes one action per call and records the browser's own log. The study lives in a public GitHub repository or an encrypted sgit vault shared by a read-key link.",
+      "hash": "821948d123e9"
+    },
+    "method": {
+      "line": "Eight steps from choosing users to running again",
+      "para": "Choose five to ten users including a sceptic and a phone user, write profile records and expected journeys, then drive the browser from screenshots only, capped at 14 actions, against a verified local copy. Interview with ten questions, order findings by cost, check each one, and publish. Newsroom ratings were 2, 2, 3, 3 and 2.",
+      "hash": "aafd65784548"
+    },
+    "wrong": {
+      "line": "Most of the time went on our own mistakes",
+      "para": "The helper reloaded the page every step, charging the reading meter again, and scrolling stuck; all five runs were redone after fixes. Restoring scroll before images loaded caused two artefact findings. Claude Code's permission mode blocked live-site browsing, so a verified local copy was served and Dinis approved one narrow rule.",
+      "hash": "f5f639128ead"
+    },
+    "template": {
+      "line": "A template prompt and file layout to start from",
+      "para": "Each persona agent is told it plays one invented user, follows the observe, think, question, act loop, drives the browser only through step.mjs, and decides only from screenshots, at most 14 actions. It writes run.json with steps, interview, a 1 to 5 rating and three to six costed findings.",
+      "hash": "a8bc98e04e10"
+    },
+    "next": {
+      "line": "Every site gets five users before it is done",
+      "para": "Each site will be run with five users, and the same five again after fixes. The newsroom findings go to its session, starting with the 51 missing figures and a plain line at the top. Personas can be shared between sites to turn separate studies into comparisons.",
+      "hash": "83816f24b811"
+    },
+    "sources": {
+      "line": "Sources: three published synthetic user study vaults",
+      "para": "From a voice memo by Dinis Cruz and three studies opened with read keys: store.sgit.ai on 15 September 2026, riskmandate.ai on 16 September and newsroom.sgit.ai on 10 October. Newsroom runs used Chromium against a local copy of v0.6.1, with Claude Sonnet personas and Claude Opus assembling the article.",
+      "hash": "cfe7bfe8b39e"
+    }
+  }
+}

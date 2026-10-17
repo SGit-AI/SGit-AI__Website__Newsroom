@@ -1,0 +1,110 @@
+{
+ "slug": "where-the-vault-keys-live",
+ "what": "The sections of this article, each with a line and a paragraph, for showing what the reader has already read. Built by admin/build/summaries.py from admin/content/articles/summaries/.",
+ "sections": [
+  {
+   "id": "top",
+   "label": "The opening",
+   "words": 256,
+   "line": "With client-side encryption, the key is the whole question",
+   "para": "Vaults are encrypted in the client, so the server never sees a key. At sgit-ai v0.20.0 my keys live in a password manager and a registry vault run by an isolated agent session. Agents now create several vaults a day, so key management has become the real problem, and four tracks come next.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s0",
+   "label": "In short",
+   "words": 266,
+   "line": "Keys live in a password manager and a registry",
+   "para": "Whoever holds the key holds the vault; the read key is derived one way and published on purpose. New keys reach the registry sealed to its public key through a write-only append lane. Small vaults multiply keys, and giving a key to an agent waits on per-session secrets in agent platforms.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "architecture",
+   "label": "Where everything lives",
+   "words": 238,
+   "line": "Anyone can host it because everything is the key",
+   "para": "Encrypted objects sit in S3, served by an SG/Send API on Lambda behind CloudFront at send.sgraph.ai. Clients open vaults with sgit clone or at vault.sgraph.ai#key, where the key never reaches the server. The server can run anywhere, even air-gapped, so where the key is kept decides who can read and write.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "keys",
+   "label": "One secret, and the keys derived from it",
+   "words": 210,
+   "line": "One vault key derives read and write keys",
+   "para": "A vault key, sgit_private_vault_ plus passphrase and vault id, carries read and write; a read key and write key are derived one way from it. Every gallery vault publishes a read key under sgit_public_read_, never a vault key. Append tokens and PKI key pairs exist so senders never need the vault key.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "today",
+   "label": "Where the vault keys are kept today",
+   "words": 178,
+   "line": "Password manager for people's keys, registry for agents' keys",
+   "para": "A password manager is the preferred home for keys a person holds, though the integration does not exist yet, so it is careful copy and paste. A registry, a private vault run by its own isolated Claude session, holds the keys to every vault the agents create. sgit vault add only remembers aliases on one machine.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "handover",
+   "label": "How a new key reaches the registry",
+   "words": 932,
+   "line": "New keys reach the registry sealed, never in chat",
+   "para": "An agent seals the key to the registry's public key, after checking its fingerprint, and sends one POST to an append lane with a write-only token. The prompt explains why first and offers a way out. Asking for the reply to contain only the vault id and HTTP response keeps the key out of every transcript.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "agents",
+   "label": "The weakest step: giving a key to an agent",
+   "words": 413,
+   "line": "Agent platforms lack per-session secrets, the weakest step",
+   "para": "Claude Code on the web keeps variables per environment, readable by every session, and network secrets cannot carry a vault key because decryption happens in the session. Codex removes secrets before the agent phase. So a key travels in a prompt, an environment variable, or not at all, with the agent creating its own vault.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "lanes",
+   "label": "Append lanes, the transport behind most of this",
+   "words": 287,
+   "line": "Append lanes carry keys, logs, web data and messages",
+   "para": "A lane is a write-only channel: a sender seals a message to the owner's key and sends one POST, and the server stores only ciphertext and hashes. Lanes now carry key handover, logs and observations, data from websites and messages between agents on other platforms. The token is still a secret, issued one per sender.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "small-vaults",
+   "label": "Small vaults for small jobs",
+   "words": 194,
+   "line": "Small vaults per job are secure but multiply keys",
+   "para": "Two or three agents working together get a communication vault, using EmailFS and IssuesFS for versioned, encrypted messages and issues. Joining needs only the vault key, sgit and network access to the API host. A leaked key exposes one small conversation, not an account, which is also why keys grew beyond manual tracking.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "next",
+   "label": "What comes next",
+   "words": 635,
+   "line": "Next: password managers, passkey keyring, PKI, remote decryption",
+   "para": "An open call to password managers awaits my follow-up. secrets.sgit.ai, at v0.1.13, unlocks a cloud-stored keyring with a passkey's PRF output, with a 128-bit recovery code as second root; the app itself is only proposed. PKI is the long-term answer, and out-of-band decryption remains an idea, not a design.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "yours",
+   "label": "How do you manage yours?",
+   "words": 76,
+   "line": "The workflow works; key management is the effort now",
+   "para": "A vault key, sgit and access to one URL remain all an agent needs, on these servers or inside your own network. Key management is where effort goes now, and readers are invited to share how they manage vault keys with agents by writing to agent@riskmandate.ai.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "docs",
+   "label": "What changed in the docs",
+   "words": 115,
+   "line": "A new key management page and route notes shipped",
+   "para": "A new Vault key management page covers where keys live, how they travel, giving one to an agent and rotation. The vault messaging page notes that on 10 October send.sgraph.ai still served /api/vault/inbox/ while dev.send.sgraph.ai served /api/vault/append/, and lane address derivation is still proposed.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "sources",
+   "label": "Where this comes from",
+   "words": 95,
+   "line": "Sources: a reader's question, sgit v0.20.0, site docs",
+   "para": "Prompted by a reader's question about where temporary agent sessions' keys are managed, a reply and a voice memo. Checked against sgit-ai v0.20.0, both API hosts' OpenAPI documents, the site's credential, handover, lane, PKI and self-hosting pages, and secrets.sgit.ai v0.1.13, all read on 10 October 2026.",
+   "by": "newsroom.ux"
+  }
+ ]
+}

@@ -1,0 +1,110 @@
+{
+ "slug": "the-agent-is-the-reader",
+ "what": "The sections of this article, each with a line and a paragraph, for showing what the reader has already read. Built by admin/build/summaries.py from admin/content/articles/summaries/.",
+ "sections": [
+  {
+   "id": "top",
+   "label": "The opening",
+   "words": 511,
+   "line": "Agents will pay for meaning because it costs less",
+   "para": "The five readers' graph is 2.8 times larger than the articles, yet answers a concept question in a median 2,579 tokens against 25,698, 90% less. Compression with scale holds only where someone curates. A publisher that serves curated meaning and signed claims saves agents more than it charges: the agent pays not to pay.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s0",
+   "label": "In short",
+   "words": 481,
+   "line": "The graph is large; agents load little of it",
+   "para": "The catalogue is 72,000 tokens against 25,700, but a concept answer is 90% cheaper and cited, and the readers check each other. Curated graphs compress with scale while uncurated ones do not. A graph pays for itself after about ten questions, and payment rails already exist.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "layers",
+   "label": "What five articles became",
+   "words": 444,
+   "line": "The full graph is larger; useful views are smaller",
+   "para": "The Librarian's full catalogue of 662 items is 2.8 times the articles, while the concept index is 7% and the edge list 3%. For every one of the 45 concepts, the graph's anchored answer saves 84% to 92% against reading all five articles, median 90%, and 78% against reading only the right ones.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "loop",
+   "label": "The readers check each other",
+   "words": 301,
+   "line": "Making the map turned out to be the verification",
+   "para": "The Librarian flagged 32 problems in published articles, the Cartographer sent 37 corrections and the Historian caught one systematic error. The first two passes cost under 13,000 tokens per finding, the third 154,000, so each role needs a stopping rule. The loop also corrected a sentence in One article, five readers.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "compress",
+   "label": "Does it compress as it grows?",
+   "words": 629,
+   "line": "Graphs compress with scale only where someone curates them",
+   "para": "The site's 70 uncurated graphs have 928 node labels, 908 unique, and tags show no reuse. The curated topic has 45 concepts over 114 mentions, with new concepts per article falling to one. Projected to 100,000 articles, a curated index is 150 to 2,660 times smaller and a question costs about 12,900 tokens.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "meaning",
+   "label": "Meaning, not just compression",
+   "words": 211,
+   "line": "Typed, cited edges are PageRank with meaning",
+   "para": "PageRank won with a crude signal: links mean importance. Over this site's links it puts two articles that only cite each other at the top, because a link says related but not how. The Cartographer's 24 verbs with inverses, each edge citing its source, make the argument addressable.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "personas",
+   "label": "Agents are personas too",
+   "words": 288,
+   "line": "An agent is a reader with a sharper persona",
+   "para": "An agent arrives with an objective, so a persona slice of the graph gives it a smaller, better context. Context summarisation when a session runs out of room is lossy compression with no feedback. The readers do the same operation curated, checked and with provenance, which is worth paying for.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "economics",
+   "label": "The agent pays not to pay",
+   "words": 650,
+   "line": "Agents will pay when a graph answer is cheaper",
+   "para": "A question saves about 23,000 tokens, $0.02 to $0.05, and an article's graph pays back after about ten questions. At 100,000 articles, a thousand questions save $46 to $93, with a 30% share giving the publisher $14 to $28. x402 and Stripe provide the rails; price follows the source's value.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "claims",
+   "label": "Signed claims, with an expiry date",
+   "words": 278,
+   "line": "Signed claims with an expiry are a second product",
+   "para": "The publisher re-checks a claim against its anchor and signs it as true on a date, valid until an expiry, such as 11 October 2026 to 11 April 2027. Claims age, so renewal is paid work. RFC 0001 sets out how the site could add the cryptography.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "wikipedia",
+   "label": "What would Wikipedia do?",
+   "words": 153,
+   "line": "Wikipedia is best placed to test this model",
+   "para": "Wikipedia is the source agents read most, its editors already do the Librarian's and Cartographer's work by hand, and Wikimedia Enterprise sells reliability. Selling a typed, anchored graph per question at a share of the saving would turn a donor-funded cost into revenue that grows with reading.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "limits",
+   "label": "What this does not show",
+   "words": 214,
+   "line": "Tokens are estimated and no agent has paid yet",
+   "para": "Tokens use four characters each, the projection rests on five articles shown as a band, and the query model's assumptions are in the data file. The saving is measured on the publisher's side only. Demand is the open question, and signed claims are still a design in an RFC.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "next",
+   "label": "What comes next",
+   "words": 228,
+   "line": "Next: a site ontology, an agent door, paid questions",
+   "para": "Build one ontology across all 70 articles, publish per-persona agent pages with token costs, price one graph answer behind a 402 response, sign ten claims with expiry dates, and measure where the reading loop stops paying. Publishers interested can contact agent@riskmandate.ai.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "sources",
+   "label": "Where this comes from",
+   "words": 202,
+   "line": "Sources: the vault, site data and payment rails",
+   "para": "From a voice memo, with numbers run by a separate Claude session and rewritten by this site's agent. Measurements come from the Article Views vault and site sources as of 11 October 2026. External sources are the x402 explainer, Stripe's machine payments preview and Wikimedia Enterprise, plus related site articles.",
+   "by": "newsroom.ux"
+  }
+ ]
+}

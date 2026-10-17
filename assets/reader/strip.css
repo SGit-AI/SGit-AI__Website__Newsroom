@@ -64,3 +64,57 @@
   .read-map { right: 8px; bottom: 48px; }
 }
 @media print { .read-strip, .read-chip, .read-map, .hl-btn { display: none; } }
+
+/* ---------- v3: the reader's controls (card 081) ---------- */
+.read-chip .rc-s { display: inline-block; width: 1.1em; text-align: center; color: var(--accent); font-weight: 700; }
+.read-chip.is-paused .rc-s { color: var(--warm); }
+.read-chip.is-paused .rc-v[data-k="read"] { color: var(--dim); }
+.read-map .rm-ctl { display: flex; gap: .4rem; flex-wrap: wrap; margin: .5rem 0 .2rem; }
+.read-map .rm-btn, .read-map .rm-mark, .read-bar .rb-b, .rv-pick button {
+  font: 600 .74rem/1.2 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  border: 1px solid var(--line2); background: var(--panel); color: var(--head); border-radius: 999px; padding: .3rem .7rem; cursor: pointer;
+}
+.read-map .rm-btn:hover, .read-map .rm-mark:hover, .read-bar .rb-b:hover, .rv-pick button:hover { border-color: var(--accent); }
+.read-map .rm-btn[aria-pressed="true"], .read-bar .rb-b[aria-pressed="true"] { background: var(--warn-bg); border-color: var(--warm); color: var(--warn-ink); }
+.read-map .rm-paused { margin: .3rem 0; padding: .4rem .6rem; border-radius: 8px; background: var(--warn-bg); color: var(--warn-ink); font-size: .74rem; }
+.read-map .rm-row { display: flex; align-items: center; gap: .5rem; }
+.read-map .rm-row > a { flex: 1; min-width: 0; }
+.read-map .rm-mark { padding: .2rem .55rem; font-size: .68rem; color: var(--dim); }
+.read-map .rm-read .rm-l::before { content: "✓ "; color: var(--accent); }
+.read-map .rm-k { margin: .7rem 0 .3rem; color: var(--dim); font-size: .7rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+.rv-pick { display: inline-flex; flex-wrap: wrap; gap: .25rem; }
+.rv-pick button { padding: .25rem .6rem; color: var(--dim); }
+.rv-pick button[aria-checked="true"] { background: var(--head); border-color: var(--head); color: var(--bg); }
+
+/* ---------- what has been read, on the page (card 082) ---------- */
+.rf-m { position: relative; }
+.rf-m::before { content: ""; position: absolute; left: -18px; top: .2em; bottom: .2em; width: 3px; border-radius: 3px; pointer-events: none; }
+.rf-m.rf-read::before { background: var(--accent); }
+.rf-m.rf-part::before { background: var(--tint-line); }
+.rf-m.rf-skim::before { background: var(--line2); width: 2px; }
+.rf-fade { opacity: .42; transition: opacity .25s; }
+.rf-fade-part { opacity: .7; transition: opacity .25s; }
+.rf-fade:hover, .rf-fade:focus-within, .rf-fade-part:hover, .rf-fade-part:focus-within { opacity: 1; }
+.rf-gone { display: none !important; }
+.rf-fold {
+  display: flex; align-items: baseline; flex-wrap: wrap; gap: .25rem .6rem; margin: 1.1rem 0; padding: .55rem .8rem;
+  border: 1px solid var(--line); border-left: 3px solid var(--accent); border-radius: 8px; background: var(--panel2); color: var(--text);
+  font: .9rem/1.45 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+.rf-fold .rf-tick { color: var(--accent); font-weight: 700; }
+.rf-fold .rf-h { color: var(--head); font-weight: 700; }
+.rf-fold .rf-l { color: var(--text); flex: 1; min-width: 12ch; }
+.rf-fold .rf-p { flex-basis: 100%; margin: .15rem 0 0; color: var(--text); font-size: .9rem; }
+.rf-fold .rf-show { margin-left: auto; border: 1px solid var(--line2); background: var(--panel); color: var(--accent-dk); border-radius: 999px; padding: .15rem .6rem; font: 600 .72rem ui-sans-serif, system-ui, sans-serif; cursor: pointer; }
+.rf-fold .rf-show:hover { border-color: var(--accent); }
+.rf-fold.rf-hidden-run { border-left-style: dashed; }
+.read-bar {
+  position: fixed; left: 0; right: 0; z-index: 58; display: flex; align-items: center; flex-wrap: wrap; gap: .4rem .6rem; padding: .4rem 1rem;
+  background: var(--nav-bg); border-bottom: 1px solid var(--line); color: var(--text); backdrop-filter: blur(6px);
+  font: .76rem/1.3 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+.read-bar[hidden] { display: none; }
+.read-bar .rb-t b { color: var(--head); }
+.read-bar .rb-x { margin-left: auto; border: 0; background: transparent; color: var(--dim); font-size: 1.1rem; cursor: pointer; padding: 0 .3rem; }
+@media (max-width: 520px) { .read-bar { padding: .35rem .5rem; } .read-bar .rv-pick button { padding: .2rem .45rem; } .rf-m::before { left: -10px; } }
+@media print { .read-bar, .rf-fold { display: none; } .rf-gone { display: block !important; } .rf-fade, .rf-fade-part { opacity: 1; } }

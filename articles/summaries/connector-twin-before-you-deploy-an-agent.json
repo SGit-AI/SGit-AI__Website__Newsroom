@@ -1,0 +1,110 @@
+{
+ "slug": "connector-twin-before-you-deploy-an-agent",
+ "what": "The sections of this article, each with a line and a paragraph, for showing what the reader has already read. Built by admin/build/summaries.py from admin/content/articles/summaries/.",
+ "sections": [
+  {
+   "id": "top",
+   "label": "The opening",
+   "words": 252,
+   "line": "No agent should get a connector without a twin",
+   "para": "Gmail and Calendar connectors let an agent send, move, decline and permanently delete, and Google documents several of these as irreversible. A connector twin, a journal of every request and response replayed into the views the agent saw, gives provenance, explanation and a revert plan. If you cannot say what your agent did, you are not ready.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s0",
+   "label": "In short",
+   "words": 355,
+   "line": "A journal and replay make agent actions accountable",
+   "para": "Connectors grant action, and Gmail's API delete cannot be undone while Undo Send exists only in the interface. Platform trash windows and audit logs miss what the agent saw. The twin appends every call to a write-only lane, replays views, and turns undo into a named list. It needs no new technology; only processing timing needs users.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s1",
+   "label": "The question nobody can answer yet",
+   "words": 165,
+   "line": "Nobody can say what their agent did last Tuesday",
+   "para": "Most people who enable Gmail or Calendar connectors can only point to the agent's own summary, while the inbox and calendar show results rather than changes. Problems surface when a supplier gets a cancellation. We would not accept that for a person with delegated finance access or a script with production credentials.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s2",
+   "label": "What the platform keeps, stated precisely",
+   "words": 346,
+   "line": "Google keeps some undo, with deadlines, and no context",
+   "para": "Checked on 24 September 2026: trash keeps messages 30 days, API deletes are permanent, admins can restore within 25 days in bulk, unsend lasts 5 to 30 seconds and not via the API, and edited events have no user version history. Nothing records what the agent saw or the instruction it followed.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s3",
+   "label": "Twin, not backup, log or replay",
+   "words": 166,
+   "line": "Twin, not backup or log, is the right word",
+   "para": "A backup copies the mailbox, a log records only that something happened, and replay is a verb rather than a thing. Twin follows twins.sgit.ai: an interface to reality, not a simulation. A connector twin sits at the boundary between agent and system, holding what the agent could do, what it did and what it saw.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s4",
+   "label": "How it works",
+   "words": 457,
+   "line": "Capture, append, chain, process, then replay and revert",
+   "para": "Every connector call's request and response, never credentials, is appended to a write-only vault lane that replies only ok, with each entry hashing the previous one. Processing happens later, and its timing needs real users. A vault app rebuilds the inbox and calendar at each step and drafts a revert plan for a person to approve.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s5",
+   "label": "One session, replayed",
+   "words": 260,
+   "line": "The tidy summary hid a cancellation and permanent delete",
+   "para": "An invented scheduling session made seventeen calls in under three minutes and reported every task done, truthfully. The twin's replay showed that removing the supplier call sent a cancellation for a meeting about an unpaid invoice, and that the old reminder deleted was that invoice's payment reminder, permanently deleted rather than trashed.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s6",
+   "label": "Undo is a list, not a promise",
+   "words": 169,
+   "line": "Undo becomes a graded list with named irreversible actions",
+   "para": "Archiving, relabelling, trashing and declining can be reversed exactly; moved or deleted events can be restored, but notifications already went out; a permanently deleted message can be recreated only if read in full; a sent email cannot be undone. Naming the red rows lets reversible, partly reversible and irreversible actions be governed differently.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s7",
+   "label": "Where the capture runs",
+   "words": 190,
+   "line": "A broker captures best; self-reporting works this afternoon",
+   "para": "A broker holding credentials makes the journal complete and can refuse actions, but becomes a prime target. A gateway on the MCP or HTTP path is easier but misses traffic around it. With no infrastructure, the agent can be told to append each request and response, a weak, self-reported mode that is still far better than nothing.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s8",
+   "label": "What it does to the agent's behaviour policy",
+   "words": 296,
+   "line": "A twin turns the behaviour policy into something writable",
+   "para": "Without a twin, a policy knows only scopes and the agent's summary; with one it has every call, what the agent saw, why, a revert plan and an evidence chain for auditors or insurers. With irreversible actions listed, the mandate can allow trashing freely, require approval for permanent deletes and external cancellations, and block new recipients.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s9",
+   "label": "What exists today, and what does not",
+   "words": 136,
+   "line": "The replay runs; real capture and revert do not",
+   "para": "Running: write-only append lanes, client-side encryption, vault apps that rebuild views, and the Connector Twin replay of an invented seventeen-entry journal with hash-chain verification. Missing: a gateway or broker capturing real traffic, the processor and its schedule, revert execution and any customer. Key management is open, hence the call for collaboration.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s10",
+   "label": "For somebody to build",
+   "words": 129,
+   "line": "The connector twin is written up as a business",
+   "para": "The Connector Twin vault holds a business plan: sourced facts, architecture, three capture modes, hypothetical packages and prices, a calculator, go-to-market through managed service providers and insurers, the first ninety days, risks and open questions. The pitch is the platform's own documentation: some actions cannot be undone, and you cannot tell which happened.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s11",
+   "label": "Sources",
+   "words": 114,
+   "line": "Sources: Google's Gmail, Calendar and Vault documentation",
+   "para": "Sources are Google's Gmail API pages for messages.delete and messages.insert, Gmail and Calendar Help on deleting, recovering and unsending, Workspace Admin Help on restoring email and Calendar logs, Vault Help and FAQ, the Model Context Protocol specification, and sgit.ai's append lanes and execution broker pages.",
+   "by": "newsroom.ux"
+  }
+ ]
+}

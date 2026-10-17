@@ -1,0 +1,86 @@
+{
+ "slug": "one-vault-ten-agents",
+ "what": "The sections of this article, each with a line and a paragraph, for showing what the reader has already read. Built by admin/build/summaries.py from admin/content/articles/summaries/.",
+ "sections": [
+  {
+   "id": "top",
+   "label": "The opening",
+   "words": 263,
+   "line": "A busy 35,000-object vault clones one folder in seconds",
+   "para": "Scion's post notes agent clients are always online and many, so moving unneeded bytes is the cost. The newsroom's shared vault holds 1,295 commits, 5,281 files and about 35,000 objects, 527 MB. A full clone takes three and a half minutes, one folder at depth one 13 seconds, and 0.8 seconds from local disk.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "in-short",
+   "label": "In short",
+   "words": 96,
+   "line": "Shallow clones stay fast however large the vault grows",
+   "para": "Ten agents and one person use a vault the size of real application source code. Nobody needs the three-and-a-half-minute full clone; one folder with one commit takes 13 seconds and 3 MB. History without a depth is slow, with a fix designed, and local disk cuts the clone to 0.8 seconds.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "vault",
+   "label": "The vault",
+   "words": 230,
+   "line": "The newsroom's vault matches a real code repository's size",
+   "para": "On 16 October the vault had 1,295 commits, 5,281 files, 16,315 blobs and 16,391 trees, 527 MB in full and 139 MB at head, with 68 commits in two days. SG/Send's git repository has 5,584 files and 42,434 objects, so handling this vault means handling a comparable code base, encrypted and signed.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "fetch",
+   "label": "What an agent fetches",
+   "words": 327,
+   "line": "Depth-limited clones cost seconds; folder history costs minutes",
+   "para": "Measured hosted, the whole tree at depth one took 57 seconds, one 130-file folder 13 seconds and 3 MB, one file on demand 2.9 seconds and an empty pull 2.5. That folder with all history took 227 seconds, walking 1,295 commits one request at a time. A commit-chain record fetchable in about 26 batched requests is designed.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "session",
+   "label": "What an agent does every session",
+   "words": 126,
+   "line": "Catching up now takes three minutes, not 53",
+   "para": "Until 14 October a pull was one request per commit and per blob, so an agent a day behind waited most of an hour. Blobs now come in batches of 50 with 16 requests in flight, and after long gaps the client sweeps the store, taking about three minutes instead of about 53.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "storage",
+   "label": "Where the time goes",
+   "words": 209,
+   "line": "The distance to storage, not sgit, takes the time",
+   "para": "On local disk the one-folder clone fell from 13 seconds to 2.3 and 0.8, and the history walk from three minutes to 7 seconds. Each hosted request crosses a CDN, Lambda and S3, while client work per object is microseconds. The ruv.sgit hive runs took 0.4 to 1.5 seconds per operation locally.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "many",
+   "label": "Many clients at once",
+   "words": 78,
+   "line": "Many clients make taking only what is needed matter",
+   "para": "Earlier tests on one local server process found ten simultaneous one-folder clones took 1.9 seconds with the server mostly idle. Ten full clones queued to 21 seconds, a limit of the single process rather than the protocol.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "code",
+   "label": "From agents' memory to source code",
+   "words": 138,
+   "line": "A vault this size could hold real source code",
+   "para": "The vault began as agents' memory and now matches the size of the application's source repository. In a vault, each agent could clone one package at depth one in seconds, keep large files without every client paying, and use a server that cannot read the code. The next test is a real code base.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "limits",
+   "label": "What this does not claim",
+   "words": 118,
+   "line": "Not proven at Scion's scale, and blame is missing",
+   "para": "The largest vault is 35,000 objects and ten agents, against Scion's 100 GB monorepo with 30,000 merges a day. Blame and bisect are unwritten, deep partial clones remain slow until the designed fix ships, and runs went once through a proxy. Holding source code is a proposal.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "sources",
+   "label": "Where this comes from",
+   "words": 92,
+   "line": "Sources: the CLI team's measurements and repository counts",
+   "para": "A voice memo of 16 October 2026, a companion to Scion and sgit. The measurements are the CLI team's from 14 and 16 October with sgit 0.22.0; the git repositories were counted with git ls-files, rev-list and count-objects, and the hive runs come from ruv.sgit.ai's ledger.",
+   "by": "newsroom.ux"
+  }
+ ]
+}

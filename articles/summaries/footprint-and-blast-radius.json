@@ -1,0 +1,110 @@
+{
+ "slug": "footprint-and-blast-radius",
+ "what": "The sections of this article, each with a line and a paragraph, for showing what the reader has already read. Built by admin/build/summaries.py from admin/content/articles/summaries/.",
+ "sections": [
+  {
+   "id": "top",
+   "label": "The opening",
+   "words": 349,
+   "line": "The behaviour policy needs footprint and blast radius added",
+   "para": "RiskMandate's Agent Behaviour Policy has four words: reach, mandate, gap and barriers. The proposal adds footprint, what the agent actually did, read afterwards from logs and vault history, and blast radius, what a row of the reach would cost the business if used in full today. As of 2 October 2026 the founders are still reviewing it.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s0",
+   "label": "In short",
+   "words": 349,
+   "line": "Footprint shows what happened; blast radius, what it costs",
+   "para": "Footprint, read passively from audit logs, tool calls, vault history or a connector twin, reveals near misses in the gap and dormant mandate rows. Read alone it is the mandate as practised. Blast radius is a measure over the reach, changes with context and includes whether there is a way back; gap plus blast radius is the risk.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s1",
+   "label": "Four words, written before anything happens",
+   "words": 257,
+   "line": "Reach, mandate, gap and barriers are all decided beforehand",
+   "para": "The method measures reach from the deployment, elicits the mandate from the owner, derives the gap in both directions, and types each barrier as a boundary, setting, expectation or none. Only a boundary is a control. The Kit Bag plan found thirteen gap rows, four stopped by the platform, but nothing records what actually happened.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s2",
+   "label": "The fifth set: footprint",
+   "words": 295,
+   "line": "The footprint is evidence, read from records afterwards",
+   "para": "Footprint rows come from connector audit logs, the model provider's tool-call record, a connector twin's replay, vault commit history, append lanes and the agents' own messages. Reading rather than intercepting makes it passive, needs no production access, and accumulates: the twelfth week's footprint says far more than the first.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s3",
+   "label": "What the footprint reveals",
+   "words": 382,
+   "line": "Near misses and dormant mandates are the key findings",
+   "para": "Footprint in the gap is a near miss, resolved by adding the row to the mandate or putting a boundary in front. A dormant mandate row means over-asking, a check that never ran, or an incapable agent; expected-use hints separate these from rare contingencies. Footprint outside the reach means a wrong inventory, and barrier hits prove boundaries.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s4",
+   "label": "The mandate as practised",
+   "words": 195,
+   "line": "A month's footprint writes the policy an agent lacks",
+   "para": "Read for a month, the footprint gives the mandate as practised, rows by frequency with near misses marked. The owner is asked which they meant rather than what they want, so the written mandate is grounded in evidence. Four of the ten agents in the Custom UIs team, grown in eight days, could get policies this way.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s5",
+   "label": "Blast radius: the measure, not a sixth set",
+   "words": 522,
+   "line": "Blast radius is business impact over reach, with reversibility",
+   "para": "Blast radius is defined over the reach because an attacker who takes over an agent inherits its reach and ignores its mandate. It measures business loss, not system scope, has a potential reading before running and a realised one after, and adds a second axis: whether the damage can be undone, as with sent emails versus vault commits.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s6",
+   "label": "Same footprint, different blast radius",
+   "words": 269,
+   "line": "The same action can be harmless or an incident",
+   "para": "A cleanup step that drops a staging table is harmless when the table is empty, a shrug with test data, and an incident after six weeks of real records. Reading the footprint lets the review on day forty-one say it was a near miss twice before, catchable when it cost nothing.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s7",
+   "label": "What the cloud already does, and what it cannot",
+   "words": 259,
+   "line": "Cloud tools compare granted with used, but lack intent",
+   "para": "AWS IAM Access Analyzer, Google Cloud's role recommendations and Microsoft Entra's Permission Creep Index already compare permissions granted with those used; Microsoft found workload identities using under five per cent. A permission set carries no intent, so there is no dormant mandate or near miss. The behaviour policy supplies the missing owner's intent.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s8",
+   "label": "What vaults change",
+   "words": 232,
+   "line": "Vaults record footprints by design and keep actions reversible",
+   "para": "Every vault commit is signed, versioned and append-only, and lane messages are logged, so a reviewer with a read key sees the footprint without touching production. Vaults also address reversibility: a read key caps blast radius at disclosure, a lane token at queue pollution, and even a vault key leaves history to roll back.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s9",
+   "label": "Reading our own footprint",
+   "words": 183,
+   "line": "Our own agents' footprint will be the worked example",
+   "para": "We have ten agents, six with written policies, eight days of commit history and several hundred messages. The next article will read that footprint against the six policies. We expect near misses to be mostly mandate gaps, not misbehaviour, and at least one written check never to have fired.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s10",
+   "label": "What to add to the policy",
+   "words": 226,
+   "line": "Five additions make the policy an auditable risk statement",
+   "para": "The brief asks for a footprint section with the four findings, an expected-use hint on every mandate row, blast radius on a five-step scale with a reversibility flag, a mandate-as-practised view, and a review cadence, monthly for new agents and quarterly later. An auditor could then check the policy against logs.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s11",
+   "label": "Threads woven here",
+   "words": 227,
+   "line": "Links: the related articles, vaults and the policy",
+   "para": "The proposal connects to The ultimate insider, Every risk is already accepted, the connector twin article, Six agents, one inbox and Custom UIs are not the exception. It also links the Kit Bag, Connector Twin, RiskMandate and Risk acceptance vaults and RiskMandate.ai, and notes the figures are illustrative.",
+   "by": "newsroom.ux"
+  }
+ ]
+}

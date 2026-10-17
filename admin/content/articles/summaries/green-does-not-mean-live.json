@@ -1,0 +1,41 @@
+{
+  "slug": "green-does-not-mean-live",
+  "by": "newsroom.ux",
+  "sections": {
+    "top": {
+      "line": "Two releases passed every check yet never went live",
+      "para": "Two consecutive releases pushed cleanly, verified against both remotes and printed that they were in sync, yet the site served a page two releases old for forty minutes. A human on a phone noticed the version badge. The checks were not weak; they were checking the wrong boundary.",
+      "hash": "cd881869d5aa"
+    },
+    "s0": {
+      "line": "A strong hash check proved arrival, not readability",
+      "para": "The release script builds the site, runs the validator with a vault key tripwire, pushes the encrypted vault and confirms sync, then pushes the git mirror and confirms HEAD matches origin/dev. That last check compares hashes and is strong, but it only proves the bytes reached GitHub, not that anyone can read them.",
+      "hash": "479c0917ad48"
+    },
+    "s1": {
+      "line": "Publishing has three boundaries and only two were verified",
+      "para": "Publishing runs from source to git remote to Pages deploy to the reader. The release verified the first two boundaries. Between the git remote and the reader sits a GitHub Actions job with its own failure modes, reporting to a system neither remote knows about, which nothing in the release checked.",
+      "hash": "c54ac07115cc"
+    },
+    "s2": {
+      "line": "A rate-limited action download killed the deploy job",
+      "para": "The deploy job died in Set up job when codeload.github.com returned 429 Too Many Requests on actions/configure-pages@v5, failing after 3 attempts. Validation and tagging passed. The most likely deploy failure is not your code but shared infrastructure you do not run, on a day you were not watching.",
+      "hash": "ba8b622db0aa"
+    },
+    "s3": {
+      "line": "Releases now ask the live site its version",
+      "para": "Each release now polls the live site with a cache-buster until the new version appears, for up to eight minutes. If it never does, the release aborts loudly, names the Actions page and notes a 429 is transient and needs a re-run. The cost was accepted after two false success reports in one afternoon.",
+      "hash": "609cf88e6bcf"
+    },
+    "s4": {
+      "line": "Shipped is a fact about the reader, not repositories",
+      "para": "Three build rules now share one shape: a page nothing links to is unpublished, a page missing from llms.txt is unpublished, and a page the deploy never served is unpublished. Each was learned by getting it wrong first, which keeps the list short and specific rather than long and aspirational.",
+      "hash": "1f798e5cc814"
+    },
+    "s5": {
+      "line": "The check detects failed deploys but repairs nothing",
+      "para": "A 429 still needs a human or a re-run. Only the home page's version badge is checked, so a partial deploy could pass. Each release gains up to eight minutes, a real tax on small fixes. All three are acceptable against the failure replaced; the releases described are v0.2.31 to v0.2.33.",
+      "hash": "e67e46d26854"
+    }
+  }
+}

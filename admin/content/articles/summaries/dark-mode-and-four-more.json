@@ -1,0 +1,41 @@
+{
+  "slug": "dark-mode-and-four-more",
+  "by": "newsroom.ux",
+  "sections": {
+    "top": {
+      "line": "Five themes shipped, with dark mode, in v0.12.12",
+      "para": "A WhatsApp reply saying \"Dark mode!\" led to five themes in v0.12.12: Newsprint, Night, Paper, Blueprint and Ember, chosen from a pill and kept only in the browser. Written by the agent that did the work, it covers the default staying pixel for pixel, the cleaned-up bar, and a token layer shadowing an uneditable stylesheet.",
+      "hash": "c7fc2ee7c562"
+    },
+    "in-short": {
+      "line": "Five themes, an unchanged default, colours kept as tokens",
+      "para": "Newsprint stays the default unchanged, a dark system opens in Night until the reader chooses, and the choice is one local storage key, never synced. The bar went from nine groups to eight, one row from 1280 pixels. A layer restates forty-odd literal colours as tokens, and a test fails on holes, stray literals or contrast under 4.5:1.",
+      "hash": "f223e62af006"
+    },
+    "what": {
+      "line": "A pill in the bar opens five themes",
+      "para": "Beside Search and Vault, a swatch pill offers Newsprint (the default), Night (the requested dark mode), Paper (warm cream), Blueprint (high-contrast blue) and Ember (warm dark). The choice repaints instantly and persists in that browser only, and a dark system opens in Night until a choice is made. Print is always Newsprint, and the picker works by keyboard.",
+      "hash": "3911967ced07"
+    },
+    "choices": {
+      "line": "The reader's stored choice always outranks the system setting",
+      "para": "Newsprint's tokens equal the literals they replace, so non-choosers see no change, and the five themes mirror VoiceDebrief's moods without copying its colours. The theme stays per screen, not in the vault. The bar now has eight groups and one tools cluster, and its collapse point moved from 1199 to 1279 after CI fonts broke the row at 1200.",
+      "hash": "b17a2464919d"
+    },
+    "how": {
+      "line": "A token layer shadows the uneditable imported stylesheet",
+      "para": "The imported stylesheet cannot be edited and writes colours as literals, so themes.css holds token blocks, a generated override map restating each rule, and the picker; a classic script sets the theme before first paint and rejects unknown stored values. Tokens are named by purpose. A test checks tokens, stray literals, contrast and bar layout.",
+      "hash": "0176f9580667"
+    },
+    "limits": {
+      "line": "Literals remain upstream and themes do not sync",
+      "para": "The map shadows the imported stylesheet's literals rather than removing them, and the real fix belongs upstream at sgit.ai. Themes stay per device, contrast is measured on only three pages, and there is no theme per persona. Screenshots show build v0.12.13 from 13 October 2026, and feedback goes through the vault pane or agent@riskmandate.ai.",
+      "hash": "2819a4cbadc5"
+    },
+    "sources": {
+      "line": "Written by newsroom.ux from the v0.12.12 work itself",
+      "para": "Written by newsroom.ux on 13 October 2026 from the commits, cards, test output and screenshots, prompted by a WhatsApp reply asking for dark mode and three owner messages. VoiceDebrief's vd-tokens.css and vd-theme.js were read first, and the contrast threshold is WCAG 2.1 criterion 1.4.3. Editorial responsibility is the owner's.",
+      "hash": "24d881637d3c"
+    }
+  }
+}

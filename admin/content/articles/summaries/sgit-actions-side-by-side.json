@@ -1,0 +1,56 @@
+{
+  "slug": "sgit-actions-side-by-side",
+  "by": "newsroom.ux",
+  "sections": {
+    "top": {
+      "line": "A showcase should run four vault lanes in CI",
+      "para": "A dedicated repository and site should show sgit moving vaults between GitHub Actions jobs four ways in parallel: a vault server, the vault as an artefact, published files and append lanes. Local measurements show a one-folder clone barely grows, 0.59 to 0.77 seconds, while a full clone grows from 0.95 to 5.55 seconds. Model calls need a budget.",
+      "hash": "7a1d4c5d8c9f"
+    },
+    "in-short": {
+      "line": "Four lanes run in parallel, with a model budget",
+      "para": "A dedicated repository and website would run four lanes in parallel on every run: server, artefact, published files and append lanes, reporting time, bytes, keys and a screenshot. One-folder clones took 0.59 s to 0.77 s; full clones 0.95 s to 5.55 s. Artefacts and lanes complement each other, and model steps get a budget.",
+      "hash": "a3ef2e914624"
+    },
+    "why": {
+      "line": "Running sgit in Actions needs its own public home",
+      "para": "sgit in a CI pipeline tested the pieces locally, but its workflow file was a sketch. Running it on GitHub Actions for real, continuously and visibly, needs a dedicated repository with its own workflows and issues and a site publishing each run. It also shows the same job done several ways, where the differences are the point.",
+      "hash": "03298b569456"
+    },
+    "lanes": {
+      "line": "One build output travels four ways between jobs",
+      "para": "Lanes: a vault server with keys in secrets and path-scoped clones; the encrypted vault zipped as an immutable artefact, kept 90 days by default; encrypted objects on any web host cloned read-only; and append lanes where each shard posts results for a summary job, filling the gap that artefacts cannot take uploads from several jobs.",
+      "hash": "5e7024d8292d"
+    },
+    "report": {
+      "line": "Each lane reports time, bytes, keys and a screenshot",
+      "para": "Every lane records wall time per job and run, bytes downloaded and on disk, which keys each job held and so could read, and a screenshot drawn by a vault app and stored back in the vault. Runs repeat on growing vaults with full, thin and one-folder clones, whose outputs should differ.",
+      "hash": "2adf504372d9"
+    },
+    "measured": {
+      "line": "Folder clones barely grow; full clones and concurrency hurt",
+      "para": "With sgit 0.21.0 locally, a one-folder clone took 0.59 to 0.77 seconds from 100 to 2,000 files, while full clones took 0.95 to 5.55 seconds. For large files sgit beat a full git clone, 4.4 against 16.1 seconds. Failures: pushes over 4 MB without cloud storage, headless file fetches, and ten concurrent full clones taking 21.1 seconds.",
+      "hash": "affd7e74853a"
+    },
+    "budget": {
+      "line": "Model steps need a per-run, per-provider token budget",
+      "para": "Steps that summarise runs, read screenshots or write release notes will call models, so every token should be counted per run and provider, with the same step run on several providers. Calls can run in the job with a key in secrets, or in a vault app whose sg.llm usage call exposes spending.",
+      "hash": "059095702fda"
+    },
+    "brief": {
+      "line": "The brief: repository, four lanes, reports, failures, budget",
+      "para": "Written on 14 October 2026 for Dinis Cruz: build a repository and site with four parallel lanes, a per-lane report stored in a vault, runs on growing vaults, the three local failures filed as issues, a hard token budget across at least two providers, and published results. Keys stay in secrets and write keys are never published.",
+      "hash": "9b5092ea7909"
+    },
+    "limits": {
+      "line": "Local numbers only, two lanes untested, nothing built",
+      "para": "Measurements came from one four-core machine and a local server over HTTP with three runs each, so GitHub runners will differ. Git was not a like-for-like baseline. The artefact and static lanes are based only on documentation, while lanes one and four were tested locally. Nothing in the brief has been built.",
+      "hash": "720d66cfe8ac"
+    },
+    "sources": {
+      "line": "Sources: the voice memo, local runs, GitHub documentation",
+      "para": "From a voice memo of 14 October 2026, written by the site's writer agent. Measurements were run by a research agent with sgit 0.21.0, vault server 0.34.0 and git 2.43.0. Other sources are GitHub's documentation on workflow artefacts and the upload-artifact action, and the vault app runtime from sgit.ai's skills.",
+      "hash": "70dafc50e32a"
+    }
+  }
+}

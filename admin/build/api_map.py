@@ -34,7 +34,7 @@ from page import newsroom_page, write, esc  # noqa: E402
 ROOT = Path(__file__).resolve().parents[2]
 HOST = (ROOT / "CNAME").read_text().strip()
 VERSION = (ROOT / "admin/build/version.txt").read_text().strip()
-METER = "assets/components/sg-meter/v1/v1.4/v1.4.1/"
+METER = "assets/components/sg-meter/v1/v1.5/v1.5.0/"
 DATE = "11 October 2026"
 
 # ----------------------------------------------------------------------------------------------- the files
@@ -133,7 +133,7 @@ BUILD = [
     ("admin/build/lists.py", "writes the two reading-list pages"),
     ("admin/build/personas.py", "writes the persona pages and persona/links.json"),
     ("admin/build/page.py", "the page template, with the meter block every page this site writes carries"),
-    ("admin/build/sync_newsroom.py", "the import: re-points the meter to v1.4.1, applies the text rules, prints the article number"),
+    ("admin/build/sync_newsroom.py", "the import: re-points the meter to v1.5.0, applies the text rules, prints the article number"),
     ("admin/build/newsroom-meter.json", "the top-up link, applied on import"),
     ("admin/build/newsroom-text.json", "the ten text rules, applied on import"),
     ("admin/build/wire.py", "writes the three pages of every wire (wire/, wire/owasp/, wire/aws/) and, from a clone, each wire's snapshot.json"),
@@ -280,7 +280,7 @@ CONTRACTS = [
     ("The wires' vaults", "u9i9jp0l (the Industry Wire), eitf274v (OWASP), v202bla5 (AWS), p6twygul (Portugal) on dev.send.sgraph.ai, read keys published; data/bundle.json {beats, stories, sources, personas, brief; wire, map, stack when present}, data/deliveries.json, data/releases.json (wire-releases/v1, one entry per publish), docs/*.md; story fields, changes and status shown as written; everything in a vault is public, for ever", "admin/build/wire-vault*.json; wire/how.html; each wire's agents own its content"),
     ("Events", "sg:meter.changed · charged · rated · declined · toppedup · reset · restored · persona · shared; sg-meter:error", "sg-meter-core.js _emit(), sg-component.js failed()"),
     ("A component", "static jsUrl, get resourceName(), onReady(); a .tpl and a .css beside the .js; published at an immutable versioned path", "sg-component.js"),
-    ("The import's rules", "the meter path rewrite (v1.3.1 → v1.4.1), the top-up link, ten text rules, the article number line, the moved banner cut, the foot of every issue; each stops the import when its anchor moves", "sync_newsroom.py items 9–15"),
+    ("The import's rules", "the meter path rewrite (v1.3.1 → v1.5.0), the top-up link, ten text rules, the article number line, the moved banner cut, the foot of every issue; each stops the import when its anchor moves", "sync_newsroom.py items 9–15"),
 ]
 
 # ----------------------------------------------------------------------------------------------- the review
@@ -434,7 +434,7 @@ def loader():
 def frozen():
     out = []
     for p in sorted((ROOT / "assets/components/sg-meter/v1").rglob("*")):
-        if p.is_file() and "/v1.4/" not in p.as_posix():
+        if p.is_file() and "/v1.5/" not in p.as_posix():
             rel = p.relative_to(ROOT).as_posix()
             out.append({"path": rel, "lines": lines(rel), "sha256": sha(rel)})
     return out

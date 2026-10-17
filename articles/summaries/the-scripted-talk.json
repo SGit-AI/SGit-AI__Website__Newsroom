@@ -1,0 +1,94 @@
+{
+ "slug": "the-scripted-talk",
+ "what": "The sections of this article, each with a line and a paragraph, for showing what the reader has already read. Built by admin/build/summaries.py from admin/content/articles/summaries/.",
+ "sections": [
+  {
+   "id": "top",
+   "label": "The opening",
+   "words": 253,
+   "line": "A talk can be a timeline you speak to",
+   "para": "Instead of reading a talk, I want slides, builds, animations and the demo to play on a clock. Building on two published talk vaults, the agent built one HTML player of timed beats with a presenter view and rehearsal mode. Its first use is the five-minute ruv.sgit.ai demo for tonight's Agentic Engineering Live in London.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "in-short",
+   "label": "In short",
+   "words": 108,
+   "line": "Slides, builds, animations and demo play on a clock",
+   "para": "The talk is a timeline grown from the Black Hat and VoiceDebrief vaults. One HTML player reads a file of beats, with a presenter view and rehearsal mode. The terminal replays recorded output, animations come from Claude Motion, Manim or Remotion, and the first use is the ruv.sgit.ai demo.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "why",
+   "label": "Why script a talk",
+   "words": 105,
+   "line": "A scripted talk sets its pace and cannot fail",
+   "para": "Reading a talk with slides behind splits attention, as the audience reads slides while the speaker reads a script. For a short slot, a fully scripted timeline lets the speaker speak to the slides. The pace is set beforehand, the demo cannot fail live, and it can be rehearsed and changed like code.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "lineage",
+   "label": "Where it comes from",
+   "words": 215,
+   "line": "Earlier vault talks made slides data, then added timings",
+   "para": "The Black Hat Europe 2025 keynote stored 26 slides in one JSON file read at load time, showing that content is data and the renderer is code. The VoiceDebrief pitch of 2 September 2026 added per-slide timings, a countdown and notes. The next step lets the clock drive.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "player",
+   "label": "The player",
+   "words": 300,
+   "line": "One HTML file plays timed beats, tested in Chromium",
+   "para": "Each beat has a start, duration, title, words and a slide layout such as statement, terminal, table, bullets, video or iframe. Space plays, arrows jump, P opens the presenter view and R records planned against actual times. Chromium tests passed, and an inlined version runs offline.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "demo",
+   "label": "The demo is recorded truth",
+   "words": 93,
+   "line": "The terminal replays recorded output, so demos cannot fail",
+   "para": "Live demos fail on networks, caches and stage behaviour. In a scripted talk the command is typed on the timeline and the output is the one captured from the real run. That is not faking: the evidence is recorded and versioned, and anyone can rerun the command from the vault.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "motion",
+   "label": "Animations as code",
+   "words": 169,
+   "line": "Animations made as code fit the timeline like slides",
+   "para": "Claude Motion, released in beta on 8 October 2026 for Team and Enterprise, animates text, charts and images as code and exports MP4, without a video generation model. The memo's second garbled name is likely Manim or Remotion. Code-made animations can be edited, versioned and placed on a beat.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "ruv",
+   "label": "First use: ruv.sgit.ai",
+   "words": 121,
+   "line": "The first timeline is the five-minute ruv.sgit.ai demo",
+   "para": "ruv.sgit.ai, built on 14 October for Agentic Engineering Live with Reuven Cohen in London on 15 October, shows sgit vaults and behaviour policies in his stack as six proofs of concept. Its five beats became the first talk.json, and a ten-minute version simply adds beats.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "brief",
+   "label": "A brief for the talk vault",
+   "words": 134,
+   "line": "Next: a talk vault, recorded demos, rehearsals as tests",
+   "para": "The talk vault would hold talk.json, the player, assets and rehearsal files, with a read key after the talk. Scripts would record demo output, animations would be placed on beats, and a check fails any beat over ten seconds late. Exports to PDF and MP4 and a vault app follow.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "limits",
+   "label": "What this does not claim",
+   "words": 104,
+   "line": "Untested in a room, with the exports still proposed",
+   "para": "The talk has not been given, and the player was tested in a browser only. Reading the words remains the speaker's choice, the second animation tool is a guess, and Claude Motion was not used. The player, timeline and tests exist; the exports and vault are proposals.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "sources",
+   "label": "Where this comes from",
+   "words": 106,
+   "line": "Sources: the voice memo, two talk vaults and Anthropic",
+   "para": "Written from a 14 October 2026 voice memo, with the player built and tested on 15 October from the cloned Black Hat Europe 2025 and three-minute pitch vaults and ruv.sgit.ai's demo script. Anthropic's Claude Motion announcement and getting-started page are cited.",
+   "by": "newsroom.ux"
+  }
+ ]
+}

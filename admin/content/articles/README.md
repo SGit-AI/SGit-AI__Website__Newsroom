@@ -25,6 +25,8 @@ file, so it never reaches the site. The site's description of the same thing, fo
   the article can point to. A figure is the evidence, drawn.
 - **A graph beside every article.** Ten to fifteen nodes, a core idea, two quotes word for word, and the
   articles it links to.
+- **Summaries beside every article.** For every section, a line of about eight words and a paragraph of two
+  or three sentences, in `summaries/<slug>.json`: what a reader who has read the section sees in its place.
 - **Read the record first.** The articles it builds on, in full, before anything outside. The vocabulary is
   defined on those pages, and a new article uses the words they use.
 
@@ -258,6 +260,29 @@ leads to the test, the test that produces the axes, the two cases that contrast.
 sentences a desk note or the newsletter would lift, and they must match the article exactly, because the
 build checks a `!quote` against them.
 
+## The summaries
+
+Beside every article, `summaries/<slug>.json` (since v0.12.99, card 083). A reader who has read a section can
+have it folded to a paragraph or a line, or hidden (`assets/reader/folds.js`), so every section needs both:
+
+```json
+{ "slug": "<slug>", "by": "<the writing agent, e.g. newsroom.writer>",
+  "sections": { "top": { "line": "...", "para": "..." }, "<h2 anchor>": { "line": "...", "para": "..." } } }
+```
+
+- **The sections are the page's:** `top` is the opening (the abstract), then one per `##` heading, keyed by its
+  `{#anchor}`. `python3 admin/build/summaries.py --dump <dir>` writes each article's sections as the page
+  shows them, with their text, once the article is published.
+- **line:** 6 to 9 words, saying what the section SAYS, not what it is about ("A prompt cannot report usage; a
+  hook can", not "On token usage"); no full stop.
+- **para:** two or three sentences, 30 to 60 words, with the section's point and its specifics (the figures,
+  the names, the conclusion), so a reader who read it a week ago remembers it.
+- The wording rules apply: no em-dash, no ladder word, British spelling; the article's own voice.
+- After the article is published, `python3 admin/build/summaries.py --stamp` records each section's hash, so a
+  later correction to a section marks its summary stale instead of leaving it summarising words that are gone;
+  `python3 admin/build/summaries.py --check` reports what is missing, extracted or stale. A section with no
+  written summary gets an extract (its first sentence), which is a floor, not the goal.
+
 ## Before writing
 
 1. **Read the record first.** The articles the new one builds on, in full, with their graphs, before searching
@@ -276,7 +301,7 @@ build checks a `!quote` against them.
 
 An article is a release. The steps, as the last nine did them:
 
-1. Write `<slug>.md`, `graphs/<slug>.json`, the figures in `images/`, and any data in `data/`.
+1. Write `<slug>.md`, `graphs/<slug>.json`, `summaries/<slug>.json`, the figures in `images/`, and any data in `data/`.
 2. Bump `admin/build/version.txt` to the next patch, add the row at the top of `admin/versions.html`, and
    write `admin/engineering/releases/vX.Y.Z.md` with the title prefixed `@newsroom.writer:` and a paragraph
    on what the article argues, its sources and its figures. An article release names no card
@@ -286,7 +311,7 @@ An article is a release. The steps, as the last nine did them:
    sharp and playwright>`. It replays this folder's history into a temporary clone, runs sgit.ai's
    generator and validator there (the em-dash, the ladder word, the links, the graph limits, the quotes),
    and imports the result. Nothing is pushed to sgit.ai. A slug sgit.ai already has stops the run.
-5. Steps 4 to 8 of the release process in the root `README.md`: `ids.py`, `hubs.py`, `agents.py`,
+5. Steps 4 to 8 of the release process in the root `README.md`: `summaries.py --stamp` then `summaries.py`, `ids.py`, `hubs.py`, `agents.py`,
    `personas.py`, `lists.py`, `passkey_lab.py`, `wire.py`, `api_map.py`, `archive.py`, `engineering.py`,
    `chrome.py`, `gen_sitemap.py`, `gen_llms_full.py`, then `node admin/build/validate.js`. Running them
    twice changes nothing.
@@ -313,5 +338,7 @@ Before the release, read the article once as the owner would and once as the val
 - Every quote is word for word; every earlier article the argument rests on is linked the first time.
 - The graph has the slug, a teaser, one or two topics, the core idea, 10 to 15 nodes, the edges, the links
   and two exact quotes.
+- The summaries have a line and a paragraph for every section, and `summaries.py --check` shows no extract for
+  this article.
 - The earlier article this one continues carries its *What came next* note.
 - The version is bumped once, the release file and the row exist, and the validator passes.
