@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-10-17 | minor | 2,795 | +13 / −0 words; 1 changed, 0 added, 0 removed paragraphs | this release | [what changed](who-will-fix-your-mess/v1.1.0.md) · [current](../who-will-fix-your-mess.md) |
+| **v1.1.0** | 2026-10-17 | minor | 2,795 | +13 / −0 words; 1 changed, 0 added, 0 removed paragraphs | [`b24f1acec`](https://github.com/SGit-AI/SGit-AI__Website/commit/b24f1acec1faaa932cde243ba0fe3497e186086c) | [what changed](who-will-fix-your-mess/v1.1.0.md) · [current](../who-will-fix-your-mess.md) |
 | **v1.0.0** | 2026-10-17 | published | 2,782 | first published | [`9ce19abb2`](https://github.com/SGit-AI/SGit-AI__Website/commit/9ce19abb2bb3fd22b449f205d46e40a30cc6e530) |  |
 
 [← Back to the article](../who-will-fix-your-mess.md) · [All articles](../index.md)

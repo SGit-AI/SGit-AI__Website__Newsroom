@@ -55,6 +55,219 @@
   ],
   "articles": [
     {
+      "slug": "fix-the-page-yourself",
+      "title": "Fix the page yourself: the bookmarklet trick from my security days, a page API every site should publish, and why the next user experience is the one the user customises, with six fixes running on this newsroom",
+      "date": "2026-10-17",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/fix-the-page-yourself.html",
+      "markdown": "https://newsroom.sgit.ai/articles/fix-the-page-yourself.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/fix-the-page-yourself.webp",
+      "teaser": "A bookmarklet from my security days, a page API every site should publish, and six fixes running on this newsroom: the next UX is the user's own.",
+      "topics": [
+        "site-and-engineering",
+        "startups-and-strategy"
+      ],
+      "tags": [
+        "ux",
+        "customisation",
+        "bookmarklets",
+        "browser-extensions",
+        "javascript",
+        "accessibility",
+        "explorer-coding",
+        "agents",
+        "playwright",
+        "brief",
+        "article"
+      ],
+      "links_out": [
+        "software-vendors-as-villagers",
+        "explorer-coding",
+        "dark-mode-and-four-more",
+        "a-model-in-the-tab",
+        "a-custom-firefox-of-my-own",
+        "custom-uis-are-not-the-exception"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "pz-before-after.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/pz-before-after.webp",
+          "caption": "One click on this newsroom: an article as published, and the same page after three fixes from its page API, reading mode, bigger text and an outline of the headings. Nothing on the site changed; it is CSS in the reader's browser.",
+          "kind": "comparison"
+        },
+        {
+          "file": "pz-loop.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/pz-loop.webp",
+          "caption": "The user's fix is the best brief the site will get: the site publishes primitives; readers write fixes in a line or two; the site learns from the fixes people keep; popular ones are adopted as settings or themes, and personal ones are maintained for a fee.",
+          "kind": "architecture"
+        }
+      ],
+      "graph": {
+        "slug": "fix-the-page-yourself",
+        "teaser": "A bookmarklet from my security days, a page API every site should publish, and six fixes running on this newsroom: the next UX is the user's own.",
+        "topics": [
+          "site-and-engineering",
+          "startups-and-strategy"
+        ],
+        "core_idea": "Most sites are built for ads and attention, and readers could fix them in a line of code; if a site publishes a small JavaScript API of primitives, every fix is one line, tests and agents use the same surface, accessibility becomes each reader's to build, and the fixes people keep are the best brief the site will get; this newsroom now runs six such fixes.",
+        "nodes": [
+          {
+            "id": "story",
+            "label": "The bookmarklet demo",
+            "kind": "example",
+            "summary": "The owner wanted the UI, not the fix."
+          },
+          {
+            "id": "bookmarklet",
+            "label": "A bookmarklet",
+            "kind": "concept",
+            "summary": "A line of code you click."
+          },
+          {
+            "id": "fight",
+            "label": "Sites fight their readers",
+            "kind": "claim",
+            "summary": "Built for ads and attention."
+          },
+          {
+            "id": "customised",
+            "label": "The UX the user customises",
+            "kind": "claim",
+            "summary": "The next generation of UX."
+          },
+          {
+            "id": "primitives",
+            "label": "A page API",
+            "kind": "method",
+            "summary": "window.__tools, tool:ready, api.json."
+          },
+          {
+            "id": "agents",
+            "label": "Tests and agents use it too",
+            "kind": "claim",
+            "summary": "One surface for people and code."
+          },
+          {
+            "id": "brief",
+            "label": "The fix is a brief",
+            "kind": "concept",
+            "summary": "Explorer coding applied to the page."
+          },
+          {
+            "id": "adopt",
+            "label": "Adopt, or maintain",
+            "kind": "method",
+            "summary": "Dark mode came from a reader."
+          },
+          {
+            "id": "a11y",
+            "label": "Accessibility",
+            "kind": "claim",
+            "summary": "Each reader builds what they need."
+          },
+          {
+            "id": "delivery",
+            "label": "Bookmarklet, per-site extension",
+            "kind": "method",
+            "summary": "activeTab: only the tab you click."
+          },
+          {
+            "id": "here",
+            "label": "Six fixes on this newsroom",
+            "kind": "artefact",
+            "summary": "Buttons, bookmarklets, an API."
+          },
+          {
+            "id": "model",
+            "label": "A model writes the fix",
+            "kind": "question",
+            "summary": "The model in the tab."
+          }
+        ],
+        "edges": [
+          {
+            "from": "story",
+            "to": "bookmarklet",
+            "rel": "example-of"
+          },
+          {
+            "from": "fight",
+            "to": "customised",
+            "rel": "leads-to"
+          },
+          {
+            "from": "primitives",
+            "to": "customised",
+            "rel": "depends-on"
+          },
+          {
+            "from": "agents",
+            "to": "primitives",
+            "rel": "extends"
+          },
+          {
+            "from": "brief",
+            "to": "customised",
+            "rel": "extends"
+          },
+          {
+            "from": "adopt",
+            "to": "brief",
+            "rel": "leads-to"
+          },
+          {
+            "from": "a11y",
+            "to": "primitives",
+            "rel": "depends-on"
+          },
+          {
+            "from": "delivery",
+            "to": "primitives",
+            "rel": "depends-on"
+          },
+          {
+            "from": "here",
+            "to": "primitives",
+            "rel": "example-of"
+          },
+          {
+            "from": "model",
+            "to": "brief",
+            "rel": "extends"
+          }
+        ],
+        "links": {
+          "articles": [
+            "explorer-coding",
+            "software-vendors-as-villagers",
+            "a-custom-firefox-of-my-own"
+          ],
+          "pages": [],
+          "sites": [
+            "https://newsroom.sgit.ai/demos/fixes/index.html",
+            "https://github.com/the-cyber-boardroom/SGraph-AI__Tools",
+            "https://developer.chrome.com/docs/extensions/develop/concepts/activeTab",
+            "https://www.w3.org/TR/WCAG22/#text-spacing"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "A security consultant's afternoon of Bootstrap beat years of the product.",
+            "why": "The story's point."
+          },
+          {
+            "text": "The next generation of user experience is the one the user customises",
+            "why": "The argument."
+          },
+          {
+            "text": "A fix a user writes, and keeps, is the clearest brief the site will ever get",
+            "why": "Why sites should want it."
+          }
+        ]
+      }
+    },
+    {
       "slug": "i-just-want-to-buy-the-article",
       "title": "I just want to buy the article: what happened when I tried to pay Harvard Business Review for one piece I wanted to answer, the arithmetic of a subscription, and ten things HBR could sell a reader like me, most of them already running on this newsroom",
       "date": "2026-10-17",
@@ -4290,6 +4503,7 @@
         "dark-mode-and-four-more"
       ],
       "links_in": [
+        "fix-the-page-yourself",
         "who-will-fix-your-mess",
         "the-value-of-constraints",
         "explorer-coding",
@@ -4519,6 +4733,7 @@
         "a-custom-firefox-of-my-own"
       ],
       "links_in": [
+        "fix-the-page-yourself",
         "who-will-fix-your-mess",
         "portugal-2024-genai-in-portuguese",
         "portugal-2016-hacking-portugal",
@@ -4749,6 +4964,7 @@
         "the-value-of-constraints"
       ],
       "links_in": [
+        "fix-the-page-yourself",
         "who-will-fix-your-mess",
         "software-vendors-as-villagers",
         "explorer-coding"
@@ -15924,6 +16140,7 @@
         "the-vault-crosses-chrome-profiles"
       ],
       "links_in": [
+        "fix-the-page-yourself",
         "scrolled-is-not-read",
         "software-vendors-as-villagers",
         "the-agents-write-too"
@@ -22397,6 +22614,7 @@
         "how-to-run-synthetic-users"
       ],
       "links_in": [
+        "fix-the-page-yourself",
         "ways-to-read-one-article"
       ],
       "figures": [
@@ -36627,6 +36845,7 @@
         "ultimate-insider-three-collisions"
       ],
       "links_in": [
+        "fix-the-page-yourself",
         "software-vendors-as-villagers",
         "explorer-coding",
         "omnichannel-programming",
