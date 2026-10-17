@@ -14,13 +14,43 @@ Every article here has a semantic graph beside it: the ideas it rests on, the cl
 
 The graphs are data first and pictures second. Take them as JSON: [all articles in one file](graphs.json), with the topics, the teasers and the links between articles resolved, or one file per article at `articles/graphs/<slug>.json` (for example [this one](graphs/footprint-and-blast-radius.json)). The pages on this site are rendered from the same files at build time; nothing here is hand-written HTML. Since v0.7.77 each graph also carries the article's `figures`: file, URL, caption, the kind the author gave it (`wardley-map`, for one) and every frame of a multi-frame figure, so a picture and its context travel together and "every Wardley map on this site" is a filter, not a reading list.
 
-173 of 173 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
+174 of 174 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
 
 ## How the articles connect
 
 *[diagram]*
 
-173 articles, 988 links between them (1447 mentions in all). 163 articles cite an earlier one; 47 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (39 articles link to it). Most linking: [The Mandate Stack](#the-mandate-stack) (20 links out). 0 articles not yet linked either way.
+174 articles, 991 links between them (1452 mentions in all). 164 articles cite an earlier one; 47 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (39 articles link to it). Most linking: [The Mandate Stack](#the-mandate-stack) (20 links out). 0 articles not yet linked either way.
+
+## [Your reading, your controls: the meter charges for what you read, you can pause or reset it, and what you have read folds away in six ways](your-reading-your-controls.md)
+
+2026-10-17 · Site & engineeringNews & evidence
+
+Once the owner decided that a reader pays for what they read and not for what they scroll, the numbers had to be the reader's to correct: pause, reset and marks by hand; and once the newsroom knows what was read, it can step aside on a return visit or a scroll back up, in six views from a margin line to hidden, never while the reader reads forward, using a line and a paragraph written for every one of 1,761 sections.
+
+*[diagram]*
+**concept**claim**method**artefact**example
+
+**12 nodes, 12 edges**
+
+- **Charge for what is read** (claim) The owner's decision: the meter charges for the share read, not the share scrolled; reading done on an earlier visit is not charged again.
+- **The meter, v1.5.0** (artefact) A new versioned meter whose page view settles the charge to the share read beyond what was read before, up or down.
+- **The reader in control** (concept) The measure can be wrong both ways, so the reader can correct it.
+- **Pause, kept** (method) Stops all measuring on every page until resumed, across reloads.
+- **Reset and marks** (method) A page back to unread with a refund to the minimum; any section marked read or unread by hand.
+- **Six views of what was read** (artefact) Full, Margin, Faded, Paragraph, Line and Hidden, chosen by the reader and kept in the browser.
+- **Never while reading forward** (claim) The views switch on only on a return visit or a scroll back up, and a section on screen is never folded by the clock.
+- **The words in view stay** (method) Before a fold the first visible element is noted, and the scroll is corrected after it.
+- **A line and a paragraph per section** (artefact) 1,761 sections in 162 articles, each with about eight words and two or three sentences that say what it says.
+- **Twelve agents in parallel** (example) Each read about fourteen articles and wrote their summaries; a script checked length, wording and coverage.
+- **A summary knows it is stale** (method) Each carries a hash of its section; a corrected section marks its summary stale.
+- **Summaries with every article** (concept) The authoring guide asks for summaries beside the graph, and the build counts extracts.
+
+> Nothing on the page changes while you go down it. The rule that makes the views safe to switch on.
+
+> A summary knows when it is out of date. Why a correction to an article cannot leave its summary lying.
+
+builds on [Scrolled is not read: what the reading meter measures, what it should, highlights you can keep, and the page as the reader's own graph](#scrolled-is-not-read), [The tokens hook: a token behaviour policy that shows what every session reads, caches, writes and costs, why a prompt cannot do it, and a brief for tokens.hook.sgit.ai](#the-tokens-hook), [A meter in the browser: a penny a page, a history you keep, and a site that picks for you](#a-meter-in-the-browser).
 
 ## [Three policies for an agent: behaviour says what it may do, decision says who chooses, workflow says in what order](three-policies-for-an-agent.md)
 
@@ -378,7 +408,7 @@ How far a reader scrolled is not how much they read, so the newsroom now keeps b
 
 > Scrolling past is cheap. Attention is not. The one line from the research that the design rests on.
 
-builds on [A meter in the browser: a penny a page, a history you keep, and a site that picks for you](#a-meter-in-the-browser), [Going live with the reading meter: pay for what you read, go below zero if you like, and the numbers we will check in eight weeks](#going-live-with-the-reading-meter), [Dark mode, and four more: five themes for the newsroom, chosen once and kept in your browser](#dark-mode-and-four-more), [The tokens hook: a token behaviour policy that shows what every session reads, caches, writes and costs, why a prompt cannot do it, and a brief for tokens.hook.sgit.ai](#the-tokens-hook); continued by [I just want to buy the article: what happened when I tried to pay Harvard Business Review for one piece I wanted to answer, the arithmetic of a subscription, and ten things HBR could sell a reader like me, most of them already running on this newsroom](#i-just-want-to-buy-the-article).
+builds on [A meter in the browser: a penny a page, a history you keep, and a site that picks for you](#a-meter-in-the-browser), [Going live with the reading meter: pay for what you read, go below zero if you like, and the numbers we will check in eight weeks](#going-live-with-the-reading-meter), [Dark mode, and four more: five themes for the newsroom, chosen once and kept in your browser](#dark-mode-and-four-more), [The tokens hook: a token behaviour policy that shows what every session reads, caches, writes and costs, why a prompt cannot do it, and a brief for tokens.hook.sgit.ai](#the-tokens-hook); continued by [Your reading, your controls: the meter charges for what you read, you can pause or reset it, and what you have read folds away in six ways](#your-reading-your-controls), [I just want to buy the article: what happened when I tried to pay Harvard Business Review for one piece I wanted to answer, the arithmetic of a subscription, and ten things HBR could sell a reader like me, most of them already running on this newsroom](#i-just-want-to-buy-the-article).
 
 ## [The fork next door: why open source protects founders, customers and investors from each other, why forks only take hold when someone stops executing, and why a maturing company should give its explorers a way out](the-fork-next-door.md)
 
@@ -1323,7 +1353,7 @@ Tokens deserve their own small agent behaviour policy, observe mode first: a Cla
 
 > A few percentage points of cache miss rate can dramatically affect cost and latency. Why tokens need a policy.
 
-builds on [Re-anchoring: keeping an agent's rules alive through every summary, and a canary that shows when they are not](#re-anchoring-agent-behaviour-policies), [Are hooks the sweet spot? Moving an agent's rules from hope into hooks, rule by rule, until enforcement moves off the machine](#are-hooks-the-sweet-spot), [Hooks are kernel code: a maturity model, the first ten hooks mapped, and a brief for a hooks site and feed where you pay for state, never to run](#hooks-are-kernel-code); continued by [Scrolled is not read: what the reading meter measures, what it should, highlights you can keep, and the page as the reader's own graph](#scrolled-is-not-read), [Handing secrets to agents and browsers: SG/Send's next focus, a key pair where the work runs, one-time drops, and a brief for a site that does only this](#handing-secrets-to-agents), [My memory, checked: thinking out loud in a voice memo, publishing only what the record supports, and why peer review has moved to before publishing](#my-memory-checked).
+builds on [Re-anchoring: keeping an agent's rules alive through every summary, and a canary that shows when they are not](#re-anchoring-agent-behaviour-policies), [Are hooks the sweet spot? Moving an agent's rules from hope into hooks, rule by rule, until enforcement moves off the machine](#are-hooks-the-sweet-spot), [Hooks are kernel code: a maturity model, the first ten hooks mapped, and a brief for a hooks site and feed where you pay for state, never to run](#hooks-are-kernel-code); continued by [Your reading, your controls: the meter charges for what you read, you can pause or reset it, and what you have read folds away in six ways](#your-reading-your-controls), [Scrolled is not read: what the reading meter measures, what it should, highlights you can keep, and the page as the reader's own graph](#scrolled-is-not-read), [Handing secrets to agents and browsers: SG/Send's next focus, a key pair where the work runs, one-time drops, and a brief for a site that does only this](#handing-secrets-to-agents), [My memory, checked: thinking out loud in a voice memo, publishing only what the record supports, and why peer review has moved to before publishing](#my-memory-checked).
 
 ## [Cedar and the policy vault: a debrief on the policy language agents are adopting, where our behaviour policies and sgit vaults meet it, and a brief for the MVP](cedar-and-the-policy-vault.md)
 
@@ -3521,7 +3551,7 @@ A reading meter that lives only in the browser, a few pence a page from five pou
 
 > The history never leaves the machine it was made on. Personalisation without an account, a cookie banner or a server.
 
-builds on [Going live with the reading meter: pay for what you read, go below zero if you like, and the numbers we will check in eight weeks](#going-live-with-the-reading-meter), [For a startup, the most important question is whether they miss it](#the-question-is-whether-they-miss-it), [Price it, then give it away: the early access programme as the next step after "do they miss it"](#price-it-then-give-it-away), [The reader was always the product: a corrected history of how news got into this mess](#how-news-got-here), [Sixteen thousand fetches, ten clicks, and a token bill nobody is sending: the case for paying publishers to be easy to read](#token-bill-nobody-is-sending), [The bridge, followed to the end: what one local story is worth when it is kept as a graph](#the-bridge-followed-to-the-end); continued by [Scrolled is not read: what the reading meter measures, what it should, highlights you can keep, and the page as the reader's own graph](#scrolled-is-not-read), [Pay after you read: how a reading meter became a working business model in one afternoon, one release at a time](#pay-after-you-read), [Going live with the reading meter: pay for what you read, go below zero if you like, and the numbers we will check in eight weeks](#going-live-with-the-reading-meter), [Open source is not free: who pays to keep the long tail working?](#open-source-is-not-free).
+builds on [Going live with the reading meter: pay for what you read, go below zero if you like, and the numbers we will check in eight weeks](#going-live-with-the-reading-meter), [For a startup, the most important question is whether they miss it](#the-question-is-whether-they-miss-it), [Price it, then give it away: the early access programme as the next step after "do they miss it"](#price-it-then-give-it-away), [The reader was always the product: a corrected history of how news got into this mess](#how-news-got-here), [Sixteen thousand fetches, ten clicks, and a token bill nobody is sending: the case for paying publishers to be easy to read](#token-bill-nobody-is-sending), [The bridge, followed to the end: what one local story is worth when it is kept as a graph](#the-bridge-followed-to-the-end); continued by [Your reading, your controls: the meter charges for what you read, you can pause or reset it, and what you have read folds away in six ways](#your-reading-your-controls), [Scrolled is not read: what the reading meter measures, what it should, highlights you can keep, and the page as the reader's own graph](#scrolled-is-not-read), [Pay after you read: how a reading meter became a working business model in one afternoon, one release at a time](#pay-after-you-read), [Going live with the reading meter: pay for what you read, go below zero if you like, and the numbers we will check in eight weeks](#going-live-with-the-reading-meter), [Open source is not free: who pays to keep the long tail working?](#open-source-is-not-free).
 
 ## [Re-anchoring: keeping an agent's rules alive through every summary, and a canary that shows when they are not](re-anchoring-agent-behaviour-policies.md)
 

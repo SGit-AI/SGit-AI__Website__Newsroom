@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-10-17 | minor | 2,473 | +8 / −0 words; 4 changed, 0 added, 0 removed paragraphs | this release | [what changed](i-just-want-to-buy-the-article/v1.1.0.md) · [current](../i-just-want-to-buy-the-article.md) |
+| **v1.1.0** | 2026-10-17 | minor | 2,473 | +8 / −0 words; 4 changed, 0 added, 0 removed paragraphs | [`fa14a1449`](https://github.com/SGit-AI/SGit-AI__Website/commit/fa14a1449327df8fcff2240790b5db21e5f4a329) | [what changed](i-just-want-to-buy-the-article/v1.1.0.md) · [current](../i-just-want-to-buy-the-article.md) |
 | **v1.0.0** | 2026-10-17 | published | 2,465 | first published | [`b24f1acec`](https://github.com/SGit-AI/SGit-AI__Website/commit/b24f1acec1faaa932cde243ba0fe3497e186086c) |  |
 
 [← Back to the article](../i-just-want-to-buy-the-article.md) · [All articles](../index.md)

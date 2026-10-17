@@ -1,0 +1,222 @@
+{
+  "slug": "your-reading-your-controls",
+  "teaser": "The meter now charges for what is read; the reader can pause, reset or mark it, and what was read folds away six ways, with a line and a paragraph per section.",
+  "topics": [
+    "site-and-engineering",
+    "news-and-evidence"
+  ],
+  "core_idea": "Once the owner decided that a reader pays for what they read and not for what they scroll, the numbers had to be the reader's to correct: pause, reset and marks by hand; and once the newsroom knows what was read, it can step aside on a return visit or a scroll back up, in six views from a margin line to hidden, never while the reader reads forward, using a line and a paragraph written for every one of 1,761 sections.",
+  "nodes": [
+    {
+      "id": "decision",
+      "label": "Charge for what is read",
+      "kind": "claim",
+      "summary": "The owner's decision: the meter charges for the share read, not the share scrolled; reading done on an earlier visit is not charged again."
+    },
+    {
+      "id": "meter",
+      "label": "The meter, v1.5.0",
+      "kind": "artefact",
+      "summary": "A new versioned meter whose page view settles the charge to the share read beyond what was read before, up or down."
+    },
+    {
+      "id": "control",
+      "label": "The reader in control",
+      "kind": "concept",
+      "summary": "The measure can be wrong both ways, so the reader can correct it."
+    },
+    {
+      "id": "pause",
+      "label": "Pause, kept",
+      "kind": "method",
+      "summary": "Stops all measuring on every page until resumed, across reloads."
+    },
+    {
+      "id": "reset",
+      "label": "Reset and marks",
+      "kind": "method",
+      "summary": "A page back to unread with a refund to the minimum; any section marked read or unread by hand."
+    },
+    {
+      "id": "views",
+      "label": "Six views of what was read",
+      "kind": "artefact",
+      "summary": "Full, Margin, Faded, Paragraph, Line and Hidden, chosen by the reader and kept in the browser."
+    },
+    {
+      "id": "when",
+      "label": "Never while reading forward",
+      "kind": "claim",
+      "summary": "The views switch on only on a return visit or a scroll back up, and a section on screen is never folded by the clock."
+    },
+    {
+      "id": "anchor",
+      "label": "The words in view stay",
+      "kind": "method",
+      "summary": "Before a fold the first visible element is noted, and the scroll is corrected after it."
+    },
+    {
+      "id": "summaries",
+      "label": "A line and a paragraph per section",
+      "kind": "artefact",
+      "summary": "1,761 sections in 162 articles, each with about eight words and two or three sentences that say what it says."
+    },
+    {
+      "id": "agents",
+      "label": "Twelve agents in parallel",
+      "kind": "example",
+      "summary": "Each read about fourteen articles and wrote their summaries; a script checked length, wording and coverage."
+    },
+    {
+      "id": "stale",
+      "label": "A summary knows it is stale",
+      "kind": "method",
+      "summary": "Each carries a hash of its section; a corrected section marks its summary stale."
+    },
+    {
+      "id": "contract",
+      "label": "Summaries with every article",
+      "kind": "concept",
+      "summary": "The authoring guide asks for summaries beside the graph, and the build counts extracts."
+    }
+  ],
+  "edges": [
+    {
+      "from": "decision",
+      "to": "meter",
+      "rel": "produces"
+    },
+    {
+      "from": "decision",
+      "to": "control",
+      "rel": "leads-to"
+    },
+    {
+      "from": "control",
+      "to": "pause",
+      "rel": "produces"
+    },
+    {
+      "from": "control",
+      "to": "reset",
+      "rel": "produces"
+    },
+    {
+      "from": "reset",
+      "to": "meter",
+      "rel": "depends-on"
+    },
+    {
+      "from": "control",
+      "to": "views",
+      "rel": "leads-to"
+    },
+    {
+      "from": "when",
+      "to": "views",
+      "rel": "extends"
+    },
+    {
+      "from": "anchor",
+      "to": "when",
+      "rel": "answers"
+    },
+    {
+      "from": "views",
+      "to": "summaries",
+      "rel": "depends-on"
+    },
+    {
+      "from": "agents",
+      "to": "summaries",
+      "rel": "produces"
+    },
+    {
+      "from": "stale",
+      "to": "summaries",
+      "rel": "extends"
+    },
+    {
+      "from": "contract",
+      "to": "summaries",
+      "rel": "extends"
+    }
+  ],
+  "links": {
+    "articles": [
+      "scrolled-is-not-read",
+      "the-tokens-hook",
+      "a-meter-in-the-browser"
+    ],
+    "pages": [],
+    "sites": [
+      "https://github.com/SGit-AI/SGit-AI__Website__Newsroom/blob/dev/admin/content/articles/README.md"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "Nothing on the page changes while you go down it.",
+      "why": "The rule that makes the views safe to switch on."
+    },
+    {
+      "text": "A summary knows when it is out of date.",
+      "why": "Why a correction to an article cannot leave its summary lying."
+    }
+  ],
+  "figures": [
+    {
+      "file": "rc-collage.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/rc-collage.webp",
+      "caption": "An article on a return visit, four of the six ways to show what was already read. Top left, Margin: a solid line beside the sections read, a pale one beside the one half read. Top right, Paragraph: each read section folded to its heading and two or three sentences of what it said. Bottom left, Line: one line each. Bottom right, Hidden: the five read sections behind one marker, the reading resuming at \"The hook\". The bar at the top of each says how many sections are read and switches between the views.",
+      "kind": "collage"
+    },
+    {
+      "file": "rc-foot.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/rc-foot.webp",
+      "caption": "The meter's block at the foot of an article on a return visit: 1p charged, \"0% read this visit (58% read before, not charged again)\". The reader read most of this article on an earlier visit and has read nothing new yet, so this visit costs the minimum.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "rc-map.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/rc-map.webp",
+      "caption": "The map of an article, from the chip at the foot: Pause measuring and Reset this page at the top, then every section with how far it was scrolled, how long it was read against the time it needs, and a button to mark it read or unread. Five sections are read; \"The hook\" is half read.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "rc-paused.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/rc-paused.webp",
+      "caption": "Paused. The button says Resume, a note says the pause holds on every page and that nothing more is charged, and the chip's mark turns from a dot to two bars.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "rc-view-margin.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/rc-view-margin.webp",
+      "caption": "Margin, on a return visit, at the top of the article: a solid line beside the abstract and the figure, which were read. Nothing on the page has moved.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "rc-view-para.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/rc-view-para.webp",
+      "caption": "Paragraph: the five read sections folded, each to its heading and the paragraph written for it. The first one names the 132-line hook, the two refusals and the 99% read from the cache.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "rc-view-line.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/rc-view-line.webp",
+      "caption": "Line: the same five sections in five lines. \"Asking the model does not work: Asked by prompt, the model refused to invent figures.\" The article resumes at \"The hook\", the first section not yet read.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "rc-view-hide.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/rc-view-hide.webp",
+      "caption": "Hidden: one dashed marker names the five sections read and opens them all; the page starts where the reading stopped.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "rc-line-night.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/rc-line-night.webp",
+      "caption": "Line, in Night. The folds, the margin lines and the bar are drawn from the theme's tokens, like everything else on the site.",
+      "kind": "screenshot"
+    }
+  ]
+}
