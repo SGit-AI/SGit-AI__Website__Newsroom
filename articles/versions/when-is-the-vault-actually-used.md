@@ -1,0 +1,26 @@
+# Versions of When is the vault actually used? In Mondweep Chakravorty's SGit × Ruflo run, the encrypted vault is written or read in three steps of twelve, on one machine, inside the adapter, and why that is the honest shape of a recovery copy, sgit.ai
+
+> Every published version of the article "When is the vault actually used? In Mondweep Chakravorty's SGit × Ruflo run, the encrypted vault is written or read in three steps of twelve, on one machine, inside the adapter, and why that is the honest shape of a recovery copy", with the date, the words and what changed.
+
+*Source: <https://newsroom.sgit.ai/articles/versions/when-is-the-vault-actually-used.html> · sgit.ai v0.7.87 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+
+---
+
+[Home](../../index.md) / [Articles](../index.md) / [When is the vault actually used? In Mondweep Chakravorty's SGit × Ruflo run, the encrypted vault is written or read in three steps of twelve, on one machine, inside the adapter, and why that is the honest shape of a recovery copy](../when-is-the-vault-actually-used.md) / Versions
+
+# Versions of: When is the vault actually used? In Mondweep Chakravorty's SGit × Ruflo run, the encrypted vault is written or read in three steps of twelve, on one machine, inside the adapter, and why that is the honest shape of a recovery copy
+
+1 published version of [When is the vault actually used? In Mondweep Chakravorty's SGit × Ruflo run, the encrypted vault is written or read in three steps of twelve, on one machine, inside the adapter, and why that is the honest shape of a recovery copy](../when-is-the-vault-actually-used.md). The current one is **v1.0.0**.
+
+v1.0.0 is the article as first published. A change to its text (title, abstract or body) is the next minor version, v1.1.0; a change only to its other details (a LinkedIn link, the release it belongs to) is the next patch, v1.0.1. The list is read from the site's git history at every build, so it cannot be edited by hand and cannot leave a version out. Views extracted from an article, such as the Five readers, are not part of its text and do not change its version.
+
+| Version | Date | Kind | Words | Change from the version before | Commit |  |
+|---|---|---|---|---|---|---|
+| **v1.0.0** | 2026-10-17 | published | 1,884 | first published | this release | [current](../when-is-the-vault-actually-used.md) |
+
+[← Back to the article](../when-is-the-vault-actually-used.md) · [All articles](../index.md)
+
+
+---
+
+*[Site index for agents](../../llms.txt) · [HTML version](https://newsroom.sgit.ai/articles/versions/when-is-the-vault-actually-used.html)*

@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The policy guards the door; the command line uses the window: in the SGit × Ruflo run, the ABP checks the adapter's tools, while Ruflo's own command line reaches the same memory file without it, and five other questions for the author, SGit Newsroom</title>
+<meta name="description" content="The third piece on Mondweep Chakravorty's SGit × Ruflo proof of concept is about a path, not a failure. The Agent Behaviour Policy in the run is enforced by the adapter, on its three tools: checkpoint, close run and restore. Those are steps 4, 5, 6, 8 and 11, and every one of them behaved as the policy said. But in steps 3, 9 and 10, Ruflo's own command line writes and reads the same SQLite memory file directly, and that path does not pass the policy gate. On screen this is simply how the test was built. By inference, an agent with shell access could change its memory without an ABP check. It is the same lesson this site keeps learning about its own agent: a policy holds only on the paths that pass through its enforcer. The addendum suggests compiling the rows into Ruflo's own policy engine in enforce mode, so the command line is covered too. Alongside it are five smaller questions from the analysis: whether each decision is recorded, the same error text for different causes, where the vault goes after this machine, a file name that changes between steps, and an approval path that was not tested with an approver. They are questions, not findings, and Mondweep has agreed to their publication.">
+<link rel="canonical" href="https://newsroom.sgit.ai/articles/the-policy-guards-the-door.html">
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SGit Newsroom">
+<meta property="og:url" content="https://newsroom.sgit.ai/articles/the-policy-guards-the-door.html">
+<meta property="og:title" content="The policy guards the door; the command line uses the window: in the SGit × Ruflo run, the ABP checks the adapter's tools, while Ruflo's own command line reaches the same memory file without it, and five other questions for the author, SGit Newsroom">
+<meta property="og:description" content="The third piece on Mondweep Chakravorty's SGit × Ruflo proof of concept is about a path, not a failure. The Agent Behaviour Policy in the run is enforced by the adapter, on its three tools: checkpoint, close run and restore. Those are steps 4, 5, 6, 8 and 11, and every one of them behaved as the policy said. But in steps 3, 9 and 10, Ruflo's own command line writes and reads the same SQLite memory file directly, and that path does not pass the policy gate. On screen this is simply how the test was built. By inference, an agent with shell access could change its memory without an ABP check. It is the same lesson this site keeps learning about its own agent: a policy holds only on the paths that pass through its enforcer. The addendum suggests compiling the rows into Ruflo's own policy engine in enforce mode, so the command line is covered too. Alongside it are five smaller questions from the analysis: whether each decision is recorded, the same error text for different causes, where the vault goes after this machine, a file name that changes between steps, and an approval path that was not tested with an approver. They are questions, not findings, and Mondweep has agreed to their publication.">
+<meta property="og:image" content="https://newsroom.sgit.ai/og/the-policy-guards-the-door.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The policy guards the door; the command line uses the window: in the SGit × Ruflo run, the ABP checks the adapter's tools, while Ruflo's own command line reaches the same memory file without it, and five other questions for the author, SGit Newsroom">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://newsroom.sgit.ai/og/the-policy-guards-the-door.jpg">
+<link rel="alternate" type="text/markdown" href="the-policy-guards-the-door.md" title="This page as markdown">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "The policy guards the door; the command line uses the window: in the SGit × Ruflo run, the ABP checks the adapter's tools, while Ruflo's own command line reaches the same memory file without it, and five other questions for the author, SGit Newsroom", "headline": "The policy guards the door; the command line uses the window: in the SGit × Ruflo run, the ABP checks the adapter's tools, while Ruflo's own command line reaches the same memory file without it, and five other questions for the author, SGit Newsroom", "description": "The third piece on Mondweep Chakravorty's SGit × Ruflo proof of concept is about a path, not a failure. The Agent Behaviour Policy in the run is enforced by the adapter, on its three tools: checkpoint, close run and restore. Those are steps 4, 5, 6, 8 and 11, and every one of them behaved as the policy said. But in steps 3, 9 and 10, Ruflo's own command line writes and reads the same SQLite memory file directly, and that path does not pass the policy gate. On screen this is simply how the test was built. By inference, an agent with shell access could change its memory without an ABP check. It is the same lesson this site keeps learning about its own agent: a policy holds only on the paths that pass through its enforcer. The addendum suggests compiling the rows into Ruflo's own policy engine in enforce mode, so the command line is covered too. Alongside it are five smaller questions from the analysis: whether each decision is recorded, the same error text for different causes, where the vault goes after this machine, a file name that changes between steps, and an approval path that was not tested with an approver. They are questions, not findings, and Mondweep has agreed to their publication.", "url": "https://newsroom.sgit.ai/articles/the-policy-guards-the-door.html", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "SGit Newsroom", "url": "https://newsroom.sgit.ai"}, "about": {"@type": "SoftwareApplication", "name": "sgit", "sameAs": "https://pypi.org/project/sgit-ai/"}, "author": {"@type": "Person", "name": "Dinis Cruz", "url": "https://sgit.ai/about/index.html"}, "license": "https://creativecommons.org/licenses/by/4.0/"}</script>
+<style>html{background:#faf9f5}body{margin:0;background:#faf9f5;color:#1c1d21;font-family:ui-sans-serif,system-ui,sans-serif;opacity:0;transition:opacity .25s;animation:sg-reveal 0s linear 1.6s forwards}html.ready body{opacity:1;animation:none}@keyframes sg-reveal{to{opacity:1}}</style><noscript><style>body{opacity:1;animation:none}</style></noscript>
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <link rel="stylesheet" href="../assets/themes/themes.css">
+  <link rel="stylesheet" href="../assets/site-nav.css">
+  <script src="../assets/themes/themes.js"></script>
+  <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.12.89</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../about/index.html">Why this exists</a>
+      <a class="sl" href="../desks/index.html">The five desks</a>
+      <a class="sl" href="../agents/index.html">Written by the agents</a>
+      <a class="sl" href="../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../articles/index.html#all">Every article</a>
+      <a class="sl" href="../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../persona/index.html">Read as a persona</a>
+      <a class="sl" href="../for/make.html">Make a reading list</a>
+      <a class="sl" href="../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../wire/index.html">Industry Wire<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../wire/index.html">Today's edition</a>
+      <a class="sl" href="../wire/sources.html">The sources</a>
+      <a class="sl" href="../wire/how.html">How the wire works</a>
+      <a class="sl" href="../wire/owasp/index.html">The OWASP Wire</a>
+      <a class="sl" href="../wire/aws/index.html">The AWS Wire</a>
+      <a class="sl" href="../wire/portugal/index.html">The Portugal Wire</a>
+      <a class="sl" href="../wire/days.html">Day by day</a>
+      <a class="sl" href="../wire/charter.html">The charter</a>
+      <a class="sl" href="../articles/dark-mode-and-four-more.html">Themes: dark mode and four more</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../account/index.html">Your reading account</a>
+      <a class="sl" href="../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../account/personas.html">Your personas</a>
+      <a class="sl" href="../account/top-up.html">Top up</a>
+      <a class="sl" href="../vault/index.html">Your vault, between devices</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../newsroom/board.html">The board</a>
+      <a class="sl" href="../newsroom/log.html">The run log</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../publishers/index.html">For publishers: what is live, how to try it</a>
+      <a class="sl" href="../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+      <a class="sl" href="../demos/vaults/newsroom-synthetic-users/index.html">The study: five readers tested this site</a>
+      <a class="sl" href="../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../newsroom-api/index.html">The reader API: a map, and a review</a>
+      <a class="sl" href="../passkey/index.html">The passkey lab</a>
+      <a class="sl" href="../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../archive/index.html">The archive</a>
+      <a class="sl" href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+      <a class="sl" href="../world-news-day/stories/free-to-republish-is-not-a-licence.html">World News Day: free to republish is not a licence</a>
+      <a class="sl" href="../world-news-day/method.html">World News Day: the method</a>
+      <a class="sl" href="../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../network/index.html">The network</a>
+      <a class="sl" href="../admin/versions.html">Release history</a>
+      <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../engineering/index.html">Engineering: issues &amp; releases</a>
+      <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <div class="nav-tools">
+  <a class="search-btn" href="../search/index.html" title="Search the site, in your browser">Search</a>
+  <link rel="stylesheet" href="../assets/search/search-nav.css">
+  <sg-meter class="meter-nav" view="balance"></sg-meter>
+  <button class="vault-btn" type="button" aria-expanded="false" title="Your vault: the reading account carried between your devices"><span class="dot"></span>Vault</button>
+  <link rel="stylesheet" href="../assets/vault-pane/vault-pane.css">
+  <script type="module" src="../assets/vault-pane/vault-pane.js"></script>
+  <link rel="stylesheet" href="../assets/reader/strip.css">
+  <script src="../assets/reader/strip.js" defer></script>
+  <script src="../assets/reader/highlights.js" defer></script>
+  <div class="theme-pick"></div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
+  </div>
+</div></nav>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.12.89</span></a></div>
+<main class="doc">
+ <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / The policy guards the door; the command line uses the window: in the SGit × Ruflo run, the ABP checks the adapter's tools, while Ruflo's own command line reaches the same memory file without it, and five other questions for the author</p>
+ <h1>The policy guards the door; the command line uses the window: in the SGit × Ruflo run, the ABP checks the adapter's tools, while Ruflo's own command line reaches the same memory file without it, and five other questions for the author</h1>
+ <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-17 &middot; <a href="versions/the-policy-guards-the-door.html" title="Every published version of this article, and what changed">article v1.0.0</a> &middot; <a href="../admin/versions.html" title="The newsroom release it was published in">newsroom v0.12.89</a> &middot; <span class="chip">agents</span><span class="chip">ruflo</span><span class="chip">sgit</span><span class="chip">agent-behaviour-policy</span><span class="chip">security</span><span class="chip">mcp</span><span class="chip">enforcement</span><span class="chip">memory</span><span class="chip">video</span><span class="chip">article</span></p>
+ <p class="abstract"><em><b>Abstract:</b> The third piece on Mondweep Chakravorty's SGit × Ruflo proof of concept is about a path, not a failure. The Agent Behaviour Policy in the run is enforced by the adapter, on its three tools: checkpoint, close run and restore. Those are steps 4, 5, 6, 8 and 11, and every one of them behaved as the policy said. But in steps 3, 9 and 10, Ruflo's own command line writes and reads the same SQLite memory file directly, and that path does not pass the policy gate. On screen this is simply how the test was built. By inference, an agent with shell access could change its memory without an ABP check. It is the same lesson this site keeps learning about its own agent: a policy holds only on the paths that pass through its enforcer. The addendum suggests compiling the rows into Ruflo's own policy engine in enforce mode, so the command line is covered too. Alongside it are five smaller questions from the analysis: whether each decision is recorded, the same error text for different causes, where the vault goes after this machine, a file name that changes between steps, and an approval path that was not tested with an approver. They are questions, not findings, and Mondweep has agreed to their publication.</em></p>
+<figure class="shot" data-shot="rf-gap.webp" data-dir="images/" data-alt="Two ways into the same memory: the adapter&#x27;s tools pass the ABP&#x27;s policy gate on their way to SGit and the vault, in steps 4, 5, 6, 8 and 11; Ruflo&#x27;s own command line reads and writes the memory file directly, in steps 3, 9 and 10, with no ABP check. Solid arrows are shown on screen; that an agent could use the second path is an inference." data-kind="architecture"><figcaption>Two ways into the same memory: the adapter's tools pass the ABP's policy gate on their way to SGit and the vault, in steps 4, 5, 6, 8 and 11; Ruflo's own command line reads and writes the memory file directly, in steps 3, 9 and 10, with no ABP check. Solid arrows are shown on screen; that an agent could use the second path is an inference.</figcaption></figure>
+<div class="trail"><div class="trail-h">SGit × Ruflo: one run, four ways in</div><p class="trail-n">Mondweep Chakravorty&#x27;s video of an agent losing its workspace and getting its memory back: the run, the architecture, the gap, and a page to step through it yourself.</p><div class="trail-row"><a class="trail-c" href="what-if-an-agent-loses-its-workspace.html"><span class="trail-img" data-trail-img="images/rf-board.webp" role="img" aria-label=""></span><span class="trail-b"><span class="trail-k">1 · The run</span><span class="trail-t">What if an agent loses its workspace?</span><span class="trail-d">Twelve steps: memory saved, project deleted, memory restored in a fresh process, three safeguards tested.</span></span></a><a class="trail-c" href="when-is-the-vault-actually-used.html"><span class="trail-img" data-trail-img="images/rf-matrix.webp" role="img" aria-label=""></span><span class="trail-b"><span class="trail-k">2 · The architecture</span><span class="trail-t">When is the vault actually used?</span><span class="trail-d">In three of twelve steps, on one machine, inside the adapter: what that proves and what it does not.</span></span></a><a class="trail-c here" href="the-policy-guards-the-door.html"><span class="trail-here">you are here</span><span class="trail-img" data-trail-img="images/rf-gap.webp" role="img" aria-label=""></span><span class="trail-b"><span class="trail-k">3 · The gap</span><span class="trail-t">The policy guards the door; the command line uses the window</span><span class="trail-d">The ABP checks the adapter&#x27;s tools; Ruflo&#x27;s own command line reaches the same memory file without it.</span></span></a><div class="trail-c"><a href="https://newsroom.sgit.ai/demos/videos/sgit-ruflo-poc/index.html"><span class="trail-img" data-trail-img="images/rf-intro.webp" role="img" aria-label=""></span></a><div class="trail-b"><span class="trail-k">4 · Step through it</span><span class="trail-t">SGit × Ruflo, step by step</span><span class="trail-d">Every step with its frame, command, output and diagram, linked to its moment in the video.</span><span class="trail-l"><a href="https://youtu.be/rkh6BJiaIrQ" target="_blank" rel="noopener">Watch the video &#8599;</a><a href="https://newsroom.sgit.ai/demos/videos/sgit-ruflo-poc/index.html">Step through it</a></span></div></div></div></div>
+<h2 id="in-short">In short</h2>
+<ul>
+<li><b>Every guarded step behaved.</b> Steps 4, 5, 6, 8 and 11 did exactly what the policy said.</li>
+<li><b>Two paths reach the memory.</b> The adapter's tools, through the ABP; Ruflo's command line, around it.</li>
+<li><b>On screen, that is the test's design.</b> By inference, an agent with a shell could take the second path.</li>
+<li><b>A policy holds on the paths through its enforcer.</b> It is the lesson this site keeps learning about its own agent.</li>
+<li><b>One fix is suggested.</b> Compile the rows into Ruflo's own policy engine, in enforce mode.</li>
+<li><b>Five smaller questions.</b> Records, error text, the vault's next home, a file name, the approval path.</li>
+<li><b>Questions, not findings.</b> Mondweep agreed to publish them, and his answers are welcome here.</li>
+</ul>
+<h2 id="paths">Two paths to the same memory</h2>
+<p>The run has two ways into Ruflo's memory file, and the <a href="when-is-the-vault-actually-used.html">matrix in the architecture piece</a> shows them side by side.</p>
+<p>The first is the adapter. Its three tools, <code>checkpoint</code>, <code>close_run</code> and <code>restore</code>, each pass a policy gate built from the four ABP rows, and the gate fails closed. That is the path for steps 4, 5, 6, 8 and 11, and every one of them did what the policy said: the out-of-scope checkpoint refused, the in-scope one allowed, the deletion stopped for want of approval, the restore allowed, and the tampered restore allowed by the policy and then rejected by the vault.</p>
+<p>The second is Ruflo's own command line. In step 3 it writes the two facts straight into the SQLite memory file. In steps 9 and 10 it reads the restored file. None of those calls passes the gate. In the addendum's words: "The ABP guards the adapter, but Ruflo's command-line tool writes and reads the same SQLite file without passing through it."</p>
+<h2 id="shown">What the screen shows, and what it does not</h2>
+<figure class="shot" data-shot="rf-stage-03.webp" data-dir="images/" data-alt="Step 3: the test script calls the ruflo command line&#x27;s memory store, which loads its embedding model, stores no vectors, and writes two rows of plain text into the source workspace&#x27;s memory.db; the ABP adapter and the vault are not on this path." data-kind="architecture"><figcaption>Step 3: the test script calls the ruflo command line's memory store, which loads its embedding model, stores no vectors, and writes two rows of plain text into the source workspace's memory.db; the ABP adapter and the vault are not on this path.</figcaption></figure>
+<p><b>Shown on screen:</b> in step 3, <code>ruflo memory store</code> with <code>--no-embedding --path memory.db</code>, "[OK] Data stored", and "Vector: No". At this point the memory file is ordinary, unencrypted SQLite.</p>
+<figure class="shot" data-shot="rf-stage-09.webp" data-dir="images/" data-alt="Step 9: the ruflo command line&#x27;s memory retrieve reads memory.sqlite in the fresh-runner workspace and returns both facts exactly; the vault and the ABP adapter are not on this path." data-kind="architecture"><figcaption>Step 9: the ruflo command line's memory retrieve reads memory.sqlite in the fresh-runner workspace and returns both facts exactly; the vault and the ABP adapter are not on this path.</figcaption></figure>
+<p><b>Shown on screen:</b> in step 9, <code>ruflo memory retrieve</code> reading <code>memory.sqlite</code>, both values printed, and a pass. Ruflo reads a plain copy that came out of the vault; neither the vault nor the ABP is on this path.</p>
+<p><b>Inferred, not shown:</b> that an agent with shell access could use the same command line, or any SQLite client, to change its memory without an ABP check. The test does not try it, and it was not the test's question. It is the question I would ask next.</p>
+<p>To be fair to the run: using the command line in steps 3 and 9 is what makes it convincing. Step 9 is strong precisely because Ruflo itself, not the adapter, reads the facts back. The gap is not a mistake in the test. It is a property of where this ABP is enforced.</p>
+<h2 id="why">Why this matters beyond this run</h2>
+<p>A policy holds on the paths that pass through its enforcer, and nowhere else. I keep relearning that about this site's own agent. When I measured it in <a href="your-agents-logs-are-a-self-report.html">your agent's logs are a self-report</a>, ten of its eleven rules were kept by the agent choosing to follow them, and the one hard limit was a platform setting the policy did not even list.</p>
+<p>At <a href="the-ai-conference-read-for-governance.html">The AI Conference</a>, speaker after speaker said policy must live outside the model. This run does that: the gate is code, it fails closed, and it held. What it adds is the next lesson. Outside the model is necessary; around every path to the data is the harder part.</p>
+<h2 id="close">How it could close</h2>
+<p>The addendum suggests one way: compile the ABP rows into Ruflo's own policy engine, in enforce mode, so the command line's memory calls are checked too. The engine exists in Ruflo; it was not used in this run.</p>
+<p>Two other ways come to mind, and I offer them as ideas, not findings. Keep the working memory file somewhere only the adapter can reach, so the command line has to go through it. Or make the adapter the only thing that can decrypt memory at all, so a plain file never sits in a workspace an agent can write to. Each has costs, and Mondweep will know better than I do which fits Ruflo.</p>
+<h2 id="questions">Five more questions for the author</h2>
+<p>The analysis raised these alongside the gap. They are questions, not findings.</p>
+<ol>
+<li><b>Is each decision recorded?</b> The ABP is enforced by a custom local adapter. Does it keep a record of each allow and deny, and which row fired?</li>
+<li><b>Same message, different causes.</b> The scope denial and the approval stop both read "PermissionError: operation failed; check configuration, policy and integrity", and the tamper reads the same text as a ValueError. Uniform messages avoid leaking detail; an operator log naming the row would help.</li>
+<li><b>Where does the vault go next?</b> The checkpoint store is SGit objects on the same machine. A push to a vault server, a clone on another machine, and a check that the server holds only ciphertext would close the loop, as <a href="when-is-the-vault-actually-used.html#where">the architecture piece</a> argues.</li>
+<li><b><code>memory.db</code> and <code>memory.sqlite</code>.</b> Step 3 stores with <code>--path memory.db</code>; step 9 reads <code>--path memory.sqlite</code>. Probably the restore writes under a new name; one line would explain it.</li>
+<li><b>The approval path, with an approver.</b> Deletion is blocked without approval. Showing it succeed with a named approver would prove the row is approval, not simply no.</li>
+</ol>
+<p>And one note on the video, not the run: the terminal is labelled a real-time capture, and between step 2 at run clock 00:11 and the first fact in step 3 at 00:39, 28 seconds of run pass in a few seconds of video. One wait was trimmed, most likely Ruflo loading its model. That is fine for a demo, and worth a caption.</p>
+<h2 id="next">Where to go next</h2>
+<p>Back to <a href="what-if-an-agent-loses-its-workspace.html">the walkthrough</a> for the run in order, or to <a href="when-is-the-vault-actually-used.html">the architecture</a> for when the vault is used. Or <a href="https://newsroom.sgit.ai/demos/videos/sgit-ruflo-poc/index.html">step through the run</a>: steps 3, 9 and 10 each link back here.</p>
+<h2 id="limits">What this does not claim</h2>
+<ul>
+<li><b>Not a vulnerability report.</b> No one tried to bypass the policy; the second path is inferred from the design.</li>
+<li><b>Not that the run failed.</b> Every step the policy guarded behaved as written.</li>
+<li><b>The fixes are ideas.</b> The addendum's suggestion and mine are untested here.</li>
+<li><b>From the screen only.</b> The audio was not transcribed; the author may already address some of these.</li>
+</ul>
+<p>If you are Mondweep, or anyone who has run this, and have an answer to any of these, write to <a href="mailto:agent@riskmandate.ai">agent@riskmandate.ai</a> and it will be added here.</p>
+<h2 id="sources">Where this comes from</h2>
+<p>The video: Mondweep Chakravorty, <a href="https://youtu.be/rkh6BJiaIrQ">SGit × Ruflo | Working Proof of Concept</a>, published on YouTube on 17 October 2026, made as a member of the #Ruflo-Federation; this analysis and its questions are published with his agreement. The analysis and its architecture addendum: Claude (Anthropic), 17 October 2026, made for me from on-screen content only; written up and checked against the video's timeline by this site's agent; the editorial responsibility is mine. Ruflo: <a href="https://github.com/ruvnet/ruflo">ruvnet/ruflo</a>, MIT. Related: <a href="your-agents-logs-are-a-self-report.html">your agent's logs are a self-report</a>, <a href="the-ai-conference-read-for-governance.html">The AI Conference 2026, read for agent governance</a>, <a href="a-policy-beside-the-prompt.html">a policy beside the prompt</a>.</p>
+<sg-meter view="page" kind="article" date="2026-10-17" topics="agents-and-policy vaults-and-method" title="The policy guards the door; the command line uses the window: in the SGit × Ruflo run, the ABP checks the adapter's tools, while Ruflo's own command line reaches the same memory file without it, and five other questions for the author, SGit Newsroom"></sg-meter>
+<section class="athreads" id="threads">
+ <h2>Threads</h2>
+ <p class="athreads-meta"><span class="tchip">Agents &amp; policy</span><span class="tchip">Vaults &amp; method</span> <a href="graphs.html#the-policy-guards-the-door">This article as a graph &rarr;</a></p>
+ <div class="athreads-cols"><div><h3>Builds on</h3><ul><li><a href="when-is-the-vault-actually-used.html">When is the vault actually used? In Mondweep Chakravorty's SGit × Ruflo run, the encrypted vault is written or read in three steps of twelve, on one machine, inside the adapter, and why that is the honest shape of a recovery copy</a> <span class="dim">In the SGit × Ruflo run the vault is written or read in three steps of twelve, on one machine, inside the adapter: the right shape for a recovery copy.</span></li><li><a href="your-agents-logs-are-a-self-report.html">Your agent's logs are a self-report: an answer to a GRC adviser's post on The AI Conference, with this site's own agent as the worked example, including the two commits its own counter got wrong</a> <span class="dim">An answer to a GRC adviser's post: why an agent's logs are a self-report, and this site's agent measured, including two commits its own counter got wrong.</span></li><li><a href="the-ai-conference-read-for-governance.html">The AI Conference 2026, read for agent governance: six claims traced, five disagreements, and what the speaker notes say that the slides do not</a> <span class="dim">Six claims from a post about The AI Conference traced to the slides, five open disagreements, and the best fact-check, in a speaker's notes.</span></li><li><a href="what-if-an-agent-loses-its-workspace.html">What if an agent loses its workspace? Mondweep Chakravorty's SGit × Ruflo proof of concept, step by step: memory saved encrypted, the project deleted, the memory back in a fresh process, and three safeguards that held</a> <span class="dim">Mondweep Chakravorty's SGit × Ruflo run: an agent's memory saved encrypted, the project deleted, the memory back in a fresh process.</span></li><li><a href="a-policy-beside-the-prompt.html">A policy beside the prompt: a proposal that every agent takes a behaviour policy as an input, with enforcement and liability attached, and why aviation and payments say the vendors should want it</a> <span class="dim">A proposal: every agent takes a behaviour policy beside its prompt, which the vendor accepts and answers for, as aviation and payments learned to.</span></li></ul></div><div><h3>Continued by</h3><ul><li><a href="when-is-the-vault-actually-used.html">When is the vault actually used? In Mondweep Chakravorty's SGit × Ruflo run, the encrypted vault is written or read in three steps of twelve, on one machine, inside the adapter, and why that is the honest shape of a recovery copy</a> <span class="dim">In the SGit × Ruflo run the vault is written or read in three steps of twelve, on one machine, inside the adapter: the right shape for a recovery copy.</span></li><li><a href="what-if-an-agent-loses-its-workspace.html">What if an agent loses its workspace? Mondweep Chakravorty's SGit × Ruflo proof of concept, step by step: memory saved encrypted, the project deleted, the memory back in a fresh process, and three safeguards that held</a> <span class="dim">Mondweep Chakravorty's SGit × Ruflo run: an agent's memory saved encrypted, the project deleted, the memory back in a fresh process.</span></li></ul></div></div>
+ <p class="small dim"><a href="index.html">All articles</a> &middot; <a href="graphs.html">All graphs</a></p>
+ <p class="small dim">Article No. 163 &middot; <a href="../for/make.html#r=163">start a reading list with it</a></p>
+</section>
+<aside class="lkit" aria-label="For LinkedIn"><b>Posting this article on LinkedIn?</b> The cover is <a href="banners/the-policy-guards-the-door.jpg" download>the-policy-guards-the-door.jpg</a> (1920&times;1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page.</aside>
+ <p class="subteaser"><b>Want the next issue by email.</b> One issue a week or so: what was published, what it adds up to, and what is worth your time. <a class="cta2" href="../subscribe/index.html">Subscribe to the SGit Newsroom &rarr;</a></p>
+ <p class="small dim" style="margin-top:2rem"><a href="index.html">&larr; All articles</a></p>
+</main>
+<script>
+(function () {
+ fetch('../assets/shots.js?v=v0.7.87')
+ .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+ .then(function (t) { (0, eval)(t); })
+ .catch(function (e) { console.error('[shots] component failed to load:', e); });
+}());
+</script>
+<script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": "https://buy.stripe.com/6oUfZ9ez65vVgU2fY15os04"}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
+<script>
+import('../assets/components/sg-meter/v1/v1.4/v1.4.1/sg-meter.js?v=v0.7.87')
+ .catch(function (e) { console.error('[sg-meter] component failed to load:', e); });
+</script>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../admin/versions.html">v0.12.89</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="the-policy-guards-the-door.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../index.html">&#8594; The front page</a>
+    <a href="../about/index.html">Why this exists</a>
+    <a href="../desks/index.html">The five desks</a>
+    <a href="../agents/index.html">Written by the agents</a>
+    <a href="../wire/index.html">The Industry Wire</a>
+    <a href="../wire/owasp/index.html">The OWASP Wire</a>
+    <a href="../wire/aws/index.html">The AWS Wire</a>
+    <a href="../wire/portugal/index.html">The Portugal Wire</a>
+    <a href="../articles/index.html#all">Every article</a>
+    <a href="../articles/newsletter/index.html">The newsletter</a>
+    <a href="../articles/collections/index.html">Collections</a>
+    <a href="../articles/desk/index.html">From the desk</a>
+    <a href="../articles/graphs.html">As graphs</a>
+    <a href="../subscribe/index.html">Subscribe</a>
+    <a href="../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../account/index.html">Your reading account</a>
+    <a href="../account/newsroom.html">Your newsroom</a>
+    <a href="../account/personas.html">Your personas</a>
+    <a href="../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../newsroom/index.html">How the newsroom runs</a>
+    <a href="../newsroom/policies.html">Behaviour policies</a>
+    <a href="../newsroom/publish.html">How to publish</a>
+    <a href="../newsroom/board.html">The board</a>
+    <a href="../newsroom/log.html">The run log</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../design/index.html">The design, and what runs</a>
+    <a href="../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../corrections/index.html">Corrections must propagate</a>
+    <a href="../provenance/index.html">Provenance is the product</a>
+    <a href="../economics/index.html">Paying the fact creator</a>
+    <a href="../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../replicate/index.html">Replicate this newsroom</a>
+    <a href="../publishers/index.html">For publishers</a>
+    <a href="../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+    <a href="../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../archive/index.html">The archive</a>
+    <a href="../network/index.html">The network</a>
+    <a href="../admin/versions.html">Release history</a>
+    <a href="../admin/index.html">Admin &amp; engineering</a>
+    <a href="../about/participant.html">Where we lose</a>
+    <a href="../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+
+<script>
+(function(){var R=document.documentElement.getAttribute('data-root')||'';var V='?v=' + 'v0.7.87';var C=[R,'','../','/'].filter(function(v,i,a){return a.indexOf(v)===i});
+function wait(ms){return new Promise(function(res){var t=Date.now();(function p(){if(window.sg)return res(window.sg);if(Date.now()-t>ms)return res(null);setTimeout(p,60)})()})}
+function grab(sg,p){return new Promise(function(res){(async function(){if(sg&&sg.vfs&&sg.vfs.readText){try{var t=await sg.vfs.readText(p);if(t)return res(t)}catch(e){}}try{var r=await fetch(p+V);if(r.ok)return res(await r.text())}catch(e){}res(null)})()})}
+async function css(sg){for(var i=0;i<C.length;i++){var p=C[i]+'assets/newsroom.css';if(sg&&sg.loadCss){try{await sg.loadCss(p);return}catch(e){}}var t=await grab(sg,p);if(t){var s=document.createElement('style');s.textContent=t;document.head.appendChild(s);return}}}
+async function js(sg,name){name=name||'assets/site.js';for(var i=0;i<C.length;i++){var p=C[i]+name;if(sg&&sg.loadJs){try{await sg.loadJs(p);return}catch(e){}}var t=await grab(sg,p);if(t){try{(0,eval)(t)}catch(e){console.error('[site] js failed',name,e)}return}}}
+async function boot(){var inVault=false;try{inVault=(window!==window.parent)||location.protocol==='blob:'}catch(e){inVault=true}
+var sg=inVault?await wait(2500):null;window.__sgitBoot={roots:C,grab:function(p){return grab(sg,p)},version:V};await css(sg);await js(sg);document.documentElement.classList.add('ready');try{window.parent&&window.parent.postMessage({type:'sg-app-ready'},'*')}catch(e){}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+var mine=V.slice(3),last=0;
+function fresh(){if(location.hostname!=='sgit.ai'||Date.now()-last<60000)return;last=Date.now();
+fetch('/version.txt?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(t){t=(t||'').trim();if(!/^v[0-9]+[.][0-9]+[.][0-9]+$/.test(t)||t===mine)return;
+var k='sgit.fresh:'+location.pathname;try{if(sessionStorage.getItem(k)===t)return;sessionStorage.setItem(k,t)}catch(e){}
+var u=new URL(location.href);u.searchParams.set('v',t);location.replace(u.href)}).catch(function(){})}
+try{var u=new URL(location.href);if(u.searchParams.get('v')===mine){u.searchParams.delete('v');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}
+fresh();addEventListener('pageshow',function(e){if(e.persisted){last=0;fresh()}});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')fresh()});
+})();
+</script>
+</body>
+</html>

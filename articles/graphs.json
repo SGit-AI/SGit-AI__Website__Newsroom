@@ -55,6 +55,668 @@
   ],
   "articles": [
     {
+      "slug": "when-is-the-vault-actually-used",
+      "title": "When is the vault actually used? In Mondweep Chakravorty's SGit × Ruflo run, the encrypted vault is written or read in three steps of twelve, on one machine, inside the adapter, and why that is the honest shape of a recovery copy",
+      "date": "2026-10-17",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/when-is-the-vault-actually-used.html",
+      "markdown": "https://newsroom.sgit.ai/articles/when-is-the-vault-actually-used.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/when-is-the-vault-actually-used.webp",
+      "teaser": "In the SGit × Ruflo run the vault is written or read in three steps of twelve, on one machine, inside the adapter: the right shape for a recovery copy.",
+      "topics": [
+        "vaults-and-method",
+        "agents-and-policy"
+      ],
+      "tags": [
+        "agents",
+        "ruflo",
+        "sgit",
+        "vaults",
+        "architecture",
+        "agent-behaviour-policy",
+        "mcp",
+        "memory",
+        "video",
+        "article"
+      ],
+      "links_out": [
+        "what-if-an-agent-loses-its-workspace",
+        "the-policy-guards-the-door",
+        "one-vault-ten-agents",
+        "sgit-is-a-standard"
+      ],
+      "links_in": [
+        "what-if-an-agent-loses-its-workspace",
+        "the-policy-guards-the-door"
+      ],
+      "figures": [
+        {
+          "file": "rf-matrix.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/rf-matrix.webp",
+          "caption": "Who does what, step by step: the vault is written or read in steps 5, 8 and 11, protected in step 6 and survives step 7; Ruflo's own command line touches memory in steps 3, 9 and 10, where the ABP is not on the path. From the architecture addendum to the analysis of Mondweep Chakravorty's video.",
+          "kind": "comparison"
+        },
+        {
+          "file": "rf-map.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/rf-map.webp",
+          "caption": "The component map: the test script calls Ruflo's command line in steps 3, 9 and 10 and the ABP adapter's tools in steps 4, 5, 6, 8 and 11; the adapter's policy gate leads to the SGit library, which writes the vault and its keys on the machine's disk. Ruflo's hive-mind, its policy engine and a remote vault server were not used. Blue is Ruflo, amber the ABP adapter, green SGit and the vault, grey plain files.",
+          "kind": "architecture"
+        },
+        {
+          "file": "rf-stage-05.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/rf-stage-05.webp",
+          "caption": "Step 5: the checkpoint tool passes the policy gate; a SQLite backup takes a consistent copy of memory.db; fingerprints of the database, the ABP and the policy are taken; the SGit library encrypts on the machine and writes ciphertext only to the checkpoint store, with keys kept apart.",
+          "kind": "architecture"
+        },
+        {
+          "file": "rf-stage-08.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/rf-stage-08.webp",
+          "caption": "Step 8: a new MCP server process restores the checkpoint; the policy gate allows it; the SGit library reads ciphertext from the vault and keys from the private folder, decrypts and verifies, and writes memory.sqlite into the fresh-runner workspace, with the same SHA-256 as in step 5.",
+          "kind": "architecture"
+        },
+        {
+          "file": "rf-stage-11.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/rf-stage-11.webp",
+          "caption": "Step 11: one object in the vault is altered; the restore tool passes the policy gate; the SGit library reads the altered ciphertext, the integrity check fails, and a ValueError means the tampered workspace is never created.",
+          "kind": "architecture"
+        },
+        {
+          "file": "rf-where.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/rf-where.webp",
+          "caption": "Where the video's vault lives: on one machine, the adapter and SGit library, the checkpoint store, the private key folder and the workspaces; a vault server was not used.",
+          "kind": "architecture"
+        }
+      ],
+      "graph": {
+        "slug": "when-is-the-vault-actually-used",
+        "teaser": "In the SGit × Ruflo run the vault is written or read in three steps of twelve, on one machine, inside the adapter: the right shape for a recovery copy.",
+        "topics": [
+          "vaults-and-method",
+          "agents-and-policy"
+        ],
+        "core_idea": "Read stage by stage, the encrypted vault in Mondweep Chakravorty's run is written in step 5, read in step 8 and read and rejected in step 11, protected in step 6 and surviving step 7; it lives on one machine, is implemented in the adapter rather than in Ruflo, and binds the data to the policy in force; what is not yet shown is the vault leaving the machine.",
+        "nodes": [
+          {
+            "id": "three",
+            "label": "Three steps of twelve",
+            "kind": "claim",
+            "summary": "Written 5, read 8, rejected 11."
+          },
+          {
+            "id": "map",
+            "label": "The component map",
+            "kind": "artefact",
+            "summary": "Two lines from the test script."
+          },
+          {
+            "id": "written",
+            "label": "Step 5: written",
+            "kind": "example",
+            "summary": "A consistent copy, fingerprinted, encrypted."
+          },
+          {
+            "id": "read",
+            "label": "Step 8: read",
+            "kind": "example",
+            "summary": "Byte for byte the same."
+          },
+          {
+            "id": "rejected",
+            "label": "Step 11: rejected",
+            "kind": "example",
+            "summary": "The vault's integrity check refuses."
+          },
+          {
+            "id": "protected",
+            "label": "Steps 6 and 7",
+            "kind": "example",
+            "summary": "Protected, then survives."
+          },
+          {
+            "id": "onemachine",
+            "label": "One machine",
+            "kind": "claim",
+            "summary": "Survives the project, not the machine."
+          },
+          {
+            "id": "adapter",
+            "label": "In the adapter, not Ruflo",
+            "kind": "concept",
+            "summary": "Wraps any tool's memory file."
+          },
+          {
+            "id": "binding",
+            "label": "Data bound to its policy",
+            "kind": "concept",
+            "summary": "The checkpoint records the rules in force."
+          },
+          {
+            "id": "shownvsinferred",
+            "label": "Shown and inferred",
+            "kind": "method",
+            "summary": "Solid arrows on screen, dashed inferred."
+          },
+          {
+            "id": "next",
+            "label": "The vault leaving the machine",
+            "kind": "question",
+            "summary": "Push, clone, a server holding only ciphertext."
+          }
+        ],
+        "edges": [
+          {
+            "from": "written",
+            "to": "three",
+            "rel": "example-of"
+          },
+          {
+            "from": "read",
+            "to": "three",
+            "rel": "example-of"
+          },
+          {
+            "from": "rejected",
+            "to": "three",
+            "rel": "example-of"
+          },
+          {
+            "from": "protected",
+            "to": "three",
+            "rel": "extends"
+          },
+          {
+            "from": "map",
+            "to": "adapter",
+            "rel": "produces"
+          },
+          {
+            "from": "binding",
+            "to": "written",
+            "rel": "depends-on"
+          },
+          {
+            "from": "onemachine",
+            "to": "next",
+            "rel": "leads-to"
+          },
+          {
+            "from": "adapter",
+            "to": "three",
+            "rel": "answers"
+          },
+          {
+            "from": "shownvsinferred",
+            "to": "map",
+            "rel": "depends-on"
+          }
+        ],
+        "links": {
+          "articles": [
+            "what-if-an-agent-loses-its-workspace",
+            "the-policy-guards-the-door",
+            "one-vault-ten-agents",
+            "sgit-is-a-standard"
+          ],
+          "pages": [],
+          "sites": [
+            "https://youtu.be/rkh6BJiaIrQ",
+            "https://newsroom.sgit.ai/demos/videos/sgit-ruflo-poc/index.html",
+            "https://github.com/ruvnet/ruflo"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "A recovery copy should be touched when you save and when you restore, and otherwise left alone.",
+            "why": "Why three steps is right."
+          },
+          {
+            "text": "The ABP allows the restore; the vault's own integrity check is what refuses it.",
+            "why": "Two different guards."
+          },
+          {
+            "text": "It would not survive the machine being lost, which the video does not claim.",
+            "why": "The honest limit."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "what-if-an-agent-loses-its-workspace",
+      "title": "What if an agent loses its workspace? Mondweep Chakravorty's SGit × Ruflo proof of concept, step by step: memory saved encrypted, the project deleted, the memory back in a fresh process, and three safeguards that held",
+      "date": "2026-10-17",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/what-if-an-agent-loses-its-workspace.html",
+      "markdown": "https://newsroom.sgit.ai/articles/what-if-an-agent-loses-its-workspace.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/what-if-an-agent-loses-its-workspace.webp",
+      "teaser": "Mondweep Chakravorty's SGit × Ruflo run: an agent's memory saved encrypted, the project deleted, the memory back in a fresh process.",
+      "topics": [
+        "vaults-and-method",
+        "agents-and-policy"
+      ],
+      "tags": [
+        "agents",
+        "ruflo",
+        "sgit",
+        "vaults",
+        "agent-behaviour-policy",
+        "mcp",
+        "memory",
+        "recovery",
+        "video",
+        "article"
+      ],
+      "links_out": [
+        "a-policy-beside-the-prompt",
+        "agentics-ready-to-sell",
+        "when-is-the-vault-actually-used",
+        "the-policy-guards-the-door"
+      ],
+      "links_in": [
+        "when-is-the-vault-actually-used",
+        "the-policy-guards-the-door"
+      ],
+      "figures": [
+        {
+          "file": "rf-board.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/rf-board.webp",
+          "caption": "The twelve steps of the run and how each ended: five worked, three were safeguards refusing as intended, four were setup or summary. Not tested, and said so on screen: recall by meaning. From the video by Mondweep Chakravorty.",
+          "kind": "comparison"
+        },
+        {
+          "file": "rf-term-05.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/rf-term-05.webp",
+          "caption": "Step 5 on the terminal: the checkpoint is saved with its id, a consistent SQLite backup, and three SHA-256 fingerprints, of the database, the ABP and the compiled policy. \"Only encrypted SGit bare objects enter the checkpoint store.\" Frame from the video by Mondweep Chakravorty.",
+          "kind": "comparison"
+        },
+        {
+          "file": "rf-term-08.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/rf-term-08.webp",
+          "caption": "Step 8 on the terminal: a new MCP server restores the checkpoint into a workspace called fresh-runner; the database fingerprint is the same as in step 5, and matches_checkpoint is true. Frame from the video by Mondweep Chakravorty.",
+          "kind": "comparison"
+        },
+        {
+          "file": "rf-term-09.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/rf-term-09.webp",
+          "caption": "Step 9 on the terminal: Ruflo's own retrieve command returns both facts word for word, and the run reports a pass. Frame from the video by Mondweep Chakravorty.",
+          "kind": "comparison"
+        },
+        {
+          "file": "rf-term-11.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/rf-term-11.webp",
+          "caption": "Step 11 on the terminal: one checkpoint object is altered, the restore fails with a ValueError, and tampered_workspace_created is false. Frame from the video by Mondweep Chakravorty.",
+          "kind": "comparison"
+        },
+        {
+          "file": "rf-outcome.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/rf-outcome.webp",
+          "caption": "The video's closing slide: the facts came back and the safeguards held; still to validate, recall by meaning, real-world value, and installation and ongoing reliability. Frame from the video by Mondweep Chakravorty.",
+          "kind": "comparison"
+        }
+      ],
+      "graph": {
+        "slug": "what-if-an-agent-loses-its-workspace",
+        "teaser": "Mondweep Chakravorty's SGit × Ruflo run: an agent's memory saved encrypted, the project deleted, the memory back in a fresh process.",
+        "topics": [
+          "vaults-and-method",
+          "agents-and-policy"
+        ],
+        "core_idea": "A replayed terminal run in twelve steps shows Ruflo's memory saved as an encrypted SGit checkpoint by an ABP-governed adapter, the original project deleted, and both facts read back exactly by Ruflo in a fresh process, with matching fingerprints, while three safeguards hold and recall by meaning is marked not tested.",
+        "nodes": [
+          {
+            "id": "question",
+            "label": "What if an agent loses its workspace?",
+            "kind": "question",
+            "summary": "Does memory come back, with its rules?"
+          },
+          {
+            "id": "pinned",
+            "label": "A pinned runtime",
+            "kind": "method",
+            "summary": "Ruflo v3.56.10, SGit commit, adapter 0.2."
+          },
+          {
+            "id": "mandate",
+            "label": "Four ABP rows",
+            "kind": "artefact",
+            "summary": "Delete needs approval; ambiguity fails closed."
+          },
+          {
+            "id": "store",
+            "label": "Two facts stored",
+            "kind": "example",
+            "summary": "Kestrel charging window and retention."
+          },
+          {
+            "id": "checkpoint",
+            "label": "Encrypted checkpoint",
+            "kind": "method",
+            "summary": "Database, ABP and policy fingerprinted."
+          },
+          {
+            "id": "delete",
+            "label": "The project deleted",
+            "kind": "example",
+            "summary": "The loss is real."
+          },
+          {
+            "id": "restore",
+            "label": "Fresh-process restore",
+            "kind": "claim",
+            "summary": "Same SHA-256 as the saved copy."
+          },
+          {
+            "id": "recall",
+            "label": "Ruflo reads it back",
+            "kind": "claim",
+            "summary": "Both facts word for word."
+          },
+          {
+            "id": "safeguards",
+            "label": "Three safeguards held",
+            "kind": "claim",
+            "summary": "Scope, approval, tamper."
+          },
+          {
+            "id": "control",
+            "label": "A negative control",
+            "kind": "method",
+            "summary": "A missing fact stays missing."
+          },
+          {
+            "id": "notyet",
+            "label": "Not tested: recall by meaning",
+            "kind": "question",
+            "summary": "Embeddings were switched off."
+          },
+          {
+            "id": "agentics",
+            "label": "A hive, a memory, a mandate",
+            "kind": "concept",
+            "summary": "The product this run proves out."
+          }
+        ],
+        "edges": [
+          {
+            "from": "pinned",
+            "to": "question",
+            "rel": "answers"
+          },
+          {
+            "from": "mandate",
+            "to": "checkpoint",
+            "rel": "depends-on"
+          },
+          {
+            "from": "store",
+            "to": "checkpoint",
+            "rel": "leads-to"
+          },
+          {
+            "from": "checkpoint",
+            "to": "delete",
+            "rel": "leads-to"
+          },
+          {
+            "from": "delete",
+            "to": "restore",
+            "rel": "leads-to"
+          },
+          {
+            "from": "restore",
+            "to": "recall",
+            "rel": "leads-to"
+          },
+          {
+            "from": "control",
+            "to": "recall",
+            "rel": "compared-with"
+          },
+          {
+            "from": "safeguards",
+            "to": "mandate",
+            "rel": "example-of"
+          },
+          {
+            "from": "notyet",
+            "to": "recall",
+            "rel": "contrasts"
+          },
+          {
+            "from": "recall",
+            "to": "agentics",
+            "rel": "example-of"
+          }
+        ],
+        "links": {
+          "articles": [
+            "when-is-the-vault-actually-used",
+            "the-policy-guards-the-door",
+            "agentics-ready-to-sell",
+            "a-policy-beside-the-prompt"
+          ],
+          "pages": [],
+          "sites": [
+            "https://youtu.be/rkh6BJiaIrQ",
+            "https://newsroom.sgit.ai/demos/videos/sgit-ruflo-poc/index.html",
+            "https://github.com/ruvnet/ruflo"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "No raw rule overrides. Unsupported or ambiguous policies fail closed.",
+            "why": "The mandate in one line."
+          },
+          {
+            "text": "Binding the data to the rules in force is the detail I like most.",
+            "why": "Why the checkpoint matters."
+          },
+          {
+            "text": "PASS: both values match the CLI-written facts exactly.",
+            "why": "The result, on screen."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "the-policy-guards-the-door",
+      "title": "The policy guards the door; the command line uses the window: in the SGit × Ruflo run, the ABP checks the adapter's tools, while Ruflo's own command line reaches the same memory file without it, and five other questions for the author",
+      "date": "2026-10-17",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/the-policy-guards-the-door.html",
+      "markdown": "https://newsroom.sgit.ai/articles/the-policy-guards-the-door.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/the-policy-guards-the-door.webp",
+      "teaser": "The ABP in the SGit × Ruflo run guards the adapter's tools; Ruflo's own command line reaches the same memory file without it. A question, not a finding.",
+      "topics": [
+        "agents-and-policy",
+        "vaults-and-method"
+      ],
+      "tags": [
+        "agents",
+        "ruflo",
+        "sgit",
+        "agent-behaviour-policy",
+        "security",
+        "mcp",
+        "enforcement",
+        "memory",
+        "video",
+        "article"
+      ],
+      "links_out": [
+        "when-is-the-vault-actually-used",
+        "your-agents-logs-are-a-self-report",
+        "the-ai-conference-read-for-governance",
+        "what-if-an-agent-loses-its-workspace",
+        "a-policy-beside-the-prompt"
+      ],
+      "links_in": [
+        "when-is-the-vault-actually-used",
+        "what-if-an-agent-loses-its-workspace"
+      ],
+      "figures": [
+        {
+          "file": "rf-gap.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/rf-gap.webp",
+          "caption": "Two ways into the same memory: the adapter's tools pass the ABP's policy gate on their way to SGit and the vault, in steps 4, 5, 6, 8 and 11; Ruflo's own command line reads and writes the memory file directly, in steps 3, 9 and 10, with no ABP check. Solid arrows are shown on screen; that an agent could use the second path is an inference.",
+          "kind": "architecture"
+        },
+        {
+          "file": "rf-stage-03.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/rf-stage-03.webp",
+          "caption": "Step 3: the test script calls the ruflo command line's memory store, which loads its embedding model, stores no vectors, and writes two rows of plain text into the source workspace's memory.db; the ABP adapter and the vault are not on this path.",
+          "kind": "architecture"
+        },
+        {
+          "file": "rf-stage-09.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/rf-stage-09.webp",
+          "caption": "Step 9: the ruflo command line's memory retrieve reads memory.sqlite in the fresh-runner workspace and returns both facts exactly; the vault and the ABP adapter are not on this path.",
+          "kind": "architecture"
+        }
+      ],
+      "graph": {
+        "slug": "the-policy-guards-the-door",
+        "teaser": "The ABP in the SGit × Ruflo run guards the adapter's tools; Ruflo's own command line reaches the same memory file without it. A question, not a finding.",
+        "topics": [
+          "agents-and-policy",
+          "vaults-and-method"
+        ],
+        "core_idea": "Every step the ABP guarded behaved as written, but the policy is enforced by the adapter on its three tools, while Ruflo's command line writes and reads the same memory file directly in steps 3, 9 and 10; a policy holds only on the paths through its enforcer, and compiling the rows into Ruflo's own policy engine is one way to cover the rest.",
+        "nodes": [
+          {
+            "id": "twopaths",
+            "label": "Two paths to the memory",
+            "kind": "concept",
+            "summary": "Through the gate, and around it."
+          },
+          {
+            "id": "guarded",
+            "label": "The guarded steps behaved",
+            "kind": "claim",
+            "summary": "4, 5, 6, 8 and 11."
+          },
+          {
+            "id": "cli",
+            "label": "Ruflo's command line",
+            "kind": "example",
+            "summary": "Steps 3, 9 and 10, no ABP check."
+          },
+          {
+            "id": "inferred",
+            "label": "An agent with a shell",
+            "kind": "question",
+            "summary": "Could it change memory unchecked?"
+          },
+          {
+            "id": "enforcer",
+            "label": "A policy holds on its enforcer's paths",
+            "kind": "claim",
+            "summary": "The general lesson."
+          },
+          {
+            "id": "selfreport",
+            "label": "This site's own agent",
+            "kind": "example",
+            "summary": "Ten of eleven rules kept by the agent."
+          },
+          {
+            "id": "outside",
+            "label": "Outside the model is not enough",
+            "kind": "claim",
+            "summary": "Around every path is the harder part."
+          },
+          {
+            "id": "engine",
+            "label": "Ruflo's policy engine, enforce mode",
+            "kind": "method",
+            "summary": "The addendum's suggested fix."
+          },
+          {
+            "id": "questions",
+            "label": "Five more questions",
+            "kind": "question",
+            "summary": "Records, errors, the vault's home, a file name, approval."
+          },
+          {
+            "id": "reply",
+            "label": "The author's right of reply",
+            "kind": "method",
+            "summary": "Answers will be added."
+          }
+        ],
+        "edges": [
+          {
+            "from": "guarded",
+            "to": "twopaths",
+            "rel": "example-of"
+          },
+          {
+            "from": "cli",
+            "to": "twopaths",
+            "rel": "example-of"
+          },
+          {
+            "from": "inferred",
+            "to": "cli",
+            "rel": "extends"
+          },
+          {
+            "from": "enforcer",
+            "to": "twopaths",
+            "rel": "answers"
+          },
+          {
+            "from": "selfreport",
+            "to": "enforcer",
+            "rel": "example-of"
+          },
+          {
+            "from": "outside",
+            "to": "enforcer",
+            "rel": "extends"
+          },
+          {
+            "from": "engine",
+            "to": "cli",
+            "rel": "answers"
+          },
+          {
+            "from": "questions",
+            "to": "reply",
+            "rel": "leads-to"
+          }
+        ],
+        "links": {
+          "articles": [
+            "what-if-an-agent-loses-its-workspace",
+            "when-is-the-vault-actually-used",
+            "your-agents-logs-are-a-self-report",
+            "the-ai-conference-read-for-governance",
+            "a-policy-beside-the-prompt"
+          ],
+          "pages": [],
+          "sites": [
+            "https://youtu.be/rkh6BJiaIrQ",
+            "https://newsroom.sgit.ai/demos/videos/sgit-ruflo-poc/index.html",
+            "https://github.com/ruvnet/ruflo"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "A policy holds on the paths that pass through its enforcer, and nowhere else.",
+            "why": "The lesson."
+          },
+          {
+            "text": "Outside the model is necessary; around every path to the data is the harder part.",
+            "why": "The step beyond the conference."
+          },
+          {
+            "text": "The gap is not a mistake in the test. It is a property of where this ABP is enforced.",
+            "why": "Fair to the author."
+          }
+        ]
+      }
+    },
+    {
       "slug": "scrolled-is-not-read",
       "title": "Scrolled is not read: what the reading meter measures, what it should, highlights you can keep, and the page as the reader's own graph",
       "date": "2026-10-16",
@@ -1304,6 +1966,7 @@
         "the-value-of-constraints"
       ],
       "links_in": [
+        "when-is-the-vault-actually-used",
         "research-delivered-as-a-vault",
         "one-vault-ten-agents",
         "scion-and-sgit"
@@ -1501,6 +2164,7 @@
         "scion-and-sgit"
       ],
       "links_in": [
+        "when-is-the-vault-actually-used",
         "sgit-is-a-standard",
         "scion-and-sgit"
       ],
@@ -3751,6 +4415,7 @@
       ],
       "links_out": [],
       "links_in": [
+        "what-if-an-agent-loses-its-workspace",
         "portugal-2024-genai-in-portuguese",
         "a-custom-firefox-of-my-own"
       ],
@@ -4201,6 +4866,7 @@
         "a-policy-beside-the-prompt"
       ],
       "links_in": [
+        "the-policy-guards-the-door",
         "the-ai-conference-read-for-governance"
       ],
       "figures": [
@@ -4657,6 +5323,7 @@
         "a-policy-beside-the-prompt"
       ],
       "links_in": [
+        "the-policy-guards-the-door",
         "your-agents-logs-are-a-self-report"
       ],
       "figures": [
@@ -14172,6 +14839,8 @@
         "stop-the-bleeding-then-ask-for-it-back"
       ],
       "links_in": [
+        "what-if-an-agent-loses-its-workspace",
+        "the-policy-guards-the-door",
         "your-agents-logs-are-a-self-report",
         "the-ai-conference-read-for-governance",
         "your-own-newsroom",

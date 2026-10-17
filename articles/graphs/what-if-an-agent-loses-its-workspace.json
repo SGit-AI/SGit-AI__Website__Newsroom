@@ -1,0 +1,201 @@
+{
+  "slug": "what-if-an-agent-loses-its-workspace",
+  "teaser": "Mondweep Chakravorty's SGit × Ruflo run: an agent's memory saved encrypted, the project deleted, the memory back in a fresh process.",
+  "topics": [
+    "vaults-and-method",
+    "agents-and-policy"
+  ],
+  "core_idea": "A replayed terminal run in twelve steps shows Ruflo's memory saved as an encrypted SGit checkpoint by an ABP-governed adapter, the original project deleted, and both facts read back exactly by Ruflo in a fresh process, with matching fingerprints, while three safeguards hold and recall by meaning is marked not tested.",
+  "nodes": [
+    {
+      "id": "question",
+      "label": "What if an agent loses its workspace?",
+      "kind": "question",
+      "summary": "Does memory come back, with its rules?"
+    },
+    {
+      "id": "pinned",
+      "label": "A pinned runtime",
+      "kind": "method",
+      "summary": "Ruflo v3.56.10, SGit commit, adapter 0.2."
+    },
+    {
+      "id": "mandate",
+      "label": "Four ABP rows",
+      "kind": "artefact",
+      "summary": "Delete needs approval; ambiguity fails closed."
+    },
+    {
+      "id": "store",
+      "label": "Two facts stored",
+      "kind": "example",
+      "summary": "Kestrel charging window and retention."
+    },
+    {
+      "id": "checkpoint",
+      "label": "Encrypted checkpoint",
+      "kind": "method",
+      "summary": "Database, ABP and policy fingerprinted."
+    },
+    {
+      "id": "delete",
+      "label": "The project deleted",
+      "kind": "example",
+      "summary": "The loss is real."
+    },
+    {
+      "id": "restore",
+      "label": "Fresh-process restore",
+      "kind": "claim",
+      "summary": "Same SHA-256 as the saved copy."
+    },
+    {
+      "id": "recall",
+      "label": "Ruflo reads it back",
+      "kind": "claim",
+      "summary": "Both facts word for word."
+    },
+    {
+      "id": "safeguards",
+      "label": "Three safeguards held",
+      "kind": "claim",
+      "summary": "Scope, approval, tamper."
+    },
+    {
+      "id": "control",
+      "label": "A negative control",
+      "kind": "method",
+      "summary": "A missing fact stays missing."
+    },
+    {
+      "id": "notyet",
+      "label": "Not tested: recall by meaning",
+      "kind": "question",
+      "summary": "Embeddings were switched off."
+    },
+    {
+      "id": "agentics",
+      "label": "A hive, a memory, a mandate",
+      "kind": "concept",
+      "summary": "The product this run proves out."
+    }
+  ],
+  "edges": [
+    {
+      "from": "pinned",
+      "to": "question",
+      "rel": "answers"
+    },
+    {
+      "from": "mandate",
+      "to": "checkpoint",
+      "rel": "depends-on"
+    },
+    {
+      "from": "store",
+      "to": "checkpoint",
+      "rel": "leads-to"
+    },
+    {
+      "from": "checkpoint",
+      "to": "delete",
+      "rel": "leads-to"
+    },
+    {
+      "from": "delete",
+      "to": "restore",
+      "rel": "leads-to"
+    },
+    {
+      "from": "restore",
+      "to": "recall",
+      "rel": "leads-to"
+    },
+    {
+      "from": "control",
+      "to": "recall",
+      "rel": "compared-with"
+    },
+    {
+      "from": "safeguards",
+      "to": "mandate",
+      "rel": "example-of"
+    },
+    {
+      "from": "notyet",
+      "to": "recall",
+      "rel": "contrasts"
+    },
+    {
+      "from": "recall",
+      "to": "agentics",
+      "rel": "example-of"
+    }
+  ],
+  "links": {
+    "articles": [
+      "when-is-the-vault-actually-used",
+      "the-policy-guards-the-door",
+      "agentics-ready-to-sell",
+      "a-policy-beside-the-prompt"
+    ],
+    "pages": [],
+    "sites": [
+      "https://youtu.be/rkh6BJiaIrQ",
+      "https://newsroom.sgit.ai/demos/videos/sgit-ruflo-poc/index.html",
+      "https://github.com/ruvnet/ruflo"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "No raw rule overrides. Unsupported or ambiguous policies fail closed.",
+      "why": "The mandate in one line."
+    },
+    {
+      "text": "Binding the data to the rules in force is the detail I like most.",
+      "why": "Why the checkpoint matters."
+    },
+    {
+      "text": "PASS: both values match the CLI-written facts exactly.",
+      "why": "The result, on screen."
+    }
+  ],
+  "figures": [
+    {
+      "file": "rf-board.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/rf-board.webp",
+      "caption": "The twelve steps of the run and how each ended: five worked, three were safeguards refusing as intended, four were setup or summary. Not tested, and said so on screen: recall by meaning. From the video by Mondweep Chakravorty.",
+      "kind": "comparison"
+    },
+    {
+      "file": "rf-term-05.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/rf-term-05.webp",
+      "caption": "Step 5 on the terminal: the checkpoint is saved with its id, a consistent SQLite backup, and three SHA-256 fingerprints, of the database, the ABP and the compiled policy. \"Only encrypted SGit bare objects enter the checkpoint store.\" Frame from the video by Mondweep Chakravorty.",
+      "kind": "comparison"
+    },
+    {
+      "file": "rf-term-08.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/rf-term-08.webp",
+      "caption": "Step 8 on the terminal: a new MCP server restores the checkpoint into a workspace called fresh-runner; the database fingerprint is the same as in step 5, and matches_checkpoint is true. Frame from the video by Mondweep Chakravorty.",
+      "kind": "comparison"
+    },
+    {
+      "file": "rf-term-09.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/rf-term-09.webp",
+      "caption": "Step 9 on the terminal: Ruflo's own retrieve command returns both facts word for word, and the run reports a pass. Frame from the video by Mondweep Chakravorty.",
+      "kind": "comparison"
+    },
+    {
+      "file": "rf-term-11.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/rf-term-11.webp",
+      "caption": "Step 11 on the terminal: one checkpoint object is altered, the restore fails with a ValueError, and tampered_workspace_created is false. Frame from the video by Mondweep Chakravorty.",
+      "kind": "comparison"
+    },
+    {
+      "file": "rf-outcome.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/rf-outcome.webp",
+      "caption": "The video's closing slide: the facts came back and the safeguards held; still to validate, recall by meaning, real-world value, and installation and ongoing reliability. Frame from the video by Mondweep Chakravorty.",
+      "kind": "comparison"
+    }
+  ]
+}

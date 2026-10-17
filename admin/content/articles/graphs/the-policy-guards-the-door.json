@@ -1,0 +1,38 @@
+{
+ "slug": "the-policy-guards-the-door",
+ "teaser": "The ABP in the SGit × Ruflo run guards the adapter's tools; Ruflo's own command line reaches the same memory file without it. A question, not a finding.",
+ "topics": ["agents-and-policy", "vaults-and-method"],
+ "core_idea": "Every step the ABP guarded behaved as written, but the policy is enforced by the adapter on its three tools, while Ruflo's command line writes and reads the same memory file directly in steps 3, 9 and 10; a policy holds only on the paths through its enforcer, and compiling the rows into Ruflo's own policy engine is one way to cover the rest.",
+ "nodes": [
+  {"id": "twopaths", "label": "Two paths to the memory", "kind": "concept", "summary": "Through the gate, and around it."},
+  {"id": "guarded", "label": "The guarded steps behaved", "kind": "claim", "summary": "4, 5, 6, 8 and 11."},
+  {"id": "cli", "label": "Ruflo's command line", "kind": "example", "summary": "Steps 3, 9 and 10, no ABP check."},
+  {"id": "inferred", "label": "An agent with a shell", "kind": "question", "summary": "Could it change memory unchecked?"},
+  {"id": "enforcer", "label": "A policy holds on its enforcer's paths", "kind": "claim", "summary": "The general lesson."},
+  {"id": "selfreport", "label": "This site's own agent", "kind": "example", "summary": "Ten of eleven rules kept by the agent."},
+  {"id": "outside", "label": "Outside the model is not enough", "kind": "claim", "summary": "Around every path is the harder part."},
+  {"id": "engine", "label": "Ruflo's policy engine, enforce mode", "kind": "method", "summary": "The addendum's suggested fix."},
+  {"id": "questions", "label": "Five more questions", "kind": "question", "summary": "Records, errors, the vault's home, a file name, approval."},
+  {"id": "reply", "label": "The author's right of reply", "kind": "method", "summary": "Answers will be added."}
+ ],
+ "edges": [
+  {"from": "guarded", "to": "twopaths", "rel": "example-of"},
+  {"from": "cli", "to": "twopaths", "rel": "example-of"},
+  {"from": "inferred", "to": "cli", "rel": "extends"},
+  {"from": "enforcer", "to": "twopaths", "rel": "answers"},
+  {"from": "selfreport", "to": "enforcer", "rel": "example-of"},
+  {"from": "outside", "to": "enforcer", "rel": "extends"},
+  {"from": "engine", "to": "cli", "rel": "answers"},
+  {"from": "questions", "to": "reply", "rel": "leads-to"}
+ ],
+ "links": {
+  "articles": ["what-if-an-agent-loses-its-workspace", "when-is-the-vault-actually-used", "your-agents-logs-are-a-self-report", "the-ai-conference-read-for-governance", "a-policy-beside-the-prompt"],
+  "pages": [],
+  "sites": ["https://youtu.be/rkh6BJiaIrQ", "https://newsroom.sgit.ai/demos/videos/sgit-ruflo-poc/index.html", "https://github.com/ruvnet/ruflo"]
+ },
+ "quotes": [
+  {"text": "A policy holds on the paths that pass through its enforcer, and nowhere else.", "why": "The lesson."},
+  {"text": "Outside the model is necessary; around every path to the data is the harder part.", "why": "The step beyond the conference."},
+  {"text": "The gap is not a mistake in the test. It is a property of where this ABP is enforced.", "why": "Fair to the author."}
+ ]
+}

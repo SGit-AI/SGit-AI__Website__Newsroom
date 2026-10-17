@@ -4,18 +4,18 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.12.88 · 162 articles since 2026-08-17; the newest is 2026-10-16. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v0.12.89 · 165 articles since 2026-08-17; the newest is 2026-10-17. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## The lead
 
-- [The fork next door: why open source protects founders, customers and investors from each other, why forks only take hold when someone stops executing, and why a maturing company should give its explorers a way out](articles/the-fork-next-door.md), 2026-10-16, 15 min. Founders, customers and investors are each protected from the others because anyone can fork; forks take hold only after a breakdown.
+- [When is the vault actually used? In Mondweep Chakravorty's SGit × Ruflo run, the encrypted vault is written or read in three steps of twelve, on one machine, inside the adapter, and why that is the honest shape of a recovery copy](articles/when-is-the-vault-actually-used.md), 2026-10-17, 7 min. In the SGit × Ruflo run the vault is written or read in three steps of twelve, on one machine, inside the adapter: the right shape for a recovery copy.
 
 ## Highlights
 
+- [What if an agent loses its workspace? Mondweep Chakravorty's SGit × Ruflo proof of concept, step by step: memory saved encrypted, the project deleted, the memory back in a fresh process, and three safeguards that held](articles/what-if-an-agent-loses-its-workspace.md), 2026-10-17, 8 min.
+- [The policy guards the door; the command line uses the window: in the SGit × Ruflo run, the ABP checks the adapter's tools, while Ruflo's own command line reaches the same memory file without it, and five other questions for the author](articles/the-policy-guards-the-door.md), 2026-10-17, 6 min.
+- [The fork next door: why open source protects founders, customers and investors from each other, why forks only take hold when someone stops executing, and why a maturing company should give its explorers a way out](articles/the-fork-next-door.md), 2026-10-16, 15 min.
 - [The controllable founder: why investors pick one founder over another who looks just as good, and what record labels taught us about who the commodity is](articles/the-controllable-founder.md), 2026-10-16, 13 min.
-- [Sell, don't issue: a funding model for founders who have already won, where the investor buys the founder's shares, the founder lends the company what it needs, and open source keeps everyone honest](articles/sell-dont-issue.md), 2026-10-16, 15 min.
-- [Research, delivered as a vault: what companies that sell research could do with fractal graphs, behaviour policies for AI-enabled products, and evaluations run by a governed agent hive](articles/research-delivered-as-a-vault.md), 2026-10-16, 10 min.
-- [sgit is a standard, not a server: everything in a vault is one hash away, any storage can serve it, and the server is the least interesting part](articles/sgit-is-a-standard.md), 2026-10-16, 8 min.
 
 ## Who are you reading as?
 
@@ -28,13 +28,13 @@ The reading meter charges a few pence a page from credit kept in your browser, b
 
 ## The five desks
 
-### Agent security & policy (42)
+### Agent security & policy (45)
 For security leads, risk owners and boards deciding what an agent may do and who carries the risk.
-- [A custom Firefox of my own: the full plan to build one with a governed agent hive, for the laptop and the iPad, and how Mozilla could sell me the part I do not want to do, which is keeping it working](articles/a-custom-firefox-of-my-own.md), 2026-10-16, 9 min.
-- [Your agent's logs are a self-report: an answer to a GRC adviser's post on The AI Conference, with this site's own agent as the worked example, including the two commits its own counter got wrong](articles/your-agents-logs-are-a-self-report.md), 2026-10-16, 9 min.
-- [The AI Conference 2026, read for agent governance: six claims traced, five disagreements, and what the speaker notes say that the slides do not](articles/the-ai-conference-read-for-governance.md), 2026-10-16, 11 min.
+- [When is the vault actually used? In Mondweep Chakravorty's SGit × Ruflo run, the encrypted vault is written or read in three steps of twelve, on one machine, inside the adapter, and why that is the honest shape of a recovery copy](articles/when-is-the-vault-actually-used.md), 2026-10-17, 7 min.
+- [What if an agent loses its workspace? Mondweep Chakravorty's SGit × Ruflo proof of concept, step by step: memory saved encrypted, the project deleted, the memory back in a fresh process, and three safeguards that held](articles/what-if-an-agent-loses-its-workspace.md), 2026-10-17, 8 min.
+- [The policy guards the door; the command line uses the window: in the SGit × Ruflo run, the ABP checks the adapter's tools, while Ruflo's own command line reaches the same memory file without it, and five other questions for the author](articles/the-policy-guards-the-door.md), 2026-10-17, 6 min.
 
-### Building with agents (27)
+### Building with agents (28)
 For engineers and builders running agents day to day: tools, memory, email, desktops and review.
 - [Your own newsroom: how a founder can tell their story by voice memo, with an agent that checks it and publishes it to GitHub Pages, and readers who pay a little if they find it useful](articles/your-own-newsroom.md), 2026-10-15, 12 min.
 - [The scripted talk: a presentation as a timeline that plays on a clock, the two vaults it grows out of, and a player built for tonight's ten minutes](articles/the-scripted-talk.md), 2026-10-15, 7 min.

@@ -102,6 +102,7 @@ Vaults & methodSite & engineering[This article as a graph →](graphs.md#one-vau
 
 ### Continued by
 
+- [When is the vault actually used? In Mondweep Chakravorty's SGit × Ruflo run, the encrypted vault is written or read in three steps of twelve, on one machine, inside the adapter, and why that is the honest shape of a recovery copy](when-is-the-vault-actually-used.md) In the SGit × Ruflo run the vault is written or read in three steps of twelve, on one machine, inside the adapter: the right shape for a recovery copy.
 - [sgit is a standard, not a server: everything in a vault is one hash away, any storage can serve it, and the server is the least interesting part](sgit-is-a-standard.md) Git won as a standard, not a server. sgit is one too: every name computed from the key, a file four GETs away, any storage can serve it.
 - [Scion and sgit: Anthropic rebuilt source control for agents inside one company, and an open-source encrypted version already does much of the same thing outside it](scion-and-sgit.md) Anthropic's Scion replaced Git for agents inside one company; sgit, open source and encrypted, shares its core ideas, measured on a 35,000-object vault.
 

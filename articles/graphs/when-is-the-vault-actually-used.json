@@ -1,0 +1,190 @@
+{
+  "slug": "when-is-the-vault-actually-used",
+  "teaser": "In the SGit × Ruflo run the vault is written or read in three steps of twelve, on one machine, inside the adapter: the right shape for a recovery copy.",
+  "topics": [
+    "vaults-and-method",
+    "agents-and-policy"
+  ],
+  "core_idea": "Read stage by stage, the encrypted vault in Mondweep Chakravorty's run is written in step 5, read in step 8 and read and rejected in step 11, protected in step 6 and surviving step 7; it lives on one machine, is implemented in the adapter rather than in Ruflo, and binds the data to the policy in force; what is not yet shown is the vault leaving the machine.",
+  "nodes": [
+    {
+      "id": "three",
+      "label": "Three steps of twelve",
+      "kind": "claim",
+      "summary": "Written 5, read 8, rejected 11."
+    },
+    {
+      "id": "map",
+      "label": "The component map",
+      "kind": "artefact",
+      "summary": "Two lines from the test script."
+    },
+    {
+      "id": "written",
+      "label": "Step 5: written",
+      "kind": "example",
+      "summary": "A consistent copy, fingerprinted, encrypted."
+    },
+    {
+      "id": "read",
+      "label": "Step 8: read",
+      "kind": "example",
+      "summary": "Byte for byte the same."
+    },
+    {
+      "id": "rejected",
+      "label": "Step 11: rejected",
+      "kind": "example",
+      "summary": "The vault's integrity check refuses."
+    },
+    {
+      "id": "protected",
+      "label": "Steps 6 and 7",
+      "kind": "example",
+      "summary": "Protected, then survives."
+    },
+    {
+      "id": "onemachine",
+      "label": "One machine",
+      "kind": "claim",
+      "summary": "Survives the project, not the machine."
+    },
+    {
+      "id": "adapter",
+      "label": "In the adapter, not Ruflo",
+      "kind": "concept",
+      "summary": "Wraps any tool's memory file."
+    },
+    {
+      "id": "binding",
+      "label": "Data bound to its policy",
+      "kind": "concept",
+      "summary": "The checkpoint records the rules in force."
+    },
+    {
+      "id": "shownvsinferred",
+      "label": "Shown and inferred",
+      "kind": "method",
+      "summary": "Solid arrows on screen, dashed inferred."
+    },
+    {
+      "id": "next",
+      "label": "The vault leaving the machine",
+      "kind": "question",
+      "summary": "Push, clone, a server holding only ciphertext."
+    }
+  ],
+  "edges": [
+    {
+      "from": "written",
+      "to": "three",
+      "rel": "example-of"
+    },
+    {
+      "from": "read",
+      "to": "three",
+      "rel": "example-of"
+    },
+    {
+      "from": "rejected",
+      "to": "three",
+      "rel": "example-of"
+    },
+    {
+      "from": "protected",
+      "to": "three",
+      "rel": "extends"
+    },
+    {
+      "from": "map",
+      "to": "adapter",
+      "rel": "produces"
+    },
+    {
+      "from": "binding",
+      "to": "written",
+      "rel": "depends-on"
+    },
+    {
+      "from": "onemachine",
+      "to": "next",
+      "rel": "leads-to"
+    },
+    {
+      "from": "adapter",
+      "to": "three",
+      "rel": "answers"
+    },
+    {
+      "from": "shownvsinferred",
+      "to": "map",
+      "rel": "depends-on"
+    }
+  ],
+  "links": {
+    "articles": [
+      "what-if-an-agent-loses-its-workspace",
+      "the-policy-guards-the-door",
+      "one-vault-ten-agents",
+      "sgit-is-a-standard"
+    ],
+    "pages": [],
+    "sites": [
+      "https://youtu.be/rkh6BJiaIrQ",
+      "https://newsroom.sgit.ai/demos/videos/sgit-ruflo-poc/index.html",
+      "https://github.com/ruvnet/ruflo"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "A recovery copy should be touched when you save and when you restore, and otherwise left alone.",
+      "why": "Why three steps is right."
+    },
+    {
+      "text": "The ABP allows the restore; the vault's own integrity check is what refuses it.",
+      "why": "Two different guards."
+    },
+    {
+      "text": "It would not survive the machine being lost, which the video does not claim.",
+      "why": "The honest limit."
+    }
+  ],
+  "figures": [
+    {
+      "file": "rf-matrix.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/rf-matrix.webp",
+      "caption": "Who does what, step by step: the vault is written or read in steps 5, 8 and 11, protected in step 6 and survives step 7; Ruflo's own command line touches memory in steps 3, 9 and 10, where the ABP is not on the path. From the architecture addendum to the analysis of Mondweep Chakravorty's video.",
+      "kind": "comparison"
+    },
+    {
+      "file": "rf-map.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/rf-map.webp",
+      "caption": "The component map: the test script calls Ruflo's command line in steps 3, 9 and 10 and the ABP adapter's tools in steps 4, 5, 6, 8 and 11; the adapter's policy gate leads to the SGit library, which writes the vault and its keys on the machine's disk. Ruflo's hive-mind, its policy engine and a remote vault server were not used. Blue is Ruflo, amber the ABP adapter, green SGit and the vault, grey plain files.",
+      "kind": "architecture"
+    },
+    {
+      "file": "rf-stage-05.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/rf-stage-05.webp",
+      "caption": "Step 5: the checkpoint tool passes the policy gate; a SQLite backup takes a consistent copy of memory.db; fingerprints of the database, the ABP and the policy are taken; the SGit library encrypts on the machine and writes ciphertext only to the checkpoint store, with keys kept apart.",
+      "kind": "architecture"
+    },
+    {
+      "file": "rf-stage-08.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/rf-stage-08.webp",
+      "caption": "Step 8: a new MCP server process restores the checkpoint; the policy gate allows it; the SGit library reads ciphertext from the vault and keys from the private folder, decrypts and verifies, and writes memory.sqlite into the fresh-runner workspace, with the same SHA-256 as in step 5.",
+      "kind": "architecture"
+    },
+    {
+      "file": "rf-stage-11.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/rf-stage-11.webp",
+      "caption": "Step 11: one object in the vault is altered; the restore tool passes the policy gate; the SGit library reads the altered ciphertext, the integrity check fails, and a ValueError means the tampered workspace is never created.",
+      "kind": "architecture"
+    },
+    {
+      "file": "rf-where.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/rf-where.webp",
+      "caption": "Where the video's vault lives: on one machine, the adapter and SGit library, the checkpoint store, the private key folder and the workspaces; a vault server was not used.",
+      "kind": "architecture"
+    }
+  ]
+}

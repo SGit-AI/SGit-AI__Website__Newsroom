@@ -120,6 +120,7 @@ Agents & policyNews & evidence[This article as a graph →](graphs.md#the-ai-con
 
 ### Continued by
 
+- [The policy guards the door; the command line uses the window: in the SGit × Ruflo run, the ABP checks the adapter's tools, while Ruflo's own command line reaches the same memory file without it, and five other questions for the author](the-policy-guards-the-door.md) The ABP in the SGit × Ruflo run guards the adapter's tools; Ruflo's own command line reaches the same memory file without it. A question, not a finding.
 - [Your agent's logs are a self-report: an answer to a GRC adviser's post on The AI Conference, with this site's own agent as the worked example, including the two commits its own counter got wrong](your-agents-logs-are-a-self-report.md) An answer to a GRC adviser's post: why an agent's logs are a self-report, and this site's agent measured, including two commits its own counter got wrong.
 
 [All articles](index.md) · [All graphs](graphs.md)
