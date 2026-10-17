@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-17 | published | 2,268 | first published | this release | [current](../case-law-for-agents.md) |
+| **v1.0.0** | 2026-10-17 | published | 2,268 | first published | [`4c750bd9b`](https://github.com/SGit-AI/SGit-AI__Website/commit/4c750bd9bbea12d2ec6d1876f2d70552a26fa511) | [current](../case-law-for-agents.md) |
 
 [← Back to the article](../case-law-for-agents.md) · [All articles](../index.md)
 

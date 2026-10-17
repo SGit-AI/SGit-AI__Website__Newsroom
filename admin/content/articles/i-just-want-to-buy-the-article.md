@@ -28,11 +28,11 @@ On Saturday I saw Olivier Laplace's post on LinkedIn about [Turn Vibe-Coded Prot
 
 So I clicked the link in the comments. This is what I got.
 
-!shot bh-modal.webp | images/ | What a LinkedIn reader sees on arriving at the article: "If you only read HBR on Linkedin, you're only getting part of the story. Subscribe for unlimited access to every can't-miss core article on HBR.org." Screenshot of hbr.org, 17 October 2026. | comparison
+!shot bh-modal.webp | images/ | What a LinkedIn reader sees on arriving at the article: "If you only read HBR on Linkedin, you're only getting part of the story. Subscribe for unlimited access to every can't-miss core article on HBR.org." Screenshot of hbr.org, 17 October 2026. | small | comparison
 
 "If you only read HBR on Linkedin, you're only getting part of the story." Then "Subscribe now", and three plans.
 
-!shot bh-plans.webp | images/ | HBR's subscription offer to a UK reader: Digital at £8.75 a month billed yearly or £11 monthly; Digital & Print at £10 or £13; Premium at £15 or £18. Screenshot of hbr.org, 17 October 2026. | comparison
+!shot bh-plans.webp | images/ | HBR's subscription offer to a UK reader: Digital at £8.75 a month billed yearly or £11 monthly; Digital & Print at £10 or £13; Premium at £15 or £18. Screenshot of hbr.org, 17 October 2026. | narrow | comparison
 
 Digital at £8.75 a month billed yearly, or £11 monthly. Digital & Print at £10, or £13. Premium at £15, or £18. Every one of them is a subscription. None of them is the article.
 
@@ -50,11 +50,11 @@ So the price I would expect to pay for one article, read once, is somewhere betw
 
 ## How it works here {#here}
 
-!shot bh-card.webp | images/ | The card at the foot of every article on newsroom.sgit.ai: what the page cost, the share read, the reading list, three ratings that set the price and the reader's picks, and "Something wrong with this page? Don't charge me". | comparison
+!shot bh-card.webp | images/ | The card at the foot of every article on newsroom.sgit.ai: what the page cost, the share read, the reading list, three ratings that set the price and the reader's picks, and "Something wrong with this page? Don't charge me". | narrow | comparison
 
 This newsroom has run the other way since 11 October, with real payments. Every page has a price of a few pence, 10p for a new article and 5p for an older one, and you pay for the share of it you read, after you read it, from a balance kept in your own browser. You never hit a wall: the balance can go below zero and nothing is blocked. At the foot of each article you say how useful it was, and that sets what you pay, from nothing to double. If something was wrong with the page, you say so and you are not charged. It is all on [the page for publishers](https://newsroom.sgit.ai/publishers/index.html), and the argument is in [Pay after you read](/articles/pay-after-you-read.html) and [Paying after the value](/articles/paying-after-the-value.html).
 
-!shot bh-account.webp | images/ | The reading account: every page has a price of a few pence and you pay for the share you read; your balance, history and receipts are kept in your browser; credit can go below zero and no page is blocked; top up £5. | comparison
+!shot bh-account.webp | images/ | The reading account: every page has a price of a few pence and you pay for the share you read; your balance, history and receipts are kept in your browser; credit can go below zero and no page is blocked; top up £5. | narrow | comparison
 
 That is what I wanted on HBR. Read the article, pay for what I read, and say what I thought of it.
 
