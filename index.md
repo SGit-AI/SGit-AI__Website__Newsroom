@@ -4,18 +4,18 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.12.96 · 169 articles since 2026-08-17; the newest is 2026-10-17. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v0.12.97 · 173 articles since 2026-08-17; the newest is 2026-10-17. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## The lead
 
-- [Our first PR in Ruflo: an ABP-governed SGit page, merged into ruvnet/ruflo, and the four pieces that got it there](articles/our-first-pr-in-ruflo.md), 2026-10-17, 9 min. rUv merged Mondweep's pull request #4239: one docs page, the first commit on Ruflo's main branch to mention SGit or an ABP. The four pieces, shown.
+- [Three policies for an agent: behaviour says what it may do, decision says who chooses, workflow says in what order](articles/three-policies-for-an-agent.md), 2026-10-17, 8 min. Behaviour says what an agent may do, decision who chooses at a branch point, workflow in what order. Zoom into one ABP cell and it becomes both.
 
 ## Highlights
 
-- [Fix the page yourself: the bookmarklet trick from my security days, a page API every site should publish, and why the next user experience is the one the user customises, with six fixes running on this newsroom](articles/fix-the-page-yourself.md), 2026-10-17, 10 min.
-- [I just want to buy the article: what happened when I tried to pay Harvard Business Review for one piece I wanted to answer, the arithmetic of a subscription, and ten things HBR could sell a reader like me, most of them already running on this newsroom](articles/i-just-want-to-buy-the-article.md), 2026-10-17, 10 min.
-- [Who will fix your mess? An answer to HBR's "deployment gap" from what this site has already published: explorers, villagers and town planners, a record of what the agents built, and open source so the answer never depends on one partner](articles/who-will-fix-your-mess.md), 2026-10-17, 11 min.
-- [When is the vault actually used? In Mondweep Chakravorty's SGit × Ruflo run, the encrypted vault is written or read in three steps of twelve, on one machine, inside the adapter, and why that is the honest shape of a recovery copy](articles/when-is-the-vault-actually-used.md), 2026-10-17, 8 min.
+- [Three decisions, mapped: an agent's memory, this newsroom's release and a customer refund, through behaviour, decision and workflow](articles/three-decisions-mapped.md), 2026-10-17, 8 min.
+- [Case law for agents: principles from the top, precedent from the cases, and how a decision earns its way into code](articles/case-law-for-agents.md), 2026-10-17, 8 min.
+- [Approve at altitude: decisions at every level, from strategy to one agent's step, where each level may narrow the one above and never widen it](articles/approve-at-altitude.md), 2026-10-17, 8 min.
+- [Our first PR in Ruflo: an ABP-governed SGit page, merged into ruvnet/ruflo, and the four pieces that got it there](articles/our-first-pr-in-ruflo.md), 2026-10-17, 9 min.
 
 ## Who are you reading as?
 
@@ -28,11 +28,11 @@ The reading meter charges a few pence a page from credit kept in your browser, b
 
 ## The five desks
 
-### Agent security & policy (46)
+### Agent security & policy (50)
 For security leads, risk owners and boards deciding what an agent may do and who carries the risk.
-- [Our first PR in Ruflo: an ABP-governed SGit page, merged into ruvnet/ruflo, and the four pieces that got it there](articles/our-first-pr-in-ruflo.md), 2026-10-17, 9 min.
-- [When is the vault actually used? In Mondweep Chakravorty's SGit × Ruflo run, the encrypted vault is written or read in three steps of twelve, on one machine, inside the adapter, and why that is the honest shape of a recovery copy](articles/when-is-the-vault-actually-used.md), 2026-10-17, 8 min.
-- [What if an agent loses its workspace? Mondweep Chakravorty's SGit × Ruflo proof of concept, step by step: memory saved encrypted, the project deleted, the memory back in a fresh process, and three safeguards that held](articles/what-if-an-agent-loses-its-workspace.md), 2026-10-17, 9 min.
+- [Three policies for an agent: behaviour says what it may do, decision says who chooses, workflow says in what order](articles/three-policies-for-an-agent.md), 2026-10-17, 8 min.
+- [Three decisions, mapped: an agent's memory, this newsroom's release and a customer refund, through behaviour, decision and workflow](articles/three-decisions-mapped.md), 2026-10-17, 8 min.
+- [Case law for agents: principles from the top, precedent from the cases, and how a decision earns its way into code](articles/case-law-for-agents.md), 2026-10-17, 8 min.
 
 ### Building with agents (29)
 For engineers and builders running agents day to day: tools, memory, email, desktops and review.

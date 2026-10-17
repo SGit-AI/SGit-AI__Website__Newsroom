@@ -55,6 +55,866 @@
   ],
   "articles": [
     {
+      "slug": "three-policies-for-an-agent",
+      "title": "Three policies for an agent: behaviour says what it may do, decision says who chooses, workflow says in what order",
+      "date": "2026-10-17",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/three-policies-for-an-agent.html",
+      "markdown": "https://newsroom.sgit.ai/articles/three-policies-for-an-agent.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/three-policies-for-an-agent.webp",
+      "teaser": "Behaviour says what an agent may do, decision who chooses at a branch point, workflow in what order. Zoom into one ABP cell and it becomes both.",
+      "topics": [
+        "agents-and-policy"
+      ],
+      "tags": [
+        "agents",
+        "agent-behaviour-policy",
+        "agent-decision-policy",
+        "agent-workflow-policy",
+        "decision-making",
+        "governance",
+        "risk",
+        "fractal-semantic-graphs",
+        "series",
+        "article"
+      ],
+      "links_out": [
+        "our-first-pr-in-ruflo",
+        "the-policy-guards-the-door",
+        "code-review-as-a-fractal-semantic-graph",
+        "hooks-are-kernel-code",
+        "how-cheap-is-it-to-undo",
+        "three-decisions-mapped",
+        "approve-at-altitude",
+        "case-law-for-agents",
+        "agency-is-not-a-yes"
+      ],
+      "links_in": [
+        "three-decisions-mapped",
+        "case-law-for-agents",
+        "approve-at-altitude"
+      ],
+      "figures": [
+        {
+          "file": "dn-three.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/dn-three.webp",
+          "caption": "The three policies, behaviour, decision and workflow, each with the question it answers; and one ABP row from the SGit memory adapter merged into Ruflo's docs, delete.memory.project with mandate approval, zoomed in: today the row says only that a human must approve, so the answer is stop; zoomed in, it holds a decision policy (who decides, on what evidence, within what envelope, with a record) and a workflow (request, verify the checkpoint, approve or refuse, delete, record).",
+          "kind": "concept"
+        }
+      ],
+      "graph": {
+        "slug": "three-policies-for-an-agent",
+        "teaser": "Behaviour says what an agent may do, decision who chooses at a branch point, workflow in what order. Zoom into one ABP cell and it becomes both.",
+        "topics": [
+          "agents-and-policy"
+        ],
+        "core_idea": "An agent needs three policies, not one: behaviour, decision and workflow, meeting where a workflow transition is gated by a decision carried out by permitted behaviours; light decisions stay inline in the ABP, heavy ones get their own policy, and every element is mapped as defined, implemented, enforced and observed.",
+        "nodes": [
+          {
+            "id": "question",
+            "label": "How did the agent decide?",
+            "kind": "question",
+            "summary": "The question a behaviour policy cannot answer."
+          },
+          {
+            "id": "abp",
+            "label": "Agent Behaviour Policy",
+            "kind": "concept",
+            "summary": "What an agent may do, and where."
+          },
+          {
+            "id": "adp",
+            "label": "Agent Decision Policy",
+            "kind": "concept",
+            "summary": "Who chooses, on what evidence, within what limits."
+          },
+          {
+            "id": "awp",
+            "label": "Agent Workflow Policy",
+            "kind": "concept",
+            "summary": "Which steps, in what order."
+          },
+          {
+            "id": "meet",
+            "label": "Where they meet",
+            "kind": "claim",
+            "summary": "Transitions gated by decisions, carried out by behaviours."
+          },
+          {
+            "id": "cell",
+            "label": "The approval cell",
+            "kind": "example",
+            "summary": "delete.memory.project, mandate approval."
+          },
+          {
+            "id": "zoom",
+            "label": "Zoom into one cell",
+            "kind": "method",
+            "summary": "A cell becomes a decision and a workflow policy."
+          },
+          {
+            "id": "light",
+            "label": "Light decisions stay inline",
+            "kind": "claim",
+            "summary": "Money, people, irreversibility, risk earn their own."
+          },
+          {
+            "id": "states",
+            "label": "Four states",
+            "kind": "method",
+            "summary": "Defined, implemented, enforced, observed."
+          },
+          {
+            "id": "levels",
+            "label": "Where it is enforced",
+            "kind": "concept",
+            "summary": "From the prompt to off the machine."
+          },
+          {
+            "id": "business",
+            "label": "Decision is the business's word",
+            "kind": "claim",
+            "summary": "Budgets, owners, risk appetite."
+          },
+          {
+            "id": "dmn",
+            "label": "DMN beside BPMN",
+            "kind": "example",
+            "summary": "The same split in enterprise architecture."
+          }
+        ],
+        "edges": [
+          {
+            "from": "question",
+            "to": "adp",
+            "rel": "answers"
+          },
+          {
+            "from": "abp",
+            "to": "meet",
+            "rel": "leads-to"
+          },
+          {
+            "from": "adp",
+            "to": "meet",
+            "rel": "leads-to"
+          },
+          {
+            "from": "awp",
+            "to": "meet",
+            "rel": "leads-to"
+          },
+          {
+            "from": "cell",
+            "to": "zoom",
+            "rel": "example-of"
+          },
+          {
+            "from": "zoom",
+            "to": "adp",
+            "rel": "leads-to"
+          },
+          {
+            "from": "zoom",
+            "to": "awp",
+            "rel": "leads-to"
+          },
+          {
+            "from": "light",
+            "to": "zoom",
+            "rel": "extends"
+          },
+          {
+            "from": "states",
+            "to": "levels",
+            "rel": "extends"
+          },
+          {
+            "from": "business",
+            "to": "adp",
+            "rel": "answers"
+          },
+          {
+            "from": "dmn",
+            "to": "business",
+            "rel": "example-of"
+          }
+        ],
+        "links": {
+          "articles": [
+            "approve-at-altitude",
+            "case-law-for-agents",
+            "three-decisions-mapped",
+            "our-first-pr-in-ruflo",
+            "hooks-are-kernel-code",
+            "how-cheap-is-it-to-undo",
+            "the-policy-guards-the-door"
+          ],
+          "pages": [],
+          "sites": [
+            "https://abp.sgit.ai/",
+            "https://www.omg.org/spec/DMN/",
+            "https://github.com/ruvnet/ruflo/blob/main/docs/integrations/sgit-memory-checkpoints.md"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "Neither says how it decided.",
+            "why": "The gap."
+          },
+          {
+            "text": "Zoom further and each of those has cells of its own.",
+            "why": "The fractal."
+          },
+          {
+            "text": "\"Decision\" is the word that connects an agent's step to a budget, an owner and a risk, and that is the connection the agent's behaviour policy lacks.",
+            "why": "Why the word."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "three-decisions-mapped",
+      "title": "Three decisions, mapped: an agent's memory, this newsroom's release and a customer refund, through behaviour, decision and workflow",
+      "date": "2026-10-17",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/three-decisions-mapped.html",
+      "markdown": "https://newsroom.sgit.ai/articles/three-decisions-mapped.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/three-decisions-mapped.webp",
+      "teaser": "An agent's memory, this newsroom's release and a refund, mapped through behaviour, decision and workflow: the gaps are in the decisions.",
+      "topics": [
+        "agents-and-policy",
+        "vaults-and-method"
+      ],
+      "tags": [
+        "agents",
+        "agent-behaviour-policy",
+        "agent-decision-policy",
+        "agent-workflow-policy",
+        "scenarios",
+        "ruflo",
+        "sgit",
+        "newsroom",
+        "customer-service",
+        "governance",
+        "series",
+        "article"
+      ],
+      "links_out": [
+        "three-policies-for-an-agent",
+        "our-first-pr-in-ruflo",
+        "what-if-an-agent-loses-its-workspace",
+        "the-policy-guards-the-door",
+        "case-law-for-agents",
+        "how-cheap-is-it-to-undo",
+        "hope-or-enforcement",
+        "approve-at-altitude",
+        "your-agents-logs-are-a-self-report"
+      ],
+      "links_in": [
+        "three-policies-for-an-agent",
+        "case-law-for-agents",
+        "approve-at-altitude"
+      ],
+      "figures": [
+        {
+          "file": "dn-map.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/dn-map.webp",
+          "caption": "Three scenarios mapped element by element: memory deletion in the SGit adapter for Ruflo, this newsroom's release, and an illustrative customer refund. Each element is labelled ABP, decision or workflow, with four states: defined, implemented, enforced and observed. The memory row is enforced but not observed; the newsroom's decision to ship with a failing test is not defined at all; the refund's limits hold at every state because they are in the tools.",
+          "kind": "matrix"
+        }
+      ],
+      "graph": {
+        "slug": "three-decisions-mapped",
+        "teaser": "An agent's memory, this newsroom's release and a refund, mapped through behaviour, decision and workflow: the gaps are in the decisions.",
+        "topics": [
+          "agents-and-policy",
+          "vaults-and-method"
+        ],
+        "core_idea": "Mapping three scenarios element by element, with four states each, shows behaviour policies are the most mature, the gaps sit in decisions that are unnamed, unwritten or unrecorded, observation lags enforcement, and naming an element is what makes its gap visible.",
+        "nodes": [
+          {
+            "id": "map",
+            "label": "The map",
+            "kind": "method",
+            "summary": "Policy and four states per element."
+          },
+          {
+            "id": "memory",
+            "label": "Memory deletion",
+            "kind": "example",
+            "summary": "Enforced, not observed; the decider unnamed."
+          },
+          {
+            "id": "newsroom",
+            "label": "This newsroom's release",
+            "kind": "example",
+            "summary": "Ships on its own."
+          },
+          {
+            "id": "failing",
+            "label": "Shipping with a failing test",
+            "kind": "example",
+            "summary": "Eight calls under no written rule."
+          },
+          {
+            "id": "figure",
+            "label": "A figure with an unchecked date",
+            "kind": "example",
+            "summary": "A new precedent."
+          },
+          {
+            "id": "counter",
+            "label": "Two flagged commits",
+            "kind": "example",
+            "summary": "Scratch repositories: distinguished."
+          },
+          {
+            "id": "refund",
+            "label": "A customer refund",
+            "kind": "example",
+            "summary": "Limits in the tools."
+          },
+          {
+            "id": "vip",
+            "label": "The VIP workflow",
+            "kind": "example",
+            "summary": "Caught by the subset check."
+          },
+          {
+            "id": "gaps",
+            "label": "The gaps are in decisions",
+            "kind": "claim",
+            "summary": "Unnamed, unwritten, unrecorded."
+          },
+          {
+            "id": "observed",
+            "label": "Observation lags enforcement",
+            "kind": "claim",
+            "summary": "Works, and leaves no trace."
+          },
+          {
+            "id": "naming",
+            "label": "Naming makes the gap visible",
+            "kind": "claim",
+            "summary": "No new technology needed to see it."
+          }
+        ],
+        "edges": [
+          {
+            "from": "memory",
+            "to": "map",
+            "rel": "example-of"
+          },
+          {
+            "from": "newsroom",
+            "to": "map",
+            "rel": "example-of"
+          },
+          {
+            "from": "refund",
+            "to": "map",
+            "rel": "example-of"
+          },
+          {
+            "from": "failing",
+            "to": "newsroom",
+            "rel": "example-of"
+          },
+          {
+            "from": "figure",
+            "to": "newsroom",
+            "rel": "example-of"
+          },
+          {
+            "from": "counter",
+            "to": "newsroom",
+            "rel": "example-of"
+          },
+          {
+            "from": "vip",
+            "to": "refund",
+            "rel": "example-of"
+          },
+          {
+            "from": "memory",
+            "to": "observed",
+            "rel": "example-of"
+          },
+          {
+            "from": "failing",
+            "to": "gaps",
+            "rel": "example-of"
+          },
+          {
+            "from": "map",
+            "to": "naming",
+            "rel": "leads-to"
+          },
+          {
+            "from": "gaps",
+            "to": "naming",
+            "rel": "answers"
+          }
+        ],
+        "links": {
+          "articles": [
+            "three-policies-for-an-agent",
+            "approve-at-altitude",
+            "case-law-for-agents",
+            "our-first-pr-in-ruflo",
+            "the-policy-guards-the-door",
+            "how-cheap-is-it-to-undo",
+            "your-agents-logs-are-a-self-report",
+            "what-if-an-agent-loses-its-workspace"
+          ],
+          "pages": [],
+          "sites": [
+            "https://github.com/mondweep/sgit-ruv-memory",
+            "https://github.com/ruvnet/ruflo/blob/main/docs/integrations/sgit-memory-checkpoints.md"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "A gap you have named is a gap you can decide about.",
+            "why": "Why map before wiring."
+          },
+          {
+            "text": "It should be a decision policy:",
+            "why": "The newsroom's unwritten decision."
+          },
+          {
+            "text": "A rule that works and leaves no trace cannot be shown to work",
+            "why": "Observation."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "case-law-for-agents",
+      "title": "Case law for agents: principles from the top, precedent from the cases, and how a decision earns its way into code",
+      "date": "2026-10-17",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/case-law-for-agents.html",
+      "markdown": "https://newsroom.sgit.ai/articles/case-law-for-agents.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/case-law-for-agents.webp",
+      "teaser": "Nobody predicts every case. Borrow the shape of English case law: escalate what the policy does not settle, record it, follow it, then compile it.",
+      "topics": [
+        "agents-and-policy"
+      ],
+      "tags": [
+        "agents",
+        "agent-decision-policy",
+        "case-law",
+        "precedent",
+        "common-law",
+        "governance",
+        "decision-records",
+        "maturity-model",
+        "series",
+        "article"
+      ],
+      "links_out": [
+        "approve-at-altitude",
+        "agency-is-not-a-yes",
+        "hooks-are-kernel-code",
+        "the-policy-guards-the-door",
+        "your-agents-logs-are-a-self-report",
+        "three-decisions-mapped",
+        "three-policies-for-an-agent"
+      ],
+      "links_in": [
+        "three-policies-for-an-agent",
+        "three-decisions-mapped",
+        "approve-at-altitude"
+      ],
+      "figures": [
+        {
+          "file": "dn-caselaw.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/dn-caselaw.webp",
+          "caption": "How a decision earns its way into code. A case arrives at a branch point. If a rule settles it, or a recorded precedent with the same material facts matches, it is resolved and recorded. If not, or if the facts differ in a way that matters, it is distinguished and escalated to a person with the context to decide. The decision is recorded with its reasons and becomes a precedent that the next matching case follows. A precedent that holds case after case is written into the policy, then compiled into deterministic, tested code.",
+          "kind": "process"
+        }
+      ],
+      "graph": {
+        "slug": "case-law-for-agents",
+        "teaser": "Nobody predicts every case. Borrow the shape of English case law: escalate what the policy does not settle, record it, follow it, then compile it.",
+        "topics": [
+          "agents-and-policy"
+        ],
+        "core_idea": "Decision policies handle unpredicted cases the way common law does: principles from the top, escalation to a person for cases no rule or precedent settles, recorded decisions that bind the next matching case, distinguishing as the escalation trigger, and precedents that keep holding written into policy and then compiled into code.",
+        "nodes": [
+          {
+            "id": "unpredicted",
+            "label": "The cases nobody predicted",
+            "kind": "question",
+            "summary": "Inside every envelope, covered by no rule."
+          },
+          {
+            "id": "statute",
+            "label": "Statutes set principles",
+            "kind": "concept",
+            "summary": "Read in the light of their purpose."
+          },
+          {
+            "id": "precedent",
+            "label": "Binding precedent",
+            "kind": "concept",
+            "summary": "Higher courts bind lower ones."
+          },
+          {
+            "id": "distinguish",
+            "label": "Distinguishing",
+            "kind": "method",
+            "summary": "Facts differ in a way that matters."
+          },
+          {
+            "id": "depart",
+            "label": "Departing from precedent",
+            "kind": "concept",
+            "summary": "The 1966 Practice Statement."
+          },
+          {
+            "id": "loop",
+            "label": "The loop for agents",
+            "kind": "method",
+            "summary": "Rule, precedent, or escalate and record."
+          },
+          {
+            "id": "record",
+            "label": "A decision record as a law report",
+            "kind": "artefact",
+            "summary": "Facts, rule, decider, outcome, reasons."
+          },
+          {
+            "id": "maturity",
+            "label": "Precedent to policy to code",
+            "kind": "claim",
+            "summary": "A decision earns its way into code."
+          },
+          {
+            "id": "agency",
+            "label": "Delegation at the top of the agency scale",
+            "kind": "example",
+            "summary": "Cases approved unchanged become rules."
+          },
+          {
+            "id": "tonight",
+            "label": "Two cases from tonight",
+            "kind": "example",
+            "summary": "A new rule, and a case distinguished."
+          },
+          {
+            "id": "bias",
+            "label": "Precedent can carry a bias",
+            "kind": "question",
+            "summary": "Overruling matters more at volume."
+          },
+          {
+            "id": "selfreport",
+            "label": "No record, a self-report",
+            "kind": "claim",
+            "summary": "The Ruflo run computes, writes nothing."
+          }
+        ],
+        "edges": [
+          {
+            "from": "unpredicted",
+            "to": "loop",
+            "rel": "answers"
+          },
+          {
+            "from": "statute",
+            "to": "loop",
+            "rel": "extends"
+          },
+          {
+            "from": "precedent",
+            "to": "loop",
+            "rel": "extends"
+          },
+          {
+            "from": "distinguish",
+            "to": "loop",
+            "rel": "extends"
+          },
+          {
+            "from": "loop",
+            "to": "record",
+            "rel": "leads-to"
+          },
+          {
+            "from": "record",
+            "to": "maturity",
+            "rel": "leads-to"
+          },
+          {
+            "from": "agency",
+            "to": "maturity",
+            "rel": "example-of"
+          },
+          {
+            "from": "tonight",
+            "to": "distinguish",
+            "rel": "example-of"
+          },
+          {
+            "from": "depart",
+            "to": "bias",
+            "rel": "answers"
+          },
+          {
+            "from": "selfreport",
+            "to": "record",
+            "rel": "extends"
+          }
+        ],
+        "links": {
+          "articles": [
+            "three-policies-for-an-agent",
+            "approve-at-altitude",
+            "three-decisions-mapped",
+            "hooks-are-kernel-code",
+            "your-agents-logs-are-a-self-report",
+            "the-policy-guards-the-door"
+          ],
+          "pages": [],
+          "sites": [
+            "https://www.open.edu/openlearn/society-politics-law/law/judicial-decision-making/content-section-9.2",
+            "https://caselaw.nationalarchives.gov.uk/uksc/2017/51",
+            "https://caselaw.nationalarchives.gov.uk/uksc/2016/9"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "Each step is earned by cases, not assumed in advance.",
+            "why": "The difference from writing every rule up front."
+          },
+          {
+            "text": "Most agent systems keep a log of what happened; a precedent needs more:",
+            "why": "The record."
+          },
+          {
+            "text": "This is the part that makes it a precedent rather than a statistic.",
+            "why": "Why reasons matter."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "approve-at-altitude",
+      "title": "Approve at altitude: decisions at every level, from strategy to one agent's step, where each level may narrow the one above and never widen it",
+      "date": "2026-10-17",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/approve-at-altitude.html",
+      "markdown": "https://newsroom.sgit.ai/articles/approve-at-altitude.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/approve-at-altitude.webp",
+      "teaser": "Models can draft two hundred decision policies; nobody can sign two hundred. Approve at altitude: each level may narrow the one above, never widen it.",
+      "topics": [
+        "agents-and-policy"
+      ],
+      "tags": [
+        "agents",
+        "agent-decision-policy",
+        "agent-behaviour-policy",
+        "risk-appetite",
+        "governance",
+        "fractal-semantic-graphs",
+        "delegation",
+        "scaling",
+        "series",
+        "article"
+      ],
+      "links_out": [
+        "three-policies-for-an-agent",
+        "agency-is-not-a-yes",
+        "case-law-for-agents",
+        "three-decisions-mapped",
+        "hope-or-enforcement",
+        "commanders-intent-is-a-behaviour-policy",
+        "code-review-as-a-fractal-semantic-graph"
+      ],
+      "links_in": [
+        "three-policies-for-an-agent",
+        "three-decisions-mapped",
+        "case-law-for-agents"
+      ],
+      "figures": [
+        {
+          "file": "dn-altitude.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/dn-altitude.webp",
+          "caption": "One envelope, automatic refunds, followed down five altitudes: the board's risk appetite; the head of support's limits, 2,000 GBP a day and a person above 100 GBP an order; the product workflow, a team lead to 500 GBP and finance above; the refund tool's limits; and one agent's run, one customer and one refund. Each level sits inside the one above. A new VIP workflow with automatic refunds up to 1,000 GBP an order is wider than the business limit, so it is flagged as out of its powers before it runs.",
+          "kind": "concept"
+        }
+      ],
+      "graph": {
+        "slug": "approve-at-altitude",
+        "teaser": "Models can draft two hundred decision policies; nobody can sign two hundred. Approve at altitude: each level may narrow the one above, never widen it.",
+        "topics": [
+          "agents-and-policy"
+        ],
+        "core_idea": "Decision policies scale through the fractal: decisions exist at every altitude, each level signs off once and is inherited below, every policy declares an envelope, and a lower level may narrow its parent but never widen it, a check that is mechanical for numbers and lists and model-assisted for words.",
+        "nodes": [
+          {
+            "id": "cheap",
+            "label": "Drafting is cheap, sign-off is not",
+            "kind": "claim",
+            "summary": "Two hundred policies, one owner."
+          },
+          {
+            "id": "altitudes",
+            "label": "Decisions at every altitude",
+            "kind": "concept",
+            "summary": "Strategic, business, product, technical, run."
+          },
+          {
+            "id": "approve",
+            "label": "Approve at altitude",
+            "kind": "method",
+            "summary": "Sign off once; inherited below."
+          },
+          {
+            "id": "narrow",
+            "label": "Narrow, never widen",
+            "kind": "claim",
+            "summary": "The scaling rule."
+          },
+          {
+            "id": "ultra",
+            "label": "Ultra vires",
+            "kind": "example",
+            "summary": "Delegated rules beyond their powers can be quashed."
+          },
+          {
+            "id": "unison",
+            "label": "The tribunal fees case",
+            "kind": "example",
+            "summary": "UNISON, 2017: unlawful from the start."
+          },
+          {
+            "id": "envelope",
+            "label": "The envelope",
+            "kind": "method",
+            "summary": "Money, blast radius, data, people, reversibility, duration."
+          },
+          {
+            "id": "check",
+            "label": "The subset check",
+            "kind": "method",
+            "summary": "Mechanical for numbers, flagged for words."
+          },
+          {
+            "id": "vip",
+            "label": "The VIP workflow",
+            "kind": "example",
+            "summary": "1,000 GBP against a 100 GBP limit."
+          },
+          {
+            "id": "appetite",
+            "label": "Risk appetite",
+            "kind": "concept",
+            "summary": "What the board is willing to take."
+          },
+          {
+            "id": "kill",
+            "label": "Kill switches at altitude",
+            "kind": "claim",
+            "summary": "Where the envelope they protect is owned."
+          },
+          {
+            "id": "gaming",
+            "label": "Envelopes can be gamed",
+            "kind": "question",
+            "summary": "Split one refund into many."
+          }
+        ],
+        "edges": [
+          {
+            "from": "cheap",
+            "to": "approve",
+            "rel": "answers"
+          },
+          {
+            "from": "altitudes",
+            "to": "approve",
+            "rel": "leads-to"
+          },
+          {
+            "from": "approve",
+            "to": "narrow",
+            "rel": "leads-to"
+          },
+          {
+            "from": "ultra",
+            "to": "narrow",
+            "rel": "example-of"
+          },
+          {
+            "from": "unison",
+            "to": "ultra",
+            "rel": "example-of"
+          },
+          {
+            "from": "envelope",
+            "to": "check",
+            "rel": "leads-to"
+          },
+          {
+            "from": "narrow",
+            "to": "check",
+            "rel": "leads-to"
+          },
+          {
+            "from": "vip",
+            "to": "check",
+            "rel": "example-of"
+          },
+          {
+            "from": "appetite",
+            "to": "altitudes",
+            "rel": "extends"
+          },
+          {
+            "from": "kill",
+            "to": "envelope",
+            "rel": "extends"
+          },
+          {
+            "from": "gaming",
+            "to": "envelope",
+            "rel": "extends"
+          }
+        ],
+        "links": {
+          "articles": [
+            "three-policies-for-an-agent",
+            "case-law-for-agents",
+            "three-decisions-mapped",
+            "hooks-are-kernel-code"
+          ],
+          "pages": [],
+          "sites": [
+            "https://caselaw.nationalarchives.gov.uk/uksc/2017/51",
+            "https://www.frc.org.uk/documents/6709/UK_Corporate_Governance_Code_2024_a2hmQmY.pdf"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "A lower level may narrow the level above it. It may never widen it.",
+            "why": "The rule."
+          },
+          {
+            "text": "Each sign-off is small, because each level only has to read its own level.",
+            "why": "Why it scales."
+          },
+          {
+            "text": "it widens what a person can review, it does not replace the review.",
+            "why": "The model's place."
+          }
+        ]
+      }
+    },
+    {
       "slug": "our-first-pr-in-ruflo",
       "title": "Our first PR in Ruflo: an ABP-governed SGit page, merged into ruvnet/ruflo, and the four pieces that got it there",
       "date": "2026-10-17",
@@ -85,7 +945,10 @@
         "when-is-the-vault-actually-used",
         "the-policy-guards-the-door"
       ],
-      "links_in": [],
+      "links_in": [
+        "three-policies-for-an-agent",
+        "three-decisions-mapped"
+      ],
       "figures": [
         {
           "file": "mg-puzzle.webp",
@@ -1311,6 +2174,7 @@
         "the-policy-guards-the-door"
       ],
       "links_in": [
+        "three-decisions-mapped",
         "our-first-pr-in-ruflo",
         "who-will-fix-your-mess",
         "when-is-the-vault-actually-used",
@@ -1552,6 +2416,9 @@
         "a-policy-beside-the-prompt"
       ],
       "links_in": [
+        "three-policies-for-an-agent",
+        "three-decisions-mapped",
+        "case-law-for-agents",
         "our-first-pr-in-ruflo",
         "who-will-fix-your-mess",
         "when-is-the-vault-actually-used",
@@ -5884,6 +6751,8 @@
         "a-policy-beside-the-prompt"
       ],
       "links_in": [
+        "three-decisions-mapped",
+        "case-law-for-agents",
         "the-policy-guards-the-door",
         "the-ai-conference-read-for-governance"
       ],
@@ -10174,6 +11043,7 @@
         "policy-as-code-needs-a-policy-first"
       ],
       "links_in": [
+        "approve-at-altitude",
         "your-own-newsroom",
         "cedar-and-the-policy-vault"
       ],
@@ -11152,6 +12022,8 @@
         "pay-to-keep-your-persona"
       ],
       "links_in": [
+        "three-policies-for-an-agent",
+        "case-law-for-agents",
         "the-tokens-hook",
         "cedar-and-the-policy-vault",
         "commanders-intent-is-a-behaviour-policy",
@@ -15437,6 +16309,8 @@
         "a-second-reader-the-agent-cannot-skip"
       ],
       "links_in": [
+        "three-policies-for-an-agent",
+        "three-decisions-mapped",
         "who-will-fix-your-mess",
         "commanders-intent-is-a-behaviour-policy",
         "four-frameworks-one-agent",
@@ -29102,6 +29976,9 @@
         "the-agent-team-as-it-runs"
       ],
       "links_in": [
+        "three-policies-for-an-agent",
+        "case-law-for-agents",
+        "approve-at-altitude",
         "the-human-in-the-loop",
         "who-owns-the-words",
         "judo-for-small-countries",
@@ -29354,6 +30231,8 @@
         "the-agent-team-as-it-runs"
       ],
       "links_in": [
+        "three-decisions-mapped",
+        "approve-at-altitude",
         "commanders-intent-is-a-behaviour-policy",
         "are-hooks-the-sweet-spot",
         "a-policy-for-every-skill",
@@ -35838,6 +36717,8 @@
         "if-somebody-built-a-company-on-code-review"
       ],
       "links_in": [
+        "three-policies-for-an-agent",
+        "approve-at-altitude",
         "journalism-becomes-intelligence",
         "omnichannel-programming",
         "the-eyeballs-get-cheap",

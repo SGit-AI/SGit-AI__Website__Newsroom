@@ -1,0 +1,43 @@
+{
+ "slug": "three-policies-for-an-agent",
+ "teaser": "Behaviour says what an agent may do, decision who chooses at a branch point, workflow in what order. Zoom into one ABP cell and it becomes both.",
+ "topics": ["agents-and-policy"],
+ "core_idea": "An agent needs three policies, not one: behaviour, decision and workflow, meeting where a workflow transition is gated by a decision carried out by permitted behaviours; light decisions stay inline in the ABP, heavy ones get their own policy, and every element is mapped as defined, implemented, enforced and observed.",
+ "nodes": [
+  {"id": "question", "label": "How did the agent decide?", "kind": "question", "summary": "The question a behaviour policy cannot answer."},
+  {"id": "abp", "label": "Agent Behaviour Policy", "kind": "concept", "summary": "What an agent may do, and where."},
+  {"id": "adp", "label": "Agent Decision Policy", "kind": "concept", "summary": "Who chooses, on what evidence, within what limits."},
+  {"id": "awp", "label": "Agent Workflow Policy", "kind": "concept", "summary": "Which steps, in what order."},
+  {"id": "meet", "label": "Where they meet", "kind": "claim", "summary": "Transitions gated by decisions, carried out by behaviours."},
+  {"id": "cell", "label": "The approval cell", "kind": "example", "summary": "delete.memory.project, mandate approval."},
+  {"id": "zoom", "label": "Zoom into one cell", "kind": "method", "summary": "A cell becomes a decision and a workflow policy."},
+  {"id": "light", "label": "Light decisions stay inline", "kind": "claim", "summary": "Money, people, irreversibility, risk earn their own."},
+  {"id": "states", "label": "Four states", "kind": "method", "summary": "Defined, implemented, enforced, observed."},
+  {"id": "levels", "label": "Where it is enforced", "kind": "concept", "summary": "From the prompt to off the machine."},
+  {"id": "business", "label": "Decision is the business's word", "kind": "claim", "summary": "Budgets, owners, risk appetite."},
+  {"id": "dmn", "label": "DMN beside BPMN", "kind": "example", "summary": "The same split in enterprise architecture."}
+ ],
+ "edges": [
+  {"from": "question", "to": "adp", "rel": "answers"},
+  {"from": "abp", "to": "meet", "rel": "leads-to"},
+  {"from": "adp", "to": "meet", "rel": "leads-to"},
+  {"from": "awp", "to": "meet", "rel": "leads-to"},
+  {"from": "cell", "to": "zoom", "rel": "example-of"},
+  {"from": "zoom", "to": "adp", "rel": "leads-to"},
+  {"from": "zoom", "to": "awp", "rel": "leads-to"},
+  {"from": "light", "to": "zoom", "rel": "extends"},
+  {"from": "states", "to": "levels", "rel": "extends"},
+  {"from": "business", "to": "adp", "rel": "answers"},
+  {"from": "dmn", "to": "business", "rel": "example-of"}
+ ],
+ "links": {
+  "articles": ["approve-at-altitude", "case-law-for-agents", "three-decisions-mapped", "our-first-pr-in-ruflo", "hooks-are-kernel-code", "how-cheap-is-it-to-undo", "the-policy-guards-the-door"],
+  "pages": [],
+  "sites": ["https://abp.sgit.ai/", "https://www.omg.org/spec/DMN/", "https://github.com/ruvnet/ruflo/blob/main/docs/integrations/sgit-memory-checkpoints.md"]
+ },
+ "quotes": [
+  {"text": "Neither says how it decided.", "why": "The gap."},
+  {"text": "Zoom further and each of those has cells of its own.", "why": "The fractal."},
+  {"text": "\"Decision\" is the word that connects an agent's step to a budget, an owner and a risk, and that is the connection the agent's behaviour policy lacks.", "why": "Why the word."}
+ ]
+}

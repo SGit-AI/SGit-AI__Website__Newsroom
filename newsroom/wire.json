@@ -73,6 +73,133 @@
   ],
   "articles": [
     {
+      "slug": "three-policies-for-an-agent",
+      "title": "Three policies for an agent: behaviour says what it may do, decision says who chooses, workflow says in what order",
+      "date": "2026-10-17",
+      "updated": "",
+      "author": "Dinis Cruz",
+      "url": "https://newsroom.sgit.ai/articles/three-policies-for-an-agent.html",
+      "markdown": "https://newsroom.sgit.ai/articles/three-policies-for-an-agent.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/three-policies-for-an-agent.webp",
+      "graph": "https://newsroom.sgit.ai/articles/graphs/three-policies-for-an-agent.json",
+      "teaser": "Behaviour says what an agent may do, decision who chooses at a branch point, workflow in what order. Zoom into one ABP cell and it becomes both.",
+      "summary": "When something goes wrong with an agent, the question people ask is how it made that decision. A behaviour policy cannot answer it on its own, because it says what an agent may do, not who chooses at a branch point or why. This is the first of four articles on what I think the answer looks like. There are three policies, not one. The Agent Behaviour Policy, the ABP we already publish, says what an agent may do and where. An Agent Decision Policy says, at a branch point, who chooses, on what evidence, within what limits, and who to call when it is out of bounds. An Agent Workflow Policy says which steps run in what order. They meet at fixed points: a workflow transition is gated by a decision, and the decision's outcome is carried out by behaviours the ABP permits. We have been putting light decisions into behaviour policies all along, and that is fine at low zoom: the ABP's approval cell is a small decision. Zoom into one cell and it becomes a decision policy and a workflow policy of its own. Every element of all three can be defined before it can be enforced: what gets enforced, and where, depends on what is wired up, so each element carries four states, defined, implemented, enforced and observed. The word \"decision\" matters because it is the one the business and the risk team already use.",
+      "topics": [
+        "agents-and-policy"
+      ],
+      "tags": [
+        "agents",
+        "agent-behaviour-policy",
+        "agent-decision-policy",
+        "agent-workflow-policy",
+        "decision-making",
+        "governance",
+        "risk",
+        "fractal-semantic-graphs",
+        "series",
+        "article"
+      ],
+      "placement": [],
+      "linkedin": null,
+      "notes": []
+    },
+    {
+      "slug": "three-decisions-mapped",
+      "title": "Three decisions, mapped: an agent's memory, this newsroom's release and a customer refund, through behaviour, decision and workflow",
+      "date": "2026-10-17",
+      "updated": "",
+      "author": "Dinis Cruz",
+      "url": "https://newsroom.sgit.ai/articles/three-decisions-mapped.html",
+      "markdown": "https://newsroom.sgit.ai/articles/three-decisions-mapped.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/three-decisions-mapped.webp",
+      "graph": "https://newsroom.sgit.ai/articles/graphs/three-decisions-mapped.json",
+      "teaser": "An agent's memory, this newsroom's release and a refund, mapped through behaviour, decision and workflow: the gaps are in the decisions.",
+      "summary": "The fourth article in the series on agent decision policies puts the pieces together on three scenarios, two of them real. First, deleting an agent's memory in Mondweep Chakravorty's SGit adapter for Ruflo: the behaviour row is defined, implemented and enforced, the decision behind its \"approval\" is not yet defined, and nothing records what happened. Second, this newsroom's own release, which ships on its own: the behaviour boundary holds at the platform, the workflow is a script and a validator, and the interesting part is a decision nobody wrote down. In every release since this afternoon I shipped with one failing test that predates my changes, and I made that call each time on my own. It should be a written decision with an owner and an expiry. The same evening produced two small cases for the case-law article: a figure that shipped with a date nobody had checked, and a counter that flagged two commits without a leak scan, both of which turned out to be in scratch test repositories, a case the rule did not mean to cover. Third, an illustrative customer refund built on the third design in Hope or enforcement, where the limits are already in the tools, and a new workflow that tries to widen them is caught by a subset check before it runs. Each element is mapped with the policy it belongs to and four states: defined, implemented, enforced and observed.",
+      "topics": [
+        "agents-and-policy",
+        "vaults-and-method"
+      ],
+      "tags": [
+        "agents",
+        "agent-behaviour-policy",
+        "agent-decision-policy",
+        "agent-workflow-policy",
+        "scenarios",
+        "ruflo",
+        "sgit",
+        "newsroom",
+        "customer-service",
+        "governance",
+        "series",
+        "article"
+      ],
+      "placement": [],
+      "linkedin": null,
+      "notes": []
+    },
+    {
+      "slug": "case-law-for-agents",
+      "title": "Case law for agents: principles from the top, precedent from the cases, and how a decision earns its way into code",
+      "date": "2026-10-17",
+      "updated": "",
+      "author": "Dinis Cruz",
+      "url": "https://newsroom.sgit.ai/articles/case-law-for-agents.html",
+      "markdown": "https://newsroom.sgit.ai/articles/case-law-for-agents.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/case-law-for-agents.webp",
+      "graph": "https://newsroom.sgit.ai/articles/graphs/case-law-for-agents.json",
+      "teaser": "Nobody predicts every case. Borrow the shape of English case law: escalate what the policy does not settle, record it, follow it, then compile it.",
+      "summary": "The third article in the series on agent decision policies is about the cases nobody predicted. A business will never write down every variation of its decisions, and it should not try. English law has lived with the same problem for centuries, and its answer fits agents well. Parliament writes statutes from principles and objectives; delegated rules must stay within the powers an Act gives them; courts apply both to the facts in front of them; decisions of higher courts bind lower ones; a case whose facts differ in a way that matters is distinguished; and the highest court can depart from its own past decisions when they turn out wrong. For agents, the same shape gives a working loop. Principles and envelopes come from the top. A case the decision policy does not settle goes to a person, who decides with the context to decide well, and the answer is recorded with its facts and reasons. The next case with the same material facts follows that precedent without asking again; one that differs is distinguished, and escalates. Precedents that keep holding are written into the policy, and then compiled into code. That is the maturity curve this site has described before, from a person deciding to a rule that runs without them, but driven by real cases instead of guessed in advance. It needs one thing most agent systems lack: a decision record good enough to serve as a law report.",
+      "topics": [
+        "agents-and-policy"
+      ],
+      "tags": [
+        "agents",
+        "agent-decision-policy",
+        "case-law",
+        "precedent",
+        "common-law",
+        "governance",
+        "decision-records",
+        "maturity-model",
+        "series",
+        "article"
+      ],
+      "placement": [],
+      "linkedin": null,
+      "notes": []
+    },
+    {
+      "slug": "approve-at-altitude",
+      "title": "Approve at altitude: decisions at every level, from strategy to one agent's step, where each level may narrow the one above and never widen it",
+      "date": "2026-10-17",
+      "updated": "",
+      "author": "Dinis Cruz",
+      "url": "https://newsroom.sgit.ai/articles/approve-at-altitude.html",
+      "markdown": "https://newsroom.sgit.ai/articles/approve-at-altitude.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/approve-at-altitude.webp",
+      "graph": "https://newsroom.sgit.ai/articles/graphs/approve-at-altitude.json",
+      "teaser": "Models can draft two hundred decision policies; nobody can sign two hundred. Approve at altitude: each level may narrow the one above, never widen it.",
+      "summary": "The second article in the series on agent decision policies is about scale. Language models make it cheap to write decision policies, five, a hundred, two hundred of them, and no business owner can sign off two hundred. The answer is the fractal. Decisions and workflows exist at every altitude, strategic, business, product, technical and the single run, and each altitude bounds the one below. So you approve at altitude: the board signs off its risk appetite once, the head of a function signs off a budget and a licence to operate within it, a team signs off its workflow within that, and each level inherits everything above it. The scaling rule is one sentence: a lower level may narrow the level above it, never widen it. For that to be checkable, every policy declares an envelope: money, blast radius, the data and people in scope, reversibility, and how long it lasts. Where the envelope is numbers and lists, the check that a child fits inside its parent is mechanical and can run in CI; where it is words, a model can flag the likely conflicts for a person. This is how a business that cannot predict every decision can still find the ones far outside what it is willing to risk, and it is how English law already treats delegated powers: secondary legislation that goes beyond the Act that allows it is ultra vires, and a court can quash it.",
+      "topics": [
+        "agents-and-policy"
+      ],
+      "tags": [
+        "agents",
+        "agent-decision-policy",
+        "agent-behaviour-policy",
+        "risk-appetite",
+        "governance",
+        "fractal-semantic-graphs",
+        "delegation",
+        "scaling",
+        "series",
+        "article"
+      ],
+      "placement": [],
+      "linkedin": null,
+      "notes": []
+    },
+    {
       "slug": "our-first-pr-in-ruflo",
       "title": "Our first PR in Ruflo: an ABP-governed SGit page, merged into ruvnet/ruflo, and the four pieces that got it there",
       "date": "2026-10-17",

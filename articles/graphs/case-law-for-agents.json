@@ -1,0 +1,172 @@
+{
+  "slug": "case-law-for-agents",
+  "teaser": "Nobody predicts every case. Borrow the shape of English case law: escalate what the policy does not settle, record it, follow it, then compile it.",
+  "topics": [
+    "agents-and-policy"
+  ],
+  "core_idea": "Decision policies handle unpredicted cases the way common law does: principles from the top, escalation to a person for cases no rule or precedent settles, recorded decisions that bind the next matching case, distinguishing as the escalation trigger, and precedents that keep holding written into policy and then compiled into code.",
+  "nodes": [
+    {
+      "id": "unpredicted",
+      "label": "The cases nobody predicted",
+      "kind": "question",
+      "summary": "Inside every envelope, covered by no rule."
+    },
+    {
+      "id": "statute",
+      "label": "Statutes set principles",
+      "kind": "concept",
+      "summary": "Read in the light of their purpose."
+    },
+    {
+      "id": "precedent",
+      "label": "Binding precedent",
+      "kind": "concept",
+      "summary": "Higher courts bind lower ones."
+    },
+    {
+      "id": "distinguish",
+      "label": "Distinguishing",
+      "kind": "method",
+      "summary": "Facts differ in a way that matters."
+    },
+    {
+      "id": "depart",
+      "label": "Departing from precedent",
+      "kind": "concept",
+      "summary": "The 1966 Practice Statement."
+    },
+    {
+      "id": "loop",
+      "label": "The loop for agents",
+      "kind": "method",
+      "summary": "Rule, precedent, or escalate and record."
+    },
+    {
+      "id": "record",
+      "label": "A decision record as a law report",
+      "kind": "artefact",
+      "summary": "Facts, rule, decider, outcome, reasons."
+    },
+    {
+      "id": "maturity",
+      "label": "Precedent to policy to code",
+      "kind": "claim",
+      "summary": "A decision earns its way into code."
+    },
+    {
+      "id": "agency",
+      "label": "Delegation at the top of the agency scale",
+      "kind": "example",
+      "summary": "Cases approved unchanged become rules."
+    },
+    {
+      "id": "tonight",
+      "label": "Two cases from tonight",
+      "kind": "example",
+      "summary": "A new rule, and a case distinguished."
+    },
+    {
+      "id": "bias",
+      "label": "Precedent can carry a bias",
+      "kind": "question",
+      "summary": "Overruling matters more at volume."
+    },
+    {
+      "id": "selfreport",
+      "label": "No record, a self-report",
+      "kind": "claim",
+      "summary": "The Ruflo run computes, writes nothing."
+    }
+  ],
+  "edges": [
+    {
+      "from": "unpredicted",
+      "to": "loop",
+      "rel": "answers"
+    },
+    {
+      "from": "statute",
+      "to": "loop",
+      "rel": "extends"
+    },
+    {
+      "from": "precedent",
+      "to": "loop",
+      "rel": "extends"
+    },
+    {
+      "from": "distinguish",
+      "to": "loop",
+      "rel": "extends"
+    },
+    {
+      "from": "loop",
+      "to": "record",
+      "rel": "leads-to"
+    },
+    {
+      "from": "record",
+      "to": "maturity",
+      "rel": "leads-to"
+    },
+    {
+      "from": "agency",
+      "to": "maturity",
+      "rel": "example-of"
+    },
+    {
+      "from": "tonight",
+      "to": "distinguish",
+      "rel": "example-of"
+    },
+    {
+      "from": "depart",
+      "to": "bias",
+      "rel": "answers"
+    },
+    {
+      "from": "selfreport",
+      "to": "record",
+      "rel": "extends"
+    }
+  ],
+  "links": {
+    "articles": [
+      "three-policies-for-an-agent",
+      "approve-at-altitude",
+      "three-decisions-mapped",
+      "hooks-are-kernel-code",
+      "your-agents-logs-are-a-self-report",
+      "the-policy-guards-the-door"
+    ],
+    "pages": [],
+    "sites": [
+      "https://www.open.edu/openlearn/society-politics-law/law/judicial-decision-making/content-section-9.2",
+      "https://caselaw.nationalarchives.gov.uk/uksc/2017/51",
+      "https://caselaw.nationalarchives.gov.uk/uksc/2016/9"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "Each step is earned by cases, not assumed in advance.",
+      "why": "The difference from writing every rule up front."
+    },
+    {
+      "text": "Most agent systems keep a log of what happened; a precedent needs more:",
+      "why": "The record."
+    },
+    {
+      "text": "This is the part that makes it a precedent rather than a statistic.",
+      "why": "Why reasons matter."
+    }
+  ],
+  "figures": [
+    {
+      "file": "dn-caselaw.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/dn-caselaw.webp",
+      "caption": "How a decision earns its way into code. A case arrives at a branch point. If a rule settles it, or a recorded precedent with the same material facts matches, it is resolved and recorded. If not, or if the facts differ in a way that matters, it is distinguished and escalated to a person with the context to decide. The decision is recorded with its reasons and becomes a precedent that the next matching case follows. A precedent that holds case after case is written into the policy, then compiled into deterministic, tested code.",
+      "kind": "process"
+    }
+  ]
+}

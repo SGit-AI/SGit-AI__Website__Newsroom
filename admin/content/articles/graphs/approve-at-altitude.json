@@ -1,0 +1,43 @@
+{
+ "slug": "approve-at-altitude",
+ "teaser": "Models can draft two hundred decision policies; nobody can sign two hundred. Approve at altitude: each level may narrow the one above, never widen it.",
+ "topics": ["agents-and-policy"],
+ "core_idea": "Decision policies scale through the fractal: decisions exist at every altitude, each level signs off once and is inherited below, every policy declares an envelope, and a lower level may narrow its parent but never widen it, a check that is mechanical for numbers and lists and model-assisted for words.",
+ "nodes": [
+  {"id": "cheap", "label": "Drafting is cheap, sign-off is not", "kind": "claim", "summary": "Two hundred policies, one owner."},
+  {"id": "altitudes", "label": "Decisions at every altitude", "kind": "concept", "summary": "Strategic, business, product, technical, run."},
+  {"id": "approve", "label": "Approve at altitude", "kind": "method", "summary": "Sign off once; inherited below."},
+  {"id": "narrow", "label": "Narrow, never widen", "kind": "claim", "summary": "The scaling rule."},
+  {"id": "ultra", "label": "Ultra vires", "kind": "example", "summary": "Delegated rules beyond their powers can be quashed."},
+  {"id": "unison", "label": "The tribunal fees case", "kind": "example", "summary": "UNISON, 2017: unlawful from the start."},
+  {"id": "envelope", "label": "The envelope", "kind": "method", "summary": "Money, blast radius, data, people, reversibility, duration."},
+  {"id": "check", "label": "The subset check", "kind": "method", "summary": "Mechanical for numbers, flagged for words."},
+  {"id": "vip", "label": "The VIP workflow", "kind": "example", "summary": "1,000 GBP against a 100 GBP limit."},
+  {"id": "appetite", "label": "Risk appetite", "kind": "concept", "summary": "What the board is willing to take."},
+  {"id": "kill", "label": "Kill switches at altitude", "kind": "claim", "summary": "Where the envelope they protect is owned."},
+  {"id": "gaming", "label": "Envelopes can be gamed", "kind": "question", "summary": "Split one refund into many."}
+ ],
+ "edges": [
+  {"from": "cheap", "to": "approve", "rel": "answers"},
+  {"from": "altitudes", "to": "approve", "rel": "leads-to"},
+  {"from": "approve", "to": "narrow", "rel": "leads-to"},
+  {"from": "ultra", "to": "narrow", "rel": "example-of"},
+  {"from": "unison", "to": "ultra", "rel": "example-of"},
+  {"from": "envelope", "to": "check", "rel": "leads-to"},
+  {"from": "narrow", "to": "check", "rel": "leads-to"},
+  {"from": "vip", "to": "check", "rel": "example-of"},
+  {"from": "appetite", "to": "altitudes", "rel": "extends"},
+  {"from": "kill", "to": "envelope", "rel": "extends"},
+  {"from": "gaming", "to": "envelope", "rel": "extends"}
+ ],
+ "links": {
+  "articles": ["three-policies-for-an-agent", "case-law-for-agents", "three-decisions-mapped", "hooks-are-kernel-code"],
+  "pages": [],
+  "sites": ["https://caselaw.nationalarchives.gov.uk/uksc/2017/51", "https://www.frc.org.uk/documents/6709/UK_Corporate_Governance_Code_2024_a2hmQmY.pdf"]
+ },
+ "quotes": [
+  {"text": "A lower level may narrow the level above it. It may never widen it.", "why": "The rule."},
+  {"text": "Each sign-off is small, because each level only has to read its own level.", "why": "Why it scales."},
+  {"text": "it widens what a person can review, it does not replace the review.", "why": "The model's place."}
+ ]
+}

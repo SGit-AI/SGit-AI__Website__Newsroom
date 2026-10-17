@@ -1,0 +1,173 @@
+{
+  "slug": "three-decisions-mapped",
+  "teaser": "An agent's memory, this newsroom's release and a refund, mapped through behaviour, decision and workflow: the gaps are in the decisions.",
+  "topics": [
+    "agents-and-policy",
+    "vaults-and-method"
+  ],
+  "core_idea": "Mapping three scenarios element by element, with four states each, shows behaviour policies are the most mature, the gaps sit in decisions that are unnamed, unwritten or unrecorded, observation lags enforcement, and naming an element is what makes its gap visible.",
+  "nodes": [
+    {
+      "id": "map",
+      "label": "The map",
+      "kind": "method",
+      "summary": "Policy and four states per element."
+    },
+    {
+      "id": "memory",
+      "label": "Memory deletion",
+      "kind": "example",
+      "summary": "Enforced, not observed; the decider unnamed."
+    },
+    {
+      "id": "newsroom",
+      "label": "This newsroom's release",
+      "kind": "example",
+      "summary": "Ships on its own."
+    },
+    {
+      "id": "failing",
+      "label": "Shipping with a failing test",
+      "kind": "example",
+      "summary": "Eight calls under no written rule."
+    },
+    {
+      "id": "figure",
+      "label": "A figure with an unchecked date",
+      "kind": "example",
+      "summary": "A new precedent."
+    },
+    {
+      "id": "counter",
+      "label": "Two flagged commits",
+      "kind": "example",
+      "summary": "Scratch repositories: distinguished."
+    },
+    {
+      "id": "refund",
+      "label": "A customer refund",
+      "kind": "example",
+      "summary": "Limits in the tools."
+    },
+    {
+      "id": "vip",
+      "label": "The VIP workflow",
+      "kind": "example",
+      "summary": "Caught by the subset check."
+    },
+    {
+      "id": "gaps",
+      "label": "The gaps are in decisions",
+      "kind": "claim",
+      "summary": "Unnamed, unwritten, unrecorded."
+    },
+    {
+      "id": "observed",
+      "label": "Observation lags enforcement",
+      "kind": "claim",
+      "summary": "Works, and leaves no trace."
+    },
+    {
+      "id": "naming",
+      "label": "Naming makes the gap visible",
+      "kind": "claim",
+      "summary": "No new technology needed to see it."
+    }
+  ],
+  "edges": [
+    {
+      "from": "memory",
+      "to": "map",
+      "rel": "example-of"
+    },
+    {
+      "from": "newsroom",
+      "to": "map",
+      "rel": "example-of"
+    },
+    {
+      "from": "refund",
+      "to": "map",
+      "rel": "example-of"
+    },
+    {
+      "from": "failing",
+      "to": "newsroom",
+      "rel": "example-of"
+    },
+    {
+      "from": "figure",
+      "to": "newsroom",
+      "rel": "example-of"
+    },
+    {
+      "from": "counter",
+      "to": "newsroom",
+      "rel": "example-of"
+    },
+    {
+      "from": "vip",
+      "to": "refund",
+      "rel": "example-of"
+    },
+    {
+      "from": "memory",
+      "to": "observed",
+      "rel": "example-of"
+    },
+    {
+      "from": "failing",
+      "to": "gaps",
+      "rel": "example-of"
+    },
+    {
+      "from": "map",
+      "to": "naming",
+      "rel": "leads-to"
+    },
+    {
+      "from": "gaps",
+      "to": "naming",
+      "rel": "answers"
+    }
+  ],
+  "links": {
+    "articles": [
+      "three-policies-for-an-agent",
+      "approve-at-altitude",
+      "case-law-for-agents",
+      "our-first-pr-in-ruflo",
+      "the-policy-guards-the-door",
+      "how-cheap-is-it-to-undo",
+      "your-agents-logs-are-a-self-report",
+      "what-if-an-agent-loses-its-workspace"
+    ],
+    "pages": [],
+    "sites": [
+      "https://github.com/mondweep/sgit-ruv-memory",
+      "https://github.com/ruvnet/ruflo/blob/main/docs/integrations/sgit-memory-checkpoints.md"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "A gap you have named is a gap you can decide about.",
+      "why": "Why map before wiring."
+    },
+    {
+      "text": "It should be a decision policy:",
+      "why": "The newsroom's unwritten decision."
+    },
+    {
+      "text": "A rule that works and leaves no trace cannot be shown to work",
+      "why": "Observation."
+    }
+  ],
+  "figures": [
+    {
+      "file": "dn-map.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/dn-map.webp",
+      "caption": "Three scenarios mapped element by element: memory deletion in the SGit adapter for Ruflo, this newsroom's release, and an illustrative customer refund. Each element is labelled ABP, decision or workflow, with four states: defined, implemented, enforced and observed. The memory row is enforced but not observed; the newsroom's decision to ship with a failing test is not defined at all; the refund's limits hold at every state because they are in the tools.",
+      "kind": "matrix"
+    }
+  ]
+}
