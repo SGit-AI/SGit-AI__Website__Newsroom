@@ -1,6 +1,6 @@
 # What if an agent loses its workspace? Mondweep Chakravorty's SGit × Ruflo proof of concept, step by step: memory saved encrypted, the project deleted, the memory back in a fresh process, and three safeguards that held, sgit.ai
 
-> Mondweep Chakravorty has made a short video that answers a question every team running agents should ask: if an agent loses its workspace, does its memory come back, and do its written permissions still hold? In 104.7 seconds it replays a real terminal run in twelve steps. Ruflo, rUv's open-source agent orchestration, stores two facts in its memory. An adapter governed by an Agent Behaviour Policy saves that memory as an encrypted checkpoint made of SGit objects. The original project is deleted. A brand-new process restores the checkpoint, the restored database has the same SHA-256 fingerprint as the one saved, and Ruflo reads both facts back word for word. Along the way three safeguards are tested and hold: a request outside the agent's permission is refused, a deletion that needs approval is stopped, and a tampered checkpoint is rejected. The video is careful about its limits: recall by meaning was not tested. This is the first of three pieces on it, with a page that lets you step through the run yourself.
+> Mondweep Chakravorty has made a short video that answers a question every team running agents should ask: if an agent loses its workspace, does its memory come back, and do its written permissions still hold? In 104.7 seconds it replays a real terminal run in twelve steps. Ruflo, rUv's open-source agent orchestration, stores two facts in its memory. An adapter governed by an Agent Behaviour Policy saves that memory as an encrypted checkpoint made of SGit objects. The original project is deleted. A brand-new process restores the checkpoint, the restored database has the same SHA-256 fingerprint as the one saved, and Ruflo reads both facts back word for word. Along the way three safeguards are tested and hold: a request outside the agent's permission is refused, a deletion that needs approval is stopped, and a tampered checkpoint is rejected. The video is careful about its limits: recall by meaning was not validated. The code is public too, MIT, with 16 tests and recorded evidence, and its runner has since also validated keyword recall against Ruflo's real memory store. This is the first of three pieces on it, with a page that lets you step through the run yourself.
 
 *Source: <https://newsroom.sgit.ai/articles/what-if-an-agent-loses-its-workspace.html> · sgit.ai v0.7.87 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
@@ -10,9 +10,9 @@
 
 # What if an agent loses its workspace? Mondweep Chakravorty's SGit × Ruflo proof of concept, step by step: memory saved encrypted, the project deleted, the memory back in a fresh process, and three safeguards that held
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-17 · [article v1.0.0](versions/what-if-an-agent-loses-its-workspace.md) · [newsroom v0.12.89](https://newsroom.sgit.ai/admin/versions.html) · agentsruflosgitvaultsagent-behaviour-policymcpmemoryrecoveryvideoarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-17 · [article v1.1.0, 2 versions](versions/what-if-an-agent-loses-its-workspace.md) · [newsroom v0.12.90](https://newsroom.sgit.ai/admin/versions.html) · agentsruflosgitvaultsagent-behaviour-policymcpmemoryrecoveryvideoarticle
 
-***Abstract:** Mondweep Chakravorty has made a short video that answers a question every team running agents should ask: if an agent loses its workspace, does its memory come back, and do its written permissions still hold? In 104.7 seconds it replays a real terminal run in twelve steps. Ruflo, rUv's open-source agent orchestration, stores two facts in its memory. An adapter governed by an Agent Behaviour Policy saves that memory as an encrypted checkpoint made of SGit objects. The original project is deleted. A brand-new process restores the checkpoint, the restored database has the same SHA-256 fingerprint as the one saved, and Ruflo reads both facts back word for word. Along the way three safeguards are tested and hold: a request outside the agent's permission is refused, a deletion that needs approval is stopped, and a tampered checkpoint is rejected. The video is careful about its limits: recall by meaning was not tested. This is the first of three pieces on it, with a page that lets you step through the run yourself.*
+***Abstract:** Mondweep Chakravorty has made a short video that answers a question every team running agents should ask: if an agent loses its workspace, does its memory come back, and do its written permissions still hold? In 104.7 seconds it replays a real terminal run in twelve steps. Ruflo, rUv's open-source agent orchestration, stores two facts in its memory. An adapter governed by an Agent Behaviour Policy saves that memory as an encrypted checkpoint made of SGit objects. The original project is deleted. A brand-new process restores the checkpoint, the restored database has the same SHA-256 fingerprint as the one saved, and Ruflo reads both facts back word for word. Along the way three safeguards are tested and hold: a request outside the agent's permission is refused, a deletion that needs approval is stopped, and a tampered checkpoint is rejected. The video is careful about its limits: recall by meaning was not validated. The code is public too, MIT, with 16 tests and recorded evidence, and its runner has since also validated keyword recall against Ruflo's real memory store. This is the first of three pieces on it, with a page that lets you step through the run yourself.*
 
 The twelve steps of the run and how each ended: five worked, three were safeguards refusing as intended, four were setup or summary. Not tested, and said so on screen: recall by meaning. From the video by Mondweep Chakravorty.
 
@@ -22,7 +22,7 @@ Mondweep Chakravorty's video of an agent losing its workspace and getting its me
 
 [you are here1 · The runWhat if an agent loses its workspace?Twelve steps: memory saved, project deleted, memory restored in a fresh process, three safeguards tested.](what-if-an-agent-loses-its-workspace.md)[2 · The architectureWhen is the vault actually used?In three of twelve steps, on one machine, inside the adapter: what that proves and what it does not.](when-is-the-vault-actually-used.md)[3 · The gapThe policy guards the door; the command line uses the windowThe ABP checks the adapter's tools; Ruflo's own command line reaches the same memory file without it.](the-policy-guards-the-door.md)
 
-4 · Step through itSGit × Ruflo, step by stepEvery step with its frame, command, output and diagram, linked to its moment in the video.[Watch the video ↗](https://youtu.be/rkh6BJiaIrQ)[Step through it](https://newsroom.sgit.ai/demos/videos/sgit-ruflo-poc/index.html)
+4 · Step through itSGit × Ruflo, step by stepEvery step with its frame, command, output and diagram, linked to its moment in the video.[Watch the video ↗](https://youtu.be/rkh6BJiaIrQ)[Step through it](https://newsroom.sgit.ai/demos/videos/sgit-ruflo-poc/index.html)[Read the code ↗](https://github.com/mondweep/sgit-ruv-memory)
 
 ## In short
 
@@ -31,7 +31,7 @@ Mondweep Chakravorty's video of an agent losing its workspace and getting its me
 - **The fingerprint matched.** The restored database has the same SHA-256 as the one saved.
 - **Three safeguards held.** Out of scope refused, deletion without approval stopped, tampered copy rejected.
 - **It says what it did not test.** Recall by meaning was switched off and is marked not validated.
-- **It is a real run.** A replay of a terminal capture, with the Ruflo version and the SGit commit pinned.
+- **It is a real run, and the code is public.** Ruflo and SGit pinned; 16 tests; the evidence is in the repository.
 - **Step through it yourself.** Every step has a page with its frame, command, output and diagram.
 
 ## The question
@@ -40,7 +40,7 @@ Agents keep memory: facts they were told, decisions they made, what they found. 
 
 [Mondweep Chakravorty](https://www.linkedin.com/in/mondweepchakravorty/), a member of the #Ruflo-Federation and co-founder of the [Agentics Foundation's London chapter](https://london.agentics.org/), made a video that answers it with a real run: [SGit × Ruflo | Working Proof of Concept](https://youtu.be/rkh6BJiaIrQ), published on YouTube on 17 October 2026. It is 104.7 seconds long. Each slide has the story on the left, for someone with no code knowledge, and the terminal on the right, labelled as an actual capture of the run.
 
-The analysis behind this piece was made from what is on screen, frame by frame, in a separate session with Claude. The audio was not transcribed. Every number below comes from the video's timeline or a frame. If you would rather click than read, [step through it here](https://newsroom.sgit.ai/demos/videos/sgit-ruflo-poc/index.html).
+His code is public at [mondweep/sgit-ruv-memory](https://github.com/mondweep/sgit-ruv-memory), under the MIT licence: a local MCP server of four tools, a strict compiler that turns an Agent Behaviour Policy into Ruflo rules, 16 tests, and the evidence from each run. The analysis behind this piece was made from what is on screen, frame by frame, in a separate session with Claude, and then checked against that code. Every number below comes from the video's timeline, a frame or the repository. If you would rather click than read, [step through it here](https://newsroom.sgit.ai/demos/videos/sgit-ruflo-poc/index.html).
 
 ## The run, in twelve steps
 
@@ -50,7 +50,7 @@ At [0:09](https://youtu.be/rkh6BJiaIrQ?t=9), `ruflo --version` returns v3.56.10,
 
 ### 2 · Define the mandate
 
-At [0:14](https://youtu.be/rkh6BJiaIrQ?t=14), four Agent Behaviour Policy rows, all scoped to the project: write memory, yes; read memory, yes; read history, yes; delete memory, approval. And one line that matters more than it looks: "No raw rule overrides. Unsupported or ambiguous policies fail closed." That is an [Agent Behaviour Policy](https://abp.sgit.ai/what-is-an-abp/index.html) in miniature: what the agent may do, and where a person has to step in. [Step 2](https://newsroom.sgit.ai/demos/videos/sgit-ruflo-poc/index.html#step-2).
+At [0:14](https://youtu.be/rkh6BJiaIrQ?t=14), four Agent Behaviour Policy rows, all scoped to the project: write memory, yes; read memory, yes; read history, yes; delete memory, approval. And one line that matters more than it looks: "No raw rule overrides. Unsupported or ambiguous policies fail closed." That is an [Agent Behaviour Policy](https://abp.sgit.ai/what-is-an-abp/index.html) in miniature: what the agent may do, and where a person has to step in. In the code, the rows are compiled into Ruflo rules when the server starts, and every tool call is checked by a pinned copy of Ruflo's own policy evaluator, in enforce mode. [Step 2](https://newsroom.sgit.ai/demos/videos/sgit-ruflo-poc/index.html#step-2).
 
 ### 3 · Store two facts through Ruflo
 
@@ -94,7 +94,7 @@ At [1:14](https://youtu.be/rkh6BJiaIrQ?t=74), a key that was never stored is loo
 
 Step 11 on the terminal: one checkpoint object is altered, the restore fails with a ValueError, and tampered_workspace_created is false. Frame from the video by Mondweep Chakravorty.
 
-At [1:20](https://youtu.be/rkh6BJiaIrQ?t=80), one encrypted checkpoint object is altered and a restore is tried into a workspace called `tampered`. It fails with a `ValueError`, and `tampered_workspace_created` is false. Integrity fails closed. [Step 11](https://newsroom.sgit.ai/demos/videos/sgit-ruflo-poc/index.html#step-11).
+At [1:20](https://youtu.be/rkh6BJiaIrQ?t=80), one encrypted checkpoint object is altered and a restore is tried into a workspace called `tampered`. It fails with a `ValueError`, and `tampered_workspace_created` is false. Integrity fails closed. The code shows how: the adapter compares the digest of the stored ciphertext with the one it recorded when it saved the checkpoint, and refuses before anything is decrypted. [Step 11](https://newsroom.sgit.ai/demos/videos/sgit-ruflo-poc/index.html#step-11).
 
 ### 12 · What this run proves
 
@@ -105,6 +105,8 @@ At [1:26](https://youtu.be/rkh6BJiaIrQ?t=86), the acceptance summary: exact reca
 The video's closing slide: the facts came back and the safeguards held; still to validate, recall by meaning, real-world value, and installation and ongoing reliability. Frame from the video by Mondweep Chakravorty.
 
 The video's own closing slide puts it well: both facts recovered exactly; unauthorised access blocked; unapproved deletion blocked; altered checkpoint rejected. And still to validate: recall by meaning, real-world value, and installation and ongoing reliability.
+
+The repository adds one more result. Its acceptance runner stores two facts through Ruflo, checkpoints Ruflo's real `.swarm/memory.db`, removes the whole project, and reads the facts back in the restored workspace: exact values and keyword search result keys match before and after. Recall by meaning is reported as partial, because no vectors were stored even with embeddings on; the README names that as the next investigation.
 
 What makes it more than a demo is the shape of the loop. Most "memory that persists" demos skip the deletion or reuse the same process. This one stores, saves, deletes for real, restores in a new process, and reads back with the original tool. It also tests the refusals, not only the happy path, and includes a negative control. And it is honest about scope, in the run itself, not in a footnote.
 
@@ -118,7 +120,7 @@ The run raises two questions this piece does not answer. **When is the vault act
 
 ## What this does not claim
 
-- **From the screen only.** The audio was not transcribed; what Mondweep says may add context.
+- **From the screen and the code.** The audio was not transcribed; the code was read, not run, by this site.
 - **A proof of concept, not a product.** The video says so; reliability and real-world value are still to validate.
 - **Recall by meaning was not tested.** Exact recall was.
 - **The facts are synthetic.** Kestrel is a test name, not a real fleet.
@@ -126,7 +128,7 @@ The run raises two questions this piece does not answer. **When is the vault act
 
 ## Where this comes from
 
-The video: Mondweep Chakravorty, [SGit × Ruflo | Working Proof of Concept](https://youtu.be/rkh6BJiaIrQ), published on YouTube on 17 October 2026, made as a member of the #Ruflo-Federation and published here with his agreement; the frames are his and are not covered by this site's licence. The analysis: Claude (Anthropic), 17 October 2026, made for me from on-screen content only, delivered as an sgit vault with the video's timeline, frames and an architecture addendum, and written up and checked against the timeline by this site's agent; the editorial responsibility is mine. Ruflo is [rUv's open-source agent orchestration](https://github.com/ruvnet/ruflo), under the MIT licence. Context: [Agent Behaviour Policies](https://abp.sgit.ai/what-is-an-abp/index.html), [Agentics, ready to sell](agentics-ready-to-sell.md).
+The video: Mondweep Chakravorty, [SGit × Ruflo | Working Proof of Concept](https://youtu.be/rkh6BJiaIrQ), published on YouTube on 17 October 2026, made as a member of the #Ruflo-Federation and published here with his agreement; the frames are his and are not covered by this site's licence. The analysis: Claude (Anthropic), 17 October 2026, made for me from on-screen content, delivered as an sgit vault with the video's timeline, frames and an architecture addendum, and written up and checked against the timeline and the code by this site's agent; the editorial responsibility is mine. The code: Mondweep Chakravorty, [mondweep/sgit-ruv-memory](https://github.com/mondweep/sgit-ruv-memory), MIT, read at its commit of 16 October 2026, including its README, tests and evidence. Ruflo is [rUv's open-source agent orchestration](https://github.com/ruvnet/ruflo), under the MIT licence. Context: [Agent Behaviour Policies](https://abp.sgit.ai/what-is-an-abp/index.html), [Agentics, ready to sell](agentics-ready-to-sell.md).
 
 ## Threads
 
@@ -137,12 +139,12 @@ Vaults & methodAgents & policy[This article as a graph →](graphs.md#what-if-an
 - [A policy beside the prompt: a proposal that every agent takes a behaviour policy as an input, with enforcement and liability attached, and why aviation and payments say the vendors should want it](a-policy-beside-the-prompt.md) A proposal: every agent takes a behaviour policy beside its prompt, which the vendor accepts and answers for, as aviation and payments learned to.
 - [Agentics, ready to sell: what we showed at Agentic Engineering Live, who else is selling agentic services and at what price, the engagement path, and a marketplace for the consultants who deliver it](agentics-ready-to-sell.md) After the London talk, agentics is ready to sell: the market and its prices, our evidence-first position, the engagement path, and a consultants marketplace.
 - [When is the vault actually used? In Mondweep Chakravorty's SGit × Ruflo run, the encrypted vault is written or read in three steps of twelve, on one machine, inside the adapter, and why that is the honest shape of a recovery copy](when-is-the-vault-actually-used.md) In the SGit × Ruflo run the vault is written or read in three steps of twelve, on one machine, inside the adapter: the right shape for a recovery copy.
-- [The policy guards the door; the command line uses the window: in the SGit × Ruflo run, the ABP checks the adapter's tools, while Ruflo's own command line reaches the same memory file without it, and five other questions for the author](the-policy-guards-the-door.md) The ABP in the SGit × Ruflo run guards the adapter's tools; Ruflo's own command line reaches the same memory file without it. A question, not a finding.
+- [The policy guards the door; the command line uses the window: in the SGit × Ruflo run, the ABP is compiled into Ruflo's own rules and enforced on the adapter's tools, while Ruflo's command line reaches the same memory file without it, as the author's own README says](the-policy-guards-the-door.md) The ABP in the SGit × Ruflo run is compiled into Ruflo's rules and guards the adapter's tools; Ruflo's own command line reaches the memory without it.
 
 ### Continued by
 
 - [When is the vault actually used? In Mondweep Chakravorty's SGit × Ruflo run, the encrypted vault is written or read in three steps of twelve, on one machine, inside the adapter, and why that is the honest shape of a recovery copy](when-is-the-vault-actually-used.md) In the SGit × Ruflo run the vault is written or read in three steps of twelve, on one machine, inside the adapter: the right shape for a recovery copy.
-- [The policy guards the door; the command line uses the window: in the SGit × Ruflo run, the ABP checks the adapter's tools, while Ruflo's own command line reaches the same memory file without it, and five other questions for the author](the-policy-guards-the-door.md) The ABP in the SGit × Ruflo run guards the adapter's tools; Ruflo's own command line reaches the same memory file without it. A question, not a finding.
+- [The policy guards the door; the command line uses the window: in the SGit × Ruflo run, the ABP is compiled into Ruflo's own rules and enforced on the adapter's tools, while Ruflo's command line reaches the same memory file without it, as the author's own README says](the-policy-guards-the-door.md) The ABP in the SGit × Ruflo run is compiled into Ruflo's rules and guards the adapter's tools; Ruflo's own command line reaches the memory without it.
 
 [All articles](index.md) · [All graphs](graphs.md)
 

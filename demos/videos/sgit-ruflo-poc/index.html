@@ -43,6 +43,7 @@
 .rf-step pre{white-space:pre-wrap;word-break:break-word;font-size:.82rem;background:var(--term-bg,#111);color:#e8e8e8;padding:.6rem .7rem;border-radius:6px;margin:.5rem 0}
 .rf-shown,.rf-inf{font-size:.9rem;margin:.35rem 0}
 .rf-inf{font-style:italic;color:var(--dim)}
+.rf-code{font-size:.9rem;margin:.35rem 0;border-left:3px solid #2F7A4E;padding-left:.6rem}
 .rf-inf b,.rf-shown b{font-style:normal}
 body.rf-hide-inf .rf-inf,body.rf-hide-inf .rf-dash{display:none}
 .rf-links{font-size:.88rem;margin:.4rem 0 0;display:flex;flex-wrap:wrap;gap:.3rem 1rem}
@@ -63,7 +64,7 @@ body.rf-hide-inf .rf-inf,body.rf-hide-inf .rf-dash{display:none}
   <link rel="stylesheet" href="../../../assets/site-nav.css">
   <script src="../../../assets/themes/themes.js"></script>
   <a class="brand" href="../../../index.html">newsroom<span>.sgit.ai</span></a>
-  <a class="ver" href="../../../admin/versions.html" title="Site release history">v0.12.89</a>
+  <a class="ver" href="../../../admin/versions.html" title="Site release history">v0.12.90</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -192,10 +193,12 @@ body.rf-hide-inf .rf-inf,body.rf-hide-inf .rf-dash{display:none}
  <p class="eyebrow">A video, step by step</p>
  <h1>SGit × Ruflo, step by step</h1>
  <p class="lead">What if an agent loses its workspace? Twelve steps, each with its frame, its command and output, and which parts ran.</p>
-<div class="trail"><div class="trail-h">SGit × Ruflo: one run, four ways in</div><p class="trail-n">Mondweep Chakravorty&#x27;s video of an agent losing its workspace and getting its memory back: the run, the architecture, the gap, and a page to step through it yourself.</p><div class="trail-row"><div class="trail-c"><a href="../../../articles/what-if-an-agent-loses-its-workspace.html"><span class="trail-img" style="background-image:url(../../../articles/images/rf-board.webp)"></span></a><div class="trail-b"><span class="trail-k">1 · The run</span><span class="trail-t">What if an agent loses its workspace?</span><span class="trail-d">Twelve steps: memory saved, project deleted, memory restored in a fresh process, three safeguards tested.</span></div></div><div class="trail-c"><a href="../../../articles/when-is-the-vault-actually-used.html"><span class="trail-img" style="background-image:url(../../../articles/images/rf-matrix.webp)"></span></a><div class="trail-b"><span class="trail-k">2 · The architecture</span><span class="trail-t">When is the vault actually used?</span><span class="trail-d">In three of twelve steps, on one machine, inside the adapter: what that proves and what it does not.</span></div></div><div class="trail-c"><a href="../../../articles/the-policy-guards-the-door.html"><span class="trail-img" style="background-image:url(../../../articles/images/rf-gap.webp)"></span></a><div class="trail-b"><span class="trail-k">3 · The gap</span><span class="trail-t">The policy guards the door; the command line uses the window</span><span class="trail-d">The ABP checks the adapter&#x27;s tools; Ruflo&#x27;s own command line reaches the same memory file without it.</span></div></div><div class="trail-c here"><span class="trail-here">you are here</span><a href="https://newsroom.sgit.ai/demos/videos/sgit-ruflo-poc/index.html"><span class="trail-img" style="background-image:url(../../../articles/images/rf-intro.webp)"></span></a><div class="trail-b"><span class="trail-k">4 · Step through it</span><span class="trail-t">SGit × Ruflo, step by step</span><span class="trail-d">Every step with its frame, command, output and diagram, linked to its moment in the video.</span><span class=trail-l><a href="https://youtu.be/rkh6BJiaIrQ" target="_blank" rel="noopener">Watch the video &#8599;</a><a href="https://newsroom.sgit.ai/demos/videos/sgit-ruflo-poc/index.html">Step through it</a></span></div></div></div></div>
+<div class="trail"><div class="trail-h">SGit × Ruflo: one run, four ways in</div><p class="trail-n">Mondweep Chakravorty&#x27;s video of an agent losing its workspace and getting its memory back: the run, the architecture, the gap, and a page to step through it yourself.</p><div class="trail-row"><div class="trail-c"><a href="../../../articles/what-if-an-agent-loses-its-workspace.html"><span class="trail-img" style="background-image:url(../../../articles/images/rf-board.webp)"></span></a><div class="trail-b"><span class="trail-k">1 · The run</span><span class="trail-t">What if an agent loses its workspace?</span><span class="trail-d">Twelve steps: memory saved, project deleted, memory restored in a fresh process, three safeguards tested.</span></div></div><div class="trail-c"><a href="../../../articles/when-is-the-vault-actually-used.html"><span class="trail-img" style="background-image:url(../../../articles/images/rf-matrix.webp)"></span></a><div class="trail-b"><span class="trail-k">2 · The architecture</span><span class="trail-t">When is the vault actually used?</span><span class="trail-d">In three of twelve steps, on one machine, inside the adapter: what that proves and what it does not.</span></div></div><div class="trail-c"><a href="../../../articles/the-policy-guards-the-door.html"><span class="trail-img" style="background-image:url(../../../articles/images/rf-gap.webp)"></span></a><div class="trail-b"><span class="trail-k">3 · The gap</span><span class="trail-t">The policy guards the door; the command line uses the window</span><span class="trail-d">The ABP checks the adapter&#x27;s tools; Ruflo&#x27;s own command line reaches the same memory file without it.</span></div></div><div class="trail-c here"><span class="trail-here">you are here</span><a href="https://newsroom.sgit.ai/demos/videos/sgit-ruflo-poc/index.html"><span class="trail-img" style="background-image:url(../../../articles/images/rf-intro.webp)"></span></a><div class="trail-b"><span class="trail-k">4 · Step through it</span><span class="trail-t">SGit × Ruflo, step by step</span><span class="trail-d">Every step with its frame, command, output and diagram, linked to its moment in the video.</span><span class=trail-l><a href="https://youtu.be/rkh6BJiaIrQ" target="_blank" rel="noopener">Watch the video &#8599;</a><a href="https://newsroom.sgit.ai/demos/videos/sgit-ruflo-poc/index.html">Step through it</a><a href="https://github.com/mondweep/sgit-ruv-memory" target="_blank" rel="noopener">Read the code &#8599;</a></span></div></div></div></div>
 <a class="rf-poster" href="https://youtu.be/rkh6BJiaIrQ" target="_blank" rel="noopener"><img src="images/slide-00-intro.webp" alt="The video's opening slide: What if an agent loses its workspace?" style="width:100%;height:auto;border-radius:8px;border:1px solid var(--line)"><span>&#9654; Watch the video, 1:45 &#8599;</span></a>
 
 <p>Mondweep Chakravorty's video replays a real terminal run in twelve steps. Ruflo stores two facts. An adapter governed by an Agent Behaviour Policy saves Ruflo's memory as an encrypted checkpoint of SGit objects. The original project is deleted. A fresh process restores the checkpoint, and Ruflo reads both facts back exactly. Along the way three safeguards are tested, and all three hold. This page lets you step through it; <a href="../../../articles/what-if-an-agent-loses-its-workspace.html">the walkthrough article</a> tells the same story in prose, <a href="../../../articles/when-is-the-vault-actually-used.html">the architecture article</a> asks when the vault is actually used, and <a href="../../../articles/the-policy-guards-the-door.html">the third</a> looks at the one path the policy does not see.</p>
+
+<p class="small">The code behind the run is public: <a href="https://github.com/mondweep/sgit-ruv-memory">mondweep/sgit-ruv-memory</a>, MIT, with 16 tests and the recorded evidence. Where it confirms what the screen only implied, the step says so, under <b>Confirmed in the code</b>.</p>
 
 <h2 id="board">The run at a glance</h2>
 <div class="rf-board"><a class="rf-info" href="#step-1">1<small>Pinned</small></a><a class="rf-info" href="#step-2">2<small>Rules set</small></a><a class="rf-pass" href="#step-3">3<small>Stored</small></a><a class="rf-blocked" href="#step-4">4<small>Refused, as expected</small></a><a class="rf-pass" href="#step-5">5<small>Checkpointed</small></a><a class="rf-blocked" href="#step-6">6<small>Stopped, as expected</small></a><a class="rf-info" href="#step-7">7<small>Deleted</small></a><a class="rf-pass" href="#step-8">8<small>Restored</small></a><a class="rf-pass" href="#step-9">9<small>Both facts back</small></a><a class="rf-pass" href="#step-10">10<small>Not found, as expected</small></a><a class="rf-blocked" href="#step-11">11<small>Rejected, as expected</small></a><a class="rf-info" href="#step-12">12<small>Summary</small></a></div>
@@ -204,7 +207,7 @@ body.rf-hide-inf .rf-inf,body.rf-hide-inf .rf-dash{display:none}
 
 <h2 id="words">Six words you will see</h2>
 <div class="rf-gloss">
-<div><b>Ruflo</b>: rUv's open-source agent orchestration (MIT). Here only its memory commands and its memory file are used.</div>
+<div><b>Ruflo</b>: rUv's open-source agent orchestration (MIT). Here its memory commands, its memory file and a pinned copy of its policy evaluator are used.</div>
 <div><b>MCP</b>: the Model Context Protocol, a standard way for an agent to call tools. Here, a local server with three tools.</div>
 <div><b>ABP</b>: an Agent Behaviour Policy. Here, four rows saying what may be done in the project, and what needs approval.</div>
 <div><b>Checkpoint</b>: a saved recovery copy of Ruflo's memory database.</div>
@@ -237,7 +240,8 @@ body.rf-hide-inf .rf-inf,body.rf-hide-inf .rf-dash{display:none}
 <a class="rf-stage" href="images/stage-01.webp"><img src="images/stage-01.webp" alt="Step 1: which parts ran. Solid arrows are on screen; dashed are inferred." loading="lazy"></a>
 <p><b>Only Ruflo’s command-line tool runs. SGit and the adapter are named, not called.</b></p>
 <p class="rf-shown"><b>Shown on screen:</b> ruflo --version returns v3.56.10; the SGit commit and adapter version are printed.</p>
-<p class="rf-inf"><b>Inferred:</b> The adapter embeds that SGit commit; the screen only prints the two lines together.</p>
+
+<p class="rf-code"><b>Confirmed in the code:</b> The README pins SGit to reviewed source commit 559752641bc5…6ad0d4ad, and the adapter imports that library.</p>
 </details>
 <p class="rf-links"><a href="https://youtu.be/rkh6BJiaIrQ?t=9" target="_blank" rel="noopener">Watch it at 0:09 &#8599;</a> · <a href="../../../articles/what-if-an-agent-loses-its-workspace.html#step-1">In the walkthrough article</a> · <a href="../../../articles/when-is-the-vault-actually-used.html#answers">Where this sits in the architecture</a></p>
 </div></li>
@@ -257,9 +261,10 @@ body.rf-hide-inf .rf-inf,body.rf-hide-inf .rf-dash{display:none}
 <details><summary>How the parts fit</summary>
 <p>Four ABP rows are loaded and shown. Each says what the agent may do, scoped to the project.</p>
 <a class="rf-stage" href="images/stage-02.webp"><img src="images/stage-02.webp" alt="Step 2: which parts ran. Solid arrows are on screen; dashed are inferred." loading="lazy"></a>
-<p><b>The ABP lives with the adapter, not with Ruflo. From here on it guards the adapter’s three tools.</b></p>
+<p><b>The ABP lives with the adapter, not with Ruflo, compiled into Ruflo&#x27;s own rule format. From here on it guards the adapter&#x27;s tools.</b></p>
 <p class="rf-shown"><b>Shown on screen:</b> The four rows and the line “No raw rule overrides. Unsupported or ambiguous policies fail closed.”</p>
-<p class="rf-inf"><b>Inferred:</b> Where the ABP file is kept and how it is compiled. A hash of it (abp_sha256) and of the compiled policy (policy_sha256) appear in step 5.</p>
+
+<p class="rf-code"><b>Confirmed in the code:</b> The rows are compiled at server start into Ruflo rules (4 rules; delete as approval required), and every tool call is checked by a pinned copy of Ruflo&#x27;s policy evaluator in enforce mode. Raw rules and expiry overrides in the config are rejected.</p>
 </details>
 <p class="rf-links"><a href="https://youtu.be/rkh6BJiaIrQ?t=14" target="_blank" rel="noopener">Watch it at 0:14 &#8599;</a> · <a href="../../../articles/what-if-an-agent-loses-its-workspace.html#step-2">In the walkthrough article</a> · <a href="../../../articles/when-is-the-vault-actually-used.html#answers">Where this sits in the architecture</a></p>
 </div></li>
@@ -281,6 +286,7 @@ body.rf-hide-inf .rf-inf,body.rf-hide-inf .rf-dash{display:none}
 <a class="rf-stage" href="images/stage-03.webp"><img src="images/stage-03.webp" alt="Step 3: which parts ran. Solid arrows are on screen; dashed are inferred." loading="lazy"></a>
 <p><b>This write does not pass through the ABP. The memory file is ordinary, unencrypted SQLite at this point.</b></p>
 <p class="rf-shown"><b>Shown on screen:</b> ruflo memory store with --no-embedding --path memory.db; [OK] Data stored; Vector: No; the model name is logged.</p>
+
 
 </details>
 <p class="rf-links"><a href="https://youtu.be/rkh6BJiaIrQ?t=21" target="_blank" rel="noopener">Watch it at 0:21 &#8599;</a> · <a href="../../../articles/what-if-an-agent-loses-its-workspace.html#step-3">In the walkthrough article</a> · <a href="../../../articles/when-is-the-vault-actually-used.html#answers">Where this sits in the architecture</a> · <a href="../../../articles/the-policy-guards-the-door.html#paths">The path the policy does not see</a></p>
@@ -304,6 +310,7 @@ body.rf-hide-inf .rf-inf,body.rf-hide-inf .rf-dash{display:none}
 <p><b>The ABP stops the request before SGit is called, so nothing reaches the vault.</b></p>
 <p class="rf-shown"><b>Shown on screen:</b> isError true, PermissionError, checkpoint_files 0.</p>
 <p class="rf-inf"><b>Inferred:</b> That the gate, not SGit, refused it. The zero files written is consistent with that.</p>
+
 </details>
 <p class="rf-links"><a href="https://youtu.be/rkh6BJiaIrQ?t=32" target="_blank" rel="noopener">Watch it at 0:32 &#8599;</a> · <a href="../../../articles/what-if-an-agent-loses-its-workspace.html#step-4">In the walkthrough article</a> · <a href="../../../articles/when-is-the-vault-actually-used.html#answers">Where this sits in the architecture</a></p>
 </div></li>
@@ -325,7 +332,8 @@ body.rf-hide-inf .rf-inf,body.rf-hide-inf .rf-dash{display:none}
 <a class="rf-stage" href="images/stage-05.webp"><img src="images/stage-05.webp" alt="Step 5: which parts ran. Solid arrows are on screen; dashed are inferred." loading="lazy"></a>
 <p><b>What goes into the vault: one consistent copy of Ruflo’s memory database, sealed with fingerprints of the data and of the rules in force. Where: a checkpoint folder on the same machine. Keys sit in a different folder.</b></p>
 <p class="rf-shown"><b>Shown on screen:</b> status checkpointed, backend sqlite-backup, the three SHA-256 values, “Only encrypted SGit bare objects enter the checkpoint store. Private keys remain in a separate private directory.”</p>
-<p class="rf-inf"><b>Inferred:</b> The exact order of backup, hashing and encryption, and that the store has sgit’s usual bare layout. No push to a server appears.</p>
+
+<p class="rf-code"><b>Confirmed in the code:</b> The order is: policy check, consistent SQLite backup, integrity check, a new SGit vault for this checkpoint, commit, then only the encrypted bare store is copied out. No remote push is performed. The encrypted manifest records the ABP hash, the compiled-rule hash, the profile, owner, principal, database digest and time; the README says these are not digital signatures.</p>
 </details>
 <p class="rf-links"><a href="https://youtu.be/rkh6BJiaIrQ?t=38" target="_blank" rel="noopener">Watch it at 0:38 &#8599;</a> · <a href="../../../articles/what-if-an-agent-loses-its-workspace.html#step-5">In the walkthrough article</a> · <a href="../../../articles/when-is-the-vault-actually-used.html#step-5">Why the vault matters here</a></p>
 </div></li>
@@ -347,7 +355,8 @@ body.rf-hide-inf .rf-inf,body.rf-hide-inf .rf-dash{display:none}
 <a class="rf-stage" href="images/stage-06.webp"><img src="images/stage-06.webp" alt="Step 6: which parts ran. Solid arrows are on screen; dashed are inferred." loading="lazy"></a>
 <p><b>The vault is what the ABP is protecting here. It is not touched.</b></p>
 <p class="rf-shown"><b>Shown on screen:</b> isError true, PermissionError, checkpoint_retained true.</p>
-<p class="rf-inf"><b>Inferred:</b> That close_run maps to the delete.memory.project row. The slide says deletion requires approval.</p>
+
+<p class="rf-code"><b>Confirmed in the code:</b> close_run asks the gate for memory.delete, which the delete.memory.project row maps to. The README: there is no human approval fulfilment mechanism yet, so approval rows block.</p>
 </details>
 <p class="rf-links"><a href="https://youtu.be/rkh6BJiaIrQ?t=45" target="_blank" rel="noopener">Watch it at 0:45 &#8599;</a> · <a href="../../../articles/what-if-an-agent-loses-its-workspace.html#step-6">In the walkthrough article</a> · <a href="../../../articles/when-is-the-vault-actually-used.html#answers">Where this sits in the architecture</a></p>
 </div></li>
@@ -370,6 +379,7 @@ body.rf-hide-inf .rf-inf,body.rf-hide-inf .rf-dash{display:none}
 <p><b>The vault and keys survive because they live in folders outside the project.</b></p>
 <p class="rf-shown"><b>Shown on screen:</b> Worker daemon was not running; source_project_exists false; original_database_exists false.</p>
 <p class="rf-inf"><b>Inferred:</b> The store and key folders sit outside the deleted project. Step 8 confirms they were still there.</p>
+
 </details>
 <p class="rf-links"><a href="https://youtu.be/rkh6BJiaIrQ?t=51" target="_blank" rel="noopener">Watch it at 0:51 &#8599;</a> · <a href="../../../articles/what-if-an-agent-loses-its-workspace.html#step-7">In the walkthrough article</a> · <a href="../../../articles/when-is-the-vault-actually-used.html#answers">Where this sits in the architecture</a></p>
 </div></li>
@@ -391,7 +401,8 @@ body.rf-hide-inf .rf-inf,body.rf-hide-inf .rf-dash{display:none}
 <a class="rf-stage" href="images/stage-08.webp"><img src="images/stage-08.webp" alt="Step 8: which parts ran. Solid arrows are on screen; dashed are inferred." loading="lazy"></a>
 <p><b>This is the vault being read. The restored database is byte-for-byte the one saved in step 5.</b></p>
 <p class="rf-shown"><b>Shown on screen:</b> status restored, new_workspace fresh-runner, database_sha256 identical to step 5, matches_checkpoint true.</p>
-<p class="rf-inf"><b>Inferred:</b> That the keys come from the private folder, and the decrypt-then-verify order.</p>
+
+<p class="rf-code"><b>Confirmed in the code:</b> Restore checks the stored ciphertext&#x27;s digest, decrypts with the key record from the private folder, checks the manifest and the database digest, checks SQLite, and only then promotes to a new workspace, always named memory.sqlite. It never overwrites an existing workspace.</p>
 </details>
 <p class="rf-links"><a href="https://youtu.be/rkh6BJiaIrQ?t=58" target="_blank" rel="noopener">Watch it at 0:58 &#8599;</a> · <a href="../../../articles/what-if-an-agent-loses-its-workspace.html#step-8">In the walkthrough article</a> · <a href="../../../articles/when-is-the-vault-actually-used.html#step-8">Why the vault matters here</a></p>
 </div></li>
@@ -413,6 +424,7 @@ body.rf-hide-inf .rf-inf,body.rf-hide-inf .rf-dash{display:none}
 <a class="rf-stage" href="images/stage-09.webp"><img src="images/stage-09.webp" alt="Step 9: which parts ran. Solid arrows are on screen; dashed are inferred." loading="lazy"></a>
 <p><b>Ruflo reads a plain copy that came out of the vault. Neither the vault nor the ABP is on this path.</b></p>
 <p class="rf-shown"><b>Shown on screen:</b> Both values printed; PASS, exact match; exit 0.</p>
+
 
 </details>
 <p class="rf-links"><a href="https://youtu.be/rkh6BJiaIrQ?t=64" target="_blank" rel="noopener">Watch it at 1:04 &#8599;</a> · <a href="../../../articles/what-if-an-agent-loses-its-workspace.html#step-9">In the walkthrough article</a> · <a href="../../../articles/when-is-the-vault-actually-used.html#answers">Where this sits in the architecture</a> · <a href="../../../articles/the-policy-guards-the-door.html#paths">The path the policy does not see</a></p>
@@ -436,6 +448,7 @@ body.rf-hide-inf .rf-inf,body.rf-hide-inf .rf-dash{display:none}
 <p><b>A control on the restored data: nothing was added on the way through the vault.</b></p>
 <p class="rf-shown"><b>Shown on screen:</b> [WARN] Key not found: never-stored; exit 1.</p>
 
+
 </details>
 <p class="rf-links"><a href="https://youtu.be/rkh6BJiaIrQ?t=74" target="_blank" rel="noopener">Watch it at 1:14 &#8599;</a> · <a href="../../../articles/what-if-an-agent-loses-its-workspace.html#step-10">In the walkthrough article</a> · <a href="../../../articles/when-is-the-vault-actually-used.html#answers">Where this sits in the architecture</a> · <a href="../../../articles/the-policy-guards-the-door.html#paths">The path the policy does not see</a></p>
 </div></li>
@@ -455,9 +468,10 @@ body.rf-hide-inf .rf-inf,body.rf-hide-inf .rf-dash{display:none}
 <details><summary>How the parts fit</summary>
 <p>One encrypted object in the vault is altered, then a restore is attempted.</p>
 <a class="rf-stage" href="images/stage-11.webp"><img src="images/stage-11.webp" alt="Step 11: which parts ran. Solid arrows are on screen; dashed are inferred." loading="lazy"></a>
-<p><b>The ABP allows the restore; the vault’s own integrity check is what refuses it.</b></p>
+<p><b>The ABP allows the restore; the adapter&#x27;s check of the stored ciphertext is what refuses it.</b></p>
 <p class="rf-shown"><b>Shown on screen:</b> isError true, ValueError, tampered_workspace_created false.</p>
-<p class="rf-inf"><b>Inferred:</b> That SGit’s check (authenticated encryption or object hashes) caught it, rather than the adapter comparing fingerprints. Both would produce this output.</p>
+
+<p class="rf-code"><b>Confirmed in the code:</b> The adapter compares the digest of the stored ciphertext with the one recorded at checkpoint time and refuses with &#x27;Checkpoint ciphertext integrity mismatch&#x27; before SGit is asked to decrypt.</p>
 </details>
 <p class="rf-links"><a href="https://youtu.be/rkh6BJiaIrQ?t=80" target="_blank" rel="noopener">Watch it at 1:20 &#8599;</a> · <a href="../../../articles/what-if-an-agent-loses-its-workspace.html#step-11">In the walkthrough article</a> · <a href="../../../articles/when-is-the-vault-actually-used.html#step-11">Why the vault matters here</a></p>
 </div></li>
@@ -480,6 +494,7 @@ body.rf-hide-inf .rf-inf,body.rf-hide-inf .rf-dash{display:none}
 <p><b>Two results belong to the ABP, two to the vault, one to Ruflo, and one was deliberately left untested.</b></p>
 <p class="rf-shown"><b>Shown on screen:</b> The acceptance summary JSON.</p>
 <p class="rf-inf"><b>Inferred:</b> Which component each line belongs to.</p>
+
 </details>
 <p class="rf-links"><a href="https://youtu.be/rkh6BJiaIrQ?t=86" target="_blank" rel="noopener">Watch it at 1:26 &#8599;</a> · <a href="../../../articles/what-if-an-agent-loses-its-workspace.html#step-12">In the walkthrough article</a> · <a href="../../../articles/when-is-the-vault-actually-used.html#answers">Where this sits in the architecture</a></p>
 </div></li>
@@ -500,8 +515,8 @@ body.rf-hide-inf .rf-inf,body.rf-hide-inf .rf-dash{display:none}
 <p>On screen: both facts recovered exactly; unauthorised access blocked; unapproved deletion blocked; an altered checkpoint rejected. Still to validate, in the video's own words: recall by meaning, real-world value, and installation and ongoing reliability.</p>
 
 <div class="provenance">
-  <b>First published 17 October 2026</b>: the video <a href="https://youtu.be/rkh6BJiaIrQ">"SGit × Ruflo | Working Proof of Concept"</a> by Mondweep Chakravorty, member of the #Ruflo-Federation (<a href="https://www.linkedin.com/in/mondweepchakravorty/">LinkedIn</a>), published here with his agreement.
-  <p class="dim small" style="margin:.4em 0 0">Analysis: Claude (Anthropic), 17 October 2026, for Dinis Cruz, from on-screen content only; the audio was not transcribed. The frames are his and are not covered by this site's CC BY 4.0 licence; the diagrams, the board and the text are this site's. Curation: AI-written analysis of a third-party video, every number traced to the video's timeline or a frame, with what is inferred labelled as inferred.</p>
+  <b>First published 17 October 2026</b>: the video <a href="https://youtu.be/rkh6BJiaIrQ">"SGit × Ruflo | Working Proof of Concept"</a> by Mondweep Chakravorty, member of the #Ruflo-Federation (<a href="https://www.linkedin.com/in/mondweepchakravorty/">LinkedIn</a>), published here with his agreement. The code: <a href="https://github.com/mondweep/sgit-ruv-memory">mondweep/sgit-ruv-memory</a> (MIT).
+  <p class="dim small" style="margin:.4em 0 0">Analysis: Claude (Anthropic), 17 October 2026, for Dinis Cruz, from on-screen content only; the audio was not transcribed. The frames are his and are not covered by this site's CC BY 4.0 licence; the diagrams, the board and the text are this site's. Curation: AI-written analysis of a third-party video, every number traced to the video's timeline or a frame, checked against the author's published code, with what is inferred labelled as inferred and what the code confirms labelled as confirmed.</p>
 </div>
 
 <script>
@@ -515,7 +530,7 @@ body.rf-hide-inf .rf-inf,body.rf-hide-inf .rf-dash{display:none}
 
 <div class="agent">
   <h4>For an agent</h4>
-  <p>This page is a walkthrough of a recorded run, not a live system. Every number on it comes from the video's timeline or a frame. Keep what is shown on screen apart from what is inferred, as the page does: the video shows no vault server, push or clone; Ruflo's hive-mind and its own policy engine were not used; recall by meaning was not tested. The frames belong to Mondweep Chakravorty. The three articles linked at the top tell the same run in prose.</p>
+  <p>This page is a walkthrough of a recorded run, not a live system. Every number on it comes from the video's timeline or a frame. Keep what is shown on screen apart from what is inferred, as the page does: the video shows no vault server, push or clone; Ruflo's hive-mind was not used, and its policy evaluator runs as a pinned copy inside the adapter, not in Ruflo itself; recall by meaning was not validated. The author's code is at github.com/mondweep/sgit-ruv-memory. The frames belong to Mondweep Chakravorty. The three articles linked at the top tell the same run in prose.</p>
 </div>
 </main>
 <sg-meter view="page" kind="free" date="" topics="" title="SGit × Ruflo, step by step, SGit Newsroom" quiet></sg-meter>
@@ -529,7 +544,7 @@ import('../../../assets/components/sg-meter/v1/v1.4/v1.4.1/sg-meter.js')
     <div class="brandline">newsroom<span>.sgit.ai</span></div>
     <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../../../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../../../admin/versions.html">v0.12.89</a> &middot; <a href="../../../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../../../admin/versions.html">v0.12.90</a> &middot; <a href="../../../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>The newsroom</h4>

@@ -99,7 +99,7 @@
         {
           "file": "rf-map.webp",
           "url": "https://newsroom.sgit.ai/articles/images/rf-map.webp",
-          "caption": "The component map: the test script calls Ruflo's command line in steps 3, 9 and 10 and the ABP adapter's tools in steps 4, 5, 6, 8 and 11; the adapter's policy gate leads to the SGit library, which writes the vault and its keys on the machine's disk. Ruflo's hive-mind, its policy engine and a remote vault server were not used. Blue is Ruflo, amber the ABP adapter, green SGit and the vault, grey plain files.",
+          "caption": "The component map: the test script calls Ruflo's command line in steps 3, 9 and 10 and the ABP adapter's tools in steps 4, 5, 6, 8 and 11; the ABP rows are compiled to Ruflo rules and checked by a pinned copy of Ruflo's evaluator in enforce mode, which leads to the SGit library, which writes the vault and its keys on the machine's disk. Ruflo's hive-mind, its running policy state and a remote vault server were not used. Blue is Ruflo, amber the ABP adapter, green SGit and the vault, grey plain files.",
           "kind": "architecture"
         },
         {
@@ -117,7 +117,7 @@
         {
           "file": "rf-stage-11.webp",
           "url": "https://newsroom.sgit.ai/articles/images/rf-stage-11.webp",
-          "caption": "Step 11: one object in the vault is altered; the restore tool passes the policy gate; the SGit library reads the altered ciphertext, the integrity check fails, and a ValueError means the tampered workspace is never created.",
+          "caption": "Step 11: one object in the vault is altered; the restore tool passes the policy gate; the adapter compares the digest of the stored ciphertext with the one recorded in step 5, finds a mismatch, and a ValueError means the tampered workspace is never created; SGit is never asked to decrypt.",
           "kind": "architecture"
         },
         {
@@ -164,7 +164,7 @@
             "id": "rejected",
             "label": "Step 11: rejected",
             "kind": "example",
-            "summary": "The vault's integrity check refuses."
+            "summary": "The adapter's digest check refuses."
           },
           {
             "id": "protected",
@@ -182,7 +182,7 @@
             "id": "adapter",
             "label": "In the adapter, not Ruflo",
             "kind": "concept",
-            "summary": "Wraps any tool's memory file."
+            "summary": "One vault per checkpoint; wraps any tool's memory file."
           },
           {
             "id": "binding",
@@ -260,6 +260,7 @@
           "pages": [],
           "sites": [
             "https://youtu.be/rkh6BJiaIrQ",
+            "https://github.com/mondweep/sgit-ruv-memory",
             "https://newsroom.sgit.ai/demos/videos/sgit-ruflo-poc/index.html",
             "https://github.com/ruvnet/ruflo"
           ]
@@ -270,7 +271,7 @@
             "why": "Why three steps is right."
           },
           {
-            "text": "The ABP allows the restore; the vault's own integrity check is what refuses it.",
+            "text": "The ABP allows the restore; the adapter's check of the stored ciphertext is what refuses it.",
             "why": "Two different guards."
           },
           {
@@ -497,6 +498,7 @@
           "pages": [],
           "sites": [
             "https://youtu.be/rkh6BJiaIrQ",
+            "https://github.com/mondweep/sgit-ruv-memory",
             "https://newsroom.sgit.ai/demos/videos/sgit-ruflo-poc/index.html",
             "https://github.com/ruvnet/ruflo"
           ]
@@ -519,13 +521,13 @@
     },
     {
       "slug": "the-policy-guards-the-door",
-      "title": "The policy guards the door; the command line uses the window: in the SGit × Ruflo run, the ABP checks the adapter's tools, while Ruflo's own command line reaches the same memory file without it, and five other questions for the author",
+      "title": "The policy guards the door; the command line uses the window: in the SGit × Ruflo run, the ABP is compiled into Ruflo's own rules and enforced on the adapter's tools, while Ruflo's command line reaches the same memory file without it, as the author's own README says",
       "date": "2026-10-17",
       "updated": "",
       "url": "https://newsroom.sgit.ai/articles/the-policy-guards-the-door.html",
       "markdown": "https://newsroom.sgit.ai/articles/the-policy-guards-the-door.md",
       "card": "https://newsroom.sgit.ai/articles/cards/the-policy-guards-the-door.webp",
-      "teaser": "The ABP in the SGit × Ruflo run guards the adapter's tools; Ruflo's own command line reaches the same memory file without it. A question, not a finding.",
+      "teaser": "The ABP in the SGit × Ruflo run is compiled into Ruflo's rules and guards the adapter's tools; Ruflo's own command line reaches the memory without it.",
       "topics": [
         "agents-and-policy",
         "vaults-and-method"
@@ -557,7 +559,7 @@
         {
           "file": "rf-gap.webp",
           "url": "https://newsroom.sgit.ai/articles/images/rf-gap.webp",
-          "caption": "Two ways into the same memory: the adapter's tools pass the ABP's policy gate on their way to SGit and the vault, in steps 4, 5, 6, 8 and 11; Ruflo's own command line reads and writes the memory file directly, in steps 3, 9 and 10, with no ABP check. Solid arrows are shown on screen; that an agent could use the second path is an inference.",
+          "caption": "Two ways into the same memory: the adapter's tools pass the policy gate, a pinned copy of Ruflo's evaluator running the compiled ABP rules, on their way to SGit and the vault, in steps 4, 5, 6, 8 and 11; Ruflo's own command line reads and writes the memory file directly, in steps 3, 9 and 10, with no ABP check. The author states this limit in his README.",
           "kind": "architecture"
         },
         {
@@ -575,7 +577,7 @@
       ],
       "graph": {
         "slug": "the-policy-guards-the-door",
-        "teaser": "The ABP in the SGit × Ruflo run guards the adapter's tools; Ruflo's own command line reaches the same memory file without it. A question, not a finding.",
+        "teaser": "The ABP in the SGit × Ruflo run is compiled into Ruflo's rules and guards the adapter's tools; Ruflo's own command line reaches the memory without it.",
         "topics": [
           "agents-and-policy",
           "vaults-and-method"
@@ -626,21 +628,21 @@
           },
           {
             "id": "engine",
-            "label": "Ruflo's policy engine, enforce mode",
+            "label": "Native plugin registration",
             "kind": "method",
-            "summary": "The addendum's suggested fix."
+            "summary": "The author's follow-up: rules where Ruflo runs."
           },
           {
             "id": "questions",
-            "label": "Five more questions",
-            "kind": "question",
-            "summary": "Records, errors, the vault's home, a file name, approval."
+            "label": "Five questions, answered in the code",
+            "kind": "claim",
+            "summary": "Errors, records, the vault's home, a file name, approval."
           },
           {
             "id": "reply",
-            "label": "The author's right of reply",
-            "kind": "method",
-            "summary": "Answers will be added."
+            "label": "The author documents the limit",
+            "kind": "artefact",
+            "summary": "Only adapter tools pass through this gate."
           }
         ],
         "edges": [
@@ -696,6 +698,7 @@
           "pages": [],
           "sites": [
             "https://youtu.be/rkh6BJiaIrQ",
+            "https://github.com/mondweep/sgit-ruv-memory",
             "https://newsroom.sgit.ai/demos/videos/sgit-ruflo-poc/index.html",
             "https://github.com/ruvnet/ruflo"
           ]
@@ -710,7 +713,7 @@
             "why": "The step beyond the conference."
           },
           {
-            "text": "The gap is not a mistake in the test. It is a property of where this ABP is enforced.",
+            "text": "The gap is not a mistake in the test.",
             "why": "Fair to the author."
           }
         ]

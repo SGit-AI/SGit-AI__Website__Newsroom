@@ -165,8 +165,9 @@
     "vault": "Not yet",
     "takeaway": "Only Ruflo’s command-line tool runs. SGit and the adapter are named, not called.",
     "shown": "ruflo --version returns v3.56.10; the SGit commit and adapter version are printed.",
-    "inferred": "The adapter embeds that SGit commit; the screen only prints the two lines together."
-   }
+    "inferred": "None"
+   },
+   "code": "The README pins SGit to reviewed source commit 559752641bc5…6ad0d4ad, and the adapter imports that library."
   },
   {
    "n": 2,
@@ -183,10 +184,11 @@
     "ruflo": "–",
     "abp": "Rows loaded",
     "vault": "Not yet",
-    "takeaway": "The ABP lives with the adapter, not with Ruflo. From here on it guards the adapter’s three tools.",
+    "takeaway": "The ABP lives with the adapter, not with Ruflo, compiled into Ruflo's own rule format. From here on it guards the adapter's tools.",
     "shown": "The four rows and the line “No raw rule overrides. Unsupported or ambiguous policies fail closed.”",
-    "inferred": "Where the ABP file is kept and how it is compiled. A hash of it (abp_sha256) and of the compiled policy (policy_sha256) appear in step 5."
-   }
+    "inferred": "None"
+   },
+   "code": "The rows are compiled at server start into Ruflo rules (4 rules; delete as approval required), and every tool call is checked by a pinned copy of Ruflo's policy evaluator in enforce mode. Raw rules and expiry overrides in the config are rejected."
   },
   {
    "n": 3,
@@ -245,8 +247,9 @@
     "vault": "Written",
     "takeaway": "What goes into the vault: one consistent copy of Ruflo’s memory database, sealed with fingerprints of the data and of the rules in force. Where: a checkpoint folder on the same machine. Keys sit in a different folder.",
     "shown": "status checkpointed, backend sqlite-backup, the three SHA-256 values, “Only encrypted SGit bare objects enter the checkpoint store. Private keys remain in a separate private directory.”",
-    "inferred": "The exact order of backup, hashing and encryption, and that the store has sgit’s usual bare layout. No push to a server appears."
-   }
+    "inferred": "None"
+   },
+   "code": "The order is: policy check, consistent SQLite backup, integrity check, a new SGit vault for this checkpoint, commit, then only the encrypted bare store is copied out. No remote push is performed. The encrypted manifest records the ABP hash, the compiled-rule hash, the profile, owner, principal, database digest and time; the README says these are not digital signatures."
   },
   {
    "n": 6,
@@ -265,8 +268,9 @@
     "vault": "Protected",
     "takeaway": "The vault is what the ABP is protecting here. It is not touched.",
     "shown": "isError true, PermissionError, checkpoint_retained true.",
-    "inferred": "That close_run maps to the delete.memory.project row. The slide says deletion requires approval."
-   }
+    "inferred": "None"
+   },
+   "code": "close_run asks the gate for memory.delete, which the delete.memory.project row maps to. The README: there is no human approval fulfilment mechanism yet, so approval rows block."
   },
   {
    "n": 7,
@@ -305,8 +309,9 @@
     "vault": "Read",
     "takeaway": "This is the vault being read. The restored database is byte-for-byte the one saved in step 5.",
     "shown": "status restored, new_workspace fresh-runner, database_sha256 identical to step 5, matches_checkpoint true.",
-    "inferred": "That the keys come from the private folder, and the decrypt-then-verify order."
-   }
+    "inferred": "None"
+   },
+   "code": "Restore checks the stored ciphertext's digest, decrypts with the key record from the private folder, checks the manifest and the database digest, checks SQLite, and only then promotes to a new workspace, always named memory.sqlite. It never overwrites an existing workspace."
   },
   {
    "n": 9,
@@ -363,10 +368,11 @@
     "ruflo": "–",
     "abp": "Allowed",
     "vault": "Read, rejected",
-    "takeaway": "The ABP allows the restore; the vault’s own integrity check is what refuses it.",
+    "takeaway": "The ABP allows the restore; the adapter's check of the stored ciphertext is what refuses it.",
     "shown": "isError true, ValueError, tampered_workspace_created false.",
-    "inferred": "That SGit’s check (authenticated encryption or object hashes) caught it, rather than the adapter comparing fingerprints. Both would produce this output."
-   }
+    "inferred": "None"
+   },
+   "code": "The adapter compares the digest of the stored ciphertext with the one recorded at checkpoint time and refuses with 'Checkpoint ciphertext integrity mismatch' before SGit is asked to decrypt."
   },
   {
    "n": 12,
@@ -388,5 +394,6 @@
     "inferred": "Which component each line belongs to."
    }
   }
- ]
+ ],
+ "repo": "https://github.com/mondweep/sgit-ruv-memory"
 }

@@ -8,10 +8,10 @@
   {"id": "map", "label": "The component map", "kind": "artefact", "summary": "Two lines from the test script."},
   {"id": "written", "label": "Step 5: written", "kind": "example", "summary": "A consistent copy, fingerprinted, encrypted."},
   {"id": "read", "label": "Step 8: read", "kind": "example", "summary": "Byte for byte the same."},
-  {"id": "rejected", "label": "Step 11: rejected", "kind": "example", "summary": "The vault's integrity check refuses."},
+  {"id": "rejected", "label": "Step 11: rejected", "kind": "example", "summary": "The adapter's digest check refuses."},
   {"id": "protected", "label": "Steps 6 and 7", "kind": "example", "summary": "Protected, then survives."},
   {"id": "onemachine", "label": "One machine", "kind": "claim", "summary": "Survives the project, not the machine."},
-  {"id": "adapter", "label": "In the adapter, not Ruflo", "kind": "concept", "summary": "Wraps any tool's memory file."},
+  {"id": "adapter", "label": "In the adapter, not Ruflo", "kind": "concept", "summary": "One vault per checkpoint; wraps any tool's memory file."},
   {"id": "binding", "label": "Data bound to its policy", "kind": "concept", "summary": "The checkpoint records the rules in force."},
   {"id": "shownvsinferred", "label": "Shown and inferred", "kind": "method", "summary": "Solid arrows on screen, dashed inferred."},
   {"id": "next", "label": "The vault leaving the machine", "kind": "question", "summary": "Push, clone, a server holding only ciphertext."}
@@ -30,11 +30,11 @@
  "links": {
   "articles": ["what-if-an-agent-loses-its-workspace", "the-policy-guards-the-door", "one-vault-ten-agents", "sgit-is-a-standard"],
   "pages": [],
-  "sites": ["https://youtu.be/rkh6BJiaIrQ", "https://newsroom.sgit.ai/demos/videos/sgit-ruflo-poc/index.html", "https://github.com/ruvnet/ruflo"]
+  "sites": ["https://youtu.be/rkh6BJiaIrQ", "https://github.com/mondweep/sgit-ruv-memory", "https://newsroom.sgit.ai/demos/videos/sgit-ruflo-poc/index.html", "https://github.com/ruvnet/ruflo"]
  },
  "quotes": [
   {"text": "A recovery copy should be touched when you save and when you restore, and otherwise left alone.", "why": "Why three steps is right."},
-  {"text": "The ABP allows the restore; the vault's own integrity check is what refuses it.", "why": "Two different guards."},
+  {"text": "The ABP allows the restore; the adapter's check of the stored ciphertext is what refuses it.", "why": "Two different guards."},
   {"text": "It would not survive the machine being lost, which the video does not claim.", "why": "The honest limit."}
  ]
 }

@@ -4,16 +4,16 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.12.89 · 165 articles since 2026-08-17; the newest is 2026-10-17. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v0.12.90 · 165 articles since 2026-08-17; the newest is 2026-10-17. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## The lead
 
-- [When is the vault actually used? In Mondweep Chakravorty's SGit × Ruflo run, the encrypted vault is written or read in three steps of twelve, on one machine, inside the adapter, and why that is the honest shape of a recovery copy](articles/when-is-the-vault-actually-used.md), 2026-10-17, 7 min. In the SGit × Ruflo run the vault is written or read in three steps of twelve, on one machine, inside the adapter: the right shape for a recovery copy.
+- [When is the vault actually used? In Mondweep Chakravorty's SGit × Ruflo run, the encrypted vault is written or read in three steps of twelve, on one machine, inside the adapter, and why that is the honest shape of a recovery copy](articles/when-is-the-vault-actually-used.md), 2026-10-17, 8 min. In the SGit × Ruflo run the vault is written or read in three steps of twelve, on one machine, inside the adapter: the right shape for a recovery copy.
 
 ## Highlights
 
-- [What if an agent loses its workspace? Mondweep Chakravorty's SGit × Ruflo proof of concept, step by step: memory saved encrypted, the project deleted, the memory back in a fresh process, and three safeguards that held](articles/what-if-an-agent-loses-its-workspace.md), 2026-10-17, 8 min.
-- [The policy guards the door; the command line uses the window: in the SGit × Ruflo run, the ABP checks the adapter's tools, while Ruflo's own command line reaches the same memory file without it, and five other questions for the author](articles/the-policy-guards-the-door.md), 2026-10-17, 6 min.
+- [What if an agent loses its workspace? Mondweep Chakravorty's SGit × Ruflo proof of concept, step by step: memory saved encrypted, the project deleted, the memory back in a fresh process, and three safeguards that held](articles/what-if-an-agent-loses-its-workspace.md), 2026-10-17, 9 min.
+- [The policy guards the door; the command line uses the window: in the SGit × Ruflo run, the ABP is compiled into Ruflo's own rules and enforced on the adapter's tools, while Ruflo's command line reaches the same memory file without it, as the author's own README says](articles/the-policy-guards-the-door.md), 2026-10-17, 7 min.
 - [The fork next door: why open source protects founders, customers and investors from each other, why forks only take hold when someone stops executing, and why a maturing company should give its explorers a way out](articles/the-fork-next-door.md), 2026-10-16, 15 min.
 - [The controllable founder: why investors pick one founder over another who looks just as good, and what record labels taught us about who the commodity is](articles/the-controllable-founder.md), 2026-10-16, 13 min.
 
@@ -30,9 +30,9 @@ The reading meter charges a few pence a page from credit kept in your browser, b
 
 ### Agent security & policy (45)
 For security leads, risk owners and boards deciding what an agent may do and who carries the risk.
-- [When is the vault actually used? In Mondweep Chakravorty's SGit × Ruflo run, the encrypted vault is written or read in three steps of twelve, on one machine, inside the adapter, and why that is the honest shape of a recovery copy](articles/when-is-the-vault-actually-used.md), 2026-10-17, 7 min.
-- [What if an agent loses its workspace? Mondweep Chakravorty's SGit × Ruflo proof of concept, step by step: memory saved encrypted, the project deleted, the memory back in a fresh process, and three safeguards that held](articles/what-if-an-agent-loses-its-workspace.md), 2026-10-17, 8 min.
-- [The policy guards the door; the command line uses the window: in the SGit × Ruflo run, the ABP checks the adapter's tools, while Ruflo's own command line reaches the same memory file without it, and five other questions for the author](articles/the-policy-guards-the-door.md), 2026-10-17, 6 min.
+- [When is the vault actually used? In Mondweep Chakravorty's SGit × Ruflo run, the encrypted vault is written or read in three steps of twelve, on one machine, inside the adapter, and why that is the honest shape of a recovery copy](articles/when-is-the-vault-actually-used.md), 2026-10-17, 8 min.
+- [What if an agent loses its workspace? Mondweep Chakravorty's SGit × Ruflo proof of concept, step by step: memory saved encrypted, the project deleted, the memory back in a fresh process, and three safeguards that held](articles/what-if-an-agent-loses-its-workspace.md), 2026-10-17, 9 min.
+- [The policy guards the door; the command line uses the window: in the SGit × Ruflo run, the ABP is compiled into Ruflo's own rules and enforced on the adapter's tools, while Ruflo's command line reaches the same memory file without it, as the author's own README says](articles/the-policy-guards-the-door.md), 2026-10-17, 7 min.
 
 ### Building with agents (28)
 For engineers and builders running agents day to day: tools, memory, email, desktops and review.

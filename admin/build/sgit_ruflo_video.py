@@ -70,6 +70,7 @@ CSS = """<style>
 .rf-step pre{white-space:pre-wrap;word-break:break-word;font-size:.82rem;background:var(--term-bg,#111);color:#e8e8e8;padding:.6rem .7rem;border-radius:6px;margin:.5rem 0}
 .rf-shown,.rf-inf{font-size:.9rem;margin:.35rem 0}
 .rf-inf{font-style:italic;color:var(--dim)}
+.rf-code{font-size:.9rem;margin:.35rem 0;border-left:3px solid #2F7A4E;padding-left:.6rem}
 .rf-inf b,.rf-shown b{font-style:normal}
 body.rf-hide-inf .rf-inf,body.rf-hide-inf .rf-dash{display:none}
 .rf-links{font-size:.88rem;margin:.4rem 0 0;display:flex;flex-wrap:wrap;gap:.3rem 1rem}
@@ -109,6 +110,7 @@ def step_block(s, slide):
     inferred = st["inferred"]
     inf_html = "" if inferred.strip().rstrip(".") in ("None", "Nothing important; the call is direct") else \
         f'<p class="rf-inf"><b>Inferred:</b> {e(inferred)}</p>'
+    code_html = f'<p class="rf-code"><b>Confirmed in the code:</b> {e(s["code"])}</p>' if s.get('code') else ''
     return f"""<li class="rf-step {s['cls']}" id="step-{n}">
 <div class="rf-num" aria-hidden="true">{n}</div>
 <div>
@@ -128,6 +130,7 @@ def step_block(s, slide):
 <p><b>{e(st['takeaway'])}</b></p>
 <p class="rf-shown"><b>Shown on screen:</b> {e(st['shown'])}</p>
 {inf_html}
+{code_html}
 </details>
 <p class="rf-links">{' · '.join(links)}</p>
 </div></li>"""
@@ -156,6 +159,8 @@ def page():
 
 <p>Mondweep Chakravorty's video replays a real terminal run in twelve steps. Ruflo stores two facts. An adapter governed by an Agent Behaviour Policy saves Ruflo's memory as an encrypted checkpoint of SGit objects. The original project is deleted. A fresh process restores the checkpoint, and Ruflo reads both facts back exactly. Along the way three safeguards are tested, and all three hold. This page lets you step through it; <a href="{A1}">the walkthrough article</a> tells the same story in prose, <a href="{A2}">the architecture article</a> asks when the vault is actually used, and <a href="{A3}">the third</a> looks at the one path the policy does not see.</p>
 
+<p class="small">The code behind the run is public: <a href="{D['repo']}">mondweep/sgit-ruv-memory</a>, MIT, with 16 tests and the recorded evidence. Where it confirms what the screen only implied, the step says so, under <b>Confirmed in the code</b>.</p>
+
 <h2 id="board">The run at a glance</h2>
 <div class="rf-board">{board}</div>
 <p class="rf-key"><span><i style="background:#2F7A4E"></i>Worked</span><span><i style="background:#B23A1E"></i>Safeguard refused it, as intended</span><span><i style="background:var(--panel);border:1px solid var(--line)"></i>Setup or summary</span></p>
@@ -163,7 +168,7 @@ def page():
 
 <h2 id="words">Six words you will see</h2>
 <div class="rf-gloss">
-<div><b>Ruflo</b>: rUv's open-source agent orchestration (MIT). Here only its memory commands and its memory file are used.</div>
+<div><b>Ruflo</b>: rUv's open-source agent orchestration (MIT). Here its memory commands, its memory file and a pinned copy of its policy evaluator are used.</div>
 <div><b>MCP</b>: the Model Context Protocol, a standard way for an agent to call tools. Here, a local server with three tools.</div>
 <div><b>ABP</b>: an Agent Behaviour Policy. Here, four rows saying what may be done in the project, and what needs approval.</div>
 <div><b>Checkpoint</b>: a saved recovery copy of Ruflo's memory database.</div>
@@ -196,8 +201,8 @@ def page():
 <p>On screen: both facts recovered exactly; unauthorised access blocked; unapproved deletion blocked; an altered checkpoint rejected. Still to validate, in the video's own words: recall by meaning, real-world value, and installation and ongoing reliability.</p>
 
 <div class="provenance">
-  <b>First published {D['published']}</b>: the video <a href="{D['youtube']}">"{e(D['title'])}"</a> by Mondweep Chakravorty, member of the #Ruflo-Federation (<a href="https://www.linkedin.com/in/mondweepchakravorty/">LinkedIn</a>), published here with his agreement.
-  <p class="dim small" style="margin:.4em 0 0">Analysis: {e(D['analysis'])}. The frames are his and are not covered by this site's CC BY 4.0 licence; the diagrams, the board and the text are this site's. Curation: AI-written analysis of a third-party video, every number traced to the video's timeline or a frame, with what is inferred labelled as inferred.</p>
+  <b>First published {D['published']}</b>: the video <a href="{D['youtube']}">"{e(D['title'])}"</a> by Mondweep Chakravorty, member of the #Ruflo-Federation (<a href="https://www.linkedin.com/in/mondweepchakravorty/">LinkedIn</a>), published here with his agreement. The code: <a href="{D['repo']}">mondweep/sgit-ruv-memory</a> (MIT).
+  <p class="dim small" style="margin:.4em 0 0">Analysis: {e(D['analysis'])}. The frames are his and are not covered by this site's CC BY 4.0 licence; the diagrams, the board and the text are this site's. Curation: AI-written analysis of a third-party video, every number traced to the video's timeline or a frame, checked against the author's published code, with what is inferred labelled as inferred and what the code confirms labelled as confirmed.</p>
 </div>
 
 <script>
@@ -211,8 +216,8 @@ def page():
 """
     agent = ("This page is a walkthrough of a recorded run, not a live system. Every number on it comes from the video's "
              "timeline or a frame. Keep what is shown on screen apart from what is inferred, as the page does: the video shows "
-             "no vault server, push or clone; Ruflo's hive-mind and its own policy engine were not used; recall by meaning was "
-             "not tested. The frames belong to Mondweep Chakravorty. The three articles linked at the top tell the same run in prose.")
+             "no vault server, push or clone; Ruflo's hive-mind was not used, and its policy evaluator runs as a pinned copy inside the adapter, "
+             "not in Ruflo itself; recall by meaning was not validated. The author's code is at github.com/mondweep/sgit-ruv-memory. The frames belong to Mondweep Chakravorty. The three articles linked at the top tell the same run in prose.")
     return newsroom_page(REL, "SGit × Ruflo, step by step",
                          "An interactive walkthrough of Mondweep Chakravorty's video: Ruflo's memory saved as an encrypted SGit checkpoint, the project deleted, and the memory restored in a fresh process, with three safeguards tested.",
                          body, eyebrow="A video, step by step", crumbs=(),

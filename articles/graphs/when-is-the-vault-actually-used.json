@@ -35,7 +35,7 @@
       "id": "rejected",
       "label": "Step 11: rejected",
       "kind": "example",
-      "summary": "The vault's integrity check refuses."
+      "summary": "The adapter's digest check refuses."
     },
     {
       "id": "protected",
@@ -53,7 +53,7 @@
       "id": "adapter",
       "label": "In the adapter, not Ruflo",
       "kind": "concept",
-      "summary": "Wraps any tool's memory file."
+      "summary": "One vault per checkpoint; wraps any tool's memory file."
     },
     {
       "id": "binding",
@@ -131,6 +131,7 @@
     "pages": [],
     "sites": [
       "https://youtu.be/rkh6BJiaIrQ",
+      "https://github.com/mondweep/sgit-ruv-memory",
       "https://newsroom.sgit.ai/demos/videos/sgit-ruflo-poc/index.html",
       "https://github.com/ruvnet/ruflo"
     ]
@@ -141,7 +142,7 @@
       "why": "Why three steps is right."
     },
     {
-      "text": "The ABP allows the restore; the vault's own integrity check is what refuses it.",
+      "text": "The ABP allows the restore; the adapter's check of the stored ciphertext is what refuses it.",
       "why": "Two different guards."
     },
     {
@@ -159,7 +160,7 @@
     {
       "file": "rf-map.webp",
       "url": "https://newsroom.sgit.ai/articles/images/rf-map.webp",
-      "caption": "The component map: the test script calls Ruflo's command line in steps 3, 9 and 10 and the ABP adapter's tools in steps 4, 5, 6, 8 and 11; the adapter's policy gate leads to the SGit library, which writes the vault and its keys on the machine's disk. Ruflo's hive-mind, its policy engine and a remote vault server were not used. Blue is Ruflo, amber the ABP adapter, green SGit and the vault, grey plain files.",
+      "caption": "The component map: the test script calls Ruflo's command line in steps 3, 9 and 10 and the ABP adapter's tools in steps 4, 5, 6, 8 and 11; the ABP rows are compiled to Ruflo rules and checked by a pinned copy of Ruflo's evaluator in enforce mode, which leads to the SGit library, which writes the vault and its keys on the machine's disk. Ruflo's hive-mind, its running policy state and a remote vault server were not used. Blue is Ruflo, amber the ABP adapter, green SGit and the vault, grey plain files.",
       "kind": "architecture"
     },
     {
@@ -177,7 +178,7 @@
     {
       "file": "rf-stage-11.webp",
       "url": "https://newsroom.sgit.ai/articles/images/rf-stage-11.webp",
-      "caption": "Step 11: one object in the vault is altered; the restore tool passes the policy gate; the SGit library reads the altered ciphertext, the integrity check fails, and a ValueError means the tampered workspace is never created.",
+      "caption": "Step 11: one object in the vault is altered; the restore tool passes the policy gate; the adapter compares the digest of the stored ciphertext with the one recorded in step 5, finds a mismatch, and a ValueError means the tampered workspace is never created; SGit is never asked to decrypt.",
       "kind": "architecture"
     },
     {
