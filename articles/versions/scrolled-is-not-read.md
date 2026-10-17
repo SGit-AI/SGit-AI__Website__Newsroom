@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-16 | published | 4,805 | first published | [`b2acf0461`](https://github.com/SGit-AI/SGit-AI__Website/commit/b2acf0461c37c40e4673ca91e99965511876ca1c) | [current](../scrolled-is-not-read.md) |
+| **v1.0.0** | 2026-10-16 | published | 4,805 | first published | [`8de47161e`](https://github.com/SGit-AI/SGit-AI__Website/commit/8de47161eebbc17d27d89ef64fe4b9066e09d494) | [current](../scrolled-is-not-read.md) |
 
 [← Back to the article](../scrolled-is-not-read.md) · [All articles](../index.md)
 
