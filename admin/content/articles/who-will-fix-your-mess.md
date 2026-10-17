@@ -4,7 +4,7 @@ date: 2026-10-17
 author: Dinis Cruz
 author_url: about/index.html
 summary: Harvard Business Review published "Turn Vibe-Coded Prototypes Into Tools Your Company Can Actually Use" on 16 October 2026, by José Parra Moyano and Karl Schmedders of IMD, Olivier Laplace of Vi Partners and Benjamin Torben-Nielsen of Roche. Its argument, as its summary and Olivier's post put it: AI has made building software feel almost free, so the prototype is the easy part and turning it into a tool people rely on is the hard part, which they call the deployment gap; nobody in-house knows how an AI-designed tool is built; build where you are different and partner where specialists live the problem. I agree with almost all of it, and I think this site has already answered the question in a set of articles, with Simon Wardley's explorers, villagers and town planners as the frame. The gap is not a place to stop; it is a handover between people with different skills. The prototype is not the mess; it is the best brief anyone will write. The architecture an agent designed can be known, if the agents leave a record: a mandate, a memory and a graph. Their bonus test is the town planner's accountability by another name. And the answer to "who will fix your mess?" should never depend on one partner: if the code is open, anyone can. I have read the public summary and Olivier's post, not the full article, which is behind a paywall.
-version: v0.12.91
+version: v0.12.92
 license: https://creativecommons.org/licenses/by/4.0/
 tags: explorer-coding, vibe-coding, wardley-maps, build-or-buy, deployment-gap, open-source, agents, startups, hbr, article
 status: published
@@ -98,7 +98,7 @@ That is why I keep arguing for open source, all of it. [The value of constraints
 
 ## What I would ask the authors {#ask}
 
-I would like to read the full article, and I suspect some of this is in it. Three questions I would ask:
+I would like to read the full article, and I suspect some of this is in it; [I just want to buy the article](/articles/i-just-want-to-buy-the-article.html) is about why I have not. Three questions I would ask:
 
 1. **Does the gap close faster if the agents keep a record?** A mandate, a memory and a graph of what they built, owned by the company.
 2. **Should the partner's code be open?** It is the cleanest answer to "who will fix it" if the partner fails.

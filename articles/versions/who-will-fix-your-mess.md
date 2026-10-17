@@ -10,13 +10,14 @@
 
 # Versions of: Who will fix your mess? An answer to HBR's "deployment gap" from what this site has already published
 
-1 published version of [Who will fix your mess? An answer to HBR's "deployment gap" from what this site has already published: explorers, villagers and town planners, a record of what the agents built, and open source so the answer never depends on one partner](../who-will-fix-your-mess.md). The current one is **v1.0.0**.
+2 published versions of [Who will fix your mess? An answer to HBR's "deployment gap" from what this site has already published: explorers, villagers and town planners, a record of what the agents built, and open source so the answer never depends on one partner](../who-will-fix-your-mess.md). The current one is **v1.1.0**.
 
 v1.0.0 is the article as first published. A change to its text (title, abstract or body) is the next minor version, v1.1.0; a change only to its other details (a LinkedIn link, the release it belongs to) is the next patch, v1.0.1. The list is read from the site's git history at every build, so it cannot be edited by hand and cannot leave a version out. Views extracted from an article, such as the Five readers, are not part of its text and do not change its version.
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-17 | published | 2,782 | first published | this release | [current](../who-will-fix-your-mess.md) |
+| **v1.1.0** | 2026-10-17 | minor | 2,795 | +13 / −0 words; 1 changed, 0 added, 0 removed paragraphs | this release | [what changed](who-will-fix-your-mess/v1.1.0.md) · [current](../who-will-fix-your-mess.md) |
+| **v1.0.0** | 2026-10-17 | published | 2,782 | first published | [`9ce19abb2`](https://github.com/SGit-AI/SGit-AI__Website/commit/9ce19abb2bb3fd22b449f205d46e40a30cc6e530) |  |
 
 [← Back to the article](../who-will-fix-your-mess.md) · [All articles](../index.md)
 

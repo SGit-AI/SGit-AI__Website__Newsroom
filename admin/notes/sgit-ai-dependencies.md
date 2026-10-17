@@ -4,23 +4,23 @@ Written by `admin/build/deps.py`; do not edit. The rule: the newsroom is self-co
 
 | kind | files | references | what it is |
 |---|---:|---:|---|
-| generator | 621 | | pages imported from sgit.ai's build; goes when the generator is ported here |
-| network | 414 | 3356 | links to sgit.ai's pages and the network sites (17 files this site writes itself) |
-| words | 772 | 5352 | sgit.ai or the sgit project named in prose: the disclosure, the kit, the method |
+| generator | 624 | | pages imported from sgit.ai's build; goes when the generator is ported here |
+| network | 417 | 3359 | links to sgit.ai's pages and the network sites (17 files this site writes itself) |
+| words | 775 | 5361 | sgit.ai or the sgit project named in prose: the disclosure, the kit, the method |
 | vault | 45 | 115 | links to a vault: the one dependency that stays |
 
 ## Network links, by target
 
-- 340 × `sgit.ai/about/index.html`
+- 342 × `sgit.ai/about/index.html`
 - 181 × `sgit.ai/admin/versions.html`
-- 163 × `sgit.ai/about/index.md`
+- 164 × `sgit.ai/about/index.md`
 - 97 × `sgit.ai/admin/versions.md`
 - 65 × `sgit.ai/team/index.html`
 - 63 × `sgit.ai/why/index.html`
 - 54 × `sgit.ai/network/index.html`
 - 52 × `sgit.ai/demos/fractal-graphs/performance.html`
-- 50 × `sgit.ai/demos/vaults/index.html`
 - 50 × `sgit.ai/security/index.html`
+- 50 × `sgit.ai/demos/vaults/index.html`
 - 46 × `sgit.ai/skills/index.html`
 - 44 × `sgit.ai/docs/index.html`
 - 44 × `sgit.ai/compare/index.html`
@@ -99,7 +99,6 @@ The pages this site can fix now (an imported page is fixed in the generator, whe
 - `engineering/releases/v0.12.65.html` (12)
 - `admin/notes/2026-10-11__newsroom-api-map-and-review.md` (11)
 - `admin/build/newsroom-text.json` (9)
-- `desks/vaults.html` (9)
 - `assets/site.css` (8)
 - `databases/index.html` (8)
 - `engineering/releases/v0.12.10.html` (8)
@@ -114,6 +113,8 @@ The pages this site can fix now (an imported page is fixed in the generator, whe
 - `replicate/index.html` (7)
 - `shipped/index.html` (7)
 - `desks/building.html` (6)
+- `desks/security.html` (6)
+- `desks/vaults.html` (6)
 - `engineering/issues/010.html` (6)
 - `engineering/issues/017.html` (6)
 - `engineering/issues/079.html` (6)
@@ -135,4 +136,3 @@ The pages this site can fix now (an imported page is fixed in the generator, whe
 - `engineering/releases/v0.12.27.html` (5)
 - `engineering/releases/v0.12.29.html` (5)
 - `engineering/releases/v0.12.57.html` (5)
-- `engineering/releases/v0.12.69.html` (5)

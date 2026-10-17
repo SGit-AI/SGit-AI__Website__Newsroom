@@ -10,7 +10,7 @@
 
 # Who will fix your mess? An answer to HBR's "deployment gap" from what this site has already published: explorers, villagers and town planners, a record of what the agents built, and open source so the answer never depends on one partner
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-17 · [article v1.0.0](versions/who-will-fix-your-mess.md) · [newsroom v0.12.91](https://newsroom.sgit.ai/admin/versions.html) · explorer-codingvibe-codingwardley-mapsbuild-or-buydeployment-gapopen-sourceagentsstartupshbrarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-17 · [article v1.1.0, 2 versions](versions/who-will-fix-your-mess.md) · [newsroom v0.12.92](https://newsroom.sgit.ai/admin/versions.html) · explorer-codingvibe-codingwardley-mapsbuild-or-buydeployment-gapopen-sourceagentsstartupshbrarticle
 
 ***Abstract:** Harvard Business Review published "Turn Vibe-Coded Prototypes Into Tools Your Company Can Actually Use" on 16 October 2026, by José Parra Moyano and Karl Schmedders of IMD, Olivier Laplace of Vi Partners and Benjamin Torben-Nielsen of Roche. Its argument, as its summary and Olivier's post put it: AI has made building software feel almost free, so the prototype is the easy part and turning it into a tool people rely on is the hard part, which they call the deployment gap; nobody in-house knows how an AI-designed tool is built; build where you are different and partner where specialists live the problem. I agree with almost all of it, and I think this site has already answered the question in a set of articles, with Simon Wardley's explorers, villagers and town planners as the frame. The gap is not a place to stop; it is a handover between people with different skills. The prototype is not the mess; it is the best brief anyone will write. The architecture an agent designed can be known, if the agents leave a record: a mandate, a memory and a graph. Their bonus test is the town planner's accountability by another name. And the answer to "who will fix your mess?" should never depend on one partner: if the code is open, anyone can. I have read the public summary and Olivier's post, not the full article, which is behind a paywall.*
 
@@ -100,7 +100,7 @@ That is why I keep arguing for open source, all of it. [The value of constraints
 
 ## What I would ask the authors
 
-I would like to read the full article, and I suspect some of this is in it. Three questions I would ask:
+I would like to read the full article, and I suspect some of this is in it; [I just want to buy the article](i-just-want-to-buy-the-article.md) is about why I have not. Three questions I would ask:
 
 1. **Does the gap close faster if the agents keep a record?** A mandate, a memory and a graph of what they built, owned by the company.
 2. **Should the partner's code be open?** It is the cleanest answer to "who will fix it" if the partner fails.
@@ -137,7 +137,12 @@ Startups & strategyAgents & policy[This article as a graph →](graphs.md#who-wi
 - [A custom Firefox of my own: the full plan to build one with a governed agent hive, for the laptop and the iPad, and how Mozilla could sell me the part I do not want to do, which is keeping it working](a-custom-firefox-of-my-own.md) A full plan to build a custom Firefox for laptop and iPad with a governed agent hive, and why the part worth paying Mozilla for is keeping it working.
 - [The value of constraints: what client-side encryption and open source actually gave us, which is not what you would think](the-value-of-constraints.md) sgit's encryption and open source matter less as features than as constraints: they remove the temptations that lead to server code, lock-in and bad decisions.
 - [The fork next door: why open source protects founders, customers and investors from each other, why forks only take hold when someone stops executing, and why a maturing company should give its explorers a way out](the-fork-next-door.md) Founders, customers and investors are each protected from the others because anyone can fork; forks take hold only after a breakdown.
+- [I just want to buy the article: what happened when I tried to pay Harvard Business Review for one piece I wanted to answer, the arithmetic of a subscription, and ten things HBR could sell a reader like me, most of them already running on this newsroom](i-just-want-to-buy-the-article.md) I tried to pay HBR for one article and was offered a subscription. The arithmetic says 24p to 55p; and ten things HBR could sell a reader like me.
 - [The SaaS apocalypse will be decided by inertia, not by AI](saas-apocalypse-decided-by-inertia-not-by-ai.md) Incumbents and newcomers have the same AI; what separates them is how much past success each has to protect, so inertia decides which SaaS companies survive.
+
+### Continued by
+
+- [I just want to buy the article: what happened when I tried to pay Harvard Business Review for one piece I wanted to answer, the arithmetic of a subscription, and ten things HBR could sell a reader like me, most of them already running on this newsroom](i-just-want-to-buy-the-article.md) I tried to pay HBR for one article and was offered a subscription. The arithmetic says 24p to 55p; and ten things HBR could sell a reader like me.
 
 [All articles](index.md) · [All graphs](graphs.md)
 

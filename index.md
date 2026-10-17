@@ -4,18 +4,18 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.12.91 · 166 articles since 2026-08-17; the newest is 2026-10-17. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v0.12.92 · 167 articles since 2026-08-17; the newest is 2026-10-17. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## The lead
 
-- [Who will fix your mess? An answer to HBR's "deployment gap" from what this site has already published: explorers, villagers and town planners, a record of what the agents built, and open source so the answer never depends on one partner](articles/who-will-fix-your-mess.md), 2026-10-17, 11 min. HBR's deployment gap, answered from this site's articles: explorers, villagers and town planners, a record the agents keep, and open source.
+- [I just want to buy the article: what happened when I tried to pay Harvard Business Review for one piece I wanted to answer, the arithmetic of a subscription, and ten things HBR could sell a reader like me, most of them already running on this newsroom](articles/i-just-want-to-buy-the-article.md), 2026-10-17, 10 min. I tried to pay HBR for one article and was offered a subscription. The arithmetic says 24p to 55p; and ten things HBR could sell a reader like me.
 
 ## Highlights
 
+- [Who will fix your mess? An answer to HBR's "deployment gap" from what this site has already published: explorers, villagers and town planners, a record of what the agents built, and open source so the answer never depends on one partner](articles/who-will-fix-your-mess.md), 2026-10-17, 11 min.
 - [When is the vault actually used? In Mondweep Chakravorty's SGit × Ruflo run, the encrypted vault is written or read in three steps of twelve, on one machine, inside the adapter, and why that is the honest shape of a recovery copy](articles/when-is-the-vault-actually-used.md), 2026-10-17, 8 min.
 - [What if an agent loses its workspace? Mondweep Chakravorty's SGit × Ruflo proof of concept, step by step: memory saved encrypted, the project deleted, the memory back in a fresh process, and three safeguards that held](articles/what-if-an-agent-loses-its-workspace.md), 2026-10-17, 9 min.
 - [The policy guards the door; the command line uses the window: in the SGit × Ruflo run, the ABP is compiled into Ruflo's own rules and enforced on the adapter's tools, while Ruflo's command line reaches the same memory file without it, as the author's own README says](articles/the-policy-guards-the-door.md), 2026-10-17, 7 min.
-- [The fork next door: why open source protects founders, customers and investors from each other, why forks only take hold when someone stops executing, and why a maturing company should give its explorers a way out](articles/the-fork-next-door.md), 2026-10-16, 15 min.
 
 ## Who are you reading as?
 
@@ -46,11 +46,11 @@ For anyone who needs evidence they can open: encrypted vaults, keys, graphs and 
 - [sgit is a standard, not a server: everything in a vault is one hash away, any storage can serve it, and the server is the least interesting part](articles/sgit-is-a-standard.md), 2026-10-16, 8 min.
 - [One vault, ten agents, 35,000 objects: what sgit does when the repository is big and the clients are many, measured on the vault behind this newsroom](articles/one-vault-ten-agents.md), 2026-10-16, 7 min.
 
-### The future of news (29)
+### The future of news (30)
 For editors, journalists and publishers asking how news gets paid for when agents do the reading.
+- [I just want to buy the article: what happened when I tried to pay Harvard Business Review for one piece I wanted to answer, the arithmetic of a subscription, and ten things HBR could sell a reader like me, most of them already running on this newsroom](articles/i-just-want-to-buy-the-article.md), 2026-10-17, 10 min.
 - [Hacking Portugal, 2016: my BSidesLisbon keynote and the book that stopped at 95%, slide by slide, with what holds ten years later and what a new edition needs](articles/portugal-2016-hacking-portugal.md), 2026-10-16, 6 min.
 - [A web application security challenge to Portugal, 2010: my IBWAS keynote in Lisbon, slide by slide, with what came true, what I got wrong and what still stands](articles/portugal-2010-a-challenge.md), 2026-10-16, 5 min.
-- [Inside the Mesa Ranch desk: a page-by-page tour of an observation vault, from the cover to the knowledge graph you can play in time](articles/inside-the-mesa-ranch-desk.md), 2026-10-15, 10 min.
 
 ### Strategy & startups (30)
 For founders and investors: pricing, early access, Wardley maps and who pays for open source.
