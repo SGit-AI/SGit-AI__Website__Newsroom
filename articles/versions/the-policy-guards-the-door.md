@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-10-17 | minor | 1,766 | +264 / −93 words; 21 changed, 3 added, 3 removed paragraphs | this release | [what changed](the-policy-guards-the-door/v1.1.0.md) · [current](../the-policy-guards-the-door.md) |
+| **v1.1.0** | 2026-10-17 | minor | 1,766 | +264 / −93 words; 21 changed, 3 added, 3 removed paragraphs | [`04eef66c8`](https://github.com/SGit-AI/SGit-AI__Website/commit/04eef66c8bdfad32da425f58f08d87d470357b2c) | [what changed](the-policy-guards-the-door/v1.1.0.md) · [current](../the-policy-guards-the-door.md) |
 | **v1.0.0** | 2026-10-17 | published | 1,601 | first published | [`c3c97c54d`](https://github.com/SGit-AI/SGit-AI__Website/commit/c3c97c54d627e10929cc4fa7798c927f8c927371) |  |
 
 [← Back to the article](../the-policy-guards-the-door.md) · [All articles](../index.md)
