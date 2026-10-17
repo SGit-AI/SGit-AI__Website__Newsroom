@@ -60,12 +60,24 @@ def day_mid(s):
     return f"{d.day} {MONTHS[d.month - 1]} {d.year}"
 
 
+HEAD_MAX = 72
+
+
 def split_title(t):
-    """The headline before the colon, the dek after it; the lab's fmt.title and fmt.dek."""
-    if ": " in t:
-        a, b = t.split(": ", 1)
-        return a, b[0].upper() + b[1:]
-    return t, ""
+    """The headline before the colon, the dek after it; the lab's fmt.title and fmt.dek.
+
+    A headline is capped at HEAD_MAX characters, because a title whose colon comes late (or never) filled the
+    front page's lists with whole paragraphs: it ends at a question mark inside the limit if there is one,
+    otherwise at the last word that fits, with an ellipsis. The full title is still the article's own."""
+    a, b = (t.split(": ", 1) + [""])[:2] if ": " in t else (t, "")
+    if len(a) > HEAD_MAX:
+        q = a.find("? ")
+        if 0 < q < HEAD_MAX:
+            a, rest = a[:q + 1], a[q + 2:]
+            b = rest + (": " + b if b else "")
+        else:
+            a = a[:HEAD_MAX].rsplit(" ", 1)[0].rstrip(",;:") + "…"
+    return a, (b[0].upper() + b[1:]) if b else ""
 
 
 def mins(m):

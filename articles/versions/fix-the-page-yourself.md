@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-17 | published | 2,492 | first published | this release | [current](../fix-the-page-yourself.md) |
+| **v1.0.0** | 2026-10-17 | published | 2,492 | first published | [`037e8368e`](https://github.com/SGit-AI/SGit-AI__Website/commit/037e8368e111c6c9b2b55584a8c9ca16cea92ce8) | [current](../fix-the-page-yourself.md) |
 
 [← Back to the article](../fix-the-page-yourself.md) · [All articles](../index.md)
 
