@@ -55,6 +55,254 @@
   ],
   "articles": [
     {
+      "slug": "our-first-pr-in-ruflo",
+      "title": "Our first PR in Ruflo: an ABP-governed SGit page, merged into ruvnet/ruflo, and the four pieces that got it there",
+      "date": "2026-10-17",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/our-first-pr-in-ruflo.html",
+      "markdown": "https://newsroom.sgit.ai/articles/our-first-pr-in-ruflo.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/our-first-pr-in-ruflo.webp",
+      "teaser": "rUv merged Mondweep's pull request #4239: one docs page, the first commit on Ruflo's main branch to mention SGit or an ABP. The four pieces, shown.",
+      "topics": [
+        "agents-and-policy",
+        "vaults-and-method"
+      ],
+      "tags": [
+        "agents",
+        "ruflo",
+        "sgit",
+        "agent-behaviour-policy",
+        "open-source",
+        "pull-request",
+        "github",
+        "memory",
+        "milestone",
+        "article"
+      ],
+      "links_out": [
+        "agentics-ready-to-sell",
+        "what-if-an-agent-loses-its-workspace",
+        "when-is-the-vault-actually-used",
+        "the-policy-guards-the-door"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "mg-puzzle.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/mg-puzzle.webp",
+          "caption": "The pieces in order, London time: the talk and ruv.sgit.ai on 15 October; Mondweep's proof of concept on 16 October; pull request #4239 opened at 23:02 with three commits in the next hour; merged by rUv at 14:59 on 17 October as commit 332f22e; the page on Ruflo's main branch. Beside it, the video, our analysis, and the companion pull request on our side, still open.",
+          "kind": "timeline"
+        },
+        {
+          "file": "mg-repo.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/mg-repo.webp",
+          "caption": "mondweep/sgit-ruv-memory on GitHub: public, MIT licence, one contributor, five commits, the last of them 7607d72, \"Validate Ruflo CLI exact and keyword recovery; disclose semantic vector gap\". Folders for evidence, examples, scripts, the package, tests and the vendored Ruflo evaluator.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "mg-pr.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/mg-pr.webp",
+          "caption": "Pull request #4239 on ruvnet/ruflo, marked Merged: \"ruvnet merged 3 commits into ruvnet:main from mondweep:docs/sgit-memory-checkpoints\". Conversation 2, Commits 3, Checks 0, Files changed 1, +83. Mondweep's description gives the flow, the validation, the source at 7607d72, the executable example in SGit-AI/SGit-AI__Website__Ruv#1, and \"Documentation-only change in Ruflo\". On the right, ruvnet is listed as reviewer, with the review still pending.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "mg-files.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/mg-files.webp",
+          "caption": "Files changed: one new file, docs/integrations/sgit-memory-checkpoints.md, 83 lines added, none removed. It opens with \"External SGit memory checkpoints governed by an ABP\", \"This opt-in community example connects an Agent Behaviour Policy to a local memory adapter\", the chain in bold, and a reproduce section that checks out the code at commit 7607d72.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "mg-merged.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/mg-merged.webp",
+          "caption": "The end of the pull request's timeline: Mondweep's follow-up to @ruvnet, \"the missing ABP layer is now implemented and validated\", with the source at e86cefa and the SGit example; the third commit, 6b49d58; the title change; and \"ruvnet merged commit 332f22e into ruvnet:main\".",
+          "kind": "screenshot"
+        },
+        {
+          "file": "mg-live.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/mg-live.webp",
+          "caption": "The merged file on Ruflo's main branch, at ruflo / docs / integrations / sgit-memory-checkpoints.md: 83 lines, 7.5 KB, last commit 332f22e by mondweep. The rendered page, \"External SGit memory checkpoints governed by an ABP\", with links to the source and the SGit executable-example PR, and install steps that check out the code at an exact commit.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "mg-ours.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/mg-ours.webp",
+          "caption": "SGit-AI/SGit-AI__Website__Ruv pull request #1, \"Add local MCP example for policy-gated SQLite checkpoints and restore\", marked Open: mondweep wants to merge 3 commits into SGit-AI:dev from mondweep:feat/mcp-memory-checkpoints. 35 files, +3,081. Companion: ruvnet/ruflo#4239, shown as Merged. No reviews.",
+          "kind": "screenshot"
+        }
+      ],
+      "graph": {
+        "slug": "our-first-pr-in-ruflo",
+        "teaser": "rUv merged Mondweep's pull request #4239: one docs page, the first commit on Ruflo's main branch to mention SGit or an ABP. The four pieces, shown.",
+        "topics": [
+          "agents-and-policy",
+          "vaults-and-method"
+        ],
+        "core_idea": "A proof of concept, a one-file documentation pull request, a maintainer's merge and a pinned page on Ruflo's main branch: the first time SGit and the ABP appear in Ruflo's history, accepted quickly because the page is exact about what it does not claim; the companion example on our side is still open.",
+        "nodes": [
+          {
+            "id": "merged",
+            "label": "PR #4239 merged",
+            "kind": "artefact",
+            "summary": "17 October, 14:59, commit 332f22e."
+          },
+          {
+            "id": "first",
+            "label": "A first in Ruflo's history",
+            "kind": "claim",
+            "summary": "First of 9,625 commits to mention SGit or an ABP."
+          },
+          {
+            "id": "poc",
+            "label": "The proof of concept",
+            "kind": "artefact",
+            "summary": "mondweep/sgit-ruv-memory, MIT, 16 tests."
+          },
+          {
+            "id": "pr",
+            "label": "Three commits, one file",
+            "kind": "artefact",
+            "summary": "83 lines of documentation in one hour."
+          },
+          {
+            "id": "abp",
+            "label": "The ABP layer added",
+            "kind": "method",
+            "summary": "Compiled to Ruflo rules, enforce mode."
+          },
+          {
+            "id": "accepted",
+            "label": "Merged by the maintainer",
+            "kind": "claim",
+            "summary": "No formal approval, no checks."
+          },
+          {
+            "id": "live",
+            "label": "The page on main",
+            "kind": "artefact",
+            "summary": "docs/integrations, pinned to exact commits."
+          },
+          {
+            "id": "careful",
+            "label": "It states its own limits",
+            "kind": "claim",
+            "summary": "Proposed vocabulary, vendored evaluator, partial recall."
+          },
+          {
+            "id": "vocab",
+            "label": "Proposed memory vocabulary",
+            "kind": "concept",
+            "summary": "Three capabilities for the ABP."
+          },
+          {
+            "id": "ours",
+            "label": "Our PR is still open",
+            "kind": "question",
+            "summary": "SGit-AI__Website__Ruv #1, no reviews."
+          },
+          {
+            "id": "evidence",
+            "label": "Evidence first",
+            "kind": "concept",
+            "summary": "Pinned, tested, reproducible."
+          },
+          {
+            "id": "trail",
+            "label": "The SGit × Ruflo analysis",
+            "kind": "example",
+            "summary": "The run, the vault, the gap."
+          }
+        ],
+        "edges": [
+          {
+            "from": "poc",
+            "to": "pr",
+            "rel": "leads-to"
+          },
+          {
+            "from": "abp",
+            "to": "pr",
+            "rel": "extends"
+          },
+          {
+            "from": "pr",
+            "to": "accepted",
+            "rel": "leads-to"
+          },
+          {
+            "from": "accepted",
+            "to": "merged",
+            "rel": "leads-to"
+          },
+          {
+            "from": "merged",
+            "to": "live",
+            "rel": "leads-to"
+          },
+          {
+            "from": "merged",
+            "to": "first",
+            "rel": "example-of"
+          },
+          {
+            "from": "careful",
+            "to": "accepted",
+            "rel": "answers"
+          },
+          {
+            "from": "vocab",
+            "to": "careful",
+            "rel": "example-of"
+          },
+          {
+            "from": "live",
+            "to": "ours",
+            "rel": "leads-to"
+          },
+          {
+            "from": "live",
+            "to": "evidence",
+            "rel": "example-of"
+          },
+          {
+            "from": "trail",
+            "to": "poc",
+            "rel": "extends"
+          }
+        ],
+        "links": {
+          "articles": [
+            "what-if-an-agent-loses-its-workspace",
+            "when-is-the-vault-actually-used",
+            "the-policy-guards-the-door",
+            "agentics-ready-to-sell"
+          ],
+          "pages": [],
+          "sites": [
+            "https://github.com/ruvnet/ruflo/pull/4239",
+            "https://github.com/ruvnet/ruflo/blob/main/docs/integrations/sgit-memory-checkpoints.md",
+            "https://github.com/mondweep/sgit-ruv-memory",
+            "https://github.com/SGit-AI/SGit-AI__Website__Ruv/pull/1",
+            "https://youtu.be/rkh6BJiaIrQ",
+            "https://newsroom.sgit.ai/demos/videos/sgit-ruflo-poc/index.html"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "The page does not oversell.",
+            "why": "Why it was merged quickly."
+          },
+          {
+            "text": "Ruflo merged first. The next merge is ours to make, after a review.",
+            "why": "The open piece."
+          },
+          {
+            "text": "Now the method has a page inside the project it governs, written by someone outside our team, and accepted by the project's maintainer.",
+            "why": "Why it is a milestone."
+          }
+        ]
+      }
+    },
+    {
       "slug": "fix-the-page-yourself",
       "title": "Fix the page yourself: the bookmarklet trick from my security days, a page API every site should publish, and why the next user experience is the one the user customises, with six fixes running on this newsroom",
       "date": "2026-10-17",
@@ -834,6 +1082,7 @@
         "sgit-is-a-standard"
       ],
       "links_in": [
+        "our-first-pr-in-ruflo",
         "who-will-fix-your-mess",
         "what-if-an-agent-loses-its-workspace",
         "the-policy-guards-the-door"
@@ -1062,6 +1311,7 @@
         "the-policy-guards-the-door"
       ],
       "links_in": [
+        "our-first-pr-in-ruflo",
         "who-will-fix-your-mess",
         "when-is-the-vault-actually-used",
         "the-policy-guards-the-door"
@@ -1302,6 +1552,7 @@
         "a-policy-beside-the-prompt"
       ],
       "links_in": [
+        "our-first-pr-in-ruflo",
         "who-will-fix-your-mess",
         "when-is-the-vault-actually-used",
         "what-if-an-agent-loses-its-workspace"
@@ -5181,6 +5432,7 @@
       ],
       "links_out": [],
       "links_in": [
+        "our-first-pr-in-ruflo",
         "what-if-an-agent-loses-its-workspace",
         "portugal-2024-genai-in-portuguese",
         "a-custom-firefox-of-my-own"
