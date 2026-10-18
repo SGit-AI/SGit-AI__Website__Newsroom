@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-10-18 | minor | 3,049 | +0 / −3 words; 1 changed, 0 added, 0 removed paragraphs | this release | [what changed](attacks-rewritten-as-mandates/v1.1.0.md) · [current](../attacks-rewritten-as-mandates.md) |
+| **v1.1.0** | 2026-10-18 | minor | 3,049 | +0 / −3 words; 1 changed, 0 added, 0 removed paragraphs | [`de821285d`](https://github.com/SGit-AI/SGit-AI__Website/commit/de821285d78b0ed667dda217e6b56a89e9dd919f) | [what changed](attacks-rewritten-as-mandates/v1.1.0.md) · [current](../attacks-rewritten-as-mandates.md) |
 | **v1.0.0** | 2026-10-13 | published | 3,052 | first published | [`e7a80264c`](https://github.com/SGit-AI/SGit-AI__Website/commit/e7a80264c4bb3644cf6197b9b73a0171c4bbc195) |  |
 
 [← Back to the article](../attacks-rewritten-as-mandates.md) · [All articles](../index.md)

@@ -247,6 +247,7 @@ NORMALISE = [
     (re.compile(r'\u00b7 site v\d+\.\d+\.\d+ \u00b7'), '\u00b7 site \u00b7'),
     (re.compile(r'<span>newsroom\.sgit\.ai &middot; v\d+\.\d+\.\d+</span>'),
      '<span>newsroom.sgit.ai &middot; </span>'),
+    (re.compile(r'<section class="athreads areviews" id="reviews">[\s\S]*?</section>\n'), ''),  # stamped by reviews.py
 ]
 
 

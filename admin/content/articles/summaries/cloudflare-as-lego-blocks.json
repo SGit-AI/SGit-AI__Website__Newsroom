@@ -20,7 +20,7 @@
   "blocks": {
    "line": "Hosting, compute, storage, models, mail, identity",
    "para": "From Cloudflare's own pages on 18 October 2026: static assets free and unlimited; Workers at 100,000 requests a day; R2 with no egress fees and EU pinning; D1, KV and Durable Objects on SQLite; Workers AI with 10,000 free neurons a day; inbound email routing; Access free to 50 users; domains at registry cost.",
-   "hash": "01c3d35fe7a1"
+   "hash": "44ceb23529cc"
   },
   "models": {
    "line": "@cf/ models stay inside; others leave",
@@ -30,12 +30,12 @@
   "vault": {
    "line": "Read-only needs nothing; read-write needs 83 lines",
    "para": "The server only stores encrypted objects and checks a write key. sgit publish plus a static host gave an identical clone. For writes, one Worker, an R2 bucket and a Durable Object per vault, which runs requests one at a time so compare-and-swap is atomic. Tested in Cloudflare's runtime: pushes, merges, races and wrong keys behaved as sgit expects.",
-   "hash": "6e45ea5d0f7e"
+   "hash": "009f0405b0de"
   },
   "setup": {
    "line": "A button, a temporary account, or an agent",
    "para": "Cloudflare's API does not answer a browser's preflight, so setup cannot happen in a web page. That leaves a Deploy to Cloudflare button, a temporary account that lasts an hour and can be claimed, an agent with Cloudflare's MCP servers or command line, or doing it by hand. The first three suit a non-specialist.",
-   "hash": "956f1560975c"
+   "hash": "9ca3547c0e5c"
   },
   "packages": {
    "line": "Five packages, each with its behaviour policy",
@@ -44,8 +44,8 @@
   },
   "watch": {
    "line": "The CLI, billing and free limits are moving",
-   "para": "cf replaces Wrangler, which is kept for 18 months. AI Search starts billing on 1 November 2026. Data residency on the free plan is partial: R2 can be pinned to the EU, the full suite is Enterprise. The free limits are October's and will change.",
-   "hash": "7e6142e2e891"
+   "para": "cf replaces Wrangler, which is kept for 18 months after cf's beta ends. AI Search starts billing on 1 November 2026. Data residency on the free plan is partial: R2 can be pinned to the EU, the full suite is Enterprise. The free limits are October's and will change.",
+   "hash": "eca2f2e5ce92"
   },
   "limits": {
    "line": "A local prototype, not a real deployment",

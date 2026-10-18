@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-10-18 | minor | 2,834 | +0 / −6 words; 3 changed, 0 added, 0 removed paragraphs | this release | [what changed](allowed-is-not-right/v1.1.0.md) · [current](../allowed-is-not-right.md) |
+| **v1.1.0** | 2026-10-18 | minor | 2,834 | +0 / −6 words; 3 changed, 0 added, 0 removed paragraphs | [`de821285d`](https://github.com/SGit-AI/SGit-AI__Website/commit/de821285d78b0ed667dda217e6b56a89e9dd919f) | [what changed](allowed-is-not-right/v1.1.0.md) · [current](../allowed-is-not-right.md) |
 | **v1.0.0** | 2026-10-18 | published | 2,840 | first published | [`bb2978831`](https://github.com/SGit-AI/SGit-AI__Website/commit/bb29788318e51d3066956b4fa21ece3a565038a1) |  |
 
 [← Back to the article](../allowed-is-not-right.md) · [All articles](../index.md)

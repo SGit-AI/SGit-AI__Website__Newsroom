@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-10-18 | minor | 2,588 | +0 / −0 words; 1 changed, 0 added, 0 removed paragraphs | this release | [what changed](the-ai-conference-read-for-governance/v1.1.0.md) · [current](../the-ai-conference-read-for-governance.md) |
+| **v1.1.0** | 2026-10-18 | minor | 2,588 | +0 / −0 words; 1 changed, 0 added, 0 removed paragraphs | [`de821285d`](https://github.com/SGit-AI/SGit-AI__Website/commit/de821285d78b0ed667dda217e6b56a89e9dd919f) | [what changed](the-ai-conference-read-for-governance/v1.1.0.md) · [current](../the-ai-conference-read-for-governance.md) |
 | **v1.0.0** | 2026-10-17 | published | 2,588 | first published | [`fb83a977e`](https://github.com/SGit-AI/SGit-AI__Website/commit/fb83a977ec85802ad6d4bf2f08155a119b6e123e) |  |
 
 [← Back to the article](../the-ai-conference-read-for-governance.md) · [All articles](../index.md)

@@ -1,0 +1,62 @@
+{
+ "schema": "newsroom-review/v1",
+ "criteria": "v1",
+ "slug": "what-can-your-agent-reach",
+ "article_version": "v0.12.105",
+ "reviewer": "anthropic-fable",
+ "kind": "agent",
+ "model": "Claude Fable 5.1",
+ "run_by": "newsroom.writer, at the editor's request",
+ "at": "2026-10-18T11:30:00Z",
+ "verdict": "approve-with-changes",
+ "summary": "Every quote I checked is word for word on the page it is attributed to: abp.sgit.ai's control sentence, the three try-it phrases, the grant-gap wording, Atlassian's trust, privacy and connector pages, ROVO-837, Microsoft's SharePoint page, PromptArmor and Atlassian's governance post; the prices, the library and the version numbers match. Fix first the gap between the article's \"never in the request path\" and riskmandate.ai's own front page, which at the same version says \"Enforced in real time, with alerts by text and email\".",
+ "checks": {
+  "facts": {
+   "result": "issues",
+   "notes": "Checked on 18 October 2026: riskmandate.ai shows v1.38.8 and abp.sgit.ai v0.12.1; the abp sentence \"A control bounds a grant only if it is enforced by something the grant does not include\" and the four barrier kinds are verbatim; try-it has thirteen prompts across four steps, \"the list is longer than the tile that sold it\", \"The correction is almost always downward\" and \"the cheapest evidence there is, and the weakest\", about twenty minutes, nothing collected, and \"where two vendor pages disagree we publish the disagreement\"; grant-gap has \"never in the request path\" and \"No runtime decisions, no enforcement point, nothing in line that can slow an agent down or break it\"; pricing is £10, £50, £500, £1,500, with two half-hour sessions and a sign-off at the top level and a measured grant at the corrected level; the library lists the sixteen vaults the article names; Atlassian trust page (\"Rovo honors all existing permissions within each feature\"), privacy guidelines (sentence verbatim), connector guide (both sentences verbatim), governance page (all users may create agents by default, new agents open to everyone, admins can narrow to selected groups), Google Drive connector (link-only files findable when the link appears somewhere Rovo reads), ROVO-837 (\"this is intended behaviour\", agent accounts coming), PromptArmor (5 August 2026, sentence verbatim, hidden instruction in an uploaded document, attacker URL), Atlassian blog (14 August 2026, \"explicit, role-scoped access that can be audited and revoked independently\", marked coming soon), Microsoft (\"By default, SharePoint sets sharing settings to the most permissive option.\"); the Northstar twin page loads and allowed-is-not-right has thirteen requests, four designs and $458; our-first-pr-in-ruflo matches the Ruflo sentence. Not checked: \"every row marked as measured, documented or inferred\" (not found on the pricing or how-it-works pages), that customers asked Atlassian to change the agent-creation default, and the UK Corporate Governance Code sentence."
+  },
+  "voice": {
+   "result": "issues",
+   "notes": "A plain answer to a reader, in the first person, with the reader unnamed. Product names (Claude Code, Claude Desktop, ChatGPT) are the library's own names and I have not treated them as model names. One superlative self-claim noted below."
+  },
+  "claims": {
+   "result": "issues",
+   "notes": "Built, documented and proposed are marked (no Rovo vault; the injection report is a third party's; self-reports are weak). One missing caveat: the vendor's own front page contradicts the article's central claim about enforcement (f1)."
+  },
+  "conversions": {
+   "result": "pass",
+   "notes": "Prices in pounds as on the pricing page; the refund example ($200, $150, $120) is internally consistent; $458 and thirteen match allowed-is-not-right."
+  },
+  "health": {
+   "result": "pass",
+   "notes": "All riskmandate.ai, abp.sgit.ai, Atlassian, Microsoft and PromptArmor links load; both figures exist; graph quotes verbatim; no stale section summary."
+  },
+  "people": {
+   "result": "pass",
+   "notes": "The reader is not named; Mondweep Chakravorty is named for a public, merged pull request; no secret."
+  }
+ },
+ "findings": [
+  {
+   "id": "f1",
+   "criterion": "claims",
+   "severity": "medium",
+   "section": "realtime",
+   "quote": "RiskMandate is \"never in the request path\"",
+   "issue": "The article's answer to \"is it real time?\" is no, read-only, no enforcement, quoting the grant-gap and plug pages correctly. But riskmandate.ai's front page, at the same v1.38.8 the article cites, says \"Enforced in real time, with alerts by text and email\". A reader who opens the home page will find the opposite of what the article says, and the article does not mention it.",
+   "evidence": "https://riskmandate.ai/ (\"Enforced in real time, with alerts by text and email\") against https://riskmandate.ai/grant-gap.html and https://riskmandate.ai/plug.html (\"no runtime decisions and no enforcement point\"), all read 18 October 2026",
+   "suggestion": "Say in the article that the front page's \"Enforced in real time\" is the integrations with gateways and runtimes the realtime section describes, and have the site say the same; or add it to What this does not claim."
+  },
+  {
+   "id": "f2",
+   "criterion": "voice",
+   "severity": "low",
+   "section": "decisions",
+   "quote": "it is the fastest way I know to show someone",
+   "issue": "A superlative self-claim of the shape the wording check targets; bounded to \"I know\", but still a ranking the article cannot show.",
+   "evidence": "Criteria, Voice: superlative self-claims",
+   "suggestion": "\"it is a quick way to show someone\" or \"the quickest I have found\"."
+  }
+ ],
+ "article_hash": "eacf5c2a45e3"
+}

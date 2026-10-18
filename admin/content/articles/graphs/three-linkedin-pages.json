@@ -1,0 +1,39 @@
+{
+ "slug": "three-linkedin-pages",
+ "teaser": "Three companies, no LinkedIn pages: the decisions, every drafted field with its count, thirty first posts already written, and a new profile, in the open.",
+ "topics": ["startups-and-strategy"],
+ "core_idea": "Setting up LinkedIn pages for sgit.ai, the SGit Newsroom and RiskMandate is done in the open as part of the story: the addresses are free, the newsroom gets a company page because a showcase page cannot be an employer, every field is drafted against LinkedIn's limits, the first posts are articles already published, and the founder's profile ties the companies together.",
+ "nodes": [
+  {"id": "three", "label": "Three companies, no pages", "kind": "question", "summary": "sgit.ai, the SGit Newsroom, RiskMandate."},
+  {"id": "open", "label": "Done in the open", "kind": "claim", "summary": "The site documents the story."},
+  {"id": "free", "label": "The addresses are free", "kind": "example", "summary": "404 on 18 October."},
+  {"id": "company", "label": "A company page for the newsroom", "kind": "method", "summary": "A showcase page cannot be an employer."},
+  {"id": "entity", "label": "The Cyber Boardroom", "kind": "artefact", "summary": "The legal entity behind two of them."},
+  {"id": "sgit", "label": "sgit.ai page", "kind": "artefact", "summary": "Git for encrypted vaults."},
+  {"id": "newsroom", "label": "Newsroom page", "kind": "artefact", "summary": "Written in the open by an editor and agents."},
+  {"id": "rm", "label": "RiskMandate page", "kind": "artefact", "summary": "Agreed with the co-founder first."},
+  {"id": "posts", "label": "Thirty first posts", "kind": "method", "summary": "All already published."},
+  {"id": "profile", "label": "The profile and bio", "kind": "artefact", "summary": "Founder roles and the record."}
+ ],
+ "edges": [
+  {"from": "three", "to": "open", "rel": "leads-to"},
+  {"from": "free", "to": "three", "rel": "answers"},
+  {"from": "company", "to": "newsroom", "rel": "produces"},
+  {"from": "entity", "to": "sgit", "rel": "extends"},
+  {"from": "entity", "to": "rm", "rel": "extends"},
+  {"from": "sgit", "to": "posts", "rel": "produces"},
+  {"from": "newsroom", "to": "posts", "rel": "produces"},
+  {"from": "rm", "to": "posts", "rel": "produces"},
+  {"from": "profile", "to": "sgit", "rel": "depends-on"},
+  {"from": "profile", "to": "rm", "rel": "depends-on"}
+ ],
+ "links": {
+  "articles": ["what-can-your-agent-reach"],
+  "pages": ["about/index.html", "shipped/index.html"],
+  "sites": ["https://sgit.ai", "https://riskmandate.ai", "https://www.linkedin.com/help/linkedin/answer/a570165"]
+ },
+ "quotes": [
+  {"text": "The newsroom is now a business of its own, with its own model, so it gets a company page.", "why": "The page type."},
+  {"text": "Here it is before it is done.", "why": "Why in the open."}
+ ]
+}

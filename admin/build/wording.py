@@ -74,7 +74,7 @@ def main(argv):
         for line in diff.splitlines():
             if line.startswith('+++ '):
                 cur = line[6:]
-            elif line.startswith('+') and not line.startswith('+++') and not cur.endswith('README.md'):   # the README states the rule, with examples
+            elif line.startswith('+') and not line.startswith('+++') and not cur.endswith('README.md') and '/reviews/' not in cur:   # the README states the rule; review records are reviewers' own words
                 for _, why, ctx in hits(line[1:]):
                     print(f'WORDING {cur}: {why}: ...{ctx}...'); found += 1
         return 1 if found else 0

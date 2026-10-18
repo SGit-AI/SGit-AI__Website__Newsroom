@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.2.0** | 2026-10-18 | minor | 2,874 | +0 / −5 words; 1 changed, 0 added, 0 removed paragraphs | this release | [what changed](the-policy-draws-the-liability-line/v1.2.0.md) · [current](../the-policy-draws-the-liability-line.md) |
+| **v1.2.0** | 2026-10-18 | minor | 2,874 | +0 / −5 words; 1 changed, 0 added, 0 removed paragraphs | [`de821285d`](https://github.com/SGit-AI/SGit-AI__Website/commit/de821285d78b0ed667dda217e6b56a89e9dd919f) | [what changed](the-policy-draws-the-liability-line/v1.2.0.md) · [current](../the-policy-draws-the-liability-line.md) |
 | **v1.1.0** | 2026-10-13 | minor | 2,879 | +45 / −0 words; 0 changed, 1 added, 0 removed paragraphs | [`c5ffd852e`](https://github.com/SGit-AI/SGit-AI__Website/commit/c5ffd852ef02454da93747b2016b63ca4ec8aea3) | [what changed](the-policy-draws-the-liability-line/v1.1.0.md) |
 | **v1.0.0** | 2026-10-13 | published | 2,834 | first published | [`8ad465e4d`](https://github.com/SGit-AI/SGit-AI__Website/commit/8ad465e4dbafb569808dd5b44378354cb5aed9f1) |  |
 

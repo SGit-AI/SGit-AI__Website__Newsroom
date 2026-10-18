@@ -10,7 +10,7 @@
 
 # Cloudflare as Lego blocks: what a non-specialist can build on it in October 2026, and an sgit vault in 83 lines
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-18 · [article v1.0.0](versions/cloudflare-as-lego-blocks.md) · [newsroom v0.12.106](https://newsroom.sgit.ai/admin/versions.html) · cloudflareworkersr2durable-objectsworkers-aisgitvaultsminimal-codeself-hostingarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-18 · [article v1.1.0, 2 versions](versions/cloudflare-as-lego-blocks.md) · [newsroom v0.12.106](https://newsroom.sgit.ai/admin/versions.html) · cloudflareworkersr2durable-objectsworkers-aisgitvaultsminimal-codeself-hostingarticle
 
 ***Abstract:** I keep my domains at Cloudflare, and Cloudflare keeps shipping good things, but I do not want to learn Cloudflare. I want to use it, the way a non-specialist would, with an agent doing the one-time setup. So this maps its developer platform, as of 18 October 2026, as the smallest blocks a person could put together, each with what it is for and what is free: static hosting with unlimited free requests, Workers at 100,000 requests a day, R2 storage with no egress fees, D1, KV and Durable Objects, 71 models running on Cloudflare's own GPUs with 10,000 free neurons a day and a promise not to train on what you send, inbound email, Zero Trust access for up to 50 users, and domains at cost. Then it tests the question I most wanted answered: can an sgit vault live on Cloudflare? A read-only vault needs no code at all. `sgit publish` writes a folder any static host can serve, and the real sgit client cloned it back identically. A read-write vault needs one Worker of 83 lines, one R2 bucket and one Durable Object per vault, all on the free plan. We wrote it and ran it in Cloudflare's own local runtime with the real client: create, push, clone, a stale push that merged, two pushes at once where one was told "nothing was overwritten", a read-only clone that could not write, and no plaintext anywhere on the server. The catch for non-specialists is setup: Cloudflare's API cannot be called from a web page, so the one-time setup is a Deploy to Cloudflare button, a temporary account, or an agent with the command line. That is fine, because it happens once.*
 
@@ -56,7 +56,7 @@ All limits are from Cloudflare's own pages, read on 18 October 2026; most were u
 
 **Think, with models it hosts.**
 
-- **Workers AI.** 10,000 neurons a day free, then $0.011 per 1,000. Its catalogue lists 71 models, all marked Cloudflare-hosted, running "on GPUs on Cloudflare's network": Llama 4 Scout, gpt-oss-120b, Qwen 3, Kimi K2.6, Gemma 4, Mistral Small, DeepSeek, GLM, Whisper and image models among them.
+- **Workers AI.** 10,000 neurons a day free, then $0.011 per 1,000. Its catalogue lists 71 models, all marked Cloudflare-hosted, running, as the [Workers AI overview](https://developers.cloudflare.com/workers-ai/) puts it, on "GPUs on Cloudflare's network": Llama 4 Scout, gpt-oss-120b, Qwen 3, Kimi K2.6, Gemma 4, Mistral Small, DeepSeek, GLM, Whisper and image models among them.
 - **AI Gateway.** Caching, rate limits and logs in front of any model, free.
 - **Vectorize and AI Search.** Embeddings and search over your own documents; AI Search starts billing on 1 November 2026, after a free allowance.
 
@@ -70,7 +70,7 @@ All limits are from Cloudflare's own pages, read on 18 October 2026; most were u
 **Talk and guard.**
 
 - **Email Routing.** Inbound mail to your domains, free and unlimited; Email Workers process it in code.
-- **Email Sending.** In beta since April, on the paid plan: 3,000 emails a month, then $0.35 per 1,000.
+- **Email Sending.** In beta, on the paid plan: 3,000 emails a month, then $0.35 per 1,000.
 - **Access.** Zero Trust login in front of anything, free for up to 50 users.
 - **Turnstile and Tunnel.** Bot checks without puzzles, and a way to put a laptop's service on the web.
 
@@ -90,7 +90,7 @@ The question I most wanted answered was whether a vault could live on Cloudflare
 
 **Read-only: no code.** sgit already knows how to read a vault from any static file host. `sgit publish` writes a folder: a plaintext cover and a manifest, with the encrypted objects beside them at the paths the client asks for. We published a test vault, 39 files and 220 KB, served the folder from a plain file server, and cloned it with the read key and `--transport static`. The clone was identical. On Cloudflare that folder goes into Workers static assets or a public R2 bucket, and costs nothing at this size. There is nothing to write to, so nothing can be written.
 
-**Read-write: 83 lines.** The vault API sgit talks to has seven endpoints: info, read, list, batch, write, delete and destroy. We wrote them as one Worker. Reads go straight to R2. Every write for a vault goes through that vault's Durable Object, which Cloudflare runs one request at a time, so the compare-and-swap that stops two pushes overwriting each other is atomic. The first write to a vault binds its write key, by keeping a SHA-256 of it; later writes must match.
+**Read-write: 83 lines.** The vault API sgit talks to has seven endpoints: info, read, list, batch, write, delete and destroy, plus an auth check this Worker always answers. We wrote them as one Worker. Reads go straight to R2. Every write for a vault goes through that vault's Durable Object, which Cloudflare runs one request at a time, so the compare-and-swap that stops two pushes overwriting each other is atomic. The first write to a vault binds its write key, by keeping a SHA-256 of it; later writes must match.
 
 We ran it in Cloudflare's own runtime, workerd, locally through Miniflare 4, and pointed the real sgit client at it:
 
@@ -225,7 +225,7 @@ Here is the catch. We tested Cloudflare's API from a browser's point of view: it
 
 1. **A Deploy to Cloudflare button.** A link that clones a public repository into the user's own account, creates the R2 bucket, Durable Objects and other resources it declares, builds and deploys. For a vault host, that is one click and a sign-in. It works for Workers, not Pages.
 2. **A temporary account.** Since June, `wrangler deploy --temporary` deploys with no sign-up; it stays live for an hour, with a link to claim it as a real account. Good for trying something before committing to it.
-3. **An agent, once.** Claude Code, or any agent with a terminal, signs in with `wrangler login` and its OAuth flow, runs the commands, and hands back the URL. Cloudflare also runs an MCP server for its whole API, so an agent can do it without the command line. A new command-line tool, `cf`, entered open beta on 28 September and will replace Wrangler over the next 18 months; a skill written today should say which it uses.
+3. **An agent, once.** Claude Code, or any agent with a terminal, signs in with `wrangler login` and its OAuth flow, runs the commands, and hands back the URL. Cloudflare also runs an MCP server for its whole API, so an agent can do it without the command line. A new command-line tool, `cf`, entered open beta on 28 September and will replace Wrangler, which Cloudflare will keep maintaining for 18 months after the beta ends; a skill written today should say which it uses.
 4. **The dashboard's own assistant.** Agent Lee, in beta, can change settings such as DNS records with your approval, but cannot deploy applications.
 
 The pattern I want is the first and third together: a published repository per package, with a button for people and a skill for agents, so that "host my vault on my Cloudflare account" is one sentence to an agent, done once, with a scoped token that can be revoked.
@@ -246,7 +246,7 @@ Each one is a repository with a button, a skill and a page saying exactly what i
 
 ## What I would watch
 
-- **The command line is changing.** `cf` replaces Wrangler; Wrangler is maintained for 18 months.
+- **The command line is changing.** `cf` replaces Wrangler; Wrangler is maintained for 18 months after cf's beta ends.
 - **AI Search starts billing on 1 November 2026.** After 5 million ingestion tokens and 1,000 queries of each kind a month.
 - **Data residency is partial on the free plan.** R2 buckets can be pinned to the EU; the full Data Localization Suite is for Enterprise.
 - **"Free" moves.** The limits above are October's.
@@ -276,6 +276,7 @@ Vaults & method[This article as a graph →](graphs.md#cloudflare-as-lego-blocks
 
 ### Continued by
 
+- [Three companies, three LinkedIn pages: the brief, the drafts and the first posts, in the open](three-linkedin-pages.md) Three companies, no LinkedIn pages: the decisions, every drafted field with its count, thirty first posts already written, and a new profile, in the open.
 - [A minimal viable browser: why Firefox is the one that can build it, and what it would take](a-minimal-viable-browser.md) A small kernel and components loaded when needed: a browser for one app, one agent or a reader. Mozilla can build it, and should sell it as speed.
 
 [All articles](index.md) · [All graphs](graphs.md)

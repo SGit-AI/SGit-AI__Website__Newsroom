@@ -4,18 +4,18 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.12.106 · 182 articles since 2026-08-17; the newest is 2026-10-18. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v0.12.107 · 186 articles since 2026-08-17; the newest is 2026-10-18. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## The lead
 
-- [The editor's channel: what I read, sign off and want changed, sent to the newsroom's agent in a vault](articles/the-editors-channel.md), 2026-10-18, 9 min. A key makes a browser an editor's: reads, sign-offs and fixes go to a vault, a daily pass acts and replies, and five lanes set what any reader sends.
+- [Three companies, three LinkedIn pages: the brief, the drafts and the first posts, in the open](articles/three-linkedin-pages.md), 2026-10-18, 12 min. Three companies, no LinkedIn pages: the decisions, every drafted field with its count, thirty first posts already written, and a new profile, in the open.
 
 ## Highlights
 
-- [The code you do not ship: why the future of software is removing functionality, and who gets paid to keep it small](articles/the-code-you-do-not-ship.md), 2026-10-18, 12 min.
-- [Cloudflare as Lego blocks: what a non-specialist can build on it in October 2026, and an sgit vault in 83 lines](articles/cloudflare-as-lego-blocks.md), 2026-10-18, 9 min.
-- [A minimal viable browser: why Firefox is the one that can build it, and what it would take](articles/a-minimal-viable-browser.md), 2026-10-18, 12 min.
-- [What can your agent reach? RiskMandate and the Agent Behaviour Policy, explained for the person who has to decide](articles/what-can-your-agent-reach.md), 2026-10-18, 13 min.
+- [Search as navigation: walking the newsroom's graph with no model, and why a clean graph should beat vectors](articles/search-as-navigation.md), 2026-10-18, 7 min.
+- [Reviews on the record: other models, the editor and the desk check every article, and never the same text twice](articles/reviews-on-the-record.md), 2026-10-18, 9 min.
+- [On the record: signed opinions from experts, paid when readers value them, and a share for the people whose ideas an article uses](articles/on-the-record.md), 2026-10-18, 11 min.
+- [The editor's channel: what I read, sign off and want changed, sent to the newsroom's agent in a vault](articles/the-editors-channel.md), 2026-10-18, 9 min.
 
 ## Who are you reading as?
 
@@ -31,26 +31,26 @@ The reading meter charges a few pence a page from credit kept in your browser, b
 ### Agent security & policy (55)
 For security leads, risk owners and boards deciding what an agent may do and who carries the risk.
 - [The code you do not ship: why the future of software is removing functionality, and who gets paid to keep it small](articles/the-code-you-do-not-ship.md), 2026-10-18, 12 min.
-- [A minimal viable browser: why Firefox is the one that can build it, and what it would take](articles/a-minimal-viable-browser.md), 2026-10-18, 12 min.
+- [A minimal viable browser: why Firefox is the one that can build it, and what it would take](articles/a-minimal-viable-browser.md), 2026-10-18, 13 min.
 - [What can your agent reach? RiskMandate and the Agent Behaviour Policy, explained for the person who has to decide](articles/what-can-your-agent-reach.md), 2026-10-18, 13 min.
 
 ### Building with agents (30)
 For engineers and builders running agents day to day: tools, memory, email, desktops and review.
-- [Cloudflare as Lego blocks: what a non-specialist can build on it in October 2026, and an sgit vault in 83 lines](articles/cloudflare-as-lego-blocks.md), 2026-10-18, 9 min.
+- [Cloudflare as Lego blocks: what a non-specialist can build on it in October 2026, and an sgit vault in 83 lines](articles/cloudflare-as-lego-blocks.md), 2026-10-18, 10 min.
 - [Fix the page yourself: the bookmarklet trick from my security days, a page API every site should publish, and why the next user experience is the one the user customises, with six fixes running on this newsroom](articles/fix-the-page-yourself.md), 2026-10-17, 10 min.
 - [Your own newsroom: how a founder can tell their story by voice memo, with an agent that checks it and publishes it to GitHub Pages, and readers who pay a little if they find it useful](articles/your-own-newsroom.md), 2026-10-15, 12 min.
 
-### Vaults & provenance (35)
+### Vaults & provenance (37)
 For anyone who needs evidence they can open: encrypted vaults, keys, graphs and the publishing method.
+- [Search as navigation: walking the newsroom's graph with no model, and why a clean graph should beat vectors](articles/search-as-navigation.md), 2026-10-18, 7 min.
+- [On the record: signed opinions from experts, paid when readers value them, and a share for the people whose ideas an article uses](articles/on-the-record.md), 2026-10-18, 11 min.
 - [The editor's channel: what I read, sign off and want changed, sent to the newsroom's agent in a vault](articles/the-editors-channel.md), 2026-10-18, 9 min.
-- [Research, delivered as a vault: what companies that sell research could do with fractal graphs, behaviour policies for AI-enabled products, and evaluations run by a governed agent hive](articles/research-delivered-as-a-vault.md), 2026-10-16, 10 min.
-- [sgit is a standard, not a server: everything in a vault is one hash away, any storage can serve it, and the server is the least interesting part](articles/sgit-is-a-standard.md), 2026-10-16, 8 min.
 
-### The future of news (32)
+### The future of news (34)
 For editors, journalists and publishers asking how news gets paid for when agents do the reading.
+- [Three companies, three LinkedIn pages: the brief, the drafts and the first posts, in the open](articles/three-linkedin-pages.md), 2026-10-18, 12 min.
+- [Reviews on the record: other models, the editor and the desk check every article, and never the same text twice](articles/reviews-on-the-record.md), 2026-10-18, 9 min.
 - [Free models, your own key: what a reader can use from the browser in October 2026, and what they cannot](articles/free-models-your-own-key.md), 2026-10-18, 13 min.
-- [I just want to buy the article: what happened when I tried to pay Harvard Business Review for one piece I wanted to answer, the arithmetic of a subscription, and ten things HBR could sell a reader like me, most of them already running on this newsroom](articles/i-just-want-to-buy-the-article.md), 2026-10-17, 10 min.
-- [Hacking Portugal, 2016: my BSidesLisbon keynote and the book that stopped at 95%, slide by slide, with what holds ten years later and what a new edition needs](articles/portugal-2016-hacking-portugal.md), 2026-10-16, 6 min.
 
 ### Strategy & startups (30)
 For founders and investors: pricing, early access, Wardley maps and who pays for open source.

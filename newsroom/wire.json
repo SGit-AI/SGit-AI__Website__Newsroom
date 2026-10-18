@@ -73,6 +73,122 @@
   ],
   "articles": [
     {
+      "slug": "three-linkedin-pages",
+      "title": "Three companies, three LinkedIn pages: the brief, the drafts and the first posts, in the open",
+      "date": "2026-10-18",
+      "updated": "",
+      "author": "Dinis Cruz",
+      "url": "https://newsroom.sgit.ai/articles/three-linkedin-pages.html",
+      "markdown": "https://newsroom.sgit.ai/articles/three-linkedin-pages.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/three-linkedin-pages.webp",
+      "graph": "https://newsroom.sgit.ai/articles/graphs/three-linkedin-pages.json",
+      "teaser": "Three companies, no LinkedIn pages: the decisions, every drafted field with its count, thirty first posts already written, and a new profile, in the open.",
+      "summary": "I now have three active companies, sgit.ai, the SGit Newsroom and RiskMandate, and none of them has a LinkedIn page. So I asked this site's agent to gather what LinkedIn needs, what we already have, and to draft the pages, the first posts and a new profile and bio for me. I am publishing the result rather than keeping it private, because that is what this site is for: documenting the story of what is actually going on, including the parts that are usually done quietly. The newsroom is the story, and the people who subscribe to it are following exactly this. What follows is the decisions to make first, with what LinkedIn says about each (the newsroom gets a company page rather than a showcase page, because people need to be able to say they work there); the drafted fields for each page, with their character counts against LinkedIn's limits; ten first posts for each, every one an article or page already published; and my own headline, about and bios. The addresses for all three looked free on 18 October. The RiskMandate page will be agreed with my co-founder before it goes up.",
+      "topics": [
+        "startups-and-strategy"
+      ],
+      "tags": [
+        "linkedin",
+        "companies",
+        "sgit",
+        "riskmandate",
+        "newsroom",
+        "article"
+      ],
+      "placement": [],
+      "linkedin": null,
+      "notes": []
+    },
+    {
+      "slug": "search-as-navigation",
+      "title": "Search as navigation: walking the newsroom's graph with no model, and why a clean graph should beat vectors",
+      "date": "2026-10-18",
+      "updated": "",
+      "author": "Dinis Cruz",
+      "url": "https://newsroom.sgit.ai/articles/search-as-navigation.html",
+      "markdown": "https://newsroom.sgit.ai/articles/search-as-navigation.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/search-as-navigation.webp",
+      "graph": "https://newsroom.sgit.ai/articles/graphs/search-as-navigation.json",
+      "teaser": "Search as a walk through the newsroom's graph: chips, exact suggestions, five views and a pane that shows the working, with no model yet.",
+      "summary": "This site's search works, but it answers the way every search box does, with a list. We now have far more than text to search with: a graph of the argument for every article, a one-line summary for every section, figures with captions, trails, topics and reviews. So the next version of search should be navigation rather than question and answer. Type Portugal and see not just the articles about Portugal, but the graph around them: their ideas, their sections as one-liners, their images as a collage, the people and things they connect to, and on the side, what the word could mean and which combinations are worth following, each with an exact count. The reader builds the query by walking. All of it deterministic, in the browser, with code and graphs and no model, plus a pane that shows exactly what was fetched, how each result arrived and how long each step took. It also exposes the work: 663 tags on 182 articles, 396 of them used once, and 2,230 ideas in the graphs, of which only 47 appear in more than one article. That is the taxonomy debt, and paying it down is what makes deterministic search good. My hypothesis is that the better the taxonomy, the ontology and the graph, the less a model is needed, and that when one is added, it will do better on a clean graph than on a vector store. This is the brief for the agent that builds it, and the test of that hypothesis.",
+      "topics": [
+        "graphs-and-knowledge",
+        "site-and-engineering"
+      ],
+      "tags": [
+        "search",
+        "graphs",
+        "fractal-semantic-graphs",
+        "ontology",
+        "taxonomy",
+        "graph-rag",
+        "newsroom",
+        "brief",
+        "article"
+      ],
+      "placement": [],
+      "linkedin": null,
+      "notes": []
+    },
+    {
+      "slug": "reviews-on-the-record",
+      "title": "Reviews on the record: other models, the editor and the desk check every article, and never the same text twice",
+      "date": "2026-10-18",
+      "updated": "",
+      "author": "Dinis Cruz",
+      "url": "https://newsroom.sgit.ai/articles/reviews-on-the-record.html",
+      "markdown": "https://newsroom.sgit.ai/articles/reviews-on-the-record.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/reviews-on-the-record.webp",
+      "graph": "https://newsroom.sgit.ai/articles/graphs/reviews-on-the-record.json",
+      "teaser": "Published criteria, one record per article and text, five at a time, answered finding by finding: reviews by other models, the editor and the desk.",
+      "summary": "The publishing workflow here works, and I have come to like it as a way to answer people: an article is a reply I can point to. But the articles are written by one model, with a lot of context, and some things fall through, a figure that is a little off, a sentence I would never say. So this adds review, as a record. There are published criteria that any reviewer reads first, an agent from another vendor, an open-weight model, me, and later the journalists on the desk: are the facts right, is it my voice, are the claims and limits honest, are the conversions right, is the article still in good health, is anyone named who should not be. Each review is one file in the article's own folder, about one text of the article, written once and never edited, and the newsroom answers every finding: fixed in which version, declined and why, or open. The unit of work is the reviewer, the article and its text, so the same reviewer never reviews the same text twice; it takes the next five, newest first, from a status file that lists every article's current hash and the reviews it has, and it reads its own past reviews before it starts. Every article now has a Reviews section that shows who reviewed it, at which version, and what happened to what they found. My own reading, sign-offs and later notes use the same record, which keeps an article alive: I can go back and say I got it wrong, or that it came true. Signed readers who confirm or dispute an article are the next step, and an article of their own.",
+      "topics": [
+        "vaults-and-method",
+        "agents-and-policy"
+      ],
+      "tags": [
+        "newsroom",
+        "reviews",
+        "quality",
+        "agents",
+        "editor",
+        "article"
+      ],
+      "placement": [],
+      "linkedin": null,
+      "notes": []
+    },
+    {
+      "slug": "on-the-record",
+      "title": "On the record: signed opinions from experts, paid when readers value them, and a share for the people whose ideas an article uses",
+      "date": "2026-10-18",
+      "updated": "",
+      "author": "Dinis Cruz",
+      "url": "https://newsroom.sgit.ai/articles/on-the-record.html",
+      "markdown": "https://newsroom.sgit.ai/articles/on-the-record.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/on-the-record.webp",
+      "graph": "https://newsroom.sgit.ai/articles/graphs/on-the-record.json",
+      "teaser": "Experts go on the record with signed opinions, readers pay for the ones they value, and the people whose ideas an article uses get a share.",
+      "summary": "Reviews on the record gave this site's articles a second reader. The next step is to let the people who know a subject go on the record about an article: I support this, I do not, and here is why, or use something else instead. Not a comments section, which many news sites have closed, but a professional opinion, signed with the person's own key and kept with the article, which they can later withdraw. The value is in the disagreement: an expert should not agree with everything, and sometimes the challenge is as interesting as the article, because that is where the facts get tested. Identity comes in levels, from an anonymous tap to a key bound to a domain and backed by a track record, and the pieces exist: Bluesky's domain handles, Mastodon's links back, did:web, signed commits. So does the precedent for paying for opinions: open peer review publishes signed reviews, and Biology Open, which pays reviewers £220, cut its time to a first decision from 37.7 to 5.5 working days. I think readers who rate an opinion as insightful should be able to pay for it, and the expert should get a share; and when an article that earns money is built from other people's ideas, they should get a share of that too. The research on signed comments is more mixed than people assume: real names did not make comments better in the largest study, stable identities did. So the case for signing is accountability and payment, not civility. This maps what exists here, what is missing, and what to build.",
+      "topics": [
+        "vaults-and-method",
+        "startups-and-strategy"
+      ],
+      "tags": [
+        "newsroom",
+        "identity",
+        "public-keys",
+        "experts",
+        "payments",
+        "reviews",
+        "provenance",
+        "article"
+      ],
+      "placement": [],
+      "linkedin": null,
+      "notes": []
+    },
+    {
       "slug": "the-editors-channel",
       "title": "The editor's channel: what I read, sign off and want changed, sent to the newsroom's agent in a vault",
       "date": "2026-10-18",

@@ -1,0 +1,94 @@
+{
+ "slug": "search-as-navigation",
+ "what": "The sections of this article, each with a line and a paragraph, for showing what the reader has already read. Built by admin/build/summaries.py from admin/content/articles/summaries/.",
+ "sections": [
+  {
+   "id": "top",
+   "label": "The opening",
+   "words": 255,
+   "line": "Search becomes a walk through the graph",
+   "para": "Search today returns a list, but the site has graphs, section one-liners, figures and trails. The next search is navigation: chips, exact suggestions, five views and a pane that shows the working, all deterministic in the browser with no model. The taxonomy debt is the work; the hypothesis is that a clean graph beats vectors.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "in-short",
+   "label": "In short",
+   "words": 140,
+   "line": "Chips, suggestions, five views, a pane, no model",
+   "para": "Search should be a walk, using the graphs, section summaries, figures, trails and reviews. Suggestions show exact counts; one result has five views; a pane shows fetches, reasons and timings. No model yet. It exposes taxonomy debt, 396 of 663 tags used once and 47 of 2,230 ideas shared, and tests graphs against vectors.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "today",
+   "label": "What search is today",
+   "words": 164,
+   "line": "Today's search ranks a list in the browser",
+   "para": "Since 13 October the build writes two files and the browser ranks them with BM25, sending nothing anywhere and finding corrected sentences. But it returns a list, ignoring 2,289 graph nodes and 2,326 edges, 1,995 section summaries, 657 figures, trails and reviews.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "navigation",
+   "label": "Search as navigation",
+   "words": 239,
+   "line": "Type a word, walk into the graph around it",
+   "para": "Typing Portugal should show the articles, their shared ideas, entities, stories and links, their sections as one-liners and their figures as a collage. The side suggests what the word could mean, what is near, and combinations with exact counts, so the query grows by navigating. Feedback on misses goes down the lane.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "deterministic",
+   "label": "Deterministic first",
+   "words": 146,
+   "line": "Code and graphs only; databases in the browser",
+   "para": "No model in the first version: words resolve through curated names and aliases, combinations come from counted co-occurrence, the graph view is the real graph, and counts are exact. The site already runs SQLite and SPARQL in the browser; one graph of the newsroom can be loaded the same way and queried directly.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "pane",
+   "label": "The pane that shows the working",
+   "words": 123,
+   "line": "A pane showing fetches, reasons and timings",
+   "para": "For debugging and power users: every file fetched with size and time, how each word resolved, each walk step, why each result is there and its score, the query as editable SQL and SPARQL, and the time per stage. A search that shows its working can be trusted and improved.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "debt",
+   "label": "The taxonomy debt",
+   "words": 150,
+   "line": "Duplicate tags and island graphs are the work",
+   "para": "663 distinct tags on 182 articles, 396 used once, with near-duplicates like browser and browsers; 2,230 idea labels with only 47 shared between articles, so each graph is an island. The fix is work, not a model: merge tags, write aliases and entities, cluster ideas, with a report each release.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "vectors",
+   "label": "Why a clean graph should beat vectors",
+   "words": 170,
+   "line": "A clean graph should need less model",
+   "para": "Vector retrieval works but is opaque and loses the argument's structure. The hypothesis: better taxonomy and graphs need less model, and a model given the subgraph a walk selected will do better than one given nearest chunks. Golden queries measure recall each release, and later a vector index gets the same queries.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "brief",
+   "label": "What the brief asks for",
+   "words": 113,
+   "line": "Five parts, then the model and the comparison",
+   "para": "The brief, a note for the building agent, asks for a release-built graph with an ontology as JSON, tables and triples plus a taxonomy report; a chip query bar with exact suggestions; five views; the pane; and feedback with golden queries. The model, the vector comparison and infographics come later.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "limits",
+   "label": "What this does not claim",
+   "words": 100,
+   "line": "A brief; the vector hypothesis is untested",
+   "para": "Explore is not built; today's search is. The vector comparison is set up, not run. Deterministic results can still be wrong, which is why the pane exists. Counts are from 18 October 2026, and curating names never ends.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "sources",
+   "label": "Where this comes from",
+   "words": 86,
+   "line": "A voice memo and this site's own files",
+   "para": "From a voice memo on 18 October 2026, with counts made that day from search/docs.json, the article graphs and summaries, ids.json and trails.json. The brief is in admin/notes; today's search and the browser databases are linked, with related articles on reviews and the editor's channel.",
+   "by": "newsroom.writer"
+  }
+ ]
+}

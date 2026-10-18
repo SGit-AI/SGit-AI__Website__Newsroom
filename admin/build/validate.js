@@ -392,6 +392,7 @@ try {
       [/<span class="llmschip-m">[^<]*<\/span>/, '<span class="llmschip-m"></span>'],
       [/\u00b7 site v\d+\.\d+\.\d+ \u00b7/, '\u00b7 site \u00b7'],
       [/<span>newsroom\.sgit\.ai &middot; v\d+\.\d+\.\d+<\/span>/, '<span>newsroom.sgit.ai &middot; </span>'],
+      [/<section class="athreads areviews" id="reviews">[\s\S]*?<\/section>\n/, ''],  // stamped by reviews.py
     ];
     let edited = 0;
     for (const [rel, entry] of Object.entries(record.files)) {

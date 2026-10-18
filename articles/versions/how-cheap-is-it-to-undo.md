@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.2.0** | 2026-10-18 | minor | 2,152 | +0 / −5 words; 2 changed, 0 added, 0 removed paragraphs | this release | [what changed](how-cheap-is-it-to-undo/v1.2.0.md) · [current](../how-cheap-is-it-to-undo.md) |
+| **v1.2.0** | 2026-10-18 | minor | 2,152 | +0 / −5 words; 2 changed, 0 added, 0 removed paragraphs | [`de821285d`](https://github.com/SGit-AI/SGit-AI__Website/commit/de821285d78b0ed667dda217e6b56a89e9dd919f) | [what changed](how-cheap-is-it-to-undo/v1.2.0.md) · [current](../how-cheap-is-it-to-undo.md) |
 | **v1.1.0** | 2026-10-13 | minor | 2,157 | +6 / −0 words; 1 changed, 0 added, 0 removed paragraphs | [`c5ffd852e`](https://github.com/SGit-AI/SGit-AI__Website/commit/c5ffd852ef02454da93747b2016b63ca4ec8aea3) | [what changed](how-cheap-is-it-to-undo/v1.1.0.md) |
 | **v1.0.0** | 2026-10-13 | published | 2,157 | first published | [`891f36bfd`](https://github.com/SGit-AI/SGit-AI__Website/commit/891f36bfd3adb52697c96afb878e888cf6392100) |  |
 

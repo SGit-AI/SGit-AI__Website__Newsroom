@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-10-18 | minor | 1,708 | +0 / −1 words; 1 changed, 0 added, 0 removed paragraphs | this release | [what changed](explorer-coding/v1.1.0.md) · [current](../explorer-coding.md) |
+| **v1.1.0** | 2026-10-18 | minor | 1,708 | +0 / −1 words; 1 changed, 0 added, 0 removed paragraphs | [`de821285d`](https://github.com/SGit-AI/SGit-AI__Website/commit/de821285d78b0ed667dda217e6b56a89e9dd919f) | [what changed](explorer-coding/v1.1.0.md) · [current](../explorer-coding.md) |
 | **v1.0.0** | 2026-10-16 | published | 1,709 | first published | [`25f7ed3c9`](https://github.com/SGit-AI/SGit-AI__Website/commit/25f7ed3c90e43eb20fed9ceebddab0647c8f0ba9) |  |
 
 [← Back to the article](../explorer-coding.md) · [All articles](../index.md)

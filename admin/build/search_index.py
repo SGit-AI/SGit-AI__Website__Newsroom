@@ -29,7 +29,7 @@ from page import newsroom_page, write, HOST  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[2]
 SKIP_PREFIX = ("search/", "og/", "assets/", "404")
-SKIP_CLASSES = {"crumb", "lkit", "athreads", "agent", "small dim", "subteaser", "meter-card", "sgm", "note-archive", "archive-note"}
+SKIP_CLASSES = {"crumb", "lkit", "athreads", "athreads areviews", "agent", "small dim", "subteaser", "meter-card", "sgm", "note-archive", "archive-note"}
 BLOCK = {"p", "li", "blockquote", "figcaption", "dd", "dt", "td", "th", "pre"}
 MAX_WORDS = 160
 
