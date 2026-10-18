@@ -117,6 +117,8 @@ Agents & policySite & engineering[This article as a graph →](graphs.md#the-man
 
 ### Continued by
 
+- [Generation Z Developers, again: the 2018 book that said act like you are part of the company, what it got right, and a second edition for the people I want to help](generation-z-developers-again.md) My 2018 book for young developers, 60% done, much of it outlines since written here as articles, and a plan for a second edition.
+- [Act as the job you want: if you are looking for a job, you have time, so do the work in public, make it linkable, and let the people who want to help you help you](act-as-the-job-you-want.md) If you are looking for a job you have time: act as the person in the job you want, in public, and give the people who want to help you a link.
 - [Hired for the workflow: why October 2026 is the moment to get into agentic work, why you are more technical than you think, and how the edge starts with the application](hired-for-the-workflow.md) October 2026 is the moment to get into agentic work: companies need AI operators, not model builders, and the edge starts with the application.
 - [A directory of people and their keys: pki.sgit.ai for the people I work with, verified by me first, then by each other, and a link that only counts when it goes both ways](a-directory-of-people-and-keys.md) pki.sgit.ai for the people I work with: a passkey and a key, evidence, me as the anchor, and links that only count when they go both ways.
 

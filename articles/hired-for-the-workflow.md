@@ -106,6 +106,11 @@ Agents & policyStartups & strategy[This article as a graph →](graphs.md#hired-
 - [The man behind the curtain: the emails from my agents are from me, there is an article behind each one, and every line has to buy the next](the-man-behind-the-curtain.md) Emails from my agents are from me: the Wizard of Oz in reverse, an article behind every answer, and an email where every line buys the next.
 - [Your own newsroom: how a founder can tell their story by voice memo, with an agent that checks it and publishes it to GitHub Pages, and readers who pay a little if they find it useful](your-own-newsroom.md) The recipe for a founder's own site: voice memos, an agent wired to GitHub that checks and publishes, GitHub Pages, and readers who pay a little.
 
+### Continued by
+
+- [Generation Z Developers, again: the 2018 book that said act like you are part of the company, what it got right, and a second edition for the people I want to help](generation-z-developers-again.md) My 2018 book for young developers, 60% done, much of it outlines since written here as articles, and a plan for a second edition.
+- [Act as the job you want: if you are looking for a job, you have time, so do the work in public, make it linkable, and let the people who want to help you help you](act-as-the-job-you-want.md) If you are looking for a job you have time: act as the person in the job you want, in public, and give the people who want to help you a link.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 196 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=196)

@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-18 | published | 2,158 | first published | this release | [current](../a-directory-of-people-and-keys.md) |
+| **v1.0.0** | 2026-10-18 | published | 2,158 | first published | [`928a4383e`](https://github.com/SGit-AI/SGit-AI__Website/commit/928a4383ead25175806fdb254f5980b980c69aa6) | [current](../a-directory-of-people-and-keys.md) |
 
 [← Back to the article](../a-directory-of-people-and-keys.md) · [All articles](../index.md)
 

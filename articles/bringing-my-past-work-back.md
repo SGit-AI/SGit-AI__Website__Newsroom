@@ -117,6 +117,7 @@ Agents & policySite & engineering[This article as a graph →](graphs.md#bringin
 
 ### Continued by
 
+- [Generation Z Developers, again: the 2018 book that said act like you are part of the company, what it got right, and a second edition for the people I want to help](generation-z-developers-again.md) My 2018 book for young developers, 60% done, much of it outlines since written here as articles, and a plan for a second edition.
 - [The Librarian's daily brief: everything that happened in my universe yesterday, the threads I left, and where my leverage is today](the-librarians-daily-brief.md) A daily brief from the Librarian: yesterday across every repository, the agents' debrief, threads to pick up, and where my leverage is today.
 
 [All articles](index.md) · [All graphs](graphs.md)

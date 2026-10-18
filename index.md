@@ -4,18 +4,18 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.12.114 · 196 articles since 2026-08-17; the newest is 2026-10-18. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v0.12.115 · 198 articles since 2026-08-17; the newest is 2026-10-18. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## The lead
 
-- [Hired for the workflow: why October 2026 is the moment to get into agentic work, why you are more technical than you think, and how the edge starts with the application](articles/hired-for-the-workflow.md), 2026-10-18, 8 min. October 2026 is the moment to get into agentic work: companies need AI operators, not model builders, and the edge starts with the application.
+- [Generation Z Developers, again: the 2018 book that said act like you are part of the company, what it got right, and a second edition for the people I want to help](articles/generation-z-developers-again.md), 2026-10-18, 6 min. My 2018 book for young developers, 60% done, much of it outlines since written here as articles, and a plan for a second edition.
 
 ## Highlights
 
+- [Act as the job you want: if you are looking for a job, you have time, so do the work in public, make it linkable, and let the people who want to help you help you](articles/act-as-the-job-you-want.md), 2026-10-18, 6 min.
+- [Hired for the workflow: why October 2026 is the moment to get into agentic work, why you are more technical than you think, and how the edge starts with the application](articles/hired-for-the-workflow.md), 2026-10-18, 8 min.
 - [A directory of people and their keys: pki.sgit.ai for the people I work with, verified by me first, then by each other, and a link that only counts when it goes both ways](articles/a-directory-of-people-and-keys.md), 2026-10-18, 8 min.
 - [The man behind the curtain: the emails from my agents are from me, there is an article behind each one, and every line has to buy the next](articles/the-man-behind-the-curtain.md), 2026-10-18, 9 min.
-- [The Librarian's daily brief: everything that happened in my universe yesterday, the threads I left, and where my leverage is today](articles/the-librarians-daily-brief.md), 2026-10-18, 7 min.
-- [Ephemeral town planner services: a better name than serverless, now that serverless includes things that bill you by the hour](articles/ephemeral-town-planner-services.md), 2026-10-18, 9 min.
 
 ## Who are you reading as?
 
@@ -40,11 +40,11 @@ For engineers and builders running agents day to day: tools, memory, email, desk
 - [The Librarian's daily brief: everything that happened in my universe yesterday, the threads I left, and where my leverage is today](articles/the-librarians-daily-brief.md), 2026-10-18, 7 min.
 - [Ephemeral town planner services: a better name than serverless, now that serverless includes things that bill you by the hour](articles/ephemeral-town-planner-services.md), 2026-10-18, 9 min.
 
-### Vaults & provenance (38)
+### Vaults & provenance (40)
 For anyone who needs evidence they can open: encrypted vaults, keys, graphs and the publishing method.
+- [Generation Z Developers, again: the 2018 book that said act like you are part of the company, what it got right, and a second edition for the people I want to help](articles/generation-z-developers-again.md), 2026-10-18, 6 min.
+- [Act as the job you want: if you are looking for a job, you have time, so do the work in public, make it linkable, and let the people who want to help you help you](articles/act-as-the-job-you-want.md), 2026-10-18, 6 min.
 - [A directory of people and their keys: pki.sgit.ai for the people I work with, verified by me first, then by each other, and a link that only counts when it goes both ways](articles/a-directory-of-people-and-keys.md), 2026-10-18, 8 min.
-- [Search as navigation: walking the newsroom's graph with no model, and why a clean graph should beat vectors](articles/search-as-navigation.md), 2026-10-18, 7 min.
-- [On the record: signed opinions from experts, paid when readers value them, and a share for the people whose ideas an article uses](articles/on-the-record.md), 2026-10-18, 11 min.
 
 ### The future of news (38)
 For editors, journalists and publishers asking how news gets paid for when agents do the reading.

@@ -104,6 +104,7 @@ Graphs & knowledgeSite & engineering[This article as a graph →](graphs.md#sear
 
 ### Continued by
 
+- [Generation Z Developers, again: the 2018 book that said act like you are part of the company, what it got right, and a second edition for the people I want to help](generation-z-developers-again.md) My 2018 book for young developers, 60% done, much of it outlines since written here as articles, and a plan for a second edition.
 - [The briefs so far: sixty-five things this newsroom has asked of itself, what is built, and where each next session starts](the-briefs-so-far.md) Sixty-five briefs this newsroom has asked of itself, audited from the code: 11 built, 21 partly, 32 not, each open one with a session brief.
 - [A section for publishers: where to send someone new to this newsroom, and a site that keeps itself current](a-section-for-publishers.md) Where to send a publisher new to the newsroom: a section placed by rule, with features as they ship, that keeps itself current as the site changes.
 
