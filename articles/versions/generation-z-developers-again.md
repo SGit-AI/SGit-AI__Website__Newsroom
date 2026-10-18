@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.1** | 2026-10-18 | patch | 2,424 | front matter only (the text is unchanged) | this release | [what changed](generation-z-developers-again/v1.1.1.md) · [current](../generation-z-developers-again.md) |
+| **v1.1.1** | 2026-10-18 | patch | 2,424 | front matter only (the text is unchanged) | [`7b0b11b76`](https://github.com/SGit-AI/SGit-AI__Website/commit/7b0b11b763d4520cb5b1e3a257a87d466f0cb17b) | [what changed](generation-z-developers-again/v1.1.1.md) · [current](../generation-z-developers-again.md) |
 | **v1.1.0** | 2026-10-18 | minor | 2,424 | +1,101 / −302 words; 3 changed, 27 added, 9 removed paragraphs | [`45f30a517`](https://github.com/SGit-AI/SGit-AI__Website/commit/45f30a5175db1ced76361dcde5e6a2a415b95cc5) | [what changed](generation-z-developers-again/v1.1.0.md) |
 | **v1.0.0** | 2026-10-18 | published | 1,625 | first published | [`392d2665b`](https://github.com/SGit-AI/SGit-AI__Website/commit/392d2665bf44f2ab0044480593f79b46b64424fd) |  |
 

@@ -4,7 +4,7 @@
 
 ## The ask
 
-The most productive environment Dinis can have to review and finish the second edition of *Generation Z Developers*, consolidating the best of what the project's repositories have built. Address: gen-z-developers.sgit.ai (to confirm), matching the printed cover's *Gen Z Developers*.
+The most productive environment Dinis can have to review and finish the second edition of *Generation Z Developers*, consolidating the best of what the project's repositories have built. Address: gen-z-developers.sgit.ai (to confirm), matching the printed cover's *Gen Z Developers*. Repository: `SGit-AI/SGit-AI__Website__Gen-Z-Developers`, following the pattern of `SGit-AI__Website__PKI`, `SGit-AI__Website__Graphs` and `SGit-AI__Website__Newsroom__API` (recommended to Dinis on 18 October; he creates it).
 
 ## The rule
 
@@ -33,7 +33,8 @@ Read graphs.sgit.ai before building anything: its shelf with versions, the seven
 6. **Roles**: editor, copywriter, publisher at least; each reads, gives feedback, challenges, and writes interview scripts for Dinis; sign-off per part.
 7. **Research tasks**: market research, validation, evidence and maps per section, later per paragraph.
 8. **Personal editions and the meter** (from *a book for one reader*): an agent assembles an edition for one reader from the graph and a private brief; delivered as a PDF or in the browser, not published; metered from five pounds of credit, more read, more paid; kept locally, with the reader's vault as an option.
-9. **The last part of the book**: how all of this was built.
+9. **Quality**: every paragraph, group of paragraphs and chapter carries its evidence, facts, hypotheses and purpose in the graph; a repetition check across the graph; synthetic readers of several types; every finding answered, with declined as a valid answer; a measured ratio of memo and review words to book words (see *short, punchy, and co-written with Claude*).
+10. **The last part of the book**: how all of this was built.
 
 ## Privacy, for personal editions
 
@@ -42,6 +43,5 @@ The brief for a personal edition may come from the private CRM of the correspond
 ## Questions for Dinis
 
 - The address: gen-z-developers.sgit.ai?
-- Which account and repository name?
 - The first reader for a personal edition, and in which language?
 - The price shape: five pounds of credit, then what per chapter?

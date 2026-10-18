@@ -1,0 +1,131 @@
+{
+  "slug": "short-punchy-and-co-written",
+  "teaser": "The second edition of Generation Z Developers must be short and punchy, co-written with Claude and credited, and show with evidence it is not AI slop.",
+  "topics": [
+    "vaults-and-method",
+    "graphs-and-knowledge"
+  ],
+  "core_idea": "The book is for anyone getting into AI, so it includes practical chapters like setting up the agentic email workflow; it keeps the first edition's short, punchy style; it credits Claude as co-writer and shows the ratio of memo to word; it meets the slop suspicion with evidence; every paragraph carries its evidence, facts, hypotheses and purpose in a graph that also catches repetition; synthetic readers test it; and not every finding is fixed.",
+  "nodes": [
+    {
+      "id": "who",
+      "label": "A book for anyone getting into AI",
+      "kind": "claim",
+      "summary": "Including the workflow behind the emails."
+    },
+    {
+      "id": "punchy",
+      "label": "Short and punchy",
+      "kind": "claim",
+      "summary": "What first-edition readers liked."
+    },
+    {
+      "id": "cowritten",
+      "label": "Co-written with Claude",
+      "kind": "method",
+      "summary": "Credited, with the ratio shown."
+    },
+    {
+      "id": "ratio",
+      "label": "The ratio of memo to word",
+      "kind": "example",
+      "summary": "65,000 words in, 96,000 out on this site."
+    },
+    {
+      "id": "slop",
+      "label": "Meet the suspicion head on",
+      "kind": "method",
+      "summary": "Evidence, not reassurance."
+    },
+    {
+      "id": "para",
+      "label": "Every paragraph knows what it is",
+      "kind": "concept",
+      "summary": "Evidence, facts, hypotheses, purpose."
+    },
+    {
+      "id": "repeat",
+      "label": "Repetition, caught by the graph",
+      "kind": "method",
+      "summary": "Refactor until sign-off."
+    },
+    {
+      "id": "readers",
+      "label": "Synthetic readers",
+      "kind": "method",
+      "summary": "What they understood and missed."
+    },
+    {
+      "id": "decline",
+      "label": "Not every issue needs fixing",
+      "kind": "claim",
+      "summary": "We are not doing that."
+    }
+  ],
+  "edges": [
+    {
+      "from": "who",
+      "to": "punchy",
+      "rel": "depends-on"
+    },
+    {
+      "from": "cowritten",
+      "to": "ratio",
+      "rel": "produces"
+    },
+    {
+      "from": "ratio",
+      "to": "slop",
+      "rel": "answers"
+    },
+    {
+      "from": "para",
+      "to": "repeat",
+      "rel": "produces"
+    },
+    {
+      "from": "repeat",
+      "to": "punchy",
+      "rel": "depends-on"
+    },
+    {
+      "from": "readers",
+      "to": "decline",
+      "rel": "leads-to"
+    },
+    {
+      "from": "decline",
+      "to": "punchy",
+      "rel": "extends"
+    }
+  ],
+  "links": {
+    "articles": [
+      "the-man-behind-the-curtain",
+      "a-website-to-finish-the-book",
+      "generation-z-developers-again"
+    ],
+    "pages": [
+      "admin/notes/2026-10-18__a-website-to-finish-the-book.md"
+    ],
+    "sites": []
+  },
+  "quotes": [
+    {
+      "text": "almost every line, every paragraph made you think.",
+      "why": "What readers liked about the first edition."
+    },
+    {
+      "text": "Sometimes the right answer to an issue is: we are not doing that.",
+      "why": "On feedback."
+    }
+  ],
+  "figures": [
+    {
+      "file": "sp-paragraph.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/sp-paragraph.webp",
+      "caption": "Every paragraph knows what it is. One paragraph of the book as a node in its graph, carrying its purpose, the evidence behind it, the facts it states and the hypotheses it proposes, linked to the chapter above it and to the paragraphs that say something close, which is how repetition shows up. Around it, the loop: voice memos in, the draft, the editor's review, synthetic readers' reactions, a decision on each finding (fix, or not doing it), and sign-off.",
+      "kind": "concept"
+    }
+  ]
+}

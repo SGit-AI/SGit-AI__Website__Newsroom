@@ -105,6 +105,7 @@ Vaults & methodGraphs & knowledge[This article as a graph →](graphs.md#a-websi
 
 ### Continued by
 
+- [Short, punchy, and co-written with Claude: what the second edition of Generation Z Developers has to be, and how we show it is not AI slop](short-punchy-and-co-written.md) The second edition of Generation Z Developers must be short and punchy, co-written with Claude and credited, and show with evidence it is not AI slop.
 - [A book for one reader: a personalised edition of Generation Z Developers, assembled by an agent for one person, and paid for as it is read](a-book-for-one-reader.md) A personalised edition of Generation Z Developers, assembled by an agent for one person from a private brief, and paid for as it is read.
 
 [All articles](index.md) · [All graphs](graphs.md)
