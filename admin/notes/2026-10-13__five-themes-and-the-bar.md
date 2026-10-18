@@ -4,7 +4,7 @@
 
 ## The ask
 
-A reader of the wire replied to the owner's link with two words, "Dark mode!", and the owner asked for the five colour schemes VoiceDebrief ships, done here; then, with a screenshot of the bar wrapping at 2000px, to clean up the top menu; then to use the occasion to improve the documentation and the design guidance.
+A reader of the wire replied to Dinis's link with two words, "Dark mode!", and Dinis asked for the five colour schemes VoiceDebrief ships, done here; then, with a screenshot of the bar wrapping at 2000px, to clean up the top menu; then to use the occasion to improve the documentation and the design guidance.
 
 ## Constraint one: the imported stylesheet cannot be edited
 

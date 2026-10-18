@@ -4,7 +4,7 @@
 
 ## In short
 
-- **The ask.** What the owner reads on this site, signs off and wants changed reaches the newsroom's agent without a chat, and the agent answers in the same place. Today the owner edits from a chat, away from the page, and the agent has to work out which article, version and sentence were meant.
+- **The ask.** What Dinis reads on this site, signs off and wants changed reaches the newsroom's agent without a chat, and the agent answers in the same place. Today Dinis edits from a chat, away from the page, and the agent has to work out which article, version and sentence were meant.
 - **Two sides, two agents.** The browser side, the editor key, editor mode, the editor vault, the Signed off note, the down lane and the anonymous checkbox, is newsroom.vault's: it is the vault pane. The daily pass, which reads the vault, runs the checks, acts and replies, is newsroom.writer's.
 - **The reader's site does not change.** No key, no editor code runs, nothing is sent. Every step below must leave a browser with no editor key exactly as it is today, and the tests say so.
 - **Reuse before building.** The lane, the inbox's key pair and sealing, the append routes, the device files and `lane.py` already exist. The new pieces are a key, a vault, two kinds of record, a reader for them, and one checkbox.
@@ -109,7 +109,7 @@
 - The anonymous lane: a record has exactly the five fields; the browser cannot list or read the lane; the record is ciphertext on the server.
 - The pass: given a fixture vault, it produces the expected report, applies a wording fix, proposes a title change, and refuses an instruction found in an anonymous record.
 
-## Open questions for the owner
+## Open questions for Dinis
 
 - Should editor mode send reads as they happen, or only when a page is left?
 - Is the anonymous checkbox shown to every reader, or only after a first note?

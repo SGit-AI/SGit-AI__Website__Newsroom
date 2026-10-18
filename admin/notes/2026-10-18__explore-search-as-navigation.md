@@ -2,9 +2,9 @@
 
 *18 October 2026, a brief written by newsroom.writer for the agent that builds it. Status: a brief; nothing in it is built. The article that explains why is [search as navigation](https://newsroom.sgit.ai/articles/search-as-navigation.html). It builds on [search in the browser](2026-10-13__search-in-the-browser.md) (the index and BM25 ranking that run today) and on the two engines already vendored for [databases with no server](../../databases/README.md).*
 
-## The ask, in the owner's words, condensed
+## The ask, in Dinis's words, condensed
 
-Search should be navigation, not question and answer. Typing *Portugal* should show not only the items about Portugal but the graph around it: the articles, their ideas, the sections, the images, the people and things they connect to, and the combinations worth following next. As words are typed, the side of the page should suggest what they could mean and what sits near them, so the reader builds the query by navigating. It should be deterministic: code and graphs, no model, in this version. A model comes later, on top of the graph. And a pane, for the owner and for power users, that shows exactly what was fetched, how each result arrived, and the load and timing figures.
+Search should be navigation, not question and answer. Typing *Portugal* should show not only the items about Portugal but the graph around it: the articles, their ideas, the sections, the images, the people and things they connect to, and the combinations worth following next. As words are typed, the side of the page should suggest what they could mean and what sits near them, so the reader builds the query by navigating. It should be deterministic: code and graphs, no model, in this version. A model comes later, on top of the graph. And a pane, for Dinis and for power users, that shows exactly what was fetched, how each result arrived, and the load and timing figures.
 
 The point being made with it: the better the taxonomy, the ontology and the graphs, the less a model is needed; and when a model is added, it does better on a clean graph than on vectors. This is graph RAG built in the reader's browser.
 
@@ -68,7 +68,7 @@ Relations: `has-section`, `has-idea`, idea-to-idea relations as the graphs name 
 
 **Entities.** A curated gazetteer, `admin/content/explore/entities.json`: each entity's id, name, type, aliases and URL (start from the names the wire already gives long-lived ids, the companies in the articles' sources, and the places in the Portugal section). Matching is exact on names and aliases, word-bounded and case-aware, in titles, teasers, headings, section lines and graph labels. A mention records where it was found.
 
-**The taxonomy report.** `stats.json` lists: tags used once; near-duplicate tags; ideas that cluster across articles and labels that almost do; entities never mentioned; articles with fewer than N connections. It is printed by the builder and shown on a page, so the owner can see the debt shrink release by release. Merging duplicate tags in the sources is in scope; each merge is a line in the release notes.
+**The taxonomy report.** `stats.json` lists: tags used once; near-duplicate tags; ideas that cluster across articles and labels that almost do; entities never mentioned; articles with fewer than N connections. It is printed by the builder and shown on a page, so Dinis can see the debt shrink release by release. Merging duplicate tags in the sources is in scope; each merge is a line in the release notes.
 
 **Budget.** The core files (`ontology`, `nodes`, `edges`, `terms`) under 1.5 MB uncompressed in total, loaded once and cached; `text.json` and the RDF only when a view needs them. Measure and print the sizes at build.
 
@@ -88,7 +88,7 @@ A new page, linked from the nav's Search and from `/search/`, which keeps workin
 
 ### 3. The inspector pane
 
-A pane that opens from the side, for the owner and power users. It shows, live:
+A pane that opens from the side, for Dinis and power users. It shows, live:
 
 - **What was fetched**: every file, its size, whether it came from the cache, and the time to fetch and to parse.
 - **The query plan**: the chips, the node ids they resolved to and why (which alias, which rule), and each traversal step with how many nodes it touched.
@@ -102,7 +102,7 @@ The pane publishes `window.__tools.explore` after a `tool:ready` event, as the S
 ### 4. Feedback, and the queries that define "good"
 
 - On every suggestion and result: *expected*, *not expected*, *missing something*, sent as notes through the existing lane, with the query and the inspector's export attached.
-- `admin/content/explore/queries.json`: a set of queries written by the owner, starting with about twenty, each with the articles, sections or entities he expects to see. `explore_index.py` runs them at build and prints recall at 10 for each; the release notes carry the numbers, and a query that gets worse is called out. This is how the owner's feedback becomes a test, and how the taxonomy work shows its effect.
+- `admin/content/explore/queries.json`: a set of queries written by Dinis, starting with about twenty, each with the articles, sections or entities he expects to see. `explore_index.py` runs them at build and prints recall at 10 for each; the release notes carry the numbers, and a query that gets worse is called out. This is how Dinis's feedback becomes a test, and how the taxonomy work shows its effect.
 
 ### 5. Later, not in this version
 
@@ -131,7 +131,7 @@ The pane publishes `window.__tools.explore` after a `tool:ready` event, as the S
 4. The inspector, with SQL and SPARQL.
 5. Feedback, and the golden queries with recall at build.
 
-## Questions for the owner
+## Questions for Dinis
 
 - The first twenty golden queries: which searches should work, and what should each find?
 - Should `/explore/` replace `/search/` in the nav, or sit beside it until it has proved itself?

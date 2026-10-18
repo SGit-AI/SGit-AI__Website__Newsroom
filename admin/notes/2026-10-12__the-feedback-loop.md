@@ -72,7 +72,7 @@ What the lane is not: a channel the newsroom can write back on. A reply goes the
 
 ## What the first run changed (v0.12.1)
 
-The owner's first run on an iPad, the same afternoon, is on [the engineering board](../../engineering/index.html) as cards 001 to 018. Fixed at once: the pane stays open from page to page; an account made in the lab before the pane existed takes its access key once, in the Vault tab; a stray null. Added at once: *Done* as the first decision, what the browser knows about the page from the meter's records, a Reading tab with done pages folded away, the three steps, and a send that updates the device file. Filed for the next releases: feedback without a vault through the newsroom's own append lane with a typed schema (010), screenshots (011), the early-access key first (012), first-time guidance (018).
+Dinis's first run on an iPad, the same afternoon, is on [the engineering board](../../engineering/index.html) as cards 001 to 018. Fixed at once: the pane stays open from page to page; an account made in the lab before the pane existed takes its access key once, in the Vault tab; a stray null. Added at once: *Done* as the first decision, what the browser knows about the page from the meter's records, a Reading tab with done pages folded away, the three steps, and a send that updates the device file. Filed for the next releases: feedback without a vault through the newsroom's own append lane with a typed schema (010), screenshots (011), the early-access key first (012), first-time guidance (018).
 
 ## The experiments
 
@@ -84,4 +84,4 @@ The owner's first run on an iPad, the same afternoon, is on [the engineering boa
 
 ## The first lane, read (13 October 2026, v0.12.8)
 
-The owner's first send arrived whole: seven notes, five decisions on wire stories, a Done on article No. 10, and one message asking where to write to the newsroom's agent, and calling *Keep these words* a weird button. Both were right: the box had no heading and the button described the browser, not the destination. v0.12.8 heads the box *Write to the newsroom* and adds *Save and send*; `lane.py` now prints messages first. The lane is one-way: the reader writes, the newsroom reads with the published read key and cannot write. Replies need a vault on the newsroom's side (card 035).
+Dinis's first send arrived whole: seven notes, five decisions on wire stories, a Done on article No. 10, and one message asking where to write to the newsroom's agent, and calling *Keep these words* a weird button. Both were right: the box had no heading and the button described the browser, not the destination. v0.12.8 heads the box *Write to the newsroom* and adds *Save and send*; `lane.py` now prints messages first. The lane is one-way: the reader writes, the newsroom reads with the published read key and cannot write. Replies need a vault on the newsroom's side (card 035).

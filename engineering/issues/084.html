@@ -21,7 +21,7 @@
   <link rel="stylesheet" href="../../assets/site-nav.css">
   <script src="../../assets/themes/themes.js"></script>
   <a class="brand" href="../../index.html">newsroom<span>.sgit.ai</span></a>
-  <a class="ver" href="../../admin/versions.html" title="Site release history">v0.12.109</a>
+  <a class="ver" href="../../admin/versions.html" title="Site release history">v0.12.110</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -76,6 +76,7 @@
       <a class="sl" href="../../newsroom/publish.html">How to publish</a>
       <a class="sl" href="../../newsroom/board.html">The board</a>
       <a class="sl" href="../../newsroom/log.html">The run log</a>
+      <a class="sl" href="../../briefs/index.html">The briefs: what is left to build</a>
       </div>
     </div>
     <div class="ni ni-has">
@@ -152,7 +153,7 @@
  <p class="eyebrow">Engineering · done</p>
  <h1>084: The view of what was read as a setting, a live margin line, reading by pace, and no jump when scrolling back up</h1>
  <p class="lead">The view of what was read as a setting, a live margin line, reading by pace, and no jump when scrolling back up</p>
-<table class="eng-meta"><tr><td class="k">Id</td><td>084</td></tr><tr><td class="k">Status</td><td><span class="eng-tag done">done</span></td></tr><tr><td class="k">Kind</td><td><span class="eng-tag feature">feature</span></td></tr><tr><td class="k">Priority</td><td><span class="eng-tag high">high</span></td></tr><tr><td class="k">Created</td><td>2026-10-18T01:00:00Z</td></tr><tr><td class="k">Source</td><td>the owner, in chat, 18 October 2026, after a day of use: &quot;Don&#x27;t put that top banner with the multiple options in the top ... that should be a general top level setting, and it should be also overwritten by article ... on the UX on the right ... make it a little bit bigger ... add a config section there&quot;; &quot;when I have ... the ones that collapse things ... the screen moves ... as soon as I scroll up a little bit ... where am I moved ... that&#x27;s very confusing&quot;; &quot;that little bar on the left ... Can you change its color automatically in real time? ... from that light color to the current color ... that&#x27;s the only one that should change&quot;; &quot;the faded ... shouldn&#x27;t fade ... or else it fades halfway through I&#x27;m reading&quot;; &quot;if the user is scrolling up slowly, that indicates the article&#x27;s been read ... if I scroll up a certain speed, you can assume that it&#x27;s not ... by the time I got to the end ... I got that 100% mapping, and it&#x27;s okay to give me that visual clue</td></tr><tr><td class="k">Release</td><td><a href="../releases/v0.12.109.html">v0.12.109</a></td></tr><tr><td class="k">Effort</td><td>medium</td></tr><tr><td class="k">File</td><td><code>admin/engineering/issues/done/084-a-setting-a-live-line-reading-by-pace.md</code></td></tr></table><div class="eng-body"><h2 id="what-is-asked">What is asked</h2>
+<table class="eng-meta"><tr><td class="k">Id</td><td>084</td></tr><tr><td class="k">Status</td><td><span class="eng-tag done">done</span></td></tr><tr><td class="k">Kind</td><td><span class="eng-tag feature">feature</span></td></tr><tr><td class="k">Priority</td><td><span class="eng-tag high">high</span></td></tr><tr><td class="k">Created</td><td>2026-10-18T01:00:00Z</td></tr><tr><td class="k">Source</td><td>Dinis, in chat, 18 October 2026, after a day of use: &quot;Don&#x27;t put that top banner with the multiple options in the top ... that should be a general top level setting, and it should be also overwritten by article ... on the UX on the right ... make it a little bit bigger ... add a config section there&quot;; &quot;when I have ... the ones that collapse things ... the screen moves ... as soon as I scroll up a little bit ... where am I moved ... that&#x27;s very confusing&quot;; &quot;that little bar on the left ... Can you change its color automatically in real time? ... from that light color to the current color ... that&#x27;s the only one that should change&quot;; &quot;the faded ... shouldn&#x27;t fade ... or else it fades halfway through I&#x27;m reading&quot;; &quot;if the user is scrolling up slowly, that indicates the article&#x27;s been read ... if I scroll up a certain speed, you can assume that it&#x27;s not ... by the time I got to the end ... I got that 100% mapping, and it&#x27;s okay to give me that visual clue</td></tr><tr><td class="k">Release</td><td><a href="../releases/v0.12.110.html">v0.12.110</a></td></tr><tr><td class="k">Effort</td><td>medium</td></tr><tr><td class="k">File</td><td><code>admin/engineering/issues/done/084-a-setting-a-live-line-reading-by-pace.md</code></td></tr></table><div class="eng-body"><h2 id="what-is-asked">What is asked</h2>
 <p>Five changes to card 082's views and card 081's strip, after a day of use:</p>
 <ol><li>No bar at the top. The view is a setting made once: one for every article, which any article can override, in the panel on the right, larger, with a settings section.</li><li>The folding views (Paragraph, Line, Hidden) must never move the page under the reader. Scrolling back up a little threw the reader elsewhere.</li><li>The margin line changes colour as the reader reads, smoothly, from a light tint to the solid colour. It is the only view that changes live.</li><li>Faded must not fade a section the reader is part way through.</li><li>A slow scroll, either way, is a signal of reading; a fast one is not. Reaching the end at a reading pace gives 100%, and that is shown.</li></ol>
 <h2 id="scenario">Scenario</h2>
@@ -180,7 +181,7 @@ And the choices are kept in this browser</code></pre>
 <p>Tests: <code>admin/build/test_reading.mjs</code> (the real-time smooth-scroll test in Line and Hidden; nothing while moving; Settings for every article and for one; Faded only read in full; the live margin; pace: a slow scroll to 100% with the tick, four times the speed, a jump, paused); <code>admin/build/test_pane.mjs</code> (the new keys). The article <i>Your reading, your controls</i> has an update section.</p></div><p class="dim"><a href="../index.html">Back to the board</a>.</p>
 <div class="agent">
   <h4>For an agent</h4>
-  <p>Issue 084 on newsroom.sgit.ai: The view of what was read as a setting, a live margin line, reading by pace, and no jump when scrolling back up. Status done, kind feature, priority high, release v0.12.109. Source file admin/engineering/issues/done/084-a-setting-a-live-line-reading-by-pace.md.</p>
+  <p>Issue 084 on newsroom.sgit.ai: The view of what was read as a setting, a live margin line, reading by pace, and no jump when scrolling back up. Status done, kind feature, priority high, release v0.12.110. Source file admin/engineering/issues/done/084-a-setting-a-live-line-reading-by-pace.md.</p>
 </div>
 </main>
 <sg-meter view="page" kind="free" date="" topics="" title="084: The view of what was read as a setting, a live margin line, reading by pace, and no jump when scrolling back up, SGit Newsroom" quiet></sg-meter>
@@ -194,7 +195,7 @@ import('../../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js')
     <div class="brandline">newsroom<span>.sgit.ai</span></div>
     <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../../admin/versions.html">v0.12.109</a> &middot; <a href="../../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../../admin/versions.html">v0.12.110</a> &middot; <a href="../../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>The newsroom</h4>

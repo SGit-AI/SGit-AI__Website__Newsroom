@@ -12,7 +12,7 @@
 
 ## The workflow
 
-1. **The desk updates the vault.** The owner asks the wire's agent for a new edition, and for a description of what changed, written as a release (the release file). That is a commit to the wire's vault; this site needs no release to show it.
+1. **The desk updates the vault.** Dinis asks the wire's agent for a new edition, and for a description of what changed, written as a release (the release file). That is a commit to the wire's vault; this site needs no release to show it.
 2. **Open the wire.** The bar at the top says: since your last visit, N new stories, X for you and Y not for you; what the desk says changed, release by release, with the stories added and updated; and the counts per filter.
 3. **Work the inbox.** At each story, one tap: *Done* (processed), *Read later*, *Follow up* (act on it, or write about it), *Not for me*, *More like this*, *Wrong*. Each is a note with the story's id and takes the story out of the inbox, with undo. Under a lens, the stories withheld from you are listed per beat with the join's reason; on those, *Should reach me* says the join missed you, and *Done* clears them.
 4. **Look back by filter.** *Inbox*, *New*, *Read later*, *Follow up*, *Done*, *Everything*. In *Everything* and *Done* a decided story folds to its headline.
@@ -40,7 +40,7 @@ The lens is the persona the reader reads as. It is taken from the address (`#len
 
 ## The release file
 
-*For the agent that keeps the wire's vault. This is what the owner asks for when they ask you to "describe what changed on the release".*
+*For the agent that keeps the wire's vault. This is what Dinis asks for when they ask you to "describe what changed on the release".*
 
 On every publish of an edition or a change to one, add an entry at the top of `data/releases.json` in the vault, in the same commit as the change:
 

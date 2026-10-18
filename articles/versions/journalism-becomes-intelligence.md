@@ -10,13 +10,14 @@
 
 # Versions of: When journalism becomes intelligence, built
 
-2 published versions of [When journalism becomes intelligence, built: an observation desk for one data-center buildout, from an atlas of 78 events to a community impact tracker, in a vault you can open](../journalism-becomes-intelligence.md). The current one is **v1.1.0**.
+3 published versions of [When journalism becomes intelligence, built: an observation desk for one data-center buildout, from an atlas of 78 events to a community impact tracker, in a vault you can open](../journalism-becomes-intelligence.md). The current one is **v1.2.0**.
 
 v1.0.0 is the article as first published. A change to its text (title, abstract or body) is the next minor version, v1.1.0; a change only to its other details (a LinkedIn link, the release it belongs to) is the next patch, v1.0.1. The list is read from the site's git history at every build, so it cannot be edited by hand and cannot leave a version out. Views extracted from an article, such as the Five readers, are not part of its text and do not change its version.
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-10-15 | minor | 2,414 | +446 / −0 words; 1 changed, 8 added, 0 removed paragraphs | [`b4d872995`](https://github.com/SGit-AI/SGit-AI__Website/commit/b4d872995721407b9723e840e250e3e1d634d405) | [what changed](journalism-becomes-intelligence/v1.1.0.md) · [current](../journalism-becomes-intelligence.md) |
+| **v1.2.0** | 2026-10-18 | minor | 2,418 | +4 / −0 words; 2 changed, 0 added, 0 removed paragraphs | this release | [what changed](journalism-becomes-intelligence/v1.2.0.md) · [current](../journalism-becomes-intelligence.md) |
+| **v1.1.0** | 2026-10-15 | minor | 2,414 | +446 / −0 words; 1 changed, 8 added, 0 removed paragraphs | [`b4d872995`](https://github.com/SGit-AI/SGit-AI__Website/commit/b4d872995721407b9723e840e250e3e1d634d405) | [what changed](journalism-becomes-intelligence/v1.1.0.md) |
 | **v1.0.0** | 2026-10-15 | published | 1,968 | first published | [`421049b07`](https://github.com/SGit-AI/SGit-AI__Website/commit/421049b072e0aa48ff3133e9f791bf55f0224b76) |  |
 
 [← Back to the article](../journalism-becomes-intelligence.md) · [All articles](../index.md)

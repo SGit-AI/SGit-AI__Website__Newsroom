@@ -80,7 +80,8 @@ NAV = [
         ("How to publish", "newsroom/publish.html"),
         ("The board", "newsroom/board.html"),
         ("The run log", "newsroom/log.html"),
-    ], ("newsroom/",)),
+        ("The briefs: what is left to build", "briefs/index.html"),
+    ], ("newsroom/", "briefs/")),
     ("Design", "design/index.html", [
         ("The design, and what runs", "design/index.html"),
         ("The thesis: sell the graph", "thesis/index.html"),

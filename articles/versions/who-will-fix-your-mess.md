@@ -10,13 +10,14 @@
 
 # Versions of: Who will fix your mess? An answer to HBR's "deployment gap" from what this site has already published
 
-4 published versions of [Who will fix your mess? An answer to HBR's "deployment gap" from what this site has already published: explorers, villagers and town planners, a record of what the agents built, and open source so the answer never depends on one partner](../who-will-fix-your-mess.md). The current one is **v1.3.0**.
+5 published versions of [Who will fix your mess? An answer to HBR's "deployment gap" from what this site has already published: explorers, villagers and town planners, a record of what the agents built, and open source so the answer never depends on one partner](../who-will-fix-your-mess.md). The current one is **v1.4.0**.
 
 v1.0.0 is the article as first published. A change to its text (title, abstract or body) is the next minor version, v1.1.0; a change only to its other details (a LinkedIn link, the release it belongs to) is the next patch, v1.0.1. The list is read from the site's git history at every build, so it cannot be edited by hand and cannot leave a version out. Views extracted from an article, such as the Five readers, are not part of its text and do not change its version.
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.3.0** | 2026-10-18 | minor | 2,679 | +0 / −2 words; 3 changed, 0 added, 0 removed paragraphs | [`de821285d`](https://github.com/SGit-AI/SGit-AI__Website/commit/de821285d78b0ed667dda217e6b56a89e9dd919f) | [what changed](who-will-fix-your-mess/v1.3.0.md) · [current](../who-will-fix-your-mess.md) |
+| **v1.4.0** | 2026-10-18 | minor | 2,681 | +2 / −0 words; 1 changed, 0 added, 0 removed paragraphs | this release | [what changed](who-will-fix-your-mess/v1.4.0.md) · [current](../who-will-fix-your-mess.md) |
+| **v1.3.0** | 2026-10-18 | minor | 2,679 | +0 / −2 words; 3 changed, 0 added, 0 removed paragraphs | [`de821285d`](https://github.com/SGit-AI/SGit-AI__Website/commit/de821285d78b0ed667dda217e6b56a89e9dd919f) | [what changed](who-will-fix-your-mess/v1.3.0.md) |
 | **v1.2.0** | 2026-10-18 | minor | 2,681 | +0 / −114 words; 0 changed, 0 added, 3 removed paragraphs | [`4baace0c6`](https://github.com/SGit-AI/SGit-AI__Website/commit/4baace0c64d44b328c5fcb50521e1aa675bf923a) | [what changed](who-will-fix-your-mess/v1.2.0.md) |
 | **v1.1.0** | 2026-10-17 | minor | 2,795 | +13 / −0 words; 1 changed, 0 added, 0 removed paragraphs | [`b24f1acec`](https://github.com/SGit-AI/SGit-AI__Website/commit/b24f1acec1faaa932cde243ba0fe3497e186086c) | [what changed](who-will-fix-your-mess/v1.1.0.md) |
 | **v1.0.0** | 2026-10-17 | published | 2,782 | first published | [`9ce19abb2`](https://github.com/SGit-AI/SGit-AI__Website/commit/9ce19abb2bb3fd22b449f205d46e40a30cc6e530) |  |

@@ -4,15 +4,15 @@ Written by `admin/build/deps.py`; do not edit. The rule: the newsroom is self-co
 
 | kind | files | references | what it is |
 |---|---:|---:|---|
-| generator | 684 | | pages imported from sgit.ai's build; goes when the generator is ported here |
-| network | 451 | 1980 | links to sgit.ai's pages and the network sites (17 files this site writes itself) |
-| words | 917 | 5976 | sgit.ai or the sgit project named in prose: the disclosure, the kit, the method |
+| generator | 690 | | pages imported from sgit.ai's build; goes when the generator is ported here |
+| network | 454 | 1984 | links to sgit.ai's pages and the network sites (18 files this site writes itself) |
+| words | 926 | 6024 | sgit.ai or the sgit project named in prose: the disclosure, the kit, the method |
 | vault | 50 | 124 | links to a vault: the one dependency that stays |
 
 ## Network links, by target
 
-- 363 × `sgit.ai/about/index.html`
-- 184 × `sgit.ai/about/index.md`
+- 366 × `sgit.ai/about/index.html`
+- 185 × `sgit.ai/about/index.md`
 - 102 × `sgit.ai/admin/versions.html`
 - 98 × `sgit.ai/admin/versions.md`
 - 37 × `graphs.sgit.ai/`
@@ -69,6 +69,7 @@ The pages this site can fix now (an imported page is fixed in the generator, whe
 - `LICENSES.md` (1)
 - `admin/build/vault-mock.mjs` (1)
 - `admin/notes/2026-10-16__the-vault-opened.md` (1)
+- `assets/themes/themes.css` (1)
 - `assets/vault-pane/inbox.js` (1)
 - `assets/vendor/sg-vault/v0.2.3/VENDOR.md` (1)
 - `engineering/issues/012.html` (1)
