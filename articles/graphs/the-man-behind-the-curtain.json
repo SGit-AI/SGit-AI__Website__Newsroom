@@ -1,0 +1,174 @@
+{
+  "slug": "the-man-behind-the-curtain",
+  "teaser": "Emails from my agents are from me: the Wizard of Oz in reverse, an article behind every answer, and an email where every line buys the next.",
+  "topics": [
+    "agents-and-policy",
+    "site-and-engineering"
+  ],
+  "core_idea": "People mistake agent-drafted emails for a chatbot, but every one is read, changed and sent by Dinis; behind most answers sits an article written once and linked many times, which is how long answers scale; and since each part of an email buys the next, the first email should open with plain text and the short answer, the banner and detail below.",
+  "nodes": [
+    {
+      "id": "chatbot",
+      "label": "Read as a chatbot",
+      "kind": "question",
+      "summary": "People assume nobody is reading."
+    },
+    {
+      "id": "curtain",
+      "label": "The man behind the curtain",
+      "kind": "concept",
+      "summary": "The agents in front, Dinis behind."
+    },
+    {
+      "id": "oz",
+      "label": "Kelley's OZ paradigm, 1984",
+      "kind": "example",
+      "summary": "A hidden person makes a program look clever."
+    },
+    {
+      "id": "reverse",
+      "label": "The Wizard of Oz, in reverse",
+      "kind": "claim",
+      "summary": "Said openly, and the person stays for emails."
+    },
+    {
+      "id": "drafts",
+      "label": "Drafts to think with",
+      "kind": "method",
+      "summary": "Read every draft, change it, send it."
+    },
+    {
+      "id": "article",
+      "label": "An article behind every email",
+      "kind": "method",
+      "summary": "If none is ready, it is worth writing."
+    },
+    {
+      "id": "scale",
+      "label": "Written once, linked many times",
+      "kind": "claim",
+      "summary": "A short question, a long answer."
+    },
+    {
+      "id": "buys",
+      "label": "Every part buys the next",
+      "kind": "concept",
+      "summary": "Subject, first line, paragraph, email, article."
+    },
+    {
+      "id": "preview",
+      "label": "The inbox preview",
+      "kind": "example",
+      "summary": "The first text, up to about 140 characters."
+    },
+    {
+      "id": "bluf",
+      "label": "Bottom line up front",
+      "kind": "example",
+      "summary": "AR 25-50: the main point first."
+    },
+    {
+      "id": "plain",
+      "label": "Plain text first",
+      "kind": "method",
+      "summary": "The short answer, then the banner and detail."
+    }
+  ],
+  "edges": [
+    {
+      "from": "chatbot",
+      "to": "curtain",
+      "rel": "answers"
+    },
+    {
+      "from": "oz",
+      "to": "reverse",
+      "rel": "contrasts"
+    },
+    {
+      "from": "curtain",
+      "to": "reverse",
+      "rel": "extends"
+    },
+    {
+      "from": "curtain",
+      "to": "drafts",
+      "rel": "depends-on"
+    },
+    {
+      "from": "drafts",
+      "to": "article",
+      "rel": "leads-to"
+    },
+    {
+      "from": "article",
+      "to": "scale",
+      "rel": "produces"
+    },
+    {
+      "from": "buys",
+      "to": "plain",
+      "rel": "leads-to"
+    },
+    {
+      "from": "preview",
+      "to": "buys",
+      "rel": "example-of"
+    },
+    {
+      "from": "bluf",
+      "to": "plain",
+      "rel": "example-of"
+    },
+    {
+      "from": "plain",
+      "to": "chatbot",
+      "rel": "answers"
+    }
+  ],
+  "links": {
+    "articles": [
+      "who-is-speaking",
+      "the-human-in-the-loop",
+      "what-can-your-agent-reach",
+      "research-delivered-as-a-vault",
+      "my-memory-checked",
+      "your-own-newsroom"
+    ],
+    "pages": [],
+    "sites": [
+      "https://dl.acm.org/doi/10.1145/357417.357420",
+      "https://docs.customer.io/messaging/channels/email/headers/custom-preheader-text/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "Each answer makes the next one cheaper.",
+      "why": "Why long answers scale."
+    },
+    {
+      "text": "Nothing further down gets read if something higher up did not earn it.",
+      "why": "Every part of an email buys the next."
+    }
+  ],
+  "figures": [
+    {
+      "file": "mc-curtain.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/mc-curtain.webp",
+      "caption": "In front of the curtain, what the person receiving the email sees: one email, in my name. Behind it, two things. The agents: they draft the reply, follow up the thread, map what was said in a CRM, collect the evidence and keep track of what is owed. And me: I read every draft, use it to think, change it, often ask for an article so the answer has evidence behind it, and then send it. The agents send nothing.",
+      "kind": "architecture"
+    },
+    {
+      "file": "mc-scale.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/mc-scale.webp",
+      "caption": "One article, many emails. On the left, emails arriving with questions, a few hundred words each. In the middle, the test: is there an article that answers this? If yes, the reply is short and links it. If no, the agents write one and check it against its sources, it is published, I read it, and the reply links it. On the right, the article: written once, linked from every later reply, read later, forwarded, corrected as new versions.",
+      "kind": "concept"
+    },
+    {
+      "file": "mc-buys.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/mc-buys.webp",
+      "caption": "Every part of an email buys the next. The subject buys the first line, which buys the first paragraph, which buys the email, which buys the article. Below, the same first email two ways: starting with a banner, where the inbox preview shows the banner's text; and starting with a plain paragraph that answers the question, where the preview is the answer.",
+      "kind": "concept"
+    }
+  ]
+}

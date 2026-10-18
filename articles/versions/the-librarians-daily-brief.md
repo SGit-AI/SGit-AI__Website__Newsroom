@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-18 | published | 1,858 | first published | this release | [current](../the-librarians-daily-brief.md) |
+| **v1.0.0** | 2026-10-18 | published | 1,858 | first published | [`7954fc4ea`](https://github.com/SGit-AI/SGit-AI__Website/commit/7954fc4ea94c684eb811644f2935d0001e3b2a81) | [current](../the-librarians-daily-brief.md) |
 
 [← Back to the article](../the-librarians-daily-brief.md) · [All articles](../index.md)
 

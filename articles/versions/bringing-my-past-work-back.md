@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-18 | published | 1,805 | first published | this release | [current](../bringing-my-past-work-back.md) |
+| **v1.0.0** | 2026-10-18 | published | 1,805 | first published | [`7954fc4ea`](https://github.com/SGit-AI/SGit-AI__Website/commit/7954fc4ea94c684eb811644f2935d0001e3b2a81) | [current](../bringing-my-past-work-back.md) |
 
 [← Back to the article](../bringing-my-past-work-back.md) · [All articles](../index.md)
 
