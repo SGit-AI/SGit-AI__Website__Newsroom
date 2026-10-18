@@ -46,7 +46,7 @@ Two lines run from the test script. One goes to Ruflo's command line, which writ
 
 ## Step 5: the vault is written {#step-5}
 
-!shot rf-stage-05.webp | images/ | Step 5: the checkpoint tool passes the policy gate; a SQLite backup takes a consistent copy of memory.db; fingerprints of the database, the ABP and the policy are taken; the SGit library encrypts on the machine and writes ciphertext only to the checkpoint store, with keys kept apart. | architecture
+!shot rf-stage-05.webp | images/ | Step 5: the checkpoint tool passes the policy gate; a SQLite backup takes a consistent copy of memory.db; fingerprints of the database, the ABP and the policy are taken; the SGit library encrypts on the machine and writes ciphertext only to the checkpoint store, with keys kept apart. | small | architecture
 
 This is where the vault is created. The checkpoint request for the `project` namespace is allowed. The adapter takes a consistent copy of Ruflo's memory file with a SQLite backup, fingerprints it, and SGit stores it encrypted, with the id `2fa35d1b71ce4361b458c8a64f6ec668`.
 
@@ -58,7 +58,7 @@ What goes into the vault is one consistent copy of the memory database, sealed w
 
 ## Step 8: the vault is read {#step-8}
 
-!shot rf-stage-08.webp | images/ | Step 8: a new MCP server process restores the checkpoint; the policy gate allows it; the SGit library reads ciphertext from the vault and keys from the private folder, decrypts and verifies, and writes memory.sqlite into the fresh-runner workspace, with the same SHA-256 as in step 5. | architecture
+!shot rf-stage-08.webp | images/ | Step 8: a new MCP server process restores the checkpoint; the policy gate allows it; the SGit library reads ciphertext from the vault and keys from the private folder, decrypts and verifies, and writes memory.sqlite into the fresh-runner workspace, with the same SHA-256 as in step 5. | narrow | architecture
 
 A brand-new adapter process restores the checkpoint into a new workspace, `fresh-runner`. The restored database is byte for byte the one saved in step 5.
 
@@ -68,7 +68,7 @@ A brand-new adapter process restores the checkpoint into a new workspace, `fresh
 
 ## Step 11: the vault is read, and refuses {#step-11}
 
-!shot rf-stage-11.webp | images/ | Step 11: one object in the vault is altered; the restore tool passes the policy gate; the adapter compares the digest of the stored ciphertext with the one recorded in step 5, finds a mismatch, and a ValueError means the tampered workspace is never created; SGit is never asked to decrypt. | architecture
+!shot rf-stage-11.webp | images/ | Step 11: one object in the vault is altered; the restore tool passes the policy gate; the adapter compares the digest of the stored ciphertext with the one recorded in step 5, finds a mismatch, and a ValueError means the tampered workspace is never created; SGit is never asked to decrypt. | narrow | architecture
 
 One encrypted object in the vault is altered, and a restore is tried. The ABP allows the restore; the adapter's check of the stored ciphertext is what refuses it.
 

@@ -6,7 +6,7 @@
 
 - **A wire is a vault plus a config.** `admin/build/wire-vault.json` is the Industry Wire at `/wire/`; `wire-vault.<slug>.json` is another wire at `/wire/<slug>/`. The config holds the endpoint, the vault id, the public read key, the clone command, the wire's name, a paragraph of what it is, and the named readers with the date and the way they agreed. Nothing else on this site knows a wire by name: `wire.py` writes every wire's three pages and snapshot, `wire.js` draws every wire, `test_wire.mjs` tests every wire, and the search indexes every snapshot.
 - **The contract is the same, and a vault may say more.** Every vault gives `data/bundle.json`, `data/deliveries.json`, `data/releases.json` and `docs/*.md` as [how the wire works](../../wire/how.html) says. A vault that describes itself in `wire` (id, title, cadence, beats, the personal persona) gets its lenses from its own personas, all but the personal one, plus the named readers in the config; without it the page offers the Industry Wire's six. A `map` or a `stack` is drawn when it is there and nothing breaks when it is not.
-- **The named reader's agreement is per wire.** Each config records it. The agreement of 12 October covered the Industry Wire; on 13 October the owner extended it to the two new wires in chat, and each config says so with the date.
+- **The named reader's agreement is per wire.** Each config records it. The agreement of 12 October covered the Industry Wire; on 13 October Dinis extended it to the two new wires in chat, and each config says so with the date.
 - **Each wire is its own inbox.** The notes already keep the page's path, so a decision at `/wire/owasp/ow-09` is not one at `/wire/ai-09`. The stories seen, the visit and the lens now take a scope too: the Industry Wire's are stored as before, a scoped wire's seen ids as `slug:id`, its visit and lens beside the Industry Wire's. The device file carries the seen ids as stored, so another device tells them apart.
 
 ## What a vault adds beyond the edition
@@ -24,4 +24,4 @@
 
 ## The names
 
-The agent that keeps these pages, reading vaults and drawing them on this site, is the newsroom's side of the wire; the owner proposed calling it `@newsroom.wire`. The agent that writes a vault is what its runbook calls it, the wire's desk: the Industry Wire desk, the OWASP Wire desk, the AWS Wire desk. One reads, the others write, and the read key is the only thing they share.
+The agent that keeps these pages, reading vaults and drawing them on this site, is the newsroom's side of the wire; Dinis proposed calling it `@newsroom.wire`. The agent that writes a vault is what its runbook calls it, the wire's desk: the Industry Wire desk, the OWASP Wire desk, the AWS Wire desk. One reads, the others write, and the read key is the only thing they share.

@@ -60,7 +60,7 @@ This is the point in the post I most want to answer, because I think it is the o
 
 If the agents work under a written mandate, keep their memory in a versioned store the company owns, and describe what they built as a graph, then the architecture is not a mystery. It is a record the next team can read. [Knowledge that maintains itself](/articles/knowledge-that-maintains-itself.html) is about exactly that: a graph of what an organisation knows, kept up to date by agents and used to brief people and agents. Each article on this site carries one, and you can [read them all as graphs](/articles/graphs.html).
 
-!shot hb-graph.webp | images/ | One article as a graph, as this site publishes it for every article: Explorer coding's twelve nodes, from "vibe coding, the word" to "town planners own it", with the edges between them and the quotes that carry them. A screenshot of the graphs page on newsroom.sgit.ai. | comparison
+!shot hb-graph.webp | images/ | One article as a graph, as this site publishes it for every article: Explorer coding's twelve nodes, from "vibe coding, the word" to "town planners own it", with the edges between them and the quotes that carry them. A screenshot of the graphs page on newsroom.sgit.ai. | medium | comparison
 
 !shot rf-board.webp | images/ | A prototype that is ready for the villagers: Mondweep Chakravorty's SGit × Ruflo run, twelve steps, five worked, three safeguards refused as intended, recall by meaning marked as not tested. From What if an agent loses its workspace? | comparison
 

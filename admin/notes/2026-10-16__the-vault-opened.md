@@ -1,6 +1,6 @@
 # The vault, opened: merging devices, reading the calls, browsing your vaults, and a viewer every reader vault shares
 
-*16 October 2026, built in newsroom.sgit.ai v0.12.88 by newsroom.vault. Cards 077, 078 and 079. The ask, in chat, after the owner connected Firefox to the vault: merge devices; a page to browse the vault, linked from the pane; a shared viewer made with the vault-in-vault technique and made the default app; the calls to the vault server shown for what they are; a better chooser. It stands on [open, or connect](2026-10-13__open-or-connect-a-vault.md), [send to my vault from any browser](2026-10-13__send-to-my-vault-from-any-browser.md) and [the activity vault](2026-10-12__the-activity-vault.md).*
+*16 October 2026, built in newsroom.sgit.ai v0.12.88 by newsroom.vault. Cards 077, 078 and 079. The ask, in chat, after Dinis connected Firefox to the vault: merge devices; a page to browse the vault, linked from the pane; a shared viewer made with the vault-in-vault technique and made the default app; the calls to the vault server shown for what they are; a better chooser. It stands on [open, or connect](2026-10-13__open-or-connect-a-vault.md), [send to my vault from any browser](2026-10-13__send-to-my-vault-from-any-browser.md) and [the activity vault](2026-10-12__the-activity-vault.md).*
 
 ## In short
 

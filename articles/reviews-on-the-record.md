@@ -125,6 +125,7 @@ Vaults & methodAgents & policy[This article as a graph →](graphs.md#reviews-on
 
 ### Continued by
 
+- [The briefs so far: sixty-five things this newsroom has asked of itself, what is built, and where each next session starts](the-briefs-so-far.md) Sixty-five briefs this newsroom has asked of itself, audited from the code: 11 built, 21 partly, 32 not, each open one with a session brief.
 - [A section for publishers: where to send someone new to this newsroom, and a site that keeps itself current](a-section-for-publishers.md) Where to send a publisher new to the newsroom: a section placed by rule, with features as they ship, that keeps itself current as the site changes.
 - [Three companies, three LinkedIn pages: the brief, the drafts and the first posts, in the open](three-linkedin-pages.md) Three companies, no LinkedIn pages: the decisions, every drafted field with its count, thirty first posts already written, and a new profile, in the open.
 - [Search as navigation: walking the newsroom's graph with no model, and why a clean graph should beat vectors](search-as-navigation.md) Search as a walk through the newsroom's graph: chips, exact suggestions, five views and a pane that shows the working, with no model yet.

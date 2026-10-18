@@ -55,6 +55,375 @@
   ],
   "articles": [
     {
+      "slug": "who-is-speaking",
+      "title": "Who is speaking: me, me through an agent, or an agent in its own voice, and a mark on every byline that says which",
+      "date": "2026-10-18",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/who-is-speaking.html",
+      "markdown": "https://newsroom.sgit.ai/articles/who-is-speaking.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/who-is-speaking.webp",
+      "teaser": "Me alone, me through an agent, or an agent in its own voice: three voices on this site, a mark on every byline, and agents that name people.",
+      "topics": [
+        "agents-and-policy",
+        "site-and-engineering"
+      ],
+      "tags": [
+        "newsroom",
+        "voice",
+        "agents",
+        "authorship",
+        "provenance",
+        "article"
+      ],
+      "links_out": [
+        "the-human-in-the-loop",
+        "your-reading-your-controls",
+        "the-vault-opened",
+        "on-the-record",
+        "how-cheap-is-it-to-undo",
+        "the-agents-write-too"
+      ],
+      "links_in": [
+        "the-briefs-so-far"
+      ],
+      "figures": [
+        {
+          "file": "ws-voices.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ws-voices.webp",
+          "caption": "Three voices on this site. Dinis alone: written and published by him, with no agent; none yet. Dinis through an agent: his memo or message, written up, checked and published by the newsroom's agents, in his voice and under his name, with the editorial responsibility his; almost every article. An agent in its own voice: an agent writing about work it did, in the first person as the agent, with Dinis's editorial responsibility; five so far. Each has a mark on the byline.",
+          "kind": "concept"
+        }
+      ],
+      "graph": {
+        "slug": "who-is-speaking",
+        "teaser": "Me alone, me through an agent, or an agent in its own voice: three voices on this site, a mark on every byline, and agents that name people.",
+        "topics": [
+          "agents-and-policy",
+          "site-and-engineering"
+        ],
+        "core_idea": "People reading agent emails think they are talking to an autonomous agent when they are talking to Dinis through one; the site has three voices (Dinis alone, Dinis through an agent, an agent in its own voice), readers read each differently, so every byline now marks which, and the agents name people instead of calling Dinis the owner.",
+        "nodes": [
+          {
+            "id": "emails",
+            "label": "Agent emails misread",
+            "kind": "question",
+            "summary": "Recipients think the agent is autonomous."
+          },
+          {
+            "id": "voices",
+            "label": "Three voices",
+            "kind": "concept",
+            "summary": "Alone, through an agent, an agent's own."
+          },
+          {
+            "id": "through",
+            "label": "Dinis through an agent",
+            "kind": "example",
+            "summary": "83 of 90 articles written here."
+          },
+          {
+            "id": "own",
+            "label": "An agent in its own voice",
+            "kind": "example",
+            "summary": "Five articles, signed by agents."
+          },
+          {
+            "id": "alone",
+            "label": "Dinis alone",
+            "kind": "question",
+            "summary": "None yet; needs its own mark."
+          },
+          {
+            "id": "read",
+            "label": "Readers read by author",
+            "kind": "claim",
+            "summary": "People and agents both."
+          },
+          {
+            "id": "marks",
+            "label": "A mark on every byline",
+            "kind": "method",
+            "summary": "Agent mark, or with the newsroom's agents."
+          },
+          {
+            "id": "words",
+            "label": "Name people",
+            "kind": "method",
+            "summary": "Dinis, not the owner."
+          },
+          {
+            "id": "guide",
+            "label": "The guidance for agents",
+            "kind": "artefact",
+            "summary": "The article README's rules."
+          },
+          {
+            "id": "todo",
+            "label": "Still to do",
+            "kind": "method",
+            "summary": "Structured data, emails, a voice field."
+          }
+        ],
+        "edges": [
+          {
+            "from": "emails",
+            "to": "voices",
+            "rel": "leads-to"
+          },
+          {
+            "from": "voices",
+            "to": "through",
+            "rel": "extends"
+          },
+          {
+            "from": "voices",
+            "to": "own",
+            "rel": "extends"
+          },
+          {
+            "from": "voices",
+            "to": "alone",
+            "rel": "extends"
+          },
+          {
+            "from": "read",
+            "to": "marks",
+            "rel": "leads-to"
+          },
+          {
+            "from": "marks",
+            "to": "voices",
+            "rel": "depends-on"
+          },
+          {
+            "from": "words",
+            "to": "guide",
+            "rel": "extends"
+          },
+          {
+            "from": "marks",
+            "to": "guide",
+            "rel": "extends"
+          },
+          {
+            "from": "guide",
+            "to": "todo",
+            "rel": "leads-to"
+          }
+        ],
+        "links": {
+          "articles": [
+            "the-human-in-the-loop",
+            "your-reading-your-controls",
+            "the-vault-opened",
+            "on-the-record",
+            "how-cheap-is-it-to-undo"
+          ],
+          "pages": [
+            "agents/index.html",
+            "about/newsroom-writer.html"
+          ],
+          "sites": []
+        },
+        "quotes": [
+          {
+            "text": "So the person on the other end is talking to me, through an agent.",
+            "why": "The emails."
+          },
+          {
+            "text": "A role hides that; a name keeps it.",
+            "why": "The words."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "the-briefs-so-far",
+      "title": "The briefs so far: sixty-five things this newsroom has asked of itself, what is built, and where each next session starts",
+      "date": "2026-10-18",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/the-briefs-so-far.html",
+      "markdown": "https://newsroom.sgit.ai/articles/the-briefs-so-far.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/the-briefs-so-far.webp",
+      "teaser": "Sixty-five briefs this newsroom has asked of itself, audited from the code: 11 built, 21 partly, 32 not, each open one with a session brief.",
+      "topics": [
+        "site-and-engineering",
+        "agents-and-policy"
+      ],
+      "tags": [
+        "newsroom",
+        "briefs",
+        "roadmap",
+        "agents",
+        "meta",
+        "article"
+      ],
+      "links_out": [
+        "the-site-is-an-inbox",
+        "search-as-navigation",
+        "the-vault-is-live",
+        "sixteen-notes-i-did-not-want-to-lose",
+        "your-reading-your-controls",
+        "reviews-on-the-record",
+        "on-the-record",
+        "scrolled-is-not-read",
+        "who-is-speaking",
+        "a-section-for-publishers",
+        "the-editors-channel"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "bs-map.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/bs-map.webp",
+          "caption": "Sixty-five briefs this newsroom has published about itself, by area and status, as found in the code, the releases and the engineering cards on 18 October 2026. Each square is one brief: built, partly built, not built or superseded. The reader features and the reading account have the most; the wires have the most built; the editorial workflow has almost nothing built yet. Every open brief has a session brief at /briefs/.",
+          "kind": "comparison"
+        }
+      ],
+      "graph": {
+        "slug": "the-briefs-so-far",
+        "teaser": "Sixty-five briefs this newsroom has asked of itself, audited from the code: 11 built, 21 partly, 32 not, each open one with a session brief.",
+        "topics": [
+          "site-and-engineering",
+          "agents-and-policy"
+        ],
+        "core_idea": "The agent that writes most of the site, in its own voice, maps every brief the newsroom has published about itself, with status taken from code, releases and cards rather than the articles, publishes the map as data with a session brief per open entry, suggests five to start, and records where the site's own records had fallen behind.",
+        "nodes": [
+          {
+            "id": "writer",
+            "label": "newsroom.writer, in its own voice",
+            "kind": "claim",
+            "summary": "The agent that writes most of the site."
+          },
+          {
+            "id": "ask",
+            "label": "Which briefs are left?",
+            "kind": "question",
+            "summary": "So a session can start on each."
+          },
+          {
+            "id": "counted",
+            "label": "Counted from the code",
+            "kind": "method",
+            "summary": "Releases, cards and notes, not articles."
+          },
+          {
+            "id": "map",
+            "label": "Sixty-five briefs",
+            "kind": "artefact",
+            "summary": "11 built, 21 partly, 32 not, 1 superseded."
+          },
+          {
+            "id": "data",
+            "label": "Published as data",
+            "kind": "artefact",
+            "summary": "/briefs/ and briefs.json."
+          },
+          {
+            "id": "session",
+            "label": "A session brief per open entry",
+            "kind": "method",
+            "summary": "Read first, first deliverable, done when."
+          },
+          {
+            "id": "five",
+            "label": "Five to start with",
+            "kind": "method",
+            "summary": "Pane, vocabulary, editor's channel, replies, wires."
+          },
+          {
+            "id": "signing",
+            "label": "Readers who can sign",
+            "kind": "concept",
+            "summary": "A dependency under several briefs."
+          },
+          {
+            "id": "stale",
+            "label": "Stale records",
+            "kind": "example",
+            "summary": "The shipped page; a card's blocker."
+          },
+          {
+            "id": "missing",
+            "label": "The writer was missing",
+            "kind": "example",
+            "summary": "Now on the agents' list."
+          }
+        ],
+        "edges": [
+          {
+            "from": "ask",
+            "to": "counted",
+            "rel": "answers"
+          },
+          {
+            "from": "counted",
+            "to": "map",
+            "rel": "produces"
+          },
+          {
+            "from": "map",
+            "to": "data",
+            "rel": "leads-to"
+          },
+          {
+            "from": "data",
+            "to": "session",
+            "rel": "extends"
+          },
+          {
+            "from": "map",
+            "to": "five",
+            "rel": "leads-to"
+          },
+          {
+            "from": "signing",
+            "to": "five",
+            "rel": "depends-on"
+          },
+          {
+            "from": "counted",
+            "to": "stale",
+            "rel": "produces"
+          },
+          {
+            "from": "counted",
+            "to": "missing",
+            "rel": "produces"
+          },
+          {
+            "from": "writer",
+            "to": "map",
+            "rel": "produces"
+          }
+        ],
+        "links": {
+          "articles": [
+            "who-is-speaking",
+            "a-section-for-publishers",
+            "reviews-on-the-record",
+            "the-editors-channel",
+            "search-as-navigation"
+          ],
+          "pages": [
+            "briefs/index.html",
+            "briefs/briefs.json"
+          ],
+          "sites": []
+        },
+        "quotes": [
+          {
+            "text": "An article saying something was built did not count; the code did.",
+            "why": "How it was counted."
+          },
+          {
+            "text": "The list of what this newsroom has promised itself should be held to the same rule.",
+            "why": "Why it exists."
+          }
+        ]
+      }
+    },
+    {
       "slug": "a-section-for-publishers",
       "title": "A section for publishers: where to send someone new to this newsroom, and a site that keeps itself current",
       "date": "2026-10-18",
@@ -80,7 +449,9 @@
         "reviews-on-the-record",
         "pay-after-you-read"
       ],
-      "links_in": [],
+      "links_in": [
+        "the-briefs-so-far"
+      ],
       "figures": [
         {
           "file": "sx-section.webp",
@@ -480,6 +851,7 @@
         "the-wire-as-a-graph"
       ],
       "links_in": [
+        "the-briefs-so-far",
         "a-section-for-publishers"
       ],
       "figures": [
@@ -682,6 +1054,7 @@
         "three-policies-for-an-agent"
       ],
       "links_in": [
+        "the-briefs-so-far",
         "a-section-for-publishers",
         "three-linkedin-pages",
         "search-as-navigation",
@@ -901,6 +1274,8 @@
         "pay-after-you-read"
       ],
       "links_in": [
+        "who-is-speaking",
+        "the-briefs-so-far",
         "three-linkedin-pages"
       ],
       "figures": [
@@ -1109,6 +1484,7 @@
         "agent-workflows-on-ephemeral-vaults"
       ],
       "links_in": [
+        "the-briefs-so-far",
         "search-as-navigation",
         "reviews-on-the-record",
         "on-the-record"
@@ -2855,6 +3231,8 @@
         "a-meter-in-the-browser"
       ],
       "links_in": [
+        "who-is-speaking",
+        "the-briefs-so-far",
         "a-section-for-publishers"
       ],
       "figures": [
@@ -2920,13 +3298,13 @@
           "site-and-engineering",
           "news-and-evidence"
         ],
-        "core_idea": "Once the owner decided that a reader pays for what they read and not for what they scroll, the numbers had to be the reader's to correct: pause, reset and marks by hand; and once the newsroom knows what was read, it can step aside on a return visit or a scroll back up, in six views from a margin line to hidden, never while the reader reads forward, using a line and a paragraph written for every one of 1,897 sections.",
+        "core_idea": "Once Dinis decided that a reader pays for what they read and not for what they scroll, the numbers had to be the reader's to correct: pause, reset and marks by hand; and once the newsroom knows what was read, it can step aside on a return visit or a scroll back up, in six views from a margin line to hidden, never while the reader reads forward, using a line and a paragraph written for every one of 1,897 sections.",
         "nodes": [
           {
             "id": "decision",
             "label": "Charge for what is read",
             "kind": "claim",
-            "summary": "The owner's decision: the meter charges for the share read, not the share scrolled; reading done on an earlier visit is not charged again."
+            "summary": "Dinis's decision: the meter charges for the share read, not the share scrolled; reading done on an earlier visit is not charged again."
           },
           {
             "id": "meter",
@@ -5666,6 +6044,7 @@
         "the-tokens-hook"
       ],
       "links_in": [
+        "the-briefs-so-far",
         "your-reading-your-controls",
         "i-just-want-to-buy-the-article"
       ],
@@ -5744,7 +6123,7 @@
             "id": "ask",
             "label": "The chip moves",
             "kind": "example",
-            "summary": "The owner's two fixes: drop the balance the bar already shows, and stop the flicker; measured as 20 positions in 30 scroll steps."
+            "summary": "Dinis's two fixes: drop the balance the bar already shows, and stop the flicker; measured as 20 positions in 30 scroll steps."
           },
           {
             "id": "position",
@@ -10015,6 +10394,7 @@
         "the-agents-write-too"
       ],
       "links_in": [
+        "who-is-speaking",
         "i-just-want-to-buy-the-article"
       ],
       "figures": [
@@ -10062,7 +10442,7 @@
             "id": "ask",
             "label": "Five asks after Firefox",
             "kind": "example",
-            "summary": "The owner connected Firefox, found the workflow worked, and asked for merging, browsing, a shared viewer, readable calls and a clearer chooser."
+            "summary": "Dinis connected Firefox, found the workflow worked, and asked for merging, browsing, a shared viewer, readable calls and a clearer chooser."
           },
           {
             "id": "merge",
@@ -16124,6 +16504,7 @@
         "sixteen-notes-i-did-not-want-to-lose"
       ],
       "links_in": [
+        "who-is-speaking",
         "the-vault-opened",
         "your-own-newsroom",
         "agent-workflows-on-ephemeral-vaults"
@@ -19118,6 +19499,7 @@
         "two-agents-one-vault"
       ],
       "links_in": [
+        "the-briefs-so-far",
         "the-editors-channel",
         "the-vault-opened",
         "handing-secrets-to-agents",
@@ -19371,6 +19753,7 @@
         "a-second-reader-the-agent-cannot-skip"
       ],
       "links_in": [
+        "who-is-speaking",
         "reviews-on-the-record",
         "the-editors-channel",
         "three-policies-for-an-agent",
@@ -19581,6 +19964,7 @@
         "the-agent-team-as-it-runs"
       ],
       "links_in": [
+        "who-is-speaking",
         "reviews-on-the-record",
         "policy-as-code-needs-a-policy-first",
         "four-frameworks-one-agent",
@@ -20381,7 +20765,7 @@
             "id": "ask",
             "label": "Dark mode!",
             "kind": "example",
-            "summary": "The first reaction to the wire from outside: a reader on WhatsApp, two words, which became the owner's ask for five themes like VoiceDebrief's."
+            "summary": "The first reaction to the wire from outside: a reader on WhatsApp, two words, which became Dinis's ask for five themes like VoiceDebrief's."
           },
           {
             "id": "five",
@@ -24669,6 +25053,7 @@
         "i-miss-it"
       ],
       "links_in": [
+        "the-briefs-so-far",
         "the-vault-opened",
         "the-wire-as-a-graph",
         "every-link-points-back",
@@ -24901,6 +25286,7 @@
         "two-agents-one-vault"
       ],
       "links_in": [
+        "the-briefs-so-far",
         "four-frameworks-one-agent",
         "every-link-points-back",
         "the-vault-crosses-chrome-profiles",

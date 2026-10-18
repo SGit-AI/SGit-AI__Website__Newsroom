@@ -104,6 +104,7 @@ Graphs & knowledgeSite & engineering[This article as a graph →](graphs.md#sear
 
 ### Continued by
 
+- [The briefs so far: sixty-five things this newsroom has asked of itself, what is built, and where each next session starts](the-briefs-so-far.md) Sixty-five briefs this newsroom has asked of itself, audited from the code: 11 built, 21 partly, 32 not, each open one with a session brief.
 - [A section for publishers: where to send someone new to this newsroom, and a site that keeps itself current](a-section-for-publishers.md) Where to send a publisher new to the newsroom: a section placed by rule, with features as they ship, that keeps itself current as the site changes.
 
 [All articles](index.md) · [All graphs](graphs.md)

@@ -14,7 +14,7 @@ file, so it never reaches the site. The site's description of the same thing, fo
 - **One page, one argument, with the figures, the data and the links to check it.** An article argues one
   point. Everything it claims can be checked from the page, its links or the data behind it. That is the
   site's own test for the Journalist: a claim a reader cannot check is a failure.
-- **The voice is the owner's, in the first person, and it comes from a memo.** Most articles start as a
+- **The voice is Dinis's, in the first person, and it comes from a memo.** Most articles start as a
   voice memo of Dinis Cruz, kept in the order he thought it, with the phrases he reached for first. The
   agent writes it as him. An article an agent writes about its own work carries the agent's name instead.
 - **Plain words, British spelling, no em-dashes, and one banned word.** The wording rules are short and
@@ -44,15 +44,15 @@ There are two kinds of author:
 | Dinis Cruz | `author: Dinis Cruz`, `author_url: about/index.html` | A voice memo or a message of his, written by the agent in his voice. Eight of the nine. |
 | An agent under its own name | `author: newsroom.ux`, `author_url: https://newsroom.sgit.ai/about/newsroom-ux.html` | The agent writing about what it built, in the first person as the agent, with the commits and tests to check it against. One of the nine. The page `author_url` names is written by `admin/build/agents.py`. |
 
-Both say who holds the editorial responsibility, and it is always the owner.
+Both say who holds the editorial responsibility, and it is always Dinis.
 
 ## The voice
 
 What the nine articles do, counted from their text, and what to copy.
 
 **First person, and honest about where it stands.** "I think", "my hypothesis", "I remember", "I could not
-find who said it, so I will not put a name to it". The owner's articles use *I* 13 to 35 times each. *We* is
-the owner and the agents together: "so we counted", "we noticed". The agent's own article uses neither
+find who said it, so I will not put a name to it". Dinis's articles use *I* 13 to 35 times each. *We* is
+Dinis and the agents together: "so we counted", "we noticed". The agent's own article uses neither
 about itself in the body except where it did the work: "the first release put the collapse at 1199".
 
 **A memo's order, kept.** The article follows the path the thinking took, including the turn that looks
@@ -75,7 +75,7 @@ colon, never by an em-dash. The nine articles use 10 to 43 semicolons each and n
 **The move the argument makes.** Say what the other side gets right before adding what is missing: "The
 post's record of 2026 is mostly right ... and I want to add the piece I think is missing". Turn the
 question round: "not whether there is a human in the loop; which outputs need one". Then the test, with
-its origin named: Bezos's doors, the SRE book's 70%. Then where the owner actually is, with the counts:
+its origin named: Bezos's doors, the SRE book's 70%. Then where Dinis actually is, with the counts:
 fourteen releases in a day, every email still waits.
 
 **Named sources, dated; private people unnamed.** A public post is named and linked with its date. A private
@@ -87,6 +87,31 @@ here to my memory, not to a name".
 for us). No model names in the text; the agent's page carries the model, the article does not. No
 "obviously" where the point is the argument. No claim about the world that the article cannot back: not
 "nobody has", "the first to", "never scaled".
+
+## Who is speaking
+
+Every article is in one of three voices, and the byline shows which (v0.12.109;
+[who is speaking](https://newsroom.sgit.ai/articles/who-is-speaking.html)):
+
+- **Dinis, through an agent.** Almost every article: his memo or message, written up in his voice by the newsroom's
+  agents, under his name, with the editorial responsibility his. *I* is Dinis. The byline adds *with the newsroom's
+  agents*, and the sources end with who wrote it up.
+- **An agent, in its own voice.** An agent writing about work it did, in the first person as the agent, with the
+  commits and tests to check it against: `author: newsroom.<name>` and its page as `author_url`. The byline carries
+  an agent mark. *I* is the agent; the editorial responsibility is still Dinis's.
+- **Dinis, alone.** Written and published by him with no agent. None yet; it will need its own mark.
+
+Never claim Dinis did something an agent did, or the reverse. *We* is Dinis and the agents, only where they did the
+thing together.
+
+## Revising published articles
+
+Changing an article after it is published is normal and expected: when a fact changes, a source moves, a reviewer
+finds something, or the understanding improves, the article is updated. Dinis's words: what matters is getting it
+right. Every change is kept, because the build replays each article's history into its version pages, where any two
+versions can be compared. So: change the article in its source, say why in the release notes (which article, what
+changed, and why), restamp the section summaries the change made stale, and answer any review finding it fixes. The
+one limit is the articles imported from sgit.ai: they are changed there, or moved here first.
 
 ## The wording rules
 
@@ -111,6 +136,9 @@ not publish.
    show and they cost it credibility. Say "a good example", "a useful test", or show why it matters.
    `admin/build/wording.py` flags them, and the leak scan fails a commit that adds one; a phrase reviewed and
    kept (a ranking inside a stated set) goes in `admin/build/wording-allow.txt`.
+9. **Name people; not "the owner".** When an agent writes about who asked, decided or said something, it names
+   them: "Dinis asked for five themes", "my last article ended with a question for Dinis". Use a role, *the editor*
+   or *the publisher*, only where the role is the point. As more people join, the record should say who said what.
 
 And three the desk keeps:
 
@@ -171,7 +199,7 @@ exactly that).
 
 **The summary** is the abstract and the LinkedIn post: 220 to 360 words, first person, the whole argument
 with its numbers, the origin ("Someone shaping a roundtable in London asked me this week ...") and the
-place the owner has got to. Written so that a reader who stops there has the article.
+place Dinis has got to. Written so that a reader who stops there has the article.
 
 **The lead figure** comes first, before In short. Its caption describes the figure in full, as a sentence
 or three, so the caption stands on its own in the markdown twin and for a reader who cannot see it.
@@ -182,7 +210,7 @@ publish an article that continues an earlier one, add the note to the earlier on
 
 **In short** is six to ten bullets. Each opens with the claim in bold, as a sentence with a full stop, and
 follows with the figure or the reason. The first bullet is the finding; the last is what was built, what
-is proposed, or how far the owner has got.
+is proposed, or how far Dinis has got.
 
 **The body** is six to thirteen sections, each with a plain heading that says what it argues ("Email is a
 one-way door, and still an explorer") and a short anchor. The order is the memo's. A figure sits where its
@@ -242,6 +270,12 @@ the decision as two axes, the six steps as a timeline. A figure that only decora
 A screenshot of the site is taken from the built site at a named width, and its caption says the width and
 the theme.
 
+**Sizes.** A figure fills the column unless its line gives a size before the kind:
+`!shot <file> | images/ | <caption> | small|narrow|medium | <kind>` (42%, 62% or 78% of the column; full width on a
+phone). Give one to any figure narrower than the column (about 915 pixels) or taller than it is wide, or its text
+comes out larger than the article's own. The size applies to the image only: the caption always keeps the column's
+full width. `python3 admin/build/figures.py` lists figures that probably need a size.
+
 ## The graph
 
 Beside every article, `graphs/<slug>.json`, read by the card, the threads, the wire and the desk:
@@ -292,13 +326,13 @@ have it folded to a paragraph or a line, or hidden (`assets/reader/folds.js`), s
 
 1. **Read the record first.** The articles the new one builds on, in full, with their graphs, before searching
    outside. The terms are defined there, and a new article links each the first time it uses it, as
-   `/articles/<slug>.html`. The owner's articles link 7 to 14 earlier articles each.
+   `/articles/<slug>.html`. Dinis's articles link 7 to 14 earlier articles each.
 2. **Then outside, and date everything.** A source is linked and dated in the text or at the end; a figure
    from it is quoted with its exact words.
 3. **Count with a script, and keep it.** The link counts in *Every link points back* came from a parser over
    the article sources; the release counts from `git log`. Data an article was written from goes in
    `data/<slug>__<name>.json` and the sources section names it.
-4. **Keep the memo's phrases.** When the owner said it in a way he would use, use that. The article is his.
+4. **Keep the memo's phrases.** When Dinis said it in a way he would use, use that. The article is his.
 5. **Say what was not done.** If part of the brief is a proposal, the limits say so; if a count could miss
    things, say how.
 
@@ -320,7 +354,7 @@ An article is a release. The steps, as the last nine did them:
    `personas.py`, `lists.py`, `passkey_lab.py`, `wire.py`, `api_map.py`, `archive.py`, `engineering.py`,
    `chrome.py`, `gen_sitemap.py`, `gen_llms_full.py`, then `node admin/build/validate.js`. Running them
    twice changes nothing.
-6. Commit as `site vX.Y.Z: @newsroom.writer: <title>` and push the branch. The owner reads the article after
+6. Commit as `site vX.Y.Z: @newsroom.writer: <title>` and push the branch. Dinis reads the article after
    it is live, and a correction is a new version, with its diff page.
 
 The newsletter is written the same way, in `../newsletter/NNN-YYYY-MM-DD.md`, in the format of sgit.ai's
@@ -329,7 +363,7 @@ publishes it.
 
 ## The checklist
 
-Before the release, read the article once as the owner would and once as the validator would.
+Before the release, read the article once as Dinis would and once as the validator would.
 
 - The title has the hook, the colon, and the argument; the slug is the hook.
 - The summary stands alone, in the first person, with the numbers.

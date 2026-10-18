@@ -10,7 +10,7 @@ tags: journalism, intelligence, observation, events, ontology, data-centers, vau
 status: published
 ---
 
-!shot ji-desk.webp | images/ | The observation desk's cover, in the deck's style: the headline, and a synthetic data-center campus drawn in pen and ink, with orange markers on the power station, the data halls, the water tower, the town and the reservoir. Every marker in the vault opens a record. | comparison
+!shot ji-desk.webp | images/ | The observation desk's cover, in the deck's style: the headline, and a synthetic data-center campus drawn in pen and ink, with orange markers on the power station, the data halls, the water tower, the town and the reservoir. Every marker in the vault opens a record. | medium | comparison
 
 !trail mesa-ranch
 
@@ -57,7 +57,7 @@ The synthetic records were written to behave like real ones: they disagree with 
 - **The schedule slipped.** The developer said in April that the first 1 GW would be online in the second half of 2027; after the acquisition, the new owner's investor presentation says the first half of 2028, while the power station still says 2027.
 - **The water question stayed open.** The company says it will cool with non-potable water; the water district deferred a vote on three wells because nobody has said how much water a year the campus will use.
 
-!shot ji-observations.webp | images/ | Every observation adds to what the newsroom knows: four headline observations as folders, January to September 2026, and the full history below, each with time, subject, change, event type and the records it rests on. | comparison
+!shot ji-observations.webp | images/ | Every observation adds to what the newsroom knows: four headline observations as folders, January to September 2026, and the full history below, each with time, subject, change, event type and the records it rests on. | medium | comparison
 
 Each of those is an observation with its evidence attached, and two became alerts and one a draft article in the tracker. None of them needed a model to be clever. They needed the atlas to say what a change is, the ontology to say what it changes, and the history to say what was known before.
 
