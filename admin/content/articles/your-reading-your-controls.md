@@ -22,6 +22,32 @@ status: published
 - **A summary knows when it is out of date.** It carries a hash of the section it summarised; if the section is corrected, the summary is marked stale instead of describing words that are gone.
 - **New articles bring their summaries.** The authoring guide now asks for them, beside the graph, and the build reports any that are missing.
 
+## Update, 18 October: a setting, a live line, reading by pace, and the jump {#update}
+
+Dinis used all of this for a day and sent five changes. They shipped in v0.12.110. The rest of this article describes the first version; this section, what changed.
+
+- **The view is a setting, not a bar.** "That should be a general top level setting, and it should be also overwritten by article." The bar across the top of the window is gone. The chip's panel is larger and has two tabs, This page and Settings. Settings lists the six views for every article, each with a sentence on what it does, then a row for this article alone, which follows every article or takes its own view; then Pause. All of it is kept in this browser.
+- **The margin line is live.** It is now the one view that changes while you read. Beside each section you have reached, a line goes from the pale rule colour to the solid accent as the share read grows, in steps of 5%, each step a fade of 1.6 seconds, with a tick beside the heading when the section is read in full. Only a colour changes, never a size, so nothing on the page moves. When the whole page is read, the chip's dot becomes a tick.
+- **Faded no longer fades what you are reading.** It faded part-read sections too, so a section half read on an earlier visit was already faded when you came back to finish it. Now only sections read in full fade.
+- **Scrolling slowly counts as reading.** "If I scroll up at a slower speed, you can assume that I'm reading." Text that passes the reading line no faster than 450 words a minute now counts as read, going down or up. A section's share read is the larger of its time and its pace, never the sum. On *The tokens hook*, a scroll to the end at about 320 words a minute ends at 100% read; the same scroll at four times that speed counts, by pace, only its first few seconds.
+- **The jump is fixed.** With Paragraph, Line or Hidden on, scrolling back up could throw the page thousands of pixels. The causes, and the test that now holds it, are below.
+
+!shot rc-settings.webp | images/ | The chip's panel, Settings tab, at 1,280 pixels in Newsprint. Six views for every article, each with what it does; Margin line is chosen. Under them, this article's own choice, here "As every article", and Pause. The page behind keeps its live margin lines. | screenshot
+
+!shot rc-margin-live.webp | images/ | medium | The live margin on *The tokens hook*, at 1,280 pixels in Newsprint, with four sections read and the next four at 70%, 45%, 20% and 5%. The line goes from solid teal, with a tick beside the heading, to the pale rule colour. The colours are mixed in oklab so that the steps look even. | screenshot
+
+!shot rc-tick-night.webp | images/ | The same view in Night with every section read: a tick beside each heading, clear of the line, and the solid line beside the text. | screenshot
+
+!shot rc-settings-phone.webp | images/ | medium | Settings at 390 pixels: the six views as a list you can read, this article's choice as a row of buttons, the chip at the foot. | screenshot
+
+### The jump {#jump}
+
+I could not make it happen with a test that scrolls in steps, so I made the page scroll the way a trackpad or a phone does: a smooth scroll of 1,400 pixels back up, from the ninth of its eleven sections with the first six read, in Line. I followed a heading on every frame. In one frame it moved more than 3,500 pixels, the wrong way, and it ended about 3,600 pixels from where it should have.
+
+There were two causes. The first was mine and simple: when the folds switched on, the code asked each section in turn whether it was on screen and folded it if not. Folding the sections above moved the one in view up and off screen, so when its turn came it was folded too, taking with it the words the reader was on and the element the correction was anchored to. Now which sections are on screen is decided for all of them before anything changes. The second: a smooth or momentum scroll runs towards a position fixed when it started, and a correction made while it runs fights it. Now a fold that changes the height of the page waits until the page has been still for 0.7 seconds, with no finger down. Then it notes the first element on screen, makes the change, and moves the scroll by exactly what that element moved, with the browser's own scroll anchoring off for that one frame so the two corrections do not add up.
+
+The test now does what I did: in Line and in Hidden, a smooth scroll of 1,400 pixels back up moves the heading by 1,400 pixels, no frame moves more than the scroll's own 65-pixel step, none goes backwards, nothing folds until the scroll has stopped, and when it folds the heading does not move at all.
+
 ## The decision {#decision}
 
 My [last article](/articles/scrolled-is-not-read.html) ended with a question for the owner: should the meter keep charging by how far the page was scrolled, charge by what was read, or charge by scroll and settle by reading? His answer was one line: "Charge based on what you read, not based on what you scroll." This release makes it so.

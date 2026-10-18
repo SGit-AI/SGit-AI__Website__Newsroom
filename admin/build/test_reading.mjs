@@ -58,7 +58,7 @@ const dwell = async (pg, secs, active = true) => { for (let t = 0; t < secs; t +
   check(r.sections.length >= 8 && r.sections[0].id === 'top', `the article is read as its sections (${r.sections.length}, from "${r.sections[0].label}")`)
   check(r.scrolled > 0.8 && r.read < 0.05, `a fast scroll: ${Math.round(r.scrolled * 100)}% scrolled, ${Math.round(r.read * 100)}% read`)
   const chip = await pg.evaluate(() => document.querySelector('.read-chip').textContent)
-  check(/^[●‖]?Scrolled\s*\d+%\s*Read\s*\d+%\s*£\d\.\d\d$/.test(chip) && !/left/.test(chip), `the chip says scrolled, read and this page's cost, and no balance (${chip})`)
+  check(/^[●‖✓]?Scrolled\s*\d+%\s*Read\s*\d+%\s*£\d\.\d\d$/.test(chip) && !/left/.test(chip), `the chip says scrolled, read and this page's cost, and no balance (${chip})`)
   await scrollTo(pg, 0); await pg.clock.runFor(1500)
   const up = await R(pg)
   check(up.scrolled >= r.scrolled, 'scrolling back to the top does not lower scrolled')
@@ -178,38 +178,134 @@ let sec, needMs
   await pg.close()
 }
 
-{ // what has been read, on the page: never while reading forward; on after a scroll back up; on at once on a return (card 082)
+{ // what has been read, on the page: never while reading forward; a pass after a scroll back up, once the page is still; on a return (cards 082, 084)
   const pg0 = await ctx.newPage(); await pg0.goto(B); await pg0.evaluate(() => localStorage.clear()); await pg0.close()
-  let pg = await open()
+  let pg = await (async () => { const p = await ctx.newPage(); p.on('pageerror', e => errors.push(e.message)); await p.addInitScript(() => localStorage.setItem('sgit.reading.view', 'line')); await p.clock.install(); await p.goto(B + PATH.slice(1), { waitUntil: 'networkidle' }); await p.clock.runFor(1500); return p })()
   const secs = (await R(pg)).sections
   for (const s of secs.slice(0, 4)) await pg.evaluate(id => window.SgitReading.mark(id, 'read'), s.id)
-  await pg.evaluate(() => window.SgitFolds.setMode && localStorage.setItem('sgit.reading.view', 'line'))
   const H = await pg.evaluate(() => document.documentElement.scrollHeight)
-  for (let i = 1; i <= 6; i++) { await scrollTo(pg, Math.round(H * i / 10)); await pg.clock.runFor(600) }
-  check(await pg.evaluate(() => !window.SgitFolds.active() && !document.querySelector('.rf-fold, .rf-m')), 'reading forward: nothing changes on the page')
-  const y = await pg.evaluate(() => window.scrollY)
-  await scrollTo(pg, y - 1200); await pg.clock.runFor(2500)
-  check(await pg.evaluate(() => window.SgitFolds.active() && !document.querySelector('.read-bar').hidden), 'scrolling back up turns it on, with the bar at the top')
+  for (let i = 1; i <= 6; i++) { await scrollTo(pg, Math.round(H * i / 10)); await pg.clock.runFor(1500) }
+  check(await pg.evaluate(() => !window.SgitFolds.active() && !document.querySelector('.rf-fold, .rf-gone')), 'reading forward: nothing folds, however long the reader stops')
+  let y = await pg.evaluate(() => window.scrollY)
+  // the reader scrolls back up and keeps scrolling: nothing changes while the page moves
+  for (let i = 1; i <= 8; i++) { await scrollTo(pg, y - i * 150); await pg.clock.runFor(300) }
+  check(await pg.evaluate(() => !document.querySelector('.rf-fold')), 'scrolling back up: nothing changes while the page is still moving')
+  await pg.clock.runFor(1200)
+  check(await pg.evaluate(() => window.SgitFolds.active() && document.querySelectorAll('.rf-fold').length > 0 && !document.querySelector('.read-bar')), 'once the page is still, the sections read above fold, and no bar appears')
   await pg.close()
   // a return visit, in each view
   for (const [mode, expect] of [['full', 'nothing'], ['margin', 'marks'], ['fade', 'faded'], ['para', 'folds'], ['line', 'folds'], ['hide', 'marker']]) {
     pg = await ctx.newPage(); pg.on('pageerror', e => errors.push(e.message))
     await pg.addInitScript(m => localStorage.setItem('sgit.reading.view', m), mode)
     await pg.clock.install(); await pg.goto(B + PATH.slice(1), { waitUntil: 'networkidle' }); await pg.clock.runFor(2500)
-    const r = await pg.evaluate(() => ({ active: window.SgitFolds.active(), folds: document.querySelectorAll('.rf-fold:not(.rf-hidden-run)').length, run: document.querySelectorAll('.rf-hidden-run').length, gone: document.querySelectorAll('.rf-gone').length, marks: document.querySelectorAll('.rf-m.rf-read').length, faded: document.querySelectorAll('.rf-fade').length, line: (document.querySelector('.rf-fold .rf-l') || {}).textContent || '', para: (document.querySelector('.rf-fold .rf-p') || {}).textContent || '', bar: document.querySelector('.read-bar .rb-t').textContent }))
-    const ok = { nothing: r.folds + r.marks + r.faded + r.gone === 0, marks: r.marks > 0 && r.gone === 0, faded: r.faded > 0 && r.gone === 0, folds: r.folds === 4 && r.gone > 0 && (mode === 'line' ? r.line.split(' ').length <= 12 : r.para.split(' ').length >= 10), marker: r.run === 1 && r.folds === 0 && r.gone > 0 }[expect]
-    check(r.active && ok && /from your last visit/.test(r.bar), `a return visit in ${mode}: ${expect} (${r.folds} folds, ${r.marks} marks, ${r.faded} faded, ${r.gone} hidden)${mode === 'line' ? ': "' + r.line + '"' : ''}`)
+    const r = await pg.evaluate(() => ({ folds: document.querySelectorAll('.rf-fold:not(.rf-hidden-run)').length, run: document.querySelectorAll('.rf-hidden-run').length, gone: document.querySelectorAll('.rf-gone').length, marks: document.querySelectorAll('.rf-m.rf-done').length, faded: document.querySelectorAll('.rf-fade').length, line: (document.querySelector('.rf-fold .rf-l') || {}).textContent || '', para: (document.querySelector('.rf-fold .rf-p') || {}).textContent || '' }))
+    const ok = { nothing: r.folds + r.marks + r.faded + r.gone === 0, marks: r.marks > 0 && r.gone === 0 && r.faded === 0, faded: r.faded > 0 && r.gone === 0, folds: r.folds === 4 && r.gone > 0 && (mode === 'line' ? r.line.split(' ').length <= 12 : r.para.split(' ').length >= 10), marker: r.run === 1 && r.folds === 0 && r.gone > 0 }[expect]
+    check(ok, `a return visit in ${mode}: ${expect} (${r.folds} folds, ${r.marks} marks, ${r.faded} faded, ${r.gone} hidden)${mode === 'line' ? ': "' + r.line + '"' : ''}`)
     if (mode === 'line') {
-      await pg.click('.rf-fold .rf-show')
+      await pg.click('.rf-fold .rf-show'); await pg.clock.runFor(300)
       check(await pg.evaluate(() => document.querySelectorAll('.rf-fold:not(.rf-hidden-run)').length === 3), 'Show opens a folded section where it is')
-      await pg.click('.read-bar [data-view="hide"]')
-      check(await pg.evaluate(() => localStorage.getItem('sgit.reading.view') === 'hide' && document.querySelectorAll('.rf-hidden-run').length === 1), 'the bar changes the view, and the choice is kept')
+      // the view is a setting, in the panel: for every article, and for this one
+      await pg.click('.read-chip'); await pg.click('.read-map [data-tab="settings"]')
+      check(await pg.evaluate(() => document.querySelectorAll('.read-map .rv-opt[data-scope="all"]').length === 6 && document.querySelector('.read-map .rv-opt[data-view="line"]').getAttribute('aria-checked') === 'true'), 'Settings: the six views for every article, with the current one chosen')
+      await pg.click('.read-map [data-scope="page"][data-view="hide"]'); await pg.clock.runFor(300)
+      check(await pg.evaluate(p => localStorage.getItem('sgit.reading.view') === 'line' && JSON.parse(localStorage.getItem('sgit.reading.views'))[p] === 'hide' && document.querySelectorAll('.rf-hidden-run').length === 1, PATH), 'this article alone can have its own view, kept in this browser')
+      await pg.reload({ waitUntil: 'networkidle' }); await pg.clock.runFor(2500)
+      check(await pg.evaluate(() => window.SgitFolds.mode() === 'hide' && window.SgitFolds.allMode() === 'line'), 'and it holds across a reload, while every other article keeps the general one')
+      await pg.click('.read-chip'); await pg.click('.read-map [data-tab="settings"]')
+      await pg.click('.read-map [data-scope="page"][data-view=""]'); await pg.clock.runFor(300)
+      check(await pg.evaluate(() => window.SgitFolds.mode() === 'line' && !localStorage.getItem('sgit.reading.views') && document.querySelectorAll('.rf-fold:not(.rf-hidden-run)').length >= 3), '"As every article" takes the override away')
+      await pg.click('.read-map [data-scope="all"][data-view="para"]'); await pg.clock.runFor(300)
+      check(await pg.evaluate(() => localStorage.getItem('sgit.reading.view') === 'para' && document.querySelector('.rf-fold .rf-p')), 'choosing for every article changes this one, which has no view of its own')
       await pg.evaluate(() => localStorage.setItem('sgit.reading.view', 'line'))
+    }
+    if (mode === 'fade') {
+      const part = await pg.evaluate(() => window.SgitReading.sections().filter(s => s.state === 'part').length)
+      check(await pg.evaluate(() => window.SgitReading.sections().every(s => s.state === 'read' || !s.nodes.some(n => n.classList.contains('rf-fade')))), `Faded fades only sections read in full, never one part read (${part} part read)`)
     }
     await pg.close()
   }
   const sum = JSON.parse(fs.readFileSync(path.join(ROOT, `articles/summaries/${SLUG}.json`), 'utf8'))
   check(sum.sections.length >= 8 && sum.sections.every(s => s.line && s.para), `the article's summaries: a line and a paragraph for each of its ${sum.sections.length} sections (${sum.sections.filter(s => s.by !== 'extract').length} written, ${sum.sections.filter(s => s.by === 'extract').length} extracted)`)
+}
+
+{ // the margin is live: a colour that follows the share read, from pale to solid, with a tick when read (card 084)
+  const pg0 = await ctx.newPage(); await pg0.goto(B); await pg0.evaluate(() => localStorage.clear()); await pg0.close()
+  const pg = await open()
+  check(await pg.evaluate(() => window.SgitFolds.mode() === 'margin'), 'the margin is the view when nothing is chosen')
+  const id = await pg.evaluate(() => { const h = [...document.querySelectorAll('main > h2')][3]; const r = h.getBoundingClientRect(); window.scrollTo({ top: window.scrollY + r.top - 140, behavior: 'instant' }); return h.id })
+  const pc = () => pg.evaluate(id => { const h = document.getElementById(id); return { p: parseInt(h.style.getPropertyValue('--rf-p') || '-1', 10), m: h.classList.contains('rf-m'), done: h.classList.contains('rf-done'), far: [...document.querySelectorAll('main > h2')].slice(-1)[0].classList.contains('rf-m') } }, id)
+  await pg.clock.runFor(1500)
+  const a = await pc()
+  await dwell(pg, 20); const b = await pc()
+  await dwell(pg, 200); const c = await pc()
+  check(a.m && a.p >= 0 && a.p < b.p && b.p < 100 && !b.done, `the line beside the section follows what is read as it is read (${a.p}% then ${b.p}%), in steps of 5% (${b.p % 5 === 0})`)
+  check(c.p === 100 && c.done, 'read in full: the solid line and the tick')
+  check(!a.far, 'a section not reached yet has no line')
+  check(await pg.evaluate(() => /color-mix/.test(getComputedStyle(document.querySelector('.rf-m'), '::before').backgroundColor) || getComputedStyle(document.querySelector('.rf-m'), '::before').transitionDuration !== '0s'), 'the colour moves slowly, not in jumps')
+  await pg.close()
+}
+
+{ // a slow scroll is reading: the text that passes no faster than the reading pace counts, a fast one does not (card 084)
+  const pg0 = await ctx.newPage(); await pg0.goto(B); await pg0.evaluate(() => localStorage.clear()); await pg0.close()
+  const pg = await open()
+  const [H, vh, words] = await pg.evaluate(() => [document.documentElement.scrollHeight, innerHeight, window.SgitReading.sections().reduce((a, s) => a + s.words, 0)])
+  // a reader scrolls by words, not pixels: a little faster than the 300 words a minute the time asks for, slower
+  // over dense text than past a figure; each second the page moves by the height of about 5.3 words at the line
+  const byWords = (wpm) => pg.evaluate(wpm => {
+    const vh = innerHeight, H = document.documentElement.scrollHeight, y = scrollY, at = y + vh * Math.min(1, y / Math.max(1, H - vh))
+    const s = window.SgitReading.sections().find(s => { const a = s.nodes[0].getBoundingClientRect(), b = s.nodes[s.nodes.length - 1].getBoundingClientRect(); return a.top + y <= at && b.bottom + y >= at })
+    let pxPerWord = 4
+    if (s) { const a = s.nodes[0].getBoundingClientRect(), b = s.nodes[s.nodes.length - 1].getBoundingClientRect(); pxPerWord = (b.bottom - a.top) / s.words }
+    window.scrollTo({ top: y + Math.max(2, pxPerWord * wpm / 60 / (1 + vh / Math.max(1, H - vh))), behavior: 'instant' })
+    return scrollY + vh >= H - 2
+  }, wpm)
+  let steps = 0
+  while (!(await byWords(320)) && steps < 2000) { steps++; if (steps % 5 === 0) await pg.mouse.move(300 + steps % 40, 400); await pg.clock.runFor(1000) }
+  await pg.clock.runFor(1500)
+  const r = await R(pg)
+  check(r.read >= 0.995, `scrolled slowly to the end at about 320 words a minute: ${Math.round(r.read * 100)}% read`)
+  check(r.sections.every(s => s.paced === s.words), `every section has been passed at a reading pace (${r.sections.map(s => Math.round(s.paced / s.words * 100)).join(', ')}%)`)
+  check(await pg.evaluate(() => { const c = document.querySelector('.read-chip'); return c.classList.contains('is-done') && /^✓/.test(c.textContent) }), 'at the end, 100% read, and the chip says so with a tick')
+  await pg.evaluate(() => window.SgitReading.reset()); await pg.clock.runFor(500)
+  // the same article scrolled through at four times the pace
+  await scrollTo(pg, 0); await pg.clock.runFor(1000)
+  for (let i = 0; !(await byWords(1280)) && i < 2000; i++) { if (i % 5 === 0) await pg.mouse.move(300 + i % 40, 400); await pg.clock.runFor(1000) }
+  const f = await R(pg)
+  check(f.read < 0.3 && f.sections.reduce((a, s) => a + s.paced, 0) <= 120, `scrolled at four times the pace: by pace no more than the first few seconds, ${Math.round(f.read * 100)}% read by time in view (paced ${f.sections.map(s => s.paced).join(",")}; ms ${f.sections.map(s => Math.round(s.ms / 1000)).join(",")})`)
+  await pg.evaluate(() => window.SgitReading.reset()); await pg.clock.runFor(60000); await pg.mouse.move(200, 200)
+  await scrollTo(pg, Math.round(H * 0.6)); await pg.clock.runFor(1500)
+  check((await R(pg)).sections.every(s => s.paced === 0), 'a jump of more than a window (a link, the map) counts nothing')
+  await pg.evaluate(() => { window.SgitReading.reset(); window.SgitReading.setPaused(true) }); await pg.clock.runFor(60000)
+  for (let i = 1; i <= 30; i++) { await byWords(320); await pg.mouse.move(300 + i, 400); await pg.clock.runFor(1000) }
+  check((await R(pg)).sections.every(s => s.paced === 0 && s.ms === 0), 'paused, a slow scroll counts nothing either')
+  await pg.evaluate(() => window.SgitReading.setPaused(false))
+  await pg.close()
+}
+
+{ // the words in view never move: a smooth scroll back up, in real time, with the views folding the sections above (card 084)
+  for (const mode of ['line', 'hide']) {
+    const c2 = await browser.newContext({ viewport: { width: 1280, height: 800 } })
+    const pg = await c2.newPage(); pg.on('pageerror', e => errors.push(e.message))
+    await pg.addInitScript(m => { if (!localStorage.getItem('sgit.reading.view')) localStorage.setItem('sgit.reading.view', m) }, mode)
+    await pg.goto(B + PATH.slice(1), { waitUntil: 'networkidle' }); await pg.waitForTimeout(600)
+    const ids = await pg.evaluate(() => window.SgitReading.sections().map(s => s.id))
+    for (const id of ids.slice(0, 6)) await pg.evaluate(id => window.SgitReading.mark(id, 'read'), id)
+    await pg.evaluate(id => window.scrollTo({ top: document.getElementById(id).getBoundingClientRect().top + scrollY - 100, behavior: 'instant' }), ids[8])
+    await pg.waitForTimeout(1200)
+    const f = await pg.evaluate(async id => {
+      const h = document.getElementById(id), out = []
+      window.scrollBy({ top: -1400, behavior: 'smooth' })
+      const t0 = performance.now()
+      await new Promise(res => { (function step() { out.push([h.getBoundingClientRect().top, document.querySelectorAll('.rf-fold').length]); if (performance.now() - t0 < 3500) requestAnimationFrame(step); else res() })() })
+      return out
+    }, ids[7])
+    let worst = 0, back = 0
+    for (let i = 1; i < f.length; i++) { const d = f[i][0] - f[i - 1][0]; worst = Math.max(worst, Math.abs(d)); if (d < -1) back++ }
+    const at = f.findIndex(x => x[1] > 0), moving = f.slice(0, Math.max(at, 1)).some((x, i, a) => i && Math.abs(x[0] - a[i - 1][0]) > 0.5)
+    check(at > 0 && worst < 150 && back === 0 && Math.abs(f[f.length - 1][0] - (f[0][0] + 1400)) < 3, `${mode}: a smooth scroll back up of 1400px moves the words in view by 1400px and nothing more (largest step ${Math.round(worst)}px, ${back} steps the wrong way, folded at frame ${at})`)
+    check(moving && Math.abs(f[at][0] - f[at - 1][0]) < 1, `${mode}: the sections above fold after the scroll has stopped, and the words in view stay where they are`)
+    await c2.close()
+  }
 }
 
 { // the meter charges for what was read (sg-meter v1.5.0, card 080)

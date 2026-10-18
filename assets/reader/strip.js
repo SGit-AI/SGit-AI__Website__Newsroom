@@ -1,4 +1,4 @@
-/* newsroom.sgit.ai: the reading strip, v3 (cards 066, 073, 081). Loaded by the nav on every page that carries the
+/* newsroom.sgit.ai: the reading strip, v4 (cards 066, 073, 081, 084). Loaded by the nav on every page that carries the
  * meter (admin/build/chrome.py); runs only where the page's <sg-meter view="page"> has a kind that is charged,
  * which is the imported articles, issues, notes and collections.
  *
@@ -11,6 +11,17 @@
  *             a second in the band is shared between the sections in it by how much of the band each fills.
  *             A section counts as read when its time reaches its words at READ_WPM, the top of the normal
  *             range for silent reading of non-fiction (Brysbaert 2019: average 238, range 175 to 300).
+ *             v4 adds a second way to read (card 084): PACE. The text that passes the reading line while the
+ *             reader scrolls counts as read when it passes no faster than PACE_WPM words a minute; a reader who
+ *             scrolls slowly through an article, either way, has read it. The reading line runs from the top of
+ *             the page when scrolled to the top to its foot when scrolled to the foot, so a slow scroll from top
+ *             to bottom passes every word. The pace is held by a budget: words are earned at PACE_WPM while the
+ *             reader is attended (as above), up to PACE_CAP (about eight seconds of it: reading a screen and then
+ *             scrolling is the time measure's; this one is for the steady scroll), and spent as text passes the
+ *             line. A movement that
+ *             passes more text than the budget holds is faster than reading: none of it counts and the budget is
+ *             spent, so a fast scroll counts nothing, not a share. A jump of more than a window (a link, a key)
+ *             counts nothing either. A section's read is the larger of its time and its pace, never the sum.
  *
  * Both are word-weighted over the page. Two tabs on one page add up: each write re-reads the store and adds only
  * what this tab measured since its last write.
@@ -34,7 +45,7 @@
   var main = document.querySelector('main')
   if (!main) return
 
-  var READ_WPM = 300, IDLE = 60000, TICK = 1000, SAVE = 5000, KEY = 'sgit.reading.v1', PAUSE_KEY = 'sgit.reading.paused', MAX_PAGES = 400
+  var READ_WPM = 300, PACE_WPM = 450, PACE_CAP = 60, IDLE = 60000, TICK = 1000, SAVE = 5000, KEY = 'sgit.reading.v1', PAUSE_KEY = 'sgit.reading.paused', MAX_PAGES = 400
   var BAND_TOP = 0.15, BAND_BOTTOM = 0.85
   var cfg = { storageKey: 'sgit.meter.v1', symbol: '£' }
   try { var el = document.getElementById('sg-meter-config'); if (el) cfg = Object.assign(cfg, JSON.parse(el.textContent)) } catch (e) { /* defaults */ }
@@ -56,7 +67,7 @@
     else if (!/^(SCRIPT|STYLE|SG-METER)$/.test(n.tagName) && !n.classList.contains('crumb')) cur.nodes.push(n)
   }
   if (cur.nodes.length) sections.push(cur)
-  sections.forEach(function (s) { s.words = s.nodes.reduce(function (a, n) { return a + words(n.textContent) }, 0); s.ms = 0; s.seen = 0; s.pending = 0; s.mark = '' })
+  sections.forEach(function (s) { s.words = s.nodes.reduce(function (a, n) { return a + words(n.textContent) }, 0); s.ms = 0; s.seen = 0; s.pending = 0; s.paced = 0; s.mark = '' })
   sections = sections.filter(function (s) { return s.words > 0 })
   if (!sections.length) return
   var total = sections.reduce(function (a, s) { return a + s.words }, 0)
@@ -67,13 +78,13 @@
     return { top: a.top, bottom: Math.max(a.bottom, b.bottom) }
   }
   function need(s) { return s.words / READ_WPM * 60000 }
-  function readOf(s) { return Math.min(1, (s.ms + s.pending) / need(s)) }
+  function readOf(s) { return Math.min(1, Math.max((s.ms + s.pending) / need(s), s.paced / s.words)) }
 
   /* ---- the store ---- */
   function readStore() { try { var s = JSON.parse(ls.get(KEY) || 'null'); if (s && s.pages) return s } catch (e) { /* fall through */ } return { v: 1, pages: {} } }
   var stored = readStore().pages[path]
-  if (stored && stored.sections) stored.sections.forEach(function (r) { sections.forEach(function (s) { if (s.id === r.id) { s.ms = r.ms || 0; s.seen = r.seen || 0; s.mark = r.mark || '' } }) })
-  var returning = !!(stored && stored.sections && stored.sections.some(function (r) { return (r.ms || 0) > 0 || r.mark }))
+  if (stored && stored.sections) stored.sections.forEach(function (r) { sections.forEach(function (s) { if (s.id === r.id) { s.ms = r.ms || 0; s.seen = r.seen || 0; s.paced = Math.min(s.words, r.pw || 0); s.mark = r.mark || '' } }) })
+  var returning = !!(stored && stored.sections && stored.sections.some(function (r) { return (r.ms || 0) > 0 || (r.pw || 0) > 0 || r.mark }))
   var visit = true
   // write the page's record: by default adding what this tab measured; `absolute` sets sections outright (a reset, a mark)
   function save(absolute, extra) {
@@ -84,9 +95,10 @@
     rec.sections = sections.map(function (s) {
       var r = by[s.id] || { id: s.id, ms: 0, seen: 0 }
       r.label = s.label; r.words = s.words
-      if (absolute && absolute[s.id]) { var a = absolute[s.id]; r.ms = Math.round(a.ms); r.seen = a.seen; if (a.mark) { r.mark = a.mark; r.marked = now } else { delete r.mark; delete r.marked } }
-      else { r.ms = Math.round((r.ms || 0) + s.pending); r.seen = Math.max(r.seen || 0, Math.round(s.seen * 100) / 100) }
-      s.pending = 0; s.ms = r.ms; s.seen = r.seen; s.mark = r.mark || ''
+      if (absolute && absolute[s.id]) { var a = absolute[s.id]; r.ms = Math.round(a.ms); r.seen = a.seen; r.pw = a.pw || 0; if (a.mark) { r.mark = a.mark; r.marked = now } else { delete r.mark; delete r.marked } }
+      else { r.ms = Math.round((r.ms || 0) + s.pending); r.seen = Math.max(r.seen || 0, Math.round(s.seen * 100) / 100); r.pw = Math.min(s.words, Math.max(r.pw || 0, Math.round(s.paced))) }
+      if (!r.pw) delete r.pw
+      s.pending = 0; s.ms = r.ms; s.seen = r.seen; s.paced = r.pw || 0; s.mark = r.mark || ''
       return r
     })
     rec.words = total; rec.last = now; rec.scrolled = scrolled(); rec.read = read()
@@ -119,11 +131,33 @@
     })
     if (dt && sum > 0) sections.forEach(function (s, k) { s.pending += dt * shares[k] / Math.max(sum, band * 0.25) })
   }
+  // the reading line, in page coordinates, and the text that passed it since the last look
+  var budget = 0, lastLine = null, lastH = 0
+  function pace() {
+    var vh = window.innerHeight, H = document.documentElement.scrollHeight, y = window.scrollY
+    var at = y + vh * Math.min(1, Math.max(0, y / Math.max(1, H - vh)))
+    var from = lastLine; lastLine = at
+    if (from == null || H !== lastH || paused()) { lastH = H; return }    // the page changed height (an image, a fold): start again from here
+    var a = Math.min(from, at), b = Math.max(from, at)
+    if (b - a < 1 || b - a > vh) return                                 // nothing passed, or a jump
+    var passed = [], words = 0
+    sections.forEach(function (s) {
+      if (s.folded) return
+      var r = bounds(s); if (!r) return
+      var top = r.top + y, h = Math.max(1, r.bottom - r.top), o = Math.min(b, top + h) - Math.max(a, top)
+      if (o > 0) { passed.push([s, o / h * s.words]); words += o / h * s.words }
+    })
+    // faster than the pace: none of it counts, and the budget is spent
+    if (words > budget) { budget = 0; return }
+    budget -= words
+    // a section passed at a reading pace all but its last few words (the line meets its edges at an angle) is passed
+    passed.forEach(function (x) { var s = x[0]; if (s.paced < s.words) { s.paced = Math.min(s.words, s.paced + x[1]); if (s.paced >= s.words * 0.95) s.paced = s.words; dirty += 1 } })
+  }
 
   /* ---- the reader's controls ---- */
-  function setPaused(on) { ls.set(PAUSE_KEY, on ? '1' : null); last = Date.now(); paint(true); emitChange() }
+  function setPaused(on) { ls.set(PAUSE_KEY, on ? '1' : null); last = Date.now(); budget = 0; lastLine = null; paint(true); emitChange({ pause: true }) }
   function resetPage() {
-    var abs = {}; sections.forEach(function (s) { s.pending = 0; abs[s.id] = { ms: 0, seen: 0 } })
+    var abs = {}; sections.forEach(function (s) { s.pending = 0; abs[s.id] = { ms: 0, seen: 0, pw: 0 } })
     save(abs, { reset: true }); paint(true); emitChange()
   }
   function markSection(id, how) {
@@ -131,11 +165,11 @@
     sections.forEach(function (s) {
       if (s.id !== id) return
       s.pending = 0
-      abs[s.id] = how === 'read' ? { ms: Math.ceil(need(s)), seen: 1, mark: 'read' } : { ms: 0, seen: s.seen, mark: 'unread' }
+      abs[s.id] = how === 'read' ? { ms: Math.ceil(need(s)), seen: 1, pw: s.words, mark: 'read' } : { ms: 0, seen: s.seen, pw: 0, mark: 'unread' }
     })
     save(abs); paint(true); emitChange()
   }
-  function emitChange() { try { window.dispatchEvent(new CustomEvent('sgit-reading-change', { detail: { path: path } })) } catch (e) { /* old browser */ } }
+  function emitChange(more) { try { window.dispatchEvent(new CustomEvent('sgit-reading-change', { detail: Object.assign({ path: path }, more || {}) })) } catch (e) { /* old browser */ } }
 
   /* ---- what the reader sees ---- */
   var strip = document.createElement('div'); strip.className = 'read-strip'; strip.setAttribute('aria-hidden', 'true')
@@ -155,8 +189,9 @@
   function set(k, v) { if (shown[k] !== v) { shown[k] = v; chip.querySelector('[data-k="' + k + '"]').textContent = v } }
   function paint(force) {
     var sc = Math.round(scrolled() * 100), rd = Math.round(read() * 100), p = paused()
-    set('scrolled', sc + '%'); set('read', rd + '%'); set('cost', cost()); set('state', p ? '‖' : '●')
-    if (shown.p !== p) { shown.p = p; chip.classList.toggle('is-paused', p); chip.setAttribute('aria-label', (p ? 'Measuring paused. ' : '') + 'Scrolled ' + sc + '%, read ' + rd + '%') }
+    var done = rd >= 100
+    set('scrolled', sc + '%'); set('read', rd + '%'); set('cost', cost()); set('state', p ? '‖' : done ? '✓' : '●')
+    if (shown.p !== p || shown.done !== done) { shown.p = p; shown.done = done; chip.classList.toggle('is-paused', p); chip.classList.toggle('is-done', done && !p); chip.setAttribute('aria-label', (p ? 'Measuring paused. ' : done ? 'Read in full. ' : '') + 'Scrolled ' + sc + '%, read ' + rd + '%') }
     if (shown.w1 !== sc) { shown.w1 = sc; bars[0].style.width = sc + '%' }
     if (shown.w2 !== rd) { shown.w2 = rd; bars[1].style.width = rd + '%' }
     if (!panel.hidden && (force || !panel.contains(document.activeElement))) drawMap()
@@ -164,13 +199,29 @@
   function mmss(ms) { var s = Math.round(ms / 1000); return Math.floor(s / 60) + ':' + ('0' + s % 60).slice(-2) }
   function esc(t) { return String(t).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c] }) }
   function stateOf(s) { var r = readOf(s); return r >= 0.9 ? 'read' : r >= 0.3 ? 'part' : s.seen >= 0.5 ? 'skimmed' : 'unread' }
-  var VIEWS = [['full', 'Full'], ['margin', 'Margin'], ['fade', 'Faded'], ['para', 'Paragraph'], ['line', 'Line'], ['hide', 'Hidden']]
-  function viewPicker(cls) {
-    var v = window.SgitFolds ? window.SgitFolds.mode() : 'margin'
-    return '<div class="rv-pick ' + cls + '" role="radiogroup" aria-label="Show what you have read as">' + VIEWS.map(function (x) {
-      return '<button type="button" role="radio" data-view="' + x[0] + '" aria-checked="' + (x[0] === v) + '">' + x[1] + '</button>'
-    }).join('') + '</div>'
+  // the Settings tab: how what was read is shown (folds.js), for every article and for this one, and measuring
+  function settings() {
+    var F = window.SgitFolds, p = paused()
+    var out = '<div class="rm-set">'
+    if (F) {
+      var all = F.allMode(), mine = F.pageMode(), name = {}
+      F.views.forEach(function (v) { name[v[0]] = v[1] })
+      out += '<h3 class="rm-k">Show what you have read, on every article</h3>'
+        + '<div class="rv-list" role="radiogroup" aria-label="Show what you have read, on every article">' + F.views.map(function (v) {
+          return '<button type="button" role="radio" class="rv-opt" data-view="' + v[0] + '" data-scope="all" aria-checked="' + (v[0] === all) + '"><b>' + esc(v[1]) + '</b><span>' + esc(v[2]) + '</span></button>'
+        }).join('') + '</div>'
+        + '<h3 class="rm-k">On this article</h3>'
+        + '<div class="rv-pick" role="radiogroup" aria-label="Show what you have read, on this article">'
+        + '<button type="button" role="radio" data-view="" data-scope="page" aria-checked="' + !mine + '">As every article (' + esc(name[all]) + ')</button>'
+        + F.views.map(function (v) { return '<button type="button" role="radio" data-view="' + v[0] + '" data-scope="page" aria-checked="' + (v[0] === mine) + '">' + esc(v[1]) + '</button>' }).join('')
+        + '</div>'
+    }
+    out += '<h3 class="rm-k">Measuring</h3>'
+      + '<div class="rm-ctl"><button type="button" class="rm-btn" data-act="pause" aria-pressed="' + p + '">' + (p ? 'Resume measuring' : 'Pause measuring') + '</button></div>'
+      + '<p class="rm-note">A section counts as read by the time it was in view while this tab was in front and you were active, against ' + READ_WPM + ' words a minute, or by scrolling past it no faster than ' + PACE_WPM + ' words a minute, whichever is more. Pause holds on every page until you resume. All of it is kept in this browser only; these settings too.</p>'
+    return out + '</div>'
   }
+  var tab = 'sections'
   function drawMap() {
     var hl = {}; try { (window.SgitHighlights ? window.SgitHighlights.forPage() : []).forEach(function (h) { hl[h.section] = (hl[h.section] || 0) + 1 }) } catch (e) { /* none */ }
     var p = paused()
@@ -178,19 +229,23 @@
       var sc = Math.round(s.seen * 100), rd = Math.round(readOf(s) * 100), st = stateOf(s)
       return '<li class="rm-' + st + '"><div class="rm-row"><a href="#' + esc(s.id) + '" data-to="' + esc(s.id) + '"><span class="rm-l">' + esc(s.label) + '</span>'
         + '<span class="rm-bar" aria-hidden="true"><i style="width:' + sc + '%"></i><i style="width:' + rd + '%"></i></span>'
-        + '<span class="rm-n">' + rd + '% read · ' + mmss(s.ms + s.pending) + ' of ' + mmss(need(s)) + (s.mark ? ' · marked ' + s.mark + ' by you' : '') + (hl[s.id] ? ' · ' + hl[s.id] + ' highlight' + (hl[s.id] === 1 ? '' : 's') : '') + '</span></a>'
+        + '<span class="rm-n">' + rd + '% read · ' + mmss(s.ms + s.pending) + ' of ' + mmss(need(s)) + (s.paced / s.words > (s.ms + s.pending) / need(s) + 0.01 ? ' · by pace' : '') + (s.mark ? ' · marked ' + s.mark + ' by you' : '') + (hl[s.id] ? ' · ' + hl[s.id] + ' highlight' + (hl[s.id] === 1 ? '' : 's') : '') + '</span></a>'
         + (st === 'read' ? '<button type="button" class="rm-mark" data-mark="unread" data-id="' + esc(s.id) + '" title="Mark this section unread: its time goes back to zero">Unread</button>'
                          : '<button type="button" class="rm-mark" data-mark="read" data-id="' + esc(s.id) + '" title="Mark this section read">Read</button>')
         + '</div></li>'
     }).join('')
-    panel.innerHTML = '<div class="rm-h"><b>This page, as you read it</b><button type="button" class="rm-x" aria-label="Close">×</button></div>'
+    var head = '<div class="rm-h"><div class="rm-tabs" role="tablist" aria-label="The reading panel">'
+      + '<button type="button" role="tab" data-tab="sections" aria-selected="' + (tab === 'sections') + '">This page</button>'
+      + '<button type="button" role="tab" data-tab="settings" aria-selected="' + (tab === 'settings') + '">Settings</button>'
+      + '</div><button type="button" class="rm-x" aria-label="Close">×</button></div>'
+    if (tab === 'settings') { panel.innerHTML = head + settings(); return }
+    panel.innerHTML = head
       + '<div class="rm-ctl"><button type="button" class="rm-btn" data-act="pause" aria-pressed="' + p + '">' + (p ? 'Resume measuring' : 'Pause measuring') + '</button>'
       + '<button type="button" class="rm-btn" data-act="reset" title="Set every section of this page back to unread">Reset this page</button></div>'
       + (p ? '<p class="rm-paused">Paused on every page until you resume. Nothing is measured, so nothing more is charged.</p>' : '')
       + '<p class="rm-sum"><b>' + Math.round(scrolled() * 100) + '%</b> scrolled · <b>' + Math.round(read() * 100) + '%</b> read · ' + total.toLocaleString('en-GB') + ' words in ' + sections.length + ' sections · ' + cost() + ' charged</p>'
       + '<ol class="rm-list">' + rows + '</ol>'
-      + '<p class="rm-k">Show what you have read</p>' + viewPicker('rv-map')
-      + '<p class="rm-note">Pale: scrolled past. Solid: time in view while this tab was in front and you were active, counted against ' + READ_WPM + ' words a minute. The meter charges for the share you read, and a reset refunds it down to the minimum. Kept in this browser only.</p>'
+      + '<p class="rm-note">Pale: scrolled past. Solid: read, by time in view or by scrolling past at a reading pace (Settings says how). The meter charges for the share you read, and a reset refunds it down to the minimum. Kept in this browser only.</p>'
   }
   panel.addEventListener('click', function (e) {
     var t = e.target.closest('button')
@@ -199,9 +254,10 @@
     if (t.dataset.act === 'pause') return setPaused(!paused())
     if (t.dataset.act === 'reset') return resetPage()
     if (t.dataset.mark) return markSection(t.dataset.id, t.dataset.mark)
-    if (t.dataset.view && window.SgitFolds) { window.SgitFolds.setMode(t.dataset.view); drawMap() }
+    if (t.dataset.tab) { tab = t.dataset.tab; drawMap(); var f = panel.querySelector('[data-tab="' + tab + '"]'); if (f) f.focus(); return }
+    if (t.dataset.scope && window.SgitFolds) { window.SgitFolds.setMode(t.dataset.view, t.dataset.scope); drawMap(); var g = panel.querySelector('[data-scope="' + t.dataset.scope + '"][data-view="' + t.dataset.view + '"]'); if (g) g.focus() }
   })
-  function open() { panel.hidden = false; chip.setAttribute('aria-expanded', 'true'); drawMap() }
+  function open(t) { if (t === 'settings' || t === 'sections') tab = t; panel.hidden = false; chip.setAttribute('aria-expanded', 'true'); drawMap() }
   function close() { panel.hidden = true; chip.setAttribute('aria-expanded', 'false') }
   chip.addEventListener('click', function () { panel.hidden ? open() : close() })
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !panel.hidden) { close(); chip.focus() } })
@@ -212,11 +268,12 @@
     var now = Date.now(), dt = Math.min(now - last, 2 * TICK); last = now
     var on = attended()
     measure(on ? dt : 0)
-    if (on) dirty += dt
+    if (on) { dirty += dt; budget = Math.min(PACE_CAP, budget + dt / 60000 * PACE_WPM) }
+    if (on) pace(); else lastLine = null
     paint()
   }
   var ticking = false
-  window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(function () { ticking = false; measure(0); paint() }) } }, { passive: true })
+  window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(function () { ticking = false; measure(0); if (attended()) pace(); else lastLine = null; paint() }) } }, { passive: true })
   setInterval(tick, TICK)
   setInterval(function () { if (dirty) { dirty = 0; save() } }, SAVE)
   function flush() { tick(); save() }
@@ -228,8 +285,9 @@
   window.addEventListener('sgit-folds', function () { if (!panel.hidden) drawMap() })
   window.SgitReading = {
     path: path, returning: returning, need: function (id) { var s = find(id); return s ? need(s) : 0 },
-    sections: function () { return sections.map(function (s) { return { id: s.id, label: s.label, words: s.words, ms: Math.round(s.ms + s.pending), seen: s.seen, read: readOf(s), state: stateOf(s), mark: s.mark, nodes: s.nodes } }) },
-    scrolled: scrolled, read: read, save: save, paused: paused, setPaused: setPaused, reset: resetPage, mark: markSection, open: open, viewPicker: viewPicker,
+    sections: function () { return sections.map(function (s) { return { id: s.id, label: s.label, words: s.words, ms: Math.round(s.ms + s.pending), paced: Math.round(s.paced), seen: s.seen, read: readOf(s), state: stateOf(s), mark: s.mark, nodes: s.nodes } }) },
+    scrolled: scrolled, read: read, save: save, paused: paused, setPaused: setPaused, reset: resetPage, mark: markSection, open: open,
+    paced: function (id) { var s = find(id); return s ? s.paced : 0 },
     fold: function (id, on) { var s = find(id); if (s) s.folded = !!on },
     sectionOf: function (node) {
       for (var k = 0; k < sections.length; k++) for (var j = 0; j < sections[k].nodes.length; j++) if (sections[k].nodes[j].contains(node)) return sections[k].id

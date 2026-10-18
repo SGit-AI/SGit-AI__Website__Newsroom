@@ -25,7 +25,7 @@
 .read-chip .rc-cost { min-width: 6.5ch; margin-left: .35rem; padding-left: .55rem; border-left: 1px solid var(--line2); color: var(--accent-dk); }
 
 .read-map {
-  position: fixed; right: 12px; bottom: 56px; z-index: 61; width: min(420px, calc(100vw - 24px)); max-height: min(70vh, 560px); overflow: auto;
+  position: fixed; right: 12px; bottom: 56px; z-index: 61; width: min(520px, calc(100vw - 24px)); max-height: min(80vh, 720px); overflow: auto;
   padding: .9rem 1rem; border-radius: 12px; border: 1px solid var(--line2); background: var(--panel); color: var(--text);
   box-shadow: var(--shadow-pop); font: .82rem/1.45 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
@@ -70,31 +70,50 @@
 .read-chip.is-paused .rc-s { color: var(--warm); }
 .read-chip.is-paused .rc-v[data-k="read"] { color: var(--dim); }
 .read-map .rm-ctl { display: flex; gap: .4rem; flex-wrap: wrap; margin: .5rem 0 .2rem; }
-.read-map .rm-btn, .read-map .rm-mark, .read-bar .rb-b, .rv-pick button {
+.read-map .rm-btn, .read-map .rm-mark, .rv-pick button {
   font: 600 .74rem/1.2 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   border: 1px solid var(--line2); background: var(--panel); color: var(--head); border-radius: 999px; padding: .3rem .7rem; cursor: pointer;
 }
-.read-map .rm-btn:hover, .read-map .rm-mark:hover, .read-bar .rb-b:hover, .rv-pick button:hover { border-color: var(--accent); }
-.read-map .rm-btn[aria-pressed="true"], .read-bar .rb-b[aria-pressed="true"] { background: var(--warn-bg); border-color: var(--warm); color: var(--warn-ink); }
+.read-map .rm-btn:hover, .read-map .rm-mark:hover, .rv-pick button:hover { border-color: var(--accent); }
+.read-map .rm-btn[aria-pressed="true"] { background: var(--warn-bg); border-color: var(--warm); color: var(--warn-ink); }
 .read-map .rm-paused { margin: .3rem 0; padding: .4rem .6rem; border-radius: 8px; background: var(--warn-bg); color: var(--warn-ink); font-size: .74rem; }
 .read-map .rm-row { display: flex; align-items: center; gap: .5rem; }
 .read-map .rm-row > a { flex: 1; min-width: 0; }
 .read-map .rm-mark { padding: .2rem .55rem; font-size: .68rem; color: var(--dim); }
 .read-map .rm-read .rm-l::before { content: "✓ "; color: var(--accent); }
-.read-map .rm-k { margin: .7rem 0 .3rem; color: var(--dim); font-size: .7rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+.read-map .rm-k { margin: 1rem 0 .4rem; color: var(--dim); font-size: .7rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
 .rv-pick { display: inline-flex; flex-wrap: wrap; gap: .25rem; }
 .rv-pick button { padding: .25rem .6rem; color: var(--dim); }
 .rv-pick button[aria-checked="true"] { background: var(--head); border-color: var(--head); color: var(--bg); }
+/* v4 (card 084): the panel has two tabs, the page and the settings; the view is a setting, not a bar */
+.read-map .rm-tabs { display: inline-flex; gap: .2rem; padding: .15rem; border-radius: 999px; background: var(--panel2); }
+.read-map .rm-tabs button { border: 0; background: transparent; color: var(--dim); border-radius: 999px; padding: .3rem .8rem; cursor: pointer; font: 700 .76rem/1.2 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+.read-map .rm-tabs button[aria-selected="true"] { background: var(--panel); color: var(--head); box-shadow: var(--shadow-pop); }
+.read-map .rm-tabs button:focus-visible, .rv-opt:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.read-map .rm-set .rm-k:first-child { margin-top: .8rem; }
+.rv-list { display: grid; gap: .35rem; }
+.rv-opt { display: grid; gap: .1rem; text-align: left; padding: .55rem .75rem; border: 1px solid var(--line2); border-radius: 10px; background: var(--panel); color: var(--text); cursor: pointer; font: .8rem/1.4 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+.rv-opt b { color: var(--head); }
+.rv-opt span { color: var(--dim); font-size: .74rem; }
+.rv-opt:hover { border-color: var(--accent); }
+.rv-opt[aria-checked="true"] { border-color: var(--accent); background: var(--panel2); box-shadow: inset 3px 0 0 var(--accent); }
+.rv-opt[aria-checked="true"] b::before { content: "✓ "; color: var(--accent); }
+.read-chip.is-done .rc-s { color: var(--accent); }
 
-/* ---------- what has been read, on the page (card 082) ---------- */
+/* ---------- what has been read, on the page (cards 082, 084) ----------
+   The margin is live: --rf-p is the share of the section read, in steps of 5%, and the line goes from the pale
+   rule colour to the accent through it (mixed in oklab, so the steps look even; the accent's own 35% tint left
+   60% and 100% too alike), slowly, so it reads as a change of colour and never as a jump. Only colour changes:
+   the line is drawn outside the text, so nothing moves. A tick beside the heading when the section is read. */
 .rf-m { position: relative; }
-.rf-m::before { content: ""; position: absolute; left: -18px; top: .2em; bottom: .2em; width: 3px; border-radius: 3px; pointer-events: none; }
-.rf-m.rf-read::before { background: var(--accent); }
-.rf-m.rf-part::before { background: var(--tint-line); }
-.rf-m.rf-skim::before { background: var(--line2); width: 2px; }
+.rf-m::before {
+  content: ""; position: absolute; left: -18px; top: .2em; bottom: .2em; width: 3px; border-radius: 3px; pointer-events: none;
+  background-color: color-mix(in oklab, var(--accent) var(--rf-p, 0%), var(--line2)); transition: background-color 1.6s ease;
+}
+.rf-m.rf-done::before { background-color: var(--accent); }
+.rf-m.rf-done.rf-first::after { content: "✓"; position: absolute; left: -38px; top: 0; color: var(--accent); font: 700 .7rem/1.4 ui-sans-serif, system-ui, sans-serif; pointer-events: none; }
 .rf-fade { opacity: .42; transition: opacity .25s; }
-.rf-fade-part { opacity: .7; transition: opacity .25s; }
-.rf-fade:hover, .rf-fade:focus-within, .rf-fade-part:hover, .rf-fade-part:focus-within { opacity: 1; }
+.rf-fade:hover, .rf-fade:focus-within { opacity: 1; }
 .rf-gone { display: none !important; }
 .rf-fold {
   display: flex; align-items: baseline; flex-wrap: wrap; gap: .25rem .6rem; margin: 1.1rem 0; padding: .55rem .8rem;
@@ -108,13 +127,6 @@
 .rf-fold .rf-show { margin-left: auto; border: 1px solid var(--line2); background: var(--panel); color: var(--accent-dk); border-radius: 999px; padding: .15rem .6rem; font: 600 .72rem ui-sans-serif, system-ui, sans-serif; cursor: pointer; }
 .rf-fold .rf-show:hover { border-color: var(--accent); }
 .rf-fold.rf-hidden-run { border-left-style: dashed; }
-.read-bar {
-  position: fixed; left: 0; right: 0; z-index: 58; display: flex; align-items: center; flex-wrap: wrap; gap: .4rem .6rem; padding: .4rem 1rem;
-  background: var(--nav-bg); border-bottom: 1px solid var(--line); color: var(--text); backdrop-filter: blur(6px);
-  font: .76rem/1.3 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-}
-.read-bar[hidden] { display: none; }
-.read-bar .rb-t b { color: var(--head); }
-.read-bar .rb-x { margin-left: auto; border: 0; background: transparent; color: var(--dim); font-size: 1.1rem; cursor: pointer; padding: 0 .3rem; }
-@media (max-width: 520px) { .read-bar { padding: .35rem .5rem; } .read-bar .rv-pick button { padding: .2rem .45rem; } .rf-m::before { left: -10px; } }
-@media print { .read-bar, .rf-fold { display: none; } .rf-gone { display: block !important; } .rf-fade, .rf-fade-part { opacity: 1; } }
+@media (max-width: 520px) { .rf-m::before { left: -10px; } .rf-m.rf-done.rf-first::after { display: none; } }
+@media (prefers-reduced-motion: reduce) { .rf-m::before { transition: none; } }
+@media print { .rf-fold { display: none; } .rf-gone { display: block !important; } .rf-fade { opacity: 1; } .rf-m::before, .rf-m::after { display: none; } }
