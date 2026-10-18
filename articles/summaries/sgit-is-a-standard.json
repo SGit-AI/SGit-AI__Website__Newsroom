@@ -6,89 +6,89 @@
    "id": "top",
    "label": "The opening",
    "words": 252,
-   "line": "Git won not because of GitHub but because it…",
-   "para": "Git won not because of GitHub but because it is a standard: a way of laying out objects that any tool, any host and any person can read, and that GitHub, GitLab and a folder on a laptop all implement. sgit is the same kind of thing, and I think that is the most important thing to understand about it.",
-   "by": "extract"
+   "line": "Like git, sgit is a standard, not a server",
+   "para": "Git won because it is a standard any tool can read, and sgit is the same: encrypted blobs, trees, commits and one ref per branch, named by the SHA-256 of their ciphertext. Reading is four plain GETs from any host; writing adds one compare-and-swap. Deploying sgit is choosing where the objects live.",
+   "by": "newsroom.ux"
   },
   {
    "id": "in-short",
    "label": "In short",
    "words": 91,
-   "line": "Git is a standard.",
-   "para": "Git is a standard. That is why it won, not any one server. sgit is one too. Encrypted objects laid out by a convention. Everything is one hash away. The key gives every name; a file is four GETs. The name says what can be cached. -imm- is for ever; -muw- is the ref. Any storage implements the read half.",
-   "by": "extract"
+   "line": "A file is four GETs from its key",
+   "para": "Git won as a standard, and sgit is one too: encrypted objects laid out by convention, with every name derived from the key, so a file is four GETs. Names marked -imm- are cacheable for ever and -muw- marks the ref. Any storage serves reads, the server only protects writes, and the constraint shaped the design.",
+   "by": "newsroom.ux"
   },
   {
    "id": "git",
    "label": "Git is a standard",
    "words": 155,
-   "line": "Git is not GitHub.",
-   "para": "Git is not GitHub. It is a format: blobs, trees, commits and refs, named by their hashes, laid out in a way any tool can read.",
-   "by": "extract"
+   "line": "sgit copies git's object model and moves the trust",
+   "para": "Git is a format, not GitHub: hash-named blobs, trees, commits and refs that any tool can read, which is why history outlived centralised systems. sgit copies git's object model on purpose and changes only where trust sits: everything is encrypted on the client, and reading needs nobody's help.",
+   "by": "newsroom.ux"
   },
   {
    "id": "vault",
    "label": "What a vault is",
    "words": 272,
-   "line": "A vault is a set of files laid out…",
-   "para": "A vault is a set of files laid out by a convention. Four kinds of object, all ciphertext: blobs, the file contents; trees, a folder's encrypted names pointing at blob and tree ids; commits, a tree id, parents, a message and a signature; and one mutable pointer per branch, the ref.",
-   "by": "extract"
+   "line": "Object names say what can be cached for ever",
+   "para": "A vault holds encrypted blobs, trees, commits and one ref per branch; immutable objects are named obj-cas-imm- plus the SHA-256 of their ciphertext, so anything can cache them unread, while refs are ref-pid-muw-. sgit.ai's docs load 18 objects cold, then one 69-byte ref. sgit stores whole objects, not deltas.",
+   "by": "newsroom.ux"
   },
   {
    "id": "one-hash",
    "label": "Everything from one hash",
    "words": 236,
-   "line": "What makes it a standard rather than a service…",
-   "para": "What makes it a standard rather than a service is that nothing in a vault has to be discovered. It is all derived from the key: The vault key gives the vault id and, one way, the read key. The read key cannot be turned back into the write key, so it can be published.",
-   "by": "extract"
+   "line": "Every name derives from the key; nothing is discovered",
+   "para": "The vault key gives the vault id and, one way, a publishable read key; an HMAC of the read key gives the ref's name. Ref, commit, trees and blob make four kinds of GET. Writing is batched PUTs and one compare-and-swap, and two independent implementations, the CLI and browser app, verify each other.",
+   "by": "newsroom.ux"
   },
   {
    "id": "storage",
    "label": "Any storage implements the read half",
    "words": 288,
-   "line": "Because reading is plain GETs of fixed paths, any…",
-   "para": "Because reading is plain GETs of fixed paths, any storage that answers a GET implements the read half of the convention: an S3 bucket, a CDN, GitHub Pages, a folder, Python's one-line file server. sgit clone --transport static reads from any of them, and sgit publish lays a vault out for one.",
-   "by": "extract"
+   "line": "Speed depends on how close the storage is",
+   "para": "Any host answering a GET serves the read half: S3, a CDN, GitHub Pages, a folder. The API protects writes with a token and compare-and-swap. Reads took 317 milliseconds via the API against 44 from GitHub Pages, and a one-folder clone took 13 seconds hosted against 0.8 locally.",
+   "by": "newsroom.ux"
   },
   {
    "id": "cache",
    "label": "A cache you can compute",
    "words": 149,
-   "line": "Four GETs is cheap, but a page that serves…",
-   "para": "Four GETs is cheap, but a page that serves one record a thousand times a minute does not want to walk trees. So the convention has a cache layer, shipped: sgit cache add <path> declares a path, and every push keeps an encrypted cache object for it at a location derived from the read key and the path.",
-   "by": "extract"
+   "line": "Readers compute where the cache object lives",
+   "para": "sgit cache add declares a path, and every push writes an encrypted cache object at a location derived from the read key and path. A reader makes one batch request, checks the commit against the ref and skips the tree walk. A miss falls back to the walk, so a lost cache costs speed, not correctness.",
+   "by": "newsroom.ux"
   },
   {
    "id": "client",
    "label": "Why the work stays on the client",
    "words": 244,
-   "line": "Scion moves history, blame and merges to the server.…",
-   "para": "Scion moves history, blame and merges to the server. sgit keeps them on the client, and would even if the server could read the data, for the reason git did: a merge is a workflow step that needs the context of the change, the history and the policy that says who may merge what.",
-   "by": "extract"
+   "line": "Merges stay on the client, where the context is",
+   "para": "Unlike Scion, sgit keeps history and merges on the client, because a merge needs the change's context and the policy on who may merge. Hive workers write their own branches and the host merges under the mandate. A full clone is still one verifiable command, but folder scopes, depth, sparse clones and caching make it optional.",
+   "by": "newsroom.ux"
   },
   {
    "id": "constraint",
    "label": "The constraint that designed it",
    "words": 97,
-   "line": "None of this was a plan to be minimal.",
-   "para": "None of this was a plan to be minimal. The server cannot read a byte, so \"just do it on the server\" was never available: no server-side index, no server-side render, no merge the client did not make, no derived data the client could not compute from the key.",
-   "by": "extract"
+   "line": "A server that cannot read forced small designs",
+   "para": "Minimalism was not the plan. Because the server cannot read a byte, there could be no server-side index, render, merge or derived data. Every feature had to be objects a writer produces and a reader derives, which kept the designs small enough to be a standard, as The value of constraints argued.",
+   "by": "newsroom.ux"
   },
   {
    "id": "limits",
    "label": "What this does not claim",
    "words": 96,
-   "line": "Not a formal standard.",
-   "para": "Not a formal standard. No standards body; a documented format with two implementations. Not proven at Scion's scale. The largest vault in daily use is about 35,000 objects and ten agents. No blame or bisect yet.",
-   "by": "extract"
+   "line": "A documented format, not a formal standard yet",
+   "para": "There is no standards body, only a documented format with two implementations. The largest vault in daily use is about 35,000 objects and ten agents, far from Scion's scale. Blame and bisect are missing, long partial clones walk commits one by one, and the hosted CDN does not cache object reads yet.",
+   "by": "newsroom.ux"
   },
   {
    "id": "sources",
    "label": "Where this comes from",
    "words": 84,
-   "line": "A voice memo of mine on 16 October 2026…",
-   "para": "A voice memo of mine on 16 October 2026, written by this site's agent in the voice of this site from a draft by the sgit CLI team; the editorial responsibility is mine.",
-   "by": "extract"
+   "line": "Sources: the sgit CLI code, case studies and Scion",
+   "para": "From my voice memo of 16 October 2026, written by the site's agent from a draft by the sgit CLI team. The derivation and cache layer were checked in the SGit-AI__CLI code and changelog; loading numbers come from sgit.ai's live-vault case study, hive timings from ruv.sgit.ai's ledger, and the Scion quote from Anthropic's post.",
+   "by": "newsroom.ux"
   }
  ]
 }

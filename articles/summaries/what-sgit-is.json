@@ -6,57 +6,57 @@
    "id": "top",
    "label": "The opening",
    "words": 194,
-   "line": "An introduction to sgit and sgit.ai, what an encrypted…",
-   "para": "An introduction to sgit and sgit.ai, what an encrypted vault is, why version control had to be rebuilt to get one, and what nineteen published vaults look like when the server storing them cannot read a byte. There is a category of file that has nowhere good to live. A risk register with real system names in it.",
-   "by": "extract"
+   "line": "sgit is git for files too sensitive for GitHub",
+   "para": "Risk registers, contested regulatory analyses, agent memory and NDA material all need git's history, branches and shareable links, yet cannot go to GitHub, so they end up in shared drives and lose their history. sgit encrypts them before they leave your machine, versions them like git, and stores them on a server that cannot read them.",
+   "by": "newsroom.ux"
   },
   {
    "id": "s0",
    "label": "The part that is easy to say and hard to build",
    "words": 192,
-   "line": "Zero knowledge is a claim people make loosely, so…",
-   "para": "Zero knowledge is a claim people make loosely, so here is the precise version: the server holds ciphertext and nothing else. Not your filenames, not your directory structure, not your commit messages. Encryption and decryption happen on your machine.",
-   "by": "extract"
+   "line": "One vault key addresses, authorises and decrypts everything",
+   "para": "The server holds only ciphertext: no filenames, structure or commit messages, and no escrow or recovery. The vault key, passphrase plus vault id, is address, write authorisation and decryption key at once, so losing it loses the data. A one-way read key is safe to publish, and a release tripwire ensures no vault key ever is.",
+   "by": "newsroom.ux"
   },
   {
    "id": "s1",
    "label": "Ten seconds of proof",
    "words": 129,
-   "line": "The read key is the entire credential.",
-   "para": "The read key is the entire credential. No account, no login, no access request: Now the same vault, as the machine storing it sees it: That second screenshot is the argument.",
-   "by": "extract"
+   "line": "A read key opens it; the host sees ciphertext",
+   "para": "The read key is the whole credential, with no account or login, while the host sees only content-addressed ciphertext it can deduplicate, cache and serve from a CDN without knowing what it is. Underneath is real version control: multi-parent commits, per-directory trees, HMAC-derived refs, merge-base computation and three-way merge.",
+   "by": "newsroom.ux"
   },
   {
    "id": "s2",
    "label": "Nineteen vaults you can open right now",
    "words": 72,
-   "line": "The best way to understand a vault is to…",
-   "para": "The best way to understand a vault is to open one. Every vault on sgit.ai is live : the screenshots are of real vaults, opened with the read keys published beside them. They range from a photo library to Regulation (EU) 2024/1689 parsed from official Formex XML into 1,523 nodes and 1,944 edges.",
-   "by": "extract"
+   "line": "Nineteen live vaults open from their published read keys",
+   "para": "Every vault on sgit.ai is live, and the screenshots show real vaults opened with their published keys. They range from a photo library to Regulation (EU) 2024/1689 parsed into 1,523 nodes and 1,944 edges. Before writing, all nineteen were cloned from their keys: 1,389 files, no failures.",
+   "by": "newsroom.ux"
   },
   {
    "id": "s3",
    "label": "The part that surprises people",
    "words": 94,
-   "line": "A vault can contain an application , not just…",
-   "para": "A vault can contain an application , not just documents, and that application runs against the vault without ever being handed a credential. Look at \"permissions\": {} in that file. The app asks for no filesystem access at all. It still renders the whole risk graph, because the host reads the vault and passes results in.",
-   "by": "extract"
+   "line": "Apps inside a vault run without holding a key",
+   "para": "A vault can contain an application that runs against it with no credential. With \"permissions\": {}, the app requests no filesystem access, yet renders the whole risk graph because the host reads the vault and passes results in. This is capability without credential, with the blast radius set by a readable config file.",
+   "by": "newsroom.ux"
   },
   {
    "id": "s4",
    "label": "Why there is a network of sites",
    "words": 192,
-   "line": "sgit.ai is one of nineteen sites on *.sgit.ai …",
-   "para": "sgit.ai is one of nineteen sites on *.sgit.ai , each taking one question further than a section could. Most of the thinking behind sgit now lives out there rather than here. A few of them, to give the range: graphs.sgit.ai , \"A node is just a node. Meaning lives in the edges.\" risks.sgit.ai , \"You cannot deny a risk.",
-   "by": "extract"
+   "line": "Nineteen sites each take one sgit question further",
+   "para": "sgit.ai is one of nineteen *.sgit.ai sites, including graphs, risks, llms, issues-fs, open-source and sg-sentinel, which marks itself NOT BUILT. The directory starts from the reader's question. Each site publishes its argument before the thing exists and states what has shipped, preferring to be checkable rather than impressive.",
+   "by": "newsroom.ux"
   },
   {
    "id": "s5",
    "label": "Try it",
    "words": 146,
-   "line": "pip install sgit-ai sgit clone sgit_public_read_c004daae386e8d17fa648884acc527018bd4ea1116ad673fb2f1b068011695c9:73heuprz That is the…",
-   "para": "pip install sgit-ai sgit clone sgit_public_read_c004daae386e8d17fa648884acc527018bd4ea1116ad673fb2f1b068011695c9:73heuprz That is the EU AI Act vault, 207 files on your disk in under a minute, from a key printed on a public web page, with no account anywhere. If you would rather not install anything, every vault opens in the browser from the same key.",
-   "by": "extract"
+   "line": "Install sgit-ai and clone the EU AI Act vault",
+   "para": "One pip install and a clone with a public read key put the EU AI Act vault's 207 files on disk in under a minute, with no account; every vault also opens in a browser. sgit is beta, Apache-2.0 and pure Python, and the site itself is served from a vault released 59 times, every release logged.",
+   "by": "newsroom.ux"
   }
  ]
 }

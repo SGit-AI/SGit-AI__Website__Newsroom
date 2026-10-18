@@ -28,4 +28,4 @@ Then reading already done is not charged again
 ```
 
 ## Outcome
-`assets/components/sg-meter/v1/v1.5/v1.5.0/` (a new immutable path; the import re-points every page): the core gains `settle(share)`, which can lower a charge; the page view charges from the reading strip's `sgit-reading` event and the `sgit.reading.v1` record, beyond the entry's `readBase`, and a `reset: true` event sets the base to zero. The foot says what was read on this visit and what was read before. The account page's sentence is corrected by a text rule (`account-lead-read`). Test: `admin/build/test_reading.mjs`.
+`assets/components/sg-meter/v1/v1.5/v1.5.0/` (a new immutable path; the import re-points every page): the core gains `settle(share)`, which can lower a charge; the page view charges from the reading strip's `sgit-reading` event and the `sgit.reading.v1` record, beyond the entry's `readBase`, and a `reset: true` event sets the base to zero. The foot says what was read on this visit and what was read before. The account page's sentence is corrected by a text rule (`account-lead-read`). Tests: `admin/build/test_reading.mjs`; `admin/build/test_meter.mjs` now reads section by section.

@@ -1,0 +1,78 @@
+{
+ "slug": "your-reading-your-controls",
+ "what": "The sections of this article, each with a line and a paragraph, for showing what the reader has already read. Built by admin/build/summaries.py from admin/content/articles/summaries/.",
+ "sections": [
+  {
+   "id": "top",
+   "label": "The opening",
+   "words": 232,
+   "line": "The meter now charges for reading, not scrolling",
+   "para": "The owner decided to charge for what is read, not scrolled, so a flicked page costs the minimum, a read page its price, and a reset refunds. Readers can pause, reset and mark sections, and read sections can be shown six ways on return. Every section of 174 articles now has a line and a paragraph, 1,897 of each.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "in-short",
+   "label": "In short",
+   "words": 290,
+   "line": "Readers pay for reading and can correct the measure",
+   "para": "A page flicked to the end costs a tenth of its price, a page read through costs its price, and earlier reading is not charged again. Pause, reset and per-section marks let readers correct the numbers. Read sections can fold six ways, never while reading forward, and 1,897 summaries carry a hash that marks them stale.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "decision",
+   "label": "The decision",
+   "words": 226,
+   "line": "Flicking to the end now costs a tenth",
+   "para": "The owner's answer was \"Charge based on what you read, not based on what you scroll\", and v1.5.0 does it. A fast flick to the end now costs a tenth instead of the full price, half read costs half wherever it was, and a reset refunds to a tenth. Read is time on each section against 300 words a minute.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "control",
+   "label": "The reader is in control",
+   "words": 165,
+   "line": "Pause, reset and per-section marks put readers in control",
+   "para": "Following the brief \"the user is in control\", three controls sit in the map and two in the top bar. Pause stops all measuring on every page until resumed, surviving a reload; Reset this page returns every section to unread and refunds to the minimum; and each section can be marked read or unread by hand.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "views",
+   "label": "Showing what you have read",
+   "words": 336,
+   "line": "Read sections can return in six views, never mid-read",
+   "para": "Read sections can be shown as Full, Margin (the default), Faded, Paragraph, Line or Hidden, with Show to open any fold. The views switch on only for a returning reader or after scrolling back up more than half a window. A section on screen is never changed by the clock, and the scroll position is corrected.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "summaries",
+   "label": "A line and a paragraph for every section",
+   "words": 268,
+   "line": "Fourteen agents wrote 1,897 section summaries, checked by script",
+   "para": "The Paragraph and Line views need summaries, so fourteen agents wrote a line of six to nine words and a paragraph of 30 to 60 for all 1,897 sections in 174 articles, none left as an extract. A script checked the rules, and new articles must now ship summaries.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "limits",
+   "label": "What this does not do",
+   "words": 125,
+   "line": "Records stay in the browser and read means time",
+   "para": "Reading records, pause and the chosen view stay in this browser and do not reach the vault. Read still means time in view while present, so the controls exist because the measure can be wrong. Summaries cover sections, not paragraphs, picture folds are not built, and rereading after a reset is charged again.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "technical",
+   "label": "How it is built",
+   "words": 483,
+   "line": "A new meter path, fold scripts and hashed summaries",
+   "para": "Meter v1.5.0 lives at a new path and settles the charge to what was read beyond a stored base, in steps of 5%. strip.js holds pause and marks, folds.js draws the views and corrects scroll, and summaries.py stamps each summary with twelve SHA-256 characters to flag staleness. Playwright tests in test_reading.mjs check every rule.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "sources",
+   "label": "Where this comes from",
+   "words": 116,
+   "line": "Sources: the owner's message and this session's work",
+   "para": "The owner's message of 17 October 2026, replying to Scrolled is not read, set the billing decision, the controls, the views and the summaries. The code, screenshots and measurements are the agent's, made on The tokens hook article, and the counts come from the summaries script's check. The meter's rules are in A meter in the browser.",
+   "by": "newsroom.ux"
+  }
+ ]
+}

@@ -1,0 +1,110 @@
+{
+ "slug": "our-first-pr-in-ruflo",
+ "what": "The sections of this article, each with a line and a paragraph, for showing what the reader has already read. Built by admin/build/summaries.py from admin/content/articles/summaries/.",
+ "sections": [
+  {
+   "id": "top",
+   "label": "The opening",
+   "words": 419,
+   "line": "Ruflo merged its first page on SGit and ABPs",
+   "para": "On 17 October at 14:59, rUv merged pull request #4239, Mondweep Chakravorty's 83-line page documenting an ABP-gated adapter that checkpoints Ruflo memory into an encrypted SGit vault. It is the first of 9,625 commits on Ruflo's main branch to mention SGit or an ABP. Our own runnable example, pull request #1, is still unreviewed.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "in-short",
+   "label": "In short",
+   "words": 128,
+   "line": "One documentation page, merged without formal approval or checks",
+   "para": "rUv merged pull request #4239, a single 83-line documentation page, on 17 October at 14:59, the first of 9,625 commits to mention SGit or an ABP. Mondweep opened it at 23:02 the night before. No formal approval was recorded and no checks ran, the page states its own limits, and our companion pull request is still open.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "what",
+   "label": "What happened",
+   "words": 159,
+   "line": "An outsider's SGit page now sits inside Ruflo",
+   "para": "rUv merged pull request #4239 into ruvnet/ruflo, adding docs/integrations/sgit-memory-checkpoints.md, which explains how an ABP can govern Ruflo's memory with checkpoints in an encrypted SGit vault. It changes no code, but it is the first of 9,625 commits to mention SGit or an ABP, written outside our team and accepted by the maintainer.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "poc",
+   "label": "Piece 1: the proof of concept",
+   "words": 170,
+   "line": "A small MCP server enforces the ABP per tool",
+   "para": "mondweep/sgit-ruv-memory is an MIT-licensed MCP server with five commits on 16 October. It compiles an ABP into Ruflo's rule format, asks a pinned copy of Ruflo's evaluator for an enforce-mode decision before each tool runs, and keeps each checkpoint in its own encrypted SGit vault. Sixteen tests pass, by the author's own evidence.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "pr",
+   "label": "Piece 2: the pull request",
+   "words": 207,
+   "line": "Three evening commits, with the limits stated up front",
+   "para": "The pull request came from Mondweep's fork with three commits on 16 October: 81e3697 at 23:02, 269b9fc at 23:35 and 6b49d58 at 23:59. Its description lists the evidence and the gaps, including that semantic quality is not validated and no full Ruflo suite ran. The second commit, documenting the enforced ABP layer, matters most.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "accepted",
+   "label": "Piece 3: how it was accepted",
+   "words": 152,
+   "line": "Merged by the maintainer, with no approval or checks",
+   "para": "The timeline runs from opening at 23:02 on 16 October, through a draft period while the ABP layer went in, to rUv's squash merge as commit 332f22e at 14:59 on 17 October. The requested review still shows as pending and the Checks tab reads 0. With no automated gate, the page's precision is what got it in.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "live",
+   "label": "Piece 4: where it lives",
+   "words": 107,
+   "line": "The page pins every dependency to exact commits",
+   "para": "The page is the only file in a new docs/integrations folder on Ruflo's main branch, not yet linked from the docs index or README. It pins the code at 7607d72, SGit at 5597526 because 0.22.3 was not yet on the package index, and Ruflo's evaluator at 1882006, the Ruflo 3.56.10 release, so anyone can reproduce it.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "careful",
+   "label": "What the page claims, and what it does not",
+   "words": 214,
+   "line": "Not overselling is why it merged within a day",
+   "para": "The page calls itself an opt-in community example that registers no native backend and alters no default policy. It labels three memory capabilities as proposed vocabulary, admits the evaluator is vendored and semantic recall unvalidated, and lists the next gates. Those three capabilities are the first memory vocabulary proposed for the ABP from outside our team.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "ours",
+   "label": "The piece still open is ours",
+   "words": 101,
+   "line": "Our own companion pull request is still unreviewed",
+   "para": "The Ruflo page points to Mondweep's repository and to SGit-AI/SGit-AI__Website__Ruv #1, which adds the runnable example to ruv.sgit.ai in 3 commits, 35 files and 3,081 lines. It has no reviews yet, and his updates to it were limited by connector permissions. Ruflo merged first; the next merge is ours to make.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "why",
+   "label": "Why this matters",
+   "words": 109,
+   "line": "Built by an outsider, well placed, carrying its evidence",
+   "para": "It is the first integration of the ABP and SGit into an agent framework by someone outside our team that I know of. It sits in Ruflo's docs, where the people who run Ruflo will find it, and it carries pinned commits, tests, a reproducible run and its own limits. Thanks go to Mondweep and to rUv.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "next",
+   "label": "Where to go next",
+   "words": 25,
+   "line": "Follow the trail: the run, architecture and gap",
+   "para": "The SGit × Ruflo trail covers the run, the architecture and the gap the policy leaves. Readers can also step through the run, watch Mondweep's video, or read the page that was merged into Ruflo's main branch.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "limits",
+   "label": "What this does not claim",
+   "words": 122,
+   "line": "A documentation merge, not a code change or endorsement",
+   "para": "The merge changes documentation only, with no approving review or checks recorded, and is not the maintainer endorsing every claim. \"First\" means no earlier commit on Ruflo's main branch mentions SGit or an ABP; discussions elsewhere are not counted. The code was read here, not run, and its tests and evidence are the author's.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "sources",
+   "label": "Where this comes from",
+   "words": 136,
+   "line": "Sources: the pull request, commits, code and video",
+   "para": "Ruflo pull request #4239 with its conversation, commits and timeline, read on 17 October 2026, plus a search of all 9,625 main-branch commits. Also the merged page at 332f22e, mondweep/sgit-ruv-memory at 7607d72, the companion SGit-AI__Website__Ruv #1, and Mondweep Chakravorty's video, with GitHub times converted to London time.",
+   "by": "newsroom.ux"
+  }
+ ]
+}

@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-/* test_meter.mjs — SG Meter v1.4.0 in a real browser, against the built site.
+/* test_meter.mjs — SG Meter v1.5.0 in a real browser, against the built site.
  *
  *   node admin/build/test_meter.mjs
  *
@@ -8,7 +8,8 @@
  * (/persona/<id>/, /persona/#<id>, the picker): added as a visitor, kept or removed, never charged.
  *
  * Serves the repo root on a local port, opens it in Chromium and drives the meter the way a
- * reader would: read by depth, decline, reload, go below zero, return from a payment, add a
+ * reader would: read section by section (v1.5.0 charges the share read, not the share scrolled; sections are
+ * marked read through the reading strip, as a reader can by hand), decline, reload, go below zero, return from a payment, add a
  * persona, keep and reject articles, read as that persona, export and restore into a fresh
  * browser. No mocks: the component, its config and articles/graphs.json are the published ones.
  * Skips (exit 0) when Playwright or Chromium is not available, as the estate's tests do.
@@ -60,11 +61,12 @@ const shadow = (sel, q) => pg.evaluate(([s, q]) => {
     const e = document.querySelector(s)
     return e && e.shadowRoot ? (q ? [...e.shadowRoot.querySelectorAll(q)].length : e.shadowRoot.textContent) : null
 }, [sel, q])
-const scrollTo = d => pg.evaluate(d => {
-    const m = document.querySelector('main'), r = m.getBoundingClientRect()
-    window.scrollTo(0, r.top + scrollY + r.height * d - innerHeight)
-}, d)
 const wait = ms => pg.waitForTimeout(ms)
+// mark the first share of the page's sections read by hand, as a reader can in the reading map
+const markRead = async share => {
+    await pg.evaluate(share => { const ss = window.SgitReading.sections(); ss.slice(0, Math.ceil(ss.length * share)).forEach(s => window.SgitReading.mark(s.id, 'read')) }, share)
+    await wait(900)
+}
 const feed = JSON.parse(fs.readFileSync(path.join(ROOT, 'articles/graphs.json'), 'utf8')).articles
 const art = feed.slice().sort((a, b) => b.date < a.date ? -1 : 1)
 const today = new Date().toISOString().slice(0, 10)
@@ -75,12 +77,14 @@ try {
     await pg.goto(B + `articles/${older.slug}.html`); await wait(1200)
     let s = await state()
     check(s && s.log[0].price === 5 && s.log[0].cost === 0.5, `opening an older article charges a tenth of 5p (${s && s.log[0].cost})`)
-    await scrollTo(0.5); await wait(900)
-    s = await state()
-    check(s.log[0].cost > 0.5 && s.log[0].cost < 5, `half way down costs part of the price (${s.log[0].cost}p)`)
-    // images load lazily and lengthen the page, so the end is reached the way a reader reaches it:
-    // keep scrolling until the page stops growing
+    // v1.5.0: scrolling is not reading, so a fast scroll to the end leaves the minimum
     for (let i = 0; i < 4; i++) { await pg.evaluate(() => window.scrollTo(0, document.body.scrollHeight)); await wait(700) }
+    s = await state()
+    check(s.log[0].cost === 0.5, `a fast scroll to the end still costs a tenth (${s.log[0].cost}p)`)
+    await markRead(0.5)
+    s = await state()
+    check(s.log[0].cost > 0.5 && s.log[0].cost < 5, `half the sections read costs part of the price (${s.log[0].cost}p)`)
+    await markRead(1)
     s = await state()
     check(s.log[0].cost === 5 && s.balance === 495, `the end costs the whole price (balance ${s.balance}, spent ${s.spent}, cost ${s.log[0].cost}, log ${s.log.length}, reads ${s.reads})`)
     // the reader card: usefulness sets the price, and the article is in the reading list
@@ -102,12 +106,11 @@ try {
     // below zero, nothing blocked
     await pg.evaluate(() => { const s = JSON.parse(localStorage.getItem('sgit.meter.v1')); s.balance = 2; localStorage.setItem('sgit.meter.v1', JSON.stringify(s)) })
     await pg.goto(B + `articles/${art[0].slug}.html`); await wait(1000)
-    await pg.evaluate(() => window.scrollTo(0, document.body.scrollHeight)); await wait(900)
+    await markRead(1)
     s = await state()
     check(s.balance < 0, `the balance goes below zero (${s.balance})`)
     check(await pg.evaluate(() => document.querySelector('sg-meter.meter-nav').shadowRoot.querySelector('a').classList.contains('neg')), 'the top bar marks a negative balance')
-    // the payment return page, once per reference. The article's charge grows with scroll depth for a moment after the
-    // scroll, so wait until the balance has stopped moving before taking it as the figure the top-up adds to.
+    // the payment return page, once per reference. Wait until the balance has stopped moving before taking it as the figure the top-up adds to.
     for (let i = 0, prev = s.balance; i < 10; i++) { await wait(300); const n = (await state()).balance; if (n === prev) break; prev = n }
     s = await state()
     const before = s.balance

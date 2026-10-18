@@ -26,7 +26,7 @@ The graphs are data first and pictures second. Take them as JSON: [all articles 
 
 2026-10-17 · Site & engineeringNews & evidence
 
-Once the owner decided that a reader pays for what they read and not for what they scroll, the numbers had to be the reader's to correct: pause, reset and marks by hand; and once the newsroom knows what was read, it can step aside on a return visit or a scroll back up, in six views from a margin line to hidden, never while the reader reads forward, using a line and a paragraph written for every one of 1,761 sections.
+Once the owner decided that a reader pays for what they read and not for what they scroll, the numbers had to be the reader's to correct: pause, reset and marks by hand; and once the newsroom knows what was read, it can step aside on a return visit or a scroll back up, in six views from a margin line to hidden, never while the reader reads forward, using a line and a paragraph written for every one of 1,897 sections.
 
 *[diagram]*
 **concept**claim**method**artefact**example
@@ -41,8 +41,8 @@ Once the owner decided that a reader pays for what they read and not for what th
 - **Six views of what was read** (artefact) Full, Margin, Faded, Paragraph, Line and Hidden, chosen by the reader and kept in the browser.
 - **Never while reading forward** (claim) The views switch on only on a return visit or a scroll back up, and a section on screen is never folded by the clock.
 - **The words in view stay** (method) Before a fold the first visible element is noted, and the scroll is corrected after it.
-- **A line and a paragraph per section** (artefact) 1,761 sections in 162 articles, each with about eight words and two or three sentences that say what it says.
-- **Twelve agents in parallel** (example) Each read about fourteen articles and wrote their summaries; a script checked length, wording and coverage.
+- **A line and a paragraph per section** (artefact) 1,897 sections in 174 articles, each with about eight words and two or three sentences that say what it says.
+- **Fourteen agents** (example) Each read a batch of articles and wrote their summaries; a script checked length, wording and coverage.
 - **A summary knows it is stale** (method) Each carries a hash of its section; a corrected section marks its summary stale.
 - **Summaries with every article** (concept) The authoring guide asks for summaries beside the graph, and the build counts extracts.
 
