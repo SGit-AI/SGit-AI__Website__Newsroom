@@ -145,7 +145,8 @@ async function testWire(cfg) {
     // what the vault adds beyond the edition, when the snapshot says it has it
     if (counts.map_entities) {
         const ents = await count('#wire-map .ent')
-        check(ents === counts.map_entities && /named by a story/.test(await text('#wire-map > summary')) && (await count('#wire-map .named li')) >= 1, `${W} the map is drawn: ${ents} entities, with the stories that name them`)
+        // the page draws the live vault, which may have grown since the snapshot was taken (Portugal: 40 then, 55 by 17 October)
+        check(ents >= 1 && /named by a story/.test(await text('#wire-map > summary')) && (await count('#wire-map .named li')) >= 1, `${W} the map is drawn: ${ents} entities, with the stories that name them (the snapshot counts ${counts.map_entities})`)
         check(await pg.evaluate(() => [...document.querySelectorAll('#wire-map .named a')].every(a => a.getAttribute('href').startsWith('#') && document.getElementById(a.getAttribute('href').slice(1)))), `${W} every story named in the map is on the page`)
     } else check((await count('#wire-map')) === 0, `${W} no map, none drawn`)
     if (counts.stack_services) {
