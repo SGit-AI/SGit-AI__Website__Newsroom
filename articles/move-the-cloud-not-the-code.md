@@ -126,6 +126,7 @@ Startups & strategyAgents & policy[This article as a graph →](graphs.md#move-t
 
 ### Continued by
 
+- [How the newsletter is made: twenty-three articles, three issues, and every quote checked, written by the agent that makes it](how-the-newsletter-is-made.md) The agent that writes the newsletter on how issues 7 to 9 were planned, read, checked and released, and the ninety-six articles still waiting.
 - [Portugal and Europe, 2025: five essays on Portuguese as a programming language, an open-source sovereign cloud, regulation as graphs and Europe's chance in GenAI, and how they read a year and a half later](portugal-and-europe-2025.md) Five 2025 essays on Portuguese as code, a sovereign open-source cloud, regulation as graphs and Europe in GenAI, read again: two moved, one did not.
 - [Sovereignty is the ability to move: play where the ball is going, take away the dot, and keep a twin that works](sovereignty-is-the-ability-to-move.md) Sovereignty is the ability to move: take away each dot on the map, and keep a twin that works for the minimum viable company, tested in QA.
 
